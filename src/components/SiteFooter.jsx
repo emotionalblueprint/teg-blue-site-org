@@ -36,16 +36,40 @@ export default function SiteFooter() {
         <Link href="/methodology" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Methodology
         </Link>
-        {" · "}
+      </p>
+
+      {/* Link to .com application platform */}
+      <div
+        style={{
+          marginTop: 20,
+          padding: "12px 16px",
+          background: "rgba(74, 155, 232, 0.08)",
+          borderRadius: 8,
+          border: "1px solid rgba(74, 155, 232, 0.15)",
+          maxWidth: 400,
+          margin: "20px auto 0",
+        }}
+      >
+        <p style={{ fontSize: 11, color: TEXT.secondary, marginBottom: 8 }}>
+          Looking for interactive tools?
+        </p>
         <a
           href="https://teg-blue.com"
-          style={{ color: TEXT.hint, textDecoration: "none" }}
+          style={{
+            fontSize: 12,
+            fontFamily: FONT.mono,
+            color: SPECTRUM.azure,
+            textDecoration: "none",
+          }}
           target="_blank"
           rel="noopener noreferrer"
         >
-          teg-blue.com ↗
+          Explore TEG-Blue.com →
         </a>
-      </p>
+        <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 6 }}>
+          Circuit Board · Four-Mode Gradient · Emotional Tools
+        </p>
+      </div>
 
       <p
         style={{

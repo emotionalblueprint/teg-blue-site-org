@@ -36,20 +36,36 @@ export default function SiteHeader({ currentPath = "/" }) {
 
         {/* Logo + Title */}
         <div style={{ marginTop: 16, marginBottom: 16 }}>
-          <Link
-            href="https://teg-blue.com"
-            style={{
-              fontFamily: FONT.mono,
-              fontSize: 10,
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: TEXT.hint,
-              textDecoration: "none",
-            }}
-          >
-            TEG-Blue
-          </Link>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
+            <Link
+              href="https://teg-blue.com"
+              style={{
+                fontFamily: FONT.mono,
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: TEXT.hint,
+                textDecoration: "none",
+              }}
+            >
+              TEG-Blue
+            </Link>
+            <span style={{ color: TEXT.micro }}>·</span>
+            <a
+              href="https://teg-blue.com"
+              style={{
+                fontFamily: FONT.mono,
+                fontSize: 9,
+                color: SPECTRUM.azure,
+                textDecoration: "none",
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Interactive tools on .com →
+            </a>
+          </div>
           <h1
             style={{
               fontSize: 24,
