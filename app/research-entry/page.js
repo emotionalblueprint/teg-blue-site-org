@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, ExpandableSection } from "@/src/components";
 
 export const metadata = {
   title: "Research Entry Point",
-  description: "Entry point for researchers interested in TEG-Blue. Explains the measurement system (Four-Mode Gradient), explanatory architecture (12 frameworks), validation findings, and open research questions.",
+  description: "Entry point for researchers interested in TEG-Blue. Validation findings, open research questions, and collaboration opportunities.",
   alternates: {
     canonical: "https://teg-blue.org/research-entry",
   },
@@ -72,152 +72,164 @@ export default function ResearchEntryPage() {
               maxWidth: 640,
             }}
           >
-            From Measurement System to Explanatory Architecture. This document describes
-            what TEG-Blue has found, what questions remain open, and where different areas
+            What TEG-Blue has found, what questions remain open, and where different areas
             of expertise connect to the work.
           </p>
         </header>
 
-        {/* How TEG-Blue Is Organized */}
-        <section style={{ marginBottom: 24 }}>
-          <ExpandableSection
-            title="How TEG-Blue Is Organized"
-            type="methodology"
-            defaultOpen={true}
-            id="organization"
-          >
-            <div style={{ paddingTop: 12, lineHeight: 1.8 }}>
-              <p style={{ marginBottom: 16 }}>
-                TEG-Blue has two layers. The distinction between them is central to understanding
-                the architecture and identifying where specific research contributions connect.
+        {/* Architecture Overview */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            The Architecture
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+            {/* Four-Mode Gradient */}
+            <div
+              style={{
+                padding: 16,
+                background: hexToRgba(SPECTRUM.azure, 0.06),
+                borderRadius: 10,
+                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+                borderTop: `3px solid ${SPECTRUM.azure}`,
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.azure,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 8,
+                }}
+              >
+                Measurement System
+              </h3>
+              <p style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Four-Mode Gradient
               </p>
-
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Measurement System: The Four-Mode Gradient
-              </h4>
-              <p style={{ marginBottom: 12 }}>
-                The Four-Mode Gradient is the measurable backbone of TEG-Blue. It proposes that
-                emotional regulation operates on a gradient with four observable positions:
+              <p style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                Nervous system states detectable in natural language. Empirically validated.
               </p>
               <p
                 style={{
-                  padding: "12px 16px",
-                  background: hexToRgba(SPECTRUM.blue, 0.08),
-                  borderRadius: 8,
-                  fontWeight: 600,
-                  color: TEXT.primary,
-                  marginBottom: 16,
-                  textAlign: "center",
+                  fontSize: 10,
+                  fontFamily: FONT.mono,
+                  color: TEXT.muted,
+                  padding: "6px 8px",
+                  background: hexToRgba(SPECTRUM.azure, 0.1),
+                  borderRadius: 4,
                 }}
               >
                 Connection → Protection → Control → Domination
               </p>
-              <p style={{ marginBottom: 16 }}>
-                These are not personality types or diagnostic categories. They are{" "}
-                <strong style={{ color: TEXT.primary }}>nervous system states</strong> — regulatory
-                positions that shift in response to perceived threat, shaped by attachment history,
-                social context, and current capacity. They can be detected in natural language.
-                They have been empirically validated. They are where research begins.
-              </p>
+            </div>
 
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Explanatory Architecture: 12 Frameworks
-              </h4>
-              <p style={{ marginBottom: 16 }}>
-                Behind the gradient sit 12 interconnected frameworks that explain <em>why</em> these
-                four modes exist, <em>how</em> individual regulation patterns scale into social
-                structures, <em>where</em> protection tips into domination, and <em>what</em> makes
-                change possible. These frameworks integrate 139+ established theories across
-                neuroscience, psychology, sociology, and trauma studies.
-              </p>
-
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Core Testable Claim
-              </h4>
-              <blockquote
+            {/* 12 Frameworks */}
+            <Link
+              href="/theoretical-foundations"
+              style={{
+                padding: 16,
+                background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                borderRadius: 10,
+                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                borderTop: `3px solid ${SPECTRUM.cobalt}`,
+                textDecoration: "none",
+                transition: "all 0.2s ease",
+              }}
+            >
+              <h3
                 style={{
-                  margin: 0,
-                  padding: "16px 20px",
-                  borderLeft: `3px solid ${SPECTRUM.indigo}`,
-                  background: hexToRgba(SPECTRUM.indigo, 0.05),
-                  borderRadius: "0 8px 8px 0",
-                  fontStyle: "italic",
-                  color: TEXT.primary,
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.cobalt,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 8,
                 }}
               >
-                The key variable that predicts relational and behavioral outcomes is not a person's
-                current regulatory state, but their <strong>capacity to return to Connection when challenged</strong>.
-              </blockquote>
-              <p style={{ marginTop: 12 }}>
-                This capacity is measurable. It shows up in language. And it appears to be predicted
-                by specific linguistic markers we call <strong style={{ color: TEXT.primary }}>complexity markers</strong> —
-                signs of self-awareness, perspective-taking, and emotional differentiation.
+                Explanatory Architecture
+              </h3>
+              <p style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                12 Frameworks
               </p>
-            </div>
-          </ExpandableSection>
+              <p style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                Integrates 139+ theories explaining why the modes exist and how they scale.
+              </p>
+              <span style={{ fontSize: 11, color: SPECTRUM.cobalt, fontWeight: 500 }}>
+                View Theory Map →
+              </span>
+            </Link>
+
+            {/* Emotional Tools */}
+            <a
+              href="https://teg-blue.com/research/hub"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: 16,
+                background: hexToRgba(SPECTRUM.indigo, 0.06),
+                borderRadius: 10,
+                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+                borderTop: `3px solid ${SPECTRUM.indigo}`,
+                textDecoration: "none",
+                display: "block",
+                transition: "all 0.2s ease",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.indigo,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 8,
+                }}
+              >
+                Assessment Instruments
+              </h3>
+              <p style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Emotional Tools
+              </p>
+              <p style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                16 gradient scales and assessments. Designed, not yet psychometrically validated.
+              </p>
+              <span style={{ fontSize: 11, color: SPECTRUM.indigo, fontWeight: 500 }}>
+                Research Hub →
+              </span>
+            </a>
+          </div>
         </section>
 
-        {/* What Is Original */}
+        {/* Core Testable Claim */}
         <section style={{ marginBottom: 24 }}>
-          <ExpandableSection
-            title="What Is Original in TEG-Blue"
-            type="publication"
-            defaultOpen={false}
-            id="originality"
+          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            The Core Testable Claim
+          </h2>
+          <blockquote
+            style={{
+              margin: 0,
+              padding: "16px 20px",
+              borderLeft: `3px solid ${SPECTRUM.indigo}`,
+              background: hexToRgba(SPECTRUM.indigo, 0.05),
+              borderRadius: "0 8px 8px 0",
+              fontStyle: "italic",
+              color: TEXT.primary,
+              fontSize: 15,
+              lineHeight: 1.7,
+            }}
           >
-            <div style={{ paddingTop: 12, lineHeight: 1.8 }}>
-              <p style={{ marginBottom: 16 }}>
-                TEG-Blue is built on established science. Every source theory is credited, and the{" "}
-                <Link href="/theoretical-foundations" style={{ color: SPECTRUM.azure }}>
-                  theoretical foundations page
-                </Link>{" "}
-                names 135+ researchers whose work informs the architecture. The originality is not in
-                the individual theories. It is in how they are connected, and in what those connections reveal.
-              </p>
-
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                What TEG-Blue uses (established, credited)
-              </h4>
-              <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
-                <li><strong>Polyvagal Theory</strong> (Porges) — nervous system states as regulatory responses</li>
-                <li><strong>Attachment Theory</strong> (Bowlby, Ainsworth, Main) — early relational patterns as templates</li>
-                <li><strong>Moral Disengagement</strong> (Bandura) — cognitive mechanisms that allow harmful behavior</li>
-                <li><strong>Social Dominance Theory</strong> (Sidanius, Pratto) — how hierarchies reproduce</li>
-                <li><strong>Cognitive Bias Research</strong> (Kahneman, Tversky) — systematic distortions in perception</li>
-                <li><strong>Conflict Escalation Models</strong> (Glasl, Gottman) — how relational rupture progresses</li>
-              </ul>
-
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                What TEG-Blue connects (the integrative architecture)
-              </h4>
-              <p style={{ marginBottom: 12 }}>
-                These research traditions developed independently, often without reference to each other.
-                TEG-Blue proposes specific cross-disciplinary connections:
-              </p>
-              <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
-                <li style={{ marginBottom: 8 }}>
-                  <strong>Nervous system regulation → moral perception.</strong> Regulatory state
-                  systematically shapes which moral judgments a person makes.
-                </li>
-                <li style={{ marginBottom: 8 }}>
-                  <strong>Attachment patterns → social stratification.</strong> The same protective
-                  mechanisms that organize individual identity also organize social hierarchies.
-                </li>
-                <li style={{ marginBottom: 8 }}>
-                  <strong>Self-protection → domination as a continuous gradient.</strong> A single
-                  continuous trajectory from legitimate self-protection through to domination.
-                </li>
-                <li style={{ marginBottom: 8 }}>
-                  <strong>Linguistic complexity → regulatory capacity.</strong> Specific linguistic
-                  markers are measurable indicators of the capacity to return to Connection.
-                </li>
-              </ul>
-              <p>
-                No single source theory makes any of these connections. They become visible only when
-                the theories are placed in relation to each other.
-              </p>
-            </div>
-          </ExpandableSection>
+            The key variable that predicts relational and behavioral outcomes is not a person's
+            current regulatory state, but their <strong>capacity to return to Connection when challenged</strong>.
+          </blockquote>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginTop: 12 }}>
+            This capacity is measurable. It shows up in language through <strong style={{ color: TEXT.primary }}>complexity markers</strong> —
+            signs of self-awareness, perspective-taking, and emotional differentiation.
+          </p>
         </section>
 
         {/* What Has Been Demonstrated */}
@@ -337,77 +349,6 @@ export default function ResearchEntryPage() {
           </ExpandableSection>
         </section>
 
-        {/* 12 Frameworks Summary */}
-        <section style={{ marginBottom: 24 }}>
-          <ExpandableSection
-            title="How the 12 Frameworks Fit"
-            type="theory"
-            defaultOpen={false}
-            id="frameworks"
-          >
-            <div style={{ paddingTop: 12, lineHeight: 1.8 }}>
-              <p style={{ marginBottom: 16 }}>
-                The research questions above all test the <strong>measurement system</strong> — the
-                Four-Mode Gradient. The 12 frameworks are the <strong>explanatory architecture</strong>{" "}
-                that sits behind it.
-              </p>
-
-              <div style={{ overflowX: "auto" }}>
-                <table
-                  style={{
-                    width: "100%",
-                    borderCollapse: "collapse",
-                    fontSize: 13,
-                    marginBottom: 16,
-                  }}
-                >
-                  <thead>
-                    <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-                      <th style={{ textAlign: "left", padding: "8px 12px", color: TEXT.muted, fontWeight: 600 }}>Layer</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", color: TEXT.muted, fontWeight: 600 }}>Frameworks</th>
-                      <th style={{ textAlign: "left", padding: "8px 12px", color: TEXT.muted, fontWeight: 600 }}>What They Explain</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-                      <td style={{ padding: "10px 12px", color: SPECTRUM.azure, fontWeight: 500 }}>Formation</td>
-                      <td style={{ padding: "10px 12px" }}>F1, F2, F3</td>
-                      <td style={{ padding: "10px 12px", color: TEXT.secondary }}>How nervous system states form and how identity organizes around them</td>
-                    </tr>
-                    <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-                      <td style={{ padding: "10px 12px", color: SPECTRUM.blue, fontWeight: 500 }}>Scaling</td>
-                      <td style={{ padding: "10px 12px" }}>F4, F5, F6</td>
-                      <td style={{ padding: "10px 12px", color: TEXT.secondary }}>How individual regulation patterns become social structures</td>
-                    </tr>
-                    <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-                      <td style={{ padding: "10px 12px", color: SPECTRUM.cobalt, fontWeight: 500 }}>Turning Point</td>
-                      <td style={{ padding: "10px 12px" }}>F7</td>
-                      <td style={{ padding: "10px 12px", color: TEXT.secondary }}>How protection escalates into domination — and where intervention is possible</td>
-                    </tr>
-                    <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-                      <td style={{ padding: "10px 12px", color: SPECTRUM.indigo, fontWeight: 500 }}>Healing</td>
-                      <td style={{ padding: "10px 12px" }}>F8, F9, F10</td>
-                      <td style={{ padding: "10px 12px", color: TEXT.secondary }}>How patterns shift, including neurodivergent pathways</td>
-                    </tr>
-                    <tr>
-                      <td style={{ padding: "10px 12px", color: SPECTRUM.slate, fontWeight: 500 }}>Integration</td>
-                      <td style={{ padding: "10px 12px" }}>F11, F12</td>
-                      <td style={{ padding: "10px 12px", color: TEXT.secondary }}>The complete architecture and its internal logic</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <p>
-                The full theoretical mapping — including 139+ source theories across 47 domains — is
-                documented at{" "}
-                <Link href="/theoretical-foundations" style={{ color: SPECTRUM.azure }}>
-                  teg-blue.org/theoretical-foundations
-                </Link>.
-              </p>
-            </div>
-          </ExpandableSection>
-        </section>
 
         {/* Collaboration */}
         <section style={{ marginBottom: 24 }}>

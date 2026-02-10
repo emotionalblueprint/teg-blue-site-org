@@ -1,14 +1,22 @@
-# TEG-Blue Research Platform (.org)
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Quick Start
 
-**When the user says "working on teg-blue.org" or "the research platform":**
-1. Navigate to `/Users/annaparetas/Projects/teg-blue-site-org`
-2. Check if dev server is running: `lsof -i :3001` (uses port 3001)
-3. If not running, start it: `npm run dev`
-4. Open Chrome to http://localhost:3001
+```bash
+# Check if dev server is running (uses port 3001)
+lsof -i :3001
 
----
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run linter
+npm run lint
+```
 
 ## Purpose
 

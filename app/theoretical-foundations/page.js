@@ -600,6 +600,22 @@ export default function TheoreticalFoundationsPage() {
               </p>
             </div>
           </div>
+
+          {/* Emotional Tools note */}
+          <p
+            style={{
+              fontSize: 13,
+              color: TEXT.muted,
+              textAlign: "center",
+              marginTop: 16,
+            }}
+          >
+            These frameworks inform 16 <strong style={{ color: TEXT.secondary }}>Emotional Tools</strong> — assessment instruments available on{" "}
+            <a href="https://teg-blue.com/emotional-tools" style={{ color: SPECTRUM.azure }} target="_blank" rel="noopener noreferrer">
+              teg-blue.com
+            </a>
+            , awaiting psychometric validation.
+          </p>
         </div>
 
         {/* What Is Original */}
