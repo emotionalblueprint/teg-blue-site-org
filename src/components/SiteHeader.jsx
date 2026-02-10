@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Publications", href: "/publications" },
   { label: "Foundations", href: "/foundations" },
   { label: "Glossary", href: "/glossary" },
-  { label: "Methodology", href: "/methodology" },
+  { label: "About", href: "/about" },
   { label: "Collaborate", href: "/collaborate" },
 ];
 
