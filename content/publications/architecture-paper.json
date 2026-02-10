@@ -1,0 +1,71 @@
+{
+  "slug": "architecture-paper",
+  "type": "working-paper",
+  "title": "TEG-Blue: The Emotional Gradient Blueprint — An Integrative Architecture for Emotional Intelligence",
+  "status": "working",
+
+  "summary": "Presents the complete theoretical architecture of TEG-Blue, synthesizing polyvagal theory, attachment theory, dual-process cognition, trauma research, and systems thinking into a unified framework with four core components.",
+  "keyFinding": "Emotional regulation follows predictable gradient patterns that can be mapped across individual, relational, and systemic scales using a unified architecture.",
+
+  "author": "Anna Paretas-Artacho",
+  "date": "2026",
+  "doi": "10.5281/zenodo.18499576",
+  "doiUrl": "https://doi.org/10.5281/zenodo.18499576",
+
+  "tags": ["emotional intelligence", "integrative framework", "polyvagal theory", "attachment theory", "systems thinking", "emotional regulation", "architecture"],
+
+  "glossaryTerms": ["four-mode-gradient", "emotional-circuit", "filter-of-worth", "regulatory-state"],
+
+  "content": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "defaultOpen": true,
+      "content": "This working paper presents TEG-Blue (The Emotional Gradient Blueprint), an integrative architecture that unifies insights from polyvagal theory, attachment theory, dual-process cognition, trauma neuroscience, and systems thinking into a coherent framework for understanding emotional regulation across scales."
+    },
+    {
+      "id": "four-components",
+      "title": "The Four Components",
+      "content": "TEG-Blue organizes through four interconnected components: The Inner Compass (Four-Mode Gradient), The Map (12-level mapping system), Emotional Tools (16 practical instruments), and The Circuit Board (pattern origin tracking). Each component addresses a different question about emotional experience."
+    },
+    {
+      "id": "theoretical-synthesis",
+      "title": "Theoretical Synthesis",
+      "content": "The framework synthesizes 65+ theories across neuroscience, psychology, sociology, and trauma research. Key integrations include Porges' polyvagal hierarchy with Bowlby's attachment patterns, Kahneman's dual-process model with trauma responses, and Gottman's relational dynamics with systemic power analysis."
+    },
+    {
+      "id": "twelve-frameworks",
+      "title": "The 12 Frameworks (F1-F12)",
+      "content": "The architecture is organized into 12 interconnected frameworks spanning individual regulation (F1-F3), relational patterns (F4-F7), systemic dynamics (F8-F10), and integration pathways (F11-F12). Each framework maps specific emotional processes across the four regulatory modes."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "cites",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "Polyvagal Theory"
+    },
+    {
+      "type": "cites",
+      "targetSlug": "attachment",
+      "targetType": "theory",
+      "label": "Attachment Theory"
+    },
+    {
+      "type": "cites",
+      "targetSlug": "dual-process",
+      "targetType": "theory",
+      "label": "Dual-Process Cognition"
+    },
+    {
+      "type": "part-of",
+      "targetSlug": "validation-study",
+      "targetType": "publication",
+      "label": "Validation Study"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01"
+}

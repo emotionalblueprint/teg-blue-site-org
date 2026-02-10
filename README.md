@@ -1,0 +1,135 @@
+# TEG-Blue Research Platform
+
+Open science publishing platform for TEG-Blue research. Fractal architecture where every page follows the same structural DNA: **IDENTITY → CONTEXT → CORE → CONNECTIONS → DEPTH**.
+
+## Architecture Overview
+
+```
+research-platform/
+│
+├── src/
+│   ├── styles/
+│   │   └── tokens.js              ← Design tokens (Blue Spectrum palette, typography, spacing)
+│   │
+│   ├── types/
+│   │   └── research.ts            ← TypeScript types (ResearchNode, Connection, ContentBlock)
+│   │
+│   ├── lib/
+│   │   ├── jsonld.js              ← JSON-LD generators (Schema.org structured data)
+│   │   └── content.js             ← Content loader (reads JSON files, resolves connections)
+│   │
+│   ├── components/
+│   │   ├── index.js               ← Component barrel export
+│   │   ├── TypeTag.jsx            ← Content type identifier (● PUBLICATION, ● THEORY, etc.)
+│   │   ├── StatusBadge.jsx        ← Publication status (Published, Preprint, etc.)
+│   │   ├── ExpandableSection.jsx  ← Core content unit (<details>/<summary> for AI crawlability)
+│   │   ├── ConnectionCard.jsx     ← Links between research nodes
+│   │   ├── GlossaryInline.jsx     ← Inline term with tooltip (<abbr> for accessibility)
+│   │   ├── ContextBlock.jsx       ← Summary + Key Finding callout
+│   │   ├── ResearchLayout.jsx     ← Page wrapper (header, nav, footer)
+│   │   └── SharedComponents.jsx   ← SpectrumBar, DepthBar, SearchInput
+│   │
+│   └── templates/
+│       └── PublicationPage.jsx    ← Full page template for publications
+│
+├── content/                        ← JSON content files (git-versioned)
+│   ├── TEMPLATES.md               ← Blank templates for each content type
+│   ├── publications/
+│   │   ├── validation-study.json
+│   │   └── architecture-paper.json
+│   ├── theories/
+│   │   ├── polyvagal.json
+│   │   └── attachment.json
+│   ├── glossary/
+│   │   ├── four-mode-gradient.json
+│   │   └── regulatory-state.json
+│   └── frameworks/                 ← Empty, ready for F1-F12
+│
+├── app/research/                   ← Next.js page routes
+│   ├── publications/[slug]/
+│   │   └── index.jsx              ← Dynamic publication pages
+│   ├── foundations/
+│   ├── glossary/
+│   ├── methodology/
+│   ├── citations/
+│   └── collaborate/
+│
+└── public/research/                ← Static assets
+```
+
+## Design System
+
+**Blue Spectrum** — six flat colors, no gradients:
+
+| Name | Hex | Content Type |
+|------|-----|-------------|
+| Sky | `#7ABAEB` | Glossary |
+| Azure | `#4A9BE8` | Open Data |
+| Blue | `#3B7DE5` | Publications |
+| Cobalt | `#3560CC` | Frameworks |
+| Indigo | `#4A50B0` | Foundations |
+| Slate | `#6B7A99` | Methodology |
+
+**Rules:**
+- No gradients anywhere
+- Dark backgrounds: `#080C18` → `#0C1222` → `#111827` → `#1A2234`
+- Fonts: Inter (display) + JetBrains Mono (labels, DOIs, tags)
+- `<details>/<summary>` for all expandable sections (native HTML, AI-readable)
+- JSON-LD on every page
+- Max 7 expandable sections per page
+
+Full design system spec: `teg-blue-research-design-system.md`
+
+## How to Add Content
+
+1. Copy the relevant template from `content/TEMPLATES.md`
+2. Fill in all fields
+3. Save as `your-slug.json` in the appropriate `content/` subfolder
+4. Add connections to/from existing content
+5. The page generates automatically — no code changes needed
+
+## Key Technical Decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| JSON content files (not MDX) | Simpler for non-developers, easy to validate, works with any renderer |
+| `<details>/<summary>` | Native HTML, zero JS, fully accessible, AI crawlers see all content |
+| JSON-LD on every page | Schema.org structured data for AI comprehension |
+| Static generation | Pre-rendered at build time for speed (Lighthouse 95+) |
+| Flat colors only | Distinct from main TEG-Blue site, simpler rendering, cleaner feel |
+| Connection system | Every node links to others via typed relationships, creating a knowledge graph |
+
+## Implementation Notes for Claude Code
+
+### Integration with existing teg-blue.com
+
+This research platform lives under `/research/*` on the existing Next.js site. To integrate:
+
+1. Copy `src/` contents into the existing project's `src/research/` directory
+2. Copy `content/` to project root
+3. Copy page routes into existing `app/research/` directory
+4. Import tokens from `src/research/styles/tokens.js`
+5. The ResearchLayout component handles its own header/nav/footer — it's self-contained
+
+### Key dependencies
+- Next.js (already in use)
+- No additional packages required
+- Fonts: Inter + JetBrains Mono (already loaded by main site)
+
+### Pages to implement (priority order)
+
+1. **`/research`** — Hub page with grid of all content, spectrum bar, filterable by type
+2. **`/research/publications/[slug]`** — Publication detail (template ready)
+3. **`/research/foundations`** — Theory grid with expandable cards
+4. **`/research/glossary`** — Searchable, expandable term list
+5. **`/research/methodology`** — Single page
+6. **`/research/citations`** — Citation formats
+7. **`/research/collaborate`** — Collaboration info
+
+### Sitemap addition
+
+Add all `/research/*` pages to existing sitemap with `<lastmod>` dates from content JSON files.
+
+---
+
+*TEG-Blue Research Platform · v1.0 · Anna Paretas-Artacho*

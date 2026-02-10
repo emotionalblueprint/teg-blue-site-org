@@ -1,0 +1,61 @@
+{
+  "slug": "four-mode-gradient",
+  "type": "glossary",
+  "title": "Four-Mode Gradient",
+  "status": "published",
+  "definition": "A framework mapping four regulatory states (Connect, Protect, Collapse, Restore) that individuals move between in response to emotional triggers.",
+
+  "summary": "The Four-Mode Gradient is TEG-Blue's core mapping tool, identifying four distinct regulatory states the nervous system cycles through. It extends polyvagal theory by adding Restore as a fourth active state.",
+
+  "tags": ["core", "F1", "regulatory states", "emotional regulation"],
+  "origin": "teg-blue-original",
+  "relatedTerms": ["regulatory-state", "emotional-circuit"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "The Four-Mode Gradient maps four regulatory states that every person moves between: Connect (safety perceived, social engagement active), Protect (threat perceived, defensive mobilization), Collapse (overwhelm, shutdown), and Restore (active re-regulation, returning to connection). Unlike binary safe/unsafe models, it captures the full cycle including the recovery process."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "The gradient is not a linear scale but a circuit. Healthy regulation involves flexible movement between all four states with the capacity to return to Connect. Dysregulation appears as getting stuck in one state or oscillating between two states without resolution. The gradient is measured through natural language patterns, physiological indicators, and behavioral markers."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "Validated in the 2026 study 'Detecting Regulatory States in Natural Language' (DOI: 10.5281/zenodo.18428907). The four states map onto Porges' polyvagal hierarchy with the addition of the Restore pathway. Inter-rater reliability for identifying these states in text reached κ = 0.74."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "defines",
+      "targetSlug": "validation-study",
+      "targetType": "publication",
+      "label": "Validated in"
+    },
+    {
+      "type": "extends",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "Extends"
+    },
+    {
+      "type": "related",
+      "targetSlug": "regulatory-state",
+      "targetType": "glossary",
+      "label": "Related term"
+    },
+    {
+      "type": "part-of",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Core concept of F1"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01"
+}

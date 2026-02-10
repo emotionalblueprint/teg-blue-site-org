@@ -1,0 +1,84 @@
+{
+  "slug": "validation-study",
+  "type": "publication",
+  "title": "Detecting Regulatory States in Natural Language",
+  "status": "published",
+
+  "summary": "A validation study testing whether the Four-Mode Gradient framework can reliably detect emotional regulatory states in natural language, with implications for therapeutic and educational applications.",
+  "keyFinding": "Self-awareness predicts whether individuals escalate toward harm or return to connection when challenged.",
+
+  "author": "Anna Paretas-Artacho",
+  "date": "2026",
+  "doi": "10.5281/zenodo.18428907",
+  "doiUrl": "https://doi.org/10.5281/zenodo.18428907",
+  "preregistration": "https://osf.io/f4x6y",
+
+  "tags": ["emotional regulation", "four-mode gradient", "natural language", "validation", "inter-rater reliability"],
+
+  "glossaryTerms": ["four-mode-gradient", "regulatory-state", "emotional-circuit"],
+
+  "content": [
+    {
+      "id": "abstract",
+      "title": "Abstract",
+      "defaultOpen": true,
+      "content": "This study examines whether trained and untrained raters can reliably identify four regulatory states — Connect, Protect, Collapse, and Restore — in natural language samples. Using a mixed-methods design with 120 text samples rated by 8 independent raters, we found substantial inter-rater reliability (κ = 0.74) and strong convergent validity with existing emotional regulation measures."
+    },
+    {
+      "id": "findings",
+      "title": "Key Findings",
+      "content": "Three primary findings emerged: (1) Regulatory states are detectable in natural language with high reliability, (2) The Four-Mode Gradient maps onto established constructs while offering greater granularity, and (3) Self-awareness emerged as the primary differentiator between adaptive and maladaptive regulatory trajectories."
+    },
+    {
+      "id": "methodology",
+      "title": "Methodology",
+      "content": "Mixed-methods design combining quantitative inter-rater reliability analysis with qualitative thematic coding. Pre-registered on OSF (osf.io/f4x6y). 120 text samples sourced from naturalistic communication contexts, rated independently by 8 raters across clinical and non-clinical backgrounds."
+    },
+    {
+      "id": "implications",
+      "title": "Implications",
+      "content": "Results suggest the Four-Mode Gradient framework offers a practical, accessible tool for identifying emotional regulation patterns in everyday communication. Applications include therapeutic assessment, educational emotional literacy programs, and AI-assisted emotional pattern detection."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "cites",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "Polyvagal Theory"
+    },
+    {
+      "type": "cites",
+      "targetSlug": "attachment",
+      "targetType": "theory",
+      "label": "Attachment Theory"
+    },
+    {
+      "type": "part-of",
+      "targetSlug": "architecture-paper",
+      "targetType": "publication",
+      "label": "TEG-Blue Architecture"
+    },
+    {
+      "type": "validates",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "F1: Emotional Gradient"
+    },
+    {
+      "type": "defines",
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Four-Mode Gradient"
+    },
+    {
+      "type": "defines",
+      "targetSlug": "regulatory-state",
+      "targetType": "glossary",
+      "label": "Regulatory State"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "polyvagal",
+  "type": "theory",
+  "title": "Polyvagal Theory",
+  "status": "published",
+  "originAuthor": "Stephen Porges",
+  "domain": "neuroscience",
+
+  "summary": "The autonomic nervous system operates through three hierarchical circuits — ventral vagal, sympathetic, and dorsal vagal — that shape our capacity for social engagement, mobilization, and immobilization.",
+
+  "tegBlueUsage": "The Four-Mode Gradient maps directly onto polyvagal states: Connect (ventral vagal), Protect (sympathetic), Collapse (dorsal vagal), and Restore (re-regulation pathway back to ventral vagal).",
+
+  "tags": ["neuroscience", "autonomic nervous system", "vagal tone", "neuroception", "social engagement"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement and calm states. The sympathetic branch activates fight-or-flight responses. The oldest (dorsal vagal) produces shutdown and immobilization. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue's Four-Mode Gradient extends polyvagal theory by adding the Restore pathway as a distinct fourth state, mapping not just the three autonomic states but the active process of returning to regulation. This creates a complete circuit rather than a simple hierarchy, acknowledging that recovery is itself a distinct neurophysiological process."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Porges, S. W. (2011). The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-regulation. Norton. · Porges, S. W. (2017). The Pocket Guide to the Polyvagal Theory. Norton. · Dana, D. (2018). The Polyvagal Theory in Therapy. Norton."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "cites",
+      "targetSlug": "validation-study",
+      "targetType": "publication",
+      "label": "Referenced in Validation Study"
+    },
+    {
+      "type": "cites",
+      "targetSlug": "architecture-paper",
+      "targetType": "publication",
+      "label": "Referenced in Architecture Paper"
+    },
+    {
+      "type": "related",
+      "targetSlug": "attachment",
+      "targetType": "theory",
+      "label": "Related: Attachment Theory"
+    },
+    {
+      "type": "defines",
+      "targetSlug": "regulatory-state",
+      "targetType": "glossary",
+      "label": "Defines: Regulatory State"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01"
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "regulatory-state",
+  "type": "glossary",
+  "title": "Regulatory State",
+  "status": "published",
+  "definition": "The distinct physiological and psychological mode the nervous system occupies to manage perceived safety, threat, or disconnection.",
+
+  "summary": "A regulatory state is the nervous system's current operating mode, shaped by neuroception and expressed through physiology, cognition, and behavior. TEG-Blue identifies four primary regulatory states in the Four-Mode Gradient.",
+
+  "tags": ["core", "neuroscience", "nervous system", "regulation"],
+  "origin": "established-term",
+  "relatedTerms": ["four-mode-gradient", "emotional-circuit"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "A regulatory state describes the nervous system's current configuration for managing the environment. It encompasses physiological activation (heart rate, breathing, muscle tension), cognitive processing style (broad vs. narrow attention), emotional tone (calm, anxious, numb), and behavioral repertoire (what actions feel available). States are not chosen consciously — they emerge from the body's assessment of safety and threat."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "TEG-Blue maps four regulatory states (Connect, Protect, Collapse, Restore) and tracks transitions between them. The key insight is that the state itself is not 'good' or 'bad' — Protect is adaptive when facing real threat. Dysregulation occurs when states become chronic, mismatched to context, or impossible to exit."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "defines",
+      "targetSlug": "validation-study",
+      "targetType": "publication",
+      "label": "Measured in"
+    },
+    {
+      "type": "extends",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "From Polyvagal Theory"
+    },
+    {
+      "type": "related",
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Related: Four-Mode Gradient"
+    }
+  ],
+
+  "lastUpdated": "2026-02-01"
+}
