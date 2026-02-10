@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * PublicationPage — Template for /research/publications/[slug]
- * 
+ * PublicationPage — Template for /publications/[slug]
+ *
  * Renders any publication or working paper using the fractal DNA:
  * IDENTITY → CONTEXT → CORE → CONNECTIONS → DEPTH
- * 
+ *
  * Receives a resolved ResearchNode as prop.
  */
 
@@ -17,6 +17,17 @@ import ExpandableSection from "../components/ExpandableSection";
 import ConnectionCard from "../components/ConnectionCard";
 import { DepthBar } from "../components/SharedComponents";
 
+function getConnectionHref(conn) {
+  const routes = {
+    publication: `/publications/${conn.targetSlug}`,
+    "working-paper": `/publications/${conn.targetSlug}`,
+    theory: `/foundations#${conn.targetSlug}`,
+    glossary: `/glossary#${conn.targetSlug}`,
+    framework: `/frameworks/${conn.targetSlug}`,
+  };
+  return routes[conn.targetType] || `/${conn.targetSlug}`;
+}
+
 export default function PublicationPage({ node }) {
   const color = getContentTypeColor(node.type);
 
@@ -24,7 +35,7 @@ export default function PublicationPage({ node }) {
   const depthActions = [
     node.doiUrl && { label: "View on Zenodo", href: node.doiUrl, external: true },
     node.preregistration && { label: "Pre-registration", href: node.preregistration, external: true },
-    { label: "Cite This", href: "/research/citations" },
+    { label: "Cite This", href: "/citations" },
   ].filter(Boolean);
 
   // Group connections by type for display
@@ -154,7 +165,7 @@ export default function PublicationPage({ node }) {
                   title={conn.targetTitle || conn.label || conn.targetSlug}
                   subtitle={conn.targetAuthor}
                   connectionType={connectionLabels[conn.type] || conn.type}
-                  href={`/research/${conn.targetType === "theory" ? "foundations" : "publications"}/${conn.targetSlug}`}
+                  href={getConnectionHref(conn)}
                 />
               ))}
             </nav>
