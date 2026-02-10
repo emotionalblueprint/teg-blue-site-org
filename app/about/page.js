@@ -54,103 +54,6 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* The Founder */}
-        <section
-          style={{
-            marginBottom: 32,
-            padding: 24,
-            background: BG.card,
-            borderRadius: 12,
-            border: `1px solid ${BORDER.default}`,
-            borderLeft: `3px solid ${SPECTRUM.indigo}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: SPECTRUM.indigo,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            The Founder
-          </h2>
-          <h3
-            style={{
-              fontSize: 18,
-              fontWeight: 600,
-              color: TEXT.primary,
-              marginBottom: 8,
-            }}
-          >
-            Anna Paretas-Artacho
-          </h3>
-          <p
-            style={{
-              fontSize: 14,
-              lineHeight: 1.7,
-              color: TEXT.secondary,
-              marginBottom: 16,
-            }}
-          >
-            Anna brings 25 years of experience in visual communications, transforming
-            complex concepts into accessible visuals. Following an abusive relationship,
-            she undertook intensive self-study to understand the patterns she'd missed—exploring
-            polyvagal theory, attachment research, trauma, and family systems. Rather than
-            keeping these insights personal, she applied her design expertise to create
-            visual structures bridging these fields.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              lineHeight: 1.7,
-              color: TEXT.secondary,
-              marginBottom: 16,
-            }}
-          >
-            The Four-Mode Gradient was not designed first and then explained. It emerged
-            through building each Framework, one by one, to explain patterns she had lived
-            through and witnessed. The result is nearly two years of independent development
-            creating an integrated emotional intelligence system.
-          </p>
-          <div
-            style={{
-              display: "flex",
-              gap: 12,
-              flexWrap: "wrap",
-              fontSize: 12,
-              fontFamily: FONT.mono,
-            }}
-          >
-            <a
-              href="https://orcid.org/0009-0005-2394-7162"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: SPECTRUM.azure,
-                textDecoration: "none",
-              }}
-            >
-              ORCID: 0009-0005-2394-7162
-            </a>
-            <span style={{ color: TEXT.micro }}>·</span>
-            <a
-              href="https://teg-blue.com/about-the-author"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: SPECTRUM.azure,
-                textDecoration: "none",
-              }}
-            >
-              Full bio on teg-blue.com ↗
-            </a>
-          </div>
-        </section>
-
         {/* Why Open Science */}
         <section style={{ marginBottom: 32 }}>
           <ExpandableSection
@@ -375,6 +278,103 @@ export default function AboutPage() {
             >
               Read our methodology
             </Link>
+          </div>
+        </section>
+
+        {/* The Founder */}
+        <section
+          style={{
+            marginTop: 40,
+            padding: 24,
+            background: BG.card,
+            borderRadius: 12,
+            border: `1px solid ${BORDER.default}`,
+            borderLeft: `3px solid ${SPECTRUM.indigo}`,
+          }}
+        >
+          <h2
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              color: SPECTRUM.indigo,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              fontFamily: FONT.mono,
+              marginBottom: 12,
+            }}
+          >
+            The Founder
+          </h2>
+          <h3
+            style={{
+              fontSize: 18,
+              fontWeight: 600,
+              color: TEXT.primary,
+              marginBottom: 8,
+            }}
+          >
+            Anna Paretas-Artacho
+          </h3>
+          <p
+            style={{
+              fontSize: 14,
+              lineHeight: 1.7,
+              color: TEXT.secondary,
+              marginBottom: 16,
+            }}
+          >
+            Anna brings 25 years of experience in visual communications, transforming
+            complex concepts into accessible visuals. Following an abusive relationship,
+            she undertook intensive self-study to understand the patterns she'd missed—exploring
+            polyvagal theory, attachment research, trauma, and family systems. Rather than
+            keeping these insights personal, she applied her design expertise to create
+            visual structures bridging these fields.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              lineHeight: 1.7,
+              color: TEXT.secondary,
+              marginBottom: 16,
+            }}
+          >
+            The Four-Mode Gradient was not designed first and then explained. It emerged
+            through building each Framework, one by one, to explain patterns she had lived
+            through and witnessed. The result is nearly two years of independent development
+            creating an integrated emotional intelligence system.
+          </p>
+          <div
+            style={{
+              display: "flex",
+              gap: 12,
+              flexWrap: "wrap",
+              fontSize: 12,
+              fontFamily: FONT.mono,
+            }}
+          >
+            <a
+              href="https://orcid.org/0009-0005-2394-7162"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: SPECTRUM.azure,
+                textDecoration: "none",
+              }}
+            >
+              ORCID: 0009-0005-2394-7162
+            </a>
+            <span style={{ color: TEXT.micro }}>·</span>
+            <a
+              href="https://teg-blue.com/about-the-author"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: SPECTRUM.azure,
+                textDecoration: "none",
+              }}
+            >
+              Full bio on teg-blue.com ↗
+            </a>
           </div>
         </section>
       </main>
