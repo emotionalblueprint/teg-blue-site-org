@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { label: "Hub", href: "/" },
   { label: "Publications", href: "/publications" },
   { label: "Foundations", href: "/foundations" },
+  { label: "Theory Map", href: "/theoretical-foundations" },
   { label: "Glossary", href: "/glossary" },
   { label: "About", href: "/about" },
   { label: "Collaborate", href: "/collaborate" },
