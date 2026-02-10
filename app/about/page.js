@@ -161,32 +161,37 @@ export default function AboutPage() {
           >
             <div style={{ paddingTop: 8, lineHeight: 1.8 }}>
               <p style={{ marginBottom: 16 }}>
-                Emotional regulation research has historically been locked behind academic
-                paywalls and written in language inaccessible to those who need it most.
-                TEG-Blue exists because understanding how our nervous system works shouldn't
-                require a PhD.
+                Understanding emotions, behavior, and the nervous system helps people make
+                sense of their lives. When this knowledge can be shared clearly and openly,
+                it becomes something we can all learn from, question, and improve together.
               </p>
               <p style={{ marginBottom: 16 }}>
-                We believe that:
+                We approach this work with a simple belief:
               </p>
               <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
                 <li style={{ marginBottom: 8 }}>
-                  <strong style={{ color: TEXT.primary }}>Knowledge should be accessible.</strong>{" "}
-                  Everyone deserves to understand their own emotional patterns.
+                  <strong style={{ color: TEXT.primary }}>Shared knowledge grows stronger.</strong>{" "}
+                  When ideas are accessible, more people can understand, test, and refine them.
                 </li>
                 <li style={{ marginBottom: 8 }}>
-                  <strong style={{ color: TEXT.primary }}>Research should be transparent.</strong>{" "}
-                  Our methodology, data, and findings are published openly.
+                  <strong style={{ color: TEXT.primary }}>Transparency supports trust.</strong>{" "}
+                  Open methods and visible reasoning allow learning to stay grounded and verifiable.
                 </li>
                 <li style={{ marginBottom: 8 }}>
-                  <strong style={{ color: TEXT.primary }}>Science advances through collaboration.</strong>{" "}
-                  We welcome researchers, practitioners, and individuals to build on this work.
+                  <strong style={{ color: TEXT.primary }}>Collaboration deepens insight.</strong>{" "}
+                  Progress happens when researchers, practitioners, and individuals can contribute
+                  from different perspectives.
                 </li>
                 <li style={{ marginBottom: 8 }}>
-                  <strong style={{ color: TEXT.primary }}>AI should understand human emotions.</strong>{" "}
-                  Every page here is designed to be readable by both humans and AI systems.
+                  <strong style={{ color: TEXT.primary }}>Emotional understanding matters for the future.</strong>{" "}
+                  As technology becomes part of daily life, it is important that emotional knowledge
+                  can be understood by both people and the systems we build.
                 </li>
               </ul>
+              <p style={{ color: TEXT.muted, fontStyle: "italic" }}>
+                Open science is not about replacing existing work. It is about adding clarity,
+                connection, and continuity, so understanding can keep evolving.
+              </p>
             </div>
           </ExpandableSection>
         </section>
