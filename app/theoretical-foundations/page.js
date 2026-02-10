@@ -453,17 +453,162 @@ export default function TheoreticalFoundationsPage() {
         </h1>
         <p
           style={{
-            fontSize: 15,
-            color: TEXT.secondary,
+            fontSize: 13,
+            color: TEXT.hint,
             marginBottom: 24,
-            maxWidth: 640,
-            lineHeight: 1.7,
+            fontStyle: "italic",
           }}
         >
-          TEG-Blue integrates insights from established research traditions across
-          neuroscience, psychology, sociology, and trauma studies. This page maps
-          which theories inform each of our 12 frameworks.
+          The Explanatory Architecture Behind the Four-Mode Gradient
         </p>
+
+        {/* Two-layer explanation */}
+        <div
+          style={{
+            marginBottom: 32,
+            padding: 24,
+            background: BG.surface,
+            borderRadius: 12,
+            border: `1px solid ${BORDER.default}`,
+          }}
+        >
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 16,
+            }}
+          >
+            TEG-Blue is organized in two layers. The <strong style={{ color: TEXT.primary }}>measurement system</strong> — the Four-Mode Gradient (Connection → Protection → Control → Domination) — is the observable, testable backbone. It measures nervous system regulatory states that shift in response to perceived threat and can be detected in natural language.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 0,
+            }}
+          >
+            The <strong style={{ color: TEXT.primary }}>explanatory architecture</strong> — the 12 frameworks documented on this page — sits behind the gradient. These frameworks explain <em>why</em> the four modes exist, <em>how</em> individual regulation patterns scale into social structures, <em>where</em> protection tips into domination, and <em>what</em> makes change possible.
+          </p>
+        </div>
+
+        {/* What Is Original */}
+        <section
+          style={{
+            marginBottom: 32,
+          }}
+        >
+          <h2
+            style={{
+              fontSize: 18,
+              fontWeight: 600,
+              color: TEXT.primary,
+              marginBottom: 16,
+            }}
+          >
+            What Is Original Here
+          </h2>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 16,
+            }}
+          >
+            The 12 frameworks draw on 139+ established theories across neuroscience, psychology, sociology, and trauma studies. Every source theory is credited. The originality is not in the individual theories — it is in the connections between them.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 20,
+            }}
+          >
+            These research traditions developed independently, within separate disciplines, often without reference to each other. TEG-Blue proposes specific cross-disciplinary connections that do not exist in any of the source theories:
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div
+              style={{
+                padding: "16px 20px",
+                background: hexToRgba(SPECTRUM.azure, 0.06),
+                borderRadius: 8,
+                borderLeft: `3px solid ${SPECTRUM.azure}`,
+              }}
+            >
+              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Nervous system regulation → moral perception
+              </h4>
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+                Polyvagal Theory describes autonomic states. Moral psychology describes ethical judgments. TEG-Blue proposes that regulatory state systematically shapes which moral judgments a person makes.
+              </p>
+            </div>
+
+            <div
+              style={{
+                padding: "16px 20px",
+                background: hexToRgba(SPECTRUM.blue, 0.06),
+                borderRadius: 8,
+                borderLeft: `3px solid ${SPECTRUM.blue}`,
+              }}
+            >
+              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Attachment patterns → social stratification
+              </h4>
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+                Attachment theory operates at the individual scale. Sociology of capital (Bourdieu) operates at the social scale. TEG-Blue proposes that the same protective mechanisms that organize individual identity also organize social hierarchies.
+              </p>
+            </div>
+
+            <div
+              style={{
+                padding: "16px 20px",
+                background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                borderRadius: 8,
+                borderLeft: `3px solid ${SPECTRUM.cobalt}`,
+              }}
+            >
+              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Self-protection → domination as a continuous gradient
+              </h4>
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+                Clinical psychology studies narcissism, coercive control, and moral disengagement as separate phenomena. TEG-Blue maps these onto a single continuous trajectory with identifiable transition markers at each stage.
+              </p>
+            </div>
+
+            <div
+              style={{
+                padding: "16px 20px",
+                background: hexToRgba(SPECTRUM.indigo, 0.06),
+                borderRadius: 8,
+                borderLeft: `3px solid ${SPECTRUM.indigo}`,
+              }}
+            >
+              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Linguistic complexity → regulatory capacity
+              </h4>
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+                Psycholinguistics studies language as a window into cognitive states. Emotion regulation research studies the capacity to return to baseline. TEG-Blue connects these by proposing that specific linguistic markers indicate the capacity to return to Connection — a construct neither field has operationalized.
+              </p>
+            </div>
+          </div>
+
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginTop: 20,
+              marginBottom: 0,
+            }}
+          >
+            These connections generate testable questions that no single source discipline could produce alone. Several have already been tested empirically (see <a href="/publications" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Publications</a>). For a full overview of TEG-Blue's structure, existing evidence, and open research questions, see the <a href="/research-entry" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Research Entry Point</a>.
+          </p>
+        </section>
 
         {/* Stats */}
         <div
@@ -536,8 +681,7 @@ export default function TheoreticalFoundationsPage() {
             <p style={{ marginBottom: 0 }}>
               <strong style={{ color: TEXT.primary }}>Limitations:</strong>{" "}
               Some connections may be inaccurate or oversimplified. Researchers may disagree with how
-              their work is represented. We welcome corrections and are committed to updating this
-              mapping based on scholarly feedback.
+              their work is represented. Corrections are welcomed and the mapping is updated based on scholarly feedback.
             </p>
           </div>
         </section>
