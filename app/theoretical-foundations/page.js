@@ -463,35 +463,143 @@ export default function TheoreticalFoundationsPage() {
         </p>
 
         {/* Two-layer explanation */}
-        <div
-          style={{
-            marginBottom: 32,
-            padding: 24,
-            background: BG.surface,
-            borderRadius: 12,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
+        <div style={{ marginBottom: 32 }}>
           <p
             style={{
-              fontSize: 14,
+              fontSize: 15,
               color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
+              marginBottom: 20,
+              textAlign: "center",
             }}
           >
-            TEG-Blue is organized in two layers. The <strong style={{ color: TEXT.primary }}>measurement system</strong> — the Four-Mode Gradient (Connection → Protection → Control → Domination) — is the observable, testable backbone. It measures nervous system regulatory states that shift in response to perceived threat and can be detected in natural language.
+            TEG-Blue is organized in two layers.
           </p>
-          <p
+
+          <div
             style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 0,
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: 16,
             }}
           >
-            The <strong style={{ color: TEXT.primary }}>explanatory architecture</strong> — the 12 frameworks documented on this page — sits behind the gradient. These frameworks explain <em>why</em> the four modes exist, <em>how</em> individual regulation patterns scale into social structures, <em>where</em> protection tips into domination, and <em>what</em> makes change possible.
-          </p>
+            {/* Measurement System Box */}
+            <div
+              style={{
+                padding: 24,
+                background: hexToRgba(SPECTRUM.azure, 0.08),
+                borderRadius: 12,
+                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
+                borderTop: `3px solid ${SPECTRUM.azure}`,
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.azure,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 12,
+                }}
+              >
+                Measurement System
+              </h3>
+              <p
+                style={{
+                  fontSize: 16,
+                  fontWeight: 600,
+                  color: TEXT.primary,
+                  marginBottom: 12,
+                }}
+              >
+                The Four-Mode Gradient
+              </p>
+              <div
+                style={{
+                  fontSize: 12,
+                  fontFamily: FONT.mono,
+                  color: TEXT.secondary,
+                  marginBottom: 16,
+                  padding: "10px 12px",
+                  background: hexToRgba(SPECTRUM.azure, 0.1),
+                  borderRadius: 6,
+                  textAlign: "center",
+                }}
+              >
+                Connection → Protection → Control → Domination
+              </div>
+              <p
+                style={{
+                  fontSize: 13,
+                  color: TEXT.secondary,
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                The observable, testable backbone. It measures nervous system regulatory states that shift in response to perceived threat and can be detected in natural language.
+              </p>
+            </div>
+
+            {/* Explanatory Architecture Box */}
+            <div
+              style={{
+                padding: 24,
+                background: hexToRgba(SPECTRUM.cobalt, 0.08),
+                borderRadius: 12,
+                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
+                borderTop: `3px solid ${SPECTRUM.cobalt}`,
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.cobalt,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 12,
+                }}
+              >
+                Explanatory Architecture
+              </h3>
+              <p
+                style={{
+                  fontSize: 16,
+                  fontWeight: 600,
+                  color: TEXT.primary,
+                  marginBottom: 12,
+                }}
+              >
+                12 Frameworks
+              </p>
+              <div
+                style={{
+                  fontSize: 12,
+                  fontFamily: FONT.mono,
+                  color: TEXT.secondary,
+                  marginBottom: 16,
+                  padding: "10px 12px",
+                  background: hexToRgba(SPECTRUM.cobalt, 0.1),
+                  borderRadius: 6,
+                  textAlign: "center",
+                }}
+              >
+                Why · How · Where · What
+              </div>
+              <p
+                style={{
+                  fontSize: 13,
+                  color: TEXT.secondary,
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                Sits behind the gradient. Explains <em>why</em> the four modes exist, <em>how</em> individual patterns scale into social structures, <em>where</em> protection tips into domination, and <em>what</em> makes change possible.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* What Is Original */}
