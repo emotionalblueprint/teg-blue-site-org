@@ -753,7 +753,7 @@ export default function TheoreticalFoundationsPage() {
         <section
           style={{
             marginBottom: 32,
-            padding: 20,
+            padding: 24,
             background: hexToRgba(SPECTRUM.slate, 0.08),
             borderRadius: 12,
             border: `1px solid ${hexToRgba(SPECTRUM.slate, 0.15)}`,
@@ -762,34 +762,30 @@ export default function TheoreticalFoundationsPage() {
         >
           <h2
             style={{
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 600,
               color: TEXT.primary,
-              marginBottom: 12,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
+              marginBottom: 16,
             }}
           >
-            <span style={{ fontSize: 16 }}>*</span>
             Methodology & Status
           </h2>
           <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <p style={{ marginBottom: 12 }}>
-              <strong style={{ color: TEXT.primary }}>How this mapping was created:</strong>{" "}
-              This literature mapping was developed using AI research tools (Claude, ChatGPT Deep Research)
-              to identify potential connections between TEG-Blue's framework and established research traditions.
+            <p style={{ marginBottom: 16 }}>
+              <strong style={{ color: TEXT.primary }}>How TEG-Blue was developed:</strong>{" "}
+              The integrative architecture — the 12 frameworks and the connections between them — was developed by Anna Paretas-Artacho over nearly two years of independent research, drawing on a lifetime of observing patterns in human behavior, systems thinking, personal experience, and cross-disciplinary reading.
             </p>
-            <p style={{ marginBottom: 12 }}>
+            <p style={{ marginBottom: 16 }}>
+              <strong style={{ color: TEXT.primary }}>How this mapping was created:</strong>{" "}
+              Once the architecture was established, AI research tools (Claude, ChatGPT Deep Research) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
+            </p>
+            <p style={{ marginBottom: 16 }}>
               <strong style={{ color: TEXT.primary }}>What this means:</strong>{" "}
-              This is a working hypothesis—a starting point for deeper scholarly validation, not a finished
-              academic work. The AI tools helped identify potential connections, but human researchers are
-              needed to verify accuracy, correct errors, and deepen the analysis.
+              The theoretical mapping on this page is a working hypothesis — a starting point for deeper scholarly validation, not a finished academic work. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
             </p>
             <p style={{ marginBottom: 0 }}>
               <strong style={{ color: TEXT.primary }}>Limitations:</strong>{" "}
-              Some connections may be inaccurate or oversimplified. Researchers may disagree with how
-              their work is represented. Corrections are welcomed and the mapping is updated based on scholarly feedback.
+              Some literature connections may be inaccurate or oversimplified. Researchers may disagree with how their work is represented. Corrections are welcomed and the mapping is updated based on scholarly feedback.
             </p>
           </div>
         </section>
