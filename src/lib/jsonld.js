@@ -10,8 +10,8 @@
  * 3. ResearchProject (parent)
  */
 
-const BASE_URL = "https://www.teg-blue.com";
-const RESEARCH_BASE = `${BASE_URL}/research`;
+const BASE_URL = "https://teg-blue.org";
+const RESEARCH_BASE = BASE_URL;
 
 // ─── PARENT PROJECT (always included) ────────────────
 
@@ -23,12 +23,9 @@ const TEG_BLUE_PROJECT = {
 };
 
 const AUTHOR = {
-  "@type": "Person",
-  name: "Anna Paretas-Artacho",
-  affiliation: {
-    "@type": "Organization",
-    name: "TEG-Blue Research",
-  },
+  "@type": "Organization",
+  name: "TEG-Blue Research Consortium",
+  url: "https://teg-blue.org",
 };
 
 // ─── PUBLICATION JSON-LD ─────────────────────────────
@@ -167,7 +164,7 @@ export function generateMetaTags(node) {
     },
     dublinCore: {
       "DC.title": node.title,
-      "DC.creator": node.author || "Anna Paretas-Artacho",
+      "DC.creator": node.author || "TEG-Blue Research Consortium",
       "DC.subject": node.tags?.join(", "),
       "DC.description": node.summary,
       "DC.type": node.type,

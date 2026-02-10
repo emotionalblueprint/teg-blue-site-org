@@ -7,7 +7,7 @@ export const metadata = {
   },
   description: 'Open science publishing platform for TEG-Blue emotional regulation research. Publications, theories, frameworks, and methodology.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment', 'research', 'open science'],
-  authors: [{ name: 'Anna Paretas-Artacho' }],
+  authors: [{ name: 'TEG-Blue Research Consortium' }],
   creator: 'TEG-Blue',
   publisher: 'TEG-Blue',
   metadataBase: new URL('https://teg-blue.org'),

@@ -146,7 +146,7 @@ export default function ResearchLayout({ children, currentPath = "" }) {
       >
         <SpectrumBar />
         <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
-          TEG-Blue Research Platform · Open Science · Anna Paretas-Artacho
+          TEG-Blue Research Consortium · Open Science
         </p>
         <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 4 }}>
           <Link href="/research/citations" style={{ color: TEXT.hint, textDecoration: "none" }}>

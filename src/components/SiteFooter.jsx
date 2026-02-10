@@ -21,7 +21,7 @@ export default function SiteFooter() {
       <SpectrumBar />
 
       <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
-        TEG-Blue Research Platform · Open Science · Anna Paretas-Artacho
+        TEG-Blue Research Consortium · Open Science
       </p>
 
       <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 8, lineHeight: 1.8 }}>
