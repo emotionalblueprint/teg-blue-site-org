@@ -1,7 +1,7 @@
 import { loadAllContent } from "@/src/lib/content";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
-import { BG, SPACING, FONT } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ContentGrid } from "@/src/components";
+import { BG, SPACING, FONT, TEXT } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, HubContent } from "@/src/components";
 
 export const metadata = {
   title: "TEG-Blue Research Platform",
@@ -35,23 +35,23 @@ export default function ResearchHub() {
           }}
         >
           {/* Hero Section */}
-          <section style={{ marginBottom: 40 }}>
+          <section style={{ marginBottom: 48 }}>
             <p
               style={{
                 fontSize: 15,
                 lineHeight: 1.7,
-                color: "var(--text-secondary)",
+                color: TEXT.secondary,
                 maxWidth: 600,
               }}
             >
-              Peer-reviewed publications, foundational theories, and open methodology
-              for understanding emotional regulation through the nervous system.
-              All content is designed to be readable by both humans and AI systems.
+              Open science platform for understanding emotional regulation
+              through the nervous system. Built on established research,
+              proposing new connections between fields.
             </p>
           </section>
 
-          {/* Content Grid */}
-          <ContentGrid items={allContent} />
+          {/* Two-Section Hub */}
+          <HubContent items={allContent} />
         </main>
 
         <SiteFooter />

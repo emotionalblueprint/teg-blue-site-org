@@ -15,6 +15,7 @@ export { default as ContextBlock } from "./ContextBlock";
 
 // Page components
 export { default as ContentGrid } from "./ContentGrid";
+export { default as HubContent } from "./HubContent";
 export { default as SiteHeader } from "./SiteHeader";
 export { default as SiteFooter } from "./SiteFooter";
 
