@@ -18,10 +18,16 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/foundations`,
+      url: `${baseUrl}/theoretical-foundations`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/research-entry`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/glossary`,

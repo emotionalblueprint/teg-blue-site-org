@@ -1,6 +1,25 @@
 # TEG-Blue Research Platform
 
-Open science publishing platform for TEG-Blue research. Fractal architecture where every page follows the same structural DNA: **IDENTITY → CONTEXT → CORE → CONNECTIONS → DEPTH**.
+Open science platform for TEG-Blue research. Designed to be readable by both humans and AI systems.
+
+## Two Sites, One Framework
+
+TEG-Blue uses two complementary sites:
+
+| Site | URL | Purpose |
+|------|-----|---------|
+| **teg-blue.com** | [teg-blue-site-com](https://github.com/annaparetas/teg-blue-site-com) | Interactive tools and application for everyday users |
+| **teg-blue.org** | This repo | Open science platform for researchers |
+
+**.org** is for research — Publications, theoretical foundations, open research questions, collaboration opportunities.
+
+**.com** is for application — Interactive tools, the Four-Mode Gradient, the 12 Map Levels. Accessible entry points for everyday people.
+
+Both sites link to each other. The .org footer links to .com for interactive tools. The .com header links to .org for open research.
+
+## Architecture Overview
+
+Fractal architecture where every page follows the same structural DNA: **IDENTITY → CONTEXT → CORE → CONNECTIONS → DEPTH**.
 
 ## Architecture Overview
 
@@ -99,36 +118,28 @@ Full design system spec: `teg-blue-research-design-system.md`
 | Flat colors only | Distinct from main TEG-Blue site, simpler rendering, cleaner feel |
 | Connection system | Every node links to others via typed relationships, creating a knowledge graph |
 
-## Implementation Notes for Claude Code
+## Deployment
 
-### Integration with existing teg-blue.com
+This site is deployed on [Vercel](https://vercel.com) as a standalone site.
 
-This research platform lives under `/research/*` on the existing Next.js site. To integrate:
+- **Production**: https://teg-blue.org
+- **Preview**: Automatic for pull requests
 
-1. Copy `src/` contents into the existing project's `src/research/` directory
-2. Copy `content/` to project root
-3. Copy page routes into existing `app/research/` directory
-4. Import tokens from `src/research/styles/tokens.js`
-5. The ResearchLayout component handles its own header/nav/footer — it's self-contained
-
-### Key dependencies
-- Next.js (already in use)
+### Tech Stack
+- Next.js 14 (App Router)
 - No additional packages required
-- Fonts: Inter + JetBrains Mono (already loaded by main site)
+- Fonts: Inter + JetBrains Mono
 
-### Pages to implement (priority order)
+### Key Pages
 
-1. **`/research`** — Hub page with grid of all content, spectrum bar, filterable by type
-2. **`/research/publications/[slug]`** — Publication detail (template ready)
-3. **`/research/foundations`** — Theory grid with expandable cards
-4. **`/research/glossary`** — Searchable, expandable term list
-5. **`/research/methodology`** — Single page
-6. **`/research/citations`** — Citation formats
-7. **`/research/collaborate`** — Collaboration info
-
-### Sitemap addition
-
-Add all `/research/*` pages to existing sitemap with `<lastmod>` dates from content JSON files.
+| Page | Path | Purpose |
+|------|------|---------|
+| Hub | `/` | Content grid with all publications, theories, glossary |
+| For Researchers | `/research-entry` | Entry point explaining TEG-Blue structure |
+| Publications | `/publications` | Published research and validation studies |
+| Theory Map | `/theoretical-foundations` | 12 frameworks with 139+ source theories |
+| Glossary | `/glossary` | Key terms and definitions |
+| Collaborate | `/collaborate` | Collaboration opportunities |
 
 ---
 
