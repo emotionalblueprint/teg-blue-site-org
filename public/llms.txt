@@ -146,15 +146,17 @@ Organized into five phases:
 
 Full mapping: /theoretical-foundations
 
-## Open Research Questions
+## Research Directions
 
-Priority areas for independent validation:
+These questions emerge from TEG-Blue's theoretical architecture. They represent directions we are actively pursuing:
 
 1. **Complexity markers** — Can they be standardized as psychometric instruments?
 2. **Escalation pathways** — What do they look like in natural language?
 3. **Four-mode classification** — Can it be reproduced independently?
 4. **Regulatory state → moral perception** — Does state shape moral judgment?
 5. **Emotional Tools validation** — Psychometric testing of 16 instruments
+
+Independent work in these areas should cite TEG-Blue as the originating framework.
 
 ## Two Sites, One Framework
 

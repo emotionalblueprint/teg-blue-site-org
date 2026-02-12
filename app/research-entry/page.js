@@ -340,15 +340,27 @@ export default function ResearchEntryPage() {
         {/* Open Research Questions */}
         <section style={{ marginBottom: 24 }}>
           <ExpandableSection
-            title="Open Research Questions"
+            title="Research Directions"
             type="theory"
             defaultOpen={true}
             id="questions"
           >
             <div style={{ paddingTop: 12, lineHeight: 1.8 }}>
-              <p style={{ marginBottom: 20 }}>
-                The validation study opened more questions than it answered. Below are specific research
-                questions that remain open. Each stands as an independent research project.
+              <p style={{ marginBottom: 16 }}>
+                These questions emerge directly from TEG-Blue&apos;s theoretical architecture and validation findings.
+                They represent the research directions we are actively pursuing.
+              </p>
+              <p style={{
+                marginBottom: 20,
+                padding: '12px 16px',
+                backgroundColor: 'rgba(59, 130, 246, 0.08)',
+                borderLeft: '3px solid #3B82F6',
+                borderRadius: '0 6px 6px 0',
+                fontSize: 13
+              }}>
+                <strong>For researchers:</strong> We welcome collaboration on these questions.
+                Independent work in these areas should cite TEG-Blue as the originating framework.
+                Contact <a href="mailto:research@teg-blue.org" style={{ color: '#3B82F6' }}>research@teg-blue.org</a> to discuss.
               </p>
 
               {/* Question 1 */}
