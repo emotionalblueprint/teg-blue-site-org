@@ -8,7 +8,7 @@
 
   "summary": "Early relational experiences create internal working models that shape emotional regulation, relational patterns, and threat responses across the lifespan.",
 
-  "tegBlueUsage": "Attachment patterns map onto the four regulatory modes: secure attachment aligns with Connect, anxious attachment with Protect, avoidant attachment with Control/Collapse, and disorganized attachment with oscillation between modes. TEG-Blue extends this by tracking how these patterns transmit across generations.",
+  "tegBlueUsage": "Attachment patterns map onto the four regulatory modes: secure attachment enables flexible return to Connection, anxious attachment creates gravitational pull toward Protection, avoidant attachment can manifest as Control, and disorganized attachment produces oscillation across the gradient. TEG-Blue extends this by tracking how these patterns transmit across generations.",
 
   "tags": ["psychology", "attachment", "internal working models", "relational patterns", "developmental psychology"],
 
@@ -22,7 +22,7 @@
     {
       "id": "teg-blue-integration",
       "title": "How TEG-Blue Integrates This",
-      "content": "TEG-Blue maps attachment patterns as default regulatory positions within the Four-Mode Gradient. Secure attachment produces a default Connect state with flexible movement. Insecure patterns create gravitational pulls toward specific modes. The Circuit Board component tracks how these attachment-derived defaults were formed and how they can be consciously reworked."
+      "content": "TEG-Blue maps attachment patterns as default regulatory positions within the Four-Mode Gradient. Secure attachment produces a default Connection state with flexible movement. Insecure patterns create gravitational pulls toward specific modes — anxious toward Protection, avoidant toward Control. The Circuit Board component tracks how these attachment-derived defaults were formed and how they can be consciously reworked."
     },
     {
       "id": "key-sources",

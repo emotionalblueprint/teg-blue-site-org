@@ -3,9 +3,9 @@
   "type": "glossary",
   "title": "Four-Mode Gradient",
   "status": "published",
-  "definition": "A framework mapping four regulatory states (Connect, Protect, Collapse, Restore) that individuals move between in response to emotional triggers.",
+  "definition": "A framework mapping four regulatory states (Connection, Protection, Control, Domination) that individuals move between based on perceived safety and threat.",
 
-  "summary": "The Four-Mode Gradient is TEG-Blue's core mapping tool, identifying four distinct regulatory states the nervous system cycles through. It extends polyvagal theory by adding Restore as a fourth active state.",
+  "summary": "The Four-Mode Gradient is TEG-Blue's core mapping tool, identifying four distinct regulatory states along a continuous gradient. Connection represents safety; Protection represents recoverable threat response; Control represents chronic threat managed through controlling others; Domination represents entrenched control with empathy offline.",
 
   "tags": ["core", "F1", "regulatory states", "emotional regulation"],
   "origin": "teg-blue-original",
@@ -16,17 +16,17 @@
       "id": "what-it-is",
       "title": "What It Is",
       "defaultOpen": true,
-      "content": "The Four-Mode Gradient maps four regulatory states that every person moves between: Connect (safety perceived, social engagement active), Protect (threat perceived, defensive mobilization), Collapse (overwhelm, shutdown), and Restore (active re-regulation, returning to connection). Unlike binary safe/unsafe models, it captures the full cycle including the recovery process."
+      "content": "The Four-Mode Gradient maps four regulatory states along a continuous gradient: Connection (safety perceived, open and relational), Protection (threat perceived, defensive but recoverable), Control (chronic threat managed through controlling others/environment), and Domination (control entrenched, empathy offline, power as primary safety strategy). Health is mobility — the capacity to move fluidly between states rather than getting stuck."
     },
     {
       "id": "how-teg-blue-maps-it",
       "title": "How TEG-Blue Maps It",
-      "content": "The gradient is not a linear scale but a circuit. Healthy regulation involves flexible movement between all four states with the capacity to return to Connect. Dysregulation appears as getting stuck in one state or oscillating between two states without resolution. The gradient is measured through natural language patterns, physiological indicators, and behavioral markers."
+      "content": "The gradient is continuous, not categorical. Healthy regulation involves flexible movement with the capacity to return to Connection when challenged. Dysregulation appears as getting stuck — particularly in Control or Domination where empathy becomes constrained or offline. The gradient can be detected through natural language patterns, including complexity markers that predict capacity to return to Connection."
     },
     {
       "id": "research-basis",
       "title": "Research Basis",
-      "content": "Validated in the 2026 study 'Detecting Regulatory States in Natural Language' (DOI: 10.5281/zenodo.18428907). The four states map onto Porges' polyvagal hierarchy with the addition of the Restore pathway. Inter-rater reliability for identifying these states in text reached κ = 0.74."
+      "content": "Validated in the 2026 study 'Detecting Regulatory States in Natural Language' (DOI: 10.5281/zenodo.18428907). The gradient extends Porges' polyvagal framework by mapping how Protection can escalate into Control and Domination. Inter-rater reliability for identifying these states in text reached κ = 0.74. Key finding: capacity to return to Connection (measured through complexity markers) predicts relational outcomes."
     }
   ],
 
