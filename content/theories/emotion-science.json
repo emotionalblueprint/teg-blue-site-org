@@ -1,0 +1,56 @@
+{
+  "slug": "emotion-science",
+  "type": "theory",
+  "title": "Emotion Science",
+  "status": "published",
+  "originAuthor": "James Gross, Daniel Siegel, Barbara Fredrickson, Paul Ekman",
+  "domain": "psychology",
+
+  "summary": "Emotion regulation is a process, not an outcome. How we respond to emotional signals — through attention, appraisal, and response modulation — shapes both immediate experience and long-term patterns. Positive emotions broaden capacity; threat narrows it.",
+
+  "tegBlueUsage": "TEG-Blue integrates emotion science to explain state-dependent capacity: what a person can perceive, think, and do varies with regulatory state. Gross's process model informs intervention timing. Siegel's window of tolerance maps onto the Connection-Protection boundary. Fredrickson's broaden-and-build theory explains why Connection expands capacity while Protection contracts it.",
+
+  "tags": ["psychology", "emotion regulation", "window of tolerance", "broaden-and-build", "positive psychology"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Emotion science studies how emotions arise, are experienced, and are regulated. Gross developed the process model showing five points where regulation can occur (situation selection, modification, attention, appraisal, response). Siegel introduced the window of tolerance — the zone where emotions can be processed without overwhelm. Fredrickson's broaden-and-build theory shows that positive emotions expand cognitive and behavioral repertoires. Ekman mapped universal facial expressions of basic emotions."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue maps the window of tolerance onto the gradient: Connection is within the window (broad capacity), Protection is at the edge (narrowing), Control and Domination are chronic states outside the window. The broaden-and-build model explains why Connection enables learning, creativity, and repair while Protection restricts these capacities. Intervention strategy follows: restore safety first (expand the window), then expect flexibility."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Gross, J. J. (2014). Handbook of Emotion Regulation (2nd ed.). Guilford Press. · Siegel, D. J. (1999). The Developing Mind. Guilford Press. · Fredrickson, B. L. (2001). The role of positive emotions in positive psychology: The broaden-and-build theory of positive emotions. American Psychologist, 56(3), 218-226. · Ekman, P. (1992). An argument for basic emotions. Cognition & Emotion, 6(3-4), 169-200."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "cites",
+      "targetSlug": "validation-study",
+      "targetType": "publication",
+      "label": "Referenced in Validation Study"
+    },
+    {
+      "type": "related",
+      "targetSlug": "affective-neuroscience",
+      "targetType": "theory",
+      "label": "Related: Affective Neuroscience"
+    },
+    {
+      "type": "related",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "Related: Polyvagal Theory"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}

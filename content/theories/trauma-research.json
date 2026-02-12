@@ -1,0 +1,56 @@
+{
+  "slug": "trauma-research",
+  "type": "theory",
+  "title": "Trauma Research",
+  "status": "published",
+  "originAuthor": "Bessel van der Kolk, Peter Levine, Pat Ogden, Judith Herman",
+  "domain": "trauma",
+
+  "summary": "Trauma is stored in the body, not just the mind. Defensive responses that were interrupted or overwhelmed during threat continue to seek completion, shaping physiology, perception, and behavior long after danger has passed.",
+
+  "tegBlueUsage": "TEG-Blue integrates trauma research to explain how early or repeated threat exposure calibrates the nervous system toward Protection, Control, or Domination as default states. The framework maps trauma not as a diagnosis but as incomplete defensive responses that keep the system locked outside Connection.",
+
+  "tags": ["trauma", "somatic", "PTSD", "developmental trauma", "body-based therapy", "defensive responses"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Trauma research, pioneered by van der Kolk, Levine, Ogden, and Herman, established that traumatic experiences are encoded in the body's implicit memory systems. When threat overwhelms the nervous system's capacity to respond, defensive actions (fight, flight, freeze, fawn) remain incomplete. These unfinished responses continue to organize physiology and behavior, creating patterns that persist until the body can complete what it started."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue maps trauma responses onto the Four-Mode Gradient: fight and flight as active Protection, freeze and fawn as collapsed Protection or early Control patterns. Chronic trauma calibrates the system toward Control or Domination — strategies that manage threat through power rather than returning to Connection. The framework explains why cognitive insight alone rarely resolves trauma: the body must complete its defensive response and experience safety before the system can update."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "van der Kolk, B. (2014). The Body Keeps the Score. Viking. · Levine, P. (1997). Waking the Tiger: Healing Trauma. North Atlantic Books. · Ogden, P., Minton, K., & Pain, C. (2006). Trauma and the Body: A Sensorimotor Approach to Psychotherapy. Norton. · Herman, J. (1992). Trauma and Recovery. Basic Books. · Walker, P. (2013). Complex PTSD: From Surviving to Thriving. Azure Coyote."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "cites",
+      "targetSlug": "validation-study",
+      "targetType": "publication",
+      "label": "Referenced in Validation Study"
+    },
+    {
+      "type": "related",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "Related: Polyvagal Theory"
+    },
+    {
+      "type": "related",
+      "targetSlug": "attachment",
+      "targetType": "theory",
+      "label": "Related: Attachment Theory"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}
