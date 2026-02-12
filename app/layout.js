@@ -5,8 +5,8 @@ export const metadata = {
     default: 'TEG-Blue Research',
     template: '%s | TEG-Blue Research',
   },
-  description: 'Open science platform for TEG-Blue research. An integrative architecture connecting 139+ established theories (Polyvagal, Attachment, Trauma) into testable hypotheses. The building blocks are validated; the connections are our hypothesis.',
-  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'research', 'open science', 'emotional intelligence', 'four-mode gradient', 'integrative architecture', 'cross-disciplinary research'],
+  description: 'Open science platform for TEG-Blue research. An integrative emotional intelligence framework connecting 139+ theories into computationally legible gradients for AI safety, alignment research, and human emotional understanding.',
+  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'four-mode gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'regulatory states', 'complexity markers', 'open science'],
   authors: [{ name: 'TEG-Blue Research Consortium', url: 'https://teg-blue.org' }],
   creator: 'TEG-Blue Research Consortium',
   publisher: 'TEG-Blue Research Consortium',
@@ -70,6 +70,14 @@ const organizationJsonLd = {
     "Nervous system",
     "Trauma research",
     "Emotional intelligence",
+    "AI safety",
+    "AI alignment",
+    "Computational social science",
+    "Natural language processing",
+    "Harm detection",
+    "Moral reasoning",
+    "Regulatory state classification",
+    "Structured emotional data",
     "Cross-disciplinary research",
     "Integrative frameworks"
   ],
@@ -80,11 +88,23 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
-  description: "Open science platform for TEG-Blue research. Hosts publications, theoretical foundations mapping 139+ source theories, open research questions, and collaboration opportunities. Designed for both human and AI readability.",
+  description: "Open science platform providing structured emotional intelligence frameworks for AI safety research. The Four-Mode Gradient offers computationally legible representations of human regulatory states (Connection, Protection, Control, Domination) detectable in natural language. Designed for AI/ML researchers, safety practitioners, and computational social scientists.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research Consortium",
   },
+  about: [
+    {
+      "@type": "Thing",
+      name: "AI Safety",
+      description: "Structured gradients for emotional pattern detection in AI systems"
+    },
+    {
+      "@type": "Thing",
+      name: "Four-Mode Gradient",
+      description: "Measurement system mapping nervous system regulatory states: Connection, Protection, Control, Domination"
+    }
+  ],
 }
 
 export default function RootLayout({ children }) {

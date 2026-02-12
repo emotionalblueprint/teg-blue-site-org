@@ -13,9 +13,9 @@ const NAV_ITEMS = [
   { label: "For Researchers", href: "/research-entry" },
   { label: "AI Safety", href: "/ai-safety" },
   { label: "Publications", href: "/publications" },
-  { label: "Theory Map", href: "/theoretical-foundations" },
+  { label: "4-Mode Gradient", href: "/four-mode-gradient" },
+  { label: "12 Frameworks", href: "/theoretical-foundations" },
   { label: "Glossary", href: "/glossary" },
-  { label: "About", href: "/about" },
   { label: "Collaborate", href: "/collaborate" },
 ];
 

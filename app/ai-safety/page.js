@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
   title: "AI Safety Applications — TEG-Blue Research Platform",
@@ -586,6 +587,12 @@ export default function AISafetyPage() {
       </main>
 
       <SiteFooter />
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAISafetyJsonLd()) }}
+      />
     </div>
   );
 }

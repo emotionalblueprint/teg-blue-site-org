@@ -147,6 +147,110 @@ export function generateResearchHubJsonLd() {
   };
 }
 
+// ─── AI SAFETY PAGE JSON-LD ─────────────────────────
+
+export function generateAISafetyJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "AI Safety Applications — TEG-Blue",
+    url: `${BASE_URL}/ai-safety`,
+    description: "How TEG-Blue provides structured, computationally legible emotional intelligence infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
+    isPartOf: TEG_BLUE_PROJECT,
+    about: [
+      {
+        "@type": "Thing",
+        name: "AI Safety",
+        description: "Research and practices aimed at making AI systems safe and beneficial"
+      },
+      {
+        "@type": "Thing",
+        name: "AI Alignment",
+        description: "Ensuring AI systems are aligned with human values and intentions"
+      },
+      {
+        "@type": "Thing",
+        name: "Emotional Intelligence Infrastructure",
+        description: "Structured frameworks for AI systems to understand human emotional states"
+      }
+    ],
+    keywords: [
+      "AI safety",
+      "AI alignment",
+      "emotional intelligence",
+      "harm detection",
+      "regulatory states",
+      "gradient classification",
+      "moral reasoning",
+      "computational social science",
+      "NLP",
+      "machine learning"
+    ],
+    mainEntity: {
+      "@type": "SoftwareApplication",
+      name: "TEG-Blue Four-Mode Gradient",
+      applicationCategory: "AI Safety Framework",
+      description: "Computationally legible gradient framework for classifying human regulatory states: Connection, Protection, Control, Domination"
+    }
+  };
+}
+
+// ─── FOUR-MODE GRADIENT PAGE JSON-LD ────────────────
+
+export function generateFourModeGradientJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "The Four-Mode Gradient — TEG-Blue",
+    url: `${BASE_URL}/four-mode-gradient`,
+    description: "The measurement system at the heart of TEG-Blue: four nervous system regulatory states that shape perception, behavior, and relational capacity.",
+    isPartOf: TEG_BLUE_PROJECT,
+    about: {
+      "@type": "DefinedTermSet",
+      name: "Four-Mode Gradient",
+      description: "A continuous gradient of nervous system regulatory states detectable in natural language",
+      hasDefinedTerm: [
+        {
+          "@type": "DefinedTerm",
+          name: "Connection",
+          description: "Safety perceived. Empathy fully available, flexibility high, repair possible.",
+          termCode: "MODE_CONNECTION"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Protection",
+          description: "Threat perceived. Defensive but recoverable. Empathy partial, flexibility reduced.",
+          termCode: "MODE_PROTECTION"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Control",
+          description: "Safety sought through controlling others. Empathy strategic, flexibility limited.",
+          termCode: "MODE_CONTROL"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Domination",
+          description: "Power as only safety. Empathy offline, flexibility minimal, harm normalized.",
+          termCode: "MODE_DOMINATION"
+        }
+      ]
+    },
+    keywords: [
+      "four-mode gradient",
+      "regulatory states",
+      "nervous system",
+      "polyvagal theory",
+      "emotional regulation",
+      "Connection",
+      "Protection",
+      "Control",
+      "Domination",
+      "complexity markers"
+    ]
+  };
+}
+
 // ─── META TAGS GENERATOR ─────────────────────────────
 
 export function generateMetaTags(node) {
