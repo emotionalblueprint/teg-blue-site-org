@@ -2,13 +2,12 @@
   "slug": "developmental-psychology",
   "type": "theory",
   "title": "Developmental Psychology",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Stella Chess, Alexander Thomas, Jerome Kagan, Daniel Stern",
   "domain": "developmental",
 
   "summary": "Infants are born with distinct temperamental patterns — innate behavioral and emotional styles that shape how they engage with the world. These patterns interact with caregiving environments to produce developmental outcomes. Early relational experience creates implicit knowing before explicit memory.",
 
-  "tegBlueUsage": "TEG-Blue integrates temperament research as evidence for the Real Self — innate differences in sensitivity, reactivity, and rhythm that exist before environmental shaping. Stern's work on implicit relational knowing informs why early experience shapes the nervous system before conscious memory: the body learns what is safe before the mind can narrate it.",
 
   "tags": ["developmental", "temperament", "infancy", "implicit knowing", "Stern", "Kagan"],
 

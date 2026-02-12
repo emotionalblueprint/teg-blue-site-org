@@ -2,7 +2,7 @@
   "slug": "validation-study",
   "type": "publication",
   "title": "Detecting Regulatory States in Natural Language",
-  "status": "published",
+  "status": "source-verified",
 
   "summary": "A validation study testing whether the Four-Mode Gradient framework can reliably detect emotional regulatory states in natural language, with implications for therapeutic and educational applications.",
   "keyFinding": "Self-awareness predicts whether individuals escalate toward harm or return to connection when challenged.",

@@ -2,13 +2,12 @@
   "slug": "analytical-psychology",
   "type": "theory",
   "title": "Analytical Psychology",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Carl Jung",
   "domain": "psychology",
 
   "summary": "The psyche contains both conscious and unconscious elements organized around archetypes. The Persona is the social mask we present; the Shadow contains what we reject. Individuation is the lifelong process of integrating these parts into a more complete self.",
 
-  "tegBlueUsage": "TEG-Blue maps Jung's Persona directly onto the Role Mask — the adaptive presentation developed to navigate social environments. The Shadow contains aspects of the Real Self that had to be suppressed for survival. Integration work in TEG-Blue involves creating safety for suppressed parts to re-emerge.",
 
   "tags": ["psychology", "Jung", "Persona", "Shadow", "individuation", "archetypes"],
 

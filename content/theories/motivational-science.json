@@ -2,13 +2,12 @@
   "slug": "motivational-science",
   "type": "theory",
   "title": "Motivational Science",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Jeffrey Gray, Charles Carver, Michael Scheier",
   "domain": "psychology",
 
   "summary": "Behavior is organized around two fundamental motivational systems: approach (moving toward rewards, goals, positive outcomes) and avoidance (moving away from threats, punishments, negative outcomes). These systems have distinct neural substrates and produce different cognitive and emotional patterns.",
 
-  "tegBlueUsage": "TEG-Blue maps approach/avoidance onto the Four-Mode Gradient as the fundamental orientation underlying all four states. Connection is approach-dominant (open, exploratory, reward-sensitive). Protection through Domination represent increasingly avoidance-dominant patterns (threat-focused, defensive, punishment-sensitive). The gradient tracks how avoidance can become chronic and self-reinforcing.",
 
   "tags": ["psychology", "motivation", "approach-avoidance", "BIS/BAS", "self-regulation"],
 

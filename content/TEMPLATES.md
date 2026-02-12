@@ -5,6 +5,33 @@ Copy the relevant template, fill in the fields, and save as `slug-name.json` in 
 
 ---
 
+## Content Status System
+
+The `status` field indicates origin and verification level. This is displayed publicly as a badge on each page.
+
+### Origin Status (for established research)
+
+| Status | Badge Text | Meaning |
+|--------|------------|---------|
+| `established` | "Established" | Recognized research that TEG-Blue builds on |
+
+Use for: theories by established researchers (Porges, Bowlby, etc.), standard terminology (neuroception, attachment, etc.)
+
+### Verification Status (for TEG-Blue original content)
+
+| Status | Badge Text | Meaning |
+|--------|------------|---------|
+| `draft` | "Draft" | Early work, structure may change |
+| `open-review` | "Open for Review" | TEG-Blue synthesis — verification welcome |
+| `source-verified` | "Source Verified" | Key sources manually checked |
+| `community-reviewed` | "Community Reviewed" | Verified by external researcher |
+
+Use for: TEG-Blue original terms (Four-Mode Gradient, Calibration, etc.), publications, our synthesis work.
+
+**Philosophy:** This system tells the story: "Here's what exists (Established). Here's what we built from it (Open for Review). Here's the evidence (Source Verified)."
+
+---
+
 ## Publication Template
 Save to: `/content/publications/your-slug.json`
 
@@ -13,7 +40,7 @@ Save to: `/content/publications/your-slug.json`
   "slug": "",
   "type": "publication",
   "title": "",
-  "status": "published",
+  "status": "open-review",
 
   "summary": "",
   "keyFinding": "",
@@ -66,12 +93,11 @@ Save to: `/content/theories/your-slug.json`
   "slug": "",
   "type": "theory",
   "title": "",
-  "status": "published",
+  "status": "established",
   "originAuthor": "",
   "domain": "",
 
   "summary": "",
-  "tegBlueUsage": "",
 
   "tags": [],
 
@@ -109,7 +135,7 @@ Save to: `/content/glossary/your-slug.json`
   "slug": "",
   "type": "glossary",
   "title": "",
-  "status": "published",
+  "status": "open-review",
   "definition": "",
 
   "summary": "",

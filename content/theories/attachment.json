@@ -2,13 +2,12 @@
   "slug": "attachment",
   "type": "theory",
   "title": "Attachment Theory",
-  "status": "published",
+  "status": "established",
   "originAuthor": "John Bowlby",
   "domain": "psychology",
 
   "summary": "Early relational experiences create internal working models that shape emotional regulation, relational patterns, and threat responses across the lifespan.",
 
-  "tegBlueUsage": "Attachment patterns map onto the four regulatory modes: secure attachment enables flexible return to Connection, anxious attachment creates gravitational pull toward Protection, avoidant attachment can manifest as Control, and disorganized attachment produces oscillation across the gradient. TEG-Blue extends this by tracking how these patterns transmit across generations.",
 
   "tags": ["psychology", "attachment", "internal working models", "relational patterns", "developmental psychology"],
 

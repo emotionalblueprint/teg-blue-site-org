@@ -2,13 +2,12 @@
   "slug": "affective-neuroscience",
   "type": "theory",
   "title": "Affective Neuroscience",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Jaak Panksepp, Antonio Damasio, Lisa Feldman Barrett, Joseph LeDoux",
   "domain": "neuroscience",
 
   "summary": "Emotions are not disruptions to rational thought but fundamental biological systems that evolved to guide behavior. They arise from subcortical circuits that evaluate survival relevance and prepare the body for action before conscious awareness begins.",
 
-  "tegBlueUsage": "TEG-Blue draws on affective neuroscience to ground the Four-Mode Gradient in neurobiological reality. Emotions are treated as data — signals from guidance systems that predate cognition. The framework integrates Panksepp's primary emotional systems, Damasio's somatic markers, Barrett's constructed emotion theory, and LeDoux's threat detection research.",
 
   "tags": ["neuroscience", "emotion", "subcortical", "somatic markers", "constructed emotion", "amygdala"],
 

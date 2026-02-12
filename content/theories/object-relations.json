@@ -2,13 +2,12 @@
   "slug": "object-relations",
   "type": "theory",
   "title": "Object Relations Theory",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Donald Winnicott, Melanie Klein, Ronald Fairbairn",
   "domain": "psychology",
 
   "summary": "The self develops through early relational experience. When caregiving is 'good enough,' the True Self emerges; when it fails, a False Self forms as protective adaptation. Internal representations of relationships (objects) shape all later relating.",
 
-  "tegBlueUsage": "TEG-Blue adopts Winnicott's True Self / False Self distinction as the Real Self / Role Mask. The Real Self is the organism's baseline emotional-somatic configuration. The Role Mask is the protective identity built when authenticity couldn't secure connection. This grounds psychodynamic insight in nervous system biology.",
 
   "tags": ["psychology", "development", "True Self", "False Self", "Winnicott", "relational"],
 

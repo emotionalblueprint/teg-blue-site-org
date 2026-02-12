@@ -2,13 +2,12 @@
   "slug": "psychoanalysis",
   "type": "theory",
   "title": "Psychoanalysis",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Sigmund Freud, Anna Freud",
   "domain": "psychology",
 
   "summary": "The mind employs defense mechanisms to manage anxiety arising from internal conflicts and external threats. These defenses operate unconsciously, protecting the ego from overwhelming affect. Defense is functional — the question is whether it remains flexible or becomes rigid.",
 
-  "tegBlueUsage": "TEG-Blue integrates defense mechanisms as regulatory strategies. Defenses are not pathological — they are the cognitive system's attempt to manage what the nervous system cannot yet process. The Role Mask is organized around characteristic defenses. Rigidity indicates threat lock; flexibility indicates capacity for Connection.",
 
   "tags": ["psychology", "Freud", "defense mechanisms", "unconscious", "ego", "anxiety"],
 

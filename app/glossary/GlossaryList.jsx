@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
-import { SearchInput, TypeTag, ExpandableSection } from "@/src/components";
+import { SearchInput, TypeTag, ExpandableSection, StatusBadge } from "@/src/components";
 
 export default function GlossaryList({ terms = [] }) {
   const [search, setSearch] = useState("");
@@ -138,7 +138,10 @@ function GlossaryTerm({ term }) {
               {term.definition || term.summary}
             </p>
           </div>
-          <TypeTag type={term.type} size="micro" />
+          <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+              <StatusBadge status={term.status} />
+              <TypeTag type={term.type} size="micro" />
+            </div>
         </div>
 
         {/* Tags */}

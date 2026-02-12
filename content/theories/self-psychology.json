@@ -2,13 +2,12 @@
   "slug": "self-psychology",
   "type": "theory",
   "title": "Self Psychology",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Heinz Kohut",
   "domain": "psychology",
 
   "summary": "The self develops through empathic responsiveness from self-objects — others who provide mirroring, idealization, and twinship functions. When these needs go unmet, the self develops compensatory structures to fill the gaps. Narcissistic injury is not vanity but developmental deficit.",
 
-  "tegBlueUsage": "TEG-Blue integrates Kohut's self-object needs as the relational requirements for the Real Self to develop. When mirroring, validation, and attunement are absent, the Role Mask forms as compensatory structure. This reframes narcissistic presentations not as grandiosity but as the architecture built around unmet developmental needs.",
 
   "tags": ["psychology", "Kohut", "self-object", "mirroring", "narcissism", "empathy"],
 

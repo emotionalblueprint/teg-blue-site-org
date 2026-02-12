@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, TRANSITION, SPECTRUM,
@@ -7,6 +8,7 @@ import {
 } from "../styles/tokens";
 import TypeTag from "./TypeTag";
 import StatusBadge from "./StatusBadge";
+import ExpandableSection from "./ExpandableSection";
 
 /**
  * HubContent — Two-section hub layout
@@ -57,7 +59,9 @@ export default function HubContent({ items = [] }) {
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           {foundations.map((item) => (
-            <HubCard key={`${item.type}-${item.slug}`} item={item} />
+            item.type === "theory"
+              ? <TheoryCard key={`${item.type}-${item.slug}`} item={item} />
+              : <HubCard key={`${item.type}-${item.slug}`} item={item} />
           ))}
         </div>
       </section>
@@ -231,5 +235,148 @@ function HubCard({ item }) {
         `}</style>
       </article>
     </Link>
+  );
+}
+
+/* ─── Expandable Theory Card ─── */
+
+function TheoryCard({ item }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const color = getContentTypeColor(item.type);
+
+  return (
+    <article
+      style={{
+        borderRadius: 8,
+        background: BG.card,
+        border: `1px solid ${BORDER.default}`,
+        borderLeft: `3px solid ${color}`,
+        overflow: "hidden",
+      }}
+    >
+      {/* Clickable Header */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          width: "100%",
+          padding: "16px 20px",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          textAlign: "left",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 12,
+        }}
+      >
+        <div style={{ flex: 1 }}>
+          {/* Header Row */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            marginBottom: 6,
+            flexWrap: "wrap",
+          }}>
+            <TypeTag type={item.type} size="small" />
+            {item.status && <StatusBadge status={item.status} />}
+            {item.originAuthor && (
+              <span style={{
+                fontSize: 11,
+                color: TEXT.muted,
+                fontFamily: FONT.mono,
+              }}>
+                {item.originAuthor}
+              </span>
+            )}
+          </div>
+
+          {/* Title */}
+          <h3 style={{
+            fontSize: 15,
+            fontWeight: 600,
+            color: TEXT.primary,
+            margin: 0,
+            lineHeight: 1.3,
+          }}>
+            {item.title}
+          </h3>
+        </div>
+
+        {/* Expand Icon */}
+        <span style={{
+          fontSize: 18,
+          color: TEXT.muted,
+          transition: `transform ${TRANSITION.normal}`,
+          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+        }}>
+          ▾
+        </span>
+      </button>
+
+      {/* Expandable Content */}
+      {isOpen && (
+        <div style={{
+          padding: "0 20px 20px",
+          borderTop: `1px solid ${BORDER.default}`,
+        }}>
+          {/* Summary */}
+          {item.summary && (
+            <p style={{
+              fontSize: 13,
+              lineHeight: 1.7,
+              color: TEXT.secondary,
+              margin: "16px 0",
+            }}>
+              {item.summary}
+            </p>
+          )}
+
+          {/* Content Sections */}
+          {item.content && item.content.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {item.content.map((block) => (
+                <ExpandableSection
+                  key={block.id}
+                  title={block.title}
+                  type={item.type}
+                  defaultOpen={block.defaultOpen}
+                  id={`${item.slug}-${block.id}`}
+                >
+                  <p style={{ margin: 0, paddingTop: 8 }}>{block.content}</p>
+                </ExpandableSection>
+              ))}
+            </div>
+          )}
+
+          {/* Tags */}
+          {item.tags && item.tags.length > 0 && (
+            <div style={{
+              display: "flex",
+              gap: 6,
+              marginTop: 16,
+              flexWrap: "wrap",
+            }}>
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    padding: "2px 8px",
+                    borderRadius: 4,
+                    background: hexToRgba(color, 0.08),
+                    fontSize: 10,
+                    fontFamily: FONT.mono,
+                    color: TEXT.muted,
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </article>
   );
 }

@@ -2,13 +2,12 @@
   "slug": "polyvagal",
   "type": "theory",
   "title": "Polyvagal Theory",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Stephen Porges",
   "domain": "neuroscience",
 
   "summary": "The autonomic nervous system operates through three hierarchical circuits — ventral vagal, sympathetic, and dorsal vagal — that shape our capacity for social engagement, mobilization, and immobilization.",
 
-  "tegBlueUsage": "The Four-Mode Gradient extends polyvagal states: Connection (ventral vagal dominant), Protection (sympathetic activation), Control and Domination (chronic sympathetic/dorsal patterns where the system has learned to manage threat through controlling others rather than returning to safety).",
 
   "tags": ["neuroscience", "autonomic nervous system", "vagal tone", "neuroception", "social engagement"],
 

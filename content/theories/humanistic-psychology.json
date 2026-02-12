@@ -2,13 +2,12 @@
   "slug": "humanistic-psychology",
   "type": "theory",
   "title": "Humanistic Psychology",
-  "status": "published",
+  "status": "established",
   "originAuthor": "Carl Rogers, Abraham Maslow",
   "domain": "psychology",
 
   "summary": "Humans possess an inherent actualizing tendency — a drive toward growth, authenticity, and self-realization. When conditions of worth are imposed, this tendency is constrained. The organismic self knows what it needs; dysfunction arises when external conditions override internal wisdom.",
 
-  "tegBlueUsage": "TEG-Blue integrates Rogers' organismic self as the Real Self — the body's inherent wisdom about safety, need, and value. Conditions of worth map onto the Role Mask: the adaptive identity built when authenticity wasn't safe. The actualizing tendency is what emerges when the nervous system returns to Connection.",
 
   "tags": ["psychology", "self-actualization", "Rogers", "Maslow", "organismic self", "conditions of worth"],
 
