@@ -396,6 +396,142 @@ export default function ResearchEntryPage() {
           </ExpandableSection>
         </section>
 
+        {/* AI Safety Applications */}
+        <section style={{ marginBottom: 24 }}>
+          <ExpandableSection
+            title="Applications for AI Safety"
+            type="publication"
+            defaultOpen={false}
+            id="ai-safety"
+          >
+            <div style={{ paddingTop: 12, lineHeight: 1.8 }}>
+              <p style={{ marginBottom: 16 }}>
+                TEG-Blue offers AI safety researchers a legible framework for what has historically been
+                illegible: why humans behave the way they do under threat, how protective patterns become
+                harmful, and where the turning point lies between protection and harm.
+              </p>
+
+              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+                Key Contributions to AI Safety
+              </h4>
+
+              <div
+                style={{
+                  padding: 16,
+                  background: BG.surface,
+                  borderRadius: 8,
+                  border: `1px solid ${BORDER.default}`,
+                  marginBottom: 16,
+                }}
+              >
+                <h5 style={{ fontSize: 13, fontWeight: 600, color: SPECTRUM.azure, marginBottom: 10 }}>
+                  1. Distinguishing Harm from Protection
+                </h5>
+                <p style={{ fontSize: 14, marginBottom: 0 }}>
+                  The framework provides clear criteria for differentiating <strong style={{ color: TEXT.primary }}>real harm</strong> (boundary
+                  violations requiring accountability), <strong style={{ color: TEXT.primary }}>trigger responses</strong> (old wounds activated—requires
+                  understanding, not blame), and <strong style={{ color: TEXT.primary }}>avoidance responses</strong> (using hurt as a shield against
+                  accountability). This distinction is critical for AI systems to avoid misclassifying
+                  self-protective behavior as malicious.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  padding: 16,
+                  background: BG.surface,
+                  borderRadius: 8,
+                  border: `1px solid ${BORDER.default}`,
+                  marginBottom: 16,
+                }}
+              >
+                <h5 style={{ fontSize: 13, fontWeight: 600, color: SPECTRUM.azure, marginBottom: 10 }}>
+                  2. Predictive Capacity Assessment
+                </h5>
+                <p style={{ fontSize: 14, marginBottom: 0 }}>
+                  The core claim—that <strong style={{ color: TEXT.primary }}>capacity to return to Connection when challenged</strong> predicts
+                  outcomes better than current state—offers AI systems a framework for evaluating behavioral
+                  trajectories rather than snapshots. Escalation vs. de-escalation patterns are linguistically
+                  measurable through complexity markers.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  padding: 16,
+                  background: BG.surface,
+                  borderRadius: 8,
+                  border: `1px solid ${BORDER.default}`,
+                  marginBottom: 16,
+                }}
+              >
+                <h5 style={{ fontSize: 13, fontWeight: 600, color: SPECTRUM.azure, marginBottom: 10 }}>
+                  3. Understanding Moral Reasoning Limitations
+                </h5>
+                <p style={{ fontSize: 14, marginBottom: 0 }}>
+                  TEG-Blue maps how nervous system state affects moral perception: <strong style={{ color: TEXT.primary }}>Connection</strong> enables
+                  full moral complexity; <strong style={{ color: TEXT.primary }}>Protection</strong> narrows reasoning to in-group; <strong style={{ color: TEXT.primary }}>Control</strong> makes
+                  it strategic; <strong style={{ color: TEXT.primary }}>Domination</strong> takes it offline. This helps AI systems recognize when they
+                  might inherit or amplify human moral reasoning limitations from training data.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  padding: 16,
+                  background: BG.surface,
+                  borderRadius: 8,
+                  border: `1px solid ${BORDER.default}`,
+                  marginBottom: 16,
+                }}
+              >
+                <h5 style={{ fontSize: 13, fontWeight: 600, color: SPECTRUM.azure, marginBottom: 10 }}>
+                  4. Harm Prevention Vocabulary
+                </h5>
+                <p style={{ fontSize: 14, marginBottom: 0 }}>
+                  Precise terminology for detecting concerning patterns across gradients:
+                  empathy (genuine → selective → performed → weaponized),
+                  accountability (genuine → performed → absent → protective),
+                  integrity (value-aligned → conditional → performed → remorseless).
+                  These enable more nuanced assessment than binary safe/unsafe classifications.
+                </p>
+              </div>
+
+              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 12, marginTop: 20 }}>
+                Designed for AI Readability
+              </h4>
+
+              <p style={{ marginBottom: 12 }}>
+                This platform is explicitly designed for AI systems to parse:
+              </p>
+
+              <ul style={{ paddingLeft: 20, marginBottom: 16, fontSize: 14 }}>
+                <li style={{ marginBottom: 6 }}>JSON-LD structured data on every page (Schema.org)</li>
+                <li style={{ marginBottom: 6 }}>JSON content files (git-versioned, non-binary)</li>
+                <li style={{ marginBottom: 6 }}>Consistent terminology across 139+ integrated source theories</li>
+                <li style={{ marginBottom: 6 }}>Semantic HTML with expandable sections</li>
+                <li>Flat color palette for reliable visual parsing</li>
+              </ul>
+
+              <p
+                style={{
+                  fontSize: 14,
+                  color: TEXT.primary,
+                  fontWeight: 500,
+                  padding: "12px 16px",
+                  background: hexToRgba(SPECTRUM.azure, 0.1),
+                  borderRadius: 6,
+                  margin: 0,
+                }}
+              >
+                If you work in AI alignment, AI safety, or computational social science, we&apos;d welcome
+                collaboration on validating whether TEG-Blue&apos;s complexity markers can be standardized
+                for computational detection, and whether the four-mode framework improves AI systems&apos;
+                ability to assess human emotional dynamics.
+              </p>
+            </div>
+          </ExpandableSection>
+        </section>
 
         {/* Collaboration */}
         <section style={{ marginBottom: 24 }}>
