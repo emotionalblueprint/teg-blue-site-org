@@ -2,13 +2,15 @@
 
 Open science platform for TEG-Blue research. Designed to be readable by both humans and AI systems.
 
+> **New here?** See the [TEG-Blue Overview](https://github.com/emotionalblueprint/teg-blue-overview) for a complete project map.
+
 ## Two Sites, One Framework
 
 TEG-Blue uses two complementary sites:
 
 | Site | URL | Purpose |
 |------|-----|---------|
-| **teg-blue.com** | [teg-blue-site-com](https://github.com/annaparetas/teg-blue-site-com) | Interactive tools and application for everyday users |
+| **teg-blue.com** | [teg-blue-site-com](https://github.com/emotionalblueprint/teg-blue-site-com) | Interactive tools and application for everyday users |
 | **teg-blue.org** | This repo | Open science platform for researchers |
 
 **.org** is for research — Publications, theoretical foundations, open research questions, collaboration opportunities.
