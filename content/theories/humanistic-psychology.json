@@ -1,0 +1,56 @@
+{
+  "slug": "humanistic-psychology",
+  "type": "theory",
+  "title": "Humanistic Psychology",
+  "status": "published",
+  "originAuthor": "Carl Rogers, Abraham Maslow",
+  "domain": "psychology",
+
+  "summary": "Humans possess an inherent actualizing tendency — a drive toward growth, authenticity, and self-realization. When conditions of worth are imposed, this tendency is constrained. The organismic self knows what it needs; dysfunction arises when external conditions override internal wisdom.",
+
+  "tegBlueUsage": "TEG-Blue integrates Rogers' organismic self as the Real Self — the body's inherent wisdom about safety, need, and value. Conditions of worth map onto the Role Mask: the adaptive identity built when authenticity wasn't safe. The actualizing tendency is what emerges when the nervous system returns to Connection.",
+
+  "tags": ["psychology", "self-actualization", "Rogers", "Maslow", "organismic self", "conditions of worth"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Humanistic Psychology, developed by Rogers and Maslow, proposes that humans have an inherent drive toward growth and self-actualization. Rogers' concept of the organismic self describes an inner knowing that accurately perceives what the organism needs. Problems arise when conditions of worth — external requirements for acceptance — override this inner compass, creating incongruence between experience and self-concept."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Real Self — the emotional-somatic system that processes safety, threat, and need before cognition. Conditions of worth are the requirements that shaped the Role Mask. The actualizing tendency is what emerges when Connection is restored: the system naturally moves toward growth when it feels safe. This explains why unconditional positive regard works — it restores the conditions for the Real Self to emerge."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Rogers, C. R. (1961). On Becoming a Person. Houghton Mifflin. · Rogers, C. R. (1959). A theory of therapy, personality, and interpersonal relationships. In S. Koch (Ed.), Psychology: A Study of a Science, Vol. 3. McGraw-Hill. · Maslow, A. H. (1968). Toward a Psychology of Being. Van Nostrand."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "related",
+      "targetSlug": "object-relations",
+      "targetType": "theory",
+      "label": "Related: Object Relations"
+    },
+    {
+      "type": "related",
+      "targetSlug": "emotion-science",
+      "targetType": "theory",
+      "label": "Related: Emotion Science"
+    },
+    {
+      "type": "defines",
+      "targetSlug": "real-self",
+      "targetType": "glossary",
+      "label": "Informs: Real Self"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}

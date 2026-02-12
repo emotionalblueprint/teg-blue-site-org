@@ -1,0 +1,56 @@
+{
+  "slug": "psychoanalysis",
+  "type": "theory",
+  "title": "Psychoanalysis",
+  "status": "published",
+  "originAuthor": "Sigmund Freud, Anna Freud",
+  "domain": "psychology",
+
+  "summary": "The mind employs defense mechanisms to manage anxiety arising from internal conflicts and external threats. These defenses operate unconsciously, protecting the ego from overwhelming affect. Defense is functional — the question is whether it remains flexible or becomes rigid.",
+
+  "tegBlueUsage": "TEG-Blue integrates defense mechanisms as regulatory strategies. Defenses are not pathological — they are the cognitive system's attempt to manage what the nervous system cannot yet process. The Role Mask is organized around characteristic defenses. Rigidity indicates threat lock; flexibility indicates capacity for Connection.",
+
+  "tags": ["psychology", "Freud", "defense mechanisms", "unconscious", "ego", "anxiety"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Psychoanalysis, founded by Freud and developed by his daughter Anna, identified defense mechanisms as unconscious strategies for managing anxiety. Common defenses include repression, projection, denial, rationalization, and splitting. Defenses protect the ego from affect that would be overwhelming. They operate automatically, outside conscious awareness, and can range from primitive (denial) to mature (sublimation)."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue translates defenses into regulatory terms. Each defense is a cognitive strategy for managing nervous system activation that exceeds the window of tolerance. Denial keeps threatening information from registering. Projection relocates unbearable states onto others. Rationalization recruits cognition to justify what the body has already decided. These are not failures of character but intelligent adaptations. The clinical question becomes: can the system tolerate what it's defending against if safety is increased?"
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Freud, S. (1923). The Ego and the Id. Hogarth Press. · Freud, A. (1936). The Ego and the Mechanisms of Defense. International Universities Press. · Vaillant, G. E. (1992). Ego Mechanisms of Defense: A Guide for Clinicians and Researchers. American Psychiatric Press."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "related",
+      "targetSlug": "object-relations",
+      "targetType": "theory",
+      "label": "Related: Object Relations"
+    },
+    {
+      "type": "related",
+      "targetSlug": "analytical-psychology",
+      "targetType": "theory",
+      "label": "Related: Analytical Psychology"
+    },
+    {
+      "type": "defines",
+      "targetSlug": "role-mask",
+      "targetType": "glossary",
+      "label": "Informs: Role Mask"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}

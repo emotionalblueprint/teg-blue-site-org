@@ -1,0 +1,56 @@
+{
+  "slug": "self-psychology",
+  "type": "theory",
+  "title": "Self Psychology",
+  "status": "published",
+  "originAuthor": "Heinz Kohut",
+  "domain": "psychology",
+
+  "summary": "The self develops through empathic responsiveness from self-objects — others who provide mirroring, idealization, and twinship functions. When these needs go unmet, the self develops compensatory structures to fill the gaps. Narcissistic injury is not vanity but developmental deficit.",
+
+  "tegBlueUsage": "TEG-Blue integrates Kohut's self-object needs as the relational requirements for the Real Self to develop. When mirroring, validation, and attunement are absent, the Role Mask forms as compensatory structure. This reframes narcissistic presentations not as grandiosity but as the architecture built around unmet developmental needs.",
+
+  "tags": ["psychology", "Kohut", "self-object", "mirroring", "narcissism", "empathy"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Kohut's Self Psychology proposes that the self develops through relationships with self-objects — others who provide essential developmental functions. Mirroring self-objects reflect the child's value and vitality. Idealizing self-objects provide strength and calm to internalize. Twinship self-objects offer a sense of belonging. When these needs go chronically unmet, the self doesn't fully cohere. Compensatory structures develop to manage the deficit."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue translates self-object needs into nervous system terms. Mirroring is co-regulation: the caregiver's attunement teaches the child's system that its states matter and can be held. Without it, the system never learns that the Real Self is acceptable. Compensatory structures are Role Mask architecture — built to secure connection when authenticity couldn't. What looks like narcissism is often the visible edge of profound developmental absence."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Kohut, H. (1971). The Analysis of the Self. International Universities Press. · Kohut, H. (1977). The Restoration of the Self. International Universities Press. · Kohut, H. (1984). How Does Analysis Cure? University of Chicago Press."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "related",
+      "targetSlug": "object-relations",
+      "targetType": "theory",
+      "label": "Related: Object Relations"
+    },
+    {
+      "type": "related",
+      "targetSlug": "attachment",
+      "targetType": "theory",
+      "label": "Related: Attachment Theory"
+    },
+    {
+      "type": "defines",
+      "targetSlug": "role-mask",
+      "targetType": "glossary",
+      "label": "Informs: Role Mask"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}
