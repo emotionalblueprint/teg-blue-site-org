@@ -9,8 +9,7 @@ import { SpectrumBar } from "./SharedComponents";
  */
 
 const NAV_ITEMS = [
-  { label: "Hub", href: "/" },
-  { label: "For Researchers", href: "/research-entry" },
+  { label: "For Researchers", href: "/for-researchers" },
   { label: "Publications", href: "/publications" },
   { label: "Theory Map", href: "/theoretical-foundations" },
   { label: "Glossary", href: "/glossary" },
