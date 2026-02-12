@@ -205,6 +205,56 @@ export default function ResearchEntryPage() {
           </div>
         </section>
 
+        {/* What Is Original */}
+        <section style={{ marginBottom: 24 }}>
+          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            What Is Original: The "1 + 2 = 3" Principle
+          </h2>
+          <div
+            style={{
+              padding: 20,
+              background: hexToRgba(SPECTRUM.indigo, 0.06),
+              borderRadius: 10,
+              border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+              marginBottom: 16,
+            }}
+          >
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+              TEG-Blue doesn't invent the building blocks. Polyvagal Theory, Attachment Theory,
+              Affective Neuroscience, Trauma Research — these are established. They are the{" "}
+              <strong style={{ color: TEXT.primary }}>"1" and the "2"</strong>.
+            </p>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+              <strong style={{ color: TEXT.primary }}>What TEG-Blue proposes is the "3"</strong> —
+              specific connections between these established theories:
+            </p>
+            <ul style={{ paddingLeft: 20, marginBottom: 16, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
+              <li style={{ marginBottom: 6 }}>Nervous system regulation → moral perception</li>
+              <li style={{ marginBottom: 6 }}>Attachment patterns → social stratification</li>
+              <li style={{ marginBottom: 6 }}>Protection → domination as a continuous gradient</li>
+              <li>Linguistic complexity → regulatory capacity</li>
+            </ul>
+            <p
+              style={{
+                fontSize: 14,
+                color: TEXT.primary,
+                fontWeight: 500,
+                padding: "12px 16px",
+                background: hexToRgba(SPECTRUM.indigo, 0.1),
+                borderRadius: 6,
+                margin: 0,
+              }}
+            >
+              The individual theories are validated. The connections are our hypothesis.
+              We need the scientific community to help us see if "3" makes sense.
+            </p>
+          </div>
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
+            This is why we say: <em>"The originality is not in the individual theories — it is in
+            the connections between them."</em>
+          </p>
+        </section>
+
         {/* Core Testable Claim */}
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
