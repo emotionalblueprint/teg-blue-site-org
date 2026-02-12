@@ -1,0 +1,61 @@
+{
+  "slug": "pattern-hijack",
+  "type": "glossary",
+  "title": "Pattern Hijack",
+  "status": "published",
+  "definition": "A rapid, involuntary shift into Protection triggered by present stimuli resembling past danger.",
+
+  "summary": "Pattern hijack describes what happens when the nervous system detects a match between current experience and past threat. The shift into defensive mode happens in milliseconds, bypassing conscious thought. By the time awareness registers, the body has already acted.",
+
+  "tags": ["core", "F1", "trauma", "triggers", "defensive response", "nervous system"],
+  "origin": "teg-blue-original",
+  "relatedTerms": ["neuroception", "calibration", "threat-lock"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "Pattern hijack is the nervous system's rapid protective response when present stimuli match patterns associated with past danger. The mechanism: (1) present stimulus matches past threat pattern, (2) neuroception triggers protection response, (3) autonomic activation organizes defense, (4) conscious awareness registers after the fact. It occurs in milliseconds, bypasses conscious thought, and often feels overwhelming or 'out of nowhere.'"
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "TEG-Blue reframes pattern hijack as protective, not pathological. It is not 'overreaction' — it is the system protecting based on learned patterns. The response made sense in the original context; the problem is that the pattern continues to activate in new contexts where it no longer serves. Treatment involves helping the system distinguish past from present, not suppressing the response. The goal is accurate neuroception, not no reaction."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "Integrates LeDoux's work on amygdala-driven threat responses, van der Kolk's research on trauma triggers, and Levine's concept of incomplete defensive responses. The term 'hijack' reflects the subjective experience of losing control, while the mechanism is actually the system doing exactly what it learned to do."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "related",
+      "targetSlug": "trauma-research",
+      "targetType": "theory",
+      "label": "Informed by Trauma Research"
+    },
+    {
+      "type": "related",
+      "targetSlug": "neuroception",
+      "targetType": "glossary",
+      "label": "Triggered by neuroception"
+    },
+    {
+      "type": "related",
+      "targetSlug": "threat-lock",
+      "targetType": "glossary",
+      "label": "Can lead to Threat Lock"
+    },
+    {
+      "type": "related",
+      "targetSlug": "calibration",
+      "targetType": "glossary",
+      "label": "Based on calibration patterns"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}

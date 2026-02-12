@@ -1,0 +1,55 @@
+{
+  "slug": "neuroception",
+  "type": "glossary",
+  "title": "Neuroception",
+  "status": "published",
+  "definition": "The nervous system's continuous, automatic evaluation of safety and threat, operating below conscious awareness.",
+
+  "summary": "Coined by Stephen Porges, neuroception describes how the nervous system scans the environment and internal states to determine: Is this safe, dangerous, or life-threatening? This evaluation happens before conscious thought and shapes what emotions, perceptions, and behaviors become available.",
+
+  "tags": ["core", "F1", "polyvagal", "nervous system", "safety", "threat"],
+  "origin": "established-term",
+  "relatedTerms": ["four-mode-gradient", "regulatory-state", "calibration"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "Neuroception is the nervous system's below-conscious threat detection system. It continuously evaluates three types of signals: exteroceptive (external sensory input), interoceptive (internal body states), and memory-based (pattern-matched associations from past experience). Based on this evaluation, the system prepares the body for engagement, defense, or shutdown — all before conscious awareness begins."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "Neuroception is the mechanism that determines position on the Four-Mode Gradient. When neuroception reads safety, the system moves toward Connection. When it reads threat, the system moves toward Protection. Crucially, neuroception evaluates experienced safety, not objective danger — a stimulus that is objectively safe can trigger threat response if it matches patterns associated with past danger. This explains why 'knowing better' doesn't change reaction."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "Term coined by Stephen Porges as part of Polyvagal Theory. Porges, S. W. (2004). Neuroception: A subconscious system for detecting threats and safety. Zero to Three, 24(5), 19-24. The concept integrates with LeDoux's work on subcortical threat processing and Damasio's somatic marker hypothesis."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "defines",
+      "targetSlug": "polyvagal",
+      "targetType": "theory",
+      "label": "Core concept of Polyvagal Theory"
+    },
+    {
+      "type": "related",
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Determines gradient position"
+    },
+    {
+      "type": "related",
+      "targetSlug": "calibration",
+      "targetType": "glossary",
+      "label": "Related: Calibration"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}

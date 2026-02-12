@@ -1,0 +1,61 @@
+{
+  "slug": "calibration",
+  "type": "glossary",
+  "title": "Calibration",
+  "status": "published",
+  "definition": "The process by which the nervous system learns what signals indicate safety and threat, shaped primarily by early experience.",
+
+  "summary": "The nervous system is not born knowing what is safe or dangerous — it learns through experience. Calibration describes how early environments teach the system what to expect, creating templates that persist into adulthood unless updated through corrective experience.",
+
+  "tags": ["core", "F1", "development", "attachment", "early experience", "nervous system"],
+  "origin": "teg-blue-original",
+  "relatedTerms": ["neuroception", "four-mode-gradient", "threat-lock"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "Calibration is the developmental process through which the nervous system learns its baseline settings. Early environment provides data — consistent safety, inconsistent safety, or chronic threat. The nervous system extracts patterns: what predicts danger, what predicts safety. These patterns become automatic neuroceptive templates that persist into adulthood, shaping what triggers Protection and what enables Connection."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "TEG-Blue uses calibration to explain why some systems default to Connection while others default to Protection, Control, or Domination. When early environments were reliably safe, calibration is accurate: safety cues activate Connection, genuine threat activates Protection, and the system returns to baseline. When early environments were chronically unsafe, the system calibrates to threat: safety cues may be distrusted, ambiguous cues read as threatening, and Protection becomes default. Key reframe: miscalibration is not malfunction — it is accurate adaptation to an inaccurate environment."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "Integrates attachment theory (Bowlby's internal working models), developmental trauma research (van der Kolk, Herman), and Schore's work on right hemisphere development. The concept explains why early relational experience has lasting impact on regulatory patterns and why recalibration requires sustained corrective experience, not insight alone."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "related",
+      "targetSlug": "attachment",
+      "targetType": "theory",
+      "label": "Informed by Attachment Theory"
+    },
+    {
+      "type": "related",
+      "targetSlug": "trauma-research",
+      "targetType": "theory",
+      "label": "Informed by Trauma Research"
+    },
+    {
+      "type": "related",
+      "targetSlug": "neuroception",
+      "targetType": "glossary",
+      "label": "Shapes neuroceptive templates"
+    },
+    {
+      "type": "related",
+      "targetSlug": "threat-lock",
+      "targetType": "glossary",
+      "label": "Related: Threat Lock"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}
