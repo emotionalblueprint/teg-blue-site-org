@@ -415,48 +415,21 @@ export default function ResearchEntryPage() {
         {/* Collaboration */}
         <section style={{ marginBottom: 24 }}>
           <ExpandableSection
-            title="Collaboration Structure"
+            title="Collaboration"
             type="methodology"
             defaultOpen={false}
             id="collaboration"
           >
             <div style={{ paddingTop: 12, lineHeight: 1.8 }}>
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Available Resources
-              </h4>
-              <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
-                <li>A validated theoretical framework with published empirical support</li>
-                <li>A dataset of 10,000+ analyzed conflict narratives ready for further extraction</li>
-                <li>16 designed assessment instruments ready for psychometric validation</li>
-                <li>A clinical assessment methodology (Deep Diver Framework) ready for testing</li>
-                <li>Full theoretical documentation across 12 frameworks</li>
-                <li>Open science infrastructure (Zenodo, OSF, GitHub)</li>
-              </ul>
-
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Expertise Needed
-              </h4>
-              <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
-                <li>Domain expertise in computational linguistics, NLP, psycholinguistics, conflict studies, moral psychology, psychometrics, or clinical psychology</li>
-                <li>Access to participant samples for instrument validation</li>
-                <li>Computational linguistics / NLP expertise for automating complexity marker detection</li>
-                <li>Clinical psychology expertise for testing the Deep Diver assessment framework</li>
-              </ul>
-
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Collaboration Formats
-              </h4>
               <p style={{ marginBottom: 12 }}>
-                Collaboration ranges from consulting on a specific question to co-authoring a publication.
-                All collaborations operate under clear agreements on authorship, attribution, and
-                intellectual property from the start.
+                We welcome researchers who want to work with TEG-Blue&apos;s theoretical architecture.
               </p>
-              <ul style={{ paddingLeft: 20, marginBottom: 0 }}>
-                <li><strong>Specific question review</strong> — Data and documentation available for any research question</li>
-                <li><strong>Co-authorship</strong> — Several publication-ready projects outlined in the Research Development Roadmap</li>
-                <li><strong>Instrument validation</strong> — Emotional Tools are designed and documented, ready for testing</li>
-                <li><strong>Methodological review</strong> — Critical feedback on methodology and findings welcomed</li>
-              </ul>
+              <p style={{ marginBottom: 12 }}>
+                Collaboration requires clear agreements on authorship, attribution, and intellectual property from the start.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                Contact <a href="mailto:research@teg-blue.org" style={{ color: '#3B82F6' }}>research@teg-blue.org</a> to discuss.
+              </p>
             </div>
           </ExpandableSection>
         </section>
