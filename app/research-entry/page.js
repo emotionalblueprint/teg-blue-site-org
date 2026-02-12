@@ -363,49 +363,34 @@ export default function ResearchEntryPage() {
                 Contact <a href="mailto:research@teg-blue.org" style={{ color: '#3B82F6' }}>research@teg-blue.org</a> to discuss.
               </p>
 
-              {/* Question 1 */}
               <QuestionCard
                 number={1}
                 title="What exactly are the complexity markers, and can they be standardized?"
-                gap="Self-awareness is discussed everywhere in psychology but rarely operationalized as a measurable linguistic construct."
-                expertise="Computational linguistics, NLP, psycholinguistics, quantitative psychology"
-                frameworks="F1 (Emotional Gradient), F3 (Cognitive Coherence), F6 (State-Dependent Perception)"
+                frameworks="F1, F3, F6"
               />
 
-              {/* Question 2 */}
               <QuestionCard
                 number={2}
                 title="What do escalation and de-escalation pathways look like in natural language?"
-                gap="Escalation models exist in conflict research, but none map the specific linguistic trajectory from protective responses through to controlling or dominating ones."
-                expertise="Conflict studies, discourse analysis, social psychology, clinical psychology"
-                frameworks="F1 (Emotional Gradient), F7 (Anatomy of Tyranny), F4 (Threat-Based Rule Internalization)"
+                frameworks="F1, F7, F4"
               />
 
-              {/* Question 3 */}
               <QuestionCard
                 number={3}
                 title="Can the four-mode classification be reproduced by independent researchers?"
-                gap="The validation study demonstrated detection computationally. For the framework to become a research tool, it needs formalized criteria and inter-rater reliability testing."
-                expertise="Research methodology, psychometrics, content analysis, behavioral coding"
-                frameworks="F1 (Emotional Gradient), F12 (Two Information Systems)"
+                frameworks="F1, F12"
               />
 
-              {/* Question 4 */}
               <QuestionCard
                 number={4}
                 title="Does regulatory state shape moral perception?"
-                gap="Moral psychology has not examined whether nervous system regulatory state systematically shifts which moral judgments people make."
-                expertise="Moral psychology, social cognition, cognitive bias research"
-                frameworks="F5 (Threat-Driven Worth Sorting), F6 (State-Dependent Perception)"
+                frameworks="F5, F6"
               />
 
-              {/* Question 5 */}
               <QuestionCard
                 number={5}
                 title="Can the Emotional Tools be validated as psychometric instruments?"
-                gap="TEG-Blue includes 16 assessment instruments (gradient scales) that are designed but not yet psychometrically validated."
-                expertise="Psychometrics, clinical psychology, personality assessment, scale development"
-                frameworks="All frameworks; F1 and F8–F10 most directly tested"
+                frameworks="F1, F8–F10"
               />
             </div>
           </ExpandableSection>
@@ -512,7 +497,7 @@ export default function ResearchEntryPage() {
 }
 
 // Question Card Component
-function QuestionCard({ number, title, gap, expertise, frameworks }) {
+function QuestionCard({ number, title, frameworks }) {
   return (
     <div
       style={{
@@ -521,7 +506,7 @@ function QuestionCard({ number, title, gap, expertise, frameworks }) {
         borderRadius: 8,
         border: `1px solid ${BORDER.default}`,
         borderLeft: `3px solid ${SPECTRUM.indigo}`,
-        marginBottom: 16,
+        marginBottom: 12,
       }}
     >
       <h5
@@ -529,22 +514,14 @@ function QuestionCard({ number, title, gap, expertise, frameworks }) {
           fontSize: 14,
           fontWeight: 600,
           color: TEXT.primary,
-          marginBottom: 8,
+          marginBottom: 6,
         }}
       >
-        Question {number}: {title}
+        {number}. {title}
       </h5>
-      <p style={{ fontSize: 13, color: TEXT.secondary, marginBottom: 12 }}>
-        <strong style={{ color: TEXT.muted }}>The gap:</strong> {gap}
+      <p style={{ fontSize: 12, color: TEXT.muted, margin: 0 }}>
+        Related frameworks: {frameworks}
       </p>
-      <div style={{ fontSize: 12, color: TEXT.muted }}>
-        <p style={{ marginBottom: 4 }}>
-          <strong>Relevant expertise:</strong> {expertise}
-        </p>
-        <p style={{ margin: 0 }}>
-          <strong>Related frameworks:</strong> {frameworks}
-        </p>
-      </div>
     </div>
   );
 }
