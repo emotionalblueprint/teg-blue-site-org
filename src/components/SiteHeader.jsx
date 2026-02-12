@@ -11,6 +11,7 @@ import { SpectrumBar } from "./SharedComponents";
 const NAV_ITEMS = [
   { label: "Hub", href: "/" },
   { label: "For Researchers", href: "/research-entry" },
+  { label: "AI Safety", href: "/ai-safety" },
   { label: "Publications", href: "/publications" },
   { label: "Theory Map", href: "/theoretical-foundations" },
   { label: "Glossary", href: "/glossary" },

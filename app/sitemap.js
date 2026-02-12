@@ -30,6 +30,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ai-safety`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/glossary`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
