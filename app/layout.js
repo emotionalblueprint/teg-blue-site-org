@@ -5,8 +5,8 @@ export const metadata = {
     default: 'TEG-Blue Research',
     template: '%s | TEG-Blue Research',
   },
-  description: 'Open science publishing platform for TEG-Blue emotional regulation research. Publications, theories, frameworks, and methodology.',
-  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'research', 'open science', 'emotional intelligence', 'four-mode gradient'],
+  description: 'Open science platform for TEG-Blue research. An integrative architecture connecting 139+ established theories (Polyvagal, Attachment, Trauma) into testable hypotheses. The building blocks are validated; the connections are our hypothesis.',
+  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'research', 'open science', 'emotional intelligence', 'four-mode gradient', 'integrative architecture', 'cross-disciplinary research'],
   authors: [{ name: 'TEG-Blue Research Consortium', url: 'https://teg-blue.org' }],
   creator: 'TEG-Blue Research Consortium',
   publisher: 'TEG-Blue Research Consortium',
@@ -20,12 +20,12 @@ export const metadata = {
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue Research',
     title: 'TEG-Blue Research Platform',
-    description: 'Open science publishing for emotional regulation research. Publications, theories, frameworks, and methodology.',
+    description: 'Open science platform connecting 139+ established theories into testable hypotheses about emotional regulation. The building blocks are validated; the connections need verification.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TEG-Blue Research Platform',
-    description: 'Open science publishing for emotional regulation research.',
+    description: 'Open science platform connecting 139+ established theories into testable hypotheses about emotional regulation.',
     creator: '@tegblue',
   },
   robots: {
@@ -45,6 +45,9 @@ export const metadata = {
     // bing: 'your-bing-verification-code',
   },
   category: 'science',
+  other: {
+    'llms-txt': '/llms.txt',
+  },
 }
 
 // Research Organization structured data
@@ -54,7 +57,7 @@ const organizationJsonLd = {
   name: "TEG-Blue Research Consortium",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "Open science research consortium studying emotional regulation through nervous system understanding. Integrating polyvagal theory, attachment research, and trauma-informed approaches.",
+  description: "Open science research consortium developing TEG-Blue, an integrative architecture connecting 139+ established theories from neuroscience, psychology, and sociology. The building blocks (Polyvagal Theory, Attachment Theory, Trauma Research) are validated; the connections between them are hypotheses requiring scientific verification.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -66,7 +69,9 @@ const organizationJsonLd = {
     "Attachment theory",
     "Nervous system",
     "Trauma research",
-    "Emotional intelligence"
+    "Emotional intelligence",
+    "Cross-disciplinary research",
+    "Integrative frameworks"
   ],
 }
 
@@ -75,7 +80,7 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
-  description: "Open science publishing platform for emotional regulation research",
+  description: "Open science platform for TEG-Blue research. Hosts publications, theoretical foundations mapping 139+ source theories, open research questions, and collaboration opportunities. Designed for both human and AI readability.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research Consortium",
