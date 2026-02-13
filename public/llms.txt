@@ -144,7 +144,7 @@ Organized into five phases:
 - Moral psychology (Jonathan Haidt)
 - Interpersonal Neurobiology (Daniel Siegel)
 
-Full mapping: /theoretical-foundations
+Full mapping: /scientific-foundations (source theories) and /frameworks-map (12 frameworks)
 
 ## Research Directions
 
@@ -340,7 +340,8 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Four-Mode Gradient: https://teg-blue.org/four-mode-gradient
 - Publications: https://teg-blue.org/publications
-- Theoretical Foundations (12 Frameworks): https://teg-blue.org/theoretical-foundations
+- Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
+- Scientific Foundations (139+ Theories): https://teg-blue.org/scientific-foundations
 - Glossary: https://teg-blue.org/glossary
 - Methodology: https://teg-blue.org/methodology
 - Collaborate: https://teg-blue.org/collaborate

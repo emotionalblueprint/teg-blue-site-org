@@ -400,7 +400,7 @@ export default function FourModeGradientPage() {
             </div>
 
             <Link
-              href="/theoretical-foundations"
+              href="/frameworks-map"
               style={{
                 padding: 20,
                 background: hexToRgba(SPECTRUM.cobalt, 0.08),

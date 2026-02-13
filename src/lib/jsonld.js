@@ -322,7 +322,7 @@ export function generateSystemOverviewJsonLd() {
           position: 2,
           name: "Explanatory Layer",
           description: "12 Frameworks (F1-F12) explaining why patterns emerge, how they escalate, and how repair becomes possible. Integrates 139+ established theories.",
-          url: `${BASE_URL}/theoretical-foundations`
+          url: `${BASE_URL}/frameworks-map`
         },
         {
           "@type": "ListItem",
@@ -364,7 +364,7 @@ export function generateTheoreticalFoundationsJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Theoretical Foundations — TEG-Blue Research",
-    url: `${BASE_URL}/theoretical-foundations`,
+    url: `${BASE_URL}/frameworks-map`,
     description: "The 12 Frameworks (F1-F12) that explain why regulatory patterns emerge, how they scale from individual to systemic, and what makes repair possible. Integrates 139+ established theories.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,

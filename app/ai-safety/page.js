@@ -579,7 +579,7 @@ export default function AISafetyPage() {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
-              href="/theoretical-foundations"
+              href="/frameworks-map"
               style={{
                 padding: "12px 24px",
                 background: SPECTRUM.blue,

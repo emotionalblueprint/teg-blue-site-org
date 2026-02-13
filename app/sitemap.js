@@ -18,7 +18,7 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/theoretical-foundations`,
+      url: `${baseUrl}/frameworks-map`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

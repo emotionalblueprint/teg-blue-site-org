@@ -115,7 +115,7 @@ export default function FoundationsPage() {
               title="Explanatory"
               subtitle="12 Frameworks"
               color={SPECTRUM.cobalt}
-              href="/theoretical-foundations"
+              href="/frameworks-map"
             />
             <LayerIntroCard
               number={3}
@@ -216,7 +216,7 @@ export default function FoundationsPage() {
             </p>
             <div style={{ marginTop: 16 }}>
               <Link
-                href="/theoretical-foundations"
+                href="/frameworks-map"
                 style={{
                   fontSize: 14,
                   color: SPECTRUM.blue,
@@ -398,7 +398,7 @@ export default function FoundationsPage() {
               </thead>
               <tbody>
                 <NavRow label="See the measurement layer in detail" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
-                <NavRow label="See the 12 frameworks" href="/theoretical-foundations" linkText="Frameworks →" />
+                <NavRow label="See the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand methods" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Explore AI applications" href="/ai-safety" linkText="AI Safety →" />

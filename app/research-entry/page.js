@@ -258,7 +258,7 @@ export default function ResearchEntryPage() {
               title="Prediction and prevention"
               description="Help map how states shift and escalate across the gradient. Harm often follows predictable progressions from Protection into Control and Domination."
               needs="Escalation pathway coding, longitudinal tracking designs, behavioral outcome prediction under stress and power asymmetry."
-              link="/theoretical-foundations"
+              link="/frameworks-map"
               linkText="Frameworks → (especially F4–F7)"
             />
             <LaneCard
@@ -318,7 +318,7 @@ export default function ResearchEntryPage() {
               <tbody>
                 <NextStepRow step="Understand the system" href="/foundations" label="System Overview →" />
                 <NextStepRow step="See the measurement layer" href="/four-mode-gradient" label="Four-Mode Gradient →" />
-                <NextStepRow step="See the explanatory layer" href="/theoretical-foundations" label="Frameworks →" />
+                <NextStepRow step="See the explanatory layer" href="/frameworks-map" label="Frameworks →" />
                 <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: SPECTRUM.blue }}>Methodology</Link></>} />
                 <NextStepRow step="Work with us" href="/collaborate" label="Collaborate →" />
               </tbody>

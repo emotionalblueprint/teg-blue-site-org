@@ -107,7 +107,7 @@ export default function ResearchHub() {
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 <NavLink href="/foundations" label="System Overview" description="How the parts connect" />
                 <NavLink href="/four-mode-gradient" label="Four-Mode Gradient" description="The measurement layer" />
-                <NavLink href="/theoretical-foundations" label="Frameworks" description="The explanatory layer (12 frameworks)" />
+                <NavLink href="/frameworks-map" label="Frameworks" description="The explanatory layer (12 frameworks)" />
               </div>
             </div>
 
@@ -199,7 +199,7 @@ export default function ResearchHub() {
                   <SiteMapRow href="/research-entry" label="Start Here" description="2-minute orientation + choose a lane" />
                   <SiteMapRow href="/foundations" label="System Overview" description="How the 4 layers fit together" />
                   <SiteMapRow href="/four-mode-gradient" label="Four-Mode Gradient" description="The measurement layer (technical anchor)" />
-                  <SiteMapRow href="/theoretical-foundations" label="Frameworks" description="The 12 explanatory frameworks" />
+                  <SiteMapRow href="/frameworks-map" label="Frameworks" description="The 12 explanatory frameworks" />
                   <SiteMapRow href="/publications" label="Publications" description="Evidence, datasets, validation studies" />
                   <SiteMapRow href="/methodology" label="Methodology" description="How we conduct and report research" />
                   <SiteMapRow href="/ai-safety" label="AI Safety" description="Applications for AI alignment and safety" />

@@ -231,7 +231,7 @@ export default function TheoreticalFoundationsPage() {
         fontFamily: FONT.display,
       }}
     >
-      <SiteHeader currentPath="/theoretical-foundations" />
+      <SiteHeader currentPath="/frameworks-map" />
 
       <main
         id="main-content"
