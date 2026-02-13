@@ -10,13 +10,16 @@ import { SpectrumBar } from "./SharedComponents";
 
 const NAV_ITEMS = [
   { label: "Hub", href: "/" },
-  { label: "For Researchers", href: "/research-entry" },
-  { label: "AI Safety", href: "/ai-safety" },
+  { label: "Start Here", href: "/research-entry" },
+  { label: "System Overview", href: "/foundations" },
+  { label: "Gradient", href: "/four-mode-gradient" },
+  { label: "Frameworks", href: "/theoretical-foundations" },
   { label: "Publications", href: "/publications" },
-  { label: "4-Mode Gradient", href: "/four-mode-gradient" },
-  { label: "12 Frameworks", href: "/theoretical-foundations" },
-  { label: "Glossary", href: "/glossary" },
+  { label: "Methodology", href: "/methodology" },
+  { label: "AI Safety", href: "/ai-safety" },
   { label: "Collaborate", href: "/collaborate" },
+  { label: "Glossary", href: "/glossary" },
+  { label: "About", href: "/about" },
 ];
 
 export default function SiteHeader({ currentPath = "/" }) {

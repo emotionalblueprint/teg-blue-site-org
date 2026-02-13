@@ -39,19 +39,34 @@ export default function AISafetyPage() {
       >
         {/* Hero Section */}
         <header style={{ marginBottom: 64 }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: SPECTRUM.azure,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            AI Safety Application
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
+            <p
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                color: SPECTRUM.azure,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                fontFamily: FONT.mono,
+                margin: 0,
+              }}
+            >
+              AI Safety Application
+            </p>
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: SPECTRUM.indigo,
+                padding: "4px 10px",
+                background: hexToRgba(SPECTRUM.indigo, 0.1),
+                borderRadius: 4,
+              }}
+            >
+              Status: Proposed architecture with early implementation
+            </span>
+          </div>
           <h1
             style={{
               fontSize: 32,
@@ -493,6 +508,37 @@ export default function AISafetyPage() {
               title="Scale Validation"
               description="Do the individual-to-systemic scaling patterns (F1–F12) hold when applied to large-scale online community dynamics and platform-level content analysis?"
             />
+          </div>
+        </section>
+
+        {/* Ethical Constraint */}
+        <section style={{ marginBottom: 56 }}>
+          <div
+            style={{
+              padding: 24,
+              background: hexToRgba(STATE.protection, 0.08),
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${hexToRgba(STATE.protection, 0.2)}`,
+              borderLeft: `3px solid ${STATE.protection}`,
+            }}
+          >
+            <h2
+              style={{
+                fontSize: 16,
+                fontWeight: 700,
+                color: TEXT.primary,
+                marginBottom: 12,
+              }}
+            >
+              Ethical Constraint
+            </h2>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
+              Any AI application of TEG-Blue must respect the trauma-informed data architecture principle:{" "}
+              <strong style={{ color: TEXT.primary }}>
+                the system assumes many difficult behaviors started as Protection Mode survival responses.
+              </strong>{" "}
+              AI systems should not use this framework to shame, profile, or exploit.
+            </p>
           </div>
         </section>
 

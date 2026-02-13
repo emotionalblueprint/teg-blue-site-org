@@ -70,11 +70,26 @@ export default function FourModeGradientPage() {
               color: TEXT.secondary,
               lineHeight: 1.8,
               maxWidth: 640,
-              marginBottom: 24,
+              marginBottom: 16,
             }}
           >
             The observable, testable backbone of TEG-Blue. Four nervous system regulatory states
             that shape what we can perceive, feel, think, and do — detectable in natural language.
+          </p>
+          <p
+            style={{
+              display: "inline-flex",
+              fontSize: 11,
+              fontWeight: 600,
+              fontFamily: FONT.mono,
+              color: SPECTRUM.azure,
+              padding: "4px 10px",
+              background: hexToRgba(SPECTRUM.azure, 0.1),
+              borderRadius: 4,
+              marginBottom: 24,
+            }}
+          >
+            Status: Proposed model with early evidence
           </p>
 
           {/* Gradient bar */}
@@ -435,9 +450,162 @@ export default function FourModeGradientPage() {
           </div>
         </section>
 
+        {/* Deep Diver Framework Preview */}
+        <section style={{ marginBottom: 56 }}>
+          <SectionHeader number="06" title="The Scientific Framework" />
+
+          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8 }}>
+            The Four-Mode Gradient uses a consistent <strong style={{ color: TEXT.primary }}>five-axis structure</strong> across all patterns, designed for clinical and research precision:
+          </p>
+          <p style={{ fontSize: 13, color: TEXT.muted, marginBottom: 24 }}>
+            <em>This framework is available in full detail on teg-blue.com (Deep Diver tier). Below is the structural overview for researchers.</em>
+          </p>
+
+          {/* Pattern Naming */}
+          <div
+            style={{
+              padding: 20,
+              background: BG.card,
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${BORDER.default}`,
+              marginBottom: 20,
+            }}
+          >
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+              Pattern Classification
+            </h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+              <PatternLabel pattern="A" name="Cooperative Regulation" mode="Connection" color={MODE.connection.color} />
+              <PatternLabel pattern="B" name="Mobilization & Defense" mode="Protection" color={MODE.protection.color} />
+              <PatternLabel pattern="C" name="Strategy-Based Regulation" mode="Control" color={MODE.control.color} />
+              <PatternLabel pattern="D" name="Power-Based Regulation" mode="Domination" color={MODE.domination.color} />
+            </div>
+            <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 16, marginBottom: 0, fontFamily: FONT.mono }}>
+              Gradient trajectory: Safety → Threat → Instability → Power-as-Safety
+            </p>
+          </div>
+
+          {/* Five Structural Axes */}
+          <div
+            style={{
+              padding: 20,
+              background: BG.card,
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${BORDER.default}`,
+              marginBottom: 20,
+            }}
+          >
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+              Five Structural Axes
+            </h3>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+              All pattern diagrams and assessment sheets use the same five axes, enabling consistent measurement across states:
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10 }}>
+              <AxisCard number={1} label="Nervous system state" />
+              <AxisCard number={2} label="Biological activation" />
+              <AxisCard number={3} label="Cognitive/perceptual frame" />
+              <AxisCard number={4} label="Empathy/relational logic" />
+              <AxisCard number={5} label="Behavioral expression" />
+            </div>
+          </div>
+
+          {/* Transition Logic */}
+          <div
+            style={{
+              padding: 20,
+              background: BG.card,
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${BORDER.default}`,
+              marginBottom: 20,
+            }}
+          >
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+              Transition Logic
+            </h3>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+              Movement between patterns follows predictable pathways. Movement is <strong>continuous, context-dependent, and bidirectional</strong>.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <TransitionRow from="A" to="B" color={MODE.protection.color} description="Safety drops, protection activates" />
+              <TransitionRow from="B" to="C" color={MODE.control.color} description="Threat becomes ongoing, strategy replaces connection" />
+              <TransitionRow from="C" to="D" color={MODE.domination.color} description="Control becomes survival, power becomes safety" />
+            </div>
+          </div>
+
+          {/* Emotional Tools Overview */}
+          <div
+            style={{
+              padding: 20,
+              background: hexToRgba(SPECTRUM.indigo, 0.06),
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+              borderLeft: `3px solid ${SPECTRUM.indigo}`,
+            }}
+          >
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+              Emotional Tools: The Instrument Panel
+            </h3>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+              The frameworks explain <em>why</em>. The tools tell you <em>where you are</em>, what it means, and <em>what options are next</em>. Practical instruments for real-time emotional navigation, not abstraction.
+            </p>
+            <div style={{ marginBottom: 16 }}>
+              <p style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+                Five Core Gradient Scales
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                {["Hurt", "Accountability", "Control", "Empathy", "Entitlement"].map((scale) => (
+                  <span
+                    key={scale}
+                    style={{
+                      padding: "4px 12px",
+                      background: hexToRgba(SPECTRUM.indigo, 0.12),
+                      borderRadius: 4,
+                      fontSize: 12,
+                      fontFamily: FONT.mono,
+                      color: SPECTRUM.indigo,
+                      fontWeight: 500,
+                    }}
+                  >
+                    {scale}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+                Assessment Dimensions
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 6 }}>
+                {["Repair capacity", "Empathy functionality", "Response to safety", "Control requirement", "Complexity tolerance"].map((dim) => (
+                  <span
+                    key={dim}
+                    style={{
+                      padding: "6px 10px",
+                      background: BG.surface,
+                      borderRadius: 4,
+                      fontSize: 11,
+                      color: TEXT.muted,
+                      border: `1px solid ${BORDER.default}`,
+                    }}
+                  >
+                    {dim}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <p style={{ fontSize: 12, color: TEXT.hint, marginTop: 16, marginBottom: 0 }}>
+              <strong>Status:</strong> These tools are proposed instruments awaiting psychometric validation.{" "}
+              <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+                Collaborators needed →
+              </Link>
+            </p>
+          </div>
+        </section>
+
         {/* Applications */}
         <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="06" title="Applications" />
+          <SectionHeader number="07" title="Applications" />
 
           <div
             style={{
@@ -757,6 +925,107 @@ function ApplicationCard({ title, description }) {
       <p style={{ fontSize: 12, color: TEXT.muted, margin: 0, lineHeight: 1.5 }}>
         {description}
       </p>
+    </div>
+  );
+}
+
+function PatternLabel({ pattern, name, mode, color }) {
+  return (
+    <div
+      style={{
+        padding: "10px 14px",
+        background: hexToRgba(color, 0.08),
+        borderRadius: RADIUS.md,
+        borderLeft: `3px solid ${color}`,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+        <span
+          style={{
+            fontSize: 12,
+            fontWeight: 700,
+            fontFamily: FONT.mono,
+            color: color,
+          }}
+        >
+          Pattern {pattern}
+        </span>
+        <span style={{ fontSize: 11, color: TEXT.muted }}>—</span>
+        <span style={{ fontSize: 12, fontWeight: 600, color: color }}>
+          {mode}
+        </span>
+      </div>
+      <p style={{ fontSize: 11, color: TEXT.muted, margin: 0 }}>
+        {name}
+      </p>
+    </div>
+  );
+}
+
+function AxisCard({ number, label }) {
+  return (
+    <div
+      style={{
+        padding: "10px 12px",
+        background: BG.surface,
+        borderRadius: RADIUS.sm,
+        border: `1px solid ${BORDER.default}`,
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+      }}
+    >
+      <span
+        style={{
+          width: 24,
+          height: 24,
+          borderRadius: "50%",
+          background: hexToRgba(SPECTRUM.azure, 0.15),
+          color: SPECTRUM.azure,
+          fontSize: 11,
+          fontWeight: 700,
+          fontFamily: FONT.mono,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {number}
+      </span>
+      <span style={{ fontSize: 12, color: TEXT.secondary }}>
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function TransitionRow({ from, to, color, description }) {
+  return (
+    <div
+      style={{
+        padding: "10px 14px",
+        background: BG.surface,
+        borderRadius: RADIUS.sm,
+        border: `1px solid ${BORDER.default}`,
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+      }}
+    >
+      <span
+        style={{
+          fontSize: 12,
+          fontWeight: 700,
+          fontFamily: FONT.mono,
+          color: color,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {from} → {to}
+      </span>
+      <span style={{ fontSize: 12, color: TEXT.secondary }}>
+        {description}
+      </span>
     </div>
   );
 }

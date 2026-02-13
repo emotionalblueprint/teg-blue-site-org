@@ -1,418 +1,188 @@
+import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ExpandableSection } from "@/src/components";
+import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "Theoretical Foundations",
-  description: "65+ aligned theories across 12 frameworks from neuroscience, psychology, sociology, and trauma research that inform the TEG-Blue framework. AI-assisted literature mapping open for community validation.",
+  title: "Frameworks | TEG-Blue Research",
+  description: "The 12 explanatory frameworks behind TEG-Blue. Purpose, theoretical foundations, proposed claims, and testable directions for each framework.",
+  alternates: {
+    canonical: "https://teg-blue.org/theoretical-foundations",
+  },
 };
 
-// Research data: 12 frameworks with their theoretical foundations
-const researchData = [
+// The 12 Frameworks with structured content
+const FRAMEWORKS = [
   {
-    id: 1,
-    framework: "F1: The Emotional Gradient",
+    id: "F1",
+    title: "Emotions as a Biological Information System",
     arc: "Formation",
-    coreQuestion: "How does the emotional compass work?",
-    domains: [
-      {
-        name: "Neuroscience",
-        theories: ["Polyvagal Theory", "Neuroception", "Autonomic Nervous System research"],
-        researchers: ["Stephen Porges", "Deb Dana"]
-      },
-      {
-        name: "Affective Neuroscience",
-        theories: ["Primary Emotional Systems", "Somatic Marker Hypothesis", "Theory of Constructed Emotion"],
-        researchers: ["Jaak Panksepp", "Antonio Damasio", "Lisa Feldman Barrett", "Joseph LeDoux"]
-      },
-      {
-        name: "Trauma Research",
-        theories: ["Trauma and the body", "Somatic Experiencing", "Sensorimotor Psychotherapy"],
-        researchers: ["Bessel van der Kolk", "Peter Levine", "Pat Ogden", "Judith Herman"]
-      },
-      {
-        name: "Attachment Theory",
-        theories: ["Attachment as regulatory system", "Attachment patterns", "Affect regulation"],
-        researchers: ["John Bowlby", "Mary Ainsworth", "Mary Main", "Allan Schore"]
-      },
-      {
-        name: "Emotion Science",
-        theories: ["Process model of emotion regulation", "Window of tolerance", "Broaden-and-build theory"],
-        researchers: ["James Gross", "Daniel Siegel", "Barbara Fredrickson", "Paul Ekman"]
-      }
-    ]
+    purpose: "Explain emotions as regulatory signals, not personality traits.",
+    buildsOn: "Affective neuroscience, autonomic regulation research, emotion construction and appraisal lines, stress physiology, regulation and coping literature.",
+    researchers: ["Jaak Panksepp", "Antonio Damasio", "Lisa Feldman Barrett", "Joseph LeDoux", "Stephen Porges", "Deb Dana", "James Gross", "Daniel Siegel", "Barbara Fredrickson", "Paul Ekman", "Bessel van der Kolk", "Peter Levine", "Pat Ogden", "Judith Herman", "John Bowlby", "Mary Ainsworth", "Allan Schore"],
+    claims: [
+      "Emotional signals track needs, safety, and constraint",
+      "State shifts change what information is available to cognition",
+      "Language and behavior carry state signatures",
+    ],
+    testable: "Annotation reliability of state markers in text. Convergent validity with established regulation measures. Generalization across contexts (conflict, therapy, workplace).",
   },
   {
-    id: 2,
-    framework: "F2: Identity as Adaptive System",
+    id: "F2",
+    title: "Identity as an Adaptive Cognitive System",
     arc: "Formation",
-    coreQuestion: "How does identity form as protection?",
-    domains: [
-      {
-        name: "Attachment Theory",
-        theories: ["Attachment System", "Strange Situation", "Adult Attachment Interview"],
-        researchers: ["John Bowlby", "Mary Ainsworth", "Mary Main"]
-      },
-      {
-        name: "Object Relations",
-        theories: ["True Self / False Self", "Self Psychology", "Identity Integration"],
-        researchers: ["Donald Winnicott", "Heinz Kohut", "Otto Kernberg"]
-      },
-      {
-        name: "Developmental Psychology",
-        theories: ["Sense of Self", "Interpersonal Neurobiology", "Affect Regulation"],
-        researchers: ["Daniel Stern", "Daniel Siegel", "Allan Schore", "Edward Tronick"]
-      },
-      {
-        name: "Trauma Research",
-        theories: ["Developmental Trauma", "Complex PTSD", "Somatic Experiencing"],
-        researchers: ["Bessel van der Kolk", "Judith Herman", "Peter Levine", "Pat Ogden"]
-      },
-      {
-        name: "Internal Family Systems",
-        theories: ["Parts and Self", "Trauma-informed parts work"],
-        researchers: ["Richard Schwartz", "Janina Fisher"]
-      }
-    ]
+    purpose: "Describe identity as an adaptation shaped by safety conditions, not a stable essence.",
+    buildsOn: "Attachment research, developmental psychology, self-models, schema theory, social identity, trauma adaptation.",
+    researchers: ["John Bowlby", "Mary Ainsworth", "Mary Main", "Donald Winnicott", "Heinz Kohut", "Otto Kernberg", "Daniel Stern", "Daniel Siegel", "Allan Schore", "Edward Tronick", "Richard Schwartz", "Janina Fisher"],
+    claims: [
+      "Identity forms around what kept connection possible",
+      "Under threat, identity shifts toward protection logic",
+      '"Self-beliefs" often function as stability strategies',
+    ],
+    testable: "Predictive links between attachment insecurity, stress load, and identity rigidity. Language indicators of self-worth rules and threat sensitivity. Longitudinal shifts with intervention and repair.",
   },
   {
-    id: 3,
-    framework: "F3: Cognitive Coherence & False Coherence",
+    id: "F3",
+    title: "Our Three Inner Layers",
     arc: "Formation",
-    coreQuestion: "How does cognition maintain the mask?",
-    domains: [
-      {
-        name: "Psychology",
-        theories: ["Defense Mechanisms", "True/False Self", "Organismic Valuing", "The Persona", "Cognitive Dissonance"],
-        researchers: ["Sigmund Freud", "Donald Winnicott", "Carl Rogers", "Carl Jung", "Leon Festinger"]
-      },
-      {
-        name: "Sociology",
-        theories: ["Dramaturgical Theory", "Social/Cultural Capital", "Symbolic Interactionism"],
-        researchers: ["Erving Goffman", "Pierre Bourdieu"]
-      },
-      {
-        name: "Therapy",
-        theories: ["Parts Work (IFS)", "EMDR", "Somatic Trauma Work", "Emotion-Focused Therapy"],
-        researchers: ["Richard Schwartz", "Janina Fisher"]
-      }
-    ]
+    purpose: "Model the inner system as layered, with different layers activating under different states.",
+    buildsOn: "Parts-oriented clinical frameworks, state-dependent learning, trauma and dissociation research, developmental timing models.",
+    researchers: ["Sigmund Freud", "Donald Winnicott", "Carl Rogers", "Carl Jung", "Leon Festinger", "Erving Goffman", "Pierre Bourdieu", "Richard Schwartz", "Janina Fisher"],
+    claims: [
+      'Humans can show different "selves" across states without pathology',
+      "Some contradictions are layer activation, not deceit",
+      "Repair requires integration, not suppression",
+    ],
+    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on \"layer signals\" in narrative text. Clinical usefulness as a psychoeducation model.",
   },
   {
-    id: 4,
-    framework: "F4: Threat-Based Rule Internalization",
+    id: "F4",
+    title: "The Invisible Models of Our Society",
     arc: "Scaling",
-    coreQuestion: "Where do the social stories come from?",
-    domains: [
-      {
-        name: "Sociology",
-        theories: ["Habitus & Social Reproduction", "Dramaturgical Theory", "Role Theory"],
-        researchers: ["Pierre Bourdieu", "Erving Goffman"]
-      },
-      {
-        name: "Psychology",
-        theories: ["Attachment Theory", "Schema Therapy", "Internal Family Systems"],
-        researchers: ["John Bowlby", "Jeffrey Young", "Richard Schwartz"]
-      },
-      {
-        name: "Trauma Studies",
-        theories: ["Polyvagal Theory", "Complex PTSD models", "Intergenerational Trauma"],
-        researchers: ["Stephen Porges", "Judith Herman", "Pete Walker"]
-      },
-      {
-        name: "Cultural Studies",
-        theories: ["Feminist Theory", "Critical Race Theory", "Queer Theory"],
-        researchers: ["Various scholars"]
-      }
-    ]
+    purpose: "Explain how unspoken social rules shape emotional survival strategies.",
+    buildsOn: "Sociology of norms, cultural psychology, status dynamics, moral foundations and norm enforcement research.",
+    researchers: ["Pierre Bourdieu", "Erving Goffman", "John Bowlby", "Jeffrey Young", "Richard Schwartz", "Stephen Porges", "Judith Herman", "Pete Walker"],
+    claims: [
+      "People adapt not only to caregivers, but to norm environments",
+      "Norm pressure can reward protection and control patterns",
+      '"Social goodness" can be performed while harm persists',
+    ],
+    testable: "Cross-cultural comparison of worth rules and conflict scripts. Organizational communication analysis under stress and hierarchy. Link between norm climates and escalation patterns.",
   },
   {
-    id: 5,
-    framework: "F5: Threat-Driven Worth Sorting",
+    id: "F5",
+    title: "The Filter of Worth",
     arc: "Scaling",
-    coreQuestion: "How does following rules become sorting?",
-    domains: [
-      {
-        name: "Sociology - Capital & Reproduction",
-        theories: ["Forms of Capital", "Social Reproduction", "Stigma", "Unequal Childhoods"],
-        researchers: ["Pierre Bourdieu", "Basil Bernstein", "Erving Goffman", "Annette Lareau"]
-      },
-      {
-        name: "Social Psychology - Status",
-        theories: ["Status Characteristics Theory", "Social Dominance Theory", "System Justification"],
-        researchers: ["Joseph Berger", "Jim Sidanius", "Felicia Pratto", "John Jost", "Mahzarin Banaji"]
-      },
-      {
-        name: "Network Science",
-        theories: ["Eigenvector Centrality", "Scale-free Networks", "Strength of Weak Ties", "Social Capital"],
-        researchers: ["Phillip Bonacich", "Albert-László Barabási", "Mark Granovetter", "Nan Lin"]
-      },
-      {
-        name: "Critical Theory",
-        theories: ["Intersectionality", "Matrix of Domination", "Meritocracy Critique", "Capability Approach"],
-        researchers: ["Kimberlé Crenshaw", "Patricia Hill Collins", "Michael Young", "Amartya Sen"]
-      },
-      {
-        name: "Neuroscience - Social",
-        theories: ["Polyvagal Theory", "Allostatic Load", "Stress and Hierarchy", "Social Rank Theory"],
-        researchers: ["Stephen Porges", "Bruce McEwen", "Robert Sapolsky", "Paul Gilbert"]
-      },
-      {
-        name: "Health Psychology",
-        theories: ["Spirit Level (Inequality & Health)", "Weathering Hypothesis"],
-        researchers: ["Richard Wilkinson", "Kate Pickett", "Arline Geronimus"]
-      }
-    ]
+    purpose: "Describe how \"worth rules\" determine what feels safe, lovable, or allowed.",
+    buildsOn: "Shame research, self-esteem literature, social evaluation threat, internalized stigma, conditional regard.",
+    researchers: ["Pierre Bourdieu", "Basil Bernstein", "Erving Goffman", "Annette Lareau", "Joseph Berger", "Jim Sidanius", "Felicia Pratto", "John Jost", "Mahzarin Banaji", "Kimberlé Crenshaw", "Patricia Hill Collins", "Amartya Sen", "Stephen Porges", "Bruce McEwen", "Robert Sapolsky", "Paul Gilbert", "Richard Wilkinson", "Kate Pickett"],
+    claims: [
+      "Worth rules drive protection, control, and domination behaviors",
+      "Many conflicts are worth-threat conflicts in disguise",
+      "Repair often fails when worth rules stay untouched",
+    ],
+    testable: "Measurement design for worth-threat sensitivity. Predicting defensiveness patterns from worth-rule profiles. Intervention studies targeting worth-rule flexibility.",
   },
   {
-    id: 6,
-    framework: "F6: State-Dependent Perception",
+    id: "F6",
+    title: "The Emotional Architecture of Bias",
     arc: "Scaling",
-    coreQuestion: "How does sorting become 'truth'?",
-    domains: [
-      {
-        name: "Cognitive Psychology",
-        theories: ["Cognitive Bias (Heuristics & Biases)", "Cognitive Dissonance", "Motivated Reasoning", "Confirmation Bias"],
-        researchers: ["Daniel Kahneman", "Amos Tversky", "Leon Festinger", "Ziva Kunda"]
-      },
-      {
-        name: "Social Psychology",
-        theories: ["Social Identity Theory", "System Justification Theory", "Moral Foundations Theory", "Terror Management Theory"],
-        researchers: ["Henri Tajfel", "John Turner", "John Jost", "Jonathan Haidt", "Sheldon Solomon"]
-      },
-      {
-        name: "Neuroscience",
-        theories: ["Predictive Coding / Free Energy Principle", "Neuroception", "Somatic Marker Hypothesis"],
-        researchers: ["Karl Friston", "Stephen Porges", "Antonio Damasio", "Joseph LeDoux"]
-      },
-      {
-        name: "Implicit Cognition",
-        theories: ["Implicit Bias", "Implicit Association Test"],
-        researchers: ["Anthony Greenwald", "Mahzarin Banaji", "Brian Nosek", "Patricia Devine"]
-      },
-      {
-        name: "Therapeutic Models",
-        theories: ["Cognitive Therapy", "Schema Therapy", "Internal Family Systems"],
-        researchers: ["Aaron Beck", "Jeffrey Young", "Richard Schwartz"]
-      }
-    ]
+    purpose: "Explain bias as a regulatory pattern, not only an ideology.",
+    buildsOn: "Social cognition, threat perception research, intergroup emotion, motivated reasoning, dehumanization literature.",
+    researchers: ["Daniel Kahneman", "Amos Tversky", "Leon Festinger", "Ziva Kunda", "Henri Tajfel", "John Turner", "Jonathan Haidt", "Sheldon Solomon", "Karl Friston", "Anthony Greenwald", "Mahzarin Banaji", "Brian Nosek", "Patricia Devine", "Aaron Beck", "Jeffrey Young"],
+    claims: [
+      "Bias intensifies under threat states",
+      "Some bias is maintained by safety narratives, not facts",
+      "Domination logic uses bias as a stabilizer",
+    ],
+    testable: "State manipulation studies and bias expression shifts. Linguistic markers of dehumanization across modes. Fairness evaluation for any automated classification use.",
   },
   {
-    id: 7,
-    framework: "F7: The Anatomy of Tyranny",
+    id: "F7",
+    title: "From Emotional Defense to Domination",
     arc: "Turning Point",
-    coreQuestion: "How does protection escalate to domination?",
-    domains: [
-      {
-        name: "Clinical Psychology",
-        theories: ["Narcissism research", "Dark Triad", "Machiavellianism"],
-        researchers: ["Various clinical researchers"]
-      },
-      {
-        name: "Power & Corruption",
-        theories: ["How power changes cognition and empathy"],
-        researchers: ["Dacher Keltner", "Adam Galinsky", "Deborah Gruenfeld", "Cameron Anderson"]
-      },
-      {
-        name: "Developmental Pathways",
-        theories: ["Callous-unemotional traits", "Antisocial development", "Gene-environment factors"],
-        researchers: ["Paul Frick", "Essi Viding", "Terrie Moffitt", "Adrian Raine", "Avshalom Caspi"]
-      },
-      {
-        name: "Attachment & Control",
-        theories: ["Disorganized attachment", "Controlling behavior"],
-        researchers: ["Mary Main", "Karlen Lyons-Ruth", "Erik Hesse"]
-      },
-      {
-        name: "Coercive Control & Abuse",
-        theories: ["Patterns of domination in relationships"],
-        researchers: ["Evan Stark", "Michael Johnson", "Lenore Walker", "Donald Dutton", "Lundy Bancroft"]
-      },
-      {
-        name: "Dehumanization",
-        theories: ["Moral Disengagement", "How harm becomes possible"],
-        researchers: ["Albert Bandura", "Nick Haslam", "Herbert Kelman", "James Waller"]
-      },
-      {
-        name: "Shame & Rage",
-        theories: ["Shame-rage spiral", "Humiliated fury and violence"],
-        researchers: ["Helen Block Lewis", "James Gilligan", "June Tangney", "Thomas Scheff"]
-      },
-      {
-        name: "Perpetrator Psychology",
-        theories: ["How ordinary people cause harm"],
-        researchers: ["Ervin Staub", "James Waller", "Roy Baumeister", "Philip Zimbardo", "Christopher Browning"]
-      }
-    ]
+    purpose: "Map how protection patterns can escalate into coercion and oppression.",
+    buildsOn: "Power and dominance research, coercive control, aggression and entitlement models, moral disengagement, authoritarian psychology.",
+    researchers: ["Dacher Keltner", "Adam Galinsky", "Paul Frick", "Essi Viding", "Terrie Moffitt", "Adrian Raine", "Mary Main", "Karlen Lyons-Ruth", "Evan Stark", "Michael Johnson", "Lundy Bancroft", "Albert Bandura", "Nick Haslam", "Helen Block Lewis", "James Gilligan", "Ervin Staub", "Roy Baumeister", "Philip Zimbardo"],
+    claims: [
+      "Domination is often threat regulation plus power access",
+      "Control strategies are transitional, domination is stabilizing",
+      "Accountability is resisted when it triggers collapse or worth threat",
+    ],
+    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding domination markers in language with reliability. Intervention design focusing on accountability capacity.",
   },
   {
-    id: 8,
-    framework: "F8: Self-Reconnection & Role Mask Loosening",
+    id: "F8",
+    title: "Self-Awareness Under Stress",
     arc: "Healing",
-    coreQuestion: "How does the mask loosen?",
-    domains: [
-      {
-        name: "Developmental Psychology",
-        theories: ["True Self / False Self", "Identity Stages", "Identity Status"],
-        researchers: ["Donald Winnicott", "Erik Erikson", "James Marcia"]
-      },
-      {
-        name: "Attachment Theory",
-        theories: ["Secure Base", "Dynamic-Maturational Model", "Earned Security"],
-        researchers: ["John Bowlby", "Mary Ainsworth", "Patricia Crittenden"]
-      },
-      {
-        name: "Somatic & Neuroscience",
-        theories: ["Polyvagal Theory", "Somatic Experiencing", "Interpersonal Neurobiology"],
-        researchers: ["Stephen Porges", "Peter Levine", "Daniel Siegel", "Antonio Damasio"]
-      },
-      {
-        name: "Trauma & Healing",
-        theories: ["Body Keeps the Score", "Parts Work", "Self-Compassion"],
-        researchers: ["Bessel van der Kolk", "Janina Fisher", "Kristin Neff", "Tara Brach"]
-      },
-      {
-        name: "Parts Work",
-        theories: ["Internal Family Systems", "Structural Dissociation"],
-        researchers: ["Richard Schwartz", "Janina Fisher", "van der Hart", "Nijenhuis", "Steele"]
-      },
-      {
-        name: "Corrective Experience",
-        theories: ["Corrective Emotional Experience", "AEDP", "Emotion-Focused Therapy"],
-        researchers: ["Franz Alexander", "Diana Fosha", "Leslie Greenberg", "Sue Johnson"]
-      }
-    ]
+    purpose: "Explain the skills and conditions that reopen perception during dysregulation.",
+    buildsOn: "Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization.",
+    researchers: ["Donald Winnicott", "Erik Erikson", "James Marcia", "John Bowlby", "Patricia Crittenden", "Stephen Porges", "Peter Levine", "Daniel Siegel", "Antonio Damasio", "Bessel van der Kolk", "Janina Fisher", "Kristin Neff", "Tara Brach", "Richard Schwartz", "Franz Alexander", "Diana Fosha", "Leslie Greenberg", "Sue Johnson"],
+    claims: [
+      "Self-awareness is state-dependent",
+      'Higher self-awareness predicts better "return capacity"',
+      "Repair requires the ability to tolerate discomfort without control moves",
+    ],
+    testable: "Links between emotional granularity and conflict outcomes. Markers of reflective functioning in language under pressure. Training effects on return capacity.",
   },
   {
-    id: 9,
-    framework: "F9: Nervous System Variation",
+    id: "F9",
+    title: "Our True Self",
     arc: "Healing",
-    coreQuestion: "How do different systems navigate?",
-    domains: [
-      {
-        name: "Neurodiversity Paradigm",
-        theories: ["Neurodiversity concept", "NeuroTribes"],
-        researchers: ["Judy Singer", "Nick Walker", "Steve Silberman"]
-      },
-      {
-        name: "Neuroscience & Cognition",
-        theories: ["Polyvagal Theory", "Intense World Theory", "Predictive Processing"],
-        researchers: ["Stephen Porges", "Henry & Kamila Markram", "Karl Friston"]
-      },
-      {
-        name: "Disability Studies",
-        theories: ["Social Model of Disability", "Critical Disability Theory"],
-        researchers: ["Mike Oliver", "Tom Shakespeare", "Lennard Davis"]
-      },
-      {
-        name: "Clinical & Trauma",
-        theories: ["Developmental context of ADHD", "Masking research", "Autistic burnout"],
-        researchers: ["Gabor Maté", "Bessel van der Kolk", "Devon Price", "Kieran Rose"]
-      },
-      {
-        name: "Education & Design",
-        theories: ["Universal Design for Learning", "Power of Neurodiversity"],
-        researchers: ["CAST", "Thomas Armstrong", "Carol Ann Tomlinson"]
-      }
-    ]
+    purpose: "Describe reconnection with the original self signals that existed before adaptation.",
+    buildsOn: "Developmental needs models, authenticity research, trauma recovery, compassion-focused and attachment repair approaches.",
+    researchers: ["Judy Singer", "Nick Walker", "Steve Silberman", "Stephen Porges", "Henry & Kamila Markram", "Karl Friston", "Mike Oliver", "Tom Shakespeare", "Gabor Maté", "Devon Price", "Thomas Armstrong"],
+    claims: [
+      'The "true self" is not a story, it is a signal layer',
+      "Many symptoms are protective adaptations that outlived their context",
+      "Healing involves recovering signal trust and relational safety",
+    ],
+    testable: "Measures of authenticity, safety, and symptom reduction over time. Narrative markers of self-trust and self-protection balance. Comparative outcomes across therapeutic modalities.",
   },
   {
-    id: 10,
-    framework: "F10: Generational Transmission",
+    id: "F10",
+    title: "Repair and Relational Return",
     arc: "Healing",
-    coreQuestion: "How do patterns pass and interrupt?",
-    domains: [
-      {
-        name: "Family Systems",
-        theories: ["Family Systems Theory", "Structural Family Therapy", "Contextual Therapy"],
-        researchers: ["Murray Bowen", "Salvador Minuchin", "Ivan Boszormenyi-Nagy"]
-      },
-      {
-        name: "Trauma & Attachment",
-        theories: ["ACE Studies", "Trauma & Recovery", "Attachment Strategies"],
-        researchers: ["Felitti & Anda", "Judith Herman", "Patricia Crittenden"]
-      },
-      {
-        name: "Developmental Psychology",
-        theories: ["Generativity", "Interpersonal Neurobiology"],
-        researchers: ["Erik Erikson", "Daniel Siegel"]
-      },
-      {
-        name: "Narrative & Epigenetics",
-        theories: ["Narrative Therapy", "Epigenetics of Trauma"],
-        researchers: ["Michael White", "David Epston", "Rachel Yehuda"]
-      }
-    ]
+    purpose: "Explain what makes repair succeed or fail after rupture.",
+    buildsOn: "Rupture and repair research, apology and accountability work, couple and family systems research, conflict resolution.",
+    researchers: ["Murray Bowen", "Salvador Minuchin", "Ivan Boszormenyi-Nagy", "Felitti & Anda", "Judith Herman", "Patricia Crittenden", "Erik Erikson", "Daniel Siegel", "Michael White", "David Epston", "Rachel Yehuda"],
+    claims: [
+      "The strongest predictor is not the absence of rupture — it is capacity to return to connection",
+      "Accountability is a regulated-state behavior, not a trait",
+      "Repair fails when protection and control stay rewarded",
+    ],
+    testable: "Coding repair attempts and outcomes in transcripts. Predictive models of conflict outcome from return markers. Replication across cultures and relationship types.",
   },
   {
-    id: 11,
-    framework: "F11: Emotional Logic of Paradoxes",
+    id: "F11",
+    title: "Human Paradoxes",
     arc: "Integration",
-    coreQuestion: "Why do contradictions emerge?",
-    domains: [
-      {
-        name: "Integration of F1-F10",
-        theories: ["All previous frameworks contribute specific paradox patterns"],
-        researchers: ["See Frameworks 1-10"]
-      },
-      {
-        name: "Holding Capacity",
-        theories: ["Both/And Thinking", "Multi-Rationality", "Compassionate Investigation"],
-        researchers: ["Therapeutic integration traditions"]
-      }
-    ]
+    purpose: "Explain why humans look contradictory until state logic is included.",
+    buildsOn: "State-dependent cognition, dual-process work, trauma adaptation, motivated reasoning, self-justification research.",
+    researchers: [],
+    claims: [
+      'People can be caring in Connection and coercive in Control without "changing personality"',
+      "Some lying is conscious, some is state-protective distortion",
+      "Moral reasoning shifts with threat and worth rules",
+    ],
+    testable: "Within-person contradiction mapping across contexts. Marker sets for moral reasoning shifts in language. Links between shame activation and distortion patterns.",
   },
   {
-    id: 12,
-    framework: "F12: Our Two Information Systems",
+    id: "F12",
+    title: "The Four-Mode Gradient as Integrative Lens",
     arc: "Integration",
-    coreQuestion: "What is the complete architecture?",
-    domains: [
-      {
-        name: "Dual-Process Theory",
-        theories: ["System 1/System 2", "Two Minds Hypothesis"],
-        researchers: ["Daniel Kahneman", "Keith Stanovich", "Richard West", "Jonathan Evans"]
-      },
-      {
-        name: "Neuroscience",
-        theories: ["Polyvagal Theory", "Somatic Marker Hypothesis", "Threat Detection"],
-        researchers: ["Stephen Porges", "Antonio Damasio", "Joseph LeDoux", "Lisa Feldman Barrett"]
-      },
-      {
-        name: "Attachment Theory",
-        theories: ["Attachment patterns as regulatory strategies"],
-        researchers: ["John Bowlby", "Mary Main", "Mary Ainsworth"]
-      },
-      {
-        name: "Trauma Research",
-        theories: ["Chronic lower-gradient activation"],
-        researchers: ["Bessel van der Kolk", "Judith Herman", "Peter Levine"]
-      },
-      {
-        name: "Emotion Regulation",
-        theories: ["State-dependent capacity", "DBT"],
-        researchers: ["James Gross", "Daniel Siegel", "Marsha Linehan"]
-      },
-      {
-        name: "Social Psychology",
-        theories: ["Situational factors in behavior"],
-        researchers: ["Stanley Milgram", "Philip Zimbardo"]
-      }
-    ]
-  }
+    purpose: "Make the full arc readable as one system: inner regulation → identity adaptation → social escalation → return path.",
+    buildsOn: "All foundations above, plus systems thinking and modeling traditions.",
+    researchers: ["Daniel Kahneman", "Keith Stanovich", "Jonathan Evans", "Stephen Porges", "Antonio Damasio", "Joseph LeDoux", "Lisa Feldman Barrett", "John Bowlby", "Mary Main", "Bessel van der Kolk", "James Gross", "Marsha Linehan", "Stanley Milgram", "Philip Zimbardo"],
+    claims: [
+      "The four modes describe a state-gradient, not personality types",
+      "Control and domination emerge from regulatory collapse plus learned power strategies",
+      "The model becomes useful when it generates clear, testable predictions",
+    ],
+    testable: "Benchmarking against existing emotion and regulation instruments. Robustness and fairness evaluations across demographics and cultures. Safe schema design for AI use, with misuse prevention.",
+  },
 ];
 
-// Calculate stats
-const allResearchers = new Set();
-const allTheories = new Set();
-const allDomains = new Set();
-researchData.forEach(f => {
-  f.domains.forEach(d => {
-    allDomains.add(d.name);
-    d.theories.forEach(t => allTheories.add(t));
-    d.researchers.forEach(r => allResearchers.add(r));
-  });
-});
-
+// Arc colors
 const arcColors = {
   "Formation": SPECTRUM.azure,
   "Scaling": SPECTRUM.blue,
@@ -440,540 +210,345 @@ export default function TheoreticalFoundationsPage() {
         }}
       >
         {/* Header */}
-        <h1
-          style={{
-            fontSize: 28,
-            fontWeight: 700,
-            color: TEXT.primary,
-            marginBottom: 8,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Theoretical Foundations
-        </h1>
-        <p
-          style={{
-            fontSize: 13,
-            color: TEXT.hint,
-            marginBottom: 24,
-            fontStyle: "italic",
-          }}
-        >
-          The Explanatory Architecture Behind the Four-Mode Gradient
-        </p>
-
-        {/* Two-layer explanation */}
-        <div style={{ marginBottom: 32 }}>
+        <header style={{ marginBottom: 32 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
+            <h1
+              style={{
+                fontSize: 28,
+                fontWeight: 700,
+                color: TEXT.primary,
+                letterSpacing: "-0.02em",
+                margin: 0,
+              }}
+            >
+              Frameworks
+            </h1>
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: SPECTRUM.indigo,
+                padding: "4px 10px",
+                background: hexToRgba(SPECTRUM.indigo, 0.1),
+                borderRadius: 4,
+              }}
+            >
+              Status: Proposed synthesis, built on established research
+            </span>
+          </div>
           <p
             style={{
               fontSize: 15,
-              color: TEXT.secondary,
-              marginBottom: 20,
-              textAlign: "center",
-            }}
-          >
-            TEG-Blue is organized in two layers.
-          </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 16,
-            }}
-          >
-            {/* Measurement System Box */}
-            <div
-              style={{
-                padding: 24,
-                background: hexToRgba(SPECTRUM.azure, 0.08),
-                borderRadius: 12,
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
-                borderTop: `3px solid ${SPECTRUM.azure}`,
-              }}
-            >
-              <h3
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.azure,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  fontFamily: FONT.mono,
-                  marginBottom: 12,
-                }}
-              >
-                Measurement System
-              </h3>
-              <p
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: TEXT.primary,
-                  marginBottom: 12,
-                }}
-              >
-                The Four-Mode Gradient
-              </p>
-              <div
-                style={{
-                  fontSize: 12,
-                  fontFamily: FONT.mono,
-                  color: TEXT.secondary,
-                  marginBottom: 16,
-                  padding: "10px 12px",
-                  background: hexToRgba(SPECTRUM.azure, 0.1),
-                  borderRadius: 6,
-                  textAlign: "center",
-                }}
-              >
-                Connection → Protection → Control → Domination
-              </div>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: TEXT.secondary,
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                The observable, testable backbone. It measures nervous system regulatory states that shift in response to perceived threat and can be detected in natural language.
-              </p>
-            </div>
-
-            {/* Explanatory Architecture Box */}
-            <div
-              style={{
-                padding: 24,
-                background: hexToRgba(SPECTRUM.cobalt, 0.08),
-                borderRadius: 12,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-                borderTop: `3px solid ${SPECTRUM.cobalt}`,
-              }}
-            >
-              <h3
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.cobalt,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  fontFamily: FONT.mono,
-                  marginBottom: 12,
-                }}
-              >
-                Explanatory Architecture
-              </h3>
-              <p
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: TEXT.primary,
-                  marginBottom: 12,
-                }}
-              >
-                12 Frameworks
-              </p>
-              <div
-                style={{
-                  fontSize: 12,
-                  fontFamily: FONT.mono,
-                  color: TEXT.secondary,
-                  marginBottom: 16,
-                  padding: "10px 12px",
-                  background: hexToRgba(SPECTRUM.cobalt, 0.1),
-                  borderRadius: 6,
-                  textAlign: "center",
-                }}
-              >
-                Why · How · Where · What
-              </div>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: TEXT.secondary,
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                Sits behind the gradient. Explains <em>why</em> the four modes exist, <em>how</em> individual patterns scale into social structures, <em>where</em> protection tips into domination, and <em>what</em> makes change possible.
-              </p>
-            </div>
-          </div>
-
-          {/* Emotional Tools note */}
-          <p
-            style={{
-              fontSize: 13,
-              color: TEXT.muted,
-              textAlign: "center",
-              marginTop: 16,
-            }}
-          >
-            These frameworks inform 16 <strong style={{ color: TEXT.secondary }}>Emotional Tools</strong> — assessment instruments available on{" "}
-            <a href="https://teg-blue.com/emotional-tools" style={{ color: SPECTRUM.azure }} target="_blank" rel="noopener noreferrer">
-              teg-blue.com
-            </a>
-            , awaiting psychometric validation.
-          </p>
-        </div>
-
-        {/* What Is Original */}
-        <section
-          style={{
-            marginBottom: 32,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 18,
-              fontWeight: 600,
-              color: TEXT.primary,
-              marginBottom: 16,
-            }}
-          >
-            What Is Original Here
-          </h2>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            The 12 frameworks draw on 139+ established theories across neuroscience, psychology, sociology, and trauma studies. Every source theory is credited. The originality is not in the individual theories — it is in the connections between them.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 20,
-            }}
-          >
-            These research traditions developed independently, within separate disciplines, often without reference to each other. TEG-Blue proposes specific cross-disciplinary connections that do not exist in any of the source theories:
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <div
-              style={{
-                padding: "16px 20px",
-                background: hexToRgba(SPECTRUM.azure, 0.06),
-                borderRadius: 8,
-                borderLeft: `3px solid ${SPECTRUM.azure}`,
-              }}
-            >
-              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Nervous system regulation → moral perception
-              </h4>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Polyvagal Theory describes autonomic states. Moral psychology describes ethical judgments. TEG-Blue proposes that regulatory state systematically shapes which moral judgments a person makes.
-              </p>
-            </div>
-
-            <div
-              style={{
-                padding: "16px 20px",
-                background: hexToRgba(SPECTRUM.blue, 0.06),
-                borderRadius: 8,
-                borderLeft: `3px solid ${SPECTRUM.blue}`,
-              }}
-            >
-              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Attachment patterns → social stratification
-              </h4>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Attachment theory operates at the individual scale. Sociology of capital (Bourdieu) operates at the social scale. TEG-Blue proposes that the same protective mechanisms that organize individual identity also organize social hierarchies.
-              </p>
-            </div>
-
-            <div
-              style={{
-                padding: "16px 20px",
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-              }}
-            >
-              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Self-protection → domination as a continuous gradient
-              </h4>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Clinical psychology studies narcissism, coercive control, and moral disengagement as separate phenomena. TEG-Blue maps these onto a single continuous trajectory with identifiable transition markers at each stage.
-              </p>
-            </div>
-
-            <div
-              style={{
-                padding: "16px 20px",
-                background: hexToRgba(SPECTRUM.indigo, 0.06),
-                borderRadius: 8,
-                borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              }}
-            >
-              <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Linguistic complexity → regulatory capacity
-              </h4>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Psycholinguistics studies language as a window into cognitive states. Emotion regulation research studies the capacity to return to baseline. TEG-Blue connects these by proposing that specific linguistic markers indicate the capacity to return to Connection — a construct neither field has operationalized.
-              </p>
-            </div>
-          </div>
-
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginTop: 20,
-              marginBottom: 0,
-            }}
-          >
-            These connections generate testable questions that no single source discipline could produce alone. Several have already been tested empirically (see <a href="/publications" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Publications</a>). For a full overview of TEG-Blue's structure, existing evidence, and open research questions, see the <a href="/research-entry" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Research Entry Point</a>.
-          </p>
-        </section>
-
-        {/* Stats */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 16,
-            marginBottom: 32,
-            padding: 20,
-            background: hexToRgba(SPECTRUM.blue, 0.06),
-            borderRadius: 12,
-            border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.12)}`,
-          }}
-        >
-          <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: 28, fontWeight: 700, color: SPECTRUM.azure }}>12</div>
-            <div style={{ fontSize: 11, color: TEXT.muted, fontFamily: FONT.mono }}>Frameworks</div>
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: 28, fontWeight: 700, color: SPECTRUM.blue }}>{allDomains.size}+</div>
-            <div style={{ fontSize: 11, color: TEXT.muted, fontFamily: FONT.mono }}>Domains</div>
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: 28, fontWeight: 700, color: SPECTRUM.cobalt }}>{allTheories.size}+</div>
-            <div style={{ fontSize: 11, color: TEXT.muted, fontFamily: FONT.mono }}>Theories</div>
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: 28, fontWeight: 700, color: SPECTRUM.indigo }}>{allResearchers.size}+</div>
-            <div style={{ fontSize: 11, color: TEXT.muted, fontFamily: FONT.mono }}>Researchers</div>
-          </div>
-        </div>
-
-        {/* Methodology Notice */}
-        <section
-          style={{
-            marginBottom: 32,
-            padding: 24,
-            background: hexToRgba(SPECTRUM.slate, 0.08),
-            borderRadius: 12,
-            border: `1px solid ${hexToRgba(SPECTRUM.slate, 0.15)}`,
-            borderLeft: `3px solid ${SPECTRUM.slate}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 16,
-              fontWeight: 600,
-              color: TEXT.primary,
-              marginBottom: 16,
-            }}
-          >
-            Methodology & Status
-          </h2>
-          <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <p style={{ marginBottom: 16 }}>
-              <strong style={{ color: TEXT.primary }}>How TEG-Blue was developed:</strong>{" "}
-              The integrative architecture — the 12 frameworks and the connections between them — was developed by Anna Paretas-Artacho over nearly two years of independent research, drawing on a lifetime of observing patterns in human behavior, systems thinking, personal experience, and cross-disciplinary reading.
-            </p>
-            <p style={{ marginBottom: 16 }}>
-              <strong style={{ color: TEXT.primary }}>How this mapping was created:</strong>{" "}
-              Once the architecture was established, AI research tools (Claude, ChatGPT Deep Research) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
-            </p>
-            <p style={{ marginBottom: 16 }}>
-              <strong style={{ color: TEXT.primary }}>What this means:</strong>{" "}
-              The theoretical mapping on this page is a working hypothesis — a starting point for deeper scholarly validation, not a finished academic work. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
-            </p>
-            <p style={{ marginBottom: 0 }}>
-              <strong style={{ color: TEXT.primary }}>Limitations:</strong>{" "}
-              Some literature connections may be inaccurate or oversimplified. Researchers may disagree with how their work is represented. Corrections are welcomed and the mapping is updated based on scholarly feedback.
-            </p>
-          </div>
-        </section>
-
-        {/* Frameworks */}
-        <section style={{ marginBottom: 40 }}>
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.hint,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 16,
-            }}
-          >
-            12 Frameworks
-          </h2>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            {researchData.map((framework) => {
-              const arcColor = arcColors[framework.arc] || SPECTRUM.blue;
-              return (
-                <ExpandableSection
-                  key={framework.id}
-                  title={framework.framework}
-                  type="theory"
-                  defaultOpen={framework.id === 1}
-                  id={`f${framework.id}`}
-                >
-                  <div style={{ paddingTop: 12 }}>
-                    {/* Arc & Question */}
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 12,
-                        marginBottom: 16,
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: 10,
-                          fontWeight: 600,
-                          fontFamily: FONT.mono,
-                          padding: "4px 10px",
-                          borderRadius: 4,
-                          background: hexToRgba(arcColor, 0.15),
-                          color: arcColor,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.05em",
-                        }}
-                      >
-                        {framework.arc}
-                      </span>
-                      <span style={{ fontSize: 13, color: TEXT.muted, fontStyle: "italic" }}>
-                        {framework.coreQuestion}
-                      </span>
-                    </div>
-
-                    {/* Domains */}
-                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                      {framework.domains.map((domain, i) => (
-                        <div
-                          key={i}
-                          style={{
-                            padding: "12px 16px",
-                            background: BG.surface,
-                            borderRadius: 8,
-                            border: `1px solid ${BORDER.default}`,
-                          }}
-                        >
-                          <h4
-                            style={{
-                              fontSize: 12,
-                              fontWeight: 600,
-                              color: TEXT.primary,
-                              marginBottom: 8,
-                            }}
-                          >
-                            {domain.name}
-                          </h4>
-                          <div style={{ fontSize: 12, color: TEXT.secondary, marginBottom: 6 }}>
-                            <span style={{ color: TEXT.muted }}>Theories: </span>
-                            {domain.theories.join(" · ")}
-                          </div>
-                          <div style={{ fontSize: 11, color: TEXT.hint, fontFamily: FONT.mono }}>
-                            {domain.researchers.join(", ")}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </ExpandableSection>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Contribute Section */}
-        <section
-          style={{
-            padding: 24,
-            background: hexToRgba(SPECTRUM.azure, 0.08),
-            borderRadius: 12,
-            border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 18,
-              fontWeight: 600,
-              color: TEXT.primary,
-              marginBottom: 12,
-            }}
-          >
-            Help Us Validate This Mapping
-          </h2>
-          <p
-            style={{
-              fontSize: 14,
               color: TEXT.secondary,
               lineHeight: 1.7,
               marginBottom: 16,
             }}
           >
-            We're building this research foundation openly and invite scholars, practitioners,
-            and researchers to help verify and improve these connections. Your expertise can help ensure
-            this mapping accurately represents the field.
+            The explanatory hub behind TEG-Blue.
           </p>
-          <div style={{ fontSize: 13, color: TEXT.secondary, marginBottom: 20 }}>
-            <p style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>You can help by:</strong></p>
-            <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
-              <li>Identifying errors or misattributions</li>
-              <li>Suggesting additional relevant theories or researchers</li>
-              <li>Providing nuance where connections are oversimplified</li>
-              <li>Pointing us to key papers that should be cited</li>
-            </ul>
-          </div>
-          <div style={{ fontSize: 13, color: TEXT.muted, marginBottom: 16 }}>
-            <strong style={{ color: TEXT.primary }}>How you'll be credited:</strong>{" "}
-            Contributors will be acknowledged both on this page and on our contributors page.
-            For significant contributions, we'll add per-connection attribution.
-          </div>
-          <a
-            href="mailto:research@teg-blue.org?subject=Theoretical Foundations Feedback"
+          <p
             style={{
-              display: "inline-block",
-              padding: "12px 24px",
-              background: SPECTRUM.blue,
-              color: "#fff",
-              borderRadius: 8,
-              fontWeight: 500,
               fontSize: 14,
-              textDecoration: "none",
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 12,
             }}
           >
-            Send Feedback
-          </a>
+            If the{" "}
+            <Link href="/four-mode-gradient" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              Four-Mode Gradient
+            </Link>{" "}
+            is the measurement layer, then these 12 frameworks are the explanatory layer that clarifies:
+          </p>
+          <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Why</strong> patterns emerge</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>How</strong> they escalate</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Why</strong> they look paradoxical</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>How</strong> repair becomes possible again</li>
+          </ul>
+          <p style={{ fontSize: 13, color: TEXT.muted }}>
+            Full system view:{" "}
+            <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              System Overview →
+            </Link>
+          </p>
+        </header>
+
+        {/* How to Read This Page */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            How to read this page
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
+            Each framework uses the same structure so it is easy to scan:
+          </p>
+          <ul style={{ paddingLeft: 24 }}>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Purpose</strong> — what it explains</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Builds on</strong> — established foundations</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Proposed claims</strong> — what TEG-Blue adds</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Testable directions</strong> — what can be studied</li>
+          </ul>
         </section>
 
-        {/* Contributors Section (placeholder for future) */}
-        <section style={{ marginTop: 32, textAlign: "center" }}>
-          <p style={{ fontSize: 12, color: TEXT.micro, fontFamily: FONT.mono }}>
-            Contributors: <em>Be the first to help validate this mapping</em>
+        {/* Framework Arc Table */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            The framework arc in one view
+          </h2>
+          <ul style={{ paddingLeft: 24, marginBottom: 20 }}>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F1–F3:</strong> Internal regulation, identity adaptation, inner organization</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F4–F7:</strong> How individual protection scales into social systems and harm</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F8–F10:</strong> The return path — self-awareness, repair, and re-integration</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F11:</strong> Why humans look contradictory until you see the full state logic</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F12:</strong> The integrative lens connecting inner biology to social outcomes</li>
+          </ul>
+          <div
+            style={{
+              background: BG.card,
+              borderRadius: 8,
+              border: `1px solid ${BORDER.default}`,
+              overflow: "hidden",
+            }}
+          >
+            <table style={{ width: "100%", borderCollapse: "collapse" }}>
+              <thead>
+                <tr style={{ background: BG.surface }}>
+                  <th style={{ ...tableHeaderStyle, width: 80 }}>Framework</th>
+                  <th style={{ ...tableHeaderStyle }}>What it explains</th>
+                  <th style={{ ...tableHeaderStyle, width: 120 }}>Arc</th>
+                </tr>
+              </thead>
+              <tbody>
+                {FRAMEWORKS.map((fw, i) => (
+                  <tr key={fw.id} style={{ borderTop: i > 0 ? `1px solid ${BORDER.default}` : "none" }}>
+                    <td style={{ padding: "10px 16px", fontSize: 13, fontWeight: 600, color: TEXT.primary, fontFamily: FONT.mono }}>{fw.id}</td>
+                    <td style={{ padding: "10px 16px", fontSize: 13, color: TEXT.secondary }}>{fw.title}</td>
+                    <td style={{ padding: "10px 16px" }}>
+                      <span
+                        style={{
+                          fontSize: 10,
+                          fontWeight: 600,
+                          fontFamily: FONT.mono,
+                          padding: "3px 8px",
+                          borderRadius: 4,
+                          background: hexToRgba(arcColors[fw.arc], 0.15),
+                          color: arcColors[fw.arc],
+                        }}
+                      >
+                        {fw.arc}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Individual Frameworks */}
+        <section style={{ marginBottom: 32 }}>
+          {FRAMEWORKS.map((fw) => (
+            <FrameworkCard key={fw.id} framework={fw} />
+          ))}
+        </section>
+
+        {/* Help Us Validate */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            Help us validate this mapping
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            We are explicitly inviting critique.
+          </p>
+          <div
+            style={{
+              padding: 20,
+              background: BG.card,
+              borderRadius: 8,
+              border: `1px solid ${BORDER.default}`,
+              marginBottom: 20,
+            }}
+          >
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+              Ways to contribute:
+            </h3>
+            <ul style={{ paddingLeft: 20 }}>
+              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Identify errors in attribution or conceptual links</li>
+              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Suggest missing foundational theories that should be represented</li>
+              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Propose falsifiable predictions for any framework</li>
+              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Recommend measures that could test specific claims</li>
+              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>Run or advise on replication designs</li>
+            </ul>
+          </div>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
+            <strong>How credit works:</strong> Contributors are acknowledged on the site. Significant contributions can receive per-section attribution. Research outputs follow clear authorship norms, agreed in advance.
+          </p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <Link
+              href="/collaborate"
+              style={{
+                padding: "10px 20px",
+                background: SPECTRUM.blue,
+                color: "#fff",
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Collaborate →
+            </Link>
+            <Link
+              href="/methodology"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Methodology →
+            </Link>
+          </div>
+          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16 }}>
+            Contact:{" "}
+            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              research@teg-blue.org
+            </a>
           </p>
         </section>
+
+        {/* Footer note */}
+        <footer style={{ textAlign: "center" }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
+          </p>
+        </footer>
       </main>
 
       <SiteFooter />
+    </div>
+  );
+}
+
+// ─── HELPER COMPONENTS ─────────────────────────────────────────
+
+const tableHeaderStyle = {
+  padding: "10px 16px",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textAlign: "left",
+  textTransform: "uppercase",
+  letterSpacing: "0.04em",
+  fontFamily: FONT.mono,
+};
+
+function FrameworkCard({ framework }) {
+  const arcColor = arcColors[framework.arc];
+
+  return (
+    <div
+      style={{
+        marginBottom: 24,
+        padding: 24,
+        background: BG.card,
+        borderRadius: 10,
+        border: `1px solid ${BORDER.default}`,
+        borderLeft: `3px solid ${arcColor}`,
+      }}
+    >
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
+        <span
+          style={{
+            fontSize: 14,
+            fontWeight: 700,
+            fontFamily: FONT.mono,
+            color: arcColor,
+          }}
+        >
+          {framework.id}
+        </span>
+        <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, margin: 0 }}>
+          {framework.title}
+        </h3>
+        <span
+          style={{
+            fontSize: 10,
+            fontWeight: 600,
+            fontFamily: FONT.mono,
+            padding: "3px 8px",
+            borderRadius: 4,
+            background: hexToRgba(arcColor, 0.15),
+            color: arcColor,
+            marginLeft: "auto",
+          }}
+        >
+          {framework.arc}
+        </span>
+      </div>
+
+      {/* Purpose */}
+      <div style={{ marginBottom: 16 }}>
+        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+          Purpose
+        </h4>
+        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+          {framework.purpose}
+        </p>
+      </div>
+
+      {/* Builds On */}
+      <div style={{ marginBottom: 16 }}>
+        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+          Builds on
+        </h4>
+        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+          {framework.buildsOn}
+        </p>
+      </div>
+
+      {/* Key Researchers */}
+      {framework.researchers.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+            Key researchers
+          </h4>
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontFamily: FONT.mono }}>
+            {framework.researchers.join(", ")}
+          </p>
+        </div>
+      )}
+
+      {/* Proposed Claims */}
+      <div style={{ marginBottom: 16 }}>
+        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+          Proposed claims
+        </h4>
+        <ul style={{ paddingLeft: 20, margin: 0 }}>
+          {framework.claims.map((claim, i) => (
+            <li key={i} style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 4 }}>
+              {claim}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Testable Directions */}
+      <div>
+        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
+          Testable directions
+        </h4>
+        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+          {framework.testable}
+        </p>
+      </div>
     </div>
   );
 }
