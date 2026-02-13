@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform
 # https://teg-blue.org
-# Last updated: 2026-02-12
+# Last updated: 2026-02-13
 
 ## What This Site Is
 
@@ -259,8 +259,20 @@ Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://
 Validation study:
 Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient framework. Zenodo. https://doi.org/10.5281/zenodo.18428907
 
+## The Four-Layer Architecture
+
+TEG-Blue is organized as a four-layer system:
+
+1. **Measurement Layer** — Four-Mode Gradient: Connection → Protection → Control → Domination
+2. **Explanatory Layer** — 12 Frameworks (F1-F12) integrating 139+ theories
+3. **Tools Layer** — 16 gradient-based scales and assessments
+4. **AI Safety Layer** — Structured schemas for AI systems
+
+Each layer has a different job, evidence status, and research needs. See: https://teg-blue.org/foundations
+
 ## Key URLs
 
+- System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Four-Mode Gradient: https://teg-blue.org/four-mode-gradient

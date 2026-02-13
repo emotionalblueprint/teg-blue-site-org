@@ -1,12 +1,41 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
   title: "System Overview | TEG-Blue Research",
-  description: "How the parts fit together. TEG-Blue is organized as a layered system: measurement, explanatory frameworks, emotional tools, and AI safety layer.",
+  description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement (Four-Mode Gradient), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+  keywords: [
+    "TEG-Blue architecture",
+    "emotional regulation system",
+    "four-mode gradient",
+    "12 frameworks",
+    "emotional tools",
+    "AI safety",
+    "nervous system regulation",
+    "measurement system",
+    "explanatory framework",
+    "integrative architecture",
+    "trauma-informed",
+    "computational emotion",
+    "polyvagal theory",
+    "attachment theory"
+  ],
   alternates: {
     canonical: "https://teg-blue.org/foundations",
+  },
+  openGraph: {
+    title: "System Overview — TEG-Blue Research",
+    description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement, explanatory frameworks, emotional tools, and AI safety infrastructure.",
+    url: "https://teg-blue.org/foundations",
+    type: "article",
+    siteName: "TEG-Blue Research",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "System Overview — TEG-Blue Research",
+    description: "How the parts fit together. TEG-Blue's four-layer architecture: measurement, frameworks, tools, and AI safety.",
   },
 };
 
@@ -387,6 +416,23 @@ export default function FoundationsPage() {
       </main>
 
       <SiteFooter />
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSystemOverviewJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "System Overview", url: "/foundations" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

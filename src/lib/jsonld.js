@@ -251,6 +251,131 @@ export function generateFourModeGradientJsonLd() {
   };
 }
 
+// ─── SYSTEM OVERVIEW PAGE JSON-LD ────────────────────
+
+export function generateSystemOverviewJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "System Overview — TEG-Blue Research",
+    url: `${BASE_URL}/foundations`,
+    description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement (Four-Mode Gradient), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+    isPartOf: TEG_BLUE_PROJECT,
+    about: {
+      "@type": "Thing",
+      name: "TEG-Blue Architecture",
+      description: "A layered system for understanding and measuring emotional regulation patterns"
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "TEG-Blue Four-Layer Architecture",
+      description: "The complete TEG-Blue system organized as four interconnected layers",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Measurement Layer",
+          description: "Four-Mode Gradient: Connection → Protection → Control → Domination. Observable nervous system states detectable in natural language.",
+          url: `${BASE_URL}/four-mode-gradient`
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Explanatory Layer",
+          description: "12 Frameworks (F1-F12) explaining why patterns emerge, how they escalate, and how repair becomes possible. Integrates 139+ established theories.",
+          url: `${BASE_URL}/theoretical-foundations`
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Emotional Tools Layer",
+          description: "16 gradient-based scales and assessments translating the system into practical instruments for individuals, practitioners, and clinical settings.",
+          url: "https://teg-blue.com/emotional-tools"
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "AI Safety Layer",
+          description: "Structured schemas for AI systems: JSON-LD data, semantic HTML, gradient classifications replacing binary safe/unsafe models.",
+          url: `${BASE_URL}/ai-safety`
+        }
+      ]
+    },
+    keywords: [
+      "TEG-Blue architecture",
+      "emotional regulation system",
+      "four-mode gradient",
+      "12 frameworks",
+      "emotional tools",
+      "AI safety",
+      "nervous system regulation",
+      "measurement system",
+      "explanatory framework",
+      "integrative architecture",
+      "trauma-informed",
+      "computational emotion"
+    ]
+  };
+}
+
+// ─── THEORETICAL FOUNDATIONS PAGE JSON-LD ────────────
+
+export function generateTheoreticalFoundationsJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Theoretical Foundations — TEG-Blue Research",
+    url: `${BASE_URL}/theoretical-foundations`,
+    description: "The 12 Frameworks (F1-F12) that explain why regulatory patterns emerge, how they scale from individual to systemic, and what makes repair possible. Integrates 139+ established theories.",
+    isPartOf: TEG_BLUE_PROJECT,
+    about: {
+      "@type": "DefinedTermSet",
+      name: "TEG-Blue 12 Frameworks",
+      description: "A connected arc of frameworks explaining emotional regulation patterns",
+      hasDefinedTerm: [
+        {
+          "@type": "DefinedTerm",
+          name: "Formation Arc (F1-F3)",
+          description: "How nervous system states form and how identity organizes around them"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Scaling Arc (F4-F6)",
+          description: "How individual regulation patterns become social structures"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Turning Point (F7)",
+          description: "How protection escalates into domination"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Healing Arc (F8-F10)",
+          description: "How patterns shift, including neurodivergent pathways"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Integration Arc (F11-F12)",
+          description: "The complete architecture and its internal logic"
+        }
+      ]
+    },
+    keywords: [
+      "12 frameworks",
+      "theoretical foundations",
+      "emotional regulation theory",
+      "polyvagal theory",
+      "attachment theory",
+      "trauma research",
+      "nervous system",
+      "formation",
+      "scaling",
+      "healing",
+      "integration"
+    ]
+  };
+}
+
 // ─── META TAGS GENERATOR ─────────────────────────────
 
 export function generateMetaTags(node) {
