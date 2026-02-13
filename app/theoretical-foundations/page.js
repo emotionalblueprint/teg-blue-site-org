@@ -1,184 +1,215 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-
-export const metadata = {
-  title: "Frameworks | TEG-Blue Research",
-  description: "The 12 explanatory frameworks behind TEG-Blue. Purpose, theoretical foundations, proposed claims, and testable directions for each framework.",
-  alternates: {
-    canonical: "https://teg-blue.org/theoretical-foundations",
-  },
-};
 
 // The 12 Frameworks with structured content
 const FRAMEWORKS = [
   {
     id: "F1",
-    title: "Emotions as a Biological Information System",
+    displayName: "Emotions as a Biological Information System",
+    title: "The Emotional Gradient",
+    subtitle: "Foundation of Emotional Experience",
     arc: "Formation",
-    purpose: "Explain emotions as regulatory signals, not personality traits.",
-    buildsOn: "Affective neuroscience, autonomic regulation research, emotion construction and appraisal lines, stress physiology, regulation and coping literature.",
-    researchers: ["Jaak Panksepp", "Antonio Damasio", "Lisa Feldman Barrett", "Joseph LeDoux", "Stephen Porges", "Deb Dana", "James Gross", "Daniel Siegel", "Barbara Fredrickson", "Paul Ekman", "Bessel van der Kolk", "Peter Levine", "Pat Ogden", "Judith Herman", "John Bowlby", "Mary Ainsworth", "Allan Schore"],
+    purpose: "Explain how the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.",
+    summary: "How the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.",
+    buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
     claims: [
-      "Emotional signals track needs, safety, and constraint",
-      "State shifts change what information is available to cognition",
-      "Language and behavior carry state signatures",
+      "Emotional signals track needs, safety, and constraint — they are data, not dysfunction",
+      "State-dependent capacity is neurobiological: what can be perceived, thought, and done varies with regulatory state",
+      "The same emotion has two expressions depending on pattern position (safety vs. threat)",
+      "Calibration through early experience shapes the neuroceptive template",
     ],
-    testable: "Annotation reliability of state markers in text. Convergent validity with established regulation measures. Generalization across contexts (conflict, therapy, workplace).",
+    testable: "Annotation reliability of state markers in text. Convergent validity with established regulation measures. State manipulation studies and capacity shifts. Generalization across contexts.",
   },
   {
     id: "F2",
-    title: "Identity as an Adaptive Cognitive System",
+    displayName: "Identity as an Adaptive Cognitive System",
+    title: "The Ego-Persona Construct",
+    subtitle: "Attachment-Calibrated Identity Formation",
     arc: "Formation",
-    purpose: "Describe identity as an adaptation shaped by safety conditions, not a stable essence.",
-    buildsOn: "Attachment research, developmental psychology, self-models, schema theory, social identity, trauma adaptation.",
-    researchers: ["John Bowlby", "Mary Ainsworth", "Mary Main", "Donald Winnicott", "Heinz Kohut", "Otto Kernberg", "Daniel Stern", "Daniel Siegel", "Allan Schore", "Edward Tronick", "Richard Schwartz", "Janina Fisher"],
+    purpose: "Describe how identity crystallizes around a default mode when environments require adaptation, creating the Real Self / Role Mask structure.",
+    summary: "How identity crystallizes around a default mode when environments require adaptation, creating the Real Self / Role Mask structure.",
+    buildsOn: "Object relations theory, attachment research, developmental psychology, self-models, schema theory, trauma adaptation.",
     claims: [
-      "Identity forms around what kept connection possible",
-      "Under threat, identity shifts toward protection logic",
-      '"Self-beliefs" often function as stability strategies',
+      "Identity forms around what kept connection possible in early environments",
+      "The Real Self precedes identity; the Role Mask is functional adaptation, not pathology",
+      "Feeling = Being before cognition develops: external feedback becomes internal belief",
+      "Healing requires building what was never built, not fixing something broken",
     ],
-    testable: "Predictive links between attachment insecurity, stress load, and identity rigidity. Language indicators of self-worth rules and threat sensitivity. Longitudinal shifts with intervention and repair.",
+    testable: "Predictive links between attachment patterns and identity rigidity. Language indicators of Real Self vs. Role Mask activation. Longitudinal shifts with sustained safety provision.",
   },
   {
     id: "F3",
+    displayName: "Adult Cognition and False Coherence",
     title: "Our Three Inner Layers",
+    subtitle: "Dissonance and Contradiction Management",
     arc: "Formation",
-    purpose: "Model the inner system as layered, with different layers activating under different states.",
-    buildsOn: "Parts-oriented clinical frameworks, state-dependent learning, trauma and dissociation research, developmental timing models.",
-    researchers: ["Sigmund Freud", "Donald Winnicott", "Carl Rogers", "Carl Jung", "Leon Festinger", "Erving Goffman", "Pierre Bourdieu", "Richard Schwartz", "Janina Fisher"],
+    purpose: "Explain how state-dependent cognition operates to maintain identity coherence under nervous system pressure, producing systematic self-deception.",
+    summary: "How cognition maintains identity coherence under nervous system pressure, producing rationalization and motivated reasoning.",
+    buildsOn: "Cognitive dissonance theory, dual-process cognition, motivated reasoning research, self-justification literature, state-dependent learning.",
     claims: [
-      'Humans can show different "selves" across states without pathology',
-      "Some contradictions are layer activation, not deceit",
-      "Repair requires integration, not suppression",
+      "Humans can show different 'selves' across states without pathology — these are layer activations",
+      "Some contradictions are state-protective distortion, not conscious deceit",
+      "The Logic Layer maintains the Role Mask through coherence-seeking under threat",
+      "Repair requires integration and increased tolerance for truth, not suppression",
     ],
-    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on \"layer signals\" in narrative text. Clinical usefulness as a psychoeducation model.",
+    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on coherence markers. Prediction of rationalization patterns from regulatory state.",
   },
   {
     id: "F4",
-    title: "The Invisible Models of Our Society",
+    displayName: "Threat-Based Rule Internalization",
+    title: "The Invisible Models",
+    subtitle: "Rule Adherence and Defensive Coordination",
     arc: "Scaling",
-    purpose: "Explain how unspoken social rules shape emotional survival strategies.",
-    buildsOn: "Sociology of norms, cultural psychology, status dynamics, moral foundations and norm enforcement research.",
-    researchers: ["Pierre Bourdieu", "Erving Goffman", "John Bowlby", "Jeffrey Young", "Richard Schwartz", "Stephen Porges", "Judith Herman", "Pete Walker"],
+    purpose: "Explain how unspoken social rules (role, obedience, performance, dominance, punishment, entitlement) form and govern emotional and relational life.",
+    summary: "How unspoken social rules form and govern emotional and relational life at the nervous system level.",
+    buildsOn: "Sociology of norms, cultural psychology, status dynamics, moral foundations research, norm enforcement.",
     claims: [
-      "People adapt not only to caregivers, but to norm environments",
-      "Norm pressure can reward protection and control patterns",
-      '"Social goodness" can be performed while harm persists',
+      "Norm pressure can reward protection and control patterns at scale",
+      "Rule internalization is nervous-system level, not just cognitive belief",
+      "'Social goodness' can be performed while harm persists — compliance ≠ safety",
+      "Cultural conditions enable or constrain individual escalation pathways",
     ],
-    testable: "Cross-cultural comparison of worth rules and conflict scripts. Organizational communication analysis under stress and hierarchy. Link between norm climates and escalation patterns.",
+    testable: "Cross-cultural comparison of worth rules and conflict scripts. Organizational communication analysis under hierarchy. Link between norm climates and escalation patterns.",
   },
   {
     id: "F5",
+    displayName: "Threat-Driven External Validation",
     title: "The Filter of Worth",
+    subtitle: "Status, Power, and Worth Hierarchies",
     arc: "Scaling",
-    purpose: "Describe how \"worth rules\" determine what feels safe, lovable, or allowed.",
-    buildsOn: "Shame research, self-esteem literature, social evaluation threat, internalized stigma, conditional regard.",
-    researchers: ["Pierre Bourdieu", "Basil Bernstein", "Erving Goffman", "Annette Lareau", "Joseph Berger", "Jim Sidanius", "Felicia Pratto", "John Jost", "Mahzarin Banaji", "Kimberlé Crenshaw", "Patricia Hill Collins", "Amartya Sen", "Stephen Porges", "Bruce McEwen", "Robert Sapolsky", "Paul Gilbert", "Richard Wilkinson", "Kate Pickett"],
+    purpose: "Describe how threat-organized systems convert safety signals into systematic worth hierarchies, producing credibility and resource filtering.",
+    summary: "How threat-organized systems convert safety signals into worth hierarchies that determine what feels safe, lovable, or allowed.",
+    buildsOn: "Shame research, social evaluation threat, internalized stigma, conditional regard, social stratification theory.",
     claims: [
-      "Worth rules drive protection, control, and domination behaviors",
+      "Worth rules drive protection, control, and domination behaviors — they are the hidden variable",
       "Many conflicts are worth-threat conflicts in disguise",
+      "Worth hierarchies are maintained through nervous system enforcement, not just ideology",
       "Repair often fails when worth rules stay untouched",
     ],
-    testable: "Measurement design for worth-threat sensitivity. Predicting defensiveness patterns from worth-rule profiles. Intervention studies targeting worth-rule flexibility.",
+    testable: "Measurement design for worth-threat sensitivity. Predicting defensiveness from worth-rule profiles. Intervention studies targeting worth-rule flexibility.",
   },
   {
     id: "F6",
-    title: "The Emotional Architecture of Bias",
+    displayName: "State-Dependent Perception",
+    title: "The Bias Architecture",
+    subtitle: "Threat-Based Meaning and Perception",
     arc: "Scaling",
-    purpose: "Explain bias as a regulatory pattern, not only an ideology.",
+    purpose: "Explain how perception becomes a state-dependent protective system, producing perceptual defaults that feel like truth but function as nervous system regulation.",
+    summary: "How perception becomes state-dependent, producing perceptual defaults that feel like truth but function as regulation.",
     buildsOn: "Social cognition, threat perception research, intergroup emotion, motivated reasoning, dehumanization literature.",
-    researchers: ["Daniel Kahneman", "Amos Tversky", "Leon Festinger", "Ziva Kunda", "Henri Tajfel", "John Turner", "Jonathan Haidt", "Sheldon Solomon", "Karl Friston", "Anthony Greenwald", "Mahzarin Banaji", "Brian Nosek", "Patricia Devine", "Aaron Beck", "Jeffrey Young"],
     claims: [
-      "Bias intensifies under threat states",
+      "Bias intensifies under threat states — it is state-dependent, not fixed",
       "Some bias is maintained by safety narratives, not facts",
-      "Domination logic uses bias as a stabilizer",
+      "Dehumanization follows a predictable gradient tied to mode position",
+      "Domination logic uses bias as a stabilizer for power asymmetry",
     ],
-    testable: "State manipulation studies and bias expression shifts. Linguistic markers of dehumanization across modes. Fairness evaluation for any automated classification use.",
+    testable: "State manipulation studies and bias expression shifts. Linguistic markers of dehumanization across modes. Fairness evaluation for any automated classification.",
   },
   {
     id: "F7",
-    title: "From Emotional Defense to Domination",
+    displayName: "Defense-to-Domination Escalation",
+    title: "The Anatomy of Tyranny",
+    subtitle: "Escalation Markers and Intervention Windows",
     arc: "Turning Point",
-    purpose: "Map how protection patterns can escalate into coercion and oppression.",
-    buildsOn: "Power and dominance research, coercive control, aggression and entitlement models, moral disengagement, authoritarian psychology.",
-    researchers: ["Dacher Keltner", "Adam Galinsky", "Paul Frick", "Essi Viding", "Terrie Moffitt", "Adrian Raine", "Mary Main", "Karlen Lyons-Ruth", "Evan Stark", "Michael Johnson", "Lundy Bancroft", "Albert Bandura", "Nick Haslam", "Helen Block Lewis", "James Gilligan", "Ervin Staub", "Roy Baumeister", "Philip Zimbardo"],
+    purpose: "Map the specific conditions and mechanisms that allow Protection to escalate through Control into Domination — the crossroads where kind children become tyrannical adults.",
+    summary: "How protection escalates through control into domination — the crossroads where defense becomes strategy.",
+    buildsOn: "Power and dominance research, coercive control literature, moral disengagement, narcissism research, perpetrator psychology.",
     claims: [
-      "Domination is often threat regulation plus power access",
-      "Control strategies are transitional, domination is stabilizing",
-      "Accountability is resisted when it triggers collapse or worth threat",
+      "Domination is threat regulation plus power access — mechanism, not character",
+      "The crossroads (defense → strategy) has recognizable signals: repair disappears, reality gets reframed, accountability triggers escalation",
+      "Empathy collapse is state-dependent — it narrows, then goes offline entirely",
+      "Intervention windows close as escalation proceeds; stage-appropriate response is essential",
     ],
-    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding domination markers in language with reliability. Intervention design focusing on accountability capacity.",
+    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding domination markers in language with reliability. Intervention design focusing on crossroads identification.",
   },
   {
     id: "F8",
-    title: "Self-Awareness Under Stress",
+    displayName: "Self-Reconnection and Role Mask Loosening",
+    title: "Our True Self",
+    subtitle: "From Survival Identity to Truth Tolerance",
     arc: "Healing",
-    purpose: "Explain the skills and conditions that reopen perception during dysregulation.",
-    buildsOn: "Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization.",
-    researchers: ["Donald Winnicott", "Erik Erikson", "James Marcia", "John Bowlby", "Patricia Crittenden", "Stephen Porges", "Peter Levine", "Daniel Siegel", "Antonio Damasio", "Bessel van der Kolk", "Janina Fisher", "Kristin Neff", "Tara Brach", "Richard Schwartz", "Franz Alexander", "Diana Fosha", "Leslie Greenberg", "Sue Johnson"],
+    purpose: "Explain the mechanisms of self-reconnection: how sustained safety allows the Role Mask to loosen without destabilizing, enabling gradual return to the Real Self.",
+    summary: "How sustained safety allows the Role Mask to loosen, enabling gradual return to the Real Self.",
+    buildsOn: "Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization theory.",
     claims: [
-      "Self-awareness is state-dependent",
-      'Higher self-awareness predicts better "return capacity"',
-      "Repair requires the ability to tolerate discomfort without control moves",
+      "Self-awareness is state-dependent — it cannot be willed into existence without sufficient safety",
+      "Higher self-awareness predicts better return capacity and repair outcomes",
+      "The Role Mask loosens when safety is sustained, not when insight is achieved",
+      "Repair requires building tolerance for truth, not just understanding patterns",
     ],
     testable: "Links between emotional granularity and conflict outcomes. Markers of reflective functioning in language under pressure. Training effects on return capacity.",
   },
   {
     id: "F9",
-    title: "Our True Self",
+    displayName: "Inborn Rhythm and Masking Cost",
+    title: "Neurodivergent Processing",
+    subtitle: "Social Calibration Pressure and Variation",
     arc: "Healing",
-    purpose: "Describe reconnection with the original self signals that existed before adaptation.",
-    buildsOn: "Developmental needs models, authenticity research, trauma recovery, compassion-focused and attachment repair approaches.",
-    researchers: ["Judy Singer", "Nick Walker", "Steve Silberman", "Stephen Porges", "Henry & Kamila Markram", "Karl Friston", "Mike Oliver", "Tom Shakespeare", "Gabor Maté", "Devon Price", "Thomas Armstrong"],
+    purpose: "Explain how neurodivergent nervous systems process the emotional gradient differently, the costs of forced neurotypical masking, and design principles for variation-inclusive environments.",
+    summary: "How neurodivergent nervous systems process the emotional gradient differently, and the costs of forced masking.",
+    buildsOn: "Neurodiversity paradigm, sensory processing research, autism and ADHD research, masking cost literature, developmental needs models.",
     claims: [
-      'The "true self" is not a story, it is a signal layer',
-      "Many symptoms are protective adaptations that outlived their context",
-      "Healing involves recovering signal trust and relational safety",
+      "Neurodivergent nervous systems have different baseline configurations — not deficits",
+      "Masking has measurable costs: regulatory depletion, identity confusion, delayed burnout",
+      "Many 'symptoms' are adaptive responses to environments that didn't accommodate variation",
+      "Healing requires signal trust recovery, not normalization",
     ],
-    testable: "Measures of authenticity, safety, and symptom reduction over time. Narrative markers of self-trust and self-protection balance. Comparative outcomes across therapeutic modalities.",
+    testable: "Measures of masking cost and regulatory depletion. Comparative outcomes across accommodation levels. Narrative markers of authentic self-expression.",
   },
   {
     id: "F10",
-    title: "Repair and Relational Return",
+    displayName: "Intergenerational Transmission and Repair",
+    title: "Rebuilding Generational Bridges",
+    subtitle: "Family-Scale Safety and Lineage Repair",
     arc: "Healing",
-    purpose: "Explain what makes repair succeed or fail after rupture.",
-    buildsOn: "Rupture and repair research, apology and accountability work, couple and family systems research, conflict resolution.",
-    researchers: ["Murray Bowen", "Salvador Minuchin", "Ivan Boszormenyi-Nagy", "Felitti & Anda", "Judith Herman", "Patricia Crittenden", "Erik Erikson", "Daniel Siegel", "Michael White", "David Epston", "Rachel Yehuda"],
+    purpose: "Explain how emotional patterns, Role Masks, and regulatory strategies pass from one generation to the next, and the specific conditions that enable interruption and lineage repair.",
+    summary: "How emotional patterns pass across generations, and the conditions that enable interruption and repair.",
+    buildsOn: "Intergenerational trauma research, family systems theory, epigenetics, rupture and repair research, ACEs literature.",
     claims: [
-      "The strongest predictor is not the absence of rupture — it is capacity to return to connection",
-      "Accountability is a regulated-state behavior, not a trait",
-      "Repair fails when protection and control stay rewarded",
+      "Patterns transmit through regulatory modeling, not just explicit teaching",
+      "Intergenerational repair requires one generation to build capacity the previous couldn't",
+      "Accountability is a regulated-state behavior — it requires sufficient safety to tolerate",
+      "Repair fails when protection and control stay rewarded; succeeds when return capacity increases",
     ],
-    testable: "Coding repair attempts and outcomes in transcripts. Predictive models of conflict outcome from return markers. Replication across cultures and relationship types.",
+    testable: "Coding repair attempts and outcomes in transcripts. Predictive models from return markers. Intergenerational comparison of regulatory patterns.",
   },
   {
     id: "F11",
-    title: "Human Paradoxes",
+    displayName: "Emotional Logic Behind Paradoxes",
+    title: "Paradox Integration",
+    subtitle: "Non-Binary Sense-Making",
     arc: "Integration",
-    purpose: "Explain why humans look contradictory until state logic is included.",
+    purpose: "Explain how contradictions emerge predictably when emotional survival structures meet healing — serving as the integration lens that applies Frameworks 1–10 to paradoxical behavior.",
+    summary: "How contradictions emerge predictably when emotional survival structures meet healing — and resolve when state logic is included.",
     buildsOn: "State-dependent cognition, dual-process work, trauma adaptation, motivated reasoning, self-justification research.",
-    researchers: [],
     claims: [
-      'People can be caring in Connection and coercive in Control without "changing personality"',
-      "Some lying is conscious, some is state-protective distortion",
-      "Moral reasoning shifts with threat and worth rules",
+      "Apparent contradictions are often state shifts, not hypocrisy or pathology",
+      "Some distortion is conscious (strategic), some is state-protective (invisible to self)",
+      "Moral reasoning is state-dependent — it shifts with threat and worth pressure",
+      "Paradox tolerance increases with regulatory flexibility; decreases under threat",
     ],
     testable: "Within-person contradiction mapping across contexts. Marker sets for moral reasoning shifts in language. Links between shame activation and distortion patterns.",
   },
   {
     id: "F12",
-    title: "The Four-Mode Gradient as Integrative Lens",
+    displayName: "Two Information Systems",
+    title: "State-Dependent Coherence",
+    subtitle: "How Two Parallel Systems Generate All Behavior",
     arc: "Integration",
-    purpose: "Make the full arc readable as one system: inner regulation → identity adaptation → social escalation → return path.",
-    buildsOn: "All foundations above, plus systems thinking and modeling traditions.",
-    researchers: ["Daniel Kahneman", "Keith Stanovich", "Jonathan Evans", "Stephen Porges", "Antonio Damasio", "Joseph LeDoux", "Lisa Feldman Barrett", "John Bowlby", "Mary Main", "Bessel van der Kolk", "James Gross", "Marsha Linehan", "Stanley Milgram", "Philip Zimbardo"],
+    purpose: "Provide the integrative architecture underlying all previous frameworks — demonstrating how a single mechanism (state-dependent nervous system organization) creates the full diversity of human behavior.",
+    summary: "Human behavior is organized by the interaction of two parallel information systems: the Cognitive-Logical System (language, reasoning, planning — conscious, slow) and the Emotional-Somatic System (safety/threat detection, relational cues — unconscious, fast). State precedes capacity.",
+    buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma and body-based approaches (van der Kolk, Levine), attachment as regulatory system (Bowlby, Schore, Siegel).",
     claims: [
-      "The four modes describe a state-gradient, not personality types",
-      "Control and domination emerge from regulatory collapse plus learned power strategies",
-      "The model becomes useful when it generates clear, testable predictions",
+      "The emotional-somatic system determines what rational behavior is available — state precedes capacity",
+      "Insight alone doesn't change behavior because the emotional-somatic system organizes response before cognition arrives (milliseconds vs. seconds)",
+      "Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience",
+      "The four modes describe a continuous gradient; all frameworks (F1-F11) map onto this two-system architecture",
     ],
-    testable: "Benchmarking against existing emotion and regulation instruments. Robustness and fairness evaluations across demographics and cultures. Safe schema design for AI use, with misuse prevention.",
+    testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Cross-theoretical validation with dual-process research.",
   },
 ];
 
@@ -211,7 +242,7 @@ export default function TheoreticalFoundationsPage() {
       >
         {/* Header */}
         <header style={{ marginBottom: 32 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12, flexWrap: "wrap" }}>
             <h1
               style={{
                 fontSize: 28,
@@ -275,81 +306,24 @@ export default function TheoreticalFoundationsPage() {
           </p>
         </header>
 
-        {/* How to Read This Page */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            How to read this page
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            Each framework uses the same structure so it is easy to scan:
-          </p>
-          <ul style={{ paddingLeft: 24 }}>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Purpose</strong> — what it explains</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Builds on</strong> — established foundations</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Proposed claims</strong> — what TEG-Blue adds</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Testable directions</strong> — what can be studied</li>
-          </ul>
-        </section>
-
-        {/* Framework Arc Table */}
+        {/* Framework Arc Overview */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            The framework arc in one view
+            The framework arc
           </h2>
           <ul style={{ paddingLeft: 24, marginBottom: 20 }}>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F1–F3:</strong> Internal regulation, identity adaptation, inner organization</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F4–F7:</strong> How individual protection scales into social systems and harm</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F8–F10:</strong> The return path — self-awareness, repair, and re-integration</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F11:</strong> Why humans look contradictory until you see the full state logic</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F12:</strong> The integrative lens connecting inner biology to social outcomes</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F1–F3 (Formation):</strong> How the nervous system orients, how identity crystallizes, how cognition maintains coherence</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F4–F6 (Scaling):</strong> How individual patterns become social rules, worth hierarchies, and perception biases</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F7 (Turning Point):</strong> How protection escalates through control into domination</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F8–F10 (Healing):</strong> Self-reconnection, neurodivergent pathways, and intergenerational repair</li>
+            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F11–F12 (Integration):</strong> Paradox resolution and the complete theoretical synthesis</li>
           </ul>
-          <div
-            style={{
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
-            }}
-          >
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ background: BG.surface }}>
-                  <th style={{ ...tableHeaderStyle, width: 80 }}>Framework</th>
-                  <th style={{ ...tableHeaderStyle }}>What it explains</th>
-                  <th style={{ ...tableHeaderStyle, width: 120 }}>Arc</th>
-                </tr>
-              </thead>
-              <tbody>
-                {FRAMEWORKS.map((fw, i) => (
-                  <tr key={fw.id} style={{ borderTop: i > 0 ? `1px solid ${BORDER.default}` : "none" }}>
-                    <td style={{ padding: "10px 16px", fontSize: 13, fontWeight: 600, color: TEXT.primary, fontFamily: FONT.mono }}>{fw.id}</td>
-                    <td style={{ padding: "10px 16px", fontSize: 13, color: TEXT.secondary }}>{fw.title}</td>
-                    <td style={{ padding: "10px 16px" }}>
-                      <span
-                        style={{
-                          fontSize: 10,
-                          fontWeight: 600,
-                          fontFamily: FONT.mono,
-                          padding: "3px 8px",
-                          borderRadius: 4,
-                          background: hexToRgba(arcColors[fw.arc], 0.15),
-                          color: arcColors[fw.arc],
-                        }}
-                      >
-                        {fw.arc}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </section>
 
-        {/* Individual Frameworks */}
+        {/* All Frameworks - Expandable */}
         <section style={{ marginBottom: 32 }}>
           {FRAMEWORKS.map((fw) => (
-            <FrameworkCard key={fw.id} framework={fw} />
+            <ExpandableFrameworkCard key={fw.id} framework={fw} />
           ))}
         </section>
 
@@ -438,117 +412,178 @@ export default function TheoreticalFoundationsPage() {
 
 // ─── HELPER COMPONENTS ─────────────────────────────────────────
 
-const tableHeaderStyle = {
-  padding: "10px 16px",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textAlign: "left",
-  textTransform: "uppercase",
-  letterSpacing: "0.04em",
-  fontFamily: FONT.mono,
-};
-
-function FrameworkCard({ framework }) {
+function ExpandableFrameworkCard({ framework }) {
+  const [isOpen, setIsOpen] = useState(false);
   const arcColor = arcColors[framework.arc];
 
   return (
     <div
       style={{
-        marginBottom: 24,
-        padding: 24,
+        marginBottom: 12,
         background: BG.card,
         borderRadius: 10,
-        border: `1px solid ${BORDER.default}`,
+        border: `1px solid ${isOpen ? hexToRgba(arcColor, 0.3) : BORDER.default}`,
         borderLeft: `3px solid ${arcColor}`,
+        overflow: "hidden",
+        transition: "border-color 0.2s ease",
       }}
     >
-      {/* Header */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
-        <span
+      {/* Clickable Header */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          width: "100%",
+          padding: "16px 20px",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          textAlign: "left",
+          display: "block",
+        }}
+      >
+        {/* Top row: ID, Display Name (Title), Arc badge */}
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6, flexWrap: "wrap" }}>
+          <span
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              color: arcColor,
+            }}
+          >
+            {framework.id}
+          </span>
+          <span style={{ fontSize: 13, color: TEXT.muted }}>–</span>
+          <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary }}>
+            {framework.displayName}
+          </span>
+          <span style={{ fontSize: 13, color: TEXT.muted }}>
+            ({framework.title})
+          </span>
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 600,
+              fontFamily: FONT.mono,
+              padding: "3px 8px",
+              borderRadius: 4,
+              background: hexToRgba(arcColor, 0.15),
+              color: arcColor,
+              marginLeft: "auto",
+            }}
+          >
+            {framework.arc}
+          </span>
+        </div>
+
+        {/* Subtitle */}
+        <p style={{ fontSize: 13, color: arcColor, margin: "0 0 8px 0" }}>
+          {framework.subtitle}
+        </p>
+
+        {/* Summary */}
+        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+          {framework.summary}
+        </p>
+
+        {/* Expand indicator */}
+        <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+          <span
+            style={{
+              fontSize: 12,
+              color: TEXT.muted,
+              transition: "color 0.2s ease",
+            }}
+          >
+            {isOpen ? "Hide details" : "Show details"}
+          </span>
+          <span
+            style={{
+              fontSize: 14,
+              color: arcColor,
+              transition: "transform 0.2s ease",
+              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+            }}
+          >
+            ▼
+          </span>
+        </div>
+      </button>
+
+      {/* Expandable Content */}
+      {isOpen && (
+        <div
           style={{
-            fontSize: 14,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            color: arcColor,
+            padding: "0 20px 20px",
+            borderTop: `1px solid ${BORDER.default}`,
+            marginTop: 0,
           }}
         >
-          {framework.id}
-        </span>
-        <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, margin: 0 }}>
-          {framework.title}
-        </h3>
-        <span
-          style={{
-            fontSize: 10,
-            fontWeight: 600,
-            fontFamily: FONT.mono,
-            padding: "3px 8px",
-            borderRadius: 4,
-            background: hexToRgba(arcColor, 0.15),
-            color: arcColor,
-            marginLeft: "auto",
-          }}
-        >
-          {framework.arc}
-        </span>
-      </div>
+          {/* Purpose */}
+          <div style={{ marginTop: 16, marginBottom: 16 }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+              Purpose
+            </h4>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+              {framework.purpose}
+            </p>
+          </div>
 
-      {/* Purpose */}
-      <div style={{ marginBottom: 16 }}>
-        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-          Purpose
-        </h4>
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-          {framework.purpose}
-        </p>
-      </div>
+          {/* Builds On */}
+          <div style={{ marginBottom: 16 }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+              Builds on
+            </h4>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+              {framework.buildsOn}
+            </p>
+          </div>
 
-      {/* Builds On */}
-      <div style={{ marginBottom: 16 }}>
-        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-          Builds on
-        </h4>
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-          {framework.buildsOn}
-        </p>
-      </div>
+          {/* Proposed Claims */}
+          <div style={{ marginBottom: 16 }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+              Proposed claims
+            </h4>
+            <ul style={{ paddingLeft: 20, margin: 0, listStyleType: "disc" }}>
+              {framework.claims.map((claim, i) => (
+                <li key={i} style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 6, paddingLeft: 4 }}>
+                  {claim}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      {/* Key Researchers */}
-      {framework.researchers.length > 0 && (
-        <div style={{ marginBottom: 16 }}>
-          <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-            Key researchers
-          </h4>
-          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontFamily: FONT.mono }}>
-            {framework.researchers.join(", ")}
-          </p>
+          {/* Testable Directions */}
+          <div style={{ marginBottom: 16 }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+              Testable directions
+            </h4>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+              {framework.testable}
+            </p>
+          </div>
+
+          {/* Link to full framework */}
+          <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}` }}>
+            <a
+              href={`https://teg-blue.com/mapping-system/following-nervous-system/${framework.id.toLowerCase()}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                fontSize: 13,
+                fontWeight: 500,
+                color: arcColor,
+                textDecoration: "none",
+              }}
+            >
+              View framework →
+            </a>
+          </div>
         </div>
       )}
-
-      {/* Proposed Claims */}
-      <div style={{ marginBottom: 16 }}>
-        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-          Proposed claims
-        </h4>
-        <ul style={{ paddingLeft: 20, margin: 0 }}>
-          {framework.claims.map((claim, i) => (
-            <li key={i} style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 4 }}>
-              {claim}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Testable Directions */}
-      <div>
-        <h4 style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-          Testable directions
-        </h4>
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-          {framework.testable}
-        </p>
-      </div>
     </div>
   );
 }
