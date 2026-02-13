@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
@@ -11,19 +12,48 @@ import { SpectrumBar } from "./SharedComponents";
 const NAV_ITEMS = [
   { label: "Hub", href: "/" },
   { label: "Start Here", href: "/research-entry" },
-  { label: "System Overview", href: "/foundations" },
-  { label: "Gradient", href: "/four-mode-gradient" },
-  { label: "Frameworks", href: "/frameworks-map" },
-  { label: "Foundations", href: "/scientific-foundations" },
-  { label: "Publications", href: "/publications" },
-  { label: "Methodology", href: "/methodology" },
-  { label: "AI Safety", href: "/ai-safety" },
-  { label: "Collaborate", href: "/collaborate" },
+  {
+    label: "Theory",
+    dropdown: [
+      { label: "System Overview", href: "/foundations" },
+      { label: "Four-Mode Gradient", href: "/four-mode-gradient" },
+      { label: "12 Frameworks", href: "/frameworks-map" },
+    ],
+  },
+  {
+    label: "Research",
+    dropdown: [
+      { label: "Scientific Foundations", href: "/scientific-foundations" },
+      { label: "Publications", href: "/publications" },
+      { label: "Methodology", href: "/methodology" },
+    ],
+  },
+  {
+    label: "Engage",
+    dropdown: [
+      { label: "AI Safety", href: "/ai-safety" },
+      { label: "Collaborate", href: "/collaborate" },
+      { label: "About", href: "/about" },
+    ],
+  },
   { label: "Glossary", href: "/glossary" },
-  { label: "About", href: "/about" },
 ];
 
 export default function SiteHeader({ currentPath = "/" }) {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const isItemActive = (item) => {
+    if (item.href) {
+      return currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
+    }
+    if (item.dropdown) {
+      return item.dropdown.some(
+        (sub) => currentPath === sub.href || currentPath.startsWith(sub.href)
+      );
+    }
+    return false;
+  };
+
   return (
     <header
       style={{
@@ -110,32 +140,128 @@ export default function SiteHeader({ currentPath = "/" }) {
             padding: "0 24px",
             display: "flex",
             gap: 0,
-            overflowX: "auto",
           }}
         >
           {NAV_ITEMS.map((item) => {
-            const isActive = currentPath === item.href ||
-              (item.href !== "/" && currentPath.startsWith(item.href));
+            const isActive = isItemActive(item);
+
+            // Simple link item
+            if (item.href) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{
+                    padding: "12px 20px",
+                    fontFamily: FONT.display,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: isActive ? TEXT.primary : TEXT.hint,
+                    textDecoration: "none",
+                    borderBottom: isActive
+                      ? `2px solid ${SPECTRUM.blue}`
+                      : "2px solid transparent",
+                    transition: `all ${TRANSITION.normal}`,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
+            // Dropdown item
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{
-                  padding: "12px 20px",
-                  fontFamily: FONT.display,
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: isActive ? TEXT.primary : TEXT.hint,
-                  textDecoration: "none",
-                  borderBottom: isActive
-                    ? `2px solid ${SPECTRUM.blue}`
-                    : "2px solid transparent",
-                  transition: `all ${TRANSITION.normal}`,
-                  whiteSpace: "nowrap",
-                }}
+              <div
+                key={item.label}
+                style={{ position: "relative" }}
+                onMouseEnter={() => setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {item.label}
-              </Link>
+                <button
+                  style={{
+                    padding: "12px 20px",
+                    fontFamily: FONT.display,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: isActive ? TEXT.primary : TEXT.hint,
+                    background: "none",
+                    border: "none",
+                    borderBottom: isActive
+                      ? `2px solid ${SPECTRUM.blue}`
+                      : "2px solid transparent",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    transition: `all ${TRANSITION.normal}`,
+                    whiteSpace: "nowrap",
+                  }}
+                  onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                >
+                  {item.label}
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    style={{
+                      transform: openDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: `transform ${TRANSITION.fast}`,
+                    }}
+                  >
+                    <path
+                      d="M2 4L5 7L8 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown menu */}
+                {openDropdown === item.label && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      minWidth: 180,
+                      background: BG.primary,
+                      border: `1px solid ${BORDER.default}`,
+                      borderRadius: 6,
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                      zIndex: 100,
+                      padding: "6px 0",
+                    }}
+                  >
+                    {item.dropdown.map((subItem) => {
+                      const subActive = currentPath === subItem.href || currentPath.startsWith(subItem.href);
+                      return (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          style={{
+                            display: "block",
+                            padding: "10px 16px",
+                            fontFamily: FONT.display,
+                            fontSize: 13,
+                            fontWeight: subActive ? 600 : 500,
+                            color: subActive ? TEXT.primary : TEXT.secondary,
+                            textDecoration: "none",
+                            transition: `all ${TRANSITION.fast}`,
+                            background: subActive ? hexToRgba(SPECTRUM.blue, 0.08) : "transparent",
+                          }}
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
