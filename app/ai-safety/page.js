@@ -186,6 +186,11 @@ export default function AISafetyPage() {
               doesn't work this way.
             </p>
             <p style={{ marginBottom: 16 }}>
+              This isn't just an AI problem — it's a human problem AI inherited. The same binary
+              collapse happens in human cognition under threat. TEG-Blue was designed to make
+              gradients visible for both.
+            </p>
+            <p style={{ marginBottom: 16 }}>
               Psychology has understood the nuance for decades. Empathy exists on a gradient.
               Accountability has multiple modes. Moral reasoning shifts with nervous system state.{" "}
               <strong style={{ color: TEXT.primary }}>
