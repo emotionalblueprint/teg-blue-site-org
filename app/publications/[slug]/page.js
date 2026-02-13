@@ -64,6 +64,7 @@ export default async function PublicationRoute({ params }) {
       <SiteHeader currentPath={`/publications/${slug}`} />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

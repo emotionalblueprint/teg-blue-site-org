@@ -13,13 +13,18 @@
 const BASE_URL = "https://teg-blue.org";
 const RESEARCH_BASE = BASE_URL;
 
+// ─── SHARED PROPERTIES ───────────────────────────────
+
+const LANGUAGE = "en";
+
 // ─── PARENT PROJECT (always included) ────────────────
 
 const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "An integrative framework synthesizing 65+ theories from neuroscience, psychology, and trauma research into a practical emotional intelligence system.",
+  description: "An integrative framework synthesizing 139+ theories from neuroscience, psychology, and trauma research into a practical emotional intelligence system.",
+  inLanguage: LANGUAGE,
 };
 
 const AUTHOR = {
@@ -35,13 +40,29 @@ export function generatePublicationJsonLd(node) {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     name: node.title,
+    headline: node.title,
     author: AUTHOR,
     datePublished: node.date,
-    doi: node.doi,
+    dateModified: node.dateModified || node.date,
+    inLanguage: LANGUAGE,
+    ...(node.doi && {
+      identifier: {
+        "@type": "PropertyValue",
+        propertyID: "DOI",
+        value: node.doi,
+      },
+      sameAs: `https://doi.org/${node.doi}`,
+    }),
     url: `${RESEARCH_BASE}/publications/${node.slug}`,
     abstract: node.summary,
+    description: node.summary,
     keywords: node.tags,
     isPartOf: TEG_BLUE_PROJECT,
+    publisher: AUTHOR,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${RESEARCH_BASE}/publications/${node.slug}`,
+    },
     ...(node.connections && {
       citation: node.connections
         .filter((c) => c.type === "cites")
@@ -68,14 +89,21 @@ export function generateTheoryJsonLd(node) {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     name: node.title,
-    author: {
+    headline: node.title,
+    author: node.originAuthor ? {
       "@type": "Person",
       name: node.originAuthor,
-    },
+    } : AUTHOR,
     url: `${RESEARCH_BASE}/foundations?theory=${node.slug}`,
     description: node.summary,
+    abstract: node.summary,
     keywords: node.tags,
+    inLanguage: LANGUAGE,
     isReferencedBy: TEG_BLUE_PROJECT,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${RESEARCH_BASE}/foundations?theory=${node.slug}`,
+    },
   };
 }
 
@@ -88,10 +116,12 @@ export function generateGlossaryJsonLd(node) {
     name: node.title,
     description: node.definition || node.summary,
     url: `${RESEARCH_BASE}/glossary?term=${node.slug}`,
+    inLanguage: LANGUAGE,
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
       name: "TEG-Blue Glossary",
       url: `${RESEARCH_BASE}/glossary`,
+      inLanguage: LANGUAGE,
     },
     ...(node.connections && {
       subjectOf: node.connections
@@ -112,11 +142,17 @@ export function generateFrameworkJsonLd(node) {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: node.title,
+    headline: node.title,
     author: AUTHOR,
     url: `${RESEARCH_BASE}/frameworks/${node.slug}`,
     description: node.summary,
     isPartOf: TEG_BLUE_PROJECT,
     keywords: node.tags,
+    inLanguage: LANGUAGE,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${RESEARCH_BASE}/frameworks/${node.slug}`,
+    },
   };
 }
 
@@ -156,6 +192,7 @@ export function generateAISafetyJsonLd() {
     name: "AI Safety Applications — TEG-Blue",
     url: `${BASE_URL}/ai-safety`,
     description: "How TEG-Blue provides structured, computationally legible emotional intelligence infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
+    inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
       {
@@ -204,6 +241,7 @@ export function generateFourModeGradientJsonLd() {
     name: "The Four-Mode Gradient — TEG-Blue",
     url: `${BASE_URL}/four-mode-gradient`,
     description: "The measurement system at the heart of TEG-Blue: four nervous system regulatory states that shape perception, behavior, and relational capacity.",
+    inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "DefinedTermSet",
@@ -260,6 +298,7 @@ export function generateSystemOverviewJsonLd() {
     name: "System Overview — TEG-Blue Research",
     url: `${BASE_URL}/foundations`,
     description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement (Four-Mode Gradient), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+    inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "Thing",
@@ -327,6 +366,7 @@ export function generateTheoreticalFoundationsJsonLd() {
     name: "Theoretical Foundations — TEG-Blue Research",
     url: `${BASE_URL}/theoretical-foundations`,
     description: "The 12 Frameworks (F1-F12) that explain why regulatory patterns emerge, how they scale from individual to systemic, and what makes repair possible. Integrates 139+ established theories.",
+    inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "DefinedTermSet",
@@ -414,6 +454,45 @@ function getNodeUrl(node) {
     methodology: `/research/methodology`,
   };
   return `${BASE_URL}${paths[node.type] || `/research/${node.slug}`}`;
+}
+
+// ─── FAQ SCHEMA (for methodology, about pages) ───────
+
+export function generateFAQJsonLd(questions) {
+  // questions: [{ question: string, answer: string }]
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((q) => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.answer,
+      },
+    })),
+    inLanguage: LANGUAGE,
+  };
+}
+
+// ─── SEARCH ACTION SCHEMA ────────────────────────────
+
+export function generateSearchActionJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "TEG-Blue Research",
+    url: BASE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BASE_URL}/?search={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+    inLanguage: LANGUAGE,
+  };
 }
 
 // ─── AUTO-DETECT AND GENERATE ────────────────────────

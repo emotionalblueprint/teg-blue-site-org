@@ -24,6 +24,7 @@ export default function CitationsPage() {
       <SiteHeader currentPath="/citations" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

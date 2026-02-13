@@ -81,6 +81,7 @@ export default function FourModeGradientPage() {
       <SiteHeader currentPath="/four-mode-gradient" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

@@ -26,6 +26,7 @@ export default function ResearchHub() {
         <SiteHeader currentPath="/" />
 
         <main
+          id="main-content"
           style={{
             maxWidth: SPACING.containerMax,
             margin: "0 auto",

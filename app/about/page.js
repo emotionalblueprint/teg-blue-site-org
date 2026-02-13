@@ -22,6 +22,7 @@ export default function AboutPage() {
       <SiteHeader currentPath="/about" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

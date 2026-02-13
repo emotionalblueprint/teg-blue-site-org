@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
   title: {
@@ -50,6 +51,34 @@ export const metadata = {
   },
 }
 
+// Skip-to-content link styles (for accessibility)
+const skipLinkStyles = {
+  position: 'absolute',
+  left: '-9999px',
+  top: 'auto',
+  width: '1px',
+  height: '1px',
+  overflow: 'hidden',
+}
+
+const skipLinkFocusStyles = `
+  .skip-link:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 1rem 1.5rem;
+    background: #3B82F6;
+    color: white;
+    z-index: 9999;
+    font-weight: 600;
+    text-decoration: none;
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+`
+
 // Research Organization structured data
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -63,6 +92,7 @@ const organizationJsonLd = {
     "https://orcid.org/0009-0005-2394-7162",
   ],
   foundingDate: "2024",
+  inLanguage: "en",
   knowsAbout: [
     "Emotional regulation",
     "Polyvagal theory",
@@ -88,10 +118,19 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
+  inLanguage: "en",
   description: "Open science platform providing structured emotional intelligence frameworks for AI safety research. The Four-Mode Gradient offers computationally legible representations of human regulatory states (Connection, Protection, Control, Domination) detectable in natural language. Designed for AI/ML researchers, safety practitioners, and computational social scientists.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research Consortium",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://teg-blue.org/?search={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
   },
   about: [
     {
@@ -140,9 +179,16 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        {/* Skip-to-content link focus styles */}
+        <style dangerouslySetInnerHTML={{ __html: skipLinkFocusStyles }} />
       </head>
       <body>
+        {/* Skip-to-content link for accessibility */}
+        <a href="#main-content" className="skip-link" style={skipLinkStyles}>
+          Skip to main content
+        </a>
         {children}
+        <Analytics />
       </body>
     </html>
   )

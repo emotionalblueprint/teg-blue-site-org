@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import { generateFAQJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
   title: "Methodology | TEG-Blue Research",
@@ -9,6 +10,26 @@ export const metadata = {
     canonical: "https://teg-blue.org/methodology",
   },
 };
+
+// FAQ content for structured data
+const FAQ_ITEMS = [
+  {
+    question: "What are TEG-Blue's open science principles?",
+    answer: "TEG-Blue follows open science principles including: pre-registration of studies before data collection, open data sharing via Zenodo, open access publication of all findings, transparent reporting of methodology and results, and reproducible analysis pipelines documented in public repositories."
+  },
+  {
+    question: "How is TEG-Blue research validated?",
+    answer: "TEG-Blue uses multiple validation methods: inter-rater reliability testing, convergent validity comparing against established instruments, discriminant validity testing between regulatory states, and ecological validity using naturalistic language samples and real-world contexts."
+  },
+  {
+    question: "How was TEG-Blue developed?",
+    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. AI research tools (Claude, ChatGPT Deep Research) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a working hypothesis requiring deeper scholarly validation."
+  },
+  {
+    question: "What ethical standards does TEG-Blue research follow?",
+    answer: "All research involving human participants follows ethical guidelines including: informed consent, right to withdraw, data anonymization, no deception in study design, debriefing after participation, and mental health resources offered to all participants. The system uses trauma-informed data architecture principles."
+  },
+];
 
 export default function MethodologyPage() {
   return (
@@ -22,6 +43,7 @@ export default function MethodologyPage() {
       <SiteHeader currentPath="/methodology" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
@@ -315,6 +337,12 @@ export default function MethodologyPage() {
       </main>
 
       <SiteFooter />
+
+      {/* FAQ Schema for rich snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
     </div>
   );
 }

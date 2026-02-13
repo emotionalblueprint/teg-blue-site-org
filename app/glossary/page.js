@@ -114,6 +114,7 @@ export default function GlossaryPage() {
       <SiteHeader currentPath="/glossary" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

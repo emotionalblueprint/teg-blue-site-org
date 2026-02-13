@@ -22,6 +22,7 @@ export default function CollaboratePage() {
       <SiteHeader currentPath="/collaborate" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

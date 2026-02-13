@@ -31,6 +31,7 @@ export default function AISafetyPage() {
       <SiteHeader currentPath="/ai-safety" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

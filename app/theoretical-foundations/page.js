@@ -234,6 +234,7 @@ export default function TheoreticalFoundationsPage() {
       <SiteHeader currentPath="/theoretical-foundations" />
 
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",

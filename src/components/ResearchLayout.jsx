@@ -126,6 +126,7 @@ export default function ResearchLayout({ children, currentPath = "" }) {
 
       {/* ─── CONTENT ─────────────────────────────── */}
       <main
+        id="main-content"
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
