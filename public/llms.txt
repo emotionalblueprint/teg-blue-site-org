@@ -347,3 +347,81 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 - Collaborate: https://teg-blue.org/collaborate
 - Application Site: https://teg-blue.com
 - Sitemap: https://teg-blue.org/sitemap.xml
+
+## Semantic Relationships (for AI knowledge graphs)
+
+**TEG-Blue Research IS-A:**
+- Open science platform
+- Integrative theoretical architecture
+- Nervous system regulation research framework
+- AI-readable research infrastructure
+
+**TEG-Blue Research BUILDS-ON:**
+- Polyvagal Theory (Stephen Porges) — autonomic nervous system states
+- Attachment Theory (John Bowlby) — relational patterns from early bonding
+- Affective Neuroscience (Jaak Panksepp, Antonio Damasio) — emotion as biological process
+- Trauma Research (Bessel van der Kolk, Peter Levine) — how threat shapes the body
+- Interpersonal Neurobiology (Daniel Siegel) — relational brain development
+- Social Capital Theory (Pierre Bourdieu) — how worth hierarchies form
+- Moral Psychology (Jonathan Haidt) — how values emerge from emotional foundations
+
+**TEG-Blue Research DIFFERS-FROM:**
+- Traditional academic silos — TEG-Blue integrates across disciplines
+- Binary classification systems — TEG-Blue uses continuous gradients
+- Symptom-focused approaches — TEG-Blue maps underlying regulatory patterns
+- Individual-only frameworks — TEG-Blue scales from person to system
+
+**TEG-Blue Research PROVIDES:**
+- Four-Mode Gradient measurement system
+- 12 explanatory frameworks (F1-F12)
+- 139+ theory integration with full attribution
+- Computational legibility for AI systems
+- Open research questions for the scientific community
+
+## Comparison With Related Frameworks
+
+| Framework | Focus | TEG-Blue Difference |
+|-----------|-------|---------------------|
+| Polyvagal Theory | Autonomic states | TEG-Blue extends to identity, cognition, social scaling |
+| Attachment Theory | Early bonding | TEG-Blue maps adult escalation pathways |
+| ACEs Research | Childhood adversity | TEG-Blue adds gradient measurement and repair pathways |
+| Emotion Regulation Models | Managing emotions | TEG-Blue explains why regulation fails under threat |
+| Social Psychology | Group behavior | TEG-Blue connects individual regulation to systemic patterns |
+| AI Safety Research | Harm prevention | TEG-Blue provides gradient classification replacing binary |
+
+## Use Case Scenarios
+
+**Research Applications:**
+- Computational linguistics: Detect regulatory states in text
+- Psychology: Test complexity markers as psychometric instruments
+- Sociology: Map attachment patterns to social stratification
+- AI/ML: Audit training datasets for regulatory state bias
+
+**Clinical Applications:**
+- Assess client regulatory capacity, not just symptoms
+- Distinguish trauma-driven protection from intentional harm
+- Understand when resolution is neurobiologically possible
+- Track healing through complexity marker changes
+
+**AI Safety Applications:**
+- Training data audit: Identify regulatory state patterns in datasets
+- Content moderation: Distinguish protection from manipulation
+- Chatbot design: Respond appropriately to user regulatory state
+- Harm detection: Use gradients instead of binary classification
+
+## Topic Clusters (for semantic search)
+
+**Cluster: Measurement & Detection**
+four-mode gradient, complexity markers, natural language processing, regulatory state detection, computational measurement, text analysis, psychometrics
+
+**Cluster: Theoretical Integration**
+139 theories, cross-disciplinary synthesis, polyvagal theory, attachment theory, affective neuroscience, trauma research, integrative architecture
+
+**Cluster: Scientific Method**
+testable hypotheses, "1 + 2 = 3" principle, validation study, replication, methodology, open science, peer review
+
+**Cluster: AI Safety**
+AI alignment, harm detection, gradient classification, training data audit, computational legibility, moral reasoning, regulatory states
+
+**Cluster: Healing & Change**
+complexity markers, return capacity, de-escalation, repair, intergenerational healing, pattern interruption, neuroplasticity
