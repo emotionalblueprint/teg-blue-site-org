@@ -64,6 +64,47 @@ export default function FoundationsPage() {
           </p>
         </header>
 
+        {/* Quick Navigation Cards */}
+        <section style={{ marginBottom: 40 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 12,
+            }}
+          >
+            <LayerIntroCard
+              number={1}
+              title="Measurement"
+              subtitle="Four-Mode Gradient"
+              color={SPECTRUM.azure}
+              href="/four-mode-gradient"
+            />
+            <LayerIntroCard
+              number={2}
+              title="Explanatory"
+              subtitle="12 Frameworks"
+              color={SPECTRUM.cobalt}
+              href="/theoretical-foundations"
+            />
+            <LayerIntroCard
+              number={3}
+              title="Tools"
+              subtitle="Applied Instruments"
+              color={SPECTRUM.indigo}
+              href="https://teg-blue.com/emotional-tools"
+              external
+            />
+            <LayerIntroCard
+              number={4}
+              title="AI Safety"
+              subtitle="Structured Schemas"
+              color={SPECTRUM.slate}
+              href="/ai-safety"
+            />
+          </div>
+        </section>
+
         {/* Layer 1 — Measurement */}
         <section style={{ marginBottom: 32 }}>
           <LayerCard
@@ -473,3 +514,76 @@ const tableCellStyle = {
   padding: "12px 16px",
   fontSize: 14,
 };
+
+function LayerIntroCard({ number, title, subtitle, color, href, external }) {
+  const CardWrapper = external ? "a" : Link;
+  const extraProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
+  return (
+    <CardWrapper
+      href={href}
+      {...extraProps}
+      style={{
+        display: "block",
+        padding: 16,
+        background: hexToRgba(color, 0.06),
+        borderRadius: 10,
+        border: `1px solid ${hexToRgba(color, 0.2)}`,
+        borderTop: `3px solid ${color}`,
+        textDecoration: "none",
+        transition: "all 0.2s ease",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+        <span
+          style={{
+            width: 22,
+            height: 22,
+            borderRadius: "50%",
+            background: hexToRgba(color, 0.15),
+            color: color,
+            fontFamily: FONT.mono,
+            fontSize: 11,
+            fontWeight: 700,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {number}
+        </span>
+        <span
+          style={{
+            fontSize: 12,
+            fontWeight: 600,
+            color: color,
+            textTransform: "uppercase",
+            letterSpacing: "0.04em",
+            fontFamily: FONT.mono,
+          }}
+        >
+          Layer {number}
+        </span>
+      </div>
+      <h3
+        style={{
+          fontSize: 15,
+          fontWeight: 600,
+          color: TEXT.primary,
+          marginBottom: 4,
+        }}
+      >
+        {title}
+      </h3>
+      <p
+        style={{
+          fontSize: 12,
+          color: TEXT.muted,
+          margin: 0,
+        }}
+      >
+        {subtitle} →
+      </p>
+    </CardWrapper>
+  );
+}
