@@ -1,23 +1,73 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { generateFourModeGradientJsonLd } from "@/src/lib/jsonld";
 
-export const metadata = {
-  title: "The Four-Mode Gradient — TEG-Blue Research Platform",
-  description: "The measurement system at the heart of TEG-Blue: four nervous system regulatory states that shape perception, behavior, and relational capacity. Connection, Protection, Control, Domination.",
-  alternates: {
-    canonical: "https://teg-blue.org/four-mode-gradient",
+// Deep Diver pattern colors (blue spectrum)
+const PATTERN = {
+  a: { color: "#60a5fa", name: "Connection" },  // blue-400
+  b: { color: "#3b82f6", name: "Protection" },  // blue-500
+  c: { color: "#2563eb", name: "Control" },     // blue-600
+  d: { color: "#1d4ed8", name: "Domination" },  // blue-700
+};
+
+// Mode data for expandable cards
+const MODES = [
+  {
+    id: "a",
+    pattern: "A",
+    name: "Connection",
+    scientificName: "Cooperative Regulation",
+    subtitle: "Safety perceived (Connection)",
+    color: PATTERN.a.color,
+    coreInsight: "The nervous system perceives safety. Not forced calm — real safety that the body believes.",
+    empathyState: "Full — others exist as full people with their own experience",
+    nervousSystem: "Ventral vagal engagement, social engagement system active",
+    keyMarker: "Curiosity about others' experience, capacity for repair",
+    gradient: "Adaptive state",
   },
-};
-
-// Canonical Four-Mode colors from .com
-const MODE = {
-  connection: { color: "#14b8a6", name: "Connection" },
-  protection: { color: "#eab308", name: "Protection" },
-  control: { color: "#f97316", name: "Control" },
-  domination: { color: "#ec4899", name: "Domination" },
-};
+  {
+    id: "b",
+    pattern: "B",
+    name: "Protection",
+    scientificName: "Mobilization & Defense",
+    subtitle: "Threat perceived (Protection)",
+    color: PATTERN.b.color,
+    coreInsight: "Walls go up, but they can come down. A normal response — everyone visits Protection mode.",
+    empathyState: "Partial — focus narrows to self-protection",
+    nervousSystem: "Sympathetic activation, fight/flight readiness",
+    keyMarker: "Withdrawal, guardedness, but recovery is possible with time and safety",
+    gradient: "Adaptive state",
+  },
+  {
+    id: "c",
+    pattern: "C",
+    name: "Control",
+    scientificName: "Strategy-Based Regulation",
+    subtitle: "Safety sought through controlling others (Control)",
+    color: PATTERN.c.color,
+    coreInsight: "Protection isn't enough — managing others becomes the way to feel safe. Not necessarily conscious or malicious.",
+    empathyState: "Strategic — empathy used to predict and manage, not connect",
+    nervousSystem: "Chronic sympathetic activation with cognitive override",
+    keyMarker: "Others become objects to manage; accountability is performed, not genuine",
+    gradient: "Stuck state",
+  },
+  {
+    id: "d",
+    pattern: "D",
+    name: "Domination",
+    scientificName: "Power-Based Regulation",
+    subtitle: "Power as only safety (Domination)",
+    color: PATTERN.d.color,
+    coreInsight: "Control becomes entrenched — power over others is the primary way of feeling safe. Empathy goes offline.",
+    empathyState: "Offline — others exist only in relation to one's needs",
+    nervousSystem: "Dorsal vagal collapse masked by power assertion",
+    keyMarker: "Vulnerability is weakness; harm is rationalized; repair is structurally impossible",
+    gradient: "Stuck state",
+  },
+];
 
 export default function FourModeGradientPage() {
   return (
@@ -38,7 +88,7 @@ export default function FourModeGradientPage() {
         }}
       >
         {/* Hero Section */}
-        <header style={{ marginBottom: 56 }}>
+        <header style={{ marginBottom: 48 }}>
           <p
             style={{
               fontSize: 11,
@@ -70,12 +120,24 @@ export default function FourModeGradientPage() {
               color: TEXT.secondary,
               lineHeight: 1.8,
               maxWidth: 640,
-              marginBottom: 16,
+              marginBottom: 20,
             }}
           >
-            The observable, testable backbone of TEG-Blue. Four nervous system regulatory states
-            that shape what we can perceive, feel, think, and do — detectable in natural language.
+            Four nervous system regulatory states that shape what we can perceive, feel, think, and do —
+            detectable in natural language, measurable through complexity markers.
           </p>
+
+          {/* Gradient bar */}
+          <div
+            style={{
+              height: 6,
+              borderRadius: 3,
+              background: `linear-gradient(90deg, ${PATTERN.a.color}, ${PATTERN.b.color}, ${PATTERN.c.color}, ${PATTERN.d.color})`,
+              maxWidth: 400,
+              marginBottom: 24,
+            }}
+          />
+
           <p
             style={{
               display: "inline-flex",
@@ -86,31 +148,20 @@ export default function FourModeGradientPage() {
               padding: "4px 10px",
               background: hexToRgba(SPECTRUM.azure, 0.1),
               borderRadius: 4,
-              marginBottom: 24,
             }}
           >
             Status: Proposed model with early evidence
           </p>
-
-          {/* Gradient bar */}
-          <div
-            style={{
-              height: 6,
-              borderRadius: 3,
-              background: `linear-gradient(90deg, ${MODE.connection.color}, ${MODE.protection.color}, ${MODE.control.color}, ${MODE.domination.color})`,
-              maxWidth: 400,
-            }}
-          />
         </header>
 
         {/* Core Insight */}
-        <section style={{ marginBottom: 56 }}>
+        <section style={{ marginBottom: 48 }}>
           <blockquote
             style={{
               margin: 0,
               padding: "20px 24px",
-              borderLeft: `4px solid ${MODE.connection.color}`,
-              background: hexToRgba(MODE.connection.color, 0.08),
+              borderLeft: `4px solid ${PATTERN.a.color}`,
+              background: hexToRgba(PATTERN.a.color, 0.08),
               borderRadius: "0 8px 8px 0",
               fontSize: 18,
               fontWeight: 500,
@@ -123,133 +174,51 @@ export default function FourModeGradientPage() {
           </blockquote>
         </section>
 
-        {/* The Four Modes */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="01" title="The Four Regulatory States" />
+        {/* The Four Modes - Expandable Cards */}
+        <section style={{ marginBottom: 48 }}>
+          <div style={{ marginBottom: 20 }}>
+            <h2
+              style={{
+                fontSize: 20,
+                fontWeight: 700,
+                color: TEXT.primary,
+                letterSpacing: "-0.01em",
+                marginBottom: 8,
+              }}
+            >
+              The Four Regulatory States
+            </h2>
+            <p style={{ fontSize: 14, color: TEXT.muted, margin: 0 }}>
+              Not personality types — nervous system positions that shift in response to perceived threat.
+              Each state has a pattern designation (A, B, C, D) used in clinical and research contexts.
+            </p>
+          </div>
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            These are not personality types or diagnostic categories. They are{" "}
-            <strong style={{ color: TEXT.primary }}>nervous system states</strong> — regulatory
-            positions that shift in response to perceived threat, shaped by attachment history,
-            social context, and current capacity.
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <ModeCard
-              mode="Connection"
-              color={MODE.connection.color}
-              subtitle="Safety perceived"
-              description="The nervous system perceives safety. Not forced calm or performed wellness — real safety that the body believes, not just the mind."
-              characteristics={[
-                "Empathy is fully online",
-                "Perspective-taking is possible",
-                "Flexibility is high",
-                "Repair is available",
-                "Curiosity about others' experience",
-              ]}
-              empathy="Full"
-              flexibility="High"
-            />
-
-            <ModeCard
-              mode="Protection"
-              color={MODE.protection.color}
-              subtitle="Threat perceived"
-              description="The nervous system detects potential threat. Walls go up, but they can come down. This is a normal, healthy response — everyone visits Protection mode."
-              characteristics={[
-                "Empathy is still available, but narrowed",
-                "Focus shifts to self-protection",
-                "Flexibility decreases",
-                "Withdrawal, quietness, guardedness",
-                "Recovery is possible with time and safety",
-              ]}
-              empathy="Partial"
-              flexibility="Reduced"
-            />
-
-            <ModeCard
-              mode="Control"
-              color={MODE.control.color}
-              subtitle="Safety sought through controlling others"
-              description="Protection isn't enough — the nervous system decides that managing others is the only way to feel safe. This isn't necessarily conscious or malicious. It's a survival adaptation."
-              characteristics={[
-                "Empathy becomes strategic (predict/manage, not connect)",
-                "Others become objects to manage",
-                "Flexibility limited to what serves control",
-                "Accountability is performed, not genuine",
-                "Focus on managing perception",
-              ]}
-              empathy="Strategic"
-              flexibility="Limited"
-            />
-
-            <ModeCard
-              mode="Domination"
-              color={MODE.domination.color}
-              subtitle="Power as only safety"
-              description="Control becomes entrenched — power over others becomes the primary way of feeling safe. Empathy doesn't just narrow; it goes offline."
-              characteristics={[
-                "Others exist only in relation to one's needs",
-                "Vulnerability is weakness",
-                "Harm is rationalized or invisible",
-                "Truth is whatever maintains power",
-                "Repair is structurally impossible",
-              ]}
-              empathy="Offline"
-              flexibility="Minimal"
-            />
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {MODES.map((mode) => (
+              <ExpandableModeCard key={mode.id} mode={mode} />
+            ))}
           </div>
         </section>
 
-        {/* Key Principles */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="02" title="Key Principles" />
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: 16,
-            }}
-          >
-            <PrincipleCard
-              title="Gradient, Not Categories"
-              description="The modes exist on a continuum. People don't jump from one to another — they slide. The gradient nature is essential: someone in late Protection looks different from early Protection."
-            />
-            <PrincipleCard
-              title="Health Is Mobility"
-              description="A well-regulated nervous system moves fluidly through states. Getting stuck is the problem — not visiting Protection or even Control temporarily."
-            />
-            <PrincipleCard
-              title="States, Not Traits"
-              description="These are positions anyone can occupy, not fixed personality types. The same person can operate from Connection in one context and Control in another."
-            />
-            <PrincipleCard
-              title="Biology, Not Morality"
-              description="Moving toward Control or Domination under threat isn't a character flaw — it's how nervous systems respond to perceived danger. Understanding this changes everything."
-            />
-          </div>
-        </section>
-
-        {/* The Core Claim */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="03" title="The Core Testable Claim" />
-
+        {/* Key Principle */}
+        <section style={{ marginBottom: 48 }}>
           <div
             style={{
               padding: 24,
               background: BG.card,
               borderRadius: RADIUS.lg,
               border: `1px solid ${BORDER.default}`,
-              marginBottom: 20,
             }}
           >
-            <p style={{ fontSize: 16, color: TEXT.primary, lineHeight: 1.7, marginBottom: 16 }}>
-              The key variable that predicts relational and behavioral outcomes is not a person's
-              current regulatory state, but their{" "}
+            <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+              The Core Testable Claim
+            </h3>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 0 }}>
+              The key variable that predicts relational outcomes is not current state, but{" "}
               <strong
                 style={{
-                  background: `linear-gradient(90deg, ${MODE.connection.color}, ${SPECTRUM.azure})`,
+                  background: `linear-gradient(90deg, ${PATTERN.a.color}, ${SPECTRUM.azure})`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -257,112 +226,133 @@ export default function FourModeGradientPage() {
               >
                 capacity to return to Connection when challenged
               </strong>.
-            </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-              Someone in Protection who can move back toward Connection when the threat passes is
-              fundamentally different from someone who escalates toward Control. Current state
-              matters less than trajectory.
+              Someone in Protection who can move back is fundamentally different from someone who escalates toward Control.
             </p>
           </div>
-
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
-            This capacity is measurable through{" "}
-            <strong style={{ color: TEXT.secondary }}>complexity markers</strong> — signs of
-            self-awareness, perspective-taking, and emotional differentiation detectable in natural
-            language.
-          </p>
         </section>
 
-        {/* How It's Measured */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="04" title="Detection in Natural Language" />
+        {/* What You'll Find - CTA to .com */}
+        <section style={{ marginBottom: 48 }}>
+          <h2
+            style={{
+              fontSize: 20,
+              fontWeight: 700,
+              color: TEXT.primary,
+              letterSpacing: "-0.01em",
+              marginBottom: 16,
+            }}
+          >
+            Explore the Full Framework
+          </h2>
 
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            The four modes produce distinct patterns in how people speak and write. A validation
-            study analyzing 10,000+ natural conflict narratives identified reliable markers:
+            The Four-Mode Gradient includes detailed pattern diagrams, assessment tools, and intervention
+            principles available on teg-blue.com. Here's what you'll find:
           </p>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: 12,
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 16,
               marginBottom: 24,
             }}
           >
-            <MarkerCard
-              title="Polyvagal Markers"
-              description="Physiological regulation signals: safety cues, withdrawal patterns, fight/flight language"
+            <FeatureCard
+              title="Five Structural Axes"
+              description="Every pattern is mapped across the same five dimensions: nervous system state, biological activation, cognitive frame, empathy logic, and behavioral expression."
               color={SPECTRUM.azure}
             />
-            <MarkerCard
-              title="Contempt Markers"
-              description="Dismissiveness, superiority, disgust — signals of Control/Domination positioning"
+            <FeatureCard
+              title="Transition Logic"
+              description="How and why people move between states. The escalation pathways, the de-escalation markers, and what predicts each trajectory."
+              color={SPECTRUM.blue}
+            />
+            <FeatureCard
+              title="Intervention Principles"
+              description="What actually helps at each position. Not generic advice — pattern-specific approaches based on nervous system logic."
               color={SPECTRUM.cobalt}
             />
-            <MarkerCard
-              title="Moral Disengagement"
-              description="Rationalization, diffusion of responsibility, dehumanization of others"
+            <FeatureCard
+              title="Emotional Tools"
+              description="Five gradient scales for real-time self-assessment: Hurt, Accountability, Control, Empathy, and Entitlement."
               color={SPECTRUM.indigo}
-            />
-            <MarkerCard
-              title="Complexity Markers"
-              description="Self-awareness, perspective-taking, emotional differentiation — predict return to Connection"
-              color={MODE.connection.color}
             />
           </div>
 
+          {/* CTA Buttons */}
           <div
             style={{
-              padding: 20,
-              background: BG.surface,
-              borderRadius: RADIUS.md,
-              border: `1px solid ${BORDER.default}`,
+              padding: 28,
+              background: hexToRgba(SPECTRUM.blue, 0.08),
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
+              textAlign: "center",
             }}
           >
             <p
               style={{
-                fontSize: 11,
-                fontFamily: FONT.mono,
-                color: TEXT.hint,
-                textTransform: "uppercase",
-                letterSpacing: "0.06em",
-                marginBottom: 12,
+                fontSize: 15,
+                color: TEXT.secondary,
+                marginBottom: 20,
+                maxWidth: 480,
+                margin: "0 auto 20px",
+                lineHeight: 1.7,
               }}
             >
-              Validation Finding
+              The Deep Diver framework provides clinical-level detail for practitioners, researchers, and anyone who wants the complete picture.
             </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-              De-escalators (those who moved toward Connection when challenged) showed{" "}
-              <strong style={{ color: MODE.connection.color }}>78% higher rates</strong> of
-              complexity markers than escalators. Mode classifications correlated with independent
-              community moral judgments.
-            </p>
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+              <a
+                href="https://teg-blue.com/four-mode-gradient/deep-diver"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: "12px 24px",
+                  background: SPECTRUM.blue,
+                  color: "#fff",
+                  borderRadius: RADIUS.md,
+                  fontWeight: 600,
+                  fontSize: 14,
+                  textDecoration: "none",
+                }}
+              >
+                Deep Diver Framework →
+              </a>
+              <a
+                href="https://teg-blue.com/four-mode-gradient/deep-diver/introduction"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: "12px 24px",
+                  background: "transparent",
+                  color: TEXT.secondary,
+                  border: `1px solid ${BORDER.default}`,
+                  borderRadius: RADIUS.md,
+                  fontWeight: 500,
+                  fontSize: 14,
+                  textDecoration: "none",
+                }}
+              >
+                Start with Introduction
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* Relationship to 12 Frameworks */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="05" title="Layer 1 of Two" />
-
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            The Four-Mode Gradient is the{" "}
-            <strong style={{ color: TEXT.primary }}>measurement system</strong> — it tells you{" "}
-            <em>where</em> someone is. It answers: "Where am I? Where are they?"
-          </p>
-
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            The{" "}
-            <Link
-              href="/theoretical-foundations"
-              style={{ color: SPECTRUM.azure, textDecoration: "none" }}
-            >
-              12 Frameworks
-            </Link>{" "}
-            are the <strong style={{ color: TEXT.primary }}>explanatory architecture</strong> — they
-            explain <em>why</em> the modes exist, <em>how</em> patterns scale from individual to
-            systemic, and <em>what</em> makes change possible.
-          </p>
+        {/* Layer Navigation */}
+        <section style={{ marginBottom: 48 }}>
+          <h2
+            style={{
+              fontSize: 20,
+              fontWeight: 700,
+              color: TEXT.primary,
+              letterSpacing: "-0.01em",
+              marginBottom: 16,
+            }}
+          >
+            Two-Layer Architecture
+          </h2>
 
           <div
             style={{
@@ -391,7 +381,7 @@ export default function FourModeGradientPage() {
                   marginBottom: 8,
                 }}
               >
-                Layer 1
+                Layer 1 — You are here
               </p>
               <p
                 style={{
@@ -404,7 +394,7 @@ export default function FourModeGradientPage() {
                 Four-Mode Gradient
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
-                Observable measurement. Empirically validated. Detectable in natural language.
+                Observable measurement. Where am I? Where are they?
               </p>
             </div>
 
@@ -441,279 +431,54 @@ export default function FourModeGradientPage() {
                   marginBottom: 6,
                 }}
               >
-                12 Frameworks
+                12 Frameworks →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
-                Explanatory architecture. Integrates 139+ theories. Maps individual to systemic.
+                Explanatory architecture. Why do modes exist? How do patterns scale?
               </p>
             </Link>
           </div>
         </section>
 
-        {/* Deep Diver Framework Preview */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="06" title="The Scientific Framework" />
-
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8 }}>
-            The Four-Mode Gradient uses a consistent <strong style={{ color: TEXT.primary }}>five-axis structure</strong> across all patterns, designed for clinical and research precision:
-          </p>
-          <p style={{ fontSize: 13, color: TEXT.muted, marginBottom: 24 }}>
-            <em>This framework is available in full detail on teg-blue.com (Deep Diver tier). Below is the structural overview for researchers.</em>
-          </p>
-
-          {/* Pattern Naming */}
-          <div
-            style={{
-              padding: 20,
-              background: BG.card,
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${BORDER.default}`,
-              marginBottom: 20,
-            }}
-          >
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              Pattern Classification
-            </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
-              <PatternLabel pattern="A" name="Cooperative Regulation" mode="Connection" color={MODE.connection.color} />
-              <PatternLabel pattern="B" name="Mobilization & Defense" mode="Protection" color={MODE.protection.color} />
-              <PatternLabel pattern="C" name="Strategy-Based Regulation" mode="Control" color={MODE.control.color} />
-              <PatternLabel pattern="D" name="Power-Based Regulation" mode="Domination" color={MODE.domination.color} />
-            </div>
-            <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 16, marginBottom: 0, fontFamily: FONT.mono }}>
-              Gradient trajectory: Safety → Threat → Instability → Power-as-Safety
-            </p>
-          </div>
-
-          {/* Five Structural Axes */}
-          <div
-            style={{
-              padding: 20,
-              background: BG.card,
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${BORDER.default}`,
-              marginBottom: 20,
-            }}
-          >
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              Five Structural Axes
-            </h3>
-            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-              All pattern diagrams and assessment sheets use the same five axes, enabling consistent measurement across states:
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10 }}>
-              <AxisCard number={1} label="Nervous system state" />
-              <AxisCard number={2} label="Biological activation" />
-              <AxisCard number={3} label="Cognitive/perceptual frame" />
-              <AxisCard number={4} label="Empathy/relational logic" />
-              <AxisCard number={5} label="Behavioral expression" />
-            </div>
-          </div>
-
-          {/* Transition Logic */}
-          <div
-            style={{
-              padding: 20,
-              background: BG.card,
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${BORDER.default}`,
-              marginBottom: 20,
-            }}
-          >
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              Transition Logic
-            </h3>
-            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-              Movement between patterns follows predictable pathways. Movement is <strong>continuous, context-dependent, and bidirectional</strong>.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <TransitionRow from="A" to="B" color={MODE.protection.color} description="Safety drops, protection activates" />
-              <TransitionRow from="B" to="C" color={MODE.control.color} description="Threat becomes ongoing, strategy replaces connection" />
-              <TransitionRow from="C" to="D" color={MODE.domination.color} description="Control becomes survival, power becomes safety" />
-            </div>
-          </div>
-
-          {/* Emotional Tools Overview */}
-          <div
-            style={{
-              padding: 20,
-              background: hexToRgba(SPECTRUM.indigo, 0.06),
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-            }}
-          >
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              Emotional Tools: The Instrument Panel
-            </h3>
-            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-              The frameworks explain <em>why</em>. The tools tell you <em>where you are</em>, what it means, and <em>what options are next</em>. Practical instruments for real-time emotional navigation, not abstraction.
-            </p>
-            <div style={{ marginBottom: 16 }}>
-              <p style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-                Five Core Gradient Scales
-              </p>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                {["Hurt", "Accountability", "Control", "Empathy", "Entitlement"].map((scale) => (
-                  <span
-                    key={scale}
-                    style={{
-                      padding: "4px 12px",
-                      background: hexToRgba(SPECTRUM.indigo, 0.12),
-                      borderRadius: 4,
-                      fontSize: 12,
-                      fontFamily: FONT.mono,
-                      color: SPECTRUM.indigo,
-                      fontWeight: 500,
-                    }}
-                  >
-                    {scale}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p style={{ fontSize: 12, fontWeight: 600, color: TEXT.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.04em", fontFamily: FONT.mono }}>
-                Assessment Dimensions
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 6 }}>
-                {["Repair capacity", "Empathy functionality", "Response to safety", "Control requirement", "Complexity tolerance"].map((dim) => (
-                  <span
-                    key={dim}
-                    style={{
-                      padding: "6px 10px",
-                      background: BG.surface,
-                      borderRadius: 4,
-                      fontSize: 11,
-                      color: TEXT.muted,
-                      border: `1px solid ${BORDER.default}`,
-                    }}
-                  >
-                    {dim}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <p style={{ fontSize: 12, color: TEXT.hint, marginTop: 16, marginBottom: 0 }}>
-              <strong>Status:</strong> These tools are proposed instruments awaiting psychometric validation.{" "}
-              <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-                Collaborators needed →
-              </Link>
-            </p>
-          </div>
-        </section>
-
-        {/* Applications */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="07" title="Applications" />
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: 12,
-            }}
-          >
-            <ApplicationCard
-              title="Clinical Assessment"
-              description="Therapists and clinicians can use the gradient to assess client regulatory states and track movement over time."
-            />
-            <ApplicationCard
-              title="Relational Intelligence"
-              description="Individuals can recognize their own patterns and understand others' behavior as nervous system responses, not character."
-            />
-            <ApplicationCard
-              title="Conflict Analysis"
-              description="The framework provides language for understanding escalation and de-escalation dynamics in interpersonal and group conflict."
-            />
-            <ApplicationCard
-              title="AI Safety"
-              description="Structured gradients give AI systems vocabulary for patterns that binary safe/unsafe cannot capture."
-            />
-          </div>
-        </section>
-
-        {/* CTA Section */}
+        {/* Footer Links */}
         <section
           style={{
-            padding: 32,
-            background: hexToRgba(SPECTRUM.blue, 0.08),
-            borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
-            textAlign: "center",
+            display: "flex",
+            gap: 12,
+            justifyContent: "center",
+            flexWrap: "wrap",
           }}
         >
-          <h2
+          <Link
+            href="/publications/validation-study"
             style={{
-              fontSize: 22,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
+              padding: "10px 20px",
+              background: "transparent",
+              color: TEXT.muted,
+              border: `1px solid ${BORDER.default}`,
+              borderRadius: RADIUS.md,
+              fontWeight: 500,
+              fontSize: 13,
+              textDecoration: "none",
             }}
           >
-            Explore the Gradient
-          </h2>
-          <p
+            Validation Study
+          </Link>
+          <Link
+            href="/collaborate"
             style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              marginBottom: 24,
-              maxWidth: 520,
-              margin: "0 auto 24px",
-              lineHeight: 1.7,
+              padding: "10px 20px",
+              background: "transparent",
+              color: TEXT.muted,
+              border: `1px solid ${BORDER.default}`,
+              borderRadius: RADIUS.md,
+              fontWeight: 500,
+              fontSize: 13,
+              textDecoration: "none",
             }}
           >
-            The Four-Mode Gradient is available as an interactive tool on teg-blue.com, with both
-            Explorer (accessible) and Deep Diver (clinical) versions.
-          </p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <a
-              href="https://teg-blue.com/inner-compass"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                padding: "12px 24px",
-                background: SPECTRUM.blue,
-                color: "#fff",
-                borderRadius: RADIUS.md,
-                fontWeight: 600,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              Interactive Tool →
-            </a>
-            <Link
-              href="/publications/validation-study"
-              style={{
-                padding: "12px 24px",
-                background: "transparent",
-                color: TEXT.secondary,
-                border: `1px solid ${BORDER.default}`,
-                borderRadius: RADIUS.md,
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              Validation Study
-            </Link>
-            <Link
-              href="/theoretical-foundations"
-              style={{
-                padding: "12px 24px",
-                background: "transparent",
-                color: TEXT.secondary,
-                border: `1px solid ${BORDER.default}`,
-                borderRadius: RADIUS.md,
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              12 Frameworks
-            </Link>
-          </div>
+            Collaborate
+          </Link>
         </section>
 
         {/* Footer note */}
@@ -725,143 +490,222 @@ export default function FourModeGradientPage() {
       </main>
 
       <SiteFooter />
-
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFourModeGradientJsonLd()) }}
-      />
     </div>
   );
 }
 
-// ─── COMPONENTS ─────────────────────────────────────────
+// ─── EXPANDABLE MODE CARD ─────────────────────────────────
 
-function SectionHeader({ number, title }) {
-  return (
-    <div style={{ marginBottom: 16 }}>
-      <p
-        style={{
-          fontSize: 11,
-          fontWeight: 600,
-          color: SPECTRUM.azure,
-          textTransform: "uppercase",
-          letterSpacing: "0.06em",
-          fontFamily: FONT.mono,
-          marginBottom: 6,
-        }}
-      >
-        {number}
-      </p>
-      <h2
-        style={{
-          fontSize: 20,
-          fontWeight: 700,
-          color: TEXT.primary,
-          letterSpacing: "-0.01em",
-          margin: 0,
-        }}
-      >
-        {title}
-      </h2>
-    </div>
-  );
-}
+function ExpandableModeCard({ mode }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-function ModeCard({ mode, color, subtitle, description, characteristics, empathy, flexibility }) {
   return (
     <div
       style={{
         background: BG.card,
         borderRadius: RADIUS.lg,
         border: `1px solid ${BORDER.default}`,
-        borderLeft: `4px solid ${color}`,
-        padding: 24,
+        borderLeft: `4px solid ${mode.color}`,
+        overflow: "hidden",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-        <div>
-          <h3
-            style={{
-              fontSize: 18,
-              fontWeight: 700,
-              color: color,
-              marginBottom: 4,
-            }}
-          >
-            {mode}
-          </h3>
-          <p
+      {/* Header - always visible */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          width: "100%",
+          padding: "16px 20px",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          textAlign: "left",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 16, flex: 1 }}>
+          {/* Pattern letter */}
+          <span
             style={{
               fontSize: 13,
-              color: TEXT.muted,
-              fontStyle: "italic",
-              margin: 0,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              color: mode.color,
+              background: hexToRgba(mode.color, 0.12),
+              padding: "4px 8px",
+              borderRadius: 4,
             }}
           >
-            {subtitle}
+            {mode.pattern}
+          </span>
+
+          {/* Name and subtitle */}
+          <div>
+            <span
+              style={{
+                fontSize: 16,
+                fontWeight: 600,
+                color: mode.color,
+              }}
+            >
+              {mode.name}
+            </span>
+            <span
+              style={{
+                fontSize: 14,
+                color: TEXT.muted,
+                marginLeft: 12,
+              }}
+            >
+              {mode.subtitle}
+            </span>
+          </div>
+        </div>
+
+        {/* Gradient tag */}
+        <span
+          style={{
+            fontSize: 10,
+            fontWeight: 600,
+            fontFamily: FONT.mono,
+            color: mode.gradient === "Adaptive state" ? PATTERN.a.color : PATTERN.c.color,
+            textTransform: "uppercase",
+            letterSpacing: "0.04em",
+            marginRight: 16,
+          }}
+        >
+          {mode.gradient}
+        </span>
+
+        {/* Arrow */}
+        <span
+          style={{
+            fontSize: 18,
+            color: TEXT.muted,
+            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.2s ease",
+          }}
+        >
+          ▾
+        </span>
+      </button>
+
+      {/* Expandable content */}
+      {isOpen && (
+        <div
+          style={{
+            padding: "0 20px 20px",
+            borderTop: `1px solid ${BORDER.default}`,
+            paddingTop: 16,
+          }}
+        >
+          {/* Scientific name */}
+          <p
+            style={{
+              fontSize: 12,
+              fontFamily: FONT.mono,
+              color: TEXT.hint,
+              marginBottom: 16,
+            }}
+          >
+            Scientific: {mode.scientificName}
           </p>
-        </div>
-        <div style={{ display: "flex", gap: 8 }}>
-          <div
+
+          {/* Core insight */}
+          <p
             style={{
-              padding: "4px 10px",
-              background: hexToRgba(color, 0.12),
-              borderRadius: 4,
-              fontSize: 10,
-              fontFamily: FONT.mono,
-              color: color,
-              fontWeight: 600,
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.7,
+              marginBottom: 16,
+              fontStyle: "italic",
             }}
           >
-            Empathy: {empathy}
+            "{mode.coreInsight}"
+          </p>
+
+          {/* Details grid */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <DetailRow label="NERVOUS SYSTEM" value={mode.nervousSystem} color={mode.color} />
+            <DetailRow label="EMPATHY STATE" value={mode.empathyState} color={mode.color} />
+            <DetailRow label="KEY MARKER" value={mode.keyMarker} color={mode.color} />
           </div>
-          <div
-            style={{
-              padding: "4px 10px",
-              background: hexToRgba(color, 0.12),
-              borderRadius: 4,
-              fontSize: 10,
-              fontFamily: FONT.mono,
-              color: color,
-              fontWeight: 600,
-            }}
-          >
-            Flexibility: {flexibility}
+
+          {/* Link to deep diver */}
+          <div style={{ marginTop: 16 }}>
+            <a
+              href={`https://teg-blue.com/four-mode-gradient/deep-diver#pattern-${mode.pattern.toLowerCase()}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: 13,
+                color: mode.color,
+                textDecoration: "none",
+                fontWeight: 500,
+              }}
+            >
+              View full pattern diagram on teg-blue.com →
+            </a>
           </div>
         </div>
-      </div>
-
-      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-        {description}
-      </p>
-
-      <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
-        {characteristics.map((char, i) => (
-          <li key={i} style={{ marginBottom: 4 }}>
-            {char}
-          </li>
-        ))}
-      </ul>
+      )}
     </div>
   );
 }
 
-function PrincipleCard({ title, description }) {
+function DetailRow({ label, value, color }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 12,
+        alignItems: "flex-start",
+      }}
+    >
+      <span
+        style={{
+          fontSize: 10,
+          fontWeight: 600,
+          fontFamily: FONT.mono,
+          color: color,
+          textTransform: "uppercase",
+          letterSpacing: "0.04em",
+          minWidth: 100,
+          paddingTop: 2,
+        }}
+      >
+        {label}
+      </span>
+      <span
+        style={{
+          fontSize: 13,
+          color: TEXT.secondary,
+          lineHeight: 1.5,
+        }}
+      >
+        {value}
+      </span>
+    </div>
+  );
+}
+
+function FeatureCard({ title, description, color }) {
   return (
     <div
       style={{
         padding: 20,
-        background: BG.surface,
+        background: BG.card,
         borderRadius: RADIUS.md,
         border: `1px solid ${BORDER.default}`,
+        borderTop: `3px solid ${color}`,
       }}
     >
       <h3
         style={{
           fontSize: 14,
           fontWeight: 600,
-          color: TEXT.primary,
+          color: color,
           marginBottom: 8,
         }}
       >
@@ -870,162 +714,6 @@ function PrincipleCard({ title, description }) {
       <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
         {description}
       </p>
-    </div>
-  );
-}
-
-function MarkerCard({ title, description, color }) {
-  return (
-    <div
-      style={{
-        padding: 16,
-        background: hexToRgba(color, 0.08),
-        borderRadius: RADIUS.md,
-        border: `1px solid ${hexToRgba(color, 0.15)}`,
-        borderTop: `2px solid ${color}`,
-      }}
-    >
-      <h3
-        style={{
-          fontSize: 13,
-          fontWeight: 600,
-          color: color,
-          marginBottom: 6,
-        }}
-      >
-        {title}
-      </h3>
-      <p style={{ fontSize: 12, color: TEXT.muted, margin: 0, lineHeight: 1.5 }}>
-        {description}
-      </p>
-    </div>
-  );
-}
-
-function ApplicationCard({ title, description }) {
-  return (
-    <div
-      style={{
-        padding: 16,
-        background: BG.card,
-        borderRadius: RADIUS.md,
-        border: `1px solid ${BORDER.default}`,
-      }}
-    >
-      <h3
-        style={{
-          fontSize: 13,
-          fontWeight: 600,
-          color: TEXT.primary,
-          marginBottom: 6,
-        }}
-      >
-        {title}
-      </h3>
-      <p style={{ fontSize: 12, color: TEXT.muted, margin: 0, lineHeight: 1.5 }}>
-        {description}
-      </p>
-    </div>
-  );
-}
-
-function PatternLabel({ pattern, name, mode, color }) {
-  return (
-    <div
-      style={{
-        padding: "10px 14px",
-        background: hexToRgba(color, 0.08),
-        borderRadius: RADIUS.md,
-        borderLeft: `3px solid ${color}`,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-        <span
-          style={{
-            fontSize: 12,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            color: color,
-          }}
-        >
-          Pattern {pattern}
-        </span>
-        <span style={{ fontSize: 11, color: TEXT.muted }}>—</span>
-        <span style={{ fontSize: 12, fontWeight: 600, color: color }}>
-          {mode}
-        </span>
-      </div>
-      <p style={{ fontSize: 11, color: TEXT.muted, margin: 0 }}>
-        {name}
-      </p>
-    </div>
-  );
-}
-
-function AxisCard({ number, label }) {
-  return (
-    <div
-      style={{
-        padding: "10px 12px",
-        background: BG.surface,
-        borderRadius: RADIUS.sm,
-        border: `1px solid ${BORDER.default}`,
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-      }}
-    >
-      <span
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: "50%",
-          background: hexToRgba(SPECTRUM.azure, 0.15),
-          color: SPECTRUM.azure,
-          fontSize: 11,
-          fontWeight: 700,
-          fontFamily: FONT.mono,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {number}
-      </span>
-      <span style={{ fontSize: 12, color: TEXT.secondary }}>
-        {label}
-      </span>
-    </div>
-  );
-}
-
-function TransitionRow({ from, to, color, description }) {
-  return (
-    <div
-      style={{
-        padding: "10px 14px",
-        background: BG.surface,
-        borderRadius: RADIUS.sm,
-        border: `1px solid ${BORDER.default}`,
-        display: "flex",
-        alignItems: "center",
-        gap: 12,
-      }}
-    >
-      <span
-        style={{
-          fontSize: 12,
-          fontWeight: 700,
-          fontFamily: FONT.mono,
-          color: color,
-          whiteSpace: "nowrap",
-        }}
-      >
-        {from} → {to}
-      </span>
-      <span style={{ fontSize: 12, color: TEXT.secondary }}>
-        {description}
-      </span>
     </div>
   );
 }
