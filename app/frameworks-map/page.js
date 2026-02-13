@@ -253,7 +253,7 @@ export default function TheoreticalFoundationsPage() {
                 margin: 0,
               }}
             >
-              Frameworks
+              Frameworks Map
             </h1>
             <span
               style={{
@@ -273,11 +273,28 @@ export default function TheoreticalFoundationsPage() {
             style={{
               fontSize: 15,
               color: TEXT.secondary,
-              lineHeight: 1.7,
-              marginBottom: 16,
+              lineHeight: 1.9,
+              marginBottom: 20,
             }}
           >
-            The explanatory hub behind TEG-Blue.
+            It begins with a simple premise:<br />
+            emotions are valid data about safety, threat, belonging, and meaning.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.9,
+              marginBottom: 20,
+            }}
+          >
+            From there, it unfolds the full TEG-Blue system —<br />
+            from nervous system biology,<br />
+            to identity,<br />
+            to communities,<br />
+            to social systems,<br />
+            to healing,<br />
+            to AI.
           </p>
           <p
             style={{
@@ -287,38 +304,92 @@ export default function TheoreticalFoundationsPage() {
               marginBottom: 12,
             }}
           >
-            If the{" "}
-            <Link href="/four-mode-gradient" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Four-Mode Gradient
-            </Link>{" "}
-            is the measurement layer, then these 12 frameworks are the explanatory layer that clarifies:
-          </p>
-          <ul style={{ paddingLeft: 24, marginBottom: 16 }}>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Why</strong> patterns emerge</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>How</strong> they escalate</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>Why</strong> they look paradoxical</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>How</strong> repair becomes possible again</li>
-          </ul>
-          <p style={{ fontSize: 13, color: TEXT.muted }}>
-            Full system view:{" "}
-            <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              System Overview →
-            </Link>
+            You can read it top to bottom, or use this map to enter at any level.
           </p>
         </header>
 
         {/* Framework Arc Overview */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            The framework arc
+          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 20 }}>
+            The Framework Mapping Arc
           </h2>
-          <ul style={{ paddingLeft: 24, marginBottom: 20 }}>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F1–F3 (Formation):</strong> How the nervous system orients, how identity crystallizes, how cognition maintains coherence</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F4–F6 (Scaling):</strong> How individual patterns become social rules, worth hierarchies, and perception biases</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F7 (Turning Point):</strong> How protection escalates through control into domination</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F8–F10 (Healing):</strong> Self-reconnection, neurodivergent pathways, and intergenerational repair</li>
-            <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}><strong>F11–F12 (Integration):</strong> Paradox resolution and the complete theoretical synthesis</li>
-          </ul>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Formation"],
+                minWidth: 140,
+                paddingTop: 2,
+              }}>
+                F1–F3 (Formation)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                How the nervous system orients, how identity crystallizes, how cognition maintains coherence
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Scaling"],
+                minWidth: 140,
+                paddingTop: 2,
+              }}>
+                F4–F6 (Scaling)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                How individual patterns become social rules, worth hierarchies, and perception biases
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Turning Point"],
+                minWidth: 140,
+                paddingTop: 2,
+              }}>
+                F7 (Turning Point)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                How protection escalates through control into domination
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Healing"],
+                minWidth: 140,
+                paddingTop: 2,
+              }}>
+                F8–F10 (Healing)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                Self-reconnection, neurodivergent pathways, and intergenerational repair
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Integration"],
+                minWidth: 140,
+                paddingTop: 2,
+              }}>
+                F11–F12 (Integration)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                Paradox resolution and the complete theoretical synthesis
+              </span>
+            </div>
+          </div>
         </section>
 
         {/* All Frameworks - Expandable */}
