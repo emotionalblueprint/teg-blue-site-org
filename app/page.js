@@ -4,8 +4,8 @@ import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, hexToRgba } from "@/src/styl
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "TEG-Blue Research Platform",
-  description: "A research hub for testing, critiquing, and validating TEG-Blue. For researchers, academics, clinicians, and AI safety researchers.",
+  title: "TEG-Blue Research Platform | Understanding How Harm Scales",
+  description: "We confuse hurt with harm — and it costs us everything. TEG-Blue maps how emotional dysregulation scales from individual to systemic. Open research for academics, clinicians, and AI safety researchers.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
@@ -34,29 +34,51 @@ export default function ResearchHub() {
           }}
         >
           {/* Hero Section */}
-          <section style={{ marginBottom: 40 }}>
-            <h1
+          <section style={{ marginBottom: 48 }}>
+            {/* Eyebrow */}
+            <p
               style={{
-                fontSize: 28,
-                fontWeight: 700,
-                color: TEXT.primary,
-                marginBottom: 12,
-                letterSpacing: "-0.02em",
+                fontSize: 11,
+                fontWeight: 600,
+                color: SPECTRUM.blue,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                marginBottom: 16,
+                fontFamily: FONT.mono,
               }}
             >
               TEG-Blue Research Platform
+            </p>
+
+            {/* Headline - the hook */}
+            <h1
+              style={{
+                fontSize: 32,
+                fontWeight: 700,
+                color: TEXT.primary,
+                marginBottom: 16,
+                letterSpacing: "-0.02em",
+                lineHeight: 1.2,
+                maxWidth: 600,
+              }}
+            >
+              We confuse hurt with harm — and it costs us everything.
             </h1>
+
+            {/* Subhead - the reveal */}
             <p
               style={{
-                fontSize: 15,
+                fontSize: 17,
                 lineHeight: 1.7,
                 color: TEXT.secondary,
                 maxWidth: 600,
                 marginBottom: 20,
               }}
             >
-              A research hub for testing, critiquing, and validating TEG-Blue.
+              This is the research to understand why.
             </p>
+
+            {/* Context */}
             <p
               style={{
                 fontSize: 14,
@@ -66,112 +88,135 @@ export default function ResearchHub() {
                 marginBottom: 24,
               }}
             >
-              This space is built for researchers, academics, clinicians who value evidence, and AI safety researchers.
+              TEG-Blue maps how emotional dysregulation scales — from individual nervous system states through relationships, groups, institutions, and systems. Built on 139+ established theories. Open to critique and validation.
             </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, marginBottom: 24 }}>
-              If you are new here, start with the guided entry page.
+
+            {/* Audience */}
+            <p style={{ fontSize: 13, color: TEXT.muted, marginBottom: 24 }}>
+              For researchers, academics, clinicians, and AI safety researchers.
             </p>
-            <Link
-              href="/research-entry"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "12px 24px",
-                background: SPECTRUM.blue,
-                color: "#fff",
-                borderRadius: 8,
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              Start Here →
-            </Link>
-          </section>
 
-          {/* What you can do here */}
-          <section style={{ marginBottom: 48 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 20 }}>
-              What you can do here
-            </h2>
-
-            {/* Understand the system */}
-            <div style={{ marginBottom: 24 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Understand the system
-              </h3>
-              <p style={{ fontSize: 14, color: TEXT.secondary, marginBottom: 12, lineHeight: 1.7 }}>
-                See how the full structure fits together, without needing to read everything.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <NavLink href="/foundations" label="System Overview" description="How the parts connect" />
-                <NavLink href="/four-mode-gradient" label="Four-Mode Gradient" description="The measurement layer" />
-                <NavLink href="/frameworks-map" label="Frameworks" description="The explanatory layer (12 frameworks)" />
-              </div>
-            </div>
-
-            {/* Review evidence and methods */}
-            <div style={{ marginBottom: 24 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Review evidence and methods
-              </h3>
-              <p style={{ fontSize: 14, color: TEXT.secondary, marginBottom: 12, lineHeight: 1.7 }}>
-                We keep a clear separation between established foundations, proposed synthesis, preliminary evidence, and what is still open to validation.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <NavLink href="/methodology" label="Methodology" />
-                <NavLink href="/publications" label="Publications" />
-                <NavLink href="/citations" label="How to Cite" />
-              </div>
-            </div>
-
-            {/* Join a research lane */}
-            <div style={{ marginBottom: 24 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Join a research lane
-              </h3>
-              <p style={{ fontSize: 14, color: TEXT.secondary, marginBottom: 12, lineHeight: 1.7 }}>
-                You do not need to validate the entire system. Pick one lane that matches your expertise: measurement, validation, theoretical review, or AI alignment.
-              </p>
+            {/* CTAs */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
               <Link
                 href="/research-entry"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6,
-                  fontSize: 14,
-                  color: SPECTRUM.blue,
-                  textDecoration: "none",
+                  gap: 8,
+                  padding: "12px 24px",
+                  background: SPECTRUM.blue,
+                  color: "#fff",
+                  borderRadius: 8,
                   fontWeight: 500,
+                  fontSize: 14,
+                  textDecoration: "none",
                 }}
               >
                 Start Here →
               </Link>
-            </div>
-
-            {/* Collaborate */}
-            <div style={{ marginBottom: 24 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Collaborate
-              </h3>
-              <p style={{ fontSize: 14, color: TEXT.secondary, marginBottom: 12, lineHeight: 1.7 }}>
-                Clear attribution, clear authorship expectations, clear boundaries, open science when possible.
-              </p>
               <Link
-                href="/collaborate"
+                href="/publications"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6,
-                  fontSize: 14,
+                  gap: 8,
+                  padding: "12px 24px",
+                  background: hexToRgba(SPECTRUM.blue, 0.1),
                   color: SPECTRUM.blue,
-                  textDecoration: "none",
+                  borderRadius: 8,
                   fontWeight: 500,
+                  fontSize: 14,
+                  textDecoration: "none",
+                  border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
                 }}
               >
-                Collaborate →
+                See Publications
               </Link>
+            </div>
+          </section>
+
+          {/* What you can do here */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 24 }}>
+              What you can do here
+            </h2>
+
+            <div style={{ display: "grid", gap: 16 }}>
+              {/* Understand the system */}
+              <ActionCard
+                color={SPECTRUM.indigo}
+                title="Understand the system"
+                description="See how the full structure fits together, without needing to read everything."
+              >
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  <NavLink href="/foundations" label="System Overview" description="How the parts connect" />
+                  <NavLink href="/four-mode-gradient" label="Four-Mode Gradient" description="The measurement layer" />
+                  <NavLink href="/frameworks-map" label="Frameworks" description="The explanatory layer (12 frameworks)" />
+                </div>
+              </ActionCard>
+
+              {/* Review evidence and methods */}
+              <ActionCard
+                color={SPECTRUM.blue}
+                title="Review evidence and methods"
+                description="Clear separation between established foundations, proposed synthesis, preliminary evidence, and what's open to validation."
+              >
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  <NavLink href="/methodology" label="Methodology" />
+                  <NavLink href="/publications" label="Publications" />
+                  <NavLink href="/citations" label="How to Cite" />
+                </div>
+              </ActionCard>
+
+              {/* Two-column row for smaller cards */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                {/* Join a research lane */}
+                <ActionCard
+                  color={SPECTRUM.cobalt}
+                  title="Join a research lane"
+                  description="Pick one lane that matches your expertise: measurement, validation, theoretical review, or AI alignment."
+                  compact
+                >
+                  <Link
+                    href="/research-entry"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      fontSize: 13,
+                      color: SPECTRUM.cobalt,
+                      textDecoration: "none",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Choose a lane →
+                  </Link>
+                </ActionCard>
+
+                {/* Collaborate */}
+                <ActionCard
+                  color={SPECTRUM.azure}
+                  title="Collaborate"
+                  description="Clear attribution, clear authorship expectations, clear boundaries, open science when possible."
+                  compact
+                >
+                  <Link
+                    href="/collaborate"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      fontSize: 13,
+                      color: SPECTRUM.azure,
+                      textDecoration: "none",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Learn more →
+                  </Link>
+                </ActionCard>
+              </div>
             </div>
           </section>
 
@@ -268,6 +313,42 @@ export default function ResearchHub() {
 }
 
 // Helper components
+function ActionCard({ color, title, description, children, compact = false }) {
+  return (
+    <div
+      style={{
+        background: BG.card,
+        borderRadius: 10,
+        border: `1px solid ${BORDER.default}`,
+        borderLeft: `3px solid ${color}`,
+        padding: compact ? "16px 20px" : "20px 24px",
+      }}
+    >
+      <h3
+        style={{
+          fontSize: compact ? 14 : 15,
+          fontWeight: 600,
+          color: TEXT.primary,
+          marginBottom: 6,
+        }}
+      >
+        {title}
+      </h3>
+      <p
+        style={{
+          fontSize: 13,
+          color: TEXT.muted,
+          lineHeight: 1.6,
+          marginBottom: children ? 14 : 0,
+        }}
+      >
+        {description}
+      </p>
+      {children}
+    </div>
+  );
+}
+
 function NavLink({ href, label, description }) {
   return (
     <Link
