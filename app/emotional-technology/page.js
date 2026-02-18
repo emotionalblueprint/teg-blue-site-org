@@ -19,6 +19,14 @@ export const metadata = {
   },
 };
 
+// State colors from the Four-Mode Gradient
+const STATE = {
+  connection: "#14b8a6",  // Teal
+  protection: "#eab308",  // Yellow
+  control: "#f97316",     // Orange
+  domination: "#ec4899",  // Pink
+};
+
 export default function EmotionalTechnologyPage() {
   return (
     <div
@@ -38,8 +46,8 @@ export default function EmotionalTechnologyPage() {
           padding: "48px 24px 80px",
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 48 }}>
+        {/* Hero Section */}
+        <header style={{ marginBottom: 64 }}>
           <p
             style={{
               fontSize: 11,
@@ -63,7 +71,18 @@ export default function EmotionalTechnologyPage() {
               lineHeight: 1.2,
             }}
           >
-            What is Emotional Technology?
+            What is{" "}
+            <span
+              style={{
+                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Emotional Technology
+            </span>
+            ?
           </h1>
           <p
             style={{
@@ -73,71 +92,110 @@ export default function EmotionalTechnologyPage() {
               maxWidth: 640,
             }}
           >
-            <strong style={{ color: TEXT.primary }}>Emotional technology</strong> refers to tools and systems that help you measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies.
+            Tools and systems that help you <strong style={{ color: TEXT.primary }}>measure</strong>, <strong style={{ color: TEXT.primary }}>understand</strong>, and <strong style={{ color: TEXT.primary }}>navigate</strong> human emotions — with the same clarity we expect from physical or digital technologies.
           </p>
         </header>
 
-        {/* Analogy Section */}
-        <section style={{ marginBottom: 48 }}>
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            Like medical tools help diagnose illness, and digital tools organize information, emotional technology helps us:
-          </p>
-          <ul style={{ paddingLeft: 24, fontSize: 15, color: TEXT.secondary, lineHeight: 2 }}>
-            <li><strong style={{ color: TEXT.primary }}>Recognize</strong> emotional states</li>
-            <li><strong style={{ color: TEXT.primary }}>Predict</strong> behavioral patterns</li>
-            <li><strong style={{ color: TEXT.primary }}>Navigate</strong> safe pathways out of distress</li>
-          </ul>
-        </section>
-
-        {/* TEG-Blue Claim */}
-        <section style={{ marginBottom: 48 }}>
+        {/* Featured Card — The Analogy */}
+        <section style={{ marginBottom: 64 }}>
           <div
             style={{
-              padding: "24px",
+              background: BG.card,
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${BORDER.default}`,
+              overflow: "hidden",
+            }}
+          >
+            {/* Gradient stripe */}
+            <div
+              style={{
+                height: 3,
+                background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
+              }}
+            />
+
+            <div style={{ padding: 28 }}>
+              <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
+                Like medical tools help diagnose illness, and digital tools organize information, emotional technology helps us:
+              </p>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                  gap: 12,
+                }}
+              >
+                <CapabilityMiniCard
+                  color={STATE.connection}
+                  title="Recognize"
+                  desc="emotional states"
+                />
+                <CapabilityMiniCard
+                  color={SPECTRUM.azure}
+                  title="Predict"
+                  desc="behavioral patterns"
+                />
+                <CapabilityMiniCard
+                  color={SPECTRUM.cobalt}
+                  title="Navigate"
+                  desc="pathways out of distress"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The Claim */}
+        <section style={{ marginBottom: 56 }}>
+          <div
+            style={{
+              padding: "28px 32px",
               background: hexToRgba(SPECTRUM.azure, 0.08),
               borderRadius: RADIUS.lg,
-              borderLeft: `3px solid ${SPECTRUM.azure}`,
+              borderLeft: `4px solid ${SPECTRUM.azure}`,
             }}
           >
             <p
               style={{
-                fontSize: 17,
+                fontSize: 18,
                 color: TEXT.primary,
-                fontWeight: 500,
+                fontWeight: 600,
                 margin: 0,
+                lineHeight: 1.6,
+              }}
+            >
+              TEG-Blue is the first complete emotional technology system.
+            </p>
+            <p
+              style={{
+                fontSize: 15,
+                color: TEXT.secondary,
+                margin: "12px 0 0",
                 lineHeight: 1.7,
               }}
             >
-              TEG-Blue is the first complete emotional technology system. It turns invisible emotional patterns into visible, structured, computationally legible tools — for healing, accountability, and emotional safety.
+              It turns invisible emotional patterns into visible, structured, computationally legible tools — for healing, accountability, and emotional safety.
             </p>
           </div>
         </section>
 
-        {/* What It Does */}
-        <section style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 20,
-            }}
-          >
-            What Emotional Technology Does
-          </h2>
+        {/* Section 01: What It Does */}
+        <section style={{ marginBottom: 56 }}>
+          <SectionHeader number="01" title="What Emotional Technology Does" />
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
             <CapabilityCard
-              number="1"
+              color={STATE.connection}
               title="Measurement & Recognition"
               items={[
-                "Visual scales show where someone is on gradients of empathy, control, or accountability",
+                "Visual scales show position on gradients of empathy, control, accountability",
                 "Emotional patterns become clear and trackable",
-                "Abstract dynamics become concrete, visible, and usable",
+                "Abstract dynamics become concrete and usable",
               ]}
             />
             <CapabilityCard
-              number="2"
+              color={STATE.protection}
               title="Prediction & Prevention"
               items={[
                 "Maps how emotional states shift and escalate",
@@ -146,106 +204,119 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              number="3"
+              color={STATE.control}
               title="Navigation & Intervention"
               items={[
                 "Provides steps back to safety, calm, and clarity",
-                "Creates shared language for difficult emotional dynamics",
-                "Gives tools for de-escalation, repair, and regulation",
+                "Creates shared language for difficult dynamics",
+                "Tools for de-escalation, repair, and regulation",
               ]}
             />
             <CapabilityCard
-              number="4"
+              color={STATE.domination}
               title="Pattern Breaking"
               items={[
                 "Makes generational trauma patterns visible",
                 "Explains how protective behaviors become harmful",
-                "Offers tools to interrupt cycles — with care, not shame",
+                "Interrupts cycles — with care, not shame",
               ]}
             />
           </div>
         </section>
 
-        {/* Relationship to Therapy */}
-        <section style={{ marginBottom: 48 }}>
-          <h2
+        {/* Section 02: Relationship to Therapy */}
+        <section style={{ marginBottom: 56 }}>
+          <SectionHeader number="02" title="Doesn't Replace Therapy. Equips It." />
+
+          <div style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8 }}>
+            <p style={{ marginBottom: 16 }}>
+              Think of it like an <strong style={{ color: TEXT.primary }}>emotional thermometer</strong>.
+            </p>
+            <p style={{ marginBottom: 16 }}>
+              If your body temperature is high, you go to the doctor. If your emotional state shows signs of distress — like fear, defense, or control — you can name it early, and bring that awareness into therapy.
+            </p>
+            <p style={{ marginBottom: 0 }}>
+              This helps therapists go deeper, faster. It makes their work more effective, more accessible — and more emotionally precise.
+            </p>
+          </div>
+
+          <div
             style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 16,
+              marginTop: 24,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: 12,
             }}
           >
-            Emotional Technology Doesn't Replace Therapy. It Equips It.
-          </h2>
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            Think of it like an emotional thermometer.
-          </p>
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            If your body temperature is high, you go to the doctor. If your emotional state shows signs of distress — like fear, defense, or control — you can name it early, and bring that awareness into therapy.
-          </p>
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8 }}>
-            This helps therapists go deeper, faster. It makes their work more effective, more accessible — and more emotionally precise.
-          </p>
+            <BenefitChip label="Instant emotional clarity" />
+            <BenefitChip label="Shared language across settings" />
+            <BenefitChip label="Prevention-first tools" />
+            <BenefitChip label="Trauma-informed mapping" />
+          </div>
         </section>
 
-        {/* Why This Name */}
-        <section style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 16,
-            }}
-          >
-            Why "Emotional Technology"?
-          </h2>
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+        {/* Section 03: Why This Name */}
+        <section style={{ marginBottom: 56 }}>
+          <SectionHeader number="03" title="Why 'Emotional Technology'?" />
+
+          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
             We needed a term that didn't already carry the wrong assumptions:
           </p>
-          <ul style={{ paddingLeft: 24, fontSize: 15, color: TEXT.muted, lineHeight: 2, marginBottom: 16 }}>
-            <li><strong style={{ color: TEXT.secondary }}>"Emotional intelligence"</strong> — focuses on skills, not systems</li>
-            <li><strong style={{ color: TEXT.secondary }}>"Mental health tools"</strong> — frames it as pathology</li>
-            <li><strong style={{ color: TEXT.secondary }}>"SEL"</strong> — often stops short of trauma, power, and pattern mapping</li>
-          </ul>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
+            <ComparisonRow
+              term="Emotional intelligence"
+              issue="focuses on skills, not systems"
+            />
+            <ComparisonRow
+              term="Mental health tools"
+              issue="frames it as pathology"
+            />
+            <ComparisonRow
+              term="SEL"
+              issue="often stops short of trauma, power, and pattern mapping"
+            />
+          </div>
+
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8 }}>
             <strong style={{ color: TEXT.primary }}>Emotional technology</strong> is a term for emotional tools that are practical, precise, and systemic. Because just like we don't expect people to intuitively know how to code or perform surgery — we shouldn't expect them to navigate complex emotional dynamics without tools.
           </p>
         </section>
 
-        {/* Key Vocabulary */}
-        <section style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 20,
-            }}
-          >
-            Key Vocabulary
-          </h2>
+        {/* Section 04: Key Vocabulary */}
+        <section style={{ marginBottom: 56 }}>
+          <SectionHeader number="04" title="Key Vocabulary" />
+
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
             To build this field, we created precise language:
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 12,
+            }}
+          >
             <VocabCard
               term="Emotional Architecture"
               definition="The structure of emotional patterns within people, families, and systems"
+              color={STATE.connection}
             />
             <VocabCard
               term="Emotional Wiring"
               definition="How your nervous system learned to feel, respond, and protect"
+              color={STATE.protection}
             />
             <VocabCard
               term="Emotional Miswiring"
               definition="Protective patterns that now create harm"
+              color={STATE.control}
             />
             <VocabCard
               term="Emotional Infrastructure"
               definition="The larger systems that support — or fail to support — emotional safety"
+              color={STATE.domination}
             />
           </div>
         </section>
@@ -254,15 +325,29 @@ export default function EmotionalTechnologyPage() {
         <section
           style={{
             padding: 32,
-            background: hexToRgba(SPECTRUM.blue, 0.08),
+            background: BG.card,
             borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
+            border: `1px solid ${BORDER.default}`,
             textAlign: "center",
+            overflow: "hidden",
+            position: "relative",
           }}
         >
+          {/* Top gradient stripe */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 3,
+              background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
+            }}
+          />
+
           <h2
             style={{
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: 700,
               color: TEXT.primary,
               marginBottom: 12,
@@ -325,7 +410,7 @@ export default function EmotionalTechnologyPage() {
                 textDecoration: "none",
               }}
             >
-              AI Safety Application
+              AI Safety
             </Link>
           </div>
         </section>
@@ -338,67 +423,157 @@ export default function EmotionalTechnologyPage() {
 
 // ─── COMPONENTS ─────────────────────────────────────────
 
-function CapabilityCard({ number, title, items }) {
+function SectionHeader({ number, title }) {
+  return (
+    <div style={{ marginBottom: 20 }}>
+      <p
+        style={{
+          fontSize: 11,
+          fontWeight: 600,
+          color: SPECTRUM.azure,
+          textTransform: "uppercase",
+          letterSpacing: "0.06em",
+          fontFamily: FONT.mono,
+          marginBottom: 6,
+        }}
+      >
+        {number} — {title.split(" ")[0]}
+      </p>
+      <h2
+        style={{
+          fontSize: 20,
+          fontWeight: 700,
+          color: TEXT.primary,
+          letterSpacing: "-0.01em",
+          margin: 0,
+        }}
+      >
+        {title}
+      </h2>
+    </div>
+  );
+}
+
+function CapabilityMiniCard({ color, title, desc }) {
+  return (
+    <div
+      style={{
+        background: BG.surface,
+        borderRadius: RADIUS.md,
+        border: `1px solid ${BORDER.default}`,
+        borderTop: `3px solid ${color}`,
+        padding: 16,
+        textAlign: "center",
+      }}
+    >
+      <p
+        style={{
+          fontSize: 15,
+          fontWeight: 600,
+          color: TEXT.primary,
+          margin: "0 0 4px",
+        }}
+      >
+        {title}
+      </p>
+      <p style={{ fontSize: 13, color: TEXT.muted, margin: 0 }}>
+        {desc}
+      </p>
+    </div>
+  );
+}
+
+function CapabilityCard({ color, title, items }) {
   return (
     <div
       style={{
         background: BG.card,
         borderRadius: RADIUS.md,
         border: `1px solid ${BORDER.default}`,
+        borderLeft: `3px solid ${color}`,
         padding: 20,
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-        <span
-          style={{
-            width: 28,
-            height: 28,
-            background: hexToRgba(SPECTRUM.azure, 0.15),
-            borderRadius: RADIUS.sm,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 12,
-            fontWeight: 700,
-            color: SPECTRUM.azure,
-            fontFamily: FONT.mono,
-          }}
-        >
-          {number}
-        </span>
-        <h3
-          style={{
-            fontSize: 15,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: 0,
-          }}
-        >
-          {title}
-        </h3>
-      </div>
-      <ul style={{ paddingLeft: 20, margin: 0, fontSize: 14, color: TEXT.muted, lineHeight: 1.8 }}>
+      <h3
+        style={{
+          fontSize: 15,
+          fontWeight: 600,
+          color: TEXT.primary,
+          margin: "0 0 12px",
+        }}
+      >
+        {title}
+      </h3>
+      <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
         {items.map((item, i) => (
-          <li key={i} style={{ marginBottom: 4 }}>{item}</li>
+          <li key={i} style={{ marginBottom: 6 }}>{item}</li>
         ))}
       </ul>
     </div>
   );
 }
 
-function VocabCard({ term, definition }) {
+function BenefitChip({ label }) {
+  return (
+    <div
+      style={{
+        padding: "10px 14px",
+        background: hexToRgba(STATE.connection, 0.1),
+        borderRadius: RADIUS.sm,
+        border: `1px solid ${hexToRgba(STATE.connection, 0.2)}`,
+        fontSize: 13,
+        fontWeight: 500,
+        color: TEXT.secondary,
+        textAlign: "center",
+      }}
+    >
+      {label}
+    </div>
+  );
+}
+
+function ComparisonRow({ term, issue }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "baseline",
+        gap: 8,
+        padding: "8px 12px",
+        background: BG.surface,
+        borderRadius: RADIUS.sm,
+        border: `1px solid ${BORDER.default}`,
+      }}
+    >
+      <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.secondary }}>"{term}"</span>
+      <span style={{ fontSize: 13, color: TEXT.muted }}>— {issue}</span>
+    </div>
+  );
+}
+
+function VocabCard({ term, definition, color }) {
   return (
     <div
       style={{
         background: BG.surface,
-        borderRadius: RADIUS.sm,
+        borderRadius: RADIUS.md,
         border: `1px solid ${BORDER.default}`,
-        padding: "14px 18px",
+        borderTop: `3px solid ${color}`,
+        padding: 16,
       }}
     >
-      <p style={{ margin: 0 }}>
-        <strong style={{ color: TEXT.primary, fontSize: 14 }}>{term}</strong>
-        <span style={{ color: TEXT.muted, fontSize: 14 }}> — {definition}</span>
+      <p
+        style={{
+          fontSize: 14,
+          fontWeight: 600,
+          color: TEXT.primary,
+          margin: "0 0 6px",
+        }}
+      >
+        {term}
+      </p>
+      <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+        {definition}
       </p>
     </div>
   );
