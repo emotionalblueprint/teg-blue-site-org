@@ -1,91 +1,111 @@
 import { loadAllContent } from '@/src/lib/content'
 
+// Known last-modified dates for static pages (YYYY-MM-DD)
+// Update these when making significant content changes
+const PAGE_DATES = {
+  '/': '2026-02-18',
+  '/publications': '2026-02-18',
+  '/frameworks-map': '2026-02-15',
+  '/research-entry': '2026-02-18',
+  '/foundations': '2026-02-12',
+  '/epistemological-foundations': '2026-02-12',
+  '/ai-safety': '2026-02-15',
+  '/four-mode-gradient': '2026-02-15',
+  '/glossary': '2026-02-15',
+  '/methodology': '2026-02-18',
+  '/citations': '2026-02-12',
+  '/collaborate': '2026-02-10',
+  '/about': '2026-02-15',
+  '/scientific-foundations': '2026-02-18',
+  '/emotional-technology': '2026-02-18',
+}
+
 export default function sitemap() {
   const baseUrl = 'https://teg-blue.org'
 
-  // Static pages
+  // Static pages with real dates
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/']),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${baseUrl}/publications`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/publications']),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/frameworks-map`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/frameworks-map']),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/research-entry`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/research-entry']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/foundations`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/foundations']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/epistemological-foundations`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/epistemological-foundations']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ai-safety`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/ai-safety']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/four-mode-gradient`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/four-mode-gradient']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/glossary`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/glossary']),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/methodology`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/methodology']),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/citations`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/citations']),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/collaborate`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/collaborate']),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/about']),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/scientific-foundations`,
-      lastModified: new Date(),
+      lastModified: new Date(PAGE_DATES['/scientific-foundations']),
       changeFrequency: 'weekly',
       priority: 0.9,
     },

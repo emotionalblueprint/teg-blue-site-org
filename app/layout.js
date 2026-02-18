@@ -169,6 +169,8 @@ export default function RootLayout({ children }) {
 
         {/* RSS feed autodiscovery */}
         <link rel="alternate" type="application/rss+xml" title="TEG-Blue Research Publications" href="/feed.xml" />
+        {/* Cross-site alternate for application platform */}
+        <link rel="alternate" href="https://teg-blue.com" hrefLang="en" title="TEG-Blue Interactive Tools" />
 
         {/* Dublin Core metadata for academic crawlers */}
         <meta name="DC.publisher" content="TEG-Blue Research Consortium" />
