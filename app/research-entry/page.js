@@ -3,10 +3,11 @@ import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styl
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "For Researchers | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is a prototype emotional data system making emotional safety and accountability measurable, testable, and usable. Five open research questions for collaboration.",
+  title: "For Researchers | TEG-Blue Emotional Technology",
+  description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable. Five open research questions for collaboration.",
   keywords: [
     "TEG-Blue research",
+    "emotional technology",
     "emotional regulation research",
     "open science psychology",
     "research collaboration",

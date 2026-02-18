@@ -4,8 +4,8 @@ import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, hexToRgba } from "@/src/styl
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "TEG-Blue Open Science | Reconnecting Cognition with Emotional Awareness",
-  description: "The open science branch of TEG-Blue. See everything. Verify everything. Contribute. Research on how emotional awareness connects cognition and feeling — and what happens when it goes offline.",
+  title: "TEG-Blue | Emotional Technology Research",
+  description: "The first complete emotional technology system. Open science research on tools that measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
@@ -47,7 +47,7 @@ export default function ResearchHub() {
                 fontFamily: FONT.mono,
               }}
             >
-              TEG-Blue Open Science
+              Emotional Technology Research
             </p>
 
             {/* Main statement */}

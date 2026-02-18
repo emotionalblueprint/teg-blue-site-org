@@ -3,10 +3,11 @@ import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styl
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "Collaborate | TEG-Blue Research",
-  description: "Research collaboration opportunities with TEG-Blue. Clear attribution, authorship expectations, open science principles. Looking for validation partners, replication studies, and cross-disciplinary collaborators.",
+  title: "Collaborate | TEG-Blue Emotional Technology",
+  description: "Research collaboration opportunities with TEG-Blue emotional technology. Clear attribution, authorship expectations, open science principles. Looking for validation partners, replication studies, and cross-disciplinary collaborators.",
   keywords: [
     "research collaboration",
+    "emotional technology",
     "TEG-Blue partnership",
     "academic collaboration",
     "open science research",
