@@ -3,10 +3,36 @@ import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styl
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "Start Here | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is a prototype emotional data system built to make emotional safety and accountability measurable, testable, and usable.",
+  title: "For Researchers | TEG-Blue Research",
+  description: "Entry point for researchers and academics. TEG-Blue is a prototype emotional data system making emotional safety and accountability measurable, testable, and usable. Five open research questions for collaboration.",
+  keywords: [
+    "TEG-Blue research",
+    "emotional regulation research",
+    "open science psychology",
+    "research collaboration",
+    "complexity markers",
+    "emotional intelligence measurement",
+    "AI safety research",
+    "computational social science",
+    "trauma research",
+    "attachment research",
+    "academic collaboration"
+  ],
   alternates: {
     canonical: "https://teg-blue.org/research-entry",
+  },
+  openGraph: {
+    title: "For Researchers — TEG-Blue Open Science Platform",
+    description: "Entry point for academics. Five open research questions, clear methodology, invitation to collaborate. The building blocks are validated; the connections need verification.",
+    url: "https://teg-blue.org/research-entry",
+    siteName: "TEG-Blue Research",
+    type: "article",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "For Researchers — TEG-Blue",
+    description: "Open science platform connecting 139+ theories. Five priority research questions for collaboration.",
   },
 };
 

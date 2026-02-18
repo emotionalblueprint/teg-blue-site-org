@@ -4,9 +4,34 @@ import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
   title: "Collaborate | TEG-Blue Research",
-  description: "How to work with us on TEG-Blue research. Clear attribution, clear authorship expectations, open science when possible.",
+  description: "Research collaboration opportunities with TEG-Blue. Clear attribution, authorship expectations, open science principles. Looking for validation partners, replication studies, and cross-disciplinary collaborators.",
+  keywords: [
+    "research collaboration",
+    "TEG-Blue partnership",
+    "academic collaboration",
+    "open science research",
+    "replication studies",
+    "validation research",
+    "psychology collaboration",
+    "neuroscience collaboration",
+    "trauma research partnership",
+    "emotional intelligence research"
+  ],
   alternates: {
     canonical: "https://teg-blue.org/collaborate",
+  },
+  openGraph: {
+    title: "Collaborate — TEG-Blue Research",
+    description: "Join the research effort. Clear authorship, open science principles, multiple ways to contribute.",
+    url: "https://teg-blue.org/collaborate",
+    siteName: "TEG-Blue Research",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Collaborate — TEG-Blue Research",
+    description: "Research collaboration opportunities. Validation studies, replication, cross-disciplinary work.",
   },
 };
 

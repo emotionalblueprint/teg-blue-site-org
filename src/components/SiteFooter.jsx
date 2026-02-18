@@ -21,7 +21,7 @@ export default function SiteFooter() {
       <SpectrumBar />
 
       <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
-        TEG-Blue Research Consortium · Open Science
+        TEG-Blue · Emotional Technology Research · Open Science
       </p>
 
       <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 8, lineHeight: 1.8 }}>
@@ -36,6 +36,15 @@ export default function SiteFooter() {
         <Link href="/methodology" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Methodology
         </Link>
+        {" · "}
+        <a
+          href="https://github.com/emotionalblueprint/ai-safety"
+          style={{ color: TEXT.hint, textDecoration: "none" }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </p>
 
       {/* Link to .com application platform */}

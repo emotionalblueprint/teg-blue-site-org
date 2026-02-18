@@ -4,8 +4,8 @@ import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "AI Safety Applications — TEG-Blue Research Platform",
-  description: "How TEG-Blue provides structured, computationally legible emotional intelligence infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
+  title: "AI Safety Applications — TEG-Blue Emotional Technology",
+  description: "How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
   alternates: {
     canonical: "https://teg-blue.org/ai-safety",
   },
@@ -52,7 +52,7 @@ export default function AISafetyPage() {
                 margin: 0,
               }}
             >
-              AI Safety Application
+              Emotional Technology for AI
             </p>
             <span
               style={{
@@ -78,7 +78,7 @@ export default function AISafetyPage() {
               lineHeight: 1.2,
             }}
           >
-            Emotional Intelligence Infrastructure for{" "}
+            Emotional Technology for{" "}
             <span
               style={{
                 background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
@@ -99,7 +99,7 @@ export default function AISafetyPage() {
             }}
           >
             AI safety systems classify human emotion as safe or unsafe. Reality operates on gradients.
-            TEG-Blue provides the structured, computationally legible framework to bridge the gap.
+            TEG-Blue is the first complete emotional technology system — now machine-readable.
           </p>
         </header>
 
@@ -707,7 +707,7 @@ export default function AISafetyPage() {
               margin: 0,
             }}
           >
-            This isn't a PDF to interpret. It's emotional intelligence infrastructure designed to be
+            This isn't a PDF to interpret. It's emotional technology infrastructure designed to be
             consumed computationally — by search engines, by researchers, and by the AI systems it aims to improve.
           </p>
         </section>
@@ -822,9 +822,9 @@ export default function AISafetyPage() {
               lineHeight: 1.7,
             }}
           >
-            TEG-Blue is an open research framework backed by an international consortium.
-            The structured data, validation methodology, and framework documentation are
-            available for researchers ready to test these questions.
+            TEG-Blue is the first complete emotional technology system — open research backed by
+            an international consortium. The structured data, validation methodology, and framework
+            documentation are available for researchers ready to test these questions.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
@@ -871,13 +871,36 @@ export default function AISafetyPage() {
             >
               View Validation Study
             </Link>
+            <a
+              href="https://github.com/emotionalblueprint/ai-safety"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "12px 24px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              GitHub
+            </a>
           </div>
         </section>
 
         {/* Footer note */}
         <footer style={{ marginTop: 48, textAlign: "center" }}>
           <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
+            TEG-Blue · Emotional Technology Research · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
       </main>

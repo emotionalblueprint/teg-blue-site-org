@@ -357,6 +357,56 @@ export function generateSystemOverviewJsonLd() {
   };
 }
 
+// ─── SCIENTIFIC FOUNDATIONS PAGE JSON-LD ─────────────
+
+export function generateScientificFoundationsJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Scientific Foundations — TEG-Blue Research",
+    url: `${BASE_URL}/scientific-foundations`,
+    description: "How TEG-Blue extends 15 major psychological models (Plutchik, NVC, CBT, Polyvagal Theory, IFS, and more) and integrates 139+ established theories into a unified system.",
+    inLanguage: LANGUAGE,
+    isPartOf: TEG_BLUE_PROJECT,
+    about: {
+      "@type": "ItemList",
+      name: "Global Models Extended by TEG-Blue",
+      description: "15 major psychological models showing strengths, gaps, and what TEG-Blue adds",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Plutchik's Wheel of Emotions", description: "8 primary emotions with intensity and blending" },
+        { "@type": "ListItem", position: 2, name: "Nonviolent Communication (NVC)", description: "Marshall Rosenberg's empathy-based communication method" },
+        { "@type": "ListItem", position: 3, name: "Cognitive Behavioral Therapy (CBT)", description: "Thought-feeling-behavior connection therapy" },
+        { "@type": "ListItem", position: 4, name: "Polyvagal Theory", description: "Stephen Porges' autonomic nervous system model" },
+        { "@type": "ListItem", position: 5, name: "Zones of Regulation", description: "Leah Kuypers' color-coded emotional states for education" },
+        { "@type": "ListItem", position: 6, name: "Freud's Ego Model", description: "Id, ego, superego psychic structure" },
+        { "@type": "ListItem", position: 7, name: "Winnicott's True/False Self", description: "Authentic vs adaptive self-development" },
+        { "@type": "ListItem", position: 8, name: "Rogers' Organismic Valuing", description: "Innate drive toward growth and authenticity" },
+        { "@type": "ListItem", position: 9, name: "Jung's Persona", description: "Social mask and identity adaptation" },
+        { "@type": "ListItem", position: 10, name: "Internal Family Systems (IFS)", description: "Richard Schwartz's parts-based therapy model" },
+        { "@type": "ListItem", position: 11, name: "Ego Development Theory", description: "Jane Loevinger's identity development stages" },
+        { "@type": "ListItem", position: 12, name: "Goffman's Dramaturgical Self", description: "Social life as performance" },
+        { "@type": "ListItem", position: 13, name: "Defense Mechanisms", description: "Freud's unconscious protective strategies" },
+        { "@type": "ListItem", position: 14, name: "Cognitive Dissonance Theory", description: "Leon Festinger's belief-action conflict theory" },
+        { "@type": "ListItem", position: 15, name: "Disorganized Attachment & Complex PTSD", description: "Trauma-informed attachment and chronic trauma models" }
+      ]
+    },
+    keywords: [
+      "scientific foundations",
+      "emotional regulation models",
+      "Plutchik wheel",
+      "NVC nonviolent communication",
+      "CBT cognitive behavioral therapy",
+      "polyvagal theory",
+      "zones of regulation",
+      "IFS internal family systems",
+      "attachment theory",
+      "trauma informed",
+      "psychological models comparison",
+      "TEG-Blue integration"
+    ]
+  };
+}
+
 // ─── THEORETICAL FOUNDATIONS PAGE JSON-LD ────────────
 
 export function generateTheoreticalFoundationsJsonLd() {

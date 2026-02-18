@@ -4,9 +4,34 @@ import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
   title: "About | TEG-Blue Research",
-  description: "About TEG-Blue Research Consortium, founder Anna Paretas-Artacho, and our commitment to open science in emotional regulation research.",
+  description: "About TEG-Blue Research Consortium and founder Anna Paretas-Artacho. An integrative framework connecting 139+ theories from neuroscience, psychology, and sociology into testable hypotheses about emotional regulation.",
+  keywords: [
+    "TEG-Blue",
+    "Anna Paretas-Artacho",
+    "emotional regulation",
+    "research consortium",
+    "integrative framework",
+    "open science",
+    "neuroscience psychology integration",
+    "trauma research",
+    "emotional intelligence",
+    "AI safety"
+  ],
   alternates: {
     canonical: "https://teg-blue.org/about",
+  },
+  openGraph: {
+    title: "About — TEG-Blue Research Consortium",
+    description: "An integrative framework connecting 139+ theories. Founded by Anna Paretas-Artacho. Open science, testable hypotheses, inviting collaboration.",
+    url: "https://teg-blue.org/about",
+    siteName: "TEG-Blue Research",
+    type: "profile",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "About — TEG-Blue Research",
+    description: "Research consortium developing an integrative emotional intelligence framework.",
   },
 };
 

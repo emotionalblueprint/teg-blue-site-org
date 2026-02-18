@@ -121,7 +121,7 @@ export default function SiteHeader({ currentPath = "/" }) {
               marginTop: 4,
             }}
           >
-            Open science publishing for emotional regulation research
+            Open science for emotional technology research
           </p>
         </div>
       </div>

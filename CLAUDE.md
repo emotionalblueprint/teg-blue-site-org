@@ -20,13 +20,27 @@ npm run lint
 
 ## Purpose
 
-**teg-blue.org** is the open science platform for TEG-Blue research. It hosts:
+**teg-blue.org** is the open science platform for TEG-Blue emotional technology research. It hosts:
 - Publications and validation studies
 - Theoretical foundations (139+ source theories)
 - Open research questions
 - Collaboration opportunities for researchers
 
 All content is designed to be readable by both humans and AI systems.
+
+---
+
+## Emotional Technology
+
+**Emotional technology** is our term for tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies.
+
+TEG-Blue is the first complete emotional technology system. It turns invisible emotional patterns into visible, structured, computationally legible tools.
+
+**Key vocabulary:**
+- **Emotional Architecture**: The structure of emotional patterns within people, families, and systems
+- **Emotional Wiring**: How your nervous system learned to feel, respond, and protect
+- **Emotional Miswiring**: Protective patterns that now create harm
+- **Emotional Infrastructure**: The larger systems that support — or fail to support — emotional safety
 
 ---
 

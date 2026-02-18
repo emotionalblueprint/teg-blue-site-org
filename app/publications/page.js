@@ -5,9 +5,36 @@ import { SiteHeader, SiteFooter, TypeTag, StatusBadge } from "@/src/components";
 
 export const metadata = {
   title: "Publications | TEG-Blue Research",
-  description: "Research publications, validation studies, and datasets from TEG-Blue. Evidence, methods, and open science materials.",
+  description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Four-Mode Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.18428907).",
+  keywords: [
+    "TEG-Blue publications",
+    "emotional regulation research papers",
+    "four mode gradient validation",
+    "computational linguistics emotions",
+    "natural language processing psychology",
+    "open science datasets",
+    "Zenodo research data",
+    "emotional intelligence validation",
+    "Reddit AITA analysis",
+    "conflict narrative analysis",
+    "polyvagal markers",
+    "moral disengagement markers"
+  ],
   alternates: {
     canonical: "https://teg-blue.org/publications",
+  },
+  openGraph: {
+    title: "Publications — TEG-Blue Research",
+    description: "Validation studies, research papers, and open datasets. Four-Mode Gradient validated on 10,000+ conflict narratives.",
+    url: "https://teg-blue.org/publications",
+    siteName: "TEG-Blue Research",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Publications — TEG-Blue Research",
+    description: "Research papers, validation studies, and open datasets for emotional regulation research.",
   },
 };
 
