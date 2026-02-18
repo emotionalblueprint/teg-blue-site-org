@@ -90,6 +90,9 @@ const organizationJsonLd = {
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
+    "https://doi.org/10.5281/zenodo.18428907",
+    "https://github.com/emotionalblueprint",
+    "https://zenodo.org/communities/teg-blue",
   ],
   foundingDate: "2024",
   inLanguage: "en",
@@ -163,6 +166,9 @@ export default function RootLayout({ children }) {
         {/* Favicons */}
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/teg-blue_logo_blue.png" />
+
+        {/* RSS feed autodiscovery */}
+        <link rel="alternate" type="application/rss+xml" title="TEG-Blue Research Publications" href="/feed.xml" />
 
         {/* Dublin Core metadata for academic crawlers */}
         <meta name="DC.publisher" content="TEG-Blue Research Consortium" />
