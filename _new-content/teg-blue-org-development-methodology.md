@@ -75,7 +75,7 @@ The integrative architecture — the 12 frameworks, the Four-Mode Gradient, and 
 
 ### Role of AI Tools
 
-AI tools (Claude, ChatGPT) played a specific and bounded role in TEG-Blue's development, and methodological transparency requires naming that role precisely.
+AI tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) played a specific and bounded role in TEG-Blue's development, and methodological transparency requires naming that role precisely.
 
 **What AI contributed:**
 - **Literature identification.** Once the architecture and its cross-disciplinary connections were established, AI research tools were used to systematically identify which established theories and researchers align with each framework's propositions. This is functionally equivalent to a research assistant conducting a structured literature search against a predefined theoretical map.

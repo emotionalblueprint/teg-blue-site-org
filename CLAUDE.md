@@ -91,7 +91,7 @@ These research traditions developed independently, within separate disciplines, 
 
 **The architecture:** Developed by Anna Paretas-Artacho over nearly two years of independent research, drawing on a lifetime of observing patterns in human behavior, systems thinking, personal experience, and cross-disciplinary reading.
 
-**The literature mapping:** Once the architecture was established, AI research tools (Claude, ChatGPT Deep Research) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
+**The literature mapping:** Once the architecture was established, AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
 
 **The status:** The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
 

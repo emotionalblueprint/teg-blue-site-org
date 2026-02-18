@@ -31,7 +31,7 @@ For a full overview of TEG-Blue's structure, existing evidence, and open researc
 
 ## Methodology & Status
 
-**How this mapping was created:** This literature mapping was developed using AI research tools (Claude, ChatGPT Deep Research) to identify potential connections between TEG-Blue's framework and established research traditions.
+**How this mapping was created:** This literature mapping was developed using AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) to identify potential connections between TEG-Blue's framework and established research traditions.
 
 **What this means:** This is a working hypothesis — a starting point for deeper scholarly validation, not a finished academic work. The AI tools helped identify potential connections, but human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
 
