@@ -42,6 +42,16 @@ TEG-Blue is the first complete emotional technology system. It turns invisible e
 - **Emotional Miswiring**: Protective patterns that now create harm
 - **Emotional Infrastructure**: The larger systems that support — or fail to support — emotional safety
 
+### "Emotional Technology" — Term History
+
+The term **"Emotional Technology"** was first documented in **September 2025**:
+
+| Date | Source | Usage |
+|------|--------|-------|
+| **Sept 2025** | `tegblue-backbone.md` | "Emotional Technology Infrastructure" — technical foundations for AI, research, education |
+| **Nov 2025** | Research Matrix | "TEG-Blue™ — Emotional Technology for Healing and Repair" (tagline) |
+| **Feb 18, 2026** | Full integration | Implemented across all sites, GitHub repos, and documentation |
+
 ---
 
 ## Relationship to .com
