@@ -3,10 +3,11 @@ import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styl
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
-  title: "About | TEG-Blue Research",
-  description: "About TEG-Blue Research Consortium and founder Anna Paretas-Artacho. An integrative framework connecting 139+ theories from neuroscience, psychology, and sociology into testable hypotheses about emotional regulation.",
+  title: "About | TEG-Blue Emotional Technology",
+  description: "About TEG-Blue — the first complete emotional technology system. Founded by Anna Paretas-Artacho. An integrative framework connecting 139+ theories from neuroscience, psychology, and sociology into testable hypotheses about emotional regulation.",
   keywords: [
     "TEG-Blue",
+    "emotional technology",
     "Anna Paretas-Artacho",
     "emotional regulation",
     "research consortium",
