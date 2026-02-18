@@ -38,6 +38,78 @@ export const metadata = {
   },
 };
 
+// JSON-LD schemas for datasets and publications
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "TEG-Blue Validation Study Dataset",
+  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with regulatory state markers, complexity markers, and community moral judgments. Used to validate the Four-Mode Gradient framework.",
+  "url": "https://doi.org/10.5281/zenodo.18428907",
+  "identifier": "10.5281/zenodo.18428907",
+  "keywords": [
+    "emotional regulation",
+    "natural language processing",
+    "conflict narratives",
+    "polyvagal theory",
+    "moral psychology",
+    "computational linguistics"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "Anna Paretas-Artacho",
+    "identifier": "https://orcid.org/0009-0005-2394-7162"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TEG-Blue Research Consortium"
+  },
+  "datePublished": "2026-02",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "isAccessibleForFree": true,
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "Zenodo"
+  },
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "application/pdf",
+    "contentUrl": "https://doi.org/10.5281/zenodo.18428907"
+  },
+  "measurementTechnique": "Computational linguistic analysis with polyvagal markers, contempt markers, and moral disengagement markers",
+  "variableMeasured": [
+    "Regulatory state classification (Connection, Protection, Control, Domination)",
+    "Complexity markers in language",
+    "Escalation/de-escalation trajectories",
+    "Community moral judgments"
+  ]
+};
+
+const scholarlyArticleSchema = {
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Empirical validation of the Four-Mode Gradient framework",
+  "alternativeHeadline": "Detecting Regulatory States in Natural Language",
+  "author": {
+    "@type": "Person",
+    "name": "Anna Paretas-Artacho",
+    "identifier": "https://orcid.org/0009-0005-2394-7162"
+  },
+  "datePublished": "2026-02",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zenodo"
+  },
+  "identifier": "10.5281/zenodo.18428907",
+  "url": "https://doi.org/10.5281/zenodo.18428907",
+  "about": [
+    "Emotional regulation",
+    "Natural language processing",
+    "Polyvagal theory",
+    "Four-Mode Gradient"
+  ],
+  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the four-mode gradient can be reliably detected in unstructured text. Key findings: All four regulatory modes successfully detected; 33.8% of individuals escalated toward Control/Domination when challenged; 22.2% de-escalated toward Connection; De-escalators showed 78% higher rates of complexity markers."
+};
+
 export default function PublicationsPage() {
   const publications = loadAllNodes("publication");
 
@@ -49,6 +121,16 @@ export default function PublicationsPage() {
         fontFamily: FONT.display,
       }}
     >
+      {/* Structured data for search engines and AI systems */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(scholarlyArticleSchema) }}
+      />
+
       <SiteHeader currentPath="/publications" />
 
       <main
