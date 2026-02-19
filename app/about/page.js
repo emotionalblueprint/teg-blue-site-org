@@ -1,6 +1,11 @@
-import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+
+const tableCellStyle = {
+  padding: "12px 16px",
+  fontSize: 14,
+  color: TEXT.secondary,
+};
 
 export const metadata = {
   title: "About | TEG-Blue Emotional Technology",
@@ -306,9 +311,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-const tableCellStyle = {
-  padding: "12px 16px",
-  fontSize: 14,
-  color: TEXT.secondary,
-};

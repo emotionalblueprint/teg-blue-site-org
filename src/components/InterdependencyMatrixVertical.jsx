@@ -235,6 +235,8 @@ export default function InterdependencyMatrixVertical() {
       defs.appendChild(marker)
     })
 
+    // Build gradients and paths in a single pass
+    const paths = []
     connections.forEach(([fromId, toId], i) => {
       const fromEl = document.getElementById(`vnode-${fromId}`)
       const toEl = document.getElementById(`vnode-${toId}`)
@@ -243,6 +245,7 @@ export default function InterdependencyMatrixVertical() {
       const f = offsetFrom(fromEl, diagram)
       const t = offsetFrom(toEl, diagram)
 
+      // Gradient
       const grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient')
       grad.setAttribute('id', `vlg-${i}`)
       grad.setAttribute('gradientUnits', 'userSpaceOnUse')
@@ -263,17 +266,8 @@ export default function InterdependencyMatrixVertical() {
       grad.appendChild(s1)
       grad.appendChild(s2)
       defs.appendChild(grad)
-    })
 
-    svg.appendChild(defs)
-
-    connections.forEach(([fromId, toId], i) => {
-      const fromEl = document.getElementById(`vnode-${fromId}`)
-      const toEl = document.getElementById(`vnode-${toId}`)
-      if (!fromEl || !toEl) return
-
-      const f = offsetFrom(fromEl, diagram)
-      const t = offsetFrom(toEl, diagram)
+      // Bezier path
       const my = (f.bottom + t.top) / 2
       const d = `M ${f.cx} ${f.bottom} C ${f.cx} ${my}, ${t.cx} ${my}, ${t.cx} ${t.top}`
 
@@ -285,7 +279,7 @@ export default function InterdependencyMatrixVertical() {
       glow.setAttribute('stroke-width', '5')
       glow.setAttribute('stroke-opacity', '0.15')
       glow.setAttribute('stroke-linecap', 'round')
-      svg.appendChild(glow)
+      paths.push(glow)
 
       // Main line
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
@@ -295,8 +289,11 @@ export default function InterdependencyMatrixVertical() {
       path.setAttribute('stroke-width', '1.5')
       path.setAttribute('stroke-linecap', 'round')
       path.setAttribute('marker-end', `url(#arr-v-${toId})`)
-      svg.appendChild(path)
+      paths.push(path)
     })
+
+    svg.appendChild(defs)
+    paths.forEach(p => svg.appendChild(p))
   }, [])
 
   useEffect(() => {
@@ -311,6 +308,7 @@ export default function InterdependencyMatrixVertical() {
     return () => {
       clearTimeout(timer)
       clearTimeout(resizeTimer)
+      clearTimeout(hideTimerRef.current)
       window.removeEventListener('resize', handleResize)
     }
   }, [mounted, drawConnections])

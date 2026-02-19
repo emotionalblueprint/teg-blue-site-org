@@ -217,7 +217,7 @@ export default function ResearchHub() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   <NavLink href="/publications" label="Publications" description="Full research access" />
                   <NavLink href="/methodology" label="Methodology" description="How studies were conducted" />
-                  <NavLink href="/citations" label="139+ Source Theories" description="Every foundation credited" />
+                  <NavLink href="/scientific-foundations" label="139+ Source Theories" description="Every foundation credited" />
                 </div>
               </ActionCard>
 
@@ -524,6 +524,7 @@ export default function ResearchHub() {
           {/* Contact */}
           <section
             style={{
+              marginBottom: 48,
               padding: 24,
               background: BG.card,
               borderRadius: 8,
@@ -606,11 +607,11 @@ export default function ResearchHub() {
           </section>
 
           {/* Footer note */}
-          <footer style={{ marginTop: 32, textAlign: "center" }}>
+          <div style={{ marginTop: 32, textAlign: "center" }}>
             <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
               TEG-Blue Open Science · CC BY-NC-SA 4.0
             </p>
-          </footer>
+          </div>
         </main>
 
         <SiteFooter />
