@@ -215,6 +215,86 @@ const nextConfig = {
         permanent: true,
       },
 
+      // Old toolbox/library pages → /four-mode-gradient
+      {
+        source: '/emotional-intelligence-toolset-library',
+        destination: '/four-mode-gradient',
+        permanent: true,
+      },
+      {
+        source: '/empathy-visual-scale',
+        destination: '/four-mode-gradient',
+        permanent: true,
+      },
+      {
+        source: '/entitlement-visual-scale',
+        destination: '/four-mode-gradient',
+        permanent: true,
+      },
+      {
+        source: '/the-emotional-hurt-scale-how-bad-was-it-really',
+        destination: '/four-mode-gradient',
+        permanent: true,
+      },
+
+      // Old about/support pages → /about
+      {
+        source: '/support-the-emotional-blueprint',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/supporters-advisors',
+        destination: '/about',
+        permanent: true,
+      },
+
+      // Old intro/welcome pages → homepage
+      {
+        source: '/what-is-the-emotional-blueprint',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/welcome-to-a-place-of-understanding',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/the-kind-of-world-we-are-building',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/how-we-use-emotions',
+        destination: '/foundations',
+        permanent: true,
+      },
+
+      // Old research/theory pages → /foundations or /ai-safety
+      {
+        source: '/what-is-tyranny-and-where-does-it-come-from',
+        destination: '/foundations',
+        permanent: true,
+      },
+      {
+        source: '/unreasonable-reasons-covert-abuse',
+        destination: '/foundations',
+        permanent: true,
+      },
+      {
+        source: '/for-ai',
+        destination: '/ai-safety',
+        permanent: true,
+      },
+
+      // Numeric Notion page IDs → homepage
+      {
+        source: '/:id(\\d{1,3})',
+        destination: '/',
+        permanent: true,
+      },
+
       // Old essay/blog posts → /publications
       {
         source: '/he-didnt-break-me-all-at-once',

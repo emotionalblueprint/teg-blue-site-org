@@ -40,11 +40,8 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // Add when you have these
-    // google: 'your-google-verification-code',
-    // bing: 'your-bing-verification-code',
-  },
+  // Verification: Using DNS domain verification (sc-domain:teg-blue.org)
+  // No HTML meta tags needed - domain property covers all subdomains
   category: 'science',
   other: {
     'llms-txt': '/llms.txt',

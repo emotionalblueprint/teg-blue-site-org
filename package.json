@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
+    "postbuild": "node scripts/indexnow-notify.js",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexnow": "node scripts/indexnow-notify.js",
+    "indexnow:dry": "node scripts/indexnow-notify.js --dry-run"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
