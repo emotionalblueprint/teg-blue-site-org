@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import InterdependencyMatrix from "@/src/components/InterdependencyMatrix";
 
 // The 12 Frameworks with structured content
 const FRAMEWORKS = [
@@ -12,7 +13,7 @@ const FRAMEWORKS = [
     displayName: "Emotions as a Biological Information System",
     title: "The Emotional Gradient",
     subtitle: "Foundation of Emotional Experience",
-    arc: "Formation",
+    arc: "Foundation",
     purpose: "Explain how the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.",
     summary: "How the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.",
     buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
@@ -199,7 +200,7 @@ const FRAMEWORKS = [
     displayName: "Two Information Systems",
     title: "State-Dependent Coherence",
     subtitle: "How Two Parallel Systems Generate All Behavior",
-    arc: "Integration",
+    arc: "Architecture",
     purpose: "Provide the integrative architecture underlying all previous frameworks — demonstrating how a single mechanism (state-dependent nervous system organization) creates the full diversity of human behavior.",
     summary: "Human behavior is organized by the interaction of two parallel information systems: the Cognitive-Logical System (language, reasoning, planning — conscious, slow) and the Emotional-Somatic System (safety/threat detection, relational cues — unconscious, fast). State precedes capacity.",
     buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma and body-based approaches (van der Kolk, Levine), attachment as regulatory system (Bowlby, Schore, Siegel).",
@@ -213,13 +214,15 @@ const FRAMEWORKS = [
   },
 ];
 
-// Arc colors
+// Arc colors — 7 arcs matching the Interdependency Matrix
 const arcColors = {
+  "Foundation": "#26C6DA",
   "Formation": SPECTRUM.azure,
   "Scaling": SPECTRUM.blue,
   "Turning Point": SPECTRUM.cobalt,
   "Healing": SPECTRUM.indigo,
-  "Integration": SPECTRUM.slate,
+  "Integration": "#5C6BC0",
+  "Architecture": "#1E88E5",
 };
 
 export default function TheoreticalFoundationsPage() {
@@ -253,7 +256,7 @@ export default function TheoreticalFoundationsPage() {
                 margin: 0,
               }}
             >
-              Frameworks Map
+              Frameworks Mapping System
             </h1>
             <span
               style={{
@@ -298,7 +301,7 @@ export default function TheoreticalFoundationsPage() {
           </p>
         </header>
 
-        {/* Framework Arc Overview */}
+        {/* Framework Arc Overview — 7 arcs */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 20 }}>
             The Framework Mapping Arc
@@ -309,14 +312,29 @@ export default function TheoreticalFoundationsPage() {
                 fontSize: 12,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: arcColors["Formation"],
-                minWidth: 140,
+                color: arcColors["Foundation"],
+                minWidth: 160,
                 paddingTop: 2,
               }}>
-                F1–F3 (Formation)
+                F1 (Foundation)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How the nervous system orients, how identity crystallizes, how cognition maintains coherence
+                Where emotion begins — how the nervous system orients between safety and threat
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Formation"],
+                minWidth: 160,
+                paddingTop: 2,
+              }}>
+                F2–F3 (Formation)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                How identity crystallizes and how cognition maintains coherence
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -325,7 +343,7 @@ export default function TheoreticalFoundationsPage() {
                 fontWeight: 600,
                 fontFamily: FONT.mono,
                 color: arcColors["Scaling"],
-                minWidth: 140,
+                minWidth: 160,
                 paddingTop: 2,
               }}>
                 F4–F6 (Scaling)
@@ -340,7 +358,7 @@ export default function TheoreticalFoundationsPage() {
                 fontWeight: 600,
                 fontFamily: FONT.mono,
                 color: arcColors["Turning Point"],
-                minWidth: 140,
+                minWidth: 160,
                 paddingTop: 2,
               }}>
                 F7 (Turning Point)
@@ -355,7 +373,7 @@ export default function TheoreticalFoundationsPage() {
                 fontWeight: 600,
                 fontFamily: FONT.mono,
                 color: arcColors["Healing"],
-                minWidth: 140,
+                minWidth: 160,
                 paddingTop: 2,
               }}>
                 F8–F10 (Healing)
@@ -370,16 +388,43 @@ export default function TheoreticalFoundationsPage() {
                 fontWeight: 600,
                 fontFamily: FONT.mono,
                 color: arcColors["Integration"],
-                minWidth: 140,
+                minWidth: 160,
                 paddingTop: 2,
               }}>
-                F11–F12 (Integration)
+                F11 (Integration)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                Paradox resolution and the complete theoretical synthesis
+                How contradictions resolve when state logic is included
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                color: arcColors["Architecture"],
+                minWidth: 160,
+                paddingTop: 2,
+              }}>
+                F12 (Architecture)
+              </span>
+              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
+                The operating system underneath — two parallel information systems generating all behavior
               </span>
             </div>
           </div>
+        </section>
+
+        {/* Interdependency Matrix — breaks out of container for full width */}
+        <section
+          style={{
+            marginBottom: 40,
+            marginLeft: -24,
+            marginRight: -24,
+            padding: "0 24px",
+          }}
+        >
+          <InterdependencyMatrix />
         </section>
 
         {/* All Frameworks - Expandable */}
