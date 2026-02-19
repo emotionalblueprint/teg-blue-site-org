@@ -256,48 +256,68 @@ export default function TheoreticalFoundationsPage() {
                 margin: 0,
               }}
             >
-              Frameworks Mapping System
+              A Framework Mapping System with 12 levels
             </h1>
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: SPECTRUM.indigo,
-                padding: "4px 10px",
-                background: hexToRgba(SPECTRUM.indigo, 0.1),
-                borderRadius: 4,
-              }}
-            >
-              Status: Proposed synthesis, built on established research
-            </span>
           </div>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.muted,
+              lineHeight: 1.6,
+              marginBottom: 20,
+            }}
+          >
+            A unified model linking regulation, identity, social systems, escalation, and repair.
+          </p>
           <p
             style={{
               fontSize: 15,
               color: TEXT.secondary,
-              lineHeight: 1.9,
-              marginBottom: 20,
+              lineHeight: 1.8,
+              marginBottom: 16,
             }}
           >
-            It begins with a simple premise:<br />
-            emotions are valid data about safety, threat, belonging, and meaning.
+            <strong style={{ color: TEXT.primary }}>Most models describe either the inner world or the social world. TEG-Blue connects them as one system.</strong>
           </p>
           <p
             style={{
               fontSize: 14,
               color: TEXT.secondary,
-              lineHeight: 1.9,
-              marginBottom: 20,
+              lineHeight: 1.8,
+              marginBottom: 16,
             }}
           >
-            From there, it unfolds the full TEG-Blue system —<br />
-            from nervous system biology,<br />
-            to identity,<br />
-            to communities,<br />
-            to social systems,<br />
-            to healing,<br />
-            to AI.
+            The frameworks are interdependent because <strong style={{ color: TEXT.primary }}>humans do not experience life in separate categories</strong>. A nervous system state shapes perception. Perception shapes meaning. Meaning shapes identity. Identity shapes behavior. Behavior shapes what gets rewarded. And reward shapes the nervous system again.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 16,
+            }}
+          >
+            This loop is how trauma becomes culture, and how culture becomes trauma.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 16,
+            }}
+          >
+            TEG-Blue is structured as a sequence so we can locate where a pattern is coming from, where it is being reinforced, and where repair is actually possible.
+          </p>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              marginBottom: 0,
+            }}
+          >
+            The mapping system makes visible that what people do is strongly shaped by the conditions their system is adapting to, and by their capacity to return to <strong style={{ color: TEXT.primary }}>connection</strong> under challenge.
           </p>
         </header>
 
