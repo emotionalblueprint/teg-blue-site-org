@@ -692,7 +692,7 @@ export default function ScientificFoundationsPage() {
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
             Every source theory is credited. The architecture was developed by Anna Paretas-Artacho
-            through independent research. AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) were
+            through independent research. AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were
             used to systematically identify which established theories align with each framework's
             propositions.
           </p>

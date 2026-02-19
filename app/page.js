@@ -426,7 +426,7 @@ export default function ResearchHub() {
                   <strong style={{ color: TEXT.primary }}>The architecture:</strong> Developed through independent research — observing patterns, connecting disciplines, testing against lived experience.
                 </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 10 }}>
-                  <strong style={{ color: TEXT.primary }}>The literature mapping:</strong> AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) helped identify which of 139+ established theories align with each framework. The architecture determined the connections. The AI located the academic literature.
+                  <strong style={{ color: TEXT.primary }}>The literature mapping:</strong> AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) helped identify which of 139+ established theories align with each framework. The architecture determined the connections. The AI located the academic literature.
                 </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
                   <strong style={{ color: TEXT.primary }}>The status:</strong> A working hypothesis — open to critique, correction, and deeper validation by human researchers.

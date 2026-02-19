@@ -49,7 +49,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How was TEG-Blue developed?",
-    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a working hypothesis requiring deeper scholarly validation."
+    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a working hypothesis requiring deeper scholarly validation."
   },
   {
     question: "What ethical standards does TEG-Blue research follow?",
@@ -222,7 +222,7 @@ export default function MethodologyPage() {
                 The literature mapping
               </h3>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                Once the architecture was established, AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
+                Once the architecture was established, AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
               </p>
             </div>
             <div style={{ marginBottom: 20 }}>
