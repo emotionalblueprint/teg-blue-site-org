@@ -2,6 +2,7 @@ import Link from "next/link";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
 import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import InterdependencyMatrixVertical from "@/src/components/InterdependencyMatrixVertical";
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
@@ -167,6 +168,11 @@ export default function ResearchHub() {
               />
               Experience the tools at teg-blue.com →
             </a>
+          </section>
+
+          {/* Interdependency Matrix (Vertical) */}
+          <section style={{ marginBottom: 48 }}>
+            <InterdependencyMatrixVertical />
           </section>
 
           {/* What you can do here */}

@@ -86,6 +86,25 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* How TEG-Blue Began */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            How TEG-Blue began
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12, maxWidth: 640 }}>
+            In April 2024, my life collapsed. I walked away from a deeply harmful relationship with nothing, while navigating trauma and emotional manipulation. What followed wasn't recovery. It was survival.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12, maxWidth: 640 }}>
+            Fueled by trauma, ADHD, and a desperate need to understand what had happened to me, I fell into hyperfocus. I read everything I could find: psychology, neuroscience, trauma research, attachment, family systems, emotional abuse. And then something clicked. I started to see the hidden logic behind the patterns I had lived through. Not only in the relationship I'd left, but across my entire life.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12, maxWidth: 640 }}>
+            I realized I'd been reading emotional patterns since childhood, fluent in a language I didn't even know had a name. What looked like personal chaos was often systemic. The patterns weren't unique to me. They were recognizable dynamics that show up everywhere, but rarely get mapped with precision.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, maxWidth: 640 }}>
+            So I did what I've always done. I made it visible. I started mapping and reverse-engineering the patterns. What began as survival sketches became a structured system. Over a year of intensive, solitary work, it crystallized into TEG-Blue.
+          </p>
+        </section>
+
         {/* Two Sites */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
