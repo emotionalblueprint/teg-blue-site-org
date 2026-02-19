@@ -296,16 +296,6 @@ export default function TheoreticalFoundationsPage() {
             to healing,<br />
             to AI.
           </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 12,
-            }}
-          >
-            You can read it top to bottom, or use this map to enter at any level.
-          </p>
         </header>
 
         {/* Framework Arc Overview */}
