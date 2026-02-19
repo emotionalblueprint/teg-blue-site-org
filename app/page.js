@@ -104,6 +104,19 @@ export default function ResearchHub() {
               Built on 139+ established theories. Open to critique and validation.
             </p>
 
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.7,
+                color: TEXT.secondary,
+                maxWidth: 600,
+                marginBottom: 24,
+                fontWeight: 500,
+              }}
+            >
+              The gap in emotional intelligence has never been a lack of good science. It has been a lack of architecture — a structure where the science connects, becomes visible, and becomes usable. That's what TEG-Blue is.
+            </p>
+
             {/* CTAs */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 16 }}>
               <Link
