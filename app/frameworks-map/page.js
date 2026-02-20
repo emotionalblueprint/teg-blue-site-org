@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import InterdependencyMatrix from "@/src/components/InterdependencyMatrix";
 
 // The 12 Frameworks with structured content
 const FRAMEWORKS = [
@@ -433,18 +432,6 @@ export default function TheoreticalFoundationsPage() {
               </span>
             </div>
           </div>
-        </section>
-
-        {/* Interdependency Matrix — breaks out of container for full width */}
-        <section
-          style={{
-            marginBottom: 40,
-            marginLeft: -24,
-            marginRight: -24,
-            padding: "0 24px",
-          }}
-        >
-          <InterdependencyMatrix />
         </section>
 
         {/* All Frameworks - Expandable */}
