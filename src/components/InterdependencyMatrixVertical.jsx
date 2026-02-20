@@ -52,7 +52,7 @@ const levelData = {
     subtitle: 'Biological Information System',
     summary: 'How the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.',
     buildsOn: 'Polyvagal Theory, affective neuroscience, trauma research, attachment theory, emotion science.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-1'
+    link: '/frameworks-map'
   },
   2: {
     symbol: '◐',
@@ -60,7 +60,7 @@ const levelData = {
     subtitle: 'Identity as Adaptive Cognitive System',
     summary: 'How identity crystallizes around a default mode when environments require adaptation, creating the Real Self / Role Mask structure.',
     buildsOn: 'Object relations theory, attachment research, developmental psychology, self-models, schema theory.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-2'
+    link: '/frameworks-map'
   },
   3: {
     symbol: '⬡',
@@ -68,7 +68,7 @@ const levelData = {
     subtitle: 'Cognition & False Coherence',
     summary: 'How cognition maintains identity coherence under nervous system pressure, producing rationalization and motivated reasoning.',
     buildsOn: 'Cognitive dissonance theory, dual-process cognition, motivated reasoning, self-justification, state-dependent learning.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-3'
+    link: '/frameworks-map'
   },
   4: {
     symbol: '▦',
@@ -76,7 +76,7 @@ const levelData = {
     subtitle: 'Threat-Based Internalized Patterns',
     summary: 'How unspoken social rules form and govern emotional and relational life at the nervous system level.',
     buildsOn: 'Sociology of norms, cultural psychology, status dynamics, moral foundations, norm enforcement.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-4'
+    link: '/frameworks-map'
   },
   5: {
     symbol: '◈',
@@ -84,7 +84,7 @@ const levelData = {
     subtitle: 'Threat-Driven External Validation',
     summary: 'How threat-organized systems convert safety signals into worth hierarchies that determine what feels safe, lovable, or allowed.',
     buildsOn: 'Shame research, social evaluation threat, internalized stigma, conditional regard, social stratification.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-5'
+    link: '/frameworks-map'
   },
   6: {
     symbol: '◔',
@@ -92,7 +92,7 @@ const levelData = {
     subtitle: 'State-Dependent Perception',
     summary: 'How perception becomes state-dependent, producing perceptual defaults that feel like truth but function as regulation.',
     buildsOn: 'Social cognition, threat perception, intergroup emotion, motivated reasoning, dehumanization literature.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-6'
+    link: '/frameworks-map'
   },
   7: {
     symbol: '△',
@@ -100,7 +100,7 @@ const levelData = {
     subtitle: 'Defense-to-Domination Escalation',
     summary: 'How protection escalates through control into domination — the crossroads where defense becomes strategy.',
     buildsOn: 'Power and dominance research, coercive control, moral disengagement, narcissism research, perpetrator psychology.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-7'
+    link: '/frameworks-map'
   },
   8: {
     symbol: '↺',
@@ -108,7 +108,7 @@ const levelData = {
     subtitle: 'Self-Reconnection & Role Mask Loosening',
     summary: 'How sustained safety allows the Role Mask to loosen, enabling gradual return to the Real Self.',
     buildsOn: 'Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization theory.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-8'
+    link: '/frameworks-map'
   },
   9: {
     symbol: '∿',
@@ -116,7 +116,7 @@ const levelData = {
     subtitle: 'Inborn Rhythm in Neurodivergence',
     summary: 'How neurodivergent nervous systems process the emotional gradient differently, and the costs of forced masking.',
     buildsOn: 'Neurodiversity paradigm, sensory processing, autism and ADHD research, masking cost literature.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-9'
+    link: '/frameworks-map'
   },
   10: {
     symbol: '⧗',
@@ -124,7 +124,7 @@ const levelData = {
     subtitle: 'Intergenerational Transmission & Lineage Repair',
     summary: 'How emotional patterns pass across generations, and the conditions that enable interruption and repair.',
     buildsOn: 'Intergenerational trauma research, family systems theory, epigenetics, ACEs literature.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-10'
+    link: '/frameworks-map'
   },
   11: {
     symbol: '∞',
@@ -132,7 +132,7 @@ const levelData = {
     subtitle: 'The Logic Behind Emotional Paradoxes',
     summary: 'How contradictions emerge predictably when emotional survival structures meet healing — and resolve when state logic is included.',
     buildsOn: 'State-dependent cognition, dual-process work, trauma adaptation, motivated reasoning, self-justification.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-11'
+    link: '/frameworks-map'
   },
   12: {
     symbol: '⊜',
@@ -140,7 +140,7 @@ const levelData = {
     subtitle: 'Our Internal Wiring · Integrative Lens',
     summary: 'Human behavior is organized by two parallel information systems: the Cognitive-Logical (conscious, slow) and the Emotional-Somatic (unconscious, fast). State precedes capacity.',
     buildsOn: 'Dual-process theory, Polyvagal Theory, somatic marker hypothesis, state-dependent capacity.',
-    link: 'https://teg-blue.com/mapping-system/understanding-emotions/level-12'
+    link: '/frameworks-map'
   },
 }
 
@@ -443,22 +443,30 @@ export default function InterdependencyMatrixVertical() {
       )}
 
       {/* ═══ CORE INSIGHT BOX ═══ */}
-      <div style={{ maxWidth: 600, margin: '32px auto 0' }}>
+      <div style={{ maxWidth: 540, margin: '40px auto 0', padding: '0 16px' }}>
+        <p style={{
+          fontSize: 15,
+          lineHeight: 1.7,
+          color: TEXT.secondary,
+          marginBottom: 24,
+          marginTop: 0,
+          textAlign: 'center',
+        }}>
+          The frameworks are interdependent because{' '}
+          <strong style={{ color: TEXT.primary }}>humans do not experience life in separate categories</strong>.
+        </p>
+
+        {/* Chain sequence */}
         <div
           style={{
             borderRadius: 12,
-            padding: 24,
-            marginBottom: 20,
-            background: 'linear-gradient(135deg, rgba(160,128,255,0.1), rgba(160,128,255,0.02))',
-            border: '1px solid rgba(160,128,255,0.2)',
+            padding: '20px 24px',
+            marginBottom: 16,
+            background: 'linear-gradient(135deg, rgba(160,128,255,0.08), rgba(160,128,255,0.02))',
+            border: '1px solid rgba(160,128,255,0.15)',
           }}
         >
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: TEXT.secondary, marginBottom: 20, marginTop: 0 }}>
-            The frameworks are interdependent because humans do not experience life in separate categories.
-          </p>
-
-          {/* Chain sequence */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {[
               { from: 'Nervous system state', verb: 'shapes', to: 'perception', color: '#26C6DA' },
               { from: 'Perception', verb: 'shapes', to: 'meaning', color: '#66BB6A' },
@@ -467,30 +475,38 @@ export default function InterdependencyMatrixVertical() {
               { from: 'Behavior', verb: 'shapes', to: 'what gets rewarded', color: '#FFA726' },
               { from: 'Reward', verb: 'shapes', to: 'the nervous system again', color: '#FF5722' },
             ].map((step, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
                 <div
                   style={{
-                    width: 6,
-                    height: 6,
+                    width: 5,
+                    height: 5,
                     borderRadius: '50%',
                     flexShrink: 0,
                     background: step.color,
+                    marginTop: 5,
                   }}
                 />
-                <span style={{ fontSize: 13, color: step.color, fontWeight: 600 }}>
+                <span style={{ fontSize: 13, color: step.color, fontWeight: 600, whiteSpace: 'nowrap' }}>
                   {step.from}
                 </span>
-                <span style={{ fontSize: 13, color: TEXT.muted }}>
-                  {step.verb}
+                <span style={{ fontSize: 12, color: TEXT.muted, fontFamily: FONT.mono }}>
+                  →
                 </span>
-                <span style={{ fontSize: 13, color: TEXT.secondary }}>
+                <span style={{ fontSize: 13, color: hexToRgba(TEXT.primary, 0.7) }}>
                   {step.to}
                 </span>
               </div>
             ))}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 4, marginLeft: 14 }}>
-              <span style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted }}>
-                ↩ back to start
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              marginTop: 6,
+              paddingTop: 8,
+              borderTop: '1px solid rgba(160,128,255,0.1)',
+            }}>
+              <span style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted, letterSpacing: '0.02em' }}>
+                ↩ back to start — the loop repeats
               </span>
             </div>
           </div>
@@ -500,12 +516,13 @@ export default function InterdependencyMatrixVertical() {
         <div
           style={{
             borderRadius: 12,
-            padding: 18,
-            background: 'linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))',
-            border: '1px solid rgba(239,68,68,0.2)',
+            padding: '16px 24px',
+            background: 'linear-gradient(135deg, rgba(239,68,68,0.07), rgba(239,68,68,0.02))',
+            border: '1px solid rgba(239,68,68,0.15)',
+            textAlign: 'center',
           }}
         >
-          <p style={{ fontSize: 16, fontWeight: 600, lineHeight: 1.6, color: TEXT.primary, margin: 0 }}>
+          <p style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.6, color: TEXT.primary, margin: 0 }}>
             This loop is how <span style={{ color: '#ef4444' }}>trauma becomes culture</span>,
             and how <span style={{ color: '#ef4444' }}>culture becomes trauma</span>.
           </p>
@@ -755,8 +772,6 @@ function Tooltip({ level, position, onMouseEnter, onMouseLeave }) {
       {/* Link */}
       <a
         href={data.link}
-        target="_blank"
-        rel="noopener noreferrer"
         style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -772,7 +787,7 @@ function Tooltip({ level, position, onMouseEnter, onMouseLeave }) {
           transition: 'border-color 200ms ease',
         }}
       >
-        View on teg-blue.com →
+        View on Frameworks Map →
       </a>
     </div>
   )
