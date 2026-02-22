@@ -136,7 +136,7 @@ const levelData = {
   },
   12: {
     symbol: '⊜',
-    title: 'The Emotional Gradient (Two Information Systems)',
+    title: 'Dual-Process Architecture (Two Information Systems)',
     subtitle: 'The Unifying Mechanism',
     summary: 'All frameworks F1–F11 describe state-dependent nervous-system organization. The Four-Mode Gradient is the unifying principle: Connection, Protection, Control, Domination — the same mechanism at every scale.',
     buildsOn: 'Dual-process theory, Polyvagal Theory, somatic marker hypothesis, state-dependent capacity.',
