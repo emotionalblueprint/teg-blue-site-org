@@ -156,9 +156,10 @@ export default function FourModeGradientPage() {
               marginBottom: 20,
             }}
           >
-            Where is the nervous system landing? Not as a fixed type, but as a living gradient that shifts
-            moment to moment based on how safe we feel. State determines capacity — detectable in natural
-            language, measurable through complexity markers.
+            Where is the autonomic nervous system on the regulatory continuum? Not a categorical
+            classification — a continuous gradient reflecting real-time neuroception of safety and threat.
+            Regulatory state determines functional capacity — detectable in natural language, quantifiable
+            through complexity markers.
           </p>
 
           {/* Gradient bar */}
@@ -203,8 +204,8 @@ export default function FourModeGradientPage() {
               lineHeight: 1.6,
             }}
           >
-            State determines capacity — what someone can perceive, feel, think, and do depends on
-            where their nervous system lands.
+            Regulatory state determines functional capacity — perception, affect, cognition, and
+            behavioral repertoire are constrained by autonomic positioning on the gradient.
           </blockquote>
         </section>
 
@@ -250,46 +251,46 @@ export default function FourModeGradientPage() {
             Properties of the System
           </h2>
           <p style={{ fontSize: 14, color: TEXT.muted, marginBottom: 20 }}>
-            How the gradient operates as a system — the rules that govern movement between states.
+            Operational principles governing state transitions, regulatory constraints, and systemic dynamics.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
               {
-                title: "The system is always on",
-                text: "We are always in one of the four modes. There is in-between, there is fast and slow, but there is no off. The radar is always reading.",
+                title: "Continuous autonomic regulation",
+                text: "The system holds a regulatory position at all times. No neutral state — only gradient positions. Neuroception scans continuously below conscious awareness.",
               },
               {
-                title: "Movement is continuous, not categorical",
-                text: "The four modes are not boxes. We move through them in a smooth, continuous gradient. We can be between modes, shifting toward one or the other. The boundaries are zones, not walls.",
+                title: "Dimensional, not categorical",
+                text: "The four modes are regions on a continuous dimension, not discrete categories. Boundaries are probabilistic zones, not thresholds.",
               },
               {
-                title: "The return to safety takes time",
-                text: "Protection, Control, and Domination are all extensions of threat. We cannot jump back to Connection. The body needs time to adjust to safety — just in case there is still danger. Escalation is fast, de-escalation is slow by design.",
+                title: "Asymmetric state transitions",
+                text: "Escalation is fast — threat detection prioritizes speed. De-escalation is slow — the system requires sustained safety signals before downregulating. This asymmetry biases toward sustained threat states.",
               },
               {
-                title: "Threat modes are temporary by design",
-                text: "Protection, Control, and Domination are meant to last minutes to a few days at most. They are stress states. Staying in them longer than the system can afford has deep consequences — they were never designed to be a default operating mode.",
+                title: "Allostatic load constraints",
+                text: "Threat modes are acute stress responses — metabolically expensive, designed for minutes to hours. Chronic occupation produces allostatic overload and progressive erosion of regulatory capacity.",
               },
               {
-                title: "When safety was never learned",
-                text: "When we have grown up in environments where Connection was not available, we may not recognize it or know how to access it. The system cannot default to a state it has never reliably experienced.",
+                title: "Developmental calibration failure",
+                text: "Without reliable early co-regulation, the ventral vagal system lacks a template for Connection. The system cannot default to a state it has never reliably encoded.",
               },
               {
-                title: "Empathy drops across the gradient",
-                text: "In Connection, empathy is high and accurate. In Protection, it starts decreasing. In Control, it becomes instrumental. In Domination, it is gone. This gradient is necessary when the danger is real. It is devastating when we are locked in a threat mode without knowing it — because we will not register the damage we cause.",
+                title: "Empathy attenuation across the gradient",
+                text: "Empathic accuracy decreases systematically. Connection: full mentalization. Protection: self-referential bias. Control: instrumental theory of mind. Domination: empathy offline or weaponized.",
               },
               {
-                title: "Hijacked in Connection is also damaging",
-                text: "Connection is the only mode designed for sustained living. But without mode awareness, the compass can get locked here too — maintaining empathy for people who hurt us over and over, unable to activate protection when we need it. This is echoism. The goal is not permanent Connection. The goal is appropriate mode flexibility.",
+                title: "Connection mode dysregulation",
+                text: "Without mode awareness, the system can lock in Connection — maintaining attunement toward sources of harm, failing to activate protection. This is echoism. The target is mode flexibility, not permanent Connection.",
               },
               {
-                title: "Two types of awareness",
-                text: "You can be aware of where others are on the gradient and still be locked in a threat mode yourself — which means you can use that reading to cause harm. Self-awareness means you can read the room. Emotional awareness means you understand your own emotions, know your own mode, and have enough empathy intact to care about your impact. The difference matters.",
+                title: "Cognitive vs. affective self-monitoring",
+                text: "Reading others' states and monitoring one's own regulatory position are dissociable. Accurate social cognition without self-regulation enables exploitation, not empathy.",
               },
               {
-                title: "The harm/hurt confusion",
-                text: "When we are locked in threat modes, we confuse being hurt with being harmed. Discomfort feels like danger. That confusion sits at the base of most conflicts — personal, professional, political, systemic. Learning to distinguish between the two is one of the most consequential skills the Inner Compass can support.",
+                title: "Threat-harm conflation",
+                text: "In sustained threat states, discomfort registers as danger — a signal detection error. This false-positive bias underlies escalation across interpersonal, institutional, and political conflict.",
               },
             ].map((item, i) => (
               <div
