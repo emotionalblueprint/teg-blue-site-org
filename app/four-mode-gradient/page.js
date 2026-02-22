@@ -32,7 +32,7 @@ const MODES = [
       behaviors: "Flexible and adaptive — many options feel possible.",
       repair: "Available — we can acknowledge impact and reconnect.",
     },
-    gradient: "Adaptive state",
+    gradient: "Emotional-Somatic",
   },
   {
     id: "b",
@@ -51,7 +51,7 @@ const MODES = [
       behaviors: "Defensive — fight, flight, freeze, fawn. Fewer options feel available.",
       repair: "Hard but not impossible — feedback registers as threat. Downshifting arousal may be needed before reflection is possible.",
     },
-    gradient: "Adaptive state",
+    gradient: "Emotional-Somatic",
   },
   {
     id: "c",
@@ -70,7 +70,7 @@ const MODES = [
       behaviors: "Directive — take over, micromanage, correct, steer. Often looks like competence while functioning as anxiety regulation.",
       repair: "Resisted — owning impact feels like loss of control. Accountability gets reframed as unfair or dangerous.",
     },
-    gradient: "Stuck state",
+    gradient: "Cognitive-Logical",
   },
   {
     id: "d",
@@ -89,7 +89,7 @@ const MODES = [
       behaviors: "Coercive — intimidate, degrade, punish, isolate, retaliate. High certainty, low restraint.",
       repair: "Unavailable — no stable framework for accountability. Harm is denied, minimized, justified, or converted into blame.",
     },
-    gradient: "Stuck state",
+    gradient: "Cognitive-Logical",
   },
 ];
 
@@ -674,7 +674,7 @@ function ExpandableModeCard({ mode }) {
             fontSize: 10,
             fontWeight: 600,
             fontFamily: FONT.mono,
-            color: mode.gradient === "Adaptive state" ? PATTERN.a.color : PATTERN.c.color,
+            color: mode.gradient === "Emotional-Somatic" ? PATTERN.a.color : PATTERN.c.color,
             textTransform: "uppercase",
             letterSpacing: "0.04em",
             marginRight: 16,
