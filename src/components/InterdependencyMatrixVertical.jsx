@@ -48,97 +48,97 @@ const connections = [
 const levelData = {
   1: {
     symbol: '◉',
-    title: 'Emotions as Signals',
+    title: 'Emotions as Information (Emotions as Signals)',
     subtitle: 'Biological Information System',
-    summary: 'How the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.',
+    summary: 'Emotions are data systems that detect safety and organize regulation. Establishes the emotional circuit as the primary organizer of behavior and meaning — foundation for all subsequent frameworks.',
     buildsOn: 'Polyvagal Theory, affective neuroscience, trauma research, attachment theory, emotion science.',
     link: '/frameworks-map'
   },
   2: {
     symbol: '◐',
-    title: 'The Ego-Persona Construct',
+    title: 'Identity Formation (The Ego-Persona Construct)',
     subtitle: 'Identity as Adaptive Cognitive System',
-    summary: 'How identity crystallizes around a default mode when environments require adaptation, creating the Real Self / Role Mask structure.',
+    summary: 'Identity forms in response to the emotional data F1 establishes. The Real Self, Role Mask, and Logic Layer emerge because the nervous system detects that authenticity may not be safe.',
     buildsOn: 'Object relations theory, attachment research, developmental psychology, self-models, schema theory.',
     link: '/frameworks-map'
   },
   3: {
     symbol: '⬡',
-    title: 'Our Three Inner Layers',
+    title: 'Adult Coherence (Our Three Inner Layers)',
     subtitle: 'Cognition & False Coherence',
-    summary: 'How cognition maintains identity coherence under nervous system pressure, producing rationalization and motivated reasoning.',
+    summary: 'Builds on F2: adults maintain identity coherence through false coherence — reinterpreting contradictions because the nervous system prioritizes identity safety over truth.',
     buildsOn: 'Cognitive dissonance theory, dual-process cognition, motivated reasoning, self-justification, state-dependent learning.',
     link: '/frameworks-map'
   },
   4: {
     symbol: '▦',
-    title: 'Invisible Rules We Follow',
-    subtitle: 'Threat-Based Internalized Patterns',
-    summary: 'How unspoken social rules form and govern emotional and relational life at the nervous system level.',
+    title: 'Threat-Based Rules (Invisible Rules We Follow)',
+    subtitle: 'Socio-Regulatory Structures',
+    summary: 'The same identity maintenance mechanism from F3 scales to the collective. When individuals group under threat, they internalize rules that are socio-regulatory structures — not moral truths, but safety strategies.',
     buildsOn: 'Sociology of norms, cultural psychology, status dynamics, moral foundations, norm enforcement.',
     link: '/frameworks-map'
   },
   5: {
     symbol: '◈',
-    title: 'The Filter of Worth',
-    subtitle: 'Threat-Driven External Validation',
-    summary: 'How threat-organized systems convert safety signals into worth hierarchies that determine what feels safe, lovable, or allowed.',
+    title: 'Worth-Sorting Systems (The Filter of Worth)',
+    subtitle: 'External Validation as Safety Proxy',
+    summary: 'Builds on F4: when genuine safety is missing, systems create safety proxies. Worth hierarchies operate at group level the way the Role Mask operates at individual level.',
     buildsOn: 'Shame research, social evaluation threat, internalized stigma, conditional regard, social stratification.',
     link: '/frameworks-map'
   },
   6: {
     symbol: '◔',
-    title: 'The Architecture of Bias',
+    title: 'Bias Architecture (The Architecture of Bias)',
     subtitle: 'State-Dependent Perception',
-    summary: 'How perception becomes state-dependent, producing perceptual defaults that feel like truth but function as regulation.',
+    summary: 'Completes the scaling layer: bias is not a thinking error — it is a regulation strategy. Perception distortion makes hierarchies from F4–F5 feel natural, enabling unchecked escalation.',
     buildsOn: 'Social cognition, threat perception, intergroup emotion, motivated reasoning, dehumanization literature.',
     link: '/frameworks-map'
   },
   7: {
     symbol: '△',
-    title: 'Anatomy of a Tyrant',
+    title: 'Escalation Pathways (Anatomy of a Tyrant)',
     subtitle: 'Defense-to-Domination Escalation',
-    summary: 'How protection escalates through control into domination — the crossroads where defense becomes strategy.',
+    summary: 'When protection strategies from F1–F6 persist without feedback, defense escalates into domination. Five stages: fear activation, strategy formation, entitlement loop, empathy collapse, power preservation.',
     buildsOn: 'Power and dominance research, coercive control, moral disengagement, narcissism research, perpetrator psychology.',
     link: '/frameworks-map'
   },
   8: {
     symbol: '↺',
-    title: 'Return to the Real Self',
-    subtitle: 'Self-Reconnection & Role Mask Loosening',
-    summary: 'How sustained safety allows the Role Mask to loosen, enabling gradual return to the Real Self.',
+    title: 'Self-Reconnection (Return to the Real Self)',
+    subtitle: 'Role Mask Loosening',
+    summary: 'The reversal of F7: when nervous-system safety increases, the mask from F2 loosens, false coherence from F3 breaks down, and authentic emotional signals from F1 become accessible. Change requires safety, not willpower.',
     buildsOn: 'Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization theory.',
     link: '/frameworks-map'
   },
   9: {
     symbol: '∿',
-    title: 'Costs of Forced Masking',
-    subtitle: 'Inborn Rhythm in Neurodivergence',
-    summary: 'How neurodivergent nervous systems process the emotional gradient differently, and the costs of forced masking.',
+    title: 'Neurodivergent Integration (Costs of Forced Masking)',
+    subtitle: 'Inborn Rhythm & Masking Cost',
+    summary: 'Extends F8: masks include socially-imposed neurodivergent masking — particularly costly because it often goes unrecognized. Healing requires honoring inborn rhythm, not adapting to neurotypical expectations.',
     buildsOn: 'Neurodiversity paradigm, sensory processing, autism and ADHD research, masking cost literature.',
     link: '/frameworks-map'
   },
   10: {
     symbol: '⧗',
-    title: 'Rebuilding Generational Bridges',
-    subtitle: 'Intergenerational Transmission & Lineage Repair',
-    summary: 'How emotional patterns pass across generations, and the conditions that enable interruption and repair.',
+    title: 'Intergenerational Repair (Rebuilding Generational Bridges)',
+    subtitle: 'Transmission & Lineage Repair',
+    summary: 'Scales healing to family level: individual healing (F8–F9) changes nervous-system state, which changes family-system state, creating new safety baselines. Breaking transmission requires understanding how patterns transmit (F4–F6) and reverse (F8–F9).',
     buildsOn: 'Intergenerational trauma research, family systems theory, epigenetics, ACEs literature.',
     link: '/frameworks-map'
   },
   11: {
     symbol: '∞',
-    title: 'Making Sense of Contradiction',
-    subtitle: 'The Logic Behind Emotional Paradoxes',
-    summary: 'How contradictions emerge predictably when emotional survival structures meet healing — and resolve when state logic is included.',
+    title: 'Emotional Logic (Making Sense of Contradiction)',
+    subtitle: 'The Logic Behind Paradoxes',
+    summary: 'All behavior is logically consistent from an emotional perspective. F1–F10 describe coherent emotional logic at different scales. What appears paradoxical is state-switching without awareness.',
     buildsOn: 'State-dependent cognition, dual-process work, trauma adaptation, motivated reasoning, self-justification.',
     link: '/frameworks-map'
   },
   12: {
     symbol: '⊜',
-    title: 'Two Information Systems',
-    subtitle: 'Our Internal Wiring · Integrative Lens',
-    summary: 'Human behavior is organized by two parallel information systems: the Cognitive-Logical (conscious, slow) and the Emotional-Somatic (unconscious, fast). State precedes capacity.',
+    title: 'The Emotional Gradient (Two Information Systems)',
+    subtitle: 'The Unifying Mechanism',
+    summary: 'All frameworks F1–F11 describe state-dependent nervous-system organization. The Four-Mode Gradient is the unifying principle: Connection, Protection, Control, Domination — the same mechanism at every scale.',
     buildsOn: 'Dual-process theory, Polyvagal Theory, somatic marker hypothesis, state-dependent capacity.',
     link: '/frameworks-map'
   },
@@ -363,7 +363,7 @@ export default function InterdependencyMatrixVertical() {
           letterSpacing: '-0.01em',
         }}
       >
-        The Interdependency Matrix
+        Framework Interdependency Diagram
       </h2>
       <p
         style={{
