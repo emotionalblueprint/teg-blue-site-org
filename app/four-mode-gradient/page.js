@@ -20,12 +20,18 @@ const MODES = [
     pattern: "A",
     name: "Connection",
     scientificName: "Cooperative Regulation",
-    subtitle: "Safety perceived (Connection)",
+    pathway: "SAFETY → EMPATHY → REPAIR",
+    regulation: "Regulation through connection",
+    subtitle: "The nervous system settles. Empathy comes online. Thinking becomes flexible. Repair is possible.",
     color: PATTERN.a.color,
     coreInsight: "The nervous system perceives safety. Not forced calm — real safety that the body believes.",
-    empathyState: "Full — others exist as full people with their own experience",
-    nervousSystem: "Ventral vagal engagement, social engagement system active",
-    keyMarker: "Curiosity about others' experience, capacity for repair",
+    axes: {
+      perception: "Wide and open — we can see nuance, context, and others' perspectives.",
+      emotions: "Full range available — we can feel without being overwhelmed.",
+      empathy: "Fully online — we can sense and respond to others' experiences.",
+      behaviors: "Flexible and adaptive — many options feel possible.",
+      repair: "Available — we can acknowledge impact and reconnect.",
+    },
     gradient: "Adaptive state",
   },
   {
@@ -33,12 +39,18 @@ const MODES = [
     pattern: "B",
     name: "Protection",
     scientificName: "Mobilization & Defense",
-    subtitle: "Threat perceived (Protection)",
+    pathway: "ALERT → THREAT SCANNING → DEFENSE",
+    regulation: "Regulation through vigilance",
+    subtitle: "The nervous system mobilizes. Attention narrows toward danger. The body prioritizes survival prediction.",
     color: PATTERN.b.color,
     coreInsight: "Walls go up, but they can come down. A normal response — everyone visits Protection mode.",
-    empathyState: "Partial — focus narrows to self-protection",
-    nervousSystem: "Sympathetic activation, fight/flight readiness",
-    keyMarker: "Withdrawal, guardedness, but recovery is possible with time and safety",
+    axes: {
+      perception: "Narrowed toward threat — neutral signals start looking unsafe.",
+      emotions: "Amplified and fast — anxiety, irritation, fear rise quickly with less time between trigger and reaction.",
+      empathy: "Reduced — other people's signals are filtered through a safety lens first.",
+      behaviors: "Defensive — fight, flight, freeze, fawn. Fewer options feel available.",
+      repair: "Hard but not impossible — feedback registers as threat. Downshifting arousal may be needed before reflection is possible.",
+    },
     gradient: "Adaptive state",
   },
   {
@@ -46,12 +58,18 @@ const MODES = [
     pattern: "C",
     name: "Control",
     scientificName: "Strategy-Based Regulation",
-    subtitle: "Safety sought through controlling others (Control)",
+    pathway: "ANTICIPATE → MANAGE → OVERRIDE",
+    regulation: "Regulation through strategy",
+    subtitle: "The system shifts from responding to threat toward controlling outcomes. Cognitive control increases, but emotional reality goes quiet.",
     color: PATTERN.c.color,
     coreInsight: "Protection isn't enough — managing others becomes the way to feel safe. Not necessarily conscious or malicious.",
-    empathyState: "Strategic — empathy used to predict and manage, not connect",
-    nervousSystem: "Chronic sympathetic activation with cognitive override",
-    keyMarker: "Others become objects to manage; accountability is performed, not genuine",
+    axes: {
+      perception: "Strategic — scanning for variables, leverage points, and failure risks.",
+      emotions: "Suppressed or redirected — feelings are treated as interference. What remains: pressure, urgency, restlessness.",
+      empathy: "Low and instrumental — others' needs become constraints or data points.",
+      behaviors: "Directive — take over, micromanage, correct, steer. Often looks like competence while functioning as anxiety regulation.",
+      repair: "Resisted — owning impact feels like loss of control. Accountability gets reframed as unfair or dangerous.",
+    },
     gradient: "Stuck state",
   },
   {
@@ -59,12 +77,18 @@ const MODES = [
     pattern: "D",
     name: "Domination",
     scientificName: "Power-Based Regulation",
-    subtitle: "Power as only safety (Domination)",
+    pathway: "OVERRIDE → ELIMINATE → SURVIVE",
+    regulation: "Regulation through force",
+    subtitle: "The system operates as if survival or rank is at stake. Empathy is offline. The primary aim becomes power, escape, or victory.",
     color: PATTERN.d.color,
     coreInsight: "Control becomes entrenched — power over others is the primary way of feeling safe. Empathy goes offline.",
-    empathyState: "Offline — others exist only in relation to one's needs",
-    nervousSystem: "Dorsal vagal collapse masked by power assertion",
-    keyMarker: "Vulnerability is weakness; harm is rationalized; repair is structurally impossible",
+    axes: {
+      perception: "Binary — win/lose, strong/weak, threat/target. Nuance collapses.",
+      emotions: "Blunted or weaponized — reduced access to guilt, remorse, care. What remains serves dominance: rage, contempt, cold resolve.",
+      empathy: "Offline — other people's pain does not register. If 'empathy' appears, it is used for prediction and exploitation, not care.",
+      behaviors: "Coercive — intimidate, degrade, punish, isolate, retaliate. High certainty, low restraint.",
+      repair: "Unavailable — no stable framework for accountability. Harm is denied, minimized, justified, or converted into blame.",
+    },
     gradient: "Stuck state",
   },
 ];
@@ -124,8 +148,9 @@ export default function FourModeGradientPage() {
               marginBottom: 20,
             }}
           >
-            Four nervous system regulatory states that shape what we can perceive, feel, think, and do —
-            detectable in natural language, measurable through complexity markers.
+            Where is the nervous system landing? Not as a fixed type, but as a living gradient that shifts
+            moment to moment based on how safe we feel. State determines capacity — detectable in natural
+            language, measurable through complexity markers.
           </p>
 
           {/* Gradient bar */}
@@ -192,12 +217,89 @@ export default function FourModeGradientPage() {
             <p style={{ fontSize: 14, color: TEXT.muted, margin: 0 }}>
               Not personality types — nervous system positions that shift in response to perceived threat.
               Each state has a pattern designation (A, B, C, D) used in clinical and research contexts.
+              Each mode is mapped across five structural axes: perception, emotions, empathy, behaviors, and repair.
             </p>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {MODES.map((mode) => (
               <ExpandableModeCard key={mode.id} mode={mode} />
+            ))}
+          </div>
+        </section>
+
+        {/* Properties of the System */}
+        <section style={{ marginBottom: 48 }}>
+          <h2
+            style={{
+              fontSize: 20,
+              fontWeight: 700,
+              color: TEXT.primary,
+              letterSpacing: "-0.01em",
+              marginBottom: 8,
+            }}
+          >
+            Properties of the System
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.muted, marginBottom: 20 }}>
+            How the gradient operates as a system — the rules that govern movement between states.
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {[
+              {
+                title: "The system is always on",
+                text: "We are always in one of the four modes. There is in-between, there is fast and slow, but there is no off. The radar is always reading.",
+              },
+              {
+                title: "Movement is continuous, not categorical",
+                text: "The four modes are not boxes. We move through them in a smooth, continuous gradient. We can be between modes, shifting toward one or the other. The boundaries are zones, not walls.",
+              },
+              {
+                title: "The return to safety takes time",
+                text: "Protection, Control, and Domination are all extensions of threat. We cannot jump back to Connection. The body needs time to adjust to safety — just in case there is still danger. Escalation is fast, de-escalation is slow by design.",
+              },
+              {
+                title: "Threat modes are temporary by design",
+                text: "Protection, Control, and Domination are meant to last minutes to a few days at most. They are stress states. Staying in them longer than the system can afford has deep consequences — they were never designed to be a default operating mode.",
+              },
+              {
+                title: "When safety was never learned",
+                text: "When we have grown up in environments where Connection was not available, we may not recognize it or know how to access it. The system cannot default to a state it has never reliably experienced.",
+              },
+              {
+                title: "Empathy drops across the gradient",
+                text: "In Connection, empathy is high and accurate. In Protection, it starts decreasing. In Control, it becomes instrumental. In Domination, it is gone. This gradient is necessary when the danger is real. It is devastating when we are locked in a threat mode without knowing it — because we will not register the damage we cause.",
+              },
+              {
+                title: "Hijacked in Connection is also damaging",
+                text: "Connection is the only mode designed for sustained living. But without mode awareness, the compass can get locked here too — maintaining empathy for people who hurt us over and over, unable to activate protection when we need it. This is echoism. The goal is not permanent Connection. The goal is appropriate mode flexibility.",
+              },
+              {
+                title: "Two types of awareness",
+                text: "You can be aware of where others are on the gradient and still be locked in a threat mode yourself — which means you can use that reading to cause harm. Self-awareness means you can read the room. Emotional awareness means you understand your own emotions, know your own mode, and have enough empathy intact to care about your impact. The difference matters.",
+              },
+              {
+                title: "The harm/hurt confusion",
+                text: "When we are locked in threat modes, we confuse being hurt with being harmed. Discomfort feels like danger. That confusion sits at the base of most conflicts — personal, professional, political, systemic. Learning to distinguish between the two is one of the most consequential skills the Inner Compass can support.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: "16px 20px",
+                  background: BG.card,
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${BORDER.default}`,
+                }}
+              >
+                <h4 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                  {item.title}
+                </h4>
+                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+                  {item.text}
+                </p>
+              </div>
             ))}
           </div>
         </section>
@@ -261,7 +363,7 @@ export default function FourModeGradientPage() {
           >
             <FeatureCard
               title="Five Structural Axes"
-              description="Every pattern is mapped across the same five dimensions: nervous system state, biological activation, cognitive frame, empathy logic, and behavioral expression."
+              description="Every pattern is mapped across the same five dimensions: perception, emotions, empathy, behaviors, and repair capacity."
               color={SPECTRUM.azure}
             />
             <FeatureCard
@@ -541,7 +643,7 @@ function ExpandableModeCard({ mode }) {
             {mode.pattern}
           </span>
 
-          {/* Name and subtitle */}
+          {/* Name and pathway */}
           <div>
             <span
               style={{
@@ -554,12 +656,14 @@ function ExpandableModeCard({ mode }) {
             </span>
             <span
               style={{
-                fontSize: 14,
-                color: TEXT.muted,
+                fontSize: 11,
+                fontFamily: FONT.mono,
+                color: TEXT.hint,
                 marginLeft: 12,
+                letterSpacing: "0.04em",
               }}
             >
-              {mode.subtitle}
+              {mode.pathway}
             </span>
           </div>
         </div>
@@ -601,17 +705,22 @@ function ExpandableModeCard({ mode }) {
             paddingTop: 16,
           }}
         >
-          {/* Scientific name */}
-          <p
-            style={{
-              fontSize: 12,
-              fontFamily: FONT.mono,
-              color: TEXT.hint,
-              marginBottom: 16,
-            }}
-          >
-            Scientific: {mode.scientificName}
-          </p>
+          {/* Scientific name + regulation */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+            <p
+              style={{
+                fontSize: 12,
+                fontFamily: FONT.mono,
+                color: TEXT.hint,
+                margin: 0,
+              }}
+            >
+              Scientific: {mode.scientificName}
+            </p>
+            <span style={{ fontSize: 11, color: TEXT.muted, fontStyle: "italic" }}>
+              {mode.regulation}
+            </span>
+          </div>
 
           {/* Core insight */}
           <p
@@ -623,14 +732,16 @@ function ExpandableModeCard({ mode }) {
               fontStyle: "italic",
             }}
           >
-            "{mode.coreInsight}"
+            &ldquo;{mode.coreInsight}&rdquo;
           </p>
 
-          {/* Details grid */}
+          {/* Five axes */}
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <DetailRow label="NERVOUS SYSTEM" value={mode.nervousSystem} color={mode.color} />
-            <DetailRow label="EMPATHY STATE" value={mode.empathyState} color={mode.color} />
-            <DetailRow label="KEY MARKER" value={mode.keyMarker} color={mode.color} />
+            <DetailRow label="PERCEPTION" value={mode.axes.perception} color={mode.color} />
+            <DetailRow label="EMOTIONS" value={mode.axes.emotions} color={mode.color} />
+            <DetailRow label="EMPATHY" value={mode.axes.empathy} color={mode.color} />
+            <DetailRow label="BEHAVIORS" value={mode.axes.behaviors} color={mode.color} />
+            <DetailRow label="REPAIR" value={mode.axes.repair} color={mode.color} />
           </div>
 
           {/* Link to researcher */}
