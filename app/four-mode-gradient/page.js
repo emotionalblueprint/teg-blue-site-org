@@ -22,16 +22,18 @@ const MODES = [
     scientificName: "Cooperative Regulation",
     pathway: "SAFETY → EMPATHY → REPAIR",
     regulation: "Regulation through connection",
-    subtitle: "The nervous system settles. Empathy comes online. Thinking becomes flexible. Repair is possible.",
+    subtitle: "Social engagement system online. Autonomic flexibility enabling rapid, proportionate response to environmental signals.",
     color: PATTERN.a.color,
-    coreInsight: "The nervous system perceives safety. Not forced calm — real safety that the body believes.",
+    coreInsight: "Ventral vagal dominant. Safety is perceived — not forced calm, but real safety that the body believes. The social engagement system comes fully online.",
+    nervousSystem: "Ventral vagal activation; parasympathetic tone; threat-neutral state.",
     axes: {
-      perception: "Wide and open — we can see nuance, context, and others' perspectives.",
-      emotions: "Full range available — we can feel without being overwhelmed.",
-      empathy: "Fully online — we can sense and respond to others' experiences.",
-      behaviors: "Flexible and adaptive — many options feel possible.",
-      repair: "Available — we can acknowledge impact and reconnect.",
+      perception: "Broad and accurate — flexible appraisal with access to nuance, context, and others' perspectives.",
+      emotions: "Full range available with proportionate intensity — emotions function as accurate data without overwhelming the system.",
+      empathy: "High attunement — mutuality, co-regulation, and genuine curiosity about others' experience.",
+      behaviors: "Collaboration, learning, curiosity, repair. Many behavioral options feel accessible.",
+      repair: "Available — accountability without collapse. Impact can be acknowledged and reconnection initiated.",
     },
+    enables: "Learning and neuroplasticity, relational repair, shared meaning-making, paradox tolerance.",
     gradient: "Emotional-Somatic",
   },
   {
@@ -41,16 +43,18 @@ const MODES = [
     scientificName: "Mobilization & Defense",
     pathway: "ALERT → THREAT SCANNING → DEFENSE",
     regulation: "Regulation through vigilance",
-    subtitle: "The nervous system mobilizes. Attention narrows toward danger. The body prioritizes survival prediction.",
+    subtitle: "Mobilization or immobilization in response to perceived threat. Fight, flight, freeze, or fawn responses activated.",
     color: PATTERN.b.color,
-    coreInsight: "Walls go up, but they can come down. A normal response — everyone visits Protection mode.",
+    coreInsight: "Sympathetic or partial dorsal activation. The nervous system mobilizes toward defense. A normal, adaptive response — everyone visits this state.",
+    nervousSystem: "Sympathetic mobilization or partial dorsal withdrawal; elevated arousal; defense physiology active.",
     axes: {
-      perception: "Narrowed toward threat — neutral signals start looking unsafe.",
-      emotions: "Amplified and fast — anxiety, irritation, fear rise quickly with less time between trigger and reaction.",
-      empathy: "Reduced — other people's signals are filtered through a safety lens first.",
-      behaviors: "Defensive — fight, flight, freeze, fawn. Fewer options feel available.",
+      perception: "Narrowed toward threat — threat-biased interpretation where neutral signals start looking unsafe.",
+      emotions: "Amplified and fast — anxiety, irritation, fear rise quickly with reduced time between trigger and reaction.",
+      empathy: "Selective and self-protective — other people's signals are filtered through a safety lens before processing.",
+      behaviors: "Vigilance, withdrawal, boundary defense, reactive control. Fight, flight, freeze, fawn. Fewer options feel available.",
       repair: "Hard but not impossible — feedback registers as threat. Downshifting arousal may be needed before reflection is possible.",
     },
+    enables: "Hypervigilance, rule-following as safety strategy, people-pleasing to prevent rupture, conflict avoidance.",
     gradient: "Emotional-Somatic",
   },
   {
@@ -60,16 +64,18 @@ const MODES = [
     scientificName: "Strategy-Based Regulation",
     pathway: "ANTICIPATE → MANAGE → OVERRIDE",
     regulation: "Regulation through strategy",
-    subtitle: "The system shifts from responding to threat toward controlling outcomes. Cognitive control increases, but emotional reality goes quiet.",
+    subtitle: "Safety sought through environmental and relational control rather than connection. Strategic cognitive organization overrides emotional-somatic signals.",
     color: PATTERN.c.color,
-    coreInsight: "Protection isn't enough — managing others becomes the way to feel safe. Not necessarily conscious or malicious.",
+    coreInsight: "Sustained threat organization with retained strategic capacity. The cognitive-logical system takes over from the emotional-somatic system. Not necessarily conscious or malicious.",
+    nervousSystem: "Chronic sympathetic activation with cognitive override; reduced energy with functional activation.",
     axes: {
-      perception: "Strategic — scanning for variables, leverage points, and failure risks.",
+      perception: "Instrumental — risk-advantage appraisal, scanning for variables, leverage points, and failure risks.",
       emotions: "Suppressed or redirected — feelings are treated as interference. What remains: pressure, urgency, restlessness.",
-      empathy: "Low and instrumental — others' needs become constraints or data points.",
-      behaviors: "Directive — take over, micromanage, correct, steer. Often looks like competence while functioning as anxiety regulation.",
+      empathy: "Instrumental — others' needs become constraints or data points. Empathy used to predict and manage, not to connect.",
+      behaviors: "Strategy, impression management, directive control. Often looks like competence while functioning as anxiety regulation.",
       repair: "Resisted — owning impact feels like loss of control. Accountability gets reframed as unfair or dangerous.",
     },
+    enables: "Controlling communication, strategic vulnerability, boundary violations justified by necessity, blame externalization.",
     gradient: "Cognitive-Logical",
   },
   {
@@ -79,16 +85,18 @@ const MODES = [
     scientificName: "Power-Based Regulation",
     pathway: "OVERRIDE → ELIMINATE → SURVIVE",
     regulation: "Regulation through force",
-    subtitle: "The system operates as if survival or rank is at stake. Empathy is offline. The primary aim becomes power, escape, or victory.",
+    subtitle: "Safety exclusively through power, dominance, and control of others. Empathy offline or weaponized. Dominance circuitry active.",
     color: PATTERN.d.color,
-    coreInsight: "Control becomes entrenched — power over others is the primary way of feeling safe. Empathy goes offline.",
+    coreInsight: "Power-as-safety physiology. The system operates as if survival or rank is at stake. Sustained high arousal directed toward control. Empathy goes offline.",
+    nervousSystem: "Sustained activation with empathy collapse; dominance circuitry active; dorsal vagal collapse masked by power assertion.",
     axes: {
-      perception: "Binary — win/lose, strong/weak, threat/target. Nuance collapses.",
+      perception: "Hierarchical — binary win/lose, strong/weak, threat/target. Nuance collapses. Control-focused appraisal.",
       emotions: "Blunted or weaponized — reduced access to guilt, remorse, care. What remains serves dominance: rage, contempt, cold resolve.",
-      empathy: "Offline — other people's pain does not register. If 'empathy' appears, it is used for prediction and exploitation, not care.",
-      behaviors: "Coercive — intimidate, degrade, punish, isolate, retaliate. High certainty, low restraint.",
-      repair: "Unavailable — no stable framework for accountability. Harm is denied, minimized, justified, or converted into blame.",
+      empathy: "Suppressed or weaponized — other people's pain does not register. If empathy appears, it is used for prediction and exploitation, not care.",
+      behaviors: "Coercion, intimidation, enforcement, suppression. High certainty, low restraint.",
+      repair: "Structurally unavailable — no stable framework for accountability. Harm is denied, minimized, justified, or converted into blame.",
     },
+    enables: "Safety requires supremacy. Threat must be suppressed or eliminated.",
     gradient: "Cognitive-Logical",
   },
 ];
@@ -196,7 +204,7 @@ export default function FourModeGradientPage() {
             }}
           >
             State determines capacity — what someone can perceive, feel, think, and do depends on
-            where their nervous system lands, not on their character or intelligence.
+            where their nervous system lands.
           </blockquote>
         </section>
 
@@ -706,7 +714,7 @@ function ExpandableModeCard({ mode }) {
           }}
         >
           {/* Scientific name + regulation */}
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
             <p
               style={{
                 fontSize: 12,
@@ -715,12 +723,25 @@ function ExpandableModeCard({ mode }) {
                 margin: 0,
               }}
             >
-              Scientific: {mode.scientificName}
+              {mode.scientificName}
             </p>
             <span style={{ fontSize: 11, color: TEXT.muted, fontStyle: "italic" }}>
               {mode.regulation}
             </span>
           </div>
+
+          {/* Nervous system state */}
+          <p
+            style={{
+              fontSize: 12,
+              color: mode.color,
+              fontFamily: FONT.mono,
+              marginBottom: 12,
+              opacity: 0.8,
+            }}
+          >
+            {mode.nervousSystem}
+          </p>
 
           {/* Core insight */}
           <p
@@ -729,10 +750,9 @@ function ExpandableModeCard({ mode }) {
               color: TEXT.secondary,
               lineHeight: 1.7,
               marginBottom: 16,
-              fontStyle: "italic",
             }}
           >
-            &ldquo;{mode.coreInsight}&rdquo;
+            {mode.coreInsight}
           </p>
 
           {/* Five axes */}
@@ -743,6 +763,23 @@ function ExpandableModeCard({ mode }) {
             <DetailRow label="BEHAVIORS" value={mode.axes.behaviors} color={mode.color} />
             <DetailRow label="REPAIR" value={mode.axes.repair} color={mode.color} />
           </div>
+
+          {/* Enables / Outputs */}
+          <p
+            style={{
+              fontSize: 12,
+              color: TEXT.muted,
+              marginTop: 14,
+              lineHeight: 1.6,
+              paddingTop: 12,
+              borderTop: `1px solid ${BORDER.default}`,
+            }}
+          >
+            <span style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, color: TEXT.hint, letterSpacing: "0.04em" }}>
+              {mode.gradient === "Emotional-Somatic" ? "ENABLES" : "PRODUCES"}{" "}
+            </span>
+            {mode.enables}
+          </p>
 
           {/* Link to researcher */}
           <div style={{ marginTop: 16 }}>
