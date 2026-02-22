@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
-// Deep Diver pattern colors (blue spectrum)
+// Researcher pattern colors (blue spectrum)
 const PATTERN = {
   a: { color: "#60a5fa", name: "Connection" },  // blue-400
   b: { color: "#3b82f6", name: "Protection" },  // blue-500
@@ -301,11 +301,11 @@ export default function FourModeGradientPage() {
                 lineHeight: 1.7,
               }}
             >
-              The Deep Diver framework provides clinical-level detail for practitioners, researchers, and anyone who wants the complete picture.
+              The Researcher framework provides clinical-level detail for practitioners, researchers, and anyone who wants the complete picture.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <a
-                href="https://teg-blue.com/four-mode-gradient/deep-diver"
+                href="https://teg-blue.com/compass-researcher"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -318,10 +318,10 @@ export default function FourModeGradientPage() {
                   textDecoration: "none",
                 }}
               >
-                Deep Diver Framework →
+                Researcher Framework →
               </a>
               <a
-                href="https://teg-blue.com/four-mode-gradient/deep-diver/introduction"
+                href="https://teg-blue.com/compass-researcher"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -633,10 +633,10 @@ function ExpandableModeCard({ mode }) {
             <DetailRow label="KEY MARKER" value={mode.keyMarker} color={mode.color} />
           </div>
 
-          {/* Link to deep diver */}
+          {/* Link to researcher */}
           <div style={{ marginTop: 16 }}>
             <a
-              href={`https://teg-blue.com/four-mode-gradient/deep-diver#pattern-${mode.pattern.toLowerCase()}`}
+              href={`https://teg-blue.com/compass-researcher/gradient-pattern-${mode.pattern.toLowerCase()}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{
