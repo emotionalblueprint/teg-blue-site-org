@@ -30,7 +30,7 @@ The baseline emotional-somatic configuration present before cognitive identity f
 ## Threat Lock
 Chronic activation of Protection, Control, or Domination where the nervous system gets stuck outside Connection. The system cannot find its way back without support or changed conditions.
 
-## Pattern Hijack
+## Chronic Pattern
 A rapid, involuntary shift into Protection triggered by present stimuli resembling past danger. The nervous system responds to the past, not the present.
 
 ## Complexity Markers
