@@ -2,7 +2,7 @@ import Link from "next/link";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
 import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import InterdependencyMatrixVertical from "@/src/components/InterdependencyMatrixVertical";
+
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
@@ -181,45 +181,6 @@ export default function ResearchHub() {
               />
               Experience the tools at teg-blue.com →
             </a>
-          </section>
-
-          {/* Interdependency Matrix (Vertical) */}
-          <section style={{ marginBottom: 48 }}>
-            <p
-              style={{
-                fontSize: 14,
-                fontFamily: FONT.mono,
-                color: TEXT.muted,
-                letterSpacing: "0.02em",
-                marginBottom: 8,
-              }}
-            >
-              12 frameworks. 7 arcs. One architecture.
-            </p>
-            <p
-              style={{
-                fontSize: 14,
-                color: TEXT.secondary,
-                lineHeight: 1.7,
-                marginBottom: 20,
-              }}
-            >
-              The structure behind TEG-Blue — from how emotions form to how they heal.
-            </p>
-            <InterdependencyMatrixVertical />
-            <div style={{ marginTop: 16 }}>
-              <Link
-                href="/frameworks-map"
-                style={{
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: SPECTRUM.cobalt,
-                  textDecoration: "none",
-                }}
-              >
-                Explore the 12 frameworks →
-              </Link>
-            </div>
           </section>
 
           {/* What you can do here */}
