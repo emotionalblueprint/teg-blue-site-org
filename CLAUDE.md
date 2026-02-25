@@ -260,7 +260,30 @@ Content in markdown...
 
 ## Voice & Style
 
-- **Tone:** Academic but accessible, grounded, honest
+> **Full reference:** `../writing-guidelines.md` (Projects root) — single source of truth for all TEG-Blue writing.
+> All .org content falls under **Tier 3: Researcher & Frameworks**.
+
+### Core Principle
+
+How does this operate? Explain the mechanism. Write for researchers AND emotionally overwhelmed people — warm, steady, not academic posturing.
+
+### Quick Rules
+
+- **Never use:** "TEG-Blue proves", "the only framework", "cures/fixes", "diagnosis", "type" (as personality type), therapeutic outcome claims
+- **Always use:** "working hypothesis", "proposes connections", "synthesizes established research", "nervous system states", "patterns"
+- Avoid "you/your" in explanatory text — use "the framework", "the system", first person plural
+
+### Key Guidelines
+
+- **Mechanistic:** Inputs → mechanisms → outcomes, not just what it feels like
+- **Plain-first language:** Simple words first. Technical terms only when they add accuracy
+- **Precise:** Define technical terms once, clearly, use consistently
+- **Referenced:** Anchor in research traditions without becoming a literature review
+- **Professional:** Clinically compatible, calm, practitioner-friendly
+- **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
+
+### .org-Specific Rules
+
 - **Attribution:** Always credit source theories and researchers
 - **Transparency:** Clear about AI-assisted literature mapping
 - **Open science:** Invite corrections and collaboration
