@@ -21,7 +21,7 @@ export default async function Image() {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#0a0f1a',
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Inter, system-ui',
         }}
       >
         {/* Spectrum bar at top */}

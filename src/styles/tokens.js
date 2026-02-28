@@ -77,7 +77,7 @@ export const CONTENT_TYPE_LABELS = {
 // ─── TYPOGRAPHY ──────────────────────────────────────
 
 export const FONT = {
-  display: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  display: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'",
   mono:    "'JetBrains Mono', 'SF Mono', 'Consolas', monospace",
 };
 
