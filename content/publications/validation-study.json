@@ -62,9 +62,9 @@
     },
     {
       "type": "validates",
-      "targetSlug": "f1-emotional-gradient",
+      "targetSlug": "f1-emotions-biological-information",
       "targetType": "framework",
-      "label": "F1: Emotional Gradient"
+      "label": "F1: Emotions as a Biological Information"
     },
     {
       "type": "defines",

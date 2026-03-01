@@ -9,219 +9,228 @@ import { SiteHeader, SiteFooter } from "@/src/components";
 const FRAMEWORKS = [
   {
     id: "F1",
-    displayName: "Emotions as a Biological Information System",
-    title: "The Emotional Gradient",
-    subtitle: "Foundation of Emotional Experience",
+    displayName: "Emotions as a Biological Information",
+    title: "How the Nervous System Orients Between Safety and Threat",
+    subtitle: "The Instrument",
     arc: "Foundation",
-    purpose: "Explain how the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.",
-    summary: "How the nervous system continuously orients between safety and threat, determining perception, capacity, and behavior.",
-    buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
+    symbol: "◉",
+    purpose: "Establish emotions as the nervous system's signalling language — the medium through which the body's continuous safety/threat evaluation reaches the organism. Introduce the Inner Compass, the four-mode gradient, state-dependent capacity, and regulation as the return mechanism.",
+    summary: "How the nervous system evaluates safety and threat, how emotions carry that evaluation, how this shapes experience and capacity, and how the system returns. Introduces the Inner Compass as the instrument, the four-mode gradient (Connection, Protection, Control, Domination), and regulation as the biological return mechanism.",
+    buildsOn: "Polyvagal Theory (Porges), approach/avoidance motivation (Elliot, Carver & Scheier), broaden-and-build (Fredrickson), window of tolerance (Siegel), secure base (Bowlby), fight-flight-freeze-fawn.",
     claims: [
-      "Emotional signals track needs, safety, and constraint — they are data, not dysfunction",
-      "State-dependent capacity is neurobiological: what can be perceived, thought, and done varies with regulatory state",
-      "The same emotion has two expressions depending on pattern position (safety vs. threat)",
-      "Calibration through early experience shapes the neuroceptive template",
+      "Emotions are the nervous system's signalling language — the body's first language; cognition is the second",
+      "State determines capacity — what can be perceived, thought, and done varies with compass position",
+      "The same emotion has two expressions depending on mode position (safety vs. threat)",
+      "Health is not a position — it is the needle's capacity to move. Regulation is the mechanism of coming back",
     ],
     testable: "Annotation reliability of state markers in text. Convergent validity with established regulation measures. State manipulation studies and capacity shifts. Generalization across contexts.",
   },
   {
     id: "F2",
-    displayName: "Identity as an Adaptive Cognitive System",
-    title: "The Ego-Persona Construct",
-    subtitle: "Attachment-Calibrated Identity Formation",
-    arc: "Formation",
-    purpose: "Describe how identity crystallizes around a default mode when environments require adaptation, creating the Real Self / Role Mask structure.",
-    summary: "How identity crystallizes around a default mode when environments require adaptation, creating the Real Self / Role Mask structure.",
-    buildsOn: "Object relations theory, attachment research, developmental psychology, self-models, schema theory, trauma adaptation.",
+    displayName: "Awareness Teaches Awareness",
+    title: "How the Three Capacities Calibrate the Compass",
+    subtitle: "The Calibration",
+    arc: "Foundation",
+    symbol: "◐",
+    purpose: "Describe how the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) develop through relational conditions — and how their absence determines chronic mode position and identity formation.",
+    summary: "How the three awareness capacities develop when conditions are met — and what happens to compass calibration, chronic mode position, and identity when they are not. The adults' awareness configuration is the child's developmental environment.",
+    buildsOn: "Attachment theory (Bowlby, Ainsworth), polyvagal theory (Porges), developmental neuroscience (Schore), Internal Family Systems (Schwartz), relational neurobiology (Siegel).",
     claims: [
-      "Identity forms around what kept connection possible in early environments",
-      "The Real Self precedes identity; the Role Mask is functional adaptation, not pathology",
-      "Feeling = Being before cognition develops: external feedback becomes internal belief",
-      "Healing requires building what was never built, not fixing something broken",
+      "Awareness teaches awareness — the adults' capacity configuration IS the child's developmental environment",
+      "The child learns to regulate through being regulated with, not through instruction",
+      "Personality is not a type — it is a record of which capacities had conditions to develop and which didn't",
+      "What didn't develop then can develop now — given the right conditions",
     ],
-    testable: "Predictive links between attachment patterns and identity rigidity. Language indicators of Real Self vs. Role Mask activation. Longitudinal shifts with sustained safety provision.",
+    testable: "Predictive links between caregiver capacity configuration and child attachment. Language indicators of capacity configuration. Longitudinal shifts with sustained safety provision.",
   },
   {
     id: "F3",
-    displayName: "Adult Cognition and False Coherence",
-    title: "Our Three Inner Layers",
-    subtitle: "Dissonance and Contradiction Management",
-    arc: "Formation",
-    purpose: "Explain how state-dependent cognition operates to maintain identity coherence under nervous system pressure, producing systematic self-deception.",
-    summary: "How cognition maintains identity coherence under nervous system pressure, producing rationalization and motivated reasoning.",
-    buildsOn: "Cognitive dissonance theory, dual-process cognition, motivated reasoning research, self-justification literature, state-dependent learning.",
+    displayName: "Adult Cognition & False Coherence",
+    title: "How Cognition Maintains Identity Under Pressure",
+    subtitle: "The Cognitive Replacement",
+    arc: "Foundation",
+    symbol: "⬡",
+    purpose: "Explain how cognition maintains identity coherence in adulthood by replacing emotional signals with invented narratives — and what this system does to the people around it.",
+    summary: "How cognition tells the emotional system 'you're not needed here' — replacing the return that was never learned with false coherence, emotional distortion, and external regulation. The critical turn from biological regulation to cognitive substitutes.",
+    buildsOn: "Cognitive dissonance theory (Festinger), dual-process cognition (Kahneman), motivated reasoning (Kunda), self-justification (Tavris & Aronson), state-dependent learning.",
     claims: [
-      "Humans can show different 'selves' across states without pathology — these are layer activations",
-      "Some contradictions are state-protective distortion, not conscious deceit",
-      "The Logic Layer maintains the Role Mask through coherence-seeking under threat",
-      "Repair requires integration and increased tolerance for truth, not suppression",
+      "False coherence is not deception — it is regulatory success at the cost of emotional truth",
+      "Beliefs feel true because they restore nervous system stability, not because they are accurate",
+      "Emotional distortion: internal discomfort → misread as external attack → retaliation feels like self-defence",
+      "Chronic Control mimics healthy Connection — making harm invisible",
     ],
     testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on coherence markers. Prediction of rationalization patterns from regulatory state.",
   },
   {
     id: "F4",
-    displayName: "Threat-Based Rule Internalization",
-    title: "The Invisible Models",
-    subtitle: "Rule Adherence and Defensive Coordination",
-    arc: "Scaling",
-    purpose: "Explain how unspoken social rules (role, obedience, performance, dominance, punishment, entitlement) form and govern emotional and relational life.",
-    summary: "How unspoken social rules form and govern emotional and relational life at the nervous system level.",
-    buildsOn: "Sociology of norms, cultural psychology, status dynamics, moral foundations research, norm enforcement.",
+    displayName: "Rules Regulate",
+    title: "How Individual Patterns Scale to Collective Systems",
+    subtitle: "Collective Substitutes — Scale 1: Rules",
+    arc: "Collective Scaling",
+    symbol: "▦",
+    purpose: "Explain how individual nervous system regulation patterns scale into collective rule systems — and why people follow harmful rules even when they can see the harm.",
+    summary: "How false coherence absorbs rules as truth, emotional distortion makes rule-violation feel like personal attack, and external regulation makes rule-compliance a nervous system need. Rule-following is a regulation strategy, not a reasoning choice.",
+    buildsOn: "Sociology of norms, cultural psychology, status dynamics, moral foundations research (Haidt), norm enforcement literature.",
     claims: [
-      "Norm pressure can reward protection and control patterns at scale",
-      "Rule internalization is nervous-system level, not just cognitive belief",
-      "'Social goodness' can be performed while harm persists — compliance ≠ safety",
-      "Cultural conditions enable or constrain individual escalation pathways",
+      "Rule-following is a nervous system regulation strategy, not a reasoning choice",
+      "Questioning rules activates the same threat response that created them",
+      "Rule internalization operates at the nervous system level, not just cognitive belief",
+      "Punishment aims to cause suffering — accountability aims to create understanding",
     ],
     testable: "Cross-cultural comparison of worth rules and conflict scripts. Organizational communication analysis under hierarchy. Link between norm climates and escalation patterns.",
   },
   {
     id: "F5",
-    displayName: "Threat-Driven External Validation",
-    title: "The Filter of Worth",
-    subtitle: "Status, Power, and Worth Hierarchies",
-    arc: "Scaling",
-    purpose: "Describe how threat-organized systems convert safety signals into systematic worth hierarchies, producing credibility and resource filtering.",
-    summary: "How threat-organized systems convert safety signals into worth hierarchies that determine what feels safe, lovable, or allowed.",
-    buildsOn: "Shame research, social evaluation threat, internalized stigma, conditional regard, social stratification theory.",
+    displayName: "Worth Hierarchies Regulate",
+    title: "How Rules Become Sorting Systems",
+    subtitle: "Collective Substitutes — Scale 2: Hierarchies",
+    arc: "Collective Scaling",
+    symbol: "◈",
+    purpose: "Describe how nervous system regulation patterns scale into worth hierarchies — signal access mistaken for human value, signal deprivation internalised as inadequacy.",
+    summary: "How worth-seeking becomes nervous system regulation at systemic scale. The Filter of Worth: who gets heard, believed, resourced, protected. Three safety proxies (economic, social, cultural capital) operate as nervous system stabilisers.",
+    buildsOn: "Shame research (Brown, Tangney), social evaluation threat (Dickerson & Kemeny), internalized stigma, conditional regard (Rogers), social stratification theory.",
     claims: [
-      "Worth rules drive protection, control, and domination behaviors — they are the hidden variable",
-      "Many conflicts are worth-threat conflicts in disguise",
+      "Worth-seeking is a nervous system regulation strategy, not a character flaw",
+      "Signal access mistaken for human value; signal deprivation internalised as inadequacy",
       "Worth hierarchies are maintained through nervous system enforcement, not just ideology",
-      "Repair often fails when worth rules stay untouched",
+      "Both narratives are regulation: the insider's 'I earned this' and the outsider's 'something is wrong with me'",
     ],
     testable: "Measurement design for worth-threat sensitivity. Predicting defensiveness from worth-rule profiles. Intervention studies targeting worth-rule flexibility.",
   },
   {
     id: "F6",
-    displayName: "State-Dependent Perception",
-    title: "The Bias Architecture",
-    subtitle: "Threat-Based Meaning and Perception",
-    arc: "Scaling",
-    purpose: "Explain how perception becomes a state-dependent protective system, producing perceptual defaults that feel like truth but function as nervous system regulation.",
-    summary: "How perception becomes state-dependent, producing perceptual defaults that feel like truth but function as regulation.",
-    buildsOn: "Social cognition, threat perception research, intergroup emotion, motivated reasoning, dehumanization literature.",
+    displayName: "Bias as Regulation",
+    title: "How Perception Becomes Protection",
+    subtitle: "Collective Substitutes — Scale 3: Perception",
+    arc: "Collective Scaling",
+    symbol: "◔",
+    purpose: "Explain how perception becomes a state-dependent protective system — why bias resists correction even in intelligent, well-intentioned people, and what conditions enable revision.",
+    summary: "How worth-sorting gets absorbed into the perceptual system. Bias is pattern recognition in service of regulation, not a reasoning error. Certainty is physiological stability, not epistemic accuracy. Shame does not unlearn bias — safety does.",
+    buildsOn: "Social cognition, threat perception research, intergroup emotion theory, motivated reasoning (Kunda), dehumanization literature (Haslam).",
     claims: [
-      "Bias intensifies under threat states — it is state-dependent, not fixed",
-      "Some bias is maintained by safety narratives, not facts",
-      "Dehumanization follows a predictable gradient tied to mode position",
-      "Domination logic uses bias as a stabilizer for power asymmetry",
+      "Bias is pattern recognition in service of regulation, not a reasoning error",
+      "If believing something reduces threat, the nervous system keeps believing it — below conscious awareness",
+      "Certainty is physiological stability, not epistemic accuracy",
+      "Update capacity = (Internal safety + Relational safety) − (Identity threat + Belonging threat)",
     ],
     testable: "State manipulation studies and bias expression shifts. Linguistic markers of dehumanization across modes. Fairness evaluation for any automated classification.",
   },
   {
     id: "F7",
-    displayName: "Defense-to-Domination Escalation",
-    title: "The Anatomy of Tyranny",
-    subtitle: "Escalation Markers and Intervention Windows",
-    arc: "Turning Point",
-    purpose: "Map the specific conditions and mechanisms that allow Protection to escalate through Control into Domination — the crossroads where kind children become tyrannical adults.",
-    summary: "How protection escalates through control into domination — the crossroads where defense becomes strategy.",
-    buildsOn: "Power and dominance research, coercive control literature, moral disengagement, narcissism research, perpetrator psychology.",
+    displayName: "Domination Regulates",
+    title: "How Defence Becomes Strategy Becomes Domination",
+    subtitle: "Collective Substitutes — Scale 4: Domination",
+    arc: "Collective Scaling",
+    symbol: "△",
+    purpose: "Map how self-protection becomes harm — the pathway from defence through strategy to domination, with identifiable transition markers and intervention windows.",
+    summary: "How the Crossroads operates: 'I am trying to feel safe' becomes 'I will make you behave so I can feel safe.' Five-stage escalation pathway with empathy gating as the critical mechanism. Domination is built through reinforcement, not born.",
+    buildsOn: "Power and dominance research, coercive control literature (Stark), moral disengagement (Bandura), narcissism research, perpetrator psychology.",
     claims: [
       "Domination is threat regulation plus power access — mechanism, not character",
-      "The crossroads (defense → strategy) has recognizable signals: repair disappears, reality gets reframed, accountability triggers escalation",
-      "Empathy collapse is state-dependent — it narrows, then goes offline entirely",
-      "Intervention windows close as escalation proceeds; stage-appropriate response is essential",
+      "The Crossroads (defence → strategy) has recognizable signals: repair disappears, reality gets reframed, accountability triggers escalation",
+      "Empathy is state-dependent, not character-dependent — it narrows, then goes offline entirely",
+      "Causality and accountability are separable — understanding the mechanism does not reduce responsibility",
     ],
-    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding domination markers in language with reliability. Intervention design focusing on crossroads identification.",
+    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding domination markers in language with reliability. Intervention design focusing on Crossroads identification.",
   },
   {
     id: "F8",
-    displayName: "Self-Reconnection and Role Mask Loosening",
-    title: "Our True Self",
-    subtitle: "From Survival Identity to Truth Tolerance",
-    arc: "Healing",
-    purpose: "Explain the mechanisms of self-reconnection: how sustained safety allows the Role Mask to loosen without destabilizing, enabling gradual return to the Real Self.",
-    summary: "How sustained safety allows the Role Mask to loosen, enabling gradual return to the Real Self.",
-    buildsOn: "Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization theory.",
+    displayName: "Repairing Awareness & The Power of Difference",
+    title: "How to Develop What Was Missing",
+    subtitle: "Repair — Individual + Collective",
+    arc: "Repair",
+    symbol: "↺",
+    purpose: "Explain how awareness capacities are rebuilt in adulthood — and why different awareness configurations strengthen collectives rather than weakening them.",
+    summary: "Every substitute (F3–F7) was built because the original was missing. Repair means building the original, not undoing the past. Five conditions for repair: safety, readiness, relational support, time, and structural conditions. The collective compass is more accurate when it has more sensors.",
+    buildsOn: "Metacognition, mindfulness research, emotion differentiation (Barrett), reflective functioning (Fonagy), mentalization theory.",
     claims: [
-      "Self-awareness is state-dependent — it cannot be willed into existence without sufficient safety",
-      "Higher self-awareness predicts better return capacity and repair outcomes",
-      "The Role Mask loosens when safety is sustained, not when insight is achieved",
-      "Repair requires building tolerance for truth, not just understanding patterns",
+      "Every substitute was built because the original was missing — repair means building the original",
+      "The system is not resisting repair — it is assessing whether repair is safe",
+      "The back-and-forth between old patterns and new capacity is not the problem — it is the process",
+      "The collective compass is more accurate when it has more sensors — safety through sameness is false coherence at collective scale",
     ],
     testable: "Links between emotional granularity and conflict outcomes. Markers of reflective functioning in language under pressure. Training effects on return capacity.",
   },
   {
     id: "F9",
-    displayName: "The Costs of Forced Masking",
-    title: "The Costs of Forced Masking",
-    subtitle: "Honoring Differences",
-    arc: "Healing",
-    purpose: "Explain how neurodivergent nervous systems process the emotional gradient differently, the costs of forced neurotypical masking, and design principles for variation-inclusive environments.",
-    summary: "How neurodivergent nervous systems process the emotional gradient differently, and the costs of forced masking.",
+    displayName: "Neurodivergence as Nervous System Variation",
+    title: "System Mismatch & Structural Inclusion",
+    subtitle: "Repair — Structural Dimension",
+    arc: "Repair",
+    symbol: "∿",
+    purpose: "Explain what happens when systems are designed for one nervous system configuration — creating chronic structural regulatory cost for all others. The most visible case of the universal pattern F8 describes.",
+    summary: "When environments are designed around one neurological configuration, they create chronic system mismatch for everyone else. Structural masking is architectural, not interpersonal. Burnout is a mismatch outcome, not individual failure. Genuine inclusion is structural intelligence, not accommodation.",
     buildsOn: "Neurodiversity paradigm, sensory processing research, autism and ADHD research, masking cost literature, developmental needs models.",
     claims: [
       "Neurodivergent nervous systems have different baseline configurations — not deficits",
-      "Masking has measurable costs: regulatory depletion, identity confusion, delayed burnout",
-      "Many 'symptoms' are adaptive responses to environments that didn't accommodate variation",
-      "Healing requires signal trust recovery, not normalization",
+      "Structural masking has measurable costs: regulatory depletion, identity confusion, delayed burnout",
+      "You cannot develop your capacities while suppressing the system those capacities run on",
+      "Genuine inclusion is not accommodation or charity — it is structural intelligence",
     ],
     testable: "Measures of masking cost and regulatory depletion. Comparative outcomes across accommodation levels. Narrative markers of authentic self-expression.",
   },
   {
     id: "F10",
-    displayName: "Intergenerational Transmission and Repair",
-    title: "Rebuilding Generational Bridges",
-    subtitle: "Family-Scale Safety and Lineage Repair",
-    arc: "Healing",
-    purpose: "Explain how emotional patterns, Role Masks, and regulatory strategies pass from one generation to the next, and the specific conditions that enable interruption and lineage repair.",
-    summary: "How emotional patterns pass across generations, and the conditions that enable interruption and repair.",
-    buildsOn: "Intergenerational trauma research, family systems theory, epigenetics, rupture and repair research, ACEs literature.",
+    displayName: "Rebuilding Generational Bridges",
+    title: "Generational Transmission & The Conditions for Change",
+    subtitle: "Repair — Generational Transmission",
+    arc: "Repair",
+    symbol: "⧗",
+    purpose: "Explain how patterns transmit across generations through five pathways — and what changes when adults repair their own awareness capacities.",
+    summary: "What the adult embodies, the child absorbs. What the adult has repaired, the child doesn't need to. Five transmission pathways all transmitting the same underlying content. Coherence, not content, is what matters — whether the adult's narrative aligns with their felt experience.",
+    buildsOn: "Intergenerational trauma research, family systems theory, epigenetics, rupture and repair research (Tronick), ACEs literature (Felitti).",
     claims: [
-      "Patterns transmit through regulatory modeling, not just explicit teaching",
-      "Intergenerational repair requires one generation to build capacity the previous couldn't",
+      "Patterns transmit through regulatory modeling, not just explicit teaching — love does not override what the nervous system embodies",
+      "You don't have to heal everything — you have to heal enough that the next generation starts from a different place",
+      "The child doesn't need a perfect parent — the child needs a parent whose compass moves and who comes back",
       "Accountability is a regulated-state behavior — it requires sufficient safety to tolerate",
-      "Repair fails when protection and control stay rewarded; succeeds when return capacity increases",
     ],
     testable: "Coding repair attempts and outcomes in transcripts. Predictive models from return markers. Intergenerational comparison of regulatory patterns.",
   },
   {
     id: "F11",
-    displayName: "Making Sense of Contradiction",
-    title: "Making Sense of Contradiction",
-    subtitle: "Making Sense of Contradiction",
-    arc: "Integration",
-    purpose: "Explain how contradictions emerge predictably when emotional survival structures meet healing — serving as the integration lens that applies Frameworks 1–10 to paradoxical behavior.",
-    summary: "How contradictions emerge predictably when emotional survival structures meet healing — and resolve when state logic is included.",
-    buildsOn: "State-dependent cognition, dual-process work, trauma adaptation, motivated reasoning, self-justification research.",
+    displayName: "The Emotional Paradoxes",
+    title: "Multi-Rationality and Holding Capacity",
+    subtitle: "Meta-Integration — Complexity Emergence",
+    arc: "Meta-Integration",
+    symbol: "∞",
+    purpose: "Map the contradictions that become visible when false coherence loosens — and explain why paradox is not confusion but clarity.",
+    summary: "Paradoxical behaviour is not irrational — it is multi-rational, serving several valid needs simultaneously. Each framework (F1–F10) generates characteristic contradictions. False coherence hides them. Repair reveals them. True coherence is the capacity to hold contradiction without collapsing.",
+    buildsOn: "State-dependent cognition, dual-process work, trauma adaptation literature, motivated reasoning, self-justification research.",
     claims: [
       "Apparent contradictions are often state shifts, not hypocrisy or pathology",
-      "Some distortion is conscious (strategic), some is state-protective (invisible to self)",
-      "Moral reasoning is state-dependent — it shifts with threat and worth pressure",
       "Paradox tolerance increases with regulatory flexibility; decreases under threat",
+      "How a person relates to their own contradictions reveals their compass position",
+      "True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing",
     ],
     testable: "Within-person contradiction mapping across contexts. Marker sets for moral reasoning shifts in language. Links between shame activation and distortion patterns.",
   },
   {
     id: "F12",
-    displayName: "Two Information Systems",
-    title: "State-Dependent Coherence",
-    subtitle: "How Two Parallel Systems Generate All Behavior",
-    arc: "Architecture",
-    purpose: "Provide the integrative architecture underlying all previous frameworks — demonstrating how a single mechanism (state-dependent nervous system organization) creates the full diversity of human behavior.",
-    summary: "Human behavior is organized by the interaction of two parallel information systems: the Cognitive-Logical System (language, reasoning, planning — conscious, slow) and the Emotional-Somatic System (safety/threat detection, relational cues — unconscious, fast). State precedes capacity.",
+    displayName: "The Two Information Systems",
+    title: "State-Dependent Organisation — The Architecture Underneath Everything",
+    subtitle: "Meta-Integration — System Architecture",
+    arc: "Meta-Integration",
+    symbol: "⊜",
+    purpose: "Reveal the unified architecture underneath all twelve frameworks — why understanding does not automatically produce change, and what does.",
+    summary: "Two parallel information systems: emotional-somatic (milliseconds, unconscious, experience-based) and cognitive-logical (hundreds of milliseconds, conscious, explanation-based). The emotional-somatic system arrives first. Cognition narrates a process already underway. Change requires conditions, not instructions.",
     buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma and body-based approaches (van der Kolk, Levine), attachment as regulatory system (Bowlby, Schore, Siegel).",
     claims: [
       "The emotional-somatic system determines what rational behavior is available — state precedes capacity",
-      "Insight alone doesn't change behavior because the emotional-somatic system organizes response before cognition arrives (milliseconds vs. seconds)",
+      "Insight alone doesn't change behavior because the emotional-somatic system organises response before cognition arrives",
       "Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience",
-      "The four modes describe a continuous gradient; all frameworks (F1-F11) map onto this two-system architecture",
+      "Every framework is the same architecture — the scale changes, the mechanism doesn't",
     ],
     testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Cross-theoretical validation with dual-process research.",
   },
 ];
 
-// Arc colors — 7 arcs matching the Interdependency Matrix
+// Arc colors — 4 phases
 const arcColors = {
   "Foundation": "#26C6DA",
-  "Formation": SPECTRUM.azure,
-  "Scaling": SPECTRUM.blue,
-  "Turning Point": SPECTRUM.cobalt,
-  "Healing": SPECTRUM.indigo,
-  "Integration": "#5C6BC0",
-  "Architecture": "#1E88E5",
+  "Collective Scaling": SPECTRUM.blue,
+  "Repair": SPECTRUM.indigo,
+  "Meta-Integration": "#5C6BC0",
 };
 
 export default function TheoreticalFoundationsPage() {
@@ -320,7 +329,7 @@ export default function TheoreticalFoundationsPage() {
           </p>
         </header>
 
-        {/* Framework Arc Overview — 7 arcs */}
+        {/* Framework Arc Overview — 4 phases */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 20 }}>
             The Framework Mapping Arc
@@ -332,13 +341,13 @@ export default function TheoreticalFoundationsPage() {
                 fontWeight: 600,
                 fontFamily: FONT.mono,
                 color: arcColors["Foundation"],
-                minWidth: 160,
+                minWidth: 200,
                 paddingTop: 2,
               }}>
-                F1 (Foundation)
+                F1–F3 (Foundation)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                Where emotion begins — how the nervous system orients between safety and threat
+                The instrument, its calibration, and what cognition does in their place
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -346,14 +355,14 @@ export default function TheoreticalFoundationsPage() {
                 fontSize: 12,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: arcColors["Formation"],
-                minWidth: 160,
+                color: arcColors["Collective Scaling"],
+                minWidth: 200,
                 paddingTop: 2,
               }}>
-                F2–F3 (Formation)
+                F4–F7 (Collective Scaling)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How identity crystallizes and how cognition maintains coherence
+                How individual regulation patterns become rules, worth hierarchies, perception biases, and domination
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -361,14 +370,14 @@ export default function TheoreticalFoundationsPage() {
                 fontSize: 12,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: arcColors["Scaling"],
-                minWidth: 160,
+                color: arcColors["Repair"],
+                minWidth: 200,
                 paddingTop: 2,
               }}>
-                F4–F6 (Scaling)
+                F8–F10 (Repair)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How individual patterns become social rules, worth hierarchies, and perception biases
+                Individual capacity repair, structural inclusion, generational transmission
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -376,59 +385,14 @@ export default function TheoreticalFoundationsPage() {
                 fontSize: 12,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: arcColors["Turning Point"],
-                minWidth: 160,
+                color: arcColors["Meta-Integration"],
+                minWidth: 200,
                 paddingTop: 2,
               }}>
-                F7 (Turning Point)
+                F11–F12 (Meta-Integration)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How protection escalates through control into domination
-              </span>
-            </div>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-              <span style={{
-                fontSize: 12,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: arcColors["Healing"],
-                minWidth: 160,
-                paddingTop: 2,
-              }}>
-                F8–F10 (Healing)
-              </span>
-              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                Self-reconnection, neurodivergent pathways, and intergenerational repair
-              </span>
-            </div>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-              <span style={{
-                fontSize: 12,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: arcColors["Integration"],
-                minWidth: 160,
-                paddingTop: 2,
-              }}>
-                F11 (Integration)
-              </span>
-              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How contradictions resolve when state logic is included
-              </span>
-            </div>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-              <span style={{
-                fontSize: 12,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: arcColors["Architecture"],
-                minWidth: 160,
-                paddingTop: 2,
-              }}>
-                F12 (Architecture)
-              </span>
-              <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                The operating system underneath — two parallel information systems generating all behavior
+                Paradox as clarity, and the two information systems underneath everything
               </span>
             </div>
           </div>

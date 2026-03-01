@@ -180,7 +180,7 @@ const globalModels = [
     author: "Carl Jung",
     coreContribution: "Recognizes the adaptive function of the social mask — the tension between public identity and inner reality that shapes how we navigate belonging.",
     tegBlueAdds: [
-      "Places the Persona inside the Role Mask Gradient",
+      "Places the Persona inside the false coherence gradient — distinguishing masks rooted in belonging from those rooted in defence",
       "Distinguishes masks rooted in belonging from those rooted in defense, control, or domination",
       "Provides concrete pathways for reclaiming authenticity",
     ],
@@ -216,7 +216,7 @@ const globalModels = [
     author: "Erving Goffman",
     coreContribution: "Reveals how social life operates like a stage — people play roles depending on audience, context, and setting — foundational for role theory and social psychology.",
     tegBlueAdds: [
-      "Expands role-play into the Role Mask Gradient",
+      "Expands role-play into the false coherence gradient — mapping how protective identities form and shift across modes",
       "Distinguishes authentic roles from survival-driven ones across the four modes",
       "Shows pathways for healing from role entrapment and reclaiming genuine connection",
     ],

@@ -160,15 +160,14 @@ Hub | For Researchers | Publications | Theory Map | Glossary | About | Collabora
 
 ## The 12 Frameworks
 
-Organized into five phases:
+Organized into four phases:
 
 | Phase | Frameworks | What They Explain |
 |-------|-----------|-------------------|
-| **Formation** | F1-F3 | How nervous system states form, how identity organizes around them |
-| **Scaling** | F4-F6 | How individual regulation patterns become social structures |
-| **Turning Point** | F7 | How protection escalates into domination |
-| **Healing** | F8-F10 | How patterns shift, including neurodivergent pathways |
-| **Integration** | F11-F12 | The complete architecture and its internal logic |
+| **Foundation** | F1-F3 | The instrument, its calibration, and what cognition does in their place |
+| **Collective Scaling** | F4-F7 | How individual regulation patterns become rules, worth hierarchies, perception biases, and domination |
+| **Repair** | F8-F10 | Individual capacity repair, structural inclusion, generational transmission |
+| **Meta-Integration** | F11-F12 | Paradox as clarity, and the two information systems underneath everything |
 
 ---
 
