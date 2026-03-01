@@ -21,7 +21,7 @@
     {
       "id": "teg-blue-integration",
       "title": "How TEG-Blue Integrates This",
-      "content": "TEG-Blue uses temperament research to ground the Real Self in biology: there are innate differences in how nervous systems are organized. Some systems are more sensitive, reactive, or slow-to-warm. These aren't pathology — they're variation. Stern's implicit relational knowing explains calibration: the nervous system learns what to expect from relationships before conscious memory begins. This is why verbal reassurance often fails to shift body-level patterns."
+      "content": "TEG-Blue uses temperament research to ground the baseline emotional-somatic configuration in biology: there are innate differences in how nervous systems are organised. Some systems are more sensitive, reactive, or slow-to-warm. These are not pathology — they are variation. Stern's implicit relational knowing explains calibration: the nervous system learns what to expect from relationships before conscious memory begins. This is why verbal reassurance often fails to shift body-level patterns."
     },
     {
       "id": "key-sources",
@@ -45,9 +45,9 @@
     },
     {
       "type": "defines",
-      "targetSlug": "real-self",
+      "targetSlug": "awareness-capacities",
       "targetType": "glossary",
-      "label": "Informs: Real Self"
+      "label": "Informs: Awareness Capacities"
     },
     {
       "type": "defines",

@@ -1,5 +1,6 @@
 import { getFramework, getNextFramework, getPrevFramework } from "@/src/data/frameworks";
 import FrameworkPage from "@/src/components/FrameworkPage";
+import * as content from "@/src/content/f2-content";
 
 const framework = getFramework("F2");
 const prev = getPrevFramework("F2");
@@ -7,12 +8,12 @@ const next = getNextFramework("F2");
 
 export const metadata = {
   title: "Awareness Teaches Awareness — TEG-Blue Research",
-  description: framework.summary,
+  description: "F2 explains how the Inner Compass gets calibrated through three awareness capacities — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness. Awareness teaches awareness: the capacities caregivers embody become the child's developmental environment. Built on attachment theory, developmental neuroscience, and polyvagal theory.",
   keywords: ["awareness teaches awareness", "three awareness capacities", "reading emotions", "emotional resonance", "self-emotional awareness", "attachment theory", "developmental neuroscience", "compass calibration"],
   alternates: { canonical: "https://teg-blue.org/frameworks/f2" },
   openGraph: {
     title: "Awareness Teaches Awareness — How the Three Capacities Calibrate the Compass",
-    description: framework.summary,
+    description: "F2 explains how the Inner Compass gets calibrated through three awareness capacities — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness. Awareness teaches awareness: the capacities caregivers embody become the child's developmental environment. Built on attachment theory, developmental neuroscience, and polyvagal theory.",
     url: "https://teg-blue.org/frameworks/f2",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -20,5 +21,5 @@ export const metadata = {
 };
 
 export default function F2Page() {
-  return <FrameworkPage framework={framework} prevFramework={prev} nextFramework={next} />;
+  return <FrameworkPage framework={framework} prevFramework={prev} nextFramework={next} content={content} />;
 }

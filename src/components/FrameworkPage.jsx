@@ -11,7 +11,7 @@ import { getPhaseColor, FRAMEWORKS } from "@/src/data/frameworks";
  * Renders the full page layout with navigation, header, content sections,
  * and footer. Content sections show placeholders until populated in Stages 2-5.
  */
-export default function FrameworkPage({ framework, prevFramework, nextFramework }) {
+export default function FrameworkPage({ framework, prevFramework, nextFramework, content = {} }) {
   const phaseColor = getPhaseColor(framework.phase);
 
   return (
@@ -173,17 +173,17 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
               {framework.summary}
             </p>
-            <PlaceholderNote />
+            {content.proposal ? content.proposal : <PlaceholderNote />}
           </ContentSection>
 
           {/* The Mechanism */}
           <ContentSection title="The Mechanism" color={phaseColor}>
-            <PlaceholderNote />
+            {content.mechanism ? content.mechanism : <PlaceholderNote />}
           </ContentSection>
 
           {/* What Happens When It Breaks */}
           <ContentSection title="What Happens When It Breaks" color={phaseColor}>
-            <PlaceholderNote />
+            {content.breakdown ? content.breakdown : <PlaceholderNote />}
           </ContentSection>
 
           {/* The Regulation Thread */}
@@ -252,7 +252,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework 
               <strong style={{ color: TEXT.primary }}>Builds on:</strong>{" "}
               {framework.buildsOn}
             </p>
-            <PlaceholderNote />
+            {content.foundations ? content.foundations : <PlaceholderNote />}
           </ContentSection>
 
           {/* Connections */}

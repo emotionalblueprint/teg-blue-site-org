@@ -21,7 +21,7 @@
     {
       "id": "teg-blue-integration",
       "title": "How TEG-Blue Integrates This",
-      "content": "TEG-Blue translates Jung into developmental and regulatory terms. The Persona is the Role Mask — built early, through necessity, not midlife development. The Shadow contains suppressed aspects of the Real Self: emotions, needs, and capacities that weren't safe to express. Integration requires nervous system safety first. The parts in Shadow aren't pathological — they're adaptive suppressions that can re-emerge when conditions change."
+      "content": "TEG-Blue translates Jung into developmental and regulatory terms. The Persona maps to the adaptive identity built early through necessity — the cognitive-behavioral structure a child constructs when authentic expression is not safe. The Shadow contains suppressed awareness capacities: emotions, needs, and capacities that did not have conditions to develop. Integration requires nervous system safety first. The parts in Shadow are not pathological — they are adaptive suppressions that can re-emerge when conditions change."
     },
     {
       "id": "key-sources",
@@ -45,9 +45,9 @@
     },
     {
       "type": "defines",
-      "targetSlug": "role-mask",
+      "targetSlug": "false-coherence",
       "targetType": "glossary",
-      "label": "Informs: Role Mask"
+      "label": "Informs: False Coherence"
     }
   ],
 

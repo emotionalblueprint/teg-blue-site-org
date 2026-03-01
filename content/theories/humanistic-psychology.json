@@ -21,7 +21,7 @@
     {
       "id": "teg-blue-integration",
       "title": "How TEG-Blue Integrates This",
-      "content": "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Real Self — the emotional-somatic system that processes safety, threat, and need before cognition. Conditions of worth are the requirements that shaped the Role Mask. The actualizing tendency is what emerges when Connection is restored: the system naturally moves toward growth when it feels safe. This explains why unconditional positive regard works — it restores the conditions for the Real Self to emerge."
+      "content": "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self maps to the baseline emotional-somatic configuration — the system that processes safety, threat, and need before cognition. Conditions of worth are the requirements that shaped the adaptive identity. The actualising tendency is what emerges when Connection is restored: the system naturally moves toward growth when it feels safe. This explains why unconditional positive regard works — it restores the conditions for authentic expression to emerge."
     },
     {
       "id": "key-sources",
@@ -45,9 +45,9 @@
     },
     {
       "type": "defines",
-      "targetSlug": "real-self",
+      "targetSlug": "awareness-capacities",
       "targetType": "glossary",
-      "label": "Informs: Real Self"
+      "label": "Informs: Awareness Capacities"
     }
   ],
 
