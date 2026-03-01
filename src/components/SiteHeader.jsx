@@ -18,7 +18,7 @@ const NAV_ITEMS = [
       { label: "System Overview", href: "/foundations" },
       { label: "Epistemological Foundations", href: "/epistemological-foundations" },
       { label: "Four-Mode Gradient", href: "/four-mode-gradient" },
-      { label: "12 Frameworks", href: "/frameworks-map" },
+      { label: "Frameworks", href: "/frameworks-map" },
     ],
   },
   {
@@ -43,14 +43,18 @@ const NAV_ITEMS = [
 export default function SiteHeader({ currentPath = "/" }) {
   const [openDropdown, setOpenDropdown] = useState(null);
 
+  const matchesPath = (href, path) => {
+    if (path === href) return true;
+    if (href !== "/" && path.startsWith(href)) return true;
+    // Individual framework pages also highlight the frameworks-map nav item
+    if (href === "/frameworks-map" && path.startsWith("/frameworks/")) return true;
+    return false;
+  };
+
   const isItemActive = (item) => {
-    if (item.href) {
-      return currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
-    }
+    if (item.href) return matchesPath(item.href, currentPath);
     if (item.dropdown) {
-      return item.dropdown.some(
-        (sub) => currentPath === sub.href || currentPath.startsWith(sub.href)
-      );
+      return item.dropdown.some((sub) => matchesPath(sub.href, currentPath));
     }
     return false;
   };
@@ -238,7 +242,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                     }}
                   >
                     {item.dropdown.map((subItem) => {
-                      const subActive = currentPath === subItem.href || currentPath.startsWith(subItem.href);
+                      const subActive = matchesPath(subItem.href, currentPath);
                       return (
                         <Link
                           key={subItem.href}

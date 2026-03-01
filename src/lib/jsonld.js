@@ -140,15 +140,27 @@ export function generateGlossaryJsonLd(node) {
 export function generateFrameworkJsonLd(node) {
   return {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: node.title,
-    headline: node.title,
+    "@type": "ScholarlyArticle",
+    name: node.name || node.title,
+    headline: node.researcherTitle || node.title,
     author: AUTHOR,
+    publisher: AUTHOR,
     url: `${RESEARCH_BASE}/frameworks/${node.slug}`,
     description: node.summary,
+    abstract: node.summary,
     isPartOf: TEG_BLUE_PROJECT,
-    keywords: node.tags,
+    keywords: node.tags || [node.name, node.phase, "TEG-Blue", "emotional regulation"],
     inLanguage: LANGUAGE,
+    ...(node.phase && {
+      about: {
+        "@type": "DefinedTerm",
+        name: `${node.phase} Phase`,
+        inDefinedTermSet: {
+          "@type": "DefinedTermSet",
+          name: "TEG-Blue 12 Frameworks",
+        },
+      },
+    }),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${RESEARCH_BASE}/frameworks/${node.slug}`,
@@ -421,32 +433,27 @@ export function generateTheoreticalFoundationsJsonLd() {
     about: {
       "@type": "DefinedTermSet",
       name: "TEG-Blue 12 Frameworks",
-      description: "A connected arc of frameworks explaining emotional regulation patterns",
+      description: "A connected arc of frameworks explaining emotional regulation patterns across four phases",
       hasDefinedTerm: [
         {
           "@type": "DefinedTerm",
-          name: "Formation Arc (F1-F3)",
-          description: "How nervous system states form and how identity organizes around them"
+          name: "Foundation (F1-F3)",
+          description: "The instrument, its calibration, and what cognition does in their place"
         },
         {
           "@type": "DefinedTerm",
-          name: "Scaling Arc (F4-F6)",
-          description: "How individual regulation patterns become social structures"
+          name: "Collective Scaling (F4-F7)",
+          description: "How individual regulation patterns become rules, worth hierarchies, perception biases, and domination"
         },
         {
           "@type": "DefinedTerm",
-          name: "Turning Point (F7)",
-          description: "How protection escalates into domination"
+          name: "Repair (F8-F10)",
+          description: "Individual capacity repair, structural inclusion, generational transmission"
         },
         {
           "@type": "DefinedTerm",
-          name: "Healing Arc (F8-F10)",
-          description: "How patterns shift, including neurodivergent pathways"
-        },
-        {
-          "@type": "DefinedTerm",
-          name: "Integration Arc (F11-F12)",
-          description: "The complete architecture and its internal logic"
+          name: "Meta-Integration (F11-F12)",
+          description: "Paradox as clarity, and the two information systems underneath everything"
         }
       ]
     },
@@ -458,10 +465,10 @@ export function generateTheoreticalFoundationsJsonLd() {
       "attachment theory",
       "trauma research",
       "nervous system",
-      "formation",
-      "scaling",
-      "healing",
-      "integration"
+      "foundation",
+      "collective scaling",
+      "repair",
+      "meta-integration"
     ]
   };
 }
