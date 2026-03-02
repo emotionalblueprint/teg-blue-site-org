@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY, MODE_COLORS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -19,13 +19,6 @@ export const metadata = {
   },
 };
 
-// State colors from the Four-Mode Gradient
-const STATE = {
-  connection: "#14b8a6",  // Teal
-  protection: "#eab308",  // Yellow
-  control: "#f97316",     // Orange
-  domination: "#ec4899",  // Pink
-};
 
 export default function EmotionalTechnologyPage() {
   return (
@@ -74,7 +67,7 @@ export default function EmotionalTechnologyPage() {
             What is{" "}
             <span
               style={{
-                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
+                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${SPECTRUM.azure})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -110,7 +103,7 @@ export default function EmotionalTechnologyPage() {
             <div
               style={{
                 height: 3,
-                background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
+                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${MODE_COLORS.protection}, ${MODE_COLORS.control}, ${MODE_COLORS.domination})`,
               }}
             />
 
@@ -127,7 +120,7 @@ export default function EmotionalTechnologyPage() {
                 }}
               >
                 <CapabilityMiniCard
-                  color={STATE.connection}
+                  color={MODE_COLORS.connection}
                   title="Recognize"
                   desc="emotional states"
                 />
@@ -186,7 +179,7 @@ export default function EmotionalTechnologyPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
             <CapabilityCard
-              color={STATE.connection}
+              color={MODE_COLORS.connection}
               title="Measurement & Recognition"
               items={[
                 "Visual scales show position on gradients of empathy, control, accountability",
@@ -195,7 +188,7 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              color={STATE.protection}
+              color={MODE_COLORS.protection}
               title="Prediction & Prevention"
               items={[
                 "Maps how emotional states shift and escalate",
@@ -204,7 +197,7 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              color={STATE.control}
+              color={MODE_COLORS.control}
               title="Navigation & Intervention"
               items={[
                 "Provides steps back to safety, calm, and clarity",
@@ -213,7 +206,7 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              color={STATE.domination}
+              color={MODE_COLORS.domination}
               title="Pattern Breaking"
               items={[
                 "Makes generational trauma patterns visible",
@@ -301,22 +294,22 @@ export default function EmotionalTechnologyPage() {
             <VocabCard
               term="Emotional Architecture"
               definition="The structure of emotional patterns within people, families, and systems"
-              color={STATE.connection}
+              color={MODE_COLORS.connection}
             />
             <VocabCard
               term="Emotional Wiring"
               definition="How your nervous system learned to feel, respond, and protect"
-              color={STATE.protection}
+              color={MODE_COLORS.protection}
             />
             <VocabCard
               term="Emotional Miswiring"
               definition="Protective patterns that now create harm"
-              color={STATE.control}
+              color={MODE_COLORS.control}
             />
             <VocabCard
               term="Emotional Infrastructure"
               definition="The larger systems that support — or fail to support — emotional safety"
-              color={STATE.domination}
+              color={MODE_COLORS.domination}
             />
           </div>
         </section>
@@ -341,7 +334,7 @@ export default function EmotionalTechnologyPage() {
               left: 0,
               right: 0,
               height: 3,
-              background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
+              background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${MODE_COLORS.protection}, ${MODE_COLORS.control}, ${MODE_COLORS.domination})`,
             }}
           />
 
@@ -373,7 +366,7 @@ export default function EmotionalTechnologyPage() {
               style={{
                 padding: "12px 24px",
                 background: PRIMARY,
-                color: "#fff",
+                color: TEXT.primary,
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
                 fontSize: 14,
@@ -518,9 +511,9 @@ function BenefitChip({ label }) {
     <div
       style={{
         padding: "10px 14px",
-        background: hexToRgba(STATE.connection, 0.1),
+        background: hexToRgba(MODE_COLORS.connection, 0.1),
         borderRadius: RADIUS.sm,
-        border: `1px solid ${hexToRgba(STATE.connection, 0.2)}`,
+        border: `1px solid ${hexToRgba(MODE_COLORS.connection, 0.2)}`,
         fontSize: 13,
         fontWeight: 500,
         color: TEXT.secondary,

@@ -272,7 +272,7 @@ export default function ModelsIndexPage() {
               display: "inline-block",
               padding: "10px 20px",
               background: SPECTRUM.azure,
-              color: "#fff",
+              color: TEXT.primary,
               borderRadius: RADIUS.md,
               fontWeight: 600,
               fontSize: 14,

@@ -406,7 +406,7 @@ export default function EpistemologicalFoundationsPage() {
 
             <ImplicationSection
               title="For Scientific and Academic Fields"
-              color={SPECTRUM.slate}
+              color={TEXT.secondary}
               items={[
                 { label: "Research Integration", text: "Including emotional factors as legitimate variables in research across disciplines" },
                 { label: "Methodology Development", text: "Creating research methods that can study emotional patterns systematically" },

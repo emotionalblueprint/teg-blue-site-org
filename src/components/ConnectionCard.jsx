@@ -79,6 +79,7 @@ export default function ConnectionCard({
         .connection-card:hover {
           border-color: ${BORDER.hover};
           transform: translateY(-1px);
+          background: rgba(148, 163, 184, 0.03);
         }
       `}</style>
     </Link>

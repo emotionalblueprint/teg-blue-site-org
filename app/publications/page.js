@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, ACCENT, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, TypeTag, StatusBadge } from "@/src/components";
 
 export const metadata = {
@@ -247,7 +247,7 @@ export default function PublicationsPage() {
                   gap: 6,
                   padding: "8px 16px",
                   background: PRIMARY,
-                  color: "#fff",
+                  color: TEXT.primary,
                   borderRadius: 6,
                   fontWeight: 500,
                   fontSize: 13,
@@ -258,6 +258,7 @@ export default function PublicationsPage() {
               </a>
               <Link
                 href="/publications/validation-study"
+                className="hover-ghost"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -317,9 +318,9 @@ export default function PublicationsPage() {
                 fontSize: 11,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: SPECTRUM.slate,
+                color: ACCENT.acid,
                 padding: "4px 8px",
-                background: hexToRgba(SPECTRUM.slate, 0.1),
+                background: hexToRgba(ACCENT.acid, 0.10),
                 borderRadius: 4,
               }}
             >
@@ -393,6 +394,7 @@ function PublicationCard({ publication }) {
   return (
     <Link
       href={`/publications/${publication.slug}`}
+      className="hover-card"
       style={{ textDecoration: "none" }}
     >
       <article
@@ -402,7 +404,6 @@ function PublicationCard({ publication }) {
           background: BG.card,
           border: `1px solid ${BORDER.default}`,
           borderLeft: `3px solid ${color}`,
-          transition: "all 200ms ease",
           cursor: "pointer",
         }}
       >

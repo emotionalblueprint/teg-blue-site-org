@@ -5,31 +5,33 @@
  * and individual framework pages import from this file.
  */
 
+import { PHASE } from "@/src/styles/tokens";
+
 // ─── PHASES ─────────────────────────────────────────────────
 
 export const PHASES = [
   {
     key: "Foundation",
     frameworks: ["F1", "F2", "F3"],
-    color: "#26C6DA",
+    color: PHASE.foundation,
     description: "The instrument, its calibration, and what cognition does in their place",
   },
   {
     key: "Collective Scaling",
     frameworks: ["F4", "F5", "F6", "F7"],
-    color: "#3B82F6",
+    color: PHASE.collective,
     description: "How individual regulation patterns become rules, worth hierarchies, perception biases, and domination",
   },
   {
     key: "Repair",
     frameworks: ["F8", "F9", "F10"],
-    color: "#4F46E5",
+    color: PHASE.repair,
     description: "Individual capacity repair, structural inclusion, generational transmission",
   },
   {
     key: "Meta-Integration",
     frameworks: ["F11", "F12"],
-    color: "#5C6BC0",
+    color: PHASE.meta,
     description: "Paradox as clarity, and the two information systems underneath everything",
   },
 ];
@@ -454,7 +456,7 @@ export function getPhase(phaseKey) {
 
 export function getPhaseColor(phaseKey) {
   const phase = getPhase(phaseKey);
-  return phase ? phase.color : "#3B82F6";
+  return phase ? phase.color : PHASE.collective;
 }
 
 // ─── MODEL HELPERS ──────────────────────────────────────────

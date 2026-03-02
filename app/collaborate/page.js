@@ -248,7 +248,7 @@ export default function CollaboratePage() {
               gap: 8,
               padding: "12px 24px",
               background: PRIMARY,
-              color: "#fff",
+              color: TEXT.primary,
               borderRadius: 8,
               fontWeight: 500,
               fontSize: 14,

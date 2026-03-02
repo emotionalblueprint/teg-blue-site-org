@@ -2,7 +2,9 @@ import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
-// Researcher pattern colors (blue spectrum)
+// Researcher pattern colors (blue spectrum variant)
+// Intentionally different from MODE_COLORS (teal/yellow/orange/pink).
+// This page uses a blue-only gradient for research-neutral presentation.
 const PATTERN = {
   a: { color: "#60a5fa", name: "Connection" },  // blue-400
   b: { color: "#3b82f6", name: "Protection" },  // blue-500
@@ -292,7 +294,7 @@ export default function FourModeGradientPage() {
                 style={{
                   padding: "12px 24px",
                   background: SPECTRUM.blue,
-                  color: "#fff",
+                  color: TEXT.primary,
                   borderRadius: RADIUS.md,
                   fontWeight: 600,
                   fontSize: 14,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, ACCENT, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -209,7 +209,7 @@ export default function ResearchEntryPage() {
             />
             <StatusCard
               label="Open to validation"
-              color={SPECTRUM.slate}
+              color={ACCENT.soft}
               description="Psychometric validation and replication. Construct validity across cultures, contexts, and modalities. External benchmarking against existing instruments."
             />
           </div>
@@ -234,7 +234,7 @@ export default function ResearchEntryPage() {
               marginBottom: 16,
             }}
           >
-            The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong>capacity to return to Connection when challenged</strong>.
+            The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong style={{ color: ACCENT.pink }}>capacity to return to Connection when challenged</strong>.
           </blockquote>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
             We treat this as a testable hypothesis, not a slogan.
@@ -377,7 +377,7 @@ export default function ResearchEntryPage() {
               gap: 8,
               padding: "12px 24px",
               background: PRIMARY,
-              color: "#fff",
+              color: TEXT.primary,
               borderRadius: 8,
               fontWeight: 500,
               fontSize: 14,
@@ -440,6 +440,7 @@ function StatusCard({ label, color, description }) {
 function LaneCard({ letter, title, description, needs, link, linkText }) {
   return (
     <div
+      className="hover-card-lift"
       style={{
         padding: 20,
         background: BG.card,

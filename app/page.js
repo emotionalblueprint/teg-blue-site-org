@@ -8,6 +8,7 @@ import {
   BORDER,
   SPECTRUM,
   PRIMARY,
+  ACCENT,
   hexToRgba,
   RADIUS,
 } from "@/src/styles/tokens";
@@ -120,7 +121,7 @@ export default function HomePage() {
                   gap: 8,
                   padding: "12px 24px",
                   background: SPECTRUM.cobalt,
-                  color: "#fff",
+                  color: TEXT.primary,
                   borderRadius: 8,
                   fontWeight: 500,
                   fontSize: 14,
@@ -222,7 +223,7 @@ export default function HomePage() {
           </section>
 
           {/* ─── The Two Models ─── */}
-          <section style={{ marginBottom: 56 }}>
+          <section className="section-break" style={{ marginBottom: 56 }}>
             <SectionHeader
               label="The Instruments"
               title="Two Models"
@@ -241,6 +242,7 @@ export default function HomePage() {
                 <Link
                   key={model.id}
                   href={model.url}
+                  className="hover-card"
                   style={{
                     display: "block",
                     padding: "16px 20px",
@@ -313,7 +315,7 @@ export default function HomePage() {
           </section>
 
           {/* ─── The 12 Frameworks ─── */}
-          <section style={{ marginBottom: 56 }}>
+          <section className="section-break" style={{ marginBottom: 56 }}>
             <SectionHeader
               label="The Architecture"
               title="12 Frameworks"
@@ -400,7 +402,7 @@ export default function HomePage() {
           </section>
 
           {/* ─── The Evidence ─── */}
-          <section style={{ marginBottom: 56 }}>
+          <section className="section-break" style={{ marginBottom: 56 }}>
             <SectionHeader
               label="The Foundation"
               title="Evidence & Research"
@@ -449,7 +451,7 @@ export default function HomePage() {
                 }}
               >
                 De-escalators showed{" "}
-                <span style={{ color: SPECTRUM.azure, fontWeight: 700 }}>
+                <span style={{ color: ACCENT.mint, fontWeight: 700 }}>
                   78% higher rates of complexity markers
                 </span>{" "}
                 than escalators — signs of self-awareness, perspective-taking,
@@ -518,9 +520,9 @@ export default function HomePage() {
           <section
             style={{
               padding: 24,
-              background: hexToRgba(SPECTRUM.azure, 0.05),
+              background: hexToRgba(SPECTRUM.azure, 0.08),
               borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.22)}`,
               marginBottom: 32,
               textAlign: "center",
             }}
@@ -561,7 +563,7 @@ export default function HomePage() {
                 gap: 8,
                 padding: "12px 24px",
                 background: SPECTRUM.azure,
-                color: "#fff",
+                color: TEXT.primary,
                 borderRadius: 8,
                 fontWeight: 500,
                 fontSize: 14,
@@ -645,6 +647,7 @@ function ConceptRow({ concept }) {
   return (
     <Link
       href={`/concepts/${concept.slug}`}
+      className="hover-card"
       style={{
         display: "flex",
         alignItems: "baseline",
@@ -717,7 +720,7 @@ function StatBadge({ label, value }) {
       >
         {label}
       </p>
-      <p style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary }}>
+      <p style={{ fontSize: 14, fontWeight: 600, color: ACCENT.mint }}>
         {value}
       </p>
     </div>

@@ -166,9 +166,9 @@ export default function ConceptsHubPage() {
         <section
           style={{
             padding: 24,
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
+            background: hexToRgba(SPECTRUM.cobalt, 0.10),
             borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.25)}`,
             marginBottom: 40,
           }}
         >
@@ -202,7 +202,7 @@ export default function ConceptsHubPage() {
                 gap: 6,
                 padding: "10px 18px",
                 background: SPECTRUM.cobalt,
-                color: "#fff",
+                color: TEXT.primary,
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
                 fontSize: 14,
@@ -242,6 +242,7 @@ export default function ConceptsHubPage() {
         >
           <Link
             href="/"
+            className="hover-ghost"
             style={{
               padding: "10px 20px",
               background: "transparent",
@@ -257,6 +258,7 @@ export default function ConceptsHubPage() {
           </Link>
           <Link
             href="/models"
+            className="hover-ghost"
             style={{
               padding: "10px 20px",
               background: "transparent",
@@ -272,6 +274,7 @@ export default function ConceptsHubPage() {
           </Link>
           <Link
             href="/frameworks-map"
+            className="hover-ghost"
             style={{
               padding: "10px 20px",
               background: "transparent",
@@ -302,6 +305,7 @@ function ConceptCard({ concept }) {
   return (
     <Link
       href={`/concepts/${concept.slug}`}
+      className="hover-card"
       style={{
         display: "block",
         padding: "20px 24px",

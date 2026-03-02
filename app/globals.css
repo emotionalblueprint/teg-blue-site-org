@@ -11,7 +11,7 @@
   /* Blue Spectrum */
   --spectrum-sky:    #7ABAEB;
   --spectrum-azure:  #4A9BE8;
-  --spectrum-blue:   #2563EB;
+  --spectrum-blue:   #3B7DE5;
   --spectrum-cobalt: #3560CC;
   --spectrum-indigo: #4A50B0;
   --spectrum-slate:  #6B7A99;
@@ -19,19 +19,19 @@
   /* Backgrounds */
   --bg-page:    #080C18;
   --bg-primary: #0C1222;
-  --bg-card:    #111827;
+  --bg-card:    #131B2E;
   --bg-surface: #1A2234;
   --bg-inset:   #0A0E1A;
 
   /* Text */
   --text-primary:   #F1F5F9;
-  --text-secondary: #C8D2DE;
-  --text-tertiary:  #A8B5C4;
+  --text-secondary: #D1D9E3;
+  --text-tertiary:  #C4D0DC;
 
   /* Borders */
-  --border-default: rgba(148, 163, 184, 0.12);
-  --border-hover:   rgba(148, 163, 184, 0.20);
-  --border-active:  rgba(148, 163, 184, 0.30);
+  --border-default: rgba(148, 163, 184, 0.18);
+  --border-hover:   rgba(148, 163, 184, 0.28);
+  --border-active:  rgba(148, 163, 184, 0.40);
 
   /* Fonts */
   --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
@@ -184,14 +184,14 @@ details > section {
 /* ─── SELECTION ─────────────────────────────────────── */
 
 ::selection {
-  background: rgba(37, 99, 235, 0.3);
+  background: color-mix(in srgb, var(--primary) 30%, transparent);
   color: var(--text-primary);
 }
 
 /* ─── FOCUS STATES ──────────────────────────────────── */
 
 :focus-visible {
-  outline: 2px solid rgba(37, 99, 235, 0.5);
+  outline: 2px solid color-mix(in srgb, var(--primary) 50%, transparent);
   outline-offset: 2px;
 }
 
@@ -223,4 +223,52 @@ details > section {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* ─── HOVER UTILITIES ──────────────────────────────── */
+
+.hover-card {
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+
+.hover-card:hover {
+  border-color: var(--border-hover);
+  background-color: rgba(148, 163, 184, 0.03);
+  transform: translateX(2px);
+}
+
+.hover-card-lift {
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.hover-card-lift:hover {
+  border-color: var(--border-hover);
+  background-color: rgba(148, 163, 184, 0.03);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hover-ghost {
+  transition: border-color 200ms ease, color 200ms ease, background-color 200ms ease;
+}
+
+.hover-ghost:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background-color: rgba(148, 163, 184, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-card:hover,
+  .hover-card-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ─── SECTION BREAK ────────────────────────────────── */
+
+.section-break {
+  border-top: 1px solid var(--border-default);
+  padding-top: 48px;
 }

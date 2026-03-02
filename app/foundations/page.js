@@ -129,7 +129,7 @@ export default function FoundationsPage() {
               number={4}
               title="AI Safety"
               subtitle="Structured Schemas"
-              color={SPECTRUM.slate}
+              color={TEXT.tertiary}
               href="/ai-safety"
             />
           </div>
@@ -273,7 +273,7 @@ export default function FoundationsPage() {
           <LayerCard
             number={4}
             title="The AI Safety Layer"
-            color={SPECTRUM.slate}
+            color={TEXT.tertiary}
           >
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               Structured Schemas for AI Systems
@@ -284,7 +284,7 @@ export default function FoundationsPage() {
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
               This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications designed to replace binary safe/unsafe models with nuanced assessments.
             </p>
-            <StatusBadge status="Proposed architecture with early implementation" color={SPECTRUM.slate} />
+            <StatusBadge status="Proposed architecture with early implementation" color={TEXT.tertiary} />
             <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 8 }}>
               See <Link href="/ai-safety" style={{ color: PRIMARY }}>AI Safety</Link> for the full application case.
             </p>

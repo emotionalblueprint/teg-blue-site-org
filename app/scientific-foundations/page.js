@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, ACCENT, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, SearchInput } from "@/src/components";
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
@@ -416,7 +416,7 @@ export default function ScientificFoundationsPage() {
         {/* ─── 4. EVIDENCE MAP ───────────────────────────────────── */}
         <div
           style={{
-            borderTop: `1px solid ${BORDER.default}`,
+            borderTop: `1px solid ${hexToRgba(ACCENT.yellow, 0.15)}`,
             margin: "48px 0",
             position: "relative",
           }}
@@ -430,7 +430,7 @@ export default function ScientificFoundationsPage() {
               background: BG.page,
               padding: "0 16px",
               fontSize: 12,
-              color: TEXT.tertiary,
+              color: ACCENT.yellow,
               fontFamily: FONT.mono,
             }}
           >
@@ -599,7 +599,7 @@ export default function ScientificFoundationsPage() {
                       fontSize: 11,
                       fontWeight: 600,
                       fontFamily: FONT.mono,
-                      color: getDomainColor(domain),
+                      color: ACCENT.mint,
                       padding: "3px 8px",
                       background: hexToRgba(getDomainColor(domain), 0.1),
                       borderRadius: 4,
@@ -1380,7 +1380,7 @@ function ValidationMethod() {
                 fontSize: 11,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: SPECTRUM.slate,
+                color: TEXT.secondary,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 margin: "0 0 8px 0",

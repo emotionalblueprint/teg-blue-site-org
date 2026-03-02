@@ -1,6 +1,6 @@
 "use client";
 
-import { SPECTRUM, hexToRgba, FONT } from "../styles/tokens";
+import { SPECTRUM, SIGNAL, TEXT, ACCENT, hexToRgba, FONT } from "../styles/tokens";
 
 /**
  * StatusBadge — Content origin and verification indicator
@@ -20,16 +20,16 @@ const STATUS_MAP = {
   "established":        { color: SPECTRUM.indigo, label: "Established", description: "Recognized research that TEG-Blue builds on" },
 
   // Verification statuses (for TEG-Blue original content)
-  "draft":              { color: "#f59e0b", label: "Draft", description: "Early work — structure may change" },
+  "draft":              { color: SIGNAL.warning, label: "Draft", description: "Early work — structure may change" },
   "open-review":        { color: SPECTRUM.azure, label: "Open for Review", description: "TEG-Blue synthesis — verification welcome" },
   "source-verified":    { color: SPECTRUM.blue, label: "Source Verified", description: "Key sources manually checked" },
-  "community-reviewed": { color: "#10b981", label: "Community Reviewed", description: "Verified by external researcher" },
+  "community-reviewed": { color: SIGNAL.success, label: "Community Reviewed", description: "Verified by external researcher" },
 
   // Publication statuses (legacy)
   "published":    { color: SPECTRUM.blue,   label: "Published" },
   "preprint":     { color: SPECTRUM.azure,  label: "Preprint" },
-  "in-progress":  { color: SPECTRUM.slate,  label: "In Progress" },
-  "planned":      { color: SPECTRUM.slate,  label: "Planned" },
+  "in-progress":  { color: ACCENT.violet,  label: "In Progress" },
+  "planned":      { color: ACCENT.violet,  label: "Planned" },
 };
 
 export default function StatusBadge({ status, showDescription = false }) {
@@ -87,7 +87,7 @@ export function StatusNote({ status }) {
         background: hexToRgba(s.color, 0.05),
         border: `1px solid ${hexToRgba(s.color, 0.15)}`,
         fontSize: 13,
-        color: "rgba(255,255,255,0.7)",
+        color: TEXT.secondary,
         marginTop: 16,
       }}
     >

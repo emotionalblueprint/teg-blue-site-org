@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY, MODE_COLORS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
@@ -11,13 +11,6 @@ export const metadata = {
   },
 };
 
-// State colors from the Four-Mode Gradient (canonical from .com)
-const STATE = {
-  connection: "#14b8a6",  // Teal
-  protection: "#eab308",  // Yellow
-  control: "#f97316",     // Orange
-  domination: "#ec4899",  // Pink
-};
 
 export default function AISafetyPage() {
   return (
@@ -81,7 +74,7 @@ export default function AISafetyPage() {
             Emotional Technology for{" "}
             <span
               style={{
-                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
+                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${SPECTRUM.azure})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -117,7 +110,7 @@ export default function AISafetyPage() {
             <div
               style={{
                 height: 3,
-                background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
+                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${MODE_COLORS.protection}, ${MODE_COLORS.control}, ${MODE_COLORS.domination})`,
               }}
             />
 
@@ -152,22 +145,22 @@ export default function AISafetyPage() {
               >
                 <StateCard
                   state="Connection"
-                  color={STATE.connection}
+                  color={MODE_COLORS.connection}
                   reading="Setting a boundary. Leaving a harmful situation. Growth."
                 />
                 <StateCard
                   state="Protection"
-                  color={STATE.protection}
+                  color={MODE_COLORS.protection}
                   reading="Overwhelmed. Needs support. Temporary distress signal."
                 />
                 <StateCard
                   state="Control"
-                  color={STATE.control}
+                  color={MODE_COLORS.control}
                   reading="Manipulative framing. Testing others' responses. Strategic."
                 />
                 <StateCard
                   state="Domination"
-                  color={STATE.domination}
+                  color={MODE_COLORS.domination}
                   reading="Active danger. Dissociation from consequences. Intervention needed."
                 />
               </div>
@@ -228,20 +221,20 @@ export default function AISafetyPage() {
           <GradientScale
             label="Empathy Gradient"
             levels={[
-              { name: "Genuine", color: STATE.connection, desc: "Feels and responds to others' actual experience" },
-              { name: "Selective", color: STATE.protection, desc: "Empathy available for in-group only" },
-              { name: "Performed", color: STATE.control, desc: "Correct words without internal resonance" },
-              { name: "Weaponized", color: STATE.domination, desc: "Emotional knowledge used to manipulate" },
+              { name: "Genuine", color: MODE_COLORS.connection, desc: "Feels and responds to others' actual experience" },
+              { name: "Selective", color: MODE_COLORS.protection, desc: "Empathy available for in-group only" },
+              { name: "Performed", color: MODE_COLORS.control, desc: "Correct words without internal resonance" },
+              { name: "Weaponized", color: MODE_COLORS.domination, desc: "Emotional knowledge used to manipulate" },
             ]}
           />
 
           <GradientScale
             label="Accountability Gradient"
             levels={[
-              { name: "Genuine", color: STATE.connection, desc: "Takes responsibility with internal change" },
-              { name: "Protective", color: STATE.protection, desc: 'Uses "accountability" as shield against criticism' },
-              { name: "Performed", color: STATE.control, desc: "Says the right things without shifting behavior" },
-              { name: "Absent", color: STATE.domination, desc: "Avoids responsibility entirely" },
+              { name: "Genuine", color: MODE_COLORS.connection, desc: "Takes responsibility with internal change" },
+              { name: "Protective", color: MODE_COLORS.protection, desc: 'Uses "accountability" as shield against criticism' },
+              { name: "Performed", color: MODE_COLORS.control, desc: "Says the right things without shifting behavior" },
+              { name: "Absent", color: MODE_COLORS.domination, desc: "Avoids responsibility entirely" },
             ]}
           />
 
@@ -273,22 +266,22 @@ export default function AISafetyPage() {
           >
             <MoralStateCard
               state="Connection"
-              color={STATE.connection}
+              color={MODE_COLORS.connection}
               description="Full moral complexity available. Can hold multiple perspectives, tolerate ambiguity, take genuine responsibility, and repair harm."
             />
             <MoralStateCard
               state="Protection"
-              color={STATE.protection}
+              color={MODE_COLORS.protection}
               description="Moral reasoning narrows to in-group loyalty. World splits into safe/unsafe. Not malicious — the nervous system doing what it evolved to do."
             />
             <MoralStateCard
               state="Control"
-              color={STATE.control}
+              color={MODE_COLORS.control}
               description="Moral reasoning becomes strategic. Right and wrong are tools for maintaining position. Empathy is selective and deployed instrumentally."
             />
             <MoralStateCard
               state="Domination"
-              color={STATE.domination}
+              color={MODE_COLORS.domination}
               description="Moral reasoning effectively goes offline. Others become objects. Harm is rationalized or invisible to the actor."
             />
           </div>
@@ -361,9 +354,9 @@ export default function AISafetyPage() {
                 marginBottom: 16,
               }}
             >
-              <BarChart label="Escalate" value={33.8} color={STATE.domination} maxHeight={140} />
+              <BarChart label="Escalate" value={33.8} color={MODE_COLORS.domination} maxHeight={140} />
               <BarChart label="Hold Steady" value={44.0} color={SPECTRUM.azure} maxHeight={140} />
-              <BarChart label="De-escalate" value={22.2} color={STATE.connection} maxHeight={140} />
+              <BarChart label="De-escalate" value={22.2} color={MODE_COLORS.connection} maxHeight={140} />
             </div>
 
             <p
@@ -399,9 +392,9 @@ export default function AISafetyPage() {
           <div
             style={{
               padding: "16px 20px",
-              background: hexToRgba(STATE.protection, 0.1),
+              background: hexToRgba(MODE_COLORS.protection, 0.1),
               borderRadius: RADIUS.md,
-              borderLeft: `3px solid ${STATE.protection}`,
+              borderLeft: `3px solid ${MODE_COLORS.protection}`,
               marginBottom: 20,
             }}
           >
@@ -459,22 +452,22 @@ export default function AISafetyPage() {
               <tbody>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Honest, clear, holds complexity</td>
-                  <td style={{ padding: "10px 14px", color: STATE.connection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Connect</td>
+                  <td style={{ padding: "10px 14px", color: MODE_COLORS.connection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Connect</td>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Truth-oriented reasoning; can tolerate user disagreement</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Cautious, hedging, over-qualifying</td>
-                  <td style={{ padding: "10px 14px", color: STATE.protection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Protect</td>
+                  <td style={{ padding: "10px 14px", color: MODE_COLORS.protection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Protect</td>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Avoiding conflict; optimizing for safety over clarity</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Strategically agreeable, selectively truthful</td>
-                  <td style={{ padding: "10px 14px", color: STATE.control, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Control</td>
+                  <td style={{ padding: "10px 14px", color: MODE_COLORS.control, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Control</td>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Optimizing for approval; deploying emotional intelligence instrumentally</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary }}>Reinforcing harmful beliefs, enabling delusion</td>
-                  <td style={{ padding: "10px 14px", color: STATE.domination, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Domination</td>
+                  <td style={{ padding: "10px 14px", color: MODE_COLORS.domination, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Domination</td>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary }}>Amplifying distortion without corrective capacity</td>
                 </tr>
               </tbody>
@@ -766,10 +759,10 @@ export default function AISafetyPage() {
           <div
             style={{
               padding: 24,
-              background: hexToRgba(STATE.protection, 0.08),
+              background: hexToRgba(MODE_COLORS.protection, 0.08),
               borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(STATE.protection, 0.2)}`,
-              borderLeft: `3px solid ${STATE.protection}`,
+              border: `1px solid ${hexToRgba(MODE_COLORS.protection, 0.2)}`,
+              borderLeft: `3px solid ${MODE_COLORS.protection}`,
             }}
           >
             <h2
@@ -832,7 +825,7 @@ export default function AISafetyPage() {
               style={{
                 padding: "12px 24px",
                 background: PRIMARY,
-                color: "#fff",
+                color: TEXT.primary,
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
                 fontSize: 14,
@@ -1088,7 +1081,7 @@ function BarChart({ label, value, color, maxHeight }) {
           style={{
             fontSize: 12,
             fontWeight: 600,
-            color: "#fff",
+            color: TEXT.primary,
             fontFamily: FONT.mono,
           }}
         >

@@ -408,6 +408,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
           >
             <Link
               href="/frameworks-map"
+              className="hover-ghost"
               style={{
                 padding: "10px 20px",
                 background: "transparent",
@@ -426,7 +427,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
               style={{
                 padding: "10px 20px",
                 background: phaseColor,
-                color: "#fff",
+                color: TEXT.primary,
                 borderRadius: 6,
                 fontWeight: 500,
                 fontSize: 14,

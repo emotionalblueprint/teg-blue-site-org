@@ -159,7 +159,7 @@ export default function MethodologyPage() {
             />
             <StatusCard
               title="Open to validation"
-              color={SPECTRUM.slate}
+              color={TEXT.tertiary}
               description="Constructs, tools, and claims that need independent replication, psychometric validation, cross-cultural testing, or external benchmarking."
             />
           </div>
@@ -339,9 +339,9 @@ export default function MethodologyPage() {
               <tbody>
                 <StatusRow area="Open science principles" status="Working standard; not all work meets full pre-registration yet" />
                 <StatusRow area="Validation study (n=10,000+)" status="Completed; computational analysis of natural language" statusColor={SPECTRUM.azure} />
-                <StatusRow area="Psychometric validation of tools" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
-                <StatusRow area="Cross-cultural replication" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
-                <StatusRow area="Independent replication of four-mode classification" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
+                <StatusRow area="Psychometric validation of tools" status="Not yet started; collaborators needed" statusColor={TEXT.tertiary} />
+                <StatusRow area="Cross-cultural replication" status="Not yet started; collaborators needed" statusColor={TEXT.tertiary} />
+                <StatusRow area="Independent replication of four-mode classification" status="Not yet started; collaborators needed" statusColor={TEXT.tertiary} />
                 <StatusRow area="AI schema evaluation" status="Early implementation; needs formal evaluation" statusColor={SPECTRUM.indigo} isLast />
               </tbody>
             </table>

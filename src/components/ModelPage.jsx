@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PHASE } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { getPhaseColor, getFramework, getPairedModel } from "@/src/data/frameworks";
 
@@ -15,7 +15,7 @@ import { getPhaseColor, getFramework, getPairedModel } from "@/src/data/framewor
 export default function ModelPage({ model, content = {} }) {
   const parentFramework = getFramework(model.parentFramework);
   const paired = getPairedModel(model.id);
-  const phaseColor = parentFramework ? getPhaseColor(parentFramework.phase) : "#26C6DA";
+  const phaseColor = parentFramework ? getPhaseColor(parentFramework.phase) : PHASE.foundation;
 
   return (
     <div
@@ -232,6 +232,7 @@ export default function ModelPage({ model, content = {} }) {
             {paired && (
               <Link
                 href={paired.url}
+                className="hover-ghost"
                 style={{
                   padding: "10px 20px",
                   background: "transparent",
@@ -249,6 +250,7 @@ export default function ModelPage({ model, content = {} }) {
             {parentFramework && (
               <Link
                 href={`/frameworks/${parentFramework.slug}`}
+                className="hover-ghost"
                 style={{
                   padding: "10px 20px",
                   background: "transparent",
@@ -265,6 +267,7 @@ export default function ModelPage({ model, content = {} }) {
             )}
             <Link
               href="/models"
+              className="hover-ghost"
               style={{
                 padding: "10px 20px",
                 background: "transparent",
@@ -280,6 +283,7 @@ export default function ModelPage({ model, content = {} }) {
             </Link>
             <Link
               href="/frameworks-map"
+              className="hover-ghost"
               style={{
                 padding: "10px 20px",
                 background: "transparent",

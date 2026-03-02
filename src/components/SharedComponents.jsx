@@ -59,6 +59,7 @@ export function DepthBar({ actions = [] }) {
         .depth-action:hover {
           border-color: ${BORDER.hover};
           color: ${TEXT.primary};
+          background: rgba(148, 163, 184, 0.04);
         }
       `}</style>
     </div>

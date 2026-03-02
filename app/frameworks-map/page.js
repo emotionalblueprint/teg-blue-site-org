@@ -234,7 +234,7 @@ export default function TheoreticalFoundationsPage() {
               style={{
                 padding: "10px 20px",
                 background: PRIMARY,
-                color: "#fff",
+                color: TEXT.primary,
                 borderRadius: 6,
                 fontWeight: 500,
                 fontSize: 14,
@@ -245,6 +245,7 @@ export default function TheoreticalFoundationsPage() {
             </Link>
             <Link
               href="/methodology"
+              className="hover-ghost"
               style={{
                 padding: "10px 20px",
                 background: "transparent",
@@ -288,6 +289,7 @@ function ExpandableFrameworkCard({ framework }) {
 
   return (
     <div
+      className={isOpen ? undefined : "hover-card-lift"}
       style={{
         marginBottom: 12,
         background: BG.card,
