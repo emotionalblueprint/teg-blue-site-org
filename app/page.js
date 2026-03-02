@@ -184,7 +184,7 @@ export default function HomePage() {
                     marginBottom: 10,
                   }}
                 >
-                  Foundational Concepts
+                  Start here
                 </span>
                 <h2
                   style={{
@@ -195,7 +195,7 @@ export default function HomePage() {
                     lineHeight: 1.3,
                   }}
                 >
-                  Start here
+                  Foundational Concepts
                 </h2>
                 <p
                   style={{
@@ -205,9 +205,9 @@ export default function HomePage() {
                     margin: 0,
                   }}
                 >
-                  Entry points into the system — ideas that make the
-                  architecture accessible before the models and frameworks
-                  begin.
+                  Entry points that give immediate recognition, introduce the
+                  core architecture, and model the non-pathologising stance
+                  that runs through the entire system.
                 </p>
               </Link>
 
@@ -237,7 +237,7 @@ export default function HomePage() {
                     marginBottom: 10,
                   }}
                 >
-                  2 Models
+                  Make them visible
                 </span>
                 <h2
                   style={{
@@ -248,7 +248,7 @@ export default function HomePage() {
                     lineHeight: 1.3,
                   }}
                 >
-                  Make them visible
+                  2 Models
                 </h2>
                 <p
                   style={{
@@ -258,8 +258,8 @@ export default function HomePage() {
                     margin: 0,
                   }}
                 >
-                  One tells you where the needle is. The other tells you why it
-                  is there.
+                  Instruments that answer: what is the nervous system doing
+                  right now, and what does that make available?
                 </p>
               </Link>
 
@@ -289,7 +289,7 @@ export default function HomePage() {
                     marginBottom: 10,
                   }}
                 >
-                  12 Frameworks
+                  Explain where they lead
                 </span>
                 <h2
                   style={{
@@ -300,7 +300,7 @@ export default function HomePage() {
                     lineHeight: 1.3,
                   }}
                 >
-                  Explain where they lead
+                  12 Frameworks
                 </h2>
                 <p
                   style={{
@@ -310,209 +310,251 @@ export default function HomePage() {
                     margin: 0,
                   }}
                 >
-                  The full theoretical architecture — why modes exist, how
-                  patterns scale into systems, where protection tips into
-                  domination, and what makes repair possible.
+                  Not twelve separate theories — one mechanism described from
+                  twelve angles. The scale changes. The mechanism
+                  doesn&rsquo;t.
                 </p>
               </Link>
             </div>
           </section>
 
-          {/* ─── The Evidence ─── */}
+          {/* ─── Verify the Claims ─── */}
           <section className="section-break" style={{ marginBottom: 56 }}>
             <p
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: SPECTRUM.cobalt,
+                color: TEXT.tertiary,
                 textTransform: "uppercase",
-                letterSpacing: "0.08em",
+                letterSpacing: "0.1em",
+                marginBottom: 20,
                 fontFamily: FONT.mono,
-                marginBottom: 8,
               }}
             >
-              The Foundation
+              Verify the claims
             </p>
-            <h2
-              style={{
-                fontSize: 20,
-                fontWeight: 600,
-                color: TEXT.primary,
-                marginBottom: 8,
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Evidence &amp; Research
-            </h2>
             <p
               style={{
                 fontSize: 14,
                 color: TEXT.secondary,
                 lineHeight: 1.7,
-                maxWidth: 600,
-                marginBottom: 20,
+                maxWidth: 620,
+                marginBottom: 24,
               }}
             >
-              Built on established research from polyvagal theory, affective
-              neuroscience, attachment theory, and more.
+              All sources credited. All methods documented. Clear separation
+              between established science, proposed synthesis, and what&rsquo;s
+              open to validation.
             </p>
 
             <div
               style={{
-                padding: "20px 24px",
-                background: BG.card,
-                borderRadius: RADIUS.lg,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${PRIMARY}`,
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
                 marginBottom: 16,
               }}
             >
-              <p
+              <Link
+                href="/publications"
+                className="hover-card"
                 style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.blue,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  marginBottom: 8,
-                  fontFamily: FONT.mono,
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 12,
+                  padding: "16px 20px",
+                  background: BG.card,
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${BORDER.default}`,
+                  textDecoration: "none",
                 }}
               >
-                Validation Study
-              </p>
-              <p
+                <span
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: TEXT.primary,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Publications
+                </span>
+                <span
+                  style={{
+                    fontSize: 13,
+                    color: TEXT.tertiary,
+                  }}
+                >
+                  &mdash; Full research access
+                </span>
+              </Link>
+
+              <Link
+                href="/methodology"
+                className="hover-card"
                 style={{
-                  fontSize: 15,
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 12,
+                  padding: "16px 20px",
+                  background: BG.card,
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${BORDER.default}`,
+                  textDecoration: "none",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: TEXT.primary,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Methodology
+                </span>
+                <span
+                  style={{
+                    fontSize: 13,
+                    color: TEXT.tertiary,
+                  }}
+                >
+                  &mdash; How studies were conducted
+                </span>
+              </Link>
+
+              <Link
+                href="/scientific-foundations"
+                className="hover-card"
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 12,
+                  padding: "16px 20px",
+                  background: BG.card,
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${BORDER.default}`,
+                  textDecoration: "none",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: TEXT.primary,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  139+ Source Theories
+                </span>
+                <span
+                  style={{
+                    fontSize: 13,
+                    color: TEXT.tertiary,
+                  }}
+                >
+                  &mdash; Every foundation credited
+                </span>
+              </Link>
+            </div>
+          </section>
+
+          {/* ─── Contribute ─── */}
+          <section style={{ marginBottom: 24 }}>
+            <div
+              style={{
+                padding: 24,
+                background: hexToRgba(PRIMARY, 0.06),
+                borderRadius: RADIUS.lg,
+                border: `1px solid ${hexToRgba(PRIMARY, 0.18)}`,
+                marginBottom: 16,
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: 18,
                   fontWeight: 600,
                   color: TEXT.primary,
                   marginBottom: 8,
                 }}
               >
-                Computational analysis of 10,000+ natural conflict narratives
-              </p>
+                Contribute
+              </h2>
               <p
                 style={{
                   fontSize: 14,
                   color: TEXT.secondary,
-                  lineHeight: 1.7,
-                  marginBottom: 12,
+                  lineHeight: 1.8,
+                  marginBottom: 16,
+                  maxWidth: 560,
                 }}
               >
-                De-escalators showed{" "}
-                <span style={{ color: ACCENT.mint, fontWeight: 700 }}>
-                  78% higher rates of complexity markers
-                </span>{" "}
-                than escalators — signs of self-awareness, perspective-taking,
-                and emotional differentiation in natural language.
+                Open research questions. Pick a lane that matches your
+                expertise: measurement, validation, theoretical review, or AI
+                alignment.
               </p>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 12,
-                }}
-              >
-                <StatBadge label="Source theories" value="139+" />
-                <StatBadge label="Narratives analyzed" value="10,000+" />
-                <StatBadge label="Frameworks" value="12" />
-              </div>
-            </div>
-
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
               <Link
-                href="/publications"
+                href="/research-entry"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 6,
+                  gap: 8,
                   fontSize: 14,
                   color: PRIMARY,
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
               >
-                Publications &rarr;
-              </Link>
-              <Link
-                href="/scientific-foundations"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6,
-                  fontSize: 14,
-                  color: PRIMARY,
-                  textDecoration: "none",
-                  fontWeight: 500,
-                }}
-              >
-                139+ Source Theories &rarr;
-              </Link>
-              <Link
-                href="/methodology"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6,
-                  fontSize: 14,
-                  color: PRIMARY,
-                  textDecoration: "none",
-                  fontWeight: 500,
-                }}
-              >
-                Methodology &rarr;
+                See open questions &rarr;
               </Link>
             </div>
-          </section>
 
-          {/* ─── For Researchers ─── */}
-          <section
-            style={{
-              padding: 24,
-              background: hexToRgba(PRIMARY, 0.06),
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(PRIMARY, 0.18)}`,
-              marginBottom: 32,
-            }}
-          >
-            <h2
+            <div
               style={{
-                fontSize: 18,
-                fontWeight: 600,
-                color: TEXT.primary,
-                marginBottom: 8,
+                padding: 24,
+                background: hexToRgba(PRIMARY, 0.06),
+                borderRadius: RADIUS.lg,
+                border: `1px solid ${hexToRgba(PRIMARY, 0.18)}`,
+                marginBottom: 32,
               }}
             >
-              For Researchers
-            </h2>
-            <p
-              style={{
-                fontSize: 14,
-                color: TEXT.secondary,
-                lineHeight: 1.8,
-                marginBottom: 16,
-                maxWidth: 560,
-              }}
-            >
-              Five open research questions, full methodology, and a standing
-              invitation to critique. Every claim is designed to be tested.
-            </p>
-            <Link
-              href="/research-entry"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "12px 24px",
-                background: PRIMARY,
-                color: TEXT.primary,
-                borderRadius: 8,
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              Research Entry Point &rarr;
-            </Link>
+              <h2
+                style={{
+                  fontSize: 18,
+                  fontWeight: 600,
+                  color: TEXT.primary,
+                  marginBottom: 8,
+                }}
+              >
+                Collaborate
+              </h2>
+              <p
+                style={{
+                  fontSize: 14,
+                  color: TEXT.secondary,
+                  lineHeight: 1.8,
+                  marginBottom: 16,
+                  maxWidth: 560,
+                }}
+              >
+                Clear attribution, clear authorship expectations, clear
+                boundaries. Open science as default.
+              </p>
+              <Link
+                href="/collaborate"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontSize: 14,
+                  color: PRIMARY,
+                  textDecoration: "none",
+                  fontWeight: 500,
+                }}
+              >
+                Learn more &rarr;
+              </Link>
+            </div>
           </section>
 
           {/* ─── Bridge to .com ─── */}

@@ -10,7 +10,7 @@ import {
   RADIUS,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { CONCEPTS, CONCEPT_GROUPS, GROUP_COLORS, CONCEPT_COLORS } from "@/src/data/concepts";
+import { CONCEPTS, CONCEPT_COLORS } from "@/src/data/concepts";
 
 export const metadata = {
   title: "Foundational Concepts — TEG-Blue Open Knowledge",
@@ -95,19 +95,8 @@ export default function ConceptsHubPage() {
               lineHeight: 1.2,
             }}
           >
-            13 Foundational Concepts
+            Foundational Concepts
           </h1>
-          <p
-            style={{
-              fontSize: 16,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-              marginBottom: 12,
-            }}
-          >
-            TEG-Blue is one system seen at three scales.
-          </p>
           <p
             style={{
               fontSize: 15,
@@ -117,122 +106,31 @@ export default function ConceptsHubPage() {
               marginBottom: 12,
             }}
           >
-            The concepts are the first scale — the ideas you can hold in your
-            hand. Each one reframes something you already experience: a feeling,
-            a pattern, a moment you recognize but may not have had words for.
-            Together, they build a complete picture of how the nervous system
-            shapes everything.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.tertiary,
-              lineHeight: 1.7,
-              maxWidth: 640,
-            }}
-          >
-            The{" "}
-            <Link href="/models" style={{ color: SPECTRUM.azure, textDecoration: "none" }}>
-              models
-            </Link>{" "}
-            make these patterns visible. The{" "}
-            <Link href="/frameworks-map" style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>
-              frameworks
-            </Link>{" "}
-            explain where they come from and where they lead.
+            Entry points into the system. They give immediate recognition,
+            introduce the core architecture, and model the non-pathologising
+            stance that runs through the entire system.
           </p>
         </header>
 
-        {/* Concept Groups */}
+        {/* All Concepts */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: 56,
+            gap: 0,
             marginBottom: 64,
+            borderRadius: RADIUS.lg,
+            overflow: "hidden",
           }}
         >
-          {CONCEPT_GROUPS.map((group, groupIdx) => {
-            const concepts = CONCEPTS.filter((c) => c.group === group.key);
-            const groupColor = GROUP_COLORS[group.key];
-            const isCapacities = group.key === "The Three Awareness Capacities";
-            const capacitiesGradient = "linear-gradient(90deg, #a080ff, #22d3ee, #a0e85a)";
-            return (
-              <section key={group.key}>
-                {/* Group header with accent bar */}
-                <div
-                  style={{
-                    padding: "24px 28px",
-                    background: hexToRgba(groupColor, 0.08),
-                    borderRadius: `${RADIUS.lg}px ${RADIUS.lg}px 0 0`,
-                    borderTop: isCapacities ? "none" : `3px solid ${groupColor}`,
-                    borderImage: isCapacities ? `${capacitiesGradient} 1` : undefined,
-                    borderTopWidth: isCapacities ? 3 : undefined,
-                    borderTopStyle: isCapacities ? "solid" : undefined,
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: 11,
-                      fontWeight: 700,
-                      fontFamily: FONT.mono,
-                      color: groupColor,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      marginBottom: 8,
-                    }}
-                  >
-                    Part {groupIdx + 1} of 3
-                  </p>
-                  <h2
-                    style={{
-                      fontSize: 22,
-                      fontWeight: 700,
-                      marginBottom: 10,
-                      ...(isCapacities
-                        ? {
-                            background: capacitiesGradient,
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                          }
-                        : { color: TEXT.primary }),
-                    }}
-                  >
-                    {group.key}
-                  </h2>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: TEXT.secondary,
-                      lineHeight: 1.7,
-                      maxWidth: 600,
-                    }}
-                  >
-                    {group.description}
-                  </p>
-                </div>
-
-                {/* Concept rows */}
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 0,
-                  }}
-                >
-                  {concepts.map((concept, i) => (
-                    <ConceptRow
-                      key={concept.id}
-                      concept={concept}
-                      conceptColor={CONCEPT_COLORS[concept.number - 1]}
-                      isLast={i === concepts.length - 1}
-                    />
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+          {CONCEPTS.map((concept, i) => (
+            <ConceptRow
+              key={concept.id}
+              concept={concept}
+              conceptColor={CONCEPT_COLORS[concept.number - 1]}
+              isLast={i === CONCEPTS.length - 1}
+            />
+          ))}
         </div>
 
         {/* Go Deeper */}

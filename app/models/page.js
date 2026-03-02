@@ -59,11 +59,8 @@ export default function ModelsIndexPage() {
               marginBottom: 12,
             }}
           >
-            The{" "}
-            <Link href="/concepts" style={{ color: SPECTRUM.sky, textDecoration: "none" }}>
-              concepts
-            </Link>{" "}
-            name the patterns. The models make them visible.
+            The models are instruments. They answer: what is the nervous system
+            doing right now, and what does that make available?
           </p>
           <p
             style={{
@@ -74,21 +71,11 @@ export default function ModelsIndexPage() {
               marginBottom: 12,
             }}
           >
-            One model is the instrument — a compass that tracks where the
-            nervous system is right now. The other is the calibration — the
-            three capacities that determine how accurately that compass reads.
-          </p>
-          <p
-            style={{
-              fontSize: 16,
-              color: TEXT.primary,
-              lineHeight: 1.6,
-              maxWidth: 640,
-              fontWeight: 500,
-            }}
-          >
-            One tells you where the needle is. The other tells you why it is
-            there.
+            They provide the visual-conceptual architecture that makes the
+            nervous system&rsquo;s continuous safety/threat evaluation visible
+            and usable. A single architecture for tracking where someone is on
+            the gradient, which direction they&rsquo;re moving, and what
+            capacity is available from that position.
           </p>
         </header>
 
