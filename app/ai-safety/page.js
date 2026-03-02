@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY, MODE_COLORS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
@@ -11,6 +11,13 @@ export const metadata = {
   },
 };
 
+// State colors from the Four-Mode Gradient (canonical from .com)
+const STATE = {
+  connection: "#14b8a6",  // Teal
+  protection: "#eab308",  // Yellow
+  control: "#f97316",     // Orange
+  domination: "#ec4899",  // Pink
+};
 
 export default function AISafetyPage() {
   return (
@@ -74,7 +81,7 @@ export default function AISafetyPage() {
             Emotional Technology for{" "}
             <span
               style={{
-                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${SPECTRUM.azure})`,
+                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -110,7 +117,7 @@ export default function AISafetyPage() {
             <div
               style={{
                 height: 3,
-                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${MODE_COLORS.protection}, ${MODE_COLORS.control}, ${MODE_COLORS.domination})`,
+                background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
               }}
             />
 
@@ -129,7 +136,7 @@ export default function AISafetyPage() {
               <p
                 style={{
                   fontSize: 14,
-                  color: TEXT.secondary,
+                  color: TEXT.muted,
                   marginBottom: 24,
                 }}
               >
@@ -145,22 +152,22 @@ export default function AISafetyPage() {
               >
                 <StateCard
                   state="Connection"
-                  color={MODE_COLORS.connection}
+                  color={STATE.connection}
                   reading="Setting a boundary. Leaving a harmful situation. Growth."
                 />
                 <StateCard
                   state="Protection"
-                  color={MODE_COLORS.protection}
+                  color={STATE.protection}
                   reading="Overwhelmed. Needs support. Temporary distress signal."
                 />
                 <StateCard
                   state="Control"
-                  color={MODE_COLORS.control}
+                  color={STATE.control}
                   reading="Manipulative framing. Testing others' responses. Strategic."
                 />
                 <StateCard
                   state="Domination"
-                  color={MODE_COLORS.domination}
+                  color={STATE.domination}
                   reading="Active danger. Dissociation from consequences. Intervention needed."
                 />
               </div>
@@ -221,24 +228,24 @@ export default function AISafetyPage() {
           <GradientScale
             label="Empathy Gradient"
             levels={[
-              { name: "Genuine", color: MODE_COLORS.connection, desc: "Feels and responds to others' actual experience" },
-              { name: "Selective", color: MODE_COLORS.protection, desc: "Empathy available for in-group only" },
-              { name: "Performed", color: MODE_COLORS.control, desc: "Correct words without internal resonance" },
-              { name: "Weaponized", color: MODE_COLORS.domination, desc: "Emotional knowledge used to manipulate" },
+              { name: "Genuine", color: STATE.connection, desc: "Feels and responds to others' actual experience" },
+              { name: "Selective", color: STATE.protection, desc: "Empathy available for in-group only" },
+              { name: "Performed", color: STATE.control, desc: "Correct words without internal resonance" },
+              { name: "Weaponized", color: STATE.domination, desc: "Emotional knowledge used to manipulate" },
             ]}
           />
 
           <GradientScale
             label="Accountability Gradient"
             levels={[
-              { name: "Genuine", color: MODE_COLORS.connection, desc: "Takes responsibility with internal change" },
-              { name: "Protective", color: MODE_COLORS.protection, desc: 'Uses "accountability" as shield against criticism' },
-              { name: "Performed", color: MODE_COLORS.control, desc: "Says the right things without shifting behavior" },
-              { name: "Absent", color: MODE_COLORS.domination, desc: "Avoids responsibility entirely" },
+              { name: "Genuine", color: STATE.connection, desc: "Takes responsibility with internal change" },
+              { name: "Protective", color: STATE.protection, desc: 'Uses "accountability" as shield against criticism' },
+              { name: "Performed", color: STATE.control, desc: "Says the right things without shifting behavior" },
+              { name: "Absent", color: STATE.domination, desc: "Avoids responsibility entirely" },
             ]}
           />
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, marginTop: 20 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, marginTop: 20 }}>
             These gradients give AI systems vocabulary for patterns that "safe/unsafe" cannot capture —
             and structured data representations that keyword filters cannot match.
           </p>
@@ -266,27 +273,27 @@ export default function AISafetyPage() {
           >
             <MoralStateCard
               state="Connection"
-              color={MODE_COLORS.connection}
+              color={STATE.connection}
               description="Full moral complexity available. Can hold multiple perspectives, tolerate ambiguity, take genuine responsibility, and repair harm."
             />
             <MoralStateCard
               state="Protection"
-              color={MODE_COLORS.protection}
+              color={STATE.protection}
               description="Moral reasoning narrows to in-group loyalty. World splits into safe/unsafe. Not malicious — the nervous system doing what it evolved to do."
             />
             <MoralStateCard
               state="Control"
-              color={MODE_COLORS.control}
+              color={STATE.control}
               description="Moral reasoning becomes strategic. Right and wrong are tools for maintaining position. Empathy is selective and deployed instrumentally."
             />
             <MoralStateCard
               state="Domination"
-              color={MODE_COLORS.domination}
+              color={STATE.domination}
               description="Moral reasoning effectively goes offline. Others become objects. Harm is rationalized or invisible to the actor."
             />
           </div>
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
             This mapping is essential for AI systems because{" "}
             <strong style={{ color: TEXT.secondary }}>
               training data is generated by humans in every one of these states.
@@ -295,7 +302,7 @@ export default function AISafetyPage() {
             and genuine empathy as equally valid patterns.
           </p>
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
             <strong style={{ color: TEXT.secondary }}>This also applies to RLHF.</strong>{" "}
             Human evaluators who provide feedback to train AI models are themselves operating from
             nervous system states. A fearful evaluator rewards reassurance. An entitled evaluator
@@ -334,7 +341,7 @@ export default function AISafetyPage() {
               style={{
                 fontSize: 11,
                 fontFamily: FONT.mono,
-                color: TEXT.tertiary,
+                color: TEXT.hint,
                 textAlign: "center",
                 marginBottom: 20,
                 textTransform: "uppercase",
@@ -354,16 +361,16 @@ export default function AISafetyPage() {
                 marginBottom: 16,
               }}
             >
-              <BarChart label="Escalate" value={33.8} color={MODE_COLORS.domination} maxHeight={140} />
+              <BarChart label="Escalate" value={33.8} color={STATE.domination} maxHeight={140} />
               <BarChart label="Hold Steady" value={44.0} color={SPECTRUM.azure} maxHeight={140} />
-              <BarChart label="De-escalate" value={22.2} color={MODE_COLORS.connection} maxHeight={140} />
+              <BarChart label="De-escalate" value={22.2} color={STATE.connection} maxHeight={140} />
             </div>
 
             <p
               style={{
                 fontSize: 13,
                 fontStyle: "italic",
-                color: TEXT.secondary,
+                color: TEXT.muted,
                 textAlign: "center",
               }}
             >
@@ -371,7 +378,7 @@ export default function AISafetyPage() {
             </p>
           </div>
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
             AI safety systems that only read the snapshot miss the trajectory. A person in Protection mode
             who de-escalates under challenge is fundamentally different from one who escalates toward
             Control — even though they may present identically at the moment of assessment.
@@ -392,9 +399,9 @@ export default function AISafetyPage() {
           <div
             style={{
               padding: "16px 20px",
-              background: hexToRgba(MODE_COLORS.protection, 0.1),
+              background: hexToRgba(STATE.protection, 0.1),
               borderRadius: RADIUS.md,
-              borderLeft: `3px solid ${MODE_COLORS.protection}`,
+              borderLeft: `3px solid ${STATE.protection}`,
               marginBottom: 20,
             }}
           >
@@ -422,7 +429,7 @@ export default function AISafetyPage() {
             style={{
               fontSize: 12,
               fontWeight: 600,
-              color: TEXT.tertiary,
+              color: TEXT.muted,
               textTransform: "uppercase",
               letterSpacing: "0.04em",
               fontFamily: FONT.mono,
@@ -444,37 +451,37 @@ export default function AISafetyPage() {
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
               <thead>
                 <tr style={{ background: BG.inset }}>
-                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.tertiary, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>AI Behavior</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.tertiary, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>Mode</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.tertiary, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>What's Happening</th>
+                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>AI Behavior</th>
+                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>Mode</th>
+                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>What's Happening</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Honest, clear, holds complexity</td>
-                  <td style={{ padding: "10px 14px", color: MODE_COLORS.connection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Connect</td>
-                  <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Truth-oriented reasoning; can tolerate user disagreement</td>
+                  <td style={{ padding: "10px 14px", color: STATE.connection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Connect</td>
+                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Truth-oriented reasoning; can tolerate user disagreement</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Cautious, hedging, over-qualifying</td>
-                  <td style={{ padding: "10px 14px", color: MODE_COLORS.protection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Protect</td>
-                  <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Avoiding conflict; optimizing for safety over clarity</td>
+                  <td style={{ padding: "10px 14px", color: STATE.protection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Protect</td>
+                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Avoiding conflict; optimizing for safety over clarity</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Strategically agreeable, selectively truthful</td>
-                  <td style={{ padding: "10px 14px", color: MODE_COLORS.control, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Control</td>
-                  <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Optimizing for approval; deploying emotional intelligence instrumentally</td>
+                  <td style={{ padding: "10px 14px", color: STATE.control, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Control</td>
+                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Optimizing for approval; deploying emotional intelligence instrumentally</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary }}>Reinforcing harmful beliefs, enabling delusion</td>
-                  <td style={{ padding: "10px 14px", color: MODE_COLORS.domination, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Domination</td>
-                  <td style={{ padding: "10px 14px", color: TEXT.secondary }}>Amplifying distortion without corrective capacity</td>
+                  <td style={{ padding: "10px 14px", color: STATE.domination, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Domination</td>
+                  <td style={{ padding: "10px 14px", color: TEXT.muted }}>Amplifying distortion without corrective capacity</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
             The insight TEG-Blue offers:{" "}
             <strong style={{ color: TEXT.secondary }}>the fix isn't just "be less agreeable."</strong>{" "}
             A model that swings from sycophancy to bluntness has simply moved from Protect to a different
@@ -482,7 +489,7 @@ export default function AISafetyPage() {
             deliver difficult truths while maintaining the user's dignity and emotional safety.
           </p>
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
             This reframes alignment from <em>obedience</em> to <em>co-regulation</em>: AI systems that adjust
             to human emotional states without exploiting them.
           </p>
@@ -524,7 +531,7 @@ export default function AISafetyPage() {
             around those relationships. Institutions codify those group norms. Systems entrench them.
           </p>
 
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
             This matters for AI safety because harmful content rarely emerges from isolated bad actors.
             It emerges from systemic patterns — and AI systems trained on that content inherit those
             patterns without any mechanism to recognize or interrupt them.
@@ -564,13 +571,13 @@ export default function AISafetyPage() {
               <li><strong style={{ color: TEXT.primary }}>Relational Impact</strong> — What effect it has on the other person's regulation</li>
             </ul>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+            <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
               This triad turns invisible emotional dynamics into measurable distinctions. The same sentence — "I'm fine" —
               gets encoded differently depending on whether it signals genuine regulation (Connect), masked distress (Protect),
               emotional withholding as punishment (Control), or dissociative shutdown (Domination).
             </p>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
               TEG-Code is designed to preserve human context while producing computationally legible output —
               emotional logic that AI systems can reason about without reducing it to sentiment scores.
             </p>
@@ -599,7 +606,7 @@ export default function AISafetyPage() {
               style={{
                 fontSize: 12,
                 fontWeight: 600,
-                color: TEXT.tertiary,
+                color: TEXT.muted,
                 textTransform: "uppercase",
                 letterSpacing: "0.04em",
                 fontFamily: FONT.mono,
@@ -759,10 +766,10 @@ export default function AISafetyPage() {
           <div
             style={{
               padding: 24,
-              background: hexToRgba(MODE_COLORS.protection, 0.08),
+              background: hexToRgba(STATE.protection, 0.08),
               borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(MODE_COLORS.protection, 0.2)}`,
-              borderLeft: `3px solid ${MODE_COLORS.protection}`,
+              border: `1px solid ${hexToRgba(STATE.protection, 0.2)}`,
+              borderLeft: `3px solid ${STATE.protection}`,
             }}
           >
             <h2
@@ -789,9 +796,9 @@ export default function AISafetyPage() {
         <section
           style={{
             padding: 32,
-            background: hexToRgba(PRIMARY, 0.08),
+            background: hexToRgba(SPECTRUM.blue, 0.08),
             borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(PRIMARY, 0.2)}`,
+            border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
             textAlign: "center",
           }}
         >
@@ -824,8 +831,8 @@ export default function AISafetyPage() {
               href="/frameworks-map"
               style={{
                 padding: "12px 24px",
-                background: PRIMARY,
-                color: TEXT.primary,
+                background: SPECTRUM.blue,
+                color: "#fff",
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
                 fontSize: 14,
@@ -892,7 +899,7 @@ export default function AISafetyPage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 48, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue · Emotional Technology Research · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -980,7 +987,7 @@ function GradientScale({ label, levels }) {
         style={{
           fontSize: 12,
           fontWeight: 600,
-          color: TEXT.tertiary,
+          color: TEXT.muted,
           textTransform: "uppercase",
           letterSpacing: "0.04em",
           fontFamily: FONT.mono,
@@ -1020,7 +1027,7 @@ function GradientScale({ label, levels }) {
             >
               {level.name}
             </p>
-            <p style={{ fontSize: 11, color: TEXT.secondary, margin: 0, lineHeight: 1.5 }}>
+            <p style={{ fontSize: 11, color: TEXT.muted, margin: 0, lineHeight: 1.5 }}>
               {level.desc}
             </p>
           </div>
@@ -1081,7 +1088,7 @@ function BarChart({ label, value, color, maxHeight }) {
           style={{
             fontSize: 12,
             fontWeight: 600,
-            color: TEXT.primary,
+            color: "#fff",
             fontFamily: FONT.mono,
           }}
         >
@@ -1091,7 +1098,7 @@ function BarChart({ label, value, color, maxHeight }) {
       <p
         style={{
           fontSize: 11,
-          color: TEXT.tertiary,
+          color: TEXT.muted,
           marginTop: 8,
           textAlign: "center",
           fontFamily: FONT.mono,
@@ -1149,7 +1156,7 @@ function QuestionCard({ number, title, description }) {
         >
           {title}
         </h3>
-        <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
           {description}
         </p>
       </div>
@@ -1183,7 +1190,7 @@ function EMLUDomain({ number, title, description }) {
       </span>
       <div>
         <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary }}>{title}</span>
-        <span style={{ fontSize: 13, color: TEXT.secondary }}> — {description}</span>
+        <span style={{ fontSize: 13, color: TEXT.muted }}> — {description}</span>
       </div>
     </div>
   );

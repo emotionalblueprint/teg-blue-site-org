@@ -45,9 +45,9 @@
     },
     {
       "type": "defines",
-      "targetSlug": "false-coherence",
+      "targetSlug": "role-mask",
       "targetType": "glossary",
-      "label": "Informs: False Coherence"
+      "label": "Informs: Role Mask"
     }
   ],
 

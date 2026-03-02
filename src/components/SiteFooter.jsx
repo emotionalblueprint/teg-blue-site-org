@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { TEXT, SPACING, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { TEXT, SPACING, FONT, SPECTRUM } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
 
 /**
@@ -20,33 +20,33 @@ export default function SiteFooter() {
     >
       <SpectrumBar />
 
-      <p style={{ fontSize: 11, color: TEXT.tertiary, marginTop: 16 }}>
+      <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
         TEG-Blue · Emotional Technology Research · Open Science
       </p>
 
-      <p style={{ fontSize: 10, color: TEXT.tertiary, marginTop: 8, lineHeight: 1.8 }}>
-        <span style={{ color: TEXT.tertiary, marginRight: 4 }}>Concepts:</span>
-        <Link href="/emotional-technology" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+      <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 8, lineHeight: 1.8 }}>
+        <span style={{ color: TEXT.hint, marginRight: 4 }}>Concepts:</span>
+        <Link href="/emotional-technology" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Emotional Technology
         </Link>
       </p>
 
-      <p style={{ fontSize: 10, color: TEXT.tertiary, marginTop: 8, lineHeight: 1.8 }}>
-        <Link href="/citations" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+      <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 8, lineHeight: 1.8 }}>
+        <Link href="/citations" style={{ color: TEXT.hint, textDecoration: "none" }}>
           How to cite
         </Link>
         {" · "}
-        <Link href="/collaborate" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+        <Link href="/collaborate" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Collaborate
         </Link>
         {" · "}
-        <Link href="/methodology" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+        <Link href="/methodology" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Methodology
         </Link>
         {" · "}
         <a
           href="https://github.com/emotionalblueprint/ai-safety"
-          style={{ color: TEXT.tertiary, textDecoration: "none" }}
+          style={{ color: TEXT.hint, textDecoration: "none" }}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -59,9 +59,9 @@ export default function SiteFooter() {
         style={{
           marginTop: 20,
           padding: "12px 16px",
-          background: hexToRgba(SPECTRUM.azure, 0.08),
+          background: "rgba(74, 155, 232, 0.08)",
           borderRadius: 8,
-          border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+          border: "1px solid rgba(74, 155, 232, 0.15)",
           maxWidth: 400,
           margin: "20px auto 0",
         }}
@@ -82,7 +82,7 @@ export default function SiteFooter() {
         >
           Explore TEG-Blue.com →
         </a>
-        <p style={{ fontSize: 10, color: TEXT.tertiary, marginTop: 6 }}>
+        <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 6 }}>
           Circuit Board · Four-Mode Gradient · Emotional Tools
         </p>
       </div>
@@ -92,7 +92,7 @@ export default function SiteFooter() {
           marginTop: 16,
           fontSize: 10,
           fontFamily: FONT.mono,
-          color: TEXT.tertiary,
+          color: TEXT.micro,
         }}
       >
         CC-BY-NC-SA-4.0

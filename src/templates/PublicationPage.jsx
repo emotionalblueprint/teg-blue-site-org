@@ -83,7 +83,7 @@ export default function PublicationPage({ node }) {
               marginTop: 8,
               fontFamily: FONT.mono,
               fontSize: 12,
-              color: TEXT.tertiary,
+              color: TEXT.hint,
             }}
           >
             <span itemProp="author">{node.author}</span>
@@ -142,7 +142,7 @@ export default function PublicationPage({ node }) {
                 fontFamily: FONT.display,
                 fontSize: 13,
                 fontWeight: 600,
-                color: TEXT.tertiary,
+                color: TEXT.muted,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginBottom: 14,

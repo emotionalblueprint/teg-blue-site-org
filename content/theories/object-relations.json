@@ -21,7 +21,7 @@
     {
       "id": "teg-blue-integration",
       "title": "How TEG-Blue Integrates This",
-      "content": "TEG-Blue translates Winnicott into nervous system terms. The baseline emotional-somatic configuration is present at birth — innate rhythms, sensitivities, and awareness capacities in proto-form. The adaptive identity is the cognitive-behavioural structure built when authentic expression was not safe. Framework 2 maps this formation process: how unpredictable, incongruent, or invalidating environments shape identity as protection rather than expression."
+      "content": "TEG-Blue translates Winnicott into nervous system terms. The Real Self is the baseline emotional-somatic configuration present at birth — innate rhythms, sensitivities, and capacities. The Role Mask is the cognitive-behavioral structure built when the Real Self couldn't be safely expressed. Framework 2 maps this formation process: how unpredictable, incongruent, or invalidating environments shape identity as protection rather than expression."
     },
     {
       "id": "key-sources",
@@ -45,15 +45,15 @@
     },
     {
       "type": "defines",
-      "targetSlug": "awareness-capacities",
+      "targetSlug": "real-self",
       "targetType": "glossary",
-      "label": "Informs: Awareness Capacities"
+      "label": "Informs: Real Self"
     },
     {
       "type": "defines",
-      "targetSlug": "false-coherence",
+      "targetSlug": "role-mask",
       "targetType": "glossary",
-      "label": "Informs: False Coherence"
+      "label": "Informs: Role Mask"
     }
   ],
 

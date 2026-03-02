@@ -156,7 +156,7 @@ export default function GlossaryList({ terms = [] }) {
               display: "block",
               fontSize: 11,
               fontFamily: FONT.mono,
-              color: TEXT.tertiary,
+              color: TEXT.muted,
               marginBottom: 6,
               textTransform: "uppercase",
               letterSpacing: "0.05em",
@@ -177,7 +177,7 @@ export default function GlossaryList({ terms = [] }) {
               borderRadius: 6,
               cursor: "pointer",
               appearance: "none",
-              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C4D0DC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right 10px center",
               minWidth: 180,
@@ -196,7 +196,7 @@ export default function GlossaryList({ terms = [] }) {
       <div
         style={{
           fontSize: 12,
-          color: TEXT.tertiary,
+          color: TEXT.hint,
           marginBottom: 16,
           fontFamily: FONT.mono,
         }}
@@ -228,7 +228,7 @@ export default function GlossaryList({ terms = [] }) {
                 }}
               >
                 <span>{groupName}</span>
-                <span style={{ color: TEXT.tertiary, fontWeight: 400 }}>
+                <span style={{ color: TEXT.hint, fontWeight: 400 }}>
                   ({groupTerms.length})
                 </span>
               </div>
@@ -251,7 +251,7 @@ export default function GlossaryList({ terms = [] }) {
             style={{
               padding: 40,
               textAlign: "center",
-              color: TEXT.secondary,
+              color: TEXT.muted,
               background: BG.card,
               borderRadius: 8,
               border: `1px solid ${BORDER.default}`,
@@ -336,7 +336,7 @@ function GlossaryTerm({ term }) {
                   background: hexToRgba(color, 0.08),
                   fontSize: 10,
                   fontFamily: FONT.mono,
-                  color: TEXT.tertiary,
+                  color: TEXT.muted,
                 }}
               >
                 {tag}

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, PRIMARY, hexToRgba } from "../styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
 
 /**
@@ -54,7 +54,7 @@ export default function ResearchLayout({ children, currentPath = "" }) {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: TEXT.tertiary,
+                color: TEXT.hint,
                 textDecoration: "none",
               }}
             >
@@ -105,14 +105,13 @@ export default function ResearchLayout({ children, currentPath = "" }) {
                 href={item.href}
                 style={{
                   padding: "12px 20px",
-                  fontFamily: FONT.mono,
+                  fontFamily: FONT.display,
                   fontSize: 13,
-                  fontWeight: 500,
-                  letterSpacing: "0.02em",
-                  color: isActive ? TEXT.primary : TEXT.tertiary,
+                  fontWeight: 600,
+                  color: isActive ? TEXT.primary : TEXT.hint,
                   textDecoration: "none",
                   borderBottom: isActive
-                    ? `2px solid ${PRIMARY}`
+                    ? `2px solid ${SPECTRUM.blue}`
                     : "2px solid transparent",
                   transition: `all ${TRANSITION.normal}`,
                   whiteSpace: "nowrap",
@@ -147,19 +146,19 @@ export default function ResearchLayout({ children, currentPath = "" }) {
         }}
       >
         <SpectrumBar />
-        <p style={{ fontSize: 11, color: TEXT.tertiary, marginTop: 16 }}>
+        <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
           TEG-Blue Research Consortium · Open Science
         </p>
-        <p style={{ fontSize: 10, color: TEXT.tertiary, marginTop: 4 }}>
-          <Link href="/research/citations" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+        <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 4 }}>
+          <Link href="/research/citations" style={{ color: TEXT.hint, textDecoration: "none" }}>
             How to cite
           </Link>
           {" · "}
-          <Link href="/research/collaborate" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+          <Link href="/research/collaborate" style={{ color: TEXT.hint, textDecoration: "none" }}>
             Collaborate
           </Link>
           {" · "}
-          <Link href="/legal/copyright" style={{ color: TEXT.tertiary, textDecoration: "none" }}>
+          <Link href="/legal/copyright" style={{ color: TEXT.hint, textDecoration: "none" }}>
             Rights
           </Link>
         </p>

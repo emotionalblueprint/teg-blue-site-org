@@ -3,43 +3,57 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { SpectrumBar } from "./SharedComponents";
 
 /**
- * SiteHeader — Unified two-tier header for teg-blue.org
- *
- * Tier 1: Identity (TEG-Blue · Open Knowledge) + utility nav (Research▾, Glossary, About, .com)
- * Tier 2: Section nav (Concepts — Models — Frameworks) with active highlight
+ * SiteHeader — Main navigation header for teg-blue.org
  */
 
-const RESEARCH_DROPDOWN = [
-  { label: "For Researchers", href: "/research-entry" },
-  { label: "Scientific Foundations", href: "/scientific-foundations" },
-  { label: "Publications", href: "/publications" },
-  { label: "Methodology", href: "/methodology" },
-  { label: "Collaborate", href: "/collaborate" },
-  { label: "AI Safety", href: "/ai-safety" },
+const NAV_ITEMS = [
+  { label: "Hub", href: "/" },
+  { label: "Start Here", href: "/research-entry" },
+  {
+    label: "Theory",
+    dropdown: [
+      { label: "System Overview", href: "/foundations" },
+      { label: "Epistemological Foundations", href: "/epistemological-foundations" },
+      { label: "Four-Mode Gradient", href: "/four-mode-gradient" },
+      { label: "12 Frameworks", href: "/frameworks-map" },
+    ],
+  },
+  {
+    label: "Research",
+    dropdown: [
+      { label: "Scientific Foundations", href: "/scientific-foundations" },
+      { label: "Publications", href: "/publications" },
+      { label: "Methodology", href: "/methodology" },
+    ],
+  },
+  {
+    label: "Engage",
+    dropdown: [
+      { label: "AI Safety", href: "/ai-safety" },
+      { label: "Collaborate", href: "/collaborate" },
+      { label: "About", href: "/about" },
+    ],
+  },
+  { label: "Glossary", href: "/glossary" },
 ];
-
-const SECTIONS = [
-  { key: "concepts", label: "Concepts", href: "/concepts", color: SPECTRUM.sky },
-  { key: "models", label: "Models", href: "/models", color: SPECTRUM.azure },
-  { key: "frameworks", label: "Frameworks", href: "/frameworks-map", color: SPECTRUM.cobalt },
-];
-
-function getActiveSection(path) {
-  if (path.startsWith("/concepts")) return "concepts";
-  if (path.startsWith("/models")) return "models";
-  if (path.startsWith("/frameworks-map") || path.startsWith("/frameworks/") || path.startsWith("/frameworks")) return "frameworks";
-  return null;
-}
 
 export default function SiteHeader({ currentPath = "/" }) {
-  const [researchOpen, setResearchOpen] = useState(false);
-  const activeSection = getActiveSection(currentPath);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
-  const isResearchActive = RESEARCH_DROPDOWN.some(
-    (item) => currentPath === item.href || currentPath.startsWith(item.href + "/")
-  );
+  const isItemActive = (item) => {
+    if (item.href) {
+      return currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
+    }
+    if (item.dropdown) {
+      return item.dropdown.some(
+        (sub) => currentPath === sub.href || currentPath.startsWith(sub.href)
+      );
+    }
+    return false;
+  };
 
   return (
     <header
@@ -48,162 +62,75 @@ export default function SiteHeader({ currentPath = "/" }) {
         borderBottom: `1px solid ${BORDER.default}`,
       }}
     >
-      {/* Tier 1: Identity + Utility */}
       <div
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "12px 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-          flexWrap: "wrap",
+          padding: "20px 24px 0",
         }}
       >
-        {/* Left: Identity */}
-        <Link
-          href="/"
-          style={{
-            fontFamily: FONT.mono,
-            fontSize: 13,
-            fontWeight: 600,
-            letterSpacing: "0.02em",
-            color: TEXT.primary,
-            textDecoration: "none",
-            whiteSpace: "nowrap",
-          }}
-        >
-          TEG-Blue{" "}
-          <span style={{ color: TEXT.tertiary, fontWeight: 400 }}>·</span>{" "}
-          <span style={{ fontWeight: 400, color: TEXT.secondary }}>Open Knowledge</span>
-        </Link>
+        <SpectrumBar />
 
-        {/* Right: Utility nav */}
-        <nav
-          aria-label="Utility navigation"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 0,
-          }}
-        >
-          {/* Research dropdown */}
-          <div
-            style={{ position: "relative" }}
-            onMouseEnter={() => setResearchOpen(true)}
-            onMouseLeave={() => setResearchOpen(false)}
-          >
-            <button
+        {/* Logo + Title */}
+        <div style={{ marginTop: 16, marginBottom: 16 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
+            <Link
+              href="https://teg-blue.com"
               style={{
-                padding: "6px 14px",
                 fontFamily: FONT.mono,
-                fontSize: 12,
-                fontWeight: 500,
-                letterSpacing: "0.02em",
-                color: isResearchActive ? TEXT.primary : TEXT.tertiary,
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: 4,
-                transition: `color ${TRANSITION.fast}`,
-                whiteSpace: "nowrap",
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: TEXT.hint,
+                textDecoration: "none",
               }}
-              onClick={() => setResearchOpen(!researchOpen)}
             >
-              Research
-              <svg
-                width="9"
-                height="9"
-                viewBox="0 0 10 10"
-                fill="none"
-                style={{
-                  transform: researchOpen ? "rotate(180deg)" : "rotate(0deg)",
-                  transition: `transform ${TRANSITION.fast}`,
-                }}
-              >
-                <path
-                  d="M2 4L5 7L8 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            {researchOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  right: 0,
-                  minWidth: 200,
-                  background: BG.primary,
-                  border: `1px solid ${BORDER.default}`,
-                  borderRadius: 6,
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                  zIndex: 100,
-                  padding: "6px 0",
-                }}
-              >
-                {RESEARCH_DROPDOWN.map((item) => {
-                  const isActive = currentPath === item.href || currentPath.startsWith(item.href + "/");
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      style={{
-                        display: "block",
-                        padding: "10px 16px",
-                        fontFamily: FONT.mono,
-                        fontSize: 12,
-                        fontWeight: isActive ? 600 : 500,
-                        color: isActive ? TEXT.primary : TEXT.secondary,
-                        textDecoration: "none",
-                        transition: `all ${TRANSITION.fast}`,
-                        background: isActive ? hexToRgba(SPECTRUM.azure, 0.08) : "transparent",
-                      }}
-                      onClick={() => setResearchOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
+              TEG-Blue
+            </Link>
+            <span style={{ color: TEXT.micro }}>·</span>
+            <a
+              href="https://teg-blue.com"
+              style={{
+                fontFamily: FONT.mono,
+                fontSize: 9,
+                color: SPECTRUM.azure,
+                textDecoration: "none",
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Interactive tools on .com →
+            </a>
           </div>
-
-          <UtilityLink href="/glossary" label="Glossary" currentPath={currentPath} />
-          <UtilityLink href="/about" label="About" currentPath={currentPath} />
-
-          <a
-            href="https://teg-blue.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h1
             style={{
-              padding: "6px 14px",
-              fontFamily: FONT.mono,
-              fontSize: 11,
-              fontWeight: 500,
-              letterSpacing: "0.02em",
-              color: SPECTRUM.azure,
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-              transition: `color ${TRANSITION.fast}`,
+              fontSize: 24,
+              fontWeight: 700,
+              color: TEXT.primary,
+              margin: "4px 0 0",
+              letterSpacing: "-0.02em",
             }}
           >
-            .com &rarr;
-          </a>
-        </nav>
+            Research Platform
+          </h1>
+          <p
+            style={{
+              fontSize: 13,
+              color: TEXT.muted,
+              marginTop: 4,
+            }}
+          >
+            Open science for emotional technology research
+          </p>
+        </div>
       </div>
 
-      {/* Tier 2: Section Nav */}
+      {/* Navigation */}
       <nav
-        aria-label="Section navigation"
+        aria-label="Main navigation"
         style={{
+          background: BG.primary,
           borderTop: `1px solid ${BORDER.default}`,
         }}
       >
@@ -213,59 +140,127 @@ export default function SiteHeader({ currentPath = "/" }) {
             margin: "0 auto",
             padding: "0 24px",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             gap: 0,
           }}
         >
-          {SECTIONS.map((section, i) => {
-            const isActive = section.key === activeSection;
-            const inner = (
-              <span
-                style={{
-                  display: "inline-block",
-                  padding: "10px 0",
-                  fontSize: 12,
-                  fontWeight: isActive ? 700 : 400,
-                  fontFamily: FONT.mono,
-                  letterSpacing: "0.02em",
-                  color: isActive ? section.color : TEXT.tertiary,
-                  borderBottom: isActive
-                    ? `2px solid ${section.color}`
-                    : "2px solid transparent",
-                  transition: `color ${TRANSITION.fast}, border-color ${TRANSITION.fast}`,
-                }}
-              >
-                {section.label}
-              </span>
-            );
+          {NAV_ITEMS.map((item) => {
+            const isActive = isItemActive(item);
 
+            // Simple link item
+            if (item.href) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{
+                    padding: "12px 20px",
+                    fontFamily: FONT.display,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: isActive ? TEXT.primary : TEXT.hint,
+                    textDecoration: "none",
+                    borderBottom: isActive
+                      ? `2px solid ${SPECTRUM.blue}`
+                      : "2px solid transparent",
+                    transition: `all ${TRANSITION.normal}`,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
+            // Dropdown item
             return (
               <div
-                key={section.key}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
+                key={item.label}
+                style={{ position: "relative" }}
+                onMouseEnter={() => setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {i > 0 && (
-                  <span
+                <button
+                  style={{
+                    padding: "12px 20px",
+                    fontFamily: FONT.display,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: isActive ? TEXT.primary : TEXT.hint,
+                    background: "none",
+                    border: "none",
+                    borderBottom: isActive
+                      ? `2px solid ${SPECTRUM.blue}`
+                      : "2px solid transparent",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    transition: `all ${TRANSITION.normal}`,
+                    whiteSpace: "nowrap",
+                  }}
+                  onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                >
+                  {item.label}
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
                     style={{
-                      display: "inline-block",
-                      width: 32,
-                      height: 1,
-                      background: hexToRgba(TEXT.tertiary, 0.3),
-                      margin: "0 16px",
-                      flexShrink: 0,
+                      transform: openDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: `transform ${TRANSITION.fast}`,
                     }}
-                  />
-                )}
-                {isActive ? (
-                  <span style={{ cursor: "default" }}>{inner}</span>
-                ) : (
-                  <Link href={section.href} style={{ textDecoration: "none" }}>
-                    {inner}
-                  </Link>
+                  >
+                    <path
+                      d="M2 4L5 7L8 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown menu */}
+                {openDropdown === item.label && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      minWidth: 180,
+                      background: BG.primary,
+                      border: `1px solid ${BORDER.default}`,
+                      borderRadius: 6,
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                      zIndex: 100,
+                      padding: "6px 0",
+                    }}
+                  >
+                    {item.dropdown.map((subItem) => {
+                      const subActive = currentPath === subItem.href || currentPath.startsWith(subItem.href);
+                      return (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          style={{
+                            display: "block",
+                            padding: "10px 16px",
+                            fontFamily: FONT.display,
+                            fontSize: 13,
+                            fontWeight: subActive ? 600 : 500,
+                            color: subActive ? TEXT.primary : TEXT.secondary,
+                            textDecoration: "none",
+                            transition: `all ${TRANSITION.fast}`,
+                            background: subActive ? hexToRgba(SPECTRUM.blue, 0.08) : "transparent",
+                          }}
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 )}
               </div>
             );
@@ -273,27 +268,5 @@ export default function SiteHeader({ currentPath = "/" }) {
         </div>
       </nav>
     </header>
-  );
-}
-
-function UtilityLink({ href, label, currentPath }) {
-  const isActive = currentPath === href || currentPath.startsWith(href + "/");
-  return (
-    <Link
-      href={href}
-      style={{
-        padding: "6px 14px",
-        fontFamily: FONT.mono,
-        fontSize: 12,
-        fontWeight: 500,
-        letterSpacing: "0.02em",
-        color: isActive ? TEXT.primary : TEXT.tertiary,
-        textDecoration: "none",
-        whiteSpace: "nowrap",
-        transition: `color ${TRANSITION.fast}`,
-      }}
-    >
-      {label}
-    </Link>
   );
 }

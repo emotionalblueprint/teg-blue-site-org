@@ -66,7 +66,7 @@ const skipLinkFocusStyles = `
     width: auto;
     height: auto;
     padding: 1rem 1.5rem;
-    background: #2563EB;
+    background: #3B82F6;
     color: white;
     z-index: 9999;
     font-weight: 600;
@@ -154,9 +154,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Inter */}
+        {/* Inter + JetBrains Mono */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
 

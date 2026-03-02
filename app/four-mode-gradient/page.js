@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
-// Researcher pattern colors (blue spectrum variant)
-// Intentionally different from MODE_COLORS (teal/yellow/orange/pink).
-// This page uses a blue-only gradient for research-neutral presentation.
+// Researcher pattern colors (blue spectrum)
 const PATTERN = {
   a: { color: "#60a5fa", name: "Connection" },  // blue-400
   b: { color: "#3b82f6", name: "Protection" },  // blue-500
@@ -168,7 +166,7 @@ export default function FourModeGradientPage() {
             >
               The Four Regulatory States
             </h2>
-            <p style={{ fontSize: 14, color: TEXT.secondary, margin: 0 }}>
+            <p style={{ fontSize: 14, color: TEXT.muted, margin: 0 }}>
               Not personality types — nervous system positions that shift in response to perceived threat.
               Each state has a pattern designation (A, B, C, D) used in clinical and research contexts.
             </p>
@@ -207,7 +205,7 @@ export default function FourModeGradientPage() {
                     style={{
                       fontSize: 11,
                       fontFamily: FONT.mono,
-                      color: TEXT.tertiary,
+                      color: TEXT.hint,
                       letterSpacing: "0.04em",
                     }}
                   >
@@ -257,9 +255,9 @@ export default function FourModeGradientPage() {
           <div
             style={{
               padding: 28,
-              background: hexToRgba(PRIMARY, 0.08),
+              background: hexToRgba(SPECTRUM.blue, 0.08),
               borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(PRIMARY, 0.2)}`,
+              border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
               textAlign: "center",
             }}
           >
@@ -294,7 +292,7 @@ export default function FourModeGradientPage() {
                 style={{
                   padding: "12px 24px",
                   background: SPECTRUM.blue,
-                  color: TEXT.primary,
+                  color: "#fff",
                   borderRadius: RADIUS.md,
                   fontWeight: 600,
                   fontSize: 14,
@@ -377,7 +375,7 @@ export default function FourModeGradientPage() {
               >
                 Four-Mode Gradient
               </p>
-              <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 Observable measurement. Where am I? Where are they?
               </p>
             </div>
@@ -417,7 +415,7 @@ export default function FourModeGradientPage() {
               >
                 12 Frameworks →
               </p>
-              <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 Explanatory architecture. Why do modes exist? How do patterns scale?
               </p>
             </Link>
@@ -438,7 +436,7 @@ export default function FourModeGradientPage() {
             style={{
               padding: "10px 20px",
               background: "transparent",
-              color: TEXT.tertiary,
+              color: TEXT.muted,
               border: `1px solid ${BORDER.default}`,
               borderRadius: RADIUS.md,
               fontWeight: 500,
@@ -453,7 +451,7 @@ export default function FourModeGradientPage() {
             style={{
               padding: "10px 20px",
               background: "transparent",
-              color: TEXT.tertiary,
+              color: TEXT.muted,
               border: `1px solid ${BORDER.default}`,
               borderRadius: RADIUS.md,
               fontWeight: 500,
@@ -467,7 +465,7 @@ export default function FourModeGradientPage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 48, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>

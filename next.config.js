@@ -61,29 +61,22 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /four-mode-gradient → /models/inner-compass (replaced by model page)
-      {
-        source: '/four-mode-gradient',
-        destination: '/models/inner-compass',
-        permanent: true,
-      },
-
-      // /emotional-technology-tools/* → /models/inner-compass (6 old URLs)
+      // /emotional-technology-tools/* → /four-mode-gradient (6 old URLs)
       {
         source: '/emotional-technology-tools/:path*',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
 
-      // /emotional-circuit-board/* → /models/inner-compass (3 old URLs)
+      // /emotional-circuit-board/* → /four-mode-gradient (3 old URLs)
       {
         source: '/emotional-circuit-board/:path*',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/emotional-circuit-board',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
 
@@ -111,15 +104,15 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /four-modes/* → /models/inner-compass (2 old URLs)
+      // /four-modes/* → /four-mode-gradient (2 old URLs)
       {
         source: '/four-modes/:path*',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/four-modes',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
 
@@ -154,15 +147,15 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /learning-lab/* → /models/inner-compass
+      // /learning-lab/* → /four-mode-gradient
       {
         source: '/learning-lab/:path*',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/learning-lab',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
 
@@ -183,12 +176,12 @@ const nextConfig = {
       },
       {
         source: '/the-toolbox-library',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/four-mode-color-gradient',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
@@ -222,25 +215,25 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Old toolbox/library pages → /models/inner-compass
+      // Old toolbox/library pages → /four-mode-gradient
       {
         source: '/emotional-intelligence-toolset-library',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/empathy-visual-scale',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/entitlement-visual-scale',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
       {
         source: '/the-emotional-hurt-scale-how-bad-was-it-really',
-        destination: '/models/inner-compass',
+        destination: '/four-mode-gradient',
         permanent: true,
       },
 

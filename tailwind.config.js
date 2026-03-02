@@ -35,9 +35,8 @@ module.exports = {
         'border-active':  'rgba(148, 163, 184, 0.30)',
       },
       fontFamily: {
-        'sans':    ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont'],
-        'display': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont'],
-        'body':    ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont'],
+        'display': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'body':    ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         'mono':    ['JetBrains Mono', 'SF Mono', 'Consolas', 'monospace'],
       },
       fontSize: {

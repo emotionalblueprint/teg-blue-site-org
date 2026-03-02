@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
@@ -82,7 +82,7 @@ export default function EpistemologicalFoundationsPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.secondary,
+              color: TEXT.muted,
               lineHeight: 1.8,
               maxWidth: 640,
               marginTop: 12,
@@ -406,7 +406,7 @@ export default function EpistemologicalFoundationsPage() {
 
             <ImplicationSection
               title="For Scientific and Academic Fields"
-              color={TEXT.secondary}
+              color={SPECTRUM.slate}
               items={[
                 { label: "Research Integration", text: "Including emotional factors as legitimate variables in research across disciplines" },
                 { label: "Methodology Development", text: "Creating research methods that can study emotional patterns systematically" },
@@ -491,7 +491,7 @@ export default function EpistemologicalFoundationsPage() {
               </thead>
               <tbody>
                 <NavRow label="See how the system is organized" href="/foundations" linkText="System Overview →" />
-                <NavRow label="See the two core models" href="/models" linkText="Models →" />
+                <NavRow label="Understand the measurement layer" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
                 <NavRow label="Explore the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                 <NavRow label="See published research" href="/publications" linkText="Publications →" />
@@ -503,7 +503,7 @@ export default function EpistemologicalFoundationsPage() {
 
         {/* Footer note */}
         <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -617,7 +617,7 @@ function ConceptCard({ number, title, subtitle, color, children }) {
           <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, margin: 0 }}>
             {title}
           </h3>
-          <p style={{ fontSize: 12, color: TEXT.tertiary, margin: "4px 0 0", fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 12, color: TEXT.muted, margin: "4px 0 0", fontFamily: FONT.mono }}>
             {subtitle}
           </p>
         </div>
@@ -636,7 +636,7 @@ function ConceptDetail({ label, children }) {
         style={{
           fontSize: 11,
           fontWeight: 600,
-          color: TEXT.tertiary,
+          color: TEXT.muted,
           textTransform: "uppercase",
           letterSpacing: "0.04em",
           fontFamily: FONT.mono,
@@ -715,7 +715,7 @@ function ImplicationSection({ title, color, items }) {
 
 function NavRow({ label, href, linkText, external }) {
   const linkStyle = {
-    color: PRIMARY,
+    color: SPECTRUM.blue,
     textDecoration: "none",
     fontWeight: 500,
   };
@@ -748,7 +748,7 @@ const tableHeaderStyle = {
   textAlign: "left",
   fontSize: 11,
   fontWeight: 600,
-  color: TEXT.tertiary,
+  color: TEXT.muted,
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   fontFamily: FONT.mono,

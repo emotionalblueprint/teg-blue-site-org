@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform (Extended)
 # https://teg-blue.org
-# Last updated: 2026-03-02
+# Last updated: 2026-02-18
 # Format: llms-full.txt (Extended AI-readable documentation)
 
 ---
@@ -99,237 +99,241 @@ Nervous system regulatory states along a continuous gradient:
 
 # THE 12 FRAMEWORKS (Complete)
 
-## PHASE 1: FOUNDATION (F1-F3)
+## PHASE 1: FORMATION (F1-F3)
 
-Individual framework pages: /frameworks/f1, /frameworks/f2, /frameworks/f3
-
-### Framework 1: Emotions as a Biological Information
-**Question:** How does the nervous system orient between safety and threat?
+### Framework 1: The Emotional Gradient
+**Question:** How does the nervous system read safety and threat?
 
 **Core propositions:**
-1. Emotions are the nervous system's signalling language — the body's first language; cognition is the second
-2. State determines capacity — what can be perceived, thought, and done varies with compass position
-3. The same emotion has two expressions depending on mode position (safety vs. threat)
-4. Health is not a position — it is the needle's capacity to move. Regulation is the mechanism of coming back
+1. The autonomic nervous system operates through hierarchical circuits (Porges)
+2. Neuroception — below-conscious threat detection — shapes available states
+3. Regulatory states form a continuous gradient, not discrete categories
+4. The key variable is mobility — capacity to return to Connection
 
 **Source theories:**
 - Polyvagal Theory (Stephen Porges)
-- Approach/avoidance motivation (Elliot, Carver & Scheier)
-- Broaden-and-build (Fredrickson)
+- Affective Neuroscience (Jaak Panksepp)
+- Somatic Marker Hypothesis (Antonio Damasio)
+- Autonomic nervous system research
 - Window of Tolerance (Daniel Siegel)
-- Secure base (Bowlby)
 
-**TEG-Blue integration:** Introduces the Inner Compass as the instrument, the four-mode gradient (Connection, Protection, Control, Domination), and regulation as the biological return mechanism.
+**TEG-Blue integration:** Maps not just autonomic states but the progression from adaptive Protection to maladaptive Control — and crucially, the capacity to return.
 
-### Framework 2: Awareness Teaches Awareness
-**Question:** How do the three awareness capacities calibrate the compass?
+### Framework 2: Identity Formation
+**Question:** How does identity organize around protection?
 
 **Core propositions:**
-1. Awareness teaches awareness — the adults' capacity configuration IS the child's developmental environment
-2. The child learns to regulate through being regulated with, not through instruction
-3. Personality is not a type — it is a record of which capacities had conditions to develop and which didn't
-4. What didn't develop then can develop now — given the right conditions
+1. When authenticity isn't safe, protective identities form
+2. Real Self vs. Role Mask develops through attachment experiences
+3. Identity becomes organized around avoiding specific threats
+4. The mask can become more "real" than the self it protects
 
 **Source theories:**
 - Attachment Theory (John Bowlby, Mary Ainsworth)
-- Polyvagal Theory (Stephen Porges)
-- Developmental Neuroscience (Allan Schore)
-- Internal Family Systems (Richard Schwartz)
-- Relational Neurobiology (Daniel Siegel)
+- Object Relations Theory (Donald Winnicott)
+- Self Psychology (Heinz Kohut)
+- True Self/False Self (Winnicott)
+- Internal Working Models
 
-**TEG-Blue integration:** Describes how the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) develop through relational conditions — and how their absence determines chronic mode position.
+**TEG-Blue integration:** Connects attachment patterns to adult regulatory patterns and escalation pathways.
 
-### Framework 3: Adult Cognition & False Coherence
-**Question:** How does cognition maintain identity under pressure?
+### Framework 3: Cognitive Coherence
+**Question:** How does the mind maintain consistency?
 
 **Core propositions:**
-1. False coherence is not deception — it is regulatory success at the cost of emotional truth
-2. Beliefs feel true because they restore nervous system stability, not because they are accurate
-3. Emotional distortion: internal discomfort → misread as external attack → retaliation feels like self-defence
-4. Chronic Control mimics healthy Connection — making harm invisible
+1. The mind works to maintain narrative coherence
+2. Cognitive dissonance creates pressure to resolve inconsistency
+3. "Logic Layer" can produce false coherence through motivated reasoning
+4. Defense mechanisms serve coherence maintenance
+5. What we believe shapes what we perceive
 
 **Source theories:**
 - Cognitive Dissonance Theory (Leon Festinger)
-- Dual-process cognition (Daniel Kahneman)
-- Motivated Reasoning (Ziva Kunda)
-- Self-justification (Tavris & Aronson)
+- Motivated Reasoning research
+- Narrative Identity (Dan McAdams)
+- Defense Mechanisms (Anna Freud, Vaillant)
+- Confirmation Bias research
+
+**TEG-Blue integration:** Explains how protective patterns become self-reinforcing through cognitive mechanisms.
+
+## PHASE 2: SCALING (F4-F6)
+
+### Framework 4: Family Systems
+**Question:** How do patterns transmit across generations?
+
+**Core propositions:**
+1. Protective patterns are learned in family systems
+2. Transgenerational transmission occurs through attachment
+3. Family roles serve system homeostasis
+4. Differentiation of self affects pattern transmission
+5. What is unnamed gets transmitted
+
+**Source theories:**
+- Family Systems Theory (Murray Bowen)
+- Transgenerational Trauma (Yael Danieli)
+- Attachment transmission research
+- Genogram methodology
+- Family therapy research
+
+**TEG-Blue integration:** Shows how individual regulatory patterns scale to family systems.
+
+### Framework 5: Worth Sorting
+**Question:** How do hierarchies form?
+
+**Core propositions:**
+1. Social systems create "invisible rules" about who matters
+2. Worth signals (capital) determine access and treatment
+3. Intersecting identities shape system friction
+4. Those sorted "down" experience chronic threat
+5. Those sorted "up" may not see the system
+
+**Source theories:**
+- Social Capital Theory (Pierre Bourdieu)
+- Intersectionality (Kimberlé Crenshaw)
+- Social Dominance Theory (Sidanius & Pratto)
+- Status Hierarchies research
+- Structural violence (Johan Galtung)
+
+**TEG-Blue integration:** Connects individual attachment patterns to social stratification — same mechanisms, different scale.
+
+### Framework 6: State-Dependent Perception
+**Question:** How does regulatory state shape what we perceive?
+
+**Core propositions:**
+1. What we can perceive depends on our current state
+2. Moral perception is state-dependent
+3. Under threat, moral reasoning narrows
+4. Confirmation bias serves threat management
+5. In-group/out-group distinctions intensify under threat
+
+**Source theories:**
+- Moral Foundations Theory (Jonathan Haidt)
+- Threat-Rigidity Effect (Staw, Sandelands, Dutton)
+- Motivated Perception research
+- In-group bias research
 - State-dependent learning
 
-**TEG-Blue integration:** Explains how cognition tells the emotional system 'you're not needed here' — replacing the return that was never learned with false coherence and cognitive substitutes.
+**TEG-Blue integration:** Proposes that nervous system state shapes moral perception — a testable hypothesis.
 
-## PHASE 2: COLLECTIVE SCALING (F4-F7)
+## PHASE 3: TURNING POINT (F7)
 
-Individual framework pages: /frameworks/f4, /frameworks/f5, /frameworks/f6, /frameworks/f7
-
-### Framework 4: Rules Regulate
-**Question:** How do individual patterns scale to collective systems?
+### Framework 7: From Protection to Domination
+**Question:** How does protection escalate into harm?
 
 **Core propositions:**
-1. Rule-following is a nervous system regulation strategy, not a reasoning choice
-2. Questioning rules activates the same threat response that created them
-3. Rule internalization operates at the nervous system level, not just cognitive belief
-4. Punishment aims to cause suffering — accountability aims to create understanding
+1. Protection and domination exist on a continuum
+2. Escalation follows identifiable pathways
+3. The turning point involves justification of harm
+4. Moral disengagement enables escalation
+5. Structural power enables individual domination
 
 **Source theories:**
-- Sociology of norms
-- Cultural psychology
-- Status dynamics
-- Moral foundations research (Haidt)
-- Norm enforcement literature
+- Moral Disengagement (Albert Bandura)
+- DARVO (Deny, Attack, Reverse Victim and Offender)
+- Power Dynamics research
+- Abuse Typologies
+- Coercive Control (Evan Stark)
 
-**TEG-Blue integration:** Shows how false coherence absorbs rules as truth and external regulation makes rule-compliance a nervous system need.
+**TEG-Blue integration:** Maps the specific transition from legitimate self-protection through control to domination — with identifiable markers.
 
-### Framework 5: Worth Hierarchies Regulate
-**Question:** How do rules become sorting systems?
+## PHASE 4: HEALING (F8-F10)
+
+### Framework 8: Pattern Interruption
+**Question:** How does change happen?
 
 **Core propositions:**
-1. Worth-seeking is a nervous system regulation strategy, not a character flaw
-2. Signal access mistaken for human value; signal deprivation internalised as inadequacy
-3. Worth hierarchies are maintained through nervous system enforcement, not just ideology
-4. Both narratives are regulation: the insider's 'I earned this' and the outsider's 'something is wrong with me'
+1. Fixed patterns can become unstable ("loosening")
+2. Neuroplasticity enables rewiring
+3. Corrective emotional experiences enable new patterns
+4. Safety is required for pattern change
+5. Change requires both insight and embodied experience
 
 **Source theories:**
-- Shame research (Brown, Tangney)
-- Social evaluation threat (Dickerson & Kemeny)
-- Internalized stigma
-- Conditional regard (Rogers)
-- Social stratification theory
+- Neuroplasticity research
+- Corrective Emotional Experience (Alexander)
+- Window of Tolerance (Siegel)
+- Memory Reconsolidation research
+- Somatic therapies
 
-**TEG-Blue integration:** How worth-seeking becomes nervous system regulation at systemic scale. The Filter of Worth: who gets heard, believed, resourced, protected.
+**TEG-Blue integration:** Explains how patterns shift — the neurobiological basis of change.
 
-### Framework 6: Bias as Regulation
-**Question:** How does perception become protection?
-
-**Core propositions:**
-1. Bias is pattern recognition in service of regulation, not a reasoning error
-2. If believing something reduces threat, the nervous system keeps believing it — below conscious awareness
-3. Certainty is physiological stability, not epistemic accuracy
-4. Update capacity = (Internal safety + Relational safety) − (Identity threat + Belonging threat)
-
-**Source theories:**
-- Social cognition
-- Threat perception research
-- Intergroup emotion theory
-- Motivated reasoning (Kunda)
-- Dehumanization literature (Haslam)
-
-**TEG-Blue integration:** How worth-sorting gets absorbed into the perceptual system. Shame does not unlearn bias — safety does.
-
-### Framework 7: Domination Regulates
-**Question:** How does defence become strategy become domination?
+### Framework 9: Neurodivergent Pathways
+**Question:** How does neurological variation affect emotional processing?
 
 **Core propositions:**
-1. Domination is threat regulation plus power access — mechanism, not character
-2. The Crossroads (defence → strategy) has recognizable signals: repair disappears, reality gets reframed, accountability triggers escalation
-3. Empathy is state-dependent, not character-dependent — it narrows, then goes offline entirely
-4. Causality and accountability are separable — understanding the mechanism does not reduce responsibility
-
-**Source theories:**
-- Power and dominance research
-- Coercive control literature (Stark)
-- Moral disengagement (Bandura)
-- Narcissism research
-- Perpetrator psychology
-
-**TEG-Blue integration:** Maps the five-stage escalation pathway with empathy gating as the critical mechanism. Domination is built through reinforcement, not born.
-
-## PHASE 3: REPAIR (F8-F10)
-
-Individual framework pages: /frameworks/f8, /frameworks/f9, /frameworks/f10
-
-### Framework 8: Repairing Awareness & The Power of Difference
-**Question:** How do you develop what was missing?
-
-**Core propositions:**
-1. Every substitute was built because the original was missing — repair means building the original
-2. The system is not resisting repair — it is assessing whether repair is safe
-3. The back-and-forth between old patterns and new capacity is not the problem — it is the process
-4. The collective compass is more accurate when it has more sensors
-
-**Source theories:**
-- Metacognition
-- Mindfulness research
-- Emotion differentiation (Barrett)
-- Reflective functioning (Fonagy)
-- Mentalization theory
-
-**TEG-Blue integration:** Five conditions for repair: safety, readiness, relational support, time, and structural conditions.
-
-### Framework 9: Neurodivergence as Nervous System Variation
-**Question:** What happens when systems are designed for one nervous system configuration?
-
-**Core propositions:**
-1. Neurodivergent nervous systems have different baseline configurations — not deficits
-2. Structural masking has measurable costs: regulatory depletion, identity confusion, delayed burnout
-3. You cannot develop your capacities while suppressing the system those capacities run on
-4. Genuine inclusion is not accommodation or charity — it is structural intelligence
+1. Different neurological wiring affects threat detection
+2. Same gradient, different expressions
+3. Sensory processing differences affect regulation
+4. Masking as protective adaptation
+5. Neurodivergent healing may require different approaches
 
 **Source theories:**
 - Neurodiversity paradigm
-- Sensory processing research
-- Autism and ADHD research
-- Masking cost literature
-- Developmental needs models
+- Autism research
+- ADHD research
+- Sensory Processing research
+- Alexithymia research
 
-**TEG-Blue integration:** The most visible case of the universal pattern F8 describes — chronic structural regulatory cost.
+**TEG-Blue integration:** Extends the framework to account for neurological variation in emotional processing.
 
-### Framework 10: Rebuilding Generational Bridges
-**Question:** How do patterns transmit across generations, and what changes them?
-
-**Core propositions:**
-1. Patterns transmit through regulatory modeling, not just explicit teaching — love does not override what the nervous system embodies
-2. You don't have to heal everything — you have to heal enough that the next generation starts from a different place
-3. The child doesn't need a perfect parent — the child needs a parent whose compass moves and who comes back
-4. Accountability is a regulated-state behavior — it requires sufficient safety to tolerate
-
-**Source theories:**
-- Intergenerational trauma research
-- Family systems theory
-- Epigenetics
-- Rupture and repair research (Tronick)
-- ACEs literature (Felitti)
-
-**TEG-Blue integration:** Five transmission pathways all transmitting the same underlying content. Coherence, not content, is what matters.
-
-## PHASE 4: META-INTEGRATION (F11-F12)
-
-Individual framework pages: /frameworks/f11, /frameworks/f12
-
-### Framework 11: The Emotional Paradoxes
-**Question:** What happens when false coherence loosens?
+### Framework 10: Intergenerational Healing
+**Question:** How do cycles break?
 
 **Core propositions:**
-1. Apparent contradictions are often state shifts, not hypocrisy or pathology
-2. Paradox tolerance increases with regulatory flexibility; decreases under threat
-3. How a person relates to their own contradictions reveals their compass position
-4. True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing
+1. Patterns can change across generations
+2. Breaking cycles requires recognition first
+3. Naming what was unnamed enables change
+4. Post-traumatic growth is possible
+5. Healing can propagate forward and backward
 
 **Source theories:**
-- State-dependent cognition
-- Dual-process work
-- Trauma adaptation literature
-- Motivated reasoning
-- Self-justification research
+- Post-Traumatic Growth (Tedeschi & Calhoun)
+- Transgenerational Healing research
+- Resilience research
+- Narrative therapy
+- Family therapy research
 
-**TEG-Blue integration:** Paradoxical behaviour is not irrational — it is multi-rational, serving several valid needs simultaneously.
+**TEG-Blue integration:** Maps how healing propagates through family systems.
 
-### Framework 12: The Two Information Systems
-**Question:** What is the architecture underneath everything?
+## PHASE 5: INTEGRATION (F11-F12)
+
+### Framework 11: Paradox
+**Question:** How do we hold contradiction?
 
 **Core propositions:**
-1. The emotional-somatic system determines what rational behavior is available — state precedes capacity
-2. Insight alone doesn't change behavior because the emotional-somatic system organises response before cognition arrives
-3. Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience
-4. Every framework is the same architecture — the scale changes, the mechanism doesn't
+1. Maturity involves holding complexity without collapsing
+2. Both/and thinking requires regulatory capacity
+3. Premature resolution serves anxiety, not truth
+4. Paradox tolerance is a complexity marker
+5. Simple answers can be defense against complexity
 
 **Source theories:**
-- Dual-process theory (Kahneman, Stanovich)
-- Polyvagal Theory (Porges)
-- Somatic markers (Damasio)
-- Trauma and body-based approaches (van der Kolk, Levine)
-- Attachment as regulatory system (Bowlby, Schore, Siegel)
+- Dialectical Thinking research
+- Paradox Theory (organizational)
+- Complexity Theory
+- Post-Formal Operations (Commons, Richards)
+- Wise Reasoning research
 
-**TEG-Blue integration:** Two parallel information systems: emotional-somatic (milliseconds, unconscious) and cognitive-logical (hundreds of milliseconds, conscious). Change requires conditions, not instructions.
+**TEG-Blue integration:** Paradox tolerance as measurable indicator of regulatory capacity.
+
+### Framework 12: Unified Architecture
+**Question:** How does it all connect?
+
+**Core propositions:**
+1. The 12 frameworks form an integrated system
+2. Individual and collective levels are isomorphic
+3. The same mechanisms operate at different scales
+4. Emergence produces complexity beyond components
+5. The system is self-organizing and self-maintaining
+
+**Source theories:**
+- General Systems Theory (von Bertalanffy)
+- Complexity Theory
+- Emergence research
+- Cybernetics
+- Dynamical Systems Theory
+
+**TEG-Blue integration:** The complete architecture — how all frameworks connect.
 
 ---
 
@@ -385,7 +389,7 @@ Individual framework pages: /frameworks/f11, /frameworks/f12
 
 ### Object Relations (Donald Winnicott)
 **Core claim:** Self develops through relationship; "True Self" vs "False Self" distinction.
-**TEG-Blue integration:** Foundation of the awareness capacities framework — how relational conditions shape what develops.
+**TEG-Blue integration:** Foundation of Real Self vs. Role Mask framework.
 
 ### Self Psychology (Heinz Kohut)
 **Core claim:** Self cohesion depends on empathic mirroring; narcissistic patterns are self-regulation strategies.
@@ -441,7 +445,7 @@ Individual framework pages: /frameworks/f11, /frameworks/f12
 
 ### Internal Family Systems (Richard Schwartz)
 **Core claim:** Mind contains multiple parts; healing involves unburdening exiles.
-**TEG-Blue integration:** Compatible with protective identity structures and false coherence framework.
+**TEG-Blue integration:** Compatible with Role Mask concept.
 
 ### Gottman Method (John Gottman)
 **Core claim:** Specific behaviors (Four Horsemen) predict relationship failure.
@@ -608,51 +612,7 @@ Psychometric testing of 16 instruments
 - **12** explanatory frameworks (F1-F12)
 - **4** nervous system regulatory modes
 - **16** gradient-based assessment instruments
-- **4** research phases: Foundation, Collective Scaling, Repair, Meta-Integration
-
----
-
-# FOUNDATIONAL CONCEPTS (13)
-
-The building blocks of TEG-Blue — 13 concepts organized in six groups, with Self-Emotional Awareness as the entry point. All other concepts radiate outward from this one distinction.
-
-## Entry Point (C1)
-
-- **C1: Self-Emotional Awareness** — The capacity to notice that what we feel is a feeling, not the truth of the situation. That small separation changes everything. https://teg-blue.org/concepts/self-emotional-awareness
-
-## The Foundation It Reads (C2-C3)
-
-- **C2: Emotions as Biological Information** — Emotions are the nervous system's signalling language, carrying information about safety and threat. https://teg-blue.org/concepts/emotions-as-biological-information
-- **C3: The Safety Orientation Question** — One question generates all emotional diversity: 'Is there enough safety to engage, or is protection needed?' https://teg-blue.org/concepts/the-safety-orientation-question
-
-## The System It Navigates (C4-C6)
-
-- **C4: The Inner Compass** — The nervous system orients between Connection and threat modes. Health is the needle moving freely. https://teg-blue.org/concepts/the-inner-compass
-- **C5: State Determines Capacity** — What you can perceive, think, feel, and do depends on your current compass position. https://teg-blue.org/concepts/state-determines-capacity
-- **C6: Same Emotion, Two Expressions** — Mode position determines whether an emotion serves connection or defence. https://teg-blue.org/concepts/same-emotion-two-expressions
-
-## What Breaks Without It (C7-C9)
-
-- **C7: Emotional Distortion** — Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence. https://teg-blue.org/concepts/emotional-distortion
-- **C8: False Coherence** — Beliefs feel true because they calm the nervous system, not because they match reality. https://teg-blue.org/concepts/false-coherence
-- **C9: Tolerance Thresholds** — The nervous system calibrates what to endure based on early conditions. https://teg-blue.org/concepts/tolerance-thresholds
-
-## How It Develops and Returns (C10-C11)
-
-- **C10: Awareness Teaches Awareness** — Children calibrate to what adults embody, not what adults say. https://teg-blue.org/concepts/awareness-teaches-awareness
-- **C11: Regulation — The Return Mechanism** — The body moves into threat and comes back. Regulation is the mechanism of coming back. https://teg-blue.org/concepts/regulation-the-return-mechanism
-
-## SEA's Sibling Capacities (C12-C13)
-
-- **C12: Reading Emotions** — The capacity to track what others feel is the first awareness channel. https://teg-blue.org/concepts/reading-emotions
-- **C13: Emotional Resonance** — The capacity to feel with another person, not just track what they feel. https://teg-blue.org/concepts/emotional-resonance
-
----
-
-# MODELS (2)
-
-- **The Inner Compass & Four-Mode Gradient** — The visual-conceptual instrument for how the nervous system orients between safety and threat. https://teg-blue.org/models/inner-compass
-- **The Three Awareness Capacities** — The calibration system: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness. https://teg-blue.org/models/three-awareness-capacities
+- **5** research phases: Formation, Scaling, Turning Point, Healing, Integration
 
 ---
 
@@ -674,10 +634,6 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
-- Foundational Concepts Hub: https://teg-blue.org/concepts
-- Models Hub: https://teg-blue.org/models
-- Inner Compass Model: https://teg-blue.org/models/inner-compass
-- Three Awareness Capacities Model: https://teg-blue.org/models/three-awareness-capacities
 - Four-Mode Gradient: https://teg-blue.org/four-mode-gradient
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map

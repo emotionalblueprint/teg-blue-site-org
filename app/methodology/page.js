@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateFAQJsonLd } from "@/src/lib/jsonld";
 
@@ -49,7 +49,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How was TEG-Blue developed?",
-    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. Large Language Models (ChatGPT Deep Research and the deep thinking models of Claude, Microsoft Copilot, and Perplexity) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a working hypothesis requiring deeper scholarly validation."
+    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a working hypothesis requiring deeper scholarly validation."
   },
   {
     question: "What ethical standards does TEG-Blue research follow?",
@@ -159,7 +159,7 @@ export default function MethodologyPage() {
             />
             <StatusCard
               title="Open to validation"
-              color={TEXT.tertiary}
+              color={SPECTRUM.slate}
               description="Constructs, tools, and claims that need independent replication, psychometric validation, cross-cultural testing, or external benchmarking."
             />
           </div>
@@ -222,7 +222,7 @@ export default function MethodologyPage() {
                 The literature mapping
               </h3>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                Once the architecture was established, Large Language Models (ChatGPT Deep Research and the deep thinking models of Claude, Microsoft Copilot, and Perplexity) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The LLMs helped locate and organize the corresponding academic literature.
+                Once the architecture was established, AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
               </p>
             </div>
             <div style={{ marginBottom: 20 }}>
@@ -339,16 +339,16 @@ export default function MethodologyPage() {
               <tbody>
                 <StatusRow area="Open science principles" status="Working standard; not all work meets full pre-registration yet" />
                 <StatusRow area="Validation study (n=10,000+)" status="Completed; computational analysis of natural language" statusColor={SPECTRUM.azure} />
-                <StatusRow area="Psychometric validation of tools" status="Not yet started; collaborators needed" statusColor={TEXT.tertiary} />
-                <StatusRow area="Cross-cultural replication" status="Not yet started; collaborators needed" statusColor={TEXT.tertiary} />
-                <StatusRow area="Independent replication of four-mode classification" status="Not yet started; collaborators needed" statusColor={TEXT.tertiary} />
+                <StatusRow area="Psychometric validation of tools" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
+                <StatusRow area="Cross-cultural replication" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
+                <StatusRow area="Independent replication of four-mode classification" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
                 <StatusRow area="AI schema evaluation" status="Early implementation; needs formal evaluation" statusColor={SPECTRUM.indigo} isLast />
               </tbody>
             </table>
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, marginTop: 16 }}>
             If you can help with any of these, see{" "}
-            <Link href="/collaborate" style={{ color: PRIMARY, textDecoration: "none" }}>
+            <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
               Collaborate →
             </Link>
           </p>
@@ -356,7 +356,7 @@ export default function MethodologyPage() {
 
         {/* Footer note */}
         <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -385,7 +385,7 @@ function StatusNote({ children }) {
         borderLeft: `3px solid ${SPECTRUM.slate}`,
       }}
     >
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+      <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0 }}>
         <strong style={{ color: TEXT.secondary }}>Status note:</strong> {children}
       </p>
     </div>
@@ -411,7 +411,7 @@ function StatusCard({ title, color, description, linkText, linkHref }) {
         {linkText && linkHref && (
           <>
             {" "}
-            <Link href={linkHref} style={{ color: PRIMARY, textDecoration: "none" }}>
+            <Link href={linkHref} style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
               {linkText} →
             </Link>
           </>
@@ -445,7 +445,7 @@ const tableHeaderStyle = {
   padding: "12px 16px",
   fontSize: 12,
   fontWeight: 600,
-  color: TEXT.tertiary,
+  color: TEXT.muted,
   textAlign: "left",
   textTransform: "uppercase",
   letterSpacing: "0.04em",
@@ -458,7 +458,7 @@ function StatusRow({ area, status, statusColor, isLast }) {
       <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
         {area}
       </td>
-      <td style={{ padding: "12px 16px", fontSize: 13, color: statusColor || TEXT.tertiary }}>
+      <td style={{ padding: "12px 16px", fontSize: 13, color: statusColor || TEXT.muted }}>
         {status}
       </td>
     </tr>

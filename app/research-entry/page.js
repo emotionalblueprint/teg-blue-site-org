@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, ACCENT, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -96,7 +96,7 @@ export default function ResearchEntryPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.secondary,
+              color: TEXT.muted,
               lineHeight: 1.8,
               maxWidth: 640,
               marginBottom: 16,
@@ -107,7 +107,7 @@ export default function ResearchEntryPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.secondary,
+              color: TEXT.muted,
               lineHeight: 1.8,
               maxWidth: 640,
             }}
@@ -122,7 +122,7 @@ export default function ResearchEntryPage() {
                 alignItems: "center",
                 gap: 6,
                 fontSize: 14,
-                color: PRIMARY,
+                color: SPECTRUM.blue,
                 textDecoration: "none",
                 fontWeight: 500,
               }}
@@ -204,12 +204,12 @@ export default function ResearchEntryPage() {
               label="Preliminary evidence"
               color={SPECTRUM.blue}
               description={
-                <>Initial studies and analyses listed in <Link href="/publications" style={{ color: PRIMARY }}>Publications</Link>.</>
+                <>Initial studies and analyses listed in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
               }
             />
             <StatusCard
               label="Open to validation"
-              color={ACCENT.soft}
+              color={SPECTRUM.slate}
               description="Psychometric validation and replication. Construct validity across cultures, contexts, and modalities. External benchmarking against existing instruments."
             />
           </div>
@@ -234,7 +234,7 @@ export default function ResearchEntryPage() {
               marginBottom: 16,
             }}
           >
-            The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong style={{ color: ACCENT.pink }}>capacity to return to Connection when challenged</strong>.
+            The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong>capacity to return to Connection when challenged</strong>.
           </blockquote>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
             We treat this as a testable hypothesis, not a slogan.
@@ -257,7 +257,7 @@ export default function ResearchEntryPage() {
               <strong style={{ color: TEXT.primary }}>Research need:</strong> Replication + cross-context validation. Which markers are reliable? Which are context-dependent? How do they shift across stress load, power dynamics, and attachment history?
             </p>
           </div>
-          <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 12 }}>
+          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
             Related frameworks: F8 (Self-Awareness Under Stress), F9 (Our True Self), F10 (Repair and Relational Return).
           </p>
         </section>
@@ -277,8 +277,8 @@ export default function ResearchEntryPage() {
               title="Measurement and recognition"
               description="Help test whether the Four-Mode Gradient can be reliably detected in natural language, transcripts, therapy session excerpts, conflict dialogues, and organizational communication."
               needs="Inter-rater reliability designs, annotation schemas, construct validation, cross-domain generalization tests."
-              link="/models/inner-compass"
-              linkText="Inner Compass Model →"
+              link="/four-mode-gradient"
+              linkText="Four-Mode Gradient →"
             />
             <LaneCard
               letter="B"
@@ -344,9 +344,9 @@ export default function ResearchEntryPage() {
               </thead>
               <tbody>
                 <NextStepRow step="Understand the system" href="/foundations" label="System Overview →" />
-                <NextStepRow step="See the two core models" href="/models" label="Models →" />
+                <NextStepRow step="See the measurement layer" href="/four-mode-gradient" label="Four-Mode Gradient →" />
                 <NextStepRow step="See the explanatory layer" href="/frameworks-map" label="Frameworks →" />
-                <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: PRIMARY }}>Methodology</Link></>} />
+                <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: SPECTRUM.blue }}>Methodology</Link></>} />
                 <NextStepRow step="Work with us" href="/collaborate" label="Collaborate →" />
               </tbody>
             </table>
@@ -376,8 +376,8 @@ export default function ResearchEntryPage() {
               alignItems: "center",
               gap: 8,
               padding: "12px 24px",
-              background: PRIMARY,
-              color: TEXT.primary,
+              background: SPECTRUM.blue,
+              color: "#fff",
               borderRadius: 8,
               fontWeight: 500,
               fontSize: 14,
@@ -390,7 +390,7 @@ export default function ResearchEntryPage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 32, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -440,7 +440,6 @@ function StatusCard({ label, color, description }) {
 function LaneCard({ letter, title, description, needs, link, linkText }) {
   return (
     <div
-      className="hover-card-lift"
       style={{
         padding: 20,
         background: BG.card,
@@ -455,7 +454,7 @@ function LaneCard({ letter, title, description, needs, link, linkText }) {
       <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
         {description}
       </p>
-      <p style={{ fontSize: 13, color: TEXT.tertiary, lineHeight: 1.6, marginBottom: 12 }}>
+      <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginBottom: 12 }}>
         <strong style={{ color: TEXT.secondary }}>What we need:</strong> {needs}
       </p>
       <Link
@@ -465,7 +464,7 @@ function LaneCard({ letter, title, description, needs, link, linkText }) {
           alignItems: "center",
           gap: 6,
           fontSize: 14,
-          color: PRIMARY,
+          color: SPECTRUM.blue,
           textDecoration: "none",
           fontWeight: 500,
         }}
@@ -484,7 +483,7 @@ function NextStepRow({ step, href, label, extra }) {
         <Link
           href={href}
           style={{
-            color: PRIMARY,
+            color: SPECTRUM.blue,
             textDecoration: "none",
             fontWeight: 500,
           }}
@@ -502,7 +501,7 @@ const tableHeaderStyle = {
   textAlign: "left",
   fontSize: 11,
   fontWeight: 600,
-  color: TEXT.tertiary,
+  color: TEXT.muted,
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   fontFamily: FONT.mono,

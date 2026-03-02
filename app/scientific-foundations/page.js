@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, ACCENT, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, SearchInput } from "@/src/components";
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
@@ -180,7 +180,7 @@ const globalModels = [
     author: "Carl Jung",
     coreContribution: "Recognizes the adaptive function of the social mask — the tension between public identity and inner reality that shapes how we navigate belonging.",
     tegBlueAdds: [
-      "Places the Persona inside the false coherence gradient — distinguishing masks rooted in belonging from those rooted in defence",
+      "Places the Persona inside the Role Mask Gradient",
       "Distinguishes masks rooted in belonging from those rooted in defense, control, or domination",
       "Provides concrete pathways for reclaiming authenticity",
     ],
@@ -216,7 +216,7 @@ const globalModels = [
     author: "Erving Goffman",
     coreContribution: "Reveals how social life operates like a stage — people play roles depending on audience, context, and setting — foundational for role theory and social psychology.",
     tegBlueAdds: [
-      "Expands role-play into the false coherence gradient — mapping how protective identities form and shift across modes",
+      "Expands role-play into the Role Mask Gradient",
       "Distinguishes authentic roles from survival-driven ones across the four modes",
       "Shows pathways for healing from role entrapment and reclaiming genuine connection",
     ],
@@ -378,7 +378,7 @@ export default function ScientificFoundationsPage() {
             trauma, and developmental research. This page shows what it builds on, how it extends
             existing work, and how to inspect the evidence.
           </p>
-          <p style={{ fontSize: 13, color: TEXT.tertiary, margin: 0 }}>
+          <p style={{ fontSize: 13, color: TEXT.muted, margin: 0 }}>
             The question this page answers:{" "}
             <em style={{ color: TEXT.secondary }}>
               &ldquo;Is this grounded, or is it just vibes?&rdquo;
@@ -416,7 +416,7 @@ export default function ScientificFoundationsPage() {
         {/* ─── 4. EVIDENCE MAP ───────────────────────────────────── */}
         <div
           style={{
-            borderTop: `1px solid ${hexToRgba(ACCENT.yellow, 0.15)}`,
+            borderTop: `1px solid ${BORDER.default}`,
             margin: "48px 0",
             position: "relative",
           }}
@@ -430,7 +430,7 @@ export default function ScientificFoundationsPage() {
               background: BG.page,
               padding: "0 16px",
               fontSize: 12,
-              color: ACCENT.yellow,
+              color: TEXT.muted,
               fontFamily: FONT.mono,
             }}
           >
@@ -467,7 +467,7 @@ export default function ScientificFoundationsPage() {
               marginBottom: 24,
             }}
           >
-            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0 }}>
               <strong style={{ color: TEXT.secondary }}>How we selected these:</strong>{" "}
               Large language models with deep research capabilities were used to systematically
               identify theories that align with each framework. Each domain index groups the key
@@ -496,9 +496,9 @@ export default function ScientificFoundationsPage() {
                 fontFamily: FONT.mono,
                 fontWeight: 500,
                 borderRadius: 6,
-                border: `1px solid ${!activeDomain ? hexToRgba(PRIMARY, 0.4) : BORDER.default}`,
-                background: !activeDomain ? hexToRgba(PRIMARY, 0.12) : "transparent",
-                color: !activeDomain ? PRIMARY : TEXT.tertiary,
+                border: `1px solid ${!activeDomain ? hexToRgba(SPECTRUM.blue, 0.4) : BORDER.default}`,
+                background: !activeDomain ? hexToRgba(SPECTRUM.blue, 0.12) : "transparent",
+                color: !activeDomain ? SPECTRUM.blue : TEXT.muted,
                 cursor: "pointer",
               }}
             >
@@ -519,7 +519,7 @@ export default function ScientificFoundationsPage() {
                     borderRadius: 6,
                     border: `1px solid ${isActive ? hexToRgba(SPECTRUM.azure, 0.4) : BORDER.default}`,
                     background: isActive ? hexToRgba(SPECTRUM.azure, 0.12) : "transparent",
-                    color: isActive ? SPECTRUM.azure : TEXT.tertiary,
+                    color: isActive ? SPECTRUM.azure : TEXT.muted,
                     cursor: "pointer",
                   }}
                 >
@@ -538,7 +538,7 @@ export default function ScientificFoundationsPage() {
               marginBottom: 16,
             }}
           >
-            <span style={{ fontSize: 13, color: TEXT.tertiary }}>
+            <span style={{ fontSize: 13, color: TEXT.muted }}>
               {loading ? "Loading..." : `${filteredTheories.length} theories`}
               {(searchQuery || activeDomain) && !loading
                 ? ` (filtered from ${theories.length})`
@@ -554,7 +554,7 @@ export default function ScientificFoundationsPage() {
                   borderRadius: 6,
                   border: `1px solid ${BORDER.default}`,
                   background: "transparent",
-                  color: TEXT.tertiary,
+                  color: TEXT.muted,
                   cursor: "pointer",
                   fontFamily: FONT.mono,
                 }}
@@ -567,7 +567,7 @@ export default function ScientificFoundationsPage() {
           {/* Loading state */}
           {loading && (
             <div style={{ textAlign: "center", padding: 40 }}>
-              <p style={{ fontSize: 14, color: TEXT.tertiary }}>Loading theories...</p>
+              <p style={{ fontSize: 14, color: TEXT.muted }}>Loading theories...</p>
             </div>
           )}
 
@@ -599,7 +599,7 @@ export default function ScientificFoundationsPage() {
                       fontSize: 11,
                       fontWeight: 600,
                       fontFamily: FONT.mono,
-                      color: ACCENT.mint,
+                      color: getDomainColor(domain),
                       padding: "3px 8px",
                       background: hexToRgba(getDomainColor(domain), 0.1),
                       borderRadius: 4,
@@ -640,9 +640,9 @@ export default function ScientificFoundationsPage() {
                   style={{
                     padding: "6px 14px",
                     fontSize: 13,
-                    color: PRIMARY,
+                    color: SPECTRUM.blue,
                     background: "transparent",
-                    border: `1px solid ${hexToRgba(PRIMARY, 0.3)}`,
+                    border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.3)}`,
                     borderRadius: 6,
                     cursor: "pointer",
                   }}
@@ -666,19 +666,19 @@ export default function ScientificFoundationsPage() {
             textAlign: "center",
           }}
         >
-          <p style={{ fontSize: 12, color: TEXT.tertiary, marginBottom: 12 }}>
+          <p style={{ fontSize: 12, color: TEXT.muted, marginBottom: 12 }}>
             Research developed by Anna Paretas-Artacho · TEG-Blue Research Consortium
           </p>
           <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
             <Link
               href="/methodology"
-              style={{ fontSize: 13, color: PRIMARY, textDecoration: "none" }}
+              style={{ fontSize: 13, color: TEXT.muted, textDecoration: "none" }}
             >
               Methodology
             </Link>
             <Link
               href="/collaborate"
-              style={{ fontSize: 13, color: PRIMARY, textDecoration: "none" }}
+              style={{ fontSize: 13, color: TEXT.muted, textDecoration: "none" }}
             >
               Collaborate
             </Link>
@@ -792,7 +792,7 @@ function ModelCard({ model }) {
           <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary }}>
             {model.name}
           </span>
-          <span style={{ fontSize: 13, color: TEXT.tertiary }}>— {model.author}</span>
+          <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
           <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
             {model.frameworks.map((f) => (
               <span
@@ -817,7 +817,7 @@ function ModelCard({ model }) {
         <p
           style={{
             fontSize: 13,
-            color: TEXT.secondary,
+            color: TEXT.muted,
             lineHeight: 1.6,
             margin: "8px 0 0 0",
           }}
@@ -827,7 +827,7 @@ function ModelCard({ model }) {
 
         {/* Expand indicator */}
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-          <span style={{ fontSize: 12, color: TEXT.tertiary }}>
+          <span style={{ fontSize: 12, color: TEXT.muted }}>
             {isOpen ? "Hide details" : "Show what TEG-Blue adds"}
           </span>
           <span
@@ -944,7 +944,7 @@ function ModelCard({ model }) {
               gap: 8,
             }}
           >
-            <span style={{ fontSize: 12, color: TEXT.tertiary }}>Appears in:</span>
+            <span style={{ fontSize: 12, color: TEXT.muted }}>Appears in:</span>
             {model.frameworks.map((f) => (
               <Link
                 key={f}
@@ -1023,7 +1023,7 @@ function ExpandableTheoryCard({ theory }) {
             {theory.title}
           </span>
           {theory.originAuthor && (
-            <span style={{ fontSize: 13, color: TEXT.tertiary }}>
+            <span style={{ fontSize: 13, color: TEXT.muted }}>
               — {theory.originAuthor}
             </span>
           )}
@@ -1058,7 +1058,7 @@ function ExpandableTheoryCard({ theory }) {
                   fontFamily: FONT.mono,
                   padding: "2px 6px",
                   background: hexToRgba(domainColor, 0.08),
-                  color: TEXT.tertiary,
+                  color: TEXT.muted,
                   borderRadius: 3,
                 }}
               >
@@ -1069,7 +1069,7 @@ function ExpandableTheoryCard({ theory }) {
         )}
 
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
-          <span style={{ fontSize: 12, color: TEXT.tertiary }}>
+          <span style={{ fontSize: 12, color: TEXT.muted }}>
             {isOpen ? "Hide details" : "Show details"}
           </span>
           <span
@@ -1155,7 +1155,7 @@ function ExpandableTheoryCard({ theory }) {
               <p
                 style={{
                   fontSize: 13,
-                  color: TEXT.secondary,
+                  color: TEXT.muted,
                   lineHeight: 1.8,
                   margin: 0,
                   fontStyle: "italic",
@@ -1268,11 +1268,10 @@ function ValidationMethod() {
         </h3>
         <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
           The architecture was developed first — through independent research, observation, and
-          cross-disciplinary reading. Once the structure was established, Large Language Models
-          (ChatGPT Deep Research and the deep thinking models of Claude, Microsoft Copilot,
-          and Perplexity) were used to systematically identify which established theories
-          align with each framework.{" "}
-          <Link href="/methodology" style={{ color: PRIMARY, textDecoration: "none" }}>
+          cross-disciplinary reading. Once the structure was established, AI research tools
+          (Claude, Perplexity, Microsoft Copilot) were used to systematically identify which
+          established theories align with each framework.{" "}
+          <Link href="/methodology" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
             Full methodology →
           </Link>
         </p>
@@ -1303,7 +1302,7 @@ function ValidationMethod() {
                 fontFamily: FONT.mono,
                 padding: "4px 10px",
                 background: hexToRgba(SPECTRUM.azure, 0.08),
-                color: TEXT.tertiary,
+                color: TEXT.muted,
                 borderRadius: 4,
                 border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.1)}`,
               }}
@@ -1381,7 +1380,7 @@ function ValidationMethod() {
                 fontSize: 11,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: TEXT.secondary,
+                color: SPECTRUM.slate,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 margin: "0 0 8px 0",
@@ -1422,7 +1421,7 @@ function ValidationMethod() {
           We are preparing for pre-registration of the core testable claims, with open data
           and open methodology. We explicitly invite independent replication, correction, and
           critique.{" "}
-          <Link href="/collaborate" style={{ color: PRIMARY, textDecoration: "none" }}>
+          <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
             Collaborate with us →
           </Link>
         </p>

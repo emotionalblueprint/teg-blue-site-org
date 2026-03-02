@@ -1,0 +1,61 @@
+{
+  "slug": "real-self",
+  "type": "glossary",
+  "title": "Real Self",
+  "status": "open-review",
+  "definition": "The organism's baseline emotional-somatic configuration that exists before cognitive identity forms — innate rhythms, sensitivities, and capacities that constitute who we are before we learned who to be.",
+
+  "summary": "The Real Self is not a mystical concept but a biological baseline. It includes innate temperament, emotional instincts, and pre-cognitive information about safety, threat, need, and limit. It exists prior to the Role Mask and persists beneath it.",
+
+  "tags": ["core", "F2", "identity", "development", "Winnicott", "Rogers"],
+  "origin": "teg-blue-original",
+  "relatedTerms": ["role-mask", "calibration", "regulatory-state"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "The Real Self is the emotional-somatic configuration present at birth and early development — before cognitive identity forms. It includes: innate rhythms and sensitivities (temperament), baseline emotional capacities (curiosity, empathy, sensory truth), and pre-cognitive information processing about safety, threat, and need. The Real Self is not 'who you really are' in a mystical sense but the organism's starting configuration before adaptation shapes it."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "TEG-Blue treats the Real Self as the baseline from which the Four-Mode Gradient operates. In Connection, the Real Self has space to express. In Protection, it contracts. Under chronic threat, the Real Self becomes obscured by the Role Mask — but it doesn't disappear. Healing involves creating conditions where the Real Self can re-emerge, not constructing a new identity. What was suppressed for survival can be reclaimed when safety is restored."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "Integrates Winnicott's True Self, Rogers' organismic self, temperament research (Chess & Thomas, Kagan), Panksepp's primary emotional systems, and Damasio's interoceptive self. Multiple traditions converge on the existence of an original, pre-adapted self that precedes social shaping. TEG-Blue grounds this convergence in nervous system biology."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "related",
+      "targetSlug": "role-mask",
+      "targetType": "glossary",
+      "label": "Contrasts with: Role Mask"
+    },
+    {
+      "type": "related",
+      "targetSlug": "object-relations",
+      "targetType": "theory",
+      "label": "Informed by: Object Relations"
+    },
+    {
+      "type": "related",
+      "targetSlug": "humanistic-psychology",
+      "targetType": "theory",
+      "label": "Informed by: Humanistic Psychology"
+    },
+    {
+      "type": "related",
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Expressed through: Four-Mode Gradient"
+    }
+  ],
+
+  "lastUpdated": "2026-02-12"
+}

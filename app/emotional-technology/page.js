@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY, MODE_COLORS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -19,6 +19,13 @@ export const metadata = {
   },
 };
 
+// State colors from the Four-Mode Gradient
+const STATE = {
+  connection: "#14b8a6",  // Teal
+  protection: "#eab308",  // Yellow
+  control: "#f97316",     // Orange
+  domination: "#ec4899",  // Pink
+};
 
 export default function EmotionalTechnologyPage() {
   return (
@@ -67,7 +74,7 @@ export default function EmotionalTechnologyPage() {
             What is{" "}
             <span
               style={{
-                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${SPECTRUM.azure})`,
+                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -103,7 +110,7 @@ export default function EmotionalTechnologyPage() {
             <div
               style={{
                 height: 3,
-                background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${MODE_COLORS.protection}, ${MODE_COLORS.control}, ${MODE_COLORS.domination})`,
+                background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
               }}
             />
 
@@ -120,7 +127,7 @@ export default function EmotionalTechnologyPage() {
                 }}
               >
                 <CapabilityMiniCard
-                  color={MODE_COLORS.connection}
+                  color={STATE.connection}
                   title="Recognize"
                   desc="emotional states"
                 />
@@ -179,7 +186,7 @@ export default function EmotionalTechnologyPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
             <CapabilityCard
-              color={MODE_COLORS.connection}
+              color={STATE.connection}
               title="Measurement & Recognition"
               items={[
                 "Visual scales show position on gradients of empathy, control, accountability",
@@ -188,7 +195,7 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              color={MODE_COLORS.protection}
+              color={STATE.protection}
               title="Prediction & Prevention"
               items={[
                 "Maps how emotional states shift and escalate",
@@ -197,7 +204,7 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              color={MODE_COLORS.control}
+              color={STATE.control}
               title="Navigation & Intervention"
               items={[
                 "Provides steps back to safety, calm, and clarity",
@@ -206,7 +213,7 @@ export default function EmotionalTechnologyPage() {
               ]}
             />
             <CapabilityCard
-              color={MODE_COLORS.domination}
+              color={STATE.domination}
               title="Pattern Breaking"
               items={[
                 "Makes generational trauma patterns visible",
@@ -294,22 +301,22 @@ export default function EmotionalTechnologyPage() {
             <VocabCard
               term="Emotional Architecture"
               definition="The structure of emotional patterns within people, families, and systems"
-              color={MODE_COLORS.connection}
+              color={STATE.connection}
             />
             <VocabCard
               term="Emotional Wiring"
               definition="How your nervous system learned to feel, respond, and protect"
-              color={MODE_COLORS.protection}
+              color={STATE.protection}
             />
             <VocabCard
               term="Emotional Miswiring"
               definition="Protective patterns that now create harm"
-              color={MODE_COLORS.control}
+              color={STATE.control}
             />
             <VocabCard
               term="Emotional Infrastructure"
               definition="The larger systems that support — or fail to support — emotional safety"
-              color={MODE_COLORS.domination}
+              color={STATE.domination}
             />
           </div>
         </section>
@@ -334,7 +341,7 @@ export default function EmotionalTechnologyPage() {
               left: 0,
               right: 0,
               height: 3,
-              background: `linear-gradient(90deg, ${MODE_COLORS.connection}, ${MODE_COLORS.protection}, ${MODE_COLORS.control}, ${MODE_COLORS.domination})`,
+              background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
             }}
           />
 
@@ -362,11 +369,11 @@ export default function EmotionalTechnologyPage() {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
-              href="/models/inner-compass"
+              href="/four-mode-gradient"
               style={{
                 padding: "12px 24px",
-                background: PRIMARY,
-                color: TEXT.primary,
+                background: SPECTRUM.blue,
+                color: "#fff",
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
                 fontSize: 14,
@@ -469,7 +476,7 @@ function CapabilityMiniCard({ color, title, desc }) {
       >
         {title}
       </p>
-      <p style={{ fontSize: 13, color: TEXT.tertiary, margin: 0 }}>
+      <p style={{ fontSize: 13, color: TEXT.muted, margin: 0 }}>
         {desc}
       </p>
     </div>
@@ -497,7 +504,7 @@ function CapabilityCard({ color, title, items }) {
       >
         {title}
       </h3>
-      <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.secondary, lineHeight: 1.7 }}>
+      <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
         {items.map((item, i) => (
           <li key={i} style={{ marginBottom: 6 }}>{item}</li>
         ))}
@@ -511,9 +518,9 @@ function BenefitChip({ label }) {
     <div
       style={{
         padding: "10px 14px",
-        background: hexToRgba(MODE_COLORS.connection, 0.1),
+        background: hexToRgba(STATE.connection, 0.1),
         borderRadius: RADIUS.sm,
-        border: `1px solid ${hexToRgba(MODE_COLORS.connection, 0.2)}`,
+        border: `1px solid ${hexToRgba(STATE.connection, 0.2)}`,
         fontSize: 13,
         fontWeight: 500,
         color: TEXT.secondary,
@@ -539,7 +546,7 @@ function ComparisonRow({ term, issue }) {
       }}
     >
       <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.secondary }}>"{term}"</span>
-      <span style={{ fontSize: 13, color: TEXT.secondary }}>— {issue}</span>
+      <span style={{ fontSize: 13, color: TEXT.muted }}>— {issue}</span>
     </div>
   );
 }
@@ -565,7 +572,7 @@ function VocabCard({ term, definition, color }) {
       >
         {term}
       </p>
-      <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
         {definition}
       </p>
     </div>

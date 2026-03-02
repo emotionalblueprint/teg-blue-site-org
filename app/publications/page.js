@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, ACCENT, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, TypeTag, StatusBadge } from "@/src/components";
 
 export const metadata = {
@@ -167,7 +167,7 @@ export default function PublicationsPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.secondary,
+              color: TEXT.muted,
               lineHeight: 1.8,
               maxWidth: 640,
               marginTop: 12,
@@ -214,7 +214,7 @@ export default function PublicationsPage() {
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
               A computational analysis of 10,000+ natural conflict narratives testing whether the four-mode gradient can be reliably detected in unstructured text.
             </p>
-            <div style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.tertiary, marginBottom: 16 }}>
+            <div style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, marginBottom: 16 }}>
               Anna Paretas-Artacho · February 2026 · DOI: 10.5281/zenodo.18428907
             </div>
             <div
@@ -246,8 +246,8 @@ export default function PublicationsPage() {
                   alignItems: "center",
                   gap: 6,
                   padding: "8px 16px",
-                  background: PRIMARY,
-                  color: TEXT.primary,
+                  background: SPECTRUM.blue,
+                  color: "#fff",
                   borderRadius: 6,
                   fontWeight: 500,
                   fontSize: 13,
@@ -258,7 +258,6 @@ export default function PublicationsPage() {
               </a>
               <Link
                 href="/publications/validation-study"
-                className="hover-ghost"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -318,9 +317,9 @@ export default function PublicationsPage() {
                 fontSize: 11,
                 fontWeight: 600,
                 fontFamily: FONT.mono,
-                color: ACCENT.acid,
+                color: SPECTRUM.slate,
                 padding: "4px 8px",
-                background: hexToRgba(ACCENT.acid, 0.10),
+                background: hexToRgba(SPECTRUM.slate, 0.1),
                 borderRadius: 4,
               }}
             >
@@ -335,7 +334,7 @@ export default function PublicationsPage() {
             How to cite
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            See the <Link href="/citations" style={{ color: PRIMARY }}>Citations page</Link> for full citation formats and guidelines.
+            See the <Link href="/citations" style={{ color: SPECTRUM.blue }}>Citations page</Link> for full citation formats and guidelines.
           </p>
         </section>
 
@@ -362,10 +361,10 @@ export default function PublicationsPage() {
               alignItems: "center",
               gap: 8,
               padding: "10px 20px",
-              background: hexToRgba(PRIMARY, 0.1),
-              border: `1px solid ${hexToRgba(PRIMARY, 0.3)}`,
+              background: hexToRgba(SPECTRUM.blue, 0.1),
+              border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.3)}`,
               borderRadius: 6,
-              color: PRIMARY,
+              color: SPECTRUM.blue,
               fontWeight: 500,
               fontSize: 14,
               textDecoration: "none",
@@ -377,7 +376,7 @@ export default function PublicationsPage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 32, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -394,7 +393,6 @@ function PublicationCard({ publication }) {
   return (
     <Link
       href={`/publications/${publication.slug}`}
-      className="hover-card"
       style={{ textDecoration: "none" }}
     >
       <article
@@ -404,6 +402,7 @@ function PublicationCard({ publication }) {
           background: BG.card,
           border: `1px solid ${BORDER.default}`,
           borderLeft: `3px solid ${color}`,
+          transition: "all 200ms ease",
           cursor: "pointer",
         }}
       >
@@ -449,7 +448,7 @@ function PublicationCard({ publication }) {
             gap: 12,
             fontSize: 11,
             fontFamily: FONT.mono,
-            color: TEXT.tertiary,
+            color: TEXT.hint,
           }}
         >
           <span>{publication.author}</span>

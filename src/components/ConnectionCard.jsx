@@ -50,7 +50,7 @@ export default function ConnectionCard({
               fontFamily: FONT.mono,
               fontSize: 10,
               fontWeight: 500,
-              color: TEXT.tertiary,
+              color: TEXT.muted,
               textTransform: "uppercase",
               letterSpacing: "0.04em",
             }}
@@ -69,7 +69,7 @@ export default function ConnectionCard({
           {title}
         </div>
         {subtitle && (
-          <div style={{ fontSize: 12, color: TEXT.tertiary, marginTop: 3 }}>
+          <div style={{ fontSize: 12, color: TEXT.muted, marginTop: 3 }}>
             {subtitle}
           </div>
         )}
@@ -79,7 +79,6 @@ export default function ConnectionCard({
         .connection-card:hover {
           border-color: ${BORDER.hover};
           transform: translateY(-1px);
-          background: rgba(148, 163, 184, 0.03);
         }
       `}</style>
     </Link>

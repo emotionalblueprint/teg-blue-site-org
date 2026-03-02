@@ -46,7 +46,7 @@ export default function ContextBlock({
         >
           <span
             style={{
-              fontFamily: FONT.mono,
+              fontFamily: "'JetBrains Mono', monospace",
               fontSize: 10,
               fontWeight: 600,
               textTransform: "uppercase",

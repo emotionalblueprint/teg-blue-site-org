@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Open Knowledge — JSON-LD Generators
+ * TEG-Blue Research Platform — JSON-LD Generators
  * 
  * Generates Schema.org structured data for every content type.
  * Called at build time (getStaticProps) or in page <head>.
@@ -135,88 +135,20 @@ export function generateGlossaryJsonLd(node) {
   };
 }
 
-// ─── CONCEPT JSON-LD ────────────────────────────────
-
-export function generateConceptJsonLd(concept) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "DefinedTerm",
-    name: concept.name,
-    description: concept.seoDescription || concept.hook,
-    url: `${RESEARCH_BASE}/concepts/${concept.slug}`,
-    inLanguage: LANGUAGE,
-    inDefinedTermSet: {
-      "@type": "DefinedTermSet",
-      name: "TEG-Blue Foundational Concepts",
-      url: `${RESEARCH_BASE}/concepts`,
-      description: "13 foundational concepts that establish the architecture of emotional technology",
-    },
-    ...(concept.group && {
-      category: concept.group,
-    }),
-    ...(concept.drawsFrom && {
-      isPartOf: concept.drawsFrom.frameworks.map((fId) => ({
-        "@type": "ScholarlyArticle",
-        name: `Framework ${fId}`,
-        url: `${RESEARCH_BASE}/frameworks/${fId.toLowerCase()}`,
-      })),
-    }),
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${RESEARCH_BASE}/concepts/${concept.slug}`,
-    },
-  };
-}
-
-// ─── MODEL JSON-LD ──────────────────────────────────
-
-export function generateModelJsonLd(model) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: `${model.name} — TEG-Blue Research`,
-    url: `${RESEARCH_BASE}/models/${model.slug}`,
-    description: model.description,
-    inLanguage: LANGUAGE,
-    isPartOf: TEG_BLUE_PROJECT,
-    about: {
-      "@type": "DefinedTerm",
-      name: model.name,
-      description: model.description,
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${RESEARCH_BASE}/models/${model.slug}`,
-    },
-  };
-}
-
 // ─── FRAMEWORK JSON-LD ───────────────────────────────
 
 export function generateFrameworkJsonLd(node) {
   return {
     "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    name: node.name || node.title,
-    headline: node.researcherTitle || node.title,
+    "@type": "CreativeWork",
+    name: node.title,
+    headline: node.title,
     author: AUTHOR,
-    publisher: AUTHOR,
     url: `${RESEARCH_BASE}/frameworks/${node.slug}`,
     description: node.summary,
-    abstract: node.summary,
     isPartOf: TEG_BLUE_PROJECT,
-    keywords: node.tags || [node.name, node.phase, "TEG-Blue", "emotional regulation"],
+    keywords: node.tags,
     inLanguage: LANGUAGE,
-    ...(node.phase && {
-      about: {
-        "@type": "DefinedTerm",
-        name: `${node.phase} Phase`,
-        inDefinedTermSet: {
-          "@type": "DefinedTermSet",
-          name: "TEG-Blue 12 Frameworks",
-        },
-      },
-    }),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${RESEARCH_BASE}/frameworks/${node.slug}`,
@@ -306,8 +238,8 @@ export function generateFourModeGradientJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Inner Compass & Four-Mode Gradient — TEG-Blue",
-    url: `${BASE_URL}/models/inner-compass`,
+    name: "The Four-Mode Gradient — TEG-Blue",
+    url: `${BASE_URL}/four-mode-gradient`,
     description: "The measurement system at the heart of TEG-Blue: four nervous system regulatory states that shape perception, behavior, and relational capacity.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
@@ -383,7 +315,7 @@ export function generateSystemOverviewJsonLd() {
           position: 1,
           name: "Measurement Layer",
           description: "Four-Mode Gradient: Connection → Protection → Control → Domination. Observable nervous system states detectable in natural language.",
-          url: `${BASE_URL}/models/inner-compass`
+          url: `${BASE_URL}/four-mode-gradient`
         },
         {
           "@type": "ListItem",
@@ -489,27 +421,32 @@ export function generateTheoreticalFoundationsJsonLd() {
     about: {
       "@type": "DefinedTermSet",
       name: "TEG-Blue 12 Frameworks",
-      description: "A connected arc of frameworks explaining emotional regulation patterns across four phases",
+      description: "A connected arc of frameworks explaining emotional regulation patterns",
       hasDefinedTerm: [
         {
           "@type": "DefinedTerm",
-          name: "Foundation (F1-F3)",
-          description: "The instrument, its calibration, and what cognition does in their place"
+          name: "Formation Arc (F1-F3)",
+          description: "How nervous system states form and how identity organizes around them"
         },
         {
           "@type": "DefinedTerm",
-          name: "Collective Scaling (F4-F7)",
-          description: "How individual regulation patterns become rules, worth hierarchies, perception biases, and domination"
+          name: "Scaling Arc (F4-F6)",
+          description: "How individual regulation patterns become social structures"
         },
         {
           "@type": "DefinedTerm",
-          name: "Repair (F8-F10)",
-          description: "Individual capacity repair, structural inclusion, generational transmission"
+          name: "Turning Point (F7)",
+          description: "How protection escalates into domination"
         },
         {
           "@type": "DefinedTerm",
-          name: "Meta-Integration (F11-F12)",
-          description: "Paradox as clarity, and the two information systems underneath everything"
+          name: "Healing Arc (F8-F10)",
+          description: "How patterns shift, including neurodivergent pathways"
+        },
+        {
+          "@type": "DefinedTerm",
+          name: "Integration Arc (F11-F12)",
+          description: "The complete architecture and its internal logic"
         }
       ]
     },
@@ -521,10 +458,10 @@ export function generateTheoreticalFoundationsJsonLd() {
       "attachment theory",
       "trauma research",
       "nervous system",
-      "foundation",
-      "collective scaling",
-      "repair",
-      "meta-integration"
+      "formation",
+      "scaling",
+      "healing",
+      "integration"
     ]
   };
 }
@@ -594,7 +531,7 @@ export function generateSearchActionJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "TEG-Blue Open Knowledge",
+    name: "TEG-Blue Research",
     url: BASE_URL,
     potentialAction: {
       "@type": "SearchAction",

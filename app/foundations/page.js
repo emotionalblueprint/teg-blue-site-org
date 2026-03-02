@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
@@ -84,7 +84,7 @@ export default function FoundationsPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.secondary,
+              color: TEXT.muted,
               lineHeight: 1.8,
               maxWidth: 640,
               marginTop: 12,
@@ -106,9 +106,9 @@ export default function FoundationsPage() {
             <LayerIntroCard
               number={1}
               title="Measurement"
-              subtitle="Models"
+              subtitle="Four-Mode Gradient"
               color={SPECTRUM.azure}
-              href="/models"
+              href="/four-mode-gradient"
             />
             <LayerIntroCard
               number={2}
@@ -129,7 +129,7 @@ export default function FoundationsPage() {
               number={4}
               title="AI Safety"
               subtitle="Structured Schemas"
-              color={TEXT.tertiary}
+              color={SPECTRUM.slate}
               href="/ai-safety"
             />
           </div>
@@ -152,7 +152,7 @@ export default function FoundationsPage() {
               style={{
                 fontSize: 13,
                 fontFamily: FONT.mono,
-                color: TEXT.tertiary,
+                color: TEXT.muted,
                 padding: "8px 12px",
                 background: hexToRgba(SPECTRUM.azure, 0.1),
                 borderRadius: 6,
@@ -165,15 +165,15 @@ export default function FoundationsPage() {
               These are not personality types. They are nervous system states — regulatory positions that shift in response to perceived threat, shaped by attachment history, social context, and current capacity.
             </p>
             <StatusBadge status="Proposed model with early evidence" color={SPECTRUM.azure} />
-            <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 12 }}>
-              See <Link href="/publications" style={{ color: PRIMARY }}>Publications</Link> for what is currently tested and what still needs replication.
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
+              See <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link> for what is currently tested and what still needs replication.
             </p>
             <div style={{ marginTop: 16 }}>
               <Link
-                href="/models/inner-compass"
+                href="/four-mode-gradient"
                 style={{
                   fontSize: 14,
-                  color: PRIMARY,
+                  color: SPECTRUM.blue,
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
@@ -211,7 +211,7 @@ export default function FoundationsPage() {
               Each framework draws on established theories. The originality is in the connections between them.
             </p>
             <StatusBadge status="Proposed synthesis" color={SPECTRUM.cobalt} />
-            <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 8 }}>
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
               Grounded in established theories, with connections that need structured review and testing.
             </p>
             <div style={{ marginTop: 16 }}>
@@ -219,7 +219,7 @@ export default function FoundationsPage() {
                 href="/frameworks-map"
                 style={{
                   fontSize: 14,
-                  color: PRIMARY,
+                  color: SPECTRUM.blue,
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
@@ -246,12 +246,12 @@ export default function FoundationsPage() {
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
               Each tool maps a dimension of human behavior across the gradient — from healthy to harmful — with clear markers at every point.
             </p>
-            <p style={{ fontSize: 13, color: TEXT.tertiary, lineHeight: 1.6, marginBottom: 12 }}>
+            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginBottom: 12 }}>
               Examples: Empathy Gradient (genuine → selective → performed → weaponized), Accountability Gradient (genuine → performed → absent → protective), Integrity Scale (value-aligned → conditional → performed → remorseless).
             </p>
             <StatusBadge status="Designed, not yet psychometrically validated" color={SPECTRUM.indigo} />
-            <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 8 }}>
-              Available for exploration on <a href="https://teg-blue.com" target="_blank" rel="noopener noreferrer" style={{ color: PRIMARY }}>teg-blue.com</a>, awaiting formal validation studies.
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
+              Available for exploration on <a href="https://teg-blue.com" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue }}>teg-blue.com</a>, awaiting formal validation studies.
             </p>
             <div
               style={{
@@ -273,7 +273,7 @@ export default function FoundationsPage() {
           <LayerCard
             number={4}
             title="The AI Safety Layer"
-            color={TEXT.tertiary}
+            color={SPECTRUM.slate}
           >
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               Structured Schemas for AI Systems
@@ -284,9 +284,9 @@ export default function FoundationsPage() {
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
               This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications designed to replace binary safe/unsafe models with nuanced assessments.
             </p>
-            <StatusBadge status="Proposed architecture with early implementation" color={TEXT.tertiary} />
-            <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 8 }}>
-              See <Link href="/ai-safety" style={{ color: PRIMARY }}>AI Safety</Link> for the full application case.
+            <StatusBadge status="Proposed architecture with early implementation" color={SPECTRUM.slate} />
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
+              See <Link href="/ai-safety" style={{ color: SPECTRUM.blue }}>AI Safety</Link> for the full application case.
             </p>
             <div
               style={{
@@ -371,7 +371,7 @@ export default function FoundationsPage() {
             <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Pattern:</strong> Which gradient pattern or tool family it belongs to</li>
             <li><strong style={{ color: TEXT.primary }}>Impact:</strong> What it does to safety, power, and connection</li>
           </ul>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
+          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.8 }}>
             This prevents reducing behavior to either &quot;good person&quot; or &quot;bad person&quot; — the same behavior can serve different functions depending on state and context.
           </p>
         </section>
@@ -397,7 +397,7 @@ export default function FoundationsPage() {
                 </tr>
               </thead>
               <tbody>
-                <NavRow label="See the two core models" href="/models" linkText="Models →" />
+                <NavRow label="See the measurement layer in detail" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
                 <NavRow label="See the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand methods" href="/methodology" linkText="Methodology →" />
@@ -410,7 +410,7 @@ export default function FoundationsPage() {
 
         {/* Footer note */}
         <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -534,7 +534,7 @@ function NavRow({ label, href, linkText }) {
         <Link
           href={href}
           style={{
-            color: PRIMARY,
+            color: SPECTRUM.blue,
             textDecoration: "none",
             fontWeight: 500,
           }}
@@ -551,7 +551,7 @@ const tableHeaderStyle = {
   textAlign: "left",
   fontSize: 11,
   fontWeight: 600,
-  color: TEXT.tertiary,
+  color: TEXT.muted,
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   fontFamily: FONT.mono,
@@ -625,7 +625,7 @@ function LayerIntroCard({ number, title, subtitle, color, href, external }) {
       <p
         style={{
           fontSize: 12,
-          color: TEXT.tertiary,
+          color: TEXT.muted,
           margin: 0,
         }}
       >

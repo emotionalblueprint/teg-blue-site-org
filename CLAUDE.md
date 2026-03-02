@@ -115,7 +115,7 @@ These research traditions developed independently, within separate disciplines, 
 
 **The architecture:** Developed by Anna Paretas-Artacho over nearly two years of independent research, drawing on a lifetime of observing patterns in human behavior, systems thinking, personal experience, and cross-disciplinary reading.
 
-**The literature mapping:** Once the architecture was established, Large Language Models (ChatGPT Deep Research and the deep thinking models of Claude, Microsoft Copilot, and Perplexity) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The LLMs helped locate and organize the corresponding academic literature.
+**The literature mapping:** Once the architecture was established, AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
 
 **The status:** The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
 
@@ -160,14 +160,15 @@ Hub | For Researchers | Publications | Theory Map | Glossary | About | Collabora
 
 ## The 12 Frameworks
 
-Organized into four phases:
+Organized into five phases:
 
 | Phase | Frameworks | What They Explain |
 |-------|-----------|-------------------|
-| **Foundation** | F1-F3 | The instrument, its calibration, and what cognition does in their place |
-| **Collective Scaling** | F4-F7 | How individual regulation patterns become rules, worth hierarchies, perception biases, and domination |
-| **Repair** | F8-F10 | Individual capacity repair, structural inclusion, generational transmission |
-| **Meta-Integration** | F11-F12 | Paradox as clarity, and the two information systems underneath everything |
+| **Formation** | F1-F3 | How nervous system states form, how identity organizes around them |
+| **Scaling** | F4-F6 | How individual regulation patterns become social structures |
+| **Turning Point** | F7 | How protection escalates into domination |
+| **Healing** | F8-F10 | How patterns shift, including neurodivergent pathways |
+| **Integration** | F11-F12 | The complete architecture and its internal logic |
 
 ---
 
@@ -260,43 +261,26 @@ Content in markdown...
 ## Voice & Style
 
 > **Full reference:** `../writing-guidelines.md` (Projects root) — single source of truth for all TEG-Blue writing.
+> All .org content falls under **Tier 3: Researcher & Frameworks**.
 
-### Three Voices on .org
+### Core Principle
 
-| Content Type | Voice | Principle |
-|-------------|-------|-----------|
-| **Concept pages (C1–C13)** | **Bridge Voice** | Here is what this is. Plain, steady, invitational |
-| **Model pages** | **Bridge Voice** | Same |
-| **Framework pages (F1–F12)** | **Bridge Voice** | Same |
-| **Landing page (/)** | **Vision Voice** | Open knowledge for any curious mind. Precise language with heart |
-| **Research-infrastructure pages** (publications, methodology, glossary, research entry, FAQ) | **Tier 3: Researcher** | How does this operate? Explain the mechanism |
+How does this operate? Explain the mechanism. Write for researchers AND emotionally overwhelmed people — warm, steady, not academic posturing.
 
-### Bridge Voice (DEFAULT for .org explanatory core)
-
-The voice for all pages that explain what TEG-Blue is and how it works. A blend of Anna's directness with the steadiness of research writing — without the heart tipping into teaching, and without the mechanism tipping into distance.
-
-- **Plain first:** Simple words. Technical terms only when they add accuracy — defined once, clearly
-- **Warm and steady:** The tone of someone who has spent years with this material and can explain it calmly. Not excited, not selling, not teaching — just showing
-- **Precise:** Same rigor as research writing, carried in clear sentences, not jargon
-- **Practitioner-compatible:** Professionally usable without being professionally cold
-- **Breathing room:** Short paragraphs, key ideas on their own line. Serves clarity, not emotional weight
-- **Referenced but not reviewing:** Frame references as context, not literature review
-- **Invitational:** Underneath everything: "This is what we propose. This is where it maps. This needs testing"
-- **Transparent:** Clear about what is established, what is proposed, and what is untested
-
-**The stance:** Someone who built something — carefully, over years — laying it out and saying: *here's what this is, here's how it connects, and here's what I don't know yet.*
-
-### Vision Voice (Landing page)
-
-Anna's blueprint voice — direct, precise, human — with heart and emotional resonance. Reserved for the first encounter.
-
-**The principle:** Vision Voice = Anna's blueprint voice + web breathing room. No compression. No academic filter.
-
-### Quick Rules (All .org Content)
+### Quick Rules
 
 - **Never use:** "TEG-Blue proves", "the only framework", "cures/fixes", "diagnosis", "type" (as personality type), therapeutic outcome claims
 - **Always use:** "working hypothesis", "proposes connections", "synthesizes established research", "nervous system states", "patterns"
 - Avoid "you/your" in explanatory text — use "the framework", "the system", first person plural
+
+### Key Guidelines
+
+- **Mechanistic:** Inputs → mechanisms → outcomes, not just what it feels like
+- **Plain-first language:** Simple words first. Technical terms only when they add accuracy
+- **Precise:** Define technical terms once, clearly, use consistently
+- **Referenced:** Anchor in research traditions without becoming a literature review
+- **Professional:** Clinically compatible, calm, practitioner-friendly
+- **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
 
 ### .org-Specific Rules
 
