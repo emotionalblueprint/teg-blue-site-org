@@ -1,5 +1,6 @@
 import { getFramework, getNextFramework, getPrevFramework } from "@/src/data/frameworks";
 import FrameworkPage from "@/src/components/FrameworkPage";
+import { generateFrameworkJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 import * as content from "@/src/content/f10-content";
 
 const framework = getFramework("F10");
@@ -21,5 +22,21 @@ export const metadata = {
 };
 
 export default function F10Page() {
-  return <FrameworkPage framework={framework} prevFramework={prev} nextFramework={next} content={content} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFrameworkJsonLd(framework)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbJsonLd([
+          { name: "Home", url: "/" },
+          { name: "Frameworks", url: "/frameworks-map" },
+          { name: `${framework.id}: ${framework.name}`, url: `/frameworks/${framework.slug}` },
+        ])) }}
+      />
+      <FrameworkPage framework={framework} prevFramework={prev} nextFramework={next} content={content} />
+    </>
+  );
 }

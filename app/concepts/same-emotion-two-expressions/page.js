@@ -1,13 +1,14 @@
 import { getConceptBySlug } from "@/src/data/concepts";
 import ConceptPage from "@/src/components/ConceptPage";
+import { generateConceptJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 import * as content from "@/src/content/concepts/c6-content";
 
 const concept = getConceptBySlug("same-emotion-two-expressions");
 
 export const metadata = {
   title: `${concept.name} — TEG-Blue Open Knowledge`,
-  description: concept.hook,
-  keywords: [
+  description: concept.seoDescription || concept.hook,
+  keywords: concept.seoKeywords || [
     "TEG-Blue",
     "foundational concepts",
     concept.name.toLowerCase(),
@@ -19,7 +20,7 @@ export const metadata = {
   },
   openGraph: {
     title: `${concept.name} — TEG-Blue`,
-    description: concept.hook,
+    description: concept.seoDescription || concept.hook,
     url: `https://teg-blue.org/concepts/${concept.slug}`,
     siteName: "TEG-Blue Open Knowledge",
     type: "article",
@@ -27,5 +28,21 @@ export const metadata = {
 };
 
 export default function SameEmotionTwoExpressionsPage() {
-  return <ConceptPage concept={concept} content={content} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateConceptJsonLd(concept)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbJsonLd([
+          { name: "Home", url: "/" },
+          { name: "Concepts", url: "/concepts" },
+          { name: concept.name, url: `/concepts/${concept.slug}` },
+        ])) }}
+      />
+      <ConceptPage concept={concept} content={content} />
+    </>
+  );
 }

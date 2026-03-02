@@ -135,6 +135,62 @@ export function generateGlossaryJsonLd(node) {
   };
 }
 
+// ─── CONCEPT JSON-LD ────────────────────────────────
+
+export function generateConceptJsonLd(concept) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: concept.name,
+    description: concept.seoDescription || concept.hook,
+    url: `${RESEARCH_BASE}/concepts/${concept.slug}`,
+    inLanguage: LANGUAGE,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "TEG-Blue Foundational Concepts",
+      url: `${RESEARCH_BASE}/concepts`,
+      description: "13 foundational concepts that establish the architecture of emotional technology",
+    },
+    ...(concept.group && {
+      category: concept.group,
+    }),
+    ...(concept.drawsFrom && {
+      isPartOf: concept.drawsFrom.frameworks.map((fId) => ({
+        "@type": "ScholarlyArticle",
+        name: `Framework ${fId}`,
+        url: `${RESEARCH_BASE}/frameworks/${fId.toLowerCase()}`,
+      })),
+    }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${RESEARCH_BASE}/concepts/${concept.slug}`,
+    },
+  };
+}
+
+// ─── MODEL JSON-LD ──────────────────────────────────
+
+export function generateModelJsonLd(model) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: `${model.name} — TEG-Blue Research`,
+    url: `${RESEARCH_BASE}/models/${model.slug}`,
+    description: model.description,
+    inLanguage: LANGUAGE,
+    isPartOf: TEG_BLUE_PROJECT,
+    about: {
+      "@type": "DefinedTerm",
+      name: model.name,
+      description: model.description,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${RESEARCH_BASE}/models/${model.slug}`,
+    },
+  };
+}
+
 // ─── FRAMEWORK JSON-LD ───────────────────────────────
 
 export function generateFrameworkJsonLd(node) {

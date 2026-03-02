@@ -343,7 +343,7 @@ export default function ModelPage({ model, content = {} }) {
 function ContentSection({ title, color, children }) {
   return (
     <section>
-      <h3
+      <h2
         style={{
           fontSize: 16,
           fontWeight: 600,
@@ -354,7 +354,7 @@ function ContentSection({ title, color, children }) {
         }}
       >
         {title}
-      </h3>
+      </h2>
       {children}
     </section>
   );

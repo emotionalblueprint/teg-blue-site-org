@@ -261,28 +261,34 @@ Content in markdown...
 
 > **Full reference:** `../writing-guidelines.md` (Projects root) — single source of truth for all TEG-Blue writing.
 
-### Two Voices on .org
-
-**Vision Voice is the DEFAULT for all .org content.** Tier 3 is only for research-infrastructure pages.
+### Three Voices on .org
 
 | Content Type | Voice | Principle |
 |-------------|-------|-----------|
-| **Framework pages (F1–F12)** | **Vision Voice** | Open knowledge for any curious mind. Precise language with heart |
-| **Model pages** | **Vision Voice** | Same |
-| **Foundational Concept pages (/concepts/*)** | **Vision Voice** | Same |
-| **Landing page (/)** | **Vision Voice** | Same |
-| **Research-infrastructure pages** (publications listing, methodology, glossary entries, research entry/for researchers) | **Tier 3: Researcher** | How does this operate? Explain the mechanism |
+| **Concept pages (C1–C13)** | **Bridge Voice** | Here is what this is. Plain, steady, invitational |
+| **Model pages** | **Bridge Voice** | Same |
+| **Framework pages (F1–F12)** | **Bridge Voice** | Same |
+| **Landing page (/)** | **Vision Voice** | Open knowledge for any curious mind. Precise language with heart |
+| **Research-infrastructure pages** (publications, methodology, glossary, research entry, FAQ) | **Tier 3: Researcher** | How does this operate? Explain the mechanism |
 
-### Vision Voice (DEFAULT for .org)
+### Bridge Voice (DEFAULT for .org explanatory core)
 
-Anna's blueprint voice — direct, precise, human — lightly structured for web reading. The blueprint IS the public voice. It does not get compressed, academified, or filtered through a research tone.
+The voice for all pages that explain what TEG-Blue is and how it works. A blend of Anna's directness with the steadiness of research writing — without the heart tipping into teaching, and without the mechanism tipping into distance.
 
-- **Anna's rhythm:** Build one thought on another. Let ideas land before the next arrives. Key lines stand alone
-- **Precise:** Same precision as research text. No dumbing down
-- **Heart:** The reader should feel the ideas, not just understand them
-- **Breathing room:** Shorter paragraphs for web, but never compressed into summaries that lose the pulse
-- **Referenced:** Anchor in research traditions without becoming a literature review
-- **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
+- **Plain first:** Simple words. Technical terms only when they add accuracy — defined once, clearly
+- **Warm and steady:** The tone of someone who has spent years with this material and can explain it calmly. Not excited, not selling, not teaching — just showing
+- **Precise:** Same rigor as research writing, carried in clear sentences, not jargon
+- **Practitioner-compatible:** Professionally usable without being professionally cold
+- **Breathing room:** Short paragraphs, key ideas on their own line. Serves clarity, not emotional weight
+- **Referenced but not reviewing:** Frame references as context, not literature review
+- **Invitational:** Underneath everything: "This is what we propose. This is where it maps. This needs testing"
+- **Transparent:** Clear about what is established, what is proposed, and what is untested
+
+**The stance:** Someone who built something — carefully, over years — laying it out and saying: *here's what this is, here's how it connects, and here's what I don't know yet.*
+
+### Vision Voice (Landing page)
+
+Anna's blueprint voice — direct, precise, human — with heart and emotional resonance. Reserved for the first encounter.
 
 **The principle:** Vision Voice = Anna's blueprint voice + web breathing room. No compression. No academic filter.
 

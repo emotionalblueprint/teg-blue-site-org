@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform
 # https://teg-blue.org
-# Last updated: 2026-02-13
+# Last updated: 2026-03-02
 
 ## What This Site Is
 
@@ -108,29 +108,27 @@ Nervous system regulatory states along a continuous gradient:
 
 ## The 12 Frameworks
 
-Organized into five phases:
+Organized into four phases:
 
-**Formation (F1-F3):**
-- F1: The Emotional Gradient — nervous system states
-- F2: Identity Formation — protective adaptation
-- F3: Cognitive Coherence — how mind maintains consistency
+**Foundation (F1-F3):**
+- F1: Emotions as a Biological Information — the instrument
+- F2: Awareness Teaches Awareness — the calibration
+- F3: Adult Cognition & False Coherence — the cognitive replacement
 
-**Scaling (F4-F6):**
-- F4: Family Systems — intergenerational transmission
-- F5: Worth Sorting — how hierarchies form
-- F6: State-Dependent Perception — regulatory state shapes reality
+**Collective Scaling (F4-F7):**
+- F4: Rules Regulate — how individual patterns scale to collective systems
+- F5: Worth Hierarchies Regulate — how rules become sorting systems
+- F6: Bias as Regulation — how perception becomes protection
+- F7: Domination Regulates — how defence becomes strategy becomes domination
 
-**Turning Point (F7):**
-- F7: From Protection to Domination — escalation dynamics
+**Repair (F8-F10):**
+- F8: Repairing Awareness & The Power of Difference — developing what was missing
+- F9: Neurodivergence as Nervous System Variation — system mismatch & structural inclusion
+- F10: Rebuilding Generational Bridges — generational transmission & conditions for change
 
-**Healing (F8-F10):**
-- F8: Pattern Interruption — how change happens
-- F9: Neurodivergent Pathways — variation in processing
-- F10: Intergenerational Healing — breaking cycles
-
-**Integration (F11-F12):**
-- F11: Paradox — holding contradiction without collapse
-- F12: Unified Architecture — the complete system
+**Meta-Integration (F11-F12):**
+- F11: The Emotional Paradoxes — multi-rationality and holding capacity
+- F12: The Two Information Systems — the architecture underneath everything
 
 ## Theoretical Foundations
 
@@ -280,7 +278,7 @@ Each layer has a different job, evidence status, and research needs. See: https:
 - **12** explanatory frameworks (F1-F12)
 - **4** nervous system regulatory modes (Connection → Protection → Control → Domination)
 - **16** gradient-based assessment instruments
-- **5** research phases: Formation, Scaling, Turning Point, Healing, Integration
+- **4** research phases: Foundation, Collective Scaling, Repair, Meta-Integration
 
 ## Frequently Asked Questions
 
@@ -333,11 +331,56 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 
 **Dual Lens:** Simultaneous self-orientation ("Where am I?") and other-orientation ("Where are they?") for relational intelligence.
 
+## Foundational Concepts (13)
+
+The building blocks of TEG-Blue — 13 concepts organized in three groups:
+
+**How the System Works (C1-C6):**
+- C1: Emotions as Biological Information: https://teg-blue.org/concepts/emotions-as-biological-information
+- C2: The Safety Orientation Question: https://teg-blue.org/concepts/the-safety-orientation-question
+- C3: The Inner Compass: https://teg-blue.org/concepts/the-inner-compass
+- C4: State Determines Capacity: https://teg-blue.org/concepts/state-determines-capacity
+- C5: Regulation — The Return Mechanism: https://teg-blue.org/concepts/regulation-the-return-mechanism
+- C6: Same Emotion, Two Expressions: https://teg-blue.org/concepts/same-emotion-two-expressions
+
+**The Three Awareness Capacities (C7-C9):**
+- C7: Reading Emotions: https://teg-blue.org/concepts/reading-emotions
+- C8: Emotional Resonance: https://teg-blue.org/concepts/emotional-resonance
+- C9: Self-Emotional Awareness: https://teg-blue.org/concepts/self-emotional-awareness
+
+**What Happens When It Breaks (C10-C13):**
+- C10: Emotional Distortion: https://teg-blue.org/concepts/emotional-distortion
+- C11: False Coherence: https://teg-blue.org/concepts/false-coherence
+- C12: Awareness Teaches Awareness: https://teg-blue.org/concepts/awareness-teaches-awareness
+- C13: Tolerance Thresholds: https://teg-blue.org/concepts/tolerance-thresholds
+
+## Individual Framework Pages (12)
+
+- F1: Emotions as a Biological Information: https://teg-blue.org/frameworks/f1
+- F2: Awareness Teaches Awareness: https://teg-blue.org/frameworks/f2
+- F3: Adult Cognition & False Coherence: https://teg-blue.org/frameworks/f3
+- F4: Rules Regulate: https://teg-blue.org/frameworks/f4
+- F5: Worth Hierarchies Regulate: https://teg-blue.org/frameworks/f5
+- F6: Bias as Regulation: https://teg-blue.org/frameworks/f6
+- F7: Domination Regulates: https://teg-blue.org/frameworks/f7
+- F8: Repairing Awareness & The Power of Difference: https://teg-blue.org/frameworks/f8
+- F9: Neurodivergence as Nervous System Variation: https://teg-blue.org/frameworks/f9
+- F10: Rebuilding Generational Bridges: https://teg-blue.org/frameworks/f10
+- F11: The Emotional Paradoxes: https://teg-blue.org/frameworks/f11
+- F12: The Two Information Systems: https://teg-blue.org/frameworks/f12
+
+## Models (2)
+
+- The Inner Compass & Four-Mode Gradient: https://teg-blue.org/models/inner-compass
+- The Three Awareness Capacities: https://teg-blue.org/models/three-awareness-capacities
+
 ## Key URLs
 
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
+- Foundational Concepts Hub: https://teg-blue.org/concepts
+- Models Hub: https://teg-blue.org/models
 - Four-Mode Gradient: https://teg-blue.org/four-mode-gradient
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map

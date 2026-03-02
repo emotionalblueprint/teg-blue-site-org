@@ -15,6 +15,9 @@ const PAGE_DATES = {
   '/concepts/false-coherence': '2026-03-02',
   '/concepts/awareness-teaches-awareness': '2026-03-02',
   '/concepts/tolerance-thresholds': '2026-03-02',
+  '/concepts/reading-emotions': '2026-03-02',
+  '/concepts/emotional-resonance': '2026-03-02',
+  '/concepts/self-emotional-awareness': '2026-03-02',
   '/publications': '2026-02-18',
   '/frameworks-map': '2026-02-15',
   '/research-entry': '2026-02-18',
@@ -200,6 +203,24 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/concepts/reading-emotions`,
+      lastModified: new Date(PAGE_DATES['/concepts/reading-emotions']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/concepts/emotional-resonance`,
+      lastModified: new Date(PAGE_DATES['/concepts/emotional-resonance']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/concepts/self-emotional-awareness`,
+      lastModified: new Date(PAGE_DATES['/concepts/self-emotional-awareness']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 
   // Dynamic content pages
@@ -230,7 +251,7 @@ export default function sitemap() {
       url,
       lastModified: node.lastUpdated ? new Date(node.lastUpdated) : new Date(),
       changeFrequency: 'monthly',
-      priority: node.type === 'publication' ? 0.8 : 0.6,
+      priority: (node.type === 'publication' || node.type === 'framework') ? 0.8 : 0.6,
     }
   })
 

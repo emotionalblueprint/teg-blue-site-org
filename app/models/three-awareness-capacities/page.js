@@ -1,5 +1,6 @@
 import { getModel } from "@/src/data/frameworks";
 import ModelPage from "@/src/components/ModelPage";
+import { generateModelJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 import * as content from "@/src/content/three-awareness-capacities-content";
 
 const model = getModel("three-awareness-capacities");
@@ -19,5 +20,21 @@ export const metadata = {
 };
 
 export default function ThreeAwarenessCapacitiesPage() {
-  return <ModelPage model={model} content={content} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateModelJsonLd(model)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbJsonLd([
+          { name: "Home", url: "/" },
+          { name: "Models", url: "/models" },
+          { name: model.name, url: `/models/${model.slug}` },
+        ])) }}
+      />
+      <ModelPage model={model} content={content} />
+    </>
+  );
 }

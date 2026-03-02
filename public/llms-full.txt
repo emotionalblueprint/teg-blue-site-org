@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform (Extended)
 # https://teg-blue.org
-# Last updated: 2026-02-18
+# Last updated: 2026-03-02
 # Format: llms-full.txt (Extended AI-readable documentation)
 
 ---
@@ -101,6 +101,8 @@ Nervous system regulatory states along a continuous gradient:
 
 ## PHASE 1: FOUNDATION (F1-F3)
 
+Individual framework pages: /frameworks/f1, /frameworks/f2, /frameworks/f3
+
 ### Framework 1: Emotions as a Biological Information
 **Question:** How does the nervous system orient between safety and threat?
 
@@ -156,6 +158,8 @@ Nervous system regulatory states along a continuous gradient:
 **TEG-Blue integration:** Explains how cognition tells the emotional system 'you're not needed here' — replacing the return that was never learned with false coherence and cognitive substitutes.
 
 ## PHASE 2: COLLECTIVE SCALING (F4-F7)
+
+Individual framework pages: /frameworks/f4, /frameworks/f5, /frameworks/f6, /frameworks/f7
 
 ### Framework 4: Rules Regulate
 **Question:** How do individual patterns scale to collective systems?
@@ -231,6 +235,8 @@ Nervous system regulatory states along a continuous gradient:
 
 ## PHASE 3: REPAIR (F8-F10)
 
+Individual framework pages: /frameworks/f8, /frameworks/f9, /frameworks/f10
+
 ### Framework 8: Repairing Awareness & The Power of Difference
 **Question:** How do you develop what was missing?
 
@@ -286,6 +292,8 @@ Nervous system regulatory states along a continuous gradient:
 **TEG-Blue integration:** Five transmission pathways all transmitting the same underlying content. Coherence, not content, is what matters.
 
 ## PHASE 4: META-INTEGRATION (F11-F12)
+
+Individual framework pages: /frameworks/f11, /frameworks/f12
 
 ### Framework 11: The Emotional Paradoxes
 **Question:** What happens when false coherence loosens?
@@ -604,6 +612,41 @@ Psychometric testing of 16 instruments
 
 ---
 
+# FOUNDATIONAL CONCEPTS (13)
+
+The building blocks of TEG-Blue — 13 concepts organized in three groups.
+
+## How the System Works (C1-C6)
+
+- **C1: Emotions as Biological Information** — Emotions are the nervous system's signalling language, carrying information about safety and threat. https://teg-blue.org/concepts/emotions-as-biological-information
+- **C2: The Safety Orientation Question** — One question generates all emotional diversity: 'Is there enough safety to engage, or is protection needed?' https://teg-blue.org/concepts/the-safety-orientation-question
+- **C3: The Inner Compass** — The nervous system orients between Connection and threat modes. Health is the needle moving freely. https://teg-blue.org/concepts/the-inner-compass
+- **C4: State Determines Capacity** — What you can perceive, think, feel, and do depends on your current compass position. https://teg-blue.org/concepts/state-determines-capacity
+- **C5: Regulation — The Return Mechanism** — The body moves into threat and comes back. Regulation is the mechanism of coming back. https://teg-blue.org/concepts/regulation-the-return-mechanism
+- **C6: Same Emotion, Two Expressions** — Mode position determines whether an emotion serves connection or defence. https://teg-blue.org/concepts/same-emotion-two-expressions
+
+## The Three Awareness Capacities (C7-C9)
+
+- **C7: Reading Emotions** — The capacity to track what others feel is the first awareness channel. https://teg-blue.org/concepts/reading-emotions
+- **C8: Emotional Resonance** — The capacity to feel with another person, not just track what they feel. https://teg-blue.org/concepts/emotional-resonance
+- **C9: Self-Emotional Awareness** — The capacity to notice that what we feel is a feeling, not the truth of the situation. https://teg-blue.org/concepts/self-emotional-awareness
+
+## What Happens When It Breaks (C10-C13)
+
+- **C10: Emotional Distortion** — Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence. https://teg-blue.org/concepts/emotional-distortion
+- **C11: False Coherence** — Beliefs feel true because they calm the nervous system, not because they match reality. https://teg-blue.org/concepts/false-coherence
+- **C12: Awareness Teaches Awareness** — Children calibrate to what adults embody, not what adults say. https://teg-blue.org/concepts/awareness-teaches-awareness
+- **C13: Tolerance Thresholds** — The nervous system calibrates what to endure based on early conditions. https://teg-blue.org/concepts/tolerance-thresholds
+
+---
+
+# MODELS (2)
+
+- **The Inner Compass & Four-Mode Gradient** — The visual-conceptual instrument for how the nervous system orients between safety and threat. https://teg-blue.org/models/inner-compass
+- **The Three Awareness Capacities** — The calibration system: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness. https://teg-blue.org/models/three-awareness-capacities
+
+---
+
 # CITATION
 
 Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org
@@ -622,6 +665,10 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
+- Foundational Concepts Hub: https://teg-blue.org/concepts
+- Models Hub: https://teg-blue.org/models
+- Inner Compass Model: https://teg-blue.org/models/inner-compass
+- Three Awareness Capacities Model: https://teg-blue.org/models/three-awareness-capacities
 - Four-Mode Gradient: https://teg-blue.org/four-mode-gradient
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
