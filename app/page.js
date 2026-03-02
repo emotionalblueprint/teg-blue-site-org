@@ -58,7 +58,7 @@ export default function HomePage() {
                 fontFamily: FONT.mono,
               }}
             >
-              Open Knowledge
+              Emotional Technology Research
             </p>
 
             <h1
@@ -71,8 +71,7 @@ export default function HomePage() {
                 maxWidth: 620,
               }}
             >
-              Understanding how the nervous system shapes everything — from a
-              single emotion to a whole system
+              Reconnecting cognition with emotional awareness
             </h1>
 
             <p
@@ -84,22 +83,55 @@ export default function HomePage() {
                 marginBottom: 16,
               }}
             >
-              TEG-Blue traces a single thread — from the individual nervous
-              system through relationships, identity, development, collective
-              systems, and repair — showing that the same mechanism operates at
-              every scale.
+              The open science branch of TEG-Blue — where all research is
+              transparent, all sources are credited, and all claims can be
+              tested.
             </p>
 
             <p
               style={{
                 fontSize: 14,
                 lineHeight: 1.7,
-                color: TEXT.tertiary,
+                color: TEXT.secondary,
                 maxWidth: 620,
+                marginBottom: 12,
               }}
             >
-              All research transparent. All sources credited. All claims open to
-              testing.
+              It is an integrative architecture for mapping emotional
+              patterns — built on the principle that emotions are biological
+              information, not irrational noise. By mapping how the nervous
+              system organizes around perceived safety and threat, TEG-Blue
+              provides a structured framework for identifying what is happening
+              at the regulatory level, locating the current state, and
+              determining what capacities are available from that position.
+            </p>
+
+            <p
+              style={{
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: TEXT.secondary,
+                maxWidth: 620,
+                marginBottom: 24,
+              }}
+            >
+              Built on 139+ established theories. Open to critique and
+              validation.
+            </p>
+
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.7,
+                color: TEXT.secondary,
+                maxWidth: 620,
+                fontWeight: 500,
+              }}
+            >
+              The gap in emotional intelligence has never been a lack of good
+              science. It has been a lack of architecture — a structure where
+              the science connects, becomes visible, and becomes usable.
+              That&rsquo;s what TEG-Blue is.
             </p>
           </section>
 
@@ -116,7 +148,7 @@ export default function HomePage() {
                 fontFamily: FONT.mono,
               }}
             >
-              One system, three zoom levels
+              Understand the system
             </p>
 
             <div
@@ -152,7 +184,7 @@ export default function HomePage() {
                     marginBottom: 10,
                   }}
                 >
-                  13 Concepts
+                  Foundational Concepts
                 </span>
                 <h2
                   style={{
@@ -163,7 +195,7 @@ export default function HomePage() {
                     lineHeight: 1.3,
                   }}
                 >
-                  Name the patterns
+                  Start here
                 </h2>
                 <p
                   style={{
@@ -173,9 +205,9 @@ export default function HomePage() {
                     margin: 0,
                   }}
                 >
-                  Each concept reframes something you already experience. A
-                  feeling, a pattern, a moment you recognize but may not have
-                  had words for.
+                  Entry points into the system — ideas that make the
+                  architecture accessible before the models and frameworks
+                  begin.
                 </p>
               </Link>
 
@@ -226,9 +258,8 @@ export default function HomePage() {
                     margin: 0,
                   }}
                 >
-                  One model is the instrument — a compass that tracks where the
-                  nervous system is. The other is the calibration — the
-                  capacities that determine how it reads.
+                  One tells you where the needle is. The other tells you why it
+                  is there.
                 </p>
               </Link>
 
