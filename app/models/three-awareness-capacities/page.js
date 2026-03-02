@@ -6,7 +6,7 @@ const model = getModel("three-awareness-capacities");
 
 export const metadata = {
   title: "The Three Awareness Capacities — TEG-Blue Research",
-  description: "The calibration system — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA). What determines how well the compass works. 10 concepts covering awareness development, capacity configurations, co-regulation, true and false coherence, tolerance thresholds, generational replication, and repair.",
+  description: "The calibration system — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA). What determines how well the compass works. Awareness teaches awareness, true and false coherence, and repair as development.",
   keywords: ["three awareness capacities", "reading emotions", "emotional resonance", "self-emotional awareness", "SEA keystone", "capacity configuration", "awareness teaches awareness", "co-regulation", "true coherence false coherence", "repair"],
   alternates: { canonical: "https://teg-blue.org/models/three-awareness-capacities" },
   openGraph: {

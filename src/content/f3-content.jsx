@@ -14,11 +14,27 @@ const emphasis = {
   fontWeight: 600,
 };
 
+const standaloneLine = {
+  fontSize: 15,
+  fontWeight: 600,
+  color: TEXT.primary,
+  lineHeight: 1.6,
+  margin: "20px 0",
+};
+
 const subheading = {
   fontSize: 15,
   fontWeight: 600,
   color: TEXT.primary,
   margin: "24px 0 10px",
+};
+
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: 6,
+  fontSize: 13,
 };
 
 const tableCell = {
@@ -41,31 +57,42 @@ const tableHeader = {
 export const proposal = (
   <>
     <p style={prose}>
-      F2 explains how the compass gets calibrated in childhood and what
-      happens when calibration fails. F3 explains why that calibration
-      persists in adulthood — and why it is so hard to change. The central
-      mechanism is <strong style={emphasis}>false coherence</strong>: cognition
-      actively replacing emotional signals with invented narratives that feel
-      true because they restore nervous system stability, not because they
-      are accurate.
+      F2 explains how the compass gets calibrated in childhood &mdash; through
+      the awareness capacities the caregivers carry. F3 explains why that
+      calibration persists in adulthood, and why it is so hard to change.
     </p>
     <p style={prose}>
-      False coherence is not deception. It is not denial, which implies
-      awareness of what is being denied. It is the outcome: a stable, complete
-      narrative built on incomplete data that functions as identity. "I'm not
-      angry — I'm being logical." "They're overreacting — I'm just being
-      realistic." "I'm fine, everything is fine" — said while radiating
-      tension. Each narrative works for regulation. Each is objectively
-      incomplete.
+      The central mechanism is{" "}
+      <strong style={emphasis}>false coherence</strong>: cognition, still on
+      threat duty from childhood, actively replacing emotional signals with
+      invented narratives. The nervous system sends a signal: &ldquo;I&rsquo;m
+      afraid.&rdquo; &ldquo;This hurts.&rdquo; Cognition intercepts:
+      &ldquo;You&rsquo;re not needed here. I&rsquo;ve got this.&rdquo; And then
+      it generates a replacement: &ldquo;I&rsquo;m not afraid &mdash;
+      I&rsquo;m being strategic.&rdquo; &ldquo;That didn&rsquo;t hurt &mdash;
+      I&rsquo;m fine.&rdquo;
     </p>
     <p style={prose}>
-      The critical insight: false coherence{" "}
-      <em>is</em> regulation. When the biological return was never learned
-      (F2), cognition stepped in to do what the body could not. The person
-      feels regulated. They are regulated. The cost is truth, not function.
-      This is why challenging someone's false coherence directly escalates
-      threat rather than producing insight — you are threatening the only
-      regulatory system they have.
+      The person experiences the replacement as truth &mdash; because cognition
+      is the system that constructs what the person experiences as
+      &ldquo;reality.&rdquo; The narrative holds together. The body calms.
+      Cognition learns: <em>this works.</em>
+    </p>
+    <p style={standaloneLine}>
+      False coherence is not deception. It is regulatory success at the cost of
+      emotional truth.
+    </p>
+    <p style={prose}>
+      The person is not lying. They genuinely believe their constructed narrative
+      because believing it reduces threat. The system is succeeding at
+      regulation. The cost is truth, not function. This is the critical turn in
+      the regulation thread: from F1&rsquo;s biological return, through
+      F2&rsquo;s developmental failure of that return, to F3&rsquo;s cognitive
+      replacement &mdash; and its relational consequences.
+    </p>
+    <p style={standaloneLine}>
+      Beliefs feel true because they restore nervous system stability &mdash;
+      not because they are accurate.
     </p>
   </>
 );
@@ -76,65 +103,97 @@ export const mechanism = (
   <>
     <h4 style={subheading}>The Self-Reinforcing Loop</h4>
     <p style={prose}>
-      False coherence does not maintain itself passively — it gets stronger
+      False coherence does not maintain itself passively. It gets stronger
       through use. Under stress, the nervous system shifts toward protection.
-      Attention narrows. Cognition generates a stabilising narrative,
-      replacing the emotional signal. The narrative holds, identity feels
-      coherent, the body calms. Relief reinforces the pattern. Each cycle
-      makes the replacement more automatic and invisible.
+      Attention narrows. Cognition generates a stabilising narrative, replacing
+      the emotional signal. The narrative holds, the body calms, relief
+      reinforces the pattern. Each cycle makes the replacement more automatic,
+      more invisible, more &ldquo;who I am.&rdquo;
     </p>
     <p style={prose}>
-      The deeper cost: every time cognition replaces an emotional signal, the
-      body's regulatory system gets less practice. The muscles that would
-      release don't. The breath that would deepen doesn't. The tears don't
-      come. Cognitive regulation prevents the conditions under which emotional
-      regulation could develop. This is why insight alone cannot break the
-      loop — understanding the pattern is itself a cognitive event, and the
-      cognitive system is the one running the replacement.
+      The deeper cost: every time cognition successfully replaces an emotional
+      signal, the body&rsquo;s own regulatory system gets less practice. The
+      muscles that would release don&rsquo;t release. The breath that would
+      deepen doesn&rsquo;t deepen. The tears that would come don&rsquo;t come.
+      Cognitive regulation does not just replace emotional regulation &mdash; it
+      prevents the conditions under which emotional regulation could develop.
+    </p>
+    <p style={prose}>
+      This is why insight alone cannot break the loop. Understanding the pattern
+      is itself a cognitive event &mdash; and the cognitive system is the one
+      running the replacement. &ldquo;I know I do this&rdquo; is itself a
+      narrative generated by the same system that generated the false coherence.
+      The loop can incorporate insight without breaking.
     </p>
 
     <h4 style={subheading}>
       Cognitive Dissonance as Regulatory Stress Response
     </h4>
     <p style={prose}>
-      When reality contradicts the narrative cognition built, the nervous
-      system experiences the misalignment as threat. Dissonance is not a
-      reasoning error — it is a regulatory stress response. The resolution
-      strategies — denial, projection, blame, narrative revision,
-      counterattack — are the cognitive system doing its job under threat:
-      generating a stable narrative as fast as possible to restore
-      equilibrium.
+      When reality contradicts the narrative cognition built, the nervous system
+      experiences the misalignment as threat. Dissonance is not a reasoning error.
+      It is a regulatory stress response. The resolution strategies &mdash;
+      denial, projection, blame, counterattack &mdash; are the cognitive system
+      doing its job under emergency conditions: generating a stable narrative as
+      fast as possible to restore equilibrium.
+    </p>
+    <p style={standaloneLine}>
+      You cannot out-think a regulatory response. You can only create conditions
+      safe enough for the system to let truth in.
     </p>
     <p style={prose}>
-      You cannot out-think a regulatory response. You can only create
-      conditions safe enough for the system to let truth in without
-      collapsing. If the biological return was never learned and cognition is
-      the only regulatory system, then challenging cognition's narrative
-      threatens the person's entire regulatory architecture.
+      If the biological return was never learned and cognition is the only
+      regulatory system, then challenging cognition&rsquo;s narrative threatens
+      the person&rsquo;s entire regulatory architecture. This is not
+      stubbornness. It is a person clinging to the only regulation they have.
+      Safety must precede truth. Not the other way around.
     </p>
 
     <h4 style={subheading}>Emotional Distortion</h4>
     <p style={prose}>
-      When Self-Emotional Awareness is offline, internal discomfort — the
-      person's own nervous system activation — cannot be located as their own
-      experience. The activation gets misread as external threat. Retaliation
-      feels like self-defence because the nervous system is reporting a threat
-      that is not there. This is the specific micro-mechanism connecting SEA
-      absence to relational harm: internal discomfort → misread as external
-      attack → retaliation feels justified.
+      Every person has moments where internal discomfort gets misread as an
+      external attack. Someone sets a reasonable boundary. The body reacts as
+      if something much bigger happened. Usually, the person catches it &mdash;
+      they feel the guilt or shame underneath and course-correct.
+    </p>
+    <p style={prose}>
+      That catching depends on SEA. When SEA is structurally absent, the
+      catching never happens. Internal discomfort has no name, no internal
+      source, no &ldquo;this is mine.&rdquo; The signal collapses: &ldquo;I
+      feel bad&rdquo; becomes &ldquo;someone is making me feel bad&rdquo;
+      becomes &ldquo;I am being attacked.&rdquo;
+    </p>
+    <p style={standaloneLine}>
+      Retaliation feels like self-defence &mdash; because the nervous system is
+      reporting a threat that is not there.
+    </p>
+    <p style={prose}>
+      The relational consequence: each boundary set by the other person becomes
+      another data point in a picture of being surrounded by hostile, unfair
+      people. The narrative feels solid from inside &mdash; because every
+      boundary really did feel like an attack.
+    </p>
+    <p style={standaloneLine}>
+      Your boundaries become their evidence.
     </p>
 
     <h4 style={subheading}>Identity Upgrades</h4>
     <p style={prose}>
-      The identity cognition built does not stay static — it gets upgraded
-      with achievement, ideology, self-optimisation, and therapeutic
-      narratives. These may resemble genuine growth while serving the same
-      regulatory function. Chronic Control plus meditation becomes the
-      "mindful leader." Chronic Connection plus empowerment language becomes
-      the "empowered empath." The diagnostic question: is cognition serving
-      truth or serving the mode? Genuine growth brings SEA online and teaches
-      the return. Identity upgrade gives cognition better language for the
-      same replacement.
+      The identity cognition built does not stay static. It gets upgraded &mdash;
+      refined through achievement, ideology, self-optimisation, and therapeutic
+      narratives. The person in chronic Control who adds &ldquo;mindful
+      leader&rdquo; through meditation practice &mdash; but uses mindfulness as a
+      more sophisticated control strategy. The person in chronic Connection who
+      adds &ldquo;empowered empath&rdquo; &mdash; but uses the language of
+      empowerment to narrate continued self-erasure.
+    </p>
+    <p style={prose}>
+      The upgrade looks like development. It uses the language of growth. But
+      the regulatory function is unchanged: cognition is still replacing
+      emotional signals with invented narratives. The narrative just got more
+      sophisticated. The diagnostic question is not &ldquo;has this person
+      changed?&rdquo; but &ldquo;is cognition serving truth or serving the
+      mode?&rdquo; Has the body learned anything new about coming back?
     </p>
   </>
 );
@@ -145,25 +204,16 @@ export const breakdown = (
   <>
     <h4 style={subheading}>Regulatory Defence Across the Gradient</h4>
     <p style={prose}>
-      When external reality contradicts the identity cognition built around
-      the capacity gaps, the system does not experience this as feedback. It
-      experiences it as a threat to its regulation. The response is
-      proportionate to the regulatory threat, not the external event — which
-      is why it looks "disproportionate" from outside and feels completely
+      When external reality contradicts the identity cognition built around the
+      capacity gaps, the system does not experience this as feedback. It
+      experiences it as a threat to its regulation. The response is proportionate
+      to the regulatory threat, not the external event &mdash; which is why it
+      looks &ldquo;disproportionate&rdquo; from outside and feels completely
       justified from inside.
     </p>
 
-    {/* Defence patterns table */}
     <div style={{ overflowX: "auto", margin: "16px 0" }}>
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          border: `1px solid ${BORDER.default}`,
-          borderRadius: 6,
-          fontSize: 13,
-        }}
-      >
+      <table style={tableStyle}>
         <thead>
           <tr>
             <th style={tableHeader}>Chronic Mode</th>
@@ -176,14 +226,15 @@ export const breakdown = (
             <td style={{ ...tableCell, fontWeight: 600 }}>Connection</td>
             <td style={tableCell}>Collapse, guilt, self-blame</td>
             <td style={tableCell}>
-              "I'm so sorry, I'm terrible, you're right"
+              &ldquo;I&rsquo;m so sorry, I&rsquo;m terrible, you&rsquo;re
+              right&rdquo;
             </td>
           </tr>
           <tr>
             <td style={{ ...tableCell, fontWeight: 600 }}>Protection</td>
             <td style={tableCell}>Withdrawal, attack, shutdown</td>
             <td style={tableCell}>
-              "You're the problem. I'm done."
+              &ldquo;You&rsquo;re the problem. I&rsquo;m done.&rdquo;
             </td>
           </tr>
           <tr>
@@ -192,49 +243,92 @@ export const breakdown = (
               Strategic reframing, blame reversal
             </td>
             <td style={tableCell}>
-              "Actually, if you look at the facts..."
+              &ldquo;Actually, if you look at the facts&hellip;&rdquo;
             </td>
           </tr>
           <tr>
             <td style={{ ...tableCell, fontWeight: 600 }}>Domination</td>
             <td style={tableCell}>Rage, punishment, elimination</td>
-            <td style={tableCell}>"You will regret this."</td>
+            <td style={tableCell}>
+              &ldquo;You will regret this.&rdquo;
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <p style={prose}>
+      The clinical reframe: these responses are often mislabelled as
+      &ldquo;manipulation&rdquo; or &ldquo;bad character.&rdquo; The
+      regulation-based framing allows accountability without demonisation. The
+      person is responsible for impact. The mechanism is understandable.
+      Understanding the mechanism does not excuse the harm &mdash; it explains
+      why challenging false coherence directly often escalates rather than
+      resolves.
+    </p>
+
     <h4 style={subheading}>External Regulation</h4>
     <p style={prose}>
-      When the internal regulatory system is offline, people use others to
-      manage what the body cannot manage alone. Chronic Connection regulates
-      through fusion — dissolving self-boundaries. Chronic Protection
-      regulates through distance — eliminating relational threat. Chronic
-      Control regulates through management — orchestrating others' behaviour.
-      Chronic Domination regulates through subjugation — enforcing compliance.
+      When internal emotional processing is structurally unavailable, the system
+      recruits other people to perform the regulatory function. This is not a
+      conscious strategy. It is a structural necessity &mdash; the only pathway
+      left when the internal channel is offline.
     </p>
     <p style={prose}>
-      A critical mechanism:{" "}
-      <strong style={emphasis}>
-        chronic Control mimics healthy Connection
-      </strong>
-      . Control partners can look attentive, responsive, and connected —
-      because reading others' needs is a core competence. But the attention
-      serves management, not connection. The relationship maintains a version
-      of belonging while the partner remains unseen. This is the mode that
-      most reliably makes victims invisible.
+      Each chronic mode uses others differently. Chronic Connection regulates
+      through <strong style={emphasis}>fusion</strong> &mdash; absorbing
+      others&rsquo; emotional states to fill the void where self-awareness
+      should be. Chronic Protection regulates through{" "}
+      <strong style={emphasis}>distance</strong> &mdash; keeping intimacy at bay
+      because closeness is the threat. Chronic Control regulates through{" "}
+      <strong style={emphasis}>management</strong> &mdash; orchestrating
+      others&rsquo; behaviour so the environment stays predictable. Chronic
+      Domination regulates through{" "}
+      <strong style={emphasis}>subjugation</strong> &mdash; using others&rsquo;
+      fear and submission as a direct regulation mechanism.
+    </p>
+    <p style={standaloneLine}>
+      Chronic Control is the mode that most reliably mimics healthy Connection.
+    </p>
+    <p style={prose}>
+      The person in chronic Control can look attentive, warm, competent &mdash;
+      because reading others&rsquo; needs is a core competence. But the
+      attention serves management, not connection. The victim &mdash; the
+      partner, the child, the employee who sees behind the performance &mdash;
+      lives inside the managed reality. They experience subtle coercion,
+      narrative control, and strategic withdrawal of warmth. They often cannot
+      name what is happening because nothing visible has occurred. And they are
+      not believed when they describe it &mdash; because it contradicts what
+      everyone else sees.
+    </p>
+    <p style={prose}>
+      Chronic Domination follows addiction logic: the first time the person
+      dominates and feels the relief, it is enough. But the relief fades
+      &mdash; because SEA is offline and the actual emotional processing never
+      happened. Tolerance builds. Escalation is required. There is no natural
+      stopping point.
+    </p>
+    <p style={standaloneLine}>
+      There is no amount of domination that will make them feel safe &mdash;
+      because the safety they need is internal.
     </p>
 
     <h4 style={subheading}>The Somatic Cost</h4>
     <p style={prose}>
-      Maintaining false coherence consumes substantial resources. When
-      cognition is permanently replacing emotional signals, the cost shows
-      somatically: chronic tension, persistent fatigue, emotional numbing,
-      cognitive fog, difficulty relaxing even in safe environments. Rigidity
-      and defensiveness are state-dependent outcomes, not character traits —
-      predictable results of a system working overtime to maintain a narrative
-      for years or decades. When safety increases, what becomes available is
-      not new capacity but existing capacity freed from defensive use.
+      Maintaining false coherence consumes substantial resources. When cognition
+      is permanently replacing emotional signals, the cost shows in the body:
+      chronic tension, persistent fatigue, emotional numbing, cognitive fog,
+      difficulty relaxing even in safe environments. Rigidity and defensiveness
+      are not character traits. They are state-dependent outcomes &mdash;
+      predictable results of a system working overtime for years or decades.
+    </p>
+    <p style={standaloneLine}>
+      Not becoming someone new. Functioning without chronic defensive load.
+    </p>
+    <p style={prose}>
+      When safety increases and the body begins learning the return, what
+      becomes available is not new capacity but existing capacity freed from
+      defensive use.
     </p>
   </>
 );
@@ -244,15 +338,7 @@ export const breakdown = (
 export const foundations = (
   <>
     <div style={{ overflowX: "auto", margin: "16px 0" }}>
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          border: `1px solid ${BORDER.default}`,
-          borderRadius: 6,
-          fontSize: 13,
-        }}
-      >
+      <table style={tableStyle}>
         <thead>
           <tr>
             <th style={tableHeader}>Tradition</th>
@@ -280,7 +366,9 @@ export const foundations = (
             <td style={tableCell}>
               Cognitive dissonance, motivated reasoning, coherence-seeking
             </td>
-            <td style={tableCell}>Festinger, 1957; Kahneman, 2011; Haidt, 2001</td>
+            <td style={tableCell}>
+              Festinger, 1957; Kahneman, 2011; Haidt, 2001
+            </td>
           </tr>
           <tr>
             <td style={{ ...tableCell, fontWeight: 600 }}>Family Systems</td>
@@ -329,16 +417,21 @@ export const foundations = (
       </table>
     </div>
     <p style={prose}>
-      <strong style={{ color: TEXT.primary }}>TEG-Blue's contribution:</strong>{" "}
-      The term "false coherence" captures what no existing term does —
-      regulatory success at the cost of emotional truth. The self-reinforcing
-      loop showing how the replacement becomes automatic through use. The
-      reframe of cognitive dissonance from reasoning error to nervous system
-      regulatory stress response. The naming of emotional distortion as the
-      micro-mechanism connecting SEA absence to relational harm. The
-      diagnostic distinction between genuine growth and identity upgrade. The
-      four-mode map of external regulation patterns. The building blocks are
-      established; the integration is the hypothesis, open to testing.
+      <strong style={{ color: TEXT.primary }}>
+        TEG-Blue&rsquo;s contribution:
+      </strong>{" "}
+      The term &ldquo;false coherence&rdquo; &mdash; capturing what no existing
+      term does: regulatory success at the cost of emotional truth. The
+      identification of the core mechanism: cognition on threat duty actively
+      replacing emotional signals, not just failing to receive them. The
+      self-reinforcing loop showing how the replacement hardens through use. The
+      reframe of cognitive dissonance from reasoning error to regulatory stress
+      response. The naming of emotional distortion as the micro-mechanism
+      connecting SEA absence to relational harm. The four-mode map of external
+      regulation &mdash; fusion, distance, management, subjugation &mdash; as
+      one mechanism expressed differently across the gradient. The building
+      blocks are established; the integration is the hypothesis, open to
+      testing.
     </p>
   </>
 );

@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { getPhaseColor, getFramework, getPairedModel, MODELS } from "@/src/data/frameworks";
+import { getPhaseColor, getFramework, getPairedModel } from "@/src/data/frameworks";
 
 /**
  * ModelPage — Reusable template for individual model pages.
  *
- * Renders the full page layout: header with paired model link,
- * overview, concept sections, key formulations, research foundations,
- * TEG-Blue contribution, connection to paired model, and footer navigation.
+ * Renders the slim page layout: header, overview, key characteristics,
+ * key reframes, research foundations, connection to paired model,
+ * bridge to deeper content, and footer navigation.
  */
 export default function ModelPage({ model, content = {} }) {
   const parentFramework = getFramework(model.parentFramework);
@@ -127,29 +127,17 @@ export default function ModelPage({ model, content = {} }) {
             </ContentSection>
           )}
 
-          {/* Concept Sections */}
-          {content.concepts && content.concepts.map((concept, i) => (
-            <ConceptSection
-              key={i}
-              number={i + 1}
-              title={concept.title}
-              color={phaseColor}
-              body={concept.body}
-              application={concept.application}
-            />
+          {/* Key Characteristics */}
+          {content.characteristics && content.characteristics.map((char, i) => (
+            <ContentSection key={i} title={char.title} color={phaseColor}>
+              {char.body}
+            </ContentSection>
           ))}
 
-          {/* What the Model Establishes */}
-          {content.establishes && (
-            <ContentSection title="What the Model Establishes" color={phaseColor}>
-              {content.establishes}
-            </ContentSection>
-          )}
-
-          {/* Key Formulations */}
-          {content.formulations && (
-            <ContentSection title="Key Formulations" color={phaseColor}>
-              {content.formulations}
+          {/* What the Model Changes */}
+          {content.reframes && (
+            <ContentSection title="What the Model Changes" color={phaseColor}>
+              {content.reframes}
             </ContentSection>
           )}
 
@@ -157,13 +145,6 @@ export default function ModelPage({ model, content = {} }) {
           {content.foundations && (
             <ContentSection title="Research Foundations" color={phaseColor}>
               {content.foundations}
-            </ContentSection>
-          )}
-
-          {/* TEG-Blue Contribution */}
-          {content.contribution && (
-            <ContentSection title="TEG-Blue Contribution" color={phaseColor}>
-              {content.contribution}
             </ContentSection>
           )}
 
@@ -196,6 +177,41 @@ export default function ModelPage({ model, content = {} }) {
               </div>
             </ContentSection>
           )}
+
+          {/* Bridge to deeper content */}
+          <section
+            style={{
+              padding: "24px",
+              background: hexToRgba(phaseColor, 0.04),
+              borderRadius: RADIUS.md,
+              border: `1px solid ${hexToRgba(phaseColor, 0.12)}`,
+            }}
+          >
+            <p
+              style={{
+                fontSize: 14,
+                color: TEXT.secondary,
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              This page introduces the model&rsquo;s core architecture and key
+              principles. The full model &mdash; all concepts, application
+              guides, and operational detail &mdash; is available for
+              researchers and practitioners on{" "}
+              <a
+                href="https://teg-blue.com"
+                style={{
+                  color: phaseColor,
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+              >
+                teg-blue.com
+              </a>
+              .
+            </p>
+          </section>
         </div>
 
         {/* Footer Navigation */}
@@ -304,86 +320,6 @@ function ContentSection({ title, color, children }) {
         {title}
       </h3>
       {children}
-    </section>
-  );
-}
-
-function ConceptSection({ number, title, color, body, application }) {
-  return (
-    <section>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: 10,
-          marginBottom: 12,
-          paddingBottom: 8,
-          borderBottom: `2px solid ${hexToRgba(color, 0.2)}`,
-        }}
-      >
-        <span
-          style={{
-            fontSize: 11,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            color: color,
-            background: hexToRgba(color, 0.12),
-            padding: "2px 8px",
-            borderRadius: 4,
-          }}
-        >
-          {number}
-        </span>
-        <h3
-          style={{
-            fontSize: 16,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: 0,
-          }}
-        >
-          {title}
-        </h3>
-      </div>
-
-      {/* What It Is */}
-      {body}
-
-      {/* Model Application */}
-      {application && (
-        <div
-          style={{
-            marginTop: 20,
-            padding: "16px 20px",
-            background: BG.card,
-            borderRadius: RADIUS.md,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              fontFamily: FONT.mono,
-              color: color,
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
-              marginBottom: 10,
-            }}
-          >
-            Model Application
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 8,
-            }}
-          >
-            {application}
-          </div>
-        </div>
-      )}
     </section>
   );
 }
