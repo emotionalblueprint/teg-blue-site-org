@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { FRAMEWORKS as FRAMEWORK_DATA, PHASES, getPhaseColor } from "@/src/data/frameworks";
 
@@ -62,7 +62,7 @@ export default function TheoreticalFoundationsPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.muted,
+              color: TEXT.secondary,
               lineHeight: 1.6,
               marginBottom: 20,
             }}
@@ -233,7 +233,7 @@ export default function TheoreticalFoundationsPage() {
               href="/collaborate"
               style={{
                 padding: "10px 20px",
-                background: SPECTRUM.blue,
+                background: PRIMARY,
                 color: "#fff",
                 borderRadius: 6,
                 fontWeight: 500,
@@ -259,9 +259,9 @@ export default function TheoreticalFoundationsPage() {
               Methodology →
             </Link>
           </div>
-          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16 }}>
+          <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 16 }}>
             Contact:{" "}
-            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+            <a href="mailto:research@teg-blue.org" style={{ color: PRIMARY, textDecoration: "none" }}>
               research@teg-blue.org
             </a>
           </p>
@@ -269,7 +269,7 @@ export default function TheoreticalFoundationsPage() {
 
         {/* Footer note */}
         <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -323,11 +323,11 @@ function ExpandableFrameworkCard({ framework }) {
           >
             {framework.id}
           </span>
-          <span style={{ fontSize: 13, color: TEXT.muted }}>–</span>
+          <span style={{ fontSize: 13, color: TEXT.tertiary }}>–</span>
           <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary }}>
             {framework.displayName}
           </span>
-          <span style={{ fontSize: 13, color: TEXT.muted }}>
+          <span style={{ fontSize: 13, color: TEXT.tertiary }}>
             ({framework.title})
           </span>
           <span
@@ -361,7 +361,7 @@ function ExpandableFrameworkCard({ framework }) {
           <span
             style={{
               fontSize: 12,
-              color: TEXT.muted,
+              color: TEXT.tertiary,
               transition: "color 0.2s ease",
             }}
           >

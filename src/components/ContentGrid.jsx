@@ -92,7 +92,7 @@ export default function ContentGrid({ items = [] }) {
                 fontFamily: FONT.display,
                 fontSize: 13,
                 fontWeight: 500,
-                color: isActive ? opt.color : TEXT.muted,
+                color: isActive ? opt.color : TEXT.tertiary,
                 cursor: "pointer",
                 transition: `all ${TRANSITION.normal}`,
               }}
@@ -113,7 +113,7 @@ export default function ContentGrid({ items = [] }) {
       {/* Results Count */}
       <div style={{
         fontSize: 12,
-        color: TEXT.hint,
+        color: TEXT.tertiary,
         marginBottom: 16,
         fontFamily: FONT.mono,
       }}>
@@ -131,7 +131,7 @@ export default function ContentGrid({ items = [] }) {
           <div style={{
             padding: 40,
             textAlign: "center",
-            color: TEXT.muted,
+            color: TEXT.secondary,
             background: BG.card,
             borderRadius: 8,
             border: `1px solid ${BORDER.default}`,
@@ -175,7 +175,7 @@ function ContentCard({ item }) {
           {item.originAuthor && (
             <span style={{
               fontSize: 11,
-              color: TEXT.muted,
+              color: TEXT.tertiary,
               fontFamily: FONT.mono,
             }}>
               {item.originAuthor}
@@ -227,7 +227,7 @@ function ContentCard({ item }) {
                   background: hexToRgba(color, 0.08),
                   fontSize: 10,
                   fontFamily: FONT.mono,
-                  color: TEXT.muted,
+                  color: TEXT.tertiary,
                 }}
               >
                 {tag}

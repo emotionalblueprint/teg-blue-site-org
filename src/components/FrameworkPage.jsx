@@ -48,7 +48,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                 href={`/frameworks/${prevFramework.slug}`}
                 style={{
                   fontSize: 13,
-                  color: TEXT.muted,
+                  color: TEXT.tertiary,
                   textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "center",
@@ -88,7 +88,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                 href={`/frameworks/${nextFramework.slug}`}
                 style={{
                   fontSize: 13,
-                  color: TEXT.muted,
+                  color: TEXT.tertiary,
                   textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "center",
@@ -122,7 +122,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
             >
               {framework.id}
             </span>
-            <span style={{ fontSize: 13, color: TEXT.muted }}>
+            <span style={{ fontSize: 13, color: TEXT.secondary }}>
               {framework.subtitle}
             </span>
           </div>
@@ -237,10 +237,10 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                 marginTop: 4,
               }}
             >
-              <span style={{ fontSize: 10, color: TEXT.micro, fontFamily: FONT.mono }}>
+              <span style={{ fontSize: 10, color: TEXT.tertiary, fontFamily: FONT.mono }}>
                 F1
               </span>
-              <span style={{ fontSize: 10, color: TEXT.micro, fontFamily: FONT.mono }}>
+              <span style={{ fontSize: 10, color: TEXT.tertiary, fontFamily: FONT.mono }}>
                 F12
               </span>
             </div>
@@ -285,7 +285,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                       fontSize: 11,
                       fontWeight: 600,
                       fontFamily: FONT.mono,
-                      color: TEXT.muted,
+                      color: TEXT.tertiary,
                       textTransform: "uppercase",
                       letterSpacing: "0.05em",
                     }}
@@ -297,7 +297,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                     if (!model) return null;
                     return (
                       <span key={modelId}>
-                        {i > 0 && <span style={{ color: TEXT.micro }}>, </span>}
+                        {i > 0 && <span style={{ color: TEXT.tertiary }}>, </span>}
                         <Link
                           href={model.url}
                           style={{
@@ -333,7 +333,7 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                 </li>
               ))}
             </ul>
-            <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
               <strong style={{ color: TEXT.secondary }}>
                 Testable directions:
               </strong>{" "}
@@ -471,7 +471,7 @@ function PlaceholderNote() {
     <p
       style={{
         fontSize: 13,
-        color: TEXT.hint,
+        color: TEXT.tertiary,
         fontStyle: "italic",
         margin: "12px 0 0",
         padding: "12px 16px",
@@ -524,7 +524,7 @@ function ConnectionList({ label, ids, color }) {
           fontSize: 11,
           fontWeight: 600,
           fontFamily: FONT.mono,
-          color: TEXT.muted,
+          color: TEXT.tertiary,
           textTransform: "uppercase",
           letterSpacing: "0.05em",
         }}
@@ -536,7 +536,7 @@ function ConnectionList({ label, ids, color }) {
         if (!fw) return null;
         return (
           <span key={id}>
-            {i > 0 && <span style={{ color: TEXT.micro }}>, </span>}
+            {i > 0 && <span style={{ color: TEXT.tertiary }}>, </span>}
             <Link
               href={`/frameworks/${fw.slug}`}
               style={{

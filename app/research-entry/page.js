@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -96,7 +96,7 @@ export default function ResearchEntryPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.muted,
+              color: TEXT.secondary,
               lineHeight: 1.8,
               maxWidth: 640,
               marginBottom: 16,
@@ -107,7 +107,7 @@ export default function ResearchEntryPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.muted,
+              color: TEXT.secondary,
               lineHeight: 1.8,
               maxWidth: 640,
             }}
@@ -122,7 +122,7 @@ export default function ResearchEntryPage() {
                 alignItems: "center",
                 gap: 6,
                 fontSize: 14,
-                color: SPECTRUM.blue,
+                color: PRIMARY,
                 textDecoration: "none",
                 fontWeight: 500,
               }}
@@ -204,7 +204,7 @@ export default function ResearchEntryPage() {
               label="Preliminary evidence"
               color={SPECTRUM.blue}
               description={
-                <>Initial studies and analyses listed in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
+                <>Initial studies and analyses listed in <Link href="/publications" style={{ color: PRIMARY }}>Publications</Link>.</>
               }
             />
             <StatusCard
@@ -257,7 +257,7 @@ export default function ResearchEntryPage() {
               <strong style={{ color: TEXT.primary }}>Research need:</strong> Replication + cross-context validation. Which markers are reliable? Which are context-dependent? How do they shift across stress load, power dynamics, and attachment history?
             </p>
           </div>
-          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
+          <p style={{ fontSize: 13, color: TEXT.tertiary, marginTop: 12 }}>
             Related frameworks: F8 (Self-Awareness Under Stress), F9 (Our True Self), F10 (Repair and Relational Return).
           </p>
         </section>
@@ -346,7 +346,7 @@ export default function ResearchEntryPage() {
                 <NextStepRow step="Understand the system" href="/foundations" label="System Overview →" />
                 <NextStepRow step="See the two core models" href="/models" label="Models →" />
                 <NextStepRow step="See the explanatory layer" href="/frameworks-map" label="Frameworks →" />
-                <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: SPECTRUM.blue }}>Methodology</Link></>} />
+                <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: PRIMARY }}>Methodology</Link></>} />
                 <NextStepRow step="Work with us" href="/collaborate" label="Collaborate →" />
               </tbody>
             </table>
@@ -376,7 +376,7 @@ export default function ResearchEntryPage() {
               alignItems: "center",
               gap: 8,
               padding: "12px 24px",
-              background: SPECTRUM.blue,
+              background: PRIMARY,
               color: "#fff",
               borderRadius: 8,
               fontWeight: 500,
@@ -390,7 +390,7 @@ export default function ResearchEntryPage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 32, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -454,7 +454,7 @@ function LaneCard({ letter, title, description, needs, link, linkText }) {
       <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
         {description}
       </p>
-      <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginBottom: 12 }}>
+      <p style={{ fontSize: 13, color: TEXT.tertiary, lineHeight: 1.6, marginBottom: 12 }}>
         <strong style={{ color: TEXT.secondary }}>What we need:</strong> {needs}
       </p>
       <Link
@@ -464,7 +464,7 @@ function LaneCard({ letter, title, description, needs, link, linkText }) {
           alignItems: "center",
           gap: 6,
           fontSize: 14,
-          color: SPECTRUM.blue,
+          color: PRIMARY,
           textDecoration: "none",
           fontWeight: 500,
         }}
@@ -483,7 +483,7 @@ function NextStepRow({ step, href, label, extra }) {
         <Link
           href={href}
           style={{
-            color: SPECTRUM.blue,
+            color: PRIMARY,
             textDecoration: "none",
             fontWeight: 500,
           }}
@@ -501,7 +501,7 @@ const tableHeaderStyle = {
   textAlign: "left",
   fontSize: 11,
   fontWeight: 600,
-  color: TEXT.muted,
+  color: TEXT.tertiary,
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   fontFamily: FONT.mono,

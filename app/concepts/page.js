@@ -100,7 +100,7 @@ export default function ConceptsHubPage() {
           <p
             style={{
               fontSize: 14,
-              color: TEXT.muted,
+              color: TEXT.secondary,
               lineHeight: 1.7,
               maxWidth: 640,
             }}
@@ -137,7 +137,7 @@ export default function ConceptsHubPage() {
                   <p
                     style={{
                       fontSize: 14,
-                      color: TEXT.muted,
+                      color: TEXT.secondary,
                       lineHeight: 1.7,
                       maxWidth: 640,
                     }}
@@ -352,7 +352,7 @@ function ConceptCard({ concept }) {
       <p
         style={{
           fontSize: 13,
-          color: TEXT.muted,
+          color: TEXT.secondary,
           margin: "0 0 10px",
           paddingLeft: 32,
         }}
@@ -402,7 +402,7 @@ function ConceptCard({ concept }) {
             style={{
               fontSize: 10,
               fontFamily: FONT.mono,
-              color: TEXT.hint,
+              color: TEXT.tertiary,
               padding: "1px 6px",
               borderRadius: 3,
               background: hexToRgba(SPECTRUM.slate, 0.1),
@@ -417,7 +417,7 @@ function ConceptCard({ concept }) {
             style={{
               fontSize: 10,
               fontFamily: FONT.mono,
-              color: TEXT.hint,
+              color: TEXT.tertiary,
               padding: "1px 6px",
               borderRadius: 3,
               background: hexToRgba(SPECTRUM.slate, 0.1),

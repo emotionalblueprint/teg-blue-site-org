@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 const tableCellStyle = {
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
                 The open research hub. Publications, methodology, frameworks, open questions, collaboration.
               </p>
-              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
+              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.tertiary }}>
                 For researchers, academics, clinicians, and AI safety researchers.
               </p>
             </div>
@@ -156,7 +156,7 @@ export default function AboutPage() {
               <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
                 The application site. Interactive tools, guided experiences, and practical instruments for individuals and practitioners.
               </p>
-              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
+              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.tertiary }}>
                 For everyday people, coaches, therapists, and organizational professionals.
               </p>
             </div>
@@ -194,7 +194,7 @@ export default function AboutPage() {
                 href="https://orcid.org/0009-0005-2394-7162"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+                style={{ color: PRIMARY, textDecoration: "none" }}
               >
                 ORCID →
               </a>
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 href="https://teg-blue.com/about-the-author"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+                style={{ color: PRIMARY, textDecoration: "none" }}
               >
                 Full bio on teg-blue.com →
               </a>
@@ -226,50 +226,50 @@ export default function AboutPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <tbody>
                 <tr>
-                  <td style={{ ...tableCellStyle, color: TEXT.muted, fontWeight: 500 }}>ORCID</td>
+                  <td style={{ ...tableCellStyle, color: TEXT.tertiary, fontWeight: 500 }}>ORCID</td>
                   <td style={{ ...tableCellStyle }}>
                     <a
                       href="https://orcid.org/0009-0005-2394-7162"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+                      style={{ color: PRIMARY, textDecoration: "none" }}
                     >
                       0009-0005-2394-7162
                     </a>
                   </td>
                 </tr>
                 <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.muted, fontWeight: 500 }}>Zenodo</td>
+                  <td style={{ ...tableCellStyle, color: TEXT.tertiary, fontWeight: 500 }}>Zenodo</td>
                   <td style={{ ...tableCellStyle }}>
                     <a
                       href="https://zenodo.org/records/18428907"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+                      style={{ color: PRIMARY, textDecoration: "none" }}
                     >
                       DOI: 10.5281/zenodo.18428907
                     </a>
                   </td>
                 </tr>
                 <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.muted, fontWeight: 500 }}>GitHub</td>
+                  <td style={{ ...tableCellStyle, color: TEXT.tertiary, fontWeight: 500 }}>GitHub</td>
                   <td style={{ ...tableCellStyle }}>
                     <a
                       href="https://github.com/emotionalblueprint"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+                      style={{ color: PRIMARY, textDecoration: "none" }}
                     >
                       github.com/emotionalblueprint
                     </a>
                   </td>
                 </tr>
                 <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.muted, fontWeight: 500 }}>Contact</td>
+                  <td style={{ ...tableCellStyle, color: TEXT.tertiary, fontWeight: 500 }}>Contact</td>
                   <td style={{ ...tableCellStyle }}>
                     <a
                       href="mailto:research@teg-blue.org"
-                      style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+                      style={{ color: PRIMARY, textDecoration: "none" }}
                     >
                       research@teg-blue.org
                     </a>
@@ -291,7 +291,7 @@ export default function AboutPage() {
               href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: SPECTRUM.blue }}
+              style={{ color: PRIMARY }}
             >
               CC BY-NC-SA 4.0
             </a>{" "}
@@ -301,7 +301,7 @@ export default function AboutPage() {
 
         {/* Footer note */}
         <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>

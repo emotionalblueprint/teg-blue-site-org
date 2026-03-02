@@ -1,5 +1,5 @@
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, TypeTag } from "@/src/components";
 
 export const metadata = {
@@ -63,7 +63,7 @@ export default function CitationsPage() {
             style={{
               padding: 40,
               textAlign: "center",
-              color: TEXT.muted,
+              color: TEXT.secondary,
               background: BG.card,
               borderRadius: 8,
               border: `1px solid ${BORDER.default}`,
@@ -107,7 +107,7 @@ export default function CitationsPage() {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: TEXT.hint,
+                color: TEXT.tertiary,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginBottom: 6,
@@ -138,7 +138,7 @@ export default function CitationsPage() {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: TEXT.hint,
+                color: TEXT.tertiary,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginBottom: 6,
@@ -198,7 +198,7 @@ export default function CitationsPage() {
           >
             Independent research that builds on TEG-Blue should cite the framework as the originating architecture.
             If you are unsure how to attribute, contact{" "}
-            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+            <a href="mailto:research@teg-blue.org" style={{ color: PRIMARY, textDecoration: "none" }}>
               research@teg-blue.org
             </a>
           </p>
@@ -206,7 +206,7 @@ export default function CitationsPage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 40, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -265,7 +265,7 @@ function CitationBlock({ publication }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
-            color: TEXT.hint,
+            color: TEXT.tertiary,
             textTransform: "uppercase",
             letterSpacing: "0.05em",
             marginBottom: 6,
@@ -296,7 +296,7 @@ function CitationBlock({ publication }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
-            color: TEXT.hint,
+            color: TEXT.tertiary,
             textTransform: "uppercase",
             letterSpacing: "0.05em",
             marginBottom: 6,

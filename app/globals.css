@@ -5,10 +5,13 @@
 /* ─── CSS CUSTOM PROPERTIES ─────────────────────────── */
 
 :root {
+  /* Primary */
+  --primary: #2563EB;
+
   /* Blue Spectrum */
   --spectrum-sky:    #7ABAEB;
   --spectrum-azure:  #4A9BE8;
-  --spectrum-blue:   #3B7DE5;
+  --spectrum-blue:   #2563EB;
   --spectrum-cobalt: #3560CC;
   --spectrum-indigo: #4A50B0;
   --spectrum-slate:  #6B7A99;
@@ -22,10 +25,8 @@
 
   /* Text */
   --text-primary:   #F1F5F9;
-  --text-secondary: #CBD5E1;
-  --text-muted:     #94A3B8;
-  --text-hint:      #64748B;
-  --text-micro:     #475569;
+  --text-secondary: #C8D2DE;
+  --text-tertiary:  #A8B5C4;
 
   /* Borders */
   --border-default: rgba(148, 163, 184, 0.12);
@@ -91,7 +92,7 @@ p {
 }
 
 a {
-  color: var(--spectrum-blue);
+  color: var(--primary);
   text-decoration: none;
   transition: color 200ms ease;
 }
@@ -142,8 +143,8 @@ summary::after {
   content: '';
   width: 8px;
   height: 8px;
-  border-right: 2px solid var(--text-muted);
-  border-bottom: 2px solid var(--text-muted);
+  border-right: 2px solid var(--text-tertiary);
+  border-bottom: 2px solid var(--text-tertiary);
   transform: rotate(-45deg);
   transition: transform 200ms ease;
   flex-shrink: 0;
@@ -172,25 +173,25 @@ details > section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-micro);
+  background: var(--text-tertiary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-hint);
+  background: var(--text-secondary);
 }
 
 /* ─── SELECTION ─────────────────────────────────────── */
 
 ::selection {
-  background: rgba(59, 125, 229, 0.3);
+  background: rgba(37, 99, 235, 0.3);
   color: var(--text-primary);
 }
 
 /* ─── FOCUS STATES ──────────────────────────────────── */
 
 :focus-visible {
-  outline: 2px solid var(--spectrum-blue);
+  outline: 2px solid rgba(37, 99, 235, 0.5);
   outline-offset: 2px;
 }
 

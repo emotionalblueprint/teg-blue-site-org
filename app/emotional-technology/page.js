@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS, PRIMARY } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -372,7 +372,7 @@ export default function EmotionalTechnologyPage() {
               href="/models/inner-compass"
               style={{
                 padding: "12px 24px",
-                background: SPECTRUM.blue,
+                background: PRIMARY,
                 color: "#fff",
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
@@ -476,7 +476,7 @@ function CapabilityMiniCard({ color, title, desc }) {
       >
         {title}
       </p>
-      <p style={{ fontSize: 13, color: TEXT.muted, margin: 0 }}>
+      <p style={{ fontSize: 13, color: TEXT.tertiary, margin: 0 }}>
         {desc}
       </p>
     </div>
@@ -504,7 +504,7 @@ function CapabilityCard({ color, title, items }) {
       >
         {title}
       </h3>
-      <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
+      <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.secondary, lineHeight: 1.7 }}>
         {items.map((item, i) => (
           <li key={i} style={{ marginBottom: 6 }}>{item}</li>
         ))}
@@ -546,7 +546,7 @@ function ComparisonRow({ term, issue }) {
       }}
     >
       <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.secondary }}>"{term}"</span>
-      <span style={{ fontSize: 13, color: TEXT.muted }}>— {issue}</span>
+      <span style={{ fontSize: 13, color: TEXT.secondary }}>— {issue}</span>
     </div>
   );
 }
@@ -572,7 +572,7 @@ function VocabCard({ term, definition, color }) {
       >
         {term}
       </p>
-      <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0, lineHeight: 1.6 }}>
         {definition}
       </p>
     </div>

@@ -3,7 +3,6 @@ import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { MODELS } from "@/src/data/frameworks";
 
-const FOUNDATION_COLOR = "#26C6DA";
 
 export const metadata = {
   title: "Models — TEG-Blue Research",
@@ -44,7 +43,7 @@ export default function ModelsIndexPage() {
             style={{
               fontSize: 11,
               fontWeight: 600,
-              color: FOUNDATION_COLOR,
+              color: SPECTRUM.azure,
               textTransform: "uppercase",
               letterSpacing: "0.08em",
               fontFamily: FONT.mono,
@@ -112,7 +111,7 @@ export default function ModelsIndexPage() {
                 background: BG.card,
                 borderRadius: RADIUS.lg,
                 border: `1px solid ${BORDER.default}`,
-                borderLeft: `4px solid ${FOUNDATION_COLOR}`,
+                borderLeft: `4px solid ${SPECTRUM.azure}`,
                 textDecoration: "none",
               }}
             >
@@ -129,8 +128,8 @@ export default function ModelsIndexPage() {
                     fontSize: 10,
                     fontWeight: 600,
                     fontFamily: FONT.mono,
-                    color: FOUNDATION_COLOR,
-                    background: hexToRgba(FOUNDATION_COLOR, 0.12),
+                    color: SPECTRUM.azure,
+                    background: hexToRgba(SPECTRUM.azure, 0.12),
                     padding: "3px 8px",
                     borderRadius: 4,
                     textTransform: "uppercase",
@@ -142,7 +141,7 @@ export default function ModelsIndexPage() {
                 <span
                   style={{
                     fontSize: 11,
-                    color: TEXT.hint,
+                    color: TEXT.tertiary,
                     fontFamily: FONT.mono,
                   }}
                 >
@@ -173,7 +172,7 @@ export default function ModelsIndexPage() {
               <span
                 style={{
                   fontSize: 13,
-                  color: FOUNDATION_COLOR,
+                  color: SPECTRUM.azure,
                   fontWeight: 500,
                 }}
               >
@@ -187,9 +186,9 @@ export default function ModelsIndexPage() {
         <section
           style={{
             padding: 24,
-            background: hexToRgba(FOUNDATION_COLOR, 0.06),
+            background: hexToRgba(SPECTRUM.azure, 0.06),
             borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(FOUNDATION_COLOR, 0.15)}`,
+            border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
             marginBottom: 40,
           }}
         >
@@ -272,7 +271,7 @@ export default function ModelsIndexPage() {
             style={{
               display: "inline-block",
               padding: "10px 20px",
-              background: FOUNDATION_COLOR,
+              background: SPECTRUM.azure,
               color: "#fff",
               borderRadius: RADIUS.md,
               fontWeight: 600,

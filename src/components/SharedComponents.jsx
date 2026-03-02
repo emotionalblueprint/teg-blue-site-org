@@ -1,6 +1,6 @@
 "use client";
 
-import { SPECTRUM, BG, TEXT, BORDER, FONT, TRANSITION, hexToRgba } from "../styles/tokens";
+import { SPECTRUM, BG, TEXT, BORDER, FONT, TRANSITION, PRIMARY, hexToRgba } from "../styles/tokens";
 
 // ─── SPECTRUM BAR ────────────────────────────────────
 // Flat segmented bar showing all 6 spectrum colors.
@@ -44,7 +44,7 @@ export function DepthBar({ actions = [] }) {
             borderRadius: 6,
             border: `1px solid ${BORDER.default}`,
             fontSize: 13,
-            color: TEXT.muted,
+            color: TEXT.tertiary,
             cursor: "pointer",
             fontWeight: 500,
             fontFamily: FONT.display,
@@ -82,7 +82,7 @@ export function SearchInput({
           top: "50%",
           transform: "translateY(-50%)",
           fontSize: 16,
-          color: TEXT.muted,
+          color: TEXT.tertiary,
           pointerEvents: "none",
         }}
       >
@@ -107,7 +107,7 @@ export function SearchInput({
           transition: `border-color ${TRANSITION.normal}`,
         }}
         onFocus={(e) => {
-          e.target.style.borderColor = hexToRgba(SPECTRUM.blue, 0.4);
+          e.target.style.borderColor = hexToRgba(PRIMARY, 0.4);
         }}
         onBlur={(e) => {
           e.target.style.borderColor = BORDER.default;

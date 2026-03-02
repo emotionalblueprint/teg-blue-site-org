@@ -56,7 +56,7 @@ export default function ExpandableSection({
           className="expandable-chevron"
           style={{
             fontSize: 10,
-            color: TEXT.muted,
+            color: TEXT.tertiary,
             transition: `transform ${TRANSITION.fast}`,
             display: "inline-block",
           }}

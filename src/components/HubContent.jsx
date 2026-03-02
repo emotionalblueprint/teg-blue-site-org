@@ -86,7 +86,7 @@ export default function HubContent({ items = [] }) {
         <p style={{
           fontSize: 12,
           lineHeight: 1.6,
-          color: TEXT.muted,
+          color: TEXT.secondary,
           margin: "0 0 24px",
           maxWidth: 600,
           fontStyle: "italic",
@@ -165,7 +165,7 @@ function HubCard({ item }) {
           {item.originAuthor && (
             <span style={{
               fontSize: 11,
-              color: TEXT.muted,
+              color: TEXT.tertiary,
               fontFamily: FONT.mono,
             }}>
               {item.originAuthor}
@@ -217,7 +217,7 @@ function HubCard({ item }) {
                   background: hexToRgba(color, 0.08),
                   fontSize: 10,
                   fontFamily: FONT.mono,
-                  color: TEXT.muted,
+                  color: TEXT.tertiary,
                 }}
               >
                 {tag}
@@ -284,7 +284,7 @@ function TheoryCard({ item }) {
             {item.originAuthor && (
               <span style={{
                 fontSize: 11,
-                color: TEXT.muted,
+                color: TEXT.tertiary,
                 fontFamily: FONT.mono,
               }}>
                 {item.originAuthor}
@@ -307,7 +307,7 @@ function TheoryCard({ item }) {
         {/* Expand Icon */}
         <span style={{
           fontSize: 18,
-          color: TEXT.muted,
+          color: TEXT.tertiary,
           transition: `transform ${TRANSITION.normal}`,
           transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
         }}>
@@ -367,7 +367,7 @@ function TheoryCard({ item }) {
                     background: hexToRgba(color, 0.08),
                     fontSize: 10,
                     fontFamily: FONT.mono,
-                    color: TEXT.muted,
+                    color: TEXT.tertiary,
                   }}
                 >
                   {tag}

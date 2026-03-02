@@ -79,7 +79,7 @@ export default function ConceptPage({ concept, content = {} }) {
             >
               Concept {concept.number}
             </span>
-            <span style={{ fontSize: 12, color: TEXT.muted }}>
+            <span style={{ fontSize: 12, color: TEXT.tertiary }}>
               {concept.group}
             </span>
           </div>
@@ -98,7 +98,7 @@ export default function ConceptPage({ concept, content = {} }) {
           <p
             style={{
               fontSize: 15,
-              color: TEXT.muted,
+              color: TEXT.secondary,
               margin: "0 0 16px",
               lineHeight: 1.5,
             }}
@@ -113,7 +113,7 @@ export default function ConceptPage({ concept, content = {} }) {
               flexWrap: "wrap",
               gap: 6,
               fontSize: 12,
-              color: TEXT.hint,
+              color: TEXT.tertiary,
             }}
           >
             {relatedFrameworks.map((fw) => (
@@ -365,7 +365,7 @@ function GoLink({ href, label, tag }) {
           fontSize: 10,
           fontWeight: 600,
           fontFamily: FONT.mono,
-          color: TEXT.hint,
+          color: TEXT.tertiary,
           textTransform: "uppercase",
           letterSpacing: "0.04em",
           minWidth: 60,

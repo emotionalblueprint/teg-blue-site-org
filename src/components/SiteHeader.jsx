@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, PRIMARY, hexToRgba } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
 
 /**
@@ -91,13 +91,13 @@ export default function SiteHeader({ currentPath = "/" }) {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: TEXT.hint,
+                color: TEXT.tertiary,
                 textDecoration: "none",
               }}
             >
               TEG-Blue
             </Link>
-            <span style={{ color: TEXT.micro }}>·</span>
+            <span style={{ color: TEXT.tertiary }}>·</span>
             <a
               href="https://teg-blue.com"
               style={{
@@ -126,7 +126,7 @@ export default function SiteHeader({ currentPath = "/" }) {
           <p
             style={{
               fontSize: 13,
-              color: TEXT.muted,
+              color: TEXT.secondary,
               marginTop: 4,
             }}
           >
@@ -163,13 +163,14 @@ export default function SiteHeader({ currentPath = "/" }) {
                   href={item.href}
                   style={{
                     padding: "12px 20px",
-                    fontFamily: FONT.display,
+                    fontFamily: FONT.mono,
                     fontSize: 13,
-                    fontWeight: 600,
-                    color: isActive ? TEXT.primary : TEXT.hint,
+                    fontWeight: 500,
+                    letterSpacing: "0.02em",
+                    color: isActive ? TEXT.primary : TEXT.tertiary,
                     textDecoration: "none",
                     borderBottom: isActive
-                      ? `2px solid ${SPECTRUM.blue}`
+                      ? `2px solid ${PRIMARY}`
                       : "2px solid transparent",
                     transition: `all ${TRANSITION.normal}`,
                     whiteSpace: "nowrap",
@@ -191,14 +192,15 @@ export default function SiteHeader({ currentPath = "/" }) {
                 <button
                   style={{
                     padding: "12px 20px",
-                    fontFamily: FONT.display,
+                    fontFamily: FONT.mono,
                     fontSize: 13,
-                    fontWeight: 600,
-                    color: isActive ? TEXT.primary : TEXT.hint,
+                    fontWeight: 500,
+                    letterSpacing: "0.02em",
+                    color: isActive ? TEXT.primary : TEXT.tertiary,
                     background: "none",
                     border: "none",
                     borderBottom: isActive
-                      ? `2px solid ${SPECTRUM.blue}`
+                      ? `2px solid ${PRIMARY}`
                       : "2px solid transparent",
                     cursor: "pointer",
                     display: "flex",
@@ -255,13 +257,13 @@ export default function SiteHeader({ currentPath = "/" }) {
                           style={{
                             display: "block",
                             padding: "10px 16px",
-                            fontFamily: FONT.display,
+                            fontFamily: FONT.mono,
                             fontSize: 13,
                             fontWeight: subActive ? 600 : 500,
                             color: subActive ? TEXT.primary : TEXT.secondary,
                             textDecoration: "none",
                             transition: `all ${TRANSITION.fast}`,
-                            background: subActive ? hexToRgba(SPECTRUM.blue, 0.08) : "transparent",
+                            background: subActive ? hexToRgba(PRIMARY, 0.08) : "transparent",
                           }}
                           onClick={() => setOpenDropdown(null)}
                         >

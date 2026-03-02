@@ -61,7 +61,7 @@ export default function ModelPage({ model, content = {} }) {
             >
               Model
             </span>
-            <span style={{ fontSize: 13, color: TEXT.muted }}>
+            <span style={{ fontSize: 13, color: TEXT.secondary }}>
               {model.subtitle}
             </span>
           </div>
@@ -88,7 +88,7 @@ export default function ModelPage({ model, content = {} }) {
             }}
           >
             {paired && (
-              <div style={{ fontSize: 13, color: TEXT.muted }}>
+              <div style={{ fontSize: 13, color: TEXT.secondary }}>
                 Paired with:{" "}
                 <Link
                   href={paired.url}
@@ -102,7 +102,7 @@ export default function ModelPage({ model, content = {} }) {
               </div>
             )}
             {parentFramework && (
-              <div style={{ fontSize: 13, color: TEXT.muted }}>
+              <div style={{ fontSize: 13, color: TEXT.secondary }}>
                 Primary framework:{" "}
                 <Link
                   href={`/frameworks/${parentFramework.slug}`}

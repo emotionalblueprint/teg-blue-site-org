@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 
 export const metadata = {
@@ -102,7 +102,7 @@ export default function CollaboratePage() {
           <ol style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
             <li style={{ marginBottom: 8 }}>
               <strong style={{ color: TEXT.primary }}>Read the research entry page.</strong> Understand what TEG-Blue is and what is being tested.{" "}
-              <Link href="/research-entry" style={{ color: SPECTRUM.blue }}>Start Here →</Link>
+              <Link href="/research-entry" style={{ color: PRIMARY }}>Start Here →</Link>
             </li>
             <li style={{ marginBottom: 8 }}>
               <strong style={{ color: TEXT.primary }}>Identify which lane fits your expertise:</strong> Measurement, Prediction, Intervention, or AI Safety.
@@ -185,7 +185,7 @@ export default function CollaboratePage() {
             What we need
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            See <Link href="/research-entry" style={{ color: SPECTRUM.blue }}>Start Here</Link> for detailed research needs. The short version:
+            See <Link href="/research-entry" style={{ color: PRIMARY }}>Start Here</Link> for detailed research needs. The short version:
           </p>
           <div
             style={{
@@ -247,7 +247,7 @@ export default function CollaboratePage() {
               alignItems: "center",
               gap: 8,
               padding: "12px 24px",
-              background: SPECTRUM.blue,
+              background: PRIMARY,
               color: "#fff",
               borderRadius: 8,
               fontWeight: 500,
@@ -261,7 +261,7 @@ export default function CollaboratePage() {
 
         {/* Footer note */}
         <footer style={{ marginTop: 32, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -299,7 +299,7 @@ const tableHeaderStyle = {
   textAlign: "left",
   fontSize: 11,
   fontWeight: 600,
-  color: TEXT.muted,
+  color: TEXT.tertiary,
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   fontFamily: FONT.mono,

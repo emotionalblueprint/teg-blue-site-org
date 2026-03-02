@@ -6,6 +6,23 @@
  * Import this everywhere. Never hardcode colors.
  */
 
+// ─── PRIMARY ────────────────────────────────────────
+// Single primary blue — used for all interactive elements, active states, links
+
+export const PRIMARY = "#2563EB";
+
+// ─── SIGNAL COLORS ──────────────────────────────────
+// Accent colors for interactive moments and feedback
+
+export const SIGNAL = {
+  info:    "#2563EB",   // Same as PRIMARY — informational highlights
+  success: "#10B981",   // Confirmation, positive feedback
+  warning: "#F59E0B",   // Caution, attention needed
+  error:   "#EF4444",   // Errors, destructive actions
+  new:     "#8B5CF6",   // New content, updates
+  link:    "#60A5FA",   // External links, lighter for contrast
+};
+
 // ─── BACKGROUNDS ─────────────────────────────────────
 
 export const BG = {
@@ -20,10 +37,8 @@ export const BG = {
 
 export const TEXT = {
   primary:   "#F1F5F9",   // Headings, titles (slate-100)
-  secondary: "#CBD5E1",   // Body text (slate-300)
-  muted:     "#94A3B8",   // Descriptions, metadata (slate-400)
-  hint:      "#64748B",   // Captions, DOIs (slate-500)
-  micro:     "#475569",   // Watermarks, decorative (slate-600)
+  secondary: "#C8D2DE",   // Body text, descriptions — 80%+ contrast
+  tertiary:  "#A8B5C4",   // Labels, metadata, captions — 80%+ contrast
 };
 
 // ─── BORDERS ─────────────────────────────────────────
@@ -90,6 +105,14 @@ export const TYPE_SCALE = {
   doi:             { size: 12, weight: 400, tracking: "0.01em",  lineHeight: 1.4, font: "mono" },
   tagLabel:        { size: 10, weight: 600, tracking: "0.06em",  lineHeight: 1.3, font: "mono" },
   connectionType:  { size: 10, weight: 500, tracking: "0.04em",  lineHeight: 1.3, font: "mono" },
+  // Blueprint mono scales
+  navItem:         { size: 13, weight: 500, tracking: "0.02em",  lineHeight: 1.2, font: "mono" },
+  sectionLabel:    { size: 11, weight: 600, tracking: "0.04em",  lineHeight: 1.3, font: "mono" },
+  breadcrumb:      { size: 11, weight: 500, tracking: "0.02em",  lineHeight: 1.3, font: "mono" },
+  cardHeader:      { size: 13, weight: 600, tracking: "0.01em",  lineHeight: 1.3, font: "mono" },
+  metadata:        { size: 11, weight: 400, tracking: "0.01em",  lineHeight: 1.4, font: "mono" },
+  dataLabel:       { size: 10, weight: 600, tracking: "0.06em",  lineHeight: 1.3, font: "mono" },
+  timestamp:       { size: 10, weight: 400, tracking: "0.02em",  lineHeight: 1.3, font: "mono" },
 };
 
 // ─── SPACING ─────────────────────────────────────────

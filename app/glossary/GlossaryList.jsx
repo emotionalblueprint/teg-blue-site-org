@@ -156,7 +156,7 @@ export default function GlossaryList({ terms = [] }) {
               display: "block",
               fontSize: 11,
               fontFamily: FONT.mono,
-              color: TEXT.muted,
+              color: TEXT.tertiary,
               marginBottom: 6,
               textTransform: "uppercase",
               letterSpacing: "0.05em",
@@ -196,7 +196,7 @@ export default function GlossaryList({ terms = [] }) {
       <div
         style={{
           fontSize: 12,
-          color: TEXT.hint,
+          color: TEXT.tertiary,
           marginBottom: 16,
           fontFamily: FONT.mono,
         }}
@@ -228,7 +228,7 @@ export default function GlossaryList({ terms = [] }) {
                 }}
               >
                 <span>{groupName}</span>
-                <span style={{ color: TEXT.hint, fontWeight: 400 }}>
+                <span style={{ color: TEXT.tertiary, fontWeight: 400 }}>
                   ({groupTerms.length})
                 </span>
               </div>
@@ -251,7 +251,7 @@ export default function GlossaryList({ terms = [] }) {
             style={{
               padding: 40,
               textAlign: "center",
-              color: TEXT.muted,
+              color: TEXT.secondary,
               background: BG.card,
               borderRadius: 8,
               border: `1px solid ${BORDER.default}`,
@@ -336,7 +336,7 @@ function GlossaryTerm({ term }) {
                   background: hexToRgba(color, 0.08),
                   fontSize: 10,
                   fontFamily: FONT.mono,
-                  color: TEXT.muted,
+                  color: TEXT.tertiary,
                 }}
               >
                 {tag}

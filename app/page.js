@@ -7,6 +7,7 @@ import {
   TEXT,
   BORDER,
   SPECTRUM,
+  PRIMARY,
   hexToRgba,
   RADIUS,
 } from "@/src/styles/tokens";
@@ -95,7 +96,7 @@ export default function HomePage() {
               style={{
                 fontSize: 14,
                 lineHeight: 1.7,
-                color: TEXT.muted,
+                color: TEXT.secondary,
                 maxWidth: 620,
                 marginBottom: 24,
               }}
@@ -135,13 +136,13 @@ export default function HomePage() {
                   alignItems: "center",
                   gap: 8,
                   padding: "12px 24px",
-                  background: hexToRgba(SPECTRUM.blue, 0.1),
-                  color: SPECTRUM.blue,
+                  background: hexToRgba(PRIMARY, 0.1),
+                  color: PRIMARY,
                   borderRadius: 8,
                   fontWeight: 500,
                   fontSize: 14,
                   textDecoration: "none",
-                  border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
+                  border: `1px solid ${hexToRgba(PRIMARY, 0.2)}`,
                 }}
               >
                 For Researchers
@@ -246,7 +247,7 @@ export default function HomePage() {
                     background: BG.card,
                     borderRadius: RADIUS.md,
                     border: `1px solid ${BORDER.default}`,
-                    borderLeft: `3px solid #26C6DA`,
+                    borderLeft: `3px solid ${SPECTRUM.azure}`,
                     textDecoration: "none",
                   }}
                 >
@@ -263,7 +264,7 @@ export default function HomePage() {
                         fontSize: 10,
                         fontWeight: 600,
                         fontFamily: FONT.mono,
-                        color: "#26C6DA",
+                        color: SPECTRUM.azure,
                         textTransform: "uppercase",
                         letterSpacing: "0.04em",
                       }}
@@ -284,7 +285,7 @@ export default function HomePage() {
                   <p
                     style={{
                       fontSize: 13,
-                      color: TEXT.muted,
+                      color: TEXT.secondary,
                       lineHeight: 1.6,
                       margin: 0,
                     }}
@@ -302,7 +303,7 @@ export default function HomePage() {
                 alignItems: "center",
                 gap: 6,
                 fontSize: 14,
-                color: "#26C6DA",
+                color: SPECTRUM.azure,
                 textDecoration: "none",
                 fontWeight: 500,
               }}
@@ -361,7 +362,7 @@ export default function HomePage() {
                     <span
                       style={{
                         fontSize: 11,
-                        color: TEXT.hint,
+                        color: TEXT.tertiary,
                         fontFamily: FONT.mono,
                       }}
                     >
@@ -412,7 +413,7 @@ export default function HomePage() {
                 background: BG.card,
                 borderRadius: RADIUS.lg,
                 border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${SPECTRUM.blue}`,
+                borderLeft: `3px solid ${PRIMARY}`,
                 marginBottom: 16,
               }}
             >
@@ -475,7 +476,7 @@ export default function HomePage() {
                   alignItems: "center",
                   gap: 6,
                   fontSize: 14,
-                  color: SPECTRUM.blue,
+                  color: PRIMARY,
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
@@ -489,7 +490,7 @@ export default function HomePage() {
                   alignItems: "center",
                   gap: 6,
                   fontSize: 14,
-                  color: SPECTRUM.blue,
+                  color: PRIMARY,
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
@@ -503,7 +504,7 @@ export default function HomePage() {
                   alignItems: "center",
                   gap: 6,
                   fontSize: 14,
-                  color: SPECTRUM.blue,
+                  color: PRIMARY,
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
@@ -576,7 +577,7 @@ export default function HomePage() {
             <p
               style={{
                 fontSize: 11,
-                color: TEXT.micro,
+                color: TEXT.tertiary,
                 fontFamily: FONT.mono,
               }}
             >
@@ -629,7 +630,7 @@ function SectionHeader({ label, title, description }) {
       <p
         style={{
           fontSize: 14,
-          color: TEXT.muted,
+          color: TEXT.secondary,
           lineHeight: 1.7,
           maxWidth: 600,
         }}
@@ -682,7 +683,7 @@ function ConceptRow({ concept }) {
         <span
           style={{
             fontSize: 13,
-            color: TEXT.muted,
+            color: TEXT.tertiary,
             marginLeft: 8,
           }}
         >
@@ -707,7 +708,7 @@ function StatBadge({ label, value }) {
         style={{
           fontSize: 10,
           fontWeight: 600,
-          color: TEXT.muted,
+          color: TEXT.tertiary,
           textTransform: "uppercase",
           letterSpacing: "0.06em",
           marginBottom: 2,

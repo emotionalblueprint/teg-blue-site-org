@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateFAQJsonLd } from "@/src/lib/jsonld";
 
@@ -348,7 +348,7 @@ export default function MethodologyPage() {
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, marginTop: 16 }}>
             If you can help with any of these, see{" "}
-            <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+            <Link href="/collaborate" style={{ color: PRIMARY, textDecoration: "none" }}>
               Collaborate →
             </Link>
           </p>
@@ -356,7 +356,7 @@ export default function MethodologyPage() {
 
         {/* Footer note */}
         <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
+          <p style={{ fontSize: 11, color: TEXT.tertiary, fontFamily: FONT.mono }}>
             TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
@@ -385,7 +385,7 @@ function StatusNote({ children }) {
         borderLeft: `3px solid ${SPECTRUM.slate}`,
       }}
     >
-      <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0 }}>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
         <strong style={{ color: TEXT.secondary }}>Status note:</strong> {children}
       </p>
     </div>
@@ -411,7 +411,7 @@ function StatusCard({ title, color, description, linkText, linkHref }) {
         {linkText && linkHref && (
           <>
             {" "}
-            <Link href={linkHref} style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+            <Link href={linkHref} style={{ color: PRIMARY, textDecoration: "none" }}>
               {linkText} →
             </Link>
           </>
@@ -445,7 +445,7 @@ const tableHeaderStyle = {
   padding: "12px 16px",
   fontSize: 12,
   fontWeight: 600,
-  color: TEXT.muted,
+  color: TEXT.tertiary,
   textAlign: "left",
   textTransform: "uppercase",
   letterSpacing: "0.04em",
@@ -458,7 +458,7 @@ function StatusRow({ area, status, statusColor, isLast }) {
       <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
         {area}
       </td>
-      <td style={{ padding: "12px 16px", fontSize: 13, color: statusColor || TEXT.muted }}>
+      <td style={{ padding: "12px 16px", fontSize: 13, color: statusColor || TEXT.tertiary }}>
         {status}
       </td>
     </tr>
