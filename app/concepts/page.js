@@ -9,7 +9,7 @@ import {
   hexToRgba,
   RADIUS,
 } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { SiteHeader, SiteFooter, SectionSpectrumBar } from "@/src/components";
 import { CONCEPTS, CONCEPT_COLORS } from "@/src/data/concepts";
 
 export const metadata = {
@@ -46,34 +46,7 @@ export default function ConceptsHubPage() {
       }}
     >
       <SiteHeader currentPath="/concepts" />
-      {/* Concept spectrum bar */}
-      <nav
-        aria-label="Concept overview"
-        style={{
-          display: "flex",
-          gap: 3,
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: "12px 24px 0",
-        }}
-      >
-        {CONCEPTS.map((c, i) => (
-          <Link
-            key={c.id}
-            href={`/concepts/${c.slug}`}
-            title={`${c.number}. ${c.name}`}
-            style={{
-              flex: 1,
-              height: 4,
-              borderRadius: 2,
-              background: CONCEPT_COLORS[i],
-              opacity: 0.7,
-              textDecoration: "none",
-              display: "block",
-            }}
-          />
-        ))}
-      </nav>
+      <SectionSpectrumBar section="concepts" />
 
       <main
         id="main-content"

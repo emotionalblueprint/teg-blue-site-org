@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, PRIMARY, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { SiteHeader, SiteFooter, SectionSpectrumBar } from "@/src/components";
 import { FRAMEWORKS as FRAMEWORK_DATA, PHASES, getPhaseColor } from "@/src/data/frameworks";
 
 // Map shared data to the display format used by this page
@@ -35,6 +35,7 @@ export default function TheoreticalFoundationsPage() {
       }}
     >
       <SiteHeader currentPath="/frameworks-map" />
+      <SectionSpectrumBar section="frameworks" />
       <main
         id="main-content"
         style={{
@@ -60,72 +61,32 @@ export default function TheoreticalFoundationsPage() {
           </div>
           <p
             style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 20,
-            }}
-          >
-            The{" "}
-            <Link href="/concepts" style={{ color: SPECTRUM.sky, textDecoration: "none" }}>
-              concepts
-            </Link>{" "}
-            name what you already experience. The{" "}
-            <Link href="/models" style={{ color: SPECTRUM.azure, textDecoration: "none" }}>
-              models
-            </Link>{" "}
-            make it visible. The frameworks explain why — the full theoretical
-            architecture behind the patterns.
-          </p>
-          <p
-            style={{
               fontSize: 15,
               color: TEXT.secondary,
               lineHeight: 1.8,
               marginBottom: 16,
             }}
           >
-            <strong style={{ color: TEXT.primary }}>Most models describe either the inner world or the social world. TEG-Blue connects them as one system.</strong>
+            The twelve frameworks are the theoretical architecture &mdash; they
+            explain why everything works the way it does.
+            They&rsquo;re professional-depth documents designed for clinical,
+            research, and institutional use.
           </p>
           <p
             style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            The frameworks are interdependent because <strong style={{ color: TEXT.primary }}>humans do not experience life in separate categories</strong>. A nervous system state shapes perception. Perception shapes meaning. Meaning shapes identity. Identity shapes behavior. Behavior shapes what gets rewarded. And reward shapes the nervous system again.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            This loop is how trauma becomes culture, and how culture becomes trauma.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            TEG-Blue is structured as a sequence so we can locate where a pattern is coming from, where it is being reinforced, and where repair is actually possible.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
+              fontSize: 15,
               color: TEXT.secondary,
               lineHeight: 1.8,
               marginBottom: 0,
             }}
           >
-            The mapping system makes visible that what people do is strongly shaped by the conditions their system is adapting to, and by their capacity to return to <strong style={{ color: TEXT.primary }}>connection</strong> under challenge.
+            But the critical thing is that they&rsquo;re not twelve separate
+            theories. They&rsquo;re one mechanism &mdash; state-dependent
+            nervous system organisation responding to perceived safety &mdash;
+            described from twelve angles.{" "}
+            <strong style={{ color: TEXT.primary }}>
+              The scale changes. The mechanism doesn&rsquo;t.
+            </strong>
           </p>
         </header>
 

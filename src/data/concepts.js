@@ -6,35 +6,30 @@
  * from this file.
  */
 
-import { SPECTRUM, ACCENT } from "@/src/styles/tokens";
-
 // ─── GROUP COLORS ─────────────────────────────────────────
-// Bold, unmistakable colors for each concept group
+// Blue tones for each concept group
 export const GROUP_COLORS = {
-  "How the System Works": ACCENT.mint,
-  "The Three Awareness Capacities": SPECTRUM.blue,
-  "What Happens When It Breaks": ACCENT.pink,
+  "How the System Works": "#5AA8F0",
+  "The Three Awareness Capacities": "#4E7EFF",
+  "What Happens When It Breaks": "#3B4CF0",
 };
 
 // ─── CONCEPT COLORS ───────────────────────────────────────
-// Each concept has its own color, grouped by section:
-//   How the System Works (C1-C6): greens — light to deep
-//   Three Awareness Capacities (C7-C9): matching .com capacity colors
-//   What Happens When It Breaks (C10-C13): pink / magenta / rose
+// 13 bright blues: sky → azure → electric → indigo
 export const CONCEPT_COLORS = [
-  "#b8f0a0", // C1  — mint green (lightest)
-  "#8ae65a", // C2  — lime green
-  "#5cd85c", // C3  — green
-  "#3cc88c", // C4  — teal green
-  "#2ab8a0", // C5  — deep teal
-  "#1a9e7a", // C6  — forest (deepest)
-  "#a080ff", // C7  — RE: violet
-  "#22d3ee", // C8  — ER: cyan
-  "#a0e85a", // C9  — SEA: green
-  "#e020a0", // C10 — deep magenta (darkest)
-  "#ff40b0", // C11 — magenta
-  "#ff70a0", // C12 — rose
-  "#ffb0c8", // C13 — soft rose (lightest)
+  "#7EC8F0", // C1
+  "#6BB8F0", // C2
+  "#5AA8F0", // C3
+  "#4A98F0", // C4
+  "#3B88F0", // C5
+  "#2E78F0", // C6
+  "#4E7EFF", // C7
+  "#3C6EFF", // C8
+  "#5E8EFF", // C9
+  "#2A5CFF", // C10
+  "#3B4CF0", // C11
+  "#5060FF", // C12
+  "#6878FF", // C13
 ];
 
 export const CONCEPT_GROUPS = [

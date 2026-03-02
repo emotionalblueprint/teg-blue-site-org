@@ -124,7 +124,7 @@ export const MODE_COLORS = {
 // Colors for the four framework phases (F1-F12)
 
 export const PHASE = {
-  foundation:  "#26C6DA",
+  foundation:  "#5CB8FF",
   collective:  "#3B82F6",
   repair:      "#4F46E5",
   meta:        "#5C6BC0",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { SiteHeader, SiteFooter, SectionSpectrumBar } from "@/src/components";
 import { MODELS } from "@/src/data/frameworks";
 
 
@@ -18,6 +18,29 @@ export const metadata = {
   },
 };
 
+const SCIENTIFIC_FOUNDATIONS = [
+  {
+    modelId: "inner-compass",
+    foundations: [
+      "Polyvagal Theory (Porges)",
+      "Approach/avoidance motivation (Elliot, Carver & Scheier)",
+      "Broaden-and-build theory (Fredrickson)",
+      "Window of tolerance (Siegel)",
+      "Secure base theory (Bowlby)",
+    ],
+  },
+  {
+    modelId: "three-awareness-capacities",
+    foundations: [
+      "Attachment theory (Bowlby, Ainsworth)",
+      "Polyvagal theory (Porges)",
+      "Developmental neuroscience (Schore)",
+      "Internal Family Systems (Schwartz)",
+      "Relational neurobiology (Siegel)",
+    ],
+  },
+];
+
 export default function ModelsIndexPage() {
   return (
     <div
@@ -28,6 +51,7 @@ export default function ModelsIndexPage() {
       }}
     >
       <SiteHeader currentPath="/models" />
+      <SectionSpectrumBar section="models" />
       <main
         id="main-content"
         style={{
@@ -79,11 +103,11 @@ export default function ModelsIndexPage() {
           </p>
         </header>
 
-        {/* The two models */}
+        {/* The two models — side by side */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
             gap: 16,
             marginBottom: 40,
           }}
@@ -110,21 +134,6 @@ export default function ModelsIndexPage() {
                   marginBottom: 10,
                 }}
               >
-                <span
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 600,
-                    fontFamily: FONT.mono,
-                    color: SPECTRUM.azure,
-                    background: hexToRgba(SPECTRUM.azure, 0.12),
-                    padding: "3px 8px",
-                    borderRadius: 4,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {model.subtitle}
-                </span>
                 <span
                   style={{
                     fontSize: 11,
@@ -169,7 +178,7 @@ export default function ModelsIndexPage() {
           ))}
         </div>
 
-        {/* The relationship */}
+        {/* Scientific Foundations */}
         <section
           style={{
             padding: 24,
@@ -184,38 +193,84 @@ export default function ModelsIndexPage() {
               fontSize: 16,
               fontWeight: 600,
               color: TEXT.primary,
-              marginBottom: 12,
+              marginBottom: 8,
             }}
           >
-            The Relationship
+            Scientific Foundations
           </h3>
           <p
             style={{
               fontSize: 14,
               color: TEXT.secondary,
               lineHeight: 1.8,
-              marginBottom: 12,
+              marginBottom: 20,
             }}
           >
             One describes what the compass does. The other describes what
-            determines how it does it. They are inseparable in practice.
+            determines how it does it. They are inseparable in practice &mdash;
+            and both build on established research traditions.
           </p>
-          <p
+          <div
             style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 0,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 16,
             }}
           >
-            A person's compass position (Inner Compass model) and their capacity
-            configuration (Three Awareness Capacities model) are two dimensions
-            of the same reality. The configuration explains <em>why</em> the
-            compass is where it is. The compass explains <em>what</em> the
-            configuration produces. Together, they provide a complete assessment:
-            where is the needle, what configuration is holding it there, and what
-            would need to develop for it to move?
-          </p>
+            {SCIENTIFIC_FOUNDATIONS.map((sf) => {
+              const model = MODELS.find((m) => m.id === sf.modelId);
+              return (
+                <div
+                  key={sf.modelId}
+                  style={{
+                    padding: 16,
+                    background: BG.card,
+                    borderRadius: RADIUS.md,
+                    border: `1px solid ${BORDER.default}`,
+                  }}
+                >
+                  <h4
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: SPECTRUM.azure,
+                      marginBottom: 10,
+                    }}
+                  >
+                    {model?.name}
+                  </h4>
+                  <ul style={{ paddingLeft: 16, margin: 0 }}>
+                    {sf.foundations.map((f, i) => (
+                      <li
+                        key={i}
+                        style={{
+                          fontSize: 13,
+                          color: TEXT.secondary,
+                          lineHeight: 1.6,
+                          marginBottom: 4,
+                        }}
+                      >
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ marginTop: 16 }}>
+            <Link
+              href="/scientific-foundations"
+              style={{
+                fontSize: 13,
+                color: SPECTRUM.azure,
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
+            >
+              Full scientific foundations &rarr;
+            </Link>
+          </div>
         </section>
 
         {/* Bridge to .com */}

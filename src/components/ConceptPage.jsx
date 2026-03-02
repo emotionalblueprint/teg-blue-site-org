@@ -11,7 +11,7 @@ import {
   hexToRgba,
   RADIUS,
 } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { SiteHeader, SiteFooter, SectionSpectrumBar } from "@/src/components";
 import { getNextConcept, getPrevConcept, GROUP_COLORS, CONCEPTS, CONCEPT_COLORS, getConcept } from "@/src/data/concepts";
 import { getFramework, getModel, getPhaseColor } from "@/src/data/frameworks";
 
@@ -47,7 +47,7 @@ export default function ConceptPage({ concept, content = {} }) {
       <SiteHeader currentPath={`/concepts/${concept.slug}`} />
 
       {/* Concept nav bar — 13 colored segments */}
-      <ConceptNavBar activeIndex={concept.number - 1} />
+      <SectionSpectrumBar section="concepts" activeIndex={concept.number - 1} />
 
       <main
         id="main-content"
@@ -87,7 +87,7 @@ export default function ConceptPage({ concept, content = {} }) {
                 concept.group === "The Three Awareness Capacities"
                   ? {
                       fontSize: 12,
-                      background: "linear-gradient(90deg, #a080ff, #22d3ee, #a0e85a)",
+                      background: "linear-gradient(90deg, #4E7EFF, #3C6EFF, #5E8EFF)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -164,7 +164,7 @@ export default function ConceptPage({ concept, content = {} }) {
                   fontWeight: 500,
                 }}
               >
-                {m.subtitle}
+                {m.name}
               </Link>
             ))}
           </div>
@@ -368,39 +368,6 @@ function Section({ title, children, color }) {
   );
 }
 
-function ConceptNavBar({ activeIndex }) {
-  return (
-    <nav
-      aria-label="Concept progress"
-      style={{
-        display: "flex",
-        gap: 3,
-        maxWidth: SPACING.containerMax,
-        margin: "0 auto",
-        padding: "12px 24px 0",
-      }}
-    >
-      {CONCEPTS.map((c, i) => (
-        <Link
-          key={c.id}
-          href={`/concepts/${c.slug}`}
-          title={`${c.number}. ${c.name}`}
-          style={{
-            flex: 1,
-            height: i === activeIndex ? 6 : 4,
-            borderRadius: 2,
-            background: CONCEPT_COLORS[i],
-            opacity: i === activeIndex ? 1 : 0.3,
-            transition: "opacity 150ms ease, height 150ms ease",
-            textDecoration: "none",
-            display: "block",
-          }}
-        />
-      ))}
-    </nav>
-  );
-}
-
 function FrameworkDestinationCard({ concept, color }) {
   const goDeeper = concept.goDeeper;
   if (!goDeeper) return null;
@@ -482,7 +449,7 @@ function FrameworkDestinationCard({ concept, color }) {
                 fontWeight: 500,
               }}
             >
-              {m.subtitle} &rarr;
+              {m.name} &rarr;
             </Link>
           ))}
         </div>
