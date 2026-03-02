@@ -216,43 +216,8 @@ export default function ConceptPage({ concept, content = {} }) {
             </>
           )}
 
-          {/* Go Deeper */}
-          <Section title="Go Deeper" color={CONCEPT_COLOR}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-              }}
-            >
-              {relatedModels.map((m) => (
-                <GoLink
-                  key={m.id}
-                  href={m.url}
-                  label={m.name}
-                  tag="Model"
-                  color={CONCEPT_COLOR}
-                />
-              ))}
-              {relatedFrameworks.map((fw) => (
-                <GoLink
-                  key={fw.id}
-                  href={`/frameworks/${fw.slug}`}
-                  label={`${fw.id}: ${fw.name}`}
-                  tag="Framework"
-                  color={CONCEPT_COLOR}
-                />
-              ))}
-              {next && (
-                <GoLink
-                  href={`/concepts/${next.slug}`}
-                  label={`Concept ${next.number}: ${next.name}`}
-                  tag="Next"
-                  color={CONCEPT_COLOR}
-                />
-              )}
-            </div>
-          </Section>
+          {/* Framework Destination Card */}
+          <FrameworkDestinationCard concept={concept} color={CONCEPT_COLOR} />
         </div>
 
         {/* Footer Navigation */}
@@ -357,6 +322,21 @@ export default function ConceptPage({ concept, content = {} }) {
             >
               Frameworks &rarr;
             </Link>
+            <Link
+              href="/research-entry"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              For Researchers &rarr;
+            </Link>
           </div>
         </footer>
       </main>
@@ -421,43 +401,92 @@ function ConceptNavBar({ activeIndex }) {
   );
 }
 
-function GoLink({ href, label, tag, color }) {
+function FrameworkDestinationCard({ concept, color }) {
+  const goDeeper = concept.goDeeper;
+  if (!goDeeper) return null;
+
+  const framework = getFramework(goDeeper.framework);
+  if (!framework) return null;
+
+  const phaseColor = getPhaseColor(framework.phase);
+
+  const relatedModels = (concept.drawsFrom?.models || [])
+    .map((id) => getModel(id))
+    .filter(Boolean);
+
   return (
-    <Link
-      href={href}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-        padding: "10px 16px",
-        background: BG.card,
-        borderRadius: RADIUS.md,
-        border: `1px solid ${BORDER.default}`,
-        textDecoration: "none",
-      }}
-    >
-      <span
+    <section style={{ marginTop: 8 }}>
+      <Link
+        href={`/frameworks/${framework.slug}`}
         style={{
-          fontSize: 10,
-          fontWeight: 600,
-          fontFamily: FONT.mono,
-          color: TEXT.tertiary,
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-          minWidth: 60,
+          display: "block",
+          padding: "20px 24px",
+          background: BG.card,
+          borderRadius: RADIUS.lg,
+          border: `1px solid ${BORDER.default}`,
+          borderLeft: `4px solid ${phaseColor}`,
+          textDecoration: "none",
+          transition: "border-color 150ms ease",
         }}
       >
-        {tag}
-      </span>
-      <span
-        style={{
-          fontSize: 14,
-          fontWeight: 500,
-          color: color,
-        }}
-      >
-        {label} &rarr;
-      </span>
-    </Link>
+        <span
+          style={{
+            fontSize: 11,
+            fontWeight: 700,
+            fontFamily: FONT.mono,
+            padding: "2px 8px",
+            borderRadius: 4,
+            background: hexToRgba(phaseColor, 0.12),
+            color: phaseColor,
+            letterSpacing: "0.03em",
+          }}
+        >
+          {framework.id}
+        </span>
+        <p
+          style={{
+            fontSize: 16,
+            fontWeight: 600,
+            color: TEXT.primary,
+            margin: "10px 0 4px",
+            lineHeight: 1.3,
+          }}
+        >
+          {framework.name} &rarr;
+        </p>
+        <p
+          style={{
+            fontSize: 14,
+            color: TEXT.secondary,
+            margin: 0,
+            lineHeight: 1.5,
+          }}
+        >
+          {goDeeper.label}
+        </p>
+      </Link>
+
+      {relatedModels.length > 0 && (
+        <div style={{ marginTop: 8, display: "flex", gap: 8 }}>
+          {relatedModels.map((m) => (
+            <Link
+              key={m.id}
+              href={m.url}
+              style={{
+                fontSize: 12,
+                color: color,
+                textDecoration: "none",
+                padding: "4px 12px",
+                borderRadius: 4,
+                background: hexToRgba(color, 0.08),
+                fontWeight: 500,
+              }}
+            >
+              {m.subtitle} &rarr;
+            </Link>
+          ))}
+        </div>
+      )}
+    </section>
   );
 }

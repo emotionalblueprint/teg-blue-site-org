@@ -266,6 +266,22 @@ export default function ModelPage({ model, content = {} }) {
               </Link>
             )}
             <Link
+              href="/concepts"
+              className="hover-ghost"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Concepts &rarr;
+            </Link>
+            <Link
               href="/models"
               className="hover-ghost"
               style={{
@@ -295,7 +311,23 @@ export default function ModelPage({ model, content = {} }) {
                 textDecoration: "none",
               }}
             >
-              All Frameworks &rarr;
+              Frameworks &rarr;
+            </Link>
+            <Link
+              href="/research-entry"
+              className="hover-ghost"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              For Researchers &rarr;
             </Link>
           </div>
         </footer>

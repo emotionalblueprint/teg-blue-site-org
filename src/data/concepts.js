@@ -11,16 +11,16 @@ import { SPECTRUM, ACCENT } from "@/src/styles/tokens";
 // ─── GROUP COLORS ─────────────────────────────────────────
 // Bold, unmistakable colors for each concept group
 export const GROUP_COLORS = {
-  "The Instrument": ACCENT.mint,
+  "How the System Works": ACCENT.mint,
   "The Three Awareness Capacities": SPECTRUM.blue,
-  "Human Consequences": ACCENT.pink,
+  "What Happens When It Breaks": ACCENT.pink,
 };
 
 // ─── CONCEPT COLORS ───────────────────────────────────────
 // Each concept has its own color, grouped by section:
-//   The Instrument (C1-C6): greens — light to deep
+//   How the System Works (C1-C6): greens — light to deep
 //   Three Awareness Capacities (C7-C9): matching .com capacity colors
-//   Human Consequences (C10-C13): pink / magenta / rose
+//   What Happens When It Breaks (C10-C13): pink / magenta / rose
 export const CONCEPT_COLORS = [
   "#b8f0a0", // C1  — mint green (lightest)
   "#8ae65a", // C2  — lime green
@@ -39,7 +39,7 @@ export const CONCEPT_COLORS = [
 
 export const CONCEPT_GROUPS = [
   {
-    key: "The Instrument",
+    key: "How the System Works",
     concepts: ["C1", "C2", "C3", "C4", "C5", "C6"],
     description:
       "The first six concepts establish the instrument — the nervous system's signalling language, the question it answers, the compass that tracks its orientation, the way state shapes capacity, the return mechanism that keeps the system moving, and how the same emotion transforms depending on where the compass is pointing.",
@@ -51,7 +51,7 @@ export const CONCEPT_GROUPS = [
       "The next three introduce the three awareness capacities — what we read in others, what we feel with others, and what we know as our own. These are not personality traits. They are biological capacities, present at birth, shaped by conditions.",
   },
   {
-    key: "Human Consequences",
+    key: "What Happens When It Breaks",
     concepts: ["C10", "C11", "C12", "C13"],
     description:
       "The final four establish the human consequences — what happens when internal discomfort cannot be located as one's own, what happens when cognition replaces emotional truth with narrative stability, how awareness transmits through relationship, and what determines how much a person can recognise as harmful.",
@@ -65,11 +65,12 @@ export const CONCEPTS = [
     name: "Emotions as Biological Information",
     subtitle: "The Nervous System's Signalling Language",
     slug: "emotions-as-biological-information",
-    group: "The Instrument",
+    group: "How the System Works",
     hook: "Emotions are the nervous system's signalling language — the body's first language. Interpret, do not suppress.",
     keyLine:
       "The question is not 'how do I manage this emotion?' but 'what is this signal telling me?'",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
+    goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
   },
   {
     id: "C2",
@@ -77,10 +78,11 @@ export const CONCEPTS = [
     name: "The Safety Orientation Question",
     subtitle: "One Question Generates All Emotional Diversity",
     slug: "the-safety-orientation-question",
-    group: "The Instrument",
+    group: "How the System Works",
     hook: "One question generates all emotional diversity: 'Is there enough safety to engage, or is protection needed?'",
     keyLine: "Every emotion is a variation on: safe enough, or not yet.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
+    goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
   },
   {
     id: "C3",
@@ -88,11 +90,12 @@ export const CONCEPTS = [
     name: "The Inner Compass",
     subtitle: "A Moving Needle",
     slug: "the-inner-compass",
-    group: "The Instrument",
+    group: "How the System Works",
     hook: "The nervous system orients between Connection and threat modes. Health is not a position — it is the needle moving freely.",
     keyLine:
       "Health is not staying in Connection permanently — health is the ability to move through the gradient and come back.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
+    goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
   },
   {
     id: "C4",
@@ -100,10 +103,11 @@ export const CONCEPTS = [
     name: "State Determines Capacity",
     subtitle: "What You Can Do Depends on Where You Are",
     slug: "state-determines-capacity",
-    group: "The Instrument",
+    group: "How the System Works",
     hook: "What you can perceive, think, feel, and do depends on your current compass position. Restore safety first, then expect capacity.",
     keyLine: "Restore safety first, then expect capacity.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
+    goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
   },
   {
     id: "C5",
@@ -111,10 +115,11 @@ export const CONCEPTS = [
     name: "Regulation — The Return Mechanism",
     subtitle: "The Return Journey",
     slug: "regulation-the-return-mechanism",
-    group: "The Instrument",
+    group: "How the System Works",
     hook: "The body moves into threat and comes back. Health is the full cycle. Regulation is the mechanism of coming back.",
     keyLine: "Regulation is the mechanism of coming back.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
+    goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
   },
   {
     id: "C6",
@@ -122,10 +127,11 @@ export const CONCEPTS = [
     name: "Same Emotion, Two Expressions",
     subtitle: "Mode Position Determines What an Emotion Does",
     slug: "same-emotion-two-expressions",
-    group: "The Instrument",
+    group: "How the System Works",
     hook: "Mode position determines whether an emotion serves connection or defence. Assess mode position, not the emotion.",
     keyLine: "Assess mode position, not the emotion.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
+    goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
   },
   {
     id: "C7",
@@ -141,6 +147,7 @@ export const CONCEPTS = [
       frameworks: ["F2"],
       models: ["three-awareness-capacities"],
     },
+    goDeeper: { framework: "F2", label: "Explore the Awareness Teaches Awareness framework" },
   },
   {
     id: "C8",
@@ -156,6 +163,7 @@ export const CONCEPTS = [
       frameworks: ["F2"],
       models: ["three-awareness-capacities"],
     },
+    goDeeper: { framework: "F2", label: "Explore the Awareness Teaches Awareness framework" },
   },
   {
     id: "C9",
@@ -171,6 +179,7 @@ export const CONCEPTS = [
       frameworks: ["F2"],
       models: ["three-awareness-capacities"],
     },
+    goDeeper: { framework: "F2", label: "Explore the Awareness Teaches Awareness framework" },
   },
   {
     id: "C10",
@@ -178,10 +187,11 @@ export const CONCEPTS = [
     name: "Emotional Distortion",
     subtitle: "How Internal Discomfort Becomes Perceived External Threat",
     slug: "emotional-distortion",
-    group: "Human Consequences",
+    group: "What Happens When It Breaks",
     hook: "Internal discomfort, without SEA, gets reclassified as external attack. Retaliation feels like self-defence.",
     keyLine: "Your boundaries become their evidence.",
     drawsFrom: { frameworks: ["F3"], models: ["three-awareness-capacities"] },
+    goDeeper: { framework: "F3", label: "Understand how Adult Cognition & False Coherence works" },
   },
   {
     id: "C11",
@@ -189,11 +199,12 @@ export const CONCEPTS = [
     name: "False Coherence",
     subtitle: "Regulatory Success at the Cost of Emotional Truth",
     slug: "false-coherence",
-    group: "Human Consequences",
+    group: "What Happens When It Breaks",
     hook: "Beliefs feel true because they calm the nervous system, not because they match reality. Safety must precede truth.",
     keyLine:
       "You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.",
     drawsFrom: { frameworks: ["F3"], models: ["three-awareness-capacities"] },
+    goDeeper: { framework: "F3", label: "Understand how Adult Cognition & False Coherence works" },
   },
   {
     id: "C12",
@@ -201,10 +212,11 @@ export const CONCEPTS = [
     name: "Awareness Teaches Awareness",
     subtitle: "How the Instrument Gets Calibrated",
     slug: "awareness-teaches-awareness",
-    group: "Human Consequences",
+    group: "What Happens When It Breaks",
     hook: "The adults' awareness configuration is the child's developmental environment. Children calibrate to what adults embody, not what adults say.",
     keyLine: "Love does not override what the nervous system embodies.",
     drawsFrom: { frameworks: ["F2"], models: ["three-awareness-capacities"] },
+    goDeeper: { framework: "F2", label: "Explore how awareness transmits through relationship" },
   },
   {
     id: "C13",
@@ -212,10 +224,11 @@ export const CONCEPTS = [
     name: "Tolerance Thresholds",
     subtitle: "What the Nervous System Was Calibrated to Endure",
     slug: "tolerance-thresholds",
-    group: "Human Consequences",
+    group: "What Happens When It Breaks",
     hook: "The nervous system calibrates what to endure based on early conditions. Familiar can feel normal even when it is costly.",
     keyLine: "Familiar can feel 'normal' even when it is costly.",
     drawsFrom: { frameworks: ["F2"], models: ["three-awareness-capacities"] },
+    goDeeper: { framework: "F2", label: "Explore what shapes tolerance thresholds" },
   },
 ];
 

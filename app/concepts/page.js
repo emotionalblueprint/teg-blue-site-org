@@ -46,7 +46,6 @@ export default function ConceptsHubPage() {
       }}
     >
       <SiteHeader currentPath="/concepts" />
-
       {/* Concept spectrum bar */}
       <nav
         aria-label="Concept overview"
@@ -107,10 +106,22 @@ export default function ConceptsHubPage() {
               marginBottom: 12,
             }}
           >
-            Written for any curious mind. Each concept reframes something you
-            already experience — a feeling, a pattern, a moment you recognise
-            but may not have had words for. Together, they build a complete
-            picture of how the nervous system shapes everything.
+            TEG-Blue is one system seen at three scales.
+          </p>
+          <p
+            style={{
+              fontSize: 15,
+              color: TEXT.secondary,
+              lineHeight: 1.8,
+              maxWidth: 640,
+              marginBottom: 12,
+            }}
+          >
+            The concepts are the first scale — the ideas you can hold in your
+            hand. Each one reframes something you already experience: a feeling,
+            a pattern, a moment you recognize but may not have had words for.
+            Together, they build a complete picture of how the nervous system
+            shapes everything.
           </p>
           <p
             style={{
@@ -120,8 +131,15 @@ export default function ConceptsHubPage() {
               maxWidth: 640,
             }}
           >
-            Three groups move from the instrument itself, through the awareness
-            capacities, to the human consequences.
+            The{" "}
+            <Link href="/models" style={{ color: SPECTRUM.azure, textDecoration: "none" }}>
+              models
+            </Link>{" "}
+            make these patterns visible. The{" "}
+            <Link href="/frameworks-map" style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>
+              frameworks
+            </Link>{" "}
+            explain where they come from and where they lead.
           </p>
         </header>
 
@@ -195,20 +213,19 @@ export default function ConceptsHubPage() {
                   </p>
                 </div>
 
-                {/* Concept cards */}
+                {/* Concept rows */}
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: 2,
+                    gap: 0,
                   }}
                 >
                   {concepts.map((concept, i) => (
-                    <ConceptCard
+                    <ConceptRow
                       key={concept.id}
                       concept={concept}
                       conceptColor={CONCEPT_COLORS[concept.number - 1]}
-                      groupColor={groupColor}
                       isLast={i === concepts.length - 1}
                     />
                   ))}
@@ -246,8 +263,8 @@ export default function ConceptsHubPage() {
               marginBottom: 20,
             }}
           >
-            These thirteen concepts open the door. The models and frameworks
-            take you further.
+            The concepts name the patterns. The models make them visible. The
+            frameworks explain where they come from and where they lead.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             <Link
@@ -257,7 +274,7 @@ export default function ConceptsHubPage() {
                 alignItems: "center",
                 gap: 6,
                 padding: "12px 22px",
-                background: SPECTRUM.cobalt,
+                background: SPECTRUM.azure,
                 color: TEXT.primary,
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
@@ -284,6 +301,24 @@ export default function ConceptsHubPage() {
               }}
             >
               Frameworks &rarr;
+            </Link>
+            <Link
+              href="/research-entry"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "12px 22px",
+                background: "transparent",
+                color: TEXT.secondary,
+                borderRadius: RADIUS.md,
+                fontWeight: 600,
+                fontSize: 14,
+                textDecoration: "none",
+                border: `1px solid ${BORDER.default}`,
+              }}
+            >
+              For Researchers &rarr;
             </Link>
           </div>
         </section>
@@ -354,85 +389,87 @@ export default function ConceptsHubPage() {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
 
-function ConceptCard({ concept, conceptColor, groupColor, isLast }) {
+function ConceptRow({ concept, conceptColor, isLast }) {
   return (
     <Link
       href={`/concepts/${concept.slug}`}
       className="hover-card"
       style={{
-        display: "flex",
-        gap: 20,
-        padding: "22px 28px",
+        display: "block",
+        padding: "12px 20px",
         background: BG.card,
         borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
         borderRadius: isLast ? `0 0 ${RADIUS.lg}px ${RADIUS.lg}px` : 0,
         textDecoration: "none",
-        alignItems: "flex-start",
       }}
     >
-      {/* Large decorative number */}
-      <span
+      {/* Line 1: number pill + name + subtitle */}
+      <div
         style={{
-          fontSize: 36,
-          fontWeight: 800,
-          fontFamily: FONT.mono,
-          color: hexToRgba(conceptColor, 0.3),
-          lineHeight: 1,
-          flexShrink: 0,
-          minWidth: 44,
-          paddingTop: 2,
+          display: "flex",
+          alignItems: "baseline",
+          gap: 10,
+          marginBottom: 6,
         }}
       >
-        {String(concept.number).padStart(2, "0")}
-      </span>
-
-      <div style={{ flex: 1, minWidth: 0 }}>
-        {/* Concept name */}
-        <h3
+        <span
           style={{
-            fontSize: 18,
+            fontSize: 11,
             fontWeight: 700,
+            fontFamily: FONT.mono,
+            color: conceptColor,
+            background: hexToRgba(conceptColor, 0.12),
+            padding: "2px 7px",
+            borderRadius: 10,
+            flexShrink: 0,
+            letterSpacing: "0.02em",
+          }}
+        >
+          {concept.number}
+        </span>
+        <span
+          style={{
+            fontSize: 14,
+            fontWeight: 600,
             color: TEXT.primary,
-            margin: "0 0 10px",
             letterSpacing: "-0.01em",
-            lineHeight: 1.3,
           }}
         >
           {concept.name}
-        </h3>
-
-        {/* Key line as pull quote */}
-        <div
+        </span>
+        <span
           style={{
-            borderLeft: `3px solid ${hexToRgba(conceptColor, 0.5)}`,
-            paddingLeft: 14,
-            marginBottom: 10,
+            fontSize: 13,
+            color: TEXT.tertiary,
+            flexShrink: 1,
+            minWidth: 0,
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
           }}
         >
-          <p
-            style={{
-              fontSize: 14,
-              fontWeight: 500,
-              fontStyle: "italic",
-              color: conceptColor,
-              lineHeight: 1.6,
-              margin: 0,
-            }}
-          >
-            &ldquo;{concept.keyLine}&rdquo;
-          </p>
-        </div>
+          {concept.subtitle}
+        </span>
+      </div>
 
-        {/* Hook as body */}
+      {/* Line 2: key line with colored left border */}
+      <div
+        style={{
+          borderLeft: `2px solid ${hexToRgba(conceptColor, 0.4)}`,
+          paddingLeft: 12,
+          marginLeft: 3,
+        }}
+      >
         <p
           style={{
-            fontSize: 14,
-            color: TEXT.secondary,
-            lineHeight: 1.7,
+            fontSize: 13,
+            fontStyle: "italic",
+            color: hexToRgba(conceptColor, 0.85),
+            lineHeight: 1.5,
             margin: 0,
           }}
         >
-          {concept.hook}
+          {concept.keyLine}
         </p>
       </div>
     </Link>

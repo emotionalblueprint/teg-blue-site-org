@@ -13,9 +13,6 @@ import {
   RADIUS,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { CONCEPTS, CONCEPT_GROUPS, GROUP_COLORS, CONCEPT_COLORS } from "@/src/data/concepts";
-import { MODELS } from "@/src/data/frameworks";
-import { PHASES } from "@/src/data/frameworks";
 
 export const metadata = {
   title: "TEG-Blue | Open Knowledge — Emotional Technology",
@@ -48,7 +45,7 @@ export default function HomePage() {
             padding: "48px 24px 80px",
           }}
         >
-          {/* ─── Hero Section ─── */}
+          {/* ─── Hero ─── */}
           <section style={{ marginBottom: 56 }}>
             <p
               style={{
@@ -97,334 +94,237 @@ export default function HomePage() {
               style={{
                 fontSize: 14,
                 lineHeight: 1.7,
-                color: TEXT.secondary,
+                color: TEXT.tertiary,
                 maxWidth: 620,
-                marginBottom: 24,
               }}
             >
               All research transparent. All sources credited. All claims open to
               testing.
             </p>
-
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 12,
-              }}
-            >
-              <Link
-                href="/concepts"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "12px 24px",
-                  background: SPECTRUM.cobalt,
-                  color: TEXT.primary,
-                  borderRadius: 8,
-                  fontWeight: 500,
-                  fontSize: 14,
-                  textDecoration: "none",
-                }}
-              >
-                Start Here &rarr;
-              </Link>
-              <Link
-                href="/research-entry"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "12px 24px",
-                  background: hexToRgba(PRIMARY, 0.1),
-                  color: PRIMARY,
-                  borderRadius: 8,
-                  fontWeight: 500,
-                  fontSize: 14,
-                  textDecoration: "none",
-                  border: `1px solid ${hexToRgba(PRIMARY, 0.2)}`,
-                }}
-              >
-                For Researchers
-              </Link>
-            </div>
           </section>
 
-          {/* ─── 10 Foundational Concepts ─── */}
+          {/* ─── One System, Three Zoom Levels ─── */}
           <section style={{ marginBottom: 56 }}>
-            <SectionHeader
-              label="Start Here"
-              title="13 Foundational Concepts"
-              description="Each concept reframes something you already experience. Each can be read on its own. Together, they build a complete picture."
-            />
-
-            <div
+            <p
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 32,
-                marginBottom: 16,
-              }}
-            >
-              {CONCEPT_GROUPS.map((group) => {
-                const concepts = CONCEPTS.filter(
-                  (c) => c.group === group.key
-                );
-                const groupColor = GROUP_COLORS[group.key];
-                const isCapacities = group.key === "The Three Awareness Capacities";
-                const capacitiesGradient = "linear-gradient(90deg, #a080ff, #22d3ee, #a0e85a)";
-                return (
-                  <div key={group.key}>
-                    <p
-                      style={{
-                        fontSize: 12,
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                        fontFamily: FONT.mono,
-                        marginBottom: 12,
-                        ...(isCapacities
-                          ? {
-                              background: capacitiesGradient,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              backgroundClip: "text",
-                            }
-                          : { color: groupColor }),
-                      }}
-                    >
-                      {group.key}
-                    </p>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 8,
-                      }}
-                    >
-                      {concepts.map((c) => (
-                        <ConceptRow key={c.id} concept={c} conceptColor={CONCEPT_COLORS[c.number - 1]} groupColor={groupColor} />
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <Link
-              href="/concepts"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                padding: "10px 18px",
-                background: hexToRgba(SPECTRUM.cobalt, 0.1),
-                color: SPECTRUM.cobalt,
-                borderRadius: RADIUS.md,
+                fontSize: 11,
                 fontWeight: 600,
-                fontSize: 14,
-                textDecoration: "none",
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
+                color: TEXT.tertiary,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                marginBottom: 20,
+                fontFamily: FONT.mono,
               }}
             >
-              Explore all concepts &rarr;
-            </Link>
-          </section>
-
-          {/* ─── The Two Models ─── */}
-          <section className="section-break" style={{ marginBottom: 56 }}>
-            <SectionHeader
-              label="The Instruments"
-              title="Two Models"
-              description="The concepts above describe what the nervous system does. The models make it visible and usable."
-              labelColor={ACCENT.yellow}
-            />
+              One system, three zoom levels
+            </p>
 
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
+                gridTemplateColumns: "repeat(3, 1fr)",
                 gap: 16,
-                marginBottom: 16,
               }}
             >
-              {MODELS.map((model, i) => (
-                <Link
-                  key={model.id}
-                  href={model.url}
-                  className="hover-card"
+              {/* Concepts */}
+              <Link
+                href="/concepts"
+                className="hover-card"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "24px 22px",
+                  background: hexToRgba(SPECTRUM.sky, 0.06),
+                  borderRadius: RADIUS.lg,
+                  border: `1px solid ${hexToRgba(SPECTRUM.sky, 0.18)}`,
+                  borderTop: `3px solid ${SPECTRUM.sky}`,
+                  textDecoration: "none",
+                }}
+              >
+                <span
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    padding: "24px 22px",
-                    background: BG.card,
-                    borderRadius: RADIUS.lg,
-                    border: `1px solid ${BORDER.default}`,
-                    borderTop: `3px solid ${hexToRgba(ACCENT.yellow, 0.6)}`,
-                    textDecoration: "none",
+                    fontSize: 10,
+                    fontWeight: 700,
+                    fontFamily: FONT.mono,
+                    color: SPECTRUM.sky,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    marginBottom: 10,
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: 32,
-                      fontWeight: 800,
-                      fontFamily: FONT.mono,
-                      color: hexToRgba(ACCENT.yellow, 0.2),
-                      lineHeight: 1,
-                      marginBottom: 12,
-                    }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 700,
-                      fontFamily: FONT.mono,
-                      color: ACCENT.yellow,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      marginBottom: 8,
-                    }}
-                  >
-                    {model.subtitle}
-                  </span>
-                  <h3
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: TEXT.primary,
-                      margin: "0 0 10px",
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {model.name}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 13,
-                      color: TEXT.secondary,
-                      lineHeight: 1.7,
-                      margin: 0,
-                    }}
-                  >
-                    {model.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
-
-            <Link
-              href="/models"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                fontSize: 14,
-                color: ACCENT.yellow,
-                textDecoration: "none",
-                fontWeight: 500,
-              }}
-            >
-              See all models &rarr;
-            </Link>
-          </section>
-
-          {/* ─── The 12 Frameworks ─── */}
-          <section className="section-break" style={{ marginBottom: 56 }}>
-            <SectionHeader
-              label="The Architecture"
-              title="12 Frameworks"
-              description="The frameworks explain why — the full theoretical architecture behind the concepts and models."
-            />
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 8,
-                marginBottom: 16,
-              }}
-            >
-              {PHASES.map((phase) => (
-                <div
-                  key={phase.key}
+                  13 Concepts
+                </span>
+                <h2
                   style={{
-                    padding: "14px 18px",
-                    background: BG.card,
-                    borderRadius: RADIUS.md,
-                    border: `1px solid ${BORDER.default}`,
-                    borderLeft: `3px solid ${phase.color}`,
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: TEXT.primary,
+                    margin: "0 0 10px",
+                    lineHeight: 1.3,
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 10,
-                      marginBottom: 4,
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: 10,
-                        fontWeight: 600,
-                        fontFamily: FONT.mono,
-                        color: phase.color,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.04em",
-                      }}
-                    >
-                      {phase.key}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: 11,
-                        color: TEXT.tertiary,
-                        fontFamily: FONT.mono,
-                      }}
-                    >
-                      {phase.frameworks.join(" · ")}
-                    </span>
-                  </div>
-                  <p
-                    style={{
-                      fontSize: 13,
-                      color: TEXT.secondary,
-                      lineHeight: 1.6,
-                      margin: 0,
-                    }}
-                  >
-                    {phase.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+                  Name the patterns
+                </h2>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: TEXT.secondary,
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  Each concept reframes something you already experience. A
+                  feeling, a pattern, a moment you recognize but may not have
+                  had words for.
+                </p>
+              </Link>
 
-            <Link
-              href="/frameworks-map"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                fontSize: 14,
-                color: SPECTRUM.cobalt,
-                textDecoration: "none",
-                fontWeight: 500,
-              }}
-            >
-              Explore all 12 frameworks &rarr;
-            </Link>
+              {/* Models */}
+              <Link
+                href="/models"
+                className="hover-card"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "24px 22px",
+                  background: hexToRgba(SPECTRUM.azure, 0.06),
+                  borderRadius: RADIUS.lg,
+                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.18)}`,
+                  borderTop: `3px solid ${SPECTRUM.azure}`,
+                  textDecoration: "none",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 700,
+                    fontFamily: FONT.mono,
+                    color: SPECTRUM.azure,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    marginBottom: 10,
+                  }}
+                >
+                  2 Models
+                </span>
+                <h2
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: TEXT.primary,
+                    margin: "0 0 10px",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  Make them visible
+                </h2>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: TEXT.secondary,
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  One model is the instrument — a compass that tracks where the
+                  nervous system is. The other is the calibration — the
+                  capacities that determine how it reads.
+                </p>
+              </Link>
+
+              {/* Frameworks */}
+              <Link
+                href="/frameworks-map"
+                className="hover-card"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "24px 22px",
+                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  borderRadius: RADIUS.lg,
+                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.18)}`,
+                  borderTop: `3px solid ${SPECTRUM.cobalt}`,
+                  textDecoration: "none",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 700,
+                    fontFamily: FONT.mono,
+                    color: SPECTRUM.cobalt,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    marginBottom: 10,
+                  }}
+                >
+                  12 Frameworks
+                </span>
+                <h2
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: TEXT.primary,
+                    margin: "0 0 10px",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  Explain where they lead
+                </h2>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: TEXT.secondary,
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  The full theoretical architecture — why modes exist, how
+                  patterns scale into systems, where protection tips into
+                  domination, and what makes repair possible.
+                </p>
+              </Link>
+            </div>
           </section>
 
           {/* ─── The Evidence ─── */}
           <section className="section-break" style={{ marginBottom: 56 }}>
-            <SectionHeader
-              label="The Foundation"
-              title="Evidence & Research"
-              description="Built on established research from polyvagal theory, affective neuroscience, attachment theory, and more."
-            />
+            <p
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                color: SPECTRUM.cobalt,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                fontFamily: FONT.mono,
+                marginBottom: 8,
+              }}
+            >
+              The Foundation
+            </p>
+            <h2
+              style={{
+                fontSize: 20,
+                fontWeight: 600,
+                color: TEXT.primary,
+                marginBottom: 8,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Evidence &amp; Research
+            </h2>
+            <p
+              style={{
+                fontSize: 14,
+                color: TEXT.secondary,
+                lineHeight: 1.7,
+                maxWidth: 600,
+                marginBottom: 20,
+              }}
+            >
+              Built on established research from polyvagal theory, affective
+              neuroscience, attachment theory, and more.
+            </p>
 
             <div
               style={{
@@ -533,6 +433,57 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* ─── For Researchers ─── */}
+          <section
+            style={{
+              padding: 24,
+              background: hexToRgba(PRIMARY, 0.06),
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${hexToRgba(PRIMARY, 0.18)}`,
+              marginBottom: 32,
+            }}
+          >
+            <h2
+              style={{
+                fontSize: 18,
+                fontWeight: 600,
+                color: TEXT.primary,
+                marginBottom: 8,
+              }}
+            >
+              For Researchers
+            </h2>
+            <p
+              style={{
+                fontSize: 14,
+                color: TEXT.secondary,
+                lineHeight: 1.8,
+                marginBottom: 16,
+                maxWidth: 560,
+              }}
+            >
+              Five open research questions, full methodology, and a standing
+              invitation to critique. Every claim is designed to be tested.
+            </p>
+            <Link
+              href="/research-entry"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "12px 24px",
+                background: PRIMARY,
+                color: TEXT.primary,
+                borderRadius: 8,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Research Entry Point &rarr;
+            </Link>
+          </section>
+
           {/* ─── Bridge to .com ─── */}
           <section
             style={{
@@ -618,102 +569,6 @@ export default function HomePage() {
 }
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
-
-function SectionHeader({ label, title, description, labelColor }) {
-  return (
-    <div style={{ marginBottom: 20 }}>
-      <p
-        style={{
-          fontSize: 11,
-          fontWeight: 600,
-          color: labelColor || SPECTRUM.cobalt,
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          fontFamily: FONT.mono,
-          marginBottom: 8,
-        }}
-      >
-        {label}
-      </p>
-      <h2
-        style={{
-          fontSize: 20,
-          fontWeight: 600,
-          color: TEXT.primary,
-          marginBottom: 8,
-          letterSpacing: "-0.01em",
-        }}
-      >
-        {title}
-      </h2>
-      <p
-        style={{
-          fontSize: 14,
-          color: TEXT.secondary,
-          lineHeight: 1.7,
-          maxWidth: 600,
-        }}
-      >
-        {description}
-      </p>
-    </div>
-  );
-}
-
-function ConceptRow({ concept, conceptColor, groupColor }) {
-  const color = conceptColor || groupColor || SPECTRUM.cobalt;
-  return (
-    <Link
-      href={`/concepts/${concept.slug}`}
-      className="hover-card"
-      style={{
-        display: "flex",
-        alignItems: "baseline",
-        gap: 12,
-        padding: "12px 16px",
-        background: BG.card,
-        borderRadius: RADIUS.md,
-        border: `1px solid ${BORDER.default}`,
-        textDecoration: "none",
-      }}
-    >
-      <span
-        style={{
-          fontSize: 11,
-          fontWeight: 700,
-          fontFamily: FONT.mono,
-          color: color,
-          background: hexToRgba(color, 0.12),
-          padding: "2px 7px",
-          borderRadius: 4,
-          flexShrink: 0,
-        }}
-      >
-        {concept.number}
-      </span>
-      <div style={{ flex: 1 }}>
-        <span
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: TEXT.primary,
-          }}
-        >
-          {concept.name}
-        </span>
-        <span
-          style={{
-            fontSize: 13,
-            color: TEXT.tertiary,
-            marginLeft: 8,
-          }}
-        >
-          — {concept.subtitle}
-        </span>
-      </div>
-    </Link>
-  );
-}
 
 function StatBadge({ label, value }) {
   return (

@@ -28,7 +28,6 @@ export default function ModelsIndexPage() {
       }}
     >
       <SiteHeader currentPath="/models" />
-
       <main
         id="main-content"
         style={{
@@ -39,19 +38,6 @@ export default function ModelsIndexPage() {
       >
         {/* Header */}
         <header style={{ marginBottom: 40 }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: SPECTRUM.azure,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            Foundation Layer
-          </p>
           <h1
             style={{
               fontSize: 28,
@@ -62,7 +48,7 @@ export default function ModelsIndexPage() {
               lineHeight: 1.2,
             }}
           >
-            Models
+            Two Models
           </h1>
           <p
             style={{
@@ -73,10 +59,11 @@ export default function ModelsIndexPage() {
               marginBottom: 12,
             }}
           >
-            A model is not a framework. The frameworks explain <em>why</em> — the
-            theoretical architecture, the research foundations, the mechanisms.
-            The models provide <em>what</em> — the visual-conceptual structures
-            that practitioners, researchers, and individuals actually use.
+            The{" "}
+            <Link href="/concepts" style={{ color: SPECTRUM.sky, textDecoration: "none" }}>
+              concepts
+            </Link>{" "}
+            name the patterns. The models make them visible.
           </p>
           <p
             style={{
@@ -84,11 +71,24 @@ export default function ModelsIndexPage() {
               color: TEXT.secondary,
               lineHeight: 1.8,
               maxWidth: 640,
+              marginBottom: 12,
             }}
           >
-            TEG-Blue has two core models. They are inseparable in practice —
-            one describes what the compass does, the other describes what
-            determines how it does it.
+            One model is the instrument — a compass that tracks where the
+            nervous system is right now. The other is the calibration — the
+            three capacities that determine how accurately that compass reads.
+          </p>
+          <p
+            style={{
+              fontSize: 16,
+              color: TEXT.primary,
+              lineHeight: 1.6,
+              maxWidth: 640,
+              fontWeight: 500,
+            }}
+          >
+            One tells you where the needle is. The other tells you why it is
+            there.
           </p>
         </header>
 
@@ -292,7 +292,8 @@ export default function ModelsIndexPage() {
           }}
         >
           <Link
-            href="/frameworks-map"
+            href="/concepts"
+            className="hover-ghost"
             style={{
               padding: "10px 20px",
               background: "transparent",
@@ -304,10 +305,11 @@ export default function ModelsIndexPage() {
               textDecoration: "none",
             }}
           >
-            All Frameworks &rarr;
+            Concepts &rarr;
           </Link>
           <Link
-            href="/foundations"
+            href="/frameworks-map"
+            className="hover-ghost"
             style={{
               padding: "10px 20px",
               background: "transparent",
@@ -319,7 +321,23 @@ export default function ModelsIndexPage() {
               textDecoration: "none",
             }}
           >
-            System Overview &rarr;
+            Frameworks &rarr;
+          </Link>
+          <Link
+            href="/research-entry"
+            className="hover-ghost"
+            style={{
+              padding: "10px 20px",
+              background: "transparent",
+              color: TEXT.secondary,
+              border: `1px solid ${BORDER.default}`,
+              borderRadius: RADIUS.md,
+              fontWeight: 500,
+              fontSize: 14,
+              textDecoration: "none",
+            }}
+          >
+            For Researchers &rarr;
           </Link>
         </footer>
       </main>

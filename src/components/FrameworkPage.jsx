@@ -407,6 +407,38 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
             }}
           >
             <Link
+              href="/concepts"
+              className="hover-ghost"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Concepts &rarr;
+            </Link>
+            <Link
+              href="/models"
+              className="hover-ghost"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Models &rarr;
+            </Link>
+            <Link
               href="/frameworks-map"
               className="hover-ghost"
               style={{
@@ -421,6 +453,22 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
               }}
             >
               All Frameworks &rarr;
+            </Link>
+            <Link
+              href="/research-entry"
+              className="hover-ghost"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              For Researchers &rarr;
             </Link>
             <Link
               href="/collaborate"

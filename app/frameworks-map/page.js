@@ -35,7 +35,6 @@ export default function TheoreticalFoundationsPage() {
       }}
     >
       <SiteHeader currentPath="/frameworks-map" />
-
       <main
         id="main-content"
         style={{
@@ -63,11 +62,20 @@ export default function TheoreticalFoundationsPage() {
             style={{
               fontSize: 14,
               color: TEXT.secondary,
-              lineHeight: 1.6,
+              lineHeight: 1.8,
               marginBottom: 20,
             }}
           >
-            A unified model linking regulation, identity, social systems, escalation, and repair.
+            The{" "}
+            <Link href="/concepts" style={{ color: SPECTRUM.sky, textDecoration: "none" }}>
+              concepts
+            </Link>{" "}
+            name what you already experience. The{" "}
+            <Link href="/models" style={{ color: SPECTRUM.azure, textDecoration: "none" }}>
+              models
+            </Link>{" "}
+            make it visible. The frameworks explain why — the full theoretical
+            architecture behind the patterns.
           </p>
           <p
             style={{
@@ -195,6 +203,62 @@ export default function TheoreticalFoundationsPage() {
           {FRAMEWORKS.map((fw) => (
             <ExpandableFrameworkCard key={fw.id} framework={fw} />
           ))}
+        </section>
+
+        {/* Cross-section navigation */}
+        <section
+          style={{
+            marginBottom: 32,
+            display: "flex",
+            gap: 12,
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href="/concepts"
+            style={{
+              padding: "10px 20px",
+              background: "transparent",
+              color: TEXT.secondary,
+              border: `1px solid ${BORDER.default}`,
+              borderRadius: 6,
+              fontWeight: 500,
+              fontSize: 14,
+              textDecoration: "none",
+            }}
+          >
+            Concepts &rarr;
+          </Link>
+          <Link
+            href="/models"
+            style={{
+              padding: "10px 20px",
+              background: "transparent",
+              color: TEXT.secondary,
+              border: `1px solid ${BORDER.default}`,
+              borderRadius: 6,
+              fontWeight: 500,
+              fontSize: 14,
+              textDecoration: "none",
+            }}
+          >
+            Models &rarr;
+          </Link>
+          <Link
+            href="/research-entry"
+            style={{
+              padding: "10px 20px",
+              background: "transparent",
+              color: TEXT.secondary,
+              border: `1px solid ${BORDER.default}`,
+              borderRadius: 6,
+              fontWeight: 500,
+              fontSize: 14,
+              textDecoration: "none",
+            }}
+          >
+            For Researchers &rarr;
+          </Link>
         </section>
 
         {/* Help Us Validate */}
