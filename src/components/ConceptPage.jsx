@@ -10,6 +10,7 @@ import {
   SPECTRUM,
   hexToRgba,
   RADIUS,
+  PHASE,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, SectionSpectrumBar } from "@/src/components";
 import { getNextConcept, getPrevConcept, GROUP_COLORS, CONCEPTS, CONCEPT_COLORS, getConcept } from "@/src/data/concepts";
@@ -18,23 +19,16 @@ import { getFramework, getModel, getPhaseColor } from "@/src/data/frameworks";
 /**
  * ConceptPage — Reusable template for individual foundational concept pages.
  *
- * Renders: header with concept number + group label, title, subtitle,
- * What It Is, Where It Comes From, What TEG-Blue Adds, Go Deeper links,
- * and footer navigation (prev/next concept, back to hub).
+ * Renders: header with concept number + group label,
+ * H1 entry-point title, concept name label, subtitle,
+ * key line, body content, and two bridge cards
+ * (Understand The Model + Understand The Framework).
  */
 export default function ConceptPage({ concept, content = {} }) {
   const next = getNextConcept(concept.id);
   const prev = getPrevConcept(concept.id);
   const CONCEPT_COLOR = CONCEPT_COLORS[concept.number - 1] || GROUP_COLORS[concept.group] || SPECTRUM.cobalt;
   const GROUP_COLOR = GROUP_COLORS[concept.group] || SPECTRUM.cobalt;
-
-  const relatedFrameworks = (concept.drawsFrom?.frameworks || [])
-    .map((id) => getFramework(id))
-    .filter(Boolean);
-
-  const relatedModels = (concept.drawsFrom?.models || [])
-    .map((id) => getModel(id))
-    .filter(Boolean);
 
   return (
     <div
@@ -80,7 +74,7 @@ export default function ConceptPage({ concept, content = {} }) {
                 letterSpacing: "0.03em",
               }}
             >
-              Concept {concept.number} of 13
+              Foundational Concept {concept.number} of 13
             </span>
             <span
               style={{ fontSize: 12, color: GROUP_COLOR }}
@@ -88,18 +82,35 @@ export default function ConceptPage({ concept, content = {} }) {
               {concept.group}
             </span>
           </div>
+
+          {/* H1 — Entry-point title */}
           <h1
             style={{
-              fontSize: 28,
+              fontSize: 30,
               fontWeight: 700,
               color: TEXT.primary,
               letterSpacing: "-0.02em",
-              margin: "0 0 6px",
+              margin: "0 0 10px",
               lineHeight: 1.2,
             }}
           >
-            {concept.name}
+            {concept.title || concept.name}
           </h1>
+
+          {/* Concept name label */}
+          <p
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: CONCEPT_COLOR,
+              margin: "0 0 6px",
+              letterSpacing: "0.01em",
+            }}
+          >
+            {concept.name}
+          </p>
+
+          {/* Subtitle */}
           <p
             style={{
               fontSize: 15,
@@ -110,54 +121,6 @@ export default function ConceptPage({ concept, content = {} }) {
           >
             {concept.subtitle}
           </p>
-
-          {/* Source mapping */}
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 6,
-              fontSize: 12,
-              color: TEXT.tertiary,
-            }}
-          >
-            {relatedFrameworks.map((fw) => (
-              <Link
-                key={fw.id}
-                href={`/frameworks/${fw.slug}`}
-                style={{
-                  color: getPhaseColor(fw.phase),
-                  textDecoration: "none",
-                  padding: "2px 8px",
-                  borderRadius: 4,
-                  background: hexToRgba(getPhaseColor(fw.phase), 0.1),
-                  fontSize: 11,
-                  fontFamily: FONT.mono,
-                  fontWeight: 500,
-                }}
-              >
-                {fw.id}
-              </Link>
-            ))}
-            {relatedModels.map((m) => (
-              <Link
-                key={m.id}
-                href={m.url}
-                style={{
-                  color: CONCEPT_COLOR,
-                  textDecoration: "none",
-                  padding: "2px 8px",
-                  borderRadius: 4,
-                  background: hexToRgba(CONCEPT_COLOR, 0.1),
-                  fontSize: 11,
-                  fontFamily: FONT.mono,
-                  fontWeight: 500,
-                }}
-              >
-                {m.name}
-              </Link>
-            ))}
-          </div>
         </header>
 
         {/* Pull quote — key line */}
@@ -206,8 +169,8 @@ export default function ConceptPage({ concept, content = {} }) {
             </>
           )}
 
-          {/* Framework Destination Card */}
-          <FrameworkDestinationCard concept={concept} color={CONCEPT_COLOR} />
+          {/* Bridge Cards — Understand The Model + Understand The Framework */}
+          <BridgeCards concept={concept} color={CONCEPT_COLOR} />
         </div>
 
         {/* Footer Navigation */}
@@ -241,7 +204,7 @@ export default function ConceptPage({ concept, content = {} }) {
                   textDecoration: "none",
                 }}
               >
-                &larr; {prev.number}. {prev.name}
+                &larr; {prev.number}. {prev.title || prev.name}
               </Link>
             ) : (
               <div />
@@ -260,7 +223,7 @@ export default function ConceptPage({ concept, content = {} }) {
                   textDecoration: "none",
                 }}
               >
-                {next.number}. {next.name} &rarr;
+                {next.number}. {next.title || next.name} &rarr;
               </Link>
             ) : (
               <div />
@@ -358,92 +321,190 @@ function Section({ title, children, color }) {
   );
 }
 
-function FrameworkDestinationCard({ concept, color }) {
+// ─── BRIDGE CARDS ───────────────────────────────────────────
+// Two cards at the bottom of every concept page making the bridge
+// to Models and Frameworks extremely clear.
+
+function BridgeCards({ concept, color }) {
   const goDeeper = concept.goDeeper;
-  if (!goDeeper) return null;
-
-  const framework = getFramework(goDeeper.framework);
-  if (!framework) return null;
-
-  const phaseColor = getPhaseColor(framework.phase);
-
+  const framework = goDeeper ? getFramework(goDeeper.framework) : null;
   const relatedModels = (concept.drawsFrom?.models || [])
     .map((id) => getModel(id))
     .filter(Boolean);
+  const model = relatedModels[0] || null;
+
+  if (!framework && !model) return null;
+
+  const phaseColor = framework ? getPhaseColor(framework.phase) : SPECTRUM.cobalt;
 
   return (
-    <section style={{ marginTop: 8 }}>
-      <Link
-        href={`/frameworks/${framework.slug}`}
+    <section style={{ marginTop: 16 }}>
+      {/* Section heading */}
+      <h2
         style={{
-          display: "block",
-          padding: "20px 24px",
-          background: BG.card,
-          borderRadius: RADIUS.lg,
-          border: `1px solid ${BORDER.default}`,
-          borderLeft: `4px solid ${phaseColor}`,
-          textDecoration: "none",
-          transition: "border-color 150ms ease",
+          fontSize: 14,
+          fontWeight: 700,
+          fontFamily: FONT.mono,
+          color: TEXT.tertiary,
+          letterSpacing: "0.06em",
+          textTransform: "uppercase",
+          marginBottom: 16,
         }}
       >
-        <span
-          style={{
-            fontSize: 11,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            padding: "2px 8px",
-            borderRadius: 4,
-            background: hexToRgba(phaseColor, 0.12),
-            color: phaseColor,
-            letterSpacing: "0.03em",
-          }}
-        >
-          {framework.id}
-        </span>
-        <p
-          style={{
-            fontSize: 16,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: "10px 0 4px",
-            lineHeight: 1.3,
-          }}
-        >
-          {framework.name} &rarr;
-        </p>
-        <p
-          style={{
-            fontSize: 14,
-            color: TEXT.secondary,
-            margin: 0,
-            lineHeight: 1.5,
-          }}
-        >
-          {goDeeper.label}
-        </p>
-      </Link>
+        Go Deeper
+      </h2>
+      <p
+        style={{
+          fontSize: 14,
+          color: TEXT.secondary,
+          lineHeight: 1.6,
+          marginBottom: 20,
+          maxWidth: 560,
+        }}
+      >
+        This concept is an entry point. The Model gives you the instrument. The Framework gives you the architecture.
+      </p>
 
-      {relatedModels.length > 0 && (
-        <div style={{ marginTop: 8, display: "flex", gap: 8 }}>
-          {relatedModels.map((m) => (
-            <Link
-              key={m.id}
-              href={m.url}
+      {/* Two-card grid */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: model && framework ? "1fr 1fr" : "1fr",
+          gap: 16,
+        }}
+      >
+        {/* Understand The Model */}
+        {model && (
+          <Link
+            href={model.url}
+            style={{
+              display: "block",
+              padding: "24px",
+              background: BG.card,
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${BORDER.default}`,
+              borderTop: `3px solid ${color}`,
+              textDecoration: "none",
+              transition: "border-color 150ms ease",
+            }}
+          >
+            <span
               style={{
-                fontSize: 12,
-                color: color,
-                textDecoration: "none",
-                padding: "4px 12px",
+                fontSize: 11,
+                fontWeight: 700,
+                fontFamily: FONT.mono,
+                padding: "3px 10px",
                 borderRadius: 4,
-                background: hexToRgba(color, 0.08),
-                fontWeight: 500,
+                background: hexToRgba(color, 0.12),
+                color: color,
+                letterSpacing: "0.03em",
+                textTransform: "uppercase",
               }}
             >
-              {m.name} &rarr;
-            </Link>
-          ))}
-        </div>
-      )}
+              Model
+            </span>
+            <h3
+              style={{
+                fontSize: 17,
+                fontWeight: 600,
+                color: TEXT.primary,
+                margin: "14px 0 6px",
+                lineHeight: 1.3,
+              }}
+            >
+              Understand The Model &rarr;
+            </h3>
+            <p
+              style={{
+                fontSize: 13,
+                fontWeight: 500,
+                color: color,
+                margin: "0 0 10px",
+              }}
+            >
+              {model.name}
+            </p>
+            {concept.modelCard?.learn && (
+              <p
+                style={{
+                  fontSize: 13,
+                  color: TEXT.secondary,
+                  margin: 0,
+                  lineHeight: 1.6,
+                }}
+              >
+                {concept.modelCard.learn}
+              </p>
+            )}
+          </Link>
+        )}
+
+        {/* Understand The Framework */}
+        {framework && (
+          <Link
+            href={`/frameworks/${framework.slug}`}
+            style={{
+              display: "block",
+              padding: "24px",
+              background: BG.card,
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${BORDER.default}`,
+              borderTop: `3px solid ${phaseColor}`,
+              textDecoration: "none",
+              transition: "border-color 150ms ease",
+            }}
+          >
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                fontFamily: FONT.mono,
+                padding: "3px 10px",
+                borderRadius: 4,
+                background: hexToRgba(phaseColor, 0.12),
+                color: phaseColor,
+                letterSpacing: "0.03em",
+                textTransform: "uppercase",
+              }}
+            >
+              Framework {framework.id}
+            </span>
+            <h3
+              style={{
+                fontSize: 17,
+                fontWeight: 600,
+                color: TEXT.primary,
+                margin: "14px 0 6px",
+                lineHeight: 1.3,
+              }}
+            >
+              Understand The Framework &rarr;
+            </h3>
+            <p
+              style={{
+                fontSize: 13,
+                fontWeight: 500,
+                color: phaseColor,
+                margin: "0 0 10px",
+              }}
+            >
+              {framework.name}
+            </p>
+            {concept.frameworkCard?.learn && (
+              <p
+                style={{
+                  fontSize: 13,
+                  color: TEXT.secondary,
+                  margin: 0,
+                  lineHeight: 1.6,
+                }}
+              >
+                {concept.frameworkCard.learn}
+              </p>
+            )}
+          </Link>
+        )}
+      </div>
     </section>
   );
 }

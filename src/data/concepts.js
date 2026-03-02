@@ -81,8 +81,9 @@ export const CONCEPTS = [
   {
     id: "C1",
     number: 1,
+    title: "What Am I Actually Feeling?",
     name: "Self-Emotional Awareness",
-    subtitle: "What Am I Actually Feeling?",
+    subtitle: "The capacity to notice that what we feel is a feeling — not the truth of the situation",
     slug: "self-emotional-awareness",
     group: "Entry Point",
     hook: "The capacity to notice that what we feel is a feeling — not the truth of the situation. That small separation changes everything.",
@@ -95,12 +96,19 @@ export const CONCEPTS = [
       models: ["three-awareness-capacities"],
     },
     goDeeper: { framework: "F2", label: "Explore the Awareness Teaches Awareness framework" },
+    modelCard: {
+      learn: "Meet the three awareness capacities — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — and understand how each one develops, redirects, or goes offline depending on early conditions.",
+    },
+    frameworkCard: {
+      learn: "Understand how the three capacities develop through relationship, what the adults' awareness teaches the child's nervous system, and what happens to the compass when conditions were missing.",
+    },
   },
   {
     id: "C2",
     number: 2,
+    title: "What Are Emotions?",
     name: "Emotions as Biological Information",
-    subtitle: "What Are Emotions?",
+    subtitle: "The nervous system's signalling language — the body's first language",
     slug: "emotions-as-biological-information",
     group: "The Foundation It Reads",
     hook: "Emotions are the nervous system's signalling language — the body's first language. Interpret, do not suppress.",
@@ -110,12 +118,19 @@ export const CONCEPTS = [
       "The question is not 'how do I manage this emotion?' but 'what is this signal telling me?'",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
     goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
+    modelCard: {
+      learn: "See the instrument — the Inner Compass and the four-mode gradient (Connection → Protection → Control → Domination) — and understand how the compass tracks where your nervous system sits right now.",
+    },
+    frameworkCard: {
+      learn: "Explore the full architecture of how the nervous system evaluates safety and threat, how emotions carry that evaluation, how state shapes what you can perceive and do, and how the system returns.",
+    },
   },
   {
     id: "C3",
     number: 3,
+    title: "The One Question Running Underneath Everything",
     name: "The Safety Orientation Question",
-    subtitle: "The One Question Running Underneath Everything",
+    subtitle: "One question generates all emotional diversity: safe enough, or not yet?",
     slug: "the-safety-orientation-question",
     group: "The Foundation It Reads",
     hook: "One question generates all emotional diversity: 'Is there enough safety to engage, or is protection needed?'",
@@ -124,12 +139,19 @@ export const CONCEPTS = [
     keyLine: "Every emotion is a variation on: safe enough, or not yet.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
     goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
+    modelCard: {
+      learn: "See the instrument — the Inner Compass and the four-mode gradient — and understand how this single question generates four distinct positions the nervous system can occupy.",
+    },
+    frameworkCard: {
+      learn: "Explore how the nervous system evaluates safety and threat, how the orientation question drives the compass, and how regulation is the mechanism of coming back.",
+    },
   },
   {
     id: "C4",
     number: 4,
+    title: "The Compass Guiding Our Emotional World",
     name: "The Inner Compass",
-    subtitle: "The Compass Guiding Our Emotional World",
+    subtitle: "The nervous system orients between Connection and threat — health is the needle moving freely",
     slug: "the-inner-compass",
     group: "The System It Navigates",
     hook: "The nervous system orients between Connection and threat modes. Health is not a position — it is the needle moving freely.",
@@ -139,12 +161,19 @@ export const CONCEPTS = [
       "Health is not staying in Connection permanently — health is the ability to move through the gradient and come back.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
     goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
+    modelCard: {
+      learn: "See the full instrument — the four-mode gradient (Connection, Protection, Control, Domination), how the needle moves, and what each position means for what you can feel, think, and do.",
+    },
+    frameworkCard: {
+      learn: "Explore the architecture underneath the compass — how the nervous system evaluates safety and threat, how emotions carry that evaluation, and why health is mobility, not position.",
+    },
   },
   {
     id: "C5",
     number: 5,
+    title: "Why Can't I Always Be Who I Know I Am?",
     name: "State Determines Capacity",
-    subtitle: "Why Can't I Always Be Who I Know I Am?",
+    subtitle: "What you can perceive, think, feel, and do depends on your current compass position",
     slug: "state-determines-capacity",
     group: "The System It Navigates",
     hook: "What you can perceive, think, feel, and do depends on your current compass position. Restore safety first, then expect capacity.",
@@ -153,12 +182,19 @@ export const CONCEPTS = [
     keyLine: "Restore safety first, then expect capacity.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
     goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
+    modelCard: {
+      learn: "See how the four-mode gradient maps what each position makes available — and what it restricts. The compass shows why the same person can be wise in one moment and reactive in the next.",
+    },
+    frameworkCard: {
+      learn: "Explore how the nervous system's evaluation of safety directly shapes cognitive, emotional, and relational capacity — and why restoring safety must come before expecting capability.",
+    },
   },
   {
     id: "C6",
     number: 6,
+    title: "Why Does the Same Feeling Do Different Things?",
     name: "Same Emotion, Two Expressions",
-    subtitle: "Why Does the Same Feeling Do Different Things?",
+    subtitle: "Mode position transforms what an emotion does — the feeling is the same, the compass makes the difference",
     slug: "same-emotion-two-expressions",
     group: "The System It Navigates",
     hook: "Mode position determines whether an emotion serves connection or defence. Assess mode position, not the emotion.",
@@ -167,12 +203,19 @@ export const CONCEPTS = [
     keyLine: "Assess mode position, not the emotion.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
     goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
+    modelCard: {
+      learn: "See how the four-mode gradient transforms every emotion — anger in Connection sets boundaries, anger in Protection attacks. The compass shows why categorising emotions as 'good' or 'bad' collapses.",
+    },
+    frameworkCard: {
+      learn: "Explore the architecture that explains why the same biological signal produces opposite outcomes — and why assessing the mode, not the emotion, changes everything.",
+    },
   },
   {
     id: "C7",
     number: 7,
+    title: "When Retaliation Feels Like Self-Defence",
     name: "Emotional Distortion",
-    subtitle: "When Retaliation Feels Like Self-Defence",
+    subtitle: "Internal discomfort, without self-emotional awareness, gets reclassified as external attack",
     slug: "emotional-distortion",
     group: "What Breaks Without It",
     hook: "Internal discomfort, without SEA, gets reclassified as external attack. Retaliation feels like self-defence.",
@@ -181,12 +224,19 @@ export const CONCEPTS = [
     keyLine: "Your boundaries become their evidence.",
     drawsFrom: { frameworks: ["F3"], models: ["three-awareness-capacities"] },
     goDeeper: { framework: "F3", label: "Understand how Adult Cognition & False Coherence works" },
+    modelCard: {
+      learn: "Understand which awareness capacities are offline when distortion happens — and why sharp emotional reading without self-awareness becomes an instrument without a conscience.",
+    },
+    frameworkCard: {
+      learn: "Explore the full mechanism — how cognition takes over when the biological return was never learned, how internal discomfort becomes misattributed as external attack, and why insight alone doesn't break the pattern.",
+    },
   },
   {
     id: "C8",
     number: 8,
+    title: "When the Story Feels True — But Isn't",
     name: "False Coherence",
-    subtitle: "When the Story Feels True — But Isn't",
+    subtitle: "Beliefs feel true because they calm the nervous system, not because they match reality",
     slug: "false-coherence",
     group: "What Breaks Without It",
     hook: "Beliefs feel true because they calm the nervous system, not because they match reality. Safety must precede truth.",
@@ -196,12 +246,19 @@ export const CONCEPTS = [
       "You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.",
     drawsFrom: { frameworks: ["F3"], models: ["three-awareness-capacities"] },
     goDeeper: { framework: "F3", label: "Understand how Adult Cognition & False Coherence works" },
+    modelCard: {
+      learn: "Understand how the three awareness capacities interact with false coherence — why the most psychologically literate people can be the most stuck, and what configuration makes the pattern invisible from inside.",
+    },
+    frameworkCard: {
+      learn: "Explore the full cognitive replacement mechanism — how cognition takes over the regulatory function, why understanding doesn't break the loop, and why safety must precede truth.",
+    },
   },
   {
     id: "C9",
     number: 9,
+    title: "Why Do We Stay?",
     name: "Tolerance Thresholds",
-    subtitle: "Why Do We Stay?",
+    subtitle: "The nervous system calibrates what to endure — familiar can feel normal even when it is costly",
     slug: "tolerance-thresholds",
     group: "What Breaks Without It",
     hook: "The nervous system calibrates what to endure based on early conditions. Familiar can feel normal even when it is costly.",
@@ -210,12 +267,19 @@ export const CONCEPTS = [
     keyLine: "Familiar can feel 'normal' even when it is costly.",
     drawsFrom: { frameworks: ["F2"], models: ["three-awareness-capacities"] },
     goDeeper: { framework: "F2", label: "Explore what shapes tolerance thresholds" },
+    modelCard: {
+      learn: "Understand the specific capacity configuration that makes thresholds invisible — when Emotional Resonance is flooded and Self-Emotional Awareness is absent, the person feels the harm but cannot name it.",
+    },
+    frameworkCard: {
+      learn: "Explore how awareness calibrates through conditions — how the adults' thresholds become the child's normal, and how sustained different conditions can shift the baseline.",
+    },
   },
   {
     id: "C10",
     number: 10,
+    title: "What Did the Adults Around You Carry?",
     name: "Awareness Teaches Awareness",
-    subtitle: "What Did the Adults Around You Carry?",
+    subtitle: "Children calibrate to what adults embody, not what adults say",
     slug: "awareness-teaches-awareness",
     group: "How It Develops and Returns",
     hook: "The adults' awareness configuration is the child's developmental environment. Children calibrate to what adults embody, not what adults say.",
@@ -224,12 +288,19 @@ export const CONCEPTS = [
     keyLine: "Love does not override what the nervous system embodies.",
     drawsFrom: { frameworks: ["F2"], models: ["three-awareness-capacities"] },
     goDeeper: { framework: "F2", label: "Explore how awareness transmits through relationship" },
+    modelCard: {
+      learn: "See how all three awareness capacities develop — or don't — through conditions. What the adult can do with their own emotions creates the environment the child's system learns from.",
+    },
+    frameworkCard: {
+      learn: "Explore the full transmission mechanism — how the adults' capacity configuration becomes the child's developmental environment, and why the same mechanism that calibrated us then can recalibrate us now.",
+    },
   },
   {
     id: "C11",
     number: 11,
+    title: "How Do We Come Back?",
     name: "Regulation — The Return Mechanism",
-    subtitle: "How Do We Come Back?",
+    subtitle: "The body moves into threat and comes back — health is the full cycle",
     slug: "regulation-the-return-mechanism",
     group: "How It Develops and Returns",
     hook: "The body moves into threat and comes back. Health is the full cycle. Regulation is the mechanism of coming back.",
@@ -238,12 +309,19 @@ export const CONCEPTS = [
     keyLine: "Regulation is the mechanism of coming back.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
     goDeeper: { framework: "F1", label: "Understand how the Inner Compass works" },
+    modelCard: {
+      learn: "See where regulation lives on the compass — the return from Protection, Control, or Domination back to Connection. The model shows why health is the full cycle, not a fixed position.",
+    },
+    frameworkCard: {
+      learn: "Explore the biological architecture of the return — how the body completes the cycle, why the return must be experienced to be learned, and why conditions precede capacity.",
+    },
   },
   {
     id: "C12",
     number: 12,
+    title: "What Are You Reading For?",
     name: "Reading Emotions",
-    subtitle: "What Are You Reading For?",
+    subtitle: "Everyone reads the room — the question is what early conditions trained the reading for",
     slug: "reading-emotions",
     group: "SEA's Sibling Capacities",
     hook: "Before we could speak, we were reading emotions. The capacity to track what others feel is the first awareness channel. The question is not whether we read — it is what we learned to read for.",
@@ -256,12 +334,19 @@ export const CONCEPTS = [
       models: ["three-awareness-capacities"],
     },
     goDeeper: { framework: "F2", label: "Explore the Awareness Teaches Awareness framework" },
+    modelCard: {
+      learn: "See where Reading Emotions sits alongside Emotional Resonance and Self-Emotional Awareness — and how the three capacities form a complete system, each shaped by conditions.",
+    },
+    frameworkCard: {
+      learn: "Explore how awareness develops through relationship — how the reading calibrates to safety or threat depending on the adults' configuration, and what it takes for the reading to recalibrate.",
+    },
   },
   {
     id: "C13",
     number: 13,
+    title: "What Happens When Someone's Pain Lands in Your Body?",
     name: "Emotional Resonance",
-    subtitle: "What Happens When Someone's Pain Lands in Your Body?",
+    subtitle: "Resonance is not reading what someone feels — it is being moved by it",
     slug: "emotional-resonance",
     group: "SEA's Sibling Capacities",
     hook: "Resonance is not the same as reading emotions. Reading tracks what someone feels. Resonance is being moved by it. When someone we love is in pain and we feel heaviness in our chest — that is resonance.",
@@ -274,6 +359,12 @@ export const CONCEPTS = [
       models: ["three-awareness-capacities"],
     },
     goDeeper: { framework: "F2", label: "Explore the Awareness Teaches Awareness framework" },
+    modelCard: {
+      learn: "See how Emotional Resonance connects to Reading Emotions and Self-Emotional Awareness — why 'being an empath' is not a personality type but a specific capacity configuration, and what determines whether resonance floods or sustains.",
+    },
+    frameworkCard: {
+      learn: "Explore the developmental mechanism that shapes resonance — how it overdevelops, shuts down, or becomes confused depending on the adults' configuration, and how it can recalibrate through conditions.",
+    },
   },
 ];
 

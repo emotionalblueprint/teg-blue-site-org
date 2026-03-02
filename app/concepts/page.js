@@ -274,13 +274,13 @@ function ConceptRow({ concept, conceptColor, isLast }) {
         textDecoration: "none",
       }}
     >
-      {/* Line 1: number pill + name + subtitle */}
+      {/* Line 1: number pill + entry-point title */}
       <div
         style={{
           display: "flex",
           alignItems: "baseline",
           gap: 10,
-          marginBottom: 6,
+          marginBottom: 4,
         }}
       >
         <span
@@ -300,26 +300,25 @@ function ConceptRow({ concept, conceptColor, isLast }) {
         </span>
         <span
           style={{
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             color: TEXT.primary,
             letterSpacing: "-0.01em",
           }}
         >
-          {concept.name}
+          {concept.title || concept.name}
         </span>
+      </div>
+      {/* Line 2: concept name */}
+      <div style={{ marginBottom: 6, paddingLeft: 30 }}>
         <span
           style={{
-            fontSize: 13,
-            color: TEXT.tertiary,
-            flexShrink: 1,
-            minWidth: 0,
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
+            fontSize: 12,
+            fontWeight: 500,
+            color: conceptColor,
           }}
         >
-          {concept.subtitle}
+          {concept.name}
         </span>
       </div>
 

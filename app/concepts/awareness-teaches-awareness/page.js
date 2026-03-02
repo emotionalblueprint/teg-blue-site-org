@@ -6,7 +6,7 @@ import * as content from "@/src/content/concepts/c10-content";
 const concept = getConceptBySlug("awareness-teaches-awareness");
 
 export const metadata = {
-  title: `${concept.name} — TEG-Blue Open Knowledge`,
+  title: `${concept.title || concept.name} — TEG-Blue Open Knowledge`,
   description: concept.seoDescription || concept.hook,
   keywords: concept.seoKeywords || [
     "TEG-Blue",
@@ -19,7 +19,7 @@ export const metadata = {
     canonical: `https://teg-blue.org/concepts/${concept.slug}`,
   },
   openGraph: {
-    title: `${concept.name} — TEG-Blue`,
+    title: `${concept.title || concept.name} — TEG-Blue`,
     description: concept.seoDescription || concept.hook,
     url: `https://teg-blue.org/concepts/${concept.slug}`,
     siteName: "TEG-Blue Open Knowledge",
