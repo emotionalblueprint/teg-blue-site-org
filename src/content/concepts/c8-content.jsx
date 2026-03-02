@@ -1,189 +1,158 @@
 "use client";
 
+import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "20px 0",
-};
-
-const numberedItem = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 10,
-  paddingLeft: 8,
-};
-
-// ─── WHAT IT IS ─────────────────────────────────────────────
-
-export const whatItIs = (
+export const body = (
   <>
     <p style={prose}>
-      <strong style={emphasis}>False coherence</strong> occurs when cognition
-      constructs a stable internal narrative that preserves identity consistency,
-      suppresses emotional contradiction, and reduces nervous system stress —
-      even when that narrative no longer reflects lived reality.
+      We all have a story about who we are. "I'm the responsible one." "I'm the
+      strong one." "I'm the one who keeps it together." Sometimes the story
+      matches reality. But sometimes it is doing a different job — it is not
+      describing what's happening inside us. It is regulating us.
     </p>
     <p style={prose}>
-      False coherence is experienced as certainty, moral clarity, being "right,"
-      and internal relief. This relief is{" "}
-      <strong style={emphasis}>physiological</strong>, not epistemic — the body
-      calms because the story holds together, not because the story is accurate.
+      The story feels true not because it matches what is actually happening. It
+      feels true because believing it calms us down.
     </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      False coherence occurs when the mind constructs a stable narrative that
+      preserves identity, suppresses emotional contradiction, and reduces
+      nervous system stress — even when that narrative no longer reflects what
+      we actually feel.{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        → The Safety Orientation Question
+      </Link>
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>
+        Beliefs feel true because they restore nervous system stability, not
+        because they match reality.
+      </strong>
+    </p>
+    <p style={prose}>
+      This means the feeling of being right — the feeling of certainty, of
+      clarity — is not a reliable indicator that we are actually right. It might
+      just mean the story is working.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      False coherence builds when the biological return was never learned.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        → Regulation — The Return Mechanism
+      </Link>{" "}
+      The body activates under threat and the return doesn't happen. So
+      cognition takes over the regulatory function — generating narratives that
+      calm what the body cannot settle on its own.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        → Awareness Teaches Awareness
+      </Link>
+    </p>
+    <p style={prose}>
+      "The world is dangerous" — and from chronic Protection, every piece of
+      evidence confirms it.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        → The Inner Compass
+      </Link>{" "}
+      "I'm just being strategic" — and from chronic Control, every override
+      feels like competence. "They deserved it" — and from chronic Domination,
+      every escalation feels justified.
+    </p>
+    <p style={prose}>
+      Each chronic mode has its own false coherence. Each narrative makes the
+      stuck position feel like truth. And each narrative does the job the
+      biological return was supposed to do — which is why the mode never
+      releases.{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        → State Determines Capacity
+      </Link>
+    </p>
+    <p style={prose}>
+      The cost is truth. The person is regulated by a story, not by felt
+      experience.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        → Self-Emotional Awareness
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The most frustrating thing about false coherence: understanding doesn't
+      break it. "I know I do this" is itself a narrative generated by the same
+      cognitive system running the replacement. The loop can incorporate insight
+      without breaking. The most articulate, psychologically literate people can
+      be the most stuck — their cognitive system is so sophisticated that the
+      replacement narratives include narratives about having emotions.
+    </p>
+    <p style={prose}>
+      More cognition does not interrupt cognitive regulation. It enhances it.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      If false coherence is regulatory, challenging it directly increases
+      threat — and increased threat produces more false coherence, not less.
+      What changes it is what changes everything the compass describes:
+      experienced safety.{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        → The Safety Orientation Question
+      </Link>
+    </p>
+    <p style={prose}>
+      Not being told they're safe. Relationships where the nervous system
+      settles enough that the narrative can loosen without the whole system
+      collapsing. Safety must precede truth.
+    </p>
+    <p style={prose}>
+      This is the biological return, learned late.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        → Regulation — The Return Mechanism
+      </Link>{" "}
+      The body learns that it can come back from discomfort without the
+      narrative stepping in. Each time that happens, the false coherence
+      loosens — not because it was argued away, but because it became less
+      necessary.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      False coherence also operates at the collective level. "That's just how
+      the world works." "Feelings are weakness." These often feel like common
+      sense — but many are coherence strategies calibrated in childhood and
+      passed down as truth.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        → Awareness Teaches Awareness
+      </Link>{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        → Tolerance Thresholds
+      </Link>
+    </p>
+    <p style={prose}>
+      The question is always the same: does this belief match what is actually
+      happening — or does it regulate something that was never resolved?
+    </p>
+
+    <hr style={separator} />
+
     <p style={standaloneLine}>
-      Beliefs feel true because they restore nervous system stability, not
-      because they match reality.
-    </p>
-    <p style={prose}>
-      <strong style={emphasis}>False coherence is not deception.</strong> The
-      person is not lying. They genuinely believe their constructed narrative
-      because believing it reduces threat. It is regulatory success at the cost
-      of emotional truth. The system is <em>succeeding</em> at regulation. The
-      cost is truth, not function.
-    </p>
-    <p style={prose}>
-      This is what makes it so hard to challenge. You are not confronting a lie.
-      You are confronting a regulatory strategy that is actively keeping the
-      person's nervous system stable. Challenging it directly increases threat —
-      which triggers the system to produce <em>more</em> false coherence, not
-      less.
-    </p>
-    <p style={{ ...prose, fontWeight: 500, color: TEXT.primary }}>
-      The mechanism operates through a self-reinforcing loop:
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>1.</strong> State shifts under stress — the
-      nervous system moves toward protection
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>2.</strong> Attention narrows — toward threat
-      cues, away from contradictory data
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>3.</strong> Cognition generates a stabilising
-      narrative — replacing the emotional signal with an invented explanation
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>4.</strong> The narrative holds — identity feels
-      coherent, the body calms
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>5.</strong> Relief reinforces the pattern —
-      cognition learns "this works"
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>6.</strong> The loop hardens — the replacement
-      narrative becomes more automatic, more invisible, more "who I am"
-    </p>
-    <p style={prose}>
-      Each cycle makes the replacement more automatic and the original signal
-      harder to detect. The person is not getting worse — the system is getting
-      better at the strategy that works for regulation but not for truth. Each
-      cycle also deepens the disconnect from the biological return (Concept 5).
-      Every time cognition successfully replaces an emotional signal, the body's
-      own regulatory system gets less practice.
-    </p>
-    <p style={prose}>
-      <strong style={emphasis}>
-        This explains why insight alone does not break the pattern.
-      </strong>{" "}
-      Understanding the pattern is itself a cognitive event — and the cognitive
-      system is the one running the replacement. "I know I do this" is itself a
-      narrative generated by the same system that generated the false coherence.
-      The loop can incorporate insight without breaking. This is what people
-      experience as "I understand everything about my pattern and nothing
-      changes." The understanding is cognitive. The regulation is cognitive. More
-      cognition does not interrupt cognitive regulation — it enhances it.
-    </p>
-    <p style={prose}>
-      <strong style={emphasis}>
-        The most articulate, psychologically literate people can be the most
-        stuck.
-      </strong>{" "}
-      Their cognitive system is so good at generating replacement narratives that
-      the replacements include narratives <em>about</em> having emotions. "I
-      felt really triggered and then I sat with it and processed it" — narrated
-      by a cognitive system that replaced the actual feeling with a story about
-      having the feeling. The cognitive regulation is so sophisticated that it
-      includes regulation that looks like emotional processing but is actually
-      more cognitive replacement.
-    </p>
-    <p style={prose}>
-      <strong style={emphasis}>
-        "Common sense" as pattern imprint:
-      </strong>{" "}
-      What feels like obvious truth may be a coherence strategy calibrated in
-      childhood. "That's just how the world works" is often false coherence from
-      childhood conditions that cognition preserved and presents as universal
-      wisdom.
-    </p>
-  </>
-);
-
-// ─── WHERE IT COMES FROM ────────────────────────────────────
-
-export const whereItComesFrom = (
-  <>
-    <p style={prose}>
-      Festinger (1957) — cognitive dissonance and resolution. Haidt (2001) —
-      moral reasoning as post-hoc justification. Kahneman (2011) — System
-      1/System 2, coherence-seeking. Freud — defence mechanisms become automatic
-      and rigid. Narrative psychology — coherent life stories as regulatory
-      function. Family systems — how families maintain "accepted reality."
-      Cognitive therapy — how beliefs become rigid. Porges (2011) — nervous
-      system state gates cognition. Siegel (2012) — state-dependent processing
-      capacity.
-    </p>
-  </>
-);
-
-// ─── WHAT TEG-BLUE ADDS ────────────────────────────────────
-
-export const whatTegBlueAdds = (
-  <>
-    <p style={prose}>
-      The term "false coherence" — capturing what no existing term does. It is
-      not denial (which implies awareness of what is being denied). It is not
-      rationalisation (which implies a specific tactic). It is not defence
-      mechanism (which implies a list). False coherence is the <em>outcome</em>:
-      a narrative that works for stability but not for truth. Complete, coherent,
-      felt as real — and wrong.
-    </p>
-    <p style={prose}>
-      The formulation "regulatory success at the cost of emotional truth"
-      captures the non-pathologising stance and connects directly to the
-      regulation thread. False coherence <em>is</em> the regulation strategy
-      that develops when the biological return (Concept 5) was never learned. The
-      person does not experience themselves as unable to regulate. They
-      experience themselves as regulated — because cognition is doing the
-      regulating. The deficit is invisible because the substitute is working. You
-      are not confronting a person who cannot regulate. You are confronting a
-      person who <em>is</em> regulating — through a system that costs truth
-      rather than restores it.
-    </p>
-    <p style={prose}>
-      The clinical implication flows directly: if false coherence is regulatory,
-      then challenging it directly increases threat.{" "}
-      <strong style={emphasis}>Safety must precede truth.</strong> This matches
-      Concept 4 — "restore safety first, then expect capacity." You cannot
-      out-think a regulatory response. You can only create conditions safe enough
-      for the system to let truth in.
+      <em>
+        Beliefs feel true because they calm us. Truth requires something more:
+        conditions safe enough to let the story shift.
+      </em>
     </p>
   </>
 );

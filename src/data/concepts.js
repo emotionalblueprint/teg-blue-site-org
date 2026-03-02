@@ -1,23 +1,60 @@
 /**
  * TEG-Blue Foundational Concepts Data — Single Source of Truth
  *
- * All 10 foundational concepts with metadata, hooks, key lines,
+ * All 13 foundational concepts with metadata, hooks, key lines,
  * and source mappings. Concept pages and the concepts hub import
  * from this file.
  */
 
+import { SPECTRUM, ACCENT } from "@/src/styles/tokens";
+
+// ─── GROUP COLORS ─────────────────────────────────────────
+// Bold, unmistakable colors for each concept group
+export const GROUP_COLORS = {
+  "The Instrument": ACCENT.mint,
+  "The Three Awareness Capacities": SPECTRUM.blue,
+  "Human Consequences": ACCENT.pink,
+};
+
+// ─── CONCEPT COLORS ───────────────────────────────────────
+// Each concept has its own color, grouped by section:
+//   The Instrument (C1-C6): greens — light to deep
+//   Three Awareness Capacities (C7-C9): matching .com capacity colors
+//   Human Consequences (C10-C13): pink / magenta / rose
+export const CONCEPT_COLORS = [
+  "#b8f0a0", // C1  — mint green (lightest)
+  "#8ae65a", // C2  — lime green
+  "#5cd85c", // C3  — green
+  "#3cc88c", // C4  — teal green
+  "#2ab8a0", // C5  — deep teal
+  "#1a9e7a", // C6  — forest (deepest)
+  "#a080ff", // C7  — RE: violet
+  "#22d3ee", // C8  — ER: cyan
+  "#a0e85a", // C9  — SEA: green
+  "#e020a0", // C10 — deep magenta (darkest)
+  "#ff40b0", // C11 — magenta
+  "#ff70a0", // C12 — rose
+  "#ffb0c8", // C13 — soft rose (lightest)
+];
+
 export const CONCEPT_GROUPS = [
   {
     key: "The Instrument",
-    concepts: ["C1", "C2", "C3", "C4", "C5"],
+    concepts: ["C1", "C2", "C3", "C4", "C5", "C6"],
     description:
-      "The first five concepts establish the instrument — the nervous system's signalling language, the question it answers, the compass that tracks its orientation, the way state shapes capacity, and the return mechanism that keeps the system moving.",
+      "The first six concepts establish the instrument — the nervous system's signalling language, the question it answers, the compass that tracks its orientation, the way state shapes capacity, the return mechanism that keeps the system moving, and how the same emotion transforms depending on where the compass is pointing.",
+  },
+  {
+    key: "The Three Awareness Capacities",
+    concepts: ["C7", "C8", "C9"],
+    description:
+      "The next three introduce the three awareness capacities — what we read in others, what we feel with others, and what we know as our own. These are not personality traits. They are biological capacities, present at birth, shaped by conditions.",
   },
   {
     key: "Human Consequences",
-    concepts: ["C6", "C7", "C8", "C9", "C10"],
+    concepts: ["C10", "C11", "C12", "C13"],
     description:
-      "The second five establish the human consequences — what happens when the same emotion arrives in different states, what happens when internal discomfort cannot be located as one's own, what happens when cognition replaces emotional truth with narrative stability, how awareness transmits through relationship, and what determines how much a person can recognise as harmful.",
+      "The final four establish the human consequences — what happens when internal discomfort cannot be located as one's own, what happens when cognition replaces emotional truth with narrative stability, how awareness transmits through relationship, and what determines how much a person can recognise as harmful.",
   },
 ];
 
@@ -85,7 +122,7 @@ export const CONCEPTS = [
     name: "Same Emotion, Two Expressions",
     subtitle: "Mode Position Determines What an Emotion Does",
     slug: "same-emotion-two-expressions",
-    group: "Human Consequences",
+    group: "The Instrument",
     hook: "Mode position determines whether an emotion serves connection or defence. Assess mode position, not the emotion.",
     keyLine: "Assess mode position, not the emotion.",
     drawsFrom: { frameworks: ["F1"], models: ["inner-compass"] },
@@ -93,6 +130,51 @@ export const CONCEPTS = [
   {
     id: "C7",
     number: 7,
+    name: "Reading Emotions",
+    subtitle: "The Outward-Facing Channel",
+    slug: "reading-emotions",
+    group: "The Three Awareness Capacities",
+    hook: "Before we could speak, we were reading emotions. The capacity to track what others feel is the first awareness channel. The question is not whether we read — it is what we learned to read for.",
+    keyLine:
+      "We were all born reading. The question is what we learned to read for.",
+    drawsFrom: {
+      frameworks: ["F2"],
+      models: ["three-awareness-capacities"],
+    },
+  },
+  {
+    id: "C8",
+    number: 8,
+    name: "Emotional Resonance",
+    subtitle: "The Capacity to Feel With",
+    slug: "emotional-resonance",
+    group: "The Three Awareness Capacities",
+    hook: "Resonance is not the same as reading emotions. Reading tracks what someone feels. Resonance is being moved by it. When someone we love is in pain and we feel heaviness in our chest — that is resonance.",
+    keyLine:
+      "Resonance is not a gift or a flaw. It is a capacity — shaped by what was around us, and capable of finding its way back.",
+    drawsFrom: {
+      frameworks: ["F2"],
+      models: ["three-awareness-capacities"],
+    },
+  },
+  {
+    id: "C9",
+    number: 9,
+    name: "Self-Emotional Awareness",
+    subtitle: "The Capacity to Know What Is Ours",
+    slug: "self-emotional-awareness",
+    group: "The Three Awareness Capacities",
+    hook: "The capacity to notice that what we feel is a feeling — not the truth of the situation. That small separation changes everything.",
+    keyLine:
+      "The wall is the same wall. We are just learning, finally, to notice where we are standing.",
+    drawsFrom: {
+      frameworks: ["F2"],
+      models: ["three-awareness-capacities"],
+    },
+  },
+  {
+    id: "C10",
+    number: 10,
     name: "Emotional Distortion",
     subtitle: "How Internal Discomfort Becomes Perceived External Threat",
     slug: "emotional-distortion",
@@ -102,8 +184,8 @@ export const CONCEPTS = [
     drawsFrom: { frameworks: ["F3"], models: ["three-awareness-capacities"] },
   },
   {
-    id: "C8",
-    number: 8,
+    id: "C11",
+    number: 11,
     name: "False Coherence",
     subtitle: "Regulatory Success at the Cost of Emotional Truth",
     slug: "false-coherence",
@@ -114,8 +196,8 @@ export const CONCEPTS = [
     drawsFrom: { frameworks: ["F3"], models: ["three-awareness-capacities"] },
   },
   {
-    id: "C9",
-    number: 9,
+    id: "C12",
+    number: 12,
     name: "Awareness Teaches Awareness",
     subtitle: "How the Instrument Gets Calibrated",
     slug: "awareness-teaches-awareness",
@@ -125,8 +207,8 @@ export const CONCEPTS = [
     drawsFrom: { frameworks: ["F2"], models: ["three-awareness-capacities"] },
   },
   {
-    id: "C10",
-    number: 10,
+    id: "C13",
+    number: 13,
     name: "Tolerance Thresholds",
     subtitle: "What the Nervous System Was Calibrated to Endure",
     slug: "tolerance-thresholds",

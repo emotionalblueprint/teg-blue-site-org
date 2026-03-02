@@ -13,14 +13,14 @@ import {
   RADIUS,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { CONCEPTS, CONCEPT_GROUPS } from "@/src/data/concepts";
+import { CONCEPTS, CONCEPT_GROUPS, GROUP_COLORS, CONCEPT_COLORS } from "@/src/data/concepts";
 import { MODELS } from "@/src/data/frameworks";
 import { PHASES } from "@/src/data/frameworks";
 
 export const metadata = {
   title: "TEG-Blue | Open Knowledge — Emotional Technology",
   description:
-    "Understanding how the nervous system shapes everything — from a single emotion to a whole system. Ten foundational concepts, two models, twelve frameworks. Open science, open access.",
+    "Understanding how the nervous system shapes everything — from a single emotion to a whole system. Thirteen foundational concepts, two models, twelve frameworks. Open science, open access.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
@@ -155,7 +155,7 @@ export default function HomePage() {
           <section style={{ marginBottom: 56 }}>
             <SectionHeader
               label="Start Here"
-              title="10 Foundational Concepts"
+              title="13 Foundational Concepts"
               description="Each concept reframes something you already experience. Each can be read on its own. Together, they build a complete picture."
             />
 
@@ -171,17 +171,27 @@ export default function HomePage() {
                 const concepts = CONCEPTS.filter(
                   (c) => c.group === group.key
                 );
+                const groupColor = GROUP_COLORS[group.key];
+                const isCapacities = group.key === "The Three Awareness Capacities";
+                const capacitiesGradient = "linear-gradient(90deg, #a080ff, #22d3ee, #a0e85a)";
                 return (
                   <div key={group.key}>
                     <p
                       style={{
                         fontSize: 12,
                         fontWeight: 600,
-                        color: SPECTRUM.cobalt,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
                         fontFamily: FONT.mono,
                         marginBottom: 12,
+                        ...(isCapacities
+                          ? {
+                              background: capacitiesGradient,
+                              WebkitBackgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                              backgroundClip: "text",
+                            }
+                          : { color: groupColor }),
                       }}
                     >
                       {group.key}
@@ -194,7 +204,7 @@ export default function HomePage() {
                       }}
                     >
                       {concepts.map((c) => (
-                        <ConceptRow key={c.id} concept={c} />
+                        <ConceptRow key={c.id} concept={c} conceptColor={CONCEPT_COLORS[c.number - 1]} groupColor={groupColor} />
                       ))}
                     </div>
                   </div>
@@ -228,58 +238,65 @@ export default function HomePage() {
               label="The Instruments"
               title="Two Models"
               description="The concepts above describe what the nervous system does. The models make it visible and usable."
+              labelColor={ACCENT.yellow}
             />
 
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 12,
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 16,
                 marginBottom: 16,
               }}
             >
-              {MODELS.map((model) => (
+              {MODELS.map((model, i) => (
                 <Link
                   key={model.id}
                   href={model.url}
                   className="hover-card"
                   style={{
-                    display: "block",
-                    padding: "16px 20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    padding: "24px 22px",
                     background: BG.card,
-                    borderRadius: RADIUS.md,
+                    borderRadius: RADIUS.lg,
                     border: `1px solid ${BORDER.default}`,
-                    borderLeft: `3px solid ${SPECTRUM.azure}`,
+                    borderTop: `3px solid ${hexToRgba(ACCENT.yellow, 0.6)}`,
                     textDecoration: "none",
                   }}
                 >
-                  <div
+                  <span
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 10,
-                      marginBottom: 6,
+                      fontSize: 32,
+                      fontWeight: 800,
+                      fontFamily: FONT.mono,
+                      color: hexToRgba(ACCENT.yellow, 0.2),
+                      lineHeight: 1,
+                      marginBottom: 12,
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: 10,
-                        fontWeight: 600,
-                        fontFamily: FONT.mono,
-                        color: SPECTRUM.azure,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.04em",
-                      }}
-                    >
-                      {model.subtitle}
-                    </span>
-                  </div>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 10,
+                      fontWeight: 700,
+                      fontFamily: FONT.mono,
+                      color: ACCENT.yellow,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      marginBottom: 8,
+                    }}
+                  >
+                    {model.subtitle}
+                  </span>
                   <h3
                     style={{
-                      fontSize: 15,
-                      fontWeight: 600,
+                      fontSize: 16,
+                      fontWeight: 700,
                       color: TEXT.primary,
-                      margin: "0 0 4px",
+                      margin: "0 0 10px",
+                      lineHeight: 1.3,
                     }}
                   >
                     {model.name}
@@ -288,7 +305,7 @@ export default function HomePage() {
                     style={{
                       fontSize: 13,
                       color: TEXT.secondary,
-                      lineHeight: 1.6,
+                      lineHeight: 1.7,
                       margin: 0,
                     }}
                   >
@@ -305,7 +322,7 @@ export default function HomePage() {
                 alignItems: "center",
                 gap: 6,
                 fontSize: 14,
-                color: SPECTRUM.azure,
+                color: ACCENT.yellow,
                 textDecoration: "none",
                 fontWeight: 500,
               }}
@@ -602,14 +619,14 @@ export default function HomePage() {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
 
-function SectionHeader({ label, title, description }) {
+function SectionHeader({ label, title, description, labelColor }) {
   return (
     <div style={{ marginBottom: 20 }}>
       <p
         style={{
           fontSize: 11,
           fontWeight: 600,
-          color: SPECTRUM.cobalt,
+          color: labelColor || SPECTRUM.cobalt,
           textTransform: "uppercase",
           letterSpacing: "0.08em",
           fontFamily: FONT.mono,
@@ -643,7 +660,8 @@ function SectionHeader({ label, title, description }) {
   );
 }
 
-function ConceptRow({ concept }) {
+function ConceptRow({ concept, conceptColor, groupColor }) {
+  const color = conceptColor || groupColor || SPECTRUM.cobalt;
   return (
     <Link
       href={`/concepts/${concept.slug}`}
@@ -664,8 +682,8 @@ function ConceptRow({ concept }) {
           fontSize: 11,
           fontWeight: 700,
           fontFamily: FONT.mono,
-          color: SPECTRUM.cobalt,
-          background: hexToRgba(SPECTRUM.cobalt, 0.12),
+          color: color,
+          background: hexToRgba(color, 0.12),
           padding: "2px 7px",
           borderRadius: 4,
           flexShrink: 0,

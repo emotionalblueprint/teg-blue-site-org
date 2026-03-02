@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
 const prose = {
@@ -17,111 +18,156 @@ const emphasis = {
 const standaloneLine = {
   fontSize: 15,
   fontWeight: 600,
+  fontStyle: "italic",
   color: TEXT.primary,
   lineHeight: 1.6,
-  margin: "20px 0",
+  margin: "24px 0",
 };
 
-// ─── WHAT IT IS ─────────────────────────────────────────────
+const separator = {
+  width: 40,
+  height: 1,
+  background: BORDER.default,
+  margin: "28px 0",
+  border: "none",
+};
 
-export const whatItIs = (
+const conceptLink = {
+  color: SPECTRUM.azure,
+  textDecoration: "none",
+  fontWeight: 500,
+  fontSize: 13,
+};
+
+export const body = (
   <>
     <p style={prose}>
-      The central reframe of the entire framework system: emotions are not
-      disruptions to clear thinking. They are not noise to be filtered out so
-      cognition can work clearly. They are the nervous system's signalling
-      language — the medium through which the body's continuous evaluation of
-      safety and threat gets communicated to the rest of the organism.
+      Most of us were taught that emotions get in the way. That clear thinking
+      happens when we push past them. So we learned to override — the knot in
+      the stomach, the anger, the unease — and replace the signal with something
+      that sounded more reasonable: "I'm fine." "It's not a big deal."
     </p>
     <p style={prose}>
-      The nervous system runs a distributed evaluation process — across the gut,
-      the heart, the muscles, the vagus nerve, the amygdala — that assesses the
-      environment continuously, below conscious awareness. This evaluation
-      produces a finding: safe enough, or threat. But a finding without a signal
-      is useless. The organism needs to <em>know</em> what the evaluation found
-      — needs to feel it, orient to it, act on it. Emotions are how the finding
-      gets delivered. They are the signal that carries the evaluation from the
-      body's detection systems to the organism's response systems.
+      Every time we did that, we were silencing a signal. Not noise. A signal —
+      carrying specific information about what our body had detected.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      Emotions are the nervous system's signalling language. Our body runs a
+      continuous evaluation — across the gut, the heart, the muscles, the vagus
+      nerve — assessing our environment below conscious awareness, faster than
+      thought. Emotions are how the finding gets delivered.
     </p>
     <p style={prose}>
-      Fear is not an irrational reaction. It is the nervous system's signal that
-      its evaluation found threat. Joy is not a luxury. It is the signal that the
-      evaluation found safety and connection. Anger is not a loss of control. It
-      is the signal that a boundary has been crossed. Each emotion carries
-      specific information about what the evaluation detected — and each orients
-      the organism toward a specific response.
+      Fear is the signal that the evaluation found threat. Joy is the signal
+      that it found safety and connection. Anger is the signal that a boundary
+      has been crossed.{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        {"\u2192"} The Safety Orientation Question
+      </Link>
     </p>
     <p style={prose}>
-      This is the body's first language. It was running for millions of years
-      before cognition evolved. When cognition arrived, it did not replace this
-      language — it added a second one. The two systems — emotional signalling
-      and cognitive reasoning — are separate but interdependent. Cognition can
-      interpret emotional signals, override them, or replace them with its own
-      narratives. But the emotional signals do not stop being generated.{" "}
-      <strong style={emphasis}>
-        The body keeps talking whether cognition listens or not.
-      </strong>
+      Each one carries specific information. Each one orients us toward a
+      specific response. They are the body's first language — precise, fast, and
+      ancient.
     </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      Emotions have been running for millions of years, long before cognition
+      evolved. When cognition arrived, it did not replace the first language. It
+      added a second one. In a healthy system, the two work together — cognition
+      listens to the emotional signals and uses the information they carry.
+    </p>
+    <p style={prose}>
+      But when the first language was never listened to — or was actively
+      contradicted{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        {"\u2192"} Awareness Teaches Awareness
+      </Link>{" "}
+      — cognition starts replacing. It builds its own explanations for what we
+      feel. Narratives that sound true but aren't connected to what the body is
+      actually reporting.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        {"\u2192"} False Coherence
+      </Link>
+    </p>
+    <p style={prose}>
+      And we call this "being rational."
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The signal that was never read doesn't dissolve. It persists — in tension,
+      in exhaustion, in reactivity that seems disproportionate, in relationships
+      where something feels off but we can't name what.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        {"\u2192"} The Inner Compass
+      </Link>
+    </p>
+    <p style={prose}>
+      We don't override because we're foolish. We override because we were
+      taught to.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        {"\u2192"} Awareness Teaches Awareness
+      </Link>{" "}
+      The override was adaptive. But its cost compounds: when we can't read our
+      own signals, we can't tell the difference between a genuine threat and an
+      old pattern.{" "}
+      <Link href="/concepts/emotional-distortion" style={conceptLink}>
+        {"\u2192"} Emotional Distortion
+      </Link>{" "}
+      We can't tell the difference between what we feel and what we've been told
+      to feel.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        {"\u2192"} Self-Emotional Awareness
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The old question was:{" "}
+      <strong style={emphasis}>"How do I manage this emotion?"</strong> —
+      implying the emotion is the problem.
+    </p>
+    <p style={prose}>
+      The new question is:{" "}
+      <strong style={emphasis}>"What is this signal telling me?"</strong> —
+      implying it carries information, and our job is to read it.
+    </p>
+    <p style={prose}>
+      This doesn't mean emotions are always right. It means they are always
+      informative. The question is whether we read the data or override it.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      No matter how well we've learned to override, the body does not stop
+      generating signals. The breath that catches before a difficult
+      conversation. The tightness in the chest when we read a certain name. The
+      lightness when we walk into a room where we feel safe.
+    </p>
+    <p style={prose}>
+      These are not weaknesses to manage. They are the first language, still
+      speaking, still waiting to be heard.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        {"\u2192"} The Inner Compass
+      </Link>{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        {"\u2192"} Self-Emotional Awareness
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
     <p style={standaloneLine}>
-      The question is not "how do I manage this emotion?" but "what is this
-      signal telling me?"
-    </p>
-    <p style={prose}>
-      This shifts the foundational stance from "emotion regulation" (implying
-      emotions need controlling) to "signal interpretation" (implying emotions
-      carry information that needs reading).
-    </p>
-  </>
-);
-
-// ─── WHERE IT COMES FROM ────────────────────────────────────
-
-export const whereItComesFrom = (
-  <>
-    <p style={prose}>
-      <strong style={emphasis}>Emotions as functional signals:</strong> Frijda
-      (1986) — action readiness; Ekman (1992) — basic emotions as functional
-      responses; Plutchik (1980) — emotions relate to survival conditions.{" "}
-      <strong style={emphasis}>Affect-as-information:</strong> Schwarz & Clore
-      (1983); Damasio (1994) — somatic markers guide decision-making.{" "}
-      <strong style={emphasis}>Evolutionary primacy:</strong> LeDoux (1996) —
-      amygdala responds before cortex; Panksepp (1998) — primary emotional
-      systems are ancient.{" "}
-      <strong style={emphasis}>Interoception:</strong> Craig (2009) — the body's
-      internal signalling system.{" "}
-      <strong style={emphasis}>Distributed processing:</strong> Porges (2011) —
-      the vagus nerve as a bidirectional communication pathway between body and
-      brain.
-    </p>
-  </>
-);
-
-// ─── WHAT TEG-BLUE ADDS ────────────────────────────────────
-
-export const whatTegBlueAdds = (
-  <>
-    <p style={prose}>
-      Positioning emotions explicitly as the{" "}
-      <em>signalling language</em> of the nervous system — not just
-      "information" in the abstract, but the specific medium through which the
-      body's evaluation reaches the organism. Most clinical models acknowledge
-      that emotions carry information but treat this as a secondary insight.
-      TEG-Blue positions it as the foundational principle: the nervous system
-      evaluates, emotions signal, and the organism orients. This is the
-      operating logic of the entire system.
-    </p>
-    <p style={prose}>
-      The framing as "language" carries specific implications: a language can be
-      listened to or ignored, interpreted accurately or misread, spoken fluently
-      or suppressed. When cognition overrides the emotional signal, it is not
-      correcting an error — it is silencing one language and replacing it with
-      another. The signal does not stop being generated.{" "}
-      <strong style={emphasis}>The body keeps talking.</strong>
-    </p>
-    <p style={prose}>
-      This sets up the entire framework arc: what happens when the first
-      language gets silenced, and what the system does when its signals have
-      nowhere to go.
+      <em>The body keeps talking. The question is whether we listen.</em>
     </p>
   </>
 );

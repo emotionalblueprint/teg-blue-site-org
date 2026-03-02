@@ -12,10 +12,8 @@ import {
   RADIUS,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { getNextConcept, getPrevConcept } from "@/src/data/concepts";
+import { getNextConcept, getPrevConcept, GROUP_COLORS, CONCEPTS, CONCEPT_COLORS, getConcept } from "@/src/data/concepts";
 import { getFramework, getModel, getPhaseColor } from "@/src/data/frameworks";
-
-const CONCEPT_COLOR = SPECTRUM.cobalt;
 
 /**
  * ConceptPage — Reusable template for individual foundational concept pages.
@@ -27,6 +25,8 @@ const CONCEPT_COLOR = SPECTRUM.cobalt;
 export default function ConceptPage({ concept, content = {} }) {
   const next = getNextConcept(concept.id);
   const prev = getPrevConcept(concept.id);
+  const CONCEPT_COLOR = CONCEPT_COLORS[concept.number - 1] || GROUP_COLORS[concept.group] || SPECTRUM.cobalt;
+  const GROUP_COLOR = GROUP_COLORS[concept.group] || SPECTRUM.cobalt;
 
   const relatedFrameworks = (concept.drawsFrom?.frameworks || [])
     .map((id) => getFramework(id))
@@ -45,6 +45,9 @@ export default function ConceptPage({ concept, content = {} }) {
       }}
     >
       <SiteHeader currentPath={`/concepts/${concept.slug}`} />
+
+      {/* Concept nav bar — 13 colored segments */}
+      <ConceptNavBar activeIndex={concept.number - 1} />
 
       <main
         id="main-content"
@@ -77,9 +80,21 @@ export default function ConceptPage({ concept, content = {} }) {
                 letterSpacing: "0.03em",
               }}
             >
-              Concept {concept.number}
+              Concept {concept.number} of 13
             </span>
-            <span style={{ fontSize: 12, color: TEXT.tertiary }}>
+            <span
+              style={
+                concept.group === "The Three Awareness Capacities"
+                  ? {
+                      fontSize: 12,
+                      background: "linear-gradient(90deg, #a080ff, #22d3ee, #a0e85a)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }
+                  : { fontSize: 12, color: GROUP_COLOR }
+              }
+            >
               {concept.group}
             </span>
           </div>
@@ -155,29 +170,54 @@ export default function ConceptPage({ concept, content = {} }) {
           </div>
         </header>
 
-        {/* Content sections */}
+        {/* Pull quote — key line */}
+        {concept.keyLine && (
+          <div
+            style={{
+              borderLeft: `4px solid ${CONCEPT_COLOR}`,
+              paddingLeft: 20,
+              marginBottom: 40,
+            }}
+          >
+            <p
+              style={{
+                fontSize: 16,
+                fontWeight: 500,
+                fontStyle: "italic",
+                color: TEXT.primary,
+                lineHeight: 1.6,
+                margin: 0,
+              }}
+            >
+              &ldquo;{concept.keyLine}&rdquo;
+            </p>
+          </div>
+        )}
+
+        {/* Content — vision voice narrative or legacy three-section layout */}
         <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
-          {/* What It Is — the core of the page */}
-          {content.whatItIs && (
-            <Section title="What It Is">{content.whatItIs}</Section>
-          )}
-
-          {/* Where It Comes From */}
-          {content.whereItComesFrom && (
-            <Section title="Where It Comes From">
-              {content.whereItComesFrom}
-            </Section>
-          )}
-
-          {/* What TEG-Blue Adds */}
-          {content.whatTegBlueAdds && (
-            <Section title="What TEG-Blue Adds">
-              {content.whatTegBlueAdds}
-            </Section>
+          {content.body ? (
+            <section>{content.body}</section>
+          ) : (
+            <>
+              {content.whatItIs && (
+                <Section title="What It Is" color={CONCEPT_COLOR}>{content.whatItIs}</Section>
+              )}
+              {content.whereItComesFrom && (
+                <Section title="Where It Comes From" color={CONCEPT_COLOR}>
+                  {content.whereItComesFrom}
+                </Section>
+              )}
+              {content.whatTegBlueAdds && (
+                <Section title="What TEG-Blue Adds" color={CONCEPT_COLOR}>
+                  {content.whatTegBlueAdds}
+                </Section>
+              )}
+            </>
           )}
 
           {/* Go Deeper */}
-          <Section title="Go Deeper">
+          <Section title="Go Deeper" color={CONCEPT_COLOR}>
             <div
               style={{
                 display: "flex",
@@ -191,6 +231,7 @@ export default function ConceptPage({ concept, content = {} }) {
                   href={m.url}
                   label={m.name}
                   tag="Model"
+                  color={CONCEPT_COLOR}
                 />
               ))}
               {relatedFrameworks.map((fw) => (
@@ -199,6 +240,7 @@ export default function ConceptPage({ concept, content = {} }) {
                   href={`/frameworks/${fw.slug}`}
                   label={`${fw.id}: ${fw.name}`}
                   tag="Framework"
+                  color={CONCEPT_COLOR}
                 />
               ))}
               {next && (
@@ -206,6 +248,7 @@ export default function ConceptPage({ concept, content = {} }) {
                   href={`/concepts/${next.slug}`}
                   label={`Concept ${next.number}: ${next.name}`}
                   tag="Next"
+                  color={CONCEPT_COLOR}
                 />
               )}
             </div>
@@ -325,7 +368,7 @@ export default function ConceptPage({ concept, content = {} }) {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
 
-function Section({ title, children }) {
+function Section({ title, children, color }) {
   return (
     <section>
       <h2
@@ -335,7 +378,7 @@ function Section({ title, children }) {
           color: TEXT.primary,
           marginBottom: 12,
           paddingBottom: 8,
-          borderBottom: `2px solid ${hexToRgba(CONCEPT_COLOR, 0.2)}`,
+          borderBottom: `2px solid ${hexToRgba(color, 0.2)}`,
         }}
       >
         {title}
@@ -345,7 +388,40 @@ function Section({ title, children }) {
   );
 }
 
-function GoLink({ href, label, tag }) {
+function ConceptNavBar({ activeIndex }) {
+  return (
+    <nav
+      aria-label="Concept progress"
+      style={{
+        display: "flex",
+        gap: 3,
+        maxWidth: SPACING.containerMax,
+        margin: "0 auto",
+        padding: "12px 24px 0",
+      }}
+    >
+      {CONCEPTS.map((c, i) => (
+        <Link
+          key={c.id}
+          href={`/concepts/${c.slug}`}
+          title={`${c.number}. ${c.name}`}
+          style={{
+            flex: 1,
+            height: i === activeIndex ? 6 : 4,
+            borderRadius: 2,
+            background: CONCEPT_COLORS[i],
+            opacity: i === activeIndex ? 1 : 0.3,
+            transition: "opacity 150ms ease, height 150ms ease",
+            textDecoration: "none",
+            display: "block",
+          }}
+        />
+      ))}
+    </nav>
+  );
+}
+
+function GoLink({ href, label, tag, color }) {
   return (
     <Link
       href={href}
@@ -377,7 +453,7 @@ function GoLink({ href, label, tag }) {
         style={{
           fontSize: 14,
           fontWeight: 500,
-          color: CONCEPT_COLOR,
+          color: color,
         }}
       >
         {label} &rarr;

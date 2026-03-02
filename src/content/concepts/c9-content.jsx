@@ -1,159 +1,167 @@
 "use client";
 
+import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "20px 0",
-};
-
-// ─── WHAT IT IS ─────────────────────────────────────────────
-
-export const whatItIs = (
+export const body = (
   <>
     <p style={prose}>
-      The three awareness capacities — Reading Emotions (RE: the capacity to
-      track and interpret others' emotional states), Emotional Resonance (ER: the
-      capacity to feel with others), and Self-Emotional Awareness (SEA: the
-      capacity to know one's own emotional states) — are present at birth in
-      proto-form. They develop through relational conditions. And they develop
-      through a specific mechanism:{" "}
-      <strong style={emphasis}>awareness teaches awareness.</strong>
+      We tend to think that what shapes a child is what the adults say. The
+      lessons. The values. The instructions.
     </p>
     <p style={prose}>
-      The awareness capacities the caregivers carry are the awareness capacities
-      that get passed. The adults' capacity configuration IS the child's
-      developmental environment.{" "}
-      <strong style={emphasis}>
-        Children do not calibrate to what adults say. They calibrate to what
-        adults embody.
-      </strong>{" "}
-      The child's nervous system reads the adult's nervous system directly —
-      before language, before instruction, before intention.
+      But the child's nervous system is reading the adult's nervous system —
+      directly, before language, before intention. It reads what the adult's
+      body does, not what their mouth says. How the adult breathes when tension
+      rises. Whether their body settles or tightens when the child cries.
+      Whether their words match what their body radiates.
     </p>
     <p style={prose}>
-      A parent who says "be kind" while living in chronic Control teaches
-      Control, not kindness. A caregiver who says "I'm fine" while their nervous
-      system radiates tension teaches the child that emotional signals are not to
-      be trusted. A caregiver whose own SEA is online — who can name what they
-      feel, sit with discomfort, model that emotions are signals rather than
-      crises — teaches the child, without instruction, that internal experience
-      is readable and trustworthy.
-    </p>
-    <p style={standaloneLine}>
-      Love does not override what the nervous system embodies.
+      A parent who says "your feelings matter" while their own body
+      communicates that emotions are dangerous teaches the child — without
+      either of them knowing it — that emotions are dangerous.
     </p>
     <p style={prose}>
-      A parent can love their child completely and still transmit patterns that
-      damage them — because the parent in chronic Control who pushes their child
-      to "toughen up" is not failing at love. They are succeeding at
-      transmission. They are passing on the only regulatory architecture they
-      know.
+      <strong style={emphasis}>Awareness teaches awareness.</strong> The
+      awareness capacities the adults carry are the awareness capacities that
+      get passed.{" "}
+      <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
+        → Emotions as Biological Information
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      Three awareness capacities develop in every human being: Reading
+      Emotions — the capacity to track what others feel.{" "}
+      <Link href="/concepts/reading-emotions" style={conceptLink}>
+        → Reading Emotions
+      </Link>{" "}
+      Emotional Resonance — the capacity to feel with others.{" "}
+      <Link href="/concepts/emotional-resonance" style={conceptLink}>
+        → Emotional Resonance
+      </Link>{" "}
+      Self-Emotional Awareness — the capacity to know our own internal states.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        → Self-Emotional Awareness
+      </Link>
     </p>
     <p style={prose}>
-      The mechanism is precise: adult RE/ER/SEA configuration &rarr; creates the
-      environment &rarr; shapes the child's RE/ER/SEA configuration + regulation
-      outcome. This is not just "the child adapts" — it is which adults,
-      carrying which awareness, produce which environment, shaping which
-      capacities, with which regulatory consequence.
+      All three are present at birth. What happens next depends on the adults'
+      awareness — what they can do with their own emotions creates the
+      conditions the child's nervous system learns from.
     </p>
     <p style={prose}>
-      When the awareness that gets passed is complete — when the caregivers have
-      SEA online, ER sustainable, RE accurate, and the return path learned — the
-      child's capacities develop as designed. RE develops as accurate reading
-      (not hypervigilant scanning). ER develops as sustainable feeling (not
-      flooding or shutdown). SEA develops as internal knowledge (not absence or
-      suppression). The child learns the return path through co-regulation —
-      being regulated <em>with</em>. This is the design.
+      A caregiver who can name what they feel, stay steady when the child is
+      distressed, provides accurate reflection. The child cries, the caregiver
+      says "you're upset" — not "you're fine." Over time, the child learns to
+      read their own signals because someone else read them first.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        → Regulation — The Return Mechanism
+      </Link>
     </p>
     <p style={prose}>
-      When the awareness that gets passed is incomplete — when the adults' own
-      capacities were shaped by their own conditions — the child's capacities
-      develop around what is available.{" "}
+      A caregiver whose own signals are overridden cannot provide this
+      reflection. Not because they don't love the child. Because they don't
+      have the capacity the reflection requires.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The specific conditions produce specific outcomes. When adults are
+      emotionally unpredictable, the child's reading overdevelops into
+      hypervigilance — scanning constantly for which version of the caregiver
+      will appear.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        → The Inner Compass
+      </Link>{" "}
+      When adults are emotionally incongruent — words contradicting the body —
+      the child learns to distrust their own felt sense.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        → False Coherence
+      </Link>{" "}
+      When adults are emotionally invalidating, the child shuts the system
+      down. Cognition takes over: thinking instead of feeling, managing instead
+      of experiencing.
+    </p>
+    <p style={prose}>
+      None of these are choices the child makes.{" "}
       <strong style={emphasis}>
         The system was not broken. It was accurately calibrated to an inaccurate
         environment.
-      </strong>{" "}
-      What feels like "personality" is traceable to which capacities had
-      conditions to develop, which did not — and whether the return path was ever
-      learned.
+      </strong>
     </p>
-    <p style={prose}>
-      <strong style={emphasis}>
-        The chain replicates until awareness changes — not just behaviour, not
-        just understanding.
-      </strong>{" "}
-      What the adult's nervous system embodies is what the child absorbs. What
-      the child absorbs becomes what they embody as an adult. What they embody as
-      an adult is what the next child absorbs. A parent can say "your feelings
-      matter" while their own SEA is absent — and the child absorbs the absence,
-      not the words.
-    </p>
-  </>
-);
 
-// ─── WHERE IT COMES FROM ────────────────────────────────────
+    <hr style={separator} />
 
-export const whereItComesFrom = (
-  <>
     <p style={prose}>
-      Schore (2003) — right-brain-to-right-brain attunement between caregiver
-      and infant. Porges (2011) — co-regulation through the social engagement
-      system. Siegel (2012) — interpersonal neurobiology; the mind develops
-      through relationships. Bowlby (1969) — attachment as a regulatory system.
-      Tronick (1998) — mutual regulation model. Bandura (1977) — social learning
-      and modelling. Stern (1985) — attunement and mirroring in early
-      development.
-    </p>
-  </>
-);
-
-// ─── WHAT TEG-BLUE ADDS ────────────────────────────────────
-
-export const whatTegBlueAdds = (
-  <>
-    <p style={prose}>
-      Naming the transmission mechanism explicitly: not "environment shapes
-      development" (which is generic) but "the specific awareness capacities the
-      adults carry determine which awareness capacities the child develops." The
-      causal chain is made precise: adult configuration &rarr; environment &rarr;
-      child configuration. This makes the developmental question concrete and
-      traceable: which adults, carrying which awareness configuration, produced
-      which environment, developing which capacities in the child?
+      What the adult embodies is what the child absorbs. What the child absorbs
+      becomes what they embody as an adult. What they embody is what the next
+      child absorbs. The chain transmits through the nervous system, not through
+      words.{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        → State Determines Capacity
+      </Link>
     </p>
     <p style={prose}>
-      This framing is neither blame nor absolution. It is mechanism. The adults
-      were not choosing to pass incomplete awareness. They were passing what they
-      had — which was shaped by what was passed to them. The transmission is
-      structural, not intentional. And it changes only when awareness changes —
-      not when intentions improve, not when behaviour modifies, not when
-      understanding deepens. When what the adult's nervous system{" "}
-      <em>embodies</em> changes, the child's developmental environment changes.
-      Nothing less alters the transmission.
+      A parent can love their child completely and still transmit patterns that
+      damage them. Love does not override what the nervous system carries.{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        → The Safety Orientation Question
+      </Link>{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        → Tolerance Thresholds
+      </Link>
     </p>
     <p style={prose}>
-      The closing formulation connects to every subsequent framework: the chain
-      replicates until capacity changes. This is the developmental origin of
-      everything the framework system addresses — from individual identity
-      through relationship patterns, collective rule systems, worth hierarchies,
-      bias, and domination. Each scale is a different expression of the same
-      transmission: awareness that was incomplete getting passed forward through
-      relationship, through institutions, through culture.
+      This is not blame. It is mechanism. The adults were passing what they
+      had — shaped by what was passed to them.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      This is why behaviour change alone is not enough. A parent who learned to
+      say "I hear you" but whose body tightens every time the child cries is
+      transmitting the tightening, not the words.{" "}
+      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
+        → Same Emotion, Two Expressions
+      </Link>
+    </p>
+    <p style={prose}>
+      But it also simplifies things. The work is not: learn more techniques.
+      The work is: develop the capacity. When the adult's nervous system
+      actually changes — when the compass actually frees — the child's
+      environment changes without anyone having to try.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        → Regulation — The Return Mechanism
+      </Link>
+    </p>
+    <p style={prose}>
+      The capacities that didn't develop are not gone. They were never built.
+      And what was never built can still be built — through conditions, not
+      instruction. The same mechanism that calibrated us in childhood is the
+      mechanism that can recalibrate us now.{" "}
+      <Link href="/concepts/emotional-distortion" style={conceptLink}>
+        → Emotional Distortion
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={standaloneLine}>
+      <em>
+        Children do not calibrate to what adults say. They calibrate to what
+        adults embody.
+      </em>
     </p>
   </>
 );

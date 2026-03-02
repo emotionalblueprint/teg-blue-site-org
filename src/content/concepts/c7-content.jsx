@@ -1,174 +1,145 @@
 "use client";
 
+import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "20px 0",
-};
-
-const numberedItem = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 10,
-  paddingLeft: 8,
-};
-
-// ─── WHAT IT IS ─────────────────────────────────────────────
-
-export const whatItIs = (
+export const body = (
   <>
     <p style={prose}>
-      Every person has moments where internal discomfort gets misread as an
-      external attack. Someone sets a reasonable boundary. The body reacts as if
-      something much bigger happened. The response is disproportionate — sharper,
-      more defensive, more retaliatory than the situation warrants. Usually, the
-      person catches it. They feel the guilt or shame underneath and
-      course-correct: "Sorry — that wasn't about you."
+      Someone sets a reasonable boundary. A friend says: "I need you to stop
+      doing that." And something fires inside us that is far bigger than the
+      moment warrants. We don't just hear the words. We feel attacked. And
+      before we've had time to think, we're defending ourselves — not against
+      what was said, but against something much larger.
     </p>
     <p style={prose}>
-      This catching depends on a specific capacity: Self-Emotional Awareness
-      (SEA) — the capacity to know one's own emotional states, to identify what
-      one feels, and to locate the source internally. When SEA is available, the
-      person can identify what they feel ("I feel defensive," "I feel guilty
-      about what I said"), locate the source inside themselves, and separate
-      their internal discomfort from the external situation. The emotion stays
-      where it started: inside. The response corrects.
+      Most of us catch it — not always in the moment, sometimes the next
+      morning. We feel the recognition: "That wasn't about them. That was about
+      something in me." We course-correct. We repair.
     </p>
     <p style={prose}>
-      But when SEA is structurally absent — not temporarily offline under stress,
-      but never fully developed — the catching never happens. The internal
-      discomfort has no name, no internal source, no "this is mine." The signal
-      collapses.
-    </p>
-    <p style={{ ...prose, fontWeight: 500, color: TEXT.primary }}>
-      The sequence:
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>1. The feeling loses its name.</strong> Shame,
-      guilt, envy, fear — they all collapse into undifferentiated "I feel bad."
-      The different flavours of discomfort merge into one painful signal with no
-      label and no recognised internal source.
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>2. The body looks outward.</strong> "I feel bad"
-      becomes "someone is making me feel bad" becomes "I am being attacked."
-      Without a label pointing inward, the nervous system searches for an
-      external cause. The attribution lands before any conscious thought.
-    </p>
-    <p style={numberedItem}>
-      <strong style={emphasis}>3. The body reacts.</strong> "Someone hurt me, I
-      need to hurt back." The person now genuinely perceives a threat. Their
-      response — shutting down, lashing out, withdrawing care — feels
-      proportional to what they are experiencing. From inside that moment, it is
-      self-defence.
+      That catching depends on a specific capacity: the ability to identify what
+      we're feeling, locate it as ours, and separate it from what is actually
+      happening.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        → Self-Emotional Awareness
+      </Link>
     </p>
     <p style={prose}>
-      <strong style={emphasis}>This is emotional distortion.</strong> Internal
-      discomfort, unable to be processed as one's own, gets reclassified as an
-      external attack. The person genuinely believes they are defending
-      themselves. They are not lying. They are not strategising. The nervous
-      system is reporting a threat that is not there — because the processing
-      channel that would identify the signal as internal (SEA) is structurally
-      unavailable.
+      What happens when the catching never comes?
     </p>
-    <p style={prose}>
-      <strong style={emphasis}>The boundary-evidence loop:</strong> One person
-      crosses a line. The other sets a boundary. The first person — unable to
-      register their own part or feel the other person's pain — experiences the
-      boundary as an unprovoked attack. They push back. A firmer boundary gets
-      set. They experience this as escalation. The other person's self-protection
-      becomes proof of being attacked. The more boundaries are set, the more
-      "evidence" accumulates.
-    </p>
-    <p style={standaloneLine}>Your boundaries become their evidence.</p>
-    <p style={prose}>
-      <strong style={emphasis}>The spectrum matters.</strong> SEA can be partial.
-      It might be present in calm moments and absent when stress rises or
-      relational stakes increase. Each time someone catches the moment where "I
-      feel bad" could actually be "I feel envious" or "I feel guilty," the loop
-      loosens. When SEA is structurally absent across contexts, the loop tightens
-      into chronic patterns.
-    </p>
-    <p style={prose}>
-      This explains one of the most confusing dynamics in relationships:{" "}
-      <strong style={emphasis}>
-        why retaliation feels like self-defence to the person doing it.
-      </strong>{" "}
-      They are not choosing to be unfair. Their nervous system is reporting a
-      threat that is real to them — the discomfort is real. The attribution is
-      wrong. And without SEA, no correction is available from inside.
-    </p>
-  </>
-);
 
-// ─── WHERE IT COMES FROM ────────────────────────────────────
+    <hr style={separator} />
 
-export const whereItComesFrom = (
-  <>
     <p style={prose}>
-      Porges (2011) — neuroception evaluates experienced safety, not objective
-      danger; state shapes perception. Damasio (1994) — somatic markers shape
-      attribution before conscious awareness. Freud — projection as attribution
-      of internal states to external sources. Cognitive therapy (Beck) —
-      misattribution and cognitive distortion. Attachment theory — insecure
-      attachment patterns produce threat-biased attribution. Schore (2003) —
-      right-brain implicit processing shapes relational perception. Van der Kolk
-      (2014) — trauma produces threat-biased perception and disproportionate
-      response.
-    </p>
-  </>
-);
-
-// ─── WHAT TEG-BLUE ADDS ────────────────────────────────────
-
-export const whatTegBlueAdds = (
-  <>
-    <p style={prose}>
-      Naming emotional distortion as the specific micro-mechanism that connects
-      SEA absence to relational harm — and showing it as the real-time
-      interpersonal expression of the regulatory replacement described across the
-      framework system. Existing frameworks describe projection (psychoanalytic),
-      misattribution (cognitive), threat-biased perception (trauma), and
-      neuroception errors (polyvagal) as separate phenomena. TEG-Blue identifies
-      them as one mechanism: when SEA is offline, internal discomfort cannot be
-      identified as one's own and gets attributed outward.
+      When we can read our own signals, the process works: discomfort arrives →
+      we identify it (shame, guilt, fear) → we locate it as ours → we respond
+      to the actual situation.
     </p>
     <p style={prose}>
-      The boundary-evidence loop as a named, recognisable interpersonal pattern
-      — giving language to an experience that is otherwise difficult to
-      articulate. The spectrum framing: emotional distortion is not binary but
-      operates on a gradient matching the compass. In Connection, the person
-      catches it. In Protection, the catching becomes harder. In chronic Control
-      and Domination, the catching stops entirely and the distortion becomes the
-      person's experienced reality.
+      When that capacity was never fully developed, the process breaks at a
+      specific point. The feeling loses its name — shame, guilt, envy all
+      collapse into undifferentiated "I feel bad."{" "}
+      <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
+        → Emotions as Biological Information
+      </Link>{" "}
+      The body looks outward — "I feel bad" becomes "someone is making me feel
+      bad" becomes "I am being attacked."{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        → The Safety Orientation Question
+      </Link>{" "}
+      The body reacts — "someone hurt me, I need to hurt back." From inside
+      that moment, it is self-defence.
     </p>
     <p style={prose}>
-      The non-pathologising stance is critical: emotional distortion is not
-      manipulation. It is not a personality flaw. It is a structural consequence
-      of a capacity that did not develop — because the conditions it required
-      were not present. Understanding the mechanism does not excuse the impact.
-      The harm is real regardless of the internal process. But understanding
-      changes what works: explaining why the boundary is reasonable does not help
-      (the problem is not logic). Creating safety — and sometimes creating
-      distance — is what allows the system to settle enough that the distortion
-      can loosen.
+      This is emotional distortion. Internal discomfort, unable to be processed
+      as one's own, gets reclassified as an external attack.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The person experiencing this is not lying. Their nervous system is
+      reporting a threat. The discomfort is real. The only error is the
+      attribution: the source is internal, but the system maps it externally.{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        → State Determines Capacity
+      </Link>
+    </p>
+    <p style={prose}>
+      This produces a specific relational pattern: one person crosses a line,
+      the other sets a boundary, and the first person experiences the boundary
+      as an unprovoked attack. The more boundaries are set, the more "evidence"
+      accumulates.{" "}
+      <strong style={emphasis}>Your boundaries become their evidence.</strong>
+      {" "}The narrative feels coherent from inside.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        → False Coherence
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      Emotional distortion operates on a gradient — matching the compass. In
+      Connection, we catch it almost immediately. In Protection, the catching
+      becomes harder — we might catch it later, after the compass moves back.{" "}
+      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
+        → Same Emotion, Two Expressions
+      </Link>{" "}
+      In chronic Control and Domination, the catching stops entirely. The
+      distortion becomes the person's experienced reality.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        → The Inner Compass
+      </Link>
+    </p>
+    <p style={prose}>
+      This is not a personality type. It is state-dependent. The same person
+      can catch it on a good day and miss it completely on a bad one. What
+      determines the catching is compass position.
+    </p>
+    <p style={prose}>
+      It is not manipulation. It is a structural consequence of a capacity that
+      did not develop — because the conditions were not present.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        → Awareness Teaches Awareness
+      </Link>{" "}
+      Understanding this does not excuse the impact. The harm is real. But
+      understanding the mechanism changes what works.{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        → Tolerance Thresholds
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The signal that started the whole sequence — the shame, the guilt, the
+      fear — was real and accurate. The problem was never the signal. The
+      problem was that it had no reader. When the reader develops, the
+      distortion loosens. The loop that once ran automatically begins to have
+      gaps. And in those gaps, something new becomes possible.
+    </p>
+    <p style={prose}>
+      That reader is Self-Emotional Awareness.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        → Self-Emotional Awareness
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={standaloneLine}>
+      <em>
+        The discomfort was real. The attribution was wrong. The correction
+        requires not logic — but the capacity to read the signal as one's own.
+      </em>
     </p>
   </>
 );

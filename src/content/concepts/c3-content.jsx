@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
 const prose = {
@@ -17,190 +18,187 @@ const emphasis = {
 const standaloneLine = {
   fontSize: 15,
   fontWeight: 600,
+  fontStyle: "italic",
   color: TEXT.primary,
   lineHeight: 1.6,
-  margin: "20px 0",
+  margin: "24px 0",
 };
 
-const tableCell = {
-  padding: "10px 14px",
+const separator = {
+  width: 40,
+  height: 1,
+  background: BORDER.default,
+  margin: "28px 0",
+  border: "none",
+};
+
+const conceptLink = {
+  color: SPECTRUM.azure,
+  textDecoration: "none",
+  fontWeight: 500,
   fontSize: 13,
-  color: TEXT.secondary,
-  lineHeight: 1.6,
-  borderBottom: `1px solid ${BORDER.default}`,
 };
 
-const tableHeader = {
-  ...tableCell,
-  fontWeight: 600,
-  color: TEXT.primary,
-  background: hexToRgba(SPECTRUM.cobalt, 0.04),
-};
-
-// ─── WHAT IT IS ─────────────────────────────────────────────
-
-export const whatItIs = (
+export const body = (
   <>
     <p style={prose}>
-      The nervous system's continuous orientation between safety and threat can
-      be understood through the metaphor of a compass. Like a healthy working
-      compass, the needle is constantly moving. It does not have a "correct"
-      position — it points in a direction. The goal is not to arrive at one
-      position and stay there. The goal is to point accurately and to move
-      freely.
+      We walk into a room full of strangers and something tightens. Shoulders
+      rise. We scan the space. Then a friend waves from across the room — and
+      everything shifts. Shoulders drop. We settle.
     </p>
     <p style={prose}>
-      A healthy compass moves fluidly as conditions change. When the evaluation
-      (Concept 2) says <em>safe enough</em>, the needle orients toward{" "}
-      <strong style={emphasis}>Connection</strong> — the mode designed for
-      sustained living. Perception broadens. Empathy comes online. Cognition
-      flexes. Repair becomes possible. When the evaluation says{" "}
-      <em>protection needed</em>, the needle moves toward{" "}
-      <strong style={emphasis}>Protection</strong> — the body's emergency
-      system. Fight/flight first, freeze/fawn when energy depletes. This is
-      expensive by design — meant to last from minutes to hours, not a lifetime.
+      The room didn't change. What changed was how our nervous system evaluated
+      the situation. And that evaluation changed everything — what we noticed,
+      how we held our body, what we were capable of in that moment.{" "}
+      <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
+        {"\u2192"} Emotions as Biological Information
+      </Link>
     </p>
     <p style={prose}>
-      But the compass has more range than two modes. When cognition evolved, the
-      instrument gained two additional modes.{" "}
-      <strong style={emphasis}>Control</strong> — anticipating, managing,
-      overriding — and <strong style={emphasis}>Domination</strong> — overriding
-      completely, eliminating the threat. These are cognition-first modes: they
-      require cognition to exist and are entered through cognitive decision. In a
-      healthy compass, they are extraordinary survival tools — deliberate,
-      time-limited, and returnable.
+      We know this experience. What we don't usually have is a way to see it
+      clearly.
     </p>
 
-    {/* Four-mode table */}
-    <div
-      style={{
-        overflowX: "auto",
-        marginBottom: 20,
-        borderRadius: 8,
-        border: `1px solid ${BORDER.default}`,
-      }}
-    >
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          minWidth: 500,
-        }}
-      >
-        <thead>
-          <tr>
-            <th style={tableHeader}>Mode</th>
-            <th style={tableHeader}>Type</th>
-            <th style={tableHeader}>Design</th>
-            <th style={tableHeader}>Duration</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Connection
-            </td>
-            <td style={tableCell}>Body-first</td>
-            <td style={tableCell}>The home base — safety perceived</td>
-            <td style={tableCell}>Indefinite</td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Protection
-            </td>
-            <td style={tableCell}>Body-first</td>
-            <td style={tableCell}>Emergency system — threat perceived</td>
-            <td style={tableCell}>Minutes to hours</td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Control
-            </td>
-            <td style={tableCell}>Cognition-first</td>
-            <td style={tableCell}>
-              Strategic intervention — cognition recruited
-            </td>
-            <td style={tableCell}>Time-limited tool</td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Domination
-            </td>
-            <td style={tableCell}>Cognition-first</td>
-            <td style={tableCell}>
-              Maximum override — cognition at full power
-            </td>
-            <td style={tableCell}>Rare, last resort</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <hr style={separator} />
 
     <p style={prose}>
-      The four modes sit on a continuous gradient, not in four boxes. The compass
-      needle moves along this gradient, and any position — from full Connection
-      to maximum Domination — has a specific, predictable effect on what the
-      person can perceive, think, feel, and do.
+      Our nervous system is running a continuous evaluation, below conscious
+      awareness, asking one question:{" "}
+      <strong style={emphasis}>
+        "Is there enough safety to engage, or is protection needed?"
+      </strong>{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        {"\u2192"} The Safety Orientation Question
+      </Link>
     </p>
+    <p style={prose}>
+      When the answer is <em>safe enough</em>, we open — we can listen,
+      connect, tolerate disagreement, hold complexity. When the answer is{" "}
+      <em>protection needed</em>, we close — we narrow, defend, react.{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        {"\u2192"} State Determines Capacity
+      </Link>
+    </p>
+    <p style={prose}>
+      The Inner Compass makes this visible. A compass whose needle moves
+      between safety and threat — always shifting, always responding. Not a
+      compass that has a correct position. A compass that is supposed to move.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The compass has four modes. Two are{" "}
+      <strong style={emphasis}>body-first</strong> — they have been running in
+      living creatures for millions of years. Two are{" "}
+      <strong style={emphasis}>cognition-first</strong> — they appeared when the
+      human brain evolved strategic thinking.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Connection</strong> is home base. Perception
+      broadens. We can feel what others feel without losing ourselves.
+      Connection is not calm — we can grieve in Connection, argue in Connection,
+      feel anger in Connection. It means the nervous system has enough safety to
+      engage with what's real, including what's painful.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Protection</strong> is the emergency system.
+      Heart rate rises. Attention narrows to the threat. Empathy filters.
+      Thinking simplifies to binary. Extraordinary engineering — but designed
+      for minutes to hours, not for life.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Control</strong> activates when the situation is
+      too complex for the body alone. Cognition gets recruited: anticipate,
+      manage, override. A parent in a medical emergency. A difficult workplace
+      dynamic. In a healthy compass, it's a tool — entered deliberately,
+      released when the situation resolves.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Domination</strong> is the furthest point.
+      Maximum override. Empathy drops to near-zero — not through failure, but
+      deliberately. In a healthy compass, it's rare, brief, and costly. The
+      person feels the weight of it afterward.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        {"\u2192"} Regulation — The Return Mechanism
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      These four modes are not boxes. They sit on a continuous gradient. The
+      transitions between them are recognisable — and interruptible, if we can
+      see where we are.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>
+        Health is not staying in Connection permanently.
+      </strong>{" "}
+      Nobody does. Nobody should. Health is the return — the ability to move
+      into whatever mode the situation requires and come back.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        {"\u2192"} Regulation — The Return Mechanism
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      For many of us, the compass is not moving freely. The needle settled
+      somewhere — usually a long time ago — because the return was never
+      learned.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        {"\u2192"} Awareness Teaches Awareness
+      </Link>
+    </p>
+    <p style={prose}>
+      Chronic Protection becomes vigilance we call "anxiety." Chronic Control
+      becomes management we call "having it together." Chronic Domination
+      becomes override we call "strength." The person who is stuck does not
+      experience themselves as stuck. They experience their mode as reality.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        {"\u2192"} False Coherence
+      </Link>
+    </p>
+    <p style={prose}>
+      This is not malfunction. It is accurate adaptation to an environment that
+      is no longer present. The compass read the conditions correctly. The
+      problem is that it never came back.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      A person in chronic Control is not "a controlling person." They are a
+      person whose compass settled there because the conditions required it. The
+      identity that formed around that position feels like who they are. But it
+      is where the needle is stuck — not who the person is.{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        {"\u2192"} Tolerance Thresholds
+      </Link>{" "}
+      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
+        {"\u2192"} Same Emotion, Two Expressions
+      </Link>
+    </p>
+    <p style={prose}>
+      The same person behaves completely differently at different compass
+      positions. The mode determines the expression. The person was never the
+      problem. The stuckness was.
+    </p>
+    <p style={prose}>
+      The distinction between what is actually happening and what our compass
+      position reports — that is one of the most important distinctions we can
+      learn to make.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        {"\u2192"} Self-Emotional Awareness
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
     <p style={standaloneLine}>
-      Health is not staying in Connection permanently. Health is the needle's
-      capacity to move — to shift toward Protection when threat appears and
-      return toward Connection when the threat resolves.
-    </p>
-    <p style={prose}>
-      Nobody stays in Connection permanently. Nobody should. Connection is not
-      "calm" — it can hold distress, grief, challenge, even anger. The question
-      is not where the needle is. The question is whether it can move.
-    </p>
-  </>
-);
-
-// ─── WHERE IT COMES FROM ────────────────────────────────────
-
-export const whereItComesFrom = (
-  <>
-    <p style={prose}>
-      Polyvagal Theory (Porges, 2011) — autonomic states as continuous
-      orientation. Attachment Theory (Bowlby, 1969) — secure base vs. threat
-      activation. Positive Psychology (Fredrickson, 2001) — broaden-and-build as
-      directional state. Trauma Theory (Siegel, 2012; Ogden, 2006) — window of
-      tolerance as range of healthy movement. Evolutionary psychology — cognition
-      evolved to solve survival problems that body-level responses alone could
-      not. Sapolsky (2004) — stress response and strategic planning under
-      threat.
-    </p>
-  </>
-);
-
-// ─── WHAT TEG-BLUE ADDS ────────────────────────────────────
-
-export const whatTegBlueAdds = (
-  <>
-    <p style={prose}>
-      The compass as a visual-conceptual architecture that makes the continuous
-      orientation tangible and usable. Most models describe states. The compass
-      describes <em>movement between states</em> — and makes "stuck versus
-      fluid" the primary question rather than "which state is the person in."
-      The compass reframes health from a state to a capacity: not where the
-      needle is, but whether it can move.
-    </p>
-    <p style={prose}>
-      The explicit naming of Control and Domination as <em>cognitive</em>{" "}
-      modes — distinct from Connection and Protection not just in intensity but
-      in kind. Body-first versus cognition-first is a qualitative distinction.
-      The first two modes are biological responses that happen <em>to</em> you.
-      The second two are what cognition <em>does</em> when recruited into the
-      threat response. This is an evolutionary upgrade, not a deviation. The
-      compass gained range because the species gained cognition.
-    </p>
-    <p style={prose}>
-      The presentation of healthy Control and Domination{" "}
-      <em>before</em> their chronic versions. Most clinical and popular
-      frameworks encounter these modes only as problems — controlling behaviour,
-      dominating behaviour. TEG-Blue introduces them as adaptive, time-limited,
-      and extraordinary survival tools. The goal is not to eliminate Control or
-      Domination. The goal is to restore the return — so the person can use
-      these modes when needed and come back when done.
+      <em>The needle is always moving. The question is whether it can come back.</em>
     </p>
   </>
 );

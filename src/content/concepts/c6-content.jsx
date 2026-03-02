@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
 const prose = {
@@ -17,234 +18,143 @@ const emphasis = {
 const standaloneLine = {
   fontSize: 15,
   fontWeight: 600,
+  fontStyle: "italic",
   color: TEXT.primary,
   lineHeight: 1.6,
-  margin: "20px 0",
+  margin: "24px 0",
 };
 
-const tableCell = {
-  padding: "10px 14px",
+const separator = {
+  width: 40,
+  height: 1,
+  background: BORDER.default,
+  margin: "28px 0",
+  border: "none",
+};
+
+const conceptLink = {
+  color: SPECTRUM.azure,
+  textDecoration: "none",
+  fontWeight: 500,
   fontSize: 13,
-  color: TEXT.secondary,
-  lineHeight: 1.6,
-  borderBottom: `1px solid ${BORDER.default}`,
 };
 
-const tableHeader = {
-  ...tableCell,
-  fontWeight: 600,
-  color: TEXT.primary,
-  background: hexToRgba(SPECTRUM.cobalt, 0.04),
-};
-
-// ─── WHAT IT IS ─────────────────────────────────────────────
-
-export const whatItIs = (
+export const body = (
   <>
     <p style={prose}>
-      Every emotion has two possible expressions, determined by mode position —
-      by where the compass needle is pointing when the emotion arises. The
-      emotion is the same. What it does depends on the compass.
+      Someone feels angry — and from that anger, they say something clear and
+      true. They name what happened. They set a limit. The anger repairs
+      something.
+    </p>
+    <p style={prose}>
+      Days later, the same person feels angry again. But this time, the anger
+      comes out sharp. It attacks. It distorts. It isn't trying to repair — it's
+      trying to protect.
+    </p>
+    <p style={prose}>
+      Same person. Same emotion. Completely different outcome. We usually
+      explain this as skill — they "handled it well" the first time and "lost
+      control" the second. But the difference is not skill. It is where the
+      compass was pointing when the emotion arrived.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        → The Inner Compass
+      </Link>
     </p>
 
-    {/* Two-expression table */}
-    <div
-      style={{
-        overflowX: "auto",
-        marginBottom: 20,
-        borderRadius: 8,
-        border: `1px solid ${BORDER.default}`,
-      }}
-    >
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          minWidth: 480,
-        }}
-      >
-        <thead>
-          <tr>
-            <th style={tableHeader}>Emotion</th>
-            <th style={tableHeader}>In Connection</th>
-            <th style={tableHeader}>In Threat Modes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Anger
-            </td>
-            <td style={tableCell}>
-              Signals a boundary has been crossed; motivates clarity and repair
-            </td>
-            <td style={tableCell}>
-              Mobilises defence; escalates conflict; becomes attack
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Fear
-            </td>
-            <td style={tableCell}>
-              Signals genuine threat; promotes appropriate caution
-            </td>
-            <td style={tableCell}>
-              Generalises; becomes hypervigilance; restricts engagement
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Sadness
-            </td>
-            <td style={tableCell}>
-              Processes loss; invites support and reflection
-            </td>
-            <td style={tableCell}>
-              Becomes withdrawal; deepens isolation; hardens into hopelessness
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Joy
-            </td>
-            <td style={tableCell}>
-              Celebrates; connects; broadens capacity
-            </td>
-            <td style={tableCell}>
-              Is distrusted; feels dangerous; may trigger threat
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Love
-            </td>
-            <td style={tableCell}>Opens; deepens; sustains</td>
-            <td style={tableCell}>
-              Attaches with desperation; becomes possession; masks control
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Shame
-            </td>
-            <td style={tableCell}>
-              Signals misalignment; motivates repair
-            </td>
-            <td style={tableCell}>
-              Becomes identity ("I am wrong"); drives hiding, self-punishment
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Guilt
-            </td>
-            <td style={tableCell}>
-              Signals harm done; motivates accountability
-            </td>
-            <td style={tableCell}>
-              Becomes paralysis; drives excessive self-blame or defensive denial
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Curiosity
-            </td>
-            <td style={tableCell}>
-              Explores; learns; builds understanding
-            </td>
-            <td style={tableCell}>
-              Becomes surveillance; information-gathering for control
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Gratitude
-            </td>
-            <td style={tableCell}>
-              Genuine recognition and appreciation
-            </td>
-            <td style={tableCell}>
-              Becomes performative — thanking people to stay safe
-            </td>
-          </tr>
-          <tr>
-            <td style={{ ...tableCell, fontWeight: 600, color: TEXT.primary }}>
-              Trust
-            </td>
-            <td style={tableCell}>Enables reliance and openness</td>
-            <td style={tableCell}>
-              Becomes strategic calculation, conditional and defended
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <hr style={separator} />
 
     <p style={prose}>
-      The compass determines the expression. The same biological signal produces
-      different behaviour depending on where the needle is. Fear in Connection
-      produces caution and care. Fear in Protection produces panic or shutdown.
-      The signal is the same. The mode transforms it.
+      Every emotion has two possible expressions — not because the emotion
+      changes, but because the compass position transforms what the emotion
+      does.
     </p>
+    <p style={prose}>
+      <strong style={emphasis}>Anger in Connection</strong> sets boundaries —
+      honest, direct, serving repair.{" "}
+      <strong style={emphasis}>Anger in Protection</strong> attacks —
+      distorting, escalating, serving survival.{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        → State Determines Capacity
+      </Link>{" "}
+      The biological signal is identical:{" "}
+      <em>a boundary has been crossed</em>.{" "}
+      <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
+        → Emotions as Biological Information
+      </Link>{" "}
+      The state determines everything the emotion can do.
+    </p>
+    <p style={prose}>
+      Fear in Connection produces appropriate caution. Fear in Protection
+      generalises — everything feels dangerous.{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        → The Safety Orientation Question
+      </Link>{" "}
+      Love in Connection opens and deepens. Love in Protection possesses and
+      monitors. Joy in Connection celebrates. Joy in Protection triggers
+      bracing — "waiting for the other shoe to drop."{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        → Tolerance Thresholds
+      </Link>
+    </p>
+    <p style={prose}>
+      The categorisation of emotions as "good" or "bad" collapses entirely. The
+      emotion was never the problem. The compass position was the variable.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      This changes what we do. We stop targeting the emotion — "manage your
+      anger" — and start asking what would help the compass move.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        → Regulation — The Return Mechanism
+      </Link>{" "}
+      We stop pathologising the feeling and start attending to the state it
+      arrived in.
+    </p>
+    <p style={prose}>
+      From inside a threat position, we often cannot tell which expression we
+      are in. The anger feels righteous — not defensive. The possessiveness
+      feels like devotion — not control. The state doesn't just change the
+      expression. It changes how the expression feels from inside.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        → False Coherence
+      </Link>
+    </p>
+    <p style={prose}>
+      This is why the capacity to notice our own state matters so much. Without
+      it, we cannot tell the difference between the anger that repairs and the
+      anger that retaliates. Both feel justified. Only one is working from the
+      full picture.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        → Self-Emotional Awareness
+      </Link>
+    </p>
+    <p style={prose}>
+      And when we can't tell the difference between our own discomfort and an
+      external attack, the protective expression doesn't just feel justified —
+      it feels like self-defence.{" "}
+      <Link href="/concepts/emotional-distortion" style={conceptLink}>
+        → Emotional Distortion
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The same person who attacked from Protection can repair from Connection —
+      because the anger isn't gone, but from a different position, it does
+      something different. The capacity for repair was always there. The state
+      was restricting access to it.
+    </p>
+    <p style={prose}>
+      The emotion was always the same. The compass made the difference.
+    </p>
+
+    <hr style={separator} />
+
     <p style={standaloneLine}>
-      Assess mode position, not the emotion.
-    </p>
-    <p style={prose}>
-      When someone presents with a "problematic emotion," the first question is
-      not "what emotion is this?" The first question is:{" "}
-      <strong style={emphasis}>
-        "where is the compass when this emotion arrives?"
-      </strong>{" "}
-      Anger in Connection and anger in Domination are the same emotional signal
-      producing entirely different outcomes. Treating "anger" as the problem
-      misses the actual variable.
-    </p>
-    <p style={prose}>
-      This applies to every emotion, including the ones conventionally called
-      positive. Gratitude in Connection is genuine recognition. Gratitude in
-      Protection becomes performative — thanking people to stay safe. Pride in
-      Connection is earned satisfaction. Pride in Control becomes enforcement of
-      superiority. Love in Connection opens and deepens. Love in Domination
-      becomes possession. The categorisation of emotions as "good" or "bad"
-      collapses. There are no bad emotions. There are emotions arriving in
-      different compass positions.
-    </p>
-  </>
-);
-
-// ─── WHERE IT COMES FROM ────────────────────────────────────
-
-export const whereItComesFrom = (
-  <>
-    <p style={prose}>
-      Gross (1998) — context shapes emotional expression. Barrett (2017) — same
-      core affect, different construction. Frijda (1986) — emotions as action
-      readiness. Ekman (1992) — basic emotions with distinct functions.
-    </p>
-  </>
-);
-
-// ─── WHAT TEG-BLUE ADDS ────────────────────────────────────
-
-export const whatTegBlueAdds = (
-  <>
-    <p style={prose}>
-      The systematic side-by-side comparison across ten core emotions — no
-      existing model provides this. The inclusion of "positive" emotions
-      (gratitude, joy, love, pride, trust) — most clinical models focus on
-      "negative" emotions. TEG-Blue shows that positive emotions also change in
-      the threat modes: gratitude becomes performative, joy becomes manic or
-      denied, love becomes possessive. The diagnostic reframe — "assess mode
-      position, not the emotion" — inverts standard practice.
-    </p>
-    <p style={prose}>
-      The intervention logic changes: instead of targeting the emotion (reduce
-      anger, increase gratitude, build trust), the intervention targets the
-      compass position that determines what the emotion does. The same anger that
-      is destructive from Domination is healthy from Connection. The same trust
-      that is rigid from Control is flexible from Connection. Changing the
-      emotion without changing the compass position changes nothing.
+      <em>Assess mode position, not the emotion.</em>
     </p>
   </>
 );

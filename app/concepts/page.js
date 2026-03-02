@@ -10,12 +10,12 @@ import {
   RADIUS,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { CONCEPTS, CONCEPT_GROUPS } from "@/src/data/concepts";
+import { CONCEPTS, CONCEPT_GROUPS, GROUP_COLORS, CONCEPT_COLORS } from "@/src/data/concepts";
 
 export const metadata = {
   title: "Foundational Concepts — TEG-Blue Open Knowledge",
   description:
-    "Ten foundational concepts that introduce the TEG-Blue framework system. Each reframes something you already experience. Together, they provide the conceptual foundation for the complete system.",
+    "Thirteen foundational concepts that introduce the TEG-Blue framework system. Each reframes something you already experience. Together, they provide the conceptual foundation for the complete system.",
   keywords: [
     "TEG-Blue",
     "foundational concepts",
@@ -29,7 +29,7 @@ export const metadata = {
   openGraph: {
     title: "Foundational Concepts — TEG-Blue Open Knowledge",
     description:
-      "Ten foundational concepts, drawn from across the full framework system, written for anyone. Each reframes something you already experience.",
+      "Thirteen foundational concepts, drawn from across the full framework system, written for anyone. Each reframes something you already experience.",
     url: "https://teg-blue.org/concepts",
     siteName: "TEG-Blue Open Knowledge",
     type: "website",
@@ -47,6 +47,35 @@ export default function ConceptsHubPage() {
     >
       <SiteHeader currentPath="/concepts" />
 
+      {/* Concept spectrum bar */}
+      <nav
+        aria-label="Concept overview"
+        style={{
+          display: "flex",
+          gap: 3,
+          maxWidth: SPACING.containerMax,
+          margin: "0 auto",
+          padding: "12px 24px 0",
+        }}
+      >
+        {CONCEPTS.map((c, i) => (
+          <Link
+            key={c.id}
+            href={`/concepts/${c.slug}`}
+            title={`${c.number}. ${c.name}`}
+            style={{
+              flex: 1,
+              height: 4,
+              borderRadius: 2,
+              background: CONCEPT_COLORS[i],
+              opacity: 0.7,
+              textDecoration: "none",
+              display: "block",
+            }}
+          />
+        ))}
+      </nav>
+
       <main
         id="main-content"
         style={{
@@ -56,57 +85,43 @@ export default function ConceptsHubPage() {
         }}
       >
         {/* Header */}
-        <header style={{ marginBottom: 40 }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: SPECTRUM.cobalt,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            Start Here
-          </p>
+        <header style={{ marginBottom: 56 }}>
           <h1
             style={{
-              fontSize: 28,
+              fontSize: 32,
               fontWeight: 700,
               color: TEXT.primary,
-              marginBottom: 16,
+              marginBottom: 20,
               letterSpacing: "-0.02em",
               lineHeight: 1.2,
             }}
           >
-            10 Foundational Concepts
+            13 Foundational Concepts
           </h1>
           <p
             style={{
-              fontSize: 15,
+              fontSize: 16,
               color: TEXT.secondary,
               lineHeight: 1.8,
               maxWidth: 640,
               marginBottom: 12,
             }}
           >
-            Ten foundational concepts, drawn from across the full framework
-            system, written for anyone. Each concept can be read independently.
-            Each reframes something you already experience. Together, they
-            provide the conceptual foundation from which the complete system
-            becomes accessible.
+            Written for any curious mind. Each concept reframes something you
+            already experience — a feeling, a pattern, a moment you recognise
+            but may not have had words for. Together, they build a complete
+            picture of how the nervous system shapes everything.
           </p>
           <p
             style={{
               fontSize: 14,
-              color: TEXT.secondary,
+              color: TEXT.tertiary,
               lineHeight: 1.7,
               maxWidth: 640,
             }}
           >
-            The ordering is pedagogical — each builds naturally on the previous,
-            though any can be read on its own.
+            Three groups move from the instrument itself, through the awareness
+            capacities, to the human consequences.
           </p>
         </header>
 
@@ -115,21 +130,55 @@ export default function ConceptsHubPage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: 48,
-            marginBottom: 48,
+            gap: 56,
+            marginBottom: 64,
           }}
         >
-          {CONCEPT_GROUPS.map((group) => {
+          {CONCEPT_GROUPS.map((group, groupIdx) => {
             const concepts = CONCEPTS.filter((c) => c.group === group.key);
+            const groupColor = GROUP_COLORS[group.key];
+            const isCapacities = group.key === "The Three Awareness Capacities";
+            const capacitiesGradient = "linear-gradient(90deg, #a080ff, #22d3ee, #a0e85a)";
             return (
               <section key={group.key}>
-                <div style={{ marginBottom: 20 }}>
+                {/* Group header with accent bar */}
+                <div
+                  style={{
+                    padding: "24px 28px",
+                    background: hexToRgba(groupColor, 0.08),
+                    borderRadius: `${RADIUS.lg}px ${RADIUS.lg}px 0 0`,
+                    borderTop: isCapacities ? "none" : `3px solid ${groupColor}`,
+                    borderImage: isCapacities ? `${capacitiesGradient} 1` : undefined,
+                    borderTopWidth: isCapacities ? 3 : undefined,
+                    borderTopStyle: isCapacities ? "solid" : undefined,
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 700,
+                      fontFamily: FONT.mono,
+                      color: groupColor,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      marginBottom: 8,
+                    }}
+                  >
+                    Part {groupIdx + 1} of 3
+                  </p>
                   <h2
                     style={{
-                      fontSize: 18,
-                      fontWeight: 600,
-                      color: TEXT.primary,
-                      marginBottom: 8,
+                      fontSize: 22,
+                      fontWeight: 700,
+                      marginBottom: 10,
+                      ...(isCapacities
+                        ? {
+                            background: capacitiesGradient,
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                          }
+                        : { color: TEXT.primary }),
                     }}
                   >
                     {group.key}
@@ -139,22 +188,29 @@ export default function ConceptsHubPage() {
                       fontSize: 14,
                       color: TEXT.secondary,
                       lineHeight: 1.7,
-                      maxWidth: 640,
+                      maxWidth: 600,
                     }}
                   >
                     {group.description}
                   </p>
                 </div>
 
+                {/* Concept cards */}
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: 12,
+                    gap: 2,
                   }}
                 >
-                  {concepts.map((concept) => (
-                    <ConceptCard key={concept.id} concept={concept} />
+                  {concepts.map((concept, i) => (
+                    <ConceptCard
+                      key={concept.id}
+                      concept={concept}
+                      conceptColor={CONCEPT_COLORS[concept.number - 1]}
+                      groupColor={groupColor}
+                      isLast={i === concepts.length - 1}
+                    />
                   ))}
                 </div>
               </section>
@@ -165,17 +221,17 @@ export default function ConceptsHubPage() {
         {/* Go Deeper */}
         <section
           style={{
-            padding: 24,
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
+            padding: 28,
+            background: hexToRgba(SPECTRUM.cobalt, 0.08),
             borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.25)}`,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
             marginBottom: 40,
           }}
         >
           <h3
             style={{
-              fontSize: 16,
-              fontWeight: 600,
+              fontSize: 18,
+              fontWeight: 700,
               color: TEXT.primary,
               marginBottom: 12,
             }}
@@ -184,14 +240,14 @@ export default function ConceptsHubPage() {
           </h3>
           <p
             style={{
-              fontSize: 14,
+              fontSize: 15,
               color: TEXT.secondary,
               lineHeight: 1.8,
-              marginBottom: 16,
+              marginBottom: 20,
             }}
           >
-            These ten concepts open the door. The models and frameworks take you
-            further.
+            These thirteen concepts open the door. The models and frameworks
+            take you further.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             <Link
@@ -200,7 +256,7 @@ export default function ConceptsHubPage() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 6,
-                padding: "10px 18px",
+                padding: "12px 22px",
                 background: SPECTRUM.cobalt,
                 color: TEXT.primary,
                 borderRadius: RADIUS.md,
@@ -217,7 +273,7 @@ export default function ConceptsHubPage() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 6,
-                padding: "10px 18px",
+                padding: "12px 22px",
                 background: hexToRgba(SPECTRUM.cobalt, 0.1),
                 color: SPECTRUM.cobalt,
                 borderRadius: RADIUS.md,
@@ -298,140 +354,86 @@ export default function ConceptsHubPage() {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
 
-function ConceptCard({ concept }) {
-  const frameworkIds = concept.drawsFrom?.frameworks || [];
-  const modelIds = concept.drawsFrom?.models || [];
-
+function ConceptCard({ concept, conceptColor, groupColor, isLast }) {
   return (
     <Link
       href={`/concepts/${concept.slug}`}
       className="hover-card"
       style={{
-        display: "block",
-        padding: "20px 24px",
+        display: "flex",
+        gap: 20,
+        padding: "22px 28px",
         background: BG.card,
-        borderRadius: RADIUS.lg,
-        border: `1px solid ${BORDER.default}`,
-        borderLeft: `4px solid ${SPECTRUM.cobalt}`,
+        borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
+        borderRadius: isLast ? `0 0 ${RADIUS.lg}px ${RADIUS.lg}px` : 0,
         textDecoration: "none",
+        alignItems: "flex-start",
       }}
     >
-      {/* Number + title row */}
-      <div
+      {/* Large decorative number */}
+      <span
         style={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: 12,
-          marginBottom: 8,
+          fontSize: 36,
+          fontWeight: 800,
+          fontFamily: FONT.mono,
+          color: hexToRgba(conceptColor, 0.3),
+          lineHeight: 1,
+          flexShrink: 0,
+          minWidth: 44,
+          paddingTop: 2,
         }}
       >
-        <span
-          style={{
-            fontSize: 11,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            color: SPECTRUM.cobalt,
-            background: hexToRgba(SPECTRUM.cobalt, 0.12),
-            padding: "2px 8px",
-            borderRadius: 4,
-            flexShrink: 0,
-          }}
-        >
-          {concept.number}
-        </span>
+        {String(concept.number).padStart(2, "0")}
+      </span>
+
+      <div style={{ flex: 1, minWidth: 0 }}>
+        {/* Concept name */}
         <h3
           style={{
-            fontSize: 16,
-            fontWeight: 600,
+            fontSize: 18,
+            fontWeight: 700,
             color: TEXT.primary,
-            margin: 0,
+            margin: "0 0 10px",
             letterSpacing: "-0.01em",
+            lineHeight: 1.3,
           }}
         >
           {concept.name}
         </h3>
-      </div>
 
-      {/* Subtitle */}
-      <p
-        style={{
-          fontSize: 13,
-          color: TEXT.secondary,
-          margin: "0 0 10px",
-          paddingLeft: 32,
-        }}
-      >
-        {concept.subtitle}
-      </p>
-
-      {/* Hook */}
-      <p
-        style={{
-          fontSize: 14,
-          color: TEXT.secondary,
-          lineHeight: 1.7,
-          margin: "0 0 10px",
-          paddingLeft: 32,
-        }}
-      >
-        {concept.hook}
-      </p>
-
-      {/* Key line */}
-      <p
-        style={{
-          fontSize: 14,
-          fontWeight: 600,
-          fontStyle: "italic",
-          color: TEXT.primary,
-          margin: "0 0 10px",
-          paddingLeft: 32,
-        }}
-      >
-        "{concept.keyLine}"
-      </p>
-
-      {/* Source badges */}
-      <div
-        style={{
-          display: "flex",
-          gap: 6,
-          paddingLeft: 32,
-          flexWrap: "wrap",
-        }}
-      >
-        {frameworkIds.map((id) => (
-          <span
-            key={id}
+        {/* Key line as pull quote */}
+        <div
+          style={{
+            borderLeft: `3px solid ${hexToRgba(conceptColor, 0.5)}`,
+            paddingLeft: 14,
+            marginBottom: 10,
+          }}
+        >
+          <p
             style={{
-              fontSize: 10,
-              fontFamily: FONT.mono,
-              color: TEXT.tertiary,
-              padding: "1px 6px",
-              borderRadius: 3,
-              background: hexToRgba(SPECTRUM.slate, 0.1),
+              fontSize: 14,
+              fontWeight: 500,
+              fontStyle: "italic",
+              color: conceptColor,
+              lineHeight: 1.6,
+              margin: 0,
             }}
           >
-            {id}
-          </span>
-        ))}
-        {modelIds.map((id) => (
-          <span
-            key={id}
-            style={{
-              fontSize: 10,
-              fontFamily: FONT.mono,
-              color: TEXT.tertiary,
-              padding: "1px 6px",
-              borderRadius: 3,
-              background: hexToRgba(SPECTRUM.slate, 0.1),
-            }}
-          >
-            {id === "inner-compass"
-              ? "Inner Compass"
-              : "Three Awareness Capacities"}
-          </span>
-        ))}
+            &ldquo;{concept.keyLine}&rdquo;
+          </p>
+        </div>
+
+        {/* Hook as body */}
+        <p
+          style={{
+            fontSize: 14,
+            color: TEXT.secondary,
+            lineHeight: 1.7,
+            margin: 0,
+          }}
+        >
+          {concept.hook}
+        </p>
       </div>
     </Link>
   );
