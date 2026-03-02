@@ -65,6 +65,7 @@ const GLOSSARY_TERMS = [
     status: "proposed",
     definition: "The measurement layer of TEG-Blue. A continuous gradient mapping four nervous system regulatory states: Connection, Protection, Control, and Domination. These are states, not personality types — they shift in response to perceived threat.",
     tags: ["core-concept", "measurement"],
+    link: "/models/inner-compass",
   },
   {
     slug: "regulatory-state",

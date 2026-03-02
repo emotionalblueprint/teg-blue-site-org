@@ -106,9 +106,9 @@ export default function FoundationsPage() {
             <LayerIntroCard
               number={1}
               title="Measurement"
-              subtitle="Four-Mode Gradient"
+              subtitle="Models"
               color={SPECTRUM.azure}
-              href="/four-mode-gradient"
+              href="/models"
             />
             <LayerIntroCard
               number={2}
@@ -170,7 +170,7 @@ export default function FoundationsPage() {
             </p>
             <div style={{ marginTop: 16 }}>
               <Link
-                href="/four-mode-gradient"
+                href="/models/inner-compass"
                 style={{
                   fontSize: 14,
                   color: SPECTRUM.blue,
@@ -397,7 +397,7 @@ export default function FoundationsPage() {
                 </tr>
               </thead>
               <tbody>
-                <NavRow label="See the measurement layer in detail" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                <NavRow label="See the two core models" href="/models" linkText="Models →" />
                 <NavRow label="See the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand methods" href="/methodology" linkText="Methodology →" />

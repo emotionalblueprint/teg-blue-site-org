@@ -491,7 +491,7 @@ export default function EpistemologicalFoundationsPage() {
               </thead>
               <tbody>
                 <NavRow label="See how the system is organized" href="/foundations" linkText="System Overview →" />
-                <NavRow label="Understand the measurement layer" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                <NavRow label="See the two core models" href="/models" linkText="Models →" />
                 <NavRow label="Explore the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                 <NavRow label="See published research" href="/publications" linkText="Publications →" />

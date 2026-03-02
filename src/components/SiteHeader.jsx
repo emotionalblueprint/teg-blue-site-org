@@ -10,20 +10,21 @@ import { SpectrumBar } from "./SharedComponents";
  */
 
 const NAV_ITEMS = [
-  { label: "Hub", href: "/" },
-  { label: "Start Here", href: "/research-entry" },
+  { label: "Home", href: "/" },
+  { label: "Start Here", href: "/concepts" },
   {
-    label: "Theory",
+    label: "Explore",
     dropdown: [
-      { label: "System Overview", href: "/foundations" },
-      { label: "Epistemological Foundations", href: "/epistemological-foundations" },
-      { label: "Four-Mode Gradient", href: "/four-mode-gradient" },
+      { label: "Foundational Concepts", href: "/concepts" },
+      { label: "Models", href: "/models" },
       { label: "Frameworks", href: "/frameworks-map" },
+      { label: "System Overview", href: "/foundations" },
     ],
   },
   {
     label: "Research",
     dropdown: [
+      { label: "For Researchers", href: "/research-entry" },
       { label: "Scientific Foundations", href: "/scientific-foundations" },
       { label: "Publications", href: "/publications" },
       { label: "Methodology", href: "/methodology" },
@@ -48,6 +49,10 @@ export default function SiteHeader({ currentPath = "/" }) {
     if (href !== "/" && path.startsWith(href)) return true;
     // Individual framework pages also highlight the frameworks-map nav item
     if (href === "/frameworks-map" && path.startsWith("/frameworks/")) return true;
+    // Individual model pages also highlight the models nav item
+    if (href === "/models" && path.startsWith("/models/")) return true;
+    // Individual concept pages also highlight the concepts nav item
+    if (href === "/concepts" && path.startsWith("/concepts/")) return true;
     return false;
   };
 
@@ -116,7 +121,7 @@ export default function SiteHeader({ currentPath = "/" }) {
               letterSpacing: "-0.02em",
             }}
           >
-            Research Platform
+            Open Knowledge
           </h1>
           <p
             style={{
@@ -125,7 +130,7 @@ export default function SiteHeader({ currentPath = "/" }) {
               marginTop: 4,
             }}
           >
-            Open science for emotional technology research
+            Understanding how the nervous system shapes everything
           </p>
         </div>
       </div>

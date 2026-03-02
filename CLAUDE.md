@@ -260,26 +260,37 @@ Content in markdown...
 ## Voice & Style
 
 > **Full reference:** `../writing-guidelines.md` (Projects root) — single source of truth for all TEG-Blue writing.
-> All .org content falls under **Tier 3: Researcher & Frameworks**.
 
-### Core Principle
+### Two Voices on .org
 
-How does this operate? Explain the mechanism. Write for researchers AND emotionally overwhelmed people — warm, steady, not academic posturing.
+**Vision Voice is the DEFAULT for all .org content.** Tier 3 is only for research-infrastructure pages.
 
-### Quick Rules
+| Content Type | Voice | Principle |
+|-------------|-------|-----------|
+| **Framework pages (F1–F12)** | **Vision Voice** | Open knowledge for any curious mind. Precise language with heart |
+| **Model pages** | **Vision Voice** | Same |
+| **Foundational Concept pages (/concepts/*)** | **Vision Voice** | Same |
+| **Landing page (/)** | **Vision Voice** | Same |
+| **Research-infrastructure pages** (publications listing, methodology, glossary entries, research entry/for researchers) | **Tier 3: Researcher** | How does this operate? Explain the mechanism |
+
+### Vision Voice (DEFAULT for .org)
+
+Anna's blueprint voice — direct, precise, human — lightly structured for web reading. The blueprint IS the public voice. It does not get compressed, academified, or filtered through a research tone.
+
+- **Anna's rhythm:** Build one thought on another. Let ideas land before the next arrives. Key lines stand alone
+- **Precise:** Same precision as research text. No dumbing down
+- **Heart:** The reader should feel the ideas, not just understand them
+- **Breathing room:** Shorter paragraphs for web, but never compressed into summaries that lose the pulse
+- **Referenced:** Anchor in research traditions without becoming a literature review
+- **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
+
+**The principle:** Vision Voice = Anna's blueprint voice + web breathing room. No compression. No academic filter.
+
+### Quick Rules (All .org Content)
 
 - **Never use:** "TEG-Blue proves", "the only framework", "cures/fixes", "diagnosis", "type" (as personality type), therapeutic outcome claims
 - **Always use:** "working hypothesis", "proposes connections", "synthesizes established research", "nervous system states", "patterns"
 - Avoid "you/your" in explanatory text — use "the framework", "the system", first person plural
-
-### Key Guidelines
-
-- **Mechanistic:** Inputs → mechanisms → outcomes, not just what it feels like
-- **Plain-first language:** Simple words first. Technical terms only when they add accuracy
-- **Precise:** Define technical terms once, clearly, use consistently
-- **Referenced:** Anchor in research traditions without becoming a literature review
-- **Professional:** Clinically compatible, calm, practitioner-friendly
-- **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
 
 ### .org-Specific Rules
 

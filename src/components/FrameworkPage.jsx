@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { getPhaseColor, FRAMEWORKS } from "@/src/data/frameworks";
+import { getPhaseColor, FRAMEWORKS, MODELS } from "@/src/data/frameworks";
 
 /**
  * FrameworkPage — Reusable template for individual framework pages.
@@ -292,9 +292,25 @@ export default function FrameworkPage({ framework, prevFramework, nextFramework,
                   >
                     Related models:
                   </span>{" "}
-                  <span style={{ fontSize: 13, color: TEXT.secondary }}>
-                    {framework.connections.relatedModels.join(", ")}
-                  </span>
+                  {framework.connections.relatedModels.map((modelId, i) => {
+                    const model = MODELS.find((m) => m.id === modelId);
+                    if (!model) return null;
+                    return (
+                      <span key={modelId}>
+                        {i > 0 && <span style={{ color: TEXT.micro }}>, </span>}
+                        <Link
+                          href={model.url}
+                          style={{
+                            fontSize: 13,
+                            color: phaseColor,
+                            textDecoration: "none",
+                          }}
+                        >
+                          {model.name}
+                        </Link>
+                      </span>
+                    );
+                  })}
                 </div>
               )}
             </div>

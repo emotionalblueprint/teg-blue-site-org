@@ -277,8 +277,8 @@ export default function ResearchEntryPage() {
               title="Measurement and recognition"
               description="Help test whether the Four-Mode Gradient can be reliably detected in natural language, transcripts, therapy session excerpts, conflict dialogues, and organizational communication."
               needs="Inter-rater reliability designs, annotation schemas, construct validation, cross-domain generalization tests."
-              link="/four-mode-gradient"
-              linkText="Four-Mode Gradient →"
+              link="/models/inner-compass"
+              linkText="Inner Compass Model →"
             />
             <LaneCard
               letter="B"
@@ -344,7 +344,7 @@ export default function ResearchEntryPage() {
               </thead>
               <tbody>
                 <NextStepRow step="Understand the system" href="/foundations" label="System Overview →" />
-                <NextStepRow step="See the measurement layer" href="/four-mode-gradient" label="Four-Mode Gradient →" />
+                <NextStepRow step="See the two core models" href="/models" label="Models →" />
                 <NextStepRow step="See the explanatory layer" href="/frameworks-map" label="Frameworks →" />
                 <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: SPECTRUM.blue }}>Methodology</Link></>} />
                 <NextStepRow step="Work with us" href="/collaborate" label="Collaborate →" />

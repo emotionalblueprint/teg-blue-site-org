@@ -369,7 +369,7 @@ export default function EmotionalTechnologyPage() {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
-              href="/four-mode-gradient"
+              href="/models/inner-compass"
               style={{
                 padding: "12px 24px",
                 background: SPECTRUM.blue,

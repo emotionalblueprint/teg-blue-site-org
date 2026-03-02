@@ -399,24 +399,32 @@ export const FRAMEWORKS = [
   },
 ];
 
-// ─── MODELS (placeholder for Stage 6) ───────────────────────
+// ─── MODELS ─────────────────────────────────────────────────
 
 export const MODELS = [
   {
     id: "inner-compass",
-    name: "The Inner Compass",
-    subtitle: "The visual-conceptual instrument",
+    name: "The Inner Compass & Four-Mode Gradient",
+    subtitle: "The Instrument",
     slug: "inner-compass",
     parentFramework: "F1",
+    pairedModel: "three-awareness-capacities",
     url: "/models/inner-compass",
+    description: "The visual-conceptual instrument — how the nervous system orients between safety and threat, made visible and usable.",
+    conceptCount: 10,
+    drawsFrom: ["F1", "F3", "F7", "F12"],
   },
   {
     id: "three-awareness-capacities",
-    name: "Three Awareness Capacities",
-    subtitle: "The calibration system \u2014 RE, ER, SEA",
+    name: "The Three Awareness Capacities",
+    subtitle: "The Calibration",
     slug: "three-awareness-capacities",
     parentFramework: "F2",
+    pairedModel: "inner-compass",
     url: "/models/three-awareness-capacities",
+    description: "The calibration system — RE, ER, SEA — what determines how well the compass works.",
+    conceptCount: 10,
+    drawsFrom: ["F2", "F3", "F8", "F10"],
   },
 ];
 
@@ -447,4 +455,15 @@ export function getPhase(phaseKey) {
 export function getPhaseColor(phaseKey) {
   const phase = getPhase(phaseKey);
   return phase ? phase.color : "#3B82F6";
+}
+
+// ─── MODEL HELPERS ──────────────────────────────────────────
+
+export function getModel(id) {
+  return MODELS.find((m) => m.id === id) || null;
+}
+
+export function getPairedModel(id) {
+  const model = getModel(id);
+  return model ? getModel(model.pairedModel) : null;
 }

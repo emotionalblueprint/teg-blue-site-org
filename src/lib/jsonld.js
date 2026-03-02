@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — JSON-LD Generators
+ * TEG-Blue Open Knowledge — JSON-LD Generators
  * 
  * Generates Schema.org structured data for every content type.
  * Called at build time (getStaticProps) or in page <head>.
@@ -250,8 +250,8 @@ export function generateFourModeGradientJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Four-Mode Gradient — TEG-Blue",
-    url: `${BASE_URL}/four-mode-gradient`,
+    name: "The Inner Compass & Four-Mode Gradient — TEG-Blue",
+    url: `${BASE_URL}/models/inner-compass`,
     description: "The measurement system at the heart of TEG-Blue: four nervous system regulatory states that shape perception, behavior, and relational capacity.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
@@ -327,7 +327,7 @@ export function generateSystemOverviewJsonLd() {
           position: 1,
           name: "Measurement Layer",
           description: "Four-Mode Gradient: Connection → Protection → Control → Domination. Observable nervous system states detectable in natural language.",
-          url: `${BASE_URL}/four-mode-gradient`
+          url: `${BASE_URL}/models/inner-compass`
         },
         {
           "@type": "ListItem",
@@ -538,7 +538,7 @@ export function generateSearchActionJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "TEG-Blue Research",
+    name: "TEG-Blue Open Knowledge",
     url: BASE_URL,
     potentialAction: {
       "@type": "SearchAction",

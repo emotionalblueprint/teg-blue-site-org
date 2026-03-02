@@ -1,0 +1,389 @@
+"use client";
+
+import Link from "next/link";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter } from "@/src/components";
+import { getPhaseColor, getFramework, getPairedModel, MODELS } from "@/src/data/frameworks";
+
+/**
+ * ModelPage — Reusable template for individual model pages.
+ *
+ * Renders the full page layout: header with paired model link,
+ * overview, concept sections, key formulations, research foundations,
+ * TEG-Blue contribution, connection to paired model, and footer navigation.
+ */
+export default function ModelPage({ model, content = {} }) {
+  const parentFramework = getFramework(model.parentFramework);
+  const paired = getPairedModel(model.id);
+  const phaseColor = parentFramework ? getPhaseColor(parentFramework.phase) : "#26C6DA";
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: BG.page,
+        fontFamily: FONT.display,
+      }}
+    >
+      <SiteHeader currentPath={`/models/${model.slug}`} />
+
+      <main
+        id="main-content"
+        style={{
+          maxWidth: SPACING.containerMax,
+          margin: "0 auto",
+          padding: "32px 24px 60px",
+        }}
+      >
+        {/* Header */}
+        <header style={{ marginBottom: 32 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              marginBottom: 8,
+              flexWrap: "wrap",
+            }}
+          >
+            <span
+              style={{
+                fontSize: 10,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                padding: "3px 8px",
+                borderRadius: 4,
+                background: hexToRgba(phaseColor, 0.15),
+                color: phaseColor,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            >
+              Model
+            </span>
+            <span style={{ fontSize: 13, color: TEXT.muted }}>
+              {model.subtitle}
+            </span>
+          </div>
+          <h1
+            style={{
+              fontSize: 28,
+              fontWeight: 700,
+              color: TEXT.primary,
+              letterSpacing: "-0.02em",
+              margin: "0 0 12px",
+              lineHeight: 1.2,
+            }}
+          >
+            {model.name}
+          </h1>
+
+          {/* Paired model + parent framework links */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 6,
+              marginBottom: 20,
+            }}
+          >
+            {paired && (
+              <div style={{ fontSize: 13, color: TEXT.muted }}>
+                Paired with:{" "}
+                <Link
+                  href={paired.url}
+                  style={{
+                    color: phaseColor,
+                    textDecoration: "none",
+                  }}
+                >
+                  {paired.name} &rarr;
+                </Link>
+              </div>
+            )}
+            {parentFramework && (
+              <div style={{ fontSize: 13, color: TEXT.muted }}>
+                Primary framework:{" "}
+                <Link
+                  href={`/frameworks/${parentFramework.slug}`}
+                  style={{
+                    color: getPhaseColor(parentFramework.phase),
+                    textDecoration: "none",
+                  }}
+                >
+                  {parentFramework.id}: {parentFramework.name} &rarr;
+                </Link>
+              </div>
+            )}
+          </div>
+        </header>
+
+        {/* Content sections */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
+          {/* Overview */}
+          {content.overview && (
+            <ContentSection title="Overview" color={phaseColor}>
+              {content.overview}
+            </ContentSection>
+          )}
+
+          {/* Concept Sections */}
+          {content.concepts && content.concepts.map((concept, i) => (
+            <ConceptSection
+              key={i}
+              number={i + 1}
+              title={concept.title}
+              color={phaseColor}
+              body={concept.body}
+              application={concept.application}
+            />
+          ))}
+
+          {/* What the Model Establishes */}
+          {content.establishes && (
+            <ContentSection title="What the Model Establishes" color={phaseColor}>
+              {content.establishes}
+            </ContentSection>
+          )}
+
+          {/* Key Formulations */}
+          {content.formulations && (
+            <ContentSection title="Key Formulations" color={phaseColor}>
+              {content.formulations}
+            </ContentSection>
+          )}
+
+          {/* Research Foundations */}
+          {content.foundations && (
+            <ContentSection title="Research Foundations" color={phaseColor}>
+              {content.foundations}
+            </ContentSection>
+          )}
+
+          {/* TEG-Blue Contribution */}
+          {content.contribution && (
+            <ContentSection title="TEG-Blue Contribution" color={phaseColor}>
+              {content.contribution}
+            </ContentSection>
+          )}
+
+          {/* Connection to Paired Model */}
+          {paired && content.connection && (
+            <ContentSection
+              title={`Connection to ${paired.name}`}
+              color={phaseColor}
+            >
+              {content.connection}
+              <div style={{ marginTop: 20 }}>
+                <Link
+                  href={paired.url}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    padding: "10px 20px",
+                    background: hexToRgba(phaseColor, 0.1),
+                    color: phaseColor,
+                    borderRadius: RADIUS.md,
+                    fontWeight: 600,
+                    fontSize: 14,
+                    textDecoration: "none",
+                    border: `1px solid ${hexToRgba(phaseColor, 0.2)}`,
+                  }}
+                >
+                  {paired.name} &rarr;
+                </Link>
+              </div>
+            </ContentSection>
+          )}
+        </div>
+
+        {/* Footer Navigation */}
+        <footer
+          style={{
+            marginTop: 48,
+            paddingTop: 24,
+            borderTop: `1px solid ${BORDER.default}`,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: 12,
+              flexWrap: "wrap",
+            }}
+          >
+            {paired && (
+              <Link
+                href={paired.url}
+                style={{
+                  padding: "10px 20px",
+                  background: "transparent",
+                  color: TEXT.secondary,
+                  border: `1px solid ${BORDER.default}`,
+                  borderRadius: RADIUS.md,
+                  fontWeight: 500,
+                  fontSize: 14,
+                  textDecoration: "none",
+                }}
+              >
+                {paired.subtitle}: {paired.name} &rarr;
+              </Link>
+            )}
+            {parentFramework && (
+              <Link
+                href={`/frameworks/${parentFramework.slug}`}
+                style={{
+                  padding: "10px 20px",
+                  background: "transparent",
+                  color: TEXT.secondary,
+                  border: `1px solid ${BORDER.default}`,
+                  borderRadius: RADIUS.md,
+                  fontWeight: 500,
+                  fontSize: 14,
+                  textDecoration: "none",
+                }}
+              >
+                {parentFramework.id}: {parentFramework.name} &rarr;
+              </Link>
+            )}
+            <Link
+              href="/models"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              All Models &rarr;
+            </Link>
+            <Link
+              href="/frameworks-map"
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              All Frameworks &rarr;
+            </Link>
+          </div>
+        </footer>
+      </main>
+
+      <SiteFooter />
+    </div>
+  );
+}
+
+// ─── HELPER COMPONENTS ──────────────────────────────────────
+
+function ContentSection({ title, color, children }) {
+  return (
+    <section>
+      <h3
+        style={{
+          fontSize: 16,
+          fontWeight: 600,
+          color: TEXT.primary,
+          marginBottom: 12,
+          paddingBottom: 8,
+          borderBottom: `2px solid ${hexToRgba(color, 0.2)}`,
+        }}
+      >
+        {title}
+      </h3>
+      {children}
+    </section>
+  );
+}
+
+function ConceptSection({ number, title, color, body, application }) {
+  return (
+    <section>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          gap: 10,
+          marginBottom: 12,
+          paddingBottom: 8,
+          borderBottom: `2px solid ${hexToRgba(color, 0.2)}`,
+        }}
+      >
+        <span
+          style={{
+            fontSize: 11,
+            fontWeight: 700,
+            fontFamily: FONT.mono,
+            color: color,
+            background: hexToRgba(color, 0.12),
+            padding: "2px 8px",
+            borderRadius: 4,
+          }}
+        >
+          {number}
+        </span>
+        <h3
+          style={{
+            fontSize: 16,
+            fontWeight: 600,
+            color: TEXT.primary,
+            margin: 0,
+          }}
+        >
+          {title}
+        </h3>
+      </div>
+
+      {/* What It Is */}
+      {body}
+
+      {/* Model Application */}
+      {application && (
+        <div
+          style={{
+            marginTop: 20,
+            padding: "16px 20px",
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              fontFamily: FONT.mono,
+              color: color,
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+              marginBottom: 10,
+            }}
+          >
+            Model Application
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            }}
+          >
+            {application}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
