@@ -3,194 +3,143 @@
 import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
-
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  fontStyle: "italic",
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "24px 0",
-};
-
-const separator = {
-  width: 40,
-  height: 1,
-  background: BORDER.default,
-  margin: "28px 0",
-  border: "none",
-};
-
-const conceptLink = {
-  color: SPECTRUM.azure,
-  textDecoration: "none",
-  fontWeight: 500,
-  fontSize: 13,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
 export const body = (
   <>
     <p style={prose}>
-      Something happens — a confrontation, a scare, a moment of overwhelm.
-      Heart pounding. Muscles tight. Everything narrows. And then, gradually, it
-      passes. The heart slows. The shoulders drop. The world comes back into
-      focus — wider, softer than it felt five minutes ago.
+      We're in the middle of a disagreement and we can't find the words. We know
+      we could handle this better — we've done it before. But right now, the
+      ability is not there. Then later, everything shifts. We can see their
+      point. We can hold both perspectives. And we wonder: where was this
+      version of me thirty minutes ago?
     </p>
     <p style={prose}>
-      That coming back is not just "calming down." It is the body completing a
-      cycle it was designed to complete.
+      We tend to explain these moments as personal failings. We weren't strong
+      enough, patient enough. We should have done better.
+    </p>
+    <p style={prose}>
+      But what if the problem was never about who we are — and always about
+      where we were?
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      The word "regulation" has been captured. In everyday language it usually
-      means: keep it together. Manage your emotions. Stay calm. But that is
-      management, not regulation.
-    </p>
-    <p style={prose}>
       <strong style={emphasis}>
-        Regulation is the mechanism of coming back.
-      </strong>{" "}
-      The body moved into Protection because it evaluated{" "}
-      <em>protection needed</em>.{" "}
-      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
-      </Link>{" "}
-      The return is the body undoing all of that — heart rate settling, muscles
-      releasing, attention broadening, the compass needle moving back toward
-      Connection.{" "}
-      <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        → The Inner Compass
-      </Link>
-    </p>
-    <p style={prose}>
-      This is a physiological event. The body does not think its way back. It
-      returns through the same channels it departed through — through breath,
-      through the body, not through cognition.
-    </p>
-    <p style={prose}>
-      <strong style={emphasis}>
-        Health is not staying calm. Health is the return.
+        What we can perceive, think, feel, and do in any given moment depends on
+        our current state.
       </strong>
     </p>
-
-    <hr style={separator} />
-
     <p style={prose}>
-      We are not born knowing how to regulate. The hardware is there, but the
-      software gets installed through one mechanism:{" "}
-      <strong style={emphasis}>being regulated with.</strong>
-    </p>
-    <p style={prose}>
-      When we were infants, we couldn't complete the return alone. We needed
-      someone whose nervous system could send ours a signal:{" "}
-      <em>you can come back. Here is how.</em> Through presence, tone, rhythm,
-      touch — the caregiver's body communicates with the child's body. Through
-      thousands of these repetitions, what was co-regulation becomes
-      self-regulation.{" "}
-      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        → Awareness Teaches Awareness
-      </Link>
-    </p>
-
-    <hr style={separator} />
-
-    <p style={prose}>
-      When the return was never learned, three things happen. The threat
-      response doesn't resolve — activation that was meant to last minutes
-      persists for months or years. One mode becomes permanent. And the compass
-      gets stuck.{" "}
-      <Link href="/concepts/false-coherence" style={conceptLink}>
-        → False Coherence
-      </Link>
-    </p>
-    <p style={prose}>
-      Cognition steps in — it builds narratives that provide stability: "I'm
-      fine." "I don't need anyone." "I've got it under control." The person
-      feels regulated. But it is regulation by story, not by felt experience.{" "}
-      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        → Self-Emotional Awareness
-      </Link>{" "}
-      This is why understanding alone doesn't change things — we can narrate
-      our patterns with brilliant precision and change none of them, because the
-      patterns are running in the body.
-    </p>
-    <p style={prose}>
-      This is why "just calm down" doesn't work. We are asking cognition to do
-      what the body needs to do. The body needs experienced safety — a slower
-      voice, a softer presence, space, time, breath.{" "}
+      When the body evaluates <em>safe enough</em> — when the compass points
+      toward Connection — we have access to a wide range of capacities. We can
+      feel what others feel, hold complexity, take feedback, disagree without
+      escalating.{" "}
       <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
+        {"\u2192"} The Safety Orientation Question
       </Link>
     </p>
-
-    <hr style={separator} />
-
     <p style={prose}>
-      The return can be learned at any age. The nervous system remains capable
-      across the entire lifespan. It happens through the same mechanism it was
-      always meant to happen through: relationship. Any relationship where one
-      person's regulated nervous system provides the conditions for the other
-      person's system to complete the return.
-    </p>
-    <p style={prose}>
-      Each time the activation rises and the return completes, the pathway gets
-      stronger. The compass gets freer. What changes is not who we are. What
-      changes is what the compass can do.{" "}
+      When the body evaluates <em>protection needed</em>, those capacities
+      reduce. Not because we've lost them. Because the state has restricted
+      access to them.{" "}
       <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        → The Inner Compass
+        {"\u2192"} The Inner Compass
+      </Link>{" "}
+      The emotions we feel in that moment are signals telling us where the
+      compass is pointing.{" "}
+      <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
+        {"\u2192"} Emotions as Biological Information
+      </Link>
+    </p>
+    <p style={prose}>
+      The shift is specific: perception narrows, empathy filters, thinking
+      simplifies, learning shuts down, the capacity for repair reduces. All of
+      it happens at once — every shift on the compass changes the entire
+      configuration.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      We miss it because we are inside it. When the compass moves into
+      Protection, we don't think "my perception has narrowed." We think "this
+      situation is threatening and this person is unreasonable." The state
+      reshapes everything — including our ability to see that it's happening.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        {"\u2192"} Self-Emotional Awareness
+      </Link>
+    </p>
+    <p style={prose}>
+      From inside a threat state, the reduced capacity feels like reality.
+      Protection doesn't feel like narrowing — it feels like clarity. Control
+      doesn't feel like rigidity — it feels like competence.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        {"\u2192"} False Coherence
       </Link>
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      The return is the thread running through everything. The compass was
-      designed to move and come back.{" "}
-      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
-        → Same Emotion, Two Expressions
-      </Link>{" "}
-      When the return is absent, internal discomfort gets misread as external
-      attack.{" "}
-      <Link href="/concepts/emotional-distortion" style={conceptLink}>
-        → Emotional Distortion
-      </Link>{" "}
-      When the return is absent, cognition builds narratives that replace felt
-      experience.{" "}
-      <Link href="/concepts/false-coherence" style={conceptLink}>
-        → False Coherence
-      </Link>{" "}
-      The adults' capacity to return is what gets passed to the next generation.{" "}
+      Once we understand that capacity is state-dependent, a whole category of
+      moral judgement dissolves.
+    </p>
+    <p style={prose}>
+      The partner who can't hear us during an argument is not choosing to be
+      dismissive — their compass is in Protection. The child who can't focus in
+      a classroom where they feel unsafe is not lazy — their system is running a
+      threat evaluation.{" "}
       <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        → Awareness Teaches Awareness
+        {"\u2192"} Awareness Teaches Awareness
       </Link>{" "}
-      And the thresholds we develop for what to endure are set in the conditions
-      where the return was or wasn't available.{" "}
-      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
-        → Tolerance Thresholds
+      The person who says things in anger they would never say when calm is not
+      "showing their true colours" — they are showing what comes out at a
+      particular compass position.{" "}
+      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
+        {"\u2192"} Same Emotion, Two Expressions
       </Link>
     </p>
     <p style={prose}>
-      The compass was always designed to come back. The question is whether the
-      conditions were ever there to learn how. They can be there now.
+      This is not about excusing harm. The words still land. But understanding
+      that behaviour comes from a state — not from character — changes the
+      question from "what is wrong with this person?" to "where is their
+      compass, and what would move it?"
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      We are not one fixed thing. The same person produces radically different
+      outputs depending on where the compass is pointing. We stop treating our
+      worst moments as our truest moments — and start seeing them as our most
+      restricted moments.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>
+        Restore safety first, then expect capacity.
+      </strong>{" "}
+      We cannot argue someone into empathy. We cannot reason someone into
+      flexibility. What we can do is change the conditions — lower the voice,
+      slow down, make space, signal that safety is available.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        {"\u2192"} Regulation — The Return Mechanism
+      </Link>
+    </p>
+    <p style={prose}>
+      The capacity was never gone. The state was restricting access to it.
+      Change the state, and the capacity returns.
     </p>
 
     <hr style={separator} />
 
     <p style={standaloneLine}>
-      <em>Health is not staying calm. Health is the return.</em>
+      <em>Restore safety first, then expect capacity.</em>
     </p>
   </>
 );

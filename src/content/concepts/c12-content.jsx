@@ -18,9 +18,8 @@ export const body = (
       who was settled and one who was tense.
     </p>
     <p style={prose}>
-      Reading Emotions — RE — is the first of three awareness capacities. The
-      outward-facing channel: the capacity to track and interpret the emotional
-      states of the people around us.{" "}
+      Reading Emotions is the outward-facing awareness capacity: the ability to
+      track and interpret the emotional states of the people around us.{" "}
       <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
         {"\u2192"} Emotions as Biological Information
       </Link>
@@ -33,16 +32,16 @@ export const body = (
     <hr style={separator} />
 
     <p style={prose}>
-      In safe, consistent conditions, RE calibrates toward accuracy. We learn to
-      read what people actually feel, not what they perform. This kind of reading
-      is quiet — it gives us information about the emotional landscape so we can
-      connect and respond with awareness.{" "}
+      In safe, consistent conditions, reading calibrates toward accuracy. We
+      learn to read what people actually feel, not what they perform. This kind
+      of reading is quiet — it gives us information about the emotional
+      landscape so we can connect and respond with awareness.{" "}
       <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
         {"\u2192"} Awareness Teaches Awareness
       </Link>
     </p>
     <p style={prose}>
-      When the adults around us were unpredictable, RE overdeveloped into
+      When the adults around us were unpredictable, reading overdeveloped into
       hypervigilance. The child needs to predict which version of the caregiver
       is coming through the door.{" "}
       <Link href="/concepts/the-inner-compass" style={conceptLink}>
@@ -60,39 +59,38 @@ export const body = (
     </p>
     <p style={prose}>
       When adults were emotionally incongruent — words contradicting the body —
-      RE learned to read surfaces. The child tracks what gets rewarded, not what
-      is true.{" "}
+      reading learned to track surfaces. The child tracks what gets rewarded,
+      not what is true.{" "}
       <Link href="/concepts/false-coherence" style={conceptLink}>
         {"\u2192"} False Coherence
       </Link>{" "}
-      When adults were invalidating, RE learned to read for control — managing
+      When adults were invalidating, reading learned to serve control — managing
       situations, predicting outcomes, ensuring compliance. And in the furthest
-      redirection, RE can become weaponised: reading others' vulnerability and
-      using it as leverage.
+      redirection, reading can become weaponised: tracking others' vulnerability
+      and using it as leverage.
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      All of these variants are RE. The reading is often sharper, not duller.
-      What changes is what the reading serves. And what determines that is
-      whether RE is connected to the other two capacities.
+      All of these variants are the same capacity. The reading is often sharper,
+      not duller. What changes is what the reading serves. And what determines
+      that is whether reading is connected to the other two capacities.
     </p>
     <p style={prose}>
-      When RE connects to Emotional Resonance — when we not only read what
-      someone feels but feel it with them — the reading naturally serves
-      understanding.{" "}
+      When reading connects to resonance — when we not only track what someone
+      feels but feel it with them — the reading naturally serves understanding.{" "}
       <Link href="/concepts/emotional-resonance" style={conceptLink}>
         {"\u2192"} Emotional Resonance
       </Link>{" "}
-      When RE connects to Self-Emotional Awareness — when we can track our own
-      states while reading others — the reading stays grounded.{" "}
+      When reading connects to self-emotional awareness — when we can track our
+      own states while reading others — the reading stays grounded.{" "}
       <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
         {"\u2192"} Self-Emotional Awareness
       </Link>
     </p>
     <p style={prose}>
-      When RE is decoupled from both, the reading becomes an instrument without a
+      When reading is decoupled from both, it becomes an instrument without a
       conscience. The person knows exactly what we feel. They just can't feel it
       with us — and can't see what's happening inside themselves.{" "}
       <Link href="/concepts/emotional-distortion" style={conceptLink}>
@@ -103,10 +101,11 @@ export const body = (
     <hr style={separator} />
 
     <p style={prose}>
-      This is why what we call "empathy" is not one thing. RE — tracking what
-      others feel — can be intact or sharpened while everything else is offline. A
-      person with sharp RE, absent ER, and absent SEA is not "lacking empathy" in
-      the usual sense. They have one component precisely intact and two offline.{" "}
+      This is why what we call "empathy" is not one thing. Reading — tracking
+      what others feel — can be intact or sharpened while everything else is
+      offline. A person with sharp reading, absent resonance, and absent
+      self-emotional awareness is not "lacking empathy" in the usual sense.
+      They have one component precisely intact and two offline.{" "}
       <strong style={emphasis}>
         This is a configuration — not a character type.
       </strong>{" "}
@@ -116,7 +115,7 @@ export const body = (
     </p>
     <p style={prose}>
       When conditions change — when the environment provides enough safety that
-      reading doesn't need to serve survival — RE can recalibrate.{" "}
+      reading doesn't need to serve survival — it can recalibrate.{" "}
       <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
         {"\u2192"} Regulation — The Return Mechanism
       </Link>{" "}

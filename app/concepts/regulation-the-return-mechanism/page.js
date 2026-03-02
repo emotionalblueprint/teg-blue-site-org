@@ -1,7 +1,7 @@
 import { getConceptBySlug } from "@/src/data/concepts";
 import ConceptPage from "@/src/components/ConceptPage";
 import { generateConceptJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
-import * as content from "@/src/content/concepts/c5-content";
+import * as content from "@/src/content/concepts/c11-content";
 
 const concept = getConceptBySlug("regulation-the-return-mechanism");
 

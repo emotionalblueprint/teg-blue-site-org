@@ -28,7 +28,7 @@ export const body = (
       we're feeling, locate it as ours, and separate it from what is actually
       happening.{" "}
       <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        → Self-Emotional Awareness
+        {"\u2192"} Self-Emotional Awareness
       </Link>
     </p>
     <p style={prose}>
@@ -47,12 +47,12 @@ export const body = (
       specific point. The feeling loses its name — shame, guilt, envy all
       collapse into undifferentiated "I feel bad."{" "}
       <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
-        → Emotions as Biological Information
+        {"\u2192"} Emotions as Biological Information
       </Link>{" "}
       The body looks outward — "I feel bad" becomes "someone is making me feel
       bad" becomes "I am being attacked."{" "}
       <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
+        {"\u2192"} The Safety Orientation Question
       </Link>{" "}
       The body reacts — "someone hurt me, I need to hurt back." From inside
       that moment, it is self-defence.
@@ -69,7 +69,7 @@ export const body = (
       reporting a threat. The discomfort is real. The only error is the
       attribution: the source is internal, but the system maps it externally.{" "}
       <Link href="/concepts/state-determines-capacity" style={conceptLink}>
-        → State Determines Capacity
+        {"\u2192"} State Determines Capacity
       </Link>
     </p>
     <p style={prose}>
@@ -80,7 +80,7 @@ export const body = (
       <strong style={emphasis}>Your boundaries become their evidence.</strong>
       {" "}The narrative feels coherent from inside.{" "}
       <Link href="/concepts/false-coherence" style={conceptLink}>
-        → False Coherence
+        {"\u2192"} False Coherence
       </Link>
     </p>
 
@@ -91,12 +91,12 @@ export const body = (
       Connection, we catch it almost immediately. In Protection, the catching
       becomes harder — we might catch it later, after the compass moves back.{" "}
       <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
-        → Same Emotion, Two Expressions
+        {"\u2192"} Same Emotion, Two Expressions
       </Link>{" "}
       In chronic Control and Domination, the catching stops entirely. The
       distortion becomes the person's experienced reality.{" "}
       <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        → The Inner Compass
+        {"\u2192"} The Inner Compass
       </Link>
     </p>
     <p style={prose}>
@@ -108,12 +108,12 @@ export const body = (
       It is not manipulation. It is a structural consequence of a capacity that
       did not develop — because the conditions were not present.{" "}
       <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        → Awareness Teaches Awareness
+        {"\u2192"} Awareness Teaches Awareness
       </Link>{" "}
       Understanding this does not excuse the impact. The harm is real. But
       understanding the mechanism changes what works.{" "}
       <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
-        → Tolerance Thresholds
+        {"\u2192"} Tolerance Thresholds
       </Link>
     </p>
 
@@ -127,19 +127,16 @@ export const body = (
       gaps. And in those gaps, something new becomes possible.
     </p>
     <p style={prose}>
-      That reader is Self-Emotional Awareness.{" "}
+      That reader is self-emotional awareness.{" "}
       <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        → Self-Emotional Awareness
+        {"\u2192"} Self-Emotional Awareness
       </Link>
     </p>
 
     <hr style={separator} />
 
     <p style={standaloneLine}>
-      <em>
-        The discomfort was real. The attribution was wrong. The correction
-        requires not logic — but the capacity to read the signal as one's own.
-      </em>
+      <em>Your boundaries become their evidence.</em>
     </p>
   </>
 );

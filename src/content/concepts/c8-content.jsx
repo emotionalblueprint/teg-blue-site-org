@@ -30,7 +30,7 @@ export const body = (
       nervous system stress — even when that narrative no longer reflects what
       we actually feel.{" "}
       <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
+        {"\u2192"} The Safety Orientation Question
       </Link>
     </p>
     <p style={prose}>
@@ -50,20 +50,20 @@ export const body = (
     <p style={prose}>
       False coherence builds when the biological return was never learned.{" "}
       <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
-        → Regulation — The Return Mechanism
+        {"\u2192"} Regulation — The Return Mechanism
       </Link>{" "}
       The body activates under threat and the return doesn't happen. So
       cognition takes over the regulatory function — generating narratives that
       calm what the body cannot settle on its own.{" "}
       <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        → Awareness Teaches Awareness
+        {"\u2192"} Awareness Teaches Awareness
       </Link>
     </p>
     <p style={prose}>
       "The world is dangerous" — and from chronic Protection, every piece of
       evidence confirms it.{" "}
       <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        → The Inner Compass
+        {"\u2192"} The Inner Compass
       </Link>{" "}
       "I'm just being strategic" — and from chronic Control, every override
       feels like competence. "They deserved it" — and from chronic Domination,
@@ -75,14 +75,14 @@ export const body = (
       biological return was supposed to do — which is why the mode never
       releases.{" "}
       <Link href="/concepts/state-determines-capacity" style={conceptLink}>
-        → State Determines Capacity
+        {"\u2192"} State Determines Capacity
       </Link>
     </p>
     <p style={prose}>
       The cost is truth. The person is regulated by a story, not by felt
       experience.{" "}
       <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        → Self-Emotional Awareness
+        {"\u2192"} Self-Emotional Awareness
       </Link>
     </p>
 
@@ -108,7 +108,7 @@ export const body = (
       What changes it is what changes everything the compass describes:
       experienced safety.{" "}
       <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
+        {"\u2192"} The Safety Orientation Question
       </Link>
     </p>
     <p style={prose}>
@@ -119,7 +119,7 @@ export const body = (
     <p style={prose}>
       This is the biological return, learned late.{" "}
       <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
-        → Regulation — The Return Mechanism
+        {"\u2192"} Regulation — The Return Mechanism
       </Link>{" "}
       The body learns that it can come back from discomfort without the
       narrative stepping in. Each time that happens, the false coherence
@@ -135,10 +135,10 @@ export const body = (
       sense — but many are coherence strategies calibrated in childhood and
       passed down as truth.{" "}
       <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        → Awareness Teaches Awareness
+        {"\u2192"} Awareness Teaches Awareness
       </Link>{" "}
       <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
-        → Tolerance Thresholds
+        {"\u2192"} Tolerance Thresholds
       </Link>
     </p>
     <p style={prose}>
@@ -150,8 +150,8 @@ export const body = (
 
     <p style={standaloneLine}>
       <em>
-        Beliefs feel true because they calm us. Truth requires something more:
-        conditions safe enough to let the story shift.
+        You cannot out-think a regulatory response. You can only create
+        conditions safe enough for the system to let truth in.
       </em>
     </p>
   </>

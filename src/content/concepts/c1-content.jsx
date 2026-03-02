@@ -3,171 +3,156 @@
 import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
-
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  fontStyle: "italic",
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "24px 0",
-};
-
-const separator = {
-  width: 40,
-  height: 1,
-  background: BORDER.default,
-  margin: "28px 0",
-  border: "none",
-};
-
-const conceptLink = {
-  color: SPECTRUM.azure,
-  textDecoration: "none",
-  fontWeight: 500,
-  fontSize: 13,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
 export const body = (
   <>
     <p style={prose}>
-      Most of us were taught that emotions get in the way. That clear thinking
-      happens when we push past them. So we learned to override — the knot in
-      the stomach, the anger, the unease — and replace the signal with something
-      that sounded more reasonable: "I'm fine." "It's not a big deal."
+      We eat because we feel hungry. We study because something interests us —
+      and interest is a feeling. Underneath every decision, there is a felt
+      signal that set the direction. The logic comes second. The feeling came
+      first.{" "}
+      <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
+        {"\u2192"} Emotions as Biological Information
+      </Link>
     </p>
     <p style={prose}>
-      Every time we did that, we were silencing a signal. Not noise. A signal —
-      carrying specific information about what our body had detected.
+      Throughout the day, our emotional state shifts — sometimes subtly,
+      sometimes dramatically. But because we are inside the feeling, we rarely
+      catch the shift itself. We just suddenly see things differently. And we
+      assume the world changed.
+    </p>
+    <p style={prose}>
+      Monday, the project feels impossible. Tuesday, the same project feels
+      manageable. What happened? The project didn't change. Our internal state
+      shifted — and the shift changed how we perceived everything around us.{" "}
+      <Link href="/concepts/the-inner-compass" style={conceptLink}>
+        {"\u2192"} The Inner Compass
+      </Link>{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        {"\u2192"} State Determines Capacity
+      </Link>
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      Emotions are the nervous system's signalling language. Our body runs a
-      continuous evaluation — across the gut, the heart, the muscles, the vagus
-      nerve — assessing our environment below conscious awareness, faster than
-      thought. Emotions are how the finding gets delivered.
+      Self-Emotional Awareness is the capacity to notice this.
     </p>
     <p style={prose}>
-      Fear is the signal that the evaluation found threat. Joy is the signal
-      that it found safety and connection. Anger is the signal that a boundary
-      has been crossed.{" "}
+      Not to control the feeling. Not to suppress it. Just to notice:{" "}
+      <em>today I'm seeing from here. Yesterday I was seeing from there. The
+      wall didn't move. I moved.</em>
+    </p>
+    <p style={prose}>
+      When this capacity is available, we can catch the moment. We feel
+      defensive in a conversation, and something in us says:{" "}
+      <em>wait — is this really an attack, or am I reading it that way because
+      of my state?</em>{" "}
+      The feeling is still there. But we can see it as a feeling — not as the
+      truth of the situation.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>
+        That small separation — between "I feel this" and "this is what's
+        happening" — changes everything.
+      </strong>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      This capacity is not automatic. It forms — or doesn't — based on what
+      happened around us when we were very young.
+    </p>
+    <p style={prose}>
+      When a child cries and the caregiver says, "You're upset" — not "you're
+      fine," not "stop that" — something develops. The child learns:{" "}
+      <em>what I feel is real. My signals are trustworthy.</em>{" "}
+      When the child's signals were ignored or contradicted, self-emotional
+      awareness doesn't form. Not because the child was incapable. Because the
+      conditions weren't there.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        {"\u2192"} Awareness Teaches Awareness
+      </Link>
+    </p>
+    <p style={prose}>
+      When it is absent, we don't experience a gap. We just experience the
+      world as it appears to us — and assume that's what the world is.{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        {"\u2192"} Tolerance Thresholds
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      Without it, when we feel bad, we don't think "I feel bad." We think
+      "something is wrong." And we look outward for the cause.{" "}
       <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
         {"\u2192"} The Safety Orientation Question
       </Link>
     </p>
     <p style={prose}>
-      Each one carries specific information. Each one orients us toward a
-      specific response. They are the body's first language — precise, fast, and
-      ancient.
-    </p>
-
-    <hr style={separator} />
-
-    <p style={prose}>
-      Emotions have been running for millions of years, long before cognition
-      evolved. When cognition arrived, it did not replace the first language. It
-      added a second one. In a healthy system, the two work together — cognition
-      listens to the emotional signals and uses the information they carry.
+      The discomfort is real. The attribution — where we place it — may not be.
+      And we can't catch the difference, because the capacity that would let us
+      catch it is exactly what's missing.{" "}
+      <Link href="/concepts/emotional-distortion" style={conceptLink}>
+        {"\u2192"} Emotional Distortion
+      </Link>
     </p>
     <p style={prose}>
-      But when the first language was never listened to — or was actively
-      contradicted{" "}
-      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        {"\u2192"} Awareness Teaches Awareness
-      </Link>{" "}
-      — cognition starts replacing. It builds its own explanations for what we
-      feel. Narratives that sound true but aren't connected to what the body is
-      actually reporting.{" "}
+      We can be brilliant, educated, psychologically literate — and still not
+      have this capacity. Intelligence builds better explanations. Without
+      self-emotional awareness, cognition fills the void with narratives that
+      feel true but aren't connected to what's actually happening in the body.
+      We can talk about vulnerability without being vulnerable. We can analyse
+      our patterns with brilliant precision and change none of them.{" "}
       <Link href="/concepts/false-coherence" style={conceptLink}>
         {"\u2192"} False Coherence
       </Link>
     </p>
+
+    <hr style={separator} />
+
     <p style={prose}>
-      And we call this "being rational."
+      This is not a psychological luxury. In relationships, it is what lets us
+      hear feedback without collapsing. In decisions, it is what lets us notice
+      when fear is driving a choice. In parenting, it is what we pass on —
+      children calibrate to what we embody, not what we say. In leadership, it
+      is the difference between "this team needs direction" and "I need to feel
+      in control."
+    </p>
+    <p style={prose}>
+      It is the difference between knowing about ourselves and actually knowing
+      ourselves.
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      The signal that was never read doesn't dissolve. It persists — in tension,
-      in exhaustion, in reactivity that seems disproportionate, in relationships
-      where something feels off but we can't name what.{" "}
-      <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        {"\u2192"} The Inner Compass
+      This capacity was always meant to come online. It is biological — part of
+      the design. What it needs, at any age, are conditions. Not more
+      information. Not harder effort. Conditions where our signals are received —
+      not fixed, not explained away. Received.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        {"\u2192"} Regulation — The Return Mechanism
       </Link>
     </p>
     <p style={prose}>
-      We don't override because we're foolish. We override because we were
-      taught to.{" "}
-      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        {"\u2192"} Awareness Teaches Awareness
-      </Link>{" "}
-      The override was adaptive. But its cost compounds: when we can't read our
-      own signals, we can't tell the difference between a genuine threat and an
-      old pattern.{" "}
-      <Link href="/concepts/emotional-distortion" style={conceptLink}>
-        {"\u2192"} Emotional Distortion
-      </Link>{" "}
-      We can't tell the difference between what we feel and what we've been told
-      to feel.{" "}
-      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        {"\u2192"} Self-Emotional Awareness
-      </Link>
-    </p>
-
-    <hr style={separator} />
-
-    <p style={prose}>
-      The old question was:{" "}
-      <strong style={emphasis}>"How do I manage this emotion?"</strong> —
-      implying the emotion is the problem.
-    </p>
-    <p style={prose}>
-      The new question is:{" "}
-      <strong style={emphasis}>"What is this signal telling me?"</strong> —
-      implying it carries information, and our job is to read it.
-    </p>
-    <p style={prose}>
-      This doesn't mean emotions are always right. It means they are always
-      informative. The question is whether we read the data or override it.
-    </p>
-
-    <hr style={separator} />
-
-    <p style={prose}>
-      No matter how well we've learned to override, the body does not stop
-      generating signals. The breath that catches before a difficult
-      conversation. The tightness in the chest when we read a certain name. The
-      lightness when we walk into a room where we feel safe.
-    </p>
-    <p style={prose}>
-      These are not weaknesses to manage. They are the first language, still
-      speaking, still waiting to be heard.{" "}
-      <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        {"\u2192"} The Inner Compass
-      </Link>{" "}
-      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        {"\u2192"} Self-Emotional Awareness
-      </Link>
+      The nervous system remains capable of building what it was always designed
+      to build. This is not about finding something that was lost. It is about
+      developing something that was waiting.
     </p>
 
     <hr style={separator} />
 
     <p style={standaloneLine}>
-      <em>The body keeps talking. The question is whether we listen.</em>
+      <em>The wall is the same wall. We are just learning, finally, to notice where we are standing.</em>
     </p>
   </>
 );

@@ -333,26 +333,32 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 
 ## Foundational Concepts (13)
 
-The building blocks of TEG-Blue — 13 concepts organized in three groups:
+The building blocks of TEG-Blue — 13 concepts organized in six groups, with Self-Emotional Awareness as the entry point:
 
-**How the System Works (C1-C6):**
-- C1: Emotions as Biological Information: https://teg-blue.org/concepts/emotions-as-biological-information
-- C2: The Safety Orientation Question: https://teg-blue.org/concepts/the-safety-orientation-question
-- C3: The Inner Compass: https://teg-blue.org/concepts/the-inner-compass
-- C4: State Determines Capacity: https://teg-blue.org/concepts/state-determines-capacity
-- C5: Regulation — The Return Mechanism: https://teg-blue.org/concepts/regulation-the-return-mechanism
+**Entry Point (C1):**
+- C1: Self-Emotional Awareness: https://teg-blue.org/concepts/self-emotional-awareness
+
+**The Foundation It Reads (C2-C3):**
+- C2: Emotions as Biological Information: https://teg-blue.org/concepts/emotions-as-biological-information
+- C3: The Safety Orientation Question: https://teg-blue.org/concepts/the-safety-orientation-question
+
+**The System It Navigates (C4-C6):**
+- C4: The Inner Compass: https://teg-blue.org/concepts/the-inner-compass
+- C5: State Determines Capacity: https://teg-blue.org/concepts/state-determines-capacity
 - C6: Same Emotion, Two Expressions: https://teg-blue.org/concepts/same-emotion-two-expressions
 
-**The Three Awareness Capacities (C7-C9):**
-- C7: Reading Emotions: https://teg-blue.org/concepts/reading-emotions
-- C8: Emotional Resonance: https://teg-blue.org/concepts/emotional-resonance
-- C9: Self-Emotional Awareness: https://teg-blue.org/concepts/self-emotional-awareness
+**What Breaks Without It (C7-C9):**
+- C7: Emotional Distortion: https://teg-blue.org/concepts/emotional-distortion
+- C8: False Coherence: https://teg-blue.org/concepts/false-coherence
+- C9: Tolerance Thresholds: https://teg-blue.org/concepts/tolerance-thresholds
 
-**What Happens When It Breaks (C10-C13):**
-- C10: Emotional Distortion: https://teg-blue.org/concepts/emotional-distortion
-- C11: False Coherence: https://teg-blue.org/concepts/false-coherence
-- C12: Awareness Teaches Awareness: https://teg-blue.org/concepts/awareness-teaches-awareness
-- C13: Tolerance Thresholds: https://teg-blue.org/concepts/tolerance-thresholds
+**How It Develops and Returns (C10-C11):**
+- C10: Awareness Teaches Awareness: https://teg-blue.org/concepts/awareness-teaches-awareness
+- C11: Regulation — The Return Mechanism: https://teg-blue.org/concepts/regulation-the-return-mechanism
+
+**SEA's Sibling Capacities (C12-C13):**
+- C12: Reading Emotions: https://teg-blue.org/concepts/reading-emotions
+- C13: Emotional Resonance: https://teg-blue.org/concepts/emotional-resonance
 
 ## Individual Framework Pages (12)
 

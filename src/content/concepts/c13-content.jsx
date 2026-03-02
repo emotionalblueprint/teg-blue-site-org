@@ -25,14 +25,14 @@ export const body = (
       </Link>
     </p>
     <p style={prose}>
-      Emotional Resonance — ER — is the second of three awareness capacities.
-      And it is the one most people misunderstand.
+      Emotional Resonance is the capacity to feel with another person. And it is
+      the one most people misunderstand.
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      Resonance is not the same as reading emotions. Reading Emotions tracks what
+      Resonance is not the same as reading emotions. Reading tracks what
       someone feels — an observational capacity.{" "}
       <Link href="/concepts/reading-emotions" style={conceptLink}>
         {"\u2192"} Reading Emotions
@@ -76,10 +76,10 @@ export const body = (
     </p>
     <p style={prose}>
       This is often called "being an empath." The feeling capacity is real. But
-      it is not a personality type. It is ER that developed without boundaries —
-      because the conditions didn't allow boundaries. And when Self-Emotional
-      Awareness is also absent, the flooding becomes invisible from inside. They
-      don't know they're absorbing. They just feel terrible.{" "}
+      it is not a personality type. It is resonance that developed without
+      boundaries — because the conditions didn't allow boundaries. And when
+      self-emotional awareness is also absent, the flooding becomes invisible
+      from inside. They don't know they're absorbing. They just feel terrible.{" "}
       <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
         {"\u2192"} Self-Emotional Awareness
       </Link>
@@ -108,11 +108,12 @@ export const body = (
     <hr style={separator} />
 
     <p style={prose}>
-      What ER does depends on whether it is connected to the other two
-      capacities. ER without SEA is resonance without a self — feeling everything
-      with no boundary between self and other. ER connected to both RE and SEA is
-      what resonance was designed to be: I can feel what you feel, I can read
-      what you feel, and I know what belongs to me and what belongs to you.{" "}
+      What resonance does depends on whether it is connected to the other two
+      capacities. Resonance without self-emotional awareness is feeling
+      everything with no boundary between self and other. Resonance connected to
+      both reading and self-emotional awareness is what it was designed to be: I
+      can feel what you feel, I can read what you feel, and I know what belongs
+      to me and what belongs to you.{" "}
       <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
         {"\u2192"} Regulation — The Return Mechanism
       </Link>

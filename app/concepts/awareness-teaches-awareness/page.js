@@ -1,7 +1,7 @@
 import { getConceptBySlug } from "@/src/data/concepts";
 import ConceptPage from "@/src/components/ConceptPage";
 import { generateConceptJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
-import * as content from "@/src/content/concepts/c9-content";
+import * as content from "@/src/content/concepts/c10-content";
 
 const concept = getConceptBySlug("awareness-teaches-awareness");
 

@@ -83,17 +83,7 @@ export default function ConceptPage({ concept, content = {} }) {
               Concept {concept.number} of 13
             </span>
             <span
-              style={
-                concept.group === "The Three Awareness Capacities"
-                  ? {
-                      fontSize: 12,
-                      background: "linear-gradient(90deg, #4E7EFF, #3C6EFF, #5E8EFF)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }
-                  : { fontSize: 12, color: GROUP_COLOR }
-              }
+              style={{ fontSize: 12, color: GROUP_COLOR }}
             >
               {concept.group}
             </span>

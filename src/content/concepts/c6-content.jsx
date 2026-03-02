@@ -3,41 +3,11 @@
 import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
-
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  fontStyle: "italic",
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "24px 0",
-};
-
-const separator = {
-  width: 40,
-  height: 1,
-  background: BORDER.default,
-  margin: "28px 0",
-  border: "none",
-};
-
-const conceptLink = {
-  color: SPECTRUM.azure,
-  textDecoration: "none",
-  fontWeight: 500,
-  fontSize: 13,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
 export const body = (
   <>
@@ -57,7 +27,7 @@ export const body = (
       control" the second. But the difference is not skill. It is where the
       compass was pointing when the emotion arrived.{" "}
       <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        → The Inner Compass
+        {"\u2192"} The Inner Compass
       </Link>
     </p>
 
@@ -74,12 +44,12 @@ export const body = (
       <strong style={emphasis}>Anger in Protection</strong> attacks —
       distorting, escalating, serving survival.{" "}
       <Link href="/concepts/state-determines-capacity" style={conceptLink}>
-        → State Determines Capacity
+        {"\u2192"} State Determines Capacity
       </Link>{" "}
       The biological signal is identical:{" "}
       <em>a boundary has been crossed</em>.{" "}
       <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
-        → Emotions as Biological Information
+        {"\u2192"} Emotions as Biological Information
       </Link>{" "}
       The state determines everything the emotion can do.
     </p>
@@ -87,13 +57,13 @@ export const body = (
       Fear in Connection produces appropriate caution. Fear in Protection
       generalises — everything feels dangerous.{" "}
       <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
+        {"\u2192"} The Safety Orientation Question
       </Link>{" "}
       Love in Connection opens and deepens. Love in Protection possesses and
       monitors. Joy in Connection celebrates. Joy in Protection triggers
       bracing — "waiting for the other shoe to drop."{" "}
       <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
-        → Tolerance Thresholds
+        {"\u2192"} Tolerance Thresholds
       </Link>
     </p>
     <p style={prose}>
@@ -107,7 +77,7 @@ export const body = (
       This changes what we do. We stop targeting the emotion — "manage your
       anger" — and start asking what would help the compass move.{" "}
       <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
-        → Regulation — The Return Mechanism
+        {"\u2192"} Regulation — The Return Mechanism
       </Link>{" "}
       We stop pathologising the feeling and start attending to the state it
       arrived in.
@@ -118,7 +88,7 @@ export const body = (
       feels like devotion — not control. The state doesn't just change the
       expression. It changes how the expression feels from inside.{" "}
       <Link href="/concepts/false-coherence" style={conceptLink}>
-        → False Coherence
+        {"\u2192"} False Coherence
       </Link>
     </p>
     <p style={prose}>
@@ -127,7 +97,7 @@ export const body = (
       anger that retaliates. Both feel justified. Only one is working from the
       full picture.{" "}
       <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        → Self-Emotional Awareness
+        {"\u2192"} Self-Emotional Awareness
       </Link>
     </p>
     <p style={prose}>
@@ -135,7 +105,7 @@ export const body = (
       external attack, the protective expression doesn't just feel justified —
       it feels like self-defence.{" "}
       <Link href="/concepts/emotional-distortion" style={conceptLink}>
-        → Emotional Distortion
+        {"\u2192"} Emotional Distortion
       </Link>
     </p>
 

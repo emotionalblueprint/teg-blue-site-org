@@ -1,7 +1,7 @@
 import { getConceptBySlug } from "@/src/data/concepts";
 import ConceptPage from "@/src/components/ConceptPage";
 import { generateConceptJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
-import * as content from "@/src/content/concepts/c7-re-content";
+import * as content from "@/src/content/concepts/c12-content";
 
 const concept = getConceptBySlug("reading-emotions");
 

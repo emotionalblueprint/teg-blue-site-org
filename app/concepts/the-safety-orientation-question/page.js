@@ -1,7 +1,7 @@
 import { getConceptBySlug } from "@/src/data/concepts";
 import ConceptPage from "@/src/components/ConceptPage";
 import { generateConceptJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
-import * as content from "@/src/content/concepts/c2-content";
+import * as content from "@/src/content/concepts/c3-content";
 
 const concept = getConceptBySlug("the-safety-orientation-question");
 

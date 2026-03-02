@@ -3,173 +3,172 @@
 import Link from "next/link";
 import { TEXT, FONT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 
-const prose = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
-
-const emphasis = {
-  color: TEXT.primary,
-  fontWeight: 600,
-};
-
-const standaloneLine = {
-  fontSize: 15,
-  fontWeight: 600,
-  fontStyle: "italic",
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  margin: "24px 0",
-};
-
-const separator = {
-  width: 40,
-  height: 1,
-  background: BORDER.default,
-  margin: "28px 0",
-  border: "none",
-};
-
-const conceptLink = {
-  color: SPECTRUM.azure,
-  textDecoration: "none",
-  fontWeight: 500,
-  fontSize: 13,
-};
+const prose = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 };
+const emphasis = { color: TEXT.primary, fontWeight: 600 };
+const standaloneLine = { fontSize: 15, fontWeight: 600, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.6, margin: "24px 0" };
+const separator = { width: 40, height: 1, background: BORDER.default, margin: "28px 0", border: "none" };
+const conceptLink = { color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500, fontSize: 13 };
 
 export const body = (
   <>
     <p style={prose}>
-      We're in the middle of a disagreement and we can't find the words. We know
-      we could handle this better — we've done it before. But right now, the
-      ability is not there. Then later, everything shifts. We can see their
-      point. We can hold both perspectives. And we wonder: where was this
-      version of me thirty minutes ago?
+      We walk into a room full of strangers and something tightens. Shoulders
+      rise. We scan the space. Then a friend waves from across the room — and
+      everything shifts. Shoulders drop. We settle.
     </p>
     <p style={prose}>
-      We tend to explain these moments as personal failings. We weren't strong
-      enough, patient enough. We should have done better.
-    </p>
-    <p style={prose}>
-      But what if the problem was never about who we are — and always about
-      where we were?
-    </p>
-
-    <hr style={separator} />
-
-    <p style={prose}>
-      <strong style={emphasis}>
-        What we can perceive, think, feel, and do in any given moment depends on
-        our current state.
-      </strong>
-    </p>
-    <p style={prose}>
-      When the body evaluates <em>safe enough</em> — when the compass points
-      toward Connection — we have access to a wide range of capacities. We can
-      feel what others feel, hold complexity, take feedback, disagree without
-      escalating.{" "}
-      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
-        → The Safety Orientation Question
-      </Link>
-    </p>
-    <p style={prose}>
-      When the body evaluates <em>protection needed</em>, those capacities
-      reduce. Not because we've lost them. Because the state has restricted
-      access to them.{" "}
-      <Link href="/concepts/the-inner-compass" style={conceptLink}>
-        → The Inner Compass
-      </Link>{" "}
-      The emotions we feel in that moment are signals telling us where the
-      compass is pointing.{" "}
+      The room didn't change. What changed was how our nervous system evaluated
+      the situation. And that evaluation changed everything — what we noticed,
+      how we held our body, what we were capable of in that moment.{" "}
       <Link href="/concepts/emotions-as-biological-information" style={conceptLink}>
-        → Emotions as Biological Information
+        {"\u2192"} Emotions as Biological Information
       </Link>
     </p>
     <p style={prose}>
-      The shift is specific: perception narrows, empathy filters, thinking
-      simplifies, learning shuts down, the capacity for repair reduces. All of
-      it happens at once — every shift on the compass changes the entire
-      configuration.
+      We know this experience. What we don't usually have is a way to see it
+      clearly.
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      We miss it because we are inside it. When the compass moves into
-      Protection, we don't think "my perception has narrowed." We think "this
-      situation is threatening and this person is unreasonable." The state
-      reshapes everything — including our ability to see that it's happening.{" "}
-      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
-        → Self-Emotional Awareness
+      Our nervous system is running a continuous evaluation, below conscious
+      awareness, asking one question:{" "}
+      <strong style={emphasis}>
+        "Is there enough safety to engage, or is protection needed?"
+      </strong>{" "}
+      <Link href="/concepts/the-safety-orientation-question" style={conceptLink}>
+        {"\u2192"} The Safety Orientation Question
       </Link>
     </p>
     <p style={prose}>
-      From inside a threat state, the reduced capacity feels like reality.
-      Protection doesn't feel like narrowing — it feels like clarity. Control
-      doesn't feel like rigidity — it feels like competence.{" "}
-      <Link href="/concepts/false-coherence" style={conceptLink}>
-        → False Coherence
+      When the answer is <em>safe enough</em>, we open — we can listen,
+      connect, tolerate disagreement, hold complexity. When the answer is{" "}
+      <em>protection needed</em>, we close — we narrow, defend, react.{" "}
+      <Link href="/concepts/state-determines-capacity" style={conceptLink}>
+        {"\u2192"} State Determines Capacity
+      </Link>
+    </p>
+    <p style={prose}>
+      The Inner Compass makes this visible. A compass whose needle moves
+      between safety and threat — always shifting, always responding. Not a
+      compass that has a correct position. A compass that is supposed to move.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      The compass has four modes. Two are{" "}
+      <strong style={emphasis}>body-first</strong> — they have been running in
+      living creatures for millions of years. Two are{" "}
+      <strong style={emphasis}>cognition-first</strong> — they appeared when the
+      human brain evolved strategic thinking.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Connection</strong> is home base. Perception
+      broadens. We can feel what others feel without losing ourselves.
+      Connection is not calm — we can grieve in Connection, argue in Connection,
+      feel anger in Connection. It means the nervous system has enough safety to
+      engage with what's real, including what's painful.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Protection</strong> is the emergency system.
+      Heart rate rises. Attention narrows to the threat. Empathy filters.
+      Thinking simplifies to binary. Extraordinary engineering — but designed
+      for minutes to hours, not for life.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Control</strong> activates when the situation is
+      too complex for the body alone. Cognition gets recruited: anticipate,
+      manage, override. A parent in a medical emergency. A difficult workplace
+      dynamic. In a healthy compass, it's a tool — entered deliberately,
+      released when the situation resolves.
+    </p>
+    <p style={prose}>
+      <strong style={emphasis}>Domination</strong> is the furthest point.
+      Maximum override. Empathy drops to near-zero — not through failure, but
+      deliberately. In a healthy compass, it's rare, brief, and costly. The
+      person feels the weight of it afterward.{" "}
+      <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
+        {"\u2192"} Regulation — The Return Mechanism
       </Link>
     </p>
 
     <hr style={separator} />
 
     <p style={prose}>
-      Once we understand that capacity is state-dependent, a whole category of
-      moral judgement dissolves.
-    </p>
-    <p style={prose}>
-      The partner who can't hear us during an argument is not choosing to be
-      dismissive — their compass is in Protection. The child who can't focus in
-      a classroom where they feel unsafe is not lazy — their system is running a
-      threat evaluation.{" "}
-      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
-        → Awareness Teaches Awareness
-      </Link>{" "}
-      The person who says things in anger they would never say when calm is not
-      "showing their true colours" — they are showing what comes out at a
-      particular compass position.{" "}
-      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
-        → Same Emotion, Two Expressions
-      </Link>
-    </p>
-    <p style={prose}>
-      This is not about excusing harm. The words still land. But understanding
-      that behaviour comes from a state — not from character — changes the
-      question from "what is wrong with this person?" to "where is their
-      compass, and what would move it?"
-    </p>
-
-    <hr style={separator} />
-
-    <p style={prose}>
-      We are not one fixed thing. The same person produces radically different
-      outputs depending on where the compass is pointing. We stop treating our
-      worst moments as our truest moments — and start seeing them as our most
-      restricted moments.
+      These four modes are not boxes. They sit on a continuous gradient. The
+      transitions between them are recognisable — and interruptible, if we can
+      see where we are.
     </p>
     <p style={prose}>
       <strong style={emphasis}>
-        Restore safety first, then expect capacity.
+        Health is not staying in Connection permanently.
       </strong>{" "}
-      We cannot argue someone into empathy. We cannot reason someone into
-      flexibility. What we can do is change the conditions — lower the voice,
-      slow down, make space, signal that safety is available.{" "}
+      Nobody does. Nobody should. Health is the return — the ability to move
+      into whatever mode the situation requires and come back.{" "}
       <Link href="/concepts/regulation-the-return-mechanism" style={conceptLink}>
-        → Regulation — The Return Mechanism
+        {"\u2192"} Regulation — The Return Mechanism
+      </Link>
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      For many of us, the compass is not moving freely. The needle settled
+      somewhere — usually a long time ago — because the return was never
+      learned.{" "}
+      <Link href="/concepts/awareness-teaches-awareness" style={conceptLink}>
+        {"\u2192"} Awareness Teaches Awareness
       </Link>
     </p>
     <p style={prose}>
-      The capacity was never gone. The state was restricting access to it.
-      Change the state, and the capacity returns.
+      Chronic Protection becomes vigilance we call "anxiety." Chronic Control
+      becomes management we call "having it together." Chronic Domination
+      becomes override we call "strength." The person who is stuck does not
+      experience themselves as stuck. They experience their mode as reality.{" "}
+      <Link href="/concepts/false-coherence" style={conceptLink}>
+        {"\u2192"} False Coherence
+      </Link>
+    </p>
+    <p style={prose}>
+      This is not malfunction. It is accurate adaptation to an environment that
+      is no longer present. The compass read the conditions correctly. The
+      problem is that it never came back.
+    </p>
+
+    <hr style={separator} />
+
+    <p style={prose}>
+      A person in chronic Control is not "a controlling person." They are a
+      person whose compass settled there because the conditions required it. The
+      identity that formed around that position feels like who they are. But it
+      is where the needle is stuck — not who the person is.{" "}
+      <Link href="/concepts/tolerance-thresholds" style={conceptLink}>
+        {"\u2192"} Tolerance Thresholds
+      </Link>{" "}
+      <Link href="/concepts/same-emotion-two-expressions" style={conceptLink}>
+        {"\u2192"} Same Emotion, Two Expressions
+      </Link>
+    </p>
+    <p style={prose}>
+      The same person behaves completely differently at different compass
+      positions. The mode determines the expression. The person was never the
+      problem. The stuckness was.
+    </p>
+    <p style={prose}>
+      The distinction between what is actually happening and what our compass
+      position reports — that is one of the most important distinctions we can
+      learn to make.{" "}
+      <Link href="/concepts/self-emotional-awareness" style={conceptLink}>
+        {"\u2192"} Self-Emotional Awareness
+      </Link>
     </p>
 
     <hr style={separator} />
 
     <p style={standaloneLine}>
-      <em>The capacity was never missing. The state was restricting access to it.</em>
+      <em>Health is not staying in Connection permanently — health is the ability to move through the gradient and come back.</em>
     </p>
   </>
 );
