@@ -1268,9 +1268,10 @@ function ValidationMethod() {
         </h3>
         <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
           The architecture was developed first — through independent research, observation, and
-          cross-disciplinary reading. Once the structure was established, AI research tools
-          (Claude, Perplexity, Microsoft Copilot) were used to systematically identify which
-          established theories align with each framework.{" "}
+          cross-disciplinary reading. Once the structure was established, Large Language Models
+          (ChatGPT Deep Research and the deep thinking models of Claude, Microsoft Copilot,
+          and Perplexity) were used to systematically identify which established theories
+          align with each framework.{" "}
           <Link href="/methodology" style={{ color: PRIMARY, textDecoration: "none" }}>
             Full methodology →
           </Link>
