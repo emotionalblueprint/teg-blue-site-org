@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { FONT, PATTERN_GRADIENT } from "../styles/tokens";
+import { FONT, PATTERN_GRADIENT, BG } from "../styles/tokens";
 
 const MODES = [
   { key: "A", label: "Pattern A", signal: "Safety", hex: "#60a5fa", center: 0.125 },
@@ -176,7 +176,7 @@ export default function PatternGradientBar({
             width: 28,
             height: 28,
             borderRadius: "50%",
-            backgroundColor: "#fff",
+            backgroundColor: BG.primary,
             border: `3px solid ${activeMode.hex}`,
             boxShadow: `0 0 16px ${activeMode.hex}80`,
             transition: "border-color 200ms ease, box-shadow 200ms ease",

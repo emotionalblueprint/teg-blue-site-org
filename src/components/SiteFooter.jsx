@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { TEXT, SPACING, FONT, SPECTRUM } from "../styles/tokens";
+import { TEXT, SPACING, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
 
 /**
@@ -59,9 +59,9 @@ export default function SiteFooter() {
         style={{
           marginTop: 20,
           padding: "12px 16px",
-          background: "rgba(74, 155, 232, 0.08)",
+          background: hexToRgba(SPECTRUM.azure, 0.08),
           borderRadius: 8,
-          border: "1px solid rgba(74, 155, 232, 0.15)",
+          border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
           maxWidth: 400,
           margin: "20px auto 0",
         }}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { ThemeToggle } from "./theme/ThemeToggle";
 
 const px = SPACING.pagePadding;
 import { SpectrumBar } from "./SharedComponents";
@@ -75,35 +76,38 @@ export default function SiteHeader({ currentPath = "/" }) {
 
         {/* Logo + Title */}
         <div style={{ marginTop: 16, marginBottom: 16 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-            <Link
-              href="https://teg-blue.com"
-              style={{
-                fontFamily: FONT.mono,
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: TEXT.hint,
-                textDecoration: "none",
-              }}
-            >
-              TEG-Blue
-            </Link>
-            <span style={{ color: TEXT.micro }}>·</span>
-            <a
-              href="https://teg-blue.com"
-              style={{
-                fontFamily: FONT.mono,
-                fontSize: 9,
-                color: SPECTRUM.azure,
-                textDecoration: "none",
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Interactive tools on .com →
-            </a>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <Link
+                href="https://teg-blue.com"
+                style={{
+                  fontFamily: FONT.mono,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: TEXT.hint,
+                  textDecoration: "none",
+                }}
+              >
+                TEG-Blue
+              </Link>
+              <span style={{ color: TEXT.micro }}>·</span>
+              <a
+                href="https://teg-blue.com"
+                style={{
+                  fontFamily: FONT.mono,
+                  fontSize: 9,
+                  color: SPECTRUM.azure,
+                  textDecoration: "none",
+                }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Interactive tools on .com →
+              </a>
+            </div>
+            <ThemeToggle />
           </div>
           <h1
             style={{

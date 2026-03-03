@@ -1,37 +1,40 @@
 /**
  * TEG-Blue Research Platform — Design Tokens
- * Blue Spectrum · No Gradients · Dark First
- * 
+ * Blue Spectrum · System Theme · Dark Default
+ *
  * Single source of truth for all visual decisions.
  * Import this everywhere. Never hardcode colors.
+ *
+ * BG, TEXT, and BORDER reference CSS custom properties
+ * defined in globals.css — they auto-switch with theme.
  */
 
 // ─── BACKGROUNDS ─────────────────────────────────────
 
 export const BG = {
-  page:    "#080C18",   // Deepest — page body
-  primary: "#0C1222",   // Main content area
-  card:    "#111827",   // Cards, panels
-  surface: "#1A2234",   // Elevated surfaces, expanded sections
-  inset:   "#0A0E1A",   // Recessed content, code blocks
+  page:    "var(--bg-page)",
+  primary: "var(--bg-primary)",
+  card:    "var(--bg-card)",
+  surface: "var(--bg-surface)",
+  inset:   "var(--bg-inset)",
 };
 
 // ─── TEXT ────────────────────────────────────────────
 
 export const TEXT = {
-  primary:   "#F1F5F9",   // Headings, titles (slate-100)
-  secondary: "#CBD5E1",   // Body text (slate-300)
-  muted:     "#94A3B8",   // Descriptions, metadata (slate-400)
-  hint:      "#64748B",   // Captions, DOIs (slate-500)
-  micro:     "#475569",   // Watermarks, decorative (slate-600)
+  primary:   "var(--text-primary)",
+  secondary: "var(--text-secondary)",
+  muted:     "var(--text-muted)",
+  hint:      "var(--text-hint)",
+  micro:     "var(--text-micro)",
 };
 
 // ─── BORDERS ─────────────────────────────────────────
 
 export const BORDER = {
-  default: "rgba(148, 163, 184, 0.12)",
-  hover:   "rgba(148, 163, 184, 0.20)",
-  active:  "rgba(148, 163, 184, 0.30)",
+  default: "var(--border-default)",
+  hover:   "var(--border-hover)",
+  active:  "var(--border-active)",
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────

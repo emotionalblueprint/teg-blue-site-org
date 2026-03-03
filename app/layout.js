@@ -1,5 +1,7 @@
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeScript } from '@/src/components/theme/ThemeScript'
+import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
 
 export const metadata = {
   title: {
@@ -148,8 +150,9 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <ThemeScript />
         {/* Preconnect to font providers */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -192,7 +195,9 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="skip-link" style={skipLinkStyles}>
           Skip to main content
         </a>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
