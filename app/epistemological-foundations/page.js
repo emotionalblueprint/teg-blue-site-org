@@ -433,8 +433,13 @@ export default function EpistemologicalFoundationsPage() {
               border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
             }}
           >
-            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
               <strong style={{ color: SPECTRUM.azure }}>Framework reference:</strong> This content maps to the <em>Emotional Gradient</em> framework — the proposition that emotions are a biological data collection and communication system, equally valid and necessary as logical/cognitive processing.
+            </p>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+              <Link href="/framework/f1-emotional-gradient" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
+                Read the full F1 framework →
+              </Link>
             </p>
           </div>
         </section>

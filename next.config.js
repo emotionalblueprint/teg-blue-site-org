@@ -196,7 +196,7 @@ const nextConfig = {
       },
       {
         source: '/1-the-emotional-gradient-framework',
-        destination: '/frameworks-map',
+        destination: '/framework/f1-emotional-gradient',
         permanent: true,
       },
       {

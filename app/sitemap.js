@@ -18,6 +18,7 @@ const PAGE_DATES = {
   '/about': '2026-02-15',
   '/scientific-foundations': '2026-02-18',
   '/emotional-technology': '2026-02-18',
+  '/framework/f1-emotional-gradient': '2026-03-03',
 }
 
 export default function sitemap() {
@@ -107,6 +108,12 @@ export default function sitemap() {
       url: `${baseUrl}/scientific-foundations`,
       lastModified: new Date(PAGE_DATES['/scientific-foundations']),
       changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/framework/f1-emotional-gradient`,
+      lastModified: new Date(PAGE_DATES['/framework/f1-emotional-gradient']),
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
   ]

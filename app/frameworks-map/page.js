@@ -652,7 +652,23 @@ function ExpandableFrameworkCard({ framework }) {
           </div>
 
           {/* Link to full framework */}
-          <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}` }}>
+          <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
+            {framework.id === "F1" && (
+              <Link
+                href="/framework/f1-emotional-gradient"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontSize: 13,
+                  fontWeight: 500,
+                  color: arcColor,
+                  textDecoration: "none",
+                }}
+              >
+                Read full framework →
+              </Link>
+            )}
             <a
               href={`https://teg-blue.com/mapping-system/following-nervous-system/${framework.id.toLowerCase()}`}
               target="_blank"
@@ -667,7 +683,7 @@ function ExpandableFrameworkCard({ framework }) {
                 textDecoration: "none",
               }}
             >
-              View framework →
+              View on teg-blue.com →
             </a>
           </div>
         </div>

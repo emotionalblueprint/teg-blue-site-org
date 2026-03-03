@@ -172,7 +172,7 @@ export default function FoundationsPage() {
               The frameworks are organized as a connected arc:
             </p>
             <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>F1–F3:</strong> Internal regulation, identity adaptation, inner organization</li>
+              <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>F1–F3:</strong> Internal regulation, identity adaptation, inner organization (<Link href="/framework/f1-emotional-gradient" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F1 full framework →</Link>)</li>
               <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>F4–F7:</strong> How individual protection scales into social systems and harm</li>
               <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>F8–F10:</strong> The return path — self-awareness, repair, and re-integration</li>
               <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>F11:</strong> Why humans look contradictory until you see the full state logic</li>
