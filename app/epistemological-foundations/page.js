@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
@@ -53,44 +53,14 @@ export default function EpistemologicalFoundationsPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Epistemological Foundations
-          </h1>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            Why emotions are valid data.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.muted,
-              lineHeight: 1.8,
-              maxWidth: 640,
-              marginTop: 12,
-            }}
-          >
-            This page establishes the philosophical foundation for the entire TEG-Blue system. By reframing emotions from irrational disturbances to intelligent data, it justifies the enterprise of emotional measurement, removes shame from emotional experience, and provides the framework for integrating emotional and logical intelligence.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="EPISTEMOLOGY"
+          title="Epistemological Foundations"
+          description="Why emotions are valid data. The philosophical and methodological foundations of TEG-Blue's approach."
+        />
 
         {/* Core Thesis */}
         <section style={{ marginBottom: 40 }}>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, TypeTag, StatusBadge } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, TypeTag, StatusBadge, ResearcherHero } from "@/src/components";
 
 export const metadata = {
   title: "Publications | TEG-Blue Research",
@@ -138,44 +138,14 @@ export default function PublicationsPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Publications
-          </h1>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            Research publications, validation studies, and datasets.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.muted,
-              lineHeight: 1.8,
-              maxWidth: 640,
-              marginTop: 12,
-            }}
-          >
-            All publications include DOI links and are designed for both human and AI readability.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="PUBLICATIONS"
+          title="Publications & Datasets"
+          description="Research publications, validation studies, and datasets from TEG-Blue."
+        />
 
         {/* Validation study card */}
         <section style={{ marginBottom: 32 }}>

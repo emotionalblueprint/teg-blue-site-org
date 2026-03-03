@@ -1,6 +1,6 @@
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, TypeTag } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, TypeTag, ResearcherHero } from "@/src/components";
 
 export const metadata = {
   title: "How to Cite | TEG-Blue Research",
@@ -28,31 +28,14 @@ export default function CitationsPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        <h1
-          style={{
-            fontSize: 24,
-            fontWeight: 700,
-            color: TEXT.primary,
-            marginBottom: 8,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          How to Cite
-        </h1>
-        <p
-          style={{
-            fontSize: 14,
-            color: TEXT.secondary,
-            marginBottom: 32,
-            maxWidth: 600,
-          }}
-        >
-          Please cite TEG-Blue research using the formats below.
-          All publications are licensed under CC-BY-NC-SA-4.0.
-        </p>
+        <ResearcherHero
+          badge="CITATIONS"
+          title="How to Cite TEG-Blue"
+          description="Citation formats for TEG-Blue research publications."
+        />
 
         {publications.map((pub) => (
           <CitationBlock key={pub.slug} publication={pub} />

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 
 export const metadata = {
   title: "What is Emotional Technology? — TEG-Blue",
@@ -43,58 +43,14 @@ export default function EmotionalTechnologyPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "48px 24px 80px",
+          padding: `48px ${SPACING.pagePadding} 80px`,
         }}
       >
-        {/* Hero Section */}
-        <header style={{ marginBottom: 64 }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: SPECTRUM.azure,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            Core Concept
-          </p>
-          <h1
-            style={{
-              fontSize: 32,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 16,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.2,
-            }}
-          >
-            What is{" "}
-            <span
-              style={{
-                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Emotional Technology
-            </span>
-            ?
-          </h1>
-          <p
-            style={{
-              fontSize: 17,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            Tools and systems that help you <strong style={{ color: TEXT.primary }}>measure</strong>, <strong style={{ color: TEXT.primary }}>understand</strong>, and <strong style={{ color: TEXT.primary }}>navigate</strong> human emotions — with the same clarity we expect from physical or digital technologies.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="CONCEPT"
+          title="What is Emotional Technology?"
+          description="Tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies."
+        />
 
         {/* Featured Card — The Analogy */}
         <section style={{ marginBottom: 64 }}>

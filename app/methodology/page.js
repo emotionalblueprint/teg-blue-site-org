@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 import { generateFAQJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
@@ -73,33 +73,14 @@ export default function MethodologyPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Methodology
-          </h1>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              maxWidth: 640,
-              lineHeight: 1.7,
-            }}
-          >
-            How we conduct research at TEG-Blue. Our commitment to open science, honest status reporting, and ethical standards.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="METHODOLOGY"
+          title="Research Methodology"
+          description="How TEG-Blue research is conducted. Open science principles, pre-registration, open data, transparent methodology."
+        />
 
         {/* Open Science Principles */}
         <section style={{ marginBottom: 32 }}>

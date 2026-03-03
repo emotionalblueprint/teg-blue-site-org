@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
@@ -55,51 +55,22 @@ export default function FoundationsPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            System Overview
-          </h1>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            How the parts fit together.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.muted,
-              lineHeight: 1.8,
-              maxWidth: 640,
-              marginTop: 12,
-            }}
-          >
-            TEG-Blue is organized as a layered system. Each layer has a different job, a different evidence status, and a different kind of researcher who can help.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="SYSTEM ARCHITECTURE"
+          title="System Overview"
+          subtitle="How the parts fit together"
+          description="TEG-Blue is organized as a layered system. Each layer has a different job, a different evidence status, and a different kind of researcher who can help."
+        />
 
         {/* Quick Navigation Cards */}
         <section style={{ marginBottom: 40 }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
               gap: 12,
             }}
           >
@@ -444,7 +415,7 @@ function LayerCard({ number, title, color, children }) {
     <div
       style={{
         padding: 24,
-        background: BG.card,
+        background: gradientCardBg(color),
         borderRadius: 10,
         border: `1px solid ${BORDER.default}`,
         borderTop: `3px solid ${color}`,
@@ -511,7 +482,7 @@ function FunctionCard({ number, title, description }) {
     <div
       style={{
         padding: 16,
-        background: BG.card,
+        background: gradientCardBg(SPECTRUM.blue),
         borderRadius: 8,
         border: `1px solid ${BORDER.default}`,
       }}
@@ -573,7 +544,7 @@ function LayerIntroCard({ number, title, subtitle, color, href, external }) {
       style={{
         display: "block",
         padding: 16,
-        background: hexToRgba(color, 0.06),
+        background: gradientCardBg(color),
         borderRadius: 10,
         border: `1px solid ${hexToRgba(color, 0.2)}`,
         borderTop: `3px solid ${color}`,

@@ -1,5 +1,5 @@
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 import GlossaryList from "./GlossaryList";
 
 export const metadata = {
@@ -920,9 +920,15 @@ export default function GlossaryPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
+        <ResearcherHero
+          badge="GLOSSARY"
+          title="Key Terms & Concepts"
+          description="Definitions for regulatory states, complexity markers, and core framework concepts used throughout TEG-Blue research."
+        />
+
         <GlossaryList terms={GLOSSARY_TERMS} />
 
         {/* Footer note */}

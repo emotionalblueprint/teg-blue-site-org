@@ -68,7 +68,7 @@ export default async function PublicationRoute({ params }) {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
         <PublicationPage node={node} />

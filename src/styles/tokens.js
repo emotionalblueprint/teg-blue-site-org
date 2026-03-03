@@ -97,6 +97,8 @@ export const TYPE_SCALE = {
 export const SPACING = {
   containerMax: 820,
   containerPadding: { desktop: "0 24px", mobile: "0 16px" },
+  // Responsive side padding — use in inline styles (no media queries needed)
+  pagePadding: "clamp(16px, 4vw, 24px)",
   sectionGap: { desktop: 80, mobile: 48 },
   contentGap: { desktop: 32, mobile: 24 },
   cardPadding: { desktop: 24, mobile: 16 },
@@ -132,6 +134,28 @@ export const OPACITY = {
   borderHover: 0.35,  // Hover border
   borderActive: 0.45, // Active/expanded border
 };
+
+// ─── PATTERN COLORS (Four-Mode Gradient — monochromatic blue) ───
+
+export const PATTERN = {
+  A: { primary: '#60a5fa', bg: 'rgba(96,165,250,0.08)', border: 'rgba(96,165,250,0.25)' },
+  B: { primary: '#3b82f6', bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.25)' },
+  C: { primary: '#2563eb', bg: 'rgba(37,99,235,0.08)', border: 'rgba(37,99,235,0.25)' },
+  D: { primary: '#1d4ed8', bg: 'rgba(29,78,216,0.08)', border: 'rgba(29,78,216,0.25)' },
+};
+
+export const PATTERN_GRADIENT = 'linear-gradient(90deg, #60a5fa, #3b82f6, #2563eb, #1d4ed8)';
+
+export const RESEARCHER = {
+  accent: '#2563eb',
+  accentLight: '#3b82f6',
+  accentLighter: '#60a5fa',
+};
+
+// Helper: gradient card background
+export function gradientCardBg(color, startOpacity = 0.08) {
+  return `linear-gradient(135deg, ${hexToRgba(color, startOpacity)}, transparent)`;
+}
 
 // ─── UTILITY ─────────────────────────────────────────
 

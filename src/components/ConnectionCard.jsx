@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor } from "../styles/tokens";
+import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, gradientCardBg } from "../styles/tokens";
 import TypeTag from "./TypeTag";
 
 /**
@@ -36,7 +36,7 @@ export default function ConnectionCard({
         style={{
           borderRadius: 8,
           padding: "14px 16px",
-          background: BG.card,
+          background: gradientCardBg(color),
           border: `1px solid ${BORDER.default}`,
           borderTop: `3px solid ${color}`,
           cursor: "pointer",

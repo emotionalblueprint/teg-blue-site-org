@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, TRANSITION, SPECTRUM,
-  getContentTypeColor, getContentTypeLabel, hexToRgba
+  getContentTypeColor, getContentTypeLabel, hexToRgba, gradientCardBg
 } from "../styles/tokens";
 import TypeTag from "./TypeTag";
 import StatusBadge from "./StatusBadge";
@@ -155,7 +155,7 @@ function ContentCard({ item }) {
         style={{
           padding: "16px 20px",
           borderRadius: 8,
-          background: BG.card,
+          background: gradientCardBg(color),
           border: `1px solid ${BORDER.default}`,
           borderLeft: `3px solid ${color}`,
           transition: `all ${TRANSITION.normal}`,
@@ -239,7 +239,7 @@ function ContentCard({ item }) {
         <style jsx>{`
           .content-card:hover {
             border-color: ${hexToRgba(color, 0.4)};
-            background: ${hexToRgba(color, 0.03)};
+            background: ${hexToRgba(color, 0.06)};
             transform: translateX(2px);
           }
         `}</style>

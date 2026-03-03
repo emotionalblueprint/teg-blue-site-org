@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba } from "../styles/tokens";
+import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba, gradientCardBg } from "../styles/tokens";
 
 /**
  * ExpandableSection — Core content unit
@@ -76,7 +76,7 @@ export default function ExpandableSection({
           borderLeft: `3px solid ${color}`,
           borderTop: `1px solid ${hexToRgba(color, 0.08)}`,
           borderRadius: "0 0 8px 0",
-          background: BG.surface,
+          background: gradientCardBg(color, 0.05),
         }}
       >
         {children}

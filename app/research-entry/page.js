@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero, PropositionBox, MechanismBox } from "@/src/components";
 
 export const metadata = {
   title: "For Researchers | TEG-Blue Emotional Technology",
@@ -53,67 +53,17 @@ export default function ResearchEntryPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
         {/* Header */}
         <header style={{ marginBottom: 32 }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: SPECTRUM.blue,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              fontFamily: FONT.mono,
-              marginBottom: 8,
-            }}
-          >
-            For Researchers
-          </p>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Start Here
-          </h1>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-              marginBottom: 16,
-            }}
-          >
-            TEG-Blue is a prototype emotional data system, built to make emotional safety and accountability measurable, testable, and usable across humans and AI.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.muted,
-              lineHeight: 1.8,
-              maxWidth: 640,
-              marginBottom: 16,
-            }}
-          >
-            It treats emotions as valid, structured data and provides a visual, gradient-based architecture for mapping patterns across nervous systems, relationships, institutions, and AI systems.
-          </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.muted,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            The goal is clarity, internal coherence, and a structure that can be studied, tested, and iterated in collaboration.
-          </p>
+          <ResearcherHero
+            badge="FOR RESEARCHERS"
+            title="Start Here"
+            subtitle="Prototype emotional data system — measurable, testable, usable"
+            description="TEG-Blue is a prototype emotional data system, built to make emotional safety and accountability measurable, testable, and usable across humans and AI. It treats emotions as valid, structured data."
+          />
           <div style={{ marginTop: 20 }}>
             <Link
               href="/foundations"
@@ -153,15 +103,7 @@ export default function ResearchEntryPage() {
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             What is original: the &quot;1 + 2 = 3&quot; principle
           </h2>
-          <div
-            style={{
-              padding: 20,
-              background: BG.card,
-              borderRadius: 10,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-            }}
-          >
+          <MechanismBox label="THE 1 + 2 = 3 PRINCIPLE">
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
               TEG-Blue doesn&apos;t invent the building blocks. Polyvagal Theory, Attachment Theory, Affective Neuroscience, Trauma Research — these are established. They are the{" "}
               <strong style={{ color: TEXT.primary }}>&quot;1&quot; and the &quot;2&quot;</strong>.
@@ -178,7 +120,7 @@ export default function ResearchEntryPage() {
             <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 500, margin: 0 }}>
               The individual theories are validated. The connections are our hypothesis. We need the scientific community to help us see if &quot;3&quot; makes sense.
             </p>
-          </div>
+          </MechanismBox>
         </section>
 
         {/* Status snapshot */}
@@ -220,22 +162,14 @@ export default function ResearchEntryPage() {
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             The core hypothesis we want help testing
           </h2>
-          <blockquote
-            style={{
-              margin: 0,
-              padding: "16px 20px",
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              background: hexToRgba(SPECTRUM.indigo, 0.05),
-              borderRadius: "0 8px 8px 0",
-              fontStyle: "italic",
-              color: TEXT.primary,
-              fontSize: 15,
-              lineHeight: 1.7,
-              marginBottom: 16,
-            }}
+          <PropositionBox
+            label="CORE HYPOTHESIS"
+            title="Return capacity predicts relational outcomes"
           >
-            The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong>capacity to return to Connection when challenged</strong>.
-          </blockquote>
+            <p style={{ margin: 0, fontStyle: "italic" }}>
+              The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong>capacity to return to Connection when challenged</strong>.
+            </p>
+          </PropositionBox>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
             We treat this as a testable hypothesis, not a slogan.
           </p>
@@ -407,7 +341,7 @@ function StatusCard({ label, color, description }) {
     <div
       style={{
         padding: 16,
-        background: BG.card,
+        background: gradientCardBg(color),
         borderRadius: 8,
         border: `1px solid ${BORDER.default}`,
         borderLeft: `3px solid ${color}`,
@@ -442,7 +376,7 @@ function LaneCard({ letter, title, description, needs, link, linkText }) {
     <div
       style={{
         padding: 20,
-        background: BG.card,
+        background: gradientCardBg(SPECTRUM.azure),
         borderRadius: 10,
         border: `1px solid ${BORDER.default}`,
         borderLeft: `3px solid ${SPECTRUM.azure}`,

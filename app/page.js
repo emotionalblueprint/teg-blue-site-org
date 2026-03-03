@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
-import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero, MechanismBox, PatternGradientBar } from "@/src/components";
 
 
 export const metadata = {
@@ -31,78 +31,21 @@ export default function ResearchHub() {
           style={{
             maxWidth: SPACING.containerMax,
             margin: "0 auto",
-            padding: "32px 24px 60px",
+            padding: `32px ${SPACING.pagePadding} 60px`,
           }}
         >
           {/* Hero Section */}
           <section style={{ marginBottom: 48 }}>
-            {/* Eyebrow */}
-            <p
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                color: SPECTRUM.blue,
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                marginBottom: 16,
-                fontFamily: FONT.mono,
-              }}
-            >
-              Emotional Technology Research
-            </p>
+            <ResearcherHero
+              badge="EMOTIONAL TECHNOLOGY RESEARCH"
+              title="Reconnecting cognition with emotional awareness"
+              subtitle="Open science — transparent research, credited sources, testable claims"
+              description="TEG-Blue maps how emotional awareness connects cognition and feeling — and what happens when it goes offline. Built on 139+ established theories. Open to critique and validation."
+            />
 
-            {/* Main statement */}
-            <h1
-              style={{
-                fontSize: 26,
-                fontWeight: 600,
-                color: TEXT.primary,
-                marginBottom: 16,
-                lineHeight: 1.4,
-                maxWidth: 600,
-              }}
-            >
-              Reconnecting cognition with emotional awareness
-            </h1>
-
-            {/* Open science promise */}
-            <p
-              style={{
-                fontSize: 15,
-                lineHeight: 1.7,
-                color: TEXT.secondary,
-                maxWidth: 600,
-                marginBottom: 16,
-              }}
-            >
-              The open science branch of TEG-Blue — where all research is transparent, all sources are credited, and all claims can be tested.
-            </p>
-
-            {/* Context */}
-            <p
-              style={{
-                fontSize: 14,
-                lineHeight: 1.7,
-                color: TEXT.muted,
-                maxWidth: 600,
-                marginBottom: 12,
-              }}
-            >
-              TEG-Blue maps how emotional awareness connects cognition and feeling — and what happens when it goes offline. The same mechanism operates at every scale: individual, relational, organizational, societal.
-            </p>
-
-            {/* Built on */}
-            <p
-              style={{
-                fontSize: 14,
-                lineHeight: 1.7,
-                color: TEXT.muted,
-                maxWidth: 600,
-                marginBottom: 24,
-              }}
-            >
-              Built on 139+ established theories. Open to critique and validation.
-            </p>
+            <div style={{ marginTop: 20, maxWidth: 500 }}>
+              <PatternGradientBar />
+            </div>
 
             <p
               style={{
@@ -110,11 +53,12 @@ export default function ResearchHub() {
                 lineHeight: 1.7,
                 color: TEXT.secondary,
                 maxWidth: 600,
+                marginTop: 24,
                 marginBottom: 24,
                 fontWeight: 500,
               }}
             >
-              The gap in emotional intelligence has never been a lack of good science. It has been a lack of architecture — a structure where the science connects, becomes visible, and becomes usable. That's what TEG-Blue is.
+              The gap in emotional intelligence has never been a lack of good science. It has been a lack of architecture — a structure where the science connects, becomes visible, and becomes usable. That&apos;s what TEG-Blue is.
             </p>
 
             {/* CTAs */}
@@ -126,7 +70,7 @@ export default function ResearchHub() {
                   alignItems: "center",
                   gap: 8,
                   padding: "12px 24px",
-                  background: SPECTRUM.blue,
+                  background: RESEARCHER.accent,
                   color: "#fff",
                   borderRadius: 8,
                   fontWeight: 500,
@@ -143,13 +87,13 @@ export default function ResearchHub() {
                   alignItems: "center",
                   gap: 8,
                   padding: "12px 24px",
-                  background: hexToRgba(SPECTRUM.blue, 0.1),
-                  color: SPECTRUM.blue,
+                  background: hexToRgba(RESEARCHER.accent, 0.1),
+                  color: RESEARCHER.accent,
                   borderRadius: 8,
                   fontWeight: 500,
                   fontSize: 14,
                   textDecoration: "none",
-                  border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
+                  border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
                 }}
               >
                 See Publications
@@ -217,7 +161,7 @@ export default function ResearchHub() {
               </ActionCard>
 
               {/* Two-column row for smaller cards */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 16 }}>
                 {/* Contribute */}
                 <ActionCard
                   color={SPECTRUM.cobalt}
@@ -275,10 +219,10 @@ export default function ResearchHub() {
 
             <div
               style={{
-                background: BG.card,
+                background: gradientCardBg(RESEARCHER.accent),
                 borderRadius: 10,
                 border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${SPECTRUM.blue}`,
+                borderLeft: `3px solid ${RESEARCHER.accent}`,
                 padding: "24px 28px",
                 marginBottom: 16,
               }}
@@ -305,10 +249,11 @@ export default function ResearchHub() {
 
               <div
                 style={{
-                  background: hexToRgba(SPECTRUM.indigo, 0.08),
+                  background: "linear-gradient(135deg, rgba(37,99,235,0.08), transparent)",
                   borderRadius: 8,
                   padding: "16px 20px",
                   marginBottom: 16,
+                  borderLeft: `3px solid ${RESEARCHER.accent}`,
                 }}
               >
                 <p
@@ -343,7 +288,7 @@ export default function ResearchHub() {
                     alignItems: "center",
                     gap: 6,
                     padding: "10px 18px",
-                    background: SPECTRUM.blue,
+                    background: RESEARCHER.accent,
                     color: "#fff",
                     borderRadius: 6,
                     fontWeight: 500,
@@ -360,13 +305,13 @@ export default function ResearchHub() {
                     alignItems: "center",
                     gap: 6,
                     padding: "10px 18px",
-                    background: hexToRgba(SPECTRUM.blue, 0.1),
-                    color: SPECTRUM.blue,
+                    background: hexToRgba(RESEARCHER.accent, 0.1),
+                    color: RESEARCHER.accent,
                     borderRadius: 6,
                     fontWeight: 500,
                     fontSize: 13,
                     textDecoration: "none",
-                    border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
+                    border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
                   }}
                 >
                   See methodology
@@ -626,7 +571,7 @@ function ActionCard({ color, title, description, children, compact = false }) {
   return (
     <div
       style={{
-        background: BG.card,
+        background: gradientCardBg(color),
         borderRadius: 10,
         border: `1px solid ${BORDER.default}`,
         borderLeft: `3px solid ${color}`,

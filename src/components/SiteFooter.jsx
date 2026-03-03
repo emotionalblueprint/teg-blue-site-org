@@ -14,11 +14,11 @@ export default function SiteFooter() {
       style={{
         maxWidth: SPACING.containerMax,
         margin: "0 auto",
-        padding: "40px 24px",
+        padding: `40px ${SPACING.pagePadding}`,
         textAlign: "center",
       }}
     >
-      <SpectrumBar />
+      <SpectrumBar variant="pattern" />
 
       <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
         TEG-Blue · Emotional Technology Research · Open Science

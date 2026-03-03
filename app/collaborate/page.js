@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 
 export const metadata = {
   title: "Collaborate | TEG-Blue Emotional Technology",
@@ -52,33 +52,14 @@ export default function CollaboratePage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Collaborate
-          </h1>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            How to work with us.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="COLLABORATE"
+          title="Research Collaboration"
+          description="Clear attribution, clear authorship expectations, clear boundaries. Open science as default."
+        />
 
         {/* Principles */}
         <section style={{ marginBottom: 32 }}>

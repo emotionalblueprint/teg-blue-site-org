@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
@@ -35,73 +35,14 @@ export default function AISafetyPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "48px 24px 80px",
+          padding: `48px ${SPACING.pagePadding} 80px`,
         }}
       >
-        {/* Hero Section */}
-        <header style={{ marginBottom: 64 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
-            <p
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                color: SPECTRUM.azure,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                fontFamily: FONT.mono,
-                margin: 0,
-              }}
-            >
-              Emotional Technology for AI
-            </p>
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: SPECTRUM.indigo,
-                padding: "4px 10px",
-                background: hexToRgba(SPECTRUM.indigo, 0.1),
-                borderRadius: 4,
-              }}
-            >
-              Status: Proposed architecture with early implementation
-            </span>
-          </div>
-          <h1
-            style={{
-              fontSize: 32,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 16,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.2,
-            }}
-          >
-            Emotional Technology for{" "}
-            <span
-              style={{
-                background: `linear-gradient(90deg, ${STATE.connection}, ${SPECTRUM.azure})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Safer AI
-            </span>
-          </h1>
-          <p
-            style={{
-              fontSize: 16,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              maxWidth: 640,
-            }}
-          >
-            AI safety systems classify human emotion as safe or unsafe. Reality operates on gradients.
-            TEG-Blue is the first complete emotional technology system — now machine-readable.
-          </p>
-        </header>
+        <ResearcherHero
+          badge="AI SAFETY"
+          title="AI Safety Applications"
+          description="How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems."
+        />
 
         {/* Scenario Block */}
         <section style={{ marginBottom: 64 }}>

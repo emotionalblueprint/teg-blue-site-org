@@ -1,6 +1,6 @@
 "use client";
 
-import { BG, TEXT, FONT, getContentTypeColor, hexToRgba } from "../styles/tokens";
+import { BG, TEXT, FONT, getContentTypeColor, hexToRgba, gradientCardBg } from "../styles/tokens";
 
 /**
  * ContextBlock — Summary + Key Finding
@@ -40,7 +40,7 @@ export default function ContextBlock({
             marginTop: 14,
             padding: "10px 14px",
             borderRadius: 6,
-            background: hexToRgba(color, 0.06),
+            background: `linear-gradient(135deg, ${hexToRgba(color, 0.08)}, transparent)`,
             borderLeft: `3px solid ${color}`,
           }}
         >

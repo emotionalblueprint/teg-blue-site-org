@@ -1,12 +1,25 @@
 "use client";
 
-import { SPECTRUM, BG, TEXT, BORDER, FONT, TRANSITION, hexToRgba } from "../styles/tokens";
+import { SPECTRUM, BG, TEXT, BORDER, FONT, TRANSITION, PATTERN_GRADIENT, hexToRgba } from "../styles/tokens";
 
 // ─── SPECTRUM BAR ────────────────────────────────────
 // Flat segmented bar showing all 6 spectrum colors.
 // Used on hub page header and footer.
 
-export function SpectrumBar({ height = 4 }) {
+export function SpectrumBar({ height = 4, variant = "spectrum" }) {
+  if (variant === "pattern") {
+    return (
+      <div
+        style={{
+          height,
+          borderRadius: height / 2,
+          background: PATTERN_GRADIENT,
+        }}
+        aria-hidden="true"
+      />
+    );
+  }
+
   const colors = Object.values(SPECTRUM);
   return (
     <div

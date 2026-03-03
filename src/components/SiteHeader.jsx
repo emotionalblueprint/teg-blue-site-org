@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
+
+const px = SPACING.pagePadding;
 import { SpectrumBar } from "./SharedComponents";
 
 /**
@@ -66,10 +68,10 @@ export default function SiteHeader({ currentPath = "/" }) {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "20px 24px 0",
+          padding: `20px ${px} 0`,
         }}
       >
-        <SpectrumBar />
+        <SpectrumBar variant="pattern" />
 
         {/* Logo + Title */}
         <div style={{ marginTop: 16, marginBottom: 16 }}>
@@ -138,7 +140,7 @@ export default function SiteHeader({ currentPath = "/" }) {
           style={{
             maxWidth: SPACING.containerMax,
             margin: "0 auto",
-            padding: "0 24px",
+            padding: `0 ${px}`,
             display: "flex",
             gap: 0,
           }}

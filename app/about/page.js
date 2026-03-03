@@ -1,5 +1,5 @@
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 
 const tableCellStyle = {
   padding: "12px 16px",
@@ -57,23 +57,14 @@ export default function AboutPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              marginBottom: 12,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            About
-          </h1>
-        </header>
+        <ResearcherHero
+          badge="ABOUT"
+          title="About TEG-Blue"
+          description="The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation."
+        />
 
         {/* What TEG-Blue is */}
         <section style={{ marginBottom: 32 }}>

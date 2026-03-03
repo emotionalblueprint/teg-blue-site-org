@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 
 // The 12 Frameworks with structured content
 const FRAMEWORKS = [
@@ -240,44 +240,18 @@ export default function TheoreticalFoundationsPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
         {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12, flexWrap: "wrap" }}>
-            <h1
-              style={{
-                fontSize: 28,
-                fontWeight: 700,
-                color: TEXT.primary,
-                letterSpacing: "-0.02em",
-                margin: 0,
-              }}
-            >
-              A Framework Mapping System with 12 levels
-            </h1>
-          </div>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.muted,
-              lineHeight: 1.6,
-              marginBottom: 20,
-            }}
-          >
-            A unified model linking regulation, identity, social systems, escalation, and repair.
-          </p>
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            <strong style={{ color: TEXT.primary }}>Most models describe either the inner world or the social world. TEG-Blue connects them as one system.</strong>
-          </p>
+        <ResearcherHero
+          badge="12 EXPLANATORY FRAMEWORKS"
+          title="A Framework Mapping System with 12 Levels"
+          subtitle="A unified model linking regulation, identity, social systems, escalation, and repair"
+          description="Most models describe either the inner world or the social world. TEG-Blue connects them as one system. The frameworks are interdependent because humans do not experience life in separate categories."
+        />
+
+        <div style={{ marginBottom: 32 }}>
           <p
             style={{
               fontSize: 14,
@@ -286,7 +260,7 @@ export default function TheoreticalFoundationsPage() {
               marginBottom: 16,
             }}
           >
-            The frameworks are interdependent because <strong style={{ color: TEXT.primary }}>humans do not experience life in separate categories</strong>. A nervous system state shapes perception. Perception shapes meaning. Meaning shapes identity. Identity shapes behavior. Behavior shapes what gets rewarded. And reward shapes the nervous system again.
+            A nervous system state shapes perception. Perception shapes meaning. Meaning shapes identity. Identity shapes behavior. Behavior shapes what gets rewarded. And reward shapes the nervous system again.
           </p>
           <p
             style={{
@@ -318,7 +292,7 @@ export default function TheoreticalFoundationsPage() {
           >
             The mapping system makes visible that what people do is strongly shaped by the conditions their system is adapting to, and by their capacity to return to <strong style={{ color: TEXT.primary }}>connection</strong> under challenge.
           </p>
-        </header>
+        </div>
 
         {/* Framework Arc Overview — 7 arcs */}
         <section style={{ marginBottom: 32 }}>
@@ -534,7 +508,7 @@ function ExpandableFrameworkCard({ framework }) {
     <div
       style={{
         marginBottom: 12,
-        background: BG.card,
+        background: gradientCardBg(arcColor),
         borderRadius: 10,
         border: `1px solid ${isOpen ? hexToRgba(arcColor, 0.3) : BORDER.default}`,
         borderLeft: `3px solid ${arcColor}`,

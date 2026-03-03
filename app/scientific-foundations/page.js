@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, SearchInput } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, SearchInput, ResearcherHero } from "@/src/components";
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
@@ -349,42 +349,15 @@ export default function ScientificFoundationsPage() {
         style={{
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: "32px 24px 60px",
+          padding: `32px ${SPACING.pagePadding} 60px`,
         }}
       >
         {/* ─── 1. HEADER ─────────────────────────────────────────── */}
-        <header style={{ marginBottom: 48 }}>
-          <h1
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              color: TEXT.primary,
-              letterSpacing: "-0.02em",
-              margin: "0 0 16px 0",
-            }}
-          >
-            Scientific Foundations
-          </h1>
-
-          <p
-            style={{
-              fontSize: 15,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              margin: "0 0 12px 0",
-            }}
-          >
-            TEG-Blue is built on established science across neuroscience, psychology, attachment,
-            trauma, and developmental research. This page shows what it builds on, how it extends
-            existing work, and how to inspect the evidence.
-          </p>
-          <p style={{ fontSize: 13, color: TEXT.muted, margin: 0 }}>
-            The question this page answers:{" "}
-            <em style={{ color: TEXT.secondary }}>
-              &ldquo;Is this grounded, or is it just vibes?&rdquo;
-            </em>
-          </p>
-        </header>
+        <ResearcherHero
+          badge="SCIENTIFIC FOUNDATIONS"
+          title="Scientific Foundations"
+          description="The established research that TEG-Blue builds on — 139+ theories across neuroscience, psychology, and related fields."
+        />
 
         {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
         <CoreFoundations />
