@@ -24,6 +24,7 @@ const PAGE_DATES = {
   '/framework/f4-rules-regulate': '2026-03-04',
   '/framework/f5-worth-hierarchies': '2026-03-04',
   '/framework/f6-bias-regulates': '2026-03-04',
+  '/framework/f7-domination-regulates': '2026-03-04',
 }
 
 export default function sitemap() {
@@ -148,6 +149,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/framework/f6-bias-regulates`,
       lastModified: new Date(PAGE_DATES['/framework/f6-bias-regulates']),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/framework/f7-domination-regulates`,
+      lastModified: new Date(PAGE_DATES['/framework/f7-domination-regulates']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },

@@ -126,8 +126,9 @@ const globalModels = [
       "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
       "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the compass in Protection",
       "F6 uses state-dependent perception to explain how regulatory state determines what is perceived — bias as neuroception operating at the cognitive level",
+      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Reading Emotions toward management while collapsing Emotional Resonance, producing the capacity configuration that most reliably mimics healthy Connection",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F12"],
   },
   {
     id: 5,
@@ -236,6 +237,7 @@ const globalModels = [
       "Reframes defenses as adaptive survival responses rather than pathology",
       "Places defenses on a gradient: protection, manipulation, tyranny — each requiring different responses",
       "Connects individual defense patterns to systemic harm and relational repair",
+      "F7 traces the complete pathway from defense through strategy through domination as a single reinforcement-driven trajectory — the five-stage escalation pathway with the Crossroads as the named transition from state-based defense to strategy-based control",
     ],
     frameworks: ["F3", "F7"],
   },

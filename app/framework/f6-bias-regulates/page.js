@@ -884,6 +884,7 @@ export default function F6BiasRegulatesPage() {
                   </tr>
                 </thead>
                 <tbody>
+                  <NavRow label="Read the next collective framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="Read the worth-sorting framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate \u2192" />
                   <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />

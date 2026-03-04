@@ -112,20 +112,20 @@ const FRAMEWORKS = [
   },
   {
     id: "F7",
-    displayName: "Defense-to-Domination Escalation",
-    title: "The Anatomy of Tyranny",
-    subtitle: "Escalation Markers and Intervention Windows",
+    displayName: "Domination Regulates",
+    title: "How Defense Becomes Strategy Becomes Domination",
+    subtitle: "The Crossroads, Five-Stage Pathway, and Empathy Gating",
     arc: "Turning Point",
-    purpose: "Map the specific conditions and mechanisms that allow Protection to escalate through Control into Domination — the crossroads where kind children become tyrannical adults.",
-    summary: "How protection escalates through control into domination — the crossroads where defense becomes strategy.",
-    buildsOn: "Power and dominance research, coercive control literature, moral disengagement, narcissism research, perpetrator psychology.",
+    purpose: "Explain how bias (F6) hardens into enforcement — through a five-stage escalation pathway driven by reinforcement, not character — producing identifiable markers and intervention windows at each stage. The final framework in the collective arc (F4–F7), completing the regulation thread.",
+    summary: "How defense becomes strategy, strategy becomes domination, and domination becomes the nervous system's primary regulation source — built through reinforcement, not born. A five-stage pathway with a three-capacity empathy gating model and addiction logic explaining why escalation never stops.",
+    buildsOn: "Behavioral reinforcement (Skinner), psychoanalytic theory (Kohut, Kernberg), organizational psychology (Argyris & Schön), neuroscience (Porges, Siegel, Schore), trauma psychology (Van der Kolk, Herman), abuse research (Bancroft), attachment theory (Bowlby), addiction research, systems theory.",
     claims: [
-      "Domination is threat regulation plus power access — mechanism, not character",
-      "The crossroads (defense → strategy) has recognizable signals: repair disappears, reality gets reframed, accountability triggers escalation",
-      "Empathy collapse is state-dependent — it narrows, then goes offline entirely",
-      "Intervention windows close as escalation proceeds; stage-appropriate response is essential",
+      "Domination is built through reinforcement, not born — the same learning mechanism that shapes all behavior, interruptible at specific stages",
+      "The Crossroads is a named critical turning point where defense becomes strategy, recognizable through ten early escalation markers",
+      "Empathy gating follows a three-capacity model: RE redirects, ER collapses, SEA was never there — the most harmful configuration has the least visibility",
+      "External regulation through subjugation builds tolerance with no natural stopping point — addiction logic applied to relational domination",
     ],
-    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding domination markers in language with reliability. Intervention design focusing on crossroads identification.",
+    testable: "Behavioral outcome prediction under stress and power asymmetry. Coding Crossroads markers and five-stage progression in language. Testing whether stage-appropriate intervention outperforms generic approaches. Validating the three-capacity empathy gating model.",
   },
   {
     id: "F8",
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : "/framework/f6-bias-regulates"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : "/framework/f7-domination-regulates"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
