@@ -164,7 +164,7 @@ export default function F1EmotionalGradientPage() {
                   The nervous system continuously evaluates one question: <em>Is there enough safety to engage, or is protection needed?</em>
                 </li>
                 <li style={propositionItemStyle}>
-                  Health is not staying in Connection permanently. Health is the ability to move through the gradient and come back
+                  A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and come back
                 </li>
                 <li style={propositionItemStyle}>
                   What a person can perceive, think, feel, and do depends on their current regulatory state
@@ -385,7 +385,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <KeyStatement>
-                Health is not staying in Connection permanently. Health is the needle moving — responding, orienting, and coming back.
+                A fluid compass does not stay in Connection permanently. Fluid operation is the needle moving — responding, orienting, and coming back.
               </KeyStatement>
 
               <p style={proseStyle}>
@@ -407,7 +407,7 @@ export default function F1EmotionalGradientPage() {
 
                 <ExpandableSection title="TEG-Blue Contribution" type="framework">
                   <p style={expandedProseStyle}>
-                    The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in." The compass reframes health from a state to a capacity: not where the needle is, but whether it can move.
+                    The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in." The compass reframes the diagnostic question — from state to capacity: not where the needle is, but whether it can move.
                   </p>
                 </ExpandableSection>
               </div>
@@ -619,7 +619,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                The complete cycle is: Perception → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: TEXT.primary }}>Biological Restoration</strong> → Connection. Health is not the absence of Protection. Health is the full cycle — the ability to move into threat response when needed and come back when the threat has passed. Biological Restoration is the mechanism of coming back.
+                The complete cycle is: Perception → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: TEXT.primary }}>Biological Restoration</strong> → Connection. Fluid operation is not the absence of Protection. It is the full cycle — the ability to move into threat response when needed and come back when the threat has passed. Biological Restoration is the mechanism of coming back.
               </p>
 
               <h4 style={subheadingStyle}>Biological Restoration across the Full Gradient</h4>
@@ -1032,7 +1032,7 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["Emotions as biological information", "The nervous system's signalling language — the medium through which the body's evaluation of safety and threat gets delivered. The body's first language. Interpret, don't suppress."]} />
                   <TableRow cells={["The safety orientation question", "One question generates all emotional diversity: \"Is there enough safety?\""]} />
                   <TableRow cells={["Cross-theoretical convergence", "Six traditions describe the same two-mode orientation."]} />
-                  <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Health is not a position — it is the needle moving freely."]} />
+                  <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
                   <TableRow cells={["How the compass moves", "Five-step sequence from perception to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
                   <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
                   <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The hinge of the entire twelve-framework system."]} />
@@ -1061,7 +1061,7 @@ export default function F1EmotionalGradientPage() {
                   "The nervous system evaluates, emotions signal, the organism orients",
                   "The body's first language — cognition is the second",
                   "The question is not 'how do I manage this emotion?' but 'what is this signal telling me?'",
-                  "Health is not staying in Connection permanently — health is the ability to move through the gradient and come back",
+                  "A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and come back",
                   "Biological Restoration is the mechanism of coming back",
                   "Biological Restoration cannot be forced. It can only be allowed.",
                   "What is commonly called 'regulation' is often its opposite",
