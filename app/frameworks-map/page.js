@@ -329,7 +329,7 @@ export default function TheoreticalFoundationsPage() {
                 F1 (Foundation)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                Where emotion begins — how the nervous system orients between safety and threat
+                Emotion as biological information — the four-mode gradient from Connection through Domination, where health is mobility, not position
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -344,7 +344,7 @@ export default function TheoreticalFoundationsPage() {
                 F2–F3 (Formation)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How identity crystallizes and how cognition maintains coherence
+                How awareness calibrates across three capacities, and how cognition maintains coherent identity — even at the cost of accuracy
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -359,7 +359,7 @@ export default function TheoreticalFoundationsPage() {
                 F4–F6 (Scaling)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How individual patterns become social rules, worth hierarchies, and perception biases
+                How individual regulation becomes social rules, worth hierarchies, and perception biases — the mechanisms that turn personal patterns into collective structures
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -374,7 +374,7 @@ export default function TheoreticalFoundationsPage() {
                 F7 (Turning Point)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How protection escalates through control into domination
+                How protection escalates into domination through reinforcement — a five-stage pathway driven by addiction logic, not character
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -389,7 +389,7 @@ export default function TheoreticalFoundationsPage() {
                 F8–F10 (Healing)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                Self-reconnection, neurodivergent pathways, and intergenerational repair
+                How awareness repairs, how neurodivergent systems navigate the gradient differently, and how generational patterns transmit and shift
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -419,7 +419,7 @@ export default function TheoreticalFoundationsPage() {
                 F12 (Architecture)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                The operating system underneath — two parallel information systems generating all behavior
+                Two parallel information systems — emotional-somatic and cognitive-logical — and why insight alone doesn{"'"}t change behavior
               </span>
             </div>
           </div>
