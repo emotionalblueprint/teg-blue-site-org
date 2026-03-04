@@ -181,7 +181,7 @@ const FRAMEWORKS = [
   {
     id: "F11",
     displayName: "The Emotional Logic Behind Paradoxes",
-    title: "The Emotional Logic Behind Paradoxes",
+    title: "Multi-Rationality and Holding Capacity",
     subtitle: "Why Contradictions Are Logical When the Full Picture Becomes Visible",
     arc: "Integration",
     purpose: "Map the contradictions that become visible when the system starts working as designed — showing that every apparent paradox is the predictable outcome of a system pursuing multiple valid needs simultaneously.",
@@ -198,7 +198,7 @@ const FRAMEWORKS = [
   {
     id: "F12",
     displayName: "Our Two Information Systems",
-    title: "Our Two Information Systems",
+    title: "The Architecture Underneath",
     subtitle: "Why Insight Alone Doesn't Change Behavior and What Actually Does",
     arc: "Architecture",
     purpose: "Reveal the architecture underneath all twelve frameworks: two parallel information systems — emotional-somatic and cognitive-logical — running simultaneously at different speeds, explaining why insight alone doesn't produce change and what actually does.",
@@ -213,6 +213,22 @@ const FRAMEWORKS = [
     testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Gradient-matched intervention outcomes by compass position. Cross-framework coherence as unified architecture.",
   },
 ];
+
+// Framework page paths — all 12 complete
+const FRAMEWORK_PATHS = {
+  F1: "/framework/f1-emotional-gradient",
+  F2: "/framework/f2-awareness-calibration",
+  F3: "/framework/f3-false-coherence",
+  F4: "/framework/f4-rules-regulate",
+  F5: "/framework/f5-worth-hierarchies",
+  F6: "/framework/f6-bias-regulates",
+  F7: "/framework/f7-domination-regulates",
+  F8: "/framework/f8-repairing-awareness",
+  F9: "/framework/f9-neurodivergence-variation",
+  F10: "/framework/f10-generational-bridges",
+  F11: "/framework/f11-emotional-paradoxes",
+  F12: "/framework/f12-two-information-systems",
+};
 
 // Arc colors — 7 arcs matching the Interdependency Matrix
 const arcColors = {
@@ -388,7 +404,7 @@ export default function TheoreticalFoundationsPage() {
                 F11 (Integration)
               </span>
               <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6 }}>
-                How contradictions resolve when state logic is included
+                Why contradictions are logical when the full picture becomes visible — and why holding, not resolving, is the achievement
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
@@ -654,22 +670,20 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8" || framework.id === "F9" || framework.id === "F10" || framework.id === "F11" || framework.id === "F12") && (
-              <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : framework.id === "F8" ? "/framework/f8-repairing-awareness" : framework.id === "F9" ? "/framework/f9-neurodivergence-variation" : framework.id === "F10" ? "/framework/f10-generational-bridges" : framework.id === "F11" ? "/framework/f11-emotional-paradoxes" : "/framework/f12-two-information-systems"}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: arcColor,
-                  textDecoration: "none",
-                }}
-              >
-                Read full framework →
-              </Link>
-            )}
+            <Link
+              href={FRAMEWORK_PATHS[framework.id]}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                fontSize: 13,
+                fontWeight: 500,
+                color: arcColor,
+                textDecoration: "none",
+              }}
+            >
+              Read full framework →
+            </Link>
             <a
               href={`https://teg-blue.com/mapping-system/following-nervous-system/${framework.id.toLowerCase()}`}
               target="_blank"
