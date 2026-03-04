@@ -127,8 +127,9 @@ const globalModels = [
       "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the compass in Protection",
       "F6 uses state-dependent perception to explain how regulatory state determines what is perceived — bias as neuroception operating at the cognitive level",
       "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Reading Emotions toward management while collapsing Emotional Resonance, producing the capacity configuration that most reliably mimics healthy Connection",
+      "F8 maps how ventral vagal safety enables capacity development — felt safety as the first of five conditions for repair, and why cognitive insight without nervous system regulation cannot produce lasting change",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F12"],
   },
   {
     id: 5,

@@ -129,20 +129,20 @@ const FRAMEWORKS = [
   },
   {
     id: "F8",
-    displayName: "Self-Reconnection and Role Mask Loosening",
-    title: "Our True Self",
-    subtitle: "From Survival Identity to Truth Tolerance",
+    displayName: "Repairing Awareness",
+    title: "How the Three Capacities Develop and Why Difference Is Strength",
+    subtitle: "From Assessment Through Repair to Collective Intelligence",
     arc: "Healing",
-    purpose: "Explain the mechanisms of self-reconnection: how sustained safety allows the Role Mask to loosen without destabilizing, enabling gradual return to the Real Self.",
-    summary: "How sustained safety allows the Role Mask to loosen, enabling gradual return to the Real Self.",
-    buildsOn: "Metacognition, mindfulness research, emotion differentiation, reflective functioning, mentalization theory.",
+    purpose: "Explain how the three awareness capacities can be assessed, why repair is difficult, what conditions enable it, and what the process looks like — then show why different configurations make the collective stronger than conformity allows.",
+    summary: "How awareness configurations can be assessed, what conditions enable capacity development, and why different configurations make the collective stronger than conformity.",
+    buildsOn: "Winnicott's True/False Self, Rogers' organismic valuing, IFS, mentalization theory, Polyvagal Theory, corrective emotional experience research.",
     claims: [
-      "Self-awareness is state-dependent — it cannot be willed into existence without sufficient safety",
-      "Higher self-awareness predicts better return capacity and repair outcomes",
-      "The Role Mask loosens when safety is sustained, not when insight is achieved",
-      "Repair requires building tolerance for truth, not just understanding patterns",
+      "Awareness capacities can be assessed across five distinct states — from fully disconnected to reliably available under pressure",
+      "Repair requires five specific conditions (felt safety, accurate mirroring, discomfort tolerance, permission, time) and proceeds through five identifiable phases",
+      "Oscillation between old and new patterns is not failure but the nervous system's natural consolidation process",
+      "Different awareness configurations see different things — collective intelligence requires diversity, not conformity",
     ],
-    testable: "Links between emotional granularity and conflict outcomes. Markers of reflective functioning in language under pressure. Training effects on return capacity.",
+    testable: "Five-state capacity assessment validated against clinical observation. Five-condition model tested in therapeutic settings. Oscillation frequency as repair progress indicator. Diverse-configuration teams outperforming uniform teams on complex problems.",
   },
   {
     id: "F9",
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : "/framework/f7-domination-regulates"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : "/framework/f8-repairing-awareness"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
