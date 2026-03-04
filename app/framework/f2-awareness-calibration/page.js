@@ -1035,6 +1035,12 @@ export default function F2AwarenessCalibrationPage() {
             <KeyStatement>
               F2 explains how the calibration was set. F3 explains why it holds — and why it is so hard to change.
             </KeyStatement>
+
+            <p style={proseStyle}>
+              <Link href="/framework/f3-false-coherence" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
+                Read the full F3 framework: Adult Cognition & False Coherence →
+              </Link>
+            </p>
           </section>
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
@@ -1066,6 +1072,7 @@ export default function F2AwarenessCalibrationPage() {
                 </thead>
                 <tbody>
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
+                  <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
                   <NavRow label="See the four modes as a measurement system" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />

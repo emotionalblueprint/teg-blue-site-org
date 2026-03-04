@@ -44,19 +44,19 @@ const FRAMEWORKS = [
   {
     id: "F3",
     displayName: "Adult Cognition and False Coherence",
-    title: "Our Three Inner Layers",
-    subtitle: "Dissonance and Contradiction Management",
+    title: "False Coherence",
+    subtitle: "Cognitive Regulation and Its Relational Consequences",
     arc: "Formation",
-    purpose: "Explain how state-dependent cognition operates to maintain identity coherence under nervous system pressure, producing systematic self-deception.",
-    summary: "How cognition maintains identity coherence under nervous system pressure, producing rationalization and motivated reasoning.",
-    buildsOn: "Cognitive dissonance theory, dual-process cognition, motivated reasoning research, self-justification literature, state-dependent learning.",
+    purpose: "Explain how cognition maintains the identity structures built in childhood — actively replacing emotional signals with invented narratives — and what this system does to the people around it through emotional distortion and external regulation.",
+    summary: "How cognition, still on threat duty from childhood, replaces emotional signals with invented narratives. False coherence is regulation at the cost of truth. When this system extends into relationships, it produces emotional distortion and external regulation.",
+    buildsOn: "Psychoanalytic theory, cognitive dissonance theory, family systems, polyvagal-informed neuroscience, trauma studies, IFS, attachment theory, addiction research.",
     claims: [
-      "Humans can show different 'selves' across states without pathology — these are layer activations",
-      "Some contradictions are state-protective distortion, not conscious deceit",
-      "The Logic Layer maintains the Role Mask through coherence-seeking under threat",
-      "Repair requires integration and increased tolerance for truth, not suppression",
+      "False coherence is regulatory success at the cost of emotional truth — not deception, but cognition regulating what the body was never taught to regulate",
+      "When SEA is structurally absent, internal discomfort becomes perceived external threat — emotional distortion is sincere misattribution, not manipulation",
+      "External regulation uses others to manage what cannot be processed internally — fusion, distance, management, or subjugation depending on chronic mode",
+      "Safety must precede truth — challenging false coherence directly increases threat because you are confronting the person's only regulatory system",
     ],
-    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on coherence markers. Prediction of rationalization patterns from regulatory state.",
+    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on coherence markers. Prediction of rationalization patterns from regulatory state. Boundary-evidence loop patterns in relational transcripts.",
   },
   {
     id: "F4",
@@ -653,9 +653,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : "/framework/f2-awareness-calibration"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : "/framework/f3-false-coherence"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
