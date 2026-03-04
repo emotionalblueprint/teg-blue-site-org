@@ -80,6 +80,48 @@ export default function F2AwarenessCalibrationPage() {
           description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. The calibration framework of the TEG-Blue system."
         />
 
+        {/* ─── THREE CAPACITIES LEGEND ──────────────────── */}
+        <div
+          style={{
+            margin: "32px 0 0",
+            padding: "16px 20px",
+            background: hexToRgba(SPECTRUM.cobalt, 0.06),
+            borderRadius: 10,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+          }}
+        >
+          <h2
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              color: SPECTRUM.cobalt,
+              textTransform: "uppercase",
+              letterSpacing: "0.06em",
+              fontFamily: FONT.mono,
+              marginBottom: 10,
+            }}
+          >
+            The three awareness capacities
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: TEXT.primary }}>RE — Reading Emotions</strong>{" "}
+              <span style={{ color: TEXT.muted }}>|</span>{" "}
+              Perceiving what others are feeling — detecting emotional signals from faces, tone, body language, and context.
+            </p>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: TEXT.primary }}>ER — Emotional Resonance</strong>{" "}
+              <span style={{ color: TEXT.muted }}>|</span>{" "}
+              Feeling what others are feeling — the body's capacity to resonate with another person's emotional state.
+            </p>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: TEXT.primary }}>SEA — Self-Emotional Awareness</strong>{" "}
+              <span style={{ color: TEXT.muted }}>|</span>{" "}
+              Perceiving and naming your own internal state — the capacity that separates "I feel bad" from "I feel guilty because I hurt someone."
+            </p>
+          </div>
+        </div>
+
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"
