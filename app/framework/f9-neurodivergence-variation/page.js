@@ -916,6 +916,7 @@ export default function F9NeurodivergenceVariationPage() {
                   </tr>
                 </thead>
                 <tbody>
+                  <NavRow label="Read the generational framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
                   <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />

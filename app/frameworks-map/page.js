@@ -163,20 +163,20 @@ const FRAMEWORKS = [
   },
   {
     id: "F10",
-    displayName: "Intergenerational Transmission and Repair",
-    title: "Rebuilding Generational Bridges",
-    subtitle: "Family-Scale Safety and Lineage Repair",
+    displayName: "Rebuilding Generational Bridges",
+    title: "How Patterns Transmit and How Repair Changes What the Next Generation Inherits",
+    subtitle: "From Transmission Through Processing to Generational Change",
     arc: "Healing",
-    purpose: "Explain how emotional patterns, Role Masks, and regulatory strategies pass from one generation to the next, and the specific conditions that enable interruption and lineage repair.",
-    summary: "How emotional patterns pass across generations, and the conditions that enable interruption and repair.",
-    buildsOn: "Intergenerational trauma research, family systems theory, epigenetics, rupture and repair research, ACEs literature.",
+    purpose: "Explain how emotional patterns transmit across generations through five simultaneous pathways, why single interventions often fail, and how adult repair genuinely changes the conditions the next generation develops within.",
+    summary: "How patterns transmit through five pathways, why processing changes what transmits, and how enough repair shifts the generational baseline.",
+    buildsOn: "Family Systems (Bowen, Satir, Minuchin), Attachment Theory (Main, Hesse), intergenerational trauma research (van der Kolk, Herman), epigenetics (Yehuda, Meaney), Narrative Therapy (White, Epston), interpersonal neurobiology (Porges, Siegel, Schore).",
     claims: [
-      "Patterns transmit through regulatory modeling, not just explicit teaching",
-      "Intergenerational repair requires one generation to build capacity the previous couldn't",
-      "Accountability is a regulated-state behavior — it requires sufficient safety to tolerate",
-      "Repair fails when protection and control stay rewarded; succeeds when return capacity increases",
+      "Patterns transmit through five simultaneous pathways — single interventions fail because they address one while four continue",
+      "What the adult embodies, the child absorbs — the child reads the nervous system, not the intention or knowledge",
+      "What isn't processed gets passed on — but processing develops awareness capacities that change what transmits",
+      "Repair does not require perfection — enough capacity development shifts the generational baseline",
     ],
-    testable: "Coding repair attempts and outcomes in transcripts. Predictive models from return markers. Intergenerational comparison of regulatory patterns.",
+    testable: "Earned security replication with three-capacity assessment. Five-pathway intervention compared to single-pathway. Compass mobility in parent predicting capacity development in child. Compound effect across three generations.",
   },
   {
     id: "F11",
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8" || framework.id === "F9") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8" || framework.id === "F9" || framework.id === "F10") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : framework.id === "F8" ? "/framework/f8-repairing-awareness" : "/framework/f9-neurodivergence-variation"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : framework.id === "F8" ? "/framework/f8-repairing-awareness" : framework.id === "F9" ? "/framework/f9-neurodivergence-variation" : "/framework/f10-generational-bridges"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
