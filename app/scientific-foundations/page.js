@@ -130,8 +130,9 @@ const globalModels = [
       "F8 maps how ventral vagal safety enables capacity development — felt safety as the first of five conditions for repair, and why cognitive insight without nervous system regulation cannot produce lasting change",
       "F9 uses neuroception to explain System Mismatch — how the compass responds to environmental match or mismatch, why neurodivergent nervous systems are pushed toward Protection by structural design rather than individual pathology",
       "F10 maps co-regulation as a generational transmission pathway — the adult's nervous system functions as the child's external regulator, transmitting regulatory capacity through nervous system synchronization",
+      "F11 uses state-dependent processing to explain paradox holding capacity — compass position determines whether contradictions can be held (Connection), simplified (Protection), managed by narrative (Control), or erased (Domination)",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"],
   },
   {
     id: 5,
@@ -191,7 +192,7 @@ const globalModels = [
       "Distinguishes adaptive identities rooted in belonging from those rooted in defense, control, or domination",
       "Provides concrete pathways for developing capacities and reclaiming authenticity",
     ],
-    frameworks: ["F2", "F3", "F5"],
+    frameworks: ["F2", "F3", "F5", "F11"],
   },
   {
     id: 10,
@@ -204,7 +205,7 @@ const globalModels = [
       "F4 maps IFS's protective parts as internal rule-enforcers — the self-policing mechanism (Steps 6–7 of rule internalization)",
       "Adds harm-measurement scales that connect personal healing to collective repair",
     ],
-    frameworks: ["F3", "F4", "F5", "F8"],
+    frameworks: ["F3", "F4", "F5", "F8", "F11"],
   },
   {
     id: 11,
@@ -255,7 +256,7 @@ const globalModels = [
       "F6 maps dissonance as the mechanism driving the six-step bias formation loop — uncertainty triggers fast interpretation that fuses with identity and resists revision",
       "Provides repair tools to face contradictions without causing further harm",
     ],
-    frameworks: ["F3", "F6", "F7"],
+    frameworks: ["F3", "F6", "F7", "F11"],
   },
   {
     id: 15,
@@ -269,7 +270,7 @@ const globalModels = [
       "F5 traces how conditional safety produces worth-seeking as regulation — and how chronic invisibility from structural filtering produces allostatic load and weathering",
       "Provides gradients and tools for relational repair and nervous system healing",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F8", "F10"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F8", "F10", "F12"],
   },
 ];
 

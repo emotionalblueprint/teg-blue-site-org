@@ -876,7 +876,7 @@ const GLOSSARY_TERMS = [
     tags: ["F10", "generational", "narrative"],
     framework: 10,
   },
-  // ===== F11: HUMAN PARADOXES =====
+  // ===== F11: THE EMOTIONAL LOGIC BEHIND PARADOXES =====
   {
     slug: "multi-rationality",
     title: "Multi-Rationality",
@@ -891,7 +891,7 @@ const GLOSSARY_TERMS = [
     title: "Competing Needs",
     type: "concept",
     status: "proposed",
-    definition: "Human contradictions emerge when the emotional system holds needs that cannot be simultaneously satisfied. Core competing needs include: Connection (belonging, attachment, being seen), Protection (safety, boundaries, avoiding harm), Authenticity (Real Self expression, truth), Belonging (group membership, acceptance), and Coherence (making sense, predictability). These needs often conflict — wanting love while pushing it away, demanding honesty while punishing it, achieving success that feels empty.",
+    definition: "Human contradictions emerge when the emotional system holds needs that cannot be simultaneously satisfied. Five core competing needs generate characteristic paradoxes: Connection (belonging, attachment, being seen, co-regulation), Protection (safety, boundaries, threat avoidance, survival), Authenticity (genuine expression, configuration honesty, emotional truth), Belonging (group membership, social acceptance, not being excluded), and Coherence (making sense, predictability, internal consistency). When any two conflict, behavior serves multiple masters — the result looks contradictory from outside but is perfectly logical from inside.",
     tags: ["F11", "paradox", "needs"],
     framework: 11,
   },
@@ -900,17 +900,17 @@ const GLOSSARY_TERMS = [
     title: "Paradox Cascade",
     type: "concept",
     status: "proposed",
-    definition: "How contradictions become invisible through systematic layering: (1) Initial contradiction emerges from competing needs → (2) Logic Layer constructs explanation that hides the contradiction → (3) Role Mask develops behaviors that manage both needs → (4) Social systems reinforce the pattern through rules and worth-sorting → (5) Generational transmission passes the pattern forward as 'normal' → (6) The contradiction becomes invisible — just 'how things are.' Each framework generates characteristic paradoxes through this cascade.",
+    definition: "How contradictions become invisible through six identifiable levels: (1) Initial contradiction emerges from competing needs, (2) False coherence (F3) constructs an explanation that hides the contradiction, (3) The adaptive identity absorbs the explanation — it becomes 'who I am,' (4) Rules and worth systems (F4–F5) reinforce the performance and punish the contradiction, (5) Generational transmission (F10) passes the pattern forward as 'how things are,' (6) The contradiction becomes invisible — experienced as normal and natural. A contradiction that has cascaded through all six levels cannot be addressed at one level alone.",
     tags: ["F11", "paradox", "mechanism"],
     framework: 11,
   },
   {
-    slug: "collapse-patterns",
-    title: "Collapse Patterns",
+    slug: "paradox-as-diagnostic",
+    title: "Paradox as Diagnostic",
     type: "concept",
     status: "proposed",
-    definition: "What happens when paradox exceeds holding capacity. Four patterns: (1) Forced Resolution — one side chosen, other suppressed; presents as rigid certainty, shadow formation; (2) Paralysis — neither side chosen, system freezes; presents as indecision, avoidance, shutdown; (3) Fragmentation — parts act without integration; presents as dissociation, switching, confusion; (4) Projection — one side located in others; presents as conflict, judgment, enemy-making. These are not character flaws but nervous system responses to uncontainable contradiction.",
-    tags: ["F11", "paradox", "collapse"],
+    definition: "How a person relates to their own contradictions reveals their compass position. In Connection: can name both sides without distress — likely has enough safety for complexity. In Protection: oscillates between sides with anxiety — the system is reducing cognitive load under threat. In Control: has a smooth, coherent narrative that eliminates one side — false coherence performing integration (the smooth story should worry you more than the messy one). In Domination: denies the contradiction exists and attacks anyone who names it. Clinically useful because it reveals state rather than self-report.",
+    tags: ["F11", "paradox", "diagnostic"],
     framework: 11,
   },
   {
@@ -940,7 +940,7 @@ const GLOSSARY_TERMS = [
     tags: ["F11", "paradox", "intervention"],
     framework: 11,
   },
-  // ===== F12: STATE-DEPENDENT COHERENCE =====
+  // ===== F12: OUR TWO INFORMATION SYSTEMS =====
   {
     slug: "two-information-systems",
     title: "Two Information Systems",

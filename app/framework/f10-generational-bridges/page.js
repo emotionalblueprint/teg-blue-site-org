@@ -904,6 +904,7 @@ export default function F10GenerationalBridgesPage() {
                   </tr>
                 </thead>
                 <tbody>
+                  <NavRow label="Read the emotional paradoxes framework (F11)" href="/framework/f11-emotional-paradoxes" linkText="The Emotional Logic Behind Paradoxes \u2192" />
                   <NavRow label="Read the neurodivergence framework (F9)" href="/framework/f9-neurodivergence-variation" linkText="Neurodivergence as Nervous System Variation \u2192" />
                   <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />

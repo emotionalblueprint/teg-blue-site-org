@@ -180,37 +180,37 @@ const FRAMEWORKS = [
   },
   {
     id: "F11",
-    displayName: "Making Sense of Contradiction",
-    title: "Making Sense of Contradiction",
-    subtitle: "Making Sense of Contradiction",
+    displayName: "The Emotional Logic Behind Paradoxes",
+    title: "The Emotional Logic Behind Paradoxes",
+    subtitle: "Why Contradictions Are Logical When the Full Picture Becomes Visible",
     arc: "Integration",
-    purpose: "Explain how contradictions emerge predictably when emotional survival structures meet healing — serving as the integration lens that applies Frameworks 1–10 to paradoxical behavior.",
-    summary: "How contradictions emerge predictably when emotional survival structures meet healing — and resolve when state logic is included.",
-    buildsOn: "State-dependent cognition, dual-process work, trauma adaptation, motivated reasoning, self-justification research.",
+    purpose: "Map the contradictions that become visible when the system starts working as designed — showing that every apparent paradox is the predictable outcome of a system pursuing multiple valid needs simultaneously.",
+    summary: "Paradoxical behavior is multi-rational — it serves multiple valid needs simultaneously. Every framework (F1–F10) generates characteristic paradoxes. The capacity to hold paradox depends on compass position. True coherence is holding contradiction, not eliminating it.",
+    buildsOn: "Cognitive dissonance (Festinger), analytical psychology (Jung), systems theory (Bateson), Internal Family Systems (Schwartz), dialectics (Hegel), affective neuroscience (Damasio, Porges).",
     claims: [
-      "Apparent contradictions are often state shifts, not hypocrisy or pathology",
-      "Some distortion is conscious (strategic), some is state-protective (invisible to self)",
-      "Moral reasoning is state-dependent — it shifts with threat and worth pressure",
-      "Paradox tolerance increases with regulatory flexibility; decreases under threat",
+      "Paradoxical behavior is multi-rational — serving multiple valid needs simultaneously, not a failure of consistency",
+      "Every framework (F1–F10) generates characteristic paradoxes that follow predictably from each mechanism's specific logic",
+      "The capacity to hold paradox depends on compass position — Connection enables holding, Domination erases",
+      "Integration means holding, not resolving — true coherence is the capacity to contain contradiction without collapsing",
     ],
-    testable: "Within-person contradiction mapping across contexts. Marker sets for moral reasoning shifts in language. Links between shame activation and distortion patterns.",
+    testable: "Paradox-holding capacity correlated with compass flexibility. Paradox expression as diagnostic of compass position. Multi-rationality framework applied to predict which paradoxes emerge from which framework mechanisms.",
   },
   {
     id: "F12",
-    displayName: "Two Information Systems",
-    title: "State-Dependent Coherence",
-    subtitle: "How Two Parallel Systems Generate All Behavior",
+    displayName: "Our Two Information Systems",
+    title: "Our Two Information Systems",
+    subtitle: "Why Insight Alone Doesn't Change Behavior and What Actually Does",
     arc: "Architecture",
-    purpose: "Provide the integrative architecture underlying all previous frameworks — demonstrating how a single mechanism (state-dependent nervous system organization) creates the full diversity of human behavior.",
-    summary: "Human behavior is organized by the interaction of two parallel information systems: the Cognitive-Logical System (language, reasoning, planning — conscious, slow) and the Emotional-Somatic System (safety/threat detection, relational cues — unconscious, fast). State precedes capacity.",
-    buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma and body-based approaches (van der Kolk, Levine), attachment as regulatory system (Bowlby, Schore, Siegel).",
+    purpose: "Reveal the architecture underneath all twelve frameworks: two parallel information systems — emotional-somatic and cognitive-logical — running simultaneously at different speeds, explaining why insight alone doesn't produce change and what actually does.",
+    summary: "Two parallel information systems run simultaneously at different speeds. The emotional-somatic system arrives first (milliseconds); cognition narrates afterward (seconds). This explains why insight doesn't change behavior, what actually does, and why TEG-Blue is one mechanism described from twelve angles.",
+    buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma research (van der Kolk, Levine, Ogden), interpersonal neurobiology (Siegel, Schore), situational psychology (Milgram, Zimbardo).",
     claims: [
       "The emotional-somatic system determines what rational behavior is available — state precedes capacity",
-      "Insight alone doesn't change behavior because the emotional-somatic system organizes response before cognition arrives (milliseconds vs. seconds)",
-      "Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience",
-      "The four modes describe a continuous gradient; all frameworks (F1-F11) map onto this two-system architecture",
+      "Insight alone doesn't change behavior because the cognitive system narrates a process already underway — it does not direct it",
+      "Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience, titrated exposure, time",
+      "All twelve frameworks describe the same mechanism (state-dependent nervous system organization) from different angles — the scale changes, the mechanism doesn't",
     ],
-    testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Cross-theoretical validation with dual-process research.",
+    testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Gradient-matched intervention outcomes by compass position. Cross-framework coherence as unified architecture.",
   },
 ];
 
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8" || framework.id === "F9" || framework.id === "F10") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8" || framework.id === "F9" || framework.id === "F10" || framework.id === "F11" || framework.id === "F12") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : framework.id === "F8" ? "/framework/f8-repairing-awareness" : framework.id === "F9" ? "/framework/f9-neurodivergence-variation" : "/framework/f10-generational-bridges"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : framework.id === "F8" ? "/framework/f8-repairing-awareness" : framework.id === "F9" ? "/framework/f9-neurodivergence-variation" : framework.id === "F10" ? "/framework/f10-generational-bridges" : framework.id === "F11" ? "/framework/f11-emotional-paradoxes" : "/framework/f12-two-information-systems"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

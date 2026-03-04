@@ -28,6 +28,8 @@ const PAGE_DATES = {
   '/framework/f8-repairing-awareness': '2026-03-04',
   '/framework/f9-neurodivergence-variation': '2026-03-04',
   '/framework/f10-generational-bridges': '2026-03-04',
+  '/framework/f11-emotional-paradoxes': '2026-03-04',
+  '/framework/f12-two-information-systems': '2026-03-04',
 }
 
 export default function sitemap() {
@@ -176,6 +178,18 @@ export default function sitemap() {
     {
       url: `${baseUrl}/framework/f10-generational-bridges`,
       lastModified: new Date(PAGE_DATES['/framework/f10-generational-bridges']),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/framework/f11-emotional-paradoxes`,
+      lastModified: new Date(PAGE_DATES['/framework/f11-emotional-paradoxes']),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/framework/f12-two-information-systems`,
+      lastModified: new Date(PAGE_DATES['/framework/f12-two-information-systems']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
