@@ -653,9 +653,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {framework.id === "F1" && (
+            {(framework.id === "F1" || framework.id === "F2") && (
               <Link
-                href="/framework/f1-emotional-gradient"
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : "/framework/f2-awareness-calibration"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
