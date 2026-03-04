@@ -1,0 +1,33 @@
+{
+  "slug": "f1-emotional-gradient",
+  "type": "framework",
+  "title": "Emotions as Biological Information",
+  "frameworkId": "F1",
+  "status": "published",
+  "summary": "How the nervous system orients between safety and threat, generating emotional signals that determine perception, capacity, and behavior.",
+  "tags": ["F1", "core", "nervous system", "emotional gradient"],
+
+  "content": [],
+
+  "connections": [
+    { "type": "cites", "targetSlug": "polyvagal", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "affective-neuroscience", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "trauma-research", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "attachment", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "emotion-science", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "developmental-psychology", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "stress-physiology", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "evolutionary-psychology", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "interoception", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "cognitive-science", "targetType": "theory" },
+    { "type": "defines", "targetSlug": "four-mode-gradient", "targetType": "glossary" },
+    { "type": "defines", "targetSlug": "biological-restoration", "targetType": "glossary" },
+    { "type": "defines", "targetSlug": "inner-compass", "targetType": "glossary" },
+    { "type": "defines", "targetSlug": "neuroception", "targetType": "glossary" },
+    { "type": "defines", "targetSlug": "state-dependent-capacity", "targetType": "glossary" },
+    { "type": "defines", "targetSlug": "regulatory-state", "targetType": "glossary" },
+    { "type": "validates", "targetSlug": "validation-study", "targetType": "publication" }
+  ],
+
+  "lastUpdated": "2026-03-04"
+}

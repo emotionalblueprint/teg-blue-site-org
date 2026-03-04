@@ -48,6 +48,12 @@
       "targetSlug": "emotion-science",
       "targetType": "theory",
       "label": "Related: Emotion Science"
+    },
+    {
+      "type": "related",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Core foundation for F1"
     }
   ],
 

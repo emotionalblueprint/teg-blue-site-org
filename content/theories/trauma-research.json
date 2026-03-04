@@ -48,6 +48,12 @@
       "targetSlug": "attachment",
       "targetType": "theory",
       "label": "Related: Attachment Theory"
+    },
+    {
+      "type": "related",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Core foundation for F1"
     }
   ],
 

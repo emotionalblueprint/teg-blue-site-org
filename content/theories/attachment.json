@@ -48,6 +48,12 @@
       "targetSlug": "emotional-circuit",
       "targetType": "glossary",
       "label": "Informs: Emotional Circuit"
+    },
+    {
+      "type": "related",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Core foundation for F1"
     }
   ],
 

@@ -1,0 +1,55 @@
+{
+  "slug": "seven-step-arc",
+  "type": "glossary",
+  "title": "Seven-Step Arc",
+  "status": "open-review",
+  "definition": "The complete trajectory from biological signal to social structure: Perception, Emotion, Action, Biological Restoration, Behaviour, Social Structure, Escalation or Repair.",
+
+  "summary": "The Seven-Step Arc names the full trajectory of F1 — from the nervous system's initial perception through to collective outcomes. Biological Restoration sits at step four, the hinge, with three steps on each side. Everything before it is the body's designed process. Everything after depends on whether that process completed.",
+
+  "tags": ["core", "F1", "system architecture", "trajectory", "escalation", "repair"],
+  "origin": "teg-blue-original",
+  "relatedTerms": ["biological-restoration", "four-mode-gradient", "inner-compass"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "The Seven-Step Arc is the organizing trajectory of the twelve-framework system: (1) Perception — the nervous system perceives the environment, (2) Emotion — the nervous system generates its signal, (3) Action — the organism responds from its current mode, (4) Biological Restoration — the body completes the activation cycle or doesn't, (5) Behaviour — what the person produces relationally, (6) Social Structure — individual patterns aggregate into collective systems, (7) Escalation or Repair — the system escalates or restoration is rebuilt."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "The arc maps directly onto the twelve frameworks. F1-F2 describe the designed system and its calibration (steps 1-3). F3-F7 describe what happens when Biological Restoration is missing (steps 5-7 without step 4). F8-F12 describe how to build it back. The regulation thread shows that each framework describes the same nervous system failing to restore and substituting something else at a different scale — from false coherence (F3) through domination (F7) — with escalating costs."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "The arc integrates across: Porges (2011) — autonomic sequence; Panksepp (1998), Damasio (1994) — emotion as biological signal; Levine (1997) — completion of threat response; van der Kolk (2014) — body-stored patterns; Bandura (1999) — moral disengagement at collective scale. The integration — tracing a single mechanism from perception through emotional signalling through biological restoration through collective structures — is TEG-Blue's contribution."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "part-of",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Full trajectory of F1"
+    },
+    {
+      "type": "related",
+      "targetSlug": "biological-restoration",
+      "targetType": "glossary",
+      "label": "Related: Biological Restoration"
+    },
+    {
+      "type": "related",
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Related: Four-Mode Gradient"
+    }
+  ],
+
+  "lastUpdated": "2026-03-04"
+}

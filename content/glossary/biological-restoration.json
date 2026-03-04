@@ -1,0 +1,55 @@
+{
+  "slug": "biological-restoration",
+  "type": "glossary",
+  "title": "Biological Restoration",
+  "status": "open-review",
+  "definition": "The body's designed process for completing the activation cycle and settling back to Connection after a threat response.",
+
+  "summary": "Biological Restoration is the mechanism on which the entire twelve-framework system turns. When the nervous system mobilizes for threat, the activation is designed to complete: mobilize, respond, restore. The body does not reason its way back to Connection — it restores through the same somatic channels it departed through. It cannot be forced. It can only be allowed.",
+
+  "tags": ["core", "F1", "restoration", "nervous system", "regulation", "vagal brake"],
+  "origin": "teg-blue-original",
+  "relatedTerms": ["four-mode-gradient", "regulatory-state", "inner-compass"],
+
+  "content": [
+    {
+      "id": "what-it-is",
+      "title": "What It Is",
+      "defaultOpen": true,
+      "content": "Biological Restoration is the body's designed completion process. When the nervous system activates for threat — heart accelerates, hormones flood, muscles brace — all of this was designed to be temporary. The body was built to complete the cycle: mobilize, respond, and restore. The activation must discharge, the breath must slow, the muscles must release, the hormones must clear. This process is closer to digestion than to exercise — it runs when it is not blocked, not when you try harder."
+    },
+    {
+      "id": "how-teg-blue-maps-it",
+      "title": "How TEG-Blue Maps It",
+      "content": "Biological Restoration is the hinge of the entire twelve-framework system — step four of the seven-step arc, with three steps on each side. Everything before it is the body's designed process. Everything after depends on whether it completed. The distinction between somatic restoration (body-level activations that can complete alone) and relational restoration (belonging-based emotions that require another person staying) is a key TEG-Blue contribution. What is commonly called 'regulation' conflates two different processes: the body's designed completion and cognitive override."
+    },
+    {
+      "id": "research-basis",
+      "title": "Research Basis",
+      "content": "Porges, S. W. (2011) — ventral vagal system, vagal brake, co-regulation. Levine, P. (1997) — Somatic Experiencing, trauma as incomplete threat response. Siegel, D. J. (2012) — integration, window of tolerance. Schore, A. N. (2003) — right-brain regulation through early relational experience. Van der Kolk, B. (2014) — the body keeps the score. Sapolsky, R. M. (2004) — stress response designed for acute activation."
+    }
+  ],
+
+  "connections": [
+    {
+      "type": "part-of",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Hinge concept of F1"
+    },
+    {
+      "type": "related",
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Related: Four-Mode Gradient"
+    },
+    {
+      "type": "related",
+      "targetSlug": "regulatory-state",
+      "targetType": "glossary",
+      "label": "Related: Regulatory State"
+    }
+  ],
+
+  "lastUpdated": "2026-03-04"
+}

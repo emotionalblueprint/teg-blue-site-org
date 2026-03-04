@@ -16,17 +16,7 @@ import ContextBlock from "../components/ContextBlock";
 import ExpandableSection from "../components/ExpandableSection";
 import ConnectionCard from "../components/ConnectionCard";
 import { DepthBar } from "../components/SharedComponents";
-
-function getConnectionHref(conn) {
-  const routes = {
-    publication: `/publications/${conn.targetSlug}`,
-    "working-paper": `/publications/${conn.targetSlug}`,
-    theory: `/foundations#${conn.targetSlug}`,
-    glossary: `/glossary#${conn.targetSlug}`,
-    framework: `/frameworks/${conn.targetSlug}`,
-  };
-  return routes[conn.targetType] || `/${conn.targetSlug}`;
-}
+import { getConnectionHref } from "../lib/connections";
 
 export default function PublicationPage({ node }) {
   const color = getContentTypeColor(node.type);

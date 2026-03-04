@@ -48,6 +48,12 @@
       "targetSlug": "polyvagal",
       "targetType": "theory",
       "label": "Related: Polyvagal Theory"
+    },
+    {
+      "type": "related",
+      "targetSlug": "f1-emotional-gradient",
+      "targetType": "framework",
+      "label": "Core foundation for F1"
     }
   ],
 

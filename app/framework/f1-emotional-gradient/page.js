@@ -7,6 +7,7 @@ import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
+import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -310,7 +311,7 @@ export default function F1EmotionalGradientPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a healthy working compass, the needle is constantly moving. It does not have a "correct" position — it points in a direction. A healthy compass moves fluidly between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward Connection when the threat passes.
+                The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a fluid working compass, the needle is constantly moving. It does not have a "correct" position — it points in a direction. A fluid compass moves fluidly between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward Connection when the threat passes.
               </p>
               <p style={proseStyle}>
                 The two modes map directly to what the human nervous system has always done. <strong style={{ color: TEXT.primary }}>Connection</strong> is belonging to the community — gathering, caring, cooperating, relating. <strong style={{ color: TEXT.primary }}>Protection</strong> is defending yourself and feeding yourself — fighting, fleeing, hunting, surviving. These are the two fundamental orientations that the nervous system has been navigating for hundreds of thousands of years.
@@ -321,7 +322,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="Research Traditions" type="framework">
                 <p style={expandedProseStyle}>
-                  Porges (2011) — autonomic states as continuous orientation. Bowlby (1969) — attachment system as safety-seeking orientation. Fredrickson (2001) — broaden-and-build as directional state. Siegel (2012) — window of tolerance as range of healthy movement. Ogden (2006) — sensorimotor psychotherapy, tracking body-level orientation.
+                  Porges (2011) — autonomic states as continuous orientation. Bowlby (1969) — attachment system as safety-seeking orientation. Fredrickson (2001) — broaden-and-build as directional state. Siegel (2012) — window of tolerance as range of fluid movement. Ogden (2006) — sensorimotor psychotherapy, tracking body-level orientation.
                 </p>
               </ExpandableSection>
 
@@ -622,7 +623,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                In a healthy compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration so the person can use these modes when needed and come back when done.
+                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration so the person can use these modes when needed and come back when done.
               </p>
 
               <ExpandableSection title="Research Traditions" type="framework">
@@ -633,7 +634,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="TEG-Blue Contribution" type="framework">
                 <p style={expandedProseStyle}>
-                  The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of healthy Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
+                  The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
                 </p>
               </ExpandableSection>
             </div>
@@ -656,7 +657,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                The four modes are not four boxes. They are positions on a continuous gradient from full Connection to maximum Domination. The compass needle moves along this gradient. A healthy compass has access to the full range. A stuck compass is locked at one position.
+                The four modes are not four boxes. They are positions on a continuous gradient from full Connection to maximum Domination. The compass needle moves along this gradient. A fluid compass has access to the full range. A stuck compass is locked at one position.
               </p>
               <p style={proseStyle}>
                 The gradient makes the proportionality question visible. The question is not "is this person in Protection?" but "how deep into Protection, for how long, in response to what, and can the needle move?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
@@ -894,6 +895,9 @@ export default function F1EmotionalGradientPage() {
               </table>
             </div>
           </section>
+
+          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
+          <ConnectedResearch slug="f1-emotional-gradient" type="framework" />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
