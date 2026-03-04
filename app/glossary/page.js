@@ -466,13 +466,13 @@ const GLOSSARY_TERMS = [
     tags: ["F5", "somatic", "exclusion"],
     framework: 5,
   },
-  // ===== F6: THE BELIEF-PERCEPTION LOOP =====
+  // ===== F6: BIAS REGULATES =====
   {
     slug: "bias-architecture",
     title: "Bias Architecture",
     type: "concept",
     status: "proposed",
-    definition: "The interconnected system of components that together reduce perceived threat and preserve internal stability. Four components: (1) Perceptual Filters — determine what gets noticed and ignored; (2) Emotional Associations — link stimuli to threat/safety before conscious processing; (3) Identity Commitments — fuse beliefs with self-concept; (4) Reinforcement Loops — strengthen patterns through social reward and internal coherence. Bias is not a single belief but an architecture. Interventions addressing only one component often fail because the others continue supporting the bias.",
+    definition: "A layered system of eight interacting constructs that together produce felt certainty: (1) Bias Architecture — overarching system of perceptual filters, emotional associations, identity commitments, and reinforcement loops; (2) Emotional Logic — beliefs feel true when they stabilize; (3) State-Dependent Perception — what you perceive depends on regulatory state; (4) Identity Filter — beliefs fuse with identity; (5) Social Reward Loop — bias reinforced through belonging; (6) Empathy Collapse — Emotional Resonance shuts down under threat; (7) Update Failure — Identity Filter + Empathy Collapse removes revision capacity; (8) Emotional Safety Threshold — minimum safety for revision. Not a catalogue of biases but the structure that generates and maintains them.",
     tags: ["F6", "cognition", "perception"],
     framework: 6,
   },
@@ -490,7 +490,7 @@ const GLOSSARY_TERMS = [
     title: "Identity Filter",
     type: "concept",
     status: "proposed",
-    definition: "What happens when beliefs fuse with the Role Mask (F2). Contradiction is no longer processed as information — it becomes risk to identity, belonging, and status. The mechanism: belief becomes part of 'who I am' → challenge to belief = challenge to self → nervous system activates defense → information rejected to preserve coherence → rejection feels like 'seeing clearly' rather than defending. This is why 'being wrong' can feel existential.",
+    definition: "When beliefs fuse with identity structure, 'what I think' becomes 'who I am.' Contradiction is no longer a disagreement about facts — it is an identity threat. The mechanism: belief absorbed into identity → challenge to belief = challenge to person → nervous system activates defense → information rejected to preserve coherence → rejection feels like 'seeing clearly' rather than defending. This is F3's false coherence at the identity level: the narrative is not just regulatory — it is structural. Combined with Empathy Collapse, produces Update Failure.",
     tags: ["F6", "identity", "perception"],
     framework: 6,
   },
@@ -508,7 +508,7 @@ const GLOSSARY_TERMS = [
     title: "Empathy Collapse",
     type: "concept",
     status: "proposed",
-    definition: "Under threat, empathy and curiosity shut down because they increase emotional load and dissonance. Empathy requires openness (risky under threat), holding complexity (costly when resources needed for self-protection), tolerating uncertainty (dangerous when uncertainty is the problem), and revising perspective (threatening when revision destabilizes). When empathy collapses, correction is experienced as attack. The system protects the bias rather than revising it.",
+    definition: "State-dependent shutdown of Emotional Resonance (ER) — the capacity to feel with others. Under threat, resonance narrows and eventually collapses. Critically, Reading Emotions (RE) may remain sharp — serving strategy rather than understanding. The person can describe what others feel without being affected by it. When empathy collapses, correction is experienced as attack and the system protects the bias rather than revising it. Combined with the Identity Filter, produces Update Failure — the system has no mechanism to revise.",
     tags: ["F6", "empathy", "threat"],
     framework: 6,
   },

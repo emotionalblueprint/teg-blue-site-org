@@ -877,6 +877,7 @@ export default function F5WorthHierarchiesPage() {
                   </tr>
                 </thead>
                 <tbody>
+                  <NavRow label="Read the bias framework (F6)" href="/framework/f6-bias-regulates" linkText="Bias Regulates \u2192" />
                   <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />

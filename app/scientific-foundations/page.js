@@ -125,8 +125,9 @@ const globalModels = [
       "Bridges somatic awareness with relational repair through visual, accessible tools",
       "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
       "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the compass in Protection",
+      "F6 uses state-dependent perception to explain how regulatory state determines what is perceived — bias as neuroception operating at the cognitive level",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F12"],
   },
   {
     id: 5,
@@ -246,9 +247,10 @@ const globalModels = [
     tegBlueAdds: [
       "Shows how dissonance is experienced somatically and emotionally, not just cognitively",
       "Maps how unresolved dissonance can push people toward denial, defense, or manipulation",
+      "F6 maps dissonance as the mechanism driving the six-step bias formation loop — uncertainty triggers fast interpretation that fuses with identity and resists revision",
       "Provides repair tools to face contradictions without causing further harm",
     ],
-    frameworks: ["F3", "F7"],
+    frameworks: ["F3", "F6", "F7"],
   },
   {
     id: 15,

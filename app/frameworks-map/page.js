@@ -95,20 +95,20 @@ const FRAMEWORKS = [
   },
   {
     id: "F6",
-    displayName: "State-Dependent Perception",
-    title: "The Bias Architecture",
-    subtitle: "Threat-Based Meaning and Perception",
+    displayName: "Bias Regulates",
+    title: "How Perception Becomes Protection",
+    subtitle: "Eight Constructs, Three Categories, and the Revision Pathway",
     arc: "Scaling",
-    purpose: "Explain how perception becomes a state-dependent protective system, producing perceptual defaults that feel like truth but function as nervous system regulation.",
-    summary: "How perception becomes state-dependent, producing perceptual defaults that feel like truth but function as regulation.",
-    buildsOn: "Social cognition, threat perception research, intergroup emotion, motivated reasoning, dehumanization literature.",
+    purpose: "Explain how worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why correction fails when safety is insufficient.",
+    summary: "How perception becomes protection through a layered bias architecture. Certainty is physiological stability, not epistemic accuracy. Shame does not unlearn bias — safety does.",
+    buildsOn: "Cognitive psychology (Kahneman & Tversky, Kunda), social psychology (Festinger, Tajfel & Turner, Jost), neuroscience (Friston, Porges, Damasio), clinical psychology (Beck, Young, Schwartz), implicit cognition (Greenwald & Banaji), terror management (Greenberg), psychological safety (Edmondson).",
     claims: [
-      "Bias intensifies under threat states — it is state-dependent, not fixed",
-      "Some bias is maintained by safety narratives, not facts",
-      "Dehumanization follows a predictable gradient tied to mode position",
-      "Domination logic uses bias as a stabilizer for power asymmetry",
+      "Bias is pattern recognition in service of regulation, not a reasoning error — the regulatory equation determines what gets believed",
+      "Eight interacting constructs form a layered architecture with a threshold equation: Identity Filter + Empathy Collapse = Update Failure",
+      "Certainty is physiological stability, not epistemic accuracy — bias feels like truth because threat reduction produces relief mistaken for confirmation",
+      "Bias-correction programs relying on education, shame, or moral argument are predicted to fail; safety-based approaches are predicted to succeed",
     ],
-    testable: "State manipulation studies and bias expression shifts. Linguistic markers of dehumanization across modes. Fairness evaluation for any automated classification.",
+    testable: "Testing whether safety-based bias interventions outperform education-based ones. Measuring the threshold equation variables across regulatory states. Validating the six-step formation loop as self-reinforcing. Comparing revision outcomes across the three bias categories.",
   },
   {
     id: "F7",
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : "/framework/f5-worth-hierarchies"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : "/framework/f6-bias-regulates"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
