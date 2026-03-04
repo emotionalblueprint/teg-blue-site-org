@@ -123,8 +123,9 @@ const globalModels = [
       "Translates nervous system states into emotional logic and relational meaning",
       "Extends physiological states into observable patterns of connection, defense, manipulation, and oppression",
       "Bridges somatic awareness with relational repair through visual, accessible tools",
+      "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
     ],
-    frameworks: ["F1", "F2", "F3", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F12"],
   },
   {
     id: 5,
@@ -194,9 +195,10 @@ const globalModels = [
     tegBlueAdds: [
       "Integrates inner parts into a relational and systemic gradient",
       "Shows how inner protectors mirror relational patterns across Connection, Protection, Control, and Domination",
+      "F4 maps IFS's protective parts as internal rule-enforcers — the self-policing mechanism (Steps 6–7 of rule internalization)",
       "Adds harm-measurement scales that connect personal healing to collective repair",
     ],
-    frameworks: ["F3", "F5", "F8"],
+    frameworks: ["F3", "F4", "F5", "F8"],
   },
   {
     id: 11,
@@ -218,9 +220,10 @@ const globalModels = [
     tegBlueAdds: [
       "Expands role-play into awareness configuration: roles formed around available capacities",
       "Distinguishes authentic roles from survival-driven ones across the four modes",
+      "F4 maps Goffman's dramaturgical performance to performance rules — social maintenance through unspoken rules",
       "Shows pathways for healing from role entrapment and reclaiming genuine connection",
     ],
-    frameworks: ["F2", "F3", "F5", "F6"],
+    frameworks: ["F2", "F3", "F4", "F5", "F6"],
   },
   {
     id: 13,
@@ -254,9 +257,10 @@ const globalModels = [
     tegBlueAdds: [
       "Integrates attachment disruption and CPTSD into the Emotional Gradient Framework",
       "Maps how disorganized attachment produces specific awareness configurations and chronic modes",
+      "F4 maps intergenerational trauma transmission as rule replication across generations — traumatic rules passed through families and institutions",
       "Provides gradients and tools for relational repair and nervous system healing",
     ],
-    frameworks: ["F1", "F2", "F3", "F8", "F10"],
+    frameworks: ["F1", "F2", "F3", "F4", "F8", "F10"],
   },
 ];
 

@@ -60,20 +60,21 @@ const FRAMEWORKS = [
   },
   {
     id: "F4",
-    displayName: "Threat-Based Rule Internalization",
-    title: "The Invisible Models",
-    subtitle: "Rule Adherence and Defensive Coordination",
+    displayName: "Rules Regulate",
+    title: "How Individual Patterns Scale to Collective Rule Systems",
+    subtitle: "The First Collective Framework",
     arc: "Scaling",
-    purpose: "Explain how unspoken social rules (role, obedience, performance, dominance, punishment, entitlement) form and govern emotional and relational life.",
-    summary: "How unspoken social rules form and govern emotional and relational life at the nervous system level.",
-    buildsOn: "Sociology of norms, cultural psychology, status dynamics, moral foundations research, norm enforcement.",
+    purpose: "Explain how individual nervous system patterns (F3's false coherence, emotional distortion, and external regulation) aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7).",
+    summary: "How individual nervous system patterns aggregate into collective rule systems — through false coherence absorbing rules as truth, emotional distortion making violations feel like attacks, and external regulation making compliance a nervous system need.",
+    buildsOn: "Sociology (Bourdieu, Bernstein, Goffman), social psychology (Milgram, Asch, Cialdini), neuroscience (Porges, Siegel), attachment theory (Bowlby), systems theory (Bowen, Satir), trauma studies (van der Kolk, Herman), political psychology (Altemeyer), moral psychology (Haidt).",
     claims: [
-      "Norm pressure can reward protection and control patterns at scale",
-      "Rule internalization is nervous-system level, not just cognitive belief",
-      "'Social goodness' can be performed while harm persists — compliance ≠ safety",
-      "Cultural conditions enable or constrain individual escalation pathways",
+      "Rule-following is often a nervous system regulation strategy, not a reasoning choice",
+      "Six rule categories (roles, obedience, performance, dominance, punishment, entitlement) emerge from threat-based internalization, each defined by regulatory function",
+      "Rule systems escalate under sustained threat through stages paralleling the four-mode gradient",
+      "Ten research traditions independently describe the same mechanism — rule internalization as collective regulation under threat",
+      "Questioning rules recreates threat, because rules are part of collective false coherence",
     ],
-    testable: "Cross-cultural comparison of worth rules and conflict scripts. Organizational communication analysis under hierarchy. Link between norm climates and escalation patterns.",
+    testable: "Cross-cultural comparison of rule systems and their regulatory functions. Organizational communication analysis under hierarchy. Link between collective threat levels and rule escalation stages. Testing whether regulation-based intervention (restoring safety) is more effective than ideology-based intervention (challenging beliefs).",
   },
   {
     id: "F5",
@@ -653,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : "/framework/f3-false-coherence"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : "/framework/f4-rules-regulate"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

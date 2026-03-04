@@ -21,6 +21,7 @@ const PAGE_DATES = {
   '/framework/f1-emotional-gradient': '2026-03-03',
   '/framework/f2-awareness-calibration': '2026-03-04',
   '/framework/f3-false-coherence': '2026-03-04',
+  '/framework/f4-rules-regulate': '2026-03-04',
 }
 
 export default function sitemap() {
@@ -127,6 +128,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/framework/f3-false-coherence`,
       lastModified: new Date(PAGE_DATES['/framework/f3-false-coherence']),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/framework/f4-rules-regulate`,
+      lastModified: new Date(PAGE_DATES['/framework/f4-rules-regulate']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
