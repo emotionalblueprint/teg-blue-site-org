@@ -18,7 +18,7 @@ import {
 export const metadata = {
   title: "Emotions as Biological Information (F1) | TEG-Blue Research",
   description:
-    "How the nervous system orients between safety and threat, generating emotional signals that determine perception, capacity, and behavior. Framework F1 of 12.",
+    "How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. Framework F1 of 12.",
   keywords: [
     "emotions as biological information",
     "safety-threat orientation",
@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: "Emotions as Biological Information — F1 Framework | TEG-Blue",
     description:
-      "How the nervous system orients between safety and threat. The foundational framework of the TEG-Blue 12-framework system.",
+      "How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes. The foundational framework of the TEG-Blue 12-framework system.",
     url: "https://teg-blue.org/framework/f1-emotional-gradient",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -77,7 +77,7 @@ export default function F1EmotionalGradientPage() {
           badge="FRAMEWORK F1"
           title="Emotions as Biological Information"
           subtitle="The Safety-Threat Orientation System"
-          description="How the nervous system evaluates safety, how emotions carry that evaluation, and how the response organizes across four modes. The foundational framework of the TEG-Blue system."
+          description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
         />
 
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
@@ -114,13 +114,16 @@ export default function F1EmotionalGradientPage() {
           >
             {[
               ["#core-propositions", "Core Propositions"],
+              ["#overview", "Overview — The Complete Arc"],
               ["#the-signal", "The Signal — How the Body Evaluates"],
               ["#the-instrument", "The Instrument — How the Body Orients"],
               ["#the-hinge", "The Hinge — Biological Restoration"],
               ["#the-cognitive-upgrade", "The Cognitive Upgrade"],
               ["#the-architecture", "The Architecture — How the Instrument Reads"],
               ["#the-full-arc", "The Full Arc — From Signal to Structure"],
+              ["#what-f1-establishes", "What F1 Establishes"],
               ["#research-foundations", "Research Foundations"],
+              ["#bridge-to-f2", "Bridge to F2"],
               ["#where-to-go-next", "Where to Go Next"],
             ].map(([href, label]) => (
               <li key={href} style={{ marginBottom: 6 }}>
@@ -176,6 +179,77 @@ export default function F1EmotionalGradientPage() {
             </PropositionBox>
           </section>
 
+          {/* ─── OVERVIEW ─────────────────────────────────── */}
+          <section
+            id="overview"
+            aria-labelledby="heading-overview"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-overview"
+              style={sectionHeadingStyle}
+            >
+              Overview — The Complete Arc
+            </h2>
+
+            <p style={proseStyle}>
+              F1 defines the complete arc that the remaining eleven frameworks elaborate. Every step named here is unpacked across the system — from individual biology to collective structure to repair.
+            </p>
+            <p style={proseStyle}>
+              The nervous system does not wait for cognition to assess a situation. It evaluates continuously, below awareness, across a distributed system — gut, heart, muscles, vagus nerve, amygdala — that was running for millions of years before language or reasoning evolved. Emotions are how this evaluation gets delivered. They are the signals that translate the body's assessment into something the organism can feel, orient to, and act on. They are the nervous system's first language. Cognition is the second.
+            </p>
+            <p style={proseStyle}>
+              The compass has four modes. Two are body-first — Connection and Protection — the nervous system's responses that have been running for millions of years. Two are cognition-first — Control and Domination — an intelligent evolutionary upgrade that appeared when cognition arrived and the system gained range. In a designed-operation compass, all four are available, all are time-limited (except Connection, which is the home base), and all are returnable. The needle can go anywhere it needs to go — and come back. That coming back — Biological Restoration — is the mechanism that keeps the compass moving.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>The Seven-Step Arc</h3>
+            <p style={proseStyle}>
+              F1 names a complete trajectory. Biological Restoration is the hinge — step four of seven, three steps on each side:
+            </p>
+            <div style={{ overflowX: "auto", marginBottom: 16 }}>
+              <table style={tableStyle}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Step</th>
+                    <th style={thStyle}>What Happens</th>
+                    <th style={thStyle}>Elaborated Across</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <TableRow cells={["Perception", "The nervous system perceives the environment through all available channels — exteroceptive, interoceptive, memory-based", "F1 — shaped by state, calibration (F2), bias (F6)"]} />
+                  <TableRow cells={["Emotion", "The nervous system generates the signal — the body's first language delivering its evaluation", "F1 — the complete account"]} />
+                  <TableRow cells={["Action", "The organism responds from its current mode", "F1 (designed) → F2 (how the mode became chronic)"]} />
+                  <TableRow cells={["Biological Restoration", "The body completes the cycle — or doesn't", "F1 (the design) → F2 (never learned) → F3 (cognition replaces it)"]} />
+                  <TableRow cells={["Behaviour", "What the person produces relationally — from restoration or from its absence", "F3 — false coherence, emotional distortion, external regulation"]} />
+                  <TableRow cells={["Social Structure", "Individual patterns scale into collective systems", "F4 (rules) → F5 (worth hierarchies) → F6 (bias)"]} />
+                  <TableRow cells={["Escalation or Repair", "The system escalates toward domination — or restores the original", "F7 (escalation) → F8–F12 (repair)"]} />
+                </tbody>
+              </table>
+            </div>
+
+            <p style={proseStyle}>
+              Everything to the left of Biological Restoration is the body's designed process. Everything to the right depends on whether that process completed or not. The frameworks split at that exact point — F1–F2 describe the designed system and its calibration. F3–F7 describe what happens when Biological Restoration is missing. F8–F12 describe how to build it back.
+            </p>
+
+            <KeyStatement>
+              Core Question: How does the nervous system evaluate safety and threat, how do emotions carry that evaluation to the rest of the organism, how does this orientation shape experience and capacity, what does the complete four-mode compass look like in designed operation, and how does the body restore itself when the threat has passed?
+            </KeyStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Relationship to the Inner Compass Model" type="framework">
+                <p style={expandedProseStyle}>
+                  F1 provides the depth scientific foundation and introduces the complete four-mode compass in its designed operation. The Inner Compass & Four-Mode Gradient model provides the applied tool — making the same architecture usable across individual, clinical, and research contexts. F1 explains <em>why</em>. The model provides <em>what to use</em>.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="Relationship to F2" type="framework">
+                <p style={expandedProseStyle}>
+                  F1 is the instrument. F2 is the calibration. F1 describes what the compass does — including the complete Biological Restoration process in its designed form. F2 explains how each person's compass gets tuned — through the awareness capacities that develop (or don't) in the relational environment — and what happens when Biological Restoration is never learned.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
           {/* ─── PART 1: THE SIGNAL ──────────────────────── */}
           <section
             id="the-signal"
@@ -209,17 +283,19 @@ export default function F1EmotionalGradientPage() {
                 This shifts the foundational stance from "emotion regulation" (implying emotions need controlling) to "signal interpretation" (implying emotions carry information that needs reading). The question is not "how do I manage this emotion?" but <strong style={{ color: TEXT.primary }}>"what is this signal telling me?"</strong>
               </p>
 
-              <ExpandableSection title="Research Traditions" type="framework">
-                <p style={expandedProseStyle}>
-                  <strong>Emotions as functional signals:</strong> Frijda (1986) — action readiness; Ekman (1992) — basic emotions as functional responses; Plutchik (1980) — emotions relate to survival conditions. <strong>Affect-as-information:</strong> Schwarz & Clore (1983); Damasio (1994) — somatic markers guide decision-making. <strong>Evolutionary primacy:</strong> LeDoux (1996) — amygdala responds before cortex; Panksepp (1998) — primary emotional systems are ancient. <strong>Interoception:</strong> Craig (2009) — the body's internal signalling system. <strong>Distributed processing:</strong> Porges (2011) — the vagus nerve as a bidirectional communication pathway.
-                </p>
-              </ExpandableSection>
+              <div style={expandableRowStyle}>
+                <ExpandableSection title="Research Traditions" type="framework">
+                  <p style={expandedProseStyle}>
+                    <strong>Emotions as functional signals:</strong> Frijda (1986) — action readiness; Ekman (1992) — basic emotions as functional responses; Plutchik (1980) — emotions relate to survival conditions. <strong>Affect-as-information:</strong> Schwarz & Clore (1983); Damasio (1994) — somatic markers guide decision-making. <strong>Evolutionary primacy:</strong> LeDoux (1996) — amygdala responds before cortex; Panksepp (1998) — primary emotional systems are ancient. <strong>Interoception:</strong> Craig (2009) — the body's internal signalling system. <strong>Distributed processing:</strong> Porges (2011) — the vagus nerve as a bidirectional communication pathway.
+                  </p>
+                </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
-                <p style={expandedProseStyle}>
-                  F1 positions emotions explicitly as the <em>signalling language</em> of the nervous system — not just "information" in the abstract, but the specific medium through which the body's evaluation reaches the organism. The framing as "language" carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed. When cognition overrides the emotional signal (F3), it is not correcting an error — it is silencing one language and replacing it with another.
-                </p>
-              </ExpandableSection>
+                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                  <p style={expandedProseStyle}>
+                    F1 positions emotions explicitly as the <em>signalling language</em> of the nervous system — not just "information" in the abstract, but the specific medium through which the body's evaluation reaches the organism. The framing as "language" carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed. When cognition overrides the emotional signal (F3), it is not correcting an error — it is silencing one language and replacing it with another.
+                  </p>
+                </ExpandableSection>
+              </div>
             </div>
 
             {/* Concept 2 */}
@@ -239,17 +315,19 @@ export default function F1EmotionalGradientPage() {
                 The evaluation assesses <em>experienced safety</em>, not objective danger — which is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has learned to recognise as safe or threatening, which may not match current reality. This is not a flaw. It is a design feature optimised for survival.
               </p>
 
-              <ExpandableSection title="Research Traditions" type="framework">
-                <p style={expandedProseStyle}>
-                  Porges (2011) — neuroception evaluates safety/threat continuously. Bowlby (1969) — attachment system scans for safety/threat. Maslow (1943) — safety as foundational need. Siegel (2012) — safety enables integration and development.
-                </p>
-              </ExpandableSection>
+              <div style={expandableRowStyle}>
+                <ExpandableSection title="Research Traditions" type="framework">
+                  <p style={expandedProseStyle}>
+                    Porges (2011) — neuroception evaluates safety/threat continuously. Bowlby (1969) — attachment system scans for safety/threat. Maslow (1943) — safety as foundational need. Siegel (2012) — safety enables integration and development.
+                  </p>
+                </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
-                <p style={expandedProseStyle}>
-                  Distilling the entire evaluation-and-signalling process to one clear question that explains why different responses occur. The framework positions the safety question as the single question that generates all emotional diversity — from empathy to defensiveness, from curiosity to withdrawal. Every emotion is a variation on: <em>safe enough, or not yet.</em>
-                </p>
-              </ExpandableSection>
+                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                  <p style={expandedProseStyle}>
+                    Distilling the entire evaluation-and-signalling process to one clear question that explains why different responses occur. The framework positions the safety question as the single question that generates all emotional diversity — from empathy to defensiveness, from curiosity to withdrawal. Every emotion is a variation on: <em>safe enough, or not yet.</em>
+                  </p>
+                </ExpandableSection>
+              </div>
             </div>
 
             {/* Concept 3 */}
@@ -320,17 +398,19 @@ export default function F1EmotionalGradientPage() {
                 A <strong style={{ color: TEXT.primary }}>stuck compass</strong> is one where the needle has lost its capacity to move. What should have been a temporary orientation becomes a chronic position. The person does not experience this as being stuck — they experience it as "just who I am."
               </p>
 
-              <ExpandableSection title="Research Traditions" type="framework">
-                <p style={expandedProseStyle}>
-                  Porges (2011) — autonomic states as continuous orientation. Bowlby (1969) — attachment system as safety-seeking orientation. Fredrickson (2001) — broaden-and-build as directional state. Siegel (2012) — window of tolerance as range of fluid movement. Ogden (2006) — sensorimotor psychotherapy, tracking body-level orientation.
-                </p>
-              </ExpandableSection>
+              <div style={expandableRowStyle}>
+                <ExpandableSection title="Research Traditions" type="framework">
+                  <p style={expandedProseStyle}>
+                    Porges (2011) — autonomic states as continuous orientation. Bowlby (1969) — attachment system as safety-seeking orientation. Fredrickson (2001) — broaden-and-build as directional state. Siegel (2012) — window of tolerance as range of fluid movement. Ogden (2006) — sensorimotor psychotherapy, tracking body-level orientation.
+                  </p>
+                </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
-                <p style={expandedProseStyle}>
-                  The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in." The compass reframes health from a state to a capacity: not where the needle is, but whether it can move.
-                </p>
-              </ExpandableSection>
+                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                  <p style={expandedProseStyle}>
+                    The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in." The compass reframes health from a state to a capacity: not where the needle is, but whether it can move.
+                  </p>
+                </ExpandableSection>
+              </div>
             </div>
 
             {/* Concept 5 */}
@@ -542,6 +622,25 @@ export default function F1EmotionalGradientPage() {
                 The complete cycle is: Perception → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: TEXT.primary }}>Biological Restoration</strong> → Connection. Health is not the absence of Protection. Health is the full cycle — the ability to move into threat response when needed and come back when the threat has passed. Biological Restoration is the mechanism of coming back.
               </p>
 
+              <h4 style={subheadingStyle}>Biological Restoration across the Full Gradient</h4>
+              <p style={proseStyle}>
+                The restoration applies across all four modes. In a designed-operation compass:
+              </p>
+              <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
+                <li style={listItemStyle}>
+                  The restoration from <strong style={{ color: TEXT.primary }}>Protection</strong> is somatic — the body completing the activation cycle. The energy that was mobilised discharges. The system settles.
+                </li>
+                <li style={listItemStyle}>
+                  The restoration from <strong style={{ color: TEXT.primary }}>Control</strong> is cognitive and somatic — cognition standing down and the body releasing the strategic activation. The mind stops managing and the body resolves.
+                </li>
+                <li style={listItemStyle}>
+                  The restoration from <strong style={{ color: TEXT.primary }}>Domination</strong> is the most costly — the person must re-engage resonance that was deliberately dropped, process the weight of what they did, and allow the body's full activation to discharge. In a designed-operation compass, this cost is felt and processed.
+                </li>
+              </ul>
+              <p style={proseStyle}>
+                In each case, the mechanism is the same: the system completing the cycle and coming back. The difference is the depth of the activation that must resolve. The deeper the compass moves along the gradient, the more the restoration costs — and the more the system needs to complete.
+              </p>
+
               <ExpandableSection title="A Note on 'Regulation'" type="framework">
                 <p style={expandedProseStyle}>
                   What is commonly called "regulation" encompasses two fundamentally different processes. The first is Biological Restoration — the body completing its own activation cycle and settling back to its designed state. This is a biological process that cannot be forced, does not require cognition, and is cost-free. The second is cognitive management — cognition overriding, suppressing, or controlling the body's emotional signals to produce a state of apparent calm. This is effortful, comes at the cost of emotional truth, and is precisely what F3 describes as false coherence.
@@ -551,17 +650,19 @@ export default function F1EmotionalGradientPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="Research Traditions" type="framework">
-                <p style={expandedProseStyle}>
-                  Porges (2011) — ventral vagal system, co-regulation, vagal brake. Levine (1997) — Somatic Experiencing, trauma as incomplete threat response. Siegel (2012) — integration, window of tolerance. Schore (2003) — right-brain regulation through early relational experience. Van der Kolk (2014) — the body keeps the score. Dana (2018) — polyvagal exercises. Sapolsky (2004) — stress response designed for acute activation.
-                </p>
-              </ExpandableSection>
+              <div style={expandableRowStyle}>
+                <ExpandableSection title="Research Traditions" type="framework">
+                  <p style={expandedProseStyle}>
+                    Porges (2011) — ventral vagal system, co-regulation, vagal brake. Levine (1997) — Somatic Experiencing, trauma as incomplete threat response. Siegel (2012) — integration, window of tolerance. Schore (2003) — right-brain regulation through early relational experience. Van der Kolk (2014) — the body keeps the score. Dana (2018) — polyvagal exercises. Sapolsky (2004) — stress response designed for acute activation.
+                  </p>
+                </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
-                <p style={expandedProseStyle}>
-                  The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the hinge of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
-                </p>
-              </ExpandableSection>
+                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                  <p style={expandedProseStyle}>
+                    The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the hinge of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
+                  </p>
+                </ExpandableSection>
+              </div>
             </div>
           </section>
 
@@ -584,11 +685,57 @@ export default function F1EmotionalGradientPage() {
                 For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then cognition evolved. And the compass gained range.
               </p>
               <p style={proseStyle}>
-                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. This is not pathology. It is an upgrade — the most sophisticated survival tool the species ever developed.
+                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. This is not pathology. It is an upgrade — the most sophisticated survival tool the species ever developed. In a designed-operation compass, these modes are time-limited, deliberately entered, and consciously exited.
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — they happen <em>to</em> you. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one.
+                <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — they happen <em>to</em> you. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are entered through a cognitive decision.
               </p>
+
+              <div
+                style={{
+                  padding: 20,
+                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  borderRadius: 8,
+                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                  marginBottom: 16,
+                }}
+              >
+                <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                  Control Mode <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Instability → Strategy (time-limited)</span>
+                </h4>
+                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
+                  The system registers that Protection is not enough. The situation requires structure, coordination, or strategic action under pressure. Control appears briefly when it is needed — it is entered deliberately and consciously.
+                </p>
+                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
+                  The sequence is strategic: <strong style={{ color: TEXT.primary }}>Anticipate → Manage → Override.</strong> Assess the situation, organise the response, override what needs overriding. This is conscious and time-limited. When the situation resolves, cognition stands down. The compass moves back. Control was a tool. It was used. It was released.
+                </p>
+                <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
+                  Evolutionary basis: Cognition solving survival problems the body alone could not — coordinating hunts, planning migration, managing group dynamics, navigating complex social hierarchies.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  padding: 20,
+                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  borderRadius: 8,
+                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                  marginBottom: 16,
+                }}
+              >
+                <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                  Domination Mode <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Power = Safety → Dominance (time-limited)</span>
+                </h4>
+                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
+                  The most extreme response — used only when immediate control is required to prevent harm. This mode is rare and time-limited in a designed-operation compass. The person enters it deliberately, knowing exactly what they are doing. Emotional Resonance has dropped to near-zero — and the person chose to let it drop because the situation demanded decisive, unambiguous action.
+                </p>
+                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
+                  The sequence is final: <strong style={{ color: TEXT.primary }}>Override → Eliminate → Secure.</strong> Override the obstacle, eliminate the threat, secure what matters. When the situation resolves, the person exits. The compass moves back. Emotional Resonance returns. The person may feel the weight of what they did — the cost of having suspended resonance. In a designed-operation compass, this is felt and processed. Biological Restoration happens — though the restoration from Domination costs more than from any other mode.
+                </p>
+                <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
+                  Evolutionary basis: Situations requiring the capacity to act without empathic constraint — protecting offspring from a predator, defending the group against existential threat, making triage decisions where not everyone can be saved.
+                </p>
+              </div>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
                 <table style={tableStyle}>
@@ -623,20 +770,22 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration so the person can use these modes when needed and come back when done.
+                In a designed-operation compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and come back when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
               </p>
 
-              <ExpandableSection title="Research Traditions" type="framework">
-                <p style={expandedProseStyle}>
-                  Porges (2011) — hierarchical autonomic responses. Siegel (2012) — integration of cognitive and emotional processing. Evolutionary psychology — cognition evolved to solve survival problems body-level responses alone could not. Sapolsky (2004) — stress response and strategic planning. LeDoux (1996) — cognitive appraisal interacting with emotional circuits.
-                </p>
-              </ExpandableSection>
+              <div style={expandableRowStyle}>
+                <ExpandableSection title="Research Traditions" type="framework">
+                  <p style={expandedProseStyle}>
+                    Porges (2011) — hierarchical autonomic responses. Siegel (2012) — integration of cognitive and emotional processing. Evolutionary psychology — cognition evolved to solve survival problems body-level responses alone could not. Sapolsky (2004) — stress response and strategic planning. LeDoux (1996) — cognitive appraisal interacting with emotional circuits.
+                  </p>
+                </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
-                <p style={expandedProseStyle}>
-                  The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
-                </p>
-              </ExpandableSection>
+                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                  <p style={expandedProseStyle}>
+                    The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
+                  </p>
+                </ExpandableSection>
+              </div>
             </div>
           </section>
 
@@ -857,6 +1006,93 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          {/* ─── WHAT F1 ESTABLISHES ──────────────────────── */}
+          <section
+            id="what-f1-establishes"
+            aria-labelledby="heading-what-f1-establishes"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-what-f1-establishes" style={sectionHeadingStyle}>
+              What F1 Establishes
+            </h2>
+
+            <p style={proseStyle}>
+              F1 defines the complete safety-threat orientation system — and names the full arc that the remaining eleven frameworks elaborate.
+            </p>
+
+            <div style={{ overflowX: "auto", marginBottom: 24 }}>
+              <table style={tableStyle}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Concept</th>
+                    <th style={thStyle}>What It Means</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <TableRow cells={["Emotions as biological information", "The nervous system's signalling language — the medium through which the body's evaluation of safety and threat gets delivered. The body's first language. Interpret, don't suppress."]} />
+                  <TableRow cells={["The safety orientation question", "One question generates all emotional diversity: \"Is there enough safety?\""]} />
+                  <TableRow cells={["Cross-theoretical convergence", "Six traditions describe the same two-mode orientation."]} />
+                  <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Health is not a position — it is the needle moving freely."]} />
+                  <TableRow cells={["How the compass moves", "Five-step sequence from perception to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
+                  <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
+                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The hinge of the entire twelve-framework system."]} />
+                  <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
+                  <TableRow cells={["The gradient", "The four modes are positions on a continuous gradient, not four boxes."]} />
+                  <TableRow cells={["State determines capacity", "What you can perceive, think, and do depends on your current state. Restore safety first, then expect capacity."]} />
+                  <TableRow cells={["Same emotion, two expressions", "Mode position determines whether an emotion serves connection or defence. Assess mode position, not the emotion."]} />
+                  <TableRow cells={["The seven-step arc", "Perception → Emotion → Action → Biological Restoration → Behaviour → Social Structure → Escalation or Repair. The hinge — step four of seven, three on each side."]} />
+                </tbody>
+              </table>
+            </div>
+
+            <h3 style={conceptHeadingStyle}>Key Formulations</h3>
+            <div
+              style={{
+                padding: "16px 20px",
+                background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                borderRadius: 8,
+                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                marginBottom: 16,
+              }}
+            >
+              <ul style={{ paddingLeft: 20, margin: 0 }}>
+                {[
+                  "Emotions are the nervous system's signalling language — the body talking to itself and to the brain",
+                  "The nervous system evaluates, emotions signal, the organism orients",
+                  "The body's first language — cognition is the second",
+                  "The question is not 'how do I manage this emotion?' but 'what is this signal telling me?'",
+                  "Health is not staying in Connection permanently — health is the ability to move through the gradient and come back",
+                  "Biological Restoration is the mechanism of coming back",
+                  "Biological Restoration cannot be forced. It can only be allowed.",
+                  "What is commonly called 'regulation' is often its opposite",
+                  "No amount of breathing resolves shame. The body is waiting for relational evidence.",
+                  "For relational emotions, co-regulation is the only pathway that completes the cycle",
+                  "State determines capacity",
+                  "You are not dealing with a person. You are dealing with a person in a state.",
+                  "Restore safety first, then expect capacity",
+                  "Assess mode position, not the emotion",
+                  "The problem is never the mechanism — it is what the mechanism learned",
+                  "Connection and Protection happen to you — Control and Domination are what cognition does when recruited into threat service",
+                  "The goal is not to eliminate Control or Domination — the goal is to restore Biological Restoration",
+                  "Protection was designed for minutes to hours — not a lifetime",
+                ].map((f, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      fontSize: 13,
+                      color: TEXT.secondary,
+                      lineHeight: 1.7,
+                      marginBottom: 6,
+                      fontStyle: "italic",
+                    }}
+                  >
+                    "{f}"
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           {/* ─── RESEARCH FOUNDATIONS ─────────────────────── */}
           <section
             id="research-foundations"
@@ -894,6 +1130,34 @@ export default function F1EmotionalGradientPage() {
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* ─── BRIDGE TO F2 ─────────────────────────────── */}
+          <section
+            id="bridge-to-f2"
+            aria-labelledby="heading-bridge-to-f2"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-bridge-to-f2" style={sectionHeadingStyle}>
+              Bridge to F2: How Biological Restoration Gets Learned — or Doesn't
+            </h2>
+
+            <p style={proseStyle}>
+              F1 describes the complete designed system — including Biological Restoration in its designed form. The body mobilises, responds, and restores. The cycle completes. The compass moves and comes back. This is the design.
+            </p>
+            <p style={proseStyle}>
+              But Biological Restoration is not automatic. It is designed — but it must be <em>learned</em>. The body has the biological capacity for restoration from birth. It does not have the ability to restore until that capacity is developed through experience. The mechanism through which it is learned is <strong style={{ color: TEXT.primary }}>co-regulation</strong> — another person's regulated nervous system teaching the child's nervous system the path back to Connection.
+            </p>
+            <p style={proseStyle}>
+              This is especially true for relational emotions. Somatic activations can complete through the body's own channels when conditions allow. But shame, guilt, fear of rejection, fear of abandonment — the emotions whose content is about belonging — can only complete when another person stays. A child whose relational emotions are never co-regulated does not just lack a general restoration capacity. They lack the specific pathway for the specific emotions that are hardest to bear. The chain is emotion-specific: what the adults could hold is what the child learns to complete.
+            </p>
+            <p style={proseStyle}>
+              This requires caregivers whose own Biological Restoration is functioning — whose own compass can move and come back. The awareness capacities the caregivers carry determine whether the child's restoration capacity develops. When the adults' awareness is complete, the child learns restoration through being restored with. When the adults' awareness is incomplete — when their own compass is stuck, their own restoration was never learned — the child's system develops without ever learning the path back.
+            </p>
+
+            <KeyStatement>
+              F1 is the instrument. F2 is the calibration. The mechanism is F1. The calibration is F2.
+            </KeyStatement>
           </section>
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
@@ -970,7 +1234,7 @@ export default function F1EmotionalGradientPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-03",
-            dateModified: "2026-03-03",
+            dateModified: "2026-03-04",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -1113,6 +1377,13 @@ const propositionItemStyle = {
   color: TEXT.secondary,
   lineHeight: 1.7,
   marginBottom: 8,
+};
+
+const expandableRowStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+  gap: 6,
+  marginTop: 4,
 };
 
 const orderedListStyle = {

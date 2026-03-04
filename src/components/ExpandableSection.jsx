@@ -5,11 +5,11 @@ import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba, gra
 
 /**
  * ExpandableSection — Core content unit
- * 
+ *
  * Uses native <details>/<summary> for AI crawlability.
  * All content is in the DOM regardless of expand state.
- * Border-left color matches content type.
- * 
+ * Card-style design matching tables and PropositionBox.
+ *
  * @param {string} title - Section heading
  * @param {string} type - Content type (for color)
  * @param {boolean} defaultOpen - Whether to start expanded
@@ -17,10 +17,10 @@ import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba, gra
  * @param {ReactNode} children - Section content
  */
 
-export default function ExpandableSection({ 
-  title, 
-  children, 
-  type = "publication", 
+export default function ExpandableSection({
+  title,
+  children,
+  type = "publication",
   defaultOpen = false,
   id,
 }) {
@@ -30,22 +30,24 @@ export default function ExpandableSection({
     <details
       open={defaultOpen || undefined}
       id={id}
-      style={{ marginBottom: 2 }}
+      style={{ marginBottom: 6 }}
     >
       <summary
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "14px 18px",
+          padding: "12px 18px",
           cursor: "pointer",
-          fontFamily: FONT.display,
-          fontSize: 15,
+          fontFamily: FONT.mono,
+          fontSize: 11,
           fontWeight: 600,
-          color: TEXT.primary,
-          borderLeft: `3px solid ${BORDER.default}`,
-          borderRadius: "0 8px 8px 0",
-          background: "transparent",
+          color: TEXT.muted,
+          textTransform: "uppercase",
+          letterSpacing: "0.06em",
+          background: BG.card,
+          border: `1px solid ${BORDER.default}`,
+          borderRadius: 10,
           transition: `all ${TRANSITION.normal}`,
           listStyle: "none",
         }}
@@ -55,8 +57,8 @@ export default function ExpandableSection({
         <span
           className="expandable-chevron"
           style={{
-            fontSize: 10,
-            color: TEXT.muted,
+            fontSize: 9,
+            color: hexToRgba(color, 0.6),
             transition: `transform ${TRANSITION.fast}`,
             display: "inline-block",
           }}
@@ -69,14 +71,14 @@ export default function ExpandableSection({
       <div
         className="expandable-content"
         style={{
-          padding: "0 18px 16px 16px",
+          padding: "14px 18px 16px",
           fontSize: 14,
           lineHeight: 1.7,
           color: TEXT.secondary,
-          borderLeft: `3px solid ${color}`,
-          borderTop: `1px solid ${hexToRgba(color, 0.08)}`,
-          borderRadius: "0 0 8px 0",
-          background: gradientCardBg(color, 0.05),
+          background: `linear-gradient(135deg, ${hexToRgba(color, 0.06)}, ${hexToRgba(color, 0.03)}, transparent)`,
+          border: `1px solid ${hexToRgba(color, 0.15)}`,
+          borderTop: "none",
+          borderRadius: "0 0 10px 10px",
         }}
       >
         {children}
@@ -86,31 +88,33 @@ export default function ExpandableSection({
       <style jsx>{`
         details summary::-webkit-details-marker { display: none; }
         details summary::marker { display: none; }
-        
+
         details summary:hover {
-          border-left-color: ${hexToRgba(color, 0.35)};
-          background: rgba(255, 255, 255, 0.02);
+          border-color: ${hexToRgba(color, 0.35)};
+          color: ${TEXT.primary};
         }
-        
+
         details[open] > summary {
-          border-left-color: ${color};
           background: ${BG.surface};
-          border-radius: 0 8px 0 0;
+          border-color: ${hexToRgba(color, 0.25)};
+          border-radius: 10px 10px 0 0;
+          color: ${TEXT.primary};
         }
-        
+
         details[open] > summary .expandable-chevron {
           transform: rotate(90deg);
+          color: ${color};
         }
-        
+
         details[open] > .expandable-content {
           animation: expandIn 200ms ease-out;
         }
-        
+
         @keyframes expandIn {
           from { opacity: 0; transform: translateY(-4px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @media (prefers-reduced-motion: reduce) {
           details[open] > .expandable-content {
             animation: none;
