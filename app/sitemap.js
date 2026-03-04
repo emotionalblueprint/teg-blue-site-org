@@ -26,6 +26,7 @@ const PAGE_DATES = {
   '/framework/f6-bias-regulates': '2026-03-04',
   '/framework/f7-domination-regulates': '2026-03-04',
   '/framework/f8-repairing-awareness': '2026-03-04',
+  '/framework/f9-neurodivergence-variation': '2026-03-04',
 }
 
 export default function sitemap() {
@@ -162,6 +163,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/framework/f8-repairing-awareness`,
       lastModified: new Date(PAGE_DATES['/framework/f8-repairing-awareness']),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/framework/f9-neurodivergence-variation`,
+      lastModified: new Date(PAGE_DATES['/framework/f9-neurodivergence-variation']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },

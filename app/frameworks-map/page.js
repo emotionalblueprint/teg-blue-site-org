@@ -146,20 +146,20 @@ const FRAMEWORKS = [
   },
   {
     id: "F9",
-    displayName: "The Costs of Forced Masking",
-    title: "The Costs of Forced Masking",
-    subtitle: "Honoring Differences",
+    displayName: "Neurodivergence as Nervous System Variation",
+    title: "When the Environment Is the Mismatch",
+    subtitle: "From System Mismatch Through Masking to Variation-Inclusive Design",
     arc: "Healing",
-    purpose: "Explain how neurodivergent nervous systems process the emotional gradient differently, the costs of forced neurotypical masking, and design principles for variation-inclusive environments.",
-    summary: "How neurodivergent nervous systems process the emotional gradient differently, and the costs of forced masking.",
-    buildsOn: "Neurodiversity paradigm, sensory processing research, autism and ADHD research, masking cost literature, developmental needs models.",
+    purpose: "Explain how neurodivergent nervous systems run the same compass with a different configuration, why System Mismatch — not individual deficit — drives masking and burnout, and what variation-inclusive design looks like.",
+    summary: "How the same compass runs on different configurations, why system mismatch produces masking and burnout, and what genuine inclusion requires.",
+    buildsOn: "Neurodiversity paradigm (Singer, Walker, Silberman), Social Model of Disability (Oliver, Shakespeare), Polyvagal Theory, Intense World Theory, masking research (Price, Rose, Maté), Universal Design for Learning.",
     claims: [
-      "Neurodivergent nervous systems have different baseline configurations — not deficits",
-      "Masking has measurable costs: regulatory depletion, identity confusion, delayed burnout",
-      "Many 'symptoms' are adaptive responses to environments that didn't accommodate variation",
-      "Healing requires signal trust recovery, not normalization",
+      "Neurodivergence is a difference in nervous system configuration — the compass is the same, the configuration is different",
+      "System Mismatch — the gap between what an environment requires and what a nervous system can sustainably provide — is the named mechanism that produces masking and burnout",
+      "Masking has cumulative, compounding costs across six domains (energetic, cognitive, emotional, somatic, developmental, identity)",
+      "Variation-inclusive design is not accommodation but structural intelligence — different configurations see different things",
     ],
-    testable: "Measures of masking cost and regulatory depletion. Comparative outcomes across accommodation levels. Narrative markers of authentic self-expression.",
+    testable: "Threshold equation predicting regulatory collapse under mismatch conditions. Six-domain masking cost measurement. Comparative outcomes across accommodation vs. design model environments. Configuration-diverse teams outperforming uniform teams.",
   },
   {
     id: "F10",
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5" || framework.id === "F6" || framework.id === "F7" || framework.id === "F8" || framework.id === "F9") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : "/framework/f8-repairing-awareness"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : framework.id === "F5" ? "/framework/f5-worth-hierarchies" : framework.id === "F6" ? "/framework/f6-bias-regulates" : framework.id === "F7" ? "/framework/f7-domination-regulates" : framework.id === "F8" ? "/framework/f8-repairing-awareness" : "/framework/f9-neurodivergence-variation"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

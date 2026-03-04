@@ -730,7 +730,7 @@ const GLOSSARY_TERMS = [
     tags: ["F8", "healing", "pathways"],
     framework: 8,
   },
-  // ===== F9: NEURODIVERGENCE =====
+  // ===== F9: NEURODIVERGENCE AS NERVOUS SYSTEM VARIATION =====
   {
     slug: "regulatory-rhythm",
     title: "Regulatory Rhythm",
@@ -754,7 +754,7 @@ const GLOSSARY_TERMS = [
     title: "Neurodivergent Masking",
     type: "concept",
     status: "proposed",
-    definition: "The strategy of suppressing authentic neurological responses and performing neurotypical behavior. Not deception or character flaw — survival regulation. The nervous system's adaptation to environments that punish authentic expression. For neurodivergent individuals, the mask has an additional layer beyond Role Mask: hiding the rhythm of the nervous system itself — suppressing stims, forcing eye contact, moderating expression, performing social fluency. Masking is learned early when authentic expression leads to rejection, punishment, or social failure.",
+    definition: "The strategy of suppressing authentic neurological responses and performing neurotypical behavior. Not deception or character flaw — survival regulation. The nervous system's adaptation to environments that punish authentic expression. For neurodivergent individuals, the mask has an additional layer beyond what F8 describes: hiding the rhythm of the nervous system itself — suppressing stims, forcing eye contact, moderating expression, performing social fluency. Masking is learned early when authentic expression leads to rejection, punishment, or social failure.",
     tags: ["F9", "neurodivergence", "masking"],
     framework: 9,
   },
