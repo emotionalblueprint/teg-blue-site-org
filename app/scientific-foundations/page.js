@@ -124,8 +124,9 @@ const globalModels = [
       "Extends physiological states into observable patterns of connection, defense, manipulation, and oppression",
       "Bridges somatic awareness with relational repair through visual, accessible tools",
       "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
+      "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the compass in Protection",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F12"],
   },
   {
     id: 5,
@@ -258,9 +259,10 @@ const globalModels = [
       "Integrates attachment disruption and CPTSD into the Emotional Gradient Framework",
       "Maps how disorganized attachment produces specific awareness configurations and chronic modes",
       "F4 maps intergenerational trauma transmission as rule replication across generations — traumatic rules passed through families and institutions",
+      "F5 traces how conditional safety produces worth-seeking as regulation — and how chronic invisibility from structural filtering produces allostatic load and weathering",
       "Provides gradients and tools for relational repair and nervous system healing",
     ],
-    frameworks: ["F1", "F2", "F3", "F4", "F8", "F10"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F8", "F10"],
   },
 ];
 

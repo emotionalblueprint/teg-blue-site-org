@@ -78,20 +78,20 @@ const FRAMEWORKS = [
   },
   {
     id: "F5",
-    displayName: "Threat-Driven External Validation",
-    title: "The Filter of Worth",
-    subtitle: "Status, Power, and Worth Hierarchies",
+    displayName: "Worth Hierarchies Regulate",
+    title: "How Rules Become Sorting Systems",
+    subtitle: "Safety Proxies, the Filter of Worth, and Structural Compass Lock",
     arc: "Scaling",
-    purpose: "Describe how threat-organized systems convert safety signals into systematic worth hierarchies, producing credibility and resource filtering.",
-    summary: "How threat-organized systems convert safety signals into worth hierarchies that determine what feels safe, lovable, or allowed.",
-    buildsOn: "Shame research, social evaluation threat, internalized stigma, conditional regard, social stratification theory.",
+    purpose: "Explain how threat-stabilized rule systems (F4) produce worth hierarchies — distributing credibility, resources, and protection based on signal access rather than intrinsic worth.",
+    summary: "How rule systems sort people by worth through safety proxies, producing self-reinforcing hierarchies maintained by double false coherence and structural compass lock.",
+    buildsOn: "Capital theory (Bourdieu), social dominance (Sidanius & Pratto), system justification (Jost), signaling theory (Spence), network science (Bonacich), allostatic load (McEwen), intersectionality (Crenshaw), weathering hypothesis (Geronimus), Matthew effect (Merton).",
     claims: [
-      "Worth rules drive protection, control, and domination behaviors — they are the hidden variable",
-      "Many conflicts are worth-threat conflicts in disguise",
-      "Worth hierarchies are maintained through nervous system enforcement, not just ideology",
-      "Repair often fails when worth rules stay untouched",
+      "Worth-seeking is often a nervous system regulation strategy, not a character flaw — the compass orienting toward whatever reduces threat",
+      "The Filter of Worth is a systemic mechanism: signal access mistaken for human value, signal deprivation internalized as inadequacy",
+      "Chronic invisibility produces a structurally stuck compass — not cognitive distortion but accurate adaptation to filtering environments",
+      "Outcome gaps are structural artifacts of proxy access, maintained by double false coherence operating in both directions",
     ],
-    testable: "Measurement design for worth-threat sensitivity. Predicting defensiveness from worth-rule profiles. Intervention studies targeting worth-rule flexibility.",
+    testable: "Measuring safety proxy access and its correlation with credibility allocation. Testing whether the five-step worth loop operates at both individual and institutional scales. Comparing chronic invisibility presentations with structural filtering metrics. Assessing whether addressing structural conditions improves compass flexibility.",
   },
   {
     id: "F6",
@@ -654,9 +654,9 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Link to full framework */}
           <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid ${BORDER.default}`, display: "flex", gap: 16, flexWrap: "wrap" }}>
-            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4") && (
+            {(framework.id === "F1" || framework.id === "F2" || framework.id === "F3" || framework.id === "F4" || framework.id === "F5") && (
               <Link
-                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : "/framework/f4-rules-regulate"}
+                href={framework.id === "F1" ? "/framework/f1-emotional-gradient" : framework.id === "F2" ? "/framework/f2-awareness-calibration" : framework.id === "F3" ? "/framework/f3-false-coherence" : framework.id === "F4" ? "/framework/f4-rules-regulate" : "/framework/f5-worth-hierarchies"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
