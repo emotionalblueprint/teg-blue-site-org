@@ -168,13 +168,13 @@ export default function F2AwarenessCalibrationPage() {
                   Children calibrate to what caregivers embody, not what they say — the transmission channel is the nervous system, not language
                 </li>
                 <li style={propositionItemStyle}>
-                  Identity is not the expression of an innate self — it is a cognitive structure built around whichever awareness capacities had conditions to develop
+                  Identity is not a pure expression of an "innate self" — it is a cognitive structure built around the awareness capacities and regulation patterns the child had conditions to develop
                 </li>
                 <li style={propositionItemStyle}>
                   Healing is not finding a hidden self or removing a mask — it is developing the capacities that never had conditions to form, and learning Biological Restoration
                 </li>
                 <li style={propositionItemStyle}>
-                  The generational chain replicates until awareness changes, not just behaviour or intention
+                  The generational chain replicates until awareness changes, not just behavior or intention
                 </li>
               </ul>
             </PropositionBox>
@@ -198,6 +198,9 @@ export default function F2AwarenessCalibrationPage() {
             </p>
             <p style={proseStyle}>
               The calibration system is the three awareness capacities: Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA). These capacities determine what data the compass receives. They are present at birth in proto-form. They develop through relational conditions. And they develop through a specific mechanism: <strong style={{ color: TEXT.primary }}>awareness teaches awareness.</strong> The awareness capacities the caregivers carry are the awareness capacities that get passed. The adults' capacity configuration is the child's environment.
+            </p>
+            <p style={proseStyle}>
+              This is not a moral indictment of caregivers. It is a developmental mechanism: <strong style={{ color: TEXT.primary }}>what the adult nervous system can reliably embody becomes the child's training data.</strong>
             </p>
 
             <h3 style={conceptHeadingStyle}>The Two-Part Architecture</h3>
@@ -261,6 +264,10 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
+                Operationally, "being yourself" means: <strong style={{ color: TEXT.primary }}>RE reads accurately, ER resonates without flooding, SEA registers your own state — and none of these are being overridden by threat.</strong>
+              </p>
+
+              <p style={proseStyle}>
                 At birth, the emotional-somatic system is the only information system online. The infant already has the biological precursors of the three awareness capacities, operating as a single integrated system:
               </p>
               <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
@@ -302,6 +309,10 @@ export default function F2AwarenessCalibrationPage() {
               <KeyStatement>
                 Before cognition develops, there is no observing self. No separation between experience and identity. Feeling = being. Feedback = identity. How I'm treated = who I am.
               </KeyStatement>
+
+              <p style={proseStyle}>
+                Without SEA, the child cannot locate causality in the environment — so the system defaults to the safest conclusion for attachment: <strong style={{ color: TEXT.primary }}>"It must be me."</strong>
+              </p>
 
               <p style={proseStyle}>
                 A child does not think "I feel scared" — the child <em>is</em> scared. A child does not think "my caregiver is dysregulated" — the child experiences "something is wrong with me." This is the pre-SEA condition — the normal developmental starting point before Self-Emotional Awareness has had conditions to form. Every human begins here.
@@ -392,16 +403,16 @@ export default function F2AwarenessCalibrationPage() {
               </p>
 
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>RE develops as accurate reading.</strong> Not hypervigilant scanning for threat. Not instrumental reading for strategic advantage. Accurate reading: the child learns to track others' emotional states because the adults' emotional states are readable — consistent, congruent, not dangerous to perceive. RE develops in service of understanding, not survival.
+                <strong style={{ color: TEXT.primary }}>RE develops as accurate reading.</strong> Not hypervigilant scanning for threat. Not instrumental reading for strategic advantage. Accurate reading: the child learns to track others' emotional states because the adults' emotional states are readable — consistent, congruent, not dangerous to perceive. RE develops in service of understanding, not survival. The two common distortions are <strong style={{ color: TEXT.primary }}>hypervigilant RE</strong> (scanning for threat) and <strong style={{ color: TEXT.primary }}>instrumental RE</strong> (reading for leverage).
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>ER develops as sustainable resonance.</strong> Not flooding — where the child is overwhelmed by everyone else's emotions. Not shut-down — where the child stops feeling with others because feeling was punished or unbearable. Sustainable: the child feels with others and can hold that feeling without losing themselves in it. ER develops in service of connection, not overwhelm.
+                <strong style={{ color: TEXT.primary }}>ER develops as sustainable resonance.</strong> Not flooding — where the child is overwhelmed by everyone else's emotions. Not shut-down — where the child stops feeling with others because feeling was punished or unbearable. Sustainable: the child feels with others and can hold that feeling without losing themselves in it. ER develops in service of connection, not overwhelm. The two common distortions are <strong style={{ color: TEXT.primary }}>flooded ER</strong> (over-identifying) and <strong style={{ color: TEXT.primary }}>sealed ER</strong> (empathy shut-down).
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>SEA develops as the capacity to know one's own states.</strong> This is the developmental breakthrough: the child begins to separate "this is what I feel" from "this is what is happening around me." The pre-SEA condition begins to resolve. Internal experience becomes readable, nameable, trustworthy.
+                <strong style={{ color: TEXT.primary }}>SEA develops as the capacity to know one's own states.</strong> This is the developmental breakthrough: the child begins to separate "this is what I feel" from "this is what is happening around me." The pre-SEA condition begins to resolve. Internal experience becomes readable, nameable, trustworthy. The two common distortions are <strong style={{ color: TEXT.primary }}>absent SEA</strong> (no self-referential input) and <strong style={{ color: TEXT.primary }}>story-based SEA</strong> (narrative replacing sensation).
               </p>
               <p style={proseStyle}>
-                This requires something specific from the caregiving environment: <strong style={{ color: TEXT.primary }}>the child's emotional signals must be received, reflected, and not contradicted.</strong> The child cries and the caregiver says "you're upset" — not "you're fine," not "stop that," not "what's wrong with you." Over time, the child learns to read their own signals because someone else read them first. SEA develops through being seen — not instructed.
+                This requires something specific from the caregiving environment: <strong style={{ color: TEXT.primary }}>the child's emotional signals must be received, reflected as best as possible, and repaired when misread.</strong> The child cries and the caregiver says "you're upset" — not "you're fine," not "stop that," not "what's wrong with you." Over time, the child learns to read their own signals because someone else read them first. SEA develops through being seen — not instructed.
               </p>
               <p style={proseStyle}>
                 <strong style={{ color: TEXT.primary }}>When cognition arrives, it arrives inside a fully informed system.</strong> All three inputs are online. RE provides accurate data about others. ER provides felt experience of connection. SEA provides data about the self. Cognition builds with the full information set — and the result is <strong style={{ color: TEXT.primary }}>true coherence</strong>: narrative that matches felt experience. Identity forms around accurate data. Not a perfect person — a person with a full information set. A person whose compass moves freely because Biological Restoration was learned and the capacities are online.
@@ -433,10 +444,10 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                F1 establishes that Biological Restoration is the mechanism by which the body returns from threat to connection. Children are born with the biological capacity for this return. The nervous system is designed to complete the threat cycle: mobilise, respond, discharge, restore. But the infant cannot do this alone. The system is designed for <strong style={{ color: TEXT.primary }}>co-regulation</strong> — the caregiver's nervous system teaching the child's nervous system Biological Restoration.
+                F1 establishes that Biological Restoration is the mechanism by which the body returns from threat to connection. Children are born with the biological capacity for this return. The nervous system is designed to complete the threat cycle: mobilize, respond, discharge, restore. But the infant cannot do this alone. The system is designed for <strong style={{ color: TEXT.primary }}>co-regulation</strong> — the caregiver's nervous system teaching the child's nervous system Biological Restoration.
               </p>
               <p style={proseStyle}>
-                When the infant cries and the caregiver holds them, the caregiver's regulated nervous system sends safety signals — through tone, touch, rhythm, presence — that help the infant's activated nervous system complete the cycle and settle. The infant is not being "calmed down." The infant is learning to attune the compass. Through thousands of these interactions, the child's nervous system internalises Biological Restoration: <em>this is how the body goes back to safety.</em> Co-regulation becomes the template for self-regulation.
+                When the infant cries and the caregiver holds them, the caregiver's regulated nervous system sends safety signals — through tone, touch, rhythm, presence — that help the infant's activated nervous system complete the cycle and settle. The infant is not being "calmed down." They are learning a <strong style={{ color: TEXT.primary }}>sequence</strong>: activation → supported discharge → return. That sequence is what becomes Biological Restoration. The infant is learning to attune the compass. Through thousands of these interactions, the child's nervous system internalizes Biological Restoration: <em>this is how the body goes back to safety.</em> Co-regulation becomes the template for self-regulation.
               </p>
               <p style={proseStyle}>
                 This is not a metaphor. It is neurobiological wiring. The caregiver's regulatory capacity literally shapes the child's developing regulatory architecture. The infant doesn't learn to regulate through instruction. The infant learns to regulate through being regulated with. This is awareness teaches awareness applied to regulation: the caregiver's capacity to regulate is the child's regulatory environment.
@@ -469,7 +480,7 @@ export default function F2AwarenessCalibrationPage() {
             </h2>
 
             <p style={proseStyle}>
-              The system described in the previous sections is the design. But this design requires something the child cannot provide for itself: caregivers whose own awareness capacities are functioning. When the adults' awareness capacities were not fully developed — when their own compasses were stuck, their own SEA was absent, their own Biological Restoration was never learned — the child's development follows a different trajectory. Not because the design is flawed. Because the awareness that gets passed is incomplete.
+              The system described in the previous sections is the design. But this design requires something the child cannot provide for itself: caregivers whose own awareness capacities are functioning. When the adults' awareness capacities were not fully developed — when their own compasses were stuck, their own SEA was absent, their own Biological Restoration was never learned — the child's development follows a different trajectory. Not because the design is flawed. Because the awareness that gets passed is incomplete. In practice, Biological Restoration can be <strong style={{ color: TEXT.primary }}>disrupted</strong> (unpredictability), <strong style={{ color: TEXT.primary }}>misdirected</strong> (incongruence), or <strong style={{ color: TEXT.primary }}>blocked</strong> (invalidation).
             </p>
 
             <p style={proseStyle}>
@@ -508,7 +519,7 @@ export default function F2AwarenessCalibrationPage() {
                 Condition 3 — Emotional Invalidation
               </h3>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose RE is instrumental (they read others for strategic purposes — compliance, control), whose ER is shut down, and whose SEA is absent. These adults are often in chronic Control — competent, decisive, "rational." Their compass has been stuck for so long that they genuinely believe the stuck position is correct. They are not being cruel. They are teaching what they know.
+                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose RE is instrumental (they read others for strategic purposes — compliance, control), whose ER is shut down, and whose SEA is absent. These adults are often in chronic Control — competent, decisive, "rational." Their compass has been stuck for so long that they genuinely believe the stuck position is correct. They may not intend cruelty — but the impact is still <strong style={{ color: TEXT.primary }}>real</strong>, and invalidation still <strong style={{ color: TEXT.primary }}>harms development</strong>. They are teaching what they know.
               </p>
               <p style={proseStyle}>
                 <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> RE develops instrumentally — the child learns to read what the environment demands to avoid punishment or rejection. ER shuts down — feeling was punished, so the system stops feeling. SEA never forms — internal experience is explicitly taught to be wrong: "you don't feel that, you shouldn't feel that." Biological Restoration is blocked — the child learns that the activation itself is the problem. The child learns to suppress the activation rather than complete it. The child learns — from adults who believe it — that the first language (F1) is noise, and that silencing it is maturity.
@@ -611,7 +622,7 @@ export default function F2AwarenessCalibrationPage() {
                 </li>
               </ol>
               <p style={proseStyle}>
-                The person does not experience themselves as locked. They experience their mode as reality. Protection feels like realism. Control feels like competence. Domination feels like strength. The lock is invisible from inside — because the person has never experienced Biological Restoration and therefore does not know it exists.
+                From the inside, the lock does not feel like a lock — it feels like <strong style={{ color: TEXT.primary }}>accurate perception</strong>. Protection reads as realism, Control as competence, Domination as strength — because the nervous system rarely experiences the <em>after</em> state where nuance returns. The lock is invisible from inside because the person has never experienced Biological Restoration and therefore does not know it exists.
               </p>
 
               <ExpandableSection title="Research Traditions" type="framework">
@@ -649,7 +660,7 @@ export default function F2AwarenessCalibrationPage() {
                 </li>
               </ul>
               <p style={proseStyle}>
-                The pivotal variable: with SEA, cognition generates <strong style={{ color: TEXT.primary }}>true coherence</strong> — narrative matches felt experience. Without SEA, cognition generates <strong style={{ color: TEXT.primary }}>false coherence</strong> — narrative fills the gap where self-awareness should be. "I'm not angry, I'm just being logical." "I don't have a problem, everyone else is too sensitive." This is cognition solving for stability in the absence of the input it needs.
+                The pivotal variable: with SEA, cognition generates <strong style={{ color: TEXT.primary }}>true coherence</strong> — narrative matches felt experience. Without SEA, cognition generates <strong style={{ color: TEXT.primary }}>false coherence</strong> — narrative fills the gap where self-awareness should be. "I'm not angry, I'm just being logical." "I don't have a problem, everyone else is too sensitive." In other words, cognition becomes a <strong style={{ color: TEXT.primary }}>regulation strategy</strong>: it stabilizes the system by generating explanations that reduce internal conflict when self-data is missing.
               </p>
               <p style={proseStyle}>
                 Cognition does not just fill gaps passively. The adults in the environment use it to teach the child that the stuck position is the <em>correct</em> position. "Don't cry." "Be strong." "You're too sensitive." The child does not just fail to learn regulation. The child is actively taught that the absence of regulation is the right way to be.
@@ -672,6 +683,9 @@ export default function F2AwarenessCalibrationPage() {
                 The traditional framing — a "true self" hidden behind a "false self" or "mask" — implies that there is a complete, authentic identity concealed beneath the adaptive one. The three-capacity model shows something different:
               </p>
               <p style={proseStyle}>
+                People may have different temperaments — but what we call "who I am" is still heavily shaped by <strong style={{ color: TEXT.primary }}>which capacities were allowed to come online</strong> and whether the body learned the return.
+              </p>
+              <p style={proseStyle}>
                 There is no hidden self waiting to be uncovered. There is a body that never stopped sending signals, an awareness configuration that determines what gets received, and a cognitive structure built around the gaps. Identity is not concealing anything — it is what cognition constructed given which capacities were available. "Find your real self" is the wrong instruction. There is no self to find. There is a capacity — SEA — that needs conditions to develop. When it comes online, the person does not discover a hidden identity. They begin receiving data they never had access to before.
               </p>
               <p style={proseStyle}>
@@ -692,7 +706,7 @@ export default function F2AwarenessCalibrationPage() {
               </h3>
 
               <p style={proseStyle}>
-                The awareness configuration a person carries determines the chronic mode, the regulatory strategy, and the identity that cognition builds:
+                These are <strong style={{ color: TEXT.primary }}>configurations</strong>, not personality boxes — they can shift as capacities develop and restoration returns. The awareness configuration a person carries determines the chronic mode, the regulatory strategy, and the identity that cognition builds:
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -708,7 +722,7 @@ export default function F2AwarenessCalibrationPage() {
                   <tbody>
                     <TableRow cells={[
                       "Hyperactive RE + Flooded ER + Absent SEA",
-                      "Chronic Connection",
+                      "Chronic Connection*",
                       "\"I am the caring one\"",
                       "Regulate toward what the other needs",
                     ]} />
@@ -725,7 +739,7 @@ export default function F2AwarenessCalibrationPage() {
                       "Cognition replaced Biological Restoration",
                     ]} />
                     <TableRow cells={[
-                      "Weaponised RE + Absent ER + Absent SEA",
+                      "Weaponized RE + Absent ER + Absent SEA",
                       "Chronic Domination",
                       "\"I am the strong one\"",
                       "Power substitutes for the return path",
@@ -733,6 +747,10 @@ export default function F2AwarenessCalibrationPage() {
                   </tbody>
                 </table>
               </div>
+
+              <p style={{ ...proseStyle, fontSize: 12, color: TEXT.muted, fontStyle: "italic" }}>
+                *This is not Connection Mode as health — it is connection as <strong style={{ color: TEXT.muted }}>survival strategy</strong>: attachment maintained through self-erasure.
+              </p>
 
               <p style={proseStyle}>
                 The four configurations are not personality categories. They are the predictable outcomes of which awareness capacities had conditions to develop, which didn't, and what happened to Biological Restoration under each set of conditions. <strong style={{ color: TEXT.primary }}>Personality is not a type — it is a record.</strong>
@@ -767,7 +785,7 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                Patterns replicate across generations without anyone choosing to pass them on. The transmission mechanism is awareness configuration and regulatory capacity. Not words. Not intentions. Not love.
+                Patterns replicate across generations without anyone choosing to pass them on. The transmission mechanism is awareness configuration and regulatory capacity. Not words. Not intentions. Not love. The transferable unit is not the parent's beliefs. It is the parent's <strong style={{ color: TEXT.primary }}>state signature</strong> and <strong style={{ color: TEXT.primary }}>repair signature</strong>.
               </p>
               <p style={proseStyle}>
                 The parent in chronic Control who pushes their child to "toughen up" is not failing at love. They are succeeding at transmission. They are passing on the only regulatory architecture they know. A caregiver whose SEA is offline cannot mirror what they cannot see, validate what they cannot feel, or model self-awareness they do not have. A caregiver whose own nervous system never learned Biological Restoration cannot co-regulate a child through it — because they do not know it exists.
@@ -779,13 +797,13 @@ export default function F2AwarenessCalibrationPage() {
               <div style={expandableRowStyle}>
                 <ExpandableSection title="Research Traditions" type="framework">
                   <p style={expandedProseStyle}>
-                    Schore (2003) — right hemisphere calibrates to early relational environment. Bowlby (1969) — internal working models. Bandura (1977) — social learning / modelling. Hazan & Shaver (1987) — familiar patterns feel safe even when harmful. Van der Kolk (2014) — intergenerational transmission of trauma. Main & Hesse (1990) — unresolved attachment in parents predicts disorganised attachment in children.
+                    Schore (2003) — right hemisphere calibrates to early relational environment. Bowlby (1969) — internal working models. Bandura (1977) — social learning / modelling. Hazan & Shaver (1987) — familiar patterns feel safe even when harmful. Van der Kolk (2014) — intergenerational transmission of trauma. Main & Hesse (1990) — unresolved attachment in parents predicts disorganized attachment in children.
                   </p>
                 </ExpandableSection>
 
                 <ExpandableSection title="TEG-Blue Contribution" type="framework">
                   <p style={expandedProseStyle}>
-                    The full generational replication mechanism made explicit through the awareness-teaches-awareness lens: adult awareness configuration → environment → child awareness configuration → adult awareness configuration → next generation. The chain is traceable. The transmission channel is identified: not behaviour, not words, not intentions — the caregiver's nervous system and the awareness it carries.
+                    The full generational replication mechanism made explicit through the awareness-teaches-awareness lens: adult awareness configuration → environment → child awareness configuration → adult awareness configuration → next generation. The chain is traceable. The transmission channel is identified: not behavior, not words, not intentions — the caregiver's nervous system and the awareness it carries.
                   </p>
                 </ExpandableSection>
               </div>
@@ -802,7 +820,7 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                Early environments set tolerance thresholds — the point at which the nervous system shifts from one regulatory mode to the next. A child's nervous system learns what intensity, instability, or control must be endured to stay connected. This becomes an internal baseline for what counts as "too much," what feels familiar enough to stay, what gets minimised or normalised, and what feels dangerous to challenge.
+                Early environments set tolerance thresholds — the point at which the nervous system shifts from one regulatory mode to the next. A tolerance threshold is not a value. It is a <strong style={{ color: TEXT.primary }}>nervous system setting</strong> — what the body has learned it must endure to stay connected. A child's nervous system learns what intensity, instability, or control must be endured to stay connected. This becomes an internal baseline for what counts as "too much," what feels familiar enough to stay, what gets minimized or normalized, and what feels dangerous to challenge.
               </p>
               <p style={proseStyle}>
                 The awareness configuration plays a direct role: a person with flooded ER and absent SEA will <em>feel</em> the harm being done to them (through resonance) but cannot identify it as harm being done <em>to</em> them (without self-awareness). The signal arrives but cannot be read as one's own. People don't lack intelligence or willpower. Their nervous system was calibrated early to survive within certain environments.
@@ -842,10 +860,10 @@ export default function F2AwarenessCalibrationPage() {
                 Healing is <strong style={{ color: TEXT.primary }}>developing the awareness capacities that never had conditions to form</strong> — and <strong style={{ color: TEXT.primary }}>learning Biological Restoration — the return path that was never taught.</strong>
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>SEA is the keystone.</strong> Without it, RE serves the mode (scanning for threat, leverage, or approval rather than understanding) and ER is either flooded or absent. With SEA online, the other two capacities can be recalibrated to serve the person rather than the survival strategy.
+                <strong style={{ color: TEXT.primary }}>SEA is the keystone.</strong> Healing requires two tracks in parallel: <strong style={{ color: TEXT.primary }}>SEA (receiving self-data)</strong> and <strong style={{ color: TEXT.primary }}>Biological Restoration (the body learning the return)</strong>. Without SEA, RE serves the mode (scanning for threat, leverage, or approval rather than understanding) and ER is either flooded or absent. With SEA online, the other two capacities can be recalibrated to serve the person rather than the survival strategy.
               </p>
               <p style={proseStyle}>
-                And regulation — the physiological return — is the foundation. Without the body learning that activation can resolve, that threat states end, that the system can come back, cognitive insight alone changes nothing. The person understands their pattern but the body keeps running the old programme. Biological Restoration must be learned — not understood, but experienced. Through co-regulation, through somatic experience, through relationships that provide the safety the original environment could not.
+                And regulation — the physiological return — is the foundation. Without the body learning that activation can resolve, that threat states end, that the system can come back, cognitive insight alone changes nothing. The person understands their pattern but the body keeps running the old program. Biological Restoration must be learned — not understood, but experienced. Through co-regulation, through somatic experience, through relationships that provide the safety the original environment could not.
               </p>
               <p style={proseStyle}>
                 Neither alone is sufficient. SEA without Biological Restoration means the person can finally feel what they feel but the body doesn't know how to complete the cycle. Biological Restoration without SEA means the body can complete the cycle but the person doesn't know what activated it. Both must develop together — and both develop through the same medium: relationships that provide what the original environment could not.
@@ -881,7 +899,7 @@ export default function F2AwarenessCalibrationPage() {
             </h2>
 
             <p style={proseStyle}>
-              F2 is the calibration framework — showing how the three awareness capacities develop when conditions are met, and what happens when the awareness that gets passed is incomplete. The organising principle is: awareness teaches awareness.
+              F2 is the calibration framework — showing how the three awareness capacities develop when conditions are met, and what happens when the awareness that gets passed is incomplete. The organizing principle is: awareness teaches awareness.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 24 }}>
@@ -895,7 +913,7 @@ export default function F2AwarenessCalibrationPage() {
                 <tbody>
                   <TableRow cells={["Three capacities connected at birth", "RE, ER, and SEA start integrated. \"Being yourself\" is a capacity state, not a hidden identity."]} />
                   <TableRow cells={["The pre-SEA condition", "Feeling = being. The normal starting point. The question is whether SEA develops."]} />
-                  <TableRow cells={["Awareness teaches awareness", "The organising mechanism. The adults' awareness configuration creates the environment. The environment shapes the child's awareness."]} />
+                  <TableRow cells={["Awareness teaches awareness", "The organizing mechanism. The adults' awareness configuration creates the environment. The environment shapes the child's awareness."]} />
                   <TableRow cells={["How the capacities develop", "When awareness that gets passed is complete: accurate RE, sustainable ER, online SEA, learned regulation, true coherence."]} />
                   <TableRow cells={["The capacity to regulate", "Children learn Biological Restoration through co-regulation — being regulated with. The caregiver's capacity to regulate is the child's regulatory environment."]} />
                   <TableRow cells={["Three conditions", "Each produced by adults with a specific awareness configuration. Unpredictability, incongruence, and invalidation each produce a traceable configuration in the child."]} />
@@ -930,7 +948,7 @@ export default function F2AwarenessCalibrationPage() {
                   "The child does not just fail to learn regulation — the child is taught that the absence of regulation is the right way to be",
                   "The culture doesn't produce the condition — the condition produces the culture — and the culture reproduces the condition",
                   "Love does not override what the nervous system embodies",
-                  "The chain replicates until awareness changes, not just behaviour",
+                  "The chain replicates until awareness changes, not just behavior",
                   "Familiar can feel 'normal' even when it is costly",
                   "Not fixing something broken, but developing capacities that didn't have conditions to form",
                   "A caregiver whose SEA is offline cannot provide conditions for a child's SEA to develop",

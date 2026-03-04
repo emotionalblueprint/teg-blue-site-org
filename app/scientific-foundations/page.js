@@ -124,7 +124,7 @@ const globalModels = [
       "Extends physiological states into observable patterns of connection, defense, manipulation, and oppression",
       "Bridges somatic awareness with relational repair through visual, accessible tools",
     ],
-    frameworks: ["F1", "F3", "F12"],
+    frameworks: ["F1", "F2", "F3", "F12"],
   },
   {
     id: 5,
@@ -156,11 +156,11 @@ const globalModels = [
     author: "Donald Winnicott",
     coreContribution: "Explains how children develop a True Self when caregivers attune, and a False Self when they must comply for survival — validates the pain of losing authenticity.",
     tegBlueAdds: [
-      "Integrates True/False Self into the Ego Persona Construct Framework",
-      "Maps how protective masks form, shift, and can escalate across the gradient",
-      "Provides tools to rebuild authenticity and restore belonging at each stage",
+      "Reframes True/False Self as awareness configuration: which capacities had conditions to develop and which didn't",
+      "Maps how adaptive identities form around incomplete awareness sets and escalate across the gradient",
+      "Provides tools to develop capacities that never had conditions to form, rather than 'finding' a hidden self",
     ],
-    frameworks: ["F3", "F5", "F8"],
+    frameworks: ["F2", "F3", "F5", "F8"],
   },
   {
     id: 8,
@@ -180,11 +180,11 @@ const globalModels = [
     author: "Carl Jung",
     coreContribution: "Recognizes the adaptive function of the social mask — the tension between public identity and inner reality that shapes how we navigate belonging.",
     tegBlueAdds: [
-      "Places the Persona inside the Role Mask Gradient",
-      "Distinguishes masks rooted in belonging from those rooted in defense, control, or domination",
-      "Provides concrete pathways for reclaiming authenticity",
+      "Reframes the Persona as awareness configuration — identity built from whichever capacities were available",
+      "Distinguishes adaptive identities rooted in belonging from those rooted in defense, control, or domination",
+      "Provides concrete pathways for developing capacities and reclaiming authenticity",
     ],
-    frameworks: ["F3", "F5"],
+    frameworks: ["F2", "F3", "F5"],
   },
   {
     id: 10,
@@ -216,11 +216,11 @@ const globalModels = [
     author: "Erving Goffman",
     coreContribution: "Reveals how social life operates like a stage — people play roles depending on audience, context, and setting — foundational for role theory and social psychology.",
     tegBlueAdds: [
-      "Expands role-play into the Role Mask Gradient",
+      "Expands role-play into awareness configuration: roles formed around available capacities",
       "Distinguishes authentic roles from survival-driven ones across the four modes",
       "Shows pathways for healing from role entrapment and reclaiming genuine connection",
     ],
-    frameworks: ["F3", "F5", "F6"],
+    frameworks: ["F2", "F3", "F5", "F6"],
   },
   {
     id: 13,
@@ -253,10 +253,10 @@ const globalModels = [
     coreContribution: "Explains paradoxical push-pull dynamics where closeness itself feels dangerous — connects childhood relational trauma to lifelong patterns of dysregulation and identity disturbance.",
     tegBlueAdds: [
       "Integrates attachment disruption and CPTSD into the Emotional Gradient Framework",
-      "Shows how disorganized patterns map onto defense/manipulation cycles across the four modes",
+      "Maps how disorganized attachment produces specific awareness configurations and chronic modes",
       "Provides gradients and tools for relational repair and nervous system healing",
     ],
-    frameworks: ["F1", "F3", "F8", "F10"],
+    frameworks: ["F1", "F2", "F3", "F8", "F10"],
   },
 ];
 
