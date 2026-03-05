@@ -1,29 +1,26 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 
 export const metadata = {
-  title: "Collaborate | TEG-Blue Emotional Technology",
-  description: "Research collaboration opportunities with TEG-Blue emotional technology. Clear attribution, authorship expectations, open science principles. Looking for validation partners, replication studies, and cross-disciplinary collaborators.",
+  title: "Use This Work | TEG-Blue Emotional Technology",
+  description: "TEG-Blue is open access under CC BY-NC-SA 4.0. No gates, no applications. Take the framework, cite it, test it. Looking for a lead researcher or institution to carry validation forward.",
   keywords: [
-    "research collaboration",
+    "open access research",
     "emotional technology",
-    "TEG-Blue partnership",
-    "academic collaboration",
-    "open science research",
-    "replication studies",
+    "TEG-Blue open science",
+    "research collaboration",
+    "CC BY-NC-SA",
+    "emotional intelligence research",
     "validation research",
-    "psychology collaboration",
-    "neuroscience collaboration",
-    "trauma research partnership",
-    "emotional intelligence research"
+    "replication studies",
   ],
   alternates: {
     canonical: "https://teg-blue.org/collaborate",
   },
   openGraph: {
-    title: "Collaborate — TEG-Blue Research",
-    description: "Join the research effort. Clear authorship, open science principles, multiple ways to contribute.",
+    title: "Use This Work — TEG-Blue Research",
+    description: "Open access under CC BY-NC-SA 4.0. No gates, no applications. Take the framework and work with it independently.",
     url: "https://teg-blue.org/collaborate",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -31,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Collaborate — TEG-Blue Research",
-    description: "Research collaboration opportunities. Validation studies, replication, cross-disciplinary work.",
+    title: "Use This Work — TEG-Blue Research",
+    description: "Open access. No gates. Take the framework, cite it, test it.",
   },
 };
 
@@ -56,194 +53,143 @@ export default function CollaboratePage() {
         }}
       >
         <ResearcherHero
-          badge="COLLABORATE"
-          title="Research Collaboration"
-          description="Clear attribution, clear authorship expectations, clear boundaries. Open science as default."
+          badge="OPEN ACCESS"
+          title="Use this work"
+          description="Everything here is open. No gates, no applications, no required collaboration. Take what is useful. Cite the source. Test the claims."
         />
 
-        {/* Principles */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Principles
-          </h2>
-          <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <li style={{ marginBottom: 8 }}>Clear attribution from the start.</li>
-            <li style={{ marginBottom: 8 }}>Authorship agreements before work begins.</li>
-            <li style={{ marginBottom: 8 }}>Open science when possible. Data and methods shared unless privacy requires otherwise.</li>
-            <li style={{ marginBottom: 8 }}>Disagreement is welcome. TEG-Blue is a hypothesis, not a creed.</li>
-            <li>No collaboration requires belief. Only willingness to engage seriously.</li>
-          </ul>
-        </section>
-
-        {/* How to start */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            How to start
-          </h2>
-          <ol style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <li style={{ marginBottom: 8 }}>
-              <strong style={{ color: TEXT.primary }}>Read the research entry page.</strong> Understand what TEG-Blue is and what is being tested.{" "}
-              <Link href="/research-entry" style={{ color: SPECTRUM.blue }}>Start Here →</Link>
-            </li>
-            <li style={{ marginBottom: 8 }}>
-              <strong style={{ color: TEXT.primary }}>Identify which lane fits your expertise:</strong> Measurement, Prediction, Intervention, or AI Safety.
-            </li>
-            <li style={{ marginBottom: 8 }}>
-              <strong style={{ color: TEXT.primary }}>Send a short email</strong> with your background, which lane you want to contribute to, and what you would test or critique first.
-            </li>
-          </ol>
-        </section>
-
-        {/* The four research lanes */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            The four research lanes
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            You do not need to validate the entire system. Pick the lane that matches your expertise.
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <LaneCard
-              letter="A"
-              title="Measurement and recognition"
-              description="Help test whether the Four-Mode Gradient can be reliably detected in natural language."
-            />
-            <LaneCard
-              letter="B"
-              title="Prediction and prevention"
-              description="Help map escalation pathways and design prediction models for harm trajectories."
-            />
-            <LaneCard
-              letter="C"
-              title="Navigation and intervention"
-              description="Help identify which interventions support movement from Control back toward Connection."
-            />
-            <LaneCard
-              letter="D"
-              title="AI alignment and structured schemas"
-              description="Help translate emotional pattern logic into forms AI systems can read safely."
-            />
-          </div>
-        </section>
-
-        {/* What collaboration looks like */}
+        {/* Open access */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What collaboration looks like
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12, maxWidth: 640 }}>
-            Most collaborations begin with a short conversation to clarify:
-          </p>
-          <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            <li style={{ marginBottom: 6 }}>What you want to study or test</li>
-            <li style={{ marginBottom: 6 }}>What data, tools, or access you need</li>
-            <li style={{ marginBottom: 6 }}>What authorship and attribution looks like</li>
-            <li>What timeline and scope are realistic</li>
-          </ul>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            We respond to every serious inquiry.
-          </p>
-        </section>
-
-        {/* What we can offer */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What we can offer
-          </h2>
-          <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <li style={{ marginBottom: 6 }}>Access to existing datasets (anonymized conflict narratives, emotional gradient data)</li>
-            <li style={{ marginBottom: 6 }}>Theoretical consultation on framework design and interpretation</li>
-            <li style={{ marginBottom: 6 }}>Co-authorship opportunities on replication and extension studies</li>
-            <li style={{ marginBottom: 6 }}>Acknowledgment and attribution for critique, corrections, and improvements</li>
-            <li>Open access to all published materials (CC BY-NC-SA 4.0)</li>
-          </ul>
-        </section>
-
-        {/* What we need */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What we need
+            Everything is open
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            See <Link href="/research-entry" style={{ color: SPECTRUM.blue }}>Start Here</Link> for detailed research needs. The short version:
+            TEG-Blue is published under <strong style={{ color: TEXT.primary }}>CC BY-NC-SA 4.0</strong>. The frameworks, models, datasets, methodology, and source theory documentation are all available for independent use. There is no application process, no approval needed, and no coordination required.
           </p>
-          <div
-            style={{
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
-            }}
-          >
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ background: BG.surface }}>
-                  <th style={{ ...tableHeaderStyle }}>Lane</th>
-                  <th style={{ ...tableHeaderStyle }}>What we need</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>A</td>
-                  <td style={{ ...tableCellStyle, color: TEXT.secondary }}>Inter-rater reliability, annotation schemas, construct validation</td>
-                </tr>
-                <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>B</td>
-                  <td style={{ ...tableCellStyle, color: TEXT.secondary }}>Escalation pathway coding, longitudinal design, behavioral prediction</td>
-                </tr>
-                <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>C</td>
-                  <td style={{ ...tableCellStyle, color: TEXT.secondary }}>Scale design, factor structure, convergent/discriminant validity</td>
-                </tr>
-                <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-                  <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>D</td>
-                  <td style={{ ...tableCellStyle, color: TEXT.secondary }}>Schema design feedback, evaluation protocols, misuse prevention</td>
-                </tr>
-              </tbody>
-            </table>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <OpenItem
+              label="Frameworks and models"
+              description="The full architecture — 12 frameworks, 2 models, system overview"
+              href="/frameworks-map"
+            />
+            <OpenItem
+              label="Publications and data"
+              description="Validation study, datasets, methodology documentation"
+              href="/publications"
+            />
+            <OpenItem
+              label="Source theories"
+              description="139+ established theories, credited and searchable"
+              href="/scientific-foundations"
+            />
           </div>
         </section>
 
-        {/* Contact */}
-        <section
-          style={{
-            padding: 24,
-            background: BG.card,
-            borderRadius: 8,
-            border: `1px solid ${BORDER.default}`,
-            borderLeft: `3px solid ${SPECTRUM.azure}`,
-          }}
-        >
-          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Contact
+        {/* How to cite */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            How to cite
           </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16, maxWidth: 500 }}>
-            Send a short message with your background, which lane you want to contribute to, and what you would test or critique first.
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
+            If you use TEG-Blue in your work — whether to test, critique, extend, or reference — citation formats are available for the framework, the validation study, and individual components.
           </p>
-          <a
-            href="mailto:research@teg-blue.org"
+          <Link
+            href="/citations"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 8,
-              padding: "12px 24px",
-              background: SPECTRUM.blue,
-              color: "#fff",
-              borderRadius: 8,
-              fontWeight: 500,
+              gap: 6,
               fontSize: 14,
+              color: SPECTRUM.blue,
               textDecoration: "none",
+              fontWeight: 500,
             }}
           >
-            research@teg-blue.org
-          </a>
+            Full citation formats →
+          </Link>
+        </section>
+
+        {/* Research directions */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            Research directions still open
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+            The framework opens several lines of inquiry. Each can be pursued independently. These are documented in more detail on the{" "}
+            <Link href="/research-entry" style={{ color: SPECTRUM.blue }}>Start Here</Link> page.
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <DirectionCard
+              letter="A"
+              title="Measurement and recognition"
+              description="Can the Four-Mode Gradient be reliably detected in natural language?"
+            />
+            <DirectionCard
+              letter="B"
+              title="Prediction and prevention"
+              description="How do states shift and escalate? Can harm trajectories be mapped and predicted?"
+            />
+            <DirectionCard
+              letter="C"
+              title="Navigation and intervention"
+              description="Which interventions support movement from Control back toward Connection?"
+            />
+            <DirectionCard
+              letter="D"
+              title="AI alignment and structured schemas"
+              description="How can emotional pattern logic be translated into forms AI systems read safely?"
+            />
+          </div>
+        </section>
+
+        {/* The ask */}
+        <section style={{ marginBottom: 32 }}>
+          <div
+            style={{
+              padding: 24,
+              background: gradientCardBg(SPECTRUM.azure),
+              borderRadius: 10,
+              border: `1px solid ${BORDER.default}`,
+              borderLeft: `3px solid ${SPECTRUM.azure}`,
+            }}
+          >
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+              The specific ask
+            </h2>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+              I built this framework over nearly two years of independent research. The architecture is complete. The first validation study is published. The open questions are documented.
+            </p>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+              What the framework needs now is a <strong style={{ color: TEXT.primary }}>lead researcher or institution</strong> to carry the next phase — systematic validation, replication across contexts, and dissemination into established research channels. There is real space here for someone to take the lead.
+            </p>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
+              Disagreement is welcome. TEG-Blue is a working hypothesis, not a settled framework. The only requirement is willingness to engage seriously with the work.
+            </p>
+            <a
+              href="mailto:research@teg-blue.org"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "12px 24px",
+                background: SPECTRUM.azure,
+                color: "#fff",
+                borderRadius: 8,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              research@teg-blue.org
+            </a>
+          </div>
         </section>
 
         {/* Footer note */}
         <footer style={{ marginTop: 32, textAlign: "center" }}>
           <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
+            TEG-Blue · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
       </main>
@@ -254,7 +200,32 @@ export default function CollaboratePage() {
 }
 
 // Helper components
-function LaneCard({ letter, title, description }) {
+function OpenItem({ label, description, href }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "flex",
+        alignItems: "baseline",
+        gap: 10,
+        padding: "12px 16px",
+        background: BG.card,
+        borderRadius: 8,
+        border: `1px solid ${BORDER.default}`,
+        textDecoration: "none",
+      }}
+    >
+      <span style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, whiteSpace: "nowrap" }}>
+        {label}
+      </span>
+      <span style={{ fontSize: 13, color: TEXT.muted }}>
+        — {description}
+      </span>
+    </Link>
+  );
+}
+
+function DirectionCard({ letter, title, description }) {
   return (
     <div
       style={{
@@ -266,7 +237,7 @@ function LaneCard({ letter, title, description }) {
       }}
     >
       <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-        Lane {letter} — {title}
+        {letter}. {title}
       </h3>
       <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
         {description}
@@ -274,19 +245,3 @@ function LaneCard({ letter, title, description }) {
     </div>
   );
 }
-
-const tableHeaderStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-};
-
-const tableCellStyle = {
-  padding: "12px 16px",
-  fontSize: 14,
-};
