@@ -43,7 +43,8 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Publications", href: "/publications" },
-  { label: "Collaborate", href: "/collaborate" },
+  { label: "Scientific Foundations", href: "/theoretical-foundations" },
+  { label: "Glossary", href: "/glossary" },
   { label: "About", href: "/about" },
 ];
 
