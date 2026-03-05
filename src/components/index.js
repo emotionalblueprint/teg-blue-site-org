@@ -15,6 +15,7 @@ export { default as ContextBlock } from "./ContextBlock";
 
 // Researcher components
 export { default as PatternGradientBar } from "./PatternGradientBar";
+export { default as FluidCompassExplorer } from "./FluidCompassExplorer";
 export { default as ResearcherPatternCard } from "./ResearcherPatternCard";
 export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";

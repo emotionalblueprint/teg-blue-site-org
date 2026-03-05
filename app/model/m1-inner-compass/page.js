@@ -6,6 +6,7 @@ import {
 import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
+  FluidCompassExplorer,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -79,6 +80,9 @@ export default function M1InnerCompassPage() {
           subtitle="The Instrument"
           description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
         />
+
+        {/* ─── FLUID COMPASS EXPLORER ──────────────────────── */}
+        <FluidCompassExplorer />
 
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
@@ -555,25 +559,25 @@ export default function M1InnerCompassPage() {
                 <div style={gridHeaderStyle}>Domination</div>
                 {/* Duration */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Duration</div>
-                <div style={gridCellStyle}>Baseline — sustained living</div>
+                <div style={gridCellStyle}>Baseline — designed for sustained living</div>
                 <div style={gridCellStyle}>Minutes — activates fast, returns fast</div>
                 <div style={gridCellStyle}>Hours to days — when Protection isn{"'"}t enough</div>
-                <div style={gridCellStyle}>Hours to days, rare — highest cost</div>
+                <div style={gridCellStyle}>Hours to days, rare — most extreme response, highest cost</div>
                 {/* Trigger logic */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trigger logic</div>
                 <div style={gridCellStyle}>Safety present</div>
                 <div style={gridCellStyle}>Real threat activates the body automatically</div>
-                <div style={gridCellStyle}>Threat persists — cognitive override kicks in deliberately</div>
-                <div style={gridCellStyle}>Threat extreme or unresolvable — maximum force chosen consciously</div>
+                <div style={gridCellStyle}>Threat persists beyond minutes — cognitive override kicks in deliberately</div>
+                <div style={gridCellStyle}>Threat is extreme or unresolvable — maximum force chosen consciously</div>
                 {/* Guilt */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
-                <div style={gridCellStyle}>Acknowledges impact, makes amends</div>
+                <div style={gridCellStyle}>Acknowledges impact, makes amends — Accountability</div>
                 <div style={gridCellStyle}>Recognises shame signal, holds it</div>
                 <div style={gridCellStyle}>Owns the harm, justifies nothing</div>
                 <div style={gridCellStyle}>Takes decisive corrective action</div>
                 {/* Fear */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
-                <div style={gridCellStyle}>Reads real threat, stays grounded</div>
+                <div style={gridCellStyle}>Reads real threat, stays alert and grounded</div>
                 <div style={gridCellStyle}>Mobilises proportionally, body leads</div>
                 <div style={gridCellStyle}>Consciously contains the danger</div>
                 <div style={gridCellStyle}>Eliminates the threat, knows the cost</div>
@@ -581,14 +585,14 @@ export default function M1InnerCompassPage() {
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
                 <div style={gridCellStyle}>Boundary signal — names and repairs</div>
                 <div style={gridCellStyle}>Activates defence, proportional and clear</div>
-                <div style={gridCellStyle}>Deploys strategically, no collateral</div>
+                <div style={gridCellStyle}>Deploys anger strategically, no collateral damage</div>
                 <div style={gridCellStyle}>Overrides with force — chosen, deliberate</div>
                 {/* Shame */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
                 <div style={gridCellStyle}>Vulnerability in service of repair</div>
                 <div style={gridCellStyle}>Holds self-blame without losing self</div>
                 <div style={gridCellStyle}>Owns the failure, doesn{"'"}t perform it</div>
-                <div style={gridCellStyle}>Decisive course correction</div>
+                <div style={gridCellStyle}>Decisive course correction, no self-destruction</div>
                 {/* Sadness */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
                 <div style={gridCellStyle}>Shared grief, genuine empathy</div>
@@ -599,7 +603,7 @@ export default function M1InnerCompassPage() {
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Envy</div>
                 <div style={gridCellStyle}>Turns envy into admiration and learning</div>
                 <div style={gridCellStyle}>Feels the gap, uses it as signal</div>
-                <div style={gridCellStyle}>Channels into strategic action</div>
+                <div style={gridCellStyle}>Channels envy into strategic action</div>
                 <div style={gridCellStyle}>Eliminates the obstacle with full awareness</div>
                 {/* Joy */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
@@ -619,6 +623,93 @@ export default function M1InnerCompassPage() {
             <KeyStatement>
               Assess mode position, not the emotion. Anger in Connection and anger in Domination are the same signal producing entirely different outcomes.
             </KeyStatement>
+
+            {/* Mode Lens — Social & Cultural Constructs */}
+            <h3 style={h3Style}>Mode Lens — Social &amp; Cultural Constructs</h3>
+            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
+              The same social constructs refract differently at each gradient position. In a fluid compass, the person knows what they are doing and why.
+            </p>
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
+                <div style={gridHeaderStyle}></div>
+                <div style={gridHeaderStyle}>Connection</div>
+                <div style={gridHeaderStyle}>Protection</div>
+                <div style={gridHeaderStyle}>Control</div>
+                <div style={gridHeaderStyle}>Domination</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power</div>
+                <div style={gridCellStyle}>Shared, mutual agency feels safe</div>
+                <div style={gridCellStyle}>Feels dangerous — steps back or holds ground consciously</div>
+                <div style={gridCellStyle}>Used deliberately to contain real threat</div>
+                <div style={gridCellStyle}>Enforced fully aware of the cost — temporary and purposeful</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Virtue / Obedience</div>
+                <div style={gridCellStyle}>Integrity means honesty + care</div>
+                <div style={gridCellStyle}>Complies where necessary to stay safe, knows they{"'"}re doing it</div>
+                <div style={gridCellStyle}>Performs virtue strategically, aware it{"'"}s a tool</div>
+                <div style={gridCellStyle}>Drops performance entirely — acts from raw necessity</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gender Roles</div>
+                <div style={gridCellStyle}>Expressive and fluid, emotions are human</div>
+                <div style={gridCellStyle}>Performs gender to navigate real danger, aware of the choice</div>
+                <div style={gridCellStyle}>Uses gender roles deliberately to manage the situation</div>
+                <div style={gridCellStyle}>Overrides gender norms entirely when survival demands it</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Success</div>
+                <div style={gridCellStyle}>Sustainability, contribution, and joy</div>
+                <div style={gridCellStyle}>Survival mode — focuses only on what keeps them safe</div>
+                <div style={gridCellStyle}>Pursues achievement consciously to neutralise threat</div>
+                <div style={gridCellStyle}>Dominates to secure survival — knows this is temporary</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
+                <div style={gridCellStyle}>Freedom, clarity, and mutual growth</div>
+                <div style={gridCellStyle}>Protects the bond actively — pulls back to keep it safe</div>
+                <div style={gridCellStyle}>Controls access to love deliberately, aware of the risk</div>
+                <div style={gridCellStyle}>Holds love fiercely — protection justified by real danger</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Goodness</div>
+                <div style={gridCellStyle}>Boundaries and compassion</div>
+                <div style={gridCellStyle}>Complies to avoid harm, knows the difference</div>
+                <div style={gridCellStyle}>Uses moral framing consciously as a tool</div>
+                <div style={gridCellStyle}>Suspends goodness temporarily — acts from necessity</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Provider Role</div>
+                <div style={gridCellStyle}>Care, presence, and reciprocity</div>
+                <div style={gridCellStyle}>Provides out of obligation temporarily — knows why</div>
+                <div style={gridCellStyle}>Providing becomes leverage, used deliberately</div>
+                <div style={gridCellStyle}>Uses provision to secure safety — aware of the power dynamic</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Silence / Confrontation</div>
+                <div style={gridCellStyle}>Silence means reflection, conflict brings repair</div>
+                <div style={gridCellStyle}>Silence feels safer — chooses it deliberately, not from fear</div>
+                <div style={gridCellStyle}>Silence is strategy — withholds truth to manage outcome</div>
+                <div style={gridCellStyle}>Silence becomes law — enforced consciously to end the threat</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Emotion Expression</div>
+                <div style={gridCellStyle}>Signals, shared to connect</div>
+                <div style={gridCellStyle}>Hides emotions to stay safe — knows they{"'"}re doing it</div>
+                <div style={gridCellStyle}>Uses emotions as tools deliberately, aware of the impact</div>
+                <div style={gridCellStyle}>Suppresses emotion fully — chosen, temporary, high cost</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Belonging</div>
+                <div style={gridCellStyle}>Authenticity</div>
+                <div style={gridCellStyle}>Conforms where necessary — conscious and temporary</div>
+                <div style={gridCellStyle}>Uses belonging as currency deliberately</div>
+                <div style={gridCellStyle}>Enforces belonging — conscious use of exclusion to neutralise threat</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Progress</div>
+                <div style={gridCellStyle}>Collective growth and learning together</div>
+                <div style={gridCellStyle}>Pushes forward to survive — focused, temporary</div>
+                <div style={gridCellStyle}>Pursues achievement to neutralise the threat consciously</div>
+                <div style={gridCellStyle}>Advances through domination — knows the cost, chooses it</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Truth</div>
+                <div style={gridCellStyle}>Shared — we seek understanding and repair</div>
+                <div style={gridCellStyle}>Protects truth where necessary — aware of what they{"'"}re withholding</div>
+                <div style={gridCellStyle}>Becomes selective — used deliberately to defend or persuade</div>
+                <div style={gridCellStyle}>Rewrites truth consciously to end the threat — temporary</div>
+              </div>
+            </div>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -772,7 +863,7 @@ export default function M1InnerCompassPage() {
                 <div style={gridCellStyle}>Fear of exposure drives power — invisible to self</div>
                 {/* Anger */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
-                <div style={gridCellStyle}>Rerouted into guilt — forbidden, no outlet</div>
+                <div style={gridCellStyle}>Anger rerouted into guilt — forbidden, no outlet</div>
                 <div style={gridCellStyle}>Permanent reactive defence, no stand-down</div>
                 <div style={gridCellStyle}>Rage as management tool, framed as logic</div>
                 <div style={gridCellStyle}>Rage and contempt as default — punishment and coercion</div>
@@ -806,6 +897,93 @@ export default function M1InnerCompassPage() {
                 <div style={gridCellStyle}>Clinging, terror of loss, can never trust</div>
                 <div style={gridCellStyle}>All love conditional and transactional</div>
                 <div style={gridCellStyle}>Love as ownership and control</div>
+              </div>
+            </div>
+
+            {/* Chronic Mode Lens — Social & Cultural Constructs */}
+            <h3 style={h3Style}>Chronic Mode Lens — Social &amp; Cultural Constructs</h3>
+            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
+              When the compass is stuck, social constructs stop being tools and become prisons. Self-Emotional Awareness gone. The person no longer knows they are doing it.
+            </p>
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
+                <div style={gridHeaderStyle}></div>
+                <div style={gridHeaderStyle}>Chronic Connection</div>
+                <div style={gridHeaderStyle}>Chronic Protection</div>
+                <div style={gridHeaderStyle}>Chronic Control</div>
+                <div style={gridHeaderStyle}>Chronic Domination</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power</div>
+                <div style={gridCellStyle}>Feels dangerous — compulsively yields to others</div>
+                <div style={gridCellStyle}>Seeks safety through control or withdrawal — permanent</div>
+                <div style={gridCellStyle}>A tool to dominate or avoid vulnerability</div>
+                <div style={gridCellStyle}>Enforced — others{"'"} safety feels irrelevant</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Virtue / Obedience</div>
+                <div style={gridCellStyle}>Integrity collapses into chronic compliance</div>
+                <div style={gridCellStyle}>Obedience feels necessary to avoid rejection — always</div>
+                <div style={gridCellStyle}>Virtue becomes performance, being {"\""}good{"\""}  for approval</div>
+                <div style={gridCellStyle}>Virtue becomes performance, being {"\""}good{"\""}  for dominance</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gender Roles</div>
+                <div style={gridCellStyle}>Performs gender compulsively to remain acceptable</div>
+                <div style={gridCellStyle}>Performs gender permanently to stay safe</div>
+                <div style={gridCellStyle}>Weaponises or idealises gender roles to gain control</div>
+                <div style={gridCellStyle}>Gender used to rank, suppress, or exploit</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Success</div>
+                <div style={gridCellStyle}>Not failing others — self{"'"}s needs invisible</div>
+                <div style={gridCellStyle}>Survival — fear of failure drives everything</div>
+                <div style={gridCellStyle}>Validation and superiority</div>
+                <div style={gridCellStyle}>Domination — others{"'"} failure ensures status</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
+                <div style={gridCellStyle}>Self-erasure — merger as the only safety</div>
+                <div style={gridCellStyle}>Protection — fear of loss or rejection dominates</div>
+                <div style={gridCellStyle}>Control — affection used to gain safety</div>
+                <div style={gridCellStyle}>Possession — control justified as care</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Goodness</div>
+                <div style={gridCellStyle}>Compliance — guilt for saying no</div>
+                <div style={gridCellStyle}>Compliance — guilt for saying no</div>
+                <div style={gridCellStyle}>Moral superiority — others are shamed</div>
+                <div style={gridCellStyle}>Purity enforcement — fear as the tool</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Provider Role</div>
+                <div style={gridCellStyle}>Compulsory self-sacrifice, no reciprocity</div>
+                <div style={gridCellStyle}>Permanent obligation or self-sacrifice</div>
+                <div style={gridCellStyle}>Proof of worth or leverage</div>
+                <div style={gridCellStyle}>Control — dependence used as power</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Silence / Confrontation</div>
+                <div style={gridCellStyle}>Self-erasure — conflict is forbidden</div>
+                <div style={gridCellStyle}>Silence feels safer — conflict feels permanently dangerous</div>
+                <div style={gridCellStyle}>Strategy — truth is permanently withheld</div>
+                <div style={gridCellStyle}>Law — conflict becomes punishment</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Emotion Expression</div>
+                <div style={gridCellStyle}>Hidden to keep others comfortable</div>
+                <div style={gridCellStyle}>Hidden permanently to stay safe</div>
+                <div style={gridCellStyle}>Tools — expressed only to manipulate outcomes</div>
+                <div style={gridCellStyle}>Weakness — suppression is mandatory</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Belonging</div>
+                <div style={gridCellStyle}>Permanent conformity — authenticity lost</div>
+                <div style={gridCellStyle}>Conformity — any difference feels dangerous</div>
+                <div style={gridCellStyle}>Currency — inclusion and exclusion as manipulation</div>
+                <div style={gridCellStyle}>Submission — exclusion becomes control</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Progress</div>
+                <div style={gridCellStyle}>Serving others{"'"} growth — self erased</div>
+                <div style={gridCellStyle}>Survival — permanently pushing to stay safe</div>
+                <div style={gridCellStyle}>Achievement for status and comparison — always</div>
+                <div style={gridCellStyle}>Domination — others{"'"} erasure ensures advancement</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Truth</div>
+                <div style={gridCellStyle}>Suppressed to protect others from discomfort</div>
+                <div style={gridCellStyle}>Permanently risky — self-protection from consequences</div>
+                <div style={gridCellStyle}>Selective — permanently used to defend or persuade</div>
+                <div style={gridCellStyle}>Controlled — rewritten to maintain power</div>
               </div>
             </div>
 
