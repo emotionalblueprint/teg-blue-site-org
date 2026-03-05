@@ -41,7 +41,8 @@ export default function GlossaryList({ terms = [] }) {
     return (
       term.title?.toLowerCase().includes(searchLower) ||
       term.definition?.toLowerCase().includes(searchLower) ||
-      term.tags?.some((t) => t.toLowerCase().includes(searchLower))
+      term.tags?.some((t) => t.toLowerCase().includes(searchLower)) ||
+      term.aliases?.some((a) => a.toLowerCase().includes(searchLower))
     );
   });
 
@@ -295,11 +296,23 @@ function GlossaryTerm({ term }) {
                 fontSize: 16,
                 fontWeight: 600,
                 color: TEXT.primary,
-                marginBottom: 6,
+                marginBottom: term.aliases ? 2 : 6,
               }}
             >
               {term.title}
             </h3>
+            {term.aliases && term.aliases.length > 0 && (
+              <p
+                style={{
+                  fontSize: 11,
+                  fontFamily: FONT.mono,
+                  color: TEXT.muted,
+                  margin: "0 0 6px 0",
+                }}
+              >
+                Also: {term.aliases.join(", ")}{term.aliasNote ? ` — ${term.aliasNote}` : ""}
+              </p>
+            )}
             <p
               style={{
                 fontSize: 13,
