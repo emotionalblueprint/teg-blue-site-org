@@ -21,6 +21,9 @@ export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
 
+// Author
+export { default as AuthorBlock } from "./AuthorBlock";
+
 // Page components
 export { default as ContentGrid } from "./ContentGrid";
 export { default as HubContent } from "./HubContent";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock } from "@/src/components";
 import { generateFAQJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
@@ -333,6 +333,11 @@ export default function MethodologyPage() {
               Collaborate →
             </Link>
           </p>
+        </section>
+
+        {/* Author */}
+        <section style={{ marginBottom: 32 }}>
+          <AuthorBlock />
         </section>
 
         {/* Footer note */}

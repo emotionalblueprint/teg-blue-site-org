@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PropositionBox, MechanismBox } from "@/src/components";
+import { SiteHeader, SiteFooter, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
 
 export const metadata = {
   title: "Start Here | TEG-Blue Emotional Technology",
@@ -304,6 +304,11 @@ export default function ResearchEntryPage() {
           >
             research@teg-blue.org
           </a>
+        </section>
+
+        {/* Author */}
+        <section style={{ marginBottom: 32 }}>
+          <AuthorBlock />
         </section>
 
         {/* Footer note */}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
 import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PatternGradientBar } from "@/src/components";
+import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 
 
 export const metadata = {
@@ -37,32 +37,14 @@ export default function ResearchHub() {
           {/* ── Hero ── */}
           <section style={{ marginBottom: 48 }}>
             <ResearcherHero
-              badge="EMOTIONAL TECHNOLOGY RESEARCH"
+              badge="OPEN SCIENCE · NO GATES · NO APPLICATIONS"
               title="Reconnecting Cognition with Emotional Awareness"
-              subtitle="Open science — transparent research, credited sources, testable claims"
-              description="TEG-Blue maps how emotional awareness connects cognition and feeling — and what happens when it goes offline. Built on 139+ established theories. Open to critique and validation."
+              subtitle="Everything published, everything testable, everything open access. CC BY-NC-SA 4.0."
+              description="TEG-Blue maps how emotional awareness connects cognition and feeling — and what happens when it goes offline. 12 frameworks integrating 139+ established theories from neuroscience, psychology, and trauma research. No access restrictions, no required collaborations — take the framework, the data, and the methodology and work with them independently."
             />
 
-            <div style={{ marginTop: 20, maxWidth: 500 }}>
-              <PatternGradientBar />
-            </div>
-
-            <p
-              style={{
-                fontSize: 15,
-                lineHeight: 1.7,
-                color: TEXT.secondary,
-                maxWidth: 600,
-                marginTop: 24,
-                marginBottom: 24,
-                fontWeight: 500,
-              }}
-            >
-              The gap in emotional intelligence has never been a lack of good science. It has been a lack of architecture — a structure where the science connects, becomes visible, and becomes usable. That&apos;s what TEG-Blue is.
-            </p>
-
             {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 24 }}>
               <Link
                 href="/research-entry"
                 style={{
@@ -81,7 +63,7 @@ export default function ResearchHub() {
                 Start Here →
               </Link>
               <Link
-                href="/frameworks-map"
+                href="/publications"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -96,8 +78,88 @@ export default function ResearchHub() {
                   border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
                 }}
               >
-                See the Frameworks
+                Read the Validation Study
               </Link>
+            </div>
+          </section>
+
+          {/* ── Validation Evidence ── */}
+          <section style={{ marginBottom: 48 }}>
+            <div
+              style={{
+                background: gradientCardBg(RESEARCHER.accent),
+                borderRadius: 10,
+                border: `1px solid ${BORDER.default}`,
+                borderLeft: `3px solid ${RESEARCHER.accent}`,
+                padding: "24px 28px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.blue,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  marginBottom: 16,
+                  fontFamily: FONT.mono,
+                }}
+              >
+                Empirical Validation — Four-Mode Gradient Framework
+              </p>
+
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16, marginBottom: 16 }}>
+                <MetricCard value="10,000+" label="natural conflict narratives analyzed" />
+                <MetricCard value="κ = 0.74" label="inter-rater reliability" />
+                <MetricCard value="+78%" label="complexity markers in de-escalators" />
+              </div>
+
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+                Computational analysis of unstructured text. Four regulatory modes reliably detected. De-escalators showed significantly higher rates of self-awareness, perspective-taking, and emotional differentiation. Mode classifications correlated with independent community moral judgments.
+              </p>
+
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16 }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                  <Link
+                    href="/publications"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      padding: "10px 18px",
+                      background: RESEARCHER.accent,
+                      color: "#fff",
+                      borderRadius: 6,
+                      fontWeight: 500,
+                      fontSize: 13,
+                      textDecoration: "none",
+                    }}
+                  >
+                    Read the study →
+                  </Link>
+                  <Link
+                    href="/methodology"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      padding: "10px 18px",
+                      background: hexToRgba(RESEARCHER.accent, 0.1),
+                      color: RESEARCHER.accent,
+                      borderRadius: 6,
+                      fontWeight: 500,
+                      fontSize: 13,
+                      textDecoration: "none",
+                      border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
+                    }}
+                  >
+                    See methodology
+                  </Link>
+                </div>
+                <span style={{ fontSize: 12, color: TEXT.muted, fontFamily: FONT.mono }}>
+                  DOI: 10.5281/zenodo.18428907
+                </span>
+              </div>
             </div>
           </section>
 
@@ -138,143 +200,62 @@ export default function ResearchHub() {
             </p>
           </section>
 
-          {/* ── The 12 Frameworks ── */}
+          {/* ── The 12 Frameworks with Entry Points ── */}
           <section style={{ marginBottom: 48 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               The 12 frameworks
             </h2>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-              Three arcs — Individual, Collective, Repair and Complexity — explaining how emotional patterns form, scale into social structures, and how change becomes possible.
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24, maxWidth: 640 }}>
+              Three arcs explaining how emotional patterns form, scale into social structures, and how change becomes possible. Each framework connects to established research traditions — find your entry point below.
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-              {[
-                { id: "F1", label: "Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
-                { id: "F2", label: "Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
-                { id: "F3", label: "Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
-                { id: "F4", label: "Rules Regulate", href: "/framework/f4-rules-regulate" },
-                { id: "F5", label: "Worth Hierarchies Regulate", href: "/framework/f5-worth-hierarchies" },
-                { id: "F6", label: "Bias Regulates", href: "/framework/f6-bias-regulates" },
-                { id: "F7", label: "Domination Regulates", href: "/framework/f7-domination-regulates" },
-                { id: "F8", label: "Repairing Awareness", href: "/framework/f8-repairing-awareness" },
-                { id: "F9", label: "Neurodivergence as Variation", href: "/framework/f9-neurodivergence-variation" },
-                { id: "F10", label: "Rebuilding Generational Bridges", href: "/framework/f10-generational-bridges" },
-                { id: "F11", label: "The Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
-                { id: "F12", label: "The Two Information Systems", href: "/framework/f12-two-information-systems" },
-              ].map((fw) => (
-                <Link
-                  key={fw.id}
-                  href={fw.href}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                    padding: "6px 12px",
-                    background: hexToRgba(SPECTRUM.cobalt, 0.08),
-                    border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                    borderRadius: 6,
-                    textDecoration: "none",
-                    fontSize: 12,
-                    color: TEXT.secondary,
-                  }}
-                >
-                  <span style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, color: SPECTRUM.cobalt }}>
-                    {fw.id}
-                  </span>
-                  {fw.label}
-                </Link>
-              ))}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              {/* Arc 1: Individual */}
+              <FrameworkArc
+                label="ARC 1 · INDIVIDUAL"
+                description="How the nervous system evaluates safety, calibrates through development, and what happens when cognition compensates"
+                color={SPECTRUM.indigo}
+                frameworks={[
+                  { id: "F1", label: "Emotions as Biological Information", href: "/framework/f1-emotional-gradient", entry: "Polyvagal theory, affective neuroscience, interoception" },
+                  { id: "F2", label: "Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration", entry: "Attachment theory, developmental psychology, mentalization" },
+                  { id: "F3", label: "Adult Cognition & False Coherence", href: "/framework/f3-false-coherence", entry: "Cognitive science, epistemic vigilance, motivated reasoning" },
+                ]}
+              />
+
+              {/* Arc 2: Collective */}
+              <FrameworkArc
+                label="ARC 2 · COLLECTIVE"
+                description="How individual protective patterns scale into shared rules, hierarchies, perception biases, and systemic domination"
+                color={SPECTRUM.cobalt}
+                frameworks={[
+                  { id: "F4", label: "Rules Regulate", href: "/framework/f4-rules-regulate", entry: "Social norms, institutional theory, moral foundations" },
+                  { id: "F5", label: "Worth Hierarchies Regulate", href: "/framework/f5-worth-hierarchies", entry: "Social hierarchy, power dynamics, social dominance theory" },
+                  { id: "F6", label: "Bias Regulates", href: "/framework/f6-bias-regulates", entry: "Implicit bias, perception research, stereotype threat" },
+                  { id: "F7", label: "Domination Regulates", href: "/framework/f7-domination-regulates", entry: "Coercive control, authoritarianism, moral disengagement" },
+                ]}
+              />
+
+              {/* Arc 3: Repair and Complexity */}
+              <FrameworkArc
+                label="ARC 3 · REPAIR AND COMPLEXITY"
+                description="How awareness rebuilds, how variation works, and the architecture underneath"
+                color={SPECTRUM.blue}
+                frameworks={[
+                  { id: "F8", label: "Repairing Awareness", href: "/framework/f8-repairing-awareness", entry: "Trauma recovery, therapeutic process, post-traumatic growth" },
+                  { id: "F9", label: "Neurodivergence as Variation", href: "/framework/f9-neurodivergence-variation", entry: "Neurodiversity, ADHD, autism, sensory processing differences" },
+                  { id: "F10", label: "Rebuilding Generational Bridges", href: "/framework/f10-generational-bridges", entry: "Intergenerational trauma, epigenetics, family systems" },
+                  { id: "F11", label: "The Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes", entry: "Paradox theory, dialectical thinking, complexity science" },
+                  { id: "F12", label: "The Two Information Systems", href: "/framework/f12-two-information-systems", entry: "Dual-process theory, embodied cognition, predictive processing" },
+                ]}
+              />
             </div>
-          </section>
-
-          {/* ── The Evidence ── */}
-          <section style={{ marginBottom: 48 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              The evidence so far
-            </h2>
-
-            <div
-              style={{
-                background: gradientCardBg(RESEARCHER.accent),
-                borderRadius: 10,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${RESEARCHER.accent}`,
-                padding: "24px 28px",
-                marginBottom: 16,
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.blue,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                  marginBottom: 12,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                Validation Study
-              </p>
-              <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, marginBottom: 10 }}>
-                Empirical Validation of the Four-Mode Gradient Framework
-              </h3>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-                Computational analysis of 10,000+ natural conflict narratives. The four modes were reliably detected in unstructured text. De-escalators showed 78% higher rates of complexity markers — signs of self-awareness, perspective-taking, and emotional differentiation.
-              </p>
-
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-                <Link
-                  href="/publications"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                    padding: "10px 18px",
-                    background: RESEARCHER.accent,
-                    color: "#fff",
-                    borderRadius: 6,
-                    fontWeight: 500,
-                    fontSize: 13,
-                    textDecoration: "none",
-                  }}
-                >
-                  Read the study →
-                </Link>
-                <Link
-                  href="/methodology"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                    padding: "10px 18px",
-                    background: hexToRgba(RESEARCHER.accent, 0.1),
-                    color: RESEARCHER.accent,
-                    borderRadius: 6,
-                    fontWeight: 500,
-                    fontSize: 13,
-                    textDecoration: "none",
-                    border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
-                  }}
-                >
-                  See methodology
-                </Link>
-              </div>
-            </div>
-
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6 }}>
-              DOI: 10.5281/zenodo.18428907 · Mode classifications correlated with independent community moral judgments.
-            </p>
           </section>
 
           {/* ── Open Science ── */}
           <section style={{ marginBottom: 48 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              Open science — no gates, no applications
+              Work with the material
             </h2>
-
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-              Everything here is published under CC BY-NC-SA 4.0. There are no access restrictions, no required collaborations, no application process. A researcher can take the framework, the data, and the methodology and work with them independently.
-            </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <OpenItem label="Cite it" description="Full citation format and examples" href="/citations" />
@@ -305,6 +286,35 @@ export default function ResearchHub() {
 }
 
 // ── Helper Components ──
+
+function MetricCard({ value, label }) {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <div
+        style={{
+          fontSize: 22,
+          fontWeight: 700,
+          color: TEXT.primary,
+          fontFamily: FONT.mono,
+          letterSpacing: "-0.02em",
+          lineHeight: 1.2,
+        }}
+      >
+        {value}
+      </div>
+      <div
+        style={{
+          fontSize: 11,
+          color: TEXT.muted,
+          marginTop: 4,
+          lineHeight: 1.4,
+        }}
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
 
 function FrameworkCard({ color, label, title, description, href, linkText }) {
   return (
@@ -350,6 +360,68 @@ function FrameworkCard({ color, label, title, description, href, linkText }) {
       >
         {linkText}
       </Link>
+    </div>
+  );
+}
+
+function FrameworkArc({ label, description, color, frameworks }) {
+  return (
+    <div>
+      <div style={{ marginBottom: 12 }}>
+        <p
+          style={{
+            fontSize: 10,
+            fontWeight: 600,
+            fontFamily: FONT.mono,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            color: color,
+            marginBottom: 4,
+          }}
+        >
+          {label}
+        </p>
+        <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6 }}>
+          {description}
+        </p>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {frameworks.map((fw) => (
+          <Link
+            key={fw.id}
+            href={fw.href}
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              gap: 10,
+              padding: "10px 14px",
+              background: BG.card,
+              borderRadius: 8,
+              border: `1px solid ${BORDER.default}`,
+              borderLeft: `3px solid ${hexToRgba(color, 0.5)}`,
+              textDecoration: "none",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: FONT.mono,
+                fontSize: 11,
+                fontWeight: 700,
+                color: color,
+                whiteSpace: "nowrap",
+              }}
+            >
+              {fw.id}
+            </span>
+            <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, whiteSpace: "nowrap" }}>
+              {fw.label}
+            </span>
+            <span style={{ fontSize: 12, color: TEXT.muted }}>
+              — {fw.entry}
+            </span>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

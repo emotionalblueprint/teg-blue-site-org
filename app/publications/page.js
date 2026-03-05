@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, TypeTag, StatusBadge, ResearcherHero } from "@/src/components";
+import { SiteHeader, SiteFooter, TypeTag, StatusBadge, ResearcherHero, AuthorBlock } from "@/src/components";
 
 export const metadata = {
   title: "Publications | TEG-Blue Research",
@@ -342,6 +342,11 @@ export default function PublicationsPage() {
           >
             research@teg-blue.org
           </a>
+        </section>
+
+        {/* Author */}
+        <section style={{ marginBottom: 32 }}>
+          <AuthorBlock />
         </section>
 
         {/* Footer note */}

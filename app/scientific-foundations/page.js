@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, SearchInput, ResearcherHero } from "@/src/components";
+import { SiteHeader, SiteFooter, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
 
 // ─── FRAMEWORK URL MAPPING ──────────────────────────────────────
 const FRAMEWORK_URLS = {
@@ -1050,17 +1050,18 @@ export default function ScientificFoundationsPage() {
         <ValidationMethod />
 
         {/* ─── 6. FOOTER ──────────────────────────────────────────── */}
+        {/* Author */}
+        <section style={{ marginTop: 48, marginBottom: 32 }}>
+          <AuthorBlock />
+        </section>
+
         <footer
           style={{
-            marginTop: 48,
             paddingTop: 24,
             borderTop: `1px solid ${BORDER.default}`,
             textAlign: "center",
           }}
         >
-          <p style={{ fontSize: 12, color: TEXT.muted, marginBottom: 12 }}>
-            Research developed by Anna Paretas-Artacho · TEG-Blue Research Consortium
-          </p>
           <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
             <Link
               href="/methodology"
