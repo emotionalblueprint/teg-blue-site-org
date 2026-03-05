@@ -502,7 +502,7 @@ export default function F5WorthHierarchiesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                Articulating the five steps as a unified mechanism operating at both individual and institutional scales simultaneously. While each step is documented in existing literature, no existing framework traces the complete loop from threat-driven dependency sensitivity through validation-seeking through power-as-proxy through formal sorting through internalized worth — and shows how Step 5 closes the loop by generating the evidence that appears to justify Step 1.
+                Articulating the five steps as a unified mechanism operating at both individual and institutional scales simultaneously. While each step is documented in existing literature, to our knowledge, no existing framework traces the complete loop from threat-driven dependency sensitivity through validation-seeking through power-as-proxy through formal sorting through internalized worth — and shows how Step 5 closes the loop by generating the evidence that appears to justify Step 1.
               </p>
               <p style={expandedProseStyle}>
                 The scale-invariant parallel to F4's seven-step mechanism demonstrates the architectural consistency: the same mechanism — threat → interpretation → formalization → internalization → self-reinforcement — operates at the level of rule systems (F4) and at the level of worth systems (F5). This is the regulation thread continuing: each scale adds a layer of substitute regulation, and each layer uses the same underlying logic.
@@ -882,7 +882,7 @@ export default function F5WorthHierarchiesPage() {
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
-                  <NavRow label="See the four modes as a measurement system" href="/four-mode-gradient" linkText="Four-Mode Gradient \u2192" />
+                  <NavRow label="See the applied models" href="/models" linkText="Core Models \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
                   <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />

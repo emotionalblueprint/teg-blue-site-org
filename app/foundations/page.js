@@ -77,9 +77,9 @@ export default function FoundationsPage() {
             <LayerIntroCard
               number={1}
               title="Measurement"
-              subtitle="Four-Mode Gradient"
+              subtitle="Two Core Models"
               color={SPECTRUM.azure}
-              href="/four-mode-gradient"
+              href="/models"
             />
             <LayerIntroCard
               number={2}
@@ -141,7 +141,7 @@ export default function FoundationsPage() {
             </p>
             <div style={{ marginTop: 16 }}>
               <Link
-                href="/four-mode-gradient"
+                href="/models"
                 style={{
                   fontSize: 14,
                   color: SPECTRUM.blue,
@@ -149,7 +149,7 @@ export default function FoundationsPage() {
                   fontWeight: 500,
                 }}
               >
-                Four-Mode Gradient →
+                Core Models →
               </Link>
             </div>
           </LayerCard>
@@ -215,7 +215,7 @@ export default function FoundationsPage() {
               16 gradient-based scales and assessments derived from the frameworks. They translate the system into practical instruments for individuals, practitioners, and clinical settings.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              Each tool maps a dimension of human behavior across the gradient — from healthy to harmful — with clear markers at every point.
+              Each tool maps a dimension of human behavior across the gradient — from baseline to harmful — with clear markers at every point.
             </p>
             <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginBottom: 12 }}>
               Examples: Empathy Gradient (genuine → selective → performed → weaponized), Accountability Gradient (genuine → performed → absent → protective), Integrity Scale (value-aligned → conditional → performed → remorseless).
@@ -368,7 +368,7 @@ export default function FoundationsPage() {
                 </tr>
               </thead>
               <tbody>
-                <NavRow label="See the measurement layer in detail" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                <NavRow label="See the two applied models" href="/models" linkText="Core Models →" />
                 <NavRow label="See the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand methods" href="/methodology" linkText="Methodology →" />

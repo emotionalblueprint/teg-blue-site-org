@@ -159,7 +159,7 @@ export default function F2AwarenessCalibrationPage() {
               ["#overview", "Overview — The Calibration Framework"],
               ["#the-starting-point", "The Starting Point — Before Cognition Arrives"],
               ["#the-mechanism", "The Mechanism — Awareness Teaches Awareness"],
-              ["#healthy-development", "Healthy Development — What the System Produces"],
+              ["#designed-development", "Designed Development — What the System Produces"],
               ["#the-turn", "The Turn — Three Conditions That Shape the Compass"],
               ["#the-consequence", "The Consequence — Stuck Compass and Constructed Identity"],
               ["#the-replication", "The Replication — Generational Transmission"],
@@ -273,13 +273,13 @@ export default function F2AwarenessCalibrationPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Relationship to F1" type="framework">
                 <p style={expandedProseStyle}>
-                  F1 is the instrument. F2 is the calibration. F1 describes what the compass does — including the complete Biological Restoration process in its designed form. F2 explains how each person's compass gets tuned — through the awareness capacities that develop (or don't) in the relational environment — and what happens when Biological Restoration is never learned. F1 establishes the four modes in their healthy, designed operation. F2 explains what makes any mode become chronic.
+                  F1 is the instrument. F2 is the calibration. F1 describes what the compass does — including the complete Biological Restoration process in its designed form. F2 explains how each person's compass gets tuned — through the awareness capacities that develop (or don't) in the relational environment — and what happens when Biological Restoration is never learned. F1 establishes the four modes in their designed operation. F2 explains what makes any mode become chronic.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="Relationship to the Inner Compass Model" type="framework">
                 <p style={expandedProseStyle}>
-                  F2 explains the developmental origins of everything the Inner Compass describes in adult operation — both the healthy four-mode range and the chronic mode positions. The Inner Compass shows how the three capacities function (or fail to function) across the four modes. F2 explains how they got that way.
+                  F2 explains the developmental origins of everything the Inner Compass describes in adult operation — both the full four-mode range and the chronic mode positions. The Inner Compass shows how the three capacities function (or fail to function) across the four modes. F2 explains how they got that way.
                 </p>
               </ExpandableSection>
             </div>
@@ -405,7 +405,7 @@ export default function F2AwarenessCalibrationPage() {
                 The child's nervous system develops inside the adults' nervous system. What the adults can and cannot do with their own RE, ER, and SEA creates the environment the child's awareness develops from. A parent who says "be kind" while living in chronic Control teaches Control, not kindness. A caregiver who says "I'm fine" while their nervous system radiates tension teaches the child that emotional signals are not to be trusted. A caregiver whose own SEA is online — who can name what they feel, sit with discomfort, model that emotions are signals rather than crises — teaches the child, without instruction, that internal experience is readable and trustworthy.
               </p>
               <p style={proseStyle}>
-                This is the foundational mechanism of F2. Everything that follows — the healthy development account, the three adverse conditions, the chronic mode positions, the generational transmission — is an expression of this one principle: awareness teaches awareness. The adults' awareness is the child's inheritance.
+                This is the foundational mechanism of F2. Everything that follows — the designed development account, the three adverse conditions, the chronic mode positions, the generational transmission — is an expression of this one principle: awareness teaches awareness. The adults' awareness is the child's inheritance.
               </p>
 
               <div style={expandableRowStyle}>
@@ -424,14 +424,14 @@ export default function F2AwarenessCalibrationPage() {
             </div>
           </section>
 
-          {/* ─── HEALTHY DEVELOPMENT ──────────────────────── */}
+          {/* ─── DESIGNED DEVELOPMENT ─────────────────────── */}
           <section
-            id="healthy-development"
-            aria-labelledby="heading-healthy-development"
+            id="designed-development"
+            aria-labelledby="heading-designed-development"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-healthy-development" style={sectionHeadingStyle}>
-              Healthy Development — What the System Produces
+            <h2 id="heading-designed-development" style={sectionHeadingStyle}>
+              Designed Development — What the System Produces
             </h2>
 
             {/* Concept 4: How the Capacities Develop */}
@@ -469,7 +469,7 @@ export default function F2AwarenessCalibrationPage() {
 
                 <ExpandableSection title="TEG-Blue Contribution" type="framework">
                   <p style={expandedProseStyle}>
-                    Describing the full healthy development of all three capacities and regulation as a single integrated account — not as a clinical ideal but as the design specification of the system. The introduction of <em>true coherence</em> as the counterpart to false coherence (F3): narrative aligned with felt experience because cognition has the full information set.
+                    Describing the full development of all three capacities and regulation as a single integrated account — not as a clinical ideal but as the design specification of the system. The introduction of <em>true coherence</em> as the counterpart to false coherence (F3): narrative aligned with felt experience because cognition has the full information set.
                   </p>
                 </ExpandableSection>
               </div>
@@ -923,7 +923,7 @@ export default function F2AwarenessCalibrationPage() {
 
                 <ExpandableSection title="TEG-Blue Contribution" type="framework">
                   <p style={expandedProseStyle}>
-                    Replacing "find yourself" / "remove the mask" / "build self-esteem" with a mechanistically precise instruction: develop SEA so the signals can be received, learn Biological Restoration so the body can come back, then recalibrate RE and ER to serve understanding rather than survival. The dual mechanism of healing: awareness development (SEA) + Biological Restoration learning. Neither alone is sufficient. The destination is the healthy capacity state described earlier in the framework.
+                    Replacing "find yourself" / "remove the mask" / "build self-esteem" with a mechanistically precise instruction: develop SEA so the signals can be received, learn Biological Restoration so the body can come back, then recalibrate RE and ER to serve understanding rather than survival. The dual mechanism of healing: awareness development (SEA) + Biological Restoration learning. Neither alone is sufficient. The destination is the designed capacity state described earlier in the framework.
                   </p>
                 </ExpandableSection>
               </div>
@@ -1115,7 +1115,7 @@ export default function F2AwarenessCalibrationPage() {
                 <tbody>
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
-                  <NavRow label="See the four modes as a measurement system" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                  <NavRow label="See the applied model for this framework" href="/model/m2-three-awareness-capacities" linkText="Three Awareness Capacities (M2) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Understand the epistemological stance" href="/epistemological-foundations" linkText="Epistemological Foundations →" />

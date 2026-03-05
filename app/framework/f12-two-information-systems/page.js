@@ -284,7 +284,7 @@ export default function F12TwoInformationSystemsPage() {
             </p>
 
             <KeyStatement>
-              TEG-Blue is not twelve frameworks. It is one mechanism — state-dependent nervous system organization — described from twelve angles.
+              TEG-Blue is not twelve separate frameworks. F12 proposes that it is one mechanism — state-dependent nervous system organization — described from twelve angles.
             </KeyStatement>
           </section>
 
@@ -448,7 +448,7 @@ export default function F12TwoInformationSystemsPage() {
               </table>
             </div>
 
-            <h3 style={conceptHeadingStyle}>The Willpower Myth</h3>
+            <h3 style={conceptHeadingStyle}>The Willpower Assumption</h3>
 
             <p style={proseStyle}>
               The belief that understanding plus willpower equals change is one of the most damaging false coherences in contemporary culture. It locates failure in the individual ("you know what to do, why aren't you doing it?") when the architecture makes that expectation impossible.
@@ -556,7 +556,7 @@ export default function F12TwoInformationSystemsPage() {
             <h3 style={conceptHeadingStyle}>TEG-Blue Is Not Twelve Frameworks</h3>
 
             <p style={proseStyle}>
-              It is one mechanism described from twelve angles:
+              F12 proposes that it is one mechanism described from twelve angles:
             </p>
 
             <div style={tableWrapStyle}>

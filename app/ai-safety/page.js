@@ -162,7 +162,7 @@ export default function AISafetyPage() {
 
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
             TEG-Blue replaces binary classification with structured gradients. Each scale maps a
-            dimension of human behavior from healthy to harmful, with clear markers at every point —
+            dimension of human behavior from baseline to harmful, with clear markers at every point —
             designed for computational legibility.
           </p>
 
@@ -667,7 +667,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q1"
               title="Computational Complexity Markers"
-              description="Can the markers that predict healthy outcomes — self-awareness, perspective-taking, emotional differentiation — be standardized as computational measures applicable to natural language?"
+              description="Can the markers that predict integrated outcomes — self-awareness, perspective-taking, emotional differentiation — be standardized as computational measures applicable to natural language?"
             />
             <QuestionCard
               number="Q2"

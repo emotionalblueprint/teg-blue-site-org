@@ -779,7 +779,7 @@ export default function F10GenerationalBridgesPage() {
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
                   <tr>
-                    <th style={thStyle}>Toxic Elderhood</th>
+                    <th style={thStyle}>Positional Elderhood</th>
                     <th style={thStyle}>True Elderhood</th>
                   </tr>
                 </thead>

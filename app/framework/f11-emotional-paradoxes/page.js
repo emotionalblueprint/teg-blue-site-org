@@ -605,7 +605,7 @@ export default function F11EmotionalParadoxesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={proseStyle}>
-                F11 grounds holding capacity in the three awareness capacities rather than treating it as a separate cognitive skill or a spiritual achievement. This makes it developable through the same mechanisms F8 describes — not through willpower or insight alone, but through creating conditions where the capacities have room to come online. Holding paradox is not wisdom literature. It is the measurable consequence of the three awareness capacities being online.
+                F11 grounds holding capacity in the three awareness capacities rather than treating it as a separate cognitive skill or a spiritual achievement. This makes it developable through the same mechanisms F8 describes — not through willpower or insight alone, but through creating conditions where the capacities have room to come online. Holding paradox is not only a philosophical ideal. It is the measurable consequence of the three awareness capacities being online.
               </p>
             </ExpandableSection>
           </section>
@@ -730,7 +730,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>Freedom-Seeking Authoritarianism</h3>
 
             <p style={proseStyle}>
-              People claiming to want freedom supporting authoritarian leaders. This is not stupidity or deception. The nervous system equates structure with safety (F4). When uncertainty increases, the system reaches for predictability. The person genuinely wants freedom AND genuinely craves the regulation that authority provides.
+              People claiming to want freedom supporting authoritarian leaders. This is not a failure of reasoning or deception. The nervous system equates structure with safety (F4). When uncertainty increases, the system reaches for predictability. The person genuinely wants freedom AND genuinely craves the regulation that authority provides.
             </p>
 
             <h3 style={conceptHeadingStyle}>Revolution Recreating Hierarchy</h3>

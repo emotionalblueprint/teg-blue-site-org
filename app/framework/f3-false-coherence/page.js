@@ -280,7 +280,7 @@ export default function F3FalseCoherencePage() {
                 The person experiences the replacement as truth — because cognition is the system that constructs what the person experiences as "reality." When it generates a replacement for an emotional signal, the replacement feels as real as any other belief. More real, in fact — because it is accompanied by <strong style={{ color: TEXT.primary }}>physiological relief</strong>. The narrative holds together. The body calms. Cognition learns: <em>this works.</em>
               </p>
               <p style={proseStyle}>
-                This is not healthy reframing — which updates meaning while keeping the emotional signal. This is <strong style={{ color: TEXT.primary }}>replacement</strong>: the narrative takes the place of the signal rather than integrating it. Often, underlying activation remains: tension stays, breath stays shallow, vigilance stays online — but the narrative reports, <em>I'm fine. I'm in control.</em>
+                This is not integrative reframing — which updates meaning while keeping the emotional signal. This is <strong style={{ color: TEXT.primary }}>replacement</strong>: the narrative takes the place of the signal rather than integrating it. Often, underlying activation remains: tension stays, breath stays shallow, vigilance stays online — but the narrative reports, <em>I'm fine. I'm in control.</em>
               </p>
               <p style={proseStyle}>
                 The emotional signal does not disappear. It is still being generated. It still demands regulation. But it has been told it is not needed. So it finds other doors — addiction, compulsion, somatic symptoms, external regulation through others. These are the emotional signals that cognition replaced, still knocking. They are not separate problems. They are the cost of running cognitive regulation where emotional regulation was never built.
@@ -350,7 +350,7 @@ export default function F3FalseCoherencePage() {
               </p>
 
               <KeyStatement>
-                Diagnostic: if a story produces relief but consistently reduces nuance, empathy, or accountability, it is likely functioning as false coherence.
+                Pattern indicator: if a story produces relief but consistently reduces nuance, empathy, or accountability, it is likely functioning as false coherence.
               </KeyStatement>
 
               <ExpandableSection title="TEG-Blue Contribution" type="framework">
@@ -836,7 +836,7 @@ export default function F3FalseCoherencePage() {
               }}
             >
               <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Mode That Most Reliably Mimics Healthy Connection
+                The Mode That Most Reliably Mimics Connection
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
                 Chronic Control is the mode most often invisible to outside observers. The performance of warmth <em>is</em> the regulation strategy. Apologies serve image. Generosity serves control. Vulnerability is offered strategically, never spontaneously. The person appears warm, competent, and caring in public — they perform empathy with precision (RE sharp, right words chosen, no felt resonance behind them). They manage their image with the same precision they manage everything else. They create a public narrative that directly contradicts the private reality.
@@ -845,7 +845,7 @@ export default function F3FalseCoherencePage() {
                 The victim — the partner, the child, the employee who sees behind the performance — lives inside the managed reality. They experience subtle coercion, narrative control, emotional manipulation, and strategic withdrawal of warmth. They often cannot name what is happening because nothing visible has occurred. They appear "unstable," "emotional," or "not coping" — because chronic exposure to reality distortion produces exactly these symptoms. And they are not believed when they describe what is happening — because it contradicts what everyone else sees.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Control and pathologizes the victim.</strong> This is not a conspiracy. It is the structural outcome of: chronic Control's regulation strategy (performance of healthy Connection); the worth filter (F5) — the person in chronic Control often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
+                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Control and pathologizes the victim.</strong> This is not a conspiracy. It is the structural outcome of: chronic Control's regulation strategy (performance of Connection); the worth filter (F5) — the person in chronic Control often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
               </p>
             </div>
 
@@ -945,7 +945,7 @@ export default function F3FalseCoherencePage() {
                   ]} />
                   <TableRow cells={[
                     "External regulation",
-                    "When internal processing is unavailable, the system uses others to regulate. Four modes: fusion, distance, management, subjugation. Chronic Control mimics healthy Connection. Chronic Domination follows addiction logic.",
+                    "When internal processing is unavailable, the system uses others to regulate. Four modes: fusion, distance, management, subjugation. Chronic Control mimics Connection. Chronic Domination follows addiction logic.",
                   ]} />
                 </tbody>
               </table>
@@ -969,7 +969,7 @@ export default function F3FalseCoherencePage() {
                 "\"Retaliation feels like self-defense — because the nervous system is reporting a threat that is not there\"",
                 "\"Your boundaries become their evidence\"",
                 "\"External regulation is not a choice — it is the only pathway the system has left when the internal channel is offline\"",
-                "\"The mode that most reliably mimics healthy Connection\"",
+                "\"The mode that most reliably mimics Connection\"",
                 "\"Tolerance builds — the same level of domination does not produce the same level of relief\"",
                 "\"There is no amount of domination that will make them feel safe — because the safety they need is internal\"",
                 "\"The cognitive system that replaces personal emotional truth is the same system that absorbs and enforces social truth\"",
@@ -1111,7 +1111,7 @@ export default function F3FalseCoherencePage() {
                   <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate →" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness →" />
-                  <NavRow label="See the four modes as a measurement system" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                  <NavRow label="See the applied models" href="/models" linkText="Core Models →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Look up key terms" href="/glossary" linkText="Glossary →" />

@@ -20,7 +20,7 @@ const NAV_ITEMS = [
     dropdown: [
       { label: "System Overview", href: "/foundations" },
       { label: "Epistemological Foundations", href: "/epistemological-foundations" },
-      { label: "Four-Mode Gradient", href: "/four-mode-gradient" },
+      { label: "Models", href: "/models" },
       { label: "12 Frameworks", href: "/frameworks-map" },
     ],
   },

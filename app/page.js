@@ -142,7 +142,7 @@ export default function ResearchHub() {
               >
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   <NavLink href="/foundations" label="System Overview" description="How the parts connect" />
-                  <NavLink href="/four-mode-gradient" label="Four-Mode Gradient" description="Measuring emotional awareness" />
+                  <NavLink href="/models" label="Core Models" description="The instrument and the calibration" />
                   <NavLink href="/frameworks-map" label="12 Frameworks" description="Why the disconnection happens" />
                 </div>
               </ActionCard>
@@ -448,7 +448,7 @@ export default function ResearchHub() {
                 <tbody>
                   <SiteMapRow href="/research-entry" label="Start Here" description="2-minute orientation + choose a lane" />
                   <SiteMapRow href="/foundations" label="System Overview" description="How the 4 layers fit together" />
-                  <SiteMapRow href="/four-mode-gradient" label="Four-Mode Gradient" description="The measurement layer (technical anchor)" />
+                  <SiteMapRow href="/models" label="Core Models" description="The two applied models (instrument + calibration)" />
                   <SiteMapRow href="/frameworks-map" label="Frameworks" description="The 12 explanatory frameworks" />
                   <SiteMapRow href="/publications" label="Publications" description="Evidence, datasets, validation studies" />
                   <SiteMapRow href="/methodology" label="Methodology" description="How we conduct and report research" />

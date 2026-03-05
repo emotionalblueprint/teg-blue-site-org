@@ -392,7 +392,7 @@ export default function F4RulesRegulatePage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                Organizing the full process from individual nervous system activation through collective rule formation into a single seven-step mechanism with a critical self-reinforcing element: Step 7 — questioning rules activates the same threat response that created them. The loop closure is the distinctive contribution. While conformity (Asch), obedience (Milgram), and social reproduction (Bourdieu) are all well-documented, no existing model traces the complete pathway from individual threat activation through collective rule invisibility and back to the threat activation that prevents examination.
+                Organizing the full process from individual nervous system activation through collective rule formation into a single seven-step mechanism with a critical self-reinforcing element: Step 7 — questioning rules activates the same threat response that created them. The loop closure is the distinctive contribution. While conformity (Asch), obedience (Milgram), and social reproduction (Bourdieu) are all well-documented, to our knowledge, no existing model traces the complete pathway from individual threat activation through collective rule invisibility and back to the threat activation that prevents examination.
               </p>
               <p style={expandedProseStyle}>
                 The reframe of rules as regulation rather than ideology changes the intervention logic. Critical theory treats rules as power structures to be dismantled. Psychology treats them as cognitive schemas to be corrected. F4 treats them as nervous system regulation strategies — and the intervention follows F1's principle: restore safety first, then expect flexibility.
@@ -712,7 +712,7 @@ export default function F4RulesRegulatePage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                Making explicit that these ten traditions are describing one mechanism, not ten separate phenomena. No existing work maps Bourdieu's habitus, Milgram's obedience, IFS's protective parts, polyvagal neuroception, and moral foundations as variations on the same underlying process: nervous system regulation through rule internalization.
+                Making explicit that these ten traditions are describing one mechanism, not ten separate phenomena. To our knowledge, no existing work maps Bourdieu's habitus, Milgram's obedience, IFS's protective parts, polyvagal neuroception, and moral foundations as variations on the same underlying process: nervous system regulation through rule internalization.
               </p>
               <p style={expandedProseStyle}>
                 The convergence claim is testable: if all ten traditions are describing the same mechanism, then interventions that address the underlying regulation need (rather than the specific rule content) should be effective across domains.
@@ -931,7 +931,7 @@ export default function F4RulesRegulatePage() {
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness →" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
-                  <NavRow label="See the four modes as a measurement system" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                  <NavRow label="See the applied models" href="/models" linkText="Core Models →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Look up key terms" href="/glossary" linkText="Glossary →" />

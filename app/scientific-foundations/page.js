@@ -126,7 +126,7 @@ const globalModels = [
       "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
       "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the compass in Protection",
       "F6 uses state-dependent perception to explain how regulatory state determines what is perceived — bias as neuroception operating at the cognitive level",
-      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Reading Emotions toward management while collapsing Emotional Resonance, producing the capacity configuration that most reliably mimics healthy Connection",
+      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Reading Emotions toward management while collapsing Emotional Resonance, producing the capacity configuration that most reliably mimics Connection",
       "F8 maps how ventral vagal safety enables capacity development — felt safety as the first of five conditions for repair, and why cognitive insight without nervous system regulation cannot produce lasting change",
       "F9 uses neuroception to explain System Mismatch — how the compass responds to environmental match or mismatch, why neurodivergent nervous systems are pushed toward Protection by structural design rather than individual pathology",
       "F10 maps co-regulation as a generational transmission pathway — the adult's nervous system functions as the child's external regulator, transmitting regulatory capacity through nervous system synchronization",

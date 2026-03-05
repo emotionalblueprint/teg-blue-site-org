@@ -265,7 +265,7 @@ export default function F7DominationRegulatesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                The explicit articulation of a defined escalation pathway — showing that domination is built through reinforcement across identifiable stages, not born as personality or character. While individual mechanisms are known (reinforcement, threat response, control-seeking), no existing framework traces the complete pathway from defense through strategy through domination as a single reinforcement-driven trajectory with specific interruption windows at each stage.
+                The explicit articulation of a defined escalation pathway — showing that domination is built through reinforcement across identifiable stages, not born as personality or character. While individual mechanisms are known (reinforcement, threat response, control-seeking), to our knowledge, no existing framework traces the complete pathway from defense through strategy through domination as a single reinforcement-driven trajectory with specific interruption windows at each stage.
               </p>
               <p style={expandedProseStyle}>
                 The connection to the regulation thread positions domination as the <em>final</em> regulation substitute — the most costly version of the same mechanism that began with false coherence (F3) and scaled through rules (F4), worth hierarchies (F5), and bias (F6). This framing removes the othering that makes domination seem like a different phenomenon from the regulatory mechanisms described in earlier frameworks. It is the same mechanism. The same nervous system. The same thread. Just further along the gradient and at maximum cost.
@@ -430,7 +430,7 @@ export default function F7DominationRegulatesPage() {
                     "3 — Entitlement Loop",
                     "\"I'm safer when others obey\"",
                     "Obedience expected, blame reversed, rules selectively enforced, narrative control intensified",
-                    "Locked in chronic Control. Mimics healthy Connection from outside",
+                    "Locked in chronic Control. Mimics Connection from outside",
                     "Requires external consequences. Internal motivation low because the system is working — for the person running it",
                   ]} />
                   <FiveColRow cells={[
@@ -458,7 +458,7 @@ export default function F7DominationRegulatesPage() {
             <h3 style={conceptHeadingStyle}>Stage-by-Stage Detail</h3>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 3 — The Entitlement Loop</strong> deserves particular attention because it is the stage most likely to be invisible. The person does not experience themselves as controlling. They experience themselves as responsible, competent, and holding things together. This is the mode that most reliably mimics healthy Connection (F3) — from outside, the person may appear warm, capable, and generous. From inside the inner circle, reality is managed. Interruption typically requires structural consequences: loss of position, legal accountability, or the managed system collapsing in a way the person cannot reframe.
+              <strong style={{ color: TEXT.primary }}>Stage 3 — The Entitlement Loop</strong> deserves particular attention because it is the stage most likely to be invisible. The person does not experience themselves as controlling. They experience themselves as responsible, competent, and holding things together. This is the mode that most reliably mimics Connection (F3) — from outside, the person may appear warm, capable, and generous. From inside the inner circle, reality is managed. Interruption typically requires structural consequences: loss of position, legal accountability, or the managed system collapsing in a way the person cannot reframe.
             </p>
 
             <p style={proseStyle}>
@@ -477,7 +477,7 @@ export default function F7DominationRegulatesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                The explicit five-stage pathway with named internal logic, observable signs, compass position, and specific interruption approaches at each stage. While clinical and abuse literature recognizes progression, no existing framework maps the complete trajectory from fear activation through strategy formation through entitlement through empathy collapse through power preservation — and connects each stage to the Inner Compass model&rsquo;s regulatory concepts with stage-appropriate intervention.
+                The explicit five-stage pathway with named internal logic, observable signs, compass position, and specific interruption approaches at each stage. While clinical and abuse literature recognizes progression, to our knowledge, no existing framework maps the complete trajectory from fear activation through strategy formation through entitlement through empathy collapse through power preservation — and connects each stage to the Inner Compass model&rsquo;s regulatory concepts with stage-appropriate intervention.
               </p>
               <p style={expandedProseStyle}>
                 The practical contribution: the pathway makes domination recognizable as a <em>process</em> rather than a <em>type</em>. This enables prevention (recognize Stages 1–2 and intervene), protection (recognize Stages 4–5 and prioritize containment), and appropriate intervention matching (different stages require fundamentally different approaches).
@@ -516,7 +516,7 @@ export default function F7DominationRegulatesPage() {
             </ul>
 
             <KeyStatement>
-              The dangerous configuration: sharp RE + collapsed ER + absent SEA. The person reads you perfectly. Cannot feel your pain. Has no internal signal telling them any of this is happening. This is the capacity configuration that produces the most harm with the least visibility — and the mode that most reliably mimics healthy Connection.
+              The dangerous configuration: sharp RE + collapsed ER + absent SEA. The person reads you perfectly. Cannot feel your pain. Has no internal signal telling them any of this is happening. This is the capacity configuration that produces the most harm with the least visibility — and the mode that most reliably mimics Connection.
             </KeyStatement>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -589,7 +589,7 @@ export default function F7DominationRegulatesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                The decomposition of &ldquo;empathy&rdquo; into three capacity trajectories that diverge under escalation — replacing the single-channel model (empathy on/off) with a three-channel model (RE redirects, ER collapses, SEA was never there). This is clinically significant because it explains: why chronic Control mimics healthy Connection (sharp RE + performed ER + absent SEA); why victims are not believed (they describe the gap between performance and felt reality, and the gap is invisible to outsiders); why &ldquo;empathy appeals&rdquo; fail at later stages; and why RE <em>sharpening</em> is itself a warning sign.
+                The decomposition of &ldquo;empathy&rdquo; into three capacity trajectories that diverge under escalation — replacing the single-channel model (empathy on/off) with a three-channel model (RE redirects, ER collapses, SEA was never there). This is clinically significant because it explains: why chronic Control mimics Connection (sharp RE + performed ER + absent SEA); why victims are not believed (they describe the gap between performance and felt reality, and the gap is invisible to outsiders); why &ldquo;empathy appeals&rdquo; fail at later stages; and why RE <em>sharpening</em> is itself a warning sign.
               </p>
               <p style={expandedProseStyle}>
                 The stage-by-stage capacity table provides a precision tool: at any point in the escalation, the clinician or observer can assess which capacities are available, which are redirected, and which are offline — and match the intervention to what the system can actually support.
@@ -1122,7 +1122,7 @@ export default function F7DominationRegulatesPage() {
               {
                 question: "What is the five-stage escalation pathway?",
                 answer:
-                  "The five stages are: (1) Fear Activation — threat scanning, still reachable; (2) Strategy Formation — learning that managing others reduces distress, Crossroads markers appear; (3) Entitlement Loop — obedience expected, false coherence solidified, mimics healthy Connection from outside; (4) Empathy Collapse — Emotional Resonance offline, empathy appeals fail; (5) Power Preservation — identity fused with dominance, protection of others is primary. Each stage has internal logic, observable signs, compass position, and stage-appropriate interruption.",
+                  "The five stages are: (1) Fear Activation — threat scanning, still reachable; (2) Strategy Formation — learning that managing others reduces distress, Crossroads markers appear; (3) Entitlement Loop — obedience expected, false coherence solidified, mimics Connection from outside; (4) Empathy Collapse — Emotional Resonance offline, empathy appeals fail; (5) Power Preservation — identity fused with dominance, protection of others is primary. Each stage has internal logic, observable signs, compass position, and stage-appropriate interruption.",
               },
               {
                 question: "What is empathy gating?",

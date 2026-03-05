@@ -270,7 +270,7 @@ export default function F6BiasRegulatesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                The explicit unification: bias is regulation, not reasoning error. While motivated reasoning, the affect heuristic, predictive coding, and somatic markers are all documented individually, no existing framework unifies them under a single formulation that names the regulatory function as primary. The regulatory equation — "if believing this reduces threat, keep believing it" — makes the mechanism explicit and connects it to F3's false coherence and the regulation thread.
+                The explicit unification: bias is regulation, not reasoning error. While motivated reasoning, the affect heuristic, predictive coding, and somatic markers are all documented individually, to our knowledge, no existing framework unifies them under a single formulation that names the regulatory function as primary. The regulatory equation — "if believing this reduces threat, keep believing it" — makes the mechanism explicit and connects it to F3's false coherence and the regulation thread.
               </p>
               <p style={expandedProseStyle}>
                 The clinical implication — shifting from correction to safety — is consistent across the entire framework: F1 (restore safety first), F3 (you cannot out-think a regulatory response), F4 (rules-as-regulation changes intervention from dismantling to creating safety), F5 (structural conditions must be part of assessment). F6 extends the same principle to perception.
@@ -581,7 +581,7 @@ export default function F6BiasRegulatesPage() {
 
             <ExpandableSection title="TEG-Blue Contribution" type="framework">
               <p style={expandedProseStyle}>
-                The explicit five-step mapping from stimulus through threat reduction through physiological relief to false epistemic confirmation. While affect-as-information is documented (Schwarz &amp; Clore) and somatic markers are established (Damasio), no existing framework maps the complete sequence that produces the felt certainty of bias — and connects it to the same mechanism (false coherence) that F3 identified at the individual narrative level.
+                The explicit five-step mapping from stimulus through threat reduction through physiological relief to false epistemic confirmation. While affect-as-information is documented (Schwarz &amp; Clore) and somatic markers are established (Damasio), to our knowledge, no existing framework maps the complete sequence that produces the felt certainty of bias — and connects it to the same mechanism (false coherence) that F3 identified at the individual narrative level.
               </p>
               <p style={expandedProseStyle}>
                 The practical implication: if certainty is physiological rather than epistemic, then arguments that target the content of the belief miss the mechanism. The person does not need better information. They need enough safety to tolerate the physiological disorientation of being wrong — which is the loss of the stability their belief was providing. This is why intelligent, well-informed, well-intentioned people maintain biases: their intelligence is a cognitive resource, but the bias is operating at the somatic level.

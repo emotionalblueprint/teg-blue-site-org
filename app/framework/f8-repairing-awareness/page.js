@@ -637,7 +637,7 @@ export default function F8RepairingAwarenessPage() {
             </div>
 
             <p style={proseStyle}>
-              The destination is F2 Concept 4&rsquo;s healthy development: accurate RE, sustainable ER, online SEA, true coherence — narrative aligned with felt experience, not substituting for it. Arrived at by a different route: not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
+              The destination is F2 Concept 4&rsquo;s designed development: accurate RE, sustainable ER, online SEA, true coherence — narrative aligned with felt experience, not substituting for it. Arrived at by a different route: not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
             </p>
 
             <KeyStatement>
@@ -827,7 +827,7 @@ export default function F8RepairingAwarenessPage() {
                 <tbody>
                   <TableRow cells={[
                     "Repair is return, not construction",
-                    "Developing what didn\u2019t have conditions to develop. Not finding a hidden self. The destination is F2\u2019s healthy development \u2014 arrived at by a different route.",
+                    "Developing what didn\u2019t have conditions to develop. Not finding a hidden self. The destination is F2\u2019s designed development \u2014 arrived at by a different route.",
                   ]} />
                   <TableRow cells={[
                     "Awareness configuration",
@@ -1090,7 +1090,7 @@ export default function F8RepairingAwarenessPage() {
               {
                 question: "What does 'repairing awareness' mean in the TEG-Blue system?",
                 answer:
-                  "F8 proposes that repair means developing the awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that never had conditions to develop — not finding a hidden self or removing a mask. The destination is the same healthy development F2 describes, arrived at by a different route: through conditions an adult can seek, create, and sustain. The regulation thread reversed: every substitute from F3–F7 was built because the original was missing. Repair means building the original.",
+                  "F8 proposes that repair means developing the awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that never had conditions to develop — not finding a hidden self or removing a mask. The destination is the same designed development F2 describes, arrived at by a different route: through conditions an adult can seek, create, and sustain. The regulation thread reversed: every substitute from F3–F7 was built because the original was missing. Repair means building the original.",
               },
               {
                 question: "What is an awareness configuration?",

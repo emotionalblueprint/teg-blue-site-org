@@ -362,7 +362,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="TEG-Blue Contribution" type="framework">
                 <p style={expandedProseStyle}>
-                  While these traditions exist independently, no existing work maps them systematically against each other to show they describe the same mechanism. F1's contribution is integration: making visible that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, and fight-flight-freeze-fawn are all describing the same two-mode orientation.
+                  While these traditions exist independently, to our knowledge, no existing work maps them systematically against each other to show they describe the same mechanism. F1's contribution is integration: making visible that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, and fight-flight-freeze-fawn are all describing the same two-mode orientation.
                 </p>
               </ExpandableSection>
             </div>
@@ -1014,7 +1014,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="TEG-Blue Contribution" type="framework">
                 <p style={expandedProseStyle}>
-                  The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the hinge. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. No existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
+                  The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the hinge. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. To our knowledge, no existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
                 </p>
               </ExpandableSection>
             </div>
@@ -1212,7 +1212,7 @@ export default function F1EmotionalGradientPage() {
                 </thead>
                 <tbody>
                   <NavRow label="Continue to F2 — how the compass gets calibrated" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness (F2) →" />
-                  <NavRow label="See the four modes as a measurement system" href="/four-mode-gradient" linkText="Four-Mode Gradient →" />
+                  <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Inner Compass (M1) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Understand the epistemological stance" href="/epistemological-foundations" linkText="Epistemological Foundations →" />

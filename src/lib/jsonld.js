@@ -232,59 +232,40 @@ export function generateAISafetyJsonLd() {
   };
 }
 
-// ─── FOUR-MODE GRADIENT PAGE JSON-LD ────────────────
+// ─── MODELS PAGE JSON-LD ────────────────────────────
 
-export function generateFourModeGradientJsonLd() {
+export function generateModelsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Four-Mode Gradient — TEG-Blue",
-    url: `${BASE_URL}/four-mode-gradient`,
-    description: "The measurement system at the heart of TEG-Blue: four nervous system regulatory states that shape perception, behavior, and relational capacity.",
+    name: "The Two Core Models — TEG-Blue",
+    url: `${BASE_URL}/models`,
+    description: "The two applied models at the foundation of TEG-Blue: the Inner Compass & Four-Mode Gradient (the instrument) and the Three Awareness Capacities (the calibration system).",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
-    about: {
-      "@type": "DefinedTermSet",
-      name: "Four-Mode Gradient",
-      description: "A continuous gradient of nervous system regulatory states detectable in natural language",
-      hasDefinedTerm: [
-        {
-          "@type": "DefinedTerm",
-          name: "Connection",
-          description: "Safety perceived. Empathy fully available, flexibility high, repair possible.",
-          termCode: "MODE_CONNECTION"
-        },
-        {
-          "@type": "DefinedTerm",
-          name: "Protection",
-          description: "Threat perceived. Defensive but recoverable. Empathy partial, flexibility reduced.",
-          termCode: "MODE_PROTECTION"
-        },
-        {
-          "@type": "DefinedTerm",
-          name: "Control",
-          description: "Safety sought through controlling others. Empathy strategic, flexibility limited.",
-          termCode: "MODE_CONTROL"
-        },
-        {
-          "@type": "DefinedTerm",
-          name: "Domination",
-          description: "Power as only safety. Empathy offline, flexibility minimal, harm normalized.",
-          termCode: "MODE_DOMINATION"
-        }
-      ]
-    },
+    about: [
+      {
+        "@type": "DefinedTerm",
+        name: "Inner Compass & Four-Mode Gradient (M1)",
+        description: "The instrument — the complete architecture of how the nervous system orients between safety and threat across four modes on a continuous gradient."
+      },
+      {
+        "@type": "DefinedTerm",
+        name: "Three Awareness Capacities (M2)",
+        description: "The calibration — the three awareness capacities (RE, ER, SEA) that determine what data the compass receives and how it is processed."
+      }
+    ],
     keywords: [
+      "inner compass",
       "four-mode gradient",
+      "three awareness capacities",
       "regulatory states",
       "nervous system",
-      "polyvagal theory",
-      "emotional regulation",
-      "Connection",
-      "Protection",
-      "Control",
-      "Domination",
-      "complexity markers"
+      "emotional technology",
+      "applied models",
+      "reading emotions",
+      "emotional resonance",
+      "self-emotional awareness"
     ]
   };
 }
@@ -314,8 +295,8 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 1,
           name: "Measurement Layer",
-          description: "Four-Mode Gradient: Connection → Protection → Control → Domination. Observable nervous system states detectable in natural language.",
-          url: `${BASE_URL}/four-mode-gradient`
+          description: "Two core models: the Inner Compass & Four-Mode Gradient (the instrument) and the Three Awareness Capacities (the calibration). Observable nervous system states and awareness configurations.",
+          url: `${BASE_URL}/models`
         },
         {
           "@type": "ListItem",

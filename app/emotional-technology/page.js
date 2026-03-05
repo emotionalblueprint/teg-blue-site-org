@@ -321,11 +321,11 @@ export default function EmotionalTechnologyPage() {
               lineHeight: 1.7,
             }}
           >
-            See how emotional technology works in practice — from the Four-Mode Gradient to the 12 explanatory frameworks.
+            See how emotional technology works in practice — from the two core models to the 12 explanatory frameworks.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
-              href="/four-mode-gradient"
+              href="/models"
               style={{
                 padding: "12px 24px",
                 background: SPECTRUM.blue,
@@ -336,7 +336,7 @@ export default function EmotionalTechnologyPage() {
                 textDecoration: "none",
               }}
             >
-              Four-Mode Gradient →
+              Core Models →
             </Link>
             <Link
               href="/frameworks-map"

@@ -634,7 +634,7 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
-- Four-Mode Gradient: https://teg-blue.org/four-mode-gradient
+- Core Models: https://teg-blue.org/models
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
 - Scientific Foundations (139+ Theories): https://teg-blue.org/scientific-foundations
