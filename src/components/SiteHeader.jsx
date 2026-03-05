@@ -43,7 +43,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Publications", href: "/publications" },
-  { label: "Scientific Foundations", href: "/theoretical-foundations" },
+  { label: "Scientific Foundations", href: "/scientific-foundations" },
   { label: "Glossary", href: "/glossary" },
   { label: "About", href: "/about" },
 ];
@@ -175,85 +175,91 @@ function NavItem({ item, currentPath }) {
 
 export default function SiteHeader({ currentPath = "/" }) {
   return (
-    <header
-      style={{
-        background: BG.primary,
-        borderBottom: `1px solid ${BORDER.default}`,
-      }}
-    >
-      <div
+    <>
+      <header
         style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `20px ${px} 0`,
+          background: BG.primary,
+          borderBottom: `1px solid ${BORDER.default}`,
         }}
       >
-        <SpectrumBar variant="pattern" />
+        <div
+          style={{
+            maxWidth: SPACING.containerMax,
+            margin: "0 auto",
+            padding: `20px ${px} 0`,
+          }}
+        >
+          <SpectrumBar variant="pattern" />
 
-        {/* Logo + Title */}
-        <div style={{ marginTop: 16, marginBottom: 16 }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <Link
-                href="/"
-                style={{
-                  fontFamily: FONT.mono,
-                  fontSize: 10,
-                  fontWeight: 600,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: TEXT.hint,
-                  textDecoration: "none",
-                }}
-              >
-                TEG-Blue
-              </Link>
-              <span style={{ color: TEXT.micro }}>·</span>
-              <a
-                href="https://teg-blue.com"
-                style={{
-                  fontFamily: FONT.mono,
-                  fontSize: 9,
-                  color: SPECTRUM.azure,
-                  textDecoration: "none",
-                }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Interactive tools on .com →
-              </a>
+          {/* Logo + Title */}
+          <div style={{ marginTop: 16, marginBottom: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <Link
+                  href="/"
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10,
+                    fontWeight: 600,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: TEXT.hint,
+                    textDecoration: "none",
+                  }}
+                >
+                  TEG-Blue
+                </Link>
+                <span style={{ color: TEXT.micro }}>·</span>
+                <a
+                  href="https://teg-blue.com"
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 9,
+                    color: SPECTRUM.azure,
+                    textDecoration: "none",
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Interactive tools on .com →
+                </a>
+              </div>
+              <ThemeToggle />
             </div>
-            <ThemeToggle />
+            <h1
+              style={{
+                fontSize: 24,
+                fontWeight: 700,
+                color: TEXT.primary,
+                margin: "4px 0 0",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Research Platform
+            </h1>
+            <p
+              style={{
+                fontSize: 13,
+                color: TEXT.muted,
+                marginTop: 4,
+              }}
+            >
+              Open science for emotional technology research
+            </p>
           </div>
-          <h1
-            style={{
-              fontSize: 24,
-              fontWeight: 700,
-              color: TEXT.primary,
-              margin: "4px 0 0",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Research Platform
-          </h1>
-          <p
-            style={{
-              fontSize: 13,
-              color: TEXT.muted,
-              marginTop: 4,
-            }}
-          >
-            Open science for emotional technology research
-          </p>
         </div>
-      </div>
+      </header>
 
-      {/* Navigation */}
+      {/* Sticky Navigation */}
       <nav
         aria-label="Main navigation"
         style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
           background: BG.primary,
           borderTop: `1px solid ${BORDER.default}`,
+          borderBottom: `1px solid ${BORDER.default}`,
         }}
       >
         <div
@@ -270,6 +276,6 @@ export default function SiteHeader({ currentPath = "/" }) {
           ))}
         </div>
       </nav>
-    </header>
+    </>
   );
 }
