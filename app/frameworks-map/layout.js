@@ -2,7 +2,7 @@ import { generateTheoreticalFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
   title: "12 Frameworks | TEG-Blue Research",
-  description: "The 12 theoretical frameworks behind TEG-Blue: how emotions form (F1-F3), scale into social patterns (F4-F6), tip into harm (F7), and return to connection (F8-F10). Built on 139+ established theories.",
+  description: "The 12 explanatory frameworks behind TEG-Blue: one mechanism described from twelve angles — individual (F1-F3), collective (F4-F7), repair and complexity (F8-F12). Built on 139+ established theories.",
   keywords: [
     "TEG-Blue frameworks",
     "emotional regulation theory",
@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: {
     title: "12 Frameworks — The Explanatory Architecture Behind TEG-Blue",
-    description: "From formation (F1-F3) through scaling (F4-F6), turning point (F7), healing (F8-F10), to integration (F11-F12). Built on 139+ established theories.",
+    description: "One mechanism. Twelve angles. From individual (F1-F3) through collective (F4-F7) to repair and complexity (F8-F12). Built on 139+ established theories.",
     url: "https://teg-blue.org/frameworks-map",
     siteName: "TEG-Blue Research",
     type: "article",
