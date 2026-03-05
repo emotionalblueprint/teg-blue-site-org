@@ -4,13 +4,16 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
 import { ThemeToggle } from "./theme/ThemeToggle";
+import { SpectrumBar } from "./SharedComponents";
 
 const px = SPACING.pagePadding;
-import { SpectrumBar } from "./SharedComponents";
 
 /**
  * SiteHeader — Main navigation header for teg-blue.org
- * Flat navigation with dropdowns on Models and Frameworks
+ * Two-part layout:
+ *   1. Non-sticky branding block (spectrum bar, title, subtitle)
+ *   2. Sticky nav bar (logo + nav items + theme toggle)
+ * Mobile: hamburger with slide-down panel
  */
 
 const NAV_ITEMS = [
@@ -45,9 +48,28 @@ const NAV_ITEMS = [
   { label: "Publications", href: "/publications" },
   { label: "Scientific Foundations", href: "/scientific-foundations" },
   { label: "Glossary", href: "/glossary" },
+  { label: "AI Safety", href: "/ai-safety" },
   { label: "About", href: "/about" },
 ];
 
+// ─── RESPONSIVE STYLES (injected once) ────────────────────
+const RESPONSIVE_CSS = `
+  .teg-desktop-nav { display: flex; }
+  .teg-mobile-toggle { display: none; }
+  .teg-mobile-panel { display: none; }
+  .teg-branding-full { display: block; }
+  .teg-branding-compact { display: none; }
+
+  @media (max-width: 900px) {
+    .teg-desktop-nav { display: none !important; }
+    .teg-mobile-toggle { display: flex !important; }
+    .teg-mobile-panel { display: block !important; }
+    .teg-branding-full { display: none !important; }
+    .teg-branding-compact { display: block !important; }
+  }
+`;
+
+// ─── DESKTOP NAV ITEM ─────────────────────────────────────
 function NavItem({ item, currentPath }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -57,7 +79,6 @@ function NavItem({ item, currentPath }) {
     currentPath === item.href ||
     (item.href !== "/" && currentPath.startsWith(item.href));
 
-  // Close on outside click
   useEffect(() => {
     if (!open) return;
     function handleClick(e) {
@@ -72,10 +93,10 @@ function NavItem({ item, currentPath }) {
       <Link
         href={item.href}
         style={{
-          padding: "12px 20px",
+          padding: "10px 8px",
           fontFamily: FONT.display,
           fontSize: 13,
-          fontWeight: 600,
+          fontWeight: 500,
           color: isActive ? TEXT.primary : TEXT.hint,
           textDecoration: "none",
           borderBottom: isActive
@@ -108,10 +129,10 @@ function NavItem({ item, currentPath }) {
           display: "flex",
           alignItems: "center",
           gap: 4,
-          padding: "12px 20px",
+          padding: "10px 8px",
           fontFamily: FONT.display,
           fontSize: 13,
-          fontWeight: 600,
+          fontWeight: 500,
           color: isActive ? TEXT.primary : TEXT.hint,
           textDecoration: "none",
           borderBottom: isActive
@@ -173,9 +194,148 @@ function NavItem({ item, currentPath }) {
   );
 }
 
+// ─── MOBILE NAV ITEM ──────────────────────────────────────
+function MobileNavItem({ item, currentPath, onClose }) {
+  const [expanded, setExpanded] = useState(false);
+
+  const isActive =
+    currentPath === item.href ||
+    (item.href !== "/" && currentPath.startsWith(item.href));
+
+  if (!item.children) {
+    return (
+      <Link
+        href={item.href}
+        onClick={onClose}
+        style={{
+          display: "block",
+          padding: "12px 20px",
+          fontSize: 15,
+          fontWeight: isActive ? 600 : 400,
+          color: isActive ? TEXT.primary : TEXT.secondary,
+          textDecoration: "none",
+          borderLeft: isActive ? `3px solid ${SPECTRUM.blue}` : "3px solid transparent",
+          transition: `all ${TRANSITION.fast}`,
+        }}
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link
+          href={item.href}
+          onClick={onClose}
+          style={{
+            flex: 1,
+            display: "block",
+            padding: "12px 20px",
+            fontSize: 15,
+            fontWeight: isActive ? 600 : 400,
+            color: isActive ? TEXT.primary : TEXT.secondary,
+            textDecoration: "none",
+            borderLeft: isActive ? `3px solid ${SPECTRUM.blue}` : "3px solid transparent",
+          }}
+        >
+          {item.label}
+        </Link>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          aria-label={`${expanded ? "Collapse" : "Expand"} ${item.label} submenu`}
+          style={{
+            background: "none",
+            border: "none",
+            padding: "12px 20px",
+            cursor: "pointer",
+            color: TEXT.muted,
+            fontSize: 12,
+          }}
+        >
+          {expanded ? "▲" : "▼"}
+        </button>
+      </div>
+
+      {expanded && (
+        <div style={{ paddingLeft: 16 }}>
+          {item.children.map((child) => {
+            const childActive = currentPath === child.href;
+            return (
+              <Link
+                key={child.href}
+                href={child.href}
+                onClick={onClose}
+                style={{
+                  display: "block",
+                  padding: "10px 20px",
+                  fontSize: 13,
+                  color: childActive ? TEXT.primary : TEXT.muted,
+                  textDecoration: "none",
+                  fontWeight: childActive ? 600 : 400,
+                  borderLeft: childActive ? `2px solid ${SPECTRUM.azure}` : "2px solid transparent",
+                }}
+              >
+                {child.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── HAMBURGER ICON ───────────────────────────────────────
+function HamburgerIcon({ isOpen }) {
+  const bar = {
+    display: "block",
+    width: 18,
+    height: 2,
+    background: TEXT.secondary,
+    borderRadius: 1,
+    transition: `all ${TRANSITION.normal}`,
+  };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 4, width: 18, height: 18, justifyContent: "center" }}>
+      <span style={{
+        ...bar,
+        transform: isOpen ? "rotate(45deg) translate(3px, 3px)" : "none",
+      }} />
+      <span style={{
+        ...bar,
+        opacity: isOpen ? 0 : 1,
+      }} />
+      <span style={{
+        ...bar,
+        transform: isOpen ? "rotate(-45deg) translate(3px, -3px)" : "none",
+      }} />
+    </div>
+  );
+}
+
+// ─── MAIN HEADER ──────────────────────────────────────────
 export default function SiteHeader({ currentPath = "/" }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [currentPath]);
+
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: RESPONSIVE_CSS }} />
+
+      {/* ── TOP BRANDING BLOCK (scrolls away) ── */}
       <header
         style={{
           background: BG.primary,
@@ -191,40 +351,37 @@ export default function SiteHeader({ currentPath = "/" }) {
         >
           <SpectrumBar variant="pattern" />
 
-          {/* Logo + Title */}
-          <div style={{ marginTop: 16, marginBottom: 16 }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <Link
-                  href="/"
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: 10,
-                    fontWeight: 600,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: TEXT.hint,
-                    textDecoration: "none",
-                  }}
-                >
-                  TEG-Blue
-                </Link>
-                <span style={{ color: TEXT.micro }}>·</span>
-                <a
-                  href="https://teg-blue.com"
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: 9,
-                    color: SPECTRUM.azure,
-                    textDecoration: "none",
-                  }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Interactive tools on .com →
-                </a>
-              </div>
-              <ThemeToggle />
+          {/* Full branding — desktop only */}
+          <div className="teg-branding-full" style={{ marginTop: 16, marginBottom: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
+              <Link
+                href="/"
+                style={{
+                  fontFamily: FONT.mono,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: TEXT.hint,
+                  textDecoration: "none",
+                }}
+              >
+                TEG-Blue
+              </Link>
+              <span style={{ color: TEXT.micro }}>·</span>
+              <a
+                href="https://teg-blue.com"
+                style={{
+                  fontFamily: FONT.mono,
+                  fontSize: 9,
+                  color: SPECTRUM.azure,
+                  textDecoration: "none",
+                }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Interactive tools on .com →
+              </a>
             </div>
             <h1
               style={{
@@ -237,20 +394,32 @@ export default function SiteHeader({ currentPath = "/" }) {
             >
               Research Platform
             </h1>
-            <p
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 4 }}>
+              Open science for emotional technology research
+            </p>
+          </div>
+
+          {/* Compact branding — mobile only */}
+          <div className="teg-branding-compact" style={{ marginTop: 12, marginBottom: 12 }}>
+            <h1
               style={{
-                fontSize: 13,
-                color: TEXT.muted,
-                marginTop: 4,
+                fontSize: 18,
+                fontWeight: 700,
+                color: TEXT.primary,
+                margin: 0,
+                letterSpacing: "-0.02em",
               }}
             >
+              Research Platform
+            </h1>
+            <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 2 }}>
               Open science for emotional technology research
             </p>
           </div>
         </div>
       </header>
 
-      {/* Sticky Navigation */}
+      {/* ── STICKY NAV BAR ── */}
       <nav
         aria-label="Main navigation"
         style={{
@@ -258,7 +427,6 @@ export default function SiteHeader({ currentPath = "/" }) {
           top: 0,
           zIndex: 50,
           background: BG.primary,
-          borderTop: `1px solid ${BORDER.default}`,
           borderBottom: `1px solid ${BORDER.default}`,
         }}
       >
@@ -268,13 +436,117 @@ export default function SiteHeader({ currentPath = "/" }) {
             margin: "0 auto",
             padding: `0 ${px}`,
             display: "flex",
-            gap: 0,
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          {NAV_ITEMS.map((item) => (
-            <NavItem key={item.href} item={item} currentPath={currentPath} />
-          ))}
+          {/* Left: Logo */}
+          <Link
+            href="/"
+            style={{
+              fontFamily: FONT.mono,
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: TEXT.secondary,
+              textDecoration: "none",
+              padding: "10px 0",
+              marginRight: 8,
+              whiteSpace: "nowrap",
+            }}
+          >
+            TEG-Blue
+          </Link>
+
+          {/* Center: Desktop nav items */}
+          <div
+            className="teg-desktop-nav"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 0,
+              flex: 1,
+              justifyContent: "center",
+            }}
+          >
+            {NAV_ITEMS.map((item) => (
+              <NavItem key={item.href} item={item} currentPath={currentPath} />
+            ))}
+          </div>
+
+          {/* Right: Theme toggle (always visible) + hamburger (mobile only) */}
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <ThemeToggle />
+            <button
+              className="teg-mobile-toggle"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              style={{
+                display: "none",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 40,
+                height: 40,
+                background: "none",
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: 8,
+                cursor: "pointer",
+                padding: 0,
+              }}
+            >
+              <HamburgerIcon isOpen={mobileOpen} />
+            </button>
+          </div>
         </div>
+
+        {/* ── MOBILE DROPDOWN PANEL ── */}
+        {mobileOpen && (
+          <div
+            className="teg-mobile-panel"
+            style={{
+              display: "none",
+              background: BG.primary,
+              borderTop: `1px solid ${BORDER.default}`,
+              maxHeight: "calc(100vh - 60px)",
+              overflowY: "auto",
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            <div style={{ padding: "8px 0 16px" }}>
+              {NAV_ITEMS.map((item) => (
+                <MobileNavItem
+                  key={item.href}
+                  item={item}
+                  currentPath={currentPath}
+                  onClose={() => setMobileOpen(false)}
+                />
+              ))}
+
+              {/* .com link in mobile menu */}
+              <div style={{
+                padding: "16px 20px 8px",
+                borderTop: `1px solid ${BORDER.default}`,
+                marginTop: 8,
+              }}>
+                <a
+                  href="https://teg-blue.com"
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 11,
+                    color: SPECTRUM.azure,
+                    textDecoration: "none",
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Interactive tools on .com →
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );

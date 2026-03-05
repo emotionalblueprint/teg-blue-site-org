@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
@@ -8,6 +8,13 @@ export const metadata = {
   description: "How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
   alternates: {
     canonical: "https://teg-blue.org/ai-safety",
+  },
+  openGraph: {
+    title: "AI Safety Applications — TEG-Blue Emotional Technology",
+    description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure. TEG-Code, EMLU benchmark, and the Four-Mode Gradient.",
+    url: "https://teg-blue.org/ai-safety",
+    siteName: "TEG-Blue Research",
+    type: "article",
   },
 };
 
@@ -385,11 +392,12 @@ export default function AISafetyPage() {
               background: BG.card,
               borderRadius: RADIUS.md,
               border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
               marginBottom: 20,
             }}
           >
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, minWidth: 540 }}>
               <thead>
                 <tr style={{ background: BG.inset }}>
                   <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>AI Behavior</th>
@@ -940,7 +948,7 @@ function GradientScale({ label, levels }) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
           gap: 2,
           borderRadius: RADIUS.md,
           overflow: "hidden",
