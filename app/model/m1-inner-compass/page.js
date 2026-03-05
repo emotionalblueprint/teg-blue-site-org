@@ -538,56 +538,81 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              Every emotion has two expressions — one in Connection, one in threat modes. The same signal, arriving at different compass positions, produces entirely different outcomes. The emotion is the same. The mode determines what it does.
+              In a fluid compass — where RE, ER, and SEA are all online — the same emotion produces different but proportionate responses across all four modes. The person is responding to real conditions, knows what they are doing, and can return. The emotion serves a different function at each gradient position, but it remains a signal, not a distortion.
             </p>
 
-            {/* Two Expressions Table */}
+            {/* Fluid Compass Table */}
+            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
+              RE + ER + SEA all online. Responding to real danger. Knows exactly what they{"'"}re doing and why.
+            </p>
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
                 {/* Header row */}
-                <div style={gridHeaderStyle}>Emotion</div>
-                <div style={gridHeaderStyle}>In Connection</div>
-                <div style={gridHeaderStyle}>In Threat Modes</div>
-                {/* Anger */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
-                <div style={gridCellStyle}>Signals a boundary crossed; motivates repair</div>
-                <div style={gridCellStyle}>Mobilises defence; escalates conflict</div>
-                {/* Fear */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
-                <div style={gridCellStyle}>Signals genuine threat; promotes caution</div>
-                <div style={gridCellStyle}>Generalises; becomes hypervigilance</div>
-                {/* Sadness */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
-                <div style={gridCellStyle}>Processes loss; invites support</div>
-                <div style={gridCellStyle}>Becomes withdrawal; deepens isolation</div>
-                {/* Joy */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
-                <div style={gridCellStyle}>Celebrates; connects; broadens</div>
-                <div style={gridCellStyle}>Distrusted; feels dangerous</div>
-                {/* Love */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
-                <div style={gridCellStyle}>Opens; deepens; sustains</div>
-                <div style={gridCellStyle}>Attaches with desperation; masks control</div>
-                {/* Shame */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
-                <div style={gridCellStyle}>Signals misalignment; motivates repair</div>
-                <div style={gridCellStyle}>Becomes identity ("I am wrong")</div>
+                <div style={gridHeaderStyle}></div>
+                <div style={gridHeaderStyle}>Connection</div>
+                <div style={gridHeaderStyle}>Protection</div>
+                <div style={gridHeaderStyle}>Control</div>
+                <div style={gridHeaderStyle}>Domination</div>
+                {/* Duration */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Duration</div>
+                <div style={gridCellStyle}>Baseline — sustained living</div>
+                <div style={gridCellStyle}>Minutes — activates fast, returns fast</div>
+                <div style={gridCellStyle}>Hours to days — when Protection isn{"'"}t enough</div>
+                <div style={gridCellStyle}>Hours to days, rare — highest cost</div>
+                {/* Trigger logic */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trigger logic</div>
+                <div style={gridCellStyle}>Safety present</div>
+                <div style={gridCellStyle}>Real threat activates the body automatically</div>
+                <div style={gridCellStyle}>Threat persists — cognitive override kicks in deliberately</div>
+                <div style={gridCellStyle}>Threat extreme or unresolvable — maximum force chosen consciously</div>
                 {/* Guilt */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
-                <div style={gridCellStyle}>Signals harm done; motivates accountability</div>
-                <div style={gridCellStyle}>Becomes paralysis or defensive denial</div>
-                {/* Disgust */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Disgust</div>
-                <div style={gridCellStyle}>Protects boundaries</div>
-                <div style={gridCellStyle}>Dehumanises; justifies exclusion</div>
-                {/* Curiosity */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Curiosity</div>
-                <div style={gridCellStyle}>Explores; learns</div>
-                <div style={gridCellStyle}>Becomes surveillance</div>
-                {/* Grief */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Grief</div>
-                <div style={gridCellStyle}>Processes what was lost</div>
-                <div style={gridCellStyle}>Becomes stuck mourning</div>
+                <div style={gridCellStyle}>Acknowledges impact, makes amends</div>
+                <div style={gridCellStyle}>Recognises shame signal, holds it</div>
+                <div style={gridCellStyle}>Owns the harm, justifies nothing</div>
+                <div style={gridCellStyle}>Takes decisive corrective action</div>
+                {/* Fear */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
+                <div style={gridCellStyle}>Reads real threat, stays grounded</div>
+                <div style={gridCellStyle}>Mobilises proportionally, body leads</div>
+                <div style={gridCellStyle}>Consciously contains the danger</div>
+                <div style={gridCellStyle}>Eliminates the threat, knows the cost</div>
+                {/* Anger */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
+                <div style={gridCellStyle}>Boundary signal — names and repairs</div>
+                <div style={gridCellStyle}>Activates defence, proportional and clear</div>
+                <div style={gridCellStyle}>Deploys strategically, no collateral</div>
+                <div style={gridCellStyle}>Overrides with force — chosen, deliberate</div>
+                {/* Shame */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
+                <div style={gridCellStyle}>Vulnerability in service of repair</div>
+                <div style={gridCellStyle}>Holds self-blame without losing self</div>
+                <div style={gridCellStyle}>Owns the failure, doesn{"'"}t perform it</div>
+                <div style={gridCellStyle}>Decisive course correction</div>
+                {/* Sadness */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
+                <div style={gridCellStyle}>Shared grief, genuine empathy</div>
+                <div style={gridCellStyle}>Withdraws to process, knows why</div>
+                <div style={gridCellStyle}>Uses sadness purposefully, returns</div>
+                <div style={gridCellStyle}>Allows grief briefly, acts through it</div>
+                {/* Envy */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Envy</div>
+                <div style={gridCellStyle}>Turns envy into admiration and learning</div>
+                <div style={gridCellStyle}>Feels the gap, uses it as signal</div>
+                <div style={gridCellStyle}>Channels into strategic action</div>
+                <div style={gridCellStyle}>Eliminates the obstacle with full awareness</div>
+                {/* Joy */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
+                <div style={gridCellStyle}>Play, celebration, full presence</div>
+                <div style={gridCellStyle}>Allows joy cautiously, real threat nearby</div>
+                <div style={gridCellStyle}>Uses joy deliberately, knows the context</div>
+                <div style={gridCellStyle}>Intense, decisive — earned and conscious</div>
+                {/* Love */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
+                <div style={gridCellStyle}>Deepens real closeness and care</div>
+                <div style={gridCellStyle}>Protects the bond actively</div>
+                <div style={gridCellStyle}>Holds love while managing real danger</div>
+                <div style={gridCellStyle}>Protects at all costs — chosen sacrifice</div>
               </div>
             </div>
 
@@ -604,7 +629,7 @@ export default function M1InnerCompassPage() {
 
               <ExpandableSection title="TEG-Blue Contribution" type="opendata">
                 <p style={expandedProseStyle}>
-                  The ten-emotion two-expression mapping showing that mode position, not emotion type, determines outcome. This inverts standard clinical practice: instead of classifying the emotion (anger = problem, joy = goal), the model classifies the mode and reads the emotion within it. The same emotion serves completely different functions depending on gradient position.
+                  The eight-emotion four-mode mapping showing that mode position, not emotion type, determines outcome. This inverts standard clinical practice: instead of classifying the emotion (anger = problem, joy = goal), the model classifies the mode and reads the emotion within it. The same emotion serves completely different functions depending on gradient position — and in a fluid compass, all four expressions are proportionate.
                 </p>
               </ExpandableSection>
             </div>
@@ -689,6 +714,11 @@ export default function M1InnerCompassPage() {
               When the return is absent — when the activation cycle never completes, when the compass needle never comes back — the mode that was meant to be temporary becomes permanent. Identity forms around the mode. False coherence (F3) constructs a self-narrative that makes the stuckness feel like character rather than position. The person does not experience being stuck. They experience being themselves.
             </p>
 
+            <h3 style={h3Style}>Chronic Connection</h3>
+            <p style={proseStyle}>
+              Permanent appeasement. The nervous system locked in the mode designed for safety — but without the capacity to activate Protection when needed. The person in chronic Connection cannot say no, cannot feel anger, cannot set a boundary — not because they lack the knowledge but because the system has learned that activating Protection is more dangerous than staying fused. Emotional Resonance is flooded — the person feels everything everyone around them feels — while Self-Emotional Awareness is gone — they have no access to their own signals. Reading Emotions is locked outward, compulsively scanning others. Chronic Connection looks like healthy Connection from the outside. This is part of what makes it the hardest chronic mode to identify.
+            </p>
+
             <h3 style={h3Style}>Chronic Protection</h3>
             <p style={proseStyle}>
               Permanent vigilance. The nervous system that never received the signal that the threat has passed. Approach-avoidance cycling — wanting connection but reading it as dangerous. Energy consumed by threat-scanning. The body running on emergency fuel indefinitely. Hypervigilance is not anxiety as a personality trait — it is a compass stuck in Protection, doing exactly what it was designed to do, without end.
@@ -701,8 +731,83 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>Chronic Domination</h3>
             <p style={proseStyle}>
-              Permanent override. Empathy collapsed or weaponised — Emotional Resonance used to read others for advantage rather than for connection. Tolerance builds — what produced safety yesterday requires more force today. Escalation follows (F7). The person has lost the experience of the cost. In designed-operation Domination, the cost is felt. In chronic Domination, it has been absorbed into identity. The person does not feel the weight of what they are doing because the weight has become who they believe they are.
+              Permanent override. Empathy collapsed or weaponised — Emotional Resonance used to read others for advantage rather than for connection. Tolerance builds — what produced safety yesterday requires more force today. Escalation follows (F7). The person has lost the experience of the cost. In a fluid compass, the cost is felt. In chronic Domination, it has been absorbed into identity. The person does not feel the weight of what they are doing because the weight has become who they believe they are.
             </p>
+
+            {/* Chronic Modes — System Locked Table */}
+            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
+              Mode is the default. Self-Emotional Awareness gone. Emotional distortion runs. Repair degrades.
+            </p>
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
+                {/* Header row */}
+                <div style={gridHeaderStyle}></div>
+                <div style={gridHeaderStyle}>Chronic Connection</div>
+                <div style={gridHeaderStyle}>Chronic Protection</div>
+                <div style={gridHeaderStyle}>Chronic Control</div>
+                <div style={gridHeaderStyle}>Chronic Domination</div>
+                {/* Duration */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Duration</div>
+                <div style={gridCellStyle}>Permanent — the only mode the system knows</div>
+                <div style={gridCellStyle}>Permanent alert — alarm never switches off</div>
+                <div style={gridCellStyle}>Permanent override — cognitive control is identity</div>
+                <div style={gridCellStyle}>Permanent extreme — power is the only safety</div>
+                {/* Trigger logic */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trigger logic</div>
+                <div style={gridCellStyle}>No trigger needed — appeasement runs regardless</div>
+                <div style={gridCellStyle}>No trigger needed — threat assumed before it arrives</div>
+                <div style={gridCellStyle}>No trigger needed — uncertainty itself is the threat</div>
+                <div style={gridCellStyle}>No trigger needed — any challenge activates elimination</div>
+                {/* Guilt */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
+                <div style={gridCellStyle}>Chronic apology — always the self{"'"}s fault</div>
+                <div style={gridCellStyle}>Guilt as permanent shield, never resolved</div>
+                <div style={gridCellStyle}>Guilt weaponised to manage others</div>
+                <div style={gridCellStyle}>Remorse structurally erased</div>
+                {/* Fear */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
+                <div style={gridCellStyle}>Hypervigilant caretaking — fear of abandonment drives all</div>
+                <div style={gridCellStyle}>Permanent anxiety, safety never trusted</div>
+                <div style={gridCellStyle}>Fear of losing control drives all management</div>
+                <div style={gridCellStyle}>Fear of exposure drives power — invisible to self</div>
+                {/* Anger */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
+                <div style={gridCellStyle}>Rerouted into guilt — forbidden, no outlet</div>
+                <div style={gridCellStyle}>Permanent reactive defence, no stand-down</div>
+                <div style={gridCellStyle}>Rage as management tool, framed as logic</div>
+                <div style={gridCellStyle}>Rage and contempt as default — punishment and coercion</div>
+                {/* Shame */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
+                <div style={gridCellStyle}>Compulsive vulnerability — self-erasure as identity</div>
+                <div style={gridCellStyle}>Self-blame is permanent identity</div>
+                <div style={gridCellStyle}>Hidden permanently under superiority</div>
+                <div style={gridCellStyle}>Humiliation projected outward — others carry it</div>
+                {/* Sadness */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
+                <div style={gridCellStyle}>Invisible pain — repairs others, never self</div>
+                <div style={gridCellStyle}>Permanently withdrawn, no reconnection</div>
+                <div style={gridCellStyle}>Guilt-tripping as relational default</div>
+                <div style={gridCellStyle}>Vulnerability weaponised — others{"'"} pain as leverage</div>
+                {/* Envy */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Envy</div>
+                <div style={gridCellStyle}>Chronic self-diminishment — admires, never claims</div>
+                <div style={gridCellStyle}>Permanently less-than, no growth possible</div>
+                <div style={gridCellStyle}>Compulsive competition, zero-sum always</div>
+                <div style={gridCellStyle}>What is envied must be destroyed</div>
+                {/* Joy */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
+                <div style={gridCellStyle}>Performed happiness — exhausting, empty</div>
+                <div style={gridCellStyle}>Joy inaccessible — calm feels dangerous</div>
+                <div style={gridCellStyle}>Flaunted for status, never genuine</div>
+                <div style={gridCellStyle}>Sadistic pleasure — others{"'"} suffering as the source</div>
+                {/* Love */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
+                <div style={gridCellStyle}>Self-abandoning — love as complete merger</div>
+                <div style={gridCellStyle}>Clinging, terror of loss, can never trust</div>
+                <div style={gridCellStyle}>All love conditional and transactional</div>
+                <div style={gridCellStyle}>Love as ownership and control</div>
+              </div>
+            </div>
 
             <KeyStatement>
               The person in chronic Control is not "a controlling person." They are a person whose compass has been stuck in Control — likely since childhood — because the return was never learned.
