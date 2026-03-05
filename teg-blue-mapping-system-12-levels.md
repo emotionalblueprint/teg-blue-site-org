@@ -280,7 +280,7 @@ Human behavior is organized by two parallel information systems: the Cognitive-L
 
 | #   | Symbol | Level Name                               | Subtitle                           | Arc           |
 | --- | ------ | ---------------------------------------- | ---------------------------------- | ------------- |
-| 1   | ◉      | **Emotions as a Biological Information** | Foundation of Emotional Experience | Formation     |
+| 1   | ◉      | **Emotions as Biological Information**   | Foundation of Emotional Experience | Formation     |
 | 2   | ◐      | The Ego-Persona Construct                | Ego's Creation                     | Formation     |
 | 3   | ⬡      | Our Three Inner Layers                   | Cognitive Dissonance               | Formation     |
 | 4   | ▦      | The Invisible Rules                      | Internalized Patterns              | Scaling       |
