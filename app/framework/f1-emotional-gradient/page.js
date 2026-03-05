@@ -199,7 +199,7 @@ export default function F1EmotionalGradientPage() {
               The nervous system does not wait for cognition to assess a situation. It evaluates continuously, below awareness, across a distributed system — gut, heart, muscles, vagus nerve, amygdala — that was running for millions of years before language or reasoning evolved. Emotions are how this evaluation gets delivered. They are the signals that translate the body's assessment into something the organism can feel, orient to, and act on. They are the nervous system's first language. Cognition is the second.
             </p>
             <p style={proseStyle}>
-              The compass has four modes. Two are body-first — Connection and Protection — the nervous system's responses that have been running for millions of years. Two are cognition-first — Control and Domination — an intelligent evolutionary upgrade that appeared when cognition arrived and the system gained range. In a designed-operation compass, all four are available, all are time-limited (except Connection, which is the home base), and all are returnable. The needle can go anywhere it needs to go — and come back. That coming back — Biological Restoration — is the mechanism that keeps the compass moving.
+              The compass has four modes. Two are body-first — Connection and Protection — the nervous system's responses that have been running for millions of years. Two are cognition-first — Control and Domination — an intelligent evolutionary upgrade that appeared when cognition arrived and the system gained range. In a fluid compass, all four are available, all are time-limited (except Connection, which is the home base), and all are returnable. The needle can go anywhere it needs to go — and come back. That coming back — Biological Restoration — is the mechanism that keeps the compass moving.
             </p>
 
             <h3 style={conceptHeadingStyle}>The Seven-Step Arc</h3>
@@ -634,7 +634,7 @@ export default function F1EmotionalGradientPage() {
 
               <h4 style={subheadingStyle}>Biological Restoration across the Full Gradient</h4>
               <p style={proseStyle}>
-                The restoration applies across all four modes. In a designed-operation compass:
+                The restoration applies across all four modes. In a fluid compass:
               </p>
               <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
                 <li style={listItemStyle}>
@@ -644,7 +644,7 @@ export default function F1EmotionalGradientPage() {
                   The restoration from <strong style={{ color: TEXT.primary }}>Control</strong> is cognitive and somatic — cognition standing down and the body releasing the strategic activation. The mind stops managing and the body resolves.
                 </li>
                 <li style={listItemStyle}>
-                  The restoration from <strong style={{ color: TEXT.primary }}>Domination</strong> is the most costly — the person must re-engage resonance that was deliberately dropped, process the weight of what they did, and allow the body's full activation to discharge. In a designed-operation compass, this cost is felt and processed.
+                  The restoration from <strong style={{ color: TEXT.primary }}>Domination</strong> is the most costly — the person must re-engage resonance that was deliberately dropped, process the weight of what they did, and allow the body's full activation to discharge. In a fluid compass, this cost is felt and processed.
                 </li>
               </ul>
               <p style={proseStyle}>
@@ -741,10 +741,10 @@ export default function F1EmotionalGradientPage() {
                   Domination Mode — Pattern D <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Power = Safety → Dominance (time-limited)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                  The most extreme response — used only when immediate control is required to prevent harm. This mode is rare and time-limited in a designed-operation compass. The person enters it deliberately, knowing exactly what they are doing. Emotional Resonance has dropped to near-zero — and the person chose to let it drop because the situation demanded decisive, unambiguous action.
+                  The most extreme response — used only when immediate control is required to prevent harm. This mode is rare and time-limited in a fluid compass. The person enters it deliberately, knowing exactly what they are doing. Emotional Resonance has dropped to near-zero — and the person chose to let it drop because the situation demanded decisive, unambiguous action.
                 </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                  The sequence is final: <strong style={{ color: TEXT.primary }}>Override → Eliminate → Secure.</strong> Override the obstacle, eliminate the threat, secure what matters. When the situation resolves, the person exits. The compass moves back. Emotional Resonance returns. The person may feel the weight of what they did — the cost of having suspended resonance. In a designed-operation compass, this is felt and processed. Biological Restoration happens — though the restoration from Domination costs more than from any other mode.
+                  The sequence is final: <strong style={{ color: TEXT.primary }}>Override → Eliminate → Secure.</strong> Override the obstacle, eliminate the threat, secure what matters. When the situation resolves, the person exits. The compass moves back. Emotional Resonance returns. The person may feel the weight of what they did — the cost of having suspended resonance. In a fluid compass, this is felt and processed. Biological Restoration happens — though the restoration from Domination costs more than from any other mode.
                 </p>
                 <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
                   Evolutionary basis: Situations requiring the capacity to act without empathic constraint — protecting offspring from a predator, defending the group against existential threat, making triage decisions where not everyone can be saved.
@@ -784,7 +784,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                In a designed-operation compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and come back when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
+                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and come back when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
               </p>
 
               <div style={expandableRowStyle}>
@@ -796,7 +796,7 @@ export default function F1EmotionalGradientPage() {
 
                 <ExpandableSection title="TEG-Blue Contribution" type="framework">
                   <p style={expandedProseStyle}>
-                    The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
+                    The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of fluid-compass Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
                   </p>
                 </ExpandableSection>
               </div>
@@ -1000,6 +1000,7 @@ export default function F1EmotionalGradientPage() {
                     <TableRow cells={["F1", "Biological Restoration", "Individual biology", "None — the design"]} />
                     <TableRow cells={["F2", "Co-regulation → self-restoration (when learned)", "Developmental", "Restoration path never built"]} />
                     <TableRow cells={["F3", "False coherence — cognition replacing restoration", "Individual cognition", "Truth"]} />
+                    <TableRow cells={["F3 (ext)", "Emotional distortion + external regulation", "Relational", "Relationships"]} />
                     <TableRow cells={["F4", "Rules regulate", "Collective — social systems", "Flexibility"]} />
                     <TableRow cells={["F5", "Worth hierarchies regulate", "Collective — value systems", "Equity"]} />
                     <TableRow cells={["F6", "Bias regulates", "Collective — perceptual systems", "Accuracy"]} />
@@ -1081,8 +1082,9 @@ export default function F1EmotionalGradientPage() {
                   "What is commonly called 'regulation' is often its opposite",
                   "Some emotions can't complete through physiology alone — the nervous system is waiting for relational evidence",
                   "For relational emotions, co-regulation is the only pathway that completes the cycle",
+                  "The completion pathway for relational emotions can only be built through the experience the person most fears: being seen in the emotion that says they don't belong — and not being excluded.",
                   "State determines capacity",
-                  "You are not dealing with a person. You are dealing with a person in a state.",
+                  "You are not dealing with a person. You are dealing with a person in a state. Change the state, and the person who shows up is different.",
                   "Restore safety first, then expect capacity",
                   "Assess mode position, not the emotion",
                   "The problem is never the mechanism — it is what the mechanism learned",
