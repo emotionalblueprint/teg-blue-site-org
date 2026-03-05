@@ -160,15 +160,13 @@ Hub | For Researchers | Publications | Theory Map | Glossary | About | Collabora
 
 ## The 12 Frameworks
 
-Organized into five phases:
+Organized into three arcs:
 
-| Phase | Frameworks | What They Explain |
-|-------|-----------|-------------------|
-| **Formation** | F1-F3 | How nervous system states form, how identity organizes around them |
-| **Scaling** | F4-F6 | How individual regulation patterns become social structures |
-| **Turning Point** | F7 | How protection escalates into domination |
-| **Healing** | F8-F10 | How patterns shift, including neurodivergent pathways |
-| **Integration** | F11-F12 | The complete architecture and its internal logic |
+| Arc | Frameworks | What They Explain |
+|-----|-----------|-------------------|
+| **Individual** | F1–F3 | The instrument. How the nervous system evaluates safety, how the compass calibrates through development, and how cognition steps in when the return path is missing |
+| **Collective** | F4–F7 | The scaling. How individual patterns become shared rules, worth hierarchies, perception biases, and how protection escalates all the way to domination |
+| **Repair and Complexity** | F8–F12 | The return. How awareness capacities rebuild, neurodivergent variation, generational transmission, paradox, and the two-information-system architecture underneath |
 
 ---
 
