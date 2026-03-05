@@ -7,6 +7,7 @@ import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
+import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -897,6 +898,9 @@ export default function F11EmotionalParadoxesPage() {
               <strong>F11's contribution:</strong> showing that all these traditions describe the same mechanism — multi-rationality generating predictable paradox at every scale — and that the capacity to hold paradox is not wisdom literature but the measurable consequence of the three awareness capacities being online.
             </p>
           </section>
+
+          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
+          <ConnectedResearch slug="f11-emotional-paradoxes" type="framework" />
 
           {/* ════════════════════════════════════════════════
               WHERE TO GO NEXT

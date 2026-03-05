@@ -1,0 +1,20 @@
+{
+  "slug": "f8-repairing-awareness",
+  "type": "framework",
+  "title": "Repairing Awareness & The Power of Difference",
+  "frameworkId": "F8",
+  "status": "published",
+  "summary": "How the three awareness capacities develop in adulthood and why different configurations make collectives stronger.",
+  "tags": ["F8", "repair", "awareness capacities", "diversity", "collective intelligence"],
+
+  "content": [],
+
+  "connections": [
+    { "type": "cites", "targetSlug": "humanistic-psychology", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "analytical-psychology", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "polyvagal", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "attachment", "targetType": "theory" }
+  ],
+
+  "lastUpdated": "2026-03-05"
+}

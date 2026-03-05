@@ -1,0 +1,38 @@
+{
+  "slug": "sociology",
+  "type": "theory",
+  "title": "Sociology",
+  "status": "established",
+  "originAuthor": "Bourdieu, Bernstein, Goffman",
+  "domain": "sociology",
+
+  "summary": "The study of how social structures, institutions, and cultural norms shape human behavior — including how power, class, and symbolic capital organize collective life.",
+
+  "tags": ["sociology", "social structure", "capital theory", "habitus", "collective behavior"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Sociology examines how social structures shape individual and collective behavior. Key concepts include Bourdieu's capital theory (economic, social, cultural, and symbolic capital as sources of power), Bernstein's linguistic codes (how language patterns reflect and reproduce social class), and Goffman's dramaturgy (how people perform social roles to manage impressions)."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue draws on sociology to explain how individual nervous system regulation patterns scale into collective structures. F4 (Rules Regulate) maps how rule systems emerge from collective threat regulation. F5 (Worth Hierarchies) uses capital theory to explain how rules become sorting systems. The framework connects what sociology describes at the structural level to what neuroscience describes at the individual level."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Bourdieu, P. (1984). Distinction: A Social Critique of the Judgement of Taste. Harvard University Press. \u00b7 Bernstein, B. (1971). Class, Codes and Control. Routledge. \u00b7 Goffman, E. (1959). The Presentation of Self in Everyday Life. Anchor Books."
+    }
+  ],
+
+  "connections": [
+    { "type": "related", "targetSlug": "f4-rules-regulate", "targetType": "framework" },
+    { "type": "related", "targetSlug": "f5-worth-hierarchies", "targetType": "framework" }
+  ],
+
+  "lastUpdated": "2026-03-05"
+}

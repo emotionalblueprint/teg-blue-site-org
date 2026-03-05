@@ -7,6 +7,7 @@ import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
+import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -899,6 +900,9 @@ export default function F9NeurodivergenceVariationPage() {
               <strong>F9's contribution:</strong> organizing these into a unified model showing that System Mismatch is the mechanism, masking is the predictable adaptation, burnout is the predictable outcome, and design is the primary intervention.
             </p>
           </section>
+
+          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
+          <ConnectedResearch slug="f9-neurodivergence-variation" type="framework" />
 
           {/* ════════════════════════════════════════════════
               WHERE TO GO NEXT

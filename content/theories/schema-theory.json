@@ -1,0 +1,38 @@
+{
+  "slug": "schema-theory",
+  "type": "theory",
+  "title": "Schema Theory",
+  "status": "established",
+  "originAuthor": "Jeffrey Young",
+  "domain": "clinical psychology",
+
+  "summary": "Early maladaptive schemas — stable, enduring patterns developed in childhood — shape perception, emotion, and behavior across the lifespan. They function as self-perpetuating lenses through which experience is filtered.",
+
+  "tags": ["schema theory", "early maladaptive schemas", "schema therapy", "cognitive patterns", "clinical psychology"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Schema Therapy, developed by Jeffrey Young, identifies 18 early maladaptive schemas organized into five domains corresponding to unmet core emotional needs. Schemas develop when childhood needs for secure attachment, autonomy, realistic limits, freedom of expression, and spontaneity are not met. They become self-perpetuating through schema maintenance (confirming the schema), schema avoidance (avoiding triggers), and schema compensation (overcompensating)."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue integrates schema theory into F2's account of how capacity configurations become stable patterns. What schema therapy calls early maladaptive schemas, TEG-Blue maps as the cognitive structures that form around whichever awareness capacities had conditions to develop. The schema maintenance cycle corresponds to the pattern-locking mechanisms described in F3 (False Coherence)."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Young, J. E., Klosko, J. S., & Weishaar, M. E. (2003). Schema Therapy: A Practitioner's Guide. Guilford Press. \u00b7 Young, J. E. (1999). Cognitive Therapy for Personality Disorders: A Schema-Focused Approach."
+    }
+  ],
+
+  "connections": [
+    { "type": "related", "targetSlug": "f2-awareness-calibration", "targetType": "framework" },
+    { "type": "related", "targetSlug": "f3-false-coherence", "targetType": "framework" }
+  ],
+
+  "lastUpdated": "2026-03-05"
+}

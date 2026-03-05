@@ -7,6 +7,7 @@ import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
+import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -886,6 +887,9 @@ export default function F12TwoInformationSystemsPage() {
               <strong>F12's contribution:</strong> adding the regulatory state dimension to dual-process theory (what determines which thinking is available), integrating all twelve frameworks as expressions of one mechanism, and showing that the architecture itself — two systems, different speeds, state-dependent capacity — explains why every other framework works the way it does.
             </p>
           </section>
+
+          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
+          <ConnectedResearch slug="f12-two-information-systems" type="framework" />
 
           {/* ════════════════════════════════════════════════
               WHERE TO GO NEXT

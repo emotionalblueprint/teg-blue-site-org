@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, TRANSITION, SPECTRUM, hexToRgba } from "../styles/tokens";
 import { ThemeToggle } from "./theme/ThemeToggle";
@@ -10,54 +10,169 @@ import { SpectrumBar } from "./SharedComponents";
 
 /**
  * SiteHeader — Main navigation header for teg-blue.org
+ * Flat navigation with dropdowns on Models and Frameworks
  */
 
 const NAV_ITEMS = [
-  { label: "Hub", href: "/" },
+  { label: "Home", href: "/" },
   { label: "Start Here", href: "/research-entry" },
   {
-    label: "Theory",
-    dropdown: [
-      { label: "System Overview", href: "/foundations" },
-      { label: "Epistemological Foundations", href: "/epistemological-foundations" },
-      { label: "Models", href: "/models" },
-      { label: "12 Frameworks", href: "/frameworks-map" },
+    label: "Models",
+    href: "/models",
+    children: [
+      { label: "M1 — Inner Compass & Four-Mode Gradient", href: "/model/m1-inner-compass" },
+      { label: "M2 — Three Awareness Capacities", href: "/model/m2-three-awareness-capacities" },
     ],
   },
   {
-    label: "Research",
-    dropdown: [
-      { label: "Scientific Foundations", href: "/scientific-foundations" },
-      { label: "Publications", href: "/publications" },
-      { label: "Methodology", href: "/methodology" },
+    label: "Frameworks",
+    href: "/frameworks-map",
+    children: [
+      { label: "F1 — Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
+      { label: "F2 — Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
+      { label: "F3 — Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
+      { label: "F4 — Rules Regulate", href: "/framework/f4-rules-regulate" },
+      { label: "F5 — Worth Hierarchies Regulate", href: "/framework/f5-worth-hierarchies" },
+      { label: "F6 — Bias Regulates", href: "/framework/f6-bias-regulates" },
+      { label: "F7 — Domination Regulates", href: "/framework/f7-domination-regulates" },
+      { label: "F8 — Repairing Awareness", href: "/framework/f8-repairing-awareness" },
+      { label: "F9 — Neurodivergence as Variation", href: "/framework/f9-neurodivergence-variation" },
+      { label: "F10 — Rebuilding Generational Bridges", href: "/framework/f10-generational-bridges" },
+      { label: "F11 — The Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
+      { label: "F12 — The Two Information Systems", href: "/framework/f12-two-information-systems" },
     ],
   },
-  {
-    label: "Engage",
-    dropdown: [
-      { label: "AI Safety", href: "/ai-safety" },
-      { label: "Collaborate", href: "/collaborate" },
-      { label: "About", href: "/about" },
-    ],
-  },
-  { label: "Glossary", href: "/glossary" },
+  { label: "Publications", href: "/publications" },
+  { label: "Collaborate", href: "/collaborate" },
+  { label: "About", href: "/about" },
 ];
 
+function NavItem({ item, currentPath }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const timeoutRef = useRef(null);
+
+  const isActive =
+    currentPath === item.href ||
+    (item.href !== "/" && currentPath.startsWith(item.href));
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    function handleClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  if (!item.children) {
+    return (
+      <Link
+        href={item.href}
+        style={{
+          padding: "12px 20px",
+          fontFamily: FONT.display,
+          fontSize: 13,
+          fontWeight: 600,
+          color: isActive ? TEXT.primary : TEXT.hint,
+          textDecoration: "none",
+          borderBottom: isActive
+            ? `2px solid ${SPECTRUM.blue}`
+            : "2px solid transparent",
+          transition: `all ${TRANSITION.normal}`,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div
+      ref={ref}
+      style={{ position: "relative" }}
+      onMouseEnter={() => {
+        clearTimeout(timeoutRef.current);
+        setOpen(true);
+      }}
+      onMouseLeave={() => {
+        timeoutRef.current = setTimeout(() => setOpen(false), 150);
+      }}
+    >
+      <Link
+        href={item.href}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 4,
+          padding: "12px 20px",
+          fontFamily: FONT.display,
+          fontSize: 13,
+          fontWeight: 600,
+          color: isActive ? TEXT.primary : TEXT.hint,
+          textDecoration: "none",
+          borderBottom: isActive
+            ? `2px solid ${SPECTRUM.blue}`
+            : "2px solid transparent",
+          transition: `all ${TRANSITION.normal}`,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {item.label}
+        <span style={{ fontSize: 8, marginLeft: 2, opacity: 0.5 }}>▼</span>
+      </Link>
+
+      {open && (
+        <div
+          style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            minWidth: 320,
+            background: BG.primary,
+            border: `1px solid ${BORDER.default}`,
+            borderRadius: 8,
+            padding: "6px 0",
+            zIndex: 100,
+            boxShadow: `0 8px 24px ${hexToRgba("#000", 0.25)}`,
+          }}
+        >
+          {item.children.map((child) => {
+            const childActive = currentPath === child.href;
+            return (
+              <Link
+                key={child.href}
+                href={child.href}
+                onClick={() => setOpen(false)}
+                style={{
+                  display: "block",
+                  padding: "8px 16px",
+                  fontSize: 13,
+                  color: childActive ? TEXT.primary : TEXT.secondary,
+                  textDecoration: "none",
+                  fontWeight: childActive ? 600 : 400,
+                  whiteSpace: "nowrap",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = hexToRgba(SPECTRUM.blue, 0.08);
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                }}
+              >
+                {child.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function SiteHeader({ currentPath = "/" }) {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const isItemActive = (item) => {
-    if (item.href) {
-      return currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
-    }
-    if (item.dropdown) {
-      return item.dropdown.some(
-        (sub) => currentPath === sub.href || currentPath.startsWith(sub.href)
-      );
-    }
-    return false;
-  };
-
   return (
     <header
       style={{
@@ -79,7 +194,7 @@ export default function SiteHeader({ currentPath = "/" }) {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <Link
-                href="https://teg-blue.com"
+                href="/"
                 style={{
                   fontFamily: FONT.mono,
                   fontSize: 10,
@@ -149,128 +264,9 @@ export default function SiteHeader({ currentPath = "/" }) {
             gap: 0,
           }}
         >
-          {NAV_ITEMS.map((item) => {
-            const isActive = isItemActive(item);
-
-            // Simple link item
-            if (item.href) {
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  style={{
-                    padding: "12px 20px",
-                    fontFamily: FONT.display,
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: isActive ? TEXT.primary : TEXT.hint,
-                    textDecoration: "none",
-                    borderBottom: isActive
-                      ? `2px solid ${SPECTRUM.blue}`
-                      : "2px solid transparent",
-                    transition: `all ${TRANSITION.normal}`,
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {item.label}
-                </Link>
-              );
-            }
-
-            // Dropdown item
-            return (
-              <div
-                key={item.label}
-                style={{ position: "relative" }}
-                onMouseEnter={() => setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <button
-                  style={{
-                    padding: "12px 20px",
-                    fontFamily: FONT.display,
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: isActive ? TEXT.primary : TEXT.hint,
-                    background: "none",
-                    border: "none",
-                    borderBottom: isActive
-                      ? `2px solid ${SPECTRUM.blue}`
-                      : "2px solid transparent",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 4,
-                    transition: `all ${TRANSITION.normal}`,
-                    whiteSpace: "nowrap",
-                  }}
-                  onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                >
-                  {item.label}
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    style={{
-                      transform: openDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)",
-                      transition: `transform ${TRANSITION.fast}`,
-                    }}
-                  >
-                    <path
-                      d="M2 4L5 7L8 4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-
-                {/* Dropdown menu */}
-                {openDropdown === item.label && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "100%",
-                      left: 0,
-                      minWidth: 180,
-                      background: BG.primary,
-                      border: `1px solid ${BORDER.default}`,
-                      borderRadius: 6,
-                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                      zIndex: 100,
-                      padding: "6px 0",
-                    }}
-                  >
-                    {item.dropdown.map((subItem) => {
-                      const subActive = currentPath === subItem.href || currentPath.startsWith(subItem.href);
-                      return (
-                        <Link
-                          key={subItem.href}
-                          href={subItem.href}
-                          style={{
-                            display: "block",
-                            padding: "10px 16px",
-                            fontFamily: FONT.display,
-                            fontSize: 13,
-                            fontWeight: subActive ? 600 : 500,
-                            color: subActive ? TEXT.primary : TEXT.secondary,
-                            textDecoration: "none",
-                            transition: `all ${TRANSITION.fast}`,
-                            background: subActive ? hexToRgba(SPECTRUM.blue, 0.08) : "transparent",
-                          }}
-                          onClick={() => setOpenDropdown(null)}
-                        >
-                          {subItem.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {NAV_ITEMS.map((item) => (
+            <NavItem key={item.href} item={item} currentPath={currentPath} />
+          ))}
         </div>
       </nav>
     </header>

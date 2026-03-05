@@ -3,8 +3,8 @@ import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradi
 import { SiteHeader, SiteFooter, ResearcherHero, PropositionBox, MechanismBox } from "@/src/components";
 
 export const metadata = {
-  title: "For Researchers | TEG-Blue Emotional Technology",
-  description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable. Five open research questions for collaboration.",
+  title: "Start Here | TEG-Blue Emotional Technology",
+  description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable. Open access, open questions, open to validation.",
   keywords: [
     "TEG-Blue research",
     "emotional technology",
@@ -17,14 +17,13 @@ export const metadata = {
     "computational social science",
     "trauma research",
     "attachment research",
-    "academic collaboration"
   ],
   alternates: {
     canonical: "https://teg-blue.org/research-entry",
   },
   openGraph: {
-    title: "For Researchers — TEG-Blue Open Science Platform",
-    description: "Entry point for academics. Five open research questions, clear methodology, invitation to collaborate. The building blocks are validated; the connections need verification.",
+    title: "Start Here — TEG-Blue Open Science Platform",
+    description: "Entry point for academics. Open research questions, clear methodology, everything open access. The building blocks are validated; the connections need verification.",
     url: "https://teg-blue.org/research-entry",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -32,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "For Researchers — TEG-Blue",
-    description: "Open science platform connecting 139+ theories. Five priority research questions for collaboration.",
+    title: "Start Here — TEG-Blue",
+    description: "Open science platform connecting 139+ theories. Open research questions, everything open access.",
   },
 };
 
@@ -61,8 +60,8 @@ export default function ResearchEntryPage() {
           <ResearcherHero
             badge="FOR RESEARCHERS"
             title="Start Here"
-            subtitle="Prototype emotional data system — measurable, testable, usable"
-            description="TEG-Blue is a prototype emotional data system, built to make emotional safety and accountability measurable, testable, and usable across humans and AI. It treats emotions as valid, structured data."
+            subtitle="A prototype emotional data system — measurable, testable, usable"
+            description="TEG-Blue is a prototype emotional data system designed to make emotional safety and accountability measurable, testable, and usable across humans and AI. It treats emotions as valid, structured data."
           />
           <div style={{ marginTop: 20 }}>
             <Link
@@ -118,7 +117,7 @@ export default function ResearchEntryPage() {
               <li>Linguistic complexity → regulatory capacity</li>
             </ul>
             <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 500, margin: 0 }}>
-              The individual theories are validated. The connections are our hypothesis. We need the scientific community to help us see if &quot;3&quot; makes sense.
+              The individual theories are validated. The connections are the hypothesis. The scientific community can help determine if &quot;3&quot; holds up.
             </p>
           </MechanismBox>
         </section>
@@ -129,7 +128,7 @@ export default function ResearchEntryPage() {
             Status snapshot
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            This project stays honest by separating what exists from what we are testing.
+            This project separates what exists from what is being tested.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <StatusCard
@@ -160,18 +159,18 @@ export default function ResearchEntryPage() {
         {/* Core hypothesis */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            The core hypothesis we want help testing
+            The core testable claim
           </h2>
           <PropositionBox
             label="CORE HYPOTHESIS"
             title="Return capacity predicts relational outcomes"
           >
             <p style={{ margin: 0, fontStyle: "italic" }}>
-              The key variable that predicts relational and behavioral outcomes is not the person&apos;s state in a moment. It is their <strong>capacity to return to Connection when challenged</strong>.
+              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong>capacity to return to Connection when challenged</strong>.
             </p>
           </PropositionBox>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            We treat this as a testable hypothesis, not a slogan.
+            This is treated as a testable hypothesis, not a slogan.
           </p>
           <div
             style={{
@@ -188,7 +187,7 @@ export default function ResearchEntryPage() {
               <strong style={{ color: TEXT.primary }}>Operationalization:</strong> Measurable in language via complexity markers — accountability without collapse, perspective-taking, repair attempts, emotional differentiation, reduced coercion under stress.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 0 }}>
-              <strong style={{ color: TEXT.primary }}>Research need:</strong> Replication + cross-context validation. Which markers are reliable? Which are context-dependent? How do they shift across stress load, power dynamics, and attachment history?
+              <strong style={{ color: TEXT.primary }}>Research need:</strong> Replication and cross-context validation. Which markers are reliable? Which are context-dependent? How do they shift across stress load, power dynamics, and attachment history?
             </p>
           </div>
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
@@ -196,44 +195,44 @@ export default function ResearchEntryPage() {
           </p>
         </section>
 
-        {/* Choose a lane */}
+        {/* Open research directions */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-            Choose a lane
+            Open research directions
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            You do not need to understand everything to contribute. Pick the lane that matches your expertise.
+            The framework opens several lines of inquiry. Each can be pursued independently.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <LaneCard
+            <DirectionCard
               letter="A"
               title="Measurement and recognition"
-              description="Help test whether the Four-Mode Gradient can be reliably detected in natural language, transcripts, therapy session excerpts, conflict dialogues, and organizational communication."
+              description="Can the Four-Mode Gradient be reliably detected in natural language, transcripts, therapy session excerpts, conflict dialogues, and organizational communication?"
               needs="Inter-rater reliability designs, annotation schemas, construct validation, cross-domain generalization tests."
               link="/model/m1-inner-compass"
               linkText="Inner Compass (M1) →"
             />
-            <LaneCard
+            <DirectionCard
               letter="B"
               title="Prediction and prevention"
-              description="Help map how states shift and escalate across the gradient. Harm often follows predictable progressions from Protection into Control and Domination."
+              description="How do states shift and escalate across the gradient? Harm often follows predictable progressions from Protection into Control and Domination."
               needs="Escalation pathway coding, longitudinal tracking designs, behavioral outcome prediction under stress and power asymmetry."
               link="/frameworks-map"
               linkText="Frameworks → (especially F4–F7)"
             />
-            <LaneCard
+            <DirectionCard
               letter="C"
               title="Navigation and intervention"
-              description="Help identify interventions that support systems moving from Control back toward Protection and Connection. Routes back to safety exist — the question is which ones work, and when."
+              description="Which interventions support systems moving from Control back toward Protection and Connection? Routes back to safety exist — the question is which ones work, and when."
               needs="Scale design support, factor structure exploration, convergent and discriminant validity plans, bias and fairness evaluation."
               link="/methodology"
               linkText="Methodology →"
             />
-            <LaneCard
+            <DirectionCard
               letter="D"
               title="AI alignment and structured schemas"
-              description="Help translate emotional pattern logic into forms AI systems can read safely."
+              description="Translating emotional pattern logic into forms AI systems can read safely."
               needs="Schema design feedback, evaluation protocols, risk analysis, misuse prevention, alignment with existing safety research."
               link="/ai-safety"
               linkText="AI Safety →"
@@ -241,25 +240,10 @@ export default function ResearchEntryPage() {
           </div>
         </section>
 
-        {/* What we are not asking for */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What we are not asking for
-          </h2>
-          <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <li style={{ marginBottom: 6 }}>We are not asking researchers to &quot;believe in a new theory&quot;</li>
-            <li style={{ marginBottom: 6 }}>We are not asking for endorsement before critique</li>
-            <li>We are not presenting the full system as already proven</li>
-          </ul>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginTop: 12 }}>
-            We are inviting collaborative testing, including disagreement, replication, and revision.
-          </p>
-        </section>
-
         {/* Next steps table */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Next steps
+            Where to go from here
           </h2>
           <div
             style={{
@@ -272,16 +256,16 @@ export default function ResearchEntryPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ background: BG.surface }}>
-                  <th style={{ ...tableHeaderStyle }}>Step</th>
-                  <th style={{ ...tableHeaderStyle }}>Page</th>
+                  <th style={{ ...tableHeaderStyle }}>To</th>
+                  <th style={{ ...tableHeaderStyle }}>Go to</th>
                 </tr>
               </thead>
               <tbody>
-                <NextStepRow step="Understand the system" href="/foundations" label="System Overview →" />
+                <NextStepRow step="Understand the full system" href="/foundations" label="System Overview →" />
                 <NextStepRow step="See the applied models" href="/models" label="Core Models →" />
                 <NextStepRow step="See the explanatory layer" href="/frameworks-map" label="Frameworks →" />
                 <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: SPECTRUM.blue }}>Methodology</Link></>} />
-                <NextStepRow step="Work with us" href="/collaborate" label="Collaborate →" />
+                <NextStepRow step="Use this work" href="/collaborate" label="Collaborate →" />
               </tbody>
             </table>
           </div>
@@ -301,7 +285,7 @@ export default function ResearchEntryPage() {
             Contact
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-            If one lane fits your work, reach out with a short note: your background, which lane you are interested in, and what you would want to test or critique first.
+            If any of these directions match your work, reach out with a short note — your background, which direction interests you, and what you&apos;d want to test or critique first.
           </p>
           <a
             href="mailto:research@teg-blue.org"
@@ -325,7 +309,7 @@ export default function ResearchEntryPage() {
         {/* Footer note */}
         <footer style={{ marginTop: 32, textAlign: "center" }}>
           <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
+            TEG-Blue · Open Science · CC BY-NC-SA 4.0
           </p>
         </footer>
       </main>
@@ -371,7 +355,7 @@ function StatusCard({ label, color, description }) {
   );
 }
 
-function LaneCard({ letter, title, description, needs, link, linkText }) {
+function DirectionCard({ letter, title, description, needs, link, linkText }) {
   return (
     <div
       style={{
@@ -383,13 +367,13 @@ function LaneCard({ letter, title, description, needs, link, linkText }) {
       }}
     >
       <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-        Lane {letter} — {title}
+        {letter}. {title}
       </h3>
       <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
         {description}
       </p>
       <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginBottom: 12 }}>
-        <strong style={{ color: TEXT.secondary }}>What we need:</strong> {needs}
+        <strong style={{ color: TEXT.secondary }}>Open questions:</strong> {needs}
       </p>
       <Link
         href={link}

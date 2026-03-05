@@ -1,0 +1,39 @@
+{
+  "slug": "interpersonal-neurobiology",
+  "type": "theory",
+  "title": "Interpersonal Neurobiology",
+  "status": "established",
+  "originAuthor": "Daniel Siegel",
+  "domain": "neuroscience",
+
+  "summary": "An interdisciplinary framework showing how relationships shape brain development and neural integration — the mind emerges from the interaction between neurophysiology and interpersonal experience.",
+
+  "tags": ["interpersonal neurobiology", "neural integration", "brain development", "relational neuroscience", "co-regulation"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "Interpersonal Neurobiology (IPNB), developed by Daniel Siegel, proposes that the mind is an emergent process arising from the flow of energy and information within the body and between people. Healthy development requires neural integration — the linking of differentiated parts of the brain. This integration happens through attuned relationships, particularly in early development."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue draws on IPNB to explain how the three awareness capacities develop through relational attunement (F2). The framework's core claim — that awareness teaches awareness through co-regulation — is grounded in Siegel's work on how interpersonal experience shapes neural architecture. The repair pathway (F8-F10) follows the IPNB principle that what was shaped in relationship can be reshaped in relationship."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Siegel, D. J. (2012). The Developing Mind (2nd ed.). Guilford Press. \u00b7 Siegel, D. J. (2010). Mindsight: The New Science of Personal Transformation. Bantam. \u00b7 Schore, A. N. (2003). Affect Regulation and the Repair of the Self. Norton."
+    }
+  ],
+
+  "connections": [
+    { "type": "related", "targetSlug": "f2-awareness-calibration", "targetType": "framework" },
+    { "type": "related", "targetSlug": "polyvagal", "targetType": "theory" },
+    { "type": "related", "targetSlug": "attachment", "targetType": "theory" }
+  ],
+
+  "lastUpdated": "2026-03-05"
+}

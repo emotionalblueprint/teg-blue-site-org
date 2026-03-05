@@ -1,0 +1,22 @@
+{
+  "slug": "f11-emotional-paradoxes",
+  "type": "framework",
+  "title": "The Emotional Paradoxes",
+  "frameworkId": "F11",
+  "status": "published",
+  "summary": "Multi-rationality and holding capacity. Why paradoxes emerge during healing and why holding contradiction is a sign of capacity, not failure.",
+  "tags": ["F11", "paradox", "multi-rationality", "holding capacity", "complexity"],
+
+  "content": [],
+
+  "connections": [
+    { "type": "cites", "targetSlug": "cognitive-science", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "cognitive-dissonance", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "analytical-psychology", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "psychoanalysis", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "internal-family-systems", "targetType": "theory" },
+    { "type": "cites", "targetSlug": "affective-neuroscience", "targetType": "theory" }
+  ],
+
+  "lastUpdated": "2026-03-05"
+}

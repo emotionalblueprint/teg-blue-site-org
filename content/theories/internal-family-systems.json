@@ -1,0 +1,39 @@
+{
+  "slug": "internal-family-systems",
+  "type": "theory",
+  "title": "Internal Family Systems (IFS)",
+  "status": "established",
+  "originAuthor": "Richard Schwartz",
+  "domain": "clinical psychology",
+
+  "summary": "A therapeutic model proposing that the psyche contains multiple sub-personalities or 'parts' — each with its own perspective, memories, and protective function — organized around a core Self that can lead when accessed.",
+
+  "tags": ["IFS", "parts work", "internal family systems", "self-leadership", "protective parts", "clinical psychology"],
+
+  "content": [
+    {
+      "id": "core-concept",
+      "title": "Core Concept",
+      "defaultOpen": true,
+      "content": "IFS proposes that the mind naturally contains multiple parts (Managers, Firefighters, Exiles) organized around a core Self. Parts take on protective roles in response to overwhelming experience. Healing involves accessing Self-energy — characterized by curiosity, calm, compassion — and building relationships with parts rather than eliminating them."
+    },
+    {
+      "id": "teg-blue-integration",
+      "title": "How TEG-Blue Integrates This",
+      "content": "TEG-Blue draws on IFS in several frameworks. F3 maps how protective parts maintain false coherence as a regulatory strategy. F8 uses the parts model to explain how repair involves building relationship with adaptive patterns rather than removing them. F11 integrates the IFS insight that contradictory internal states are not dysfunction but the natural result of multiple parts with different protective agendas."
+    },
+    {
+      "id": "key-sources",
+      "title": "Key Sources",
+      "content": "Schwartz, R. C. (1995). Internal Family Systems Therapy. Guilford Press. \u00b7 Schwartz, R. C. & Sweezy, M. (2020). Internal Family Systems Therapy (2nd ed.). Guilford Press."
+    }
+  ],
+
+  "connections": [
+    { "type": "related", "targetSlug": "f3-false-coherence", "targetType": "framework" },
+    { "type": "related", "targetSlug": "f8-repairing-awareness", "targetType": "framework" },
+    { "type": "related", "targetSlug": "f11-emotional-paradoxes", "targetType": "framework" }
+  ],
+
+  "lastUpdated": "2026-03-05"
+}

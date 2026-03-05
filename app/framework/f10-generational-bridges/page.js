@@ -7,6 +7,7 @@ import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
+import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -887,6 +888,9 @@ export default function F10GenerationalBridgesPage() {
               <strong>F10's contribution:</strong> organizing these into a unified model where all five pathways transmit the same underlying content (F1–F7 regulatory system), where the central mechanism is coherence not content, and where repair in one generation genuinely changes conditions for the next.
             </p>
           </section>
+
+          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
+          <ConnectedResearch slug="f10-generational-bridges" type="framework" />
 
           {/* ════════════════════════════════════════════════
               WHERE TO GO NEXT

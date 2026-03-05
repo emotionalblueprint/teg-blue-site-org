@@ -161,178 +161,6 @@ export default function ModelsPage() {
           ))}
         </section>
 
-        {/* Two-Layer Architecture */}
-        <section style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: 18,
-              fontWeight: 600,
-              color: TEXT.primary,
-              marginBottom: 16,
-            }}
-          >
-            Two-Layer Architecture
-          </h2>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: 16,
-            }}
-          >
-            <div
-              style={{
-                padding: 20,
-                background: gradientCardBg(SPECTRUM.azure),
-                borderRadius: RADIUS.md,
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
-                borderTop: `3px solid ${SPECTRUM.azure}`,
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.azure,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  fontFamily: FONT.mono,
-                  marginBottom: 8,
-                }}
-              >
-                Layer 1 — You are here
-              </p>
-              <p
-                style={{
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: TEXT.primary,
-                  marginBottom: 6,
-                }}
-              >
-                Two Core Models
-              </p>
-              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
-                Applied tools. The instrument (M1) and the calibration (M2).
-              </p>
-            </div>
-
-            <Link
-              href="/frameworks-map"
-              style={{
-                padding: 20,
-                background: gradientCardBg(SPECTRUM.cobalt),
-                borderRadius: RADIUS.md,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-                borderTop: `3px solid ${SPECTRUM.cobalt}`,
-                textDecoration: "none",
-                display: "block",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.cobalt,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  fontFamily: FONT.mono,
-                  marginBottom: 8,
-                }}
-              >
-                Layer 2
-              </p>
-              <p
-                style={{
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: TEXT.primary,
-                  marginBottom: 6,
-                }}
-              >
-                12 Frameworks →
-              </p>
-              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
-                Explanatory architecture. Why do modes exist? How do patterns scale?
-              </p>
-            </Link>
-          </div>
-        </section>
-
-        {/* CTA to .com */}
-        <section style={{ marginBottom: 48 }}>
-          <div
-            style={{
-              padding: 28,
-              background: hexToRgba(SPECTRUM.blue, 0.08),
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
-              textAlign: "center",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: 18,
-                fontWeight: 700,
-                color: TEXT.primary,
-                marginBottom: 12,
-              }}
-            >
-              Explore the Interactive Tools
-            </h2>
-            <p
-              style={{
-                fontSize: 15,
-                color: TEXT.secondary,
-                marginBottom: 20,
-                maxWidth: 480,
-                margin: "0 auto 20px",
-                lineHeight: 1.7,
-              }}
-            >
-              The interactive tools on teg-blue.com include the Emotional Periodic
-              Table, Inner Compass visualisations, assessment tools, and the
-              full mapping system across 12 levels.
-            </p>
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <a
-                href="https://teg-blue.com/start-here"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  padding: "12px 24px",
-                  background: SPECTRUM.blue,
-                  color: "#fff",
-                  borderRadius: RADIUS.md,
-                  fontWeight: 600,
-                  fontSize: 14,
-                  textDecoration: "none",
-                }}
-              >
-                Start Here →
-              </a>
-              <a
-                href="https://teg-blue.com/compass-researcher"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  padding: "12px 24px",
-                  background: "transparent",
-                  color: TEXT.secondary,
-                  border: `1px solid ${BORDER.default}`,
-                  borderRadius: RADIUS.md,
-                  fontWeight: 500,
-                  fontSize: 14,
-                  textDecoration: "none",
-                }}
-              >
-                Researcher Framework
-              </a>
-            </div>
-          </div>
-        </section>
-
         {/* Footer Links */}
         <section
           style={{
@@ -474,8 +302,20 @@ function ExpandableModelCard({ model }) {
           {model.summary}
         </p>
 
-        {/* Expand indicator */}
-        <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+        {/* Always-visible link + expand indicator */}
+        <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 12 }}>
+          <Link
+            href={model.href}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              fontSize: 13,
+              fontWeight: 500,
+              color: model.color,
+              textDecoration: "none",
+            }}
+          >
+            Read full model →
+          </Link>
           <span style={{ fontSize: 12, color: TEXT.muted }}>
             {isOpen ? "Hide details" : "Show details"}
           </span>

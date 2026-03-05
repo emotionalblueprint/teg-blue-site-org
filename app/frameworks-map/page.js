@@ -449,74 +449,86 @@ export default function TheoreticalFoundationsPage() {
           })}
         </section>
 
-        {/* Help Us Validate */}
+        {/* The Two Core Models */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Help us validate this mapping
+            The Two Core Models
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            We are explicitly inviting critique.
+            The frameworks explain <em>why</em>. The models provide <em>what</em> — the applied tools that practitioners, researchers, and individuals actually use.
           </p>
           <div
             style={{
-              padding: 20,
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              marginBottom: 20,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gap: 16,
             }}
           >
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              Ways to contribute:
-            </h3>
-            <ul style={{ paddingLeft: 20 }}>
-              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Identify errors in attribution or conceptual links</li>
-              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Suggest missing foundational theories that should be represented</li>
-              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Propose falsifiable predictions for any framework</li>
-              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 4 }}>Recommend measures that could test specific claims</li>
-              <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>Run or advise on replication designs</li>
-            </ul>
-          </div>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            <strong>How credit works:</strong> Contributors are acknowledged on the site. Significant contributions can receive per-section attribution. Research outputs follow clear authorship norms, agreed in advance.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Link
-              href="/collaborate"
+              href="/model/m1-inner-compass"
               style={{
-                padding: "10px 20px",
-                background: SPECTRUM.blue,
-                color: "#fff",
-                borderRadius: 6,
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              Collaborate →
-            </Link>
-            <Link
-              href="/methodology"
-              style={{
-                padding: "10px 20px",
-                background: "transparent",
-                color: TEXT.secondary,
+                padding: 20,
+                background: gradientCardBg(SPECTRUM.azure),
+                borderRadius: 10,
                 border: `1px solid ${BORDER.default}`,
-                borderRadius: 6,
-                fontWeight: 500,
-                fontSize: 14,
+                borderLeft: `3px solid ${SPECTRUM.azure}`,
                 textDecoration: "none",
+                display: "block",
               }}
             >
-              Methodology →
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.azure,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 6,
+                }}
+              >
+                M1 — The Instrument
+              </p>
+              <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Inner Compass & Four-Mode Gradient →
+              </p>
+              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+                Where is the needle, can it move, and what does the person have access to from where they are?
+              </p>
+            </Link>
+            <Link
+              href="/model/m2-three-awareness-capacities"
+              style={{
+                padding: 20,
+                background: gradientCardBg(SPECTRUM.cobalt),
+                borderRadius: 10,
+                border: `1px solid ${BORDER.default}`,
+                borderLeft: `3px solid ${SPECTRUM.cobalt}`,
+                textDecoration: "none",
+                display: "block",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.cobalt,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 6,
+                }}
+              >
+                M2 — The Calibration
+              </p>
+              <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Three Awareness Capacities →
+              </p>
+              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+                What is the current configuration — which capacities had conditions to develop, and which didn{"'"}t?
+              </p>
             </Link>
           </div>
-          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16 }}>
-            Contact:{" "}
-            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              research@teg-blue.org
-            </a>
-          </p>
         </section>
 
         {/* Footer note */}
@@ -608,8 +620,20 @@ function ExpandableFrameworkCard({ framework }) {
           {framework.summary}
         </p>
 
-        {/* Expand indicator */}
-        <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+        {/* Always-visible link + expand indicator */}
+        <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 12 }}>
+          <Link
+            href={FRAMEWORK_PATHS[framework.id]}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              fontSize: 13,
+              fontWeight: 500,
+              color: arcColor,
+              textDecoration: "none",
+            }}
+          >
+            Read full framework →
+          </Link>
           <span
             style={{
               fontSize: 12,
