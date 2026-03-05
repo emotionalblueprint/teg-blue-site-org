@@ -170,23 +170,23 @@ export default function ResearchHub() {
             </h2>
 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              TEG-Blue is a two-layer system. The first layer measures where someone is emotionally — four nervous system states from Connection through Protection, Control, and Domination. The second layer explains why — 12 frameworks that map how emotions shape identity, relationships, and larger systems.
+              The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation.
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
               <FrameworkCard
                 color={SPECTRUM.indigo}
-                label="LAYER 1"
-                title="Four-Mode Gradient"
-                description="Observable measurement system. Four nervous system regulatory states — Connection, Protection, Control, Domination. The core principle: health is mobility, not position. Getting stuck is the problem."
+                label="2 MODELS"
+                title="Inner Compass & Awareness Capacities"
+                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient — Connection, Protection, Control, Domination. M2 maps the three awareness capacities that determine what data the compass receives and how it's processed."
                 href="/models"
                 linkText="See the Models →"
               />
               <FrameworkCard
                 color={SPECTRUM.cobalt}
-                label="LAYER 2"
-                title="12 Frameworks"
-                description="Explanatory architecture. Three arcs — Individual, Collective, Repair and Complexity. Explains why modes exist, how patterns scale from one person to entire systems, and what enables change."
+                label="12 FRAMEWORKS"
+                title="Individual · Collective · Repair"
+                description="The explanatory architecture. Three arcs explaining why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
                 href="/frameworks-map"
                 linkText="See the Frameworks →"
               />
