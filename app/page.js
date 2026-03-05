@@ -6,7 +6,7 @@ import { SiteHeader, SiteFooter, ResearcherHero, PatternGradientBar } from "@/sr
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
-  description: "A trauma-informed map of emotions and the first complete emotional technology system. Open science — 139+ established theories, testable claims, open access. Built by one researcher. Looking for a lead institution to carry validation forward.",
+  description: "How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks connecting 139+ established theories from neuroscience, psychology, and trauma research. Open science — everything published, everything testable, everything open access.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
@@ -136,6 +136,54 @@ export default function ResearchHub() {
               The 139+ source theories are documented at{" "}
               <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
             </p>
+          </section>
+
+          {/* ── The 12 Frameworks ── */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+              The 12 frameworks
+            </h2>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
+              Three arcs — Individual, Collective, Repair and Complexity — explaining how emotional patterns form, scale into social structures, and how change becomes possible.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              {[
+                { id: "F1", label: "Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
+                { id: "F2", label: "Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
+                { id: "F3", label: "Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
+                { id: "F4", label: "Rules Regulate", href: "/framework/f4-rules-regulate" },
+                { id: "F5", label: "Worth Hierarchies Regulate", href: "/framework/f5-worth-hierarchies" },
+                { id: "F6", label: "Bias Regulates", href: "/framework/f6-bias-regulates" },
+                { id: "F7", label: "Domination Regulates", href: "/framework/f7-domination-regulates" },
+                { id: "F8", label: "Repairing Awareness", href: "/framework/f8-repairing-awareness" },
+                { id: "F9", label: "Neurodivergence as Variation", href: "/framework/f9-neurodivergence-variation" },
+                { id: "F10", label: "Rebuilding Generational Bridges", href: "/framework/f10-generational-bridges" },
+                { id: "F11", label: "The Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
+                { id: "F12", label: "The Two Information Systems", href: "/framework/f12-two-information-systems" },
+              ].map((fw) => (
+                <Link
+                  key={fw.id}
+                  href={fw.href}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    padding: "6px 12px",
+                    background: hexToRgba(SPECTRUM.cobalt, 0.08),
+                    border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                    borderRadius: 6,
+                    textDecoration: "none",
+                    fontSize: 12,
+                    color: TEXT.secondary,
+                  }}
+                >
+                  <span style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, color: SPECTRUM.cobalt }}>
+                    {fw.id}
+                  </span>
+                  {fw.label}
+                </Link>
+              ))}
+            </div>
           </section>
 
           {/* ── The Evidence ── */}

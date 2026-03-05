@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform (Extended)
 # https://teg-blue.org
-# Last updated: 2026-02-18
+# Last updated: 2026-03-05
 # Format: llms-full.txt (Extended AI-readable documentation)
 
 ---
@@ -605,14 +605,17 @@ Psychometric testing of 16 instruments
 # KEY STATISTICS
 
 - **139+** established theories integrated with full attribution
+- **41** research traditions across 24 domains
 - **10,000+** natural conflict narratives analyzed in validation study
 - **33.8%** of individuals escalated toward Control/Domination when challenged
 - **22.2%** of individuals de-escalated toward Connection when challenged
 - **78%** higher complexity markers in de-escalators vs escalators
 - **12** explanatory frameworks (F1-F12)
+- **2** core applied models (M1, M2)
 - **4** nervous system regulatory modes
 - **16** gradient-based assessment instruments
-- **5** research phases: Formation, Scaling, Turning Point, Healing, Integration
+- **169** glossary terms across all frameworks
+- **3** arcs: Individual (F1-F3), Collective (F4-F7), Repair and Complexity (F8-F12)
 
 ---
 
@@ -635,10 +638,24 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Core Models: https://teg-blue.org/models
+  - M1 Inner Compass: https://teg-blue.org/model/m1-inner-compass
+  - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
-- Scientific Foundations (139+ Theories): https://teg-blue.org/scientific-foundations
-- Glossary: https://teg-blue.org/glossary
+  - F1: https://teg-blue.org/framework/f1-emotional-gradient
+  - F2: https://teg-blue.org/framework/f2-awareness-calibration
+  - F3: https://teg-blue.org/framework/f3-false-coherence
+  - F4: https://teg-blue.org/framework/f4-rules-regulate
+  - F5: https://teg-blue.org/framework/f5-worth-hierarchies
+  - F6: https://teg-blue.org/framework/f6-bias-regulates
+  - F7: https://teg-blue.org/framework/f7-domination-regulates
+  - F8: https://teg-blue.org/framework/f8-repairing-awareness
+  - F9: https://teg-blue.org/framework/f9-neurodivergence-variation
+  - F10: https://teg-blue.org/framework/f10-generational-bridges
+  - F11: https://teg-blue.org/framework/f11-emotional-paradoxes
+  - F12: https://teg-blue.org/framework/f12-two-information-systems
+- Scientific Foundations (41 traditions, 139+ Theories): https://teg-blue.org/scientific-foundations
+- Glossary (169 terms): https://teg-blue.org/glossary
 - Methodology: https://teg-blue.org/methodology
 - Collaborate: https://teg-blue.org/collaborate
 - Application Site: https://teg-blue.com

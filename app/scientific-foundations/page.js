@@ -5,6 +5,28 @@ import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, SearchInput, ResearcherHero } from "@/src/components";
 
+// ─── FRAMEWORK URL MAPPING ──────────────────────────────────────
+const FRAMEWORK_URLS = {
+  F1: "/framework/f1-emotional-gradient",
+  F2: "/framework/f2-awareness-calibration",
+  F3: "/framework/f3-false-coherence",
+  F4: "/framework/f4-rules-regulate",
+  F5: "/framework/f5-worth-hierarchies",
+  F6: "/framework/f6-bias-regulates",
+  F7: "/framework/f7-domination-regulates",
+  F8: "/framework/f8-repairing-awareness",
+  F9: "/framework/f9-neurodivergence-variation",
+  F10: "/framework/f10-generational-bridges",
+  F11: "/framework/f11-emotional-paradoxes",
+  F12: "/framework/f12-two-information-systems",
+  M1: "/model/m1-inner-compass",
+  M2: "/model/m2-three-awareness-capacities",
+};
+
+function getFrameworkUrl(tag) {
+  return FRAMEWORK_URLS[tag] || "/frameworks-map";
+}
+
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
   "Affective Neuroscience": SPECTRUM.azure,
@@ -1165,8 +1187,9 @@ function ModelCard({ model }) {
           <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
           <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
             {model.frameworks.map((f) => (
-              <span
+              <Link
                 key={f}
+                href={getFrameworkUrl(f)}
                 style={{
                   fontSize: 10,
                   fontWeight: 600,
@@ -1175,10 +1198,11 @@ function ModelCard({ model }) {
                   borderRadius: 3,
                   background: hexToRgba(SPECTRUM.cobalt, 0.12),
                   color: SPECTRUM.cobalt,
+                  textDecoration: "none",
                 }}
               >
                 {f}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -1400,8 +1424,9 @@ function ExpandableTheoryCard({ theory }) {
           {theory.frameworks && theory.frameworks.length > 0 && (
             <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
               {theory.frameworks.map((f) => (
-                <span
+                <Link
                   key={f}
+                  href={getFrameworkUrl(f)}
                   style={{
                     fontSize: 10,
                     fontWeight: 600,
@@ -1410,10 +1435,11 @@ function ExpandableTheoryCard({ theory }) {
                     borderRadius: 3,
                     background: hexToRgba(SPECTRUM.cobalt, 0.12),
                     color: SPECTRUM.cobalt,
+                    textDecoration: "none",
                   }}
                 >
                   {f}
-                </span>
+                </Link>
               ))}
             </div>
           )}
@@ -1590,7 +1616,7 @@ function ExpandableTheoryCard({ theory }) {
                 {theory.frameworks.map((f) => (
                   <Link
                     key={f}
-                    href="/frameworks-map"
+                    href={getFrameworkUrl(f)}
                     style={{
                       fontSize: 11,
                       fontWeight: 600,

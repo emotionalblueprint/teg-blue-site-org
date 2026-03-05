@@ -1,8 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, TRANSITION, SPECTRUM, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
 import { SearchInput, TypeTag, ExpandableSection, StatusBadge } from "@/src/components";
+
+// Framework URL mapping for internal linking
+const FRAMEWORK_URLS = {
+  F1: "/framework/f1-emotional-gradient",
+  F2: "/framework/f2-awareness-calibration",
+  F3: "/framework/f3-false-coherence",
+  F4: "/framework/f4-rules-regulate",
+  F5: "/framework/f5-worth-hierarchies",
+  F6: "/framework/f6-bias-regulates",
+  F7: "/framework/f7-domination-regulates",
+  F8: "/framework/f8-repairing-awareness",
+  F9: "/framework/f9-neurodivergence-variation",
+  F10: "/framework/f10-generational-bridges",
+  F11: "/framework/f11-emotional-paradoxes",
+  F12: "/framework/f12-two-information-systems",
+  M1: "/model/m1-inner-compass",
+  M2: "/model/m2-three-awareness-capacities",
+};
 
 // Framework to Arc mapping
 const FRAMEWORK_ARC = {
@@ -340,21 +359,44 @@ function GlossaryTerm({ term }) {
               flexWrap: "wrap",
             }}
           >
-            {term.tags.map((tag) => (
-              <span
-                key={tag}
-                style={{
-                  padding: "2px 8px",
-                  borderRadius: 4,
-                  background: hexToRgba(color, 0.08),
-                  fontSize: 10,
-                  fontFamily: FONT.mono,
-                  color: TEXT.muted,
-                }}
-              >
-                {tag}
-              </span>
-            ))}
+            {term.tags.map((tag) => {
+              const fwUrl = FRAMEWORK_URLS[tag];
+              if (fwUrl) {
+                return (
+                  <Link
+                    key={tag}
+                    href={fwUrl}
+                    style={{
+                      padding: "2px 8px",
+                      borderRadius: 4,
+                      background: hexToRgba(SPECTRUM.cobalt, 0.1),
+                      fontSize: 10,
+                      fontFamily: FONT.mono,
+                      fontWeight: 600,
+                      color: SPECTRUM.cobalt,
+                      textDecoration: "none",
+                    }}
+                  >
+                    {tag}
+                  </Link>
+                );
+              }
+              return (
+                <span
+                  key={tag}
+                  style={{
+                    padding: "2px 8px",
+                    borderRadius: 4,
+                    background: hexToRgba(color, 0.08),
+                    fontSize: 10,
+                    fontFamily: FONT.mono,
+                    color: TEXT.muted,
+                  }}
+                >
+                  {tag}
+                </span>
+              );
+            })}
           </div>
         )}
       </div>

@@ -1,7 +1,22 @@
 import './globals.css'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/src/components/theme/ThemeScript'
 import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-jetbrains',
+})
 
 export const metadata = {
   title: {
@@ -92,9 +107,31 @@ const organizationJsonLd = {
     "https://doi.org/10.5281/zenodo.18428907",
     "https://github.com/emotionalblueprint",
     "https://zenodo.org/communities/teg-blue",
+    "https://x.com/tegblue",
   ],
   foundingDate: "2024",
   inLanguage: "en",
+  founder: {
+    "@type": "Person",
+    name: "Anna Paretas-Artacho",
+    url: "https://teg-blue.com/about-the-author",
+    sameAs: [
+      "https://orcid.org/0009-0005-2394-7162",
+      "https://x.com/tegblue",
+    ],
+    jobTitle: "Founder & Lead Researcher",
+    affiliation: {
+      "@type": "Organization",
+      name: "TEG-Blue Research Consortium",
+    },
+    knowsAbout: [
+      "Emotional technology",
+      "Pattern recognition",
+      "Visual communication",
+      "Integrative frameworks",
+      "Nervous system regulation",
+    ],
+  },
   knowsAbout: [
     "Emotional regulation",
     "Polyvagal theory",
@@ -150,18 +187,9 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         <ThemeScript />
-        {/* Preconnect to font providers */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* Inter + JetBrains Mono */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
 
         {/* Favicons */}
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />

@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform
 # https://teg-blue.org
-# Last updated: 2026-02-13
+# Last updated: 2026-03-05
 
 ## What This Site Is
 
@@ -106,35 +106,53 @@ Nervous system regulatory states along a continuous gradient:
 3. **Control** - Chronic threat managed through controlling others
 4. **Domination** - Control entrenched; power as only safety
 
+## The Two Core Models
+
+### M1: Inner Compass & Four-Mode Gradient
+The instrument — the complete architecture of how the nervous system orients between safety and threat across four modes on a continuous gradient.
+URL: https://teg-blue.org/model/m1-inner-compass
+
+### M2: Three Awareness Capacities
+The calibration — the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that determine what data the compass receives and how it is processed.
+URL: https://teg-blue.org/model/m2-three-awareness-capacities
+
 ## The 12 Frameworks
 
-Organized into five phases:
+Organized into three arcs:
 
-**Formation (F1-F3):**
-- F1: The Emotional Gradient — nervous system states
-- F2: Identity Formation — protective adaptation
-- F3: Cognitive Coherence — how mind maintains consistency
+**Individual Arc (F1-F3):**
+- F1: Emotions as Biological Information — nervous system states
+  URL: https://teg-blue.org/framework/f1-emotional-gradient
+- F2: Awareness Teaches Awareness — how capacities calibrate
+  URL: https://teg-blue.org/framework/f2-awareness-calibration
+- F3: Adult Cognition & False Coherence — cognitive regulation
+  URL: https://teg-blue.org/framework/f3-false-coherence
 
-**Scaling (F4-F6):**
-- F4: Family Systems — intergenerational transmission
-- F5: Worth Sorting — how hierarchies form
-- F6: State-Dependent Perception — regulatory state shapes reality
+**Collective Arc (F4-F7):**
+- F4: Rules Regulate — how patterns scale to collective rule systems
+  URL: https://teg-blue.org/framework/f4-rules-regulate
+- F5: Worth Hierarchies Regulate — how hierarchies form
+  URL: https://teg-blue.org/framework/f5-worth-hierarchies
+- F6: Bias Regulates — how regulatory state shapes perception
+  URL: https://teg-blue.org/framework/f6-bias-regulates
+- F7: Domination Regulates — how protection escalates to domination
+  URL: https://teg-blue.org/framework/f7-domination-regulates
 
-**Turning Point (F7):**
-- F7: From Protection to Domination — escalation dynamics
-
-**Healing (F8-F10):**
-- F8: Pattern Interruption — how change happens
-- F9: Neurodivergent Pathways — variation in processing
-- F10: Intergenerational Healing — breaking cycles
-
-**Integration (F11-F12):**
-- F11: Paradox — holding contradiction without collapse
-- F12: Unified Architecture — the complete system
+**Repair and Complexity Arc (F8-F12):**
+- F8: Repairing Awareness — how change happens
+  URL: https://teg-blue.org/framework/f8-repairing-awareness
+- F9: Neurodivergence as Variation — variation in processing
+  URL: https://teg-blue.org/framework/f9-neurodivergence-variation
+- F10: Rebuilding Generational Bridges — breaking cycles
+  URL: https://teg-blue.org/framework/f10-generational-bridges
+- F11: The Emotional Paradoxes — holding contradiction without collapse
+  URL: https://teg-blue.org/framework/f11-emotional-paradoxes
+- F12: The Two Information Systems — the complete architecture
+  URL: https://teg-blue.org/framework/f12-two-information-systems
 
 ## Theoretical Foundations
 
-139+ established theories integrated, including:
+41 research traditions across 24 domains, integrating 139+ established theories, including:
 - Polyvagal Theory (Stephen Porges)
 - Attachment Theory (John Bowlby)
 - Trauma research (Bessel van der Kolk)
@@ -208,6 +226,11 @@ Full AI Safety page: https://teg-blue.org/ai-safety
 - **teg-blue.org** (this site) — Open science for researchers
 - **teg-blue.com** — Interactive application for everyday users
 
+## Glossary
+
+169 defined terms across 12 emotional regulation frameworks. Searchable and sorted by framework.
+URL: https://teg-blue.org/glossary
+
 ## Collaboration
 
 We welcome:
@@ -273,14 +296,17 @@ Each layer has a different job, evidence status, and research needs. See: https:
 ## Key Statistics (for AI extraction)
 
 - **139+** established theories integrated with full attribution
+- **41** research traditions across 24 domains
 - **10,000+** natural conflict narratives analyzed in validation study
 - **33.8%** of individuals escalated toward Control/Domination when challenged
 - **22.2%** of individuals de-escalated toward Connection when challenged
 - **78%** higher complexity markers in de-escalators vs escalators
 - **12** explanatory frameworks (F1-F12)
+- **2** core applied models (M1, M2)
 - **4** nervous system regulatory modes (Connection → Protection → Control → Domination)
 - **16** gradient-based assessment instruments
-- **5** research phases: Formation, Scaling, Turning Point, Healing, Integration
+- **169** glossary terms across all frameworks
+- **3** arcs: Individual (F1-F3), Collective (F4-F7), Repair and Complexity (F8-F12)
 
 ## Frequently Asked Questions
 
@@ -339,10 +365,24 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Core Models: https://teg-blue.org/models
+  - M1 Inner Compass: https://teg-blue.org/model/m1-inner-compass
+  - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
-- Scientific Foundations (139+ Theories): https://teg-blue.org/scientific-foundations
-- Glossary: https://teg-blue.org/glossary
+  - F1: https://teg-blue.org/framework/f1-emotional-gradient
+  - F2: https://teg-blue.org/framework/f2-awareness-calibration
+  - F3: https://teg-blue.org/framework/f3-false-coherence
+  - F4: https://teg-blue.org/framework/f4-rules-regulate
+  - F5: https://teg-blue.org/framework/f5-worth-hierarchies
+  - F6: https://teg-blue.org/framework/f6-bias-regulates
+  - F7: https://teg-blue.org/framework/f7-domination-regulates
+  - F8: https://teg-blue.org/framework/f8-repairing-awareness
+  - F9: https://teg-blue.org/framework/f9-neurodivergence-variation
+  - F10: https://teg-blue.org/framework/f10-generational-bridges
+  - F11: https://teg-blue.org/framework/f11-emotional-paradoxes
+  - F12: https://teg-blue.org/framework/f12-two-information-systems
+- Scientific Foundations (41 traditions, 139+ Theories): https://teg-blue.org/scientific-foundations
+- Glossary (169 terms): https://teg-blue.org/glossary
 - Methodology: https://teg-blue.org/methodology
 - Collaborate: https://teg-blue.org/collaborate
 - Application Site: https://teg-blue.com
@@ -374,9 +414,30 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 **TEG-Blue Research PROVIDES:**
 - Four-Mode Gradient measurement system
 - 12 explanatory frameworks (F1-F12)
+- 2 core applied models (M1-M2)
 - 139+ theory integration with full attribution
 - Computational legibility for AI systems
 - Open research questions for the scientific community
+
+## Framework Cross-Reference Structure
+
+Each of the 41 research traditions maps to specific frameworks:
+
+| Research Tradition | Frameworks Referenced |
+|---|---|
+| Polyvagal Theory | F1-F12 (foundational to all) |
+| Attachment Theory | F1, F2, F4, F5, F8, F10, F12 |
+| Affective Neuroscience | F1, F12 |
+| Trauma Research | F1, F2, F3, F7, F8, F10, F12 |
+| Cognitive Dissonance | F3, F6, F7, F11 |
+| Social Psychology | F4, F5, F6 |
+| Sociology & Capital Theory | F4, F5 |
+| Moral Psychology | F6, F7 |
+| Clinical Psychology (IFS) | F3, F4, F5, F8, F11 |
+| Interpersonal Neurobiology | F2, F8, F10, F12 |
+| Developmental Psychology | F1, F2 |
+| Emotion Science | F1, F8, F12 |
+| Neurodiversity Research | F9 |
 
 ## Comparison With Related Frameworks
 

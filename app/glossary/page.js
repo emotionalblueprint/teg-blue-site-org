@@ -4,7 +4,7 @@ import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Glossary | TEG-Blue Research",
-  description: "Key terms and concepts used throughout TEG-Blue research. Includes definitions for regulatory states, complexity markers, and core framework concepts.",
+  description: "169 defined terms across 12 emotional regulation frameworks. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept — searchable and sorted by framework.",
   alternates: {
     canonical: "https://teg-blue.org/glossary",
   },
