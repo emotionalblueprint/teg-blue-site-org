@@ -531,12 +531,6 @@ export default function TheoreticalFoundationsPage() {
           </div>
         </section>
 
-        {/* Footer note */}
-        <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            12 Frameworks — One Mechanism, Twelve Angles · TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />

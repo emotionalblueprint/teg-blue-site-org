@@ -63,6 +63,22 @@ export default function AboutPage() {
           description="The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
         />
 
+        {/* Intro */}
+        <section style={{ marginTop: 32, marginBottom: 32 }}>
+          <p style={bodyStyle}>
+            <strong style={{ color: TEXT.primary }}>TEG-Blue</strong> stands for The Emotional Gradient Blueprint.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            And builds on the understanding that emotion is biological information — our nervous system communicating what matters, what&apos;s safe, and what needs to be seen.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            We track where it starts in the body, how it shapes identity, enters relationships, scales into systems, and how to understand it.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            It&apos;s a visual system: maps to see the pattern, tools to work with it, and a framework that connects what psychology, neuroscience, and sociology have been studying in fragments into one coherent architecture.
+          </p>
+        </section>
+
         {/* Two Sites */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={sectionHeading}>Two sites</h2>
@@ -135,19 +151,21 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <h3 style={subsectionHeading}>The research problem</h3>
+          <h3 style={subsectionHeading}>How it started</h3>
           <p style={bodyStyle}>
-            TEG-Blue began as a research problem: existing emotional intelligence frameworks explained individual components well — nervous system states, attachment patterns, cognitive bias, social hierarchies — but no architecture connected them. There was no structure that showed how the same regulatory logic operating in one person&apos;s nervous system could scale into collective behavior, institutional dynamics, and intergenerational transmission. That gap is what TEG-Blue was built to fill.
+            TEG-Blue began with a single visual question: could Polyvagal Theory — Stephen Porges&apos; account of the nervous system&apos;s continuous orientation between safety and threat — be made into a navigable tool? The Inner Compass and the Four-Mode Gradient were the first answer. A needle. Four positions. Safety and threat as the poles.
           </p>
-
-          <h3 style={{ ...subsectionHeading, marginTop: 24 }}>Methodology</h3>
-          <p style={bodyStyle}>
-            The methodology reflects a systems design background rather than a disciplinary one. Rather than extending a single theoretical tradition, the approach was integrative from the start — mapping structural relationships across 139+ established theories from neuroscience, trauma psychology, developmental psychology, sociology, and systems science, and testing whether a coherent underlying architecture could be found. The resulting framework, developed over approximately two years of intensive research, is documented openly so that the structural claims can be examined, contested, and tested independently.
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            But explaining what Protection and Connection actually meant required more context than a model could hold. That context became Framework 1 — the biological foundation of the gradient, the nervous system&apos;s signalling language, the designed return.
           </p>
-
-          <h3 style={{ ...subsectionHeading, marginTop: 24 }}>Working outside institutional constraints</h3>
-          <p style={bodyStyle}>
-            Working outside institutional constraints made certain things possible that might otherwise have been difficult: following connections across disciplinary boundaries without defending departmental paradigms, integrating polyvagal theory alongside attachment research alongside dual-process cognition because the evidence warranted it, not because of departmental alignment.
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            From there, each framework followed the research tradition that explained the next layer. Framework 2 drew from Internal Family Systems and Winnicott&apos;s True and False Self — the developmental account of how access to one&apos;s own emotional signal fails to form. Framework 3 drew from cognitive dissonance theory, psychoanalytic defense mechanisms, and Goffman&apos;s dramaturgical self — the architecture of false coherence, how identity forms around a stuck compass to make the stuckness invisible. Building that framework required connecting the nervous system state map to what psychology calls narcissism, the dark triad, and coercive control — not as personality categories but as gradient positions.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            One by one, each framework was built to explain a different layer of the same question: why does the nervous system lose its capacity to return? When the twelve frameworks were placed together, something that had not been visible in any single research tradition became visible across all of them: a gradient. A single continuous arc from biological regulation through developmental failure through cognitive replacement through collective systems — all the way to domination and back.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            The gradient was not designed. It emerged from following the evidence one layer at a time.
           </p>
 
           <h3 style={{ ...subsectionHeading, marginTop: 24 }}>Empirical validation</h3>
@@ -158,11 +176,7 @@ export default function AboutPage() {
             </Link>{" "}
             section for researchers who want to build on, challenge, or independently test the framework.
           </p>
-
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginTop: 12, maxWidth: 640 }}>
-            The Four-Mode Gradient was not designed first and then explained. It emerged through building each Framework, one by one, to explain patterns she had lived through and witnessed. When the pieces were placed together, the gradient became visible.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginTop: 12, maxWidth: 640 }}>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
             The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
           </p>
         </section>
@@ -212,23 +226,6 @@ export default function AboutPage() {
               </tbody>
             </table>
           </div>
-        </section>
-
-        {/* License */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>License</h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            All content on this site is available under{" "}
-            <a
-              href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: SPECTRUM.blue }}
-            >
-              CC BY-NC-SA 4.0
-            </a>{" "}
-            unless otherwise noted. Attribution required. Non-commercial use only. Share-alike.
-          </p>
         </section>
 
         {/* Navigation */}

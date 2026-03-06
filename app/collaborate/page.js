@@ -186,12 +186,6 @@ export default function CollaboratePage() {
           </div>
         </section>
 
-        {/* Footer note */}
-        <footer style={{ marginTop: 32, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue · Open Science · CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />

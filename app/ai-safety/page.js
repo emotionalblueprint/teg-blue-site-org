@@ -846,12 +846,6 @@ export default function AISafetyPage() {
           </div>
         </section>
 
-        {/* Footer note */}
-        <footer style={{ marginTop: 48, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue · Emotional Technology Research · Open Science · CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />

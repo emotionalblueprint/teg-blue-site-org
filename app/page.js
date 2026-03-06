@@ -328,12 +328,6 @@ export default function ResearchHub() {
             </div>
           </section>
 
-          {/* Footer note */}
-          <div style={{ marginTop: 32, textAlign: "center" }}>
-            <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-              TEG-Blue · Open Science · CC BY-NC-SA 4.0
-            </p>
-          </div>
         </main>
 
         <SiteFooter />

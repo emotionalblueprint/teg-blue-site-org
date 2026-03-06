@@ -925,25 +925,6 @@ export default function F10GenerationalBridgesPage() {
           </section>
         </article>
 
-        {/* ── Footer note ── */}
-        <div style={{
-          marginTop: 48, paddingTop: 24,
-          borderTop: `1px solid ${BORDER.default}`,
-          fontSize: 12, color: TEXT.tertiary, lineHeight: 1.6,
-        }}>
-          <p>
-            Framework F10 of the TEG-Blue Emotional Technology System.
-            Content derived from the F10 Concept Architecture by Anna Paretas-Artacho.
-          </p>
-          <p style={{ marginTop: 8 }}>
-            Licensed under{" "}
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-               target="_blank" rel="noopener noreferrer"
-               style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>
-              CC BY-NC-SA 4.0
-            </a>. Attribution required for academic use.
-          </p>
-        </div>
       </main>
 
       <SiteFooter />

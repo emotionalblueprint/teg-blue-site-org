@@ -1275,12 +1275,6 @@ export default function F1EmotionalGradientPage() {
           </section>
         </article>
 
-        {/* Footer note */}
-        <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />

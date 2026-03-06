@@ -894,13 +894,7 @@ export default function F5WorthHierarchiesPage() {
           </section>
         </article>
 
-        {/* Footer note */}
-        <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium \u00b7 Open Science \u00b7 CC BY-NC-SA 4.0
-          </p>
-        </footer>
-      </main>
+        </main>
 
       <SiteFooter />
 

@@ -1294,12 +1294,6 @@ export default function M1InnerCompassPage() {
           </section>
         </article>
 
-        {/* Footer note */}
-        <footer style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium &middot; Open Science &middot; CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />

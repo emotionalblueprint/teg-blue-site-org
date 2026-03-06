@@ -187,12 +187,6 @@ export default function CitationsPage() {
           </p>
         </div>
 
-        {/* Footer note */}
-        <footer style={{ marginTop: 40, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />
