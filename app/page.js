@@ -1,7 +1,10 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
 import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+
+const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSection"), { ssr: false });
 
 
 export const metadata = {
@@ -35,7 +38,7 @@ export default function ResearchHub() {
           }}
         >
           {/* ── Hero ── */}
-          <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(28px, 5vw, 48px)", marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(16px, 3vw, 24px)" }}>
             {/* Badge pill */}
             <div
               style={{
@@ -128,7 +131,7 @@ export default function ResearchHub() {
             {/* Accent bar separator */}
             <div
               style={{
-                marginTop: "clamp(28px, 5vw, 48px)",
+                marginTop: "clamp(20px, 4vw, 32px)",
                 height: 3,
                 borderRadius: 2,
                 background: PATTERN_GRADIENT,
@@ -136,6 +139,9 @@ export default function ResearchHub() {
               aria-hidden="true"
             />
           </section>
+
+          {/* ── Emotion Wave Animation ── */}
+          <EmotionWaveSection />
 
           {/* ── The Framework ── */}
           <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>

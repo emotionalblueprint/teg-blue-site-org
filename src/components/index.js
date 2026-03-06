@@ -22,6 +22,9 @@ export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
 
+// Visualizations
+export { default as EmotionWaveSection } from "./EmotionWaveSection";
+
 // Author
 export { default as AuthorBlock } from "./AuthorBlock";
 
