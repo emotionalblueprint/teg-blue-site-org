@@ -184,6 +184,22 @@ export default function M3TheOpenCyclePage() {
             </PropositionBox>
           </section>
 
+          {/* ─── CONNECTING SCIENCES FRAMING ──────────────── */}
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.muted,
+              lineHeight: 1.8,
+              maxWidth: 720,
+              marginBottom: 48,
+              padding: "16px 20px",
+              borderLeft: `2px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+              fontStyle: "italic",
+            }}
+          >
+            Each section of M3 draws on research that has already documented these mechanisms in detail — stress physiology, polyvagal theory, somatic experiencing, suppression research, allostatic load science. These fields mapped the territory independently, across decades. What was missing was not the knowledge. It was the connection between them — and between the biology and the felt experience of being a person inside it. M3 holds both.
+          </p>
+
           {/* ─── CONCEPT 1: THE THREAT CASCADE ──────────── */}
           <section
             id="threat-cascade"
@@ -198,13 +214,19 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              Robert Sapolsky spent decades studying what stress does to the body. His central finding — documented across baboon populations and human physiology — is that the stress response is an extraordinarily precise biological machine, designed for short-term emergencies and genuinely destructive when it runs without end. Joseph LeDoux mapped exactly how that machine starts: the amygdala fires within twelve milliseconds of perceiving a threat, faster than any conscious thought can form. Stephen Porges showed that what the amygdala is responding to is not the objective situation but the nervous system{"'"}s continuous subconscious evaluation of safety — what he called neuroception.
+              When the nervous system perceives a threat — physical, relational, social, or emotional — a biological sequence activates with a precision the mind cannot intercept. The amygdala fires within twelve milliseconds. This is not slow enough for thought to precede it. The signal is already in motion before a single word about it forms.
             </p>
             <p style={proseStyle}>
-              The HPA axis fires: the hypothalamus releases CRH, the pituitary releases ACTH, the adrenal glands release cortisol. Simultaneously, epinephrine and norepinephrine surge. Heart rate rises. Digestion stops. Muscles brace. Blood flow to the prefrontal cortex decreases as the brainstem and limbic system take priority. Every organ system shifts to survival configuration.
+              The amygdala fires along two simultaneous pathways. The fast pathway — thalamus to amygdala — activates within twelve milliseconds: crude, immediate, and often imprecise. The slow pathway — thalamus to cortex to amygdala — activates within approximately two hundred milliseconds, adding contextual detail. By the time the slow pathway completes, the body has already begun responding. The emotional signal does not wait for permission.
             </p>
             <p style={proseStyle}>
-              What this literature did not do — because it was not its question — was connect this cascade to specific named emotions as the person lives them. {"\""} Stress activation{"\""} in the research literature dissolves shame, grief, rage, longing, and humiliation into a single undifferentiated category of threat response. The biology is precise. The felt experience disappears into it.
+              From the amygdala, the hypothalamic-pituitary-adrenal axis activates. The hypothalamus releases corticotropin-releasing hormone (CRH), which signals the pituitary to release ACTH, which signals the adrenal glands to release cortisol. Simultaneously, the adrenal medulla releases epinephrine and norepinephrine directly into the bloodstream. Blood glucose rises. Heart rate increases. Digestion halts. Muscles brace. Pupils dilate. Blood flow to the prefrontal cortex decreases as the brainstem and limbic system take priority.
+            </p>
+            <p style={proseStyle}>
+              Every organ system shifts to survival configuration. This is not metaphor — it is measurable, systemic, and whole-body. The amygdala dominates. Working memory narrows. Serotonin and GABA — the nervous system{"'"}s brakes — reduce relative to the accelerators. Oxytocin, the chemistry of trust and co-regulation, suppresses.
+            </p>
+            <p style={proseStyle}>
+              The body is doing exactly what it was designed to do. The problem is not the cascade. The problem is what happens — or does not happen — next.
             </p>
 
             <KeyStatement>
@@ -212,13 +234,13 @@ export default function M3TheOpenCyclePage() {
             </KeyStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Threat detection:</strong> LeDoux (1996) — dual-pathway threat detection, amygdala firing before cortical processing. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004) — the HPA axis, cortisol, and the whole-body reconfiguration of the stress response. <strong style={{ color: TEXT.primary }}>Neuroception:</strong> Porges (2011) — continuous subconscious evaluation preceding and faster than conscious awareness.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   The connection between the specific felt emotion and the specific biological cascade — held together, not dissolved into generic {"\""} stress.{"\""} The shame that gets overridden in a meeting and the cortisol pattern that follows are the same event described from two angles. Making that explicit changes what override means.
                 </p>
@@ -240,18 +262,21 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              Peter Levine noticed something in his clinical work that the stress physiology literature had not fully theorised: animals that survive predator encounters shake. The shaking is not distress — it is the nervous system running a discharge sequence. The threat has passed; the body is completing what the activation started. Levine{"'"}s central insight was that humans have the same built-in completion sequence — and that trauma occurs specifically when that sequence is interrupted before it can finish.
-            </p>
-            <p style={proseStyle}>
-              Emily and Amelia Nagoski extended this into everyday emotional life. Their contribution was showing that the stress cycle — not just traumatic activation but ordinary emotional arousal — has a biological endpoint that requires specific inputs to reach. The cycle does not complete because time passes or because the mind decides it is over. It completes because the body runs through the sequence it was designed to run.
+              The stress response was designed to complete. Every mammalian nervous system carries a built-in return sequence — not as an optional add-on but as the endpoint the cascade was always moving toward. The activation is stage one. The return is stage two. Without stage two, stage one never ends.
             </p>
 
             <h3 style={h3Style}>The Return Sequence</h3>
             <p style={proseStyle}>
-              The return sequence runs in order. Expression first: trembling, crying, movement, breath change, vocalisation. The body discharges the mobilised energy through the channels it was designed to use. Emotional tears contain stress hormones — this is not poetic, it is measurable. The discharge activates the parasympathetic return. The vagus nerve engages the ventral vagal complex. Heart rate slows. The gut re-engages. The face softens. Social engagement comes back online.
+              The return sequence runs in order. Expression first: trembling, crying, movement, breath change, vocalization. The body discharges the mobilized energy. Emotional tears contain stress hormones — this is not poetic; it is physiological. Trembling is the nervous system running the discharge sequence. Animals that survive predator encounters shake. The shaking is not distress; it is completion.
             </p>
             <p style={proseStyle}>
-              Cortisol clearance follows — but only if the discharge has begun. The hippocampus sends feedback to the hypothalamus: the cascade can stop. This negative feedback loop is the biological all-clear. Without it, the hypothalamus continues producing CRH, which continues producing cortisol. The axis keeps running not because it is malfunctioning but because it never received the signal to stop.
+              Expression activates the parasympathetic return. The vagus nerve — the body{"'"}s primary parasympathetic pathway — engages the ventral vagal complex. Heart rate slows. The gut re-engages. The face softens. The voice recovers prosody. Social engagement — the capacity to read and respond to others — comes back online. This is the vagal brake: the body{"'"}s built-in signal that the threat has passed.
+            </p>
+            <p style={proseStyle}>
+              Cortisol clearance follows. The hippocampus, once the SNS quiets sufficiently, sends feedback to the hypothalamus: the cascade can stop. This negative feedback loop is the biological {"'"}all clear.{"'"} Without it, the hypothalamus continues producing CRH, which continues producing ACTH, which continues producing cortisol. The axis keeps running not because it is malfunctioning but because it never received the signal to stop.
+            </p>
+            <p style={proseStyle}>
+              The liver metabolizes the cortisol over twenty minutes to several hours. Serotonin, GABA, and oxytocin normalize. The prefrontal cortex receives restored blood flow. Executive function, flexibility, and language return. The hippocampus encodes the experience with context — not as raw threat but as a processed event with a before and after. The cycle closes. The body returns to baseline. Allostatic load: nothing added.
             </p>
 
             <KeyStatement>
@@ -259,13 +284,13 @@ export default function M3TheOpenCyclePage() {
             </KeyStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — trauma as incomplete threat response; the body completing the cycle through discharge. <strong style={{ color: TEXT.primary }}>Stress cycle completion:</strong> Nagoski &amp; Nagoski (2019) — the biological stress cycle requires completion, not management. <strong style={{ color: TEXT.primary }}>Vagal pathways:</strong> Porges (2011) — the vagal brake, ventral vagal complex, co-regulation as the primary completion pathway.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   The stage-by-stage physiological mechanism of completion — why each stage is necessary for the next to occur, and specifically what the hippocampal feedback loop requires. Completion is not metaphorical. It is a biological sequence with identifiable conditions. Understanding those conditions precisely changes what {"'"}not completing{"'"} means.
                 </p>
@@ -287,15 +312,24 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              James Gross at Stanford built a rigorous research programme around emotional regulation — specifically around what happens when people suppress emotional expression. His finding was counterintuitive and important: suppression reduces expressive behaviour while maintaining and often amplifying physiological arousal. The person looks calmer. The body is not calmer. The gap between the external presentation and the internal state is not resolved by suppression — it is widened.
+              Cognitive override does not reach the body. This is the central physiological fact of M3, and it is not intuitive — which is part of why it matters.
             </p>
             <p style={proseStyle}>
-              That architecture is this: cognitive override does not reach the body. When cognition decides an emotion is irrelevant, inappropriate, or dangerous, it overrides the person{"'"}s access to the signal. It does not override the signal. The amygdala does not receive the memo. The HPA axis does not pause mid-cascade to consult the prefrontal cortex. The cortisol already released does not reabsorb because the mind decided the threat was not worth responding to.
+              When cognition decides an emotion is irrelevant, inappropriate, or dangerous, it overrides the person{"'"}s <em>access</em> to the signal. It does not override the signal. The amygdala does not receive the memo. The HPA axis does not pause mid-cascade to consult the prefrontal cortex about whether this emotion is acceptable. The cortisol already released does not reabsorb because the mind decided the threat was not worth responding to.
             </p>
 
             <h3 style={h3Style}>Parallel Tracks</h3>
             <p style={proseStyle}>
-              The sequence of override runs on parallel tracks. The mind detects the emotion arising and labels it — as weakness, as overreaction, as something to manage later. Attention redirects to analysis or narrative construction. The mind concludes the emotion is handled. Meanwhile: epinephrine and norepinephrine sustain the arousal state. Muscles stay braced. The gut stays diverted. Cortisol keeps releasing. The hippocampus — which needs the discharge phase to have begun before it can send the all-clear — receives no discharge signal. The HPA negative feedback loop does not trigger. The cycle stays open.
+              The sequence of override unfolds in parallel tracks. The mind detects the emotion arising. The mind labels it — as weakness, as overreaction, as something to manage later, as something that should not exist. Attention redirects to analysis, narrative construction, or problem-solving. The mind concludes the emotion is handled.
+            </p>
+            <p style={proseStyle}>
+              Meanwhile: the epinephrine and norepinephrine are sustaining the arousal state. The muscles are still braced. The gut is still diverted. The cortisol is still releasing. The hippocampus — which needs the discharge phase to have begun before it can send the all-clear — has not received the discharge signal. The HPA negative feedback loop does not trigger. The cycle stays open.
+            </p>
+            <p style={proseStyle}>
+              The person returns to normal cognitive functioning. The body remains in partial sympathetic activation. The cycle is not resolved — it is invisible.
+            </p>
+            <p style={proseStyle}>
+              The next time a threat is perceived, the response fires from an already-elevated baseline. It activates faster, reaches higher, and takes longer to subside. Each override makes the next one more likely and more costly.
             </p>
 
             <KeyStatement>
@@ -303,13 +337,13 @@ export default function M3TheOpenCyclePage() {
             </KeyStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Emotion suppression:</strong> Gross (1998) — suppression reduces expressive behaviour while maintaining physiological arousal. <strong style={{ color: TEXT.primary }}>Somatic markers:</strong> Damasio (1994) — the body{"'"}s signals run below and faster than conscious awareness; cognition cannot cancel them. <strong style={{ color: TEXT.primary }}>Body memory:</strong> van der Kolk (2014) — unprocessed activation is stored somatically, not resolved cognitively.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   The step-by-step parallel-track account of override — what the mind does and what the body does simultaneously, and why the two tracks do not converge. The mechanism behind Gross{"'"}s finding: the body maintains arousal not despite the suppression but because the suppression intercepts the only pathway through which the arousal could end. Named for the first time as <em>signal submersion</em>: access collapses, the signal runs.
                 </p>
@@ -331,7 +365,7 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              Bruce McEwen coined the term allostatic load to describe what chronic stress activation costs the body — measurable, cumulative, physiological wear across cardiovascular, immune, metabolic, and neurological systems. The load is not metaphorical. It shows up in blood panels, in hippocampal MRI scans, in inflammatory markers, in cortisol receptor density.
+              When the cycle is not completed, specific systems remain in activation — often indefinitely — because the biological conditions for their return were never met.
             </p>
 
             <h3 style={h3Style}>System-by-System Residue</h3>
@@ -378,13 +412,13 @@ export default function M3TheOpenCyclePage() {
             </KeyStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — cumulative physiological cost of chronic activation. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004) — organ-level consequences of sustained cortisol. <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2002); Damasio (1994) — how chronic activation impairs the body{"'"}s capacity to read its own internal state.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   The system-by-system account of what stays active after a single unfinished cycle — not just accumulated over years but present in the hours after a single override. This makes the cost concrete and immediate rather than cumulative and abstract. And it connects each physiological residue directly to the felt experience: depleted serotonin is the irritability that appears hours later; suppressed oxytocin is the difficulty being comforted; the sensitised amygdala is the disproportionate reaction to the next small thing.
                 </p>
@@ -406,7 +440,7 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              McEwen{"'"}s allostatic load research was built on a crucial observation: the body is resilient. A single stress activation, followed by sufficient recovery, leaves little permanent trace. The problem is not the single event. The problem is the pattern — specifically, activation without recovery, repeated across time.
+              One unprocessed cycle is recoverable. The body is resilient. A single override, with sufficient rest, movement, and co-regulation in the period that follows, leaves little permanent trace. The problem is not the single override. The problem is the pattern.
             </p>
 
             {/* Accumulation progression */}
@@ -439,13 +473,13 @@ export default function M3TheOpenCyclePage() {
             </KeyStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen &amp; Stellar (1993); McEwen (2000) — cumulative physiological cost, measured longitudinally. <strong style={{ color: TEXT.primary }}>Epigenetics:</strong> Meaney (2001) — chronic stress changes gene expression patterns governing stress reactivity. <strong style={{ color: TEXT.primary }}>Neuroplasticity:</strong> van der Kolk (2014); Bremner (2006) — hippocampal volume reduction under chronic cortisol exposure.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   Allostatic load mapped to the individual emotional cycle and to gradient position. The progression from a single open cycle to structural reorganisation is traced stage by stage — making visible that the gradient shift from Protection to chronic Control to chronic Domination is not a psychological trajectory but a biological one. Each gradient position corresponds to a specific physiological load level. The mode is not a choice. It is a body in a specific hormonal configuration.
                 </p>
@@ -467,21 +501,24 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              Daniel Kahneman{"'"}s dual-process framework — System 1 (fast, automatic, emotional) and System 2 (slow, deliberate, cognitive) — gave psychology a language for the gap between knowing and doing. The insight-behaviour gap became a recognised phenomenon: people understand what they should do and cannot do it. The framing was enormously useful. It named the gap clearly.
-            </p>
-            <p style={proseStyle}>
-              What it did not fully provide was the physiological mechanism — specifically, why cognitive understanding cannot update the emotional system, and what would be required to do so instead.
+              This is the physiological foundation of F12{"'"}s core insight — that the two information systems cannot resolve each other through insight alone. It is not a philosophical position. It is a circuit map.
             </p>
 
             <h3 style={h3Style}>The Mechanism</h3>
             <p style={proseStyle}>
-              The prefrontal cortex and the amygdala are separate circuits. They are connected — the PFC can modulate amygdala reactivity, and the amygdala can suppress PFC function under threat — but there is no direct downregulation pathway from cognitive decision to hormonal cascade. Deciding the emotion is not important sends a signal through the cognitive system. The HPA axis does not receive it.
+              The prefrontal cortex and the amygdala are separate circuits. They are connected — the PFC can modulate amygdala reactivity, and the amygdala can suppress PFC function under threat — but they do not have a direct downregulation pathway from cognitive decision to hormonal cascade. Deciding the emotion is not important sends a signal through the cognitive system. The HPA axis does not receive it. The cortisol already in circulation does not respond to it.
             </p>
             <p style={proseStyle}>
-              Completing the cycle requires the discharge phase to begin — motor expression, breathing change, the body moving mobilised energy through its designed channels. This is not a cognitive operation. Understanding the need for discharge is cognitive. The discharge itself is somatic. These are different actions in different systems, and one cannot substitute for the other.
+              Completing the cycle requires the discharge phase to begin — motor expression, breathing change, or the body moving the mobilized energy through the channels it was designed to use. This is not a cognitive operation. It is a somatic one. Understanding the need for discharge is cognitive. The discharge itself is biological. These are different actions in different systems.
             </p>
             <p style={proseStyle}>
-              As allostatic load increases, the window in which cognition can engage before the response fires narrows. In high-load states, by the time the PFC has formed a thought about the situation, the body has already reconfigured. Cognition arrives late to a body that has already left.
+              The HPA negative feedback loop requires the hippocampus to detect that cortisol levels are falling — which requires the discharge to have begun, the parasympathetic return to have engaged, and sufficient time for cortisol to metabolize. A cognitive reframe does not produce any of these conditions. A cognitively induced sense of calm can occur while the HPA axis continues running — the person feels calmer because their attention has shifted, while their cortisol level, immune function, and organ configuration remain in survival mode.
+            </p>
+            <p style={proseStyle}>
+              The sensitized amygdala responds faster than the prefrontal cortex can intercept. As allostatic load increases, the window in which cognition can engage before the response fires narrows. In high-load states, by the time the prefrontal cortex has formed a thought about the situation, the body has already reconfigured. Cognition is arriving late to a body that has already left.
+            </p>
+            <p style={proseStyle}>
+              What moves the cycle is what the cycle was designed to respond to: somatic discharge, parasympathetic engagement, cortisol clearance, co-regulation. These are biological inputs for a biological process. Cognition can support the conditions for these inputs — it can choose to rest, to move, to be with a regulated other. But it cannot substitute for them.
             </p>
 
             <KeyStatement>
@@ -489,13 +526,13 @@ export default function M3TheOpenCyclePage() {
             </KeyStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Dual-process theory:</strong> Kahneman (2011) — System 1 and System 2 as distinct processing systems with different update mechanisms. <strong style={{ color: TEXT.primary }}>Vagal completion:</strong> Porges (2011) — the vagus nerve as the completion pathway; co-regulation as the primary biological input for return. <strong style={{ color: TEXT.primary }}>Somatic completion:</strong> Levine (1997) — the body completing what the mind cannot finish for it.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   The precise physiological explanation for why the cognitive system cannot close a biological cycle — not as a limitation to be lamented but as a structural fact with direct implications. The insight-behaviour gap is not a failure of will or motivation. It is a correct description of two systems with different update requirements. Knowing this changes the intervention: not more insight, but the biological conditions the cycle was always waiting for.
                 </p>
@@ -520,7 +557,10 @@ export default function M3TheOpenCyclePage() {
               M3 is the ground floor of the TEG-Blue architecture. It is the physiological substrate that the gradient sits on top of — the reason the gradient exists as a biological progression and not merely a behavioural one.
             </p>
             <p style={proseStyle}>
-              Each position on the gradient corresponds to a physiological state. Connection is the nervous system in parasympathetic dominance — cortisol cleared, oxytocin available, PFC blood flow at capacity, gut-brain axis fully engaged. Protection is acute SNS activation — designed to be temporary, biologically expensive, and followed by return. Control is the nervous system in sustained SNS activation, with chronically elevated cortisol and norepinephrine, recruiting cognitive resources to manage a body that has not returned. Domination is the nervous system at maximum sympathetic load — emotional resonance collapsed, the system running on urgency alone.
+              The existing stress physiology literature — Sapolsky, McEwen, Porges — describes physiological states without a gradient model connecting them to each other as a developmental and behavioral sequence. The trauma literature — van der Kolk, Levine, Herman — describes how unprocessed activation shapes identity and behavior over time, but without the specific hormonal and organ-level mapping of each stage. The gap between them is exactly the space M3 and the TEG-Blue gradient occupy together.
+            </p>
+            <p style={proseStyle}>
+              Each position on the gradient corresponds to a physiological state. Connection is the nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Protection is acute SNS activation — designed to be temporary, biologically expensive, and followed by return. Control is the nervous system in sustained SNS activation, with chronically elevated cortisol and norepinephrine, recruiting cognitive resources to manage a body that has not returned. Domination is the nervous system at maximum sympathetic load, with emotional resonance collapsed and the system running on urgency alone.
             </p>
 
             {/* Gradient-physiology mapping */}
@@ -556,13 +596,13 @@ export default function M3TheOpenCyclePage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
                   <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004); McEwen (2000) — physiological states without a gradient model connecting them as a developmental sequence. <strong style={{ color: TEXT.primary }}>Trauma literature:</strong> van der Kolk (2014); Levine (1997); Herman (1992) — how unprocessed activation shapes identity and behaviour over time.
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
                   The gradient as a biological progression — each position corresponding to a specific hormonal configuration and cycle status. The gap between the stress physiology literature (which describes states) and the trauma literature (which describes trajectories) is exactly the space M3 and the gradient occupy together. The mode is not a choice. It is a body in a specific physiological state, shaped by the number and depth of its open cycles.
                 </p>

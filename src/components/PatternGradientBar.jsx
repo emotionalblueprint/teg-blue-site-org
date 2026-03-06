@@ -4,10 +4,10 @@ import { useState, useRef, useCallback } from "react";
 import { FONT, PATTERN_GRADIENT, BG } from "../styles/tokens";
 
 const MODES = [
-  { key: "A", label: "Pattern A", signal: "Safety", hex: "#60a5fa", center: 0.125 },
-  { key: "B", label: "Pattern B", signal: "Threat", hex: "#3b82f6", center: 0.375 },
-  { key: "C", label: "Pattern C", signal: "Danger", hex: "#2563eb", center: 0.625 },
-  { key: "D", label: "Pattern D", signal: "Life peril", hex: "#1d4ed8", center: 0.875 },
+  { key: "A", label: "Connection", hex: "#60a5fa", center: 0.125 },
+  { key: "B", label: "Protection", hex: "#3b82f6", center: 0.375 },
+  { key: "C", label: "Control", hex: "#2563eb", center: 0.625 },
+  { key: "D", label: "Domination", hex: "#1d4ed8", center: 0.875 },
 ];
 
 const BAR_GRADIENT =
@@ -83,34 +83,6 @@ export default function PatternGradientBar({
 
   return (
     <div style={style}>
-      {/* Signal labels above */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginBottom: 4,
-          padding: "0 4px",
-        }}
-      >
-        {MODES.map((mode) => (
-          <div key={mode.key} style={{ width: "25%", textAlign: "center" }}>
-            <span
-              style={{
-                fontSize: 10,
-                textTransform: "uppercase",
-                fontFamily: FONT.mono,
-                letterSpacing: "0.06em",
-                color: mode.hex,
-                opacity: activeMode.key === mode.key ? 1 : 0.35,
-                transition: "opacity 200ms ease",
-              }}
-            >
-              {mode.signal}
-            </span>
-          </div>
-        ))}
-      </div>
-
       {/* Bar — outer div adds invisible touch padding (44px total height) */}
       <div
         style={{
@@ -185,53 +157,6 @@ export default function PatternGradientBar({
       </div>
       </div>
 
-      {/* Pattern labels below */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: 6,
-          padding: "0 4px",
-        }}
-      >
-        {MODES.map((mode) => (
-          <div
-            key={mode.key}
-            style={{
-              width: "25%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 4,
-            }}
-          >
-            {activeMode.key === mode.key && (
-              <div
-                style={{
-                  width: 4,
-                  height: 4,
-                  borderRadius: "50%",
-                  backgroundColor: mode.hex,
-                  boxShadow: `0 0 8px ${mode.hex}`,
-                }}
-              />
-            )}
-            <span
-              style={{
-                fontSize: 10,
-                fontFamily: FONT.mono,
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                color: mode.hex,
-                opacity: activeMode.key === mode.key ? 1 : 0.35,
-                transition: "opacity 200ms ease",
-              }}
-            >
-              {mode.label}
-            </span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
