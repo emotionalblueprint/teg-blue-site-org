@@ -4,11 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
-  hexToRgba, RADIUS, PATTERN_GRADIENT, gradientCardBg,
+  hexToRgba, RADIUS, gradientCardBg,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PatternGradientBar, PropositionBox,
 } from "@/src/components";
 
 // ─── MODEL DATA ─────────────────────────────────────────────
@@ -116,68 +115,31 @@ export default function ModelsPage() {
         <ResearcherHero
           badge="3 FOUNDATIONAL MODELS"
           title="The Three Core Models"
-          subtitle="Instrument + Calibration + Physiology = Complete System"
-          description="TEG-Blue's architecture has two layers. Layer 2 (the 12 frameworks) explains why — the theoretical architecture, the research foundations, the mechanisms, the evidence. Layer 1 (the three models) provides what — the visual-conceptual structures that practitioners, researchers, and individuals actually use."
+          subtitle="Instrument + Calibration + Biological Foundation = Complete System"
+          description="Most emotional intelligence frameworks describe patterns. TEG-Blue does something different: it identifies the underlying mechanisms — what produces the patterns, why they persist, and what changes them. The three core models are where that mechanism becomes usable."
         />
 
-        <PatternGradientBar style={{ marginTop: 20, maxWidth: 500 }} />
 
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
           <p style={proseStyle}>
-            A model is not a framework. The twelve frameworks explain{" "}
-            <em>why</em> — the theoretical architecture, the research
-            foundations, the mechanisms. The models provide{" "}
-            <em>what</em> — the visual-conceptual structures that
-            practitioners, researchers, and individuals actually use to
-            understand and navigate human experience.
+            They are not summaries of the twelve frameworks. They are the applied architecture built from them — the three structures that practitioners and researchers actually work with.
           </p>
           <p style={proseStyle}>
-            A therapist uses these models with a client. A researcher
-            operationalises their components for measurement. A person uses
-            them to understand their own experience. Each uses the same model.
-            The depth changes. The architecture doesn{"'"}t.
+            <strong style={{ color: TEXT.primary }}>M1 — the Inner Compass</strong> maps the nervous system{"'"}s continuous orientation between safety and threat across four modes on a single gradient. It answers the diagnostic question: <em>where is the needle, can it move, and what does the person have access to from where they are?</em>
+          </p>
+          <p style={proseStyle}>
+            <strong style={{ color: TEXT.primary }}>M2 — the Three Awareness Capacities</strong> maps the calibration system that determines how well the compass works — which awarenesses developed, which didn{"'"}t, and what that configuration predicts. It answers the developmental question: <em>why is the needle where it is, and what would it take to move it?</em>
+          </p>
+          <p style={proseStyle}>
+            <strong style={{ color: TEXT.primary }}>M3 — the Open Cycle</strong> maps the physiological sequence that runs when the nervous system perceives a threat — what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. It answers the biological question: <em>what is the body doing beneath the compass, and what does it cost when that process is never allowed to finish?</em>
           </p>
           <p style={{ ...proseStyle, marginBottom: 0 }}>
-            The three models are inseparable in practice. A person{"'"}s compass
-            position (M1), their capacity configuration (M2), and the state
-            of their biological cycles (M3) are three dimensions of the same
-            reality. The configuration explains <em>why</em> the compass is
-            where it is. The compass explains <em>what</em> the configuration
-            produces. The open cycle explains <em>how</em> the body holds what
-            the mind overrides — and why insight alone cannot move the needle.
+            The three models are not independent. They are three dimensions of the same reality. A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath. Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
           </p>
         </section>
 
-        {/* Models vs Frameworks distinction */}
-        <section style={{ marginBottom: 32 }}>
-          <PropositionBox label="CORE DISTINCTION" title="Models vs. Frameworks">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-              <div>
-                <p style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.azure, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.mono, marginBottom: 6 }}>
-                  Layer 1 — Models (Applied)
-                </p>
-                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                  <strong style={{ color: TEXT.primary }}>What</strong> the system
-                  does. Visual-conceptual tools for understanding and navigating
-                  experience. The instrument and the calibration.
-                </p>
-              </div>
-              <div>
-                <p style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.cobalt, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.mono, marginBottom: 6 }}>
-                  Layer 2 — Frameworks (Theoretical)
-                </p>
-                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                  <strong style={{ color: TEXT.primary }}>Why</strong> the system
-                  works this way. The theoretical architecture, the research
-                  foundations, the mechanisms, the evidence.
-                </p>
-              </div>
-            </div>
-          </PropositionBox>
-        </section>
-
-        {/* Two Model Cards */}
+        {/* Model Cards */}
         <section style={{ marginBottom: 32 }}>
           {MODELS.map((model) => (
             <ExpandableModelCard key={model.id} model={model} />
