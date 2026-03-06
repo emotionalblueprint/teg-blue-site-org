@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
-import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter } from "@/src/components";
 
 
 export const metadata = {
@@ -24,7 +24,7 @@ export default function ResearchHub() {
           fontFamily: FONT.display,
         }}
       >
-        <SiteHeader currentPath="/" />
+        <SiteHeader currentPath="/" hideBranding />
 
         <main
           id="main-content"
@@ -35,16 +35,71 @@ export default function ResearchHub() {
           }}
         >
           {/* ── Hero ── */}
-          <section style={{ marginBottom: 48 }}>
-            <ResearcherHero
-              badge="OPEN SCIENCE · NO GATES · NO APPLICATIONS"
-              title="Reconnecting Cognition with Emotional Awareness"
-              subtitle="Everything published, everything testable, everything open access. CC BY-NC-SA 4.0."
-              description="TEG-Blue maps how emotional awareness connects cognition and feeling — and what happens when it goes offline. 12 frameworks integrating 139+ established theories from neuroscience, psychology, and trauma research. No access restrictions, no required collaborations — take the framework, the data, and the methodology and work with them independently."
-            />
+          <section style={{ paddingTop: 32, paddingBottom: 48, marginBottom: 48 }}>
+            {/* Badge pill */}
+            <div
+              style={{
+                display: "inline-block",
+                padding: "4px 12px",
+                borderRadius: 100,
+                fontSize: 10,
+                fontWeight: 700,
+                fontFamily: FONT.mono,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: RESEARCHER.accent,
+                backgroundColor: hexToRgba(RESEARCHER.accent, 0.15),
+                border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.3)}`,
+                marginBottom: 24,
+              }}
+            >
+              Open Science for Emotional Technology Research
+            </div>
+
+            {/* Title */}
+            <h1
+              style={{
+                fontSize: 36,
+                fontWeight: 700,
+                margin: "0 0 12px",
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
+                background: PATTERN_GRADIENT,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Connecting Cognition with Emotional Awareness
+            </h1>
+
+            {/* Subtitle */}
+            <p
+              style={{
+                fontSize: 13,
+                fontStyle: "italic",
+                color: TEXT.muted,
+                margin: "0 0 20px",
+              }}
+            >
+              Everything published, everything testable, everything open access. CC BY-NC-SA 4.0.
+            </p>
+
+            {/* Lead description */}
+            <p
+              style={{
+                fontSize: 15,
+                color: TEXT.secondary,
+                lineHeight: 1.7,
+                margin: "0 0 10px",
+                maxWidth: 640,
+              }}
+            >
+              How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks integrating 139+ established theories — and what happens when emotional awareness goes offline.
+            </p>
 
             {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 24 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 32 }}>
               <Link
                 href="/research-entry"
                 style={{
@@ -81,9 +136,66 @@ export default function ResearchHub() {
                 Read the Validation Study
               </Link>
             </div>
+
+            {/* Accent bar separator */}
+            <div
+              style={{
+                marginTop: 48,
+                height: 3,
+                borderRadius: 2,
+                background: PATTERN_GRADIENT,
+              }}
+              aria-hidden="true"
+            />
+          </section>
+
+          {/* ── The Framework ── */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+              What TEG-Blue is
+            </h2>
+
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+              The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation.
+            </p>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+              <FrameworkCard
+                color={SPECTRUM.indigo}
+                label="2 MODELS"
+                title="Inner Compass & Awareness Capacities"
+                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient — Connection, Protection, Control, Domination. M2 maps the three awareness capacities that determine what data the compass receives and how it's processed."
+                href="/models"
+                linkText="See the Models →"
+              />
+              <FrameworkCard
+                color={SPECTRUM.cobalt}
+                label="12 FRAMEWORKS"
+                title="Individual · Collective · Repair"
+                description="The explanatory architecture. Three arcs explaining why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
+                href="/frameworks-map"
+                linkText="See the Frameworks →"
+              />
+            </div>
+
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
+              The full system overview, including how the layers connect, is at{" "}
+              <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
+              The 139+ source theories are documented at{" "}
+              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
+            </p>
           </section>
 
           {/* ── Validation Evidence ── */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+              Empirical evidence
+            </h2>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+              The four-mode gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
+            </p>
+          </section>
+
           <section style={{ marginBottom: 48 }}>
             <div
               style={{
@@ -161,43 +273,6 @@ export default function ResearchHub() {
                 </span>
               </div>
             </div>
-          </section>
-
-          {/* ── The Framework ── */}
-          <section style={{ marginBottom: 48 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              What TEG-Blue is
-            </h2>
-
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation.
-            </p>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-              <FrameworkCard
-                color={SPECTRUM.indigo}
-                label="2 MODELS"
-                title="Inner Compass & Awareness Capacities"
-                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient — Connection, Protection, Control, Domination. M2 maps the three awareness capacities that determine what data the compass receives and how it's processed."
-                href="/models"
-                linkText="See the Models →"
-              />
-              <FrameworkCard
-                color={SPECTRUM.cobalt}
-                label="12 FRAMEWORKS"
-                title="Individual · Collective · Repair"
-                description="The explanatory architecture. Three arcs explaining why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
-                href="/frameworks-map"
-                linkText="See the Frameworks →"
-              />
-            </div>
-
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
-              The full system overview, including how the layers connect, is at{" "}
-              <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
-              The 139+ source theories are documented at{" "}
-              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
-            </p>
           </section>
 
           {/* ── The 12 Frameworks with Entry Points ── */}

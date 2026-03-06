@@ -323,7 +323,7 @@ function HamburgerIcon({ isOpen }) {
 }
 
 // ─── MAIN HEADER ──────────────────────────────────────────
-export default function SiteHeader({ currentPath = "/" }) {
+export default function SiteHeader({ currentPath = "/", hideBranding = false }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Close mobile menu on route change
@@ -336,88 +336,90 @@ export default function SiteHeader({ currentPath = "/" }) {
       <style dangerouslySetInnerHTML={{ __html: RESPONSIVE_CSS }} />
 
       {/* ── TOP BRANDING BLOCK (scrolls away) ── */}
-      <header
-        style={{
-          background: BG.primary,
-          borderBottom: `1px solid ${BORDER.default}`,
-        }}
-      >
-        <div
+      {!hideBranding && (
+        <header
           style={{
-            maxWidth: SPACING.containerMax,
-            margin: "0 auto",
-            padding: `20px ${px} 0`,
+            background: BG.primary,
+            borderBottom: `1px solid ${BORDER.default}`,
           }}
         >
-          <SpectrumBar variant="pattern" />
+          <div
+            style={{
+              maxWidth: SPACING.containerMax,
+              margin: "0 auto",
+              padding: `20px ${px} 0`,
+            }}
+          >
+            <SpectrumBar variant="pattern" />
 
-          {/* Full branding — desktop only */}
-          <div className="teg-branding-full" style={{ marginTop: 16, marginBottom: 16 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-              <Link
-                href="/"
+            {/* Full branding — desktop only */}
+            <div className="teg-branding-full" style={{ marginTop: 16, marginBottom: 16 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
+                <Link
+                  href="/"
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10,
+                    fontWeight: 600,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: TEXT.hint,
+                    textDecoration: "none",
+                  }}
+                >
+                  TEG-Blue
+                </Link>
+                <span style={{ color: TEXT.micro }}>·</span>
+                <a
+                  href="https://teg-blue.com"
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 9,
+                    color: SPECTRUM.azure,
+                    textDecoration: "none",
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Interactive tools on .com →
+                </a>
+              </div>
+              <h1
                 style={{
-                  fontFamily: FONT.mono,
-                  fontSize: 10,
-                  fontWeight: 600,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: TEXT.hint,
-                  textDecoration: "none",
+                  fontSize: 24,
+                  fontWeight: 700,
+                  color: TEXT.primary,
+                  margin: "4px 0 0",
+                  letterSpacing: "-0.02em",
                 }}
               >
-                TEG-Blue
-              </Link>
-              <span style={{ color: TEXT.micro }}>·</span>
-              <a
-                href="https://teg-blue.com"
-                style={{
-                  fontFamily: FONT.mono,
-                  fontSize: 9,
-                  color: SPECTRUM.azure,
-                  textDecoration: "none",
-                }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Interactive tools on .com →
-              </a>
+                Research Platform
+              </h1>
+              <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 4 }}>
+                Open science for emotional technology research
+              </p>
             </div>
-            <h1
-              style={{
-                fontSize: 24,
-                fontWeight: 700,
-                color: TEXT.primary,
-                margin: "4px 0 0",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Research Platform
-            </h1>
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 4 }}>
-              Open science for emotional technology research
-            </p>
-          </div>
 
-          {/* Compact branding — mobile only */}
-          <div className="teg-branding-compact" style={{ marginTop: 12, marginBottom: 12 }}>
-            <h1
-              style={{
-                fontSize: 18,
-                fontWeight: 700,
-                color: TEXT.primary,
-                margin: 0,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Research Platform
-            </h1>
-            <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 2 }}>
-              Open science for emotional technology research
-            </p>
+            {/* Compact branding — mobile only */}
+            <div className="teg-branding-compact" style={{ marginTop: 12, marginBottom: 12 }}>
+              <h1
+                style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: TEXT.primary,
+                  margin: 0,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Research Platform
+              </h1>
+              <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 2 }}>
+                Open science for emotional technology research
+              </p>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      )}
 
       {/* ── STICKY NAV BAR ── */}
       <nav
