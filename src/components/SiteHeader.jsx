@@ -112,6 +112,37 @@ function NavItem({ item, currentPath }) {
     );
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") {
+      setOpen(false);
+      ref.current?.querySelector("a")?.focus();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (!open) {
+        setOpen(true);
+      } else {
+        const links = ref.current?.querySelectorAll("[data-dropdown-item]");
+        if (links?.length) links[0].focus();
+      }
+    }
+  };
+
+  const handleDropdownKeyDown = (e, index) => {
+    const links = ref.current?.querySelectorAll("[data-dropdown-item]");
+    if (!links) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (index < links.length - 1) links[index + 1].focus();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (index > 0) links[index - 1].focus();
+      else ref.current?.querySelector("a")?.focus();
+    } else if (e.key === "Escape") {
+      setOpen(false);
+      ref.current?.querySelector("a")?.focus();
+    }
+  };
+
   return (
     <div
       ref={ref}
@@ -123,9 +154,12 @@ function NavItem({ item, currentPath }) {
       onMouseLeave={() => {
         timeoutRef.current = setTimeout(() => setOpen(false), 150);
       }}
+      onKeyDown={handleKeyDown}
     >
       <Link
         href={item.href}
+        aria-expanded={open}
+        aria-haspopup="true"
         style={{
           display: "flex",
           alignItems: "center",
@@ -142,13 +176,15 @@ function NavItem({ item, currentPath }) {
           transition: `all ${TRANSITION.normal}`,
           whiteSpace: "nowrap",
         }}
+        onFocus={() => setOpen(true)}
       >
         {item.label}
-        <span style={{ fontSize: 8, marginLeft: 2, opacity: 0.5 }}>▼</span>
+        <span style={{ fontSize: 8, marginLeft: 2, opacity: 0.5 }} aria-hidden="true">▼</span>
       </Link>
 
       {open && (
         <div
+          role="menu"
           style={{
             position: "absolute",
             top: "100%",
@@ -162,13 +198,16 @@ function NavItem({ item, currentPath }) {
             boxShadow: `0 8px 24px ${hexToRgba("#000", 0.25)}`,
           }}
         >
-          {item.children.map((child) => {
+          {item.children.map((child, index) => {
             const childActive = currentPath === child.href;
             return (
               <Link
                 key={child.href}
                 href={child.href}
+                role="menuitem"
+                data-dropdown-item
                 onClick={() => setOpen(false)}
+                onKeyDown={(e) => handleDropdownKeyDown(e, index)}
                 style={{
                   display: "block",
                   padding: "8px 16px",

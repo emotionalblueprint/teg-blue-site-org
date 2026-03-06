@@ -225,6 +225,23 @@ export default function FluidCompassExplorer() {
     isDragging.current = false;
   }, []);
 
+  const handleSliderKeyDown = useCallback((e) => {
+    const step = 0.05;
+    if (e.key === "ArrowRight" || e.key === "ArrowUp") {
+      e.preventDefault();
+      setPosition((prev) => snapToCenter(Math.min(1, prev + step)));
+    } else if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
+      e.preventDefault();
+      setPosition((prev) => snapToCenter(Math.max(0, prev - step)));
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      setPosition(0.125);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      setPosition(0.875);
+    }
+  }, []);
+
   return (
     <div
       style={{
@@ -279,6 +296,8 @@ export default function FluidCompassExplorer() {
           >
             <button
               onClick={() => setIsStuck(false)}
+              aria-label="Show fluid compass (healthy movement)"
+              aria-pressed={!isStuck}
               style={{
                 padding: "4px 12px",
                 fontSize: 10,
@@ -298,6 +317,8 @@ export default function FluidCompassExplorer() {
             </button>
             <button
               onClick={() => setIsStuck(true)}
+              aria-label="Show stuck compass (chronic pattern)"
+              aria-pressed={isStuck}
               style={{
                 padding: "4px 12px",
                 fontSize: 10,
@@ -333,6 +354,13 @@ export default function FluidCompassExplorer() {
       {/* ─── Gradient Bar ──────────────────────── */}
       <div style={{ padding: "16px 20px 0" }}>
         <div
+          role="slider"
+          tabIndex={0}
+          aria-label="Four-mode gradient position"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(position * 100)}
+          aria-valuetext={`${activeMode.name} mode`}
           style={{
             padding: "15px 0",
             margin: "-15px 0",
@@ -343,6 +371,7 @@ export default function FluidCompassExplorer() {
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
+          onKeyDown={handleSliderKeyDown}
         >
           <div
             ref={barRef}

@@ -289,6 +289,8 @@ export default function OpenCycleExplorer() {
     >
       {/* ── Tab selector ── */}
       <div
+        role="tablist"
+        aria-label="Open cycle phases"
         style={{
           display: "flex",
           gap: 0,
@@ -299,6 +301,9 @@ export default function OpenCycleExplorer() {
         {TABS.map((tab) => (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={view === tab.id}
+            aria-label={`View ${tab.label} phase`}
             onClick={() => handleViewChange(tab.id)}
             style={{
               background: "transparent",
@@ -395,6 +400,7 @@ export default function OpenCycleExplorer() {
 
             {/* Animate button */}
             <button
+              aria-label={animating ? "Animation running" : "Play stage sequence"}
               onClick={() => runAnimation(currentPath)}
               disabled={animating}
               style={{
@@ -469,6 +475,7 @@ export default function OpenCycleExplorer() {
                 </div>
                 <div style={{ display: "flex", gap: 8 }}>
                   <button
+                    aria-label={`Add override (current load: ${loadCount} of 10)`}
                     onClick={() => setLoadCount(Math.min(10, loadCount + 1))}
                     style={{
                       background: hexToRgba(ORANGE, 0.12),
@@ -485,6 +492,7 @@ export default function OpenCycleExplorer() {
                     + Override
                   </button>
                   <button
+                    aria-label="Reset allostatic load to zero"
                     onClick={() => setLoadCount(0)}
                     style={{
                       background: "transparent",
