@@ -70,7 +70,7 @@ export default function FoundationsPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(45%, 160px), 1fr))",
               gap: 12,
             }}
           >

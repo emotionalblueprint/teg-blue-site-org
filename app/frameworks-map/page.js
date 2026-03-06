@@ -402,7 +402,7 @@ export default function TheoreticalFoundationsPage() {
                   fontWeight: 600,
                   fontFamily: FONT.mono,
                   color: arcColors[arc.key],
-                  minWidth: 180,
+                  minWidth: 120,
                   paddingTop: 2,
                 }}>
                   {arc.range} ({arc.key})

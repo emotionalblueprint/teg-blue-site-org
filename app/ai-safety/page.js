@@ -94,7 +94,7 @@ export default function AISafetyPage() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(min(45%, 180px), 1fr))",
                   gap: 12,
                 }}
               >
@@ -942,7 +942,7 @@ function GradientScale({ label, levels }) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(45%, 140px), 1fr))",
           gap: 2,
           borderRadius: RADIUS.md,
           overflow: "hidden",
