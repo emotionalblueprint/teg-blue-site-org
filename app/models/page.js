@@ -122,20 +122,8 @@ export default function ModelsPage() {
 
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
-          <p style={proseStyle}>
-            Each model makes a different question answerable — and together, they map how emotional patterns form, persist, and change.
-          </p>
-          <p style={proseStyle}>
-            <strong style={{ color: TEXT.primary }}>M1 — the Inner Compass</strong> maps the nervous system{"'"}s continuous orientation between safety and threat across four modes on a single gradient. It answers the diagnostic question: <em>where is the needle, can it move, and what does the person have access to from where they are?</em>
-          </p>
-          <p style={proseStyle}>
-            <strong style={{ color: TEXT.primary }}>M2 — the Three Awareness Capacities</strong> maps the calibration system that determines how well the compass works — which awarenesses developed, which didn{"'"}t, and what that configuration predicts. It answers the developmental question: <em>why is the needle where it is, and what would it take to move it?</em>
-          </p>
-          <p style={proseStyle}>
-            <strong style={{ color: TEXT.primary }}>M3 — the Open Cycle</strong> maps the physiological sequence that runs when the nervous system perceives a threat — what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. It answers the biological question: <em>what is the body doing beneath the compass, and what does it cost when that process is never allowed to finish?</em>
-          </p>
           <p style={{ ...proseStyle, marginBottom: 0 }}>
-            The three models are not independent. They are three dimensions of the same reality. A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath. Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
+            Each model makes a different question answerable — and together, they map how emotional patterns form, persist, and change.
           </p>
         </section>
 
@@ -144,6 +132,13 @@ export default function ModelsPage() {
           {MODELS.map((model) => (
             <ExpandableModelCard key={model.id} model={model} />
           ))}
+        </section>
+
+        {/* Integration note */}
+        <section style={{ marginBottom: 32 }}>
+          <p style={{ ...proseStyle, marginBottom: 0 }}>
+            The three models are not independent. They are three dimensions of the same reality. A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath. Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
+          </p>
         </section>
 
         {/* Footer Links */}
@@ -202,12 +197,6 @@ export default function ModelsPage() {
           </Link>
         </section>
 
-        {/* Footer note */}
-        <footer style={{ marginTop: 48, textAlign: "center" }}>
-          <p style={{ fontSize: 11, color: TEXT.micro, fontFamily: FONT.mono }}>
-            TEG-Blue Research Consortium · Open Science · CC BY-NC-SA 4.0
-          </p>
-        </footer>
       </main>
 
       <SiteFooter />

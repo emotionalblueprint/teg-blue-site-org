@@ -3,7 +3,7 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
 
 /**
  * AuthorBlock — Condensed author credibility signal for high-intent pages.
- * Appears as a compact block linking to the full /about/author page.
+ * Appears as a compact block linking to the full /about page.
  */
 export default function AuthorBlock() {
   return (
@@ -28,7 +28,7 @@ export default function AuthorBlock() {
         {" — "}
         Independent researcher and systems designer, Barcelona. 25+ years in systems thinking. TEG-Blue developed over two years as an integrative architecture across 139+ established theories.{" "}
         <Link
-          href="/about/author"
+          href="/about"
           style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}
         >
           Full background →

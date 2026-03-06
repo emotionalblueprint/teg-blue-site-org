@@ -244,6 +244,13 @@ const nextConfig = {
         permanent: true,
       },
 
+      // /about/author merged into /about
+      {
+        source: '/about/author',
+        destination: '/about',
+        permanent: true,
+      },
+
       // Old about/support pages → /about
       {
         source: '/support-the-emotional-blueprint',

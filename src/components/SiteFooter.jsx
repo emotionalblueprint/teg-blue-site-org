@@ -22,7 +22,7 @@ export default function SiteFooter() {
       <SpectrumBar variant="pattern" />
 
       <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
-        TEG-Blue · Emotional Technology Research · Open Science
+        TEG-Blue · Created by Anna Paretas-Artacho · Open Science
       </p>
 
       {/* Secondary navigation — pages not in the top nav */}
