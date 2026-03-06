@@ -116,14 +116,14 @@ export default function ModelsPage() {
           badge="3 FOUNDATIONAL MODELS"
           title="The Three Core Models"
           subtitle="Instrument + Calibration + Biological Foundation = Complete System"
-          description="Most emotional intelligence frameworks describe patterns. TEG-Blue does something different: it identifies the underlying mechanisms — what produces the patterns, why they persist, and what changes them. The three core models are where that mechanism becomes usable."
+          description="The three core models synthesize the 12 frameworks into visual instruments — each one making a different layer of the emotional system visible: where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
         />
 
 
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
           <p style={proseStyle}>
-            They are not summaries of the twelve frameworks. They are the applied architecture built from them — the three structures that practitioners and researchers actually work with.
+            Each model makes a different question answerable — and together, they map how emotional patterns form, persist, and change.
           </p>
           <p style={proseStyle}>
             <strong style={{ color: TEXT.primary }}>M1 — the Inner Compass</strong> maps the nervous system{"'"}s continuous orientation between safety and threat across four modes on a single gradient. It answers the diagnostic question: <em>where is the needle, can it move, and what does the person have access to from where they are?</em>

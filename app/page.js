@@ -24,7 +24,7 @@ export default function ResearchHub() {
           fontFamily: FONT.display,
         }}
       >
-        <SiteHeader currentPath="/" hideBranding />
+        <SiteHeader currentPath="/" />
 
         <main
           id="main-content"
@@ -53,7 +53,7 @@ export default function ResearchHub() {
                 marginBottom: 24,
               }}
             >
-              Open Science for Emotional Technology Research
+              139+ Established Theories, One Integrative Framework
             </div>
 
             {/* Title */}
@@ -73,18 +73,6 @@ export default function ResearchHub() {
               Connecting Cognition with Emotional Awareness
             </h1>
 
-            {/* Subtitle */}
-            <p
-              style={{
-                fontSize: 13,
-                fontStyle: "italic",
-                color: TEXT.muted,
-                margin: "0 0 20px",
-              }}
-            >
-              Everything published, everything testable, everything open access. CC BY-NC-SA 4.0.
-            </p>
-
             {/* Lead description */}
             <p
               style={{
@@ -95,7 +83,7 @@ export default function ResearchHub() {
                 maxWidth: 640,
               }}
             >
-              How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks integrating 139+ established theories — and what happens when emotional awareness goes offline.
+              How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks into visual models that make emotional patterns visible, measurable, and testable — from individual regulation to systemic dynamics.
             </p>
 
             {/* CTAs */}
@@ -162,9 +150,9 @@ export default function ResearchHub() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
               <FrameworkCard
                 color={SPECTRUM.indigo}
-                label="2 MODELS"
-                title="Inner Compass & Awareness Capacities"
-                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient — Connection, Protection, Control, Domination. M2 maps the three awareness capacities that determine what data the compass receives and how it's processed."
+                label="3 MODELS"
+                title="Compass, Calibration & Biology"
+                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient. M2 maps the three awareness capacities that calibrate the compass. M3 maps the physiological sequence that runs when the emotional cycle doesn't complete."
                 href="/models"
                 linkText="See the Models →"
               />

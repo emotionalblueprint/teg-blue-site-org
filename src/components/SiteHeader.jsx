@@ -394,10 +394,10 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
                   letterSpacing: "-0.02em",
                 }}
               >
-                Research Platform
+                Open Research
               </h1>
               <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 4 }}>
-                Open science for emotional technology research
+                Transparent methods, credited sources, testable claims
               </p>
             </div>
 
@@ -412,10 +412,10 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
                   letterSpacing: "-0.02em",
                 }}
               >
-                Research Platform
+                Open Research
               </h1>
               <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 2 }}>
-                Open science for emotional technology research
+                Transparent methods, credited sources, testable claims
               </p>
             </div>
           </div>
@@ -443,25 +443,6 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
             justifyContent: "space-between",
           }}
         >
-          {/* Left: Logo */}
-          <Link
-            href="/"
-            style={{
-              fontFamily: FONT.mono,
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: TEXT.secondary,
-              textDecoration: "none",
-              padding: "10px 0",
-              marginRight: 8,
-              whiteSpace: "nowrap",
-            }}
-          >
-            TEG-Blue
-          </Link>
-
           {/* Center: Desktop nav items */}
           <div
             className="teg-desktop-nav"
