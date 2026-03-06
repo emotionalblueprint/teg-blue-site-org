@@ -83,12 +83,12 @@ const skipLinkFocusStyles = `
     width: auto;
     height: auto;
     padding: 1rem 1.5rem;
-    background: #3B82F6;
-    color: white;
+    background: var(--spectrum-blue);
+    color: var(--text-primary);
     z-index: 9999;
     font-weight: 600;
     text-decoration: none;
-    outline: 2px solid white;
+    outline: 2px solid var(--text-primary);
     outline-offset: 2px;
   }
 `
@@ -162,14 +162,6 @@ const websiteJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research Consortium",
-  },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://teg-blue.org/?search={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
   },
   about: [
     {
