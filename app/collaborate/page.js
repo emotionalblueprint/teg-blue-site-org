@@ -69,7 +69,7 @@ export default function CollaboratePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <OpenItem
               label="Frameworks and models"
-              description="The full architecture — 12 frameworks, 2 models, system overview"
+              description="The full architecture — 12 frameworks, 3 models, system overview"
               href="/frameworks-map"
             />
             <OpenItem

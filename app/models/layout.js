@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "The Two Core Models | TEG-Blue Research",
+  title: "The Three Core Models | TEG-Blue Research",
   description:
-    "The Inner Compass & Four-Mode Gradient (the instrument) and the Three Awareness Capacities (the calibration). Two applied models that make the nervous system's safety-threat orientation visible, clinically usable, and personally recognisable.",
+    "The Inner Compass & Four-Mode Gradient (the instrument), the Three Awareness Capacities (the calibration), and The Open Cycle (the biological foundation). Three applied models that make the nervous system's safety-threat orientation visible, clinically usable, and personally recognisable.",
   keywords: [
     "TEG-Blue models",
     "inner compass",
@@ -20,9 +20,9 @@ export const metadata = {
     canonical: "https://teg-blue.org/models",
   },
   openGraph: {
-    title: "The Two Core Models — Instrument + Calibration | TEG-Blue",
+    title: "The Three Core Models — Instrument + Calibration + Biological Foundation | TEG-Blue",
     description:
-      "The Inner Compass (what the nervous system does) and the Three Awareness Capacities (what determines how well it does it). Two applied models forming a complete assessment system.",
+      "The Inner Compass (what the nervous system does), the Three Awareness Capacities (what determines how well it does it), and The Open Cycle (what happens when the cycle doesn't complete). Three applied models forming a complete assessment system.",
     url: "https://teg-blue.org/models",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -30,9 +30,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Two Core Models — TEG-Blue Research",
+    title: "The Three Core Models — TEG-Blue Research",
     description:
-      "Instrument + Calibration. Two applied models that make the nervous system's orientation visible and measurable.",
+      "Instrument + Calibration + Biological Foundation. Three applied models that make the nervous system's orientation visible and measurable.",
   },
 };
 
@@ -40,10 +40,10 @@ export default function ModelsLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Two Core Models — TEG-Blue",
+    name: "The Three Core Models — TEG-Blue",
     url: "https://teg-blue.org/models",
     description:
-      "The two applied models at the foundation of TEG-Blue: the Inner Compass & Four-Mode Gradient (the instrument) and the Three Awareness Capacities (the calibration system).",
+      "The three applied models at the foundation of TEG-Blue: the Inner Compass & Four-Mode Gradient (the instrument), the Three Awareness Capacities (the calibration system), and The Open Cycle (the biological foundation).",
     inLanguage: "en",
     isPartOf: {
       "@type": "ResearchProject",

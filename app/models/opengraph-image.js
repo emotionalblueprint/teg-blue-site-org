@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "The Two Core Models — TEG-Blue Research";
+export const alt = "The Three Core Models — TEG-Blue Research";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -72,7 +72,7 @@ export default function Image() {
               lineHeight: 1.1,
             }}
           >
-            The Two Core Models
+            The Three Core Models
           </div>
 
           <div

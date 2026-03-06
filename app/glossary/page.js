@@ -60,10 +60,10 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "models",
-    title: "Two Core Models",
+    title: "Three Core Models",
     type: "concept",
     status: "proposed",
-    definition: "The applied layer of TEG-Blue. Two models: the Inner Compass & Four-Mode Gradient (the instrument — how the nervous system orients across four modes) and the Three Awareness Capacities (the calibration — what determines how well it does it).",
+    definition: "The applied layer of TEG-Blue. Three models: the Inner Compass & Four-Mode Gradient (the instrument — how the nervous system orients across four modes), the Three Awareness Capacities (the calibration — what determines how well it does it), and The Open Cycle (the biological foundation — what happens in the body when emotional processing is interrupted and never completes).",
     tags: ["core-concept", "measurement"],
     framework: 1,
   },

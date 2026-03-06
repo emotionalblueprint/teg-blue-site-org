@@ -18,15 +18,33 @@ npm run build
 npm run lint
 ```
 
-## Purpose
+## Purpose & Identity
 
-**teg-blue.org** is the open science platform for TEG-Blue emotional technology research. It hosts:
-- Publications and validation studies
-- Theoretical foundations (139+ source theories)
-- Open research questions
-- Collaboration opportunities for researchers
+**teg-blue.org** is the academic and practitioner-facing platform for TEG-Blue research. Its audience is researchers, clinicians, and serious practitioners — not the general public (that's teg-blue.com).
 
 All content is designed to be readable by both humans and AI systems.
+
+## Site Goals (in priority order)
+
+> **Full reference:** `CLAUDE-org-site-goals.md` — complete goals, writing principles, model positioning, and origin framing.
+
+1. **Build academic credibility and research partnerships** — Demonstrate precise, accurate handling of existing literature with appropriate humility. Make falsifiable claims visible and explicit. Function as a research invitation, not just a presentation.
+2. **Convert practitioners into users of the framework** — Answer: "Does this change how I work tomorrow?" Entry point is always a problem they already have. Show TEG-Blue has a precise account of exactly those situations.
+3. **Establish TEG-Blue as a citable theoretical contribution** — Earned by doing goals 1 and 2 well enough that the field begins citing independently. The site creates conditions for this — it does not claim it.
+
+### Governing Writing Principle: Anchor — Gap — Contribution
+
+Every section of every page follows this structure:
+- **Anchor:** Name what existing research established — precisely, with correct attribution
+- **Gap:** Name where that research stopped — specific, not general, not criticism
+- **Contribution:** Show what TEG-Blue does from exactly that stopping point — not competing, picking up where it left off
+
+### What the Site Must Not Do
+
+- Do not convince through volume — precision over quantity
+- Do not front-run legitimacy — demonstrate, let the field decide
+- Do not write for the general public — assume readers who know the literature
+- Do not bury testable claims — make predictions explicit and testable
 
 ---
 

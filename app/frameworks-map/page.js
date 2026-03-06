@@ -449,10 +449,10 @@ export default function TheoreticalFoundationsPage() {
           })}
         </section>
 
-        {/* The Two Core Models */}
+        {/* The Three Core Models */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            The Two Core Models
+            The Three Core Models
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             The frameworks explain <em>why</em>. The models provide <em>what</em> — the applied tools that practitioners, researchers, and individuals actually use.
@@ -526,6 +526,38 @@ export default function TheoreticalFoundationsPage() {
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 What is the current configuration — which capacities had conditions to develop, and which didn{"'"}t?
+              </p>
+            </Link>
+            <Link
+              href="/model/m3-the-open-cycle"
+              style={{
+                padding: 20,
+                background: gradientCardBg(SPECTRUM.indigo),
+                borderRadius: 10,
+                border: `1px solid ${BORDER.default}`,
+                borderLeft: `3px solid ${SPECTRUM.indigo}`,
+                textDecoration: "none",
+                display: "block",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.indigo,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 6,
+                }}
+              >
+                M3 — The Biological Foundation
+              </p>
+              <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                The Open Cycle →
+              </p>
+              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+                What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?
               </p>
             </Link>
           </div>

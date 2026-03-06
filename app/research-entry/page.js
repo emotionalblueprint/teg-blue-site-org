@@ -191,7 +191,7 @@ export default function ResearchEntryPage() {
             </p>
           </div>
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
-            Related frameworks: F8 (Self-Awareness Under Stress), F9 (Our True Self), F10 (Repair and Relational Return).
+            Related frameworks: F8 (Repairing Awareness), F9 (Neurodivergence as Nervous System Variation), F10 (Rebuilding Generational Bridges).
           </p>
         </section>
 
