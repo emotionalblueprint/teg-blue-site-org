@@ -66,6 +66,29 @@ const MODELS = [
     color: SPECTRUM.cobalt,
     href: "/model/m2-three-awareness-capacities",
   },
+  {
+    id: "M3",
+    title: "The Open Cycle",
+    subtitle: "The Physiology",
+    coreQuestion: "What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?",
+    summary:
+      "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does.",
+    purpose:
+      "Map the biological cascade from threat perception through activation. Show what completion requires and why cognition cannot provide it. Trace the system-by-system cost of each unfinished cycle. Connect allostatic load to gradient position.",
+    concepts: [
+      "The threat cascade — amygdala to HPA axis",
+      "What completion requires — the return sequence",
+      "The override mechanism — signal submersion",
+      "What stays active — system-by-system residue",
+      "The accumulation effect — allostatic load",
+      "Why cognition cannot close the cycle",
+      "The open cycle and the gradient",
+    ],
+    drawsFrom: "F1 (primary), F2, F3, F8, F12",
+    pairedWith: "M1 — Inner Compass & M2 — Three Awareness Capacities",
+    color: SPECTRUM.indigo,
+    href: "/model/m3-the-open-cycle",
+  },
 ];
 
 // ─── PAGE ───────────────────────────────────────────────────
@@ -91,10 +114,10 @@ export default function ModelsPage() {
       >
         {/* Hero */}
         <ResearcherHero
-          badge="2 FOUNDATIONAL MODELS"
-          title="The Two Core Models"
-          subtitle="Instrument + Calibration = Complete System"
-          description="TEG-Blue's architecture has two layers. Layer 2 (the 12 frameworks) explains why — the theoretical architecture, the research foundations, the mechanisms, the evidence. Layer 1 (the two models) provides what — the visual-conceptual structures that practitioners, researchers, and individuals actually use."
+          badge="3 FOUNDATIONAL MODELS"
+          title="The Three Core Models"
+          subtitle="Instrument + Calibration + Physiology = Complete System"
+          description="TEG-Blue's architecture has two layers. Layer 2 (the 12 frameworks) explains why — the theoretical architecture, the research foundations, the mechanisms, the evidence. Layer 1 (the three models) provides what — the visual-conceptual structures that practitioners, researchers, and individuals actually use."
         />
 
         <PatternGradientBar style={{ marginTop: 20, maxWidth: 500 }} />
@@ -116,13 +139,13 @@ export default function ModelsPage() {
             The depth changes. The architecture doesn{"'"}t.
           </p>
           <p style={{ ...proseStyle, marginBottom: 0 }}>
-            The two models are inseparable in practice. A person{"'"}s compass
-            position (M1) and their capacity configuration (M2) are two
-            dimensions of the same reality. The configuration explains{" "}
-            <em>why</em> the compass is where it is. The compass explains{" "}
-            <em>what</em> the configuration produces. Together, they provide a
-            complete assessment: where is the needle, what configuration is
-            holding it there, and what would need to develop for it to move?
+            The three models are inseparable in practice. A person{"'"}s compass
+            position (M1), their capacity configuration (M2), and the state
+            of their biological cycles (M3) are three dimensions of the same
+            reality. The configuration explains <em>why</em> the compass is
+            where it is. The compass explains <em>what</em> the configuration
+            produces. The open cycle explains <em>how</em> the body holds what
+            the mind overrides — and why insight alone cannot move the needle.
           </p>
         </section>
 
@@ -348,7 +371,7 @@ function ExpandableModelCard({ model }) {
 
           {/* 10 Concepts */}
           <div style={{ marginBottom: 16 }}>
-            <h4 style={expandLabelStyle(model.color)}>10 Concepts</h4>
+            <h4 style={expandLabelStyle(model.color)}>{model.concepts.length} Concepts</h4>
             <ol style={{ paddingLeft: 20, margin: 0 }}>
               {model.concepts.map((concept, i) => (
                 <li
