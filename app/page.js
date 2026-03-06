@@ -35,7 +35,7 @@ export default function ResearchHub() {
           }}
         >
           {/* ── Hero ── */}
-          <section style={{ paddingTop: 32, paddingBottom: 48, marginBottom: 48 }}>
+          <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(28px, 5vw, 48px)", marginBottom: "clamp(28px, 5vw, 48px)" }}>
             {/* Badge pill */}
             <div
               style={{
@@ -59,7 +59,7 @@ export default function ResearchHub() {
             {/* Title */}
             <h1
               style={{
-                fontSize: 36,
+                fontSize: "clamp(26px, 5vw, 36px)",
                 fontWeight: 700,
                 margin: "0 0 12px",
                 lineHeight: 1.15,
@@ -140,7 +140,7 @@ export default function ResearchHub() {
             {/* Accent bar separator */}
             <div
               style={{
-                marginTop: 48,
+                marginTop: "clamp(28px, 5vw, 48px)",
                 height: 3,
                 borderRadius: 2,
                 background: PATTERN_GRADIENT,
@@ -150,7 +150,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── The Framework ── */}
-          <section style={{ marginBottom: 48 }}>
+          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               What TEG-Blue is
             </h2>
@@ -187,7 +187,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Validation Evidence ── */}
-          <section style={{ marginBottom: 48 }}>
+          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               Empirical evidence
             </h2>
@@ -196,7 +196,7 @@ export default function ResearchHub() {
             </p>
           </section>
 
-          <section style={{ marginBottom: 48 }}>
+          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <div
               style={{
                 background: gradientCardBg(RESEARCHER.accent),
@@ -276,7 +276,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── The 12 Frameworks with Entry Points ── */}
-          <section style={{ marginBottom: 48 }}>
+          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               The 12 frameworks
             </h2>
@@ -327,7 +327,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Open Science ── */}
-          <section style={{ marginBottom: 48 }}>
+          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               Work with the material
             </h2>
