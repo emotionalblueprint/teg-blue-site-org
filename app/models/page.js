@@ -125,72 +125,15 @@ export default function ModelsPage() {
           <p style={proseStyle}>
             They are not summaries of the twelve frameworks. They are the applied architecture built from them — the three structures that practitioners and researchers actually work with.
           </p>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: 12,
-              margin: "16px 0",
-            }}
-          >
-            {[
-              {
-                id: "M1",
-                label: "the Inner Compass",
-                color: SPECTRUM.azure,
-                href: "/model/m1-inner-compass",
-                text: "Maps the nervous system\u2019s continuous orientation between safety and threat across four modes on a single gradient.",
-                question: "Where is the needle, can it move, and what does the person have access to from where they are?",
-                tag: "Diagnostic",
-              },
-              {
-                id: "M2",
-                label: "the Three Awareness Capacities",
-                color: SPECTRUM.cobalt,
-                href: "/model/m2-three-awareness-capacities",
-                text: "Maps the calibration system that determines how well the compass works \u2014 which awarenesses developed, which didn\u2019t, and what that configuration predicts.",
-                question: "Why is the needle where it is, and what would it take to move it?",
-                tag: "Developmental",
-              },
-              {
-                id: "M3",
-                label: "the Open Cycle",
-                color: SPECTRUM.indigo,
-                href: "/model/m3-the-open-cycle",
-                text: "Maps the physiological sequence that runs when the nervous system perceives a threat \u2014 what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead.",
-                question: "What is the body doing beneath the compass, and what does it cost when that process is never allowed to finish?",
-                tag: "Biological",
-              },
-            ].map((m) => (
-              <Link
-                key={m.id}
-                href={m.href}
-                style={{
-                  display: "block",
-                  padding: 16,
-                  background: hexToRgba(m.color, 0.06),
-                  border: `1px solid ${hexToRgba(m.color, 0.15)}`,
-                  borderLeft: `3px solid ${m.color}`,
-                  borderRadius: 10,
-                  textDecoration: "none",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, fontFamily: FONT.mono, color: m.color }}>{m.id}</span>
-                  <span style={{ fontSize: 10, fontWeight: 600, fontFamily: FONT.mono, padding: "2px 6px", borderRadius: 4, background: hexToRgba(m.color, 0.12), color: m.color, textTransform: "uppercase", letterSpacing: "0.04em" }}>{m.tag}</span>
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                  {m.label} →
-                </div>
-                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
-                  {m.text}
-                </p>
-                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0, fontStyle: "italic" }}>
-                  {m.question}
-                </p>
-              </Link>
-            ))}
-          </div>
+          <p style={proseStyle}>
+            <strong style={{ color: TEXT.primary }}>M1 — the Inner Compass</strong> maps the nervous system{"'"}s continuous orientation between safety and threat across four modes on a single gradient. It answers the diagnostic question: <em>where is the needle, can it move, and what does the person have access to from where they are?</em>
+          </p>
+          <p style={proseStyle}>
+            <strong style={{ color: TEXT.primary }}>M2 — the Three Awareness Capacities</strong> maps the calibration system that determines how well the compass works — which awarenesses developed, which didn{"'"}t, and what that configuration predicts. It answers the developmental question: <em>why is the needle where it is, and what would it take to move it?</em>
+          </p>
+          <p style={proseStyle}>
+            <strong style={{ color: TEXT.primary }}>M3 — the Open Cycle</strong> maps the physiological sequence that runs when the nervous system perceives a threat — what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. It answers the biological question: <em>what is the body doing beneath the compass, and what does it cost when that process is never allowed to finish?</em>
+          </p>
           <p style={{ ...proseStyle, marginBottom: 0 }}>
             The three models are not independent. They are three dimensions of the same reality. A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath. Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
           </p>
