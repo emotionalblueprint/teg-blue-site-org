@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, TRANSITION, SPECTRUM, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
 import { SearchInput, TypeTag, ExpandableSection, StatusBadge } from "@/src/components";
 
 // Framework URL mapping for internal linking

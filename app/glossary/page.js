@@ -65,6 +65,7 @@ const GLOSSARY_TERMS = [
     status: "proposed",
     definition: "The applied layer of TEG-Blue. Two models: the Inner Compass & Four-Mode Gradient (the instrument — how the nervous system orients across four modes) and the Three Awareness Capacities (the calibration — what determines how well it does it).",
     tags: ["core-concept", "measurement"],
+    framework: 1,
   },
   {
     slug: "regulatory-state",

@@ -13,6 +13,7 @@ const PAGE_DATES = {
   '/models': '2026-03-05',
   '/model/m1-inner-compass': '2026-03-05',
   '/model/m2-three-awareness-capacities': '2026-03-05',
+  '/model/m3-the-open-cycle': '2026-03-05',
   '/glossary': '2026-02-15',
   '/methodology': '2026-02-18',
   '/citations': '2026-02-12',
@@ -100,6 +101,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/model/m3-the-open-cycle`,
+      lastModified: new Date(PAGE_DATES['/model/m3-the-open-cycle']),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/glossary`,
       lastModified: new Date(PAGE_DATES['/glossary']),
       changeFrequency: 'monthly',
@@ -128,6 +135,12 @@ export default function sitemap() {
       lastModified: new Date(PAGE_DATES['/about']),
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/emotional-technology`,
+      lastModified: new Date(PAGE_DATES['/emotional-technology']),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/scientific-foundations`,

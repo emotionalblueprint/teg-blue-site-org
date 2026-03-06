@@ -103,6 +103,7 @@ export function SearchInput({
       </span>
       <input
         type="search"
+        aria-label={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}

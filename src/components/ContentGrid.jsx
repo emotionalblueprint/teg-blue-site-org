@@ -80,6 +80,8 @@ export default function ContentGrid({ items = [] }) {
           return (
             <button
               key={opt.key}
+              aria-label={`Filter by ${opt.label}`}
+              aria-pressed={isActive}
               onClick={() => setFilter(opt.key)}
               style={{
                 display: "inline-flex",
