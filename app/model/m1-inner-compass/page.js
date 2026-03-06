@@ -1178,7 +1178,7 @@ export default function M1InnerCompassPage() {
 
               {/* M2 Card */}
               <Link
-                href="/model/m2-awareness-capacities"
+                href="/model/m2-three-awareness-capacities"
                 style={{
                   padding: 16,
                   background: hexToRgba(SPECTRUM.azure, 0.06),
@@ -1196,6 +1196,29 @@ export default function M1InnerCompassPage() {
                 </div>
                 <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
                   Paired model — the calibration. What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.
+                </div>
+              </Link>
+
+              {/* M3 Card */}
+              <Link
+                href="/model/m3-the-open-cycle"
+                style={{
+                  padding: 16,
+                  background: hexToRgba(SPECTRUM.indigo, 0.06),
+                  borderRadius: 8,
+                  border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+                  textDecoration: "none",
+                  display: "block",
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.indigo, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                  M3
+                </div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
+                  The Open Cycle
+                </div>
+                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
+                  Paired model — the physiology. The biological cascade underneath the compass. What the body does when the return is blocked, why the needle gets stuck, and what completion actually requires.
                 </div>
               </Link>
             </div>
@@ -1231,8 +1254,13 @@ export default function M1InnerCompassPage() {
                 <tbody>
                   <NavRow
                     label="Understand what determines how well the compass works"
-                    href="/model/m2-awareness-capacities"
+                    href="/model/m2-three-awareness-capacities"
                     linkText="M2: Three Awareness Capacities &rarr;"
+                  />
+                  <NavRow
+                    label="Understand the physiological foundation of the compass"
+                    href="/model/m3-the-open-cycle"
+                    linkText="M3: The Open Cycle &rarr;"
                   />
                   <NavRow
                     label="See all twelve frameworks"

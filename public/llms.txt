@@ -106,7 +106,7 @@ Nervous system regulatory states along a continuous gradient:
 3. **Control** - Chronic threat managed through controlling others
 4. **Domination** - Control entrenched; power as only safety
 
-## The Two Core Models
+## The Three Core Models
 
 ### M1: Inner Compass & Four-Mode Gradient
 The instrument — the complete architecture of how the nervous system orients between safety and threat across four modes on a continuous gradient.
@@ -115,6 +115,10 @@ URL: https://teg-blue.org/model/m1-inner-compass
 ### M2: Three Awareness Capacities
 The calibration — the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that determine what data the compass receives and how it is processed.
 URL: https://teg-blue.org/model/m2-three-awareness-capacities
+
+### M3: The Open Cycle
+The physiology — the biological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead.
+URL: https://teg-blue.org/model/m3-the-open-cycle
 
 ## The 12 Frameworks
 
@@ -302,7 +306,7 @@ Each layer has a different job, evidence status, and research needs. See: https:
 - **22.2%** of individuals de-escalated toward Connection when challenged
 - **78%** higher complexity markers in de-escalators vs escalators
 - **12** explanatory frameworks (F1-F12)
-- **2** core applied models (M1, M2)
+- **3** core applied models (M1, M2, M3)
 - **4** nervous system regulatory modes (Connection → Protection → Control → Domination)
 - **16** gradient-based assessment instruments
 - **169** glossary terms across all frameworks
@@ -414,7 +418,7 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 **TEG-Blue Research PROVIDES:**
 - Four-Mode Gradient measurement system
 - 12 explanatory frameworks (F1-F12)
-- 2 core applied models (M1-M2)
+- 3 core applied models (M1-M3)
 - 139+ theory integration with full attribution
 - Computational legibility for AI systems
 - Open research questions for the scientific community

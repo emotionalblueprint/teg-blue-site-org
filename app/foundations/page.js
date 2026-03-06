@@ -5,7 +5,7 @@ import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/li
 
 export const metadata = {
   title: "System Overview | TEG-Blue Research",
-  description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement (Four-Mode Gradient), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+  description: "How the parts fit together. TEG-Blue is organized as four interconnected parts: measurement (Four-Mode Gradient), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
   keywords: [
     "TEG-Blue architecture",
     "emotional regulation system",
@@ -27,7 +27,7 @@ export const metadata = {
   },
   openGraph: {
     title: "System Overview — TEG-Blue Research",
-    description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement, explanatory frameworks, emotional tools, and AI safety infrastructure.",
+    description: "How the parts fit together. TEG-Blue is organized as four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety infrastructure.",
     url: "https://teg-blue.org/foundations",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "System Overview — TEG-Blue Research",
-    description: "How the parts fit together. TEG-Blue's four-layer architecture: measurement, frameworks, tools, and AI safety.",
+    description: "How the parts fit together. TEG-Blue's four-part architecture: measurement, frameworks, tools, and AI safety.",
   },
 };
 
@@ -62,7 +62,7 @@ export default function FoundationsPage() {
           badge="SYSTEM ARCHITECTURE"
           title="System Overview"
           subtitle="How the parts fit together"
-          description="TEG-Blue is organized as a layered system. Each layer has a different job, a different evidence status, and a different kind of researcher who can help."
+          description="TEG-Blue is organized as four interconnected parts. Each part has a different job, a different evidence status, and a different kind of researcher who can help."
         />
 
         {/* Quick Navigation Cards */}
@@ -77,7 +77,7 @@ export default function FoundationsPage() {
             <LayerIntroCard
               number={1}
               title="Measurement"
-              subtitle="Two Core Models"
+              subtitle="Three Core Models"
               color={SPECTRUM.azure}
               href="/models"
             />
@@ -106,11 +106,11 @@ export default function FoundationsPage() {
           </div>
         </section>
 
-        {/* Layer 1 — Measurement */}
+        {/* 1 — Measurement */}
         <section style={{ marginBottom: 32 }}>
           <LayerCard
             number={1}
-            title="The Measurement Layer"
+            title="Measurement"
             color={SPECTRUM.azure}
           >
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
@@ -155,11 +155,11 @@ export default function FoundationsPage() {
           </LayerCard>
         </section>
 
-        {/* Layer 2 — Explanatory */}
+        {/* 2 — Explanatory Frameworks */}
         <section style={{ marginBottom: 32 }}>
           <LayerCard
             number={2}
-            title="The Explanatory Layer"
+            title="Explanatory Frameworks"
             color={SPECTRUM.cobalt}
           >
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
@@ -201,11 +201,11 @@ export default function FoundationsPage() {
           </LayerCard>
         </section>
 
-        {/* Layer 3 — Emotional Tools */}
+        {/* 3 — Emotional Tools */}
         <section style={{ marginBottom: 32 }}>
           <LayerCard
             number={3}
-            title="The Emotional Tools"
+            title="Emotional Tools"
             color={SPECTRUM.indigo}
           >
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
@@ -239,11 +239,11 @@ export default function FoundationsPage() {
           </LayerCard>
         </section>
 
-        {/* Layer 4 — AI Safety */}
+        {/* 4 — AI Safety */}
         <section style={{ marginBottom: 32 }}>
           <LayerCard
             number={4}
-            title="The AI Safety Layer"
+            title="AI Safety"
             color={SPECTRUM.slate}
           >
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
@@ -368,7 +368,7 @@ export default function FoundationsPage() {
                 </tr>
               </thead>
               <tbody>
-                <NavRow label="See the two applied models" href="/models" linkText="Core Models →" />
+                <NavRow label="See the three applied models" href="/models" linkText="Core Models →" />
                 <NavRow label="See the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand methods" href="/methodology" linkText="Methodology →" />
@@ -450,7 +450,7 @@ function LayerCard({ number, title, color, children }) {
             margin: 0,
           }}
         >
-          Layer {number} — {title}
+          {title}
         </h2>
       </div>
       {children}
@@ -580,7 +580,7 @@ function LayerIntroCard({ number, title, subtitle, color, href, external }) {
             fontFamily: FONT.mono,
           }}
         >
-          Layer {number}
+          Part {number}
         </span>
       </div>
       <h3

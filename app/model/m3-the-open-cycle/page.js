@@ -283,6 +283,29 @@ export default function M3TheOpenCyclePage() {
               Regulation is not a skill imposed from outside. It is a process the body was built to run. What is commonly called {"'"}regulation{"'"} is often its opposite — cognition overriding the body{"'"}s signals to produce apparent calm while the cycle runs on beneath it.
             </KeyStatement>
 
+            <Link
+              href="/framework/f1-emotional-gradient#the-hinge"
+              style={{
+                display: "block",
+                padding: "16px 20px",
+                margin: "0 0 16px",
+                background: hexToRgba(SPECTRUM.indigo, 0.06),
+                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+                borderRadius: 8,
+                textDecoration: "none",
+              }}
+            >
+              <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: SPECTRUM.indigo, marginBottom: 6 }}>
+                F1 &middot; This process has a name
+              </div>
+              <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                F1 calls this Biological Restoration — the hinge of all twelve frameworks. F1 maps the design and the pathways. M3 maps the physiology underneath.
+              </div>
+              <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.indigo }}>
+                Read the design &rarr;
+              </div>
+            </Link>
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>

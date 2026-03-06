@@ -277,7 +277,7 @@ export default function F1EmotionalGradientPage() {
                 Fear is the nervous system's signal that its evaluation found threat. Joy is the signal that the evaluation found safety and connection. Anger signals that a boundary has been crossed. Each emotion carries specific information about what the evaluation detected — and each orients the organism toward a specific response.
               </p>
               <p style={proseStyle}>
-                This is the body's first language. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it added a second one. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. The body keeps talking whether cognition listens or not.
+                This is the body's first language. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it added a second one. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. The body keeps talking whether cognition listens or not — <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
               <p style={proseStyle}>
                 This shifts the foundational stance from "emotion regulation" (implying emotions need controlling) to "signal interpretation" (implying emotions carry information that needs reading). The question is not "how do I manage this emotion?" but <strong style={{ color: TEXT.primary }}>"what is this signal telling me?"</strong>
@@ -511,6 +511,29 @@ export default function F1EmotionalGradientPage() {
                   Porges (2011) — three autonomic states, social engagement system, vagal brake. Cannon (1915) — fight/flight response. Walker (2013), van der Kolk (2014) — fight/flight/freeze/fawn as body-level threat responses. Fredrickson (2001) — broaden-and-build theory. Siegel (2012) — window of tolerance. Sapolsky (2004) — stress response designed for acute activation. McEwen (2000) — allostatic load.
                 </p>
               </ExpandableSection>
+
+              <Link
+                href="/model/m1-inner-compass"
+                style={{
+                  display: "block",
+                  padding: "16px 20px",
+                  margin: "16px 0 0",
+                  background: hexToRgba(SPECTRUM.azure, 0.06),
+                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+                  borderRadius: 8,
+                  textDecoration: "none",
+                }}
+              >
+                <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: SPECTRUM.azure, marginBottom: 6 }}>
+                  M1 &middot; The applied model for this
+                </div>
+                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                  M1: The Inner Compass turns everything described here into a usable instrument — the four modes on a single gradient, the stuck-versus-fluid distinction, and what each position enables and restricts.
+                </div>
+                <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.azure }}>
+                  Read the model &rarr;
+                </div>
+              </Link>
             </div>
           </section>
 
@@ -547,6 +570,29 @@ export default function F1EmotionalGradientPage() {
               <p style={proseStyle}>
                 Biological Restoration is closer to digestion than to exercise. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
               </p>
+
+              <Link
+                href="/model/m3-the-open-cycle"
+                style={{
+                  display: "block",
+                  padding: "16px 20px",
+                  margin: "0 0 24px",
+                  background: hexToRgba(SPECTRUM.indigo, 0.06),
+                  border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+                  borderRadius: 8,
+                  textDecoration: "none",
+                }}
+              >
+                <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: SPECTRUM.indigo, marginBottom: 6 }}>
+                  M3 &middot; The physiology beneath this
+                </div>
+                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                  M3: The Open Cycle traces the exact biological sequence — what happens step by step when the body completes, and what happens when cognition overrides it instead.
+                </div>
+                <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.indigo }}>
+                  Read the biology &rarr;
+                </div>
+              </Link>
 
               <h4 style={subheadingStyle}>Restoration Pathways</h4>
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -648,12 +694,12 @@ export default function F1EmotionalGradientPage() {
                 </li>
               </ul>
               <p style={proseStyle}>
-                In each case, the mechanism is the same: the system completing the cycle and coming back. The difference is the depth of the activation that must resolve. The deeper the compass moves along the gradient, the more the restoration costs — and the more the system needs to complete.
+                In each case, the mechanism is the same: the system completing the cycle and coming back. The difference is the depth of the activation that must resolve. The deeper the compass moves along the gradient, the more the restoration costs — and the more the system needs to complete. When it does not, <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
 
               <ExpandableSection title="A Note on 'Regulation'" type="framework">
                 <p style={expandedProseStyle}>
-                  What is commonly called "regulation" encompasses two fundamentally different processes. The first is Biological Restoration — the body completing its own activation cycle and settling back to its designed state. This is a biological process that cannot be forced, does not require cognition, and is cost-free. The second is cognitive management — cognition overriding, suppressing, or controlling the body's emotional signals to produce a state of apparent calm. This is effortful, comes at the cost of emotional truth, and is precisely what F3 describes as false coherence.
+                  What is commonly called "regulation" encompasses two fundamentally different processes. The first is Biological Restoration — the body completing its own activation cycle and settling back to its designed state. This is a biological process that cannot be forced, does not require cognition, and is cost-free. The second is cognitive management — cognition overriding, suppressing, or controlling the body's emotional signals to produce a state of apparent calm. This is effortful, comes at the cost of emotional truth, and is precisely what F3 describes as false coherence — while the body continues running what M3 calls <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the open cycle</Link> underneath.
                 </p>
                 <p style={expandedProseStyle}>
                   The cultural understanding of "regulation" overwhelmingly refers to the second process — manage your feelings, calm down, control yourself. This framing treats the body's signals as problems to be managed rather than processes to be completed. TEG-Blue uses "Biological Restoration" to distinguish the body's designed process from the cultural misunderstanding.
@@ -695,7 +741,7 @@ export default function F1EmotionalGradientPage() {
                 For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then cognition evolved. And the compass gained range.
               </p>
               <p style={proseStyle}>
-                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. This is not pathology. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
+                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. This is not pathology. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
               </p>
               <p style={proseStyle}>
                 <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — they happen <em>to</em> you. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
@@ -983,7 +1029,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                Each framework describes a regulation substitute at a different scale. Each substitute works, each comes at a cost, and each traces to the same origin: a nervous system that never learned Biological Restoration.
+                Each framework describes a regulation substitute at a different scale. Each substitute works, each comes at a cost, and each traces to the same origin: a nervous system that never learned Biological Restoration — running on <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>permanently open cycles</Link>.
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -1215,6 +1261,7 @@ export default function F1EmotionalGradientPage() {
                 <tbody>
                   <NavRow label="Continue to F2 — how the compass gets calibrated" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness (F2) →" />
                   <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Inner Compass (M1) →" />
+                  <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-the-open-cycle" linkText="The Open Cycle (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Understand the epistemological stance" href="/epistemological-foundations" linkText="Epistemological Foundations →" />

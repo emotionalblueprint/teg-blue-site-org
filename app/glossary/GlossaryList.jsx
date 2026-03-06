@@ -21,6 +21,7 @@ const FRAMEWORK_URLS = {
   F12: "/framework/f12-two-information-systems",
   M1: "/model/m1-inner-compass",
   M2: "/model/m2-three-awareness-capacities",
+  M3: "/model/m3-the-open-cycle",
 };
 
 // Framework to Arc mapping
@@ -40,12 +41,12 @@ const FRAMEWORK_ARC = {
 };
 
 // Arc order for sorting
-const ARC_ORDER = ["Formation", "Scaling", "Turning Point", "Healing", "Integration", "General"];
+const ARC_ORDER = ["Formation", "Scaling", "Turning Point", "Healing", "Integration", "Models", "General"];
 
 // Sort options
 const SORT_OPTIONS = [
   { value: "alphabetical", label: "Alphabetical (A-Z)" },
-  { value: "framework", label: "By Framework (F1 → F12)" },
+  { value: "framework", label: "By Framework (F1 → F12, M1 → M3)" },
   { value: "arc", label: "By Arc" },
   { value: "type", label: "By Type" },
 ];
@@ -65,24 +66,47 @@ export default function GlossaryList({ terms = [] }) {
     );
   });
 
+  // Helper: get a sortable value from framework (numeric or string like "M3")
+  const fwSortKey = (fw) => {
+    if (!fw) return 99;
+    if (typeof fw === "number") return fw;
+    // Model strings: M1=13, M2=14, M3=15
+    const m = String(fw).match(/^M(\d+)$/);
+    return m ? 12 + parseInt(m[1], 10) : 99;
+  };
+
+  // Helper: get display label from framework value
+  const fwLabel = (fw) => {
+    if (!fw) return "General";
+    if (typeof fw === "string") return fw; // "M3" stays "M3"
+    return `F${fw}`;
+  };
+
+  // Helper: get arc name from framework value
+  const fwArc = (fw) => {
+    if (!fw) return "General";
+    if (typeof fw === "string") return "Models";
+    return FRAMEWORK_ARC[fw] || "General";
+  };
+
   // Sort based on selected option
   const sorted = [...filtered].sort((a, b) => {
     switch (sortBy) {
       case "framework":
         // Sort by framework number, then alphabetically within
-        const fwA = a.framework || 99;
-        const fwB = b.framework || 99;
+        const fwA = fwSortKey(a.framework);
+        const fwB = fwSortKey(b.framework);
         if (fwA !== fwB) return fwA - fwB;
         return a.title.localeCompare(b.title);
       case "arc":
         // Sort by arc, then framework, then alphabetically
-        const arcA = a.framework ? FRAMEWORK_ARC[a.framework] : "General";
-        const arcB = b.framework ? FRAMEWORK_ARC[b.framework] : "General";
+        const arcA = fwArc(a.framework);
+        const arcB = fwArc(b.framework);
         const arcOrderA = ARC_ORDER.indexOf(arcA);
         const arcOrderB = ARC_ORDER.indexOf(arcB);
         if (arcOrderA !== arcOrderB) return arcOrderA - arcOrderB;
-        const fwA2 = a.framework || 99;
-        const fwB2 = b.framework || 99;
+        const fwA2 = fwSortKey(a.framework);
+        const fwB2 = fwSortKey(b.framework);
         if (fwA2 !== fwB2) return fwA2 - fwB2;
         return a.title.localeCompare(b.title);
       case "type":
@@ -102,7 +126,7 @@ export default function GlossaryList({ terms = [] }) {
     if (sortBy === "framework") {
       const groups = {};
       sorted.forEach((term) => {
-        const fw = term.framework ? `F${term.framework}` : "General";
+        const fw = fwLabel(term.framework);
         if (!groups[fw]) groups[fw] = [];
         groups[fw].push(term);
       });
@@ -111,7 +135,7 @@ export default function GlossaryList({ terms = [] }) {
     if (sortBy === "arc") {
       const groups = {};
       sorted.forEach((term) => {
-        const arc = term.framework ? FRAMEWORK_ARC[term.framework] : "General";
+        const arc = fwArc(term.framework);
         if (!groups[arc]) groups[arc] = [];
         groups[arc].push(term);
       });

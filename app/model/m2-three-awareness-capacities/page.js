@@ -1143,6 +1143,13 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 description="The instrument that these capacities calibrate. M1 describes the compass and its four modes. M2 describes what determines how the compass is set."
                 href="/model/m1-inner-compass"
               />
+              <FrameworkCard
+                id="M3"
+                title="The Open Cycle"
+                relation="Physiological foundation"
+                description="What the body does when the three capacities are not online — the incomplete cycles that accumulate when the return cannot complete. The physical cost of capacity gaps."
+                href="/model/m3-the-open-cycle"
+              />
             </div>
           </section>
 
@@ -1178,6 +1185,11 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                     label="Understand the instrument these capacities calibrate"
                     href="/model/m1-inner-compass"
                     linkText="M1: Inner Compass & Four-Mode Gradient →"
+                  />
+                  <NavRow
+                    label="Understand the physiological cost of capacity gaps"
+                    href="/model/m3-the-open-cycle"
+                    linkText="M3: The Open Cycle →"
                   />
                   <NavRow
                     label="See all twelve frameworks"

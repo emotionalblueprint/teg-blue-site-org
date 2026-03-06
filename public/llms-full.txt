@@ -611,7 +611,7 @@ Psychometric testing of 16 instruments
 - **22.2%** of individuals de-escalated toward Connection when challenged
 - **78%** higher complexity markers in de-escalators vs escalators
 - **12** explanatory frameworks (F1-F12)
-- **2** core applied models (M1, M2)
+- **3** core applied models (M1, M2, M3)
 - **4** nervous system regulatory modes
 - **16** gradient-based assessment instruments
 - **169** glossary terms across all frameworks
@@ -640,6 +640,7 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - Core Models: https://teg-blue.org/models
   - M1 Inner Compass: https://teg-blue.org/model/m1-inner-compass
   - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
+  - M3 The Open Cycle: https://teg-blue.org/model/m3-the-open-cycle
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
   - F1: https://teg-blue.org/framework/f1-emotional-gradient

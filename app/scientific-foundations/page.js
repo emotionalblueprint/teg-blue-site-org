@@ -69,7 +69,7 @@ const THEORIES = [
     originAuthor: "Jaak Panksepp, Antonio Damasio, Lisa Feldman Barrett, Joseph LeDoux",
     summary: "Emotions are not disruptions to rational thought but fundamental biological systems that evolved to guide behavior. They arise from subcortical circuits that evaluate survival relevance and prepare the body for action before conscious awareness begins.",
     tags: ["neuroscience", "emotion", "subcortical", "somatic markers", "constructed emotion"],
-    frameworks: ["F1", "F12"],
+    frameworks: ["F1", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Affective neuroscience studies the neural basis of emotion. Panksepp identified primary emotional systems (SEEKING, RAGE, FEAR, LUST, CARE, PANIC/GRIEF, PLAY) operating from subcortical structures. Damasio showed that bodily states (somatic markers) guide decision-making. Barrett demonstrated that emotions are constructed from interoceptive signals and learned concepts. LeDoux mapped threat detection circuits that operate before conscious awareness." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue synthesizes these perspectives: emotions as data (not disruption), body-first processing (neuroception before cognition), and state-dependent capacity (what the brain can do depends on its current regulatory state). The Four-Mode Gradient maps how these neural systems organize into coherent patterns." },
@@ -141,7 +141,7 @@ const THEORIES = [
     originAuthor: "James Gross, Daniel Siegel, Barbara Fredrickson, Paul Ekman",
     summary: "Emotion regulation is a process, not an outcome. How we respond to emotional signals — through attention, appraisal, and response modulation — shapes both immediate experience and long-term patterns. Positive emotions broaden capacity; threat narrows it.",
     tags: ["emotion regulation", "window of tolerance", "broaden-and-build", "positive psychology"],
-    frameworks: ["F1", "F8", "F12"],
+    frameworks: ["F1", "F8", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Gross developed the process model showing five points where regulation can occur. Siegel introduced the window of tolerance — the zone where emotions can be processed without overwhelm. Fredrickson's broaden-and-build theory shows that positive emotions expand cognitive and behavioral repertoires." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the gradient: Connection is within the window (broad capacity), Protection is at the edge (narrowing), Control and Domination are chronic states outside the window. The broaden-and-build model explains why Connection enables learning and repair." },
@@ -189,7 +189,7 @@ const THEORIES = [
     originAuthor: "A. D. Craig",
     summary: "The body's internal signalling system — the sense of the physiological condition of the entire body. Interoception provides the raw data from which the nervous system constructs feelings, drives, and the sense of self.",
     tags: ["interoception", "body signals", "insula", "homeostasis", "self-awareness"],
-    frameworks: ["F1", "M1"],
+    frameworks: ["F1", "M1", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Interoception is the sense of the physiological condition of the body — heart rate, breath, gut, temperature, pain, and other internal signals. Craig demonstrated that interoception is not just visceral sensation — it is the foundation of subjective feeling, emotional awareness, and the embodied sense of self." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue positions interoception as the input channel for neuroception — the raw data the nervous system evaluates when determining safety or threat. Interoceptive accuracy correlates with emotional awareness — the better the system reads its own signals, the more accurately it can orient." },
@@ -237,7 +237,7 @@ const THEORIES = [
     originAuthor: "Stephen Porges",
     summary: "The autonomic nervous system operates through three hierarchical circuits — ventral vagal, sympathetic, and dorsal vagal — that shape our capacity for social engagement, mobilization, and immobilization.",
     tags: ["autonomic nervous system", "vagal tone", "neuroception", "social engagement"],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"],
+    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement. The sympathetic branch activates fight-or-flight. The oldest (dorsal vagal) produces shutdown. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Four-Mode Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Control and Domination. The gradient tracks the progression from adaptive Protection to maladaptive Control — and the capacity to return to Connection, which is the key variable predicting relational outcomes." },
@@ -309,7 +309,7 @@ const THEORIES = [
     originAuthor: "Robert Sapolsky, Bruce McEwen",
     summary: "The stress response is designed for acute activation — short bursts of mobilization that resolve and restore. When activation becomes chronic, the cumulative physiological cost (allostatic load) damages the systems it was designed to protect.",
     tags: ["stress", "allostatic load", "cortisol", "HPA axis", "chronic stress"],
-    frameworks: ["F1", "F5"],
+    frameworks: ["F1", "F5", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "The stress response (HPA axis activation, cortisol release, sympathetic arousal) is designed for acute, time-limited threats. When activation becomes chronic — through sustained threat, poverty, or traumatic environments — the cumulative cost (allostatic load) damages cardiovascular, immune, metabolic, and neural systems." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the designed stress response onto the Protection mode — acute, time-limited, and restorable. Chronic stress maps onto stuck compass positions. Control and Domination are costly — they recruit the stress response chronically, burning fuel designed to last hours, not years." },
@@ -321,7 +321,7 @@ const THEORIES = [
     originAuthor: "Bessel van der Kolk, Judith Herman",
     summary: "Trauma is stored in the body, not just the mind. Defensive responses that were interrupted or overwhelmed during threat continue to seek completion, shaping physiology, perception, and behavior long after danger has passed.",
     tags: ["trauma", "PTSD", "developmental trauma", "body-based therapy", "defensive responses"],
-    frameworks: ["F1", "F2", "F3", "F7", "F8", "F12"],
+    frameworks: ["F1", "F2", "F3", "F7", "F8", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Traumatic experiences are encoded in the body's implicit memory systems. When threat overwhelms the nervous system's capacity to respond, defensive actions (fight, flight, freeze, fawn) remain incomplete. These unfinished responses continue to organize physiology and behavior." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps trauma responses onto the Four-Mode Gradient: fight and flight as active Protection, freeze and fawn as collapsed Protection or early Control patterns. Chronic trauma calibrates the system toward Control or Domination. The framework explains why cognitive insight alone rarely resolves trauma." },
@@ -384,7 +384,7 @@ const THEORIES = [
     originAuthor: "Rachel Yehuda, Michael Meaney, Frances Champagne",
     summary: "Stress modifies gene expression across generations through epigenetic mechanisms — reversible changes that don't alter DNA sequence but alter which genes are active. These modifications transmit regulatory patterns from parent to offspring.",
     tags: ["epigenetics", "gene expression", "intergenerational trauma", "stress transmission"],
-    frameworks: ["F10", "M2"],
+    frameworks: ["F10", "M2", "M3"],
   },
   {
     slug: "narrative-psychology", title: "Narrative Psychology & Therapy", domain: "Narrative Psychology",
@@ -419,14 +419,14 @@ const THEORIES = [
     originAuthor: "Daniel Kahneman, Keith Stanovich, Jonathan Evans",
     summary: "Cognition operates through two systems: fast, automatic, intuitive processing (System 1) and slow, deliberate, analytical processing (System 2). TEG-Blue reframes these not as error-prone vs. corrective but as sequential partners.",
     tags: ["System 1", "System 2", "heuristics", "biases", "reasoning"],
-    frameworks: ["F3", "F6", "F12", "M1"],
+    frameworks: ["F3", "F6", "F12", "M1", "M3"],
   },
   {
     slug: "somatic-experiencing", title: "Somatic Experiencing", domain: "Trauma Research",
     originAuthor: "Peter Levine, Pat Ogden",
     summary: "Trauma resolution requires completing interrupted defensive responses at the body level. Change requires bodily experience — the body must complete the threat cycle for the nervous system to update its threat assessment.",
     tags: ["somatic experiencing", "sensorimotor", "body-based therapy", "threat completion"],
-    frameworks: ["F1", "F2", "F7", "F8", "M1"],
+    frameworks: ["F1", "F2", "F7", "F8", "M1", "M3"],
   },
   {
     slug: "social-identity", title: "Social Identity Theory", domain: "Social Psychology",
