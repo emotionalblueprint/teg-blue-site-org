@@ -83,14 +83,17 @@ export default function F2AwarenessCalibrationPage() {
     >
       <SiteHeader currentPath="/framework/f2-awareness-calibration" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F2"
-          title="Awareness Teaches Awareness"
-          subtitle="How the Three Capacities Calibrate the Compass"
-          description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. The calibration framework of the TEG-Blue system."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F2"
+            title="Awareness Teaches Awareness"
+            subtitle="How the Three Capacities Calibrate the Compass"
+            description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. The calibration framework of the TEG-Blue system."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── THREE CAPACITIES LEGEND ──────────────────── */}
         <div
           style={{

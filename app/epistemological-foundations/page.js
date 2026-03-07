@@ -56,13 +56,16 @@ export default function EpistemologicalFoundationsPage() {
     >
       <SiteHeader currentPath="/epistemological-foundations" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="EPISTEMOLOGY"
-          title="Epistemological Foundations"
-          description="Why emotions are valid data. The philosophical and methodological foundations of TEG-Blue's approach."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="EPISTEMOLOGY"
+            title="Epistemological Foundations"
+            description="Why emotions are valid data. The philosophical and methodological foundations of TEG-Blue's approach."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Core Thesis */}
         <section style={{ marginBottom: 40 }}>
           <div

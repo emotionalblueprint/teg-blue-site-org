@@ -56,33 +56,35 @@ export default function ResearchEntryPage() {
     >
       <SiteHeader currentPath="/research-entry" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        {/* Header */}
-        <header style={{ marginBottom: 32 }}>
-          <ResearcherHero
-            badge="FOR RESEARCHERS"
-            title="Start Here"
-            subtitle="A prototype emotional data system — measurable, testable, usable"
-            description="TEG-Blue is a prototype emotional data system designed to make emotional safety and accountability measurable, testable, and usable across humans and AI. It treats emotions as valid, structured data."
-          />
-          <div style={{ marginTop: 20 }}>
-            <Link
-              href="/foundations"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                fontSize: 14,
-                color: SPECTRUM.blue,
-                textDecoration: "none",
-                fontWeight: 500,
-              }}
-            >
-              If you want the full system map first: System Overview →
-            </Link>
-          </div>
-        </header>
-
+      <PageLayout
+        header={
+          <header style={{ marginBottom: 32 }}>
+            <ResearcherHero
+              badge="FOR RESEARCHERS"
+              title="Start Here"
+              subtitle="A prototype emotional data system — measurable, testable, usable"
+              description="TEG-Blue is a prototype emotional data system designed to make emotional safety and accountability measurable, testable, and usable across humans and AI. It treats emotions as valid, structured data."
+            />
+            <div style={{ marginTop: 20 }}>
+              <Link
+                href="/foundations"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontSize: 14,
+                  color: SPECTRUM.blue,
+                  textDecoration: "none",
+                  fontWeight: 500,
+                }}
+              >
+                If you want the full system map first: System Overview →
+              </Link>
+            </div>
+          </header>
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* What TEG-Blue is */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>

@@ -51,13 +51,16 @@ export default function CollaboratePage() {
     >
       <SiteHeader currentPath="/collaborate" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="OPEN ACCESS"
-          title="Use this work"
-          description="Everything here is open. No gates, no applications, no required collaboration. Take what is useful. Cite the source. Test the claims."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="OPEN ACCESS"
+            title="Use this work"
+            description="Everything here is open. No gates, no applications, no required collaboration. Take what is useful. Cite the source. Test the claims."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Open access */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>

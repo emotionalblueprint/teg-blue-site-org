@@ -74,14 +74,17 @@ export default function M3TheOpenCyclePage() {
     >
       <SiteHeader currentPath="/model/m3-the-open-cycle" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="MODEL M3"
-          title="The Open Cycle"
-          subtitle="The Biology of Unfinished Emotion"
-          description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="MODEL M3"
+            title="The Open Cycle"
+            subtitle="The Biology of Unfinished Emotion"
+            description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── INTERACTIVE DIAGRAM ──────────────────────── */}
         <OpenCycleExplorer />
 

@@ -110,16 +110,17 @@ export default function ModelsPage() {
     >
       <SiteHeader currentPath="/models" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        {/* Hero */}
-        <ResearcherHero
-          badge="3 FOUNDATIONAL MODELS"
-          title="The Three Core Models"
-          subtitle="Instrument + Calibration + Biological Foundation = Complete System"
-          description="The three core models synthesize the 12 frameworks into visual instruments — each one making a different layer of the emotional system visible: where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
-        />
-
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="3 FOUNDATIONAL MODELS"
+            title="The Three Core Models"
+            subtitle="Instrument + Calibration + Biological Foundation = Complete System"
+            description="The three core models synthesize the 12 frameworks into visual instruments — each one making a different layer of the emotional system visible: where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
           <p style={{ ...proseStyle, marginBottom: 0 }}>

@@ -42,13 +42,16 @@ export default function AISafetyPage() {
     >
       <SiteHeader currentPath="/ai-safety" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="AI SAFETY"
-          title="AI Safety Applications"
-          description="How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="AI SAFETY"
+            title="AI Safety Applications"
+            description="How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Scenario Block */}
         <section style={{ marginBottom: 64 }}>
           <div

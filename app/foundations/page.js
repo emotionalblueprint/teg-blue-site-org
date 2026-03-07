@@ -59,14 +59,17 @@ export default function FoundationsPage() {
     >
       <SiteHeader currentPath="/foundations" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="SYSTEM ARCHITECTURE"
-          title="System Overview"
-          subtitle="How the parts fit together"
-          description="TEG-Blue is organized as four interconnected parts. Each part has a different job, a different evidence status, and a different kind of researcher who can help."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="SYSTEM ARCHITECTURE"
+            title="System Overview"
+            subtitle="How the parts fit together"
+            description="TEG-Blue is organized as four interconnected parts. Each part has a different job, a different evidence status, and a different kind of researcher who can help."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Quick Navigation Cards */}
         <section style={{ marginBottom: 40 }}>
           <div

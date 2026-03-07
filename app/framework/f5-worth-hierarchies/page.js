@@ -81,14 +81,17 @@ export default function F5WorthHierarchiesPage() {
     >
       <SiteHeader currentPath="/framework/f5-worth-hierarchies" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F5"
-          title="Worth Hierarchies Regulate"
-          subtitle="How Rules Become Sorting Systems"
-          description="How threat-stabilized rule systems (F4) produce worth hierarchies — through the nervous system's orientation toward whatever signals safety — and how those hierarchies formalize into self-reinforcing sorting systems that distribute credibility, resources, and protection based on signal access rather than intrinsic worth. The second framework in the collective arc (F4–F7)."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F5"
+            title="Worth Hierarchies Regulate"
+            subtitle="How Rules Become Sorting Systems"
+            description="How threat-stabilized rule systems (F4) produce worth hierarchies — through the nervous system's orientation toward whatever signals safety — and how those hierarchies formalize into self-reinforcing sorting systems that distribute credibility, resources, and protection based on signal access rather than intrinsic worth. The second framework in the collective arc (F4–F7)."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"

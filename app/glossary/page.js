@@ -1663,13 +1663,16 @@ export default function GlossaryPage() {
     >
       <SiteHeader currentPath="/glossary" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="GLOSSARY"
-          title="Key Terms & Concepts"
-          description="Definitions for regulatory states, complexity markers, and core framework concepts used throughout TEG-Blue research."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="GLOSSARY"
+            title="Key Terms & Concepts"
+            description="Definitions for regulatory states, complexity markers, and core framework concepts used throughout TEG-Blue research."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         <GlossaryList terms={GLOSSARY_TERMS} />
 
       </PageLayout>

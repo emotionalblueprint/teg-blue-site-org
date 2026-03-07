@@ -81,14 +81,17 @@ export default function F4RulesRegulatePage() {
     >
       <SiteHeader currentPath="/framework/f4-rules-regulate" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F4"
-          title="Rules Regulate"
-          subtitle="How Individual Patterns Scale to Collective Rule Systems"
-          description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7) of the TEG-Blue system."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F4"
+            title="Rules Regulate"
+            subtitle="How Individual Patterns Scale to Collective Rule Systems"
+            description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7) of the TEG-Blue system."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"

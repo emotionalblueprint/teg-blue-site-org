@@ -81,14 +81,17 @@ export default function F6BiasRegulatesPage() {
     >
       <SiteHeader currentPath="/framework/f6-bias-regulates" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F6"
-          title="Bias Regulates"
-          subtitle="How Perception Becomes Protection"
-          description="How worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why the resulting perceptual system resists correction even in intelligent, well-intentioned people. The third framework in the collective arc (F4–F7)."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F6"
+            title="Bias Regulates"
+            subtitle="How Perception Becomes Protection"
+            description="How worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why the resulting perceptual system resists correction even in intelligent, well-intentioned people. The third framework in the collective arc (F4–F7)."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"

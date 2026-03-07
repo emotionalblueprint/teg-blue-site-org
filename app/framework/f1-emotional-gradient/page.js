@@ -99,14 +99,17 @@ export default function F1EmotionalGradientPage() {
     >
       <SiteHeader currentPath="/framework/f1-emotional-gradient" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F1"
-          title="Emotions as Biological Information"
-          subtitle="The Safety-Threat Orientation System"
-          description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F1"
+            title="Emotions as Biological Information"
+            subtitle="The Safety-Threat Orientation System"
+            description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"

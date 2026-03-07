@@ -35,113 +35,118 @@ export default function ResearchHub() {
       >
         <SiteHeader currentPath="/" />
 
-        <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-          {/* ── Hero ── */}
-          <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(16px, 3vw, 24px)" }}>
-            {/* Badge pill */}
-            <div
-              style={{
-                display: "inline-block",
-                padding: "4px 12px",
-                borderRadius: 100,
-                fontSize: 10,
-                fontWeight: 700,
-                fontFamily: FONT.mono,
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: RESEARCHER.accent,
-                backgroundColor: hexToRgba(RESEARCHER.accent, 0.15),
-                border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.3)}`,
-                marginBottom: 24,
-              }}
-            >
-              139+ Established Theories, One Integrative Framework
-            </div>
+        <PageLayout
+          header={
+            <>
+              {/* ── Hero ── */}
+              <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(16px, 3vw, 24px)" }}>
+                {/* Badge pill */}
+                <div
+                  style={{
+                    display: "inline-block",
+                    padding: "4px 12px",
+                    borderRadius: 100,
+                    fontSize: 10,
+                    fontWeight: 700,
+                    fontFamily: FONT.mono,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: RESEARCHER.accent,
+                    backgroundColor: hexToRgba(RESEARCHER.accent, 0.15),
+                    border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.3)}`,
+                    marginBottom: 24,
+                  }}
+                >
+                  139+ Established Theories, One Integrative Framework
+                </div>
 
-            {/* Title */}
-            <h1
-              style={{
-                fontSize: "clamp(26px, 5vw, 36px)",
-                fontWeight: 700,
-                margin: "0 0 12px",
-                lineHeight: 1.15,
-                letterSpacing: "-0.02em",
-                background: PATTERN_GRADIENT,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Connecting Cognition with Emotional Awareness
-            </h1>
+                {/* Title */}
+                <h1
+                  style={{
+                    fontSize: "clamp(26px, 5vw, 36px)",
+                    fontWeight: 700,
+                    margin: "0 0 12px",
+                    lineHeight: 1.15,
+                    letterSpacing: "-0.02em",
+                    background: PATTERN_GRADIENT,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Connecting Cognition with Emotional Awareness
+                </h1>
 
-            {/* Lead description */}
-            <p
-              style={{
-                fontSize: 15,
-                color: TEXT.secondary,
-                lineHeight: 1.7,
-                margin: "0 0 10px",
-                maxWidth: 640,
-              }}
-            >
-              How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks into visual models that make emotional patterns visible, measurable, and testable — from individual regulation to systemic dynamics.
-            </p>
+                {/* Lead description */}
+                <p
+                  style={{
+                    fontSize: 15,
+                    color: TEXT.secondary,
+                    lineHeight: 1.7,
+                    margin: "0 0 10px",
+                    maxWidth: 640,
+                  }}
+                >
+                  How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks into visual models that make emotional patterns visible, measurable, and testable — from individual regulation to systemic dynamics.
+                </p>
 
-            {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 32 }}>
-              <Link
-                href="/research-entry"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "12px 24px",
-                  background: RESEARCHER.accent,
-                  color: "#fff",
-                  borderRadius: 8,
-                  fontWeight: 500,
-                  fontSize: 14,
-                  textDecoration: "none",
-                }}
-              >
-                Start Here →
-              </Link>
-              <Link
-                href="/publications"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "12px 24px",
-                  background: hexToRgba(RESEARCHER.accent, 0.1),
-                  color: RESEARCHER.accent,
-                  borderRadius: 8,
-                  fontWeight: 500,
-                  fontSize: 14,
-                  textDecoration: "none",
-                  border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
-                }}
-              >
-                Read the Validation Study
-              </Link>
-            </div>
+                {/* CTAs */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 32 }}>
+                  <Link
+                    href="/research-entry"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      padding: "12px 24px",
+                      background: RESEARCHER.accent,
+                      color: "#fff",
+                      borderRadius: 8,
+                      fontWeight: 500,
+                      fontSize: 14,
+                      textDecoration: "none",
+                    }}
+                  >
+                    Start Here →
+                  </Link>
+                  <Link
+                    href="/publications"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      padding: "12px 24px",
+                      background: hexToRgba(RESEARCHER.accent, 0.1),
+                      color: RESEARCHER.accent,
+                      borderRadius: 8,
+                      fontWeight: 500,
+                      fontSize: 14,
+                      textDecoration: "none",
+                      border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
+                    }}
+                  >
+                    Read the Validation Study
+                  </Link>
+                </div>
 
-            {/* Accent bar separator */}
-            <div
-              style={{
-                marginTop: "clamp(20px, 4vw, 32px)",
-                height: 3,
-                borderRadius: 2,
-                background: PATTERN_GRADIENT,
-              }}
-              aria-hidden="true"
-            />
-          </section>
+                {/* Accent bar separator */}
+                <div
+                  style={{
+                    marginTop: "clamp(20px, 4vw, 32px)",
+                    height: 3,
+                    borderRadius: 2,
+                    background: PATTERN_GRADIENT,
+                  }}
+                  aria-hidden="true"
+                />
+              </section>
 
-          {/* ── Emotion Wave Animation ── */}
-          <EmotionWaveSection />
-
+              {/* ── Emotion Wave Animation ── */}
+              <EmotionWaveSection />
+            </>
+          }
+          sidebarSections={SIDEBAR_SECTIONS}
+        >
           {/* ── The Framework ── */}
           <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>

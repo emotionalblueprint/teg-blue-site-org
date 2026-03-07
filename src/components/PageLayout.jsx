@@ -31,14 +31,15 @@ const RESPONSIVE_CSS = `
  * PageLayout — Site-wide layout wrapper.
  *
  * Provides 1100px max-width container with optional sticky right sidebar.
- * Replaces per-page main container pattern.
+ * The `header` prop renders full-width above the two-column grid (for heroes).
  *
  * Props:
- *   children: React node — the page content
+ *   header: React node — full-width content above the grid (hero, badges, etc.)
+ *   children: React node — the page content (goes into left column when sidebar present)
  *   sidebarSections: array of { label, description } — right sidebar content
  *     If empty or undefined, renders without sidebar column
  */
-export default function PageLayout({ children, sidebarSections }) {
+export default function PageLayout({ header, children, sidebarSections }) {
   const hasSidebar = sidebarSections && sidebarSections.length > 0;
 
   return (
@@ -53,6 +54,8 @@ export default function PageLayout({ children, sidebarSections }) {
           padding: `32px ${px} 60px`,
         }}
       >
+        {header}
+
         {hasSidebar ? (
           <div className="page-layout-columns">
             <div style={{ minWidth: 0 }}>

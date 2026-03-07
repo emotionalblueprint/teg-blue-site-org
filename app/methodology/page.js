@@ -78,13 +78,16 @@ export default function MethodologyPage() {
     >
       <SiteHeader currentPath="/methodology" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="METHODOLOGY"
-          title="Research Methodology"
-          description="How TEG-Blue research is conducted. Open science principles, pre-registration, open data, transparent methodology."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="METHODOLOGY"
+            title="Research Methodology"
+            description="How TEG-Blue research is conducted. Open science principles, pre-registration, open data, transparent methodology."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Open Science Principles */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>

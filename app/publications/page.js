@@ -141,13 +141,16 @@ export default function PublicationsPage() {
 
       <SiteHeader currentPath="/publications" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="PUBLICATIONS"
-          title="Publications & Datasets"
-          description="Research publications, validation studies, and datasets from TEG-Blue."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="PUBLICATIONS"
+            title="Publications & Datasets"
+            description="Research publications, validation studies, and datasets from TEG-Blue."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Validation study card */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>

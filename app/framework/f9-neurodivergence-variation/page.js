@@ -217,15 +217,17 @@ export default function F9NeurodivergenceVariationPage() {
     <>
       <SiteHeader />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <article>
-
-          {/* ── Hero ── */}
+      <PageLayout
+        header={
           <ResearcherHero
             badge="FRAMEWORK F9"
             title="Neurodivergence as Nervous System Variation"
             subtitle="When the Environment Is the Mismatch"
           />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
+        <article>
 
           {/* ── Table of Contents ── */}
           <nav style={{

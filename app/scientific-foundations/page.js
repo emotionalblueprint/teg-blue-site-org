@@ -783,14 +783,16 @@ export default function ScientificFoundationsPage() {
     >
       <SiteHeader currentPath="/scientific-foundations" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        {/* ─── 1. HEADER ─────────────────────────────────────────── */}
-        <ResearcherHero
-          badge="SCIENTIFIC FOUNDATIONS"
-          title="Scientific Foundations"
-          description={`The established research that TEG-Blue builds on — ${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains, integrating 139+ individual theories.`}
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="SCIENTIFIC FOUNDATIONS"
+            title="Scientific Foundations"
+            description={`The established research that TEG-Blue builds on — ${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains, integrating 139+ individual theories.`}
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
         <CoreFoundations />
 

@@ -290,15 +290,17 @@ export default function TheoreticalFoundationsPage() {
     >
       <SiteHeader currentPath="/frameworks-map" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        {/* Header */}
-        <ResearcherHero
-          badge="12 EXPLANATORY FRAMEWORKS"
-          title="The 12 Frameworks — TEG-Blue's Explanatory Architecture"
-          subtitle="One mechanism. Twelve angles. A unified model tracing how the nervous system shapes perception, identity, social structure, escalation, and repair."
-          description="Most models describe either the inner world or the social world. TEG-Blue connects them as one system. The frameworks are interdependent because humans do not experience life in separate categories."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="12 EXPLANATORY FRAMEWORKS"
+            title="The 12 Frameworks — TEG-Blue's Explanatory Architecture"
+            subtitle="One mechanism. Twelve angles. A unified model tracing how the nervous system shapes perception, identity, social structure, escalation, and repair."
+            description="Most models describe either the inner world or the social world. TEG-Blue connects them as one system. The frameworks are interdependent because humans do not experience life in separate categories."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Intro — The Loop */}
         <div style={{ marginBottom: 32 }}>
           <p

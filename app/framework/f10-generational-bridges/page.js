@@ -219,15 +219,17 @@ export default function F10GenerationalBridgesPage() {
     <>
       <SiteHeader />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <article>
-
-          {/* ── Hero ── */}
+      <PageLayout
+        header={
           <ResearcherHero
             badge="FRAMEWORK F10"
             title="Rebuilding Generational Bridges"
             subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
           />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
+        <article>
 
           {/* ── Table of Contents ── */}
           <nav style={{

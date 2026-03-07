@@ -56,13 +56,16 @@ export default function AboutPage() {
     >
       <SiteHeader currentPath="/about" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="ABOUT"
-          title="About TEG-Blue"
-          description="The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="ABOUT"
+            title="About TEG-Blue"
+            description="The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
           <p style={bodyStyle}>

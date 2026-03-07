@@ -28,13 +28,16 @@ export default function CitationsPage() {
     >
       <SiteHeader currentPath="/citations" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="CITATIONS"
-          title="How to Cite TEG-Blue"
-          description="Citation formats for TEG-Blue research publications."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="CITATIONS"
+            title="How to Cite TEG-Blue"
+            description="Citation formats for TEG-Blue research publications."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {publications.map((pub) => (
           <CitationBlock key={pub.slug} publication={pub} />
         ))}

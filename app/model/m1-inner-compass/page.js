@@ -74,14 +74,17 @@ export default function M1InnerCompassPage() {
     >
       <SiteHeader currentPath="/model/m1-inner-compass" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="MODEL M1"
-          title="Inner Compass & Four-Mode Gradient"
-          subtitle="The Instrument"
-          description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="MODEL M1"
+            title="Inner Compass & Four-Mode Gradient"
+            subtitle="The Instrument"
+            description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── FLUID COMPASS EXPLORER ──────────────────────── */}
         <FluidCompassExplorer />
 

@@ -83,14 +83,17 @@ export default function F3FalseCoherencePage() {
     >
       <SiteHeader currentPath="/framework/f3-false-coherence" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F3"
-          title="Adult Cognition & False Coherence"
-          subtitle="How Cognition Maintains What the Body Never Learned to Regulate"
-          description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. The cognitive maintenance framework of the TEG-Blue system."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F3"
+            title="Adult Cognition & False Coherence"
+            subtitle="How Cognition Maintains What the Body Never Learned to Regulate"
+            description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. The cognitive maintenance framework of the TEG-Blue system."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"

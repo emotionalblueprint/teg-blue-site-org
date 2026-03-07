@@ -216,15 +216,17 @@ export default function F12TwoInformationSystemsPage() {
     <>
       <SiteHeader />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <article>
-
-          {/* ── Hero ── */}
+      <PageLayout
+        header={
           <ResearcherHero
             badge="FRAMEWORK F12"
             title="Our Two Information Systems"
             subtitle="Why Insight Alone Doesn't Change Behavior and What Actually Does"
           />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
+        <article>
 
           {/* ── Table of Contents ── */}
           <nav style={{

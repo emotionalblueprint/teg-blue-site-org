@@ -220,15 +220,17 @@ export default function F11EmotionalParadoxesPage() {
     <>
       <SiteHeader />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <article>
-
-          {/* ── Hero ── */}
+      <PageLayout
+        header={
           <ResearcherHero
             badge="FRAMEWORK F11"
             title="The Emotional Logic Behind Paradoxes"
             subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
           />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
+        <article>
 
           {/* ── Table of Contents ── */}
           <nav style={{

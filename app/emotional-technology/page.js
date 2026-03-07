@@ -46,13 +46,16 @@ export default function EmotionalTechnologyPage() {
     >
       <SiteHeader currentPath="/emotional-technology" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="CONCEPT"
-          title="What is Emotional Technology?"
-          description="Tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="CONCEPT"
+            title="What is Emotional Technology?"
+            description="Tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* Featured Card — The Analogy */}
         <section style={{ marginBottom: 64 }}>
           <div

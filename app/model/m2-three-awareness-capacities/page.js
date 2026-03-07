@@ -80,14 +80,17 @@ export default function M2ThreeAwarenessCapacitiesPage() {
     >
       <SiteHeader currentPath="/model/m2-three-awareness-capacities" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="MODEL M2"
-          title="Three Awareness Capacities"
-          subtitle="The Calibration System"
-          description="The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. How capacity configurations predict chronic mode, identity, and relational patterns — and how repair develops what was missing."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="MODEL M2"
+            title="Three Awareness Capacities"
+            subtitle="The Calibration System"
+            description="The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. How capacity configurations predict chronic mode, identity, and relational patterns — and how repair develops what was missing."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── DEGRADATION BAR CHART ──────────────────── */}
         <div style={{ margin: "32px 0 0" }}>
           {/* Legend with colored capacity labels */}

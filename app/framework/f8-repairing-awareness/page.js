@@ -83,14 +83,17 @@ export default function F8RepairingAwarenessPage() {
     >
       <SiteHeader currentPath="/framework/f8-repairing-awareness" />
 
-      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
-        <ResearcherHero
-          badge="FRAMEWORK F8"
-          title="Repairing Awareness"
-          subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
-          description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
-        />
-
+      <PageLayout
+        header={
+          <ResearcherHero
+            badge="FRAMEWORK F8"
+            title="Repairing Awareness"
+            subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
+            description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
+          />
+        }
+        sidebarSections={SIDEBAR_SECTIONS}
+      >
         {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
         <nav
           aria-label="Page contents"
