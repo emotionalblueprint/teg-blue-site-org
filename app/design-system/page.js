@@ -303,6 +303,84 @@ export default function DesignSystemPage() {
           </div>
         </section>
 
+        {/* ─── 6. TYPOGRAPHY ───────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Typography</SectionTitle>
+
+          {/* Font families */}
+          <div style={{ marginBottom: 32 }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>
+              Font Families
+            </p>
+            <p style={{
+              fontFamily: FONT.display,
+              fontSize: TYPE_SCALE.body.size,
+              color: TEXT.primary,
+              marginBottom: 8,
+            }}>
+              Inter — The quick brown fox jumps over the lazy dog
+            </p>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.body.size,
+              color: TEXT.primary,
+            }}>
+              JetBrains Mono — const emotion = &apos;biological information&apos;
+            </p>
+          </div>
+
+          {/* Type scale */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+            }}>
+              Type Scale
+            </p>
+            {Object.entries(TYPE_SCALE).map(([role, spec]) => (
+              <div key={role} style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 4,
+                paddingBottom: 16,
+                borderBottom: `1px solid ${BORDER.default}`,
+              }}>
+                <span style={{
+                  fontFamily: spec.font === "mono" ? FONT.mono : FONT.display,
+                  fontSize: spec.size,
+                  fontWeight: spec.weight,
+                  letterSpacing: spec.tracking,
+                  lineHeight: spec.lineHeight,
+                  color: TEXT.primary,
+                }}>
+                  {role} — Sample text for this scale
+                </span>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                }}>
+                  {spec.size}px · {spec.weight} · {spec.tracking} tracking · {spec.lineHeight} line-height
+                  {spec.font === "mono" ? " · mono" : ""}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Remaining sections will be added in subsequent tasks */}
       </main>
 
