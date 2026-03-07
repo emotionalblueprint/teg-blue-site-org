@@ -179,6 +179,14 @@ export const STATUS = {
 export const MODE_ORANGE = '#f97316'; // unprocessed / protection / SEA offline
 export const MODE_PINK   = '#ec4899'; // domination / chronic RE / precision without feedback
 
+// ─── EDITORIAL ACCENT (Mechanics of Phenomena section) ──
+
+export const EDITORIAL = {
+  accent:      '#f59e0b',  // amber-500 — primary editorial accent
+  accentLight: '#fbbf24',  // amber-400 — hover/active
+  accentMuted: '#92400e',  // amber-900 — subtle backgrounds
+};
+
 // Helper: gradient card background
 export function gradientCardBg(color, startOpacity = 0.08) {
   return `linear-gradient(135deg, ${hexToRgba(color, startOpacity)}, transparent)`;

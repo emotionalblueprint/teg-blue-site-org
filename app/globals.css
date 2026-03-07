@@ -28,6 +28,10 @@
   --border-hover:   rgba(148, 163, 184, 0.20);
   --border-active:  rgba(148, 163, 184, 0.30);
 
+  /* Editorial section */
+  --editorial-accent: #f59e0b;
+  --editorial-accent-light: #fbbf24;
+
   /* Fonts — loaded via next/font in layout.js */
   --font-display: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-jetbrains), 'SF Mono', 'Consolas', monospace;
@@ -98,6 +102,18 @@ a {
 a:hover {
   color: var(--spectrum-azure);
   text-decoration-color: var(--spectrum-azure);
+}
+
+/* ─── EDITORIAL SECTION LINK OVERRIDE ──────────────── */
+
+.mop-reading a {
+  color: var(--editorial-accent);
+  text-decoration-color: color-mix(in srgb, var(--editorial-accent) 40%, transparent);
+}
+
+.mop-reading a:hover {
+  color: var(--editorial-accent-light);
+  text-decoration-color: var(--editorial-accent-light);
 }
 
 code, pre {
@@ -181,6 +197,9 @@ details > section {
   --border-default: rgba(0, 0, 0, 0.08);
   --border-hover:   rgba(0, 0, 0, 0.15);
   --border-active:  rgba(0, 0, 0, 0.25);
+
+  --editorial-accent: #d97706;
+  --editorial-accent-light: #b45309;
 
   /* Spectrum — slightly darker for light background contrast */
   --spectrum-sky:    #2d8ac7;
