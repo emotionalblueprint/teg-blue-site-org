@@ -3,20 +3,17 @@
 import { useState, useEffect, useRef } from "react";
 import {
   FONT, TEXT, BG, BORDER, SPECTRUM,
-  hexToRgba,
+  PATTERN, MODE_ORANGE, hexToRgba,
 } from "@/src/styles/tokens";
 
-// ─── BLUE SPECTRUM + ORANGE ACCENT ──────────────────────────
-// Matches M1 FluidCompassExplorer pattern:
-// Blue spectrum = the designed system working
-// Orange accent = what goes wrong when the cycle is overridden
+// ─── Map PATTERN tokens to semantic names used in this component ──
 const BLUE = {
-  light: "#60a5fa",   // healthy return, completion
-  medium: "#3b82f6",  // cascade, initial activation
-  deep: "#2563eb",    // peak activation
-  darkest: "#1d4ed8", // full survival mode
+  light:   PATTERN.A.primary,   // healthy return, completion
+  medium:  PATTERN.B.primary,   // cascade, initial activation
+  deep:    PATTERN.C.primary,   // peak activation
+  darkest: PATTERN.D.primary,   // full survival mode
 };
-const ORANGE = "#e87a4a"; // override, stuck, warning
+const ORANGE = MODE_ORANGE;
 
 // ─── STAGE DATA ──────────────────────────────────────────────
 
