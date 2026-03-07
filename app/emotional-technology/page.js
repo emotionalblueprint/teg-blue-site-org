@@ -1,6 +1,14 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "The Analogy", description: "What emotional technology means — the same clarity we expect from physical technology, applied to emotions." },
+  { label: "What It Does", description: "Makes invisible emotional patterns visible, measurable, and navigable." },
+  { label: "Doesn't Replace Therapy", description: "Equips it. A structural layer underneath clinical work, not a replacement for it." },
+  { label: "Why This Name", description: "Why 'emotional technology' — the term, the history, the positioning." },
+  { label: "Key Vocabulary", description: "Emotional architecture, emotional wiring, emotional miswiring, emotional infrastructure." },
+];
 
 export const metadata = {
   title: "What is Emotional Technology? — TEG-Blue",
@@ -38,14 +46,7 @@ export default function EmotionalTechnologyPage() {
     >
       <SiteHeader currentPath="/emotional-technology" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `48px ${SPACING.pagePadding} 80px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="CONCEPT"
           title="What is Emotional Technology?"
@@ -370,7 +371,7 @@ export default function EmotionalTechnologyPage() {
             </Link>
           </div>
         </section>
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,22 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "Domination is built through reinforcement, not born. Causality and accountability are separable." },
+  { label: "Overview", description: "F6 explains why we see distortedly. F7 explains what happens when the system starts making others see its way." },
+  { label: "Domination Built Through Reinforcement", description: "When control consistently produces relief, the nervous system adopts control as its preferred solution." },
+  { label: "The Crossroads", description: "The critical transition: 'I am trying to feel safe' → 'I will make you behave so I can feel safe.'" },
+  { label: "Early Escalation Markers", description: "Ten observable signals indicating the compass is moving through the Crossroads." },
+  { label: "Five-Stage Escalation", description: "Fear Activation → Strategy Formation → Entitlement Loop → Empathy Collapse → Power Preservation." },
+  { label: "Empathy Gating", description: "What people call 'empathy' is three processes that diverge as escalation progresses." },
+  { label: "Addiction Logic", description: "External regulation through subjugation builds tolerance. There is no natural stopping point." },
+  { label: "The Regulation Thread", description: "One mechanism, seven scales, escalating costs. Biological return → developmental failure → domination." },
+  { label: "What F7 Establishes", description: "The escalation pathway, the Crossroads, the marker system, the empathy gating model." },
+  { label: "Research Foundations", description: "Behavioural reinforcement, psychoanalytic theory, organisational psychology, neuroscience, abuse research." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -65,14 +81,7 @@ export default function F7DominationRegulatesPage() {
     >
       <SiteHeader currentPath="/framework/f7-domination-regulates" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F7"
           title="Domination Regulates"
@@ -1016,7 +1025,7 @@ export default function F7DominationRegulatesPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

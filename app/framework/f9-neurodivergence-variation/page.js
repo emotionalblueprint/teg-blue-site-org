@@ -1,17 +1,32 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Framework Position", description: "F8 describes a universal cost. F9 asks what happens when that cost is architectural, daily, and inescapable." },
+  { label: "The Regulation Thread", description: "What if the environment itself prevents the building? You cannot heal what the environment keeps wounding." },
+  { label: "Nervous System Configuration", description: "Neurodivergence is a difference in how the nervous system is configured. Not a disorder, deficit, or gift." },
+  { label: "System Mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
+  { label: "Masking as Structural Survival", description: "When every environment punishes authentic configuration, masking is not a choice — it is survival." },
+  { label: "Threshold Crossing and Burnout", description: "The predictable outcome of a system running a design it was not built to run." },
+  { label: "Unmasking", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
+  { label: "From Accommodation to Design", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
+  { label: "The Structural Argument", description: "Systems designed for one configuration lose access to what other configurations provide." },
+  { label: "Bridge to F10", description: "What happens across generations when adults do this work — individual repair and structural repair simultaneously." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -202,10 +217,7 @@ export default function F9NeurodivergenceVariationPage() {
     <>
       <SiteHeader />
 
-      <main style={{
-        maxWidth: 900, margin: "0 auto",
-        padding: `${SPACING.xl} ${SPACING.md} 80px`,
-      }}>
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <article>
 
           {/* ── Hero ── */}
@@ -938,7 +950,7 @@ export default function F9NeurodivergenceVariationPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

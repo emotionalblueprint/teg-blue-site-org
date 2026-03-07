@@ -1,6 +1,15 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "What TEG-Blue Is", description: "An integrative framework connecting 139+ established theories into testable hypotheses about emotional regulation." },
+  { label: "What Is Original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
+  { label: "Status Snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
+  { label: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
+  { label: "Open Research Directions", description: "Four active directions: measurement, prediction, intervention, and AI alignment." },
+  { label: "Where to Go From Here", description: "Navigation paths into the framework depending on your research interest." },
+];
 
 export const metadata = {
   title: "Start Here | TEG-Blue Emotional Technology",
@@ -47,14 +56,7 @@ export default function ResearchEntryPage() {
     >
       <SiteHeader currentPath="/research-entry" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         {/* Header */}
         <header style={{ marginBottom: 32 }}>
           <ResearcherHero
@@ -311,7 +313,7 @@ export default function ResearchEntryPage() {
           <AuthorBlock />
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

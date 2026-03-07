@@ -2,8 +2,8 @@
 
 import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
 
 // ─── FRAMEWORK URL MAPPING ──────────────────────────────────────
 const FRAMEWORK_URLS = {
@@ -702,6 +702,13 @@ const globalModels = [
   },
 ];
 
+const SIDEBAR_SECTIONS = [
+  { label: "139+ Theories", description: "Every established theory TEG-Blue draws from, credited and documented with full research lineage." },
+  { label: "24 Research Domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
+  { label: "Framework Tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
+  { label: "CSV Download", description: "Full dataset available for download. Open data, open access." },
+];
+
 // ─── PAGE COMPONENT ─────────────────────────────────────────────
 
 export default function ScientificFoundationsPage() {
@@ -776,14 +783,7 @@ export default function ScientificFoundationsPage() {
     >
       <SiteHeader currentPath="/scientific-foundations" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         {/* ─── 1. HEADER ─────────────────────────────────────────── */}
         <ResearcherHero
           badge="SCIENTIFIC FOUNDATIONS"
@@ -1077,7 +1077,7 @@ export default function ScientificFoundationsPage() {
             </Link>
           </div>
         </footer>
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

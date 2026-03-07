@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [];
 
 export const metadata = {
   title: "Page Not Found | TEG-Blue Research",
@@ -42,14 +44,7 @@ export default function NotFound() {
     >
       <SiteHeader />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `60px ${SPACING.pagePadding} 80px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         {/* 404 Header */}
         <div style={{ marginBottom: 40 }}>
           <p
@@ -227,7 +222,7 @@ export default function NotFound() {
             Go to Research Hub
           </Link>
         </div>
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

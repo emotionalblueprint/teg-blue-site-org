@@ -1,17 +1,33 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Framework Position", description: "When the compass begins to move, contradictions emerge that were previously invisible. F11 maps these contradictions." },
+  { label: "The Regulation Thread", description: "F1-F7 generate contradictions but false coherence hides them. F8-F10 loosen false coherence." },
+  { label: "Multi-Rationality", description: "Paradoxical behaviour appears irrational only when assessed against a single set of values." },
+  { label: "Each Framework's Paradox", description: "Every mechanism in F1-F10 creates characteristic contradictions. A map, not a personal failing." },
+  { label: "The Paradox Cascade", description: "How contradictions go underground. The smooth story should worry you more than the messy one." },
+  { label: "Compass Position and Holding", description: "The compass must be flexible enough to hold contradiction. Measurable consequence of repair." },
+  { label: "Individual Paradoxes", description: "I am in more pain AND I am more alive. Not contradictions to resolve — contradictions to hold." },
+  { label: "Relational Paradoxes", description: "Both sides are real. The paradox is not in either person — it is in the interaction." },
+  { label: "Systemic Paradoxes", description: "Freedom-seeking authoritarianism. Institutions that perpetuate what they were designed to solve." },
+  { label: "Integration Means Holding", description: "True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing." },
+  { label: "Bridge to F12", description: "A person can see their configuration, name their paradoxes — and still do the thing. F12 explains why." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -204,10 +220,7 @@ export default function F11EmotionalParadoxesPage() {
     <>
       <SiteHeader />
 
-      <main style={{
-        maxWidth: 900, margin: "0 auto",
-        padding: `${SPACING.xl} ${SPACING.md} 80px`,
-      }}>
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <article>
 
           {/* ── Hero ── */}
@@ -934,7 +947,7 @@ export default function F11EmotionalParadoxesPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

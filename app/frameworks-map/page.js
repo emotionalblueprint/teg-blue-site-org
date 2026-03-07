@@ -2,8 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "The Regulation Thread", description: "The single thread running through all 12 frameworks — from biological signal to systemic structure and back." },
+  { label: "Three-Arc Structure", description: "Individual (F1–F3), Collective (F4–F7), Repair and Complexity (F8–F12). How the arcs connect." },
+  { label: "Arc 1 — Individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
+  { label: "Arc 2 — Collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
+  { label: "Arc 3 — Repair", description: "How awareness rebuilds, neurodivergent variation, generational transmission, paradox, and the architecture underneath." },
+  { label: "Three Core Models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Open Cycle." },
+];
 
 // The 12 Frameworks with structured content
 const FRAMEWORKS = [
@@ -281,14 +290,7 @@ export default function TheoreticalFoundationsPage() {
     >
       <SiteHeader currentPath="/frameworks-map" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         {/* Header */}
         <ResearcherHero
           badge="12 EXPLANATORY FRAMEWORKS"
@@ -563,7 +565,7 @@ export default function TheoreticalFoundationsPage() {
           </div>
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

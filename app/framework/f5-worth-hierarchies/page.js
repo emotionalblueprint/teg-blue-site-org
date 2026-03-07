@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,22 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "Worth-seeking is often a nervous system regulation strategy, not a character flaw." },
+  { label: "Overview", description: "F4 produces rule systems that determine belonging. F5 asks what those systems sort." },
+  { label: "Power as Safety", description: "When love or belonging were conditional early in life, power and status become regulation strategies." },
+  { label: "Safety Proxies", description: "Economic, social, and cultural capital function as nervous system stabilisers." },
+  { label: "The Filter of Worth", description: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy." },
+  { label: "The Five-Step Worth Loop", description: "Threat → validation-seeking → power-as-proxy → formal sorting → internalised worth." },
+  { label: "Chronic Invisibility", description: "Structural filtering produces chronic social threat. The compass gets stuck in Protection." },
+  { label: "Double False Coherence", description: "'I earned this' and 'something is wrong with me' are both false coherence serving regulation." },
+  { label: "What F5 Establishes", description: "The Filter of Worth as a named mechanism, the safety-proxy framework, the five-step loop." },
+  { label: "Research Foundations", description: "Sociology, social psychology, behavioural economics, network science, neuroscience, critical theory." },
+  { label: "Bridge to F6", description: "When worth sorting becomes stable and internalised, it stops being experienced as a system. It becomes perception." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -65,14 +81,7 @@ export default function F5WorthHierarchiesPage() {
     >
       <SiteHeader currentPath="/framework/f5-worth-hierarchies" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F5"
           title="Worth Hierarchies Regulate"
@@ -894,7 +903,7 @@ export default function F5WorthHierarchiesPage() {
           </section>
         </article>
 
-        </main>
+      </PageLayout>
 
       <SiteFooter />
 

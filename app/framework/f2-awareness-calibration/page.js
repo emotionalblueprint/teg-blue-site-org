@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,24 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "That the adults' awareness configuration is the child's developmental environment." },
+  { label: "Overview", description: "F1 is the instrument. F2 is the calibration. The three awareness capacities and the organising mechanism." },
+  { label: "Three Capacities at Birth", description: "What the infant arrives with: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness in proto-form." },
+  { label: "Feeling = Being", description: "Before cognition arrives, there is no observing self. Feeling is being. Feedback is identity." },
+  { label: "The Mechanism", description: "How each capacity develops through the specific experience of being met by a caregiver who already has that capacity online." },
+  { label: "Healthy Development", description: "What the system builds when conditions are met: accurate RE, sustainable ER, online SEA, a fluid compass." },
+  { label: "The Turn", description: "What happens when the awareness that gets passed is incomplete." },
+  { label: "The Stuck Compass", description: "How threat locks the mode, the mode becomes chronic, cognition builds identity around the locked position." },
+  { label: "What Identity Is", description: "Personality is a record, not a type. Configuration, not character." },
+  { label: "The Generational Chain", description: "Awareness teaches awareness across generations. The chain transmits through nervous systems, not words." },
+  { label: "What F2 Establishes", description: "Every core concept defined, from the three capacities to awareness-teaches-awareness." },
+  { label: "Research Foundations", description: "Attachment theory, developmental neuroscience, interpersonal neurobiology, and polyvagal theory." },
+  { label: "Bridge to F3", description: "Why the calibration persists after childhood ends. Cognition actively maintains false coherence." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -65,14 +83,7 @@ export default function F2AwarenessCalibrationPage() {
     >
       <SiteHeader currentPath="/framework/f2-awareness-calibration" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F2"
           title="Awareness Teaches Awareness"
@@ -1130,7 +1141,7 @@ export default function F2AwarenessCalibrationPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

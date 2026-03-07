@@ -1,6 +1,11 @@
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, TypeTag, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Citing TEG-Blue", description: "Full citation format for the framework, the validation study, and the theoretical architecture." },
+  { label: "Attribution", description: "Guidelines for independent work building on TEG-Blue — proper attribution and licensing." },
+];
 
 export const metadata = {
   title: "How to Cite | TEG-Blue Research",
@@ -23,14 +28,7 @@ export default function CitationsPage() {
     >
       <SiteHeader currentPath="/citations" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="CITATIONS"
           title="How to Cite TEG-Blue"
@@ -187,7 +185,7 @@ export default function CitationsPage() {
           </p>
         </div>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

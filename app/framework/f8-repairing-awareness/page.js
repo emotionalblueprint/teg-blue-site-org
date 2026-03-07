@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,24 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "The Turn Toward Repair", description: "F7 completes the escalation arc. F8 turns the system around. How do you go back?" },
+  { label: "The Regulation Thread Reversed", description: "Each substitute becomes unnecessary as the original develops. Repair means building the original." },
+  { label: "The Repair Question", description: "Developing what didn't have conditions to develop, not finding a hidden self beneath the adaptive one." },
+  { label: "Assessing Your Configuration", description: "Which capacities had conditions to develop, which didn't, and what is each one currently doing?" },
+  { label: "Common Configurations", description: "Five characteristic configurations, each producing a predictable chronic mode." },
+  { label: "Why Repair Is Difficult", description: "The nervous system resists repair because repair requires the same conditions of safety that were missing." },
+  { label: "What Repair Requires", description: "You cannot think your way into felt safety. You can only experience your way there." },
+  { label: "The Process", description: "Repair does not move in a straight line. The back-and-forth is not the problem — it is the process." },
+  { label: "Why Everyone Masks", description: "Masking is the predictable response to any system that regulates through enforced conformity." },
+  { label: "The Cost of Conformity", description: "Regulatory exhaustion. Developmental arrest. Identity confusion. Relational disconnection." },
+  { label: "Different Configurations See Different Things", description: "What one configuration cannot see, another can. No single configuration is complete." },
+  { label: "Collective Intelligence", description: "Different configurations are different sensors. Masked configurations mean shared blind spots." },
+  { label: "Bridge to F9", description: "What happens when difference becomes structural — when environments are designed for one neurological configuration." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -65,14 +83,7 @@ export default function F8RepairingAwarenessPage() {
     >
       <SiteHeader currentPath="/framework/f8-repairing-awareness" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F8"
           title="Repairing Awareness"
@@ -995,7 +1006,7 @@ export default function F8RepairingAwarenessPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

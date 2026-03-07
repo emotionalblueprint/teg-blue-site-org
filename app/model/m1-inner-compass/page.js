@@ -1,18 +1,26 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
   PropositionBox, ExpandableSection,
-  FluidCompassExplorer,
+  FluidCompassExplorer, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+const SIDEBAR_SECTIONS = [
+  { label: "The Compass", description: "The Inner Compass as a continuous gradient — not four boxes but a fluid needle tracking nervous system state." },
+  { label: "Four Modes", description: "Connection, Protection, Control, Domination — what each position means and how they relate." },
+  { label: "How the Needle Moves", description: "What makes the compass fluid versus stuck. Health is mobility, not position." },
+  { label: "Mode Architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
+  { label: "Research Foundations", description: "The established theories the compass model draws from — polyvagal theory, affective neuroscience, attachment." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -66,14 +74,7 @@ export default function M1InnerCompassPage() {
     >
       <SiteHeader currentPath="/model/m1-inner-compass" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="MODEL M1"
           title="Inner Compass & Four-Mode Gradient"
@@ -1294,7 +1295,7 @@ export default function M1InnerCompassPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

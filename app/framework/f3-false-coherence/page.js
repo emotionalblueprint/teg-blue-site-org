@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,24 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "False coherence is regulation, not deception. The self-reinforcing loop maintains the stuck compass in adulthood." },
+  { label: "Overview", description: "F2 sets the calibration. F3 explains why it holds. Cognition replaces emotional signals with invented narratives." },
+  { label: "The Core Mechanism", description: "Emotional signals arrive, cognition intercepts and replaces them, the replacement produces physiological relief." },
+  { label: "False Coherence", description: "A coherent internal story that feels true, functions as identity, and resists correction." },
+  { label: "Beliefs as Nervous System Events", description: "Cognitive dissonance is a regulatory response, not a logical error." },
+  { label: "Identity Under Threat", description: "When false coherence is challenged, the nervous system responds in proportion to the regulatory threat." },
+  { label: "The Self-Awareness Split", description: "Sharp pattern-reading capacity while SEA remains offline — intellectually sophisticated about everyone else." },
+  { label: "Emotional Distortion", description: "Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence." },
+  { label: "External Regulation", description: "When internal processing is unavailable, others must provide regulation. Four modes, four strategies." },
+  { label: "The Regulation Thread", description: "The critical turn: from biological return through developmental failure to cognitive replacement." },
+  { label: "What F3 Establishes", description: "False coherence defined, the self-reinforcing loop mapped, emotional distortion and external regulation named." },
+  { label: "Research Foundations", description: "Psychoanalytic theory, cognitive psychology, neuroscience, trauma studies, and attachment." },
+  { label: "Bridge to F4", description: "What happens when enough people running these mechanisms are in proximity." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -65,14 +83,7 @@ export default function F3FalseCoherencePage() {
     >
       <SiteHeader currentPath="/framework/f3-false-coherence" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F3"
           title="Adult Cognition & False Coherence"
@@ -1124,7 +1135,7 @@ export default function F3FalseCoherencePage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

@@ -1,17 +1,32 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Framework Position", description: "The architecture underneath everything. Two parallel information systems running at different speeds." },
+  { label: "The Regulation Thread", description: "F12 is not another link. It explains why the thread works the way it does." },
+  { label: "The Two Systems", description: "Emotional-somatic (milliseconds, unconscious) and cognitive-logical (seconds, conscious). Fixed sequence." },
+  { label: "Why Insight Alone Doesn't Change", description: "The timing problem, the domain mismatch, and the appropriate limitation." },
+  { label: "State-Dependent Behaviour", description: "Behaviour is state-dependent, not character-dependent. Change the state, and the person who shows up is different." },
+  { label: "One Mechanism, Twelve Angles", description: "TEG-Blue is not twelve frameworks. It is one mechanism described twelve times." },
+  { label: "The Ethics of Architecture", description: "Causality and accountability are separable. Understanding does not produce unlimited compassion or excuse harm." },
+  { label: "Intervention Matching", description: "Every intervention must be matched to compass position. State precedes method." },
+  { label: "The Design Implication", description: "Systems designed to change behaviour must address state, not just information or consequence." },
+  { label: "The Complete Architecture", description: "All human behaviour is state-dependent nervous system organisation responding to perceived safety." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -201,10 +216,7 @@ export default function F12TwoInformationSystemsPage() {
     <>
       <SiteHeader />
 
-      <main style={{
-        maxWidth: 900, margin: "0 auto",
-        padding: `${SPACING.xl} ${SPACING.md} 80px`,
-      }}>
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <article>
 
           {/* ── Hero ── */}
@@ -924,7 +936,7 @@ export default function F12TwoInformationSystemsPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

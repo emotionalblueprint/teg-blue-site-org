@@ -4,8 +4,13 @@ import {
   MODE_ORANGE, MODE_PINK, RESEARCHER,
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 import CompassBar from "./CompassBar";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns." },
+  { label: "Components", description: "Reusable components and their usage across the research site." },
+];
 
 export const metadata = {
   title: "Design System | TEG-Blue Research",
@@ -99,14 +104,7 @@ export default function DesignSystemPage() {
     >
       <SiteHeader currentPath="/design-system" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <h1
           style={{
             fontSize: TYPE_SCALE.pageTitle.size,
@@ -567,7 +565,7 @@ export default function DesignSystemPage() {
           </p>
           <CompassBar />
         </section>
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

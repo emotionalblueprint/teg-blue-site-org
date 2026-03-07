@@ -1,7 +1,15 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Thesis", description: "Emotion is data — biological information the nervous system uses to evaluate safety, not noise to be filtered out." },
+  { label: "Primary Concepts", description: "Emotion ≠ irrational. Emotion = data. Emotion is relational, not disruptive." },
+  { label: "Secondary Concepts", description: "Emotion as survival signal. Ignoring emotions means less information. Pattern recognition, not self-help." },
+  { label: "What This Explains", description: "What becomes visible when emotion is treated as information rather than interference." },
+  { label: "Connection to TEG-Blue", description: "How these epistemological foundations underpin the entire framework architecture." },
+];
 
 export const metadata = {
   title: "Epistemological Foundations | TEG-Blue Research",
@@ -48,14 +56,7 @@ export default function EpistemologicalFoundationsPage() {
     >
       <SiteHeader currentPath="/epistemological-foundations" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="EPISTEMOLOGY"
           title="Epistemological Foundations"
@@ -476,7 +477,7 @@ export default function EpistemologicalFoundationsPage() {
           </div>
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -29,6 +29,23 @@ const F1CognitiveUpgradeDiagram = dynamic(
   () => import("@/src/components/framework-diagrams/F1CognitiveUpgradeDiagram"),
   { ssr: false }
 );
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "The six foundational claims the entire F1 framework rests on." },
+  { label: "Overview", description: "A map of the complete seven-step trajectory, from biological signal to social structure." },
+  { label: "The Signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
+  { label: "The Instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
+  { label: "The Hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
+  { label: "The Cognitive Upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
+  { label: "The Architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
+  { label: "The Full Arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
+  { label: "What F1 Establishes", description: "A consolidated reference: every core concept defined, every key formulation stated." },
+  { label: "Research Foundations", description: "The established theories F1 draws from, listed by tradition." },
+  { label: "Bridge to F2", description: "Why Biological Restoration must be learned, not just designed." },
+  { label: "Where to Go Next", description: "Paths forward depending on what you need." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -82,14 +99,7 @@ export default function F1EmotionalGradientPage() {
     >
       <SiteHeader currentPath="/framework/f1-emotional-gradient" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F1"
           title="Emotions as Biological Information"
@@ -1356,7 +1366,7 @@ export default function F1EmotionalGradientPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

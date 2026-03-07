@@ -1,7 +1,16 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Layer 1 — Measurement", description: "The Four-Mode Gradient: Connection → Protection → Control → Domination. Observable, testable." },
+  { label: "Layer 2 — Frameworks", description: "12 explanatory frameworks across three arcs. Why modes exist, how patterns scale, what enables change." },
+  { label: "Layer 3 — Emotional Tools", description: "Applied instruments translating the architecture into usable assessment and navigation tools." },
+  { label: "Layer 4 — AI Safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
+  { label: "Core Functions", description: "The four core functions of the system and how the layers interact." },
+  { label: "Ethical Constraint", description: "Trauma-informed data architecture. What the system will and will not do." },
+];
 
 export const metadata = {
   title: "System Overview | TEG-Blue Research",
@@ -50,14 +59,7 @@ export default function FoundationsPage() {
     >
       <SiteHeader currentPath="/foundations" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="SYSTEM ARCHITECTURE"
           title="System Overview"
@@ -379,7 +381,7 @@ export default function FoundationsPage() {
           </div>
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

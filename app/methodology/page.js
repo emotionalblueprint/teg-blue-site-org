@@ -1,7 +1,17 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock, PageLayout } from "@/src/components";
 import { generateFAQJsonLd } from "@/src/lib/jsonld";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Open Science Principles", description: "Everything published, everything testable, everything open access. The governing research principles." },
+  { label: "Status Ladder", description: "Where each component stands: validated, proposed, or open. Transparent about certainty levels." },
+  { label: "Validation Approach", description: "How TEG-Blue tests its claims — computational analysis, natural language data, independent replication." },
+  { label: "How TEG-Blue Was Developed", description: "The architecture, the literature mapping, AI-assisted research tools, and honest limitations." },
+  { label: "Ethical Standards", description: "Trauma-informed data architecture. What research ethics look like for emotional technology." },
+  { label: "AI-Readable Research", description: "Designed for both human and AI consumption. Structured for machine legibility." },
+  { label: "Where We Stand Honestly", description: "A candid assessment of current methodology — what is strong, what needs work." },
+];
 
 export const metadata = {
   title: "Methodology | TEG-Blue Research",
@@ -68,14 +78,7 @@ export default function MethodologyPage() {
     >
       <SiteHeader currentPath="/methodology" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="METHODOLOGY"
           title="Research Methodology"
@@ -340,7 +343,7 @@ export default function MethodologyPage() {
           <AuthorBlock />
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

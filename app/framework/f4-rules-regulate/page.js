@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,21 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "Rule-following is often a nervous system regulation strategy rather than a reasoning choice." },
+  { label: "Overview", description: "F3 completes the individual arc. F4 asks what happens when enough people running those mechanisms are in proximity." },
+  { label: "The Scaling Mechanism", description: "How F3's three mechanisms aggregate into group structures." },
+  { label: "How Rules Get Internalised", description: "The seven-step mechanism: attention narrows, ambiguity decreases, deviation costs, conformity rewarded." },
+  { label: "Six Rule Categories", description: "Roles, Obedience, Performance, Dominance, Punishment, Entitlement — a regulatory taxonomy." },
+  { label: "Rule Escalation", description: "Four stages paralleling the four-mode gradient: from flexible norms through authoritarian control." },
+  { label: "Cross-Theoretical Convergence", description: "Ten research traditions all describing the same mechanism. Rules as nervous system regulation at every scale." },
+  { label: "What F4 Establishes", description: "The scaling mechanism defined, the seven-step loop mapped, the six-category taxonomy available." },
+  { label: "Research Foundations", description: "Sociology, social psychology, neuroscience, trauma studies, and political psychology." },
+  { label: "Bridge to F5", description: "Rule systems do not just organise behaviour. They organise value. Sorting formalises into worth hierarchies." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -66,14 +81,7 @@ export default function F4RulesRegulatePage() {
     >
       <SiteHeader currentPath="/framework/f4-rules-regulate" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F4"
           title="Rules Regulate"
@@ -943,7 +951,7 @@ export default function F4RulesRegulatePage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

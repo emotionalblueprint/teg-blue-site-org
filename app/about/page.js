@@ -1,6 +1,13 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Two Sites", description: "How teg-blue.com (interactive tools) and teg-blue.org (open science) work together." },
+  { label: "The Founder", description: "Anna Paretas-Artacho — how TEG-Blue started, the empirical validation, and the research approach." },
+  { label: "Research Identity", description: "Open science, testable claims, invited corrections. What TEG-Blue is and is not." },
+  { label: "Navigation", description: "Where to go next depending on what you need." },
+];
 
 export const metadata = {
   title: "About | TEG-Blue Emotional Technology",
@@ -49,14 +56,7 @@ export default function AboutPage() {
     >
       <SiteHeader currentPath="/about" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="ABOUT"
           title="About TEG-Blue"
@@ -237,7 +237,7 @@ export default function AboutPage() {
             <NavLink href="/collaborate" label="Collaborate" />
           </div>
         </section>
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

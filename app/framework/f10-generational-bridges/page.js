@@ -1,17 +1,32 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Framework Position", description: "F8 describes individual repair. F9 describes structural repair. F10 asks what happens across generations." },
+  { label: "The Regulation Thread", description: "What transmits differently when the original is present. The thread runs in both directions." },
+  { label: "Awareness Across Generations", description: "The child absorbs the configuration, not the aspiration. Develop the capacity, and what transmits changes." },
+  { label: "Five Transmission Pathways", description: "Implicit learning, co-regulation modelling, environmental design, epigenetic modification, narrative inheritance." },
+  { label: "What Isn't Processed Gets Passed On", description: "The child doesn't inherit the event — the child inherits the regulatory consequence of the event." },
+  { label: "Coherence, Not Content", description: "It is not what happened that determines what is transmitted — it is whether the adult has made coherent sense of it." },
+  { label: "Understanding Without Excusing", description: "I understand why you became who you became — and I see what it cost me. Both are true." },
+  { label: "Relationships Across Repair", description: "Does this relationship create conditions for Connection, or does it re-expose to the original configuration?" },
+  { label: "True Elderhood", description: "Not automatic — what the elder becomes when the work F8 describes has been done." },
+  { label: "Bridge to F11", description: "When the adult begins to see clearly, contradictions emerge that survival previously kept hidden." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -204,10 +219,7 @@ export default function F10GenerationalBridgesPage() {
     <>
       <SiteHeader />
 
-      <main style={{
-        maxWidth: 900, margin: "0 auto",
-        padding: `${SPACING.xl} ${SPACING.md} 80px`,
-      }}>
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <article>
 
           {/* ── Hero ── */}
@@ -925,7 +937,7 @@ export default function F10GenerationalBridgesPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

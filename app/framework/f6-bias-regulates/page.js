@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -12,6 +12,22 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", description: "Bias is pattern recognition in service of regulation, not a reasoning error." },
+  { label: "Overview", description: "F5 describes the Filter of Worth. F6 describes what happens when that structure gets absorbed into perception itself." },
+  { label: "Bias as Regulation", description: "If believing something reduces threat, the nervous system keeps believing it — below conscious awareness." },
+  { label: "The Bias Architecture", description: "Eight interacting constructs: Bias Architecture, Emotional Logic, State-Dependent Perception, and more." },
+  { label: "Three Categories of Bias", description: "Cognitive biases provide certainty. Social biases provide belonging. Internalised biases provide identity coherence." },
+  { label: "The Formation Loop", description: "Uncertainty → rapid interpretation → identity fusion → social reinforcement → challenge triggers defence." },
+  { label: "Phenomenology of Certainty", description: "Certainty is physiological stability, not epistemic accuracy. Why bias feels like truth." },
+  { label: "The Revision Pathway", description: "Shame does not unlearn bias. Safety does. Five specific conditions for bias revision." },
+  { label: "What F6 Establishes", description: "The regulatory reframe, the eight-construct architecture, the formation loop, the revision pathway." },
+  { label: "Research Foundations", description: "Cognitive psychology, social psychology, neuroscience, clinical psychology, implicit cognition research." },
+  { label: "Bridge to F7", description: "When bias becomes rigid, systems seek stronger stabilisation. From filtering perception to enforcing it." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -65,14 +81,7 @@ export default function F6BiasRegulatesPage() {
     >
       <SiteHeader currentPath="/framework/f6-bias-regulates" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="FRAMEWORK F6"
           title="Bias Regulates"
@@ -901,7 +910,7 @@ export default function F6BiasRegulatesPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

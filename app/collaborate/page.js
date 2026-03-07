@@ -1,6 +1,13 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "Everything Is Open", description: "All research published, all data available. Open access, open science, open invitation." },
+  { label: "How to Cite", description: "Citation format and attribution guidelines for academic and professional use." },
+  { label: "Research Directions", description: "Five priority questions still open — where independent researchers can contribute most." },
+  { label: "The Specific Ask", description: "What TEG-Blue needs from the research community right now." },
+];
 
 export const metadata = {
   title: "Use This Work | TEG-Blue Emotional Technology",
@@ -44,14 +51,7 @@ export default function CollaboratePage() {
     >
       <SiteHeader currentPath="/collaborate" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="OPEN ACCESS"
           title="Use this work"
@@ -186,7 +186,7 @@ export default function CollaboratePage() {
           </div>
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

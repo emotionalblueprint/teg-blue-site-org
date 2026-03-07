@@ -3,12 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RADIUS, gradientCardBg,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, ResearcherHero, PageLayout,
 } from "@/src/components";
+
+const SIDEBAR_SECTIONS = [
+  { label: "M1 — Inner Compass", description: "The four-mode gradient as a continuous compass. How the needle moves, what each position means." },
+  { label: "M2 — Three Capacities", description: "Reading Emotions, Emotional Resonance, Self-Emotional Awareness. The calibration system." },
+  { label: "M3 — The Open Cycle", description: "What happens in the body when the emotional cycle completes — and what happens when it doesn't." },
+  { label: "Integration", description: "How the three models connect: the instrument, its calibration, and its biological mechanism." },
+];
 
 // ─── MODEL DATA ─────────────────────────────────────────────
 
@@ -103,14 +110,7 @@ export default function ModelsPage() {
     >
       <SiteHeader currentPath="/models" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         {/* Hero */}
         <ResearcherHero
           badge="3 FOUNDATIONAL MODELS"
@@ -197,7 +197,7 @@ export default function ModelsPage() {
           </Link>
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

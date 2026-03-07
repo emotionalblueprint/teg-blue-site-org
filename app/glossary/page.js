@@ -1,5 +1,5 @@
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import GlossaryList from "./GlossaryList";
 
 export const metadata = {
@@ -1645,6 +1645,13 @@ const GLOSSARY_TERMS = [
   },
 ];
 
+const SIDEBAR_SECTIONS = [
+  { label: "162 Terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
+  { label: "Framework Tags", description: "Each term tagged to its source framework (F1–F12) for cross-reference navigation." },
+  { label: "Core Models", description: "The foundational vocabulary: Inner Compass, Four-Mode Gradient, Three Awareness Capacities, Open Cycle." },
+  { label: "Regulation Thread", description: "Terms tracing the thread from biological signal through developmental calibration to systemic scale." },
+];
+
 export default function GlossaryPage() {
   return (
     <div
@@ -1656,14 +1663,7 @@ export default function GlossaryPage() {
     >
       <SiteHeader currentPath="/glossary" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="GLOSSARY"
           title="Key Terms & Concepts"
@@ -1672,7 +1672,7 @@ export default function GlossaryPage() {
 
         <GlossaryList terms={GLOSSARY_TERMS} />
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

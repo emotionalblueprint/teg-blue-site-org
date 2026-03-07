@@ -1,12 +1,12 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT, RADIUS, gradientCardBg,
   AWARENESS, MODE_PINK,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -19,6 +19,14 @@ const RE_COLOR = AWARENESS.RE;
 const ER_COLOR = AWARENESS.ER;
 const SEA_COLOR = AWARENESS.SEA;
 const RE_CHRONIC = MODE_PINK;  // pink — domination / precision without feedback
+
+const SIDEBAR_SECTIONS = [
+  { label: "Three Capacities", description: "Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — the calibration system." },
+  { label: "How They Develop", description: "Each capacity develops through being met by a caregiver who already has that capacity online." },
+  { label: "Configurations", description: "How different combinations of online/offline capacities produce different patterns and chronic modes." },
+  { label: "SEA as Keystone", description: "Why Self-Emotional Awareness is the critical variable — present in all healthy modes, absent in all chronic modes." },
+  { label: "Research Foundations", description: "Attachment theory, developmental neuroscience, mentalization, interpersonal neurobiology." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -72,14 +80,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
     >
       <SiteHeader currentPath="/model/m2-three-awareness-capacities" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="MODEL M2"
           title="Three Awareness Capacities"
@@ -1224,7 +1225,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

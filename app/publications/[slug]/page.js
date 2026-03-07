@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import { loadNode, resolveConnections, getAllSlugs } from "@/src/lib/content";
 import { generateJsonLd, generateMetaTags } from "@/src/lib/jsonld";
-import { BG, FONT, SPACING } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, FONT } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 import PublicationPage from "@/src/templates/PublicationPage";
+
+const SIDEBAR_SECTIONS = [];
 
 // Generate static paths for all publications
 export async function generateStaticParams() {
@@ -63,16 +65,9 @@ export default async function PublicationRoute({ params }) {
     >
       <SiteHeader currentPath={`/publications/${slug}`} />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <PublicationPage node={node} />
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

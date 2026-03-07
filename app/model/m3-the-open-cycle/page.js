@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import OpenCycleExplorer from "@/src/components/OpenCycleExplorer";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -13,6 +13,14 @@ import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+const SIDEBAR_SECTIONS = [
+  { label: "The Cycle", description: "What happens in the body when the emotional cycle completes — the biological restoration sequence." },
+  { label: "When It Doesn't Complete", description: "What happens when the cycle is interrupted — residue, accumulation, threshold crossing." },
+  { label: "The Return Sequence", description: "How the body was designed to return from threat to safety. The mechanism at the centre of repair." },
+  { label: "System-by-System", description: "How each body system processes and clears threat activation — cortisol, muscle tension, breath." },
+  { label: "Research Foundations", description: "Somatic experiencing, polyvagal theory, stress physiology, allostatic load research." },
+];
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -66,14 +74,7 @@ export default function M3TheOpenCyclePage() {
     >
       <SiteHeader currentPath="/model/m3-the-open-cycle" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="MODEL M3"
           title="The Open Cycle"
@@ -785,7 +786,7 @@ export default function M3TheOpenCyclePage() {
           </section>
         </article>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

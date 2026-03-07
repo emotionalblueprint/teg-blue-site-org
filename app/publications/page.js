@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, RESEARCHER, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, TypeTag, StatusBadge, ResearcherHero, AuthorBlock } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, TypeTag, StatusBadge, ResearcherHero, AuthorBlock } from "@/src/components";
 
 export const metadata = {
   title: "Publications | TEG-Blue Research",
@@ -110,6 +110,14 @@ const scholarlyArticleSchema = {
   "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the four-mode gradient can be reliably detected in unstructured text. Key findings: All four regulatory modes successfully detected; 33.8% of individuals escalated toward Control/Domination when challenged; 22.2% de-escalated toward Connection; De-escalators showed 78% higher rates of complexity markers."
 };
 
+const SIDEBAR_SECTIONS = [
+  { label: "Validation Study", description: "Computational analysis of 10,000+ natural conflict narratives. The empirical backbone of the four-mode gradient." },
+  { label: "All Publications", description: "Published research papers, working papers, and theoretical architecture documents." },
+  { label: "Datasets", description: "Open datasets supporting the validation study and ongoing research." },
+  { label: "How to Cite", description: "Citation format and examples for academic use." },
+  { label: "Author", description: "About the research team and collaboration opportunities." },
+];
+
 export default function PublicationsPage() {
   const publications = loadAllNodes("publication");
 
@@ -133,14 +141,7 @@ export default function PublicationsPage() {
 
       <SiteHeader currentPath="/publications" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `32px ${SPACING.pagePadding} 60px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="PUBLICATIONS"
           title="Publications & Datasets"
@@ -349,7 +350,7 @@ export default function PublicationsPage() {
           <AuthorBlock />
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
     </div>

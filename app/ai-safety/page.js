@@ -1,7 +1,12 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPACING, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
+
+const SIDEBAR_SECTIONS = [
+  { label: "The Problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
+  { label: "What TEG-Blue Adds", description: "Nuance AI systems can actually use — structured emotional pattern recognition for safer, more accurate AI." },
+];
 
 export const metadata = {
   title: "AI Safety Applications — TEG-Blue Emotional Technology",
@@ -37,14 +42,7 @@ export default function AISafetyPage() {
     >
       <SiteHeader currentPath="/ai-safety" />
 
-      <main
-        id="main-content"
-        style={{
-          maxWidth: SPACING.containerMax,
-          margin: "0 auto",
-          padding: `48px ${SPACING.pagePadding} 80px`,
-        }}
-      >
+      <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
         <ResearcherHero
           badge="AI SAFETY"
           title="AI Safety Applications"
@@ -846,7 +844,7 @@ export default function AISafetyPage() {
           </div>
         </section>
 
-      </main>
+      </PageLayout>
 
       <SiteFooter />
 

@@ -1,11 +1,17 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
-import { BG, SPACING, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter } from "@/src/components";
+import { BG, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 
 const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSection"), { ssr: false });
 
+const SIDEBAR_SECTIONS = [
+  { label: "What TEG-Blue Is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
+  { label: "Empirical Evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
+  { label: "The 12 Frameworks", description: "Three arcs — Individual, Collective, Repair — explaining how emotional patterns form, scale, and change." },
+  { label: "Work With the Material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
+];
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
@@ -29,14 +35,7 @@ export default function ResearchHub() {
       >
         <SiteHeader currentPath="/" />
 
-        <main
-          id="main-content"
-          style={{
-            maxWidth: SPACING.containerMax,
-            margin: "0 auto",
-            padding: `32px ${SPACING.pagePadding} 60px`,
-          }}
-        >
+        <PageLayout sidebarSections={SIDEBAR_SECTIONS}>
           {/* ── Hero ── */}
           <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(16px, 3vw, 24px)" }}>
             {/* Badge pill */}
@@ -334,7 +333,7 @@ export default function ResearchHub() {
             </div>
           </section>
 
-        </main>
+        </PageLayout>
 
         <SiteFooter />
       </div>
