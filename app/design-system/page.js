@@ -182,6 +182,127 @@ export default function DesignSystemPage() {
           </SwatchRow>
         </section>
 
+        {/* ─── 3. BACKGROUNDS ──────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Backgrounds</SectionTitle>
+          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {Object.entries(BG).map(([name, cssVar]) => (
+              <div
+                key={name}
+                style={{
+                  background: cssVar,
+                  padding: "14px 18px",
+                  borderRadius: name === "page" ? `${RADIUS.md}px ${RADIUS.md}px 0 0`
+                    : name === "inset" ? `0 0 ${RADIUS.md}px ${RADIUS.md}px`
+                    : 0,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  border: `1px solid ${BORDER.default}`,
+                }}
+              >
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.secondary,
+                  textTransform: "uppercase",
+                }}>
+                  BG.{name}
+                </span>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                }}>
+                  {cssVar}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── 4. TEXT ──────────────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Text</SectionTitle>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              { name: "primary", sample: "Primary text — headings, emphasis" },
+              { name: "secondary", sample: "Secondary text — body copy" },
+              { name: "muted", sample: "Muted text — supporting content" },
+              { name: "hint", sample: "Hint text — placeholders, labels" },
+              { name: "micro", sample: "Micro text — footnotes, timestamps" },
+            ].map(({ name, sample }) => (
+              <div key={name} style={{ display: "flex", alignItems: "baseline", gap: 16 }}>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.muted,
+                  textTransform: "uppercase",
+                  minWidth: 80,
+                  flexShrink: 0,
+                }}>
+                  {name}
+                </span>
+                <span style={{
+                  color: TEXT[name],
+                  fontSize: TYPE_SCALE.body.size,
+                  lineHeight: TYPE_SCALE.body.lineHeight,
+                }}>
+                  {sample}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── 5. BORDERS ──────────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Borders</SectionTitle>
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+            {Object.entries(BORDER).map(([name, cssVar]) => (
+              <div
+                key={name}
+                style={{
+                  width: 160,
+                  height: 80,
+                  border: `1px solid ${cssVar}`,
+                  borderRadius: RADIUS.md,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 4,
+                  background: BG.card,
+                }}
+              >
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.secondary,
+                  textTransform: "uppercase",
+                }}>
+                  {name}
+                </span>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                }}>
+                  {cssVar}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Remaining sections will be added in subsequent tasks */}
       </main>
 
