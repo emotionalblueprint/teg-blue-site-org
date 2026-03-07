@@ -1,17 +1,16 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { FONT, PATTERN_GRADIENT, BG } from "../styles/tokens";
+import { FONT, PATTERN, PATTERN_GRADIENT, BG, hexToRgba } from "../styles/tokens";
 
 const MODES = [
-  { key: "A", label: "Connection", hex: "#60a5fa", center: 0.125 },
-  { key: "B", label: "Protection", hex: "#3b82f6", center: 0.375 },
-  { key: "C", label: "Control", hex: "#2563eb", center: 0.625 },
-  { key: "D", label: "Domination", hex: "#1d4ed8", center: 0.875 },
+  { key: 'A', label: 'Connection', hex: PATTERN.A.primary, center: 0.125 },
+  { key: 'B', label: 'Protection', hex: PATTERN.B.primary, center: 0.375 },
+  { key: 'C', label: 'Control',    hex: PATTERN.C.primary, center: 0.625 },
+  { key: 'D', label: 'Domination', hex: PATTERN.D.primary, center: 0.875 },
 ];
 
-const BAR_GRADIENT =
-  "linear-gradient(90deg, #60a5fa 0%, #60a5fa 20%, #3b82f6 35%, #3b82f6 45%, #2563eb 55%, #2563eb 70%, #1d4ed8 85%, #1d4ed8 100%)";
+const BAR_GRADIENT = `linear-gradient(90deg, ${PATTERN.A.primary} 0%, ${PATTERN.A.primary} 20%, ${PATTERN.B.primary} 35%, ${PATTERN.B.primary} 45%, ${PATTERN.C.primary} 55%, ${PATTERN.C.primary} 70%, ${PATTERN.D.primary} 85%, ${PATTERN.D.primary} 100%)`;
 
 const MAGNET_RADIUS = 0.04;
 
@@ -117,7 +116,7 @@ export default function PatternGradientBar({
               width: 3,
               left: `${pos * 100}%`,
               transform: "translateX(-50%)",
-              backgroundColor: "rgba(0,0,0,0.6)",
+              backgroundColor: hexToRgba('#000000', 0.6),
             }}
           />
         ))}
@@ -133,7 +132,7 @@ export default function PatternGradientBar({
               width: 1,
               left: `${mode.center * 100}%`,
               transform: "translateX(-50%)",
-              backgroundColor: "rgba(255,255,255,0.12)",
+              backgroundColor: hexToRgba('#ffffff', 0.12),
             }}
           />
         ))}
