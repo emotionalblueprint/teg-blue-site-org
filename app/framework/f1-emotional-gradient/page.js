@@ -260,7 +260,7 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-signal" style={sectionHeadingStyle}>
               The Signal — How the Body Evaluates
             </h2>
-            <DiagramToggle label="signal flow diagram">
+            <DiagramToggle label="signal flow diagram" defaultOpen>
               <F1SignalDiagram />
             </DiagramToggle>
 
