@@ -2,21 +2,15 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
+import {
+  BG, TEXT, BORDER, FONT, SPACING,
+  RESEARCHER, PATTERN, MODE_ORANGE, hexToRgba, gradientCardBg,
+} from "@/src/styles/tokens";
 
-// ─── Researcher Design Tokens ─────────────────────────────────
-const BG_PAGE = "#0f172a";
-const BG_CARD = "#1e293b";
-const BG_SURFACE = "#334155";
-const TEXT_PRIMARY = "#f1f5f9";
-const TEXT_SECONDARY = "#cbd5e1";
-const TEXT_MUTED = "#94a3b8";
-const TEXT_HINT = "#64748b";
-const BORDER_DEFAULT = "#334155";
-const ACCENT = "#2563eb";
-
-// ─── Line Colors ────────────────────────────────────────────
-const MAIN_BLUE = "#3b82f6";   // Processed — main site blue
-const ORANGE = "#f97316";      // Unprocessed — SEA offline (canonical mode color)
+// ─── Map token values to the names used throughout this component ──
+const MAIN_BLUE = PATTERN.B.primary;   // #3b82f6
+const ORANGE = MODE_ORANGE;            // #f97316
+const ACCENT = RESEARCHER.accent;      // #2563eb
 
 // ─── Chart Constants ──────────────────────────────────────────
 const VW = 900, VH = 220;
@@ -170,7 +164,7 @@ export default function EmotionWaveSection() {
 
   return (
     <section ref={sectionRef} style={{
-      background: BG_PAGE,
+      background: BG.page,
       padding: "40px 0 48px",
       marginBottom: "clamp(28px, 5vw, 48px)",
       position: "relative",
@@ -199,7 +193,7 @@ export default function EmotionWaveSection() {
         <div style={{
           position: "absolute", top: "18%", left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "300px",
-          background: `radial-gradient(ellipse, rgba(37,99,235,0.04) 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse, ${hexToRgba(ACCENT, 0.04)} 0%, transparent 70%)`,
           pointerEvents: "none", zIndex: 0
         }}/>
 
@@ -211,12 +205,12 @@ export default function EmotionWaveSection() {
               display: "inline-block",
               padding: "4px 10px",
               borderRadius: 6,
-              background: `rgba(37,99,235,0.12)`,
-              border: `1px solid rgba(37,99,235,0.25)`,
+              background: hexToRgba(ACCENT, 0.12),
+              border: `1px solid ${hexToRgba(ACCENT, 0.25)}`,
               marginBottom: "16px"
             }}>
               <span style={{
-                fontFamily: "'JetBrains Mono', 'SF Mono', 'Consolas', monospace",
+                fontFamily: FONT.mono,
                 fontSize: "10px", fontWeight: 600,
                 letterSpacing: "0.12em", color: MAIN_BLUE, textTransform: "uppercase",
               }}>
@@ -226,15 +220,15 @@ export default function EmotionWaveSection() {
             <h2 style={{
               fontFamily: "inherit",
               fontSize: "clamp(22px, 3.5vw, 32px)",
-              fontWeight: 700, color: TEXT_PRIMARY, lineHeight: 1.2,
+              fontWeight: 700, color: TEXT.primary, lineHeight: 1.2,
               letterSpacing: "-0.02em", marginBottom: "14px"
             }}>
               Emotions are data.<br/>
-              <span style={{ color: TEXT_MUTED, fontWeight: 400 }}>They are biological information.</span>
+              <span style={{ color: TEXT.muted, fontWeight: 400 }}>They are biological information.</span>
             </h2>
             <p style={{
               fontSize: "15px",
-              color: TEXT_HINT, lineHeight: 1.75, maxWidth: "520px"
+              color: TEXT.hint, lineHeight: 1.75, maxWidth: "520px"
             }}>
               Before behavior, before belief, before pattern — there is a neurochemical arc with a precise biological window for integration. TEG-Blue begins here.
             </p>
@@ -245,11 +239,11 @@ export default function EmotionWaveSection() {
             {[[MAIN_BLUE, "Processed"], [ORANGE, "Unprocessed"]].map(([color, label]) => (
               <div key={label} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
                 <svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke={color} strokeWidth="1.5"/></svg>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "8.5px", color, letterSpacing: "0.12em" }}>{label}</span>
+                <span style={{ fontFamily: FONT.mono, fontSize: "8.5px", color, letterSpacing: "0.12em" }}>{label}</span>
               </div>
             ))}
             <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "16px" }}>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "8px", color: TEXT_HINT, letterSpacing: "0.08em" }}>
+              <span style={{ fontFamily: FONT.mono, fontSize: "8px", color: TEXT.hint, letterSpacing: "0.08em" }}>
                 x-axis: compressed time (ms → min)
               </span>
               {done && (
@@ -259,11 +253,11 @@ export default function EmotionWaveSection() {
                   style={{
                     display: "flex", alignItems: "center", gap: "6px",
                     padding: "4px 12px",
-                    border: `1px solid ${BORDER_DEFAULT}`,
+                    border: `1px solid ${BORDER.default}`,
                     background: "transparent",
-                    color: TEXT_MUTED,
+                    color: TEXT.muted,
                     borderRadius: "6px",
-                    fontFamily: "'JetBrains Mono', monospace",
+                    fontFamily: FONT.mono,
                     fontSize: "9px",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
@@ -273,8 +267,8 @@ export default function EmotionWaveSection() {
                   }}
                 >
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                    <path d="M1 1v4h4" stroke={TEXT_MUTED} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT_MUTED} strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round"/>
                   </svg>
                   Replay
                 </button>
@@ -291,25 +285,25 @@ export default function EmotionWaveSection() {
                 <line key={v}
                   x1={PL} y1={PT + (1 - v) * PH}
                   x2={PL + PW} y2={PT + (1 - v) * PH}
-                  stroke={`rgba(37,99,235,0.06)`} strokeWidth="1"/>
+                  stroke={hexToRgba(ACCENT, 0.06)} strokeWidth="1"/>
               ))}
 
               {/* Baseline */}
               <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
-                stroke={`rgba(37,99,235,0.15)`} strokeWidth="1"/>
+                stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
 
               {/* Y-axis */}
               <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
-                stroke={`rgba(37,99,235,0.15)`} strokeWidth="1"/>
+                stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
               <text x={14} y={PT + PH / 2} textAnchor="middle"
                 transform={`rotate(-90,14,${PT + PH / 2})`}
-                style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px", fill: TEXT_HINT, letterSpacing: "0.12em" }}>
+                style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px", fill: TEXT.hint, letterSpacing: "0.12em" }}>
                 ACTIVATION
               </text>
 
               {/* Bifurcation line */}
               <line x1={branchX} y1={PT - 6} x2={branchX} y2={PT + PH}
-                stroke="rgba(59,130,246,0.25)" strokeWidth="1" strokeDasharray="3,5"/>
+                stroke={hexToRgba(MAIN_BLUE, 0.25)} strokeWidth="1" strokeDasharray="3,5"/>
 
               {/* Ghost paths */}
               <path d={unprocGhost} fill="none" stroke={ORANGE} strokeWidth="1" strokeOpacity="0.1"/>
@@ -326,12 +320,12 @@ export default function EmotionWaveSection() {
               {/* Cursor */}
               {progress > 0.01 && (
                 <line x1={cx} y1={PT - 4} x2={cx} y2={PT + PH}
-                  stroke="rgba(148,163,184,0.1)" strokeWidth="1"/>
+                  stroke={hexToRgba('#94a3b8', 0.1)} strokeWidth="1"/>
               )}
 
               {/* Cursor dots */}
               {progress > 0.01 && !showSplit && (
-                <circle cx={cx} cy={pyAtCursor} r="2.5" fill={TEXT_SECONDARY}/>
+                <circle cx={cx} cy={pyAtCursor} r="2.5" fill={TEXT.secondary}/>
               )}
               {showSplit && (
                 <>
@@ -363,10 +357,10 @@ export default function EmotionWaveSection() {
                 return (
                   <g key={m.id}>
                     <line x1={mx} y1={PT + PH} x2={mx} y2={PT + PH + 5}
-                      stroke={reached ? m.color : `rgba(37,99,235,0.15)`} strokeWidth="1"/>
+                      stroke={reached ? m.color : hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
                     <text x={mx} y={PT + PH + 15} textAnchor="middle"
                       style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px",
-                        fill: reached ? m.color : TEXT_HINT, letterSpacing: "0.05em" }}>
+                        fill: reached ? m.color : TEXT.hint, letterSpacing: "0.05em" }}>
                       {m.sub}
                     </text>
                   </g>
@@ -386,28 +380,28 @@ export default function EmotionWaveSection() {
               return (
                 <div key={m.id} className={`moment-pill ${reached ? "visible" : ""}`}
                   style={{
-                    background: `linear-gradient(135deg, rgba(37,99,235,0.06), transparent)`,
+                    background: `linear-gradient(135deg, ${hexToRgba(ACCENT, 0.06)}, transparent)`,
                     padding: "20px 18px",
                     borderRadius: "12px",
-                    border: `1px solid ${reached ? `rgba(37,99,235,0.2)` : BORDER_DEFAULT}`,
-                    borderLeft: `3px solid ${reached ? m.color : BORDER_DEFAULT}`,
+                    border: `1px solid ${reached ? hexToRgba(ACCENT, 0.2) : BORDER.default}`,
+                    borderLeft: `3px solid ${reached ? m.color : BORDER.default}`,
                     transition: "border-color 0.5s ease, opacity 0.4s ease, transform 0.4s ease"
                   }}>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
                       <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: m.color, flexShrink: 0 }}/>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "8px",
+                      <span style={{ fontFamily: FONT.mono, fontSize: "8px",
                         color: m.color, letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>
                         {m.label}
                       </span>
                     </div>
                     <p style={{ fontSize: "13px",
-                      color: reached ? TEXT_SECONDARY : TEXT_HINT, lineHeight: 1.72, marginBottom: "8px",
+                      color: reached ? TEXT.secondary : TEXT.hint, lineHeight: 1.72, marginBottom: "8px",
                       transition: "color 0.5s ease" }}>
                       {m.body}
                     </p>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "7.5px",
-                      color: TEXT_HINT, letterSpacing: "0.04em" }}>
+                    <span style={{ fontFamily: FONT.mono, fontSize: "7.5px",
+                      color: TEXT.hint, letterSpacing: "0.04em" }}>
                       {m.ref}
                     </span>
                   </div>
@@ -423,7 +417,7 @@ export default function EmotionWaveSection() {
           }}>
             <p style={{
               fontSize: "14px",
-              color: TEXT_HINT, lineHeight: 1.65, maxWidth: "420px", fontStyle: "italic"
+              color: TEXT.hint, lineHeight: 1.65, maxWidth: "420px", fontStyle: "italic"
             }}>
               F1 maps this arc in full — from thalamic detection to chronic mode consolidation — and identifies the precise conditions under which integration fails.
             </p>
@@ -432,11 +426,11 @@ export default function EmotionWaveSection() {
               alignItems: "center",
               gap: "10px",
               padding: "12px 24px",
-              border: `1px solid rgba(37,99,235,0.3)`,
-              background: `rgba(37,99,235,0.08)`,
+              border: `1px solid ${hexToRgba(ACCENT, 0.3)}`,
+              background: hexToRgba(ACCENT, 0.08),
               color: MAIN_BLUE,
               borderRadius: "8px",
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: FONT.mono,
               fontSize: "11px",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
