@@ -24,8 +24,7 @@ export default function ResearcherHero({
         padding: 28,
         position: "relative",
         overflow: "hidden",
-        background:
-          "linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 60%, transparent 100%)",
+        background: `linear-gradient(135deg, ${hexToRgba(RESEARCHER.accent, 0.06)} 0%, ${hexToRgba(RESEARCHER.accent, 0.02)} 60%, transparent 100%)`,
         border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.15)}`,
       }}
     >

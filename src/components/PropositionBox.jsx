@@ -1,4 +1,4 @@
-import { TEXT, FONT, RESEARCHER } from "../styles/tokens";
+import { TEXT, FONT, RESEARCHER, PATTERN, hexToRgba } from "../styles/tokens";
 
 /**
  * PropositionBox — Full-width callout for core claims/propositions
@@ -13,9 +13,8 @@ export default function PropositionBox({ label, title, children }) {
       style={{
         borderRadius: 20,
         padding: 24,
-        background:
-          "linear-gradient(135deg, rgba(96,165,250,0.1), rgba(37,99,235,0.08), rgba(29,78,216,0.06))",
-        border: "1px solid rgba(37,99,235,0.25)",
+        background: `linear-gradient(135deg, ${hexToRgba(PATTERN.A.primary, 0.1)}, ${hexToRgba(RESEARCHER.accent, 0.08)}, ${hexToRgba(PATTERN.D.primary, 0.06)})`,
+        border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.25)}`,
       }}
     >
       {label && (

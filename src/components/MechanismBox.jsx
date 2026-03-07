@@ -1,4 +1,4 @@
-import { TEXT, FONT, RESEARCHER } from "../styles/tokens";
+import { TEXT, FONT, RESEARCHER, hexToRgba, gradientCardBg } from "../styles/tokens";
 
 /**
  * MechanismBox — Left-border accent box for key insights/mechanisms
@@ -12,8 +12,8 @@ export default function MechanismBox({ label, children }) {
       style={{
         borderRadius: 12,
         padding: 20,
-        background: "linear-gradient(135deg, rgba(37,99,235,0.08), transparent)",
-        border: "1px solid rgba(37,99,235,0.2)",
+        background: gradientCardBg(RESEARCHER.accent),
+        border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
         borderLeft: `3px solid ${RESEARCHER.accent}`,
       }}
     >
