@@ -20,29 +20,9 @@ export default function ResearcherHero({
   return (
     <div
       style={{
-        borderRadius: 16,
-        padding: 28,
-        position: "relative",
-        overflow: "hidden",
-        background: `linear-gradient(135deg, ${hexToRgba(RESEARCHER.accent, 0.06)} 0%, ${hexToRgba(RESEARCHER.accent, 0.02)} 60%, transparent 100%)`,
-        border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.15)}`,
+        padding: "28px 0",
       }}
     >
-      {/* Decorative glow orb */}
-      <div
-        style={{
-          position: "absolute",
-          top: -80,
-          right: -80,
-          width: 240,
-          height: 240,
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${hexToRgba(RESEARCHER.accent, 0.08)} 0%, transparent 70%)`,
-          pointerEvents: "none",
-        }}
-        aria-hidden="true"
-      />
-
       {/* Badge pill */}
       {badge && (
         <div
