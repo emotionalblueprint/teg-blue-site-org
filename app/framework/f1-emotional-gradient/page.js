@@ -1,4 +1,5 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
@@ -8,11 +9,26 @@ import {
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
-import { F1SignalDiagram, DiagramToggle } from "@/src/components/framework-diagrams";
+import {
+  F1SignalDiagram, F1ArchitectureDiagram, F1FullArcDiagram, DiagramToggle,
+} from "@/src/components/framework-diagrams";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
+
+const F1InstrumentDiagram = dynamic(
+  () => import("@/src/components/framework-diagrams/F1InstrumentDiagram"),
+  { ssr: false }
+);
+const F1HingeDiagram = dynamic(
+  () => import("@/src/components/framework-diagrams/F1HingeDiagram"),
+  { ssr: false }
+);
+const F1CognitiveUpgradeDiagram = dynamic(
+  () => import("@/src/components/framework-diagrams/F1CognitiveUpgradeDiagram"),
+  { ssr: false }
+);
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -381,6 +397,9 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-instrument" style={sectionHeadingStyle}>
               The Instrument — How the Body Orients
             </h2>
+            <DiagramToggle label="compass diagram">
+              <F1InstrumentDiagram />
+            </DiagramToggle>
 
             {/* Concept 4 */}
             <div style={{ marginBottom: 32 }}>
@@ -550,6 +569,9 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-hinge" style={sectionHeadingStyle}>
               The Hinge — Biological Restoration
             </h2>
+            <DiagramToggle label="bifurcation diagram">
+              <F1HingeDiagram />
+            </DiagramToggle>
 
             {/* Concept 7 */}
             <div style={{ marginBottom: 32 }}>
@@ -735,6 +757,9 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-cognitive-upgrade" style={sectionHeadingStyle}>
               The Cognitive Upgrade
             </h2>
+            <DiagramToggle label="four-mode gradient diagram">
+              <F1CognitiveUpgradeDiagram />
+            </DiagramToggle>
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="control-and-domination" style={conceptHeadingStyle}>
@@ -862,6 +887,9 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-architecture" style={sectionHeadingStyle}>
               The Architecture — How the Instrument Reads
             </h2>
+            <DiagramToggle label="capacity dimensions diagram">
+              <F1ArchitectureDiagram />
+            </DiagramToggle>
 
             {/* Concept 9 */}
             <div style={{ marginBottom: 32 }}>
@@ -975,6 +1003,9 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-full-arc" style={sectionHeadingStyle}>
               The Full Arc — From Signal to Structure
             </h2>
+            <DiagramToggle label="seven-step arc diagram">
+              <F1FullArcDiagram />
+            </DiagramToggle>
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="seven-step-arc" style={conceptHeadingStyle}>
