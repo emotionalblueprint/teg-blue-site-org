@@ -123,7 +123,7 @@ export default function F1CognitiveUpgradeDiagram() {
                 letterSpacing: "0.04em",
                 border: "none", cursor: "pointer",
                 borderLeft: stuck ? `1px solid ${BORDER.default}` : "none",
-                transition: "all 200ms ease",
+                transition: "background 200ms ease, color 200ms ease",
                 background: isStuck === stuck ? hexToRgba(c, 0.15) : "transparent",
                 color: isStuck === stuck ? c : TEXT.muted,
               }}
@@ -188,7 +188,7 @@ export default function F1CognitiveUpgradeDiagram() {
             <div key={p} style={{
               position: "absolute", top: 0, bottom: 0, width: 2,
               left: `${p * 100}%`, transform: "translateX(-50%)",
-              background: hexToRgba("#000000", 0.4),
+              background: hexToRgba(SPECTRUM.slate, 0.55),
             }} />
           ))}
 
@@ -196,7 +196,7 @@ export default function F1CognitiveUpgradeDiagram() {
           <div style={{
             position: "absolute", top: -3, bottom: -3, width: 3,
             left: "50%", transform: "translateX(-50%)",
-            background: hexToRgba("#000000", 0.6),
+            background: hexToRgba(SPECTRUM.slate, 0.8),
             borderRadius: 1.5,
           }} />
 

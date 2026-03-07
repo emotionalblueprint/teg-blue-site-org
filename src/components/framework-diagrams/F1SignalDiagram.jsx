@@ -1,4 +1,4 @@
-import { SPECTRUM, TEXT, hexToRgba } from "@/src/styles/tokens";
+import { SPECTRUM, TEXT, FONT, hexToRgba } from "@/src/styles/tokens";
 
 // ─── SVG Constants ──────────────────────────────────────
 const VW = 800, VH = 280;
@@ -19,8 +19,6 @@ const NODES = [
 
 const EVAL_X = PL + PW * 0.60;
 const COG_START = PL + PW * 0.68;
-
-const MONO = "'JetBrains Mono', 'SF Mono', 'Consolas', monospace";
 
 export default function F1SignalDiagram() {
   return (
@@ -43,14 +41,14 @@ export default function F1SignalDiagram() {
 
       {/* ─── "BODY'S EVALUATION" label ─── */}
       <text x={PL} y={BODY_Y - 16}
-        style={{ fontFamily: MONO, fontSize: "13px", fontWeight: 700,
+        style={{ fontFamily: FONT.mono, fontSize: "13px", fontWeight: 700,
           letterSpacing: "0.08em", fill: TEXT.primary }}>
         {"BODY\u2019S EVALUATION"}
       </text>
 
       {/* ─── "continuous · below awareness" ─── */}
       <text x={PL + PW} y={BODY_Y - 16} textAnchor="end"
-        style={{ fontFamily: MONO, fontSize: "10px", fontWeight: 400,
+        style={{ fontFamily: FONT.mono, fontSize: "10px", fontWeight: 400,
           letterSpacing: "0.1em", fill: SPECTRUM.sky }}>
         continuous · below awareness
       </text>
@@ -62,7 +60,7 @@ export default function F1SignalDiagram() {
             fill={hexToRgba(SPECTRUM.azure, 0.5)}
             stroke={SPECTRUM.sky} strokeWidth="1.5" />
           <text x={x} y={BODY_Y + 24} textAnchor="middle"
-            style={{ fontFamily: MONO, fontSize: "10px", fontWeight: 600,
+            style={{ fontFamily: FONT.mono, fontSize: "10px", fontWeight: 600,
               letterSpacing: "0.08em", fill: SPECTRUM.sky }}>
             {label}
           </text>
@@ -80,7 +78,7 @@ export default function F1SignalDiagram() {
 
       {/* ─── "safe enough?" label ─── */}
       <text x={EVAL_X + 14} y={BODY_Y + (SIGNAL_Y - BODY_Y) * 0.28}
-        style={{ fontFamily: MONO, fontSize: "11px", fontWeight: 500,
+        style={{ fontFamily: FONT.mono, fontSize: "11px", fontWeight: 500,
           letterSpacing: "0.08em", fill: TEXT.primary, fontStyle: "italic" }}>
         safe enough?
       </text>
@@ -94,14 +92,14 @@ export default function F1SignalDiagram() {
 
       {/* ─── "SIGNAL" label ─── */}
       <text x={EVAL_X + 20} y={SIGNAL_Y - 6}
-        style={{ fontFamily: MONO, fontSize: "14px", fontWeight: 700,
+        style={{ fontFamily: FONT.mono, fontSize: "14px", fontWeight: 700,
           letterSpacing: "0.06em", fill: TEXT.primary }}>
         SIGNAL
       </text>
 
       {/* ─── "emotion" label ─── */}
       <text x={EVAL_X + 20} y={SIGNAL_Y + 12}
-        style={{ fontFamily: MONO, fontSize: "11px", fontWeight: 400,
+        style={{ fontFamily: FONT.mono, fontSize: "11px", fontWeight: 400,
           letterSpacing: "0.08em", fill: SPECTRUM.azure }}>
         emotion
       </text>
@@ -117,14 +115,14 @@ export default function F1SignalDiagram() {
 
       {/* ─── "COGNITION" label ─── */}
       <text x={COG_START} y={COG_Y - 14}
-        style={{ fontFamily: MONO, fontSize: "12px", fontWeight: 600,
+        style={{ fontFamily: FONT.mono, fontSize: "12px", fontWeight: 600,
           letterSpacing: "0.08em", fill: SPECTRUM.slate }}>
         COGNITION
       </text>
 
       {/* ─── "arrives second" ─── */}
       <text x={PL + PW} y={COG_Y - 14} textAnchor="end"
-        style={{ fontFamily: MONO, fontSize: "10px", fontWeight: 400,
+        style={{ fontFamily: FONT.mono, fontSize: "10px", fontWeight: 400,
           letterSpacing: "0.1em", fill: SPECTRUM.slate, fillOpacity: 0.7 }}>
         arrives second
       </text>

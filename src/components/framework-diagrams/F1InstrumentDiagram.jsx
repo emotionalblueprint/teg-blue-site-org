@@ -70,7 +70,7 @@ export default function F1InstrumentDiagram() {
           <div style={{
             position: "absolute", top: 0, bottom: 0, left: "50%", width: 2,
             transform: "translateX(-50%)",
-            background: hexToRgba("#000000", 0.35),
+            background: hexToRgba(SPECTRUM.slate, 0.55),
           }} />
 
           {/* Needle */}
@@ -121,7 +121,7 @@ export default function F1InstrumentDiagram() {
                 letterSpacing: "0.04em",
                 border: "none", cursor: "pointer",
                 borderLeft: stuck ? `1px solid ${BORDER.default}` : "none",
-                transition: "all 200ms ease",
+                transition: "background 200ms ease, color 200ms ease",
                 background: isStuck === stuck
                   ? hexToRgba(color, 0.15) : "transparent",
                 color: isStuck === stuck ? color : TEXT.muted,

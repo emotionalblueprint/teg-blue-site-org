@@ -1,10 +1,8 @@
-import { SPECTRUM, TEXT, hexToRgba } from "@/src/styles/tokens";
+import { SPECTRUM, TEXT, FONT, hexToRgba } from "@/src/styles/tokens";
 
 // ─── SVG Constants ──────────────────────────────────────
 const VW = 800, VH = 360;
 const PL = 40, PR = 40;
-
-const MONO = "'JetBrains Mono', 'SF Mono', 'Consolas', monospace";
 
 // Column layout
 const LABEL_W = 120;
@@ -58,12 +56,12 @@ export default function F1ArchitectureDiagram() {
         return (
           <g key={mode.letter}>
             <text x={cx} y={HEADER_Y - 14} textAnchor="middle"
-              style={{ fontFamily: MONO, fontSize: "12px", fontWeight: 700,
+              style={{ fontFamily: FONT.mono, fontSize: "12px", fontWeight: 700,
                 letterSpacing: "0.08em", fill: mode.color }}>
               {mode.letter}
             </text>
             <text x={cx} y={HEADER_Y} textAnchor="middle"
-              style={{ fontFamily: MONO, fontSize: "8.5px", fontWeight: 400,
+              style={{ fontFamily: FONT.mono, fontSize: "8.5px", fontWeight: 400,
                 letterSpacing: "0.06em", fill: hexToRgba(mode.color, 0.7) }}>
               {mode.name}
             </text>
@@ -93,7 +91,7 @@ export default function F1ArchitectureDiagram() {
 
             {/* Dimension name */}
             <text x={PL + 4} y={rowY + 17}
-              style={{ fontFamily: MONO, fontSize: "10px", fontWeight: 600,
+              style={{ fontFamily: FONT.mono, fontSize: "10px", fontWeight: 600,
                 letterSpacing: "0.04em", fill: TEXT.secondary }}>
               {dim.name}
             </text>
@@ -111,8 +109,8 @@ export default function F1ArchitectureDiagram() {
                     rx={4} fill="none"
                     stroke={hexToRgba(color, 0.45)} strokeWidth="0.5" />
                   <text x={x + 2} y={rowY + 32}
-                    style={{ fontFamily: MONO, fontSize: "7.5px", fontWeight: 400,
-                      letterSpacing: "0.04em", fill: hexToRgba(color, 0.55) }}>
+                    style={{ fontFamily: FONT.mono, fontSize: "8px", fontWeight: 400,
+                      letterSpacing: "0.04em", fill: hexToRgba(color, 0.7) }}>
                     {dim.labels[mi]}
                   </text>
                 </g>

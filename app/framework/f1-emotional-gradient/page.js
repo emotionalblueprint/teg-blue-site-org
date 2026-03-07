@@ -196,6 +196,8 @@ export default function F1EmotionalGradientPage() {
             </PropositionBox>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── OVERVIEW ─────────────────────────────────── */}
           <section
             id="overview"
@@ -267,6 +269,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── PART 1: THE SIGNAL ──────────────────────── */}
           <section
             id="the-signal"
@@ -276,9 +280,6 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-signal" style={sectionHeadingStyle}>
               The Signal — How the Body Evaluates
             </h2>
-            <DiagramToggle label="signal flow diagram" defaultOpen>
-              <F1SignalDiagram />
-            </DiagramToggle>
 
             {/* Concept 1 */}
             <div style={{ marginBottom: 32 }}>
@@ -289,6 +290,10 @@ export default function F1EmotionalGradientPage() {
               <KeyStatement>
                 Emotions are not disruptions to clear thinking. They are the nervous system's signalling language — the medium through which the body's continuous evaluation of safety and threat gets communicated to the rest of the organism.
               </KeyStatement>
+
+              <DiagramToggle label="signal flow diagram" defaultOpen>
+                <F1SignalDiagram />
+              </DiagramToggle>
 
               <p style={proseStyle}>
                 The nervous system runs a distributed evaluation process — across the gut, the heart, the muscles, the vagus nerve, the amygdala — that assesses the environment continuously, below conscious awareness. This evaluation produces a finding: safe enough, or threat. Emotions are how the finding gets delivered. They are the signal that carries the evaluation from the body's detection systems to the organism's response systems.
@@ -317,6 +322,8 @@ export default function F1EmotionalGradientPage() {
                 </ExpandableSection>
               </div>
             </div>
+
+            <hr style={conceptDividerStyle} />
 
             {/* Concept 2 */}
             <div style={{ marginBottom: 32 }}>
@@ -349,6 +356,8 @@ export default function F1EmotionalGradientPage() {
                 </ExpandableSection>
               </div>
             </div>
+
+            <hr style={conceptDividerStyle} />
 
             {/* Concept 3 */}
             <div style={{ marginBottom: 32 }}>
@@ -388,6 +397,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── PART 2: THE INSTRUMENT ──────────────────── */}
           <section
             id="the-instrument"
@@ -397,9 +408,6 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-instrument" style={sectionHeadingStyle}>
               The Instrument — How the Body Orients
             </h2>
-            <DiagramToggle label="compass diagram">
-              <F1InstrumentDiagram />
-            </DiagramToggle>
 
             {/* Concept 4 */}
             <div style={{ marginBottom: 32 }}>
@@ -410,6 +418,10 @@ export default function F1EmotionalGradientPage() {
               <KeyStatement>
                 A fluid compass does not stay in Connection permanently. Fluid operation is the needle moving — responding, orienting, and coming back.
               </KeyStatement>
+
+              <DiagramToggle label="compass diagram">
+                <F1InstrumentDiagram />
+              </DiagramToggle>
 
               <p style={proseStyle}>
                 The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a fluid working compass, the needle is constantly moving. It does not have a "correct" position — it points in a direction. A fluid compass moves fluidly between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward Connection when the threat passes.
@@ -435,6 +447,8 @@ export default function F1EmotionalGradientPage() {
                 </ExpandableSection>
               </div>
             </div>
+
+            <hr style={conceptDividerStyle} />
 
             {/* Concept 5 */}
             <div style={{ marginBottom: 32 }}>
@@ -477,6 +491,8 @@ export default function F1EmotionalGradientPage() {
                 </p>
               </ExpandableSection>
             </div>
+
+            <hr style={conceptDividerStyle} />
 
             {/* Concept 6 */}
             <div style={{ marginBottom: 32 }}>
@@ -560,6 +576,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── PART 3: THE HINGE ───────────────────────── */}
           <section
             id="the-hinge"
@@ -569,9 +587,6 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-hinge" style={sectionHeadingStyle}>
               The Hinge — Biological Restoration
             </h2>
-            <DiagramToggle label="bifurcation diagram">
-              <F1HingeDiagram />
-            </DiagramToggle>
 
             {/* Concept 7 */}
             <div style={{ marginBottom: 32 }}>
@@ -582,6 +597,10 @@ export default function F1EmotionalGradientPage() {
               <KeyStatement>
                 Biological Restoration cannot be forced. It can only be allowed. It is not a skill, not a technique, not something the person does — it is what the body does when conditions allow.
               </KeyStatement>
+
+              <DiagramToggle label="bifurcation diagram">
+                <F1HingeDiagram />
+              </DiagramToggle>
 
               <p style={proseStyle}>
                 By <em>forced</em>, this means top-down suppression — overriding activation so it <em>looks</em> calm while the body remains loaded. Biological Restoration can be <strong style={{ color: TEXT.primary }}>supported</strong> (through safety, time, breath, movement, warmth, connection). But it cannot be commanded into completion by cognition.
@@ -650,6 +669,8 @@ export default function F1EmotionalGradientPage() {
                 </table>
               </div>
             </div>
+
+            <hr style={conceptDividerStyle} />
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="somatic-vs-relational" style={conceptHeadingStyle}>
@@ -748,6 +769,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── PART 4: THE COGNITIVE UPGRADE ────────────── */}
           <section
             id="the-cognitive-upgrade"
@@ -757,14 +780,15 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-cognitive-upgrade" style={sectionHeadingStyle}>
               The Cognitive Upgrade
             </h2>
-            <DiagramToggle label="four-mode gradient diagram">
-              <F1CognitiveUpgradeDiagram />
-            </DiagramToggle>
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="control-and-domination" style={conceptHeadingStyle}>
                 Control and Domination
               </h3>
+
+              <DiagramToggle label="four-mode gradient diagram">
+                <F1CognitiveUpgradeDiagram />
+              </DiagramToggle>
 
               <p style={proseStyle}>
                 For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then cognition evolved. And the compass gained range.
@@ -878,6 +902,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── PART 5: THE ARCHITECTURE ─────────────────── */}
           <section
             id="the-architecture"
@@ -887,15 +913,16 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-architecture" style={sectionHeadingStyle}>
               The Architecture — How the Instrument Reads
             </h2>
-            <DiagramToggle label="capacity dimensions diagram">
-              <F1ArchitectureDiagram />
-            </DiagramToggle>
 
             {/* Concept 9 */}
             <div style={{ marginBottom: 32 }}>
               <h3 id="the-gradient" style={conceptHeadingStyle}>
                 The Gradient
               </h3>
+
+              <DiagramToggle label="capacity dimensions diagram">
+                <F1ArchitectureDiagram />
+              </DiagramToggle>
 
               <p style={proseStyle}>
                 The four modes are not four boxes. They are positions on a continuous gradient from full Connection to maximum Domination. The compass needle moves along this gradient. A fluid compass has access to the full range. A stuck compass is locked at one position.
@@ -904,6 +931,8 @@ export default function F1EmotionalGradientPage() {
                 The gradient makes the proportionality question visible. The question is not "is this person in Protection?" but "how deep into Protection, for how long, in response to what, and can the needle move?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
               </p>
             </div>
+
+            <hr style={conceptDividerStyle} />
 
             {/* Concept 10 */}
             <div style={{ marginBottom: 32 }}>
@@ -952,6 +981,8 @@ export default function F1EmotionalGradientPage() {
               </ExpandableSection>
             </div>
 
+            <hr style={conceptDividerStyle} />
+
             {/* Concept 11 */}
             <div style={{ marginBottom: 32 }}>
               <h3 id="same-emotion-two-expressions" style={conceptHeadingStyle}>
@@ -994,6 +1025,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── PART 6: THE FULL ARC ────────────────────── */}
           <section
             id="the-full-arc"
@@ -1003,14 +1036,15 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-full-arc" style={sectionHeadingStyle}>
               The Full Arc — From Signal to Structure
             </h2>
-            <DiagramToggle label="seven-step arc diagram">
-              <F1FullArcDiagram />
-            </DiagramToggle>
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="seven-step-arc" style={conceptHeadingStyle}>
                 The Seven-Step Arc
               </h3>
+
+              <DiagramToggle label="seven-step arc diagram">
+                <F1FullArcDiagram />
+              </DiagramToggle>
 
               <p style={proseStyle}>
                 F1 names a complete trajectory from biological signal to social structure. Biological Restoration is the hinge — step four of seven, three steps on each side:
@@ -1058,6 +1092,8 @@ export default function F1EmotionalGradientPage() {
               </p>
             </div>
 
+            <hr style={conceptDividerStyle} />
+
             <div style={{ marginBottom: 32 }}>
               <h3 id="regulation-thread" style={conceptHeadingStyle}>
                 The Regulation Thread
@@ -1101,6 +1137,8 @@ export default function F1EmotionalGradientPage() {
               </ExpandableSection>
             </div>
           </section>
+
+          <hr style={sectionDividerStyle} />
 
           {/* ─── WHAT F1 ESTABLISHES ──────────────────────── */}
           <section
@@ -1190,6 +1228,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── RESEARCH FOUNDATIONS ─────────────────────── */}
           <section
             id="research-foundations"
@@ -1229,6 +1269,8 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── BRIDGE TO F2 ─────────────────────────────── */}
           <section
             id="bridge-to-f2"
@@ -1266,8 +1308,12 @@ export default function F1EmotionalGradientPage() {
             </p>
           </section>
 
+          <hr style={sectionDividerStyle} />
+
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="f1-emotional-gradient" type="framework" />
+
+          <hr style={sectionDividerStyle} />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
@@ -1434,6 +1480,19 @@ export default function F1EmotionalGradientPage() {
 }
 
 // ─── STYLE CONSTANTS ──────────────────────────────────────
+
+const sectionDividerStyle = {
+  border: "none",
+  borderTop: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
+  margin: 0,
+};
+
+const conceptDividerStyle = {
+  border: "none",
+  borderTop: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.06)}`,
+  margin: "0 auto 0 0",
+  maxWidth: 120,
+};
 
 const sectionHeadingStyle = {
   fontSize: 20,

@@ -1,11 +1,9 @@
-import { SPECTRUM, TEXT, hexToRgba } from "@/src/styles/tokens";
+import { SPECTRUM, TEXT, FONT, hexToRgba } from "@/src/styles/tokens";
 
 // ─── SVG Constants ──────────────────────────────────────
 const VW = 800, VH = 220;
 const PL = 50, PR = 50;
 const PW = VW - PL - PR; // 700
-
-const MONO = "'JetBrains Mono', 'SF Mono', 'Consolas', monospace";
 
 const NODE_Y = 108;
 const SPACING = PW / 6; // ~116.7
@@ -46,7 +44,7 @@ export default function F1FullArcDiagram() {
 
       {/* ─── Annotations ─── */}
       <text x={stepX(1)} y={36} textAnchor="middle"
-        style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 400,
+        style={{ fontFamily: FONT.mono, fontSize: "9px", fontWeight: 400,
           letterSpacing: "0.1em", fill: SPECTRUM.sky }}>
         {"the body\u2019s designed process"}
       </text>
@@ -54,7 +52,7 @@ export default function F1FullArcDiagram() {
         stroke={hexToRgba(SPECTRUM.sky, 0.3)} strokeWidth="1" />
 
       <text x={stepX(5)} y={36} textAnchor="middle"
-        style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 400,
+        style={{ fontFamily: FONT.mono, fontSize: "9px", fontWeight: 400,
           letterSpacing: "0.1em", fill: SPECTRUM.indigo }}>
         depends on restoration
       </text>
@@ -107,7 +105,7 @@ export default function F1FullArcDiagram() {
 
             {/* Step number */}
             <text x={x} y={NODE_Y + (isHinge ? 4 : 3.5)} textAnchor="middle"
-              style={{ fontFamily: MONO,
+              style={{ fontFamily: FONT.mono,
                 fontSize: isHinge ? "10px" : "8px", fontWeight: 700,
                 fill: isHinge ? TEXT.primary : color }}>
               {i + 1}
@@ -115,7 +113,7 @@ export default function F1FullArcDiagram() {
 
             {/* Step label */}
             <text x={x} y={labelBaseY} textAnchor="middle"
-              style={{ fontFamily: MONO,
+              style={{ fontFamily: FONT.mono,
                 fontSize: isHinge ? "10px" : "9px",
                 fontWeight: isHinge ? 700 : 500,
                 letterSpacing: "0.06em",
@@ -127,8 +125,8 @@ export default function F1FullArcDiagram() {
 
             {/* Framework reference */}
             <text x={x} y={fwY} textAnchor="middle"
-              style={{ fontFamily: MONO, fontSize: "7.5px", fontWeight: 400,
-                letterSpacing: "0.08em", fill: hexToRgba(color, 0.6) }}>
+              style={{ fontFamily: FONT.mono, fontSize: "8px", fontWeight: 400,
+                letterSpacing: "0.08em", fill: hexToRgba(color, 0.75) }}>
               {step.fw}
             </text>
           </g>

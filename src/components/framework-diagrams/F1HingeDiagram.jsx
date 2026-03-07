@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import { FONT, TEXT, SPECTRUM, BORDER, hexToRgba, MODE_ORANGE } from "@/src/styles/tokens";
+// FONT.mono used throughout for SVG text and HTML elements
 
 // ─── Chart Constants ────────────────────────────────────
 const VW = 800, VH = 280;
@@ -10,7 +11,6 @@ const PW = VW - PL - PR;
 const PH = VH - PT - PB;
 const BRANCH_T = 0.35;
 const DURATION = 7000;
-const MONO = "'JetBrains Mono', 'SF Mono', 'Consolas', monospace";
 
 // ─── Waveform Generators ────────────────────────────────
 function buildWaveforms() {
@@ -138,7 +138,7 @@ export default function F1HingeDiagram() {
               <line x1="0" y1="3" x2="18" y2="3" stroke={color} strokeWidth="1.5" />
             </svg>
             <span style={{
-              fontFamily: MONO, fontSize: 8.5, color,
+              fontFamily: FONT.mono, fontSize: 8.5, color,
               letterSpacing: "0.1em",
             }}>
               {label}
@@ -158,7 +158,7 @@ export default function F1HingeDiagram() {
               background: "transparent",
               color: TEXT.muted,
               borderRadius: 5,
-              fontFamily: MONO, fontSize: 9,
+              fontFamily: FONT.mono, fontSize: 9,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               cursor: "pointer",
@@ -194,7 +194,7 @@ export default function F1HingeDiagram() {
         {/* Y-axis label */}
         <text x={18} y={PT + PH / 2} textAnchor="middle"
           transform={`rotate(-90,18,${PT + PH / 2})`}
-          style={{ fontFamily: MONO, fontSize: 8, fill: TEXT.hint,
+          style={{ fontFamily: FONT.mono, fontSize: 8, fill: TEXT.hint,
             letterSpacing: "0.12em" }}>
           ACTIVATION
         </text>
@@ -218,14 +218,14 @@ export default function F1HingeDiagram() {
 
         {/* "the hinge" label */}
         <text x={branchX} y={PT + PH + 20} textAnchor="middle"
-          style={{ fontFamily: MONO, fontSize: 9, fontWeight: 600,
+          style={{ fontFamily: FONT.mono, fontSize: 9, fontWeight: 600,
             letterSpacing: "0.08em", fill: SPECTRUM.azure }}>
           the hinge
         </text>
 
         {/* "time" label */}
         <text x={PL + PW} y={PT + PH + 20} textAnchor="end"
-          style={{ fontFamily: MONO, fontSize: 8, fill: TEXT.hint,
+          style={{ fontFamily: FONT.mono, fontSize: 8, fill: TEXT.hint,
             letterSpacing: "0.08em" }}>
           {"time \u2192"}
         </text>
@@ -267,11 +267,11 @@ export default function F1HingeDiagram() {
         {done && (
           <>
             <text x={PL + PW + 8} y={restoreY + 4}
-              style={{ fontFamily: MONO, fontSize: 8.5, fill: SPECTRUM.sky }}>
+              style={{ fontFamily: FONT.mono, fontSize: 8.5, fill: SPECTRUM.sky }}>
               baseline
             </text>
             <text x={PL + PW + 8} y={stuckY + 4}
-              style={{ fontFamily: MONO, fontSize: 8.5, fill: MODE_ORANGE }}>
+              style={{ fontFamily: FONT.mono, fontSize: 8.5, fill: MODE_ORANGE }}>
               chronic
             </text>
           </>
