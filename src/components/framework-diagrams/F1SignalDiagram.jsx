@@ -1,4 +1,4 @@
-import { SPECTRUM, TEXT, FONT, hexToRgba } from "@/src/styles/tokens";
+import { SPECTRUM, TEXT, hexToRgba } from "@/src/styles/tokens";
 
 // ─── SVG Constants ──────────────────────────────────────
 const VW = 800, VH = 200;
