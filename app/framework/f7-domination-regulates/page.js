@@ -1141,7 +1141,7 @@ export default function F7DominationRegulatesPage() {
 const sectionHeadingStyle = {
   fontSize: 20,
   fontWeight: 700,
-  color: TEXT.primary,
+  color: RESEARCHER.accent,
   marginBottom: 20,
   paddingBottom: 8,
   borderBottom: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,

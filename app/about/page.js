@@ -249,7 +249,7 @@ export default function AboutPage() {
 const sectionHeading = {
   fontSize: 18,
   fontWeight: 600,
-  color: TEXT.primary,
+  color: RESEARCHER.accent,
   marginBottom: 12,
 };
 

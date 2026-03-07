@@ -1347,7 +1347,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 const sectionHeadingStyle = {
   fontSize: 20,
   fontWeight: 700,
-  color: TEXT.primary,
+  color: RESEARCHER.accent,
   letterSpacing: "-0.01em",
   marginBottom: 16,
   paddingBottom: 8,

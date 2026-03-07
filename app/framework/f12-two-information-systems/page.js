@@ -52,7 +52,7 @@ export default function F12TwoInformationSystemsPage() {
   /* ── local helpers ─────────────────────────────────── */
 
   const sectionHeadingStyle = {
-    fontSize: 20, fontWeight: 700, color: TEXT.primary,
+    fontSize: 20, fontWeight: 700, color: RESEARCHER.accent,
     borderBottom: `2px solid ${SPECTRUM.cobalt}`,
     paddingBottom: 10, marginBottom: 20, marginTop: 48,
   };

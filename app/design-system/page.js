@@ -146,15 +146,16 @@ export default function DesignSystemPage() {
           <SectionTitle>Semantic Colors</SectionTitle>
 
           <SwatchRow label="Pattern (Four-Mode Blue Gradient)">
-            {Object.entries(PATTERN).map(([name, { primary }]) => (
-              <Swatch key={name} color={primary} label={name} sublabel={primary} />
-            ))}
+            <Swatch color={PATTERN.A.primary} label="Pattern A" sublabel="Connection Mode" />
+            <Swatch color={PATTERN.B.primary} label="Pattern B" sublabel="Protection Mode" />
+            <Swatch color={PATTERN.C.primary} label="Pattern C" sublabel="Control Mode" />
+            <Swatch color={PATTERN.D.primary} label="Pattern D" sublabel="Domination Mode" />
           </SwatchRow>
           {/* Pattern gradient bar */}
           <div style={{
             height: 8,
             borderRadius: RADIUS.sm,
-            background: PATTERN_GRADIENT,
+            background: `linear-gradient(90deg, ${PATTERN.A.primary}, ${PATTERN.B.primary}, ${PATTERN.C.primary}, ${PATTERN.D.primary})`,
             marginTop: -20,
             marginBottom: 32,
           }} />
