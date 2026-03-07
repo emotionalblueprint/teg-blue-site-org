@@ -9,19 +9,19 @@
   --spectrum-indigo: #4A50B0;
   --spectrum-slate:  #6B7A99;
 
-  /* Backgrounds */
-  --bg-page:    #080C18;
-  --bg-primary: #0C1222;
-  --bg-card:    #111827;
-  --bg-surface: #1A2234;
-  --bg-inset:   #0A0E1A;
+  /* Backgrounds — Tailwind Slate scale */
+  --bg-page:    #0f172a;
+  --bg-primary: #111827;
+  --bg-card:    #1e293b;
+  --bg-surface: #334155;
+  --bg-inset:   #0b1120;
 
   /* Text */
-  --text-primary:   #F1F5F9;
-  --text-secondary: #CBD5E1;
-  --text-muted:     #94A3B8;
-  --text-hint:      #8FA1B8;
-  --text-micro:     #7C8EA4;
+  --text-primary:   #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted:     #94a3b8;
+  --text-hint:      #64748b;
+  --text-micro:     #475569;
 
   /* Borders */
   --border-default: rgba(148, 163, 184, 0.12);
