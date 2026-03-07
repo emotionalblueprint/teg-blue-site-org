@@ -5,6 +5,7 @@ import {
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import CompassBar from "./CompassBar";
 
 export const metadata = {
   title: "Design System | TEG-Blue Research",
@@ -547,6 +548,23 @@ export default function DesignSystemPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ─── 11. INNER COMPASS + FOUR-MODE GRADIENT ──── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Inner Compass + Four-Mode Gradient</SectionTitle>
+          <p style={{
+            fontFamily: FONT.mono,
+            fontSize: TYPE_SCALE.tagLabel.size,
+            fontWeight: TYPE_SCALE.tagLabel.weight,
+            letterSpacing: TYPE_SCALE.tagLabel.tracking,
+            color: TEXT.muted,
+            textTransform: "uppercase",
+            marginBottom: 16,
+          }}>
+            Drag the Needle to explore modes
+          </p>
+          <CompassBar />
         </section>
       </main>
 
