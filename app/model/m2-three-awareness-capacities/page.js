@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPACING, SPECTRUM,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT, RADIUS, gradientCardBg,
+  AWARENESS, MODE_PINK,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ResearcherHero,
@@ -13,11 +14,11 @@ import {
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
 
-// ─── CAPACITY COLORS ────────────────────────────────────────
-const RE_COLOR = '#a080ff';   // violet
-const ER_COLOR = '#22d3ee';   // cyan
-const SEA_COLOR = '#a0e85a';  // green
-const RE_CHRONIC = '#ec4899'; // pink — RE in chronic positions
+// ─── CAPACITY COLORS (from tokens — cross-site canonical) ───
+const RE_COLOR = AWARENESS.RE;
+const ER_COLOR = AWARENESS.ER;
+const SEA_COLOR = AWARENESS.SEA;
+const RE_CHRONIC = MODE_PINK;  // pink — domination / precision without feedback
 
 // ─── METADATA ──────────────────────────────────────────────
 
