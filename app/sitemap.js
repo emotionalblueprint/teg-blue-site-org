@@ -33,6 +33,10 @@ const PAGE_DATES = {
   '/framework/f10-generational-bridges': '2026-03-04',
   '/framework/f11-emotional-paradoxes': '2026-03-04',
   '/framework/f12-two-information-systems': '2026-03-04',
+  '/mechanics-of-phenomena': '2026-03-07',
+  '/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails': '2026-03-07',
+  '/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context': '2026-03-07',
+  '/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores': '2026-03-07',
 }
 
 export default function sitemap() {
@@ -219,6 +223,30 @@ export default function sitemap() {
       lastModified: new Date(PAGE_DATES['/framework/f12-two-information-systems']),
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/mechanics-of-phenomena`,
+      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails`,
+      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails']),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context`,
+      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context']),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores`,
+      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores']),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
   ]
 

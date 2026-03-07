@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TEXT, FONT, BORDER, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
+import { TEXT, FONT, EDITORIAL } from "@/src/styles/tokens";
 import { SERIES } from "./mechanics-config";
 
 /**

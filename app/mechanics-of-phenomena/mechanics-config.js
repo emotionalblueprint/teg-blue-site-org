@@ -5,7 +5,7 @@
  * Update this file when adding new pieces.
  */
 
-import { TEXT, FONT, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
+import { TEXT, FONT, BORDER, EDITORIAL } from "@/src/styles/tokens";
 
 // ─── SIDEBAR DATA ────────────────────────────────────────
 
@@ -106,7 +106,7 @@ export const READING = {
   },
   hr: {
     border: "none",
-    borderTop: "1px solid var(--border-default)",
+    borderTop: `1px solid ${BORDER.default}`,
     margin: "32px 0",
   },
   finePrint: {

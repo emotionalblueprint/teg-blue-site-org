@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, FONT, BORDER, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
+import { TEXT, FONT, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
 
 /**
  * GoDeeper — Amber-tinted panel at the bottom of each piece.

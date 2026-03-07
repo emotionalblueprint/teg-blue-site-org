@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { READING } from "../mechanics-config";
 import GoDeeper from "../GoDeeper";
 

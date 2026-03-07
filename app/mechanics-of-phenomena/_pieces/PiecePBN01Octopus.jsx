@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TEXT, BORDER } from "@/src/styles/tokens";
 import { READING } from "../mechanics-config";
 import GoDeeper from "../GoDeeper";
 
@@ -40,9 +41,9 @@ export default function PiecePBN01Octopus() {
         ...READING.paragraph,
         fontSize: 13,
         fontStyle: "italic",
-        color: "var(--text-muted)",
+        color: TEXT.muted,
         paddingLeft: 16,
-        borderLeft: "2px solid var(--border-default)",
+        borderLeft: `2px solid ${BORDER.default}`,
       }}>
         <strong>Science reference:</strong> Messenger, J.B. (2001). Cephalopod chromatophores: neurobiology and natural history. <em>Biological Reviews</em>, 76(4), 473{"\u2013"}528.{" "}
         <Link
