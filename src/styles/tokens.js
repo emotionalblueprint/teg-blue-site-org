@@ -101,7 +101,7 @@ export const TYPE_SCALE = {
 // ─── SPACING ─────────────────────────────────────────
 
 export const SPACING = {
-  containerMax: 820,
+  containerMax: 1100,
   containerPadding: { desktop: "0 24px", mobile: "0 16px" },
   // Responsive side padding — use in inline styles (no media queries needed)
   pagePadding: "clamp(16px, 4vw, 24px)",

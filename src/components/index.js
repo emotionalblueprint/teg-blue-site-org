@@ -33,6 +33,7 @@ export { default as ContentGrid } from "./ContentGrid";
 export { default as HubContent } from "./HubContent";
 export { default as SiteHeader } from "./SiteHeader";
 export { default as SiteFooter } from "./SiteFooter";
+export { default as PageLayout } from "./PageLayout";
 
 // Shared utilities
 export { SpectrumBar, SearchInput } from "./SharedComponents";
