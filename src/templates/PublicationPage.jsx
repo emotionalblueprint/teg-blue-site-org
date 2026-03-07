@@ -9,7 +9,7 @@
  * Receives a resolved ResearchNode as prop.
  */
 
-import { BG, TEXT, FONT, SPACING, BORDER, getContentTypeColor } from "../styles/tokens";
+import { BG, TEXT, FONT, SPACING, BORDER, SPECTRUM, getContentTypeColor } from "../styles/tokens";
 import TypeTag from "../components/TypeTag";
 import StatusBadge from "../components/StatusBadge";
 import ContextBlock from "../components/ContextBlock";
@@ -84,7 +84,7 @@ export default function PublicationPage({ node }) {
                 <a
                   href={node.doiUrl}
                   itemProp="doi"
-                  style={{ color: "#4A9BE8", textDecoration: "none" }}
+                  style={{ color: SPECTRUM.azure, textDecoration: "none" }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

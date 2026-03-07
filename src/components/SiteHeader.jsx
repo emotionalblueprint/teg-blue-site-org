@@ -195,7 +195,7 @@ function NavItem({ item, currentPath }) {
             borderRadius: 8,
             padding: "6px 0",
             zIndex: 100,
-            boxShadow: `0 8px 24px ${hexToRgba("#000", 0.25)}`,
+            boxShadow: `0 8px 24px ${hexToRgba('#000000', 0.25)}`,
           }}
         >
           {item.children.map((child, index) => {

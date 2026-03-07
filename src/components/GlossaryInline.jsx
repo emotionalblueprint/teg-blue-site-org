@@ -60,7 +60,7 @@ export default function GlossaryInline({ term, definition, href }) {
             lineHeight: 1.5,
             width: 280,
             zIndex: 10,
-            boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
+            boxShadow: `0 8px 24px ${hexToRgba('#000000', 0.3)}`,
             color: TEXT.secondary,
             animation: "tooltipIn 150ms ease-out",
           }}
