@@ -186,14 +186,14 @@ export default function EmotionWaveSection() {
           opacity: 1;
           transform: translateY(0);
         }
-        .ew-chart-layout {
+        .ew-cards-row {
           display: grid;
-          grid-template-columns: 240px 1fr;
-          gap: 24px;
-          align-items: start;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          margin-top: 24px;
         }
         @media (max-width: 768px) {
-          .ew-chart-layout {
+          .ew-cards-row {
             grid-template-columns: 1fr;
           }
         }
@@ -245,182 +245,176 @@ export default function EmotionWaveSection() {
             </p>
           </div>
 
-          {/* Chart + Cards layout */}
-          <div className="ew-chart-layout">
-            {/* Left: Three moment cards */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              {MOMENTS.map((m) => {
+          {/* Legend + replay */}
+          <div style={{ display: "flex", gap: "12px 22px", marginBottom: "10px", alignItems: "center", flexWrap: "wrap" }}>
+            {[[MAIN_BLUE, "Processed"], [ORANGE, "Unprocessed"]].map(([color, label]) => (
+              <div key={label} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
+                <svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke={color} strokeWidth="1.5"/></svg>
+                <span style={{ fontFamily: FONT.mono, fontSize: "8.5px", color, letterSpacing: "0.12em" }}>{label}</span>
+              </div>
+            ))}
+            <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "16px" }}>
+              <span style={{ fontFamily: FONT.mono, fontSize: "8px", color: TEXT.hint, letterSpacing: "0.08em" }}>
+                x-axis: compressed time (ms → min)
+              </span>
+              {done && (
+                <button
+                  onClick={play}
+                  aria-label="Replay animation"
+                  style={{
+                    display: "flex", alignItems: "center", gap: "6px",
+                    padding: "4px 12px",
+                    border: `1px solid ${BORDER.default}`,
+                    background: "transparent",
+                    color: TEXT.muted,
+                    borderRadius: "6px",
+                    fontFamily: FONT.mono,
+                    fontSize: "9px",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    fontWeight: 500,
+                    cursor: "pointer",
+                    transition: "color 0.2s ease, border-color 0.2s ease",
+                  }}
+                >
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                    <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
+                  Replay
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Chart */}
+          <div style={{ position: "relative" }}>
+            <svg viewBox={`0 0 ${VW} ${VH}`} style={{ width: "100%", height: "auto", display: "block" }}>
+
+              {/* Grid lines */}
+              {[0.25, 0.5, 0.75, 1].map(v => (
+                <line key={v}
+                  x1={PL} y1={PT + (1 - v) * PH}
+                  x2={PL + PW} y2={PT + (1 - v) * PH}
+                  stroke={hexToRgba(ACCENT, 0.06)} strokeWidth="1"/>
+              ))}
+
+              {/* Baseline */}
+              <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
+                stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
+
+              {/* Y-axis */}
+              <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
+                stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
+              <text x={14} y={PT + PH / 2} textAnchor="middle"
+                transform={`rotate(-90,14,${PT + PH / 2})`}
+                style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px", fill: TEXT.hint, letterSpacing: "0.12em" }}>
+                ACTIVATION
+              </text>
+
+              {/* Bifurcation line */}
+              <line x1={branchX} y1={PT - 6} x2={branchX} y2={PT + PH}
+                stroke={hexToRgba(MAIN_BLUE, 0.25)} strokeWidth="1" strokeDasharray="3,5"/>
+
+              {/* Ghost paths */}
+              <path d={unprocGhost} fill="none" stroke={ORANGE} strokeWidth="1" strokeOpacity="0.1"/>
+              <path d={procGhost} fill="none" stroke={MAIN_BLUE} strokeWidth="1" strokeOpacity="0.1"/>
+
+              {/* Revealed paths */}
+              {hasStarted && (
+                <>
+                  <path d={unprocReveal} fill="none" stroke={ORANGE} strokeWidth="1.8" strokeOpacity="0.8"/>
+                  <path d={procReveal} fill="none" stroke={MAIN_BLUE} strokeWidth="2" strokeOpacity="0.95"/>
+                </>
+              )}
+
+              {/* Cursor */}
+              {progress > 0.01 && (
+                <line x1={cx} y1={PT - 4} x2={cx} y2={PT + PH}
+                  stroke={hexToRgba('#94a3b8', 0.1)} strokeWidth="1"/>
+              )}
+
+              {/* Cursor dots */}
+              {progress > 0.01 && !showSplit && (
+                <circle cx={cx} cy={pyAtCursor} r="2.5" fill={TEXT.secondary}/>
+              )}
+              {showSplit && (
+                <>
+                  <circle cx={cx} cy={pyAtCursor} r="5" fill={MAIN_BLUE} fillOpacity="0.15"/>
+                  <circle cx={cx} cy={pyAtCursor} r="2.5" fill={MAIN_BLUE}/>
+                  <circle cx={cx} cy={uyAtCursor} r="5" fill={ORANGE} fillOpacity="0.15"/>
+                  <circle cx={cx} cy={uyAtCursor} r="2.5" fill={ORANGE}/>
+                </>
+              )}
+
+              {/* End labels */}
+              {done && (
+                <>
+                  <text x={PL + PW + 6} y={pyAtCursor + 4}
+                    style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "8.5px", fill: MAIN_BLUE }}>
+                    baseline
+                  </text>
+                  <text x={PL + PW + 6} y={uyAtCursor + 4}
+                    style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "8.5px", fill: ORANGE }}>
+                    chronic
+                  </text>
+                </>
+              )}
+
+              {/* Event tick marks */}
+              {MOMENTS.map(m => {
+                const mx = PL + m.t * PW;
                 const reached = progress >= m.t;
                 return (
-                  <div key={m.id} className={`moment-pill ${reached ? "visible" : ""}`}
-                    style={{
-                      background: `linear-gradient(135deg, ${hexToRgba(ACCENT, 0.06)}, transparent)`,
-                      padding: "18px 16px",
-                      borderRadius: "12px",
-                      border: `1px solid ${reached ? hexToRgba(ACCENT, 0.2) : BORDER.default}`,
-                      borderLeft: `3px solid ${reached ? m.color : BORDER.default}`,
-                      transition: "border-color 0.5s ease, opacity 0.4s ease, transform 0.4s ease"
-                    }}>
-                    <div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
-                        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: m.color, flexShrink: 0 }}/>
-                        <span style={{ fontFamily: FONT.mono, fontSize: "8px",
-                          color: m.color, letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>
-                          {m.label}
-                        </span>
-                      </div>
-                      <p style={{ fontSize: "13px",
-                        color: reached ? TEXT.secondary : TEXT.hint, lineHeight: 1.72, marginBottom: "8px",
-                        transition: "color 0.5s ease" }}>
-                        {m.body}
-                      </p>
-                      <span style={{ fontFamily: FONT.mono, fontSize: "7.5px",
-                        color: TEXT.hint, letterSpacing: "0.04em" }}>
-                        {m.ref}
-                      </span>
-                    </div>
-                  </div>
+                  <g key={m.id}>
+                    <line x1={mx} y1={PT + PH} x2={mx} y2={PT + PH + 5}
+                      stroke={reached ? m.color : hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
+                    <text x={mx} y={PT + PH + 15} textAnchor="middle"
+                      style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px",
+                        fill: reached ? m.color : TEXT.hint, letterSpacing: "0.05em" }}>
+                      {m.sub}
+                    </text>
+                  </g>
                 );
               })}
-            </div>
+            </svg>
+          </div>
 
-            {/* Right: Legend + Chart */}
-            <div>
-              {/* Legend + replay */}
-              <div style={{ display: "flex", gap: "12px 22px", marginBottom: "10px", alignItems: "center", flexWrap: "wrap" }}>
-                {[[MAIN_BLUE, "Processed"], [ORANGE, "Unprocessed"]].map(([color, label]) => (
-                  <div key={label} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
-                    <svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke={color} strokeWidth="1.5"/></svg>
-                    <span style={{ fontFamily: FONT.mono, fontSize: "8.5px", color, letterSpacing: "0.12em" }}>{label}</span>
+          {/* Three moment cards — horizontal row below chart */}
+          <div className="ew-cards-row">
+            {MOMENTS.map((m) => {
+              const reached = progress >= m.t;
+              return (
+                <div key={m.id} className={`moment-pill ${reached ? "visible" : ""}`}
+                  style={{
+                    background: `linear-gradient(135deg, ${hexToRgba(ACCENT, 0.06)}, transparent)`,
+                    padding: "18px 16px",
+                    borderRadius: "12px",
+                    border: `1px solid ${reached ? hexToRgba(ACCENT, 0.2) : BORDER.default}`,
+                    borderLeft: `3px solid ${reached ? m.color : BORDER.default}`,
+                    transition: "border-color 0.5s ease, opacity 0.4s ease, transform 0.4s ease"
+                  }}>
+                  <div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
+                      <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: m.color, flexShrink: 0 }}/>
+                      <span style={{ fontFamily: FONT.mono, fontSize: "8px",
+                        color: m.color, letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>
+                        {m.label}
+                      </span>
+                    </div>
+                    <p style={{ fontSize: "13px",
+                      color: reached ? TEXT.secondary : TEXT.hint, lineHeight: 1.72, marginBottom: "8px",
+                      transition: "color 0.5s ease" }}>
+                      {m.body}
+                    </p>
+                    <span style={{ fontFamily: FONT.mono, fontSize: "7.5px",
+                      color: TEXT.hint, letterSpacing: "0.04em" }}>
+                      {m.ref}
+                    </span>
                   </div>
-                ))}
-                <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "16px" }}>
-                  <span style={{ fontFamily: FONT.mono, fontSize: "8px", color: TEXT.hint, letterSpacing: "0.08em" }}>
-                    x-axis: compressed time (ms → min)
-                  </span>
-                  {done && (
-                    <button
-                      onClick={play}
-                      aria-label="Replay animation"
-                      style={{
-                        display: "flex", alignItems: "center", gap: "6px",
-                        padding: "4px 12px",
-                        border: `1px solid ${BORDER.default}`,
-                        background: "transparent",
-                        color: TEXT.muted,
-                        borderRadius: "6px",
-                        fontFamily: FONT.mono,
-                        fontSize: "9px",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        fontWeight: 500,
-                        cursor: "pointer",
-                        transition: "color 0.2s ease, border-color 0.2s ease",
-                      }}
-                    >
-                      <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                        <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round"/>
-                      </svg>
-                      Replay
-                    </button>
-                  )}
                 </div>
-              </div>
-
-              {/* Chart */}
-              <div style={{ position: "relative" }}>
-                <svg viewBox={`0 0 ${VW} ${VH}`} style={{ width: "100%", height: "auto", display: "block" }}>
-
-                  {/* Grid lines */}
-                  {[0.25, 0.5, 0.75, 1].map(v => (
-                    <line key={v}
-                      x1={PL} y1={PT + (1 - v) * PH}
-                      x2={PL + PW} y2={PT + (1 - v) * PH}
-                      stroke={hexToRgba(ACCENT, 0.06)} strokeWidth="1"/>
-                  ))}
-
-                  {/* Baseline */}
-                  <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
-                    stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
-
-                  {/* Y-axis */}
-                  <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
-                    stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
-                  <text x={14} y={PT + PH / 2} textAnchor="middle"
-                    transform={`rotate(-90,14,${PT + PH / 2})`}
-                    style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px", fill: TEXT.hint, letterSpacing: "0.12em" }}>
-                    ACTIVATION
-                  </text>
-
-                  {/* Bifurcation line */}
-                  <line x1={branchX} y1={PT - 6} x2={branchX} y2={PT + PH}
-                    stroke={hexToRgba(MAIN_BLUE, 0.25)} strokeWidth="1" strokeDasharray="3,5"/>
-
-                  {/* Ghost paths */}
-                  <path d={unprocGhost} fill="none" stroke={ORANGE} strokeWidth="1" strokeOpacity="0.1"/>
-                  <path d={procGhost} fill="none" stroke={MAIN_BLUE} strokeWidth="1" strokeOpacity="0.1"/>
-
-                  {/* Revealed paths */}
-                  {hasStarted && (
-                    <>
-                      <path d={unprocReveal} fill="none" stroke={ORANGE} strokeWidth="1.8" strokeOpacity="0.8"/>
-                      <path d={procReveal} fill="none" stroke={MAIN_BLUE} strokeWidth="2" strokeOpacity="0.95"/>
-                    </>
-                  )}
-
-                  {/* Cursor */}
-                  {progress > 0.01 && (
-                    <line x1={cx} y1={PT - 4} x2={cx} y2={PT + PH}
-                      stroke={hexToRgba('#94a3b8', 0.1)} strokeWidth="1"/>
-                  )}
-
-                  {/* Cursor dots */}
-                  {progress > 0.01 && !showSplit && (
-                    <circle cx={cx} cy={pyAtCursor} r="2.5" fill={TEXT.secondary}/>
-                  )}
-                  {showSplit && (
-                    <>
-                      <circle cx={cx} cy={pyAtCursor} r="5" fill={MAIN_BLUE} fillOpacity="0.15"/>
-                      <circle cx={cx} cy={pyAtCursor} r="2.5" fill={MAIN_BLUE}/>
-                      <circle cx={cx} cy={uyAtCursor} r="5" fill={ORANGE} fillOpacity="0.15"/>
-                      <circle cx={cx} cy={uyAtCursor} r="2.5" fill={ORANGE}/>
-                    </>
-                  )}
-
-                  {/* End labels */}
-                  {done && (
-                    <>
-                      <text x={PL + PW + 6} y={pyAtCursor + 4}
-                        style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "8.5px", fill: MAIN_BLUE }}>
-                        baseline
-                      </text>
-                      <text x={PL + PW + 6} y={uyAtCursor + 4}
-                        style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "8.5px", fill: ORANGE }}>
-                        chronic
-                      </text>
-                    </>
-                  )}
-
-                  {/* Event tick marks */}
-                  {MOMENTS.map(m => {
-                    const mx = PL + m.t * PW;
-                    const reached = progress >= m.t;
-                    return (
-                      <g key={m.id}>
-                        <line x1={mx} y1={PT + PH} x2={mx} y2={PT + PH + 5}
-                          stroke={reached ? m.color : hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
-                        <text x={mx} y={PT + PH + 15} textAnchor="middle"
-                          style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px",
-                            fill: reached ? m.color : TEXT.hint, letterSpacing: "0.05em" }}>
-                          {m.sub}
-                        </text>
-                      </g>
-                    );
-                  })}
-                </svg>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
           {/* CTA */}
