@@ -8,6 +8,7 @@ import {
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
+import { F1SignalDiagram, DiagramToggle } from "@/src/components/framework-diagrams";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -259,6 +260,9 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-signal" style={sectionHeadingStyle}>
               The Signal — How the Body Evaluates
             </h2>
+            <DiagramToggle label="signal flow diagram">
+              <F1SignalDiagram />
+            </DiagramToggle>
 
             {/* Concept 1 */}
             <div style={{ marginBottom: 32 }}>
