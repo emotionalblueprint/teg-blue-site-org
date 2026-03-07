@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback } from "react";
 import {
   FONT, TEXT, BG, BORDER,
-  hexToRgba,
+  PATTERN, PATTERN_GRADIENT, MODE_ORANGE, hexToRgba,
 } from "@/src/styles/tokens";
 
 // ─── MODE DATA ──────────────────────────────────────────
@@ -12,7 +12,7 @@ const MODES = [
   {
     key: "A",
     name: "Connection",
-    hex: "#60a5fa",
+    hex: PATTERN.A.primary,
     center: 0.125,
     fluid: {
       fullName: "Connection Mode",
@@ -51,7 +51,7 @@ const MODES = [
   {
     key: "B",
     name: "Protection",
-    hex: "#3b82f6",
+    hex: PATTERN.B.primary,
     center: 0.375,
     fluid: {
       fullName: "Protection Mode",
@@ -90,7 +90,7 @@ const MODES = [
   {
     key: "C",
     name: "Control",
-    hex: "#2563eb",
+    hex: PATTERN.C.primary,
     center: 0.625,
     fluid: {
       fullName: "Control Mode",
@@ -129,7 +129,7 @@ const MODES = [
   {
     key: "D",
     name: "Domination",
-    hex: "#1d4ed8",
+    hex: PATTERN.D.primary,
     center: 0.875,
     fluid: {
       fullName: "Domination Mode",
@@ -169,8 +169,7 @@ const MODES = [
 
 // ─── CONSTANTS ──────────────────────────────────────────
 
-const BAR_GRADIENT =
-  "linear-gradient(90deg, #60a5fa 0%, #60a5fa 20%, #3b82f6 35%, #3b82f6 45%, #2563eb 55%, #2563eb 70%, #1d4ed8 85%, #1d4ed8 100%)";
+const BAR_GRADIENT = `linear-gradient(90deg, ${PATTERN.A.primary} 0%, ${PATTERN.A.primary} 20%, ${PATTERN.B.primary} 35%, ${PATTERN.B.primary} 45%, ${PATTERN.C.primary} 55%, ${PATTERN.C.primary} 70%, ${PATTERN.D.primary} 85%, ${PATTERN.D.primary} 100%)`;
 
 const MAGNET_RADIUS = 0.04;
 
@@ -394,7 +393,7 @@ export default function FluidCompassExplorer() {
                   width: 3,
                   left: `${pos * 100}%`,
                   transform: "translateX(-50%)",
-                  backgroundColor: "rgba(0,0,0,0.6)",
+                  backgroundColor: hexToRgba('#000000', 0.6),
                 }}
               />
             ))}
@@ -476,14 +475,14 @@ export default function FluidCompassExplorer() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              color: isStuck ? "#e87a4a" : TEXT.muted,
+              color: isStuck ? MODE_ORANGE : TEXT.muted,
               padding: "2px 8px",
               borderRadius: 100,
               background: isStuck
-                ? "rgba(232,122,74,0.1)"
+                ? hexToRgba(MODE_ORANGE, 0.1)
                 : BG.surface,
               border: `1px solid ${
-                isStuck ? "rgba(232,122,74,0.25)" : BORDER.default
+                isStuck ? hexToRgba(MODE_ORANGE, 0.25) : BORDER.default
               }`,
               transition: "all 300ms ease",
             }}
@@ -561,7 +560,7 @@ export default function FluidCompassExplorer() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              color: isStuck ? "#e87a4a" : TEXT.muted,
+              color: isStuck ? MODE_ORANGE : TEXT.muted,
               transition: "color 300ms ease",
             }}
           >
