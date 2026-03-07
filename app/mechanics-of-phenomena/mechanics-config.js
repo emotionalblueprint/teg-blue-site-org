@@ -20,12 +20,16 @@ export const SERIES = [
         number: 2,
         slug: "02-why-people-change-by-context",
         title: "Why People Are Completely Different Depending on Who\u2019s Watching",
+        subtitle: "A diagnostic for the bewildered, the gaslit, and the ones who keep being told they must be exaggerating",
+        connection: "M1 Operating Modes / F4 Collective Rules / F5 Worth Hierarchies",
         featured: true,
       },
       {
         number: 1,
         slug: "01-why-evidence-fails",
-        title: "Why Evidence Doesn\u2019t Work",
+        title: "Why Evidence Doesn\u2019t Work \u2014 And What Actually Does",
+        subtitle: "A diagnostic for the frustrated, the rigorous, and the quietly losing hope",
+        connection: "F3 Cognitive Replacement / M1 Operating Modes Under Pressure",
       },
     ],
   },
@@ -39,10 +43,23 @@ export const SERIES = [
         number: 1,
         slug: "01-octopus-chromatophores",
         title: "Octopuses Change Color With Their Emotions",
+        subtitle: "The signal function of emotional states \u2014 running in completely different hardware",
+        connection: "F1 Emotional Gradient / Signal function",
       },
     ],
   },
 ];
+
+// ─── PIECE LOOKUP ───────────────────────────────────────
+
+/** Find a piece and its parent series by piece slug. */
+export function findPiece(slug) {
+  for (const series of SERIES) {
+    const piece = series.pieces.find((p) => p.slug === slug);
+    if (piece) return { piece, series };
+  }
+  return null;
+}
 
 // ─── GO DEEPER URL MAPPING ───────────────────────────────
 

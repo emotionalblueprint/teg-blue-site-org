@@ -6,17 +6,6 @@ import GoDeeper from "../GoDeeper";
 export default function PiecePBN01Octopus() {
   return (
     <article>
-      {/* Series tag */}
-      <p style={READING.seriesTag}>A Proof by Nature {"\u2014"} No. 01</p>
-
-      {/* Title */}
-      <h1 style={READING.title}>Octopuses Change Color With Their Emotions</h1>
-
-      {/* TEG-Blue connection */}
-      <p style={READING.subtitle}>TEG-Blue principle: The signal function of emotional states</p>
-
-      <hr style={READING.hr} />
-
       {/* Continuous prose */}
       <p style={READING.paragraph}>I keep a running list of the places I find the same architecture operating in completely different hardware. The octopus was on it early.</p>
 

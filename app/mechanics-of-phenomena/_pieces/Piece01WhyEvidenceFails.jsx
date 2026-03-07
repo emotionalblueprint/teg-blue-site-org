@@ -4,20 +4,6 @@ import GoDeeper from "../GoDeeper";
 export default function Piece01WhyEvidenceFails() {
   return (
     <article>
-      {/* Series tag */}
-      <p style={READING.seriesTag}>Why Humans Are So Frustrating {"\u2014"} No. 01</p>
-
-      {/* Title */}
-      <h1 style={READING.title}>Why Evidence Doesn{"\u2019"}t Work {"\u2014"} And What Actually Does</h1>
-
-      {/* TEG-Blue connection */}
-      <p style={READING.subtitle}>TEG-Blue connection: F3 Cognitive Replacement / M1 Operating Modes Under Pressure</p>
-
-      {/* Audience subtitle */}
-      <p style={READING.subtitle}>A diagnostic for the frustrated, the rigorous, and the quietly losing hope</p>
-
-      <hr style={READING.hr} />
-
       {/* Opening paragraphs */}
       <p style={READING.paragraph}>I{"\u2019"}ve been collecting this pattern for years. It shows up in every field where someone careful is trying to change someone else{"\u2019"}s mind with evidence {"\u2014"} and failing. Scientists, educators, clinicians, policy researchers. Different domains. Same wall.</p>
 

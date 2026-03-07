@@ -4,20 +4,6 @@ import GoDeeper from "../GoDeeper";
 export default function Piece02WhyPeopleChange() {
   return (
     <article>
-      {/* Series tag */}
-      <p style={READING.seriesTag}>Why Humans Are So Frustrating {"\u2014"} No. 02</p>
-
-      {/* Title */}
-      <h1 style={READING.title}>Why People Are Completely Different Depending on Who{"\u2019"}s Watching</h1>
-
-      {/* TEG-Blue connection */}
-      <p style={READING.subtitle}>TEG-Blue connection: M1 Operating Modes / F4 Collective Rules / F5 Worth Hierarchies / F2 Developmental Failure of Regulation</p>
-
-      {/* Audience subtitle */}
-      <p style={READING.subtitle}>A diagnostic for the bewildered, the gaslit, and the ones who keep being told they must be exaggerating</p>
-
-      <hr style={READING.hr} />
-
       {/* Opening paragraphs */}
       <p style={READING.paragraph}>I{"\u2019"}ve been collecting variations of this pattern for a long time. A clinician describing a patient whose family is in crisis but whose colleagues adore them. A manager trying to understand why their most respected director leaves a trail of damage at home. Someone trying to reconcile the person they live with against the person everyone else keeps telling them they{"\u2019"}re lucky to have.</p>
 

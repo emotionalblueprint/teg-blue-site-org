@@ -1,5 +1,6 @@
 import { BG, TEXT, FONT, BORDER, EDITORIAL, SPACING, hexToRgba } from "@/src/styles/tokens";
 import MechanicsSidebar from "./MechanicsSidebar";
+import { findPiece } from "./mechanics-config";
 
 const px = SPACING.pagePadding;
 
@@ -53,6 +54,10 @@ export default function MechanicsLayout({
   showBackLink = false,
   children,
 }) {
+  // Look up piece data for hero when on an individual piece page
+  const found = activePiece ? findPiece(activePiece) : null;
+  const showPieceHero = !showSectionHeader && found;
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: RESPONSIVE_CSS }} />
@@ -65,7 +70,7 @@ export default function MechanicsLayout({
           padding: `0 ${px}`,
         }}
       >
-        {/* Section header (main page only) */}
+        {/* Section header (main/index page only) */}
         {showSectionHeader && (
           <div
             style={{
@@ -98,6 +103,69 @@ export default function MechanicsLayout({
               I keep finding the same architecture running in different systems {"\u2014"} different
               fields, different hardware, different centuries. This is where I log it.
             </p>
+          </div>
+        )}
+
+        {/* Piece hero (individual piece pages) */}
+        {showPieceHero && (
+          <div
+            style={{
+              paddingTop: 48,
+              paddingBottom: 32,
+              borderBottom: `1px solid ${hexToRgba(EDITORIAL.accent, 0.12)}`,
+              marginBottom: 40,
+            }}
+          >
+            <p
+              style={{
+                fontFamily: FONT.mono,
+                fontSize: 11,
+                fontWeight: 500,
+                letterSpacing: "0.04em",
+                color: EDITORIAL.accent,
+                marginBottom: 14,
+              }}
+            >
+              {found.series.name} {"\u2014"} No. {String(found.piece.number).padStart(2, "0")}
+            </p>
+            <h1
+              style={{
+                fontSize: "clamp(24px, 4vw, 32px)",
+                fontWeight: 700,
+                color: TEXT.primary,
+                letterSpacing: "-0.02em",
+                lineHeight: 1.2,
+                marginBottom: 12,
+              }}
+            >
+              {found.piece.title}
+            </h1>
+            {found.piece.subtitle && (
+              <p
+                style={{
+                  fontSize: 15,
+                  fontStyle: "italic",
+                  color: TEXT.muted,
+                  lineHeight: 1.7,
+                  maxWidth: "70ch",
+                }}
+              >
+                {found.piece.subtitle}
+              </p>
+            )}
+            {found.piece.connection && (
+              <p
+                style={{
+                  fontFamily: FONT.mono,
+                  fontSize: 11,
+                  color: TEXT.hint,
+                  letterSpacing: "0.02em",
+                  marginTop: 12,
+                }}
+              >
+                TEG-Blue connection: {found.piece.connection}
+              </p>
+            )}
           </div>
         )}
 
