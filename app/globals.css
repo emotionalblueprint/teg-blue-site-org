@@ -10,11 +10,11 @@
   --spectrum-slate:  #6B7A99;
 
   /* Backgrounds — Tailwind Slate scale */
-  --bg-page:    #0f172a;
-  --bg-primary: #111827;
-  --bg-card:    #1e2d4a;
-  --bg-surface: #1a2540;
-  --bg-inset:   #0b1120;
+  --bg-page:    #111729;
+  --bg-primary: #151c35;
+  --bg-card:    #121826;
+  --bg-surface: #121826;
+  --bg-inset:   #0a0d17;
 
   /* Text */
   --text-primary:   #f1f5f9;
