@@ -88,11 +88,14 @@ export const TYPE_SCALE = {
   pageTitle:       { size: 28, weight: 700, tracking: "-0.02em", lineHeight: 1.2 },
   sectionHead:     { size: 18, weight: 600, tracking: "-0.01em", lineHeight: 1.2 },
   expandableTitle: { size: 15, weight: 600, tracking: "normal",  lineHeight: 1.4 },
-  body:            { size: 14, weight: 400, tracking: "normal",  lineHeight: 1.7 },
-  summary:         { size: 14, weight: 400, tracking: "normal",  lineHeight: 1.7 },
+  body:            { size: 15, weight: 400, tracking: "normal",  lineHeight: 1.75 },
+  summary:         { size: 13, weight: 400, tracking: "normal",  lineHeight: 1.72 },
   doi:             { size: 12, weight: 400, tracking: "0.01em",  lineHeight: 1.4, font: "mono" },
   tagLabel:        { size: 10, weight: 600, tracking: "0.06em",  lineHeight: 1.3, font: "mono" },
   connectionType:  { size: 10, weight: 500, tracking: "0.04em",  lineHeight: 1.3, font: "mono" },
+  tagMicro:        { size: 8,   weight: 600, tracking: "0.16em", lineHeight: 1.3, font: "mono" },
+  chartLabel:      { size: 7.5, weight: 400, tracking: "0.12em", lineHeight: 1.3, font: "mono" },
+  micro:           { size: 8.5, weight: 400, tracking: "0.12em", lineHeight: 1.3, font: "mono" },
 };
 
 // ─── SPACING ─────────────────────────────────────────
@@ -154,6 +157,27 @@ export const RESEARCHER = {
   accentLight: '#3b82f6',
   accentLighter: '#60a5fa',
 };
+
+// ─── THREE AWARENESS CAPACITIES (cross-site canonical — matches .com) ───
+
+export const AWARENESS = {
+  RE:  '#a080ff',   // violet — Reading Emotions
+  ER:  '#22d3ee',   // cyan — Emotional Resonance
+  SEA: '#a0e85a',   // green — Self-Emotional Awareness
+};
+
+// ─── STATUS COLORS ──────────────────────────────────────
+
+export const STATUS = {
+  draft:    '#f59e0b',      // amber
+  published: SPECTRUM.blue,
+  reviewed: '#10b981',      // emerald
+};
+
+// ─── MODE ACCENT COLORS (surgical signal colors — matches .com) ──
+
+export const MODE_ORANGE = '#f97316'; // unprocessed / protection / SEA offline
+export const MODE_PINK   = '#ec4899'; // domination / chronic RE / precision without feedback
 
 // Helper: gradient card background
 export function gradientCardBg(color, startOpacity = 0.08) {
