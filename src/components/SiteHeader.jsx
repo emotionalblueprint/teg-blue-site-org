@@ -47,6 +47,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Publications", href: "/publications" },
+  { label: "Phenomena", href: "/mechanics-of-phenomena" },
   { label: "Scientific Foundations", href: "/scientific-foundations" },
   { label: "Glossary", href: "/glossary" },
   { label: "AI Safety", href: "/ai-safety" },
