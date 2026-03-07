@@ -381,7 +381,173 @@ export default function DesignSystemPage() {
           </div>
         </section>
 
-        {/* Remaining sections will be added in subsequent tasks */}
+        {/* ─── 7. BORDER RADIUS ────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Border Radius</SectionTitle>
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+            {Object.entries(RADIUS).map(([name, px]) => (
+              <div key={name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+                <div style={{
+                  width: 72,
+                  height: 72,
+                  borderRadius: px,
+                  border: `1px solid ${BORDER.hover}`,
+                  background: BG.card,
+                }} />
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.secondary,
+                  textTransform: "uppercase",
+                }}>
+                  {name}
+                </span>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                }}>
+                  {px}px
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── 8. SPACING ──────────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Spacing</SectionTitle>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              { name: "containerMax", value: `${SPACING.containerMax}px`, width: "100%" },
+              { name: "sectionGap (desktop)", value: `${SPACING.sectionGap.desktop}px`, width: `${(SPACING.sectionGap.desktop / SPACING.containerMax) * 100}%` },
+              { name: "sectionGap (mobile)", value: `${SPACING.sectionGap.mobile}px`, width: `${(SPACING.sectionGap.mobile / SPACING.containerMax) * 100}%` },
+              { name: "contentGap (desktop)", value: `${SPACING.contentGap.desktop}px`, width: `${(SPACING.contentGap.desktop / SPACING.containerMax) * 100}%` },
+              { name: "cardPadding (desktop)", value: `${SPACING.cardPadding.desktop}px`, width: `${(SPACING.cardPadding.desktop / SPACING.containerMax) * 100}%` },
+              { name: "gridGap", value: `${SPACING.gridGap}px`, width: `${(SPACING.gridGap / SPACING.containerMax) * 100}%` },
+            ].map(({ name, value, width }) => (
+              <div key={name} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.muted,
+                  textTransform: "uppercase",
+                  minWidth: 180,
+                  flexShrink: 0,
+                }}>
+                  {name}
+                </span>
+                <div style={{
+                  height: 12,
+                  width,
+                  minWidth: 12,
+                  background: hexToRgba(SPECTRUM.cobalt, 0.3),
+                  borderRadius: RADIUS.sm,
+                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.5)}`,
+                }} />
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                  flexShrink: 0,
+                }}>
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── 9. OPACITY ──────────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Opacity Scale</SectionTitle>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            {Object.entries(OPACITY).map(([name, value]) => (
+              <div key={name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                <div style={{
+                  width: SWATCH_SIZE,
+                  height: SWATCH_SIZE,
+                  borderRadius: RADIUS.sm,
+                  backgroundColor: hexToRgba(SPECTRUM.cobalt, value),
+                  border: `1px solid ${BORDER.default}`,
+                }} />
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.secondary,
+                  textTransform: "uppercase",
+                }}>
+                  {name}
+                </span>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                }}>
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── 10. TRANSITIONS ─────────────────────────── */}
+        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Transitions</SectionTitle>
+          <style dangerouslySetInnerHTML={{ __html: `
+            .ds-transition-box { cursor: pointer; }
+            .ds-transition-box:hover { background: ${hexToRgba(SPECTRUM.cobalt, 0.2)} !important; }
+          `}} />
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+            {Object.entries(TRANSITION).map(([name, value]) => (
+              <div
+                key={name}
+                className="ds-transition-box"
+                style={{
+                  width: 160,
+                  height: 80,
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${BORDER.default}`,
+                  background: BG.card,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 4,
+                  transition: `background ${value}`,
+                }}
+              >
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.tagLabel.size,
+                  fontWeight: TYPE_SCALE.tagLabel.weight,
+                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                  color: TEXT.secondary,
+                  textTransform: "uppercase",
+                }}>
+                  {name}
+                </span>
+                <span style={{
+                  fontFamily: FONT.mono,
+                  fontSize: TYPE_SCALE.micro.size,
+                  color: TEXT.hint,
+                  letterSpacing: TYPE_SCALE.micro.tracking,
+                }}>
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       <SiteFooter />
