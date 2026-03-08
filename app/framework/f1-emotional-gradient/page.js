@@ -33,18 +33,18 @@ const F1CognitiveUpgradeDiagram = dynamic(
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "The six foundational claims the entire F1 framework rests on." },
-  { label: "Overview", description: "A map of the complete seven-step trajectory, from biological signal to social structure." },
-  { label: "The Signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
-  { label: "The Instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
-  { label: "The Hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
-  { label: "The Cognitive Upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
-  { label: "The Architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
-  { label: "The Full Arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
-  { label: "What F1 Establishes", description: "A consolidated reference: every core concept defined, every key formulation stated." },
-  { label: "Research Foundations", description: "The established theories F1 draws from, listed by tradition." },
-  { label: "Bridge to F2", description: "Why Biological Restoration must be learned, not just designed." },
-  { label: "Where to Go Next", description: "Paths forward depending on what you need." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
+  { label: "Overview", href: "#overview", description: "A map of the complete seven-step trajectory, from biological signal to social structure." },
+  { label: "The Signal", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
+  { label: "The Instrument", href: "#the-instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
+  { label: "The Hinge", href: "#the-hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
+  { label: "The Cognitive Upgrade", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
+  { label: "The Architecture", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
+  { label: "The Full Arc", href: "#the-full-arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
+  { label: "What F1 Establishes", href: "#what-f1-establishes", description: "A consolidated reference: every core concept defined, every key formulation stated." },
+  { label: "Research Foundations", href: "#research-foundations", description: "The established theories F1 draws from, listed by tradition." },
+  { label: "Bridge to F2", href: "#bridge-to-f2", description: "Why Biological Restoration must be learned, not just designed." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -110,68 +110,6 @@ export default function F1EmotionalGradientPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The Complete Arc"],
-              ["#the-signal", "The Signal — How the Body Evaluates"],
-              ["#the-instrument", "The Instrument — How the Body Orients"],
-              ["#the-hinge", "The Hinge — Biological Restoration"],
-              ["#the-cognitive-upgrade", "The Cognitive Upgrade"],
-              ["#the-architecture", "The Architecture — How the Instrument Reads"],
-              ["#the-full-arc", "The Full Arc — From Signal to Structure"],
-              ["#what-f1-establishes", "What F1 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f2", "Bridge to F2"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

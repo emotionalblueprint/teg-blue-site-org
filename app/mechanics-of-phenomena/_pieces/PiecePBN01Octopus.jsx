@@ -48,7 +48,7 @@ export default function PiecePBN01Octopus() {
       <hr style={READING.hr} />
 
       {/* TEG-Blue connection section */}
-      <h2 style={READING.heading}>TEG-Blue connection</h2>
+      <h2 id="teg-blue-connection" style={READING.heading}>TEG-Blue connection</h2>
 
       <p style={READING.paragraph}><strong>Primary:</strong> M2 {"\u2014"} Signal function of emotional states (RE: Reading the Environment / ER: Emotional Response transmission)</p>
 

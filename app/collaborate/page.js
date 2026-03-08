@@ -3,10 +3,10 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Everything Is Open", description: "All research published, all data available. Open access, open science, open invitation." },
-  { label: "How to Cite", description: "Citation format and attribution guidelines for academic and professional use." },
-  { label: "Research Directions", description: "Five priority questions still open — where independent researchers can contribute most." },
-  { label: "The Specific Ask", description: "What TEG-Blue needs from the research community right now." },
+  { label: "Everything Is Open", href: "#everything-is-open", description: "All research published, all data available. Open access, open science, open invitation." },
+  { label: "How to Cite", href: "#how-to-cite", description: "Citation format and attribution guidelines for academic and professional use." },
+  { label: "Research Directions", href: "#research-directions", description: "Five priority questions still open — where independent researchers can contribute most." },
+  { label: "The Specific Ask", href: "#the-specific-ask", description: "What TEG-Blue needs from the research community right now." },
 ];
 
 export const metadata = {
@@ -62,7 +62,7 @@ export default function CollaboratePage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Open access */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="everything-is-open" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             Everything is open
           </h2>
@@ -89,7 +89,7 @@ export default function CollaboratePage() {
         </section>
 
         {/* How to cite */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="how-to-cite" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             How to cite
           </h2>
@@ -113,7 +113,7 @@ export default function CollaboratePage() {
         </section>
 
         {/* Research directions */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="research-directions" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             Research directions still open
           </h2>
@@ -147,7 +147,7 @@ export default function CollaboratePage() {
         </section>
 
         {/* The ask */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="the-specific-ask" style={{ marginBottom: 32 }}>
           <div
             style={{
               padding: 24,

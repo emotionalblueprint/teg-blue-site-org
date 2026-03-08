@@ -11,10 +11,10 @@ import {
 } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "M1 — Inner Compass", description: "The four-mode gradient as a continuous compass. How the needle moves, what each position means." },
-  { label: "M2 — Three Capacities", description: "Reading Emotions, Emotional Resonance, Self-Emotional Awareness. The calibration system." },
-  { label: "M3 — The Open Cycle", description: "What happens in the body when the emotional cycle completes — and what happens when it doesn't." },
-  { label: "Integration", description: "How the three models connect: the instrument, its calibration, and its biological mechanism." },
+  { label: "M1 — Inner Compass", href: "#model-cards", description: "The four-mode gradient as a continuous compass. How the needle moves, what each position means." },
+  { label: "M2 — Three Capacities", href: "#model-cards", description: "Reading Emotions, Emotional Resonance, Self-Emotional Awareness. The calibration system." },
+  { label: "M3 — The Open Cycle", href: "#model-cards", description: "What happens in the body when the emotional cycle completes — and what happens when it doesn't." },
+  { label: "Integration", href: "#integration", description: "How the three models connect: the instrument, its calibration, and its biological mechanism." },
 ];
 
 // ─── MODEL DATA ─────────────────────────────────────────────
@@ -129,14 +129,14 @@ export default function ModelsPage() {
         </section>
 
         {/* Model Cards */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="model-cards" style={{ marginBottom: 32 }}>
           {MODELS.map((model) => (
             <ExpandableModelCard key={model.id} model={model} />
           ))}
         </section>
 
         {/* Integration note */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="integration" style={{ marginBottom: 32 }}>
           <p style={{ ...proseStyle, marginBottom: 0 }}>
             The three models are not independent. They are three dimensions of the same reality. A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath. Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
           </p>

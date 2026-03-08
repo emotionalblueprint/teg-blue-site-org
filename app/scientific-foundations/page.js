@@ -703,10 +703,10 @@ const globalModels = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "139+ Theories", description: "Every established theory TEG-Blue draws from, credited and documented with full research lineage." },
-  { label: "24 Research Domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
-  { label: "Framework Tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
-  { label: "CSV Download", description: "Full dataset available for download. Open data, open access." },
+  { label: "139+ Theories", href: "#research-traditions", description: "Every established theory TEG-Blue draws from, credited and documented with full research lineage." },
+  { label: "24 Research Domains", href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
+  { label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
+  { label: "CSV Download", href: "#csv-download", description: "Full dataset available for download. Open data, open access." },
 ];
 
 // ─── PAGE COMPONENT ─────────────────────────────────────────────
@@ -845,7 +845,7 @@ export default function ScientificFoundationsPage() {
           </span>
         </div>
 
-        <section style={{ marginBottom: 48 }}>
+        <section id="research-traditions" style={{ marginBottom: 48 }}>
           <h2
             style={{
               fontSize: 20,
@@ -895,7 +895,7 @@ export default function ScientificFoundationsPage() {
           </div>
 
           {/* Domain filter chips */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
+          <div id="research-domains" style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
             <button
               onClick={() => setActiveDomain(null)}
               style={{
@@ -939,6 +939,7 @@ export default function ScientificFoundationsPage() {
 
           {/* Results count + CSV download */}
           <div
+            id="framework-tags"
             style={{
               display: "flex",
               alignItems: "center",
@@ -953,6 +954,7 @@ export default function ScientificFoundationsPage() {
                 : ""}
             </span>
             <button
+              id="csv-download"
               onClick={downloadCSV}
               style={{
                 padding: "6px 14px",

@@ -15,6 +15,13 @@ const RESPONSIVE_CSS = `
     align-self: start;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .page-layout-sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .page-layout-sidebar::-webkit-scrollbar-thumb {
+    border-radius: 2px;
   }
 
   @media (max-width: 900px) {
@@ -36,7 +43,8 @@ const RESPONSIVE_CSS = `
  * Props:
  *   header: React node — full-width content above the grid (hero, badges, etc.)
  *   children: React node — the page content (goes into left column when sidebar present)
- *   sidebarSections: array of { label, description } — right sidebar content
+ *   sidebarSections: array of { label, description, href? } — right sidebar content
+ *     If item has `href`, label renders as an anchor link; else renders as static text
  *     If empty or undefined, renders without sidebar column
  */
 export default function PageLayout({ header, children, sidebarSections }) {
@@ -62,6 +70,19 @@ export default function PageLayout({ header, children, sidebarSections }) {
               {children}
             </div>
             <aside className="page-layout-sidebar">
+              <div
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  fontFamily: FONT.mono,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  color: TEXT.hint,
+                  marginBottom: 16,
+                }}
+              >
+                On this page
+              </div>
               <nav style={{
                 display: "flex",
                 flexDirection: "column",
@@ -74,21 +95,40 @@ export default function PageLayout({ header, children, sidebarSections }) {
                       ? `1px solid ${BORDER.default}`
                       : "none",
                   }}>
+                    {section.href ? (
+                      <a
+                        href={section.href}
+                        style={{
+                          fontSize: 11,
+                          fontWeight: 600,
+                          fontFamily: FONT.mono,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.06em",
+                          color: SPECTRUM.cobalt,
+                          textDecoration: "none",
+                          marginBottom: 6,
+                          display: "block",
+                        }}
+                      >
+                        {section.label}
+                      </a>
+                    ) : (
+                      <div style={{
+                        fontSize: 11,
+                        fontWeight: 600,
+                        fontFamily: FONT.mono,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                        color: SPECTRUM.cobalt,
+                        marginBottom: 6,
+                      }}>
+                        {section.label}
+                      </div>
+                    )}
                     <div style={{
-                      fontSize: 11,
-                      fontWeight: 600,
-                      fontFamily: FONT.mono,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      color: SPECTRUM.cobalt,
-                      marginBottom: 6,
-                    }}>
-                      {section.label}
-                    </div>
-                    <div style={{
-                      fontSize: 13,
-                      lineHeight: 1.6,
-                      color: TEXT.secondary,
+                      fontSize: 12,
+                      lineHeight: 1.5,
+                      color: TEXT.muted,
                     }}>
                       {section.description}
                     </div>

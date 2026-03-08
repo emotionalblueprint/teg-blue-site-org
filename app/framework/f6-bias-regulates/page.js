@@ -16,17 +16,17 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "Bias is pattern recognition in service of regulation, not a reasoning error." },
-  { label: "Overview", description: "F5 describes the Filter of Worth. F6 describes what happens when that structure gets absorbed into perception itself." },
-  { label: "Bias as Regulation", description: "If believing something reduces threat, the nervous system keeps believing it — below conscious awareness." },
-  { label: "The Bias Architecture", description: "Eight interacting constructs: Bias Architecture, Emotional Logic, State-Dependent Perception, and more." },
-  { label: "Three Categories of Bias", description: "Cognitive biases provide certainty. Social biases provide belonging. Internalised biases provide identity coherence." },
-  { label: "The Formation Loop", description: "Uncertainty → rapid interpretation → identity fusion → social reinforcement → challenge triggers defence." },
-  { label: "Phenomenology of Certainty", description: "Certainty is physiological stability, not epistemic accuracy. Why bias feels like truth." },
-  { label: "The Revision Pathway", description: "Shame does not unlearn bias. Safety does. Five specific conditions for bias revision." },
-  { label: "What F6 Establishes", description: "The regulatory reframe, the eight-construct architecture, the formation loop, the revision pathway." },
-  { label: "Research Foundations", description: "Cognitive psychology, social psychology, neuroscience, clinical psychology, implicit cognition research." },
-  { label: "Bridge to F7", description: "When bias becomes rigid, systems seek stronger stabilisation. From filtering perception to enforcing it." },
+  { label: "Core Propositions", href: "#core-propositions", description: "Bias is pattern recognition in service of regulation, not a reasoning error." },
+  { label: "Overview", href: "#overview", description: "F5 describes the Filter of Worth. F6 describes what happens when that structure gets absorbed into perception itself." },
+  { label: "Bias as Regulation", href: "#bias-as-regulation", description: "If believing something reduces threat, the nervous system keeps believing it — below conscious awareness." },
+  { label: "The Bias Architecture", href: "#bias-architecture", description: "Eight interacting constructs: Bias Architecture, Emotional Logic, State-Dependent Perception, and more." },
+  { label: "Three Categories of Bias", href: "#three-categories", description: "Cognitive biases provide certainty. Social biases provide belonging. Internalised biases provide identity coherence." },
+  { label: "The Formation Loop", href: "#formation-loop", description: "Uncertainty → rapid interpretation → identity fusion → social reinforcement → challenge triggers defence." },
+  { label: "Phenomenology of Certainty", href: "#phenomenology-of-certainty", description: "Certainty is physiological stability, not epistemic accuracy. Why bias feels like truth." },
+  { label: "The Revision Pathway", href: "#revision-pathway", description: "Shame does not unlearn bias. Safety does. Five specific conditions for bias revision." },
+  { label: "What F6 Establishes", href: "#what-f6-establishes", description: "The regulatory reframe, the eight-construct architecture, the formation loop, the revision pathway." },
+  { label: "Research Foundations", href: "#research-foundations", description: "Cognitive psychology, social psychology, neuroscience, clinical psychology, implicit cognition research." },
+  { label: "Bridge to F7", href: "#bridge-to-f7", description: "When bias becomes rigid, systems seek stronger stabilisation. From filtering perception to enforcing it." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -92,68 +92,6 @@ export default function F6BiasRegulatesPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The Third Collective Framework"],
-              ["#bias-as-regulation", "Bias as Regulation, Not Reasoning Error"],
-              ["#bias-architecture", "Bias Architecture — Eight Constructs"],
-              ["#three-categories", "Three Bias Categories by Regulatory Function"],
-              ["#formation-loop", "The Six-Step Bias Formation Loop"],
-              ["#phenomenology-of-certainty", "The Phenomenology of Certainty"],
-              ["#revision-pathway", "The Revision Pathway — Safety Before Correction"],
-              ["#what-f6-establishes", "What F6 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f7", "Bridge to F7"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

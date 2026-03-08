@@ -16,17 +16,17 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "Worth-seeking is often a nervous system regulation strategy, not a character flaw." },
-  { label: "Overview", description: "F4 produces rule systems that determine belonging. F5 asks what those systems sort." },
-  { label: "Power as Safety", description: "When love or belonging were conditional early in life, power and status become regulation strategies." },
-  { label: "Safety Proxies", description: "Economic, social, and cultural capital function as nervous system stabilisers." },
-  { label: "The Filter of Worth", description: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy." },
-  { label: "The Five-Step Worth Loop", description: "Threat → validation-seeking → power-as-proxy → formal sorting → internalised worth." },
-  { label: "Chronic Invisibility", description: "Structural filtering produces chronic social threat. The compass gets stuck in Protection." },
-  { label: "Double False Coherence", description: "'I earned this' and 'something is wrong with me' are both false coherence serving regulation." },
-  { label: "What F5 Establishes", description: "The Filter of Worth as a named mechanism, the safety-proxy framework, the five-step loop." },
-  { label: "Research Foundations", description: "Sociology, social psychology, behavioural economics, network science, neuroscience, critical theory." },
-  { label: "Bridge to F6", description: "When worth sorting becomes stable and internalised, it stops being experienced as a system. It becomes perception." },
+  { label: "Core Propositions", href: "#core-propositions", description: "Worth-seeking is often a nervous system regulation strategy, not a character flaw." },
+  { label: "Overview", href: "#overview", description: "F4 produces rule systems that determine belonging. F5 asks what those systems sort." },
+  { label: "Power as Safety", href: "#power-as-safety", description: "When love or belonging were conditional early in life, power and status become regulation strategies." },
+  { label: "Safety Proxies", href: "#safety-proxies", description: "Economic, social, and cultural capital function as nervous system stabilisers." },
+  { label: "The Filter of Worth", href: "#filter-of-worth", description: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy." },
+  { label: "The Five-Step Worth Loop", href: "#five-step-worth-loop", description: "Threat → validation-seeking → power-as-proxy → formal sorting → internalised worth." },
+  { label: "Chronic Invisibility", href: "#chronic-invisibility", description: "Structural filtering produces chronic social threat. The compass gets stuck in Protection." },
+  { label: "Double False Coherence", href: "#self-reinforcing-advantage", description: "'I earned this' and 'something is wrong with me' are both false coherence serving regulation." },
+  { label: "What F5 Establishes", href: "#what-f5-establishes", description: "The Filter of Worth as a named mechanism, the safety-proxy framework, the five-step loop." },
+  { label: "Research Foundations", href: "#research-foundations", description: "Sociology, social psychology, behavioural economics, network science, neuroscience, critical theory." },
+  { label: "Bridge to F6", href: "#bridge-to-f6", description: "When worth sorting becomes stable and internalised, it stops being experienced as a system. It becomes perception." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -92,68 +92,6 @@ export default function F5WorthHierarchiesPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The Second Collective Framework"],
-              ["#power-as-safety", "Power as Safety — Why Worth-Seeking Is Regulation"],
-              ["#safety-proxies", "Safety Proxies and the Three Capitals"],
-              ["#filter-of-worth", "The Filter of Worth"],
-              ["#five-step-worth-loop", "The Five-Step Worth Loop"],
-              ["#chronic-invisibility", "Chronic Invisibility — Structural Compass Lock"],
-              ["#self-reinforcing-advantage", "Self-Reinforcing Advantage"],
-              ["#what-f5-establishes", "What F5 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f6", "Bridge to F6"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

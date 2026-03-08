@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TEXT, FONT, EDITORIAL } from "@/src/styles/tokens";
+import { TEXT, FONT, BORDER, EDITORIAL } from "@/src/styles/tokens";
 import { SERIES } from "./mechanics-config";
 
 /**
@@ -8,8 +8,9 @@ import { SERIES } from "./mechanics-config";
  * Props:
  *   activePiece: string — slug of the currently displayed piece
  *   showBackLink: boolean — show "← Back" link (true for individual piece pages)
+ *   articleSections: array of { id, label } — anchor links for the current article
  */
-export default function MechanicsSidebar({ activePiece, showBackLink = false }) {
+export default function MechanicsSidebar({ activePiece, showBackLink = false, articleSections }) {
   return (
     <aside className="mop-sidebar">
       {showBackLink && (
@@ -114,6 +115,48 @@ export default function MechanicsSidebar({ activePiece, showBackLink = false }) 
       <p style={{ fontSize: 11, fontStyle: "italic", color: TEXT.micro, marginTop: 8 }}>
         More coming.
       </p>
+
+      {articleSections && articleSections.length > 0 && (
+        <>
+          <div
+            style={{
+              height: 1,
+              background: BORDER.default,
+              margin: "24px 0",
+            }}
+          />
+          <p
+            style={{
+              fontSize: 11,
+              fontFamily: FONT.mono,
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: TEXT.hint,
+              marginBottom: 16,
+            }}
+          >
+            This article
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            {articleSections.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                style={{
+                  display: "block",
+                  fontSize: 12,
+                  color: EDITORIAL.accent,
+                  textDecoration: "none",
+                  lineHeight: 1.5,
+                }}
+              >
+                {section.label}
+              </a>
+            ))}
+          </div>
+        </>
+      )}
     </aside>
   );
 }

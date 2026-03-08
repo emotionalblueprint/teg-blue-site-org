@@ -16,16 +16,16 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "Rule-following is often a nervous system regulation strategy rather than a reasoning choice." },
-  { label: "Overview", description: "F3 completes the individual arc. F4 asks what happens when enough people running those mechanisms are in proximity." },
-  { label: "The Scaling Mechanism", description: "How F3's three mechanisms aggregate into group structures." },
-  { label: "How Rules Get Internalised", description: "The seven-step mechanism: attention narrows, ambiguity decreases, deviation costs, conformity rewarded." },
-  { label: "Six Rule Categories", description: "Roles, Obedience, Performance, Dominance, Punishment, Entitlement — a regulatory taxonomy." },
-  { label: "Rule Escalation", description: "Four stages paralleling the four-mode gradient: from flexible norms through authoritarian control." },
-  { label: "Cross-Theoretical Convergence", description: "Ten research traditions all describing the same mechanism. Rules as nervous system regulation at every scale." },
-  { label: "What F4 Establishes", description: "The scaling mechanism defined, the seven-step loop mapped, the six-category taxonomy available." },
-  { label: "Research Foundations", description: "Sociology, social psychology, neuroscience, trauma studies, and political psychology." },
-  { label: "Bridge to F5", description: "Rule systems do not just organise behaviour. They organise value. Sorting formalises into worth hierarchies." },
+  { label: "Core Propositions", href: "#core-propositions", description: "Rule-following is often a nervous system regulation strategy rather than a reasoning choice." },
+  { label: "Overview", href: "#overview", description: "F3 completes the individual arc. F4 asks what happens when enough people running those mechanisms are in proximity." },
+  { label: "The Scaling Mechanism", href: "#individual-to-collective", description: "How F3's three mechanisms aggregate into group structures." },
+  { label: "How Rules Get Internalised", href: "#seven-step-mechanism", description: "The seven-step mechanism: attention narrows, ambiguity decreases, deviation costs, conformity rewarded." },
+  { label: "Six Rule Categories", href: "#six-rule-systems", description: "Roles, Obedience, Performance, Dominance, Punishment, Entitlement — a regulatory taxonomy." },
+  { label: "Rule Escalation", href: "#rule-escalation", description: "Four stages paralleling the four-mode gradient: from flexible norms through authoritarian control." },
+  { label: "Cross-Theoretical Convergence", href: "#cross-theoretical-convergence", description: "Ten research traditions all describing the same mechanism. Rules as nervous system regulation at every scale." },
+  { label: "What F4 Establishes", href: "#what-f4-establishes", description: "The scaling mechanism defined, the seven-step loop mapped, the six-category taxonomy available." },
+  { label: "Research Foundations", href: "#research-foundations", description: "Sociology, social psychology, neuroscience, trauma studies, and political psychology." },
+  { label: "Bridge to F5", href: "#bridge-to-f5", description: "Rule systems do not just organise behaviour. They organise value. Sorting formalises into worth hierarchies." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -92,67 +92,6 @@ export default function F4RulesRegulatePage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The First Collective Framework"],
-              ["#individual-to-collective", "From Individual to Collective — How F3's Mechanisms Scale"],
-              ["#seven-step-mechanism", "Threat-Based Rule Internalization — The Seven-Step Mechanism"],
-              ["#six-rule-systems", "The Six Rule Systems"],
-              ["#rule-escalation", "Rule Escalation Under Sustained Threat"],
-              ["#cross-theoretical-convergence", "Cross-Theoretical Convergence"],
-              ["#what-f4-establishes", "What F4 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f5", "Bridge to F5"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

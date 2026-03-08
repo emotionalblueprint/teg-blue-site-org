@@ -16,16 +16,16 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", description: "F8 describes individual repair. F9 describes structural repair. F10 asks what happens across generations." },
-  { label: "The Regulation Thread", description: "What transmits differently when the original is present. The thread runs in both directions." },
-  { label: "Awareness Across Generations", description: "The child absorbs the configuration, not the aspiration. Develop the capacity, and what transmits changes." },
-  { label: "Five Transmission Pathways", description: "Implicit learning, co-regulation modelling, environmental design, epigenetic modification, narrative inheritance." },
-  { label: "What Isn't Processed Gets Passed On", description: "The child doesn't inherit the event — the child inherits the regulatory consequence of the event." },
-  { label: "Coherence, Not Content", description: "It is not what happened that determines what is transmitted — it is whether the adult has made coherent sense of it." },
-  { label: "Understanding Without Excusing", description: "I understand why you became who you became — and I see what it cost me. Both are true." },
-  { label: "Relationships Across Repair", description: "Does this relationship create conditions for Connection, or does it re-expose to the original configuration?" },
-  { label: "True Elderhood", description: "Not automatic — what the elder becomes when the work F8 describes has been done." },
-  { label: "Bridge to F11", description: "When the adult begins to see clearly, contradictions emerge that survival previously kept hidden." },
+  { label: "Framework Position", href: "#framework-position", description: "F8 describes individual repair. F9 describes structural repair. F10 asks what happens across generations." },
+  { label: "The Regulation Thread", href: "#framework-position", description: "What transmits differently when the original is present. The thread runs in both directions." },
+  { label: "Awareness Across Generations", href: "#awareness-across-generations", description: "The child absorbs the configuration, not the aspiration. Develop the capacity, and what transmits changes." },
+  { label: "Five Transmission Pathways", href: "#five-transmission-pathways", description: "Implicit learning, co-regulation modelling, environmental design, epigenetic modification, narrative inheritance." },
+  { label: "What Isn't Processed Gets Passed On", href: "#what-isnt-processed", description: "The child doesn't inherit the event — the child inherits the regulatory consequence of the event." },
+  { label: "Coherence, Not Content", href: "#what-isnt-processed", description: "It is not what happened that determines what is transmitted — it is whether the adult has made coherent sense of it." },
+  { label: "Understanding Without Excusing", href: "#relationships-across-repair", description: "I understand why you became who you became — and I see what it cost me. Both are true." },
+  { label: "Relationships Across Repair", href: "#relationships-across-repair", description: "Does this relationship create conditions for Connection, or does it re-expose to the original configuration?" },
+  { label: "True Elderhood", href: "#true-elderhood", description: "Not automatic — what the elder becomes when the work F8 describes has been done." },
+  { label: "Bridge to F11", href: "#bridge-to-f11", description: "When the adult begins to see clearly, contradictions emerge that survival previously kept hidden." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -174,22 +174,6 @@ export default function F10GenerationalBridgesPage() {
 
   /* ── data ──────────────────────────────────────────── */
 
-  const tocItems = [
-    ["#framework-position", "Framework Position"],
-    ["#awareness-across-generations", "Awareness Across Generations"],
-    ["#five-transmission-pathways", "Five Transmission Pathways"],
-    ["#what-isnt-processed", "What Isn't Processed Gets Passed On"],
-    ["#transmission-by-compass-position", "Transmission by Compass Position"],
-    ["#mechanism-of-change", "The Mechanism of Change"],
-    ["#enough-not-perfect", "Enough, Not Perfect"],
-    ["#intervention-points", "Intervention Points"],
-    ["#relationships-across-repair", "Relationships Across Repair"],
-    ["#true-elderhood", "True Elderhood"],
-    ["#bridge-to-f11", "Bridge to F11"],
-    ["#research-foundations", "Research Foundations"],
-    ["#where-to-go-next", "Where to Go Next"],
-  ];
-
   const faqItems = [
     {
       q: "How do emotional patterns transmit across generations?",
@@ -230,27 +214,6 @@ export default function F10GenerationalBridgesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
-
-          {/* ── Table of Contents ── */}
-          <nav style={{
-            margin: "32px 0", padding: 20,
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-          }}>
-            <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              In this framework
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 32px" }}>
-              {tocItems.map(([href, label]) => (
-                <a key={href} href={href} style={{
-                  fontSize: 13, color: SPECTRUM.cobalt,
-                  textDecoration: "none", lineHeight: 1.6,
-                }}>
-                  {label}
-                </a>
-              ))}
-            </div>
-          </nav>
 
           {/* ── Core Claims ── */}
           <PropositionBox

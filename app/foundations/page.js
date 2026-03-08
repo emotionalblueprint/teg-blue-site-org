@@ -4,12 +4,12 @@ import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/compon
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Layer 1 — Measurement", description: "The Four-Mode Gradient: Connection → Protection → Control → Domination. Observable, testable." },
-  { label: "Layer 2 — Frameworks", description: "12 explanatory frameworks across three arcs. Why modes exist, how patterns scale, what enables change." },
-  { label: "Layer 3 — Emotional Tools", description: "Applied instruments translating the architecture into usable assessment and navigation tools." },
-  { label: "Layer 4 — AI Safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
-  { label: "Core Functions", description: "The four core functions of the system and how the layers interact." },
-  { label: "Ethical Constraint", description: "Trauma-informed data architecture. What the system will and will not do." },
+  { label: "Layer 1 — Measurement", href: "#layer-1-measurement", description: "The Four-Mode Gradient: Connection → Protection → Control → Domination. Observable, testable." },
+  { label: "Layer 2 — Frameworks", href: "#layer-2-frameworks", description: "12 explanatory frameworks across three arcs. Why modes exist, how patterns scale, what enables change." },
+  { label: "Layer 3 — Emotional Tools", href: "#layer-3-emotional-tools", description: "Applied instruments translating the architecture into usable assessment and navigation tools." },
+  { label: "Layer 4 — AI Safety", href: "#layer-4-ai-safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
+  { label: "Core Functions", href: "#core-functions", description: "The four core functions of the system and how the layers interact." },
+  { label: "Ethical Constraint", href: "#ethical-constraint", description: "Trauma-informed data architecture. What the system will and will not do." },
 ];
 
 export const metadata = {
@@ -112,7 +112,7 @@ export default function FoundationsPage() {
         </section>
 
         {/* 1 — Measurement */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="layer-1-measurement" style={{ marginBottom: 32 }}>
           <LayerCard
             number={1}
             title="Measurement"
@@ -161,7 +161,7 @@ export default function FoundationsPage() {
         </section>
 
         {/* 2 — Explanatory Frameworks */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="layer-2-frameworks" style={{ marginBottom: 32 }}>
           <LayerCard
             number={2}
             title="Explanatory Frameworks"
@@ -207,7 +207,7 @@ export default function FoundationsPage() {
         </section>
 
         {/* 3 — Emotional Tools */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="layer-3-emotional-tools" style={{ marginBottom: 32 }}>
           <LayerCard
             number={3}
             title="Emotional Tools"
@@ -245,7 +245,7 @@ export default function FoundationsPage() {
         </section>
 
         {/* 4 — AI Safety */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="layer-4-ai-safety" style={{ marginBottom: 32 }}>
           <LayerCard
             number={4}
             title="AI Safety"
@@ -280,7 +280,7 @@ export default function FoundationsPage() {
         </section>
 
         {/* The four core functions */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="core-functions" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             The four core functions
           </h2>
@@ -312,7 +312,7 @@ export default function FoundationsPage() {
         </section>
 
         {/* Ethical constraint */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="ethical-constraint" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             Ethical constraint: Trauma-informed data architecture
           </h2>

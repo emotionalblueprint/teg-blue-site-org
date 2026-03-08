@@ -15,11 +15,11 @@ import {
 } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Cycle", description: "What happens in the body when the emotional cycle completes — the biological restoration sequence." },
-  { label: "When It Doesn't Complete", description: "What happens when the cycle is interrupted — residue, accumulation, threshold crossing." },
-  { label: "The Return Sequence", description: "How the body was designed to return from threat to safety. The mechanism at the centre of repair." },
-  { label: "System-by-System", description: "How each body system processes and clears threat activation — cortisol, muscle tension, breath." },
-  { label: "Research Foundations", description: "Somatic experiencing, polyvagal theory, stress physiology, allostatic load research." },
+  { label: "The Cycle", href: "#threat-cascade", description: "What happens in the body when the emotional cycle completes — the biological restoration sequence." },
+  { label: "When It Doesn't Complete", href: "#override", description: "What happens when the cycle is interrupted — residue, accumulation, threshold crossing." },
+  { label: "The Return Sequence", href: "#completion", description: "How the body was designed to return from threat to safety. The mechanism at the centre of repair." },
+  { label: "System-by-System", href: "#stays-active", description: "How each body system processes and clears threat activation — cortisol, muscle tension, breath." },
+  { label: "Research Foundations", href: "#relationship-to-frameworks", description: "Somatic experiencing, polyvagal theory, stress physiology, allostatic load research." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -87,66 +87,6 @@ export default function M3TheOpenCyclePage() {
       >
         {/* ─── INTERACTIVE DIAGRAM ──────────────────────── */}
         <OpenCycleExplorer />
-
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#threat-cascade", "1. The Threat Cascade"],
-              ["#completion", "2. What Completion Requires"],
-              ["#override", "3. The Override Mechanism"],
-              ["#stays-active", "4. What Stays Active"],
-              ["#accumulation", "5. The Accumulation Effect"],
-              ["#why-cognition-fails", "6. Why Cognition Cannot Close the Cycle"],
-              ["#gradient", "7. The Open Cycle and the Gradient"],
-              ["#relationship-to-frameworks", "Relationship to Frameworks"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.indigo,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
 
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}

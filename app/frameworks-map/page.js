@@ -6,12 +6,12 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Regulation Thread", description: "The single thread running through all 12 frameworks — from biological signal to systemic structure and back." },
-  { label: "Three-Arc Structure", description: "Individual (F1–F3), Collective (F4–F7), Repair and Complexity (F8–F12). How the arcs connect." },
-  { label: "Arc 1 — Individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
-  { label: "Arc 2 — Collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
-  { label: "Arc 3 — Repair", description: "How awareness rebuilds, neurodivergent variation, generational transmission, paradox, and the architecture underneath." },
-  { label: "Three Core Models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Open Cycle." },
+  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "The single thread running through all 12 frameworks — from biological signal to systemic structure and back." },
+  { label: "Three-Arc Structure", href: "#three-arc-structure", description: "Individual (F1–F3), Collective (F4–F7), Repair and Complexity (F8–F12). How the arcs connect." },
+  { label: "Arc 1 — Individual", href: "#arc-1-individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
+  { label: "Arc 2 — Collective", href: "#arc-2-collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
+  { label: "Arc 3 — Repair", href: "#arc-3-repair", description: "How awareness rebuilds, neurodivergent variation, generational transmission, paradox, and the architecture underneath." },
+  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Open Cycle." },
 ];
 
 // The 12 Frameworks with structured content
@@ -250,18 +250,21 @@ const arcColors = {
 const ARCS = [
   {
     key: "Individual",
+    slug: "arc-1-individual",
     label: "Arc 1 — Individual",
     range: "F1–F3",
     description: "The instrument. How the nervous system evaluates safety, how the compass calibrates through development, and how cognition steps in when the return path is missing.",
   },
   {
     key: "Collective",
+    slug: "arc-2-collective",
     label: "Arc 2 — Collective",
     range: "F4–F7",
     description: "The scaling. How individual patterns become shared rules, how rules produce worth hierarchies, how hierarchies shape perception, and how protection escalates all the way to domination.",
   },
   {
     key: "Repair and Complexity",
+    slug: "arc-3-repair",
     label: "Arc 3 — Repair and Complexity",
     range: "F8–F12",
     description: "The return. How the awareness capacities can be rebuilt, how neurodivergent variation is understood on its own terms, how patterns transmit across generations, how paradox emerges when healing begins, and what the underlying architecture explains about all of it.",
@@ -346,7 +349,7 @@ export default function TheoreticalFoundationsPage() {
         </div>
 
         {/* The Regulation Thread */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="the-regulation-thread" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             The Regulation Thread
           </h2>
@@ -394,7 +397,7 @@ export default function TheoreticalFoundationsPage() {
         </section>
 
         {/* Three-Arc Structure Overview */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="three-arc-structure" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 20 }}>
             The Three-Arc Structure
           </h2>
@@ -424,7 +427,7 @@ export default function TheoreticalFoundationsPage() {
           {ARCS.map((arc) => {
             const arcFrameworks = FRAMEWORKS.filter((fw) => fw.arc === arc.key);
             return (
-              <div key={arc.key} style={{ marginBottom: 32 }}>
+              <div key={arc.key} id={arc.slug} style={{ marginBottom: 32 }}>
                 <div style={{
                   display: "flex",
                   alignItems: "center",
@@ -454,7 +457,7 @@ export default function TheoreticalFoundationsPage() {
         </section>
 
         {/* The Three Core Models */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="three-core-models" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             The Three Core Models
           </h2>

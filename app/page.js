@@ -7,10 +7,10 @@ import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSection"), { ssr: false });
 
 const SIDEBAR_SECTIONS = [
-  { label: "What TEG-Blue Is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
-  { label: "Empirical Evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
-  { label: "The 12 Frameworks", description: "Three arcs — Individual, Collective, Repair — explaining how emotional patterns form, scale, and change." },
-  { label: "Work With the Material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
+  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
+  { label: "Empirical Evidence", href: "#empirical-evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
+  { label: "The 12 Frameworks", href: "#the-12-frameworks", description: "Three arcs — Individual, Collective, Repair — explaining how emotional patterns form, scale, and change." },
+  { label: "Work With the Material", href: "#work-with-the-material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
 ];
 
 export const metadata = {
@@ -148,7 +148,7 @@ export default function ResearchHub() {
           sidebarSections={SIDEBAR_SECTIONS}
         >
           {/* ── The Framework ── */}
-          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="what-teg-blue-is" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               What TEG-Blue is
             </h2>
@@ -184,8 +184,17 @@ export default function ResearchHub() {
             </p>
           </section>
 
+          {/* ── Separator: Spectrum ── */}
+          <div aria-hidden="true" style={{ padding: "8px 0 16px" }}>
+            <div style={{
+              height: 2,
+              borderRadius: 1,
+              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
+            }} />
+          </div>
+
           {/* ── Validation Evidence ── */}
-          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="empirical-evidence" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               Empirical evidence
             </h2>
@@ -273,8 +282,29 @@ export default function ResearchHub() {
             </div>
           </section>
 
+          {/* ── Separator: Breathing ── */}
+          <div aria-hidden="true" style={{
+            padding: "16px 0",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 12,
+          }}>
+            {[0.2, 0.45, 0.7, 0.45, 0.2].map((opacity, i) => (
+              <div
+                key={i}
+                style={{
+                  width: 4,
+                  height: 4,
+                  borderRadius: "50%",
+                  background: hexToRgba(SPECTRUM.cobalt, opacity),
+                }}
+              />
+            ))}
+          </div>
+
           {/* ── The 12 Frameworks with Entry Points ── */}
-          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="the-12-frameworks" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               The 12 frameworks
             </h2>
@@ -324,8 +354,17 @@ export default function ResearchHub() {
             </div>
           </section>
 
+          {/* ── Separator: Spectrum ── */}
+          <div aria-hidden="true" style={{ padding: "8px 0 16px" }}>
+            <div style={{
+              height: 2,
+              borderRadius: 1,
+              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
+            }} />
+          </div>
+
           {/* ── Open Science ── */}
-          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="work-with-the-material" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               Work with the material
             </h2>

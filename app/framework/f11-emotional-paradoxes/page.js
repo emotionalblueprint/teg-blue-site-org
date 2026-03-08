@@ -16,17 +16,17 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", description: "When the compass begins to move, contradictions emerge that were previously invisible. F11 maps these contradictions." },
-  { label: "The Regulation Thread", description: "F1-F7 generate contradictions but false coherence hides them. F8-F10 loosen false coherence." },
-  { label: "Multi-Rationality", description: "Paradoxical behaviour appears irrational only when assessed against a single set of values." },
-  { label: "Each Framework's Paradox", description: "Every mechanism in F1-F10 creates characteristic contradictions. A map, not a personal failing." },
-  { label: "The Paradox Cascade", description: "How contradictions go underground. The smooth story should worry you more than the messy one." },
-  { label: "Compass Position and Holding", description: "The compass must be flexible enough to hold contradiction. Measurable consequence of repair." },
-  { label: "Individual Paradoxes", description: "I am in more pain AND I am more alive. Not contradictions to resolve — contradictions to hold." },
-  { label: "Relational Paradoxes", description: "Both sides are real. The paradox is not in either person — it is in the interaction." },
-  { label: "Systemic Paradoxes", description: "Freedom-seeking authoritarianism. Institutions that perpetuate what they were designed to solve." },
-  { label: "Integration Means Holding", description: "True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing." },
-  { label: "Bridge to F12", description: "A person can see their configuration, name their paradoxes — and still do the thing. F12 explains why." },
+  { label: "Framework Position", href: "#framework-position", description: "When the compass begins to move, contradictions emerge that were previously invisible. F11 maps these contradictions." },
+  { label: "The Regulation Thread", href: "#framework-position", description: "F1-F7 generate contradictions but false coherence hides them. F8-F10 loosen false coherence." },
+  { label: "Multi-Rationality", href: "#multi-rationality", description: "Paradoxical behaviour appears irrational only when assessed against a single set of values." },
+  { label: "Each Framework's Paradox", href: "#paradox-map", description: "Every mechanism in F1-F10 creates characteristic contradictions. A map, not a personal failing." },
+  { label: "The Paradox Cascade", href: "#paradox-cascade", description: "How contradictions go underground. The smooth story should worry you more than the messy one." },
+  { label: "Compass Position and Holding", href: "#paradox-and-compass", description: "The compass must be flexible enough to hold contradiction. Measurable consequence of repair." },
+  { label: "Individual Paradoxes", href: "#paradoxes-of-repair", description: "I am in more pain AND I am more alive. Not contradictions to resolve — contradictions to hold." },
+  { label: "Relational Paradoxes", href: "#relational-paradoxes", description: "Both sides are real. The paradox is not in either person — it is in the interaction." },
+  { label: "Systemic Paradoxes", href: "#systemic-paradoxes", description: "Freedom-seeking authoritarianism. Institutions that perpetuate what they were designed to solve." },
+  { label: "Integration Means Holding", href: "#integration-means-holding", description: "True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing." },
+  { label: "Bridge to F12", href: "#bridge-to-f12", description: "A person can see their configuration, name their paradoxes — and still do the thing. F12 explains why." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -175,22 +175,6 @@ export default function F11EmotionalParadoxesPage() {
 
   /* ── data ──────────────────────────────────────────── */
 
-  const tocItems = [
-    ["#framework-position", "Framework Position"],
-    ["#multi-rationality", "Multi-Rationality"],
-    ["#paradox-map", "Each Framework Generates Paradox"],
-    ["#paradox-cascade", "The Paradox Cascade"],
-    ["#paradox-and-compass", "Paradox Intensity and Compass Position"],
-    ["#holding-capacity", "Holding Capacity"],
-    ["#paradoxes-of-repair", "The Paradoxes of Repair"],
-    ["#relational-paradoxes", "The Relational Paradoxes"],
-    ["#systemic-paradoxes", "The Systemic Paradoxes"],
-    ["#integration-means-holding", "Integration Means Holding, Not Resolving"],
-    ["#bridge-to-f12", "Bridge to F12"],
-    ["#research-foundations", "Research Foundations"],
-    ["#where-to-go-next", "Where to Go Next"],
-  ];
-
   const faqItems = [
     {
       q: "Why do people contradict themselves?",
@@ -231,27 +215,6 @@ export default function F11EmotionalParadoxesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
-
-          {/* ── Table of Contents ── */}
-          <nav style={{
-            margin: "32px 0", padding: 20,
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-          }}>
-            <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              In this framework
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 32px" }}>
-              {tocItems.map(([href, label]) => (
-                <a key={href} href={href} style={{
-                  fontSize: 13, color: SPECTRUM.cobalt,
-                  textDecoration: "none", lineHeight: 1.6,
-                }}>
-                  {label}
-                </a>
-              ))}
-            </div>
-          </nav>
 
           {/* ── Core Claims ── */}
           <PropositionBox

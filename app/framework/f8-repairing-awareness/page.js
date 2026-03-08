@@ -16,19 +16,19 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Turn Toward Repair", description: "F7 completes the escalation arc. F8 turns the system around. How do you go back?" },
-  { label: "The Regulation Thread Reversed", description: "Each substitute becomes unnecessary as the original develops. Repair means building the original." },
-  { label: "The Repair Question", description: "Developing what didn't have conditions to develop, not finding a hidden self beneath the adaptive one." },
-  { label: "Assessing Your Configuration", description: "Which capacities had conditions to develop, which didn't, and what is each one currently doing?" },
-  { label: "Common Configurations", description: "Five characteristic configurations, each producing a predictable chronic mode." },
-  { label: "Why Repair Is Difficult", description: "The nervous system resists repair because repair requires the same conditions of safety that were missing." },
-  { label: "What Repair Requires", description: "You cannot think your way into felt safety. You can only experience your way there." },
-  { label: "The Process", description: "Repair does not move in a straight line. The back-and-forth is not the problem — it is the process." },
-  { label: "Why Everyone Masks", description: "Masking is the predictable response to any system that regulates through enforced conformity." },
-  { label: "The Cost of Conformity", description: "Regulatory exhaustion. Developmental arrest. Identity confusion. Relational disconnection." },
-  { label: "Different Configurations See Different Things", description: "What one configuration cannot see, another can. No single configuration is complete." },
-  { label: "Collective Intelligence", description: "Different configurations are different sensors. Masked configurations mean shared blind spots." },
-  { label: "Bridge to F9", description: "What happens when difference becomes structural — when environments are designed for one neurological configuration." },
+  { label: "The Turn Toward Repair", href: "#overview", description: "F7 completes the escalation arc. F8 turns the system around. How do you go back?" },
+  { label: "The Regulation Thread Reversed", href: "#overview", description: "Each substitute becomes unnecessary as the original develops. Repair means building the original." },
+  { label: "The Repair Question", href: "#core-propositions", description: "Developing what didn't have conditions to develop, not finding a hidden self beneath the adaptive one." },
+  { label: "Assessing Your Configuration", href: "#assessing-configurations", description: "Which capacities had conditions to develop, which didn't, and what is each one currently doing?" },
+  { label: "Common Configurations", href: "#assessing-configurations", description: "Five characteristic configurations, each producing a predictable chronic mode." },
+  { label: "Why Repair Is Difficult", href: "#why-repair-is-difficult", description: "The nervous system resists repair because repair requires the same conditions of safety that were missing." },
+  { label: "What Repair Requires", href: "#conditions-for-repair", description: "You cannot think your way into felt safety. You can only experience your way there." },
+  { label: "The Process", href: "#repair-process", description: "Repair does not move in a straight line. The back-and-forth is not the problem — it is the process." },
+  { label: "Why Everyone Masks", href: "#everyone-masks", description: "Masking is the predictable response to any system that regulates through enforced conformity." },
+  { label: "The Cost of Conformity", href: "#everyone-masks", description: "Regulatory exhaustion. Developmental arrest. Identity confusion. Relational disconnection." },
+  { label: "Different Configurations See Different Things", href: "#collective-strength", description: "What one configuration cannot see, another can. No single configuration is complete." },
+  { label: "Collective Intelligence", href: "#collective-strength", description: "Different configurations are different sensors. Masked configurations mean shared blind spots." },
+  { label: "Bridge to F9", href: "#bridge-to-f9", description: "What happens when difference becomes structural — when environments are designed for one neurological configuration." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -94,70 +94,6 @@ export default function F8RepairingAwarenessPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The First Repair Framework"],
-              ["#assessing-configurations", "Assessing Awareness Configurations"],
-              ["#why-repair-is-difficult", "Why Repair Is Difficult"],
-              ["#conditions-for-repair", "Conditions for Repair — Safety Before Capacity"],
-              ["#pathways-and-process", "Pathways to Capacity Development"],
-              ["#repair-process", "The Repair Process — Five Phases"],
-              ["#what-repair-looks-like", "What Repair Looks Like"],
-              ["#everyone-masks", "The Universal Pattern — Everyone Masks"],
-              ["#collective-strength", "Different Configurations, Collective Strength"],
-              ["#what-f8-establishes", "What F8 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f9", "Bridge to F9"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

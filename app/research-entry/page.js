@@ -3,12 +3,12 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "What TEG-Blue Is", description: "An integrative framework connecting 139+ established theories into testable hypotheses about emotional regulation." },
-  { label: "What Is Original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
-  { label: "Status Snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
-  { label: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
-  { label: "Open Research Directions", description: "Four active directions: measurement, prediction, intervention, and AI alignment." },
-  { label: "Where to Go From Here", description: "Navigation paths into the framework depending on your research interest." },
+  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 139+ established theories into testable hypotheses about emotional regulation." },
+  { label: "What Is Original", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
+  { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
+  { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
+  { label: "Open Research Directions", href: "#open-research-directions", description: "Four active directions: measurement, prediction, intervention, and AI alignment." },
+  { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
 
 export const metadata = {
@@ -86,7 +86,7 @@ export default function ResearchEntryPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* What TEG-Blue is */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="what-teg-blue-is" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             What TEG-Blue is
           </h2>
@@ -102,7 +102,7 @@ export default function ResearchEntryPage() {
         </section>
 
         {/* What is original */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="what-is-original" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             What is original: the &quot;1 + 2 = 3&quot; principle
           </h2>
@@ -127,7 +127,7 @@ export default function ResearchEntryPage() {
         </section>
 
         {/* Status snapshot */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="status-snapshot" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             Status snapshot
           </h2>
@@ -161,7 +161,7 @@ export default function ResearchEntryPage() {
         </section>
 
         {/* Core hypothesis */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="core-testable-claim" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             The core testable claim
           </h2>
@@ -200,7 +200,7 @@ export default function ResearchEntryPage() {
         </section>
 
         {/* Open research directions */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="open-research-directions" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
             Open research directions
           </h2>
@@ -245,7 +245,7 @@ export default function ResearchEntryPage() {
         </section>
 
         {/* Next steps table */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="where-to-go-from-here" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Where to go from here
           </h2>

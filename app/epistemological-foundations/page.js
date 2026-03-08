@@ -4,11 +4,11 @@ import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/compon
 import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Thesis", description: "Emotion is data — biological information the nervous system uses to evaluate safety, not noise to be filtered out." },
-  { label: "Primary Concepts", description: "Emotion ≠ irrational. Emotion = data. Emotion is relational, not disruptive." },
-  { label: "Secondary Concepts", description: "Emotion as survival signal. Ignoring emotions means less information. Pattern recognition, not self-help." },
-  { label: "What This Explains", description: "What becomes visible when emotion is treated as information rather than interference." },
-  { label: "Connection to TEG-Blue", description: "How these epistemological foundations underpin the entire framework architecture." },
+  { label: "Core Thesis", href: "#core-thesis", description: "Emotion is data — biological information the nervous system uses to evaluate safety, not noise to be filtered out." },
+  { label: "Primary Concepts", href: "#primary-concepts", description: "Emotion ≠ irrational. Emotion = data. Emotion is relational, not disruptive." },
+  { label: "Secondary Concepts", href: "#secondary-concepts", description: "Emotion as survival signal. Ignoring emotions means less information. Pattern recognition, not self-help." },
+  { label: "What This Explains", href: "#what-this-explains", description: "What becomes visible when emotion is treated as information rather than interference." },
+  { label: "Connection to TEG-Blue", href: "#connection-to-teg-blue", description: "How these epistemological foundations underpin the entire framework architecture." },
 ];
 
 export const metadata = {
@@ -67,7 +67,7 @@ export default function EpistemologicalFoundationsPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Core Thesis */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="core-thesis" style={{ marginBottom: 40 }}>
           <div
             style={{
               padding: 24,
@@ -93,7 +93,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Primary Core Concepts */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="primary-concepts" style={{ marginBottom: 40 }}>
           <SectionHeader color={SPECTRUM.blue}>Primary Core Concepts</SectionHeader>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -151,7 +151,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Secondary Core Concepts */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="secondary-concepts" style={{ marginBottom: 40 }}>
           <SectionHeader color={SPECTRUM.cobalt}>Secondary Core Concepts</SectionHeader>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -209,7 +209,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Sub-Core Concepts */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="sub-core-concepts" style={{ marginBottom: 40 }}>
           <SectionHeader color={SPECTRUM.azure}>Sub-Core Concepts</SectionHeader>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -267,7 +267,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* What This Framework Explains */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="what-this-explains" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             What This Framework Explains
           </h2>
@@ -296,7 +296,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* What This Framework Reveals */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="what-this-reveals" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             What This Framework Reveals
           </h2>
@@ -325,7 +325,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Why This Matters — Implications Grid */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="why-this-matters" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Why This Matters
           </h2>
@@ -392,7 +392,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Foundational Significance */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="foundational-significance" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Foundational Significance
           </h2>
@@ -422,7 +422,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Connection to TEG-Blue Framework */}
-        <section style={{ marginBottom: 40 }}>
+        <section id="connection-to-teg-blue" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Connection to TEG-Blue Framework
           </h2>
@@ -449,7 +449,7 @@ export default function EpistemologicalFoundationsPage() {
         </section>
 
         {/* Where to go next */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="where-to-go-next" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Where to go next
           </h2>

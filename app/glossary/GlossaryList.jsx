@@ -161,7 +161,7 @@ export default function GlossaryList({ terms = [] }) {
   const groupedTerms = getGroupedTerms();
 
   return (
-    <div>
+    <div id="glossary-terms">
       <h1
         style={{
           fontSize: 24,
@@ -186,7 +186,7 @@ export default function GlossaryList({ terms = [] }) {
       </p>
 
       {/* Search and Sort Controls */}
-      <div style={{ display: "flex", gap: 16, marginBottom: 24, flexWrap: "wrap", alignItems: "flex-end" }}>
+      <div id="glossary-search" style={{ display: "flex", gap: 16, marginBottom: 24, flexWrap: "wrap", alignItems: "flex-end" }}>
         <div style={{ flex: 1, minWidth: 200 }}>
           <SearchInput
             value={search}
@@ -250,7 +250,7 @@ export default function GlossaryList({ terms = [] }) {
       </div>
 
       {/* Terms List */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      <div id="glossary-list" style={{ display: "flex", flexDirection: "column", gap: 2 }}>
         {groupedTerms ? (
           // Grouped display
           Object.entries(groupedTerms).map(([groupName, groupTerms]) => (

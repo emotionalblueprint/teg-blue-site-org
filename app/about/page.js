@@ -3,10 +3,10 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/s
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Two Sites", description: "How teg-blue.com (interactive tools) and teg-blue.org (open science) work together." },
-  { label: "The Founder", description: "Anna Paretas-Artacho — how TEG-Blue started, the empirical validation, and the research approach." },
-  { label: "Research Identity", description: "Open science, testable claims, invited corrections. What TEG-Blue is and is not." },
-  { label: "Navigation", description: "Where to go next depending on what you need." },
+  { label: "Two Sites", href: "#two-sites", description: "How teg-blue.com (interactive tools) and teg-blue.org (open science) work together." },
+  { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — how TEG-Blue started, the empirical validation, and the research approach." },
+  { label: "Research Identity", href: "#research-identity", description: "Open science, testable claims, invited corrections. What TEG-Blue is and is not." },
+  { label: "Navigation", href: "#navigation", description: "Where to go next depending on what you need." },
 ];
 
 export const metadata = {
@@ -83,7 +83,7 @@ export default function AboutPage() {
         </section>
 
         {/* Two Sites */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="two-sites" style={{ marginBottom: 32 }}>
           <h2 style={sectionHeading}>Two sites</h2>
           <div
             style={{
@@ -134,7 +134,7 @@ export default function AboutPage() {
         </section>
 
         {/* The Founder */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="the-founder" style={{ marginBottom: 32 }}>
           <h2 style={sectionHeading}>The founder</h2>
           <div
             style={{
@@ -210,7 +210,7 @@ export default function AboutPage() {
         </section>
 
         {/* Research identity */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="research-identity" style={{ marginBottom: 32 }}>
           <h2 style={sectionHeading}>Research identity</h2>
           <div
             style={{
@@ -232,7 +232,7 @@ export default function AboutPage() {
         </section>
 
         {/* Navigation */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="navigation" style={{ marginBottom: 32 }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             <NavLink href="/research-entry" label="Research Entry" />
             <NavLink href="/methodology" label="Methodology" />

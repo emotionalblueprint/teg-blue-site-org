@@ -16,7 +16,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 1 */}
-      <h2 style={READING.heading}>
+      <h2 id="why-doesnt-evidence-work" style={READING.heading}>
         <span style={READING.sectionNumber}>1.</span> Why doesn{"\u2019"}t evidence work?
       </h2>
 
@@ -37,7 +37,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 2 */}
-      <h2 style={READING.heading}>
+      <h2 id="intelligence-education" style={READING.heading}>
         <span style={READING.sectionNumber}>2.</span> Are conspiracy believers less intelligent or less educated?
       </h2>
 
@@ -56,7 +56,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 3 */}
-      <h2 style={READING.heading}>
+      <h2 id="doing-this-consciously" style={READING.heading}>
         <span style={READING.sectionNumber}>3.</span> Are they doing this consciously {"\u2014"} do they know, on some level, that it isn{"\u2019"}t true?
       </h2>
 
@@ -75,7 +75,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 4 */}
-      <h2 style={READING.heading}>
+      <h2 id="more-entrenched" style={READING.heading}>
         <span style={READING.sectionNumber}>4.</span> Why do they get more entrenched when I push harder?
       </h2>
 
@@ -94,7 +94,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 5 */}
-      <h2 style={READING.heading}>
+      <h2 id="pattern-of-belief" style={READING.heading}>
         <span style={READING.sectionNumber}>5.</span> Why do some people believe one conspiracy but not others {"\u2014"} is there a pattern?
       </h2>
 
@@ -119,7 +119,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 6 */}
-      <h2 style={READING.heading}>
+      <h2 id="what-actually-works" style={READING.heading}>
         <span style={READING.sectionNumber}>6.</span> Is there anything that actually works? Is there a way in?
       </h2>
 
@@ -142,7 +142,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Section 7 */}
-      <h2 style={READING.heading}>
+      <h2 id="should-i-keep-trying" style={READING.heading}>
         <span style={READING.sectionNumber}>7.</span> Should I keep trying {"\u2014"} and if so, why?
       </h2>
 
@@ -163,7 +163,7 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Framework reveal */}
-      <h2 style={{ ...READING.heading, marginTop: 32 }}>The framework behind these answers</h2>
+      <h2 id="framework-behind" style={{ ...READING.heading, marginTop: 32 }}>The framework behind these answers</h2>
 
       <p style={READING.paragraph}>The explanations in this piece derive from <strong>TEG-Blue {"\u2014"} The Emotional Gradient Blueprint</strong> {"\u2014"} a research framework that integrates neuroscience, developmental psychology, trauma research, and systems thinking into a unified map of how human beings regulate, and what happens when regulation fails.</p>
 

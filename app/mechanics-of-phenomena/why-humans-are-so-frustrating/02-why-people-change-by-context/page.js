@@ -1,6 +1,7 @@
 import { BG, FONT } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import MechanicsLayout from "../../MechanicsLayout";
+import { findPiece } from "../../mechanics-config";
 import Piece02WhyPeopleChange from "../../_pieces/Piece02WhyPeopleChange";
 
 export const metadata = {
@@ -22,6 +23,8 @@ export const metadata = {
 };
 
 export default function Piece02Page() {
+  const { piece } = findPiece("02-why-people-change-by-context");
+
   return (
     <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/mechanics-of-phenomena" />
@@ -29,6 +32,7 @@ export default function Piece02Page() {
       <MechanicsLayout
         activePiece="02-why-people-change-by-context"
         showBackLink={true}
+        articleSections={piece.sections}
       >
         <Piece02WhyPeopleChange />
       </MechanicsLayout>

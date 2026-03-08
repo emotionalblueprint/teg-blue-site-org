@@ -4,8 +4,8 @@ import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/compon
 import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
-  { label: "What TEG-Blue Adds", description: "Nuance AI systems can actually use — structured emotional pattern recognition for safer, more accurate AI." },
+  { label: "The Problem", href: "#the-problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
+  { label: "What TEG-Blue Adds", href: "#what-teg-blue-adds", description: "Nuance AI systems can actually use — structured emotional pattern recognition for safer, more accurate AI." },
 ];
 
 export const metadata = {
@@ -125,7 +125,7 @@ export default function AISafetyPage() {
         </section>
 
         {/* Section 1: The Problem */}
-        <section style={{ marginBottom: 56 }}>
+        <section id="the-problem" style={{ marginBottom: 56 }}>
           <SectionHeader number="01" title="Binary Classification Fails Human Complexity" />
 
           <div style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8 }}>
@@ -165,7 +165,7 @@ export default function AISafetyPage() {
         </section>
 
         {/* Section 2: Gradient Scales */}
-        <section style={{ marginBottom: 56 }}>
+        <section id="what-teg-blue-adds" style={{ marginBottom: 56 }}>
           <SectionHeader number="02" title="Nuance AI Systems Can Actually Use" />
 
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>

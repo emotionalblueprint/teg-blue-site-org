@@ -21,11 +21,11 @@ const SEA_COLOR = AWARENESS.SEA;
 const RE_CHRONIC = MODE_PINK;  // pink — domination / precision without feedback
 
 const SIDEBAR_SECTIONS = [
-  { label: "Three Capacities", description: "Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — the calibration system." },
-  { label: "How They Develop", description: "Each capacity develops through being met by a caregiver who already has that capacity online." },
-  { label: "Configurations", description: "How different combinations of online/offline capacities produce different patterns and chronic modes." },
-  { label: "SEA as Keystone", description: "Why Self-Emotional Awareness is the critical variable — present in all healthy modes, absent in all chronic modes." },
-  { label: "Research Foundations", description: "Attachment theory, developmental neuroscience, mentalization, interpersonal neurobiology." },
+  { label: "Three Capacities", href: "#capacities-online-offline", description: "Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — the calibration system." },
+  { label: "How They Develop", href: "#awareness-teaches-awareness", description: "Each capacity develops through being met by a caregiver who already has that capacity online." },
+  { label: "Configurations", href: "#capacity-configuration", description: "How different combinations of online/offline capacities produce different patterns and chronic modes." },
+  { label: "SEA as Keystone", href: "#sea-self-emotional-awareness", description: "Why Self-Emotional Awareness is the critical variable — present in all healthy modes, absent in all chronic modes." },
+  { label: "Research Foundations", href: "#relationship-to-frameworks", description: "Attachment theory, developmental neuroscience, mentalization, interpersonal neurobiology." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -308,69 +308,6 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             RE stays sharp across the entire gradient — it is the last capacity to degrade. When ER and SEA go offline but RE remains, the person reads every emotional signal with precision — but has no felt resonance and no self-access. This is the configuration that enables strategic use of emotional reading without internal feedback — the reading is accurate but the resonance and self-awareness that would generate guilt, empathy, or self-reflection are absent.
           </p>
         </div>
-
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#capacities-at-birth", "1. The Three Capacities Connected at Birth"],
-              ["#pre-sea-condition", "2. The Pre-SEA Condition"],
-              ["#awareness-teaches-awareness", "3. Awareness Teaches Awareness"],
-              ["#capacities-online-offline", "4. The Three Capacities — Online and Offline"],
-              ["#capacity-configuration", "5. Capacity Configuration"],
-              ["#co-regulation", "6. Co-Regulation and the Return Path"],
-              ["#true-false-coherence", "7. True Coherence and False Coherence"],
-              ["#tolerance-thresholds", "8. Tolerance Thresholds"],
-              ["#generational-replication", "9. Generational Replication"],
-              ["#repair", "10. Repair — Developing What Was Missing"],
-              ["#relationship-to-frameworks", "Relationship to Frameworks"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
 
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}

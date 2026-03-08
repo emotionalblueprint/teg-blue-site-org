@@ -4,13 +4,13 @@ import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock, PageLayout } from 
 import { generateFAQJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Open Science Principles", description: "Everything published, everything testable, everything open access. The governing research principles." },
-  { label: "Status Ladder", description: "Where each component stands: validated, proposed, or open. Transparent about certainty levels." },
-  { label: "Validation Approach", description: "How TEG-Blue tests its claims — computational analysis, natural language data, independent replication." },
-  { label: "How TEG-Blue Was Developed", description: "The architecture, the literature mapping, AI-assisted research tools, and honest limitations." },
-  { label: "Ethical Standards", description: "Trauma-informed data architecture. What research ethics look like for emotional technology." },
-  { label: "AI-Readable Research", description: "Designed for both human and AI consumption. Structured for machine legibility." },
-  { label: "Where We Stand Honestly", description: "A candid assessment of current methodology — what is strong, what needs work." },
+  { label: "Open Science Principles", href: "#open-science-principles", description: "Everything published, everything testable, everything open access. The governing research principles." },
+  { label: "Status Ladder", href: "#status-ladder", description: "Where each component stands: validated, proposed, or open. Transparent about certainty levels." },
+  { label: "Validation Approach", href: "#validation-approach", description: "How TEG-Blue tests its claims — computational analysis, natural language data, independent replication." },
+  { label: "How TEG-Blue Was Developed", href: "#how-teg-blue-was-developed", description: "The architecture, the literature mapping, AI-assisted research tools, and honest limitations." },
+  { label: "Ethical Standards", href: "#ethical-standards", description: "Trauma-informed data architecture. What research ethics look like for emotional technology." },
+  { label: "AI-Readable Research", href: "#ai-readable-research", description: "Designed for both human and AI consumption. Structured for machine legibility." },
+  { label: "Where We Stand Honestly", href: "#where-we-stand-honestly", description: "A candid assessment of current methodology — what is strong, what needs work." },
 ];
 
 export const metadata = {
@@ -89,7 +89,7 @@ export default function MethodologyPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Open Science Principles */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="open-science-principles" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Open science principles
           </h2>
@@ -119,7 +119,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* Status Ladder */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="status-ladder" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Status ladder
           </h2>
@@ -153,7 +153,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* Validation Approach */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="validation-approach" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Validation approach
           </h2>
@@ -184,7 +184,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* How TEG-Blue Was Developed */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="how-teg-blue-was-developed" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             How TEG-Blue was developed
           </h2>
@@ -232,7 +232,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* Ethical Standards */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="ethical-standards" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Ethical standards
           </h2>
@@ -280,7 +280,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* AI-Readable Research */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="ai-readable-research" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             AI-readable research
           </h2>
@@ -304,7 +304,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* Where Current Methodology Stands */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="where-we-stand-honestly" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Where current methodology stands honestly
           </h2>

@@ -52,6 +52,7 @@ export default function MechanicsLayout({
   showSectionHeader = false,
   activePiece,
   showBackLink = false,
+  articleSections,
   children,
 }) {
   // Look up piece data for hero when on an individual piece page
@@ -171,7 +172,7 @@ export default function MechanicsLayout({
 
         {/* Two-column layout */}
         <div className="mop-columns" style={{ paddingBottom: 80 }}>
-          <MechanicsSidebar activePiece={activePiece} showBackLink={showBackLink} />
+          <MechanicsSidebar activePiece={activePiece} showBackLink={showBackLink} articleSections={articleSections} />
 
           <div className="mop-reading" style={{ maxWidth: "70ch", minWidth: 0 }}>
             {children}

@@ -8,8 +8,9 @@ import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 import CompassBar from "./CompassBar";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns." },
-  { label: "Components", description: "Reusable components and their usage across the research site." },
+  { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns.", href: "#design-tokens" },
+  { label: "Section Separators", description: "Three divider styles for different content contexts.", href: "#section-separators" },
+  { label: "Page Navigator", description: "Sticky sidebar with anchor links and section descriptions.", href: "#page-navigator" },
 ];
 
 export const metadata = {
@@ -130,7 +131,7 @@ export default function DesignSystemPage() {
         </p>
 
         {/* ─── 1. THE BLUE SPECTRUM ────────────────────── */}
-        <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
+        <section id="design-tokens" style={{ marginBottom: SPACING.sectionGap.desktop }}>
           <SectionTitle>The Blue Spectrum</SectionTitle>
           <SwatchRow>
             {Object.entries(SPECTRUM).map(([name, hex]) => (
@@ -564,6 +565,333 @@ export default function DesignSystemPage() {
             Drag the Needle to explore modes
           </p>
           <CompassBar />
+        </section>
+
+        {/* ─── 12. SECTION SEPARATORS ────────────────────── */}
+        <section id="section-separators" style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Section Separators</SectionTitle>
+          <p style={{
+            fontSize: TYPE_SCALE.body.size,
+            lineHeight: TYPE_SCALE.body.lineHeight,
+            color: TEXT.secondary,
+            marginBottom: 40,
+          }}>
+            Three divider styles for separating content at different scales.
+          </p>
+
+          {/* ── Separator 1: Line ── */}
+          <div style={{ marginBottom: 48 }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 6,
+            }}>
+              Line
+            </p>
+            <p style={{
+              fontSize: TYPE_SCALE.summary.size,
+              color: TEXT.hint,
+              marginBottom: 20,
+            }}>
+              Subtle 1px rule. Use between items within the same section — list entries, card groups, table rows.
+            </p>
+            <div style={{ padding: "24px 0" }}>
+              <div style={{
+                height: 1,
+                background: BORDER.default,
+              }} />
+            </div>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.micro.size,
+              color: TEXT.micro,
+              letterSpacing: TYPE_SCALE.micro.tracking,
+              marginTop: 8,
+            }}>
+              height: 1px · background: BORDER.default · no margin (parent controls spacing)
+            </p>
+          </div>
+
+          {/* ── Separator 2: Spectrum ── */}
+          <div style={{ marginBottom: 48 }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 6,
+            }}>
+              Spectrum
+            </p>
+            <p style={{
+              fontSize: TYPE_SCALE.summary.size,
+              color: TEXT.hint,
+              marginBottom: 20,
+            }}>
+              Gradient bar using the blue spectrum. Use between major page sections — a visual signal that the topic is shifting.
+            </p>
+            <div style={{ padding: "24px 0" }}>
+              <div style={{
+                height: 2,
+                borderRadius: 1,
+                background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
+              }} />
+            </div>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.micro.size,
+              color: TEXT.micro,
+              letterSpacing: TYPE_SCALE.micro.tracking,
+              marginTop: 8,
+            }}>
+              height: 2px · border-radius: 1px · linear-gradient through SPECTRUM (sky → indigo, faded edges)
+            </p>
+          </div>
+
+          {/* ── Separator 3: Breathing ── */}
+          <div style={{ marginBottom: 0 }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 6,
+            }}>
+              Breathing
+            </p>
+            <p style={{
+              fontSize: TYPE_SCALE.summary.size,
+              color: TEXT.hint,
+              marginBottom: 20,
+            }}>
+              Centered dot cluster with generous whitespace. Use between thematic blocks — when content shifts in register, not just topic.
+            </p>
+            <div style={{
+              padding: "32px 0",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 12,
+            }}>
+              {[0.2, 0.45, 0.7, 0.45, 0.2].map((opacity, i) => (
+                <div
+                  key={i}
+                  style={{
+                    width: 4,
+                    height: 4,
+                    borderRadius: "50%",
+                    background: hexToRgba(SPECTRUM.cobalt, opacity),
+                  }}
+                />
+              ))}
+            </div>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.micro.size,
+              color: TEXT.micro,
+              letterSpacing: TYPE_SCALE.micro.tracking,
+              marginTop: 8,
+            }}>
+              5 dots · 4px circles · SPECTRUM.cobalt at 0.2→0.45→0.7→0.45→0.2 · gap: 12px · 32px vertical padding
+            </p>
+          </div>
+        </section>
+
+        {/* ─── 13. PAGE NAVIGATOR ────────────────────────── */}
+        <section id="page-navigator" style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Page Navigator</SectionTitle>
+          <p style={{
+            fontSize: TYPE_SCALE.body.size,
+            lineHeight: TYPE_SCALE.body.lineHeight,
+            color: TEXT.secondary,
+            marginBottom: 32,
+          }}>
+            Sticky right sidebar that doubles as a page table of contents. Visible above 900px.
+            Each item can optionally include an <code style={{ fontFamily: FONT.mono, fontSize: 13, color: SPECTRUM.azure }}>href</code> to
+            become a clickable anchor link that scrolls to the target section.
+          </p>
+
+          {/* Live example */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              Live Example
+            </p>
+
+            <div style={{
+              maxWidth: 240,
+              padding: 16,
+              background: BG.primary,
+              borderRadius: RADIUS.sm,
+              border: `1px solid ${BORDER.default}`,
+            }}>
+              <div style={{
+                fontSize: 11,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: TEXT.hint,
+                marginBottom: 16,
+              }}>
+                On this page
+              </div>
+              {[
+                { label: "Overview", description: "Introduction and key concepts.", href: "#" },
+                { label: "Core Claims", description: "The foundational propositions.", href: "#" },
+                { label: "Research", description: "Supporting literature." },
+              ].map((item, i, arr) => (
+                <div key={i} style={{
+                  paddingBottom: i < arr.length - 1 ? 16 : 0,
+                  borderBottom: i < arr.length - 1 ? `1px solid ${BORDER.default}` : "none",
+                  marginBottom: i < arr.length - 1 ? 16 : 0,
+                }}>
+                  {item.href ? (
+                    <span style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      fontFamily: FONT.mono,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.06em",
+                      color: SPECTRUM.cobalt,
+                      marginBottom: 6,
+                      display: "block",
+                    }}>
+                      {item.label}
+                    </span>
+                  ) : (
+                    <div style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      fontFamily: FONT.mono,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.06em",
+                      color: SPECTRUM.cobalt,
+                      marginBottom: 6,
+                    }}>
+                      {item.label}
+                    </div>
+                  )}
+                  <div style={{
+                    fontSize: 12,
+                    lineHeight: 1.5,
+                    color: TEXT.muted,
+                  }}>
+                    {item.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Data shape */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>
+              Data Shape
+            </p>
+            <pre style={{
+              fontFamily: FONT.mono,
+              fontSize: 12,
+              lineHeight: 1.6,
+              color: TEXT.secondary,
+              whiteSpace: "pre-wrap",
+            }}>
+{`sidebarSections = [
+  {
+    label: "Section Name",       // 11px mono uppercase
+    description: "Description",  // 12px muted text
+    href: "#section-id",         // optional — makes label clickable
+  },
+]`}
+            </pre>
+          </div>
+
+          {/* Token specs */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>
+              Token Specs
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {[
+                ["Heading", "11px · FONT.mono · TEXT.hint · uppercase"],
+                ["Label", "11px · FONT.mono · SPECTRUM.cobalt · uppercase"],
+                ["Description", "12px · TEXT.muted · 1.5 line-height"],
+                ["Sidebar width", "240px · sticky top: 80px"],
+                ["Scrollbar", "4px width · 2px border-radius"],
+                ["Breakpoint", "hidden below 900px"],
+                ["Scroll offset", "96px (scroll-margin-top on [id])"],
+              ].map(([label, value]) => (
+                <div key={label} style={{ display: "flex", gap: 12, alignItems: "baseline" }}>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: TYPE_SCALE.micro.size,
+                    color: TEXT.hint,
+                    letterSpacing: TYPE_SCALE.micro.tracking,
+                    minWidth: 100,
+                    flexShrink: 0,
+                  }}>
+                    {label}
+                  </span>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: TYPE_SCALE.micro.size,
+                    color: TEXT.micro,
+                    letterSpacing: TYPE_SCALE.micro.tracking,
+                  }}>
+                    {value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       </PageLayout>
 

@@ -1646,10 +1646,10 @@ const GLOSSARY_TERMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "162 Terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
-  { label: "Framework Tags", description: "Each term tagged to its source framework (F1–F12) for cross-reference navigation." },
-  { label: "Core Models", description: "The foundational vocabulary: Inner Compass, Four-Mode Gradient, Three Awareness Capacities, Open Cycle." },
-  { label: "Regulation Thread", description: "Terms tracing the thread from biological signal through developmental calibration to systemic scale." },
+  { label: "162 Terms", href: "#glossary-terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
+  { label: "Framework Tags", href: "#glossary-search", description: "Each term tagged to its source framework (F1–F12) for cross-reference navigation." },
+  { label: "Core Models", href: "#glossary-list", description: "The foundational vocabulary: Inner Compass, Four-Mode Gradient, Three Awareness Capacities, Open Cycle." },
+  { label: "Regulation Thread", href: "#glossary-list", description: "Terms tracing the thread from biological signal through developmental calibration to systemic scale." },
 ];
 
 export default function GlossaryPage() {

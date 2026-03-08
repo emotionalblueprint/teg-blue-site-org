@@ -16,17 +16,17 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "Domination is built through reinforcement, not born. Causality and accountability are separable." },
-  { label: "Overview", description: "F6 explains why we see distortedly. F7 explains what happens when the system starts making others see its way." },
-  { label: "Domination Built Through Reinforcement", description: "When control consistently produces relief, the nervous system adopts control as its preferred solution." },
-  { label: "The Crossroads", description: "The critical transition: 'I am trying to feel safe' → 'I will make you behave so I can feel safe.'" },
-  { label: "Early Escalation Markers", description: "Ten observable signals indicating the compass is moving through the Crossroads." },
-  { label: "Five-Stage Escalation", description: "Fear Activation → Strategy Formation → Entitlement Loop → Empathy Collapse → Power Preservation." },
-  { label: "Empathy Gating", description: "What people call 'empathy' is three processes that diverge as escalation progresses." },
-  { label: "Addiction Logic", description: "External regulation through subjugation builds tolerance. There is no natural stopping point." },
-  { label: "The Regulation Thread", description: "One mechanism, seven scales, escalating costs. Biological return → developmental failure → domination." },
-  { label: "What F7 Establishes", description: "The escalation pathway, the Crossroads, the marker system, the empathy gating model." },
-  { label: "Research Foundations", description: "Behavioural reinforcement, psychoanalytic theory, organisational psychology, neuroscience, abuse research." },
+  { label: "Core Propositions", href: "#core-propositions", description: "Domination is built through reinforcement, not born. Causality and accountability are separable." },
+  { label: "Overview", href: "#overview", description: "F6 explains why we see distortedly. F7 explains what happens when the system starts making others see its way." },
+  { label: "Domination Built Through Reinforcement", href: "#core-claim", description: "When control consistently produces relief, the nervous system adopts control as its preferred solution." },
+  { label: "The Crossroads", href: "#the-crossroads", description: "The critical transition: 'I am trying to feel safe' → 'I will make you behave so I can feel safe.'" },
+  { label: "Early Escalation Markers", href: "#escalation-markers", description: "Ten observable signals indicating the compass is moving through the Crossroads." },
+  { label: "Five-Stage Escalation", href: "#five-stage-pathway", description: "Fear Activation → Strategy Formation → Entitlement Loop → Empathy Collapse → Power Preservation." },
+  { label: "Empathy Gating", href: "#empathy-gating", description: "What people call 'empathy' is three processes that diverge as escalation progresses." },
+  { label: "Addiction Logic", href: "#addiction-logic", description: "External regulation through subjugation builds tolerance. There is no natural stopping point." },
+  { label: "The Regulation Thread", href: "#regulation-thread", description: "One mechanism, seven scales, escalating costs. Biological return → developmental failure → domination." },
+  { label: "What F7 Establishes", href: "#what-f7-establishes", description: "The escalation pathway, the Crossroads, the marker system, the empathy gating model." },
+  { label: "Research Foundations", href: "#research-foundations", description: "Behavioural reinforcement, psychoanalytic theory, organisational psychology, neuroscience, abuse research." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -92,70 +92,6 @@ export default function F7DominationRegulatesPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The Final Collective Framework"],
-              ["#core-claim", "The Core Claim — Reinforcement, Not Character"],
-              ["#the-crossroads", "The Crossroads — Where Defense Becomes Strategy"],
-              ["#escalation-markers", "Early Escalation Markers — Crossroads Signals"],
-              ["#five-stage-pathway", "The Five-Stage Escalation Pathway"],
-              ["#empathy-gating", "Empathy Gating — The Three-Capacity Model"],
-              ["#addiction-logic", "Addiction Logic — Why Domination Escalates"],
-              ["#causality-accountability", "Causality and Accountability"],
-              ["#regulation-thread", "The Regulation Thread Complete"],
-              ["#what-f7-establishes", "What F7 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f8", "Bridge to F8"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

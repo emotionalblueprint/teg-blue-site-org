@@ -16,16 +16,16 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", description: "The architecture underneath everything. Two parallel information systems running at different speeds." },
-  { label: "The Regulation Thread", description: "F12 is not another link. It explains why the thread works the way it does." },
-  { label: "The Two Systems", description: "Emotional-somatic (milliseconds, unconscious) and cognitive-logical (seconds, conscious). Fixed sequence." },
-  { label: "Why Insight Alone Doesn't Change", description: "The timing problem, the domain mismatch, and the appropriate limitation." },
-  { label: "State-Dependent Behaviour", description: "Behaviour is state-dependent, not character-dependent. Change the state, and the person who shows up is different." },
-  { label: "One Mechanism, Twelve Angles", description: "TEG-Blue is not twelve frameworks. It is one mechanism described twelve times." },
-  { label: "The Ethics of Architecture", description: "Causality and accountability are separable. Understanding does not produce unlimited compassion or excuse harm." },
-  { label: "Intervention Matching", description: "Every intervention must be matched to compass position. State precedes method." },
-  { label: "The Design Implication", description: "Systems designed to change behaviour must address state, not just information or consequence." },
-  { label: "The Complete Architecture", description: "All human behaviour is state-dependent nervous system organisation responding to perceived safety." },
+  { label: "Framework Position", href: "#framework-position", description: "The architecture underneath everything. Two parallel information systems running at different speeds." },
+  { label: "The Regulation Thread", href: "#framework-position", description: "F12 is not another link. It explains why the thread works the way it does." },
+  { label: "The Two Systems", href: "#two-systems", description: "Emotional-somatic (milliseconds, unconscious) and cognitive-logical (seconds, conscious). Fixed sequence." },
+  { label: "Why Insight Alone Doesn't Change", href: "#why-insight-fails", description: "The timing problem, the domain mismatch, and the appropriate limitation." },
+  { label: "State-Dependent Behaviour", href: "#state-dependent-behavior", description: "Behaviour is state-dependent, not character-dependent. Change the state, and the person who shows up is different." },
+  { label: "One Mechanism, Twelve Angles", href: "#one-mechanism", description: "TEG-Blue is not twelve frameworks. It is one mechanism described twelve times." },
+  { label: "The Ethics of Architecture", href: "#accountability", description: "Causality and accountability are separable. Understanding does not produce unlimited compassion or excuse harm." },
+  { label: "Intervention Matching", href: "#gradient-matched-intervention", description: "Every intervention must be matched to compass position. State precedes method." },
+  { label: "The Design Implication", href: "#design-implication", description: "Systems designed to change behaviour must address state, not just information or consequence." },
+  { label: "The Complete Architecture", href: "#complete-architecture", description: "All human behaviour is state-dependent nervous system organisation responding to perceived safety." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -173,20 +173,6 @@ export default function F12TwoInformationSystemsPage() {
 
   /* ── data ──────────────────────────────────────────── */
 
-  const tocItems = [
-    ["#framework-position", "Framework Position"],
-    ["#two-systems", "The Two Information Systems"],
-    ["#why-insight-fails", "Why Insight Alone Doesn't Change Behavior"],
-    ["#state-dependent-behavior", "State-Dependent Behavior"],
-    ["#one-mechanism", "One Mechanism, Twelve Angles"],
-    ["#accountability", "Accountability Without Demonization"],
-    ["#gradient-matched-intervention", "Gradient-Matched Intervention"],
-    ["#design-implication", "The Design Implication"],
-    ["#complete-architecture", "The Complete Architecture"],
-    ["#research-foundations", "Research Foundations"],
-    ["#where-to-go-next", "Where to Go Next"],
-  ];
-
   const faqItems = [
     {
       q: "Why doesn't understanding your patterns automatically change them?",
@@ -227,27 +213,6 @@ export default function F12TwoInformationSystemsPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
-
-          {/* ── Table of Contents ── */}
-          <nav style={{
-            margin: "32px 0", padding: 20,
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-          }}>
-            <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              In this framework
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 32px" }}>
-              {tocItems.map(([href, label]) => (
-                <a key={href} href={href} style={{
-                  fontSize: 13, color: SPECTRUM.cobalt,
-                  textDecoration: "none", lineHeight: 1.6,
-                }}>
-                  {label}
-                </a>
-              ))}
-            </div>
-          </nav>
 
           {/* ── Core Claims ── */}
           <PropositionBox

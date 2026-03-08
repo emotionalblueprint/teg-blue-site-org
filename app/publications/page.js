@@ -111,11 +111,11 @@ const scholarlyArticleSchema = {
 };
 
 const SIDEBAR_SECTIONS = [
-  { label: "Validation Study", description: "Computational analysis of 10,000+ natural conflict narratives. The empirical backbone of the four-mode gradient." },
-  { label: "All Publications", description: "Published research papers, working papers, and theoretical architecture documents." },
-  { label: "Datasets", description: "Open datasets supporting the validation study and ongoing research." },
-  { label: "How to Cite", description: "Citation format and examples for academic use." },
-  { label: "Author", description: "About the research team and collaboration opportunities." },
+  { label: "Validation Study", href: "#validation-study", description: "Computational analysis of 10,000+ natural conflict narratives. The empirical backbone of the four-mode gradient." },
+  { label: "All Publications", href: "#all-publications", description: "Published research papers, working papers, and theoretical architecture documents." },
+  { label: "Datasets", href: "#datasets", description: "Open datasets supporting the validation study and ongoing research." },
+  { label: "How to Cite", href: "#how-to-cite", description: "Citation format and examples for academic use." },
+  { label: "Author", href: "#author", description: "About the research team and collaboration opportunities." },
 ];
 
 export default function PublicationsPage() {
@@ -152,7 +152,7 @@ export default function PublicationsPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Validation study card */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="validation-study" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Validation Study
           </h2>
@@ -254,7 +254,7 @@ export default function PublicationsPage() {
 
         {/* Additional publications from content files */}
         {publications.length > 0 && (
-          <section style={{ marginBottom: 32 }}>
+          <section id="all-publications" style={{ marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               All Publications
             </h2>
@@ -267,7 +267,7 @@ export default function PublicationsPage() {
         )}
 
         {/* Datasets */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="datasets" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Datasets
           </h2>
@@ -303,7 +303,7 @@ export default function PublicationsPage() {
         </section>
 
         {/* How to cite */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="how-to-cite" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
             How to cite
           </h2>
@@ -349,7 +349,7 @@ export default function PublicationsPage() {
         </section>
 
         {/* Author */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="author" style={{ marginBottom: 32 }}>
           <AuthorBlock />
         </section>
 

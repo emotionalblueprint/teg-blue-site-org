@@ -18,7 +18,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 1 */}
-      <h2 style={READING.heading}>
+      <h2 id="kind-and-terrible" style={READING.heading}>
         <span style={READING.sectionNumber}>1.</span> How can someone be genuinely kind in one context and genuinely terrible in another?
       </h2>
 
@@ -35,7 +35,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 2 */}
-      <h2 style={READING.heading}>
+      <h2 id="one-version-fake" style={READING.heading}>
         <span style={READING.sectionNumber}>2.</span> Does that mean one version is fake?
       </h2>
 
@@ -52,7 +52,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 3 */}
-      <h2 style={READING.heading}>
+      <h2 id="worst-in-closest" style={READING.heading}>
         <span style={READING.sectionNumber}>3.</span> Why does the worst behavior so often happen in the closest relationships?
       </h2>
 
@@ -69,7 +69,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 4 */}
-      <h2 style={READING.heading}>
+      <h2 id="not-knowing" style={READING.heading}>
         <span style={READING.sectionNumber}>4.</span> Why do some people seem to genuinely not know how they behave at home?
       </h2>
 
@@ -86,7 +86,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 5 */}
-      <h2 style={READING.heading}>
+      <h2 id="just-about-power" style={READING.heading}>
         <span style={READING.sectionNumber}>5.</span> Is this just about power {"\u2014"} do people behave badly when they can get away with it?
       </h2>
 
@@ -105,7 +105,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 6 */}
-      <h2 style={READING.heading}>
+      <h2 id="hard-to-convince" style={READING.heading}>
         <span style={READING.sectionNumber}>6.</span> Why is it so hard to convince someone that their home behavior is a problem when everyone else seems to think they{"\u2019"}re wonderful?
       </h2>
 
@@ -124,7 +124,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Section 7 */}
-      <h2 style={READING.heading}>
+      <h2 id="can-this-change" style={READING.heading}>
         <span style={READING.sectionNumber}>7.</span> Can this change {"\u2014"} or is context-dependent behavior just how some people are?
       </h2>
 
@@ -145,7 +145,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Framework reveal */}
-      <h2 style={{ ...READING.heading, marginTop: 32 }}>The framework behind these answers</h2>
+      <h2 id="framework-behind" style={{ ...READING.heading, marginTop: 32 }}>The framework behind these answers</h2>
 
       <p style={READING.paragraph}>I kept finding this structure {"\u2014"} context-dependent behavior, regulation outsourced to environment, the worst versions appearing in the safest relationships {"\u2014"} across clinical case studies, organizational psychology research, developmental trauma literature, and systems theory. Each field had its own name for pieces of it. None of them had the whole shape.</p>
 

@@ -16,19 +16,19 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "False coherence is regulation, not deception. The self-reinforcing loop maintains the stuck compass in adulthood." },
-  { label: "Overview", description: "F2 sets the calibration. F3 explains why it holds. Cognition replaces emotional signals with invented narratives." },
-  { label: "The Core Mechanism", description: "Emotional signals arrive, cognition intercepts and replaces them, the replacement produces physiological relief." },
-  { label: "False Coherence", description: "A coherent internal story that feels true, functions as identity, and resists correction." },
-  { label: "Beliefs as Nervous System Events", description: "Cognitive dissonance is a regulatory response, not a logical error." },
-  { label: "Identity Under Threat", description: "When false coherence is challenged, the nervous system responds in proportion to the regulatory threat." },
-  { label: "The Self-Awareness Split", description: "Sharp pattern-reading capacity while SEA remains offline — intellectually sophisticated about everyone else." },
-  { label: "Emotional Distortion", description: "Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence." },
-  { label: "External Regulation", description: "When internal processing is unavailable, others must provide regulation. Four modes, four strategies." },
-  { label: "The Regulation Thread", description: "The critical turn: from biological return through developmental failure to cognitive replacement." },
-  { label: "What F3 Establishes", description: "False coherence defined, the self-reinforcing loop mapped, emotional distortion and external regulation named." },
-  { label: "Research Foundations", description: "Psychoanalytic theory, cognitive psychology, neuroscience, trauma studies, and attachment." },
-  { label: "Bridge to F4", description: "What happens when enough people running these mechanisms are in proximity." },
+  { label: "Core Propositions", href: "#core-propositions", description: "False coherence is regulation, not deception. The self-reinforcing loop maintains the stuck compass in adulthood." },
+  { label: "Overview", href: "#overview", description: "F2 sets the calibration. F3 explains why it holds. Cognition replaces emotional signals with invented narratives." },
+  { label: "The Core Mechanism", href: "#core-mechanism", description: "Emotional signals arrive, cognition intercepts and replaces them, the replacement produces physiological relief." },
+  { label: "False Coherence", href: "#self-reinforcing-loop", description: "A coherent internal story that feels true, functions as identity, and resists correction." },
+  { label: "Beliefs as Nervous System Events", href: "#cognitive-dissonance", description: "Cognitive dissonance is a regulatory response, not a logical error." },
+  { label: "Identity Under Threat", href: "#regulatory-defense", description: "When false coherence is challenged, the nervous system responds in proportion to the regulatory threat." },
+  { label: "The Self-Awareness Split", href: "#cognition-across-gradient", description: "Sharp pattern-reading capacity while SEA remains offline — intellectually sophisticated about everyone else." },
+  { label: "Emotional Distortion", href: "#relational-turn", description: "Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence." },
+  { label: "External Regulation", href: "#external-regulation", description: "When internal processing is unavailable, others must provide regulation. Four modes, four strategies." },
+  { label: "The Regulation Thread", href: "#what-f3-establishes", description: "The critical turn: from biological return through developmental failure to cognitive replacement." },
+  { label: "What F3 Establishes", href: "#what-f3-establishes", description: "False coherence defined, the self-reinforcing loop mapped, emotional distortion and external regulation named." },
+  { label: "Research Foundations", href: "#research-foundations", description: "Psychoanalytic theory, cognitive psychology, neuroscience, trauma studies, and attachment." },
+  { label: "Bridge to F4", href: "#bridge-to-f4", description: "What happens when enough people running these mechanisms are in proximity." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -94,71 +94,6 @@ export default function F3FalseCoherencePage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The Cognitive Maintenance Framework"],
-              ["#core-mechanism", "The Core Mechanism — Cognition Replaces Emotional Signals"],
-              ["#self-reinforcing-loop", "The Self-Reinforcing Loop"],
-              ["#cognitive-dissonance", "Cognitive Dissonance as Regulatory Stress"],
-              ["#regulatory-defense", "Regulatory Defense"],
-              ["#identity-upgrades", "Identity Upgrades — Growth Narratives Serving Regulation"],
-              ["#rigidity", "Rigidity Is State-Dependent, Not Character"],
-              ["#cognition-across-gradient", "Cognition Across the Gradient"],
-              ["#relational-turn", "The Relational Turn — Emotional Distortion"],
-              ["#external-regulation", "External Regulation — Using Others to Manage"],
-              ["#what-f3-establishes", "What F3 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f4", "Bridge to F4"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

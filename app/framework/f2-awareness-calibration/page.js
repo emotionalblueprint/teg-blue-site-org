@@ -16,19 +16,19 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", description: "That the adults' awareness configuration is the child's developmental environment." },
-  { label: "Overview", description: "F1 is the instrument. F2 is the calibration. The three awareness capacities and the organising mechanism." },
-  { label: "Three Capacities at Birth", description: "What the infant arrives with: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness in proto-form." },
-  { label: "Feeling = Being", description: "Before cognition arrives, there is no observing self. Feeling is being. Feedback is identity." },
-  { label: "The Mechanism", description: "How each capacity develops through the specific experience of being met by a caregiver who already has that capacity online." },
-  { label: "Healthy Development", description: "What the system builds when conditions are met: accurate RE, sustainable ER, online SEA, a fluid compass." },
-  { label: "The Turn", description: "What happens when the awareness that gets passed is incomplete." },
-  { label: "The Stuck Compass", description: "How threat locks the mode, the mode becomes chronic, cognition builds identity around the locked position." },
-  { label: "What Identity Is", description: "Personality is a record, not a type. Configuration, not character." },
-  { label: "The Generational Chain", description: "Awareness teaches awareness across generations. The chain transmits through nervous systems, not words." },
-  { label: "What F2 Establishes", description: "Every core concept defined, from the three capacities to awareness-teaches-awareness." },
-  { label: "Research Foundations", description: "Attachment theory, developmental neuroscience, interpersonal neurobiology, and polyvagal theory." },
-  { label: "Bridge to F3", description: "Why the calibration persists after childhood ends. Cognition actively maintains false coherence." },
+  { label: "Core Propositions", href: "#core-propositions", description: "That the adults' awareness configuration is the child's developmental environment." },
+  { label: "Overview", href: "#overview", description: "F1 is the instrument. F2 is the calibration. The three awareness capacities and the organising mechanism." },
+  { label: "Three Capacities at Birth", href: "#capacities-at-birth", description: "What the infant arrives with: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness in proto-form." },
+  { label: "Feeling = Being", href: "#pre-sea-condition", description: "Before cognition arrives, there is no observing self. Feeling is being. Feedback is identity." },
+  { label: "The Mechanism", href: "#the-mechanism", description: "How each capacity develops through the specific experience of being met by a caregiver who already has that capacity online." },
+  { label: "Healthy Development", href: "#designed-development", description: "What the system builds when conditions are met: accurate RE, sustainable ER, online SEA, a fluid compass." },
+  { label: "The Turn", href: "#the-turn", description: "What happens when the awareness that gets passed is incomplete." },
+  { label: "The Stuck Compass", href: "#the-consequence", description: "How threat locks the mode, the mode becomes chronic, cognition builds identity around the locked position." },
+  { label: "What Identity Is", href: "#config-mode-identity", description: "Personality is a record, not a type. Configuration, not character." },
+  { label: "The Generational Chain", href: "#the-replication", description: "Awareness teaches awareness across generations. The chain transmits through nervous systems, not words." },
+  { label: "What F2 Establishes", href: "#what-f2-establishes", description: "Every core concept defined, from the three capacities to awareness-teaches-awareness." },
+  { label: "Research Foundations", href: "#research-foundations", description: "Attachment theory, developmental neuroscience, interpersonal neurobiology, and polyvagal theory." },
+  { label: "Bridge to F3", href: "#bridge-to-f3", description: "Why the calibration persists after childhood ends. Cognition actively maintains false coherence." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -135,69 +135,6 @@ export default function F2AwarenessCalibrationPage() {
             </p>
           </div>
         </div>
-
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#overview", "Overview — The Calibration Framework"],
-              ["#the-starting-point", "The Starting Point — Before Cognition Arrives"],
-              ["#the-mechanism", "The Mechanism — Awareness Teaches Awareness"],
-              ["#designed-development", "Designed Development — What the System Produces"],
-              ["#the-turn", "The Turn — Three Conditions That Shape the Compass"],
-              ["#the-consequence", "The Consequence — Stuck Compass and Constructed Identity"],
-              ["#the-replication", "The Replication — Generational Transmission"],
-              ["#healing", "Healing — Reconnecting, Not Removing"],
-              ["#what-f2-establishes", "What F2 Establishes"],
-              ["#research-foundations", "Research Foundations"],
-              ["#bridge-to-f3", "Bridge to F3"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
 
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}

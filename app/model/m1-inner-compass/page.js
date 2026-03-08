@@ -15,11 +15,11 @@ import {
 } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Compass", description: "The Inner Compass as a continuous gradient — not four boxes but a fluid needle tracking nervous system state." },
-  { label: "Four Modes", description: "Connection, Protection, Control, Domination — what each position means and how they relate." },
-  { label: "How the Needle Moves", description: "What makes the compass fluid versus stuck. Health is mobility, not position." },
-  { label: "Mode Architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
-  { label: "Research Foundations", description: "The established theories the compass model draws from — polyvagal theory, affective neuroscience, attachment." },
+  { label: "The Compass", href: "#inner-compass", description: "The Inner Compass as a continuous gradient — not four boxes but a fluid needle tracking nervous system state." },
+  { label: "Four Modes", href: "#four-modes", description: "Connection, Protection, Control, Domination — what each position means and how they relate." },
+  { label: "How the Needle Moves", href: "#regulation-the-return", description: "What makes the compass fluid versus stuck. Health is mobility, not position." },
+  { label: "Mode Architecture", href: "#state-determines-capacity", description: "How mode position determines what a person can perceive, think, feel, and do." },
+  { label: "Research Foundations", href: "#relationship-to-frameworks", description: "The established theories the compass model draws from — polyvagal theory, affective neuroscience, attachment." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -87,69 +87,6 @@ export default function M1InnerCompassPage() {
       >
         {/* ─── FLUID COMPASS EXPLORER ──────────────────────── */}
         <FluidCompassExplorer />
-
-        {/* ─── TABLE OF CONTENTS ─────────────────────────── */}
-        <nav
-          aria-label="Page contents"
-          style={{
-            margin: "32px 0",
-            padding: 20,
-            background: BG.card,
-            borderRadius: 10,
-            border: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-              marginBottom: 12,
-            }}
-          >
-            On this page
-          </h2>
-          <ol
-            style={{
-              paddingLeft: 20,
-              margin: 0,
-              columns: "2 240px",
-              columnGap: 24,
-            }}
-          >
-            {[
-              ["#core-propositions", "Core Propositions"],
-              ["#signalling-language", "Emotions as Signalling Language"],
-              ["#safety-orientation", "The Safety Orientation Question"],
-              ["#inner-compass", "The Inner Compass"],
-              ["#four-modes", "The Four Modes"],
-              ["#the-gradient", "The Gradient"],
-              ["#state-determines-capacity", "State Determines Capacity"],
-              ["#same-emotion-two-expressions", "Same Emotion, Two Expressions"],
-              ["#regulation-the-return", "Regulation — The Return"],
-              ["#stuck-compass", "The Stuck Compass"],
-              ["#two-information-systems", "The Two Information Systems"],
-              ["#relationship-to-frameworks", "Relationship to Frameworks"],
-              ["#where-to-go-next", "Where to Go Next"],
-            ].map(([href, label]) => (
-              <li key={href} style={{ marginBottom: 6 }}>
-                <a
-                  href={href}
-                  style={{
-                    fontSize: 13,
-                    color: SPECTRUM.azure,
-                    textDecoration: "none",
-                  }}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
 
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}

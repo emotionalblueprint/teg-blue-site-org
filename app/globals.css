@@ -255,6 +255,12 @@ details > section {
   background: rgba(37, 99, 235, 0.2);
 }
 
+/* ─── ANCHOR OFFSET ────────────────────────────────── */
+
+[id] {
+  scroll-margin-top: 96px;
+}
+
 /* ─── FOCUS STATES ──────────────────────────────────── */
 
 :focus-visible {

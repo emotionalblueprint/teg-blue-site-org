@@ -1,6 +1,7 @@
 import { BG, FONT } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import MechanicsLayout from "../../MechanicsLayout";
+import { findPiece } from "../../mechanics-config";
 import PiecePBN01Octopus from "../../_pieces/PiecePBN01Octopus";
 
 export const metadata = {
@@ -22,6 +23,8 @@ export const metadata = {
 };
 
 export default function PiecePBN01Page() {
+  const { piece } = findPiece("01-octopus-chromatophores");
+
   return (
     <div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}>
       <SiteHeader currentPath="/mechanics-of-phenomena" />
@@ -29,6 +32,7 @@ export default function PiecePBN01Page() {
       <MechanicsLayout
         activePiece="01-octopus-chromatophores"
         showBackLink={true}
+        articleSections={piece.sections}
       >
         <PiecePBN01Octopus />
       </MechanicsLayout>

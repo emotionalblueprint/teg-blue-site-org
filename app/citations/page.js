@@ -3,8 +3,8 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/s
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Citing TEG-Blue", description: "Full citation format for the framework, the validation study, and the theoretical architecture." },
-  { label: "Attribution", description: "Guidelines for independent work building on TEG-Blue — proper attribution and licensing." },
+  { label: "Citing TEG-Blue", description: "Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
+  { label: "Attribution", description: "Guidelines for independent work building on TEG-Blue — proper attribution and licensing.", href: "#attribution" },
 ];
 
 export const metadata = {
@@ -59,6 +59,7 @@ export default function CitationsPage() {
 
         {/* General Citation */}
         <div
+          id="citing-teg-blue"
           style={{
             marginTop: 40,
             padding: 24,
@@ -154,6 +155,7 @@ export default function CitationsPage() {
 
         {/* Attribution for Independent Work */}
         <div
+          id="attribution"
           style={{
             marginTop: 24,
             padding: 20,

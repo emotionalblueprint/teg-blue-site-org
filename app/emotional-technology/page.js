@@ -3,11 +3,11 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from 
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Analogy", description: "What emotional technology means — the same clarity we expect from physical technology, applied to emotions." },
-  { label: "What It Does", description: "Makes invisible emotional patterns visible, measurable, and navigable." },
-  { label: "Doesn't Replace Therapy", description: "Equips it. A structural layer underneath clinical work, not a replacement for it." },
-  { label: "Why This Name", description: "Why 'emotional technology' — the term, the history, the positioning." },
-  { label: "Key Vocabulary", description: "Emotional architecture, emotional wiring, emotional miswiring, emotional infrastructure." },
+  { label: "The Analogy", description: "What emotional technology means — the same clarity we expect from physical technology, applied to emotions.", href: "#the-analogy" },
+  { label: "What It Does", description: "Makes invisible emotional patterns visible, measurable, and navigable.", href: "#what-it-does" },
+  { label: "Doesn't Replace Therapy", description: "Equips it. A structural layer underneath clinical work, not a replacement for it.", href: "#doesnt-replace-therapy" },
+  { label: "Why This Name", description: "Why 'emotional technology' — the term, the history, the positioning.", href: "#why-this-name" },
+  { label: "Key Vocabulary", description: "Emotional architecture, emotional wiring, emotional miswiring, emotional infrastructure.", href: "#key-vocabulary" },
 ];
 
 export const metadata = {
@@ -57,7 +57,7 @@ export default function EmotionalTechnologyPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Featured Card — The Analogy */}
-        <section style={{ marginBottom: 64 }}>
+        <section id="the-analogy" style={{ marginBottom: 64 }}>
           <div
             style={{
               background: BG.card,
@@ -141,7 +141,7 @@ export default function EmotionalTechnologyPage() {
         </section>
 
         {/* Section 01: What It Does */}
-        <section style={{ marginBottom: 56 }}>
+        <section id="what-it-does" style={{ marginBottom: 56 }}>
           <SectionHeader number="01" title="What Emotional Technology Does" />
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
@@ -185,7 +185,7 @@ export default function EmotionalTechnologyPage() {
         </section>
 
         {/* Section 02: Relationship to Therapy */}
-        <section style={{ marginBottom: 56 }}>
+        <section id="doesnt-replace-therapy" style={{ marginBottom: 56 }}>
           <SectionHeader number="02" title="Doesn't Replace Therapy. Equips It." />
 
           <div style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8 }}>
@@ -216,7 +216,7 @@ export default function EmotionalTechnologyPage() {
         </section>
 
         {/* Section 03: Why This Name */}
-        <section style={{ marginBottom: 56 }}>
+        <section id="why-this-name" style={{ marginBottom: 56 }}>
           <SectionHeader number="03" title="Why 'Emotional Technology'?" />
 
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
@@ -244,7 +244,7 @@ export default function EmotionalTechnologyPage() {
         </section>
 
         {/* Section 04: Key Vocabulary */}
-        <section style={{ marginBottom: 56 }}>
+        <section id="key-vocabulary" style={{ marginBottom: 56 }}>
           <SectionHeader number="04" title="Key Vocabulary" />
 
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>

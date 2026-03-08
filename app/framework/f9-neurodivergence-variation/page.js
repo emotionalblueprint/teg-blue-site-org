@@ -16,16 +16,16 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", description: "F8 describes a universal cost. F9 asks what happens when that cost is architectural, daily, and inescapable." },
-  { label: "The Regulation Thread", description: "What if the environment itself prevents the building? You cannot heal what the environment keeps wounding." },
-  { label: "Nervous System Configuration", description: "Neurodivergence is a difference in how the nervous system is configured. Not a disorder, deficit, or gift." },
-  { label: "System Mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
-  { label: "Masking as Structural Survival", description: "When every environment punishes authentic configuration, masking is not a choice — it is survival." },
-  { label: "Threshold Crossing and Burnout", description: "The predictable outcome of a system running a design it was not built to run." },
-  { label: "Unmasking", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
-  { label: "From Accommodation to Design", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
-  { label: "The Structural Argument", description: "Systems designed for one configuration lose access to what other configurations provide." },
-  { label: "Bridge to F10", description: "What happens across generations when adults do this work — individual repair and structural repair simultaneously." },
+  { label: "Framework Position", href: "#framework-position", description: "F8 describes a universal cost. F9 asks what happens when that cost is architectural, daily, and inescapable." },
+  { label: "The Regulation Thread", href: "#framework-position", description: "What if the environment itself prevents the building? You cannot heal what the environment keeps wounding." },
+  { label: "Nervous System Configuration", href: "#neurodivergence-as-configuration", description: "Neurodivergence is a difference in how the nervous system is configured. Not a disorder, deficit, or gift." },
+  { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
+  { label: "Masking as Structural Survival", href: "#masking-as-structural-survival", description: "When every environment punishes authentic configuration, masking is not a choice — it is survival." },
+  { label: "Threshold Crossing and Burnout", href: "#threshold-dynamics", description: "The predictable outcome of a system running a design it was not built to run." },
+  { label: "Unmasking", href: "#unmasking-is-not-healing", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
+  { label: "From Accommodation to Design", href: "#design-principles", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
+  { label: "The Structural Argument", href: "#the-structural-argument", description: "Systems designed for one configuration lose access to what other configurations provide." },
+  { label: "Bridge to F10", href: "#bridge-to-f10", description: "What happens across generations when adults do this work — individual repair and structural repair simultaneously." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -173,21 +173,6 @@ export default function F9NeurodivergenceVariationPage() {
 
   /* ── data ──────────────────────────────────────────── */
 
-  const tocItems = [
-    ["#framework-position", "Framework Position"],
-    ["#neurodivergence-as-configuration", "Neurodivergence as Configuration"],
-    ["#system-mismatch", "System Mismatch"],
-    ["#masking-as-structural-survival", "Masking as Structural Survival"],
-    ["#threshold-dynamics", "Threshold Dynamics"],
-    ["#unmasking-is-not-healing", "Unmasking Is Not Healing"],
-    ["#awareness-capacities-in-neurodivergent-experience", "Awareness Capacities"],
-    ["#design-principles", "Design Principles"],
-    ["#the-structural-argument", "The Structural Argument"],
-    ["#bridge-to-f10", "Bridge to F10"],
-    ["#research-foundations", "Research Foundations"],
-    ["#where-to-go-next", "Where to Go Next"],
-  ];
-
   const faqItems = [
     {
       q: "Is neurodivergence a deficit or disorder?",
@@ -228,27 +213,6 @@ export default function F9NeurodivergenceVariationPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
-
-          {/* ── Table of Contents ── */}
-          <nav style={{
-            margin: "32px 0", padding: 20,
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-          }}>
-            <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              In this framework
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 32px" }}>
-              {tocItems.map(([href, label]) => (
-                <a key={href} href={href} style={{
-                  fontSize: 13, color: SPECTRUM.cobalt,
-                  textDecoration: "none", lineHeight: 1.6,
-                }}>
-                  {label}
-                </a>
-              ))}
-            </div>
-          </nav>
 
           {/* ── Core Claims ── */}
           <PropositionBox
