@@ -63,7 +63,7 @@ const GLOSSARY_TERMS = [
     title: "Three Core Models",
     type: "concept",
     status: "proposed",
-    definition: "The applied layer of TEG-Blue. Three models: the Inner Compass & Four-Mode Gradient (the instrument — how the nervous system orients across four modes), the Three Awareness Capacities (the calibration — what determines how well it does it), and The Open Cycle (the biological foundation — what happens in the body when emotional processing is interrupted and never completes).",
+    definition: "The applied layer of TEG-Blue. Three models: the Inner Compass & Four-Mode Gradient (the instrument — how the nervous system orients across four modes), the Three Awareness Capacities (the calibration — what determines how well it does it), and The Biology of Unfinished Emotion (the biological foundation — what happens in the body when emotional processing is interrupted and never completes).",
     tags: ["core-concept", "measurement"],
     framework: 1,
   },
@@ -1552,7 +1552,7 @@ const GLOSSARY_TERMS = [
     tags: ["core-concept", "measurement"],
   },
 
-  // ===== M3: THE OPEN CYCLE =====
+  // ===== M3: THE BIOLOGY OF UNFINISHED EMOTION =====
   {
     slug: "the-open-cycle",
     title: "The Open Cycle",

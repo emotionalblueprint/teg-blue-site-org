@@ -2,7 +2,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, ResearcherHero,
@@ -120,7 +120,7 @@ export default function F1EmotionalGradientPage() {
               F1 is where two constructs originate that run through the entire TEG-Blue system: the <strong>Inner Compass</strong> — the nervous system's orientation mechanism — and the <strong>Four-Mode Gradient</strong> — the continuous range of modes it moves through. Both are introduced and explained here for the first time. M1: Inner Compass &amp; Four-Mode Gradient packages them into an applied model.
             </PropositionBox>
 
-            <div style={{ height: 1, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "16px 0" }} />
+            <InnerDivider />
 
             <FrameworkTerms
               terms={[
@@ -133,7 +133,7 @@ export default function F1EmotionalGradientPage() {
             />
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
@@ -149,29 +149,29 @@ export default function F1EmotionalGradientPage() {
             </h2>
             <PropositionBox label="FOUNDATIONAL CLAIM">
               <ul style={{ paddingLeft: 20, margin: 0 }}>
-                <li style={propositionItemStyle}>
+                <li style={listItemStyle}>
                   Emotions are the nervous system's signalling language — structured signals about safety, threat, and need
                 </li>
-                <li style={propositionItemStyle}>
+                <li style={listItemStyle}>
                   The nervous system continuously evaluates one question: <em>Is there enough safety to engage, or is protection needed?</em>
                 </li>
-                <li style={propositionItemStyle}>
+                <li style={listItemStyle}>
                   A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and come back
                 </li>
-                <li style={propositionItemStyle}>
+                <li style={listItemStyle}>
                   What a person can perceive, think, feel, and do depends on their current regulatory state
                 </li>
-                <li style={propositionItemStyle}>
+                <li style={listItemStyle}>
                   The same emotion produces different outcomes depending on where the compass is pointing when it arrives
                 </li>
-                <li style={propositionItemStyle}>
+                <li style={listItemStyle}>
                   Biological Restoration cannot be forced. It can only be allowed
                 </li>
               </ul>
             </PropositionBox>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── STATE & EMOTION ──────────────────────────── */}
           <section
@@ -217,7 +217,7 @@ export default function F1EmotionalGradientPage() {
               </ExpandableSection>
             </div>
 
-            <div style={{ height: 1, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "20px 0" }} />
+            <InnerDivider margin="20px 0" />
 
             {/* Concept 1 */}
             <div style={{ marginBottom: 32 }}>
@@ -335,7 +335,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── PART 2: THE INSTRUMENT ──────────────────── */}
           <section
@@ -432,7 +432,7 @@ export default function F1EmotionalGradientPage() {
 
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── PART 3: CONNECTION & PROTECTION ─────────── */}
           <section
@@ -526,7 +526,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── PART 4: THE FORK ────────────────────────── */}
           <section
@@ -582,7 +582,7 @@ export default function F1EmotionalGradientPage() {
                   M3 &middot; The physiology beneath this
                 </div>
                 <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                  M3: The Open Cycle traces the exact biological sequence — what happens step by step when the body completes, and what happens when cognition overrides it instead.
+                  M3: The Biology of Unfinished Emotion traces the exact biological sequence — what happens step by step when the body completes, and what happens when cognition overrides it instead.
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.indigo }}>
                   Read the biology &rarr;
@@ -719,7 +719,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── PART 5: CONTROL & DOMINATION ──────────────── */}
           <section
@@ -852,7 +852,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── PART 6: THE GRADIENT & MODE ─────────────── */}
           <section
@@ -975,7 +975,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── PART 7: THE FULL ARC ────────────────────── */}
           <section
@@ -1088,7 +1088,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── WHAT F1 ESTABLISHES ──────────────────────── */}
           <section
@@ -1178,7 +1178,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── RESEARCH FOUNDATIONS ─────────────────────── */}
           <section
@@ -1219,7 +1219,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── BRIDGE TO F2 ─────────────────────────────── */}
           <section
@@ -1258,12 +1258,12 @@ export default function F1EmotionalGradientPage() {
             </p>
           </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="f1-emotional-gradient" type="framework" />
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+          <SectionDivider />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
@@ -1292,7 +1292,7 @@ export default function F1EmotionalGradientPage() {
                 <tbody>
                   <NavRow label="Continue to F2 — how the compass gets calibrated" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness (F2) →" />
                   <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Inner Compass (M1) →" />
-                  <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-the-open-cycle" linkText="The Open Cycle (M3) →" />
+                  <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-the-open-cycle" linkText="The Biology of Unfinished Emotion (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Understand the epistemological stance" href="/epistemological-foundations" linkText="Epistemological Foundations →" />
@@ -1429,13 +1429,11 @@ export default function F1EmotionalGradientPage() {
   );
 }
 
-// ─── STYLE CONSTANTS ──────────────────────────────────────
+// ─── CONSTANTS ───────────────────────────────────────────────
 
-const sectionDividerStyle = {
-  border: "none",
-  borderTop: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
-  margin: 0,
-};
+const GRADIENT_5 = "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)";
+
+// ─── STYLE CONSTANTS ──────────────────────────────────────
 
 const conceptDividerStyle = {
   border: "none",
@@ -1483,7 +1481,7 @@ const expandedProseStyle = {
   margin: "8px 0 0",
 };
 
-const propositionItemStyle = {
+const listItemStyle = {
   fontSize: 14,
   color: TEXT.secondary,
   lineHeight: 1.7,
@@ -1500,13 +1498,6 @@ const expandableRowStyle = {
 const orderedListStyle = {
   paddingLeft: 20,
   margin: "0 0 16px",
-};
-
-const listItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
 };
 
 const tableStyle = {
@@ -1544,6 +1535,14 @@ const navThStyle = {
 };
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
+
+function SectionDivider() {
+  return <div style={{ height: 2, borderRadius: 1, background: GRADIENT_5, margin: "8px 0 24px" }} />;
+}
+
+function InnerDivider({ margin = "16px 0" }) {
+  return <div style={{ height: 1, borderRadius: 1, background: GRADIENT_5, margin }} />;
+}
 
 function KeyStatement({ children }) {
   return (

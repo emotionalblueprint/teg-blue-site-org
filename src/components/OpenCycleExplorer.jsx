@@ -650,7 +650,7 @@ export default function OpenCycleExplorer() {
               fontFamily: FONT.mono,
             }}
           >
-            M3 — The Open Cycle
+            M3 — The Biology of Unfinished Emotion
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@ export { default as ResearcherHero } from "./ResearcherHero";
 export { default as FrameworkTerms } from "./FrameworkTerms";
 
 // Visualizations
+export { default as CompassBar } from "./CompassBar";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
 
 // Author

@@ -1087,7 +1087,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               />
               <FrameworkCard
                 id="M3"
-                title="The Open Cycle"
+                title="The Biology of Unfinished Emotion"
                 relation="Physiological foundation"
                 description="What the body does when the three capacities are not online — the incomplete cycles that accumulate when the return cannot complete. The physical cost of capacity gaps."
                 href="/model/m3-the-open-cycle"
@@ -1131,7 +1131,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   <NavRow
                     label="Understand the physiological cost of capacity gaps"
                     href="/model/m3-the-open-cycle"
-                    linkText="M3: The Open Cycle →"
+                    linkText="M3: The Biology of Unfinished Emotion →"
                   />
                   <NavRow
                     label="See all twelve frameworks"

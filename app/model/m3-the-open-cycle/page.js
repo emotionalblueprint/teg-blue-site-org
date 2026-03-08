@@ -25,7 +25,7 @@ const SIDEBAR_SECTIONS = [
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "The Open Cycle (M3) | TEG-Blue Research",
+  title: "The Biology of Unfinished Emotion (M3) | TEG-Blue Research",
   description:
     "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Model M3 of the TEG-Blue system.",
   keywords: [
@@ -46,7 +46,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/model/m3-the-open-cycle",
   },
   openGraph: {
-    title: "The Open Cycle — M3 Model | TEG-Blue",
+    title: "The Biology of Unfinished Emotion — M3 Model | TEG-Blue",
     description:
       "The biology of unfinished emotion: what happens when a threat response activates and the cycle is not allowed to complete. The physiological foundation of the TEG-Blue system.",
     url: "https://teg-blue.org/model/m3-the-open-cycle",
@@ -55,7 +55,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Open Cycle — TEG-Blue M3",
+    title: "The Biology of Unfinished Emotion — TEG-Blue M3",
     description:
       "The biology of unfinished emotion. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does.",
   },
@@ -78,8 +78,8 @@ export default function M3TheOpenCyclePage() {
         header={
           <ResearcherHero
             badge="MODEL M3"
-            title="Biological Restoration — The Fork"
-            subtitle="The Physiology of the Open Cycle"
+            title="The Biology of Unfinished Emotion"
+            subtitle="Biological Restoration — The Fork"
             description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
           />
         }
@@ -772,7 +772,7 @@ export default function M3TheOpenCyclePage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m3-the-open-cycle#article",
-            headline: "The Open Cycle: The Biology of Unfinished Emotion",
+            headline: "The Biology of Unfinished Emotion: Biological Restoration — The Fork",
             description:
               "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Model M3 of the TEG-Blue system.",
             author: {
@@ -841,7 +841,7 @@ export default function M3TheOpenCyclePage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
-              { name: "M3: The Open Cycle", url: "/model/m3-the-open-cycle" },
+              { name: "M3: The Biology of Unfinished Emotion", url: "/model/m3-the-open-cycle" },
             ])
           ),
         }}

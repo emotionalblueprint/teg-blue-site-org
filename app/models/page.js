@@ -13,7 +13,7 @@ import {
 const SIDEBAR_SECTIONS = [
   { label: "M1 — Inner Compass", href: "#model-cards", description: "The four-mode gradient as a continuous compass. How the needle moves, what each position means." },
   { label: "M2 — Three Capacities", href: "#model-cards", description: "Reading Emotions, Emotional Resonance, Self-Emotional Awareness. The calibration system." },
-  { label: "M3 — The Open Cycle", href: "#model-cards", description: "What happens in the body when the emotional cycle completes — and what happens when it doesn't." },
+  { label: "M3 — The Biology of Unfinished Emotion", href: "#model-cards", description: "What happens in the body when the emotional cycle completes — and what happens when it doesn't." },
   { label: "Integration", href: "#integration", description: "How the three models connect: the instrument, its calibration, and its biological mechanism." },
 ];
 
@@ -74,8 +74,8 @@ const MODELS = [
   },
   {
     id: "M3",
-    title: "The Open Cycle",
-    subtitle: "The Physiology",
+    title: "The Biology of Unfinished Emotion",
+    subtitle: "Biological Restoration — The Fork",
     coreQuestion: "What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?",
     summary:
       "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does.",

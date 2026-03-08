@@ -2,18 +2,6 @@
 
 import { TEXT, SPECTRUM, FONT, hexToRgba } from "@/src/styles/tokens";
 
-/**
- * FrameworkTerms — Definition-list layout for framework term legends
- *
- * Usage:
- *   <FrameworkTerms
- *     terms={[
- *       { term: "State", definition: "What the nervous system is doing biologically" },
- *     ]}
- *   >
- *     Optional extra content rendered below the term list
- *   </FrameworkTerms>
- */
 export default function FrameworkTerms({
   title = "Terms Used in This Framework",
   terms = [],

@@ -1156,7 +1156,7 @@ export default function M1InnerCompassPage() {
                   M3
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  The Open Cycle
+                  The Biology of Unfinished Emotion
                 </div>
                 <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
                   Paired model — the physiology. The biological cascade underneath the compass. What the body does when the return is blocked, why the needle gets stuck, and what completion actually requires.
@@ -1201,7 +1201,7 @@ export default function M1InnerCompassPage() {
                   <NavRow
                     label="Understand the physiological foundation of the compass"
                     href="/model/m3-the-open-cycle"
-                    linkText="M3: The Open Cycle &rarr;"
+                    linkText="M3: The Biology of Unfinished Emotion &rarr;"
                   />
                   <NavRow
                     label="See all twelve frameworks"

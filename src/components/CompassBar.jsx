@@ -3,8 +3,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/tokens'
 
-// ─── Four-Mode Gradient (canonical colors — matches .com) ────
-
 const MODES = [
   { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety' },
   { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat' },
@@ -14,11 +12,33 @@ const MODES = [
 
 const BAR_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)'
 
+const SNAP_RADIUS = 0.04
+
 function getActiveIdx(p) {
   if (p < 0.25) return 0
   if (p < 0.5) return 1
   if (p < 0.75) return 2
   return 3
+}
+
+function ArrowRow({ activeIdx, direction }) {
+  const char = direction === 'down' ? '\u25BC' : '\u25B2'
+  return (
+    <div style={{ display: 'flex', marginBottom: 4 }}>
+      {MODES.map((m, i) => (
+        <div key={i} style={{
+          flex: 1,
+          textAlign: 'center',
+          fontSize: 9,
+          opacity: i === activeIdx ? 0.7 : 0.1,
+          color: i === activeIdx ? m.hex : TEXT.micro,
+          transition: 'all 200ms',
+        }}>
+          {char}
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export default function CompassBar({ showSpecs = true }) {
@@ -29,13 +49,14 @@ export default function CompassBar({ showSpecs = true }) {
   const activeIdx = getActiveIdx(pos)
   const activeMode = MODES[activeIdx]
   const stateDesc = isStuck ? 'chronic' : 'perceived'
+  const toggleHex = isStuck ? MODES[3].hex : MODES[0].hex
 
   const handleMove = useCallback((clientX) => {
     if (!barRef.current) return
     const rect = barRef.current.getBoundingClientRect()
     let raw = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
     for (const m of MODES) {
-      if (Math.abs(raw - m.center) < 0.04) { raw = m.center; break }
+      if (Math.abs(raw - m.center) < SNAP_RADIUS) { raw = m.center; break }
     }
     setPos(raw)
   }, [])
@@ -101,21 +122,7 @@ export default function CompassBar({ showSpecs = true }) {
         })}
       </div>
 
-      {/* Arrows ▼ */}
-      <div style={{ display: 'flex', marginBottom: 4 }}>
-        {MODES.map((m, i) => (
-          <div key={`a${i}`} style={{
-            flex: 1,
-            textAlign: 'center',
-            fontSize: 9,
-            opacity: i === activeIdx ? 0.7 : 0.1,
-            color: i === activeIdx ? m.hex : TEXT.micro,
-            transition: 'all 200ms',
-          }}>
-            {'\u25BC'}
-          </div>
-        ))}
-      </div>
+      <ArrowRow activeIdx={activeIdx} direction="down" />
 
       {/* The gradient bar + needle */}
       <div
@@ -178,21 +185,7 @@ export default function CompassBar({ showSpecs = true }) {
         </div>
       </div>
 
-      {/* Arrows ▲ */}
-      <div style={{ display: 'flex', marginBottom: 4 }}>
-        {MODES.map((m, i) => (
-          <div key={`ab${i}`} style={{
-            flex: 1,
-            textAlign: 'center',
-            fontSize: 9,
-            opacity: i === activeIdx ? 0.7 : 0.1,
-            color: i === activeIdx ? m.hex : TEXT.micro,
-            transition: 'all 200ms',
-          }}>
-            {'\u25B2'}
-          </div>
-        ))}
-      </div>
+      <ArrowRow activeIdx={activeIdx} direction="up" />
 
       {/* Mode labels (bottom) */}
       <div style={{ display: 'flex' }}>
@@ -240,7 +233,6 @@ export default function CompassBar({ showSpecs = true }) {
         })}
       </div>
 
-      {/* Fluid / Stuck toggle */}
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 16 }}>
         <button
           onClick={() => setIsStuck(!isStuck)}
@@ -250,9 +242,9 @@ export default function CompassBar({ showSpecs = true }) {
             fontWeight: 600,
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
-            color: isStuck ? hexToRgba('#2563eb', 0.8) : hexToRgba('#93CFFF', 0.8),
-            background: isStuck ? hexToRgba('#2563eb', 0.08) : hexToRgba('#93CFFF', 0.08),
-            border: `1px solid ${isStuck ? hexToRgba('#2563eb', 0.25) : hexToRgba('#93CFFF', 0.25)}`,
+            color: hexToRgba(toggleHex, 0.8),
+            background: hexToRgba(toggleHex, 0.08),
+            border: `1px solid ${hexToRgba(toggleHex, 0.25)}`,
             borderRadius: RADIUS.sm,
             padding: '4px 12px',
             cursor: 'pointer',
@@ -267,7 +259,7 @@ export default function CompassBar({ showSpecs = true }) {
       {showSpecs && <div style={{
         marginTop: 20,
         padding: '12px 16px',
-        background: hexToRgba('#93CFFF', 0.04),
+        background: hexToRgba(MODES[0].hex, 0.04),
         border: `1px solid ${BORDER.default}`,
         borderRadius: RADIUS.md,
       }}>

@@ -1061,7 +1061,7 @@ export default function F3FalseCoherencePage() {
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness →" />
                   <NavRow label="See the applied models" href="/models" linkText="Core Models →" />
-                  <NavRow label="See what cognition overrides — the biology underneath false coherence" href="/model/m3-the-open-cycle" linkText="The Open Cycle (M3) →" />
+                  <NavRow label="See what cognition overrides — the biology underneath false coherence" href="/model/m3-the-open-cycle" linkText="The Biology of Unfinished Emotion (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Look up key terms" href="/glossary" linkText="Glossary →" />

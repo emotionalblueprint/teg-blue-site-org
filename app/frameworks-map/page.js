@@ -11,7 +11,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Arc 1 — Individual", href: "#arc-1-individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
   { label: "Arc 2 — Collective", href: "#arc-2-collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
   { label: "Arc 3 — Repair", href: "#arc-3-repair", description: "How awareness rebuilds, neurodivergent variation, generational transmission, paradox, and the architecture underneath." },
-  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Open Cycle." },
+  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Biology of Unfinished Emotion." },
 ];
 
 // The 12 Frameworks with structured content
@@ -561,7 +561,7 @@ export default function TheoreticalFoundationsPage() {
                 M3 — The Biological Foundation
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                The Open Cycle →
+                The Biology of Unfinished Emotion →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?

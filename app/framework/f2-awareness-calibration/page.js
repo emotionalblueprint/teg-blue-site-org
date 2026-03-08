@@ -1067,7 +1067,7 @@ export default function F2AwarenessCalibrationPage() {
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
                   <NavRow label="See the applied model for this framework" href="/model/m2-three-awareness-capacities" linkText="Three Awareness Capacities (M2) →" />
-                  <NavRow label="See the physiological model — what the body does when the return is never learned" href="/model/m3-the-open-cycle" linkText="The Open Cycle (M3) →" />
+                  <NavRow label="See the physiological model — what the body does when the return is never learned" href="/model/m3-the-open-cycle" linkText="The Biology of Unfinished Emotion (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Understand the epistemological stance" href="/epistemological-foundations" linkText="Epistemological Foundations →" />
