@@ -29,10 +29,6 @@ const F1CognitiveUpgradeDiagram = dynamic(
   () => import("@/src/components/framework-diagrams/F1CognitiveUpgradeDiagram"),
   { ssr: false }
 );
-const CompassBar = dynamic(
-  () => import("@/src/components/CompassBar"),
-  { ssr: false }
-);
 
 // ─── SIDEBAR ──────────────────────────────────────────────
 
@@ -377,10 +373,6 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-instrument" style={sectionHeadingStyle}>
               The Compass & The Needle — How the Body Orients
             </h2>
-
-            <div style={{ marginBottom: 32 }}>
-              <CompassBar showSpecs={false} />
-            </div>
 
             {/* Concept 4 */}
             <div style={{ marginBottom: 32 }}>
@@ -753,10 +745,6 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-cognitive-upgrade" style={sectionHeadingStyle}>
               Control & Domination — The Cognitive Modes
             </h2>
-
-            <div style={{ marginBottom: 32 }}>
-              <CompassBar showSpecs={false} />
-            </div>
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="control-and-domination" style={conceptHeadingStyle}>
