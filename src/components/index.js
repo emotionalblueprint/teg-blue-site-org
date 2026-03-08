@@ -21,6 +21,7 @@ export { default as ResearcherPatternCard } from "./ResearcherPatternCard";
 export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
+export { default as FrameworkTerms } from "./FrameworkTerms";
 
 // Visualizations
 export { default as EmotionWaveSection } from "./EmotionWaveSection";

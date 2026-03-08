@@ -6,7 +6,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, ResearcherHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, FrameworkTerms,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -29,17 +29,21 @@ const F1CognitiveUpgradeDiagram = dynamic(
   () => import("@/src/components/framework-diagrams/F1CognitiveUpgradeDiagram"),
   { ssr: false }
 );
+const CompassBar = dynamic(
+  () => import("@/src/components/CompassBar"),
+  { ssr: false }
+);
 
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
   { label: "Overview", href: "#overview", description: "A map of the complete seven-step trajectory, from biological signal to social structure." },
-  { label: "The Signal", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
-  { label: "The Instrument", href: "#the-instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
+  { label: "State & Emotion", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
+  { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
   { label: "The Hinge", href: "#the-hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
-  { label: "The Cognitive Upgrade", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
-  { label: "The Architecture", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
+  { label: "Control & Domination", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
+  { label: "Gradient & Mode", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
   { label: "The Full Arc", href: "#the-full-arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
   { label: "What F1 Establishes", href: "#what-f1-establishes", description: "A consolidated reference: every core concept defined, every key formulation stated." },
   { label: "Research Foundations", href: "#research-foundations", description: "The established theories F1 draws from, listed by tradition." },
@@ -111,6 +115,40 @@ export default function F1EmotionalGradientPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── FRAMEWORK ANCHOR ──────────────────────────── */}
+          <section
+            id="framework-anchor"
+            style={{ marginBottom: 48 }}
+          >
+            <PropositionBox label="ORIGIN" title="Origin of the Inner Compass and the Four-Mode Gradient">
+              F1 is where two constructs originate that run through the entire TEG-Blue system: the <strong>Inner Compass</strong> — the nervous system's orientation mechanism — and the <strong>Four-Mode Gradient</strong> — the continuous range of modes it moves through. Both are introduced and explained here for the first time. M1: Inner Compass &amp; Four-Mode Gradient packages them into an applied model.
+            </PropositionBox>
+
+            <div style={{ height: 1, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "16px 0" }} />
+
+            <FrameworkTerms
+              terms={[
+                { term: "State", definition: "What the nervous system is doing biologically — below awareness" },
+                { term: "The Compass", definition: "The metaphor that makes the orientation mechanism visible and navigable" },
+                { term: "The Needle", definition: "Our intuition — the body's felt signal of where the compass is pointing" },
+                { term: "The Gradient", definition: "The continuous range the needle moves through — from Connection to Domination" },
+                { term: "Mode", definition: "A position on that gradient — the way the person is operating in this moment" },
+              ]}
+            />
+
+            <p style={proseStyle}>
+              The four modes this framework introduces:
+            </p>
+            <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
+              <li style={listItemStyle}><strong>Connection Mode (Pattern A)</strong></li>
+              <li style={listItemStyle}><strong>Protection Mode (Pattern B)</strong></li>
+              <li style={listItemStyle}><strong>Control Mode (Pattern C)</strong></li>
+              <li style={listItemStyle}><strong>Domination Mode (Pattern D)</strong></li>
+            </ul>
+          </section>
+
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
@@ -147,7 +185,7 @@ export default function F1EmotionalGradientPage() {
             </PropositionBox>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── OVERVIEW ─────────────────────────────────── */}
           <section
@@ -159,7 +197,7 @@ export default function F1EmotionalGradientPage() {
               id="heading-overview"
               style={sectionHeadingStyle}
             >
-              Overview — The Complete Arc
+              Overview
             </h2>
 
             <p style={proseStyle}>
@@ -171,34 +209,14 @@ export default function F1EmotionalGradientPage() {
             <p style={proseStyle}>
               The compass has four modes. Two are body-first — Connection and Protection — the nervous system's responses that have been running for millions of years. Two are cognition-first — Control and Domination — an intelligent evolutionary upgrade that appeared when cognition arrived and the system gained range. In a fluid compass, all four are available, all are time-limited (except Connection, which is the home base), and all are returnable. The needle can go anywhere it needs to go — and come back. That coming back — Biological Restoration — is the mechanism that keeps the compass moving.
             </p>
-
-            <h3 style={conceptHeadingStyle}>The Seven-Step Arc</h3>
-            <p style={proseStyle}>
-              F1 names a complete trajectory. Biological Restoration is the hinge — step four of seven, three steps on each side:
-            </p>
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Step</th>
-                    <th style={thStyle}>What Happens</th>
-                    <th style={thStyle}>Elaborated Across</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Perception", "The nervous system perceives the environment through all available channels — exteroceptive, interoceptive, memory-based", "F1 — shaped by state, calibration (F2), bias (F6)"]} />
-                  <TableRow cells={["Emotion", "The nervous system generates the signal — the body's first language delivering its evaluation", "F1 — the complete account"]} />
-                  <TableRow cells={["Action", "The organism responds from its current mode", "F1 (designed) → F2 (how the mode became chronic)"]} />
-                  <TableRow cells={["Biological Restoration", "The body completes the cycle — or doesn't", "F1 (the design) → F2 (never learned) → F3 (cognition replaces it)"]} />
-                  <TableRow cells={["Behavior", "What the person produces relationally — from restoration or from its absence", "F3 — false coherence, emotional distortion, external regulation"]} />
-                  <TableRow cells={["Social Structure", "Individual patterns scale into collective systems", "F4 (rules) → F5 (worth hierarchies) → F6 (bias)"]} />
-                  <TableRow cells={["Escalation or Repair", "The system escalates toward domination — or restores the original", "F7 (escalation) → F8–F12 (repair)"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              Everything to the left of Biological Restoration is the body's designed process. Everything to the right depends on whether that process completed or not. The frameworks split at that exact point — F1–F2 describe the designed system and its calibration. F3–F7 describe what happens when Biological Restoration is missing. F8–F12 describe how to build it back.
+            <p style={{
+              ...proseStyle,
+              marginBottom: 20,
+            }}>
+              The complete seven-step arc — from Perception to Escalation or Repair — is mapped in{" "}
+              <a href="#the-full-arc" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
+                The Full Arc →
+              </a>
             </p>
 
             <KeyStatement>
@@ -220,7 +238,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── PART 1: THE SIGNAL ──────────────────────── */}
           <section
@@ -229,7 +247,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-signal" style={sectionHeadingStyle}>
-              The Signal — How the Body Evaluates
+              State & Emotion — How the Body Evaluates
             </h2>
 
             {/* Concept 1 */}
@@ -348,7 +366,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── PART 2: THE INSTRUMENT ──────────────────── */}
           <section
@@ -357,8 +375,12 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-instrument" style={sectionHeadingStyle}>
-              The Instrument — How the Body Orients
+              The Compass & The Needle — How the Body Orients
             </h2>
+
+            <div style={{ marginBottom: 32 }}>
+              <CompassBar showSpecs={false} />
+            </div>
 
             {/* Concept 4 */}
             <div style={{ marginBottom: 32 }}>
@@ -527,7 +549,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── PART 3: THE HINGE ───────────────────────── */}
           <section
@@ -720,7 +742,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── PART 4: THE COGNITIVE UPGRADE ────────────── */}
           <section
@@ -729,8 +751,12 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-cognitive-upgrade" style={sectionHeadingStyle}>
-              The Cognitive Upgrade
+              Control & Domination — The Cognitive Modes
             </h2>
+
+            <div style={{ marginBottom: 32 }}>
+              <CompassBar showSpecs={false} />
+            </div>
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="control-and-domination" style={conceptHeadingStyle}>
@@ -853,7 +879,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── PART 5: THE ARCHITECTURE ─────────────────── */}
           <section
@@ -862,7 +888,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-architecture" style={sectionHeadingStyle}>
-              The Architecture — How the Instrument Reads
+              The Gradient & Mode — How the Compass Reads
             </h2>
 
             {/* Concept 9 */}
@@ -976,7 +1002,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── PART 6: THE FULL ARC ────────────────────── */}
           <section
@@ -1089,7 +1115,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── WHAT F1 ESTABLISHES ──────────────────────── */}
           <section
@@ -1179,7 +1205,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── RESEARCH FOUNDATIONS ─────────────────────── */}
           <section
@@ -1220,7 +1246,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── BRIDGE TO F2 ─────────────────────────────── */}
           <section
@@ -1259,12 +1285,12 @@ export default function F1EmotionalGradientPage() {
             </p>
           </section>
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="f1-emotional-gradient" type="framework" />
 
-          <hr style={sectionDividerStyle} />
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section

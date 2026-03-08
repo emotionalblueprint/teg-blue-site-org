@@ -5,7 +5,7 @@ import {
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
-import CompassBar from "./CompassBar";
+import CompassBar from "@/src/components/CompassBar";
 
 const SIDEBAR_SECTIONS = [
   { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns.", href: "#design-tokens" },
