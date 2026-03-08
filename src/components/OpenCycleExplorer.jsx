@@ -311,7 +311,7 @@ export default function OpenCycleExplorer() {
               fontSize: 13,
               fontWeight: 600,
               color: view === tab.id ? tab.color : TEXT.muted,
-              fontFamily: FONT.display,
+              fontFamily: FONT.mono,
               transition: "all 0.2s",
               outline: "none",
               letterSpacing: "0.01em",
@@ -698,8 +698,8 @@ function StageNode({ stage, active, onClick }) {
               fontSize: 12,
               fontWeight: 700,
               color: active ? stage.color : TEXT.primary,
-              fontFamily: FONT.display,
-              letterSpacing: "0.01em",
+              fontFamily: FONT.mono,
+              letterSpacing: "0.02em",
             }}
           >
             {stage.label}
@@ -782,7 +782,7 @@ function DetailPanel({ stage }) {
             fontSize: 15,
             fontWeight: 700,
             color: stage.color,
-            fontFamily: FONT.display,
+            fontFamily: FONT.mono,
           }}
         >
           {stage.label}
