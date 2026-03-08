@@ -1,7 +1,7 @@
 import {
   BG, TEXT, BORDER, FONT, SPACING, RADIUS, TRANSITION, OPACITY,
   SPECTRUM, PATTERN, PATTERN_GRADIENT, AWARENESS, STATUS,
-  MODE_ORANGE, MODE_PINK, RESEARCHER,
+  MODE_ORANGE, MODE_PINK,
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
@@ -9,7 +9,7 @@ import CompassBar from "./CompassBar";
 
 const SIDEBAR_SECTIONS = [
   { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns.", href: "#design-tokens" },
-  { label: "Section Separators", description: "Three divider styles for different content contexts.", href: "#section-separators" },
+  { label: "Section Separators", description: "One gradient style in three thicknesses.", href: "#section-separators" },
   { label: "Page Navigator", description: "Sticky sidebar with anchor links and section descriptions.", href: "#page-navigator" },
 ];
 
@@ -144,11 +144,11 @@ export default function DesignSystemPage() {
         <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
           <SectionTitle>Semantic Colors</SectionTitle>
 
-          <SwatchRow label="Pattern (Four-Mode Blue Gradient)">
-            <Swatch color={PATTERN.A.primary} label="Pattern A" sublabel="Connection Mode" />
-            <Swatch color={PATTERN.B.primary} label="Pattern B" sublabel="Protection Mode" />
-            <Swatch color={PATTERN.C.primary} label="Pattern C" sublabel="Control Mode" />
-            <Swatch color={PATTERN.D.primary} label="Pattern D" sublabel="Domination Mode" />
+          <SwatchRow label="Four-Mode Gradient">
+            <Swatch color={PATTERN.A.primary} label="Connection" sublabel={PATTERN.A.primary} />
+            <Swatch color={PATTERN.B.primary} label="Protection" sublabel={PATTERN.B.primary} />
+            <Swatch color={PATTERN.C.primary} label="Control" sublabel={PATTERN.C.primary} />
+            <Swatch color={PATTERN.D.primary} label="Domination" sublabel={PATTERN.D.primary} />
           </SwatchRow>
           {/* Pattern gradient bar */}
           <div style={{
@@ -176,11 +176,6 @@ export default function DesignSystemPage() {
             ))}
           </SwatchRow>
 
-          <SwatchRow label="Researcher">
-            <Swatch color={RESEARCHER.accent} label="accent" sublabel={RESEARCHER.accent} />
-            <Swatch color={RESEARCHER.accentLight} label="light" sublabel={RESEARCHER.accentLight} />
-            <Swatch color={RESEARCHER.accentLighter} label="lighter" sublabel={RESEARCHER.accentLighter} />
-          </SwatchRow>
         </section>
 
         {/* ─── 3. BACKGROUNDS ──────────────────────────── */}
@@ -263,7 +258,7 @@ export default function DesignSystemPage() {
 
         {/* ─── 5. BORDERS ──────────────────────────────── */}
         <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
-          <SectionTitle>Borders</SectionTitle>
+          <SectionTitle>Border Colors</SectionTitle>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             {Object.entries(BORDER).map(([name, cssVar]) => (
               <div
@@ -364,7 +359,7 @@ export default function DesignSystemPage() {
                   fontWeight: spec.weight,
                   letterSpacing: spec.tracking,
                   lineHeight: spec.lineHeight,
-                  color: TEXT.primary,
+                  color: spec.color || TEXT.primary,
                 }}>
                   {role} — Sample text for this scale
                 </span>
@@ -376,6 +371,7 @@ export default function DesignSystemPage() {
                 }}>
                   {spec.size}px · {spec.weight} · {spec.tracking} tracking · {spec.lineHeight} line-height
                   {spec.font === "mono" ? " · mono" : ""}
+                  {spec.color ? ` · color: ${spec.color}` : ""}
                 </span>
               </div>
             ))}
@@ -423,42 +419,51 @@ export default function DesignSystemPage() {
           <SectionTitle>Spacing</SectionTitle>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {[
-              { name: "containerMax", value: `${SPACING.containerMax}px`, width: "100%" },
-              { name: "sectionGap (desktop)", value: `${SPACING.sectionGap.desktop}px`, width: `${(SPACING.sectionGap.desktop / SPACING.containerMax) * 100}%` },
-              { name: "sectionGap (mobile)", value: `${SPACING.sectionGap.mobile}px`, width: `${(SPACING.sectionGap.mobile / SPACING.containerMax) * 100}%` },
-              { name: "contentGap (desktop)", value: `${SPACING.contentGap.desktop}px`, width: `${(SPACING.contentGap.desktop / SPACING.containerMax) * 100}%` },
-              { name: "cardPadding (desktop)", value: `${SPACING.cardPadding.desktop}px`, width: `${(SPACING.cardPadding.desktop / SPACING.containerMax) * 100}%` },
-              { name: "gridGap", value: `${SPACING.gridGap}px`, width: `${(SPACING.gridGap / SPACING.containerMax) * 100}%` },
-            ].map(({ name, value, width }) => (
-              <div key={name} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              { name: "containerMax", value: `${SPACING.containerMax}px`, width: "100%", desc: "Maximum width of the main content column. Beyond this the page stops growing and centers itself." },
+              { name: "sectionGap (desktop)", value: `${SPACING.sectionGap.desktop}px`, width: `${(SPACING.sectionGap.desktop / SPACING.containerMax) * 100}%`, desc: "Vertical space between major page sections on desktop." },
+              { name: "sectionGap (mobile)", value: `${SPACING.sectionGap.mobile}px`, width: `${(SPACING.sectionGap.mobile / SPACING.containerMax) * 100}%`, desc: "Same gap on mobile — tighter because the screen is smaller." },
+              { name: "contentGap (desktop)", value: `${SPACING.contentGap.desktop}px`, width: `${(SPACING.contentGap.desktop / SPACING.containerMax) * 100}%`, desc: "Space between items within a section." },
+              { name: "cardPadding (desktop)", value: `${SPACING.cardPadding.desktop}px`, width: `${(SPACING.cardPadding.desktop / SPACING.containerMax) * 100}%`, desc: "Internal padding inside a card or panel." },
+              { name: "gridGap", value: `${SPACING.gridGap}px`, width: `${(SPACING.gridGap / SPACING.containerMax) * 100}%`, desc: "Gap between items in a grid layout." },
+            ].map(({ name, value, width, desc }) => (
+              <div key={name} style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 4 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: TYPE_SCALE.tagLabel.size,
+                    fontWeight: TYPE_SCALE.tagLabel.weight,
+                    letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                    color: TEXT.muted,
+                    textTransform: "uppercase",
+                    minWidth: 180,
+                    flexShrink: 0,
+                  }}>
+                    {name}
+                  </span>
+                  <div style={{
+                    height: 12,
+                    width,
+                    minWidth: 12,
+                    background: hexToRgba(SPECTRUM.cobalt, 0.3),
+                    borderRadius: RADIUS.sm,
+                    border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.5)}`,
+                  }} />
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: TYPE_SCALE.micro.size,
+                    color: TEXT.hint,
+                    letterSpacing: TYPE_SCALE.micro.tracking,
+                    flexShrink: 0,
+                  }}>
+                    {value}
+                  </span>
+                </div>
                 <span style={{
-                  fontFamily: FONT.mono,
-                  fontSize: TYPE_SCALE.tagLabel.size,
-                  fontWeight: TYPE_SCALE.tagLabel.weight,
-                  letterSpacing: TYPE_SCALE.tagLabel.tracking,
-                  color: TEXT.muted,
-                  textTransform: "uppercase",
-                  minWidth: 180,
-                  flexShrink: 0,
-                }}>
-                  {name}
-                </span>
-                <div style={{
-                  height: 12,
-                  width,
-                  minWidth: 12,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.3),
-                  borderRadius: RADIUS.sm,
-                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.5)}`,
-                }} />
-                <span style={{
-                  fontFamily: FONT.mono,
-                  fontSize: TYPE_SCALE.micro.size,
+                  fontSize: TYPE_SCALE.summary.size,
                   color: TEXT.hint,
-                  letterSpacing: TYPE_SCALE.micro.tracking,
-                  flexShrink: 0,
+                  paddingLeft: 180 + 12,
                 }}>
-                  {value}
+                  {desc}
                 </span>
               </div>
             ))}
@@ -576,133 +581,51 @@ export default function DesignSystemPage() {
             color: TEXT.secondary,
             marginBottom: 40,
           }}>
-            Three divider styles for separating content at different scales.
+            One gradient style in three thicknesses. Full width, no fade at the edges.
           </p>
 
-          {/* ── Separator 1: Line ── */}
-          <div style={{ marginBottom: 48 }}>
-            <p style={{
-              fontFamily: FONT.mono,
-              fontSize: TYPE_SCALE.tagLabel.size,
-              fontWeight: TYPE_SCALE.tagLabel.weight,
-              letterSpacing: TYPE_SCALE.tagLabel.tracking,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              marginBottom: 6,
-            }}>
-              Line
-            </p>
-            <p style={{
-              fontSize: TYPE_SCALE.summary.size,
-              color: TEXT.hint,
-              marginBottom: 20,
-            }}>
-              Subtle 1px rule. Use between items within the same section — list entries, card groups, table rows.
-            </p>
-            <div style={{ padding: "24px 0" }}>
-              <div style={{
-                height: 1,
-                background: BORDER.default,
-              }} />
+          {[
+            { name: "Heavy", height: 3, desc: "Between major page sections." },
+            { name: "Medium", height: 2, desc: "Between content blocks." },
+            { name: "Thin", height: 1, desc: "Subtle break within the same section." },
+          ].map(({ name, height, desc }, i, arr) => (
+            <div key={name} style={{ marginBottom: i < arr.length - 1 ? 48 : 0 }}>
+              <p style={{
+                fontFamily: FONT.mono,
+                fontSize: TYPE_SCALE.tagLabel.size,
+                fontWeight: TYPE_SCALE.tagLabel.weight,
+                letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                color: TEXT.muted,
+                textTransform: "uppercase",
+                marginBottom: 6,
+              }}>
+                {name}
+              </p>
+              <p style={{
+                fontSize: TYPE_SCALE.summary.size,
+                color: TEXT.hint,
+                marginBottom: 20,
+              }}>
+                {desc}
+              </p>
+              <div style={{ padding: "24px 0" }}>
+                <div style={{
+                  height,
+                  borderRadius: 1,
+                  background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)",
+                }} />
+              </div>
+              <p style={{
+                fontFamily: FONT.mono,
+                fontSize: TYPE_SCALE.micro.size,
+                color: TEXT.micro,
+                letterSpacing: TYPE_SCALE.micro.tracking,
+                marginTop: 8,
+              }}>
+                height: {height}px · border-radius: 1px · gradient: #93CFFF → #5BADFF → #4B8FFF → #346AEC → #2563eb
+              </p>
             </div>
-            <p style={{
-              fontFamily: FONT.mono,
-              fontSize: TYPE_SCALE.micro.size,
-              color: TEXT.micro,
-              letterSpacing: TYPE_SCALE.micro.tracking,
-              marginTop: 8,
-            }}>
-              height: 1px · background: BORDER.default · no margin (parent controls spacing)
-            </p>
-          </div>
-
-          {/* ── Separator 2: Spectrum ── */}
-          <div style={{ marginBottom: 48 }}>
-            <p style={{
-              fontFamily: FONT.mono,
-              fontSize: TYPE_SCALE.tagLabel.size,
-              fontWeight: TYPE_SCALE.tagLabel.weight,
-              letterSpacing: TYPE_SCALE.tagLabel.tracking,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              marginBottom: 6,
-            }}>
-              Spectrum
-            </p>
-            <p style={{
-              fontSize: TYPE_SCALE.summary.size,
-              color: TEXT.hint,
-              marginBottom: 20,
-            }}>
-              Gradient bar using the blue spectrum. Use between major page sections — a visual signal that the topic is shifting.
-            </p>
-            <div style={{ padding: "24px 0" }}>
-              <div style={{
-                height: 2,
-                borderRadius: 1,
-                background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
-              }} />
-            </div>
-            <p style={{
-              fontFamily: FONT.mono,
-              fontSize: TYPE_SCALE.micro.size,
-              color: TEXT.micro,
-              letterSpacing: TYPE_SCALE.micro.tracking,
-              marginTop: 8,
-            }}>
-              height: 2px · border-radius: 1px · linear-gradient through SPECTRUM (sky → indigo, faded edges)
-            </p>
-          </div>
-
-          {/* ── Separator 3: Breathing ── */}
-          <div style={{ marginBottom: 0 }}>
-            <p style={{
-              fontFamily: FONT.mono,
-              fontSize: TYPE_SCALE.tagLabel.size,
-              fontWeight: TYPE_SCALE.tagLabel.weight,
-              letterSpacing: TYPE_SCALE.tagLabel.tracking,
-              color: TEXT.muted,
-              textTransform: "uppercase",
-              marginBottom: 6,
-            }}>
-              Breathing
-            </p>
-            <p style={{
-              fontSize: TYPE_SCALE.summary.size,
-              color: TEXT.hint,
-              marginBottom: 20,
-            }}>
-              Centered dot cluster with generous whitespace. Use between thematic blocks — when content shifts in register, not just topic.
-            </p>
-            <div style={{
-              padding: "32px 0",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 12,
-            }}>
-              {[0.2, 0.45, 0.7, 0.45, 0.2].map((opacity, i) => (
-                <div
-                  key={i}
-                  style={{
-                    width: 4,
-                    height: 4,
-                    borderRadius: "50%",
-                    background: hexToRgba(SPECTRUM.cobalt, opacity),
-                  }}
-                />
-              ))}
-            </div>
-            <p style={{
-              fontFamily: FONT.mono,
-              fontSize: TYPE_SCALE.micro.size,
-              color: TEXT.micro,
-              letterSpacing: TYPE_SCALE.micro.tracking,
-              marginTop: 8,
-            }}>
-              5 dots · 4px circles · SPECTRUM.cobalt at 0.2→0.45→0.7→0.45→0.2 · gap: 12px · 32px vertical padding
-            </p>
-          </div>
+          ))}
         </section>
 
         {/* ─── 13. PAGE NAVIGATOR ────────────────────────── */}

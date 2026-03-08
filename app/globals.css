@@ -2,18 +2,18 @@
 
 :root {
   /* Blue Spectrum */
-  --spectrum-sky:    #7ABAEB;
-  --spectrum-azure:  #4A9BE8;
-  --spectrum-blue:   #3B7DE5;
-  --spectrum-cobalt: #3560CC;
-  --spectrum-indigo: #4A50B0;
-  --spectrum-slate:  #6B7A99;
+  --spectrum-sky:    #93CFFF;
+  --spectrum-azure:  #5BADFF;
+  --spectrum-blue:   #4B8FFF;
+  --spectrum-cobalt: #4472EE;
+  --spectrum-indigo: #5B62D4;
+  --spectrum-slate:  #7B8BB0;
 
   /* Backgrounds — Tailwind Slate scale */
   --bg-page:    #111729;
   --bg-primary: #151c35;
   --bg-card:    #1a2240;
-  --bg-surface: #0c101d;
+  --bg-surface: #162035;
   --bg-inset:   #0a0d17;
 
   /* Text */
@@ -202,12 +202,12 @@ details > section {
   --editorial-accent-light: #b45309;
 
   /* Spectrum — slightly darker for light background contrast */
-  --spectrum-sky:    #2d8ac7;
-  --spectrum-azure:  #2b7bd4;
-  --spectrum-blue:   #2563eb;
-  --spectrum-cobalt: #1e4faa;
-  --spectrum-indigo: #3730a3;
-  --spectrum-slate:  #475569;
+  --spectrum-sky:    #3a9be0;
+  --spectrum-azure:  #3580e0;
+  --spectrum-blue:   #2d6fd6;
+  --spectrum-cobalt: #2a52b8;
+  --spectrum-indigo: #3d3fa8;
+  --spectrum-slate:  #586a8a;
 }
 
 /* ─── SCROLLBAR STYLING ─────────────────────────────── */

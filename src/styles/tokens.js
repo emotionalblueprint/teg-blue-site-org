@@ -32,21 +32,24 @@ export const TEXT = {
 // ─── BORDERS ─────────────────────────────────────────
 
 export const BORDER = {
-  default: "var(--border-default)",
-  hover:   "var(--border-hover)",
-  active:  "var(--border-active)",
+  default:    "var(--border-default)",
+  hover:      "var(--border-hover)",
+  active:     "var(--border-active)",
+  brightBlue: "#4B8FFF",   // emphasis — callouts, focus rings
+  glowBlue:   "#93CFFF",   // high-visibility accent, sky spectrum
+  accentBlue: "#5BADFF",   // mid-tone bright accent, azure spectrum
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────
 // Six flat tones. No gradients. Each maps to a content type.
 
 export const SPECTRUM = {
-  sky:    "#7ABAEB",   // Glossary — light, accessible
-  azure:  "#4A9BE8",   // Open Data — clear, transparent
-  blue:   "#3B7DE5",   // Publications — core, authoritative
-  cobalt: "#3560CC",   // Frameworks (F1-F12) — structured
-  indigo: "#4A50B0",   // Foundations & Theory — deep
-  slate:  "#6B7A99",   // Methodology & Meta — neutral
+  sky:    "#93CFFF",   // Glossary — light, accessible
+  azure:  "#5BADFF",   // Open Data — clear, transparent
+  blue:   "#4B8FFF",   // Publications — core, authoritative
+  cobalt: "#4472EE",   // Frameworks (F1-F12) — structured
+  indigo: "#5B62D4",   // Foundations & Theory — deep
+  slate:  "#7B8BB0",   // Methodology & Meta — neutral
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────
@@ -86,8 +89,8 @@ export const FONT = {
 
 export const TYPE_SCALE = {
   pageTitle:       { size: 28, weight: 700, tracking: "-0.02em", lineHeight: 1.2 },
-  sectionHead:     { size: 18, weight: 600, tracking: "-0.01em", lineHeight: 1.2 },
-  expandableTitle: { size: 15, weight: 600, tracking: "normal",  lineHeight: 1.4 },
+  sectionHead:     { size: 18, weight: 600, tracking: "-0.01em", lineHeight: 1.2, color: "var(--text-primary)" },
+  expandableTitle: { size: 15, weight: 600, tracking: "normal",  lineHeight: 1.4, color: "rgba(168, 180, 200, 0.75)" },
   body:            { size: 15, weight: 400, tracking: "normal",  lineHeight: 1.75 },
   summary:         { size: 13, weight: 400, tracking: "normal",  lineHeight: 1.72 },
   doi:             { size: 12, weight: 400, tracking: "0.01em",  lineHeight: 1.4, font: "mono" },
@@ -144,14 +147,15 @@ export const OPACITY = {
 // ─── PATTERN COLORS (Four-Mode Gradient — monochromatic blue) ───
 
 export const PATTERN = {
-  A: { primary: '#60a5fa', bg: 'rgba(96,165,250,0.08)', border: 'rgba(96,165,250,0.25)' },
-  B: { primary: '#3b82f6', bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.25)' },
-  C: { primary: '#2563eb', bg: 'rgba(37,99,235,0.08)', border: 'rgba(37,99,235,0.25)' },
-  D: { primary: '#1d4ed8', bg: 'rgba(29,78,216,0.08)', border: 'rgba(29,78,216,0.25)' },
+  A: { primary: '#93CFFF', bg: 'rgba(147,207,255,0.08)', border: 'rgba(147,207,255,0.25)' },
+  B: { primary: '#5BADFF', bg: 'rgba(91,173,255,0.08)',  border: 'rgba(91,173,255,0.25)' },
+  C: { primary: '#346AEC', bg: 'rgba(52,106,236,0.08)',  border: 'rgba(52,106,236,0.25)' },
+  D: { primary: '#2563eb', bg: 'rgba(37,99,235,0.08)',   border: 'rgba(37,99,235,0.25)' },
 };
 
-export const PATTERN_GRADIENT = 'linear-gradient(90deg, #60a5fa, #3b82f6, #2563eb, #1d4ed8)';
+export const PATTERN_GRADIENT = 'linear-gradient(90deg, #93CFFF, #5BADFF, #346AEC, #2563eb)';
 
+// ─── RESEARCHER ACCENT (legacy — used across 36+ files) ────
 export const RESEARCHER = {
   accent: '#2563eb',
   accentLight: '#3b82f6',

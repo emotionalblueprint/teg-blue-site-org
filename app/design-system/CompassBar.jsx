@@ -6,13 +6,13 @@ import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/
 // ─── Four-Mode Gradient (canonical colors — matches .com) ────
 
 const MODES = [
-  { name: 'CONNECTION',  hex: '#14b8a6', center: 0.125, signal: 'Safety',    desc: 'perceived' },
-  { name: 'PROTECTION',  hex: '#eab308', center: 0.375, signal: 'Threat',    desc: 'perceived' },
-  { name: 'CONTROL',     hex: '#f97316', center: 0.625, signal: 'Danger',    desc: 'chronic'   },
-  { name: 'DOMINATION',  hex: '#ec4899', center: 0.875, signal: 'Life peril', desc: 'entrenched' },
+  { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety',    desc: 'perceived' },
+  { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat',    desc: 'perceived' },
+  { name: 'CONTROL',     hex: '#346AEC', center: 0.625, signal: 'Danger',    desc: 'chronic'   },
+  { name: 'DOMINATION',  hex: '#2563eb', center: 0.875, signal: 'Life peril', desc: 'entrenched' },
 ]
 
-const BAR_GRADIENT = 'linear-gradient(90deg, #14b8a6 0%, #14b8a6 20%, #eab308 35%, #eab308 45%, #f97316 55%, #f97316 70%, #ec4899 85%, #ec4899 100%)'
+const BAR_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)'
 
 function getActiveIdx(p) {
   if (p < 0.25) return 0
@@ -242,7 +242,7 @@ export default function CompassBar() {
       <div style={{
         marginTop: 20,
         padding: '12px 16px',
-        background: hexToRgba('#14b8a6', 0.04),
+        background: hexToRgba('#93CFFF', 0.04),
         border: `1px solid ${BORDER.default}`,
         borderRadius: RADIUS.md,
       }}>
@@ -260,7 +260,7 @@ export default function CompassBar() {
         {[
           ['Bar', '14px height, rounded-full, 4-color gradient'],
           ['Needle', '28px circle, white, 3px colored border, glow'],
-          ['Modes', 'Connection #14b8a6 · Protection #eab308 · Control #f97316 · Domination #ec4899'],
+          ['Modes', 'Connection #93CFFF · Protection #5BADFF · Control #346AEC · Domination #2563eb'],
           ['Snap', '4% magnet radius at each mode center (12.5%, 37.5%, 62.5%, 87.5%)'],
           ['Dividers', '1.5px at 25%, 50%, 75% — rgba(0,0,0,0.45)'],
         ].map(([label, value]) => (
