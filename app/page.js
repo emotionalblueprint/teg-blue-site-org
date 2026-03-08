@@ -148,7 +148,7 @@ export default function ResearchHub() {
           sidebarSections={SIDEBAR_SECTIONS}
         >
           {/* ── The Framework ── */}
-          <section id="what-teg-blue-is" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="what-teg-blue-is">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               What TEG-Blue is
             </h2>
@@ -185,7 +185,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Separator: Spectrum ── */}
-          <div aria-hidden="true" style={{ padding: "8px 0 16px" }}>
+          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
             <div style={{
               height: 2,
               borderRadius: 1,
@@ -194,16 +194,13 @@ export default function ResearchHub() {
           </div>
 
           {/* ── Validation Evidence ── */}
-          <section id="empirical-evidence" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="empirical-evidence">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               Empirical evidence
             </h2>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
               The four-mode gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
             </p>
-          </section>
-
-          <section style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <div
               style={{
                 background: gradientCardBg(RESEARCHER.accent),
@@ -284,7 +281,7 @@ export default function ResearchHub() {
 
           {/* ── Separator: Breathing ── */}
           <div aria-hidden="true" style={{
-            padding: "16px 0",
+            padding: "clamp(16px, 3vw, 28px) 0",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -304,7 +301,7 @@ export default function ResearchHub() {
           </div>
 
           {/* ── The 12 Frameworks with Entry Points ── */}
-          <section id="the-12-frameworks" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
+          <section id="the-12-frameworks">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               The 12 frameworks
             </h2>
@@ -355,7 +352,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Separator: Spectrum ── */}
-          <div aria-hidden="true" style={{ padding: "8px 0 16px" }}>
+          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
             <div style={{
               height: 2,
               borderRadius: 1,
