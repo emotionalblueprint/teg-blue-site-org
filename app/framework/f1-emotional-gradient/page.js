@@ -35,8 +35,9 @@ const F1CognitiveUpgradeDiagram = dynamic(
 const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
   { label: "State & Emotion", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
-  { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
-  { label: "Biological Restoration", href: "#the-hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
+  { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: the instrument and how it moves." },
+  { label: "Connection & Protection", href: "#connection-protection", description: "The two body-first modes — the nervous system's original configurations." },
+  { label: "Biological Restoration", href: "#the-fork", description: "The Fork — the mechanism at the centre of the entire system." },
   { label: "Control & Domination", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
   { label: "Gradient & Mode", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
   { label: "The Full Arc", href: "#the-full-arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
@@ -127,19 +128,9 @@ export default function F1EmotionalGradientPage() {
                 { term: "The Compass", definition: "The metaphor that makes the orientation mechanism visible and navigable" },
                 { term: "The Needle", definition: "Our intuition — the body's felt signal of where the compass is pointing" },
                 { term: "The Gradient", definition: "The continuous range the needle moves through — from Connection to Domination" },
-                { term: "Mode", definition: "A position on that gradient — the way the person is operating in this moment" },
+                { term: "4-Mode", definition: "The four positions on that gradient — the way the person is operating in this particular moment: Connection Mode (Pattern A), Protection Mode (Pattern B), Control Mode (Pattern C), Domination Mode (Pattern D)" },
               ]}
-            >
-              <p style={{ fontSize: 11, color: TEXT.muted, marginBottom: 6 }}>
-                The four modes this framework introduces:
-              </p>
-              <ul style={{ paddingLeft: 16, margin: 0 }}>
-                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Connection Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern A)</span></li>
-                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Protection Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern B)</span></li>
-                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Control Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern C)</span></li>
-                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Domination Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern D)</span></li>
-              </ul>
-            </FrameworkTerms>
+            />
           </section>
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
@@ -189,7 +180,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-signal" style={sectionHeadingStyle}>
-              State & Emotion — How the Body Evaluates
+              State & Emotion — How the Body Evaluates and Communicates
             </h2>
 
             <p style={proseStyle}>
@@ -353,7 +344,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-instrument" style={sectionHeadingStyle}>
-              The Compass & The Needle — How the Body Orients
+              The Compass & The Needle — The Instrument and How It Moves
             </h2>
 
             {/* Concept 4 */}
@@ -439,7 +430,19 @@ export default function F1EmotionalGradientPage() {
               </ExpandableSection>
             </div>
 
-            <hr style={conceptDividerStyle} />
+          </section>
+
+          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
+
+          {/* ─── PART 3: CONNECTION & PROTECTION ─────────── */}
+          <section
+            id="connection-protection"
+            aria-labelledby="heading-connection-protection"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-connection-protection" style={sectionHeadingStyle}>
+              Connection & Protection — The Two Body-First Modes
+            </h2>
 
             {/* Concept 6 */}
             <div style={{ marginBottom: 32 }}>
@@ -461,7 +464,7 @@ export default function F1EmotionalGradientPage() {
                 }}
               >
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.A.primary, marginBottom: 8 }}>
-                  Connection Mode — Pattern A <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
+                  Connection Mode — System's Home Base <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                   The system's home base — the only mode designed for sustained living. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
@@ -478,7 +481,7 @@ export default function F1EmotionalGradientPage() {
                 }}
               >
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.B.primary, marginBottom: 8 }}>
-                  Protection Mode — Pattern B <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Sympathetic/Dorsal Dominant)</span>
+                  Protection Mode — The System on Emergency Fuel <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Sympathetic/Dorsal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
                   The system on emergency fuel — designed to last from a few minutes to a few hours, maximum days. When threat is perceived, the entire system mobilizes: attention narrows toward threat, emotions amplify, and the capacity to feel with others is filtered to survival-relevant data.
@@ -525,14 +528,14 @@ export default function F1EmotionalGradientPage() {
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
-          {/* ─── PART 3: THE HINGE ───────────────────────── */}
+          {/* ─── PART 4: THE FORK ────────────────────────── */}
           <section
-            id="the-hinge"
-            aria-labelledby="heading-the-hinge"
+            id="the-fork"
+            aria-labelledby="heading-the-fork"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-the-hinge" style={sectionHeadingStyle}>
-              The Hinge — Biological Restoration
+            <h2 id="heading-the-fork" style={sectionHeadingStyle}>
+              The Fork — Biological Restoration
             </h2>
 
             {/* Concept 7 */}
@@ -709,7 +712,7 @@ export default function F1EmotionalGradientPage() {
 
                 <ExpandableSection title="TEG-Blue Contribution" type="framework">
                   <p style={expandedProseStyle}>
-                    The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the hinge of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
+                    The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the fork of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
                   </p>
                 </ExpandableSection>
               </div>
@@ -718,7 +721,7 @@ export default function F1EmotionalGradientPage() {
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
-          {/* ─── PART 4: THE COGNITIVE UPGRADE ────────────── */}
+          {/* ─── PART 5: CONTROL & DOMINATION ──────────────── */}
           <section
             id="the-cognitive-upgrade"
             aria-labelledby="heading-cognitive-upgrade"
@@ -750,9 +753,9 @@ export default function F1EmotionalGradientPage() {
               <div
                 style={{
                   padding: 20,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  background: hexToRgba(PATTERN.C.primary, 0.06),
                   borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                  border: `1px solid ${hexToRgba(PATTERN.C.primary, 0.2)}`,
                   marginBottom: 16,
                 }}
               >
@@ -777,9 +780,9 @@ export default function F1EmotionalGradientPage() {
               <div
                 style={{
                   padding: 20,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  background: hexToRgba(PATTERN.D.primary, 0.06),
                   borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                  border: `1px solid ${hexToRgba(PATTERN.D.primary, 0.2)}`,
                   marginBottom: 16,
                 }}
               >
@@ -851,7 +854,7 @@ export default function F1EmotionalGradientPage() {
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
-          {/* ─── PART 5: THE ARCHITECTURE ─────────────────── */}
+          {/* ─── PART 6: THE GRADIENT & MODE ─────────────── */}
           <section
             id="the-architecture"
             aria-labelledby="heading-the-architecture"
@@ -974,14 +977,14 @@ export default function F1EmotionalGradientPage() {
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
-          {/* ─── PART 6: THE FULL ARC ────────────────────── */}
+          {/* ─── PART 7: THE FULL ARC ────────────────────── */}
           <section
             id="the-full-arc"
             aria-labelledby="heading-the-full-arc"
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-full-arc" style={sectionHeadingStyle}>
-              The Full Arc — From Signal to Structure
+              The Full Arc — Where Each Framework Begins
             </h2>
 
             <div style={{ marginBottom: 32 }}>
@@ -994,7 +997,7 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                F1 names a complete trajectory from biological signal to social structure. Biological Restoration is the hinge — step four of seven, three steps on each side:
+                F1 names a complete trajectory from biological signal to social structure. Biological Restoration is the fork — step four of seven, three steps on each side:
               </p>
 
               <p
@@ -1079,7 +1082,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="TEG-Blue Contribution" type="framework">
                 <p style={expandedProseStyle}>
-                  The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the hinge. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. To our knowledge, no existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
+                  The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the fork. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. To our knowledge, no existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
                 </p>
               </ExpandableSection>
             </div>
@@ -1116,12 +1119,12 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
                   <TableRow cells={["How the compass moves", "Five-step sequence from perception to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
                   <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
-                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The hinge of the entire twelve-framework system."]} />
+                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The fork of the entire twelve-framework system."]} />
                   <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
                   <TableRow cells={["The gradient", "The four modes are positions on a continuous gradient, not four boxes."]} />
                   <TableRow cells={["State determines capacity", "What you can perceive, think, and do depends on your current state. Restore safety first, then expect capacity."]} />
                   <TableRow cells={["Same emotion, two expressions", "Mode position determines whether an emotion serves connection or defense. Assess mode position, not the emotion."]} />
-                  <TableRow cells={["The seven-step arc", "Perception → Emotion → Action → Biological Restoration → Behavior → Social Structure → Escalation or Repair. The hinge — step four of seven, three on each side."]} />
+                  <TableRow cells={["The seven-step arc", "Perception → Emotion → Action → Biological Restoration → Behavior → Social Structure → Escalation or Repair. The fork — step four of seven, three on each side."]} />
                 </tbody>
               </table>
             </div>

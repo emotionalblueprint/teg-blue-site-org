@@ -16,8 +16,8 @@ import {
 
 const SIDEBAR_SECTIONS = [
   { label: "The Cycle", href: "#threat-cascade", description: "What happens in the body when the emotional cycle completes — the biological restoration sequence." },
-  { label: "When It Doesn't Complete", href: "#override", description: "What happens when the cycle is interrupted — residue, accumulation, threshold crossing." },
-  { label: "The Return Sequence", href: "#completion", description: "How the body was designed to return from threat to safety. The mechanism at the centre of repair." },
+  { label: "Cognitive Management", href: "#override", description: "What happens when the cycle is interrupted — residue, accumulation, threshold crossing." },
+  { label: "Stress Cycle Completion", href: "#completion", description: "How the body was designed to return from threat to safety. The mechanism at the centre of repair." },
   { label: "System-by-System", href: "#stays-active", description: "How each body system processes and clears threat activation — cortisol, muscle tension, breath." },
   { label: "Research Foundations", href: "#relationship-to-frameworks", description: "Somatic experiencing, polyvagal theory, stress physiology, allostatic load research." },
 ];
@@ -78,8 +78,8 @@ export default function M3TheOpenCyclePage() {
         header={
           <ResearcherHero
             badge="MODEL M3"
-            title="The Open Cycle"
-            subtitle="The Biology of Unfinished Emotion"
+            title="Biological Restoration — The Fork"
+            subtitle="The Physiology of the Open Cycle"
             description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
           />
         }
@@ -89,6 +89,22 @@ export default function M3TheOpenCyclePage() {
         <OpenCycleExplorer />
 
         <article>
+          {/* ─── ANCHOR NOTE ───────────────────────────── */}
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.muted,
+              lineHeight: 1.8,
+              maxWidth: 720,
+              marginBottom: 32,
+              padding: "16px 20px",
+              borderLeft: `2px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+              fontStyle: "italic",
+            }}
+          >
+            M3 is the physiological account of what F1 names <strong style={{ color: TEXT.primary }}>Biological Restoration — The Fork</strong>: the body{"'"}s designed completion process, what happens when it runs, and what happens when Cognitive Management overrides it instead. The Open Cycle is the name for the unfinished state that results.
+          </p>
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
@@ -202,7 +218,7 @@ export default function M3TheOpenCyclePage() {
               id="heading-completion"
               style={sectionHeadingStyle}
             >
-              2. What Completion Requires
+              2. Stress Cycle Completion — What the Body Needs
             </h2>
 
             <p style={proseStyle}>
@@ -224,11 +240,11 @@ export default function M3TheOpenCyclePage() {
             </p>
 
             <KeyStatement>
-              Regulation is not a skill imposed from outside. It is a process the body was built to run. What is commonly called {"'"}regulation{"'"} is often its opposite — cognition overriding the body{"'"}s signals to produce apparent calm while the cycle runs on beneath it.
+              The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. What is commonly called {"\""}regulation{"\""} is often its opposite — see <Link href="/framework/f1-emotional-gradient#the-fork" style={{ color: SPECTRUM.indigo }}>F1: The Fork</Link> for the full account of this distinction.
             </KeyStatement>
 
             <Link
-              href="/framework/f1-emotional-gradient#the-hinge"
+              href="/framework/f1-emotional-gradient#the-fork"
               style={{
                 display: "block",
                 padding: "16px 20px",
@@ -243,7 +259,7 @@ export default function M3TheOpenCyclePage() {
                 F1 &middot; This process has a name
               </div>
               <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                F1 calls this Biological Restoration — the hinge of all twelve frameworks. F1 maps the design and the pathways. M3 maps the physiology underneath.
+                F1 calls this Biological Restoration — The Fork of all twelve frameworks. F1 maps the design and the pathways. M3 maps the physiology underneath.
               </div>
               <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.indigo }}>
                 Read the design &rarr;
@@ -275,7 +291,7 @@ export default function M3TheOpenCyclePage() {
               id="heading-override"
               style={sectionHeadingStyle}
             >
-              3. The Override Mechanism
+              3. Cognitive Management — The Override
             </h2>
 
             <p style={proseStyle}>
@@ -403,7 +419,7 @@ export default function M3TheOpenCyclePage() {
               id="heading-accumulation"
               style={sectionHeadingStyle}
             >
-              5. The Accumulation Effect
+              5. Allostatic Load — The Accumulation Effect
             </h2>
 
             <p style={proseStyle}>
@@ -527,7 +543,22 @@ export default function M3TheOpenCyclePage() {
               The existing stress physiology literature — Sapolsky, McEwen, Porges — describes physiological states without a gradient model connecting them to each other as a developmental and behavioral sequence. The trauma literature — van der Kolk, Levine, Herman — describes how unprocessed activation shapes identity and behavior over time, but without the specific hormonal and organ-level mapping of each stage. The gap between them is exactly the space M3 and the TEG-Blue gradient occupy together.
             </p>
             <p style={proseStyle}>
-              Each position on the gradient corresponds to a physiological state. Connection is the nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Protection is acute SNS activation — designed to be temporary, biologically expensive, and followed by return. Control is the nervous system in sustained SNS activation, with chronically elevated cortisol and norepinephrine, recruiting cognitive resources to manage a body that has not returned. Domination is the nervous system at maximum sympathetic load, with emotional resonance collapsed and the system running on urgency alone.
+              Each position on the gradient corresponds to a physiological state.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Connection Mode — System{"'"}s Home Base.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Protection Mode — The System on Emergency Fuel.</strong> Acute SNS activation — designed to be temporary, biologically expensive, and followed by return.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Control Mode.</strong> The nervous system in sustained SNS activation, with chronically elevated cortisol and norepinephrine, recruiting cognitive resources to manage a body that has not returned.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Domination Mode.</strong> The nervous system at maximum sympathetic load, with emotional resonance collapsed and the system running on urgency alone.
+            </p>
+            <p style={proseStyle}>
+              This is why Biological Restoration is <strong style={{ color: TEXT.primary }}>The Fork</strong> — the point in the cycle where the path splits. When the cycle completes, the compass returns to Connection. When Cognitive Management overrides it, The Open Cycle begins — and everything from F2 to F7 describes what happens next.
             </p>
 
             {/* Gradient-physiology mapping */}
@@ -604,9 +635,9 @@ export default function M3TheOpenCyclePage() {
             >
               <FrameworkCard
                 id="F1"
-                title="The Emotional Gradient"
+                title="Emotions as Biological Information"
                 relation="Primary source"
-                description="M3 is the mechanistic account of what F1 names: emotions as biological information, and the nervous system's designed return. F1 establishes what the signal is. M3 traces what happens to it."
+                description="M3 is the physiological depth account of what F1 names Biological Restoration — The Fork. F1 establishes the signal, the modes, and the Fork as the pivot point. M3 traces the biology underneath: what the cascade is, what Stress Cycle Completion requires, what Cognitive Management does instead, and what Allostatic Load costs."
                 href="/framework/f1-emotional-gradient"
               />
               <FrameworkCard
