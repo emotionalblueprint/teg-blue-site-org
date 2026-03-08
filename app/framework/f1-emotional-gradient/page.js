@@ -253,7 +253,7 @@ export default function F1EmotionalGradientPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     F1 positions emotions explicitly as the <em>signalling language</em> of the nervous system — not just "information" in the abstract, but the specific medium through which the body's evaluation reaches the organism. The framing as "language" carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed. When cognition overrides the emotional signal (F3), it is not correcting an error — it is silencing one language and replacing it with another.
                   </p>
@@ -287,7 +287,7 @@ export default function F1EmotionalGradientPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Distilling the entire evaluation-and-signalling process to one clear question that explains why different responses occur. The framework positions the safety question as the single question that generates all emotional diversity — from empathy to defensiveness, from curiosity to withdrawal. Every emotion is a variation on: <em>safe enough, or not yet.</em>
                   </p>
@@ -327,7 +327,7 @@ export default function F1EmotionalGradientPage() {
                 </table>
               </div>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   While these traditions exist independently, to our knowledge, no existing work maps them systematically against each other to show they describe the same mechanism. F1's contribution is integration: making visible that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, and fight-flight-freeze-fawn are all describing the same two-mode orientation.
                 </p>
@@ -378,7 +378,7 @@ export default function F1EmotionalGradientPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in." The compass reframes the diagnostic question — from state to capacity: not where the needle is, but whether it can move.
                   </p>
@@ -710,7 +710,7 @@ export default function F1EmotionalGradientPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the fork of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
                   </p>
@@ -843,7 +843,7 @@ export default function F1EmotionalGradientPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     The explicit naming of Control and Domination as <em>cognitive</em> modes — distinct from Connection and Protection not just in intensity but in kind. The evolutionary framing: the body had two modes for millions of years; cognition added two more. The presentation of fluid-compass Control and Domination <em>before</em> their chronic versions. Most clinical frameworks encounter these modes only as problems. F1 introduces them as adaptive, time-limited, and extraordinary survival tools.
                   </p>
@@ -967,7 +967,7 @@ export default function F1EmotionalGradientPage() {
                 </table>
               </div>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The systematic side-by-side comparison across ten core emotions — including "positive" emotions (joy, love, curiosity) which most clinical models omit. The diagnostic reframe: "assess mode position, not the emotion" inverts standard clinical practice.
                 </p>
@@ -1080,7 +1080,7 @@ export default function F1EmotionalGradientPage() {
                 The costs escalate — from truth (F3) to everything (F7). The mechanism is the same at every scale. The intervention principle is the same at every scale: restore safety first, then expect capacity.
               </p>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the fork. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. To our knowledge, no existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
                 </p>

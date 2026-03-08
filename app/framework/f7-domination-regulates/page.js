@@ -211,7 +211,7 @@ export default function F7DominationRegulatesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit articulation of a defined escalation pathway — showing that domination is built through reinforcement across identifiable stages, not born as personality or character. While individual mechanisms are known (reinforcement, threat response, control-seeking), to our knowledge, no existing framework traces the complete pathway from defense through strategy through domination as a single reinforcement-driven trajectory with specific interruption windows at each stage.
               </p>
@@ -263,7 +263,7 @@ export default function F7DominationRegulatesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, body-first) to Control (strategy-based, cognition-first). This connects to F1&rsquo;s architectural break: Connection and Protection happen <em>to</em> you. Control and Domination are what cognition <em>does</em> when recruited into the threat response.
               </p>
@@ -324,7 +324,7 @@ export default function F7DominationRegulatesPage() {
               These are warnings, not labels. Any person under sustained threat may show some of these markers temporarily. The signal is the pattern: multiple markers, increasing frequency, decreasing repair. The pattern indicates that the compass is moving through the Crossroads — that defense is becoming strategy.
             </KeyStatement>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Organizing individually known markers into a unified list positioned within the escalation framework — so each marker is understood not as an isolated behavior but as a signal of where the compass is moving. The connection to F3&rsquo;s emotional distortion (markers 2, 4), F3&rsquo;s external regulation (markers 1, 7, 8), F4&rsquo;s rule systems (markers 6, 9), and F5&rsquo;s worth logic (marker 10) shows that these markers are not new phenomena. They are the mechanisms described in earlier frameworks now serving escalation.
               </p>
@@ -423,7 +423,7 @@ export default function F7DominationRegulatesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit five-stage pathway with named internal logic, observable signs, compass position, and specific interruption approaches at each stage. While clinical and abuse literature recognizes progression, to our knowledge, no existing framework maps the complete trajectory from fear activation through strategy formation through entitlement through empathy collapse through power preservation — and connects each stage to the Inner Compass model&rsquo;s regulatory concepts with stage-appropriate intervention.
               </p>
@@ -535,7 +535,7 @@ export default function F7DominationRegulatesPage() {
               </p>
             </div>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The decomposition of &ldquo;empathy&rdquo; into three capacity trajectories that diverge under escalation — replacing the single-channel model (empathy on/off) with a three-channel model (RE redirects, ER collapses, SEA was never there). This is clinically significant because it explains: why chronic Control mimics Connection (sharp RE + performed ER + absent SEA); why victims are not believed (they describe the gap between performance and felt reality, and the gap is invisible to outsiders); why &ldquo;empathy appeals&rdquo; fail at later stages; and why RE <em>sharpening</em> is itself a warning sign.
               </p>
@@ -583,7 +583,7 @@ export default function F7DominationRegulatesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The addiction-logic framing for chronic Domination — connecting relational domination to substance addiction through a shared mechanism: temporary relief from an internal state that is never processed because the processing channel is offline. The formulation &ldquo;there is no amount of domination that will make them feel safe — because the safety they need is internal&rdquo; captures the structural impossibility: the regulation source (domination) cannot address the regulation need (SEA restoration).
               </p>
@@ -640,7 +640,7 @@ export default function F7DominationRegulatesPage() {
               &ldquo;Evil&rdquo; prevents all of this. It closes inquiry. It makes the person incomprehensible — and therefore uninterruptible. It treats the harm as arising from a different kind of human rather than from a recognizable, traceable, interruptible mechanism operating in the same nervous system everyone shares.
             </p>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit positioning of this ethical stance within the framework — not as a philosophical addendum, but as an integral part of the model. The regulation thread makes the case: if domination is the same mechanism as false coherence (F3), rule internalization (F4), worth-sorting (F5), and bias (F6) — operating at a different scale and at maximum cost — then treating it as a categorically different phenomenon is not just morally questionable. It is mechanistically inaccurate. The framework offers: accountability without demonization, understanding without excuse.
               </p>

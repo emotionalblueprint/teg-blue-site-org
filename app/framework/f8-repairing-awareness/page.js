@@ -301,7 +301,7 @@ export default function F8RepairingAwarenessPage() {
               F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp RE + collapsed ER + absent SEA = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. Not evil — a configuration. The same nervous system with different developmental conditions would have produced a different configuration.
             </p>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The five-state model for each awareness capacity (online, offline, misdirected, collapsed, compensatory) replaces the binary on/off framing with a clinically useful assessment. The configuration-predicts-mode table connects F2&rsquo;s developmental account to F1&rsquo;s mode model — making the link between which capacities are available and where the compass settles explicit and testable. The assessment reframe from diagnosis to configuration removes pathologizing while maintaining clinical precision.
               </p>
@@ -412,7 +412,7 @@ export default function F8RepairingAwarenessPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The five conditions organized as a unified model for awareness capacity development — connecting clinical safety research to the specific question of which conditions allow RE, ER, and SEA to come online. The distinction between felt safety and cognitive understanding addresses a common clinical error: treating insight as equivalent to safety. The emphasis on time as a necessary condition resists the urgency that most intervention contexts produce.
               </p>
@@ -672,7 +672,7 @@ export default function F8RepairingAwarenessPage() {
               For the person masking their configuration: regulatory exhaustion (every hour of performing draws down reserves), developmental arrest (capacities that are suppressed don&rsquo;t develop), identity confusion (false coherence absorbs the mask), relational disconnection (relationships built on the performed configuration cannot hold the real person), and the regulation thread applies — masking is another substitute with escalating costs.
             </p>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit naming of masking as a universal pattern — not limited to neurodivergent experience — positioned within the regulation thread. The masking mechanism follows the same structure as F3&rsquo;s false coherence, F4&rsquo;s rule internalization, and F5&rsquo;s worth-seeking: authentic expression &rarr; environmental punishment &rarr; regulatory strategy &rarr; automaticity &rarr; false coherence absorption. This positions masking not as a neurodivergent-specific phenomenon but as a universal consequence of environments that regulate through enforced conformity — with F9 then showing what happens when this universal pattern becomes structural.
               </p>

@@ -281,7 +281,7 @@ export default function F4RulesRegulatePage() {
               This is why rules persist long after the original conditions that created them have passed. Questioning the rules activates the same threat response that created them — because the rules have become part of the collective false coherence. They feel like truth. Challenging them feels like an attack on the group's regulation.
             </p>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Providing the specific mechanism by which individual nervous system patterns become collective structures. The existing literature describes the phenomenon (Bourdieu's habitus, Bowen's family systems anxiety, Durkheim's collective consciousness) but does not trace the pathway from individual capacity gaps through the named mechanisms of emotional distortion and external regulation (F3) to collective rule formation (F4). F4 provides that pathway: SEA offline → emotional distortion → external regulation → collective rule systems. The chain is traceable from the individual's missing awareness capacity to the institution's rule structure.
               </p>
@@ -340,7 +340,7 @@ export default function F4RulesRegulatePage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Organizing the full process from individual nervous system activation through collective rule formation into a single seven-step mechanism with a critical self-reinforcing element: Step 7 — questioning rules activates the same threat response that created them. The loop closure is the distinctive contribution. While conformity (Asch), obedience (Milgram), and social reproduction (Bourdieu) are all well-documented, to our knowledge, no existing model traces the complete pathway from individual threat activation through collective rule invisibility and back to the threat activation that prevents examination.
               </p>
@@ -492,7 +492,7 @@ export default function F4RulesRegulatePage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Organizing six independently studied rule domains into a unified taxonomy where each category is defined by its regulatory function — not by its content but by what it does for the nervous system. The functional definition is original: Roles stabilize identity. Obedience protects belonging. Performance verifies worth. Dominance establishes power. Punishment enforces boundaries. Entitlement allocates resources.
               </p>
@@ -568,7 +568,7 @@ export default function F4RulesRegulatePage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Framing rule escalation as the same nervous system logic operating at individual and collective levels — the gradient applied to groups. The escalation parallels the four-mode gradient: Initial (Connection-like flexibility) → Intermediate (Protection-like narrowing) → Advanced (Control-like enforcement) → Extreme (Domination-like violence). This parallel enables prediction (where is this system heading?) and intervention (what safety conditions would allow de-escalation?).
               </p>
@@ -660,7 +660,7 @@ export default function F4RulesRegulatePage() {
               The framework proposes that these traditions are observing the same mechanism: when the nervous system is under threat, it produces regulation strategies that look like rules — and these rules operate at every scale from individual cognition to institutional structure.
             </p>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Making explicit that these ten traditions are describing one mechanism, not ten separate phenomena. To our knowledge, no existing work maps Bourdieu's habitus, Milgram's obedience, IFS's protective parts, polyvagal neuroception, and moral foundations as variations on the same underlying process: nervous system regulation through rule internalization.
               </p>

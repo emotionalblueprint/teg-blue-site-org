@@ -370,7 +370,7 @@ export default function F12TwoInformationSystemsPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F12 reframes dual-process theory: the two systems are not error-prone versus corrective, but sequential partners where the first determines what the second can do. This adds the regulatory state dimension — what determines which thinking is available — and integrates the temporal sequence with F1's principle that state precedes capacity.
               </p>
@@ -444,7 +444,7 @@ export default function F12TwoInformationSystemsPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F12 organizes these findings into a single architecture: the timing problem, the domain mismatch, and the appropriate limitation explain why insight-based approaches alone consistently underperform experience-based approaches. This is not an argument against insight — it is an argument for matching the intervention to the system it needs to reach.
               </p>
@@ -502,7 +502,7 @@ export default function F12TwoInformationSystemsPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F12 extends state-dependence from individual dimensions (perception, memory) to all dimensions simultaneously, showing that state organizes the complete package — perception, cognition, empathy, time orientation, learning, repair capacity, relationship to truth, and accountability all shift together as a coordinated state-dependent response.
               </p>
@@ -578,7 +578,7 @@ export default function F12TwoInformationSystemsPage() {
               Every framework is the same architecture. The scale changes. The mechanism doesn't.
             </KeyStatement>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 The twelve-angle structure demonstrates internal coherence: every framework is a specific application of state-dependent nervous system organization. This makes the system testable as a unified architecture rather than as twelve independent claims — if state-dependent organization is the mechanism, then each framework's predictions should be consistent with the others.
               </p>
@@ -644,7 +644,7 @@ export default function F12TwoInformationSystemsPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F12 grounds the accountability-understanding distinction in the two-system architecture: understanding operates in the cognitive system, behavior operates in the emotional-somatic system, and both are real simultaneously. This makes "I understand AND I hold accountable" not a moral position but an architectural description.
               </p>
@@ -690,7 +690,7 @@ export default function F12TwoInformationSystemsPage() {
               The error is in the matching, not in the person. Identifying compass position before selecting intervention is not optional — it is the precondition for effectiveness.
             </p>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 Gradient-matched intervention provides a framework for selecting approaches based on the state they need to reach, not the state the clinician or system prefers. This addresses the systematic pattern-mismatch error in therapeutic and institutional settings where one modality is applied regardless of compass position.
               </p>

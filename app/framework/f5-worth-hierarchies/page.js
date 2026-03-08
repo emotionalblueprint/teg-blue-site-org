@@ -239,7 +239,7 @@ export default function F5WorthHierarchiesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit connection between conditional safety (F2), stuck compass positions (F1), and adult worth-seeking as regulation strategy. While both phenomena are known separately — conditional attachment produces validation-seeking, power compensates for powerlessness — F5's specific contribution is tracing the pathway through the regulation thread: early conditional safety → compass calibrates to worth signals → adult worth-seeking functions as nervous system regulation → worth-seeking scales into institutional sorting.
               </p>
@@ -320,7 +320,7 @@ export default function F5WorthHierarchiesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The unified terminology "safety proxies" — making explicit that economic, social, and cultural capital all function as nervous system stabilizers in threat-based systems. The sociological literature describes what capitals <em>are</em>. The neuroscience literature describes how threat works. F5 bridges them: capitals are compelling because they reduce nervous system threat, not because people are status-seeking by nature.
               </p>
@@ -394,7 +394,7 @@ export default function F5WorthHierarchiesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The term "Filter of Worth" as a named systemic mechanism — making visible what is usually invisible. The term does four things: it names the entire system (not just individual beliefs about merit), it makes explicit that this is a <em>filter</em> (not a truth measurement), it shows it operates on <em>worth</em> (not competence), and it specifies the outcome: signal deprivation internalized as inadequacy.
               </p>
@@ -450,7 +450,7 @@ export default function F5WorthHierarchiesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Articulating the five steps as a unified mechanism operating at both individual and institutional scales simultaneously. While each step is documented in existing literature, to our knowledge, no existing framework traces the complete loop from threat-driven dependency sensitivity through validation-seeking through power-as-proxy through formal sorting through internalized worth — and shows how Step 5 closes the loop by generating the evidence that appears to justify Step 1.
               </p>
@@ -545,7 +545,7 @@ export default function F5WorthHierarchiesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Framing chronic invisibility as producing a structurally stuck compass — connecting structural inequality directly to the Inner Compass model. The person is not running a distorted perception (which would be a cognitive problem). They are running an accurate perception that is holding their compass in a chronic mode (which is a structural problem). Existing frameworks describe allostatic load, weathering, and health disparities. F5 adds the specific mechanism: structural filtering → chronic social threat → compass stuck in Protection → the presentations that clinicians see.
               </p>
@@ -610,7 +610,7 @@ export default function F5WorthHierarchiesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The explicit claim that observed gaps are structural artifacts of proxy access, not evidence of intrinsic differences — connected to the double false coherence mechanism. While cumulative advantage is well-documented, F5 adds the regulatory mechanism: false coherence operates in both directions simultaneously, making the filter invisible to insiders ("I earned this") and self-blaming for outsiders ("something is wrong with me").
               </p>

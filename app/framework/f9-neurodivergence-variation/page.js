@@ -338,7 +338,7 @@ export default function F9NeurodivergenceVariationPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 integrates the neurodiversity paradigm with the four-mode gradient, showing that neurodivergent nervous systems run the same compass with different inputs. This connects what the neurodiversity movement describes (variation, not deficit) with what Polyvagal Theory explains (how safety and threat are detected) and what F1 provides (a measurement system for regulatory states). The compass is universal; the configuration is variable.
               </p>
@@ -385,7 +385,7 @@ export default function F9NeurodivergenceVariationPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 names the specific mechanism — System Mismatch — and connects it to the four-mode gradient. When the environment matches the configuration, the compass can access Connection. When mismatch is chronic, the compass is pushed toward Protection or Control not by internal pathology but by structural demand. This makes the problem measurable and the intervention architectural rather than clinical.
               </p>
@@ -442,7 +442,7 @@ export default function F9NeurodivergenceVariationPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 connects F8's universal masking pattern to structural scale, showing that neurodivergent masking is not a separate phenomenon but the same mechanism operating under conditions of no escape. The six-domain cost model provides a measurable framework for what masking research describes qualitatively, and the connection to F3 explains why "just stop masking" fails: the false coherence is a regulatory structure, not a belief.
               </p>
@@ -519,7 +519,7 @@ export default function F9NeurodivergenceVariationPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 The threshold equation provides a testable, predictive model: when the right side exceeds the left, crossing is predicted. The chronic threshold state concept explains why burnout worsens over time even without new stressors — the equation becomes more negative as baseline capacity erodes. And the treatment principle follows directly: if the source is structural, the intervention must be structural.
               </p>
@@ -591,7 +591,7 @@ export default function F9NeurodivergenceVariationPage() {
               Unmasking into a vacuum fails. The environment must be ready before the mask comes off.
             </KeyStatement>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 distinguishes unmasking from healing and provides a sequenced model: assess environment, build self-understanding, develop communication capacity, create support, then unmask. This prevents the clinical error of encouraging authenticity into environments that will punish it — the same error F8 identifies for repair generally, applied to the specific structural conditions neurodivergent people face.
               </p>
@@ -664,7 +664,7 @@ export default function F9NeurodivergenceVariationPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 applies F2's three-capacity model to neurodivergent experience, showing that the capacities are not absent but configured differently — and that the primary damage comes from masking rather than from the configuration itself. The principle of rhythm authenticity connects F8's repair pathways to the specific developmental requirement that the system those capacities run on must be operating authentically for repair to proceed.
               </p>
@@ -750,7 +750,7 @@ export default function F9NeurodivergenceVariationPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 translates the universal design literature into seven testable principles grounded in nervous system regulation. Each principle can be evaluated by its effect on the compass: does this design feature make it easier or harder for a nervous system with this configuration to access Connection? This provides a measurable standard for genuine inclusion — one that goes beyond compliance to design.
               </p>
@@ -782,7 +782,7 @@ export default function F9NeurodivergenceVariationPage() {
               Genuine inclusion is not charity. It is structural intelligence.
             </KeyStatement>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F9 connects F8's collective intelligence argument to institutional design, showing that variation-exclusion is not just an ethical failure but a structural intelligence failure. The false economy analysis provides a cost-benefit framework that goes beyond accommodation compliance to genuine design optimization — building systems that are more capable because they include the full range of human nervous system configurations.
               </p>

@@ -168,7 +168,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   Emotions reframed as the body's first language — cognition is the second. Signal interpretation replaces emotion regulation as the primary clinical frame. The framing as "language" carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed. When cognition overrides the emotional signal, it is not correcting an error — it is silencing one language and replacing it with another.
                 </p>
@@ -207,7 +207,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   A single question that generates all emotional diversity. Neuroceptive evaluation as the independent variable; compass position as the dependent variable. Every emotion — from empathy to defensiveness, from curiosity to withdrawal — is a variation on: <em>safe enough, or not yet.</em>
                 </p>
@@ -249,7 +249,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   The reframe of health from a state to a capacity. Compass fluidity as a continuous variable — not "are you in Connection?" but "can your needle move?" The compass makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in."
                 </p>
@@ -341,7 +341,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   The four-mode gradient with two body-first and two cognition-first modes. The architectural break between body-first and cognition-first as a qualitative distinction — not just intensity but kind. Connection and Protection are biological responses running for millions of years. Control and Domination require cognition to exist. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions — most clinical frameworks encounter these modes only as problems.
                 </p>
@@ -383,7 +383,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   The gradient as a continuous measure rather than categorical classification. Movement rate, range, and direction as primary variables — not "which state" but "how far, how fast, and can it come back." The gradient makes transitions, degrees, and proportionality visible in a way that categorical models cannot.
                 </p>
@@ -461,7 +461,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   State-capacity correspondence tracked across all four modes as a clinically actionable framework. The table maps five dimensions of capacity across four gradient positions — making visible that what looks like "unwillingness" may be neurobiological unavailability. The intervention principle follows directly: restore safety first, then expect capacity.
                 </p>
@@ -659,7 +659,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   The eight-emotion four-mode mapping showing that mode position, not emotion type, determines outcome. This inverts standard clinical practice: instead of classifying the emotion (anger = problem, joy = goal), the model classifies the mode and reads the emotion within it. The same emotion serves completely different functions depending on gradient position — and in a fluid compass, all four expressions are proportionate.
                 </p>
@@ -721,7 +721,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   Regulation reframed as return, not control. The four return pathways as the nervous system's designed recovery channels — not techniques to be learned but processes to be allowed. The distinction separates regulation (the body completing its cycle) from cognitive management (cognition overriding the body's signals to produce apparent calm). What is commonly called "regulation" is often its opposite.
                 </p>
@@ -939,7 +939,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   Chronic modes visible as positions, not personalities. The person is not "a controlling person" — they are a person stuck in Control. The identity built around the mode is false coherence (F3), not character. This reframe shifts the clinical question from "what kind of person is this?" to "where is their compass stuck, and why can't the needle move?"
                 </p>
@@ -992,7 +992,7 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="opendata">
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   The insight-behaviour gap as a testable prediction: cognitive interventions should produce less compass movement than somatic/relational interventions. Interventions matched to the emotional-somatic system are predicted to produce more compass movement than those matched to the cognitive-logical system. The framing explains why "knowing better" does not automatically produce "doing differently" — and makes the mechanism for that gap clinically actionable.
                 </p>

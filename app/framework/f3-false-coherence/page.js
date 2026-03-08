@@ -302,7 +302,7 @@ export default function F3FalseCoherencePage() {
                 Pattern indicator: if a story produces relief but consistently reduces nuance, empathy, or accountability, it is likely functioning as false coherence.
               </KeyStatement>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The term "false coherence" — capturing what no existing term does. It is not denial (which implies awareness of what is being denied). It is not rationalization (which implies a specific tactic). It is not defense mechanism (which implies a list). False coherence is the <em>outcome</em>: a narrative that works for stability but not for truth. Complete, coherent, felt as real — and wrong. The formulation "regulatory success at the cost of emotional truth" captures the non-pathologizing stance and connects directly to the regulation thread.
                 </p>
@@ -467,7 +467,7 @@ export default function F3FalseCoherencePage() {
               Accountability here means: name the impact, stop the behavior, repair where possible, and hold boundaries — without needing to label the person as monstrous in order to recognize the harm.
             </KeyStatement>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 Replacing the clinical framing of "ego injury" and "narcissistic wound" with a mechanistic account grounded in the regulation thread: the person is not defending an ego. They are defending their regulation. This reframe universalizes (any identity built around capacity gaps will produce defensive escalation when challenged), removes moral judgment without removing accountability, and connects directly to the regulation thread (the defense is so intense because the person has no fallback — no one ever taught them another way back).
               </p>
@@ -635,7 +635,7 @@ export default function F3FalseCoherencePage() {
               </p>
             </div>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The gradient cognitive map showing how the same replacement mechanism produces different content at different positions — and serves different regulatory functions. The self-awareness / emotional awareness split as a direct consequence of capacity configuration: RE sharp, SEA offline = can narrate everything, feel nothing. This explains why insight fails differently in each mode — in chronic Connection, insight produces self-blame; in chronic Control, insight produces more sophisticated management; in chronic Domination, insight is weaponized as a tool for narrative control.
               </p>

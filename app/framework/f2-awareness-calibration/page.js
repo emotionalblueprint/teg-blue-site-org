@@ -285,7 +285,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Identifying the three capacities (RE, ER, SEA) as the specific awarenesses present at birth in proto-form, and framing their connected state as the mechanism behind what people experience as "being themselves." This reframes the "real self" from a hidden identity to a capacity state — not someone to find but something to reconnect.
                   </p>
@@ -321,7 +321,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Naming this as the "pre-SEA condition" and making explicit that the separation between internal experience and external reality <em>is</em> Self-Emotional Awareness. This connects the developmental starting point directly to the adult capacity framework: adults without SEA are still in the pre-SEA condition. This is not immaturity — it is unfinished developmental wiring.
                   </p>
@@ -366,7 +366,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Naming the transmission mechanism explicitly: not "environment shapes development" (which is generic) but "the specific awareness capacities the adults carry determine which awareness capacities the child develops." The causal chain is precise: adult RE/ER/SEA configuration → environment → child RE/ER/SEA configuration.
                   </p>
@@ -418,7 +418,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Describing the full development of all three capacities and regulation as a single integrated account — not as a clinical ideal but as the design specification of the system. The introduction of <em>true coherence</em> as the counterpart to false coherence (F3): narrative aligned with felt experience because cognition has the full information set.
                   </p>
@@ -453,7 +453,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Positioning co-regulation as the developmental origin of Biological Restoration established in F1 — and as the clearest expression of "awareness teaches awareness" applied to regulation. Biological Restoration is not a skill the child learns through instruction. It is a physiological capacity that develops through being regulated with. The caregiver's nervous system is the child's first regulatory environment.
                   </p>
@@ -572,7 +572,7 @@ export default function F2AwarenessCalibrationPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Mapping each condition to the adult awareness configuration that produces it <em>and</em> to its specific effect on each of the child's three capacities and on the capacity to regulate. The causal chain is made explicit: adult RE/ER/SEA configuration → environment → child RE/ER/SEA configuration + regulation outcome. This is not just "the child adapts" — it is which adults, carrying which awareness, produce which environment, shaping which capacities, with which regulatory consequence.
                 </p>
@@ -659,7 +659,7 @@ export default function F2AwarenessCalibrationPage() {
                 Cognition does not just fill gaps passively. The adults in the environment use it to teach the child that the stuck position is the <em>correct</em> position. "Don't cry." "Be strong." "You're too sensitive." The child does not just fail to learn regulation. The child is actively taught that the absence of regulation is the right way to be.
               </p>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Identifying the specific mechanism by which cognition and awareness configuration interact: cognition doesn't "choose" identity — it builds identity from whatever data is available. SEA is the pivotal variable because it determines whether cognition has self-referential input. Without it, cognition constructs false coherence. This is the developmental origin of what F3 describes as false coherence.
                 </p>
@@ -685,7 +685,7 @@ export default function F2AwarenessCalibrationPage() {
                 This is what people describe as "coming back to myself." They are not finding a hidden self. They are reconnecting capacities that were disconnected. The feeling is recognition — not discovery.
               </p>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Replacing the "hidden self / mask" framing with a mechanism: awareness configuration. The adaptive identity is not fake. It is not a lie. It is the most intelligent thing cognition could build given what was available. Healing is not removing a mask. It is developing the capacities that never had conditions to form, and learning Biological Restoration.
                 </p>
@@ -749,7 +749,7 @@ export default function F2AwarenessCalibrationPage() {
                 The four configurations are not personality categories. They are the predictable outcomes of which awareness capacities had conditions to develop, which didn't, and what happened to Biological Restoration under each set of conditions. <strong style={{ color: TEXT.primary }}>Personality is not a type — it is a record.</strong>
               </p>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The mapping from awareness configuration to chronic mode to identity narration as a single causal chain: childhood conditions → awareness configuration + regulation capacity → chronic mode → cognitive identity → personality. This makes personality traceable — not a type, but a record. The contrast with F1 is now fully visible: the same four modes, one set time-limited and returnable (the design), one set chronic and stuck (the deviation). Same architecture. Different awareness conditions. Different outcome.
                 </p>
@@ -794,7 +794,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     The full generational replication mechanism made explicit through the awareness-teaches-awareness lens: adult awareness configuration → environment → child awareness configuration → adult awareness configuration → next generation. The chain is traceable. The transmission channel is identified: not behavior, not words, not intentions — the caregiver's nervous system and the awareness it carries.
                   </p>
@@ -819,7 +819,7 @@ export default function F2AwarenessCalibrationPage() {
                 The awareness configuration plays a direct role: a person with flooded ER and absent SEA will <em>feel</em> the harm being done to them (through resonance) but cannot identify it as harm being done <em>to</em> them (without self-awareness). The signal arrives but cannot be read as one's own. People don't lack intelligence or willpower. Their nervous system was calibrated early to survive within certain environments.
               </p>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Naming tolerance thresholds as a specific mechanism and connecting them to awareness configuration: the reason people stay in harmful dynamics is not that they can't see the pattern — it's that their awareness configuration (particularly absent SEA) prevents the signal from being read as their own pain. Flooded ER + absent SEA = feel the harm but can't locate it.
                 </p>
@@ -872,7 +872,7 @@ export default function F2AwarenessCalibrationPage() {
                   </p>
                 </ExpandableSection>
 
-                <ExpandableSection title="TEG-Blue Contribution" type="framework">
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
                     Replacing "find yourself" / "remove the mask" / "build self-esteem" with a mechanistically precise instruction: develop SEA so the signals can be received, learn Biological Restoration so the body can come back, then recalibrate RE and ER to serve understanding rather than survival. The dual mechanism of healing: awareness development (SEA) + Biological Restoration learning. Neither alone is sufficient. The destination is the designed capacity state described earlier in the framework.
                   </p>

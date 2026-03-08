@@ -331,7 +331,7 @@ export default function F10GenerationalBridgesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F10 connects F2's three-capacity model to generational transmission, showing that what transmits is not behavior or belief but capacity configuration. The specific prediction: the adult's awareness configuration (which capacities are online, which are offline) predicts the conditions the child develops within — and therefore which capacities the child has conditions to develop. This makes the transmission mechanism specific and the intervention target clear.
               </p>
@@ -404,7 +404,7 @@ export default function F10GenerationalBridgesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F10 organizes five independently documented transmission pathways into a unified model showing they all transmit the same underlying content: the F1–F7 regulatory system. This explains why single-pathway interventions (parenting classes address narrative; therapy addresses the adult's processing) often fail: four other pathways continue transmitting. Effective intervention must address multiple pathways — which is why F10 requires F8 (individual repair) plus F9 (structural repair) plus pathway awareness.
               </p>
@@ -456,7 +456,7 @@ export default function F10GenerationalBridgesPage() {
               </p>
             </ExpandableSection>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F10 connects earned security to the three-capacity model: what processing develops is SEA, ER, and RE — the capacities that change the adult's configuration, which changes the environment, which changes what the child absorbs. This makes "processing" specific rather than vague. And it explains why cognitive understanding fails: the child's calibration reads the somatic-emotional system (where the capacities operate), not the cognitive system (where understanding lives).
               </p>
@@ -544,7 +544,7 @@ export default function F10GenerationalBridgesPage() {
               </table>
             </div>
 
-            <ExpandableSection title="TEG-Blue Contribution" type="framework">
+            <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
                 F10 connects the four-mode gradient to generational transmission prediction: the adult's chronic compass position predicts both what the child absorbs and how accessible repair is for the adult. This makes generational intervention plannable: identify the adult's compass position, assess repair capacity, and match intervention to what that position can accept. The most psychologically literate people can be the most stuck (F3) — understanding does not equal capacity.
               </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba, gradientCardBg } from "../styles/tokens";
 
 /**
@@ -9,12 +9,7 @@ import { BG, TEXT, BORDER, FONT, TRANSITION, getContentTypeColor, hexToRgba, gra
  * Uses native <details>/<summary> for AI crawlability.
  * All content is in the DOM regardless of expand state.
  * Card-style design matching tables and PropositionBox.
- *
- * @param {string} title - Section heading
- * @param {string} type - Content type (for color)
- * @param {boolean} defaultOpen - Whether to start expanded
- * @param {string} id - HTML id for deep linking
- * @param {ReactNode} children - Section content
+ * Paired sections (siblings in the same parent) sync open/close.
  */
 
 export default function ExpandableSection({
@@ -25,9 +20,25 @@ export default function ExpandableSection({
   id,
 }) {
   const color = getContentTypeColor(type);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const handleToggle = () => {
+      const parent = el.parentElement;
+      if (!parent) return;
+      const siblings = parent.querySelectorAll(":scope > details");
+      if (siblings.length < 2) return;
+      siblings.forEach((s) => { if (s !== el) s.open = el.open; });
+    };
+    el.addEventListener("toggle", handleToggle);
+    return () => el.removeEventListener("toggle", handleToggle);
+  }, []);
 
   return (
     <details
+      ref={ref}
       open={defaultOpen || undefined}
       id={id}
       style={{ marginBottom: 6 }}

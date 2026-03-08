@@ -387,7 +387,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The proto-capacity framework showing that the three awarenesses are present at birth in integrated form. "Being yourself" reframed as a capacity state — not a hidden personality to find but a configuration to reconnect. The developmental question becomes concrete: not "who is this person really?" but "which capacities had conditions to develop and which didn't?"
                 </p>
@@ -436,7 +436,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The pre-SEA condition as a named developmental state that persists into adulthood with specific, identifiable consequences. Making explicit that the separation between internal experience and external reality <em>is</em> Self-Emotional Awareness — and that adults without SEA are still operating in the pre-SEA condition where feeling = being and external feedback = identity.
                 </p>
@@ -499,7 +499,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The awareness-teaches-awareness principle as the organising developmental mechanism — making the transmission pathway concrete and testable. Not "environment shapes development" (which is generic) but "the specific awareness capacities the adults carry determine which awareness capacities the child develops." The causal chain is precise: adult RE/ER/SEA configuration → environment → child RE/ER/SEA configuration.
                 </p>
@@ -651,7 +651,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   The three-capacity model with variant maps showing how the same capacity redirects under different developmental conditions. SEA identified as the keystone — the capacity without which no configuration can produce true coherence. Each variant is the same capacity serving a different function, not a different capacity.
                 </p>
@@ -747,7 +747,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Configuration as the predictive unit — RE state x ER state x SEA state x regulation = predicted compass behaviour. This reframes personality from a fixed type to a developmental record: the specific awareness capacities that had conditions to develop, and the chronic mode position that resulted. Configuration is testable, trackable, and — crucially — changeable.
                 </p>
@@ -806,7 +806,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Co-regulation as the developmental mechanism for the return path. Three named disruption patterns — disrupted, misdirected, and blocked — linking caregiver configuration to child regulatory capacity. Each disruption produces a specific, predictable consequence for the child's ability to return from activation to safety.
                 </p>
@@ -875,7 +875,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   True vs false coherence grounded in the capacity model. False coherence as cognition regulating what the body never learned to process — not pathology but function at the cost of truth. The distinction provides a concrete diagnostic: does the narrative align with felt experience (true coherence) or replace it (false coherence)?
                 </p>
@@ -916,7 +916,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Tolerance thresholds as a named mechanism — the gap between physiological activation and subjective distress reporting, explained through the capacity model. The identification of flooded ER + absent SEA as the most consequential configuration, producing the highest tolerance for harm because the person feels the damage but cannot locate it as damage.
                 </p>
@@ -959,7 +959,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Generational replication through awareness transmission, not instruction — the mechanism is the same at every generation. Cultural override as a named population-level mechanism: the awareness-teaches-awareness principle operating through institutions and collective norms, not just individual families.
                 </p>
@@ -1020,7 +1020,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="TEG-Blue Contribution" type="framework">
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Repair as development, not recovery. The five conditions connecting to the full framework system: safety (F1 — the nervous system's evaluation), relational support (F2 — awareness teaches awareness, now in the forward direction), identity flexibility (F3 — false coherence loosening), time (F8 — the non-linear process), and structural conditions (F9 — neurodivergent pathways; F12 — the two information systems working together).
                 </p>
