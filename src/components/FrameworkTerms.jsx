@@ -3,33 +3,51 @@
 import { TEXT, SPECTRUM, FONT, hexToRgba } from "@/src/styles/tokens";
 
 /**
- * FrameworkTerms — Definition-list layout for "Terms Used in This Framework"
+ * FrameworkTerms — Definition-list layout for framework term legends
  *
  * Usage:
  *   <FrameworkTerms
- *     title="Terms Used in This Framework"
  *     terms={[
  *       { term: "State", definition: "What the nervous system is doing biologically" },
- *       { term: "The Compass", definition: "The metaphor that makes the orientation mechanism visible" },
  *     ]}
- *   />
+ *   >
+ *     Optional extra content rendered below the term list
+ *   </FrameworkTerms>
  */
 export default function FrameworkTerms({
   title = "Terms Used in This Framework",
   terms = [],
+  children,
 }) {
   return (
     <div style={{ marginBottom: 16 }}>
-      <h3
-        style={{
-          fontSize: 16,
-          fontWeight: 600,
-          color: TEXT.primary,
-          marginBottom: 12,
-        }}
-      >
-        {title}
-      </h3>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+        <span
+          style={{
+            fontFamily: FONT.mono,
+            fontSize: 9,
+            fontWeight: 600,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: SPECTRUM.cobalt,
+            background: hexToRgba(SPECTRUM.cobalt, 0.08),
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
+            borderRadius: 4,
+            padding: "2px 7px",
+          }}
+        >
+          Legend
+        </span>
+        <span
+          style={{
+            fontSize: 12,
+            fontWeight: 500,
+            color: TEXT.muted,
+          }}
+        >
+          {title}
+        </span>
+      </div>
 
       <dl style={{ margin: 0 }}>
         {terms.map((item, i) => (
@@ -38,7 +56,7 @@ export default function FrameworkTerms({
             style={{
               display: "flex",
               flexWrap: "wrap",
-              padding: "10px 0",
+              padding: "7px 0",
               borderTop:
                 i > 0
                   ? `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.08)}`
@@ -48,10 +66,11 @@ export default function FrameworkTerms({
           >
             <dt
               style={{
-                width: 140,
-                minWidth: 140,
-                fontSize: 13,
+                width: 130,
+                minWidth: 130,
+                fontSize: 11,
                 fontWeight: 600,
+                fontFamily: FONT.mono,
                 color: TEXT.primary,
                 lineHeight: 1.7,
                 flexShrink: 0,
@@ -64,7 +83,7 @@ export default function FrameworkTerms({
                 flex: 1,
                 minWidth: 200,
                 margin: 0,
-                fontSize: 13,
+                fontSize: 11,
                 fontWeight: 400,
                 color: TEXT.secondary,
                 lineHeight: 1.7,
@@ -75,6 +94,18 @@ export default function FrameworkTerms({
           </div>
         ))}
       </dl>
+
+      {children && (
+        <div
+          style={{
+            borderTop: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.08)}`,
+            paddingTop: 10,
+            marginTop: 4,
+          }}
+        >
+          {children}
+        </div>
+      )}
     </div>
   );
 }

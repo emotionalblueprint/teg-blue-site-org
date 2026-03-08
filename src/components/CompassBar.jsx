@@ -6,10 +6,10 @@ import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/
 // ─── Four-Mode Gradient (canonical colors — matches .com) ────
 
 const MODES = [
-  { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety',    desc: 'perceived' },
-  { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat',    desc: 'perceived' },
-  { name: 'CONTROL',     hex: '#346AEC', center: 0.625, signal: 'Danger',    desc: 'chronic'   },
-  { name: 'DOMINATION',  hex: '#2563eb', center: 0.875, signal: 'Life peril', desc: 'entrenched' },
+  { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety' },
+  { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat' },
+  { name: 'CONTROL',     hex: '#346AEC', center: 0.625, signal: 'Danger' },
+  { name: 'DOMINATION',  hex: '#2563eb', center: 0.875, signal: 'Life peril' },
 ]
 
 const BAR_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)'
@@ -23,10 +23,12 @@ function getActiveIdx(p) {
 
 export default function CompassBar({ showSpecs = true }) {
   const [pos, setPos] = useState(0.125)
+  const [isStuck, setIsStuck] = useState(false)
   const barRef = useRef(null)
   const dragging = useRef(false)
   const activeIdx = getActiveIdx(pos)
   const activeMode = MODES[activeIdx]
+  const stateDesc = isStuck ? 'chronic' : 'perceived'
 
   const handleMove = useCallback((clientX) => {
     if (!barRef.current) return
@@ -92,7 +94,7 @@ export default function CompassBar({ showSpecs = true }) {
                 color: isActive ? hexToRgba(m.hex, 0.6) : TEXT.micro,
                 transition: 'color 200ms',
               }}>
-                {m.desc}
+                {stateDesc}
               </div>
             </div>
           )
@@ -238,6 +240,29 @@ export default function CompassBar({ showSpecs = true }) {
         })}
       </div>
 
+      {/* Fluid / Stuck toggle */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 16 }}>
+        <button
+          onClick={() => setIsStuck(!isStuck)}
+          style={{
+            fontFamily: FONT.mono,
+            fontSize: 9,
+            fontWeight: 600,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: isStuck ? hexToRgba('#2563eb', 0.8) : hexToRgba('#93CFFF', 0.8),
+            background: isStuck ? hexToRgba('#2563eb', 0.08) : hexToRgba('#93CFFF', 0.08),
+            border: `1px solid ${isStuck ? hexToRgba('#2563eb', 0.25) : hexToRgba('#93CFFF', 0.25)}`,
+            borderRadius: RADIUS.sm,
+            padding: '4px 12px',
+            cursor: 'pointer',
+            transition: 'all 200ms',
+          }}
+        >
+          {isStuck ? 'Stuck Compass' : 'Fluid Compass'}
+        </button>
+      </div>
+
       {/* Specs */}
       {showSpecs && <div style={{
         marginTop: 20,
@@ -261,6 +286,9 @@ export default function CompassBar({ showSpecs = true }) {
           ['Bar', '14px height, rounded-full, 4-color gradient'],
           ['Needle', '28px circle, white, 3px colored border, glow'],
           ['Modes', 'Connection #93CFFF · Protection #5BADFF · Control #346AEC · Domination #2563eb'],
+          ['Signals', 'Safety · Threat · Danger · Life peril'],
+          ['Fluid', 'All signals show "perceived" — temporary, returnable'],
+          ['Stuck', 'All signals show "chronic" — fixed position, lost mobility'],
           ['Snap', '4% magnet radius at each mode center (12.5%, 37.5%, 62.5%, 87.5%)'],
           ['Dividers', '1.5px at 25%, 50%, 75% — rgba(0,0,0,0.45)'],
         ].map(([label, value]) => (

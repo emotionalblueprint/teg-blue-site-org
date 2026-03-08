@@ -1,7 +1,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
@@ -34,10 +34,9 @@ const F1CognitiveUpgradeDiagram = dynamic(
 
 const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
-  { label: "Overview", href: "#overview", description: "A map of the complete seven-step trajectory, from biological signal to social structure." },
   { label: "State & Emotion", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
   { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: how the needle moves, what Connection and Protection actually are." },
-  { label: "The Hinge", href: "#the-hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
+  { label: "Biological Restoration", href: "#the-hinge", description: "The mechanism at the centre of the entire system. What the body was designed to do when threat passes." },
   { label: "Control & Domination", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
   { label: "Gradient & Mode", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
   { label: "The Full Arc", href: "#the-full-arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
@@ -130,17 +129,17 @@ export default function F1EmotionalGradientPage() {
                 { term: "The Gradient", definition: "The continuous range the needle moves through — from Connection to Domination" },
                 { term: "Mode", definition: "A position on that gradient — the way the person is operating in this moment" },
               ]}
-            />
-
-            <p style={proseStyle}>
-              The four modes this framework introduces:
-            </p>
-            <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
-              <li style={listItemStyle}><strong>Connection Mode (Pattern A)</strong></li>
-              <li style={listItemStyle}><strong>Protection Mode (Pattern B)</strong></li>
-              <li style={listItemStyle}><strong>Control Mode (Pattern C)</strong></li>
-              <li style={listItemStyle}><strong>Domination Mode (Pattern D)</strong></li>
-            </ul>
+            >
+              <p style={{ fontSize: 11, color: TEXT.muted, marginBottom: 6 }}>
+                The four modes this framework introduces:
+              </p>
+              <ul style={{ paddingLeft: 16, margin: 0 }}>
+                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Connection Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern A)</span></li>
+                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Protection Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern B)</span></li>
+                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Control Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern C)</span></li>
+                <li style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.primary, lineHeight: 1.8 }}>Domination Mode <span style={{ color: TEXT.muted, fontWeight: 400 }}>(Pattern D)</span></li>
+              </ul>
+            </FrameworkTerms>
           </section>
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
@@ -183,24 +182,18 @@ export default function F1EmotionalGradientPage() {
 
           <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
 
-          {/* ─── OVERVIEW ─────────────────────────────────── */}
+          {/* ─── STATE & EMOTION ──────────────────────────── */}
           <section
-            id="overview"
-            aria-labelledby="heading-overview"
+            id="the-signal"
+            aria-labelledby="heading-the-signal"
             style={{ marginBottom: 48 }}
           >
-            <h2
-              id="heading-overview"
-              style={sectionHeadingStyle}
-            >
-              Overview
+            <h2 id="heading-the-signal" style={sectionHeadingStyle}>
+              State & Emotion — How the Body Evaluates
             </h2>
 
             <p style={proseStyle}>
               F1 defines the complete arc that the remaining eleven frameworks elaborate. Every step named here is unpacked across the system — from individual biology to collective structure to repair.
-            </p>
-            <p style={proseStyle}>
-              The nervous system does not wait for cognition to assess a situation. It evaluates continuously, below awareness, across a distributed system — gut, heart, muscles, vagus nerve, amygdala — that was running for millions of years before language or reasoning evolved. Emotions are how this evaluation gets delivered. They are the signals that translate the body's assessment into something the organism can feel, orient to, and act on. They are the nervous system's first language. Cognition is the second.
             </p>
             <p style={proseStyle}>
               The compass has four modes. Two are body-first — Connection and Protection — the nervous system's responses that have been running for millions of years. Two are cognition-first — Control and Domination — an intelligent evolutionary upgrade that appeared when cognition arrived and the system gained range. In a fluid compass, all four are available, all are time-limited (except Connection, which is the home base), and all are returnable. The needle can go anywhere it needs to go — and come back. That coming back — Biological Restoration — is the mechanism that keeps the compass moving.
@@ -232,19 +225,8 @@ export default function F1EmotionalGradientPage() {
                 </p>
               </ExpandableSection>
             </div>
-          </section>
 
-          <div style={{ height: 2, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "8px 0 24px" }} />
-
-          {/* ─── PART 1: THE SIGNAL ──────────────────────── */}
-          <section
-            id="the-signal"
-            aria-labelledby="heading-the-signal"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-the-signal" style={sectionHeadingStyle}>
-              State & Emotion — How the Body Evaluates
-            </h2>
+            <div style={{ height: 1, borderRadius: 1, background: "linear-gradient(to right, #93CFFF, #5BADFF, #4B8FFF, #346AEC, #2563eb)", margin: "20px 0" }} />
 
             {/* Concept 1 */}
             <div style={{ marginBottom: 32 }}>
@@ -384,7 +366,7 @@ export default function F1EmotionalGradientPage() {
                 A fluid compass does not stay in Connection permanently. Fluid operation is the needle moving — responding, orienting, and coming back.
               </KeyStatement>
 
-              <DiagramToggle label="compass diagram">
+              <DiagramToggle label="compass diagram" defaultOpen>
                 <F1InstrumentDiagram />
               </DiagramToggle>
 
@@ -472,13 +454,13 @@ export default function F1EmotionalGradientPage() {
               <div
                 style={{
                   padding: 20,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  background: hexToRgba(PATTERN.A.primary, 0.06),
                   borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                  border: `1px solid ${hexToRgba(PATTERN.A.primary, 0.2)}`,
                   marginBottom: 16,
                 }}
               >
-                <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.A.primary, marginBottom: 8 }}>
                   Connection Mode — Pattern A <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
@@ -489,13 +471,13 @@ export default function F1EmotionalGradientPage() {
               <div
                 style={{
                   padding: 20,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                  background: hexToRgba(PATTERN.B.primary, 0.06),
                   borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                  border: `1px solid ${hexToRgba(PATTERN.B.primary, 0.2)}`,
                   marginBottom: 16,
                 }}
               >
-                <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.B.primary, marginBottom: 8 }}>
                   Protection Mode — Pattern B <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Sympathetic/Dorsal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
@@ -563,7 +545,7 @@ export default function F1EmotionalGradientPage() {
                 Biological Restoration cannot be forced. It can only be allowed. It is not a skill, not a technique, not something the person does — it is what the body does when conditions allow.
               </KeyStatement>
 
-              <DiagramToggle label="bifurcation diagram">
+              <DiagramToggle label="bifurcation diagram" defaultOpen>
                 <F1HingeDiagram />
               </DiagramToggle>
 
@@ -751,7 +733,7 @@ export default function F1EmotionalGradientPage() {
                 Control and Domination
               </h3>
 
-              <DiagramToggle label="four-mode gradient diagram">
+              <DiagramToggle label="four-mode gradient diagram" defaultOpen>
                 <F1CognitiveUpgradeDiagram />
               </DiagramToggle>
 
@@ -885,7 +867,7 @@ export default function F1EmotionalGradientPage() {
                 The Gradient
               </h3>
 
-              <DiagramToggle label="capacity dimensions diagram">
+              <DiagramToggle label="capacity dimensions diagram" defaultOpen>
                 <F1ArchitectureDiagram />
               </DiagramToggle>
 
@@ -1007,7 +989,7 @@ export default function F1EmotionalGradientPage() {
                 The Seven-Step Arc
               </h3>
 
-              <DiagramToggle label="seven-step arc diagram">
+              <DiagramToggle label="seven-step arc diagram" defaultOpen>
                 <F1FullArcDiagram />
               </DiagramToggle>
 

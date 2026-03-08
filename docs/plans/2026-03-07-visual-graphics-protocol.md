@@ -202,12 +202,100 @@ These are the reusable building blocks, extracted from existing components and a
 
 | Primitive | Source | Visual Language | Reuse In |
 |-----------|--------|-----------------|----------|
-| **Gradient Bar** | PatternGradientBar | Horizontal bar, 4 PATTERN colors, zone dividers at 25/50/75%, snap magnets | Any 4-mode gradient visualization |
+| **Gradient Bar** | Design System (`CompassBar`) | Canonical four-mode bar — see full spec below | Any diagram showing the four-mode spectrum |
 | **Pathway Line** | EmotionWaveSection | SVG `<path>`, 1.5–2px stroke, ghost + revealed versions, progressive reveal | Bifurcation diagrams, timeline flows |
 | **Compass Needle** | FluidCompassExplorer | Draggable position on gradient, thumb with glow, mode-colored border | Any fluid-vs-stuck visualization |
 | **Bifurcation Point** | EmotionWaveSection | Dashed vertical line, two paths diverging, moment markers | Hinge/split visualizations |
 | **Stage Sequence** | OpenCycleExplorer | Numbered nodes connected by arrows, click-to-select, play-through | Linear process flows, arc visualizations |
 | **Capacity Dimension Bar** | New (follows gradient bar pattern) | Horizontal bar that narrows or changes opacity per mode | State-determines-capacity visualizations |
+
+### Gradient Bar — Canonical Specification
+
+The gradient bar is the primary visual representation of the Four-Mode Gradient across all diagrams. Its design is defined in the design system (`/design-system` → `CompassBar`) and must be referenced by any SVG or interactive graphic that shows the four-mode spectrum.
+
+#### Colors
+
+The bar uses a continuous gradient with four zones:
+
+```
+#93CFFF → #5BADFF → #4B8FFF → #346AEC → #2563eb
+```
+
+This matches the design system section separator gradient exactly. The four mode zones map to:
+
+| Zone | Mode | Hex | Zone Position |
+|------|------|-----|---------------|
+| 1 | Connection | `#93CFFF` | 0%–25% |
+| 2 | Protection | `#5BADFF` | 25%–50% |
+| 3 | Control | `#346AEC` | 50%–75% |
+| 4 | Domination | `#2563eb` | 75%–100% |
+
+Zone dividers at 25%, 50%, 75% — `1.5px`, `rgba(0,0,0,0.45)`.
+
+#### Bar Dimensions
+
+- Height: 14px, fully rounded (`border-radius: 100`)
+- Needle: 28px circle, white fill, 3px mode-colored border, glow shadow
+- Mode center markers: 1px white at 12.5%, 37.5%, 62.5%, 87.5%
+
+#### Signal Labels
+
+Each mode has a **signal label** displayed above the bar:
+
+| Mode | Signal Label |
+|------|-------------|
+| Connection | **Safety** |
+| Protection | **Threat** |
+| Control | **Danger** |
+| Domination | **Life peril** |
+
+Typography: `FONT.mono`, 9px, weight 500, uppercase, `0.06em` tracking. Color: active mode hex when selected, `TEXT.hint` when inactive.
+
+#### Fluid vs. Stuck State
+
+Below each signal label, a single descriptor word communicates the compass state:
+
+| Compass State | Descriptor (all four modes) | Meaning |
+|---------------|---------------------------|---------|
+| **Fluid** | *perceived* | The signal is temporary — the needle entered this zone in response to conditions and can return |
+| **Stuck** | *chronic* | The signal has become a fixed position — the needle no longer moves freely |
+
+Typography: `FONT.mono`, 9px, italic, `0.04em` tracking. Color: active mode hex at 0.6 opacity when selected, `TEXT.micro` when inactive.
+
+**In diagrams:** When a diagram depicts a fluid compass (designed operation, healthy movement), all four zones show "perceived." When a diagram depicts a stuck compass (chronic pattern, lost mobility), all four zones show "chronic." This is a binary toggle — a compass is either fluid or stuck — and the label communicates which state is being shown.
+
+#### Mode Labels
+
+Below the bar, each zone has a mode name:
+
+| Position | Label | Sub-label |
+|----------|-------|-----------|
+| 12.5% | **CONNECTION** | MODE |
+| 37.5% | **PROTECTION** | MODE |
+| 62.5% | **CONTROL** | MODE |
+| 87.5% | **DOMINATION** | MODE |
+
+Typography: mode name at `FONT.mono`, 10px, weight 700, `0.08em` tracking. "MODE" sub-label at `FONT.mono`, 9px, italic, `0.04em` tracking.
+
+#### Usage in SVG Diagrams
+
+When incorporating the gradient bar into an SVG diagram (not as a React component), use a `<linearGradient>` definition:
+
+```xml
+<defs>
+  <linearGradient id="four-mode-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#93CFFF" />
+    <stop offset="20%" stop-color="#93CFFF" />
+    <stop offset="35%" stop-color="#5BADFF" />
+    <stop offset="50%" stop-color="#4B8FFF" />
+    <stop offset="70%" stop-color="#346AEC" />
+    <stop offset="100%" stop-color="#2563eb" />
+  </linearGradient>
+</defs>
+<rect fill="url(#four-mode-gradient)" rx="7" ... />
+```
+
+Signal labels and mode labels should be positioned as `<text>` elements above and below the rect respectively, using the typography specs above.
 
 ### Composition Principle
 
