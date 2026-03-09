@@ -20,6 +20,20 @@ const nextConfig = {
         permanent: true,
       },
 
+      // /frameworks/* → /framework/* (plural to singular typo, 3 GSC 404s)
+      {
+        source: '/frameworks/:path*',
+        destination: '/framework/:path*',
+        permanent: true,
+      },
+
+      // /the-map-levels-of-teg-blue/* → /frameworks-map (1 GSC 404)
+      {
+        source: '/the-map-levels-of-teg-blue/:path*',
+        destination: '/frameworks-map',
+        permanent: true,
+      },
+
       // /map-levels/* → /frameworks-map (68 old URLs)
       {
         source: '/map-levels/:path*',
@@ -156,6 +170,42 @@ const nextConfig = {
       {
         source: '/learning-lab',
         destination: '/models',
+        permanent: true,
+      },
+
+      // /ai-bridge/* → /ai-safety (GSC 404s)
+      {
+        source: '/ai-bridge/:path*',
+        destination: '/ai-safety',
+        permanent: true,
+      },
+      {
+        source: '/ai-bridge',
+        destination: '/ai-safety',
+        permanent: true,
+      },
+
+      // /contact-collaboration/* → /collaborate (GSC 404s)
+      {
+        source: '/contact-collaboration/:path*',
+        destination: '/collaborate',
+        permanent: true,
+      },
+      {
+        source: '/contact-collaboration',
+        destination: '/collaborate',
+        permanent: true,
+      },
+
+      // /what-is-teg-blue/* → homepage (GSC 404s)
+      {
+        source: '/what-is-teg-blue/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/what-is-teg-blue',
+        destination: '/',
         permanent: true,
       },
 
@@ -323,6 +373,81 @@ const nextConfig = {
       {
         source: '/gift-of-being-wrong',
         destination: '/publications',
+        permanent: true,
+      },
+
+      // GSC 404 fixes — emotional technology pages
+      {
+        source: '/interactive-emotional-technology',
+        destination: '/emotional-technology',
+        permanent: true,
+      },
+      {
+        source: '/what-is-emotional-technology',
+        destination: '/emotional-technology',
+        permanent: true,
+      },
+
+      // GSC 404 fixes — collaborate pages
+      {
+        source: '/the-research-circle',
+        destination: '/collaborate',
+        permanent: true,
+      },
+      {
+        source: '/the-team-research-circle',
+        destination: '/collaborate',
+        permanent: true,
+      },
+
+      // GSC 404 fixes — about pages
+      {
+        source: '/about-the-author',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/letter-from-the-author',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/rights-vision',
+        destination: '/about',
+        permanent: true,
+      },
+
+      // GSC 404 fixes — Spanish old pages → about/publications
+      {
+        source: '/mi-vision-personal-sobre-el-narcisismo',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/no-me-derrumbo-de-golpe',
+        destination: '/publications',
+        permanent: true,
+      },
+
+      // GSC 404 fixes — other old pages
+      {
+        source: '/my-personal-take-on-narcissism',
+        destination: '/publications',
+        permanent: true,
+      },
+      {
+        source: '/terminology-core-emotional-system-concepts',
+        destination: '/glossary',
+        permanent: true,
+      },
+      {
+        source: '/science/behind',
+        destination: '/scientific-foundations',
+        permanent: true,
+      },
+      {
+        source: '/emotional-technology-tools',
+        destination: '/models',
         permanent: true,
       },
 
