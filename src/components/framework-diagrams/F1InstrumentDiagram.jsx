@@ -31,7 +31,8 @@ const KEYFRAMES = [
   // Back to start position for seamless loop
 ];
 
-const BAR_GRADIENT = `linear-gradient(90deg, ${SPECTRUM.sky} 0%, ${SPECTRUM.azure} 40%, ${SPECTRUM.blue} 60%, ${SPECTRUM.indigo} 100%)`;
+const THREAT_COLOR = "#2563eb";
+const BAR_GRADIENT = `linear-gradient(90deg, ${SPECTRUM.sky} 0%, ${SPECTRUM.azure} 50%, ${THREAT_COLOR} 100%)`;
 
 export default function F1InstrumentDiagram() {
   const [pos, setPos] = useState(0.20);
@@ -73,8 +74,8 @@ export default function F1InstrumentDiagram() {
     };
   }, [noMotion, advance]);
 
-  const inConn = pos < 0.5;
-  const accent = inConn ? SPECTRUM.sky : SPECTRUM.blue;
+  const inSafety = pos < 0.5;
+  const accent = inSafety ? SPECTRUM.sky : THREAT_COLOR;
 
   // Needle glow — amplified during flash
   const needleShadow = flash
@@ -95,7 +96,7 @@ export default function F1InstrumentDiagram() {
           letterSpacing: "0.08em", textTransform: "uppercase",
           color: TEXT.muted,
         }}>
-          Inner Compass + Four-Mode Gradient
+          The Inner Compass
         </span>
         <span style={{
           fontFamily: FONT.mono, fontSize: 10, fontWeight: 400,
@@ -106,7 +107,7 @@ export default function F1InstrumentDiagram() {
         </span>
       </div>
 
-      {/* ─── Mode Labels ─── */}
+      {/* ─── Safety / Threat Labels ─── */}
       <div style={{
         display: "flex", justifyContent: "space-between",
         alignItems: "baseline", marginBottom: 8,
@@ -115,19 +116,13 @@ export default function F1InstrumentDiagram() {
           fontFamily: FONT.mono, fontSize: 11, fontWeight: 700,
           letterSpacing: "0.08em", color: SPECTRUM.sky,
         }}>
-          PATTERN A
-        </span>
-        <span style={{
-          fontFamily: FONT.mono, fontSize: 8, fontWeight: 400,
-          letterSpacing: "0.12em", color: TEXT.hint, textTransform: "uppercase",
-        }}>
-          body-first orientations
+          SAFETY
         </span>
         <span style={{
           fontFamily: FONT.mono, fontSize: 11, fontWeight: 700,
-          letterSpacing: "0.08em", color: SPECTRUM.indigo,
+          letterSpacing: "0.08em", color: THREAT_COLOR,
         }}>
-          PATTERN B
+          THREAT
         </span>
       </div>
 
@@ -162,7 +157,7 @@ export default function F1InstrumentDiagram() {
           {/* Needle */}
           <div
             role="img"
-            aria-label={`Compass needle at ${inConn ? "Connection" : "Protection"}`}
+            aria-label={`Compass needle at ${inSafety ? "Safety" : "Threat"}`}
             style={{
               position: "absolute", top: "50%",
               left: `${pos * 100}%`,
@@ -186,13 +181,13 @@ export default function F1InstrumentDiagram() {
         }
       `}</style>
 
-      {/* ─── Body-First Descriptions ─── */}
+      {/* ─── Safety / Threat Descriptions ─── */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         {[
-          { name: "Connection Mode", color: SPECTRUM.sky, active: inConn,
-            text: "Belonging, safety, relating \u2014 the system\u2019s home base" },
-          { name: "Protection Mode", color: SPECTRUM.indigo, active: !inConn,
-            text: "Threat response, survival \u2014 fight, flight, freeze" },
+          { name: "Safety", color: SPECTRUM.sky, active: inSafety,
+            text: "Enough safety to engage \u2014 the nervous system\u2019s home base" },
+          { name: "Threat", color: THREAT_COLOR, active: !inSafety,
+            text: "Protection needed \u2014 the nervous system mobilises to respond" },
         ].map(({ name, color, text, active }) => (
           <div key={name} style={{
             padding: "10px 12px", borderRadius: 8,

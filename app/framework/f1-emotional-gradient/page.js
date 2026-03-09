@@ -34,7 +34,7 @@ const F1CognitiveUpgradeDiagram = dynamic(
 
 const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
-  { label: "State & Emotion", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
+  { label: "Biological Substrate", href: "#the-signal", description: "The biological systems that produce emotion — neural, endocrine, autonomic, neurochemical." },
   { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: the instrument and how it moves." },
   { label: "Connection & Protection", href: "#connection-protection", description: "The two body-first modes — the nervous system's original configurations." },
   { label: "Biological Restoration", href: "#the-fork", description: "The body's designed process for completing the activation cycle and settling back to Connection." },
@@ -142,19 +142,9 @@ export default function F1EmotionalGradientPage() {
           <SectionDivider />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
-          <section
-            id="core-propositions"
-            aria-labelledby="heading-core-propositions"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-core-propositions"
-              style={sectionHeadingStyle}
-            >
-              Core Propositions
-            </h2>
-            <PropositionBox label="FOUNDATIONAL CLAIM">
-              <ul style={{ paddingLeft: 20, margin: 0 }}>
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
                 <li style={listItemStyle}>
                   Emotions are the nervous system's signalling language — structured signals about safety, threat, and need
                 </li>
@@ -174,8 +164,8 @@ export default function F1EmotionalGradientPage() {
                   Biological Restoration cannot be forced. It can only be allowed
                 </li>
               </ul>
-            </PropositionBox>
-          </section>
+            </ExpandableSection>
+          </div>
 
           <SectionDivider />
 
@@ -186,14 +176,13 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-signal" style={sectionHeadingStyle}>
-              State & Emotion — How the Body Evaluates and Communicates
+              The Biological Substrate of Emotion
             </h2>
 
+            <CycleBox />
+
             <p style={proseStyle}>
-              F1 defines the complete arc that the remaining eleven frameworks elaborate. Every step named here is unpacked across the system — from individual biology to collective structure to repair.
-            </p>
-            <p style={proseStyle}>
-              The compass has four modes. Two are body-first — Connection and Protection — the nervous system's responses that have been running for millions of years. Two are cognition-first — Control and Domination — an intelligent evolutionary upgrade that appeared when cognition arrived and the system gained range. In a fluid compass, all four are available, all are time-limited (except Connection, which is the home base), and all are returnable. The needle can go anywhere it needs to go — and come back. That coming back — Biological Restoration — is the mechanism that keeps the compass moving.
+              F1 defines the complete system: how the body detects and signals threat, how the compass orients across four modes, how Biological Restoration completes the cycle, and what the full trajectory looks like from signal to social structure. Every concept named here is elaborated across the remaining eleven frameworks.
             </p>
             <p style={{
               ...proseStyle,
@@ -204,10 +193,6 @@ export default function F1EmotionalGradientPage() {
                 The Full Arc →
               </a>
             </p>
-
-            <KeyStatement>
-              Core Question: How does the nervous system evaluate safety and threat, how do emotions carry that evaluation to the rest of the organism, how does this orientation shape experience and capacity, what does the complete four-mode compass look like in designed operation, and how does the body restore itself when the threat has passed?
-            </KeyStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Relationship to the Inner Compass Model" type="framework">
@@ -224,6 +209,63 @@ export default function F1EmotionalGradientPage() {
             </div>
 
             <InnerDivider margin="20px 0" />
+
+            {/* Concept 0 */}
+            <div style={{ marginBottom: 32 }}>
+              <h3 id="biological-substrate" style={conceptHeadingStyle}>
+                How the Body Produces an Emotional Signal
+              </h3>
+
+              <KeyStatement>
+                Emotions are not psychological events that happen to have physical symptoms. They are biological events — produced by specific systems, carried by specific molecules, and resolved through specific physiological processes.
+              </KeyStatement>
+
+              <h4 style={subheadingStyle}>What It Is</h4>
+              <p style={proseStyle}>
+                An emotion begins before awareness. The process is distributed across multiple systems working in parallel — not a single brain region generating a feeling, but a whole-body coordination between neural, endocrine, and autonomic systems producing a signal the organism can act on.
+              </p>
+
+              <h4 style={subheadingStyle}>The neural architecture</h4>
+              <p style={proseStyle}>
+                The <strong style={{ color: TEXT.primary }}>amygdala</strong> — the brain's primary threat-detection structure — fires within 12 milliseconds of a relevant stimulus, before the cortex has processed what it is. It evaluates incoming signals for threat relevance and initiates the response cascade. The <strong style={{ color: TEXT.primary }}>insula</strong> translates the body's internal state into conscious feeling — it is the bridge between visceral sensation and subjective experience. The <strong style={{ color: TEXT.primary }}>anterior cingulate cortex</strong> integrates emotional and cognitive signals, weighting what to attend to. The <strong style={{ color: TEXT.primary }}>prefrontal cortex</strong> arrives later — capable of modulating the response, but always downstream of the initial evaluation.
+              </p>
+
+              <h4 style={subheadingStyle}>The endocrine cascade</h4>
+              <p style={proseStyle}>
+                When threat is detected, the amygdala activates the <strong style={{ color: TEXT.primary }}>hypothalamic-pituitary-adrenal (HPA) axis</strong>: the hypothalamus signals the pituitary gland, which signals the adrenal glands to release <strong style={{ color: TEXT.primary }}>cortisol</strong> — the primary stress hormone — and <strong style={{ color: TEXT.primary }}>adrenaline (epinephrine)</strong>. These flood the bloodstream within seconds. Cortisol sustains the mobilisation; adrenaline initiates it. Both are necessary for Protection Mode to function. Both must clear for the body to return to baseline.
+              </p>
+
+              <h4 style={subheadingStyle}>The autonomic pathway</h4>
+              <p style={proseStyle}>
+                Simultaneously, the <strong style={{ color: TEXT.primary }}>sympathetic nervous system</strong> activates — accelerating heart rate, dilating airways, tensing muscles, redirecting blood flow to limbs, suppressing digestion. This is the body preparing to act. Running in the opposite direction, the <strong style={{ color: TEXT.primary }}>vagus nerve</strong> — a bidirectional highway between brain and body — carries signals of safety or threat in both directions. When safety is re-established, the <strong style={{ color: TEXT.primary }}>vagal brake</strong> re-engages: heart rate slows, the social engagement system comes back online, the parasympathetic nervous system reasserts dominance.
+              </p>
+
+              <h4 style={subheadingStyle}>The neurochemical context</h4>
+              <p style={proseStyle}>
+                The emotional signal is also shaped by neurotransmitter states. <strong style={{ color: TEXT.primary }}>Serotonin</strong> modulates mood stability and threat sensitivity. <strong style={{ color: TEXT.primary }}>Dopamine</strong> shapes approach motivation and reward anticipation. <strong style={{ color: TEXT.primary }}>Noradrenaline</strong> drives arousal and attention. <strong style={{ color: TEXT.primary }}>Oxytocin</strong> — released through safe social contact — reduces amygdala reactivity and supports co-regulation. These are not background conditions. They are part of the signal.
+              </p>
+
+              <h4 style={subheadingStyle}>What this means for F1</h4>
+              <p style={proseStyle}>
+                Every concept in this framework describes a biological event. When Connection broadens perception, it is because the vagal brake is engaged and the prefrontal cortex has access to its full range. When Protection narrows attention, it is because cortisol and adrenaline have reorganised the system for speed, not nuance. When Biological Restoration completes, specific molecules clear, specific systems re-engage, and the body physically returns to its baseline state. The metaphors in this framework are not approximations — they are descriptions of measurable biological processes.
+              </p>
+
+              <div style={expandableRowStyle}>
+                <ExpandableSection title="Research Traditions" type="framework">
+                  <p style={expandedProseStyle}>
+                    LeDoux (1996) — amygdala as primary threat-detection structure, subcortical threat pathway. Craig (2009) — insula as the substrate of interoceptive awareness and subjective feeling. Damasio (1994) — somatic markers; emotion as body-state. Porges (2011) — vagus nerve as bidirectional safety/threat signalling pathway; the vagal brake. McEwen (2000) — HPA axis, cortisol, allostatic load. Cannon (1915) — adrenaline and sympathetic activation. Panksepp (1998) — primary emotional systems as neurobiological circuits. Sapolsky (2004) — stress hormones and their behavioural effects. Carter (1998) — oxytocin and social bonding. Berridge & Kringelbach (2015) — dopamine and motivational systems.
+                  </p>
+                </ExpandableSection>
+
+                <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                  <p style={expandedProseStyle}>
+                    The explicit framing of emotion as a biological event — not a psychological one with biological correlates, but a coordinated multi-system biological process that produces a signal. This positions everything that follows — the compass, the modes, Biological Restoration — as descriptions of measurable physiology, not metaphor. It also prepares the ground for Biological Restoration: if Protection is a specific biological state produced by specific molecules, then returning to baseline requires those specific molecules to clear and those specific systems to re-engage. Restoration is not a concept. It is a biological sequence.
+                  </p>
+                </ExpandableSection>
+              </div>
+            </div>
+
+            <hr style={conceptDividerStyle} />
 
             {/* Concept 1 */}
             <div style={{ marginBottom: 32 }}>
@@ -274,6 +316,10 @@ export default function F1EmotionalGradientPage() {
               <h3 id="safety-orientation" style={conceptHeadingStyle}>
                 The Safety Orientation Question
               </h3>
+
+              <p style={proseStyle}>
+                Concept 1 establishes that emotions are the signalling language through which the nervous system delivers its evaluation. Concept 2 identifies the question that evaluation is answering.
+              </p>
 
               <KeyStatement>
                 The nervous system continuously evaluates one question: "Is there enough safety to engage, or is protection needed?" Every emotional signal the body generates is an answer to this question.
@@ -353,6 +399,8 @@ export default function F1EmotionalGradientPage() {
               The Compass & The Needle — The Instrument and How It Moves
             </h2>
 
+            <CycleBox />
+
             {/* Concept 4 */}
             <div style={{ marginBottom: 32 }}>
               <h3 id="inner-compass" style={conceptHeadingStyle}>
@@ -360,7 +408,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <KeyStatement>
-                A fluid compass does not stay in Connection permanently. Fluid operation is the needle moving — responding, orienting, and coming back.
+                A fluid compass does not stay pointed at safety permanently. Fluid operation is the needle moving — responding to threat when it appears, and coming back when it passes.
               </KeyStatement>
 
               <DiagramToggle label="compass diagram" defaultOpen>
@@ -368,10 +416,10 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a fluid working compass, the needle is constantly moving. It does not have a "correct" position — it points in a direction. A fluid compass moves fluidly between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward Connection when the threat passes.
+                The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a fluid working compass, the needle is constantly moving. It does not have a "correct" position — it points in a direction. A fluid compass moves between safety and threat as conditions change. It shifts toward threat when danger is perceived and returns toward safety when the threat passes.
               </p>
               <p style={proseStyle}>
-                The two modes map directly to what the human nervous system has always done. <strong style={{ color: TEXT.primary }}>Connection</strong> is belonging to the community — gathering, caring, cooperating, relating. <strong style={{ color: TEXT.primary }}>Protection</strong> is defending yourself and feeding yourself — fighting, fleeing, hunting, surviving. These are the two fundamental orientations that the nervous system has been navigating for hundreds of thousands of years.
+                These two poles map directly to what the human nervous system has always done. <strong style={{ color: TEXT.primary }}>Feeling safe</strong> is belonging to the community — gathering, caring, cooperating, relating. <strong style={{ color: TEXT.primary }}>Feeling threatened</strong> is defending yourself and feeding yourself — fighting, fleeing, hunting, surviving. These are the two fundamental orientations that the nervous system has been navigating for hundreds of thousands of years. What happens at each pole — the specific configurations the system enters — is described in the next section: Connection Mode and Protection Mode.
               </p>
               <div style={expandableRowStyle}>
                 <ExpandableSection title="Research Traditions" type="framework">
@@ -382,7 +430,7 @@ export default function F1EmotionalGradientPage() {
 
                 <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
-                    The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes the question "where is the needle, and can it move?" clinically actionable rather than "which state is the person in." The compass reframes the diagnostic question — from state to capacity: not where the needle is, but whether it can move.
+                    The compass as a visual-conceptual tool that makes the safety-threat orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes the question "where is the needle, and can it move?" clinically actionable rather than "which state is the person in." The compass reframes the diagnostic question — from state to capacity: not where the needle is, but whether it can move.
                   </p>
                 </ExpandableSection>
               </div>
@@ -414,7 +462,7 @@ export default function F1EmotionalGradientPage() {
                   <strong style={{ color: TEXT.primary }}>Autonomic Response</strong> — cardiovascular, respiratory, muscular, hormonal, and attentional preparation occurs before conscious awareness
                 </li>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>Mode Activation</strong> — the system organizes into Connection or Protection configuration
+                  <strong style={{ color: TEXT.primary }}>Mode Activation</strong> — the system organizes into a safety or threat configuration
                 </li>
               </ol>
 
@@ -445,6 +493,8 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-connection-protection" style={sectionHeadingStyle}>
               Connection & Protection — The Two Body-First Modes
             </h2>
+
+            <CycleBox />
 
             {/* Concept 6 */}
             <div style={{ marginBottom: 32 }}>
@@ -540,6 +590,8 @@ export default function F1EmotionalGradientPage() {
               Biological Restoration
             </h2>
 
+            <CycleBox />
+
             {/* Concept 7 */}
             <div style={{ marginBottom: 32 }}>
               <h3 id="biological-restoration" style={conceptHeadingStyle}>
@@ -566,6 +618,62 @@ export default function F1EmotionalGradientPage() {
               </p>
               <p style={proseStyle}>
                 Biological Restoration is closer to digestion than to exercise. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
+              </p>
+
+              <h4 style={subheadingStyle}>The biological sequence of restoration</h4>
+              <p style={proseStyle}>
+                Biological Restoration is not metaphorical. It is a specific sequence of physiological events that returns the body from its mobilised state to its baseline:
+              </p>
+              <div style={{ overflowX: "auto", marginBottom: 16 }}>
+                <table style={tableStyle}>
+                  <thead>
+                    <tr>
+                      <th style={thStyle}>System</th>
+                      <th style={thStyle}>What Happens During Restoration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <TableRow cells={[
+                      "Vagal brake",
+                      "Re-engages — slowing heart rate, signalling safety to the autonomic system, bringing the social engagement system back online",
+                    ]} />
+                    <TableRow cells={[
+                      "HPA axis",
+                      "Down-regulates — the hypothalamus reduces cortisol signalling; cortisol levels fall over 20–60 minutes as the molecule clears the bloodstream",
+                    ]} />
+                    <TableRow cells={[
+                      "Adrenaline",
+                      "Clears rapidly — half-life of approximately 2–3 minutes in the bloodstream; the acute mobilisation phase resolves quickly when the system is allowed to complete",
+                    ]} />
+                    <TableRow cells={[
+                      "Sympathetic nervous system",
+                      "Stands down — heart rate decreases, airways narrow back to resting diameter, blood flow redistributes from limbs back to organs",
+                    ]} />
+                    <TableRow cells={[
+                      "Parasympathetic nervous system",
+                      "Reasserts dominance — digestion resumes, immune function normalises, the body's maintenance systems come back online",
+                    ]} />
+                    <TableRow cells={[
+                      "Muscle tension",
+                      "Releases — the bracing that mobilised for action discharges through movement, trembling, or simply settling",
+                    ]} />
+                    <TableRow cells={[
+                      "Respiratory rate",
+                      "Slows — extended exhalation directly activates the vagal brake, making breath the most immediately accessible restoration pathway",
+                    ]} />
+                    <TableRow cells={[
+                      "Neurotransmitter baseline",
+                      "Restores — serotonin, dopamine, and noradrenaline return to resting states as the acute demand resolves",
+                    ]} />
+                  </tbody>
+                </table>
+              </div>
+
+              <p style={proseStyle}>
+                This sequence takes time. Adrenaline clears in minutes; cortisol takes longer. This is why the body cannot be rushed back to baseline by an act of will. The molecules must clear. The systems must re-engage in sequence. <strong style={{ color: TEXT.primary }}>Biological Restoration cannot be forced because it is a physiological process — not a decision.</strong>
+              </p>
+              <p style={proseStyle}>
+                When the cycle is interrupted before completion — by cognitive override, by environmental pressure to appear calm, by the absence of safety conditions — the hormones remain partially elevated, the autonomic system remains partially mobilised, and the body carries the unresolved activation forward. This is the <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>open cycle (M3)</Link>.
               </p>
 
               <Link
@@ -620,6 +728,9 @@ export default function F1EmotionalGradientPage() {
                   </tbody>
                 </table>
               </div>
+              <p style={proseStyle}>
+                These are not therapeutic techniques. They are the pathways the nervous system was designed to use.
+              </p>
             </div>
 
             <hr style={conceptDividerStyle} />
@@ -750,6 +861,8 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-cognitive-upgrade" style={sectionHeadingStyle}>
               Control & Domination — The Cognitive Modes
             </h2>
+
+            <CycleBox />
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="control-and-domination" style={conceptHeadingStyle}>
@@ -884,6 +997,8 @@ export default function F1EmotionalGradientPage() {
               The Gradient & Mode — How the Compass Reads
             </h2>
 
+            <CycleBox />
+
             {/* Concept 9 */}
             <div style={{ marginBottom: 32 }}>
               <h3 id="the-gradient" style={conceptHeadingStyle}>
@@ -1006,6 +1121,8 @@ export default function F1EmotionalGradientPage() {
             <h2 id="heading-the-full-arc" style={sectionHeadingStyle}>
               The Full Arc — Where Each Framework Begins
             </h2>
+
+            <CycleBox />
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="seven-step-arc" style={conceptHeadingStyle}>
@@ -1604,6 +1721,27 @@ function TableRow({ cells }) {
         </td>
       ))}
     </tr>
+  );
+}
+
+function CycleBox() {
+  return (
+    <div
+      style={{
+        padding: "14px 20px",
+        margin: "0 0 24px",
+        background: hexToRgba(SPECTRUM.cobalt, 0.06),
+        border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
+        borderRadius: 8,
+      }}
+    >
+      <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: SPECTRUM.cobalt, marginBottom: 8 }}>
+        The complete cycle
+      </div>
+      <p style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, lineHeight: 1.6, margin: 0, textAlign: "center" }}>
+        Signal Detection → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Connection
+      </p>
+    </div>
   );
 }
 
