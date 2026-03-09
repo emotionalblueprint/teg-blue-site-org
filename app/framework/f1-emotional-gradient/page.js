@@ -37,7 +37,7 @@ const SIDEBAR_SECTIONS = [
   { label: "State & Emotion", href: "#the-signal", description: "How the nervous system continuously assesses safety and threat before cognition arrives." },
   { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: the instrument and how it moves." },
   { label: "Connection & Protection", href: "#connection-protection", description: "The two body-first modes — the nervous system's original configurations." },
-  { label: "Biological Restoration", href: "#the-fork", description: "The Fork — the mechanism at the centre of the entire system." },
+  { label: "Biological Restoration", href: "#the-fork", description: "The body's designed process for completing the activation cycle and settling back to Connection." },
   { label: "Control & Domination", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
   { label: "Gradient & Mode", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
   { label: "The Full Arc", href: "#the-full-arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
@@ -367,10 +367,6 @@ export default function F1EmotionalGradientPage() {
               <p style={proseStyle}>
                 The two modes map directly to what the human nervous system has always done. <strong style={{ color: TEXT.primary }}>Connection</strong> is belonging to the community — gathering, caring, cooperating, relating. <strong style={{ color: TEXT.primary }}>Protection</strong> is defending yourself and feeding yourself — fighting, fleeing, hunting, surviving. These are the two fundamental orientations that the nervous system has been navigating for hundreds of thousands of years.
               </p>
-              <p style={proseStyle}>
-                A <strong style={{ color: TEXT.primary }}>stuck compass</strong> is one where the needle has lost its capacity to move. What should have been a temporary orientation becomes a chronic position. The person does not experience this as being stuck — they experience it as "just who I am."
-              </p>
-
               <div style={expandableRowStyle}>
                 <ExpandableSection title="Research Traditions" type="framework">
                   <p style={expandedProseStyle}>
@@ -380,7 +376,7 @@ export default function F1EmotionalGradientPage() {
 
                 <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
-                    The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in." The compass reframes the diagnostic question — from state to capacity: not where the needle is, but whether it can move.
+                    The compass as a visual-conceptual tool that makes the two-mode orientation tangible and clinically usable. Most models describe states. The compass describes <em>movement between states</em> — and makes the question "where is the needle, and can it move?" clinically actionable rather than "which state is the person in." The compass reframes the diagnostic question — from state to capacity: not where the needle is, but whether it can move.
                   </p>
                 </ExpandableSection>
               </div>
@@ -535,7 +531,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-the-fork" style={sectionHeadingStyle}>
-              The Fork — Biological Restoration
+              Biological Restoration
             </h2>
 
             {/* Concept 7 */}
@@ -548,7 +544,7 @@ export default function F1EmotionalGradientPage() {
                 Biological Restoration cannot be forced. It can only be allowed. It is not a skill, not a technique, not something the person does — it is what the body does when conditions allow.
               </KeyStatement>
 
-              <DiagramToggle label="bifurcation diagram" defaultOpen>
+              <DiagramToggle label="restoration diagram" defaultOpen>
                 <F1HingeDiagram />
               </DiagramToggle>
 
@@ -712,7 +708,7 @@ export default function F1EmotionalGradientPage() {
 
                 <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
-                    The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the fork of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
+                    The naming of Biological Restoration as the body's designed completion process — distinguishing it from cognitive management and from the cultural misunderstanding of "regulation." The positioning as the central mechanism of the entire twelve-framework system: the mechanism whose presence or absence determines everything that follows. The distinction between somatic and relational restoration — recognising that relational emotions can only complete through another nervous system providing relational evidence.
                   </p>
                 </ExpandableSection>
               </div>
@@ -875,7 +871,7 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                The four modes are not four boxes. They are positions on a continuous gradient from full Connection to maximum Domination. The compass needle moves along this gradient. A fluid compass has access to the full range. A stuck compass is locked at one position.
+                The four modes are not four boxes. They are positions on a continuous gradient from full Connection to maximum Domination. The compass needle moves along this gradient. A fluid compass has access to the full range.
               </p>
               <p style={proseStyle}>
                 The gradient makes the proportionality question visible. The question is not "is this person in Protection?" but "how deep into Protection, for how long, in response to what, and can the needle move?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
@@ -997,7 +993,7 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                F1 names a complete trajectory from biological signal to social structure. Biological Restoration is the fork — step four of seven, three steps on each side:
+                F1 names a complete trajectory from biological signal to social structure. Biological Restoration is the central mechanism — step four of seven, three steps on each side:
               </p>
 
               <p
@@ -1082,7 +1078,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the fork. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. To our knowledge, no existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
+                  The seven-step arc as the organising trajectory of the entire framework system, with Biological Restoration as the central mechanism. The regulation thread as the connective tissue of F1–F12, showing that each framework describes the same nervous system failing to restore and substituting something else at a different scale with a different cost. To our knowledge, no existing framework traces a single mechanism from perception through emotional signalling through biological restoration through collective structures through domination — and shows that each level is the same nervous system substituting a different source at a different scale.
                 </p>
               </ExpandableSection>
             </div>
@@ -1119,12 +1115,12 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
                   <TableRow cells={["How the compass moves", "Five-step sequence from perception to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
                   <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
-                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The fork of the entire twelve-framework system."]} />
+                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The central mechanism of the entire twelve-framework system."]} />
                   <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
                   <TableRow cells={["The gradient", "The four modes are positions on a continuous gradient, not four boxes."]} />
                   <TableRow cells={["State determines capacity", "What you can perceive, think, and do depends on your current state. Restore safety first, then expect capacity."]} />
                   <TableRow cells={["Same emotion, two expressions", "Mode position determines whether an emotion serves connection or defense. Assess mode position, not the emotion."]} />
-                  <TableRow cells={["The seven-step arc", "Perception → Emotion → Action → Biological Restoration → Behavior → Social Structure → Escalation or Repair. The fork — step four of seven, three on each side."]} />
+                  <TableRow cells={["The seven-step arc", "Perception → Emotion → Action → Biological Restoration → Behavior → Social Structure → Escalation or Repair. Step four of seven, three on each side."]} />
                 </tbody>
               </table>
             </div>
@@ -1241,7 +1237,7 @@ export default function F1EmotionalGradientPage() {
               This is especially true for relational emotions. Somatic activations can complete through the body's own channels when conditions allow. But shame, guilt, fear of rejection, fear of abandonment — the emotions whose content is about belonging — can only complete when another person stays. A child whose relational emotions are never co-regulated does not just lack a general restoration capacity. They lack the specific pathway for the specific emotions that are hardest to bear. The chain is emotion-specific: what the adults could hold is what the child learns to complete.
             </p>
             <p style={proseStyle}>
-              This requires caregivers whose own Biological Restoration is functioning — whose own compass can move and come back. The awareness capacities the caregivers carry determine whether the child's restoration capacity develops. When the adults' awareness is complete, the child learns restoration through being restored with. When the adults' awareness is incomplete — when their own compass is stuck, their own restoration was never learned — the child's system develops without ever learning the path back.
+              This requires caregivers whose own Biological Restoration is functioning — whose own compass can move and come back. The awareness capacities the caregivers carry determine whether the child's restoration capacity develops. When the adults' awareness is complete, the child learns restoration through being restored with. When the adults' awareness is incomplete — when their own Biological Restoration was never learned — the child's system develops without ever learning the path back.
             </p>
 
             <KeyStatement>

@@ -1,17 +1,15 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba, MODE_ORANGE } from "@/src/styles/tokens";
+import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba } from "@/src/styles/tokens";
 
 // ─── Animation Constants ────────────────────────────────
 const FLUID_POSITIONS = [0.18, 0.52, 0.28, 0.62, 0.12, 0.42, 0.35, 0.55, 0.22, 0.48];
-const STUCK_POS = 0.78;
 const MOVE_MS = 1800;
 
 const BAR_GRADIENT = `linear-gradient(90deg, ${SPECTRUM.sky} 0%, ${SPECTRUM.azure} 40%, ${SPECTRUM.blue} 60%, ${SPECTRUM.indigo} 100%)`;
 
 export default function F1InstrumentDiagram() {
-  const [isStuck, setIsStuck] = useState(false);
   const [idx, setIdx] = useState(0);
   const [noMotion, setNoMotion] = useState(false);
 
@@ -20,14 +18,14 @@ export default function F1InstrumentDiagram() {
   }, []);
 
   useEffect(() => {
-    if (isStuck || noMotion) return;
+    if (noMotion) return;
     const t = setInterval(() => setIdx(i => (i + 1) % FLUID_POSITIONS.length), MOVE_MS);
     return () => clearInterval(t);
-  }, [isStuck, noMotion]);
+  }, [noMotion]);
 
-  const pos = isStuck ? STUCK_POS : (noMotion ? 0.25 : FLUID_POSITIONS[idx]);
+  const pos = noMotion ? 0.25 : FLUID_POSITIONS[idx];
   const inConn = pos < 0.5;
-  const accent = isStuck ? MODE_ORANGE : (inConn ? SPECTRUM.sky : SPECTRUM.blue);
+  const accent = inConn ? SPECTRUM.sky : SPECTRUM.blue;
 
   return (
     <div>
@@ -61,10 +59,7 @@ export default function F1InstrumentDiagram() {
         <div style={{
           height: 14, borderRadius: 7, background: BAR_GRADIENT,
           position: "relative",
-          border: isStuck
-            ? `1px solid ${hexToRgba(MODE_ORANGE, 0.3)}`
-            : "1px solid transparent",
-          transition: "border-color 300ms ease",
+          border: "1px solid transparent",
         }}>
           {/* Center divider */}
           <div style={{
@@ -76,9 +71,7 @@ export default function F1InstrumentDiagram() {
           {/* Needle */}
           <div
             role="img"
-            aria-label={isStuck
-              ? "Compass needle frozen in Protection"
-              : `Compass needle at ${inConn ? "Connection" : "Protection"}`}
+            aria-label={`Compass needle at ${inConn ? "Connection" : "Protection"}`}
             style={{
               position: "absolute", top: "50%",
               left: `${pos * 100}%`,
@@ -86,9 +79,7 @@ export default function F1InstrumentDiagram() {
               width: 24, height: 24, borderRadius: "50%",
               background: BG.primary,
               border: `3px solid ${accent}`,
-              boxShadow: isStuck
-                ? `0 0 0 3px ${hexToRgba(MODE_ORANGE, 0.25)}`
-                : `0 0 12px ${hexToRgba(accent, 0.4)}`,
+              boxShadow: `0 0 12px ${hexToRgba(accent, 0.4)}`,
               transition: noMotion ? "none"
                 : `left ${MOVE_MS}ms ease-in-out, border-color 300ms ease, box-shadow 300ms ease`,
             }}
@@ -96,52 +87,17 @@ export default function F1InstrumentDiagram() {
         </div>
       </div>
 
-      {/* ─── Controls Row ─── */}
+      {/* ─── State Description ─── */}
       <div style={{
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        flexWrap: "wrap", gap: 10, marginBottom: 14,
+        display: "flex", alignItems: "center", justifyContent: "flex-end",
+        marginBottom: 14,
       }}>
-        {/* Fluid / Stuck toggle */}
-        <div style={{
-          display: "flex", borderRadius: 100,
-          border: `1px solid ${BORDER.default}`, overflow: "hidden",
-        }}>
-          {[
-            { label: "Fluid", stuck: false, color: SPECTRUM.sky },
-            { label: "Stuck", stuck: true, color: MODE_ORANGE },
-          ].map(({ label, stuck, color }) => (
-            <button
-              key={label}
-              onClick={() => setIsStuck(stuck)}
-              aria-label={`Show ${label.toLowerCase()} compass`}
-              aria-pressed={isStuck === stuck}
-              style={{
-                padding: "4px 14px", fontSize: 10,
-                fontFamily: FONT.mono, fontWeight: 600,
-                letterSpacing: "0.04em",
-                border: "none", cursor: "pointer",
-                borderLeft: stuck ? `1px solid ${BORDER.default}` : "none",
-                transition: "background 200ms ease, color 200ms ease",
-                background: isStuck === stuck
-                  ? hexToRgba(color, 0.15) : "transparent",
-                color: isStuck === stuck ? color : TEXT.muted,
-              }}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {/* State description */}
         <span style={{
           fontFamily: FONT.mono, fontSize: 10, fontWeight: 400,
           letterSpacing: "0.06em", fontStyle: "italic",
-          color: isStuck ? MODE_ORANGE : TEXT.muted,
-          transition: "color 300ms ease",
+          color: TEXT.muted,
         }}>
-          {isStuck
-            ? "needle frozen \u2014 lost capacity to move"
-            : "needle moving \u2014 responding and returning"}
+          needle moving — responding and returning
         </span>
       </div>
 
