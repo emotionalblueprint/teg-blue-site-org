@@ -179,7 +179,7 @@ export default function F1EmotionalGradientPage() {
               The Biological Substrate of Emotion
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={["Signal Detection", "Neuroception", "Emotion", "Autonomic Response"]} />
 
             <p style={proseStyle}>
               F1 defines the complete system: how the body detects and signals threat, how the compass orients across four modes, how Biological Restoration completes the cycle, and what the full trajectory looks like from signal to social structure. Every concept named here is elaborated across the remaining eleven frameworks.
@@ -399,7 +399,7 @@ export default function F1EmotionalGradientPage() {
               The Compass & The Needle — The Instrument and How It Moves
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={["Mode Activation"]} />
 
             {/* Concept 4 */}
             <div style={{ marginBottom: 32 }}>
@@ -494,7 +494,7 @@ export default function F1EmotionalGradientPage() {
               Connection & Protection — The Two Body-First Modes
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={["Mode Activation", "Threat Response"]} />
 
             {/* Concept 6 */}
             <div style={{ marginBottom: 32 }}>
@@ -590,7 +590,7 @@ export default function F1EmotionalGradientPage() {
               Biological Restoration
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={["Biological Restoration", "Connection"]} />
 
             {/* Concept 7 */}
             <div style={{ marginBottom: 32 }}>
@@ -862,7 +862,7 @@ export default function F1EmotionalGradientPage() {
               Control & Domination — The Cognitive Modes
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={["Threat Response"]} />
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="control-and-domination" style={conceptHeadingStyle}>
@@ -997,7 +997,7 @@ export default function F1EmotionalGradientPage() {
               The Gradient & Mode — How the Compass Reads
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={["Mode Activation"]} />
 
             {/* Concept 9 */}
             <div style={{ marginBottom: 32 }}>
@@ -1122,7 +1122,7 @@ export default function F1EmotionalGradientPage() {
               The Full Arc — Where Each Framework Begins
             </h2>
 
-            <CycleBox />
+            <CycleBox highlight={CYCLE_STEPS} />
 
             <div style={{ marginBottom: 32 }}>
               <h3 id="seven-step-arc" style={conceptHeadingStyle}>
@@ -1724,7 +1724,12 @@ function TableRow({ cells }) {
   );
 }
 
-function CycleBox() {
+const CYCLE_STEPS = [
+  "Signal Detection", "Neuroception", "Emotion", "Autonomic Response",
+  "Mode Activation", "Threat Response", "Biological Restoration", "Connection",
+];
+
+function CycleBox({ highlight = [] }) {
   return (
     <div
       style={{
@@ -1739,7 +1744,21 @@ function CycleBox() {
         The complete cycle
       </div>
       <p style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, lineHeight: 1.6, margin: 0, textAlign: "center" }}>
-        Signal Detection → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Connection
+        {CYCLE_STEPS.map((step, i) => {
+          const isHighlight = highlight.includes(step);
+          const isBR = step === "Biological Restoration";
+          return (
+            <span key={step}>
+              {i > 0 && " → "}
+              <span style={{
+                color: isBR ? SPECTRUM.cobalt : isHighlight ? TEXT.primary : undefined,
+                fontWeight: isBR || isHighlight ? 600 : undefined,
+              }}>
+                {step}
+              </span>
+            </span>
+          );
+        })}
       </p>
     </div>
   );
