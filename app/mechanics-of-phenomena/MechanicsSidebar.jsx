@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { TEXT, FONT, BORDER, EDITORIAL } from "@/src/styles/tokens";
 import { SERIES } from "./mechanics-config";
@@ -11,6 +14,34 @@ import { SERIES } from "./mechanics-config";
  *   articleSections: array of { id, label } — anchor links for the current article
  */
 export default function MechanicsSidebar({ activePiece, showBackLink = false, articleSections }) {
+  const [activeSection, setActiveSection] = useState(null);
+
+  useEffect(() => {
+    if (!articleSections || articleSections.length === 0) return;
+
+    // Respect reduced motion preference — skip observer
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-20% 0px -60% 0px" }
+    );
+
+    for (const section of articleSections) {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, [articleSections]);
+
   return (
     <aside className="mop-sidebar">
       {showBackLink && (
@@ -139,21 +170,30 @@ export default function MechanicsSidebar({ activePiece, showBackLink = false, ar
             This article
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {articleSections.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  color: EDITORIAL.accent,
-                  textDecoration: "none",
-                  lineHeight: 1.5,
-                }}
-              >
-                {section.label}
-              </a>
-            ))}
+            {articleSections.map((section) => {
+              const isActiveSection = activeSection === section.id;
+              return (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  style={{
+                    display: "block",
+                    fontSize: 12,
+                    color: isActiveSection ? EDITORIAL.accentLight : EDITORIAL.accent,
+                    fontWeight: isActiveSection ? 500 : 400,
+                    textDecoration: "none",
+                    lineHeight: 1.5,
+                    paddingLeft: isActiveSection ? 10 : 0,
+                    borderLeft: isActiveSection
+                      ? `2px solid ${EDITORIAL.accentLight}`
+                      : "2px solid transparent",
+                    transition: "all 150ms ease",
+                  }}
+                >
+                  {section.label}
+                </a>
+              );
+            })}
           </div>
         </>
       )}

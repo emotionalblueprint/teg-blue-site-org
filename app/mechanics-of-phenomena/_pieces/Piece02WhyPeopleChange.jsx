@@ -158,7 +158,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Fine print */}
-      <p style={READING.finePrint}><em>TEG-Blue is an independent research framework. The models described in this piece represent a synthesis of over fifty established theories across neuroscience, trauma psychology, and systems science {"\u2014"} integrated into a navigable architecture for understanding human emotional behaviour.</em></p>
+      <p style={READING.finePrint}><em>TEG-Blue is an independent research framework. The models described in this piece represent a synthesis of over fifty established theories across neuroscience, trauma psychology, and systems science {"\u2014"} integrated into a navigable architecture for understanding human emotional behavior.</em></p>
 
       {/* Go deeper */}
       <GoDeeper

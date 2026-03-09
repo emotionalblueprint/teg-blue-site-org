@@ -188,7 +188,7 @@ export default function MechanicsLayout({
             paddingBottom: 48,
           }}
         >
-          <MechanicsSidebar activePiece={activePiece} showBackLink={false} />
+          <MechanicsSidebar activePiece={activePiece} showBackLink={false} articleSections={articleSections} />
         </div>
       </main>
     </>

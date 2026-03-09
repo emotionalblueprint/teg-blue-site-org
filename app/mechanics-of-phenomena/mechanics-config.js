@@ -21,6 +21,7 @@ export const SERIES = [
         slug: "02-why-people-change-by-context",
         title: "Why People Are Completely Different Depending on Who\u2019s Watching",
         subtitle: "A diagnostic for the bewildered, the gaslit, and the ones who keep being told they must be exaggerating",
+        metaDescription: "How regulatory systems produce context-dependent behavior \u2014 why the same person can be genuinely kind at work and genuinely harmful at home. A diagnostic from TEG-Blue.",
         connection: "M1 Operating Modes / F4 Collective Rules / F5 Worth Hierarchies",
         featured: true,
         sections: [
@@ -39,6 +40,7 @@ export const SERIES = [
         slug: "01-why-evidence-fails",
         title: "Why Evidence Doesn\u2019t Work \u2014 And What Actually Does",
         subtitle: "A diagnostic for the frustrated, the rigorous, and the quietly losing hope",
+        metaDescription: "Why presenting evidence to someone in a threat-management mode produces defensiveness, not updating. A diagnostic for the frustrated and the rigorous.",
         connection: "F3 Cognitive Replacement / M1 Operating Modes Under Pressure",
         sections: [
           { id: "why-doesnt-evidence-work", label: "Why doesn\u2019t evidence work?" },
@@ -64,6 +66,7 @@ export const SERIES = [
         slug: "01-octopus-chromatophores",
         title: "Octopuses Change Color With Their Emotions",
         subtitle: "The signal function of emotional states \u2014 running in completely different hardware",
+        metaDescription: "The octopus chromatophore system as independent evidence that emotions function as information \u2014 not decoration. A Proof by Nature from TEG-Blue.",
         connection: "F1 Emotional Gradient / Signal function",
         sections: [
           { id: "teg-blue-connection", label: "TEG-Blue connection" },
@@ -83,20 +86,6 @@ export function findPiece(slug) {
   }
   return null;
 }
-
-// ─── GO DEEPER URL MAPPING ───────────────────────────────
-
-export const GO_DEEPER_URLS = {
-  "m1": "/model/m1-inner-compass",
-  "m2": "/model/m2-three-awareness-capacities",
-  "f1": "/framework/f1-emotional-gradient",
-  "f2": "/framework/f2-awareness-calibration",
-  "f3": "/framework/f3-false-coherence",
-  "f4": "/framework/f4-rules-regulate",
-  "f5": "/framework/f5-worth-hierarchies",
-  "f6": "/framework/f6-bias-regulates",
-  "f8": "/framework/f8-repairing-awareness",
-};
 
 // ─── READING COLUMN STYLES ──────────────────────────────
 

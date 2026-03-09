@@ -50,7 +50,7 @@ export default function PiecePBN01Octopus() {
       {/* TEG-Blue connection section */}
       <h2 id="teg-blue-connection" style={READING.heading}>TEG-Blue connection</h2>
 
-      <p style={READING.paragraph}><strong>Primary:</strong> M2 {"\u2014"} Signal function of emotional states (RE: Reading the Environment / ER: Emotional Response transmission)</p>
+      <p style={READING.paragraph}><strong>Primary:</strong> M2 {"\u2014"} Signal function of emotional states (the ability to read the environment and transmit emotional responses)</p>
 
       <p style={READING.paragraph}><strong>Related:</strong> M1 {"\u2014"} The gap between inner state and outer signal closes entirely in fluid mode</p>
 
@@ -61,7 +61,7 @@ export default function PiecePBN01Octopus() {
         items={[
           {
             description: "You want to understand how emotional states function as information, not decoration:",
-            label: "M2 \u2014 Three Awareness Capacities (RE, ER, SEA)",
+            label: "M2 \u2014 Three Awareness Capacities",
             href: "/model/m2-three-awareness-capacities",
           },
           {

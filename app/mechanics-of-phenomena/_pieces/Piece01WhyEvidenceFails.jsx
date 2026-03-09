@@ -176,18 +176,18 @@ export default function Piece01WhyEvidenceFails() {
       <hr style={READING.hr} />
 
       {/* Fine print */}
-      <p style={READING.finePrint}><em>TEG-Blue is an independent research framework. The models described in this piece represent a synthesis of over fifty established theories across neuroscience, trauma psychology, and systems science {"\u2014"} integrated into a navigable architecture for understanding human emotional behaviour.</em></p>
+      <p style={READING.finePrint}><em>TEG-Blue is an independent research framework. The models described in this piece represent a synthesis of over fifty established theories across neuroscience, trauma psychology, and systems science {"\u2014"} integrated into a navigable architecture for understanding human emotional behavior.</em></p>
 
       {/* Go deeper */}
       <GoDeeper
         items={[
           {
-            description: "You want to understand why the human mind prioritises stability over truth \u2014 and what the four operating modes actually look like:",
+            description: "You want to understand why the human mind prioritizes stability over truth, why confrontation produces entrenchment, and what the four operating modes actually look like:",
             label: "M1 \u2014 The Inner Compass & Four-Mode Gradient",
             href: "/model/m1-inner-compass",
           },
           {
-            description: "You want to understand how beliefs become regulatory tools \u2014 replacing biological regulation when the nervous system couldn\u2019t find it elsewhere:",
+            description: "You want to understand how beliefs become regulatory tools \u2014 and why dismantling them triggers defensive escalation, not updating:",
             label: "F3 \u2014 Cognitive Replacement",
             href: "/framework/f3-false-coherence",
           },
@@ -202,7 +202,7 @@ export default function Piece01WhyEvidenceFails() {
             href: "/framework/f2-awareness-calibration",
           },
           {
-            description: "You want to understand how institutional trust breaks in development (continued):",
+            description: "You want to understand how collective rules and institutional structures shape what counts as credible evidence:",
             label: "F4 \u2014 Collective Rules & Institutional Structures",
             href: "/framework/f4-rules-regulate",
           },
@@ -210,16 +210,6 @@ export default function Piece01WhyEvidenceFails() {
             description: "You want to understand the mechanics of worth hierarchies \u2014 why \u201CI see what others can\u2019t\u201D functions as identity, not just opinion:",
             label: "F5 \u2014 Worth Hierarchies",
             href: "/framework/f5-worth-hierarchies",
-          },
-          {
-            description: "You want to understand why confrontation produces entrenchment \u2014 and what the structural logic of the backfire effect actually is:",
-            label: "M1 \u2014 Operating Modes Under Pressure",
-            href: "/model/m1-inner-compass",
-          },
-          {
-            description: "You want to understand why confrontation produces entrenchment (continued):",
-            label: "F3 \u2014 Cognitive Replacement",
-            href: "/framework/f3-false-coherence",
           },
           {
             description: "You want to understand what conditions genuinely allow change \u2014 and what the research says about the role of relationship over argument:",
