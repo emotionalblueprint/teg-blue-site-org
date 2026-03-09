@@ -86,10 +86,18 @@ export default function F1InstrumentDiagram() {
 
   return (
     <div>
+      <style>{`
+        @media (max-width: 480px) {
+          .f1-compass-desc-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+
       {/* ─── Header ─── */}
       <div style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        marginBottom: 10,
+        marginBottom: 10, flexWrap: "wrap", gap: 4,
       }}>
         <span style={{
           fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,
@@ -182,7 +190,7 @@ export default function F1InstrumentDiagram() {
       `}</style>
 
       {/* ─── Safety / Threat Descriptions ─── */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+      <div className="f1-compass-desc-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         {[
           { name: "Safety", color: SPECTRUM.sky, active: inSafety,
             text: "Enough safety to engage \u2014 the nervous system\u2019s home base" },

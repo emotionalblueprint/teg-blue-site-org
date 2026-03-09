@@ -1748,8 +1748,9 @@ function CycleBox({ highlight = [] }) {
           const isHighlight = highlight.includes(step);
           const isBR = step === "Biological Restoration";
           return (
-            <span key={step}>
-              {i > 0 && " → "}
+            <span key={step} style={{ whiteSpace: "nowrap" }}>
+              {i > 0 && <span style={{ whiteSpace: "normal" }}>{" "}</span>}
+              {i > 0 && "→ "}
               <span style={{
                 color: isBR ? SPECTRUM.cobalt : isHighlight ? TEXT.primary : undefined,
                 fontWeight: isBR || isHighlight ? 600 : undefined,
