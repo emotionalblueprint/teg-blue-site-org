@@ -4,7 +4,7 @@ import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Emotional Regulation Glossary | TEG-Blue Research",
-  description: "179 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
+  description: "184 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
   alternates: {
     canonical: "https://teg-blue.org/glossary",
   },
@@ -450,6 +450,15 @@ const GLOSSARY_TERMS = [
     tags: ["F1", "regulation", "core-concept"],
     framework: 1,
   },
+  {
+    slug: "the-fork",
+    title: "The Fork (Biological Restoration)",
+    type: "concept",
+    status: "proposed",
+    definition: "The bifurcation point in the activation cycle where the path splits. When the nervous system mobilizes for threat, it was designed to complete the cycle: mobilize, respond, and restore. The Fork is the moment where that process either runs — Biological Restoration completes, the compass returns to Connection — or cognition overrides it, the cycle stays open, and everything from F2 to F7 describes what happens next. Named in F1 and referenced in M3 as the physiological pivot of the entire system. The Fork is why Biological Restoration is the mechanism on which the entire twelve-framework system turns.",
+    tags: ["F1", "M3", "core-concept", "regulation"],
+    framework: 1,
+  },
   // ===== F2: AWARENESS TEACHES AWARENESS =====
   {
     slug: "reading-emotions",
@@ -606,6 +615,24 @@ const GLOSSARY_TERMS = [
     tags: ["F2", "development", "adverse-conditions"],
     framework: 2,
   },
+  {
+    slug: "the-turn",
+    title: "The Turn",
+    type: "concept",
+    status: "proposed",
+    definition: "The developmental moment when awareness transmission goes incomplete. The system described by F2 requires caregivers whose own awareness capacities are functioning. The Turn names what happens when they are not — when the adults' own compasses were stuck, their own SEA was absent, their own Biological Restoration was never learned. Three major conditions determine the outcome: emotionally unpredictable environments (Biological Restoration disrupted), emotionally incongruent environments (Biological Restoration misdirected), and emotional invalidation environments (Biological Restoration blocked). The child does not develop in a vacuum. The child develops inside the adults' awareness.",
+    tags: ["F2", "development", "adverse-conditions"],
+    framework: 2,
+  },
+  {
+    slug: "dual-mechanism-of-healing",
+    title: "Dual Mechanism of Healing",
+    type: "concept",
+    status: "proposed",
+    definition: "Healing requires two tracks developing in parallel: SEA (receiving self-data) and Biological Restoration (the body learning the return path that was never taught). Neither alone is sufficient. SEA without Biological Restoration means the person can finally feel what they feel but the body does not know how to complete the cycle. Biological Restoration without SEA means the body can complete the cycle but the person does not know what activated it. Both develop through the same medium: relationships that provide what the original environment could not. Healing is not finding a 'real self' — it is developing capacities that never had conditions to form.",
+    tags: ["F2", "healing", "core-concept"],
+    framework: 2,
+  },
   // ===== F3: ADULT COGNITION & FALSE COHERENCE =====
   {
     slug: "false-coherence",
@@ -732,6 +759,15 @@ const GLOSSARY_TERMS = [
     status: "proposed",
     definition: "The interpersonal pattern produced when emotional distortion is chronic. When SEA is offline, the other person's self-protective responses — setting boundaries, creating distance, naming harm — are experienced as attacks rather than responses. Each boundary set by others becomes another data point in a narrative that feels unassailable from inside — because every boundary genuinely did feel like an attack. The loop is self-sealing: the more the other person protects themselves, the more evidence accumulates; the more evidence accumulates, the more regulatory defence activates; the more regulatory defence activates, the more boundaries are required.",
     tags: ["F3", "SEA", "relational"],
+    framework: 3,
+  },
+  {
+    slug: "common-sense-as-pattern-imprint",
+    title: "Common Sense as Pattern Imprint",
+    type: "concept",
+    status: "proposed",
+    definition: "What feels like obvious truth — 'that's just how the world works' — may be a coherence strategy calibrated in childhood. False coherence from early conditions that cognition preserved and presents as universal wisdom. Connects to F2's tolerance thresholds: what the nervous system learned to endure becomes what cognition treats as normal. This is how individual regulatory patterns become invisible — they feel like common sense rather than learned survival adaptations. The person is not defending a belief; they are experiencing a nervous system state as objective reality.",
+    tags: ["F3", "cognition", "false-coherence"],
     framework: 3,
   },
   // ===== F4: RULES REGULATE =====
@@ -1113,7 +1149,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The addiction-logic framing for chronic Domination: external regulation through subjugation builds tolerance. The mechanism parallels substance addiction — the substance (others' subjugation) provides temporary relief from an internal state that is never processed because SEA is offline. Tolerance builds. Escalation is required. There is no natural stopping point. Power and wealth amplify this mechanism by removing structural constraints and providing unlimited access to regulation sources. 'There is no amount of domination that will make them feel safe — because the safety they need is internal.' SEA cannot come back online through domination. It can only return through the conditions described in F2's healing account: safety, not power.",
-    tags: ["F7", "domination", "escalation"],
+    tags: ["F3", "F7", "domination", "escalation"],
     framework: 7,
   },
   // ===== F8: REPAIRING AWARENESS =====
@@ -1643,10 +1679,19 @@ const GLOSSARY_TERMS = [
     tags: ["M3", "allostatic-load", "gradient"],
     framework: "M3",
   },
+  {
+    slug: "cognitive-management",
+    title: "Cognitive Management",
+    type: "concept",
+    status: "proposed",
+    definition: "M3's term for the mechanism by which cognition attempts to manage an emotional signal it cannot biologically complete. The mind detects the emotion, labels it, redirects attention, and concludes it is handled. Meanwhile, the biological cascade continues: epinephrine sustains arousal, muscles stay braced, cortisol continues releasing, the HPA negative feedback loop does not trigger. Cognitive management reaches awareness, not biology. It is the cognitive track running in parallel with the biological track — and the reason why 'thinking your way through' an emotion does not close the cycle. Related to F3's Cognitive Replacement but named at the physiological level.",
+    tags: ["M3", "cognition", "core-concept"],
+    framework: "M3",
+  },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "162 Terms", href: "#glossary-terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
+  { label: "184 Terms", href: "#glossary-terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
   { label: "Framework Tags", href: "#glossary-search", description: "Each term tagged to its source framework (F1–F12) for cross-reference navigation." },
   { label: "Core Models", href: "#glossary-list", description: "The foundational vocabulary: Inner Compass, Four-Mode Gradient, Three Awareness Capacities, Open Cycle." },
   { label: "Regulation Thread", href: "#glossary-list", description: "Terms tracing the thread from biological signal through developmental calibration to systemic scale." },
