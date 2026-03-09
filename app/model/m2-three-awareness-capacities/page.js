@@ -5,8 +5,9 @@ import {
   AWARENESS, MODE_PINK,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection, PageLayout,
+  SiteHeader, SiteFooter, ModelHero, ModelAnchorStrip,
+  ModelPurpose, OperationalStatement, DrawsFromPanel,
+  ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -20,12 +21,23 @@ const ER_COLOR = AWARENESS.ER;
 const SEA_COLOR = AWARENESS.SEA;
 const RE_CHRONIC = MODE_PINK;  // pink — domination / precision without feedback
 
-const SIDEBAR_SECTIONS = [
-  { label: "Three Capacities", href: "#capacities-online-offline", description: "Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — the calibration system." },
-  { label: "How They Develop", href: "#awareness-teaches-awareness", description: "Each capacity develops through being met by a caregiver who already has that capacity online." },
-  { label: "Configurations", href: "#capacity-configuration", description: "How different combinations of online/offline capacities produce different patterns and chronic modes." },
-  { label: "SEA as Keystone", href: "#sea-self-emotional-awareness", description: "Why Self-Emotional Awareness is the critical variable — present in all healthy modes, absent in all chronic modes." },
-  { label: "Research Foundations", href: "#relationship-to-frameworks", description: "Attachment theory, developmental neuroscience, mentalization, interpersonal neurobiology." },
+const MODEL_COLOR = SPECTRUM.cobalt;
+
+const ANCHOR_SECTIONS = [
+  { label: "Three Capacities", href: "#capacities-online-offline" },
+  { label: "How They Develop", href: "#awareness-teaches-awareness" },
+  { label: "Configurations", href: "#capacity-configuration" },
+  { label: "SEA as Keystone", href: "#sea-self-emotional-awareness" },
+  { label: "Draws From", href: "#relationship-to-frameworks" },
+];
+
+const DRAWS_FROM = [
+  { id: "F2", title: "Awareness Calibration", relation: "Primary source", description: "How awareness capacities develop — or fail to develop — in the relational environment.", href: "/framework/f2-awareness-calibration" },
+  { id: "F3", title: "False Coherence", relation: "Maintains stuckness", description: "How cognition constructs identity around missing capacities, making the absence invisible.", href: "/framework/f3-false-coherence" },
+  { id: "F8", title: "Repairing Awareness", relation: "Repair pathway", description: "How awareness capacities that didn't develop can be rebuilt in adult relational contexts.", href: "/framework/f8-repairing-awareness" },
+  { id: "F10", title: "Generational Bridges", relation: "Transmission", description: "How capacity configurations replicate across generations through the relational environment.", href: "/framework/f10-generational-bridges" },
+  { id: "M1", title: "Inner Compass", relation: "Paired model", description: "The instrument these capacities calibrate. M1 maps what the compass does; M2 maps what determines how well it works.", href: "/model/m1-inner-compass" },
+  { id: "M3", title: "The Biology of Unfinished Emotion", relation: "Paired model", description: "The physiological cascade underneath. What happens in the body when awareness capacities can't process the signal.", href: "/model/m3-the-open-cycle" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -82,14 +94,24 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="MODEL M2"
-            title="Three Awareness Capacities"
-            subtitle="The Calibration System"
-            description="The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. How capacity configurations predict chronic mode, identity, and relational patterns — and how repair develops what was missing."
-          />
+          <>
+            <ModelHero
+              badge="MODEL M2"
+              title="Three Awareness Capacities"
+              subtitle="The Calibration System"
+              description="The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. How capacity configurations predict chronic mode, identity, and relational patterns — and how repair develops what was missing."
+              coreQuestion="What is the current configuration — which capacities had conditions to develop, and which didn't?"
+              drawsFrom={[
+                { label: "F2", href: "/framework/f2-awareness-calibration" },
+                { label: "F3", href: "/framework/f3-false-coherence" },
+                { label: "F8", href: "/framework/f8-repairing-awareness" },
+                { label: "F10", href: "/framework/f10-generational-bridges" },
+              ]}
+              color={MODEL_COLOR}
+            />
+            <ModelAnchorStrip sections={ANCHOR_SECTIONS} color={MODEL_COLOR} />
+          </>
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* ─── DEGRADATION BAR CHART ──────────────────── */}
         <div style={{ margin: "32px 0 0" }}>
@@ -97,9 +119,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           <div
             style={{
               padding: "16px 20px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.06),
+              background: hexToRgba(MODEL_COLOR, 0.06),
               borderRadius: "10px 10px 0 0",
-              border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+              border: `1px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
               borderBottom: "none",
             }}
           >
@@ -107,7 +129,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: SPECTRUM.cobalt,
+                color: MODEL_COLOR,
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
                 fontFamily: FONT.mono,
@@ -139,7 +161,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           <div
             style={{
               overflowX: "auto",
-              border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+              border: `1px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
               borderRadius: "0 0 10px 10px",
             }}
           >
@@ -322,7 +344,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             >
               Core Propositions
             </h2>
-            <PropositionBox label="FOUNDATIONAL CLAIM">
+            <ModelPurpose color={MODEL_COLOR}>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
                   The compass (M1) is the instrument. The three awareness capacities are the calibration system — they determine what data the compass receives, what it can process, and whether the person has access to their own internal state.
@@ -343,7 +365,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   The three capacities were not damaged — they were not developed. Repair means developing what the past did not provide conditions for.
                 </li>
               </ul>
-            </PropositionBox>
+            </ModelPurpose>
           </section>
 
           {/* ─── CONCEPT 1: THREE CAPACITIES AT BIRTH ──── */}
@@ -376,9 +398,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               This connected state is what people remember when they say "when I was a kid, I was just <em>me</em>." Not a memory of a different person hidden underneath. A memory of a capacity state — the three awarenesses connected before anything redirected them.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Being yourself is not a personality. It is what happens when the three capacities are connected.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -425,9 +447,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               When SEA develops, the child gains an observing position — the capacity to separate "this is what I feel" from "this is what is happening around me." When SEA does not develop, the pre-SEA condition persists into adulthood — invisible because the adult has never experienced SEA being online. This is not immaturity. It is unfinished developmental wiring.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               When feedback hits like identity — when I am the feeling rather than having it — that is the pre-SEA condition, not proof that something is wrong with me.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -488,9 +510,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Love does not override what the nervous system embodies. A caregiver can love a child deeply and still transmit an incomplete awareness configuration — because what transmits is what the nervous system carries, not what the heart intends.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -558,7 +580,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               <p style={{
                 ...proseStyle,
                 padding: "12px 16px",
-                background: hexToRgba(SPECTRUM.cobalt, 0.04),
+                background: hexToRgba(MODEL_COLOR, 0.04),
                 borderRadius: 6,
                 fontStyle: "italic",
               }}>
@@ -639,9 +661,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 Without SEA, RE becomes unanchored — reading others' emotions with no internal reference point to ground the reading. Without SEA, ER becomes unfiltered — feeling others' states with no capacity to distinguish "theirs" from "mine." Without SEA, the return has no endpoint — because there is no stable "self" to return to. <strong style={{ color: TEXT.primary }}>SEA provides the internal reference point</strong> that makes all other capacities functional rather than reactive.
               </p>
 
-              <KeyStatement>
+              <OperationalStatement color={MODEL_COLOR}>
                 SEA is the keystone capacity. Without it, RE reads without anchoring, ER resonates without filtering, and the return has no destination.
-              </KeyStatement>
+              </OperationalStatement>
             </div>
 
             <div style={expandableRowStyle}>
@@ -736,9 +758,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               ))}
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Personality is not a type — it is a record of which capacities had conditions to develop and which didn't.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -795,9 +817,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The child doesn't learn to regulate through instruction — the child learns to regulate through being regulated with.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -864,9 +886,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The smooth story should worry you more than the messy one. The smooth one may be false coherence performing integration. The messy one may be someone learning to hold complexity.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -901,9 +923,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               The gap between physiological activation and subjective distress reporting is the tolerance threshold in action. The body registers the harm — cortisol, heart rate, hypervigilance, somatic symptoms. The person reports "I'm fine" or "it wasn't that bad" or "that's just how relationships are." The threshold sits between the body's data and the person's access to it.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Familiar can feel "normal" even when it is costly.
-            </KeyStatement>
+            </OperationalStatement>
 
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>The most consequential configuration for tolerance thresholds:</strong> Flooded ER + absent SEA. The person <em>feels</em> the harm — the body resonates with it, ER is picking up the signal. But without SEA, the person cannot locate it as harm. They feel the pain but cannot name it, cannot source it, cannot use it as data. This is the configuration that produces the highest tolerance for harmful conditions, because the very capacity that would flag the harm (SEA) is the capacity that is missing.
@@ -948,9 +970,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               When an entire culture performs emotional invalidation — "boys don't cry," "don't make a scene," "be strong" — the mechanism operates at population level. The condition produces the culture and the culture reproduces the condition. Individual families cannot easily resist a cultural norm that the surrounding environment continuously reinforces. Cultural override is not a metaphor for social pressure. It is the awareness-teaches-awareness mechanism operating through institutions, media, language norms, and collective regulatory patterns.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The chain replicates until awareness changes, not just behaviour.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -1009,9 +1031,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Every substitute was built because the original was missing. Repair means building the original.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="framework">
@@ -1028,72 +1050,8 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </div>
           </section>
 
-          {/* ─── RELATIONSHIP TO FRAMEWORKS ─────────────── */}
-          <section
-            id="relationship-to-frameworks"
-            aria-labelledby="heading-relationship-to-frameworks"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-relationship-to-frameworks" style={sectionHeadingStyle}>
-              Relationship to Frameworks
-            </h2>
-
-            <p style={proseStyle}>
-              M2 draws on and connects to the following frameworks in the TEG-Blue system. Each framework provides a different lens on the mechanisms described here.
-            </p>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                gap: 12,
-                marginBottom: 24,
-              }}
-            >
-              <FrameworkCard
-                id="F2"
-                title="Awareness Calibration"
-                relation="Primary source"
-                description="The full developmental account of how the three capacities calibrate the compass — the foundational framework behind this model."
-                href="/framework/f2-awareness-calibration"
-              />
-              <FrameworkCard
-                id="F3"
-                title="False Coherence"
-                relation="Maintenance mechanism"
-                description="How cognition maintains the capacity configuration by replacing felt experience with narrative — and why the configuration is so resistant to change."
-                href="/framework/f3-false-coherence"
-              />
-              <FrameworkCard
-                id="F8"
-                title="Repairing Awareness"
-                relation="Repair pathways"
-                description="How the three awareness capacities can be assessed, what conditions enable repair, and why the process is non-linear."
-                href="/framework/f8-repairing-awareness"
-              />
-              <FrameworkCard
-                id="F10"
-                title="Generational Bridges"
-                relation="Cross-generational transmission"
-                description="How awareness configurations transmit across generations and what enables the chain to change."
-                href="/framework/f10-generational-bridges"
-              />
-              <FrameworkCard
-                id="M1"
-                title="Inner Compass"
-                relation="Paired model"
-                description="The instrument that these capacities calibrate. M1 describes the compass and its four modes. M2 describes what determines how the compass is set."
-                href="/model/m1-inner-compass"
-              />
-              <FrameworkCard
-                id="M3"
-                title="The Biology of Unfinished Emotion"
-                relation="Physiological foundation"
-                description="What the body does when the three capacities are not online — the incomplete cycles that accumulate when the return cannot complete. The physical cost of capacity gaps."
-                href="/model/m3-the-open-cycle"
-              />
-            </div>
-          </section>
+          {/* ─── DRAWS FROM ──────────────────────────────── */}
+          <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="m2-three-awareness-capacities" type="framework" />
@@ -1288,11 +1246,11 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 const sectionHeadingStyle = {
   fontSize: 20,
   fontWeight: 700,
-  color: RESEARCHER.accent,
+  color: MODEL_COLOR,
   letterSpacing: "-0.01em",
   marginBottom: 16,
   paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
+  borderBottom: `2px solid ${hexToRgba(MODEL_COLOR, 0.2)}`,
 };
 
 const h3Style = {
@@ -1340,7 +1298,7 @@ const listItemStyle = {
 
 const gridHeaderStyle = {
   padding: "10px 12px",
-  background: hexToRgba(SPECTRUM.cobalt, 0.1),
+  background: hexToRgba(MODEL_COLOR, 0.1),
   borderBottom: `1px solid ${BORDER.default}`,
   fontSize: 12,
   fontWeight: 600,
@@ -1450,27 +1408,6 @@ const PROFILE_CARDS = [
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
 
-function KeyStatement({ children }) {
-  return (
-    <blockquote
-      style={{
-        padding: "16px 20px",
-        margin: "0 0 20px",
-        background: hexToRgba(SPECTRUM.cobalt, 0.06),
-        borderRadius: "0 6px 6px 0",
-        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-        fontSize: 15,
-        fontWeight: 500,
-        color: TEXT.primary,
-        lineHeight: 1.6,
-        fontStyle: "italic",
-      }}
-    >
-      {children}
-    </blockquote>
-  );
-}
-
 function GridCell({ children, first }) {
   return (
     <div
@@ -1488,72 +1425,9 @@ function GridCell({ children, first }) {
   );
 }
 
-function FrameworkCard({ id, title, relation, description, href }) {
-  return (
-    <Link
-      href={href}
-      style={{
-        display: "block",
-        padding: 16,
-        background: gradientCardBg(SPECTRUM.cobalt, 0.06),
-        border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-        borderRadius: 10,
-        textDecoration: "none",
-        transition: "border-color 200ms ease",
-      }}
-    >
-      <div
-        style={{
-          fontSize: 10,
-          fontWeight: 700,
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          fontFamily: FONT.mono,
-          color: SPECTRUM.cobalt,
-          marginBottom: 6,
-        }}
-      >
-        {id}
-      </div>
-      <div
-        style={{
-          fontSize: 15,
-          fontWeight: 600,
-          color: TEXT.primary,
-          marginBottom: 4,
-        }}
-      >
-        {title}
-      </div>
-      <div
-        style={{
-          fontSize: 11,
-          fontWeight: 500,
-          color: SPECTRUM.cobalt,
-          fontFamily: FONT.mono,
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-          marginBottom: 8,
-        }}
-      >
-        {relation}
-      </div>
-      <div
-        style={{
-          fontSize: 13,
-          color: TEXT.secondary,
-          lineHeight: 1.6,
-        }}
-      >
-        {description}
-      </div>
-    </Link>
-  );
-}
-
 function NavRow({ label, href, linkText, external }) {
   const linkStyle = {
-    color: SPECTRUM.blue,
+    color: MODEL_COLOR,
     textDecoration: "none",
     fontWeight: 500,
   };

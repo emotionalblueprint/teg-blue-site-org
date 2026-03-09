@@ -23,6 +23,13 @@ export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
 export { default as FrameworkTerms } from "./FrameworkTerms";
 
+// Model components
+export { default as ModelHero } from "./ModelHero";
+export { default as ModelAnchorStrip } from "./ModelAnchorStrip";
+export { default as ModelPurpose } from "./ModelPurpose";
+export { default as OperationalStatement } from "./OperationalStatement";
+export { default as DrawsFromPanel } from "./DrawsFromPanel";
+
 // Visualizations
 export { default as CompassBar } from "./CompassBar";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";

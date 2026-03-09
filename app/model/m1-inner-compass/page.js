@@ -4,9 +4,9 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection,
-  FluidCompassExplorer, PageLayout,
+  SiteHeader, SiteFooter, ModelHero, ModelAnchorStrip,
+  ModelPurpose, OperationalStatement, DrawsFromPanel,
+  ExpandableSection, FluidCompassExplorer, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -14,12 +14,24 @@ import {
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
 
-const SIDEBAR_SECTIONS = [
-  { label: "The Compass", href: "#inner-compass", description: "The Inner Compass as a continuous gradient — not four boxes but a fluid needle tracking nervous system state." },
-  { label: "Four Modes", href: "#four-modes", description: "Connection, Protection, Control, Domination — what each position means and how they relate." },
-  { label: "How the Needle Moves", href: "#regulation-the-return", description: "What makes the compass fluid versus stuck. Health is mobility, not position." },
-  { label: "Mode Architecture", href: "#state-determines-capacity", description: "How mode position determines what a person can perceive, think, feel, and do." },
-  { label: "Research Foundations", href: "#relationship-to-frameworks", description: "The established theories the compass model draws from — polyvagal theory, affective neuroscience, attachment." },
+const MODEL_COLOR = SPECTRUM.azure;
+
+const ANCHOR_SECTIONS = [
+  { label: "The Compass", href: "#inner-compass" },
+  { label: "Four Modes", href: "#four-modes" },
+  { label: "The Gradient", href: "#the-gradient" },
+  { label: "Mode Architecture", href: "#state-determines-capacity" },
+  { label: "Regulation", href: "#regulation-the-return" },
+  { label: "Draws From", href: "#relationship-to-frameworks" },
+];
+
+const DRAWS_FROM = [
+  { id: "F1", title: "The Emotional Gradient", relation: "Primary source", description: "The full scientific foundation for the compass, the four modes, and biological restoration. M1 is the applied tool; F1 is the depth account.", href: "/framework/f1-emotional-gradient" },
+  { id: "F3", title: "False Coherence", relation: "Maintains stuckness", description: "What maintains a stuck compass. How identity forms around the mode, making the stuckness invisible from the inside.", href: "/framework/f3-false-coherence" },
+  { id: "F7", title: "Domination Regulates", relation: "Escalation", description: "Escalation across the gradient. How Control crosses into Domination, and how tolerance builds.", href: "/framework/f7-domination-regulates" },
+  { id: "F12", title: "The Two Information Systems", relation: "Architecture", description: "The underlying architecture. Why understanding doesn't change the compass. Why experience does.", href: "/framework/f12-two-information-systems" },
+  { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.", href: "/model/m2-three-awareness-capacities" },
+  { id: "M3", title: "The Biology of Unfinished Emotion", relation: "Paired model", description: "The biological cascade underneath the compass. What the body does when the return is blocked.", href: "/model/m3-the-open-cycle" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -76,14 +88,24 @@ export default function M1InnerCompassPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="MODEL M1"
-            title="Inner Compass & Four-Mode Gradient"
-            subtitle="The Instrument"
-            description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
-          />
+          <>
+            <ModelHero
+              badge="MODEL M1"
+              title="Inner Compass & Four-Mode Gradient"
+              subtitle="The Instrument"
+              description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
+              coreQuestion="Where is the needle, can it move, and what does the person have access to from where they are?"
+              drawsFrom={[
+                { label: "F1", href: "/framework/f1-emotional-gradient" },
+                { label: "F3", href: "/framework/f3-false-coherence" },
+                { label: "F7", href: "/framework/f7-domination-regulates" },
+                { label: "F12", href: "/framework/f12-two-information-systems" },
+              ]}
+              color={MODEL_COLOR}
+            />
+            <ModelAnchorStrip sections={ANCHOR_SECTIONS} color={MODEL_COLOR} />
+          </>
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* ─── FLUID COMPASS EXPLORER ──────────────────────── */}
         <FluidCompassExplorer />
@@ -101,7 +123,7 @@ export default function M1InnerCompassPage() {
             >
               Core Propositions
             </h2>
-            <PropositionBox label="CORE PROPOSITIONS">
+            <ModelPurpose color={MODEL_COLOR}>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
                   Emotions are the nervous system's signalling language — the medium through which the body's continuous evaluation of safety and threat reaches the rest of the organism
@@ -131,7 +153,7 @@ export default function M1InnerCompassPage() {
                   Two parallel information systems — emotional-somatic (fast, unconscious) and cognitive-logical (slower, conscious) — run simultaneously; understanding is cognitive, but the compass is somatic
                 </li>
               </ul>
-            </PropositionBox>
+            </ModelPurpose>
           </section>
 
           {/* ─── CONCEPT 1: SIGNALLING LANGUAGE ─────────── */}
@@ -157,9 +179,9 @@ export default function M1InnerCompassPage() {
               This is the body's first language. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it added a second one. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. The body keeps talking whether cognition listens or not.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The clinical shift: from "emotion regulation" (emotions need controlling) to "signal interpretation" (emotions carry information that needs reading). The question is not "how do I manage this emotion?" but "what is this signal telling me?"
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -196,9 +218,9 @@ export default function M1InnerCompassPage() {
               This evaluation is automatic, continuous, and below conscious awareness. Porges (2011) named this process <em>neuroception</em> — the nervous system's subconscious detection of safety and danger cues. It evaluates <em>experienced safety</em>, not objective danger. This is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has learned to recognise as safe or threatening, which may not match current reality.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Am I reacting to what is actually happening, or to what my nervous system learned to expect?
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -238,9 +260,9 @@ export default function M1InnerCompassPage() {
               A <strong style={{ color: TEXT.primary }}>stuck compass</strong> is one where the needle has lost its capacity to move. What should have been a temporary orientation becomes a chronic position. The person does not experience this as being stuck — they experience it as "just who I am." False coherence (F3) constructs identity around the locked position, making the stuckness invisible from the inside.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Health is not a state. Health is a capacity. Not where the needle is, but whether it can move.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -325,9 +347,9 @@ export default function M1InnerCompassPage() {
               In a calibrated compass, Control is deliberate, time-limited, and returnable. The system registers that Protection is not enough — the situation requires structure, coordination, or strategic action under pressure. Cognition is recruited. The sequence is strategic: Anticipate, Manage, Override. When the situation resolves, cognition stands down. The compass moves back. Control was a tool. It was used. It was released.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Connection and Protection happen to you. Control and Domination are what cognition does when recruited into threat service.
-            </KeyStatement>
+            </OperationalStatement>
 
             <h3 style={h3Style}>Domination</h3>
             <p style={proseStyle}>
@@ -372,9 +394,9 @@ export default function M1InnerCompassPage() {
               The gradient makes the proportionality question visible. The question is not "which box?" but "where on the gradient, and moving in which direction?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The question is not "which box?" but "where on the gradient, and moving in which direction?"
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -450,9 +472,9 @@ export default function M1InnerCompassPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Restore safety first, then expect capacity. If a person cannot learn, cannot empathise, cannot think flexibly — the first question is not "what is wrong with this person?" The first question is: where is their compass?
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -561,9 +583,9 @@ export default function M1InnerCompassPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Assess mode position, not the emotion. Anger in Connection and anger in Domination are the same signal producing entirely different outcomes.
-            </KeyStatement>
+            </OperationalStatement>
 
             {/* Mode Lens — Social & Cultural Constructs */}
             <h3 style={h3Style}>Mode Lens — Social &amp; Cultural Constructs</h3>
@@ -710,9 +732,9 @@ export default function M1InnerCompassPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               When the return is missing, the compass gets stuck. What should have been temporary becomes permanent.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -928,9 +950,9 @@ export default function M1InnerCompassPage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The person in chronic Control is not "a controlling person." They are a person whose compass has been stuck in Control — likely since childhood — because the return was never learned.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
@@ -974,9 +996,9 @@ export default function M1InnerCompassPage() {
               Hundreds of milliseconds. Conscious. Explanation-based. Fast to update. This is the system that processes information, constructs narratives, plans, analyses. It can update instantly with new information. It can understand a concept in a single conversation. But it does not run the compass. Cognition can understand a pattern without being able to change it — because understanding is cognitive and the compass is somatic.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Understanding is cognitive. The compass is somatic. More cognition doesn't move a somatic compass. What moves the compass is experience.
-            </KeyStatement>
+            </OperationalStatement>
 
             <p style={proseStyle}>
               This explains the insight-behaviour gap — the universal experience of understanding something clearly and being unable to act on it. The cognitive system has the information. The somatic system has not received it. They are running on different timescales, learning from different inputs. Cognitive insight moves the cognitive system. Only experience moves the somatic one.
@@ -1001,169 +1023,7 @@ export default function M1InnerCompassPage() {
           </section>
 
           {/* ─── RELATIONSHIP TO FRAMEWORKS ──────────────── */}
-          <section
-            id="relationship-to-frameworks"
-            aria-labelledby="heading-relationship-to-frameworks"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-relationship-to-frameworks"
-              style={sectionHeadingStyle}
-            >
-              Relationship to Frameworks
-            </h2>
-
-            <p style={proseStyle}>
-              M1 is the applied instrument. The frameworks provide the depth scientific architecture behind it. M1 draws most directly from these frameworks:
-            </p>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: 12,
-                marginBottom: 24,
-              }}
-            >
-              {/* F1 Card */}
-              <Link
-                href="/framework/f1-emotional-gradient"
-                style={{
-                  padding: 16,
-                  background: hexToRgba(SPECTRUM.azure, 0.06),
-                  borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.azure, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  F1
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  The Emotional Gradient
-                </div>
-                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
-                  Primary source. The full scientific foundation for the compass, the four modes, and biological restoration. M1 is the applied tool; F1 is the depth account.
-                </div>
-              </Link>
-
-              {/* F3 Card */}
-              <Link
-                href="/framework/f3-false-coherence"
-                style={{
-                  padding: 16,
-                  background: hexToRgba(SPECTRUM.azure, 0.06),
-                  borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.azure, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  F3
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  False Coherence
-                </div>
-                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
-                  What maintains a stuck compass. How identity forms around the mode, making the stuckness invisible from the inside.
-                </div>
-              </Link>
-
-              {/* F7 Card */}
-              <Link
-                href="/framework/f7-domination-regulates"
-                style={{
-                  padding: 16,
-                  background: hexToRgba(SPECTRUM.azure, 0.06),
-                  borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.azure, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  F7
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  Domination Regulates
-                </div>
-                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
-                  Escalation across the gradient. How Control crosses into Domination, and how tolerance builds.
-                </div>
-              </Link>
-
-              {/* F12 Card */}
-              <Link
-                href="/framework/f12-two-information-systems"
-                style={{
-                  padding: 16,
-                  background: hexToRgba(SPECTRUM.azure, 0.06),
-                  borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.azure, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  F12
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  The Two Information Systems
-                </div>
-                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
-                  The underlying architecture. Why understanding doesn't change the compass. Why experience does.
-                </div>
-              </Link>
-
-              {/* M2 Card */}
-              <Link
-                href="/model/m2-three-awareness-capacities"
-                style={{
-                  padding: 16,
-                  background: hexToRgba(SPECTRUM.azure, 0.06),
-                  borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.azure, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  M2
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  Three Awareness Capacities
-                </div>
-                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
-                  Paired model — the calibration. What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.
-                </div>
-              </Link>
-
-              {/* M3 Card */}
-              <Link
-                href="/model/m3-the-open-cycle"
-                style={{
-                  padding: 16,
-                  background: hexToRgba(SPECTRUM.indigo, 0.06),
-                  borderRadius: 8,
-                  border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 600, color: SPECTRUM.indigo, fontFamily: FONT.mono, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  M3
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                  The Biology of Unfinished Emotion
-                </div>
-                <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
-                  Paired model — the physiology. The biological cascade underneath the compass. What the body does when the return is blocked, why the needle gets stuck, and what completion actually requires.
-                </div>
-              </Link>
-            </div>
-          </section>
+          <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="m1-inner-compass" type="model" />
@@ -1355,11 +1215,11 @@ export default function M1InnerCompassPage() {
 const sectionHeadingStyle = {
   fontSize: 20,
   fontWeight: 700,
-  color: RESEARCHER.accent,
+  color: MODEL_COLOR,
   letterSpacing: "-0.01em",
   marginBottom: 16,
   paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
+  borderBottom: `2px solid ${hexToRgba(MODEL_COLOR, 0.2)}`,
 };
 
 const h3Style = {
@@ -1391,19 +1251,6 @@ const propositionItemStyle = {
   marginBottom: 8,
 };
 
-const keyStatementStyle = {
-  margin: 0,
-  padding: "16px 20px",
-  borderLeft: `3px solid ${SPECTRUM.azure}`,
-  background: hexToRgba(SPECTRUM.azure, 0.06),
-  borderRadius: "0 6px 6px 0",
-  fontSize: 15,
-  fontWeight: 500,
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  marginBottom: 20,
-};
-
 const expandableRowStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -1413,7 +1260,7 @@ const expandableRowStyle = {
 
 const gridHeaderStyle = {
   padding: "10px 12px",
-  background: hexToRgba(SPECTRUM.azure, 0.1),
+  background: hexToRgba(MODEL_COLOR, 0.1),
   borderBottom: `1px solid ${BORDER.default}`,
   fontSize: 12,
   fontWeight: 600,
@@ -1442,30 +1289,9 @@ const navThStyle = {
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
 
-function KeyStatement({ children }) {
-  return (
-    <blockquote
-      style={{
-        padding: "16px 20px",
-        margin: "0 0 16px",
-        background: hexToRgba(SPECTRUM.azure, 0.06),
-        borderRadius: 8,
-        borderLeft: `4px solid ${SPECTRUM.azure}`,
-        fontSize: 15,
-        fontWeight: 500,
-        color: TEXT.primary,
-        lineHeight: 1.6,
-        fontStyle: "italic",
-      }}
-    >
-      {children}
-    </blockquote>
-  );
-}
-
 function NavRow({ label, href, linkText, external }) {
   const linkStyle = {
-    color: SPECTRUM.azure,
+    color: MODEL_COLOR,
     textDecoration: "none",
     fontWeight: 500,
   };

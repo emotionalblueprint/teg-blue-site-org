@@ -1,11 +1,12 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
-  PropositionBox, ExpandableSection, PageLayout,
+  SiteHeader, SiteFooter, ModelHero, ModelAnchorStrip,
+  ModelPurpose, OperationalStatement, DrawsFromPanel,
+  ExpandableSection, PageLayout,
 } from "@/src/components";
 import OpenCycleExplorer from "@/src/components/OpenCycleExplorer";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -14,12 +15,24 @@ import {
   generateFAQJsonLd,
 } from "@/src/lib/jsonld";
 
-const SIDEBAR_SECTIONS = [
-  { label: "The Cycle", href: "#threat-cascade", description: "What happens in the body when the emotional cycle completes — the biological restoration sequence." },
-  { label: "Cognitive Management", href: "#override", description: "What happens when the cycle is interrupted — residue, accumulation, threshold crossing." },
-  { label: "Stress Cycle Completion", href: "#completion", description: "How the body was designed to return from threat to safety. The mechanism at the centre of repair." },
-  { label: "System-by-System", href: "#stays-active", description: "How each body system processes and clears threat activation — cortisol, muscle tension, breath." },
-  { label: "Research Foundations", href: "#relationship-to-frameworks", description: "Somatic experiencing, polyvagal theory, stress physiology, allostatic load research." },
+const MODEL_COLOR = SPECTRUM.indigo;
+
+const ANCHOR_SECTIONS = [
+  { label: "The Cycle", href: "#threat-cascade" },
+  { label: "Cognitive Management", href: "#override" },
+  { label: "Stress Cycle Completion", href: "#completion" },
+  { label: "System-by-System", href: "#stays-active" },
+  { label: "Draws From", href: "#relationship-to-frameworks" },
+];
+
+const DRAWS_FROM = [
+  { id: "F1", title: "Emotions as Biological Information", relation: "Primary source", description: "Names the process M3 maps physiologically. Biological Restoration — The Fork.", href: "/framework/f1-emotional-gradient" },
+  { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why restoration fails — the awareness capacities that should facilitate the return.", href: "/framework/f2-awareness-calibration" },
+  { id: "F3", title: "False Coherence", relation: "Cognitive maintenance", description: "How cognition constructs coherence over unfinished cycles, hiding the residue.", href: "/framework/f3-false-coherence" },
+  { id: "F8", title: "Repairing Awareness", relation: "Repair pathway", description: "How unfinished cycles can begin completing in safe relational contexts.", href: "/framework/f8-repairing-awareness" },
+  { id: "F12", title: "Two Information Systems", relation: "Architecture", description: "Why cognitive understanding cannot close a somatic cycle. The two-system explanation.", href: "/framework/f12-two-information-systems" },
+  { id: "M1", title: "Inner Compass", relation: "Paired model", description: "The compass that gets stuck when cycles don't complete. M3 explains the biology of why.", href: "/model/m1-inner-compass" },
+  { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "The capacities that determine whether the cycle can be felt, read, and allowed to complete.", href: "/model/m2-three-awareness-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -76,14 +89,25 @@ export default function M3TheOpenCyclePage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="MODEL M3"
-            title="The Biology of Unfinished Emotion"
-            subtitle="Biological Restoration — The Fork"
-            description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
-          />
+          <>
+            <ModelHero
+              badge="MODEL M3"
+              title="The Biology of Unfinished Emotion"
+              subtitle="Biological Restoration — The Fork"
+              description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
+              coreQuestion="What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?"
+              drawsFrom={[
+                { label: "F1", href: "/framework/f1-emotional-gradient" },
+                { label: "F2", href: "/framework/f2-awareness-calibration" },
+                { label: "F3", href: "/framework/f3-false-coherence" },
+                { label: "F8", href: "/framework/f8-repairing-awareness" },
+                { label: "F12", href: "/framework/f12-two-information-systems" },
+              ]}
+              color={MODEL_COLOR}
+            />
+            <ModelAnchorStrip sections={ANCHOR_SECTIONS} color={MODEL_COLOR} />
+          </>
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* ─── INTERACTIVE DIAGRAM ──────────────────────── */}
         <OpenCycleExplorer />
@@ -98,7 +122,7 @@ export default function M3TheOpenCyclePage() {
               maxWidth: 720,
               marginBottom: 32,
               padding: "16px 20px",
-              borderLeft: `2px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+              borderLeft: `2px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
               fontStyle: "italic",
             }}
           >
@@ -117,7 +141,7 @@ export default function M3TheOpenCyclePage() {
             >
               Core Propositions
             </h2>
-            <PropositionBox label="CORE PROPOSITIONS">
+            <ModelPurpose color={MODEL_COLOR}>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
                   When the nervous system perceives a threat, a precise biological cascade activates — hormonal, neurochemical, and organ-level — before any conscious thought forms
@@ -141,7 +165,7 @@ export default function M3TheOpenCyclePage() {
                   This is the physiological substrate that explains why the gradient exists — why regulation substitutes multiply, why the compass gets stuck, why insight alone does not produce change
                 </li>
               </ul>
-            </PropositionBox>
+            </ModelPurpose>
           </section>
 
           {/* ─── CONNECTING SCIENCES FRAMING ──────────────── */}
@@ -153,7 +177,7 @@ export default function M3TheOpenCyclePage() {
               maxWidth: 720,
               marginBottom: 48,
               padding: "16px 20px",
-              borderLeft: `2px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+              borderLeft: `2px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
               fontStyle: "italic",
             }}
           >
@@ -189,9 +213,9 @@ export default function M3TheOpenCyclePage() {
               The body is doing exactly what it was designed to do. The problem is not the cascade. The problem is what happens — or does not happen — next.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The body had already begun responding before the mind had decided whether the threat was real. This sequencing is not a design flaw. It is a survival feature. But it means the physiological response cannot simply be cancelled by deciding the emotion is unnecessary.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
@@ -239,9 +263,9 @@ export default function M3TheOpenCyclePage() {
               The liver metabolizes the cortisol over twenty minutes to several hours. Serotonin, GABA, and oxytocin normalize. The prefrontal cortex receives restored blood flow. Executive function, flexibility, and language return. The hippocampus encodes the experience with context — not as raw threat but as a processed event with a before and after. The cycle closes. The body returns to baseline. Allostatic load: nothing added.
             </p>
 
-            <KeyStatement>
-              The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. What is commonly called {"\""}regulation{"\""} is often its opposite — see <Link href="/framework/f1-emotional-gradient#the-fork" style={{ color: SPECTRUM.indigo }}>F1: The Fork</Link> for the full account of this distinction.
-            </KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
+              The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. What is commonly called {"\""}regulation{"\""} is often its opposite — see <Link href="/framework/f1-emotional-gradient#the-fork" style={{ color: MODEL_COLOR }}>F1: The Fork</Link> for the full account of this distinction.
+            </OperationalStatement>
 
             <Link
               href="/framework/f1-emotional-gradient#the-fork"
@@ -249,19 +273,19 @@ export default function M3TheOpenCyclePage() {
                 display: "block",
                 padding: "16px 20px",
                 margin: "0 0 16px",
-                background: hexToRgba(SPECTRUM.indigo, 0.06),
-                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+                background: hexToRgba(MODEL_COLOR, 0.06),
+                border: `1px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
                 borderRadius: 8,
                 textDecoration: "none",
               }}
             >
-              <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: SPECTRUM.indigo, marginBottom: 6 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: MODEL_COLOR, marginBottom: 6 }}>
                 F1 &middot; This process has a name
               </div>
               <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
                 F1 calls this Biological Restoration — The Fork of all twelve frameworks. F1 maps the design and the pathways. M3 maps the physiology underneath.
               </div>
-              <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.indigo }}>
+              <div style={{ fontSize: 13, fontWeight: 500, color: MODEL_COLOR }}>
                 Read the design &rarr;
               </div>
             </Link>
@@ -315,9 +339,9 @@ export default function M3TheOpenCyclePage() {
               The next time a threat is perceived, the response fires from an already-elevated baseline. It activates faster, reaches higher, and takes longer to subside. Each override makes the next one more likely and more costly.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               What the override removes is access to the signal — not the signal itself. The body is already feeling it. There is no version of {"'"}deciding{"'"} an emotion is not there that changes the physiological fact of it. The cherry is there. Deciding it is invisible is not the same as it not being there.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
@@ -390,9 +414,9 @@ export default function M3TheOpenCyclePage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The accumulation is not in the mind. It is in the cortisol receptor density, the hippocampal volume, the vagal tone, the amygdala sensitivity threshold. Understanding the accumulation cognitively does not reverse it — because the understanding happens in the cognitive system and the accumulation happened in the biological one.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
@@ -451,9 +475,9 @@ export default function M3TheOpenCyclePage() {
               </div>
             </div>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               The gradient moves in one direction under load not because people choose to become more controlling or more dominating, but because a nervous system running on an increasingly sensitised amygdala and increasingly depleted serotonin has a narrowing window of available response. The gradient is not a moral spectrum. It is a biological one.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
@@ -504,9 +528,9 @@ export default function M3TheOpenCyclePage() {
               What moves the cycle is what the cycle was designed to respond to: somatic discharge, parasympathetic engagement, cortisol clearance, co-regulation. These are biological inputs for a biological process. Cognition can support the conditions for these inputs — it can choose to rest, to move, to be with a regulated other. But it cannot substitute for them.
             </p>
 
-            <KeyStatement>
+            <OperationalStatement color={MODEL_COLOR}>
               Understanding is cognitive. The cycle is biological. More understanding does not close an open biological cycle. What closes it is what the body was always waiting for — completion.
-            </KeyStatement>
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
@@ -608,82 +632,8 @@ export default function M3TheOpenCyclePage() {
             </div>
           </section>
 
-          {/* ─── RELATIONSHIP TO FRAMEWORKS ──────────────── */}
-          <section
-            id="relationship-to-frameworks"
-            aria-labelledby="heading-relationship-to-frameworks"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-relationship-to-frameworks"
-              style={sectionHeadingStyle}
-            >
-              Relationship to Frameworks
-            </h2>
-
-            <p style={proseStyle}>
-              M3 is the physiological foundation. The frameworks provide the depth architecture behind it.
-            </p>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                gap: 12,
-                marginBottom: 24,
-              }}
-            >
-              <FrameworkCard
-                id="F1"
-                title="Emotions as Biological Information"
-                relation="Primary source"
-                description="M3 is the physiological depth account of what F1 names Biological Restoration — The Fork. F1 establishes the signal, the modes, and the Fork as the pivot point. M3 traces the biology underneath: what the cascade is, what Stress Cycle Completion requires, what Cognitive Management does instead, and what Allostatic Load costs."
-                href="/framework/f1-emotional-gradient"
-              />
-              <FrameworkCard
-                id="F2"
-                title="Awareness Calibration"
-                relation="Developmental origin"
-                description="F2 explains how the capacity to receive the signal fails to develop. M3 explains what the signal does when access collapses: it does not stop."
-                href="/framework/f2-awareness-calibration"
-              />
-              <FrameworkCard
-                id="F3"
-                title="False Coherence"
-                relation="Cognitive consequence"
-                description="F3 is what fills the space of an unprocessed open cycle — the cognitive framework built to make the unresolved state feel resolved."
-                href="/framework/f3-false-coherence"
-              />
-              <FrameworkCard
-                id="F8"
-                title="Repairing Awareness"
-                relation="Repair pathway"
-                description="SEA is the gateway to biological completion. When SEA is offline, the cycle cannot begin to close because the person has no access to the discharge phase."
-                href="/framework/f8-repairing-awareness"
-              />
-              <FrameworkCard
-                id="F12"
-                title="Two Information Systems"
-                relation="Capstone explanation"
-                description="F12 is why insight does not change the compass. M3 is the physiological mechanism: the cognitive system and the biological cycle are separate systems with different update requirements."
-                href="/framework/f12-two-information-systems"
-              />
-              <FrameworkCard
-                id="M1"
-                title="Inner Compass"
-                relation="Paired model"
-                description="M1 is the instrument. M3 is what happens inside it when the return is missing. The stuck compass is a compass with a chronically open cycle."
-                href="/model/m1-inner-compass"
-              />
-              <FrameworkCard
-                id="M2"
-                title="Three Awareness Capacities"
-                relation="Paired model"
-                description="M2 describes the calibration system. M3 explains what happens when the calibration fails: the signal runs without access, the cycle stays open."
-                href="/model/m2-three-awareness-capacities"
-              />
-            </div>
-          </section>
+          {/* ─── DRAWS FROM ──────────────────────────────── */}
+          <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="m3-the-open-cycle" type="model" />
@@ -886,11 +836,11 @@ export default function M3TheOpenCyclePage() {
 const sectionHeadingStyle = {
   fontSize: 20,
   fontWeight: 700,
-  color: RESEARCHER.accent,
+  color: MODEL_COLOR,
   letterSpacing: "-0.01em",
   marginBottom: 16,
   paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.indigo, 0.2)}`,
+  borderBottom: `2px solid ${hexToRgba(MODEL_COLOR, 0.2)}`,
 };
 
 const h3Style = {
@@ -931,7 +881,7 @@ const expandableRowStyle = {
 
 const gridHeaderStyle = {
   padding: "10px 12px",
-  background: hexToRgba(SPECTRUM.indigo, 0.1),
+  background: hexToRgba(MODEL_COLOR, 0.1),
   borderBottom: `1px solid ${BORDER.default}`,
   fontSize: 12,
   fontWeight: 600,
@@ -952,27 +902,6 @@ const navThStyle = {
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
 
-function KeyStatement({ children }) {
-  return (
-    <blockquote
-      style={{
-        padding: "16px 20px",
-        margin: "0 0 16px",
-        background: hexToRgba(SPECTRUM.indigo, 0.06),
-        borderRadius: "0 6px 6px 0",
-        borderLeft: `3px solid ${SPECTRUM.indigo}`,
-        fontSize: 15,
-        fontWeight: 500,
-        color: TEXT.primary,
-        lineHeight: 1.6,
-        fontStyle: "italic",
-      }}
-    >
-      {children}
-    </blockquote>
-  );
-}
-
 function GridCell({ children, first }) {
   return (
     <div
@@ -990,72 +919,9 @@ function GridCell({ children, first }) {
   );
 }
 
-function FrameworkCard({ id, title, relation, description, href }) {
-  return (
-    <Link
-      href={href}
-      style={{
-        display: "block",
-        padding: 16,
-        background: hexToRgba(SPECTRUM.indigo, 0.06),
-        border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
-        borderRadius: 10,
-        textDecoration: "none",
-        transition: "border-color 200ms ease",
-      }}
-    >
-      <div
-        style={{
-          fontSize: 10,
-          fontWeight: 700,
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          fontFamily: FONT.mono,
-          color: SPECTRUM.indigo,
-          marginBottom: 6,
-        }}
-      >
-        {id}
-      </div>
-      <div
-        style={{
-          fontSize: 15,
-          fontWeight: 600,
-          color: TEXT.primary,
-          marginBottom: 4,
-        }}
-      >
-        {title}
-      </div>
-      <div
-        style={{
-          fontSize: 11,
-          fontWeight: 500,
-          color: SPECTRUM.indigo,
-          fontFamily: FONT.mono,
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-          marginBottom: 8,
-        }}
-      >
-        {relation}
-      </div>
-      <div
-        style={{
-          fontSize: 13,
-          color: TEXT.secondary,
-          lineHeight: 1.6,
-        }}
-      >
-        {description}
-      </div>
-    </Link>
-  );
-}
-
 function NavRow({ label, href, linkText, external }) {
   const linkStyle = {
-    color: SPECTRUM.indigo,
+    color: MODEL_COLOR,
     textDecoration: "none",
     fontWeight: 500,
   };
