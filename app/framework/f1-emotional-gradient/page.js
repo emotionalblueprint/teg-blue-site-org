@@ -182,7 +182,7 @@ export default function F1EmotionalGradientPage() {
             <CycleBox highlight={["Signal Detection", "Neuroception", "Emotion", "Autonomic Response"]} />
 
             <p style={proseStyle}>
-              F1 defines the complete system: how the body detects and signals threat, how the compass orients across four modes, how Biological Restoration completes the cycle, and what the full trajectory looks like from signal to social structure. Every concept named here is elaborated across the remaining eleven frameworks.
+              F1 defines the <strong style={{ color: TEXT.primary }}>complete system</strong>: how the body detects and signals threat, how the compass orients across four modes, how Biological Restoration completes the cycle, and what the full trajectory looks like from signal to social structure. Every concept named here is elaborated across the remaining eleven frameworks.
             </p>
             <p style={{
               ...proseStyle,
@@ -222,7 +222,7 @@ export default function F1EmotionalGradientPage() {
 
               <h4 style={subheadingStyle}>What It Is</h4>
               <p style={proseStyle}>
-                An emotion begins before awareness. The process is distributed across multiple systems working in parallel — not a single brain region generating a feeling, but a whole-body coordination between neural, endocrine, and autonomic systems producing a signal the organism can act on.
+                An emotion <strong style={{ color: TEXT.primary }}>begins before awareness</strong>. The process is distributed across multiple systems working in parallel — not a single brain region generating a feeling, but a <strong style={{ color: TEXT.primary }}>whole-body coordination</strong> between neural, endocrine, and autonomic systems producing a signal the organism can act on.
               </p>
 
               <h4 style={subheadingStyle}>The neural architecture</h4>
@@ -247,7 +247,7 @@ export default function F1EmotionalGradientPage() {
 
               <h4 style={subheadingStyle}>What this means for F1</h4>
               <p style={proseStyle}>
-                Every concept in this framework describes a biological event. When Connection broadens perception, it is because the vagal brake is engaged and the prefrontal cortex has access to its full range. When Protection narrows attention, it is because cortisol and adrenaline have reorganised the system for speed, not nuance. When Biological Restoration completes, specific molecules clear, specific systems re-engage, and the body physically returns to its baseline state. The metaphors in this framework are not approximations — they are descriptions of measurable biological processes.
+                Every concept in this framework describes a <strong style={{ color: TEXT.primary }}>biological event</strong>. When Connection broadens perception, it is because the vagal brake is engaged and the prefrontal cortex has access to its full range. When Protection narrows attention, it is because cortisol and adrenaline have reorganised the system for speed, not nuance. When Biological Restoration completes, specific molecules clear, specific systems re-engage, and the body physically returns to its baseline state. The metaphors in this framework are not approximations — they are descriptions of <strong style={{ color: SPECTRUM.cobalt }}>measurable biological processes</strong>.
               </p>
 
               <div style={expandableRowStyle}>
@@ -282,13 +282,13 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                The nervous system runs a distributed evaluation process — across the gut, the heart, the muscles, the vagus nerve, the amygdala — that assesses the environment continuously, below conscious awareness. This evaluation produces a finding: safe enough, or threat. Emotions are how the finding gets delivered. They are the signal that carries the evaluation from the body's detection systems to the organism's response systems.
+                The nervous system runs a <strong style={{ color: TEXT.primary }}>distributed evaluation process</strong> — across the gut, the heart, the muscles, the vagus nerve, the amygdala — that assesses the environment continuously, below conscious awareness. This evaluation produces a finding: safe enough, or threat. Emotions are how the finding gets delivered. They are the <strong style={{ color: TEXT.primary }}>signal</strong> that carries the evaluation from the body's detection systems to the organism's response systems.
               </p>
               <p style={proseStyle}>
-                Fear is the nervous system's signal that its evaluation found threat. Joy is the signal that the evaluation found safety and connection. Anger signals that a boundary has been crossed. Each emotion carries specific information about what the evaluation detected — and each orients the organism toward a specific response.
+                <strong style={{ color: TEXT.primary }}>Fear</strong> is the nervous system's signal that its evaluation found threat. <strong style={{ color: TEXT.primary }}>Joy</strong> is the signal that the evaluation found safety and connection. <strong style={{ color: TEXT.primary }}>Anger</strong> signals that a boundary has been crossed. Each emotion carries <strong style={{ color: TEXT.primary }}>specific information</strong> about what the evaluation detected — and each orients the organism toward a specific response.
               </p>
               <p style={proseStyle}>
-                This is the body's first language. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it added a second one. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. The body keeps talking whether cognition listens or not — <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
+                This is the <strong style={{ color: SPECTRUM.cobalt }}>body's first language</strong>. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it <strong style={{ color: TEXT.primary }}>added a second one</strong>. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. <strong style={{ color: TEXT.primary }}>The body keeps talking whether cognition listens or not</strong> — <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
               <p style={proseStyle}>
                 This shifts the foundational stance from "emotion regulation" (implying emotions need controlling) to "signal interpretation" (implying emotions carry information that needs reading). The question is not "how do I manage this emotion?" but <strong style={{ color: TEXT.primary }}>"what is this signal telling me?"</strong>
@@ -326,10 +326,10 @@ export default function F1EmotionalGradientPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                This evaluation is automatic, continuous, and below conscious awareness. It determines whether learning is possible or defense is required, whether trust is available or verification is needed, whether vulnerability is safe or control is necessary.
+                This evaluation is <strong style={{ color: TEXT.primary }}>automatic, continuous, and below conscious awareness</strong>. It determines whether learning is possible or defense is required, whether trust is available or verification is needed, whether vulnerability is safe or control is necessary.
               </p>
               <p style={proseStyle}>
-                The evaluation assesses <em>experienced safety</em>, not objective danger — which is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has learned to recognize as safe or threatening, which may not match current reality. This is not a flaw. It is a design feature optimized for survival.
+                The evaluation assesses <strong style={{ color: SPECTRUM.cobalt }}><em>experienced safety</em></strong>, not objective danger — which is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has <strong style={{ color: TEXT.primary }}>learned to recognize</strong> as safe or threatening, which may not match current reality. This is not a flaw. It is a <strong style={{ color: TEXT.primary }}>design feature optimized for survival</strong>.
               </p>
 
               <div style={expandableRowStyle}>
@@ -356,7 +356,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                The two-mode orientation between Connection and Protection has been independently identified across six research traditions. Each describes the same fundamental mechanism from a different angle:
+                The two-mode orientation between Connection and Protection has been <strong style={{ color: TEXT.primary }}>independently identified across six research traditions</strong>. Each describes the <strong style={{ color: SPECTRUM.cobalt }}>same fundamental mechanism</strong> from a different angle:
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -416,7 +416,7 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a fluid working compass, the needle is constantly moving. It does not have a "correct" position — it points in a direction. A fluid compass moves between safety and threat as conditions change. It shifts toward threat when danger is perceived and returns toward safety when the threat passes.
+                The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. Like a fluid working compass, the needle is <strong style={{ color: SPECTRUM.cobalt }}>constantly moving</strong>. It does not have a "correct" position — it points in a direction. A fluid compass moves between safety and threat as conditions change. It shifts toward threat when danger is perceived and <strong style={{ color: TEXT.primary }}>returns toward safety when the threat passes</strong>.
               </p>
               <p style={proseStyle}>
                 These two poles map directly to what the human nervous system has always done. <strong style={{ color: TEXT.primary }}>Feeling safe</strong> is belonging to the community — gathering, caring, cooperating, relating. <strong style={{ color: TEXT.primary }}>Feeling threatened</strong> is defending yourself and feeding yourself — fighting, fleeing, hunting, surviving. These are the two fundamental orientations that the nervous system has been navigating for hundreds of thousands of years. What happens at each pole — the specific configurations the system enters — is described in the next section: Connection Mode and Protection Mode.
@@ -467,7 +467,7 @@ export default function F1EmotionalGradientPage() {
               </ol>
 
               <p style={proseStyle}>
-                By the time conscious awareness registers "an emotion," the system has already acted. The compass needle has already moved. A neutral text arrives. Your system pattern-matches past abandonment. Neuroception flags threat. Emotion signals fear. Protection mobilizes. Your mind then explains the feeling as "they don't care." If restoration completes, you regain nuance and can check reality. If it doesn't, the interpretation hardens into identity and relationship strategy. The system is fast by design — evolution solved the survival question by building an embodied evaluation system that orients the organism before conscious awareness begins. The system operates in milliseconds, uses pattern-matching, and prioritizes speed over precision. This is a design feature, not a flaw.
+                By the time conscious awareness registers "an emotion," the system has <strong style={{ color: TEXT.primary }}>already acted</strong>. The compass needle has <strong style={{ color: TEXT.primary }}>already moved</strong>. A neutral text arrives. Your system pattern-matches past abandonment. Neuroception flags threat. Emotion signals fear. Protection mobilizes. Your mind then explains the feeling as "they don't care." If restoration completes, you regain nuance and can check reality. If it doesn't, the interpretation <strong style={{ color: TEXT.primary }}>hardens into identity and relationship strategy</strong>. The system is fast by design — evolution solved the survival question by building an embodied evaluation system that orients the organism before conscious awareness begins. The system operates in milliseconds, uses pattern-matching, and prioritizes speed over precision. This is a design feature, not a flaw.
               </p>
               <p style={proseStyle}>
                 The cost of speed: the system can orient to learned patterns rather than current reality. When the system responds to a pattern from the past as though it is happening now, the person is not "overreacting." The compass is working exactly as designed — it just learned its patterns in conditions that no longer apply. <strong style={{ color: TEXT.primary }}>The problem is never the mechanism. The problem is what the mechanism learned.</strong>
@@ -503,7 +503,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                Connection and Protection are the two fundamental configurations of the nervous system — not as binary states, but as the two poles the compass needle orients between. These are the body-first modes: they happen <em>to</em> you. They have been running for millions of years before cognition evolved.
+                Connection and Protection are the <strong style={{ color: SPECTRUM.cobalt }}>two fundamental configurations</strong> of the nervous system — not as binary states, but as the two poles the compass needle orients between. These are the <strong style={{ color: TEXT.primary }}>body-first modes</strong>: they happen <em>to</em> you. They have been running for millions of years before cognition evolved.
               </p>
 
               <div
@@ -544,7 +544,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                Neither mode is "better." Protection is intelligent design for genuine threat. The question is always whether the current mode is proportionate to actual present conditions — and whether the system can come back.
+                Neither mode is "better." Protection is <strong style={{ color: TEXT.primary }}>intelligent design for genuine threat</strong>. The question is always whether the current mode is <strong style={{ color: TEXT.primary }}>proportionate to actual present conditions</strong> — and whether the system can come back.
               </p>
 
               <ExpandableSection title="Research Traditions" type="framework">
@@ -614,10 +614,10 @@ export default function F1EmotionalGradientPage() {
                 This is the mechanism on which the entire twelve-framework system turns. When the nervous system mobilizes for threat — when Protection activates, when the heart accelerates, when hormones flood, when muscles brace — all of this was designed to be temporary. The body was built to complete the cycle: mobilise, respond, and restore. <strong style={{ color: TEXT.primary }}>Biological Restoration is the body's designed process for completing the activation cycle and settling back to Connection.</strong>
               </p>
               <p style={proseStyle}>
-                The activation that was mobilized must discharge. The breath that accelerated must slow. The muscles that braced must release. The hormones that flooded must clear. The body does not reason its way back to Connection. It restores through the same somatic channels it departed through.
+                The activation that was mobilized must <strong style={{ color: TEXT.primary }}>discharge</strong>. The breath that accelerated must <strong style={{ color: TEXT.primary }}>slow</strong>. The muscles that braced must <strong style={{ color: TEXT.primary }}>release</strong>. The hormones that flooded must <strong style={{ color: TEXT.primary }}>clear</strong>. The body does not reason its way back to Connection. It restores through the <strong style={{ color: SPECTRUM.cobalt }}>same somatic channels it departed through</strong>.
               </p>
               <p style={proseStyle}>
-                Biological Restoration is closer to digestion than to exercise. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
+                Biological Restoration is <strong style={{ color: TEXT.primary }}>closer to digestion than to exercise</strong>. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
               </p>
 
               <h4 style={subheadingStyle}>The biological sequence of restoration</h4>
@@ -729,7 +729,7 @@ export default function F1EmotionalGradientPage() {
                 </table>
               </div>
               <p style={proseStyle}>
-                These are not therapeutic techniques. They are the pathways the nervous system was designed to use.
+                These are <strong style={{ color: TEXT.primary }}>not therapeutic techniques</strong>. They are the pathways the nervous system was designed to use.
               </p>
             </div>
 
@@ -751,10 +751,10 @@ export default function F1EmotionalGradientPage() {
                 <strong style={{ color: TEXT.primary }}>Relational restoration</strong> addresses emotions whose content is about belonging — shame, guilt, fear of rejection, fear of abandonment. Their signal is not "something happened to me." Their signal is "something is wrong with me in relation to you." These emotions often don't resolve just because the body discharges energy. The nervous system is waiting for relational evidence: a sign that belonging is intact, that the bond can hold, that repair is possible.
               </p>
               <p style={proseStyle}>
-                Breath and grounding can reduce intensity — they can help a person stay present — but they rarely provide the specific evidence these emotions are asking for. Shame softens when someone stays connected without contempt. Guilt settles when there is repair and the bond survives. Fear of rejection calms when the nervous system receives evidence of continued belonging.
+                Breath and grounding can reduce intensity — they can help a person stay present — but they rarely provide the specific evidence these emotions are asking for. <strong style={{ color: TEXT.primary }}>Shame softens when someone stays connected without contempt.</strong> <strong style={{ color: TEXT.primary }}>Guilt settles when there is repair and the bond survives.</strong> <strong style={{ color: TEXT.primary }}>Fear of rejection calms when the nervous system receives evidence of continued belonging.</strong>
               </p>
               <p style={proseStyle}>
-                Over time, humans can internalize co-regulation — learning to offer themselves a form of steady presence — but the original pathway is relational, and many people can't access an internal version until they've experienced it externally. This is not weakness. It is social biology: the nervous system developed in relationship, and some signals require relationship to complete.
+                Over time, humans can <strong style={{ color: TEXT.primary }}>internalize co-regulation</strong> — learning to offer themselves a form of steady presence — but the original pathway is relational, and many people can't access an internal version until they've experienced it externally. This is not weakness. It is <strong style={{ color: TEXT.primary }}>social biology</strong>: the nervous system developed in relationship, and some signals require relationship to complete.
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -803,7 +803,7 @@ export default function F1EmotionalGradientPage() {
                 Signal Detection → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Connection
               </p>
               <p style={proseStyle}>
-                Fluid operation is not the absence of Protection. It is the full cycle — the ability to move into threat response when needed and come back when the threat has passed. Biological Restoration is the mechanism of coming back.
+                Fluid operation is not the absence of Protection. It is the <strong style={{ color: TEXT.primary }}>full cycle</strong> — the ability to move into threat response when needed and come back when the threat has passed. <strong style={{ color: TEXT.primary }}>Biological Restoration is the mechanism of coming back.</strong>
               </p>
 
               <h4 style={subheadingStyle}>Biological Restoration across the Full Gradient</h4>
@@ -822,7 +822,7 @@ export default function F1EmotionalGradientPage() {
                 </li>
               </ul>
               <p style={proseStyle}>
-                In each case, the mechanism is the same: the system completing the cycle and coming back. The difference is the depth of the activation that must resolve. The deeper the compass moves along the gradient, the more the restoration costs — and the more the system needs to complete. When it does not, <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
+                In each case, the mechanism is the same: the system <strong style={{ color: TEXT.primary }}>completing the cycle and coming back</strong>. The difference is the depth of the activation that must resolve. <strong style={{ color: TEXT.primary }}>The deeper the compass moves along the gradient, the more the restoration costs</strong> — and the more the system needs to complete. When it does not, <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
 
               <ExpandableSection title="A Note on 'Regulation'" type="framework">
@@ -874,7 +874,7 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then cognition evolved. And the compass gained range.
+                For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then <strong style={{ color: SPECTRUM.cobalt }}>cognition evolved</strong>. And the compass gained range.
               </p>
               <p style={proseStyle}>
                 When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. This is not pathology. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
@@ -1010,10 +1010,10 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                The four modes are not four boxes. They are positions on a continuous gradient from full Connection to maximum Domination. The compass needle moves along this gradient. A fluid compass has access to the full range.
+                The four modes are not four boxes. They are positions on a <strong style={{ color: SPECTRUM.cobalt }}>continuous gradient</strong> from full Connection to maximum Domination. The compass needle moves along this gradient. A fluid compass has access to the full range.
               </p>
               <p style={proseStyle}>
-                The gradient makes the proportionality question visible. The question is not "is this person in Protection?" but "how deep into Protection, for how long, in response to what, and can the needle move?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
+                The gradient makes the <strong style={{ color: TEXT.primary }}>proportionality question</strong> visible. The question is not "is this person in Protection?" but "<strong style={{ color: TEXT.primary }}>how deep into Protection, for how long, in response to what, and can the needle move?</strong>" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
               </p>
             </div>
 
@@ -1030,7 +1030,7 @@ export default function F1EmotionalGradientPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                This is not metaphor — it is neurobiological reality. The framework tracks this principle across six dimensions:
+                This is not metaphor — it is <strong style={{ color: TEXT.primary }}>neurobiological reality</strong>. The framework tracks this principle across six dimensions:
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -1134,7 +1134,7 @@ export default function F1EmotionalGradientPage() {
               </DiagramToggle>
 
               <p style={proseStyle}>
-                F1 names a complete trajectory from biological signal to social structure. Biological Restoration is the central mechanism — step four of seven, three steps on each side:
+                F1 names a <strong style={{ color: TEXT.primary }}>complete trajectory</strong> from biological signal to social structure. Biological Restoration is the <strong style={{ color: SPECTRUM.cobalt }}>central mechanism</strong> — step four of seven, three steps on each side:
               </p>
 
               <p
@@ -1175,7 +1175,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                Everything before Biological Restoration is the body's designed process. Everything after depends on whether that process completed. The frameworks split at this exact point: F1–F2 describe the designed system and its calibration; F3–F7 describe what happens when Biological Restoration is missing; F8–F12 describe how to build it back.
+                <strong style={{ color: TEXT.primary }}>Everything before Biological Restoration is the body's designed process. Everything after depends on whether that process completed.</strong> The frameworks split at this exact point: F1–F2 describe the designed system and its calibration; F3–F7 describe what happens when Biological Restoration is missing; F8–F12 describe how to build it back.
               </p>
             </div>
 
@@ -1187,7 +1187,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                Each framework describes a regulation substitute at a different scale. Each substitute works, each comes at a cost, and each traces to the same origin: a nervous system that never learned Biological Restoration — running on <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>permanently open cycles</Link>.
+                Each framework describes a <strong style={{ color: TEXT.primary }}>regulation substitute</strong> at a different scale. Each substitute works, each comes at a cost, and each traces to the same origin: a nervous system that <strong style={{ color: TEXT.primary }}>never learned Biological Restoration</strong> — running on <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>permanently open cycles</Link>.
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -1214,7 +1214,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                The costs escalate — from truth (F3) to everything (F7). The mechanism is the same at every scale. The intervention principle is the same at every scale: restore safety first, then expect capacity.
+                <strong style={{ color: TEXT.primary }}>The costs escalate</strong> — from truth (F3) to everything (F7). The mechanism is the same at every scale. The intervention principle is the same at every scale: <strong style={{ color: TEXT.primary }}>restore safety first, then expect capacity</strong>.
               </p>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
@@ -1328,7 +1328,7 @@ export default function F1EmotionalGradientPage() {
             </h2>
 
             <p style={{ ...proseStyle, marginBottom: 16 }}>
-              F1 integrates established research from the following traditions. The individual theories are well-documented. The integration — and the connections between them — is TEG-Blue's contribution, open to testing.
+              F1 integrates established research from the following traditions. The individual theories are well-documented. <strong style={{ color: TEXT.primary }}>The integration — and the connections between them</strong> — is TEG-Blue's contribution, open to testing.
             </p>
 
             <div style={{ overflowX: "auto" }}>
@@ -1369,16 +1369,16 @@ export default function F1EmotionalGradientPage() {
             </h2>
 
             <p style={proseStyle}>
-              F1 describes the complete designed system — including Biological Restoration in its designed form. The body mobilizes, responds, and restores. The cycle completes. The compass moves and comes back. This is the design.
+              F1 describes the <strong style={{ color: TEXT.primary }}>complete designed system</strong> — including Biological Restoration in its designed form. The body mobilizes, responds, and restores. The cycle completes. The compass moves and comes back. This is the design.
             </p>
             <p style={proseStyle}>
-              But Biological Restoration is not automatic. It is designed — but it must be <em>learned</em>. The body has the biological capacity for restoration from birth. It does not have the ability to restore until that capacity is developed through experience. The mechanism through which it is learned is <strong style={{ color: TEXT.primary }}>co-regulation</strong> — another person's regulated nervous system teaching the child's nervous system the path back to Connection.
+              But Biological Restoration is not automatic. It is designed — but it must be <strong style={{ color: SPECTRUM.cobalt }}><em>learned</em></strong>. The body has the biological capacity for restoration from birth. It does not have the ability to restore until that capacity is developed through experience. The mechanism through which it is learned is <strong style={{ color: TEXT.primary }}>co-regulation</strong> — another person's regulated nervous system teaching the child's nervous system the path back to Connection.
             </p>
             <p style={proseStyle}>
-              This is especially true for relational emotions. Somatic activations can complete through the body's own channels when conditions allow. But shame, guilt, fear of rejection, fear of abandonment — the emotions whose content is about belonging — can only complete when another person stays. A child whose relational emotions are never co-regulated does not just lack a general restoration capacity. They lack the specific pathway for the specific emotions that are hardest to bear. The chain is emotion-specific: what the adults could hold is what the child learns to complete.
+              This is especially true for <strong style={{ color: TEXT.primary }}>relational emotions</strong>. Somatic activations can complete through the body's own channels when conditions allow. But shame, guilt, fear of rejection, fear of abandonment — the emotions whose content is about belonging — can only complete when another person stays. A child whose relational emotions are never co-regulated does not just lack a general restoration capacity. They lack the <strong style={{ color: TEXT.primary }}>specific pathway for the specific emotions that are hardest to bear</strong>. The chain is emotion-specific: <strong style={{ color: TEXT.primary }}>what the adults could hold is what the child learns to complete</strong>.
             </p>
             <p style={proseStyle}>
-              This requires caregivers whose own Biological Restoration is functioning — whose own compass can move and come back. The awareness capacities the caregivers carry determine whether the child's restoration capacity develops. When the adults' awareness is complete, the child learns restoration through being restored with. When the adults' awareness is incomplete — when their own Biological Restoration was never learned — the child's system develops without ever learning the path back.
+              This requires caregivers whose own Biological Restoration is functioning — whose own compass can move and come back. <strong style={{ color: TEXT.primary }}>The awareness capacities the caregivers carry determine whether the child's restoration capacity develops.</strong> When the adults' awareness is complete, the child learns restoration through being restored with. When the adults' awareness is incomplete — when their own Biological Restoration was never learned — the child's system develops <strong style={{ color: TEXT.primary }}>without ever learning the path back</strong>.
             </p>
 
             <KeyStatement>
@@ -1746,14 +1746,13 @@ function CycleBox({ highlight = [] }) {
       <p style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, lineHeight: 1.6, margin: 0, textAlign: "center" }}>
         {CYCLE_STEPS.map((step, i) => {
           const isHighlight = highlight.includes(step);
-          const isBR = step === "Biological Restoration";
           return (
             <span key={step} style={{ whiteSpace: "nowrap" }}>
               {i > 0 && <span style={{ whiteSpace: "normal" }}>{" "}</span>}
               {i > 0 && "→ "}
               <span style={{
-                color: isBR ? SPECTRUM.cobalt : isHighlight ? TEXT.primary : undefined,
-                fontWeight: isBR || isHighlight ? 600 : undefined,
+                color: isHighlight ? SPECTRUM.cobalt : undefined,
+                fontWeight: isHighlight ? 600 : undefined,
               }}>
                 {step}
               </span>
