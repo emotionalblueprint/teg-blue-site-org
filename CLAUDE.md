@@ -18,6 +18,33 @@ npm run build
 npm run lint
 ```
 
+## Session Protocol
+
+### On Startup (beginning of any .org session)
+
+Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report results briefly. Flag any risks (unpushed commits, dirty working tree, console.logs).
+
+### On Wrap-Up (when the user says "let's wrap up", "push", or session is ending)
+
+1. Remove any console.logs you added during the session
+2. Run `./teg-health.sh wrapup` from `/Users/annaparetas/Projects/`
+3. If build passes and checks are clean, offer to commit and push
+
+### Debt Prevention Rules
+
+1. **Remove console.logs before committing.** .org has no legitimate console.log locations — remove ALL of them.
+2. **Never hardcode colors.** Always use `tokens.js` values (SPECTRUM, TEXT, BG, BORDER, MODE_*, etc.).
+3. **No CSS files or Tailwind classes.** All styling is inline via tokens.js. If Tailwind classes appear, convert to inline styles.
+4. **When removing a feature, delete all its files in the same commit.** Components, routes, content files — everything.
+5. **When inlining a component, delete the old file.** Don't leave orphaned component files behind.
+6. **When removing a package, also run `npm install`** to update the lockfile. Then update `ORG_DEP_BASELINE` in `teg-health.sh`.
+7. **Only add `'use client'` to files that actually use hooks, event handlers, or browser APIs.**
+8. **Commit frequently, push at end of session.** Don't let unpushed commits accumulate across sessions.
+9. **When adding a dependency, note the new baseline** — update `ORG_DEP_BASELINE` in `teg-health.sh`.
+10. **Export all components from `src/components/index.js`.** Keep the barrel file up to date.
+
+---
+
 ## Purpose & Identity
 
 **teg-blue.org** is the academic and practitioner-facing platform for TEG-Blue research. Its audience is researchers, clinicians, and serious practitioners — not the general public (that's teg-blue.com).
