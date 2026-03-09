@@ -1,100 +1,56 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RADIUS, gradientCardBg,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero, PageLayout,
+  SiteHeader, SiteFooter, ModelHero, PageLayout,
 } from "@/src/components";
-
-const SIDEBAR_SECTIONS = [
-  { label: "M1 — Inner Compass", href: "#model-cards", description: "The four-mode gradient as a continuous compass. How the needle moves, what each position means." },
-  { label: "M2 — Three Capacities", href: "#model-cards", description: "Reading Emotions, Emotional Resonance, Self-Emotional Awareness. The calibration system." },
-  { label: "M3 — The Biology of Unfinished Emotion", href: "#model-cards", description: "What happens in the body when the emotional cycle completes — and what happens when it doesn't." },
-  { label: "Integration", href: "#integration", description: "How the three models connect: the instrument, its calibration, and its biological mechanism." },
-];
 
 // ─── MODEL DATA ─────────────────────────────────────────────
 
 const MODELS = [
   {
     id: "M1",
+    role: "The Instrument",
     title: "Inner Compass & Four-Mode Gradient",
-    subtitle: "The Instrument",
-    coreQuestion: "Where is the needle, can it move, and what does the person have access to from where they are?",
+    coreQuestion: "Where is the needle?",
     summary:
-      "The complete architecture of how the nervous system orients between safety and threat — made visible, clinically usable, and personally recognisable. A compass with a moving needle that orients across four modes on a continuous gradient.",
-    purpose:
-      "Map the full range of the nervous system's safety-threat orientation. Describe what each mode enables and restricts. Show how the compass gets stuck and how the return restores it.",
-    concepts: [
-      "Emotions as the nervous system's signalling language",
-      "The safety orientation question",
-      "The Inner Compass — a moving needle",
-      "The four modes: Connection, Protection, Control, Domination",
-      "The gradient — continuous, not categorical",
-      "State determines capacity",
-      "Same emotion, two expressions",
-      "Regulation — the return",
-      "The stuck compass",
-      "The two information systems",
-    ],
-    drawsFrom: "F1 (primary), F3, F7, F12",
-    pairedWith: "M2 — Three Awareness Capacities",
+      "How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return restores it.",
+    concepts: 10,
+    drawsFrom: "F1, F3, F7, F12",
     color: SPECTRUM.azure,
     href: "/model/m1-inner-compass",
   },
   {
     id: "M2",
+    role: "The Calibration",
     title: "Three Awareness Capacities",
-    subtitle: "The Calibration",
-    coreQuestion: "What is the current configuration — which capacities had conditions to develop, and which didn't?",
+    coreQuestion: "What is holding it there?",
     summary:
-      "The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state.",
-    purpose:
-      "Describe the three awareness capacities, their design function, adaptive variants, and how they develop. Show how configurations predict chronic mode, identity, and relational patterns. Map the repair pathway.",
-    concepts: [
-      "Three capacities connected at birth",
-      "The pre-SEA condition — feeling = being",
-      "Awareness teaches awareness",
-      "Three capacities — online and offline (with variant tables)",
-      "Capacity configuration — the pattern that becomes personality",
-      "Co-regulation and the return path",
-      "True coherence and false coherence",
-      "Tolerance thresholds",
-      "Generational replication",
-      "Repair — developing what was missing",
-    ],
-    drawsFrom: "F2 (primary), F3, F8, F10",
-    pairedWith: "M1 — Inner Compass & Four-Mode Gradient",
+      "The three awarenesses — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state.",
+    concepts: 10,
+    drawsFrom: "F2, F3, F8, F10",
     color: SPECTRUM.cobalt,
     href: "/model/m2-three-awareness-capacities",
   },
   {
     id: "M3",
+    role: "The Biological Foundation",
     title: "The Biology of Unfinished Emotion",
-    subtitle: "Biological Restoration — The Fork",
-    coreQuestion: "What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?",
+    coreQuestion: "What is the body doing underneath?",
     summary:
-      "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does.",
-    purpose:
-      "Map the biological cascade from threat perception through activation. Show what completion requires and why cognition cannot provide it. Trace the system-by-system cost of each unfinished cycle. Connect allostatic load to gradient position.",
-    concepts: [
-      "The threat cascade — amygdala to HPA axis",
-      "What completion requires — the return sequence",
-      "The override mechanism — signal submersion",
-      "What stays active — system-by-system residue",
-      "The accumulation effect — allostatic load",
-      "Why cognition cannot close the cycle",
-      "The open cycle and the gradient",
-    ],
-    drawsFrom: "F1 (primary), F2, F3, F8, F12",
-    pairedWith: "M1 — Inner Compass & M2 — Three Awareness Capacities",
+      "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead.",
+    concepts: 7,
+    drawsFrom: "F1, F2, F3, F8, F12",
     color: SPECTRUM.indigo,
     href: "/model/m3-the-open-cycle",
   },
+];
+
+const CONNECTORS = [
+  { label: "calibrates", description: "M2 determines how well the compass (M1) can read its own data" },
+  { label: "runs underneath", description: "M3 maps the biology that M1 and M2 sit on top of" },
 ];
 
 // ─── PAGE ───────────────────────────────────────────────────
@@ -112,37 +68,65 @@ export default function ModelsPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
+          <ModelHero
             badge="3 FOUNDATIONAL MODELS"
             title="The Three Core Models"
-            subtitle="Instrument + Calibration + Biological Foundation = Complete System"
-            description="The three core models synthesize the 12 frameworks into visual instruments — each one making a different layer of the emotional system visible: where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
+            subtitle="Instrument + Calibration + Biological Foundation"
+            description="Each model makes a different layer of the emotional system visible. Together, they map how emotional patterns form, persist, and change — where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
+            color={SPECTRUM.cobalt}
           />
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* Intro */}
-        <section style={{ marginTop: 32, marginBottom: 32 }}>
-          <p style={{ ...proseStyle, marginBottom: 0 }}>
-            Each model makes a different question answerable — and together, they map how emotional patterns form, persist, and change.
+        {/* ─── VISUAL RELATIONSHIP MAP ────────────────────── */}
+        <section style={{ marginTop: 8, marginBottom: 48 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {MODELS.map((model, i) => (
+              <div key={model.id}>
+                {/* Model Layer */}
+                <ModelLayer model={model} />
+
+                {/* Connector between layers */}
+                {i < MODELS.length - 1 && (
+                  <Connector connector={CONNECTORS[i]} topColor={model.color} bottomColor={MODELS[i + 1].color} />
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── INTEGRATION ────────────────────────────────── */}
+        <section
+          id="integration"
+          style={{
+            marginBottom: 48,
+            padding: "20px 24px",
+            background: hexToRgba(SPECTRUM.cobalt, 0.04),
+            borderRadius: RADIUS.md,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 9,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: SPECTRUM.cobalt,
+              marginBottom: 10,
+            }}
+          >
+            Three Dimensions of One Reality
+          </div>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
+            A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, margin: "12px 0 0", fontWeight: 500 }}>
+            Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
           </p>
         </section>
 
-        {/* Model Cards */}
-        <section id="model-cards" style={{ marginBottom: 32 }}>
-          {MODELS.map((model) => (
-            <ExpandableModelCard key={model.id} model={model} />
-          ))}
-        </section>
-
-        {/* Integration note */}
-        <section id="integration" style={{ marginBottom: 32 }}>
-          <p style={{ ...proseStyle, marginBottom: 0 }}>
-            The three models are not independent. They are three dimensions of the same reality. A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath. Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
-          </p>
-        </section>
-
-        {/* Footer Links */}
+        {/* ─── FOOTER LINKS ───────────────────────────────── */}
         <section
           style={{
             display: "flex",
@@ -151,51 +135,30 @@ export default function ModelsPage() {
             flexWrap: "wrap",
           }}
         >
-          <Link
-            href="/publications/validation-study"
-            style={{
-              padding: "10px 20px",
-              background: "transparent",
-              color: TEXT.muted,
-              border: `1px solid ${BORDER.default}`,
-              borderRadius: RADIUS.md,
-              fontWeight: 500,
-              fontSize: 13,
-              textDecoration: "none",
-            }}
-          >
-            Validation Study
-          </Link>
-          <Link
-            href="/frameworks-map"
-            style={{
-              padding: "10px 20px",
-              background: "transparent",
-              color: TEXT.muted,
-              border: `1px solid ${BORDER.default}`,
-              borderRadius: RADIUS.md,
-              fontWeight: 500,
-              fontSize: 13,
-              textDecoration: "none",
-            }}
-          >
-            12 Frameworks
-          </Link>
-          <Link
-            href="/collaborate"
-            style={{
-              padding: "10px 20px",
-              background: "transparent",
-              color: TEXT.muted,
-              border: `1px solid ${BORDER.default}`,
-              borderRadius: RADIUS.md,
-              fontWeight: 500,
-              fontSize: 13,
-              textDecoration: "none",
-            }}
-          >
-            Collaborate
-          </Link>
+          {[
+            { href: "/publications/validation-study", label: "Validation Study" },
+            { href: "/frameworks-map", label: "12 Frameworks" },
+            { href: "/collaborate", label: "Collaborate" },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                padding: "10px 20px",
+                background: "transparent",
+                color: TEXT.muted,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 13,
+                fontFamily: FONT.mono,
+                textDecoration: "none",
+                letterSpacing: "0.02em",
+              }}
+            >
+              {label}
+            </Link>
+          ))}
         </section>
 
       </PageLayout>
@@ -207,206 +170,171 @@ export default function ModelsPage() {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
 
-function ExpandableModelCard({ model }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function ModelLayer({ model }) {
   return (
-    <div
+    <Link
+      href={model.href}
       style={{
-        marginBottom: 12,
-        background: gradientCardBg(model.color),
-        borderRadius: 10,
-        border: `1px solid ${isOpen ? hexToRgba(model.color, 0.3) : BORDER.default}`,
-        borderLeft: `3px solid ${model.color}`,
-        overflow: "hidden",
-        transition: "border-color 0.2s ease",
+        display: "block",
+        textDecoration: "none",
+        padding: "20px 24px",
+        background: gradientCardBg(model.color, 0.06),
+        borderRadius: RADIUS.md,
+        border: `1px solid ${hexToRgba(model.color, 0.15)}`,
+        borderLeft: `4px solid ${model.color}`,
+        transition: "border-color 200ms ease, background 200ms ease",
       }}
     >
-      {/* Clickable Header */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+      {/* Top row: ID + Role badge */}
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+        <span
+          style={{
+            fontSize: 13,
+            fontWeight: 700,
+            fontFamily: FONT.mono,
+            color: model.color,
+          }}
+        >
+          {model.id}
+        </span>
+        <span
+          style={{
+            fontSize: 10,
+            fontWeight: 600,
+            fontFamily: FONT.mono,
+            padding: "3px 10px",
+            borderRadius: 100,
+            background: hexToRgba(model.color, 0.12),
+            color: model.color,
+            textTransform: "uppercase",
+            letterSpacing: "0.06em",
+          }}
+        >
+          {model.role}
+        </span>
+        <span
+          style={{
+            marginLeft: "auto",
+            fontSize: 11,
+            fontFamily: FONT.mono,
+            color: TEXT.hint,
+          }}
+        >
+          {model.concepts} concepts
+        </span>
+      </div>
+
+      {/* Title */}
+      <h2
         style={{
-          width: "100%",
-          padding: "16px 20px",
-          background: "transparent",
-          border: "none",
-          cursor: "pointer",
-          textAlign: "left",
-          display: "block",
+          fontSize: 18,
+          fontWeight: 600,
+          color: TEXT.primary,
+          margin: "0 0 6px",
+          lineHeight: 1.3,
         }}
       >
-        {/* Top row */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6, flexWrap: "wrap" }}>
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 700,
-              fontFamily: FONT.mono,
-              color: model.color,
-            }}
-          >
-            {model.id}
-          </span>
-          <span style={{ fontSize: 13, color: TEXT.muted }}>–</span>
-          <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary }}>
-            {model.title}
-          </span>
+        {model.title}
+      </h2>
+
+      {/* Core question */}
+      <p
+        style={{
+          fontSize: 14,
+          fontWeight: 500,
+          color: model.color,
+          fontStyle: "italic",
+          margin: "0 0 10px",
+        }}
+      >
+        {model.coreQuestion}
+      </p>
+
+      {/* Summary */}
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 12px" }}>
+        {model.summary}
+      </p>
+
+      {/* Footer: draws from + read link */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <span
             style={{
               fontSize: 10,
               fontWeight: 600,
               fontFamily: FONT.mono,
-              padding: "3px 8px",
-              borderRadius: 4,
-              background: hexToRgba(model.color, 0.15),
-              color: model.color,
-              marginLeft: "auto",
+              textTransform: "uppercase",
+              letterSpacing: "0.06em",
+              color: TEXT.hint,
             }}
           >
-            {model.subtitle}
-          </span>
-        </div>
-
-        {/* Core question */}
-        <p style={{ fontSize: 13, color: model.color, margin: "0 0 8px 0", fontStyle: "italic" }}>
-          {model.coreQuestion}
-        </p>
-
-        {/* Summary */}
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-          {model.summary}
-        </p>
-
-        {/* Always-visible link + expand indicator */}
-        <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 12 }}>
-          <Link
-            href={model.href}
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              fontSize: 13,
-              fontWeight: 500,
-              color: model.color,
-              textDecoration: "none",
-            }}
-          >
-            Read full model →
-          </Link>
-          <span style={{ fontSize: 12, color: TEXT.muted }}>
-            {isOpen ? "Hide details" : "Show details"}
+            Draws from
           </span>
           <span
             style={{
-              fontSize: 14,
-              color: model.color,
-              transition: "transform 0.2s ease",
-              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+              fontSize: 11,
+              fontFamily: FONT.mono,
+              color: TEXT.muted,
             }}
           >
-            ▼
+            {model.drawsFrom}
           </span>
         </div>
-      </button>
-
-      {/* Expandable Content */}
-      {isOpen && (
-        <div
+        <span
           style={{
-            padding: "0 20px 20px",
-            borderTop: `1px solid ${BORDER.default}`,
+            fontSize: 13,
+            fontWeight: 500,
+            color: model.color,
           }}
         >
-          {/* Purpose */}
-          <div style={{ marginTop: 16, marginBottom: 16 }}>
-            <h4 style={expandLabelStyle(model.color)}>Purpose</h4>
-            <p style={expandProseStyle}>{model.purpose}</p>
-          </div>
-
-          {/* 10 Concepts */}
-          <div style={{ marginBottom: 16 }}>
-            <h4 style={expandLabelStyle(model.color)}>{model.concepts.length} Concepts</h4>
-            <ol style={{ paddingLeft: 20, margin: 0 }}>
-              {model.concepts.map((concept, i) => (
-                <li
-                  key={i}
-                  style={{
-                    fontSize: 14,
-                    color: TEXT.secondary,
-                    lineHeight: 1.7,
-                    marginBottom: 4,
-                    paddingLeft: 4,
-                  }}
-                >
-                  {concept}
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          {/* Draws from */}
-          <div style={{ marginBottom: 16 }}>
-            <h4 style={expandLabelStyle(model.color)}>Draws from</h4>
-            <p style={expandProseStyle}>{model.drawsFrom}</p>
-          </div>
-
-          {/* Paired with */}
-          <div style={{ marginBottom: 16 }}>
-            <h4 style={expandLabelStyle(model.color)}>Paired with</h4>
-            <p style={expandProseStyle}>{model.pairedWith}</p>
-          </div>
-
-          {/* Link */}
-          <div
-            style={{
-              marginTop: 16,
-              paddingTop: 16,
-              borderTop: `1px solid ${BORDER.default}`,
-            }}
-          >
-            <Link
-              href={model.href}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                fontSize: 13,
-                fontWeight: 500,
-                color: model.color,
-                textDecoration: "none",
-              }}
-            >
-              Read full model →
-            </Link>
-          </div>
-        </div>
-      )}
-    </div>
+          Read full model →
+        </span>
+      </div>
+    </Link>
   );
 }
 
-// ─── SHARED STYLES ──────────────────────────────────────────
+function Connector({ connector, topColor, bottomColor }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "6px 0",
+        position: "relative",
+      }}
+    >
+      {/* Vertical gradient line */}
+      <div
+        style={{
+          position: "absolute",
+          left: 28,
+          top: 0,
+          bottom: 0,
+          width: 2,
+          background: `linear-gradient(to bottom, ${hexToRgba(topColor, 0.4)}, ${hexToRgba(bottomColor, 0.4)})`,
+          borderRadius: 1,
+        }}
+        aria-hidden="true"
+      />
 
-const proseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-};
-
-const expandProseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  margin: 0,
-};
-
-function expandLabelStyle(color) {
-  return {
-    fontSize: 11,
-    fontWeight: 600,
-    color: color,
-    marginBottom: 6,
-    textTransform: "uppercase",
-    letterSpacing: "0.05em",
-    fontFamily: FONT.mono,
-  };
+      {/* Label */}
+      <div
+        style={{
+          fontSize: 10,
+          fontWeight: 600,
+          fontFamily: FONT.mono,
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          color: TEXT.muted,
+          background: BG.page,
+          padding: "2px 12px",
+          zIndex: 1,
+        }}
+      >
+        {connector.label}
+      </div>
+    </div>
+  );
 }
