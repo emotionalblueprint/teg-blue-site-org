@@ -104,6 +104,20 @@ export default function MechanicsLayout({
               I keep finding the same architecture running in different systems {"\u2014"} different
               fields, different hardware, different centuries. This is where I log it.
             </p>
+            <p
+              style={{
+                fontSize: 13,
+                color: TEXT.hint,
+                lineHeight: 1.7,
+                maxWidth: "70ch",
+                marginTop: 14,
+              }}
+            >
+              A note on format: the rest of this site is written as structured research
+              documentation. This section is not. These are long-form essays written in plain
+              language, starting from observable problems {"\u2014"} not from the framework. TEG-Blue
+              appears when the explanation calls for it, not before.
+            </p>
           </div>
         )}
 
