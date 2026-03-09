@@ -58,6 +58,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  other: {
+    'citation_title': 'Our Two Information Systems: Why Insight Alone Does Not Change Behavior and What Actually Does',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/03',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

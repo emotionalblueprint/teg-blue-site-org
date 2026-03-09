@@ -66,6 +66,12 @@ export const metadata = {
     description:
       "How individual nervous system patterns aggregate into collective rule systems. The first framework in the collective arc.",
   },
+  other: {
+    'citation_title': 'Rules Regulate: How Individual Patterns Scale to Collective Rule Systems',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

@@ -59,6 +59,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  other: {
+    'citation_title': 'Rebuilding Generational Bridges: How Patterns Transmit and How Repair Changes What the Next Generation Inherits',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/03',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

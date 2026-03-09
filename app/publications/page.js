@@ -4,7 +4,7 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, getContentTypeColor, hexT
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, StatusBadge, ResearcherHero, AuthorBlock } from "@/src/components";
 
 export const metadata = {
-  title: "Publications | TEG-Blue Research",
+  title: "Research Publications & Validation Studies | TEG-Blue Research",
   description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Four-Mode Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.18428907).",
   keywords: [
     "TEG-Blue publications",
@@ -35,6 +35,13 @@ export const metadata = {
     card: "summary_large_image",
     title: "Publications — TEG-Blue Research",
     description: "Research papers, validation studies, and open datasets for emotional regulation research.",
+  },
+  other: {
+    'citation_title': 'Detecting Regulatory States in Natural Language: Empirical Validation of the Four-Mode Gradient Framework',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_doi': '10.5281/zenodo.18428907',
+    'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
 

@@ -1,7 +1,7 @@
 import { generateTheoreticalFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "12 Frameworks | TEG-Blue Research",
+  title: "The 12 Frameworks — Emotional Regulation Theory | TEG-Blue Research",
   description: "12 interconnected frameworks mapping how emotions work, scale, break, and repair. From nervous system biology (F1) through identity and social structures (F2-F7) to healing and integration (F8-F12). Each framework includes core claims, source theories, and testable hypotheses.",
   keywords: [
     "TEG-Blue frameworks",

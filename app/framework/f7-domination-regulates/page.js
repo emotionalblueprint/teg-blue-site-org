@@ -66,6 +66,12 @@ export const metadata = {
     description:
       "How defense becomes strategy, strategy becomes domination. A five-stage escalation pathway with intervention windows at each stage.",
   },
+  other: {
+    'citation_title': 'Domination Regulates: How Defense Becomes Strategy Becomes Domination',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

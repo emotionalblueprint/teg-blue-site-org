@@ -68,6 +68,12 @@ export const metadata = {
     description:
       "How cognition maintains what the body never learned to regulate. The cognitive maintenance framework of the TEG-Blue system.",
   },
+  other: {
+    'citation_title': 'Adult Cognition and False Coherence',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

@@ -68,6 +68,12 @@ export const metadata = {
     description:
       "How awareness capacities develop, why repair is difficult, and why different configurations make the collective stronger.",
   },
+  other: {
+    'citation_title': 'Repairing Awareness: How the Three Capacities Develop and Why Difference Is Strength',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/03',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

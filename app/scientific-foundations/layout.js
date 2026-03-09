@@ -1,7 +1,7 @@
 import { generateScientificFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "Scientific Foundations | TEG-Blue Research",
+  title: "Scientific Foundations — 139+ Theories | TEG-Blue Research",
   description: "41 research traditions across 24 domains — from Polyvagal Theory and Attachment to CBT, IFS, and Moral Psychology. See how 139+ established theories connect across neuroscience, psychology, and sociology, with framework cross-references (F1-F12).",
   keywords: [
     "emotional regulation models",

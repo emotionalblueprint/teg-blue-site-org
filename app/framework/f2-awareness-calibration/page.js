@@ -68,6 +68,12 @@ export const metadata = {
     description:
       "How the three awareness capacities calibrate the compass. The developmental framework of the TEG-Blue system.",
   },
+  other: {
+    'citation_title': 'Awareness Teaches Awareness',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

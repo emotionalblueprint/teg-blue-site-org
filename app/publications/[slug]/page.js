@@ -37,7 +37,14 @@ export async function generateMetadata({ params }) {
       type: meta.openGraph.type,
       siteName: meta.openGraph.siteName,
     },
-    other: meta.dublinCore,
+    other: {
+      ...meta.dublinCore,
+      'citation_title': node.title,
+      'citation_author': node.author || 'Anna Paretas-Artacho',
+      'citation_publication_date': node.date ? node.date.replace(/-/g, '/') : '2026/02',
+      ...(node.doi && { 'citation_doi': node.doi }),
+      'citation_technical_report_institution': 'TEG-Blue Research',
+    },
   };
 }
 

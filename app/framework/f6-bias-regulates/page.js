@@ -66,6 +66,12 @@ export const metadata = {
     description:
       "How perception becomes protection under threat conditions. Bias as nervous system regulation rather than reasoning error.",
   },
+  other: {
+    'citation_title': 'Bias Regulates: How Perception Becomes Protection',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

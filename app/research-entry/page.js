@@ -12,7 +12,7 @@ const SIDEBAR_SECTIONS = [
 ];
 
 export const metadata = {
-  title: "Start Here | TEG-Blue Emotional Technology",
+  title: "For Researchers — Framework Overview | TEG-Blue Research",
   description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable. Open access, open questions, open to validation.",
   keywords: [
     "TEG-Blue research",

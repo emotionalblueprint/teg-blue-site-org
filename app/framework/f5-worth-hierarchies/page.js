@@ -66,6 +66,12 @@ export const metadata = {
     description:
       "How threat-stabilized rule systems produce worth hierarchies that distribute credibility, resources, and protection based on signal access.",
   },
+  other: {
+    'citation_title': 'Worth Hierarchies Regulate: How Rules Become Sorting Systems',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

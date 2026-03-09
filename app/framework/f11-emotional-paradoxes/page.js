@@ -60,6 +60,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  other: {
+    'citation_title': 'The Emotional Logic Behind Paradoxes: Why Contradictions Are Logical When the Full Picture Becomes Visible',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/03',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────

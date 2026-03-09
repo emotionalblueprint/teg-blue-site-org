@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/compon
 import GlossaryList from "./GlossaryList";
 
 export const metadata = {
-  title: "Glossary | TEG-Blue Research",
+  title: "Emotional Regulation Glossary | TEG-Blue Research",
   description: "179 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
   alternates: {
     canonical: "https://teg-blue.org/glossary",

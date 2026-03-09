@@ -58,6 +58,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  other: {
+    'citation_title': 'Neurodivergence as Nervous System Variation: When the Environment Is the Mismatch',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/03',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────
