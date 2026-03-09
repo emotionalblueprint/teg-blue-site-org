@@ -14,13 +14,17 @@ const REGULATION_THREAD = [
   { id: "F5", regulator: "Worth hierarchies regulate", cost: "Equity" },
   { id: "F6", regulator: "Bias regulates", cost: "Accuracy" },
   { id: "F7", regulator: "Domination regulates", cost: "Everything" },
+  { id: "F8", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
+  { id: "F9", regulator: "Variation is design, not deficit", restores: "Accuracy" },
+  { id: "F10", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
+  { id: "F11", regulator: "Paradox holds what logic cannot", restores: "Truth" },
+  { id: "F12", regulator: "Two information systems reunite — body and mind", restores: "The design" },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost." },
-  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
+  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost. F8–F12 reverse the thread." },
   { label: "Empirical Evidence", href: "#empirical-evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
-  { label: "The 12 Frameworks", href: "#the-12-frameworks", description: "Three arcs — Individual, Collective, Repair — explaining how emotional patterns form, scale, and change." },
+  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
   { label: "Work With the Material", href: "#work-with-the-material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
 ];
 
@@ -185,47 +189,65 @@ export default function ResearchHub() {
             </h2>
 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              A single thread runs through all twelve frameworks. Each one describes a regulation substitute — at a different scale, at a different cost.
+              A single thread runs through all twelve frameworks. F1–F7: each describes a regulation substitute — at a different scale, at a different cost. F8–F12 reverse the thread — not by adding another substitute, but by building the original.
             </p>
 
             {/* Thread rows */}
             <div style={{ display: "flex", flexDirection: "column" }}>
-              {REGULATION_THREAD.map((row, i) => (
-                <div
-                  key={row.id}
-                  style={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: 12,
-                    padding: "10px 0",
-                    borderBottom: i < REGULATION_THREAD.length - 1 ? `1px solid ${BORDER.default}` : "none",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: FONT.mono,
-                      fontSize: 13,
-                      fontWeight: 700,
-                      color: TEXT.primary,
-                      minWidth: 28,
-                    }}
-                  >
-                    {row.id}
-                  </span>
-                  <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, flex: 1, minWidth: 200 }}>
-                    {row.regulator}
-                  </span>
-                  <span style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted, whiteSpace: "nowrap" }}>
-                    Cost: {row.cost}
-                  </span>
-                </div>
-              ))}
+              {REGULATION_THREAD.map((row, i) => {
+                const isRepair = !!row.restores;
+                const isFirstRepair = row.id === "F8";
+                return (
+                  <div key={row.id}>
+                    {isFirstRepair && (
+                      <div
+                        style={{
+                          padding: "8px 0",
+                          marginTop: 4,
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 10,
+                        }}
+                      >
+                        <div style={{ flex: 1, height: 1, background: hexToRgba(SPECTRUM.blue, 0.25) }} />
+                        <span style={{ fontSize: 10, fontFamily: FONT.mono, color: SPECTRUM.blue, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>
+                          The reversal
+                        </span>
+                        <div style={{ flex: 1, height: 1, background: hexToRgba(SPECTRUM.blue, 0.25) }} />
+                      </div>
+                    )}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        gap: 12,
+                        padding: "10px 0",
+                        borderBottom: i < REGULATION_THREAD.length - 1 ? `1px solid ${BORDER.default}` : "none",
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: FONT.mono,
+                          fontSize: 13,
+                          fontWeight: 700,
+                          color: isRepair ? SPECTRUM.blue : TEXT.primary,
+                          minWidth: 28,
+                        }}
+                      >
+                        {row.id}
+                      </span>
+                      <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, flex: 1, minWidth: 200 }}>
+                        {row.regulator}
+                      </span>
+                      <span style={{ fontSize: 12, fontFamily: FONT.mono, color: isRepair ? SPECTRUM.blue : TEXT.muted, whiteSpace: "nowrap" }}>
+                        {isRepair ? `Restores: ${row.restores}` : `Cost: ${row.cost}`}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.7, fontStyle: "italic" }}>
-              F8–F12 reverse the thread — not by adding another substitute, but by building the original.
-            </p>
 
             <Link
               href="/frameworks-map#the-regulation-thread"
@@ -237,57 +259,11 @@ export default function ResearchHub() {
                 color: SPECTRUM.cobalt,
                 textDecoration: "none",
                 fontWeight: 500,
-                marginTop: 12,
+                marginTop: 16,
               }}
             >
               See the full framework architecture →
             </Link>
-          </section>
-
-          {/* ── Separator: Spectrum ── */}
-          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
-            <div style={{
-              height: 2,
-              borderRadius: 1,
-              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
-            }} />
-          </div>
-
-          {/* ── The Framework ── */}
-          <section id="what-teg-blue-is">
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              What TEG-Blue is
-            </h2>
-
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation.
-            </p>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-              <FrameworkCard
-                color={SPECTRUM.indigo}
-                label="3 MODELS"
-                title="Compass, Calibration & Biology"
-                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient. M2 maps the three awareness capacities that calibrate the compass. M3 maps the physiological sequence that runs when the emotional cycle doesn't complete."
-                href="/models"
-                linkText="See the Models →"
-              />
-              <FrameworkCard
-                color={SPECTRUM.cobalt}
-                label="12 FRAMEWORKS"
-                title="Individual · Collective · Repair"
-                description="The explanatory architecture. Three arcs explaining why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
-                href="/frameworks-map"
-                linkText="See the Frameworks →"
-              />
-            </div>
-
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
-              The full system overview, including how the layers connect, is at{" "}
-              <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
-              The 139+ source theories are documented at{" "}
-              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
-            </p>
           </section>
 
           {/* ── Separator: Spectrum ── */}
@@ -385,76 +361,50 @@ export default function ResearchHub() {
             </div>
           </section>
 
-          {/* ── Separator: Breathing ── */}
-          <div aria-hidden="true" style={{
-            padding: "clamp(16px, 3vw, 28px) 0",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 12,
-          }}>
-            {[0.2, 0.45, 0.7, 0.45, 0.2].map((opacity, i) => (
-              <div
-                key={i}
-                style={{
-                  width: 4,
-                  height: 4,
-                  borderRadius: "50%",
-                  background: hexToRgba(SPECTRUM.cobalt, opacity),
-                }}
-              />
-            ))}
+          {/* ── Separator: Spectrum ── */}
+          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
+            <div style={{
+              height: 2,
+              borderRadius: 1,
+              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
+            }} />
           </div>
 
-          {/* ── The 12 Frameworks with Entry Points ── */}
-          <section id="the-12-frameworks">
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              The 12 frameworks
+          {/* ── System Architecture ── */}
+          <section id="what-teg-blue-is">
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+              What TEG-Blue is
             </h2>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24, maxWidth: 640 }}>
-              Three arcs explaining how emotional patterns form, scale into social structures, and how change becomes possible. Each framework connects to established research traditions — find your entry point below.
+
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+              The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation.
             </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-              {/* Arc 1: Individual */}
-              <FrameworkArc
-                label="ARC 1 · INDIVIDUAL"
-                description="How the nervous system evaluates safety, calibrates through development, and what happens when cognition compensates"
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+              <FrameworkCard
                 color={SPECTRUM.indigo}
-                frameworks={[
-                  { id: "F1", label: "Emotions as Biological Information", href: "/framework/f1-emotional-gradient", entry: "Polyvagal theory, affective neuroscience, interoception" },
-                  { id: "F2", label: "Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration", entry: "Attachment theory, developmental psychology, mentalization" },
-                  { id: "F3", label: "Adult Cognition & False Coherence", href: "/framework/f3-false-coherence", entry: "Cognitive science, epistemic vigilance, motivated reasoning" },
-                ]}
+                label="3 MODELS"
+                title="Compass, Calibration & Biology"
+                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient. M2 maps the three awareness capacities that calibrate the compass. M3 maps the physiological sequence that runs when the emotional cycle doesn't complete."
+                href="/models"
+                linkText="See the Models →"
               />
-
-              {/* Arc 2: Collective */}
-              <FrameworkArc
-                label="ARC 2 · COLLECTIVE"
-                description="How individual protective patterns scale into shared rules, hierarchies, perception biases, and systemic domination"
+              <FrameworkCard
                 color={SPECTRUM.cobalt}
-                frameworks={[
-                  { id: "F4", label: "Rules Regulate", href: "/framework/f4-rules-regulate", entry: "Social norms, institutional theory, moral foundations" },
-                  { id: "F5", label: "Worth Hierarchies Regulate", href: "/framework/f5-worth-hierarchies", entry: "Social hierarchy, power dynamics, social dominance theory" },
-                  { id: "F6", label: "Bias Regulates", href: "/framework/f6-bias-regulates", entry: "Implicit bias, perception research, stereotype threat" },
-                  { id: "F7", label: "Domination Regulates", href: "/framework/f7-domination-regulates", entry: "Coercive control, authoritarianism, moral disengagement" },
-                ]}
-              />
-
-              {/* Arc 3: Repair and Complexity */}
-              <FrameworkArc
-                label="ARC 3 · REPAIR AND COMPLEXITY"
-                description="How awareness rebuilds, how variation works, and the architecture underneath"
-                color={SPECTRUM.blue}
-                frameworks={[
-                  { id: "F8", label: "Repairing Awareness", href: "/framework/f8-repairing-awareness", entry: "Trauma recovery, therapeutic process, post-traumatic growth" },
-                  { id: "F9", label: "Neurodivergence as Variation", href: "/framework/f9-neurodivergence-variation", entry: "Neurodiversity, ADHD, autism, sensory processing differences" },
-                  { id: "F10", label: "Rebuilding Generational Bridges", href: "/framework/f10-generational-bridges", entry: "Intergenerational trauma, epigenetics, family systems" },
-                  { id: "F11", label: "The Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes", entry: "Paradox theory, dialectical thinking, complexity science" },
-                  { id: "F12", label: "The Two Information Systems", href: "/framework/f12-two-information-systems", entry: "Dual-process theory, embodied cognition, predictive processing" },
-                ]}
+                label="12 FRAMEWORKS"
+                title="Individual · Collective · Repair"
+                description="The explanatory architecture. Three arcs explaining why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
+                href="/frameworks-map"
+                linkText="See the Frameworks →"
               />
             </div>
+
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
+              The full system overview, including how the layers connect, is at{" "}
+              <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
+              The 139+ source theories are documented at{" "}
+              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
+            </p>
           </section>
 
           {/* ── Separator: Spectrum ── */}
@@ -569,68 +519,6 @@ function FrameworkCard({ color, label, title, description, href, linkText }) {
       >
         {linkText}
       </Link>
-    </div>
-  );
-}
-
-function FrameworkArc({ label, description, color, frameworks }) {
-  return (
-    <div>
-      <div style={{ marginBottom: 12 }}>
-        <p
-          style={{
-            fontSize: 10,
-            fontWeight: 600,
-            fontFamily: FONT.mono,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: color,
-            marginBottom: 4,
-          }}
-        >
-          {label}
-        </p>
-        <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6 }}>
-          {description}
-        </p>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {frameworks.map((fw) => (
-          <Link
-            key={fw.id}
-            href={fw.href}
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              gap: 10,
-              padding: "10px 14px",
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${hexToRgba(color, 0.5)}`,
-              textDecoration: "none",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: FONT.mono,
-                fontSize: 11,
-                fontWeight: 700,
-                color: color,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {fw.id}
-            </span>
-            <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, whiteSpace: "nowrap" }}>
-              {fw.label}
-            </span>
-            <span style={{ fontSize: 12, color: TEXT.muted }}>
-              — {fw.entry}
-            </span>
-          </Link>
-        ))}
-      </div>
     </div>
   );
 }
