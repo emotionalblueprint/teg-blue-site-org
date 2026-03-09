@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, FrameworkHero,
   PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -212,11 +212,19 @@ export default function F11EmotionalParadoxesPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F11"
-            title="The Emotional Logic Behind Paradoxes"
-            subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F11"
+              title="The Emotional Logic Behind Paradoxes"
+              subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
+              arc="Repair and Complexity"
+              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              threadLabel="Reverses the Thread"
+              threadLine="Builds the original — paradox as a sign of integration beginning, not failure"
+              adjacent={{
+                prev: { label: "F10 Generational Bridges", href: "/framework/f10-generational-bridges" },
+                next: { label: "F12 Two Information Systems", href: "/framework/f12-two-information-systems" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -91,12 +91,24 @@ export default function F3FalseCoherencePage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F3"
-            title="Adult Cognition & False Coherence"
-            subtitle="How Cognition Maintains What the Body Never Learned to Regulate"
-            description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. The cognitive maintenance framework of the TEG-Blue system."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F3"
+              title="Adult Cognition & False Coherence"
+              subtitle="How Cognition Maintains What the Body Never Learned to Regulate"
+              description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. The cognitive maintenance framework of the TEG-Blue system."
+              arc="Individual"
+              arcLabel="Arc 1: Individual · F1–F3"
+              threadLine="False coherence — cognition replacing restoration · Cost: Truth"
+              informsModels={[
+                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+                { label: "M3", href: "/model/m3-the-open-cycle" },
+              ]}
+              adjacent={{
+                prev: { label: "F2 Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
+                next: { label: "F4 Rules Regulate", href: "/framework/f4-rules-regulate" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

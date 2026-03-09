@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -89,12 +89,19 @@ export default function F6BiasRegulatesPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F6"
-            title="Bias Regulates"
-            subtitle="How Perception Becomes Protection"
-            description="How worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why the resulting perceptual system resists correction even in intelligent, well-intentioned people. The third framework in the collective arc (F4–F7)."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F6"
+              title="Bias Regulates"
+              subtitle="How Perception Becomes Protection"
+              description="How worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why the resulting perceptual system resists correction even in intelligent, well-intentioned people. The third framework in the collective arc (F4–F7)."
+              arc="Collective"
+              arcLabel="Arc 2: Collective · F4–F7"
+              threadLine="Bias regulates · Cost: Accuracy"
+              adjacent={{
+                prev: { label: "F5 Worth Hierarchies", href: "/framework/f5-worth-hierarchies" },
+                next: { label: "F7 Domination Regulates", href: "/framework/f7-domination-regulates" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

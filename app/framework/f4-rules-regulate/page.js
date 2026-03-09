@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -89,12 +89,19 @@ export default function F4RulesRegulatePage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F4"
-            title="Rules Regulate"
-            subtitle="How Individual Patterns Scale to Collective Rule Systems"
-            description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7) of the TEG-Blue system."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F4"
+              title="Rules Regulate"
+              subtitle="How Individual Patterns Scale to Collective Rule Systems"
+              description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7) of the TEG-Blue system."
+              arc="Collective"
+              arcLabel="Arc 2: Collective · F4–F7"
+              threadLine="Rules regulate · Cost: Flexibility"
+              adjacent={{
+                prev: { label: "F3 False Coherence", href: "/framework/f3-false-coherence" },
+                next: { label: "F5 Worth Hierarchies", href: "/framework/f5-worth-hierarchies" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

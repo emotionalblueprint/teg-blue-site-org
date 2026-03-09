@@ -23,6 +23,9 @@ export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
 export { default as FrameworkTerms } from "./FrameworkTerms";
 
+// Framework components
+export { default as FrameworkHero } from "./FrameworkHero";
+
 // Model components
 export { default as ModelHero } from "./ModelHero";
 export { default as ModelAnchorStrip } from "./ModelAnchorStrip";

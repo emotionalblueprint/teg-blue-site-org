@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, FrameworkHero,
   PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -210,11 +210,22 @@ export default function F12TwoInformationSystemsPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F12"
-            title="Our Two Information Systems"
-            subtitle="Why Insight Alone Doesn't Change Behavior and What Actually Does"
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F12"
+              title="Our Two Information Systems"
+              subtitle="Why Insight Alone Doesn't Change Behavior and What Actually Does"
+              arc="Repair and Complexity"
+              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              threadLabel="The Architecture Underneath"
+              threadLine="The architecture that explains why the thread works the way it does"
+              informsModels={[
+                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M3", href: "/model/m3-the-open-cycle" },
+              ]}
+              adjacent={{
+                prev: { label: "F11 Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

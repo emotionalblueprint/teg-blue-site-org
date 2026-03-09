@@ -5,7 +5,7 @@ import {
   hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection, FrameworkTerms,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -107,12 +107,22 @@ export default function F1EmotionalGradientPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F1"
-            title="Emotions as Biological Information"
-            subtitle="The Safety-Threat Orientation System"
-            description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F1"
+              title="Emotions as Biological Information"
+              subtitle="The Safety-Threat Orientation System"
+              description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
+              arc="Individual"
+              arcLabel="Arc 1: Individual · F1–F3"
+              threadLine="Biological Restoration — the body completing its own cycle · Cost: None — this is the design"
+              informsModels={[
+                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M3", href: "/model/m3-the-open-cycle" },
+              ]}
+              adjacent={{
+                next: { label: "F2 Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

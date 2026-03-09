@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -91,12 +91,23 @@ export default function F2AwarenessCalibrationPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F2"
-            title="Awareness Teaches Awareness"
-            subtitle="How the Three Capacities Calibrate the Compass"
-            description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. The calibration framework of the TEG-Blue system."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F2"
+              title="Awareness Teaches Awareness"
+              subtitle="How the Three Capacities Calibrate the Compass"
+              description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. The calibration framework of the TEG-Blue system."
+              arc="Individual"
+              arcLabel="Arc 1: Individual · F1–F3"
+              threadLine="Co-regulation → self-restoration (when learned). When not learned: the compass locks · Cost: The restoration path is never built"
+              informsModels={[
+                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+                { label: "M3", href: "/model/m3-the-open-cycle" },
+              ]}
+              adjacent={{
+                prev: { label: "F1 Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
+                next: { label: "F3 False Coherence", href: "/framework/f3-false-coherence" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

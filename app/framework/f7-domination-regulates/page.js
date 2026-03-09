@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -89,12 +89,22 @@ export default function F7DominationRegulatesPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F7"
-            title="Domination Regulates"
-            subtitle="How Defense Becomes Strategy Becomes Domination"
-            description="How bias (F6) hardens into enforcement — through escalation driven by reinforcement, not character — producing a five-stage pathway from fear activation through power preservation, with identifiable markers and intervention windows at each stage. The final framework in the collective arc (F4–F7), completing the regulation thread from F1 through F7."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F7"
+              title="Domination Regulates"
+              subtitle="How Defense Becomes Strategy Becomes Domination"
+              description="How bias (F6) hardens into enforcement — through escalation driven by reinforcement, not character — producing a five-stage pathway from fear activation through power preservation, with identifiable markers and intervention windows at each stage. The final framework in the collective arc (F4–F7), completing the regulation thread from F1 through F7."
+              arc="Collective"
+              arcLabel="Arc 2: Collective · F4–F7"
+              threadLine="Domination regulates · Cost: Everything"
+              informsModels={[
+                { label: "M1", href: "/model/m1-inner-compass" },
+              ]}
+              adjacent={{
+                prev: { label: "F6 Bias Regulates", href: "/framework/f6-bias-regulates" },
+                next: { label: "F8 Repairing Awareness", href: "/framework/f8-repairing-awareness" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

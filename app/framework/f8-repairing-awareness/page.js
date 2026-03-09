@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -91,12 +91,24 @@ export default function F8RepairingAwarenessPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F8"
-            title="Repairing Awareness"
-            subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
-            description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F8"
+              title="Repairing Awareness"
+              subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
+              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
+              arc="Repair and Complexity"
+              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              threadLabel="Reverses the Thread"
+              threadLine="Builds the original — developing the awareness capacities that substitutes replaced"
+              informsModels={[
+                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+                { label: "M3", href: "/model/m3-the-open-cycle" },
+              ]}
+              adjacent={{
+                prev: { label: "F7 Domination Regulates", href: "/framework/f7-domination-regulates" },
+                next: { label: "F9 Neurodivergence", href: "/framework/f9-neurodivergence-variation" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

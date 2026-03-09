@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, FrameworkHero,
   PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -211,11 +211,22 @@ export default function F10GenerationalBridgesPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F10"
-            title="Rebuilding Generational Bridges"
-            subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F10"
+              title="Rebuilding Generational Bridges"
+              subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
+              arc="Repair and Complexity"
+              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              threadLabel="Reverses the Thread"
+              threadLine="Builds the original — what gets processed here changes what transmits next"
+              informsModels={[
+                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+              ]}
+              adjacent={{
+                prev: { label: "F9 Neurodivergence", href: "/framework/f9-neurodivergence-variation" },
+                next: { label: "F11 Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

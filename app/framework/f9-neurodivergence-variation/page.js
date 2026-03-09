@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, ResearcherHero,
+  SiteHeader, SiteFooter, FrameworkHero,
   PropositionBox, ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -210,11 +210,19 @@ export default function F9NeurodivergenceVariationPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F9"
-            title="Neurodivergence as Nervous System Variation"
-            subtitle="When the Environment Is the Mismatch"
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F9"
+              title="Neurodivergence as Nervous System Variation"
+              subtitle="When the Environment Is the Mismatch"
+              arc="Repair and Complexity"
+              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              threadLabel="Reverses the Thread"
+              threadLine="Builds the original — reframes variation as configuration, not deficit"
+              adjacent={{
+                prev: { label: "F8 Repairing Awareness", href: "/framework/f8-repairing-awareness" },
+                next: { label: "F10 Generational Bridges", href: "/framework/f10-generational-bridges" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >

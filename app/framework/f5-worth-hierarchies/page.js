@@ -4,7 +4,7 @@ import {
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, PageLayout, ResearcherHero,
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -89,12 +89,19 @@ export default function F5WorthHierarchiesPage() {
 
       <PageLayout
         header={
-          <ResearcherHero
-            badge="FRAMEWORK F5"
-            title="Worth Hierarchies Regulate"
-            subtitle="How Rules Become Sorting Systems"
-            description="How threat-stabilized rule systems (F4) produce worth hierarchies — through the nervous system's orientation toward whatever signals safety — and how those hierarchies formalize into self-reinforcing sorting systems that distribute credibility, resources, and protection based on signal access rather than intrinsic worth. The second framework in the collective arc (F4–F7)."
-          />
+          <FrameworkHero
+              badge="FRAMEWORK F5"
+              title="Worth Hierarchies Regulate"
+              subtitle="How Rules Become Sorting Systems"
+              description="How threat-stabilized rule systems (F4) produce worth hierarchies — through the nervous system's orientation toward whatever signals safety — and how those hierarchies formalize into self-reinforcing sorting systems that distribute credibility, resources, and protection based on signal access rather than intrinsic worth. The second framework in the collective arc (F4–F7)."
+              arc="Collective"
+              arcLabel="Arc 2: Collective · F4–F7"
+              threadLine="Worth hierarchies regulate · Cost: Equity"
+              adjacent={{
+                prev: { label: "F4 Rules Regulate", href: "/framework/f4-rules-regulate" },
+                next: { label: "F6 Bias Regulates", href: "/framework/f6-bias-regulates" },
+              }}
+            />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
