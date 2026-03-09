@@ -84,6 +84,12 @@ export const metadata = {
     description:
       "How the nervous system orients between safety and threat. The foundational framework behind the TEG-Blue system.",
   },
+  other: {
+    'citation_title': 'Emotions as Biological Information',
+    'citation_author': 'Anna Paretas-Artacho',
+    'citation_publication_date': '2026/02',
+    'citation_technical_report_institution': 'TEG-Blue Research',
+  },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────
@@ -193,7 +199,7 @@ export default function F1EmotionalGradientPage() {
               ...proseStyle,
               marginBottom: 20,
             }}>
-              The complete seven-step arc — from Perception to Escalation or Repair — is mapped in{" "}
+              The complete seven-step arc — from Signal Detection to Escalation or Repair — is mapped in{" "}
               <a href="#the-full-arc" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
                 The Full Arc →
               </a>
@@ -396,7 +402,7 @@ export default function F1EmotionalGradientPage() {
 
               <ol style={orderedListStyle}>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>Perception</strong> — exteroceptive, interoceptive, and memory-based signals arrive continuously
+                  <strong style={{ color: TEXT.primary }}>Signal Detection</strong> — exteroceptive, interoceptive, and memory-based signals arrive continuously
                 </li>
                 <li style={listItemStyle}>
                   <strong style={{ color: TEXT.primary }}>Neuroception</strong> — the nervous system evaluates: safe, dangerous, or life-threatening? Based on pattern-matching from past experience, not objective analysis
@@ -668,7 +674,25 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                The complete cycle is: Perception → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: TEXT.primary }}>Biological Restoration</strong> → Connection. Fluid operation is not the absence of Protection. It is the full cycle — the ability to move into threat response when needed and come back when the threat has passed. Biological Restoration is the mechanism of coming back.
+                The complete cycle:
+              </p>
+              <p
+                style={{
+                  fontSize: 14,
+                  fontFamily: FONT.mono,
+                  color: TEXT.muted,
+                  padding: "12px 16px",
+                  background: hexToRgba(SPECTRUM.cobalt, 0.08),
+                  borderRadius: 6,
+                  marginBottom: 16,
+                  textAlign: "center",
+                  lineHeight: 1.6,
+                }}
+              >
+                Signal Detection → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Connection
+              </p>
+              <p style={proseStyle}>
+                Fluid operation is not the absence of Protection. It is the full cycle — the ability to move into threat response when needed and come back when the threat has passed. Biological Restoration is the mechanism of coming back.
               </p>
 
               <h4 style={subheadingStyle}>Biological Restoration across the Full Gradient</h4>
@@ -906,7 +930,7 @@ export default function F1EmotionalGradientPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <TableRow cells={["Perception", "Broad", "Narrows to threat", "Strategic variables", "Binary (threat/not-threat)"]} />
+                    <TableRow cells={["Signal Detection", "Broad", "Narrows to threat", "Strategic variables", "Binary (threat/not-threat)"]} />
                     <TableRow cells={["Empathy", "Full", "Filtered to survival data", "Deprioritized", "Near-zero"]} />
                     <TableRow cells={["Cognition", "Flexible", "Simplified — fast decisions", "Focused but rigid", "Elimination only"]} />
                     <TableRow cells={["Time horizon", "Extended", "Immediate", "Instrumental", "This moment only"]} />
@@ -1009,7 +1033,7 @@ export default function F1EmotionalGradientPage() {
                   lineHeight: 1.6,
                 }}
               >
-                Perception → Emotion → Action → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Behavior → Social Structure → Escalation or Repair
+                Signal Detection → Emotion → Action → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Behaviour → Social Structure → Escalation or Repair
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -1022,11 +1046,11 @@ export default function F1EmotionalGradientPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <TableRow cells={["Perception", "The nervous system perceives the environment through all available channels", "F1, F2, F6"]} />
+                    <TableRow cells={["Signal Detection", "The nervous system perceives the environment through all available channels", "F1, F2, F6"]} />
                     <TableRow cells={["Emotion", "The nervous system generates the signal — the body's first language", "F1"]} />
                     <TableRow cells={["Action", "The organism responds from its current mode", "F1, F2"]} />
                     <TableRow cells={["Biological Restoration", "The body completes the activation cycle — or doesn't", "F1, F2, F3"]} />
-                    <TableRow cells={["Behavior", "What the person produces relationally", "F3"]} />
+                    <TableRow cells={["Behaviour", "What the person produces relationally", "F3"]} />
                     <TableRow cells={["Social Structure", "Individual patterns aggregate into collective systems", "F4, F5, F6"]} />
                     <TableRow cells={["Escalation or Repair", "The system escalates or the original restoration is rebuilt", "F7, F8–F12"]} />
                   </tbody>
@@ -1113,14 +1137,14 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["The safety orientation question", "One question generates all emotional diversity: \"Is there enough safety?\""]} />
                   <TableRow cells={["Cross-theoretical convergence", "Six traditions describe the same two-mode orientation."]} />
                   <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
-                  <TableRow cells={["How the compass moves", "Five-step sequence from perception to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
+                  <TableRow cells={["How the compass moves", "Five-step sequence from signal detection to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
                   <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
                   <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The central mechanism of the entire twelve-framework system."]} />
                   <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
                   <TableRow cells={["The gradient", "The four modes are positions on a continuous gradient, not four boxes."]} />
                   <TableRow cells={["State determines capacity", "What you can perceive, think, and do depends on your current state. Restore safety first, then expect capacity."]} />
                   <TableRow cells={["Same emotion, two expressions", "Mode position determines whether an emotion serves connection or defense. Assess mode position, not the emotion."]} />
-                  <TableRow cells={["The seven-step arc", "Perception → Emotion → Action → Biological Restoration → Behavior → Social Structure → Escalation or Repair. Step four of seven, three on each side."]} />
+                  <TableRow cells={["The seven-step arc", "Signal Detection → Emotion → Action → Biological Restoration → Behaviour → Social Structure → Escalation or Repair. Step four of seven, three on each side."]} />
                 </tbody>
               </table>
             </div>

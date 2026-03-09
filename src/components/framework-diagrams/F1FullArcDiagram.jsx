@@ -11,11 +11,11 @@ const SPACING = PW / 6; // ~116.7
 function stepX(i) { return PL + i * SPACING; }
 
 const STEPS = [
-  { label: ["Perception"],               fw: "F1, F2, F6",  zone: "pre" },
+  { label: ["Signal", "Detection"],       fw: "F1, F2, F6",  zone: "pre" },
   { label: ["Emotion"],                  fw: "F1",           zone: "pre" },
   { label: ["Action"],                   fw: "F1, F2",       zone: "pre" },
   { label: ["Biological", "Restoration"], fw: "F1\u2013F3",  zone: "hinge" },
-  { label: ["Behavior"],                 fw: "F3",           zone: "post" },
+  { label: ["Behaviour"],                fw: "F3",           zone: "post" },
   { label: ["Social", "Structure"],      fw: "F4\u2013F6",   zone: "post" },
   { label: ["Escalation", "or Repair"],  fw: "F7\u2013F12",  zone: "post" },
 ];
@@ -36,7 +36,7 @@ export default function F1FullArcDiagram() {
     >
       <title id="arc-title">The seven-step arc from signal to structure</title>
       <desc id="arc-desc">
-        Seven steps from Perception to Escalation or Repair, with Biological
+        Seven steps from Signal Detection to Escalation or Repair, with Biological
         Restoration as the central hinge at step four. Steps one through three
         represent the body&#39;s designed process. Steps five through seven
         depend on whether restoration completed.

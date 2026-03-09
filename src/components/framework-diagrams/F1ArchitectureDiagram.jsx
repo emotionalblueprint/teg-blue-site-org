@@ -21,7 +21,7 @@ const MODES = [
 ];
 
 const DIMENSIONS = [
-  { name: "Perception",   caps: [0.95, 0.55, 0.38, 0.12], labels: ["broad",     "narrows",     "strategic",    "binary"] },
+  { name: "Signal Detection", caps: [0.95, 0.55, 0.38, 0.12], labels: ["broad",     "narrows",     "strategic",    "binary"] },
   { name: "Empathy",      caps: [0.95, 0.42, 0.18, 0.06], labels: ["full",      "filtered",    "deprioritized","near-zero"] },
   { name: "Cognition",    caps: [0.95, 0.50, 0.38, 0.10], labels: ["flexible",  "simplified",  "rigid",        "elimination"] },
   { name: "Time horizon", caps: [0.92, 0.22, 0.32, 0.08], labels: ["extended",  "immediate",   "instrumental", "now"] },
@@ -44,7 +44,7 @@ export default function F1ArchitectureDiagram() {
     >
       <title id="arch-title">State determines capacity across six dimensions</title>
       <desc id="arch-desc">
-        A matrix showing how six capacity dimensions — perception, empathy,
+        A matrix showing how six capacity dimensions — signal detection, empathy,
         cognition, time horizon, learning, and repair — progressively narrow
         from Connection through Protection and Control to Domination.
       </desc>
