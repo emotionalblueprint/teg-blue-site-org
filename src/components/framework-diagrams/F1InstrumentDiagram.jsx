@@ -4,15 +4,17 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba } from "@/src/styles/tokens";
 
 // ─── Animation Keyframes ────────────────────────────────
-// Each keyframe: { pos, duration (ms to reach THIS keyframe), easing }
-// Loop: gentle drift in Connection → snap to Protection → agitated →
-// slow restoration back to Connection start → repeat
+// Each keyframe: { pos, dur (ms to reach THIS keyframe), ease, flash? }
+// Loop: gentle drift in Connection → signal flash → snap to Protection →
+// agitated → slow restoration back to Connection → repeat
 const KEYFRAMES = [
   // Phase 1: Gentle drift in Connection (slow, ease-in-out)
   { pos: 0.22, dur: 2400, ease: "ease-in-out" },
   { pos: 0.15, dur: 2800, ease: "ease-in-out" },
   { pos: 0.28, dur: 2600, ease: "ease-in-out" },
   { pos: 0.18, dur: 2200, ease: "ease-in-out" },
+  // Signal detected — flash on the needle, position holds
+  { pos: 0.18, dur: 400,  ease: "ease-in-out", flash: true },
   // Phase 2: Snap to Protection (fast, ease-out)
   { pos: 0.78, dur: 180,  ease: "cubic-bezier(0.2, 0, 0.4, 1)" },
   // Phase 3: Agitated in Protection (quick jitter)
@@ -35,9 +37,11 @@ export default function F1InstrumentDiagram() {
   const [pos, setPos] = useState(0.20);
   const [easing, setEasing] = useState("ease-in-out");
   const [dur, setDur] = useState(2400);
+  const [flash, setFlash] = useState(false);
   const [noMotion, setNoMotion] = useState(false);
   const idxRef = useRef(0);
   const timerRef = useRef(null);
+  const flashTimerRef = useRef(null);
 
   useEffect(() => {
     setNoMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -48,19 +52,36 @@ export default function F1InstrumentDiagram() {
     setEasing(kf.ease);
     setDur(kf.dur);
     setPos(kf.pos);
+
+    // Flash handling
+    if (kf.flash) {
+      setFlash(true);
+      clearTimeout(flashTimerRef.current);
+      flashTimerRef.current = setTimeout(() => setFlash(false), kf.dur);
+    }
+
     idxRef.current = (idxRef.current + 1) % KEYFRAMES.length;
     timerRef.current = setTimeout(advance, kf.dur);
   }, []);
 
   useEffect(() => {
     if (noMotion) return;
-    // Start the first keyframe after a brief pause
     timerRef.current = setTimeout(advance, 1200);
-    return () => clearTimeout(timerRef.current);
+    return () => {
+      clearTimeout(timerRef.current);
+      clearTimeout(flashTimerRef.current);
+    };
   }, [noMotion, advance]);
 
   const inConn = pos < 0.5;
   const accent = inConn ? SPECTRUM.sky : SPECTRUM.blue;
+
+  // Needle glow — amplified during flash
+  const needleShadow = flash
+    ? `0 0 20px ${hexToRgba("#ffffff", 0.7)}, 0 0 40px ${hexToRgba(SPECTRUM.sky, 0.5)}, 0 0 6px ${hexToRgba(accent, 0.6)}`
+    : `0 0 12px ${hexToRgba(accent, 0.4)}`;
+
+  const needleBorder = flash ? `3px solid #ffffff` : `3px solid ${accent}`;
 
   return (
     <div>
@@ -124,6 +145,20 @@ export default function F1InstrumentDiagram() {
             background: hexToRgba(SPECTRUM.slate, 0.55),
           }} />
 
+          {/* Signal flash ring — expands outward from needle */}
+          {flash && (
+            <div style={{
+              position: "absolute", top: "50%",
+              left: `${pos * 100}%`,
+              transform: "translate(-50%, -50%)",
+              width: 24, height: 24, borderRadius: "50%",
+              background: "transparent",
+              boxShadow: `0 0 0 0 ${hexToRgba("#ffffff", 0.6)}`,
+              animation: "signal-ping 400ms ease-out forwards",
+              pointerEvents: "none",
+            }} />
+          )}
+
           {/* Needle */}
           <div
             role="img"
@@ -133,15 +168,23 @@ export default function F1InstrumentDiagram() {
               left: `${pos * 100}%`,
               transform: "translate(-50%, -50%)",
               width: 24, height: 24, borderRadius: "50%",
-              background: BG.primary,
-              border: `3px solid ${accent}`,
-              boxShadow: `0 0 12px ${hexToRgba(accent, 0.4)}`,
+              background: flash ? hexToRgba("#ffffff", 0.15) : BG.primary,
+              border: needleBorder,
+              boxShadow: needleShadow,
               transition: noMotion ? "none"
-                : `left ${dur}ms ${easing}, border-color 300ms ease, box-shadow 300ms ease`,
+                : `left ${dur}ms ${easing}, border-color 150ms ease, box-shadow 150ms ease, background 150ms ease`,
             }}
           />
         </div>
       </div>
+
+      {/* ─── Inline keyframe for ping animation ─── */}
+      <style>{`
+        @keyframes signal-ping {
+          0% { transform: translate(-50%, -50%) scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+          100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; box-shadow: 0 0 12px 8px rgba(255,255,255,0); }
+        }
+      `}</style>
 
       {/* ─── Body-First Descriptions ─── */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
