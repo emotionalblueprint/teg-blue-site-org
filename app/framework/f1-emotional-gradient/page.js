@@ -779,7 +779,7 @@ export default function F1EmotionalGradientPage() {
                   marginBottom: 16,
                 }}
               >
-                <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.C.primary, marginBottom: 8 }}>
                   Control Mode — Pattern C <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Instability → Strategy (time-limited)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
@@ -806,7 +806,7 @@ export default function F1EmotionalGradientPage() {
                   marginBottom: 16,
                 }}
               >
-                <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.D.primary, marginBottom: 8 }}>
                   Domination Mode — Pattern D <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Power = Safety → Dominance (time-limited)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>

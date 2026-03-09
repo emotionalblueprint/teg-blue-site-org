@@ -95,9 +95,16 @@ export default function F1CognitiveUpgradeDiagram() {
     <div>
       {/* ─── Header ─── */}
       <div style={{
-        display: "flex", alignItems: "center", justifyContent: "flex-end",
+        display: "flex", alignItems: "center", justifyContent: "space-between",
         marginBottom: 14,
       }}>
+        <span style={{
+          fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,
+          letterSpacing: "0.08em", textTransform: "uppercase",
+          color: TEXT.muted,
+        }}>
+          Inner Compass + Four-Mode Gradient
+        </span>
         <span style={{
           fontFamily: FONT.mono, fontSize: 10, color: TEXT.hint,
           letterSpacing: "0.06em",
@@ -194,6 +201,8 @@ export default function F1CognitiveUpgradeDiagram() {
             transition: "opacity 200ms ease",
           }}>
             {m.name}
+            <br />
+            <span style={{ fontSize: 8, fontWeight: 400, opacity: 0.7 }}>mode</span>
           </span>
         ))}
       </div>

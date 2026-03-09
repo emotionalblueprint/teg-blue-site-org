@@ -1,34 +1,90 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba } from "@/src/styles/tokens";
 
-// ─── Animation Constants ────────────────────────────────
-const FLUID_POSITIONS = [0.18, 0.52, 0.28, 0.62, 0.12, 0.42, 0.35, 0.55, 0.22, 0.48];
-const MOVE_MS = 1800;
+// ─── Animation Keyframes ────────────────────────────────
+// Each keyframe: { pos, duration (ms to reach THIS keyframe), easing }
+// Loop: gentle drift in Connection → snap to Protection → agitated →
+// slow restoration back to Connection start → repeat
+const KEYFRAMES = [
+  // Phase 1: Gentle drift in Connection (slow, ease-in-out)
+  { pos: 0.22, dur: 2400, ease: "ease-in-out" },
+  { pos: 0.15, dur: 2800, ease: "ease-in-out" },
+  { pos: 0.28, dur: 2600, ease: "ease-in-out" },
+  { pos: 0.18, dur: 2200, ease: "ease-in-out" },
+  // Phase 2: Snap to Protection (fast, ease-out)
+  { pos: 0.78, dur: 180,  ease: "cubic-bezier(0.2, 0, 0.4, 1)" },
+  // Phase 3: Agitated in Protection (quick jitter)
+  { pos: 0.72, dur: 350,  ease: "ease-in-out" },
+  { pos: 0.82, dur: 300,  ease: "ease-in-out" },
+  { pos: 0.75, dur: 280,  ease: "ease-in-out" },
+  { pos: 0.80, dur: 320,  ease: "ease-in-out" },
+  // Phase 4: Very slow restoration back to Connection
+  { pos: 0.65, dur: 2000, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
+  { pos: 0.50, dur: 2400, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
+  { pos: 0.38, dur: 2800, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
+  { pos: 0.25, dur: 3200, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
+  { pos: 0.20, dur: 2000, ease: "ease-in-out" },
+  // Back to start position for seamless loop
+];
 
 const BAR_GRADIENT = `linear-gradient(90deg, ${SPECTRUM.sky} 0%, ${SPECTRUM.azure} 40%, ${SPECTRUM.blue} 60%, ${SPECTRUM.indigo} 100%)`;
 
 export default function F1InstrumentDiagram() {
-  const [idx, setIdx] = useState(0);
+  const [pos, setPos] = useState(0.20);
+  const [easing, setEasing] = useState("ease-in-out");
+  const [dur, setDur] = useState(2400);
   const [noMotion, setNoMotion] = useState(false);
+  const idxRef = useRef(0);
+  const timerRef = useRef(null);
 
   useEffect(() => {
     setNoMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, []);
 
+  const advance = useCallback(() => {
+    const kf = KEYFRAMES[idxRef.current];
+    setEasing(kf.ease);
+    setDur(kf.dur);
+    setPos(kf.pos);
+    idxRef.current = (idxRef.current + 1) % KEYFRAMES.length;
+    timerRef.current = setTimeout(advance, kf.dur);
+  }, []);
+
   useEffect(() => {
     if (noMotion) return;
-    const t = setInterval(() => setIdx(i => (i + 1) % FLUID_POSITIONS.length), MOVE_MS);
-    return () => clearInterval(t);
-  }, [noMotion]);
+    // Start the first keyframe after a brief pause
+    timerRef.current = setTimeout(advance, 1200);
+    return () => clearTimeout(timerRef.current);
+  }, [noMotion, advance]);
 
-  const pos = noMotion ? 0.25 : FLUID_POSITIONS[idx];
   const inConn = pos < 0.5;
   const accent = inConn ? SPECTRUM.sky : SPECTRUM.blue;
 
   return (
     <div>
+      {/* ─── Header ─── */}
+      <div style={{
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        marginBottom: 10,
+      }}>
+        <span style={{
+          fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,
+          letterSpacing: "0.08em", textTransform: "uppercase",
+          color: TEXT.muted,
+        }}>
+          Inner Compass + Four-Mode Gradient
+        </span>
+        <span style={{
+          fontFamily: FONT.mono, fontSize: 10, fontWeight: 400,
+          letterSpacing: "0.06em", fontStyle: "italic",
+          color: TEXT.muted,
+        }}>
+          needle moving — responding and returning
+        </span>
+      </div>
+
       {/* ─── Mode Labels ─── */}
       <div style={{
         display: "flex", justifyContent: "space-between",
@@ -38,7 +94,7 @@ export default function F1InstrumentDiagram() {
           fontFamily: FONT.mono, fontSize: 11, fontWeight: 700,
           letterSpacing: "0.08em", color: SPECTRUM.sky,
         }}>
-          CONNECTION
+          PATTERN A
         </span>
         <span style={{
           fontFamily: FONT.mono, fontSize: 8, fontWeight: 400,
@@ -50,7 +106,7 @@ export default function F1InstrumentDiagram() {
           fontFamily: FONT.mono, fontSize: 11, fontWeight: 700,
           letterSpacing: "0.08em", color: SPECTRUM.indigo,
         }}>
-          PROTECTION
+          PATTERN B
         </span>
       </div>
 
@@ -81,38 +137,27 @@ export default function F1InstrumentDiagram() {
               border: `3px solid ${accent}`,
               boxShadow: `0 0 12px ${hexToRgba(accent, 0.4)}`,
               transition: noMotion ? "none"
-                : `left ${MOVE_MS}ms ease-in-out, border-color 300ms ease, box-shadow 300ms ease`,
+                : `left ${dur}ms ${easing}, border-color 300ms ease, box-shadow 300ms ease`,
             }}
           />
         </div>
       </div>
 
-      {/* ─── State Description ─── */}
-      <div style={{
-        display: "flex", alignItems: "center", justifyContent: "flex-end",
-        marginBottom: 14,
-      }}>
-        <span style={{
-          fontFamily: FONT.mono, fontSize: 10, fontWeight: 400,
-          letterSpacing: "0.06em", fontStyle: "italic",
-          color: TEXT.muted,
-        }}>
-          needle moving — responding and returning
-        </span>
-      </div>
-
       {/* ─── Body-First Descriptions ─── */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         {[
-          { name: "Connection", color: SPECTRUM.sky,
+          { name: "Connection Mode", color: SPECTRUM.sky, active: inConn,
             text: "Belonging, safety, relating \u2014 the system\u2019s home base" },
-          { name: "Protection", color: SPECTRUM.indigo,
+          { name: "Protection Mode", color: SPECTRUM.indigo, active: !inConn,
             text: "Threat response, survival \u2014 fight, flight, freeze" },
-        ].map(({ name, color, text }) => (
+        ].map(({ name, color, text, active }) => (
           <div key={name} style={{
             padding: "10px 12px", borderRadius: 8,
-            background: hexToRgba(color, 0.06),
-            border: `1px solid ${hexToRgba(color, 0.15)}`,
+            background: hexToRgba(color, active ? 0.12 : 0.04),
+            border: `1px solid ${hexToRgba(color, active ? 0.35 : 0.1)}`,
+            boxShadow: active ? `0 0 16px ${hexToRgba(color, 0.15)}` : "none",
+            opacity: active ? 1 : 0.55,
+            transition: "background 500ms ease, border-color 500ms ease, box-shadow 500ms ease, opacity 500ms ease",
           }}>
             <div style={{
               fontFamily: FONT.mono, fontSize: 10, fontWeight: 700,
@@ -121,7 +166,9 @@ export default function F1InstrumentDiagram() {
             }}>
               {name}
             </div>
-            <div style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.5 }}>
+            <div style={{ fontSize: 12, color: active ? TEXT.secondary : TEXT.hint, lineHeight: 1.5,
+              transition: "color 500ms ease",
+            }}>
               {text}
             </div>
           </div>
