@@ -7,18 +7,18 @@ import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSection"), { ssr: false });
 
 const REGULATION_THREAD = [
-  { id: "F1", regulator: "Biological Restoration — the body completing its own cycle", cost: "No cost — this is the design" },
-  { id: "F2", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", cost: "The restoration path is never built" },
-  { id: "F3", regulator: "False coherence — cognition replacing restoration", cost: "Truth" },
-  { id: "F4", regulator: "Rules regulate", cost: "Flexibility" },
-  { id: "F5", regulator: "Worth hierarchies regulate", cost: "Equity" },
-  { id: "F6", regulator: "Bias regulates", cost: "Accuracy" },
-  { id: "F7", regulator: "Domination regulates", cost: "Everything" },
-  { id: "F8", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
-  { id: "F9", regulator: "Variation is design, not deficit", restores: "Accuracy" },
-  { id: "F10", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
-  { id: "F11", regulator: "Paradox holds what logic cannot", restores: "Truth" },
-  { id: "F12", regulator: "Two information systems reunite — body and mind", restores: "The design" },
+  { id: "F1", href: "/framework/f1-emotional-gradient", regulator: "Biological Restoration — the body completing its own cycle", cost: "No cost — this is the design" },
+  { id: "F2", href: "/framework/f2-awareness-calibration", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", cost: "The restoration path is never built" },
+  { id: "F3", href: "/framework/f3-false-coherence", regulator: "False coherence — cognition replacing restoration", cost: "Truth" },
+  { id: "F4", href: "/framework/f4-rules-regulate", regulator: "Rules regulate", cost: "Flexibility" },
+  { id: "F5", href: "/framework/f5-worth-hierarchies", regulator: "Worth hierarchies regulate", cost: "Equity" },
+  { id: "F6", href: "/framework/f6-bias-regulates", regulator: "Bias regulates", cost: "Accuracy" },
+  { id: "F7", href: "/framework/f7-domination-regulates", regulator: "Domination regulates", cost: "Everything" },
+  { id: "F8", href: "/framework/f8-repairing-awareness", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
+  { id: "F9", href: "/framework/f9-neurodivergence-variation", regulator: "Variation is design, not deficit", restores: "Accuracy" },
+  { id: "F10", href: "/framework/f10-generational-bridges", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
+  { id: "F11", href: "/framework/f11-emotional-paradoxes", regulator: "Paradox holds what logic cannot", restores: "Truth" },
+  { id: "F12", href: "/framework/f12-two-information-systems", regulator: "Two information systems reunite — body and mind", restores: "The design" },
 ];
 
 const SIDEBAR_SECTIONS = [
@@ -226,17 +226,19 @@ export default function ResearchHub() {
                         flexWrap: "wrap",
                       }}
                     >
-                      <span
+                      <Link
+                        href={row.href}
                         style={{
                           fontFamily: FONT.mono,
                           fontSize: 13,
                           fontWeight: 700,
                           color: isRepair ? SPECTRUM.blue : TEXT.primary,
                           minWidth: 28,
+                          textDecoration: "none",
                         }}
                       >
                         {row.id}
-                      </span>
+                      </Link>
                       <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, flex: 1, minWidth: 200 }}>
                         {row.regulator}
                       </span>
