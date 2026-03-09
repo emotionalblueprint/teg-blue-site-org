@@ -124,6 +124,45 @@ export default function ResearchEntryPage() {
               The individual theories are validated. The connections are the hypothesis. The scientific community can help determine if &quot;3&quot; holds up.
             </p>
           </MechanismBox>
+
+          {/* The Regulation Thread — concrete example of "3" */}
+          <div
+            style={{
+              marginTop: 20,
+              padding: "12px 16px",
+              background: hexToRgba(SPECTRUM.cobalt, 0.06),
+              borderRadius: 8,
+              border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 9,
+                fontWeight: 700,
+                fontFamily: FONT.mono,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: SPECTRUM.cobalt,
+                marginBottom: 6,
+              }}
+            >
+              The Regulation Thread
+            </div>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
+              The clearest example of the &quot;3&quot;: a single mechanism — regulation substitutes — runs through all 12 frameworks. When the body&apos;s natural return path is missing, something else steps in: cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost. F8–F12 reverse the thread.
+            </p>
+            <Link
+              href="/frameworks-map#the-regulation-thread"
+              style={{
+                fontSize: 13,
+                color: SPECTRUM.cobalt,
+                textDecoration: "none",
+                fontWeight: 500,
+              }}
+            >
+              See the full thread →
+            </Link>
+          </div>
         </section>
 
         {/* Status snapshot */}

@@ -6,7 +6,18 @@ import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 
 const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSection"), { ssr: false });
 
+const REGULATION_THREAD = [
+  { id: "F1", regulator: "Biological Restoration — the body completing its own cycle", cost: "No cost — this is the design" },
+  { id: "F2", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", cost: "The restoration path is never built" },
+  { id: "F3", regulator: "False coherence — cognition replacing restoration", cost: "Truth" },
+  { id: "F4", regulator: "Rules regulate", cost: "Flexibility" },
+  { id: "F5", regulator: "Worth hierarchies regulate", cost: "Equity" },
+  { id: "F6", regulator: "Bias regulates", cost: "Accuracy" },
+  { id: "F7", regulator: "Domination regulates", cost: "Everything" },
+];
+
 const SIDEBAR_SECTIONS = [
+  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost." },
   { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
   { label: "Empirical Evidence", href: "#empirical-evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
   { label: "The 12 Frameworks", href: "#the-12-frameworks", description: "Three arcs — Individual, Collective, Repair — explaining how emotional patterns form, scale, and change." },
@@ -147,6 +158,101 @@ export default function ResearchHub() {
           }
           sidebarSections={SIDEBAR_SECTIONS}
         >
+          {/* ── The Regulation Thread ── */}
+          <section id="the-regulation-thread">
+            {/* Badge pill */}
+            <div
+              style={{
+                display: "inline-block",
+                padding: "4px 12px",
+                borderRadius: 100,
+                fontSize: 10,
+                fontWeight: 700,
+                fontFamily: FONT.mono,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: SPECTRUM.cobalt,
+                backgroundColor: hexToRgba(SPECTRUM.cobalt, 0.15),
+                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.3)}`,
+                marginBottom: 16,
+              }}
+            >
+              The Regulation Thread
+            </div>
+
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+              When the body can't restore itself, something else steps in.
+            </h2>
+
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+              A single thread runs through all twelve frameworks. Each one describes a regulation substitute — at a different scale, at a different cost.
+            </p>
+
+            {/* Thread rows */}
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {REGULATION_THREAD.map((row, i) => (
+                <div
+                  key={row.id}
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 12,
+                    padding: "10px 0",
+                    borderBottom: i < REGULATION_THREAD.length - 1 ? `1px solid ${BORDER.default}` : "none",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: FONT.mono,
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: TEXT.primary,
+                      minWidth: 28,
+                    }}
+                  >
+                    {row.id}
+                  </span>
+                  <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, flex: 1, minWidth: 200 }}>
+                    {row.regulator}
+                  </span>
+                  <span style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted, whiteSpace: "nowrap" }}>
+                    Cost: {row.cost}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.7, fontStyle: "italic" }}>
+              F8–F12 reverse the thread — not by adding another substitute, but by building the original.
+            </p>
+
+            <Link
+              href="/frameworks-map#the-regulation-thread"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                fontSize: 13,
+                color: SPECTRUM.cobalt,
+                textDecoration: "none",
+                fontWeight: 500,
+                marginTop: 12,
+              }}
+            >
+              See the full framework architecture →
+            </Link>
+          </section>
+
+          {/* ── Separator: Spectrum ── */}
+          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
+            <div style={{
+              height: 2,
+              borderRadius: 1,
+              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
+            }} />
+          </div>
+
           {/* ── The Framework ── */}
           <section id="what-teg-blue-is">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>

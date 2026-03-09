@@ -793,6 +793,45 @@ export default function ScientificFoundationsPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        {/* ─── Regulation Thread framing ──────────────────────────── */}
+        <div
+          style={{
+            padding: "12px 16px",
+            background: hexToRgba(SPECTRUM.cobalt, 0.06),
+            borderRadius: 8,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+            marginBottom: 40,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 9,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: SPECTRUM.cobalt,
+              marginBottom: 6,
+            }}
+          >
+            Why These Theories Connect
+          </div>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
+            These research traditions developed independently, across separate disciplines. TEG-Blue proposes that they describe the same underlying mechanism at different scales: when the body&apos;s natural return path is missing, something else regulates instead — cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost.
+          </p>
+          <Link
+            href="/frameworks-map#the-regulation-thread"
+            style={{
+              fontSize: 13,
+              color: SPECTRUM.cobalt,
+              textDecoration: "none",
+              fontWeight: 500,
+            }}
+          >
+            See the Regulation Thread →
+          </Link>
+        </div>
+
         {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
         <CoreFoundations />
 

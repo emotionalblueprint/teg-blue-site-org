@@ -126,6 +126,45 @@ export default function ModelsPage() {
           </p>
         </section>
 
+        {/* ─── REGULATION THREAD ─────────────────────────── */}
+        <section
+          style={{
+            marginBottom: 48,
+            padding: "12px 16px",
+            background: hexToRgba(SPECTRUM.cobalt, 0.06),
+            borderRadius: RADIUS.md,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 9,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: SPECTRUM.cobalt,
+              marginBottom: 6,
+            }}
+          >
+            Regulation Thread
+          </div>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
+            M3 maps the biology of the thread: the physiological sequence that runs when emotion doesn&apos;t complete. When that sequence is blocked, the nervous system recruits substitutes — at every scale, at a cost. The 12 frameworks trace those substitutes from individual cognition to systemic domination.
+          </p>
+          <Link
+            href="/frameworks-map#the-regulation-thread"
+            style={{
+              fontSize: 13,
+              color: SPECTRUM.cobalt,
+              textDecoration: "none",
+              fontWeight: 500,
+            }}
+          >
+            See the full thread →
+          </Link>
+        </section>
+
         {/* ─── FOOTER LINKS ───────────────────────────────── */}
         <section
           style={{
