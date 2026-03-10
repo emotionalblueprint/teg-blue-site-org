@@ -1,9 +1,10 @@
 import { loadAllContent } from '@/src/lib/content'
+import { SERIES } from './mechanics-of-phenomena/mechanics-config'
 
 // Known last-modified dates for static pages (YYYY-MM-DD)
 // Update these when making significant content changes
 const PAGE_DATES = {
-  '/': '2026-02-18',
+  '/': '2026-03-10',
   '/publications': '2026-02-18',
   '/frameworks-map': '2026-02-15',
   '/research-entry': '2026-02-18',
@@ -33,10 +34,7 @@ const PAGE_DATES = {
   '/framework/f10-generational-bridges': '2026-03-04',
   '/framework/f11-emotional-paradoxes': '2026-03-04',
   '/framework/f12-two-information-systems': '2026-03-04',
-  '/mechanics-of-phenomena': '2026-03-07',
-  '/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails': '2026-03-07',
-  '/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context': '2026-03-07',
-  '/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores': '2026-03-07',
+  '/mechanics-of-phenomena': '2026-03-10',
 }
 
 export default function sitemap() {
@@ -230,24 +228,15 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails`,
-      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails']),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context`,
-      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context']),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores`,
-      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores']),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    // Auto-generated from SERIES config — no manual maintenance needed
+    ...SERIES.flatMap((series) =>
+      series.pieces.map((piece) => ({
+        url: `${baseUrl}/mechanics-of-phenomena/${series.slug}/${piece.slug}`,
+        lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena']),
+        changeFrequency: 'monthly',
+        priority: piece.featured ? 0.8 : 0.7,
+      }))
+    ),
   ]
 
   // Dynamic content pages

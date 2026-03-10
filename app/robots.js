@@ -3,63 +3,86 @@ export default function robots() {
 
   return {
     rules: [
-      // Default rule for all crawlers
+      // Default rule — allow all crawlers
       {
         userAgent: '*',
         allow: '/',
       },
-      // Google's main crawler
+      // ─── Google ───────────────────────────────
       {
         userAgent: 'Googlebot',
         allow: '/',
       },
-      // Google's AI training crawler - allow for discoverability
       {
-        userAgent: 'Google-Extended',
+        userAgent: 'Google-Extended',  // Gemini AI training
         allow: '/',
       },
-      // OpenAI's crawler
+      // ─── OpenAI ──────────────────────────────
       {
-        userAgent: 'GPTBot',
-        allow: '/',
-      },
-      // OpenAI's ChatGPT user agent
-      {
-        userAgent: 'ChatGPT-User',
-        allow: '/',
-      },
-      // Anthropic's Claude crawler
-      {
-        userAgent: 'Claude-Web',
+        userAgent: 'GPTBot',           // Training data collection
         allow: '/',
       },
       {
-        userAgent: 'anthropic-ai',
+        userAgent: 'ChatGPT-User',     // Real-time retrieval during conversations
         allow: '/',
       },
-      // Bing's crawler
+      {
+        userAgent: 'OAI-SearchBot',    // ChatGPT search citations
+        allow: '/',
+      },
+      // ─── Anthropic ───────────────────────────
+      {
+        userAgent: 'ClaudeBot',        // Training data collection
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-Web',       // Real-time retrieval
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-SearchBot', // Search results indexing
+        allow: '/',
+      },
+      {
+        userAgent: 'anthropic-ai',     // Legacy agent
+        allow: '/',
+      },
+      // ─── Bing / Microsoft ────────────────────
       {
         userAgent: 'Bingbot',
         allow: '/',
       },
-      // Perplexity AI
+      // ─── Perplexity ──────────────────────────
       {
         userAgent: 'PerplexityBot',
         allow: '/',
       },
-      // Meta's AI crawler
+      // ─── Meta ────────────────────────────────
       {
         userAgent: 'FacebookBot',
         allow: '/',
       },
-      // Common crawlers for AI training
       {
-        userAgent: 'CCBot',
+        userAgent: 'Meta-ExternalAgent', // Llama training
         allow: '/',
       },
-      // Apple's crawler
+      // ─── Amazon ──────────────────────────────
       {
-        userAgent: 'Applebot',
+        userAgent: 'Amazonbot',
+        allow: '/',
+      },
+      // ─── Apple ───────────────────────────────
+      {
+        userAgent: 'Applebot',         // Siri + Apple Intelligence
+        allow: '/',
+      },
+      // ─── Academic / Research ─────────────────
+      {
+        userAgent: 'CCBot',            // Common Crawl (academic + AI training)
+        allow: '/',
+      },
+      {
+        userAgent: 'AI2Bot',           // Allen Institute for AI
         allow: '/',
       },
     ],

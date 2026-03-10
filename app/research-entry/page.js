@@ -337,6 +337,7 @@ export default function ResearchEntryPage() {
                 <NextStepRow step="Understand the full system" href="/foundations" label="System Overview →" />
                 <NextStepRow step="See the applied models" href="/models" label="Core Models →" />
                 <NextStepRow step="See the explanatory architecture" href="/frameworks-map" label="Frameworks →" />
+                <NextStepRow step="See the mechanics in action" href="/mechanics-of-phenomena" label="Mechanics →" />
                 <NextStepRow step="Review evidence and methods" href="/publications" label="Publications" extra={<> · <Link href="/methodology" style={{ color: SPECTRUM.blue }}>Methodology</Link></>} />
                 <NextStepRow step="Use this work" href="/collaborate" label="Collaborate →" />
               </tbody>

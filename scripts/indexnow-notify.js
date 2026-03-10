@@ -18,8 +18,9 @@ const INDEXNOW_ENDPOINTS = [
   'https://api.indexnow.org/indexnow', // Forwards to all participating engines
 ]
 
-// All static pages to notify (matches sitemap.js)
-const STATIC_PAGES = [
+// All pages to notify — comprehensive list matching sitemap.js
+const ALL_PAGES = [
+  // Core pages
   '/',
   '/publications',
   '/frameworks-map',
@@ -28,8 +29,6 @@ const STATIC_PAGES = [
   '/epistemological-foundations',
   '/ai-safety',
   '/models',
-  '/model/m1-inner-compass',
-  '/model/m2-three-awareness-capacities',
   '/glossary',
   '/methodology',
   '/citations',
@@ -37,10 +36,33 @@ const STATIC_PAGES = [
   '/about',
   '/scientific-foundations',
   '/emotional-technology',
+  // Models
+  '/model/m1-inner-compass',
+  '/model/m2-three-awareness-capacities',
+  '/model/m3-the-open-cycle',
+  // Frameworks (F1-F12)
+  '/framework/f1-emotional-gradient',
+  '/framework/f2-awareness-calibration',
+  '/framework/f3-false-coherence',
+  '/framework/f4-rules-regulate',
+  '/framework/f5-worth-hierarchies',
+  '/framework/f6-bias-regulates',
+  '/framework/f7-domination-regulates',
+  '/framework/f8-repairing-awareness',
+  '/framework/f9-neurodivergence-variation',
+  '/framework/f10-generational-bridges',
+  '/framework/f11-emotional-paradoxes',
+  '/framework/f12-two-information-systems',
+  // Mechanics of Phenomena
+  '/mechanics-of-phenomena',
+  '/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-humans-are-so-frustrating',
+  '/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails',
+  '/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context',
+  '/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores',
 ]
 
 async function notifyIndexNow(dryRun = false) {
-  const urls = STATIC_PAGES.map(path => `${BASE_URL}${path}`)
+  const urls = ALL_PAGES.map(path => `${BASE_URL}${path}`)
 
   console.log(`\n📢 IndexNow Notification`)
   console.log(`   URLs to submit: ${urls.length}`)

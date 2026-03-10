@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform (Extended)
 # https://teg-blue.org
-# Last updated: 2026-03-05
+# Last updated: 2026-03-10
 # Format: llms-full.txt (Extended AI-readable documentation)
 
 ---
@@ -453,6 +453,66 @@ Nervous system regulatory states along a continuous gradient:
 
 ---
 
+# MECHANICS OF PHENOMENA (Editorial Series)
+
+Long-form essays that start from observable problems — not from the framework — and reveal the structure underneath. Written in plain language for anyone, with TEG-Blue connections at the end.
+
+## Series: Why Humans Are So Frustrating
+
+Patterns behind behaviors that are hard to understand — the ones experts keep encountering and can't fully resolve with their own tools.
+
+### No. 01: Why Are Humans So Frustrating?
+URL: https://teg-blue.org/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-humans-are-so-frustrating
+TEG-Blue connection: M1 Operating Modes / F3 Cognitive Replacement / F6 Bias as Protection / F2 Developmental Failure of Regulation
+
+The foundational essay. Lays out the split-architecture insight: humans run a sophisticated cognitive system sitting on top of a very old regulatory one, and mostly don't know which one is running the show. The gap between what people know and what they do is not a failure of intelligence — it is evidence of two systems with different substrates and different authority over behavior.
+
+**Key questions answered:**
+- Why do smart people make obviously bad decisions?
+- Why do people keep making the same mistake even when they can see it clearly?
+- Why do people believe things that are obviously false?
+- Why do people stay in situations that are obviously bad for them?
+- Why do people know exactly what they need to do — and not do it?
+- Is there anything that actually bridges the gap between knowledge and behavior?
+
+**Core insight:** The gap is not about information. It is about regulatory state. The person is not failing to think — they are thinking with everything they have. The limitation is in what the thinking is connected to.
+
+### No. 02: Why Evidence Doesn't Work — And What Actually Does
+URL: https://teg-blue.org/mechanics-of-phenomena/why-humans-are-so-frustrating/01-why-evidence-fails
+TEG-Blue connection: F3 Cognitive Replacement / M1 Operating Modes Under Pressure
+
+Why presenting evidence to someone in a threat-management mode produces defensiveness, not updating. When a belief functions as a regulatory tool, dismantling it would destabilize the internal regulation it provides. Evidence lands as threat, not information.
+
+**Key questions answered:**
+- Why doesn't evidence work to change people's minds?
+- Are conspiracy believers less intelligent?
+- Why do people get more entrenched when pushed harder?
+- What actually works to change minds?
+
+### No. 03: Why People Are Completely Different Depending on Who's Watching
+URL: https://teg-blue.org/mechanics-of-phenomena/why-humans-are-so-frustrating/02-why-people-change-by-context
+TEG-Blue connection: M1 Operating Modes / F4 Collective Rules / F5 Worth Hierarchies
+
+How regulatory systems produce context-dependent behavior. The same person in two contexts is operating in two different regulatory environments. One version is scaffolded by external structures; the other is what the system produces when that scaffolding is removed.
+
+**Key questions answered:**
+- How can someone be genuinely kind at work and genuinely terrible at home?
+- Does that mean one version is fake?
+- Why does the worst behavior happen in the closest relationships?
+- Can context-dependent behavior change?
+
+## Series: Proofs by Nature
+
+Observable phenomena from the natural world that show TEG-Blue principles running in different hardware.
+
+### No. 01: Octopuses Change Color With Their Emotions
+URL: https://teg-blue.org/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores
+TEG-Blue connection: F1 Emotional Gradient / Signal function
+
+The octopus chromatophore system as independent evidence that emotions function as information — not decoration. Signal function running in completely different hardware, long before humans arrived to name it.
+
+---
+
 # AI SAFETY APPLICATIONS
 
 ## Why Emotional Intelligence Matters for AI
@@ -659,6 +719,7 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - Glossary (169 terms): https://teg-blue.org/glossary
 - Methodology: https://teg-blue.org/methodology
 - Collaborate: https://teg-blue.org/collaborate
+- Mechanics of Phenomena (editorial essays): https://teg-blue.org/mechanics-of-phenomena
 - Application Site: https://teg-blue.com
 - Sitemap: https://teg-blue.org/sitemap.xml
 - llms.txt (summary): https://teg-blue.org/llms.txt

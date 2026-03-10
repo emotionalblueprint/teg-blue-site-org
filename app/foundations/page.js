@@ -218,9 +218,12 @@ export default function FoundationsPage() {
             <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
               Each framework credits its sources. The connections between them are TEG-Blue&apos;s contribution, open to structured review and testing.
             </p>
-            <div style={{ marginTop: 16 }}>
+            <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
               <Link href="/frameworks-map" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
                 See all 12 Frameworks →
+              </Link>
+              <Link href="/mechanics-of-phenomena" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
+                See the mechanics in action →
               </Link>
             </div>
           </PartCard>
@@ -417,6 +420,7 @@ export default function FoundationsPage() {
               <tbody>
                 <NavRow label="Go deeper into the three models" href="/models" linkText="Core Models →" />
                 <NavRow label="See all twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
+                <NavRow label="See the mechanics in action" href="/mechanics-of-phenomena" linkText="Mechanics →" />
                 <NavRow label="Review the evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand the methodology" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Explore the emotional tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />

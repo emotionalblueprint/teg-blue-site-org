@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, EDITORIAL, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
@@ -11,6 +11,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Collective · F4–F7", href: "#collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
   { label: "The Reversal · F8–F12", href: "#the-reversal", description: "How the awareness capacities rebuild, and what makes change possible." },
   { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Biology of Unfinished Emotion." },
+  { label: "Mechanics of Phenomena", href: "#mechanics-of-phenomena", description: "Long-form essays showing these mechanisms operating in real life." },
 ];
 
 // The 12 Frameworks with structured content
@@ -500,6 +501,48 @@ export default function TheoreticalFoundationsPage() {
               </p>
             </Link>
           </div>
+        </section>
+
+        {/* Mechanics of Phenomena */}
+        <section id="mechanics-of-phenomena" style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            Mechanics of Phenomena
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            The frameworks explain the architecture. These essays show it operating {"\u2014"} starting from observable problems, not from the framework. TEG-Blue appears when the explanation calls for it, not before.
+          </p>
+          <Link
+            href="/mechanics-of-phenomena"
+            style={{
+              padding: 20,
+              background: gradientCardBg(EDITORIAL.accent),
+              borderRadius: 10,
+              border: `1px solid ${BORDER.default}`,
+              borderLeft: `3px solid ${EDITORIAL.accent}`,
+              textDecoration: "none",
+              display: "block",
+            }}
+          >
+            <p
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                color: EDITORIAL.accent,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                fontFamily: FONT.mono,
+                marginBottom: 6,
+              }}
+            >
+              Editorial Series
+            </p>
+            <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+              The Mechanics of Phenomena {"\u2192"}
+            </p>
+            <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+              Why smart people make bad decisions. Why evidence fails. Why people are different depending on who{"\u2019"}s watching. Long-form essays revealing the structure underneath.
+            </p>
+          </Link>
         </section>
 
       </PageLayout>
