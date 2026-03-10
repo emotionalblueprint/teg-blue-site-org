@@ -6,11 +6,10 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "The single thread running through all 12 frameworks — from biological signal to systemic structure and back." },
-  { label: "Three-Arc Structure", href: "#three-arc-structure", description: "Individual (F1–F3), Collective (F4–F7), Repair and Complexity (F8–F12). How the arcs connect." },
-  { label: "Arc 1 — Individual", href: "#arc-1-individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
-  { label: "Arc 2 — Collective", href: "#arc-2-collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
-  { label: "Arc 3 — Repair", href: "#arc-3-repair", description: "How awareness rebuilds, neurodivergent variation, generational transmission, paradox, and the architecture underneath." },
+  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all twelve frameworks — what regulates when the body can't, and how the original path rebuilds." },
+  { label: "Individual · F1–F3", href: "#individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
+  { label: "Collective · F4–F7", href: "#collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
+  { label: "The Reversal · F8–F12", href: "#the-reversal", description: "How the awareness capacities rebuild, and what makes change possible." },
   { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Biology of Unfinished Emotion." },
 ];
 
@@ -20,8 +19,8 @@ const FRAMEWORKS = [
     id: "F1",
     displayName: "Emotions as Biological Information",
     title: "The Safety-Threat Orientation System",
-    subtitle: "Arc: Individual · Scale: Biology",
-    arc: "Individual",
+    subtitle: "Scale: Biology",
+    group: "Individual",
     summary: "The foundation. The nervous system evaluates safety and threat continuously — below awareness, before cognition. Emotions are how that evaluation gets delivered. They are the body's first language.",
     purpose: "F1 introduces the Inner Compass and its four modes — Connection, Protection, Control, Domination — and the mechanism that keeps the compass moving: Biological Restoration, the body's designed process for completing the activation cycle and returning to Connection. It cannot be forced. It can only be allowed.\n\nF1 also names the full trajectory the remaining eleven frameworks elaborate: Perception → Emotion → Action → Biological Restoration → Behaviour → Social Structure → Escalation or Repair.\n\nBiological Restoration is the hinge. Everything that follows depends on whether it happened.",
     buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
@@ -37,8 +36,8 @@ const FRAMEWORKS = [
     id: "F2",
     displayName: "Awareness Teaches Awareness",
     title: "How the Three Capacities Calibrate the Compass",
-    subtitle: "Arc: Individual · Scale: Developmental / Relational",
-    arc: "Individual",
+    subtitle: "Scale: Developmental / Relational",
+    group: "Individual",
     summary: "The calibration. The three awareness capacities — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — develop through relationship. The adults' capacity configuration creates the environment in which the child's capacities either develop or don't.",
     purpose: "When co-regulation is available and consistent, the nervous system learns the return path: how to activate, complete the cycle, and come back to Connection. When it is not, the compass locks. The identity that forms around a locked position is the starting point for F3.",
     buildsOn: "Attachment theory, developmental neuroscience, interpersonal neurobiology, polyvagal theory, somatic experiencing, object relations, schema theory.",
@@ -54,8 +53,8 @@ const FRAMEWORKS = [
     id: "F3",
     displayName: "Adult Cognition & False Coherence",
     title: "Cognitive Regulation and Its Relational Consequences",
-    subtitle: "Arc: Individual · Scale: Individual adult cognition",
-    arc: "Individual",
+    subtitle: "Scale: Individual adult cognition",
+    group: "Individual",
     summary: "When Biological Restoration was never learned and co-regulation is not available, cognition steps in to manage what the body cannot complete. This is not a choice — it is what happens when the system runs out of other options. The result is false coherence. It works. The cost is truth.",
     purpose: "False coherence is a cognitively maintained version of reality that keeps the identity stable under nervous system pressure.\n\nIt also extends into relationships through two mechanisms: emotional distortion — where unidentified internal discomfort gets reclassified as external attack — and external regulation — where other people are recruited to manage what the system cannot process internally.\n\nF3 closes the individual arc. F4 begins the collective one: what happens when enough people in a system are running these same mechanisms at once?",
     buildsOn: "Psychoanalytic theory, cognitive dissonance theory, family systems, polyvagal-informed neuroscience, trauma studies, IFS, attachment theory, addiction research.",
@@ -71,8 +70,8 @@ const FRAMEWORKS = [
     id: "F4",
     displayName: "Rules Regulate",
     title: "How Individual Patterns Scale to Collective Rule Systems",
-    subtitle: "Arc: Collective · Scale: Social systems · Cost: Flexibility",
-    arc: "Collective",
+    subtitle: "Scale: Social systems · Cost: Flexibility",
+    group: "Collective",
     summary: "The first collective framework. When enough people in a system are running the mechanisms F3 describes — false coherence, emotional distortion, external regulation — the group develops structures to stay stable: rules. Rules are not rational agreements. They are nervous system regulation at the group level.",
     purpose: "People do not follow harmful rules because they are unintelligent or immoral. They follow them because under threat, the nervous system prioritises predictability, belonging protection, and risk minimisation — and rules provide all three. Questioning a rule activates the same threat that created it.\n\nF4 explains six categories of rules that consistently emerge, and why they persist long after the original threat has passed.",
     buildsOn: "Sociology (Bourdieu, Bernstein, Goffman), social psychology (Milgram, Asch, Cialdini), neuroscience (Porges, Siegel), attachment theory (Bowlby), systems theory (Bowen, Satir), trauma studies (van der Kolk, Herman), political psychology (Altemeyer), moral psychology (Haidt).",
@@ -89,8 +88,8 @@ const FRAMEWORKS = [
     id: "F5",
     displayName: "Worth Hierarchies Regulate",
     title: "How Rules Become Sorting Systems",
-    subtitle: "Arc: Collective · Scale: Value systems · Cost: Equity",
-    arc: "Collective",
+    subtitle: "Scale: Value systems · Cost: Equity",
+    group: "Collective",
     summary: "Rules do not just organise behaviour — they organise value. When rule adherence becomes the definition of belonging and safety, the system begins to sort people. Those who comply receive belonging, protection, and credibility. Those who cannot receive less.",
     purpose: "F5 explains how this sorting happens: how threat-stabilised rule systems produce worth hierarchies, how those hierarchies formalise into institutions, and how the sorting becomes so deeply internalised that it feels like objective reality rather than collective nervous system regulation.",
     buildsOn: "Capital theory (Bourdieu), social dominance (Sidanius & Pratto), system justification (Jost), signaling theory (Spence), network science (Bonacich), allostatic load (McEwen), intersectionality (Crenshaw), weathering hypothesis (Geronimus), Matthew effect (Merton).",
@@ -106,8 +105,8 @@ const FRAMEWORKS = [
     id: "F6",
     displayName: "Bias Regulates",
     title: "How Perception Becomes Protection",
-    subtitle: "Arc: Collective · Scale: Perceptual systems · Cost: Accuracy",
-    arc: "Collective",
+    subtitle: "Scale: Perceptual systems · Cost: Accuracy",
+    group: "Collective",
     summary: "Worth hierarchies do not just sort people — they shape what people can see. When the worth structure is internalised, perception becomes state-dependent: we see what confirms the hierarchy and miss what challenges it. Not through deliberate distortion, but because the nervous system treats hierarchy-confirming information as safe.",
     purpose: "F6 explains how bias functions as regulation — why it persists under evidence and why it feels like truth rather than defence.",
     buildsOn: "Cognitive psychology (Kahneman & Tversky, Kunda), social psychology (Festinger, Tajfel & Turner, Jost), neuroscience (Friston, Porges, Damasio), clinical psychology (Beck, Young, Schwartz), implicit cognition (Greenwald & Banaji), terror management (Greenberg), psychological safety (Edmondson).",
@@ -123,8 +122,8 @@ const FRAMEWORKS = [
     id: "F7",
     displayName: "Domination Regulates",
     title: "How Defence Becomes Strategy Becomes Domination",
-    subtitle: "Arc: Collective · Scale: Power systems · Cost: Everything",
-    arc: "Collective",
+    subtitle: "Scale: Power systems · Cost: Everything",
+    group: "Collective",
     summary: "The escalation endpoint. F7 traces the pathway from Protection through Control into Domination — not as a character flaw, but as a predictable escalation when every earlier substitute (rules, worth, bias) proves insufficient to regulate a system under increasing threat.",
     purpose: "Domination is the regulation of last resort. It works — at maximum cost. The intervention principle is the same here as everywhere in the system: restore safety first, then expect capacity.\n\nF7 identifies the markers of each escalation stage and the windows where intervention remains possible.",
     buildsOn: "Behavioral reinforcement (Skinner), psychoanalytic theory (Kohut, Kernberg), organizational psychology (Argyris & Schön), neuroscience (Porges, Siegel, Schore), trauma psychology (Van der Kolk, Herman), abuse research (Bancroft), attachment theory (Bowlby), addiction research, systems theory.",
@@ -140,8 +139,8 @@ const FRAMEWORKS = [
     id: "F8",
     displayName: "Repairing Awareness & The Power of Difference",
     title: "How the Three Capacities Develop and Why Difference Is Strength",
-    subtitle: "Arc: Repair and Complexity · Scale: Individual and collective repair",
-    arc: "Repair and Complexity",
+    subtitle: "Scale: Individual and collective repair",
+    group: "The Reversal",
     summary: "F8 turns the system around. F1–F7 trace escalating substitutes. F8 asks: how do you go back? The answer is specific: by rebuilding the awareness capacities that never had conditions to develop.",
     purpose: "Not by finding a hidden self, not by removing a mask, but by creating the relational and experiential conditions that allow RE, ER, and SEA to come online.\n\nF8 operates in two movements. Part 1: individual repair — how to assess where your three capacities currently sit, why repair is difficult, and what conditions make it possible. Part 2: collective strength — why different awareness configurations make collectives more resilient, and why conformity, not difference, is the vulnerability.\n\nThe two movements are one argument: repairing your own capacities and accepting that everyone's capacities are different are the same act of moving toward safety.",
     buildsOn: "Winnicott's True/False Self, Rogers' organismic valuing, IFS, mentalization theory, Polyvagal Theory, corrective emotional experience research.",
@@ -157,8 +156,8 @@ const FRAMEWORKS = [
     id: "F9",
     displayName: "Neurodivergence as Nervous System Variation",
     title: "When the Environment Is the Mismatch",
-    subtitle: "Arc: Repair and Complexity · Scale: Structural",
-    arc: "Repair and Complexity",
+    subtitle: "Scale: Structural",
+    group: "The Reversal",
     summary: "F9 reframes neurodivergence from deficit to variation. Different nervous systems process the emotional gradient differently. This is not disorder — it is configuration. The problem is not the compass — it is the mismatch between how a nervous system is built and what the environment demands.",
     purpose: "When environments are designed for one configuration, others are required to mask — to perform the expected configuration at the cost of authentic expression and chronic regulation.\n\nF9 explains the costs of structural mismatch, the mechanism of forced masking as it connects to F2–F3, and what genuine inclusion requires: not accommodation of deficit, but design that recognises variation as a feature of collective intelligence.",
     buildsOn: "Neurodiversity paradigm (Singer, Walker, Silberman), Social Model of Disability (Oliver, Shakespeare), Polyvagal Theory, Intense World Theory, masking research (Price, Rose, Maté), Universal Design for Learning.",
@@ -174,8 +173,8 @@ const FRAMEWORKS = [
     id: "F10",
     displayName: "Rebuilding Generational Bridges",
     title: "How Patterns Transmit and How Repair Changes What the Next Generation Inherits",
-    subtitle: "Arc: Repair and Complexity · Scale: Intergenerational",
-    arc: "Repair and Complexity",
+    subtitle: "Scale: Intergenerational",
+    group: "The Reversal",
     summary: "Emotional patterns do not begin with us. The compass calibrates in relationship — and the relational environment is shaped by the compass configurations of those who came before. F2's insight — awareness teaches awareness — applies across generations.",
     purpose: "Parents transmit not just genetics but regulatory patterns, emotional environments, and the specific capacity configurations their own conditions produced.\n\nF10 explains the transmission mechanism, the conditions that enable interruption, and what intergenerational repair actually requires. Understanding how you got here — and understanding how the people who shaped you got there — is not the same as being responsible for all of it.",
     buildsOn: "Family Systems (Bowen, Satir, Minuchin), Attachment Theory (Main, Hesse), intergenerational trauma research (van der Kolk, Herman), epigenetics (Yehuda, Meaney), Narrative Therapy (White, Epston), interpersonal neurobiology (Porges, Siegel, Schore).",
@@ -191,8 +190,8 @@ const FRAMEWORKS = [
     id: "F11",
     displayName: "The Emotional Paradoxes",
     title: "Multi-Rationality and Holding Capacity",
-    subtitle: "Arc: Repair and Complexity · Scale: Multi-rational",
-    arc: "Repair and Complexity",
+    subtitle: "Scale: Multi-rational",
+    group: "The Reversal",
     summary: "When people begin to heal, they encounter paradoxes: knowing and not yet being able to act differently. Feeling worse as awareness increases. F11 explains why these paradoxes are not signs of failure — they are the predictable result of two information systems producing different outputs at the same time.",
     purpose: "Five competing needs (connection, protection, authenticity, belonging, coherence) pull in different directions at once.\n\nThe framework introduces multi-rationality: the recognition that when multiple needs are simultaneously valid, behaviour serves more than one master. What looks contradictory from outside is perfectly logical from inside.",
     buildsOn: "Cognitive dissonance (Festinger), analytical psychology (Jung), systems theory (Bateson), Internal Family Systems (Schwartz), dialectics (Hegel), affective neuroscience (Damasio, Porges).",
@@ -208,8 +207,8 @@ const FRAMEWORKS = [
     id: "F12",
     displayName: "The Two Information Systems",
     title: "The Architecture Underneath",
-    subtitle: "Arc: Repair and Complexity · Scale: Architectural",
-    arc: "Repair and Complexity",
+    subtitle: "Scale: Architectural",
+    group: "The Reversal",
     summary: "F12 steps back and asks: what is the architecture underneath all of this? Two parallel information systems — the emotional-somatic and the cognitive-logical — running simultaneously at different speeds. The emotional-somatic arrives first. Cognition narrates a process already underway.",
     purpose: "This is why a person can read F1–F11, understand the entire architecture, see their own pattern clearly — and still do the thing. Understanding is cognitive. The compass is somatic. More cognition does not move a somatic compass. What moves the compass is experience.\n\nF12 is not another link in the regulation thread. It is the explanation of why the thread works the way it does. It unifies the entire system: TEG-Blue is not twelve frameworks. It is one mechanism — state-dependent nervous system organisation responding to perceived safety — described from twelve angles.",
     buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma research (van der Kolk, Levine, Ogden), interpersonal neurobiology (Siegel, Schore), situational psychology (Milgram, Zimbardo).",
@@ -239,47 +238,52 @@ const FRAMEWORK_PATHS = {
   F12: "/framework/f12-two-information-systems",
 };
 
-// Arc colors — 3 arcs matching the three-arc structure
-const arcColors = {
-  "Individual": "#26C6DA",
+// Group colors — matching the regulation thread
+const groupColors = {
+  "Individual": SPECTRUM.cobalt,
   "Collective": SPECTRUM.cobalt,
-  "Repair and Complexity": SPECTRUM.indigo,
+  "The Reversal": SPECTRUM.blue,
 };
 
-// Arc definitions for grouped rendering
-const ARCS = [
+// Thread group definitions
+const GROUPS = [
   {
     key: "Individual",
-    slug: "arc-1-individual",
-    label: "Arc 1 — Individual",
+    slug: "individual",
+    label: "Individual",
     range: "F1–F3",
     description: "The instrument. How the nervous system evaluates safety, how the compass calibrates through development, and how cognition steps in when the return path is missing.",
   },
   {
     key: "Collective",
-    slug: "arc-2-collective",
-    label: "Arc 2 — Collective",
+    slug: "collective",
+    label: "Collective",
     range: "F4–F7",
     description: "The scaling. How individual patterns become shared rules, how rules produce worth hierarchies, how hierarchies shape perception, and how protection escalates all the way to domination.",
   },
   {
-    key: "Repair and Complexity",
-    slug: "arc-3-repair",
-    label: "Arc 3 — Repair and Complexity",
+    key: "The Reversal",
+    slug: "the-reversal",
+    label: "The Reversal",
     range: "F8–F12",
-    description: "The return. How the awareness capacities can be rebuilt, how neurodivergent variation is understood on its own terms, how patterns transmit across generations, how paradox emerges when healing begins, and what the underlying architecture explains about all of it.",
+    description: "The return. Not by adding another substitute, but by building the original — rebuilding the awareness capacities, understanding variation, repairing generational patterns, holding paradox, and seeing the architecture underneath.",
   },
 ];
 
-// Regulation thread data
+// Regulation thread data — all 12 frameworks
 const REGULATION_THREAD = [
-  { id: "F1", regulator: "Biological Restoration — the body completing its own cycle", scale: "Individual biology", cost: "No cost — this is the design" },
-  { id: "F2", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", scale: "Developmental / relational", cost: "The restoration path is never built" },
-  { id: "F3", regulator: "False coherence — cognition replacing restoration", scale: "Individual adult cognition", cost: "Truth" },
-  { id: "F4", regulator: "Rules regulate", scale: "Collective — social systems", cost: "Flexibility" },
-  { id: "F5", regulator: "Worth hierarchies regulate", scale: "Collective — value systems", cost: "Equity" },
-  { id: "F6", regulator: "Bias regulates", scale: "Collective — perceptual systems", cost: "Accuracy" },
-  { id: "F7", regulator: "Domination regulates", scale: "Collective — power systems", cost: "Everything" },
+  { id: "F1", group: "Individual", regulator: "Biological Restoration — the body completing its own cycle", cost: "No cost — this is the design" },
+  { id: "F2", group: "Individual", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", cost: "The restoration path is never built" },
+  { id: "F3", group: "Individual", regulator: "False coherence — cognition replacing restoration", cost: "Truth" },
+  { id: "F4", group: "Collective", regulator: "Rules regulate", cost: "Flexibility" },
+  { id: "F5", group: "Collective", regulator: "Worth hierarchies regulate", cost: "Equity" },
+  { id: "F6", group: "Collective", regulator: "Bias regulates", cost: "Accuracy" },
+  { id: "F7", group: "Collective", regulator: "Domination regulates", cost: "Everything" },
+  { id: "F8", group: "The Reversal", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
+  { id: "F9", group: "The Reversal", regulator: "Variation is design, not deficit", restores: "Accuracy" },
+  { id: "F10", group: "The Reversal", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
+  { id: "F11", group: "The Reversal", regulator: "Paradox holds what logic cannot", restores: "Truth" },
+  { id: "F12", group: "The Reversal", regulator: "Two information systems reunite — body and mind", restores: "The design" },
 ];
 
 export default function TheoreticalFoundationsPage() {
@@ -296,159 +300,78 @@ export default function TheoreticalFoundationsPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="12 EXPLANATORY FRAMEWORKS"
-            title="The 12 Frameworks — TEG-Blue's Explanatory Architecture"
-            subtitle="One mechanism. Twelve angles. A unified model tracing how the nervous system shapes perception, identity, social structure, escalation, and repair."
-            description="Most models describe either the inner world or the social world. TEG-Blue connects them as one system. The frameworks are interdependent because humans do not experience life in separate categories."
+            badge="THE REGULATION THREAD"
+            title="The 12 Frameworks"
+            subtitle="Twelve concept architectures, one thread."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* Intro — The Loop */}
-        <div style={{ marginBottom: 32 }}>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            A nervous system state shapes perception. Perception shapes meaning. Meaning shapes identity. Identity shapes behaviour. Behaviour shapes what gets rewarded. And reward shapes the nervous system again.
+        {/* The Regulation Thread — the page's organizing narrative */}
+        <section id="the-regulation-thread" style={{ marginBottom: 32 }}>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            The nervous system was designed to complete a cycle. Detect threat, mobilise, respond — and then restore. Return to baseline. Come back.
           </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            This is how trauma becomes culture — and how culture becomes trauma.
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            Six research traditions have independently mapped the mobilisation side of that cycle: polyvagal theory, affective neuroscience, attachment research, trauma science, stress physiology, developmental psychology. The evidence for what the body does under threat is substantial, cross-validated, and growing.
           </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 16,
-            }}
-          >
-            TEG-Blue is structured as a sequence so we can locate where a pattern is coming from, where it is being reinforced, and where repair is actually possible.
+          <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
+            The restoration side is less studied.
           </p>
-          <p
-            style={{
-              fontSize: 14,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              marginBottom: 0,
-            }}
-          >
-            The mapping system makes visible that what people do is strongly shaped by the conditions their nervous system is adapting to — and by their capacity to return to <strong style={{ color: TEXT.primary }}>connection</strong> under challenge.
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            We know the parasympathetic system reasserts. We know cortisol clears. We know the vagal brake re-engages. But there is a prior question that the literature has not yet fully addressed:
           </p>
-        </div>
-
-        {/* The Regulation Thread */}
-        <section id="the-regulation-thread" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            The Regulation Thread
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            A single thread runs through all twelve frameworks. Each framework describes a <strong style={{ color: TEXT.primary }}>regulation substitute</strong> at a different scale — what the nervous system recruits to stay stable when the body{"'"}s designed return path is missing. Each substitute works. Each comes at a cost.
+          <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 600 }}>
+            What happens when the return path is never learned?
           </p>
-          <div
-            style={{
-              overflowX: "auto",
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-            }}
-          >
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                fontSize: 13,
-                fontFamily: FONT.display,
-              }}
-            >
-              <thead>
-                <tr style={{ background: BG.surface }}>
-                  <th style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: TEXT.primary, borderBottom: `1px solid ${BORDER.default}`, fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.03em", whiteSpace: "nowrap" }}>Framework</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: TEXT.primary, borderBottom: `1px solid ${BORDER.default}`, fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.03em" }}>What Regulates Instead</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: TEXT.primary, borderBottom: `1px solid ${BORDER.default}`, fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.03em" }}>Scale</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", fontWeight: 600, color: TEXT.primary, borderBottom: `1px solid ${BORDER.default}`, fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.03em" }}>Cost</th>
-                </tr>
-              </thead>
-              <tbody>
-                {REGULATION_THREAD.map((row) => (
-                  <tr key={row.id} style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-                    <td style={{ padding: "10px 14px", color: TEXT.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 12, whiteSpace: "nowrap" }}>{row.id}</td>
-                    <td style={{ padding: "10px 14px", color: TEXT.secondary, lineHeight: 1.6 }}>{row.regulator}</td>
-                    <td style={{ padding: "10px 14px", color: TEXT.muted, lineHeight: 1.6, whiteSpace: "nowrap" }}>{row.scale}</td>
-                    <td style={{ padding: "10px 14px", color: TEXT.muted, lineHeight: 1.6 }}>{row.cost}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12, lineHeight: 1.7 }}>
-            F8–F12 reverse the thread — not by adding another substitute, but by building the original.
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            Not disrupted by a single event. Not dysregulated by acute trauma. Never built — because the co-regulatory conditions that teach a developing nervous system how to restore were simply not present. The mechanism exists. The capacity was always there. But the path from activation back to baseline requires experience to form — and for many people, in many ordinary environments that would not meet clinical thresholds, that experience never came.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            If that is true, several things follow that we do not yet have good answers to.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            How do individual nervous systems compensate when restoration is unavailable — and what does compensation cost across a lifetime? How do those compensations aggregate when enough nervous systems without restoration capacity share an environment, a family, an institution, a culture? Is what we call emotional dysregulation at the individual level, and what we call social dysfunction at the collective level, the same missing mechanism operating at different scales?
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            And if so — what does it take to build the return path after the developmental window has passed?
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 0 }}>
+            These are the questions the TEG-Blue framework was built around. Twelve concept architectures, one thread. The frameworks are not answers. They are a map of where the questions lead — and an open invitation to investigate them together.
           </p>
         </section>
 
-        {/* Three-Arc Structure Overview */}
-        <section id="three-arc-structure" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 20 }}>
-            The Three-Arc Structure
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            {ARCS.map((arc) => (
-              <div key={arc.key} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                <span style={{
-                  fontSize: 12,
-                  fontWeight: 600,
-                  fontFamily: FONT.mono,
-                  color: arcColors[arc.key],
-                  minWidth: 120,
-                  paddingTop: 2,
-                }}>
-                  {arc.range} ({arc.key})
-                </span>
-                <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7 }}>
-                  {arc.description}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Framework Cards — Grouped by Arc */}
+        {/* Framework Cards — Grouped by Thread */}
         <section style={{ marginBottom: 32 }}>
-          {ARCS.map((arc) => {
-            const arcFrameworks = FRAMEWORKS.filter((fw) => fw.arc === arc.key);
+          {GROUPS.map((group) => {
+            const groupFrameworks = FRAMEWORKS.filter((fw) => fw.group === group.key);
+            const color = groupColors[group.key];
             return (
-              <div key={arc.key} id={arc.slug} style={{ marginBottom: 32 }}>
+              <div key={group.key} id={group.slug} style={{ marginBottom: 32 }}>
                 <div style={{
                   display: "flex",
                   alignItems: "center",
                   gap: 12,
-                  marginBottom: 16,
+                  marginBottom: 8,
                   paddingBottom: 8,
-                  borderBottom: `2px solid ${hexToRgba(arcColors[arc.key], 0.3)}`,
+                  borderBottom: `2px solid ${hexToRgba(color, 0.3)}`,
                 }}>
                   <span style={{
                     fontSize: 14,
                     fontWeight: 700,
-                    color: arcColors[arc.key],
+                    color: color,
                     fontFamily: FONT.mono,
                   }}>
-                    {arc.label}
+                    {group.label}
                   </span>
                   <span style={{ fontSize: 12, color: TEXT.muted }}>
-                    {arc.range}
+                    {group.range}
                   </span>
                 </div>
-                {arcFrameworks.map((fw) => (
+                <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+                  {group.description}
+                </p>
+                {groupFrameworks.map((fw) => (
                   <ExpandableFrameworkCard key={fw.id} framework={fw} />
                 ))}
               </div>
@@ -579,18 +502,37 @@ export default function TheoreticalFoundationsPage() {
 
 // ─── HELPER COMPONENTS ─────────────────────────────────────────
 
+function ThreadDivider({ label, color }) {
+  return (
+    <div
+      style={{
+        padding: "10px 0 6px",
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+      }}
+    >
+      <div style={{ flex: 1, height: 1, background: hexToRgba(color, 0.25) }} />
+      <span style={{ fontSize: 10, fontFamily: FONT.mono, color, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>
+        {label}
+      </span>
+      <div style={{ flex: 1, height: 1, background: hexToRgba(color, 0.25) }} />
+    </div>
+  );
+}
+
 function ExpandableFrameworkCard({ framework }) {
   const [isOpen, setIsOpen] = useState(false);
-  const arcColor = arcColors[framework.arc];
+  const color = groupColors[framework.group];
 
   return (
     <div
       style={{
         marginBottom: 12,
-        background: gradientCardBg(arcColor),
+        background: gradientCardBg(color),
         borderRadius: 10,
-        border: `1px solid ${isOpen ? hexToRgba(arcColor, 0.3) : BORDER.default}`,
-        borderLeft: `3px solid ${arcColor}`,
+        border: `1px solid ${isOpen ? hexToRgba(color, 0.3) : BORDER.default}`,
+        borderLeft: `3px solid ${color}`,
         overflow: "hidden",
         transition: "border-color 0.2s ease",
       }}
@@ -615,7 +557,7 @@ function ExpandableFrameworkCard({ framework }) {
               fontSize: 13,
               fontWeight: 700,
               fontFamily: FONT.mono,
-              color: arcColor,
+              color: color,
             }}
           >
             {framework.id}
@@ -627,24 +569,10 @@ function ExpandableFrameworkCard({ framework }) {
           <span style={{ fontSize: 13, color: TEXT.muted }}>
             ({framework.title})
           </span>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 600,
-              fontFamily: FONT.mono,
-              padding: "3px 8px",
-              borderRadius: 4,
-              background: hexToRgba(arcColor, 0.15),
-              color: arcColor,
-              marginLeft: "auto",
-            }}
-          >
-            {framework.arc}
-          </span>
         </div>
 
         {/* Subtitle */}
-        <p style={{ fontSize: 13, color: arcColor, margin: "0 0 8px 0" }}>
+        <p style={{ fontSize: 13, color: color, margin: "0 0 8px 0" }}>
           {framework.subtitle}
         </p>
 
@@ -661,7 +589,7 @@ function ExpandableFrameworkCard({ framework }) {
             style={{
               fontSize: 13,
               fontWeight: 500,
-              color: arcColor,
+              color: color,
               textDecoration: "none",
             }}
           >
@@ -679,7 +607,7 @@ function ExpandableFrameworkCard({ framework }) {
           <span
             style={{
               fontSize: 14,
-              color: arcColor,
+              color: color,
               transition: "transform 0.2s ease",
               transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
             }}
@@ -707,7 +635,7 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Builds On */}
           <div style={{ marginBottom: 16 }}>
-            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: color, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
               Builds on
             </h4>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
@@ -717,7 +645,7 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Proposed Claims */}
           <div style={{ marginBottom: 16 }}>
-            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: color, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
               Proposed claims
             </h4>
             <ul style={{ paddingLeft: 20, margin: 0, listStyleType: "disc" }}>
@@ -731,7 +659,7 @@ function ExpandableFrameworkCard({ framework }) {
 
           {/* Testable Directions */}
           <div style={{ marginBottom: 16 }}>
-            <h4 style={{ fontSize: 11, fontWeight: 600, color: arcColor, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
+            <h4 style={{ fontSize: 11, fontWeight: 600, color: color, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", fontFamily: FONT.mono }}>
               Testable directions
             </h4>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
@@ -749,7 +677,7 @@ function ExpandableFrameworkCard({ framework }) {
                 gap: 8,
                 fontSize: 13,
                 fontWeight: 500,
-                color: arcColor,
+                color: color,
                 textDecoration: "none",
               }}
             >
@@ -765,7 +693,7 @@ function ExpandableFrameworkCard({ framework }) {
                 gap: 8,
                 fontSize: 13,
                 fontWeight: 500,
-                color: arcColor,
+                color: color,
                 textDecoration: "none",
               }}
             >

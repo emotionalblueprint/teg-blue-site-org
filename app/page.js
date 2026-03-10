@@ -211,60 +211,57 @@ export default function ResearchHub() {
               A single thread runs through all twelve frameworks. F1–F7: each describes a regulation substitute — at a different scale, at a different cost. F8–F12 reverse the thread — not by adding another substitute, but by building the original.
             </p>
 
-            {/* Thread rows */}
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              {REGULATION_THREAD.map((row, i) => {
+            {/* Thread cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {REGULATION_THREAD.map((row) => {
                 const isRepair = !!row.restores;
+                const isFirstIndividual = row.id === "F1";
+                const isFirstCollective = row.id === "F4";
                 const isFirstRepair = row.id === "F8";
+                const accent = isRepair ? SPECTRUM.blue : SPECTRUM.cobalt;
                 return (
                   <div key={row.id}>
-                    {isFirstRepair && (
-                      <div
-                        style={{
-                          padding: "8px 0",
-                          marginTop: 4,
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 10,
-                        }}
-                      >
-                        <div style={{ flex: 1, height: 1, background: hexToRgba(SPECTRUM.blue, 0.25) }} />
-                        <span style={{ fontSize: 10, fontFamily: FONT.mono, color: SPECTRUM.blue, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>
-                          The reversal
-                        </span>
-                        <div style={{ flex: 1, height: 1, background: hexToRgba(SPECTRUM.blue, 0.25) }} />
-                      </div>
+                    {isFirstIndividual && (
+                      <ThreadDivider label="Individual" color={SPECTRUM.cobalt} />
                     )}
-                    <div
+                    {isFirstCollective && (
+                      <ThreadDivider label="Collective" color={SPECTRUM.cobalt} />
+                    )}
+                    {isFirstRepair && (
+                      <ThreadDivider label="The reversal" color={SPECTRUM.blue} />
+                    )}
+                    <Link
+                      href={row.href}
                       style={{
                         display: "flex",
                         alignItems: "baseline",
                         gap: 12,
-                        padding: "10px 0",
-                        borderBottom: i < REGULATION_THREAD.length - 1 ? `1px solid ${BORDER.default}` : "none",
+                        padding: "10px 14px",
+                        background: hexToRgba(accent, 0.06),
+                        borderLeft: `3px solid ${accent}`,
+                        borderRadius: 6,
+                        textDecoration: "none",
                         flexWrap: "wrap",
                       }}
                     >
-                      <Link
-                        href={row.href}
+                      <span
                         style={{
                           fontFamily: FONT.mono,
                           fontSize: 13,
                           fontWeight: 700,
-                          color: isRepair ? SPECTRUM.blue : TEXT.primary,
+                          color: accent,
                           minWidth: 28,
-                          textDecoration: "none",
                         }}
                       >
                         {row.id}
-                      </Link>
+                      </span>
                       <span style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, flex: 1, minWidth: 200 }}>
                         {row.regulator}
                       </span>
                       <span style={{ fontSize: 12, fontFamily: FONT.mono, color: isRepair ? SPECTRUM.blue : TEXT.muted, whiteSpace: "nowrap" }}>
                         {isRepair ? `Restores: ${row.restores}` : `Cost: ${row.cost}`}
                       </span>
-                    </div>
+                    </Link>
                   </div>
                 );
               })}
@@ -540,6 +537,25 @@ function FrameworkCard({ color, label, title, description, href, linkText }) {
       >
         {linkText}
       </Link>
+    </div>
+  );
+}
+
+function ThreadDivider({ label, color }) {
+  return (
+    <div
+      style={{
+        padding: "10px 0 6px",
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+      }}
+    >
+      <div style={{ flex: 1, height: 1, background: hexToRgba(color, 0.25) }} />
+      <span style={{ fontSize: 10, fontFamily: FONT.mono, color, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>
+        {label}
+      </span>
+      <div style={{ flex: 1, height: 1, background: hexToRgba(color, 0.25) }} />
     </div>
   );
 }
