@@ -194,7 +194,7 @@ export default function Piece02WhyPeopleChange() {
       <hr style={READING.hr} />
 
       {/* Series footer */}
-      <p style={READING.seriesFooter}>Series: Why Humans Are So Frustrating {"\u00B7"} No. 02</p>
+      <p style={READING.seriesFooter}>Series: Why Humans Are So Frustrating {"\u00B7"} No. 03</p>
       <p style={READING.seriesFooter}>Last updated: 2026-03</p>
     </article>
   );
