@@ -82,10 +82,7 @@ export default function ModelsPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             {MODELS.map((model, i) => (
               <div key={model.id}>
-                {/* Model Layer */}
                 <ModelLayer model={model} />
-
-                {/* Connector between layers */}
                 {i < MODELS.length - 1 && (
                   <Connector connector={CONNECTORS[i]} topColor={model.color} bottomColor={MODELS[i + 1].color} />
                 )}
@@ -93,6 +90,95 @@ export default function ModelsPage() {
             ))}
           </div>
         </section>
+
+        {/* ─── M1 DETAIL ────────────────────────────────────── */}
+        <ModelDetail
+          id="M1"
+          title="Inner Compass & Four-Mode Gradient"
+          role="The instrument"
+          color={SPECTRUM.azure}
+          href="/model/m1-inner-compass"
+        >
+          <p style={bodyStyle}>
+            The nervous system continuously evaluates one question: <em>Is there enough safety to engage, or is protection needed?</em> The Inner Compass is the name for that orientation mechanism. The Four-Mode Gradient is the continuous range it moves through.
+          </p>
+          <div style={modesLabelStyle(SPECTRUM.azure)}>
+            Four modes — not types, not stages. Positions on a gradient:
+          </div>
+          <ul style={listStyle}>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Connection</strong> (Teal) — Safety perceived. Body-first. All three awareness capacities online. The system designed for sustained living.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Protection</strong> (Yellow) — Threat perceived. Body-first. Attention narrows, self-preservation prioritised. Healthy and temporary by design.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Control</strong> (Orange) — Cognition recruited into threat service. Deliberate, anticipatory, time-limited in designed operation.</li>
+            <li><strong style={{ color: TEXT.primary }}>Domination</strong> (Pink) — Maximum cognitive override. Decisive, final. Designed as rare; costly if chronic.</li>
+          </ul>
+          <p style={{ ...bodyStyle, marginTop: 16 }}>
+            <strong style={{ color: TEXT.primary }}>The central principle:</strong> Health is not a position. Health is mobility — the needle&apos;s capacity to move. A Fluid Compass moves through all four modes and returns. A Stuck Compass is one where the needle has stopped moving. What should have been temporary has become identity.
+          </p>
+          <QuoteBlock>
+            A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and come back.
+          </QuoteBlock>
+          <StatusBadge status="Proposed model with early evidence" color={SPECTRUM.azure} />
+          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
+            See <Link href="/publications" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Publications</Link> for what is currently tested.
+          </p>
+        </ModelDetail>
+
+        {/* ─── M2 DETAIL ────────────────────────────────────── */}
+        <ModelDetail
+          id="M2"
+          title="Three Awareness Capacities"
+          role="The calibration system"
+          color={SPECTRUM.cobalt}
+          href="/model/m2-three-awareness-capacities"
+        >
+          <p style={bodyStyle}>
+            The compass (M1) is the instrument. The three awareness capacities determine what data it receives, how accurately it reads, and whether the person has access to their own internal state.
+          </p>
+          <div style={modesLabelStyle(SPECTRUM.cobalt)}>
+            The three capacities:
+          </div>
+          <ul style={listStyle}>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Reading Emotions (RE)</strong> — Perceiving what others are feeling: faces, tone, body language, context.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Emotional Resonance (ER)</strong> — Feeling what others are feeling. The body&apos;s resonance with another person&apos;s state.</li>
+            <li><strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong> — Perceiving and naming your own internal state. The capacity that separates &ldquo;I feel bad&rdquo; from &ldquo;I feel guilty because I hurt someone.&rdquo;</li>
+          </ul>
+          <p style={{ ...bodyStyle, marginTop: 16 }}>
+            <strong style={{ color: TEXT.primary }}>The key insight:</strong> RE stays sharp across the entire gradient — it just changes what it serves. In a Fluid Compass it serves understanding. In a Stuck Compass it serves the mode. ER degrades differently per mode. SEA is binary: present in all Fluid modes, gone in all Stuck modes. Its presence or absence determines whether the other two capacities serve the person or serve the stuck position.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            <strong style={{ color: TEXT.primary }}>Why this matters for discernment:</strong> The configuration RE sharp + ER absent + SEA absent — found in Chronic Control and Chronic Domination — enables precise emotional reading with no internal feedback. The person may be the most accurate emotional reader in the room and cause the most harm, because the capacities that would register that harm have been structurally shut down. This is what makes trauma-driven protection and strategic manipulation look identical on the surface, and why distinguishing them matters.
+          </p>
+          <StatusBadge status="Proposed model, grounded in established research" color={SPECTRUM.cobalt} />
+        </ModelDetail>
+
+        {/* ─── M3 DETAIL ────────────────────────────────────── */}
+        <ModelDetail
+          id="M3"
+          title="Biological Restoration"
+          role="The fork"
+          color={SPECTRUM.indigo}
+          href="/model/m3-the-open-cycle"
+        >
+          <p style={bodyStyle}>
+            When the nervous system perceives a threat, a precise biological cascade activates — hormonal, neurochemical, whole-body — before any conscious thought forms. This cascade was designed to complete. Activation → expression → parasympathetic return → cortisol clearance → baseline. The body has a built-in endpoint.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            When cognition overrides the emotion — labelling it irrelevant, dangerous, or weak — the override reaches awareness, not biology. The cascade continues below the threshold of access.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            This is not a suppressed feeling. It is an open biological cycle. Cortisol still releasing, amygdala still sensitising, organs still in survival configuration. Each unprocessed cycle adds to allostatic load — measurable cumulative wear on the body&apos;s regulatory systems.
+          </p>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            Biological Restoration is the name for the designed completion process. It cannot be forced. It can only be allowed. And it is not automatic — it must be learned, through co-regulation, through the repeated experience of another person&apos;s regulated nervous system demonstrating that return is possible.
+          </p>
+          <QuoteBlock>
+            The body has no mechanism for receiving philosophical decisions. Deciding an emotion is not important does not change the cortisol level.
+          </QuoteBlock>
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            M3 is the physiological substrate that explains why the gradient exists, why the compass gets stuck, and why insight alone does not produce change.
+          </p>
+          <StatusBadge status="Built on established stress physiology — framing as 'Biological Restoration' is TEG-Blue's contribution" color={SPECTRUM.indigo} />
+        </ModelDetail>
 
         {/* ─── INTEGRATION ────────────────────────────────── */}
         <section
@@ -105,17 +191,7 @@ export default function ModelsPage() {
             border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
           }}
         >
-          <div
-            style={{
-              fontSize: 9,
-              fontWeight: 700,
-              fontFamily: FONT.mono,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: SPECTRUM.cobalt,
-              marginBottom: 10,
-            }}
-          >
+          <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
             Three Dimensions of One Reality
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
@@ -136,17 +212,7 @@ export default function ModelsPage() {
             border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
           }}
         >
-          <div
-            style={{
-              fontSize: 9,
-              fontWeight: 700,
-              fontFamily: FONT.mono,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: SPECTRUM.cobalt,
-              marginBottom: 6,
-            }}
-          >
+          <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
             Regulation Thread
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
@@ -177,6 +243,7 @@ export default function ModelsPage() {
           {[
             { href: "/publications/validation-study", label: "Validation Study" },
             { href: "/frameworks-map", label: "12 Frameworks" },
+            { href: "/foundations", label: "System Overview" },
             { href: "/collaborate", label: "Collaborate" },
           ].map(({ href, label }) => (
             <Link
@@ -209,6 +276,35 @@ export default function ModelsPage() {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────────
 
+function ModelDetail({ id, title, role, color, href, children }) {
+  return (
+    <section
+      style={{
+        marginBottom: 32,
+        padding: "20px 24px",
+        background: gradientCardBg(color, 0.04),
+        borderRadius: RADIUS.lg,
+        border: `1px solid ${hexToRgba(color, 0.12)}`,
+        borderLeft: `4px solid ${color}`,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 4 }}>
+        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: FONT.mono, color: color }}>{id}</span>
+        <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, margin: 0 }}>{title}</h3>
+      </div>
+      <p style={{ fontSize: 12, fontStyle: "italic", color: TEXT.muted, marginBottom: 16, marginTop: 2 }}>
+        {role}
+      </p>
+      {children}
+      <div style={{ marginTop: 16 }}>
+        <Link href={href} style={{ fontSize: 13, color: color, textDecoration: "none", fontWeight: 500 }}>
+          Full model →
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function ModelLayer({ model }) {
   return (
     <Link
@@ -226,14 +322,7 @@ function ModelLayer({ model }) {
     >
       {/* Top row: ID + Role badge */}
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-        <span
-          style={{
-            fontSize: 13,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            color: model.color,
-          }}
-        >
+        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: FONT.mono, color: model.color }}>
           {model.id}
         </span>
         <span
@@ -251,41 +340,18 @@ function ModelLayer({ model }) {
         >
           {model.role}
         </span>
-        <span
-          style={{
-            marginLeft: "auto",
-            fontSize: 11,
-            fontFamily: FONT.mono,
-            color: TEXT.hint,
-          }}
-        >
+        <span style={{ marginLeft: "auto", fontSize: 11, fontFamily: FONT.mono, color: TEXT.hint }}>
           {model.concepts} concepts
         </span>
       </div>
 
       {/* Title */}
-      <h2
-        style={{
-          fontSize: 18,
-          fontWeight: 600,
-          color: TEXT.primary,
-          margin: "0 0 6px",
-          lineHeight: 1.3,
-        }}
-      >
+      <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, margin: "0 0 6px", lineHeight: 1.3 }}>
         {model.title}
       </h2>
 
       {/* Core question */}
-      <p
-        style={{
-          fontSize: 14,
-          fontWeight: 500,
-          color: model.color,
-          fontStyle: "italic",
-          margin: "0 0 10px",
-        }}
-      >
+      <p style={{ fontSize: 14, fontWeight: 500, color: model.color, fontStyle: "italic", margin: "0 0 10px" }}>
         {model.coreQuestion}
       </p>
 
@@ -309,23 +375,11 @@ function ModelLayer({ model }) {
           >
             Draws from
           </span>
-          <span
-            style={{
-              fontSize: 11,
-              fontFamily: FONT.mono,
-              color: TEXT.muted,
-            }}
-          >
+          <span style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted }}>
             {model.drawsFrom}
           </span>
         </div>
-        <span
-          style={{
-            fontSize: 13,
-            fontWeight: 500,
-            color: model.color,
-          }}
-        >
+        <span style={{ fontSize: 13, fontWeight: 500, color: model.color }}>
           Read full model →
         </span>
       </div>
@@ -344,7 +398,6 @@ function Connector({ connector, topColor, bottomColor }) {
         position: "relative",
       }}
     >
-      {/* Vertical gradient line */}
       <div
         style={{
           position: "absolute",
@@ -357,8 +410,6 @@ function Connector({ connector, topColor, bottomColor }) {
         }}
         aria-hidden="true"
       />
-
-      {/* Label */}
       <div
         style={{
           fontSize: 10,
@@ -376,4 +427,84 @@ function Connector({ connector, topColor, bottomColor }) {
       </div>
     </div>
   );
+}
+
+function QuoteBlock({ children }) {
+  return (
+    <blockquote
+      style={{
+        margin: "16px 0",
+        padding: "12px 16px",
+        borderLeft: `2px solid ${SPECTRUM.cobalt}`,
+        background: hexToRgba(SPECTRUM.cobalt, 0.04),
+        borderRadius: `0 ${RADIUS.sm}px ${RADIUS.sm}px 0`,
+      }}
+    >
+      <p style={{ fontSize: 14, fontStyle: "italic", color: TEXT.primary, lineHeight: 1.7, margin: 0 }}>
+        &ldquo;{children}&rdquo;
+      </p>
+    </blockquote>
+  );
+}
+
+function StatusBadge({ status, color }) {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        fontSize: 11,
+        fontWeight: 600,
+        fontFamily: FONT.mono,
+        color: color,
+        padding: "4px 10px",
+        background: hexToRgba(color, 0.1),
+        borderRadius: 4,
+        marginTop: 12,
+      }}
+    >
+      Status: {status}
+    </span>
+  );
+}
+
+// ─── SHARED STYLES ──────────────────────────────────────
+
+const bodyStyle = {
+  fontSize: 14,
+  color: TEXT.secondary,
+  lineHeight: 1.8,
+  margin: 0,
+};
+
+const listStyle = {
+  paddingLeft: 20,
+  fontSize: 14,
+  color: TEXT.secondary,
+  lineHeight: 1.8,
+  margin: 0,
+};
+
+function modesLabelStyle(color) {
+  return {
+    fontSize: 9,
+    fontWeight: 700,
+    fontFamily: FONT.mono,
+    textTransform: "uppercase",
+    letterSpacing: "0.1em",
+    color: color,
+    marginBottom: 8,
+    marginTop: 16,
+  };
+}
+
+function sectionLabelStyle(color) {
+  return {
+    fontSize: 9,
+    fontWeight: 700,
+    fontFamily: FONT.mono,
+    textTransform: "uppercase",
+    letterSpacing: "0.1em",
+    color: color,
+    marginBottom: 10,
+  };
 }
