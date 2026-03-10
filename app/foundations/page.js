@@ -163,7 +163,7 @@ export default function FoundationsPage() {
               Three Core Models
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The measurement layer describes what is actually happening — in a body, in a relationship, in a conversation — and gives it a name that can be tracked. Three models make up this layer. They work together.
+              The measurement part describes what is actually happening — in a body, in a relationship, in a conversation — and gives it a name that can be tracked. Three models make up this part. They work together.
             </p>
             <ul style={listStyle}>
               <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M1 — Inner Compass &amp; Four-Mode Gradient</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four modes.</li>
@@ -279,7 +279,7 @@ export default function FoundationsPage() {
               As AI systems mediate more human interaction, the ambiguity that TEG-Blue addresses is amplified. Emotional dynamics scale faster than the ability to interpret them. Systems trained on human language inherit human emotional patterns — including the dysregulated ones — without the nervous system context that makes those patterns legible.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              The AI Safety layer translates the emotional pattern logic into forms AI systems can read safely. This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications designed to replace binary safe/unsafe models with contextual, state-aware assessments.
+              The AI Safety part translates the emotional pattern logic into forms AI systems can read safely. This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications designed to replace binary safe/unsafe models with contextual, state-aware assessments.
             </p>
             <StatusBadge status="Proposed architecture with early implementation" color={SPECTRUM.slate} />
             <div

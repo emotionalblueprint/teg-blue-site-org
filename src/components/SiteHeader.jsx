@@ -19,6 +19,7 @@ const px = SPACING.pagePadding;
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Start Here", href: "/research-entry" },
+  { label: "Overview", href: "/foundations" },
   {
     label: "Models",
     href: "/models",

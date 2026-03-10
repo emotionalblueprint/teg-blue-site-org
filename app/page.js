@@ -24,13 +24,13 @@ const REGULATION_THREAD = [
 const SIDEBAR_SECTIONS = [
   { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost. F8–F12 reverse the thread." },
   { label: "Empirical Evidence", href: "#empirical-evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
-  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "The first complete emotional technology system. 139+ theories connected into testable hypotheses about emotional regulation." },
+  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "Four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety." },
   { label: "Work With the Material", href: "#work-with-the-material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
 ];
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
-  description: "How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks connecting 139+ established theories from neuroscience, psychology, and trauma research. Open science — everything published, everything testable, everything open access.",
+  description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 139+ established theories mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
@@ -91,7 +91,7 @@ export default function ResearchHub() {
                     marginBottom: 24,
                   }}
                 >
-                  139+ Established Theories, One Integrative Framework
+                  Emotional Technology Research
                 </div>
 
                 {/* Title */}
@@ -108,7 +108,7 @@ export default function ResearchHub() {
                     backgroundClip: "text",
                   }}
                 >
-                  Connecting Cognition with Emotional Awareness
+                  Emotions are structured biological signals.<br />TEG-Blue makes them legible.
                 </h1>
 
                 {/* Lead description */}
@@ -121,7 +121,7 @@ export default function ResearchHub() {
                     maxWidth: 640,
                   }}
                 >
-                  How does the nervous system shape what we feel, think, and do? TEG-Blue maps 12 frameworks into visual models that make emotional patterns visible, measurable, and testable — from individual regulation to systemic dynamics.
+                  Open science — transparent research, credited sources, testable claims. Built on 139+ established theories. Open to critique and validation.
                 </p>
 
                 {/* CTAs */}
@@ -144,7 +144,7 @@ export default function ResearchHub() {
                     Start Here →
                   </Link>
                   <Link
-                    href="/publications"
+                    href="/frameworks-map"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -159,7 +159,7 @@ export default function ResearchHub() {
                       border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
                     }}
                   >
-                    Read the Validation Study
+                    See the Frameworks
                   </Link>
                 </div>
 
@@ -204,7 +204,7 @@ export default function ResearchHub() {
             </div>
 
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              When the body can't restore itself, something else steps in.
+              When the body can&apos;t restore itself, something else steps in.
             </h2>
 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
@@ -285,13 +285,7 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Separator: Spectrum ── */}
-          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
-            <div style={{
-              height: 2,
-              borderRadius: 1,
-              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
-            }} />
-          </div>
+          <SpectrumSeparator />
 
           {/* ── Validation Evidence ── */}
           <section id="empirical-evidence">
@@ -380,45 +374,56 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Separator: Spectrum ── */}
-          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
-            <div style={{
-              height: 2,
-              borderRadius: 1,
-              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
-            }} />
-          </div>
+          <SpectrumSeparator />
 
-          {/* ── System Architecture ── */}
+          {/* ── What TEG-Blue Is ── */}
           <section id="what-teg-blue-is">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               What TEG-Blue is
             </h2>
 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation.
+              An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as four connected parts:
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-              <FrameworkCard
-                color={SPECTRUM.indigo}
-                label="3 MODELS"
-                title="Compass, Calibration & Biology"
-                description="The measurement instruments. M1 maps four nervous system states on a continuous gradient. M2 maps the three awareness capacities that calibrate the compass. M3 maps the physiological sequence that runs when the emotional cycle doesn't complete."
+              <PartCard
+                color={SPECTRUM.azure}
+                label="1 — Measurement"
+                title="Three Core Models"
+                description="The Inner Compass (M1) maps where the nervous system is pointing. The Three Awareness Capacities (M2) explain how accurately it reads — and what goes offline when it gets stuck. Biological Restoration (M3) describes the body's designed return path."
                 href="/models"
-                linkText="See the Models →"
+                linkText="Core Models →"
               />
-              <FrameworkCard
+              <PartCard
                 color={SPECTRUM.cobalt}
-                label="12 FRAMEWORKS"
-                title="Individual · Collective · Repair"
-                description="The explanatory architecture. Why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
+                label="2 — Explanatory"
+                title="12 Frameworks"
+                description="Why these patterns exist, how they escalate from one person into social systems, and what makes repair possible. One mechanism runs through all twelve: when the body's natural return path is missing, something else steps in."
                 href="/frameworks-map"
-                linkText="See the Frameworks →"
+                linkText="12 Frameworks →"
+              />
+              <PartCard
+                color={SPECTRUM.indigo}
+                label="3 — Applied"
+                title="Emotional Tools"
+                description="Gradient-based scales that map behavioral dimensions from regulated to dysregulated, with observable markers at every point. Empathy, accountability, integrity, boundary dynamics, and more."
+                href="https://teg-blue.com/emotional-tools"
+                linkText="Explore Tools →"
+                external
+              />
+              <PartCard
+                color={SPECTRUM.slate}
+                label="4 — AI Safety"
+                title="Structured Schemas"
+                description="A computationally legible translation of the system for AI alignment — designed to replace binary safe/unsafe classifications with contextual, state-aware assessments."
+                href="/ai-safety"
+                linkText="AI Safety →"
               />
             </div>
 
             <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
-              The full system overview, including how the layers connect, is at{" "}
+              The full architecture, including how the parts connect, is at{" "}
               <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
               The 139+ source theories are documented at{" "}
               <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
@@ -426,19 +431,17 @@ export default function ResearchHub() {
           </section>
 
           {/* ── Separator: Spectrum ── */}
-          <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
-            <div style={{
-              height: 2,
-              borderRadius: 1,
-              background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
-            }} />
-          </div>
+          <SpectrumSeparator />
 
           {/* ── Open Science ── */}
           <section id="work-with-the-material" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              Work with the material
+              Open science — no gates, no applications
             </h2>
+
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
+              Everything here is published under CC BY-NC-SA 4.0. No access restrictions. No required collaborations. A researcher can take the framework, the data, and the methodology and work with them independently.
+            </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <OpenItem label="Cite it" description="Full citation format and examples" href="/citations" />
@@ -479,21 +482,14 @@ function MetricCard({ value, label }) {
       >
         {value}
       </div>
-      <div
-        style={{
-          fontSize: 11,
-          color: TEXT.muted,
-          marginTop: 4,
-          lineHeight: 1.4,
-        }}
-      >
+      <div style={{ fontSize: 11, color: TEXT.muted, marginTop: 4, lineHeight: 1.4 }}>
         {label}
       </div>
     </div>
   );
 }
 
-function FrameworkCard({ color, label, title, description, href, linkText }) {
+function PartCard({ color, label, title, description, href, linkText, external }) {
   return (
     <div
       style={{
@@ -523,20 +519,39 @@ function FrameworkCard({ color, label, title, description, href, linkText }) {
       <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 14 }}>
         {description}
       </p>
-      <Link
-        href={href}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          fontSize: 13,
-          color: color,
-          textDecoration: "none",
-          fontWeight: 500,
-        }}
-      >
-        {linkText}
-      </Link>
+      {external ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            fontSize: 13,
+            color: color,
+            textDecoration: "none",
+            fontWeight: 500,
+          }}
+        >
+          {linkText}
+        </a>
+      ) : (
+        <Link
+          href={href}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            fontSize: 13,
+            color: color,
+            textDecoration: "none",
+            fontWeight: 500,
+          }}
+        >
+          {linkText}
+        </Link>
+      )}
     </div>
   );
 }
@@ -556,6 +571,18 @@ function ThreadDivider({ label, color }) {
         {label}
       </span>
       <div style={{ flex: 1, height: 1, background: hexToRgba(color, 0.25) }} />
+    </div>
+  );
+}
+
+function SpectrumSeparator() {
+  return (
+    <div aria-hidden="true" style={{ padding: "clamp(16px, 3vw, 28px) 0" }}>
+      <div style={{
+        height: 2,
+        borderRadius: 1,
+        background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
+      }} />
     </div>
   );
 }

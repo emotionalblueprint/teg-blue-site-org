@@ -72,7 +72,7 @@ export default function ModelsPage() {
             badge="3 FOUNDATIONAL MODELS"
             title="The Three Core Models"
             subtitle="Instrument + Calibration + Biological Foundation"
-            description="Each model makes a different layer of the emotional system visible. Together, they map how emotional patterns form, persist, and change — where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
+            description="Each model makes a different dimension of the emotional system visible. Together, they map how emotional patterns form, persist, and change — where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
             color={SPECTRUM.cobalt}
           />
         }
