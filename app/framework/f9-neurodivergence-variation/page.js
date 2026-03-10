@@ -214,8 +214,8 @@ export default function F9NeurodivergenceVariationPage() {
               badge="FRAMEWORK F9"
               title="Neurodivergence as Nervous System Variation"
               subtitle="When the Environment Is the Mismatch"
-              arc="Repair and Complexity"
-              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              group="The Reversal"
+              groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — reframes variation as configuration, not deficit"
               adjacent={{

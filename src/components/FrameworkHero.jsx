@@ -2,13 +2,13 @@ import Link from "next/link";
 import { TEXT, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
 
 /**
- * Arc color mapping — three arcs of the 12-framework system.
- * Individual (F1-F3): cyan, Collective (F4-F7): cobalt, Repair (F8-F12): indigo
+ * Group color mapping — regulation thread groups.
+ * Individual (F1-F3) and Collective (F4-F7): cobalt, The Reversal (F8-F12): blue
  */
-const ARC_COLORS = {
-  Individual: "#26C6DA",
+const GROUP_COLORS = {
+  Individual: SPECTRUM.cobalt,
   Collective: SPECTRUM.cobalt,
-  "Repair and Complexity": SPECTRUM.indigo,
+  "The Reversal": SPECTRUM.blue,
 };
 
 /** Model color mapping for "Informs Model" pills */
@@ -20,16 +20,15 @@ const MODEL_COLORS = {
 
 /**
  * FrameworkHero — Hero section for individual framework pages.
- * Distinct from ResearcherHero: arc-colored left border band,
- * plain title, arc position badge, regulation thread callout,
+ * Left border band colored by thread group, regulation thread callout,
  * and related model pills.
  *
  * @param {string} badge - Badge text (e.g., "FRAMEWORK F1")
  * @param {string} title - Main title
  * @param {string} subtitle - Italic subtitle
  * @param {string} description - Body description
- * @param {string} arc - Arc name: "Individual", "Collective", or "Repair and Complexity"
- * @param {string} arcLabel - Display label (e.g., "Arc 1: Individual · F1–F3")
+ * @param {string} group - Thread group: "Individual", "Collective", or "The Reversal"
+ * @param {string} groupLabel - Display label (e.g., "Individual · F1–F3")
  * @param {string} threadLine - Regulation thread statement (e.g., "Biological Restoration — Cost: None")
  * @param {string} threadLabel - Label for the thread callout (default: "Regulation Thread")
  * @param {Array<{label: string, href: string}>} informsModels - Model pills this framework feeds into
@@ -40,14 +39,14 @@ export default function FrameworkHero({
   title,
   subtitle,
   description,
-  arc,
-  arcLabel,
+  group,
+  groupLabel,
   threadLine,
   threadLabel = "Regulation Thread",
   informsModels = [],
   adjacent,
 }) {
-  const color = ARC_COLORS[arc] || SPECTRUM.cobalt;
+  const color = GROUP_COLORS[group] || SPECTRUM.cobalt;
 
   return (
     <div
@@ -77,7 +76,7 @@ export default function FrameworkHero({
             {badge}
           </div>
         )}
-        {arcLabel && (
+        {groupLabel && (
           <span
             style={{
               fontSize: 10,
@@ -88,7 +87,7 @@ export default function FrameworkHero({
               color: TEXT.muted,
             }}
           >
-            {arcLabel}
+            {groupLabel}
           </span>
         )}
       </div>

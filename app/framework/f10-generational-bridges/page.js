@@ -215,8 +215,8 @@ export default function F10GenerationalBridgesPage() {
               badge="FRAMEWORK F10"
               title="Rebuilding Generational Bridges"
               subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
-              arc="Repair and Complexity"
-              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              group="The Reversal"
+              groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — what gets processed here changes what transmits next"
               informsModels={[

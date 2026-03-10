@@ -319,25 +319,34 @@ export default function TheoreticalFoundationsPage() {
             The restoration side is less studied.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            We know the parasympathetic system reasserts. We know cortisol clears. We know the vagal brake re-engages. But there is a prior question that the literature has not yet fully addressed:
-          </p>
-          <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 600 }}>
-            What happens when the return path is never learned?
+            We know the parasympathetic system reasserts. We know cortisol clears. We know the vagal brake re-engages. But there is a prior question the literature has not yet fully addressed: what happens when the return path is never learned?
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             Not disrupted by a single event. Not dysregulated by acute trauma. Never built — because the co-regulatory conditions that teach a developing nervous system how to restore were simply not present. The mechanism exists. The capacity was always there. But the path from activation back to baseline requires experience to form — and for many people, in many ordinary environments that would not meet clinical thresholds, that experience never came.
           </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            If that is true, several things follow that we do not yet have good answers to.
+          <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
+            If that is true, the implications scale.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            How do individual nervous systems compensate when restoration is unavailable — and what does compensation cost across a lifetime? How do those compensations aggregate when enough nervous systems without restoration capacity share an environment, a family, an institution, a culture? Is what we call emotional dysregulation at the individual level, and what we call social dysfunction at the collective level, the same missing mechanism operating at different scales?
+            At the individual level: a nervous system without a return path does not stop. It compensates. Cognition replaces restoration. Narrative replaces signal. Identity forms around the absence — stable, functional, and systematically disconnected from the emotional information the body is still generating. The cost is not dysfunction. The cost is truth.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            And if so — what does it take to build the return path after the developmental window has passed?
+            At the relational level: a nervous system that cannot restore recruits. It recruits compliance, predictability, emotional suppression from others — not through intention, but because external regulation is the only regulation available. The people closest to it pay the cost.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            At the collective level: when enough nervous systems without restoration capacity share an environment — a family, an institution, a culture — the compensations aggregate. Rules substitute for internal regulation. Worth hierarchies sort people by safety-value. Perceptual bias stabilises threat by stabilising belief. And when all of that is insufficient, domination substitutes for everything else.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            Which produces the question this framework is built around:
+          </p>
+          <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 600 }}>
+            Is what we call emotional dysregulation at the individual level and social dysfunction at the collective level the same missing mechanism — Biological Restoration never learned — operating at different scales?
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            If it is, the research implications are significant. The intervention point is not where the dysfunction appears. It is where the return path was never built. And the question of how to build it after the developmental window has passed is, to our knowledge, not yet answered.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 0 }}>
-            These are the questions the TEG-Blue framework was built around. Twelve concept architectures, one thread. The frameworks are not answers. They are a map of where the questions lead — and an open invitation to investigate them together.
+            The TEG-Blue framework traces this thread across twelve concept architectures. It is a map of where the questions lead — and where the research is needed.
           </p>
         </section>
 

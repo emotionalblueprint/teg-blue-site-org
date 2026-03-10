@@ -112,8 +112,8 @@ export default function F1EmotionalGradientPage() {
               title="Emotions as Biological Information"
               subtitle="The Safety-Threat Orientation System"
               description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
-              arc="Individual"
-              arcLabel="Arc 1: Individual · F1–F3"
+              group="Individual"
+              groupLabel="Individual · F1–F3"
               threadLine="Biological Restoration — the body completing its own cycle · Cost: None — this is the design"
               informsModels={[
                 { label: "M1", href: "/model/m1-inner-compass" },

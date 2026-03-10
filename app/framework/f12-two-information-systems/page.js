@@ -214,8 +214,8 @@ export default function F12TwoInformationSystemsPage() {
               badge="FRAMEWORK F12"
               title="Our Two Information Systems"
               subtitle="Why Insight Alone Doesn't Change Behavior and What Actually Does"
-              arc="Repair and Complexity"
-              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              group="The Reversal"
+              groupLabel="The Reversal · F8–F12"
               threadLabel="The Architecture Underneath"
               threadLine="The architecture that explains why the thread works the way it does"
               informsModels={[

@@ -94,8 +94,8 @@ export default function F4RulesRegulatePage() {
               title="Rules Regulate"
               subtitle="How Individual Patterns Scale to Collective Rule Systems"
               description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7) of the TEG-Blue system."
-              arc="Collective"
-              arcLabel="Arc 2: Collective · F4–F7"
+              group="Collective"
+              groupLabel="Collective · F4–F7"
               threadLine="Rules regulate · Cost: Flexibility"
               adjacent={{
                 prev: { label: "F3 False Coherence", href: "/framework/f3-false-coherence" },

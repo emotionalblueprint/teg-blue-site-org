@@ -96,8 +96,8 @@ export default function F8RepairingAwarenessPage() {
               title="Repairing Awareness"
               subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
               description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
-              arc="Repair and Complexity"
-              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              group="The Reversal"
+              groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — developing the awareness capacities that substitutes replaced"
               informsModels={[

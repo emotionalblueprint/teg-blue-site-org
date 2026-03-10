@@ -216,8 +216,8 @@ export default function F11EmotionalParadoxesPage() {
               badge="FRAMEWORK F11"
               title="The Emotional Logic Behind Paradoxes"
               subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
-              arc="Repair and Complexity"
-              arcLabel="Arc 3: Repair and Complexity · F8–F12"
+              group="The Reversal"
+              groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — paradox as a sign of integration beginning, not failure"
               adjacent={{
