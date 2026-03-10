@@ -208,7 +208,7 @@ export default function ResearchHub() {
             </h2>
 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              A single thread runs through all twelve frameworks. F1–F7: each describes a regulation substitute — at a different scale, at a different cost. F8–F12 reverse the thread — not by adding another substitute, but by building the original.
+              A single thread runs through all twelve frameworks. Describing a regulation substitute — at a different scale, at a different cost, and a way to reverse the thread — not by adding another substitute, but by building the original.
             </p>
 
             {/* Thread cards */}
@@ -411,7 +411,7 @@ export default function ResearchHub() {
                 color={SPECTRUM.cobalt}
                 label="12 FRAMEWORKS"
                 title="Individual · Collective · Repair"
-                description="The explanatory architecture. Three arcs explaining why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
+                description="The explanatory architecture. Why modes exist, how individual patterns scale into social structures, and what makes change possible. Each framework integrates established research traditions."
                 href="/frameworks-map"
                 linkText="See the Frameworks →"
               />

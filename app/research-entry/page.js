@@ -7,7 +7,7 @@ const SIDEBAR_SECTIONS = [
   { label: "What Is Original", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
   { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
-  { label: "Open Research Directions", href: "#open-research-directions", description: "Four active directions: measurement, prediction, intervention, and AI alignment." },
+  { label: "Open Research Directions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
 
@@ -182,7 +182,7 @@ export default function ResearchEntryPage() {
             <StatusCard
               label="Proposed synthesis"
               color={SPECTRUM.azure}
-              description="The full cross-framework mapping. The 'return-to-connection' arc across Frameworks 8–10. The architecture that connects regulation, identity adaptation, and social escalation."
+              description="The full cross-framework mapping. The reversal thread across Frameworks 8–12. The architecture that connects regulation, identity adaptation, and social escalation."
             />
             <StatusCard
               label="Preliminary evidence"
@@ -243,42 +243,72 @@ export default function ResearchEntryPage() {
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
             Open research directions
           </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            The framework opens several lines of inquiry. Each can be pursued independently.
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8, maxWidth: 640 }}>
+            These questions emerged from building the integration. I don&apos;t have answers to most of them. Some point to gaps in existing literature. Some point to claims TEG-Blue makes that need external testing. Some I couldn&apos;t find addressed anywhere — which is either a gap worth filling or a sign I looked in the wrong places.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+            Each can be pursued independently. If one matches your work, that&apos;s the relevant entry point.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <DirectionCard
-              letter="A"
-              title="Measurement and recognition"
-              description="Can the Four-Mode Gradient be reliably detected in natural language, transcripts, therapy session excerpts, conflict dialogues, and organizational communication?"
-              needs="Inter-rater reliability designs, annotation schemas, construct validation, cross-domain generalization tests."
-              link="/model/m1-inner-compass"
-              linkText="Inner Compass (M1) →"
+            <ResearchDomainCard
+              title="On the biological mechanism"
+              questions={[
+                "If Biological Restoration is a learnable capacity and not just an automatic function, what are the developmental windows during which co-regulatory experience most determines whether the return path forms?",
+                "Can the absence of a learned restoration path be distinguished from dysregulation caused by acute trauma using existing neurobiological markers — and if so, what would that distinction require clinically?",
+                "Does a chronically stuck compass produce different physiological signatures than a slowly returning one — and does that distinction predict different intervention needs?",
+              ]}
+              refLinks={[
+                { href: "/framework/f1-emotions-as-biological-information", label: "F1" },
+                { href: "/model/m1-inner-compass", label: "Inner Compass (M1)" },
+              ]}
             />
-            <DirectionCard
-              letter="B"
-              title="Prediction and prevention"
-              description="How do states shift and escalate across the gradient? Harm often follows predictable progressions from Protection into Control and Domination."
-              needs="Escalation pathway coding, longitudinal tracking designs, behavioral outcome prediction under stress and power asymmetry."
-              link="/frameworks-map"
-              linkText="Frameworks → (especially F4–F7)"
+            <ResearchDomainCard
+              title="On individual and clinical questions"
+              questions={[
+                "False coherence is proposed as a cognitive regulation strategy. Does it produce measurable physiological stabilisation — and what is the cost of removing it without first building the restoration capacity it replaced?",
+                "The three awareness capacities (RE, ER, SEA) are proposed as developmentally distinct. Do they dissociate independently — and can high RE and ER with absent SEA be distinguished from existing clinical categories?",
+                "If mode position determines what an emotion produces — not the emotion itself — what would a mode-position assessment look like in practice, and how does it differ from existing affect regulation measures?",
+              ]}
+              refLinks={[
+                { href: "/framework/f2-awareness-teaches-awareness", label: "F2" },
+                { href: "/framework/f3-adult-cognition-false-coherence", label: "F3" },
+                { href: "/methodology", label: "Methodology" },
+              ]}
             />
-            <DirectionCard
-              letter="C"
-              title="Navigation and intervention"
-              description="Which interventions support systems moving from Control back toward Protection and Connection? Routes back to safety exist — the question is which ones work, and when."
-              needs="Scale design support, factor structure exploration, convergent and discriminant validity plans, bias and fairness evaluation."
-              link="/methodology"
-              linkText="Methodology →"
+            <ResearchDomainCard
+              title="On development and generational transmission"
+              questions={[
+                "The transmission mechanism proposed is specific: adult awareness configuration → child awareness configuration — not environment in the generic sense. Can this causal chain be measured with enough precision to distinguish it from broader environmental stress models?",
+                "Is there a measurable threshold of adult restoration capacity below which co-regulation cannot function as a developmental transmission mechanism, regardless of relational warmth or intention?",
+                "If what the adult embodies — not says, not intends — is the determining variable, what does intervention need to target in caregivers to change developmental outcomes in the next generation?",
+              ]}
+              refLinks={[
+                { href: "/framework/f2-awareness-teaches-awareness", label: "F2" },
+                { href: "/framework/f10-rebuilding-generational-bridges", label: "F10" },
+              ]}
             />
-            <DirectionCard
-              letter="D"
-              title="AI alignment and structured schemas"
-              description="Translating emotional pattern logic into forms AI systems can read safely."
-              needs="Schema design feedback, evaluation protocols, risk analysis, misuse prevention, alignment with existing safety research."
-              link="/ai-safety"
-              linkText="AI Safety →"
+            <ResearchDomainCard
+              title="On collective scale"
+              questions={[
+                "Is what we call emotional dysregulation at the individual level and social dysfunction at the collective level the same missing mechanism — Biological Restoration never learned — operating at different scales?",
+                "If collective rule systems, worth hierarchies, and bias all function as regulation substitutes, do they show the same escalation pattern under threat that individual compensatory strategies show — and can that escalation be interrupted at the same points?",
+                "Domination is proposed as the end state of a pathway driven by reinforcement, not personality. Does this model make predictions about which organisational and cultural conditions accelerate or interrupt that pathway — and are those predictions testable?",
+              ]}
+              refLinks={[
+                { href: "/frameworks-map", label: "Frameworks F4–F8" },
+              ]}
+            />
+            <ResearchDomainCard
+              title="On AI and language systems"
+              questions={[
+                "If the emotional-somatic system produces its output before language exists — and language belongs exclusively to the cognitive system — what does language-based AI training miss that a TEG-Blue-informed framework would need to account for?",
+                "Is emotional pattern recognition across contexts — individual, relational, institutional — sufficiently consistent to be mapped and tested in AI systems, and what would the framework need to specify for that to be possible?",
+              ]}
+              refLinks={[
+                { href: "/ai-safety", label: "AI Safety" },
+                { href: "https://github.com/TEG-Blue/ai-safety", label: "GitHub" },
+              ]}
             />
           </div>
         </section>
@@ -397,7 +427,7 @@ function StatusCard({ label, color, description }) {
   );
 }
 
-function DirectionCard({ letter, title, description, needs, link, linkText }) {
+function ResearchDomainCard({ title, questions, refLinks }) {
   return (
     <div
       style={{
@@ -408,29 +438,35 @@ function DirectionCard({ letter, title, description, needs, link, linkText }) {
         borderLeft: `3px solid ${SPECTRUM.azure}`,
       }}
     >
-      <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-        {letter}. {title}
+      <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+        {title}
       </h3>
-      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
-        {description}
-      </p>
-      <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginBottom: 12 }}>
-        <strong style={{ color: TEXT.secondary }}>Open questions:</strong> {needs}
-      </p>
-      <Link
-        href={link}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          fontSize: 14,
-          color: SPECTRUM.blue,
-          textDecoration: "none",
-          fontWeight: 500,
-        }}
-      >
-        {linkText}
-      </Link>
+      <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 14 }}>
+        {questions.map((q, i) => (
+          <p key={i} style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+            {q}
+          </p>
+        ))}
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+        <span style={{ fontSize: 13, color: TEXT.muted }}>→</span>
+        {refLinks.map(({ href, label }, i) => (
+          <span key={label} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+            {i > 0 && <span style={{ fontSize: 13, color: TEXT.muted }}>·</span>}
+            <Link
+              href={href}
+              style={{
+                fontSize: 13,
+                color: SPECTRUM.blue,
+                textDecoration: "none",
+                fontWeight: 500,
+              }}
+            >
+              {label}
+            </Link>
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
