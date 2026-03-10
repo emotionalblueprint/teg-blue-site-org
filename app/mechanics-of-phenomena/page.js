@@ -104,6 +104,18 @@ export default function MechanicsOfPhenomenaPage() {
                         >
                           No. {String(piece.number).padStart(2, "0")}
                         </span>
+                        {piece.readingTime && (
+                          <span
+                            style={{
+                              fontFamily: FONT.mono,
+                              fontSize: 10,
+                              color: TEXT.hint,
+                              letterSpacing: "0.02em",
+                            }}
+                          >
+                            {piece.readingTime} min read
+                          </span>
+                        )}
                         {piece.featured && (
                           <span
                             style={{

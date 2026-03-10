@@ -23,6 +23,7 @@ export const SERIES = [
         subtitle: "A diagnostic for everyone who has ever watched a smart person do something baffling \u2014 including themselves",
         metaDescription: "Why the gap between what people know and what they do is not a failure of intelligence but a split architecture \u2014 cognitive system vs regulatory system. A diagnostic from TEG-Blue.",
         connection: "M1 Operating Modes / F3 Cognitive Replacement / F6 Bias as Protection / F2 Developmental Failure of Regulation / M2 Signal Function",
+        readingTime: 14,
         featured: true,
         sections: [
           { id: "what-frustrating-means", label: "What do we actually mean?" },
@@ -43,6 +44,7 @@ export const SERIES = [
         subtitle: "A diagnostic for the frustrated, the rigorous, and the quietly losing hope",
         metaDescription: "Why presenting evidence to someone in a threat-management mode produces defensiveness, not updating. A diagnostic for the frustrated and the rigorous.",
         connection: "F3 Cognitive Replacement / M1 Operating Modes Under Pressure",
+        readingTime: 12,
         sections: [
           { id: "why-doesnt-evidence-work", label: "Why doesn\u2019t evidence work?" },
           { id: "intelligence-education", label: "Intelligence or education?" },
@@ -61,6 +63,7 @@ export const SERIES = [
         subtitle: "A diagnostic for the bewildered, the gaslit, and the ones who keep being told they must be exaggerating",
         metaDescription: "How regulatory systems produce context-dependent behavior \u2014 why the same person can be genuinely kind at work and genuinely harmful at home. A diagnostic from TEG-Blue.",
         connection: "M1 Operating Modes / F4 Collective Rules / F5 Worth Hierarchies",
+        readingTime: 12,
         sections: [
           { id: "kind-and-terrible", label: "Genuinely kind, genuinely terrible" },
           { id: "one-version-fake", label: "Is one version fake?" },
@@ -87,6 +90,7 @@ export const SERIES = [
         subtitle: "The signal function of emotional states \u2014 running in completely different hardware",
         metaDescription: "The octopus chromatophore system as independent evidence that emotions function as information \u2014 not decoration. A Proof by Nature from TEG-Blue.",
         connection: "F1 Emotional Gradient / Signal function",
+        readingTime: 3,
         sections: [
           { id: "teg-blue-connection", label: "TEG-Blue connection" },
         ],
@@ -94,6 +98,40 @@ export const SERIES = [
     ],
   },
 ];
+
+// ─── FRAMEWORK & MODEL URL LOOKUP ───────────────────────
+
+export const FRAMEWORK_URLS = {
+  F1: "/framework/f1-emotional-gradient",
+  F2: "/framework/f2-awareness-calibration",
+  F3: "/framework/f3-false-coherence",
+  F4: "/framework/f4-rules-regulate",
+  F5: "/framework/f5-worth-hierarchies",
+  F6: "/framework/f6-bias-regulates",
+  F7: "/framework/f7-domination-regulates",
+  F8: "/framework/f8-repairing-awareness",
+  F9: "/framework/f9-neurodivergence-variation",
+  F10: "/framework/f10-generational-bridges",
+  F11: "/framework/f11-emotional-paradoxes",
+  F12: "/framework/f12-two-information-systems",
+  M1: "/model/m1-inner-compass",
+  M2: "/model/m2-three-awareness-capacities",
+  M3: "/model/m3-the-open-cycle",
+};
+
+/**
+ * Parse a connection string like "M1 Operating Modes / F3 Cognitive Replacement"
+ * into an array of { code, label, href } objects.
+ */
+export function parseConnection(connection) {
+  if (!connection) return [];
+  return connection.split(" / ").map((segment) => {
+    const match = segment.match(/^([FM]\d{1,2})\b\s*(.*)/);
+    if (!match) return { code: null, label: segment, href: null };
+    const code = match[1];
+    return { code, label: segment, href: FRAMEWORK_URLS[code] || null };
+  });
+}
 
 // ─── PIECE LOOKUP ───────────────────────────────────────
 

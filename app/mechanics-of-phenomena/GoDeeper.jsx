@@ -14,8 +14,8 @@ export default function GoDeeper({ items }) {
       style={{
         marginTop: 48,
         padding: "32px 28px",
-        background: hexToRgba(EDITORIAL.accentMuted, 0.15),
-        border: `1px solid ${hexToRgba(EDITORIAL.accent, 0.15)}`,
+        background: hexToRgba(EDITORIAL.accentMuted, 0.25),
+        border: `1px solid ${hexToRgba(EDITORIAL.accent, 0.2)}`,
         borderRadius: 8,
       }}
     >
