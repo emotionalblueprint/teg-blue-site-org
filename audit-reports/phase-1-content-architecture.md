@@ -38,7 +38,7 @@
 | **Emotional Technology** | **Non-compliant** | **Non-compliant** (zero citations) | **Non-compliant** (overclaiming) | **Non-compliant** |
 | **Methodology** | N/A (correct) | Compliant | **Compliant** (well-hedged) | N/A (correct) |
 | **Epistemological Foundations** | **Non-compliant** | **Non-compliant** (zero citations) | **Non-compliant** (overclaiming by omission) | **Non-compliant** |
-| **Foundations (System Overview)** | Partial | Partial: "139+" but none named | **Compliant** (status badges) | Missing |
+| **Foundations (System Overview)** | Partial | Partial: "145+" but none named | **Compliant** (status badges) | Missing |
 | **AI Safety** | Partial (closest to compliant for gap) | Partial: generic "research shows" | Partial: some overclaiming | **Compliant** (7 research questions) |
 
 ---

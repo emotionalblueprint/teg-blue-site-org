@@ -21,7 +21,7 @@ These are not personality types or diagnostic categories. They are **nervous sys
 
 ### The Explanatory Architecture: 12 Frameworks
 
-Behind the gradient sit 12 interconnected frameworks that explain *why* these four modes exist, *how* individual regulation patterns scale into social structures, *where* protection tips into domination, and *what* makes change possible. These frameworks integrate 139+ established theories across neuroscience, psychology, sociology, and trauma studies.
+Behind the gradient sit 12 interconnected frameworks that explain *why* these four modes exist, *how* individual regulation patterns scale into social structures, *where* protection tips into domination, and *what* makes change possible. These frameworks integrate 145+ established theories across neuroscience, psychology, sociology, and trauma studies.
 
 The measurement system (the gradient) can be engaged with independently of the full explanatory architecture. The frameworks provide the theoretical depth — explaining why escalation follows the patterns it does, how social systems reproduce regulatory states across generations, and what makes change possible. Research can operate at either level, or bridge both.
 
@@ -221,7 +221,7 @@ Each research question connects to specific frameworks, but the full architectur
 | **Healing** | F8 (Self-Reconnection), F9 (Nervous System Variation), F10 (Generational Transmission) | How patterns shift, including neurodivergent pathways and intergenerational dynamics |
 | **Integration** | F11 (Emotional Logic of Paradoxes), F12 (Two Information Systems) | The complete architecture and its internal logic |
 
-The full theoretical mapping — including 139+ source theories across 47 domains — is documented at [teg-blue.org/theoretical-foundations](https://teg-blue.org/theoretical-foundations). Each framework connects to established research traditions in neuroscience, psychology, sociology, and trauma studies.
+The full theoretical mapping — including 145+ source theories across 47 domains — is documented at [teg-blue.org/theoretical-foundations](https://teg-blue.org/theoretical-foundations). Each framework connects to established research traditions in neuroscience, psychology, sociology, and trauma studies.
 
 ---
 

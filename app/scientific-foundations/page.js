@@ -60,7 +60,7 @@ function getDomainColor(domain) {
 }
 
 // ─── COMPREHENSIVE THEORY DATABASE ─────────────────────────────
-// 42 tradition-level entries consolidating 139+ individual theories
+// 42 tradition-level entries consolidating 145+ individual theories
 // Each entry represents a research tradition with key researchers and framework cross-references
 const THEORIES = [
   // ─── Existing entries (migrated from content/theories/*.json) ───
@@ -703,7 +703,7 @@ const globalModels = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "139+ Theories", href: "#research-traditions", description: "Every established theory TEG-Blue draws from, credited and documented with full research lineage." },
+  { label: "145+ Theories", href: "#research-traditions", description: "Every established theory TEG-Blue draws from, credited and documented with full research lineage." },
   { label: "24 Research Domains", href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
   { label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
   { label: "CSV Download", href: "#csv-download", description: "Full dataset available for download. Open data, open access." },
@@ -788,7 +788,7 @@ export default function ScientificFoundationsPage() {
           <ResearcherHero
             badge="SCIENTIFIC FOUNDATIONS"
             title="Scientific Foundations"
-            description={`The established research that TEG-Blue builds on — ${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains, integrating 139+ individual theories.`}
+            description={`The established research that TEG-Blue builds on — ${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains, integrating 145+ individual theories.`}
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -897,7 +897,7 @@ export default function ScientificFoundationsPage() {
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            TEG-Blue integrates 139+ established theories organized into {RESEARCH_DOMAINS.length} research
+            TEG-Blue integrates 145+ established theories organized into {RESEARCH_DOMAINS.length} research
             domain groupings and {THEORIES.length} tradition-level entries. Each entry represents a research
             tradition with its key researchers and cross-references to the frameworks that draw on it.
             This section exists for inspection — to show what the grounding is,
@@ -1744,7 +1744,7 @@ function ValidationMethod() {
           The {RESEARCH_DOMAINS.length} research domains
         </h3>
         <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 10px 0" }}>
-          The 139+ individual theories are organized into {RESEARCH_DOMAINS.length} research domain
+          The 145+ individual theories are organized into {RESEARCH_DOMAINS.length} research domain
           groupings with {THEORIES.length} tradition-level entries. Each entry can be audited,
           corrected, or extended:
         </p>

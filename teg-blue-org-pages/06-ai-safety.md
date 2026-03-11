@@ -101,7 +101,7 @@ TEG-Blue is explicitly designed for computational consumption — not just human
 
 - JSON-LD structured data on every page (Schema.org)
 - JSON content files — git-versioned, non-binary
-- Consistent terminology across 139+ integrated source theories
+- Consistent terminology across 145+ integrated source theories
 - Semantic HTML for reliable parsing
 - Open endpoints for programmatic access
 

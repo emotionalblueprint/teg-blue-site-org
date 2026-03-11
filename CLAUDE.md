@@ -129,7 +129,7 @@ Sits behind the gradient. Explains:
 - **Where** protection tips into domination
 - **What** makes change possible
 
-The frameworks integrate 139+ established theories across neuroscience, psychology, sociology, and trauma studies.
+The frameworks integrate 145+ established theories across neuroscience, psychology, sociology, and trauma studies.
 
 ---
 
@@ -143,7 +143,7 @@ This capacity is measurable. It shows up in language. It appears to be predicted
 
 ## What Is Original
 
-The 12 frameworks draw on 139+ established theories. Every source theory is credited. **The originality is not in the individual theories — it is in the connections between them.**
+The 12 frameworks draw on 145+ established theories. Every source theory is credited. **The originality is not in the individual theories — it is in the connections between them.**
 
 These research traditions developed independently, within separate disciplines, often without reference to each other. TEG-Blue proposes specific cross-disciplinary connections:
 
@@ -190,7 +190,7 @@ A computational analysis of 10,000+ natural conflict narratives (Reddit AITA pos
 | Hub | `/` | Content grid showing all publications, theories, etc. |
 | For Researchers | `/research-entry` | Entry point explaining TEG-Blue structure, what's original, open questions |
 | Publications | `/publications` | Published research and validation studies |
-| Theory Map | `/theoretical-foundations` | 12 frameworks with 139+ source theories |
+| Theory Map | `/theoretical-foundations` | 12 frameworks with 145+ source theories |
 | Glossary | `/glossary` | Key terms and definitions |
 | About | `/about` | About TEG-Blue and the research consortium |
 | Collaborate | `/collaborate` | Collaboration opportunities |

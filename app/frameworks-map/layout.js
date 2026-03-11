@@ -24,7 +24,7 @@ export const metadata = {
   },
   openGraph: {
     title: "12 Frameworks — The Explanatory Architecture Behind TEG-Blue",
-    description: "One mechanism. Twelve angles. From individual (F1-F3) through collective (F4-F7) to repair and complexity (F8-F12). Built on 139+ established theories.",
+    description: "One mechanism. Twelve angles. From individual (F1-F3) through collective (F4-F7) to repair and complexity (F8-F12). Built on 145+ established theories.",
     url: "https://teg-blue.org/frameworks-map",
     siteName: "TEG-Blue Research",
     type: "article",

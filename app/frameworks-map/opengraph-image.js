@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 32,
             }}
           >
-            Explanatory architecture connecting 139+ theories
+            Explanatory architecture connecting 145+ theories
           </div>
 
           {/* Framework phases */}

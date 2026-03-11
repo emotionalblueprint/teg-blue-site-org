@@ -26,7 +26,7 @@ export default function AuthorBlock() {
       >
         <strong style={{ color: TEXT.primary }}>Anna Paretas-Artacho</strong>
         {" — "}
-        Independent researcher and systems designer, Barcelona. 25+ years in systems thinking. TEG-Blue developed over two years as an integrative architecture across 139+ established theories.{" "}
+        Independent researcher and systems designer, Barcelona. 25+ years in systems thinking. TEG-Blue developed over two years as an integrative architecture across 145+ established theories.{" "}
         <Link
           href="/about"
           style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}

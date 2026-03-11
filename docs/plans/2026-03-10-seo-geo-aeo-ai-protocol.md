@@ -701,7 +701,7 @@ These numbers appear in llms.txt and should be updated when they change:
 
 | Stat | Current Value | Last Updated |
 |------|--------------|--------------|
-| Established theories | 139+ | 2026-03-05 |
+| Established theories | 145+ | 2026-03-11 |
 | Research traditions | 41 | 2026-03-05 |
 | Research domains | 24 | 2026-03-05 |
 | Glossary terms (.org) | 162 | 2026-03-10 |

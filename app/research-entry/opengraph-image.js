@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 36,
             }}
           >
-            Open science platform connecting 139+ theories into testable propositions
+            Open science platform connecting 145+ theories into testable propositions
           </div>
 
           {/* Research questions highlight */}
@@ -176,7 +176,7 @@ export default async function Image() {
                   color: '#3560CC',
                 }}
               >
-                139+
+                145+
               </div>
               <div
                 style={{

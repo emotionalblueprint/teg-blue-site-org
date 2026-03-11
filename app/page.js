@@ -30,7 +30,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
-  description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 139+ established theories mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
+  description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
@@ -121,7 +121,7 @@ export default function ResearchHub() {
                     maxWidth: 640,
                   }}
                 >
-                  Open science — transparent research, credited sources, testable claims. Built on 139+ established theories. Open to critique and validation.
+                  Open science — transparent research, credited sources, testable claims. Built on 145+ established theories. Open to critique and validation.
                 </p>
 
                 {/* CTAs */}
@@ -162,6 +162,24 @@ export default function ResearchHub() {
                     See the Frameworks
                   </Link>
                 </div>
+
+                {/* Epistemological position */}
+                <p
+                  style={{
+                    marginTop: "clamp(24px, 4vw, 36px)",
+                    marginBottom: 0,
+                    fontSize: "clamp(14px, 2.2vw, 16px)",
+                    fontFamily: FONT.mono,
+                    fontWeight: 500,
+                    color: TEXT.secondary,
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1.6,
+                    maxWidth: 640,
+                  }}
+                >
+                  The building blocks are validated science.{" "}
+                  <span style={{ color: TEXT.primary }}>The connections are the hypothesis.</span>
+                </p>
 
                 {/* Accent bar separator */}
                 <div
@@ -425,7 +443,7 @@ export default function ResearchHub() {
             <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
               The full architecture, including how the parts connect, is at{" "}
               <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
-              The 139+ source theories are documented at{" "}
+              The 145+ source theories are documented at{" "}
               <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
             </p>
           </section>
@@ -447,7 +465,7 @@ export default function ResearchHub() {
               <OpenItem label="Cite it" description="Full citation format and examples" href="/citations" />
               <OpenItem label="Use the data" description="Anonymized conflict narratives, emotional gradient data" href="/publications" />
               <OpenItem label="Test the claims" description="Five open research questions, four research directions" href="/research-entry" />
-              <OpenItem label="Read the source theories" description="139+ established theories, credited and documented" href="/scientific-foundations" />
+              <OpenItem label="Read the source theories" description="145+ established theories, credited and documented" href="/scientific-foundations" />
             </div>
           </section>
 

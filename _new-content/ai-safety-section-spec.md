@@ -207,12 +207,12 @@ TEG-Blue is explicitly designed for computational consumption — not just human
     { "level": 3, "label": "performed",  "markers": [...] },
     { "level": 4, "label": "weaponized", "markers": [...] }
   ],
-  "sourceTheories": 139,
+  "sourceTheories": 145,
   "version": "git-controlled"
 }
 ```
 
-This includes JSON-LD structured data on every page, JSON content files that are git-versioned and non-binary, consistent terminology across 139+ integrated source theories, flat color palettes and semantic HTML for reliable parsing, and open API endpoints for programmatic access.
+This includes JSON-LD structured data on every page, JSON content files that are git-versioned and non-binary, consistent terminology across 145+ integrated source theories, flat color palettes and semantic HTML for reliable parsing, and open API endpoints for programmatic access.
 
 **This isn't a PDF to interpret. It's emotional intelligence infrastructure designed to be consumed computationally.**
 

@@ -3,7 +3,7 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 139+ established theories into testable hypotheses about emotional regulation." },
+  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 145+ established theories into testable hypotheses about emotional regulation." },
   { label: "What Is Original", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
   { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
@@ -41,7 +41,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Start Here — TEG-Blue",
-    description: "Open science platform connecting 139+ theories. Open research questions, everything open access.",
+    description: "Open science platform connecting 145+ theories. Open research questions, everything open access.",
   },
 };
 
@@ -121,7 +121,7 @@ export default function ResearchEntryPage() {
               <li>Linguistic complexity → regulatory capacity</li>
             </ul>
             <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 500, margin: 0 }}>
-              The individual theories are validated. The connections are the hypothesis. The scientific community can help determine if &quot;3&quot; holds up.
+              The building blocks are validated science. The connections are the hypothesis.
             </p>
           </MechanismBox>
 

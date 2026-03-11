@@ -11,7 +11,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "About | TEG-Blue Emotional Technology",
-  description: "About TEG-Blue — the first complete emotional technology system. Founded by Anna Paretas-Artacho. An integrative framework connecting 139+ theories from neuroscience, psychology, and sociology into testable hypotheses about emotional regulation.",
+  description: "About TEG-Blue — the first complete emotional technology system. Founded by Anna Paretas-Artacho. An integrative framework connecting 145+ theories from neuroscience, psychology, and sociology into testable hypotheses about emotional regulation.",
   keywords: [
     "TEG-Blue",
     "emotional technology",
@@ -32,7 +32,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About — TEG-Blue Research",
-    description: "An integrative framework connecting 139+ theories. Founded by Anna Paretas-Artacho. Open science, testable hypotheses, inviting collaboration.",
+    description: "An integrative framework connecting 145+ theories. Founded by Anna Paretas-Artacho. Open science, testable hypotheses, inviting collaboration.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue Research",
     type: "profile",
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <ResearcherHero
             badge="ABOUT"
             title="About TEG-Blue"
-            description="The first complete emotional technology system. An integrative framework connecting 139+ theories into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
+            description="The first complete emotional technology system. An integrative framework connecting 145+ theories into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}

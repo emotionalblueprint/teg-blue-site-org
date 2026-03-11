@@ -1,8 +1,8 @@
 import { generateScientificFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "Scientific Foundations — 139+ Theories | TEG-Blue Research",
-  description: "41 research traditions across 24 domains — from Polyvagal Theory and Attachment to CBT, IFS, and Moral Psychology. See how 139+ established theories connect across neuroscience, psychology, and sociology, with framework cross-references (F1-F12).",
+  title: "Scientific Foundations — 145+ Theories | TEG-Blue Research",
+  description: "41 research traditions across 24 domains — from Polyvagal Theory and Attachment to CBT, IFS, and Moral Psychology. See how 145+ established theories connect across neuroscience, psychology, and sociology, with framework cross-references (F1-F12).",
   keywords: [
     "emotional regulation models",
     "Plutchik wheel of emotions",
@@ -31,7 +31,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Scientific Foundations — How TEG-Blue Extends Major Psychological Models",
-    description: "TEG-Blue acts as connective tissue between 15 major models (Plutchik, NVC, CBT, Polyvagal, IFS) and 139+ theories. See strengths, gaps, and additions for each.",
+    description: "TEG-Blue acts as connective tissue between 15 major models (Plutchik, NVC, CBT, Polyvagal, IFS) and 145+ theories. See strengths, gaps, and additions for each.",
     url: "https://teg-blue.org/scientific-foundations",
     siteName: "TEG-Blue Research",
     type: "article",

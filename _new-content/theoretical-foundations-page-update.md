@@ -13,7 +13,7 @@ The **explanatory architecture** — the 12 frameworks documented on this page �
 
 ## What Is Original Here
 
-The 12 frameworks draw on 139+ established theories across neuroscience, psychology, sociology, and trauma studies. Every source theory is credited. The originality is not in the individual theories — it is in the connections between them.
+The 12 frameworks draw on 145+ established theories across neuroscience, psychology, sociology, and trauma studies. Every source theory is credited. The originality is not in the individual theories — it is in the connections between them.
 
 These research traditions developed independently, within separate disciplines, often without reference to each other. TEG-Blue proposes specific cross-disciplinary connections that do not exist in any of the source theories:
 
