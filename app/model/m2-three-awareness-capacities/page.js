@@ -10,6 +10,7 @@ import {
   ExpandableSection, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
+import EmpathicIntegrationExplorer from "@/src/components/EmpathicIntegrationExplorer";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -113,6 +114,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           </>
         }
       >
+        {/* ─── EMPATHIC INTEGRATION EXPLORER ──────────── */}
+        <EmpathicIntegrationExplorer />
+
         {/* ─── DEGRADATION BAR CHART ──────────────────── */}
         <div style={{ margin: "32px 0 0" }}>
           {/* Legend with colored capacity labels */}
