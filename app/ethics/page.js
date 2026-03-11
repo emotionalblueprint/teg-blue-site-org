@@ -101,9 +101,19 @@ export default function EthicsPage() {
           <p style={bodyStyle}>
             The framework maps suffering to create understanding, not products. Research findings will not be shaped to serve commercial outcomes. The distinction between mapping pain and monetizing it is one TEG-Blue takes seriously.
           </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            The application site (teg-blue.com) offers paid tiers, but these fund the work — they do not create dependency loops or exploit emotional vulnerability for engagement.
-          </p>
+          <div
+            style={{
+              padding: "16px 20px",
+              marginTop: 16,
+              background: hexToRgba(SPECTRUM.indigo, 0.06),
+              borderRadius: 10,
+              border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+            }}
+          >
+            <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, margin: 0, fontWeight: 500 }}>
+              The application site (teg-blue.com) offers paid tiers, but these fund the work — they do not create dependency loops or exploit emotional vulnerability for engagement.
+            </p>
+          </div>
         </section>
 
         {/* No Weaponization */}
