@@ -451,6 +451,31 @@ export default function ResearchHub() {
             </div>
           </section>
 
+          {/* Trust — How this work is sustained */}
+          <section style={{ marginBottom: 32 }}>
+            <div
+              style={{
+                padding: "20px 24px",
+                background: hexToRgba(SPECTRUM.indigo, 0.06),
+                borderRadius: 10,
+                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.15)}`,
+                textAlign: "center",
+              }}
+            >
+              <h3 style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", color: SPECTRUM.indigo, marginBottom: 10 }}>
+                How this work is sustained
+              </h3>
+              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0, marginBottom: 10 }}>
+                The application site (teg-blue.com) offers paid tools to fund ongoing research and development. These tiers do not create dependency loops or exploit emotional vulnerability for engagement. The research — the frameworks, the models, the data — stays open.
+              </p>
+              <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6, margin: 0 }}>
+                <Link href="/ethics" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+                  Read our ethics →
+                </Link>
+              </p>
+            </div>
+          </section>
+
         </PageLayout>
 
         <SiteFooter />

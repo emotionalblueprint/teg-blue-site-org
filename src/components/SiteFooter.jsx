@@ -109,9 +109,16 @@ export default function SiteFooter() {
         </p>
       </div>
 
+      <p style={{ fontSize: 10, color: TEXT.hint, marginTop: 14, lineHeight: 1.6, maxWidth: 340, margin: "14px auto 0" }}>
+        Paid tiers on teg-blue.com fund the research. They do not create dependency or exploit vulnerability.{" "}
+        <Link href="/ethics" style={{ color: TEXT.hint, textDecoration: "underline" }}>
+          Ethics
+        </Link>
+      </p>
+
       <p
         style={{
-          marginTop: 16,
+          marginTop: 12,
           fontSize: 10,
           fontFamily: FONT.mono,
           color: TEXT.micro,
