@@ -52,6 +52,7 @@ const NAV_ITEMS = [
   { label: "Glossary", href: "/glossary" },
   { label: "AI Safety", href: "/ai-safety" },
   { label: "About", href: "/about" },
+  { label: "Ethics", href: "/ethics" },
   { label: "Phenomena", href: "/mechanics-of-phenomena" },
 ];
 
