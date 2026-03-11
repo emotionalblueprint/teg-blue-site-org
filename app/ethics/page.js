@@ -74,10 +74,10 @@ export default function EthicsPage() {
             Emotional development is fundamentally contextual. Individual emotional patterns emerge within and are shaped by intersecting systems of power, culture, socioeconomic conditions, and structural inequality.
           </PrincipleQuote>
           <p style={body}>
-            This is not a theoretical assumption but an empirical foundation supported by converging evidence from neuroscience, developmental psychology, epigenetics, and trauma studies.
+            This position is grounded in converging evidence from neuroscience, developmental psychology, epigenetics, and trauma studies.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
-            Any framework that purports to map emotional development without accounting for these systemic influences is, by definition, operating with an incomplete model. TEG-Blue&apos;s ethical commitments are therefore not supplementary to the science — they emerge directly from it.
+            A model of emotional development that does not account for these systemic influences operates with incomplete variables. TEG-Blue&apos;s ethical commitments follow directly from this empirical foundation — they are methodological requirements, not supplementary values.
           </p>
         </section>
 
@@ -86,7 +86,7 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>Context shapes everything</h2>
           <p style={body}>
-            Emotional patterns are products of interaction between individual neurobiology and the social, cultural, and structural environments in which development occurs. TEG-Blue takes all of this seriously. We don&apos;t reduce emotional complexity to individual traits or choices, because that would mean ignoring what the science tells us.
+            Emotional patterns emerge from the interaction between individual neurobiology and the social, cultural, and structural environments in which development occurs. Research in epigenetics, developmental neuroscience, and the neuroscience of adversity demonstrates that these influences are not secondary — they shape neural architecture, stress response calibration, and regulatory capacity at the biological level.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
@@ -108,7 +108,7 @@ export default function EthicsPage() {
           </div>
 
           <ContextNote>
-            Systemic awareness is not political — it is empirical. Decades of research in neuroscience, developmental psychology, and trauma studies confirm that structural inequalities shape how brains develop, how stress responses form, and how emotional patterns get passed down through generations.
+            Methodological consequence: any emotional assessment tool, model, or intervention that does not account for contextual and structural variables introduces systematic bias into its outputs. This is a measurement validity concern, not a political position.
           </ContextNote>
         </section>
 
@@ -120,10 +120,10 @@ export default function EthicsPage() {
             Emotional patterns shaped by adversity, systemic stress, or cultural difference are understood as functional adaptations — not deficits.
           </PrincipleQuote>
           <p style={body}>
-            TEG-Blue does not pathologise emotional responses that are adaptive within their context. The framework recognises that many difficult behaviours started as survival responses. Even when these patterns become maladaptive in changed circumstances, the framework honours what they originally protected.
+            Research on stress adaptation — from Masten&apos;s work on resilience to Perry&apos;s neurosequential model — establishes that emotional responses developed under adversity represent functional adaptations to the conditions present during development. The nervous system calibrates its threat detection, regulatory strategies, and relational patterns to match the environment it encounters. TEG-Blue treats these adaptations accordingly: as evidence of what the nervous system needed to do, not as deficits requiring correction. Even when such patterns become maladaptive in changed circumstances, the framework preserves the distinction between the adaptation and the conditions that produced it.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
-            This is an architectural principle, not just an aspiration. It shapes how the framework is designed, how tools are built, and how data is structured.
+            This is an architectural principle, not an aspiration. It shapes how the framework categorises emotional states, how tools are designed, and how data is structured.
           </p>
         </section>
 
@@ -132,13 +132,13 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>Rigour and compassion</h2>
           <PrincipleQuote>
-            Emotional intelligence without social awareness is incomplete.
+            Accurate emotional modelling requires accounting for the systems in which emotional development occurs.
           </PrincipleQuote>
           <p style={body}>
-            TEG-Blue is grounded in peer-reviewed research and built through systematic methodology. But the purpose of all that rigour is human — to help people understand themselves, break cycles, and build healthier relationships. We hold both with equal seriousness.
+            TEG-Blue is grounded in peer-reviewed research and built through systematic methodology. The purpose of that rigour is applied — to produce models and tools that help people understand their own patterns, interrupt cycles of harm, and build healthier relational dynamics.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
-            You can&apos;t fully understand your own emotional patterns without understanding the broader systems that shaped them. And you can&apos;t support others in understanding theirs without accounting for the different realities people navigate. TEG-Blue is built on the premise that personal insight and systemic understanding are inseparable.
+            Individual emotional patterns cannot be fully understood without reference to the broader systems that shaped them. Clinical or educational work supporting others in understanding their patterns requires accounting for the different structural realities people navigate. The framework treats personal insight and systemic understanding as inseparable — not for ideological reasons, but because the neuroscience consistently supports that position.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             TEG-Blue integrates insights from multiple theoretical traditions and methodological approaches — quantitative neuroscience, qualitative phenomenological research, systems theory, and clinical practice. This pluralistic approach reflects the complexity of emotional experience and guards against reductionism.
@@ -150,10 +150,10 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>Accessibility and equity</h2>
           <PrincipleQuote>
-            Emotional frameworks that only work for some people aren&apos;t universal — they&apos;re limited.
+            A framework&apos;s accuracy depends on its applicability across diverse populations and conditions.
           </PrincipleQuote>
           <p style={body}>
-            The framework is designed with accessibility as a core requirement, not an afterthought. TEG-Blue is designed with intersectionality at its core, meaning we actively account for how gender, culture, neurodivergence, ethnicity, sexuality, and other dimensions of identity shape emotional experience. This isn&apos;t an add-on. It&apos;s how we ensure the framework is accurate and useful for the people who need it.
+            Accessibility is a core design requirement, not an afterthought. The framework accounts for how gender, culture, neurodivergence, ethnicity, sexuality, socioeconomic status, and other dimensions of identity shape emotional experience. This intersectional grounding is what allows the framework to model emotional development accurately across diverse populations rather than defaulting to normative assumptions.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, marginTop: 20 }}>
@@ -179,7 +179,7 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>Transparency and intellectual integrity</h2>
           <PrincipleQuote>
-            Honest work stays visible.
+            Methodology, limitations, and open questions are published for independent verification.
           </PrincipleQuote>
           <p style={body}>
             TEG-Blue maintains transparency about its theoretical foundations, limitations, and areas of ongoing development. Claims are grounded in evidence and clearly distinguished from hypotheses or emerging models. The framework is subject to ongoing empirical validation and revision.
@@ -221,7 +221,7 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>What we expect from collaborators</h2>
           <p style={body}>
-            Research collaborators, consortium members, and contributors to TEG-Blue are expected to share the foundational understanding that structural and systemic factors shape emotional development. This is a premise of the framework, supported by extensive empirical evidence. It is not a topic open to debate within the project.
+            Research collaborators, consortium members, and contributors to TEG-Blue are expected to share the foundational understanding that structural and systemic factors shape emotional development. This is a premise of the framework, established by the evidence base outlined above, and treated as a starting condition for collaborative work.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             This does not require ideological uniformity — healthy methodological and theoretical debate is encouraged.
@@ -277,7 +277,7 @@ export default function EthicsPage() {
             <LicenseCard
               title="Share-alike"
               color={SPECTRUM.indigo}
-              description="Derivative works must use the same or a compatible license. If you build on this work, your contribution stays open too."
+              description="Derivative works must use the same or a compatible license. Contributions that build on this work remain under the same open terms."
             />
           </div>
 
@@ -292,9 +292,11 @@ export default function EthicsPage() {
           <h2 style={sectionHeading}>References</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <Reference text="Chiao, J. Y., & Blizinsky, K. D. (2010). Culture–gene coevolution of individualism–collectivism and the serotonin transporter gene. Proceedings of the Royal Society B, 277(1681), 529–537." />
+            <Reference text="Masten, A. S. (2001). Ordinary magic: Resilience processes in development. American Psychologist, 56(3), 227–238." />
             <Reference text="Lupien, S. J., McEwen, B. S., Gunnar, M. R., & Heim, C. (2009). Effects of stress throughout the lifespan on the brain, behaviour and cognition. Nature Reviews Neuroscience, 10(6), 434–445." />
             <Reference text="McEwen, B. S. (2017). Neurobiological and systemic effects of chronic stress. Chronic Stress, 1, 1–11." />
             <Reference text="Meyer, I. H. (2003). Prejudice, social stress, and mental health in lesbian, gay, and bisexual populations. Psychological Bulletin, 129(5), 674–697." />
+            <Reference text="Perry, B. D. (2009). Examining child maltreatment through a neurodevelopmental lens: Clinical applications of the neurosequential model of therapeutics. Journal of Loss and Trauma, 14(4), 240–255." />
             <Reference text="Williams, D. R., & Mohammed, S. A. (2009). Discrimination and racial disparities in health. Health Psychology, 28(1), 20–30." />
             <Reference text="Yehuda, R., & Lehrner, A. (2018). Intergenerational transmission of trauma effects: putative role of epigenetic mechanisms. World Psychiatry, 17(3), 243–257." />
           </div>
