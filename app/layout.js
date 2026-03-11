@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/src/components/theme/ThemeScript'
 import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
+import { BlueprintGrid } from '@/src/components'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -215,6 +216,7 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="skip-link" style={skipLinkStyles}>
           Skip to main content
         </a>
+        <BlueprintGrid size="lg" opacity={0.25} fade="subtle" />
         <ThemeProvider>
           {children}
         </ThemeProvider>

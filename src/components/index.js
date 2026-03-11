@@ -17,6 +17,7 @@ export { default as ContextBlock } from "./ContextBlock";
 export { default as PatternGradientBar } from "./PatternGradientBar";
 export { default as FluidCompassExplorer } from "./FluidCompassExplorer";
 export { default as OpenCycleExplorer } from "./OpenCycleExplorer";
+export { default as EmpathicIntegrationExplorer } from "./EmpathicIntegrationExplorer";
 export { default as ResearcherPatternCard } from "./ResearcherPatternCard";
 export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";
@@ -46,6 +47,9 @@ export { default as HubContent } from "./HubContent";
 export { default as SiteHeader } from "./SiteHeader";
 export { default as SiteFooter } from "./SiteFooter";
 export { default as PageLayout } from "./PageLayout";
+
+// Layout
+export { default as BlueprintGrid } from "./BlueprintGrid";
 
 // Shared utilities
 export { SpectrumBar, SearchInput } from "./SharedComponents";

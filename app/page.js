@@ -48,25 +48,6 @@ export default function ResearchHub() {
           fontFamily: FONT.display,
         }}
       >
-        {/* Blueprint grid background */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "fixed",
-            inset: 0,
-            backgroundImage: [
-              "linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px)",
-              "linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px)",
-              "radial-gradient(circle 1.5px at 0 0, rgba(255,255,255,0.22) 0%, transparent 100%)",
-            ].join(", "),
-            backgroundSize: "80px 80px",
-            opacity: 0.45,
-            pointerEvents: "none",
-            maskImage: "radial-gradient(ellipse 70% 60% at 50% 30%, black 0%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 30%, black 0%, transparent 70%)",
-            zIndex: 0,
-          }}
-        />
         <SiteHeader currentPath="/" />
 
         <PageLayout
