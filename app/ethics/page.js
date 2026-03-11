@@ -1,36 +1,39 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, SPACING, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Why These Principles Exist", href: "#why-these-principles-exist", description: "The origin that makes these commitments non-negotiable." },
-  { label: "No Exploitation of Pain", href: "#no-exploitation-of-pain", description: "Research findings will not be shaped to serve commercial outcomes." },
-  { label: "No Weaponization", href: "#no-weaponization", description: "TEG-Blue's position on dual-use potential and what collaborators must commit to." },
-  { label: "Data & Privacy", href: "#data-and-privacy", description: "Research ethics around emotional data and user consent." },
-  { label: "Accessibility", href: "#accessibility", description: "The framework stays public. Knowledge is not paywalled." },
-  { label: "Open Science", href: "#open-science", description: "Methodology is visible. Claims are testable. Limitations are stated." },
-  { label: "Attribution & Licensing", href: "#attribution-and-licensing", description: "CC-BY-NC-SA-4.0 explained. How to cite. What collaborators should know." },
+  { label: "Position", href: "#position", description: "Emotional development is contextual. This is not a theoretical assumption — it is an empirical foundation." },
+  { label: "Context Shapes Everything", href: "#context-shapes-everything", description: "Systemic awareness as scientific prerequisite, not political position." },
+  { label: "Non-Pathologisation", href: "#non-pathologisation", description: "Adaptive responses are not deficits. The framework honours what survival required." },
+  { label: "Rigour & Compassion", href: "#rigour-and-compassion", description: "Grounded in peer-reviewed research. Built for human understanding." },
+  { label: "Accessibility & Equity", href: "#accessibility-and-equity", description: "Designed for everyone. Open science. No knowledge behind paywalls." },
+  { label: "Transparency", href: "#transparency", description: "Methodology is visible. Claims are testable. Limitations are stated." },
+  { label: "Responsible Technology", href: "#responsible-technology", description: "Safeguards, human oversight, and transparency in AI-assisted tools." },
+  { label: "Collaboration", href: "#collaboration", description: "What we expect from research collaborators and consortium members." },
+  { label: "Attribution & Licensing", href: "#attribution-and-licensing", description: "CC-BY-NC-SA-4.0. How to cite. What collaborators should know." },
 ];
 
 export const metadata = {
-  title: "Ethics | TEG-Blue",
-  description: "TEG-Blue's research ethics and collaboration principles. How this work is conducted, what it commits to, and what collaborators should know before engaging.",
+  title: "Ethical & Epistemological Framework | TEG-Blue Research",
+  description: "TEG-Blue's foundational ethical commitments. How emotional development is understood, how research is conducted, and what collaborators are expected to uphold.",
   keywords: [
     "research ethics",
     "open science",
     "emotional technology ethics",
-    "collaboration principles",
+    "epistemological framework",
+    "non-pathologisation",
+    "intersectional research",
+    "contextual embeddedness",
     "CC-BY-NC-SA-4.0",
     "TEG-Blue",
-    "data ethics",
-    "dual-use research",
   ],
   alternates: {
     canonical: "https://teg-blue.org/ethics",
   },
   openGraph: {
-    title: "Ethics — TEG-Blue Research",
-    description: "Research ethics and collaboration principles. How this work is conducted and what it commits to.",
+    title: "Ethical & Epistemological Framework — TEG-Blue Research",
+    description: "Foundational commitments guiding TEG-Blue research and development.",
     url: "https://teg-blue.org/ethics",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -38,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Ethics — TEG-Blue Research",
-    description: "Research ethics and collaboration principles for TEG-Blue.",
+    title: "Ethical & Epistemological Framework — TEG-Blue Research",
+    description: "Foundational commitments guiding TEG-Blue research and development.",
   },
 };
 
@@ -58,110 +61,128 @@ export default function EthicsPage() {
         header={
           <ResearcherHero
             badge="ETHICS"
-            title="Ethics"
-            description="How this work is conducted, what it commits to, and what we ask of anyone who builds on it. These principles protect the honesty this system was built on."
+            title="Ethical & Epistemological Framework"
+            description="Foundational commitments guiding TEG-Blue research and development. These principles are not supplementary to the science — they emerge directly from it."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* Why These Principles Exist */}
-        <section id="why-these-principles-exist" style={{ marginBottom: 48 }}>
-          <h2 style={sectionHeading}>Why these principles exist</h2>
+        {/* Position Statement */}
+        <section id="position" style={{ marginBottom: 48 }}>
+          <h2 style={sectionHeading}>Position statement</h2>
+          <PrincipleQuote>
+            Emotional development is fundamentally contextual. Individual emotional patterns emerge within and are shaped by intersecting systems of power, culture, socioeconomic conditions, and structural inequality.
+          </PrincipleQuote>
           <p style={body}>
-            TEG-Blue was built from lived experience — from the need to see clearly inside situations designed to confuse. That origin is not incidental. It is the reason these commitments exist.
+            This is not a theoretical assumption but an empirical foundation supported by converging evidence from neuroscience, developmental psychology, epigenetics, and trauma studies.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
-            A framework that maps emotional vulnerability — how the nervous system responds to safety and threat, how patterns form, how protection becomes harm — carries specific obligations. The same knowledge that makes this work useful could, in the wrong context, be used to exploit exactly what it describes.
-          </p>
-          <p style={{ ...body, marginTop: 14 }}>
-            These principles are not aspirational. They are constraints on how this research is conducted, shared, and applied. Every commitment below flows from the honesty that started this work. To read more about TEG-Blue&apos;s origin, see the{" "}
-            <Link href="/about" style={linkStyle}>
-              About page
-            </Link>.
+            Any framework that purports to map emotional development without accounting for these systemic influences is, by definition, operating with an incomplete model. TEG-Blue&apos;s ethical commitments are therefore not supplementary to the science — they emerge directly from it.
           </p>
         </section>
 
-        {/* No Exploitation of Pain */}
-        <section id="no-exploitation-of-pain" style={{ marginBottom: 48 }}>
+        {/* Context Shapes Everything */}
+        <section id="context-shapes-everything" style={{ marginBottom: 48 }}>
           <SectionDivider />
-          <h2 style={sectionHeading}>No exploitation of pain</h2>
-          <PrincipleQuote>
-            This system started in pain. It will not profit from keeping people in it.
-          </PrincipleQuote>
+          <h2 style={sectionHeading}>Context shapes everything</h2>
           <p style={body}>
-            The framework maps suffering to create understanding, not products. Research findings will not be shaped to serve commercial outcomes. The distinction between mapping pain and monetizing it is one TEG-Blue takes seriously.
+            Emotional patterns are products of interaction between individual neurobiology and the social, cultural, and structural environments in which development occurs. TEG-Blue takes all of this seriously. We don&apos;t reduce emotional complexity to individual traits or choices, because that would mean ignoring what the science tells us.
           </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
+            <EvidenceCard
+              title="Contextual embeddedness"
+              color={SPECTRUM.azure}
+              description="Research in adverse childhood experiences, minority stress theory, allostatic load, and intergenerational trauma transmission provides robust evidence that systemic conditions exert measurable effects on neurological development, stress response systems, and emotional regulation capacities."
+            />
+            <EvidenceCard
+              title="Intersectional analysis"
+              color={SPECTRUM.cobalt}
+              description="Emotional experience is shaped by the convergence of multiple identity dimensions including gender, ethnicity, neurodivergence, sexuality, socioeconomic status, disability, and cultural context. This ensures the framework's applicability across diverse populations rather than defaulting to normative assumptions."
+            />
+            <EvidenceCard
+              title="Structural awareness as scientific prerequisite"
+              color={SPECTRUM.indigo}
+              description="Recognition of systemic inequalities and power dynamics is treated as a prerequisite for accurate emotional modelling, not as a political position. This commitment is grounded in neuroscience of adversity, epigenetic transmission, minority stress research, and cultural neuroscience."
+            />
+          </div>
+
           <ContextNote>
-            The application site (teg-blue.com) offers paid tiers, but these fund the work — they do not create dependency loops or exploit emotional vulnerability for engagement.
+            Systemic awareness is not political — it is empirical. Decades of research in neuroscience, developmental psychology, and trauma studies confirm that structural inequalities shape how brains develop, how stress responses form, and how emotional patterns get passed down through generations.
           </ContextNote>
         </section>
 
-        {/* No Weaponization */}
-        <section id="no-weaponization" style={{ marginBottom: 48 }}>
+        {/* Non-Pathologisation */}
+        <section id="non-pathologisation" style={{ marginBottom: 48 }}>
           <SectionDivider />
-          <h2 style={sectionHeading}>No weaponization</h2>
+          <h2 style={sectionHeading}>Non-pathologisation</h2>
           <PrincipleQuote>
-            This work maps vulnerability. That knowledge carries responsibility.
+            Emotional patterns shaped by adversity, systemic stress, or cultural difference are understood as functional adaptations — not deficits.
           </PrincipleQuote>
           <p style={body}>
-            Emotional mapping has dual-use potential. A framework that describes how people protect themselves, how trust forms, how regulatory states shift — this knowledge could be applied to surveillance, behavioral profiling, coercive design, or manipulation.
+            TEG-Blue does not pathologise emotional responses that are adaptive within their context. The framework recognises that many difficult behaviours started as survival responses. Even when these patterns become maladaptive in changed circumstances, the framework honours what they originally protected.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
-            TEG-Blue will not license, sell, or make its models available for these purposes. Collaborators and researchers who engage with this work are expected to uphold the same boundary.
-          </p>
-          <WarningCard>
-            Using TEG-Blue&apos;s framework to identify emotional vulnerabilities for exploitation is a violation of both the license and the intent of this research.
-          </WarningCard>
-        </section>
-
-        {/* Data & Privacy */}
-        <section id="data-and-privacy" style={{ marginBottom: 48 }}>
-          <SectionDivider />
-          <h2 style={sectionHeading}>Data and privacy</h2>
-          <PrincipleQuote>
-            People bring real pain here. We protect what they share.
-          </PrincipleQuote>
-          <p style={body}>
-            No user data from the application site (teg-blue.com) feeds research without explicit consent. Emotional patterns explored through TEG-Blue&apos;s tools are not harvested for analysis, training data, or publication.
-          </p>
-          <p style={{ ...body, marginTop: 14 }}>
-            The validation study used publicly available, anonymized data (Reddit AITA posts). Any future research involving user-generated data will require informed consent, ethical review, and transparent methodology documentation.
+            This is an architectural principle, not just an aspiration. It shapes how the framework is designed, how tools are built, and how data is structured.
           </p>
         </section>
 
-        {/* Accessibility */}
-        <section id="accessibility" style={{ marginBottom: 48 }}>
+        {/* Rigour and Compassion */}
+        <section id="rigour-and-compassion" style={{ marginBottom: 48 }}>
           <SectionDivider />
-          <h2 style={sectionHeading}>Accessibility</h2>
+          <h2 style={sectionHeading}>Rigour and compassion</h2>
           <PrincipleQuote>
-            Clarity should not be a luxury.
+            Emotional intelligence without social awareness is incomplete.
           </PrincipleQuote>
           <p style={body}>
-            Knowledge stays open. The framework — the maps, the models, the science, the theoretical foundations — is public. This site exists to make it available to anyone who wants to read, test, critique, or build on it.
+            TEG-Blue is grounded in peer-reviewed research and built through systematic methodology. But the purpose of all that rigour is human — to help people understand themselves, break cycles, and build healthier relationships. We hold both with equal seriousness.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12, marginTop: 20 }}>
+          <p style={{ ...body, marginTop: 14 }}>
+            You can&apos;t fully understand your own emotional patterns without understanding the broader systems that shaped them. And you can&apos;t support others in understanding theirs without accounting for the different realities people navigate. TEG-Blue is built on the premise that personal insight and systemic understanding are inseparable.
+          </p>
+          <p style={{ ...body, marginTop: 14 }}>
+            TEG-Blue integrates insights from multiple theoretical traditions and methodological approaches — quantitative neuroscience, qualitative phenomenological research, systems theory, and clinical practice. This pluralistic approach reflects the complexity of emotional experience and guards against reductionism.
+          </p>
+        </section>
+
+        {/* Accessibility & Equity */}
+        <section id="accessibility-and-equity" style={{ marginBottom: 48 }}>
+          <SectionDivider />
+          <h2 style={sectionHeading}>Accessibility and equity</h2>
+          <PrincipleQuote>
+            Emotional frameworks that only work for some people aren&apos;t universal — they&apos;re limited.
+          </PrincipleQuote>
+          <p style={body}>
+            The framework is designed with accessibility as a core requirement, not an afterthought. TEG-Blue is designed with intersectionality at its core, meaning we actively account for how gender, culture, neurodivergence, ethnicity, sexuality, and other dimensions of identity shape emotional experience. This isn&apos;t an add-on. It&apos;s how we ensure the framework is accurate and useful for the people who need it.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, marginTop: 20 }}>
             <CompactCard
-              title="Research is open"
-              description="Researchers, educators, and clinicians can access everything they need to evaluate the framework here."
+              title="Open science"
+              description="The framework — the maps, the models, the theoretical foundations — is public. This site makes it available to anyone who wants to read, test, critique, or build on it."
               color={SPECTRUM.azure}
             />
             <CompactCard
-              title="Tools fund the work"
-              description="Paywalled tools on the application site fund ongoing development. The intellectual architecture is not behind a paywall."
+              title="Designed for difference"
+              description="Attention to neurodivergent processing styles, varying levels of literacy, cultural diversity in emotional expression, and economic barriers to access."
               color={SPECTRUM.cobalt}
             />
           </div>
+
+          <ContextNote>
+            Paywalled tools on the application site fund ongoing development. The intellectual architecture of TEG-Blue is not behind a paywall. Researchers, educators, and clinicians can access everything they need to evaluate the framework here.
+          </ContextNote>
         </section>
 
-        {/* Open Science */}
-        <section id="open-science" style={{ marginBottom: 48 }}>
+        {/* Transparency */}
+        <section id="transparency" style={{ marginBottom: 48 }}>
           <SectionDivider />
-          <h2 style={sectionHeading}>Open science</h2>
+          <h2 style={sectionHeading}>Transparency and intellectual integrity</h2>
           <PrincipleQuote>
             Honest work stays visible.
           </PrincipleQuote>
           <p style={body}>
-            Methodology is visible. Claims are testable. Limitations are stated. This is how honest research works.
+            TEG-Blue maintains transparency about its theoretical foundations, limitations, and areas of ongoing development. Claims are grounded in evidence and clearly distinguished from hypotheses or emerging models. The framework is subject to ongoing empirical validation and revision.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             TEG-Blue is a working hypothesis — not a settled framework. The validation study, the theoretical mapping, the open research questions, and the framework architecture are all published for independent verification. The{" "}
@@ -179,13 +200,59 @@ export default function EthicsPage() {
           </ContextNote>
         </section>
 
+        {/* Responsible Technology */}
+        <section id="responsible-technology" style={{ marginBottom: 48 }}>
+          <SectionDivider />
+          <h2 style={sectionHeading}>Responsible technology</h2>
+          <p style={body}>
+            Where TEG-Blue incorporates Large Language Model technologies in its tools and assessments, these are designed with explicit safeguards against bias reproduction, with human oversight at critical decision points, and with transparency about the role and limitations of automated systems in emotional assessment.
+          </p>
+          <p style={{ ...body, marginTop: 14 }}>
+            All publications are designed for both human and AI consumption — structured JSON-LD metadata, semantic HTML, Dublin Core annotations, and consistent terminology throughout. The{" "}
+            <Link href="/ai-safety" style={linkStyle}>
+              AI safety
+            </Link>{" "}
+            page details how TEG-Blue approaches emotional technology in artificial intelligence.
+          </p>
+        </section>
+
+        {/* Collaboration */}
+        <section id="collaboration" style={{ marginBottom: 48 }}>
+          <SectionDivider />
+          <h2 style={sectionHeading}>What we expect from collaborators</h2>
+          <p style={body}>
+            Research collaborators, consortium members, and contributors to TEG-Blue are expected to share the foundational understanding that structural and systemic factors shape emotional development. This is a premise of the framework, supported by extensive empirical evidence. It is not a topic open to debate within the project.
+          </p>
+          <p style={{ ...body, marginTop: 14 }}>
+            This does not require ideological uniformity — healthy methodological and theoretical debate is encouraged.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12, marginTop: 20 }}>
+            <CompactCard
+              title="Shared premises"
+              description="Collaborators recognise — not merely tolerate — that systemic injustice has real consequences for emotional and neurological development."
+              color={SPECTRUM.cobalt}
+            />
+            <CompactCard
+              title="Welcomed debate"
+              description="Methodological approaches, theoretical weighting, intervention design, cross-cultural application, and the framework's limitations are all open for rigorous discussion."
+              color={SPECTRUM.azure}
+            />
+          </div>
+
+          <p style={{ ...body, marginTop: 20 }}>
+            For full details, see the{" "}
+            <Link href="/collaborate" style={linkStyle}>
+              Collaborate
+            </Link>{" "}
+            page.
+          </p>
+        </section>
+
         {/* Attribution & Licensing */}
         <section id="attribution-and-licensing" style={{ marginBottom: 48 }}>
           <SectionDivider />
           <h2 style={sectionHeading}>Attribution and licensing</h2>
-          <PrincipleQuote>
-            Shared work needs shared respect.
-          </PrincipleQuote>
           <p style={body}>
             TEG-Blue is published under{" "}
             <strong style={{ color: TEXT.primary }}>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA-4.0)</strong>.
@@ -215,8 +282,22 @@ export default function EthicsPage() {
           </div>
 
           <p style={{ ...body, marginTop: 20 }}>
-            For collaborators: engaging with TEG-Blue means accepting both the license terms and the ethical commitments on this page. The framework is open for testing, critique, extension, and independent use — within these boundaries.
+            Engaging with TEG-Blue means accepting both the license terms and the ethical commitments on this page. The framework is open for testing, critique, extension, and independent use — within these boundaries.
           </p>
+        </section>
+
+        {/* References */}
+        <section style={{ marginBottom: 48 }}>
+          <SectionDivider />
+          <h2 style={sectionHeading}>References</h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <Reference text="Chiao, J. Y., & Blizinsky, K. D. (2010). Culture–gene coevolution of individualism–collectivism and the serotonin transporter gene. Proceedings of the Royal Society B, 277(1681), 529–537." />
+            <Reference text="Lupien, S. J., McEwen, B. S., Gunnar, M. R., & Heim, C. (2009). Effects of stress throughout the lifespan on the brain, behaviour and cognition. Nature Reviews Neuroscience, 10(6), 434–445." />
+            <Reference text="McEwen, B. S. (2017). Neurobiological and systemic effects of chronic stress. Chronic Stress, 1, 1–11." />
+            <Reference text="Meyer, I. H. (2003). Prejudice, social stress, and mental health in lesbian, gay, and bisexual populations. Psychological Bulletin, 129(5), 674–697." />
+            <Reference text="Williams, D. R., & Mohammed, S. A. (2009). Discrimination and racial disparities in health. Health Psychology, 28(1), 20–30." />
+            <Reference text="Yehuda, R., & Lehrner, A. (2018). Intergenerational transmission of trauma effects: putative role of epigenetic mechanisms. World Psychiatry, 17(3), 243–257." />
+          </div>
         </section>
 
         {/* Cross-link to .com */}
@@ -230,14 +311,14 @@ export default function EthicsPage() {
             }}
           >
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.75, margin: 0 }}>
-              These principles shape how our tools work. See how they apply to the people using TEG-Blue at{" "}
+              These principles shape how our tools work. See how they apply at{" "}
               <a
-                href="https://teg-blue.com/ethics"
+                href="https://teg-blue.com"
                 style={{ ...linkStyle, fontWeight: 500 }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                teg-blue.com/ethics
+                teg-blue.com
               </a>.
             </p>
           </div>
@@ -332,25 +413,32 @@ function ContextNote({ children }) {
   );
 }
 
-function WarningCard({ children }) {
+function EvidenceCard({ title, color, description }) {
   return (
     <div
       style={{
-        padding: "16px 20px",
-        marginTop: 20,
-        background: hexToRgba(SPECTRUM.indigo, 0.07),
+        padding: 20,
+        background: BG.card,
         borderRadius: 8,
-        border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.2)}`,
+        border: `1px solid ${BORDER.default}`,
+        borderLeft: `3px solid ${color}`,
       }}
     >
+      <h3 style={{
+        fontSize: 14,
+        fontWeight: 600,
+        color: TEXT.primary,
+        marginBottom: 8,
+      }}>
+        {title}
+      </h3>
       <p style={{
         fontSize: 14,
-        color: TEXT.primary,
-        lineHeight: 1.75,
+        color: TEXT.secondary,
+        lineHeight: 1.7,
         margin: 0,
-        fontWeight: 500,
       }}>
-        {children}
+        {description}
       </p>
     </div>
   );
@@ -415,5 +503,20 @@ function LicenseCard({ title, color, description }) {
         {description}
       </p>
     </div>
+  );
+}
+
+function Reference({ text }) {
+  return (
+    <p style={{
+      fontSize: 13,
+      color: TEXT.muted,
+      lineHeight: 1.6,
+      margin: 0,
+      paddingLeft: 16,
+      borderLeft: `2px solid ${BORDER.default}`,
+    }}>
+      {text}
+    </p>
   );
 }
