@@ -18,7 +18,8 @@ const PAGE_DATES = {
   '/glossary': '2026-02-15',
   '/methodology': '2026-02-18',
   '/citations': '2026-02-12',
-  '/collaborate': '2026-02-10',
+  '/collaborate': '2026-03-11',
+  '/ethics': '2026-03-11',
   '/about': '2026-02-15',
   '/scientific-foundations': '2026-02-18',
   '/emotional-technology': '2026-02-18',
@@ -131,6 +132,12 @@ export default function sitemap() {
       lastModified: new Date(PAGE_DATES['/collaborate']),
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/ethics`,
+      lastModified: new Date(PAGE_DATES['/ethics']),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/about`,

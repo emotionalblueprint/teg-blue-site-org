@@ -50,6 +50,10 @@ export default function SiteFooter() {
         <Link href="/epistemological-foundations" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Epistemology
         </Link>
+        {" · "}
+        <Link href="/ethics" style={{ color: TEXT.hint, textDecoration: "none" }}>
+          Ethics
+        </Link>
       </p>
 
       {/* Utility links */}

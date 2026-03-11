@@ -33,6 +33,7 @@ const ALL_PAGES = [
   '/methodology',
   '/citations',
   '/collaborate',
+  '/ethics',
   '/about',
   '/scientific-foundations',
   '/emotional-technology',
