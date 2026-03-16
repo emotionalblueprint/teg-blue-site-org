@@ -246,37 +246,21 @@ export default function sitemap() {
     ),
   ]
 
-  // Dynamic content pages
+  // Dynamic content pages — only publications (actual separate pages)
+  // Frameworks are already in static pages above (canonical /framework/ URLs)
+  // Theories and glossary terms are fragment anchors on /foundations and /glossary,
+  // not separate pages — Google strips fragments, so including them inflates
+  // the sitemap and wastes crawl budget
   const allContent = loadAllContent()
 
-  const contentPages = allContent.map((node) => {
-    let url = baseUrl
-
-    switch (node.type) {
-      case 'publication':
-      case 'working-paper':
-        url = `${baseUrl}/publications/${node.slug}`
-        break
-      case 'theory':
-        url = `${baseUrl}/foundations#${node.slug}`
-        break
-      case 'glossary':
-        url = `${baseUrl}/glossary#${node.slug}`
-        break
-      case 'framework':
-        url = `${baseUrl}/frameworks/${node.slug}`
-        break
-      default:
-        url = `${baseUrl}/${node.slug}`
-    }
-
-    return {
-      url,
+  const contentPages = allContent
+    .filter((node) => node.type === 'publication' || node.type === 'working-paper')
+    .map((node) => ({
+      url: `${baseUrl}/publications/${node.slug}`,
       lastModified: node.lastUpdated ? new Date(node.lastUpdated) : new Date(),
       changeFrequency: 'monthly',
-      priority: node.type === 'publication' ? 0.8 : 0.6,
-    }
-  })
+      priority: 0.8,
+    }))
 
   return [...staticPages, ...contentPages]
 }
