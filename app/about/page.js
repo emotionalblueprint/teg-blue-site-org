@@ -239,6 +239,26 @@ export default function AboutPage() {
             <NavLink href="/methodology" label="Methodology" />
             <NavLink href="/publications" label="Publications" />
             <NavLink href="/collaborate" label="Collaborate" />
+            <a
+              href="https://teg-blue.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "10px 18px",
+                background: hexToRgba(SPECTRUM.azure, 0.1),
+                color: SPECTRUM.azure,
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 13,
+                textDecoration: "none",
+                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
+              }}
+            >
+              Emotional Tools (teg-blue.com) →
+            </a>
           </div>
         </section>
       </PageLayout>

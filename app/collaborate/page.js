@@ -184,6 +184,26 @@ export default function CollaboratePage() {
             <NavLink href="/publications" label="Publications" />
             <NavLink href="/scientific-foundations" label="Scientific Foundations" />
             <NavLink href="/frameworks-map" label="Framework Architecture" />
+            <a
+              href="https://teg-blue.com/emotional-tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "10px 18px",
+                background: hexToRgba(SPECTRUM.indigo, 0.1),
+                color: SPECTRUM.indigo,
+                borderRadius: 6,
+                fontWeight: 500,
+                fontSize: 13,
+                textDecoration: "none",
+                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.2)}`,
+              }}
+            >
+              Emotional Tools (teg-blue.com) →
+            </a>
           </div>
         </section>
       </PageLayout>

@@ -1893,6 +1893,24 @@ export default function GlossaryPage() {
       >
         <GlossaryList terms={GLOSSARY_TERMS} />
 
+        {/* Cross-site link */}
+        <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 16 }}>
+          <Link href="/reframes" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Reframes →
+          </Link>
+          <Link href="/frameworks-map" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            12 Frameworks →
+          </Link>
+          <a
+            href="https://teg-blue.com/glossary"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}
+          >
+            Applied Glossary (teg-blue.com) →
+          </a>
+        </div>
+
       </PageLayout>
 
       <SiteFooter />

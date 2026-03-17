@@ -423,6 +423,19 @@ export default function ReframesPage() {
             >
               12 Frameworks →
             </Link>
+            <a
+              href="https://teg-blue.com/emotional-tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: 13,
+                fontFamily: FONT.mono,
+                color: SPECTRUM.azure,
+                textDecoration: "none",
+              }}
+            >
+              Emotional Tools (teg-blue.com) →
+            </a>
           </div>
         </section>
       </PageLayout>

@@ -346,6 +346,24 @@ export default function MethodologyPage() {
           <AuthorBlock />
         </section>
 
+        {/* Cross-site link */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+          <Link href="/publications" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Publications →
+          </Link>
+          <Link href="/collaborate" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Collaborate →
+          </Link>
+          <a
+            href="https://teg-blue.com/emotional-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}
+          >
+            Emotional Tools (teg-blue.com) →
+          </a>
+        </div>
+
       </PageLayout>
 
       <SiteFooter />

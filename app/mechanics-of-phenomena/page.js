@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, FONT, BORDER, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, FONT, BORDER, EDITORIAL, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 import MechanicsLayout from "./MechanicsLayout";
@@ -177,6 +177,20 @@ export default function MechanicsOfPhenomenaPage() {
               </div>
             </section>
           ))}
+        </div>
+        {/* Cross-site link */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 16, marginTop: 32, paddingTop: 24, borderTop: `1px solid ${BORDER.default}` }}>
+          <Link href="/frameworks-map" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            12 Frameworks →
+          </Link>
+          <a
+            href="https://teg-blue.com/emotional-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}
+          >
+            Emotional Tools (teg-blue.com) →
+          </a>
         </div>
       </MechanicsLayout>
 

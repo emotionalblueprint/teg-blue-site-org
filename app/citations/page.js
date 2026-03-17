@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero } from "@/src/components";
@@ -208,6 +209,24 @@ export default function CitationsPage() {
               research@teg-blue.org
             </a>
           </p>
+        </div>
+
+        {/* Cross-site link */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 32 }}>
+          <Link href="/publications" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Publications →
+          </Link>
+          <Link href="/collaborate" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Collaborate →
+          </Link>
+          <a
+            href="https://teg-blue.com/emotional-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}
+          >
+            Emotional Tools (teg-blue.com) →
+          </a>
         </div>
 
       </PageLayout>

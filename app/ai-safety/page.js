@@ -858,6 +858,23 @@ export default function AISafetyPage() {
               </svg>
               GitHub
             </a>
+            <a
+              href="https://teg-blue.com/emotional-tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "12px 24px",
+                background: "transparent",
+                color: TEXT.secondary,
+                border: `1px solid ${BORDER.default}`,
+                borderRadius: RADIUS.md,
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+              }}
+            >
+              Emotional Tools (teg-blue.com)
+            </a>
           </div>
         </section>
 

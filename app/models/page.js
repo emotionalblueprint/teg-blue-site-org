@@ -144,7 +144,7 @@ export default function ModelsPage() {
             <li><strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong> — Perceiving and naming your own internal state. The capacity that separates &ldquo;I feel bad&rdquo; from &ldquo;I feel guilty because I hurt someone.&rdquo;</li>
           </ul>
           <p style={{ ...bodyStyle, marginTop: 16 }}>
-            <strong style={{ color: TEXT.primary }}>The key insight:</strong> RE stays sharp across the entire gradient — it just changes what it serves. In a Fluid Compass it serves understanding. In a Stuck Compass it serves the mode. ER degrades differently per mode. SEA is binary: present in all Fluid modes, gone in all Stuck modes. Its presence or absence determines whether the other two capacities serve the person or serve the stuck position.
+            <strong style={{ color: TEXT.primary }}>The key insight:</strong> RE stays sharp across the entire gradient — it just changes what it serves. In a Fluid Compass it serves understanding. In a Stuck Compass it serves the mode. ER degrades differently per mode. SEA degrades progressively: present in Fluid modes, flickering in transitional states, gone in Stuck modes. It is the last capacity to go offline and the first that needs to come back. Its level determines whether the other two capacities serve the person or serve the stuck position.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             <strong style={{ color: TEXT.primary }}>Why this matters for discernment:</strong> The configuration RE sharp + ER absent + SEA absent — found in Chronic Control and Chronic Domination — enables precise emotional reading with no internal feedback. The person may be the most accurate emotional reader in the room and cause the most harm, because the capacities that would register that harm have been structurally shut down. This is what makes trauma-driven protection and strategic manipulation look identical on the surface, and why distinguishing them matters.
@@ -246,26 +246,30 @@ export default function ModelsPage() {
             { href: "/frameworks-map", label: "12 Frameworks" },
             { href: "/foundations", label: "System Overview" },
             { href: "/collaborate", label: "Collaborate" },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              style={{
-                padding: "10px 20px",
-                background: "transparent",
-                color: TEXT.muted,
-                border: `1px solid ${BORDER.default}`,
-                borderRadius: RADIUS.md,
-                fontWeight: 500,
-                fontSize: 13,
-                fontFamily: FONT.mono,
-                textDecoration: "none",
-                letterSpacing: "0.02em",
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+            { href: "https://teg-blue.com/compass-explorer", label: "Inner Compass (teg-blue.com)", external: true },
+          ].map(({ href, label, external }) => {
+            const style = {
+              padding: "10px 20px",
+              background: external ? hexToRgba(SPECTRUM.azure, 0.08) : "transparent",
+              color: external ? SPECTRUM.azure : TEXT.muted,
+              border: `1px solid ${external ? hexToRgba(SPECTRUM.azure, 0.2) : BORDER.default}`,
+              borderRadius: RADIUS.md,
+              fontWeight: 500,
+              fontSize: 13,
+              fontFamily: FONT.mono,
+              textDecoration: "none",
+              letterSpacing: "0.02em",
+            };
+            return external ? (
+              <a key={href} href={href} target="_blank" rel="noopener noreferrer" style={style}>
+                {label}
+              </a>
+            ) : (
+              <Link key={href} href={href} style={style}>
+                {label}
+              </Link>
+            );
+          })}
         </section>
 
       </PageLayout>
