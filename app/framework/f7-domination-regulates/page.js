@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -1093,6 +1094,19 @@ export default function F7DominationRegulatesPage() {
                   "F7 is the final framework in the collective arc (F4–F7) and completes the regulation thread (F1–F7). Each framework describes a regulation substitute at a different scale: F1 (biological return), F2 (developmental failure), F3 (cognitive replacement), F4 (rules), F5 (worth hierarchies), F6 (bias), F7 (domination). The costs escalate from truth-loss to everything. The intervention principle is consistent: restore safety first, then expect capacity. F7 is the final substitute. F8 begins the healing arc.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Domination Regulates (F7) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f7-domination-regulates",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

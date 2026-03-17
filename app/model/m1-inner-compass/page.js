@@ -12,6 +12,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 const MODEL_COLOR = SPECTRUM.azure;
@@ -1203,6 +1204,19 @@ export default function M1InnerCompassPage() {
                   "A stuck compass is one where the needle has lost its capacity to move — what should have been a temporary orientation (Protection, Control, or Domination) has become a chronic position. The person does not experience being stuck; they experience it as 'just who I am.' Identity forms around the mode through false coherence (F3), making the stuckness invisible from the inside.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Inner Compass (M1) — TEG-Blue Research",
+              url: "https://teg-blue.org/model/m1-inner-compass",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

@@ -14,6 +14,7 @@ import EmpathicIntegrationExplorer from "@/src/components/EmpathicIntegrationExp
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── CAPACITY COLORS (from tokens — cross-site canonical) ───
@@ -1238,6 +1239,19 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   "The three awareness capacities were not damaged — they were not developed. Repair means building what was never built, not recovering what was lost. Five conditions are required: safety (the nervous system must evaluate 'safe enough'), relational support (new co-regulatory experiences), identity flexibility (false coherence must loosen), time (capacities develop through repeated experience), and structural conditions (the environment must not re-wound).",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Three Awareness Capacities (M2) — TEG-Blue Research",
+              url: "https://teg-blue.org/model/m2-three-awareness-capacities",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

@@ -506,6 +506,26 @@ export function generateFAQJsonLd(questions) {
   };
 }
 
+// ─── SPEAKABLE SCHEMA (for voice assistants) ─────────
+
+export function generateSpeakableJsonLd({ name, url, cssSelectors }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    url,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors || [
+        "article > p:first-of-type",
+        "article h2",
+        "article h2 + p",
+      ],
+    },
+    inLanguage: LANGUAGE,
+  };
+}
+
 // ─── SEARCH ACTION SCHEMA ────────────────────────────
 
 export function generateSearchActionJsonLd() {

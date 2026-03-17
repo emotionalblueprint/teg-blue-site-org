@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -1021,6 +1022,19 @@ export default function F4RulesRegulatePage() {
                   "F4 is the first framework in the collective arc (F4–F7). It builds directly on F3's individual mechanisms — emotional distortion, external regulation, false coherence — showing how they aggregate into collective structures. F1 defines the biological return, F2 shows the developmental failure, F3 shows the cognitive replacement, and F4 shows what happens when enough people running those replacements are in proximity. F5 then explains how rule systems begin to sort people by worth.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Rules Regulate (F4) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f4-rules-regulate",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

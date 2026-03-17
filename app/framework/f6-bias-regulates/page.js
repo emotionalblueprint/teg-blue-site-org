@@ -5,17 +5,19 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think bias means — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "Bias is pattern recognition in service of regulation, not a reasoning error." },
   { label: "Overview", href: "#overview", description: "F5 describes the Filter of Worth. F6 describes what happens when that structure gets absorbed into perception itself." },
   { label: "Bias as Regulation", href: "#bias-as-regulation", description: "If believing something reduces threat, the nervous system keeps believing it — below conscious awareness." },
@@ -106,6 +108,17 @@ export default function F6BiasRegulatesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Bias",
+                commonUnderstanding: "Prejudice, unfairness, a moral failing — something correctable through education, awareness, or shame.",
+                definition: "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering is not a choice. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness.",
+              },
+            ]}
+          />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
@@ -979,6 +992,19 @@ export default function F6BiasRegulatesPage() {
                   "F6 is the third framework in the collective arc (F4–F7). The regulation thread: F3's false coherence operates at the narrative level, F4 absorbs it into rules, F5 absorbs it into worth sorting, and F6 absorbs it into perception itself. Each scale makes the substitute harder to see because each feels more like 'just how things are.' F6 extends the core principle — restore safety first, then expect flexibility — to the perceptual system. F7 then explains what happens when distorted perception is not just maintained but enforced.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Bias as Regulation (F6) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f6-bias-regulates",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

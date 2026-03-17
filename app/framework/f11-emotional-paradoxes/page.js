@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -981,6 +982,19 @@ export default function F11EmotionalParadoxesPage() {
             generateFAQJsonLd(
               faqItems.map((f) => ({ question: f.q, answer: f.a }))
             )
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Emotional Paradoxes (F11) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f11-emotional-paradoxes",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

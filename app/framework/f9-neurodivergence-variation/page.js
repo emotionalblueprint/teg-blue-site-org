@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -985,6 +986,19 @@ export default function F9NeurodivergenceVariationPage() {
             generateFAQJsonLd(
               faqItems.map((f) => ({ question: f.q, answer: f.a }))
             )
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Neurodivergence as Nervous System Variation (F9) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f9-neurodivergence-variation",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

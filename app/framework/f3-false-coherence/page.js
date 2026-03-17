@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -1206,6 +1207,19 @@ export default function F3FalseCoherencePage() {
                   "F3 completes the individual arc of the regulation thread: F1 establishes the biological return mechanism, F2 shows what happens when it is never learned, and F3 shows what cognition does in its place. F3 also bridges to the collective arc (F4–F7) by showing how individual false coherence extends into relationships through emotional distortion and external regulation, and scales into collective rule systems.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Adult Cognition & False Coherence (F3) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f3-false-coherence",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

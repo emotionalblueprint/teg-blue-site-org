@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -972,6 +973,19 @@ export default function F5WorthHierarchiesPage() {
                   "F5 is the second framework in the collective arc (F4–F7). It extends the regulation thread: F1 defines the biological return, F2 shows the developmental failure, F3 shows the cognitive replacement, F4 shows how those replacements aggregate into collective rule systems, and F5 shows what those rule systems sort — worth. F6 then explains how sorting becomes invisible through bias. Each framework describes a progressively larger-scale substitute for the regulation that was never built.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Filter of Worth (F5) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f5-worth-hierarchies",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -1076,6 +1077,19 @@ export default function F8RepairingAwarenessPage() {
                   "F8 is the first framework in the healing arc (F8–F10). It reverses the escalation arc: where F1–F7 each describe a regulation substitute at escalating scale and cost, F8 describes developing what was missing. Part 1 covers individual repair (assessment, conditions, pathways, process). Part 2 covers collective strength (universal masking, conformity costs, different configurations as collective intelligence). F9 then takes F8's universal insight and shows what happens at the structural extreme — when environments are designed for one neurological configuration.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Repairing Awareness (F8) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f8-repairing-awareness",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

@@ -11,6 +11,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 // ─── SIDEBAR ──────────────────────────────────────────────
@@ -1213,6 +1214,19 @@ export default function F2AwarenessCalibrationPage() {
                   "Healing is not finding a hidden self or removing a mask. It is developing the awareness capacities — particularly SEA — that never had conditions to form, and learning Biological Restoration. Both must develop together through relationships that provide the safety the original environment could not.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Awareness Teaches Awareness (F2) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f2-awareness-calibration",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

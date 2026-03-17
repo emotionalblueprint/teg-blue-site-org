@@ -610,6 +610,13 @@ Run this checklist every 3 months (next: June 2026):
 - [ ] Verify all JSON-LD passes Rich Results Test
 - [ ] Run `npm run build` — clean build, 0 errors
 
+**Authority & Architecture Check (see sections 17-19):**
+- [ ] Check Core Web Vitals in GSC — LCP < 2.5s, CLS < 0.1, INP < 200ms
+- [ ] Verify all framework pages link to related frameworks (no orphans)
+- [ ] Verify cross-site links (.org → .com tools, .com → .org research)
+- [ ] Check external platform presence (Zenodo, ResearchGate) — profiles current
+- [ ] Verify proprietary terms use `[Term] is [category] that [function] in [context]` format
+
 ### Post-Deploy Checklist
 
 After every deployment:
@@ -651,10 +658,13 @@ When adding any new page to teg-blue.org, complete all items:
 - [ ] Added to `public/llms.txt` and `public/llms-full.txt` (if major section)
 - [ ] OG image created (`opengraph-image.js` co-located with page)
 
-### Cross-References
+### Cross-References & Authority
 - [ ] Linked from relevant navigation pages (foundations, research-entry, frameworks-map)
 - [ ] Added to SiteHeader if it's a top-level section
 - [ ] Added to sidebar navigation if it belongs to an existing section
+- [ ] Links back to its hub page (if spoke page)
+- [ ] Links to corresponding .com tool page (if applicable)
+- [ ] Proprietary terms use definition format: `[Term] is [category] that [function] in [context]`
 
 ### Verification
 - [ ] `npm run build` passes
@@ -685,17 +695,158 @@ When adding any new page to teg-blue.org, complete all items:
 | Mechanics Hub | Yes | — | BreadcrumbList | No | No | No | Yes | Yes | Yes |
 | Mechanics Pieces (3) | Yes | Article | BreadcrumbList | Yes | Yes | Yes | Yes | Yes | Yes |
 
-### Priority Gaps
+### Priority Gaps (updated 2026-03-17)
 
-1. **FAQ schema on framework pages** — F1-F12 each answer key questions but lack FAQPage JSON-LD
-2. **FAQ schema on model pages** — M1-M3 would benefit from Q&A pairs
+1. **No Speakable schema** — No pages have SpeakableSpecification. Priority: framework pages, model pages, mechanics pieces
+2. **4 pages missing metadata** — citations, design-system, emotional-technology, glossary
 3. **Missing OG images** — Foundations, Models Hub, AI Safety, Glossary, Mechanics Hub
 4. **Breadcrumbs missing** — Research Entry, Frameworks Map, Scientific Foundations, Glossary
-5. **Answer-first audit** — Some pages may have narrative-style openings instead of direct answers
+5. **SearchAction defined but not deployed** — Already in jsonld.js but not rendered on homepage
+6. **`Person` schema missing** — About page should have `Person` schema for Anna Paretas-Artacho
+7. **Content architecture cross-links** — Framework pages should link to corresponding .com tools
+8. **Answer-first audit** — Some pages may have narrative-style openings instead of direct answers
 
 ---
 
-## 17. Key Statistics (for quick reference)
+## 17. E-E-A-T & Authority Signals
+
+**E-E-A-T = Experience, Expertise, Authoritativeness, Trustworthiness**
+
+Google's quality framework. Increasingly how AI systems evaluate whether to cite a source. TEG-Blue has strong latent E-E-A-T as a research project — the work is to make it legible to machines.
+
+### Author Attribution
+
+- Every framework and model page attributes its author
+- Author name links to `/about` (Anna Paretas-Artacho)
+- Zenodo publication (DOI: 10.5281/zenodo.18428907, κ=0.74) linked prominently — this is the strongest direct E-E-A-T signal
+- `Person` schema should be added to the About page
+- Dublin Core citation metadata already implemented on framework pages
+
+### Named Entity Establishment
+
+Search engines and AI systems need to recognize "Anna Paretas-Artacho," "TEG-Blue," and "The Emotional Gradient" as distinct, coherent, real entities.
+
+**Current strengths:**
+- `ResearchOrganization` schema on every page (layout.js)
+- Consistent terminology across all content
+- Zenodo DOI provides external verification
+- llms.txt includes explicit entity definitions
+
+**Actions to strengthen:**
+- Target Wikidata entity for TEG-Blue (dramatically increases AI system recognition)
+- Consistent author name: always "Anna Paretas-Artacho" (full name)
+- ResearchGate profile with Zenodo paper uploaded
+- Academia.edu profile (optional but adds a node)
+- LinkedIn presence with occasional long-form posts
+
+### External Recognition / Backlinks
+
+- Quality over quantity: one link from a university domain beats fifty low-quality links
+- Target sources: academic journals citing the Zenodo paper, practitioner blogs, psychology/neuroscience forums
+- The .com site linking to .org transfers authority from the application layer
+
+### Citations and References
+
+- The 145+ scientific theories are already mapped to frameworks on the scientific foundations page
+- Every framework page references its source theories
+- Bibliography sections and cross-references signal deep expertise
+- The Zenodo DOI appears in publications, llms.txt, and Dublin Core metadata
+
+---
+
+## 18. Content Architecture
+
+### Hub-and-Spoke Cluster Map
+
+Each major section of .org functions as a topic cluster:
+
+| Hub (pillar page) | Spokes |
+|-------------------|--------|
+| `/frameworks-map` | 12 individual framework pages (F1-F12) |
+| `/models` | 3 model pages (M1-M3) |
+| `/scientific-foundations` | Individual theory entries (inline) |
+| `/mechanics-of-phenomena` | Series and piece pages |
+| `/publications` | Individual publication pages |
+| `/glossary` | 162 term entries (inline) |
+
+### Internal Linking Rules
+
+- Every spoke links back to its hub
+- Hubs link down to all their spokes
+- Related frameworks cross-link (e.g., F1 ↔ F2 ↔ F3 as the regulation thread; F4 ↔ F5 ↔ F6 ↔ F7 as the collective arc)
+- Every mention of a concept that has its own page should be a link
+- Anchor text must be descriptive: "false coherence (F3)" not "click here"
+- Anchor text is a ranking signal for the destination page
+
+### Cross-Domain Linking
+
+- .org establishes academic authority that legitimizes .com
+- .com extends reach to practitioner audiences that strengthens .org's citations
+- Cross-link deliberately: every framework page can link to the corresponding .com tool
+- Both domains use the same entity names, author name, and terminology
+- Never duplicate tool content on .org — link to .com instead
+
+### Orphan Page Detection
+
+Any page not linked from anywhere else is invisible to crawlers. Check for orphans by:
+1. Cross-referencing all sitemap URLs against navigation and in-content links
+2. Ensuring every page is reachable within 2-3 clicks from the homepage
+3. Run periodically: check SiteHeader, SiteFooter, and hub pages for link completeness
+
+---
+
+## 19. GEO Citation Criteria
+
+AI systems (ChatGPT, Perplexity, Claude, Google AI Overviews, Copilot) cite sources that meet these criteria. The .org site naturally satisfies most:
+
+| Criterion | What It Means | .org Status |
+|-----------|---------------|-------------|
+| **Specific** | Concrete claims, not vague generalities | Strong — each framework makes specific propositions |
+| **Attributed** | Named expert or organization | Strong — Anna Paretas-Artacho, TEG-Blue Research |
+| **Externally corroborated** | Mentioned elsewhere on the indexed web | Moderate — Zenodo, GitHub, .com. Need more external nodes |
+| **Clearly structured** | Defined terms, tables, hierarchies | Strong — 12 frameworks, 3 models, 4 modes |
+| **Free of promotional language** | Factual, not sales-y | Strong — writing guidelines prohibit overclaiming |
+| **Factual, declarative prose** | Claims stated directly | Strong — anchor-gap-contribution structure |
+
+### Definition Format for Proprietary Terms
+
+Every proprietary TEG-Blue term should have a citable definition following this template:
+
+```
+[Term] is [category] that [function] in [context].
+```
+
+**Examples:**
+- "The Four-Mode Gradient is a measurement system that maps nervous system regulatory states along a continuous gradient from Connection through Protection and Control to Domination."
+- "Regulation outsourcing is a behavioral pattern in which unlearned emotional regulation is transferred to external relationships, requiring others to provide the regulatory function the system cannot perform internally."
+- "Self-Emotional Awareness (SEA) is an awareness capacity that tracks one's own emotional states in real time, functioning as the keystone capacity without which emotional distortion occurs."
+
+**Format:** One-sentence definition. Then expand in 2-4 sentences. Then link to the framework page.
+
+This format is what both featured snippet extraction and AI summarization favor.
+
+---
+
+## 20. Core Web Vitals & Performance
+
+Check in Google Search Console > Experience, or use PageSpeed Insights (pagespeed.web.dev).
+
+| Metric | Target | What It Measures |
+|--------|--------|-----------------|
+| **LCP** (Largest Contentful Paint) | Under 2.5s | How fast the main content loads |
+| **CLS** (Cumulative Layout Shift) | Under 0.1 | No layout jumps as page loads |
+| **INP** (Interaction to Next Paint) | Under 200ms | How fast the page responds to clicks |
+
+### Additional Technical Items
+
+- **Canonical tags:** Every page should have `alternates.canonical` in its metadata. Most .org pages already have this.
+- **Image alt text:** Every OG image has alt text. Inline images and diagrams should also have descriptive `alt` or `role="img"` with `aria-label`.
+- **Content length:** Framework pages are comprehensive pillar pages — keep them thorough. Thin content (under ~300 words) rarely ranks.
+- **Table of contents:** Add to long pages with jump-link anchors. Creates sitelinks in search results.
+
+---
+
+## 21. Key Statistics (for quick reference)
 
 These numbers appear in llms.txt and should be updated when they change:
 
@@ -724,4 +875,5 @@ These numbers appear in llms.txt and should be updated when they change:
 
 ---
 
-*Protocol version 1.0 — March 10, 2026*
+*Protocol version 1.1 — March 17, 2026*
+*v1.1: Added E-E-A-T, Content Architecture, GEO Citation Criteria, Core Web Vitals sections. Updated coverage scorecard. Expanded audit checklists.*

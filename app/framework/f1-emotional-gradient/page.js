@@ -15,6 +15,7 @@ import {
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 const F1InstrumentDiagram = dynamic(
@@ -1569,6 +1570,19 @@ export default function F1EmotionalGradientPage() {
                   "What a person can perceive, think, feel, and do depends on their current regulatory state. In Connection, perception is broad and empathy is full. In Protection, perception narrows to threat and cognition simplifies. This is neurobiological reality — the current state has literally shaped the capacities available.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Emotions as Biological Information (F1) — TEG-Blue Research",
+              url: "https://teg-blue.org/framework/f1-emotional-gradient",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

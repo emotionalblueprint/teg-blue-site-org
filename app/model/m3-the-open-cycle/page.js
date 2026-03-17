@@ -13,6 +13,7 @@ import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
+  generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
 const MODEL_COLOR = SPECTRUM.indigo;
@@ -824,6 +825,19 @@ export default function M3TheOpenCyclePage() {
                   "Signal submersion is the TEG-Blue term for what happens when cognition overrides an emotional signal. The override removes access to the signal — not the signal itself. The person loses awareness of the emotion, but the biological cascade continues: cortisol keeps releasing, muscles stay braced, the HPA axis never receives the all-clear. The body holds everything the mind refuses to see. The cherry is there — declaring it invisible is not the same as it not being there.",
               },
             ])
+          ),
+        }}
+      />
+      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Open Cycle (M3) — TEG-Blue Research",
+              url: "https://teg-blue.org/model/m3-the-open-cycle",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />
