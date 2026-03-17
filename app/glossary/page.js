@@ -4,7 +4,7 @@ import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Emotional Regulation Glossary | TEG-Blue Research",
-  description: "184 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
+  description: "186 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
   alternates: {
     canonical: "https://teg-blue.org/glossary",
   },
@@ -972,6 +972,16 @@ const GLOSSARY_TERMS = [
   },
   // ===== F6: BIAS REGULATES =====
   {
+    slug: "bias",
+    title: "Bias",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Prejudice, unfairness, a moral failing — something correctable through education, awareness, or shame.",
+    definition: "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering is not a choice. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness. This is why bias resists correction even in intelligent, well-intentioned people: correction threatens the stability the bias provides. Shame does not unlearn bias. Safety does.",
+    tags: ["F6", "reframe", "perception"],
+    framework: 6,
+  },
+  {
     slug: "bias-architecture",
     title: "Bias Architecture",
     type: "concept",
@@ -1123,6 +1133,15 @@ const GLOSSARY_TERMS = [
     status: "proposed",
     definition: "Pattern of domination in relationships identified by Stark, Johnson, and Bancroft. Operates through ongoing pattern, not isolated incidents. Involves systematic reduction of partner's autonomy through monitoring, isolation, degradation, and enforcement. The pattern is recognizable and predictable. TEG-Blue integrates this as Domination Mode expressed in intimate relationships — specific tactics as predictable expressions of power-as-safety regulatory logic.",
     tags: ["F7", "abuse", "domination"],
+    framework: 7,
+  },
+  {
+    slug: "emotional-abuse",
+    title: "Emotional Abuse",
+    type: "concept",
+    status: "proposed",
+    definition: "A structural dynamic that becomes possible when the capacity to read another's emotional state exists without the capacity to be moved by it, and when the capacity to feel deeply exists without the capacity to trust one's own experience as real. It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain is no longer invisible — it has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
+    tags: ["F7", "abuse", "awareness-capacity"],
     framework: 7,
   },
   {

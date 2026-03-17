@@ -26,6 +26,7 @@ export { default as FrameworkTerms } from "./FrameworkTerms";
 
 // Framework components
 export { default as FrameworkHero } from "./FrameworkHero";
+export { default as CommonUnderstanding } from "./CommonUnderstanding";
 
 // Model components
 export { default as ModelHero } from "./ModelHero";

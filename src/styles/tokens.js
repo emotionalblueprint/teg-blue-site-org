@@ -64,6 +64,7 @@ export const CONTENT_TYPE_COLORS = {
   opendata:     SPECTRUM.azure,
   collaboration: SPECTRUM.azure,
   citation:     SPECTRUM.slate,
+  reframe:      SPECTRUM.slate,
 };
 
 // ─── CONTENT TYPE LABELS ─────────────────────────────
@@ -78,6 +79,7 @@ export const CONTENT_TYPE_LABELS = {
   opendata:      "Open Data",
   collaboration: "Collaborate",
   citation:      "Citation",
+  reframe:       "Reframe",
 };
 
 // ─── TYPOGRAPHY ──────────────────────────────────────

@@ -61,6 +61,7 @@ export default function GlossaryList({ terms = [] }) {
     return (
       term.title?.toLowerCase().includes(searchLower) ||
       term.definition?.toLowerCase().includes(searchLower) ||
+      term.commonUnderstanding?.toLowerCase().includes(searchLower) ||
       term.tags?.some((t) => t.toLowerCase().includes(searchLower)) ||
       term.aliases?.some((a) => a.toLowerCase().includes(searchLower))
     );
@@ -356,16 +357,70 @@ function GlossaryTerm({ term }) {
                 Also: {term.aliases.join(", ")}{term.aliasNote ? ` — ${term.aliasNote}` : ""}
               </p>
             )}
-            <p
-              style={{
-                fontSize: 13,
-                lineHeight: 1.6,
-                color: TEXT.secondary,
-                margin: 0,
-              }}
-            >
-              {term.definition || term.summary}
-            </p>
+            {term.commonUnderstanding ? (
+              <div>
+                <div style={{ marginBottom: 10 }}>
+                  <span
+                    style={{
+                      fontSize: 10,
+                      fontFamily: FONT.mono,
+                      fontWeight: 600,
+                      color: TEXT.muted,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    Commonly understood as
+                  </span>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      color: TEXT.secondary,
+                      fontStyle: "italic",
+                      margin: "4px 0 0",
+                    }}
+                  >
+                    {term.commonUnderstanding}
+                  </p>
+                </div>
+                <div>
+                  <span
+                    style={{
+                      fontSize: 10,
+                      fontFamily: FONT.mono,
+                      fontWeight: 600,
+                      color: TEXT.muted,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    What the nervous system is actually doing
+                  </span>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      color: TEXT.secondary,
+                      margin: "4px 0 0",
+                    }}
+                  >
+                    {term.definition}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <p
+                style={{
+                  fontSize: 13,
+                  lineHeight: 1.6,
+                  color: TEXT.secondary,
+                  margin: 0,
+                }}
+              >
+                {term.definition || term.summary}
+              </p>
+            )}
           </div>
           <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <StatusBadge status={term.status} />
