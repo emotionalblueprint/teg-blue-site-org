@@ -20,6 +20,18 @@ export const metadata = {
   alternates: {
     canonical: "https://teg-blue.org/reframes",
   },
+  openGraph: {
+    title: "The Common Understanding — Reframes | TEG-Blue Research",
+    description: "What emotions, trauma, bias, empathy, and other commonly used terms actually mean when you trace them back to the nervous system. 15 reframes across 7 frameworks.",
+    url: "https://teg-blue.org/reframes",
+    siteName: "TEG-Blue Research",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Common Understanding — Reframes | TEG-Blue",
+    description: "What emotions, trauma, bias, and empathy actually mean when traced to the nervous system. 15 reframes across 7 frameworks.",
+  },
 };
 
 // ─── REFRAME DATA ────────────────────────────────────────────

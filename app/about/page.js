@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "Two Sites", href: "#two-sites", description: "How teg-blue.com (interactive tools) and teg-blue.org (open science) work together." },
@@ -243,6 +244,55 @@ export default function AboutPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "About", url: "/about" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "About TEG-Blue",
+            url: "https://teg-blue.org/about",
+            description: "About TEG-Blue — the first complete emotional technology system. Founded by Anna Paretas-Artacho.",
+            inLanguage: "en",
+            mainEntity: {
+              "@type": "Person",
+              name: "Anna Paretas-Artacho",
+              jobTitle: "Founder & Systems Designer",
+              description: "Visual communicator and independent researcher. Creator of TEG-Blue, the first complete emotional technology system.",
+              url: "https://teg-blue.com/about-the-author",
+              sameAs: [
+                "https://github.com/annaparetas",
+                "https://zenodo.org/communities/teg-blue",
+              ],
+              knowsAbout: [
+                "Emotional Technology",
+                "Nervous System Regulation",
+                "Trauma Research",
+                "Systems Design",
+                "AI Safety",
+              ],
+              affiliation: {
+                "@type": "Organization",
+                name: "TEG-Blue Research Consortium",
+                url: "https://teg-blue.org",
+              },
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

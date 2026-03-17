@@ -1,6 +1,7 @@
 import { loadAllNodes } from "@/src/lib/content";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "Citing TEG-Blue", description: "Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
@@ -10,8 +11,27 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "How to Cite | TEG-Blue Research",
   description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats available.",
+  keywords: [
+    "cite TEG-Blue",
+    "TEG-Blue citation",
+    "APA citation format",
+    "emotional technology citation",
+    "research attribution",
+  ],
   alternates: {
     canonical: "https://teg-blue.org/citations",
+  },
+  openGraph: {
+    title: "How to Cite TEG-Blue | TEG-Blue Research",
+    description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats for the Four-Mode Gradient validation study and Theoretical Architecture.",
+    url: "https://teg-blue.org/citations",
+    siteName: "TEG-Blue Research",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "How to Cite TEG-Blue",
+    description: "APA 7th Edition and BibTeX citation formats for TEG-Blue research publications.",
   },
 };
 
@@ -193,6 +213,37 @@ export default function CitationsPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Citations", url: "/citations" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "How to Cite TEG-Blue",
+            url: "https://teg-blue.org/citations",
+            description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats available.",
+            inLanguage: "en",
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

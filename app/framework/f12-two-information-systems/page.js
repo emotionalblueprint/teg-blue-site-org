@@ -59,6 +59,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Two Information Systems — TEG-Blue F12",
+    description:
+      "Why insight alone doesn't change behavior: two parallel information systems at different speeds. The single mechanism underneath all twelve frameworks.",
+  },
   other: {
     'citation_title': 'Our Two Information Systems: Why Insight Alone Does Not Change Behavior and What Actually Does',
     'citation_author': 'Anna Paretas-Artacho',

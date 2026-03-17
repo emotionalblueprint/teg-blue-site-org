@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 // ─── FRAMEWORK URL MAPPING ──────────────────────────────────────
 const FRAMEWORK_URLS = {
@@ -1123,6 +1124,18 @@ export default function ScientificFoundationsPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Scientific Foundations", url: "/scientific-foundations" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

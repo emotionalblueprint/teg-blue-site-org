@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 145+ established theories into testable hypotheses about emotional regulation." },
@@ -388,6 +389,41 @@ export default function ResearchEntryPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "For Researchers", url: "/research-entry" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "For Researchers — Framework Overview",
+            url: "https://teg-blue.org/research-entry",
+            description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable.",
+            inLanguage: "en",
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+            about: [
+              { "@type": "Thing", name: "Open Research Questions", description: "Five priority research directions across biological mechanism, clinical, developmental, collective, and AI domains" },
+              { "@type": "Thing", name: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged" },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }

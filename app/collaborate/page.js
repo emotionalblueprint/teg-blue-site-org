@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "What We're Looking For", href: "#what-were-looking-for", description: "Types of collaboration — validation, cross-disciplinary, translation, critique." },
@@ -188,6 +189,37 @@ export default function CollaboratePage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Collaborate", url: "/collaborate" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Collaborate with TEG-Blue",
+            url: "https://teg-blue.org/collaborate",
+            description: "How to collaborate with TEG-Blue. Validation studies, cross-disciplinary research, translation, and critique.",
+            inLanguage: "en",
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

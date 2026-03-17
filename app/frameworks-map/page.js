@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, EDITORIAL, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all twelve frameworks — what regulates when the body can't, and how the original path rebuilds." },
@@ -548,6 +549,18 @@ export default function TheoreticalFoundationsPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "12 Frameworks", url: "/frameworks-map" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

@@ -61,6 +61,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Emotional Logic Behind Paradoxes — TEG-Blue F11",
+    description:
+      "Why human contradictions are predictable outcomes of competing needs. Holding paradox — rather than resolving it — is the developmental achievement.",
+  },
   other: {
     'citation_title': 'The Emotional Logic Behind Paradoxes: Why Contradictions Are Logical When the Full Picture Becomes Visible',
     'citation_author': 'Anna Paretas-Artacho',

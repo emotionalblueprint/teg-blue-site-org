@@ -6,6 +6,7 @@ import {
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
 } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 // ─── MODEL DATA ─────────────────────────────────────────────
 
@@ -270,6 +271,18 @@ export default function ModelsPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Models", url: "/models" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

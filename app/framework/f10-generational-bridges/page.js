@@ -60,6 +60,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rebuilding Generational Bridges — TEG-Blue F10",
+    description:
+      "How emotional patterns transmit across generations through five pathways, and how adult repair changes what the next generation inherits.",
+  },
   other: {
     'citation_title': 'Rebuilding Generational Bridges: How Patterns Transmit and How Repair Changes What the Next Generation Inherits',
     'citation_author': 'Anna Paretas-Artacho',

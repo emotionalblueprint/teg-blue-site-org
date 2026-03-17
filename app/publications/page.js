@@ -2,6 +2,7 @@ import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, StatusBadge, ResearcherHero, AuthorBlock } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
   title: "Research Publications & Validation Studies | TEG-Blue Research",
@@ -363,6 +364,18 @@ export default function PublicationsPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Publications", url: "/publications" },
+            ])
+          ),
+        }}
+      />
     </div>
   );
 }

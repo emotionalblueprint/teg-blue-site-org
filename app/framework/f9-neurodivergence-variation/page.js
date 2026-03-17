@@ -59,6 +59,12 @@ export const metadata = {
     siteName: "TEG-Blue Research",
     type: "article",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Neurodivergence as Nervous System Variation — TEG-Blue F9",
+    description:
+      "How neurodivergent nervous systems run the same compass with a different configuration. Why system mismatch — not deficit — drives masking and burnout.",
+  },
   other: {
     'citation_title': 'Neurodivergence as Nervous System Variation: When the Environment Is the Mismatch',
     'citation_author': 'Anna Paretas-Artacho',

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock, PageLayout } from "@/src/components";
-import { generateFAQJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "Open Science Principles", href: "#open-science-principles", description: "Everything published, everything testable, everything open access. The governing research principles." },
@@ -349,6 +349,18 @@ export default function MethodologyPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Methodology", url: "/methodology" },
+            ])
+          ),
+        }}
+      />
 
       {/* FAQ Schema for rich snippets */}
       <script

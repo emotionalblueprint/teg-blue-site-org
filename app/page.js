@@ -31,8 +31,29 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
   description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
+  keywords: [
+    "emotional technology",
+    "emotional regulation research",
+    "four-mode gradient",
+    "nervous system regulation",
+    "trauma-informed research",
+    "TEG-Blue",
+    "open science",
+  ],
   alternates: {
     canonical: "https://teg-blue.org",
+  },
+  openGraph: {
+    title: "TEG-Blue | Emotional Technology Research",
+    description: "Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 3 models, transparent research.",
+    url: "https://teg-blue.org",
+    siteName: "TEG-Blue Research",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TEG-Blue | Emotional Technology Research",
+    description: "Open science — 145+ theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 3 models, transparent research.",
   },
 };
 

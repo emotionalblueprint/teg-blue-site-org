@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "The Analogy", description: "What emotional technology means — the same clarity we expect from physical technology, applied to emotions.", href: "#the-analogy" },
@@ -24,6 +25,18 @@ export const metadata = {
   ],
   alternates: {
     canonical: "https://teg-blue.org/emotional-technology",
+  },
+  openGraph: {
+    title: "What is Emotional Technology? — TEG-Blue",
+    description: "Tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies. TEG-Blue is the first complete emotional technology system.",
+    url: "https://teg-blue.org/emotional-technology",
+    siteName: "TEG-Blue Research",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What is Emotional Technology?",
+    description: "Tools and systems that measure, understand, and navigate human emotions with the same clarity we expect from physical or digital technologies.",
   },
 };
 
@@ -377,6 +390,55 @@ export default function EmotionalTechnologyPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Emotional Technology", url: "/emotional-technology" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "What is Emotional Technology?",
+            url: "https://teg-blue.org/emotional-technology",
+            description: "Emotional technology refers to tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies.",
+            inLanguage: "en",
+            author: {
+              "@type": "Organization",
+              name: "TEG-Blue Research Consortium",
+              url: "https://teg-blue.org",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "TEG-Blue Research Consortium",
+              url: "https://teg-blue.org",
+            },
+            keywords: [
+              "emotional technology",
+              "emotional architecture",
+              "emotional wiring",
+              "emotional miswiring",
+              "emotional infrastructure",
+              "nervous system regulation",
+            ],
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

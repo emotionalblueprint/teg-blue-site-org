@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateAISafetyJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateAISafetyJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "The Problem", href: "#the-problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
@@ -11,6 +11,15 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "AI Safety Applications — TEG-Blue Emotional Technology",
   description: "How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
+  keywords: [
+    "AI safety",
+    "AI alignment",
+    "emotional technology AI",
+    "four-mode gradient AI",
+    "human-AI interaction",
+    "TEG-Blue AI",
+    "emotional intelligence infrastructure",
+  ],
   alternates: {
     canonical: "https://teg-blue.org/ai-safety",
   },
@@ -20,6 +29,11 @@ export const metadata = {
     url: "https://teg-blue.org/ai-safety",
     siteName: "TEG-Blue Research",
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Safety Applications — TEG-Blue",
+    description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure.",
   },
 };
 
@@ -850,6 +864,18 @@ export default function AISafetyPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "AI Safety", url: "/ai-safety" },
+            ])
+          ),
+        }}
+      />
 
       {/* JSON-LD Structured Data */}
       <script

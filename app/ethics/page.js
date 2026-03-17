@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "Position", href: "#position", description: "Emotional development is contextual. This is not a theoretical assumption — it is an empirical foundation." },
@@ -328,6 +329,37 @@ export default function EthicsPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Ethics", url: "/ethics" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Ethical & Epistemological Framework",
+            url: "https://teg-blue.org/ethics",
+            description: "TEG-Blue's foundational ethical commitments. How emotional development is understood, how research is conducted, and what collaborators are expected to uphold.",
+            inLanguage: "en",
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

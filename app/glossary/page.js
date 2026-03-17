@@ -1,13 +1,35 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Emotional Regulation Glossary | TEG-Blue Research",
   description: "199 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
+  keywords: [
+    "emotional regulation glossary",
+    "emotional technology terms",
+    "four-mode gradient definitions",
+    "nervous system regulation terms",
+    "TEG-Blue glossary",
+    "complexity markers",
+    "neuroception",
+  ],
   alternates: {
     canonical: "https://teg-blue.org/glossary",
+  },
+  openGraph: {
+    title: "Emotional Regulation Glossary — 199 Terms | TEG-Blue Research",
+    description: "199 defined terms across 12 frameworks and 3 models. Regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
+    url: "https://teg-blue.org/glossary",
+    siteName: "TEG-Blue Research",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emotional Regulation Glossary — 199 Terms",
+    description: "Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
   },
 };
 
@@ -1874,6 +1896,49 @@ export default function GlossaryPage() {
       </PageLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Glossary", url: "/glossary" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "DefinedTermSet",
+            name: "TEG-Blue Emotional Regulation Glossary",
+            url: "https://teg-blue.org/glossary",
+            description: "199 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
+            inLanguage: "en",
+            hasDefinedTerm: [
+              { "@type": "DefinedTerm", name: "Emotions", description: "Biological information — the nervous system signalling safety or threat." },
+              { "@type": "DefinedTerm", name: "Regulation", description: "Physical cleanup — stress hormones metabolised, muscles unclenched, the body returning to baseline." },
+              { "@type": "DefinedTerm", name: "Connection", description: "The regulatory state where the nervous system reads enough safety to engage openly." },
+              { "@type": "DefinedTerm", name: "Protection", description: "The regulatory state where the nervous system detects threat and mobilises defense." },
+              { "@type": "DefinedTerm", name: "Control", description: "The regulatory state where cognitive override replaces biological restoration." },
+              { "@type": "DefinedTerm", name: "Domination", description: "The regulatory state where the system maintains position by suppressing others' restoration." },
+              { "@type": "DefinedTerm", name: "Complexity Markers", description: "Linguistic indicators of self-awareness, perspective-taking, and emotional differentiation." },
+              { "@type": "DefinedTerm", name: "False Coherence", description: "A cognitive structure that replaces biological restoration with narrative consistency." },
+              { "@type": "DefinedTerm", name: "Neuroception", description: "The nervous system's below-conscious evaluation of safety and threat." },
+              { "@type": "DefinedTerm", name: "The Open Cycle", description: "The biology of unfinished emotion — what happens when a stress response activates but never completes." },
+            ],
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

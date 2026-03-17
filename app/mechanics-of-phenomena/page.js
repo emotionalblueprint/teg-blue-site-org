@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, FONT, BORDER, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
+import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 import MechanicsLayout from "./MechanicsLayout";
 import { SERIES } from "./mechanics-config";
 
@@ -180,6 +181,41 @@ export default function MechanicsOfPhenomenaPage() {
       </MechanicsLayout>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: "Home", url: "/" },
+              { name: "Mechanics of Phenomena", url: "/mechanics-of-phenomena" },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "The Mechanics of Phenomena",
+            url: "https://teg-blue.org/mechanics-of-phenomena",
+            description: "A growing collection where observable phenomena — from science, nature, and human behavior — reveal the structure underneath. Long-form essays by Anna Paretas-Artacho.",
+            inLanguage: "en",
+            author: {
+              "@type": "Person",
+              name: "Anna Paretas-Artacho",
+            },
+            isPartOf: {
+              "@type": "ResearchProject",
+              name: "TEG-Blue: The Emotional Gradient Blueprint",
+              url: "https://teg-blue.org",
+            },
+          }),
+        }}
+      />
     </div>
   );
 }
