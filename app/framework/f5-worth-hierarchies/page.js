@@ -17,7 +17,7 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Core Propositions", href: "#core-propositions", description: "Worth-seeking is often a nervous system regulation strategy, not a character flaw." },
+  { label: "Core Propositions", href: "#core-propositions", description: "Worth-seeking is often a nervous system regulation strategy — the compass orienting toward whatever reduces threat." },
   { label: "Overview", href: "#overview", description: "F4 produces rule systems that determine belonging. F5 asks what those systems sort." },
   { label: "Power as Safety", href: "#power-as-safety", description: "When love or belonging were conditional early in life, power and status become regulation strategies." },
   { label: "Safety Proxies", href: "#safety-proxies", description: "Economic, social, and cultural capital function as nervous system stabilisers." },
@@ -122,7 +122,7 @@ export default function F5WorthHierarchiesPage() {
             <PropositionBox label="FOUNDATIONAL CLAIM">
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
-                  Worth-seeking is often a nervous system regulation strategy, not a character flaw — the compass orienting toward whatever reduces threat in environments where worth determines protection
+                  Worth-seeking is often a nervous system regulation strategy — the compass orienting toward whatever reduces threat in environments where worth determines protection
                 </li>
                 <li style={propositionItemStyle}>
                   Safety proxies — economic, social, and cultural capital — function as nervous system stabilizers because they genuinely reduce threat in systems where these markers predict who gets protected
@@ -206,7 +206,7 @@ export default function F5WorthHierarchiesPage() {
             </div>
 
             <p style={proseStyle}>
-              Worth-seeking is not a character flaw. It is often a nervous system regulation strategy — the next substitute in the thread. When rules (F4) are not enough to regulate, position within the hierarchy provides an additional layer of stability. Naming the mechanism does not remove responsibility. It explains why status becomes regulating, so we can keep accountability while targeting the real drivers.
+              Worth-seeking is a nervous system regulation strategy — the next substitute in the thread. When rules (F4) are not enough to regulate, position within the hierarchy provides an additional layer of stability. Naming the mechanism does not remove responsibility. It explains why status becomes regulating, so we can keep accountability while targeting the real drivers.
             </p>
 
             <ExpandableSection title="How This Framework Emerged" type="framework">
@@ -671,7 +671,7 @@ export default function F5WorthHierarchiesPage() {
                 <tbody>
                   <TableRow cells={[
                     "Power as safety",
-                    "Worth-seeking is nervous system regulation — the compass orienting toward whatever reduces threat. Not a character flaw. An adaptation to conditional safety.",
+                    "Worth-seeking is nervous system regulation — the compass orienting toward whatever reduces threat. An adaptation to conditional safety.",
                   ]} />
                   <TableRow cells={[
                     "Safety proxies and three capitals",
@@ -703,7 +703,7 @@ export default function F5WorthHierarchiesPage() {
 
             <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
               {[
-                "\"Worth-seeking is often a regulation strategy, not a character flaw\"",
+                "\"Worth-seeking is a regulation strategy — the compass orienting toward whatever reduces threat\"",
                 "\"The compass reads worth signals as safety signals — because in these environments, they are\"",
                 "\"The Filter of Worth: signal access mistaken for human value; signal deprivation internalized as inadequacy\"",
                 "\"Both 'I earned this' and 'something is wrong with me' can be false coherence\"",
@@ -958,7 +958,7 @@ export default function F5WorthHierarchiesPage() {
               {
                 question: "What are worth hierarchies in the TEG-Blue system?",
                 answer:
-                  "F5 proposes that worth hierarchies are nervous system regulation mechanisms at the systemic level. When individual rule systems (F4) stabilize, they begin to sort people — distributing belonging, protection, and credibility based on proximity to safety signals rather than intrinsic worth. Worth-seeking is not a character flaw but a regulation strategy: the nervous system orienting toward whatever reduces threat in environments where worth determines protection.",
+                  "F5 proposes that worth hierarchies are nervous system regulation mechanisms at the systemic level. When individual rule systems (F4) stabilize, they begin to sort people — distributing belonging, protection, and credibility based on proximity to safety signals rather than intrinsic worth. Worth-seeking is a regulation strategy: the nervous system orienting toward whatever reduces threat in environments where worth determines protection.",
               },
               {
                 question: "What is the Filter of Worth?",

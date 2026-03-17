@@ -21,7 +21,7 @@ export const SERIES = [
         slug: "01-why-humans-are-so-frustrating",
         title: "Why Are Humans So Frustrating?",
         subtitle: "A diagnostic for everyone who has ever watched a smart person do something baffling \u2014 including themselves",
-        metaDescription: "Why the gap between what people know and what they do is not a failure of intelligence but a split architecture \u2014 cognitive system vs regulatory system. A diagnostic from TEG-Blue.",
+        metaDescription: "Why the gap between what people know and what they do comes from a split architecture \u2014 cognitive system vs regulatory system. A diagnostic from TEG-Blue.",
         connection: "M1 Operating Modes / F3 Cognitive Replacement / F6 Bias as Protection / F2 Developmental Failure of Regulation / M2 Signal Function",
         readingTime: 14,
         featured: true,

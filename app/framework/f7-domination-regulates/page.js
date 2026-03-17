@@ -211,7 +211,7 @@ export default function F7DominationRegulatesPage() {
                 F7 emerged from recognizing that multiple frameworks all describe the same escalation mechanism: how self-protection hardens into strategy and escalates into domination. Psychoanalytic theory (Kohut, Kernberg) describes narcissistic pathology as escalation of self-protection. Trauma psychology (Van der Kolk, Herman) describes how threat shapes escalation pathways. Organizational psychology (Argyris &amp; Sch&ouml;n) shows how defensive routines escalate in systems. Behavioral reinforcement (Skinner) explains how reward patterns shape and escalate behavior. Neuroscience (Porges, Siegel) explains how threat physiology changes perception and empathy. Abuse research (Bancroft) documents empirical patterns of escalation in relationships. Addiction research describes tolerance, escalation, and the distinction between substance and underlying state. Systems theory explains how feedback loops drive escalation without deliberate design.
               </p>
               <p style={expandedProseStyle}>
-                The synthesis: organizing these into a model showing that domination escalation is a predictable pathway driven by specific reinforcement patterns, with identifiable markers and interruption windows — not a character type, not a moral category, but a nervous system trajectory that can be recognized and interrupted.
+                The synthesis: organizing these into a model showing that domination escalation is a predictable pathway driven by specific reinforcement patterns, with identifiable markers and interruption windows — a nervous system trajectory that can be recognized and interrupted.
               </p>
             </ExpandableSection>
           </section>
@@ -237,11 +237,11 @@ export default function F7DominationRegulatesPage() {
             </p>
 
             <KeyStatement>
-              This is not character. This is not personality. This is reinforcement. The same learning mechanism that teaches a child to avoid a hot stove teaches a person in chronic threat that control works. The difference is not the mechanism. The difference is what gets reinforced — and whether anything interrupts the reinforcement before it escalates.
+              This is reinforcement. The same learning mechanism that teaches a child to avoid a hot stove teaches a person in chronic threat that control works. The difference is not the mechanism. The difference is what gets reinforced — and whether anything interrupts the reinforcement before it escalates.
             </KeyStatement>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The connection to the regulation thread:</strong> domination is the final substitute. When Biological Restoration (F1) was never learned, and cognitive replacement (F3) is running, and rules (F4) and worth hierarchies (F5) and perceptual certainty (F6) are all insufficient to regulate — the system escalates to direct domination of others. The person is not choosing domination over connection. They do not experience connection as available. What they experience is: control works. Nothing else does.
+              <strong style={{ color: TEXT.primary }}>The connection to the regulation thread:</strong> domination is the final substitute. When Biological Restoration (F1) was never learned, and cognitive replacement (F3) is running, and rules (F4) and worth hierarchies (F5) and perceptual certainty (F6) are all insufficient to regulate — the system escalates to direct domination of others. The person does not experience connection as available. What they experience is: control works. Nothing else does.
             </p>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -449,7 +449,7 @@ export default function F7DominationRegulatesPage() {
             </p>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 4 — Empathy Collapse</strong> marks the point where empathy appeals become structurally futile. This is not moral failure. It is regulatory state reality. Telling a person at Stage 4 to &ldquo;think about how the other person feels&rdquo; is asking them to use Emotional Resonance — which is offline. They may be able to use Reading Emotions to <em>describe</em> what the other person feels, sometimes with remarkable accuracy. But describing is not feeling. The intervention at this stage is containment and protection, not resonance restoration.
+              <strong style={{ color: TEXT.primary }}>Stage 4 — Empathy Collapse</strong> marks the point where empathy appeals become structurally futile. It is regulatory state reality. Emotional Resonance is offline. Asking them to use it is asking them to use a capacity they do not currently have. Telling a person at Stage 4 to &ldquo;think about how the other person feels&rdquo; is asking them to use Emotional Resonance — which is offline. They may be able to use Reading Emotions to <em>describe</em> what the other person feels, sometimes with remarkable accuracy. But describing is not feeling. The intervention at this stage is containment and protection, not resonance restoration.
             </p>
 
             <p style={proseStyle}>
@@ -635,7 +635,7 @@ export default function F7DominationRegulatesPage() {
                 The addiction-logic framing for chronic Domination — connecting relational domination to substance addiction through a shared mechanism: temporary relief from an internal state that is never processed because the processing channel is offline. The formulation &ldquo;there is no amount of domination that will make them feel safe — because the safety they need is internal&rdquo; captures the structural impossibility: the regulation source (domination) cannot address the regulation need (SEA restoration).
               </p>
               <p style={expandedProseStyle}>
-                The power-and-wealth amplification explains why escalation patterns are most extreme where power is most concentrated. This is not because powerful people are morally worse. It is because power removes the structural constraints that would otherwise limit the escalation cycle — and provides unlimited access to regulation sources. The mechanism is the same. The scale is determined by access.
+                The power-and-wealth amplification explains why escalation patterns are most extreme where power is most concentrated. Power removes the structural constraints that would otherwise limit the escalation cycle — and provides unlimited access to regulation sources. The mechanism is the same. The scale is determined by access.
               </p>
             </ExpandableSection>
           </section>
@@ -817,7 +817,7 @@ export default function F7DominationRegulatesPage() {
                 <tbody>
                   <TableRow cells={[
                     "Domination is built through reinforcement",
-                    "Not born, not personality, not character. Built through the same reinforcement logic that shapes all behavior. Interruptible at specific points.",
+                    "Built through the same reinforcement logic that shapes all behavior. Interruptible at specific points.",
                   ]} />
                   <TableRow cells={[
                     "The Crossroads",
@@ -1101,7 +1101,7 @@ export default function F7DominationRegulatesPage() {
               {
                 question: "What does 'domination regulates' mean in the TEG-Blue system?",
                 answer:
-                  "F7 proposes that domination is not a character trait or personality type but a regulation strategy built through reinforcement. When the nervous system never learned Biological Restoration (F1), and all previous substitutes (false coherence, rules, worth hierarchies, bias) are insufficient, the system escalates to direct domination of others. The person is not choosing domination over connection — they do not experience connection as available. Domination provides temporary regulatory relief at maximum cost to others.",
+                  "F7 proposes that domination is a regulation strategy built through reinforcement. When the nervous system never learned Biological Restoration (F1), and all previous substitutes (false coherence, rules, worth hierarchies, bias) are insufficient, the system escalates to direct domination of others. The person does not experience connection as available. Domination provides temporary regulatory relief at maximum cost to others.",
               },
               {
                 question: "What is the Crossroads in the TEG-Blue escalation model?",

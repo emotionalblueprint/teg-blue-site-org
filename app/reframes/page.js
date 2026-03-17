@@ -119,7 +119,7 @@ const FRAMEWORK_GROUPS = [
         commonUnderstanding:
           "Self-deception, denial — lying to yourself about what's really happening.",
         definition:
-          "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Not lying to yourself. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
+          "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
       },
       {
         title: "Projection",
@@ -173,7 +173,7 @@ const FRAMEWORK_GROUPS = [
         commonUnderstanding:
           "Prejudice, unfairness, a moral failing — something correctable through education, awareness, or shame.",
         definition:
-          "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering is not a choice. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness. This is why bias resists correction even in intelligent, well-intentioned people: correction threatens the stability the bias provides. Shame does not unlearn bias. Safety does.",
+          "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering operates below conscious awareness. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness. This is why bias resists correction even in intelligent, well-intentioned people: correction threatens the stability the bias provides. Shame does not unlearn bias. Safety does.",
       },
     ],
   },
@@ -188,7 +188,7 @@ const FRAMEWORK_GROUPS = [
         commonUnderstanding:
           "Power hunger, abuse of authority — the exercise of control over others through coercion, intimidation, or force.",
         definition:
-          "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. This is not a defense of harm. It is the structural account of why chronic domination escalates without limit.",
+          "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. It is the structural account of why chronic domination escalates without limit.",
       },
       {
         title: "Emotional Abuse",

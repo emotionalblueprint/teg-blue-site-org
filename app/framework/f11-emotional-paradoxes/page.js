@@ -35,7 +35,7 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "The Emotional Logic Behind Paradoxes — Why Contradictions Are Logical When the Full Picture Becomes Visible (F11) | TEG-Blue Research",
   description:
-    "Why human contradictions are not failures of consistency but predictable outcomes of a multi-need system. How each framework generates characteristic paradoxes, why holding capacity matters more than resolution, and what becomes visible when false coherence loosens. Framework F11 of 12.",
+    "Why human contradictions are predictable outcomes of a multi-need system. How each framework generates characteristic paradoxes, why holding capacity matters more than resolution, and what becomes visible when false coherence loosens. Framework F11 of 12.",
   keywords: [
     "emotional paradoxes",
     "multi-rationality",
@@ -227,7 +227,7 @@ export default function F11EmotionalParadoxesPage() {
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
-              threadLine="Builds the original — paradox as a sign of integration beginning, not failure"
+              threadLine="Builds the original — paradox as a sign of integration beginning"
               adjacent={{
                 prev: { label: "F10 Generational Bridges", href: "/framework/f10-generational-bridges" },
                 next: { label: "F12 Two Information Systems", href: "/framework/f12-two-information-systems" },
@@ -242,7 +242,7 @@ export default function F11EmotionalParadoxesPage() {
           <PropositionBox
             title="Core Propositions — F11"
             items={[
-              "Paradoxical behavior is multi-rational \u2014 it serves multiple valid needs simultaneously, not a failure of consistency",
+              "Paradoxical behavior is multi-rational \u2014 it serves multiple valid needs simultaneously, serving multiple valid needs simultaneously",
               "Every framework (F1\u2013F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic",
               "False coherence hides paradox through a six-level cascade \u2014 from initial contradiction through identity absorption to generational transmission",
               "The capacity to hold paradox depends on compass position \u2014 Connection enables holding, Protection simplifies, Control manages by elimination, Domination erases",
@@ -274,7 +274,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <KeyStatement>
-              If you see contradictions everywhere after doing this work, you are not confused. You are seeing clearly for the first time.
+              The contradictions that become visible after this work are structurally real. Every apparent paradox is the predictable outcome of a system pursuing multiple valid needs simultaneously.
             </KeyStatement>
 
             <h3 style={conceptHeadingStyle}>The Regulation Thread — F11's Position</h3>
@@ -703,7 +703,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>Love as Control</h3>
 
             <p style={proseStyle}>
-              In chronic Control, the distinction between caring and managing collapses. Every act of love becomes an act of management. The person is not lying when they say they care — they are caring through the only mode available. The paradox is genuine care expressed through a mode that the recipient experiences as control.
+              In chronic Control, the distinction between caring and managing collapses. Every act of love becomes an act of management. They are caring through the only mode available. The paradox is genuine care expressed through a mode that the recipient experiences as control.
             </p>
 
             <h3 style={conceptHeadingStyle}>Helping That Maintains the Problem</h3>
@@ -739,7 +739,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>Freedom-Seeking Authoritarianism</h3>
 
             <p style={proseStyle}>
-              People claiming to want freedom supporting authoritarian leaders. This is not a failure of reasoning or deception. The nervous system equates structure with safety (F4). When uncertainty increases, the system reaches for predictability. The person genuinely wants freedom AND genuinely craves the regulation that authority provides.
+              People claiming to want freedom supporting authoritarian leaders. The nervous system equates structure with safety (F4). When uncertainty increases, the system reaches for predictability. The person genuinely wants freedom AND genuinely craves the regulation that authority provides.
             </p>
 
             <h3 style={conceptHeadingStyle}>Revolution Recreating Hierarchy</h3>

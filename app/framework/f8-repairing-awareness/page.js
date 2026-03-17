@@ -144,7 +144,7 @@ export default function F8RepairingAwarenessPage() {
                   Seven pathways develop different capacities — somatic awareness for Emotional Resonance, relational attunement for Reading Emotions, reflective practice for Self-Emotional Awareness, grief work for all three
                 </li>
                 <li style={propositionItemStyle}>
-                  Repair proceeds through five oscillating phases — the back-and-forth between new capacity and old configuration is the process, not failure
+                  Repair proceeds through five oscillating phases — the back-and-forth between new capacity and old configuration is the process
                 </li>
                 <li style={propositionItemStyle}>
                   Everyone masks their configuration — masking is a regulation strategy, not individual choice — and the cost is both individual (regulatory exhaustion, developmental arrest) and collective (shared blind spots, lost capacity)
@@ -274,7 +274,7 @@ export default function F8RepairingAwarenessPage() {
             </h3>
 
             <p style={proseStyle}>
-              The awareness configuration a person carries predicts where their compass tends to settle. This is not personality — it is the consequence of which capacities are available.
+              The awareness configuration a person carries predicts where their compass tends to settle. It is the consequence of which capacities are available.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>

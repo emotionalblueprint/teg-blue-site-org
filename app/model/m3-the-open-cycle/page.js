@@ -488,12 +488,12 @@ export default function M3TheOpenCyclePage() {
 
                 <GridCell first>Structural</GridCell>
                 <GridCell>The body has reorganised around the unresolved state — emergency response is now the default</GridCell>
-                <GridCell>The compass is stuck — the mode is not a choice, it is the state the body is in</GridCell>
+                <GridCell>The compass is stuck — the mode is the state the body is in</GridCell>
               </div>
             </div>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The gradient moves in one direction under load not because people choose to become more controlling or more dominating, but because a nervous system running on an increasingly sensitised amygdala and increasingly depleted serotonin has a narrowing window of available response. The gradient is not a moral spectrum. It is a biological one.
+              The gradient moves in one direction under load not because people choose to become more controlling or more dominating, but because a nervous system running on an increasingly sensitised amygdala and increasingly depleted serotonin has a narrowing window of available response. The gradient is a biological spectrum.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
@@ -505,7 +505,7 @@ export default function M3TheOpenCyclePage() {
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  Allostatic load mapped to the individual emotional cycle and to gradient position. The progression from a single open cycle to structural reorganisation is traced stage by stage — making visible that the gradient shift from Protection to chronic Control to chronic Domination is not a psychological trajectory but a biological one. Each gradient position corresponds to a specific physiological load level. The mode is not a choice. It is a body in a specific hormonal configuration.
+                  Allostatic load mapped to the individual emotional cycle and to gradient position. The progression from a single open cycle to structural reorganisation is traced stage by stage — making visible that the gradient shift from Protection to chronic Control to chronic Domination is not a psychological trajectory but a biological one. Each gradient position corresponds to a specific physiological load level. The mode is a body in a specific hormonal configuration.
                 </p>
               </ExpandableSection>
             </div>
@@ -562,7 +562,7 @@ export default function M3TheOpenCyclePage() {
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  The precise physiological explanation for why the cognitive system cannot close a biological cycle — not as a limitation to be lamented but as a structural fact with direct implications. The insight-behaviour gap is not a failure of will or motivation. It is a correct description of two systems with different update requirements. Knowing this changes the intervention: not more insight, but the biological conditions the cycle was always waiting for.
+                  The precise physiological explanation for why the cognitive system cannot close a biological cycle — not as a limitation to be lamented but as a structural fact with direct implications. The insight-behaviour gap is a correct description of two systems with different update requirements. Knowing this changes the intervention: not more insight, but the biological conditions the cycle was always waiting for.
                 </p>
               </ExpandableSection>
             </div>
@@ -582,7 +582,7 @@ export default function M3TheOpenCyclePage() {
             </h2>
 
             <p style={proseStyle}>
-              M3 is the ground floor of the TEG-Blue architecture. It is the physiological substrate that the gradient sits on top of — the reason the gradient exists as a biological progression and not merely a behavioural one.
+              M3 is the ground floor of the TEG-Blue architecture. It is the physiological substrate that the gradient sits on top of — the reason the gradient exists as a biological progression rather than a behavioural one.
             </p>
             <p style={proseStyle}>
               The existing stress physiology literature — Sapolsky, McEwen, Porges — describes physiological states without a gradient model connecting them to each other as a developmental and behavioral sequence. The trauma literature — van der Kolk, Levine, Herman — describes how unprocessed activation shapes identity and behavior over time, but without the specific hormonal and organ-level mapping of each stage. The gap between them is exactly the space M3 and the TEG-Blue gradient occupy together.
@@ -647,7 +647,7 @@ export default function M3TheOpenCyclePage() {
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  The gradient as a biological progression — each position corresponding to a specific hormonal configuration and cycle status. The gap between the stress physiology literature (which describes states) and the trauma literature (which describes trajectories) is exactly the space M3 and the gradient occupy together. The mode is not a choice. It is a body in a specific physiological state, shaped by the number and depth of its open cycles.
+                  The gradient as a biological progression — each position corresponding to a specific hormonal configuration and cycle status. The gap between the stress physiology literature (which describes states) and the trauma literature (which describes trajectories) is exactly the space M3 and the gradient occupy together. The mode is a body in a specific physiological state, shaped by the number and depth of its open cycles.
                 </p>
               </ExpandableSection>
             </div>

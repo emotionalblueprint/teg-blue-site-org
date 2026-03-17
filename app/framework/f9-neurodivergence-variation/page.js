@@ -19,9 +19,9 @@ import {
 const SIDEBAR_SECTIONS = [
   { label: "Framework Position", href: "#framework-position", description: "F8 describes a universal cost. F9 asks what happens when that cost is architectural, daily, and inescapable." },
   { label: "The Regulation Thread", href: "#framework-position", description: "What if the environment itself prevents the building? You cannot heal what the environment keeps wounding." },
-  { label: "Nervous System Configuration", href: "#neurodivergence-as-configuration", description: "Neurodivergence is a difference in how the nervous system is configured. Not a disorder, deficit, or gift." },
+  { label: "Nervous System Configuration", href: "#neurodivergence-as-configuration", description: "Neurodivergence is a difference in how the nervous system is configured. A variation in regulatory rhythm." },
   { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
-  { label: "Masking as Structural Survival", href: "#masking-as-structural-survival", description: "When every environment punishes authentic configuration, masking is not a choice — it is survival." },
+  { label: "Masking as Structural Survival", href: "#masking-as-structural-survival", description: "When every environment punishes authentic configuration, masking becomes the only available survival strategy." },
   { label: "Threshold Crossing and Burnout", href: "#threshold-dynamics", description: "The predictable outcome of a system running a design it was not built to run." },
   { label: "Unmasking", href: "#unmasking-is-not-healing", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
   { label: "From Accommodation to Design", href: "#design-principles", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
@@ -63,7 +63,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Neurodivergence as Nervous System Variation — TEG-Blue F9",
     description:
-      "How neurodivergent nervous systems run the same compass with a different configuration. Why system mismatch — not deficit — drives masking and burnout.",
+      "How neurodivergent nervous systems run the same compass with a different configuration. Why system mismatch drives masking and burnout.",
   },
   other: {
     'citation_title': 'Neurodivergence as Nervous System Variation: When the Environment Is the Mismatch',
@@ -221,11 +221,11 @@ export default function F9NeurodivergenceVariationPage() {
               badge="FRAMEWORK F9"
               title="Neurodivergence as Nervous System Variation"
               subtitle="When the Environment Is the Mismatch"
-              description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Reframes variation as design, not deficit. The second framework in the healing arc (F8–F12)."
+              description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Maps variation as configuration — different regulatory rhythms running the same instrument. The second framework in the healing arc (F8–F12)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
-              threadLine="Builds the original — reframes variation as configuration, not deficit"
+              threadLine="Builds the original — maps variation as configuration"
               adjacent={{
                 prev: { label: "F8 Repairing Awareness", href: "/framework/f8-repairing-awareness" },
                 next: { label: "F10 Generational Bridges", href: "/framework/f10-generational-bridges" },
@@ -351,7 +351,7 @@ export default function F9NeurodivergenceVariationPage() {
             </p>
 
             <KeyStatement>
-              A neurodivergent nervous system in a well-matched environment can sit in Connection just as sustainably as any other. The compass is not broken. The environment may be mismatched.
+              A neurodivergent nervous system in a well-matched environment can sit in Connection just as sustainably as any other. When the compass cannot move, the variable may be the environment.
             </KeyStatement>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -362,7 +362,7 @@ export default function F9NeurodivergenceVariationPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F9 integrates the neurodiversity paradigm with the four-mode gradient, showing that neurodivergent nervous systems run the same compass with different inputs. This connects what the neurodiversity movement describes (variation, not deficit) with what Polyvagal Theory explains (how safety and threat are detected) and what F1 provides (a measurement system for regulatory states). The compass is universal; the configuration is variable.
+                F9 integrates the neurodiversity paradigm with the four-mode gradient, showing that neurodivergent nervous systems run the same compass with different inputs. This connects what the neurodiversity movement describes (variation) with what Polyvagal Theory explains (how safety and threat are detected) and what F1 provides (a measurement system for regulatory states). The compass is universal; the configuration is variable.
               </p>
             </ExpandableSection>
           </section>
@@ -459,7 +459,7 @@ export default function F9NeurodivergenceVariationPage() {
             <h3 style={conceptHeadingStyle}>Connection to F3</h3>
 
             <p style={proseStyle}>
-              F3's core mechanism — cognition tells the emotional system "you're not needed" — operates with particular intensity in neurodivergent masking. The false coherence is specific: <strong>"My authentic rhythm is wrong. My nervous system is defective. Safety requires performing neurotypicality."</strong> This is not a belief that can be corrected with better information. It is a regulatory structure — challenging it feels like regulatory collapse (F3 C4, cognitive dissonance as regulatory stress).
+              F3's core mechanism — cognition tells the emotional system "you're not needed" — operates with particular intensity in neurodivergent masking. The false coherence is specific: <strong>"My authentic rhythm is wrong. My nervous system is defective. Safety requires performing neurotypicality."</strong> It is a regulatory structure — challenging it feels like regulatory collapse (F3 C4, cognitive dissonance as regulatory stress).
             </p>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -835,7 +835,7 @@ export default function F9NeurodivergenceVariationPage() {
             </p>
 
             <p style={proseStyle}>
-              When neurodivergent adults repair their own awareness capacities and inhabit environments designed for their configuration, the next generation inherits something different: a model of authentic rhythm, a demonstration that configuration is not deficit, and conditions where their own capacities can develop without chronic suppression.
+              When neurodivergent adults repair their own awareness capacities and inhabit environments designed for their configuration, the next generation inherits something different: a model of authentic rhythm, a demonstration that configuration is variation, and conditions where their own capacities can develop without chronic suppression.
             </p>
 
             <KeyStatement>
@@ -859,7 +859,7 @@ export default function F9NeurodivergenceVariationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["\"The compass is not broken. The environment may be mismatched.\"", "Configuration (C1)"]} />
+                  <TableRow cells={["\"When the compass cannot move, the variable may be the environment.\"", "Configuration (C1)"]} />
                   <TableRow cells={["\"The fish doesn't know it's in water. The person whose configuration matches the environment doesn't know the environment was designed for them.\"", "System Mismatch (C2)"]} />
                   <TableRow cells={["\"You cannot rest your way out of an environment that requires you to run a system your nervous system was not built to run.\"", "Threshold Dynamics (C4)"]} />
                   <TableRow cells={["\"Unmasking into a vacuum fails. The environment must be ready before the mask comes off.\"", "Unmasking vs. Healing (C5)"]} />
@@ -892,7 +892,7 @@ export default function F9NeurodivergenceVariationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["Neurodiversity Paradigm", "Singer, Walker, Silberman", "Configuration, not deficit — C1"]} />
+                  <ThreeColRow cells={["Neurodiversity Paradigm", "Singer, Walker, Silberman", "Configuration — C1"]} />
                   <ThreeColRow cells={["Social Model of Disability", "Oliver, Shakespeare", "Disability created by environment, not individual — C2 System Mismatch"]} />
                   <ThreeColRow cells={["Polyvagal Theory", "Porges", "Safety detection shapes regulatory capacity — C1, C4 compass in mismatch"]} />
                   <ThreeColRow cells={["Intense World Theory", "Markram & Markram", "Heightened perception as processing difference — C1 sensory configuration"]} />

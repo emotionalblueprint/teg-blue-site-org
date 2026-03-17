@@ -100,7 +100,7 @@ function getStateText(re, er, sea) {
 
   return {
     headline: "Empathic integration is struggling to form.",
-    body: "With one or more capacities very low, genuine connection becomes difficult. This is not a personality flaw — it is a signal that something in the system needs attention.",
+    body: "With one or more capacities very low, genuine connection becomes difficult. It is a signal that something in the system needs attention.",
     color: SPECTRUM.slate,
   };
 }

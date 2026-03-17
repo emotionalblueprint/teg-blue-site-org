@@ -418,7 +418,7 @@ export default function F12TwoInformationSystemsPage() {
             </p>
 
             <p style={proseStyle}>
-              This is not failure of understanding. It is not lack of willpower. It is <strong>architecture.</strong>
+              It is <strong>architecture.</strong>
             </p>
 
             <h3 style={conceptHeadingStyle}>Three Mechanisms</h3>
@@ -432,7 +432,7 @@ export default function F12TwoInformationSystemsPage() {
             </p>
 
             <p style={proseStyle}>
-              <strong>The Appropriate Limitation.</strong> This is not a design flaw. Cognition's limitation is appropriate — the emotional-somatic system needs to respond faster than cognition can process. In genuine threat, you need the body to act before the mind deliberates. The speed differential that prevents insight from overriding patterns in daily life is the same speed differential that saves lives in emergencies.
+              <strong>The Appropriate Limitation.</strong> Cognition's limitation is structural — the emotional-somatic system needs to respond faster than cognition can process. In genuine threat, you need the body to act before the mind deliberates. The speed differential that prevents insight from overriding patterns in daily life is the same speed differential that saves lives in emergencies.
             </p>
 
             <h3 style={conceptHeadingStyle}>What Actually Changes Patterns</h3>
@@ -526,7 +526,7 @@ export default function F12TwoInformationSystemsPage() {
             </p>
 
             <KeyStatement>
-              You are not dealing with a person. You are dealing with a person in a state. Change the state, and the person who shows up is different.
+              Every person is a person in a state. Change the state, and the person who shows up is different.
             </KeyStatement>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -679,7 +679,7 @@ export default function F12TwoInformationSystemsPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F12 grounds the accountability-understanding distinction in the two-system architecture: understanding operates in the cognitive system, behavior operates in the emotional-somatic system, and both are real simultaneously. This makes "I understand AND I hold accountable" not a moral position but an architectural description.
+                F12 grounds the accountability-understanding distinction in the two-system architecture: understanding operates in the cognitive system, behavior operates in the emotional-somatic system, and both are real simultaneously. This makes "I understand AND I hold accountable" an architectural description.
               </p>
             </ExpandableSection>
           </section>
@@ -853,7 +853,7 @@ export default function F12TwoInformationSystemsPage() {
                   <TableRow cells={["\"The cognitive system doesn't direct this process \u2014 it narrates a process already underway.\"", "Two Information Systems (C1)"]} />
                   <TableRow cells={["\"The emotional-somatic system is not the problem. It is the system that determines what solutions are available.\"", "Two Information Systems (C1)"]} />
                   <TableRow cells={["\"You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.\"", "Why Insight Fails (C2)"]} />
-                  <TableRow cells={["\"You are not dealing with a person. You are dealing with a person in a state. Change the state, and the person who shows up is different.\"", "State-Dependent Behavior (C3)"]} />
+                  <TableRow cells={["\"Every person is a person in a state. Change the state, and the person who shows up is different.\"", "State-Dependent Behavior (C3)"]} />
                   <TableRow cells={["\"Every framework is the same architecture. The scale changes. The mechanism doesn't.\"", "One Mechanism (C4)"]} />
                   <TableRow cells={["\"I understand the architecture. I see how you got here. And I will not remain where your state causes harm.\"", "Accountability (C5)"]} />
                   <TableRow cells={["\"The system gets the behavior the system creates conditions for. If you don't like the behavior, look at the conditions.\"", "Design Implication (C7)"]} />

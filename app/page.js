@@ -30,7 +30,7 @@ const REGULATION_THREAD = [
   { id: "F6", href: "/framework/f6-bias-regulates", regulator: "Bias regulates", cost: "Accuracy" },
   { id: "F7", href: "/framework/f7-domination-regulates", regulator: "Domination regulates", cost: "Everything" },
   { id: "F8", href: "/framework/f8-repairing-awareness", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
-  { id: "F9", href: "/framework/f9-neurodivergence-variation", regulator: "Variation is design, not deficit", restores: "Accuracy" },
+  { id: "F9", href: "/framework/f9-neurodivergence-variation", regulator: "Variation is configuration", restores: "Accuracy" },
   { id: "F10", href: "/framework/f10-generational-bridges", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
   { id: "F11", href: "/framework/f11-emotional-paradoxes", regulator: "Paradox holds what logic cannot", restores: "Truth" },
   { id: "F12", href: "/framework/f12-two-information-systems", regulator: "Two information systems reunite — body and mind", restores: "The design" },

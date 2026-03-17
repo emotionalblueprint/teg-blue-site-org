@@ -79,7 +79,7 @@ export default function Piece02WhyPeopleChange() {
 
       <p style={READING.paragraph}>This produces a specific and very frustrating pattern: the person at the center of the damage is often genuinely confused by other people{"\u2019"}s distress. From inside their own experience, they were trying to be helpful, trying to solve a problem, trying to keep things from falling apart. The mismatch between their internal account and the external impact is not fabricated. It is the natural product of operating from a mode that has lost access to accurate signal reception.</p>
 
-      <p style={READING.paragraph}>The person who is widely loved at work and reports having {"\u201C"}no idea{"\u201D"} why their family is in crisis is often telling the truth about their inner experience. They are not lying. They are describing what the system looked like from the inside {"\u2014"} which, in that mode, is genuinely not what it looked like from the outside.</p>
+      <p style={READING.paragraph}>The person who is widely loved at work and reports having {"\u201C"}no idea{"\u201D"} why their family is in crisis is often telling the truth about their inner experience. They are describing what the system looked like from the inside {"\u2014"} which, in that mode, is genuinely not what it looked like from the outside.</p>
 
       <p style={READING.paragraph}>This is one of the reasons these situations are so destabilizing for the people living with them. The person who is causing harm keeps producing a coherent, well-functioning version of themselves for the outside world. That version is evidence, constantly visible, that the capacity exists. Which makes the private version feel like a choice, even when it isn{"\u2019"}t.</p>
 

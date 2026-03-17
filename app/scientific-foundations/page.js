@@ -268,7 +268,7 @@ const THEORIES = [
     frameworks: ["F3", "F7"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Psychoanalysis identified defense mechanisms as unconscious strategies for managing anxiety. Common defenses include repression, projection, denial, rationalization, and splitting. Defenses protect the ego from affect that would be overwhelming and operate automatically, outside conscious awareness." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates defenses into regulatory terms. Each defense is a cognitive strategy for managing nervous system activation that exceeds the window of tolerance. These are not failures of character but intelligent adaptations. F7 traces the complete pathway from defense through strategy through domination." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates defenses into regulatory terms. Each defense is a cognitive strategy for managing nervous system activation that exceeds the window of tolerance. Each is an intelligent adaptation. F7 traces the complete pathway from defense through strategy through domination." },
       { id: "key-sources", title: "Key Sources", content: "Freud, S. (1923). The Ego and the Id. Hogarth Press. \u00b7 Freud, A. (1936). The Ego and the Mechanisms of Defense. International Universities Press." },
     ],
   },
@@ -391,7 +391,7 @@ const THEORIES = [
   {
     slug: "neurodiversity-paradigm", title: "Neurodiversity Paradigm", domain: "Neurodiversity Research",
     originAuthor: "Judy Singer, Nick Walker, Steve Silberman",
-    summary: "Neurodivergence (autism, ADHD, dyslexia, etc.) represents natural human variation in neurological processing, not pathology. Disability arises from environmental mismatch, not individual deficit.",
+    summary: "Neurodivergence (autism, ADHD, dyslexia, etc.) represents natural human variation in neurological processing. Disability arises from environmental mismatch.",
     tags: ["neurodiversity", "autism", "ADHD", "environmental mismatch", "natural variation"],
     frameworks: ["F9"],
   },

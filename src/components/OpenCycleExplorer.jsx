@@ -38,7 +38,7 @@ const STAGES = [
     sub: "HPA axis & SNS fire",
     color: BLUE.deep,
     description:
-      "The hypothalamic-pituitary-adrenal axis fires a hormonal cascade. The entire body shifts to survival configuration. This is not a choice — it is biology in motion.",
+      "The hypothalamic-pituitary-adrenal axis fires a hormonal cascade. The entire body shifts to survival configuration. The entire body shifts to survival configuration — biology in motion.",
     biology: [
       "Cortisol released (1–3 min)",
       "Epinephrine & norepinephrine surge",

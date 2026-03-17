@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What are TEG-Blue's ethical principles?",
-    answer: "TEG-Blue's ethics are grounded in the empirical finding that emotional development is contextual. Core commitments include non-pathologisation (adaptive responses are not deficits), contextual embeddedness, transparency, open science, and responsible technology use.",
+    answer: "TEG-Blue's ethics are grounded in the empirical finding that emotional development is contextual. Core commitments include non-pathologisation (adaptive responses mapped as functional adaptations), contextual embeddedness, transparency, open science, and responsible technology use.",
   },
   {
     question: "What license does TEG-Blue use?",
@@ -14,14 +14,14 @@ const FAQ_ITEMS = [
   },
   {
     question: "How does TEG-Blue handle trauma-informed research?",
-    answer: "TEG-Blue treats emotional patterns shaped by adversity as functional adaptations, not deficits. The framework preserves the distinction between an adaptation and the conditions that produced it, even when patterns become maladaptive in changed circumstances.",
+    answer: "TEG-Blue treats emotional patterns shaped by adversity as functional adaptations. The framework preserves the distinction between an adaptation and the conditions that produced it, even when patterns become maladaptive in changed circumstances.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "Ethical Principles", href: "#position", description: "What ethical principles guide TEG-Blue? Emotional development is contextual — an empirical foundation." },
   { label: "Context Shapes Everything", href: "#context-shapes-everything", description: "Systemic awareness as scientific prerequisite, not political position." },
-  { label: "Non-Pathologisation", href: "#non-pathologisation", description: "How does TEG-Blue avoid pathologising emotional patterns? Adaptive responses are not deficits." },
+  { label: "Non-Pathologisation", href: "#non-pathologisation", description: "How does TEG-Blue avoid pathologising emotional patterns? Adaptive responses mapped as functional adaptations." },
   { label: "Rigour & Compassion", href: "#rigour-and-compassion", description: "Grounded in peer-reviewed research. Built for human understanding." },
   { label: "Accessibility & Equity", href: "#accessibility-and-equity", description: "Designed for everyone. Open science. No knowledge behind paywalls." },
   { label: "Transparency", href: "#transparency", description: "Methodology is visible. Claims are testable. Limitations are stated." },
@@ -133,10 +133,10 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>How does TEG-Blue avoid pathologising emotional patterns?</h2>
           <PrincipleQuote>
-            Emotional patterns shaped by adversity, systemic stress, or cultural difference are understood as functional adaptations — not deficits.
+            Emotional patterns shaped by adversity, systemic stress, or cultural difference are understood as functional adaptations.
           </PrincipleQuote>
           <p style={body}>
-            Research on stress adaptation — from Masten&apos;s work on resilience to Perry&apos;s neurosequential model — establishes that emotional responses developed under adversity represent functional adaptations to the conditions present during development. The nervous system calibrates its threat detection, regulatory strategies, and relational patterns to match the environment it encounters. TEG-Blue treats these adaptations accordingly: as evidence of what the nervous system needed to do, not as deficits requiring correction. Even when such patterns become maladaptive in changed circumstances, the framework preserves the distinction between the adaptation and the conditions that produced it.
+            Research on stress adaptation — from Masten&apos;s work on resilience to Perry&apos;s neurosequential model — establishes that emotional responses developed under adversity represent functional adaptations to the conditions present during development. The nervous system calibrates its threat detection, regulatory strategies, and relational patterns to match the environment it encounters. TEG-Blue treats these adaptations accordingly: as evidence of what the nervous system needed to do, as functional responses to the conditions that produced them. Even when such patterns become maladaptive in changed circumstances, the framework preserves the distinction between the adaptation and the conditions that produced it.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             This is an architectural principle, not an aspiration. It shapes how the framework categorises emotional states, how tools are designed, and how data is structured.

@@ -367,7 +367,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   Capacity configuration (RE state x ER state x SEA state x regulation) predicts chronic mode, identity formation, tolerance thresholds, and relational patterns.
                 </li>
                 <li style={propositionItemStyle}>
-                  The three capacities were not damaged — they were not developed. Repair means developing what the past did not provide conditions for.
+                  The three capacities were never developed. Repair means developing what the past did not provide conditions for.
                 </li>
               </ul>
             </ModelPurpose>
@@ -864,7 +864,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </p>
 
             <p style={proseStyle}>
-              When capacities are incomplete: <strong style={{ color: TEXT.primary }}>false coherence</strong> — a stable-but-untrue narrative. Cognition fills the gap where awareness data should be. This is not deception. This is not denial. This is regulation — cognition doing what the body was never taught to do. The person feels regulated. They <em>are</em> regulated. The cost is truth, not function.
+              When capacities are incomplete: <strong style={{ color: TEXT.primary }}>false coherence</strong> — a stable-but-untrue narrative. Cognition fills the gap where awareness data should be. This is regulation — cognition doing what the body was never taught to do. The person feels regulated. They <em>are</em> regulated. The cost is truth, not function.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
@@ -912,7 +912,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  True vs false coherence grounded in the capacity model. False coherence as cognition regulating what the body never learned to process — not pathology but function at the cost of truth. The distinction provides a concrete diagnostic: does the narrative align with felt experience (true coherence) or replace it (false coherence)?
+                  True vs false coherence grounded in the capacity model. False coherence as cognition regulating what the body never learned to process — function at the cost of truth. The distinction provides a concrete diagnostic: does the narrative align with felt experience (true coherence) or replace it (false coherence)?
                 </p>
               </ExpandableSection>
             </div>
@@ -1013,11 +1013,11 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </h2>
 
             <p style={proseStyle}>
-              The three awareness capacities were not damaged — they were not developed. This is the fundamental reframe. There is no original wound to heal. There is no hidden self to find. There are capacities that the developmental environment did not provide conditions for — and those capacities can still develop, under the right conditions, at any age.
+              The three awareness capacities were never developed. There is no original wound to heal. There is no hidden self to find. There are capacities that the developmental environment did not provide conditions for — and those capacities can still develop, under the right conditions, at any age.
             </p>
 
             <p style={proseStyle}>
-              Repair does not mean recovering what was lost. It means <strong style={{ color: TEXT.primary }}>building what was never built.</strong> The substitutes — the hypervigilant RE, the flooded ER, the narrative-filtered SEA, the false coherence — are not pathology. They are the best the system could produce with what it had. Repair is not removing them. Repair is developing the original capacities so that the substitutes are no longer the only option.
+              Repair does not mean recovering what was lost. It means <strong style={{ color: TEXT.primary }}>building what was never built.</strong> The substitutes — the hypervigilant RE, the flooded ER, the narrative-filtered SEA, the false coherence — They are the best the system could produce with what it had. Repair is not removing them. Repair is developing the original capacities so that the substitutes are no longer the only option.
             </p>
 
             <h3 style={h3Style}>Five Conditions for Repair</h3>
@@ -1244,7 +1244,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               {
                 question: "How does repair work in the three awareness capacities model?",
                 answer:
-                  "The three awareness capacities were not damaged — they were not developed. Repair means building what was never built, not recovering what was lost. Five conditions are required: safety (the nervous system must evaluate 'safe enough'), relational support (new co-regulatory experiences), identity flexibility (false coherence must loosen), time (capacities develop through repeated experience), and structural conditions (the environment must not re-wound).",
+                  "The three awareness capacities were never developed. Repair means building what was never built, not recovering what was lost. Five conditions are required: safety (the nervous system must evaluate 'safe enough'), relational support (new co-regulatory experiences), identity flexibility (false coherence must loosen), time (capacities develop through repeated experience), and structural conditions (the environment must not re-wound).",
               },
             ])
           ),

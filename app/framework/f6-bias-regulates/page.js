@@ -114,7 +114,7 @@ export default function F6BiasRegulatesPage() {
               {
                 title: "Bias",
                 commonUnderstanding: "Prejudice, unfairness, a moral failing — something correctable through education, awareness, or shame.",
-                definition: "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering is not a choice. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness.",
+                definition: "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering operates below conscious awareness. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness.",
               },
             ]}
           />

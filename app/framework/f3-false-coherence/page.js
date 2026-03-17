@@ -18,7 +18,7 @@ import {
 
 const SIDEBAR_SECTIONS = [
   { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
-  { label: "Core Propositions", href: "#core-propositions", description: "False coherence is regulation, not deception. The self-reinforcing loop maintains the stuck compass in adulthood." },
+  { label: "Core Propositions", href: "#core-propositions", description: "False coherence is regulation — cognition maintaining stability when somatic regulation is offline. The self-reinforcing loop maintains the stuck compass in adulthood." },
   { label: "Overview", href: "#overview", description: "F2 sets the calibration. F3 explains why it holds. Cognition replaces emotional signals with invented narratives." },
   { label: "The Core Mechanism", href: "#core-mechanism", description: "Emotional signals arrive, cognition intercepts and replaces them, the replacement produces physiological relief." },
   { label: "False Coherence", href: "#self-reinforcing-loop", description: "A coherent internal story that feels true, functions as identity, and resists correction." },
@@ -121,12 +121,12 @@ export default function F3FalseCoherencePage() {
               {
                 title: "False Coherence",
                 commonUnderstanding: "Self-deception, denial — lying to yourself about what's really happening.",
-                definition: "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Not lying to yourself. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
+                definition: "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
               },
               {
                 title: "Projection",
                 commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
-                definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Not putting feelings onto others. Reading the world through settings designed to protect your only return path. Without SEA (Self-Emotional Awareness), the scanning feels like accurate perception.",
+                definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Reading the world through settings designed to protect your only return path. Without SEA (Self-Emotional Awareness), the scanning feels like accurate perception.",
               },
               {
                 title: "Validation-Seeking",
@@ -154,7 +154,7 @@ export default function F3FalseCoherencePage() {
                   Cognition recruited into threat service during childhood does not just miss emotional signals — it actively replaces them with invented narratives
                 </li>
                 <li style={propositionItemStyle}>
-                  False coherence is regulatory success at the cost of emotional truth — not deception, not a reasoning error, but cognition regulating what the body was never taught to regulate
+                  False coherence is regulatory success at the cost of emotional truth — cognition regulating what the body was never taught to regulate
                 </li>
                 <li style={propositionItemStyle}>
                   The replacement process self-reinforces: each successful replacement teaches the system "this works" and deepens the disconnect from the biological return
@@ -163,10 +163,10 @@ export default function F3FalseCoherencePage() {
                   Cognitive dissonance is a regulatory stress response — safety must precede truth, not the other way around
                 </li>
                 <li style={propositionItemStyle}>
-                  When Self-Emotional Awareness is structurally absent, internal discomfort becomes perceived external threat — emotional distortion is sincere misattribution, not conscious manipulation
+                  When Self-Emotional Awareness is structurally absent, internal discomfort becomes perceived external threat — emotional distortion is sincere misattribution — the nervous system reporting a threat source it cannot accurately locate
                 </li>
                 <li style={propositionItemStyle}>
-                  External regulation — using others to manage what cannot be processed internally — is a structural necessity, not a character flaw, expressed differently across each chronic mode
+                  External regulation — using others to manage what cannot be processed internally — is a structural necessity, expressed differently across each chronic mode
                 </li>
                 <li style={propositionItemStyle}>
                   Understanding the mechanism does not excuse harm — it explains why the system escalates, so accountability can be paired with accurate intervention
@@ -294,7 +294,7 @@ export default function F3FalseCoherencePage() {
               </h3>
 
               <KeyStatement>
-                False coherence is not deception. The person is not lying. They genuinely believe their constructed narrative because believing it reduces threat. It is regulatory success at the cost of emotional truth.
+                The person genuinely believes their constructed narrative because believing it reduces threat. It is regulatory success at the cost of emotional truth.
               </KeyStatement>
 
               <p style={proseStyle}>
@@ -717,7 +717,7 @@ export default function F3FalseCoherencePage() {
             </KeyStatement>
 
             <p style={proseStyle}>
-              This is <strong style={{ color: TEXT.primary }}>emotional distortion</strong>. Internal discomfort, unable to be processed as one's own, gets reclassified as an external attack. The person genuinely believes they are defending themselves. They are not lying. They are not strategizing. The nervous system is reporting a threat that is not there — because the processing channel that would identify the signal as internal (SEA) is structurally unavailable.
+              This is <strong style={{ color: TEXT.primary }}>emotional distortion</strong>. Internal discomfort, unable to be processed as one's own, gets reclassified as an external attack. The person genuinely believes they are defending themselves. The nervous system is reporting a threat that is not there — because the processing channel that would identify the signal as internal (SEA) is structurally unavailable.
             </p>
             <p style={proseStyle}>
               The connection to false coherence is direct. False coherence is the stable narrative that cognition builds. Emotional distortion is what happens in the <em>moments</em> when that narrative is challenged or when internal discomfort arises. The distortion produces the misread, and false coherence stabilizes it into the ongoing narrative.
@@ -777,7 +777,7 @@ export default function F3FalseCoherencePage() {
             </p>
 
             <KeyStatement>
-              External regulation is not a conscious strategy. It is a structural necessity. When internal regulation channels are offline, external regulation is not a choice — it is the only pathway the system has left.
+              External regulation is a structural necessity. When internal regulation channels are offline, external regulation is the only pathway the system has left.
             </KeyStatement>
 
             <p style={proseStyle}>
@@ -911,7 +911,7 @@ export default function F3FalseCoherencePage() {
                   ]} />
                   <TableRow cells={[
                     "False coherence",
-                    "Regulatory success at the cost of emotional truth. The narrative is complete, coherent, felt as real — and wrong. Not deception. Regulation.",
+                    "Regulatory success at the cost of emotional truth. The narrative is complete, coherent, felt as real — and wrong. Regulation.",
                   ]} />
                   <TableRow cells={[
                     "The self-reinforcing loop",
@@ -919,7 +919,7 @@ export default function F3FalseCoherencePage() {
                   ]} />
                   <TableRow cells={[
                     "Cognitive dissonance as regulatory stress",
-                    "Not a thinking error. A nervous system event. Challenging false coherence threatens the only regulatory system the person has. Safety must precede truth.",
+                    "A nervous system event. Challenging false coherence threatens the only regulatory system the person has. Safety must precede truth.",
                   ]} />
                   <TableRow cells={[
                     "Regulatory defense",
@@ -956,7 +956,7 @@ export default function F3FalseCoherencePage() {
             <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
               {[
                 "\"Cognition tells the emotional system: you're not needed here\"",
-                "\"False coherence is not deception — it is regulatory success at the cost of emotional truth\"",
+                "\"False coherence is regulatory success at the cost of emotional truth\"",
                 "\"Beliefs feel true because they restore nervous system stability, not because they are accurate\"",
                 "\"A belief can be both regulating and accurate — but under threat, the system prioritizes what is stabilizing over what is informative\"",
                 "\"You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.\"",
@@ -966,7 +966,7 @@ export default function F3FalseCoherencePage() {
                 "\"Often this is not conscious manipulation — it is sincere misattribution\"",
                 "\"Retaliation feels like self-defense — because the nervous system is reporting a threat that is not there\"",
                 "\"Your boundaries become their evidence\"",
-                "\"External regulation is not a choice — it is the only pathway the system has left when the internal channel is offline\"",
+                "\"External regulation is the only pathway the system has left when the internal channel is offline\"",
                 "\"The mode that most reliably mimics Connection\"",
                 "\"Tolerance builds — the same level of domination does not produce the same level of relief\"",
                 "\"There is no amount of domination that will make them feel safe — because the safety they need is internal\"",
@@ -1214,7 +1214,7 @@ export default function F3FalseCoherencePage() {
               {
                 question: "What is false coherence in the TEG-Blue system?",
                 answer:
-                  "False coherence occurs when cognition constructs a stable internal narrative that preserves identity consistency and reduces nervous system stress — even when that narrative no longer reflects lived reality. It is experienced as certainty, moral clarity, and internal relief. The relief is physiological, not epistemic. False coherence is not deception — it is regulatory success at the cost of emotional truth.",
+                  "False coherence occurs when cognition constructs a stable internal narrative that preserves identity consistency and reduces nervous system stress — even when that narrative no longer reflects lived reality. It is experienced as certainty, moral clarity, and internal relief. The relief is physiological, not epistemic. False coherence is regulatory success at the cost of emotional truth.",
               },
               {
                 question: "What is the self-reinforcing loop in false coherence?",

@@ -243,7 +243,7 @@ export default function AISafetyPage() {
             <strong style={{ color: TEXT.primary }}>
               the nervous system state a person occupies fundamentally shapes their capacity for moral reasoning.
             </strong>{" "}
-            This isn't a character flaw — it's biology.
+            The nervous system state determines what moral reasoning is available.
           </p>
 
           <div

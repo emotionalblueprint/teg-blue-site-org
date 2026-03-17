@@ -28,7 +28,7 @@ export default function Piece01WhyEvidenceFails() {
 
       <p style={READING.paragraph}>Evidence, in that context, does not land as information. It lands as threat.</p>
 
-      <p style={READING.paragraph}>And when a system perceives threat, it does not open up and examine the incoming data with curiosity. It defends. This is not a character flaw. It is basic threat-response architecture, operating exactly as designed.</p>
+      <p style={READING.paragraph}>And when a system perceives threat, it does not open up and examine the incoming data with curiosity. It defends. This is threat-response architecture, operating exactly as designed.</p>
 
       <p style={READING.paragraph}>The astrophysicist presenting photographs of the curved Earth from space is, from inside the nervous system of a flat-Earth believer, not a colleague offering data. She is a destabilizing force attacking something that is keeping that person internally afloat. The sophistication of her evidence is irrelevant to that process. In fact, the more unambiguous her evidence, the more threatening it registers {"\u2014"} and the more forcefully the defensive system responds.</p>
 
@@ -114,7 +114,7 @@ export default function Piece01WhyEvidenceFails() {
 
       <p style={READING.paragraph}>The pattern that emerges: people tend to adopt conspiracy beliefs in the domains where their unmet needs are highest. Someone who has experienced profound social exclusion finds belonging. Someone whose competence has been chronically dismissed finds expertise. Someone whose world has felt uncontrollable finds an explanation that restores the sense of a legible, if sinister, order.</p>
 
-      <p style={READING.paragraph}>This is not weakness. It is an adaptive response to real conditions. Understanding that does not require agreeing with the belief. But it changes what kind of response might actually be useful.</p>
+      <p style={READING.paragraph}>It is an adaptive response to real conditions. Understanding that does not require agreeing with the belief. But it changes what kind of response might actually be useful.</p>
 
       <hr style={READING.hr} />
 
@@ -152,7 +152,7 @@ export default function Piece01WhyEvidenceFails() {
 
       <p style={READING.paragraph}>But if the goal is something else {"\u2014"} to model a different way of engaging with uncertainty, to stay in contact with someone you care about, to chip at something slowly and without expectation {"\u2014"} then the answer changes. Those things are possible. They happen. They require a different measurement of success.</p>
 
-      <p style={READING.paragraph}>There is also a third option, which is knowing when not to try. Not every conversation is a therapeutic opportunity. Not every interaction requires you to be the bridge. Protecting your own cognitive and emotional resources is not a failure of commitment to truth. It is a precondition for doing any of this sustainably.</p>
+      <p style={READING.paragraph}>There is also a third option, which is knowing when not to try. Not every conversation is a therapeutic opportunity. Not every interaction requires you to be the bridge. Protecting your own cognitive and emotional resources is a precondition for doing any of this sustainably.</p>
 
       <p style={READING.paragraph}>The astrophysicist watching the moon-landing denier is not failing at science when her evidence doesn{"\u2019"}t land. She is using the right tool for the wrong system.</p>
 

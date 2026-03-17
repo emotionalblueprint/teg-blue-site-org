@@ -223,7 +223,7 @@ export default function F2AwarenessCalibrationPage() {
               The calibration system is the three awareness capacities: Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA). These capacities determine what data the compass receives. They are present at birth in proto-form. They develop through relational conditions. And they develop through a specific mechanism: <strong style={{ color: TEXT.primary }}>awareness teaches awareness.</strong> The awareness capacities the caregivers carry are the awareness capacities that get passed. The adults' capacity configuration is the child's environment.
             </p>
             <p style={proseStyle}>
-              This is not a moral indictment of caregivers. It is a developmental mechanism: <strong style={{ color: TEXT.primary }}>what the adult nervous system can reliably embody becomes the child's training data.</strong>
+              It is a developmental mechanism: <strong style={{ color: TEXT.primary }}>what the adult nervous system can reliably embody becomes the child's training data.</strong>
             </p>
 
             <h3 style={conceptHeadingStyle}>The Two-Part Architecture</h3>
@@ -642,7 +642,7 @@ export default function F2AwarenessCalibrationPage() {
                   <strong style={{ color: TEXT.primary }}>Threat Lock</strong> — the threat response does not resolve. It persists. Repeated activation without resolution shifts the system's baseline toward chronic defensive activation.
                 </li>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>Chronic Mode</strong> — because the lock persists, one mode becomes the default operating position regardless of context. The person is not choosing that mode — the system no longer registers that other modes are safe to return to.
+                  <strong style={{ color: TEXT.primary }}>Chronic Mode</strong> — because the lock persists, one mode becomes the default operating position regardless of context. The system no longer registers that other modes are safe to return to.
                 </li>
                 <li style={listItemStyle}>
                   <strong style={{ color: TEXT.primary }}>The Stuck Compass</strong> — the overall system state when the compass that should move fluidly is stuck. The person has lost access to the full gradient. Not because the compass is broken. Because Biological Restoration was never built.
@@ -721,7 +721,7 @@ export default function F2AwarenessCalibrationPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Replacing the "hidden self / mask" framing with a mechanism: awareness configuration. The adaptive identity is not fake. It is not a lie. It is the most intelligent thing cognition could build given what was available. Healing is not removing a mask. It is developing the capacities that never had conditions to form, and learning Biological Restoration.
+                  Replacing the "hidden self / mask" framing with a mechanism: awareness configuration. The adaptive identity is the most intelligent thing cognition could build given what was available. Healing is not removing a mask. It is developing the capacities that never had conditions to form, and learning Biological Restoration.
                 </p>
               </ExpandableSection>
             </div>

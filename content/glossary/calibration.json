@@ -21,7 +21,7 @@
     {
       "id": "how-teg-blue-maps-it",
       "title": "How TEG-Blue Maps It",
-      "content": "TEG-Blue uses calibration to explain why some systems default to Connection while others default to Protection, Control, or Domination. When early environments were reliably safe, calibration is accurate: safety cues activate Connection, genuine threat activates Protection, and the system returns to baseline. When early environments were chronically unsafe, the system calibrates to threat: safety cues may be distrusted, ambiguous cues read as threatening, and Protection becomes default. Key reframe: miscalibration is not malfunction — it is accurate adaptation to an inaccurate environment."
+      "content": "TEG-Blue uses calibration to explain why some systems default to Connection while others default to Protection, Control, or Domination. When early environments were reliably safe, calibration is accurate: safety cues activate Connection, genuine threat activates Protection, and the system returns to baseline. When early environments were chronically unsafe, the system calibrates to threat: safety cues may be distrusted, ambiguous cues read as threatening, and Protection becomes default. Key reframe: miscalibration is accurate adaptation to the environment that produced it."
     },
     {
       "id": "research-basis",

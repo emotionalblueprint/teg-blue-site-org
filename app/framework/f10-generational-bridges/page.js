@@ -340,14 +340,14 @@ export default function F10GenerationalBridgesPage() {
               A parent whose compass moves freely — who can enter Protection when needed, return to Connection, access Control under pressure without getting stuck — provides a child whose nervous system learns: the full gradient is available, and return is possible.
             </p>
 
-            <h3 style={conceptHeadingStyle}>This Is Not Blame</h3>
+            <h3 style={conceptHeadingStyle}>The Transmission Mechanism</h3>
 
             <p style={proseStyle}>
               The parent whose SEA is offline did not choose that configuration. Their own development did not provide conditions for SEA to develop (F2). Their own cognition built the best replacement it could (F3). Their own environment may have required chronic masking (F8–F9). They are transmitting what they have — which is what their parents transmitted to them.
             </p>
 
             <KeyStatement>
-              Understanding the mechanism is not assigning blame. It is identifying where change is possible.
+              Understanding the mechanism identifies where change is possible.
             </KeyStatement>
 
             <ExpandableSection title="Research Traditions" type="framework">

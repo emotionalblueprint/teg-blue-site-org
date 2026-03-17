@@ -367,7 +367,7 @@ export default function F1EmotionalGradientPage() {
                 This evaluation is <strong style={{ color: TEXT.primary }}>automatic, continuous, and below conscious awareness</strong>. It determines whether learning is possible or defense is required, whether trust is available or verification is needed, whether vulnerability is safe or control is necessary.
               </p>
               <p style={proseStyle}>
-                The evaluation assesses <strong style={{ color: SPECTRUM.cobalt }}><em>experienced safety</em></strong>, not objective danger — which is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has <strong style={{ color: TEXT.primary }}>learned to recognize</strong> as safe or threatening, which may not match current reality. This is not a flaw. It is a <strong style={{ color: TEXT.primary }}>design feature optimized for survival</strong>.
+                The evaluation assesses <strong style={{ color: SPECTRUM.cobalt }}><em>experienced safety</em></strong>, not objective danger — which is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has <strong style={{ color: TEXT.primary }}>learned to recognize</strong> as safe or threatening, which may not match current reality. It is a <strong style={{ color: TEXT.primary }}>design feature optimized for survival</strong>.
               </p>
 
               <div style={expandableRowStyle}>
@@ -505,7 +505,7 @@ export default function F1EmotionalGradientPage() {
               </ol>
 
               <p style={proseStyle}>
-                By the time conscious awareness registers "an emotion," the system has <strong style={{ color: TEXT.primary }}>already acted</strong>. The compass needle has <strong style={{ color: TEXT.primary }}>already moved</strong>. A neutral text arrives. Your system pattern-matches past abandonment. Neuroception flags threat. Emotion signals fear. Protection mobilizes. Your mind then explains the feeling as "they don't care." If restoration completes, you regain nuance and can check reality. If it doesn't, the interpretation <strong style={{ color: TEXT.primary }}>hardens into identity and relationship strategy</strong>. The system is fast by design — evolution solved the survival question by building an embodied evaluation system that orients the organism before conscious awareness begins. The system operates in milliseconds, uses pattern-matching, and prioritizes speed over precision. This is a design feature, not a flaw.
+                By the time conscious awareness registers "an emotion," the system has <strong style={{ color: TEXT.primary }}>already acted</strong>. The compass needle has <strong style={{ color: TEXT.primary }}>already moved</strong>. A neutral text arrives. Your system pattern-matches past abandonment. Neuroception flags threat. Emotion signals fear. Protection mobilizes. Your mind then explains the feeling as "they don't care." If restoration completes, you regain nuance and can check reality. If it doesn't, the interpretation <strong style={{ color: TEXT.primary }}>hardens into identity and relationship strategy</strong>. The system is fast by design — evolution solved the survival question by building an embodied evaluation system that orients the organism before conscious awareness begins. The system operates in milliseconds, uses pattern-matching, and prioritizes speed over precision. This is a design feature — speed over precision is the survival trade-off.
               </p>
               <p style={proseStyle}>
                 The cost of speed: the system can orient to learned patterns rather than current reality. When the system responds to a pattern from the past as though it is happening now, the person is not "overreacting." The compass is working exactly as designed — it just learned its patterns in conditions that no longer apply. <strong style={{ color: TEXT.primary }}>The problem is never the mechanism. The problem is what the mechanism learned.</strong>
@@ -577,7 +577,7 @@ export default function F1EmotionalGradientPage() {
                   The system on emergency fuel — designed to last from a few minutes to a few hours, maximum days. When threat is perceived, the entire system mobilizes: attention narrows toward threat, emotions amplify, and the capacity to feel with others is filtered to survival-relevant data.
                 </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                  <strong style={{ color: TEXT.primary }}>Fight, flight first</strong> — the system's primary threat responses, active and energized. <strong style={{ color: TEXT.primary }}>Freeze, fawn when energy depletes</strong> — the body's fallback when active responses are unavailable. Not weakness — the system conserving resources when it cannot fight or flee.
+                  <strong style={{ color: TEXT.primary }}>Fight, flight first</strong> — the system's primary threat responses, active and energized. <strong style={{ color: TEXT.primary }}>Freeze, fawn when energy depletes</strong> — the body's fallback when active responses are unavailable. The body conserving resources when it cannot fight or flee.
                 </p>
               </div>
 
@@ -796,7 +796,7 @@ export default function F1EmotionalGradientPage() {
                 Breath and grounding can reduce intensity — they can help a person stay present — but they rarely provide the specific evidence these emotions are asking for. <strong style={{ color: TEXT.primary }}>Shame softens when someone stays connected without contempt.</strong> <strong style={{ color: TEXT.primary }}>Guilt settles when there is repair and the bond survives.</strong> <strong style={{ color: TEXT.primary }}>Fear of rejection calms when the nervous system receives evidence of continued belonging.</strong>
               </p>
               <p style={proseStyle}>
-                Over time, humans can <strong style={{ color: TEXT.primary }}>internalize co-regulation</strong> — learning to offer themselves a form of steady presence — but the original pathway is relational, and many people can't access an internal version until they've experienced it externally. This is not weakness. It is <strong style={{ color: TEXT.primary }}>social biology</strong>: the nervous system developed in relationship, and some signals require relationship to complete.
+                Over time, humans can <strong style={{ color: TEXT.primary }}>internalize co-regulation</strong> — learning to offer themselves a form of steady presence — but the original pathway is relational, and many people can't access an internal version until they've experienced it externally. The nervous system developed in relationship, and some signals require relationship to complete.
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -919,7 +919,7 @@ export default function F1EmotionalGradientPage() {
                 For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then <strong style={{ color: SPECTRUM.cobalt }}>cognition evolved</strong>. And the compass gained range.
               </p>
               <p style={proseStyle}>
-                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. This is not pathology. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
+                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
               </p>
               <p style={proseStyle}>
                 <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — they happen <em>to</em> you. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
@@ -1068,7 +1068,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <KeyStatement>
-                What a person can perceive, think, feel, and do depends on their current regulatory state. You are not dealing with a person. You are dealing with a person in a state.
+                What a person can perceive, think, feel, and do depends on their current regulatory state. Every person is a person in a state.
               </KeyStatement>
 
               <p style={proseStyle}>
@@ -1296,7 +1296,7 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["The safety orientation question", "One question generates all emotional diversity: \"Is there enough safety?\""]} />
                   <TableRow cells={["Cross-theoretical convergence", "Six traditions describe the same two-mode orientation."]} />
                   <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
-                  <TableRow cells={["How the compass moves", "Five-step sequence from signal detection to mode, completing before awareness. Fast by design, not broken by error. The problem is never the mechanism — it is what the mechanism learned."]} />
+                  <TableRow cells={["How the compass moves", "Five-step sequence from signal detection to mode, completing before awareness. Fast by design. The problem is never the mechanism — it is what the mechanism learned."]} />
                   <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
                   <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The central mechanism of the entire twelve-framework system."]} />
                   <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
@@ -1332,7 +1332,7 @@ export default function F1EmotionalGradientPage() {
                   "For relational emotions, co-regulation is the only pathway that completes the cycle",
                   "The completion pathway for relational emotions can only be built through the experience the person most fears: being seen in the emotion that says they don't belong — and not being excluded.",
                   "State determines capacity",
-                  "You are not dealing with a person. You are dealing with a person in a state. Change the state, and the person who shows up is different.",
+                  "Every person is a person in a state. Change the state, and the person who shows up is different.",
                   "Restore safety first, then expect capacity",
                   "Assess mode position, not the emotion",
                   "The problem is never the mechanism — it is what the mechanism learned",
