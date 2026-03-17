@@ -310,6 +310,10 @@ Content in markdown...
 
 How does this operate? Explain the mechanism. Write for researchers AND emotionally overwhelmed people — warm, steady, not academic posturing.
 
+### Awareness Capacity Naming (MANDATORY)
+
+**Always write full name + initial:** "SEA (Self-Emotional Awareness)", "RE (Reading Emotions)", "ER (Emotional Resonance)" — every mention, every page. Never bare initials. These terms are not well-known; readers build recognition gradually through repeated full-name exposure.
+
 ### Quick Rules
 
 - **Never use:** "TEG-Blue proves", "the only framework", "cures/fixes", "diagnosis", "type" (as personality type), therapeutic outcome claims

@@ -5,7 +5,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -17,6 +17,7 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "Rule-following is often a nervous system regulation strategy rather than a reasoning choice." },
   { label: "Overview", href: "#overview", description: "F3 completes the individual arc. F4 asks what happens when enough people running those mechanisms are in proximity." },
   { label: "The Scaling Mechanism", href: "#individual-to-collective", description: "How F3's three mechanisms aggregate into group structures." },
@@ -107,6 +108,22 @@ export default function F4RulesRegulatePage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Entitlement",
+                commonUnderstanding: "Arrogance, selfishness, a personality flaw — someone who thinks they deserve more than others.",
+                definition: "Emotional regulation — the enforcement mechanism that ensures external regulation continues when internal capacity was never built. The demand is not for more than is fair. It is for the only return pathway the system has.",
+              },
+              {
+                title: "Punishment (Relational)",
+                commonUnderstanding: "Discipline, consequences, tough love — holding someone accountable for their behaviour.",
+                definition: "Regulation enforcement — the system's response when its regulation supply is threatened. Boundaries are experienced as attack because they cut off the only return pathway. The punishment is not about the other person's behaviour. It is about restoring the regulation source.",
+              },
+            ]}
+          />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"

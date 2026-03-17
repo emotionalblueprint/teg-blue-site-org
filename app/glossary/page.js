@@ -4,7 +4,7 @@ import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Emotional Regulation Glossary | TEG-Blue Research",
-  description: "186 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
+  description: "199 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
   alternates: {
     canonical: "https://teg-blue.org/glossary",
   },
@@ -13,6 +13,46 @@ export const metadata = {
 // Glossary terms from the approved content
 const GLOSSARY_TERMS = [
   // ===== F1: THE EMOTIONAL GRADIENT =====
+  {
+    slug: "emotions",
+    title: "Emotions",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Irrational feelings that interfere with thinking — something to manage, override, or push past.",
+    definition: "Biological information — the nervous system signalling safety or threat. Emotions are not disruptions to clear thinking. They are data from a guidance system that predates language and cognition.",
+    tags: ["F1", "reframe", "core-concept"],
+    framework: 1,
+  },
+  {
+    slug: "regulation",
+    title: "Regulation",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Calming down, managing your emotions — getting yourself under control.",
+    definition: "Physical cleanup — stress hormones metabolised, muscles unclenched, inflammatory compounds cleared, neural circuits recovered. The body returning to baseline. Not a psychological skill. A biological process.",
+    tags: ["F1", "reframe", "neuroscience"],
+    framework: 1,
+  },
+  {
+    slug: "people-pleasing",
+    title: "People-Pleasing",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Low self-esteem, conflict avoidance — being too nice for your own good.",
+    definition: "Stuck Connection scanning — the scanner filters out own needs, amplifies others' discomfort, reads any tension as 'I caused this.' ER (Emotional Resonance) lands somatically; no SEA (Self-Emotional Awareness) to notice the filtering. The system regulates by managing others' states.",
+    tags: ["F1", "reframe", "regulatory-state"],
+    framework: 1,
+  },
+  {
+    slug: "emotional-exhaustion",
+    title: "Emotional Exhaustion",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Being too sensitive, burnout — not being resilient enough.",
+    definition: "Physiological depletion — the body running out of resources for its own return because those resources are being consumed by someone else's regulation needs. Not a character trait. A resource equation.",
+    tags: ["F1", "reframe", "neuroscience"],
+    framework: 1,
+  },
   {
     slug: "emotional-somatic-system",
     title: "Emotional-Somatic System",
@@ -461,6 +501,16 @@ const GLOSSARY_TERMS = [
   },
   // ===== F2: AWARENESS TEACHES AWARENESS =====
   {
+    slug: "empathy",
+    title: "Empathy",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "A single trait you either have or lack — being a caring person, or not.",
+    definition: "Three independent capacities — RE (Reading Emotions), ER (Emotional Resonance), and SEA (Self-Emotional Awareness). What most people call 'empathy' is actually different combinations of these, producing very different outcomes. Sharp RE (Reading Emotions) without ER (Emotional Resonance) reads others for leverage. High ER (Emotional Resonance) without SEA (Self-Emotional Awareness) feels everyone else's pain but cannot track its own depletion.",
+    tags: ["F2", "reframe", "awareness-capacity"],
+    framework: 2,
+  },
+  {
     slug: "reading-emotions",
     title: "Reading Emotions (RE)",
     type: "concept",
@@ -635,6 +685,36 @@ const GLOSSARY_TERMS = [
   },
   // ===== F3: ADULT COGNITION & FALSE COHERENCE =====
   {
+    slug: "false-coherence-reframe",
+    title: "False Coherence",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Self-deception, denial — lying to yourself about what's really happening.",
+    definition: "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Not lying to yourself. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
+    tags: ["F3", "reframe", "cognition"],
+    framework: 3,
+  },
+  {
+    slug: "projection-reframe",
+    title: "Projection",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
+    definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Not putting feelings onto others. Reading the world through settings designed to protect your only return path. Without SEA (Self-Emotional Awareness), the scanning feels like accurate perception.",
+    tags: ["F3", "reframe", "cognition"],
+    framework: 3,
+  },
+  {
+    slug: "validation-seeking",
+    title: "Validation-Seeking",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Insecurity, neediness — fishing for compliments, needing constant reassurance.",
+    definition: "Emotional regulation — the nervous system seeking external confirmation to settle activation that SEA (Self-Emotional Awareness) cannot process internally. When the internal signal is missing, the system looks outward for what it cannot generate from within.",
+    tags: ["F3", "reframe", "regulation"],
+    framework: 3,
+  },
+  {
     slug: "false-coherence",
     title: "False Coherence",
     type: "concept",
@@ -771,6 +851,26 @@ const GLOSSARY_TERMS = [
     framework: 3,
   },
   // ===== F4: RULES REGULATE =====
+  {
+    slug: "entitlement-reframe",
+    title: "Entitlement",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Arrogance, selfishness, a personality flaw — someone who thinks they deserve more than others.",
+    definition: "Emotional regulation — the enforcement mechanism that ensures external regulation continues when internal capacity was never built. The demand is not for more than is fair. It is for the only return pathway the system has.",
+    tags: ["F4", "reframe", "regulation"],
+    framework: 4,
+  },
+  {
+    slug: "punishment-relational",
+    title: "Punishment (Relational)",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Discipline, consequences, tough love — holding someone accountable for their behaviour.",
+    definition: "Regulation enforcement — the system's response when its regulation supply is threatened. Boundaries are experienced as attack because they cut off the only return pathway. The punishment is not about the other person's behaviour. It is about restoring the regulation source.",
+    tags: ["F4", "reframe", "regulation"],
+    framework: 4,
+  },
   {
     slug: "individual-to-collective-scaling",
     title: "Individual-to-Collective Scaling",
@@ -1073,6 +1173,26 @@ const GLOSSARY_TERMS = [
   },
   // ===== F7: DOMINATION REGULATES =====
   {
+    slug: "domination-reframe",
+    title: "Domination",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Power hunger, abuse of authority — the exercise of control over others through coercion, intimidation, or force.",
+    definition: "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. This is not a defense of harm. It is the structural account of why chronic domination escalates without limit.",
+    tags: ["F7", "reframe", "domination"],
+    framework: 7,
+  },
+  {
+    slug: "control-relational",
+    title: "Control (Relational)",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "Trust issues, micromanagement — someone who can't let go or let others be.",
+    definition: "Emotional regulation — the nervous system using predictability as its return pathway. Unpredictability threatens the only regulation strategy the system has. The controlling behaviour is not about the other person. It is about maintaining the conditions the nervous system requires to feel safe.",
+    tags: ["F7", "reframe", "regulation"],
+    framework: 7,
+  },
+  {
     slug: "the-crossroads",
     title: "The Crossroads",
     type: "concept",
@@ -1138,10 +1258,11 @@ const GLOSSARY_TERMS = [
   {
     slug: "emotional-abuse",
     title: "Emotional Abuse",
-    type: "concept",
+    type: "reframe",
     status: "proposed",
-    definition: "A structural dynamic that becomes possible when the capacity to read another's emotional state exists without the capacity to be moved by it, and when the capacity to feel deeply exists without the capacity to trust one's own experience as real. It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain is no longer invisible — it has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
-    tags: ["F7", "abuse", "awareness-capacity"],
+    commonUnderstanding: "A pattern of manipulation, control, and psychological harm — insults, threats, gaslighting, isolation — that damages self-esteem and emotional wellbeing.",
+    definition: "A structural dynamic that becomes possible when the capacity to read another's emotional state — RE (Reading Emotions) — exists without the capacity to be moved by it — ER (Emotional Resonance) — and when the capacity to feel deeply exists without the capacity to trust one's own experience as real — SEA (Self-Emotional Awareness). It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain is no longer invisible — it has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
+    tags: ["F7", "reframe", "abuse", "awareness-capacity"],
     framework: 7,
   },
   {
@@ -1608,6 +1729,16 @@ const GLOSSARY_TERMS = [
   },
 
   // ===== M3: THE BIOLOGY OF UNFINISHED EMOTION =====
+  {
+    slug: "trauma-reframe",
+    title: "Trauma",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "A terrible event that happened to you — something big enough to justify lasting pain.",
+    definition: "An incomplete biological response — activation the nervous system couldn't fully discharge or integrate, regardless of whether it felt like 'too much' or 'no emotion at all.' Trauma is not defined by the event. It is defined by what the body could not complete.",
+    tags: ["M3", "reframe", "neuroscience"],
+    framework: "M3",
+  },
   {
     slug: "the-open-cycle",
     title: "The Open Cycle",

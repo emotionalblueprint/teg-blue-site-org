@@ -6,7 +6,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, FrameworkTerms,
+  PropositionBox, ExpandableSection, FrameworkTerms, CommonUnderstanding,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -34,6 +34,7 @@ const F1CognitiveUpgradeDiagram = dynamic(
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
   { label: "Biological Substrate", href: "#the-signal", description: "The biological systems that produce emotion — neural, endocrine, autonomic, neurochemical." },
   { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: the instrument and how it moves." },
@@ -151,6 +152,32 @@ export default function F1EmotionalGradientPage() {
           </section>
 
           <SectionDivider />
+
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Emotions",
+                commonUnderstanding: "Irrational feelings that interfere with thinking — something to manage, override, or push past.",
+                definition: "Biological information — the nervous system signalling safety or threat. Emotions are not disruptions to clear thinking. They are data from a guidance system that predates language and cognition.",
+              },
+              {
+                title: "Regulation",
+                commonUnderstanding: "Calming down, managing your emotions — getting yourself under control.",
+                definition: "Physical cleanup — stress hormones metabolised, muscles unclenched, inflammatory compounds cleared, neural circuits recovered. The body returning to baseline. Not a psychological skill. A biological process.",
+              },
+              {
+                title: "People-Pleasing",
+                commonUnderstanding: "Low self-esteem, conflict avoidance — being too nice for your own good.",
+                definition: "Stuck Connection scanning — the scanner filters out own needs, amplifies others' discomfort, reads any tension as 'I caused this.' ER (Emotional Resonance) lands somatically; no SEA (Self-Emotional Awareness) to notice the filtering. The system regulates by managing others' states.",
+              },
+              {
+                title: "Emotional Exhaustion",
+                commonUnderstanding: "Being too sensitive, burnout — not being resilient enough.",
+                definition: "Physiological depletion — the body running out of resources for its own return because those resources are being consumed by someone else's regulation needs. Not a character trait. A resource equation.",
+              },
+            ]}
+          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>

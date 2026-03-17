@@ -6,7 +6,7 @@ import {
 import {
   SiteHeader, SiteFooter, ModelHero, ModelAnchorStrip,
   ModelPurpose, OperationalStatement, DrawsFromPanel,
-  ExpandableSection, PageLayout,
+  ExpandableSection, PageLayout, CommonUnderstanding,
 } from "@/src/components";
 import OpenCycleExplorer from "@/src/components/OpenCycleExplorer";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -19,6 +19,7 @@ import {
 const MODEL_COLOR = SPECTRUM.indigo;
 
 const ANCHOR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding" },
   { label: "The Cycle", href: "#threat-cascade" },
   { label: "Cognitive Management", href: "#override" },
   { label: "Stress Cycle Completion", href: "#completion" },
@@ -129,6 +130,17 @@ export default function M3TheOpenCyclePage() {
           >
             M3 is the physiological account of what F1 names <strong style={{ color: TEXT.primary }}>Biological Restoration — The Fork</strong>: the body{"'"}s designed completion process, what happens when it runs, and what happens when Cognitive Management overrides it instead. The Open Cycle is the name for the unfinished state that results.
           </p>
+
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Trauma",
+                commonUnderstanding: "A terrible event that happened to you — something big enough to justify lasting pain.",
+                definition: "An incomplete biological response — activation the nervous system couldn't fully discharge or integrate, regardless of whether it felt like 'too much' or 'no emotion at all.' Trauma is not defined by the event. It is defined by what the body could not complete.",
+              },
+            ]}
+          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

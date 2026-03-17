@@ -5,7 +5,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -17,6 +17,7 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "Domination is built through reinforcement, not born. Causality and accountability are separable." },
   { label: "Overview", href: "#overview", description: "F6 explains why we see distortedly. F7 explains what happens when the system starts making others see its way." },
   { label: "Domination Built Through Reinforcement", href: "#core-claim", description: "When control consistently produces relief, the nervous system adopts control as its preferred solution." },
@@ -110,6 +111,27 @@ export default function F7DominationRegulatesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Domination",
+                commonUnderstanding: "Power hunger, abuse of authority — the exercise of control over others through coercion, intimidation, or force.",
+                definition: "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. This is not a defense of harm. It is the structural account of why chronic domination escalates without limit.",
+              },
+              {
+                title: "Emotional Abuse",
+                commonUnderstanding: "A pattern of manipulation, control, and psychological harm — insults, threats, gaslighting, isolation — that damages self-esteem and emotional wellbeing.",
+                definition: "A structural dynamic that becomes possible when RE (Reading Emotions) exists without ER (Emotional Resonance), and when the capacity to feel deeply exists without SEA (Self-Emotional Awareness) to trust one's own experience as real. It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
+              },
+              {
+                title: "Control (Relational)",
+                commonUnderstanding: "Trust issues, micromanagement — someone who can't let go or let others be.",
+                definition: "Emotional regulation — the nervous system using predictability as its return pathway. Unpredictability threatens the only regulation strategy the system has. The controlling behaviour is not about the other person. It is about maintaining the conditions the nervous system requires to feel safe.",
+              },
+            ]}
+          />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"

@@ -5,7 +5,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -17,6 +17,7 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think empathy means — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "That the adults' awareness configuration is the child's developmental environment." },
   { label: "Overview", href: "#overview", description: "F1 is the instrument. F2 is the calibration. The three awareness capacities and the organising mechanism." },
   { label: "Three Capacities at Birth", href: "#capacities-at-birth", description: "What the infant arrives with: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness in proto-form." },
@@ -155,6 +156,17 @@ export default function F2AwarenessCalibrationPage() {
         </div>
 
         <article>
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Empathy",
+                commonUnderstanding: "A single trait you either have or lack — being a caring person, or not.",
+                definition: "Three independent capacities — RE (Reading Emotions), ER (Emotional Resonance), and SEA (Self-Emotional Awareness). What most people call 'empathy' is actually different combinations of these, producing very different outcomes. Sharp RE (Reading Emotions) without ER (Emotional Resonance) reads others for leverage. High ER (Emotional Resonance) without SEA (Self-Emotional Awareness) feels everyone else's pain but cannot track its own depletion.",
+              },
+            ]}
+          />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"

@@ -5,7 +5,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
 import {
@@ -17,6 +17,7 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "False coherence is regulation, not deception. The self-reinforcing loop maintains the stuck compass in adulthood." },
   { label: "Overview", href: "#overview", description: "F2 sets the calibration. F3 explains why it holds. Cognition replaces emotional signals with invented narratives." },
   { label: "The Core Mechanism", href: "#core-mechanism", description: "Emotional signals arrive, cognition intercepts and replaces them, the replacement produces physiological relief." },
@@ -114,6 +115,27 @@ export default function F3FalseCoherencePage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "False Coherence",
+                commonUnderstanding: "Self-deception, denial — lying to yourself about what's really happening.",
+                definition: "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Not lying to yourself. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
+              },
+              {
+                title: "Projection",
+                commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
+                definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Not putting feelings onto others. Reading the world through settings designed to protect your only return path. Without SEA (Self-Emotional Awareness), the scanning feels like accurate perception.",
+              },
+              {
+                title: "Validation-Seeking",
+                commonUnderstanding: "Insecurity, neediness — fishing for compliments, needing constant reassurance.",
+                definition: "Emotional regulation — the nervous system seeking external confirmation to settle activation that SEA (Self-Emotional Awareness) cannot process internally. When the internal signal is missing, the system looks outward for what it cannot generate from within.",
+              },
+            ]}
+          />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
