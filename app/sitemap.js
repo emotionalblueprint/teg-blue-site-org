@@ -36,6 +36,7 @@ const PAGE_DATES = {
   '/framework/f11-emotional-paradoxes': '2026-03-04',
   '/framework/f12-two-information-systems': '2026-03-04',
   '/mechanics-of-phenomena': '2026-03-10',
+  '/reframes': '2026-03-17',
 }
 
 export default function sitemap() {
@@ -232,6 +233,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/mechanics-of-phenomena`,
       lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/reframes`,
+      lastModified: new Date(PAGE_DATES['/reframes']),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
