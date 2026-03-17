@@ -482,6 +482,10 @@ export default function F7DominationRegulatesPage() {
               Empathy Gating — What Happens to the Three Awareness Capacities
             </h2>
 
+            <h2 id="heading-empathy-escalation-question" style={sectionHeadingStyle}>
+              What happens to empathy when the nervous system escalates toward domination?
+            </h2>
+
             <p style={proseStyle}>
               What people call &ldquo;empathy&rdquo; collapses three distinct processes that TEG-Blue has already separated (F2). Understanding what happens in escalation requires tracking each one independently — because they do not move together.
             </p>
@@ -592,6 +596,10 @@ export default function F7DominationRegulatesPage() {
           >
             <h2 id="heading-addiction-logic" style={sectionHeadingStyle}>
               Addiction Logic — Why Domination Escalates and Never Stops
+            </h2>
+
+            <h2 id="heading-domination-escalation-question" style={sectionHeadingStyle}>
+              Why does domination escalate without a natural stopping point?
             </h2>
 
             <p style={proseStyle}>

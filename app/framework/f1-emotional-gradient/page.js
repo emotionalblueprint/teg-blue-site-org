@@ -624,6 +624,10 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-the-fork"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-activation-cycle" style={sectionHeadingStyle}>
+              What happens when the nervous system completes its activation cycle?
+            </h2>
+
             <h2 id="heading-the-fork" style={sectionHeadingStyle}>
               Biological Restoration
             </h2>
@@ -1361,6 +1365,10 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-research-foundations"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-what-research-supports" style={sectionHeadingStyle}>
+              What research supports the emotions-as-biological-information framework?
+            </h2>
+
             <h2 id="heading-research-foundations" style={sectionHeadingStyle}>
               Research Foundations
             </h2>

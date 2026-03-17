@@ -331,6 +331,10 @@ export default function M3TheOpenCyclePage() {
               3. Cognitive Management — The Override
             </h2>
 
+            <h2 id="heading-override-question" style={sectionHeadingStyle}>
+              What happens in the body when an emotional response is suppressed?
+            </h2>
+
             <p style={proseStyle}>
               Cognitive override does not reach the body. This is the central physiological fact of M3, and it is not intuitive — which is part of why it matters.
             </p>
@@ -518,6 +522,10 @@ export default function M3TheOpenCyclePage() {
               style={sectionHeadingStyle}
             >
               6. Why Cognition Cannot Close the Cycle
+            </h2>
+
+            <h2 id="heading-cognition-cycle-question" style={sectionHeadingStyle}>
+              Why can't cognitive understanding close a biological stress cycle?
             </h2>
 
             <p style={proseStyle}>

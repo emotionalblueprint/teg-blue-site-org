@@ -1,7 +1,22 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What is the TEG-Blue glossary?",
+    answer: "The TEG-Blue glossary defines 199 terms across 12 frameworks and 3 models. It covers regulatory states (Connection, Protection, Control, Domination), complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept. Terms are searchable and sorted by framework.",
+  },
+  {
+    question: "What are the four regulatory modes in TEG-Blue?",
+    answer: "The four modes are Connection (the nervous system reads enough safety to engage openly), Protection (the nervous system detects threat and mobilises defense), Control (cognitive override replaces biological restoration), and Domination (the system maintains position by suppressing others' restoration). These are not personality types — they are nervous system states that shift in response to perceived safety and threat.",
+  },
+  {
+    question: "What are complexity markers?",
+    answer: "Complexity markers are linguistic indicators of self-awareness, perspective-taking, and emotional differentiation. They predict the capacity to return to Connection when challenged, which TEG-Blue's core testable claim identifies as the key variable in relational and behavioral outcomes.",
+  },
+];
 import GlossaryList from "./GlossaryList";
 
 export const metadata = {
@@ -1891,6 +1906,9 @@ export default function GlossaryPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+          What terms does TEG-Blue define?
+        </h2>
         <GlossaryList terms={GLOSSARY_TERMS} />
 
         {/* Cross-site link */}
@@ -1955,6 +1973,24 @@ export default function GlossaryPage() {
               url: "https://teg-blue.org",
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Emotional Regulation Glossary | TEG-Blue Research",
+              url: "https://teg-blue.org/glossary",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

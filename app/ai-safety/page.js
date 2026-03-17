@@ -1,7 +1,22 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd, generateAISafetyJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateAISafetyJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "How does TEG-Blue apply to AI safety?",
+    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Four-Mode Gradient gives AI a continuous spectrum to evaluate emotional states — Connection, Protection, Control, Domination — enabling more nuanced, accurate responses to human communication.",
+  },
+  {
+    question: "What is the problem with current AI emotion detection?",
+    answer: "Current AI safety systems rely on binary classification that misses the gradient between safety and harm. A message flagged as 'negative sentiment' could be healthy self-protection or genuine threat. Without a structured framework for emotional states, AI systems cannot distinguish between legitimate distress, defensive communication, and actual harmful intent.",
+  },
+  {
+    question: "What is TEG-Code?",
+    answer: "TEG-Code is the computational layer of TEG-Blue designed for AI integration. It provides structured emotional intelligence infrastructure that AI systems can use to recognize emotional patterns, assess regulatory states, and respond with appropriate nuance rather than binary classification.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
   { label: "The Problem", href: "#the-problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
@@ -66,6 +81,11 @@ export default function AISafetyPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        {/* Answer-first opening */}
+        <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 32, fontWeight: 500 }}>
+          Current AI safety systems rely on binary classification — safe or unsafe, toxic or non-toxic — that misses the gradient between legitimate distress and genuine harm. TEG-Blue provides a structured, computationally legible framework that gives AI systems a continuous spectrum for evaluating emotional states, enabling more nuanced and accurate responses to human communication.
+        </p>
+
         {/* Scenario Block */}
         <section style={{ marginBottom: 64 }}>
           <div
@@ -898,6 +918,24 @@ export default function AISafetyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAISafetyJsonLd()) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "AI Safety Applications | TEG-Blue Research",
+              url: "https://teg-blue.org/ai-safety",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
+        }}
       />
     </div>
   );

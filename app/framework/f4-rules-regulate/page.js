@@ -325,6 +325,10 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-seven-step-mechanism"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-how-rules-internalized" style={sectionHeadingStyle}>
+              How do rules become internalized as nervous system regulation?
+            </h2>
+
             <h2 id="heading-seven-step-mechanism" style={sectionHeadingStyle}>
               Threat-Based Rule Internalization — The Seven-Step Mechanism
             </h2>
@@ -387,6 +391,10 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-six-rule-systems"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-what-types-of-rules" style={sectionHeadingStyle}>
+              What types of rules emerge from threat-based systems?
+            </h2>
+
             <h2 id="heading-six-rule-systems" style={sectionHeadingStyle}>
               The Six Rule Systems
             </h2>

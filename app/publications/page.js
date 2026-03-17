@@ -2,7 +2,22 @@ import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, getContentTypeColor, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, StatusBadge, ResearcherHero, AuthorBlock } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What has TEG-Blue published?",
+    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Four-Mode Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.18428907), plus a Theoretical Architecture Contribution Record documenting the 145+ source theories across 12 frameworks.",
+  },
+  {
+    question: "What did the Four-Mode Gradient validation study find?",
+    answer: "All four regulatory modes (Connection, Protection, Control, Domination) were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. 33.8% of individuals escalated toward Control/Domination when challenged, 22.2% de-escalated toward Connection, and de-escalators showed 78% higher rates of complexity markers than escalators.",
+  },
+  {
+    question: "Are TEG-Blue datasets publicly available?",
+    answer: "Yes. TEG-Blue publishes all methods, data, and code openly under CC-BY-NC-SA-4.0. Datasets are available on Zenodo with DOIs for reproducibility and independent replication.",
+  },
+];
 
 export const metadata = {
   title: "Research Publications & Validation Studies | TEG-Blue Research",
@@ -162,7 +177,7 @@ export default function PublicationsPage() {
         {/* Validation study card */}
         <section id="validation-study" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Validation Study
+            What did the TEG-Blue validation study find?
           </h2>
           <div
             style={{
@@ -277,7 +292,7 @@ export default function PublicationsPage() {
         {/* Datasets */}
         <section id="datasets" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Datasets
+            Are TEG-Blue datasets publicly available?
           </h2>
           <div
             style={{
@@ -391,6 +406,24 @@ export default function PublicationsPage() {
               { name: "Home", url: "/" },
               { name: "Publications", url: "/publications" },
             ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Publications | TEG-Blue Research",
+              url: "https://teg-blue.org/publications",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

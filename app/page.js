@@ -1,6 +1,21 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { generateResearchHubJsonLd } from "@/src/lib/jsonld";
+import { generateResearchHubJsonLd, generateSearchActionJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What is TEG-Blue?",
+    answer: "TEG-Blue is an open-science emotional technology research platform that maps how nervous system states shape emotional behavior. It integrates 145+ established theories into testable hypotheses organized as 12 frameworks, 3 core models, emotional tools, and AI safety infrastructure.",
+  },
+  {
+    question: "What is the Four-Mode Gradient?",
+    answer: "The Four-Mode Gradient is TEG-Blue's measurement system mapping four nervous system regulatory states — Connection, Protection, Control, and Domination — on a continuous gradient. Health is defined as mobility between modes, not a fixed position.",
+  },
+  {
+    question: "Is TEG-Blue open access?",
+    answer: "Yes. All research, frameworks, models, and methodology are published under CC BY-NC-SA 4.0. No access restrictions. Researchers can independently use the framework, data, and methodology.",
+  },
+];
 import { BG, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 
@@ -24,7 +39,7 @@ const REGULATION_THREAD = [
 const SIDEBAR_SECTIONS = [
   { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost. F8–F12 reverse the thread." },
   { label: "Empirical Evidence", href: "#empirical-evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
-  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "Four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety." },
+  { label: "What Is TEG-Blue?", href: "#what-teg-blue-is", description: "Four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety." },
   { label: "Work With the Material", href: "#work-with-the-material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
 ];
 
@@ -59,6 +74,7 @@ export const metadata = {
 
 export default function ResearchHub() {
   const jsonLd = generateResearchHubJsonLd();
+  const searchActionJsonLd = generateSearchActionJsonLd();
 
   return (
     <>
@@ -310,7 +326,7 @@ export default function ResearchHub() {
           {/* ── Validation Evidence ── */}
           <section id="empirical-evidence">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Empirical evidence
+              What evidence supports the four-mode gradient?
             </h2>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
               The four-mode gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
@@ -399,7 +415,7 @@ export default function ResearchHub() {
           {/* ── What TEG-Blue Is ── */}
           <section id="what-teg-blue-is">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              What TEG-Blue is
+              What is TEG-Blue?
             </h2>
 
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
@@ -506,6 +522,26 @@ export default function ResearchHub() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(searchActionJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "TEG-Blue | Emotional Technology Research",
+              url: "https://teg-blue.org",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
+        }}
       />
     </>
   );

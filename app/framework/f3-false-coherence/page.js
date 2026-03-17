@@ -250,6 +250,10 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-core-mechanism"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-what-happens-cognition-replaces" style={sectionHeadingStyle}>
+              What happens when cognition replaces emotional signals?
+            </h2>
+
             <h2 id="heading-core-mechanism" style={sectionHeadingStyle}>
               The Core Mechanism — Cognition Replaces Emotional Signals
             </h2>
@@ -760,6 +764,10 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-external-regulation"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-why-regulate-through-others" style={sectionHeadingStyle}>
+              Why do some people regulate through others instead of themselves?
+            </h2>
+
             <h2 id="heading-external-regulation" style={sectionHeadingStyle}>
               External Regulation — Using Others to Manage
             </h2>

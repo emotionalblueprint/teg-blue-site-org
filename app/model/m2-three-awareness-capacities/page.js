@@ -481,6 +481,10 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               3. Awareness Teaches Awareness — The Developmental Mechanism
             </h2>
 
+            <h2 id="heading-awareness-development-question" style={sectionHeadingStyle}>
+              How do the three awareness capacities develop through relational experience?
+            </h2>
+
             <p style={proseStyle}>
               The organising principle of the entire calibration system. The adults' awareness capacities create the child's developmental environment. Not instruction. Not intention. Not love. <strong style={{ color: TEXT.primary }}>Embodiment.</strong>
             </p>
@@ -657,6 +661,10 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   <GridCell>Regulation</GridCell>
                 </div>
               </div>
+
+              <h2 id="heading-sea-keystone-question" style={sectionHeadingStyle}>
+                Why is Self-Emotional Awareness (SEA) the keystone capacity?
+              </h2>
 
               <h3 style={{ ...h3Style, marginTop: 20 }}>
                 Why SEA Is the Keystone

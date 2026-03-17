@@ -1,12 +1,27 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What are TEG-Blue's ethical principles?",
+    answer: "TEG-Blue's ethics are grounded in the empirical finding that emotional development is contextual. Core commitments include non-pathologisation (adaptive responses are not deficits), contextual embeddedness, transparency, open science, and responsible technology use.",
+  },
+  {
+    question: "What license does TEG-Blue use?",
+    answer: "TEG-Blue is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA-4.0). The framework may be cited, tested, and built upon — but not used for commercial purposes without permission.",
+  },
+  {
+    question: "How does TEG-Blue handle trauma-informed research?",
+    answer: "TEG-Blue treats emotional patterns shaped by adversity as functional adaptations, not deficits. The framework preserves the distinction between an adaptation and the conditions that produced it, even when patterns become maladaptive in changed circumstances.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Position", href: "#position", description: "Emotional development is contextual. This is not a theoretical assumption — it is an empirical foundation." },
+  { label: "Ethical Principles", href: "#position", description: "What ethical principles guide TEG-Blue? Emotional development is contextual — an empirical foundation." },
   { label: "Context Shapes Everything", href: "#context-shapes-everything", description: "Systemic awareness as scientific prerequisite, not political position." },
-  { label: "Non-Pathologisation", href: "#non-pathologisation", description: "Adaptive responses are not deficits. The framework honours what survival required." },
+  { label: "Non-Pathologisation", href: "#non-pathologisation", description: "How does TEG-Blue avoid pathologising emotional patterns? Adaptive responses are not deficits." },
   { label: "Rigour & Compassion", href: "#rigour-and-compassion", description: "Grounded in peer-reviewed research. Built for human understanding." },
   { label: "Accessibility & Equity", href: "#accessibility-and-equity", description: "Designed for everyone. Open science. No knowledge behind paywalls." },
   { label: "Transparency", href: "#transparency", description: "Methodology is visible. Claims are testable. Limitations are stated." },
@@ -70,7 +85,7 @@ export default function EthicsPage() {
       >
         {/* Position Statement */}
         <section id="position" style={{ marginBottom: 48 }}>
-          <h2 style={sectionHeading}>Position statement</h2>
+          <h2 style={sectionHeading}>What ethical principles guide TEG-Blue research?</h2>
           <PrincipleQuote>
             Emotional development is fundamentally contextual. Individual emotional patterns emerge within and are shaped by intersecting systems of power, culture, socioeconomic conditions, and structural inequality.
           </PrincipleQuote>
@@ -116,7 +131,7 @@ export default function EthicsPage() {
         {/* Non-Pathologisation */}
         <section id="non-pathologisation" style={{ marginBottom: 48 }}>
           <SectionDivider />
-          <h2 style={sectionHeading}>Non-pathologisation</h2>
+          <h2 style={sectionHeading}>How does TEG-Blue avoid pathologising emotional patterns?</h2>
           <PrincipleQuote>
             Emotional patterns shaped by adversity, systemic stress, or cultural difference are understood as functional adaptations — not deficits.
           </PrincipleQuote>
@@ -358,6 +373,22 @@ export default function EthicsPage() {
               url: "https://teg-blue.org",
             },
           }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Ethical & Epistemological Framework | TEG-Blue Research",
+              url: "https://teg-blue.org/ethics",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

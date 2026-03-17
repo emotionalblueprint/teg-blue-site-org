@@ -2,11 +2,26 @@ import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "How do I cite TEG-Blue in academic work?",
+    answer: "Use APA 7th Edition format: Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Framework. https://teg-blue.org. BibTeX format is also available on the citations page. For specific publications, cite the individual paper with its DOI.",
+  },
+  {
+    question: "What license does TEG-Blue use?",
+    answer: "TEG-Blue is published under CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International). Independent research building on TEG-Blue should cite the framework as the originating architecture.",
+  },
+  {
+    question: "How should I attribute independent work that builds on TEG-Blue?",
+    answer: "Independent research should cite the TEG-Blue framework as the originating architecture. If you are unsure how to attribute, contact research@teg-blue.org for guidance.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Citing TEG-Blue", description: "Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
-  { label: "Attribution", description: "Guidelines for independent work building on TEG-Blue — proper attribution and licensing.", href: "#attribution" },
+  { label: "How to Cite", description: "How do I cite TEG-Blue? Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
+  { label: "Attribution", description: "How should I attribute independent work that builds on TEG-Blue?", href: "#attribution" },
 ];
 
 export const metadata = {
@@ -97,7 +112,7 @@ export default function CitationsPage() {
               marginBottom: 12,
             }}
           >
-            Citing the TEG-Blue Framework
+            How do I cite TEG-Blue in academic work?
           </h2>
           <p
             style={{
@@ -193,7 +208,7 @@ export default function CitationsPage() {
               marginBottom: 8,
             }}
           >
-            Attribution for independent work
+            How should I attribute independent work that builds on TEG-Blue?
           </h2>
           <p
             style={{
@@ -261,6 +276,24 @@ export default function CitationsPage() {
               url: "https://teg-blue.org",
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "How to Cite TEG-Blue | TEG-Blue Research",
+              url: "https://teg-blue.org/citations",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

@@ -1,12 +1,27 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "How can I collaborate with TEG-Blue?",
+    answer: "There is no application process. The work is open. Start by reading the research entry point, reviewing the methodology, and exploring the framework architecture. Contact research@teg-blue.org for coordination on specific research directions.",
+  },
+  {
+    question: "What types of collaboration does TEG-Blue need?",
+    answer: "TEG-Blue needs validation studies (independent replication), cross-disciplinary research (testing specific propositions), translation and adaptation (for specific populations or contexts), and critique (identifying where the framework overclaims or where alternatives are stronger).",
+  },
+  {
+    question: "What are the ethical expectations for collaborators?",
+    answer: "Collaborators must accept the CC-BY-NC-SA-4.0 license and ethical commitments. The framework will not be used for surveillance or manipulation. Findings are published openly. Attribution is maintained on all derivative work.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
-  { label: "What We're Looking For", href: "#what-were-looking-for", description: "Types of collaboration — validation, cross-disciplinary, translation, critique." },
+  { label: "Collaboration Types", href: "#what-were-looking-for", description: "How can researchers collaborate with TEG-Blue? Validation, cross-disciplinary, translation, critique." },
   { label: "How to Engage", href: "#how-to-engage", description: "Process, what to expect, and how to reach out." },
-  { label: "Ethical Expectations", href: "#ethical-expectations", description: "What we ask of collaborators before engaging with this work." },
+  { label: "Ethical Expectations", href: "#ethical-expectations", description: "What are the ethical expectations for TEG-Blue collaborators?" },
   { label: "Current Status", href: "#current-status", description: "Where the project is, what's active, and what's open." },
 ];
 
@@ -82,7 +97,7 @@ export default function CollaboratePage() {
 
         {/* What we're looking for */}
         <section id="what-were-looking-for" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>What we&apos;re looking for</h2>
+          <h2 style={sectionHeading}>How can researchers collaborate with TEG-Blue?</h2>
           <p style={bodyStyle}>
             TEG-Blue is a working hypothesis. It needs testing, critique, and independent verification more than it needs agreement. The following types of collaboration are particularly valuable:
           </p>
@@ -152,7 +167,7 @@ export default function CollaboratePage() {
 
         {/* Ethical expectations */}
         <section id="ethical-expectations" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Ethical expectations</h2>
+          <h2 style={sectionHeading}>What are the ethical expectations for collaborators?</h2>
           <p style={bodyStyle}>
             Collaborating with TEG-Blue means engaging with a framework that maps emotional vulnerability. That carries specific responsibilities:
           </p>
@@ -238,6 +253,24 @@ export default function CollaboratePage() {
               url: "https://teg-blue.org",
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Collaborate | TEG-Blue Research",
+              url: "https://teg-blue.org/collaborate",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

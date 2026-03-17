@@ -1,14 +1,29 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What is original about TEG-Blue?",
+    answer: "TEG-Blue does not invent its building blocks — those come from established theories like Polyvagal Theory and Attachment Theory. The originality is in the specific cross-disciplinary connections between them, such as nervous system regulation shaping moral perception, and attachment patterns driving social stratification.",
+  },
+  {
+    question: "What is the core testable claim of TEG-Blue?",
+    answer: "The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their capacity to return to Connection when challenged. This capacity is measurable through complexity markers in natural language.",
+  },
+  {
+    question: "How can researchers collaborate with TEG-Blue?",
+    answer: "Researchers can independently use the framework, data, and methodology. Five open research questions span biological mechanism, clinical, developmental, collective, and AI domains. Contact research@teg-blue.org to discuss specific directions.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
   { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 145+ established theories into testable hypotheses about emotional regulation." },
-  { label: "What Is Original", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
+  { label: "What Is Original?", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
   { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
-  { label: "Open Research Directions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
+  { label: "Open Research Questions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
 
@@ -105,7 +120,7 @@ export default function ResearchEntryPage() {
         {/* What is original */}
         <section id="what-is-original" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What is original: the &quot;1 + 2 = 3&quot; principle
+            What is original about TEG-Blue?
           </h2>
           <MechanismBox label="THE 1 + 2 = 3 PRINCIPLE">
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
@@ -203,7 +218,7 @@ export default function ResearchEntryPage() {
         {/* Core hypothesis */}
         <section id="core-testable-claim" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            The core testable claim
+            What is the core testable claim of TEG-Blue?
           </h2>
           <PropositionBox
             label="CORE HYPOTHESIS"
@@ -242,7 +257,7 @@ export default function ResearchEntryPage() {
         {/* Open research directions */}
         <section id="open-research-directions" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-            Open research directions
+            What are the open research questions in TEG-Blue?
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8, maxWidth: 640 }}>
             These questions emerged from building the integration. I don&apos;t have answers to most of them. Some point to gaps in existing literature. Some point to claims TEG-Blue makes that need external testing. Some I couldn&apos;t find addressed anywhere — which is either a gap worth filling or a sign I looked in the wrong places.
@@ -422,6 +437,23 @@ export default function ResearchEntryPage() {
               { "@type": "Thing", name: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged" },
             ],
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "For Researchers — Framework Overview | TEG-Blue Research",
+              url: "https://teg-blue.org/research-entry",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

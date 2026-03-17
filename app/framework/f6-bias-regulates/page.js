@@ -479,6 +479,10 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-phenomenology-of-certainty"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-why-bias-feels-like-truth" style={sectionHeadingStyle}>
+              Why does bias feel like seeing clearly?
+            </h2>
+
             <h2 id="heading-phenomenology-of-certainty" style={sectionHeadingStyle}>
               The Phenomenology of Certainty — Why Bias Feels Like Truth
             </h2>
@@ -571,6 +575,10 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-revision-pathway"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-how-biases-revised" style={sectionHeadingStyle}>
+              How can deeply held biases actually be revised?
+            </h2>
+
             <h2 id="heading-revision-pathway" style={sectionHeadingStyle}>
               The Revision Pathway — Safety Before Correction
             </h2>

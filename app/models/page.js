@@ -6,7 +6,22 @@ import {
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
 } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What are the three TEG-Blue models?",
+    answer: "The three models are M1: Inner Compass and Four-Mode Gradient (the instrument — where is the needle?), M2: Three Awareness Capacities (the calibration — what is holding it there?), and M3: The Biology of Unfinished Emotion (the biological foundation — what is the body doing underneath?). The frameworks explain why. The models provide what — the applied tools that practitioners, researchers, and individuals actually use.",
+  },
+  {
+    question: "What is the Inner Compass model?",
+    answer: "M1, the Inner Compass, maps how the nervous system orients between safety and threat across four modes on a continuous gradient: Connection, Protection, Control, and Domination. The core question it answers is: where is the needle, can it move, and what does the person have access to from where they are?",
+  },
+  {
+    question: "What are the Three Awareness Capacities?",
+    answer: "M2 describes Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — the three awarenesses that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. These capacities develop through relationship and determine the compass configuration.",
+  },
+];
 
 // ─── MODEL DATA ─────────────────────────────────────────────
 
@@ -192,6 +207,9 @@ export default function ModelsPage() {
             border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
           }}
         >
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            How do the three TEG-Blue models work together?
+          </h2>
           <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
             Three Dimensions of One Reality
           </div>
@@ -284,6 +302,24 @@ export default function ModelsPage() {
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
             ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Three Models | TEG-Blue Research",
+              url: "https://teg-blue.org/models",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

@@ -366,6 +366,10 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-the-mechanism"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-how-awareness-develops" style={sectionHeadingStyle}>
+              How do awareness capacities develop in children?
+            </h2>
+
             <h2 id="heading-the-mechanism" style={sectionHeadingStyle}>
               The Mechanism — Awareness Teaches Awareness
             </h2>
@@ -793,6 +797,10 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-the-replication"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-how-patterns-transmit" style={sectionHeadingStyle}>
+              How do emotional patterns transmit across generations?
+            </h2>
+
             <h2 id="heading-the-replication" style={sectionHeadingStyle}>
               The Replication — Generational Transmission
             </h2>

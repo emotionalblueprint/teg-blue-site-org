@@ -223,6 +223,7 @@ export default function F11EmotionalParadoxesPage() {
               badge="FRAMEWORK F11"
               title="The Emotional Logic Behind Paradoxes"
               subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
+              description="How every framework (F1–F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic — and how paradoxical behavior is multi-rational, serving multiple valid needs simultaneously rather than signaling failure of consistency. The first framework in the integration arc (F11–F12)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -314,6 +315,10 @@ export default function F11EmotionalParadoxesPage() {
 
           <section id="multi-rationality">
             <h2 style={sectionHeadingStyle}>Multi-Rationality</h2>
+
+            <h2 style={sectionHeadingStyle}>
+              Why do people contradict themselves in predictable ways?
+            </h2>
 
             <p style={proseStyle}>
               Paradoxical behavior appears irrational only when assessed against a single set of values or goals. When multiple needs are recognized as simultaneously valid, behavior becomes <strong>multi-rational</strong> — serving several objectives at once.
@@ -427,6 +432,10 @@ export default function F11EmotionalParadoxesPage() {
 
           <section id="paradox-cascade">
             <h2 style={sectionHeadingStyle}>The Paradox Cascade</h2>
+
+            <h2 style={sectionHeadingStyle}>
+              How do emotional contradictions become invisible over time?
+            </h2>
 
             <h3 style={conceptHeadingStyle}>How Contradictions Become Invisible</h3>
 

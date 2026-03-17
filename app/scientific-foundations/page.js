@@ -4,7 +4,22 @@ import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What scientific theories does TEG-Blue build on?",
+    answer: "TEG-Blue integrates 145+ established theories across 24 research domains including polyvagal theory, attachment theory, affective neuroscience, trauma research, cognitive science, developmental psychology, family systems, and social dominance theory. Every source theory is credited. The originality is in the cross-disciplinary connections, not the individual theories.",
+  },
+  {
+    question: "How many research domains does TEG-Blue span?",
+    answer: "TEG-Blue spans 24 research domains, from affective neuroscience and attachment theory to social psychology and epigenetics. Each of the 12 frameworks and 3 models draws on specific research traditions, with framework cross-reference tags (F1-F12, M1-M3) mapping every theory to the framework it supports.",
+  },
+  {
+    question: "Is TEG-Blue peer-reviewed?",
+    answer: "The first validation study — a computational analysis of 10,000+ conflict narratives testing Four-Mode Gradient detection — is published with DOI 10.5281/zenodo.18428907. The theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes all methods, data, and code openly under CC-BY-NC-SA-4.0.",
+  },
+];
 
 // ─── FRAMEWORK URL MAPPING ──────────────────────────────────────
 const FRAMEWORK_URLS = {
@@ -794,6 +809,11 @@ export default function ScientificFoundationsPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        {/* ─── Answer-first opening ─────────────────────────────── */}
+        <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 24, fontWeight: 500 }}>
+          TEG-Blue integrates {THEORIES.length} research traditions across {RESEARCH_DOMAINS.length} domains — from polyvagal theory and attachment research to social dominance theory and epigenetics — into one shared map. Every source theory is credited. The originality is not in the individual theories but in the cross-disciplinary connections between them.
+        </p>
+
         {/* ─── Regulation Thread framing ──────────────────────────── */}
         <div
           style={{
@@ -1133,6 +1153,24 @@ export default function ScientificFoundationsPage() {
               { name: "Home", url: "/" },
               { name: "Scientific Foundations", url: "/scientific-foundations" },
             ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Scientific Foundations | TEG-Blue Research",
+              url: "https://teg-blue.org/scientific-foundations",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

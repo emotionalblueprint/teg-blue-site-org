@@ -221,6 +221,7 @@ export default function F12TwoInformationSystemsPage() {
               badge="FRAMEWORK F12"
               title="Our Two Information Systems"
               subtitle="Why Insight Alone Doesn't Change Behavior and What Actually Does"
+              description="How two parallel information systems — cognitive and somatic — process emotional data through fundamentally different architectures, and why insight alone cannot change behavior when the somatic system holds the regulatory pattern. The final framework in the TEG-Blue system, providing the architectural foundation that explains why the regulation thread works the way it does."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="The Architecture Underneath"
@@ -408,6 +409,10 @@ export default function F12TwoInformationSystemsPage() {
           <section id="why-insight-fails">
             <h2 style={sectionHeadingStyle}>Why Insight Alone Doesn't Change Behavior</h2>
 
+            <h2 style={sectionHeadingStyle}>
+              Why doesn't understanding your patterns automatically change them?
+            </h2>
+
             <p style={proseStyle}>
               A person reads F1–F11. Sees their configuration. Names their false coherence. Identifies their chronic mode. Understands the mechanism. Locates their paradoxes. And still does the thing. Still enters chronic Control under stress. Still masks. Still transmits.
             </p>
@@ -481,6 +486,10 @@ export default function F12TwoInformationSystemsPage() {
 
           <section id="state-dependent-behavior">
             <h2 style={sectionHeadingStyle}>State-Dependent Behavior</h2>
+
+            <h2 style={sectionHeadingStyle}>
+              How does nervous system state determine what a person can do?
+            </h2>
 
             <h3 style={conceptHeadingStyle}>The Unifying Mechanism</h3>
 

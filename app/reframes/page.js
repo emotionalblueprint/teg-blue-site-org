@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
   title: "The Common Understanding — Reframes | TEG-Blue Research",
@@ -33,6 +33,21 @@ export const metadata = {
     description: "What emotions, trauma, bias, and empathy actually mean when traced to the nervous system. 15 reframes across 7 frameworks.",
   },
 };
+
+const FAQ_ITEMS = [
+  {
+    question: "What are TEG-Blue reframes?",
+    answer: "Reframes are TEG-Blue's translations of commonly used psychological terms from moral labels to regulatory mechanisms. Each reframe takes a term people think they understand — like emotions, trauma, bias, or empathy — and shows what it actually means when traced back to the nervous system. 15 reframes span 7 frameworks.",
+  },
+  {
+    question: "What is the Common Understanding?",
+    answer: "The Common Understanding is how most people currently use a term — often as a moral label, character judgment, or oversimplification. TEG-Blue reframes show what the nervous system is actually doing when these terms apply, replacing moral evaluation with mechanistic understanding. For example, 'emotions' moves from 'irrational feelings that interfere with thinking' to 'biological information — the nervous system signalling safety or threat.'",
+  },
+  {
+    question: "Why does TEG-Blue reframe existing terms instead of creating new ones?",
+    answer: "Because the existing terms describe real phenomena — but the common understanding of those phenomena often contains a moral judgment or oversimplification that blocks accurate seeing. TEG-Blue reframes keep the phenomenon but replace the moral framing with the mechanism. The goal is clarity about what is actually happening, not new vocabulary.",
+  },
+];
 
 // ─── REFRAME DATA ────────────────────────────────────────────
 // Inline definitions — same length as framework pages
@@ -231,6 +246,9 @@ export default function ReframesPage() {
       >
         {/* ─── Introduction ─────────────────────────────── */}
         <section style={{ marginBottom: 48 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            What does TEG-Blue reframe about common emotional concepts?
+          </h2>
           <p style={{
             fontSize: 15,
             lineHeight: 1.8,
@@ -489,6 +507,12 @@ export default function ReframesPage() {
             ])
           ),
         }}
+      />
+
+      {/* ─── JSON-LD: FAQ ───────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
       />
 
       {/* ─── JSON-LD: Speakable ────────────────────────── */}

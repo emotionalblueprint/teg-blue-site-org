@@ -350,6 +350,10 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-filter-of-worth"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-how-signal-access-becomes-value" style={sectionHeadingStyle}>
+              How does signal access become mistaken for human value?
+            </h2>
+
             <h2 id="heading-filter-of-worth" style={sectionHeadingStyle}>
               The Filter of Worth — How Signal Access Becomes Human Value
             </h2>
@@ -480,6 +484,10 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-chronic-invisibility"
             style={{ marginBottom: 48 }}
           >
+            <h2 id="heading-effects-chronic-exclusion" style={sectionHeadingStyle}>
+              What are the physiological effects of chronic social exclusion?
+            </h2>
+
             <h2 id="heading-chronic-invisibility" style={sectionHeadingStyle}>
               Chronic Invisibility — Structural Compass Lock
             </h2>

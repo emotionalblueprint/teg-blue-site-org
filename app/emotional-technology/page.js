@@ -1,7 +1,22 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, RADIUS } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What is emotional technology?",
+    answer: "Emotional technology refers to tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies. TEG-Blue is the first complete emotional technology system.",
+  },
+  {
+    question: "Does emotional technology replace therapy?",
+    answer: "No. Emotional technology equips therapy, it does not replace it. Think of it like an emotional thermometer — it helps name patterns early so therapists can go deeper, faster, and more precisely.",
+  },
+  {
+    question: "What is emotional architecture?",
+    answer: "Emotional architecture is the structure of emotional patterns within people, families, and systems. Related terms include emotional wiring (how the nervous system learned to respond), emotional miswiring (protective patterns that now create harm), and emotional infrastructure (systems that support or fail to support emotional safety).",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
   { label: "The Analogy", description: "What emotional technology means — the same clarity we expect from physical technology, applied to emotions.", href: "#the-analogy" },
@@ -437,6 +452,22 @@ export default function EmotionalTechnologyPage() {
               url: "https://teg-blue.org",
             },
           }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "What is Emotional Technology? | TEG-Blue Research",
+              url: "https://teg-blue.org/emotional-technology",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

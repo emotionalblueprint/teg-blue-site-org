@@ -1,15 +1,30 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
-import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "How is TEG-Blue organized?",
+    answer: "TEG-Blue is organized as four interconnected parts: measurement (Three Core Models), explanatory frameworks (12 Frameworks), emotional tools (gradient-based scales), and AI safety infrastructure (structured schemas for machine consumption).",
+  },
+  {
+    question: "What problem does TEG-Blue address?",
+    answer: "TEG-Blue addresses the ambiguity between trauma-driven protection and intentional manipulation. Both look similar on the surface but require very different responses. The framework makes emotional behavior legible by treating emotions as structured biological signals.",
+  },
+  {
+    question: "What is the Regulation Thread?",
+    answer: "The Regulation Thread is one mechanism running through all twelve frameworks: when the body's natural return path (Biological Restoration) is missing, something else steps in — cognition, rules, hierarchies, bias, domination. Each substitute works at a cost. F8-F12 reverse the thread.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Problem", href: "#the-problem", description: "Ambiguity between trauma-driven protection and intentional manipulation — and why legibility matters." },
+  { label: "The Problem", href: "#the-problem", description: "What problem does TEG-Blue address? Ambiguity between trauma-driven protection and intentional manipulation." },
   { label: "Part 1 — Measurement", href: "#part-1-measurement", description: "Three Core Models: the Inner Compass, the Awareness Capacities, and Biological Restoration." },
   { label: "Part 2 — Frameworks", href: "#part-2-frameworks", description: "12 explanatory frameworks across three arcs. The Regulation Thread." },
   { label: "Part 3 — Emotional Tools", href: "#part-3-emotional-tools", description: "Applied instruments for practitioners, clinicians, researchers, and individuals." },
   { label: "Part 4 — AI Safety", href: "#part-4-ai-safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
-  { label: "Core Functions", href: "#core-functions", description: "The four core functions of the system and how the parts interact." },
+  { label: "Core Functions", href: "#core-functions", description: "What are the four core functions of TEG-Blue and how the parts interact." },
   { label: "Ethical Constraint", href: "#ethical-constraint", description: "Trauma-informed data architecture. Intent–Impact–Pattern logic." },
   { label: "What Is Original", href: "#what-is-original", description: "Cross-disciplinary connections that generate testable hypotheses." },
 ];
@@ -76,7 +91,7 @@ export default function FoundationsPage() {
         {/* ─── THE PROBLEM & SOLUTION ─────────────────────── */}
         <section id="the-problem" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            The Problem TEG-Blue Addresses
+            What problem does TEG-Blue address?
           </h2>
           <div
             style={{
@@ -308,7 +323,7 @@ export default function FoundationsPage() {
         {/* ─── CORE FUNCTIONS ─────────────────────────────── */}
         <section id="core-functions" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            The four core functions
+            What are the four core functions of TEG-Blue?
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
             The system is designed to serve four functions. Each represents a research lane where collaboration is needed.
@@ -448,6 +463,22 @@ export default function FoundationsPage() {
               { name: "Home", url: "/" },
               { name: "System Overview", url: "/foundations" },
             ])
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "System Overview | TEG-Blue Research",
+              url: "https://teg-blue.org/foundations",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

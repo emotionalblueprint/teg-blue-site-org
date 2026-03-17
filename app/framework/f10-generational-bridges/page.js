@@ -222,6 +222,7 @@ export default function F10GenerationalBridgesPage() {
               badge="FRAMEWORK F10"
               title="Rebuilding Generational Bridges"
               subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
+              description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the healing arc (F8–F12)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -442,6 +443,10 @@ export default function F10GenerationalBridgesPage() {
           <section id="what-isnt-processed">
             <h2 style={sectionHeadingStyle}>What Isn't Processed Gets Passed On</h2>
 
+            <h2 style={sectionHeadingStyle}>
+              Why do unprocessed emotional patterns transmit across generations?
+            </h2>
+
             <p style={proseStyle}>
               Unprocessed experience becomes the environment the next generation develops within. The specific claim: unprocessed grief becomes an emotional climate of suppression, unprocessed rage becomes volatility or rigid control, unprocessed shame becomes performance and conditional belonging, unprocessed trauma becomes hypervigilance or dissociation. The child does not inherit the event. The child inherits the <strong>regulatory consequence</strong> of the event — the configuration the adult built to survive it.
             </p>
@@ -628,6 +633,10 @@ export default function F10GenerationalBridgesPage() {
 
           <section id="enough-not-perfect">
             <h2 style={sectionHeadingStyle}>Enough, Not Perfect</h2>
+
+            <h2 style={sectionHeadingStyle}>
+              How much healing is needed to change what the next generation inherits?
+            </h2>
 
             <p style={proseStyle}>
               The most important word in F10 is <strong>enough.</strong> Not perfect awareness. Not complete repair. Not an ideal childhood. Enough loosening of false coherence that the child absorbs different possibilities. Enough SEA that the child sees self-awareness modeled. Enough return that the child learns: the compass comes back.

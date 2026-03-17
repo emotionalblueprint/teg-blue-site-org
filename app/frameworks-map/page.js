@@ -4,7 +4,22 @@ import { useState } from "react";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, EDITORIAL, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What are the 12 TEG-Blue frameworks?",
+    answer: "The 12 frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1-F3: how the nervous system evaluates safety, calibrates through development, and compensates through cognition), Collective (F4-F7: how individual patterns scale into shared rules, hierarchies, perception biases, and domination), and The Reversal (F8-F12: how awareness capacities rebuild and what makes change possible).",
+  },
+  {
+    question: "What is the Regulation Thread?",
+    answer: "The Regulation Thread is the organizing narrative of all 12 frameworks. It traces what happens when Biological Restoration — the body's designed process for completing the activation cycle — is never learned. Each framework describes a different substitute the system develops: false coherence, rules, worth hierarchies, bias, and ultimately domination. The reversal frameworks (F8-F12) describe how the original path rebuilds.",
+  },
+  {
+    question: "What is the core question TEG-Blue investigates?",
+    answer: "Is what we call emotional dysregulation at the individual level and social dysfunction at the collective level the same missing mechanism — Biological Restoration never learned — operating at different scales? If so, the intervention point is not where the dysfunction appears, but where the return path was never built.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
   { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all twelve frameworks — what regulates when the body can't, and how the original path rebuilds." },
@@ -311,6 +326,12 @@ export default function TheoreticalFoundationsPage() {
       >
         {/* The Regulation Thread — the page's organizing narrative */}
         <section id="the-regulation-thread" style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            What is the Regulation Thread?
+          </h2>
+          <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
+            The 12 TEG-Blue frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1–F3), Collective (F4–F7), and The Reversal (F8–F12). Together they map what happens when Biological Restoration is never learned, what substitutes the system develops, and what it takes to rebuild the original path.
+          </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             The nervous system was designed to complete a cycle. Detect threat, mobilise, respond — and then restore. Return to baseline. Come back.
           </p>
@@ -393,7 +414,7 @@ export default function TheoreticalFoundationsPage() {
         {/* The Three Core Models */}
         <section id="three-core-models" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            The Three Core Models
+            How do the three core models relate to the frameworks?
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             The frameworks explain <em>why</em>. The models provide <em>what</em> — the applied tools that practitioners, researchers, and individuals actually use.
@@ -558,6 +579,24 @@ export default function TheoreticalFoundationsPage() {
               { name: "Home", url: "/" },
               { name: "12 Frameworks", url: "/frameworks-map" },
             ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The 12 Frameworks | TEG-Blue Research",
+              url: "https://teg-blue.org/frameworks-map",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />

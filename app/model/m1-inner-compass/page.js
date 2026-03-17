@@ -427,6 +427,10 @@ export default function M1InnerCompassPage() {
               State Determines Capacity
             </h2>
 
+            <h2 id="heading-state-capacity-question" style={sectionHeadingStyle}>
+              How does nervous system state determine what a person can perceive, think, and do?
+            </h2>
+
             <p style={proseStyle}>
               What a person can perceive, think, feel, and do depends on their current gradient position. This is not metaphor — it is neurobiological reality. The current state literally shapes the capacities available.
             </p>
@@ -763,6 +767,10 @@ export default function M1InnerCompassPage() {
               style={sectionHeadingStyle}
             >
               The Stuck Compass — When Modes Become Chronic
+            </h2>
+
+            <h2 id="heading-stuck-compass-question" style={sectionHeadingStyle}>
+              What happens when the compass gets stuck in one mode?
             </h2>
 
             <p style={proseStyle}>

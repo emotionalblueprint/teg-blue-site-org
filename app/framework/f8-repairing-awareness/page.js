@@ -337,6 +337,10 @@ export default function F8RepairingAwarenessPage() {
               Why Repair Is Difficult
             </h2>
 
+            <h2 id="heading-repair-resistance-question" style={sectionHeadingStyle}>
+              Why does the nervous system resist awareness repair?
+            </h2>
+
             <p style={proseStyle}>
               The central difficulty: the system that needs repair defends against repair. The awareness capacities that need developing are offline — and the systems that replaced them (F3 false coherence, F4 rules, F5 worth-seeking, F6 bias) actively defend against the capacities coming online.
             </p>
@@ -376,6 +380,10 @@ export default function F8RepairingAwarenessPage() {
           >
             <h2 id="heading-conditions-for-repair" style={sectionHeadingStyle}>
               Conditions for Repair — Safety Before Capacity
+            </h2>
+
+            <h2 id="heading-conditions-repair-question" style={sectionHeadingStyle}>
+              What conditions enable awareness capacity development?
             </h2>
 
             <p style={proseStyle}>

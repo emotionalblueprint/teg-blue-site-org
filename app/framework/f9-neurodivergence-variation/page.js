@@ -221,6 +221,7 @@ export default function F9NeurodivergenceVariationPage() {
               badge="FRAMEWORK F9"
               title="Neurodivergence as Nervous System Variation"
               subtitle="When the Environment Is the Mismatch"
+              description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Reframes variation as design, not deficit. The second framework in the healing arc (F8–F12)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -373,6 +374,10 @@ export default function F9NeurodivergenceVariationPage() {
           <section id="system-mismatch">
             <h2 style={sectionHeadingStyle}>System Mismatch</h2>
 
+            <h2 style={sectionHeadingStyle}>
+              What is System Mismatch and how does it affect neurodivergent people?
+            </h2>
+
             <p style={proseStyle}>
               <strong>System Mismatch</strong> is the gap between what an environment requires and what a nervous system can sustainably provide. This is not a metaphor. It is structural:
             </p>
@@ -476,6 +481,10 @@ export default function F9NeurodivergenceVariationPage() {
 
           <section id="threshold-dynamics">
             <h2 style={sectionHeadingStyle}>Threshold Dynamics</h2>
+
+            <h2 style={sectionHeadingStyle}>
+              What causes neurodivergent burnout and how can it be predicted?
+            </h2>
 
             <p style={proseStyle}>
               Every nervous system has a threshold — the point at which regulatory capacity is exceeded. F9 names the equation:

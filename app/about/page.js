@@ -1,11 +1,26 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "Who created TEG-Blue?",
+    answer: "TEG-Blue was created by Anna Paretas-Artacho, an independent researcher and systems designer based in Barcelona with 25+ years of experience in systems thinking and visual design.",
+  },
+  {
+    question: "What is the difference between teg-blue.org and teg-blue.com?",
+    answer: "teg-blue.org is the open research hub for publications, methodology, frameworks, and collaboration. teg-blue.com is the application site with interactive tools and guided experiences for individuals and practitioners.",
+  },
+  {
+    question: "Has TEG-Blue been validated?",
+    answer: "An initial validation study analyzed 10,000+ natural conflict narratives, achieving inter-rater reliability of kappa = 0.74. This is a beginning — five open research questions and four research directions are documented for further validation.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Two Sites", href: "#two-sites", description: "How teg-blue.com (interactive tools) and teg-blue.org (open science) work together." },
-  { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — how TEG-Blue started, the empirical validation, and the research approach." },
+  { label: "Two Sites", href: "#two-sites", description: "What is the difference between teg-blue.org (open science) and teg-blue.com (interactive tools)." },
+  { label: "Who Created TEG-Blue?", href: "#the-founder", description: "Anna Paretas-Artacho — how TEG-Blue started, the empirical validation, and the research approach." },
   { label: "Research Identity", href: "#research-identity", description: "Open science, testable claims, invited corrections. What TEG-Blue is and is not." },
   { label: "Navigation", href: "#navigation", description: "Where to go next depending on what you need." },
 ];
@@ -85,7 +100,7 @@ export default function AboutPage() {
 
         {/* Two Sites */}
         <section id="two-sites" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Two sites</h2>
+          <h2 style={sectionHeading}>What is the difference between teg-blue.org and teg-blue.com?</h2>
           <div
             style={{
               display: "grid",
@@ -136,7 +151,7 @@ export default function AboutPage() {
 
         {/* The Founder */}
         <section id="the-founder" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>The founder</h2>
+          <h2 style={sectionHeading}>Who created TEG-Blue?</h2>
           <div
             style={{
               padding: 24,
@@ -311,6 +326,23 @@ export default function AboutPage() {
               },
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "About TEG-Blue | TEG-Blue Research",
+              url: "https://teg-blue.org/about",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

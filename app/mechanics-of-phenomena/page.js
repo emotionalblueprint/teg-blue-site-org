@@ -1,7 +1,18 @@
 import Link from "next/link";
 import { BG, TEXT, FONT, BORDER, EDITORIAL, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "What is the Mechanics of Phenomena series?",
+    answer: "A growing collection of long-form essays by Anna Paretas-Artacho where observable phenomena — from science, nature, and human behavior — reveal the structure underneath. Each essay starts from a recognizable problem, not from the TEG-Blue framework, and shows the regulatory mechanisms operating in real situations.",
+  },
+  {
+    question: "How do the Mechanics essays relate to the TEG-Blue frameworks?",
+    answer: "The 12 frameworks explain the architecture. The Mechanics essays show it operating — starting from observable problems like why smart people make bad decisions, why evidence fails to change minds, or why people behave differently depending on who is watching. TEG-Blue concepts appear when the explanation calls for them, not before.",
+  },
+];
 import MechanicsLayout from "./MechanicsLayout";
 import { SERIES } from "./mechanics-config";
 
@@ -44,6 +55,21 @@ export default function MechanicsOfPhenomenaPage() {
       <SiteHeader currentPath="/mechanics-of-phenomena" />
 
       <MechanicsLayout showSectionHeader={true}>
+        {/* Answer-first opening */}
+        <h2
+          style={{
+            fontSize: 18,
+            fontWeight: 600,
+            color: TEXT.primary,
+            marginBottom: 16,
+          }}
+        >
+          What are the Mechanics of Phenomena essays?
+        </h2>
+        <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 32, fontWeight: 500 }}>
+          The Mechanics of Phenomena is a collection of long-form essays where observable phenomena — from science, nature, and human behavior — reveal the regulatory structure underneath. Each essay starts from a recognizable problem, not from the TEG-Blue framework, and shows how nervous system mechanisms operate in real situations.
+        </p>
+
         {/* Series index — cards grouped by series */}
         <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
           {SERIES.map((series) => (
@@ -228,6 +254,24 @@ export default function MechanicsOfPhenomenaPage() {
               url: "https://teg-blue.org",
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "The Mechanics of Phenomena | TEG-Blue Research",
+              url: "https://teg-blue.org/mechanics-of-phenomena",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
+          ),
         }}
       />
     </div>

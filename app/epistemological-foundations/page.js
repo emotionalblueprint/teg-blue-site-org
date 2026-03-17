@@ -1,13 +1,28 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
-import { generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const FAQ_ITEMS = [
+  {
+    question: "Are emotions irrational?",
+    answer: "No. TEG-Blue's epistemological foundation rejects the false binary between emotion and rationality. Emotions are biological information — the nervous system signalling safety or threat. They are data from a guidance system that predates language and cognition.",
+  },
+  {
+    question: "What happens when we suppress emotions?",
+    answer: "Suppressing emotional input does not make decisions more logical — it makes them less informed. 'Pure rationality' is a form of cognitive limitation, not cognitive superiority, because it removes crucial information about meaning, safety, and connection.",
+  },
+  {
+    question: "Is TEG-Blue a self-help system?",
+    answer: "No. TEG-Blue is positioned as a mapping system for tracking emotional patterns, not a belief system for fixing emotions. It focuses on understanding the logic and patterns of emotions rather than trying to change emotional experiences.",
+  },
+];
 
 const SIDEBAR_SECTIONS = [
   { label: "Core Thesis", href: "#core-thesis", description: "Emotion is data — biological information the nervous system uses to evaluate safety, not noise to be filtered out." },
   { label: "Primary Concepts", href: "#primary-concepts", description: "Emotion ≠ irrational. Emotion = data. Emotion is relational, not disruptive." },
   { label: "Secondary Concepts", href: "#secondary-concepts", description: "Emotion as survival signal. Ignoring emotions means less information. Pattern recognition, not self-help." },
-  { label: "What This Explains", href: "#what-this-explains", description: "What becomes visible when emotion is treated as information rather than interference." },
+  { label: "What This Explains", href: "#what-this-explains", description: "What does treating emotions as data explain? What becomes visible when emotion is information." },
   { label: "Connection to TEG-Blue", href: "#connection-to-teg-blue", description: "How these epistemological foundations underpin the entire framework architecture." },
 ];
 
@@ -269,7 +284,7 @@ export default function EpistemologicalFoundationsPage() {
         {/* What This Framework Explains */}
         <section id="what-this-explains" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            What This Framework Explains
+            What does treating emotions as data explain?
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
             <ExplanationCard
@@ -327,7 +342,7 @@ export default function EpistemologicalFoundationsPage() {
         {/* Why This Matters — Implications Grid */}
         <section id="why-this-matters" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Why This Matters
+            Why does it matter that emotions are biological information?
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
             The implications of treating emotions as valid data ripple through every aspect of human experience.
@@ -530,6 +545,22 @@ export default function EpistemologicalFoundationsPage() {
               { name: "Home", url: "/" },
               { name: "Epistemological Foundations", url: "/epistemological-foundations" },
             ])
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateSpeakableJsonLd({
+              name: "Epistemological Foundations | TEG-Blue Research",
+              url: "https://teg-blue.org/epistemological-foundations",
+              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
+            })
           ),
         }}
       />
