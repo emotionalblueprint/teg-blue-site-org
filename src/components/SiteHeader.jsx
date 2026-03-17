@@ -50,6 +50,7 @@ const NAV_ITEMS = [
   { label: "Publications", href: "/publications" },
   { label: "Scientific Foundations", href: "/scientific-foundations" },
   { label: "Glossary", href: "/glossary" },
+  { label: "Reframes", href: "/reframes" },
   { label: "AI Safety", href: "/ai-safety" },
   { label: "About", href: "/about" },
   { label: "Ethics", href: "/ethics" },

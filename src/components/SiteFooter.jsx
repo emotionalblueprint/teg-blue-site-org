@@ -54,6 +54,10 @@ export default function SiteFooter() {
         <Link href="/ethics" style={{ color: TEXT.hint, textDecoration: "none" }}>
           Ethics
         </Link>
+        {" · "}
+        <Link href="/reframes" style={{ color: TEXT.hint, textDecoration: "none" }}>
+          Reframes
+        </Link>
       </p>
 
       {/* Utility links */}
@@ -105,7 +109,7 @@ export default function SiteFooter() {
           Explore TEG-Blue.com →
         </a>
         <p style={{ fontSize: 10, color: TEXT.micro, marginTop: 6 }}>
-          Circuit Board · Four-Mode Gradient · Emotional Tools
+          Four-Mode Gradient · Emotional Tools
         </p>
       </div>
 

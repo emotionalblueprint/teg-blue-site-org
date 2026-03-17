@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
 
 /**
@@ -112,6 +113,22 @@ export default function CommonUnderstanding({ terms = [] }) {
           </article>
         ))}
       </div>
+
+      <Link
+        href="/reframes"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          fontSize: 13,
+          fontFamily: FONT.mono,
+          color: SPECTRUM.slate,
+          textDecoration: "none",
+          marginTop: 14,
+        }}
+      >
+        See all reframes →
+      </Link>
     </section>
   );
 }

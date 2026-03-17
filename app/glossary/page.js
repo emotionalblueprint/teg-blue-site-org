@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import GlossaryList from "./GlossaryList";
@@ -1863,7 +1864,7 @@ export default function GlossaryPage() {
           <ResearcherHero
             badge="GLOSSARY"
             title="Key Terms & Concepts"
-            description="Definitions for regulatory states, complexity markers, and core framework concepts used throughout TEG-Blue research."
+            description={<>Definitions for regulatory states, complexity markers, and core framework concepts used throughout TEG-Blue research. New to TEG-Blue? Start with <Link href="/reframes" style={{ color: SPECTRUM.azure, textDecoration: "none" }}>the reframes</Link> — common terms traced back to the nervous system.</>}
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
