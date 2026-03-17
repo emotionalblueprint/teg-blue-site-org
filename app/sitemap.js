@@ -14,7 +14,7 @@ const PAGE_DATES = {
   '/models': '2026-03-05',
   '/model/m1-inner-compass': '2026-03-05',
   '/model/m2-three-awareness-capacities': '2026-03-05',
-  '/model/m3-the-open-cycle': '2026-03-05',
+  '/model/m3-regulation-capacities': '2026-03-17',
   '/glossary': '2026-02-15',
   '/methodology': '2026-02-18',
   '/citations': '2026-02-12',
@@ -37,6 +37,7 @@ const PAGE_DATES = {
   '/framework/f12-two-information-systems': '2026-03-04',
   '/mechanics-of-phenomena': '2026-03-10',
   '/reframes': '2026-03-17',
+  '/explore/labels': '2026-03-17',
 }
 
 export default function sitemap() {
@@ -105,8 +106,8 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/model/m3-the-open-cycle`,
-      lastModified: new Date(PAGE_DATES['/model/m3-the-open-cycle']),
+      url: `${baseUrl}/model/m3-regulation-capacities`,
+      lastModified: new Date(PAGE_DATES['/model/m3-regulation-capacities']),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
@@ -239,6 +240,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/reframes`,
       lastModified: new Date(PAGE_DATES['/reframes']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/explore/labels`,
+      lastModified: new Date(PAGE_DATES['/explore/labels']),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

@@ -26,7 +26,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Individual · F1–F3", href: "#individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
   { label: "Collective · F4–F7", href: "#collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
   { label: "The Reversal · F8–F12", href: "#the-reversal", description: "How the awareness capacities rebuild, and what makes change possible." },
-  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, The Biology of Unfinished Emotion." },
+  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, Regulation Capacities." },
   { label: "Mechanics of Phenomena", href: "#mechanics-of-phenomena", description: "Long-form essays showing these mechanisms operating in real life." },
 ];
 
@@ -491,7 +491,7 @@ export default function TheoreticalFoundationsPage() {
               </p>
             </Link>
             <Link
-              href="/model/m3-the-open-cycle"
+              href="/model/m3-regulation-capacities"
               style={{
                 padding: 20,
                 background: gradientCardBg(SPECTRUM.indigo),
@@ -513,10 +513,10 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M3 — The Biological Foundation
+                M3 — The Return Pathway
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                The Biology of Unfinished Emotion →
+                Regulation Capacities →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?

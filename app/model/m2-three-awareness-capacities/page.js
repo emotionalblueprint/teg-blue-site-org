@@ -39,7 +39,7 @@ const DRAWS_FROM = [
   { id: "F8", title: "Repairing Awareness", relation: "Repair pathway", description: "How awareness capacities that didn't develop can be rebuilt in adult relational contexts.", href: "/framework/f8-repairing-awareness" },
   { id: "F10", title: "Generational Bridges", relation: "Transmission", description: "How capacity configurations replicate across generations through the relational environment.", href: "/framework/f10-generational-bridges" },
   { id: "M1", title: "Inner Compass", relation: "Paired model", description: "The instrument these capacities calibrate. M1 maps what the compass does; M2 maps what determines how well it works.", href: "/model/m1-inner-compass" },
-  { id: "M3", title: "The Biology of Unfinished Emotion", relation: "Paired model", description: "The physiological cascade underneath. What happens in the body when awareness capacities can't process the signal.", href: "/model/m3-the-open-cycle" },
+  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "The physiological cascade underneath. What happens in the body when awareness capacities can't process the signal.", href: "/model/m3-regulation-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -1101,8 +1101,8 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   />
                   <NavRow
                     label="Understand the physiological cost of capacity gaps"
-                    href="/model/m3-the-open-cycle"
-                    linkText="M3: The Biology of Unfinished Emotion →"
+                    href="/model/m3-regulation-capacities"
+                    linkText="M3: Regulation Capacities →"
                   />
                   <NavRow
                     label="See all twelve frameworks"

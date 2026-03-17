@@ -210,8 +210,8 @@ const FRAMEWORK_GROUPS = [
   },
   {
     id: "M3",
-    label: "M3 — The Biology of Unfinished Emotion",
-    href: "/model/m3-the-open-cycle",
+    label: "M3 — Regulation Capacities",
+    href: "/model/m3-regulation-capacities",
     terms: [
       {
         title: "Trauma",

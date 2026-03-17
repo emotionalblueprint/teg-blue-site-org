@@ -26,7 +26,7 @@ const NAV_ITEMS = [
     children: [
       { label: "M1 — Inner Compass & Four-Mode Gradient", href: "/model/m1-inner-compass" },
       { label: "M2 — Three Awareness Capacities", href: "/model/m2-three-awareness-capacities" },
-      { label: "M3 — The Biology of Unfinished Emotion", href: "/model/m3-the-open-cycle" },
+      { label: "M3 — Regulation Capacities", href: "/model/m3-regulation-capacities" },
     ],
   },
   {

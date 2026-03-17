@@ -20,10 +20,10 @@ const MODEL_COLOR = SPECTRUM.indigo;
 
 const ANCHOR_SECTIONS = [
   { label: "The Common Understanding", href: "#common-understanding" },
-  { label: "The Cycle", href: "#threat-cascade" },
-  { label: "Cognitive Management", href: "#override" },
-  { label: "Stress Cycle Completion", href: "#completion" },
-  { label: "System-by-System", href: "#stays-active" },
+  { label: "The Designed Return", href: "#designed-return" },
+  { label: "The Override", href: "#override" },
+  { label: "What Stays Active", href: "#stays-active" },
+  { label: "What the Body Reaches For", href: "#vehicles" },
   { label: "Draws From", href: "#relationship-to-frameworks" },
 ];
 
@@ -31,7 +31,6 @@ const DRAWS_FROM = [
   { id: "F1", title: "Emotions as Biological Information", relation: "Primary source", description: "Names the process M3 maps physiologically. Biological Restoration — The Fork.", href: "/framework/f1-emotional-gradient" },
   { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why restoration fails — the awareness capacities that should facilitate the return.", href: "/framework/f2-awareness-calibration" },
   { id: "F3", title: "False Coherence", relation: "Cognitive maintenance", description: "How cognition constructs coherence over unfinished cycles, hiding the residue.", href: "/framework/f3-false-coherence" },
-  { id: "F8", title: "Repairing Awareness", relation: "Repair pathway", description: "How unfinished cycles can begin completing in safe relational contexts.", href: "/framework/f8-repairing-awareness" },
   { id: "F12", title: "Two Information Systems", relation: "Architecture", description: "Why cognitive understanding cannot close a somatic cycle. The two-system explanation.", href: "/framework/f12-two-information-systems" },
   { id: "M1", title: "Inner Compass", relation: "Paired model", description: "The compass that gets stuck when cycles don't complete. M3 explains the biology of why.", href: "/model/m1-inner-compass" },
   { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "The capacities that determine whether the cycle can be felt, read, and allowed to complete.", href: "/model/m2-three-awareness-capacities" },
@@ -40,11 +39,11 @@ const DRAWS_FROM = [
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "The Biology of Unfinished Emotion (M3) | TEG-Blue Research",
+  title: "Regulation Capacities (M3) | TEG-Blue Research",
   description:
-    "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Model M3 of the TEG-Blue system.",
+    "The full regulation landscape: what the body was designed to do after activation, what blocks it, what the nervous system reaches for instead, and why none of the substitutes close the cycle. Model M3 of the TEG-Blue system.",
   keywords: [
-    "open cycle",
+    "regulation capacities",
     "stress cycle",
     "HPA axis",
     "cortisol",
@@ -56,29 +55,32 @@ export const metadata = {
     "cognitive override",
     "emotional technology",
     "nervous system regulation",
+    "dorsal vagal",
+    "regulation through others",
+    "counterfeit return",
   ],
   alternates: {
-    canonical: "https://teg-blue.org/model/m3-the-open-cycle",
+    canonical: "https://teg-blue.org/model/m3-regulation-capacities",
   },
   openGraph: {
-    title: "The Biology of Unfinished Emotion — M3 Model | TEG-Blue",
+    title: "Regulation Capacities — M3 Model | TEG-Blue",
     description:
-      "The biology of unfinished emotion: what happens when a threat response activates and the cycle is not allowed to complete. The physiological foundation of the TEG-Blue system.",
-    url: "https://teg-blue.org/model/m3-the-open-cycle",
+      "The full regulation landscape: the designed return, the override, what the body reaches for instead, and why none of the substitutes close the cycle.",
+    url: "https://teg-blue.org/model/m3-regulation-capacities",
     type: "article",
     siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Biology of Unfinished Emotion — TEG-Blue M3",
+    title: "Regulation Capacities — TEG-Blue M3",
     description:
-      "The biology of unfinished emotion. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does.",
+      "What is the body doing to regulate — and is the cycle completing? The return pathway, the override, and the vehicles the nervous system reaches for instead.",
   },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────
 
-export default function M3TheOpenCyclePage() {
+export default function M3RegulationCapacitiesPage() {
   return (
     <div
       style={{
@@ -87,22 +89,21 @@ export default function M3TheOpenCyclePage() {
         fontFamily: FONT.display,
       }}
     >
-      <SiteHeader currentPath="/model/m3-the-open-cycle" />
+      <SiteHeader currentPath="/model/m3-regulation-capacities" />
 
       <PageLayout
         header={
           <>
             <ModelHero
               badge="MODEL M3"
-              title="The Biology of Unfinished Emotion"
-              subtitle="Biological Restoration — The Fork"
-              description="The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Why the body cannot receive a philosophical decision. Why the signal does not stop when access to it does."
-              coreQuestion="What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?"
+              title="Regulation Capacities"
+              subtitle="The Return Pathway"
+              description="The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. This is the physiological substrate that explains why the gradient exists, why the compass gets stuck, and why insight alone does not produce change."
+              coreQuestion="What is the body doing to regulate — and is the cycle completing?"
               drawsFrom={[
                 { label: "F1", href: "/framework/f1-emotional-gradient" },
                 { label: "F2", href: "/framework/f2-awareness-calibration" },
                 { label: "F3", href: "/framework/f3-false-coherence" },
-                { label: "F8", href: "/framework/f8-repairing-awareness" },
                 { label: "F12", href: "/framework/f12-two-information-systems" },
               ]}
               color={MODEL_COLOR}
@@ -128,12 +129,17 @@ export default function M3TheOpenCyclePage() {
               fontStyle: "italic",
             }}
           >
-            M3 is the physiological account of what F1 names <strong style={{ color: TEXT.primary }}>Biological Restoration — The Fork</strong>: the body{"'"}s designed completion process, what happens when it runs, and what happens when Cognitive Management overrides it instead. The Open Cycle is the name for the unfinished state that results.
+            M3 maps the full regulation landscape — the body{"'"}s designed return pathway, what happens when it is blocked, and the escalating sequence of substitutes the nervous system reaches for instead. Regulation is not what you do to your emotions. It is what the body does after them. The distinction changes everything.
           </p>
 
           {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
           <CommonUnderstanding
             terms={[
+              {
+                title: "Regulation",
+                commonUnderstanding: "Calming down. Managing your emotions. Getting yourself under control.",
+                definition: "Physical cleanup. Stress hormones metabolized. Muscles unclenched. Inflammatory compounds cleared. Neural circuits recovered. The body returning to its baseline state — not through a skill applied, but through a biological sequence that was already running. Regulation is not what you do to your emotions. It is what the body does after them.",
+              },
               {
                 title: "Trauma",
                 commonUnderstanding: "A terrible event that happened to you — something big enough to justify lasting pain.",
@@ -169,13 +175,13 @@ export default function M3TheOpenCyclePage() {
                   The signal without return is not a suppressed feeling. It is an open biological cycle: cortisol still releasing, amygdala still sensitising, organs still in survival configuration
                 </li>
                 <li style={propositionItemStyle}>
-                  Each unprocessed cycle adds to allostatic load — measurable cumulative wear on the body{"'"}s regulatory systems
+                  When the return pathway is blocked, the nervous system does not wait. It redirects — through substances, through physical intensity, through controlling others, through any external input that produces the neurochemical shift the body is searching for
+                </li>
+                <li style={propositionItemStyle}>
+                  Every vehicle produces real relief. None of them produce return to baseline. The distinction is biological: discharge is not completion
                 </li>
                 <li style={propositionItemStyle}>
                   The body has no mechanism for receiving philosophical decisions. Deciding an emotion is not important does not change the cortisol level. The cherry is there whether it is seen or not
-                </li>
-                <li style={propositionItemStyle}>
-                  This is the physiological substrate that explains why the gradient exists — why regulation substitutes multiply, why the compass gets stuck, why insight alone does not produce change
                 </li>
               </ul>
             </ModelPurpose>
@@ -247,15 +253,15 @@ export default function M3TheOpenCyclePage() {
 
           {/* ─── CONCEPT 2: WHAT COMPLETION REQUIRES ────── */}
           <section
-            id="completion"
-            aria-labelledby="heading-completion"
+            id="designed-return"
+            aria-labelledby="heading-designed-return"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-completion"
+              id="heading-designed-return"
               style={sectionHeadingStyle}
             >
-              2. Stress Cycle Completion — What the Body Needs
+              2. What Completion Requires
             </h2>
 
             <p style={proseStyle}>
@@ -276,8 +282,19 @@ export default function M3TheOpenCyclePage() {
               The liver metabolizes the cortisol over twenty minutes to several hours. Serotonin, GABA, and oxytocin normalize. The prefrontal cortex receives restored blood flow. Executive function, flexibility, and language return. The hippocampus encodes the experience with context — not as raw threat but as a processed event with a before and after. The cycle closes. The body returns to baseline. Allostatic load: nothing added.
             </p>
 
+            <h3 style={h3Style}>Why Cognition Cannot Close the Cycle</h3>
+            <p style={proseStyle}>
+              The prefrontal cortex and the amygdala are separate circuits. They are connected — the PFC can modulate amygdala reactivity, and the amygdala can suppress PFC function under threat — but they do not have a direct downregulation pathway from cognitive decision to hormonal cascade. Deciding the emotion is not important sends a signal through the cognitive system. The HPA axis does not receive it. The cortisol already in circulation does not respond to it.
+            </p>
+            <p style={proseStyle}>
+              Completing the cycle requires the discharge phase to begin — motor expression, breathing change, or the body moving the mobilized energy through the channels it was designed to use. This is not a cognitive operation. It is a somatic one. Understanding the need for discharge is cognitive. The discharge itself is biological. These are different actions in different systems.
+            </p>
+            <p style={proseStyle}>
+              A cognitively induced sense of calm can occur while the HPA axis continues running — the person feels calmer because their attention has shifted, while their cortisol level, immune function, and organ configuration remain in survival mode. The sensitized amygdala responds faster than the prefrontal cortex can intercept. As allostatic load increases, the window in which cognition can engage before the response fires narrows. Cognition is arriving late to a body that has already left.
+            </p>
+
             <OperationalStatement color={MODEL_COLOR}>
-              The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. What is commonly called {"\""}regulation{"\""} is often its opposite — see <Link href="/framework/f1-emotional-gradient#the-fork" style={{ color: MODEL_COLOR }}>F1: The Fork</Link> for the full account of this distinction.
+              The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. Understanding is cognitive. The cycle is biological. More understanding does not close an open biological cycle. What closes it is what the body was always waiting for — completion.
             </OperationalStatement>
 
             <Link
@@ -306,13 +323,13 @@ export default function M3TheOpenCyclePage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — trauma as incomplete threat response; the body completing the cycle through discharge. <strong style={{ color: TEXT.primary }}>Stress cycle completion:</strong> Nagoski &amp; Nagoski (2019) — the biological stress cycle requires completion, not management. <strong style={{ color: TEXT.primary }}>Vagal pathways:</strong> Porges (2011) — the vagal brake, ventral vagal complex, co-regulation as the primary completion pathway.
+                  <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — trauma as incomplete threat response; the body completing the cycle through discharge. <strong style={{ color: TEXT.primary }}>Stress cycle completion:</strong> Nagoski &amp; Nagoski (2019) — the biological stress cycle requires completion, not management. <strong style={{ color: TEXT.primary }}>Vagal pathways:</strong> Porges (2011) — the vagal brake, ventral vagal complex, co-regulation as the primary completion pathway. <strong style={{ color: TEXT.primary }}>Dual-process theory:</strong> Kahneman (2011) — System 1 and System 2 as distinct processing systems with different update mechanisms.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  The stage-by-stage physiological mechanism of completion — why each stage is necessary for the next to occur, and specifically what the hippocampal feedback loop requires. Completion is not metaphorical. It is a biological sequence with identifiable conditions. Understanding those conditions precisely changes what {"'"}not completing{"'"} means.
+                  The stage-by-stage physiological mechanism of completion — why each stage is necessary for the next to occur, and specifically what the hippocampal feedback loop requires — alongside the precise physiological explanation for why the cognitive system cannot close a biological cycle. The insight-behaviour gap is a correct description of two systems with different update requirements. Knowing this changes the intervention: not more insight, but the biological conditions the cycle was always waiting for.
                 </p>
               </ExpandableSection>
             </div>
@@ -385,7 +402,7 @@ export default function M3TheOpenCyclePage() {
               id="heading-stays-active"
               style={sectionHeadingStyle}
             >
-              4. What Stays Active
+              4. What Stays Active — Debris and Accumulation
             </h2>
 
             <p style={proseStyle}>
@@ -431,38 +448,7 @@ export default function M3TheOpenCyclePage() {
               </div>
             </div>
 
-            <OperationalStatement color={MODEL_COLOR}>
-              The accumulation is not in the mind. It is in the cortisol receptor density, the hippocampal volume, the vagal tone, the amygdala sensitivity threshold. Understanding the accumulation cognitively does not reverse it — because the understanding happens in the cognitive system and the accumulation happened in the biological one.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="What the field established" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — cumulative physiological cost of chronic activation. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004) — organ-level consequences of sustained cortisol. <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2002); Damasio (1994) — how chronic activation impairs the body{"'"}s capacity to read its own internal state.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What M3 connects" type="opendata">
-                <p style={expandedProseStyle}>
-                  The system-by-system account of what stays active after a single unfinished cycle — not just accumulated over years but present in the hours after a single override. This makes the cost concrete and immediate rather than cumulative and abstract. And it connects each physiological residue directly to the felt experience: depleted serotonin is the irritability that appears hours later; suppressed oxytocin is the difficulty being comforted; the sensitised amygdala is the disproportionate reaction to the next small thing.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── CONCEPT 5: THE ACCUMULATION EFFECT ─────── */}
-          <section
-            id="accumulation"
-            aria-labelledby="heading-accumulation"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-accumulation"
-              style={sectionHeadingStyle}
-            >
-              5. Allostatic Load — The Accumulation Effect
-            </h2>
-
+            <h3 style={h3Style}>The Accumulation Effect</h3>
             <p style={proseStyle}>
               One unprocessed cycle is recoverable. The body is resilient. A single override, with sufficient rest, movement, and co-regulation in the period that follows, leaves little permanent trace. The problem is not the single override. The problem is the pattern.
             </p>
@@ -493,82 +479,227 @@ export default function M3TheOpenCyclePage() {
             </div>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The gradient moves in one direction under load not because people choose to become more controlling or more dominating, but because a nervous system running on an increasingly sensitised amygdala and increasingly depleted serotonin has a narrowing window of available response. The gradient is a biological spectrum.
+              The accumulation is not in the mind. It is in the cortisol receptor density, the hippocampal volume, the vagal tone, the amygdala sensitivity threshold. Understanding the accumulation cognitively does not reverse it — because the understanding happens in the cognitive system and the accumulation happened in the biological one.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen &amp; Stellar (1993); McEwen (2000) — cumulative physiological cost, measured longitudinally. <strong style={{ color: TEXT.primary }}>Epigenetics:</strong> Meaney (2001) — chronic stress changes gene expression patterns governing stress reactivity. <strong style={{ color: TEXT.primary }}>Neuroplasticity:</strong> van der Kolk (2014); Bremner (2006) — hippocampal volume reduction under chronic cortisol exposure.
+                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen &amp; Stellar (1993); McEwen (2000) — cumulative physiological cost of chronic activation. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004) — organ-level consequences of sustained cortisol. <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2002); Damasio (1994) — how chronic activation impairs the body{"'"}s capacity to read its own internal state. <strong style={{ color: TEXT.primary }}>Epigenetics:</strong> Meaney (2001) — chronic stress changes gene expression patterns governing stress reactivity.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  Allostatic load mapped to the individual emotional cycle and to gradient position. The progression from a single open cycle to structural reorganisation is traced stage by stage — making visible that the gradient shift from Protection to chronic Control to chronic Domination is not a psychological trajectory but a biological one. Each gradient position corresponds to a specific physiological load level. The mode is a body in a specific hormonal configuration.
+                  The system-by-system account of what stays active after a single unfinished cycle and the progression from low load to structural reorganisation — not just accumulated over years but present in the hours after a single override. This makes the cost concrete and immediate. It also connects each physiological residue directly to the felt experience: depleted serotonin is the irritability that appears hours later; suppressed oxytocin is the difficulty being comforted; the sensitised amygdala is the disproportionate reaction to the next small thing. Allostatic load mapped to gradient position: each position corresponding to a specific physiological load level.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONCEPT 6: WHY COGNITION CANNOT CLOSE ──── */}
+          {/* ─── CONCEPT 5: WHEN THE SIGNAL GOES SILENT ──── */}
           <section
-            id="why-cognition-fails"
-            aria-labelledby="heading-why-cognition-fails"
+            id="signal-collapse"
+            aria-labelledby="heading-signal-collapse"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-why-cognition-fails"
+              id="heading-signal-collapse"
               style={sectionHeadingStyle}
             >
-              6. Why Cognition Cannot Close the Cycle
-            </h2>
-
-            <h2 id="heading-cognition-cycle-question" style={sectionHeadingStyle}>
-              Why can't cognitive understanding close a biological stress cycle?
+              5. When the Signal Goes Silent
             </h2>
 
             <p style={proseStyle}>
-              This is the physiological foundation of F12{"'"}s core insight — that the two information systems cannot resolve each other through insight alone. It is not a philosophical position. It is a circuit map.
+              There is a second failure mode. Not escalation — collapse.
+            </p>
+            <p style={proseStyle}>
+              When the return has not completed across enough cycles, across enough time, the nervous system can shift from chronic high-activation to something different: the disappearance of signal entirely. The body stops broadcasting. Not because the debris has cleared — it has not. But because the alert system, finding no resolution across repeated cycles, begins to suppress its own output.
             </p>
 
-            <h3 style={h3Style}>The Mechanism</h3>
+            <h3 style={h3Style}>What This Produces</h3>
             <p style={proseStyle}>
-              The prefrontal cortex and the amygdala are separate circuits. They are connected — the PFC can modulate amygdala reactivity, and the amygdala can suppress PFC function under threat — but they do not have a direct downregulation pathway from cognitive decision to hormonal cascade. Deciding the emotion is not important sends a signal through the cognitive system. The HPA axis does not receive it. The cortisol already in circulation does not respond to it.
+              <strong style={{ color: TEXT.primary }}>Emotional flatness.</strong> Not the absence of emotion — the absence of access to it. The signal is still present at the physiological level. The person cannot feel it.
             </p>
             <p style={proseStyle}>
-              Completing the cycle requires the discharge phase to begin — motor expression, breathing change, or the body moving the mobilized energy through the channels it was designed to use. This is not a cognitive operation. It is a somatic one. Understanding the need for discharge is cognitive. The discharge itself is biological. These are different actions in different systems.
+              <strong style={{ color: TEXT.primary }}>Loss of interoceptive contact.</strong> The body{"'"}s internal communications — hunger, tension, desire, dread — become unreliable or absent. The person reports feeling nothing, or not knowing what they feel. This is not psychological resistance. It is the degradation of the signal channel itself.
             </p>
             <p style={proseStyle}>
-              The HPA negative feedback loop requires the hippocampus to detect that cortisol levels are falling — which requires the discharge to have begun, the parasympathetic return to have engaged, and sufficient time for cortisol to metabolize. A cognitive reframe does not produce any of these conditions. A cognitively induced sense of calm can occur while the HPA axis continues running — the person feels calmer because their attention has shifted, while their cortisol level, immune function, and organ configuration remain in survival mode.
+              <strong style={{ color: TEXT.primary }}>Anhedonia.</strong> The dopaminergic system, chronically depleted by repeated activation-without-resolution, stops registering reward. Things that should produce response do not.
             </p>
             <p style={proseStyle}>
-              The sensitized amygdala responds faster than the prefrontal cortex can intercept. As allostatic load increases, the window in which cognition can engage before the response fires narrows. In high-load states, by the time the prefrontal cortex has formed a thought about the situation, the body has already reconfigured. Cognition is arriving late to a body that has already left.
+              <strong style={{ color: TEXT.primary }}>Social withdrawal that does not register as withdrawal.</strong> Connection requires biological resources the system no longer has. The person is not avoiding others — they have lost the circuitry that makes contact feel like anything.
             </p>
             <p style={proseStyle}>
-              What moves the cycle is what the cycle was designed to respond to: somatic discharge, parasympathetic engagement, cortisol clearance, co-regulation. These are biological inputs for a biological process. Cognition can support the conditions for these inputs — it can choose to rest, to move, to be with a regulated other. But it cannot substitute for them.
+              This is the dorsal vagal state — the oldest branch of the vagus nerve, the immobilization response the nervous system reaches for when neither fight, flight, nor fawn has produced safety across sustained time. Not a choice. A reorganization.
+            </p>
+            <p style={proseStyle}>
+              The person in this state is not without activation. The debris is still there, still accumulating. What is gone is the felt sense of it — and with that, the signal the body would need in order to begin the return.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Understanding is cognitive. The cycle is biological. More understanding does not close an open biological cycle. What closes it is what the body was always waiting for — completion.
+              The alarm does not always get louder. Sometimes the body stops letting itself hear it. The signal goes flat. The debris remains.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="What the field established" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Dual-process theory:</strong> Kahneman (2011) — System 1 and System 2 as distinct processing systems with different update mechanisms. <strong style={{ color: TEXT.primary }}>Vagal completion:</strong> Porges (2011) — the vagus nerve as the completion pathway; co-regulation as the primary biological input for return. <strong style={{ color: TEXT.primary }}>Somatic completion:</strong> Levine (1997) — the body completing what the mind cannot finish for it.
+                  <strong style={{ color: TEXT.primary }}>Dorsal vagal:</strong> Porges (2011) — the oldest vagal branch, immobilization as the final autonomic defence. <strong style={{ color: TEXT.primary }}>Dissociation:</strong> van der Kolk (2014) — disconnection from bodily experience as a survival response to overwhelming activation. <strong style={{ color: TEXT.primary }}>Anhedonia:</strong> Der-Avakian &amp; Markou (2012) — dopaminergic depletion under chronic stress as the neurobiological basis of reward insensitivity.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  The precise physiological explanation for why the cognitive system cannot close a biological cycle — not as a limitation to be lamented but as a structural fact with direct implications. The insight-behaviour gap is a correct description of two systems with different update requirements. Knowing this changes the intervention: not more insight, but the biological conditions the cycle was always waiting for.
+                  The dorsal vagal shift as a regulation failure distinct from escalation — not louder alarm but signal collapse. The person who is emotionally flat is not calm. The person who has withdrawn is not choosing solitude. The debris is still accumulating while the system registers itself as having stopped responding. This matters for practitioners because the presentation is quiet. The distress is invisible. The allostatic load is not.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONCEPT 7: THE OPEN CYCLE AND THE GRADIENT ─ */}
+          {/* ─── CONCEPT 6: REGULATION THROUGH OTHERS ────── */}
+          <section
+            id="regulation-through-others"
+            aria-labelledby="heading-regulation-through-others"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-regulation-through-others"
+              style={sectionHeadingStyle}
+            >
+              6. Regulation Through Others
+            </h2>
+
+            <p style={proseStyle}>
+              When the internal return pathway is blocked — when the nervous system cannot complete the cycle alone — it redirects. One direction: outward. Using control over others to discharge accumulated activation.
+            </p>
+            <p style={proseStyle}>
+              This is not a description of dysfunctional behaviour. It is a description of a biological mechanism.
+            </p>
+
+            <h3 style={h3Style}>Why Controlling Others Produces Real Relief</h3>
+            <p style={proseStyle}>
+              The nervous system perceives controllability as safety. When activation is uncontrollable, the stress response escalates. When the system perceives that it has restored control — over any outcome, including another person{"'"}s behaviour — cortisol partially suppresses. The amygdala calms, briefly. The body registers: threat becoming manageable.
+            </p>
+            <p style={proseStyle}>
+              Dominant behaviour produces a measurable neurochemical shift: a temporary cortisol drop, a testosterone spike, brief relief. The body learns this. Three activations that resolved with that behaviour is enough for conditioning to begin.
+            </p>
+            <p style={proseStyle}>
+              Expressing activation outward — criticizing, confronting, managing, punishing — also discharges some of the sympathetic energy that was mobilized for action. The stress response prepared the body to do something. Doing something uses some of that preparation.
+            </p>
+
+            <h3 style={h3Style}>What This Looks Like</h3>
+            <p style={proseStyle}>
+              Managing another person{"'"}s tone, behaviour, or emotional state in order to feel less activated. Criticizing to discharge the pressure of unresolved internal tension. Punishing to create a sense of consequence and control in a system that feels uncontrollable. Needing others to respond in specific ways before the body can settle.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Controlling others produces a real neurochemical shift. The body learns to repeat it because it worked. Three episodes are enough for conditioning to begin.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="What the field established" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Controllability and stress:</strong> Maier &amp; Seligman (2016) — perceived controllability modulates the stress response at the neurochemical level. <strong style={{ color: TEXT.primary }}>Dominance and hormones:</strong> Archer (2006); Mazur &amp; Booth (1998) — testosterone-cortisol dynamics in dominant behaviour. <strong style={{ color: TEXT.primary }}>Conditioning:</strong> Pavlov; Skinner — classical and operant conditioning of arousal-reduction behaviours.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What M3 connects" type="opendata">
+                <p style={expandedProseStyle}>
+                  The specific neurochemical mechanism by which controlling others produces real physiological relief — not metaphorical relief, not psychological satisfaction, but a measurable cortisol drop and testosterone shift. This explains why the behaviour repeats: it worked. It also explains why it escalates: the underlying debris is untouched, so the relief is temporary and the dose must increase. The person is not choosing cruelty. The nervous system is choosing what produced the only signal it could interpret as safety.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── CONCEPT 7: EVERYTHING BECOMES A VEHICLE ── */}
+          <section
+            id="vehicles"
+            aria-labelledby="heading-vehicles"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-vehicles"
+              style={sectionHeadingStyle}
+            >
+              7. Everything Becomes a Vehicle
+            </h2>
+
+            <p style={proseStyle}>
+              The nervous system{"'"}s search for relief does not stop with other people. Any external input that produces the neurochemical shift becomes a potential vehicle. The mechanism is identical across all of them: temporary discharge, no resolution, escalating need.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Substances.</strong> Alcohol, stimulants, opioids, cannabis — each acts on a specific part of the stress response. Each works. Each requires more over time, because the underlying cycles are still open.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Physical intensity.</strong> Compulsive exercise, risk-taking, extreme sports, physical pain — high-intensity physical states produce the discharge the stress response was designed to complete through movement. The relief is real. The cycle stays open because the activation source — the accumulated debris — is not what the physical intensity is addressing.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Work, achievement, productivity.</strong> The nervous system experiences goal pursuit as controllability, and controllability as safety. When the work stops, the debris is still there.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Screens, food, consumption.</strong> Dopaminergic stimulation through novelty, reward, or sensory input provides brief modulation of the alert state. The cycle does not close.
+            </p>
+
+            <h3 style={h3Style}>The Healthy Vehicle</h3>
+            <p style={proseStyle}>
+              The same mechanism runs through activities the person believes are resolving the problem. Exercise chosen for intensity rather than completion. Meditation extended past its natural endpoint, chased for the calm rather than entered for what is there. Breathwork, cold exposure, fasting, sensory silence — each one capable of producing real physiological shift. Each one, when the return pathway is blocked, used as discharge. The relief is real. The debris is untouched. Tomorrow the same dose is required, and the next day slightly more.
+            </p>
+            <p style={proseStyle}>
+              The body does not distinguish the source of discharge. It distinguishes only whether the cycle completed. The person who runs daily and still cannot settle is not doing the wrong activity. The activity is doing the wrong job — covering the alarm rather than closing it.
+            </p>
+
+            <h3 style={h3Style}>The Counterfeit Return</h3>
+            <p style={proseStyle}>
+              At the far end of the vehicle arc, something different happens. Not discharge that falls short of resolution. A simulation of resolution itself.
+            </p>
+            <p style={proseStyle}>
+              The combination of stimuli available at this end — domination, violation, taboo, the exercise of absolute power over another body — produces the most potent neurochemical event the nervous system can access. Dopamine surges. Testosterone spikes. Cortisol suppresses. Adrenaline floods and clears. The amygdala quiets. The pressure releases. The body registers: <em>finished.</em>
+            </p>
+            <p style={proseStyle}>
+              The sequence did not run. The body just stopped feeling it running.
+            </p>
+            <p style={proseStyle}>
+              The HPA axis never received the hippocampal all-clear. Cortisol was suppressed by intensity — not cleared by completion. It rebounds. Serotonin, drawn down across every prior cycle, depletes further in the crash. Oxytocin was never produced — this is a domination state, not a bonding state. The neural circuits that were mid-loop at activation have not completed. They have been overridden by a signal strong enough to silence them. They are still running underneath.
+            </p>
+            <p style={proseStyle}>
+              Every other vehicle produces a discharge that falls short of return. The person can feel the gap — residual tension, unease, something unfinished. That gap is information. The extreme vehicle closes the gap. Not by resolving it. By producing a state that feels identical to resolution. The body learns: <em>this is what finished feels like.</em> Which means the actual conditions for biological return — safety, time, co-regulation — begin to produce nothing recognizable. They are too quiet. The body has been calibrated to an intensity that the real return sequence cannot match.
+            </p>
+
+            <h3 style={h3Style}>Why None of It Resolves</h3>
+            <p style={proseStyle}>
+              Every external regulation vehicle produces discharge. None of them produce return to baseline. The distinction is biological.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Discharge</strong> is the release of mobilized energy. It reduces the felt pressure. It temporarily suppresses parts of the stress response. Discharge is real. It is not resolution.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Return to baseline</strong> requires the specific biological sequence to complete: the discharge phase, the parasympathetic return, the HPA negative feedback loop, cortisol clearance, the restoration of serotonin and oxytocin, the hippocampus encoding the event as finished. These are physiological events. They require specific inputs — somatic and relational, not external-vehicle-shaped.
+            </p>
+            <p style={proseStyle}>
+              None of these vehicles contain their own stopping mechanism. The biological return sequence does — it has a built-in endpoint: cortisol clears, the hippocampus sends the all-clear, the HPA axis stands down. External vehicles have no such endpoint. They have no signal that tells the system: <em>finished.</em>
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The vehicle changes. The mechanism does not. Temporary discharge. No resolution. The bar rises. The alarm stays on. The body is still waiting for what it was always waiting for: the completion the vehicle cannot provide.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="What the field established" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Substance mechanisms:</strong> Koob &amp; Le Moal (2001) — neurobiological mechanisms of addiction as failed regulation attempts. <strong style={{ color: TEXT.primary }}>Exercise and stress:</strong> Salmon (2001) — exercise as stress discharge without cycle completion. <strong style={{ color: TEXT.primary }}>Behavioural conditioning:</strong> Robinson &amp; Berridge (2003) — incentive salience and the escalation of wanting without liking.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What M3 connects" type="opendata">
+                <p style={expandedProseStyle}>
+                  The unified mechanism across all vehicles — from substances through healthy exercise through domination — as the same biological search at different intensity levels. The key insight is the healthy vehicle: the right activity doing the wrong job. This reframes the conversation from {"'"}good coping versus bad coping{"'"} to a single question: is the cycle completing? If the answer is no, the vehicle will escalate regardless of how socially acceptable it appears. The counterfeit return explains why some vehicles produce the signature of completion while leaving the debris untouched — and why the interval between episodes shortens rather than lengthens.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── CONCEPT 8: THE REGULATION LANDSCAPE ─────── */}
           <section
             id="gradient"
             aria-labelledby="heading-gradient"
@@ -578,32 +709,26 @@ export default function M3TheOpenCyclePage() {
               id="heading-gradient"
               style={sectionHeadingStyle}
             >
-              7. The Open Cycle and the Gradient
+              8. The Regulation Landscape and the Gradient
             </h2>
 
             <p style={proseStyle}>
-              M3 is the ground floor of the TEG-Blue architecture. It is the physiological substrate that the gradient sits on top of — the reason the gradient exists as a biological progression rather than a behavioural one.
+              M3 is the ground floor of the TEG-Blue architecture. It maps the full regulation landscape — the designed return, the override, the debris, the signal collapse, the vehicles, the counterfeit return — and connects each to a specific position on the four-mode gradient.
             </p>
             <p style={proseStyle}>
-              The existing stress physiology literature — Sapolsky, McEwen, Porges — describes physiological states without a gradient model connecting them to each other as a developmental and behavioral sequence. The trauma literature — van der Kolk, Levine, Herman — describes how unprocessed activation shapes identity and behavior over time, but without the specific hormonal and organ-level mapping of each stage. The gap between them is exactly the space M3 and the TEG-Blue gradient occupy together.
+              Each position on the gradient corresponds to a physiological state and a regulation strategy.
             </p>
             <p style={proseStyle}>
-              Each position on the gradient corresponds to a physiological state.
+              <strong style={{ color: TEXT.primary }}>Connection Mode — System{"'"}s Home Base.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Cycles complete. The return pathway is available.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Connection Mode — System{"'"}s Home Base.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity.
+              <strong style={{ color: TEXT.primary }}>Protection Mode — The System on Emergency Fuel.</strong> Acute SNS activation — designed to be temporary, biologically expensive, and followed by return. The body is in the cycle. Completion is pending.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Protection Mode — The System on Emergency Fuel.</strong> Acute SNS activation — designed to be temporary, biologically expensive, and followed by return.
+              <strong style={{ color: TEXT.primary }}>Control Mode.</strong> The nervous system in sustained SNS activation, with chronically elevated cortisol and norepinephrine, recruiting cognitive resources and external vehicles to manage a body that has not returned. Regulation through others begins here.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Control Mode.</strong> The nervous system in sustained SNS activation, with chronically elevated cortisol and norepinephrine, recruiting cognitive resources to manage a body that has not returned.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Domination Mode.</strong> The nervous system at maximum sympathetic load, with emotional resonance collapsed and the system running on urgency alone.
-            </p>
-            <p style={proseStyle}>
-              This is why Biological Restoration is <strong style={{ color: TEXT.primary }}>The Fork</strong> — the point in the cycle where the path splits. When the cycle completes, the compass returns to Connection. When Cognitive Management overrides it, The Open Cycle begins — and everything from F2 to F7 describes what happens next.
+              <strong style={{ color: TEXT.primary }}>Domination Mode.</strong> The nervous system at maximum sympathetic load, with emotional resonance collapsed and the system running on urgency alone. The counterfeit return lives here — the only intensity level that still moves the needle.
             </p>
 
             {/* Gradient-physiology mapping */}
@@ -611,28 +736,28 @@ export default function M3TheOpenCyclePage() {
               <div style={{ display: "grid", gridTemplateColumns: "140px 1fr 1fr", minWidth: 600 }}>
                 <div style={gridHeaderStyle}>Mode</div>
                 <div style={gridHeaderStyle}>Physiological State</div>
-                <div style={gridHeaderStyle}>Cycle Status</div>
+                <div style={gridHeaderStyle}>Regulation Strategy</div>
 
                 <GridCell first>Connection</GridCell>
                 <GridCell>Parasympathetic dominance — cortisol cleared, oxytocin available, PFC at capacity</GridCell>
-                <GridCell>Cycle complete or never opened</GridCell>
+                <GridCell>Cycle complete or never opened. Biological return available.</GridCell>
 
                 <GridCell first>Protection</GridCell>
                 <GridCell>Acute SNS activation — designed to be temporary and followed by return</GridCell>
-                <GridCell>Cycle open — completion pending</GridCell>
+                <GridCell>Cycle open — completion pending. Body searching for discharge.</GridCell>
 
                 <GridCell first>Control</GridCell>
                 <GridCell>Sustained SNS activation — chronically elevated cortisol and norepinephrine</GridCell>
-                <GridCell>Cycle chronically open — completion blocked</GridCell>
+                <GridCell>Cycle chronically open. External vehicles recruited. Regulation through others.</GridCell>
 
                 <GridCell first>Domination</GridCell>
                 <GridCell>Maximum sympathetic load — emotional resonance collapsed</GridCell>
-                <GridCell>Multiple open cycles — structural reorganisation</GridCell>
+                <GridCell>Multiple open cycles. Counterfeit return. Only extreme intensity registers.</GridCell>
               </div>
             </div>
 
             <p style={proseStyle}>
-              The external regulation substitutes that F3 through F7 describe are not psychological choices made in a vacuum. They are what a nervous system with an open cycle reaches for. When the internal return pathway is blocked — when the cycle cannot complete because SEA is offline, because suppression is the habitual response, because the developmental environment never provided co-regulation — the nervous system finds external inputs to regulate what it cannot regulate internally.
+              The external regulation substitutes that F3 through F7 describe are not psychological choices made in a vacuum. They are what a nervous system with open cycles reaches for. When the internal return pathway is blocked — when the cycle cannot complete because SEA (Self-Emotional Awareness) is offline, because suppression is the habitual response, because the developmental environment never provided co-regulation — the nervous system finds external inputs to regulate what it cannot regulate internally.
             </p>
             <p style={proseStyle}>
               The return direction follows the same logic. Moving back toward Connection is not a matter of deciding to be different. It is a matter of creating the biological conditions for the cycle to complete: sufficient safety for discharge to begin, vagal engagement, cortisol clearance, the experience of co-regulation. These conditions are relational, somatic, and time-dependent. They cannot be rushed. They can only be allowed.
@@ -647,7 +772,7 @@ export default function M3TheOpenCyclePage() {
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  The gradient as a biological progression — each position corresponding to a specific hormonal configuration and cycle status. The gap between the stress physiology literature (which describes states) and the trauma literature (which describes trajectories) is exactly the space M3 and the gradient occupy together. The mode is a body in a specific physiological state, shaped by the number and depth of its open cycles.
+                  The full regulation landscape — from biological return through override through debris through signal collapse through vehicles through the counterfeit return — mapped onto the four-mode gradient as a single, continuous physiological progression. The gap between the stress physiology literature (which describes states) and the trauma literature (which describes trajectories) is exactly the space M3 and the gradient occupy together. The mode is a body in a specific physiological state, running a specific regulation strategy, shaped by the number and depth of its open cycles.
                 </p>
               </ExpandableSection>
             </div>
@@ -657,7 +782,7 @@ export default function M3TheOpenCyclePage() {
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="m3-the-open-cycle" type="model" />
+          <ConnectedResearch slug="m3-regulation-capacities" type="model" />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
@@ -685,6 +810,16 @@ export default function M3TheOpenCyclePage() {
                 </thead>
                 <tbody>
                   <NavRow
+                    label="Understand the instrument"
+                    href="/model/m1-inner-compass"
+                    linkText="M1: Inner Compass →"
+                  />
+                  <NavRow
+                    label="Understand what determines whether the cycle is felt"
+                    href="/model/m2-three-awareness-capacities"
+                    linkText="M2: Three Awareness Capacities →"
+                  />
+                  <NavRow
                     label="Understand what the signal is before the cycle opens"
                     href="/framework/f1-emotional-gradient"
                     linkText="F1: The Emotional Gradient →"
@@ -700,30 +835,15 @@ export default function M3TheOpenCyclePage() {
                     linkText="F3: False Coherence →"
                   />
                   <NavRow
-                    label="Understand the awareness capacity that enables cycle completion"
-                    href="/model/m2-three-awareness-capacities"
-                    linkText="M2: Three Awareness Capacities →"
-                  />
-                  <NavRow
                     label="Understand why insight alone cannot close the cycle"
                     href="/framework/f12-two-information-systems"
                     linkText="F12: The Two Information Systems →"
-                  />
-                  <NavRow
-                    label="Understand the full gradient that the open cycle produces"
-                    href="/model/m1-inner-compass"
-                    linkText="M1: Inner Compass →"
                   />
                   <NavRow
                     label="Explore the interactive tools"
                     href="https://teg-blue.com/emotional-tools"
                     linkText="Emotional Tools (teg-blue.com) →"
                     external
-                  />
-                  <NavRow
-                    label="Collaborate on validating this model"
-                    href="/collaborate"
-                    linkText="Collaborate →"
                   />
                 </tbody>
               </table>
@@ -742,10 +862,10 @@ export default function M3TheOpenCyclePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            "@id": "https://teg-blue.org/model/m3-the-open-cycle#article",
-            headline: "The Biology of Unfinished Emotion: Biological Restoration — The Fork",
+            "@id": "https://teg-blue.org/model/m3-regulation-capacities#article",
+            headline: "Regulation Capacities: The Return Pathway",
             description:
-              "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead. Model M3 of the TEG-Blue system.",
+              "The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. Model M3 of the TEG-Blue system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -757,7 +877,7 @@ export default function M3TheOpenCyclePage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-06",
-            dateModified: "2026-03-06",
+            dateModified: "2026-03-17",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -767,14 +887,16 @@ export default function M3TheOpenCyclePage() {
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://teg-blue.org/model/m3-the-open-cycle",
+              "@id": "https://teg-blue.org/model/m3-regulation-capacities",
             },
             about: [
+              { "@type": "Thing", name: "Regulation Capacities" },
               { "@type": "Thing", name: "Stress Cycle Completion" },
               { "@type": "Thing", name: "Allostatic Load" },
               { "@type": "Thing", name: "HPA Axis" },
-              { "@type": "Thing", name: "Emotional Suppression" },
               { "@type": "Thing", name: "Cognitive Override" },
+              { "@type": "Thing", name: "Regulation Through Others" },
+              { "@type": "Thing", name: "Counterfeit Return" },
             ],
             citation: [
               { "@type": "ScholarlyArticle", name: "Why Zebras Don't Get Ulcers (Sapolsky, 2004)" },
@@ -789,15 +911,16 @@ export default function M3TheOpenCyclePage() {
               { "@type": "ScholarlyArticle", name: "Thinking, Fast and Slow (Kahneman, 2011)" },
             ],
             keywords: [
-              "open cycle",
+              "regulation capacities",
               "stress cycle",
               "allostatic load",
               "HPA axis",
               "cortisol",
-              "emotional suppression",
               "cognitive override",
               "signal submersion",
-              "threat cascade",
+              "dorsal vagal",
+              "regulation through others",
+              "counterfeit return",
               "biological completion",
             ],
           }),
@@ -812,7 +935,7 @@ export default function M3TheOpenCyclePage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
-              { name: "M3: The Biology of Unfinished Emotion", url: "/model/m3-the-open-cycle" },
+              { name: "M3: Regulation Capacities", url: "/model/m3-regulation-capacities" },
             ])
           ),
         }}
@@ -825,9 +948,9 @@ export default function M3TheOpenCyclePage() {
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What is the Open Cycle in the TEG-Blue system?",
+                question: "What are Regulation Capacities in the TEG-Blue system?",
                 answer:
-                  "The Open Cycle (M3) describes what happens physiologically when a threat response activates and the cycle is not allowed to complete. When the nervous system perceives a threat, a precise biological cascade fires — hormonal, neurochemical, and organ-level — before any conscious thought forms. This cascade was designed to complete through expression, parasympathetic return, and cortisol clearance. When cognition overrides the emotion, the cascade continues below the threshold of access. The cycle stays open.",
+                  "Regulation Capacities (M3) maps the full regulation landscape: the body's designed return pathway after threat activation, what blocks that return, what the nervous system reaches for instead (substances, physical intensity, work, controlling others), and why none of the substitutes close the cycle. Regulation is not what you do to your emotions — it is what the body does after them.",
               },
               {
                 question: "Why can't cognition close a biological stress cycle?",
@@ -835,9 +958,9 @@ export default function M3TheOpenCyclePage() {
                   "The prefrontal cortex and the amygdala are separate circuits with no direct downregulation pathway from cognitive decision to hormonal cascade. Deciding an emotion is not important sends a signal through the cognitive system, but the HPA axis does not receive it. Completing the cycle requires somatic discharge — motor expression, breathing change, the body moving mobilised energy through its designed channels. Understanding the need for discharge is cognitive; the discharge itself is somatic. One cannot substitute for the other.",
               },
               {
-                question: "What is allostatic load and how does it relate to the open cycle?",
+                question: "What is the counterfeit return?",
                 answer:
-                  "Allostatic load is the measurable cumulative physiological wear from chronic stress activation — across cardiovascular, immune, metabolic, and neurological systems. Each unfinished emotional cycle adds a small residue: cortisol not cleared, amygdala sensitised, serotonin depleted. Over time, this accumulation produces structural reorganisation — the nervous system shifts its baseline, and what was an emergency response becomes the default state. This is the physiological mechanism behind the stuck compass.",
+                  "The counterfeit return occurs when extreme vehicles — domination, violation, the exercise of absolute power — produce the most potent neurochemical event the nervous system can access. The body registers the signature of completion, but the HPA axis never received the all-clear. Cortisol was suppressed by intensity, not cleared by completion. The debris is still there. The interval between episodes shortens because the floor never reset. The body has been calibrated past the real return sequence.",
               },
               {
                 question: "What is signal submersion?",
@@ -854,8 +977,8 @@ export default function M3TheOpenCyclePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Open Cycle (M3) — TEG-Blue Research",
-              url: "https://teg-blue.org/model/m3-the-open-cycle",
+              name: "Regulation Capacities (M3) — TEG-Blue Research",
+              url: "https://teg-blue.org/model/m3-regulation-capacities",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),

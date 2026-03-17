@@ -32,7 +32,7 @@ const DRAWS_FROM = [
   { id: "F7", title: "Domination Regulates", relation: "Escalation", description: "Escalation across the gradient. How Control crosses into Domination, and how tolerance builds.", href: "/framework/f7-domination-regulates" },
   { id: "F12", title: "The Two Information Systems", relation: "Architecture", description: "The underlying architecture. Why understanding doesn't change the compass. Why experience does.", href: "/framework/f12-two-information-systems" },
   { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.", href: "/model/m2-three-awareness-capacities" },
-  { id: "M3", title: "The Biology of Unfinished Emotion", relation: "Paired model", description: "The biological cascade underneath the compass. What the body does when the return is blocked.", href: "/model/m3-the-open-cycle" },
+  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "The biological cascade underneath the compass. What the body does when the return is blocked.", href: "/model/m3-regulation-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -1069,8 +1069,8 @@ export default function M1InnerCompassPage() {
                   />
                   <NavRow
                     label="Understand the physiological foundation of the compass"
-                    href="/model/m3-the-open-cycle"
-                    linkText="M3: The Biology of Unfinished Emotion &rarr;"
+                    href="/model/m3-regulation-capacities"
+                    linkText="M3: Regulation Capacities &rarr;"
                   />
                   <NavRow
                     label="See all twelve frameworks"

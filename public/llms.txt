@@ -116,9 +116,9 @@ URL: https://teg-blue.org/model/m1-inner-compass
 The calibration — the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that determine what data the compass receives and how it is processed.
 URL: https://teg-blue.org/model/m2-three-awareness-capacities
 
-### M3: The Open Cycle
-The physiology — the biological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead.
-URL: https://teg-blue.org/model/m3-the-open-cycle
+### M3: Regulation Capacities
+The return pathway — the full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.
+URL: https://teg-blue.org/model/m3-regulation-capacities
 
 ## The 12 Frameworks
 

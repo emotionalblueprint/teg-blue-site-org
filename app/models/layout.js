@@ -1,7 +1,7 @@
 export const metadata = {
   title: "The Three Core Models | TEG-Blue Research",
   description:
-    "The Inner Compass & Four-Mode Gradient (the instrument), the Three Awareness Capacities (the calibration), and The Biology of Unfinished Emotion (the biological foundation). Three applied models that make the nervous system's safety-threat orientation visible, clinically usable, and personally recognisable.",
+    "The Inner Compass & Four-Mode Gradient (the instrument), the Three Awareness Capacities (the calibration), and Regulation Capacities (the biological foundation). Three applied models that make the nervous system's safety-threat orientation visible, clinically usable, and personally recognisable.",
   keywords: [
     "TEG-Blue models",
     "inner compass",
@@ -22,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: "The Three Core Models — Instrument + Calibration + Biological Foundation | TEG-Blue",
     description:
-      "The Inner Compass (what the nervous system does), the Three Awareness Capacities (what determines how well it does it), and The Biology of Unfinished Emotion (what happens when the cycle doesn't complete). Three applied models forming a complete assessment system.",
+      "The Inner Compass (what the nervous system does), the Three Awareness Capacities (what determines how well it does it), and Regulation Capacities (what happens when the cycle doesn't complete). Three applied models forming a complete assessment system.",
     url: "https://teg-blue.org/models",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -43,7 +43,7 @@ export default function ModelsLayout({ children }) {
     name: "The Three Core Models — TEG-Blue",
     url: "https://teg-blue.org/models",
     description:
-      "The three applied models at the foundation of TEG-Blue: the Inner Compass & Four-Mode Gradient (the instrument), the Three Awareness Capacities (the calibration system), and The Biology of Unfinished Emotion (the biological foundation).",
+      "The three applied models at the foundation of TEG-Blue: the Inner Compass & Four-Mode Gradient (the instrument), the Three Awareness Capacities (the calibration system), and Regulation Capacities (the biological foundation).",
     inLanguage: "en",
     isPartOf: {
       "@type": "ResearchProject",

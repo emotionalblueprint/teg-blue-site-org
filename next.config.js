@@ -458,6 +458,13 @@ const nextConfig = {
         permanent: false,
       },
 
+      // M3 rename: The Open Cycle → Regulation Capacities
+      {
+        source: '/model/m3-the-open-cycle',
+        destination: '/model/m3-regulation-capacities',
+        permanent: true,
+      },
+
       // Catch-all for /$ (malformed URL)
       {
         source: '/$',

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "The Biology of Unfinished Emotion — Model M3 | TEG-Blue";
+export const alt = "Regulation Capacities — Model M3 | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            The Biology of Unfinished Emotion
+            Regulation Capacities
           </div>
 
           {/* Subtitle */}
@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            Biological Restoration — The Fork
+            The Return Pathway
           </div>
         </div>
 
@@ -111,7 +111,7 @@ export default function Image() {
               letterSpacing: "0.04em",
             }}
           >
-            teg-blue.org/model/m3-the-open-cycle
+            teg-blue.org/model/m3-regulation-capacities
           </div>
           <div
             style={{

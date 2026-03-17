@@ -119,7 +119,7 @@ export default function F1EmotionalGradientPage() {
               threadLine="Biological Restoration — the body completing its own cycle · Cost: None — this is the design"
               informsModels={[
                 { label: "M1", href: "/model/m1-inner-compass" },
-                { label: "M3", href: "/model/m3-the-open-cycle" },
+                { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{
                 next: { label: "F2 Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
@@ -326,7 +326,7 @@ export default function F1EmotionalGradientPage() {
                 <strong style={{ color: TEXT.primary }}>Fear</strong> is the nervous system's signal that its evaluation found threat. <strong style={{ color: TEXT.primary }}>Joy</strong> is the signal that the evaluation found safety and connection. <strong style={{ color: TEXT.primary }}>Anger</strong> signals that a boundary has been crossed. Each emotion carries <strong style={{ color: TEXT.primary }}>specific information</strong> about what the evaluation detected — and each orients the organism toward a specific response.
               </p>
               <p style={proseStyle}>
-                This is the <strong style={{ color: SPECTRUM.cobalt }}>body's first language</strong>. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it <strong style={{ color: TEXT.primary }}>added a second one</strong>. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. <strong style={{ color: TEXT.primary }}>The body keeps talking whether cognition listens or not</strong> — <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
+                This is the <strong style={{ color: SPECTRUM.cobalt }}>body's first language</strong>. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it <strong style={{ color: TEXT.primary }}>added a second one</strong>. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. <strong style={{ color: TEXT.primary }}>The body keeps talking whether cognition listens or not</strong> — <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
               <p style={proseStyle}>
                 This shifts the foundational stance from "emotion regulation" (implying emotions need controlling) to "signal interpretation" (implying emotions carry information that needs reading). The question is not "how do I manage this emotion?" but <strong style={{ color: TEXT.primary }}>"what is this signal telling me?"</strong>
@@ -715,11 +715,11 @@ export default function F1EmotionalGradientPage() {
                 This sequence takes time. Adrenaline clears in minutes; cortisol takes longer. This is why the body cannot be rushed back to baseline by an act of will. The molecules must clear. The systems must re-engage in sequence. <strong style={{ color: TEXT.primary }}>Biological Restoration cannot be forced because it is a physiological process — not a decision.</strong>
               </p>
               <p style={proseStyle}>
-                When the cycle is interrupted before completion — by cognitive override, by environmental pressure to appear calm, by the absence of safety conditions — the hormones remain partially elevated, the autonomic system remains partially mobilised, and the body carries the unresolved activation forward. This is the <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>open cycle (M3)</Link>.
+                When the cycle is interrupted before completion — by cognitive override, by environmental pressure to appear calm, by the absence of safety conditions — the hormones remain partially elevated, the autonomic system remains partially mobilised, and the body carries the unresolved activation forward. This is the <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>open cycle (M3)</Link>.
               </p>
 
               <Link
-                href="/model/m3-the-open-cycle"
+                href="/model/m3-regulation-capacities"
                 style={{
                   display: "block",
                   padding: "16px 20px",
@@ -864,12 +864,12 @@ export default function F1EmotionalGradientPage() {
                 </li>
               </ul>
               <p style={proseStyle}>
-                In each case, the mechanism is the same: the system <strong style={{ color: TEXT.primary }}>completing the cycle and coming back</strong>. The difference is the depth of the activation that must resolve. <strong style={{ color: TEXT.primary }}>The deeper the compass moves along the gradient, the more the restoration costs</strong> — and the more the system needs to complete. When it does not, <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
+                In each case, the mechanism is the same: the system <strong style={{ color: TEXT.primary }}>completing the cycle and coming back</strong>. The difference is the depth of the activation that must resolve. <strong style={{ color: TEXT.primary }}>The deeper the compass moves along the gradient, the more the restoration costs</strong> — and the more the system needs to complete. When it does not, <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
 
               <ExpandableSection title="A Note on 'Regulation'" type="framework">
                 <p style={expandedProseStyle}>
-                  What is commonly called "regulation" encompasses two fundamentally different processes. The first is Biological Restoration — the body completing its own activation cycle and settling back to its designed state. This is a biological process that cannot be forced, does not require cognition, and is cost-free. The second is cognitive management — cognition overriding, suppressing, or controlling the body's emotional signals to produce a state of apparent calm. This is effortful, comes at the cost of emotional truth, and is precisely what F3 describes as false coherence — while the body continues running what M3 calls <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the open cycle</Link> underneath.
+                  What is commonly called "regulation" encompasses two fundamentally different processes. The first is Biological Restoration — the body completing its own activation cycle and settling back to its designed state. This is a biological process that cannot be forced, does not require cognition, and is cost-free. The second is cognitive management — cognition overriding, suppressing, or controlling the body's emotional signals to produce a state of apparent calm. This is effortful, comes at the cost of emotional truth, and is precisely what F3 describes as false coherence — while the body continues running what M3 calls <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the open cycle</Link> underneath.
                 </p>
                 <p style={expandedProseStyle}>
                   The cultural understanding of "regulation" overwhelmingly refers to the second process — manage your feelings, calm down, control yourself. This framing treats the body's signals as problems to be managed rather than processes to be completed. TEG-Blue uses "Biological Restoration" to distinguish the body's designed process from the cultural misunderstanding.
@@ -919,7 +919,7 @@ export default function F1EmotionalGradientPage() {
                 For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then <strong style={{ color: SPECTRUM.cobalt }}>cognition evolved</strong>. And the compass gained range.
               </p>
               <p style={proseStyle}>
-                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
+                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
               </p>
               <p style={proseStyle}>
                 <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — they happen <em>to</em> you. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
@@ -1229,7 +1229,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                Each framework describes a <strong style={{ color: TEXT.primary }}>regulation substitute</strong> at a different scale. Each substitute works, each comes at a cost, and each traces to the same origin: a nervous system that <strong style={{ color: TEXT.primary }}>never learned Biological Restoration</strong> — running on <Link href="/model/m3-the-open-cycle" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>permanently open cycles</Link>.
+                Each framework describes a <strong style={{ color: TEXT.primary }}>regulation substitute</strong> at a different scale. Each substitute works, each comes at a cost, and each traces to the same origin: a nervous system that <strong style={{ color: TEXT.primary }}>never learned Biological Restoration</strong> — running on <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>permanently open cycles</Link>.
               </p>
 
               <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -1475,7 +1475,7 @@ export default function F1EmotionalGradientPage() {
                 <tbody>
                   <NavRow label="Continue to F2 — how the compass gets calibrated" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness (F2) →" />
                   <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Inner Compass (M1) →" />
-                  <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-the-open-cycle" linkText="The Biology of Unfinished Emotion (M3) →" />
+                  <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
                   <NavRow label="Understand the epistemological stance" href="/epistemological-foundations" linkText="Epistemological Foundations →" />

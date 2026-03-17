@@ -41,7 +41,7 @@ const ALL_PAGES = [
   // Models
   '/model/m1-inner-compass',
   '/model/m2-three-awareness-capacities',
-  '/model/m3-the-open-cycle',
+  '/model/m3-regulation-capacities',
   // Frameworks (F1-F12)
   '/framework/f1-emotional-gradient',
   '/framework/f2-awareness-calibration',

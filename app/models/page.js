@@ -11,7 +11,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What are the three TEG-Blue models?",
-    answer: "The three models are M1: Inner Compass and Four-Mode Gradient (the instrument — where is the needle?), M2: Three Awareness Capacities (the calibration — what is holding it there?), and M3: The Biology of Unfinished Emotion (the biological foundation — what is the body doing underneath?). The frameworks explain why. The models provide what — the applied tools that practitioners, researchers, and individuals actually use.",
+    answer: "The three models are M1: Inner Compass and Four-Mode Gradient (the instrument — where is the needle?), M2: Three Awareness Capacities (the calibration — what is holding it there?), and M3: Regulation Capacities (the return pathway — what is the body doing to regulate, and is the cycle completing?). The frameworks explain why. The models provide what — the applied tools that practitioners, researchers, and individuals actually use.",
   },
   {
     question: "What is the Inner Compass model?",
@@ -52,15 +52,15 @@ const MODELS = [
   },
   {
     id: "M3",
-    role: "The Biological Foundation",
-    title: "The Biology of Unfinished Emotion",
-    coreQuestion: "What is the body doing underneath?",
+    role: "The Return Pathway",
+    title: "Regulation Capacities",
+    coreQuestion: "What is the body doing to regulate — and is the cycle completing?",
     summary:
-      "The physiological sequence that runs when the nervous system perceives a threat, what the body does when that sequence is allowed to complete, and what happens when cognition overrides it instead.",
-    concepts: 7,
-    drawsFrom: "F1, F2, F3, F8, F12",
+      "The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
+    concepts: 8,
+    drawsFrom: "F1, F2, F3, F12",
     color: SPECTRUM.indigo,
-    href: "/model/m3-the-open-cycle",
+    href: "/model/m3-regulation-capacities",
   },
 ];
 
@@ -170,10 +170,10 @@ export default function ModelsPage() {
         {/* ─── M3 DETAIL ────────────────────────────────────── */}
         <ModelDetail
           id="M3"
-          title="Biological Restoration"
-          role="The fork"
+          title="Regulation Capacities"
+          role="The return pathway"
           color={SPECTRUM.indigo}
-          href="/model/m3-the-open-cycle"
+          href="/model/m3-regulation-capacities"
         >
           <p style={bodyStyle}>
             When the nervous system perceives a threat, a precise biological cascade activates — hormonal, neurochemical, whole-body — before any conscious thought forms. This cascade was designed to complete. Activation → expression → parasympathetic return → cortisol clearance → baseline. The body has a built-in endpoint.

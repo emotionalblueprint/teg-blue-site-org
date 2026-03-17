@@ -228,7 +228,7 @@ export default function F12TwoInformationSystemsPage() {
               threadLine="The architecture that explains why the thread works the way it does"
               informsModels={[
                 { label: "M1", href: "/model/m1-inner-compass" },
-                { label: "M3", href: "/model/m3-the-open-cycle" },
+                { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{
                 prev: { label: "F11 Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
@@ -924,7 +924,7 @@ export default function F12TwoInformationSystemsPage() {
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
                   <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="See the physiological model — the body's cascade that cognition cannot close" href="/model/m3-the-open-cycle" linkText="The Biology of Unfinished Emotion (M3) \u2192" />
+                  <NavRow label="See the physiological model — the body's cascade that cognition cannot close" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
                   <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />

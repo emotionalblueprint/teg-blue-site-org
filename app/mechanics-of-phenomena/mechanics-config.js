@@ -116,7 +116,7 @@ export const FRAMEWORK_URLS = {
   F12: "/framework/f12-two-information-systems",
   M1: "/model/m1-inner-compass",
   M2: "/model/m2-three-awareness-capacities",
-  M3: "/model/m3-the-open-cycle",
+  M3: "/model/m3-regulation-capacities",
 };
 
 /**
