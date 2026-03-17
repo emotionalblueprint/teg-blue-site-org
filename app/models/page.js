@@ -11,11 +11,11 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What are the three TEG-Blue models?",
-    answer: "The three models are M1: Inner Compass and Four-Mode Gradient (the instrument — where is the needle?), M2: Three Awareness Capacities (the calibration — what is holding it there?), and M3: Regulation Capacities (the return pathway — what is the body doing to regulate, and is the cycle completing?). The frameworks explain why. The models provide what — the applied tools that practitioners, researchers, and individuals actually use.",
+    answer: "The three models are M1: Nervous System Signaling (the instrument — where is the needle?), M2: Three Awareness Capacities (the calibration — what is holding it there?), and M3: Regulation Capacities (the return pathway — what is the body doing to regulate, and is the cycle completing?). The frameworks explain why. The models provide what — the applied tools that practitioners, researchers, and individuals actually use.",
   },
   {
-    question: "What is the Inner Compass model?",
-    answer: "M1, the Inner Compass, maps how the nervous system orients between safety and threat across four modes on a continuous gradient: Connection, Protection, Control, and Domination. The core question it answers is: where is the needle, can it move, and what does the person have access to from where they are?",
+    question: "What is the Nervous System Signaling model?",
+    answer: "M1, Nervous System Signaling, maps how the nervous system orients between safety and threat across four modes on a continuous gradient: Connection, Protection, Control, and Domination. Its primary tools are the Inner Compass and the Four-Mode Gradient. The core question it answers is: where is the needle, can it move, and what does the person have access to from where they are?",
   },
   {
     question: "What are the Three Awareness Capacities?",
@@ -29,7 +29,7 @@ const MODELS = [
   {
     id: "M1",
     role: "The Instrument",
-    title: "Inner Compass & Four-Mode Gradient",
+    title: "Nervous System Signaling",
     coreQuestion: "Where is the needle?",
     summary:
       "How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return restores it.",
@@ -110,7 +110,7 @@ export default function ModelsPage() {
         {/* ─── M1 DETAIL ────────────────────────────────────── */}
         <ModelDetail
           id="M1"
-          title="Inner Compass & Four-Mode Gradient"
+          title="Nervous System Signaling"
           role="The instrument"
           color={SPECTRUM.azure}
           href="/model/m1-inner-compass"

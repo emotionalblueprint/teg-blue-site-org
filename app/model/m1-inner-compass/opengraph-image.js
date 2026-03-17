@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Inner Compass & Four-Mode Gradient — Model M1 | TEG-Blue";
+export const alt = "Nervous System Signaling — Model M1 | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Inner Compass & Four-Mode Gradient
+            Nervous System Signaling
           </div>
 
           {/* Subtitle */}

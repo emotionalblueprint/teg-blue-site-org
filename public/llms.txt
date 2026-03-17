@@ -108,8 +108,8 @@ Nervous system regulatory states along a continuous gradient:
 
 ## The Three Core Models
 
-### M1: Inner Compass & Four-Mode Gradient
-The instrument — the complete architecture of how the nervous system orients between safety and threat across four modes on a continuous gradient.
+### M1: Nervous System Signaling
+The instrument — how the nervous system communicates through emotion across four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient.
 URL: https://teg-blue.org/model/m1-inner-compass
 
 ### M2: Three Awareness Capacities
@@ -403,7 +403,7 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Core Models: https://teg-blue.org/models
-  - M1 Inner Compass: https://teg-blue.org/model/m1-inner-compass
+  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-inner-compass
   - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map

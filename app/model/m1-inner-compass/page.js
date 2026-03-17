@@ -38,7 +38,7 @@ const DRAWS_FROM = [
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Inner Compass & Four-Mode Gradient (M1) | TEG-Blue Research",
+  title: "Nervous System Signaling (M1) | TEG-Blue Research",
   description:
     "The instrument that maps how the nervous system orients between safety and threat across four modes — Connection, Protection, Control, Domination — on a continuous gradient. Model M1 of the TEG-Blue system.",
   keywords: [
@@ -59,7 +59,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/model/m1-inner-compass",
   },
   openGraph: {
-    title: "Inner Compass & Four-Mode Gradient — M1 Model | TEG-Blue",
+    title: "Nervous System Signaling — M1 Model | TEG-Blue",
     description:
       "The instrument that maps how the nervous system orients between safety and threat across four modes on a continuous gradient. The foundational model of the TEG-Blue system.",
     url: "https://teg-blue.org/model/m1-inner-compass",
@@ -68,7 +68,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Inner Compass & Four-Mode Gradient — TEG-Blue M1",
+    title: "Nervous System Signaling — TEG-Blue M1",
     description:
       "How the nervous system orients between safety and threat. The foundational model behind the TEG-Blue system.",
   },
@@ -92,7 +92,7 @@ export default function M1InnerCompassPage() {
           <>
             <ModelHero
               badge="MODEL M1"
-              title="Inner Compass & Four-Mode Gradient"
+              title="Nervous System Signaling"
               subtitle="The Instrument"
               description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
               coreQuestion="Where is the needle, can it move, and what does the person have access to from where they are?"
@@ -1116,7 +1116,7 @@ export default function M1InnerCompassPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m1-inner-compass#article",
-            headline: "Inner Compass & Four-Mode Gradient: The Instrument",
+            headline: "Nervous System Signaling: The Instrument",
             description:
               "How the nervous system orients between safety and threat across four modes on a continuous gradient. Model M1 of the TEG-Blue system.",
             author: {
@@ -1179,7 +1179,7 @@ export default function M1InnerCompassPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
-              { name: "M1: Inner Compass", url: "/model/m1-inner-compass" },
+              { name: "M1: Nervous System Signaling", url: "/model/m1-inner-compass" },
             ])
           ),
         }}
@@ -1221,7 +1221,7 @@ export default function M1InnerCompassPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Inner Compass (M1) — TEG-Blue Research",
+              name: "Nervous System Signaling (M1) — TEG-Blue Research",
               url: "https://teg-blue.org/model/m1-inner-compass",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

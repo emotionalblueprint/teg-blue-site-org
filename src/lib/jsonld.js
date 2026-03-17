@@ -238,16 +238,16 @@ export function generateModelsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Two Core Models — TEG-Blue",
+    name: "The Three Core Models — TEG-Blue",
     url: `${BASE_URL}/models`,
-    description: "The two applied models at the foundation of TEG-Blue: the Inner Compass & Four-Mode Gradient (the instrument) and the Three Awareness Capacities (the calibration system).",
+    description: "The three applied models at the foundation of TEG-Blue: Nervous System Signaling (the instrument), the Three Awareness Capacities (the calibration system), and Regulation Capacities (the return pathway).",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
       {
         "@type": "DefinedTerm",
-        name: "Inner Compass & Four-Mode Gradient (M1)",
-        description: "The instrument — the complete architecture of how the nervous system orients between safety and threat across four modes on a continuous gradient."
+        name: "Nervous System Signaling (M1)",
+        description: "The instrument — how the nervous system communicates through emotion across four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient."
       },
       {
         "@type": "DefinedTerm",
@@ -295,7 +295,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 1,
           name: "Measurement Layer",
-          description: "Two core models: the Inner Compass & Four-Mode Gradient (the instrument) and the Three Awareness Capacities (the calibration). Observable nervous system states and awareness configurations.",
+          description: "Three core models: Nervous System Signaling (the instrument), the Three Awareness Capacities (the calibration), and Regulation Capacities (the return pathway). Observable nervous system states, awareness configurations, and regulation biology.",
           url: `${BASE_URL}/models`
         },
         {

@@ -183,7 +183,7 @@ export default function Piece01WhyEvidenceFails() {
         items={[
           {
             description: "You want to understand why the human mind prioritizes stability over truth, why confrontation produces entrenchment, and what the four operating modes actually look like:",
-            label: "M1 \u2014 The Inner Compass & Four-Mode Gradient",
+            label: "M1 \u2014 Nervous System Signaling",
             href: "/model/m1-inner-compass",
           },
           {

@@ -26,7 +26,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Individual · F1–F3", href: "#individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
   { label: "Collective · F4–F7", href: "#collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
   { label: "The Reversal · F8–F12", href: "#the-reversal", description: "How the awareness capacities rebuild, and what makes change possible." },
-  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Inner Compass, Three Awareness Capacities, Regulation Capacities." },
+  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Nervous System Signaling, Three Awareness Capacities, Regulation Capacities." },
   { label: "Mechanics of Phenomena", href: "#mechanics-of-phenomena", description: "Long-form essays showing these mechanisms operating in real life." },
 ];
 
@@ -452,7 +452,7 @@ export default function TheoreticalFoundationsPage() {
                 M1 — The Instrument
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Inner Compass & Four-Mode Gradient →
+                Nervous System Signaling →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 Where is the needle, can it move, and what does the person have access to from where they are?

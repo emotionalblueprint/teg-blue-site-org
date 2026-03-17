@@ -427,7 +427,7 @@ export default function ResearchHub() {
                 color={SPECTRUM.azure}
                 label="1 — Measurement"
                 title="Three Core Models"
-                description="The Inner Compass (M1) maps where the nervous system is pointing. The Three Awareness Capacities (M2) explain how accurately it reads — and what goes offline when it gets stuck. Biological Restoration (M3) describes the body's designed return path."
+                description="Nervous System Signaling (M1) maps where the nervous system is pointing. The Three Awareness Capacities (M2) explain how accurately it reads — and what goes offline when it gets stuck. Regulation Capacities (M3) describes the body's designed return path."
                 href="/models"
                 linkText="Core Models →"
               />

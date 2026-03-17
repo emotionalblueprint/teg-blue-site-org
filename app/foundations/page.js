@@ -181,7 +181,7 @@ export default function FoundationsPage() {
               The measurement part describes what is actually happening — in a body, in a relationship, in a conversation — and gives it a name that can be tracked. Three models make up this part. They work together.
             </p>
             <ul style={listStyle}>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M1 — Inner Compass &amp; Four-Mode Gradient</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four modes.</li>
+              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M1 — Nervous System Signaling</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four modes.</li>
               <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M2 — Three Awareness Capacities</strong> <em style={{ color: TEXT.muted }}>(The calibration)</em> — What is holding it there? The three awarenesses that determine what data the compass receives and whether the person has access to their own internal state.</li>
               <li><strong style={{ color: TEXT.primary }}>M3 — Biological Restoration</strong> <em style={{ color: TEXT.muted }}>(The fork)</em> — What is the body doing underneath? The physiological sequence that runs when emotion doesn&apos;t complete — and the designed return path that can only be allowed, not forced.</li>
             </ul>

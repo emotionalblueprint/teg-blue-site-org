@@ -135,7 +135,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <PropositionBox label="ORIGIN" title="Origin of the Inner Compass and the Four-Mode Gradient">
-              F1 is where two constructs originate that run through the entire TEG-Blue system: the <strong>Inner Compass</strong> — the nervous system's orientation mechanism — and the <strong>Four-Mode Gradient</strong> — the continuous range of modes it moves through. Both are introduced and explained here for the first time. M1: Inner Compass &amp; Four-Mode Gradient packages them into an applied model.
+              F1 is where two constructs originate that run through the entire TEG-Blue system: the <strong>Inner Compass</strong> — the nervous system's orientation mechanism — and the <strong>Four-Mode Gradient</strong> — the continuous range of modes it moves through. Both are introduced and explained here for the first time. M1: Nervous System Signaling packages them into an applied model.
             </PropositionBox>
 
             <InnerDivider />
@@ -233,9 +233,9 @@ export default function F1EmotionalGradientPage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Relationship to the Inner Compass Model" type="framework">
+              <ExpandableSection title="Relationship to M1: Nervous System Signaling" type="framework">
                 <p style={expandedProseStyle}>
-                  F1 provides the depth scientific foundation and introduces the complete four-mode compass in its designed operation. The Inner Compass & Four-Mode Gradient model provides the applied tool — making the same architecture usable across individual, clinical, and research contexts. F1 explains <em>why</em>. The model provides <em>what to use</em>.
+                  F1 provides the depth scientific foundation and introduces the complete four-mode compass in its designed operation. M1: Nervous System Signaling provides the applied tool — making the same architecture usable across individual, clinical, and research contexts. F1 explains <em>why</em>. The model provides <em>what to use</em>.
                 </p>
               </ExpandableSection>
 
@@ -607,7 +607,7 @@ export default function F1EmotionalGradientPage() {
                   M1 &middot; The applied model for this
                 </div>
                 <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                  M1: The Inner Compass turns everything described here into a usable instrument — the four modes on a single gradient, the stuck-versus-fluid distinction, and what each position enables and restricts.
+                  M1: Nervous System Signaling turns everything described here into a usable instrument — the four modes on a single gradient, the stuck-versus-fluid distinction, and what each position enables and restricts.
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 500, color: SPECTRUM.azure }}>
                   Read the model &rarr;
@@ -1474,7 +1474,7 @@ export default function F1EmotionalGradientPage() {
                 </thead>
                 <tbody>
                   <NavRow label="Continue to F2 — how the compass gets calibrated" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness (F2) →" />
-                  <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Inner Compass (M1) →" />
+                  <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Nervous System Signaling (M1) →" />
                   <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />

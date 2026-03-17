@@ -165,7 +165,7 @@ export default function Piece02WhyPeopleChange() {
         items={[
           {
             description: "You want to understand the four operating modes \u2014 what activates each one and what the system looks like from the inside:",
-            label: "M1 \u2014 The Inner Compass & Four-Mode Gradient",
+            label: "M1 \u2014 Nervous System Signaling",
             href: "/model/m1-inner-compass",
           },
           {

@@ -141,7 +141,7 @@ const GLOSSARY_TERMS = [
     title: "Three Core Models",
     type: "concept",
     status: "proposed",
-    definition: "The measurement part of TEG-Blue. Three models: the Inner Compass & Four-Mode Gradient (the instrument — how the nervous system orients across four modes), the Three Awareness Capacities (the calibration — what determines how well it does it), and Regulation Capacities (the return pathway — what the body does to regulate, and whether the cycle is completing).",
+    definition: "The measurement part of TEG-Blue. Three models: Nervous System Signaling (the instrument — how the nervous system communicates through emotion across four modes), the Three Awareness Capacities (the calibration — what determines how well it does it), and Regulation Capacities (the return pathway — what the body does to regulate, and whether the cycle is completing).",
     tags: ["core-concept", "measurement"],
     framework: 1,
   },
@@ -597,7 +597,7 @@ const GLOSSARY_TERMS = [
     slug: "biological-restoration",
     title: "Biological Restoration",
     aliases: ["Regulation — The Return"],
-    aliasNote: "Called 'Regulation — The Return' in the applied model (M1: The Inner Compass) on teg-blue.com. Same mechanism, applied framing.",
+    aliasNote: "Called 'Regulation — The Return' in the applied model (M1: Nervous System Signaling) on teg-blue.com. Same mechanism, applied framing.",
     type: "concept",
     status: "proposed",
     definition: "The mechanism by which the body returns from threat to connection — the complete cycle: activation, response, discharge, return. Learned through co-regulation. When Biological Restoration is never learned, modes become chronic and the compass gets stuck. Can be disrupted (unpredictability), misdirected (incongruence), or blocked (invalidation).",
@@ -1881,7 +1881,7 @@ const GLOSSARY_TERMS = [
 const SIDEBAR_SECTIONS = [
   { label: "184 Terms", href: "#glossary-terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
   { label: "Framework Tags", href: "#glossary-search", description: "Each term tagged to its source framework (F1–F12) for cross-reference navigation." },
-  { label: "Core Models", href: "#glossary-list", description: "The foundational vocabulary: Inner Compass, Four-Mode Gradient, Three Awareness Capacities, Open Cycle." },
+  { label: "Core Models", href: "#glossary-list", description: "The foundational vocabulary: Nervous System Signaling, Three Awareness Capacities, Regulation Capacities." },
   { label: "Regulation Thread", href: "#glossary-list", description: "Terms tracing the thread from biological signal through developmental calibration to systemic scale." },
 ];
 
