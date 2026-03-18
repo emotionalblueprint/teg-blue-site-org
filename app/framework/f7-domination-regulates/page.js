@@ -117,7 +117,7 @@ export default function F7DominationRegulatesPage() {
               {
                 title: "Domination",
                 commonUnderstanding: "Power hunger, abuse of authority — the exercise of control over others through coercion, intimidation, or force.",
-                definition: "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. This is not a defense of harm. It is the structural account of why chronic domination escalates without limit.",
+                definition: "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. It is the structural account of why chronic domination escalates without limit.",
               },
               {
                 title: "Emotional Abuse",
@@ -159,13 +159,13 @@ export default function F7DominationRegulatesPage() {
                   A five-stage escalation pathway from Fear Activation through Power Preservation, with internal logic, observable signs, compass position, and stage-appropriate interruption at each stage
                 </li>
                 <li style={propositionItemStyle}>
-                  Empathy gating follows a three-capacity model: Reading Emotions redirects toward management, Emotional Resonance collapses, Self-Emotional Awareness was never there — the configuration that produces the most harm has the least visibility
+                  Empathy gating follows a three-capacity model: Reading Emotions (RE) redirects toward management, Emotional Resonance (ER) collapses, Self-Emotional Awareness (SEA) was never there — the configuration that produces the most harm has the least visibility
                 </li>
                 <li style={propositionItemStyle}>
                   External regulation through subjugation builds tolerance — escalation required, no natural stopping point — &ldquo;there is no amount of domination that will make them feel safe because the safety they need is internal&rdquo;
                 </li>
                 <li style={propositionItemStyle}>
-                  Causality and accountability are separable — understanding mechanism does not reduce responsibility — &ldquo;evil&rdquo; closes inquiry where mechanism enables recognition and interruption
+                  Causality and accountability are separable — &ldquo;evil&rdquo; closes inquiry where mechanism enables recognition and interruption
                 </li>
                 <li style={propositionItemStyle}>
                   F7 completes the regulation thread: each framework from F1 through F7 describes a regulation substitute at a different scale, with escalating costs and a consistent intervention principle
@@ -203,7 +203,7 @@ export default function F7DominationRegulatesPage() {
             </p>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Ethical stance:</strong> F7 intentionally separates causality from accountability. Understanding how escalation forms does not reduce responsibility for the harm it produces. Causality and accountability are separable. The mechanism is understandable. The harm is real. The framework makes escalation legible early to interrupt it — not to excuse it.
+              <strong style={{ color: TEXT.primary }}>Ethical stance:</strong> F7 intentionally separates causality from accountability. Causality and accountability are separable. The mechanism is understandable. The framework makes escalation legible early to interrupt it.
             </p>
 
             <ExpandableSection title="How This Framework Emerged" type="framework">
@@ -304,7 +304,7 @@ export default function F7DominationRegulatesPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
-                The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, body-first) to Control (strategy-based, cognition-first). This connects to F1&rsquo;s architectural break: Connection and Protection happen <em>to</em> you. Control and Domination are what cognition <em>does</em> when recruited into the threat response.
+                The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, body-first) to Control (strategy-based, cognition-first). This connects to F1&rsquo;s architectural break: Connection and Protection are automatic — body-first responses. Control and Domination are what cognition <em>does</em> when recruited into the threat response.
               </p>
               <p style={expandedProseStyle}>
                 The naming serves early recognition. Before this terminology, the transition is often invisible — especially because the early stages of Control can look like competence, leadership, and responsibility. Naming the Crossroads makes the transition visible and teachable: repair is decreasing, control is increasing, tactics are replacing vulnerability. These are recognizable shifts.
@@ -574,7 +574,7 @@ export default function F7DominationRegulatesPage() {
                 Clinical Implication
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Empathy appeals fail at later stages of escalation because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use ER, which is collapsed. They may use RE to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
+                Empathy appeals fail at later stages of escalation because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use Emotional Resonance (ER), which is collapsed. They may use Reading Emotions (RE) to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
               </p>
             </div>
 
@@ -651,7 +651,7 @@ export default function F7DominationRegulatesPage() {
             </h2>
 
             <p style={proseStyle}>
-              F7 does not use &ldquo;evil&rdquo; as a category. Not because the harm is not real or severe — it is. But because &ldquo;evil&rdquo; as a frame implies something fundamentally different about the person. It implies a character trait — something inherent, fixed, and moral. It implies that the person who dominates is a different kind of human from everyone else.
+              F7 does not use &ldquo;evil&rdquo; as a category. &ldquo;Evil&rdquo; as a frame implies something fundamentally different about the person. It implies a character trait — something inherent, fixed, and moral. It implies that the person who dominates is a different kind of human from everyone else.
             </p>
             <p style={proseStyle}>
               The regulation thread shows they are not. They are running the same nervous system as everyone else. The same mechanisms. The same compass. The same modes. The same false coherence. The same external regulation. The same reinforcement logic. They are further along the gradient — further from the return — at higher cost to others. But the mechanism is the same mechanism.
@@ -689,7 +689,7 @@ export default function F7DominationRegulatesPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
-                The explicit positioning of this ethical stance within the framework — not as a philosophical addendum, but as an integral part of the model. The regulation thread makes the case: if domination is the same mechanism as false coherence (F3), rule internalization (F4), worth-sorting (F5), and bias (F6) — operating at a different scale and at maximum cost — then treating it as a categorically different phenomenon is not just morally questionable. It is mechanistically inaccurate. The framework offers: accountability without demonization, understanding without excuse.
+                The explicit positioning of this ethical stance within the framework — not as a philosophical addendum, but as an integral part of the model. The regulation thread makes the case: if domination is the same mechanism as false coherence (F3), rule internalization (F4), worth-sorting (F5), and bias (F6) — operating at a different scale and at maximum cost — then treating it as a categorically different phenomenon is not just imprecise — it is mechanistically inaccurate. The framework offers: accountability without demonization, understanding without excuse.
               </p>
             </ExpandableSection>
           </section>

@@ -70,7 +70,7 @@ export const metadata = {
   openGraph: {
     title: "Three Awareness Capacities — M2 Model | TEG-Blue",
     description:
-      "The calibration system: how RE, ER, and SEA determine what data the compass receives, how configurations predict chronic mode and identity, and how repair develops what was missing. Model M2 of the TEG-Blue system.",
+      "The calibration system: how Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) determine what data the compass receives, how configurations predict chronic mode and identity, and how repair develops what was missing. Model M2 of the TEG-Blue system.",
     url: "https://teg-blue.org/model/m2-three-awareness-capacities",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -79,7 +79,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Three Awareness Capacities — TEG-Blue M2",
     description:
-      "The calibration system: RE, ER, and SEA. How capacity configurations predict chronic mode, identity, and relational patterns.",
+      "The calibration system: Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA). How capacity configurations predict chronic mode, identity, and relational patterns.",
   },
 };
 
@@ -497,7 +497,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </p>
 
             <p style={proseStyle}>
-              The child's nervous system develops inside the adults' nervous system. What the adults can and cannot do with their own RE, ER, and SEA creates the environment the child's awareness develops from. The transmission channel is the nervous system, not language.
+              The child's nervous system develops inside the adults' nervous system. What the adults can and cannot do with their own Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) creates the environment the child's awareness develops from. The transmission channel is the nervous system, not language.
             </p>
 
             {/* Transmission table */}
@@ -507,17 +507,17 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 <div style={gridHeaderStyle}>If the adult has...</div>
                 <div style={gridHeaderStyle}>The child absorbs...</div>
                 {/* Data rows */}
-                <GridCell first>Accurate RE</GridCell>
+                <GridCell first>Accurate Reading Emotions (RE)</GridCell>
                 <GridCell>A model of emotional reading in service of understanding</GridCell>
-                <GridCell first>Hypervigilant RE</GridCell>
+                <GridCell first>Hypervigilant Reading Emotions (RE)</GridCell>
                 <GridCell>A model of emotional reading in service of survival</GridCell>
-                <GridCell first>Sustainable ER</GridCell>
+                <GridCell first>Sustainable Emotional Resonance (ER)</GridCell>
                 <GridCell>A model of emotional resonance that includes self-care</GridCell>
-                <GridCell first>Flooded ER</GridCell>
+                <GridCell first>Flooded Emotional Resonance (ER)</GridCell>
                 <GridCell>A model where others' emotions swamp one's own</GridCell>
-                <GridCell first>Online SEA</GridCell>
+                <GridCell first>Online Self-Emotional Awareness (SEA)</GridCell>
                 <GridCell>A model of being able to name and trust one's own feelings</GridCell>
-                <GridCell first>Absent SEA</GridCell>
+                <GridCell first>Absent Self-Emotional Awareness (SEA)</GridCell>
                 <GridCell>No model of internal emotional access</GridCell>
                 <GridCell first>Learned regulation</GridCell>
                 <GridCell>An experience of co-regulation that becomes self-regulation</GridCell>
@@ -539,7 +539,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The awareness-teaches-awareness principle as the organising developmental mechanism — making the transmission pathway concrete and testable. Not "environment shapes development" (which is generic) but "the specific awareness capacities the adults carry determine which awareness capacities the child develops." The causal chain is precise: adult RE/ER/SEA configuration → environment → child RE/ER/SEA configuration.
+                  The awareness-teaches-awareness principle as the organising developmental mechanism — making the transmission pathway concrete and testable. Not "environment shapes development" (which is generic) but "the specific awareness capacities the adults carry determine which awareness capacities the child develops." The causal chain is precise: adult Reading Emotions (RE) / Emotional Resonance (ER) / Self-Emotional Awareness (SEA) configuration → environment → child RE/ER/SEA configuration.
                 </p>
               </ExpandableSection>
             </div>
@@ -575,19 +575,19 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   <div style={gridHeaderStyle}>What It Is</div>
                   <div style={gridHeaderStyle}>What It Serves</div>
 
-                  <GridCell first>Hypervigilant RE</GridCell>
+                  <GridCell first>Hypervigilant Reading Emotions (RE)</GridCell>
                   <GridCell>Scanning for survival — reading every signal for threat. Exhausting.</GridCell>
                   <GridCell>Survival</GridCell>
 
-                  <GridCell first>Surface-calibrated RE</GridCell>
+                  <GridCell first>Surface-calibrated Reading Emotions (RE)</GridCell>
                   <GridCell>Reading performance, not authenticity.</GridCell>
                   <GridCell>Fitting in</GridCell>
 
-                  <GridCell first>Instrumental RE</GridCell>
+                  <GridCell first>Instrumental Reading Emotions (RE)</GridCell>
                   <GridCell>Reading for strategy, compliance, or control.</GridCell>
                   <GridCell>Management</GridCell>
 
-                  <GridCell first>Weaponised RE</GridCell>
+                  <GridCell first>Weaponised Reading Emotions (RE)</GridCell>
                   <GridCell>Reading for leverage and exploitation.</GridCell>
                   <GridCell>Power</GridCell>
                 </div>
@@ -620,19 +620,19 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   <div style={gridHeaderStyle}>What It Is</div>
                   <div style={gridHeaderStyle}>What It Serves</div>
 
-                  <GridCell first>Flooded ER</GridCell>
+                  <GridCell first>Flooded Emotional Resonance (ER)</GridCell>
                   <GridCell>Overwhelmed by others' states. No filter. The other person's emotion becomes the dominant experience.</GridCell>
                   <GridCell>Connection at any cost</GridCell>
 
-                  <GridCell first>Confused / Distrusted ER</GridCell>
+                  <GridCell first>Confused / Distrusted Emotional Resonance (ER)</GridCell>
                   <GridCell>Felt sense contradicted by authority. "You're imagining things." The signal is there but cannot be trusted.</GridCell>
                   <GridCell>Compliance</GridCell>
 
-                  <GridCell first>Shut-down ER</GridCell>
+                  <GridCell first>Shut-down Emotional Resonance (ER)</GridCell>
                   <GridCell>Feeling was punished. Protective shutdown. The capacity retreats because it was too costly to use.</GridCell>
                   <GridCell>Self-protection</GridCell>
 
-                  <GridCell first>Absent ER</GridCell>
+                  <GridCell first>Absent Emotional Resonance (ER)</GridCell>
                   <GridCell>No felt experience of others' states. The resonance channel never developed or was fully sealed.</GridCell>
                   <GridCell>—</GridCell>
                 </div>
@@ -655,15 +655,15 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                   <div style={gridHeaderStyle}>What It Is</div>
                   <div style={gridHeaderStyle}>What It Serves</div>
 
-                  <GridCell first>Online SEA</GridCell>
+                  <GridCell first>Online Self-Emotional Awareness (SEA)</GridCell>
                   <GridCell>Internal experience readable, nameable, trustworthy. The person can locate what they feel, distinguish it from what others feel, and use it as data.</GridCell>
                   <GridCell>Truth</GridCell>
 
-                  <GridCell first>Absent SEA</GridCell>
+                  <GridCell first>Absent Self-Emotional Awareness (SEA)</GridCell>
                   <GridCell>No access to own emotional states. The pre-SEA condition persists into adulthood. Feeling = being. Feedback = identity.</GridCell>
                   <GridCell>—</GridCell>
 
-                  <GridCell first>Narrative-filtered SEA</GridCell>
+                  <GridCell first>Narrative-filtered Self-Emotional Awareness (SEA)</GridCell>
                   <GridCell>Partially online but filtered through a contradicting story. The person can name some states but the naming is constrained by a narrative that overrides felt experience.</GridCell>
                   <GridCell>Regulation</GridCell>
                 </div>
@@ -678,11 +678,11 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               </h3>
 
               <p style={proseStyle}>
-                Without SEA, RE becomes unanchored — reading others' emotions with no internal reference point to ground the reading. Without SEA, ER becomes unfiltered — feeling others' states with no capacity to distinguish "theirs" from "mine." Without SEA, the return has no endpoint — because there is no stable "self" to return to. <strong style={{ color: TEXT.primary }}>SEA provides the internal reference point</strong> that makes all other capacities functional rather than reactive.
+                Without Self-Emotional Awareness (SEA), Reading Emotions (RE) becomes unanchored — reading others' emotions with no internal reference point to ground the reading. Without SEA, Emotional Resonance (ER) becomes unfiltered — feeling others' states with no capacity to distinguish "theirs" from "mine." Without SEA, the return has no endpoint — because there is no stable "self" to return to. <strong style={{ color: TEXT.primary }}>SEA provides the internal reference point</strong> that makes all other capacities functional rather than reactive.
               </p>
 
               <OperationalStatement color={MODEL_COLOR}>
-                SEA is the keystone capacity. Without it, RE reads without anchoring, ER resonates without filtering, and the return has no destination.
+                Self-Emotional Awareness (SEA) is the keystone capacity. Without it, Reading Emotions (RE) reads without anchoring, Emotional Resonance (ER) resonates without filtering, and the return has no destination.
               </OperationalStatement>
             </div>
 
@@ -889,7 +889,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Co-regulation as the developmental mechanism for the return path. Three named disruption patterns — disrupted, misdirected, and blocked — linking caregiver configuration to child regulatory capacity. Each disruption produces a specific, predictable consequence for the child's ability to return from activation to safety.
+                  Co-regulation as the developmental mechanism for the return path. Three named disruption patterns — disrupted, misdirected, and blocked — linking caregiver configuration to child regulatory capacity. Each disruption produces a specific, predictable consequence for the child's ability to return from activation to baseline.
                 </p>
               </ExpandableSection>
             </div>
@@ -1100,7 +1100,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </OperationalStatement>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The most consequential configuration for tolerance thresholds:</strong> Flooded ER + absent SEA. The person <em>feels</em> the harm — the body resonates with it, ER is picking up the signal. But without SEA, the person cannot locate it as harm. They feel the pain but cannot name it, cannot source it, cannot use it as data. This is the configuration that produces the highest tolerance for harmful conditions, because the very capacity that would flag the harm (SEA) is the capacity that is missing.
+              <strong style={{ color: TEXT.primary }}>The most consequential configuration for tolerance thresholds:</strong> Flooded Emotional Resonance (ER) + absent SEA. The person <em>feels</em> the harm — the body resonates with it, ER is picking up the signal. But without SEA, the person cannot locate it as harm. They feel the pain but cannot name it, cannot source it, cannot use it as data. This is the configuration that produces the highest tolerance for harmful conditions, because the very capacity that would flag the harm (SEA) is the capacity that is missing.
             </p>
 
             <div style={expandableRowStyle}>
@@ -1579,7 +1579,7 @@ const DEGRADATION_DATA = [
       { label: "Overwhelmed", pct: 60, color: ER_COLOR },
       { label: "Strategic", pct: 20, color: ER_COLOR },
       { label: "Performed", pct: 5, color: ER_COLOR },
-      { label: "Dark", pct: 0, color: ER_COLOR },
+      { label: "Absent", pct: 0, color: ER_COLOR },
     ],
   },
   {

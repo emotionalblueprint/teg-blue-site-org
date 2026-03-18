@@ -541,7 +541,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                Connection and Protection are the <strong style={{ color: SPECTRUM.cobalt }}>two fundamental configurations</strong> of the nervous system — not as binary states, but as the two poles the compass needle orients between. These are the <strong style={{ color: TEXT.primary }}>body-first modes</strong>: they happen <em>to</em> you. They have been running for millions of years before cognition evolved.
+                Connection and Protection are the <strong style={{ color: SPECTRUM.cobalt }}>two fundamental configurations</strong> of the nervous system — not as binary states, but as the two poles the compass needle orients between. These are the <strong style={{ color: TEXT.primary }}>body-first modes</strong>: the nervous system activates them automatically. They have been running for millions of years before cognition evolved.
               </p>
 
               <div
@@ -554,7 +554,7 @@ export default function F1EmotionalGradientPage() {
                 }}
               >
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.A.primary, marginBottom: 8 }}>
-                  Connection Mode — The System's Baseline <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
+                  Connection Mode — Designed for Sustained Living <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                   The system's baseline — the mode designed for sustained living. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
@@ -632,7 +632,7 @@ export default function F1EmotionalGradientPage() {
               Biological Restoration
             </h2>
 
-            <CycleBox highlight={["Biological Restoration", "Connection"]} />
+            <CycleBox highlight={["Biological Restoration", "Baseline"]} />
 
             {/* Concept 7 */}
             <div style={{ marginBottom: 32 }}>
@@ -842,7 +842,7 @@ export default function F1EmotionalGradientPage() {
                   lineHeight: 1.6,
                 }}
               >
-                Signal Detection → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Connection
+                Signal Detection → Neuroception → Emotion → Autonomic Response → Mode Activation → Threat Response → <strong style={{ color: SPECTRUM.cobalt }}>Biological Restoration</strong> → Baseline
               </p>
               <p style={proseStyle}>
                 Fluid operation is not the absence of Protection. It is the <strong style={{ color: TEXT.primary }}>full cycle</strong> — the ability to move into threat response when needed and come back when the threat has passed. <strong style={{ color: TEXT.primary }}>Biological Restoration is the mechanism of coming back.</strong>
@@ -922,7 +922,7 @@ export default function F1EmotionalGradientPage() {
                 When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — they happen <em>to</em> you. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
+                <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — the nervous system activates them automatically. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
               </p>
 
               <div
@@ -1592,7 +1592,7 @@ export default function F1EmotionalGradientPage() {
               {
                 question: "What is the difference between Connection and Protection modes?",
                 answer:
-                  "Connection is the system's baseline — the mode designed for sustained living, where perception broadens, empathy is fully available, and repair is possible. Protection is the emergency system — designed for minutes to hours — where the nervous system mobilizes fight, flight, freeze, or fawn responses in response to perceived threat.",
+                  "Connection is the mode designed for sustained living, where perception broadens, empathy is fully available, and repair is possible. Protection is the emergency system — designed for minutes to hours — where the nervous system mobilizes fight, flight, freeze, or fawn responses in response to perceived threat.",
               },
               {
                 question: "What is Biological Restoration?",
@@ -1785,7 +1785,7 @@ function TableRow({ cells }) {
 
 const CYCLE_STEPS = [
   "Signal Detection", "Neuroception", "Emotion", "Autonomic Response",
-  "Mode Activation", "Threat Response", "Biological Restoration", "Connection",
+  "Mode Activation", "Threat Response", "Biological Restoration", "Baseline",
 ];
 
 function CycleBox({ highlight = [] }) {

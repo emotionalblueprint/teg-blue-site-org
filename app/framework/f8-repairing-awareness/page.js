@@ -96,7 +96,7 @@ export default function F8RepairingAwarenessPage() {
               badge="FRAMEWORK F8"
               title="Repairing Awareness"
               subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
-              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
+              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path to baseline that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -141,7 +141,7 @@ export default function F8RepairingAwarenessPage() {
                   Five conditions for repair: felt safety, accurate mirroring, discomfort tolerance, permission, and time — all necessary, none sufficient alone, and felt safety is experienced, not understood
                 </li>
                 <li style={propositionItemStyle}>
-                  Seven pathways develop different capacities — somatic awareness for Emotional Resonance, relational attunement for Reading Emotions, reflective practice for Self-Emotional Awareness, grief work for all three
+                  Seven pathways develop different capacities — somatic awareness for Emotional Resonance (ER), relational attunement for Reading Emotions (RE), reflective practice for Self-Emotional Awareness (SEA), grief work for all three
                 </li>
                 <li style={propositionItemStyle}>
                   Repair proceeds through five oscillating phases — the back-and-forth between new capacity and old configuration is the process
@@ -173,7 +173,7 @@ export default function F8RepairingAwarenessPage() {
               F7 completes the escalation arc: F1 Biological Restoration &rarr; F2 developmental failure &rarr; F3 cognitive replacement &rarr; F4 collective rules &rarr; F5 worth hierarchies &rarr; F6 bias &rarr; F7 domination. Each framework describes a different substitute for the regulation that was never built.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>F8 turns the system around.</strong> It asks: how do you go back? The answer is specific: by reconnecting the awareness capacities that went offline. Not by finding a hidden self. Not by removing a mask. Not by building insight. By developing what didn&rsquo;t have conditions to develop — and learning the return path that was never taught.
+              <strong style={{ color: TEXT.primary }}>F8 turns the system around.</strong> It asks: how do you go back? The answer is specific: by reconnecting the awareness capacities that went offline. Not by finding a hidden self. Not by removing a mask. Not by building insight. By developing what didn&rsquo;t have conditions to develop — and learning the return path to baseline that was never taught.
             </p>
 
             <KeyStatement>
@@ -206,7 +206,7 @@ export default function F8RepairingAwarenessPage() {
 
             <ExpandableSection title="Framework Position in the Regulation Thread" type="framework">
               <p style={expandedProseStyle}>
-                F8 is the first framework in the repair arc. Not a new substitute — the development of what was missing. The regulation thread doesn&rsquo;t just describe how substitutes form. It also describes what genuine repair requires: the same thread, reversed. F8&rsquo;s goal is F2 Concept 4&rsquo;s destination — accurate RE, sustainable ER, online SEA, true coherence — arrived at by a different route. Not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
+                F8 is the first framework in the repair arc. Not a new substitute — the development of what was missing. The regulation thread doesn&rsquo;t just describe how substitutes form. It also describes what genuine repair requires: the same thread, reversed. F8&rsquo;s goal is F2 Concept 4&rsquo;s destination — accurate Reading Emotions (RE), sustainable Emotional Resonance (ER), online Self-Emotional Awareness (SEA), true coherence — arrived at by a different route. Not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
               </p>
             </ExpandableSection>
           </section>
@@ -256,11 +256,11 @@ export default function F8RepairingAwarenessPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["Online", "Functioning and serving understanding", "RE reads emotions accurately and uses the data for connection"]} />
-                  <ThreeColRow cells={["Offline", "Never developed or fully shut down", "SEA was never modeled; the person has no access to internal emotional data"]} />
-                  <ThreeColRow cells={["Misdirected", "Functioning but serving the wrong purpose", "RE is sharp but serves control \u2014 reading others to manage them, not to connect"]} />
-                  <ThreeColRow cells={["Collapsed", "Was developing but was overwhelmed", "ER was available but chronic flooding caused it to shut down"]} />
-                  <ThreeColRow cells={["Compensatory", "One capacity doing another\u2019s job", "RE substituting for SEA \u2014 tracking others\u2019 responses to infer own emotional state"]} />
+                  <ThreeColRow cells={["Online", "Functioning and serving understanding", "Reading Emotions (RE) reads emotions accurately and uses the data for connection"]} />
+                  <ThreeColRow cells={["Offline", "Never developed or fully shut down", "Self-Emotional Awareness (SEA) was never modeled; the person has no access to internal emotional data"]} />
+                  <ThreeColRow cells={["Misdirected", "Functioning but serving the wrong purpose", "Reading Emotions (RE) is sharp but serves control \u2014 reading others to manage them, not to connect"]} />
+                  <ThreeColRow cells={["Collapsed", "Was developing but was overwhelmed", "Emotional Resonance (ER) was available but chronic flooding caused it to shut down"]} />
+                  <ThreeColRow cells={["Compensatory", "One capacity doing another\u2019s job", "Reading Emotions (RE) substituting for Self-Emotional Awareness (SEA) \u2014 tracking others\u2019 responses to infer own emotional state"]} />
                 </tbody>
               </table>
             </div>
@@ -288,7 +288,7 @@ export default function F8RepairingAwarenessPage() {
                 </thead>
                 <tbody>
                   <ThreeColRow cells={[
-                    "RE sharp + ER collapsed + SEA offline",
+                    "Reading Emotions (RE) sharp + Emotional Resonance (ER) collapsed + Self-Emotional Awareness (SEA) offline",
                     "Reads everything, feels nothing, doesn\u2019t know own state. Narrates emotions without experiencing them.",
                     "Chronic Control \u2014 \u201Cthe most psychologically literate people can be the most stuck\u201D",
                   ]} />
@@ -317,7 +317,7 @@ export default function F8RepairingAwarenessPage() {
             </div>
 
             <p style={proseStyle}>
-              F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp RE + collapsed ER + absent SEA = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. A configuration. The same nervous system with different developmental conditions would have produced a different configuration.
+              F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp Reading Emotions (RE) + collapsed Emotional Resonance (ER) + absent Self-Emotional Awareness (SEA) = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. A configuration. The same nervous system with different developmental conditions would have produced a different configuration.
             </p>
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
@@ -353,13 +353,13 @@ export default function F8RepairingAwarenessPage() {
                 <strong style={{ color: TEXT.primary }}>Cognitive replacement has been working.</strong> F3&rsquo;s core mechanism: cognition tells the emotional system &ldquo;you&rsquo;re not needed.&rdquo; If the person has been successful, functional, admired — the replacement has been rewarded. Why would the system abandon what has been rewarded?
               </li>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>SEA coming online means feeling what was previously unfelt.</strong> Grief for what was lost. Anger about what happened. Confusion about who one actually is without the narrative. The system accurately predicts this cost and resists it.
+                <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) coming online means feeling what was previously unfelt.</strong> Grief for what was lost. Anger about what happened. Confusion about who one actually is without the narrative. The system accurately predicts this cost and resists it.
               </li>
               <li style={listItemStyle}>
                 <strong style={{ color: TEXT.primary }}>Relationships were built around the current configuration.</strong> People who needed the person to be the reader, the manager, the strong one — those relationships may not survive a configuration change. The nervous system accurately assesses this relational risk.
               </li>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>The repair process requires the very capacities that are offline.</strong> Developing SEA requires enough safety to tolerate what SEA will reveal. Developing ER requires enough resilience to handle feeling without collapsing. The system needs what it doesn&rsquo;t have in order to develop what it doesn&rsquo;t have.
+                <strong style={{ color: TEXT.primary }}>The repair process requires the very capacities that are offline.</strong> Developing Self-Emotional Awareness (SEA) requires enough safety to tolerate what SEA will reveal. Developing Emotional Resonance (ER) requires enough resilience to handle feeling without collapsing. The system needs what it doesn&rsquo;t have in order to develop what it doesn&rsquo;t have.
               </li>
             </ol>
 
@@ -408,7 +408,7 @@ export default function F8RepairingAwarenessPage() {
                   <ThreeColRow cells={[
                     "Accurate Mirroring",
                     "Being seen as one actually is \u2014 not the performance, not the configuration, but what\u2019s underneath. Experienced through someone whose own awareness capacities are sufficiently online",
-                    "The person has no data about who they are without the configuration. SEA cannot develop without external reflection",
+                    "The person has no data about who they are without the configuration. Self-Emotional Awareness (SEA) cannot develop without external reflection",
                   ]} />
                   <ThreeColRow cells={[
                     "Discomfort Tolerance",
@@ -441,7 +441,7 @@ export default function F8RepairingAwarenessPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
-                The five conditions organized as a unified model for awareness capacity development — connecting clinical safety research to the specific question of which conditions allow RE, ER, and SEA to come online. The distinction between felt safety and cognitive understanding addresses a common clinical error: treating insight as equivalent to safety. The emphasis on time as a necessary condition resists the urgency that most intervention contexts produce.
+                The five conditions organized as a unified model for awareness capacity development — connecting clinical safety research to the specific question of which conditions allow Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) to come online. The distinction between felt safety and cognitive understanding addresses a common clinical error: treating insight as equivalent to safety. The emphasis on time as a necessary condition resists the urgency that most intervention contexts produce.
               </p>
             </ExpandableSection>
           </section>
@@ -472,32 +472,32 @@ export default function F8RepairingAwarenessPage() {
                 <tbody>
                   <ThreeColRow cells={[
                     "Somatic awareness",
-                    "ER \u2014 Emotional Resonance",
+                    "Emotional Resonance (ER)",
                     "The body learns to feel again. Not through understanding but through experiencing sensation without overwhelm. Reconnects the channel that was shut down",
                   ]} />
                   <ThreeColRow cells={[
                     "Relational attunement",
-                    "RE \u2014 Reading Emotions",
+                    "Reading Emotions (RE)",
                     "Accurate reading develops through being accurately read. A relationship where the person experiences being seen teaches the system what accurate reading looks like",
                   ]} />
                   <ThreeColRow cells={[
                     "Reflective practice",
-                    "SEA \u2014 Self-Emotional Awareness",
-                    "The person begins receiving their own internal data with support from someone whose SEA is online. SEA develops through SEA being modeled",
+                    "Self-Emotional Awareness (SEA)",
+                    "The person begins receiving their own internal data with support from someone whose Self-Emotional Awareness (SEA) is online. SEA develops through SEA being modeled",
                   ]} />
                   <ThreeColRow cells={[
                     "Grief work",
                     "All three",
-                    "Grief requires feeling (ER), recognizing what\u2019s being mourned (RE), and knowing it is one\u2019s own (SEA). Develops all three simultaneously",
+                    "Grief requires feeling \u2014 Emotional Resonance (ER), recognizing what\u2019s being mourned \u2014 Reading Emotions (RE), and knowing it is one\u2019s own \u2014 Self-Emotional Awareness (SEA). Develops all three simultaneously",
                   ]} />
                   <ThreeColRow cells={[
                     "Values clarification",
-                    "SEA primarily",
+                    "Self-Emotional Awareness (SEA) primarily",
                     "Asks: \u201CWhat do I actually want \u2014 not what I\u2019ve been told to want, not what the configuration produces, but what is mine?\u201D",
                   ]} />
                   <ThreeColRow cells={[
                     "Creative expression",
-                    "ER primarily",
+                    "Emotional Resonance (ER) primarily",
                     "Bypasses cognitive replacement by working in domains where cognition is not the primary organizer. The emotional-somatic system can express when it\u2019s not being monitored",
                   ]} />
                   <ThreeColRow cells={[
@@ -510,7 +510,7 @@ export default function F8RepairingAwarenessPage() {
             </div>
 
             <p style={proseStyle}>
-              Most people need multiple pathways. Treatment identifies which pathways are most accessible — meaning least defended — for each person&rsquo;s current configuration. The person with collapsed ER may not begin with somatic work (too threatening). The person with misdirected RE may not begin with relational attunement (too activating). The person with offline SEA may not begin with reflective practice (no data to reflect on).
+              Most people need multiple pathways. Treatment identifies which pathways are most accessible — meaning least defended — for each person&rsquo;s current configuration. The person with collapsed Emotional Resonance (ER) may not begin with somatic work (too threatening). The person with misdirected Reading Emotions (RE) may not begin with relational attunement (too activating). The person with offline Self-Emotional Awareness (SEA) may not begin with reflective practice (no data to reflect on).
             </p>
 
             <KeyStatement>
@@ -554,7 +554,7 @@ export default function F8RepairingAwarenessPage() {
                   ]} />
                   <ThreeColRow cells={[
                     "Oscillation",
-                    "Movement between new capacity and old configuration. SEA comes online, then false coherence activates, then SEA again",
+                    "Movement between new capacity and old configuration. Self-Emotional Awareness (SEA) comes online, then false coherence activates, then SEA again",
                     "Can feel like failure (\u201CI thought I was past this\u201D). The oscillation itself is progress \u2014 the compass is moving",
                   ]} />
                   <ThreeColRow cells={[
@@ -565,7 +565,7 @@ export default function F8RepairingAwarenessPage() {
                   <ThreeColRow cells={[
                     "Integration",
                     "New capacity becomes available \u2014 not permanent, not perfect, but accessible. The old configuration becomes a choice rather than a compulsion",
-                    "The person can move through all four modes with more freedom. False coherence loosens. The compass moves. The return works",
+                    "The person can move through all four modes with more freedom. False coherence loosens. The compass moves. The return to baseline works",
                   ]} />
                 </tbody>
               </table>
@@ -614,7 +614,7 @@ export default function F8RepairingAwarenessPage() {
             </div>
 
             <p style={proseStyle}>
-              The destination is F2 Concept 4&rsquo;s designed development: accurate RE, sustainable ER, online SEA, true coherence — narrative aligned with felt experience, not substituting for it. Arrived at by a different route: not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
+              The destination is F2 Concept 4&rsquo;s designed development: accurate Reading Emotions (RE), sustainable Emotional Resonance (ER), online Self-Emotional Awareness (SEA), true coherence — narrative aligned with felt experience, not substituting for it. Arrived at by a different route: not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
             </p>
 
             <KeyStatement>
@@ -673,10 +673,10 @@ export default function F8RepairingAwarenessPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["High RE (reads too much)", "\"You\u2019re too sensitive.\" \"Stop analyzing everyone.\" \"Why can\u2019t you just relax?\""]} />
-                  <TableRow cells={["High ER (feels too deeply)", "\"You\u2019re overreacting.\" \"Toughen up.\" \"It\u2019s not that serious.\""]} />
-                  <TableRow cells={["Online SEA (knows too much about self)", "\"You\u2019re overthinking.\" \"Just be normal.\" Others uncomfortable with self-awareness they don\u2019t have"]} />
-                  <TableRow cells={["Low ER (doesn\u2019t feel what\u2019s expected)", "\"Don\u2019t you care?\" \"What\u2019s wrong with you?\" Performs emotion to meet expectations"]} />
+                  <TableRow cells={["High Reading Emotions (RE) (reads too much)", "\"You\u2019re too sensitive.\" \"Stop analyzing everyone.\" \"Why can\u2019t you just relax?\""]} />
+                  <TableRow cells={["High Emotional Resonance (ER) (feels too deeply)", "\"You\u2019re overreacting.\" \"Toughen up.\" \"It\u2019s not that serious.\""]} />
+                  <TableRow cells={["Online Self-Emotional Awareness (SEA) (knows too much about self)", "\"You\u2019re overthinking.\" \"Just be normal.\" Others uncomfortable with self-awareness they don\u2019t have"]} />
+                  <TableRow cells={["Low Emotional Resonance (ER) (doesn\u2019t feel what\u2019s expected)", "\"Don\u2019t you care?\" \"What\u2019s wrong with you?\" Performs emotion to meet expectations"]} />
                   <TableRow cells={["Nonlinear processing", "\"Stay focused.\" \"That\u2019s off-topic.\" \"Pay attention.\""]} />
                   <TableRow cells={["Intense focus patterns", "\"You\u2019re obsessed.\" \"Why can\u2019t you be more balanced?\""]} />
                 </tbody>
@@ -729,9 +729,9 @@ export default function F8RepairingAwarenessPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["High RE \u2014 reads patterns, dynamics, unspoken signals", "Sees what\u2019s actually happening. Detects misalignment between what\u2019s said and what\u2019s meant. Identifies problems before they escalate"]} />
-                  <TableRow cells={["High ER \u2014 deep emotional resonance", "Holds the emotional truth of the group. Knows when something is wrong even when metrics say everything is fine"]} />
-                  <TableRow cells={["Strong SEA \u2014 accurate self-knowledge", "Names what\u2019s happening. Cuts through false coherence. Models the capacity for others"]} />
+                  <TableRow cells={["High Reading Emotions (RE) \u2014 reads patterns, dynamics, unspoken signals", "Sees what\u2019s actually happening. Detects misalignment between what\u2019s said and what\u2019s meant. Identifies problems before they escalate"]} />
+                  <TableRow cells={["High Emotional Resonance (ER) \u2014 deep emotional resonance", "Holds the emotional truth of the group. Knows when something is wrong even when metrics say everything is fine"]} />
+                  <TableRow cells={["Strong Self-Emotional Awareness (SEA) \u2014 accurate self-knowledge", "Names what\u2019s happening. Cuts through false coherence. Models the capacity for others"]} />
                   <TableRow cells={["Nonlinear processing", "Finds connections that sequential thinkers miss. Sees the whole pattern, not just the steps"]} />
                   <TableRow cells={["Detail-oriented processing", "Catches what broad thinkers skip. Identifies the one variable that changes everything"]} />
                   <TableRow cells={["Slow, deep processing", "Finds what fast processors overlook. Sits with complexity long enough for the real answer to emerge"]} />
@@ -820,7 +820,7 @@ export default function F8RepairingAwarenessPage() {
                   ]} />
                   <TableRow cells={[
                     "Seven pathways",
-                    "Different pathways develop different capacities. Somatic \u2192 ER. Relational \u2192 RE. Reflective \u2192 SEA. Grief \u2192 all three. Follow the accessible pathway first.",
+                    "Different pathways develop different capacities. Somatic \u2192 Emotional Resonance (ER). Relational \u2192 Reading Emotions (RE). Reflective \u2192 Self-Emotional Awareness (SEA). Grief \u2192 all three. Follow the accessible pathway first.",
                   ]} />
                   <TableRow cells={[
                     "Five repair phases",
@@ -1062,12 +1062,12 @@ export default function F8RepairingAwarenessPage() {
               {
                 question: "What does 'repairing awareness' mean in the TEG-Blue system?",
                 answer:
-                  "F8 proposes that repair means developing the awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that never had conditions to develop — not finding a hidden self or removing a mask. The destination is the same designed development F2 describes, arrived at by a different route: through conditions an adult can seek, create, and sustain. The regulation thread reversed: every substitute from F3–F7 was built because the original was missing. Repair means building the original.",
+                  "F8 proposes that repair means developing the awareness capacities — Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — that never had conditions to develop — not finding a hidden self or removing a mask. The destination is the same designed development F2 describes, arrived at by a different route: through conditions an adult can seek, create, and sustain. The regulation thread reversed: every substitute from F3–F7 was built because the original was missing. Repair means building the original.",
               },
               {
                 question: "What is an awareness configuration?",
                 answer:
-                  "An awareness configuration describes the current state of each of the three capacities: online (functioning for understanding), offline (never developed), misdirected (functioning but serving the wrong purpose), collapsed (was developing but overwhelmed), or compensatory (one capacity doing another's job). Configuration predicts chronic mode — for example, sharp RE + collapsed ER + offline SEA predicts chronic Control. This is assessment, not diagnosis: every configuration made sense given the original environment.",
+                  "An awareness configuration describes the current state of each of the three capacities: online (functioning for understanding), offline (never developed), misdirected (functioning but serving the wrong purpose), collapsed (was developing but overwhelmed), or compensatory (one capacity doing another's job). Configuration predicts chronic mode — for example, sharp Reading Emotions (RE) + collapsed Emotional Resonance (ER) + offline Self-Emotional Awareness (SEA) predicts chronic Control. This is assessment, not diagnosis: every configuration made sense given the original environment.",
               },
               {
                 question: "What conditions are needed for repair?",

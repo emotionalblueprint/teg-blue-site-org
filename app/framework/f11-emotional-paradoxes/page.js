@@ -191,7 +191,7 @@ export default function F11EmotionalParadoxesPage() {
   const faqItems = [
     {
       q: "Why do people contradict themselves?",
-      a: "Because multiple valid needs are operating simultaneously. A person who wants connection but pushes it away is not irrational \u2014 they are serving both the need for connection (the system's baseline) and the need for protection (the system's emergency response). When any two needs conflict, behavior serves multiple masters. The result looks contradictory from outside but is perfectly logical from inside.",
+      a: "Because multiple valid needs are operating simultaneously. A person who wants connection but pushes it away is not irrational \u2014 they are serving both the need for connection (the social engagement system) and the need for protection (the system's emergency response). When any two needs conflict, behavior serves multiple masters. The result looks contradictory from outside but is perfectly logical from inside.",
     },
     {
       q: "Is holding paradox the same as accepting contradiction?",
@@ -325,7 +325,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <p style={proseStyle}>
-              A person who wants connection but pushes it away is not irrational. Two needs are real: the need for connection (F1 — the system's baseline, designed for sustained living) and the need for protection (F1 — the system's emergency response to perceived threat). The behavior oscillates or compromises because both needs are driving the system. Neither is wrong. Neither is the "real" need. Both are the nervous system pursuing valid regulatory goals.
+              A person who wants connection but pushes it away is not irrational. Two needs are real: the need for connection (F1 — the social engagement system, designed for sustained living) and the need for protection (F1 — the system's emergency response to perceived threat). The behavior oscillates or compromises because both needs are driving the system. Neither is wrong. Neither is the "real" need. Both are the nervous system pursuing valid regulatory goals.
             </p>
 
             <h3 style={conceptHeadingStyle}>Five Competing Needs</h3>
@@ -587,11 +587,11 @@ export default function F11EmotionalParadoxesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["Both/and thinking", "The cognitive capacity to hold two contradictory truths as simultaneously valid", "Self-emotional awareness online \u2014 so the person can receive both truths without false coherence overriding one"]} />
-                  <ThreeColRow cells={["Somatic tolerance", "The body's capacity to hold the tension of unresolved contradiction without flooding or numbing", "Emotional resonance developed \u2014 so the felt discomfort of paradox can be experienced without collapse"]} />
-                  <ThreeColRow cells={["Temporal flexibility", "The capacity to hold that something can be true now and different later \u2014 or true from one perspective and false from another", "Reading emotions accurate \u2014 so the person can read context rather than demanding a single fixed truth"]} />
+                  <ThreeColRow cells={["Both/and thinking", "The cognitive capacity to hold two contradictory truths as simultaneously valid", "Self-Emotional Awareness (SEA) online \u2014 so the person can receive both truths without false coherence overriding one"]} />
+                  <ThreeColRow cells={["Somatic tolerance", "The body's capacity to hold the tension of unresolved contradiction without flooding or numbing", "Emotional Resonance (ER) developed \u2014 so the felt discomfort of paradox can be experienced without collapse"]} />
+                  <ThreeColRow cells={["Temporal flexibility", "The capacity to hold that something can be true now and different later \u2014 or true from one perspective and false from another", "Reading Emotions (RE) accurate \u2014 so the person can read context rather than demanding a single fixed truth"]} />
                   <ThreeColRow cells={["Part recognition", "The capacity to recognize that different needs are generating different pulls", "All three capacities working together \u2014 reading, feeling, and self-knowing"]} />
-                  <ThreeColRow cells={["Grief capacity", "The capacity to mourn what cannot be reconciled \u2014 some paradoxes are permanent losses", "Emotional resonance and self-emotional awareness \u2014 the person must feel the grief and know it as their own"]} />
+                  <ThreeColRow cells={["Grief capacity", "The capacity to mourn what cannot be reconciled \u2014 some paradoxes are permanent losses", "Emotional Resonance (ER) and Self-Emotional Awareness (SEA) \u2014 the person must feel the grief and know it as their own"]} />
                 </tbody>
               </table>
             </div>
@@ -599,7 +599,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>The Connection to F8</h3>
 
             <p style={proseStyle}>
-              Holding capacity is not a separate skill. It is what the three awareness capacities produce when they are online. Self-emotional awareness provides the self-knowledge to see both truths. Emotional resonance provides the emotional resilience to tolerate the tension. Reading emotions provides the relational awareness to hold complexity in relationship with others.
+              Holding capacity is not a separate skill. It is what the three awareness capacities produce when they are online. Self-Emotional Awareness (SEA) provides the self-knowledge to see both truths. Emotional Resonance (ER) provides the emotional resilience to tolerate the tension. Reading Emotions (RE) provides the relational awareness to hold complexity in relationship with others.
             </p>
 
             <KeyStatement>
@@ -651,7 +651,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>Healing Changing Relationships</h3>
 
             <p style={proseStyle}>
-              As the person's configuration shifts, relationships respond. Some deepen — they can now hold more of who the person actually is. Some strain — they were built on the old configuration and cannot accommodate the new one. The paradox: becoming healthier may cost relationships.
+              As the person's configuration shifts, relationships respond. Some deepen — they can now hold more of who the person actually is. Some strain — they were built on the old configuration and cannot accommodate the new one. The paradox: becoming more fluid may cost relationships.
             </p>
 
             <KeyStatement>

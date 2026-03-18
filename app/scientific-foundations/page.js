@@ -256,7 +256,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement. The sympathetic branch activates fight-or-flight. The oldest (dorsal vagal) produces shutdown. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Four-Mode Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Control and Domination. The gradient tracks the progression from adaptive Protection to maladaptive Control — and the capacity to return to Connection, which is the key variable predicting relational outcomes." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Four-Mode Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Control and Domination. The gradient tracks the progression from adaptive Protection to entrenched Control — and the capacity to return to baseline, which is the key variable predicting relational outcomes." },
       { id: "key-sources", title: "Key Sources", content: "Porges, S. W. (2011). The Polyvagal Theory. Norton. \u00b7 Porges, S. W. (2017). The Pocket Guide to the Polyvagal Theory. Norton. \u00b7 Dana, D. (2018). The Polyvagal Theory in Therapy. Norton." },
     ],
   },
@@ -516,7 +516,7 @@ const coreFoundations = [
   },
   {
     concept: "Repair",
-    explanation: "The path back to connection is measurable and specific, not abstract (repair research, complexity markers)",
+    explanation: "The return to baseline is measurable and specific, not abstract (repair research, complexity markers)",
   },
 ];
 

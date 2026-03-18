@@ -573,7 +573,7 @@ export default function M3RegulationCapacitiesPage() {
               When the internal return pathway is blocked — when the nervous system cannot complete the cycle alone — it redirects. One direction: outward. Using control over others to discharge accumulated activation.
             </p>
             <p style={proseStyle}>
-              This is not a description of dysfunctional behaviour. It is a description of a biological mechanism.
+              It is a description of a biological mechanism.
             </p>
 
             <h3 style={h3Style}>Why Controlling Others Produces Real Relief</h3>
@@ -719,7 +719,7 @@ export default function M3RegulationCapacitiesPage() {
               Each position on the gradient corresponds to a physiological state and a regulation strategy.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Connection Mode — The System{"'"}s Baseline.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Cycles complete. The return pathway is available.
+              <strong style={{ color: TEXT.primary }}>Connection Mode — Parasympathetic Dominance.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Cycles complete. The return pathway is available.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Protection Mode — The System on Emergency Fuel.</strong> Acute SNS activation — designed to be temporary, biologically expensive, and followed by return. The body is in the cycle. Completion is pending.

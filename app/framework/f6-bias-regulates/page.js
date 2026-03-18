@@ -299,7 +299,7 @@ export default function F6BiasRegulatesPage() {
                   ]} />
                   <TableRow cells={[
                     "6. Empathy Collapse",
-                    "State-dependent shutdown of Emotional Resonance. Reading Emotions may remain sharp — serving strategy rather than understanding. The person can describe what others feel without being affected by it.",
+                    "State-dependent shutdown of Emotional Resonance (ER). Reading Emotions (RE) may remain sharp — serving strategy rather than understanding. The person can describe what others feel without being affected by it.",
                   ]} />
                   <TableRow cells={[
                     "7. Update Failure",

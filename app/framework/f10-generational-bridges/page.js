@@ -206,7 +206,7 @@ export default function F10GenerationalBridgesPage() {
     },
     {
       q: "What is true elderhood?",
-      a: "A developmental achievement — the result of having done the awareness work F8 describes. True elders use experience for guidance rather than age for control. They earn respect through embodied capacity, support evolution rather than resisting change, and can hold the family's truth rather than demanding the family hold their version. It requires SEA online, ER available, RE accurate, and a compass that moves.",
+      a: "A developmental achievement — the result of having done the awareness work F8 describes. True elders use experience for guidance rather than age for control. They earn respect through embodied capacity, support evolution rather than resisting change, and can hold the family's truth rather than demanding the family hold their version. It requires Self-Emotional Awareness (SEA) online, Emotional Resonance (ER) available, Reading Emotions (RE) accurate, and a compass that moves.",
     },
   ];
 
@@ -291,7 +291,7 @@ export default function F10GenerationalBridgesPage() {
                 </thead>
                 <tbody>
                   <TableRow cells={["Stuck compass \u2192 child calibrates to threat", "Moving compass \u2192 child calibrates to flexibility"]} />
-                  <TableRow cells={["SEA offline \u2192 child's SEA has no model", "SEA online \u2192 child absorbs self-awareness as normal"]} />
+                  <TableRow cells={["Self-Emotional Awareness (SEA) offline \u2192 child's SEA has no model", "Self-Emotional Awareness (SEA) online \u2192 child absorbs self-awareness as normal"]} />
                   <TableRow cells={["False coherence \u2192 child learns to narrate instead of feel", "True coherence \u2192 child learns that feeling and knowing can align"]} />
                   <TableRow cells={["Rules substitute for regulation \u2192 child internalizes rigid rules", "Regulation present \u2192 child learns to regulate, not just comply"]} />
                   <TableRow cells={["Worth-seeking substitutes for safety \u2192 child learns to perform for belonging", "Safety present \u2192 child belongs without performing"]} />
@@ -333,7 +333,7 @@ export default function F10GenerationalBridgesPage() {
             </p>
 
             <p style={proseStyle}>
-              A parent whose SEA is offline cannot provide conditions for a child's SEA to develop — regardless of how much they want to, how many parenting books they have read, or how sincere their intention is. The child absorbs the configuration, not the aspiration.
+              A parent whose Self-Emotional Awareness (SEA) is offline cannot provide conditions for a child's SEA to develop — regardless of how much they want to, how many parenting books they have read, or how sincere their intention is. The child absorbs the configuration, not the aspiration.
             </p>
 
             <p style={proseStyle}>
@@ -343,7 +343,7 @@ export default function F10GenerationalBridgesPage() {
             <h3 style={conceptHeadingStyle}>The Transmission Mechanism</h3>
 
             <p style={proseStyle}>
-              The parent whose SEA is offline did not choose that configuration. Their own development did not provide conditions for SEA to develop (F2). Their own cognition built the best replacement it could (F3). Their own environment may have required chronic masking (F8–F9). They are transmitting what they have — which is what their parents transmitted to them.
+              The parent whose Self-Emotional Awareness (SEA) is offline did not choose that configuration. Their own development did not provide conditions for SEA to develop (F2). Their own cognition built the best replacement it could (F3). Their own environment may have required chronic masking (F8–F9). They are transmitting what they have — which is what their parents transmitted to them.
             </p>
 
             <KeyStatement>
@@ -487,7 +487,7 @@ export default function F10GenerationalBridgesPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F10 connects earned security to the three-capacity model: what processing develops is SEA, ER, and RE — the capacities that change the adult's configuration, which changes the environment, which changes what the child absorbs. This makes "processing" specific rather than vague. And it explains why cognitive understanding fails: the child's calibration reads the somatic-emotional system (where the capacities operate), not the cognitive system (where understanding lives).
+                F10 connects earned security to the three-capacity model: what processing develops is Self-Emotional Awareness (SEA), Emotional Resonance (ER), and Reading Emotions (RE) — the capacities that change the adult's configuration, which changes the environment, which changes what the child absorbs. This makes "processing" specific rather than vague. And it explains why cognitive understanding fails: the child's calibration reads the somatic-emotional system (where the capacities operate), not the cognitive system (where understanding lives).
               </p>
             </ExpandableSection>
           </section>
@@ -526,7 +526,7 @@ export default function F10GenerationalBridgesPage() {
                   <ThreeColRow cells={[
                     "Chronic Control",
                     "Conditional relating; performance demands; emotional management as love; 'safety through being correct'",
-                    "Child absorbs: belonging requires performance. May develop achievement orientation, perfectionism, sharp RE with collapsed ER and offline SEA",
+                    "Child absorbs: belonging requires performance. May develop achievement orientation, perfectionism, sharp Reading Emotions (RE) with collapsed Emotional Resonance (ER) and offline Self-Emotional Awareness (SEA)",
                   ]} />
                   <ThreeColRow cells={[
                     "Chronic Domination",
@@ -552,7 +552,7 @@ export default function F10GenerationalBridgesPage() {
                   <ThreeColRow cells={[
                     "Connection",
                     "High",
-                    "Can see patterns. Has resources for processing. Can tolerate what SEA reveals. Can hold grief",
+                    "Can see patterns. Has resources for processing. Can tolerate what Self-Emotional Awareness (SEA) reveals. Can hold grief",
                   ]} />
                   <ThreeColRow cells={[
                     "Chronic Protection",
@@ -609,10 +609,10 @@ export default function F10GenerationalBridgesPage() {
             </p>
 
             <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              <strong>Step 1: Individual repair.</strong> The adult develops SEA, reconnects ER, calibrates RE. The compass begins to move. False coherence loosens. The return path works.<br /><br />
+              <strong>Step 1: Individual repair.</strong> The adult develops Self-Emotional Awareness (SEA), reconnects Emotional Resonance (ER), calibrates Reading Emotions (RE). The compass begins to move. False coherence loosens. The return path works.<br /><br />
               <strong>Step 2: The adult's configuration changes.</strong> Not perfectly. Not completely. But enough that the nervous system the child reads is different from the one the adult's parents provided.<br /><br />
               <strong>Step 3: The child develops in a different environment.</strong> Not because the parent decided to parent differently (though they may). Because the parent <em>is</em> different. The emotional climate of the home changes because the nervous system generating that climate has changed.<br /><br />
-              <strong>Step 4: The child's capacities have conditions to develop.</strong> SEA can come online because it is being modeled. ER can develop because it is being met. RE can calibrate accurately because the adult's signals are more coherent.<br /><br />
+              <strong>Step 4: The child's capacities have conditions to develop.</strong> Self-Emotional Awareness (SEA) can come online because it is being modeled. Emotional Resonance (ER) can develop because it is being met. Reading Emotions (RE) can calibrate accurately because the adult's signals are more coherent.<br /><br />
               <strong>Step 5: The child transmits differently to the next generation.</strong> Not because they were told to. Because their configuration is different.
             </p>
 
@@ -639,7 +639,7 @@ export default function F10GenerationalBridgesPage() {
             </h2>
 
             <p style={proseStyle}>
-              The most important word in F10 is <strong>enough.</strong> Not perfect awareness. Not complete repair. Not an ideal childhood. Enough loosening of false coherence that the child absorbs different possibilities. Enough SEA that the child sees self-awareness modeled. Enough return that the child learns: the compass comes back.
+              The most important word in F10 is <strong>enough.</strong> Not perfect awareness. Not complete repair. Not an ideal childhood. Enough loosening of false coherence that the child absorbs different possibilities. Enough Self-Emotional Awareness (SEA) that the child sees self-awareness modeled. Enough return that the child learns: the compass comes back.
             </p>
 
             <h3 style={conceptHeadingStyle}>Why "Enough" Matters</h3>
@@ -807,7 +807,7 @@ export default function F10GenerationalBridgesPage() {
             <h3 style={conceptHeadingStyle}>The Developmental Achievement</h3>
 
             <p style={proseStyle}>
-              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>SEA online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>ER available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>RE accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to baseline after the discomfort of truth).
+              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>Self-Emotional Awareness (SEA) online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>Emotional Resonance (ER) available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>Reading Emotions (RE) accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to baseline after the discomfort of truth).
             </p>
 
             <KeyStatement>
@@ -827,7 +827,7 @@ export default function F10GenerationalBridgesPage() {
             </p>
 
             <p style={proseStyle}>
-              F10 surfaces a characteristic paradox: the adult who begins to see the mechanism clearly often experiences simultaneous gratitude and grief for the same people. Love for the parent who did their best and anger at what their best cost. Understanding of the system and heartbreak about its consequences. The desire to forgive and the need to be honest. These are not contradictions. They are the logical outcome of seeing clearly — of having SEA online while looking at a complex emotional reality.
+              F10 surfaces a characteristic paradox: the adult who begins to see the mechanism clearly often experiences simultaneous gratitude and grief for the same people. Love for the parent who did their best and anger at what their best cost. Understanding of the system and heartbreak about its consequences. The desire to forgive and the need to be honest. These are not contradictions. They are the logical outcome of seeing clearly — of having Self-Emotional Awareness (SEA) online while looking at a complex emotional reality.
             </p>
 
             <KeyStatement>

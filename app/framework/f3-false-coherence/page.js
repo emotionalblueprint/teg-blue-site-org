@@ -530,13 +530,13 @@ export default function F3FalseCoherencePage() {
             </h2>
 
             <p style={proseStyle}>
-              The identity that cognition built around the capacity gaps does not stay static. It gets <em>upgraded</em> — refined through achievement, ideology, self-optimization, and spiritual or therapeutic narratives. These upgrades may resemble genuine growth while serving the same regulatory function as the original identity structure.
+              The identity that cognition built around the capacity gaps does not stay static. It gets <em>upgraded</em> — refined through achievement, ideology, self-optimization, and spiritual or therapeutic narratives. These upgrades may resemble genuine capacity development while serving the same regulatory function as the original identity structure.
             </p>
             <p style={proseStyle}>
               Examples: the person in chronic Control who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more sophisticated control strategy. The person in chronic Connection who adds "empowered empath" — but uses the language of empowerment to narrate continued self-erasure. The person in chronic Protection who adds "boundary expert" — but uses boundaries as walls that prevent connection rather than enable it.
             </p>
             <p style={proseStyle}>
-              A person can gain <strong style={{ color: TEXT.primary }}>skills</strong> (language, techniques, status) while still missing <strong style={{ color: TEXT.primary }}>capacities</strong> (SEA, emotional tolerance, the return). Upgrades often improve performance without changing the internal configuration.
+              A person can gain <strong style={{ color: TEXT.primary }}>skills</strong> (language, techniques, status) while still missing <strong style={{ color: TEXT.primary }}>capacities</strong> (Self-Emotional Awareness / SEA, emotional tolerance, the return to baseline). Upgrades often improve performance without changing the internal configuration.
             </p>
 
             <KeyStatement>
@@ -656,7 +656,7 @@ export default function F3FalseCoherencePage() {
                 The Self-Awareness / Emotional Awareness Split
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                A person in chronic Control can have extremely high self-awareness — they can describe their patterns, analyze their dynamics, narrate their history with precision. But this is cognition narrating <em>about</em> emotions without connecting <em>to</em> them. Reading Emotions (RE) is sharp — they read everything. SEA is offline — they feel nothing of their own.
+                A person in chronic Control can have extremely high self-awareness — they can describe their patterns, analyze their dynamics, narrate their history with precision. But this is cognition narrating <em>about</em> emotions without connecting <em>to</em> them. Reading Emotions (RE) is sharp — they read everything. Self-Emotional Awareness (SEA) is offline — they feel nothing of their own.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                 This explains why highly articulate, psychologically literate people can stay deeply stuck. Their system can generate sophisticated narratives <em>about</em> emotion while the original signal remains unreceived. <strong style={{ color: TEXT.primary }}>The story can sound like processing — while functioning as replacement.</strong>
@@ -840,10 +840,10 @@ export default function F3FalseCoherencePage() {
                 Chronic Control is the mode most often invisible to outside observers. The performance of warmth <em>is</em> the regulation strategy. Apologies serve image. Generosity serves control. Vulnerability is offered strategically, never spontaneously. The person appears warm, competent, and caring in public — they perform empathy with precision (RE sharp, right words chosen, no felt resonance behind them). They manage their image with the same precision they manage everything else. They create a public narrative that directly contradicts the private reality.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                The victim — the partner, the child, the employee who sees behind the performance — lives inside the managed reality. They experience subtle coercion, narrative control, emotional manipulation, and strategic withdrawal of warmth. They often cannot name what is happening because nothing visible has occurred. They appear "unstable," "emotional," or "not coping" — because chronic exposure to reality distortion produces exactly these symptoms. And they are not believed when they describe what is happening — because it contradicts what everyone else sees.
+                The person on the receiving end — the partner, the child, the employee who sees behind the performance — lives inside the managed reality. They experience subtle coercion, narrative control, emotional manipulation, and strategic withdrawal of warmth. They often cannot name what is happening because nothing visible has occurred. They appear "unstable," "emotional," or "not coping" — because chronic exposure to reality distortion produces exactly these symptoms. And they are not believed when they describe what is happening — because it contradicts what everyone else sees.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Control and pathologizes the victim.</strong> This is not a conspiracy. It is the structural outcome of: chronic Control's regulation strategy (performance of Connection); the worth filter (F5) — the person in chronic Control often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
+                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Control and pathologizes the person on the receiving end.</strong> This is not a conspiracy. It is the structural outcome of: chronic Control's regulation strategy (performance of Connection); the worth filter (F5) — the person in chronic Control often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
               </p>
             </div>
 

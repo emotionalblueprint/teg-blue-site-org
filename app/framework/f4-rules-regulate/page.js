@@ -594,7 +594,7 @@ export default function F4RulesRegulatePage() {
             </p>
 
             <KeyStatement>
-              Not ideological anomalies, but predictable outcomes of prolonged collective threat. If escalation follows the same nervous system logic as individual compass movement, then every system is capable of it under sustained threat — and the question is always about conditions and safety, not about the moral character of the population.
+              Not ideological anomalies, but predictable outcomes of prolonged collective threat. If escalation follows the same nervous system logic as individual compass movement, then every system is capable of it under sustained threat — and the question is always about conditions and safety.
             </KeyStatement>
 
             <p style={proseStyle}>

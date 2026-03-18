@@ -96,7 +96,7 @@ export default function M1InnerCompassPage() {
               badge="MODEL M1"
               title="Nervous System Signaling"
               subtitle="The Instrument"
-              description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
+              description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return to baseline determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
               coreQuestion="Where is the needle, can it move, and what does the person have access to from where they are?"
               drawsFrom={[
                 { label: "F1", href: "/framework/f1-emotional-gradient" },
@@ -147,7 +147,7 @@ export default function M1InnerCompassPage() {
                   The same emotion produces different outcomes depending on mode position — assess the mode, not the emotion
                 </li>
                 <li style={propositionItemStyle}>
-                  Regulation is the return — the built-in mechanism by which the nervous system moves from threat back to safety
+                  Regulation is the return to baseline — the built-in mechanism by which the nervous system completes the threat cycle
                 </li>
                 <li style={propositionItemStyle}>
                   When the return is missing, the compass gets stuck — what should have been temporary becomes permanent, and identity forms around the mode
@@ -257,7 +257,7 @@ export default function M1InnerCompassPage() {
               The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. A compass with a moving needle that orients between safety and threat. The needle is constantly moving — there is no "correct" position. It points in a direction.
             </p>
             <p style={proseStyle}>
-              A fluid compass moves between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward Connection when the threat passes. Fluid operation is not a state. It is the needle moving — responding, orienting, and coming back.
+              A fluid compass moves between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward baseline when the threat passes. Fluid operation is not a state. It is the needle moving — responding, orienting, and coming back.
             </p>
             <p style={proseStyle}>
               A <strong style={{ color: TEXT.primary }}>stuck compass</strong> is one where the needle has lost its capacity to move. What should have been a temporary orientation becomes a chronic position. The person does not experience this as being stuck — they experience it as "just who I am." False coherence (F3) constructs identity around the locked position, making the stuckness invisible from the inside.
@@ -313,7 +313,7 @@ export default function M1InnerCompassPage() {
                 <div style={gridCellStyle}>Body-first</div>
                 <div style={gridCellStyle}>Automatic — safety perceived</div>
                 <div style={gridCellStyle}>Engage, relate, repair, learn</div>
-                <div style={gridCellStyle}>Indefinite — baseline</div>
+                <div style={gridCellStyle}>Indefinite — designed for sustained living</div>
                 {/* Protection */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
                 <div style={gridCellStyle}>Body-first</div>
@@ -337,7 +337,7 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>Connection</h3>
             <p style={proseStyle}>
-              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, empathy comes fully online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the system's baseline — the mode designed for sustained living.
+              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, empathy comes fully online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the mode designed for sustained living.
             </p>
 
             <h3 style={h3Style}>Protection</h3>
@@ -351,7 +351,7 @@ export default function M1InnerCompassPage() {
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Connection and Protection happen to you. Control and Domination are what cognition does when recruited into threat service.
+              Connection and Protection activate automatically. Control and Domination are what cognition does when recruited into threat service.
             </OperationalStatement>
 
             <h3 style={h3Style}>Domination</h3>
@@ -616,10 +616,10 @@ export default function M1InnerCompassPage() {
                 <div style={gridCellStyle}>Tunnel — obstacles and resources</div>
                 {/* Empathy */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Empathy</div>
-                <div style={gridCellStyle}>Full — RE, ER, SEA online</div>
+                <div style={gridCellStyle}>Full — Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) online</div>
                 <div style={gridCellStyle}>Filtered — resonance decreases</div>
-                <div style={gridCellStyle}>Redirected — RE serving strategy</div>
-                <div style={gridCellStyle}>Collapsed — ER offline; RE may be weaponised</div>
+                <div style={gridCellStyle}>Redirected — Reading Emotions (RE) serving strategy</div>
+                <div style={gridCellStyle}>Collapsed — Emotional Resonance (ER) offline; Reading Emotions (RE) may be weaponised</div>
                 {/* Cognition */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Cognition</div>
                 <div style={gridCellStyle}>Flexible — holds complexity</div>
@@ -674,12 +674,12 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              In a fluid compass — where RE, ER, and SEA are all online — the same emotion produces different but proportionate responses across all four modes. The person is responding to real conditions, knows what they are doing, and can return. The emotion serves a different function at each gradient position, but it remains a signal, not a distortion.
+              In a fluid compass — where Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) are all online — the same emotion produces different but proportionate responses across all four modes. The person is responding to real conditions, knows what they are doing, and can return. The emotion serves a different function at each gradient position, but it remains a signal, not a distortion.
             </p>
 
             {/* Fluid Compass Table */}
             <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
-              RE + ER + SEA all online. Responding to real danger. Knows exactly what they{"'"}re doing and why.
+              Reading Emotions (RE) + Emotional Resonance (ER) + Self-Emotional Awareness (SEA) all online. Responding to real danger. Knows exactly what they{"'"}re doing and why.
             </p>
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
@@ -691,7 +691,7 @@ export default function M1InnerCompassPage() {
                 <div style={gridHeaderStyle}>Domination</div>
                 {/* Duration */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Duration</div>
-                <div style={gridCellStyle}>Baseline — designed for sustained living</div>
+                <div style={gridCellStyle}>Designed for sustained living</div>
                 <div style={gridCellStyle}>Minutes — activates fast, returns fast</div>
                 <div style={gridCellStyle}>Hours to days — when Protection isn{"'"}t enough</div>
                 <div style={gridCellStyle}>Hours to days, rare — most extreme response, highest cost</div>
@@ -872,7 +872,7 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              Regulation is the built-in mechanism by which the nervous system returns from threat to safety. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through.
+              Regulation is the built-in mechanism by which the nervous system returns from activation to baseline. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through.
             </p>
             <p style={proseStyle}>
               Regulation is closer to digestion than to exercise. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
@@ -1124,7 +1124,7 @@ export default function M1InnerCompassPage() {
             </div>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The person in chronic Control is not "a controlling person." They are a person whose compass has been stuck in Control — likely since childhood — because the return was never learned.
+              The person in chronic Control has a compass stuck in Control — likely since childhood — because the return to baseline was never learned.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
@@ -1546,7 +1546,7 @@ export default function M1InnerCompassPage() {
               {
                 question: "What does 'state determines capacity' mean?",
                 answer:
-                  "State determines capacity means that what a person can perceive, think, feel, and do depends on their current position on the gradient. In Connection, perception is broad and empathy is full. In threat modes, these capacities progressively narrow. The inability to empathise in a given moment may not be unwillingness — the current state has literally reduced the neurobiological capacity to do so.",
+                  "State determines capacity means that what a person can perceive, think, feel, and do depends on their current position on the gradient. In Connection, perception is broad and empathy is full. In threat modes, these capacities progressively narrow. The inability to empathise in a given moment is not unwillingness — the current state has literally reduced the neurobiological capacity to do so.",
               },
               {
                 question: "What is a stuck compass?",

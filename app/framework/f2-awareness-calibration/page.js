@@ -23,7 +23,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Three Capacities at Birth", href: "#capacities-at-birth", description: "What the infant arrives with: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness in proto-form." },
   { label: "Feeling = Being", href: "#pre-sea-condition", description: "Before cognition arrives, there is no observing self. Feeling is being. Feedback is identity." },
   { label: "The Mechanism", href: "#the-mechanism", description: "How each capacity develops through the specific experience of being met by a caregiver who already has that capacity online." },
-  { label: "Healthy Development", href: "#designed-development", description: "What the system builds when conditions are met: accurate RE, sustainable ER, online SEA, a fluid compass." },
+  { label: "Designed Development", href: "#designed-development", description: "What the system builds when conditions are met: accurate RE, sustainable ER, online SEA, a fluid compass." },
   { label: "The Turn", href: "#the-turn", description: "What happens when the awareness that gets passed is incomplete." },
   { label: "The Stuck Compass", href: "#the-consequence", description: "How threat locks the mode, the mode becomes chronic, cognition builds identity around the locked position." },
   { label: "What Identity Is", href: "#config-mode-identity", description: "Personality is a record, not a type. Configuration, not character." },
@@ -138,17 +138,17 @@ export default function F2AwarenessCalibrationPage() {
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-              <strong style={{ color: TEXT.primary }}>RE — Reading Emotions</strong>{" "}
+              <strong style={{ color: TEXT.primary }}>Reading Emotions (RE)</strong>{" "}
               <span style={{ color: TEXT.muted }}>|</span>{" "}
               Perceiving what others are feeling — detecting emotional signals from faces, tone, body language, and context.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-              <strong style={{ color: TEXT.primary }}>ER — Emotional Resonance</strong>{" "}
+              <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER)</strong>{" "}
               <span style={{ color: TEXT.muted }}>|</span>{" "}
               Feeling what others are feeling — the body's capacity to resonate with another person's emotional state.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-              <strong style={{ color: TEXT.primary }}>SEA — Self-Emotional Awareness</strong>{" "}
+              <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong>{" "}
               <span style={{ color: TEXT.muted }}>|</span>{" "}
               Perceiving and naming your own internal state — the capacity that separates "I feel bad" from "I feel guilty because I hurt someone."
             </p>
@@ -241,7 +241,7 @@ export default function F2AwarenessCalibrationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Part 1: The Design", "How the three awareness capacities develop when conditions are met", "Accurate RE, sustainable ER, online SEA, learned Biological Restoration, true coherence, a moving compass"]} />
+                  <TableRow cells={["Part 1: The Design", "How the three awareness capacities develop when conditions are met", "Accurate Reading Emotions (RE), sustainable Emotional Resonance (ER), online Self-Emotional Awareness (SEA), learned Biological Restoration, true coherence, a moving compass"]} />
                   <TableRow cells={["Part 2: The Deviation", "What happens when the awareness that gets passed is incomplete", "Reconfigured capacities, disrupted regulation, chronic mode, false coherence, constructed identity"]} />
                 </tbody>
               </table>
@@ -287,7 +287,7 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                Operationally, "being yourself" means: <strong style={{ color: TEXT.primary }}>RE reads accurately, ER resonates without flooding, SEA registers your own state — and none of these are being overridden by threat.</strong>
+                Operationally, "being yourself" means: <strong style={{ color: TEXT.primary }}>Reading Emotions (RE) reads accurately, Emotional Resonance (ER) resonates without flooding, Self-Emotional Awareness (SEA) registers your own state — and none of these are being overridden by threat.</strong>
               </p>
 
               <p style={proseStyle}>
@@ -317,7 +317,7 @@ export default function F2AwarenessCalibrationPage() {
 
                 <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
-                    Identifying the three capacities (RE, ER, SEA) as the specific awarenesses present at birth in proto-form, and framing their connected state as the mechanism behind what people experience as "being themselves." This reframes the "real self" from a hidden identity to a capacity state — not someone to find but something to reconnect.
+                    Identifying the three capacities — Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — as the specific awarenesses present at birth in proto-form, and framing their connected state as the mechanism behind what people experience as "being themselves." This reframes the "real self" from a hidden identity to a capacity state — not someone to find but something to reconnect.
                   </p>
                 </ExpandableSection>
               </div>
@@ -387,7 +387,7 @@ export default function F2AwarenessCalibrationPage() {
                 The three awareness capacities do not develop in isolation. They do not develop through instruction, willpower, or cognitive understanding. They develop through one mechanism: <strong style={{ color: TEXT.primary }}>the awareness the caregivers carry is the awareness that gets passed.</strong>
               </p>
               <p style={proseStyle}>
-                The child's nervous system develops inside the adults' nervous system. What the adults can and cannot do with their own RE, ER, and SEA creates the environment the child's awareness develops from. A parent who says "be kind" while living in chronic Control teaches Control, not kindness. A caregiver who says "I'm fine" while their nervous system radiates tension teaches the child that emotional signals are not to be trusted. A caregiver whose own SEA is online — who can name what they feel, sit with discomfort, model that emotions are signals rather than crises — teaches the child, without instruction, that internal experience is readable and trustworthy.
+                The child's nervous system develops inside the adults' nervous system. What the adults can and cannot do with their own Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) creates the environment the child's awareness develops from. A parent who says "be kind" while living in chronic Control teaches Control, not kindness. A caregiver who says "I'm fine" while their nervous system radiates tension teaches the child that emotional signals are not to be trusted. A caregiver whose own SEA is online — who can name what they feel, sit with discomfort, model that emotions are signals rather than crises — teaches the child, without instruction, that internal experience is readable and trustworthy.
               </p>
               <p style={proseStyle}>
                 This is the foundational mechanism of F2. Everything that follows — the designed development account, the three adverse conditions, the chronic mode positions, the generational transmission — is an expression of this one principle: awareness teaches awareness. The adults' awareness is the child's inheritance.
@@ -402,7 +402,7 @@ export default function F2AwarenessCalibrationPage() {
 
                 <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
-                    Naming the transmission mechanism explicitly: not "environment shapes development" (which is generic) but "the specific awareness capacities the adults carry determine which awareness capacities the child develops." The causal chain is precise: adult RE/ER/SEA configuration → environment → child RE/ER/SEA configuration.
+                    Naming the transmission mechanism explicitly: not "environment shapes development" (which is generic) but "the specific awareness capacities the adults carry determine which awareness capacities the child develops." The causal chain is precise: adult Reading Emotions (RE) / Emotional Resonance (ER) / Self-Emotional Awareness (SEA) configuration → environment → child RE/ER/SEA configuration.
                   </p>
                 </ExpandableSection>
               </div>
@@ -430,13 +430,13 @@ export default function F2AwarenessCalibrationPage() {
               </p>
 
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>RE develops as accurate reading.</strong> Not hypervigilant scanning for threat. Not instrumental reading for strategic advantage. Accurate reading: the child learns to track others' emotional states because the adults' emotional states are readable — consistent, congruent, not dangerous to perceive. RE develops in service of understanding, not survival. The two common distortions are <strong style={{ color: TEXT.primary }}>hypervigilant RE</strong> (scanning for threat) and <strong style={{ color: TEXT.primary }}>instrumental RE</strong> (reading for leverage).
+                <strong style={{ color: TEXT.primary }}>Reading Emotions (RE) develops as accurate reading.</strong> Not hypervigilant scanning for threat. Not instrumental reading for strategic advantage. Accurate reading: the child learns to track others' emotional states because the adults' emotional states are readable — consistent, congruent, not dangerous to perceive. RE develops in service of understanding, not survival. The two common distortions are <strong style={{ color: TEXT.primary }}>hypervigilant RE</strong> (scanning for threat) and <strong style={{ color: TEXT.primary }}>instrumental RE</strong> (reading for leverage).
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>ER develops as sustainable resonance.</strong> Not flooding — where the child is overwhelmed by everyone else's emotions. Not shut-down — where the child stops feeling with others because feeling was punished or unbearable. Sustainable: the child feels with others and can hold that feeling without losing themselves in it. ER develops in service of connection, not overwhelm. The two common distortions are <strong style={{ color: TEXT.primary }}>flooded ER</strong> (over-identifying) and <strong style={{ color: TEXT.primary }}>sealed ER</strong> (empathy shut-down).
+                <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER) develops as sustainable resonance.</strong> Not flooding — where the child is overwhelmed by everyone else's emotions. Not shut-down — where the child stops feeling with others because feeling was punished or unbearable. Sustainable: the child feels with others and can hold that feeling without losing themselves in it. ER develops in service of connection, not overwhelm. The two common distortions are <strong style={{ color: TEXT.primary }}>flooded ER</strong> (over-identifying) and <strong style={{ color: TEXT.primary }}>sealed ER</strong> (empathy shut-down).
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>SEA develops as the capacity to know one's own states.</strong> This is the developmental breakthrough: the child begins to separate "this is what I feel" from "this is what is happening around me." The pre-SEA condition begins to resolve. Internal experience becomes readable, nameable, trustworthy. The two common distortions are <strong style={{ color: TEXT.primary }}>absent SEA</strong> (no self-referential input) and <strong style={{ color: TEXT.primary }}>story-based SEA</strong> (narrative replacing sensation).
+                <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) develops as the capacity to know one's own states.</strong> This is the developmental breakthrough: the child begins to separate "this is what I feel" from "this is what is happening around me." The pre-SEA condition begins to resolve. Internal experience becomes readable, nameable, trustworthy. The two common distortions are <strong style={{ color: TEXT.primary }}>absent SEA</strong> (no self-referential input) and <strong style={{ color: TEXT.primary }}>story-based SEA</strong> (narrative replacing sensation).
               </p>
               <p style={proseStyle}>
                 This requires something specific from the caregiving environment: <strong style={{ color: TEXT.primary }}>the child's emotional signals must be received, reflected as best as possible, and repaired when misread.</strong> The child cries and the caregiver says "you're upset" — not "you're fine," not "stop that," not "what's wrong with you." Over time, the child learns to read their own signals because someone else read them first. SEA develops through being seen — not instructed.
@@ -471,7 +471,7 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                F1 establishes that Biological Restoration is the mechanism by which the body returns from threat to connection. Children are born with the biological capacity for this return. The nervous system is designed to complete the threat cycle: mobilize, respond, discharge, restore. But the infant cannot do this alone. The system is designed for <strong style={{ color: TEXT.primary }}>co-regulation</strong> — the caregiver's nervous system teaching the child's nervous system Biological Restoration.
+                F1 establishes that Biological Restoration is the mechanism by which the body returns from threat to baseline. Children are born with the biological capacity for this return. The nervous system is designed to complete the threat cycle: mobilize, respond, discharge, restore. But the infant cannot do this alone. The system is designed for <strong style={{ color: TEXT.primary }}>co-regulation</strong> — the caregiver's nervous system teaching the child's nervous system Biological Restoration.
               </p>
               <p style={proseStyle}>
                 When the infant cries and the caregiver holds them, the caregiver's regulated nervous system sends safety signals — through tone, touch, rhythm, presence — that help the infant's activated nervous system complete the cycle and settle. The infant is not being "calmed down." They are learning a <strong style={{ color: TEXT.primary }}>sequence</strong>: activation → supported discharge → return. That sequence is what becomes Biological Restoration. The infant is learning to attune the compass. Through thousands of these interactions, the child's nervous system internalizes Biological Restoration: <em>this is how the body goes back to safety.</em> Co-regulation becomes the template for self-regulation.
@@ -520,10 +520,10 @@ export default function F2AwarenessCalibrationPage() {
                 Condition 1 — Emotionally Unpredictable Environments
               </h3>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose own RE is hyperactive (scanning constantly), whose ER floods or swings, and whose SEA is absent. The caregiver's compass swings unpredictably between modes. One moment warm, the next explosive or withdrawn. The child cannot predict which version of the caregiver will appear because the caregiver cannot predict it either.
+                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose own Reading Emotions (RE) is hyperactive (scanning constantly), whose Emotional Resonance (ER) floods or swings, and whose Self-Emotional Awareness (SEA) is absent. The caregiver's compass swings unpredictably between modes. One moment warm, the next explosive or withdrawn. The child cannot predict which version of the caregiver will appear because the caregiver cannot predict it either.
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> RE overdevelops into hypervigilance — survival requires predicting which version of the caregiver will appear. ER either floods (wide open to predict and appease) or shuts down (too overwhelming). SEA does not develop — all attention is directed outward toward the unpredictable source. Biological Restoration is disrupted — sometimes the caregiver helps the child come back; sometimes the caregiver is the reason the child activated. The child's nervous system learns: Biological Restoration is not reliable. Stay alert.
+                <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> Reading Emotions (RE) overdevelops into hypervigilance — survival requires predicting which version of the caregiver will appear. Emotional Resonance (ER) either floods (wide open to predict and appease) or shuts down (too overwhelming). Self-Emotional Awareness (SEA) does not develop — all attention is directed outward toward the unpredictable source. Biological Restoration is disrupted — sometimes the caregiver helps the child come back; sometimes the caregiver is the reason the child activated. The child's nervous system learns: Biological Restoration is not reliable. Stay alert.
               </p>
             </div>
 
@@ -533,10 +533,10 @@ export default function F2AwarenessCalibrationPage() {
                 Condition 2 — Emotionally Incongruent Environments
               </h3>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose RE reads accurately but whose ER is disconnected from what they express. Their SEA is partially online but filtered through narrative — they have a story about who they are that contradicts what their body is doing. The caregiver says "I'm fine" while their nervous system radiates tension. They say "we're a happy family" while the child's resonance picks up distress.
+                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose Reading Emotions (RE) reads accurately but whose Emotional Resonance (ER) is disconnected from what they express. Their Self-Emotional Awareness (SEA) is partially online but filtered through narrative — they have a story about who they are that contradicts what their body is doing. The caregiver says "I'm fine" while their nervous system radiates tension. They say "we're a happy family" while the child's resonance picks up distress.
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> RE calibrates to performance rather than authenticity — the child learns to read the surface layer because the surface is what gets rewarded. ER becomes confused and distrusted — the child's felt sense is contradicted by external authority. SEA is actively undermined — the child's emerging capacity to read their own signals is met with "you're not angry," "that didn't happen," "you're imagining things." Biological Restoration is misdirected — the child learns to regulate toward what the adult needs, not toward their own safety.
+                <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> Reading Emotions (RE) calibrates to performance rather than authenticity — the child learns to read the surface layer because the surface is what gets rewarded. Emotional Resonance (ER) becomes confused and distrusted — the child's felt sense is contradicted by external authority. Self-Emotional Awareness (SEA) is actively undermined — the child's emerging capacity to read their own signals is met with "you're not angry," "that didn't happen," "you're imagining things." Biological Restoration is misdirected — the child learns to regulate toward what the adult needs, not toward their own safety.
               </p>
             </div>
 
@@ -546,10 +546,10 @@ export default function F2AwarenessCalibrationPage() {
                 Condition 3 — Emotional Invalidation
               </h3>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose RE is instrumental (they read others for strategic purposes — compliance, control), whose ER is shut down, and whose SEA is absent. These adults are often in chronic Control — competent, decisive, "rational." Their compass has been stuck for so long that they genuinely believe the stuck position is correct. They may not intend cruelty — but the impact is still <strong style={{ color: TEXT.primary }}>real</strong>, and invalidation still <strong style={{ color: TEXT.primary }}>harms development</strong>. They are teaching what they know.
+                <strong style={{ color: TEXT.primary }}>The adults' awareness:</strong> Caregivers whose Reading Emotions (RE) is instrumental (they read others for strategic purposes — compliance, control), whose Emotional Resonance (ER) is shut down, and whose Self-Emotional Awareness (SEA) is absent. These adults are often in chronic Control — competent, decisive, "rational." Their compass has been stuck for so long that they genuinely believe the stuck position is correct. They may not intend cruelty — but the impact is still <strong style={{ color: TEXT.primary }}>real</strong>, and invalidation still <strong style={{ color: TEXT.primary }}>harms development</strong>. They are teaching what they know.
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> RE develops instrumentally — the child learns to read what the environment demands to avoid punishment or rejection. ER shuts down — feeling was punished, so the system stops feeling. SEA never forms — internal experience is explicitly taught to be wrong: "you don't feel that, you shouldn't feel that." Biological Restoration is blocked — the child learns that the activation itself is the problem. The child learns to suppress the activation rather than complete it. The child learns — from adults who believe it — that the first language (F1) is noise, and that silencing it is maturity.
+                <strong style={{ color: TEXT.primary }}>What this produces in the child:</strong> Reading Emotions (RE) develops instrumentally — the child learns to read what the environment demands to avoid punishment or rejection. Emotional Resonance (ER) shuts down — feeling was punished, so the system stops feeling. Self-Emotional Awareness (SEA) never forms — internal experience is explicitly taught to be wrong: "you don't feel that, you shouldn't feel that." Biological Restoration is blocked — the child learns that the activation itself is the problem. The child learns to suppress the activation rather than complete it. The child learns — from adults who believe it — that the first language (F1) is noise, and that silencing it is maturity.
               </p>
             </div>
 
@@ -560,9 +560,9 @@ export default function F2AwarenessCalibrationPage() {
                   <tr>
                     <th style={thStyle}>Condition</th>
                     <th style={thStyle}>Adult Configuration</th>
-                    <th style={thStyle}>Child's RE</th>
-                    <th style={thStyle}>Child's ER</th>
-                    <th style={thStyle}>Child's SEA</th>
+                    <th style={thStyle}>Child's Reading Emotions (RE)</th>
+                    <th style={thStyle}>Child's Emotional Resonance (ER)</th>
+                    <th style={thStyle}>Child's Self-Emotional Awareness (SEA)</th>
                     <th style={thStyle}>Biological Restoration</th>
                   </tr>
                 </thead>
@@ -608,7 +608,7 @@ export default function F2AwarenessCalibrationPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Mapping each condition to the adult awareness configuration that produces it <em>and</em> to its specific effect on each of the child's three capacities and on the capacity to regulate. The causal chain is made explicit: adult RE/ER/SEA configuration → environment → child RE/ER/SEA configuration + regulation outcome. This is not just "the child adapts" — it is which adults, carrying which awareness, produce which environment, shaping which capacities, with which regulatory consequence.
+                  Mapping each condition to the adult awareness configuration that produces it <em>and</em> to its specific effect on each of the child's three capacities and on the capacity to regulate. The causal chain is made explicit: adult Reading Emotions (RE) / Emotional Resonance (ER) / Self-Emotional Awareness (SEA) configuration → environment → child RE/ER/SEA configuration + regulation outcome. This is not just "the child adapts" — it is which adults, carrying which awareness, produce which environment, shaping which capacities, with which regulatory consequence.
                 </p>
               </ExpandableSection>
             </div>
@@ -674,16 +674,16 @@ export default function F2AwarenessCalibrationPage() {
               </p>
               <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>RE online</strong> → cognition receives data about others' emotional states → builds social strategies
+                  <strong style={{ color: TEXT.primary }}>Reading Emotions (RE) online</strong> → cognition receives data about others' emotional states → builds social strategies
                 </li>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>ER online</strong> → cognition receives felt experience of others' emotions → builds care and moral reasoning
+                  <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER) online</strong> → cognition receives felt experience of others' emotions → builds care and moral reasoning
                 </li>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>SEA online</strong> → cognition receives data about one's own emotional states → builds self-understanding
+                  <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) online</strong> → cognition receives data about one's own emotional states → builds self-understanding
                 </li>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>SEA offline</strong> → cognition receives no data about one's own states → builds explanations that fill the gap
+                  <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) offline</strong> → cognition receives no data about one's own states → builds explanations that fill the gap
                 </li>
               </ul>
               <p style={proseStyle}>
@@ -748,7 +748,7 @@ export default function F2AwarenessCalibrationPage() {
                   </thead>
                   <tbody>
                     <TableRow cells={[
-                      "Hyperactive RE + Flooded ER + Absent SEA",
+                      "Hyperactive Reading Emotions (RE) + Flooded Emotional Resonance (ER) + Absent Self-Emotional Awareness (SEA)",
                       "Chronic Connection*",
                       "\"I am the caring one\"",
                       "Regulate toward what the other needs",
@@ -819,7 +819,7 @@ export default function F2AwarenessCalibrationPage() {
                 Patterns replicate across generations without anyone choosing to pass them on. The transmission mechanism is awareness configuration and regulatory capacity. Not words. Not intentions. Not love. The transferable unit is not the parent's beliefs. It is the parent's <strong style={{ color: TEXT.primary }}>state signature</strong> and <strong style={{ color: TEXT.primary }}>repair signature</strong>.
               </p>
               <p style={proseStyle}>
-                The parent in chronic Control who pushes their child to "toughen up" is not failing at love. They are succeeding at transmission. They are passing on the only regulatory architecture they know. A caregiver whose SEA is offline cannot mirror what they cannot see, validate what they cannot feel, or model self-awareness they do not have. A caregiver whose own nervous system never learned Biological Restoration cannot co-regulate a child through it — because they do not know it exists.
+                The parent in chronic Control who pushes their child to "toughen up" is not failing at love. They are succeeding at transmission. They are passing on the only regulatory architecture they know. A caregiver whose Self-Emotional Awareness (SEA) is offline cannot mirror what they cannot see, validate what they cannot feel, or model self-awareness they do not have. A caregiver whose own nervous system never learned Biological Restoration cannot co-regulate a child through it — because they do not know it exists.
               </p>
               <p style={proseStyle}>
                 This is the generational loop: the adults in the three conditions were once children of adults with the same configurations. The caregiver whose ER floods unpredictably was once a child in an unpredictable environment. The caregiver who says "I'm fine" while radiating tension was once a child whose felt sense was contradicted. No one in the chain chose to start it. Each link is an accurate adaptation passed forward.
@@ -854,7 +854,7 @@ export default function F2AwarenessCalibrationPage() {
                 Early environments set tolerance thresholds — the point at which the nervous system shifts from one regulatory mode to the next. A tolerance threshold is not a value. It is a <strong style={{ color: TEXT.primary }}>nervous system setting</strong> — what the body has learned it must endure to stay connected. A child's nervous system learns what intensity, instability, or control must be endured to stay connected. This becomes an internal baseline for what counts as "too much," what feels familiar enough to stay, what gets minimized or normalized, and what feels dangerous to challenge.
               </p>
               <p style={proseStyle}>
-                The awareness configuration plays a direct role: a person with flooded ER and absent SEA will <em>feel</em> the harm being done to them (through resonance) but cannot identify it as harm being done <em>to</em> them (without self-awareness). The signal arrives but cannot be read as one's own. People don't lack intelligence or willpower. Their nervous system was calibrated early to survive within certain environments.
+                The awareness configuration plays a direct role: a person with flooded Emotional Resonance (ER) and absent Self-Emotional Awareness (SEA) will <em>feel</em> the harm being done to them (through resonance) but cannot identify it as harm being done <em>to</em> them (without self-awareness). The signal arrives but cannot be read as one's own. People don't lack intelligence or willpower. Their nervous system was calibrated early to survive within certain environments.
               </p>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
@@ -885,13 +885,13 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                Healing is not finding your "real self" — there is no complete self hidden underneath. Healing is not removing a mask — the identity that formed is not covering anything. Healing is not building self-esteem — without SEA, self-esteem has no grounding and fluctuates with external feedback.
+                Healing is not finding your "real self" — there is no complete self hidden underneath. Healing is not removing a mask — the identity that formed is not covering anything. Healing is not building self-esteem — without Self-Emotional Awareness (SEA), self-esteem has no grounding and fluctuates with external feedback.
               </p>
               <p style={proseStyle}>
                 Healing is <strong style={{ color: TEXT.primary }}>developing the awareness capacities that never had conditions to form</strong> — and <strong style={{ color: TEXT.primary }}>learning Biological Restoration — the return path that was never taught.</strong>
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>SEA is the keystone.</strong> Healing requires two tracks in parallel: <strong style={{ color: TEXT.primary }}>SEA (receiving self-data)</strong> and <strong style={{ color: TEXT.primary }}>Biological Restoration (the body learning the return)</strong>. Without SEA, RE serves the mode (scanning for threat, leverage, or approval rather than understanding) and ER is either flooded or absent. With SEA online, the other two capacities can be recalibrated to serve the person rather than the survival strategy.
+                <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) is the keystone.</strong> Healing requires two tracks in parallel: <strong style={{ color: TEXT.primary }}>SEA (receiving self-data)</strong> and <strong style={{ color: TEXT.primary }}>Biological Restoration (the body learning the return)</strong>. Without SEA, Reading Emotions (RE) serves the mode (scanning for threat, leverage, or approval rather than understanding) and Emotional Resonance (ER) is either flooded or absent. With SEA online, the other two capacities can be recalibrated to serve the person rather than the survival strategy.
               </p>
               <p style={proseStyle}>
                 And regulation — the physiological return — is the foundation. Without the body learning that activation can resolve, that threat states end, that the system can come back, cognitive insight alone changes nothing. The person understands their pattern but the body keeps running the old program. Biological Restoration must be learned — not understood, but experienced. Through co-regulation, through somatic experience, through relationships that provide the safety the original environment could not.
@@ -942,10 +942,10 @@ export default function F2AwarenessCalibrationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Three capacities connected at birth", "RE, ER, and SEA start integrated. \"Being yourself\" is a capacity state, not a hidden identity."]} />
+                  <TableRow cells={["Three capacities connected at birth", "Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) start integrated. \"Being yourself\" is a capacity state, not a hidden identity."]} />
                   <TableRow cells={["The pre-SEA condition", "Feeling = being. The normal starting point. The question is whether SEA develops."]} />
                   <TableRow cells={["Awareness teaches awareness", "The organizing mechanism. The adults' awareness configuration creates the environment. The environment shapes the child's awareness."]} />
-                  <TableRow cells={["How the capacities develop", "When awareness that gets passed is complete: accurate RE, sustainable ER, online SEA, learned regulation, true coherence."]} />
+                  <TableRow cells={["How the capacities develop", "When awareness that gets passed is complete: accurate Reading Emotions (RE), sustainable Emotional Resonance (ER), online Self-Emotional Awareness (SEA), learned regulation, true coherence."]} />
                   <TableRow cells={["The capacity to regulate", "Children learn Biological Restoration through co-regulation — being regulated with. The caregiver's capacity to regulate is the child's regulatory environment."]} />
                   <TableRow cells={["Three conditions", "Each produced by adults with a specific awareness configuration. Unpredictability, incongruence, and invalidation each produce a traceable configuration in the child."]} />
                   <TableRow cells={["Threat lock → chronic mode → stuck compass", "Mechanism → consequence → system state. The same modes F1 describes as extraordinary tools become traps when Biological Restoration is missing."]} />
@@ -982,7 +982,7 @@ export default function F2AwarenessCalibrationPage() {
                   "The chain replicates until awareness changes, not just behavior",
                   "Familiar can feel 'normal' even when it is costly",
                   "Not fixing something broken, but developing capacities that didn't have conditions to form",
-                  "A caregiver whose SEA is offline cannot provide conditions for a child's SEA to develop",
+                  "A caregiver whose Self-Emotional Awareness (SEA) is offline cannot provide conditions for a child's SEA to develop",
                   "Being yourself is not a personality. It is what happens when the three capacities are connected.",
                   "Accurate adaptation to an inaccurate environment",
                 ].map((f, i) => (

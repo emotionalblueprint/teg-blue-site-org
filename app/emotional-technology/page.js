@@ -195,7 +195,7 @@ export default function EmotionalTechnologyPage() {
               color={STATE.control}
               title="Navigation & Intervention"
               items={[
-                "Provides steps back to safety, calm, and clarity",
+                "Provides steps back to baseline — safety, calm, and clarity",
                 "Creates shared language for difficult dynamics",
                 "Tools for de-escalation, repair, and regulation",
               ]}
@@ -206,7 +206,7 @@ export default function EmotionalTechnologyPage() {
               items={[
                 "Makes generational trauma patterns visible",
                 "Explains how protective behaviors become harmful",
-                "Interrupts cycles — with care, not shame",
+                "Interrupts cycles through structural visibility",
               ]}
             />
           </div>

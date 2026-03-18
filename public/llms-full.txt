@@ -108,7 +108,7 @@ Nervous system regulatory states along a continuous gradient:
 1. The autonomic nervous system operates through hierarchical circuits (Porges)
 2. Neuroception — below-conscious threat detection — shapes available states
 3. Regulatory states form a continuous gradient, not discrete categories
-4. The key variable is mobility — capacity to return to Connection
+4. The key variable is mobility — capacity to return to baseline
 
 **Source theories:**
 - Polyvagal Theory (Stephen Porges)
@@ -117,7 +117,7 @@ Nervous system regulatory states along a continuous gradient:
 - Autonomic nervous system research
 - Window of Tolerance (Daniel Siegel)
 
-**TEG-Blue integration:** Maps not just autonomic states but the progression from adaptive Protection to maladaptive Control — and crucially, the capacity to return.
+**TEG-Blue integration:** Maps not just autonomic states but the progression from adaptive Protection to entrenched Control — and crucially, the capacity to return to baseline.
 
 ### Framework 2: Identity Formation
 **Question:** How does identity organize around protection?
@@ -649,7 +649,7 @@ Psychometric testing of 16 instruments
 - Source theories (Polyvagal, Attachment, etc.) are established science
 
 **Use "proposes" or "hypothesizes" (being tested):**
-- Capacity to return to Connection predicts relational outcomes
+- Capacity to return to baseline predicts relational outcomes
 - Complexity markers indicate regulatory capacity
 - Cross-disciplinary connections (regulation → moral perception, attachment → stratification)
 

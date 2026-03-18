@@ -18,7 +18,7 @@ import {
 
 const SIDEBAR_SECTIONS = [
   { label: "Framework Position", href: "#framework-position", description: "F8 describes a universal cost. F9 asks what happens when that cost is architectural, daily, and inescapable." },
-  { label: "The Regulation Thread", href: "#framework-position", description: "What if the environment itself prevents the building? You cannot heal what the environment keeps wounding." },
+  { label: "The Regulation Thread", href: "#framework-position", description: "What if the environment itself prevents the building? You cannot build what the environment keeps dismantling." },
   { label: "Nervous System Configuration", href: "#neurodivergence-as-configuration", description: "Neurodivergence is a difference in how the nervous system is configured. A variation in regulatory rhythm." },
   { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
   { label: "Masking as Structural Survival", href: "#masking-as-structural-survival", description: "When every environment punishes authentic configuration, masking becomes the only available survival strategy." },
@@ -196,8 +196,8 @@ export default function F9NeurodivergenceVariationPage() {
       a: "System Mismatch is the gap between what an environment requires and what a nervous system can sustainably provide. It relocates the problem from 'the person is disordered' to 'the environment is mismatched.' The same person may function well in one context and struggle in another — the variable is context, not neurology.",
     },
     {
-      q: "Why is unmasking alone not sufficient for healing?",
-      a: "Unmasking means dropping neurotypical performance; healing means being met in authentic neurological expression. Unmasking into an environment that cannot hold authenticity can increase harm — triggering rejection, job loss, or more rigid masking afterward. Healing requires an accommodating environment, accurate mirroring, internalized shame repair, grief work, identity reconstruction, and relational renegotiation.",
+      q: "Why is unmasking alone not sufficient for repair?",
+      a: "Unmasking means dropping neurotypical performance; repair means being received in authentic neurological expression. Unmasking into an environment that cannot hold authenticity can increase harm — triggering rejection, job loss, or more rigid masking afterward. Healing requires an accommodating environment, accurate mirroring, internalized shame repair, grief work, identity reconstruction, and relational renegotiation.",
     },
     {
       q: "How does neurodivergent burnout differ from general burnout?",
@@ -287,7 +287,7 @@ export default function F9NeurodivergenceVariationPage() {
             </p>
 
             <KeyStatement>
-              You cannot heal what the environment keeps wounding.
+              You cannot build what the environment keeps dismantling.
             </KeyStatement>
           </section>
 
@@ -448,7 +448,7 @@ export default function F9NeurodivergenceVariationPage() {
                 <tbody>
                   <TableRow cells={["Energetic", "Chronic fatigue; extended recovery time needed; energy unavailable for anything else"]} />
                   <TableRow cells={["Cognitive", "Processing capacity consumed by performance; decision fatigue; reduced capacity for actual work"]} />
-                  <TableRow cells={["Emotional", "Disconnection from authentic feeling; cannot tell what is real vs. performed; Emotional Resonance collapses under chronic load"]} />
+                  <TableRow cells={["Emotional", "Disconnection from authentic feeling; cannot tell what is real vs. performed; Emotional Resonance (ER) collapses under chronic load"]} />
                   <TableRow cells={["Somatic", "Chronic tension; pain; stress-related illness; the body carrying what the mask suppresses"]} />
                   <TableRow cells={["Developmental", "Capacities that are suppressed do not develop. Masking does not just hide — it prevents growth. The three awareness capacities (F8) cannot develop while being chronically overridden"]} />
                   <TableRow cells={["Identity", "False coherence absorbs the mask: 'I'm just bad at this.' 'Something is wrong with me.' 'If I were better, this wouldn't be so hard.'"]} />
@@ -569,7 +569,7 @@ export default function F9NeurodivergenceVariationPage() {
               Part 2: Repair in Context
             </p>
             <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              What healing requires for neurodivergent people, why unmasking without safety fails, and what genuine inclusion looks like.
+              What repair requires for neurodivergent people, why unmasking without safety fails, and what genuine inclusion looks like.
             </p>
           </div>
 
@@ -581,10 +581,10 @@ export default function F9NeurodivergenceVariationPage() {
             <h2 style={sectionHeadingStyle}>Unmasking Is Not Healing</h2>
 
             <p style={proseStyle}>
-              Growing awareness of masking's harm has created calls for unmasking. This is correct but incomplete. <strong>Unmasking</strong> means dropping the neurotypical performance. <strong>Healing</strong> means being met in authentic neurological expression. These are not equivalent. Unmasking into an environment that cannot hold authenticity can increase harm.
+              Growing awareness of masking's harm has created calls for unmasking. This is correct but incomplete. <strong>Unmasking</strong> means dropping the neurotypical performance. <strong>Repair</strong> means being received in authentic neurological expression. These are not equivalent. Unmasking into an environment that cannot hold authenticity can increase harm.
             </p>
 
-            <h3 style={conceptHeadingStyle}>What Healing Actually Requires</h3>
+            <h3 style={conceptHeadingStyle}>What Repair Actually Requires</h3>
 
             <div style={tableWrapStyle}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -651,22 +651,22 @@ export default function F9NeurodivergenceVariationPage() {
                 </thead>
                 <tbody>
                   <FourColRow cells={[
-                    "RE — Reading Emotions",
+                    "Reading Emotions (RE)",
                     "Implicit, automatic, moderate sensitivity",
                     "May be hyper-accurate (reads too much), systematically processed (explicit analysis vs. intuition), or differently channeled (reads patterns, not faces)",
-                    "\"Lacks empathy\" — when RE is actually very high but expressed differently",
+                    "\"Lacks empathy\" — when Reading Emotions (RE) is actually very high but expressed differently",
                   ]} />
                   <FourColRow cells={[
-                    "ER — Emotional Resonance",
+                    "Emotional Resonance (ER)",
                     "Moderate intensity, socially calibrated display",
                     "May be intense (higher amplitude, longer processing), delayed (response arrives after the social moment has passed), or internally deep but externally flat",
-                    "\"Doesn't care\" — when ER is actually flooded but not displayed",
+                    "\"Doesn't care\" — when Emotional Resonance (ER) is actually flooded but not displayed",
                   ]} />
                   <FourColRow cells={[
-                    "SEA — Self-Emotional Awareness",
+                    "Self-Emotional Awareness (SEA)",
                     "Develops through standard co-regulation",
                     "May be highly developed (intense interoception, detailed self-knowledge) or significantly disrupted by chronic masking (cannot distinguish real from performed)",
-                    "\"Not self-aware\" — when SEA may be acute but expressed in non-standard language",
+                    "\"Not self-aware\" — when Self-Emotional Awareness (SEA) may be acute but expressed in non-standard language",
                   ]} />
                 </tbody>
               </table>
@@ -675,7 +675,7 @@ export default function F9NeurodivergenceVariationPage() {
             <h3 style={conceptHeadingStyle}>Masking Distorts the Capacities</h3>
 
             <p style={proseStyle}>
-              The greatest damage to neurodivergent awareness capacities comes not from the configuration itself but from chronic masking. <strong>RE gets misdirected</strong> — used to monitor social danger and maintain the mask rather than to connect. <strong>ER gets suppressed</strong> — because emotional intensity that does not match neurotypical norms gets punished; over time, the dampening becomes automatic. <strong>SEA gets confused</strong> — the person cannot distinguish their authentic internal state from the performed state; after years of masking, the question becomes genuinely unanswerable without support.
+              The greatest damage to neurodivergent awareness capacities comes not from the configuration itself but from chronic masking. <strong>Reading Emotions (RE) gets misdirected</strong> — used to monitor social danger and maintain the mask rather than to connect. <strong>Emotional Resonance (ER) gets suppressed</strong> — because emotional intensity that does not match neurotypical norms gets punished; over time, the dampening becomes automatic. <strong>Self-Emotional Awareness (SEA) gets confused</strong> — the person cannot distinguish their authentic internal state from the performed state; after years of masking, the question becomes genuinely unanswerable without support.
             </p>
 
             <h3 style={conceptHeadingStyle}>Repair Requires Rhythm Authenticity</h3>
@@ -865,7 +865,7 @@ export default function F9NeurodivergenceVariationPage() {
                   <TableRow cells={["\"Unmasking into a vacuum fails. The environment must be ready before the mask comes off.\"", "Unmasking vs. Healing (C5)"]} />
                   <TableRow cells={["\"You cannot develop your capacities while suppressing the system those capacities run on.\"", "Awareness Capacities (C6)"]} />
                   <TableRow cells={["\"Genuine inclusion is not charity. It is structural intelligence.\"", "Structural Argument (C8)"]} />
-                  <TableRow cells={["\"You cannot heal what the environment keeps wounding.\"", "Regulation Thread"]} />
+                  <TableRow cells={["\"You cannot build what the environment keeps dismantling.\"", "Regulation Thread"]} />
                 </tbody>
               </table>
             </div>

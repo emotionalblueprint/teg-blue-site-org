@@ -140,7 +140,7 @@ export default function Piece02WhyPeopleChange() {
 
       <p style={READING.paragraph}>But the behavior is a product of a system. Systems can change. The question is whether the conditions for change exist, and whether the person in question can tolerate encountering themselves in the contexts where the scaffolding has been removed.</p>
 
-      <p style={READING.paragraph}>That is a very different question from whether they are fundamentally a bad person. It is, in some ways, a harder question. But it is the one that leads somewhere.</p>
+      <p style={READING.paragraph}>That is a very different question from whether character assessment leads anywhere useful. It is, in some ways, a harder question — and it is the one that leads somewhere.</p>
 
       <hr style={READING.hr} />
 

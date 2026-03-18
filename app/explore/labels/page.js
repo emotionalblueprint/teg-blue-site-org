@@ -25,7 +25,7 @@ export const metadata = {
   },
   openGraph: {
     title: "What Labels Actually Map — Capacity Explorer | TEG-Blue Research",
-    description: "19 psychology labels mapped to three awareness capacities. Interactive explorer showing how RE, ER, and SEA produce every pattern psychology has named separately.",
+    description: "19 psychology labels mapped to three awareness capacities. Interactive explorer showing how Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) produce every pattern psychology has named separately.",
     url: "https://teg-blue.org/explore/labels",
     siteName: "TEG-Blue Research",
     type: "article",

@@ -36,7 +36,7 @@ const MODELS = [
     title: "Nervous System Signaling",
     coreQuestion: "Where is the needle?",
     summary:
-      "What state the emotion produces. How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return restores it.",
+      "What state the emotion produces. How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return to baseline restores it.",
     concepts: 10,
     drawsFrom: "F1, F3, F7, F12",
     color: SPECTRUM.azure,
@@ -135,7 +135,7 @@ export default function ModelsPage() {
             <strong style={{ color: TEXT.primary }}>The central principle:</strong> Health is not a position. Health is mobility — the needle&apos;s capacity to move. A Fluid Compass moves through all four modes and returns. A Stuck Compass is one where the needle has stopped moving. What should have been temporary has become identity.
           </p>
           <QuoteBlock>
-            A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and come back.
+            A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and return to baseline.
           </QuoteBlock>
           <StatusBadge status="Proposed model with early evidence" color={SPECTRUM.azure} />
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
