@@ -1772,7 +1772,7 @@ const GLOSSARY_TERMS = [
     title: "Trauma",
     type: "reframe",
     status: "proposed",
-    commonUnderstanding: "A terrible event that happened to you — something big enough to justify lasting pain.",
+    commonUnderstanding: "An overwhelming event that left lasting damage.",
     definition: "An incomplete biological response — activation the nervous system couldn't fully discharge or integrate, regardless of whether it felt like 'too much' or 'no emotion at all.' Trauma is not defined by the event. It is defined by what the body could not complete.",
     tags: ["M3", "reframe", "neuroscience"],
     framework: "M3",
