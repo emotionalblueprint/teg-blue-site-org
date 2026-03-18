@@ -1120,6 +1120,11 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                     linkText="F8: Repairing Awareness →"
                   />
                   <NavRow
+                    label="See 19 psychology labels as capacity configurations"
+                    href="/explore/labels"
+                    linkText="Capacity Labels Explorer →"
+                  />
+                  <NavRow
                     label="Explore the interactive tools"
                     href="https://teg-blue.com/emotional-tools"
                     linkText="Emotional Tools (teg-blue.com) →"

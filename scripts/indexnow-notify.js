@@ -38,6 +38,8 @@ const ALL_PAGES = [
   '/scientific-foundations',
   '/emotional-technology',
   '/reframes',
+  // Explore
+  '/explore/labels',
   // Models
   '/model/m1-inner-compass',
   '/model/m2-three-awareness-capacities',

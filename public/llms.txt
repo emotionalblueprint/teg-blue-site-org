@@ -259,6 +259,12 @@ TEG-Blue connection: F1 Emotional Gradient / Signal function
 
 Index page: https://teg-blue.org/mechanics-of-phenomena
 
+## Capacity Labels Explorer
+
+Interactive tool mapping 19 popular psychology labels to three awareness capacities: RE (Reading Emotions), ER (Emotional Resonance), and SEA (Self-Emotional Awareness). Each label — narcissist, empath, codependent, people-pleaser, etc. — is a specific configuration of these three capacities, not a personality type. Drag sliders to see which labels emerge from which configurations.
+
+URL: https://teg-blue.org/explore/labels
+
 ## Two Sites, One Framework
 
 - **teg-blue.org** (this site) — Open science for researchers

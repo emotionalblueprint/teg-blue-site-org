@@ -485,6 +485,7 @@ export default function ResearchHub() {
               <OpenItem label="Test the claims" description="Five open research questions, four research directions" href="/research-entry" />
               <OpenItem label="Read the source theories" description="145+ established theories, credited and documented" href="/scientific-foundations" />
               <OpenItem label="Read the reframes" description="15 common terms traced back to the nervous system" href="/reframes" />
+              <OpenItem label="Explore the labels" description="19 psychology labels mapped to 3 awareness capacities" href="/explore/labels" />
             </div>
           </section>
 

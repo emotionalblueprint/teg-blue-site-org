@@ -264,6 +264,7 @@ export default function ModelsPage() {
             { href: "/frameworks-map", label: "12 Frameworks" },
             { href: "/foundations", label: "System Overview" },
             { href: "/collaborate", label: "Collaborate" },
+            { href: "/explore/labels", label: "Capacity Labels Explorer" },
             { href: "https://teg-blue.com/compass-explorer", label: "Inner Compass (teg-blue.com)", external: true },
           ].map(({ href, label, external }) => {
             const style = {
