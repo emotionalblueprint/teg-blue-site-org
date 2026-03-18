@@ -465,6 +465,13 @@ const nextConfig = {
         permanent: true,
       },
 
+      // M1 rename: Inner Compass → Nervous System Signaling
+      {
+        source: '/model/m1-inner-compass',
+        destination: '/model/m1-nervous-system-signaling',
+        permanent: true,
+      },
+
       // Catch-all for /$ (malformed URL)
       {
         source: '/$',

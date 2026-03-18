@@ -67,7 +67,7 @@ export default function PiecePBN01Octopus() {
           {
             description: "You want to understand what happens when the signal function breaks down \u2014 when inner state and outer transmission decouple:",
             label: "M1 \u2014 Four-Mode Gradient (Control / Domination modes)",
-            href: "/model/m1-inner-compass",
+            href: "/model/m1-nervous-system-signaling",
           },
           {
             description: "You want to understand how the body carries information that the mind hasn\u2019t named yet:",

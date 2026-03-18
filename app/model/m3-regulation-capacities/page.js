@@ -32,7 +32,7 @@ const DRAWS_FROM = [
   { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why restoration fails — the awareness capacities that should facilitate the return.", href: "/framework/f2-awareness-calibration" },
   { id: "F3", title: "False Coherence", relation: "Cognitive maintenance", description: "How cognition constructs coherence over unfinished cycles, hiding the residue.", href: "/framework/f3-false-coherence" },
   { id: "F12", title: "Two Information Systems", relation: "Architecture", description: "Why cognitive understanding cannot close a somatic cycle. The two-system explanation.", href: "/framework/f12-two-information-systems" },
-  { id: "M1", title: "Nervous System Signaling", relation: "Paired model", description: "The compass that gets stuck when cycles don't complete. M3 explains the biology of why.", href: "/model/m1-inner-compass" },
+  { id: "M1", title: "Nervous System Signaling", relation: "Paired model", description: "The compass that gets stuck when cycles don't complete. M3 explains the biology of why.", href: "/model/m1-nervous-system-signaling" },
   { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "The capacities that determine whether the cycle can be felt, read, and allowed to complete.", href: "/model/m2-three-awareness-capacities" },
 ];
 
@@ -811,7 +811,7 @@ export default function M3RegulationCapacitiesPage() {
                 <tbody>
                   <NavRow
                     label="Understand the instrument"
-                    href="/model/m1-inner-compass"
+                    href="/model/m1-nervous-system-signaling"
                     linkText="M1: Nervous System Signaling →"
                   />
                   <NavRow

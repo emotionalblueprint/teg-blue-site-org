@@ -110,7 +110,7 @@ Nervous system regulatory states along a continuous gradient:
 
 ### M1: Nervous System Signaling
 The instrument — how the nervous system communicates through emotion across four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient.
-URL: https://teg-blue.org/model/m1-inner-compass
+URL: https://teg-blue.org/model/m1-nervous-system-signaling
 
 ### M2: Three Awareness Capacities
 The calibration — the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that determine what data the compass receives and how it is processed.
@@ -409,7 +409,7 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Core Models: https://teg-blue.org/models
-  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-inner-compass
+  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-nervous-system-signaling
   - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map

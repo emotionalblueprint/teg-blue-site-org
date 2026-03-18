@@ -114,7 +114,7 @@ export const FRAMEWORK_URLS = {
   F10: "/framework/f10-generational-bridges",
   F11: "/framework/f11-emotional-paradoxes",
   F12: "/framework/f12-two-information-systems",
-  M1: "/model/m1-inner-compass",
+  M1: "/model/m1-nervous-system-signaling",
   M2: "/model/m2-three-awareness-capacities",
   M3: "/model/m3-regulation-capacities",
 };

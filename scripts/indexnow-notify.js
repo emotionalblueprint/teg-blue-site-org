@@ -41,7 +41,7 @@ const ALL_PAGES = [
   // Explore
   '/explore/labels',
   // Models
-  '/model/m1-inner-compass',
+  '/model/m1-nervous-system-signaling',
   '/model/m2-three-awareness-capacities',
   '/model/m3-regulation-capacities',
   // Frameworks (F1-F12)

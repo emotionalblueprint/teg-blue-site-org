@@ -100,7 +100,7 @@ export default function F7DominationRegulatesPage() {
               groupLabel="Collective · F4–F7"
               threadLine="Domination regulates · Cost: Everything"
               informsModels={[
-                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M1", href: "/model/m1-nervous-system-signaling" },
               ]}
               adjacent={{
                 prev: { label: "F6 Bias Regulates", href: "/framework/f6-bias-regulates" },

@@ -56,13 +56,13 @@ export const metadata = {
     "two information systems",
   ],
   alternates: {
-    canonical: "https://teg-blue.org/model/m1-inner-compass",
+    canonical: "https://teg-blue.org/model/m1-nervous-system-signaling",
   },
   openGraph: {
     title: "Nervous System Signaling — M1 Model | TEG-Blue",
     description:
       "The instrument that maps how the nervous system orients between safety and threat across four modes on a continuous gradient. The foundational model of the TEG-Blue system.",
-    url: "https://teg-blue.org/model/m1-inner-compass",
+    url: "https://teg-blue.org/model/m1-nervous-system-signaling",
     type: "article",
     siteName: "TEG-Blue Research",
   },
@@ -85,7 +85,7 @@ export default function M1InnerCompassPage() {
         fontFamily: FONT.display,
       }}
     >
-      <SiteHeader currentPath="/model/m1-inner-compass" />
+      <SiteHeader currentPath="/model/m1-nervous-system-signaling" />
 
       <PageLayout
         header={
@@ -1035,7 +1035,7 @@ export default function M1InnerCompassPage() {
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="m1-inner-compass" type="model" />
+          <ConnectedResearch slug="m1-nervous-system-signaling" type="model" />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
@@ -1115,7 +1115,7 @@ export default function M1InnerCompassPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            "@id": "https://teg-blue.org/model/m1-inner-compass#article",
+            "@id": "https://teg-blue.org/model/m1-nervous-system-signaling#article",
             headline: "Nervous System Signaling: The Instrument",
             description:
               "How the nervous system orients between safety and threat across four modes on a continuous gradient. Model M1 of the TEG-Blue system.",
@@ -1140,7 +1140,7 @@ export default function M1InnerCompassPage() {
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://teg-blue.org/model/m1-inner-compass",
+              "@id": "https://teg-blue.org/model/m1-nervous-system-signaling",
             },
             about: [
               { "@type": "Thing", name: "Inner Compass" },
@@ -1179,7 +1179,7 @@ export default function M1InnerCompassPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
-              { name: "M1: Nervous System Signaling", url: "/model/m1-inner-compass" },
+              { name: "M1: Nervous System Signaling", url: "/model/m1-nervous-system-signaling" },
             ])
           ),
         }}
@@ -1222,7 +1222,7 @@ export default function M1InnerCompassPage() {
           __html: JSON.stringify(
             generateSpeakableJsonLd({
               name: "Nervous System Signaling (M1) — TEG-Blue Research",
-              url: "https://teg-blue.org/model/m1-inner-compass",
+              url: "https://teg-blue.org/model/m1-nervous-system-signaling",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),

@@ -36,7 +36,7 @@ const MODELS = [
     concepts: 10,
     drawsFrom: "F1, F3, F7, F12",
     color: SPECTRUM.azure,
-    href: "/model/m1-inner-compass",
+    href: "/model/m1-nervous-system-signaling",
   },
   {
     id: "M2",
@@ -113,7 +113,7 @@ export default function ModelsPage() {
           title="Nervous System Signaling"
           role="The instrument"
           color={SPECTRUM.azure}
-          href="/model/m1-inner-compass"
+          href="/model/m1-nervous-system-signaling"
         >
           <p style={bodyStyle}>
             The nervous system continuously evaluates one question: <em>Is there enough safety to engage, or is protection needed?</em> The Inner Compass is the name for that orientation mechanism. The Four-Mode Gradient is the continuous range it moves through.

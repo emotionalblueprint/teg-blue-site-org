@@ -227,7 +227,7 @@ export default function F12TwoInformationSystemsPage() {
               threadLabel="The Architecture Underneath"
               threadLine="The architecture that explains why the thread works the way it does"
               informsModels={[
-                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M1", href: "/model/m1-nervous-system-signaling" },
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{

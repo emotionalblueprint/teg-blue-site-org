@@ -118,7 +118,7 @@ export default function F1EmotionalGradientPage() {
               groupLabel="Individual · F1–F3"
               threadLine="Biological Restoration — the body completing its own cycle · Cost: None — this is the design"
               informsModels={[
-                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M1", href: "/model/m1-nervous-system-signaling" },
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{
@@ -592,7 +592,7 @@ export default function F1EmotionalGradientPage() {
               </ExpandableSection>
 
               <Link
-                href="/model/m1-inner-compass"
+                href="/model/m1-nervous-system-signaling"
                 style={{
                   display: "block",
                   padding: "16px 20px",
@@ -1474,7 +1474,7 @@ export default function F1EmotionalGradientPage() {
                 </thead>
                 <tbody>
                   <NavRow label="Continue to F2 — how the compass gets calibrated" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness (F2) →" />
-                  <NavRow label="See the applied model for this framework" href="/model/m1-inner-compass" linkText="Nervous System Signaling (M1) →" />
+                  <NavRow label="See the applied model for this framework" href="/model/m1-nervous-system-signaling" linkText="Nervous System Signaling (M1) →" />
                   <NavRow label="See the physiological model — the biology of unfinished emotion" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />

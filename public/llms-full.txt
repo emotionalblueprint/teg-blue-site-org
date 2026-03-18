@@ -698,7 +698,7 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
 - Core Models: https://teg-blue.org/models
-  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-inner-compass
+  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-nervous-system-signaling
   - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
   - M3 Regulation Capacities: https://teg-blue.org/model/m3-regulation-capacities
 - Publications: https://teg-blue.org/publications

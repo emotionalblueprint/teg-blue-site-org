@@ -111,7 +111,7 @@ export default function Image() {
               letterSpacing: "0.04em",
             }}
           >
-            teg-blue.org/model/m1-inner-compass
+            teg-blue.org/model/m1-nervous-system-signaling
           </div>
           <div
             style={{

@@ -427,7 +427,7 @@ export default function TheoreticalFoundationsPage() {
             }}
           >
             <Link
-              href="/model/m1-inner-compass"
+              href="/model/m1-nervous-system-signaling"
               style={{
                 padding: 20,
                 background: gradientCardBg(SPECTRUM.azure),

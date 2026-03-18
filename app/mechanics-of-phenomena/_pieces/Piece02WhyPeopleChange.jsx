@@ -166,7 +166,7 @@ export default function Piece02WhyPeopleChange() {
           {
             description: "You want to understand the four operating modes \u2014 what activates each one and what the system looks like from the inside:",
             label: "M1 \u2014 Nervous System Signaling",
-            href: "/model/m1-inner-compass",
+            href: "/model/m1-nervous-system-signaling",
           },
           {
             description: "You want to understand how collective rules and social structures do regulatory work \u2014 and what happens when those structures are removed:",

@@ -102,7 +102,7 @@ export default function F3FalseCoherencePage() {
               groupLabel="Individual · F1–F3"
               threadLine="False coherence — cognition replacing restoration · Cost: Truth"
               informsModels={[
-                { label: "M1", href: "/model/m1-inner-compass" },
+                { label: "M1", href: "/model/m1-nervous-system-signaling" },
                 { label: "M2", href: "/model/m2-three-awareness-capacities" },
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
