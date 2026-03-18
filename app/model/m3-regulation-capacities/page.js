@@ -1,4 +1,5 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, PATTERN_GRADIENT,
@@ -10,6 +11,11 @@ import {
 } from "@/src/components";
 import OpenCycleExplorer from "@/src/components/OpenCycleExplorer";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
+
+const TankDiagram = dynamic(
+  () => import("@/src/components/TankDiagram"),
+  { ssr: false }
+);
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -112,7 +118,19 @@ export default function M3RegulationCapacitiesPage() {
           </>
         }
       >
-        {/* ─── INTERACTIVE DIAGRAM ──────────────────────── */}
+        {/* ─── TANK DIAGRAM ─────────────────────────────── */}
+        <TankDiagram />
+
+        {/* ─── THE OPEN CYCLE ─────────────────────────────── */}
+        <h2
+          id="the-open-cycle"
+          style={{
+            ...sectionHeadingStyle,
+            marginTop: 48,
+          }}
+        >
+          The Open Cycle
+        </h2>
         <OpenCycleExplorer />
 
         <article>

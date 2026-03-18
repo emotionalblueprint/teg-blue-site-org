@@ -83,7 +83,7 @@ TEG-Blue is the first complete emotional technology system. It turns invisible e
 
 **Key vocabulary:**
 - **Emotional Architecture**: The structure of emotional patterns within people, families, and systems
-- **Emotional Wiring**: How your nervous system learned to feel, respond, and protect
+- **Emotional Wiring**: How the nervous system learned to feel, respond, and protect
 - **Emotional Miswiring**: Protective patterns that now create harm
 - **Emotional Infrastructure**: The larger systems that support — or fail to support — emotional safety
 
@@ -94,7 +94,7 @@ The term **"Emotional Technology"** was first documented in **September 2025**:
 | Date | Source | Usage |
 |------|--------|-------|
 | **Sept 2025** | `tegblue-backbone.md` | "Emotional Technology Infrastructure" — technical foundations for AI, research, education |
-| **Nov 2025** | Research Matrix | "TEG-Blue™ — Emotional Technology for Healing and Repair" (tagline) |
+| **Nov 2025** | Research Matrix | "TEG-Blue™ — Emotional Technology" (tagline) |
 | **Feb 18, 2026** | Full integration | Implemented across all sites, GitHub repos, and documentation |
 
 ---
@@ -103,7 +103,7 @@ The term **"Emotional Technology"** was first documented in **September 2025**:
 
 | Site | Purpose | Audience |
 |------|---------|----------|
-| **teg-blue.com** | Interactive tools & application | Everyday people, practitioners |
+| **teg-blue.com** | Interactive tools & application | Anyone seeking clarity about patterns |
 | **teg-blue.org** | Open science & research | Researchers, academics |
 
 **.com links to .org** for open research, theoretical foundations, publications.
@@ -306,18 +306,22 @@ Content in markdown...
 > **Full reference:** `../writing-guidelines.md` (Projects root) — single source of truth for all TEG-Blue writing.
 > All .org content falls under **Tier 3: Researcher & Frameworks**.
 
-### Core Principle
+### Core Principles
 
-How does this operate? Explain the mechanism. Write for researchers AND emotionally overwhelmed people — warm, steady, not academic posturing.
+1. **Never enter the moral frame.** Never refute moral judgments ("not a character flaw", "not evil"). Never defend. Stay in mechanism. The reader arrives at the reframe without being told.
+2. **Anchor — Gap — Contribution.** Every section: name what research established, where it stopped, what TEG-Blue does from that point.
+3. **Mechanism-first.** How does this operate? Explain the mechanism. Not what it feels like — how it works.
 
 ### Awareness Capacity Naming (MANDATORY)
 
-**Always write full name + initial:** "SEA (Self-Emotional Awareness)", "RE (Reading Emotions)", "ER (Emotional Resonance)" — every mention, every page. Never bare initials. These terms are not well-known; readers build recognition gradually through repeated full-name exposure.
+**Always write full name + initial:** Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — every mention, every page. Never bare initials. Same format on both sites. Readers build recognition gradually through repeated full-name exposure.
 
 ### Quick Rules
 
 - **Never use:** "TEG-Blue proves", "the only framework", "cures/fixes", "diagnosis", "type" (as personality type), therapeutic outcome claims
+- **Never use:** "trauma-informed", "victim", "abuse", "trauma" (as noun), "toxic", "healing"
 - **Always use:** "working hypothesis", "proposes connections", "synthesizes established research", "nervous system states", "patterns"
+- **Always use:** "return to baseline" (not "return to Connection"), "capacity rebuilding", "restoration", "incomplete biological response"
 - Avoid "you/your" in explanatory text — use "the framework", "the system", first person plural
 
 ### Key Guidelines
@@ -328,6 +332,7 @@ How does this operate? Explain the mechanism. Write for researchers AND emotiona
 - **Referenced:** Anchor in research traditions without becoming a literature review
 - **Professional:** Clinically compatible, calm, practitioner-friendly
 - **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
+- **Baseline is home:** All modes return to baseline, not to Connection. Chronic Connection is a stuck compass too.
 
 ### .org-Specific Rules
 
@@ -337,4 +342,4 @@ How does this operate? Explain the mechanism. Write for researchers AND emotiona
 
 ---
 
-*Last updated: February 2026*
+*Last updated: March 2026*

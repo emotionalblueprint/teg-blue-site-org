@@ -37,6 +37,7 @@ export { default as OperationalStatement } from "./OperationalStatement";
 export { default as DrawsFromPanel } from "./DrawsFromPanel";
 
 // Visualizations
+export { default as TankDiagram } from "./TankDiagram";
 export { default as CompassBar } from "./CompassBar";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
 

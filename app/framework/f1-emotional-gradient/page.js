@@ -22,10 +22,6 @@ const F1InstrumentDiagram = dynamic(
   () => import("@/src/components/framework-diagrams/F1InstrumentDiagram"),
   { ssr: false }
 );
-const F1HingeDiagram = dynamic(
-  () => import("@/src/components/framework-diagrams/F1HingeDiagram"),
-  { ssr: false }
-);
 const F1CognitiveUpgradeDiagram = dynamic(
   () => import("@/src/components/framework-diagrams/F1CognitiveUpgradeDiagram"),
   { ssr: false }
@@ -643,10 +639,6 @@ export default function F1EmotionalGradientPage() {
               <KeyStatement>
                 Biological Restoration cannot be forced. It can only be allowed. It is not a skill, not a technique, not something the person does — it is what the body does when conditions allow.
               </KeyStatement>
-
-              <DiagramToggle label="restoration diagram" defaultOpen>
-                <F1HingeDiagram />
-              </DiagramToggle>
 
               <p style={proseStyle}>
                 By <em>forced</em>, this means top-down suppression — overriding activation so it <em>looks</em> calm while the body remains loaded. Biological Restoration can be <strong style={{ color: TEXT.primary }}>supported</strong> (through safety, time, breath, movement, warmth, connection). But it cannot be commanded into completion by cognition.
