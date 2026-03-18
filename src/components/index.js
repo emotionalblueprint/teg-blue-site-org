@@ -18,6 +18,7 @@ export { default as PatternGradientBar } from "./PatternGradientBar";
 export { default as FluidCompassExplorer } from "./FluidCompassExplorer";
 export { default as OpenCycleExplorer } from "./OpenCycleExplorer";
 export { default as EmpathicIntegrationExplorer } from "./EmpathicIntegrationExplorer";
+export { default as CapacityLabelsExplorer } from "./CapacityLabelsExplorer";
 export { default as ResearcherPatternCard } from "./ResearcherPatternCard";
 export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";
