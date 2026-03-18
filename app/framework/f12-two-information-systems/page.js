@@ -638,7 +638,7 @@ export default function F12TwoInformationSystemsPage() {
             </p>
 
             <p style={proseStyle}>
-              <strong>Understanding the mechanism does eliminate demonization.</strong> The person is not evil. They are in a state. The state produces the behavior. The behavior produces harm. All of these are true simultaneously. Causality and accountability are separable (F7). Understanding why someone became who they became does not excuse what it costs others.
+              <strong>Understanding the mechanism changes what is visible.</strong> The person is in a state. The state produces the behavior. The behavior produces harm. All of these are true simultaneously. Causality and accountability are separable (F7). Understanding why someone became who they became does not excuse what it costs others.
             </p>
 
             <h3 style={conceptHeadingStyle}>The Five Transformations</h3>

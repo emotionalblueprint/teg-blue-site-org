@@ -135,7 +135,7 @@ The frameworks integrate 145+ established theories across neuroscience, psycholo
 
 ## The Core Testable Claim
 
-> The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their **capacity to return to Connection when challenged.**
+> The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their **capacity to return to baseline when challenged.**
 
 This capacity is measurable. It shows up in language. It appears to be predicted by **complexity markers** — signs of self-awareness, perspective-taking, and emotional differentiation.
 

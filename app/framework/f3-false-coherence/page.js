@@ -220,7 +220,7 @@ export default function F3FalseCoherencePage() {
                 <tbody>
                   <TableRow cells={[
                     "F1 — Biological Information",
-                    "The biological return mechanism — Biological Restoration. How the body is designed to complete the activation cycle and come back to Connection.",
+                    "The biological return mechanism — Biological Restoration. How the body is designed to complete the activation cycle and return to baseline.",
                   ]} />
                   <TableRow cells={[
                     "F2 — Awareness Calibration",
@@ -436,7 +436,7 @@ export default function F3FalseCoherencePage() {
             </KeyStatement>
 
             <p style={proseStyle}>
-              Cognitive dissonance is particularly threatening when false coherence is the person's <em>only</em> regulatory system. If the biological return was never learned, and cognition is the only thing keeping the system stable, then challenging the cognitive narrative threatens the person's entire regulatory architecture. This is not stubbornness. It is a person clinging to the only regulation they have.
+              Cognitive dissonance is particularly threatening when false coherence is the person's <em>only</em> regulatory system. If the biological return was never learned, and cognition is the only thing keeping the system stable, then challenging the cognitive narrative threatens the person's entire regulatory architecture. It is a person clinging to the only regulation they have.
             </p>
             <p style={proseStyle}>
               The clinical implication is significant: if dissonance is a regulatory response to threat, then correcting the person's thinking <em>increases</em> threat. The standard cognitive therapy approach — identify the distortion, challenge it, replace it — can trigger defensive escalation precisely because the challenge is experienced as an attack on regulatory stability. F3 says: create safety first. Truth follows safety. Not the other way around.

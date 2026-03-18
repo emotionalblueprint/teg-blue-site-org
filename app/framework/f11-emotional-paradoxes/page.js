@@ -20,7 +20,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Framework Position", href: "#framework-position", description: "When the compass begins to move, contradictions emerge that were previously invisible. F11 maps these contradictions." },
   { label: "The Regulation Thread", href: "#framework-position", description: "F1-F7 generate contradictions but false coherence hides them. F8-F10 loosen false coherence." },
   { label: "Multi-Rationality", href: "#multi-rationality", description: "Paradoxical behaviour appears irrational only when assessed against a single set of values." },
-  { label: "Each Framework's Paradox", href: "#paradox-map", description: "Every mechanism in F1-F10 creates characteristic contradictions. A map, not a personal failing." },
+  { label: "Each Framework's Paradox", href: "#paradox-map", description: "Every mechanism in F1-F10 creates characteristic contradictions. A map of the contradictions each mechanism produces." },
   { label: "The Paradox Cascade", href: "#paradox-cascade", description: "How contradictions go underground. The smooth story should worry you more than the messy one." },
   { label: "Compass Position and Holding", href: "#paradox-and-compass", description: "The compass must be flexible enough to hold contradiction. Measurable consequence of repair." },
   { label: "Individual Paradoxes", href: "#paradoxes-of-repair", description: "I am in more pain AND I am more alive. Not contradictions to resolve — contradictions to hold." },
@@ -191,7 +191,7 @@ export default function F11EmotionalParadoxesPage() {
   const faqItems = [
     {
       q: "Why do people contradict themselves?",
-      a: "Because multiple valid needs are operating simultaneously. A person who wants connection but pushes it away is not irrational \u2014 they are serving both the need for connection (the system's home base) and the need for protection (the system's emergency response). When any two needs conflict, behavior serves multiple masters. The result looks contradictory from outside but is perfectly logical from inside.",
+      a: "Because multiple valid needs are operating simultaneously. A person who wants connection but pushes it away is not irrational \u2014 they are serving both the need for connection (the system's baseline) and the need for protection (the system's emergency response). When any two needs conflict, behavior serves multiple masters. The result looks contradictory from outside but is perfectly logical from inside.",
     },
     {
       q: "Is holding paradox the same as accepting contradiction?",
@@ -288,7 +288,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <KeyStatement>
-              F11 maps the contradictions that become visible when the system starts working as designed. Paradox is not a sign of failure. It is a sign that the person can now hold complexity that false coherence previously flattened.
+              F11 maps the contradictions that become visible when the system starts working as designed. Paradox indicates that the person can now hold complexity that false coherence previously flattened.
             </KeyStatement>
           </section>
 
@@ -325,7 +325,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <p style={proseStyle}>
-              A person who wants connection but pushes it away is not irrational. Two needs are real: the need for connection (F1 — the system's home base, designed for sustained living) and the need for protection (F1 — the system's emergency response to perceived threat). The behavior oscillates or compromises because both needs are driving the system. Neither is wrong. Neither is the "real" need. Both are the nervous system pursuing valid regulatory goals.
+              A person who wants connection but pushes it away is not irrational. Two needs are real: the need for connection (F1 — the system's baseline, designed for sustained living) and the need for protection (F1 — the system's emergency response to perceived threat). The behavior oscillates or compromises because both needs are driving the system. Neither is wrong. Neither is the "real" need. Both are the nervous system pursuing valid regulatory goals.
             </p>
 
             <h3 style={conceptHeadingStyle}>Five Competing Needs</h3>
@@ -509,7 +509,7 @@ export default function F11EmotionalParadoxesPage() {
                 </thead>
                 <tbody>
                   <TableRow cells={["Connection", "Can hold contradiction. Both truths coexist. The person can say \"I love them AND what they did hurt me\" without one canceling the other. Paradox is tolerable because the system has enough safety to hold complexity"]} />
-                  <TableRow cells={["Protection", "Paradox feels threatening. The system wants to resolve \u2014 pick a side, simplify, decide. Binary thinking is not stupidity \u2014 it is the nervous system reducing cognitive load under threat"]} />
+                  <TableRow cells={["Protection", "Paradox feels threatening. The system wants to resolve \u2014 pick a side, simplify, decide. Binary thinking is the nervous system reducing cognitive load under threat"]} />
                   <TableRow cells={["Control", "Paradox is managed through narrative. False coherence constructs a story that appears to hold both truths but actually eliminates one. The narrative feels like integration but is actually resolution by elimination"]} />
                   <TableRow cells={["Domination", "Paradox is not experienced. One truth is imposed. The other is erased, denied, or punished in anyone who names it"]} />
                 </tbody>
@@ -672,7 +672,7 @@ export default function F11EmotionalParadoxesPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F11 normalizes these paradoxes as predictable features of the repair arc rather than complications to be eliminated. When clinicians and individuals expect these contradictions — and understand that they indicate depth rather than failure — the work can continue through the discomfort rather than retreating to the comfort of false coherence.
+                F11 maps these paradoxes as predictable features of the repair arc. When clinicians and individuals expect these contradictions — and understand that they indicate capacity to hold complexity — the work can continue through the discomfort rather than retreating to the comfort of false coherence.
               </p>
             </ExpandableSection>
           </section>

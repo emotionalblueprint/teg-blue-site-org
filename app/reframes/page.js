@@ -45,7 +45,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Why does TEG-Blue reframe existing terms instead of creating new ones?",
-    answer: "Because the existing terms describe real phenomena — but the common understanding of those phenomena often contains a moral judgment or oversimplification that blocks accurate seeing. TEG-Blue reframes keep the phenomenon but replace the moral framing with the mechanism. The goal is clarity about what is actually happening, not new vocabulary.",
+    answer: "Because the existing terms describe real phenomena — but the common understanding of those phenomena often contains a moral judgment or oversimplification that blocks accurate seeing. TEG-Blue reframes keep the phenomenon and describe the mechanism — what the nervous system is actually doing when the term applies. The goal is clarity about what is actually happening, not new vocabulary.",
   },
 ];
 

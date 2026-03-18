@@ -642,7 +642,7 @@ const globalModels = [
     id: 10,
     name: "Internal Family Systems (IFS)",
     author: "Richard Schwartz",
-    coreContribution: "Compassionate, trauma-informed model that views the mind as made of parts (protectors, managers, exiles, Self) — normalizes protective strategies instead of pathologizing them.",
+    coreContribution: "Trauma-informed model that views the mind as made of parts (protectors, managers, exiles, Self) — treats protective strategies as functional adaptations rather than symptoms.",
     tegBlueAdds: [
       "Integrates inner parts into a relational and systemic gradient",
       "Shows how inner protectors mirror relational patterns across Connection, Protection, Control, and Domination",

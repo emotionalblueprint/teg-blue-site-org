@@ -453,7 +453,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              When feedback hits like identity — when I am the feeling rather than having it — that is the pre-SEA condition, not proof that something is wrong with me.
+              When feedback hits like identity — when I am the feeling rather than having it — that is the pre-SEA condition — the developmental starting point before the observing position has formed.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>

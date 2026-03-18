@@ -18,11 +18,11 @@ const MODES = [
       fullName: "Connection Mode",
       pattern: "Pattern A",
       type: "Body-first",
-      duration: "Indefinite — home base",
+      duration: "Indefinite — baseline",
       sequence: "Engage → Relate → Repair → Learn",
       description:
         "The nervous system has enough safety to engage with complexity. Perception broadens, empathy comes fully online, repair becomes possible, and learning capacity opens.",
-      insight: "The only mode designed for sustained living",
+      insight: "The mode designed for sustained living — the system's baseline",
       capacities: [
         { name: "Perception", text: "Broad — sees the full field" },
         { name: "Cognition", text: "Flexible — holds complexity" },

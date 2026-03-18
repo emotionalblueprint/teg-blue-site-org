@@ -311,7 +311,7 @@ export default function M1InnerCompassPage() {
                 <div style={gridCellStyle}>Body-first</div>
                 <div style={gridCellStyle}>Automatic — safety perceived</div>
                 <div style={gridCellStyle}>Engage, relate, repair, learn</div>
-                <div style={gridCellStyle}>Indefinite — home base</div>
+                <div style={gridCellStyle}>Indefinite — baseline</div>
                 {/* Protection */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
                 <div style={gridCellStyle}>Body-first</div>
@@ -335,7 +335,7 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>Connection</h3>
             <p style={proseStyle}>
-              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, empathy comes fully online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the system's home base — the only mode designed for sustained living.
+              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, empathy comes fully online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the system's baseline — the mode designed for sustained living.
             </p>
 
             <h3 style={h3Style}>Protection</h3>
@@ -708,7 +708,7 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              Regulation is the built-in mechanism by which the nervous system returns from threat to safety. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to Connection. It restores through the same somatic channels it departed through.
+              Regulation is the built-in mechanism by which the nervous system returns from threat to safety. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through.
             </p>
             <p style={proseStyle}>
               Regulation is closer to digestion than to exercise. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
@@ -1194,12 +1194,12 @@ export default function M1InnerCompassPage() {
               {
                 question: "What is the Inner Compass model?",
                 answer:
-                  "The Inner Compass is a model for understanding how the nervous system continuously orients between safety and threat. It uses the metaphor of a compass with a moving needle — health is not a fixed position but the capacity of the needle to move fluidly across four modes (Connection, Protection, Control, Domination) and return to Connection.",
+                  "The Inner Compass is a model for understanding how the nervous system continuously orients between safety and threat. It uses the metaphor of a compass with a moving needle — health is not a fixed position but the capacity of the needle to move fluidly across four modes (Connection, Protection, Control, Domination) and return to baseline.",
               },
               {
                 question: "What are the four modes of the Inner Compass?",
                 answer:
-                  "The four modes are Connection (body-first, safety perceived — the home base), Protection (body-first, threat perceived — emergency system), Control (cognition-first, deliberate strategic response), and Domination (cognition-first, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories.",
+                  "The four modes are Connection (body-first, safety perceived — the system's baseline), Protection (body-first, threat perceived — emergency system), Control (cognition-first, deliberate strategic response), and Domination (cognition-first, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories.",
               },
               {
                 question: "What does 'state determines capacity' mean?",

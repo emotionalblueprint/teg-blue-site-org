@@ -53,7 +53,7 @@ This project stays honest by separating what exists from what we are testing.
 
 ## The core hypothesis we want help testing
 
-> The key variable that predicts relational and behavioral outcomes is not the person's state in a moment. It is their **capacity to return to Connection when challenged**.
+> The key variable that predicts relational and behavioral outcomes is not the person's state in a moment. It is their **capacity to return to baseline when challenged**.
 
 We treat this as a testable hypothesis, not a slogan.
 

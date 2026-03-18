@@ -25,7 +25,7 @@ TEG-Blue is an integrative architecture for emotional clarity — connecting est
 
 ## The Core Testable Claim
 
-The key variable predicting relational outcomes is not current regulatory state, but **capacity to return to Connection when challenged**.
+The key variable predicting relational outcomes is not current regulatory state, but **capacity to return to baseline when challenged**.
 
 This capacity appears measurable through "complexity markers" — signs of self-awareness, perspective-taking, and emotional differentiation in language.
 
@@ -552,7 +552,7 @@ How humans reason morally depends on nervous system state:
 ### Problem 5: Snapshot vs. Trajectory
 Current state alone doesn't predict outcomes. Trajectory matters more.
 
-**TEG-Blue solution:** Core testable claim — capacity to return to Connection when challenged predicts outcomes. Escalation vs. de-escalation is computationally measurable.
+**TEG-Blue solution:** Core testable claim — capacity to return to baseline when challenged predicts outcomes. Escalation vs. de-escalation is computationally measurable.
 
 ## AI-Native Data Architecture
 

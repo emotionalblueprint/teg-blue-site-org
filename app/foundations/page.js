@@ -149,7 +149,7 @@ export default function FoundationsPage() {
             >
               <div style={labelStyle(SPECTRUM.indigo)}>The Core Testable Claim</div>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong style={{ color: TEXT.primary }}>capacity to return to Connection when challenged</strong>. This capacity is measurable through &ldquo;complexity markers&rdquo; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
+                The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity is measurable through &ldquo;complexity markers&rdquo; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
               </p>
             </div>
           </div>

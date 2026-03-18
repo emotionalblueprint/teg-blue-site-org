@@ -29,7 +29,7 @@ The measurement system (the gradient) can be engaged with independently of the f
 
 The central proposition that connects both layers is this:
 
-> **The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their *capacity to return to Connection when challenged.***
+> **The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their *capacity to return to baseline when challenged.***
 
 This capacity is measurable. It shows up in language. And it appears to be predicted by specific linguistic markers we call **complexity markers** — signs of self-awareness, perspective-taking, and emotional differentiation that appear in natural discourse.
 

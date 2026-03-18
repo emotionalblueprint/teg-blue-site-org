@@ -314,7 +314,7 @@ export default function F6BiasRegulatesPage() {
             </div>
 
             <KeyStatement>
-              The critical interaction: Identity Filter + Empathy Collapse = Update Failure. When beliefs are fused with identity AND the capacity to feel others' experience is offline, the system has no mechanism to update. This is not stubbornness. It is structural inability to revise.
+              The critical interaction: Identity Filter + Empathy Collapse = Update Failure. When beliefs are fused with identity AND the capacity to feel others' experience is offline, the system has no mechanism to update. It is structural inability to revise.
             </KeyStatement>
 
             <p style={proseStyle}>

@@ -302,7 +302,7 @@ export default function AISafetyPage() {
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8 }}>
             TEG-Blue's core testable claim:{" "}
             <strong style={{ color: TEXT.primary }}>
-              a person's capacity to return to Connection when challenged predicts outcomes more
+              a person's capacity to return to baseline when challenged predicts outcomes more
               reliably than their current emotional state.
             </strong>
           </p>

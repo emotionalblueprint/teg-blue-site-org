@@ -143,7 +143,7 @@ Design notes:
 
 **Content:**
 
-TEG-Blue's core testable claim: **a person's capacity to return to Connection when challenged predicts outcomes more reliably than their current emotional state.**
+TEG-Blue's core testable claim: **a person's capacity to return to baseline when challenged predicts outcomes more reliably than their current emotional state.**
 
 A validation study (n=216) measured what happens when people's current state is disrupted — when they're challenged, confronted, or pushed out of their comfort zone:
 

@@ -240,7 +240,7 @@ export default function F9NeurodivergenceVariationPage() {
           <PropositionBox
             title="Core Propositions — F9"
             items={[
-              "Neurodivergence is a difference in nervous system configuration, not a deficit to be corrected — the compass is the same, the configuration is different",
+              "Neurodivergence is a difference in nervous system configuration — the compass is the same, the configuration is different",
               "System Mismatch — the gap between what an environment requires and what a nervous system can sustainably provide — is the named mechanism that produces masking, burnout, and developmental arrest",
               "Masking has cumulative, compounding costs across energetic, cognitive, emotional, somatic, developmental, and identity domains",
               "Unmasking is not equivalent to healing — dropping the mask without an accommodating environment can increase harm",
@@ -341,7 +341,7 @@ export default function F9NeurodivergenceVariationPage() {
             <h3 style={conceptHeadingStyle}>What Neurodivergence Is Not</h3>
 
             <p style={proseStyle}>
-              Neurodivergence is not a deficit to be corrected, a disorder to be treated, a character flaw to be overcome, or a special gift to be celebrated. It is a <strong>configuration</strong> — a different way the nervous system was built.
+              Neurodivergence is a <strong>configuration</strong> — a different way the nervous system was built.
             </p>
 
             <h3 style={conceptHeadingStyle}>Connection to F1</h3>

@@ -149,7 +149,7 @@ export default function Piece02WhyPeopleChange() {
 
       <p style={READING.paragraph}>I kept finding this structure {"\u2014"} context-dependent behavior, regulation outsourced to environment, the worst versions appearing in the safest relationships {"\u2014"} across clinical case studies, organizational psychology research, developmental trauma literature, and systems theory. Each field had its own name for pieces of it. None of them had the whole shape.</p>
 
-      <p style={READING.paragraph}>The framework I built to hold it is <strong>TEG-Blue {"\u2014"} The Emotional Gradient Blueprint</strong>. It treats what is described in this piece not as a character defect or a moral failure, but as a predictable output of how regulatory systems develop and operate {"\u2014"} and what happens when the conditions that support regulation are present in one context and absent in another.</p>
+      <p style={READING.paragraph}>The framework I built to hold it is <strong>TEG-Blue {"\u2014"} The Emotional Gradient Blueprint</strong>. It maps what is described in this piece as a predictable output of how regulatory systems develop and operate {"\u2014"} and what happens when the conditions that support regulation are present in one context and absent in another.</p>
 
       <p style={READING.paragraph}>The four operating modes of M1 (Connection, Protection, Control, Domination) are not personality types. They are states any person can occupy. The mode activated in any given moment is a function of the regulatory conditions of that environment {"\u2014"} what the nervous system reads as safe, threatened, or unchecked. Context-dependent behavior is what that architecture looks like in real life.</p>
 

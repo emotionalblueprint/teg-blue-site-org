@@ -30,7 +30,7 @@ Your validation study analyzed 10,000+ AITA posts and found:
 - All four modes successfully detected  
 - Mode classifications correlated with external community judgments  
 
-**The critical finding:** The key variable is not current state but *capacity to return to Connection when challenged.*
+**The critical finding:** The key variable is not current state but *capacity to return to baseline when challenged.*
 
 This single dataset can yield **at least 3–4 more focused papers**, each addressing a different question that the field doesn't have answers to yet.
 

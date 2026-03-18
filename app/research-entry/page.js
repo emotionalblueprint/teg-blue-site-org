@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the core testable claim of TEG-Blue?",
-    answer: "The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their capacity to return to Connection when challenged. This capacity is measurable through complexity markers in natural language.",
+    answer: "The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their capacity to return to baseline when challenged. This capacity is measurable through complexity markers in natural language.",
   },
   {
     question: "How can researchers collaborate with TEG-Blue?",
@@ -22,7 +22,7 @@ const SIDEBAR_SECTIONS = [
   { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 145+ established theories into testable hypotheses about emotional regulation." },
   { label: "What Is Original?", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
   { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
-  { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged." },
+  { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to baseline when challenged." },
   { label: "Open Research Questions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
@@ -225,7 +225,7 @@ export default function ResearchEntryPage() {
             title="Return capacity predicts relational outcomes"
           >
             <p style={{ margin: 0, fontStyle: "italic" }}>
-              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong>capacity to return to Connection when challenged</strong>.
+              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong>capacity to return to baseline when challenged</strong>.
             </p>
           </PropositionBox>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
@@ -434,7 +434,7 @@ export default function ResearchEntryPage() {
             },
             about: [
               { "@type": "Thing", name: "Open Research Questions", description: "Five priority research directions across biological mechanism, clinical, developmental, collective, and AI domains" },
-              { "@type": "Thing", name: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to Connection when challenged" },
+              { "@type": "Thing", name: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to baseline when challenged" },
             ],
           }),
         }}

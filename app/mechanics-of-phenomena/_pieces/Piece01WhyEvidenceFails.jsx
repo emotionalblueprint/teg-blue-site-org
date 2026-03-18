@@ -167,7 +167,7 @@ export default function Piece01WhyEvidenceFails() {
 
       <p style={READING.paragraph}>The explanations in this piece derive from <strong>TEG-Blue {"\u2014"} The Emotional Gradient Blueprint</strong> {"\u2014"} a research framework that integrates neuroscience, developmental psychology, trauma research, and systems thinking into a unified map of how human beings regulate, and what happens when regulation fails.</p>
 
-      <p style={READING.paragraph}>TEG-Blue does not treat conspiracy thinking as stupidity, pathology, or moral failure. It treats it as a predictable output of specific structural conditions: systems that learned, at some point, that the world was not safe enough to be faced without protection {"\u2014"} and that built what they needed to face it anyway.</p>
+      <p style={READING.paragraph}>Conspiracy thinking is a predictable output of specific structural conditions: systems that learned, at some point, that the world was not safe enough to be faced without protection {"\u2014"} and that built what they needed to face it anyway.</p>
 
       <p style={READING.paragraph}>Understanding that architecture doesn{"\u2019"}t require agreeing with its products. But it makes those products legible. And legibility, for people trained to understand complex systems, is where useful work can begin.</p>
 

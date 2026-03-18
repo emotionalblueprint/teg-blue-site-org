@@ -85,7 +85,7 @@ AI tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Cop
 **What AI did not contribute:**
 - The integrative architecture itself — the decision to connect polyvagal theory with sociology of capital, or to map moral disengagement as a stage on a continuous escalation trajectory, or to propose that empathy degrades in a three-channel sequence under threat.
 - The identification of the four-mode gradient as a continuous rather than categorical construct.
-- The core testable claim that capacity to return to Connection when challenged is the key predictive variable.
+- The core testable claim that capacity to return to baseline when challenged is the key predictive variable.
 - The design of the 16 emotional assessment instruments and their gradient structure.
 
 This distinction matters methodologically. AI tools can search, organize, draft, and check consistency. They do not, in their current form, perform the integrative leap that connects disparate disciplines into a novel architecture. That cognitive work — recognizing that phenomena studied separately across neuroscience, psychology, sociology, and trauma research are expressions of the same underlying mechanism — is a form of abductive reasoning that emerged from human observation and cross-disciplinary pattern recognition.

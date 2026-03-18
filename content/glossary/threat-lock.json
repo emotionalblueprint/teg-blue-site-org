@@ -3,7 +3,7 @@
   "type": "glossary",
   "title": "Threat Lock",
   "status": "open-review",
-  "definition": "Chronic activation of Protection, Control, or Domination where the system becomes stuck in defense without return to Connection.",
+  "definition": "Chronic activation of Protection, Control, or Domination where the system becomes stuck in defense without return to baseline.",
 
   "summary": "When pattern hijack occurs repeatedly without resolution, the nervous system can become locked in defensive mode. The baseline shifts toward chronic protection. Connection becomes difficult to access, and the system operates as if threat is continuous even when the environment is objectively safe.",
 
@@ -16,12 +16,12 @@
       "id": "what-it-is",
       "title": "What It Is",
       "defaultOpen": true,
-      "content": "Threat lock occurs when the nervous system becomes chronically stuck outside Connection. The mechanism: (1) repeated activation without return to baseline, (2) system 'learns' that protection is continuously needed, (3) baseline shifts toward chronic defense, (4) Connection becomes difficult or impossible to access. Characteristics include persistent hypervigilance or numbness, inability to relax even in safe environments, and relationships feeling exhausting or threatening."
+      "content": "Threat lock occurs when the nervous system becomes chronically stuck outside baseline. The mechanism: (1) repeated activation without return to baseline, (2) system 'learns' that protection is continuously needed, (3) baseline shifts toward chronic defense, (4) Connection becomes difficult or impossible to access. Characteristics include persistent hypervigilance or numbness, inability to relax even in safe environments, and relationships feeling exhausting or threatening."
     },
     {
       "id": "how-teg-blue-maps-it",
       "title": "How TEG-Blue Maps It",
-      "content": "TEG-Blue distinguishes between temporary Protection (adaptive response to real threat) and threat lock (chronic defensive state). Threat lock can manifest as stuck Protection (hypervigilance, anxiety), Control (managing threat by controlling others), or Domination (power as the only safety strategy). The key variable is not which state, but whether the system can return to Connection. Treatment requires sustained safety provision, not correction or challenge."
+      "content": "TEG-Blue distinguishes between temporary Protection (adaptive response to real threat) and threat lock (chronic defensive state). Threat lock can manifest as stuck Protection (hypervigilance, anxiety), Control (managing threat by controlling others), or Domination (power as the only safety strategy). The key variable is not which state, but whether the system can return to baseline. Treatment requires sustained safety provision, not correction or challenge."
     },
     {
       "id": "research-basis",

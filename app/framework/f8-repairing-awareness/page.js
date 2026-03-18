@@ -317,7 +317,7 @@ export default function F8RepairingAwarenessPage() {
             </div>
 
             <p style={proseStyle}>
-              F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp RE + collapsed ER + absent SEA = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. Not evil — a configuration. The same nervous system with different developmental conditions would have produced a different configuration.
+              F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp RE + collapsed ER + absent SEA = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. A configuration. The same nervous system with different developmental conditions would have produced a different configuration.
             </p>
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">

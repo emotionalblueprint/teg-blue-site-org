@@ -74,7 +74,7 @@ Control becomes entrenched — power over others becomes the primary way of feel
 
 ## The core testable claim
 
-> The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their **capacity to return to Connection when challenged**.
+> The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their **capacity to return to baseline when challenged**.
 
 **Status:** Testable hypothesis with preliminary support.
 

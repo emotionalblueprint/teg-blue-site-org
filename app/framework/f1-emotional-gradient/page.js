@@ -39,7 +39,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Biological Substrate", href: "#the-signal", description: "The biological systems that produce emotion — neural, endocrine, autonomic, neurochemical." },
   { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: the instrument and how it moves." },
   { label: "Connection & Protection", href: "#connection-protection", description: "The two body-first modes — the nervous system's original configurations." },
-  { label: "Biological Restoration", href: "#the-fork", description: "The body's designed process for completing the activation cycle and settling back to Connection." },
+  { label: "Biological Restoration", href: "#the-fork", description: "The body's designed process for completing the activation cycle and settling back to baseline." },
   { label: "Control & Domination", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
   { label: "Gradient & Mode", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
   { label: "The Full Arc", href: "#the-full-arc", description: "The complete seven-step sequence laid out in full, with each step mapped to the framework that elaborates it." },
@@ -554,10 +554,10 @@ export default function F1EmotionalGradientPage() {
                 }}
               >
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.A.primary, marginBottom: 8 }}>
-                  Connection Mode — System's Home Base <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
+                  Connection Mode — The System's Baseline <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                  The system's home base — the only mode designed for sustained living. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
+                  The system's baseline — the mode designed for sustained living. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
                 </p>
               </div>
 
@@ -653,10 +653,10 @@ export default function F1EmotionalGradientPage() {
               </p>
 
               <p style={proseStyle}>
-                This is the mechanism on which the entire twelve-framework system turns. When the nervous system mobilizes for threat — when Protection activates, when the heart accelerates, when hormones flood, when muscles brace — all of this was designed to be temporary. The body was built to complete the cycle: mobilise, respond, and restore. <strong style={{ color: TEXT.primary }}>Biological Restoration is the body's designed process for completing the activation cycle and settling back to Connection.</strong>
+                This is the mechanism on which the entire twelve-framework system turns. When the nervous system mobilizes for threat — when Protection activates, when the heart accelerates, when hormones flood, when muscles brace — all of this was designed to be temporary. The body was built to complete the cycle: mobilise, respond, and restore. <strong style={{ color: TEXT.primary }}>Biological Restoration is the body's designed process for completing the activation cycle and settling back to baseline.</strong>
               </p>
               <p style={proseStyle}>
-                The activation that was mobilized must <strong style={{ color: TEXT.primary }}>discharge</strong>. The breath that accelerated must <strong style={{ color: TEXT.primary }}>slow</strong>. The muscles that braced must <strong style={{ color: TEXT.primary }}>release</strong>. The hormones that flooded must <strong style={{ color: TEXT.primary }}>clear</strong>. The body does not reason its way back to Connection. It restores through the <strong style={{ color: SPECTRUM.cobalt }}>same somatic channels it departed through</strong>.
+                The activation that was mobilized must <strong style={{ color: TEXT.primary }}>discharge</strong>. The breath that accelerated must <strong style={{ color: TEXT.primary }}>slow</strong>. The muscles that braced must <strong style={{ color: TEXT.primary }}>release</strong>. The hormones that flooded must <strong style={{ color: TEXT.primary }}>clear</strong>. The body does not reason its way back to baseline. It restores through the <strong style={{ color: SPECTRUM.cobalt }}>same somatic channels it departed through</strong>.
               </p>
               <p style={proseStyle}>
                 Biological Restoration is <strong style={{ color: TEXT.primary }}>closer to digestion than to exercise</strong>. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
@@ -989,7 +989,7 @@ export default function F1EmotionalGradientPage() {
                   <tbody>
                     <TableRow cells={[
                       "Connection (Pattern A)", "Body-first", "Automatic — safety perceived",
-                      "Engage, relate, repair, learn", "Indefinite — the home base",
+                      "Engage, relate, repair, learn", "Indefinite — baseline",
                     ]} />
                     <TableRow cells={[
                       "Protection (Pattern B)", "Body-first", "Automatic — threat perceived",
@@ -1008,7 +1008,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the home base), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and come back when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
+                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the baseline), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and return to baseline when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
               </p>
 
               <div style={expandableRowStyle}>
@@ -1298,7 +1298,7 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
                   <TableRow cells={["How the compass moves", "Five-step sequence from signal detection to mode, completing before awareness. Fast by design. The problem is never the mechanism — it is what the mechanism learned."]} />
                   <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
-                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to Connection. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The central mechanism of the entire twelve-framework system."]} />
+                  <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to baseline. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The central mechanism of the entire twelve-framework system."]} />
                   <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
                   <TableRow cells={["The gradient", "The four modes are positions on a continuous gradient, not four boxes."]} />
                   <TableRow cells={["State determines capacity", "What you can perceive, think, and do depends on your current state. Restore safety first, then expect capacity."]} />
@@ -1418,7 +1418,7 @@ export default function F1EmotionalGradientPage() {
               F1 describes the <strong style={{ color: TEXT.primary }}>complete designed system</strong> — including Biological Restoration in its designed form. The body mobilizes, responds, and restores. The cycle completes. The compass moves and comes back. This is the design.
             </p>
             <p style={proseStyle}>
-              But Biological Restoration is not automatic. It is designed — but it must be <strong style={{ color: SPECTRUM.cobalt }}><em>learned</em></strong>. The body has the biological capacity for restoration from birth. It does not have the ability to restore until that capacity is developed through experience. The mechanism through which it is learned is <strong style={{ color: TEXT.primary }}>co-regulation</strong> — another person's regulated nervous system teaching the child's nervous system the path back to Connection.
+              But Biological Restoration is not automatic. It is designed — but it must be <strong style={{ color: SPECTRUM.cobalt }}><em>learned</em></strong>. The body has the biological capacity for restoration from birth. It does not have the ability to restore until that capacity is developed through experience. The mechanism through which it is learned is <strong style={{ color: TEXT.primary }}>co-regulation</strong> — another person's regulated nervous system teaching the child's nervous system the path back to baseline.
             </p>
             <p style={proseStyle}>
               This is especially true for <strong style={{ color: TEXT.primary }}>relational emotions</strong>. Somatic activations can complete through the body's own channels when conditions allow. But shame, guilt, fear of rejection, fear of abandonment — the emotions whose content is about belonging — can only complete when another person stays. A child whose relational emotions are never co-regulated does not just lack a general restoration capacity. They lack the <strong style={{ color: TEXT.primary }}>specific pathway for the specific emotions that are hardest to bear</strong>. The chain is emotion-specific: <strong style={{ color: TEXT.primary }}>what the adults could hold is what the child learns to complete</strong>.
@@ -1592,12 +1592,12 @@ export default function F1EmotionalGradientPage() {
               {
                 question: "What is the difference between Connection and Protection modes?",
                 answer:
-                  "Connection is the system's home base — the only mode designed for sustained living, where perception broadens, empathy is fully available, and repair is possible. Protection is the emergency system — designed for minutes to hours — where the nervous system mobilizes fight, flight, freeze, or fawn responses in response to perceived threat.",
+                  "Connection is the system's baseline — the mode designed for sustained living, where perception broadens, empathy is fully available, and repair is possible. Protection is the emergency system — designed for minutes to hours — where the nervous system mobilizes fight, flight, freeze, or fawn responses in response to perceived threat.",
               },
               {
                 question: "What is Biological Restoration?",
                 answer:
-                  "Biological Restoration is the body's designed process for completing the activation cycle and settling back to Connection after a threat response. It cannot be forced — it can only be allowed. It is what the body does when conditions allow: the breath slows, muscles release, hormones clear, and the system settles back.",
+                  "Biological Restoration is the body's designed process for completing the activation cycle and settling back to baseline after a threat response. It cannot be forced — it can only be allowed. It is what the body does when conditions allow: the breath slows, muscles release, hormones clear, and the system settles back.",
               },
               {
                 question: "How does regulatory state determine capacity?",

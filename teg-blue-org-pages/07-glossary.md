@@ -34,7 +34,7 @@ Chronic activation of Protection, Control, or Domination where the nervous syste
 A rapid, involuntary shift into Protection triggered by present stimuli resembling past danger. The nervous system responds to the past, not the present.
 
 ## Complexity Markers
-Linguistic and behavioral signs of self-awareness, perspective-taking, and emotional differentiation. Preliminary evidence suggests they predict capacity to return to Connection when challenged.
+Linguistic and behavioral signs of self-awareness, perspective-taking, and emotional differentiation. Preliminary evidence suggests they predict capacity to return to baseline when challenged.
 
 **Status:** Proposed construct with preliminary evidence. Needs standardization and independent validation.
 

@@ -605,7 +605,7 @@ export default function M3RegulationCapacitiesPage() {
 
               <ExpandableSection title="What M3 connects" type="opendata">
                 <p style={expandedProseStyle}>
-                  The specific neurochemical mechanism by which controlling others produces real physiological relief — not metaphorical relief, not psychological satisfaction, but a measurable cortisol drop and testosterone shift. This explains why the behaviour repeats: it worked. It also explains why it escalates: the underlying debris is untouched, so the relief is temporary and the dose must increase. The person is not choosing cruelty. The nervous system is choosing what produced the only signal it could interpret as safety.
+                  The specific neurochemical mechanism by which controlling others produces real physiological relief — not metaphorical relief, not psychological satisfaction, but a measurable cortisol drop and testosterone shift. This explains why the behaviour repeats: it worked. It also explains why it escalates: the underlying debris is untouched, so the relief is temporary and the dose must increase. The nervous system is selecting what produced the only signal it could interpret as safety.
                 </p>
               </ExpandableSection>
             </div>
@@ -719,7 +719,7 @@ export default function M3RegulationCapacitiesPage() {
               Each position on the gradient corresponds to a physiological state and a regulation strategy.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Connection Mode — System{"'"}s Home Base.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Cycles complete. The return pathway is available.
+              <strong style={{ color: TEXT.primary }}>Connection Mode — The System{"'"}s Baseline.</strong> The nervous system in parasympathetic dominance, with full cortisol clearance, restored oxytocin, and PFC blood flow at capacity. Cycles complete. The return pathway is available.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Protection Mode — The System on Emergency Fuel.</strong> Acute SNS activation — designed to be temporary, biologically expensive, and followed by return. The body is in the cycle. Completion is pending.

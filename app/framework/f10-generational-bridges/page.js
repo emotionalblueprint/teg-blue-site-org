@@ -198,7 +198,7 @@ export default function F10GenerationalBridgesPage() {
     },
     {
       q: "What does 'enough, not perfect' mean for generational repair?",
-      a: "The demand for perfection recreates the regulation thread. What matters is not being a perfect parent but being one whose compass moves — who can enter Protection when needed, return to Connection, and repair after rupture. The child needs to see the return, not the absence of difficulty. Enough capacity development that the child's nervous system reads a different signal than what the adult received.",
+      a: "The demand for perfection recreates the regulation thread. What matters is not being a perfect parent but being one whose compass moves — who can enter Protection when needed, return to baseline, and repair after rupture. The child needs to see the return, not the absence of difficulty. Enough capacity development that the child's nervous system reads a different signal than what the adult received.",
     },
     {
       q: "Can generational transmission patterns be interrupted?",
@@ -337,7 +337,7 @@ export default function F10GenerationalBridgesPage() {
             </p>
 
             <p style={proseStyle}>
-              A parent whose compass moves freely — who can enter Protection when needed, return to Connection, access Control under pressure without getting stuck — provides a child whose nervous system learns: the full gradient is available, and return is possible.
+              A parent whose compass moves freely — who can enter Protection when needed, return to baseline, access Control under pressure without getting stuck — provides a child whose nervous system learns: the full gradient is available, and return is possible.
             </p>
 
             <h3 style={conceptHeadingStyle}>The Transmission Mechanism</h3>
@@ -807,7 +807,7 @@ export default function F10GenerationalBridgesPage() {
             <h3 style={conceptHeadingStyle}>The Developmental Achievement</h3>
 
             <p style={proseStyle}>
-              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>SEA online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>ER available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>RE accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to Connection after the discomfort of truth).
+              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>SEA online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>ER available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>RE accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to baseline after the discomfort of truth).
             </p>
 
             <KeyStatement>

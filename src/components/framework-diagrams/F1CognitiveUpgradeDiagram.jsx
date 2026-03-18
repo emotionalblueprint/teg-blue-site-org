@@ -8,7 +8,7 @@ const MODES = [
   {
     key: "A", name: "Connection", center: 0.125,
     type: "Body-first",
-    fluid: "Enough safety to engage, relate, and repair. The needle\u2019s home base.",
+    fluid: "Enough safety to engage, relate, and repair. The needle\u2019s baseline.",
   },
   {
     key: "B", name: "Protection", center: 0.375,

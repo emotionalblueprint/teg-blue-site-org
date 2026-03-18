@@ -56,7 +56,7 @@ const FRAMEWORKS = [
     subtitle: "Scale: Developmental / Relational",
     group: "Individual",
     summary: "The calibration. The three awareness capacities — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — develop through relationship. The adults' capacity configuration creates the environment in which the child's capacities either develop or don't.",
-    purpose: "When co-regulation is available and consistent, the nervous system learns the return path: how to activate, complete the cycle, and come back to Connection. When it is not, the compass locks. The identity that forms around a locked position is the starting point for F3.",
+    purpose: "When co-regulation is available and consistent, the nervous system learns the return path: how to activate, complete the cycle, and come back to baseline. When it is not, the compass locks. The identity that forms around a locked position is the starting point for F3.",
     buildsOn: "Attachment theory, developmental neuroscience, interpersonal neurobiology, polyvagal theory, somatic experiencing, object relations, schema theory.",
     claims: [
       "Awareness teaches awareness: the adults' awareness configuration is the child's developmental environment",
@@ -141,7 +141,7 @@ const FRAMEWORKS = [
     title: "How Defence Becomes Strategy Becomes Domination",
     subtitle: "Scale: Power systems · Cost: Everything",
     group: "Collective",
-    summary: "The escalation endpoint. F7 traces the pathway from Protection through Control into Domination — not as a character flaw, but as a predictable escalation when every earlier substitute (rules, worth, bias) proves insufficient to regulate a system under increasing threat.",
+    summary: "The escalation endpoint. F7 traces the pathway from Protection through Control into Domination — a predictable escalation when every earlier substitute (rules, worth, bias) proves insufficient to regulate a system under increasing threat.",
     purpose: "Domination is the regulation of last resort. It works — at maximum cost. The intervention principle is the same here as everywhere in the system: restore safety first, then expect capacity.\n\nF7 identifies the markers of each escalation stage and the windows where intervention remains possible.",
     buildsOn: "Behavioral reinforcement (Skinner), psychoanalytic theory (Kohut, Kernberg), organizational psychology (Argyris & Schön), neuroscience (Porges, Siegel, Schore), trauma psychology (Van der Kolk, Herman), abuse research (Bancroft), attachment theory (Bowlby), addiction research, systems theory.",
     claims: [

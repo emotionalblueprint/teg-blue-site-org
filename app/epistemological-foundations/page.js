@@ -356,7 +356,7 @@ export default function EpistemologicalFoundationsPage() {
                 { label: "Decision-Making Enhancement", text: "Access to fuller range of information for life choices" },
                 { label: "Self-Understanding", text: "Framework for interpreting internal experiences as meaningful rather than chaotic" },
                 { label: "Emotional Regulation", text: "Understanding emotions as information enables better regulation than suppression" },
-                { label: "Authenticity", text: "Permission to experience full range of human responses without shame" },
+                { label: "Authenticity", text: "Access to the full range of human responses when safety conditions are sufficient" },
               ]}
             />
 

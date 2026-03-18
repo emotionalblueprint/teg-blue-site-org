@@ -6,7 +6,7 @@ import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba } from "@/src/styles/tokens
 // ─── Animation Keyframes ────────────────────────────────
 // Each keyframe: { pos, dur (ms to reach THIS keyframe), ease, flash? }
 // Loop: gentle drift in Connection → signal flash → snap to Protection →
-// agitated → slow restoration back to Connection → repeat
+// agitated → slow restoration back to baseline → repeat
 const KEYFRAMES = [
   // Phase 1: Gentle drift in Connection (slow, ease-in-out)
   { pos: 0.22, dur: 2400, ease: "ease-in-out" },
@@ -22,7 +22,7 @@ const KEYFRAMES = [
   { pos: 0.82, dur: 300,  ease: "ease-in-out" },
   { pos: 0.75, dur: 280,  ease: "ease-in-out" },
   { pos: 0.80, dur: 320,  ease: "ease-in-out" },
-  // Phase 4: Very slow restoration back to Connection
+  // Phase 4: Very slow restoration back to baseline
   { pos: 0.65, dur: 2000, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
   { pos: 0.50, dur: 2400, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
   { pos: 0.38, dur: 2800, ease: "cubic-bezier(0.4, 0, 0.2, 1)" },
@@ -193,7 +193,7 @@ export default function F1InstrumentDiagram() {
       <div className="f1-compass-desc-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         {[
           { name: "Safety", color: SPECTRUM.sky, active: inSafety,
-            text: "Enough safety to engage \u2014 the nervous system\u2019s home base" },
+            text: "Enough safety to engage \u2014 the nervous system\u2019s baseline" },
           { name: "Threat", color: THREAT_COLOR, active: !inSafety,
             text: "Protection needed \u2014 the nervous system mobilises to respond" },
         ].map(({ name, color, text, active }) => (

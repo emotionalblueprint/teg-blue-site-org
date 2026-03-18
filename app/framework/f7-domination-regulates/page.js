@@ -574,7 +574,7 @@ export default function F7DominationRegulatesPage() {
                 Clinical Implication
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Empathy appeals fail at later stages of escalation — not because the person is morally deficient, but because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use ER, which is collapsed. They may use RE to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
+                Empathy appeals fail at later stages of escalation because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use ER, which is collapsed. They may use RE to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
               </p>
             </div>
 
