@@ -21,6 +21,10 @@ const FAQ_ITEMS = [
     question: "What are the Three Awareness Capacities?",
     answer: "M2 describes Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — the three awarenesses that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. These capacities develop through relationship and determine the compass configuration.",
   },
+  {
+    question: "How do the three TEG-Blue models relate to each other?",
+    answer: "The three models describe one emotion moving through the nervous system: M1 maps what state the emotion produces, M2 maps whether the emotion can be received, and M3 maps whether the emotion can complete. M2 and M3 are interdependent — you cannot regulate what you cannot receive. The awareness capacities develop through regulation completing, and regulation completes through the awareness capacities being online enough to let the cycle run.",
+  },
 ];
 
 // ─── MODEL DATA ─────────────────────────────────────────────
@@ -32,7 +36,7 @@ const MODELS = [
     title: "Nervous System Signaling",
     coreQuestion: "Where is the needle?",
     summary:
-      "How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return restores it.",
+      "What state the emotion produces. How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return restores it.",
     concepts: 10,
     drawsFrom: "F1, F3, F7, F12",
     color: SPECTRUM.azure,
@@ -44,7 +48,7 @@ const MODELS = [
     title: "Three Awareness Capacities",
     coreQuestion: "What is holding it there?",
     summary:
-      "The three awarenesses — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state.",
+      "Whether the emotion can be received. The three awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state.",
     concepts: 10,
     drawsFrom: "F2, F3, F8, F10",
     color: SPECTRUM.cobalt,
@@ -56,7 +60,7 @@ const MODELS = [
     title: "Regulation Capacities",
     coreQuestion: "What is the body doing to regulate — and is the cycle completing?",
     summary:
-      "The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
+      "Whether the emotion can complete. The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
     concepts: 8,
     drawsFrom: "F1, F2, F3, F12",
     color: SPECTRUM.indigo,
@@ -87,8 +91,8 @@ export default function ModelsPage() {
           <ModelHero
             badge="3 FOUNDATIONAL MODELS"
             title="The Three Core Models"
-            subtitle="Instrument + Calibration + Biological Foundation"
-            description="Each model makes a different dimension of the emotional system visible. Together, they map how emotional patterns form, persist, and change — where the nervous system is oriented, what calibrated it, and what the body is doing underneath."
+            subtitle="Signal → Perception → Return"
+            description="Emotions are the nervous system's signal language. Three things determine what happens to a signal once it fires: what state it produces in the body, whether it can be received by the awareness system, and whether it can complete through the regulation cycle. These are not three separate topics. They are three stages of the same sequence — and three models describing it."
             color={SPECTRUM.cobalt}
           />
         }
@@ -219,6 +223,41 @@ export default function ModelsPage() {
           <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, margin: "12px 0 0", fontWeight: 500 }}>
             Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
           </p>
+        </section>
+
+        {/* ─── THE EMOTION SEQUENCE ──────────────────────── */}
+        <section
+          id="emotion-sequence"
+          style={{
+            marginBottom: 48,
+            padding: "20px 24px",
+            background: hexToRgba(SPECTRUM.cobalt, 0.04),
+            borderRadius: RADIUS.md,
+            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
+          }}
+        >
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            Signal &rarr; Perception &rarr; Return
+          </h2>
+          <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
+            One Emotion, Three Stages
+          </div>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px" }}>
+            The three models describe one emotion moving through the nervous system:
+          </p>
+          <ul style={{ paddingLeft: 20, margin: "0 0 16px", fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M1</strong> maps what state the emotion produces.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received.</li>
+            <li><strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete.</li>
+          </ul>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px" }}>
+            M2 and M3 are interdependent &mdash; you cannot regulate what you cannot receive. The awareness capacities develop <em>through</em> regulation completing. And regulation completes <em>through</em> the awareness capacities being online enough to let the cycle run.
+          </p>
+          <div style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, padding: "12px 16px", background: hexToRgba(SPECTRUM.cobalt, 0.04), borderRadius: RADIUS.sm, borderLeft: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.3)}` }}>
+            <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>If awareness capacities are offline (M2 failure):</strong> The signal fires but cannot be received. The cycle cannot begin to close.</p>
+            <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>If regulation conditions are absent (M3 failure):</strong> The signal can be received but cannot complete. The cycle stays open. The debris accumulates.</p>
+            <p style={{ margin: 0 }}><strong style={{ color: TEXT.primary }}>If both:</strong> The system eventually stops allocating resources to channels that produce no return. RE (Reading Emotions), ER (Emotional Resonance), SEA (Self-Emotional Awareness) go down. Flatness. The signal keeps generating &mdash; the body never stops &mdash; but there is nowhere for it to go.</p>
+          </div>
         </section>
 
         {/* ─── REGULATION THREAD ─────────────────────────── */}
