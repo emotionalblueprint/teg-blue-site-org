@@ -21,6 +21,8 @@ const ANCHOR_SECTIONS = [
   { label: "The Compass", href: "#inner-compass" },
   { label: "Four Modes", href: "#four-modes" },
   { label: "The Gradient", href: "#the-gradient" },
+  { label: "Tank Model", href: "#tank-level-per-mode" },
+  { label: "Sensory Filtering", href: "#sensory-filtering" },
   { label: "Mode Architecture", href: "#state-determines-capacity" },
   { label: "Regulation", href: "#regulation-the-return" },
   { label: "Draws From", href: "#relationship-to-frameworks" },
@@ -409,6 +411,168 @@ export default function M1InnerCompassPage() {
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
                   The gradient as a continuous measure rather than categorical classification. Movement rate, range, and direction as primary variables — not "which state" but "how far, how fast, and can it come back." The gradient makes transitions, degrees, and proportionality visible in a way that categorical models cannot.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── TANK LEVEL PER MODE ─────────────────────── */}
+          <section
+            id="tank-level-per-mode"
+            aria-labelledby="heading-tank-level"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-tank-level"
+              style={sectionHeadingStyle}
+            >
+              The Tank Level Per Mode
+            </h2>
+
+            <p style={proseStyle}>
+              Every mode has a tank. In a fluid compass, the tanks breathe — filling and emptying with each cycle that completes. Connection fills a little — the warmth of contact, the resonance of being with someone, the emotional input of being alive. Then it empties through the cycle completing. Protection fills when threat arrives — then empties when the threat passes and the body restores. The tanks breathe. Fill and empty.
+            </p>
+            <p style={proseStyle}>
+              The baseline stays low because the emptying keeps happening. This is what regulation actually is. Not keeping the tanks empty. The natural rhythm of filling and emptying.
+            </p>
+
+            <h3 style={h3Style}>When the Emptying Stops</h3>
+            <p style={proseStyle}>
+              When the return does not complete, the emptying stops. The tank fills. The cycle does not complete — the debris accumulates — the baseline rises. The current regulation vehicle stops producing enough felt relief because the input has to exceed the baseline to move the needle. So the nervous system reaches for a stronger vehicle. Which temporarily moves the needle — but also raises the baseline slightly. So the next time, it needs more.
+            </p>
+
+            {/* What Fills Each Tank */}
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle}>Mode</div>
+                <div style={gridHeaderStyle}>What fills the tank</div>
+                <div style={gridHeaderStyle}>What overflowing looks like</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
+                <div style={gridCellStyle}>Others{"'"} emotional states absorbed through Emotional Resonance (ER) — every person nearby landing in the body</div>
+                <div style={gridCellStyle}>Any emotion from anyone tips it. Seeks spirituality, transcendence, merger — inputs large enough to move a full tank</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
+                <div style={gridCellStyle}>Threat activation — danger signals from the environment</div>
+                <div style={gridCellStyle}>Any perceived threat produces overwhelming response. Fight, flight, fawn, freeze at full intensity from small triggers</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Control</div>
+                <div style={gridCellStyle}>Unpredictability, ambiguity, loss of control — cognitive load that never resolves</div>
+                <div style={gridCellStyle}>Any non-compliance or ambiguity feels catastrophic. Escalating need for management, certainty, compliance</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
+                <div style={gridCellStyle}>Challenge to power — any sign of independence, questioning, or non-submission</div>
+                <div style={gridCellStyle}>Any independent thought in others reads as existential threat. No ceiling. Escalation with no natural stopping point</div>
+              </div>
+            </div>
+
+            <h3 style={h3Style}>The Escalation Logic Across the Gradient</h3>
+            <p style={proseStyle}>
+              When the Connection tank cannot empty — the nervous system reaches for more connection, spirituality, merger. When that stops working — Protection vehicle: fight, flight, fawn, freeze. When that stops working — Control vehicle: management, compliance, achievement, certainty. When that stops working — Domination vehicle: submission, elimination, absolute power. Each step up the gradient is the nervous system reaching for a stronger vehicle because the previous one stopped producing enough relief.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The gradient is not a psychological spectrum. It is the escalation logic of tanks that were never allowed to empty.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — cumulative physiological cost of chronic activation; the concept of rising baseline from repeated stress without recovery. <strong style={{ color: TEXT.primary }}>Tolerance and sensitisation:</strong> Koob & Le Moal (2001) — the escalation cycle in substance research: the vehicle that once produced relief now requires more input to produce the same effect.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The tank as a unifying metaphor across all four modes — not just stress accumulation but the same filling-without-emptying mechanism operating in Connection, Protection, Control, and Domination. The escalation logic across the gradient: each mode{"'"}s vehicle stops working not because of the mode itself but because the tank{"'"}s baseline has risen above what that vehicle can reach. The gradient becomes the escalation sequence of a system that cannot empty.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── SENSORY FILTERING — MODE SETTINGS ──────── */}
+          <section
+            id="sensory-filtering"
+            aria-labelledby="heading-sensory-filtering"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-sensory-filtering"
+              style={sectionHeadingStyle}
+            >
+              Sensory Filtering — Mode Settings
+            </h2>
+
+            <p style={proseStyle}>
+              Each mode does not just change what the person can do. It changes how sensory input gets filtered before it becomes a thought. The nervous system evaluates from the periphery in — not from the brain down. Eyes, ears, nose, gut, skin — all feeding in simultaneously, below conscious awareness. The amygdala fires in 12 milliseconds. The mode is chosen before the mind has assembled a single thought about what is happening.
+            </p>
+
+            <h3 style={h3Style}>The Sensory Channels</h3>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Eyes</strong> — literally neural tissue, an extension of the brain outside the skull. Scanning for threat-relevant shapes, faces, movement before any meaning is assigned. <strong style={{ color: TEXT.primary }}>Ears</strong> — direct pathway to the brainstem. Tone of voice, rhythm, sudden sounds processed below conscious awareness before meaning forms. <strong style={{ color: TEXT.primary }}>Nose</strong> — the only sense with a direct pathway to the amygdala and hippocampus without going through the thalamus first. A smell can trigger a full threat or safety response before any thought forms. <strong style={{ color: TEXT.primary }}>Gut</strong> — approximately 100 million neurons. A second nervous system evaluating the internal environment and communicating upward through the vagus nerve. The gut feeling is a nervous system signal, not a metaphor. <strong style={{ color: TEXT.primary }}>Skin</strong> — touch receptors, temperature, pressure. The body reading its physical environment continuously.
+            </p>
+            <p style={proseStyle}>
+              All of these arrive simultaneously. The body has already chosen the mode before the mind has assembled a coherent thought about what is happening. Each mode sets specific filters on all incoming sensory data. These settings were designed to be temporary — activated when needed, released when the threat passed. When the compass is stuck, the settings lock.
+            </p>
+
+            <h3 style={h3Style}>The Mode Settings</h3>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Connection Settings:</strong> Sensory channels wide open. Eyes reading the full picture — faces, context, nuance. Ears picking up warmth, prosody, the full emotional range of tone. Gut relaxed, feeding accurate interoceptive data upward. Skin open to contact. The evaluation receives everything available.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Protection Settings:</strong> Channels narrow physically toward threat detection. Pupils dilate to track movement. Peripheral vision sharpens for escape routes. Ears tune to sudden sounds and threat-relevant frequencies — anger, alarm, the wrong kind of silence. Gut tightens. Same environment. Completely different input reaching the amygdala.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Control Settings:</strong> Narrowing continues but becomes strategic. Eyes scanning for what needs managing — who has power, what is being concealed, what could destabilise the situation. Ears reading under the surface of what people say. Gut suppressed — the cognitive system has overridden the somatic signal because it interferes with management. Channels still open but curated for strategic information.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Domination Settings:</strong> Tunnel. Visual field narrows to the obstacle or threat. Peripheral information drops. Ears hear what confirms the threat assessment and filter the rest. Gut gone — completely overridden. The system receives only what it needs to eliminate the threat.
+            </p>
+
+            <h3 style={h3Style}>When the Settings Lock</h3>
+            <p style={proseStyle}>
+              When the compass is stuck, the sensory filter that was designed to be temporary becomes permanent. The eyes that were supposed to widen do not. The ears that were supposed to soften back to warmth and prosody do not. The gut that was supposed to re-engage stays suppressed. The person walks into a neutral room and the sensory system delivers a threat-filtered picture of it. Not because there is threat. Because the settings are locked.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The mode determines the filter. The filter shapes the input. The input confirms the mode. A self-reinforcing loop with no natural exit.
+            </OperationalStatement>
+
+            {/* What Each Stuck Mode Sees */}
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle}>Stuck Mode</div>
+                <div style={gridHeaderStyle}>What the settings deliver</div>
+                <div style={gridHeaderStyle}>What the person experiences</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Connection</div>
+                <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
+                <div style={gridCellStyle}>The world is other people{"'"}s states. Own needs invisible.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Protection</div>
+                <div style={gridCellStyle}>Threat signals everywhere, safety signals filtered out</div>
+                <div style={gridCellStyle}>The world is dangerous. Trust is impossible.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Control</div>
+                <div style={gridCellStyle}>Everyone appears to have an agenda, everything requires managing</div>
+                <div style={gridCellStyle}>The world is a system of competing interests.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Domination</div>
+                <div style={gridCellStyle}>Everyone appears to be trying to cheat, undermine, or challenge</div>
+                <div style={gridCellStyle}>The world is full of enemies. Preemptive attack as defence.</div>
+              </div>
+            </div>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Attentional bias:</strong> Bar-Haim et al. (2007) — threat-related attentional bias across anxiety conditions; MacLeod, Mathews, & Tata (1986) — dot-probe paradigm. <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2009) — interoceptive awareness as a primary source of subjective feeling; Garfinkel & Critchley (2013) — interoceptive accuracy varies by state. <strong style={{ color: TEXT.primary }}>Neuroception:</strong> Porges (2011) — pre-cognitive detection of safety and threat through sensory channels below conscious awareness.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  Sensory filtering as the mechanism connecting compass position to capacity restriction. State does not just limit capacity — it limits what sensory input reaches the person in the first place. The world the person perceives is already filtered before cognition touches it. This explains why the capacity table operates as it does: the person in a stuck mode is not choosing to see selectively — the sensory system is delivering a pre-filtered picture before any choice is possible.
                 </p>
               </ExpandableSection>
             </div>
@@ -978,6 +1142,151 @@ export default function M1InnerCompassPage() {
             </div>
           </section>
 
+          {/* ─── PROJECTION AS LOCKED FILTER ────────────── */}
+          <section
+            id="projection-locked-filter"
+            aria-labelledby="heading-projection"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-projection"
+              style={sectionHeadingStyle}
+            >
+              Projection as Locked Filter
+            </h2>
+
+            <p style={proseStyle}>
+              Projection is not a psychological defence mechanism layered on top of accurate perception. It is the stuck compass reading the environment through its own filter and calling the output reality. The person is not imagining. They are reading real cues — through a filter calibrated to find exactly what the mode expects to find. The confirmation arrives through the same channels pre-set to find it. The threat feels real because the sensory system delivered it as real — before any thought formed.
+            </p>
+            <p style={proseStyle}>
+              This is why the person cannot see the filter. They only see what comes through it. The output feels like accurate perception. It feels like seeing clearly. The mode has been running long enough that this is just what the world looks like.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Stuck in Control:</strong> everyone appears to be trying to control you. The filter is scanning for control attempts — so it finds them everywhere. Micro-expressions, ambiguous words, neutral requests — all read through the Control filter as power moves.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Stuck in Domination:</strong> everyone appears to be trying to cheat, deceive, undermine, or challenge. The filter is scanning for threats to power and status — so it finds them in everything. A question becomes an attack. A boundary becomes a provocation. An independent thought in another person becomes a challenge to be eliminated.
+            </p>
+
+            <h3 style={h3Style}>Why Cognition Cannot Correct It</h3>
+            <p style={proseStyle}>
+              The information that would correct the filter has to arrive through the same sensory channels the filter is already shaping. Cognition cannot override a pre-cognitive process using data that was filtered before cognition received it. The cognitive system receives already-filtered input and builds a narrative from it. The narrative feels coherent — because it is coherent, given the data the cognitive system actually received. The problem is upstream of cognition. Talking about it does not reach it.
+            </p>
+            <p style={proseStyle}>
+              What can reach it: a change in the sensory environment significant enough to break through the filter — a regulation experience, a co-regulatory relationship, genuine felt safety over time. This is why F8 is the repair arc — not cognitive insight, but conditions that change what the nervous system receives.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Projection is accurate perception through a filter calibrated to a mode that is no longer responding to the present environment.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Confirmation bias:</strong> Nickerson (1998) — the tendency to search for, interpret, and recall information in a way that confirms prior expectations. <strong style={{ color: TEXT.primary }}>Attentional bias in threat processing:</strong> Cisler & Koster (2010) — mechanisms of attentional bias toward threat: engagement, difficulty disengaging, and avoidance. <strong style={{ color: TEXT.primary }}>Schema-consistent processing:</strong> Beck (1976) — cognitive schemas filter incoming information to match existing beliefs, maintaining the schema.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  Projection relocated from psychological defence (a cognitive mechanism) to locked sensory filtering (a pre-cognitive mechanism). The reframe shifts the clinical question from "why is this person projecting?" to "what mode is the filter locked in?" — and shifts intervention from cognitive correction (which arrives after the filter has already shaped the data) to sensory-level repair (which reaches the filter itself). False coherence (F3) is the downstream product: the narrative cognition builds on top of filter-shaped input.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── ATTACHMENT PATTERNS AS LOCKED MODE SETTINGS */}
+          <section
+            id="attachment-locked-settings"
+            aria-labelledby="heading-attachment-patterns"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-attachment-patterns"
+              style={sectionHeadingStyle}
+            >
+              Attachment Patterns as Locked Mode Settings
+            </h2>
+
+            <p style={proseStyle}>
+              Attachment patterns are not personality traits. They are nervous systems running their only available regulation pathway through the only sensory inputs they learned to use as safety signals — with mode settings locked to detect the specific threat that pathway was built around.
+            </p>
+
+            <h3 style={h3Style}>The Anxious Pattern</h3>
+            <p style={proseStyle}>
+              Two things happening simultaneously. First: the regulation pathway is relational and specific. This nervous system never learned to complete cycles internally. The only available return pathway runs through another person — not as a preference but as a biological requirement. The specific inputs learned as safety signals are the partner{"'"}s presence, responsiveness, location, confirmation that the bond holds. Without those inputs, the cycle stays open.
+            </p>
+            <p style={proseStyle}>
+              Second: the sensory filter is locked on abandonment and disconnection signals. The mode settings scan continuously for signs that the bond is breaking — absence, unresponsiveness, ambiguity, change in tone. These inputs arrive through the filter as threat: abandonment incoming. The check-in is the nervous system running its only available regulation pathway through the inputs it identified as the safety signal. It is a regulation attempt — not a control attempt.
+            </p>
+
+            <h3 style={h3Style}>The Avoidant Pattern</h3>
+            <p style={proseStyle}>
+              Running the opposite settings. The regulation pathway is internal through distance. This nervous system learned that proximity is the threat — closeness means loss of self, flooding, danger. The only available regulation pathway runs through withdrawal: creating enough distance that the sensory channels can quiet and the system can partially restore. The sensory filter is locked on proximity as threat — scanning for signs of encroachment, loss of autonomy, someone trying to regulate their internal state for them. These arrive through the filter as: threat. Control incoming.
+            </p>
+
+            <h3 style={h3Style}>The Pairing</h3>
+            <p style={proseStyle}>
+              Two nervous systems. Two completely different mode settings. Each running their only available regulation pathway. Each generating exactly the activation that the other{"'"}s filter is locked to detect. The anxious nervous system reaches for connection to regulate. The avoidant nervous system reads that reach as threat and withdraws to regulate. The withdrawal lands in the anxious filter as: abandonment confirmed. More activation. More reaching. The reaching lands in the avoidant filter as: proximity threat confirmed. More activation. More withdrawal.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Each regulation attempt is perfectly calibrated to dysregulate the other. Not from malice. From locked mode settings running the only available pathway.
+            </OperationalStatement>
+
+            {/* Attachment Locked Settings Table */}
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1.5fr 1.5fr", minWidth: 650 }}>
+                <div style={gridHeaderStyle}>Attachment</div>
+                <div style={gridHeaderStyle}>Mode settings locked on</div>
+                <div style={gridHeaderStyle}>Regulation pathway</div>
+                <div style={gridHeaderStyle}>What triggers activation</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Secure</div>
+                <div style={gridCellStyle}>No lock — fluid</div>
+                <div style={gridCellStyle}>Internal + relational, both available</div>
+                <div style={gridCellStyle}>Proportionate to actual threat</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anxious</div>
+                <div style={gridCellStyle}>Protection/Control — scanning for abandonment and bond-break signals</div>
+                <div style={gridCellStyle}>Relational — specific reassurance inputs</div>
+                <div style={gridCellStyle}>Partner absence, ambiguity, unresponsiveness</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Dismissive-Avoidant</div>
+                <div style={gridCellStyle}>Control — scanning for proximity and encroachment signals</div>
+                <div style={gridCellStyle}>Internal — through distance</div>
+                <div style={gridCellStyle}>Closeness, emotional demands, check-ins</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fearful-Avoidant</div>
+                <div style={gridCellStyle}>Oscillating Protection — scanning for both abandonment AND proximity</div>
+                <div style={gridCellStyle}>Neither stable — oscillates</div>
+                <div style={gridCellStyle}>Both closeness and distance</div>
+              </div>
+            </div>
+
+            <h3 style={h3Style}>Why Cognition Cannot Exit the Loop</h3>
+            <p style={proseStyle}>
+              The anxious partner understands intellectually that constant check-ins push the partner away. The knowledge lives in the cognitive system. The regulation need lives in the somatic system. The filter is pre-cognitive. By the time the thought "I should not check in again" forms, the sensory system has already delivered the threat signal, the activation is already running, and the regulation pathway has already identified the required input. Cognition arrives late. Understanding the pattern does not change the filter. The filter operates upstream of understanding.
+            </p>
+            <p style={proseStyle}>
+              What changes the filter: experiences of safety that arrive through the sensory channels themselves. The anxious nervous system receiving the relational evidence it needs — repeatedly, consistently, without the withdrawal — until the filter recalibrates. This is co-regulation as repair. Not insight. Experience.
+            </p>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Attachment theory:</strong> Bowlby (1969) — attachment behavioural system activated by perceived threat to the bond; Ainsworth (1978) — secure, anxious-ambivalent, avoidant classification. <strong style={{ color: TEXT.primary }}>Adult attachment:</strong> Hazan & Shaver (1987) — attachment patterns as relational regulation strategies; Bartholomew & Horowitz (1991) — four-category model including fearful-avoidant. <strong style={{ color: TEXT.primary }}>Interpersonal neurobiology:</strong> Schore (2003) — right-brain regulatory patterns shaped by early relational experience.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  Attachment patterns mapped as locked mode settings rather than personality traits. The anxious pattern is a compass stuck in Protection/Control with the filter locked on abandonment signals and the regulation pathway requiring specific relational inputs. The avoidant pattern is a compass stuck in Control with the filter locked on proximity signals and the regulation pathway running through distance. The pairing dynamic becomes mechanistically visible: each regulation attempt generates the exact input the other{"'"}s filter is calibrated to read as threat.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
           {/* ─── CONCEPT 10: TWO INFORMATION SYSTEMS ────── */}
           <section
             id="two-information-systems"
@@ -1029,6 +1338,39 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
             </div>
+          </section>
+
+          {/* ─── CONNECTION TO OTHER MODELS ──────────────── */}
+          <section
+            id="connection-to-models"
+            aria-labelledby="heading-connection-models"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-connection-models"
+              style={sectionHeadingStyle}
+            >
+              Connection to the Other Models
+            </h2>
+
+            <h3 style={h3Style}>M2 — Three Awareness Capacities</h3>
+            <p style={proseStyle}>
+              M1 describes what states the nervous system moves through — the compass, the modes, the gradient, the filters, the tanks. M2 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. One describes the instrument. The other describes the calibration.
+            </p>
+
+            <h3 style={h3Style}>M3 — Regulation Capacities</h3>
+            <p style={proseStyle}>
+              M1 describes the states. M3 describes what the return to baseline requires — and what the nervous system does instead when the return does not complete. The tank model lives in both: M1 describes what fills each mode{"'"}s tank and what overflowing looks like. M3 describes why the tanks do not empty, what the body reaches for instead, and what actual emptying requires.
+            </p>
+
+            <h3 style={h3Style}>The Three Models as One Sequence</h3>
+            <p style={proseStyle}>
+              The three models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what state the emotion produces. <strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete. They are three stages of the same sequence — signal, perception, return.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              One emotion. Three stages. M1 maps the state it produces. M2 maps whether it can be received. M3 maps whether it can complete.
+            </OperationalStatement>
           </section>
 
           {/* ─── RELATIONSHIP TO FRAMEWORKS ──────────────── */}
@@ -1210,6 +1552,21 @@ export default function M1InnerCompassPage() {
                 question: "What is a stuck compass?",
                 answer:
                   "A stuck compass is one where the needle has lost its capacity to move — what should have been a temporary orientation (Protection, Control, or Domination) has become a chronic position. The person does not experience being stuck; they experience it as 'just who I am.' Identity forms around the mode through false coherence (F3), making the stuckness invisible from the inside.",
+              },
+              {
+                question: "What is sensory filtering in the TEG-Blue model?",
+                answer:
+                  "Each mode sets specific filters on all incoming sensory data — eyes, ears, nose, gut, skin — before any conscious thought forms. In a fluid compass these settings are temporary. When the compass is stuck, the settings lock: the person perceives a pre-filtered version of reality calibrated to their chronic mode. The mode determines the filter, the filter shapes the input, and the input confirms the mode — a self-reinforcing loop with no natural exit.",
+              },
+              {
+                question: "How does TEG-Blue redefine projection?",
+                answer:
+                  "TEG-Blue redefines projection as locked sensory filtering rather than a psychological defence mechanism. The person is not imagining threat — they are reading real cues through a filter calibrated to a mode that is no longer responding to the present environment. Cognition cannot correct it because the information that would correct the filter has to arrive through the same sensory channels the filter is already shaping.",
+              },
+              {
+                question: "How do attachment patterns relate to mode settings?",
+                answer:
+                  "Attachment patterns are nervous systems running their only available regulation pathway with mode settings locked to detect specific threats. The anxious pattern has the filter locked on abandonment signals with regulation running through relational reassurance. The avoidant pattern has the filter locked on proximity signals with regulation running through distance. In the pairing, each regulation attempt generates exactly the input the other's filter reads as threat.",
               },
             ])
           ),
