@@ -30,6 +30,8 @@ const ANCHOR_SECTIONS = [
   { label: "How They Develop", href: "#awareness-teaches-awareness" },
   { label: "Configurations", href: "#capacity-configuration" },
   { label: "SEA as Keystone", href: "#sea-self-emotional-awareness" },
+  { label: "Co-Regulation", href: "#co-regulation" },
+  { label: "Regulatory Flatness", href: "#regulatory-flatness" },
   { label: "Draws From", href: "#relationship-to-frameworks" },
 ];
 
@@ -337,6 +339,11 @@ export default function M2ThreeAwarenessCapacitiesPage() {
         </div>
 
         <article>
+          {/* ─── OVERVIEW: WHETHER THE SIGNAL CAN BE RECEIVED */}
+          <p style={proseStyle}>
+            The three capacities answer a prior question: can the signal be received at all? An emotion fires. The biology runs. But whether that signal reaches the person — whether it can be read, felt, and accessed — depends on which capacities are online. M2 maps the receiving system. Without it, the signal exists but has no destination.
+          </p>
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
@@ -771,8 +778,47 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               ))}
             </div>
 
+            <h3 style={h3Style}>Attachment Patterns as Capacity Configurations</h3>
+            <p style={proseStyle}>
+              The attachment patterns map directly to capacity configurations — the same phenomenon described from the M2 perspective. M1 sees attachment as locked mode settings and sensory filters. M2 sees it as capacity configurations producing specific regulation pathways. Both are true simultaneously.
+            </p>
+
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1.5fr 1fr 1.5fr", minWidth: 700 }}>
+                <div style={gridHeaderStyle}>Attachment</div>
+                <div style={gridHeaderStyle}>RE (Reading Emotions)</div>
+                <div style={gridHeaderStyle}>ER (Emotional Resonance)</div>
+                <div style={gridHeaderStyle}>SEA</div>
+                <div style={gridHeaderStyle}>Regulation pathway</div>
+
+                <GridCell first>Secure</GridCell>
+                <GridCell>Accurate</GridCell>
+                <GridCell>Sustainable</GridCell>
+                <GridCell>Online</GridCell>
+                <GridCell>Internal + relational, both available</GridCell>
+
+                <GridCell first>Anxious</GridCell>
+                <GridCell>Sharp — hypervigilant for abandonment signals</GridCell>
+                <GridCell>Overwhelmed — flooded by relational activation</GridCell>
+                <GridCell>Minimal</GridCell>
+                <GridCell>Relational — specific reassurance inputs</GridCell>
+
+                <GridCell first>Dismissive-Avoidant</GridCell>
+                <GridCell>Partial — surface-calibrated, reads performance</GridCell>
+                <GridCell>Offline — shut down, proximity was the threat</GridCell>
+                <GridCell>Partial</GridCell>
+                <GridCell>Internal — through distance</GridCell>
+
+                <GridCell first>Fearful-Avoidant</GridCell>
+                <GridCell>Sharp but oscillating</GridCell>
+                <GridCell>Oscillating — floods and retreats</GridCell>
+                <GridCell>Absent or flickering</GridCell>
+                <GridCell>Neither stable — oscillates</GridCell>
+              </div>
+            </div>
+
             <OperationalStatement color={MODEL_COLOR}>
-              Personality is not a type — it is a record of which capacities had conditions to develop and which didn't.
+              Personality is not a type — it is a record of which capacities had conditions to develop and which didn{"'"}t.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
@@ -784,7 +830,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Configuration as the predictive unit — RE state x ER state x SEA state x regulation = predicted compass behaviour. This reframes personality from a fixed type to a developmental record: the specific awareness capacities that had conditions to develop, and the chronic mode position that resulted. Configuration is testable, trackable, and — crucially — changeable.
+                  Configuration as the predictive unit — RE state x ER state x SEA state x regulation = predicted compass behaviour. Attachment patterns as named configurations — anxious, avoidant, and fearful-avoidant as specific RE/ER/SEA combinations producing specific regulation pathways. This reframes personality from a fixed type to a developmental record: the specific awareness capacities that had conditions to develop, and the chronic mode position that resulted.
                 </p>
               </ExpandableSection>
             </div>
@@ -844,6 +890,119 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
                   Co-regulation as the developmental mechanism for the return path. Three named disruption patterns — disrupted, misdirected, and blocked — linking caregiver configuration to child regulatory capacity. Each disruption produces a specific, predictable consequence for the child's ability to return from activation to safety.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── REGULATORY FLATNESS ────────────────────── */}
+          <section
+            id="regulatory-flatness"
+            aria-labelledby="heading-regulatory-flatness"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-regulatory-flatness" style={sectionHeadingStyle}>
+              Regulatory Flatness — When the Capacities Don{"'"}t Develop
+            </h2>
+
+            <p style={proseStyle}>
+              When regulation is withheld long enough, the three awareness capacities stop developing. The flatness that results is not emotional absence — it is the accumulated effect of a system that learned the cycle was not safe to run.
+            </p>
+
+            <h3 style={h3Style}>The Full Chain</h3>
+            <p style={proseStyle}>
+              The environment does not receive the child{"'"}s emotions. Not co-regulated. Not validated. The signal goes out and nothing comes back — or what comes back is danger, dismissal, punishment, or a caregiver who is themselves flooded and unable to hold it.
+            </p>
+            <p style={proseStyle}>
+              The nervous system adapts. The biology does not stop generating signals. But the system stops allocating resources to channels that produce no return and generate cost. Reading Emotions (RE) goes down — reading others accurately produces consistently dangerous or indifferent results. Emotional Resonance (ER) goes down — resonating floods the child and nobody helps process it. Self-Emotional Awareness (SEA) goes down — accessing own states was never safe and never led anywhere.
+            </p>
+            <p style={proseStyle}>
+              The capacities flatten. Not because something broke. Because the conditions that would have developed them never existed. The three awareness capacities develop <em>through</em> being regulated with. When regulation is withheld, the developmental conditions are absent. The flatness becomes the baseline — not a response to a specific threat, not acute Freeze, but the operating state.
+            </p>
+
+            <h3 style={h3Style}>The Key Distinction</h3>
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", minWidth: 500 }}>
+                <div style={gridHeaderStyle}>State</div>
+                <div style={gridHeaderStyle}>What It Is</div>
+
+                <GridCell first>Acute Freeze</GridCell>
+                <GridCell>All three capacities offline as a temporary shutdown in response to overwhelm. The system can come back.</GridCell>
+
+                <GridCell first>Regulatory Flatness</GridCell>
+                <GridCell>All three capacities at baseline minimum as the operating state. The system has reorganised around this level. It is not shutting down — it is running. This is just where it runs.</GridCell>
+              </div>
+            </div>
+
+            <h3 style={h3Style}>The M2-M3 Structural Link</h3>
+            <p style={proseStyle}>
+              M3 describes the regulation conditions required for cycles to complete — safety, time, co-regulation. M2 describes the three awareness capacities that develop <em>through</em> those conditions being met repeatedly over time. Chronic absence of those conditions does not only leave cycles open (M3). It leaves the capacities undeveloped (M2). The flatness is simultaneously a regulation failure and a capacity failure. Same origin. Same mechanism. Two models describing it from different angles.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              When regulation is withheld, the capacities that develop through regulation don{"'"}t develop. The flatness is not emotional absence — it is the accumulated effect of a system that learned the cycle was not safe to run.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="framework">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Alexithymia research:</strong> Taylor, Bagby, & Parker (1997) — difficulty identifying and describing feelings. <strong style={{ color: TEXT.primary }}>Emotional numbing:</strong> van der Kolk (2014) — numbing as a trauma response distinct from Freeze. <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — chronic adaptation to sustained stress.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Regulatory Flatness as a distinct construct from Freeze, emotional numbing, and alexithymia — a chronic state produced by the sustained absence of co-regulation across development. Predicted to correlate with early co-regulation absence rather than acute trauma exposure. Different from Freeze (temporary) and different from numbing (a response to overwhelm). Flatness is the developmental consequence of the awareness capacities never having conditions to develop.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── SOME EMOTIONS REQUIRE ANOTHER NERVOUS SYSTEM */}
+          <section
+            id="relational-emotions"
+            aria-labelledby="heading-relational-emotions"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-relational-emotions" style={sectionHeadingStyle}>
+              Some Emotions Require Another Nervous System
+            </h2>
+
+            <p style={proseStyle}>
+              Not all emotions can complete their cycle alone. This is not a weakness or a failure of self-sufficiency. It is biology.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Somatic emotions</strong> — those whose content is about the body{"'"}s own state (a physical threat, a boundary crossed, a startle, mobilised energy) — can complete through the body{"'"}s own channels when conditions allow. Breathing, movement, time. The cycle can close internally.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Relational emotions</strong> — shame, guilt, fear of rejection, fear of abandonment, grief at disconnection — cannot complete this way. Their content is not about the body{"'"}s state. It is about belonging. The signal these emotions carry is: <em>something is wrong with me in relation to you.</em> The body is not waiting for somatic discharge. It is waiting for relational evidence.
+            </p>
+            <p style={proseStyle}>
+              No amount of breathing resolves shame. The nervous system is waiting for another person to stay — to remain present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs to close. Without it, the cycle stays open regardless of how much somatic work is done.
+            </p>
+
+            <h3 style={h3Style}>The Developmental Consequence</h3>
+            <p style={proseStyle}>
+              A child whose relational emotions are never co-regulated does not just fail to develop a general return capacity. They fail to develop the specific pathway for the emotions that are hardest to bear — the ones about belonging, worth, and whether they are safe in relationship. These are precisely the emotions most likely to be suppressed in environments where emotional expression is dangerous or unwelcome.
+            </p>
+            <p style={proseStyle}>
+              The result: the child grows up with open cycles specifically in the relational domain. Shame cycles that never closed. Grief that never completed. Fear of abandonment that never received the relational evidence it was waiting for. These stay open — accumulating debris — because the completion pathway requires something the environment never provided.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Some emotions cannot complete alone. They require another nervous system. When that nervous system was never available, the cycles stayed open — and the capacities built through closing them never developed.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="framework">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Shame research:</strong> Tangney & Dearing (2002) — shame as a self-conscious emotion requiring social context. <strong style={{ color: TEXT.primary }}>Co-regulation:</strong> Porges (2011) — the social engagement system as a regulatory pathway. <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — the distinction between somatic completion and relational repair.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The somatic vs. relational emotion distinction as a classification variable predicting which completion pathways are effective. Relational emotions cannot complete through somatic techniques alone — they require relational evidence. This has direct clinical implications: a client with open shame cycles needs the experience of being seen without contempt, not breathing exercises. Match the completion pathway to the emotion type.
                 </p>
               </ExpandableSection>
             </div>
@@ -1063,6 +1222,39 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             </div>
           </section>
 
+          {/* ─── CONNECTION TO OTHER MODELS ──────────────── */}
+          <section
+            id="connection-to-models"
+            aria-labelledby="heading-connection-models"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-connection-models" style={sectionHeadingStyle}>
+              Connection to the Other Models
+            </h2>
+
+            <h3 style={h3Style}>M1 — Nervous System Signaling</h3>
+            <p style={proseStyle}>
+              M1 describes what the compass does — the modes, the gradient, the sensory filters, the tank levels. M2 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. The instrument and the calibration. One architecture. Two models.
+            </p>
+
+            <h3 style={h3Style}>M3 — Regulation Capacities</h3>
+            <p style={proseStyle}>
+              M2 and M3 are interdependent. You cannot regulate what you cannot receive. The awareness capacities determine whether the emotion can be received. The regulation capacities determine whether it can complete. But the awareness capacities themselves develop <em>through</em> regulation completing. And regulation completes <em>through</em> the awareness capacities being online enough to let the cycle run.
+            </p>
+            <p style={proseStyle}>
+              A child regulated with — cycles complete — capacities develop through completing them — the child can receive and regulate their own emotions — the capacities stay online. A child not regulated with — cycles stay open — no conditions for capacities to develop — the child cannot receive or regulate — the capacities flatten. The two models share the same origin condition. When co-regulation is absent, it does not only leave cycles open (M3). It leaves the capacities undeveloped (M2).
+            </p>
+
+            <h3 style={h3Style}>The Three Models as One Sequence</h3>
+            <p style={proseStyle}>
+              The three models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what state the emotion produces. <strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete. They are three stages of the same sequence — signal, perception, return.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              You cannot regulate what you cannot receive. You cannot receive what you cannot access. The three models are one sequence.
+            </OperationalStatement>
+          </section>
+
           {/* ─── DRAWS FROM ──────────────────────────────── */}
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
@@ -1250,6 +1442,16 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 question: "How does repair work in the three awareness capacities model?",
                 answer:
                   "The three awareness capacities were never developed. Repair means building what was never built, not recovering what was lost. Five conditions are required: safety (the nervous system must evaluate 'safe enough'), relational support (new co-regulatory experiences), identity flexibility (false coherence must loosen), time (capacities develop through repeated experience), and structural conditions (the environment must not re-wound).",
+              },
+              {
+                question: "What is regulatory flatness in the TEG-Blue model?",
+                answer:
+                  "Regulatory Flatness is a chronic state produced by the sustained absence of co-regulation across development — distinct from Freeze (a temporary shutdown) and emotional numbing (a response to overwhelm). When regulation is withheld, the three awareness capacities that develop through regulation don't develop. The system has reorganised around this minimum level. It is not shutting down — it is running. This is just where it runs.",
+              },
+              {
+                question: "Why can't some emotions complete alone?",
+                answer:
+                  "Somatic emotions (physical threat, startle, boundary crossed) can complete through the body's own channels — breathing, movement, time. Relational emotions (shame, guilt, fear of rejection, grief at disconnection) cannot. Their content is about belonging, not the body's state. The nervous system is waiting for relational evidence — another person staying present without contempt. No amount of breathing resolves shame because the completion pathway is relational, not somatic.",
               },
             ])
           ),
