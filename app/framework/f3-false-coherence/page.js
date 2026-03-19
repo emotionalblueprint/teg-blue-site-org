@@ -234,6 +234,10 @@ export default function F3FalseCoherencePage() {
               </table>
             </div>
 
+            <p style={proseStyle}>
+              F3 describes what cognition does <em>instead of</em> the biological return. <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Regulation Capacities (M3)</Link> describes the return itself — the activation cycle, the four restoration types, and the conditions under which the cycle completes or stays open. F3's false coherence is the cognitive system that keeps M3's cycle from completing: cognition manages the signal so the system feels stable without the somatic cycle ever closing. F3's external regulation describes the structural consequence — each chronic mode's substitute progressively destroys the relational environment that M3's return would require.
+            </p>
+
             <ExpandableSection title="How This Framework Emerged" type="framework">
               <p style={expandedProseStyle}>
                 F3 emerged from recognizing that multiple clinical and theoretical frameworks all describe the same adult phenomenon — how the mind protects identity through narrative control. Psychoanalytic theory (Freud, Winnicott) describes protective identity structures and defense mechanisms. Cognitive theory (Festinger, Beck, Kahneman) describes how beliefs are maintained despite contradictory evidence. Family systems (Bowen, Satir) describes how families maintain "accepted reality." Neuroscience (Siegel, Schore, Porges) describes how nervous system state gates cognition. Trauma studies (van der Kolk, Janet) describes narrative control. IFS (Schwartz) describes parts managing internal conflict. Attachment theory (Bowlby, Kohut, Kernberg) describes relational regulation strategies.
@@ -871,6 +875,41 @@ export default function F3FalseCoherencePage() {
               </p>
             </div>
 
+            {/* Each mode destroys its own return */}
+            <div
+              style={{
+                padding: 20,
+                background: hexToRgba(SPECTRUM.cobalt, 0.06),
+                borderRadius: 8,
+                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+                marginBottom: 16,
+              }}
+            >
+              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                Each Chronic Mode Destroys Its Own Return Pathway
+              </h4>
+              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
+                Genuine restoration for all chronic modes would ultimately require safe relational contact — real co-regulation with someone genuinely present. The external regulation substitute systematically degrades the relational environment that would be needed for that contact:
+              </p>
+              <ul style={{ paddingLeft: 20, margin: "0 0 12px" }}>
+                <li style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 6 }}>
+                  <strong style={{ color: TEXT.primary }}>Chronic Connection:</strong> Each bid for coerced closeness makes others more guarded. The appetite for genuine connection atrophies — the substitute becomes the only form of relief the system recognizes.
+                </li>
+                <li style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 6 }}>
+                  <strong style={{ color: TEXT.primary }}>Chronic Protection:</strong> Each pre-emptive attack pushes away the people who would need to be safely present for genuine co-regulation. Genuine safety becomes harder to access as the system specializes for alarm.
+                </li>
+                <li style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 6 }}>
+                  <strong style={{ color: TEXT.primary }}>Chronic Control:</strong> Each episode of management teaches others to be less honest, less present, less real. Somatic debt accumulates invisibly underneath the cognitive override.
+                </li>
+                <li style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 6 }}>
+                  <strong style={{ color: TEXT.primary }}>Chronic Domination:</strong> The relational environment is maintained through fear. Fear cannot produce co-regulation — only compliance. The environment becomes progressively less capable of providing what the system would need to return.
+                </li>
+              </ul>
+              <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.7, margin: 0, fontWeight: 500, fontStyle: "italic" }}>
+                The pattern is self-sealing: the substitute that produces real relief also destroys the only genuine pathway back. This is the mechanism that connects F3's external regulation to <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M3's return pathway</Link> — each chronic mode's substitute forecloses the conditions under which Biological Restoration could occur.
+              </p>
+            </div>
+
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={expandedProseStyle}>
                 Bowlby (1969, 1988) — attachment as regulatory system. Porges (2011) — co-regulation as developmental pathway. Schore (2003) — right-brain regulation develops through relational experience. Winnicott (1960) — true self vs. false self, managing through others. Kohut (1977) — self-object needs. Kernberg (1975) — narcissistic pathology as escalation of external regulation needs. Addiction research — tolerance, escalation, and the distinction between the substance and the underlying state. Van der Kolk (2014) — trauma produces incomplete regulation stored somatically.
@@ -1148,7 +1187,7 @@ export default function F3FalseCoherencePage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            dateModified: "2026-03-19",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
