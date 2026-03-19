@@ -21,7 +21,7 @@ const MODEL_COLOR = SPECTRUM.indigo;
 const ANCHOR_SECTIONS = [
   { label: "The Common Understanding", href: "#common-understanding" },
   { label: "The Threat Cascade", href: "#threat-cascade" },
-  { label: "The Designed Return", href: "#designed-return" },
+  { label: "Biological Restoration", href: "#designed-return" },
   { label: "The Override", href: "#override" },
   { label: "What Stays Active", href: "#stays-active" },
   { label: "When Signal Goes Silent", href: "#signal-collapse" },
@@ -29,9 +29,22 @@ const ANCHOR_SECTIONS = [
   { label: "The Thread Forward", href: "#thread-forward" },
 ];
 
+const SIDEBAR_SECTIONS = [
+  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think regulation and trauma mean — and what the nervous system is actually doing." },
+  { label: "The Threat Cascade", href: "#threat-cascade", description: "What the body does in the first milliseconds of a stress response — before thought can intervene." },
+  { label: "Biological Restoration", href: "#designed-return", description: "The biological sequence the body was built to complete — and why cognition cannot close it." },
+  { label: "The Override", href: "#override", description: "What happens when we push through an emotion — what the mind removes and what the body keeps running." },
+  { label: "What Stays Active", href: "#stays-active", description: "System-by-system residue from an unfinished response — and what accumulation looks like over time." },
+  { label: "When Signal Goes Silent", href: "#signal-collapse", description: "The second failure mode: not escalation but collapse. The body stops broadcasting." },
+  { label: "Regulation Through Others", href: "#regulation-through-others", description: "Why controlling others produces real neurochemical relief — and why the relief never lasts." },
+  { label: "What the Body Reaches For", href: "#vehicles", description: "Substances, intensity, work, healthy habits — the same mechanism at different intensity levels." },
+  { label: "The Four Modes", href: "#four-modes", description: "How the full regulation landscape maps onto the four nervous system positions." },
+  { label: "The Thread Forward", href: "#thread-forward", description: "The three-model emotion sequence — and why the restoration pathway is still there." },
+];
+
 const DRAWS_FROM = [
-  { id: "F1", title: "Emotions as Biological Information", relation: "Primary source", description: "Names the biological return process that M3 maps physiologically — the fork between completion and what replaces it.", href: "/framework/f1-emotional-gradient" },
-  { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why the return fails to develop — the awareness capacities that should facilitate completion.", href: "/framework/f2-awareness-calibration" },
+  { id: "F1", title: "Emotions as Biological Information", relation: "Primary source", description: "Names the Biological Restoration process that M3 maps physiologically — the fork between completion and what replaces it.", href: "/framework/f1-emotional-gradient" },
+  { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why Biological Restoration fails to develop — the awareness capacities that should facilitate completion.", href: "/framework/f2-awareness-calibration" },
   { id: "F3", title: "False Coherence", relation: "Cognitive maintenance", description: "How cognition constructs coherence over unfinished cycles, hiding what the body is still carrying.", href: "/framework/f3-false-coherence" },
   { id: "F12", title: "Two Information Systems", relation: "Architecture", description: "Why cognitive understanding cannot close a somatic cycle — the two-system explanation.", href: "/framework/f12-two-information-systems" },
   { id: "M1", title: "Nervous System Signaling", relation: "Paired model", description: "Maps the four regulatory states the nervous system moves through. M3 explains the biology of why those states persist.", href: "/model/m1-inner-compass" },
@@ -65,7 +78,7 @@ export const metadata = {
   openGraph: {
     title: "Regulation Capacities — M3 Model | TEG-Blue",
     description:
-      "What the body was designed to do after stress activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
+      "What the body was designed to do after stress activation, what blocks Biological Restoration, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
     url: "https://teg-blue.org/model/m3-regulation-capacities",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -74,7 +87,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Regulation Capacities — TEG-Blue M3",
     description:
-      "What is the body doing to regulate — and is the cycle completing? The designed return, the override, and what the nervous system reaches for instead.",
+      "What is the body doing to regulate — and is the cycle completing? Biological Restoration, the override, and what the nervous system reaches for instead.",
   },
 };
 
@@ -92,14 +105,15 @@ export default function M3RegulationCapacitiesPage() {
       <SiteHeader currentPath="/model/m3-regulation-capacities" />
 
       <PageLayout
+        sidebarSections={SIDEBAR_SECTIONS}
         header={
           <>
             <ModelHero
               badge="MODEL M3"
               title="Regulation Capacities"
               subtitle="The Return Pathway"
-              description="What the body was designed to do after activation. What blocks the return. What the nervous system reaches for instead. And why none of the substitutes close the cycle. This model proposes that regulation is not what a person does to their emotions — it is what the body does after them."
-              coreQuestion="What is the body doing to regulate — and is the cycle completing?"
+              description="When something stressful happens, the body responds — heart rate up, muscles braced, everything shifting to handle the moment. That response was designed to finish. The body was supposed to come back down. Most of the time, it doesn't. We push through, override it, move on. The body keeps running what it started — underneath, where we can no longer feel it. This model maps what happens next: what stays active when the response doesn't complete, what the body reaches for instead, and why the substitutes produce real relief but never resolve what started them."
+              coreQuestion="What is the body still running — and has it actually finished?"
               drawsFrom={[
                 { label: "F1", href: "/framework/f1-emotional-gradient" },
                 { label: "F2", href: "/framework/f2-awareness-calibration" },
@@ -126,7 +140,7 @@ export default function M3RegulationCapacitiesPage() {
               fontStyle: "italic",
             }}
           >
-            This page presents a working model of how the body regulates after stress activation — drawing on established research in stress physiology, polyvagal theory, somatic experiencing, and suppression science. These fields have mapped these mechanisms independently, across decades. What this model proposes is the connection between them — and between the biology and the felt experience of being a person inside it.
+            Most people know the feeling: something stressful happens, the body reacts, and hours later there is still a residue — tension that will not settle, a reaction bigger than the situation seemed to warrant, a restlessness with no clear source. This page presents a working model of what is happening physiologically in those moments — drawing on established research in stress physiology, polyvagal theory, somatic experiencing, and suppression science. These fields have mapped these mechanisms independently, across decades. What this model proposes is the connection between them — and between the biology and the felt experience of being a person inside it.
           </p>
 
           {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
@@ -172,10 +186,10 @@ export default function M3RegulationCapacitiesPage() {
                   When cognition overrides the emotion — labelling it irrelevant, dangerous, or weak — the override reaches awareness, not biology. The cascade continues below the threshold of conscious access
                 </li>
                 <li style={propositionItemStyle}>
-                  The signal without return is not a suppressed feeling. It is an open biological cycle: cortisol still releasing, amygdala still sensitising, organs still in survival configuration
+                  The signal without completion is not a suppressed feeling. It is an open biological cycle: cortisol still releasing, amygdala still sensitising, organs still in survival configuration
                 </li>
                 <li style={propositionItemStyle}>
-                  When the return pathway is blocked, the nervous system does not wait. It redirects — through substances, through physical intensity, through controlling others, through any external input that produces the neurochemical shift the body is searching for
+                  When the restoration pathway is blocked, the nervous system does not wait. It redirects — through substances, through physical intensity, through controlling others, through any external input that produces the neurochemical shift the body is searching for
                 </li>
                 <li style={propositionItemStyle}>
                   Every such input produces real relief. None of them produce return to baseline. The distinction is biological: discharge is not completion
@@ -256,16 +270,16 @@ export default function M3RegulationCapacitiesPage() {
               id="heading-designed-return"
               style={sectionHeadingStyle}
             >
-              2. What Completion Requires — The Designed Return
+              2. What Completion Requires — Biological Restoration
             </h2>
 
             <p style={proseStyle}>
-              The stress response was designed to complete. Every mammalian nervous system carries a built-in return sequence — not as an optional add-on but as the endpoint the cascade was always moving toward. The activation is stage one. The return is stage two. Without stage two, stage one never ends.
+              The stress response was designed to complete. Every mammalian nervous system carries a built-in restoration sequence — not as an optional add-on but as the endpoint the cascade was always moving toward. The activation is stage one. Biological Restoration is stage two. Without stage two, stage one never ends.
             </p>
 
-            <h3 style={h3Style}>The Return Sequence</h3>
+            <h3 style={h3Style}>The Restoration Sequence</h3>
             <p style={proseStyle}>
-              The return sequence runs in order. Expression first: trembling, crying, movement, breath change, vocalisation. The body discharges the mobilised energy. Trembling, which appears across mammalian species after predator encounters, appears to function as the nervous system running a discharge sequence — a mechanism described in detail by Levine (1997).
+              The restoration sequence runs in order. Expression first: trembling, crying, movement, breath change, vocalisation. The body discharges the mobilised energy. Trembling, which appears across mammalian species after predator encounters, appears to function as the nervous system running a discharge sequence — a mechanism described in detail by Levine (1997).
             </p>
             <p style={proseStyle}>
               Expression activates the parasympathetic return. The vagus nerve — the body{"'"}s primary parasympathetic pathway — engages the ventral vagal complex. Heart rate slows. The gut re-engages. The face softens. The voice recovers prosody. Social engagement — the capacity to read and respond to others — comes back online. This is the vagal brake: the body{"'"}s built-in signal that the threat has passed.
@@ -397,7 +411,7 @@ export default function M3RegulationCapacitiesPage() {
             </h2>
 
             <p style={proseStyle}>
-              When the cycle does not complete, specific systems remain in activation — often indefinitely — because the biological conditions for their return were never met. M3 uses the term <em>debris</em> for this residue: not a feeling, not a memory, but physical material still present in the body.
+              When the cycle does not complete, specific systems remain in activation — often indefinitely — because the biological conditions for their return to baseline were never met. M3 uses the term <em>debris</em> for this residue: not a feeling, not a memory, but physical material still present in the body.
             </p>
 
             <h3 style={h3Style}>System-by-System Residue</h3>
@@ -505,7 +519,7 @@ export default function M3RegulationCapacitiesPage() {
               There is a second failure mode. Not escalation — collapse.
             </p>
             <p style={proseStyle}>
-              When the return has not completed across enough cycles, across enough time, the nervous system can shift from chronic high-activation to something different: the disappearance of signal entirely. The body stops broadcasting. Not because the debris has cleared — it has not. But because the alert system, finding no resolution across repeated cycles, begins to suppress its own output.
+              When Biological Restoration has not completed across enough cycles, across enough time, the nervous system can shift from chronic high-activation to something different: the disappearance of signal entirely. The body stops broadcasting. Not because the debris has cleared — it has not. But because the alert system, finding no resolution across repeated cycles, begins to suppress its own output.
             </p>
 
             <h3 style={h3Style}>What This Produces</h3>
@@ -525,7 +539,7 @@ export default function M3RegulationCapacitiesPage() {
               This is the dorsal vagal state — what Porges (2011) described as the oldest branch of the vagus nerve, the immobilisation response the nervous system reaches for when neither fight, flight, nor appeasement has produced safety across sustained time. Not a choice. A reorganisation.
             </p>
             <p style={proseStyle}>
-              The person in this state is not without activation. The debris is still there, still accumulating. What is gone is the felt sense of it — and with that, the signal the body would need in order to begin the return.
+              The person in this state is not without activation. The debris is still there, still accumulating. What is gone is the felt sense of it — and with that, the signal the body would need in order to begin the return to baseline.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -561,7 +575,7 @@ export default function M3RegulationCapacitiesPage() {
             </h2>
 
             <p style={proseStyle}>
-              When the internal return pathway is blocked — when the nervous system cannot complete the cycle alone — it redirects. One direction: outward. Using control over others to discharge accumulated activation.
+              When the Biological Restoration pathway is blocked — when the nervous system cannot complete the cycle alone — it redirects. One direction: outward. Using control over others to discharge accumulated activation.
             </p>
             <p style={proseStyle}>
               This is a description of a biological mechanism. M3 maps the physiology, not the morality. The nervous system does not distinguish between socially acceptable and socially destructive regulation strategies — it distinguishes only between what produces a neurochemical shift and what does not.
@@ -634,7 +648,7 @@ export default function M3RegulationCapacitiesPage() {
 
             <h3 style={h3Style}>The Healthy Vehicle</h3>
             <p style={proseStyle}>
-              The same mechanism runs through activities the person believes are resolving the problem. Exercise chosen for intensity rather than completion. Meditation extended past its natural endpoint, chased for the calm rather than entered for what is there. Breathwork, cold exposure, fasting, sensory silence — each one capable of producing real physiological shift. Each one, when the return pathway is blocked, used as discharge. The relief is real. The debris is untouched. Tomorrow the same dose is required, and the next day slightly more.
+              The same mechanism runs through activities the person believes are resolving the problem. Exercise chosen for intensity rather than completion. Meditation extended past its natural endpoint, chased for the calm rather than entered for what is there. Breathwork, cold exposure, fasting, sensory silence — each one capable of producing real physiological shift. Each one, when the restoration pathway is blocked, used as discharge. The relief is real. The debris is untouched. Tomorrow the same dose is required, and the next day slightly more.
             </p>
             <p style={proseStyle}>
               The body does not distinguish the source of discharge. It distinguishes only whether the cycle completed. The person who runs daily and still cannot settle is not doing the wrong activity. The activity is doing the wrong job — covering the alarm rather than closing it.
@@ -648,7 +662,7 @@ export default function M3RegulationCapacitiesPage() {
               M3 proposes that the most extreme forms of interpersonal harm — domination, violation, the exercise of absolute power over another person — function at the neurochemical level as the highest-intensity version of the same regulation mechanism. The dopamine surge, the testosterone spike, the cortisol suppression through intensity rather than through completion. The body registers the signature of completion. But the HPA axis never received the hippocampal all-clear. Cortisol was suppressed by intensity — not cleared by the return sequence. It rebounds. The debris remains.
             </p>
             <p style={proseStyle}>
-              This produces a specific consequence: the actual conditions for biological return — safety, time, co-regulation — begin to register as insufficient. They are too quiet. The body has been conditioned to an intensity level that the real return sequence cannot match. The interval between episodes shortens rather than lengthens.
+              This produces a specific consequence: the actual conditions for Biological Restoration — safety, time, co-regulation — begin to register as insufficient. They are too quiet. The body has been conditioned to an intensity level that the real restoration sequence cannot match. The interval between episodes shortens rather than lengthens.
             </p>
 
             <h3 style={h3Style}>Why None of It Resolves</h3>
@@ -662,7 +676,7 @@ export default function M3RegulationCapacitiesPage() {
               <strong style={{ color: TEXT.primary }}>Return to baseline</strong> requires the specific biological sequence to complete: the discharge phase, the parasympathetic return, the HPA negative feedback loop, cortisol clearance, the restoration of serotonin and oxytocin, the hippocampus encoding the event as finished. These are physiological events. They require specific inputs — somatic and relational.
             </p>
             <p style={proseStyle}>
-              None of these vehicles contain their own stopping mechanism. The biological return sequence does — it has a built-in endpoint: cortisol clears, the hippocampus sends the all-clear, the HPA axis stands down. External vehicles have no such endpoint. They have no signal that tells the system: <em>finished.</em>
+              None of these vehicles contain their own stopping mechanism. The Biological Restoration sequence does — it has a built-in endpoint: cortisol clears, the hippocampus sends the all-clear, the HPA axis stands down. External vehicles have no such endpoint. They have no signal that tells the system: <em>finished.</em>
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -704,10 +718,10 @@ export default function M3RegulationCapacitiesPage() {
               Each position on the gradient corresponds to a physiological state and a regulation strategy:
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: "#14b8a6" }}>Connection.</strong> The nervous system in parasympathetic dominance, with cortisol cleared, oxytocin available, and prefrontal cortex blood flow at capacity. Cycles complete. The return pathway is available. This is not a permanently safe state — it is a state in which the stress response can activate and return to baseline.
+              <strong style={{ color: "#14b8a6" }}>Connection.</strong> The nervous system in parasympathetic dominance, with cortisol cleared, oxytocin available, and prefrontal cortex blood flow at capacity. Cycles complete. Biological Restoration is available. This is not a permanently safe state — it is a state in which the stress response can activate and return to baseline.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: "#eab308" }}>Protection.</strong> Acute sympathetic activation — the body in an active stress response. Designed to be temporary, biologically expensive, and followed by return. The body is in the cycle. Completion is pending.
+              <strong style={{ color: "#eab308" }}>Protection.</strong> Acute sympathetic activation — the body in an active stress response. Designed to be temporary, biologically expensive, and followed by return to baseline. The body is in the cycle. Completion is pending.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: "#f97316" }}>Control.</strong> The nervous system in sustained sympathetic activation, with chronically elevated cortisol and norepinephrine. Cognitive resources and external vehicles are recruited to manage a body that has not returned. This is where regulation through others typically begins.
@@ -725,10 +739,10 @@ export default function M3RegulationCapacitiesPage() {
 
                 <GridCell first>Connection</GridCell>
                 <GridCell>Parasympathetic dominance — cortisol cleared, oxytocin available, PFC at capacity</GridCell>
-                <GridCell>Cycle complete or never opened. Biological return available.</GridCell>
+                <GridCell>Cycle complete or never opened. Biological Restoration available.</GridCell>
 
                 <GridCell first>Protection</GridCell>
-                <GridCell>Acute SNS activation — designed to be temporary and followed by return</GridCell>
+                <GridCell>Acute SNS activation — designed to be temporary and followed by return to baseline</GridCell>
                 <GridCell>Cycle open — completion pending. Body searching for discharge.</GridCell>
 
                 <GridCell first>Control</GridCell>
@@ -742,10 +756,10 @@ export default function M3RegulationCapacitiesPage() {
             </div>
 
             <p style={proseStyle}>
-              The external regulation substitutes described in Sections 6 and 7 are not psychological choices made in a vacuum. M3 proposes that they are what a nervous system with open cycles reaches for. When the internal return pathway is blocked — when the cycle cannot complete because self-awareness is offline, because suppression is the habitual response, because the developmental environment never provided co-regulation — the nervous system finds external inputs to regulate what it cannot regulate internally.
+              The external regulation substitutes described in Sections 6 and 7 are not psychological choices made in a vacuum. M3 proposes that they are what a nervous system with open cycles reaches for. When the restoration pathway is blocked — when the cycle cannot complete because self-awareness is offline, because suppression is the habitual response, because the developmental environment never provided co-regulation — the nervous system finds external inputs to regulate what it cannot regulate internally.
             </p>
             <p style={proseStyle}>
-              The return direction follows the same logic. Moving back toward Connection is not a matter of deciding to be different. It is a matter of creating the biological conditions for the cycle to complete: sufficient safety for discharge to begin, vagal engagement, cortisol clearance, the experience of co-regulation. These conditions are relational, somatic, and time-dependent. They cannot be rushed. They can only be allowed.
+              Biological Restoration follows the same logic. Moving back toward Connection is not a matter of deciding to be different. It is a matter of creating the biological conditions for the cycle to complete: sufficient safety for discharge to begin, vagal engagement, cortisol clearance, the experience of co-regulation. These conditions are relational, somatic, and time-dependent. They cannot be rushed. They can only be allowed.
             </p>
             <p style={proseStyle}>
               The key principle across all four modes: health is not a position on the gradient. It is mobility — the capacity to return to baseline when challenged.
@@ -760,13 +774,13 @@ export default function M3RegulationCapacitiesPage() {
 
               <ExpandableSection title="What this model proposes" type="opendata">
                 <p style={expandedProseStyle}>
-                  The full regulation landscape — from biological return through override through debris through signal collapse through vehicles — mapped onto a four-mode gradient as a single, continuous physiological progression. The stress physiology literature describes states; the trauma literature describes trajectories. M3 and the gradient propose occupying the space between them: the mode as a body in a specific physiological state, running a specific regulation strategy, shaped by the number and depth of its open cycles.
+                  The full regulation landscape — from Biological Restoration through override through debris through signal collapse through vehicles — mapped onto a four-mode gradient as a single, continuous physiological progression. The stress physiology literature describes states; the trauma literature describes trajectories. M3 and the gradient propose occupying the space between them: the mode as a body in a specific physiological state, running a specific regulation strategy, shaped by the number and depth of its open cycles.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CARD: THE BIOLOGICAL RETURN ────────────── */}
+          {/* ─── CARD: BIOLOGICAL RESTORATION ──────────── */}
           <Link
             href="/framework/f1-emotional-gradient#the-fork"
             style={{
@@ -780,10 +794,10 @@ export default function M3RegulationCapacitiesPage() {
             }}
           >
             <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: MODEL_COLOR, marginBottom: 8 }}>
-              The Biological Return
+              Biological Restoration
             </div>
             <div style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 10 }}>
-              The body has a designed return pathway. It requires specific conditions: sufficient safety, time, somatic discharge, and for relational emotions — another regulated nervous system. This pathway is not a technique. It is a biological sequence the body was built to run.
+              The body has a designed restoration pathway. It requires specific conditions: sufficient safety, time, somatic discharge, and for relational emotions — another regulated nervous system. This pathway is not a technique. It is a biological sequence the body was built to run.
             </div>
             <div style={{ fontSize: 13, fontWeight: 500, color: MODEL_COLOR }}>
               F1: The Emotional Gradient &rarr;
@@ -810,7 +824,7 @@ export default function M3RegulationCapacitiesPage() {
               F1 names the designed process and the fork. F2 through F7 describe what the nervous system does instead, at escalating scales and costs: developmental substitutes, cognitive replacements, collective rules, worth hierarchies, perceptual bias, domination. Each is a regulation attempt. Each produces discharge without resolution.
             </p>
             <p style={proseStyle}>
-              F8 through F10 describe what makes the return possible again: developing the awareness capacities that allow the cycle to be felt and completed, creating structural conditions that support rather than suppress it, and transmitting the return capacity to the next generation instead of the substitutes.
+              F8 through F10 describe what makes Biological Restoration possible again: developing the awareness capacities that allow the cycle to be felt and completed, creating structural conditions that support rather than suppress it, and transmitting the restoration capacity to the next generation instead of the substitutes.
             </p>
             <p style={proseStyle}>
               M3 is where both arcs meet.
@@ -835,13 +849,13 @@ export default function M3RegulationCapacitiesPage() {
 
             <h3 style={h3Style}>The Pathway Is Still There</h3>
             <p style={proseStyle}>
-              The nervous system that has spent years running substitutes still contains the return sequence. It was not removed by chronic activation, by accumulated debris, by any of the vehicles the system learned to reach for. The pathway was outcompeted. It was not erased.
+              The nervous system that has spent years running substitutes still contains the Biological Restoration sequence. It was not removed by chronic activation, by accumulated debris, by any of the vehicles the system learned to reach for. The pathway was outcompeted. It was not erased.
             </p>
             <p style={proseStyle}>
               The sequence runs when the conditions exist. Safety, sufficient time, somatic process, another regulated nervous system nearby — these are not psychological achievements. They are biological inputs. When they are present, the body runs what it was built to run. The debris clears. The HPA axis receives the all-clear. The hippocampus encodes the event as finished. The cycle closes.
             </p>
             <p style={proseStyle}>
-              A nervous system that has learned the return does not only resolve its own cycles. It becomes the condition another nervous system needs. Co-regulation is not a technique. It is what one regulated nervous system provides to an unregulated one by proximity. The capacity, once built, transmits — to the next person in contact, to the next generation, instead of the substitutes.
+              A nervous system that has learned Biological Restoration does not only resolve its own cycles. It becomes the condition another nervous system needs. Co-regulation is not a technique. It is what one regulated nervous system provides to an unregulated one by proximity. The capacity, once built, transmits — to the next person in contact, to the next generation, instead of the substitutes.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -1019,7 +1033,7 @@ export default function M3RegulationCapacitiesPage() {
               {
                 question: "What are Regulation Capacities in the TEG-Blue system?",
                 answer:
-                  "Regulation Capacities (M3) is a working model that maps the full regulation landscape: the body's designed return pathway after threat activation, what blocks that return, what the nervous system reaches for instead (substances, physical intensity, work, controlling others), and why none of the substitutes close the cycle. M3 proposes that regulation is not what a person does to their emotions — it is what the body does after them.",
+                  "Regulation Capacities (M3) is a working model that maps the full regulation landscape: the body's designed Biological Restoration pathway after threat activation, what blocks that restoration, what the nervous system reaches for instead (substances, physical intensity, work, controlling others), and why none of the substitutes close the cycle. M3 proposes that regulation is not what a person does to their emotions — it is what the body does after them.",
               },
               {
                 question: "Why can't cognition close a biological stress cycle?",
