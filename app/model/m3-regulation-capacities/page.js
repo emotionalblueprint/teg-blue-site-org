@@ -823,7 +823,7 @@ export default function M3RegulationCapacitiesPage() {
 
           {/* ─── CARD: BIOLOGY OF UNFINISHED EMOTION ─────── */}
           <Link
-            href="/model/m3-the-open-cycle"
+            href="#the-open-cycle"
             style={{
               display: "block",
               padding: "20px 24px",

@@ -152,7 +152,7 @@ These research traditions developed independently, within separate disciplines, 
 | Nervous system regulation → moral perception | Regulatory state shapes which moral judgments a person makes |
 | Attachment patterns → social stratification | Same protective mechanisms that organize individual identity also organize social hierarchies |
 | Self-protection → domination as continuous gradient | From legitimate self-protection through ego protection through control to domination — with identifiable transition markers |
-| Linguistic complexity → regulatory capacity | Specific linguistic markers indicate capacity to return to Connection |
+| Linguistic complexity → regulatory capacity | Specific linguistic markers indicate capacity to return to baseline |
 
 ---
 
