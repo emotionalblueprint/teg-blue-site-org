@@ -18,7 +18,7 @@ import {
 const MODEL_COLOR = SPECTRUM.azure;
 
 const ANCHOR_SECTIONS = [
-  { label: "The Compass", href: "#inner-compass" },
+  { label: "Inner Compass", href: "#inner-compass" },
   { label: "Four Modes", href: "#four-modes" },
   { label: "The Gradient", href: "#the-gradient" },
   { label: "Tank Model", href: "#tank-level-per-mode" },
@@ -541,23 +541,23 @@ export default function M1InnerCompassPage() {
             {/* What Each Stuck Mode Sees */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>Stuck Mode</div>
+                <div style={gridHeaderStyle}>Chronic Mode</div>
                 <div style={gridHeaderStyle}>What the settings deliver</div>
                 <div style={gridHeaderStyle}>What the person experiences</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Connection</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Connection</div>
                 <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
                 <div style={gridCellStyle}>The world is other people{"'"}s states. Own needs invisible.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Protection</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Protection</div>
                 <div style={gridCellStyle}>Threat signals everywhere, safety signals filtered out</div>
                 <div style={gridCellStyle}>The world is dangerous. Trust is impossible.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Control</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Control</div>
                 <div style={gridCellStyle}>Everyone appears to have an agenda, everything requires managing</div>
                 <div style={gridCellStyle}>The world is a system of competing interests.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Domination</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Domination</div>
                 <div style={gridCellStyle}>Everyone appears to be trying to cheat, undermine, or challenge</div>
                 <div style={gridCellStyle}>The world is full of enemies. Preemptive attack as defence.</div>
               </div>
@@ -1176,6 +1176,35 @@ export default function M1InnerCompassPage() {
               What can reach it: a change in the sensory environment significant enough to break through the filter — a regulation experience, a co-regulatory relationship, genuine felt safety over time. This is why F8 is the repair arc — not cognitive insight, but conditions that change what the nervous system receives.
             </p>
 
+            <h3 style={h3Style}>How Internal Signals Get Misrouted</h3>
+            <p style={proseStyle}>
+              The locked filter does not only shape external perception. It also determines what happens to the person{"'"}s own emotional signals. When Self-Emotional Awareness (SEA) is present, an emotional signal is received as internal information: "I am feeling something." When SEA is gone, the same signal arrives but cannot be identified as internal. It is processed through the mode{"'"}s scanning configuration and attributed externally.
+            </p>
+
+            {/* Per-mode distortion formulas */}
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 2.5fr", minWidth: 400 }}>
+                <div style={gridHeaderStyle}>Chronic Mode</div>
+                <div style={gridHeaderStyle}>Distortion Pattern</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Connection</div>
+                <div style={gridCellStyle}>"I feel bad → I caused it → I must fix myself"</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Protection</div>
+                <div style={gridCellStyle}>"I feel bad → you{"'"}re threatening me → I must defend"</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Control</div>
+                <div style={gridCellStyle}>"I feel bad → you{"'"}re destabilising me → I must manage you"</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Domination</div>
+                <div style={gridCellStyle}>"I feel bad → you{"'"}re challenging me → I must eliminate"</div>
+              </div>
+            </div>
+
+            <p style={proseStyle}>
+              The signal is real. The attribution is the distortion. Each chronic mode routes the signal through its scanning configuration — the same scanner that shapes external perception also shapes the interpretation of internal signals. The person inside the distortion does not experience it as distortion. It feels like accurate assessment — because the scanner is running accurately for the context it was built for. It is running in the wrong context.
+            </p>
+
             <OperationalStatement color={MODEL_COLOR}>
               Projection is accurate perception through a filter calibrated to a mode that is no longer responding to the present environment.
             </OperationalStatement>
@@ -1534,14 +1563,14 @@ export default function M1InnerCompassPage() {
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What is the Inner Compass model?",
+                question: "What is the Nervous System Signaling model (M1)?",
                 answer:
-                  "The Inner Compass is a model for understanding how the nervous system continuously orients between safety and threat. It uses the metaphor of a compass with a moving needle — health is not a fixed position but the capacity of the needle to move fluidly across four modes (Connection, Protection, Control, Domination) and return to baseline.",
+                  "M1 — Nervous System Signaling — is the foundational model of the TEG-Blue system. It uses the Inner Compass as a visual-conceptual tool: a compass with a moving needle that orients between safety and threat. Health is not a fixed position but the capacity of the needle to move fluidly across four modes (Connection, Protection, Control, Domination) and return to baseline.",
               },
               {
                 question: "What are the four modes of the Inner Compass?",
                 answer:
-                  "The four modes are Connection (body-first, safety perceived — the system's baseline), Protection (body-first, threat perceived — emergency system), Control (cognition-first, deliberate strategic response), and Domination (cognition-first, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories.",
+                  "The four modes are Connection (body-first, safety perceived — designed for sustained living), Protection (body-first, threat perceived — emergency system), Control (cognition-first, deliberate strategic response), and Domination (cognition-first, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories. All modes return to baseline — Connection is not the resting state but the lowest-activation mode.",
               },
               {
                 question: "What does 'state determines capacity' mean?",
