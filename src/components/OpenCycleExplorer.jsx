@@ -133,7 +133,7 @@ const RESOLUTION_PATH = [
     biology: [
       "All systems normalised",
       "Allostatic load: zero added",
-      "Compass: fluid",
+      "Regulation: available",
       "Capacity: full",
     ],
     hormones: [],
@@ -163,9 +163,9 @@ const OVERRIDE_PATH = [
     sub: "Access lost, signal runs",
     color: ORANGE,
     description:
-      "The person loses access to the signal — but the signal continues generating. The body holds everything the mind refuses to see. The cycle is open. The cherry is still there.",
+      "The person loses access to the signal — but the signal continues generating. The body holds everything the mind refuses to see. The cycle is open. The signal persists.",
     biology: [
-      "SEA collapses",
+      "Self-awareness collapses",
       "Emotional distortion activates",
       "Internal discomfort misread as external threat",
       "Somatic holding increases",
@@ -191,16 +191,16 @@ const OVERRIDE_PATH = [
   },
   {
     id: "stuck",
-    label: "Compass Stuck",
-    sub: "Mode becomes chronic",
+    label: "Chronic State",
+    sub: "Emergency becomes default",
     color: ORANGE,
     description:
-      "The nervous system reorganises around the unresolved state. What was Protection becomes permanent. External regulation substitutes multiply. The gradient shift locks in.",
+      "The nervous system reorganises around the unresolved state. What was a temporary emergency response becomes permanent. External regulation substitutes multiply. The shift becomes structural.",
     biology: [
-      "Default mode: Protection/Control",
+      "Default state: sustained activation",
       "External regulation required",
-      "Regulation substitutes: F3–F7",
-      "Identity forms around mode",
+      "Substitutes multiply",
+      "Identity forms around the state",
       "Return pathway blocked",
     ],
     hormones: [],
@@ -638,9 +638,8 @@ export default function OpenCycleExplorer() {
           >
             "Deciding the emotion is not important does not change the cortisol
             level. The body has no mechanism for receiving philosophical
-            decisions. It only responds to biological signals. The cherry is
-            there — declaring it invisible is not the same as it not being
-            there."
+            decisions. It only responds to biological signals. The signal
+            persists whether or not the person has access to it."
           </p>
           <div
             style={{
