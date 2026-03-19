@@ -1259,7 +1259,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="m2-three-awareness-capacities" type="framework" />
+          <ConnectedResearch slug="m2-three-awareness-capacities" type="model" />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section

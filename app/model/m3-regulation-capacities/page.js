@@ -30,6 +30,7 @@ const ANCHOR_SECTIONS = [
   { label: "The Override", href: "#override" },
   { label: "What Stays Active", href: "#stays-active" },
   { label: "What the Body Reaches For", href: "#vehicles" },
+  { label: "The Thread Forward", href: "#thread-forward" },
   { label: "Draws From", href: "#relationship-to-frameworks" },
 ];
 
@@ -796,6 +797,116 @@ export default function M3RegulationCapacitiesPage() {
             </div>
           </section>
 
+          {/* ─── CARD: THE BIOLOGICAL RETURN ────────────── */}
+          <Link
+            href="/framework/f1-emotional-gradient#the-fork"
+            style={{
+              display: "block",
+              padding: "20px 24px",
+              margin: "0 0 16px",
+              background: hexToRgba(MODEL_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
+              borderRadius: 8,
+              textDecoration: "none",
+            }}
+          >
+            <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: MODEL_COLOR, marginBottom: 8 }}>
+              The Biological Return
+            </div>
+            <div style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 10 }}>
+              The body has a designed return pathway. It requires specific conditions: sufficient safety, time, somatic discharge, and for relational emotions — another regulated nervous system. This pathway is not a technique. It is a biological sequence the body was built to run.
+            </div>
+            <div style={{ fontSize: 13, fontWeight: 500, color: MODEL_COLOR }}>
+              F1: The Emotional Gradient &rarr;
+            </div>
+          </Link>
+
+          {/* ─── CARD: BIOLOGY OF UNFINISHED EMOTION ─────── */}
+          <Link
+            href="/model/m3-the-open-cycle"
+            style={{
+              display: "block",
+              padding: "20px 24px",
+              margin: "0 0 48px",
+              background: hexToRgba(MODEL_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(MODEL_COLOR, 0.15)}`,
+              borderRadius: 8,
+              textDecoration: "none",
+            }}
+          >
+            <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: FONT.mono, color: MODEL_COLOR, marginBottom: 8 }}>
+              The Biology of Unfinished Emotion
+            </div>
+            <div style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 10 }}>
+              The full physiological account of what happens in the body when the return does not complete — the cascade, the debris, the accumulation, and why cognition cannot close a biological cycle.
+            </div>
+            <div style={{ fontSize: 13, fontWeight: 500, color: MODEL_COLOR }}>
+              Biology of Unfinished Emotion &rarr;
+            </div>
+          </Link>
+
+          {/* ─── THE THREAD FORWARD ──────────────────────── */}
+          <section
+            id="thread-forward"
+            aria-labelledby="heading-thread-forward"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-thread-forward"
+              style={sectionHeadingStyle}
+            >
+              The Thread Forward
+            </h2>
+
+            <p style={proseStyle}>
+              Every framework in TEG-Blue is organised around a single mechanism: the return to baseline, and what happens when it does not complete.
+            </p>
+            <p style={proseStyle}>
+              F1 names the designed process and the fork. F2 through F7 describe what the nervous system does instead, at escalating scales and costs: developmental substitutes, cognitive replacements, collective rules, worth hierarchies, perceptual bias, domination. Each is a regulation attempt. Each produces discharge without resolution. Each traces to the same origin — a nervous system that never learned the return.
+            </p>
+            <p style={proseStyle}>
+              F8 through F10 describe what makes the return possible again: developing the awareness capacities that allow the cycle to be felt and completed, creating structural conditions that support rather than suppress it, and transmitting the return capacity to the next generation instead of the substitutes.
+            </p>
+            <p style={proseStyle}>
+              M3 is where both arcs meet.
+            </p>
+
+            <h3 style={h3Style}>The Three-Model Emotion Sequence</h3>
+            <p style={proseStyle}>
+              Emotions are not just the starting point of the system. They are what all three models are describing — from three different angles.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>M1</strong> maps what the emotion is and what state it produces — which mode activates, what the person can perceive, think, feel, and do from that position.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received — whether Reading Emotions (RE) can read it, Emotional Resonance (ER) can feel it, Self-Emotional Awareness (SEA) can access it.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete — whether the activation cycle discharges, returns to baseline, and clears the debris.
+            </p>
+            <p style={proseStyle}>
+              All three models are describing the same emotion moving through the nervous system. The models are not separate topics. They are three stages of the same sequence.
+            </p>
+
+            <h3 style={h3Style}>The Pathway Is Still There</h3>
+            <p style={proseStyle}>
+              The nervous system that has spent years running substitutes still contains the return sequence. It was not removed by chronic activation, by accumulated debris, by the counterfeit return, by any of the vehicles the system learned to reach for. The pathway was outcompeted. It was not erased.
+            </p>
+            <p style={proseStyle}>
+              The sequence runs when the conditions exist. Safety, sufficient time, somatic process, another regulated nervous system nearby — these are not psychological achievements. They are biological inputs. When they are present, the body runs what it was built to run. The debris clears. The HPA axis receives the all-clear. The hippocampus encodes the event as finished. The cycle closes.
+            </p>
+            <p style={proseStyle}>
+              A nervous system that has learned the return does not only resolve its own cycles. It becomes the condition another nervous system needs. Co-regulation is not a technique. It is what one regulated nervous system provides to an unregulated one by proximity. The capacity, once built, transmits — to the next person in contact, to the next generation, instead of the substitutes.
+            </p>
+            <p style={proseStyle}>
+              F8 through F10 describe what makes this possible: the conditions, the capacities, the structural environments in which the return can be learned rather than bypassed. They begin from where M3 ends.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The pathway is still there. The body was built to come home. What changes is not the sequence — it is whether the conditions exist for it to run.
+            </OperationalStatement>
+          </section>
+
           {/* ─── DRAWS FROM ──────────────────────────────── */}
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
@@ -895,7 +1006,7 @@ export default function M3RegulationCapacitiesPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-06",
-            dateModified: "2026-03-17",
+            dateModified: "2026-03-19",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {

@@ -168,15 +168,38 @@ export default function TankDiagram() {
   }, [state.washoutActive]);
 
   // ─── Fill targets based on needle position ────────────
+  // Modes are cumulative: you don't arrive at Control without going
+  // through Protection first. Below-active modes stay elevated.
   useEffect(() => {
     const targets = [0, 0, 0, 0];
+    const active = state.activeMode;
+
     if (!state.isStuck) {
-      // Fluid: only active mode fills
-      targets[state.activeMode] = 0.6;
+      // Fluid: cascading fill — active mode + escalation path below
+      if (active === 0) {
+        targets[0] = 0.35; // Connection at rest — home, not full
+      } else {
+        targets[active] = 0.6;
+        for (let i = active - 1; i >= 0; i--) {
+          const distance = active - i;
+          targets[i] = 0.6 * Math.pow(0.6, distance);
+        }
+      }
     } else {
-      // Stuck: active mode fills toward ceiling
-      if (!lockedRef.current[state.activeMode]) {
-        targets[state.activeMode] = CEILING;
+      // Stuck: cascading toward ceiling — the whole system loads up
+      if (!lockedRef.current[active]) {
+        targets[active] = CEILING;
+      }
+      for (let i = active - 1; i >= 0; i--) {
+        if (!lockedRef.current[i]) {
+          const distance = active - i;
+          targets[i] = CEILING * Math.pow(0.75, distance);
+        }
+      }
+      // In stuck Domination, Connection disappears completely —
+      // the fluid system is gone
+      if (active === 3) {
+        targets[0] = 0;
       }
     }
     fillTargetsRef.current = targets;
@@ -232,9 +255,14 @@ export default function TankDiagram() {
           debris[i] = Math.min(fills[i] * 0.8, debris[i] + DEBRIS_RATE * dt);
         }
 
-        // Check ceiling hit for escalation
-        if (state.isStuck && fills[i] >= CEILING && i < 3) {
-          escalateMode = i;
+        // Check ceiling hit for escalation (or lock Domination)
+        if (state.isStuck && fills[i] >= CEILING) {
+          if (i < 3) {
+            escalateMode = i;
+          } else if (!locked[i]) {
+            // Domination at ceiling — lock as Chronic (nowhere to escalate)
+            dispatch({ type: "LOCK_TANK", index: i });
+          }
         }
       }
 
@@ -577,7 +605,7 @@ export default function TankDiagram() {
                   background: hexToRgba(mode.hex, isActive ? 0.06 : 0.02),
                   overflow: "hidden",
                   transition: "border-color 300ms ease, background 300ms ease",
-                  opacity: isActive || isLocked ? 1 : 0.35,
+                  opacity: isActive || isLocked ? 1 : (i < state.activeMode ? 0.7 : 0.35),
                 }}
               >
                 {/* Ceiling line */}
@@ -646,7 +674,7 @@ export default function TankDiagram() {
                         letterSpacing: "0.1em",
                       }}
                     >
-                      Locked
+                      Chronic
                     </span>
                   </div>
                 )}
