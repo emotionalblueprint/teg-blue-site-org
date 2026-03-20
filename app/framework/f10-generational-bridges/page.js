@@ -350,6 +350,15 @@ export default function F10GenerationalBridgesPage() {
               Understanding the mechanism identifies where change is possible.
             </KeyStatement>
 
+            <ExpandableSection title="The Biological Chain" type="framework">
+              <p style={proseStyle}>
+                The mechanism of generational transmission has a specific biological structure. Regulation develops through being regulated with — not through instruction, modeling, or intention alone. A child regulated with completes activation cycles, and capacities develop through completing them — the child can receive and regulate their own emotions. A child not regulated with has cycles that stay open — no conditions for capacities to develop, no ability to receive or regulate, and the capacities flatten.
+              </p>
+              <p style={proseStyle}>
+                The adult's regulatory capacity is not a background influence on the child's development. It is the mechanism through which the child's capacities develop — or fail to. Co-regulation is not a parenting technique. It is the biological pathway through which the three awareness capacities are built.
+              </p>
+            </ExpandableSection>
+
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={proseStyle}>
                 Family Systems Theory (Bowen, Satir, Minuchin) describes multigenerational transmission of relational patterns. Attachment Theory (Bowlby, Main, Hesse) demonstrates that attachment patterns transmit across generations but can be interrupted through earned security. Interpersonal Neurobiology (Porges, Siegel, Schore) shows that co-regulation patterns transmit through nervous system synchronization.
@@ -478,6 +487,24 @@ export default function F10GenerationalBridgesPage() {
             <p style={proseStyle}>
               The parent's conscious intention operates in the cognitive system. The child's calibration reads the emotional-somatic system. These are different systems (F12). Understanding this architectural mismatch is not discouraging — it redirects effort from trying harder to developing differently.
             </p>
+
+            <ExpandableSection title="The Shame Loop" type="framework">
+              <p style={proseStyle}>
+                When regulation is achieved through controlling, criticizing, or harming others — the relational substitutes described in F3 and F7 — a shame signal is generated that cannot be metabolized in a chronic mode. The capacity to clearly feel and name shame requires Emotional Resonance (ER) to feel the other person's experience and Self-Emotional Awareness (SEA) to feel one's own role in it. Both are absent in chronic modes.
+              </p>
+              <p style={proseStyle}>
+                The Shame Loop is uncloseable: the action that produced relief also produced shame that cannot be resolved, which increases the underlying pressure, which makes the next episode more urgent. What transmits across generations is not just the regulatory configuration but the accumulated shame that the configuration could not process.
+              </p>
+            </ExpandableSection>
+
+            <ExpandableSection title="Why Substitutes Escalate Across Generations" type="framework">
+              <p style={proseStyle}>
+                The regulation substitute produces real relief. The relief fades. The debris is still there — plus the new debris from what the substitute cost. Self-Emotional Awareness (SEA) is gone, so the person cannot see that the relational environment changed. The tolerance curve operates identically to substance dependence: dose, relief, tolerance, escalation, dependence. But the "substance" is relational power — control, compliance, punishment. And the dose increase means more pain inflicted on others. There is no internal brake: the somatic echo that would register the cost to others requires Emotional Resonance (ER), which is absent.
+              </p>
+              <p style={proseStyle}>
+                The mode destroys its own return pathway. Genuine restoration for all chronic modes would ultimately require safe relational contact — real co-regulation with someone genuinely present. The relational substitute systematically degrades the relational environment, and transmits this foreclosure to the next generation, who inherits a relational environment already depleted.
+              </p>
+            </ExpandableSection>
 
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={proseStyle}>
@@ -738,6 +765,15 @@ export default function F10GenerationalBridgesPage() {
             <KeyStatement>
               The most effective generational intervention combines F8 individual repair (changes what the adult embodies) with F9 structural repair (changes the environment the family inhabits) with F10 awareness of transmission pathways (makes the mechanisms visible and addressable).
             </KeyStatement>
+
+            <ExpandableSection title="Somatic vs Relational Restoration" type="framework">
+              <p style={proseStyle}>
+                Generational repair requires understanding two distinct completion types. <strong>Somatic restoration</strong> completes the activation cycle through the body alone — movement, shaking, breathing, sleep, crying. No other person is required. <strong>Relational restoration</strong> completes the activation cycle through co-regulation with another nervous system — the debris cannot discharge through the body alone when the activation was generated relationally.
+              </p>
+              <p style={proseStyle}>
+                Most generational patterns are relational. The configurations transmitted across generations — the attachment patterns, the regulation templates, the false coherence structures — were all generated in relationship and stored as relational content. They require relational completion. This is why individual somatic work, though genuinely beneficial, often cannot fully interrupt generational transmission on its own. The activation that drives transmission was laid down relationally and needs to be processed relationally.
+              </p>
+            </ExpandableSection>
           </section>
 
           {/* ════════════════════════════════════════════════
@@ -833,6 +869,15 @@ export default function F10GenerationalBridgesPage() {
             <KeyStatement>
               F11 maps these paradoxes — and shows that holding them, rather than resolving them, is the developmental achievement.
             </KeyStatement>
+
+            <ExpandableSection title="Group-Seeking as the Scaling Mechanism" type="framework">
+              <p style={proseStyle}>
+                F10's transmission mechanism does not stop at the family. The same biology operates at every scale — from one nervous system to a group to a structure. When a person's chronic mode produces behavior that generates cognitive dissonance (the awareness that the behavior is socially unacceptable without the felt guilt that would stop it), finding others whose systems work the same way removes the dissonance. The group says: this is normal. The locked filter is collectively confirmed. Individual tolerance curves become a collective tolerance curve — the behavior escalates together because each person's escalation is validated by the others.
+              </p>
+              <p style={proseStyle}>
+                One nervous system seeking relief through a substitute, then two validating each other, then a group normalizing the pattern, then a structure where the pattern is no longer hidden because the group has made it policy. At every scale, the biology is identical. What changes is the scale of the consequences. F11 maps the paradoxes that emerge when these patterns operate at collective scale.
+              </p>
+            </ExpandableSection>
           </section>
 
           {/* ════════════════════════════════════════════════

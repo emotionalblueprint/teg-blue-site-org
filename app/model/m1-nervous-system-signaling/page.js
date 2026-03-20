@@ -538,26 +538,26 @@ export default function M1InnerCompassPage() {
               The mode determines the filter. The filter shapes the input. The input confirms the mode. A self-reinforcing loop with no natural exit.
             </OperationalStatement>
 
-            {/* What Each Stuck Mode Sees */}
+            {/* What Each Chronic Mode Sees */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>Stuck Mode</div>
+                <div style={gridHeaderStyle}>Chronic Mode</div>
                 <div style={gridHeaderStyle}>What the settings deliver</div>
                 <div style={gridHeaderStyle}>What the person experiences</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Connection</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Connection</div>
                 <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
                 <div style={gridCellStyle}>The world is other people{"'"}s states. Own needs invisible.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Protection</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Protection</div>
                 <div style={gridCellStyle}>Threat signals everywhere, safety signals filtered out</div>
                 <div style={gridCellStyle}>The world is dangerous. Trust is impossible.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Control</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Control</div>
                 <div style={gridCellStyle}>Everyone appears to have an agenda, everything requires managing</div>
                 <div style={gridCellStyle}>The world is a system of competing interests.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stuck Domination</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Domination</div>
                 <div style={gridCellStyle}>Everyone appears to be trying to cheat, undermine, or challenge</div>
                 <div style={gridCellStyle}>The world is full of enemies. Preemptive attack as defence.</div>
               </div>
@@ -1162,10 +1162,10 @@ export default function M1InnerCompassPage() {
               This is why the person cannot see the filter. They only see what comes through it. The output feels like accurate perception. It feels like seeing clearly. The mode has been running long enough that this is just what the world looks like.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stuck in Control:</strong> everyone appears to be trying to control you. The filter is scanning for control attempts — so it finds them everywhere. Micro-expressions, ambiguous words, neutral requests — all read through the Control filter as power moves.
+              <strong style={{ color: TEXT.primary }}>Chronic Control:</strong> everyone appears to be trying to control you. The filter is scanning for control attempts — so it finds them everywhere. Micro-expressions, ambiguous words, neutral requests — all read through the Control filter as power moves.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stuck in Domination:</strong> everyone appears to be trying to cheat, deceive, undermine, or challenge. The filter is scanning for threats to power and status — so it finds them in everything. A question becomes an attack. A boundary becomes a provocation. An independent thought in another person becomes a challenge to be eliminated.
+              <strong style={{ color: TEXT.primary }}>Chronic Domination:</strong> everyone appears to be trying to cheat, deceive, undermine, or challenge. The filter is scanning for threats to power and status — so it finds them in everything. A question becomes an attack. A boundary becomes a provocation. An independent thought in another person becomes a challenge to be eliminated.
             </p>
 
             <h3 style={h3Style}>Why Cognition Cannot Correct It</h3>

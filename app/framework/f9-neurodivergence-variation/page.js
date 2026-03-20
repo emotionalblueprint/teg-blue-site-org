@@ -354,6 +354,12 @@ export default function F9NeurodivergenceVariationPage() {
               A neurodivergent nervous system in a well-matched environment can sit in Connection just as sustainably as any other. When the compass cannot move, the variable may be the environment.
             </KeyStatement>
 
+            <ExpandableSection title="The Sensory Filtering Mechanism" type="framework">
+              <p style={proseStyle}>
+                Perception begins at the periphery &mdash; eyes, ears, nose, gut, skin &mdash; all feeding in simultaneously, below conscious awareness. The amygdala fires in 12 milliseconds, before a single thought forms. In neurodivergent nervous systems, the baseline sensitivity of these channels varies &mdash; higher threshold, lower threshold, or differently calibrated. A nervous system with high sensory sensitivity is receiving more data through these channels before any filtering occurs. The compass is the same instrument. The inputs arriving at it are different. This is why the same environment can produce Connection in one nervous system and Protection in another.
+              </p>
+            </ExpandableSection>
+
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={proseStyle}>
                 The neurodiversity paradigm (Singer, Walker, Silberman) frames neurodivergence as natural human variation rather than pathology. The Intense World Theory (Markram & Markram) describes heightened perception as a processing difference rather than a dysfunction. Polyvagal Theory (Porges) provides the mechanism: how safety detection shapes regulatory capacity differently across nervous system configurations.
@@ -456,6 +462,12 @@ export default function F9NeurodivergenceVariationPage() {
               </table>
             </div>
 
+            <ExpandableSection title="Masking Prevents Activation Cycle Completion" type="framework">
+              <p style={proseStyle}>
+                Beyond regulatory exhaustion, masking has a specific biological consequence: it prevents the activation cycle from completing. Every suppressed stim, every forced expression, every overridden sensory response is an activation that was started and not allowed to finish. The expression was the body&rsquo;s attempt to complete the cycle &mdash; and masking stopped it mid-sequence. Open cycles accumulate. The person starts each new day from a progressively more activated baseline &mdash; less room to handle new stress, lower threshold for crossing.
+              </p>
+            </ExpandableSection>
+
             <h3 style={conceptHeadingStyle}>Connection to F3</h3>
 
             <p style={proseStyle}>
@@ -538,6 +550,12 @@ export default function F9NeurodivergenceVariationPage() {
             <p style={proseStyle}>
               When the system is persistently close to threshold — chronic Protection or chronic Control — the threshold itself lowers over time. Accumulated stress, sustained masking, and compounding environmental demand create a descending spiral. Recovery requires environmental change, not just individual intervention. Treating burnout as an individual problem (self-care, rest, resilience training) fails because the source is structural. Sustainable recovery requires lowering demands, reducing masking requirements, and environmental redesign.
             </p>
+
+            <ExpandableSection title="Chronic Flatness as Masking Endpoint" type="framework">
+              <p style={proseStyle}>
+                When masking is sustained long enough, a specific configuration can emerge: Chronic Flatness. All three awareness capacities sit at baseline minimum &mdash; not as acute shutdown (which is temporary) but as the operating state. The biology is still generating activation, but the channels for accessing, expressing, and using that activation are at minimum or offline. Regulation signature: external or none. This is the endpoint of the descending spiral &mdash; not threshold crossing as crisis, but threshold crossing as new operating state.
+              </p>
+            </ExpandableSection>
 
             <KeyStatement>
               You cannot rest your way out of an environment that requires you to run a system your nervous system was not built to run.
@@ -687,6 +705,15 @@ export default function F9NeurodivergenceVariationPage() {
             <KeyStatement>
               You cannot develop your capacities while suppressing the system those capacities run on.
             </KeyStatement>
+
+            <ExpandableSection title="Developmental Absence and Restoration Unavailability" type="framework">
+              <p style={proseStyle}>
+                F8&rsquo;s distinction between chronic suppression and developmental absence applies with particular force here. If the environment never provided the conditions for a capacity to develop &mdash; because the person&rsquo;s authentic rhythm was masked from childhood &mdash; the capacity was not suppressed. It was never built. Recovery means building, not unblocking.
+              </p>
+              <p style={proseStyle}>
+                Chronic masking also forces a chronic mode &mdash; and the chronic mode blocks the specific restoration type that mode requires. Chronic Connection from masking needs genuine relational contact, but the connection being produced is performed, not real. Chronic Protection from masking needs safety long enough for the alarm to stand down, but the environment keeps requiring the very performance that sustains the alarm. Chronic Control from masking needs Surrender (releasing the cognitive override), but the mask IS the override. The structural mismatch does not just cost energy. It blocks the biological return pathway.
+              </p>
+            </ExpandableSection>
 
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={proseStyle}>

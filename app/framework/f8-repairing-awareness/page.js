@@ -269,6 +269,18 @@ export default function F8RepairingAwarenessPage() {
               The assessment question is not &ldquo;What&rsquo;s wrong with me?&rdquo; but: &ldquo;Which capacities had conditions to develop, which didn&rsquo;t, and what is each one currently doing?&rdquo; This is a configuration, not a diagnosis.
             </KeyStatement>
 
+            <ExpandableSection title="Two Routes to the Same Configuration" type="framework">
+              <p style={expandedProseStyle}>
+                The assessment also distinguishes <em>how</em> the current state arose. A capacity can be offline for two different reasons &mdash; and the difference determines what repair requires.
+              </p>
+              <p style={expandedProseStyle}>
+                <strong style={{ color: TEXT.primary }}>Chronic suppression:</strong> The capacity developed &mdash; partially or fully &mdash; and then went offline under chronic activation. The pathway exists but is blocked. Recovery means unblocking: safety long enough for the suppression to lift and the existing pathway to reopen.
+              </p>
+              <p style={expandedProseStyle}>
+                <strong style={{ color: TEXT.primary }}>Developmental absence:</strong> The capacity never developed. The conditions that build it &mdash; being regulated with, having signals received, having cycles complete through co-regulation &mdash; were never present. The pathway does not exist yet. Recovery means building: co-regulation that constructs what was never constructed. Both require safety and time. The second requires more of both.
+              </p>
+            </ExpandableSection>
+
             <h3 style={conceptHeadingStyle}>
               Common Configurations and Their Costs
             </h3>
@@ -320,6 +332,15 @@ export default function F8RepairingAwarenessPage() {
               F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp Reading Emotions (RE) + collapsed Emotional Resonance (ER) + absent Self-Emotional Awareness (SEA) = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. A configuration. The same nervous system with different developmental conditions would have produced a different configuration.
             </p>
 
+            <ExpandableSection title="Chronic Flatness" type="framework">
+              <p style={expandedProseStyle}>
+                A configuration where all three capacities sit at baseline minimum &mdash; not as acute shutdown (which is temporary) but as the operating state. The system has reorganised around that level. The biology is still generating activation &mdash; signals are still firing &mdash; but the channels for accessing, expressing, and using that activation are at minimum or offline.
+              </p>
+              <p style={expandedProseStyle}>
+                Chronic Flatness is not emotional absence. It is the accumulated effect of a system that learned the cycle was not safe to run. Regulation signature: external or none. The body generates activation with no internal pathway and no relational pathway. The only available channels are external regulation substitutes.
+              </p>
+            </ExpandableSection>
+
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
                 The five-state model for each awareness capacity (online, offline, misdirected, collapsed, compensatory) replaces the binary on/off framing with a clinically useful assessment. The configuration-predicts-mode table connects F2&rsquo;s developmental account to F1&rsquo;s mode model — making the link between which capacities are available and where the compass settles explicit and testable. The assessment reframe from diagnosis to configuration removes pathologizing while maintaining clinical precision.
@@ -361,6 +382,9 @@ export default function F8RepairingAwarenessPage() {
               <li style={listItemStyle}>
                 <strong style={{ color: TEXT.primary }}>The repair process requires the very capacities that are offline.</strong> Developing Self-Emotional Awareness (SEA) requires enough safety to tolerate what SEA will reveal. Developing Emotional Resonance (ER) requires enough resilience to handle feeling without collapsing. The system needs what it doesn&rsquo;t have in order to develop what it doesn&rsquo;t have.
               </li>
+              <li style={listItemStyle}>
+                <strong style={{ color: TEXT.primary }}>The perceptual filter is pre-cognitive.</strong> In chronic modes, perception is filtered before cognition receives it. Five sensory channels &mdash; eyes, ears, nose, gut, skin &mdash; all feed into the amygdala in 12 milliseconds, before a single thought forms. The mode sets the filter on all incoming data. Cognition builds its narrative from already-filtered input. Insight addresses the narrative. The filter operates upstream of the narrative.
+              </li>
             </ol>
 
             <KeyStatement>
@@ -370,6 +394,21 @@ export default function F8RepairingAwarenessPage() {
             <p style={proseStyle}>
               Premature repair can escalate. Pushing for capacity development before sufficient safety exists can trigger defensive escalation — the compass moves further into Protection or Control, not toward Connection. This is not treatment resistance. It is the nervous system correctly assessing that the conditions are not yet safe enough.
             </p>
+
+            <ExpandableSection title="Repair as Capacity — What Replaces It" type="framework">
+              <p style={expandedProseStyle}>
+                In chronic modes, genuine repair (holding accountability for impact on others) requires Self-Emotional Awareness (SEA) to feel one&rsquo;s own impact, Emotional Resonance (ER) to feel the other person&rsquo;s experience, and Reading Emotions (RE) to read the situation accurately. Where SEA is gone, repair is replaced by a mode-specific substitute:
+              </p>
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Connection:</strong> Self-blame &mdash; accountability is indiscriminate; the person takes responsibility for everything, including what was done to them</li>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Protection:</strong> Defence &mdash; &ldquo;you caused harm&rdquo; registers as &ldquo;you are threatening me&rdquo;</li>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Control:</strong> Performance &mdash; the right words, no felt accountability; behaviour does not change</li>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Domination:</strong> Image management &mdash; what looks like repair serves image; remorse never lands</li>
+              </ul>
+              <p style={expandedProseStyle}>
+                The substitute feels like repair to the person inside it. That is why it persists &mdash; the capacity that would recognise it as a substitute (SEA) is the capacity that is absent.
+              </p>
+            </ExpandableSection>
           </section>
 
           {/* ─── CONDITIONS FOR REPAIR ────────────────────── */}
@@ -432,6 +471,20 @@ export default function F8RepairingAwarenessPage() {
             <KeyStatement>
               You cannot think your way into felt safety. You can only experience your way there. A person can intellectually understand everything in F1–F7 and still have zero felt safety. Insight operates in the cognitive system. Felt safety operates in the emotional-somatic system. These are different systems with different timelines.
             </KeyStatement>
+
+            <ExpandableSection title="The Biological Conditions for SEA Recovery" type="framework">
+              <p style={expandedProseStyle}>
+                Self-Emotional Awareness (SEA) &mdash; the keystone capacity &mdash; has three specific biological requirements for its return:
+              </p>
+              <ol style={{ paddingLeft: 20, margin: "8px 0 0" }}>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Safety</strong> long enough for the nervous system to begin registering the absence of threat</li>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Contact</strong> that is genuinely non-coercive &mdash; another person who is actually present, not performing safety</li>
+                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Time</strong> without demand &mdash; the system needs space to begin recalibrating</li>
+              </ol>
+              <p style={expandedProseStyle}>
+                These are not cognitive conditions. A person can understand the entire framework and still have Self-Emotional Awareness (SEA) at zero &mdash; because SEA is a physiological capacity, not an intellectual one. It develops gradually, through biological change, not through insight.
+              </p>
+            </ExpandableSection>
 
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={expandedProseStyle}>
@@ -516,6 +569,18 @@ export default function F8RepairingAwarenessPage() {
             <KeyStatement>
               Follow the accessible pathway first. The other capacities come online as safety increases.
             </KeyStatement>
+
+            <ExpandableSection title="The Multiplicative Pull — SEA as Lever" type="framework">
+              <p style={expandedProseStyle}>
+                The system is multiplicative: Reading Emotions (RE) &times; Emotional Resonance (ER) &times; Self-Emotional Awareness (SEA). All three can be present and the product is still zero if any one is gone. Self-Emotional Awareness (SEA) is the keystone &mdash; and its return is also the mechanism of change.
+              </p>
+              <p style={expandedProseStyle}>
+                As SEA gradually comes online: <strong style={{ color: TEXT.primary }}>Reading Emotions (RE) shifts what it serves</strong> &mdash; the reading was always accurate; with SEA present, the person can see what the reading is being used for. <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER) can begin to function without flooding or absence</strong> &mdash; the boundary between self and other, which SEA maintains, starts to hold. <strong style={{ color: TEXT.primary }}>The compass position shifts as a biological consequence</strong> &mdash; not because the person decided to change, but because the capacity states changed and the compass reads the new state.
+              </p>
+              <p style={expandedProseStyle}>
+                The movement is gradual, nonlinear, and cannot be forced. But the direction is consistent: as Self-Emotional Awareness (SEA) develops, the other two capacities shift with it, and the chronic mode becomes progressively less chronic.
+              </p>
+            </ExpandableSection>
           </section>
 
           {/* ─── REPAIR PROCESS ──────────────────────────── */}
