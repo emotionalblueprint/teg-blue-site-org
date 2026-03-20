@@ -484,7 +484,7 @@ export default function F1EmotionalGradientPage() {
 
               <ol style={orderedListStyle}>
                 <li style={listItemStyle}>
-                  <strong style={{ color: TEXT.primary }}>Signal Detection</strong> — exteroceptive, interoceptive, and memory-based signals arrive continuously through five sensory channels (Eyes, Ears, Nose, Gut, Skin) plus internal and memory-based pathways
+                  <strong style={{ color: TEXT.primary }}>Signal Detection</strong> — exteroceptive, interoceptive, and memory-based signals arrive continuously
                 </li>
                 <li style={listItemStyle}>
                   <strong style={{ color: TEXT.primary }}>Neuroception</strong> — the nervous system evaluates: safe, dangerous, or life-threatening? Based on pattern-matching from past experience, not objective analysis
@@ -499,32 +499,6 @@ export default function F1EmotionalGradientPage() {
                   <strong style={{ color: TEXT.primary }}>Mode Activation</strong> — the system organizes into a safety or threat configuration
                 </li>
               </ol>
-
-              <h4 style={subheadingStyle}>The Five Sensory Channels</h4>
-              <p style={proseStyle}>
-                The signals in step one arrive through five concrete channels, each with its own speed and pathway:
-              </p>
-              <div style={{ overflowX: "auto", marginBottom: 16 }}>
-                <table style={tableStyle}>
-                  <thead>
-                    <tr>
-                      <th style={thStyle}>Channel</th>
-                      <th style={thStyle}>What It Does</th>
-                      <th style={thStyle}>Speed</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <TableRow cells={["Eyes", "Neural tissue — an extension of the brain outside the skull. Scanning for threat-relevant shapes, faces, movement before meaning is assigned.", "Pre-conscious"]} />
-                    <TableRow cells={["Ears", "Direct pathway to the brainstem. Tone of voice, rhythm, sudden sounds processed below awareness before meaning forms.", "Pre-conscious"]} />
-                    <TableRow cells={["Nose", "The only sense with a direct pathway to amygdala and hippocampus without routing through the thalamus. A smell can trigger a full threat or safety response before any thought forms.", "Pre-conscious, fastest"]} />
-                    <TableRow cells={["Gut", "Approximately 100 million neurons. A second nervous system evaluating the internal environment and communicating upward through the vagus nerve. What is called a 'gut feeling' is a nervous system signal.", "Continuous"]} />
-                    <TableRow cells={["Skin", "Touch receptors, temperature, pressure. The body reading its physical environment continuously.", "Continuous"]} />
-                  </tbody>
-                </table>
-              </div>
-              <p style={proseStyle}>
-                All channels arrive simultaneously. The body has already activated the mode before the mind has assembled a coherent thought about what is happening. <Link href="/model/m1-nervous-system-signaling" style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>M1: Nervous System Signaling</Link> details these channels further in the context of the applied model.
-              </p>
 
               <p style={proseStyle}>
                 By the time conscious awareness registers "an emotion," the system has <strong style={{ color: TEXT.primary }}>already acted</strong>. The compass needle has <strong style={{ color: TEXT.primary }}>already moved</strong>. A neutral text arrives. Your system pattern-matches past abandonment. Neuroception flags threat. Emotion signals fear. Protection mobilizes. Your mind then explains the feeling as "they don't care." If restoration completes, you regain nuance and can check reality. If it doesn't, the interpretation <strong style={{ color: TEXT.primary }}>hardens into identity and relationship strategy</strong>. The system is fast by design — evolution solved the survival question by building an embodied evaluation system that orients the organism before conscious awareness begins. The system operates in milliseconds, uses pattern-matching, and prioritizes speed over precision. This is a design feature — speed over precision is the survival trade-off.
@@ -579,7 +553,7 @@ export default function F1EmotionalGradientPage() {
                   Connection Mode — Designed for Sustained Living <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
                 </h4>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                  The system's home configuration — the only mode designed for sustained living. This is not baseline (which is the resting state when nothing is activating) — it is the lowest-activation mode, the configuration the system returns to when activation completes. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
+                  The system's baseline — the mode designed for sustained living. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
                 </p>
               </div>
 
@@ -885,60 +859,6 @@ export default function F1EmotionalGradientPage() {
                 In each case, the mechanism is the same: the system <strong style={{ color: TEXT.primary }}>completing the cycle and coming back</strong>. The difference is the depth of the activation that must resolve. <strong style={{ color: TEXT.primary }}>The deeper the compass moves along the gradient, the more the restoration costs</strong> — and the more the system needs to complete. When it does not, <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link>.
               </p>
 
-              <h4 style={subheadingStyle}>The Four Named Restoration Types</h4>
-              <p style={proseStyle}>
-                Each mode has its own distinct restoration process — with a different mechanism, different conditions, and a different timescale:
-              </p>
-              <div style={{ overflowX: "auto", marginBottom: 16 }}>
-                <table style={tableStyle}>
-                  <thead>
-                    <tr>
-                      <th style={thStyle}>Mode</th>
-                      <th style={thStyle}>Restoration Type</th>
-                      <th style={thStyle}>Mechanism</th>
-                      <th style={thStyle}>Timescale</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <TableRow cells={[
-                      "Connection",
-                      "Maintenance",
-                      "Preventive, not corrective. Ventral vagal tone maintained. Sensory engagement, gentle co-presence, low-demand activity. The system is being tended, not recovered.",
-                      "Continuous",
-                    ]} />
-                    <TableRow cells={[
-                      "Protection",
-                      "Recovery",
-                      "Completing the activation cycle. Sympathetic discharge, cortisol and adrenaline clearing, HPA axis resetting. The body finishes the mobilisation it began.",
-                      "20 min – 2 hrs",
-                    ]} />
-                    <TableRow cells={[
-                      "Control",
-                      "Surrender",
-                      "Releasing cognitive override. The PFC stands down; the emotions that were held surface and move through the system. Cannot happen while still managing.",
-                      "2–8 hrs, often overnight",
-                    ]} />
-                    <TableRow cells={[
-                      "Domination",
-                      "Long Return",
-                      "Extended discharge arc. Full sympathetic discharge over time. Guilt and care chemistry come back online gradually — not on demand.",
-                      "24–72 hrs minimum",
-                    ]} />
-                  </tbody>
-                </table>
-              </div>
-              <p style={proseStyle}>
-                Critical distinctions: <strong style={{ color: TEXT.primary }}>Maintenance is not Recovery</strong> — it is preventive tending, not completing a cycle. <strong style={{ color: TEXT.primary }}>Surrender cannot happen while still managing</strong> — it cannot be scheduled or compressed. <strong style={{ color: TEXT.primary }}>Recovery cannot be accelerated</strong> — interrupting it restarts the clock. <strong style={{ color: TEXT.primary }}>Long Return cannot be rushed</strong> — resonance returns when the system is ready.
-              </p>
-
-              <h4 style={subheadingStyle}>Floor and Ceiling — Why Substitutes Escalate</h4>
-              <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>Relief lowers the ceiling temporarily. Restoration lowers the floor.</strong> In fluid modes, these converge — relief and restoration are the same process. In chronic modes, they split: the ceiling can be lowered by substitutes, but the floor rises over time. The window between floor and ceiling narrows. Increasing doses of substitute are required to produce the same effect from a progressively higher floor.
-              </p>
-              <p style={proseStyle}>
-                This is the mechanism that explains why regulation substitutes escalate. Every substitute described in F3 and F7 follows this pattern: real relief, rising floor, narrowing window. When restoration is unavailable, the nervous system reaches for substitutes — which provide genuine relief but do not lower the floor. The full enumeration of what the nervous system reaches for, per mode, is mapped in <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>M3: Regulation Capacities</Link>.
-              </p>
-
               <ExpandableSection title="A Note on 'Regulation'" type="framework">
                 <p style={expandedProseStyle}>
                   What is commonly called "regulation" encompasses two fundamentally different processes. The first is Biological Restoration — the body completing its own activation cycle and settling back to its designed state. This is a biological process that cannot be forced, does not require cognition, and is cost-free. The second is cognitive management — cognition overriding, suppressing, or controlling the body's emotional signals to produce a state of apparent calm. This is effortful, comes at the cost of emotional truth, and is precisely what F3 describes as false coherence — while the body continues running what M3 calls <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the open cycle</Link> underneath.
@@ -1061,7 +981,7 @@ export default function F1EmotionalGradientPage() {
                   <tbody>
                     <TableRow cells={[
                       "Connection (Pattern A)", "Body-first", "Automatic — safety perceived",
-                      "Engage, relate, repair, learn", "Indefinite — home configuration",
+                      "Engage, relate, repair, learn", "Indefinite — baseline",
                     ]} />
                     <TableRow cells={[
                       "Protection (Pattern B)", "Body-first", "Automatic — threat perceived",
@@ -1080,7 +1000,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the home configuration), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and return to baseline when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
+                In a fluid compass, all four modes are available, all are time-limited (except Connection, which is the baseline), and all are returnable — through Biological Restoration. The needle can go anywhere it needs to go — and come back. <strong style={{ color: TEXT.primary }}>The goal is not to eliminate Control or Domination — the goal is to restore the capacity for Biological Restoration</strong> so the person can use these modes when needed and return to baseline when done, rather than living in them permanently. What makes them chronic is not the modes themselves — it is the developmental conditions that prevented Biological Restoration from ever being learned. That is the subject of F2.
               </p>
 
               <div style={expandableRowStyle}>
@@ -1212,14 +1132,13 @@ export default function F1EmotionalGradientPage() {
                     <TableRow cells={["Disgust", "Protects boundaries; signals contamination", "Dehumanizes; creates othering; justifies exclusion"]} />
                     <TableRow cells={["Curiosity", "Explores; learns; builds understanding", "Becomes surveillance; information-gathering for control"]} />
                     <TableRow cells={["Grief", "Processes what was lost; creates space for what comes next", "Becomes stuck mourning; blocked by false coherence"]} />
-                    <TableRow cells={["Envy", "Detects a gap — turns into admiration and learning; motivates growth", "Becomes chronic comparison; in Control, compulsive competition; in Domination, what is envied must be destroyed"]} />
                   </tbody>
                 </table>
               </div>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The systematic side-by-side comparison across eleven core emotions — including "positive" emotions (joy, love, curiosity) and gap-detection emotions (envy) which most clinical models omit. The diagnostic reframe: "assess mode position, not the emotion" inverts standard clinical practice.
+                  The systematic side-by-side comparison across ten core emotions — including "positive" emotions (joy, love, curiosity) which most clinical models omit. The diagnostic reframe: "assess mode position, not the emotion" inverts standard clinical practice.
                 </p>
               </ExpandableSection>
             </div>

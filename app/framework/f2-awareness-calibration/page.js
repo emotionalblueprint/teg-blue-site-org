@@ -23,7 +23,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Three Capacities at Birth", href: "#capacities-at-birth", description: "What the infant arrives with: Reading Emotions, Emotional Resonance, and Self-Emotional Awareness in proto-form." },
   { label: "Feeling = Being", href: "#pre-sea-condition", description: "Before cognition arrives, there is no observing self. Feeling is being. Feedback is identity." },
   { label: "The Mechanism", href: "#the-mechanism", description: "How each capacity develops through the specific experience of being met by a caregiver who already has that capacity online." },
-  { label: "Designed Development", href: "#designed-development", description: "What the system builds when conditions are met: accurate Reading Emotions (RE), sustainable Emotional Resonance (ER), online Self-Emotional Awareness (SEA), a fluid compass." },
+  { label: "Designed Development", href: "#designed-development", description: "What the system builds when conditions are met: accurate RE, sustainable ER, online SEA, a fluid compass." },
   { label: "The Turn", href: "#the-turn", description: "What happens when the awareness that gets passed is incomplete." },
   { label: "The Stuck Compass", href: "#the-consequence", description: "How threat locks the mode, the mode becomes chronic, cognition builds identity around the locked position." },
   { label: "What Identity Is", href: "#config-mode-identity", description: "Personality is a record, not a type. Configuration, not character." },
@@ -612,67 +612,6 @@ export default function F2AwarenessCalibrationPage() {
                 </p>
               </ExpandableSection>
             </div>
-
-            {/* Chronic Flatness */}
-            <div style={{ marginBottom: 32, marginTop: 24 }}>
-              <h3 id="chronic-flatness" style={conceptHeadingStyle}>
-                Chronic Flatness — When All Three Channels Are at Minimum
-              </h3>
-
-              <p style={proseStyle}>
-                The three conditions describe distortions: Reading Emotions (RE) redirected, Emotional Resonance (ER) flooded or sealed, Self-Emotional Awareness (SEA) suppressed or absent. But when any of these conditions persists severely enough — or when multiple conditions overlap — the system can reach a state that is not distortion but reduction: <strong style={{ color: TEXT.primary }}>Chronic Flatness.</strong>
-              </p>
-              <p style={proseStyle}>
-                Chronic Flatness is all three capacities at baseline minimum as the operating state. The system has reorganised around that level. It is not shutting down — it is running. This is just where it runs. The biology is still generating activation — signals are still firing — but the channels for accessing, expressing, and using that activation are at minimum or offline.
-              </p>
-              <p style={proseStyle}>
-                This is distinct from <strong style={{ color: TEXT.primary }}>Acute Freeze</strong> — a temporary shutdown in response to overwhelm, where all three capacities go offline to survive. Acute Freeze is a state the system enters and can exit. Chronic Flatness is not a state the system entered. It is where the system developed to.
-              </p>
-
-              <div style={{ overflowX: "auto", marginBottom: 16 }}>
-                <table style={tableStyle}>
-                  <thead>
-                    <tr>
-                      <th style={thStyle}>State</th>
-                      <th style={thStyle}>Duration</th>
-                      <th style={thStyle}>Capacities</th>
-                      <th style={thStyle}>Mechanism</th>
-                      <th style={thStyle}>Can Reverse?</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <TableRow cells={[
-                      "Acute Freeze",
-                      "Temporary",
-                      "All offline — emergency shutdown",
-                      "Overwhelm exceeds capacity",
-                      "Yes — when safety returns",
-                    ]} />
-                    <TableRow cells={[
-                      "Chronic Flatness",
-                      "Persistent",
-                      "All at minimum — operating state",
-                      "Cycles never ran; capacities never developed",
-                      "Yes — but requires building, not unblocking",
-                    ]} />
-                  </tbody>
-                </table>
-              </div>
-
-              <p style={proseStyle}>
-                Flatness is not emotional absence. It is the accumulated effect of a system that learned the cycle was not safe to run. The capacities did not break. The conditions that would have developed them never existed — or existed and were withdrawn before the capacities could consolidate.
-              </p>
-              <p style={proseStyle}>
-                The developmental mechanism: a child not regulated with → cycles stay open → no conditions for capacities to develop → the child cannot receive or regulate → the capacities flatten.
-              </p>
-              <p style={proseStyle}>
-                Regulation signature in Chronic Flatness: external or none. The body is still generating activation. There is no internal pathway and no relational pathway. The only available channels are external vehicles — substances, withdrawal, fixated behaviours, compulsive patterns. This connects directly to{" "}
-                <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                  M3's (Regulation Capacities)
-                </Link>{" "}
-                account of regulation substitutes: what the nervous system reaches for when the biological return pathway was never built.
-              </p>
-            </div>
           </section>
 
           {/* ─── THE CONSEQUENCE ──────────────────────────── */}
@@ -1206,7 +1145,7 @@ export default function F2AwarenessCalibrationPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-04",
-            dateModified: "2026-03-19",
+            dateModified: "2026-03-04",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -1277,7 +1216,7 @@ export default function F2AwarenessCalibrationPage() {
               {
                 question: "What does 'awareness teaches awareness' mean?",
                 answer:
-                  "The awareness capacities that caregivers carry are the awareness capacities that get passed to the child. Children calibrate to what adults embody, not what they say. The adults' capacity configuration — their Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — creates the environment the child's awareness develops from.",
+                  "The awareness capacities that caregivers carry are the awareness capacities that get passed to the child. Children calibrate to what adults embody, not what they say. The adults' capacity configuration — their RE, ER, and SEA — creates the environment the child's awareness develops from.",
               },
               {
                 question: "How does generational transmission of emotional patterns work?",
