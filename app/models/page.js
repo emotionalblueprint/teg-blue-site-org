@@ -5,6 +5,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
+  CompassDiagram,
 } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
@@ -109,6 +110,17 @@ export default function ModelsPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ─── COMPASS DIAGRAM (Data Validation) ──────────── */}
+        <section style={{ marginBottom: 48 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+            The Compass in Motion
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: '0 0 16px', maxWidth: 640 }}>
+            The four modes, three awareness capacities, and restoration pathways rendered from root data. Drag the needle to explore each position. Toggle between Fluid and Chronic to see what changes.
+          </p>
+          <CompassDiagram />
         </section>
 
         {/* ─── M1 DETAIL ────────────────────────────────────── */}

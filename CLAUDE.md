@@ -47,7 +47,7 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 
 ## Purpose & Identity
 
-**teg-blue.org** is the academic and practitioner-facing platform for TEG-Blue research. Its audience is researchers, clinicians, and serious practitioners — not the general public (that's teg-blue.com).
+**teg-blue.org** is the academic and practitioner-facing platform for TEG-Blue research. Its audience is researchers, scientists, academics, and practitioners — not the general public (that's teg-blue.com).
 
 All content is designed to be readable by both humans and AI systems.
 
@@ -104,7 +104,7 @@ The term **"Emotional Technology"** was first documented in **September 2025**:
 | Site | Purpose | Audience |
 |------|---------|----------|
 | **teg-blue.com** | Interactive tools & application | Anyone seeking clarity about patterns |
-| **teg-blue.org** | Open science & research | Researchers, academics |
+| **teg-blue.org** | Open science & research | Researchers, scientists, academics, practitioners |
 
 **.com links to .org** for open research, theoretical foundations, publications.
 **.org links to .com** for interactive tools.
@@ -152,7 +152,7 @@ These research traditions developed independently, within separate disciplines, 
 | Nervous system regulation → moral perception | Regulatory state shapes which moral judgments a person makes |
 | Attachment patterns → social stratification | Same protective mechanisms that organize individual identity also organize social hierarchies |
 | Self-protection → domination as continuous gradient | From legitimate self-protection through ego protection through control to domination — with identifiable transition markers |
-| Linguistic complexity → regulatory capacity | Specific linguistic markers indicate capacity to return to Connection |
+| Linguistic complexity → regulatory capacity | Specific linguistic markers indicate capacity to return to baseline |
 
 ---
 

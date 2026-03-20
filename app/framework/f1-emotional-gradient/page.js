@@ -1130,15 +1130,14 @@ export default function F1EmotionalGradientPage() {
                     <TableRow cells={["Shame", "Signals misalignment; motivates repair", "Becomes identity ('I am wrong'); drives hiding, self-punishment"]} />
                     <TableRow cells={["Guilt", "Signals harm done; motivates accountability", "Becomes paralysis; drives excessive self-blame or defensive denial"]} />
                     <TableRow cells={["Disgust", "Protects boundaries; signals contamination", "Dehumanizes; creates othering; justifies exclusion"]} />
-                    <TableRow cells={["Curiosity", "Explores; learns; builds understanding", "Becomes surveillance; information-gathering for control"]} />
-                    <TableRow cells={["Grief", "Processes what was lost; creates space for what comes next", "Becomes stuck mourning; blocked by false coherence"]} />
+                    <TableRow cells={["Envy", "Detects a gap — turns into admiration and learning; motivates growth", "Becomes chronic comparison; in Control, compulsive competition; in Domination, what is envied must be destroyed"]} />
                   </tbody>
                 </table>
               </div>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The systematic side-by-side comparison across ten core emotions — including "positive" emotions (joy, love, curiosity) which most clinical models omit. The diagnostic reframe: "assess mode position, not the emotion" inverts standard clinical practice.
+                  The systematic side-by-side comparison across nine core emotions — each with a distinct nervous system signal — including "positive" emotions (joy, love) and complex social signals (envy, disgust) which most clinical models omit. The diagnostic reframe: "assess mode position, not the emotion" inverts standard clinical practice.
                 </p>
               </ExpandableSection>
             </div>

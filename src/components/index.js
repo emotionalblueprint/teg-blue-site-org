@@ -39,6 +39,7 @@ export { default as DrawsFromPanel } from "./DrawsFromPanel";
 // Visualizations
 export { default as TankDiagram } from "./TankDiagram";
 export { default as CompassBar } from "./CompassBar";
+export { default as CompassDiagram } from "./CompassDiagram";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
 
 // Author
