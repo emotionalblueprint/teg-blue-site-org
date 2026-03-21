@@ -4,3 +4,4 @@ export { default as F1CognitiveUpgradeDiagram } from "./F1CognitiveUpgradeDiagra
 export { default as F1ArchitectureDiagram } from "./F1ArchitectureDiagram";
 export { default as F1FullArcDiagram } from "./F1FullArcDiagram";
 export { default as DiagramToggle } from "./DiagramToggle";
+export { default as EmotionSignalExplorer } from "./EmotionSignalExplorer";

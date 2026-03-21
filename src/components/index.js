@@ -41,6 +41,7 @@ export { default as TankDiagram } from "./TankDiagram";
 export { default as CompassBar } from "./CompassBar";
 export { default as CompassDiagram } from "./CompassDiagram";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
+export { default as EmotionSignalExplorer } from "./framework-diagrams/EmotionSignalExplorer";
 
 // Author
 export { default as AuthorBlock } from "./AuthorBlock";

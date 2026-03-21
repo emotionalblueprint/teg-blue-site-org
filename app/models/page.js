@@ -149,6 +149,12 @@ export default function ModelsPage() {
           <QuoteBlock>
             A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and return to baseline.
           </QuoteBlock>
+          <p style={{ ...bodyStyle, marginTop: 12, fontSize: 13 }}>
+            <Link href="/model/m1-emotions-as-signals" style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>
+              Emotions as Signals &rarr;
+            </Link>
+            {" "}— the nine emotions mapped as biological signals: what each one detects, what the body does, and what completes the cycle.
+          </p>
           <StatusBadge status="Proposed model with early evidence" color={SPECTRUM.azure} />
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
             See <Link href="/publications" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Publications</Link> for what is currently tested.

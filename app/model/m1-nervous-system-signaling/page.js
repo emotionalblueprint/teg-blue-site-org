@@ -199,6 +199,13 @@ export default function M1InnerCompassPage() {
                 </p>
               </ExpandableSection>
             </div>
+
+            <p style={{ ...proseStyle, fontSize: 13 }}>
+              <Link href="/model/m1-emotions-as-signals" style={{ color: MODEL_COLOR, textDecoration: "none", fontWeight: 500 }}>
+                Emotions as Signals &rarr;
+              </Link>
+              {" "}— all nine emotions mapped as biological signals: what each one detects, what the body does, and what completes the cycle.
+            </p>
           </section>
 
           {/* ─── CONCEPT 2: SAFETY ORIENTATION ──────────── */}
@@ -1378,6 +1385,11 @@ export default function M1InnerCompassPage() {
                   </tr>
                 </thead>
                 <tbody>
+                  <NavRow
+                    label="See the nine emotions mapped as biological signals"
+                    href="/model/m1-emotions-as-signals"
+                    linkText="Emotions as Signals &rarr;"
+                  />
                   <NavRow
                     label="Understand what determines how well the compass works"
                     href="/model/m2-three-awareness-capacities"

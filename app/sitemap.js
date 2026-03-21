@@ -13,6 +13,7 @@ const PAGE_DATES = {
   '/ai-safety': '2026-02-15',
   '/models': '2026-03-05',
   '/model/m1-nervous-system-signaling': '2026-03-05',
+  '/model/m1-emotions-as-signals': '2026-03-21',
   '/model/m2-three-awareness-capacities': '2026-03-05',
   '/model/m3-regulation-capacities': '2026-03-17',
   '/glossary': '2026-02-15',
@@ -99,6 +100,12 @@ export default function sitemap() {
       lastModified: new Date(PAGE_DATES['/model/m1-nervous-system-signaling']),
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/model/m1-emotions-as-signals`,
+      lastModified: new Date(PAGE_DATES['/model/m1-emotions-as-signals']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/model/m2-three-awareness-capacities`,
