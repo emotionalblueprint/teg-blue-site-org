@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import {
   FONT, TEXT, BG, BORDER,
-  PATTERN, PATTERN_GRADIENT, MODE_ORANGE, hexToRgba,
+  PATTERN, PATTERN_GRADIENT, hexToRgba,
 } from "@/src/styles/tokens";
 
 // ─── MODE DATA ──────────────────────────────────────────
@@ -30,23 +30,6 @@ const MODES = [
         { name: "Relational", text: "Full — repair, vulnerability, trust" },
       ],
     },
-    chronic: {
-      fullName: "Chronic Connection",
-      pattern: "Pattern A",
-      type: "SEA offline",
-      duration: "Permanent — the only mode the system knows",
-      distortion: "I feel bad → I caused it → I must fix myself",
-      description:
-        "Permanent appeasement. Cannot say no, cannot feel anger, cannot set a boundary. Emotional Resonance is flooded — the person feels everything everyone around them feels. Self-Emotional Awareness is gone. Looks like healthy Connection from the outside.",
-      insight:
-        "Chronic Connection is as damaging as chronic Domination — the damage just goes in a different direction",
-      capacities: [
-        { name: "Perception", text: "Compulsive scanning — locked outward" },
-        { name: "Cognition", text: "Self-blame loops — always my fault" },
-        { name: "Learning", text: "Blocked — self-erasure prevents growth" },
-        { name: "Relational", text: "Self-abandoning — love as merger" },
-      ],
-    },
   },
   {
     key: "B",
@@ -67,23 +50,6 @@ const MODES = [
         { name: "Cognition", text: "Simplified — binary thinking" },
         { name: "Learning", text: "Reduced" },
         { name: "Relational", text: "Limited — vulnerability dangerous" },
-      ],
-    },
-    chronic: {
-      fullName: "Chronic Protection",
-      pattern: "Pattern B",
-      type: "SEA offline",
-      duration: "Permanent alert — alarm never switches off",
-      distortion: "I feel bad → you're threatening me → I must defend",
-      description:
-        "Permanent vigilance. The nervous system never received the signal that the threat has passed. Approach-avoidance cycling — wanting connection but reading it as dangerous. The body running on emergency fuel indefinitely.",
-      insight:
-        "Hypervigilance is not anxiety as a personality trait — it is a compass stuck in Protection",
-      capacities: [
-        { name: "Perception", text: "Threat-biased — danger everywhere" },
-        { name: "Cognition", text: "Binary — black-and-white thinking" },
-        { name: "Learning", text: "Blocked — safety never trusted" },
-        { name: "Relational", text: "Approach-avoidance — wants but can't trust" },
       ],
     },
   },
@@ -108,23 +74,6 @@ const MODES = [
         { name: "Relational", text: "Managed — relationships serve strategy" },
       ],
     },
-    chronic: {
-      fullName: "Chronic Control",
-      pattern: "Pattern C",
-      type: "SEA offline",
-      duration: "Permanent override — cognitive control is identity",
-      distortion: "I feel bad → you're destabilising me → I must manage you",
-      description:
-        "Permanent management. Strategic warmth, managed closeness, performed empathy. The person looks functional — often more than functional. But closeness is managed rather than felt. Vulnerability is performed rather than experienced.",
-      insight:
-        "The mode that most reliably mimics Connection — making the stuckness invisible",
-      capacities: [
-        { name: "Perception", text: "Instrumental — reads for advantage" },
-        { name: "Cognition", text: "Strategic — management is identity" },
-        { name: "Learning", text: "Selective — only what serves control" },
-        { name: "Relational", text: "Conditional — all love transactional" },
-      ],
-    },
   },
   {
     key: "D",
@@ -147,24 +96,52 @@ const MODES = [
         { name: "Relational", text: "Absent — others are resources or threats" },
       ],
     },
-    chronic: {
-      fullName: "Chronic Domination",
-      pattern: "Pattern D",
-      type: "SEA offline",
-      duration: "Permanent extreme — power is the only safety",
-      distortion: "I feel bad → you're challenging me → I must eliminate",
-      description:
-        "Permanent override. Empathy collapsed or weaponised. Tolerance builds — what produced safety yesterday requires more force today. The person has lost the experience of the cost.",
-      insight:
-        "The person does not feel the weight of what they are doing because the weight has become who they believe they are",
-      capacities: [
-        { name: "Perception", text: "Weaponised — reads to exploit" },
-        { name: "Cognition", text: "Locked — rigid, self-confirming" },
-        { name: "Learning", text: "Unavailable — nothing penetrates" },
-        { name: "Relational", text: "Absent — others are resources or threats" },
-      ],
-    },
   },
+];
+
+// ─── EVENTS & EMOTIONS ─────────────────────────────────
+
+const EVENTS = [
+  {
+    signal: "Safety",
+    event: "A close friend shares something they've been carrying — you feel genuine warmth",
+    emotion: "Joy",
+    modeIndex: 0,
+  },
+  {
+    signal: "Threat",
+    event: "A car swerves toward you on the highway",
+    emotion: "Fear",
+    modeIndex: 1,
+  },
+  {
+    signal: "Danger",
+    event: "Your boss takes credit for your work — again",
+    emotion: "Anger",
+    modeIndex: 2,
+  },
+  {
+    signal: "Life peril",
+    event: "You discover someone in authority has been harming those in their care",
+    emotion: "Disgust",
+    modeIndex: 3,
+  },
+];
+
+const EMOTIONS = [
+  // Connection — safety signals + repair drive
+  { name: "Joy",     modeIndex: 0 },
+  { name: "Love",    modeIndex: 0 },
+  { name: "Guilt",   modeIndex: 0 },
+  // Protection — threat mobilization + loss withdrawal
+  { name: "Fear",    modeIndex: 1 },
+  { name: "Sadness", modeIndex: 1 },
+  // Control — cognitive management signals
+  { name: "Anger",   modeIndex: 2 },
+  { name: "Shame",   modeIndex: 2 },
+  { name: "Envy",    modeIndex: 2 },
+  // Domination — elimination signal
+  { name: "Disgust", modeIndex: 3 },
 ];
 
 // ─── CONSTANTS ──────────────────────────────────────────
@@ -191,11 +168,18 @@ function snapToCenter(pos) {
 
 export default function FluidCompassExplorer() {
   const [position, setPosition] = useState(0.125);
-  const [isStuck, setIsStuck] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [connectors, setConnectors] = useState(null);
+  const containerRef = useRef(null);
   const barRef = useRef(null);
+  const eventCardRefs = useRef([]);
+  const emotionPillRefs = useRef({});
   const isDragging = useRef(false);
   const activeMode = getActiveMode(position);
-  const data = isStuck ? activeMode.chronic : activeMode.fluid;
+  const data = activeMode.fluid;
+
+  // Derive highlighted emotion from selected event
+  const activeEvent = selectedEvent !== null ? EVENTS[selectedEvent] : null;
 
   const updatePosition = useCallback((clientX) => {
     if (!barRef.current) return;
@@ -207,6 +191,7 @@ export default function FluidCompassExplorer() {
   const handlePointerDown = useCallback(
     (e) => {
       isDragging.current = true;
+      setSelectedEvent(null);
       e.currentTarget.setPointerCapture(e.pointerId);
       updatePosition(e.clientX);
     },
@@ -226,6 +211,7 @@ export default function FluidCompassExplorer() {
 
   const handleSliderKeyDown = useCallback((e) => {
     const step = 0.05;
+    setSelectedEvent(null);
     if (e.key === "ArrowRight" || e.key === "ArrowUp") {
       e.preventDefault();
       setPosition((prev) => snapToCenter(Math.min(1, prev + step)));
@@ -241,9 +227,58 @@ export default function FluidCompassExplorer() {
     }
   }, []);
 
+  const handleEventClick = useCallback((eventIndex) => {
+    setSelectedEvent(eventIndex);
+    setPosition(MODES[EVENTS[eventIndex].modeIndex].center);
+  }, []);
+
+  // Measure connector line positions
+  useEffect(() => {
+    if (selectedEvent === null || !containerRef.current) {
+      setConnectors(null);
+      return;
+    }
+
+    const measure = () => {
+      const evt = EVENTS[selectedEvent];
+      const cEl = containerRef.current;
+      const evEl = eventCardRefs.current[selectedEvent];
+      const emEl = emotionPillRefs.current[evt.emotion];
+      const bEl = barRef.current;
+
+      if (!cEl || !evEl || !emEl || !bEl) return;
+
+      const c = cEl.getBoundingClientRect();
+      const ev = evEl.getBoundingClientRect();
+      const em = emEl.getBoundingClientRect();
+      const b = bEl.getBoundingClientRect();
+
+      setConnectors({
+        x1: ev.left + ev.width / 2 - c.left,
+        y1: ev.bottom - c.top,
+        x2: em.left + em.width / 2 - c.left,
+        y2: em.top - c.top,
+        x3: em.left + em.width / 2 - c.left,
+        y3: em.bottom - c.top,
+        x4: b.left + MODES[evt.modeIndex].center * b.width - c.left,
+        y4: b.top + b.height / 2 - c.top,
+        color: MODES[evt.modeIndex].hex,
+      });
+    };
+
+    const raf = requestAnimationFrame(measure);
+    window.addEventListener("resize", measure);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", measure);
+    };
+  }, [selectedEvent]);
+
   return (
     <div
+      ref={containerRef}
       style={{
+        position: "relative",
         margin: "32px 0",
         borderRadius: 12,
         border: `1px solid ${hexToRgba(activeMode.hex, 0.2)}`,
@@ -252,106 +287,222 @@ export default function FluidCompassExplorer() {
         transition: "border-color 300ms ease, background 300ms ease",
       }}
     >
+      {/* ─── SVG Connector Lines ─────────────── */}
+      {connectors && (
+        <svg
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            pointerEvents: "none",
+            zIndex: 1,
+          }}
+        >
+          <defs>
+            <filter
+              id="connector-glow"
+              x="-20%"
+              y="-20%"
+              width="140%"
+              height="140%"
+            >
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="3"
+                result="blur"
+              />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          {/* Event card → Emotion pill */}
+          <path
+            d={`M ${connectors.x1},${connectors.y1} C ${connectors.x1},${
+              connectors.y1 + (connectors.y2 - connectors.y1) * 0.5
+            } ${connectors.x2},${
+              connectors.y2 - (connectors.y2 - connectors.y1) * 0.5
+            } ${connectors.x2},${connectors.y2}`}
+            stroke={connectors.color}
+            strokeWidth={1.5}
+            fill="none"
+            opacity={0.45}
+            filter="url(#connector-glow)"
+          />
+          {/* Emotion pill → Mode position */}
+          <path
+            d={`M ${connectors.x3},${connectors.y3} C ${connectors.x3},${
+              connectors.y3 + (connectors.y4 - connectors.y3) * 0.5
+            } ${connectors.x4},${
+              connectors.y4 - (connectors.y4 - connectors.y3) * 0.5
+            } ${connectors.x4},${connectors.y4}`}
+            stroke={connectors.color}
+            strokeWidth={1.5}
+            fill="none"
+            opacity={0.45}
+            filter="url(#connector-glow)"
+          />
+        </svg>
+      )}
+
       {/* ─── Header ────────────────────────────── */}
       <div
         style={{
-          padding: "16px 20px 0",
+          padding: "20px 20px 0",
           display: "flex",
-          alignItems: "center",
           justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: 10,
+          gap: 16,
         }}
       >
-        {/* Badge */}
-        <span
-          style={{
-            fontSize: 10,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            color: activeMode.hex,
-            padding: "3px 8px",
-            borderRadius: 100,
-            background: hexToRgba(activeMode.hex, 0.12),
-            border: `1px solid ${hexToRgba(activeMode.hex, 0.25)}`,
-            transition: "all 300ms ease",
-          }}
-        >
-          {isStuck ? "Stuck Compass" : "Fluid Compass"}
-        </span>
-
-        {/* Toggle + instruction */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          {/* Fluid / Stuck toggle */}
+        <div>
           <div
             style={{
-              display: "flex",
-              borderRadius: 100,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
+              fontSize: 18,
+              fontWeight: 700,
+              color: TEXT.primary,
+              lineHeight: 1.2,
+              marginBottom: 8,
             }}
           >
-            <button
-              onClick={() => setIsStuck(false)}
-              aria-label="Show fluid compass (healthy movement)"
-              aria-pressed={!isStuck}
-              style={{
-                padding: "4px 12px",
-                fontSize: 10,
-                fontFamily: FONT.mono,
-                fontWeight: 600,
-                letterSpacing: "0.04em",
-                border: "none",
-                cursor: "pointer",
-                transition: "all 200ms ease",
-                background: !isStuck
-                  ? hexToRgba(activeMode.hex, 0.15)
-                  : "transparent",
-                color: !isStuck ? activeMode.hex : TEXT.muted,
-              }}
-            >
-              Fluid
-            </button>
-            <button
-              onClick={() => setIsStuck(true)}
-              aria-label="Show stuck compass (chronic pattern)"
-              aria-pressed={isStuck}
-              style={{
-                padding: "4px 12px",
-                fontSize: 10,
-                fontFamily: FONT.mono,
-                fontWeight: 600,
-                letterSpacing: "0.04em",
-                border: "none",
-                borderLeft: `1px solid ${BORDER.default}`,
-                cursor: "pointer",
-                transition: "all 200ms ease",
-                background: isStuck
-                  ? hexToRgba(activeMode.hex, 0.15)
-                  : "transparent",
-                color: isStuck ? activeMode.hex : TEXT.muted,
-              }}
-            >
-              Stuck
-            </button>
+            How We Respond
           </div>
-
-          <span
+          <div
             style={{
-              fontSize: 11,
-              color: TEXT.muted,
-              fontFamily: FONT.mono,
+              fontSize: 13,
+              color: TEXT.secondary,
+              lineHeight: 1.6,
+              maxWidth: 480,
             }}
           >
-            Drag to explore
-          </span>
+            We perceive an event. An emotion fires. The nervous system activates
+            the mode designed for that level of threat.
+          </div>
         </div>
+        <span
+          style={{
+            fontSize: 11,
+            color: TEXT.muted,
+            fontFamily: FONT.mono,
+            whiteSpace: "nowrap",
+            flexShrink: 0,
+            alignSelf: "flex-start",
+            marginTop: 2,
+          }}
+        >
+          Click an event to trace the chain
+        </span>
+      </div>
+
+      {/* ─── Event Row ─────────────────────────── */}
+      <div
+        style={{
+          padding: "20px 20px 0",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 8,
+        }}
+      >
+        {EVENTS.map((evt, i) => {
+          const mode = MODES[evt.modeIndex];
+          const isActive = selectedEvent === i;
+          return (
+            <button
+              key={evt.signal}
+              ref={(el) => { eventCardRefs.current[i] = el; }}
+              onClick={() => handleEventClick(i)}
+              style={{
+                padding: "10px 12px",
+                borderRadius: 8,
+                border: `1px solid ${
+                  isActive
+                    ? hexToRgba(mode.hex, 0.5)
+                    : BORDER.default
+                }`,
+                background: isActive
+                  ? hexToRgba(mode.hex, 0.06)
+                  : "transparent",
+                cursor: "pointer",
+                textAlign: "left",
+                opacity: selectedEvent !== null && !isActive ? 0.4 : 1,
+                transition: "all 250ms ease",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 10,
+                  fontFamily: FONT.mono,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: isActive ? mode.hex : TEXT.muted,
+                  marginBottom: 4,
+                  transition: "color 250ms ease",
+                }}
+              >
+                {evt.signal}
+              </div>
+              <div
+                style={{
+                  fontSize: 12,
+                  color: TEXT.secondary,
+                  lineHeight: 1.5,
+                }}
+              >
+                {evt.event}
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ─── Emotion Row ─────────────────────────── */}
+      <div
+        style={{
+          padding: "20px 20px",
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 6,
+        }}
+      >
+        {EMOTIONS.map((emotion) => {
+          const isHighlighted =
+            activeEvent !== null && activeEvent.emotion === emotion.name;
+          const modeHex = MODES[emotion.modeIndex].hex;
+          return (
+            <span
+              key={emotion.name}
+              ref={(el) => { emotionPillRefs.current[emotion.name] = el; }}
+              style={{
+                fontSize: 11,
+                fontFamily: FONT.mono,
+                fontWeight: isHighlighted ? 600 : 400,
+                padding: "3px 10px",
+                borderRadius: 100,
+                color: isHighlighted ? modeHex : TEXT.muted,
+                background: isHighlighted
+                  ? hexToRgba(modeHex, 0.12)
+                  : "transparent",
+                border: `1px solid ${
+                  isHighlighted
+                    ? hexToRgba(modeHex, 0.25)
+                    : BORDER.default
+                }`,
+                opacity: selectedEvent !== null && !isHighlighted ? 0.4 : 1,
+                transition: "all 250ms ease",
+              }}
+            >
+              {emotion.name}
+            </span>
+          );
+        })}
       </div>
 
       {/* ─── Gradient Bar ──────────────────────── */}
-      <div style={{ padding: "16px 20px 0" }}>
+      <div style={{ padding: "4px 20px 0" }}>
         <div
           role="slider"
           tabIndex={0}
@@ -410,6 +561,7 @@ export default function FluidCompassExplorer() {
                 backgroundColor: BG.primary,
                 border: `3px solid ${activeMode.hex}`,
                 boxShadow: `0 0 16px ${activeMode.hex}80`,
+                zIndex: 2,
                 transition:
                   "border-color 200ms ease, box-shadow 200ms ease",
               }}
@@ -475,16 +627,11 @@ export default function FluidCompassExplorer() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              color: isStuck ? MODE_ORANGE : TEXT.muted,
+              color: TEXT.muted,
               padding: "2px 8px",
               borderRadius: 100,
-              background: isStuck
-                ? hexToRgba(MODE_ORANGE, 0.1)
-                : BG.surface,
-              border: `1px solid ${
-                isStuck ? hexToRgba(MODE_ORANGE, 0.25) : BORDER.default
-              }`,
-              transition: "all 300ms ease",
+              background: BG.surface,
+              border: `1px solid ${BORDER.default}`,
             }}
           >
             {data.type}
@@ -543,7 +690,7 @@ export default function FluidCompassExplorer() {
           </span>
         </div>
 
-        {/* Sequence (fluid) or Distortion (stuck) */}
+        {/* Sequence */}
         <div
           style={{
             marginBottom: 16,
@@ -560,23 +707,21 @@ export default function FluidCompassExplorer() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              color: isStuck ? MODE_ORANGE : TEXT.muted,
-              transition: "color 300ms ease",
+              color: TEXT.muted,
             }}
           >
-            {isStuck ? "Distortion" : "Sequence"}
+            Sequence
           </span>
           <span
             style={{
               fontSize: 12,
               fontFamily: FONT.mono,
               fontWeight: 600,
-              color: isStuck ? TEXT.secondary : activeMode.hex,
-              fontStyle: isStuck ? "italic" : "normal",
+              color: activeMode.hex,
               transition: "color 300ms ease",
             }}
           >
-            {isStuck ? data.distortion : data.sequence}
+            {data.sequence}
           </span>
         </div>
 
