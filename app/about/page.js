@@ -20,7 +20,7 @@ const FAQ_ITEMS = [
 
 const SIDEBAR_SECTIONS = [
   { label: "Two Sites", href: "#two-sites", description: "What is the difference between teg-blue.org (open science) and teg-blue.com (interactive tools)." },
-  { label: "Who Created TEG-Blue?", href: "#the-founder", description: "Anna Paretas-Artacho — how TEG-Blue started, the empirical validation, and the research approach." },
+  { label: "Who Created TEG-Blue?", href: "#the-founder", description: "The creator and current state of empirical validation." },
   { label: "Research Identity", href: "#research-identity", description: "Open science, testable claims, invited corrections. What TEG-Blue is and is not." },
   { label: "Navigation", href: "#navigation", description: "Where to go next depending on what you need." },
 ];
@@ -170,24 +170,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <h3 style={subsectionHeading}>How it started</h3>
-          <p style={bodyStyle}>
-            TEG-Blue began with a single visual question: could Polyvagal Theory — Stephen Porges&apos; account of the nervous system&apos;s continuous orientation between safety and threat — be made into a navigable tool? The Inner Compass and the Four-Mode Gradient were the first answer. A needle. Four positions. Safety and threat as the poles.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            But explaining what Protection and Connection actually meant required more context than a model could hold. That context became Framework 1 — the biological foundation of the gradient, the nervous system&apos;s signalling language, the designed return.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            From there, each framework followed the research tradition that explained the next layer. Framework 2 drew from Internal Family Systems and Winnicott&apos;s True and False Self — the developmental account of how access to one&apos;s own emotional signal fails to form. Framework 3 drew from cognitive dissonance theory, psychoanalytic defense mechanisms, and Goffman&apos;s dramaturgical self — the architecture of false coherence, how identity forms around a stuck compass to make the stuckness invisible. Building that framework required connecting the nervous system state map to what psychology calls narcissism, the dark triad, and coercive control — not as personality categories but as gradient positions.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            One by one, each framework was built to explain a different layer of the same question: why does the nervous system lose its capacity to return? When the twelve frameworks were placed together, something that had not been visible in any single research tradition became visible across all of them: a gradient. A single continuous arc from biological regulation through developmental failure through cognitive replacement through collective systems — all the way to domination and back.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            The gradient was not designed. It emerged from following the evidence one layer at a time.
-          </p>
-
-          <h3 style={{ ...subsectionHeading, marginTop: 24 }}>Empirical validation</h3>
+          <h3 style={subsectionHeading}>Empirical validation</h3>
           <p style={bodyStyle}>
             TEG-Blue&apos;s validation study — a computational analysis of 10,000+ natural conflict narratives — was conducted as an initial empirical test of the Four-Mode Gradient&apos;s detectability in unstructured text, yielding inter-rater reliability of &kappa;=0.74. This is a beginning, not a conclusion. Five open research questions and four research directions are documented in the{" "}
             <Link href="/research-entry" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
