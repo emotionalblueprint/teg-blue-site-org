@@ -4,11 +4,12 @@ import {
   MODE_ORANGE, MODE_PINK,
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
+import { SiteHeader, SiteFooter, PageLayout, FluidCompassExplorer } from "@/src/components";
 import CompassBar from "@/src/components/CompassBar";
 
 const SIDEBAR_SECTIONS = [
   { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns.", href: "#design-tokens" },
+  { label: "Fluid Compass Explorer", description: "Interactive explorer pattern — gradient bar with mode-reactive content panel.", href: "#fluid-compass-explorer" },
   { label: "Section Separators", description: "One gradient style in three thicknesses.", href: "#section-separators" },
   { label: "Page Navigator", description: "Sticky sidebar with anchor links and section descriptions.", href: "#page-navigator" },
 ];
@@ -572,7 +573,166 @@ export default function DesignSystemPage() {
           <CompassBar />
         </section>
 
-        {/* ─── 12. SECTION SEPARATORS ────────────────────── */}
+        {/* ─── 12. FLUID COMPASS EXPLORER ────────────────── */}
+        <section id="fluid-compass-explorer" style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Fluid Compass Explorer</SectionTitle>
+          <p style={{
+            fontSize: TYPE_SCALE.body.size,
+            lineHeight: TYPE_SCALE.body.lineHeight,
+            color: TEXT.secondary,
+            marginBottom: 32,
+          }}>
+            The full interactive explorer pattern — gradient bar with mode-reactive content panel.
+            Used on model pages (M1). Combines a draggable slider with a dynamic content area
+            that updates based on position and fluid/stuck state.
+          </p>
+
+          {/* Live example */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              Live Component
+            </p>
+            <FluidCompassExplorer />
+          </div>
+
+          {/* Pattern structure */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>
+              Pattern Structure
+            </p>
+            <pre style={{
+              fontFamily: FONT.mono,
+              fontSize: 12,
+              lineHeight: 1.6,
+              color: TEXT.secondary,
+              whiteSpace: "pre-wrap",
+            }}>
+{`┌─────────────────────────────────────────────────┐
+│  WRAPPER — rounded container, mode-colored      │
+│  border (20% opacity) + tinted bg (3% opacity)  │
+│                                                   │
+│  ┌─── HEADER ──────────────────────────────────┐ │
+│  │  [Badge Pill]          [Toggle] [Hint text] │ │
+│  └─────────────────────────────────────────────┘ │
+│                                                   │
+│  ┌─── GRADIENT BAR ───────────────────────────┐  │
+│  │  ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │  │
+│  │  Connection  Protection  Control  Domination│  │
+│  └─────────────────────────────────────────────┘  │
+│                                                   │
+│  ┌─── CONTENT AREA ───────────────────────────┐  │
+│  │  Mode Title  [Type Pill]                    │  │
+│  │  Pattern A · Duration text                  │  │
+│  │                                             │  │
+│  │  Description paragraph (max-width 640)      │  │
+│  │                                             │  │
+│  │  ┃ Insight quote (left border)              │  │
+│  │                                             │  │
+│  │  SEQUENCE  Engage → Relate → Repair → Learn │  │
+│  │                                             │  │
+│  │  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐       │  │
+│  │  │ Cap1 │ │ Cap2 │ │ Cap3 │ │ Cap4 │       │  │
+│  │  └──────┘ └──────┘ └──────┘ └──────┘       │  │
+│  └─────────────────────────────────────────────┘  │
+└───────────────────────────────────────────────────┘`}
+            </pre>
+          </div>
+
+          {/* Token specs */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>
+              Token Specs
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {[
+                ["Wrapper", "border-radius: 12px · border: 1px mode hex at 20% · bg: mode hex at 3%"],
+                ["Badge pill", "10px mono 700 uppercase · mode-colored · 12% bg + 25% border · border-radius: 100"],
+                ["Toggle", "10px mono 600 · pill shape · active: 15% bg + mode color · inactive: transparent + TEXT.muted"],
+                ["Hint text", "11px mono · TEXT.muted"],
+                ["Bar", "14px height · rounded 7px · 4-color gradient · 15px touch padding"],
+                ["Needle", "28px circle · BG.primary fill · 3px mode-colored border · 16px glow at 50% opacity"],
+                ["Zone dividers", "3px wide · rgba(0,0,0,0.6) · at 25%, 50%, 75%"],
+                ["Mode labels", "11px mono · active: 700 weight + mode color · inactive: 400 weight + 35% opacity"],
+                ["Mode title", "18px 700 · mode-colored"],
+                ["Type pill", "10px mono 600 uppercase · BG.surface bg · BORDER.default · stuck: MODE_ORANGE + 10% bg + 25% border"],
+                ["Metadata", "12px mono · TEXT.muted · items separated by dot"],
+                ["Description", "14px · TEXT.secondary · line-height 1.7 · max-width 640px"],
+                ["Insight quote", "13px 500 italic · TEXT.primary · 3px left border in mode color · 6% bg · radius: 0 6px 6px 0"],
+                ["Sequence label", "10px mono 600 uppercase · TEXT.muted (fluid) or MODE_ORANGE (stuck)"],
+                ["Sequence value", "12px mono 600 · mode-colored (fluid) or italic TEXT.secondary (stuck)"],
+                ["Capacity cards", "grid auto-fit minmax(150px, 1fr) · gap: 8px · 10px 12px padding · 8px radius"],
+                ["Card title", "11px mono 700 uppercase · mode-colored · 0.04em tracking"],
+                ["Card value", "12px · TEXT.secondary · line-height 1.5"],
+                ["Transitions", "200ms (thumb, labels) · 300ms (wrapper, content, colors)"],
+                ["Snap magnet", "4% radius at each mode center (12.5%, 37.5%, 62.5%, 87.5%)"],
+              ].map(([label, value]) => (
+                <div key={label} style={{ display: "flex", gap: 12, alignItems: "baseline" }}>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: TYPE_SCALE.micro.size,
+                    color: TEXT.hint,
+                    letterSpacing: TYPE_SCALE.micro.tracking,
+                    minWidth: 120,
+                    flexShrink: 0,
+                  }}>
+                    {label}
+                  </span>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: TYPE_SCALE.micro.size,
+                    color: TEXT.muted,
+                    letterSpacing: TYPE_SCALE.micro.tracking,
+                  }}>
+                    {value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 13. SECTION SEPARATORS ────────────────────── */}
         <section id="section-separators" style={{ marginBottom: SPACING.sectionGap.desktop }}>
           <SectionTitle>Section Separators</SectionTitle>
           <p style={{
