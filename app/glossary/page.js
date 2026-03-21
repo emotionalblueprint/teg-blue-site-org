@@ -77,7 +77,7 @@ const GLOSSARY_TERMS = [
     type: "reframe",
     status: "proposed",
     commonUnderstanding: "Low self-esteem, conflict avoidance — being too nice for your own good.",
-    definition: "Stuck Connection scanning — the scanner filters out own needs, amplifies others' discomfort, reads any tension as 'I caused this.' ER (Emotional Resonance) lands somatically; no SEA (Self-Emotional Awareness) to notice the filtering. The system regulates by managing others' states.",
+    definition: "Chronic Connection scanning — the scanner filters out own needs, amplifies others' discomfort, reads any tension as 'I caused this.' ER (Emotional Resonance) lands somatically; no SEA (Self-Emotional Awareness) to notice the filtering. The system regulates by managing others' states.",
     tags: ["F1", "reframe", "regulatory-state"],
     framework: 1,
   },

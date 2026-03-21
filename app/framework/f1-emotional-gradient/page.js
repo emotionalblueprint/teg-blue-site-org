@@ -165,7 +165,7 @@ export default function F1EmotionalGradientPage() {
               {
                 title: "People-Pleasing",
                 commonUnderstanding: "Low self-esteem, conflict avoidance — being too nice for your own good.",
-                definition: "Stuck Connection scanning — the scanner filters out own needs, amplifies others' discomfort, reads any tension as 'I caused this.' ER (Emotional Resonance) lands somatically; no SEA (Self-Emotional Awareness) to notice the filtering. The system regulates by managing others' states.",
+                definition: "Chronic Connection scanning — the scanner filters out own needs, amplifies others' discomfort, reads any tension as 'I caused this.' ER (Emotional Resonance) lands somatically; no SEA (Self-Emotional Awareness) to notice the filtering. The system regulates by managing others' states.",
               },
               {
                 title: "Emotional Exhaustion",

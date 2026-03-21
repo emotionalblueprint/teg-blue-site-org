@@ -1,14 +1,14 @@
 /**
  * Compass Diagram — Structured Data
  *
- * Single data file derived from all 5 root files in teg-blue-vault/data-source-update/.
+ * Single data file derived from all 5 root files in teg-blue-vault/data-source/root/.
  * Every field has a source comment tracing back to the root.
  *
  * Sources:
  *   root--mode-positions.md       → MODES, perception labels, activation types
  *   root--awareness-capacities.md → CAPACITIES (RE, ER, SEA levels + labels)
  *   root--biological-restoration.md → RESTORATION (fluid names/timescales, chronic substitutes)
- *   root--emotions-as-signals.md  → (reserved for Phase 5 emotion triggers)
+ *   root--emotions-as-signals.md  → EMOTIONS (9 signals, body responses, gradient behaviour)
  *   root--master-table.md         → RULES (structural rules governing display)
  */
 
@@ -55,6 +55,159 @@ export const MODES = [
     activation: 'Cognitive',
     arc: 'Override → Eliminate → Secure',
     chronicArc: 'Constant Life Peril → Eliminate → Tyranny',
+  },
+];
+
+// ─── EMOTIONS ──────────────────────────────────────────────────────
+// Source: root--emotions-as-signals.md
+// 9 canonical emotions. Each carries a specific nervous system signal.
+// defaultMode = which mode this emotion typically activates in a fluid compass.
+// type = somatic (can complete through body alone) | relational (requires co-regulation).
+
+export const EMOTIONS = [
+  {
+    key: 'fear',
+    name: 'Fear',
+    signal: 'Threat detected',
+    bodyResponse: 'Sympathetic activation — heart rate rises, muscles tense, sensory acuity sharpens',
+    completionNeeds: 'Threat must resolve — danger passes, person acts, or safety established',
+    type: 'somatic',
+    defaultMode: 'protection',
+    gradient: {
+      fluid: 'Reads real threat, mobilises proportionally, completes when threat passes',
+      chronicConnection: 'Rerouted into hypervigilant caretaking — expressed as attentiveness, not felt as fear',
+      chronicProtection: 'Permanent anxiety — fear signal never resolves, experienced as realism',
+      chronicControl: 'Intercepted by PFC, converted into strategic action — experienced as need to manage',
+      chronicDomination: 'Present but experienced as strength, certainty, decisiveness — most invisible fear',
+    },
+  },
+  {
+    key: 'anger',
+    name: 'Anger',
+    signal: 'Boundary crossed',
+    bodyResponse: 'Sympathetic activation directed outward — energy toward confrontation, assertion, correction',
+    completionNeeds: 'Boundary must be reasserted or acknowledged — through communication, action, or change',
+    type: 'somatic',
+    defaultMode: 'protection',
+    gradient: {
+      fluid: 'Signals real boundary crossing, person responds proportionally, repair possible',
+      chronicConnection: 'Rerouted into guilt — anger forbidden, converts to self-blame before forming',
+      chronicProtection: 'Permanent reactive defence — fires fast at accumulated weight, not current violation',
+      chronicControl: 'Deployed as management tool, framed as logic or correction — felt as need to correct',
+      chronicDomination: 'Rage and contempt as default — any resistance is a violation, punishment follows',
+    },
+  },
+  {
+    key: 'disgust',
+    name: 'Disgust',
+    signal: 'Contamination detected',
+    bodyResponse: 'Nausea, retching, mouth/nose closing — gustatory cortex and insula activate',
+    completionNeeds: 'Removal — contaminant expelled, distance established, or environment confirmed safe',
+    type: 'somatic',
+    defaultMode: 'protection',
+    gradient: {
+      fluid: 'Reads real contaminant, acts proportionally — boundary maintenance, signal completes',
+      chronicConnection: 'Turned inward — self becomes contaminant, self-rejection as identity',
+      chronicProtection: 'World as contaminated — disgust generalises, avoidance and withdrawal permanent',
+      chronicControl: 'Expressed as judgement — contempt, moral superiority, standards as weapons',
+      chronicDomination: 'Dehumanisation — disgust directed at people, humanity not registered by system',
+    },
+  },
+  {
+    key: 'shame',
+    name: 'Shame',
+    signal: 'Belonging at risk',
+    bodyResponse: 'Withdrawal, shrinking, heat, desire to disappear — social survival signal',
+    completionNeeds: 'Relational evidence — another person stays present without contempt after seeing the shameful thing',
+    type: 'relational',
+    defaultMode: 'connection',
+    gradient: {
+      fluid: 'Felt as vulnerability in service of repair — SEA present, person moves toward repair',
+      chronicConnection: 'Compulsive vulnerability — shame becomes identity, self-erasure permanent',
+      chronicProtection: 'Below awareness as background signal confirming world is dangerous and self exposed',
+      chronicControl: 'Hidden permanently under superiority — feeling it would require surrender',
+      chronicDomination: 'Projected outward — reinterpreted as evidence of others\' deficiency',
+    },
+  },
+  {
+    key: 'guilt',
+    name: 'Guilt',
+    signal: 'Harm done',
+    bodyResponse: 'Discomfort, restlessness, pull toward repair — corrective signal',
+    completionNeeds: 'Acknowledgment of impact, genuine repair, other person\'s experience felt through ER',
+    type: 'relational',
+    defaultMode: 'connection',
+    gradient: {
+      fluid: 'Signals real impact, person acknowledges, makes amends — accountability without collapse',
+      chronicConnection: 'Chronic apology — always the self\'s fault, guilt indiscriminate, never accurately targeted',
+      chronicProtection: 'Arrives as shame reinforcing alarm — cannot be held clearly, sits below awareness',
+      chronicControl: 'Weaponised to manage others, or experienced only cognitively — impact does not land',
+      chronicDomination: 'Remorse structurally erased — vmPFC suppressed, guilt signal cannot arrive',
+    },
+  },
+  {
+    key: 'sadness',
+    name: 'Sadness',
+    signal: 'Loss',
+    bodyResponse: 'Withdrawal, slowing, tears — energy turns inward, conservation signal',
+    completionNeeds: 'Time, space, and for relational losses the presence of someone who holds without fixing',
+    type: 'relational',
+    defaultMode: 'connection',
+    gradient: {
+      fluid: 'Shared grief, genuine empathy with what is lost — person withdraws to process, returns',
+      chronicConnection: 'Invisible pain — own sadness has no permission, too busy carrying others\'',
+      chronicProtection: 'Permanently withdrawn but experienced as vigilance — original loss never grieved',
+      chronicControl: 'Suppressed — can describe loss without feeling it, PFC converts to cognitive content',
+      chronicDomination: 'Vulnerability weaponised — others\' sadness is leverage, own is existentially dangerous',
+    },
+  },
+  {
+    key: 'joy',
+    name: 'Joy',
+    signal: 'Safety confirmed',
+    bodyResponse: 'Expansion, energy, approach — body opens, dopamine flows, system moves toward source',
+    completionNeeds: 'Presence — fully experienced in body without scanning for what will take it away',
+    type: 'somatic',
+    defaultMode: 'connection',
+    gradient: {
+      fluid: 'Play, celebration, full presence — person is in the moment, joy genuine and available',
+      chronicConnection: 'Performed happiness — smiles in service of bond, exhausting and empty underneath',
+      chronicProtection: 'Inaccessible — calm reads as exposure, good moments feel dangerous',
+      chronicControl: 'Deployed for status or strategic purpose — displayed, not felt',
+      chronicDomination: 'Intensity and power as only available positive state — genuine joy requires vulnerability',
+    },
+  },
+  {
+    key: 'love',
+    name: 'Love',
+    signal: 'Bond',
+    bodyResponse: 'Oxytocin, warmth, pull toward closeness — co-regulation circuit activates',
+    completionNeeds: 'Reciprocity — signal received and returned through genuine felt presence, not performance',
+    type: 'relational',
+    defaultMode: 'connection',
+    gradient: {
+      fluid: 'Deepens real closeness and care — vulnerability held without losing the self',
+      chronicConnection: 'Complete merger — self-abandoning, person loves by disappearing into the other',
+      chronicProtection: 'Clinging, terror of loss — love experienced as threat because losing it is unbearable',
+      chronicControl: 'Conditional and transactional — caring managed, withdrawn if it threatens stability',
+      chronicDomination: 'Love as ownership — other person is possession, care indistinguishable from control',
+    },
+  },
+  {
+    key: 'envy',
+    name: 'Envy',
+    signal: 'Gap',
+    bodyResponse: 'Tension, comparison, pull toward acquisition or diminishment — gap-detection signal',
+    completionNeeds: 'Gap must close (resource acquired) or be accepted (reality integrated without threat)',
+    type: 'somatic',
+    defaultMode: 'protection',
+    gradient: {
+      fluid: 'Turns into admiration and learning — person uses gap as information, moves toward closing it',
+      chronicConnection: 'Chronic self-diminishment — admires but can never claim, self not permitted to take space',
+      chronicProtection: 'Permanently less-than — gap as evidence of own deficiency, no growth feels possible',
+      chronicControl: 'Compulsive competition, zero-sum always — gap is threat to position, converted to strategy',
+      chronicDomination: 'What is envied must be destroyed — gap is intolerable, threatens power structure',
+    },
   },
 ];
 
@@ -209,7 +362,7 @@ export const RESTORATION = {
   chronic: [
     {
       // Chronic Connection substitutes — root--biological-restoration.md §Part 3 + §Part 4
-      nonRelational: ['Food', 'Numbing substances', 'Screens', 'Compulsive helping'],
+      nonRelational: ['Food', 'Numbing substances', 'Screens', 'Over-availability', 'Compulsive helping'],
       relational: ['Manufactured crises', 'Guilt-induction', 'Emotional manipulation'],
       relief: 'Minutes to hours',
     },
@@ -256,4 +409,6 @@ export const RULES = {
   chronicIsNotChosen: true,
   // Rule 8: Mode-Matched Scanning
   lockedFilter: true,
+  // Rule 9: Behavioural Convergence — same visible behaviour, different mechanism
+  behaviouralConvergence: true,
 };
