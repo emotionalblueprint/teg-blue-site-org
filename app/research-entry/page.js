@@ -351,6 +351,7 @@ export default function ResearchEntryPage() {
               </thead>
               <tbody>
                 <NextStepRow step="Understand the full system" href="/foundations" label="System Overview →" />
+                <NextStepRow step="See how the system is built" href="/how-it-works" label="How It Works →" />
                 <NextStepRow step="See the applied models" href="/models" label="Core Models →" />
                 <NextStepRow step="See the explanatory architecture" href="/frameworks-map" label="Frameworks →" />
                 <NextStepRow step="See the mechanics in action" href="/mechanics-of-phenomena" label="Mechanics →" />

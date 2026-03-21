@@ -20,6 +20,7 @@ const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Start Here", href: "/research-entry" },
   { label: "Overview", href: "/foundations" },
+  { label: "How It Works", href: "/how-it-works" },
   {
     label: "Models",
     href: "/models",

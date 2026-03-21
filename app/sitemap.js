@@ -38,6 +38,7 @@ const PAGE_DATES = {
   '/mechanics-of-phenomena': '2026-03-10',
   '/reframes': '2026-03-17',
   '/explore/labels': '2026-03-17',
+  '/how-it-works': '2026-03-21',
 }
 
 export default function sitemap() {
@@ -246,6 +247,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/explore/labels`,
       lastModified: new Date(PAGE_DATES['/explore/labels']),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/how-it-works`,
+      lastModified: new Date(PAGE_DATES['/how-it-works']),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

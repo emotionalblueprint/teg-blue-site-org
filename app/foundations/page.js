@@ -433,6 +433,7 @@ export default function FoundationsPage() {
                 </tr>
               </thead>
               <tbody>
+                <NavRow label="See how the system is built" href="/how-it-works" linkText="How It Works →" />
                 <NavRow label="Go deeper into the three models" href="/models" linkText="Core Models →" />
                 <NavRow label="See all twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="See the mechanics in action" href="/mechanics-of-phenomena" linkText="Mechanics →" />

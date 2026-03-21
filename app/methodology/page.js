@@ -348,6 +348,9 @@ export default function MethodologyPage() {
 
         {/* Cross-site link */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+          <Link href="/how-it-works" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            How It Works →
+          </Link>
           <Link href="/publications" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
             Publications →
           </Link>
