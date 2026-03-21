@@ -34,7 +34,7 @@ const DRAWS_FROM = [
   { id: "F7", title: "Domination Regulates", relation: "Escalation", description: "Escalation across the gradient. How Control crosses into Domination, and how tolerance builds.", href: "/framework/f7-domination-regulates" },
   { id: "F12", title: "The Two Information Systems", relation: "Architecture", description: "The underlying architecture. Why understanding doesn't change the compass. Why experience does.", href: "/framework/f12-two-information-systems" },
   { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.", href: "/model/m2-three-awareness-capacities" },
-  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "The biological cascade underneath the compass. What the body does when the return is blocked.", href: "/model/m3-regulation-capacities" },
+  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "Whether the activation cycle completes. What the body was designed to do after activation, what blocks the return, and what it reaches for instead.", href: "/model/m3-regulation-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -872,34 +872,8 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              Regulation is the built-in mechanism by which the nervous system returns from activation to baseline. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through.
+              Regulation is the built-in mechanism by which the nervous system returns from activation to baseline. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. M3 maps the full regulation landscape — the return pathways, what blocks them, and what the nervous system reaches for instead.
             </p>
-            <p style={proseStyle}>
-              Regulation is closer to digestion than to exercise. You do not digest by trying harder. You digest because the system runs when it is not blocked. The body restores when conditions allow — when there is sufficient safety, when the activation is allowed to complete, when no one is interrupting the process with instructions to calm down.
-            </p>
-
-            <h3 style={h3Style}>Four Return Pathways</h3>
-
-            {/* Return Pathways Table */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr", minWidth: 500 }}>
-                {/* Header row */}
-                <div style={gridHeaderStyle}>Pathway</div>
-                <div style={gridHeaderStyle}>How It Works</div>
-                {/* Breathing */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Breathing</div>
-                <div style={gridCellStyle}>Slow exhalation activates the vagal brake, signalling safety to the autonomic system</div>
-                {/* Grounding */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Grounding</div>
-                <div style={gridCellStyle}>Sensory contact with the present environment recalibrates the system from the threat that was to the reality that is</div>
-                {/* Co-regulation */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Co-regulation</div>
-                <div style={gridCellStyle}>Another person's regulated nervous system sends safety signals through tone, touch, rhythm, and presence — the most powerful pathway</div>
-                {/* Time */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Time</div>
-                <div style={gridCellStyle}>The body completing the activation cycle when given space to do so without interruption</div>
-              </div>
-            </div>
 
             <OperationalStatement color={MODEL_COLOR}>
               When the return is missing, the compass gets stuck. What should have been temporary becomes permanent.
@@ -1410,7 +1384,7 @@ export default function M1InnerCompassPage() {
                     linkText="M2: Three Awareness Capacities &rarr;"
                   />
                   <NavRow
-                    label="Understand the physiological foundation of the compass"
+                    label="Understand what happens when the activation cycle doesn't complete"
                     href="/model/m3-regulation-capacities"
                     linkText="M3: Regulation Capacities &rarr;"
                   />

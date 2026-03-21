@@ -62,7 +62,7 @@ const MODELS = [
     coreQuestion: "What is the body doing to regulate — and is the cycle completing?",
     summary:
       "Whether the emotion can complete. The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
-    concepts: 8,
+    concepts: 9,
     drawsFrom: "F1, F2, F3, F12",
     color: SPECTRUM.indigo,
     href: "/model/m3-regulation-capacities",

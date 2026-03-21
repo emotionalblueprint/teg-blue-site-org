@@ -41,7 +41,7 @@ const DRAWS_FROM = [
   { id: "F8", title: "Repairing Awareness", relation: "Repair pathway", description: "How awareness capacities that didn't develop can be rebuilt in adult relational contexts.", href: "/framework/f8-repairing-awareness" },
   { id: "F10", title: "Generational Bridges", relation: "Transmission", description: "How capacity configurations replicate across generations through the relational environment.", href: "/framework/f10-generational-bridges" },
   { id: "M1", title: "Nervous System Signaling", relation: "Paired model", description: "The instrument these capacities calibrate. M1 maps what the compass does; M2 maps what determines how well it works.", href: "/model/m1-nervous-system-signaling" },
-  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "The physiological cascade underneath. What happens in the body when awareness capacities can't process the signal.", href: "/model/m3-regulation-capacities" },
+  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "What happens biologically when the activation cycle doesn't complete — and why awareness capacities determine whether it can.", href: "/model/m3-regulation-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -1292,7 +1292,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                     linkText="M1: Nervous System Signaling →"
                   />
                   <NavRow
-                    label="Understand the physiological cost of capacity gaps"
+                    label="Understand what the body does when capacities can't facilitate the return"
                     href="/model/m3-regulation-capacities"
                     linkText="M3: Regulation Capacities →"
                   />
