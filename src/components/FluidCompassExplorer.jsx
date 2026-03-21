@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import {
   FONT, TEXT, BG, BORDER,
   PATTERN, PATTERN_GRADIENT, hexToRgba,
+  MODE_ORANGE,
 } from "@/src/styles/tokens";
 
 // ─── MODE DATA ──────────────────────────────────────────
@@ -30,6 +31,23 @@ const MODES = [
         { name: "Relational", text: "Full — repair, vulnerability, trust" },
       ],
     },
+    chronic: {
+      fullName: "Chronic Connection",
+      type: "SEA Offline",
+      duration: "Permanent — no end condition",
+      sequence: "Pretended Safety → Over-Giving → Disappearing",
+      description:
+        "Connection as survival strategy. Safety performed, not felt. Boundaries feel like threat. Anger forbidden — rerouted into guilt or compliance. From outside, this looks like healthy Connection. From inside, there is no self left to connect from.",
+      insight:
+        "What looks like warmth is a protection strategy — the person cannot stop giving because stopping feels like the thing that will make them disappear",
+      distortion: "I feel bad → I caused it → I must fix myself",
+      capacities: [
+        { name: "Perception", text: "Narrowed to other — self drops out" },
+        { name: "Cognition", text: "Serves compliance — not reflection" },
+        { name: "Learning", text: "Blocked by external focus" },
+        { name: "Relational", text: "Performed — not felt" },
+      ],
+    },
   },
   {
     key: "B",
@@ -50,6 +68,23 @@ const MODES = [
         { name: "Cognition", text: "Simplified — binary thinking" },
         { name: "Learning", text: "Reduced" },
         { name: "Relational", text: "Limited — vulnerability dangerous" },
+      ],
+    },
+    chronic: {
+      fullName: "Chronic Protection",
+      type: "SEA Offline",
+      duration: "Permanent — alarm never stands down",
+      sequence: "Defence → Perpetual Vigilance → No Stand-Down",
+      description:
+        "The system never stands down. Alarm stays on after threat passes. Uncertainty is danger. Safety feels like it will be taken the moment you relax. The person is not anxious — they are realistic.",
+      insight:
+        "The alarm never stops because stopping it feels more dangerous than the alarm itself",
+      distortion: "I feel bad → you're threatening me → I must defend",
+      capacities: [
+        { name: "Perception", text: "Locked on threat — cannot widen" },
+        { name: "Cognition", text: "Binary — safe/unsafe only" },
+        { name: "Learning", text: "Blocked by vigilance" },
+        { name: "Relational", text: "Blocked — openness reads as exposure" },
       ],
     },
   },
@@ -74,6 +109,23 @@ const MODES = [
         { name: "Relational", text: "Managed — relationships serve strategy" },
       ],
     },
+    chronic: {
+      fullName: "Chronic Control",
+      type: "SEA Offline",
+      duration: "Permanent — management never stops",
+      sequence: "Instability as Constant → Override → Manage Permanently",
+      description:
+        "Uncertainty must be managed always. Cognitive control is the default safety strategy. Others still register — as data to be managed, not as people to be felt. What looks like calm competence from outside is ongoing suppression from inside.",
+      insight:
+        "What looks like competence is a nervous system that cannot stop managing because unmanaged feels like unsafe",
+      distortion: "I feel bad → you're destabilising me → I must manage you",
+      capacities: [
+        { name: "Perception", text: "Strategic — scans for instability" },
+        { name: "Cognition", text: "Locked on management — cannot release" },
+        { name: "Learning", text: "Selective — serves strategy only" },
+        { name: "Relational", text: "Managed — relationships serve control" },
+      ],
+    },
   },
   {
     key: "D",
@@ -93,6 +145,23 @@ const MODES = [
         { name: "Perception", text: "Tunnel — obstacles and resources" },
         { name: "Cognition", text: "Locked — rigid, self-confirming" },
         { name: "Learning", text: "Unavailable" },
+        { name: "Relational", text: "Absent — others are resources or threats" },
+      ],
+    },
+    chronic: {
+      fullName: "Chronic Domination",
+      type: "SEA Offline",
+      duration: "Permanent — tolerance builds, cost disappears",
+      sequence: "Constant Life Peril → Eliminate → Tyranny",
+      description:
+        "Permanent override. Empathy collapsed or weaponised. Tolerance builds — what produced safety yesterday requires more force today. The person has lost the experience of the cost.",
+      insight:
+        "The person does not feel the weight of what they are doing because the weight has become who they believe they are",
+      distortion: "I feel bad → you're challenging me → I must eliminate",
+      capacities: [
+        { name: "Perception", text: "Weaponised — reads to exploit" },
+        { name: "Cognition", text: "Locked — rigid, self-confirming" },
+        { name: "Learning", text: "Unavailable — nothing penetrates" },
         { name: "Relational", text: "Absent — others are resources or threats" },
       ],
     },
@@ -170,13 +239,15 @@ export default function FluidCompassExplorer() {
   const [position, setPosition] = useState(0.125);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [connectors, setConnectors] = useState(null);
+  const [isStuck, setIsStuck] = useState(false);
   const containerRef = useRef(null);
   const barRef = useRef(null);
   const eventCardRefs = useRef([]);
   const emotionPillRefs = useRef({});
   const isDragging = useRef(false);
   const activeMode = getActiveMode(position);
-  const data = activeMode.fluid;
+  const data = isStuck ? activeMode.chronic : activeMode.fluid;
+  const accentColor = isStuck ? MODE_ORANGE : activeMode.hex;
 
   // Derive highlighted emotion from selected event
   const activeEvent = selectedEvent !== null ? EVENTS[selectedEvent] : null;
@@ -232,6 +303,11 @@ export default function FluidCompassExplorer() {
     setPosition(MODES[EVENTS[eventIndex].modeIndex].center);
   }, []);
 
+  const handleToggle = useCallback((stuck) => {
+    setIsStuck(stuck);
+    setSelectedEvent(null);
+  }, []);
+
   // Measure connector line positions
   useEffect(() => {
     if (selectedEvent === null || !containerRef.current) {
@@ -262,7 +338,7 @@ export default function FluidCompassExplorer() {
         y3: em.bottom - c.top,
         x4: b.left + MODES[evt.modeIndex].center * b.width - c.left,
         y4: b.top + b.height / 2 - c.top,
-        color: MODES[evt.modeIndex].hex,
+        color: isStuck ? MODE_ORANGE : MODES[evt.modeIndex].hex,
       });
     };
 
@@ -272,7 +348,7 @@ export default function FluidCompassExplorer() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", measure);
     };
-  }, [selectedEvent]);
+  }, [selectedEvent, isStuck]);
 
   return (
     <div
@@ -281,8 +357,8 @@ export default function FluidCompassExplorer() {
         position: "relative",
         margin: "32px 0",
         borderRadius: 12,
-        border: `1px solid ${hexToRgba(activeMode.hex, 0.2)}`,
-        background: hexToRgba(activeMode.hex, 0.03),
+        border: `1px solid ${hexToRgba(accentColor, 0.2)}`,
+        background: hexToRgba(accentColor, 0.03),
         overflow: "hidden",
         transition: "border-color 300ms ease, background 300ms ease",
       }}
@@ -358,6 +434,25 @@ export default function FluidCompassExplorer() {
         }}
       >
         <div>
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: accentColor,
+              padding: "3px 8px",
+              borderRadius: 100,
+              background: hexToRgba(accentColor, 0.12),
+              border: `1px solid ${hexToRgba(accentColor, 0.25)}`,
+              transition: "all 300ms ease",
+              display: "inline-block",
+              marginBottom: 10,
+            }}
+          >
+            {isStuck ? "Stuck Compass" : "Fluid Compass"}
+          </span>
           <div
             style={{
               fontSize: 18,
@@ -381,19 +476,80 @@ export default function FluidCompassExplorer() {
             the mode designed for that level of threat.
           </div>
         </div>
-        <span
+        <div
           style={{
-            fontSize: 11,
-            color: TEXT.muted,
-            fontFamily: FONT.mono,
-            whiteSpace: "nowrap",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: 8,
             flexShrink: 0,
-            alignSelf: "flex-start",
-            marginTop: 2,
           }}
         >
-          Click an event to trace the chain
-        </span>
+          {/* Fluid / Stuck toggle */}
+          <div
+            style={{
+              display: "flex",
+              borderRadius: 100,
+              border: `1px solid ${BORDER.default}`,
+              overflow: "hidden",
+            }}
+          >
+            <button
+              onClick={() => handleToggle(false)}
+              aria-label="Show fluid compass"
+              aria-pressed={!isStuck}
+              style={{
+                padding: "4px 14px",
+                fontSize: 10,
+                fontFamily: FONT.mono,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 200ms ease",
+                background: !isStuck
+                  ? hexToRgba(activeMode.hex, 0.15)
+                  : "transparent",
+                color: !isStuck ? activeMode.hex : TEXT.muted,
+              }}
+            >
+              Fluid
+            </button>
+            <button
+              onClick={() => handleToggle(true)}
+              aria-label="Show stuck compass"
+              aria-pressed={isStuck}
+              style={{
+                padding: "4px 14px",
+                fontSize: 10,
+                fontFamily: FONT.mono,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                border: "none",
+                borderLeft: `1px solid ${BORDER.default}`,
+                cursor: "pointer",
+                transition: "all 200ms ease",
+                background: isStuck
+                  ? hexToRgba(MODE_ORANGE, 0.15)
+                  : "transparent",
+                color: isStuck ? MODE_ORANGE : TEXT.muted,
+              }}
+            >
+              Stuck
+            </button>
+          </div>
+          <span
+            style={{
+              fontSize: 11,
+              color: TEXT.muted,
+              fontFamily: FONT.mono,
+              whiteSpace: "nowrap",
+              marginTop: 2,
+            }}
+          >
+            Click an event to trace the chain
+          </span>
+        </div>
       </div>
 
       {/* ─── Event Row ─────────────────────────── */}
@@ -408,6 +564,7 @@ export default function FluidCompassExplorer() {
         {EVENTS.map((evt, i) => {
           const mode = MODES[evt.modeIndex];
           const isActive = selectedEvent === i;
+          const cardColor = isStuck && isActive ? MODE_ORANGE : mode.hex;
           return (
             <button
               key={evt.signal}
@@ -418,11 +575,11 @@ export default function FluidCompassExplorer() {
                 borderRadius: 8,
                 border: `1px solid ${
                   isActive
-                    ? hexToRgba(mode.hex, 0.5)
+                    ? hexToRgba(cardColor, 0.5)
                     : BORDER.default
                 }`,
                 background: isActive
-                  ? hexToRgba(mode.hex, 0.06)
+                  ? hexToRgba(cardColor, 0.06)
                   : "transparent",
                 cursor: "pointer",
                 textAlign: "left",
@@ -437,7 +594,7 @@ export default function FluidCompassExplorer() {
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
-                  color: isActive ? mode.hex : TEXT.muted,
+                  color: isActive ? cardColor : TEXT.muted,
                   marginBottom: 4,
                   transition: "color 250ms ease",
                 }}
@@ -471,7 +628,9 @@ export default function FluidCompassExplorer() {
         {EMOTIONS.map((emotion) => {
           const isHighlighted =
             activeEvent !== null && activeEvent.emotion === emotion.name;
-          const modeHex = MODES[emotion.modeIndex].hex;
+          const pillColor = isStuck && isHighlighted
+            ? MODE_ORANGE
+            : MODES[emotion.modeIndex].hex;
           return (
             <span
               key={emotion.name}
@@ -482,13 +641,13 @@ export default function FluidCompassExplorer() {
                 fontWeight: isHighlighted ? 600 : 400,
                 padding: "3px 10px",
                 borderRadius: 100,
-                color: isHighlighted ? modeHex : TEXT.muted,
+                color: isHighlighted ? pillColor : TEXT.muted,
                 background: isHighlighted
-                  ? hexToRgba(modeHex, 0.12)
+                  ? hexToRgba(pillColor, 0.12)
                   : "transparent",
                 border: `1px solid ${
                   isHighlighted
-                    ? hexToRgba(modeHex, 0.25)
+                    ? hexToRgba(pillColor, 0.25)
                     : BORDER.default
                 }`,
                 opacity: selectedEvent !== null && !isHighlighted ? 0.4 : 1,
@@ -614,7 +773,7 @@ export default function FluidCompassExplorer() {
             style={{
               fontSize: 18,
               fontWeight: 700,
-              color: activeMode.hex,
+              color: accentColor,
               transition: "color 300ms ease",
             }}
           >
@@ -627,11 +786,18 @@ export default function FluidCompassExplorer() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              color: TEXT.muted,
+              color: isStuck ? MODE_ORANGE : TEXT.muted,
               padding: "2px 8px",
               borderRadius: 100,
-              background: BG.surface,
-              border: `1px solid ${BORDER.default}`,
+              background: isStuck
+                ? hexToRgba(MODE_ORANGE, 0.1)
+                : BG.surface,
+              border: `1px solid ${
+                isStuck
+                  ? hexToRgba(MODE_ORANGE, 0.25)
+                  : BORDER.default
+              }`,
+              transition: "all 300ms ease",
             }}
           >
             {data.type}
@@ -649,8 +815,8 @@ export default function FluidCompassExplorer() {
             fontFamily: FONT.mono,
           }}
         >
-          <span>{data.pattern}</span>
-          <span style={{ opacity: 0.4 }}>·</span>
+          {data.pattern && <span>{data.pattern}</span>}
+          {data.pattern && <span style={{ opacity: 0.4 }}>·</span>}
           <span>{data.duration}</span>
         </div>
 
@@ -671,8 +837,8 @@ export default function FluidCompassExplorer() {
         <div
           style={{
             padding: "10px 14px",
-            borderLeft: `3px solid ${activeMode.hex}`,
-            background: hexToRgba(activeMode.hex, 0.06),
+            borderLeft: `3px solid ${accentColor}`,
+            background: hexToRgba(accentColor, 0.06),
             borderRadius: "0 6px 6px 0",
             marginBottom: 16,
             transition: "border-color 300ms ease, background 300ms ease",
@@ -689,6 +855,46 @@ export default function FluidCompassExplorer() {
             {data.insight}
           </span>
         </div>
+
+        {/* Distortion (chronic only) */}
+        {isStuck && data.distortion && (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              gap: 10,
+              marginBottom: 16,
+              padding: "10px 14px",
+              borderRadius: 8,
+              background: hexToRgba(MODE_ORANGE, 0.05),
+              border: `1px solid ${hexToRgba(MODE_ORANGE, 0.12)}`,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 10,
+                fontFamily: FONT.mono,
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: MODE_ORANGE,
+                flexShrink: 0,
+              }}
+            >
+              Distortion
+            </span>
+            <span
+              style={{
+                fontSize: 13,
+                fontStyle: "italic",
+                color: TEXT.secondary,
+                lineHeight: 1.6,
+              }}
+            >
+              {data.distortion}
+            </span>
+          </div>
+        )}
 
         {/* Sequence */}
         <div
@@ -717,7 +923,7 @@ export default function FluidCompassExplorer() {
               fontSize: 12,
               fontFamily: FONT.mono,
               fontWeight: 600,
-              color: activeMode.hex,
+              color: accentColor,
               transition: "color 300ms ease",
             }}
           >
@@ -739,8 +945,8 @@ export default function FluidCompassExplorer() {
               style={{
                 padding: "10px 12px",
                 borderRadius: 8,
-                background: hexToRgba(activeMode.hex, 0.05),
-                border: `1px solid ${hexToRgba(activeMode.hex, 0.12)}`,
+                background: hexToRgba(accentColor, 0.05),
+                border: `1px solid ${hexToRgba(accentColor, 0.12)}`,
                 transition:
                   "background 300ms ease, border-color 300ms ease",
               }}
@@ -750,7 +956,7 @@ export default function FluidCompassExplorer() {
                   fontSize: 11,
                   fontWeight: 700,
                   fontFamily: FONT.mono,
-                  color: activeMode.hex,
+                  color: accentColor,
                   textTransform: "uppercase",
                   letterSpacing: "0.04em",
                   marginBottom: 4,
