@@ -952,7 +952,7 @@ export default function F12TwoInformationSystemsPage() {
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
-              url: "https://teg-blue.com/about-the-author",
+              url: "https://teg-blue.org/about",
             },
             publisher: {
               "@type": "Organization",

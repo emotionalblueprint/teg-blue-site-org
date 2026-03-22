@@ -989,7 +989,7 @@ export default function F9NeurodivergenceVariationPage() {
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
-              url: "https://teg-blue.com/about-the-author",
+              url: "https://teg-blue.org/about",
             },
             publisher: {
               "@type": "Organization",

@@ -115,7 +115,7 @@ const organizationJsonLd = {
   founder: {
     "@type": "Person",
     name: "Anna Paretas-Artacho",
-    url: "https://teg-blue.com/about-the-author",
+    url: "https://teg-blue.org/about",
     sameAs: [
       "https://orcid.org/0009-0005-2394-7162",
       "https://x.com/tegblue",

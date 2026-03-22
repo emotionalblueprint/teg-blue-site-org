@@ -51,7 +51,7 @@ Anna brings 25 years of experience in visual communications, transforming comple
 The Four-Mode Gradient was not designed first and then explained. It emerged through building each Framework, one by one, to explain patterns she had lived through and witnessed. The result is nearly two years of independent development creating an integrated emotional intelligence system.
 
 ORCID: 0009-0005-2394-7162
-Full bio: teg-blue.com/about-the-author
+Full bio: teg-blue.org/about
 
 ---
 

@@ -996,7 +996,7 @@ export default function F10GenerationalBridgesPage() {
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
-              url: "https://teg-blue.com/about-the-author",
+              url: "https://teg-blue.org/about",
             },
             publisher: {
               "@type": "Organization",

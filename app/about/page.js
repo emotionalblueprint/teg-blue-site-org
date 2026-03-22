@@ -14,20 +14,26 @@ const FAQ_ITEMS = [
   },
   {
     question: "Has TEG-Blue been validated?",
-    answer: "An initial validation study analyzed 10,000+ natural conflict narratives, achieving inter-rater reliability of kappa = 0.74. This is a beginning — five open research questions and four research directions are documented for further validation.",
+    answer: "An initial validation study analyzed 10,000+ natural conflict narratives, achieving inter-rater reliability of kappa = 0.74. De-escalators showed 78% higher rates of complexity markers than escalators. This is a beginning — five open research questions are documented for further validation.",
+  },
+  {
+    question: "What scientific domains does TEG-Blue draw from?",
+    answer: "TEG-Blue synthesizes established research from 47+ domains including polyvagal theory, attachment theory, affect regulation, social identity theory, moral development research, and neurodivergence research. The originality is in the integration, not the individual theories.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Two Sites", href: "#two-sites", description: "What is the difference between teg-blue.org (open science) and teg-blue.com (interactive tools)." },
-  { label: "Who Created TEG-Blue?", href: "#the-founder", description: "The creator and current state of empirical validation." },
-  { label: "Research Identity", href: "#research-identity", description: "Open science, testable claims, invited corrections. What TEG-Blue is and is not." },
-  { label: "Navigation", href: "#navigation", description: "Where to go next depending on what you need." },
+  { label: "The Core Premise", href: "#core-premise", description: "The foundational scientific claim and what makes it testable." },
+  { label: "Validation", href: "#validation", description: "Initial empirical findings from 10,000+ natural conflict narratives." },
+  { label: "Scientific Foundations", href: "#foundations", description: "47+ domains, 145+ source theories, and what the integration reveals." },
+  { label: "Open Questions", href: "#open-questions", description: "Priority research directions for independent verification." },
+  { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — background and research identity." },
+  { label: "Two Sites", href: "#two-sites", description: "Open research (.org) and interactive tools (.com)." },
 ];
 
 export const metadata = {
   title: "About | TEG-Blue Emotional Technology",
-  description: "About TEG-Blue — the first complete emotional technology system. Founded by Anna Paretas-Artacho. An integrative framework connecting 145+ theories from neuroscience, psychology, and sociology into testable hypotheses about emotional regulation.",
+  description: "About TEG-Blue — the first complete emotional technology system. An integrative framework connecting 145+ theories from 47+ scientific domains into testable hypotheses about emotional regulation. Initial validation on 10,000+ narratives.",
   keywords: [
     "TEG-Blue",
     "emotional technology",
@@ -37,18 +43,20 @@ export const metadata = {
     "integrative framework",
     "open science",
     "neuroscience psychology integration",
-    "trauma research",
+    "polyvagal theory",
+    "attachment theory",
+    "affect regulation",
     "emotional intelligence",
     "AI safety",
-    "systems designer",
     "independent researcher",
+    "validation study",
   ],
   alternates: {
     canonical: "https://teg-blue.org/about",
   },
   openGraph: {
     title: "About — TEG-Blue Research",
-    description: "An integrative framework connecting 145+ theories. Founded by Anna Paretas-Artacho. Open science, testable hypotheses, inviting collaboration.",
+    description: "An integrative framework connecting 145+ theories from 47+ scientific domains. Initial validation on 10,000+ narratives. Open science, testable hypotheses, inviting collaboration.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue Research",
     type: "profile",
@@ -57,7 +65,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "About — TEG-Blue Research",
-    description: "Open research developing an integrative emotional intelligence framework.",
+    description: "Open research developing an integrative emotional intelligence framework. 47+ domains. 145+ theories. 10,000+ narratives validated.",
   },
 };
 
@@ -77,7 +85,7 @@ export default function AboutPage() {
           <ResearcherHero
             badge="ABOUT"
             title="About TEG-Blue"
-            description="The first complete emotional technology system. An integrative framework connecting 145+ theories into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
+            description="An integrative framework connecting 145+ theories from 47+ scientific domains into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -85,101 +93,220 @@ export default function AboutPage() {
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
           <p style={bodyStyle}>
-            <strong style={{ color: TEXT.primary }}>TEG-Blue</strong> stands for The Emotional Gradient Blueprint.
+            <strong style={{ color: TEXT.primary }}>TEG-Blue</strong> (The Emotional Gradient Blueprint) is a translation architecture that takes established research from neuroscience, psychology, sociology, and related fields and organizes it into a unified system for understanding emotional experience.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
-            And builds on the understanding that emotion is biological information — our nervous system communicating what matters, what&apos;s safe, and what needs to be seen.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            We track where it starts in the body, how it shapes identity, enters relationships, scales into systems, and how to understand it.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            It&apos;s a visual system: maps to see the pattern, tools to work with it, and a framework that connects what psychology, neuroscience, and sociology have been studying in fragments into one coherent architecture.
+            It does not generate new theories. It reorganizes existing knowledge into a coherent, testable framework — accessible to researchers, practitioners, and AI systems alike.
           </p>
         </section>
 
-        {/* Two Sites */}
-        <section id="two-sites" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>What is the difference between teg-blue.org and teg-blue.com?</h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: 16,
-            }}
-          >
-            <div
-              style={{
-                padding: 20,
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${SPECTRUM.azure}`,
-              }}
-            >
-              <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                teg-blue.org (you are here)
-              </h3>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                The open research hub. Publications, methodology, frameworks, open questions, collaboration.
-              </p>
-              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
-                For researchers, academics, clinicians, and AI safety researchers.
-              </p>
-            </div>
-            <div
-              style={{
-                padding: 20,
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              }}
-            >
-              <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                teg-blue.com
-              </h3>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                The application site. Interactive tools, guided experiences, and practical instruments for individuals and practitioners.
-              </p>
-              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
-                For everyday people, coaches, therapists, and organizational professionals.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Core Premise */}
+        <section id="core-premise" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>The core premise</h2>
 
-        {/* The Founder */}
-        <section id="the-founder" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Who created TEG-Blue?</h2>
           <div
             style={{
-              padding: 24,
+              padding: "20px 24px",
               background: BG.card,
               borderRadius: 10,
               border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              marginBottom: 24,
+              borderLeft: `3px solid ${SPECTRUM.azure}`,
+              marginBottom: 16,
             }}
           >
-            <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              Anna Paretas-Artacho
-            </h3>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              Independent researcher and systems designer based in Barcelona, with 25+ years of professional experience in systems thinking and visual design.
+            <p
+              style={{
+                fontSize: 15,
+                color: TEXT.primary,
+                lineHeight: 1.8,
+                margin: 0,
+                fontWeight: 500,
+              }}
+            >
+              Emotions are biological information about safety and threat — not irrational impulses to be managed or overcome.
             </p>
           </div>
 
-          <h3 style={subsectionHeading}>Empirical validation</h3>
           <p style={bodyStyle}>
-            TEG-Blue&apos;s validation study — a computational analysis of 10,000+ natural conflict narratives — was conducted as an initial empirical test of the Four-Mode Gradient&apos;s detectability in unstructured text, yielding inter-rater reliability of &kappa;=0.74. This is a beginning, not a conclusion. Five open research questions and four research directions are documented in the{" "}
-            <Link href="/research-entry" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Research Entry
-            </Link>{" "}
-            section for researchers who want to build on, challenge, or independently test the framework.
+            Applied consistently across individual, relational, institutional, and cultural scales, this premise reveals how living systems organize around perceived safety and threat.
+          </p>
+
+          <h3 style={{ ...subsectionHeading, marginTop: 20 }}>The core testable claim</h3>
+          <div
+            style={{
+              padding: "16px 20px",
+              background: hexToRgba(SPECTRUM.azure, 0.06),
+              borderRadius: 8,
+              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.12)}`,
+            }}
+          >
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
+              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity is measurable through &quot;complexity markers&quot; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
+            </p>
+          </div>
+        </section>
+
+        {/* Validation */}
+        <section id="validation" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>Empirical validation</h2>
+
+          <p style={bodyStyle}>
+            An initial validation study — a computational analysis of 10,000+ natural conflict narratives (Reddit AITA posts) — tested whether the Four-Mode Gradient could be reliably detected in unstructured text.
+          </p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: 12,
+              marginTop: 16,
+              marginBottom: 16,
+            }}
+          >
+            {[
+              { stat: "10,000+", label: "narratives analyzed" },
+              { stat: "κ = 0.74", label: "inter-rater reliability" },
+              { stat: "78%", label: "higher complexity markers in de-escalators" },
+              { stat: "33.8%", label: "escalated toward Control/Domination" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                style={{
+                  padding: 16,
+                  background: BG.card,
+                  borderRadius: 8,
+                  border: `1px solid ${BORDER.default}`,
+                  textAlign: "center",
+                }}
+              >
+                <p style={{ fontSize: 20, fontWeight: 700, color: SPECTRUM.azure, marginBottom: 4, fontFamily: FONT.mono }}>{item.stat}</p>
+                <p style={{ fontSize: 11, color: TEXT.muted, lineHeight: 1.5 }}>{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <p style={bodyStyle}>
+            All four regulatory modes were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. Mode classifications correlated with independent community moral judgments.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
-            The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
+            Published on Zenodo:{" "}
+            <a href="https://zenodo.org/records/18428907" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              DOI: 10.5281/zenodo.18428907
+            </a>
+          </p>
+
+          <div
+            style={{
+              padding: "16px 20px",
+              background: BG.card,
+              borderRadius: 8,
+              border: `1px solid ${BORDER.default}`,
+              borderLeft: `3px solid ${SPECTRUM.indigo}`,
+              marginTop: 16,
+            }}
+          >
+            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
+              This is a beginning, not a conclusion. The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
+            </p>
+          </div>
+        </section>
+
+        {/* Scientific Foundations */}
+        <section id="foundations" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>Scientific foundations</h2>
+
+          <p style={bodyStyle}>
+            The framework synthesizes established research from <strong style={{ color: TEXT.primary }}>47+ scientific domains</strong> into <strong style={{ color: TEXT.primary }}>12 integrative frameworks</strong> organized in three arcs:
+          </p>
+
+          <div style={{ marginTop: 16, marginBottom: 16 }}>
+            {[
+              {
+                arc: "Individual (F1–F3)",
+                desc: "How the nervous system evaluates safety, how identity forms through development, and how cognition compensates when the return path is missing.",
+                domains: "Polyvagal theory, attachment theory, affect regulation, identity development, cognitive coherence",
+              },
+              {
+                arc: "Collective (F4–F7)",
+                desc: "How individual patterns become shared rules, worth hierarchies, perception biases, and how protection escalates to domination.",
+                domains: "Social identity theory, implicit bias, moral development, power dynamics, institutional behavior",
+              },
+              {
+                arc: "Repair & Complexity (F8–F12)",
+                desc: "How awareness capacities rebuild, neurodivergent variation, generational transmission, paradox, and the two-system architecture underneath.",
+                domains: "Neuroplasticity, neurodivergence research, epigenetics, dual-process theory, intergenerational transmission",
+              },
+            ].map((item) => (
+              <div
+                key={item.arc}
+                style={{
+                  padding: 16,
+                  background: BG.card,
+                  borderRadius: 8,
+                  border: `1px solid ${BORDER.default}`,
+                  marginBottom: 8,
+                }}
+              >
+                <p style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>{item.arc}</p>
+                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>{item.desc}</p>
+                <p style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted, lineHeight: 1.6 }}>{item.domains}</p>
+              </div>
+            ))}
+          </div>
+
+          <p style={bodyStyle}>
+            Full theoretical mapping available at the{" "}
+            <Link href="/theoretical-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              Theoretical Foundations
+            </Link>
+            {" "}page, with 145+ source theories documented and cross-referenced.
+          </p>
+        </section>
+
+        {/* Open Questions */}
+        <section id="open-questions" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>Open research questions</h2>
+
+          <p style={{ ...bodyStyle, marginBottom: 16 }}>
+            Five priority questions for independent researchers:
+          </p>
+
+          <div
+            style={{
+              background: BG.card,
+              borderRadius: 8,
+              border: `1px solid ${BORDER.default}`,
+              overflow: "hidden",
+            }}
+          >
+            {[
+              "Can complexity markers be standardized as a psychometric instrument?",
+              "What do escalation pathways look like in natural language?",
+              "Can the four-mode classification be reproduced by independent researchers?",
+              "Does regulatory state shape moral perception?",
+              "Can the emotional tools be validated as psychometric instruments?",
+            ].map((q, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: "12px 16px",
+                  borderTop: i > 0 ? `1px solid ${BORDER.default}` : "none",
+                  display: "flex",
+                  gap: 12,
+                  alignItems: "baseline",
+                }}
+              >
+                <span style={{ fontSize: 11, fontFamily: FONT.mono, fontWeight: 700, color: SPECTRUM.azure, flexShrink: 0 }}>Q{i + 1}</span>
+                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>{q}</p>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ ...bodyStyle, marginTop: 12 }}>
+            Full details and four research directions at{" "}
+            <Link href="/research-entry" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              Research Entry
+            </Link>.
           </p>
         </section>
 
@@ -208,9 +335,28 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Research identity */}
-        <section id="research-identity" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Research identity</h2>
+        {/* The Founder */}
+        <section id="the-founder" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>The founder</h2>
+          <div
+            style={{
+              padding: 24,
+              background: BG.card,
+              borderRadius: 10,
+              border: `1px solid ${BORDER.default}`,
+              borderLeft: `3px solid ${SPECTRUM.indigo}`,
+              marginBottom: 16,
+            }}
+          >
+            <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+              Anna Paretas-Artacho
+            </h3>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
+              Independent researcher and systems designer based in Barcelona, with 25+ years of professional experience in systems thinking and visual design. The Four-Mode Gradient emerged through building each framework one by one — nearly two years of independent development creating an integrated emotional intelligence system.
+            </p>
+          </div>
+
+          {/* Research identity */}
           <div
             style={{
               background: BG.card,
@@ -230,15 +376,67 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Two Sites */}
+        <section id="two-sites" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>Two sites, one mission</h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 16,
+            }}
+          >
+            <div
+              style={{
+                padding: 20,
+                background: BG.card,
+                borderRadius: 8,
+                border: `1px solid ${BORDER.default}`,
+                borderLeft: `3px solid ${SPECTRUM.azure}`,
+              }}
+            >
+              <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                teg-blue.org (you are here)
+              </h3>
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                The open research hub. Publications, methodology, frameworks, open questions, collaboration. All content freely available under CC-BY-NC-SA-4.0.
+              </p>
+              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
+                For researchers, academics, clinicians, and AI safety researchers.
+              </p>
+            </div>
+            <div
+              style={{
+                padding: 20,
+                background: BG.card,
+                borderRadius: 8,
+                border: `1px solid ${BORDER.default}`,
+                borderLeft: `3px solid ${SPECTRUM.indigo}`,
+              }}
+            >
+              <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+                teg-blue.com
+              </h3>
+              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
+                The application site. 16+ interactive tools for pattern recognition — gradient scales, signal tests, discernment tools, and feelings navigators.
+              </p>
+              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
+                For everyday people, coaches, therapists, and organizational professionals.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Navigation */}
-        <section id="navigation" style={{ marginBottom: 32 }}>
+        <section style={{ marginBottom: 32 }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             <NavLink href="/research-entry" label="Research Entry" />
             <NavLink href="/methodology" label="Methodology" />
             <NavLink href="/publications" label="Publications" />
+            <NavLink href="/theoretical-foundations" label="Theory Map" />
             <NavLink href="/collaborate" label="Collaborate" />
             <a
-              href="https://teg-blue.com"
+              href="https://teg-blue.com/emotional-tools"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -283,22 +481,24 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue — the first complete emotional technology system. Founded by Anna Paretas-Artacho.",
+            description: "About TEG-Blue — the first complete emotional technology system. An integrative framework connecting 145+ theories from 47+ scientific domains.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
-              jobTitle: "Founder & Systems Designer",
-              description: "Visual communicator and independent researcher. Creator of TEG-Blue, the first complete emotional technology system.",
-              url: "https://teg-blue.com/about-the-author",
+              jobTitle: "Founder & Lead Researcher",
+              description: "Independent researcher and systems designer. Creator of TEG-Blue, an integrative emotional technology framework synthesizing 47+ scientific domains.",
+              url: "https://teg-blue.org/about",
               sameAs: [
-                "https://github.com/annaparetas",
-                "https://zenodo.org/communities/teg-blue",
+                "https://orcid.org/0009-0005-2394-7162",
+                "https://github.com/emotionalblueprint",
+                "https://zenodo.org/records/18428907",
               ],
               knowsAbout: [
                 "Emotional Technology",
                 "Nervous System Regulation",
-                "Trauma Research",
+                "Polyvagal Theory",
+                "Attachment Theory",
                 "Systems Design",
                 "AI Safety",
               ],
