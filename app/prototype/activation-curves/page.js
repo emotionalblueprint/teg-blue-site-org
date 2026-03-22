@@ -5,7 +5,7 @@ import { SiteHeader, SiteFooter, ActivationCurveExplorer } from '@/src/component
 
 export const metadata = {
   title: 'Activation-Restoration Curves — Prototype | TEG-Blue Research',
-  description: 'Prototype: Parametric activation-restoration curves across the four-mode gradient. Signal, Barrier, Weapon architecture.',
+  description: 'Prototype: Parametric activation-restoration curves across the four-mode gradient.',
   robots: { index: false, follow: false },
 };
 
@@ -65,7 +65,6 @@ export default function ActivationCurvesPage() {
           }}
         >
           How activation rises and falls across the four-mode gradient.
-          The curve shape encodes whether an emotion functions as Signal, Barrier, or Weapon.
           Fluid curves return to baseline. Stuck curves do not.
         </p>
 

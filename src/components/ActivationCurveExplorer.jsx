@@ -1,47 +1,67 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo } from 'react';
 import {
   FONT, TEXT, BG, BORDER, RADIUS,
   PATTERN, MODE_ORANGE, hexToRgba,
 } from '@/src/styles/tokens';
-import { MODES } from '@/src/data/compass-diagram-data';
-import {
-  ACTIVATION_FLUID_CURVES,
-  ACTIVATION_CHRONIC_CURVES,
-  TIER_COLORS,
-  TIERS,
-  REGULATION_VARIANTS,
-  getCurve,
-  getCurvesByCompass,
-  getRegulationVariant,
-} from '@/src/data/activation-curve-data';
+import { MODES, FLUID_CURVES, CHRONIC_CURVES, RESTORATION } from '@/src/data/compass-diagram-data';
 
 // ─── CONSTANTS ───────────────────────────────────────────────────
 
 const PATTERN_KEYS = ['A', 'B', 'C', 'D'];
+const MAGNET_RADIUS = 0.04;
+
+// 4-tone orange spectrum (light → dark) — mirrors blue PATTERN
+const CHRONIC_TONES = ['#FFCB94', '#FFA85C', '#FF8530', '#F97316'];
+
+const BAR_GRADIENT = `linear-gradient(90deg, ${PATTERN.A.primary} 0%, ${PATTERN.A.primary} 20%, ${PATTERN.B.primary} 35%, ${PATTERN.B.primary} 45%, ${PATTERN.C.primary} 55%, ${PATTERN.C.primary} 70%, ${PATTERN.D.primary} 85%, ${PATTERN.D.primary} 100%)`;
+const CHRONIC_BAR_GRADIENT = `linear-gradient(90deg, ${CHRONIC_TONES[0]} 0%, ${CHRONIC_TONES[0]} 20%, ${CHRONIC_TONES[1]} 35%, ${CHRONIC_TONES[1]} 45%, ${CHRONIC_TONES[2]} 55%, ${CHRONIC_TONES[2]} 70%, ${CHRONIC_TONES[3]} 85%, ${CHRONIC_TONES[3]} 100%)`;
 
 const SVG_W = 600;
 const SVG_H = 220;
 const CURVE_TOP = 10;
 const CURVE_BOTTOM = 170;
-const BAR_Y = 178;
-const BAR_HEIGHT = 14;
 const ZONE_BOUNDARIES = [0.25, 0.50, 0.75];
 
+// ─── CURVE SHAPE DESCRIPTIONS ───────────────────────────────────
+// Derived from compass-diagram-data.js curve parameter comments + root data
+
+const CURVE_DESCRIPTIONS = {
+  fluid: [
+    'Lowest activation — settled, ventral vagal. Symmetric bell contained within its zone. The nervous system at functional baseline.',
+    'Sympathetic spike — proportional, temporary. Symmetric bell. Activation rises fast, returns fast when threat passes.',
+    'PFC override engages after sympathetic activation. The left tail extending into Protection zone shows cognition building on the body\'s alert state.',
+    'Maximum sustained activation. Extends far left through Protection and Control zones — the entire system mobilised for decisive action.',
+  ],
+  chronic: [
+    'Activation runs continuously. The long right tail shows over-giving spreading diffusely across the gradient — energy dispersed without returning.',
+    'Elevated baseline — alarm never stands down. Wider than fluid. The system has no signal for \'threat resolved.\'',
+    'Habitual override — higher and wider than fluid, extending back through Protection. Suppression is expensive. The cognitive load never lifts.',
+    'Massive — extends from Connection zone to the end. The system organised to prevent return. Accumulated activation at maximum.',
+  ],
+};
+
+// ─── HELPERS ────────────────────────────────────────────────────
+
+function getModeIndex(pos) {
+  if (pos < 0.25) return 0;
+  if (pos < 0.5) return 1;
+  if (pos < 0.75) return 2;
+  return 3;
+}
+
+function snapToCenter(pos) {
+  for (const mode of MODES) {
+    if (Math.abs(pos - mode.center) < MAGNET_RADIUS) return mode.center;
+  }
+  return pos;
+}
+
 // ─── CURVE MATH ──────────────────────────────────────────────────
-// Adapted from CompassDiagram.jsx generateCurve(), extended with
-// floor, cutoffs, and secondaryBump support.
+// Same skewed gaussian as CompassDiagram.jsx — { peak, height, spread, skew }
 
-function generateActivationCurve(curve) {
-  const {
-    peak, height, spread, skew,
-    floor = 0,
-    cutoffLeft,
-    cutoffRight,
-    secondaryBump,
-  } = curve;
-
+function generateCurve({ peak, height, spread, skew }) {
   const range = CURVE_BOTTOM - CURVE_TOP;
   const samples = 120;
   const points = [];
@@ -50,36 +70,18 @@ function generateActivationCurve(curve) {
 
   for (let i = 0; i <= samples; i++) {
     const x01 = i / samples;
-
-    // Cutoff zones — force to floor
-    if ((cutoffLeft !== undefined && x01 < cutoffLeft) ||
-        (cutoffRight !== undefined && x01 > cutoffRight)) {
-      const y = CURVE_BOTTOM - floor * range;
-      points.push({ x: x01 * SVG_W, y });
-      continue;
-    }
-
     const dx = x01 - peak;
     const sigma = spread * (1 + skew * Math.sign(dx));
-    let activation = floor;
 
-    if (sigma > 0) {
+    let y;
+    if (sigma <= 0) {
+      y = Math.abs(dx) < 0.001 ? CURVE_BOTTOM - height * range : CURVE_BOTTOM;
+    } else {
       const gaussian = Math.exp(-(dx * dx) / (2 * sigma * sigma));
-      activation = floor + gaussian * (height - floor);
-    } else if (Math.abs(dx) < 0.001) {
-      activation = height;
+      y = CURVE_BOTTOM - gaussian * height * range;
     }
 
-    // Add secondary bump (regulation variant)
-    if (secondaryBump) {
-      const bDx = x01 - secondaryBump.peak;
-      const bGaussian = Math.exp(-(bDx * bDx) / (2 * secondaryBump.sigma * secondaryBump.sigma));
-      activation = Math.min(1, activation + bGaussian * secondaryBump.amplitude);
-    }
-
-    const y = CURVE_BOTTOM - activation * range;
     points.push({ x: x01 * SVG_W, y });
-
     if (y < peakY) {
       peakY = y;
       peakX = x01 * SVG_W;
@@ -102,70 +104,96 @@ function generateActivationCurve(curve) {
   return { fillPath, strokePath, peakX, peakY };
 }
 
-// ─── HELPERS ─────────────────────────────────────────────────────
-
-function getModeIndex(mode) {
-  return MODES.findIndex(m => m.key === mode);
-}
-
-function getCurveColor(curve) {
-  if (curve.compass === 'stuck') return TIER_COLORS[curve.tier];
-  const idx = getModeIndex(curve.mode);
-  return PATTERN[PATTERN_KEYS[idx]]?.primary || PATTERN.A.primary;
-}
-
 // ─── COMPONENT ───────────────────────────────────────────────────
 
 export default function ActivationCurveExplorer() {
-  const [compass, setCompass] = useState('fluid');
-  const [selectedMode, setSelectedMode] = useState('connection');
-  const [regulationVariant, setRegulationVariant] = useState(null);
+  const [position, setPosition] = useState(0.125);
+  const [isChronic, setIsChronic] = useState(false);
   const [showAllModes, setShowAllModes] = useState(false);
   const [compareFluidChronic, setCompareFluidChronic] = useState(false);
-  const [showParams, setShowParams] = useState(false);
+  const barRef = useRef(null);
+  const isDragging = useRef(false);
 
-  const isStuck = compass === 'stuck';
-  const modeIdx = getModeIndex(selectedMode);
-  const modeColor = PATTERN[PATTERN_KEYS[modeIdx]]?.primary || PATTERN.A.primary;
-  const accentColor = isStuck ? MODE_ORANGE : modeColor;
+  const selectedMode = getModeIndex(position);
+  const modeColor = PATTERN[PATTERN_KEYS[selectedMode]].primary;
+  const chronicModeColor = CHRONIC_TONES[selectedMode];
+  const accentColor = isChronic ? chronicModeColor : modeColor;
 
-  // ─── Compute active curves ────────────────────────────────────
+  // ─── Pointer handling ──────────────────────────────────────────
+
+  const updatePosition = useCallback((clientX) => {
+    if (!barRef.current) return;
+    const rect = barRef.current.getBoundingClientRect();
+    const raw = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    setPosition(snapToCenter(raw));
+  }, []);
+
+  const handlePointerDown = useCallback((e) => {
+    isDragging.current = true;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handlePointerMove = useCallback((e) => {
+    if (isDragging.current) updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handlePointerUp = useCallback(() => {
+    isDragging.current = false;
+  }, []);
+
+  const handleKeyDown = useCallback((e) => {
+    const step = 0.05;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      setPosition((prev) => snapToCenter(Math.min(1, prev + step)));
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      setPosition((prev) => snapToCenter(Math.max(0, prev - step)));
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      setPosition(0.125);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      setPosition(0.875);
+    }
+  }, []);
+
+  // ─── Active curves ────────────────────────────────────────────
 
   const activeCurves = useMemo(() => {
-    if (showAllModes) return getCurvesByCompass(compass);
-    if (isStuck && selectedMode === 'connection' && regulationVariant) {
-      const variant = getRegulationVariant(regulationVariant);
-      return variant ? [variant] : [getCurve(compass, selectedMode)];
-    }
-    const curve = getCurve(compass, selectedMode);
-    return curve ? [curve] : [];
-  }, [compass, selectedMode, showAllModes, regulationVariant, isStuck]);
+    const src = isChronic ? CHRONIC_CURVES : FLUID_CURVES;
+    if (showAllModes) return src.map((c, i) => ({ ...c, idx: i }));
+    return [{ ...src[selectedMode], idx: selectedMode }];
+  }, [isChronic, selectedMode, showAllModes]);
 
-  // Comparison curves (opposite compass state, faded)
-  const compareCurves = useMemo(() => {
-    if (!compareFluidChronic) return null;
-    const other = isStuck ? 'fluid' : 'stuck';
-    if (showAllModes) return getCurvesByCompass(other);
-    const curve = getCurve(other, selectedMode);
-    return curve ? [curve] : [];
-  }, [compareFluidChronic, isStuck, selectedMode, showAllModes]);
+  const comparisonCurves = useMemo(() => {
+    if (!compareFluidChronic) return [];
+    const other = isChronic ? FLUID_CURVES : CHRONIC_CURVES;
+    if (showAllModes) return other.map((c, i) => ({ ...c, idx: i }));
+    return [{ ...other[selectedMode], idx: selectedMode }];
+  }, [compareFluidChronic, isChronic, selectedMode, showAllModes]);
 
-  // ─── Generate SVG paths ───────────────────────────────────────
+  // ─── Pre-render SVG paths ─────────────────────────────────────
 
-  const renderedCurves = useMemo(() => {
-    return activeCurves.map(curve => ({
-      ...curve,
-      ...generateActivationCurve(curve),
-    }));
-  }, [activeCurves]);
+  const rendered = useMemo(
+    () => activeCurves.map(c => ({ ...c, ...generateCurve(c) })),
+    [activeCurves],
+  );
 
-  const renderedCompareCurves = useMemo(() => {
-    if (!compareCurves) return [];
-    return compareCurves.map(curve => ({
-      ...curve,
-      ...generateActivationCurve(curve),
-    }));
-  }, [compareCurves]);
+  const renderedComparison = useMemo(
+    () => comparisonCurves.map(c => ({ ...c, ...generateCurve(c) })),
+    [comparisonCurves],
+  );
+
+  // ─── Helpers ──────────────────────────────────────────────────
+
+  function curveColor(idx, chronic) {
+    return chronic ? CHRONIC_TONES[idx] : PATTERN[PATTERN_KEYS[idx]].primary;
+  }
+
+  const needleColor = isChronic ? CHRONIC_TONES[selectedMode] : modeColor;
+  const needleSvgX = position * SVG_W;
 
   // ─── Render ───────────────────────────────────────────────────
 
@@ -206,7 +234,7 @@ export default function ActivationCurveExplorer() {
               transition: 'all 300ms ease',
             }}
           >
-            {isStuck ? 'Stuck Compass' : 'Fluid Compass'}
+            {isChronic ? 'Stuck Compass' : 'Fluid Compass'}
           </span>
           <span style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted }}>
             Activation-Restoration Curves
@@ -223,9 +251,9 @@ export default function ActivationCurveExplorer() {
           }}
         >
           <button
-            onClick={() => setCompass('fluid')}
+            onClick={() => setIsChronic(false)}
             aria-label="Show fluid compass"
-            aria-pressed={!isStuck}
+            aria-pressed={!isChronic}
             style={{
               padding: '4px 14px',
               fontSize: 10,
@@ -235,16 +263,16 @@ export default function ActivationCurveExplorer() {
               border: 'none',
               cursor: 'pointer',
               transition: 'all 200ms ease',
-              background: !isStuck ? hexToRgba(modeColor, 0.15) : 'transparent',
-              color: !isStuck ? modeColor : TEXT.muted,
+              background: !isChronic ? hexToRgba(modeColor, 0.15) : 'transparent',
+              color: !isChronic ? modeColor : TEXT.muted,
             }}
           >
             Fluid
           </button>
           <button
-            onClick={() => setCompass('stuck')}
+            onClick={() => setIsChronic(true)}
             aria-label="Show chronic compass"
-            aria-pressed={isStuck}
+            aria-pressed={isChronic}
             style={{
               padding: '4px 14px',
               fontSize: 10,
@@ -255,8 +283,8 @@ export default function ActivationCurveExplorer() {
               borderLeft: `1px solid ${BORDER.default}`,
               cursor: 'pointer',
               transition: 'all 200ms ease',
-              background: isStuck ? hexToRgba(MODE_ORANGE, 0.15) : 'transparent',
-              color: isStuck ? MODE_ORANGE : TEXT.muted,
+              background: isChronic ? hexToRgba(chronicModeColor, 0.15) : 'transparent',
+              color: isChronic ? chronicModeColor : TEXT.muted,
             }}
           >
             Chronic
@@ -267,12 +295,12 @@ export default function ActivationCurveExplorer() {
       {/* ─── Mode Selector Pills ─────────────────────────── */}
       <div style={{ padding: '12px 20px 0', display: 'flex', gap: 6, flexWrap: 'wrap' }}>
         {MODES.map((mode, i) => {
-          const isActive = selectedMode === mode.key;
-          const pillColor = isStuck ? MODE_ORANGE : PATTERN[PATTERN_KEYS[i]].primary;
+          const isActive = selectedMode === i;
+          const pillColor = isChronic ? CHRONIC_TONES[i] : PATTERN[PATTERN_KEYS[i]].primary;
           return (
             <button
               key={mode.key}
-              onClick={() => setSelectedMode(mode.key)}
+              onClick={() => setPosition(mode.center)}
               aria-pressed={isActive}
               style={{
                 padding: '5px 12px',
@@ -289,7 +317,7 @@ export default function ActivationCurveExplorer() {
                 color: isActive ? pillColor : TEXT.hint,
               }}
             >
-              {isStuck ? `Chronic ${mode.label}` : mode.label}
+              {isChronic ? `Chronic ${mode.label}` : mode.label}
             </button>
           );
         })}
@@ -320,7 +348,7 @@ export default function ActivationCurveExplorer() {
             type="checkbox"
             checked={showAllModes}
             onChange={e => setShowAllModes(e.target.checked)}
-            style={{ accentColor: accentColor }}
+            style={{ accentColor }}
           />
           Show all modes
         </label>
@@ -340,56 +368,10 @@ export default function ActivationCurveExplorer() {
             type="checkbox"
             checked={compareFluidChronic}
             onChange={e => setCompareFluidChronic(e.target.checked)}
-            style={{ accentColor: accentColor }}
+            style={{ accentColor }}
           />
           Compare Fluid vs Chronic
         </label>
-
-        {/* Regulation variant selector — only for Chronic Connection */}
-        {isStuck && selectedMode === 'connection' && !showAllModes && (
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '4px 10px',
-              borderRadius: RADIUS.sm,
-              background: hexToRgba(MODE_ORANGE, 0.04),
-              border: `1px solid ${hexToRgba(MODE_ORANGE, 0.15)}`,
-            }}
-          >
-            <span
-              style={{
-                fontSize: 9,
-                fontFamily: FONT.mono,
-                color: TEXT.hint,
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-              }}
-            >
-              Regulation:
-            </span>
-            <select
-              value={regulationVariant || ''}
-              onChange={e => setRegulationVariant(e.target.value || null)}
-              style={{
-                padding: '3px 6px',
-                fontSize: 10,
-                fontFamily: FONT.mono,
-                background: BG.inset,
-                color: TEXT.secondary,
-                border: `1px solid ${BORDER.default}`,
-                borderRadius: RADIUS.sm,
-                cursor: 'pointer',
-              }}
-            >
-              <option value="">Base curve</option>
-              {REGULATION_VARIANTS.map(v => (
-                <option key={v.id} value={v.id}>{v.label}</option>
-              ))}
-            </select>
-          </div>
-        )}
       </div>
 
       {/* ─── Curve Label ─────────────────────────────────── */}
@@ -402,47 +384,26 @@ export default function ActivationCurveExplorer() {
           minHeight: 28,
         }}
       >
-        {!showAllModes && activeCurves[0] && (() => {
-          const curve = activeCurves[0];
-          const labelColor = getCurveColor(curve);
-          return (
-            <>
-              <span
-                style={{
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: labelColor,
-                  transition: 'color 200ms',
-                }}
-              >
-                {curve.label}
-              </span>
-              <span
-                style={{
-                  fontSize: 9,
-                  fontWeight: 700,
-                  fontFamily: FONT.mono,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  padding: '2px 8px',
-                  borderRadius: 100,
-                  border: `1px solid ${hexToRgba(labelColor, 0.25)}`,
-                  color: labelColor,
-                }}
-              >
-                {TIERS[curve.tier]?.label}
-              </span>
-            </>
-          );
-        })()}
+        {!showAllModes && (
+          <span
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: curveColor(selectedMode, isChronic),
+              transition: 'color 200ms',
+            }}
+          >
+            {isChronic ? `Chronic ${MODES[selectedMode].label}` : MODES[selectedMode].label}
+          </span>
+        )}
         {showAllModes && (
           <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary }}>
-            All {isStuck ? 'Chronic' : 'Fluid'} Modes
+            All {isChronic ? 'Chronic' : 'Fluid'} Modes
           </span>
         )}
         {compareFluidChronic && (
           <span style={{ fontSize: 10, fontFamily: FONT.mono, color: TEXT.hint }}>
-            (dashed = {isStuck ? 'fluid' : 'chronic'} comparison)
+            (dashed = {isChronic ? 'fluid' : 'chronic'} comparison)
           </span>
         )}
       </div>
@@ -456,19 +417,7 @@ export default function ActivationCurveExplorer() {
           aria-label="Activation-restoration curve chart showing nervous system activation across the four-mode gradient"
         >
           <defs>
-            {/* Gradient bar — PATTERN (blue spectrum), same for both states */}
-            <linearGradient id="ac-bar-gradient" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor={PATTERN.A.primary} />
-              <stop offset="20%" stopColor={PATTERN.A.primary} />
-              <stop offset="35%" stopColor={PATTERN.B.primary} />
-              <stop offset="45%" stopColor={PATTERN.B.primary} />
-              <stop offset="55%" stopColor={PATTERN.C.primary} />
-              <stop offset="70%" stopColor={PATTERN.C.primary} />
-              <stop offset="85%" stopColor={PATTERN.D.primary} />
-              <stop offset="100%" stopColor={PATTERN.D.primary} />
-            </linearGradient>
-
-            {/* Fluid fill — blue spectrum gradient */}
+            {/* Fluid fill — blue spectrum */}
             <linearGradient id="ac-fill-fluid" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stopColor={PATTERN.A.primary} stopOpacity={0.2} />
               <stop offset="33%" stopColor={PATTERN.B.primary} stopOpacity={0.2} />
@@ -476,36 +425,13 @@ export default function ActivationCurveExplorer() {
               <stop offset="100%" stopColor={PATTERN.D.primary} stopOpacity={0.2} />
             </linearGradient>
 
-            {/* Chronic fill — orange-based */}
+            {/* Chronic fill — orange spectrum */}
             <linearGradient id="ac-fill-chronic" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor={MODE_ORANGE} stopOpacity={0.1} />
-              <stop offset="50%" stopColor={MODE_ORANGE} stopOpacity={0.2} />
-              <stop offset="100%" stopColor={MODE_ORANGE} stopOpacity={0.3} />
+              <stop offset="0%" stopColor={CHRONIC_TONES[0]} stopOpacity={0.15} />
+              <stop offset="33%" stopColor={CHRONIC_TONES[1]} stopOpacity={0.2} />
+              <stop offset="66%" stopColor={CHRONIC_TONES[2]} stopOpacity={0.25} />
+              <stop offset="100%" stopColor={CHRONIC_TONES[3]} stopOpacity={0.3} />
             </linearGradient>
-
-            {/* Diagonal hatch pattern for inaccessible zones */}
-            <pattern
-              id="ac-hatch"
-              width="8"
-              height="8"
-              patternTransform="rotate(45)"
-              patternUnits="userSpaceOnUse"
-            >
-              <line
-                x1="0" y1="0" x2="0" y2="8"
-                stroke="rgba(255,255,255,0.1)"
-                strokeWidth="1.5"
-              />
-            </pattern>
-
-            {/* Glow filter for weapon-tier curves */}
-            <filter id="ac-weapon-glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="3" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
           </defs>
 
           {/* Baseline reference line */}
@@ -560,38 +486,21 @@ export default function ActivationCurveExplorer() {
             LOW
           </text>
 
-          {/* Inaccessible zone overlays */}
-          {renderedCurves.map(curve =>
-            (curve.inaccessibleZones || []).map((zone, zi) => (
-              <g key={`${curve.id}-zone-${zi}`}>
-                <rect
-                  x={zone.from * SVG_W}
-                  y={CURVE_TOP}
-                  width={(zone.to - zone.from) * SVG_W}
-                  height={CURVE_BOTTOM - CURVE_TOP}
-                  fill="url(#ac-hatch)"
-                  opacity={0.6}
-                />
-                <text
-                  x={(zone.from + zone.to) / 2 * SVG_W}
-                  y={CURVE_TOP + 16}
-                  fill={TEXT.hint}
-                  fontSize={8}
-                  fontFamily={FONT.mono}
-                  textAnchor="middle"
-                  letterSpacing="0.08em"
-                >
-                  INACCESSIBLE
-                </text>
-              </g>
-            ))
-          )}
+          {/* Vertical position indicator */}
+          <line
+            x1={needleSvgX} y1={CURVE_BOTTOM}
+            x2={needleSvgX} y2={CURVE_TOP + 5}
+            stroke={needleColor}
+            strokeWidth={1}
+            strokeDasharray="4 4"
+            opacity={0.15}
+          />
 
           {/* Comparison curves (faded, behind main curves) */}
-          {renderedCompareCurves.map(curve => {
-            const color = getCurveColor(curve);
+          {renderedComparison.map(curve => {
+            const color = curveColor(curve.idx, !isChronic);
             return (
-              <g key={`compare-${curve.id}`} opacity={0.25}>
+              <g key={`compare-${curve.idx}`} opacity={0.25}>
                 <path
                   d={curve.fillPath}
                   fill={color}
@@ -609,20 +518,14 @@ export default function ActivationCurveExplorer() {
           })}
 
           {/* Main curves */}
-          {renderedCurves.map(curve => {
-            const color = getCurveColor(curve);
-            const tierConfig = TIERS[curve.tier];
-            const curveOpacity = curve.opacity !== undefined ? curve.opacity : 1;
-            const strokeDash = tierConfig.stroke === 'dashed' ? '8 4' : undefined;
-            const useGlow = curve.tier === 'weapon';
-            const range = CURVE_BOTTOM - CURVE_TOP;
-
+          {rendered.map(curve => {
+            const color = curveColor(curve.idx, isChronic);
             return (
-              <g key={curve.id} opacity={curveOpacity}>
+              <g key={`curve-${curve.idx}`}>
                 {/* Fill area */}
                 <path
                   d={curve.fillPath}
-                  fill={curve.compass === 'stuck' ? 'url(#ac-fill-chronic)' : 'url(#ac-fill-fluid)'}
+                  fill={isChronic ? 'url(#ac-fill-chronic)' : 'url(#ac-fill-fluid)'}
                   style={{ transition: 'opacity 200ms ease' }}
                 />
 
@@ -631,309 +534,327 @@ export default function ActivationCurveExplorer() {
                   d={curve.strokePath}
                   fill="none"
                   stroke={color}
-                  strokeWidth={tierConfig.strokeWidth}
-                  strokeDasharray={strokeDash}
+                  strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  filter={useGlow ? 'url(#ac-weapon-glow)' : undefined}
                   style={{ transition: 'all 200ms ease' }}
                 />
 
-                {/* Floor reference line for chronic curves */}
-                {curve.floor > 0 && (
-                  <line
-                    x1={0}
-                    y1={CURVE_BOTTOM - curve.floor * range}
-                    x2={SVG_W}
-                    y2={CURVE_BOTTOM - curve.floor * range}
-                    stroke={color}
-                    strokeWidth={1}
-                    strokeDasharray="2 4"
-                    opacity={0.4}
+                {/* Peak dot */}
+                {!showAllModes && (
+                  <circle
+                    cx={curve.peakX}
+                    cy={curve.peakY}
+                    r={4}
+                    fill={color}
+                    stroke="rgba(255,255,255,0.8)"
+                    strokeWidth={1.5}
                   />
                 )}
-
-                {/* Annotations */}
-                {(curve.annotations || []).map((ann, ai) => {
-                  if (ann.type === 'peak') {
-                    return (
-                      <g key={ai}>
-                        <circle
-                          cx={curve.peakX}
-                          cy={curve.peakY}
-                          r={4}
-                          fill={color}
-                          stroke="rgba(255,255,255,0.8)"
-                          strokeWidth={1.5}
-                        />
-                        <text
-                          x={curve.peakX}
-                          y={curve.peakY - 10}
-                          fill={color}
-                          fontSize={8}
-                          fontFamily={FONT.mono}
-                          textAnchor="middle"
-                          opacity={0.8}
-                        >
-                          {ann.label}
-                        </text>
-                      </g>
-                    );
-                  }
-                  if (ann.type === 'floor' && curve.floor > 0) {
-                    const floorY = CURVE_BOTTOM - curve.floor * range;
-                    return (
-                      <text
-                        key={ai}
-                        x={4}
-                        y={floorY - 4}
-                        fill={color}
-                        fontSize={7}
-                        fontFamily={FONT.mono}
-                        opacity={0.6}
-                        letterSpacing="0.04em"
-                      >
-                        {ann.label}
-                      </text>
-                    );
-                  }
-                  return null;
-                })}
               </g>
-            );
-          })}
-
-          {/* Gradient bar */}
-          <rect
-            x={0} y={BAR_Y}
-            width={SVG_W} height={BAR_HEIGHT}
-            rx={4}
-            fill="url(#ac-bar-gradient)"
-          />
-
-          {/* Zone dividers on gradient bar */}
-          {ZONE_BOUNDARIES.map(p => (
-            <line
-              key={`bar-${p}`}
-              x1={p * SVG_W} y1={BAR_Y}
-              x2={p * SVG_W} y2={BAR_Y + BAR_HEIGHT}
-              stroke="rgba(0,0,0,0.5)"
-              strokeWidth={2}
-            />
-          ))}
-
-          {/* Mode labels below gradient bar */}
-          {MODES.map((mode, i) => {
-            const labelColor = isStuck
-              ? MODE_ORANGE
-              : PATTERN[PATTERN_KEYS[i]].primary;
-            return (
-              <text
-                key={mode.key}
-                x={mode.center * SVG_W}
-                y={BAR_Y + BAR_HEIGHT + 14}
-                fill={labelColor}
-                fontSize={9}
-                fontWeight={700}
-                fontFamily={FONT.mono}
-                textAnchor="middle"
-                letterSpacing="0.04em"
-              >
-                {mode.label}
-              </text>
             );
           })}
         </svg>
       </div>
 
-      {/* ─── Legend ───────────────────────────────────────── */}
-      <div
-        style={{
-          padding: '12px 20px',
-          display: 'flex',
-          gap: 16,
-          flexWrap: 'wrap',
-        }}
-      >
-        {[
-          { tier: 'signal',  color: TIER_COLORS.signal,  subtitle: 'Activation completes, returns to baseline' },
-          { tier: 'barrier', color: TIER_COLORS.barrier, subtitle: 'Extended activation — floor never reaches zero' },
-          { tier: 'weapon',  color: TIER_COLORS.weapon,  subtitle: 'Permanent activation — mode locked as identity' },
-        ].map(item => {
-          const tierConfig = TIERS[item.tier];
-          return (
+      {/* ─── Gradient Bar + Needle ──────────────────────── */}
+      <div style={{ padding: '0 20px' }}>
+        <div
+          role="slider"
+          tabIndex={0}
+          aria-label="Four-mode gradient position"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(position * 100)}
+          aria-valuetext={`${MODES[selectedMode].label} mode`}
+          style={{
+            padding: '15px 0',
+            margin: '-15px 0',
+            cursor: 'pointer',
+            touchAction: 'none',
+            userSelect: 'none',
+          }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onKeyDown={handleKeyDown}
+        >
+          <div
+            ref={barRef}
+            style={{
+              position: 'relative',
+              height: 14,
+              borderRadius: 7,
+              background: isChronic ? CHRONIC_BAR_GRADIENT : BAR_GRADIENT,
+              pointerEvents: 'none',
+            }}
+          >
+            {/* Zone dividers */}
+            {ZONE_BOUNDARIES.map((p) => (
+              <div
+                key={p}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  bottom: 0,
+                  width: 3,
+                  left: `${p * 100}%`,
+                  transform: 'translateX(-50%)',
+                  backgroundColor: hexToRgba('#000000', 0.6),
+                }}
+              />
+            ))}
+            {/* Needle */}
             <div
-              key={item.tier}
               style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: 10,
-                flex: '1 1 160px',
-                padding: '8px 12px',
-                borderRadius: RADIUS.sm,
-                border: `1px solid ${BORDER.default}`,
+                position: 'absolute',
+                top: '50%',
+                left: `${position * 100}%`,
+                transform: 'translate(-50%, -50%)',
+                width: 28,
+                height: 28,
+                borderRadius: '50%',
+                backgroundColor: BG.primary,
+                border: `3px solid ${needleColor}`,
+                boxShadow: `0 0 16px ${hexToRgba(needleColor, 0.5)}`,
+                transition: 'border-color 200ms ease, box-shadow 200ms ease',
               }}
-            >
-              {/* Stroke sample */}
-              <svg width="36" height="20" viewBox="0 0 36 20" style={{ flexShrink: 0, marginTop: 2 }}>
-                {item.tier === 'weapon' && (
-                  <>
-                    <defs>
-                      <filter id={`legend-glow-${item.tier}`} x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="2" />
-                      </filter>
-                    </defs>
-                    <line
-                      x1="2" y1="10" x2="34" y2="10"
-                      stroke={item.color}
-                      strokeWidth={tierConfig.strokeWidth}
-                      strokeLinecap="round"
-                      opacity={0.3}
-                      filter={`url(#legend-glow-${item.tier})`}
-                    />
-                  </>
-                )}
-                <line
-                  x1="2" y1="10" x2="34" y2="10"
-                  stroke={item.color}
-                  strokeWidth={tierConfig.strokeWidth}
-                  strokeDasharray={tierConfig.stroke === 'dashed' ? '6 4' : undefined}
-                  strokeLinecap="round"
-                />
-              </svg>
+            />
+          </div>
+        </div>
 
-              <div>
-                <div
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 700,
-                    fontFamily: FONT.mono,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    color: item.color,
-                    marginBottom: 2,
-                  }}
-                >
-                  {tierConfig.label}
-                </div>
-                <div
-                  style={{
-                    fontSize: 10,
-                    color: TEXT.hint,
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {item.subtitle}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* ─── Parameter Inspector (collapsible) ───────────── */}
-      <div style={{ padding: '0 20px 16px' }}>
-        <button
-          onClick={() => setShowParams(!showParams)}
+        {/* Mode labels — clickable buttons */}
+        <div
           style={{
             display: 'flex',
-            alignItems: 'center',
-            gap: 6,
-            padding: '6px 0',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            fontSize: 9,
-            fontFamily: FONT.mono,
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-            color: TEXT.hint,
+            justifyContent: 'space-between',
+            marginTop: 6,
+            padding: '0 2px',
           }}
         >
-          <span
-            style={{
-              display: 'inline-block',
-              transition: 'transform 200ms ease',
-              transform: showParams ? 'rotate(90deg)' : 'rotate(0deg)',
-              fontSize: 8,
-            }}
-          >
-            &#9654;
-          </span>
-          Parameter Inspector
-        </button>
-
-        {showParams && (
-          <div
-            style={{
-              padding: '12px 14px',
-              borderRadius: RADIUS.sm,
-              border: `1px solid ${BORDER.default}`,
-              background: BG.inset,
-              fontFamily: FONT.mono,
-              fontSize: 10,
-              color: TEXT.secondary,
-              lineHeight: 1.8,
-              overflowX: 'auto',
-            }}
-          >
-            {activeCurves.map(curve => (
-              <div key={curve.id} style={{ marginBottom: 10 }}>
+          {MODES.map((m, i) => {
+            const isActive = i === selectedMode;
+            const color = isChronic ? CHRONIC_TONES[i] : PATTERN[PATTERN_KEYS[i]].primary;
+            return (
+              <button
+                key={m.key}
+                onClick={() => setPosition(m.center)}
+                style={{
+                  width: '25%',
+                  textAlign: 'center',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '4px 0 6px',
+                }}
+              >
                 <div
                   style={{
-                    fontWeight: 700,
-                    color: getCurveColor(curve),
-                    marginBottom: 4,
+                    fontSize: isActive ? 12 : 10,
+                    fontFamily: FONT.mono,
+                    fontWeight: isActive ? 700 : 400,
+                    color: color,
+                    opacity: isActive ? 1 : 0.2,
+                    transition: 'all 200ms ease',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
                   }}
                 >
-                  {curve.id}
+                  {m.label}
                 </div>
-                <table style={{ borderCollapse: 'collapse' }}>
-                  <tbody>
-                    {['peak', 'height', 'spread', 'skew', 'floor', 'tier', 'compass'].map(key => (
-                      <tr key={key}>
-                        <td style={{ padding: '1px 12px 1px 0', color: TEXT.hint }}>{key}</td>
-                        <td style={{ padding: '1px 0' }}>
-                          {typeof curve[key] === 'number' ? curve[key].toFixed(3) : curve[key]}
-                        </td>
-                      </tr>
-                    ))}
-                    {curve.opacity !== undefined && (
-                      <tr>
-                        <td style={{ padding: '1px 12px 1px 0', color: TEXT.hint }}>opacity</td>
-                        <td style={{ padding: '1px 0' }}>{curve.opacity}</td>
-                      </tr>
-                    )}
-                    {curve.cutoffLeft !== undefined && (
-                      <tr>
-                        <td style={{ padding: '1px 12px 1px 0', color: TEXT.hint }}>cutoffLeft</td>
-                        <td style={{ padding: '1px 0' }}>{curve.cutoffLeft}</td>
-                      </tr>
-                    )}
-                    {curve.cutoffRight !== undefined && (
-                      <tr>
-                        <td style={{ padding: '1px 12px 1px 0', color: TEXT.hint }}>cutoffRight</td>
-                        <td style={{ padding: '1px 0' }}>{curve.cutoffRight}</td>
-                      </tr>
-                    )}
-                    {curve.secondaryBump && (
-                      <tr>
-                        <td style={{ padding: '1px 12px 1px 0', color: TEXT.hint }}>secondaryBump</td>
-                        <td style={{ padding: '1px 0' }}>
-                          peak={curve.secondaryBump.peak} amp={curve.secondaryBump.amplitude} sigma={curve.secondaryBump.sigma}
-                        </td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            ))}
-            {activeCurves.length === 0 && (
-              <div style={{ color: TEXT.hint }}>No active curves</div>
-            )}
-          </div>
-        )}
+              </button>
+            );
+          })}
+        </div>
       </div>
+
+      {/* ─── Section A: Activation Pattern ────────────── */}
+      <div style={{ padding: '12px 20px 0' }}>
+        <div
+          style={{
+            padding: '12px 16px',
+            borderRadius: RADIUS.sm,
+            background: hexToRgba(accentColor, 0.04),
+            border: `1px solid ${hexToRgba(accentColor, 0.12)}`,
+            transition: 'border-color 300ms, background 300ms',
+          }}
+        >
+          <div
+            style={{
+              fontSize: 9,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: accentColor,
+              marginBottom: 6,
+              transition: 'color 300ms',
+            }}
+          >
+            Activation Pattern
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 4 }}>
+            <span
+              style={{
+                fontSize: 9,
+                fontFamily: FONT.mono,
+                fontWeight: 600,
+                letterSpacing: '0.04em',
+                color: TEXT.muted,
+                textTransform: 'uppercase',
+                padding: '2px 6px',
+                borderRadius: 3,
+                background: hexToRgba(accentColor, 0.08),
+              }}
+            >
+              {MODES[selectedMode].activation}
+            </span>
+          </div>
+          <div style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6 }}>
+            {isChronic
+              ? CURVE_DESCRIPTIONS.chronic[selectedMode]
+              : CURVE_DESCRIPTIONS.fluid[selectedMode]}
+          </div>
+        </div>
+      </div>
+
+      {/* ─── Section B: Restoration ───────────────────── */}
+      <div style={{ padding: '12px 20px 0' }}>
+        <div
+          style={{
+            padding: '12px 16px',
+            borderRadius: RADIUS.sm,
+            background: hexToRgba(accentColor, 0.04),
+            border: `1px solid ${hexToRgba(accentColor, 0.12)}`,
+            transition: 'border-color 300ms, background 300ms',
+          }}
+        >
+          <div
+            style={{
+              fontSize: 9,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: accentColor,
+              marginBottom: 6,
+              transition: 'color 300ms',
+            }}
+          >
+            {isChronic ? 'Regulation Substitutes' : 'Biological Restoration'}
+          </div>
+
+          {isChronic ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <div>
+                <span
+                  style={{
+                    fontSize: 9,
+                    fontFamily: FONT.mono,
+                    fontWeight: 600,
+                    letterSpacing: '0.04em',
+                    color: TEXT.muted,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Non-relational
+                </span>
+                <div style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6, marginTop: 2 }}>
+                  {RESTORATION.chronic[selectedMode].nonRelational.join(' · ')}
+                </div>
+              </div>
+              <div>
+                <span
+                  style={{
+                    fontSize: 9,
+                    fontFamily: FONT.mono,
+                    fontWeight: 600,
+                    letterSpacing: '0.04em',
+                    color: TEXT.muted,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Relational
+                </span>
+                <div style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6, marginTop: 2 }}>
+                  {RESTORATION.chronic[selectedMode].relational.join(' · ')}
+                </div>
+              </div>
+              <div
+                style={{
+                  fontSize: 10,
+                  fontFamily: FONT.mono,
+                  color: TEXT.hint,
+                  marginTop: 2,
+                }}
+              >
+                Relief: {RESTORATION.chronic[selectedMode].relief} — debris does not clear
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 4 }}>
+                <span style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary }}>
+                  {RESTORATION.fluid[selectedMode].name}
+                </span>
+                <span
+                  style={{
+                    fontSize: 9,
+                    fontFamily: FONT.mono,
+                    fontWeight: 600,
+                    letterSpacing: '0.04em',
+                    color: TEXT.muted,
+                    textTransform: 'uppercase',
+                    padding: '2px 6px',
+                    borderRadius: 3,
+                    background: hexToRgba(modeColor, 0.08),
+                  }}
+                >
+                  {RESTORATION.fluid[selectedMode].type}
+                </span>
+              </div>
+              <div style={{ fontSize: 12, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 4 }}>
+                {RESTORATION.fluid[selectedMode].description}
+              </div>
+              <div style={{ fontSize: 10, fontFamily: FONT.mono, color: TEXT.hint }}>
+                Timescale: {RESTORATION.fluid[selectedMode].timescale}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* ─── Section C: Arc / Loop ────────────────────── */}
+      <div style={{ padding: '12px 20px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span
+            style={{
+              fontSize: 9,
+              fontFamily: FONT.mono,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              color: isChronic ? chronicModeColor : TEXT.muted,
+            }}
+          >
+            {isChronic ? 'Loop' : 'Arc'}
+          </span>
+          <span
+            style={{
+              fontSize: 11,
+              fontFamily: FONT.mono,
+              fontWeight: 600,
+              color: accentColor,
+              transition: 'color 300ms',
+            }}
+          >
+            {isChronic ? MODES[selectedMode].chronicArc : MODES[selectedMode].arc}
+          </span>
+        </div>
+      </div>
+
+      {/* Bottom padding */}
+      <div style={{ height: 16 }} />
     </div>
   );
 }
