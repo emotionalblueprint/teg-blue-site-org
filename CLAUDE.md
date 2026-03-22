@@ -81,6 +81,14 @@ For TEG-Blue definition, architecture, core models, vocabulary, and system overv
 For shared rules (core messaging, forbidden terms, voice, mode colors) → these are in auto-memory (always loaded).
 **.org links to .com** for interactive tools. **.com links to .org** for open research.
 
+### "Emotional Technology" — Term History
+
+| Date | Source | Usage |
+|------|--------|-------|
+| **Sept 2025** | `tegblue-backbone.md` | "Emotional Technology Infrastructure" — technical foundations for AI, research, education |
+| **Nov 2025** | Research Matrix | "TEG-Blue™ — Emotional Technology" (tagline) |
+| **Feb 18, 2026** | Full integration | Implemented across all sites, GitHub repos, and documentation |
+
 ---
 
 ## Validation Study
