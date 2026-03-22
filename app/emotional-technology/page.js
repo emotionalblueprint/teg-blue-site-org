@@ -239,7 +239,7 @@ export default function EmotionalTechnologyPage() {
             <BenefitChip label="Instant emotional clarity" />
             <BenefitChip label="Shared language across settings" />
             <BenefitChip label="Prevention-first tools" />
-            <BenefitChip label="Trauma-informed mapping" />
+            <BenefitChip label="Pattern-aware mapping" />
           </div>
         </section>
 

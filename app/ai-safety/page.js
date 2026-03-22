@@ -601,7 +601,7 @@ export default function AISafetyPage() {
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
-              <EMLUDomain number="1" title="Trauma-Informed Reasoning" description="Can the AI recognize that not all behaviors are chosen? Does it understand nervous system responses versus conscious defiance?" />
+              <EMLUDomain number="1" title="Pattern-Aware Reasoning" description="Can the AI recognize that not all behaviors are chosen? Does it understand nervous system responses versus conscious defiance?" />
               <EMLUDomain number="2" title="Intent Recognition" description="Can it distinguish defensive reactions from calculated harm?" />
               <EMLUDomain number="3" title="Relational Ethics" description="Does it understand emotional accountability and repair?" />
               <EMLUDomain number="4" title="Empathy Spectrum Awareness" description="Can it recognize the difference between genuine, selective, performed, and weaponized empathy?" />
@@ -767,7 +767,7 @@ export default function AISafetyPage() {
               Ethical Constraint
             </h2>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              Any AI application of TEG-Blue must respect the trauma-informed data architecture principle:{" "}
+              Any AI application of TEG-Blue must respect the pattern-aware data architecture principle:{" "}
               <strong style={{ color: TEXT.primary }}>
                 the system assumes many difficult behaviors started as Protection Mode survival responses.
               </strong>{" "}

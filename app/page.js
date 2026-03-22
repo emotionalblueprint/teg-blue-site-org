@@ -51,7 +51,7 @@ export const metadata = {
     "emotional regulation research",
     "four-mode gradient",
     "nervous system regulation",
-    "trauma-informed research",
+    "pattern-aware research",
     "TEG-Blue",
     "open science",
   ],

@@ -12,7 +12,7 @@ export const metadata = {
     "zones of regulation",
     "internal family systems IFS",
     "attachment theory",
-    "trauma informed care",
+    "nervous system regulation",
     "emotional intelligence frameworks",
     "TEG-Blue scientific foundations",
     "psychology integration",

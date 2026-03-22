@@ -13,7 +13,7 @@ const FAQ_ITEMS = [
     answer: "TEG-Blue is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA-4.0). The framework may be cited, tested, and built upon — but not used for commercial purposes without permission.",
   },
   {
-    question: "How does TEG-Blue handle trauma-informed research?",
+    question: "How does TEG-Blue handle patterns shaped by adversity?",
     answer: "TEG-Blue treats emotional patterns shaped by adversity as functional adaptations. The framework preserves the distinction between an adaptation and the conditions that produced it, even when patterns become maladaptive in changed circumstances.",
   },
 ];

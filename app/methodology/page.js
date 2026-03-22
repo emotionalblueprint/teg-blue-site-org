@@ -8,21 +8,21 @@ const SIDEBAR_SECTIONS = [
   { label: "Status Ladder", href: "#status-ladder", description: "Where each component stands: validated, proposed, or open. Transparent about certainty levels." },
   { label: "Validation Approach", href: "#validation-approach", description: "How TEG-Blue tests its claims — computational analysis, natural language data, independent replication." },
   { label: "How TEG-Blue Was Developed", href: "#how-teg-blue-was-developed", description: "The architecture, the literature mapping, AI-assisted research tools, and honest limitations." },
-  { label: "Ethical Standards", href: "#ethical-standards", description: "Trauma-informed data architecture. What research ethics look like for emotional technology." },
+  { label: "Ethical Standards", href: "#ethical-standards", description: "Pattern-aware data architecture. What research ethics look like for emotional technology." },
   { label: "AI-Readable Research", href: "#ai-readable-research", description: "Designed for both human and AI consumption. Structured for machine legibility." },
   { label: "Where We Stand Honestly", href: "#where-we-stand-honestly", description: "A candid assessment of current methodology — what is strong, what needs work." },
 ];
 
 export const metadata = {
   title: "Methodology | TEG-Blue Research",
-  description: "How TEG-Blue research is conducted. Open science principles, pre-registration, open data (Zenodo), transparent methodology, ethical standards, and trauma-informed data architecture.",
+  description: "How TEG-Blue research is conducted. Open science principles, pre-registration, open data (Zenodo), transparent methodology, ethical standards, and pattern-aware data architecture.",
   keywords: [
     "research methodology",
     "open science principles",
     "pre-registration",
     "open data Zenodo",
     "research ethics",
-    "trauma informed research",
+    "pattern-aware research",
     "inter-rater reliability",
     "convergent validity",
     "ecological validity",
@@ -34,7 +34,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Methodology — TEG-Blue Research",
-    description: "Open science commitment: pre-registration, open data, transparent reporting, ethical standards, trauma-informed design.",
+    description: "Open science commitment: pre-registration, open data, transparent reporting, ethical standards, pattern-aware design.",
     url: "https://teg-blue.org/methodology",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -63,7 +63,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What ethical standards does TEG-Blue research follow?",
-    answer: "All research involving human participants follows ethical guidelines including: informed consent, right to withdraw, data anonymization, no deception in study design, debriefing after participation, and mental health resources offered to all participants. The system uses trauma-informed data architecture principles."
+    answer: "All research involving human participants follows ethical guidelines including: informed consent, right to withdraw, data anonymization, no deception in study design, debriefing after participation, and mental health resources offered to all participants. The system uses pattern-aware data architecture principles."
   },
 ];
 
@@ -271,7 +271,7 @@ export default function MethodologyPage() {
             }}
           >
             <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Trauma-informed data architecture
+              Pattern-aware data architecture
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
               The system assumes many difficult behaviors started as Protection Mode survival responses. Data systems built on this framework should not be designed to shame, profile, or exploit. This is an architectural constraint, not just an aspiration.
