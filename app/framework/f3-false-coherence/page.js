@@ -867,7 +867,7 @@ export default function F3FalseCoherencePage() {
                 The mechanism is identical to substance addiction: the substance (others' subjugation) provides temporary relief from an internal state; the internal state is never processed (because SEA is offline); tolerance builds; escalation is required; the person is never satisfied; there is no natural stopping point. Power and wealth amplify this by providing access to more regulation sources and protection from consequences.
               </p>
               <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.7, margin: 0, fontWeight: 500, fontStyle: "italic" }}>
-                There is no amount of domination that will make them feel safe — because the safety they need is internal. SEA cannot come back online through domination. It can only come back through the conditions described in F2's healing account: safety, not power.
+                There is no amount of domination that will make them feel safe — because the safety they need is internal. SEA cannot come back online through domination. It can only come back through the conditions described in F2's restoration account: safety, not power.
               </p>
             </div>
 

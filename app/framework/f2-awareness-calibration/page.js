@@ -194,7 +194,7 @@ export default function F2AwarenessCalibrationPage() {
                   Identity is not a pure expression of an "innate self" — it is a cognitive structure built around the awareness capacities and regulation patterns the child had conditions to develop
                 </li>
                 <li style={propositionItemStyle}>
-                  Healing is not finding a hidden self or removing a mask — it is developing the capacities that never had conditions to form, and learning Biological Restoration
+                  Restoration is not finding a hidden self or removing a mask — it is developing the capacities that never had conditions to form, and learning Biological Restoration
                 </li>
                 <li style={propositionItemStyle}>
                   The generational chain replicates until awareness changes, not just behavior or intention
@@ -721,7 +721,7 @@ export default function F2AwarenessCalibrationPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Replacing the "hidden self / mask" framing with a mechanism: awareness configuration. The adaptive identity is the most intelligent thing cognition could build given what was available. Healing is not removing a mask. It is developing the capacities that never had conditions to form, and learning Biological Restoration.
+                  Replacing the "hidden self / mask" framing with a mechanism: awareness configuration. The adaptive identity is the most intelligent thing cognition could build given what was available. Restoration is not removing a mask. It is developing the capacities that never had conditions to form, and learning Biological Restoration.
                 </p>
               </ExpandableSection>
             </div>
@@ -865,19 +865,19 @@ export default function F2AwarenessCalibrationPage() {
             </div>
           </section>
 
-          {/* ─── HEALING ──────────────────────────────────── */}
+          {/* ─── RESTORATION ─────────────────────────────── */}
           <section
-            id="healing"
-            aria-labelledby="heading-healing"
+            id="restoration"
+            aria-labelledby="heading-restoration"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-healing" style={sectionHeadingStyle}>
-              Healing — Reconnecting, Not Removing
+            <h2 id="heading-restoration" style={sectionHeadingStyle}>
+              Restoration — Reconnecting, Not Removing
             </h2>
 
             <div style={{ marginBottom: 32 }}>
-              <h3 id="healing-mechanism" style={conceptHeadingStyle}>
-                The Dual Mechanism of Healing
+              <h3 id="restoration-mechanism" style={conceptHeadingStyle}>
+                The Dual Mechanism of Restoration
               </h3>
 
               <KeyStatement>
@@ -885,13 +885,13 @@ export default function F2AwarenessCalibrationPage() {
               </KeyStatement>
 
               <p style={proseStyle}>
-                Healing is not finding your "real self" — there is no complete self hidden underneath. Healing is not removing a mask — the identity that formed is not covering anything. Healing is not building self-esteem — without Self-Emotional Awareness (SEA), self-esteem has no grounding and fluctuates with external feedback.
+                Restoration is not finding your "real self" — there is no complete self hidden underneath. Restoration is not removing a mask — the identity that formed is not covering anything. Restoration is not building self-esteem — without Self-Emotional Awareness (SEA), self-esteem has no grounding and fluctuates with external feedback.
               </p>
               <p style={proseStyle}>
-                Healing is <strong style={{ color: TEXT.primary }}>developing the awareness capacities that never had conditions to form</strong> — and <strong style={{ color: TEXT.primary }}>learning Biological Restoration — the return path that was never taught.</strong>
+                Restoration is <strong style={{ color: TEXT.primary }}>developing the awareness capacities that never had conditions to form</strong> — and <strong style={{ color: TEXT.primary }}>learning Biological Restoration — the return path that was never taught.</strong>
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) is the keystone.</strong> Healing requires two tracks in parallel: <strong style={{ color: TEXT.primary }}>SEA (receiving self-data)</strong> and <strong style={{ color: TEXT.primary }}>Biological Restoration (the body learning the return)</strong>. Without SEA, Reading Emotions (RE) serves the mode (scanning for threat, leverage, or approval rather than understanding) and Emotional Resonance (ER) is either flooded or absent. With SEA online, the other two capacities can be recalibrated to serve the person rather than the survival strategy.
+                <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) is the keystone.</strong> Restoration requires two tracks in parallel: <strong style={{ color: TEXT.primary }}>SEA (receiving self-data)</strong> and <strong style={{ color: TEXT.primary }}>Biological Restoration (the body learning the return)</strong>. Without SEA, Reading Emotions (RE) serves the mode (scanning for threat, leverage, or approval rather than understanding) and Emotional Resonance (ER) is either flooded or absent. With SEA online, the other two capacities can be recalibrated to serve the person rather than the survival strategy.
               </p>
               <p style={proseStyle}>
                 And regulation — the physiological return — is the foundation. Without the body learning that activation can resolve, that threat states end, that the system can come back, cognitive insight alone changes nothing. The person understands their pattern but the body keeps running the old program. Biological Restoration must be learned — not understood, but experienced. Through co-regulation, through somatic experience, through relationships that provide the safety the original environment could not.
@@ -912,7 +912,7 @@ export default function F2AwarenessCalibrationPage() {
 
                 <ExpandableSection title="What TEG-Blue Adds" type="framework">
                   <p style={expandedProseStyle}>
-                    Replacing "find yourself" / "remove the mask" / "build self-esteem" with a mechanistically precise instruction: develop SEA so the signals can be received, learn Biological Restoration so the body can come back, then recalibrate RE and ER to serve understanding rather than survival. The dual mechanism of healing: awareness development (SEA) + Biological Restoration learning. Neither alone is sufficient. The destination is the designed capacity state described earlier in the framework.
+                    Replacing "find yourself" / "remove the mask" / "build self-esteem" with a mechanistically precise instruction: develop SEA so the signals can be received, learn Biological Restoration so the body can come back, then recalibrate RE and ER to serve understanding rather than survival. The dual mechanism of restoration: awareness development (SEA) + Biological Restoration learning. Neither alone is sufficient. The destination is the designed capacity state described earlier in the framework.
                   </p>
                 </ExpandableSection>
               </div>
@@ -954,7 +954,7 @@ export default function F2AwarenessCalibrationPage() {
                   <TableRow cells={["Configuration → mode → identity", "Awareness configuration + regulation capacity predicts chronic mode. Chronic mode shapes the identity cognition narrates. Personality is a record."]} />
                   <TableRow cells={["Generational replication", "Awareness teaches awareness across generations. Children calibrate to what caregivers embody. The chain transmits through awareness, not words."]} />
                   <TableRow cells={["Tolerance thresholds", "The nervous system learns what to endure. Flooded ER + absent SEA = feel the harm but can't locate it."]} />
-                  <TableRow cells={["Healing is reconnecting", "Develop SEA. Learn Biological Restoration. The destination is the capacity state the system was designed to produce."]} />
+                  <TableRow cells={["Restoration is reconnecting", "Develop SEA. Learn Biological Restoration. The destination is the capacity state the system was designed to produce."]} />
                 </tbody>
               </table>
             </div>
@@ -1229,9 +1229,9 @@ export default function F2AwarenessCalibrationPage() {
                   "Identity is a cognitive structure built around whichever awareness capacities had conditions to develop. Cognition builds identity from whatever data is available. With SEA online, cognition generates true coherence. Without SEA, cognition generates false coherence — narrative that fills the gap where self-awareness should be.",
               },
               {
-                question: "How does healing work in the F2 framework?",
+                question: "How does restoration work in the F2 framework?",
                 answer:
-                  "Healing is not finding a hidden self or removing a mask. It is developing the awareness capacities — particularly SEA — that never had conditions to form, and learning Biological Restoration. Both must develop together through relationships that provide the safety the original environment could not.",
+                  "Restoration is not finding a hidden self or removing a mask. It is developing the awareness capacities — particularly SEA — that never had conditions to form, and learning Biological Restoration. Both must develop together through relationships that provide the safety the original environment could not.",
               },
             ])
           ),

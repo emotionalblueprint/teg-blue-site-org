@@ -627,7 +627,7 @@ const GLOSSARY_TERMS = [
     title: "Identity as Configuration",
     type: "concept",
     status: "proposed",
-    definition: "The principle that identity is not the expression of a hidden self but a cognitive structure built around whichever awareness capacities had conditions to develop. Personality is not a type — it is a record. There is no hidden self to find. Healing is not removing a mask — it is developing the capacities that never had conditions to form.",
+    definition: "The principle that identity is not the expression of a hidden self but a cognitive structure built around whichever awareness capacities had conditions to develop. Personality is not a type — it is a record. There is no hidden self to find. Restoration is not removing a mask — it is developing the capacities that never had conditions to form.",
     tags: ["F2", "identity", "core-concept"],
     framework: 2,
   },
@@ -713,12 +713,12 @@ const GLOSSARY_TERMS = [
     framework: 2,
   },
   {
-    slug: "dual-mechanism-of-healing",
-    title: "Dual Mechanism of Healing",
+    slug: "dual-mechanism-of-restoration",
+    title: "Dual Mechanism of Restoration",
     type: "concept",
     status: "proposed",
-    definition: "Healing requires two tracks developing in parallel: SEA (receiving self-data) and Biological Restoration (the body learning the return path that was never taught). Neither alone is sufficient. SEA without Biological Restoration means the person can finally feel what they feel but the body does not know how to complete the cycle. Biological Restoration without SEA means the body can complete the cycle but the person does not know what activated it. Both develop through the same medium: relationships that provide what the original environment could not. Healing is not finding a 'real self' — it is developing capacities that never had conditions to form.",
-    tags: ["F2", "healing", "core-concept"],
+    definition: "Restoration requires two tracks developing in parallel: SEA (receiving self-data) and Biological Restoration (the body learning the return path that was never taught). Neither alone is sufficient. SEA without Biological Restoration means the person can finally feel what they feel but the body does not know how to complete the cycle. Biological Restoration without SEA means the body can complete the cycle but the person does not know what activated it. Both develop through the same medium: relationships that provide what the original environment could not. Restoration is not finding a 'real self' — it is developing capacities that never had conditions to form.",
+    tags: ["F2", "restoration", "core-concept"],
     framework: 2,
   },
   // ===== F3: ADULT COGNITION & FALSE COHERENCE =====
@@ -821,7 +821,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "What happens when nervous-system safety increases and defensive activation decreases. Emotional signals become tolerable, and cognitive capacity becomes available for: accurate perception, learning and curiosity, creativity and play, authentic self-direction, and capacity for repair. This is not becoming someone new — it is functioning without chronic defensive load.",
-    tags: ["F3", "cognition", "healing"],
+    tags: ["F3", "cognition", "restoration"],
     framework: 3,
   },
   {
@@ -1197,7 +1197,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The conditions under which bias can be updated. Central principle: shame does not unlearn bias; safety does. Shame fails because moral condemnation triggers defense, public exposure activates belonging threat, intellectual correction is rejected as attack. Safety enables revision through: (1) Internal safety — regulated enough to tolerate dissonance; (2) Relational safety — connection available that doesn't require the bias; (3) Identity flexibility — self-concept not entirely fused with belief; (4) Alternative meaning — new interpretation that also reduces threat; (5) Gradual exposure — contradiction introduced within tolerance window.",
-    tags: ["F6", "healing", "learning"],
+    tags: ["F6", "restoration", "learning"],
     framework: 6,
   },
   {
@@ -1326,7 +1326,7 @@ const GLOSSARY_TERMS = [
     title: "Addiction Logic",
     type: "concept",
     status: "proposed",
-    definition: "The addiction-logic framing for chronic Domination: external regulation through subjugation builds tolerance. The mechanism parallels substance addiction — the substance (others' subjugation) provides temporary relief from an internal state that is never processed because SEA is offline. Tolerance builds. Escalation is required. There is no natural stopping point. Power and wealth amplify this mechanism by removing structural constraints and providing unlimited access to regulation sources. 'There is no amount of domination that will make them feel safe — because the safety they need is internal.' SEA cannot come back online through domination. It can only return through the conditions described in F2's healing account: safety, not power.",
+    definition: "The addiction-logic framing for chronic Domination: external regulation through subjugation builds tolerance. The mechanism parallels substance addiction — the substance (others' subjugation) provides temporary relief from an internal state that is never processed because SEA is offline. Tolerance builds. Escalation is required. There is no natural stopping point. Power and wealth amplify this mechanism by removing structural constraints and providing unlimited access to regulation sources. 'There is no amount of domination that will make them feel safe — because the safety they need is internal.' SEA cannot come back online through domination. It can only return through the conditions described in F2's restoration account: safety, not power.",
     tags: ["F3", "F7", "domination", "escalation"],
     framework: 7,
   },
@@ -1337,7 +1337,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The specific pattern of which awareness capacities (Self-Emotional Awareness (SEA), Reading Emotions (RE), and Emotional Resonance (ER)) are available, partially available, or disconnected in a given person. Not a personality type but a map of current capacity states shaped by developmental conditions. Different configurations see different things — and the variation itself is valuable. Assessment uses a five-state scale from fully disconnected to reliably available under pressure.",
-    tags: ["F8", "healing", "awareness-capacity", "assessment"],
+    tags: ["F8", "restoration", "awareness-capacity", "assessment"],
     framework: 8,
   },
   {
@@ -1346,7 +1346,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The gradual process by which awareness capacities that were disconnected or never developed begin to come online. The adaptive configuration is not an enemy to defeat — it is what cognition built with incomplete data. Premature disruption triggers defensive escalation. Cognitive understanding alone is insufficient; the capacities were shaped somatically in response to relational conditions and develop somatically in response to relational safety. Repair is not finding a hidden self — it is developing capacities that never had conditions to form.",
-    tags: ["F8", "healing", "awareness-capacity"],
+    tags: ["F8", "restoration", "awareness-capacity"],
     framework: 8,
   },
   {
@@ -1355,7 +1355,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The five conditions that enable awareness capacity development: (1) Felt Safety — nervous system regulation sufficient for new learning; (2) Accurate Mirroring — being seen as one actually is; (3) Discomfort Tolerance — capacity to stay present with difficulty (grief, fear, uncertainty); (4) Permission — internal/external acceptance of imperfection; (5) Time — accumulated experience rather than single insight. These conditions must be present before significant capacity development can occur safely.",
-    tags: ["F8", "healing", "conditions"],
+    tags: ["F8", "restoration", "conditions"],
     framework: 8,
   },
   {
@@ -1364,7 +1364,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "How the nervous system updates implicit learning through experience rather than insight. Occurs when: a situation resembling original danger produces a different outcome, authenticity is met with acceptance rather than rejection, vulnerability leads to connection rather than punishment, the nervous system receives evidence that old rules no longer apply. One corrective experience rarely changes the pattern — accumulated corrective experience gradually updates implicit learning.",
-    tags: ["F8", "healing", "mechanism"],
+    tags: ["F8", "restoration", "mechanism"],
     framework: 8,
   },
   {
@@ -1373,7 +1373,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "Seven distinct pathways through which people develop awareness capacities: (1) Somatic Awareness — body sensation, for those disconnected from feeling; (2) Emotional Honesty — felt emotion, for those who perform emotions; (3) Values Clarification — authentic wanting, for those who don't know what they want; (4) Joy and Aliveness — spontaneous energy, for those who lost access to pleasure; (5) Self-Reparenting — internal relationship, for those with harsh inner critic; (6) Configuration Mapping — cognitive understanding, for those who need to understand before feeling; (7) Grief Work — loss processing, for those avoiding mourning.",
-    tags: ["F8", "healing", "pathways"],
+    tags: ["F8", "restoration", "pathways"],
     framework: 8,
   },
   {
@@ -1382,7 +1382,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The five phases of awareness repair: (1) Pre-contemplation — adaptive configuration invisible, fusion complete; (2) Recognition — configuration becomes visible, grief emerges; (3) Oscillation — movement between old patterns and new capacities; (4) Active Development — experiments with authenticity; (5) Integration — adaptive strategies become choices rather than compulsions. Repair is not linear — oscillation between phases is normal and necessary. Regression during repair is the nervous system's natural process of testing and consolidating.",
-    tags: ["F8", "healing", "process"],
+    tags: ["F8", "restoration", "process"],
     framework: 8,
   },
   {
@@ -1391,7 +1391,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The natural movement between old patterns and new capacities during repair. The nervous system's consolidation process — testing new learning under gradually increasing challenge. Oscillation frequency and amplitude change as repair progresses: early repair shows wide swings between old and new; later repair shows smaller oscillations with faster recovery. Understanding oscillation prevents the common misinterpretation that setbacks mean repair has failed.",
-    tags: ["F8", "healing", "process"],
+    tags: ["F8", "restoration", "process"],
     framework: 8,
   },
   {
@@ -1400,7 +1400,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "Signs that developed capacities are informing life rather than just survival. Changes across domains: Self-expression (gap between inner/outer → increasing alignment), Decision-making (based on role demands → based on authentic values), Relationships (built on performance → built on authenticity), Self-talk (critical, demanding → accurate, honest), Boundaries (absent or rigid → flexible and clear), Rest (guilt-laden → permitted without justification), Accountability (triggers collapse/defense → possible without identity threat). Integration is not a destination but a way of traveling — measured by increasing choice, not absence of adaptive patterns.",
-    tags: ["F8", "healing", "assessment"],
+    tags: ["F8", "restoration", "assessment"],
     framework: 8,
   },
   {
@@ -1409,7 +1409,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "Why adaptive configurations resist change: (1) Fused with Survival — at nervous system level, the configuration is fused with belonging, safety, and identity; (2) Reinforced by Success — professional achievement and relationships built on performance strengthen it; (3) Identity Fusion — after years of living from the configuration, 'this is just who I am' reflects genuine inability to perceive alternatives; (4) Relational Cost Anticipation — nervous system accurately predicts that change may cost relationships built on performance. Repair resistance should be respected, not overcome.",
-    tags: ["F8", "healing", "protection"],
+    tags: ["F8", "restoration", "protection"],
     framework: 8,
   },
   {
@@ -1418,7 +1418,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "A pathway to capacity development that involves developing an internal relationship with oneself that provides what was missing in original caregiving. Particularly useful for those with harsh inner critics. Includes learning to offer oneself compassion, validation, protection, and permission. Not replacing the past but creating new internal resources. Supports internal secure base development — the capacity to provide one's own safety and acceptance.",
-    tags: ["F8", "healing", "pathways"],
+    tags: ["F8", "restoration", "pathways"],
     framework: 8,
   },
   {
@@ -1445,7 +1445,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "The central paradox of awareness repair: the repair process requires the very capacities that are offline. Developing self-emotional awareness requires enough safety to tolerate what SEA will reveal. Developing emotional resonance requires enough resilience to handle feeling without collapsing. The system needs what it doesn't have in order to develop what it doesn't have. This is why premature repair can escalate — pushing for capacity development before sufficient safety exists triggers defensive escalation, moving the compass further into Protection or Control, not toward Connection. This is not treatment resistance; it is the nervous system correctly assessing that the conditions are not yet safe enough. The bootstrap problem is resolved through the five conditions for repair (felt safety, accurate mirroring, discomfort tolerance, permission, time) and through external co-regulation providing what the system cannot yet provide for itself.",
-    tags: ["F8", "healing", "paradox"],
+    tags: ["F8", "restoration", "paradox"],
     framework: 8,
   },
   // ===== F9: NEURODIVERGENCE AS NERVOUS SYSTEM VARIATION =====
@@ -1504,12 +1504,12 @@ const GLOSSARY_TERMS = [
     framework: 9,
   },
   {
-    slug: "unmasking-vs-healing",
-    title: "Unmasking vs Healing",
+    slug: "unmasking-vs-restoration",
+    title: "Unmasking vs Restoration",
     type: "concept",
     status: "proposed",
-    definition: "Critical distinction: Unmasking is dropping neurotypical performance; Healing is being met in authentic neurological expression. These are not equivalent — unmasking without a receiving environment can increase harm. Healing requires: accommodating environment (settings that don't require neurotypical performance), accurate mirroring (being seen as divergent, not defective), internalized shame repair, grief work (mourning what was lost to masking), identity reconstruction, and relational renegotiation.",
-    tags: ["F9", "neurodivergence", "healing"],
+    definition: "Critical distinction: Unmasking is dropping neurotypical performance; Restoration is being met in authentic neurological expression. These are not equivalent — unmasking without a receiving environment can increase harm. Restoration requires: accommodating environment (settings that don't require neurotypical performance), accurate mirroring (being seen as divergent, not defective), internalized shame repair, grief work (mourning what was lost to masking), identity reconstruction, and relational renegotiation.",
+    tags: ["F9", "neurodivergence", "restoration"],
     framework: 9,
   },
   {
@@ -1555,7 +1555,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "Main and Hesse's finding that when caregivers process their own attachment history, their children show more secure attachment — regardless of what that history contained. This demonstrates that transmission can be interrupted through metabolization. What gets processed doesn't transmit in the same way as what remains unprocessed. Earned security shows that attachment security is not determined by history but by integration of history.",
-    tags: ["F10", "attachment", "healing"],
+    tags: ["F10", "attachment", "restoration"],
     framework: 10,
   },
   {
@@ -1563,8 +1563,8 @@ const GLOSSARY_TERMS = [
     title: "Metabolization",
     type: "concept",
     status: "proposed",
-    definition: "The processing and integration of one's own experience that interrupts generational transmission. What we metabolize — the trauma we process, the awareness capacities we develop, the patterns we repair — we do not pass on in the same way. Metabolization requires: awareness (seeing patterns as patterns), safety (sufficient regulation to examine difficult material), support (relationships that can hold the process), narrative coherence (making sense of one's own story), and grief (mourning what was lost and what was passed on). Healing is not just personal; it is ancestral.",
-    tags: ["F10", "healing", "generational"],
+    definition: "The processing and integration of one's own experience that interrupts generational transmission. What we metabolize — the trauma we process, the awareness capacities we develop, the patterns we repair — we do not pass on in the same way. Metabolization requires: awareness (seeing patterns as patterns), safety (sufficient regulation to examine difficult material), support (relationships that can hold the process), narrative coherence (making sense of one's own story), and grief (mourning what was lost and what was passed on). Restoration is not just personal; it is ancestral.",
+    tags: ["F10", "restoration", "generational"],
     framework: 10,
   },
   {
@@ -1573,7 +1573,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "Critical distinction in generational work. Understanding: sees the systems that shaped caregivers, recognizes what they never learned, acknowledges their pain, contextualizes behavior. Excusing: minimizes impact, pretends harm wasn't real, uses their pain to erase yours, justifies behavior. The integrative position: 'I can understand why you became who you became, AND I can see what it cost me.' This enables grief for what was lost, release from waiting for acknowledgment that may never come, and agency in deciding how to relate going forward.",
-    tags: ["F10", "healing", "accountability"],
+    tags: ["F10", "restoration", "accountability"],
     framework: 10,
   },
   {
@@ -1646,7 +1646,7 @@ const GLOSSARY_TERMS = [
     type: "concept",
     status: "proposed",
     definition: "Critical distinction in paradox work. Resolution: eliminating one side, finding the 'right' answer, reducing to simplicity. Integration: holding both sides, developing capacity for complexity, living with the tension. Some paradoxes cannot be resolved — the needs genuinely conflict. The goal is not to eliminate paradox but to develop capacity to contain it. Integration enables functioning with contradiction; resolution often creates shadow and rigidity.",
-    tags: ["F11", "paradox", "healing"],
+    tags: ["F11", "paradox", "restoration"],
     framework: 11,
   },
   {

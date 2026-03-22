@@ -62,7 +62,7 @@ const FRAMEWORKS = [
       "Awareness teaches awareness: the adults' awareness configuration is the child's developmental environment",
       "Children calibrate to what caregivers embody, not what they say — the transmission channel is the nervous system",
       "Identity is a cognitive structure built around whichever awareness capacities had conditions to develop — there is no hidden self to find",
-      "Healing is developing the capacities that never had conditions to form and learning Biological Restoration",
+      "Restoration is developing the capacities that never had conditions to form and learning Biological Restoration",
     ],
     testable: "Predictive links between caregiver awareness configuration and child capacity development. Measurable state signatures and repair signatures in parent-child interaction. Longitudinal shifts in awareness capacities with sustained safety provision.",
   },

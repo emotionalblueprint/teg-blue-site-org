@@ -708,7 +708,7 @@ export default function F12TwoInformationSystemsPage() {
                   <ThreeColRow cells={["Connection", "Direct engagement with complexity. Paradox work (F11). Deepening awareness. Integration of all three capacities", "Being treated as fragile. Simplification. Approaches that underestimate available capacity"]} />
                   <ThreeColRow cells={["Protection", "Safety first. Co-regulation. Somatic work. Corrective experience. Building trust before building insight", "Insight-based approaches. Cognitive challenge. \"Think about why you do this.\" These require Connection-mode capacity the person doesn't currently have"]} />
                   <ThreeColRow cells={["Control", "External accountability. Structured frameworks. Showing that the control strategy has costs the person hasn't calculated. Working with the cognitive system as entry point while building somatic and relational access", "Empathy-based appeals (\"think about how they feel\"). These are processed through the control strategy and managed, not felt. Also: admiration of the person's narrative"]} />
-                  <ThreeColRow cells={["Domination", "Containment. Protection of others. Clear consequences. External structure. Sustained pressure without escalation", "Vulnerability-based approaches. Trust-building. \"Let me help you feel.\" Vulnerability at this compass position feels like annihilation, not healing"]} />
+                  <ThreeColRow cells={["Domination", "Containment. Protection of others. Clear consequences. External structure. Sustained pressure without escalation", "Vulnerability-based approaches. Trust-building. \"Let me help you feel.\" Vulnerability at this compass position feels like annihilation, not restoration"]} />
                 </tbody>
               </table>
             </div>
@@ -751,7 +751,7 @@ export default function F12TwoInformationSystemsPage() {
                 </thead>
                 <tbody>
                   <TableRow cells={["Individual", "Therapy that addresses the emotional-somatic system, not just the cognitive system. Somatic work, co-regulation, corrective experience, titrated exposure \u2014 not insight alone"]} />
-                  <TableRow cells={["Relational", "Relationships assessed by what state they produce, not just what they provide. A relationship that chronically activates Protection cannot also be the container for healing"]} />
+                  <TableRow cells={["Relational", "Relationships assessed by what state they produce, not just what they provide. A relationship that chronically activates Protection cannot also be the container for restoration"]} />
                   <TableRow cells={["Institutional", "Environments designed for regulation first, performance second (F9). Policies that create safety produce different behavior than policies that demand compliance"]} />
                   <TableRow cells={["Systemic", "\"Restore safety first, then expect capacity\" (F1) applied at every scale. Systems that operate through threat produce threat-state behavior. Systems that provide safety produce Connection-state capacity"]} />
                 </tbody>
@@ -922,7 +922,7 @@ export default function F12TwoInformationSystemsPage() {
                   <NavRow label="Read the emotional paradoxes framework (F11)" href="/framework/f11-emotional-paradoxes" linkText="The Emotional Logic Behind Paradoxes \u2192" />
                   <NavRow label="Read the generational bridges framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
-                  <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
+                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="See the physiological model — the body's cascade that cognition cannot close" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />

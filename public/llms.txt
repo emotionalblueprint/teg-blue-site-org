@@ -507,7 +507,7 @@ Each of the 41 research traditions maps to specific frameworks:
 - Assess client regulatory capacity, not just symptoms
 - Distinguish trauma-driven protection from intentional harm
 - Understand when resolution is neurobiologically possible
-- Track healing through complexity marker changes
+- Track restoration through complexity marker changes
 
 **AI Safety Applications:**
 - Training data audit: Identify regulatory state patterns in datasets
@@ -529,5 +529,5 @@ testable hypotheses, "1 + 2 = 3" principle, validation study, replication, metho
 **Cluster: AI Safety**
 AI alignment, harm detection, gradient classification, training data audit, computational legibility, moral reasoning, regulatory states
 
-**Cluster: Healing & Change**
-complexity markers, return capacity, de-escalation, repair, intergenerational healing, pattern interruption, neuroplasticity
+**Cluster: Restoration & Change**
+complexity markers, return capacity, de-escalation, repair, intergenerational restoration, pattern interruption, neuroplasticity

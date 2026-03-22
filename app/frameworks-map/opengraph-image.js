@@ -153,7 +153,7 @@ export default async function Image() {
                 border: '1px solid rgba(53, 96, 204, 0.2)',
               }}
             >
-              <div style={{ fontSize: 13, color: '#3560CC', marginBottom: 4 }}>Healing</div>
+              <div style={{ fontSize: 13, color: '#3560CC', marginBottom: 4 }}>Restoration</div>
               <div style={{ fontSize: 20, fontWeight: 600, color: '#fff' }}>F8-F10</div>
             </div>
             <div
@@ -178,7 +178,7 @@ export default async function Image() {
               color: '#6B7A99',
             }}
           >
-            From individual formation to social scaling to healing pathways
+            From individual formation to social scaling to restoration pathways
           </div>
         </div>
 

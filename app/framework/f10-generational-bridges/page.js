@@ -222,7 +222,7 @@ export default function F10GenerationalBridgesPage() {
               badge="FRAMEWORK F10"
               title="Rebuilding Generational Bridges"
               subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
-              description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the healing arc (F8–F12)."
+              description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the restoration arc (F8–F12)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -662,7 +662,7 @@ export default function F10GenerationalBridgesPage() {
             <h2 style={sectionHeadingStyle}>Enough, Not Perfect</h2>
 
             <h2 style={sectionHeadingStyle}>
-              How much healing is needed to change what the next generation inherits?
+              How much restoration is needed to change what the next generation inherits?
             </h2>
 
             <p style={proseStyle}>
@@ -672,7 +672,7 @@ export default function F10GenerationalBridgesPage() {
             <h3 style={conceptHeadingStyle}>Why "Enough" Matters</h3>
 
             <p style={proseStyle}>
-              The demand for perfection recreates the regulation thread. If the parent believes they must be perfectly healed before they can provide good conditions, they have replaced one false coherence ("I'm fine, everything is fine") with another ("I must be completely healed or I'm damaging my child"). The performance demands of F5 (worth through achievement) now operate in the domain of healing itself.
+              The demand for perfection recreates the regulation thread. If the parent believes they must be perfectly restored before they can provide good conditions, they have replaced one false coherence ("I'm fine, everything is fine") with another ("I must be completely restored or I'm damaging my child"). The performance demands of F5 (worth through achievement) now operate in the domain of restoration itself.
             </p>
 
             <h3 style={conceptHeadingStyle}>What "Enough" Looks Like</h3>
@@ -965,7 +965,7 @@ export default function F10GenerationalBridgesPage() {
                 <tbody>
                   <NavRow label="Read the emotional paradoxes framework (F11)" href="/framework/f11-emotional-paradoxes" linkText="The Emotional Logic Behind Paradoxes \u2192" />
                   <NavRow label="Read the neurodivergence framework (F9)" href="/framework/f9-neurodivergence-variation" linkText="Neurodivergence as Nervous System Variation \u2192" />
-                  <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
+                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />

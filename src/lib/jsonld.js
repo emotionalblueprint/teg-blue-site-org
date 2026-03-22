@@ -421,7 +421,7 @@ export function generateTheoreticalFoundationsJsonLd() {
         },
         {
           "@type": "DefinedTerm",
-          name: "Healing Arc (F8-F10)",
+          name: "Restoration Arc (F8-F10)",
           description: "How patterns shift, including neurodivergent pathways"
         },
         {
@@ -441,7 +441,7 @@ export function generateTheoreticalFoundationsJsonLd() {
       "nervous system",
       "formation",
       "scaling",
-      "healing",
+      "restoration",
       "integration"
     ]
   };

@@ -265,7 +265,7 @@ Nervous system regulatory states along a continuous gradient:
 2. Same gradient, different expressions
 3. Sensory processing differences affect regulation
 4. Masking as protective adaptation
-5. Neurodivergent healing may require different approaches
+5. Neurodivergent restoration may require different approaches
 
 **Source theories:**
 - Neurodiversity paradigm
@@ -276,7 +276,7 @@ Nervous system regulatory states along a continuous gradient:
 
 **TEG-Blue integration:** Extends the framework to account for neurological variation in emotional processing.
 
-### Framework 10: Intergenerational Healing
+### Framework 10: Intergenerational Restoration
 **Question:** How do cycles break?
 
 **Core propositions:**
@@ -284,7 +284,7 @@ Nervous system regulatory states along a continuous gradient:
 2. Breaking cycles requires recognition first
 3. Naming what was unnamed enables change
 4. Post-traumatic growth is possible
-5. Healing can propagate forward and backward
+5. Restoration can propagate forward and backward
 
 **Source theories:**
 - Post-Traumatic Growth (Tedeschi & Calhoun)
@@ -293,7 +293,7 @@ Nervous system regulatory states along a continuous gradient:
 - Narrative therapy
 - Family therapy research
 
-**TEG-Blue integration:** Maps how healing propagates through family systems.
+**TEG-Blue integration:** Maps how restoration propagates through family systems.
 
 ## PHASE 5: INTEGRATION (F11-F12)
 
@@ -355,7 +355,7 @@ Nervous system regulatory states along a continuous gradient:
 
 ### Interpersonal Neurobiology (Daniel Siegel)
 **Core claim:** The brain is shaped by relationships; integration is the basis of well-being.
-**TEG-Blue integration:** Provides neurobiological basis for relational healing.
+**TEG-Blue integration:** Provides neurobiological basis for relational restoration.
 
 ## Domain 2: Attachment & Development
 

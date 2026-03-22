@@ -466,7 +466,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>Why Single-Level Intervention Fails</h3>
 
             <p style={proseStyle}>
-              A contradiction that has cascaded through all six levels cannot be addressed at one level. Cognitive insight (level 2) does not reach the identity level (level 3). Individual therapy (levels 1–3) does not address the social reinforcement (level 4). Personal healing (levels 1–5) does not interrupt the generational pattern (level 6).
+              A contradiction that has cascaded through all six levels cannot be addressed at one level. Cognitive insight (level 2) does not reach the identity level (level 3). Individual therapy (levels 1–3) does not address the social reinforcement (level 4). Personal restoration (levels 1–5) does not interrupt the generational pattern (level 6).
             </p>
 
             <KeyStatement>
@@ -648,7 +648,7 @@ export default function F11EmotionalParadoxesPage() {
               You cannot mourn something you never knew existed. When awareness capacities come online and the person begins to see what they missed — the attunement, the safety, the mirroring, the regulation — grief arrives for something that was never there. This is paradoxical: mourning an absence. But the grief is real, and it requires holding.
             </p>
 
-            <h3 style={conceptHeadingStyle}>Healing Changing Relationships</h3>
+            <h3 style={conceptHeadingStyle}>Restoration Changing Relationships</h3>
 
             <p style={proseStyle}>
               As the person's configuration shifts, relationships respond. Some deepen — they can now hold more of who the person actually is. Some strain — they were built on the old configuration and cannot accommodate the new one. The paradox: becoming more fluid may cost relationships.
@@ -928,7 +928,7 @@ export default function F11EmotionalParadoxesPage() {
                 <tbody>
                   <NavRow label="Read the two information systems framework (F12)" href="/framework/f12-two-information-systems" linkText="Our Two Information Systems \u2192" />
                   <NavRow label="Read the generational bridges framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
-                  <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
+                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the false coherence framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition and False Coherence \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />

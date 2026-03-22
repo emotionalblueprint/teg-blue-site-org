@@ -26,7 +26,7 @@ const arcs = [
   { key: 'formation',   name: 'Formation',      levels: [2, 3],     tag: 'How the inner system forms',     desc: 'How identity crystallizes and how cognition maintains coherence' },
   { key: 'scaling',     name: 'Scaling',         levels: [4, 5, 6],  tag: 'How the inner becomes social',   desc: 'How individual patterns become social rules, worth hierarchies, and perception biases' },
   { key: 'turning',     name: 'Turning Point',   levels: [7],        tag: 'Where harm escalates or stops',  desc: 'How protection escalates through control into domination' },
-  { key: 'healing',     name: 'Healing',         levels: [8, 9, 10], tag: 'How capacity returns',           desc: 'Self-reconnection, neurodivergent pathways, and intergenerational repair' },
+  { key: 'restoration', name: 'Restoration',     levels: [8, 9, 10], tag: 'How capacity returns',           desc: 'Self-reconnection, neurodivergent pathways, and intergenerational repair' },
   { key: 'integration', name: 'Integration',     levels: [11],       tag: 'How it all fits together',       desc: 'How contradictions resolve when state logic is included' },
   { key: 'architecture',name: 'Architecture',    levels: [12],       tag: 'The operating system underneath', desc: 'The operating system underneath — two parallel information systems generating all behavior' },
 ]
@@ -114,7 +114,7 @@ const levelData = {
     symbol: '∿',
     title: 'Neurodivergent Integration (Costs of Forced Masking)',
     subtitle: 'Inborn Rhythm & Masking Cost',
-    summary: 'Extends F8: masks include socially-imposed neurodivergent masking — particularly costly because it often goes unrecognized. Healing requires honoring inborn rhythm, not adapting to neurotypical expectations.',
+    summary: 'Extends F8: masks include socially-imposed neurodivergent masking — particularly costly because it often goes unrecognized. Restoration requires honoring inborn rhythm, not adapting to neurotypical expectations.',
     buildsOn: 'Neurodiversity paradigm, sensory processing, autism and ADHD research, masking cost literature.',
     link: '/frameworks-map'
   },
@@ -122,7 +122,7 @@ const levelData = {
     symbol: '⧗',
     title: 'Intergenerational Repair (Rebuilding Generational Bridges)',
     subtitle: 'Transmission & Lineage Repair',
-    summary: 'Scales healing to family level: individual healing (F8–F9) changes nervous-system state, which changes family-system state, creating new safety baselines. Breaking transmission requires understanding how patterns transmit (F4–F6) and reverse (F8–F9).',
+    summary: 'Scales restoration to family level: individual restoration (F8–F9) changes nervous-system state, which changes family-system state, creating new safety baselines. Breaking transmission requires understanding how patterns transmit (F4–F6) and reverse (F8–F9).',
     buildsOn: 'Intergenerational trauma research, family systems theory, epigenetics, ACEs literature.',
     link: '/frameworks-map'
   },

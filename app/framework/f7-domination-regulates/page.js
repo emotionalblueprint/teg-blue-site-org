@@ -621,7 +621,7 @@ export default function F7DominationRegulatesPage() {
             </p>
 
             <KeyStatement>
-              There is no amount of domination that will make them feel safe. Because the safety they need is internal — it is SEA coming back online. And SEA cannot come back online through domination. It can only come back online through the conditions described in F2&rsquo;s healing account: safety, not power.
+              There is no amount of domination that will make them feel safe. Because the safety they need is internal — it is SEA coming back online. And SEA cannot come back online through domination. It can only come back online through the conditions described in F2&rsquo;s restoration account: safety, not power.
             </KeyStatement>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -957,7 +957,7 @@ export default function F7DominationRegulatesPage() {
               But the framework also shows something else. At every stage of the escalation, the interruption principle is the same: restore safety first, then expect capacity. Even at F7&rsquo;s later stages — where protection takes precedence over restoration — the underlying principle has not changed. It is the same principle that F1 established. The question is whether the conditions for safety can be provided.
             </p>
             <p style={proseStyle}>
-              This is what the healing arc addresses. F8 asks: what enables the return? Not the return from domination specifically — though that is the most dramatic version — but the return from any position where the compass has been stuck. How do awareness capacities that were never built begin to develop? How does the compass regain flexibility? What does repair look like when the patterns have been running for decades?
+              This is what the restoration arc addresses. F8 asks: what enables the return? Not the return from domination specifically — though that is the most dramatic version — but the return from any position where the compass has been stuck. How do awareness capacities that were never built begin to develop? How does the compass regain flexibility? What does repair look like when the patterns have been running for decades?
             </p>
 
             <KeyStatement>
@@ -993,7 +993,7 @@ export default function F7DominationRegulatesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
+                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the bias framework (F6)" href="/framework/f6-bias-regulates" linkText="Bias Regulates \u2192" />
                   <NavRow label="Read the worth-sorting framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate \u2192" />
                   <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
@@ -1121,7 +1121,7 @@ export default function F7DominationRegulatesPage() {
               {
                 question: "How does F7 relate to the rest of the TEG-Blue system?",
                 answer:
-                  "F7 is the final framework in the collective arc (F4–F7) and completes the regulation thread (F1–F7). Each framework describes a regulation substitute at a different scale: F1 (biological return), F2 (developmental failure), F3 (cognitive replacement), F4 (rules), F5 (worth hierarchies), F6 (bias), F7 (domination). The costs escalate from truth-loss to everything. The intervention principle is consistent: restore safety first, then expect capacity. F7 is the final substitute. F8 begins the healing arc.",
+                  "F7 is the final framework in the collective arc (F4–F7) and completes the regulation thread (F1–F7). Each framework describes a regulation substitute at a different scale: F1 (biological return), F2 (developmental failure), F3 (cognitive replacement), F4 (rules), F5 (worth hierarchies), F6 (bias), F7 (domination). The costs escalate from truth-loss to everything. The intervention principle is consistent: restore safety first, then expect capacity. F7 is the final substitute. F8 begins the restoration arc.",
               },
             ])
           ),

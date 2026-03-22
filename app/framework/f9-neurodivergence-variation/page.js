@@ -23,7 +23,7 @@ const SIDEBAR_SECTIONS = [
   { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
   { label: "Masking as Structural Survival", href: "#masking-as-structural-survival", description: "When every environment punishes authentic configuration, masking becomes the only available survival strategy." },
   { label: "Threshold Crossing and Burnout", href: "#threshold-dynamics", description: "The predictable outcome of a system running a design it was not built to run." },
-  { label: "Unmasking", href: "#unmasking-is-not-healing", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
+  { label: "Unmasking", href: "#unmasking-is-not-restoration", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
   { label: "From Accommodation to Design", href: "#design-principles", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
   { label: "The Structural Argument", href: "#the-structural-argument", description: "Systems designed for one configuration lose access to what other configurations provide." },
   { label: "Bridge to F10", href: "#bridge-to-f10", description: "What happens across generations when adults do this work — individual repair and structural repair simultaneously." },
@@ -197,7 +197,7 @@ export default function F9NeurodivergenceVariationPage() {
     },
     {
       q: "Why is unmasking alone not sufficient for repair?",
-      a: "Unmasking means dropping neurotypical performance; repair means being received in authentic neurological expression. Unmasking into an environment that cannot hold authenticity can increase harm — triggering rejection, job loss, or more rigid masking afterward. Healing requires an accommodating environment, accurate mirroring, internalized shame repair, grief work, identity reconstruction, and relational renegotiation.",
+      a: "Unmasking means dropping neurotypical performance; repair means being received in authentic neurological expression. Unmasking into an environment that cannot hold authenticity can increase harm — triggering rejection, job loss, or more rigid masking afterward. Restoration requires an accommodating environment, accurate mirroring, internalized shame repair, grief work, identity reconstruction, and relational renegotiation.",
     },
     {
       q: "How does neurodivergent burnout differ from general burnout?",
@@ -221,7 +221,7 @@ export default function F9NeurodivergenceVariationPage() {
               badge="FRAMEWORK F9"
               title="Neurodivergence as Nervous System Variation"
               subtitle="When the Environment Is the Mismatch"
-              description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Maps variation as configuration — different regulatory rhythms running the same instrument. The second framework in the healing arc (F8–F12)."
+              description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Maps variation as configuration — different regulatory rhythms running the same instrument. The second framework in the restoration arc (F8–F12)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -243,7 +243,7 @@ export default function F9NeurodivergenceVariationPage() {
               "Neurodivergence is a difference in nervous system configuration — the compass is the same, the configuration is different",
               "System Mismatch — the gap between what an environment requires and what a nervous system can sustainably provide — is the named mechanism that produces masking, burnout, and developmental arrest",
               "Masking has cumulative, compounding costs across energetic, cognitive, emotional, somatic, developmental, and identity domains",
-              "Unmasking is not equivalent to healing — dropping the mask without an accommodating environment can increase harm",
+              "Unmasking is not equivalent to restoration — dropping the mask without an accommodating environment can increase harm",
               "Variation-inclusive design is not accommodation but structural intelligence — different configurations see different things, and the collective benefits from that diversity",
             ]}
           />
@@ -592,11 +592,11 @@ export default function F9NeurodivergenceVariationPage() {
           </div>
 
           {/* ════════════════════════════════════════════════
-              C5 — UNMASKING IS NOT HEALING
+              C5 — UNMASKING IS NOT RESTORATION
              ════════════════════════════════════════════════ */}
 
-          <section id="unmasking-is-not-healing">
-            <h2 style={sectionHeadingStyle}>Unmasking Is Not Healing</h2>
+          <section id="unmasking-is-not-restoration">
+            <h2 style={sectionHeadingStyle}>Unmasking Is Not Restoration</h2>
 
             <p style={proseStyle}>
               Growing awareness of masking's harm has created calls for unmasking. This is correct but incomplete. <strong>Unmasking</strong> means dropping the neurotypical performance. <strong>Repair</strong> means being received in authentic neurological expression. These are not equivalent. Unmasking into an environment that cannot hold authenticity can increase harm.
@@ -641,7 +641,7 @@ export default function F9NeurodivergenceVariationPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F9 distinguishes unmasking from healing and provides a sequenced model: assess environment, build self-understanding, develop communication capacity, create support, then unmask. This prevents the clinical error of encouraging authenticity into environments that will punish it — the same error F8 identifies for repair generally, applied to the specific structural conditions neurodivergent people face.
+                F9 distinguishes unmasking from restoration and provides a sequenced model: assess environment, build self-understanding, develop communication capacity, create support, then unmask. This prevents the clinical error of encouraging authenticity into environments that will punish it — the same error F8 identifies for repair generally, applied to the specific structural conditions neurodivergent people face.
               </p>
             </ExpandableSection>
           </section>
@@ -889,7 +889,7 @@ export default function F9NeurodivergenceVariationPage() {
                   <TableRow cells={["\"When the compass cannot move, the variable may be the environment.\"", "Configuration (C1)"]} />
                   <TableRow cells={["\"The fish doesn't know it's in water. The person whose configuration matches the environment doesn't know the environment was designed for them.\"", "System Mismatch (C2)"]} />
                   <TableRow cells={["\"You cannot rest your way out of an environment that requires you to run a system your nervous system was not built to run.\"", "Threshold Dynamics (C4)"]} />
-                  <TableRow cells={["\"Unmasking into a vacuum fails. The environment must be ready before the mask comes off.\"", "Unmasking vs. Healing (C5)"]} />
+                  <TableRow cells={["\"Unmasking into a vacuum fails. The environment must be ready before the mask comes off.\"", "Unmasking vs. Restoration (C5)"]} />
                   <TableRow cells={["\"You cannot develop your capacities while suppressing the system those capacities run on.\"", "Awareness Capacities (C6)"]} />
                   <TableRow cells={["\"Genuine inclusion is not charity. It is structural intelligence.\"", "Structural Argument (C8)"]} />
                   <TableRow cells={["\"You cannot build what the environment keeps dismantling.\"", "Regulation Thread"]} />
@@ -956,7 +956,7 @@ export default function F9NeurodivergenceVariationPage() {
                 </thead>
                 <tbody>
                   <NavRow label="Read the generational framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
-                  <NavRow label="Read the healing framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
+                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />

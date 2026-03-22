@@ -58,7 +58,7 @@ export const metadata = {
   openGraph: {
     title: "Repairing Awareness — How the Three Capacities Develop — F8 Framework | TEG-Blue",
     description:
-      "How the three awareness capacities can be assessed, repaired, and developed — and why different configurations make the collective stronger. The first framework in the healing arc.",
+      "How the three awareness capacities can be assessed, repaired, and developed — and why different configurations make the collective stronger. The first framework in the restoration arc.",
     url: "https://teg-blue.org/framework/f8-repairing-awareness",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -96,7 +96,7 @@ export default function F8RepairingAwarenessPage() {
               badge="FRAMEWORK F8"
               title="Repairing Awareness"
               subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
-              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path to baseline that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the healing arc (F8–F10)."
+              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path to baseline that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the restoration arc (F8–F10)."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
@@ -851,7 +851,7 @@ export default function F8RepairingAwarenessPage() {
             </h2>
 
             <p style={proseStyle}>
-              F8 is the first framework in the healing arc (F8–F10). It shows how the escalation arc reverses — through developing the awareness capacities that never had conditions to form — and why accepting different configurations is part of the same movement toward safety.
+              F8 is the first framework in the restoration arc (F8–F10). It shows how the escalation arc reverses — through developing the awareness capacities that never had conditions to form — and why accepting different configurations is part of the same movement toward safety.
             </p>
 
             <h3 style={conceptHeadingStyle}>
@@ -1147,7 +1147,7 @@ export default function F8RepairingAwarenessPage() {
               {
                 question: "How does F8 connect to the rest of the TEG-Blue system?",
                 answer:
-                  "F8 is the first framework in the healing arc (F8–F10). It reverses the escalation arc: where F1–F7 each describe a regulation substitute at escalating scale and cost, F8 describes developing what was missing. Part 1 covers individual repair (assessment, conditions, pathways, process). Part 2 covers collective strength (universal masking, conformity costs, different configurations as collective intelligence). F9 then takes F8's universal insight and shows what happens at the structural extreme — when environments are designed for one neurological configuration.",
+                  "F8 is the first framework in the restoration arc (F8–F10). It reverses the escalation arc: where F1–F7 each describe a regulation substitute at escalating scale and cost, F8 describes developing what was missing. Part 1 covers individual repair (assessment, conditions, pathways, process). Part 2 covers collective strength (universal masking, conformity costs, different configurations as collective intelligence). F9 then takes F8's universal insight and shows what happens at the structural extreme — when environments are designed for one neurological configuration.",
               },
             ])
           ),

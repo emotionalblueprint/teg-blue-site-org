@@ -163,7 +163,7 @@ export default function EmotionalTechnologyPage() {
                 lineHeight: 1.7,
               }}
             >
-              It turns invisible emotional patterns into visible, structured, computationally legible tools — for healing, accountability, and emotional safety.
+              It turns invisible emotional patterns into visible, structured, computationally legible tools — for restoration, accountability, and emotional safety.
             </p>
           </div>
         </section>

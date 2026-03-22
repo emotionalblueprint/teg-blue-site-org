@@ -33,15 +33,15 @@ const FRAMEWORK_ARC = {
   5: "Scaling",
   6: "Scaling",
   7: "Turning Point",
-  8: "Healing",
-  9: "Healing",
-  10: "Healing",
+  8: "Restoration",
+  9: "Restoration",
+  10: "Restoration",
   11: "Integration",
   12: "Integration",
 };
 
 // Arc order for sorting
-const ARC_ORDER = ["Formation", "Scaling", "Turning Point", "Healing", "Integration", "Models", "General"];
+const ARC_ORDER = ["Formation", "Scaling", "Turning Point", "Restoration", "Integration", "Models", "General"];
 
 // Sort options
 const SORT_OPTIONS = [
