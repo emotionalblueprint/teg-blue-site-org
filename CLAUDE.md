@@ -75,94 +75,11 @@ Every section of every page follows this structure:
 
 ---
 
-## Emotional Technology
+## System Context
 
-**Emotional technology** is our term for tools and systems that help measure, understand, and navigate human emotions — with the same clarity we expect from physical or digital technologies.
-
-TEG-Blue is the first complete emotional technology system. It turns invisible emotional patterns into visible, structured, computationally legible tools.
-
-**Key vocabulary:**
-- **Emotional Architecture**: The structure of emotional patterns within people, families, and systems
-- **Emotional Wiring**: How the nervous system learned to feel, respond, and protect
-- **Emotional Miswiring**: Protective patterns that now create harm
-- **Emotional Infrastructure**: The larger systems that support — or fail to support — emotional safety
-
-### "Emotional Technology" — Term History
-
-The term **"Emotional Technology"** was first documented in **September 2025**:
-
-| Date | Source | Usage |
-|------|--------|-------|
-| **Sept 2025** | `tegblue-backbone.md` | "Emotional Technology Infrastructure" — technical foundations for AI, research, education |
-| **Nov 2025** | Research Matrix | "TEG-Blue™ — Emotional Technology" (tagline) |
-| **Feb 18, 2026** | Full integration | Implemented across all sites, GitHub repos, and documentation |
-
----
-
-## Relationship to .com
-
-| Site | Purpose | Audience |
-|------|---------|----------|
-| **teg-blue.com** | Interactive tools & application | Anyone seeking clarity about patterns |
-| **teg-blue.org** | Open science & research | Researchers, scientists, academics, practitioners |
-
-**.com links to .org** for open research, theoretical foundations, publications.
-**.org links to .com** for interactive tools.
-
----
-
-## Two-Layer Architecture
-
-TEG-Blue is organized in two layers:
-
-### 1. Measurement System: The Four-Mode Gradient
-The observable, testable backbone. Measures nervous system regulatory states that shift in response to perceived threat and can be detected in natural language.
-
-**Connection → Protection → Control → Domination**
-
-These are not personality types or diagnostic categories. They are **nervous system states** — regulatory positions that shift in response to perceived threat, shaped by attachment history, social context, and current capacity.
-
-### 2. Explanatory Architecture: 12 Frameworks
-Sits behind the gradient. Explains:
-- **Why** the four modes exist
-- **How** individual regulation patterns scale into social structures
-- **Where** protection tips into domination
-- **What** makes change possible
-
-The frameworks integrate 145+ established theories across neuroscience, psychology, sociology, and trauma studies.
-
----
-
-## The Core Testable Claim
-
-> The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their **capacity to return to baseline when challenged.**
-
-This capacity is measurable. It shows up in language. It appears to be predicted by **complexity markers** — signs of self-awareness, perspective-taking, and emotional differentiation.
-
----
-
-## What Is Original
-
-The 12 frameworks draw on 145+ established theories. Every source theory is credited. **The originality is not in the individual theories — it is in the connections between them.**
-
-These research traditions developed independently, within separate disciplines, often without reference to each other. TEG-Blue proposes specific cross-disciplinary connections:
-
-| Connection | What It Means |
-|------------|---------------|
-| Nervous system regulation → moral perception | Regulatory state shapes which moral judgments a person makes |
-| Attachment patterns → social stratification | Same protective mechanisms that organize individual identity also organize social hierarchies |
-| Self-protection → domination as continuous gradient | From legitimate self-protection through ego protection through control to domination — with identifiable transition markers |
-| Linguistic complexity → regulatory capacity | Specific linguistic markers indicate capacity to return to baseline |
-
----
-
-## How TEG-Blue Was Developed
-
-**The architecture:** Developed by Anna Paretas-Artacho over nearly two years of independent research, drawing on a lifetime of observing patterns in human behavior, systems thinking, personal experience, and cross-disciplinary reading.
-
-**The literature mapping:** Once the architecture was established, AI research tools (including ChatGPT Deep Research, Claude, Perplexity, and Microsoft Copilot) were used to systematically identify which established theories and researchers align with each framework's propositions. The architecture determined the connections. The AI tools helped locate and organize the corresponding academic literature.
-
-**The status:** The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
+For TEG-Blue definition, architecture, core models, vocabulary, and system overview → see `Projects/CLAUDE.md`.
+For shared rules (core messaging, forbidden terms, voice, mode colors) → these are in auto-memory (always loaded).
+**.org links to .com** for interactive tools. **.com links to .org** for open research.
 
 ---
 
