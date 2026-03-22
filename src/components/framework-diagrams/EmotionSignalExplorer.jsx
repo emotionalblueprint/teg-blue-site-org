@@ -3,20 +3,19 @@
 import { useState } from "react";
 import {
   FONT, TEXT, BG, BORDER,
-  SPECTRUM, PATTERN, PATTERN_GRADIENT, hexToRgba, RADIUS,
+  SPECTRUM, PATTERN, hexToRgba, RADIUS,
 } from "@/src/styles/tokens";
 import { EMOTIONS } from "@/src/data/compass-diagram-data";
 
-// ─── CONSTANTS ──────────────────────────────────────────
+// ─── CONSTANTS ──────────────────────────────────────
 
 const ACCENT = SPECTRUM.azure;
 
-const MODE_LABELS = [
-  { key: "fluid", label: "Fluid", color: PATTERN.A.primary },
-  { key: "chronicConnection", label: "Chronic Connection", color: PATTERN.A.primary },
-  { key: "chronicProtection", label: "Chronic Protection", color: PATTERN.B.primary },
-  { key: "chronicControl", label: "Chronic Control", color: PATTERN.C.primary },
-  { key: "chronicDomination", label: "Chronic Domination", color: PATTERN.D.primary },
+const MODE_COLUMNS = [
+  { key: "connection", label: "Connection", condition: "Safety & Openness", color: PATTERN.A.primary },
+  { key: "protection", label: "Protection", condition: "Threat & Defence", color: PATTERN.B.primary },
+  { key: "control", label: "Control", condition: "Strategy & Management", color: PATTERN.C.primary },
+  { key: "domination", label: "Domination", condition: "Power & Dominance", color: PATTERN.D.primary },
 ];
 
 const SOMATIC_KEYS = ["fear", "anger", "disgust", "joy", "envy"];
@@ -25,7 +24,7 @@ const RELATIONAL_KEYS = ["shame", "guilt", "sadness", "love"];
 const SOMATIC_EMOTIONS = EMOTIONS.filter((e) => SOMATIC_KEYS.includes(e.key));
 const RELATIONAL_EMOTIONS = EMOTIONS.filter((e) => RELATIONAL_KEYS.includes(e.key));
 
-// ─── STYLES ─────────────────────────────────────────────
+// ─── STYLES ─────────────────────────────────────────
 
 const groupLabelStyle = {
   fontFamily: FONT.mono,
@@ -72,17 +71,23 @@ const detailValueStyle = {
   margin: 0,
 };
 
-// ─── COMPONENT ──────────────────────────────────────────
+// ─── COMPONENT ──────────────────────────────────────
 
 export default function EmotionSignalExplorer() {
   const [selectedKey, setSelectedKey] = useState("fear");
-  const [expandedGradient, setExpandedGradient] = useState(null);
 
   const selected = EMOTIONS.find((e) => e.key === selectedKey);
 
+  const restorationLabel =
+    selected.restorationType === "somatic"
+      ? "Somatic"
+      : selected.restorationType === "relational"
+        ? "Relational"
+        : "Somatic or Relational";
+
   return (
     <section
-      aria-label="Emotion Signal Explorer — select an emotion to see its signal, body response, and completion pathway"
+      aria-label="Emotion Signal Explorer — select an emotion to see its signal, body response, and restoration pathway"
       style={{
         background: BG.card,
         border: `1px solid ${hexToRgba(ACCENT, 0.15)}`,
@@ -115,7 +120,7 @@ export default function EmotionSignalExplorer() {
             lineHeight: 1.5,
           }}
         >
-          Select an emotion to see what the nervous system is signalling, what the body does, and what completes the cycle.
+          Select an emotion to see what the nervous system is signalling, what the body does, and what restores the cycle.
         </p>
       </div>
 
@@ -137,10 +142,7 @@ export default function EmotionSignalExplorer() {
                 key={emotion.key}
                 emotion={emotion}
                 isSelected={selectedKey === emotion.key}
-                onClick={() => {
-                  setSelectedKey(emotion.key);
-                  setExpandedGradient(null);
-                }}
+                onClick={() => setSelectedKey(emotion.key)}
               />
             ))}
           </div>
@@ -153,10 +155,7 @@ export default function EmotionSignalExplorer() {
                 key={emotion.key}
                 emotion={emotion}
                 isSelected={selectedKey === emotion.key}
-                onClick={() => {
-                  setSelectedKey(emotion.key);
-                  setExpandedGradient(null);
-                }}
+                onClick={() => setSelectedKey(emotion.key)}
               />
             ))}
           </div>
@@ -200,7 +199,7 @@ export default function EmotionSignalExplorer() {
                 borderRadius: RADIUS.sm,
               }}
             >
-              {selected.type}
+              Restoration: {restorationLabel}
             </span>
           </div>
 
@@ -225,122 +224,32 @@ export default function EmotionSignalExplorer() {
             <p style={detailValueStyle}>{selected.bodyResponse}</p>
           </div>
 
-          {/* Completion Pathway */}
+          {/* Restoration Pathway */}
           <div style={{ marginBottom: 24 }}>
-            <p style={detailLabelStyle}>COMPLETION PATHWAY</p>
-            <p style={detailValueStyle}>{selected.completionNeeds}</p>
+            <p style={detailLabelStyle}>RESTORATION PATHWAY</p>
+            <p style={detailValueStyle}>{selected.restorationNeeds}</p>
           </div>
 
-          {/* Gradient section */}
+          {/* Across the Compass — 4×2 tables */}
           <div>
-            <p
-              style={{
-                ...detailLabelStyle,
-                marginBottom: 10,
-              }}
-            >
-              ACROSS THE GRADIENT
+            <p style={{ ...detailLabelStyle, marginBottom: 14 }}>
+              ACROSS THE COMPASS
             </p>
 
-            {/* Gradient bar */}
-            <div
-              style={{
-                background: PATTERN_GRADIENT,
-                height: 6,
-                borderRadius: 100,
-                marginBottom: 12,
-              }}
+            {/* Fluid Compass table */}
+            <CompassTable
+              title="Fluid Compass"
+              subtitle="the signal stays intact"
+              data={selected.fluidCompass}
             />
 
-            {/* Gradient positions */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              {MODE_LABELS.map((mode) => {
-                const isExpanded = expandedGradient === mode.key;
-                const gradientText = selected.gradient[mode.key];
-
-                return (
-                  <button
-                    key={mode.key}
-                    onClick={() =>
-                      setExpandedGradient(isExpanded ? null : mode.key)
-                    }
-                    aria-expanded={isExpanded}
-                    style={{
-                      background: isExpanded
-                        ? hexToRgba(mode.color, 0.08)
-                        : "transparent",
-                      border: `1px solid ${
-                        isExpanded
-                          ? hexToRgba(mode.color, 0.25)
-                          : "transparent"
-                      }`,
-                      borderRadius: RADIUS.sm,
-                      padding: "8px 12px",
-                      cursor: "pointer",
-                      textAlign: "left",
-                      transition: "all 200ms ease",
-                      width: "100%",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 8,
-                      }}
-                    >
-                      <span
-                        style={{
-                          width: 8,
-                          height: 8,
-                          borderRadius: "50%",
-                          background: mode.color,
-                          flexShrink: 0,
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontFamily: FONT.mono,
-                          fontSize: 11,
-                          fontWeight: 600,
-                          color: isExpanded ? mode.color : TEXT.secondary,
-                          letterSpacing: "0.02em",
-                        }}
-                      >
-                        {mode.label}
-                      </span>
-                      <span
-                        style={{
-                          marginLeft: "auto",
-                          fontFamily: FONT.mono,
-                          fontSize: 10,
-                          color: TEXT.hint,
-                          transform: isExpanded
-                            ? "rotate(90deg)"
-                            : "rotate(0deg)",
-                          transition: "transform 200ms ease",
-                        }}
-                      >
-                        {"\u25B8"}
-                      </span>
-                    </div>
-                    {isExpanded && (
-                      <p
-                        style={{
-                          fontFamily: FONT.display,
-                          fontSize: 13,
-                          lineHeight: 1.65,
-                          color: TEXT.secondary,
-                          margin: "8px 0 0 16px",
-                        }}
-                      >
-                        {gradientText}
-                      </p>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+            {/* Stuck Compass table */}
+            <CompassTable
+              title="Stuck Compass"
+              subtitle="the signal distorts"
+              data={selected.stuckCompass}
+              isStuck
+            />
           </div>
         </div>
       </div>
@@ -348,7 +257,119 @@ export default function EmotionSignalExplorer() {
   );
 }
 
-// ─── SUBCOMPONENT ───────────────────────────────────────
+// ─── COMPASS TABLE ─────────────────────────────────
+
+function CompassTable({ title, subtitle, data, isStuck }) {
+  return (
+    <div style={{ marginBottom: isStuck ? 0 : 16 }}>
+      <div style={{ marginBottom: 8 }}>
+        <span
+          style={{
+            fontFamily: FONT.mono,
+            fontSize: 11,
+            fontWeight: 600,
+            color: TEXT.primary,
+            letterSpacing: "0.02em",
+          }}
+        >
+          {title}
+        </span>
+        <span
+          style={{
+            fontFamily: FONT.display,
+            fontSize: 11,
+            fontStyle: "italic",
+            color: TEXT.muted,
+            marginLeft: 6,
+          }}
+        >
+          — {subtitle}
+        </span>
+      </div>
+
+      {/* Desktop: 4-column row */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 1,
+          background: BORDER.default,
+          borderRadius: RADIUS.sm,
+          overflow: "hidden",
+        }}
+      >
+        {MODE_COLUMNS.map((mode) => (
+          <div key={mode.key} style={{ background: BG.card }}>
+            {/* Column header */}
+            <div
+              style={{
+                padding: "8px 10px 6px",
+                background: hexToRgba(mode.color, 0.06),
+                borderBottom: `1px solid ${BORDER.default}`,
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                <span
+                  style={{
+                    width: 7,
+                    height: 7,
+                    borderRadius: "50%",
+                    background: mode.color,
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10,
+                    fontWeight: 600,
+                    color: TEXT.primary,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {mode.label}
+                </span>
+              </div>
+              <span
+                style={{
+                  fontFamily: FONT.display,
+                  fontSize: 9,
+                  color: TEXT.muted,
+                  marginTop: 2,
+                  display: "block",
+                }}
+              >
+                {mode.condition}
+              </span>
+            </div>
+
+            {/* Cell content */}
+            <div
+              style={{
+                padding: "10px",
+                minHeight: 60,
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: FONT.display,
+                  fontSize: 12,
+                  lineHeight: 1.55,
+                  color: isStuck ? TEXT.secondary : TEXT.secondary,
+                  margin: 0,
+                }}
+              >
+                {data[mode.key]}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── EMOTION BUTTON ─────────────────────────────────
 
 function EmotionButton({ emotion, isSelected, onClick }) {
   return (

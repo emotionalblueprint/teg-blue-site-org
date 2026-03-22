@@ -1,7 +1,7 @@
 import { SPECTRUM, TEXT, FONT, hexToRgba } from "@/src/styles/tokens";
 
 // ─── SVG Constants ──────────────────────────────────────
-const VW = 800, VH = 430;
+const VW = 800, VH = 442;
 const PL = 40, PR = 40;
 
 // Column layout
@@ -14,10 +14,10 @@ const BAR_MAX = COL_W - 16;
 function colX(i) { return COL_START + i * (COL_W + COL_GAP); }
 
 const MODES = [
-  { letter: "A", name: "Connection",  color: SPECTRUM.sky },
-  { letter: "B", name: "Protection",  color: SPECTRUM.azure },
-  { letter: "C", name: "Control",     color: SPECTRUM.blue },
-  { letter: "D", name: "Domination",  color: SPECTRUM.cobalt },
+  { letter: "A", name: "Connection",  conditionShort: "Safety & Openness",      color: SPECTRUM.sky },
+  { letter: "B", name: "Protection",  conditionShort: "Threat & Defence",       color: SPECTRUM.azure },
+  { letter: "C", name: "Control",     conditionShort: "Strategy & Management",  color: SPECTRUM.blue },
+  { letter: "D", name: "Domination",  conditionShort: "Power & Dominance",      color: SPECTRUM.cobalt },
 ];
 
 const DIMENSIONS = [
@@ -31,7 +31,7 @@ const DIMENSIONS = [
 
 // Row layout
 const HEADER_Y = 50;
-const ROWS_START = 90;
+const ROWS_START = 102;
 const ROW_H = 54;
 
 export default function F1ArchitectureDiagram() {
@@ -65,7 +65,12 @@ export default function F1ArchitectureDiagram() {
                 letterSpacing: "0.06em", fill: hexToRgba(mode.color, 0.85) }}>
               {mode.name}
             </text>
-            <rect x={x} y={HEADER_Y + 12} width={COL_W} height={3}
+            <text x={cx} y={HEADER_Y + 14} textAnchor="middle"
+              style={{ fontFamily: FONT.display, fontSize: "9px", fontStyle: "italic",
+                fill: hexToRgba(mode.color, 0.5) }}>
+              {mode.conditionShort}
+            </text>
+            <rect x={x} y={HEADER_Y + 24} width={COL_W} height={3}
               rx={1.5} fill={mode.color} opacity={0.5} />
           </g>
         );

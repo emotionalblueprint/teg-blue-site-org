@@ -4,10 +4,10 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/tokens'
 
 const MODES = [
-  { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety' },
-  { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat' },
-  { name: 'CONTROL',     hex: '#346AEC', center: 0.625, signal: 'Danger' },
-  { name: 'DOMINATION',  hex: '#2563eb', center: 0.875, signal: 'Life peril' },
+  { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety',     conditionShort: 'Safety & Openness' },
+  { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat',     conditionShort: 'Threat & Defence' },
+  { name: 'CONTROL',     hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'Strategy & Management' },
+  { name: 'DOMINATION',  hex: '#2563eb', center: 0.875, signal: 'Life peril', conditionShort: 'Power & Dominance' },
 ]
 
 const BAR_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)'
@@ -210,13 +210,13 @@ export default function CompassBar({ showSpecs = true }) {
               </div>
               <div style={{
                 fontFamily: FONT.mono,
-                fontSize: 9,
+                fontSize: 8,
                 fontStyle: 'italic',
                 letterSpacing: '0.04em',
                 color: isActive ? hexToRgba(m.hex, 0.6) : TEXT.micro,
                 transition: 'color 200ms',
               }}>
-                MODE
+                {isActive ? m.conditionShort : 'MODE'}
               </div>
               {isActive && (
                 <div style={{

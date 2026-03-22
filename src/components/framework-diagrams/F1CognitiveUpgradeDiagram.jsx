@@ -6,22 +6,22 @@ import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba } from "@/src/styles/tokens
 // ─── Mode Data ──────────────────────────────────────────
 const MODES = [
   {
-    key: "A", name: "Connection", center: 0.125,
+    key: "A", name: "Connection", conditionShort: "Safety & Openness", center: 0.125,
     type: "Body-first",
     fluid: "Enough safety to engage, relate, and repair. The needle\u2019s baseline.",
   },
   {
-    key: "B", name: "Protection", center: 0.375,
+    key: "B", name: "Protection", conditionShort: "Threat & Defence", center: 0.375,
     type: "Body-first",
     fluid: "The system mobilizes. Attention narrows, emotions amplify. Fight or flight.",
   },
   {
-    key: "C", name: "Control", center: 0.625,
+    key: "C", name: "Control", conditionShort: "Strategy & Management", center: 0.625,
     type: "Cognition-first",
     fluid: "Cognition recruited deliberately. Structure, strategy, released when done.",
   },
   {
-    key: "D", name: "Domination", center: 0.875,
+    key: "D", name: "Domination", conditionShort: "Power & Dominance", center: 0.875,
     type: "Cognition-first",
     fluid: "Last resort. Entered deliberately, used briefly. The cost is felt and processed.",
   },
@@ -225,6 +225,13 @@ export default function F1CognitiveUpgradeDiagram() {
             transition: "color 300ms ease",
           }}>
             {mode.name}
+          </span>
+          <span style={{
+            fontFamily: FONT.display, fontSize: 10,
+            fontStyle: "italic",
+            color: hexToRgba(color, 0.6),
+          }}>
+            {mode.conditionShort}
           </span>
           <span style={{
             fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,

@@ -6,6 +6,7 @@ import {
   PATTERN, PATTERN_GRADIENT, hexToRgba,
   MODE_ORANGE,
 } from "@/src/styles/tokens";
+import { COMPASS_CONDITIONS } from "@/src/data/compass-diagram-data";
 
 // ─── MODE DATA ──────────────────────────────────────────
 
@@ -13,6 +14,7 @@ const MODES = [
   {
     key: "A",
     name: "Connection",
+    conditionShort: "Safety & Openness",
     hex: PATTERN.A.primary,
     center: 0.125,
     fluid: {
@@ -52,6 +54,7 @@ const MODES = [
   {
     key: "B",
     name: "Protection",
+    conditionShort: "Threat & Defence",
     hex: PATTERN.B.primary,
     center: 0.375,
     fluid: {
@@ -91,6 +94,7 @@ const MODES = [
   {
     key: "C",
     name: "Control",
+    conditionShort: "Strategy & Management",
     hex: PATTERN.C.primary,
     center: 0.625,
     fluid: {
@@ -130,6 +134,7 @@ const MODES = [
   {
     key: "D",
     name: "Domination",
+    conditionShort: "Power & Dominance",
     hex: PATTERN.D.primary,
     center: 0.875,
     fluid: {
@@ -455,6 +460,17 @@ export default function FluidCompassExplorer() {
           </span>
           <div
             style={{
+              fontFamily: FONT.display,
+              fontSize: 10,
+              fontStyle: "italic",
+              color: hexToRgba(accentColor, 0.6),
+              marginBottom: 6,
+            }}
+          >
+            {isStuck ? COMPASS_CONDITIONS.stuck : COMPASS_CONDITIONS.fluid}
+          </div>
+          <div
+            style={{
               fontSize: 18,
               fontWeight: 700,
               color: TEXT.primary,
@@ -752,6 +768,18 @@ export default function FluidCompassExplorer() {
               }}
             >
               {mode.name}
+              {activeMode.key === mode.key && (
+                <div style={{
+                  fontSize: 8,
+                  fontFamily: FONT.display,
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  color: hexToRgba(mode.hex, 0.7),
+                  marginTop: 1,
+                }}>
+                  {mode.conditionShort}
+                </div>
+              )}
             </span>
           ))}
         </div>

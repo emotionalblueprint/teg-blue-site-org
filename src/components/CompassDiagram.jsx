@@ -6,7 +6,7 @@ import {
   PATTERN, AWARENESS, MODE_ORANGE, hexToRgba,
 } from '@/src/styles/tokens';
 import {
-  MODES, FLUID_CURVES, CHRONIC_CURVES,
+  COMPASS_CONDITIONS, MODES, FLUID_CURVES, CHRONIC_CURVES,
   CAPACITIES, RESTORATION,
 } from '@/src/data/compass-diagram-data';
 
@@ -218,10 +218,10 @@ export default function CompassDiagram() {
               transition: 'all 300ms ease',
             }}
           >
-            {isStuck ? 'Chronic Compass' : 'Fluid Compass'}
+            {isStuck ? 'Stuck Compass' : 'Fluid Compass'}
           </span>
-          <span style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted }}>
-            Drag needle to explore
+          <span style={{ fontSize: 10, fontFamily: FONT.display, color: TEXT.muted, fontStyle: 'italic' }}>
+            {isStuck ? COMPASS_CONDITIONS.stuck : COMPASS_CONDITIONS.fluid}
           </span>
         </div>
 
@@ -694,16 +694,30 @@ export default function CompassDiagram() {
                   {m.label}
                 </div>
                 {isActive && (
-                  <div
-                    style={{
-                      width: 5,
-                      height: 5,
-                      borderRadius: '50%',
-                      background: color,
-                      boxShadow: `0 0 8px ${color}`,
-                      margin: '4px auto 0',
-                    }}
-                  />
+                  <>
+                    <div
+                      style={{
+                        fontSize: 8,
+                        fontFamily: FONT.display,
+                        fontStyle: 'italic',
+                        color: hexToRgba(color, 0.7),
+                        marginTop: 2,
+                        transition: 'all 200ms ease',
+                      }}
+                    >
+                      {m.conditionShort}
+                    </div>
+                    <div
+                      style={{
+                        width: 5,
+                        height: 5,
+                        borderRadius: '50%',
+                        background: color,
+                        boxShadow: `0 0 8px ${color}`,
+                        margin: '4px auto 0',
+                      }}
+                    />
+                  </>
                 )}
               </button>
             );

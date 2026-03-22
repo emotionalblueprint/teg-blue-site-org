@@ -3,7 +3,7 @@
   "type": "glossary",
   "title": "Four-Mode Gradient",
   "status": "open-review",
-  "definition": "A framework mapping four regulatory states (Connection, Protection, Control, Domination) that individuals move between based on perceived safety and threat.",
+  "definition": "A framework mapping four regulatory states — Connection (Safety & Openness), Protection (Threat & Defence), Control (Strategy & Management), Domination (Power & Dominance) — that individuals move between based on perceived safety and threat.",
 
   "summary": "The Four-Mode Gradient is TEG-Blue's core mapping tool, identifying four distinct regulatory states along a continuous gradient. Connection represents safety; Protection represents recoverable threat response; Control represents chronic threat managed through controlling others; Domination represents entrenched control with empathy offline.",
 
@@ -16,7 +16,7 @@
       "id": "what-it-is",
       "title": "What It Is",
       "defaultOpen": true,
-      "content": "The Four-Mode Gradient maps four regulatory states along a continuous gradient: Connection (safety perceived, open and relational), Protection (threat perceived, defensive but recoverable), Control (chronic threat managed through controlling others/environment), and Domination (control entrenched, empathy offline, power as primary safety strategy). Health is mobility — the capacity to move fluidly between states rather than getting stuck."
+      "content": "The Four-Mode Gradient maps four regulatory states along a continuous gradient: Connection — Safety & Openness (when the nervous system reads safety and stays open), Protection — Threat & Defence (when the nervous system reads threat and defends), Control — Strategy & Management (when the nervous system needs strategy and management), and Domination — Power & Dominance (when the nervous system needs power and dominance). Health is mobility — the capacity to move fluidly between states rather than getting stuck."
     },
     {
       "id": "how-teg-blue-maps-it",

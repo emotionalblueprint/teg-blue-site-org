@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
   hexToRgba, RESEARCHER, PATTERN_GRADIENT,
 } from "@/src/styles/tokens";
 import {
@@ -200,12 +200,49 @@ export default function M1InnerCompassPage() {
               </ExpandableSection>
             </div>
 
-            <p style={{ ...proseStyle, fontSize: 13 }}>
-              <Link href="/model/m1-emotions-as-signals" style={{ color: MODEL_COLOR, textDecoration: "none", fontWeight: 500 }}>
+            <Link
+              href="/model/m1-emotions-as-signals"
+              style={{
+                display: "block",
+                textDecoration: "none",
+                background: BG.surface,
+                border: `1px solid ${hexToRgba(MODEL_COLOR, 0.2)}`,
+                borderRadius: RADIUS.md,
+                padding: "16px 20px",
+                marginTop: 8,
+              }}
+            >
+              <span style={{
+                fontFamily: FONT.mono,
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: MODEL_COLOR,
+                display: "block",
+                marginBottom: 6,
+              }}>
+                M1 INPUT LAYER
+              </span>
+              <span style={{
+                fontFamily: FONT.display,
+                fontSize: 15,
+                fontWeight: 600,
+                color: TEXT.primary,
+                display: "block",
+                marginBottom: 4,
+              }}>
                 Emotions as Signals &rarr;
-              </Link>
-              {" "}— all nine emotions mapped as biological signals: what each one detects, what the body does, and what completes the cycle.
-            </p>
+              </span>
+              <span style={{
+                fontFamily: FONT.display,
+                fontSize: 13,
+                color: TEXT.muted,
+                lineHeight: 1.5,
+              }}>
+                All nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle.
+              </span>
+            </Link>
           </section>
 
           {/* ─── CONCEPT 2: SAFETY ORIENTATION ──────────── */}
@@ -342,17 +379,17 @@ export default function M1InnerCompassPage() {
               </div>
             </div>
 
-            <h3 style={h3Style}>Connection</h3>
+            <h3 style={h3Style}>Connection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Safety & Openness</span></h3>
             <p style={proseStyle}>
               Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, empathy comes fully online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the mode designed for sustained living.
             </p>
 
-            <h3 style={h3Style}>Protection</h3>
+            <h3 style={h3Style}>Protection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Threat & Defence</span></h3>
             <p style={proseStyle}>
               Protection is an extraordinary emergency system. When threat is perceived, the entire system mobilises: attention narrows toward threat, emotions amplify, and the capacity to feel with others is filtered to survival-relevant data. Fight and flight are the primary responses — active, energised. When those are unavailable, freeze and fawn emerge as the body's fallback. Protection is intelligent design for genuine threat. The problem is when it becomes a permanent address — when what was designed for minutes to hours becomes a lifetime of vigilance.
             </p>
 
-            <h3 style={h3Style}>Control</h3>
+            <h3 style={h3Style}>Control <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Strategy & Management</span></h3>
             <p style={proseStyle}>
               In a calibrated compass, Control is deliberate, time-limited, and returnable. The system registers that Protection is not enough — the situation requires structure, coordination, or strategic action under pressure. Cognition is recruited. The sequence is strategic: Anticipate, Manage, Override. When the situation resolves, cognition stands down. The compass moves back. Control was a tool. It was used. It was released.
             </p>
@@ -361,7 +398,7 @@ export default function M1InnerCompassPage() {
               Connection and Protection activate automatically. Control and Domination are what cognition does when recruited into threat service.
             </OperationalStatement>
 
-            <h3 style={h3Style}>Domination</h3>
+            <h3 style={h3Style}>Domination <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Power & Dominance</span></h3>
             <p style={proseStyle}>
               Domination is the rarest mode. In a designed-operation compass, it is entered deliberately, used briefly, and followed by return. The person enters it knowing exactly what they are doing. Emotional Resonance drops to near-zero — and the person chose to let it drop because the situation demanded decisive, unambiguous action. The sequence is final: Override, Eliminate, Secure. When the situation resolves, the person exits. The compass moves back. Emotional Resonance returns. The person feels the cost — the weight of having suspended resonance. In a designed-operation compass, this cost is felt and processed.
             </p>
@@ -922,22 +959,22 @@ export default function M1InnerCompassPage() {
               When the return is absent — when the activation cycle never completes, when the compass needle never comes back — the mode that was meant to be temporary becomes permanent. Identity forms around the mode. False coherence (F3) constructs a self-narrative that makes the stuckness feel like character rather than position. The person does not experience being stuck. They experience being themselves.
             </p>
 
-            <h3 style={h3Style}>Chronic Connection</h3>
+            <h3 style={h3Style}>Chronic Connection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Safety & Openness (stuck)</span></h3>
             <p style={proseStyle}>
               Permanent appeasement. The nervous system locked in the mode designed for safety — but without the capacity to activate Protection when needed. The person in chronic Connection cannot say no, cannot feel anger, cannot set a boundary — not because they lack the knowledge but because the system has learned that activating Protection is more dangerous than staying fused. Emotional Resonance is flooded — the person feels everything everyone around them feels — while Self-Emotional Awareness is gone — they have no access to their own signals. Reading Emotions is locked outward, compulsively scanning others. Chronic Connection looks like healthy Connection from the outside. This is part of what makes it the hardest chronic mode to identify.
             </p>
 
-            <h3 style={h3Style}>Chronic Protection</h3>
+            <h3 style={h3Style}>Chronic Protection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Threat & Defence (stuck)</span></h3>
             <p style={proseStyle}>
               Permanent vigilance. The nervous system that never received the signal that the threat has passed. Approach-avoidance cycling — wanting connection but reading it as dangerous. Energy consumed by threat-scanning. The body running on emergency fuel indefinitely. Hypervigilance is not anxiety as a personality trait — it is a compass stuck in Protection, doing exactly what it was designed to do, without end.
             </p>
 
-            <h3 style={h3Style}>Chronic Control</h3>
+            <h3 style={h3Style}>Chronic Control <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Strategy & Management (stuck)</span></h3>
             <p style={proseStyle}>
               Permanent management. Strategic warmth, managed closeness, performed empathy. The person looks functional — often more than functional. They appear organised, competent, relationally skilled. But closeness is managed rather than felt. Vulnerability is performed rather than experienced. Relationships serve strategy rather than connection. Chronic Control is the mode that most reliably mimics Connection, making the stuckness invisible — to others and often to the person themselves.
             </p>
 
-            <h3 style={h3Style}>Chronic Domination</h3>
+            <h3 style={h3Style}>Chronic Domination <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Power & Dominance (stuck)</span></h3>
             <p style={proseStyle}>
               Permanent override. Empathy collapsed or weaponised — Emotional Resonance used to read others for advantage rather than for connection. Tolerance builds — what produced safety yesterday requires more force today. Escalation follows (F7). The person has lost the experience of the cost. In a fluid compass, the cost is felt. In chronic Domination, it has been absorbed into identity. The person does not feel the weight of what they are doing because the weight has become who they believe they are.
             </p>

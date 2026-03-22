@@ -385,16 +385,28 @@ export default function ActivationCurveExplorer() {
         }}
       >
         {!showAllModes && (
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: curveColor(selectedMode, isChronic),
-              transition: 'color 200ms',
-            }}
-          >
-            {isChronic ? `Chronic ${MODES[selectedMode].label}` : MODES[selectedMode].label}
-          </span>
+          <>
+            <span
+              style={{
+                fontSize: 13,
+                fontWeight: 600,
+                color: curveColor(selectedMode, isChronic),
+                transition: 'color 200ms',
+              }}
+            >
+              {isChronic ? `Chronic ${MODES[selectedMode].label}` : MODES[selectedMode].label}
+            </span>
+            <span
+              style={{
+                fontSize: 10,
+                fontFamily: FONT.display,
+                fontStyle: 'italic',
+                color: hexToRgba(curveColor(selectedMode, isChronic), 0.6),
+              }}
+            >
+              {MODES[selectedMode].conditionShort}{isChronic ? ' (stuck)' : ''}
+            </span>
+          </>
         )}
         {showAllModes && (
           <span style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary }}>

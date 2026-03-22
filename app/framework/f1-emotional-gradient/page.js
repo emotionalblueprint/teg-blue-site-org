@@ -552,6 +552,9 @@ export default function F1EmotionalGradientPage() {
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.A.primary, marginBottom: 8 }}>
                   Connection Mode — Designed for Sustained Living <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Ventral Vagal Dominant)</span>
                 </h4>
+                <p style={{ fontSize: 11, fontFamily: FONT.display, fontStyle: "italic", color: hexToRgba(PATTERN.A.primary, 0.7), margin: "0 0 6px 0" }}>
+                  When the nervous system reads safety and stays open
+                </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                   The system's baseline — the mode designed for sustained living. When sufficient safety is perceived, perception broadens, the full empathy set comes online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is not "calm." It is the state where the system has sufficient safety resources to engage with challenge, complexity, and even distress without the nervous system treating them as threats. A person in Connection can grieve, argue, problem-solve, and sit with discomfort.
                 </p>
@@ -569,6 +572,9 @@ export default function F1EmotionalGradientPage() {
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.B.primary, marginBottom: 8 }}>
                   Protection Mode — The System on Emergency Fuel <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>(Sympathetic/Dorsal Dominant)</span>
                 </h4>
+                <p style={{ fontSize: 11, fontFamily: FONT.display, fontStyle: "italic", color: hexToRgba(PATTERN.B.primary, 0.7), margin: "0 0 6px 0" }}>
+                  When the nervous system reads threat and defends
+                </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
                   The system on emergency fuel — designed to last from a few minutes to a few hours, maximum days. When threat is perceived, the entire system mobilizes: attention narrows toward threat, emotions amplify, and the capacity to feel with others is filtered to survival-relevant data.
                 </p>
@@ -929,6 +935,9 @@ export default function F1EmotionalGradientPage() {
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.C.primary, marginBottom: 8 }}>
                   Control Mode — Pattern C <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Instability → Strategy (time-limited)</span>
                 </h4>
+                <p style={{ fontSize: 11, fontFamily: FONT.display, fontStyle: "italic", color: hexToRgba(PATTERN.C.primary, 0.7), margin: "0 0 6px 0" }}>
+                  When the nervous system needs strategy and management
+                </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
                   The system registers that Protection is not enough. The situation requires structure, coordination, or strategic action under pressure. Control appears briefly when it is needed — it is entered deliberately and consciously.
                 </p>
@@ -956,6 +965,9 @@ export default function F1EmotionalGradientPage() {
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: PATTERN.D.primary, marginBottom: 8 }}>
                   Domination Mode — Pattern D <span style={{ fontSize: 12, color: TEXT.muted, fontWeight: 400 }}>Power = Safety → Dominance (time-limited)</span>
                 </h4>
+                <p style={{ fontSize: 11, fontFamily: FONT.display, fontStyle: "italic", color: hexToRgba(PATTERN.D.primary, 0.7), margin: "0 0 6px 0" }}>
+                  When the nervous system needs power and dominance
+                </p>
                 <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
                   The most extreme response — used only when immediate control is required to prevent harm. This mode is rare and time-limited in a fluid compass. The person enters it deliberately, knowing exactly what they are doing. Emotional Resonance has dropped to near-zero — and the person chose to let it drop because the situation demanded decisive, unambiguous action.
                 </p>

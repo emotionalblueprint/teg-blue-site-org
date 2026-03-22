@@ -180,10 +180,12 @@ export const STATUS = {
   reviewed: '#10b981',      // emerald
 };
 
-// ─── MODE ACCENT COLORS (surgical signal colors — matches .com) ──
+// ─── MODE ACCENT COLORS (canonical mode colors — matches .com) ──
 
-export const MODE_ORANGE = '#f97316'; // unprocessed / protection / SEA offline
-export const MODE_PINK   = '#ec4899'; // domination / chronic RE / precision without feedback
+export const MODE_TEAL   = '#14b8a6'; // connection / safety & openness
+export const MODE_YELLOW = '#eab308'; // protection / threat & defence
+export const MODE_ORANGE = '#f97316'; // control / strategy & management
+export const MODE_PINK   = '#ec4899'; // domination / power & dominance
 
 // ─── EDITORIAL ACCENT (Mechanics of Phenomena section) ──
 

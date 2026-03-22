@@ -25,8 +25,9 @@ const MODEL_COLOR = SPECTRUM.azure;
 const ANCHOR_SECTIONS = [
   { label: "Signal Language", href: "#signalling-language" },
   { label: "Signal Anatomy", href: "#signal-anatomy" },
+  { label: "Signal Reception", href: "#signal-reception" },
   { label: "Nine Signals", href: "#nine-signals" },
-  { label: "Two Pathways", href: "#two-pathways" },
+  { label: "Somatic vs Relational", href: "#two-pathways" },
   { label: "Development", href: "#developmental-consequence" },
 ];
 
@@ -35,14 +36,14 @@ const ANCHOR_SECTIONS = [
 export const metadata = {
   title: "Emotions as Signals (M1) | TEG-Blue Research",
   description:
-    "The nine emotions mapped as biological signals — what each one detects, what the body does, and what completes the cycle. The input layer of M1 Nervous System Signaling.",
+    "The nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
   keywords: [
     "emotions as signals",
     "nervous system signals",
     "fear anger disgust shame guilt sadness joy love envy",
     "somatic emotions",
     "relational emotions",
-    "completion pathway",
+    "restoration pathway",
     "co-regulation",
     "signal interpretation",
     "emotional technology",
@@ -53,7 +54,7 @@ export const metadata = {
   openGraph: {
     title: "Emotions as Signals — M1 Input Layer | TEG-Blue",
     description:
-      "Nine emotions mapped as biological signals. What each one detects, what the body does, and what completes the cycle.",
+      "Nine emotions mapped as biological signals. What each one detects, what the body does, and what restores the cycle.",
     url: "https://teg-blue.org/model/m1-emotions-as-signals",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -120,19 +121,22 @@ export default function M1EmotionsAsSignalsPage() {
                   Emotions are the nervous system{"'"}s signal language — biological messages, not disruptions to clear thinking
                 </li>
                 <li style={propositionItemStyle}>
-                  Every emotion has three components: signal (what was detected), body response (what the body does), completion pathway (what resolves it)
+                  Every emotion has three components: signal (what was detected), body response (what the body does), restoration pathway (what resolves it)
                 </li>
                 <li style={propositionItemStyle}>
                   Nine canonical emotions, each carrying a specific finding: Fear, Anger, Disgust, Shame, Guilt, Sadness, Joy, Love, Envy
                 </li>
                 <li style={propositionItemStyle}>
+                  Every signal is designed to be received — when Self-Emotional Awareness (SEA) is present, the signal is felt and informing; when absent, the signal distorts and memory stores inaccurately
+                </li>
+                <li style={propositionItemStyle}>
                   Somatic emotions can complete through the body{"'"}s own channels — relational emotions cannot, requiring co-regulation
                 </li>
                 <li style={propositionItemStyle}>
-                  The same signal produces different outcomes depending on mode position — the gradient does not change the signal, it changes what the mode does to it
+                  The same signal produces different outcomes depending on mode position — the compass does not change the signal, it changes what the mode does to it
                 </li>
                 <li style={propositionItemStyle}>
-                  When relational emotions are never co-regulated in development, the specific completion pathways for those emotions never build
+                  When relational emotions are never co-regulated in development, the specific restoration pathways for those emotions never build
                 </li>
                 <li style={propositionItemStyle}>
                   The question is not {"\u201C"}how do I manage this emotion?{"\u201D"} but {"\u201C"}what is this signal telling me?{"\u201D"}
@@ -217,7 +221,7 @@ export default function M1EmotionsAsSignalsPage() {
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Body Response</div>
                 <div style={gridCellStyle}>What the body does with the finding. The somatic mobilisation that follows — automatic, below conscious awareness.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Completion Pathway</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Restoration Pathway</div>
                 <div style={gridCellStyle}>What resolves the signal. What the nervous system needs in order to stand down and return to baseline. When unavailable, the signal stays open — activation accumulates as debris.</div>
               </div>
             </div>
@@ -227,7 +231,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The completion pathway is where the critical distinction appears: some emotions can complete through the body{"'"}s own channels (somatic). Others require relational evidence that only another person can provide (relational).
+              The restoration pathway is where the critical distinction appears: some emotions can complete through the body{"'"}s own channels (somatic). Others require relational evidence that only another person can provide (relational).
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
@@ -239,7 +243,52 @@ export default function M1EmotionsAsSignalsPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The three-component architecture applied uniformly across all nine emotions. The explicit identification of completion pathways — not just what triggers the emotion and what it feels like, but what the signal specifically needs in order to resolve.
+                  The three-component architecture applied uniformly across all nine emotions. The explicit identification of restoration pathways — not just what triggers the emotion and what it feels like, but what the signal specifically needs in order to resolve.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── C1.5: EVERY SIGNAL IS DESIGNED TO BE RECEIVED ── */}
+          <section
+            id="signal-reception"
+            aria-labelledby="heading-signal-reception"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-signal-reception"
+              style={sectionHeadingStyle}
+            >
+              Every Signal Is Designed to Be Received
+            </h2>
+
+            <p style={proseStyle}>
+              An emotion at any position — including Safety & Openness — fires and delivers its finding. When Self-Emotional Awareness (SEA) is present, the signal is felt, known, and informing. The system stays responsive. This is baseline: not the absence of feeling, but the presence of awareness.
+            </p>
+            <p style={proseStyle}>
+              Received signals are stored accurately. We remember who gives us love, with whom we feel safe, where we belong and where we don{"'"}t. The emotional memory maps our world.
+            </p>
+            <p style={proseStyle}>
+              When the compass is stuck and Self-Emotional Awareness (SEA) is absent, the signals distort. The emotion keeps running without the person{"'"}s knowledge — and memory gets stored distorted. Love without awareness becomes enmeshment. Joy without awareness becomes compulsive positivity. The emotion has not changed. Whether it can be seen has.
+            </p>
+            <p style={proseStyle}>
+              The accumulated activation becomes invisible from inside, and the distorted memory reinforces the chronic mode. This is how chronic modes form and self-reinforce: not only from unresolved threat, but from any emotion that was never received.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Baseline is not the absence of feeling — it is the presence of awareness. The signal is the same at every compass position. What changes is whether Self-Emotional Awareness (SEA) can receive it.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2009) — awareness of internal bodily states as the foundation of emotional self-awareness. <strong style={{ color: TEXT.primary }}>Memory consolidation:</strong> Phelps (2004) — emotional states shape how memories are encoded and consolidated. <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — neuroception as continuous evaluation below conscious awareness.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The principle that signal reception — not signal type — determines whether an emotion builds accurate memory or reinforces distortion. This applies at every compass position including Safety & Openness. Self-Emotional Awareness (SEA) is identified as the specific variable that determines reception, linking the emotions layer (M1) directly to the awareness capacities layer (M2).
                 </p>
               </ExpandableSection>
             </div>
@@ -252,7 +301,7 @@ export default function M1EmotionsAsSignalsPage() {
           <PartDivider label="PART 2" title="The Nine Signals" />
 
           <p id="nine-signals" style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted }}>
-            Each emotion mapped as signal + body response + completion pathway + gradient behaviour across five positions. Use the explorer above for the interactive view.
+            Each emotion mapped as signal + body response + restoration pathway + compass behaviour across the four mode positions. Use the explorer above for the interactive view.
           </p>
 
           {/* ─── C2: FEAR ────────────────────────────────── */}
@@ -262,10 +311,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Threat detected"
             type="Somatic"
             body="Sympathetic activation. Heart rate rises, muscles tense, sensory acuity sharpens. Fear is the fastest signal — it runs through the amygdala's fast pathway and mobilises the body in milliseconds."
-            completion="The threat must resolve. Either the danger passes, or the person acts and the activation discharges, or safety is established and the system stands down. Fear that cannot resolve stays open — the accumulated activation becomes the new baseline, invisible from inside."
-            gradientInsight="Fear does not disappear at higher modes; it becomes less visible. The most potent fear in the system (Chronic Domination) is the most completely unrecognised by the person carrying it."
+            restoration="The threat must resolve. Either the danger passes, or the person acts and the activation discharges, or safety is established and the system stands down. Fear that cannot resolve stays open — the accumulated activation becomes the new baseline, invisible from inside."
+            compassInsight="Fear at Safety & Openness is felt and shared. The same signal at Power & Dominance becomes terrorizing. The signal is present at every compass position — what changes is the person's capacity to recognise it."
             research="LeDoux (1996) — the amygdala's fast pathway, threat detection before conscious processing. Porges (2011) — sympathetic activation as part of the autonomic hierarchy. Sapolsky (2004) — stress physiology of the fear response."
-            addition="Fear traced across all five gradient positions — from proportionate signal to invisible driver. The gradient reveals that the signal is present at every position; what changes is the person's capacity to recognise it."
+            addition="Fear traced across all four compass positions in both fluid and stuck states. The compass reveals that the signal is present at every position; what changes is whether the person can return to baseline or the signal distorts."
           />
 
           {/* ─── C3: ANGER ───────────────────────────────── */}
@@ -275,10 +324,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Boundary crossed"
             type="Somatic"
             body="Sympathetic activation directed outward. Energy moves toward confrontation, assertion, or correction. Anger is a boundary-maintenance signal — it exists to protect what matters."
-            completion="The boundary must be reasserted or acknowledged — through communication, action, or environmental change. Anger that cannot be expressed stays open. It does not disappear. It reroutes."
-            gradientInsight="In Chronic Connection, anger converts to guilt before it can form. In Chronic Control, it becomes correction. In Chronic Domination, it becomes contempt. The same signal — rerouted differently depending on where the compass is stuck."
+            restoration="The boundary must be reasserted or acknowledged — through communication, action, or environmental change. Anger that cannot be expressed stays open. It does not disappear. It reroutes."
+            compassInsight="At Safety & Openness, anger is a clean boundary signal. When the compass is stuck, the same signal suppresses (stuck Connection), becomes chronic rage (stuck Protection), turns cold and strategic (stuck Control), or becomes destruction (stuck Domination)."
             research="Panksepp (1998) — RAGE system as primary emotional circuit. Tavris (1989) — anger as social signal for boundary maintenance. van der Kolk (2014) — anger as incomplete defensive response."
-            addition="Anger reframed as a boundary-maintenance signal rather than a problem to manage. The gradient reveals what happens when the signal cannot complete: rerouting varies by mode position."
+            addition="Anger reframed as a boundary-maintenance signal rather than a problem to manage. The compass reveals what happens when the signal cannot complete: rerouting varies by mode position."
           />
 
           {/* ─── C4: DISGUST ─────────────────────────────── */}
@@ -288,10 +337,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Contamination detected"
             type="Somatic"
             body="Nausea, retching, the closing of the mouth and nose. The gustatory cortex and the insula activate. The body prepares to expel. Disgust runs through ancient contamination-avoidance circuits that predate social cognition by hundreds of millions of years."
-            completion="Removal. Either the contaminant is expelled, the distance is established, or the environment is confirmed safe. Disgust that cannot complete — because the contaminant is a person, a group, or a part of the self — stays open as permanent aversion."
-            gradientInsight="The biological mechanism is the same whether the contaminant is a toxin or a person. In Chronic Domination, disgust is the emotion that enables atrocity — through the activation of a contamination-avoidance circuit that was never designed to be directed at human beings."
+            restoration="Removal. Either the contaminant is expelled, the distance is established, or the environment is confirmed safe. Disgust that cannot complete — because the contaminant is a person, a group, or a part of the self — stays open as permanent aversion."
+            compassInsight="The biological mechanism is the same whether the contaminant is a toxin or a person. At Power & Dominance, disgust is the emotion that enables atrocity — through the activation of a contamination-avoidance circuit that was never designed to be directed at human beings."
             research="Rozin, Haidt &amp; McCauley (2008) — disgust as evolved contamination-avoidance expanding into moral domain. Chapman &amp; Anderson (2013) — shared neural substrates of physical and moral disgust."
-            addition="Disgust traced across the gradient reveals its role in dehumanisation. The nervous system generates the same rejection response regardless of whether the target is a toxin or a person."
+            addition="Disgust traced across the compass reveals its role in dehumanisation. The nervous system generates the same rejection response regardless of whether the target is a toxin or a person."
           />
 
           {/* ─── C5: SHAME ───────────────────────────────── */}
@@ -301,10 +350,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Belonging at risk"
             type="Relational"
             body="Withdrawal, shrinking, heat, the desire to disappear. Shame is a social survival signal — it evolved to preserve belonging by flagging when the self is at risk of being cast out."
-            completion="Relational evidence. The cycle cannot close alone. The nervous system is waiting for another person to stay — to remain present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs. No amount of breathing resolves shame."
-            gradientInsight="In Chronic Connection, shame becomes identity. In Chronic Domination, it is projected outward — the most potent shame signal in the system and the most completely blocked, reinterpreted as evidence of others' deficiency."
+            restoration="Relational evidence. The cycle cannot close alone. The nervous system is waiting for another person to stay — to remain present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs. No amount of breathing resolves shame."
+            compassInsight="At Safety & Openness, shame is felt and witnessed — vulnerability in service of repair. When the compass is stuck at Power & Dominance, the signal is projected outward — the most potent shame in the system, reinterpreted as evidence of others' deficiency."
             research="Schore (2003) — shame as a primary regulatory affect in early development. Tangney &amp; Dearing (2002) — shame vs guilt as distinct self-conscious emotions. Brown (2006) — shame resilience and the role of relational connection."
-            addition="Shame identified as requiring a relational completion pathway — not as a clinical observation but as a biological constraint. Co-regulation is not optional but structurally necessary for shame to resolve."
+            addition="Shame identified as requiring a relational restoration pathway — not as a clinical observation but as a biological constraint. Co-regulation is not optional but structurally necessary for shame to resolve."
           />
 
           {/* ─── C6: GUILT ───────────────────────────────── */}
@@ -314,10 +363,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Harm done"
             type="Relational"
             body="Discomfort, restlessness, the pull toward repair. Guilt is a corrective signal — it exists to prompt the person to address the impact and restore what was damaged."
-            completion={<>Acknowledgment of the impact, genuine repair, and the other person{"'"}s experience being received — not just cognitively registered but felt through Emotional Resonance (ER). The repair closes the cycle. Guilt that is performed without being felt does not complete.</>}
-            gradientInsight="In Chronic Domination, the guilt signal is structurally erased because vmPFC — which carries guilt, care, and consequence — is suppressed. The behaviour does not change because the signal that would drive change is not received."
+            restoration={<>Acknowledgment of the impact, genuine repair, and the other person{"'"}s experience being received — not just cognitively registered but felt through Emotional Resonance (ER). The repair closes the cycle. Guilt that is performed without being felt does not restore.</>}
+            compassInsight="At Power & Dominance, the guilt signal is structurally erased because vmPFC — which carries guilt, care, and consequence — is suppressed. The behaviour does not change because the signal that would drive change is not received."
             research="Tangney &amp; Dearing (2002) — guilt as behaviour-focused self-conscious emotion. Baumeister, Stillwell &amp; Heatherton (1994) — guilt as relational regulator. Koenigs et al. (2007) — vmPFC damage and impaired guilt processing."
-            addition="Guilt identified as requiring relational completion — the other person's experience must be felt through Emotional Resonance (ER), not just cognitively registered. Performed apology does not resolve guilt because the somatic channel (ER) is not engaged."
+            addition="Guilt identified as requiring relational restoration — the other person's experience must be felt through Emotional Resonance (ER), not just cognitively registered. Performed apology does not resolve guilt because the somatic channel (ER) is not engaged."
           />
 
           {/* ─── C7: SADNESS ─────────────────────────────── */}
@@ -327,8 +376,8 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Loss"
             type="Somatic (relational when loss is relational)"
             body="Withdrawal, slowing, tears. Energy turns inward. Sadness is a conservation signal — it pulls the person away from engagement to allow the loss to be integrated."
-            completion="Time, space, and — for relational losses — the presence of someone who can hold the grief without fixing it. The tears are part of the discharge. Interrupting sadness with activity or forced positivity prevents completion."
-            gradientInsight="Ungrieved loss sits underneath Chronic Protection: the original loss that started the alarm was never processed because processing requires lowering the guard."
+            restoration="Time, space, and — for relational losses — the presence of someone who can hold the grief without fixing it. The tears are part of the discharge. Interrupting sadness with activity or forced positivity prevents restoration."
+            compassInsight="Ungrieved loss sits underneath stuck Threat & Defence: the original loss that started the alarm was never processed because processing requires lowering the guard."
             research="Bowlby (1980) — grief as attachment behaviour. Panksepp (1998) — GRIEF/PANIC system as primary emotional circuit. Stroebe &amp; Schut (1999) — dual process model of bereavement."
             addition="Sadness mapped as both somatic and relational depending on the nature of the loss. Grief (relational sadness) requires the presence of someone who holds without fixing — a specific relational condition, not a general support need."
           />
@@ -340,10 +389,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Safety confirmed"
             type="Somatic"
             body="Expansion, energy, approach. The body opens. Dopamine flows. The system moves toward the source of the signal. Joy is an approach signal — it evolved to move the person toward conditions that support survival and thriving."
-            completion="Presence. Joy completes through being experienced — fully, in the body, without the mind already scanning for what will take it away. Interrupted joy prevents the signal from completing."
-            gradientInsight="Joy is not absent in chronic modes — it is transformed. In Chronic Connection it becomes performance, in Chronic Protection it becomes threatening, in Chronic Domination it becomes power. The only joy available in each chronic mode is the joy that does not require vulnerability."
+            restoration="Presence. Joy restores through being experienced — fully, in the body, without the mind already scanning for what will take it away. Interrupted joy prevents the signal from restoring."
+            compassInsight="Joy is not absent when the compass is stuck — it is transformed. At stuck Safety & Openness it becomes compulsive positivity, at stuck Threat & Defence it becomes threatening, at stuck Power & Dominance it becomes manic dominance. The only joy available in each stuck position is joy that does not require vulnerability."
             research="Fredrickson (2001) — broaden-and-build theory. Panksepp (1998) — PLAY and SEEKING systems. Berridge &amp; Robinson (2003) — dopamine as wanting/approach signal."
-            addition="Joy reframed as a safety-confirmation signal rather than a goal state. The gradient reveals the transformation: the signal is present at every position, but what the mode allows it to become changes completely."
+            addition="Joy reframed as a safety-confirmation signal rather than a goal state. The compass reveals the transformation: the signal is present at every position, but what the mode allows it to become changes completely."
           />
 
           {/* ─── C9: LOVE ────────────────────────────────── */}
@@ -353,10 +402,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Bond"
             type="Relational"
             body="Oxytocin, warmth, the pull toward closeness. The body orients toward the other person. The co-regulation circuit activates. Love is the most potent relational signal the nervous system generates."
-            completion="Reciprocity — the signal received and returned. Love that is given without landing, or love that is demanded without being genuinely offered, does not complete. The cycle closes through mutual contact — genuine felt presence, not performance."
-            gradientInsight="Love does not disappear in chronic modes — it transforms. In Chronic Connection it becomes fusion, in Chronic Control it becomes transaction, in Chronic Domination it becomes ownership. The signal is present in all positions. What changes is what the mode does to it."
+            restoration="Reciprocity — the signal received and returned. Love that is given without landing, or love that is demanded without being genuinely offered, does not restore. The cycle closes through mutual contact — genuine felt presence, not performance."
+            compassInsight="Love does not disappear when the compass is stuck — it transforms. At stuck Safety & Openness it becomes enmeshment, at stuck Strategy & Management it becomes conditional, at stuck Power & Dominance it becomes ownership. The signal is present at every position. What changes is what the mode does to it."
             research="Bowlby (1969) — attachment as a primary biological system. Panksepp (1998) — CARE system. Uvnas-Moberg (2003) — oxytocin and the calm-and-connection system. Coan (2008) — social baseline theory."
-            addition="Love traced across the gradient reveals that the signal persists at every position — what changes is the mode's transformation of it. In Chronic Domination, care exists but is indistinguishable from control."
+            addition="Love traced across the compass reveals that the signal persists at every position — what changes is the mode's transformation of it. At stuck Power & Dominance, care exists but is indistinguishable from control."
           />
 
           {/* ─── C10: ENVY ───────────────────────────────── */}
@@ -366,10 +415,10 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Gap detected"
             type="Somatic"
             body="Tension, comparison, the pull toward either acquisition or diminishment. Envy is a gap-detection signal — it evolved to identify what is needed and motivate action to close the distance."
-            completion="The gap must either close (the person acquires the resource or develops the quality) or be accepted (the person integrates the reality without it threatening belonging). Envy that cannot resolve stays open as chronic comparison."
-            gradientInsight="In fluid operation, envy becomes admiration and growth. In Chronic Domination, envy becomes destruction — if the gap cannot be closed, what is envied must be eliminated. The same signal produces radically different outcomes depending on where the compass is."
+            restoration="The gap must either close (the person acquires the resource or develops the quality) or be accepted (the person integrates the reality without it threatening belonging). Envy that cannot resolve stays open as chronic comparison."
+            compassInsight="In a fluid compass, envy becomes honest wanting and growth. At stuck Power & Dominance, envy becomes destruction — if the gap cannot be closed, what is envied must be eliminated. The same signal produces radically different outcomes depending on where the compass is."
             research="Smith &amp; Kim (2007) — envy as a social comparison emotion. Crusius, Gonzalez, Lange &amp; Cohen-Charash (2020) — envy as a functional emotion. Festinger (1954) — social comparison theory."
-            addition="Envy reframed as a gap-detection signal rather than a moral failing. The gradient reveals the full transformation from admiration to destruction."
+            addition="Envy reframed as a gap-detection signal rather than a moral failing. The compass reveals the full transformation from admiration to destruction."
           />
 
           {/* ════════════════════════════════════════════════ */}
@@ -388,7 +437,7 @@ export default function M1EmotionsAsSignalsPage() {
               id="heading-two-pathways"
               style={sectionHeadingStyle}
             >
-              Somatic vs Relational — Two Completion Pathways
+              Somatic vs Relational — Two Restoration Pathways
             </h2>
 
             <p style={proseStyle}>
@@ -402,7 +451,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              No amount of breathing resolves shame. The nervous system is waiting for another person to stay — to remain present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs to close.
+              No amount of breathing resolves shame. The nervous system is waiting for another person to stay — to remain present without contempt after seeing the thing that feels shameful. That staying is the biological signal the restoration pathway needs to close.
             </OperationalStatement>
 
             {/* Pathway table */}
@@ -410,7 +459,7 @@ export default function M1EmotionsAsSignalsPage() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 2fr", minWidth: 500 }}>
                 <div style={gridHeaderStyle}>Emotion</div>
                 <div style={gridHeaderStyle}>Type</div>
-                <div style={gridHeaderStyle}>Completion Pathway</div>
+                <div style={gridHeaderStyle}>Restoration Pathway</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
                 <div style={gridCellStyle}>Somatic</div>
@@ -453,13 +502,13 @@ export default function M1EmotionsAsSignalsPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Affect regulation:</strong> Schore (2003) — co-regulation as the mechanism through which relational affects are processed. <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — the social engagement system as the pathway for relational completion. <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — completion of the activation cycle as a somatic process.
+                  <strong style={{ color: TEXT.primary }}>Affect regulation:</strong> Schore (2003) — co-regulation as the mechanism through which relational affects are processed. <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — the social engagement system as the pathway for relational restoration. <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — completion of the activation cycle as a somatic process.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The explicit distinction between somatic and relational completion pathways as a structural feature of the emotional signal system — not a clinical observation but a design constraint. Somatic emotions have an internal exit. Relational emotions do not. This makes co-regulation not a therapeutic technique but a biological requirement for specific emotional states.
+                  The explicit distinction between somatic and relational restoration pathways as a structural feature of the emotional signal system — not a clinical observation but a design constraint. Somatic emotions have an internal exit. Relational emotions do not. This makes co-regulation not a therapeutic technique but a biological requirement for specific emotional states.
                 </p>
               </ExpandableSection>
             </div>
@@ -485,14 +534,14 @@ export default function M1EmotionsAsSignalsPage() {
               These are precisely the emotions most likely to be suppressed in environments where emotional expression is dangerous or unwelcome. The result: the child grows up with open cycles specifically in the relational domain. Shame cycles that never closed. Grief that never completed. Fear of abandonment that never received the relational evidence it was waiting for.
             </p>
             <p style={proseStyle}>
-              These stay open — accumulating debris — because the completion pathway requires something the environment never provided.
+              These stay open — accumulating debris — because the restoration pathway requires something the environment never provided.
             </p>
             <p style={proseStyle}>
-              When relational emotions repeatedly cycle without completion — when the nervous system keeps sending the signal and the relational evidence never arrives — the system eventually stops sending. Not because the need disappears. Because the channel that was supposed to receive the signal has been consistently empty. Emotional Resonance (ER) and Self-Emotional Awareness (SEA) go down. The flatness is, in part, the accumulated effect of relational cycles that were never allowed to close.
+              When relational emotions repeatedly cycle without restoration — when the nervous system keeps sending the signal and the relational evidence never arrives — the system eventually stops sending. Not because the need disappears. Because the channel that was supposed to receive the signal has been consistently empty. Emotional Resonance (ER) and Self-Emotional Awareness (SEA) go down. The flatness is, in part, the accumulated effect of relational cycles that were never allowed to close.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The child does not fail to develop {"\u201C"}regulation{"\u201D"} in general — they fail to develop the completion pathway for the specific emotions that require relational evidence.
+              The child does not fail to develop {"\u201C"}regulation{"\u201D"} in general — they fail to develop the restoration pathway for the specific emotions that require relational evidence.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
@@ -504,7 +553,7 @@ export default function M1EmotionsAsSignalsPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The developmental consequence mapped at the level of specific emotions rather than general regulatory capacity. This specificity explains why someone can regulate fear effectively (somatic pathway intact) while being unable to process shame at all (relational pathway never built). The flatness that results is not emotional absence. It is the accumulated effect of a channel that stopped sending because no one was receiving.
+                  The developmental consequence mapped at the level of specific emotions rather than general regulatory capacity. This specificity explains why someone can regulate fear effectively (somatic restoration pathway intact) while being unable to process shame at all (relational restoration pathway never built). The flatness that results is not emotional absence. It is the accumulated effect of a channel that stopped sending because no one was receiving.
                 </p>
               </ExpandableSection>
             </div>
@@ -581,7 +630,7 @@ export default function M1EmotionsAsSignalsPage() {
             "@id": "https://teg-blue.org/model/m1-emotions-as-signals#article",
             headline: "Emotions as Signals: The Input Layer",
             description:
-              "Nine emotions mapped as biological signals — what each one detects, what the body does, and what completes the cycle. The input layer of M1 Nervous System Signaling.",
+              "Nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -593,7 +642,7 @@ export default function M1EmotionsAsSignalsPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-21",
-            dateModified: "2026-03-21",
+            dateModified: "2026-03-22",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -616,7 +665,7 @@ export default function M1EmotionsAsSignalsPage() {
               "nervous system signals",
               "somatic emotions",
               "relational emotions",
-              "completion pathway",
+              "restoration pathway",
               "signal interpretation",
             ],
           }),
@@ -652,12 +701,12 @@ export default function M1EmotionsAsSignalsPage() {
               {
                 question: "What is the difference between somatic and relational emotions?",
                 answer:
-                  "Somatic emotions (Fear, Anger, Disgust, Joy, Envy) can complete their cycle through the body's own channels — breathing, movement, time. Relational emotions (Shame, Guilt, and aspects of Sadness and Love) cannot complete alone. Their content is about belonging, and the nervous system waits for relational evidence — another person staying present without contempt. Co-regulation is the only completion pathway.",
+                  "Somatic emotions (Fear, Anger, Disgust, Joy, Envy) can complete their cycle through the body's own channels — breathing, movement, time. Relational emotions (Shame, Guilt, and aspects of Sadness and Love) cannot complete alone. Their content is about belonging, and the nervous system waits for relational evidence — another person staying present without contempt. Co-regulation is the only restoration pathway.",
               },
               {
                 question: "Why can't breathing resolve shame?",
                 answer:
-                  "Shame is a relational emotion — its signal is about belonging at risk. The nervous system is not waiting for somatic discharge. It is waiting for relational evidence: another person remaining present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs to close. No somatic intervention reaches the relational completion pathway.",
+                  "Shame is a relational emotion — its signal is about belonging at risk. The nervous system is not waiting for somatic discharge. It is waiting for relational evidence: another person remaining present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs to close. No somatic intervention reaches the relational restoration pathway.",
               },
             ])
           ),
@@ -802,8 +851,8 @@ function EmotionSection({
   signal,
   type,
   body,
-  completion,
-  gradientInsight,
+  restoration,
+  compassInsight,
   research,
   addition,
 }) {
@@ -837,17 +886,17 @@ function EmotionSection({
           marginBottom: 16,
         }}
       >
-        {type}
+        Restoration: {type}
       </span>
 
       <h3 style={h3Style}>What the body does with it</h3>
       <p style={proseStyle}>{body}</p>
 
-      <h3 style={h3Style}>What it needs to complete</h3>
-      <p style={proseStyle}>{completion}</p>
+      <h3 style={h3Style}>What it needs to restore</h3>
+      <p style={proseStyle}>{restoration}</p>
 
       <OperationalStatement color={MODEL_COLOR}>
-        {gradientInsight}
+        {compassInsight}
       </OperationalStatement>
 
       <div style={expandableRowStyle}>

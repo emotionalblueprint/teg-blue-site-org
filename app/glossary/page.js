@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What are the four regulatory modes in TEG-Blue?",
-    answer: "The four modes are Connection (the nervous system reads enough safety to engage openly), Protection (the nervous system detects threat and mobilises defense), Control (cognitive override replaces biological restoration), and Domination (the system maintains position by suppressing others' restoration). These are not personality types — they are nervous system states that shift in response to perceived safety and threat.",
+    answer: "The four modes are Connection (when the nervous system reads safety and stays open — Safety & Openness), Protection (when the nervous system reads threat and defends — Threat & Defence), Control (when the nervous system needs strategy and management — Strategy & Management), and Domination (when the nervous system needs power and dominance — Power & Dominance). These are not personality types — they are nervous system states that shift in response to perceived safety and threat.",
   },
   {
     question: "What are complexity markers?",
