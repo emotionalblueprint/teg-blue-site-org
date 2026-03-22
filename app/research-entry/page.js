@@ -19,7 +19,6 @@ const FAQ_ITEMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "What TEG-Blue Is", href: "#what-teg-blue-is", description: "An integrative framework connecting 145+ established theories into testable hypotheses about emotional regulation." },
   { label: "What Is Original?", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
   { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to baseline when challenged." },
@@ -28,8 +27,8 @@ const SIDEBAR_SECTIONS = [
 ];
 
 export const metadata = {
-  title: "For Researchers — Framework Overview | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable. Open access, open questions, open to validation.",
+  title: "Start Here | TEG-Blue Research",
+  description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — a pattern recognition system based on nervous system science. Open access, open questions, open to validation.",
   keywords: [
     "TEG-Blue research",
     "emotional technology",
@@ -40,7 +39,7 @@ export const metadata = {
     "emotional intelligence measurement",
     "AI safety research",
     "computational social science",
-    "trauma research",
+    "nervous system regulation research",
     "attachment research",
   ],
   alternates: {
@@ -76,10 +75,10 @@ export default function ResearchEntryPage() {
         header={
           <header style={{ marginBottom: 32 }}>
             <ResearcherHero
-              badge="FOR RESEARCHERS"
+              badge="ENTRY POINT"
               title="Start Here"
-              subtitle="A prototype emotional data system — measurable, testable, usable"
-              description="TEG-Blue is a prototype emotional data system designed to make emotional safety and accountability measurable, testable, and usable across humans and AI. It treats emotions as valid, structured data."
+              subtitle="Pattern recognition based on nervous system science"
+              description="TEG-Blue is the first complete emotional technology system — an integrative architecture that synthesizes 145+ established theories into testable claims about emotional regulation. Open access, open questions, open to validation."
             />
             <div style={{ marginTop: 20 }}>
               <Link
@@ -101,22 +100,6 @@ export default function ResearchEntryPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* What TEG-Blue is */}
-        <section id="what-teg-blue-is" style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What TEG-Blue is
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12, maxWidth: 640 }}>
-            TEG-Blue is a visual mapping system designed to make emotional patterns measurable, testable, and usable across individuals, relationships, institutions, and AI systems.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12, maxWidth: 640 }}>
-            It builds on existing research across nervous system regulation, attachment, development, trauma, social psychology, and language.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, maxWidth: 640 }}>
-            The originality is not in claiming a new theory for each domain. It is in building an integrated structure that makes the connections explicit, operational, and testable.
-          </p>
-        </section>
-
         {/* What is original */}
         <section id="what-is-original" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
@@ -124,7 +107,7 @@ export default function ResearchEntryPage() {
           </h2>
           <MechanismBox label="THE 1 + 2 = 3 PRINCIPLE">
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              TEG-Blue doesn&apos;t invent the building blocks. Polyvagal Theory, Attachment Theory, Affective Neuroscience, Trauma Research — these are established. They are the{" "}
+              TEG-Blue doesn&apos;t invent the building blocks. Polyvagal Theory, Attachment Theory, Affective Neuroscience, developmental research — these are established. They are the{" "}
               <strong style={{ color: TEXT.primary }}>&quot;1&quot; and the &quot;2&quot;</strong>.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
@@ -193,7 +176,7 @@ export default function ResearchEntryPage() {
             <StatusCard
               label="Established"
               color={SPECTRUM.indigo}
-              description="Many underlying theories and measures in affective science, clinical psychology, neuroscience, trauma, social psychology, and linguistics."
+              description="Many underlying theories and measures in affective science, clinical psychology, neuroscience, developmental psychology, social psychology, and linguistics."
             />
             <StatusCard
               label="Proposed synthesis"
@@ -218,7 +201,7 @@ export default function ResearchEntryPage() {
         {/* Core hypothesis */}
         <section id="core-testable-claim" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What is the core testable claim of TEG-Blue?
+            Core testable claim
           </h2>
           <PropositionBox
             label="CORE HYPOTHESIS"
@@ -228,20 +211,15 @@ export default function ResearchEntryPage() {
               The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong>capacity to return to baseline when challenged</strong>.
             </p>
           </PropositionBox>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            This is treated as a testable hypothesis, not a slogan.
-          </p>
           <div
             style={{
+              marginTop: 16,
               padding: 16,
               background: BG.card,
               borderRadius: 8,
               border: `1px solid ${BORDER.default}`,
             }}
           >
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8 }}>
-              <strong style={{ color: TEXT.primary }}>Hypothesis:</strong> Return capacity predicts relational outcomes.
-            </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8 }}>
               <strong style={{ color: TEXT.primary }}>Operationalization:</strong> Measurable in language via complexity markers — accountability without collapse, perspective-taking, repair attempts, emotional differentiation, reduced coercion under stress.
             </p>
@@ -257,7 +235,7 @@ export default function ResearchEntryPage() {
         {/* Open research directions */}
         <section id="open-research-directions" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-            What are the open research questions in TEG-Blue?
+            Open research questions
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8, maxWidth: 640 }}>
             These questions emerged from building the integration. I don&apos;t have answers to most of them. Some point to gaps in existing literature. Some point to claims TEG-Blue makes that need external testing. Some I couldn&apos;t find addressed anywhere — which is either a gap worth filling or a sign I looked in the wrong places.
@@ -271,7 +249,7 @@ export default function ResearchEntryPage() {
               title="On the biological mechanism"
               questions={[
                 "If Biological Restoration is a learnable capacity and not just an automatic function, what are the developmental windows during which co-regulatory experience most determines whether the return path forms?",
-                "Can the absence of a learned restoration path be distinguished from dysregulation caused by acute trauma using existing neurobiological markers — and if so, what would that distinction require clinically?",
+                "Can the absence of a learned restoration path be distinguished from dysregulation caused by acute overwhelm using existing neurobiological markers — and if so, what would that distinction require clinically?",
                 "Does a chronically stuck compass produce different physiological signatures than a slowly returning one — and does that distinction predict different intervention needs?",
               ]}
               refLinks={[
@@ -412,7 +390,7 @@ export default function ResearchEntryPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "For Researchers", url: "/research-entry" },
+              { name: "Start Here", url: "/research-entry" },
             ])
           ),
         }}
@@ -424,9 +402,9 @@ export default function ResearchEntryPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "For Researchers — Framework Overview",
+            name: "Start Here — TEG-Blue Research",
             url: "https://teg-blue.org/research-entry",
-            description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — making emotional safety and accountability measurable, testable, and usable.",
+            description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — a pattern recognition system based on nervous system science.",
             inLanguage: "en",
             isPartOf: {
               "@type": "ResearchProject",
@@ -450,7 +428,7 @@ export default function ResearchEntryPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "For Researchers — Framework Overview | TEG-Blue Research",
+              name: "Start Here | TEG-Blue Research",
               url: "https://teg-blue.org/research-entry",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

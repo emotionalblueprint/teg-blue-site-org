@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What problem does TEG-Blue address?",
-    answer: "TEG-Blue addresses the ambiguity between trauma-driven protection and intentional manipulation. Both look similar on the surface but require very different responses. The framework makes emotional behavior legible by treating emotions as structured biological signals.",
+    answer: "TEG-Blue addresses the ambiguity between nervous system protection and intentional manipulation. Both look similar on the surface but require very different responses. The framework makes emotional behavior legible by treating emotions as structured biological signals.",
   },
   {
     question: "What is the Regulation Thread?",
@@ -19,14 +19,13 @@ const FAQ_ITEMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Problem", href: "#the-problem", description: "What problem does TEG-Blue address? Ambiguity between trauma-driven protection and intentional manipulation." },
+  { label: "The Problem", href: "#the-problem", description: "What problem does TEG-Blue address? Ambiguity between nervous system protection and intentional manipulation." },
   { label: "Part 1 — Measurement", href: "#part-1-measurement", description: "Three Core Models: the Inner Compass, the Awareness Capacities, and Biological Restoration." },
   { label: "Part 2 — Frameworks", href: "#part-2-frameworks", description: "12 explanatory frameworks across three arcs. The Regulation Thread." },
   { label: "Part 3 — Emotional Tools", href: "#part-3-emotional-tools", description: "Applied instruments for practitioners, clinicians, researchers, and individuals." },
   { label: "Part 4 — AI Safety", href: "#part-4-ai-safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
   { label: "Core Functions", href: "#core-functions", description: "What are the four core functions of TEG-Blue and how the parts interact." },
-  { label: "Ethical Constraint", href: "#ethical-constraint", description: "Trauma-informed data architecture. Intent–Impact–Pattern logic." },
-  { label: "What Is Original", href: "#what-is-original", description: "Cross-disciplinary connections that generate testable hypotheses." },
+  { label: "Ethical Constraint", href: "#ethical-constraint", description: "Pattern-aware data architecture. Intent–Impact–Pattern logic." },
 ];
 
 export const metadata = {
@@ -43,7 +42,7 @@ export const metadata = {
     "measurement system",
     "explanatory framework",
     "integrative architecture",
-    "trauma-informed",
+    "pattern-aware architecture",
     "computational emotion",
     "polyvagal theory",
     "attachment theory",
@@ -106,7 +105,7 @@ export default function FoundationsPage() {
               The problem is ambiguity.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              Emotional misunderstanding fuels conflict, manipulation, and harm across individuals, organizations, and systems. Many existing models struggle to distinguish between trauma-driven protection — defensive patterns that developed for survival — and intentional emotional manipulation — strategic control of others. Both look similar on the surface. Yet they require very different responses.
+              Emotional misunderstanding fuels conflict, manipulation, and harm across individuals, organizations, and systems. Many existing models struggle to distinguish between nervous system protection — defensive patterns that developed for survival — and intentional emotional manipulation — strategic control of others. Both look similar on the surface. Yet they require very different responses.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
               As digital platforms and AI systems increasingly mediate communication, this ambiguity is amplified. Emotional dynamics scale faster than our ability to interpret them.
@@ -115,7 +114,7 @@ export default function FoundationsPage() {
               What&apos;s missing is legibility.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              The science exists — decades of research across neuroscience, attachment theory, trauma studies, and social psychology. But this knowledge is fragmented across disciplines, published in specialist language, inaccessible to those who need it most.
+              The science exists — decades of research across neuroscience, attachment theory, developmental psychology, and social psychology. But this knowledge is fragmented across disciplines, published in specialist language, inaccessible to those who need it most.
             </p>
             <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, fontWeight: 500, margin: 0 }}>
               TEG-Blue makes emotional behavior legible. It treats emotions not as noise or subjective chaos, but as structured biological and relational signals that organize behavior in predictable ways.
@@ -355,7 +354,7 @@ export default function FoundationsPage() {
         {/* ─── ETHICAL CONSTRAINT ─────────────────────────── */}
         <section id="ethical-constraint" style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Ethical constraint: Trauma-informed data architecture
+            Ethical constraint: Pattern-aware data architecture
           </h2>
           <div
             style={{
@@ -388,28 +387,6 @@ export default function FoundationsPage() {
               This prevents reducing behavior to &ldquo;good person&rdquo; or &ldquo;bad person.&rdquo; The same behavior can serve different functions depending on state, history, and context. The same behavior can also cause the same harm regardless of intent. Both are true. The architecture holds both.
             </p>
           </div>
-        </section>
-
-        {/* ─── WHAT IS ORIGINAL ───────────────────────────── */}
-        <section id="what-is-original" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What is original
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            TEG-Blue synthesizes 145+ established theories. Every source is credited. The originality is not in the individual theories — it is in the connections between them.
-          </p>
-          <div style={labelStyle(SPECTRUM.cobalt)}>
-            Cross-disciplinary connections TEG-Blue proposes
-          </div>
-          <ul style={{ ...listStyle, marginTop: 8, marginBottom: 16 }}>
-            <li style={{ marginBottom: 6 }}>Nervous system regulation → moral perception</li>
-            <li style={{ marginBottom: 6 }}>Attachment patterns → social stratification</li>
-            <li style={{ marginBottom: 6 }}>Self-protection → domination as continuous gradient</li>
-            <li>Linguistic complexity → regulatory capacity</li>
-          </ul>
-          <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, fontWeight: 500 }}>
-            These generate testable hypotheses that no single source discipline could produce alone.
-          </p>
         </section>
 
         {/* ─── WHERE TO GO NEXT ───────────────────────────── */}
