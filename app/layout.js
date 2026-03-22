@@ -26,9 +26,9 @@ export const metadata = {
   },
   description: 'Open science platform for TEG-Blue research. An integrative emotional intelligence framework connecting 145+ theories into computationally legible gradients for AI safety, alignment research, and human emotional understanding.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'four-mode gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'regulatory states', 'complexity markers', 'open science'],
-  authors: [{ name: 'TEG-Blue Research Consortium', url: 'https://teg-blue.org' }],
-  creator: 'TEG-Blue Research Consortium',
-  publisher: 'TEG-Blue Research Consortium',
+  authors: [{ name: 'TEG-Blue Research', url: 'https://teg-blue.org' }],
+  creator: 'TEG-Blue Research',
+  publisher: 'TEG-Blue Research',
   metadataBase: new URL('https://teg-blue.org'),
   alternates: {
     canonical: 'https://teg-blue.org',
@@ -98,10 +98,10 @@ const skipLinkFocusStyles = `
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ResearchOrganization",
-  name: "TEG-Blue Research Consortium",
+  name: "TEG-Blue Research",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "Open science research consortium developing TEG-Blue, an integrative architecture connecting 145+ established theories from neuroscience, psychology, and sociology. The building blocks (Polyvagal Theory, Attachment Theory, Trauma Research) are validated; the connections between them are hypotheses requiring scientific verification.",
+  description: "Open science research developing TEG-Blue, an integrative architecture connecting 145+ established theories from neuroscience, psychology, and sociology. The building blocks (Polyvagal Theory, Attachment Theory, Trauma Research) are validated; the connections between them are hypotheses requiring scientific verification.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -123,7 +123,7 @@ const organizationJsonLd = {
     jobTitle: "Founder & Lead Researcher",
     affiliation: {
       "@type": "Organization",
-      name: "TEG-Blue Research Consortium",
+      name: "TEG-Blue Research",
     },
     knowsAbout: [
       "Emotional technology",
@@ -162,7 +162,7 @@ const websiteJsonLd = {
   description: "Open science platform providing structured emotional intelligence frameworks for AI safety research. The Four-Mode Gradient offers computationally legible representations of human regulatory states (Connection, Protection, Control, Domination) detectable in natural language. Designed for AI/ML researchers, safety practitioners, and computational social scientists.",
   publisher: {
     "@type": "Organization",
-    name: "TEG-Blue Research Consortium",
+    name: "TEG-Blue Research",
   },
   about: [
     {
@@ -194,7 +194,7 @@ export default function RootLayout({ children }) {
         <link rel="alternate" href="https://teg-blue.com" hrefLang="en" title="TEG-Blue Interactive Tools" />
 
         {/* Dublin Core metadata for academic crawlers */}
-        <meta name="DC.publisher" content="TEG-Blue Research Consortium" />
+        <meta name="DC.publisher" content="TEG-Blue Research" />
         <meta name="DC.language" content="en" />
         <meta name="DC.rights" content="CC-BY-NC-SA-4.0" />
         <meta name="DC.type" content="Collection" />

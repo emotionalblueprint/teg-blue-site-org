@@ -807,7 +807,7 @@ export default function AISafetyPage() {
             }}
           >
             TEG-Blue is the first complete emotional technology system — open research backed by
-            an international consortium. The structured data, validation methodology, and framework
+            open research. The structured data, validation methodology, and framework
             documentation are available for researchers ready to test these questions.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>

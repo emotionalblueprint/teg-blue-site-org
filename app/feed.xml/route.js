@@ -47,7 +47,7 @@ export async function GET() {
       <title>TEG-Blue Research</title>
       <link>${baseUrl}</link>
     </image>
-    <copyright>CC BY-NC-SA 4.0 TEG-Blue Research Consortium</copyright>
+    <copyright>CC BY-NC-SA 4.0 TEG-Blue Research</copyright>
     <managingEditor>research@teg-blue.org (Anna Paretas-Artacho)</managingEditor>
     <webMaster>research@teg-blue.org (TEG-Blue)</webMaster>
     <category>Science</category>

@@ -29,7 +29,7 @@ const TEG_BLUE_PROJECT = {
 
 const AUTHOR = {
   "@type": "Organization",
-  name: "TEG-Blue Research Consortium",
+  name: "TEG-Blue Research",
   url: "https://teg-blue.org",
 };
 
@@ -464,7 +464,7 @@ export function generateMetaTags(node) {
     },
     dublinCore: {
       "DC.title": node.title,
-      "DC.creator": node.author || "TEG-Blue Research Consortium",
+      "DC.creator": node.author || "TEG-Blue Research",
       "DC.subject": node.tags?.join(", "),
       "DC.description": node.summary,
       "DC.type": node.type,

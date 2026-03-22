@@ -26,7 +26,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Accessibility & Equity", href: "#accessibility-and-equity", description: "Designed for everyone. Open science. No knowledge behind paywalls." },
   { label: "Transparency", href: "#transparency", description: "Methodology is visible. Claims are testable. Limitations are stated." },
   { label: "Responsible Technology", href: "#responsible-technology", description: "Safeguards, human oversight, and transparency in AI-assisted tools." },
-  { label: "Collaboration", href: "#collaboration", description: "What we expect from research collaborators and consortium members." },
+  { label: "Collaboration", href: "#collaboration", description: "What we expect from research collaborators and contributors." },
   { label: "Attribution & Licensing", href: "#attribution-and-licensing", description: "CC-BY-NC-SA-4.0. How to cite. What collaborators should know." },
 ];
 
@@ -237,7 +237,7 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>What we expect from collaborators</h2>
           <p style={body}>
-            Research collaborators, consortium members, and contributors to TEG-Blue are expected to share the foundational understanding that structural and systemic factors shape emotional development. This is a premise of the framework, established by the evidence base outlined above, and treated as a starting condition for collaborative work.
+            Research collaborators and contributors to TEG-Blue are expected to share the foundational understanding that structural and systemic factors shape emotional development. This is a premise of the framework, established by the evidence base outlined above, and treated as a starting condition for collaborative work.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             This does not require ideological uniformity — healthy methodological and theoretical debate is encouraged.

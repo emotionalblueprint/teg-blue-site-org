@@ -33,7 +33,7 @@ export const metadata = {
     "emotional technology",
     "Anna Paretas-Artacho",
     "emotional regulation",
-    "research consortium",
+    "open research",
     "integrative framework",
     "open science",
     "neuroscience psychology integration",
@@ -57,7 +57,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "About — TEG-Blue Research",
-    description: "Research consortium developing an integrative emotional intelligence framework.",
+    description: "Open research developing an integrative emotional intelligence framework.",
   },
 };
 
@@ -304,7 +304,7 @@ export default function AboutPage() {
               ],
               affiliation: {
                 "@type": "Organization",
-                name: "TEG-Blue Research Consortium",
+                name: "TEG-Blue Research",
                 url: "https://teg-blue.org",
               },
             },

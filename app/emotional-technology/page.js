@@ -430,12 +430,12 @@ export default function EmotionalTechnologyPage() {
             inLanguage: "en",
             author: {
               "@type": "Organization",
-              name: "TEG-Blue Research Consortium",
+              name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
             publisher: {
               "@type": "Organization",
-              name: "TEG-Blue Research Consortium",
+              name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
             keywords: [

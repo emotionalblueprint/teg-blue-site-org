@@ -1355,7 +1355,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             },
             publisher: {
               "@type": "Organization",
-              name: "TEG-Blue Research Consortium",
+              name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-05",

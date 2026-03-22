@@ -84,7 +84,7 @@ const datasetSchema = {
   },
   "publisher": {
     "@type": "Organization",
-    "name": "TEG-Blue Research Consortium"
+    "name": "TEG-Blue Research"
   },
   "datePublished": "2026-02",
   "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",

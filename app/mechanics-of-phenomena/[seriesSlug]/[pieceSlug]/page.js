@@ -104,7 +104,7 @@ export default async function MechanicsPiecePage({ params }) {
     },
     publisher: {
       "@type": "Organization",
-      name: "TEG-Blue Research Consortium",
+      name: "TEG-Blue Research",
       url: BASE_URL,
     },
     url: pieceUrl,

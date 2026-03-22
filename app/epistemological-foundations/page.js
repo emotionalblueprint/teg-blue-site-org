@@ -516,7 +516,7 @@ export default function EpistemologicalFoundationsPage() {
             },
             publisher: {
               "@type": "Organization",
-              name: "TEG-Blue Research Consortium",
+              name: "TEG-Blue Research",
               url: "https://teg-blue.org"
             },
             mainEntityOfPage: {
