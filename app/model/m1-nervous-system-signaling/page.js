@@ -21,7 +21,7 @@ const ANCHOR_SECTIONS = [
   { label: "The Compass", href: "#inner-compass" },
   { label: "Four Modes", href: "#four-modes" },
   { label: "The Gradient", href: "#the-gradient" },
-  { label: "Tank Model", href: "#tank-level-per-mode" },
+  { label: "Activation", href: "#accumulated-activation" },
   { label: "Sensory Filtering", href: "#sensory-filtering" },
   { label: "Mode Architecture", href: "#state-determines-capacity" },
   { label: "Regulation", href: "#regulation-the-return" },
@@ -138,7 +138,7 @@ export default function M1InnerCompassPage() {
                   The inner compass orients between safety and threat — health is not a position but the capacity of the needle to move
                 </li>
                 <li style={propositionItemStyle}>
-                  Four modes on a continuous gradient: two body-first (Connection, Protection), two cognition-first (Control, Domination)
+                  Four modes on a continuous gradient: two before awareness (Connection, Protection), two after awareness (Control, Domination)
                 </li>
                 <li style={propositionItemStyle}>
                   What a person can perceive, think, feel, and do depends on their current gradient position
@@ -262,7 +262,7 @@ export default function M1InnerCompassPage() {
               The single question the nervous system continuously evaluates: <strong style={{ color: TEXT.primary }}>"Is there enough safety to engage, or is protection needed?"</strong> Every emotional signal is an answer to this question. The question is the same across all contexts — personal, relational, systemic. The answers vary. The mechanism does not.
             </p>
             <p style={proseStyle}>
-              This evaluation is automatic, continuous, and below conscious awareness. Porges (2011) named this process <em>neuroception</em> — the nervous system's subconscious detection of safety and danger cues. It evaluates <em>experienced safety</em>, not objective danger. This is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The compass reads what the nervous system has learned to recognise as safe or threatening, which may not match current reality.
+              This evaluation is automatic, continuous, and below conscious awareness. Porges (2011) named this process <em>neuroception</em> — the nervous system's subconscious detection of safety and danger cues. It evaluates <em>experienced safety</em>, not objective danger. This is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The nervous system reads what it has learned to recognise as safe or threatening, which may not match current reality.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -301,10 +301,10 @@ export default function M1InnerCompassPage() {
               The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. A compass with a moving needle that orients between safety and threat. The needle is constantly moving — there is no "correct" position. It points in a direction.
             </p>
             <p style={proseStyle}>
-              A fluid compass moves between Connection and Protection as conditions change. It shifts toward Protection when threat appears and returns toward baseline when the threat passes. Fluid operation is not a state. It is the needle moving — responding, orienting, and coming back.
+              When the needle can move freely — shifting toward safety or threat as conditions change and returning to baseline (where the nervous system rests when nothing is activated) when the situation passes — the compass is <strong style={{ color: TEXT.primary }}>fluid</strong>. Fluid operation is not a position. It is the needle moving — responding, orienting, and coming back. The key diagnostic is needle return: whether the nervous system can come back after activation.
             </p>
             <p style={proseStyle}>
-              A <strong style={{ color: TEXT.primary }}>stuck compass</strong> is one where the needle has lost its capacity to move. What should have been a temporary orientation becomes a chronic position. The person does not experience this as being stuck — they experience it as "just who I am." False coherence (F3) constructs identity around the locked position, making the stuckness invisible from the inside.
+              When the needle has lost its capacity to move — when what should have been a temporary orientation becomes a chronic position — the compass is <strong style={{ color: TEXT.primary }}>stuck</strong>. The person does not experience this as being stuck — they experience it as "just who I am." False coherence (F3) — when cognition replaces emotional signals with invented stable narratives — constructs identity around the locked position, making the stuckness invisible from the inside.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -340,7 +340,7 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              The compass has four modes on a continuous gradient. Two are body-first — automatic responses the nervous system has been running for millions of years. Two are cognition-first — deliberate responses that emerged when cognition evolved and the system gained range.
+              The compass has four modes on a continuous gradient. Two operate before awareness — automatic responses the nervous system has been running for millions of years. Two operate after awareness — deliberate responses that emerged when cognition evolved and the system gained range.
             </p>
 
             {/* Four Modes Table */}
@@ -354,25 +354,25 @@ export default function M1InnerCompassPage() {
                 <div style={gridHeaderStyle}>Design Duration</div>
                 {/* Connection */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
-                <div style={gridCellStyle}>Body-first</div>
+                <div style={gridCellStyle}>Before awareness</div>
                 <div style={gridCellStyle}>Automatic — safety perceived</div>
                 <div style={gridCellStyle}>Engage, relate, repair, learn</div>
                 <div style={gridCellStyle}>Indefinite — designed for sustained living</div>
                 {/* Protection */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>Body-first</div>
+                <div style={gridCellStyle}>Before awareness</div>
                 <div style={gridCellStyle}>Automatic — threat perceived</div>
                 <div style={gridCellStyle}>Fight/flight &rarr; freeze/fawn</div>
                 <div style={gridCellStyle}>Minutes to hours</div>
                 {/* Control */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Control</div>
-                <div style={gridCellStyle}>Cognition-first</div>
+                <div style={gridCellStyle}>After awareness</div>
                 <div style={gridCellStyle}>Deliberate — cognition recruited</div>
                 <div style={gridCellStyle}>Anticipate &rarr; Manage &rarr; Override</div>
                 <div style={gridCellStyle}>Time-limited — tool</div>
                 {/* Domination */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
-                <div style={gridCellStyle}>Cognition-first</div>
+                <div style={gridCellStyle}>After awareness</div>
                 <div style={gridCellStyle}>Deliberate — cognition at maximum</div>
                 <div style={gridCellStyle}>Override &rarr; Eliminate &rarr; Secure</div>
                 <div style={gridCellStyle}>Rare — last resort</div>
@@ -381,7 +381,7 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>Connection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Safety & Openness</span></h3>
             <p style={proseStyle}>
-              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, empathy comes fully online, cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the mode designed for sustained living.
+              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, the awareness capacities come fully online — the ability to read emotions, feel with others, and observe one{"'"}s own patterns — cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the mode designed for sustained living.
             </p>
 
             <h3 style={h3Style}>Protection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Threat & Defence</span></h3>
@@ -400,7 +400,7 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>Domination <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Power & Dominance</span></h3>
             <p style={proseStyle}>
-              Domination is the rarest mode. In a designed-operation compass, it is entered deliberately, used briefly, and followed by return. The person enters it knowing exactly what they are doing. Emotional Resonance drops to near-zero — and the person chose to let it drop because the situation demanded decisive, unambiguous action. The sequence is final: Override, Eliminate, Secure. When the situation resolves, the person exits. The compass moves back. Emotional Resonance returns. The person feels the cost — the weight of having suspended resonance. In a designed-operation compass, this cost is felt and processed.
+              Domination is the rarest mode. In a designed-operation compass, it is entered deliberately, used briefly, and followed by return. The person enters it knowing exactly what they are doing. Emotional Resonance (ER) — the capacity to feel what someone else is feeling — drops to near-zero, and the person chose to let it drop because the situation demanded decisive, unambiguous action. The sequence is final: Override, Eliminate, Secure. When the situation resolves, the person exits. The compass moves back. Emotional Resonance (ER) returns. The person feels the cost — the weight of having suspended resonance. In a designed-operation compass, this cost is felt and processed.
             </p>
 
             <div style={expandableRowStyle}>
@@ -412,7 +412,7 @@ export default function M1InnerCompassPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The four-mode gradient with two body-first and two cognition-first modes. The architectural break between body-first and cognition-first as a qualitative distinction — not just intensity but kind. Connection and Protection are biological responses running for millions of years. Control and Domination require cognition to exist. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions — most clinical frameworks encounter these modes only as problems.
+                  The four-mode gradient with two before-awareness and two after-awareness modes. The architectural break between before awareness and after awareness as a qualitative distinction — not just intensity but kind. Connection and Protection are biological responses running for millions of years. Control and Domination require cognition to exist. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions — most clinical frameworks encounter these modes only as problems.
                 </p>
               </ExpandableSection>
             </div>
@@ -435,7 +435,7 @@ export default function M1InnerCompassPage() {
               The four modes are not four boxes — they are positions on a continuous gradient. There are no hard boundaries. There are shifts, transitions, degrees. The compass needle moves along the gradient. A fluid compass has access to the full range. A stuck compass is locked at one position.
             </p>
             <p style={proseStyle}>
-              Transitions between modes follow a characteristic pattern. Connection to Protection is automatic — the nervous system shifts when threat is perceived. Protection to Control involves an architectural break — cognition is recruited into the response. This is the point where the system shifts from body-first to cognition-first. Control to Domination is the crossroads described in F7 — the threshold beyond which cognition is no longer managing threat but overriding the other person's reality entirely.
+              Transitions between modes follow a characteristic pattern. Connection to Protection is automatic — the nervous system shifts when threat is perceived. Protection to Control involves an architectural break — cognition is recruited into the response. This is the point where the system shifts from before awareness to after awareness. Control to Domination is the crossroads (F7) — the turning point where defence stops being a state and becomes a strategy — the threshold beyond which cognition is no longer managing threat but overriding the other person's reality entirely.
             </p>
             <p style={proseStyle}>
               The gradient makes the proportionality question visible. The question is not "which box?" but "where on the gradient, and moving in which direction?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
@@ -460,45 +460,48 @@ export default function M1InnerCompassPage() {
             </div>
           </section>
 
-          {/* ─── TANK LEVEL PER MODE ─────────────────────── */}
+          {/* ─── THE ACTIVATION CYCLE ─────────────────────── */}
           <section
-            id="tank-level-per-mode"
-            aria-labelledby="heading-tank-level"
+            id="accumulated-activation"
+            aria-labelledby="heading-activation-cycle"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-tank-level"
+              id="heading-activation-cycle"
               style={sectionHeadingStyle}
             >
-              The Tank Level Per Mode
+              The Activation Cycle — What Happens When It Does Not Complete
             </h2>
 
             <p style={proseStyle}>
-              Every mode has a tank. In a fluid compass, the tanks breathe — filling and emptying with each cycle that completes. Connection fills a little — the warmth of contact, the resonance of being with someone, the emotional input of being alive. Then it empties through the cycle completing. Protection fills when threat arrives — then empties when the threat passes and the body restores. The tanks breathe. Fill and empty.
+              The nervous system was designed to activate and restore. Every mode generates activation — Connection through emotional contact, Protection through threat response, Control through cognitive load, Domination through power maintenance. In a fluid compass, each activation runs its biological cycle and completes. The breath that accelerated slows. The muscles that braced release. The hormones that flooded clear. The system returns to baseline.
             </p>
             <p style={proseStyle}>
-              The baseline stays low because the emptying keeps happening. This is what regulation actually is. Not keeping the tanks empty. The natural rhythm of filling and emptying.
+              This is what regulation is. Not the management of emotions. The completion of biological cycles.
             </p>
 
-            <h3 style={h3Style}>When the Emptying Stops</h3>
+            <h3 style={h3Style}>What Builds Up</h3>
             <p style={proseStyle}>
-              When the return does not complete, the emptying stops. The tank fills. The cycle does not complete — the debris accumulates — the baseline rises. The current regulation vehicle stops producing enough felt relief because the input has to exceed the baseline to move the needle. So the nervous system reaches for a stronger vehicle. Which temporarily moves the needle — but also raises the baseline slightly. So the next time, it needs more.
+              When the cycle does not complete — when the return to baseline is blocked, interrupted, or never learned — activation accumulates. Each incomplete cycle leaves debris: stress hormones that did not clear, muscle tension that did not release, arousal that did not discharge. The baseline rises. The nervous system starts each new activation from a higher resting point.
+            </p>
+            <p style={proseStyle}>
+              This has a direct consequence: the regulation substitute that once produced felt relief now has to work harder — because it has to move the needle against a higher baseline. So the nervous system reaches for a stronger one. Which temporarily moves the needle — but does not clear the underlying activation. The baseline rises again. The next time, it needs more.
             </p>
 
-            {/* What Fills Each Tank */}
+            {/* Per-Mode Activation and Non-Completion */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
                 <div style={gridHeaderStyle}>Mode</div>
-                <div style={gridHeaderStyle}>What fills the tank</div>
-                <div style={gridHeaderStyle}>What overflowing looks like</div>
+                <div style={gridHeaderStyle}>What activates</div>
+                <div style={gridHeaderStyle}>What chronic non-completion produces</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
                 <div style={gridCellStyle}>Others{"'"} emotional states absorbed through Emotional Resonance (ER) — every person nearby landing in the body</div>
-                <div style={gridCellStyle}>Any emotion from anyone tips it. Seeks spirituality, transcendence, merger — inputs large enough to move a full tank</div>
+                <div style={gridCellStyle}>Any emotion from anyone overwhelms. The nervous system reaches for merger, spirituality, transcendence — regulation substitutes strong enough to produce relief against a rising baseline</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>Threat activation — danger signals from the environment</div>
-                <div style={gridCellStyle}>Any perceived threat produces overwhelming response. Fight, flight, fawn, freeze at full intensity from small triggers</div>
+                <div style={gridCellStyle}>Threat signals — danger cues from the environment, real or perceived</div>
+                <div style={gridCellStyle}>Small triggers produce full-intensity responses. Fight, flight, fawn, freeze at maximum from minimum input</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Control</div>
                 <div style={gridCellStyle}>Unpredictability, ambiguity, loss of control — cognitive load that never resolves</div>
@@ -510,25 +513,28 @@ export default function M1InnerCompassPage() {
               </div>
             </div>
 
-            <h3 style={h3Style}>The Escalation Logic Across the Gradient</h3>
+            <h3 style={h3Style}>The Escalation Logic</h3>
             <p style={proseStyle}>
-              When the Connection tank cannot empty — the nervous system reaches for more connection, spirituality, merger. When that stops working — Protection vehicle: fight, flight, fawn, freeze. When that stops working — Control vehicle: management, compliance, achievement, certainty. When that stops working — Domination vehicle: submission, elimination, absolute power. Each step up the gradient is the nervous system reaching for a stronger vehicle because the previous one stopped producing enough relief.
+              This mechanism is what turns the gradient into an escalation sequence. When Connection{"'"}s regulation substitutes — merger, spirituality, caretaking — stop producing enough relief, the nervous system shifts toward Protection substitutes: fight, flight, fawn, freeze. When those stop working, it shifts toward Control substitutes: management, compliance, achievement, certainty. When those stop working, it shifts toward Domination substitutes: submission, elimination, absolute power.
+            </p>
+            <p style={proseStyle}>
+              Each step up the gradient is the nervous system reaching for a stronger regulation substitute because the previous one stopped producing enough relief against a rising baseline. This is the escalation pathway: Defence → Strategy → Entitlement → Empathy Collapse → Full-Spectrum Domination. Not a personality trajectory. A biological escalation driven by incomplete cycles.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The gradient is not a psychological spectrum. It is the escalation logic of tanks that were never allowed to empty.
+              The gradient is not a psychological spectrum. It is the biological escalation of a system whose activation cycles cannot complete.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — cumulative physiological cost of chronic activation; the concept of rising baseline from repeated stress without recovery. <strong style={{ color: TEXT.primary }}>Tolerance and sensitisation:</strong> Koob & Le Moal (2001) — the escalation cycle in substance research: the vehicle that once produced relief now requires more input to produce the same effect.
+                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — cumulative physiological cost of chronic activation; rising baseline from repeated stress without recovery. <strong style={{ color: TEXT.primary }}>Tolerance and sensitisation:</strong> Koob & Le Moal (2001) — the escalation cycle in substance research: the regulation substitute that once produced relief now requires more input to produce the same effect.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The tank as a unifying metaphor across all four modes — not just stress accumulation but the same filling-without-emptying mechanism operating in Connection, Protection, Control, and Domination. The escalation logic across the gradient: each mode{"'"}s vehicle stops working not because of the mode itself but because the tank{"'"}s baseline has risen above what that vehicle can reach. The gradient becomes the escalation sequence of a system that cannot empty.
+                  The cycle-completion mechanism as a unifying explanation across all four modes. The escalation logic across the gradient: each mode{"'"}s regulation substitute stops working not because of the mode itself but because accumulated activation has raised the baseline above what that substitute can reach. The gradient becomes the biological escalation sequence of a system whose cycles cannot complete — making the escalation both mechanistically visible and potentially interruptible at each transition point.
                 </p>
               </ExpandableSection>
             </div>
@@ -658,8 +664,8 @@ export default function M1InnerCompassPage() {
                 <div style={gridCellStyle}>Narrowed — threat-relevant signals</div>
                 <div style={gridCellStyle}>Strategic — what needs managing</div>
                 <div style={gridCellStyle}>Tunnel — obstacles and resources</div>
-                {/* Empathy */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Empathy</div>
+                {/* Awareness Capacities */}
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Awareness Capacities</div>
                 <div style={gridCellStyle}>Full — Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) online</div>
                 <div style={gridCellStyle}>Filtered — resonance decreases</div>
                 <div style={gridCellStyle}>Redirected — Reading Emotions (RE) serving strategy</div>
@@ -916,7 +922,7 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              Regulation is the built-in mechanism by which the nervous system returns from activation to baseline. It is not a skill imposed from outside — it is a process the system was built to run. The body was designed to mobilise for threat and then complete the cycle: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. M3 maps the full regulation landscape — the return pathways, what blocks them, and what the nervous system reaches for instead.
+              Regulation is the built-in mechanism by which the nervous system returns from activation to baseline. It is not a skill imposed from outside — it is a process the system was built to run. The Complete Cycle — Perception → Signal → Mode Activation → Restoration — is what the body was designed to run: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. M3 maps the full regulation landscape — the return pathways, what blocks them, and what the nervous system reaches for instead.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -956,7 +962,7 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              When the return is absent — when the activation cycle never completes, when the compass needle never comes back — the mode that was meant to be temporary becomes permanent. Identity forms around the mode. False coherence (F3) constructs a self-narrative that makes the stuckness feel like character rather than position. The person does not experience being stuck. They experience being themselves.
+              When the return is absent — when the activation cycle never completes, when the compass needle never comes back — the mode that was meant to be temporary becomes permanent. Identity forms around the mode. False coherence (F3) constructs a self-narrative that makes the stuckness feel like character rather than position. The person does not experience being stuck. They experience being themselves. In some cases the stuckness is developmental — the return was never learned. In others it is structural compass lock — where the environment itself, not developmental history, holds the needle in threat position.
             </p>
 
             <h3 style={h3Style}>Chronic Connection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Safety & Openness (stuck)</span></h3>
@@ -976,7 +982,7 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>Chronic Domination <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Power & Dominance (stuck)</span></h3>
             <p style={proseStyle}>
-              Permanent override. Empathy collapsed or weaponised — Emotional Resonance used to read others for advantage rather than for connection. Tolerance builds — what produced safety yesterday requires more force today. Escalation follows (F7). The person has lost the experience of the cost. In a fluid compass, the cost is felt. In chronic Domination, it has been absorbed into identity. The person does not feel the weight of what they are doing because the weight has become who they believe they are.
+              Permanent override. Empathy Collapse — when felt resonance (ER) goes offline while Reading Emotions (RE) stays sharp — leaves the person appearing warm while managing strategically. Tolerance builds — what produced safety yesterday requires more force today. Escalation follows (F7). The person has lost the experience of the cost. In a fluid compass, the cost is felt. In chronic Domination, it has been absorbed into identity. The person does not feel the weight of what they are doing because the weight has become who they believe they are.
             </p>
 
             {/* Chronic Modes — System Locked Table */}
@@ -1174,7 +1180,7 @@ export default function M1InnerCompassPage() {
             </h2>
 
             <p style={proseStyle}>
-              Projection is not a psychological defence mechanism layered on top of accurate perception. It is the stuck compass reading the environment through its own filter and calling the output reality. The person is not imagining. They are reading real cues — through a filter calibrated to find exactly what the mode expects to find. The confirmation arrives through the same channels pre-set to find it. The threat feels real because the sensory system delivered it as real — before any thought formed.
+              Projection is not a psychological defence mechanism layered on top of accurate perception. It is the stuck compass reading the environment through its own filter and calling the output reality — the first three layers of the Distortion Cascade (State → Perception → Emotion) running below awareness. The person is not imagining. They are reading real cues — through a filter calibrated to find exactly what the mode expects to find. The confirmation arrives through the same channels pre-set to find it. The threat feels real because the sensory system delivered it as real — before any thought formed.
             </p>
             <p style={proseStyle}>
               This is why the person cannot see the filter. They only see what comes through it. The output feels like accurate perception. It feels like seeing clearly. The mode has been running long enough that this is just what the world looks like.
@@ -1191,7 +1197,7 @@ export default function M1InnerCompassPage() {
               The information that would correct the filter has to arrive through the same sensory channels the filter is already shaping. Cognition cannot override a pre-cognitive process using data that was filtered before cognition received it. The cognitive system receives already-filtered input and builds a narrative from it. The narrative feels coherent — because it is coherent, given the data the cognitive system actually received. The problem is upstream of cognition. Talking about it does not reach it.
             </p>
             <p style={proseStyle}>
-              What can reach it: a change in the sensory environment significant enough to break through the filter — a regulation experience, a co-regulatory relationship, genuine felt safety over time. This is why F8 is the repair arc — not cognitive insight, but conditions that change what the nervous system receives.
+              What can reach it: a change in the sensory environment significant enough to break through the filter — a regulation experience, a co-regulatory relationship where one nervous system helps stabilize another, genuine felt safety over time. This is why F8 is the repair arc — not cognitive insight, but conditions that change what the nervous system receives.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -1373,12 +1379,12 @@ export default function M1InnerCompassPage() {
 
             <h3 style={h3Style}>M2 — Three Awareness Capacities</h3>
             <p style={proseStyle}>
-              M1 describes what states the nervous system moves through — the compass, the modes, the gradient, the filters, the tanks. M2 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. One describes the instrument. The other describes the calibration.
+              M1 describes what states the nervous system moves through — the compass, the modes, the gradient, the filters, the accumulated activation. M2 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. One describes the instrument. The other describes the calibration.
             </p>
 
             <h3 style={h3Style}>M3 — Regulation Capacities</h3>
             <p style={proseStyle}>
-              M1 describes the states. M3 describes what the return to baseline requires — and what the nervous system does instead when the return does not complete. The tank model lives in both: M1 describes what fills each mode{"'"}s tank and what overflowing looks like. M3 describes why the tanks do not empty, what the body reaches for instead, and what actual emptying requires.
+              M1 describes the states. M3 describes what the return to baseline requires — and what the nervous system does instead when the return does not complete. Accumulated activation lives in both: M1 describes what generates activation per mode and what accumulation looks like. M3 describes why the cycles do not complete, what the body reaches for instead, and what actual restoration requires.
             </p>
 
             <h3 style={h3Style}>The Three Models as One Sequence</h3>
@@ -1564,7 +1570,7 @@ export default function M1InnerCompassPage() {
               {
                 question: "What are the four modes of the Inner Compass?",
                 answer:
-                  "The four modes are Connection (body-first, safety perceived — the system's baseline), Protection (body-first, threat perceived — emergency system), Control (cognition-first, deliberate strategic response), and Domination (cognition-first, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories.",
+                  "The four modes are Connection (before awareness, safety perceived — the system's baseline), Protection (before awareness, threat perceived — emergency system), Control (after awareness, deliberate strategic response), and Domination (after awareness, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories.",
               },
               {
                 question: "What does 'state determines capacity' mean?",

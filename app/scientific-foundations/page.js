@@ -172,7 +172,7 @@ const THEORIES = [
     frameworks: ["F1", "F12"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Emotions evolved as rapid survival signals before cognition existed. Cognition evolved as an additional layer for problems too complex for body-level responses. Social cognition — the capacity to model other minds — evolved to navigate increasingly complex group dynamics." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses evolutionary framing to explain the four-mode architecture: Connection and Protection are body-first modes that ran for millions of years before cognition. Control and Domination are cognition-first modes — what cognition does when recruited into the threat response." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses evolutionary framing to explain the four-mode architecture: Connection and Protection are before-awareness modes — the nervous system responded this way for millions of years before cognition evolved. Control and Domination are after-awareness modes — what cognition does when recruited into the threat response." },
       { id: "key-sources", title: "Key Sources", content: "Cosmides, L. & Tooby, J. (1992). Cognitive adaptations for social exchange. In The Adapted Mind. \u00b7 Dunbar, R. I. M. (1998). The social brain hypothesis. Evolutionary Anthropology." },
     ],
   },

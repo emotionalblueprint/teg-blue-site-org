@@ -20,7 +20,7 @@ const MODES = [
     fluid: {
       fullName: "Connection Mode",
       pattern: "Pattern A",
-      type: "Body-first",
+      type: "Before awareness",
       duration: "Indefinite — baseline",
       sequence: "Engage → Relate → Repair → Learn",
       description:
@@ -60,7 +60,7 @@ const MODES = [
     fluid: {
       fullName: "Protection Mode",
       pattern: "Pattern B",
-      type: "Body-first",
+      type: "Before awareness",
       duration: "Minutes — activates fast, returns fast",
       sequence: "Fight / Flight → Freeze / Fawn",
       description:
@@ -100,7 +100,7 @@ const MODES = [
     fluid: {
       fullName: "Control Mode",
       pattern: "Pattern C",
-      type: "Cognition-first",
+      type: "After awareness",
       duration: "Hours to days — time-limited tool",
       sequence: "Anticipate → Manage → Override",
       description:
@@ -140,7 +140,7 @@ const MODES = [
     fluid: {
       fullName: "Domination Mode",
       pattern: "Pattern D",
-      type: "Cognition-first",
+      type: "After awareness",
       duration: "Rare — last resort, highest cost",
       sequence: "Override → Eliminate → Secure",
       description:

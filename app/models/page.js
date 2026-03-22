@@ -138,8 +138,8 @@ export default function ModelsPage() {
             Four modes — not types, not stages. Positions on a gradient:
           </div>
           <ul style={listStyle}>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Connection</strong> (Teal) — Safety perceived. Body-first. All three awareness capacities online. The system designed for sustained living.</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Protection</strong> (Yellow) — Threat perceived. Body-first. Attention narrows, self-preservation prioritised. Healthy and temporary by design.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Connection</strong> (Teal) — Safety perceived. Before awareness. All three awareness capacities online. The system designed for sustained living.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Protection</strong> (Yellow) — Threat perceived. Before awareness. Attention narrows, self-preservation prioritised. Healthy and temporary by design.</li>
             <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Control</strong> (Orange) — Cognition recruited into threat service. Deliberate, anticipatory, time-limited in designed operation.</li>
             <li><strong style={{ color: TEXT.primary }}>Domination</strong> (Pink) — Maximum cognitive override. Decisive, final. Designed as rare; costly if chronic.</li>
           </ul>

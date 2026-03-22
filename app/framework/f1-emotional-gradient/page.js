@@ -34,7 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The six foundational claims the entire F1 framework rests on." },
   { label: "Biological Substrate", href: "#the-signal", description: "The biological systems that produce emotion — neural, endocrine, autonomic, neurochemical." },
   { label: "Compass & Needle", href: "#the-instrument", description: "The compass as a working model: the instrument and how it moves." },
-  { label: "Connection & Protection", href: "#connection-protection", description: "The two body-first modes — the nervous system's original configurations." },
+  { label: "Connection & Protection", href: "#connection-protection", description: "The two before-awareness modes — the nervous system's original configurations." },
   { label: "Biological Restoration", href: "#the-fork", description: "The body's designed process for completing the activation cycle and settling back to baseline." },
   { label: "Control & Domination", href: "#the-cognitive-upgrade", description: "How cognition added two new modes — Control and Domination — to the body's original two." },
   { label: "Gradient & Mode", href: "#the-architecture", description: "How mode position determines what a person can perceive, think, feel, and do." },
@@ -525,7 +525,7 @@ export default function F1EmotionalGradientPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-connection-protection" style={sectionHeadingStyle}>
-              Connection & Protection — The Two Body-First Modes
+              Connection & Protection — The Two Before-Awareness Modes
             </h2>
 
             <CycleBox highlight={["Mode Activation", "Threat Response"]} />
@@ -537,7 +537,7 @@ export default function F1EmotionalGradientPage() {
               </h3>
 
               <p style={proseStyle}>
-                Connection and Protection are the <strong style={{ color: SPECTRUM.cobalt }}>two fundamental configurations</strong> of the nervous system — not as binary states, but as the two poles the compass needle orients between. These are the <strong style={{ color: TEXT.primary }}>body-first modes</strong>: the nervous system activates them automatically. They have been running for millions of years before cognition evolved.
+                Connection and Protection are the <strong style={{ color: SPECTRUM.cobalt }}>two fundamental configurations</strong> of the nervous system — not as binary states, but as the two poles the compass needle orients between. These are the <strong style={{ color: TEXT.primary }}>before-awareness modes</strong>: the nervous system activates them before the person has awareness of what's happening. They have been running for millions of years before cognition evolved.
               </p>
 
               <div
@@ -917,10 +917,10 @@ export default function F1EmotionalGradientPage() {
                 For millions of years, the body had two modes — Connection and Protection — and the restoration process between them was sufficient. Then <strong style={{ color: SPECTRUM.cobalt }}>cognition evolved</strong>. And the compass gained range.
               </p>
               <p style={proseStyle}>
-                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — cognition-first strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
+                When body-level responses are not enough — when the threat is too complex, too sustained, or too strategic for fight/flight/freeze/fawn to resolve, and when Biological Restoration has not resolved the activation — the system recruits the next tool available: cognition. Two additional modes emerge where cognition is not just present but <em>steering</em>. It is an upgrade — the most sophisticated survival tool the species ever developed. In a <strong style={{ color: TEXT.primary }}>fluid compass</strong>, these modes can be time-limited: entered with awareness, used proportionally, and exited when the situation resolves. But when restoration capacity is missing — when activation never fully completes — when <Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.indigo, textDecoration: "none", fontWeight: 500 }}>the cycle stays open</Link> — after-awareness strategies can become compulsive. What looks like "choice" may be the only available pathway to regain control.
               </p>
               <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection are body-first — the nervous system activates them automatically. Control and Domination are cognition-first — they are what cognition <em>does</em> when recruited into the threat response. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
+                <strong style={{ color: TEXT.primary }}>The architectural break:</strong> Connection and Protection operate before awareness — the nervous system responds before the person knows it's responding. Control and Domination operate after awareness — cognition has entered the picture, even if what it does with that awareness is distorted. This is a qualitative distinction, not just a quantitative one. The first two modes are biological responses that the nervous system has been running for millions of years. The second two require cognition to exist and are often entered through cognitive strategy — sometimes conscious, sometimes automatic.
               </p>
 
               <div
@@ -950,7 +950,7 @@ export default function F1EmotionalGradientPage() {
               </div>
 
               <p style={proseStyle}>
-                A key distinction inside these cognition-first modes is <strong style={{ color: TEXT.primary }}>proportionality and accountability</strong>: strategy can be used to protect life and boundaries without dehumanizing others. Domination begins when the system shifts from self-protection to override, where the other person's reality, needs, or rights stop mattering.
+                A key distinction inside these after-awareness modes is <strong style={{ color: TEXT.primary }}>proportionality and accountability</strong>: strategy can be used to protect life and boundaries without dehumanizing others. Domination begins when the system shifts from self-protection to override, where the other person's reality, needs, or rights stop mattering.
               </p>
 
               <div
@@ -992,19 +992,19 @@ export default function F1EmotionalGradientPage() {
                   </thead>
                   <tbody>
                     <TableRow cells={[
-                      "Connection (Pattern A)", "Body-first", "Automatic — safety perceived",
+                      "Connection (Pattern A)", "Before awareness", "Automatic — safety perceived",
                       "Engage, relate, repair, learn", "Indefinite — baseline",
                     ]} />
                     <TableRow cells={[
-                      "Protection (Pattern B)", "Body-first", "Automatic — threat perceived",
+                      "Protection (Pattern B)", "Before awareness", "Automatic — threat perceived",
                       "Fight/flight → freeze/fawn", "Minutes to hours",
                     ]} />
                     <TableRow cells={[
-                      "Control (Pattern C)", "Cognition-first", "Deliberate — cognition recruited",
+                      "Control (Pattern C)", "After awareness", "Deliberate — cognition recruited",
                       "Anticipate → Manage → Override", "Time-limited — tool",
                     ]} />
                     <TableRow cells={[
-                      "Domination (Pattern D)", "Cognition-first", "Deliberate — cognition at maximum",
+                      "Domination (Pattern D)", "After awareness", "Deliberate — cognition at maximum",
                       "Override → Eliminate → Secure", "Rare — last resort",
                     ]} />
                   </tbody>
@@ -1300,9 +1300,9 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["Cross-theoretical convergence", "Six traditions describe the same two-mode orientation."]} />
                   <TableRow cells={["The Inner Compass", "The compass orients between Connection and Protection. Fluid operation is not a position — it is the needle moving freely."]} />
                   <TableRow cells={["How the compass moves", "Five-step sequence from signal detection to mode, completing before awareness. Fast by design. The problem is never the mechanism — it is what the mechanism learned."]} />
-                  <TableRow cells={["Connection and Protection", "Two body-first modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
+                  <TableRow cells={["Connection and Protection", "Two before-awareness modes. Connection is the mode designed for sustained living. Protection is the emergency system."]} />
                   <TableRow cells={["Biological Restoration", "The body's designed process for completing the activation cycle and settling back to baseline. Cannot be forced. Can only be allowed. Operates through somatic and relational pathways. The central mechanism of the entire twelve-framework system."]} />
-                  <TableRow cells={["Control and Domination", "Two cognition-first modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
+                  <TableRow cells={["Control and Domination", "Two after-awareness modes. The intelligent upgrade. In designed operation: deliberate, time-limited, returnable."]} />
                   <TableRow cells={["The gradient", "The four modes are positions on a continuous gradient, not four boxes."]} />
                   <TableRow cells={["State determines capacity", "What you can perceive, think, and do depends on your current state. Restore safety first, then expect capacity."]} />
                   <TableRow cells={["Same emotion, two expressions", "Mode position determines whether an emotion serves connection or defense. Assess mode position, not the emotion."]} />

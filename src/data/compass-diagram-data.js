@@ -34,7 +34,7 @@ export const MODES = [
     center: 0.125,        // gradient bar position (0–1)
     zone: [0, 0.25],      // zone boundaries
     perception: 'Safety',  // root--mode-positions.md §Perception — "All channels wide open"
-    activation: 'Body-first',  // root--mode-positions.md §Activation — "Body-first, automatic"
+    activation: 'Before awareness',  // root--mode-positions.md §Activation — "Before awareness, automatic"
     arc: 'Safety → Three Capacities Online → Repair',  // root--master-table.md Table 1
     chronicArc: 'Pretended Safety → Over-Giving → Disappearing',  // root--master-table.md Table 2
   },
@@ -46,7 +46,7 @@ export const MODES = [
     center: 0.375,
     zone: [0.25, 0.5],
     perception: 'Threat',  // root--mode-positions.md §Perception — "Narrowed toward threat"
-    activation: 'Body-first',
+    activation: 'Before awareness',
     arc: 'Alert → Threat Scanning → Defence',
     chronicArc: 'Defence → Perpetual Vigilance → No Stand-Down',
   },

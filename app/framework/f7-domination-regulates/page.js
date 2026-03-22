@@ -304,7 +304,7 @@ export default function F7DominationRegulatesPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
-                The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, body-first) to Control (strategy-based, cognition-first). This connects to F1&rsquo;s architectural break: Connection and Protection are automatic — body-first responses. Control and Domination are what cognition <em>does</em> when recruited into the threat response.
+                The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, before awareness) to Control (strategy-based, after awareness). This connects to F1&rsquo;s architectural break: Connection and Protection operate before awareness — the nervous system responds before the person knows it's responding. Control and Domination operate after awareness — cognition has entered the picture.
               </p>
               <p style={expandedProseStyle}>
                 The naming serves early recognition. Before this terminology, the transition is often invisible — especially because the early stages of Control can look like competence, leadership, and responsibility. Naming the Crossroads makes the transition visible and teachable: repair is decreasing, control is increasing, tactics are replacing vulnerability. These are recognizable shifts.
@@ -1106,7 +1106,7 @@ export default function F7DominationRegulatesPage() {
               {
                 question: "What is the Crossroads in the TEG-Blue escalation model?",
                 answer:
-                  "The Crossroads is the named critical turning point where defense becomes strategy — the moment the internal logic shifts from 'I am trying to feel safe' to 'I will make you behave so I can feel safe.' It marks the transition from Protection (state-based, body-first) to Control (strategy-based, cognition-first). It is not a single moment but a transition zone where control increases while repair decreases, recognizable through ten early escalation markers.",
+                  "The Crossroads is the named critical turning point where defense becomes strategy — the moment the internal logic shifts from 'I am trying to feel safe' to 'I will make you behave so I can feel safe.' It marks the transition from Protection (state-based, before awareness) to Control (strategy-based, after awareness). It is not a single moment but a transition zone where control increases while repair decreases, recognizable through ten early escalation markers.",
               },
               {
                 question: "What is the five-stage escalation pathway?",
