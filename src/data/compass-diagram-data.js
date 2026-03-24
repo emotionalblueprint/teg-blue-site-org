@@ -484,3 +484,229 @@ export const RULES = {
   // Rule 9: Behavioural Convergence — same visible behaviour, different mechanism
   behaviouralConvergence: true,
 };
+
+// ─── CAPACITY DEFINITIONS ───────────────────────────────────────
+// Source: root--awareness-capacities.md (tool-facing definitions for explorer UI)
+// Used by EmpathicIntegrationExplorer (M2 page)
+// Note: colors are applied by the component from tokens.js, not stored here.
+
+export const CAPACITY_DEFINITIONS = [
+  {
+    id: 'RE',
+    name: 'Reading Emotions',
+    abbr: 'RE',
+    tagline: 'Perceiving what others feel',
+    lowHint: 'Emotional signals from others are missed or misread.',
+    highHint: 'Others\' feelings are perceived clearly — even subtle or unspoken ones.',
+  },
+  {
+    id: 'ER',
+    name: 'Emotional Resonance',
+    abbr: 'ER',
+    tagline: 'Feeling it in your own body',
+    lowHint: 'Others\' emotions are understood intellectually, but not felt.',
+    highHint: 'Others\' emotions land in the body. Genuine resonance occurs.',
+  },
+  {
+    id: 'SEA',
+    name: 'Self-Emotional Awareness',
+    abbr: 'SEA',
+    tagline: 'Knowing your own internal state',
+    lowHint: 'Internal state is difficult to locate or name.',
+    highHint: 'Internal signals are readable and trustworthy. What\'s yours is identifiable.',
+  },
+];
+
+// ─── ACTIVATION STAGES ──────────────────────────────────────────
+// Source: root--biological-restoration.md + M3 page content
+// The HPA axis cascade — trigger → cascade → full activation.
+// Used by OpenCycleExplorer (M3 page).
+
+export const ACTIVATION_STAGES = [
+  {
+    id: 'trigger',
+    label: 'Trigger',
+    sub: 'Perceived threat',
+    description:
+      'The nervous system perceives a threat — physical, relational, social, or emotional. This happens below conscious awareness. The amygdala fires within 12ms — faster than any thought.',
+    biology: [
+      'Amygdala fires (12ms)',
+      'Thalamus → fast pathway activated',
+      'Signal: threat detected',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'cascade',
+    label: 'Cascade',
+    sub: 'HPA axis & SNS fire',
+    description:
+      'The hypothalamic-pituitary-adrenal axis fires a hormonal cascade. The entire body shifts to survival configuration. The entire body shifts to survival configuration — biology in motion.',
+    biology: [
+      'Cortisol released (1–3 min)',
+      'Epinephrine & norepinephrine surge',
+      'Heart rate ↑, digestion stops',
+      'Muscles brace, pupils dilate',
+      'PFC blood flow ↓',
+    ],
+    hormones: [
+      'CRH → ACTH → Cortisol',
+      'Epinephrine (adrenaline)',
+      'Norepinephrine',
+      'Glucagon → blood glucose ↑',
+    ],
+  },
+  {
+    id: 'activation',
+    label: 'Full Activation',
+    sub: 'Body in survival mode',
+    description:
+      'Every organ system is now oriented toward survival. The amygdala dominates. Cognition narrows. Emotional resonance filters. The body is doing exactly what it was designed to do.',
+    biology: [
+      'SNS fully dominant',
+      'Serotonin ↓, GABA ↓',
+      'Oxytocin ↓',
+      'Amygdala sensitivity ↑',
+      'Working memory ↓',
+    ],
+    hormones: [
+      'Cortisol (peak)',
+      'Epinephrine (sustained)',
+      'Norepinephrine (sustained)',
+      'Inflammatory cytokines',
+    ],
+  },
+];
+
+// ─── RESOLUTION PATH ────────────────────────────────────────────
+// Source: root--biological-restoration.md §Fluid Restoration
+// The cycle completion sequence — expression → vagal return → clearance → baseline.
+// Used by OpenCycleExplorer (M3 page).
+
+export const RESOLUTION_PATH = [
+  {
+    id: 'expression',
+    label: 'Expression',
+    sub: 'Signal discharged',
+    description:
+      'The emotion is felt and expressed. Trembling, crying, movement, breath change, vocalisation. The body begins to discharge the mobilised energy.',
+    biology: [
+      'Motor discharge begins',
+      'Exhale-dominant breathing',
+      'Emotional tears (stress hormones released)',
+      'Muscle release begins',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'parasympathetic',
+    label: 'Vagal Return',
+    sub: 'PNS re-engages',
+    description:
+      'The vagus nerve activates the parasympathetic system. Heart rate slows. The gut re-engages. The face softens. Social engagement opens again.',
+    biology: [
+      'Vagal brake activates',
+      'Heart rate ↓',
+      'Digestion resumes',
+      'PFC blood flow returns',
+      'Oxytocin begins recovering',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'clearance',
+    label: 'Clearance',
+    sub: 'Cortisol metabolised',
+    description:
+      'The hippocampus receives the feedback signal that completes the HPA loop. Cortisol is metabolised by the liver. Neurotransmitters rebalance. The cycle closes.',
+    biology: [
+      'Hippocampal feedback loop closes',
+      'Liver metabolises cortisol (20min–hrs)',
+      'Serotonin, GABA, oxytocin normalise',
+      'Memory encoded with context',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'baseline',
+    label: 'Baseline',
+    sub: 'Cycle complete',
+    description:
+      'The body returns to full baseline. Digestion, immune function, cognition, and emotional capacity all restored. The needle returns. This is what the body was designed to do.',
+    biology: [
+      'All systems normalised',
+      'Allostatic load: zero added',
+      'Compass: fluid',
+      'Capacity: full',
+    ],
+    hormones: [],
+  },
+];
+
+// ─── OVERRIDE PATH ──────────────────────────────────────────────
+// Source: root--biological-restoration.md §Cognitive Override
+// What happens when cognition intercepts the activation cycle.
+// Used by OpenCycleExplorer (M3 page).
+
+export const OVERRIDE_PATH = [
+  {
+    id: 'intercept',
+    label: 'Cognition Intercepts',
+    sub: 'Override activated',
+    description:
+      'The mind labels the emotion as irrelevant, weak, inappropriate, or dangerous. Attention redirects to analysis or narrative. The body hears nothing — it is already mid-cascade.',
+    biology: [
+      'PFC suppresses emotional signal',
+      'Discharge phase never begins',
+      'Muscles stay braced',
+      'Cortisol keeps releasing',
+      'HPA receives no \'all clear\'',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'submersion',
+    label: 'Signal Submerged',
+    sub: 'Access lost, signal runs',
+    description:
+      'The person loses access to the signal — but the signal continues generating. The body holds everything the mind refuses to see. The cycle is open. The cherry is still there.',
+    biology: [
+      'SEA collapses',
+      'Emotional distortion activates',
+      'Internal discomfort misread as external threat',
+      'Somatic holding increases',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'accumulation',
+    label: 'Load Accumulates',
+    sub: 'Allostatic debt builds',
+    description:
+      'With each unprocessed cycle, the baseline rises. The amygdala sensitises. The threshold for the next activation lowers. The system escalates on an already-elevated foundation.',
+    biology: [
+      '★ Cortisol chronically elevated',
+      '★ Amygdala increasingly sensitised',
+      '★ Serotonin depleted',
+      '★ Oxytocin suppressed',
+      '★ Immune dysregulation',
+      'Allostatic load: growing',
+    ],
+    hormones: [],
+  },
+  {
+    id: 'stuck',
+    label: 'Compass Stuck',
+    sub: 'Mode becomes chronic',
+    description:
+      'The nervous system reorganises around the unresolved state. What was Protection becomes permanent. External regulation substitutes multiply. The gradient shift locks in.',
+    biology: [
+      'Default mode: Protection/Control',
+      'External regulation required',
+      'Regulation substitutes: F3–F7',
+      'Identity forms around mode',
+      'Return pathway blocked',
+    ],
+    hormones: [],
+  },
+];

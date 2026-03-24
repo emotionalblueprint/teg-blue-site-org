@@ -5,6 +5,11 @@ import {
   FONT, TEXT, BG, BORDER, SPECTRUM,
   PATTERN, MODE_ORANGE, hexToRgba,
 } from "@/src/styles/tokens";
+import {
+  ACTIVATION_STAGES,
+  RESOLUTION_PATH as RESOLUTION_STAGES,
+  OVERRIDE_PATH as OVERRIDE_STAGES,
+} from "@/src/data/compass-diagram-data";
 
 // ─── Map PATTERN tokens to semantic names used in this component ──
 const BLUE = {
@@ -15,197 +20,12 @@ const BLUE = {
 };
 const ORANGE = MODE_ORANGE;
 
-// ─── STAGE DATA ──────────────────────────────────────────────
+// ─── STAGE DATA — colors applied from tokens.js ─────────────
 
-const STAGES = [
-  {
-    id: "trigger",
-    label: "Trigger",
-    sub: "Perceived threat",
-    color: BLUE.medium,
-    description:
-      "The nervous system perceives a threat — physical, relational, social, or emotional. This happens below conscious awareness. The amygdala fires within 12ms — faster than any thought.",
-    biology: [
-      "Amygdala fires (12ms)",
-      "Thalamus → fast pathway activated",
-      "Signal: threat detected",
-    ],
-    hormones: [],
-  },
-  {
-    id: "cascade",
-    label: "Cascade",
-    sub: "HPA axis & SNS fire",
-    color: BLUE.deep,
-    description:
-      "The hypothalamic-pituitary-adrenal axis fires a hormonal cascade. The entire body shifts to survival configuration. The entire body shifts to survival configuration — biology in motion.",
-    biology: [
-      "Cortisol released (1–3 min)",
-      "Epinephrine & norepinephrine surge",
-      "Heart rate ↑, digestion stops",
-      "Muscles brace, pupils dilate",
-      "PFC blood flow ↓",
-    ],
-    hormones: [
-      "CRH → ACTH → Cortisol",
-      "Epinephrine (adrenaline)",
-      "Norepinephrine",
-      "Glucagon → blood glucose ↑",
-    ],
-  },
-  {
-    id: "activation",
-    label: "Full Activation",
-    sub: "Body in survival mode",
-    color: BLUE.darkest,
-    description:
-      "Every organ system is now oriented toward survival. The amygdala dominates. Cognition narrows. Emotional resonance filters. The body is doing exactly what it was designed to do.",
-    biology: [
-      "SNS fully dominant",
-      "Serotonin ↓, GABA ↓",
-      "Oxytocin ↓",
-      "Amygdala sensitivity ↑",
-      "Working memory ↓",
-    ],
-    hormones: [
-      "Cortisol (peak)",
-      "Epinephrine (sustained)",
-      "Norepinephrine (sustained)",
-      "Inflammatory cytokines",
-    ],
-  },
-];
-
-const RESOLUTION_PATH = [
-  {
-    id: "expression",
-    label: "Expression",
-    sub: "Signal discharged",
-    color: BLUE.light,
-    description:
-      "The emotion is felt and expressed. Trembling, crying, movement, breath change, vocalisation. The body begins to discharge the mobilised energy.",
-    biology: [
-      "Motor discharge begins",
-      "Exhale-dominant breathing",
-      "Emotional tears (stress hormones released)",
-      "Muscle release begins",
-    ],
-    hormones: [],
-  },
-  {
-    id: "parasympathetic",
-    label: "Vagal Return",
-    sub: "PNS re-engages",
-    color: BLUE.light,
-    description:
-      "The vagus nerve activates the parasympathetic system. Heart rate slows. The gut re-engages. The face softens. Social engagement opens again.",
-    biology: [
-      "Vagal brake activates",
-      "Heart rate ↓",
-      "Digestion resumes",
-      "PFC blood flow returns",
-      "Oxytocin begins recovering",
-    ],
-    hormones: [],
-  },
-  {
-    id: "clearance",
-    label: "Clearance",
-    sub: "Cortisol metabolised",
-    color: BLUE.light,
-    description:
-      "The hippocampus receives the feedback signal that completes the HPA loop. Cortisol is metabolised by the liver. Neurotransmitters rebalance. The cycle closes.",
-    biology: [
-      "Hippocampal feedback loop closes",
-      "Liver metabolises cortisol (20min–hrs)",
-      "Serotonin, GABA, oxytocin normalise",
-      "Memory encoded with context",
-    ],
-    hormones: [],
-  },
-  {
-    id: "baseline",
-    label: "Baseline",
-    sub: "Cycle complete",
-    color: BLUE.light,
-    description:
-      "The body returns to full baseline. Digestion, immune function, cognition, and emotional capacity all restored. The needle returns. This is what the body was designed to do.",
-    biology: [
-      "All systems normalised",
-      "Allostatic load: zero added",
-      "Compass: fluid",
-      "Capacity: full",
-    ],
-    hormones: [],
-  },
-];
-
-const OVERRIDE_PATH = [
-  {
-    id: "intercept",
-    label: "Cognition Intercepts",
-    sub: "Override activated",
-    color: ORANGE,
-    description:
-      "The mind labels the emotion as irrelevant, weak, inappropriate, or dangerous. Attention redirects to analysis or narrative. The body hears nothing — it is already mid-cascade.",
-    biology: [
-      "PFC suppresses emotional signal",
-      "Discharge phase never begins",
-      "Muscles stay braced",
-      "Cortisol keeps releasing",
-      "HPA receives no 'all clear'",
-    ],
-    hormones: [],
-  },
-  {
-    id: "submersion",
-    label: "Signal Submerged",
-    sub: "Access lost, signal runs",
-    color: ORANGE,
-    description:
-      "The person loses access to the signal — but the signal continues generating. The body holds everything the mind refuses to see. The cycle is open. The cherry is still there.",
-    biology: [
-      "SEA collapses",
-      "Emotional distortion activates",
-      "Internal discomfort misread as external threat",
-      "Somatic holding increases",
-    ],
-    hormones: [],
-  },
-  {
-    id: "accumulation",
-    label: "Load Accumulates",
-    sub: "Allostatic debt builds",
-    color: ORANGE,
-    description:
-      "With each unprocessed cycle, the baseline rises. The amygdala sensitises. The threshold for the next activation lowers. The system escalates on an already-elevated foundation.",
-    biology: [
-      "★ Cortisol chronically elevated",
-      "★ Amygdala increasingly sensitised",
-      "★ Serotonin depleted",
-      "★ Oxytocin suppressed",
-      "★ Immune dysregulation",
-      "Allostatic load: growing",
-    ],
-    hormones: [],
-  },
-  {
-    id: "stuck",
-    label: "Compass Stuck",
-    sub: "Mode becomes chronic",
-    color: ORANGE,
-    description:
-      "The nervous system reorganises around the unresolved state. What was Protection becomes permanent. External regulation substitutes multiply. The gradient shift locks in.",
-    biology: [
-      "Default mode: Protection/Control",
-      "External regulation required",
-      "Regulation substitutes: F3–F7",
-      "Identity forms around mode",
-      "Return pathway blocked",
-    ],
-    hormones: [],
-  },
-];
+const STAGE_COLORS = { trigger: BLUE.medium, cascade: BLUE.deep, activation: BLUE.darkest };
+const STAGES = ACTIVATION_STAGES.map(s => ({ ...s, color: STAGE_COLORS[s.id] }));
+const RESOLUTION_PATH = RESOLUTION_STAGES.map(s => ({ ...s, color: BLUE.light }));
+const OVERRIDE_PATH = OVERRIDE_STAGES.map(s => ({ ...s, color: ORANGE }));
 
 const TABS = [
   { id: "overview", label: "The Cascade", color: BLUE.medium },

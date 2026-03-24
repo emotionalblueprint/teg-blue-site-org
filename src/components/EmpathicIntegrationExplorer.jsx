@@ -5,38 +5,14 @@ import {
   BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
   hexToRgba, AWARENESS, MODE_ORANGE,
 } from "@/src/styles/tokens";
+import { CAPACITY_DEFINITIONS } from "@/src/data/compass-diagram-data";
 
-// ─── CAPACITY DEFINITIONS ────────────────────────────────────
+// ─── CAPACITY DEFINITIONS — colors applied from tokens.js ────
 
-const CAPACITIES = [
-  {
-    id: "RE",
-    name: "Reading Emotions",
-    abbr: "RE",
-    color: AWARENESS.RE,
-    tagline: "Perceiving what others feel",
-    lowHint: "Emotional signals from others are missed or misread.",
-    highHint: "Others' feelings are perceived clearly — even subtle or unspoken ones.",
-  },
-  {
-    id: "ER",
-    name: "Emotional Resonance",
-    abbr: "ER",
-    color: AWARENESS.ER,
-    tagline: "Feeling it in your own body",
-    lowHint: "Others' emotions are understood intellectually, but not felt.",
-    highHint: "Others' emotions land in the body. Genuine resonance occurs.",
-  },
-  {
-    id: "SEA",
-    name: "Self-Emotional Awareness",
-    abbr: "SEA",
-    color: AWARENESS.SEA,
-    tagline: "Knowing your own internal state",
-    lowHint: "Internal state is difficult to locate or name.",
-    highHint: "Internal signals are readable and trustworthy. What's yours is identifiable.",
-  },
-];
+const CAPACITIES = CAPACITY_DEFINITIONS.map(cap => ({
+  ...cap,
+  color: AWARENESS[cap.id],
+}));
 
 // ─── STATE DESCRIPTIONS ──────────────────────────────────────
 
