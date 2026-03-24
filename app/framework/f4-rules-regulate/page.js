@@ -95,7 +95,7 @@ export default function F4RulesRegulatePage() {
               badge="FRAMEWORK F4"
               title="Rules Regulate"
               subtitle="How Individual Patterns Scale to Collective Rule Systems"
-              description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7) of the TEG-Blue system."
+              description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7), showing how individual M3 restoration failure scales into collective regulatory structures."
               group="Collective"
               groupLabel="Collective · F4–F7"
               threadLine="Rules regulate · Cost: Flexibility"

@@ -97,7 +97,7 @@ export default function F2AwarenessCalibrationPage() {
               badge="FRAMEWORK F2"
               title="Awareness Teaches Awareness"
               subtitle="How the Three Capacities Calibrate the Compass"
-              description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. The calibration framework of the TEG-Blue system."
+              description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. Provides the theoretical foundation for M2 (Three Awareness Capacities) and the developmental origins of the chronic modes that M1 maps."
               group="Individual"
               groupLabel="Individual · F1–F3"
               threadLine="Co-regulation → self-restoration (when learned). When not learned: the compass locks · Cost: The restoration path is never built"

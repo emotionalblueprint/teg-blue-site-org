@@ -109,7 +109,7 @@ export default function F1EmotionalGradientPage() {
               badge="FRAMEWORK F1"
               title="The Emotional Gradient"
               subtitle="The Safety-Threat Orientation System"
-              description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
+              description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. Provides the theoretical foundation for M1 (Nervous System Signaling) and the biological restoration mechanism that M3 (Regulation Capacities) measures."
               group="Individual"
               groupLabel="Individual · F1–F3"
               threadLine="Biological Restoration — the body completing its own cycle · Cost: None — this is the design"

@@ -223,7 +223,7 @@ export default function F11EmotionalParadoxesPage() {
               badge="FRAMEWORK F11"
               title="The Emotional Logic Behind Paradoxes"
               subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
-              description="How every framework (F1–F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic — and how paradoxical behavior is multi-rational, serving multiple valid needs simultaneously rather than signaling failure of consistency. The first framework in the integration arc (F11–F12)."
+              description="How every framework (F1–F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic — and how paradoxical behavior is multi-rational, serving multiple valid needs simultaneously rather than signaling failure of consistency. The first framework in the integration arc (F11–F12), mapping what becomes visible when M2's Self-Emotional Awareness (SEA) comes online and false coherence loosens."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"

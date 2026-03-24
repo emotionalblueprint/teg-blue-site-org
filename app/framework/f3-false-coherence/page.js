@@ -97,7 +97,7 @@ export default function F3FalseCoherencePage() {
               badge="FRAMEWORK F3"
               title="Adult Cognition & False Coherence"
               subtitle="How Cognition Maintains What the Body Never Learned to Regulate"
-              description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. The cognitive maintenance framework of the TEG-Blue system."
+              description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. Explains the mechanism that overrides M1 signals, distorts M2 perception, and substitutes for M3 restoration — completing the individual arc (F1–F3)."
               group="Individual"
               groupLabel="Individual · F1–F3"
               threadLine="False coherence — cognition replacing restoration · Cost: Truth"

@@ -222,7 +222,7 @@ export default function F10GenerationalBridgesPage() {
               badge="FRAMEWORK F10"
               title="Rebuilding Generational Bridges"
               subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
-              description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the restoration arc (F8–F12)."
+              description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the restoration arc (F8–F12), extending M2's awareness-teaches-awareness mechanism across generations."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"

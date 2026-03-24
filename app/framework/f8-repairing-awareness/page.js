@@ -96,7 +96,7 @@ export default function F8RepairingAwarenessPage() {
               badge="FRAMEWORK F8"
               title="Repairing Awareness"
               subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
-              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path to baseline that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the restoration arc (F8–F10)."
+              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path to baseline that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the restoration arc (F8–F12), directly addressing how M2 capacities develop and what enables the M3 return path."
               group="The Reversal"
               groupLabel="The Reversal · F8–F12"
               threadLabel="Reverses the Thread"
