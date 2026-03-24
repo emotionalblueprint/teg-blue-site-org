@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback } from "react";
 import {
   FONT, TEXT, BG, BORDER,
-  PATTERN, PATTERN_GRADIENT, hexToRgba,
+  PATTERN, hexToRgba,
   MODE_ORANGE,
 } from "@/src/styles/tokens";
 import { COMPASS_CONDITIONS } from "@/src/data/compass-diagram-data";
@@ -15,6 +15,8 @@ const MODES = [
     key: "A",
     name: "Connection",
     conditionShort: "Safety & Openness",
+    condition: "When the nervous system reads safety and stays open",
+    autonomic: "Ventral vagal — social engagement system",
     hex: PATTERN.A.primary,
     center: 0.125,
     fluid: {
@@ -55,6 +57,8 @@ const MODES = [
     key: "B",
     name: "Protection",
     conditionShort: "Threat & Defence",
+    condition: "When the nervous system reads threat and defends",
+    autonomic: "Sympathetic (fight/flight) · Dorsal vagal (freeze/fawn)",
     hex: PATTERN.B.primary,
     center: 0.375,
     fluid: {
@@ -95,6 +99,8 @@ const MODES = [
     key: "C",
     name: "Control",
     conditionShort: "Strategy & Management",
+    condition: "When the nervous system needs strategy and management",
+    autonomic: "Sympathetic + cognitive recruitment",
     hex: PATTERN.C.primary,
     center: 0.625,
     fluid: {
@@ -135,6 +141,8 @@ const MODES = [
     key: "D",
     name: "Domination",
     conditionShort: "Power & Dominance",
+    condition: "When the nervous system needs power and dominance",
+    autonomic: "Sympathetic + full cognitive override",
     hex: PATTERN.D.primary,
     center: 0.875,
     fluid: {
@@ -173,51 +181,6 @@ const MODES = [
   },
 ];
 
-// ─── EVENTS & EMOTIONS ─────────────────────────────────
-
-const EVENTS = [
-  {
-    signal: "Safety",
-    event: "A close friend shares something they've been carrying — you feel genuine warmth",
-    emotion: "Joy",
-    modeIndex: 0,
-  },
-  {
-    signal: "Threat",
-    event: "A car swerves toward you on the highway",
-    emotion: "Fear",
-    modeIndex: 1,
-  },
-  {
-    signal: "Danger",
-    event: "Your boss takes credit for your work — again",
-    emotion: "Anger",
-    modeIndex: 2,
-  },
-  {
-    signal: "Life peril",
-    event: "You discover someone in authority has been harming those in their care",
-    emotion: "Disgust",
-    modeIndex: 3,
-  },
-];
-
-const EMOTIONS = [
-  // Connection — safety signals + repair drive
-  { name: "Joy",     modeIndex: 0 },
-  { name: "Love",    modeIndex: 0 },
-  { name: "Guilt",   modeIndex: 0 },
-  // Protection — threat mobilization + loss withdrawal
-  { name: "Fear",    modeIndex: 1 },
-  { name: "Sadness", modeIndex: 1 },
-  // Control — cognitive management signals
-  { name: "Anger",   modeIndex: 2 },
-  { name: "Shame",   modeIndex: 2 },
-  { name: "Envy",    modeIndex: 2 },
-  // Domination — elimination signal
-  { name: "Disgust", modeIndex: 3 },
-];
-
 // ─── CONSTANTS ──────────────────────────────────────────
 
 const BAR_GRADIENT = `linear-gradient(90deg, ${PATTERN.A.primary} 0%, ${PATTERN.A.primary} 20%, ${PATTERN.B.primary} 35%, ${PATTERN.B.primary} 45%, ${PATTERN.C.primary} 55%, ${PATTERN.C.primary} 70%, ${PATTERN.D.primary} 85%, ${PATTERN.D.primary} 100%)`;
@@ -242,20 +205,13 @@ function snapToCenter(pos) {
 
 export default function FluidCompassExplorer() {
   const [position, setPosition] = useState(0.125);
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const [connectors, setConnectors] = useState(null);
   const [isStuck, setIsStuck] = useState(false);
   const containerRef = useRef(null);
   const barRef = useRef(null);
-  const eventCardRefs = useRef([]);
-  const emotionPillRefs = useRef({});
   const isDragging = useRef(false);
   const activeMode = getActiveMode(position);
   const data = isStuck ? activeMode.chronic : activeMode.fluid;
   const accentColor = isStuck ? MODE_ORANGE : activeMode.hex;
-
-  // Derive highlighted emotion from selected event
-  const activeEvent = selectedEvent !== null ? EVENTS[selectedEvent] : null;
 
   const updatePosition = useCallback((clientX) => {
     if (!barRef.current) return;
@@ -267,7 +223,6 @@ export default function FluidCompassExplorer() {
   const handlePointerDown = useCallback(
     (e) => {
       isDragging.current = true;
-      setSelectedEvent(null);
       e.currentTarget.setPointerCapture(e.pointerId);
       updatePosition(e.clientX);
     },
@@ -287,7 +242,6 @@ export default function FluidCompassExplorer() {
 
   const handleSliderKeyDown = useCallback((e) => {
     const step = 0.05;
-    setSelectedEvent(null);
     if (e.key === "ArrowRight" || e.key === "ArrowUp") {
       e.preventDefault();
       setPosition((prev) => snapToCenter(Math.min(1, prev + step)));
@@ -303,57 +257,9 @@ export default function FluidCompassExplorer() {
     }
   }, []);
 
-  const handleEventClick = useCallback((eventIndex) => {
-    setSelectedEvent(eventIndex);
-    setPosition(MODES[EVENTS[eventIndex].modeIndex].center);
-  }, []);
-
   const handleToggle = useCallback((stuck) => {
     setIsStuck(stuck);
-    setSelectedEvent(null);
   }, []);
-
-  // Measure connector line positions
-  useEffect(() => {
-    if (selectedEvent === null || !containerRef.current) {
-      setConnectors(null);
-      return;
-    }
-
-    const measure = () => {
-      const evt = EVENTS[selectedEvent];
-      const cEl = containerRef.current;
-      const evEl = eventCardRefs.current[selectedEvent];
-      const emEl = emotionPillRefs.current[evt.emotion];
-      const bEl = barRef.current;
-
-      if (!cEl || !evEl || !emEl || !bEl) return;
-
-      const c = cEl.getBoundingClientRect();
-      const ev = evEl.getBoundingClientRect();
-      const em = emEl.getBoundingClientRect();
-      const b = bEl.getBoundingClientRect();
-
-      setConnectors({
-        x1: ev.left + ev.width / 2 - c.left,
-        y1: ev.bottom - c.top,
-        x2: em.left + em.width / 2 - c.left,
-        y2: em.top - c.top,
-        x3: em.left + em.width / 2 - c.left,
-        y3: em.bottom - c.top,
-        x4: b.left + MODES[evt.modeIndex].center * b.width - c.left,
-        y4: b.top + b.height / 2 - c.top,
-        color: isStuck ? MODE_ORANGE : MODES[evt.modeIndex].hex,
-      });
-    };
-
-    const raf = requestAnimationFrame(measure);
-    window.addEventListener("resize", measure);
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", measure);
-    };
-  }, [selectedEvent, isStuck]);
 
   return (
     <div
@@ -368,67 +274,6 @@ export default function FluidCompassExplorer() {
         transition: "border-color 300ms ease, background 300ms ease",
       }}
     >
-      {/* ─── SVG Connector Lines ─────────────── */}
-      {connectors && (
-        <svg
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-            zIndex: 1,
-          }}
-        >
-          <defs>
-            <filter
-              id="connector-glow"
-              x="-20%"
-              y="-20%"
-              width="140%"
-              height="140%"
-            >
-              <feGaussianBlur
-                in="SourceGraphic"
-                stdDeviation="3"
-                result="blur"
-              />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          {/* Event card → Emotion pill */}
-          <path
-            d={`M ${connectors.x1},${connectors.y1} C ${connectors.x1},${
-              connectors.y1 + (connectors.y2 - connectors.y1) * 0.5
-            } ${connectors.x2},${
-              connectors.y2 - (connectors.y2 - connectors.y1) * 0.5
-            } ${connectors.x2},${connectors.y2}`}
-            stroke={connectors.color}
-            strokeWidth={1.5}
-            fill="none"
-            opacity={0.45}
-            filter="url(#connector-glow)"
-          />
-          {/* Emotion pill → Mode position */}
-          <path
-            d={`M ${connectors.x3},${connectors.y3} C ${connectors.x3},${
-              connectors.y3 + (connectors.y4 - connectors.y3) * 0.5
-            } ${connectors.x4},${
-              connectors.y4 - (connectors.y4 - connectors.y3) * 0.5
-            } ${connectors.x4},${connectors.y4}`}
-            stroke={connectors.color}
-            strokeWidth={1.5}
-            fill="none"
-            opacity={0.45}
-            filter="url(#connector-glow)"
-          />
-        </svg>
-      )}
-
       {/* ─── Header ────────────────────────────── */}
       <div
         style={{
@@ -478,7 +323,7 @@ export default function FluidCompassExplorer() {
               marginBottom: 8,
             }}
           >
-            How We Respond
+            The Four-Mode Gradient
           </div>
           <div
             style={{
@@ -488,8 +333,7 @@ export default function FluidCompassExplorer() {
               maxWidth: 480,
             }}
           >
-            We perceive an event. An emotion fires. The nervous system activates
-            the mode designed for that level of threat.
+            Four modes on a continuous gradient, each corresponding to a distinct autonomic state. The nervous system selects the mode; cognition is recruited only at the after-awareness threshold.
           </div>
         </div>
         <div
@@ -563,117 +407,9 @@ export default function FluidCompassExplorer() {
               marginTop: 2,
             }}
           >
-            Click an event to trace the chain
+            Drag the needle to explore each mode
           </span>
         </div>
-      </div>
-
-      {/* ─── Event Row ─────────────────────────── */}
-      <div
-        style={{
-          padding: "20px 20px 0",
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 8,
-        }}
-      >
-        {EVENTS.map((evt, i) => {
-          const mode = MODES[evt.modeIndex];
-          const isActive = selectedEvent === i;
-          const cardColor = isStuck && isActive ? MODE_ORANGE : mode.hex;
-          return (
-            <button
-              key={evt.signal}
-              ref={(el) => { eventCardRefs.current[i] = el; }}
-              onClick={() => handleEventClick(i)}
-              style={{
-                padding: "10px 12px",
-                borderRadius: 8,
-                border: `1px solid ${
-                  isActive
-                    ? hexToRgba(cardColor, 0.5)
-                    : BORDER.default
-                }`,
-                background: isActive
-                  ? hexToRgba(cardColor, 0.06)
-                  : "transparent",
-                cursor: "pointer",
-                textAlign: "left",
-                opacity: selectedEvent !== null && !isActive ? 0.4 : 1,
-                transition: "all 250ms ease",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 10,
-                  fontFamily: FONT.mono,
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                  color: isActive ? cardColor : TEXT.muted,
-                  marginBottom: 4,
-                  transition: "color 250ms ease",
-                }}
-              >
-                {evt.signal}
-              </div>
-              <div
-                style={{
-                  fontSize: 12,
-                  color: TEXT.secondary,
-                  lineHeight: 1.5,
-                }}
-              >
-                {evt.event}
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* ─── Emotion Row ─────────────────────────── */}
-      <div
-        style={{
-          padding: "20px 20px",
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 6,
-        }}
-      >
-        {EMOTIONS.map((emotion) => {
-          const isHighlighted =
-            activeEvent !== null && activeEvent.emotion === emotion.name;
-          const pillColor = isStuck && isHighlighted
-            ? MODE_ORANGE
-            : MODES[emotion.modeIndex].hex;
-          return (
-            <span
-              key={emotion.name}
-              ref={(el) => { emotionPillRefs.current[emotion.name] = el; }}
-              style={{
-                fontSize: 11,
-                fontFamily: FONT.mono,
-                fontWeight: isHighlighted ? 600 : 400,
-                padding: "3px 10px",
-                borderRadius: 100,
-                color: isHighlighted ? pillColor : TEXT.muted,
-                background: isHighlighted
-                  ? hexToRgba(pillColor, 0.12)
-                  : "transparent",
-                border: `1px solid ${
-                  isHighlighted
-                    ? hexToRgba(pillColor, 0.25)
-                    : BORDER.default
-                }`,
-                opacity: selectedEvent !== null && !isHighlighted ? 0.4 : 1,
-                transition: "all 250ms ease",
-              }}
-            >
-              {emotion.name}
-            </span>
-          );
-        })}
       </div>
 
       {/* ─── Gradient Bar ──────────────────────── */}
@@ -832,6 +568,19 @@ export default function FluidCompassExplorer() {
           </span>
         </div>
 
+        {/* Nervous system condition */}
+        <p
+          style={{
+            fontSize: 14,
+            color: TEXT.secondary,
+            lineHeight: 1.6,
+            margin: "0 0 10px",
+            maxWidth: 640,
+          }}
+        >
+          {activeMode.condition}
+        </p>
+
         {/* Metadata */}
         <div
           style={{
@@ -841,10 +590,11 @@ export default function FluidCompassExplorer() {
             fontSize: 12,
             color: TEXT.muted,
             fontFamily: FONT.mono,
+            flexWrap: "wrap",
           }}
         >
-          {data.pattern && <span>{data.pattern}</span>}
-          {data.pattern && <span style={{ opacity: 0.4 }}>·</span>}
+          <span>{activeMode.autonomic}</span>
+          <span style={{ opacity: 0.4 }}>·</span>
           <span>{data.duration}</span>
         </div>
 
