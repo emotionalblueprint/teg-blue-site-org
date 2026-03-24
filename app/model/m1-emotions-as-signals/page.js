@@ -26,7 +26,7 @@ const ANCHOR_SECTIONS = [
   { label: "Signal Language", href: "#signalling-language" },
   { label: "Signal Anatomy", href: "#signal-anatomy" },
   { label: "Signal Reception", href: "#signal-reception" },
-  { label: "Nine Signals", href: "#nine-signals" },
+  { label: "Sixteen Signals", href: "#sixteen-signals" },
   { label: "Somatic vs Relational", href: "#two-pathways" },
   { label: "Development", href: "#developmental-consequence" },
 ];
@@ -36,17 +36,18 @@ const ANCHOR_SECTIONS = [
 export const metadata = {
   title: "Emotions as Signals (M1) | TEG-Blue Research",
   description:
-    "The nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
+    "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
   keywords: [
     "emotions as signals",
     "nervous system signals",
-    "fear anger disgust shame guilt sadness joy love envy",
+    "fear anger stress anxiety disgust shame guilt sadness joy happiness admiration pride love trust gratitude compassion",
     "somatic emotions",
     "relational emotions",
     "restoration pathway",
     "co-regulation",
     "signal interpretation",
     "emotional technology",
+    "body signature groups",
   ],
   alternates: {
     canonical: "https://teg-blue.org/model/m1-emotions-as-signals",
@@ -54,7 +55,7 @@ export const metadata = {
   openGraph: {
     title: "Emotions as Signals — M1 Input Layer | TEG-Blue",
     description:
-      "Nine emotions mapped as biological signals. What each one detects, what the body does, and what restores the cycle.",
+      "Sixteen emotions mapped as biological signals. What each one detects, what the body does, and what restores the cycle.",
     url: "https://teg-blue.org/model/m1-emotions-as-signals",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -63,7 +64,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Emotions as Signals — TEG-Blue M1",
     description:
-      "Nine emotions mapped as biological signals. The input layer of M1 Nervous System Signaling.",
+      "Sixteen emotions mapped as biological signals. The input layer of M1 Nervous System Signaling.",
   },
 };
 
@@ -87,7 +88,7 @@ export default function M1EmotionsAsSignalsPage() {
               badge="MODEL M1"
               title="Emotions as Signals"
               subtitle="The Input Layer"
-              description="Nine emotions. Each one is a biological message — a finding the nervous system is delivering about what it detected. Not about feeling. About information. The emotion is the delivery system; the signal is the content."
+              description="Sixteen emotions. Each one is a biological message — a finding the nervous system is delivering about what it detected. Not about feeling. About information. The emotion is the delivery system; the signal is the content."
               coreQuestion="What is this signal telling me?"
               drawsFrom={[
                 { label: "M1", href: "/model/m1-nervous-system-signaling" },
@@ -124,7 +125,7 @@ export default function M1EmotionsAsSignalsPage() {
                   Every emotion has three components: signal (what was detected), body response (what the body does), restoration pathway (what resolves it)
                 </li>
                 <li style={propositionItemStyle}>
-                  Nine canonical emotions, each carrying a specific finding: Fear, Anger, Disgust, Shame, Guilt, Sadness, Joy, Love, Envy
+                  Sixteen emotions organized by body signature — each carrying a specific finding. The nervous system{"'"}s signal vocabulary, from threat to bond
                 </li>
                 <li style={propositionItemStyle}>
                   Every signal is designed to be received — when Self-Emotional Awareness (SEA) is present, the signal is felt and informing; when absent, the signal distorts and memory stores inaccurately
@@ -207,7 +208,7 @@ export default function M1EmotionsAsSignalsPage() {
             </h2>
 
             <p style={proseStyle}>
-              Every emotion has three components — a universal architecture that applies across all nine signals:
+              Every emotion has three components — a universal architecture that applies across all sixteen signals:
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
@@ -227,7 +228,7 @@ export default function M1EmotionsAsSignalsPage() {
             </div>
 
             <p style={proseStyle}>
-              This architecture is universal. Fear, joy, shame, envy — each carries a different message, but each follows the same three-component structure. The message varies. The delivery system does not.
+              This architecture is universal. Fear, joy, shame, compassion — each carries a different message, but each follows the same three-component structure. The message varies. The delivery system does not.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -243,7 +244,7 @@ export default function M1EmotionsAsSignalsPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The three-component architecture applied uniformly across all nine emotions. The explicit identification of restoration pathways — not just what triggers the emotion and what it feels like, but what the signal specifically needs in order to resolve.
+                  The three-component architecture applied uniformly across all sixteen emotions. The explicit identification of restoration pathways — not just what triggers the emotion and what it feels like, but what the signal specifically needs in order to resolve.
                 </p>
               </ExpandableSection>
             </div>
@@ -298,13 +299,19 @@ export default function M1EmotionsAsSignalsPage() {
           {/* PART 2: THE NINE SIGNALS                        */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 2" title="The Nine Signals" />
+          <PartDivider label="PART 2" title="The Sixteen Signals" />
 
-          <p id="nine-signals" style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted }}>
-            Each emotion mapped as signal + body response + restoration pathway + compass behaviour across the four mode positions. Use the explorer above for the interactive view.
+          <p id="sixteen-signals" style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted }}>
+            Each emotion mapped as signal + body response + restoration pathway + compass behaviour across the four mode positions. Organized by body signature group — what the body does with each signal. Use the explorer above for the interactive view.
           </p>
 
-          {/* ─── C2: FEAR ────────────────────────────────── */}
+          {/* ═══ MOBILIZATION ═══════════════════════════ */}
+          <BodySignatureHeading
+            label="Mobilization"
+            signature="Sympathetic activation, energy rises"
+          />
+
+          {/* ─── FEAR ──────────────────────────────────── */}
           <EmotionSection
             id="fear"
             name="Fear"
@@ -330,7 +337,39 @@ export default function M1EmotionsAsSignalsPage() {
             addition="Anger reframed as a boundary-maintenance signal rather than a problem to manage. The compass reveals what happens when the signal cannot complete: rerouting varies by mode position."
           />
 
-          {/* ─── C4: DISGUST ─────────────────────────────── */}
+          {/* ─── STRESS ───────────────────────────────── */}
+          <EmotionSection
+            id="stress"
+            name="Stress"
+            signal="Demand-resource mismatch detected"
+            type="Somatic"
+            body="HPA axis activation. Cortisol rises, energy redirects toward the demand. The body prioritises the mismatch and mobilises toward resolution. Stress is an allocation signal — it evolved to concentrate resources on whatever is currently exceeding capacity."
+            restoration="The demand must be met or the resource must be restored. When the gap closes, the activation discharges. When it does not close — when the demands remain permanently above resources — the signal becomes chronic and cortisol remains elevated."
+            compassInsight="At Safety & Openness, stress is an honest signal — demands are felt and addressed. When the compass is stuck, stress becomes invisible from inside: the person operates in permanent demand-resource mismatch without recognising it as a signal."
+            research="Sapolsky (2004) — glucocorticoid stress response and chronic activation. McEwen (1998) — allostatic load and the cost of chronic stress adaptation. Selye (1956) — general adaptation syndrome."
+            addition="Stress reframed as a demand-resource mismatch signal rather than a general state. The three-component architecture applies: what was detected, what the body does, what resolves it."
+          />
+
+          {/* ─── ANXIETY ───────────────────────────────── */}
+          <EmotionSection
+            id="anxiety"
+            name="Anxiety"
+            signal="Anticipatory threat"
+            type="Somatic (relational when chronic)"
+            body={<>Chronic cortisol elevation. The bed nucleus of the stria terminalis (BNST) activates — the sustained anxiety circuit, distinct from the amygdala{"'"}s acute fear response. The body scans continuously, preparing for something that has not arrived. Anxiety is an anticipatory signal — it evolved to maintain readiness for unresolved conditions.</>}
+            restoration={<>The uncertainty must resolve. Either the future condition is assessed and accepted, the threat materialises and is addressed (converting anxiety to fear, which has a clear discharge pathway), or the person{"'"}s capacity to tolerate uncertainty is supported relationally. Chronic relational anxiety — the kind that centers on whether connection will be maintained or lost — requires relational evidence, not somatic discharge.</>}
+            compassInsight="The distinction between acute and chronic anxiety maps onto the compass: acute anxiety is a mobilisation signal that resolves when the uncertainty is addressed. Chronic relational anxiety — will I be left, will the connection survive — is a stuck compass signal. The body cannot discharge what it is waiting for another nervous system to resolve."
+            research="Davis, Walker, Miles &amp; Grillon (2010) — BNST as sustained anxiety circuit distinct from amygdala fear. Grillon (2008) — anticipatory anxiety and unpredictable threat. Barlow (2002) — anxiety as future-oriented mood state."
+            addition="Anxiety distinguished from Fear by temporal orientation and neural substrate — anticipatory vs immediate, BNST vs amygdala. The somatic/relational boundary applies: acute anxiety can discharge somatically; chronic relational anxiety requires relational evidence."
+          />
+
+          {/* ═══ EXPULSION ═══════════════════════════════ */}
+          <BodySignatureHeading
+            label="Expulsion"
+            signature="Visceral rejection, nausea, closure"
+          />
+
+          {/* ─── DISGUST ───────────────────────────────── */}
           <EmotionSection
             id="disgust"
             name="Disgust"
@@ -343,7 +382,13 @@ export default function M1EmotionsAsSignalsPage() {
             addition="Disgust traced across the compass reveals its role in dehumanisation. The nervous system generates the same rejection response regardless of whether the target is a toxin or a person."
           />
 
-          {/* ─── C5: SHAME ───────────────────────────────── */}
+          {/* ═══ SOCIAL WITHDRAWAL ═════════════════════ */}
+          <BodySignatureHeading
+            label="Social Withdrawal"
+            signature="Shrinking, heat, pull inward"
+          />
+
+          {/* ─── SHAME ─────────────────────────────────── */}
           <EmotionSection
             id="shame"
             name="Shame"
@@ -369,7 +414,13 @@ export default function M1EmotionsAsSignalsPage() {
             addition="Guilt identified as requiring relational restoration — the other person's experience must be felt through Emotional Resonance (ER), not just cognitively registered. Performed apology does not resolve guilt because the somatic channel (ER) is not engaged."
           />
 
-          {/* ─── C7: SADNESS ─────────────────────────────── */}
+          {/* ═══ CONSERVATION ══════════════════════════ */}
+          <BodySignatureHeading
+            label="Conservation"
+            signature="Slowing, tears, energy turns inward"
+          />
+
+          {/* ─── SADNESS ───────────────────────────────── */}
           <EmotionSection
             id="sadness"
             name="Sadness"
@@ -382,7 +433,13 @@ export default function M1EmotionsAsSignalsPage() {
             addition="Sadness mapped as both somatic and relational depending on the nature of the loss. Grief (relational sadness) requires the presence of someone who holds without fixing — a specific relational condition, not a general support need."
           />
 
-          {/* ─── C8: JOY ─────────────────────────────────── */}
+          {/* ═══ APPROACH & EXPANSION ══════════════════ */}
+          <BodySignatureHeading
+            label="Approach & Expansion"
+            signature="Opening, energy moves outward"
+          />
+
+          {/* ─── JOY ───────────────────────────────────── */}
           <EmotionSection
             id="joy"
             name="Joy"
@@ -395,7 +452,52 @@ export default function M1EmotionsAsSignalsPage() {
             addition="Joy reframed as a safety-confirmation signal rather than a goal state. The compass reveals the transformation: the signal is present at every position, but what the mode allows it to become changes completely."
           />
 
-          {/* ─── C9: LOVE ────────────────────────────────── */}
+          {/* ─── HAPPINESS ─────────────────────────────── */}
+          <EmotionSection
+            id="happiness"
+            name="Happiness"
+            signal="Sustained positive condition present"
+            type="Somatic"
+            body="General positive affect. Serotonergic tone rises. The body maintains openness without the urgency of approach — a settled, sustained state rather than a mobilisation toward something. Happiness is a condition signal — it registers that things are as they should be."
+            restoration="Presence without interruption. The signal completes through continued contact with the condition that produced it. Happiness that must be performed, defended, or justified cannot complete."
+            compassInsight={<>Unlike Joy{"'"}s acute spike, Happiness is a sustained state — and therefore more vulnerable to the compass. At stuck Safety & Openness it becomes performed positivity. At stuck Strategy & Management it becomes a maintained image. The sustained signal requires sustained awareness to receive it.</>}
+            research="Seligman (2002) — authentic happiness and well-being theory. Diener (2000) — subjective well-being as ongoing state. Berridge &amp; Kringelbach (2015) — distinction between wanting (dopamine) and liking (opioid/serotonergic)."
+            addition="Happiness distinguished from Joy by temporal profile and neural substrate — sustained serotonergic tone vs acute dopaminergic approach. Both are approach-and-expansion signals, but Happiness registers an ongoing condition rather than an event."
+          />
+
+          {/* ─── ADMIRATION ─────────────────────────────── */}
+          <EmotionSection
+            id="admiration"
+            name="Admiration"
+            signal="Value detected in another"
+            type="Somatic"
+            body="Orientation toward the other. The body opens in the direction of what was detected — approach, inspiration, sometimes a brief pause of recognition. Admiration is a detection signal — it evolved to identify what is valuable in the environment and orient the person toward it."
+            restoration="Presence with the recognition. The signal completes through allowing the detection to land — feeling the recognition without converting it into comparison, obligation, or self-diminishment."
+            compassInsight={<>When Self-Emotional Awareness (SEA) is present, Admiration is received: the person feels the recognition, orients toward what was detected, and the signal completes. <strong style={{ color: TEXT.primary }}>When SEA is absent and the compass is stuck, the same detection cannot be received as Admiration. What the person experiences instead is Envy</strong> — the signal has distorted. The original finding (value detected in another) is the same. What changed is whether the person could receive it.</>}
+            research="Algoe &amp; Haidt (2009) — admiration as an other-praising emotion. Immordino-Yang, McColl, Damasio &amp; Damasio (2009) — neural correlates of admiration and compassion."
+            addition="Admiration identified as a distinct signal with its own body signature and restoration pathway. The Admiration → Envy distortion is traced as a structural consequence of SEA being offline — not a moral failing but a perceptual one."
+          />
+
+          {/* ─── PRIDE ──────────────────────────────────── */}
+          <EmotionSection
+            id="pride"
+            name="Pride"
+            signal="Own value or contribution recognized"
+            type="Somatic"
+            body="Expansion, warmth, upward energy. The body opens from the inside — chest lifts, posture shifts. Pride is a self-recognition signal — it evolved to reinforce behaviours and qualities that serve survival and group contribution."
+            restoration={<>Presence with the recognition, without requiring external validation. The signal completes through the person{"'"}s own awareness of their contribution. Pride that depends on others confirming it, or Pride that requires positioning above others, has not completed — it has been routed through Control or Domination.</>}
+            compassInsight={<>When Self-Emotional Awareness (SEA) is present, Pride is received as internal recognition. <strong style={{ color: TEXT.primary }}>When SEA is absent and the compass is stuck, the same self-recognition cannot be received as Pride. What the person experiences instead is Arrogance</strong> — elevation over others as a substitute for internal recognition. The original signal (own value detected) is the same. What changed is whether the person could receive it.</>}
+            research="Tracy &amp; Robins (2007) — authentic vs hubristic pride. Williams &amp; DeSteno (2008) — pride as a functional social emotion. Tangney (1999) — pride and self-conscious emotion."
+            addition="Pride identified as a distinct signal with its own restoration pathway. The Pride → Arrogance distortion is traced as a structural consequence of SEA being offline — the same mechanism as Admiration → Envy."
+          />
+
+          {/* ═══ BONDING & PROXIMITY ════════════════════ */}
+          <BodySignatureHeading
+            label="Bonding & Proximity"
+            signature="Orientation toward the other"
+          />
+
+          {/* ─── LOVE ──────────────────────────────────── */}
           <EmotionSection
             id="love"
             name="Love"
@@ -408,18 +510,78 @@ export default function M1EmotionsAsSignalsPage() {
             addition="Love traced across the compass reveals that the signal persists at every position — what changes is the mode's transformation of it. At stuck Power & Dominance, care exists but is indistinguishable from control."
           />
 
-          {/* ─── C10: ENVY ───────────────────────────────── */}
+          {/* ─── TRUST ─────────────────────────────────── */}
           <EmotionSection
-            id="envy"
-            name="Envy"
-            signal="Gap detected"
-            type="Somatic"
-            body="Tension, comparison, the pull toward either acquisition or diminishment. Envy is a gap-detection signal — it evolved to identify what is needed and motivate action to close the distance."
-            restoration="The gap must either close (the person acquires the resource or develops the quality) or be accepted (the person integrates the reality without it threatening belonging). Envy that cannot resolve stays open as chronic comparison."
-            compassInsight="In a fluid compass, envy becomes honest wanting and growth. At stuck Power & Dominance, envy becomes destruction — if the gap cannot be closed, what is envied must be eliminated. The same signal produces radically different outcomes depending on where the compass is."
-            research="Smith &amp; Kim (2007) — envy as a social comparison emotion. Crusius, Gonzalez, Lange &amp; Cohen-Charash (2020) — envy as a functional emotion. Festinger (1954) — social comparison theory."
-            addition="Envy reframed as a gap-detection signal rather than a moral failing. The compass reveals the full transformation from admiration to destruction."
+            id="trust"
+            name="Trust"
+            signal="Safety confirmed in a specific person"
+            type="Relational"
+            body="Guard-dropping. Vagal tone shifts — the body moves from monitoring to open contact. The muscles around the eyes and throat soften. Openness extends toward the specific source of the signal. Trust is one of the slowest signals to build and the fastest to collapse — it accumulates through repeated evidence and can be destroyed by a single violation."
+            restoration={<>Reciprocity — the signal met with equivalent openness. Trust completes when the person{"'"}s openness is matched by the other{"'"}s. Trust that is extended without being met — or that is met with exploitation — does not complete.</>}
+            compassInsight="Trust is the most specific of the bonding signals — it narrows openness to where the evidence supports it. When the compass is stuck, Trust either extends indiscriminately (stuck Connection) or cannot extend at all (stuck Protection, Control, Domination). The specificity that makes Trust functional is the first thing chronicity destroys."
+            research="Rempel, Holmes &amp; Zanna (1985) — trust as a relationship-specific construct. Kosfeld, Heinrichs, Zak, Fischbacher &amp; Fehr (2005) — oxytocin and trust. Balliet &amp; Van Lange (2013) — trust as social signal."
+            addition="Trust identified as a distinct relational signal — not a general disposition but a nervous system evaluation of specific safety. The slow-build/fast-collapse asymmetry mapped as a structural feature of the signal."
           />
+
+          {/* ─── GRATITUDE ──────────────────────────────── */}
+          <EmotionSection
+            id="gratitude"
+            name="Gratitude"
+            signal="Something needed was received"
+            type="Relational"
+            body="Warmth, orientation toward the other, brief vulnerability in receiving. The body opens in the direction of the source — not with the approach energy of Joy, but with the settling of something received. Gratitude requires a moment of asymmetry: the person is in the position of having received, which activates a brief vulnerability."
+            restoration="Expression — the signal completing through acknowledgment. Gratitude that is felt but unexpressed stays partially open. The cycle closes through the recognition reaching the other person — not as performance, but as genuine contact with what was received."
+            compassInsight="Gratitude requires receiving — and receiving requires vulnerability. When the compass is stuck at Strategy & Management or Power & Dominance, receiving is structurally unavailable because it positions the person as the one who needed something. The signal cannot fire when the mode prevents the position it requires."
+            research="Emmons &amp; McCullough (2003) — gratitude as relational emotion. Algoe (2012) — find, remind, and bind theory of gratitude. McCullough, Kilpatrick, Emmons &amp; Larson (2001) — gratitude as moral affect."
+            addition="Gratitude identified as requiring relational completion — not through internal appreciation but through expression that reaches the other. The vulnerability inherent in receiving mapped as the mechanism that chronic modes suppress."
+          />
+
+          {/* ─── COMPASSION ─────────────────────────────── */}
+          <EmotionSection
+            id="compassion"
+            name="Compassion"
+            signal={<>The other{"'"}s state resonates and calls for approach</>}
+            type="Relational"
+            body={<>Movement toward the other. The body orients, approaches, reaches. There is resonance with the other{"'"}s state — the person feels something of what the other is feeling — but without merger. Compassion maintains the boundary between the person{"'"}s own state and the other{"'"}s. When the boundary collapses, Compassion becomes absorption (stuck Connection).</>}
+            restoration={<>Contact with the other{"'"}s state without absorption. The signal completes through presence with the other — not fixing, not taking on their pain, but being in contact with their state while remaining in one{"'"}s own body. Compassion that absorbs does not complete for either person.</>}
+            compassInsight="Compassion requires both Emotional Resonance (ER) and a maintained boundary — feeling what the other feels without becoming it. When the compass is stuck at Safety & Openness, the boundary dissolves and Compassion becomes absorption. When stuck at Strategy & Management or Power & Dominance, the resonance is suppressed and what appears as compassion is strategic care."
+            research="Singer &amp; Klimecki (2014) — compassion vs empathic distress, distinct neural pathways. Goetz, Keltner &amp; Simon-Thomas (2010) — compassion as a distinct affective state. Neff (2003) — self-compassion as a construct."
+            addition="Compassion identified as a relational signal that requires maintained boundary — distinguishing it from absorption (boundary collapse) and strategic care (resonance suppression). The ER + boundary requirement maps directly to M2 capacity states."
+          />
+
+          {/* ═══ DISTORTIONS ════════════════════════════ */}
+          <section
+            id="distortions"
+            aria-labelledby="heading-distortions"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-distortions"
+              style={sectionHeadingStyle}
+            >
+              Distortions: Envy and Arrogance
+            </h2>
+
+            <p style={proseStyle}>
+              Envy and Arrogance are not emotions in the same sense as the sixteen signals above. They are what occupies the space where Admiration and Pride would have been — when Self-Emotional Awareness (SEA) is absent and the compass is stuck.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Envy</strong> is the distortion of Admiration. When a person detects value in another but cannot receive that detection through Self-Emotional Awareness (SEA), the signal does not land as recognition. What the person experiences instead is the gap — the distance between what was detected in the other and what is absent in the self. The original signal (value detected) is the same. What changed is whether it could be received.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Arrogance</strong> is the distortion of Pride. When a person{"'"}s own value or contribution cannot be received through Self-Emotional Awareness (SEA), the signal does not land as self-recognition. What the person experiences instead is elevation — positioning above others as a substitute for internal recognition.
+            </p>
+
+            <p style={proseStyle}>
+              Both distortions appear only in the stuck compass, and only in Strategy & Management and Power & Dominance positions — they cannot exist at Safety & Openness or Threat & Defence because those positions do not generate the strategic or power-based response that the distortions require.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The Admiration → Envy and Pride → Arrogance pathways are the clearest illustration of a general principle: when Self-Emotional Awareness (SEA) is absent, the signal does not disappear — it distorts. The finding is the same. Whether it can be received determines what the person experiences.
+            </OperationalStatement>
+          </section>
 
           {/* ════════════════════════════════════════════════ */}
           {/* PART 3: THE ARCHITECTURE                        */}
@@ -444,10 +606,10 @@ export default function M1EmotionsAsSignalsPage() {
               Not all emotions can complete their cycle alone. This is not a weakness or a failure. It is biology.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Somatic emotions</strong> — those whose content is about the body{"'"}s own state (a physical threat, a boundary crossed, a startle, mobilised energy) — can complete through the body{"'"}s own channels when conditions allow. Breathing, movement, time. The cycle can close internally.
+              <strong style={{ color: TEXT.primary }}>Somatic emotions</strong> — those whose content is about the body{"'"}s own state (a physical threat, a boundary crossed, a startle, mobilised energy, a demand-resource mismatch, a value detected) — can complete through the body{"'"}s own channels when conditions allow. Breathing, movement, time. The cycle can close internally.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Relational emotions</strong> — Shame and Guilt primarily, with relational components in Sadness and Love — cannot complete this way. Their content is not about the body{"'"}s state. It is about belonging. The signal these emotions carry is: <em>something is wrong with me in relation to you.</em> The body is not waiting for somatic discharge. It is waiting for relational evidence.
+              <strong style={{ color: TEXT.primary }}>Relational emotions</strong> — Shame, Guilt, Love, Trust, Gratitude, Compassion, with relational components in Sadness and Anxiety — cannot complete this way. Their content is not about the body{"'"}s state. It is about belonging, connection, or the state of the bond. The signal these emotions carry is: <em>something is happening between me and you.</em> The body is not waiting for somatic discharge. It is waiting for relational evidence.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -469,6 +631,14 @@ export default function M1EmotionsAsSignalsPage() {
                 <div style={gridCellStyle}>Somatic</div>
                 <div style={gridCellStyle}>Boundary reasserted or acknowledged</div>
 
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stress</div>
+                <div style={gridCellStyle}>Somatic</div>
+                <div style={gridCellStyle}>Demand met or resource restored</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anxiety</div>
+                <div style={gridCellStyle}>Somatic / Relational</div>
+                <div style={gridCellStyle}>Uncertainty resolves; chronic relational anxiety needs relational evidence</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Disgust</div>
                 <div style={gridCellStyle}>Somatic</div>
                 <div style={gridCellStyle}>Contaminant removed, distance established</div>
@@ -489,13 +659,33 @@ export default function M1EmotionsAsSignalsPage() {
                 <div style={gridCellStyle}>Somatic</div>
                 <div style={gridCellStyle}>Full presence, experienced in body</div>
 
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Happiness</div>
+                <div style={gridCellStyle}>Somatic</div>
+                <div style={gridCellStyle}>Presence without interruption</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Admiration</div>
+                <div style={gridCellStyle}>Somatic</div>
+                <div style={gridCellStyle}>Presence with recognition, without comparison</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Pride</div>
+                <div style={gridCellStyle}>Somatic</div>
+                <div style={gridCellStyle}>Presence with self-recognition, without external validation</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
                 <div style={{ ...gridCellStyle, color: SPECTRUM.sky }}>Relational</div>
                 <div style={gridCellStyle}>Signal received and returned — genuine felt presence</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Envy</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Gap closes or is accepted</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trust</div>
+                <div style={{ ...gridCellStyle, color: SPECTRUM.sky }}>Relational</div>
+                <div style={gridCellStyle}>Openness matched by equivalent openness</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gratitude</div>
+                <div style={{ ...gridCellStyle, color: SPECTRUM.sky }}>Relational</div>
+                <div style={gridCellStyle}>Expression reaching the other — genuine contact with what was received</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Compassion</div>
+                <div style={{ ...gridCellStyle, color: SPECTRUM.sky }}>Relational</div>
+                <div style={gridCellStyle}>Contact with other{"'"}s state without absorption</div>
               </div>
             </div>
 
@@ -630,7 +820,7 @@ export default function M1EmotionsAsSignalsPage() {
             "@id": "https://teg-blue.org/model/m1-emotions-as-signals#article",
             headline: "Emotions as Signals: The Input Layer",
             description:
-              "Nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
+              "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -642,7 +832,7 @@ export default function M1EmotionsAsSignalsPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-21",
-            dateModified: "2026-03-22",
+            dateModified: "2026-03-24",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -694,14 +884,14 @@ export default function M1EmotionsAsSignalsPage() {
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What are the nine emotions in the TEG-Blue system?",
+                question: "What are the sixteen emotions in the TEG-Blue system?",
                 answer:
-                  "TEG-Blue maps nine canonical emotions as biological signals: Fear (threat detected), Anger (boundary crossed), Disgust (contamination detected), Shame (belonging at risk), Guilt (harm done), Sadness (loss), Joy (safety confirmed), Love (bond), and Envy (gap detected). Each carries a specific finding from the nervous system's continuous evaluation of the environment.",
+                  "TEG-Blue maps sixteen emotions as biological signals, organized by body signature group: Mobilization (Fear, Anger, Stress, Anxiety), Expulsion (Disgust), Social Withdrawal (Shame, Guilt), Conservation (Sadness), Approach & Expansion (Joy, Happiness, Admiration, Pride), and Bonding & Proximity (Love, Trust, Gratitude, Compassion). Each carries a specific finding from the nervous system's continuous evaluation of the environment. Envy and Arrogance are mapped as distortions — what occupies the space where Admiration and Pride would have been when SEA is absent.",
               },
               {
                 question: "What is the difference between somatic and relational emotions?",
                 answer:
-                  "Somatic emotions (Fear, Anger, Disgust, Joy, Envy) can complete their cycle through the body's own channels — breathing, movement, time. Relational emotions (Shame, Guilt, and aspects of Sadness and Love) cannot complete alone. Their content is about belonging, and the nervous system waits for relational evidence — another person staying present without contempt. Co-regulation is the only restoration pathway.",
+                  "Somatic emotions (Fear, Anger, Stress, Disgust, Joy, Happiness, Admiration, Pride) can complete their cycle through the body's own channels — breathing, movement, time. Relational emotions (Shame, Guilt, Love, Trust, Gratitude, Compassion) cannot complete alone. Their content is about belonging or the state of the bond. Anxiety and Sadness have both somatic and relational components. Co-regulation is the only restoration pathway for relational emotions.",
               },
               {
                 question: "Why can't breathing resolve shame?",
@@ -841,6 +1031,45 @@ function PartDivider({ label, title }) {
       >
         {title}
       </h2>
+    </div>
+  );
+}
+
+function BodySignatureHeading({ label, signature }) {
+  return (
+    <div
+      style={{
+        marginBottom: 20,
+        marginTop: 8,
+        paddingTop: 16,
+        paddingBottom: 8,
+        paddingLeft: 14,
+        borderLeft: `3px solid ${hexToRgba(MODEL_COLOR, 0.3)}`,
+      }}
+    >
+      <span
+        style={{
+          fontFamily: FONT.mono,
+          fontSize: 11,
+          fontWeight: 700,
+          letterSpacing: "0.06em",
+          textTransform: "uppercase",
+          color: MODEL_COLOR,
+        }}
+      >
+        {label}
+      </span>
+      <p
+        style={{
+          fontFamily: FONT.display,
+          fontSize: 12,
+          color: TEXT.muted,
+          margin: "2px 0 0",
+          fontStyle: "italic",
+        }}
+      >
+        {signature}
+      </p>
     </div>
   );
 }

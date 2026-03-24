@@ -128,6 +128,50 @@ export const EMOTIONS = [
     },
   },
   {
+    key: 'stress',
+    name: 'Stress',
+    signal: 'Demand-resource mismatch',
+    bodyResponse: 'HPA axis activation — cortisol rises, energy redirects toward the demand, body prioritises the mismatch and mobilises toward resolution',
+    restorationNeeds: 'Demand must be met or resource restored — when the gap closes, the activation discharges; when it does not, cortisol remains elevated',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'protection',
+    fluidCompass: {
+      connection: 'Reads the mismatch, mobilises toward the challenge proportionally',
+      protection: 'Temporary activation — body prepares for the demand, releases when met',
+      control: 'Brief prioritising — focuses attention on what requires action, then releases',
+      domination: 'Momentary intensity spike — energy rises to meet the demand and self-regulates',
+    },
+    stuckCompass: {
+      connection: 'Absorbed from environment — carries others\' demand states as own, no boundary',
+      protection: 'Permanent baseline — demand-resource gap never closes, activation becomes resting state',
+      control: 'Channeled into over-functioning — managed through doing rather than resolved',
+      domination: 'Projected outward — discharged by imposing demands on others',
+    },
+  },
+  {
+    key: 'anxiety',
+    name: 'Anxiety',
+    signal: 'Anticipatory threat',
+    bodyResponse: 'Chronic cortisol elevation — BNST activates (sustained anxiety circuit, distinct from amygdala\'s acute fear), body scans continuously for unresolved future conditions',
+    restorationNeeds: 'Uncertainty must resolve — future condition assessed and accepted, threat materialises and converts to actionable fear, or relational support for tolerating uncertainty',
+    type: 'somatic',
+    restorationType: 'somatic or relational',
+    defaultMode: 'protection',
+    fluidCompass: {
+      connection: 'Anticipatory threat reaches awareness, system prepares for unresolved future condition',
+      protection: 'Temporary alertness — scans for what is not yet certain, settles when assessed',
+      control: 'Brief scenario-mapping — plans for contingencies, then releases',
+      domination: 'Momentary overwhelm — spike brought back within range',
+    },
+    stuckCompass: {
+      connection: 'Chronic and relational — stays activated around whether connection will be maintained or lost',
+      protection: 'Permanent anticipatory threat — the future reads as consistently dangerous',
+      control: 'Channeled into planning and preparation — managed through scenario-control',
+      domination: 'Projected as urgency onto others — activation transferred, others carry the anticipatory state',
+    },
+  },
+  {
     key: 'disgust',
     name: 'Disgust',
     signal: 'Contamination detected',
@@ -238,6 +282,64 @@ export const EMOTIONS = [
     },
   },
   {
+    key: 'happiness',
+    name: 'Happiness',
+    signal: 'Sustained positive condition',
+    bodyResponse: 'Serotonergic tone rises — general positive affect, body maintains openness without urgency of approach, a settled sustained state',
+    restorationNeeds: 'Presence without interruption — the signal completes through continued contact with the condition that produced it',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'connection',
+    fluidCompass: {
+      connection: 'Felt as a genuine positive state, without performance or suppression',
+      protection: 'Received and briefly checked for reliability, then settles',
+      control: 'Motivates maintaining the condition, then releases',
+      domination: 'Momentary overflow — energy rises and self-regulates',
+    },
+    stuckCompass: {
+      connection: 'Performed to maintain connection — genuine states suppressed to remain acceptable',
+      protection: 'Blocked — positive conditions read as setups in chronic threat environment',
+      control: 'Curated and timed — felt only when conditions are sufficiently managed',
+      domination: 'Used as display — signals superiority or deployed to make others aware of the gap',
+    },
+  },
+  {
+    key: 'admiration',
+    name: 'Admiration',
+    signal: 'Value detected in another',
+    bodyResponse: 'Orientation toward the other — body opens in the direction of what was detected, approach and inspiration, sometimes a brief pause of recognition',
+    restorationNeeds: 'Presence with the recognition — allowing the detection to land without converting it into comparison, obligation, or self-diminishment',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'connection',
+    distortedBy: 'envy',
+    fluidCompass: {
+      connection: 'Inspires approach and orientation toward what was detected in the other',
+      protection: 'Brief self-assessment, then returns to recognition of the other',
+      control: 'Motivates identifying how to develop or acquire what was recognised',
+      domination: 'Detection briefly activates own position, then returns to the other',
+    },
+    stuckCompass: null,  // In stuck compass, Envy occupies this space
+  },
+  {
+    key: 'pride',
+    name: 'Pride',
+    signal: 'Own value recognised',
+    bodyResponse: 'Expansion, warmth, upward energy — chest lifts, posture shifts, the body opens from the inside',
+    restorationNeeds: 'Presence with the recognition, without requiring external validation — the signal completes through own awareness of contribution',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'connection',
+    distortedBy: 'arrogance',
+    fluidCompass: {
+      connection: 'Recognition of own value, shared without requiring external confirmation',
+      protection: 'Temporary self-assertion, then settles without needing validation',
+      control: 'Registers achievement and releases',
+      domination: 'Energy rises with the signal, self-regulates without positioning above others',
+    },
+    stuckCompass: null,  // In stuck compass, Arrogance occupies this space
+  },
+  {
     key: 'love',
     name: 'Love',
     signal: 'Bond',
@@ -260,25 +362,114 @@ export const EMOTIONS = [
     },
   },
   {
-    key: 'envy',
-    name: 'Envy',
-    signal: 'Gap',
-    bodyResponse: 'Tension, comparison, pull toward acquisition or diminishment — gap-detection signal',
-    restorationNeeds: 'Gap must close (resource acquired) or be accepted (reality integrated without threat)',
-    type: 'somatic',
-    restorationType: 'somatic',
-    defaultMode: 'protection',
+    key: 'trust',
+    name: 'Trust',
+    signal: 'Safety confirmed in a specific person',
+    bodyResponse: 'Guard-dropping — vagal tone shifts, body moves from monitoring to open contact, muscles around eyes and throat soften',
+    restorationNeeds: 'Reciprocity — the signal met with equivalent openness; trust extended must be matched by the other\'s',
+    type: 'relational',
+    restorationType: 'relational',
+    defaultMode: 'connection',
     fluidCompass: {
-      connection: 'Turns envy into admiration and learning',
-      protection: 'Feels the gap, uses it as signal',
-      control: 'Channels envy into strategic action',
-      domination: 'Eliminates the obstacle with full awareness',
+      connection: 'Confirmed safety in a specific person, openness extends toward the other',
+      protection: 'Checked against available information, then settles',
+      control: 'Motivates assessment of reliability, then releases',
+      domination: 'Pull to maintain guard is recognised and releases',
     },
     stuckCompass: {
-      connection: 'Self-erasure — "you deserve everything, I deserve nothing"',
-      protection: 'Chronic comparison — always measuring, never enough',
-      control: 'Strategic undermining — quietly works to level the playing field',
-      domination: 'Destroying what others have — "if I can\'t have it, neither can you"',
+      connection: 'Indiscriminate — openness extends to whoever is present regardless of evidence',
+      protection: 'Absent — every person reads as a potential threat, the signal cannot activate',
+      control: 'Conditional — reliability must be continuously verified and maintained',
+      domination: 'Feigned strategically — performed to lower the other\'s guard',
+    },
+  },
+  {
+    key: 'gratitude',
+    name: 'Gratitude',
+    signal: 'Something needed was received',
+    bodyResponse: 'Warmth, orientation toward the other, brief vulnerability in receiving — body opens toward the source with the settling of something received',
+    restorationNeeds: 'Expression — the signal completing through acknowledgment that reaches the other person, not as performance but as genuine contact',
+    type: 'relational',
+    restorationType: 'relational',
+    defaultMode: 'connection',
+    fluidCompass: {
+      connection: 'Recognition of what was received, orientation toward the other',
+      protection: 'Brief vulnerability in receiving, then settles',
+      control: 'Motivates expression, then releases',
+      domination: 'Momentary discomfort with asymmetry of receiving, redirected toward expression',
+    },
+    stuckCompass: {
+      connection: 'Performed to secure belonging — expressed out of necessity rather than genuine recognition',
+      protection: 'Blocked — receiving activates suspicion about cost or intent',
+      control: 'Transactional — what was received is tracked, gratitude creates obligation',
+      domination: 'Demanded but not reciprocated — the other\'s expression expected as acknowledgment of position',
+    },
+  },
+  {
+    key: 'compassion',
+    name: 'Compassion',
+    signal: 'Other\'s state resonates, calls for approach',
+    bodyResponse: 'Movement toward the other — body orients, approaches, reaches; resonance with the other\'s state while maintaining boundary',
+    restorationNeeds: 'Contact with the other\'s state without absorption — presence without fixing, being in contact while remaining in own body',
+    type: 'relational',
+    restorationType: 'relational',
+    defaultMode: 'connection',
+    fluidCompass: {
+      connection: 'Resonance with the other\'s state, movement toward them without merger',
+      protection: 'Own pain activates briefly in contact with the other\'s, recalibrates and responds',
+      control: 'Assesses what is needed, then acts',
+      domination: 'Pull to distance recognised and redirected toward presence',
+    },
+    stuckCompass: {
+      connection: 'Without boundary — the other\'s pain absorbed entirely, self disappears into caregiving',
+      protection: 'Blocked — the other\'s pain triggers own activation, cannot maintain contact',
+      control: 'Managed through problem-solving — the other\'s state addressed instrumentally, not received',
+      domination: 'Performed as display — used to establish moral position rather than connect',
+    },
+  },
+];
+
+// ─── BODY SIGNATURE GROUPS ───────────────────────────────────────
+// Source: root--emotions-as-signals.md §Body Signature Groups
+// Emotions cluster by what the body does with them — the physiological signature.
+
+export const BODY_SIGNATURE_GROUPS = [
+  { key: 'mobilization', label: 'Mobilization', signature: 'Sympathetic activation, energy rises', emotions: ['fear', 'anger', 'stress', 'anxiety'] },
+  { key: 'expulsion', label: 'Expulsion', signature: 'Visceral rejection, nausea, closure', emotions: ['disgust'] },
+  { key: 'social-withdrawal', label: 'Social Withdrawal', signature: 'Shrinking, heat, pull inward', emotions: ['shame', 'guilt'] },
+  { key: 'conservation', label: 'Conservation', signature: 'Slowing, tears, energy turns inward', emotions: ['sadness'] },
+  { key: 'approach', label: 'Approach & Expansion', signature: 'Opening, energy moves outward', emotions: ['joy', 'happiness', 'admiration', 'pride'] },
+  { key: 'bonding', label: 'Bonding & Proximity', signature: 'Orientation toward the other', emotions: ['love', 'trust', 'gratitude', 'compassion'] },
+];
+
+// ─── DISTORTIONS ─────────────────────────────────────────────────
+// Source: root--emotions-as-signals.md §Distortions: Envy and Arrogance
+// Not emotions — what occupies the space where Admiration and Pride would have been
+// when SEA is absent and the compass is stuck. Only appear in Control and Domination.
+
+export const DISTORTIONS = [
+  {
+    key: 'envy',
+    name: 'Envy',
+    distortionOf: 'admiration',
+    description: 'What occupies the space where Admiration would have been — when SEA is absent and the compass is stuck. The original detection (value in another) is the same; what changed is whether it could be received.',
+    stuckCompass: {
+      connection: null,
+      protection: null,
+      control: 'Strategic undermining — the gap motivates quietly levelling the other\'s position',
+      domination: 'Destroying what others have — if the gap cannot close, the other\'s resource is eliminated',
+    },
+  },
+  {
+    key: 'arrogance',
+    name: 'Arrogance',
+    distortionOf: 'pride',
+    description: 'What occupies the space where Pride would have been — when SEA is absent and the compass is stuck. Own value cannot be received through SEA; elevation above others substitutes for internal recognition.',
+    stuckCompass: {
+      connection: null,
+      protection: null,
+      control: 'Superiority as management tool — own value maintained by keeping others positioned below',
+      domination: 'Signals dominance — reinforces superiority, prevents contact, creates distance',
     },
   },
 ];

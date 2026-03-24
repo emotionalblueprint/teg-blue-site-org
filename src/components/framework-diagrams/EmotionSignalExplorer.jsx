@@ -5,11 +5,14 @@ import {
   FONT, TEXT, BG, BORDER,
   SPECTRUM, PATTERN, hexToRgba, RADIUS,
 } from "@/src/styles/tokens";
-import { EMOTIONS } from "@/src/data/compass-diagram-data";
+import {
+  EMOTIONS, BODY_SIGNATURE_GROUPS, DISTORTIONS,
+} from "@/src/data/compass-diagram-data";
 
 // ─── CONSTANTS ──────────────────────────────────────
 
 const ACCENT = SPECTRUM.azure;
+const WARN = SPECTRUM.slate;
 
 const MODE_COLUMNS = [
   { key: "connection", label: "Connection", condition: "Safety & Openness", color: PATTERN.A.primary },
@@ -17,12 +20,6 @@ const MODE_COLUMNS = [
   { key: "control", label: "Control", condition: "Strategy & Management", color: PATTERN.C.primary },
   { key: "domination", label: "Domination", condition: "Power & Dominance", color: PATTERN.D.primary },
 ];
-
-const SOMATIC_KEYS = ["fear", "anger", "disgust", "joy", "envy"];
-const RELATIONAL_KEYS = ["shame", "guilt", "sadness", "love"];
-
-const SOMATIC_EMOTIONS = EMOTIONS.filter((e) => SOMATIC_KEYS.includes(e.key));
-const RELATIONAL_EMOTIONS = EMOTIONS.filter((e) => RELATIONAL_KEYS.includes(e.key));
 
 // ─── STYLES ─────────────────────────────────────────
 
@@ -33,16 +30,16 @@ const groupLabelStyle = {
   letterSpacing: "0.08em",
   textTransform: "uppercase",
   color: TEXT.muted,
-  marginBottom: 8,
+  marginBottom: 6,
   marginTop: 0,
 };
 
 const buttonBase = {
   fontFamily: FONT.mono,
-  fontSize: 13,
+  fontSize: 12,
   fontWeight: 500,
   letterSpacing: "0.02em",
-  padding: "8px 14px",
+  padding: "6px 12px",
   borderRadius: RADIUS.sm,
   cursor: "pointer",
   transition: "all 200ms ease",
@@ -76,14 +73,23 @@ const detailValueStyle = {
 export default function EmotionSignalExplorer() {
   const [selectedKey, setSelectedKey] = useState("fear");
 
-  const selected = EMOTIONS.find((e) => e.key === selectedKey);
+  const selectedDistortion = DISTORTIONS.find((d) => d.key === selectedKey);
+  const selectedEmotion = EMOTIONS.find((e) => e.key === selectedKey);
+  const selected = selectedDistortion || selectedEmotion;
+  const isDistortion = !!selectedDistortion;
 
-  const restorationLabel =
-    selected.restorationType === "somatic"
+  const restorationLabel = isDistortion
+    ? null
+    : selected.restorationType === "somatic"
       ? "Somatic"
       : selected.restorationType === "relational"
         ? "Relational"
         : "Somatic or Relational";
+
+  // For Admiration/Pride — find which distortion replaces them
+  const distortionNote = !isDistortion && selected.distortedBy
+    ? DISTORTIONS.find((d) => d.key === selected.distortedBy)
+    : null;
 
   return (
     <section
@@ -132,125 +138,214 @@ export default function EmotionSignalExplorer() {
           gap: "clamp(12px, 2vw, 24px)",
         }}
       >
-        {/* Left: Emotion selector */}
+        {/* Left: Emotion selector — body signature groups */}
         <div>
-          {/* Somatic group */}
-          <p style={groupLabelStyle}>Somatic</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 3, marginBottom: 16 }}>
-            {SOMATIC_EMOTIONS.map((emotion) => (
-              <EmotionButton
-                key={emotion.key}
-                emotion={emotion}
-                isSelected={selectedKey === emotion.key}
-                onClick={() => setSelectedKey(emotion.key)}
-              />
-            ))}
-          </div>
+          {BODY_SIGNATURE_GROUPS.map((group) => (
+            <div key={group.key} style={{ marginBottom: 12 }}>
+              <p style={groupLabelStyle}>{group.label}</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                {group.emotions.map((emotionKey) => {
+                  const emotion = EMOTIONS.find((e) => e.key === emotionKey);
+                  if (!emotion) return null;
+                  return (
+                    <EmotionButton
+                      key={emotion.key}
+                      emotion={emotion}
+                      isSelected={selectedKey === emotion.key}
+                      onClick={() => setSelectedKey(emotion.key)}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          ))}
 
-          {/* Relational group */}
-          <p style={groupLabelStyle}>Relational</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
-            {RELATIONAL_EMOTIONS.map((emotion) => (
-              <EmotionButton
-                key={emotion.key}
-                emotion={emotion}
-                isSelected={selectedKey === emotion.key}
-                onClick={() => setSelectedKey(emotion.key)}
-              />
-            ))}
+          {/* Distortions group */}
+          <div style={{ marginTop: 4, paddingTop: 10, borderTop: `1px solid ${BORDER.default}` }}>
+            <p style={{ ...groupLabelStyle, color: WARN }}>Distortions</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {DISTORTIONS.map((d) => (
+                <EmotionButton
+                  key={d.key}
+                  emotion={d}
+                  isSelected={selectedKey === d.key}
+                  onClick={() => setSelectedKey(d.key)}
+                  isDistortion
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Right: Detail panel */}
         <div>
-          {/* Emotion header */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              gap: 12,
-              marginBottom: 20,
-            }}
-          >
-            <h4
-              style={{
-                fontFamily: FONT.display,
-                fontSize: 22,
-                fontWeight: 700,
-                color: TEXT.primary,
-                margin: 0,
-              }}
-            >
-              {selected.name}
-            </h4>
-            <span
-              style={{
-                fontFamily: FONT.mono,
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: selected.type === "relational" ? SPECTRUM.sky : TEXT.muted,
-                background:
-                  selected.type === "relational"
-                    ? hexToRgba(SPECTRUM.sky, 0.12)
-                    : hexToRgba(ACCENT, 0.08),
-                padding: "3px 8px",
-                borderRadius: RADIUS.sm,
-              }}
-            >
-              Restoration: {restorationLabel}
-            </span>
-          </div>
+          {isDistortion ? (
+            /* ── Distortion detail ── */
+            <>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 20 }}>
+                <h4
+                  style={{
+                    fontFamily: FONT.display,
+                    fontSize: 22,
+                    fontWeight: 700,
+                    color: TEXT.primary,
+                    margin: 0,
+                  }}
+                >
+                  {selected.name}
+                </h4>
+                <span
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10,
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    color: WARN,
+                    background: hexToRgba(WARN, 0.1),
+                    padding: "3px 8px",
+                    borderRadius: RADIUS.sm,
+                  }}
+                >
+                  Distortion of {EMOTIONS.find((e) => e.key === selected.distortionOf)?.name}
+                </span>
+              </div>
 
-          {/* Signal */}
-          <div style={{ marginBottom: 16 }}>
-            <p style={detailLabelStyle}>THE SIGNAL</p>
-            <p
-              style={{
-                ...detailValueStyle,
-                fontWeight: 600,
-                color: TEXT.primary,
-                fontSize: 15,
-              }}
-            >
-              {selected.signal}
-            </p>
-          </div>
+              <div style={{ marginBottom: 24 }}>
+                <p style={detailValueStyle}>{selected.description}</p>
+              </div>
 
-          {/* Body Response */}
-          <div style={{ marginBottom: 16 }}>
-            <p style={detailLabelStyle}>BODY RESPONSE</p>
-            <p style={detailValueStyle}>{selected.bodyResponse}</p>
-          </div>
+              <div>
+                <p style={{ ...detailLabelStyle, marginBottom: 14 }}>
+                  STUCK COMPASS ONLY
+                </p>
+                <CompassTable
+                  title="Stuck Compass"
+                  subtitle="appears only when SEA is absent"
+                  data={selected.stuckCompass}
+                  isStuck
+                />
+              </div>
+            </>
+          ) : (
+            /* ── Emotion detail ── */
+            <>
+              {/* Emotion header */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 12,
+                  marginBottom: 20,
+                  flexWrap: "wrap",
+                }}
+              >
+                <h4
+                  style={{
+                    fontFamily: FONT.display,
+                    fontSize: 22,
+                    fontWeight: 700,
+                    color: TEXT.primary,
+                    margin: 0,
+                  }}
+                >
+                  {selected.name}
+                </h4>
+                <span
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10,
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    color: selected.type === "relational" ? SPECTRUM.sky : TEXT.muted,
+                    background:
+                      selected.type === "relational"
+                        ? hexToRgba(SPECTRUM.sky, 0.12)
+                        : hexToRgba(ACCENT, 0.08),
+                    padding: "3px 8px",
+                    borderRadius: RADIUS.sm,
+                  }}
+                >
+                  Restoration: {restorationLabel}
+                </span>
+              </div>
 
-          {/* Restoration Pathway */}
-          <div style={{ marginBottom: 24 }}>
-            <p style={detailLabelStyle}>RESTORATION PATHWAY</p>
-            <p style={detailValueStyle}>{selected.restorationNeeds}</p>
-          </div>
+              {/* Signal */}
+              <div style={{ marginBottom: 16 }}>
+                <p style={detailLabelStyle}>THE SIGNAL</p>
+                <p
+                  style={{
+                    ...detailValueStyle,
+                    fontWeight: 600,
+                    color: TEXT.primary,
+                    fontSize: 15,
+                  }}
+                >
+                  {selected.signal}
+                </p>
+              </div>
 
-          {/* Across the Compass — 4×2 tables */}
-          <div>
-            <p style={{ ...detailLabelStyle, marginBottom: 14 }}>
-              ACROSS THE COMPASS
-            </p>
+              {/* Body Response */}
+              <div style={{ marginBottom: 16 }}>
+                <p style={detailLabelStyle}>BODY RESPONSE</p>
+                <p style={detailValueStyle}>{selected.bodyResponse}</p>
+              </div>
 
-            {/* Fluid Compass table */}
-            <CompassTable
-              title="Fluid Compass"
-              subtitle="the signal stays intact"
-              data={selected.fluidCompass}
-            />
+              {/* Restoration Pathway */}
+              <div style={{ marginBottom: 24 }}>
+                <p style={detailLabelStyle}>RESTORATION PATHWAY</p>
+                <p style={detailValueStyle}>{selected.restorationNeeds}</p>
+              </div>
 
-            {/* Stuck Compass table */}
-            <CompassTable
-              title="Stuck Compass"
-              subtitle="the signal distorts"
-              data={selected.stuckCompass}
-              isStuck
-            />
-          </div>
+              {/* Across the Compass */}
+              <div>
+                <p style={{ ...detailLabelStyle, marginBottom: 14 }}>
+                  ACROSS THE COMPASS
+                </p>
+
+                {/* Fluid Compass table */}
+                <CompassTable
+                  title="Fluid Compass"
+                  subtitle="the signal stays intact"
+                  data={selected.fluidCompass}
+                />
+
+                {/* Stuck Compass table — or distortion callout */}
+                {selected.stuckCompass ? (
+                  <CompassTable
+                    title="Stuck Compass"
+                    subtitle="the signal distorts"
+                    data={selected.stuckCompass}
+                    isStuck
+                  />
+                ) : distortionNote ? (
+                  <div
+                    style={{
+                      padding: "14px 18px",
+                      background: hexToRgba(WARN, 0.06),
+                      border: `1px solid ${hexToRgba(WARN, 0.2)}`,
+                      borderRadius: RADIUS.sm,
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: FONT.display,
+                        fontSize: 13,
+                        color: TEXT.secondary,
+                        margin: 0,
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      <strong style={{ color: TEXT.primary }}>In the stuck compass:</strong>{" "}
+                      {distortionNote.name} occupies this space. When Self-Emotional Awareness (SEA) is absent,{" "}
+                      {selected.name.toLowerCase()} cannot be received — {distortionNote.name.toLowerCase()} is what the person experiences instead.
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
@@ -298,72 +393,94 @@ function CompassTable({ title, subtitle, data, isStuck }) {
           overflow: "hidden",
         }}
       >
-        {MODE_COLUMNS.map((mode) => (
-          <div key={mode.key} style={{ background: BG.card }}>
-            {/* Column header */}
-            <div
-              style={{
-                padding: "8px 10px 6px",
-                background: hexToRgba(mode.color, 0.06),
-                borderBottom: `1px solid ${BORDER.default}`,
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+        {MODE_COLUMNS.map((mode) => {
+          const cellValue = data[mode.key];
+          const isNull = cellValue === null || cellValue === undefined;
+
+          return (
+            <div key={mode.key} style={{ background: BG.card }}>
+              {/* Column header */}
+              <div
+                style={{
+                  padding: "8px 10px 6px",
+                  background: isNull
+                    ? hexToRgba(SPECTRUM.slate, 0.03)
+                    : hexToRgba(mode.color, 0.06),
+                  borderBottom: `1px solid ${BORDER.default}`,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                  <span
+                    style={{
+                      width: 7,
+                      height: 7,
+                      borderRadius: "50%",
+                      background: isNull ? TEXT.hint : mode.color,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: FONT.mono,
+                      fontSize: 10,
+                      fontWeight: 600,
+                      color: isNull ? TEXT.muted : TEXT.primary,
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    {mode.label}
+                  </span>
+                </div>
                 <span
                   style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: "50%",
-                    background: mode.color,
-                    flexShrink: 0,
-                  }}
-                />
-                <span
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: 10,
-                    fontWeight: 600,
-                    color: TEXT.primary,
-                    letterSpacing: "0.02em",
+                    fontFamily: FONT.display,
+                    fontSize: 9,
+                    color: TEXT.muted,
+                    marginTop: 2,
+                    display: "block",
                   }}
                 >
-                  {mode.label}
+                  {mode.condition}
                 </span>
               </div>
-              <span
-                style={{
-                  fontFamily: FONT.display,
-                  fontSize: 9,
-                  color: TEXT.muted,
-                  marginTop: 2,
-                  display: "block",
-                }}
-              >
-                {mode.condition}
-              </span>
-            </div>
 
-            {/* Cell content */}
-            <div
-              style={{
-                padding: "10px",
-                minHeight: 60,
-              }}
-            >
-              <p
+              {/* Cell content */}
+              <div
                 style={{
-                  fontFamily: FONT.display,
-                  fontSize: 12,
-                  lineHeight: 1.55,
-                  color: isStuck ? TEXT.secondary : TEXT.secondary,
-                  margin: 0,
+                  padding: "10px",
+                  minHeight: 60,
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
-                {data[mode.key]}
-              </p>
+                {isNull ? (
+                  <span
+                    style={{
+                      fontFamily: FONT.mono,
+                      fontSize: 12,
+                      color: TEXT.hint,
+                      fontStyle: "italic",
+                    }}
+                  >
+                    —
+                  </span>
+                ) : (
+                  <p
+                    style={{
+                      fontFamily: FONT.display,
+                      fontSize: 12,
+                      lineHeight: 1.55,
+                      color: TEXT.secondary,
+                      margin: 0,
+                    }}
+                  >
+                    {cellValue}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -371,7 +488,7 @@ function CompassTable({ title, subtitle, data, isStuck }) {
 
 // ─── EMOTION BUTTON ─────────────────────────────────
 
-function EmotionButton({ emotion, isSelected, onClick }) {
+function EmotionButton({ emotion, isSelected, onClick, isDistortion }) {
   return (
     <button
       onClick={onClick}
@@ -383,6 +500,7 @@ function EmotionButton({ emotion, isSelected, onClick }) {
           isSelected ? hexToRgba(ACCENT, 0.3) : "transparent"
         }`,
         color: isSelected ? TEXT.primary : TEXT.secondary,
+        fontStyle: isDistortion ? "italic" : "normal",
       }}
     >
       <span
