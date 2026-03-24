@@ -33,7 +33,7 @@ const FAQ_ITEMS = [
 const MODELS = [
   {
     id: "M1",
-    role: "The Instrument",
+    role: "The Four-Mode Gradient",
     title: "Nervous System Signaling",
     coreQuestion: "Where is the needle?",
     summary:
@@ -45,7 +45,7 @@ const MODELS = [
   },
   {
     id: "M2",
-    role: "The Calibration",
+    role: "RE, ER, SEA",
     title: "Three Awareness Capacities",
     coreQuestion: "What is holding it there?",
     summary:
@@ -57,7 +57,7 @@ const MODELS = [
   },
   {
     id: "M3",
-    role: "The Return Pathway",
+    role: "Restoration Capacities",
     title: "Regulation Capacities",
     coreQuestion: "What is the body doing to regulate — and is the cycle completing?",
     summary:

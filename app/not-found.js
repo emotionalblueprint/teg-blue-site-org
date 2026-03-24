@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const FRAMEWORK_LINKS = [
-  { id: "F1", label: "Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
+  { id: "F1", label: "The Emotional Gradient", href: "/framework/f1-emotional-gradient" },
   { id: "F2", label: "Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
   { id: "F3", label: "Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
   { id: "F4", label: "Rules Regulate", href: "/framework/f4-rules-regulate" },

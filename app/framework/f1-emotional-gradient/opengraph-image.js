@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Emotions as Biological Information — F1 Framework | TEG-Blue";
+export const alt = "The Emotional Gradient — F1 Framework | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Emotions as Biological Information
+            The Emotional Gradient
           </div>
 
           {/* Subtitle */}

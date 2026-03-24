@@ -917,7 +917,7 @@ export default function F4RulesRegulatePage() {
                 </thead>
                 <tbody>
                   <NavRow label="Read the next collective framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate →" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient →" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness →" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
                   <NavRow label="See the applied models" href="/models" linkText="Core Models →" />

@@ -1022,7 +1022,7 @@ export default function F8RepairingAwarenessPage() {
                   <NavRow label="Read the neurodivergence framework (F9)" href="/framework/f9-neurodivergence-variation" linkText="Neurodivergence as Nervous System Variation \u2192" />
                   <NavRow label="Read the escalation framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="Read the bias framework (F6)" href="/framework/f6-bias-regulates" linkText="Bias Regulates \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
                   <NavRow label="Understand the physiological basis of what repair requires" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) \u2192" />

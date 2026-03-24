@@ -95,7 +95,7 @@ export default function M1InnerCompassPage() {
             <ModelHero
               badge="MODEL M1"
               title="Nervous System Signaling"
-              subtitle="The Instrument"
+              subtitle="The Four-Mode Gradient"
               description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return to baseline determines whether the compass stays fluid or gets stuck. The foundational model of the TEG-Blue system."
               coreQuestion="Where is the needle, can it move, and what does the person have access to from where they are?"
               drawsFrom={[
@@ -1451,7 +1451,7 @@ export default function M1InnerCompassPage() {
                   <NavRow
                     label="Understand the foundational theory behind this model"
                     href="/framework/f1-emotional-gradient"
-                    linkText="F1: Emotions as Biological Information &rarr;"
+                    linkText="F1: The Emotional Gradient &rarr;"
                   />
                   <NavRow
                     label="Understand what maintains a stuck compass"
@@ -1487,7 +1487,7 @@ export default function M1InnerCompassPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m1-nervous-system-signaling#article",
-            headline: "Nervous System Signaling: The Instrument",
+            headline: "Nervous System Signaling: The Four-Mode Gradient",
             description:
               "How the nervous system orients between safety and threat across four modes on a continuous gradient. Model M1 of the TEG-Blue system.",
             author: {

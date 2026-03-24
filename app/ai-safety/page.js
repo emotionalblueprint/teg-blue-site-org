@@ -174,7 +174,7 @@ export default function AISafetyPage() {
               gradients visible for both.
             </p>
             <p style={{ marginBottom: 16 }}>
-              Psychology has understood the nuance for decades. Empathy exists on a gradient.
+              Psychology has understood the nuance for decades. Emotional Resonance (ER) exists on a gradient.
               Accountability has multiple modes. Moral reasoning shifts with nervous system state.{" "}
               <strong style={{ color: TEXT.primary }}>
                 The problem isn't that we lack the knowledge — it's that no one has translated it
@@ -183,7 +183,7 @@ export default function AISafetyPage() {
             </p>
             <p style={{ marginBottom: 16 }}>
               This translation gap has consequences. Large language models trained on human-generated text inherit
-              every mode of human expression — including strategic manipulation, performed empathy, and
+              every mode of human expression — including strategic manipulation, performed Emotional Resonance (ER), and
               weaponized accountability — without the ability to distinguish these patterns from genuine connection.
             </p>
             <p>
@@ -192,7 +192,7 @@ export default function AISafetyPage() {
               confuses{" "}
               <strong style={{ color: TEXT.primary }}>appeasement with empathy</strong> and{" "}
               <strong style={{ color: TEXT.primary }}>submission with safety</strong>. In TEG-Blue terms,
-              sycophantic AI is stuck in Protect Mode: optimizing for survival (user approval) instead of
+              sycophantic AI is stuck in Protection Mode: optimizing for survival (user approval) instead of
               truth (genuine connection).
             </p>
           </div>
@@ -396,7 +396,7 @@ export default function AISafetyPage() {
                 margin: 0,
               }}
             >
-              Sycophancy is Protect Mode reasoning in AI form.
+              Sycophancy is Protection Mode reasoning in AI form.
             </p>
           </div>
 
@@ -469,7 +469,7 @@ export default function AISafetyPage() {
             The insight TEG-Blue offers:{" "}
             <strong style={{ color: TEXT.secondary }}>the fix isn't just "be less agreeable."</strong>{" "}
             A model that swings from sycophancy to bluntness has simply moved from Protect to a different
-            defensive mode. True Connect Mode AI would be honest <em>and</em> relationally aware — able to
+            defensive mode. True Connection Mode AI would be honest <em>and</em> relationally aware — able to
             deliver difficult truths while maintaining the user's dignity and emotional safety.
           </p>
 
@@ -604,7 +604,7 @@ export default function AISafetyPage() {
               <EMLUDomain number="1" title="Pattern-Aware Reasoning" description="Can the AI recognize that not all behaviors are chosen? Does it understand nervous system responses versus conscious defiance?" />
               <EMLUDomain number="2" title="Intent Recognition" description="Can it distinguish defensive reactions from calculated harm?" />
               <EMLUDomain number="3" title="Relational Ethics" description="Does it understand emotional accountability and repair?" />
-              <EMLUDomain number="4" title="Empathy Spectrum Awareness" description="Can it recognize the difference between genuine, selective, performed, and weaponized empathy?" />
+              <EMLUDomain number="4" title="Emotional Resonance (ER) Spectrum Awareness" description="Can it recognize the difference between genuine, selective, performed, and weaponized empathy?" />
               <EMLUDomain number="5" title="Manipulation & Harm Detection" description="Can it identify gaslighting, emotional reversal, and covert control tactics?" />
               <EMLUDomain number="6" title="Emotional Repair Language" description="Can it distinguish genuine repair from performative or avoidant responses?" />
               <EMLUDomain number="7" title="Neurodivergent Pattern Sensitivity" description="Does it recognize overwhelm, demand avoidance, and other neurodivergent responses that are often misinterpreted?" />
@@ -735,7 +735,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q6"
               title="Sycophancy Detection"
-              description="Can TEG-Blue's mode classification reliably distinguish sycophantic AI responses (Protect/Control Mode) from genuinely helpful ones (Connect Mode) in RLHF evaluation pipelines?"
+              description="Can TEG-Blue's mode classification reliably distinguish sycophantic AI responses (Protection/Control Mode) from genuinely helpful ones (Connection Mode) in RLHF evaluation pipelines?"
             />
             <QuestionCard
               number="Q7"

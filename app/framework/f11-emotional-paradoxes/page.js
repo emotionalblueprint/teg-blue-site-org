@@ -195,7 +195,7 @@ export default function F11EmotionalParadoxesPage() {
     },
     {
       q: "Is holding paradox the same as accepting contradiction?",
-      a: "Not exactly. Holding means both truths remain present without one being eliminated for comfort. It is not passive acceptance \u2014 it is a developmental capacity requiring self-emotional awareness online, emotional resilience to tolerate tension, and the relational awareness to hold complexity with others. Many paradoxes are structurally unresolvable, so the goal is not resolution but developing enough capacity that both truths can coexist.",
+      a: "Not exactly. Holding means both truths remain present without one being eliminated for comfort. It is not passive acceptance \u2014 it is a developmental capacity requiring Self-Emotional Awareness (SEA) online, emotional resilience to tolerate tension, and the relational awareness to hold complexity with others. Many paradoxes are structurally unresolvable, so the goal is not resolution but developing enough capacity that both truths can coexist.",
     },
     {
       q: "How does compass position affect the ability to hold paradox?",
@@ -262,7 +262,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <KeyStatement>
-              When the compass begins to move — when self-emotional awareness starts coming online, when false coherence loosens, when the person begins to see clearly — contradictions emerge that were previously invisible.
+              When the compass begins to move — when Self-Emotional Awareness (SEA) starts coming online, when false coherence loosens, when the person begins to see clearly — contradictions emerge that were previously invisible.
             </KeyStatement>
 
             <p style={proseStyle}>
@@ -280,11 +280,11 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>The Regulation Thread — F11's Position</h3>
 
             <p style={proseStyle}>
-              F1–F7: each framework generates characteristic contradictions — but false coherence hides them. The person in chronic Control does not experience the contradiction between caring and controlling. The person with self-emotional awareness offline does not feel the gap between what they narrate and what they feel. False coherence makes paradox invisible by constructing a single story.
+              F1–F7: each framework generates characteristic contradictions — but false coherence hides them. The person in chronic Control does not experience the contradiction between caring and controlling. The person with Self-Emotional Awareness (SEA) offline does not feel the gap between what they narrate and what they feel. False coherence makes paradox invisible by constructing a single story.
             </p>
 
             <p style={proseStyle}>
-              F8–F10: repair loosens false coherence. Self-emotional awareness comes online. The single story breaks. And the contradictions that were always there become felt.
+              F8–F10: repair loosens false coherence. Self-Emotional Awareness (SEA) comes online. The single story breaks. And the contradictions that were always there become felt.
             </p>
 
             <KeyStatement>
@@ -930,7 +930,7 @@ export default function F11EmotionalParadoxesPage() {
                   <NavRow label="Read the generational bridges framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
                   <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the false coherence framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition and False Coherence \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
                   <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />

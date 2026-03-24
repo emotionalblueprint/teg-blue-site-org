@@ -32,7 +32,7 @@ const ANCHOR_SECTIONS = [
 ];
 
 const DRAWS_FROM = [
-  { id: "F1", title: "Emotions as Biological Information", relation: "Primary source", description: "Names the process M3 maps physiologically. Biological Restoration — The Fork.", href: "/framework/f1-emotional-gradient" },
+  { id: "F1", title: "The Emotional Gradient", relation: "Primary source", description: "Names the process M3 maps physiologically. Biological Restoration — The Return Pathway.", href: "/framework/f1-emotional-gradient" },
   { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why restoration fails — the awareness capacities that should facilitate the return.", href: "/framework/f2-awareness-calibration" },
   { id: "F3", title: "False Coherence", relation: "Cognitive maintenance", description: "How cognition constructs coherence over unfinished cycles, hiding the residue.", href: "/framework/f3-false-coherence" },
   { id: "F12", title: "Two Information Systems", relation: "Architecture", description: "Why cognitive understanding cannot close a somatic cycle. The two-system explanation.", href: "/framework/f12-two-information-systems" },
@@ -105,7 +105,7 @@ export default function M3RegulationCapacitiesPage() {
             <ModelHero
               badge="MODEL M3"
               title="Regulation Capacities"
-              subtitle="The Return Pathway"
+              subtitle="Restoration Capacities"
               description="The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. This is the physiological substrate that explains why the gradient exists, why the compass gets stuck, and why insight alone does not produce change."
               coreQuestion="What is the body doing to regulate — and is the cycle completing?"
               drawsFrom={[
@@ -289,7 +289,7 @@ export default function M3RegulationCapacitiesPage() {
                 F1 &middot; This process has a name
               </div>
               <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                F1 calls this Biological Restoration — The Fork of all twelve frameworks. F1 maps the design and the pathways. M3 maps the physiology underneath.
+                F1 calls this Biological Restoration — The Return Pathway of all twelve frameworks. F1 maps the design and the pathways. M3 maps the physiology underneath.
               </div>
               <div style={{ fontSize: 13, fontWeight: 500, color: MODEL_COLOR }}>
                 Read the design &rarr;
@@ -1130,7 +1130,7 @@ export default function M3RegulationCapacitiesPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m3-regulation-capacities#article",
-            headline: "Regulation Capacities: The Return Pathway",
+            headline: "Regulation Capacities: Restoration Capacities",
             description:
               "The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. Model M3 of the TEG-Blue system.",
             author: {

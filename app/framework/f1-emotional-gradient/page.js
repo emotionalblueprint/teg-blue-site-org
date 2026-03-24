@@ -48,7 +48,7 @@ const SIDEBAR_SECTIONS = [
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Emotions as Biological Information (F1) | TEG-Blue Research",
+  title: "The Emotional Gradient (F1) | TEG-Blue Research",
   description:
     "How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. Framework F1 of 12.",
   keywords: [
@@ -69,7 +69,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/framework/f1-emotional-gradient",
   },
   openGraph: {
-    title: "Emotions as Biological Information — F1 Framework | TEG-Blue",
+    title: "The Emotional Gradient — F1 Framework | TEG-Blue",
     description:
       "How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes. The foundational framework of the TEG-Blue 12-framework system.",
     url: "https://teg-blue.org/framework/f1-emotional-gradient",
@@ -78,12 +78,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emotions as Biological Information — TEG-Blue F1",
+    title: "The Emotional Gradient — TEG-Blue F1",
     description:
       "How the nervous system orients between safety and threat. The foundational framework behind the TEG-Blue system.",
   },
   other: {
-    'citation_title': 'Emotions as Biological Information',
+    'citation_title': 'The Emotional Gradient',
     'citation_author': 'Anna Paretas-Artacho',
     'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
@@ -107,7 +107,7 @@ export default function F1EmotionalGradientPage() {
         header={
           <FrameworkHero
               badge="FRAMEWORK F1"
-              title="Emotions as Biological Information"
+              title="The Emotional Gradient"
               subtitle="The Safety-Threat Orientation System"
               description="How the nervous system evaluates safety, how emotions carry that evaluation, how the response organizes across four modes, and how threat states need biological restoration. The foundational framework of the TEG-Blue system."
               group="Individual"
@@ -1504,7 +1504,7 @@ export default function F1EmotionalGradientPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f1-emotional-gradient#article",
-            headline: "Emotions as Biological Information: The Safety-Threat Orientation System",
+            headline: "The Emotional Gradient: The Safety-Threat Orientation System",
             description:
               "How the nervous system orients between safety and threat, generating emotional signals that determine perception, capacity, and behavior. Framework F1 of the TEG-Blue 12-framework system.",
             author: {
@@ -1617,7 +1617,7 @@ export default function F1EmotionalGradientPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Emotions as Biological Information (F1) — TEG-Blue Research",
+              name: "The Emotional Gradient (F1) — TEG-Blue Research",
               url: "https://teg-blue.org/framework/f1-emotional-gradient",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

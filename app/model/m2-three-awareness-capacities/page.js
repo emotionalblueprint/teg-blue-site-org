@@ -102,7 +102,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             <ModelHero
               badge="MODEL M2"
               title="Three Awareness Capacities"
-              subtitle="The Calibration System"
+              subtitle="RE, ER, SEA"
               description="The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. How capacity configurations predict chronic mode, identity, and relational patterns — and how repair develops what was missing."
               coreQuestion="What is the current configuration — which capacities had conditions to develop, and which didn't?"
               drawsFrom={[
@@ -1345,7 +1345,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m2-three-awareness-capacities#article",
-            headline: "Three Awareness Capacities: The Calibration System",
+            headline: "Three Awareness Capacities: RE, ER, SEA",
             description:
               "The three specific awarenesses — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — that determine what data the compass receives, how capacity configurations predict chronic mode and identity, and how repair develops what was missing. Model M2 of the TEG-Blue system.",
             author: {

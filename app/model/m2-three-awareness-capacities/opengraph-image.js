@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Calibration System
+            RE, ER, SEA
           </div>
         </div>
 

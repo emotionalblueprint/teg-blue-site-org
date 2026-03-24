@@ -967,7 +967,7 @@ export default function F10GenerationalBridgesPage() {
                   <NavRow label="Read the neurodivergence framework (F9)" href="/framework/f9-neurodivergence-variation" linkText="Neurodivergence as Nervous System Variation \u2192" />
                   <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />

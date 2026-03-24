@@ -103,7 +103,7 @@ export default function Image() {
             >
               <div style={{ fontSize: 12, fontWeight: 700, color: "#4A9BE8", marginBottom: 4, letterSpacing: "0.08em" }}>M1</div>
               <div style={{ fontSize: 18, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Inner Compass</div>
-              <div style={{ fontSize: 13, color: "#4A9BE8" }}>The Instrument</div>
+              <div style={{ fontSize: 13, color: "#4A9BE8" }}>The Four-Mode Gradient</div>
             </div>
             <div
               style={{
@@ -118,7 +118,7 @@ export default function Image() {
             >
               <div style={{ fontSize: 12, fontWeight: 700, color: "#3560CC", marginBottom: 4, letterSpacing: "0.08em" }}>M2</div>
               <div style={{ fontSize: 18, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Three Awareness Capacities</div>
-              <div style={{ fontSize: 13, color: "#3560CC" }}>The Calibration</div>
+              <div style={{ fontSize: 13, color: "#3560CC" }}>RE, ER, SEA</div>
             </div>
           </div>
 

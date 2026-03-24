@@ -125,7 +125,7 @@ URL: https://teg-blue.org/model/m3-regulation-capacities
 Organized into three arcs:
 
 **Individual Arc (F1-F3):**
-- F1: Emotions as Biological Information — nervous system states
+- F1: The Emotional Gradient — nervous system states
   URL: https://teg-blue.org/framework/f1-emotional-gradient
 - F2: Awareness Teaches Awareness — how capacities calibrate
   URL: https://teg-blue.org/framework/f2-awareness-calibration

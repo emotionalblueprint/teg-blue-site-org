@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Instrument
+            The Four-Mode Gradient
           </div>
         </div>
 

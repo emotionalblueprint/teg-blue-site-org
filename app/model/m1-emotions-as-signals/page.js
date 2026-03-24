@@ -602,7 +602,7 @@ export default function M1EmotionsAsSignalsPage() {
                   <NavRow
                     label="Understand the foundational theory behind this model"
                     href="/framework/f1-emotional-gradient"
-                    linkText="F1: Emotions as Biological Information &rarr;"
+                    linkText="F1: The Emotional Gradient &rarr;"
                   />
                   <NavRow
                     label="Explore the interactive tools"

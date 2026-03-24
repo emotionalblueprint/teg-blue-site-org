@@ -711,7 +711,7 @@ export default function F9NeurodivergenceVariationPage() {
                 F8&rsquo;s distinction between chronic suppression and developmental absence applies with particular force here. If the environment never provided the conditions for a capacity to develop &mdash; because the person&rsquo;s authentic rhythm was masked from childhood &mdash; the capacity was not suppressed. It was never built. Recovery means building, not unblocking.
               </p>
               <p style={proseStyle}>
-                Chronic masking also forces a chronic mode &mdash; and the chronic mode blocks the specific restoration type that mode requires. Chronic Connection from masking needs genuine relational contact, but the connection being produced is performed, not real. Chronic Protection from masking needs safety long enough for the alarm to stand down, but the environment keeps requiring the very performance that sustains the alarm. Chronic Control from masking needs Surrender (releasing the cognitive override), but the mask IS the override. The structural mismatch does not just cost energy. It blocks the biological return pathway.
+                Chronic masking also forces a chronic mode &mdash; and the chronic mode blocks the specific restoration type that mode requires. Chronic Connection from masking needs genuine relational contact, but the connection being produced is performed, not real. Chronic Protection from masking needs safety long enough for the alarm to stand down, but the environment keeps requiring the very performance that sustains the alarm. Chronic Control from masking needs Control Restoration (releasing the cognitive override), but the mask IS the override. The structural mismatch does not just cost energy. It blocks the biological return pathway.
               </p>
             </ExpandableSection>
 
@@ -958,7 +958,7 @@ export default function F9NeurodivergenceVariationPage() {
                   <NavRow label="Read the generational framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
                   <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
                   <NavRow label="Read the false coherence framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
                   <NavRow label="Read the rules framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />

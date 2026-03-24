@@ -34,7 +34,7 @@ const SIDEBAR_SECTIONS = [
 const FRAMEWORKS = [
   {
     id: "F1",
-    displayName: "Emotions as Biological Information",
+    displayName: "The Emotional Gradient",
     title: "The Safety-Threat Orientation System",
     subtitle: "Scale: Biology",
     group: "Individual",
@@ -449,7 +449,7 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M1 — The Instrument
+                M1 — The Four-Mode Gradient
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Nervous System Signaling →
@@ -481,7 +481,7 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M2 — The Calibration
+                M2 — RE, ER, SEA
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Three Awareness Capacities →
@@ -513,7 +513,7 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M3 — The Return Pathway
+                M3 — Restoration Capacities
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Regulation Capacities →

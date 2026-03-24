@@ -28,14 +28,13 @@ const NAV_ITEMS = [
       { label: "M1 — Nervous System Signaling", href: "/model/m1-nervous-system-signaling" },
       { label: "M2 — Three Awareness Capacities", href: "/model/m2-three-awareness-capacities" },
       { label: "M3 — Regulation Capacities", href: "/model/m3-regulation-capacities" },
-      { label: "Explore: What Labels Map", href: "/explore/labels" },
     ],
   },
   {
     label: "Frameworks",
     href: "/frameworks-map",
     children: [
-      { label: "F1 — Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
+      { label: "F1 — The Emotional Gradient", href: "/framework/f1-emotional-gradient" },
       { label: "F2 — Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
       { label: "F3 — Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
       { label: "F4 — Rules Regulate", href: "/framework/f4-rules-regulate" },

@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Return Pathway
+            Restoration Capacities
           </div>
         </div>
 

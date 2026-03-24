@@ -403,29 +403,29 @@ export const CAPACITIES = {
 export const RESTORATION = {
   fluid: [
     {
-      // Connection — §Maintenance: "preventive, not corrective"
-      name: 'Maintenance',
+      // Connection — §Connection Restoration: "preventive, not corrective"
+      name: 'Connection Restoration',
       timescale: 'Continuous',
       type: 'somatic',  // "Somatic restoration... system tends itself"
       description: 'System at functional baseline. Preventive, not corrective.',
     },
     {
-      // Protection — §Recovery: "Activation Sequence must complete"
-      name: 'Recovery',
+      // Protection — §Protection Restoration: "Activation Sequence must complete"
+      name: 'Protection Restoration',
       timescale: '20 min – 2 hrs',
       type: 'somatic',  // "primarily somatic — sympathetic spike clears through physical discharge"
       description: 'Full exhale, physical discharge, co-regulation. HPA resets.',
     },
     {
-      // Control — §Surrender: "deliberately puts down the cognitive override"
-      name: 'Surrender',
+      // Control — §Control Restoration: "deliberately puts down the cognitive override"
+      name: 'Control Restoration',
       timescale: '2 – 8 hrs',
       type: 'both',  // "begins somatically... may require relational safety to complete"
       description: 'Override released. Emotions surface. Cannot be rushed.',
     },
     {
-      // Domination — §Long Return: "extended rest, minimal demand"
-      name: 'Long Return',
+      // Domination — §Domination Restoration: "extended rest, minimal demand"
+      name: 'Domination Restoration',
       timescale: '24 – 72 hrs',
       type: 'relational',  // "almost always requires relational completion"
       description: 'Full somatic discharge. Guilt, grief, relief in sequence.',

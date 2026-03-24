@@ -871,7 +871,7 @@ export default function F6BiasRegulatesPage() {
                   <NavRow label="Read the next collective framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="Read the worth-sorting framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate \u2192" />
                   <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
                   <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />

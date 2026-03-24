@@ -106,7 +106,7 @@ export default function F2AwarenessCalibrationPage() {
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{
-                prev: { label: "F1 Emotions as Biological Information", href: "/framework/f1-emotional-gradient" },
+                prev: { label: "F1 The Emotional Gradient", href: "/framework/f1-emotional-gradient" },
                 next: { label: "F3 False Coherence", href: "/framework/f3-false-coherence" },
               }}
             />
@@ -1102,7 +1102,7 @@ export default function F2AwarenessCalibrationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information →" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient →" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
                   <NavRow label="See the applied model for this framework" href="/model/m2-three-awareness-capacities" linkText="Three Awareness Capacities (M2) →" />
                   <NavRow label="See the physiological model — what the body does when the return is never learned" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) →" />

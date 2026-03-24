@@ -921,7 +921,7 @@ export default function F12TwoInformationSystemsPage() {
                 <tbody>
                   <NavRow label="Read the emotional paradoxes framework (F11)" href="/framework/f11-emotional-paradoxes" linkText="The Emotional Logic Behind Paradoxes \u2192" />
                   <NavRow label="Read the generational bridges framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="Emotions as Biological Information \u2192" />
+                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
                   <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
                   <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
                   <NavRow label="See the physiological model — the body's cascade that cognition cannot close" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) \u2192" />

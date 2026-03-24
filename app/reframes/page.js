@@ -56,7 +56,7 @@ const FAQ_ITEMS = [
 const FRAMEWORK_GROUPS = [
   {
     id: "F1",
-    label: "F1 — Emotions as Biological Information",
+    label: "F1 — The Emotional Gradient",
     href: "/framework/f1-emotional-gradient",
     terms: [
       {
