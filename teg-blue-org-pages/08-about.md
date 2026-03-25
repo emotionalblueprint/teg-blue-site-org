@@ -46,9 +46,9 @@ This single premise, when applied consistently across individual, relational, in
 
 ### Anna Paretas-Artacho
 
-Anna brings 25 years of experience in visual communications, transforming complex concepts into accessible visuals. Following an abusive relationship, she undertook intensive self-study to understand the patterns she'd missed — exploring polyvagal theory, attachment research, trauma, and family systems. Rather than keeping these insights personal, she applied her design expertise to create visual structures bridging these fields.
+Independent researcher and systems designer based in Barcelona, with 25+ years of professional experience in systems thinking and visual design. Anna applied her expertise in visual communications to synthesize research across polyvagal theory, attachment theory, affect regulation, and family systems into a unified architecture.
 
-The Four-Mode Gradient was not designed first and then explained. It emerged through building each Framework, one by one, to explain patterns she had lived through and witnessed. The result is nearly two years of independent development creating an integrated emotional intelligence system.
+The Four-Mode Gradient emerged through building each framework one by one — nearly two years of independent development creating an integrated emotional intelligence system that connects 47+ scientific domains and 145+ source theories.
 
 ORCID: 0009-0005-2394-7162
 Full bio: teg-blue.org/about
