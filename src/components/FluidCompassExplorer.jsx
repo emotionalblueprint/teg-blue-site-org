@@ -266,8 +266,8 @@ export default function FluidCompassExplorer() {
       ref={containerRef}
       style={{
         position: "relative",
-        margin: "32px 0",
-        borderRadius: 12,
+        margin: "40px 0",
+        borderRadius: 14,
         border: `1px solid ${hexToRgba(accentColor, 0.2)}`,
         background: hexToRgba(accentColor, 0.03),
         overflow: "hidden",
@@ -275,15 +275,18 @@ export default function FluidCompassExplorer() {
       }}
     >
       {/* ─── Header ────────────────────────────── */}
-      <div
-        style={{
-          padding: "20px 20px 0",
-          display: "flex",
-          justifyContent: "space-between",
-          gap: 16,
-        }}
-      >
-        <div>
+      <div style={{ padding: "28px 28px 0" }}>
+        {/* Top row: badge + toggle */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 16,
+            marginBottom: 16,
+            flexWrap: "wrap",
+          }}
+        >
           <span
             style={{
               fontSize: 10,
@@ -292,59 +295,17 @@ export default function FluidCompassExplorer() {
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               color: accentColor,
-              padding: "3px 8px",
+              padding: "3px 10px",
               borderRadius: 100,
               background: hexToRgba(accentColor, 0.12),
               border: `1px solid ${hexToRgba(accentColor, 0.25)}`,
               transition: "all 300ms ease",
               display: "inline-block",
-              marginBottom: 10,
             }}
           >
             {isStuck ? "Stuck Compass" : "Fluid Compass"}
           </span>
-          <div
-            style={{
-              fontFamily: FONT.display,
-              fontSize: 10,
-              fontStyle: "italic",
-              color: hexToRgba(accentColor, 0.6),
-              marginBottom: 6,
-            }}
-          >
-            {isStuck ? COMPASS_CONDITIONS.stuck : COMPASS_CONDITIONS.fluid}
-          </div>
-          <div
-            style={{
-              fontSize: 18,
-              fontWeight: 700,
-              color: TEXT.primary,
-              lineHeight: 1.2,
-              marginBottom: 8,
-            }}
-          >
-            The Four-Mode Gradient
-          </div>
-          <div
-            style={{
-              fontSize: 13,
-              color: TEXT.secondary,
-              lineHeight: 1.6,
-              maxWidth: 480,
-            }}
-          >
-            Four modes on a continuous gradient, each corresponding to a distinct autonomic state. The nervous system selects the mode; cognition is recruited only at the after-awareness threshold.
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
-            gap: 8,
-            flexShrink: 0,
-          }}
-        >
+
           {/* Fluid / Stuck toggle */}
           <div
             style={{
@@ -359,7 +320,7 @@ export default function FluidCompassExplorer() {
               aria-label="Show fluid compass"
               aria-pressed={!isStuck}
               style={{
-                padding: "4px 14px",
+                padding: "5px 16px",
                 fontSize: 10,
                 fontFamily: FONT.mono,
                 fontWeight: 600,
@@ -380,7 +341,7 @@ export default function FluidCompassExplorer() {
               aria-label="Show stuck compass"
               aria-pressed={isStuck}
               style={{
-                padding: "4px 14px",
+                padding: "5px 16px",
                 fontSize: 10,
                 fontFamily: FONT.mono,
                 fontWeight: 600,
@@ -398,22 +359,45 @@ export default function FluidCompassExplorer() {
               Stuck
             </button>
           </div>
-          <span
-            style={{
-              fontSize: 11,
-              color: TEXT.muted,
-              fontFamily: FONT.mono,
-              whiteSpace: "nowrap",
-              marginTop: 2,
-            }}
-          >
-            Drag the needle to explore each mode
-          </span>
+        </div>
+
+        {/* Title + description */}
+        <div
+          style={{
+            fontSize: 20,
+            fontWeight: 700,
+            color: TEXT.primary,
+            lineHeight: 1.2,
+            marginBottom: 10,
+          }}
+        >
+          The Four-Mode Gradient
+        </div>
+        <div
+          style={{
+            fontSize: 13,
+            color: TEXT.secondary,
+            lineHeight: 1.6,
+            maxWidth: 540,
+            marginBottom: 6,
+          }}
+        >
+          Four modes on a continuous gradient, each corresponding to a distinct autonomic state. The nervous system selects the mode; cognition is recruited only at the after-awareness threshold.
+        </div>
+        <div
+          style={{
+            fontSize: 11,
+            fontFamily: FONT.mono,
+            color: TEXT.muted,
+            marginBottom: 4,
+          }}
+        >
+          Drag the needle to explore each mode
         </div>
       </div>
 
       {/* ─── Gradient Bar ──────────────────────── */}
-      <div style={{ padding: "4px 20px 0" }}>
+      <div style={{ padding: "12px 28px 0" }}>
         <div
           role="slider"
           tabIndex={0}
@@ -485,7 +469,7 @@ export default function FluidCompassExplorer() {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            marginTop: 6,
+            marginTop: 14,
             padding: "0 2px",
           }}
         >
@@ -511,7 +495,7 @@ export default function FluidCompassExplorer() {
                   fontStyle: "italic",
                   fontWeight: 400,
                   color: hexToRgba(mode.hex, 0.7),
-                  marginTop: 1,
+                  marginTop: 2,
                 }}>
                   {mode.conditionShort}
                 </div>
@@ -521,15 +505,25 @@ export default function FluidCompassExplorer() {
         </div>
       </div>
 
+      {/* ─── Divider ──────────────────────────── */}
+      <div
+        style={{
+          height: 1,
+          background: hexToRgba(accentColor, 0.12),
+          margin: "20px 28px 0",
+          transition: "background 300ms ease",
+        }}
+      />
+
       {/* ─── Content Area ──────────────────────── */}
-      <div style={{ padding: "20px 20px 20px" }}>
+      <div style={{ padding: "24px 28px 32px" }}>
         {/* Mode title + type pill */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: 10,
-            marginBottom: 8,
+            marginBottom: 6,
             flexWrap: "wrap",
           }}
         >
@@ -574,29 +568,12 @@ export default function FluidCompassExplorer() {
             fontSize: 14,
             color: TEXT.secondary,
             lineHeight: 1.6,
-            margin: "0 0 10px",
+            margin: "0 0 16px",
             maxWidth: 640,
           }}
         >
           {activeMode.condition}
         </p>
-
-        {/* Metadata */}
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            marginBottom: 12,
-            fontSize: 12,
-            color: TEXT.muted,
-            fontFamily: FONT.mono,
-            flexWrap: "wrap",
-          }}
-        >
-          <span>{activeMode.autonomic}</span>
-          <span style={{ opacity: 0.4 }}>·</span>
-          <span>{data.duration}</span>
-        </div>
 
         {/* Description */}
         <p
@@ -604,7 +581,7 @@ export default function FluidCompassExplorer() {
             fontSize: 14,
             color: TEXT.secondary,
             lineHeight: 1.7,
-            margin: "0 0 12px",
+            margin: "0 0 16px",
             maxWidth: 640,
           }}
         >
@@ -614,11 +591,11 @@ export default function FluidCompassExplorer() {
         {/* Insight quote */}
         <div
           style={{
-            padding: "10px 14px",
+            padding: "12px 16px",
             borderLeft: `3px solid ${accentColor}`,
             background: hexToRgba(accentColor, 0.06),
-            borderRadius: "0 6px 6px 0",
-            marginBottom: 16,
+            borderRadius: "0 8px 8px 0",
+            marginBottom: 24,
             transition: "border-color 300ms ease, background 300ms ease",
           }}
         >
@@ -628,6 +605,7 @@ export default function FluidCompassExplorer() {
               fontWeight: 500,
               fontStyle: "italic",
               color: TEXT.primary,
+              lineHeight: 1.5,
             }}
           >
             {data.insight}
@@ -640,9 +618,9 @@ export default function FluidCompassExplorer() {
             style={{
               display: "flex",
               alignItems: "baseline",
-              gap: 10,
-              marginBottom: 16,
-              padding: "10px 14px",
+              gap: 12,
+              marginBottom: 24,
+              padding: "12px 16px",
               borderRadius: 8,
               background: hexToRgba(MODE_ORANGE, 0.05),
               border: `1px solid ${hexToRgba(MODE_ORANGE, 0.12)}`,
@@ -674,54 +652,94 @@ export default function FluidCompassExplorer() {
           </div>
         )}
 
-        {/* Sequence */}
+        {/* ─── Metadata strip ─────────────────── */}
         <div
           style={{
-            marginBottom: 16,
             display: "flex",
-            alignItems: "center",
-            gap: 8,
+            gap: 20,
+            marginBottom: 24,
             flexWrap: "wrap",
+            alignItems: "baseline",
           }}
         >
-          <span
-            style={{
-              fontSize: 10,
+          <div>
+            <div style={{
+              fontSize: 9,
               fontFamily: FONT.mono,
-              fontWeight: 600,
+              fontWeight: 700,
               textTransform: "uppercase",
-              letterSpacing: "0.06em",
+              letterSpacing: "0.08em",
               color: TEXT.muted,
-            }}
-          >
-            Sequence
-          </span>
-          <span
-            style={{
+              marginBottom: 3,
+            }}>
+              Autonomic
+            </div>
+            <div style={{
+              fontSize: 12,
+              fontFamily: FONT.mono,
+              color: TEXT.secondary,
+              lineHeight: 1.4,
+            }}>
+              {activeMode.autonomic}
+            </div>
+          </div>
+          <div>
+            <div style={{
+              fontSize: 9,
+              fontFamily: FONT.mono,
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: TEXT.muted,
+              marginBottom: 3,
+            }}>
+              Duration
+            </div>
+            <div style={{
+              fontSize: 12,
+              fontFamily: FONT.mono,
+              color: TEXT.secondary,
+            }}>
+              {data.duration}
+            </div>
+          </div>
+          <div>
+            <div style={{
+              fontSize: 9,
+              fontFamily: FONT.mono,
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: TEXT.muted,
+              marginBottom: 3,
+            }}>
+              Sequence
+            </div>
+            <div style={{
               fontSize: 12,
               fontFamily: FONT.mono,
               fontWeight: 600,
               color: accentColor,
               transition: "color 300ms ease",
-            }}
-          >
-            {data.sequence}
-          </span>
+            }}>
+              {data.sequence}
+            </div>
+          </div>
         </div>
 
         {/* Capacity mini-cards */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-            gap: 8,
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gap: 10,
           }}
         >
           {data.capacities.map((cap) => (
             <div
               key={cap.name}
               style={{
-                padding: "10px 12px",
+                padding: "12px 14px",
                 borderRadius: 8,
                 background: hexToRgba(accentColor, 0.05),
                 border: `1px solid ${hexToRgba(accentColor, 0.12)}`,
@@ -737,7 +755,7 @@ export default function FluidCompassExplorer() {
                   color: accentColor,
                   textTransform: "uppercase",
                   letterSpacing: "0.04em",
-                  marginBottom: 4,
+                  marginBottom: 5,
                   transition: "color 300ms ease",
                 }}
               >
