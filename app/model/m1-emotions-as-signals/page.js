@@ -36,7 +36,7 @@ const ANCHOR_SECTIONS = [
 export const metadata = {
   title: "Emotions as Signals (M1) | TEG-Blue Research",
   description:
-    "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
+    "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. Model M1 of the TEG-Blue system.",
   keywords: [
     "emotions as signals",
     "nervous system signals",
@@ -53,7 +53,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/model/m1-emotions-as-signals",
   },
   openGraph: {
-    title: "Emotions as Signals — M1 Input Layer | TEG-Blue",
+    title: "Emotions as Signals — M1 Model | TEG-Blue",
     description:
       "Sixteen emotions mapped as biological signals. What each one detects, what the body does, and what restores the cycle.",
     url: "https://teg-blue.org/model/m1-emotions-as-signals",
@@ -64,7 +64,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Emotions as Signals — TEG-Blue M1",
     description:
-      "Sixteen emotions mapped as biological signals. The input layer of M1 Nervous System Signaling.",
+      "Sixteen emotions mapped as biological signals. What each one detects, what the body does, and what restores the cycle.",
   },
 };
 
@@ -87,11 +87,13 @@ export default function M1EmotionsAsSignalsPage() {
             <ModelHero
               badge="MODEL M1"
               title="Emotions as Signals"
-              subtitle="The Input Layer"
+              subtitle="The Signal Language"
               description="Sixteen emotions. Each one is a biological message — a finding the nervous system is delivering about what it detected. Not about feeling. About information. The emotion is the delivery system; the signal is the content."
               coreQuestion="What is this signal telling me?"
               drawsFrom={[
-                { label: "M1", href: "/model/m1-nervous-system-signaling" },
+                { label: "M2", href: "/model/m2-nervous-system-states" },
+                { label: "M3", href: "/model/m3-regulation-capacities" },
+                { label: "M4", href: "/model/m4-awareness-capacities" },
                 { label: "F1", href: "/framework/f1-emotional-gradient" },
               ]}
               color={MODEL_COLOR}
@@ -775,19 +777,19 @@ export default function M1EmotionsAsSignalsPage() {
                 </thead>
                 <tbody>
                   <NavRow
-                    label="See the full M1 model — compass, modes, gradient, filters"
-                    href="/model/m1-nervous-system-signaling"
-                    linkText="M1: Nervous System Signaling &rarr;"
-                  />
-                  <NavRow
-                    label="Understand what determines how well the compass works"
-                    href="/model/m2-three-awareness-capacities"
-                    linkText="M2: Three Awareness Capacities &rarr;"
+                    label="See the full M2 model — compass, modes, gradient, filters"
+                    href="/model/m2-nervous-system-states"
+                    linkText="M2: Nervous System States &rarr;"
                   />
                   <NavRow
                     label="Understand what happens when the activation cycle doesn't complete"
                     href="/model/m3-regulation-capacities"
                     linkText="M3: Regulation Capacities &rarr;"
+                  />
+                  <NavRow
+                    label="Understand what determines how well the compass works"
+                    href="/model/m4-awareness-capacities"
+                    linkText="M4: Awareness Capacities &rarr;"
                   />
                   <NavRow
                     label="Understand the foundational theory behind this model"
@@ -818,9 +820,9 @@ export default function M1EmotionsAsSignalsPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m1-emotions-as-signals#article",
-            headline: "Emotions as Signals: The Input Layer",
+            headline: "Emotions as Signals: The Signal Language",
             description:
-              "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The input layer of M1 Nervous System Signaling.",
+              "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. Model M1 of the TEG-Blue system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -869,9 +871,8 @@ export default function M1EmotionsAsSignalsPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "Models", url: "/models" },
-              { name: "M1: Nervous System Signaling", url: "/model/m1-nervous-system-signaling" },
-              { name: "Emotions as Signals", url: "/model/m1-emotions-as-signals" },
+              { name: "The Emotional Somatic System", url: "/models" },
+              { name: "M1: Emotions as Signals", url: "/model/m1-emotions-as-signals" },
             ])
           ),
         }}

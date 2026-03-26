@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Nervous System Signaling — Model M1 | TEG-Blue";
+export const alt = "Awareness Capacities — Model M4 | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -55,12 +55,12 @@ export default function Image() {
                 fontSize: "14px",
                 fontWeight: 700,
                 letterSpacing: "0.12em",
-                color: "#4A9BE8",
-                backgroundColor: "rgba(74, 155, 232, 0.15)",
-                border: "1px solid rgba(74, 155, 232, 0.3)",
+                color: "#3560CC",
+                backgroundColor: "rgba(53, 96, 204, 0.15)",
+                border: "1px solid rgba(53, 96, 204, 0.3)",
               }}
             >
-              MODEL M1
+              MODEL M4
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Nervous System Signaling
+            Awareness Capacities
           </div>
 
           {/* Subtitle */}
@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Four-Mode Gradient
+            RE, ER, SEA
           </div>
         </div>
 
@@ -111,14 +111,14 @@ export default function Image() {
               letterSpacing: "0.04em",
             }}
           >
-            teg-blue.org/model/m1-nervous-system-signaling
+            teg-blue.org/model/m4-awareness-capacities
           </div>
           <div
             style={{
               display: "flex",
               fontSize: "14px",
               fontWeight: 600,
-              color: "#4A9BE8",
+              color: "#3560CC",
               letterSpacing: "0.04em",
             }}
           >

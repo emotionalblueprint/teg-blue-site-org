@@ -22,12 +22,13 @@ const NAV_ITEMS = [
   { label: "Overview", href: "/foundations" },
   { label: "How It Works", href: "/how-it-works" },
   {
-    label: "Models",
+    label: "The Emotional Somatic System",
     href: "/models",
     children: [
-      { label: "M1 — Nervous System Signaling", href: "/model/m1-nervous-system-signaling" },
-      { label: "M2 — Three Awareness Capacities", href: "/model/m2-three-awareness-capacities" },
+      { label: "M1 — Emotions as Signals", href: "/model/m1-emotions-as-signals" },
+      { label: "M2 — Nervous System States", href: "/model/m2-nervous-system-states" },
       { label: "M3 — Regulation Capacities", href: "/model/m3-regulation-capacities" },
+      { label: "M4 — Awareness Capacities", href: "/model/m4-awareness-capacities" },
     ],
   },
   {

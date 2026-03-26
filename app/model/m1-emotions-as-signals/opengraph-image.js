@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Emotions as Signals — M1 Input Layer | TEG-Blue";
+export const alt = "Emotions as Signals — Model M1 | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -91,7 +91,7 @@ export default function Image() {
               marginBottom: "20px",
             }}
           >
-            The Input Layer
+            The Signal Language
           </div>
 
           {/* Description */}
@@ -105,7 +105,7 @@ export default function Image() {
               maxWidth: "800px",
             }}
           >
-            Nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle.
+            Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle.
           </div>
         </div>
 

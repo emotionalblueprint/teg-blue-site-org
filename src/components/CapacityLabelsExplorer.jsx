@@ -442,7 +442,7 @@ function CompassVisualization({ position, isStuck, isFluid, disabled }) {
           fontSize: 10, fontFamily: FONT.mono, fontWeight: 700,
           textTransform: "uppercase", letterSpacing: "0.08em",
           color: TEXT.muted, marginBottom: 10,
-        }}>Nervous System Signaling</div>
+        }}>Nervous System States</div>
         <div style={{ position: "relative", height: 14, borderRadius: 7, overflow: "hidden" }}>
           <div style={{
             position: "absolute", inset: 0,
@@ -492,7 +492,7 @@ function CompassVisualization({ position, isStuck, isFluid, disabled }) {
         fontSize: 10, fontFamily: FONT.mono, fontWeight: 700,
         textTransform: "uppercase", letterSpacing: "0.08em",
         color: TEXT.muted, marginBottom: 10,
-      }}>Nervous System Signaling</div>
+      }}>Nervous System States</div>
       <div style={{ position: "relative", height: 14, borderRadius: 7, overflow: "hidden" }}>
         <div style={{
           position: "absolute", inset: 0,
@@ -953,7 +953,7 @@ export default function CapacityLabelsExplorer() {
               </div>
             </div>
 
-            {/* ─── M1: Nervous System Signaling ─── */}
+            {/* ─── M2: Nervous System States ─── */}
             <CompassVisualization
               position={compassPos}
               isStuck={isStuck}

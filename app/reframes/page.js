@@ -55,9 +55,9 @@ const FAQ_ITEMS = [
 
 const FRAMEWORK_GROUPS = [
   {
-    id: "M1",
-    label: "M1 — Nervous System Signaling",
-    href: "/model/m1-nervous-system-signaling",
+    id: "M2",
+    label: "M2 — Nervous System States",
+    href: "/model/m2-nervous-system-states",
     terms: [
       {
         title: "Readiness to Change",

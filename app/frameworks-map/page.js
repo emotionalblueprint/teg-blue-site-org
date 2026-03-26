@@ -26,7 +26,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Individual · F1–F3", href: "#individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
   { label: "Collective · F4–F7", href: "#collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
   { label: "The Reversal · F8–F12", href: "#the-reversal", description: "How the awareness capacities rebuild, and what makes change possible." },
-  { label: "Three Core Models", href: "#three-core-models", description: "The measurement instruments: Nervous System Signaling, Three Awareness Capacities, Regulation Capacities." },
+  { label: "The Emotional Somatic System", href: "#the-emotional-somatic-system", description: "The measurement instruments: Emotions as Signals, Nervous System States, Regulation Capacities, Awareness Capacities." },
   { label: "Mechanics of Phenomena", href: "#mechanics-of-phenomena", description: "Long-form essays showing these mechanisms operating in real life." },
 ];
 
@@ -411,10 +411,10 @@ export default function TheoreticalFoundationsPage() {
           })}
         </section>
 
-        {/* The Three Core Models */}
-        <section id="three-core-models" style={{ marginBottom: 32 }}>
+        {/* The Emotional Somatic System */}
+        <section id="the-emotional-somatic-system" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            How do the three core models relate to the frameworks?
+            How do the four foundational models relate to the frameworks?
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             The frameworks explain <em>why</em>. The models provide <em>what</em> — the applied tools that practitioners, researchers, and individuals actually use.
@@ -427,7 +427,7 @@ export default function TheoreticalFoundationsPage() {
             }}
           >
             <Link
-              href="/model/m1-nervous-system-signaling"
+              href="/model/m1-emotions-as-signals"
               style={{
                 padding: 20,
                 background: gradientCardBg(SPECTRUM.azure),
@@ -449,17 +449,17 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M1 — The Four-Mode Gradient
+                M1 — The Signal Language
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Nervous System Signaling →
+                Emotions as Signals →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
-                Where is the needle, can it move, and what does the person have access to from where they are?
+                What is the nervous system delivering? Sixteen emotions mapped as biological signals.
               </p>
             </Link>
             <Link
-              href="/model/m2-three-awareness-capacities"
+              href="/model/m2-nervous-system-states"
               style={{
                 padding: 20,
                 background: gradientCardBg(SPECTRUM.cobalt),
@@ -481,13 +481,13 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M2 — RE, ER, SEA
+                M2 — The Instrument
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                Three Awareness Capacities →
+                Nervous System States →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
-                What is the current configuration — which capacities had conditions to develop, and which didn{"'"}t?
+                Where is the needle, can it move, and what does the person have access to from where they are?
               </p>
             </Link>
             <Link
@@ -513,13 +513,45 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M3 — Restoration Capacities
+                M3 — The Return Pathway
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Regulation Capacities →
               </p>
               <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
                 What happens to the body when the emotional cycle is not allowed to complete — and what would completion require?
+              </p>
+            </Link>
+            <Link
+              href="/model/m4-awareness-capacities"
+              style={{
+                padding: 20,
+                background: gradientCardBg(SPECTRUM.slate),
+                borderRadius: 10,
+                border: `1px solid ${BORDER.default}`,
+                borderLeft: `3px solid ${SPECTRUM.slate}`,
+                textDecoration: "none",
+                display: "block",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: SPECTRUM.slate,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  fontFamily: FONT.mono,
+                  marginBottom: 6,
+                }}
+              >
+                M4 — RE, ER, SEA
+              </p>
+              <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
+                Awareness Capacities →
+              </p>
+              <p style={{ fontSize: 13, color: TEXT.muted, margin: 0, lineHeight: 1.6 }}>
+                What is the current configuration — which capacities had conditions to develop, and which didn{"'"}t?
               </p>
             </Link>
           </div>

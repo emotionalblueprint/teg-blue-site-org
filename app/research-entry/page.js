@@ -254,7 +254,7 @@ export default function ResearchEntryPage() {
               ]}
               refLinks={[
                 { href: "/framework/f1-emotions-as-biological-information", label: "F1" },
-                { href: "/model/m1-nervous-system-signaling", label: "Nervous System Signaling (M1)" },
+                { href: "/model/m2-nervous-system-states", label: "Nervous System States (M2)" },
               ]}
             />
             <ResearchDomainCard

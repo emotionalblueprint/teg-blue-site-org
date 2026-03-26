@@ -36,8 +36,9 @@ const DRAWS_FROM = [
   { id: "F2", title: "Awareness Calibration", relation: "Developmental origin", description: "Why restoration fails — the awareness capacities that should facilitate the return.", href: "/framework/f2-awareness-calibration" },
   { id: "F3", title: "False Coherence", relation: "Cognitive maintenance", description: "How cognition constructs coherence over unfinished cycles, hiding the residue.", href: "/framework/f3-false-coherence" },
   { id: "F12", title: "Two Information Systems", relation: "Architecture", description: "Why cognitive understanding cannot close a somatic cycle. The two-system explanation.", href: "/framework/f12-two-information-systems" },
-  { id: "M1", title: "Nervous System Signaling", relation: "Paired model", description: "The compass that gets stuck when cycles don't complete. M3 explains the biology of why.", href: "/model/m1-nervous-system-signaling" },
-  { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "The capacities that determine whether the cycle can be felt, read, and allowed to complete.", href: "/model/m2-three-awareness-capacities" },
+  { id: "M1", title: "Emotions as Signals", relation: "Paired model", description: "The signal language — sixteen emotions as biological messages. M1 maps what the nervous system is delivering; M3 maps whether the cycle completes.", href: "/model/m1-emotions-as-signals" },
+  { id: "M2", title: "Nervous System States", relation: "Paired model", description: "The compass that gets stuck when cycles don't complete. M3 explains the biology of why.", href: "/model/m2-nervous-system-states" },
+  { id: "M4", title: "Awareness Capacities", relation: "Paired model", description: "The capacities that determine whether the cycle can be felt, read, and allowed to complete.", href: "/model/m4-awareness-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -1077,14 +1078,19 @@ export default function M3RegulationCapacitiesPage() {
                 </thead>
                 <tbody>
                   <NavRow
+                    label="Understand the signal language"
+                    href="/model/m1-emotions-as-signals"
+                    linkText="M1: Emotions as Signals →"
+                  />
+                  <NavRow
                     label="Understand the instrument"
-                    href="/model/m1-nervous-system-signaling"
-                    linkText="M1: Nervous System Signaling →"
+                    href="/model/m2-nervous-system-states"
+                    linkText="M2: Nervous System States →"
                   />
                   <NavRow
                     label="Understand what determines whether the cycle is felt"
-                    href="/model/m2-three-awareness-capacities"
-                    linkText="M2: Three Awareness Capacities →"
+                    href="/model/m4-awareness-capacities"
+                    linkText="M4: Awareness Capacities →"
                   />
                   <NavRow
                     label="Understand what the signal is before the cycle opens"

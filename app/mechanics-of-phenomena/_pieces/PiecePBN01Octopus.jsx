@@ -61,13 +61,13 @@ export default function PiecePBN01Octopus() {
         items={[
           {
             description: "You want to understand how emotional states function as information, not decoration:",
-            label: "M2 \u2014 Three Awareness Capacities",
-            href: "/model/m2-three-awareness-capacities",
+            label: "M1 \u2014 Emotions as Signals",
+            href: "/model/m1-emotions-as-signals",
           },
           {
             description: "You want to understand what happens when the signal function breaks down \u2014 when inner state and outer transmission decouple:",
             label: "M1 \u2014 Four-Mode Gradient (Control / Domination modes)",
-            href: "/model/m1-nervous-system-signaling",
+            href: "/model/m2-nervous-system-states",
           },
           {
             description: "You want to understand how the body carries information that the mind hasn\u2019t named yet:",

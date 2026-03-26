@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is the TEG-Blue glossary?",
-    answer: "The TEG-Blue glossary defines 199 terms across 12 frameworks and 3 models. It covers regulatory states (Connection, Protection, Control, Domination), complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept. Terms are searchable and sorted by framework.",
+    answer: "The TEG-Blue glossary defines 199 terms across 12 frameworks and 4 models. It covers regulatory states (Connection, Protection, Control, Domination), complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept. Terms are searchable and sorted by framework.",
   },
   {
     question: "What are the four regulatory modes in TEG-Blue?",
@@ -21,7 +21,7 @@ import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Emotional Regulation Glossary | TEG-Blue Research",
-  description: "199 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
+  description: "199 defined terms across 12 frameworks and 4 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, the open cycle, and every core TEG-Blue concept — searchable and sorted by framework.",
   keywords: [
     "emotional regulation glossary",
     "emotional technology terms",
@@ -36,7 +36,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Emotional Regulation Glossary — 199 Terms | TEG-Blue Research",
-    description: "199 defined terms across 12 frameworks and 3 models. Regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
+    description: "199 defined terms across 12 frameworks and 4 models. Regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
     url: "https://teg-blue.org/glossary",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -50,7 +50,7 @@ export const metadata = {
 
 // Glossary terms from the approved content
 const GLOSSARY_TERMS = [
-  // ===== M1: NERVOUS SYSTEM SIGNALING =====
+  // ===== M2: NERVOUS SYSTEM STATES =====
   {
     slug: "readiness-to-change",
     title: "Readiness to Change",
@@ -149,10 +149,10 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "models",
-    title: "Three Models",
+    title: "The Emotional Somatic System",
     type: "concept",
     status: "proposed",
-    definition: "The measurement part of TEG-Blue. Three models: Nervous System Signaling (the instrument — how the nervous system communicates through emotion across four modes), the Three Awareness Capacities (the calibration — what determines how well it does it), and Regulation Capacities (the return pathway — what the body does to regulate, and whether the cycle is completing).",
+    definition: "The measurement part of TEG-Blue. Four foundational models: Emotions as Signals (the signal language — what the nervous system delivers), Nervous System States (the instrument — how the nervous system communicates through four modes), Regulation Capacities (the return pathway — what the body does to regulate, and whether the cycle is completing), and Awareness Capacities (the calibration — what determines how well it reads).",
     tags: ["core-concept", "measurement"],
     framework: 1,
   },
@@ -608,7 +608,7 @@ const GLOSSARY_TERMS = [
     slug: "biological-restoration",
     title: "Biological Restoration",
     aliases: ["Regulation — The Return"],
-    aliasNote: "Called 'Regulation — The Return' in the applied model (M1: Nervous System Signaling) on teg-blue.com. Same mechanism, applied framing.",
+    aliasNote: "Called 'Regulation — The Return' in the applied model (M2: Nervous System States) on teg-blue.com. Same mechanism, applied framing.",
     type: "concept",
     status: "proposed",
     definition: "The mechanism by which the body returns from threat to baseline — the complete cycle: activation, response, discharge, return. Learned through co-regulation. When Biological Restoration is never learned, modes become chronic and the compass gets stuck. Can be disrupted (unpredictability), misdirected (incongruence), or blocked (invalidation).",
@@ -653,7 +653,7 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "three-awareness-capacities",
-    title: "Three Awareness Capacities",
+    title: "Awareness Capacities",
     type: "concept",
     status: "proposed",
     definition: "The integrated set of Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — the capacities that determine what data the compass receives. Present at birth in proto-form as a single system, they differentiate through relational conditions. RE reads others. ER feels with others. SEA reads the self. Together and online, they provide the full information set from which cognition builds identity — True Coherence. When one or more are distorted or absent, cognition builds around the gaps.",
@@ -1892,7 +1892,7 @@ const GLOSSARY_TERMS = [
 const SIDEBAR_SECTIONS = [
   { label: "184 Terms", href: "#glossary-terms", description: "Every key concept across all 12 frameworks, defined with precision. Searchable and filterable." },
   { label: "Framework Tags", href: "#glossary-search", description: "Each term tagged to its source framework (F1–F12) for cross-reference navigation." },
-  { label: "Core Models", href: "#glossary-list", description: "The foundational vocabulary: Nervous System Signaling, Three Awareness Capacities, Regulation Capacities." },
+  { label: "Core Models", href: "#glossary-list", description: "The foundational vocabulary: Emotions as Signals, Nervous System States, Regulation Capacities, Awareness Capacities." },
   { label: "Regulation Thread", href: "#glossary-list", description: "Terms tracing the thread from biological signal through developmental calibration to systemic scale." },
 ];
 
@@ -1964,7 +1964,7 @@ export default function GlossaryPage() {
             "@type": "DefinedTermSet",
             name: "TEG-Blue Emotional Regulation Glossary",
             url: "https://teg-blue.org/glossary",
-            description: "199 defined terms across 12 frameworks and 3 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
+            description: "199 defined terms across 12 frameworks and 4 models. Definitions for regulatory states, complexity markers, neuroception, the Four-Mode Gradient, and every core TEG-Blue concept.",
             inLanguage: "en",
             hasDefinedTerm: [
               { "@type": "DefinedTerm", name: "Emotions", description: "Biological information — the nervous system signalling safety or threat." },

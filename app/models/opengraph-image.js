@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "The Three Core Models — TEG-Blue Research";
+export const alt = "The Emotional Somatic System — TEG-Blue Research";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -72,7 +72,7 @@ export default function Image() {
               lineHeight: 1.1,
             }}
           >
-            The Three Core Models
+            The Emotional Somatic System
           </div>
 
           <div
@@ -85,45 +85,75 @@ export default function Image() {
               marginBottom: 32,
             }}
           >
-            Instrument + Calibration = Complete System
+            Signal + State + Regulation + Perception
           </div>
 
-          {/* Two model cards */}
-          <div style={{ display: "flex", gap: 24, marginBottom: 24 }}>
+          {/* Four model cards */}
+          <div style={{ display: "flex", gap: 16, marginBottom: 24 }}>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                padding: "20px 32px",
+                padding: "16px 20px",
+                backgroundColor: "rgba(122, 186, 235, 0.1)",
+                borderRadius: 8,
+                border: "1px solid rgba(122, 186, 235, 0.25)",
+              }}
+            >
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#7ABAEB", marginBottom: 4, letterSpacing: "0.08em" }}>M1</div>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Emotions as Signals</div>
+              <div style={{ fontSize: 12, color: "#7ABAEB" }}>The Signal Language</div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: "16px 20px",
                 backgroundColor: "rgba(74, 155, 232, 0.1)",
                 borderRadius: 8,
                 border: "1px solid rgba(74, 155, 232, 0.25)",
               }}
             >
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#4A9BE8", marginBottom: 4, letterSpacing: "0.08em" }}>M1</div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Inner Compass</div>
-              <div style={{ fontSize: 13, color: "#4A9BE8" }}>The Four-Mode Gradient</div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#4A9BE8", marginBottom: 4, letterSpacing: "0.08em" }}>M2</div>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Nervous System States</div>
+              <div style={{ fontSize: 12, color: "#4A9BE8" }}>The Instrument</div>
             </div>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                padding: "20px 32px",
+                padding: "16px 20px",
+                backgroundColor: "rgba(59, 125, 229, 0.1)",
+                borderRadius: 8,
+                border: "1px solid rgba(59, 125, 229, 0.25)",
+              }}
+            >
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#3B7DE5", marginBottom: 4, letterSpacing: "0.08em" }}>M3</div>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Regulation Capacities</div>
+              <div style={{ fontSize: 12, color: "#3B7DE5" }}>The Return Pathway</div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: "16px 20px",
                 backgroundColor: "rgba(53, 96, 204, 0.1)",
                 borderRadius: 8,
                 border: "1px solid rgba(53, 96, 204, 0.25)",
               }}
             >
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#3560CC", marginBottom: 4, letterSpacing: "0.08em" }}>M2</div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Three Awareness Capacities</div>
-              <div style={{ fontSize: 13, color: "#3560CC" }}>RE, ER, SEA</div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#3560CC", marginBottom: 4, letterSpacing: "0.08em" }}>M4</div>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Awareness Capacities</div>
+              <div style={{ fontSize: 12, color: "#3560CC" }}>RE, ER, SEA</div>
             </div>
           </div>
 
           <div style={{ fontSize: 14, color: "#6B7A99" }}>
-            Applied models for practitioners, researchers, and individuals
+            Four foundational models for practitioners, researchers, and individuals
           </div>
         </div>
 

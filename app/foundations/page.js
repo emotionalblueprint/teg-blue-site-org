@@ -6,7 +6,7 @@ import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJson
 const FAQ_ITEMS = [
   {
     question: "How is TEG-Blue organized?",
-    answer: "TEG-Blue is organized as four interconnected parts: measurement (Three Core Models), explanatory frameworks (12 Frameworks), emotional tools (gradient-based scales), and AI safety infrastructure (structured schemas for machine consumption).",
+    answer: "TEG-Blue is organized as four interconnected parts: measurement (Four Foundational Models), explanatory frameworks (12 Frameworks), emotional tools (gradient-based scales), and AI safety infrastructure (structured schemas for machine consumption).",
   },
   {
     question: "What problem does TEG-Blue address?",
@@ -20,7 +20,7 @@ const FAQ_ITEMS = [
 
 const SIDEBAR_SECTIONS = [
   { label: "The Problem", href: "#the-problem", description: "What problem does TEG-Blue address? Ambiguity between nervous system protection and intentional manipulation." },
-  { label: "Part 1 — Measurement", href: "#part-1-measurement", description: "Three Core Models: the Inner Compass, the Awareness Capacities, and Biological Restoration." },
+  { label: "Part 1 — Measurement", href: "#part-1-measurement", description: "Four Foundational Models: Emotions as Signals, Nervous System States, Regulation Capacities, and Awareness Capacities." },
   { label: "Part 2 — Frameworks", href: "#part-2-frameworks", description: "12 explanatory frameworks across three arcs. The Regulation Thread." },
   { label: "Part 3 — Emotional Tools", href: "#part-3-emotional-tools", description: "Applied instruments for practitioners, clinicians, researchers, and individuals." },
   { label: "Part 4 — AI Safety", href: "#part-4-ai-safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
@@ -30,7 +30,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "System Overview | TEG-Blue Research",
-  description: "How the parts fit together. TEG-Blue is organized as four interconnected parts: measurement (Three Core Models), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+  description: "How the parts fit together. TEG-Blue is organized as four interconnected parts: measurement (Four Foundational Models), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
   keywords: [
     "TEG-Blue architecture",
     "emotional regulation system",
@@ -163,7 +163,7 @@ export default function FoundationsPage() {
               gap: 12,
             }}
           >
-            <PartIntroCard number={1} title="Measurement" subtitle="Three Core Models" color={SPECTRUM.azure} href="/models" />
+            <PartIntroCard number={1} title="Measurement" subtitle="Four Foundational Models" color={SPECTRUM.azure} href="/models" />
             <PartIntroCard number={2} title="Explanatory" subtitle="12 Frameworks" color={SPECTRUM.cobalt} href="/frameworks-map" />
             <PartIntroCard number={3} title="Emotional Tools" subtitle="Applied Instruments" color={SPECTRUM.indigo} href="https://teg-blue.com/emotional-tools" external />
             <PartIntroCard number={4} title="AI Safety" subtitle="Structured Schemas" color={SPECTRUM.slate} href="/ai-safety" />
@@ -174,20 +174,21 @@ export default function FoundationsPage() {
         <section id="part-1-measurement" style={{ marginBottom: 40 }}>
           <PartCard number={1} title="Measurement" color={SPECTRUM.azure}>
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Three Core Models
+              The Emotional Somatic System
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The measurement part describes what is actually happening — in a body, in a relationship, in a conversation — and gives it a name that can be tracked. Three models make up this part. They work together.
+              The measurement part describes what is actually happening — in a body, in a relationship, in a conversation — and gives it a name that can be tracked. Four models make up this part. They work together.
             </p>
             <ul style={listStyle}>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M1 — Nervous System Signaling</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four modes.</li>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M2 — Three Awareness Capacities</strong> <em style={{ color: TEXT.muted }}>(The calibration)</em> — What is holding it there? The three awarenesses that determine what data the compass receives and whether the person has access to their own internal state.</li>
-              <li><strong style={{ color: TEXT.primary }}>M3 — Biological Restoration</strong> <em style={{ color: TEXT.muted }}>(The fork)</em> — What is the body doing underneath? The physiological sequence that runs when emotion doesn&apos;t complete — and the designed return path that can only be allowed, not forced.</li>
+              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M1 — Emotions as Signals</strong> <em style={{ color: TEXT.muted }}>(The signal language)</em> — What is the nervous system delivering? Sixteen emotions mapped as biological signals carrying specific information about needs, safety, and constraint.</li>
+              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M2 — Nervous System States</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four modes.</li>
+              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M3 — Regulation Capacities</strong> <em style={{ color: TEXT.muted }}>(The return pathway)</em> — What is the body doing underneath? The physiological sequence that runs when emotion doesn&apos;t complete — and the designed return path that can only be allowed, not forced.</li>
+              <li><strong style={{ color: TEXT.primary }}>M4 — Awareness Capacities</strong> <em style={{ color: TEXT.muted }}>(The calibration)</em> — What is holding it there? The three awarenesses that determine what data the compass receives and whether the person has access to their own internal state.</li>
             </ul>
             <StatusBadge status="Proposed models with early evidence" color={SPECTRUM.azure} />
             <div style={{ marginTop: 16 }}>
               <Link href="/models" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                See all three models →
+                See all four models →
               </Link>
             </div>
           </PartCard>
@@ -411,7 +412,7 @@ export default function FoundationsPage() {
               </thead>
               <tbody>
                 <NavRow label="See how the system is built" href="/how-it-works" linkText="How It Works →" />
-                <NavRow label="Go deeper into the three models" href="/models" linkText="Core Models →" />
+                <NavRow label="Go deeper into the four models" href="/models" linkText="The Emotional Somatic System →" />
                 <NavRow label="See all twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="See the mechanics in action" href="/mechanics-of-phenomena" linkText="Mechanics →" />
                 <NavRow label="Review the evidence" href="/publications" linkText="Publications →" />

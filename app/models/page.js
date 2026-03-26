@@ -11,20 +11,20 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const FAQ_ITEMS = [
   {
-    question: "What are the three TEG-Blue models?",
-    answer: "The three models are M1: Nervous System Signaling (the instrument — where is the needle?), M2: Three Awareness Capacities (the calibration — what is holding it there?), and M3: Regulation Capacities (the return pathway — what is the body doing to regulate, and is the cycle completing?). The frameworks explain why. The models provide what — the applied tools that practitioners, researchers, and individuals actually use.",
+    question: "What are the four TEG-Blue models?",
+    answer: "The four models are M1: Emotions as Signals (the signal language — what is the nervous system delivering?), M2: Nervous System States (the instrument — where is the needle?), M3: Regulation Capacities (the return pathway — is the cycle completing?), and M4: Awareness Capacities (the calibration — what is holding it there?). Together they form The Emotional Somatic System: Signal → State → Regulation → Perception.",
   },
   {
-    question: "What is the Nervous System Signaling model?",
-    answer: "M1, Nervous System Signaling, maps how the nervous system orients between safety and threat across four modes on a continuous gradient: Connection, Protection, Control, and Domination. Its primary tools are the Inner Compass and the Four-Mode Gradient. The core question it answers is: where is the needle, can it move, and what does the person have access to from where they are?",
+    question: "What is the Emotions as Signals model?",
+    answer: "M1, Emotions as Signals, maps sixteen emotions as biological signals — what each one detects, what the body does, and what restores the cycle. It distinguishes somatic emotions (which can complete through the body's own channels) from relational emotions (which require co-regulation). The core question: what is this signal telling me?",
   },
   {
-    question: "What are the Three Awareness Capacities?",
-    answer: "M2 describes Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — the three awarenesses that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. These capacities develop through relationship and determine the compass configuration.",
+    question: "What is the Nervous System States model?",
+    answer: "M2, Nervous System States, maps how the nervous system orients between safety and threat across four modes on a continuous gradient: Connection, Protection, Control, and Domination. Its primary tools are the Inner Compass and the Four-Mode Gradient. The core question: where is the needle, can it move, and what does the person have access to from where they are?",
   },
   {
-    question: "How do the three TEG-Blue models relate to each other?",
-    answer: "The three models describe one emotion moving through the nervous system: M1 maps what state the emotion produces, M2 maps whether the emotion can be received, and M3 maps whether the emotion can complete. M2 and M3 are interdependent — you cannot regulate what you cannot receive. The awareness capacities develop through regulation completing, and regulation completes through the awareness capacities being online enough to let the cycle run.",
+    question: "How do the four TEG-Blue models relate to each other?",
+    answer: "The four models describe one emotion moving through the nervous system: M1 maps what signal the nervous system delivers, M2 maps what state that signal produces, M3 maps whether the activation cycle completes, and M4 maps whether the signal can be received by the awareness system. M3 and M4 are interdependent — you cannot regulate what you cannot receive.",
   },
 ];
 
@@ -33,27 +33,27 @@ const FAQ_ITEMS = [
 const MODELS = [
   {
     id: "M1",
-    role: "The Four-Mode Gradient",
-    title: "Nervous System Signaling",
-    coreQuestion: "Where is the needle?",
+    role: "The Signal Language",
+    title: "Emotions as Signals",
+    coreQuestion: "What is this signal telling me?",
     summary:
-      "What state the emotion produces. How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return to baseline restores it.",
-    concepts: 10,
-    drawsFrom: "F1, F3, F7, F12",
+      "What signal the nervous system delivers. Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. Somatic emotions that can complete alone vs relational emotions that require co-regulation.",
+    concepts: 16,
+    drawsFrom: "F1",
     color: SPECTRUM.azure,
-    href: "/model/m1-nervous-system-signaling",
+    href: "/model/m1-emotions-as-signals",
   },
   {
     id: "M2",
-    role: "RE, ER, SEA",
-    title: "Three Awareness Capacities",
-    coreQuestion: "What is holding it there?",
+    role: "The Four-Mode Gradient",
+    title: "Nervous System States",
+    coreQuestion: "Where is the needle?",
     summary:
-      "Whether the emotion can be received. The three awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state.",
+      "What state the signal produces. How the nervous system orients between safety and threat across four modes on a continuous gradient. What each mode enables and restricts. How the compass gets stuck and how the return to baseline restores it.",
     concepts: 10,
-    drawsFrom: "F2, F3, F8, F10",
-    color: SPECTRUM.cobalt,
-    href: "/model/m2-three-awareness-capacities",
+    drawsFrom: "F1, F3, F7, F12",
+    color: SPECTRUM.azure,
+    href: "/model/m2-nervous-system-states",
   },
   {
     id: "M3",
@@ -61,17 +61,30 @@ const MODELS = [
     title: "Regulation Capacities",
     coreQuestion: "What is the body doing to regulate — and is the cycle completing?",
     summary:
-      "Whether the emotion can complete. The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
+      "Whether the activation cycle completes. The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.",
     concepts: 9,
     drawsFrom: "F1, F2, F3, F12",
     color: SPECTRUM.indigo,
     href: "/model/m3-regulation-capacities",
   },
+  {
+    id: "M4",
+    role: "RE, ER, SEA",
+    title: "Awareness Capacities",
+    coreQuestion: "What is holding it there?",
+    summary:
+      "Whether the signal can be received. The three awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state.",
+    concepts: 10,
+    drawsFrom: "F2, F3, F8, F10",
+    color: SPECTRUM.cobalt,
+    href: "/model/m4-awareness-capacities",
+  },
 ];
 
 const CONNECTORS = [
-  { label: "calibrates", description: "M2 determines how well the compass (M1) can read its own data" },
-  { label: "runs underneath", description: "M3 maps the biology that M1 and M2 sit on top of" },
+  { label: "produces", description: "M1 signals produce the states M2 maps" },
+  { label: "determines return", description: "M3 maps whether the activation cycle M2 opened can complete" },
+  { label: "calibrates", description: "M4 determines how well the compass (M2) can read its own data" },
 ];
 
 // ─── PAGE ───────────────────────────────────────────────────
@@ -90,10 +103,10 @@ export default function ModelsPage() {
       <PageLayout
         header={
           <ModelHero
-            badge="3 FOUNDATIONAL MODELS"
-            title="The Three Core Models"
-            subtitle="Signal → Perception → Return"
-            description="Emotions are the nervous system's signal language. Three things determine what happens to a signal once it fires: what state it produces in the body, whether it can be received by the awareness system, and whether it can complete through the regulation cycle. These are not three separate topics. They are three stages of the same sequence — and three models describing it."
+            badge="4 FOUNDATIONAL MODELS"
+            title="The Emotional Somatic System"
+            subtitle="Signal → State → Regulation → Perception"
+            description="Emotions are the nervous system's signal language. Four things determine what happens to a signal once it fires: what the signal is delivering, what state it produces in the body, whether the activation cycle can complete, and whether the signal can be received by the awareness system. These are not four separate topics. They are four stages of the same sequence — and four models describing it."
             color={SPECTRUM.cobalt}
           />
         }
@@ -126,10 +139,38 @@ export default function ModelsPage() {
         {/* ─── M1 DETAIL ────────────────────────────────────── */}
         <ModelDetail
           id="M1"
-          title="Nervous System Signaling"
+          title="Emotions as Signals"
+          role="The signal language"
+          color={SPECTRUM.azure}
+          href="/model/m1-emotions-as-signals"
+        >
+          <p style={bodyStyle}>
+            Emotions are the nervous system&apos;s signal language — biological messages, not disruptions to clear thinking. Each emotion carries a specific finding about what the nervous system detected. The emotion is the delivery system; the signal is the content.
+          </p>
+          <div style={modesLabelStyle(SPECTRUM.azure)}>
+            Sixteen emotions organized by body signature:
+          </div>
+          <ul style={listStyle}>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Mobilization</strong> — Fear, Anger, Stress, Anxiety</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Expulsion</strong> — Disgust</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Social Withdrawal</strong> — Shame, Guilt</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Conservation</strong> — Sadness</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Approach &amp; Expansion</strong> — Joy, Happiness, Admiration, Pride</li>
+            <li><strong style={{ color: TEXT.primary }}>Bonding &amp; Proximity</strong> — Love, Trust, Gratitude, Compassion</li>
+          </ul>
+          <p style={{ ...bodyStyle, marginTop: 16 }}>
+            <strong style={{ color: TEXT.primary }}>The central distinction:</strong> Somatic emotions can complete through the body&apos;s own channels. Relational emotions cannot — they require co-regulation. No amount of breathing resolves shame. The nervous system is waiting for another person to stay.
+          </p>
+          <StatusBadge status="Proposed model with early evidence" color={SPECTRUM.azure} />
+        </ModelDetail>
+
+        {/* ─── M2 DETAIL ────────────────────────────────────── */}
+        <ModelDetail
+          id="M2"
+          title="Nervous System States"
           role="The instrument"
           color={SPECTRUM.azure}
-          href="/model/m1-nervous-system-signaling"
+          href="/model/m2-nervous-system-states"
         >
           <p style={bodyStyle}>
             The nervous system continuously evaluates one question: <em>Is there enough safety to engage, or is protection needed?</em> The Inner Compass is the name for that orientation mechanism. The Four-Mode Gradient is the continuous range it moves through.
@@ -149,44 +190,10 @@ export default function ModelsPage() {
           <QuoteBlock>
             A fluid compass does not stay in Connection permanently — fluid operation is the ability to move through the gradient and return to baseline.
           </QuoteBlock>
-          <p style={{ ...bodyStyle, marginTop: 12, fontSize: 13 }}>
-            <Link href="/model/m1-emotions-as-signals" style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>
-              Emotions as Signals &rarr;
-            </Link>
-            {" "}— the nine emotions mapped as biological signals: what each one detects, what the body does, and what completes the cycle.
-          </p>
           <StatusBadge status="Proposed model with early evidence" color={SPECTRUM.azure} />
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
             See <Link href="/publications" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Publications</Link> for what is currently tested.
           </p>
-        </ModelDetail>
-
-        {/* ─── M2 DETAIL ────────────────────────────────────── */}
-        <ModelDetail
-          id="M2"
-          title="Three Awareness Capacities"
-          role="The calibration system"
-          color={SPECTRUM.cobalt}
-          href="/model/m2-three-awareness-capacities"
-        >
-          <p style={bodyStyle}>
-            The compass (M1) is the instrument. The three awareness capacities determine what data it receives, how accurately it reads, and whether the person has access to their own internal state.
-          </p>
-          <div style={modesLabelStyle(SPECTRUM.cobalt)}>
-            The three capacities:
-          </div>
-          <ul style={listStyle}>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Reading Emotions (RE)</strong> — Perceiving what others are feeling: faces, tone, body language, context.</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Emotional Resonance (ER)</strong> — Feeling what others are feeling. The body&apos;s resonance with another person&apos;s state.</li>
-            <li><strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong> — Perceiving and naming your own internal state. The capacity that separates &ldquo;I feel bad&rdquo; from &ldquo;I feel guilty because I hurt someone.&rdquo;</li>
-          </ul>
-          <p style={{ ...bodyStyle, marginTop: 16 }}>
-            <strong style={{ color: TEXT.primary }}>The key insight:</strong> RE stays sharp across the entire gradient — it just changes what it serves. In a Fluid Compass it serves understanding. In a Stuck Compass it serves the mode. ER degrades differently per mode. SEA degrades progressively: present in Fluid modes, flickering in transitional states, gone in Stuck modes. It is the last capacity to go offline and the first that needs to come back. Its level determines whether the other two capacities serve the person or serve the stuck position.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            <strong style={{ color: TEXT.primary }}>Why this matters for discernment:</strong> The configuration RE sharp + ER absent + SEA absent — found in Chronic Control and Chronic Domination — enables precise emotional reading with no internal feedback. The person may be the most accurate emotional reader in the room and cause the most harm, because the capacities that would register that harm have been structurally shut down. This is what makes trauma-driven protection and strategic manipulation look identical on the surface, and why distinguishing them matters.
-          </p>
-          <StatusBadge status="Proposed model, grounded in established research" color={SPECTRUM.cobalt} />
         </ModelDetail>
 
         {/* ─── M3 DETAIL ────────────────────────────────────── */}
@@ -218,6 +225,31 @@ export default function ModelsPage() {
           <StatusBadge status="Built on established stress physiology — framing as 'Biological Restoration' is TEG-Blue's contribution" color={SPECTRUM.indigo} />
         </ModelDetail>
 
+        {/* ─── M4 DETAIL ────────────────────────────────────── */}
+        <ModelDetail
+          id="M4"
+          title="Awareness Capacities"
+          role="The calibration system"
+          color={SPECTRUM.cobalt}
+          href="/model/m4-awareness-capacities"
+        >
+          <p style={bodyStyle}>
+            The compass (M2) is the instrument. The awareness capacities determine what data it receives, how accurately it reads, and whether the person has access to their own internal state.
+          </p>
+          <div style={modesLabelStyle(SPECTRUM.cobalt)}>
+            The three capacities:
+          </div>
+          <ul style={listStyle}>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Reading Emotions (RE)</strong> — Perceiving what others are feeling: faces, tone, body language, context.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Emotional Resonance (ER)</strong> — Feeling what others are feeling. The body&apos;s resonance with another person&apos;s state.</li>
+            <li><strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong> — Perceiving and naming your own internal state. The capacity that separates &ldquo;I feel bad&rdquo; from &ldquo;I feel guilty because I hurt someone.&rdquo;</li>
+          </ul>
+          <p style={{ ...bodyStyle, marginTop: 16 }}>
+            <strong style={{ color: TEXT.primary }}>The key insight:</strong> RE stays sharp across the entire gradient — it just changes what it serves. In a Fluid Compass it serves understanding. In a Stuck Compass it serves the mode. SEA degrades progressively: present in Fluid modes, flickering in transitional states, gone in Stuck modes. It is the last capacity to go offline and the first that needs to come back.
+          </p>
+          <StatusBadge status="Proposed model, grounded in established research" color={SPECTRUM.cobalt} />
+        </ModelDetail>
+
         {/* ─── INTEGRATION ────────────────────────────────── */}
         <section
           id="integration"
@@ -230,16 +262,16 @@ export default function ModelsPage() {
           }}
         >
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            How do the three TEG-Blue models work together?
+            How do the four TEG-Blue models work together?
           </h2>
           <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
-            Three Dimensions of One Reality
+            Four Dimensions of One Reality
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-            A compass position (M1) without a capacity configuration (M2) is a reading without an explanation. A capacity configuration without a compass position is an architecture without a location. And both without the physiological foundation (M3) are a map drawn above ground with no account of what is running underneath.
+            A signal (M1) without a state (M2) is information without context. A state without a regulation account (M3) is a position without an explanation for why it stays. And all three without the awareness capacities (M4) are a system with no account of whether the person can receive what their own body is delivering.
           </p>
           <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, margin: "12px 0 0", fontWeight: 500 }}>
-            Complete understanding requires all three: where is the needle, what is holding it there, and what is the body doing while it stays stuck?
+            Complete understanding requires all four: what signal is being delivered, what state it produces, whether the cycle completes, and whether the person can receive it.
           </p>
         </section>
 
@@ -255,24 +287,25 @@ export default function ModelsPage() {
           }}
         >
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Signal &rarr; Perception &rarr; Return
+            Signal &rarr; State &rarr; Regulation &rarr; Perception
           </h2>
           <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
-            One Emotion, Three Stages
+            One Emotion, Four Stages
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px" }}>
-            The three models describe one emotion moving through the nervous system:
+            The four models describe one emotion moving through the nervous system:
           </p>
           <ul style={{ paddingLeft: 20, margin: "0 0 16px", fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M1</strong> maps what state the emotion produces.</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received.</li>
-            <li><strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M1</strong> maps what signal the nervous system delivers.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M2</strong> maps what state that signal produces.</li>
+            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>M3</strong> maps whether the activation cycle completes.</li>
+            <li><strong style={{ color: TEXT.primary }}>M4</strong> maps whether the signal can be received.</li>
           </ul>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px" }}>
-            M2 and M3 are interdependent &mdash; you cannot regulate what you cannot receive. The awareness capacities develop <em>through</em> regulation completing. And regulation completes <em>through</em> the awareness capacities being online enough to let the cycle run.
+            M3 and M4 are interdependent &mdash; you cannot regulate what you cannot receive. The awareness capacities develop <em>through</em> regulation completing. And regulation completes <em>through</em> the awareness capacities being online enough to let the cycle run.
           </p>
           <div style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, padding: "12px 16px", background: hexToRgba(SPECTRUM.cobalt, 0.04), borderRadius: RADIUS.sm, borderLeft: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.3)}` }}>
-            <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>If awareness capacities are offline (M2 failure):</strong> The signal fires but cannot be received. The cycle cannot begin to close.</p>
+            <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>If awareness capacities are offline (M4 failure):</strong> The signal fires but cannot be received. The cycle cannot begin to close.</p>
             <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>If regulation conditions are absent (M3 failure):</strong> The signal can be received but cannot complete. The cycle stays open. The debris accumulates.</p>
             <p style={{ margin: 0 }}><strong style={{ color: TEXT.primary }}>If both:</strong> The system eventually stops allocating resources to channels that produce no return. RE (Reading Emotions), ER (Emotional Resonance), SEA (Self-Emotional Awareness) go down. Flatness. The signal keeps generating &mdash; the body never stops &mdash; but there is nowhere for it to go.</p>
           </div>
@@ -374,7 +407,7 @@ export default function ModelsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Three Models | TEG-Blue Research",
+              name: "The Emotional Somatic System | TEG-Blue Research",
               url: "https://teg-blue.org/models",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

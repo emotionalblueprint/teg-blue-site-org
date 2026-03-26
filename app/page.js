@@ -5,7 +5,7 @@ import { generateResearchHubJsonLd, generateSearchActionJsonLd, generateFAQJsonL
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is an open-science emotional technology research platform that maps how nervous system states shape emotional behavior. It integrates 145+ established theories into testable hypotheses organized as 12 frameworks, 3 core models, emotional tools, and AI safety infrastructure.",
+    answer: "TEG-Blue is an open-science emotional technology research platform that maps how nervous system states shape emotional behavior. It integrates 145+ established theories into testable hypotheses organized as 12 frameworks, 4 foundational models, emotional tools, and AI safety infrastructure.",
   },
   {
     question: "What is the Four-Mode Gradient?",
@@ -60,7 +60,7 @@ export const metadata = {
   },
   openGraph: {
     title: "TEG-Blue | Emotional Technology Research",
-    description: "Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 3 models, transparent research.",
+    description: "Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
     url: "https://teg-blue.org",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -68,7 +68,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TEG-Blue | Emotional Technology Research",
-    description: "Open science — 145+ theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 3 models, transparent research.",
+    description: "Open science — 145+ theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
   },
 };
 
@@ -426,8 +426,8 @@ export default function ResearchHub() {
               <PartCard
                 color={SPECTRUM.azure}
                 label="1 — Measurement"
-                title="Three Core Models"
-                description="Nervous System Signaling (M1) maps where the nervous system is pointing. The Three Awareness Capacities (M2) explain how accurately it reads — and what goes offline when it gets stuck. Regulation Capacities (M3) describes the body's designed return path."
+                title="Four Foundational Models"
+                description="Emotions as Signals (M1) maps what the nervous system delivers. Nervous System States (M2) maps where the nervous system is pointing. Regulation Capacities (M3) describes the body's designed return path. Awareness Capacities (M4) explain how accurately it reads — and what goes offline when it gets stuck."
                 href="/models"
                 linkText="Core Models →"
               />

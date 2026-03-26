@@ -180,8 +180,8 @@ export default function Piece01WhyHumansAreFrustrating() {
         items={[
           {
             description: "You want to understand the four operating modes \u2014 what activates each one and how they determine which system is running the show:",
-            label: "M1 \u2014 Nervous System Signaling",
-            href: "/model/m1-nervous-system-signaling",
+            label: "M2 \u2014 Nervous System States",
+            href: "/model/m2-nervous-system-states",
           },
           {
             description: "You want to understand why higher intelligence often produces better rationalization rather than better reasoning \u2014 and the specific mechanism of myside bias:",

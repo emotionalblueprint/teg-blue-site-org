@@ -85,13 +85,13 @@ export default function ExploreLabelsPage() {
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <Link
-              href="/model/m2-three-awareness-capacities"
+              href="/model/m4-awareness-capacities"
               style={{
                 fontSize: 13, fontFamily: FONT.mono,
                 color: SPECTRUM.azure, textDecoration: "none",
               }}
             >
-              Three Awareness Capacities →
+              Awareness Capacities (M4) →
             </Link>
             <Link
               href="/frameworks-map"

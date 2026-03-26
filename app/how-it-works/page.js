@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const SIDEBAR_SECTIONS = [
   { label: "The Data System", href: "#the-data-system", description: "Five layers from established science to published tools. How each layer feeds the next." },
   { label: "Established Science", href: "#established-science", description: "145+ peer-reviewed theories from neuroscience, psychology, attachment, and trauma research." },
-  { label: "Concept Architectures", href: "#concept-architectures", description: "How 12 frameworks and 3 models connect established theories into testable structures." },
+  { label: "Concept Architectures", href: "#concept-architectures", description: "How 12 frameworks and 4 models connect established theories into testable structures." },
   { label: "Root Data", href: "#root-data", description: "Five files organized by biological function. The operational consolidation layer." },
   { label: "From Root to Output", href: "#from-root-to-output", description: "How root data becomes JavaScript libraries, interactive tools, diagrams, and research pages." },
   { label: "Traceability", href: "#traceability", description: "Every claim traces to its source. Provenance as architectural constraint." },
@@ -20,7 +20,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What are Concept Architectures?",
-    answer: "Each of the 12 frameworks (F1-F12) and 3 models (M1-M3) has a Concept Architecture — a formal working document that maps which established theories it draws from, the cross-disciplinary connections it proposes, the mechanisms it describes, and the testable predictions it generates. These are the intellectual origin of all downstream data.",
+    answer: "Each of the 12 frameworks (F1-F12) and 4 models (M1-M4) has a Concept Architecture — a formal working document that maps which established theories it draws from, the cross-disciplinary connections it proposes, the mechanisms it describes, and the testable predictions it generates. These are the intellectual origin of all downstream data.",
   },
   {
     question: "How does root data reach the public sites?",
@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
             <PipelineLayer
               number={2}
               title="Concept Architectures"
-              description="12 framework CAs (F1–F12) and 3 model CAs (M1–M3). Each maps which theories connect, what mechanisms operate, and what predictions follow."
+              description="12 framework CAs (F1–F12) and 4 model CAs (M1–M4). Each maps which theories connect, what mechanisms operate, and what predictions follow."
               color={SPECTRUM.azure}
               arrow
             />
@@ -245,16 +245,17 @@ export default function HowItWorksPage() {
               linkText="See all 12 Frameworks →"
             />
             <CAGroupCard
-              title="3 Model CAs (M1–M3)"
+              title="4 Model CAs (M1–M4)"
               description="One per model. Models describe how something works as a usable instrument. They draw from the framework CAs but serve a different, applied scope."
               color={SPECTRUM.azure}
               items={[
-                { label: "M1 — Nervous System Signaling", detail: "What the system does: the instrument, the modes, the observable compass" },
-                { label: "M2 — Awareness Capacities", detail: "What can be perceived: Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA)" },
+                { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals" },
+                { label: "M2 — Nervous System States", detail: "What the system does: the instrument, the modes, the observable compass" },
                 { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires" },
+                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA)" },
               ]}
               href="/models"
-              linkText="See the three models →"
+              linkText="See the four models →"
             />
           </div>
 
@@ -416,8 +417,8 @@ export default function HowItWorksPage() {
                     rootFiles="Mode Positions, Awareness Capacities, Biological Restoration, Emotions as Signals"
                   />
                   <VerifyRow
-                    pageType="Model pages (M1–M3)"
-                    rootFiles="M1 → Mode Positions + Emotions; M2 → Awareness Capacities; M3 → Biological Restoration"
+                    pageType="Model pages (M1–M4)"
+                    rootFiles="M1 → Emotions as Signals; M2 → Mode Positions; M3 → Biological Restoration; M4 → Awareness Capacities"
                   />
                   <VerifyRow
                     pageType="Compass diagram"
@@ -569,7 +570,7 @@ export default function HowItWorksPage() {
               </thead>
               <tbody>
                 <NavRow label="See what the system contains" href="/foundations" linkText="System Overview →" />
-                <NavRow label="Explore the three models" href="/models" linkText="Core Models →" />
+                <NavRow label="Explore the four models" href="/models" linkText="The Emotional Somatic System →" />
                 <NavRow label="See the twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review research methods" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Read the evidence" href="/publications" linkText="Publications →" />

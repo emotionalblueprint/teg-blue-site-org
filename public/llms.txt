@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform
 # https://teg-blue.org
-# Last updated: 2026-03-10
+# Last updated: 2026-03-26
 
 ## What This Site Is
 
@@ -106,19 +106,23 @@ Nervous system regulatory states along a continuous gradient:
 3. **Control** - Chronic threat managed through controlling others
 4. **Domination** - Control entrenched; power as only safety
 
-## The Three Core Models
+## The Emotional Somatic System (Four Foundational Models)
 
-### M1: Nervous System Signaling
-The instrument — how the nervous system communicates through emotion across four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient.
-URL: https://teg-blue.org/model/m1-nervous-system-signaling
+### M1: Emotions as Signals
+The signal language — sixteen emotions as biological messages. What the nervous system is delivering and why each signal exists.
+URL: https://teg-blue.org/model/m1-emotions-as-signals
 
-### M2: Three Awareness Capacities
-The calibration — the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that determine what data the compass receives and how it is processed.
-URL: https://teg-blue.org/model/m2-three-awareness-capacities
+### M2: Nervous System States
+The instrument — how the nervous system communicates through four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient.
+URL: https://teg-blue.org/model/m2-nervous-system-states
 
 ### M3: Regulation Capacities
 The return pathway — the full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle.
 URL: https://teg-blue.org/model/m3-regulation-capacities
+
+### M4: Awareness Capacities
+The calibration — the three awareness capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness) that determine what data the compass receives and how it is processed.
+URL: https://teg-blue.org/model/m4-awareness-capacities
 
 ## The 12 Frameworks
 
@@ -346,7 +350,7 @@ Each layer has a different job, evidence status, and research needs. See: https:
 - **22.2%** of individuals de-escalated toward Connection when challenged
 - **78%** higher complexity markers in de-escalators vs escalators
 - **12** explanatory frameworks (F1-F12)
-- **3** core applied models (M1, M2, M3)
+- **4** foundational models (M1-M4)
 - **4** nervous system regulatory modes (Connection → Protection → Control → Domination)
 - **16** gradient-based assessment instruments
 - **169** glossary terms across all frameworks
@@ -408,9 +412,11 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
-- Core Models: https://teg-blue.org/models
-  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-nervous-system-signaling
-  - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
+- The Emotional Somatic System: https://teg-blue.org/models
+  - M1 Emotions as Signals: https://teg-blue.org/model/m1-emotions-as-signals
+  - M2 Nervous System States: https://teg-blue.org/model/m2-nervous-system-states
+  - M3 Regulation Capacities: https://teg-blue.org/model/m3-regulation-capacities
+  - M4 Awareness Capacities: https://teg-blue.org/model/m4-awareness-capacities
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
   - F1: https://teg-blue.org/framework/f1-emotional-gradient
@@ -459,7 +465,7 @@ A: TEG-Blue provides structured schemas for harm detection, gradient classificat
 **TEG-Blue Research PROVIDES:**
 - Four-Mode Gradient measurement system
 - 12 explanatory frameworks (F1-F12)
-- 3 core applied models (M1-M3)
+- 4 foundational models (M1-M4)
 - 145+ theory integration with full attribution
 - Computational legibility for AI systems
 - Open research questions for the scientific community

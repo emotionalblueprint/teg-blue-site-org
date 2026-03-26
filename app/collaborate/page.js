@@ -189,7 +189,7 @@ export default function CollaboratePage() {
         <section id="current-status" style={{ marginBottom: 32 }}>
           <h2 style={sectionHeading}>Current status</h2>
           <p style={bodyStyle}>
-            TEG-Blue is in active development. The framework architecture (12 frameworks, 3 models) is complete. The first validation study is published. Five open research questions are documented.
+            TEG-Blue is in active development. The framework architecture (12 frameworks, 4 models) is complete. The first validation study is published. Five open research questions are documented.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             What the framework needs most is a lead researcher or institution to carry the next phase — systematic validation, replication across contexts, and dissemination into established research channels.

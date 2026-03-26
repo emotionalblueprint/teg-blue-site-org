@@ -13,7 +13,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How many research domains does TEG-Blue span?",
-    answer: "TEG-Blue spans 24 research domains, from affective neuroscience and attachment theory to social psychology and epigenetics. Each of the 12 frameworks and 3 models draws on specific research traditions, with framework cross-reference tags (F1-F12, M1-M3) mapping every theory to the framework it supports.",
+    answer: "TEG-Blue spans 24 research domains, from affective neuroscience and attachment theory to social psychology and epigenetics. Each of the 12 frameworks and 4 models draws on specific research traditions, with framework cross-reference tags (F1-F12, M1-M4) mapping every theory to the framework it supports.",
   },
   {
     question: "Is TEG-Blue peer-reviewed?",
@@ -35,8 +35,9 @@ const FRAMEWORK_URLS = {
   F10: "/framework/f10-generational-bridges",
   F11: "/framework/f11-emotional-paradoxes",
   F12: "/framework/f12-two-information-systems",
-  M1: "/model/m1-nervous-system-signaling",
-  M2: "/model/m2-three-awareness-capacities",
+  M1: "/model/m1-emotions-as-signals",
+  M2: "/model/m2-nervous-system-states",
+  M4: "/model/m4-awareness-capacities",
 };
 
 function getFrameworkUrl(tag) {

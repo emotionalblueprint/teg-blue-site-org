@@ -29,20 +29,21 @@ const ANCHOR_SECTIONS = [
 ];
 
 const DRAWS_FROM = [
-  { id: "F1", title: "The Emotional Gradient", relation: "Primary source", description: "The full scientific foundation for the compass, the four modes, and biological restoration. M1 is the applied tool; F1 is the depth account.", href: "/framework/f1-emotional-gradient" },
+  { id: "F1", title: "The Emotional Gradient", relation: "Primary source", description: "The full scientific foundation for the compass, the four modes, and biological restoration. M2 is the applied tool; F1 is the depth account.", href: "/framework/f1-emotional-gradient" },
   { id: "F3", title: "False Coherence", relation: "Maintains stuckness", description: "What maintains a stuck compass. How identity forms around the mode, making the stuckness invisible from the inside.", href: "/framework/f3-false-coherence" },
   { id: "F7", title: "Domination Regulates", relation: "Escalation", description: "Escalation across the gradient. How Control crosses into Domination, and how tolerance builds.", href: "/framework/f7-domination-regulates" },
   { id: "F12", title: "The Two Information Systems", relation: "Architecture", description: "The underlying architecture. Why understanding doesn't change the compass. Why experience does.", href: "/framework/f12-two-information-systems" },
-  { id: "M2", title: "Three Awareness Capacities", relation: "Paired model", description: "What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.", href: "/model/m2-three-awareness-capacities" },
+  { id: "M1", title: "Emotions as Signals", relation: "Paired model", description: "The signal language the nervous system uses to communicate what it detected. M1 maps the sixteen emotions; M2 maps the states they produce.", href: "/model/m1-emotions-as-signals" },
+  { id: "M4", title: "Awareness Capacities", relation: "Paired model", description: "What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.", href: "/model/m4-awareness-capacities" },
   { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "Whether the activation cycle completes. What the body was designed to do after activation, what blocks the return, and what it reaches for instead.", href: "/model/m3-regulation-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Nervous System Signaling (M1) | TEG-Blue Research",
+  title: "Nervous System States (M2) | TEG-Blue Research",
   description:
-    "The instrument that maps how the nervous system orients between safety and threat across four modes — Connection, Protection, Control, Domination — on a continuous gradient. Model M1 of the TEG-Blue system.",
+    "The instrument that maps how the nervous system orients between safety and threat across four modes — Connection, Protection, Control, Domination — on a continuous gradient. Model M2 of the TEG-Blue system.",
   keywords: [
     "inner compass",
     "four-mode gradient",
@@ -58,27 +59,27 @@ export const metadata = {
     "two information systems",
   ],
   alternates: {
-    canonical: "https://teg-blue.org/model/m1-nervous-system-signaling",
+    canonical: "https://teg-blue.org/model/m2-nervous-system-states",
   },
   openGraph: {
-    title: "Nervous System Signaling — M1 Model | TEG-Blue",
+    title: "Nervous System States — M2 Model | TEG-Blue",
     description:
-      "The instrument that maps how the nervous system orients between safety and threat across four modes on a continuous gradient. The foundational model of the TEG-Blue system.",
-    url: "https://teg-blue.org/model/m1-nervous-system-signaling",
+      "The instrument that maps how the nervous system orients between safety and threat across four modes on a continuous gradient. Model M2 of the TEG-Blue system.",
+    url: "https://teg-blue.org/model/m2-nervous-system-states",
     type: "article",
     siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nervous System Signaling — TEG-Blue M1",
+    title: "Nervous System States — TEG-Blue M2",
     description:
-      "How the nervous system orients between safety and threat. The foundational model behind the TEG-Blue system.",
+      "How the nervous system orients between safety and threat. Model M2 of the TEG-Blue system.",
   },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────
 
-export default function M1InnerCompassPage() {
+export default function M2NervousSystemStatesPage() {
   return (
     <div
       style={{
@@ -87,14 +88,14 @@ export default function M1InnerCompassPage() {
         fontFamily: FONT.display,
       }}
     >
-      <SiteHeader currentPath="/model/m1-nervous-system-signaling" />
+      <SiteHeader currentPath="/model/m2-nervous-system-states" />
 
       <PageLayout
         header={
           <>
             <ModelHero
-              badge="MODEL M1"
-              title="Nervous System Signaling"
+              badge="MODEL M2"
+              title="Nervous System States"
               subtitle="The Four-Mode Gradient"
               description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return to baseline determines whether the compass stays fluid or gets stuck. The first stage of the three-model sequence — Signal — mapping what the nervous system detected and how it responds."
               coreQuestion="Where is the needle, can it move, and what does the person have access to from where they are?"
@@ -1377,23 +1378,28 @@ export default function M1InnerCompassPage() {
               Connection to the Other Models
             </h2>
 
-            <h3 style={h3Style}>M2 — Three Awareness Capacities</h3>
+            <h3 style={h3Style}>M1 — Emotions as Signals</h3>
             <p style={proseStyle}>
-              M1 describes what states the nervous system moves through — the compass, the modes, the gradient, the filters, the accumulated activation. M2 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. One describes the instrument. The other describes the calibration.
+              M1 describes what the nervous system delivers — the signal language. M2 describes the states those signals produce. The signals are the input; the modes are the response organization. One names what arrives. The other names what the system does with it.
+            </p>
+
+            <h3 style={h3Style}>M4 — Awareness Capacities</h3>
+            <p style={proseStyle}>
+              M2 describes what states the nervous system moves through — the compass, the modes, the gradient, the filters, the accumulated activation. M4 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. One describes the instrument. The other describes the calibration.
             </p>
 
             <h3 style={h3Style}>M3 — Regulation Capacities</h3>
             <p style={proseStyle}>
-              M1 describes the states. M3 describes what the return to baseline requires — and what the nervous system does instead when the return does not complete. Accumulated activation lives in both: M1 describes what generates activation per mode and what accumulation looks like. M3 describes why the cycles do not complete, what the body reaches for instead, and what actual restoration requires.
+              M2 describes the states. M3 describes what the return to baseline requires — and what the nervous system does instead when the return does not complete. Accumulated activation lives in both: M2 describes what generates activation per mode and what accumulation looks like. M3 describes why the cycles do not complete, what the body reaches for instead, and what actual restoration requires.
             </p>
 
-            <h3 style={h3Style}>The Three Models as One Sequence</h3>
+            <h3 style={h3Style}>The Four Models as One Sequence</h3>
             <p style={proseStyle}>
-              The three models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what state the emotion produces. <strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete. They are three stages of the same sequence — signal, perception, return.
+              The four models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what signal the emotion carries. <strong style={{ color: TEXT.primary }}>M2</strong> maps what state the signal produces. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete its cycle. <strong style={{ color: TEXT.primary }}>M4</strong> maps whether the emotion can be received. They are four stages of the same sequence — signal, state, regulation, perception.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              One emotion. Three stages. M1 maps the state it produces. M2 maps whether it can be received. M3 maps whether it can complete.
+              One emotion. Four stages. M1 maps the signal it carries. M2 maps the state it produces. M3 maps whether it can complete. M4 maps whether it can be received.
             </OperationalStatement>
           </section>
 
@@ -1401,7 +1407,7 @@ export default function M1InnerCompassPage() {
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="m1-nervous-system-signaling" type="model" />
+          <ConnectedResearch slug="m2-nervous-system-states" type="model" />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
@@ -1435,8 +1441,8 @@ export default function M1InnerCompassPage() {
                   />
                   <NavRow
                     label="Understand what determines how well the compass works"
-                    href="/model/m2-three-awareness-capacities"
-                    linkText="M2: Three Awareness Capacities &rarr;"
+                    href="/model/m4-awareness-capacities"
+                    linkText="M4: Awareness Capacities &rarr;"
                   />
                   <NavRow
                     label="Understand what happens when the activation cycle doesn't complete"
@@ -1486,8 +1492,8 @@ export default function M1InnerCompassPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            "@id": "https://teg-blue.org/model/m1-nervous-system-signaling#article",
-            headline: "Nervous System Signaling: The Four-Mode Gradient",
+            "@id": "https://teg-blue.org/model/m2-nervous-system-states#article",
+            headline: "Nervous System States: The Four-Mode Gradient",
             description:
               "How the nervous system orients between safety and threat across four modes on a continuous gradient. Model M1 of the TEG-Blue system.",
             author: {
@@ -1511,7 +1517,7 @@ export default function M1InnerCompassPage() {
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://teg-blue.org/model/m1-nervous-system-signaling",
+              "@id": "https://teg-blue.org/model/m2-nervous-system-states",
             },
             about: [
               { "@type": "Thing", name: "Inner Compass" },
@@ -1550,7 +1556,7 @@ export default function M1InnerCompassPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
-              { name: "M1: Nervous System Signaling", url: "/model/m1-nervous-system-signaling" },
+              { name: "M2: Nervous System States", url: "/model/m2-nervous-system-states" },
             ])
           ),
         }}
@@ -1607,8 +1613,8 @@ export default function M1InnerCompassPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Nervous System Signaling (M1) — TEG-Blue Research",
-              url: "https://teg-blue.org/model/m1-nervous-system-signaling",
+              name: "Nervous System States (M2) — TEG-Blue Research",
+              url: "https://teg-blue.org/model/m2-nervous-system-states",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),

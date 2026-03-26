@@ -97,12 +97,12 @@ export default function F2AwarenessCalibrationPage() {
               badge="FRAMEWORK F2"
               title="Awareness Teaches Awareness"
               subtitle="How the Three Capacities Calibrate the Compass"
-              description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. Provides the theoretical foundation for M2 (Three Awareness Capacities) and the developmental origins of the chronic modes that M1 maps."
+              description="How the three awareness capacities develop through the relational environment, what the system produces when the awareness passed is complete, and what happens to the compass calibration, chronic mode position, and identity when it is not. Provides the theoretical foundation for M4 (Awareness Capacities) and the developmental origins of the chronic modes that M2 maps."
               group="Individual"
               groupLabel="Individual · F1–F3"
               threadLine="Co-regulation → self-restoration (when learned). When not learned: the compass locks · Cost: The restoration path is never built"
               informsModels={[
-                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+                { label: "M4", href: "/model/m4-awareness-capacities" },
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{
@@ -1104,7 +1104,7 @@ export default function F2AwarenessCalibrationPage() {
                 <tbody>
                   <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient →" />
                   <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
-                  <NavRow label="See the applied model for this framework" href="/model/m2-three-awareness-capacities" linkText="Three Awareness Capacities (M2) →" />
+                  <NavRow label="See the applied model for this framework" href="/model/m4-awareness-capacities" linkText="Awareness Capacities (M4) →" />
                   <NavRow label="See the physiological model — what the body does when the return is never learned" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) →" />
                   <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
                   <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />

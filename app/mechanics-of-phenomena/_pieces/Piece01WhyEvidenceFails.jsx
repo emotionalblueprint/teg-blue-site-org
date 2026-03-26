@@ -183,8 +183,8 @@ export default function Piece01WhyEvidenceFails() {
         items={[
           {
             description: "You want to understand why the human mind prioritizes stability over truth, why confrontation produces entrenchment, and what the four operating modes actually look like:",
-            label: "M1 \u2014 Nervous System Signaling",
-            href: "/model/m1-nervous-system-signaling",
+            label: "M2 \u2014 Nervous System States",
+            href: "/model/m2-nervous-system-states",
           },
           {
             description: "You want to understand how beliefs become regulatory tools \u2014 and why dismantling them triggers defensive escalation, not updating:",

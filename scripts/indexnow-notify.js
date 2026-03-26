@@ -41,9 +41,10 @@ const ALL_PAGES = [
   // Explore
   '/explore/labels',
   // Models
-  '/model/m1-nervous-system-signaling',
-  '/model/m2-three-awareness-capacities',
+  '/model/m1-emotions-as-signals',
+  '/model/m2-nervous-system-states',
   '/model/m3-regulation-capacities',
+  '/model/m4-awareness-capacities',
   // Frameworks (F1-F12)
   '/framework/f1-emotional-gradient',
   '/framework/f2-awareness-calibration',

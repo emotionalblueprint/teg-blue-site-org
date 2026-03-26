@@ -228,7 +228,7 @@ export default function F10GenerationalBridgesPage() {
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — what gets processed here changes what transmits next"
               informsModels={[
-                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+                { label: "M4", href: "/model/m4-awareness-capacities" },
               ]}
               adjacent={{
                 prev: { label: "F9 Neurodivergence", href: "/framework/f9-neurodivergence-variation" },

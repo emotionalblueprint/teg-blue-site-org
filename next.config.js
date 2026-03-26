@@ -465,10 +465,24 @@ const nextConfig = {
         permanent: true,
       },
 
-      // M1 rename: Inner Compass → Nervous System Signaling
+      // M1 rename: Inner Compass → Nervous System Signaling → M2 Nervous System States
       {
         source: '/model/m1-inner-compass',
-        destination: '/model/m1-nervous-system-signaling',
+        destination: '/model/m2-nervous-system-states',
+        permanent: true,
+      },
+
+      // ESS restructure: old M1 → new M2
+      {
+        source: '/model/m1-nervous-system-signaling',
+        destination: '/model/m2-nervous-system-states',
+        permanent: true,
+      },
+
+      // ESS restructure: old M2 → new M4
+      {
+        source: '/model/m2-three-awareness-capacities',
+        destination: '/model/m4-awareness-capacities',
         permanent: true,
       },
 

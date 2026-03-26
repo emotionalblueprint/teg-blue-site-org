@@ -40,16 +40,17 @@ const DRAWS_FROM = [
   { id: "F3", title: "False Coherence", relation: "Maintains stuckness", description: "How cognition constructs identity around missing capacities, making the absence invisible.", href: "/framework/f3-false-coherence" },
   { id: "F8", title: "Repairing Awareness", relation: "Repair pathway", description: "How awareness capacities that didn't develop can be rebuilt in adult relational contexts.", href: "/framework/f8-repairing-awareness" },
   { id: "F10", title: "Generational Bridges", relation: "Transmission", description: "How capacity configurations replicate across generations through the relational environment.", href: "/framework/f10-generational-bridges" },
-  { id: "M1", title: "Nervous System Signaling", relation: "Paired model", description: "The instrument these capacities calibrate. M1 maps what the compass does; M2 maps what determines how well it works.", href: "/model/m1-nervous-system-signaling" },
+  { id: "M1", title: "Emotions as Signals", relation: "Paired model", description: "The signal language the nervous system uses. M1 maps the sixteen emotions; M4 maps the capacities that determine whether they can be received.", href: "/model/m1-emotions-as-signals" },
+  { id: "M2", title: "Nervous System States", relation: "Paired model", description: "The instrument these capacities calibrate. M2 maps what the compass does; M4 maps what determines how well it works.", href: "/model/m2-nervous-system-states" },
   { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "What happens biologically when the activation cycle doesn't complete — and why awareness capacities determine whether it can.", href: "/model/m3-regulation-capacities" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Three Awareness Capacities (M2) | TEG-Blue Research",
+  title: "Awareness Capacities (M4) | TEG-Blue Research",
   description:
-    "The three specific awarenesses — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — that determine what data the compass receives, how it is processed, and whether the person has access to their own internal state. Model M2 of the TEG-Blue system.",
+    "The three specific awarenesses — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — that determine what data the compass receives, how it is processed, and whether the person has access to their own internal state. Model M4 of the TEG-Blue system.",
   keywords: [
     "three awareness capacities",
     "reading emotions",
@@ -65,19 +66,19 @@ export const metadata = {
     "awareness repair",
   ],
   alternates: {
-    canonical: "https://teg-blue.org/model/m2-three-awareness-capacities",
+    canonical: "https://teg-blue.org/model/m4-awareness-capacities",
   },
   openGraph: {
-    title: "Three Awareness Capacities — M2 Model | TEG-Blue",
+    title: "Awareness Capacities — M4 Model | TEG-Blue",
     description:
-      "The calibration system: how Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) determine what data the compass receives, how configurations predict chronic mode and identity, and how repair develops what was missing. Model M2 of the TEG-Blue system.",
-    url: "https://teg-blue.org/model/m2-three-awareness-capacities",
+      "The calibration system: how Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) determine what data the compass receives, how configurations predict chronic mode and identity, and how repair develops what was missing. Model M4 of the TEG-Blue system.",
+    url: "https://teg-blue.org/model/m4-awareness-capacities",
     type: "article",
     siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Three Awareness Capacities — TEG-Blue M2",
+    title: "Awareness Capacities — TEG-Blue M4",
     description:
       "The calibration system: Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA). How capacity configurations predict chronic mode, identity, and relational patterns.",
   },
@@ -85,7 +86,7 @@ export const metadata = {
 
 // ─── PAGE ──────────────────────────────────────────────────
 
-export default function M2ThreeAwarenessCapacitiesPage() {
+export default function M4AwarenessCapacitiesPage() {
   return (
     <div
       style={{
@@ -94,14 +95,14 @@ export default function M2ThreeAwarenessCapacitiesPage() {
         fontFamily: FONT.display,
       }}
     >
-      <SiteHeader currentPath="/model/m2-three-awareness-capacities" />
+      <SiteHeader currentPath="/model/m4-awareness-capacities" />
 
       <PageLayout
         header={
           <>
             <ModelHero
-              badge="MODEL M2"
-              title="Three Awareness Capacities"
+              badge="MODEL M4"
+              title="Awareness Capacities"
               subtitle="RE, ER, SEA"
               description="The three specific awarenesses — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — that determine what data the compass receives, how that data is processed, and whether the person has access to their own internal state. The second stage of the three-model sequence — Perception — mapping what determines whether an emotional signal is received, filtered, or invisible."
               coreQuestion="What is the current configuration — which capacities had conditions to develop, and which didn't?"
@@ -934,9 +935,9 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               </div>
             </div>
 
-            <h3 style={h3Style}>The M2-M3 Structural Link</h3>
+            <h3 style={h3Style}>The M4-M3 Structural Link</h3>
             <p style={proseStyle}>
-              M3 describes the regulation conditions required for cycles to complete — safety, time, co-regulation. M2 describes the three awareness capacities that develop <em>through</em> those conditions being met repeatedly over time. Chronic absence of those conditions does not only leave cycles open (M3). It leaves the capacities undeveloped (M2). The flatness is simultaneously a regulation failure and a capacity failure. Same origin. Same mechanism. Two models describing it from different angles.
+              M3 describes the regulation conditions required for cycles to complete — safety, time, co-regulation. M4 describes the awareness capacities that develop <em>through</em> those conditions being met repeatedly over time. Chronic absence of those conditions does not only leave cycles open (M3). It leaves the capacities undeveloped (M4). The flatness is simultaneously a regulation failure and a capacity failure. Same origin. Same mechanism. Two models describing it from different angles.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -1232,26 +1233,26 @@ export default function M2ThreeAwarenessCapacitiesPage() {
               Connection to the Other Models
             </h2>
 
-            <h3 style={h3Style}>M1 — Nervous System Signaling</h3>
+            <h3 style={h3Style}>M2 — Nervous System States</h3>
             <p style={proseStyle}>
               M1 describes what the compass does — the modes, the gradient, the sensory filters, the tank levels. M2 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. The instrument and the calibration. One architecture. Two models.
             </p>
 
             <h3 style={h3Style}>M3 — Regulation Capacities</h3>
             <p style={proseStyle}>
-              M2 and M3 are interdependent. You cannot regulate what you cannot receive. The awareness capacities determine whether the emotion can be received. The regulation capacities determine whether it can complete. But the awareness capacities themselves develop <em>through</em> regulation completing. And regulation completes <em>through</em> the awareness capacities being online enough to let the cycle run.
+              M4 and M3 are interdependent. You cannot regulate what you cannot receive. The awareness capacities determine whether the emotion can be received. The regulation capacities determine whether it can complete. But the awareness capacities themselves develop <em>through</em> regulation completing. And regulation completes <em>through</em> the awareness capacities being online enough to let the cycle run.
             </p>
             <p style={proseStyle}>
-              A child regulated with — cycles complete — capacities develop through completing them — the child can receive and regulate their own emotions — the capacities stay online. A child not regulated with — cycles stay open — no conditions for capacities to develop — the child cannot receive or regulate — the capacities flatten. The two models share the same origin condition. When co-regulation is absent, it does not only leave cycles open (M3). It leaves the capacities undeveloped (M2).
+              A child regulated with — cycles complete — capacities develop through completing them — the child can receive and regulate their own emotions — the capacities stay online. A child not regulated with — cycles stay open — no conditions for capacities to develop — the child cannot receive or regulate — the capacities flatten. The two models share the same origin condition. When co-regulation is absent, it does not only leave cycles open (M3). It leaves the capacities undeveloped (M4).
             </p>
 
-            <h3 style={h3Style}>The Three Models as One Sequence</h3>
+            <h3 style={h3Style}>The Four Models as One Sequence</h3>
             <p style={proseStyle}>
-              The three models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what state the emotion produces. <strong style={{ color: TEXT.primary }}>M2</strong> maps whether the emotion can be received. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete. They are three stages of the same sequence — signal, perception, return.
+              The four models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what signal the emotion carries. <strong style={{ color: TEXT.primary }}>M2</strong> maps what state the signal produces. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete its cycle. <strong style={{ color: TEXT.primary }}>M4</strong> maps whether the emotion can be received. They are four stages of the same sequence — signal, state, regulation, perception.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              You cannot regulate what you cannot receive. You cannot receive what you cannot access. The three models are one sequence.
+              You cannot regulate what you cannot receive. You cannot receive what you cannot access. The four models are one sequence.
             </OperationalStatement>
           </section>
 
@@ -1259,7 +1260,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="m2-three-awareness-capacities" type="framework" />
+          <ConnectedResearch slug="m4-awareness-capacities" type="model" />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <section
@@ -1288,8 +1289,8 @@ export default function M2ThreeAwarenessCapacitiesPage() {
                 <tbody>
                   <NavRow
                     label="Understand the instrument these capacities calibrate"
-                    href="/model/m1-nervous-system-signaling"
-                    linkText="M1: Nervous System Signaling →"
+                    href="/model/m2-nervous-system-states"
+                    linkText="M2: Nervous System States →"
                   />
                   <NavRow
                     label="Understand what the body does when capacities can't facilitate the return"
@@ -1344,8 +1345,8 @@ export default function M2ThreeAwarenessCapacitiesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            "@id": "https://teg-blue.org/model/m2-three-awareness-capacities#article",
-            headline: "Three Awareness Capacities: RE, ER, SEA",
+            "@id": "https://teg-blue.org/model/m4-awareness-capacities#article",
+            headline: "Awareness Capacities: RE, ER, SEA",
             description:
               "The three specific awarenesses — Reading Emotions, Emotional Resonance, and Self-Emotional Awareness — that determine what data the compass receives, how capacity configurations predict chronic mode and identity, and how repair develops what was missing. Model M2 of the TEG-Blue system.",
             author: {
@@ -1369,10 +1370,10 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://teg-blue.org/model/m2-three-awareness-capacities",
+              "@id": "https://teg-blue.org/model/m4-awareness-capacities",
             },
             about: [
-              { "@type": "Thing", name: "Three Awareness Capacities" },
+              { "@type": "Thing", name: "Awareness Capacities" },
               { "@type": "Thing", name: "Developmental Psychology" },
               { "@type": "Thing", name: "Awareness Calibration" },
               { "@type": "Thing", name: "Capacity Configuration" },
@@ -1411,7 +1412,7 @@ export default function M2ThreeAwarenessCapacitiesPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "Models", url: "/models" },
-              { name: "M2: Three Awareness Capacities", url: "/model/m2-three-awareness-capacities" },
+              { name: "M4: Awareness Capacities", url: "/model/m4-awareness-capacities" },
             ])
           ),
         }}
@@ -1463,8 +1464,8 @@ export default function M2ThreeAwarenessCapacitiesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Three Awareness Capacities (M2) — TEG-Blue Research",
-              url: "https://teg-blue.org/model/m2-three-awareness-capacities",
+              name: "Awareness Capacities (M4) — TEG-Blue Research",
+              url: "https://teg-blue.org/model/m4-awareness-capacities",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),

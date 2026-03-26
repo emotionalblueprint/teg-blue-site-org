@@ -102,7 +102,7 @@ export default function F8RepairingAwarenessPage() {
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — developing the awareness capacities that substitutes replaced"
               informsModels={[
-                { label: "M2", href: "/model/m2-three-awareness-capacities" },
+                { label: "M4", href: "/model/m4-awareness-capacities" },
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{

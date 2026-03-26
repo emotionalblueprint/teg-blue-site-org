@@ -100,7 +100,7 @@ export default function F7DominationRegulatesPage() {
               groupLabel="Collective · F4–F7"
               threadLine="Domination regulates · Cost: Everything"
               informsModels={[
-                { label: "M1", href: "/model/m1-nervous-system-signaling" },
+                { label: "M2", href: "/model/m2-nervous-system-states" },
               ]}
               adjacent={{
                 prev: { label: "F6 Bias Regulates", href: "/framework/f6-bias-regulates" },
@@ -479,7 +479,7 @@ export default function F7DominationRegulatesPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-empathy-gating" style={sectionHeadingStyle}>
-              Empathy Gating — What Happens to the Three Awareness Capacities
+              Empathy Gating — What Happens to the Awareness Capacities
             </h2>
 
             <h2 id="heading-empathy-escalation-question" style={sectionHeadingStyle}>

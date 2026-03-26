@@ -238,27 +238,39 @@ export function generateModelsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Three Core Models — TEG-Blue",
+    name: "The Emotional Somatic System — TEG-Blue",
     url: `${BASE_URL}/models`,
-    description: "The three applied models at the foundation of TEG-Blue: Nervous System Signaling (the instrument), the Three Awareness Capacities (the calibration system), and Regulation Capacities (the return pathway).",
+    description: "The four foundational models of TEG-Blue: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration system).",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
       {
         "@type": "DefinedTerm",
-        name: "Nervous System Signaling (M1)",
-        description: "The instrument — how the nervous system communicates through emotion across four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient."
+        name: "Emotions as Signals (M1)",
+        description: "The signal language — sixteen emotions mapped as biological signals delivering specific information about needs, safety, and constraint."
       },
       {
         "@type": "DefinedTerm",
-        name: "Three Awareness Capacities (M2)",
+        name: "Nervous System States (M2)",
+        description: "The instrument — how the nervous system communicates through four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient."
+      },
+      {
+        "@type": "DefinedTerm",
+        name: "Regulation Capacities (M3)",
+        description: "The return pathway — Biological Restoration, the body's designed process for completing the activation cycle."
+      },
+      {
+        "@type": "DefinedTerm",
+        name: "Awareness Capacities (M4)",
         description: "The calibration — the three awareness capacities (RE, ER, SEA) that determine what data the compass receives and how it is processed."
       }
     ],
     keywords: [
-      "inner compass",
+      "emotions as signals",
+      "nervous system states",
       "four-mode gradient",
-      "three awareness capacities",
+      "awareness capacities",
+      "regulation capacities",
       "regulatory states",
       "nervous system",
       "emotional technology",
@@ -295,7 +307,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 1,
           name: "Measurement Layer",
-          description: "Three core models: Nervous System Signaling (the instrument), the Three Awareness Capacities (the calibration), and Regulation Capacities (the return pathway). Observable nervous system states, awareness configurations, and regulation biology.",
+          description: "Four foundational models: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration). Observable nervous system states, awareness configurations, and regulation biology.",
           url: `${BASE_URL}/models`
         },
         {

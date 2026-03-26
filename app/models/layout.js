@@ -1,12 +1,14 @@
 export const metadata = {
-  title: "The Three Core Models | TEG-Blue Research",
+  title: "The Emotional Somatic System | TEG-Blue Research",
   description:
-    "Nervous System Signaling (the instrument), the Three Awareness Capacities (the calibration), and Regulation Capacities (the biological foundation). Three applied models that make the nervous system's safety-threat orientation visible, clinically usable, and personally recognisable.",
+    "Four foundational models: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration). Signal → State → Regulation → Perception.",
   keywords: [
     "TEG-Blue models",
-    "inner compass",
+    "emotional somatic system",
+    "emotions as signals",
+    "nervous system states",
     "four-mode gradient",
-    "three awareness capacities",
+    "awareness capacities",
     "emotional technology",
     "nervous system regulation",
     "reading emotions",
@@ -20,9 +22,9 @@ export const metadata = {
     canonical: "https://teg-blue.org/models",
   },
   openGraph: {
-    title: "The Three Core Models — Instrument + Calibration + Biological Foundation | TEG-Blue",
+    title: "The Emotional Somatic System — Signal + State + Regulation + Perception | TEG-Blue",
     description:
-      "Nervous System Signaling (what the nervous system does), the Three Awareness Capacities (what determines how well it does it), and Regulation Capacities (what happens when the cycle doesn't complete). Three applied models forming a complete assessment system.",
+      "Emotions as Signals (what the nervous system delivers), Nervous System States (what state it produces), Regulation Capacities (whether the cycle completes), and Awareness Capacities (whether the signal can be received). Four foundational models.",
     url: "https://teg-blue.org/models",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -30,9 +32,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Three Core Models — TEG-Blue Research",
+    title: "The Emotional Somatic System — TEG-Blue Research",
     description:
-      "Instrument + Calibration + Biological Foundation. Three applied models that make the nervous system's orientation visible and measurable.",
+      "Signal + State + Regulation + Perception. Four foundational models that make the nervous system's orientation visible and measurable.",
   },
 };
 
@@ -40,10 +42,10 @@ export default function ModelsLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Three Core Models — TEG-Blue",
+    name: "The Emotional Somatic System — TEG-Blue",
     url: "https://teg-blue.org/models",
     description:
-      "The three applied models at the foundation of TEG-Blue: Nervous System Signaling (the instrument), the Three Awareness Capacities (the calibration system), and Regulation Capacities (the biological foundation).",
+      "The four foundational models of TEG-Blue: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration system).",
     inLanguage: "en",
     isPartOf: {
       "@type": "ResearchProject",

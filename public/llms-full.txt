@@ -1,6 +1,6 @@
 # TEG-Blue Research Platform (Extended)
 # https://teg-blue.org
-# Last updated: 2026-03-10
+# Last updated: 2026-03-26
 # Format: llms-full.txt (Extended AI-readable documentation)
 
 ---
@@ -697,10 +697,11 @@ Paretas-Artacho, A. (2026). Empirical validation of the Four-Mode Gradient frame
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
-- Core Models: https://teg-blue.org/models
-  - M1 Nervous System Signaling: https://teg-blue.org/model/m1-nervous-system-signaling
-  - M2 Three Awareness Capacities: https://teg-blue.org/model/m2-three-awareness-capacities
+- The Emotional Somatic System: https://teg-blue.org/models
+  - M1 Emotions as Signals: https://teg-blue.org/model/m1-emotions-as-signals
+  - M2 Nervous System States: https://teg-blue.org/model/m2-nervous-system-states
   - M3 Regulation Capacities: https://teg-blue.org/model/m3-regulation-capacities
+  - M4 Awareness Capacities: https://teg-blue.org/model/m4-awareness-capacities
 - Publications: https://teg-blue.org/publications
 - Frameworks Map (12 Frameworks): https://teg-blue.org/frameworks-map
   - F1: https://teg-blue.org/framework/f1-emotional-gradient

@@ -353,7 +353,7 @@ export default function EmotionalTechnologyPage() {
               lineHeight: 1.7,
             }}
           >
-            See how emotional technology works in practice — from the three core models to the 12 explanatory frameworks.
+            See how emotional technology works in practice — from the four foundational models to the 12 explanatory frameworks.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
