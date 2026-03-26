@@ -43,6 +43,8 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 9. **When adding a dependency, note the new baseline** — update `ORG_DEP_BASELINE` in `teg-health.sh`.
 10. **Export all components from `src/components/index.js`.** Keep the barrel file up to date.
 
+> **All plans, specs, strategy docs, audits, and page specifications live in the vault.** This folder contains only code, configs, and content JSON. If Anna might need to read it, it belongs in `teg-blue-vault/`.
+
 ---
 
 ## Purpose & Identity
@@ -228,7 +230,7 @@ Content in markdown...
 
 ## Voice & Style
 
-> **Full reference:** `../writing-guidelines.md` (Projects root) — single source of truth for all TEG-Blue writing.
+> **Full reference:** `../teg-blue-vault/_system/writing-guidelines.md` — single source of truth for all TEG-Blue writing.
 > All .org content falls under **Tier 3: Researcher & Frameworks**.
 
 ### Core Principles
