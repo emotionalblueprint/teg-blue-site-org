@@ -29,6 +29,8 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 1. Remove any console.logs you added during the session
 2. Run `./teg-health.sh wrapup` from `/Users/annaparetas/Projects/`
 3. If build passes and checks are clean, offer to commit and push
+4. Update any active `_session-state.md` files in vault directories you worked in
+5. Update `teg-blue-vault/_plans/pending-tasks.md` with all unfinished work, open decisions, and what the next session should start with
 
 ### Debt Prevention Rules
 
@@ -47,64 +49,23 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 
 ---
 
-## Purpose & Identity
+## System Context
+
+For shared rules (core messaging, forbidden terms, voice, mode colors) → auto-memory (always loaded).
+For content architecture and source-of-truth rules → `teg-blue-vault/CLAUDE.md`.
+For .org site goals and writing principles → `teg-blue-vault/_system/CLAUDE-org-site-goals.md`.
+
+**.org links to .com** for interactive tools. **.com links to .org** for open research.
+
+---
+
+## Purpose
 
 **teg-blue.org** is the academic and practitioner-facing platform for TEG-Blue research. Its audience is researchers, scientists, academics, and practitioners — not the general public (that's teg-blue.com).
 
-All content is designed to be readable by both humans and AI systems.
+All .org content falls under **Tier 3: Researcher & Frameworks**. All content is designed to be readable by both humans and AI systems.
 
-## Site Goals (in priority order)
-
-> **Full reference:** `CLAUDE-org-site-goals.md` — complete goals, writing principles, model positioning, and origin framing.
-
-1. **Build academic credibility and research partnerships** — Demonstrate precise, accurate handling of existing literature with appropriate humility. Make falsifiable claims visible and explicit. Function as a research invitation, not just a presentation.
-2. **Convert practitioners into users of the framework** — Answer: "Does this change how I work tomorrow?" Entry point is always a problem they already have. Show TEG-Blue has a precise account of exactly those situations.
-3. **Establish TEG-Blue as a citable theoretical contribution** — Earned by doing goals 1 and 2 well enough that the field begins citing independently. The site creates conditions for this — it does not claim it.
-
-### Governing Writing Principle: Anchor — Gap — Contribution
-
-Every section of every page follows this structure:
-- **Anchor:** Name what existing research established — precisely, with correct attribution
-- **Gap:** Name where that research stopped — specific, not general, not criticism
-- **Contribution:** Show what TEG-Blue does from exactly that stopping point — not competing, picking up where it left off
-
-### What the Site Must Not Do
-
-- Do not convince through volume — precision over quantity
-- Do not front-run legitimacy — demonstrate, let the field decide
-- Do not write for the general public — assume readers who know the literature
-- Do not bury testable claims — make predictions explicit and testable
-
----
-
-## System Context
-
-For TEG-Blue definition, architecture, core models, vocabulary, and system overview → see `Projects/CLAUDE.md`.
-For shared rules (core messaging, forbidden terms, voice, mode colors) → these are in auto-memory (always loaded).
-**.org links to .com** for interactive tools. **.com links to .org** for open research.
-
-### "Emotional Technology" — Term History
-
-| Date | Source | Usage |
-|------|--------|-------|
-| **Sept 2025** | `tegblue-backbone.md` | "Emotional Technology Infrastructure" — technical foundations for AI, research, education |
-| **Nov 2025** | Research Matrix | "TEG-Blue™ — Emotional Technology" (tagline) |
-| **Feb 18, 2026** | Full integration | Implemented across all sites, GitHub repos, and documentation |
-
----
-
-## Validation Study
-
-DOI: 10.5281/zenodo.18428907
-
-A computational analysis of 10,000+ natural conflict narratives (Reddit AITA posts) tested whether the four-mode gradient could be reliably detected in unstructured text.
-
-**Key findings:**
-- All four regulatory modes were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers
-- 33.8% of individuals escalated toward Control/Domination when challenged
-- 22.2% de-escalated toward Connection
-- De-escalators showed **78% higher rates of complexity markers** than escalators
-- Mode classifications correlated with independent community moral judgments
+> **Full writing reference:** `teg-blue-vault/_system/writing-guidelines.md` — single source of truth for all TEG-Blue writing.
 
 ---
 
@@ -127,32 +88,6 @@ A computational analysis of 10,000+ natural conflict narratives (Reddit AITA pos
 ```
 Hub | For Researchers | Publications | Theory Map | Glossary | About | Collaborate
 ```
-
----
-
-## The 12 Frameworks
-
-Organized into three arcs:
-
-| Arc | Frameworks | What They Explain |
-|-----|-----------|-------------------|
-| **Individual** | F1–F3 | The instrument. How the nervous system evaluates safety, how the compass calibrates through development, and how cognition steps in when the return path is missing |
-| **Collective** | F4–F7 | The scaling. How individual patterns become shared rules, worth hierarchies, perception biases, and how protection escalates all the way to domination |
-| **Repair and Complexity** | F8–F12 | The return. How awareness capacities rebuild, neurodivergent variation, generational transmission, paradox, and the two-information-system architecture underneath |
-
----
-
-## Open Research Questions
-
-Five priority questions for researchers:
-
-1. **Complexity markers** — Can they be standardized as a psychometric instrument?
-2. **Escalation pathways** — What do they look like in natural language?
-3. **Four-mode classification** — Can it be reproduced by independent researchers?
-4. **Regulatory state → moral perception** — Does state shape moral judgment?
-5. **Emotional Tools validation** — Can they be validated as psychometric instruments?
-
-Full details at `/research-entry`.
 
 ---
 
@@ -228,45 +163,8 @@ Content in markdown...
 
 ---
 
-## Voice & Style
+## Validation Study
 
-> **Full reference:** `../teg-blue-vault/_system/writing-guidelines.md` — single source of truth for all TEG-Blue writing.
-> All .org content falls under **Tier 3: Researcher & Frameworks**.
+DOI: 10.5281/zenodo.18428907
 
-### Core Principles
-
-1. **Never enter the moral frame.** Never refute moral judgments ("not a character flaw", "not evil"). Never defend. Stay in mechanism. The reader arrives at the reframe without being told.
-2. **Anchor — Gap — Contribution.** Every section: name what research established, where it stopped, what TEG-Blue does from that point.
-3. **Mechanism-first.** How does this operate? Explain the mechanism. Not what it feels like — how it works.
-
-### Awareness Capacity Naming (MANDATORY)
-
-**Always write full name + initial:** Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — every mention, every page. Never bare initials. Same format on both sites. Readers build recognition gradually through repeated full-name exposure.
-
-### Quick Rules
-
-- **Never use:** "TEG-Blue proves", "the only framework", "cures/fixes", "diagnosis", "type" (as personality type), therapeutic outcome claims
-- **Never use:** "trauma-informed", "victim", "abuse", "trauma" (as noun), "toxic", "healing"
-- **Always use:** "working hypothesis", "proposes connections", "synthesizes established research", "nervous system states", "patterns"
-- **Always use:** "return to baseline" (not "return to Connection"), "capacity rebuilding", "restoration", "incomplete biological response"
-- Avoid "you/your" in explanatory text — use "the framework", "the system", first person plural
-
-### Key Guidelines
-
-- **Mechanistic:** Inputs → mechanisms → outcomes, not just what it feels like
-- **Plain-first language:** Simple words first. Technical terms only when they add accuracy
-- **Precise:** Define technical terms once, clearly, use consistently
-- **Referenced:** Anchor in research traditions without becoming a literature review
-- **Professional:** Clinically compatible, calm, practitioner-friendly
-- **Integrative:** Show how TEG-Blue maps to existing frameworks (no "we replace them" vibe)
-- **Baseline is home:** All modes return to baseline, not to Connection. Chronic Connection is a stuck compass too.
-
-### .org-Specific Rules
-
-- **Attribution:** Always credit source theories and researchers
-- **Transparency:** Clear about AI-assisted literature mapping
-- **Open science:** Invite corrections and collaboration
-
----
-
-*Last updated: March 2026*
+Kept here as reference for when the DOI needs to appear in code or metadata.
