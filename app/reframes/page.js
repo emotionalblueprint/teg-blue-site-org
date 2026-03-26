@@ -55,6 +55,21 @@ const FAQ_ITEMS = [
 
 const FRAMEWORK_GROUPS = [
   {
+    id: "M1",
+    label: "M1 — Nervous System Signaling",
+    href: "/model/m1-nervous-system-signaling",
+    terms: [
+      {
+        title: "Readiness to Change",
+        slug: "readiness-to-change",
+        commonUnderstanding:
+          "A personal quality — willingness, motivation, or inner courage to face difficult emotions and do the inner work.",
+        definition:
+          "A biological state of access — whether the nervous system reads the current conditions as safe enough to permit feeling, reflection, and movement. When it does, the person can engage. When it doesn't, they cannot — regardless of intelligence, intention, or desire. Not a character trait. A condition.",
+      },
+    ],
+  },
+  {
     id: "F1",
     label: "F1 — The Emotional Gradient",
     href: "/framework/f1-emotional-gradient",

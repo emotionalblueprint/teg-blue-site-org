@@ -50,6 +50,17 @@ export const metadata = {
 
 // Glossary terms from the approved content
 const GLOSSARY_TERMS = [
+  // ===== M1: NERVOUS SYSTEM SIGNALING =====
+  {
+    slug: "readiness-to-change",
+    title: "Readiness to Change",
+    type: "reframe",
+    status: "proposed",
+    commonUnderstanding: "A personal quality — willingness, motivation, or inner courage to face difficult emotions and do the inner work.",
+    definition: "A biological state of access — whether the nervous system reads the current conditions as safe enough to permit feeling, reflection, and movement. When it does, the person can engage. When it doesn't, they cannot — regardless of intelligence, intention, or desire. Not a character trait. A condition.",
+    tags: ["M1", "reframe", "core-concept"],
+    framework: "M1",
+  },
   // ===== F1: THE EMOTIONAL GRADIENT =====
   {
     slug: "emotions",
