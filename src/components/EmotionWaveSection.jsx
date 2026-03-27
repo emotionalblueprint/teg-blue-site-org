@@ -94,7 +94,15 @@ function yAt(pts, t) {
 }
 
 // ─── Component ────────────────────────────────────────────────
-export default function EmotionWaveSection() {
+export default function EmotionWaveSection({
+  badge = "Framework 1 · The biological substrate",
+  heading = <>Emotions are data.<br/><span style={{ color: TEXT.muted, fontWeight: 400 }}>They are biological information.</span></>,
+  description = "Before behavior, before belief, before pattern — there is a neurochemical arc with a precise biological window for integration. TEG-Blue begins here.",
+  ctaText = "F1 maps this arc in full — from thalamic detection to chronic mode consolidation — and identifies the precise conditions under which integration fails.",
+  ctaHref = "/framework/f1-emotional-gradient",
+  ctaLabel = "Explore Framework 1",
+  showCta = true,
+} = {}) {
   const [progress, setProgress] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const [activeMoment, setActiveMoment] = useState(null);
@@ -225,7 +233,7 @@ export default function EmotionWaveSection() {
                 fontSize: "10px", fontWeight: 600,
                 letterSpacing: "0.12em", color: MAIN_BLUE, textTransform: "uppercase",
               }}>
-                Framework 1 · The biological substrate
+                {badge}
               </span>
             </div>
             <h2 style={{
@@ -234,14 +242,13 @@ export default function EmotionWaveSection() {
               fontWeight: 700, color: TEXT.primary, lineHeight: 1.2,
               letterSpacing: "-0.02em", marginBottom: "14px"
             }}>
-              Emotions are data.<br/>
-              <span style={{ color: TEXT.muted, fontWeight: 400 }}>They are biological information.</span>
+{heading}
             </h2>
             <p style={{
               fontSize: "15px",
               color: TEXT.hint, lineHeight: 1.75, maxWidth: "520px"
             }}>
-              Before behavior, before belief, before pattern — there is a neurochemical arc with a precise biological window for integration. TEG-Blue begins here.
+{description}
             </p>
           </div>
 
@@ -418,38 +425,40 @@ export default function EmotionWaveSection() {
           </div>
 
           {/* CTA */}
-          <div style={{
-            marginTop: "40px", display: "flex", alignItems: "center",
-            justifyContent: "space-between", flexWrap: "wrap", gap: "20px"
-          }}>
-            <p style={{
-              fontSize: "14px",
-              color: TEXT.hint, lineHeight: 1.65, maxWidth: "420px", fontStyle: "italic"
+          {showCta && (
+            <div style={{
+              marginTop: "40px", display: "flex", alignItems: "center",
+              justifyContent: "space-between", flexWrap: "wrap", gap: "20px"
             }}>
-              F1 maps this arc in full — from thalamic detection to chronic mode consolidation — and identifies the precise conditions under which integration fails.
-            </p>
-            <Link href="/framework/f1-emotional-gradient" style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "10px",
-              padding: "12px 24px",
-              border: `1px solid ${hexToRgba(ACCENT, 0.3)}`,
-              background: hexToRgba(ACCENT, 0.08),
-              color: MAIN_BLUE,
-              borderRadius: "8px",
-              fontFamily: FONT.mono,
-              fontSize: "11px",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-              fontWeight: 500,
-            }}>
-              Explore Framework 1
-              <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-                <path d="M8 1l5 4-5 4M13 5H1" stroke={MAIN_BLUE} strokeWidth="1.2" strokeLinecap="round"/>
-              </svg>
-            </Link>
-          </div>
+              <p style={{
+                fontSize: "14px",
+                color: TEXT.hint, lineHeight: 1.65, maxWidth: "420px", fontStyle: "italic"
+              }}>
+                {ctaText}
+              </p>
+              <Link href={ctaHref} style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "12px 24px",
+                border: `1px solid ${hexToRgba(ACCENT, 0.3)}`,
+                background: hexToRgba(ACCENT, 0.08),
+                color: MAIN_BLUE,
+                borderRadius: "8px",
+                fontFamily: FONT.mono,
+                fontSize: "11px",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                fontWeight: 500,
+              }}>
+                {ctaLabel}
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                  <path d="M8 1l5 4-5 4M13 5H1" stroke={MAIN_BLUE} strokeWidth="1.2" strokeLinecap="round"/>
+                </svg>
+              </Link>
+            </div>
+          )}
 
         </div>
       </div>

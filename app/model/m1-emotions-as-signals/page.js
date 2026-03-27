@@ -20,12 +20,16 @@ const EmotionSignalExplorer = dynamic(
   { ssr: false }
 );
 
+const EmotionWaveSection = dynamic(
+  () => import("@/src/components/EmotionWaveSection"),
+  { ssr: false }
+);
+
 const MODEL_COLOR = SPECTRUM.azure;
 
 const ANCHOR_SECTIONS = [
-  { label: "Signal Language", href: "#signalling-language" },
+  { label: "First Language", href: "#signalling-language" },
   { label: "Signal Anatomy", href: "#signal-anatomy" },
-  { label: "Signal Reception", href: "#signal-reception" },
   { label: "Sixteen Signals", href: "#sixteen-signals" },
   { label: "Somatic vs Relational", href: "#two-pathways" },
   { label: "Development", href: "#developmental-consequence" },
@@ -36,7 +40,7 @@ const ANCHOR_SECTIONS = [
 export const metadata = {
   title: "Emotions as Signals (M1) | TEG-Blue Research",
   description:
-    "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. Model M1 of the TEG-Blue system.",
+    "Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle. The first stage of the Emotional Somatic Cycle.",
   keywords: [
     "emotions as signals",
     "nervous system signals",
@@ -88,7 +92,7 @@ export default function M1EmotionsAsSignalsPage() {
               badge="MODEL M1"
               title="Emotions as Signals"
               subtitle="The Signal Language"
-              description="Sixteen emotions. Each one is a biological message — a finding the nervous system is delivering about what it detected. Not about feeling. About information. The emotion is the delivery system; the signal is the content."
+              description="The nervous system evaluates the environment continuously, below conscious awareness, and generates biological messages about what it found. Is there enough safety to engage, or is protection needed? Has a boundary been crossed? Has something been lost? These messages are emotions. Sixteen of them."
               coreQuestion="What is this signal telling me?"
               drawsFrom={[
                 { label: "M2", href: "/model/m2-nervous-system-states" },
@@ -102,8 +106,12 @@ export default function M1EmotionsAsSignalsPage() {
           </>
         }
       >
-        {/* ─── EMOTION SIGNAL EXPLORER ──────────────────── */}
-        <EmotionSignalExplorer />
+        {/* ─── EMOTION WAVE — The neurochemical arc ──────── */}
+        <EmotionWaveSection
+          badge="Model M1 · Signal Detection → Emotion"
+          description="Before behavior, before belief, before pattern — there is a neurochemical arc. Every time an emotion fires, the nervous system runs a biological sequence with a precise window for integration. This is where the Emotional Somatic Cycle begins."
+          showCta={false}
+        />
 
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
@@ -121,22 +129,19 @@ export default function M1EmotionsAsSignalsPage() {
             <ModelPurpose color={MODEL_COLOR}>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
-                  Emotions are the nervous system{"'"}s signal language — biological messages, not disruptions to clear thinking
+                  The nervous system has two information systems. The first — and oldest — is emotion. The second is cognition. The body keeps communicating whether cognition listens or not.
                 </li>
                 <li style={propositionItemStyle}>
                   Every emotion has three components: signal (what was detected), body response (what the body does), restoration pathway (what resolves it)
                 </li>
                 <li style={propositionItemStyle}>
-                  Sixteen emotions organized by body signature — each carrying a specific finding. The nervous system{"'"}s signal vocabulary, from threat to bond
+                  Sixteen emotions organized by body signature — each carrying a specific biological finding, from threat to bond
                 </li>
                 <li style={propositionItemStyle}>
-                  Every signal is designed to be received — when Self-Emotional Awareness (SEA) is present, the signal is felt and informing; when absent, the signal distorts and memory stores inaccurately
+                  Somatic emotions can complete through the body{"'"}s own channels — relational emotions cannot, requiring co-regulation from another person
                 </li>
                 <li style={propositionItemStyle}>
-                  Somatic emotions can complete through the body{"'"}s own channels — relational emotions cannot, requiring co-regulation
-                </li>
-                <li style={propositionItemStyle}>
-                  The same signal produces different outcomes depending on mode position — the compass does not change the signal, it changes what the mode does to it
+                  The same signal produces different outcomes depending on the nervous system{"'"}s state — the signal does not change, but what the person experiences does
                 </li>
                 <li style={propositionItemStyle}>
                   When relational emotions are never co-regulated in development, the specific restoration pathways for those emotions never build
@@ -164,17 +169,17 @@ export default function M1EmotionsAsSignalsPage() {
               id="heading-signalling-language"
               style={sectionHeadingStyle}
             >
-              The Signalling Language
+              The Body{"'"}s First Language
             </h2>
 
             <p style={proseStyle}>
-              Emotions are the nervous system{"'"}s signal language — the body{"'"}s first language. Each emotion carries a specific message: a finding about what is happening in the environment or inside the body. The signal fires below conscious awareness. What happens to it next depends on three things: what state it produces in the body (M1), whether it can be received by the awareness capacities (M2), and whether it can complete through the regulation cycle (M3).
+              The nervous system has two information systems. The first — and oldest — is emotion. Each emotion carries a specific message: a finding about what is happening in the environment or inside the body. Is there enough safety to engage, or is protection needed? Has a boundary been crossed? Is the bond intact? These signals fire below conscious awareness. They have been running for hundreds of millions of years.
             </p>
             <p style={proseStyle}>
-              These are not three separate topics. They are three stages of the same sequence: signal, perception, return.
+              The second information system is cognition. It arrived later. When cognition overrides an emotional signal, it is not correcting an error — it is silencing one language and replacing it with another. The signal does not stop being generated. The body keeps communicating whether cognition listens or not.
             </p>
             <p style={proseStyle}>
-              Cognition is the second language. It arrived later. When cognition overrides an emotional signal, it is not correcting an error — it is silencing one language and replacing it with another. The signal does not stop being generated. The body keeps talking whether cognition listens or not.
+              What happens to the signal after it fires — what nervous system state it produces, whether the activation cycle completes, and whether the person can receive the signal at all — is the territory of the models that follow. This model maps where the cycle begins: the moment a signal fires and an emotion delivers its finding.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -190,7 +195,7 @@ export default function M1EmotionsAsSignalsPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Emotions reframed as the body{"'"}s first language — cognition is the second. Signal interpretation replaces emotion regulation as the primary clinical frame. The framing as {"\u201C"}language{"\u201D"} carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed.
+                  The reframe from {"\u201C"}emotion regulation{"\u201D"} to {"\u201C"}signal interpretation.{"\u201D"} Emotions reframed as the body{"'"}s first information system — cognition is the second. The framing as {"\u201C"}language{"\u201D"} carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed.
                 </p>
               </ExpandableSection>
             </div>
@@ -246,65 +251,23 @@ export default function M1EmotionsAsSignalsPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The three-component architecture applied uniformly across all sixteen emotions. The explicit identification of restoration pathways — not just what triggers the emotion and what it feels like, but what the signal specifically needs in order to resolve.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── C1.5: EVERY SIGNAL IS DESIGNED TO BE RECEIVED ── */}
-          <section
-            id="signal-reception"
-            aria-labelledby="heading-signal-reception"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-signal-reception"
-              style={sectionHeadingStyle}
-            >
-              Every Signal Is Designed to Be Received
-            </h2>
-
-            <p style={proseStyle}>
-              An emotion at any position — including Safety & Openness — fires and delivers its finding. When Self-Emotional Awareness (SEA) is present, the signal is felt, known, and informing. The system stays responsive. This is baseline: not the absence of feeling, but the presence of awareness.
-            </p>
-            <p style={proseStyle}>
-              Received signals are stored accurately. We remember who gives us love, with whom we feel safe, where we belong and where we don{"'"}t. The emotional memory maps our world.
-            </p>
-            <p style={proseStyle}>
-              When the compass is stuck and Self-Emotional Awareness (SEA) is absent, the signals distort. The emotion keeps running without the person{"'"}s knowledge — and memory gets stored distorted. Love without awareness becomes enmeshment. Joy without awareness becomes compulsive positivity. The emotion has not changed. Whether it can be seen has.
-            </p>
-            <p style={proseStyle}>
-              The accumulated activation becomes invisible from inside, and the distorted memory reinforces the chronic mode. This is how chronic modes form and self-reinforce: not only from unresolved threat, but from any emotion that was never received.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              Baseline is not the absence of feeling — it is the presence of awareness. The signal is the same at every compass position. What changes is whether Self-Emotional Awareness (SEA) can receive it.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2009) — awareness of internal bodily states as the foundation of emotional self-awareness. <strong style={{ color: TEXT.primary }}>Memory consolidation:</strong> Phelps (2004) — emotional states shape how memories are encoded and consolidated. <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — neuroception as continuous evaluation below conscious awareness.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The principle that signal reception — not signal type — determines whether an emotion builds accurate memory or reinforces distortion. This applies at every compass position including Safety & Openness. Self-Emotional Awareness (SEA) is identified as the specific variable that determines reception, linking the emotions layer (M1) directly to the awareness capacities layer (M2).
+                  The three-component architecture applied uniformly across all sixteen emotions. The explicit identification of restoration pathways — not just what triggers the emotion and what it feels like, but what the signal specifically needs in order to resolve. This makes the distinction between emotions that can complete alone and those that require another person structurally visible.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 2: THE NINE SIGNALS                        */}
+          {/* PART 2: THE SIXTEEN SIGNALS                     */}
           {/* ════════════════════════════════════════════════ */}
 
           <PartDivider label="PART 2" title="The Sixteen Signals" />
 
+          {/* ─── EMOTION SIGNAL EXPLORER ──────────────────── */}
+          <EmotionSignalExplorer />
+
           <p id="sixteen-signals" style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted }}>
-            Each emotion mapped as signal + body response + restoration pathway + compass behaviour across the four mode positions. Organized by body signature group — what the body does with each signal. Use the explorer above for the interactive view.
+            Each emotion mapped as signal + body response + restoration pathway + what changes with nervous system state. Organized by body signature group — what the body does with each signal. Use the explorer above for the interactive view.
           </p>
 
           {/* ═══ MOBILIZATION ═══════════════════════════ */}
@@ -321,9 +284,9 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="Sympathetic activation. Heart rate rises, muscles tense, sensory acuity sharpens. Fear is the fastest signal — it runs through the amygdala's fast pathway and mobilises the body in milliseconds."
             restoration="The threat must resolve. Either the danger passes, or the person acts and the activation discharges, or safety is established and the system stands down. Fear that cannot resolve stays open — the accumulated activation becomes the new baseline, invisible from inside."
-            compassInsight="Fear at Safety & Openness is felt and shared. The same signal at Power & Dominance becomes terrorizing. The signal is present at every compass position — what changes is the person's capacity to recognise it."
+            compassInsight="Fear is present at every nervous system state. What changes is whether the person can feel it. When stuck at Power & Dominance, the most potent fear in the system is also the most invisible — experienced as strength, certainty, decisiveness."
             research="LeDoux (1996) — the amygdala's fast pathway, threat detection before conscious processing. Porges (2011) — sympathetic activation as part of the autonomic hierarchy. Sapolsky (2004) — stress physiology of the fear response."
-            addition="Fear traced across all four compass positions in both fluid and stuck states. The compass reveals that the signal is present at every position; what changes is whether the person can return to baseline or the signal distorts."
+            addition="Fear traced across all four nervous system states. The signal is present at every state; what changes is whether the person can feel it and whether they can return to baseline."
           />
 
           {/* ─── C3: ANGER ───────────────────────────────── */}
@@ -334,9 +297,9 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="Sympathetic activation directed outward. Energy moves toward confrontation, assertion, or correction. Anger is a boundary-maintenance signal — it exists to protect what matters."
             restoration="The boundary must be reasserted or acknowledged — through communication, action, or environmental change. Anger that cannot be expressed stays open. It does not disappear. It reroutes."
-            compassInsight="At Safety & Openness, anger is a clean boundary signal. When the compass is stuck, the same signal suppresses (stuck Connection), becomes chronic rage (stuck Protection), turns cold and strategic (stuck Control), or becomes destruction (stuck Domination)."
+            compassInsight="At Safety & Openness, anger is a clean boundary signal. The same signal can become self-blame when the person learned anger was not safe to have, chronic rage when boundaries were never addressed, cold correction when routed through strategy, or contempt when expanded to encompass all resistance."
             research="Panksepp (1998) — RAGE system as primary emotional circuit. Tavris (1989) — anger as social signal for boundary maintenance. van der Kolk (2014) — anger as incomplete defensive response."
-            addition="Anger reframed as a boundary-maintenance signal rather than a problem to manage. The compass reveals what happens when the signal cannot complete: rerouting varies by mode position."
+            addition="Anger reframed as a boundary-maintenance signal rather than a problem to manage. What happens when the signal cannot complete varies by nervous system state — the same signal reroutes differently depending on the mode."
           />
 
           {/* ─── STRESS ───────────────────────────────── */}
@@ -347,7 +310,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="HPA axis activation. Cortisol rises, energy redirects toward the demand. The body prioritises the mismatch and mobilises toward resolution. Stress is an allocation signal — it evolved to concentrate resources on whatever is currently exceeding capacity."
             restoration="The demand must be met or the resource must be restored. When the gap closes, the activation discharges. When it does not close — when the demands remain permanently above resources — the signal becomes chronic and cortisol remains elevated."
-            compassInsight="At Safety & Openness, stress is an honest signal — demands are felt and addressed. When the compass is stuck, stress becomes invisible from inside: the person operates in permanent demand-resource mismatch without recognising it as a signal."
+            compassInsight="At Safety & Openness, stress is an honest signal — demands are felt and addressed. When the nervous system is stuck in a chronic state, stress becomes invisible from inside: the person operates in permanent demand-resource mismatch without recognising it as a signal."
             research="Sapolsky (2004) — glucocorticoid stress response and chronic activation. McEwen (1998) — allostatic load and the cost of chronic stress adaptation. Selye (1956) — general adaptation syndrome."
             addition="Stress reframed as a demand-resource mismatch signal rather than a general state. The three-component architecture applies: what was detected, what the body does, what resolves it."
           />
@@ -360,7 +323,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic (relational when chronic)"
             body={<>Chronic cortisol elevation. The bed nucleus of the stria terminalis (BNST) activates — the sustained anxiety circuit, distinct from the amygdala{"'"}s acute fear response. The body scans continuously, preparing for something that has not arrived. Anxiety is an anticipatory signal — it evolved to maintain readiness for unresolved conditions.</>}
             restoration={<>The uncertainty must resolve. Either the future condition is assessed and accepted, the threat materialises and is addressed (converting anxiety to fear, which has a clear discharge pathway), or the person{"'"}s capacity to tolerate uncertainty is supported relationally. Chronic relational anxiety — the kind that centers on whether connection will be maintained or lost — requires relational evidence, not somatic discharge.</>}
-            compassInsight="The distinction between acute and chronic anxiety maps onto the compass: acute anxiety is a mobilisation signal that resolves when the uncertainty is addressed. Chronic relational anxiety — will I be left, will the connection survive — is a stuck compass signal. The body cannot discharge what it is waiting for another nervous system to resolve."
+            compassInsight="The distinction between acute and chronic anxiety maps onto nervous system state: acute anxiety is a mobilisation signal that resolves when the uncertainty is addressed. Chronic relational anxiety — will I be left, will the connection survive — signals a nervous system stuck in anticipatory mode. The body cannot discharge what it is waiting for another nervous system to resolve."
             research="Davis, Walker, Miles &amp; Grillon (2010) — BNST as sustained anxiety circuit distinct from amygdala fear. Grillon (2008) — anticipatory anxiety and unpredictable threat. Barlow (2002) — anxiety as future-oriented mood state."
             addition="Anxiety distinguished from Fear by temporal orientation and neural substrate — anticipatory vs immediate, BNST vs amygdala. The somatic/relational boundary applies: acute anxiety can discharge somatically; chronic relational anxiety requires relational evidence."
           />
@@ -381,7 +344,7 @@ export default function M1EmotionsAsSignalsPage() {
             restoration="Removal. Either the contaminant is expelled, the distance is established, or the environment is confirmed safe. Disgust that cannot complete — because the contaminant is a person, a group, or a part of the self — stays open as permanent aversion."
             compassInsight="The biological mechanism is the same whether the contaminant is a toxin or a person. At Power & Dominance, disgust is the emotion that enables atrocity — through the activation of a contamination-avoidance circuit that was never designed to be directed at human beings."
             research="Rozin, Haidt &amp; McCauley (2008) — disgust as evolved contamination-avoidance expanding into moral domain. Chapman &amp; Anderson (2013) — shared neural substrates of physical and moral disgust."
-            addition="Disgust traced across the compass reveals its role in dehumanisation. The nervous system generates the same rejection response regardless of whether the target is a toxin or a person."
+            addition="Disgust traced across all four nervous system states reveals its role in dehumanisation. The nervous system generates the same rejection response regardless of whether the target is a toxin or a person."
           />
 
           {/* ═══ SOCIAL WITHDRAWAL ═════════════════════ */}
@@ -398,7 +361,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Relational"
             body="Withdrawal, shrinking, heat, the desire to disappear. Shame is a social survival signal — it evolved to preserve belonging by flagging when the self is at risk of being cast out."
             restoration="Relational evidence. The cycle cannot close alone. The nervous system is waiting for another person to stay — to remain present without contempt after seeing the thing that feels shameful. That staying is the biological signal the cycle needs. No amount of breathing resolves shame."
-            compassInsight="At Safety & Openness, shame is felt and witnessed — vulnerability in service of repair. When the compass is stuck at Power & Dominance, the signal is projected outward — the most potent shame in the system, reinterpreted as evidence of others' deficiency."
+            compassInsight="At Safety & Openness, shame is felt and witnessed — vulnerability in service of repair. When the nervous system is stuck at Power & Dominance, the signal is projected outward — the most potent shame in the system, reinterpreted as evidence of others' deficiency."
             research="Schore (2003) — shame as a primary regulatory affect in early development. Tangney &amp; Dearing (2002) — shame vs guilt as distinct self-conscious emotions. Brown (2006) — shame resilience and the role of relational connection."
             addition="Shame identified as requiring a relational restoration pathway — not as a clinical observation but as a biological constraint. Co-regulation is not optional but structurally necessary for shame to resolve."
           />
@@ -449,9 +412,9 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="Expansion, energy, approach. The body opens. Dopamine flows. The system moves toward the source of the signal. Joy is an approach signal — it evolved to move the person toward conditions that support survival and thriving."
             restoration="Presence. Joy restores through being experienced — fully, in the body, without the mind already scanning for what will take it away. Interrupted joy prevents the signal from restoring."
-            compassInsight="Joy is not absent when the compass is stuck — it is transformed. At stuck Safety & Openness it becomes compulsive positivity, at stuck Threat & Defence it becomes threatening, at stuck Power & Dominance it becomes manic dominance. The only joy available in each stuck position is joy that does not require vulnerability."
+            compassInsight="Joy is not absent when the nervous system is stuck — it is transformed. At stuck Safety & Openness it becomes compulsive positivity, at stuck Threat & Defence it becomes threatening, at stuck Power & Dominance it becomes manic dominance. The only joy available in each stuck state is joy that does not require vulnerability."
             research="Fredrickson (2001) — broaden-and-build theory. Panksepp (1998) — PLAY and SEEKING systems. Berridge &amp; Robinson (2003) — dopamine as wanting/approach signal."
-            addition="Joy reframed as a safety-confirmation signal rather than a goal state. The compass reveals the transformation: the signal is present at every position, but what the mode allows it to become changes completely."
+            addition="Joy reframed as a safety-confirmation signal rather than a goal state. The signal is present at every nervous system state, but what the mode allows it to become changes completely."
           />
 
           {/* ─── HAPPINESS ─────────────────────────────── */}
@@ -462,7 +425,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="General positive affect. Serotonergic tone rises. The body maintains openness without the urgency of approach — a settled, sustained state rather than a mobilisation toward something. Happiness is a condition signal — it registers that things are as they should be."
             restoration="Presence without interruption. The signal completes through continued contact with the condition that produced it. Happiness that must be performed, defended, or justified cannot complete."
-            compassInsight={<>Unlike Joy{"'"}s acute spike, Happiness is a sustained state — and therefore more vulnerable to the compass. At stuck Safety & Openness it becomes performed positivity. At stuck Strategy & Management it becomes a maintained image. The sustained signal requires sustained awareness to receive it.</>}
+            compassInsight={<>Unlike Joy{"'"}s acute spike, Happiness is a sustained state — and therefore more vulnerable to chronic modes. At stuck Safety & Openness it becomes performed positivity. At stuck Strategy & Management it becomes a maintained image. The sustained signal requires sustained awareness to receive it.</>}
             research="Seligman (2002) — authentic happiness and well-being theory. Diener (2000) — subjective well-being as ongoing state. Berridge &amp; Kringelbach (2015) — distinction between wanting (dopamine) and liking (opioid/serotonergic)."
             addition="Happiness distinguished from Joy by temporal profile and neural substrate — sustained serotonergic tone vs acute dopaminergic approach. Both are approach-and-expansion signals, but Happiness registers an ongoing condition rather than an event."
           />
@@ -475,7 +438,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="Orientation toward the other. The body opens in the direction of what was detected — approach, inspiration, sometimes a brief pause of recognition. Admiration is a detection signal — it evolved to identify what is valuable in the environment and orient the person toward it."
             restoration="Presence with the recognition. The signal completes through allowing the detection to land — feeling the recognition without converting it into comparison, obligation, or self-diminishment."
-            compassInsight={<>When Self-Emotional Awareness (SEA) is present, Admiration is received: the person feels the recognition, orients toward what was detected, and the signal completes. <strong style={{ color: TEXT.primary }}>When SEA is absent and the compass is stuck, the same detection cannot be received as Admiration. What the person experiences instead is Envy</strong> — the signal has distorted. The original finding (value detected in another) is the same. What changed is whether the person could receive it.</>}
+            compassInsight={<>When the person can receive the signal, Admiration lands as recognition and orientation toward what was detected. <strong style={{ color: TEXT.primary }}>When the person cannot receive it — when self-awareness is offline — the same detection cannot land as Admiration. What the person experiences instead is Envy.</strong> The original finding (value detected in another) is the same. What changed is whether it could be received.</>}
             research="Algoe &amp; Haidt (2009) — admiration as an other-praising emotion. Immordino-Yang, McColl, Damasio &amp; Damasio (2009) — neural correlates of admiration and compassion."
             addition="Admiration identified as a distinct signal with its own body signature and restoration pathway. The Admiration → Envy distortion is traced as a structural consequence of SEA being offline — not a moral failing but a perceptual one."
           />
@@ -488,7 +451,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Somatic"
             body="Expansion, warmth, upward energy. The body opens from the inside — chest lifts, posture shifts. Pride is a self-recognition signal — it evolved to reinforce behaviours and qualities that serve survival and group contribution."
             restoration={<>Presence with the recognition, without requiring external validation. The signal completes through the person{"'"}s own awareness of their contribution. Pride that depends on others confirming it, or Pride that requires positioning above others, has not completed — it has been routed through Control or Domination.</>}
-            compassInsight={<>When Self-Emotional Awareness (SEA) is present, Pride is received as internal recognition. <strong style={{ color: TEXT.primary }}>When SEA is absent and the compass is stuck, the same self-recognition cannot be received as Pride. What the person experiences instead is Arrogance</strong> — elevation over others as a substitute for internal recognition. The original signal (own value detected) is the same. What changed is whether the person could receive it.</>}
+            compassInsight={<>When the person can receive the signal, Pride lands as internal recognition. <strong style={{ color: TEXT.primary }}>When self-awareness is offline, the same self-recognition cannot land as Pride. What the person experiences instead is Arrogance</strong> — elevation over others as a substitute for internal recognition. The original signal (own value detected) is the same. What changed is whether the person could receive it.</>}
             research="Tracy &amp; Robins (2007) — authentic vs hubristic pride. Williams &amp; DeSteno (2008) — pride as a functional social emotion. Tangney (1999) — pride and self-conscious emotion."
             addition="Pride identified as a distinct signal with its own restoration pathway. The Pride → Arrogance distortion is traced as a structural consequence of SEA being offline — the same mechanism as Admiration → Envy."
           />
@@ -507,9 +470,9 @@ export default function M1EmotionsAsSignalsPage() {
             type="Relational"
             body="Oxytocin, warmth, the pull toward closeness. The body orients toward the other person. The co-regulation circuit activates. Love is the most potent relational signal the nervous system generates."
             restoration="Reciprocity — the signal received and returned. Love that is given without landing, or love that is demanded without being genuinely offered, does not restore. The cycle closes through mutual contact — genuine felt presence, not performance."
-            compassInsight="Love does not disappear when the compass is stuck — it transforms. At stuck Safety & Openness it becomes enmeshment, at stuck Strategy & Management it becomes conditional, at stuck Power & Dominance it becomes ownership. The signal is present at every position. What changes is what the mode does to it."
+            compassInsight="Love does not disappear when the nervous system is stuck — it transforms. At stuck Safety & Openness it becomes enmeshment, at stuck Strategy & Management it becomes conditional, at stuck Power & Dominance it becomes ownership. The signal is present at every state. What changes is what the mode does to it."
             research="Bowlby (1969) — attachment as a primary biological system. Panksepp (1998) — CARE system. Uvnas-Moberg (2003) — oxytocin and the calm-and-connection system. Coan (2008) — social baseline theory."
-            addition="Love traced across the compass reveals that the signal persists at every position — what changes is the mode's transformation of it. At stuck Power & Dominance, care exists but is indistinguishable from control."
+            addition="Love traced across all four states reveals that the signal persists — what changes is the mode's transformation of it. At stuck Power & Dominance, care exists but is indistinguishable from control."
           />
 
           {/* ─── TRUST ─────────────────────────────────── */}
@@ -520,7 +483,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Relational"
             body="Guard-dropping. Vagal tone shifts — the body moves from monitoring to open contact. The muscles around the eyes and throat soften. Openness extends toward the specific source of the signal. Trust is one of the slowest signals to build and the fastest to collapse — it accumulates through repeated evidence and can be destroyed by a single violation."
             restoration={<>Reciprocity — the signal met with equivalent openness. Trust completes when the person{"'"}s openness is matched by the other{"'"}s. Trust that is extended without being met — or that is met with exploitation — does not complete.</>}
-            compassInsight="Trust is the most specific of the bonding signals — it narrows openness to where the evidence supports it. When the compass is stuck, Trust either extends indiscriminately (stuck Connection) or cannot extend at all (stuck Protection, Control, Domination). The specificity that makes Trust functional is the first thing chronicity destroys."
+            compassInsight="Trust is the most specific of the bonding signals — it narrows openness to where the evidence supports it. When the nervous system is stuck, Trust either extends indiscriminately (stuck Safety & Openness) or cannot extend at all (stuck Threat & Defence, Strategy & Management, Power & Dominance). The specificity that makes Trust functional is the first thing chronicity destroys."
             research="Rempel, Holmes &amp; Zanna (1985) — trust as a relationship-specific construct. Kosfeld, Heinrichs, Zak, Fischbacher &amp; Fehr (2005) — oxytocin and trust. Balliet &amp; Van Lange (2013) — trust as social signal."
             addition="Trust identified as a distinct relational signal — not a general disposition but a nervous system evaluation of specific safety. The slow-build/fast-collapse asymmetry mapped as a structural feature of the signal."
           />
@@ -533,7 +496,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Relational"
             body="Warmth, orientation toward the other, brief vulnerability in receiving. The body opens in the direction of the source — not with the approach energy of Joy, but with the settling of something received. Gratitude requires a moment of asymmetry: the person is in the position of having received, which activates a brief vulnerability."
             restoration="Expression — the signal completing through acknowledgment. Gratitude that is felt but unexpressed stays partially open. The cycle closes through the recognition reaching the other person — not as performance, but as genuine contact with what was received."
-            compassInsight="Gratitude requires receiving — and receiving requires vulnerability. When the compass is stuck at Strategy & Management or Power & Dominance, receiving is structurally unavailable because it positions the person as the one who needed something. The signal cannot fire when the mode prevents the position it requires."
+            compassInsight="Gratitude requires receiving — and receiving requires vulnerability. When the nervous system is stuck at Strategy & Management or Power & Dominance, receiving is structurally unavailable because it positions the person as the one who needed something. The signal cannot fire when the mode prevents the position it requires."
             research="Emmons &amp; McCullough (2003) — gratitude as relational emotion. Algoe (2012) — find, remind, and bind theory of gratitude. McCullough, Kilpatrick, Emmons &amp; Larson (2001) — gratitude as moral affect."
             addition="Gratitude identified as requiring relational completion — not through internal appreciation but through expression that reaches the other. The vulnerability inherent in receiving mapped as the mechanism that chronic modes suppress."
           />
@@ -546,7 +509,7 @@ export default function M1EmotionsAsSignalsPage() {
             type="Relational"
             body={<>Movement toward the other. The body orients, approaches, reaches. There is resonance with the other{"'"}s state — the person feels something of what the other is feeling — but without merger. Compassion maintains the boundary between the person{"'"}s own state and the other{"'"}s. When the boundary collapses, Compassion becomes absorption (stuck Connection).</>}
             restoration={<>Contact with the other{"'"}s state without absorption. The signal completes through presence with the other — not fixing, not taking on their pain, but being in contact with their state while remaining in one{"'"}s own body. Compassion that absorbs does not complete for either person.</>}
-            compassInsight="Compassion requires both Emotional Resonance (ER) and a maintained boundary — feeling what the other feels without becoming it. When the compass is stuck at Safety & Openness, the boundary dissolves and Compassion becomes absorption. When stuck at Strategy & Management or Power & Dominance, the resonance is suppressed and what appears as compassion is strategic care."
+            compassInsight="Compassion requires both resonance and a maintained boundary — feeling what the other feels without becoming it. When the nervous system is stuck at Safety & Openness, the boundary dissolves and Compassion becomes absorption. When stuck at Strategy & Management or Power & Dominance, the resonance is suppressed and what appears as compassion is strategic care."
             research="Singer &amp; Klimecki (2014) — compassion vs empathic distress, distinct neural pathways. Goetz, Keltner &amp; Simon-Thomas (2010) — compassion as a distinct affective state. Neff (2003) — self-compassion as a construct."
             addition="Compassion identified as a relational signal that requires maintained boundary — distinguishing it from absorption (boundary collapse) and strategic care (resonance suppression). The ER + boundary requirement maps directly to M2 capacity states."
           />
@@ -565,23 +528,19 @@ export default function M1EmotionsAsSignalsPage() {
             </h2>
 
             <p style={proseStyle}>
-              Envy and Arrogance are not emotions in the same sense as the sixteen signals above. They are what occupies the space where Admiration and Pride would have been — when Self-Emotional Awareness (SEA) is absent and the compass is stuck.
+              Envy and Arrogance are not emotions in the same sense as the sixteen signals above. They are what occupies the space where Admiration and Pride would have been — when the person cannot receive their own signals.
             </p>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Envy</strong> is the distortion of Admiration. When a person detects value in another but cannot receive that detection through Self-Emotional Awareness (SEA), the signal does not land as recognition. What the person experiences instead is the gap — the distance between what was detected in the other and what is absent in the self. The original signal (value detected) is the same. What changed is whether it could be received.
+              <strong style={{ color: TEXT.primary }}>Envy</strong> is the distortion of Admiration. When a person detects value in another but cannot receive that detection, the signal does not land as recognition. What the person experiences instead is the gap — the distance between what was detected in the other and what is absent in the self. The original signal (value detected) is the same. What changed is whether it could be received.
             </p>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Arrogance</strong> is the distortion of Pride. When a person{"'"}s own value or contribution cannot be received through Self-Emotional Awareness (SEA), the signal does not land as self-recognition. What the person experiences instead is elevation — positioning above others as a substitute for internal recognition.
-            </p>
-
-            <p style={proseStyle}>
-              Both distortions appear only in the stuck compass, and only in Strategy & Management and Power & Dominance positions — they cannot exist at Safety & Openness or Threat & Defence because those positions do not generate the strategic or power-based response that the distortions require.
+              <strong style={{ color: TEXT.primary }}>Arrogance</strong> is the distortion of Pride. When a person{"'"}s own value or contribution cannot be received internally, the signal does not land as self-recognition. What the person experiences instead is elevation — positioning above others as a substitute for internal recognition.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The Admiration → Envy and Pride → Arrogance pathways are the clearest illustration of a general principle: when Self-Emotional Awareness (SEA) is absent, the signal does not disappear — it distorts. The finding is the same. Whether it can be received determines what the person experiences.
+              Both distortions illustrate a general principle: when a signal cannot be received, it does not disappear — it distorts. The finding is the same. What changes is what the person experiences. What determines whether the signal can be received is the territory of M4.
             </OperationalStatement>
           </section>
 
@@ -729,7 +688,7 @@ export default function M1EmotionsAsSignalsPage() {
               These stay open — accumulating debris — because the restoration pathway requires something the environment never provided.
             </p>
             <p style={proseStyle}>
-              When relational emotions repeatedly cycle without restoration — when the nervous system keeps sending the signal and the relational evidence never arrives — the system eventually stops sending. Not because the need disappears. Because the channel that was supposed to receive the signal has been consistently empty. Emotional Resonance (ER) and Self-Emotional Awareness (SEA) go down. The flatness is, in part, the accumulated effect of relational cycles that were never allowed to close.
+              When relational emotions repeatedly cycle without restoration — when the nervous system keeps sending the signal and the relational evidence never arrives — the system eventually stops sending. Not because the need disappears. Because the channel that was supposed to receive the signal has been consistently empty. The person{"'"}s capacity to feel their own signals diminishes. The flatness is, in part, the accumulated effect of relational cycles that were never allowed to close. What determines whether this capacity develops or flattens is the territory of M4.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -777,22 +736,22 @@ export default function M1EmotionsAsSignalsPage() {
                 </thead>
                 <tbody>
                   <NavRow
-                    label="See the full M2 model — compass, modes, gradient, filters"
+                    label="See what happens after the signal fires — the nervous system state it produces and how it changes perception"
                     href="/model/m2-nervous-system-states"
                     linkText="M2: Nervous System States &rarr;"
                   />
                   <NavRow
-                    label="Understand what happens when the activation cycle doesn't complete"
+                    label="Understand what happens when the cycle completes — and what happens when cognition blocks it"
                     href="/model/m3-regulation-capacities"
                     linkText="M3: Regulation Capacities &rarr;"
                   />
                   <NavRow
-                    label="Understand what determines how well the compass works"
+                    label="Understand what determines whether the person can receive the signal at all"
                     href="/model/m4-awareness-capacities"
                     linkText="M4: Awareness Capacities &rarr;"
                   />
                   <NavRow
-                    label="Understand the foundational theory behind this model"
+                    label="Explore the foundational theory behind the emotional gradient"
                     href="/framework/f1-emotional-gradient"
                     linkText="F1: The Emotional Gradient &rarr;"
                   />
@@ -834,7 +793,7 @@ export default function M1EmotionsAsSignalsPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-21",
-            dateModified: "2026-03-24",
+            dateModified: "2026-03-27",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -887,7 +846,7 @@ export default function M1EmotionsAsSignalsPage() {
               {
                 question: "What are the sixteen emotions in the TEG-Blue system?",
                 answer:
-                  "TEG-Blue maps sixteen emotions as biological signals, organized by body signature group: Mobilization (Fear, Anger, Stress, Anxiety), Expulsion (Disgust), Social Withdrawal (Shame, Guilt), Conservation (Sadness), Approach & Expansion (Joy, Happiness, Admiration, Pride), and Bonding & Proximity (Love, Trust, Gratitude, Compassion). Each carries a specific finding from the nervous system's continuous evaluation of the environment. Envy and Arrogance are mapped as distortions — what occupies the space where Admiration and Pride would have been when SEA is absent.",
+                  "TEG-Blue maps sixteen emotions as biological signals, organized by body signature group: Mobilization (Fear, Anger, Stress, Anxiety), Expulsion (Disgust), Social Withdrawal (Shame, Guilt), Conservation (Sadness), Approach & Expansion (Joy, Happiness, Admiration, Pride), and Bonding & Proximity (Love, Trust, Gratitude, Compassion). Each carries a specific finding from the nervous system's continuous evaluation of the environment. Envy and Arrogance are mapped as distortions — what occupies the space where Admiration and Pride would have been when the person cannot receive the signal.",
               },
               {
                 question: "What is the difference between somatic and relational emotions?",

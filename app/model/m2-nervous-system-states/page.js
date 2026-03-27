@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  BG, TEXT, BORDER, FONT, SPECTRUM,
+  hexToRgba,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, ModelAnchorStrip,
-  ModelPurpose, OperationalStatement, DrawsFromPanel,
+  ModelPurpose, OperationalStatement,
   ExpandableSection, FluidCompassExplorer, PageLayout,
 } from "@/src/components";
 import ConnectedResearch from "@/src/components/ConnectedResearch";
@@ -18,24 +18,12 @@ import {
 const MODEL_COLOR = SPECTRUM.azure;
 
 const ANCHOR_SECTIONS = [
-  { label: "The Compass", href: "#inner-compass" },
-  { label: "Four Modes", href: "#four-modes" },
+  { label: "The States", href: "#the-four-states" },
   { label: "The Gradient", href: "#the-gradient" },
-  { label: "Activation", href: "#accumulated-activation" },
+  { label: "State & Capacity", href: "#state-determines-capacity" },
   { label: "Sensory Filtering", href: "#sensory-filtering" },
-  { label: "Mode Architecture", href: "#state-determines-capacity" },
-  { label: "Regulation", href: "#regulation-the-return" },
-  { label: "Draws From", href: "#relationship-to-frameworks" },
-];
-
-const DRAWS_FROM = [
-  { id: "F1", title: "The Emotional Gradient", relation: "Primary source", description: "The full scientific foundation for the compass, the four modes, and biological restoration. M2 is the applied tool; F1 is the depth account.", href: "/framework/f1-emotional-gradient" },
-  { id: "F3", title: "False Coherence", relation: "Maintains stuckness", description: "What maintains a stuck compass. How identity forms around the mode, making the stuckness invisible from the inside.", href: "/framework/f3-false-coherence" },
-  { id: "F7", title: "Domination Regulates", relation: "Escalation", description: "Escalation across the gradient. How Control crosses into Domination, and how tolerance builds.", href: "/framework/f7-domination-regulates" },
-  { id: "F12", title: "The Two Information Systems", relation: "Architecture", description: "The underlying architecture. Why understanding doesn't change the compass. Why experience does.", href: "/framework/f12-two-information-systems" },
-  { id: "M1", title: "Emotions as Signals", relation: "Paired model", description: "The signal language the nervous system uses to communicate what it detected. M1 maps the sixteen emotions; M2 maps the states they produce.", href: "/model/m1-emotions-as-signals" },
-  { id: "M4", title: "Awareness Capacities", relation: "Paired model", description: "What determines how well the compass works: the awareness capacities that develop (or don't) in the relational environment.", href: "/model/m4-awareness-capacities" },
-  { id: "M3", title: "Regulation Capacities", relation: "Paired model", description: "Whether the activation cycle completes. What the body was designed to do after activation, what blocks the return, and what it reaches for instead.", href: "/model/m3-regulation-capacities" },
+  { label: "Chronic States", href: "#chronic-states" },
+  { label: "Two Systems", href: "#two-information-systems" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -43,18 +31,18 @@ const DRAWS_FROM = [
 export const metadata = {
   title: "Nervous System States (M2) | TEG-Blue Research",
   description:
-    "The instrument that maps how the nervous system orients between safety and threat across four modes — Connection, Protection, Control, Domination — on a continuous gradient. Model M2 of the TEG-Blue system.",
+    "What happens after an emotion fires — the nervous system state it produces, how that state changes perception, and what happens when it becomes permanent. The second stage of the Emotional Somatic Cycle.",
   keywords: [
-    "inner compass",
+    "nervous system states",
     "four-mode gradient",
-    "nervous system regulation",
-    "Connection Protection Control Domination",
-    "emotional signalling",
-    "safety-threat orientation",
-    "stuck compass",
+    "safety threat orientation",
+    "Safety & Openness",
+    "Threat & Defence",
+    "Strategy & Management",
+    "Power & Dominance",
     "state determines capacity",
-    "emotional technology",
-    "regulatory states",
+    "sensory filtering",
+    "stuck state",
     "polyvagal theory",
     "two information systems",
   ],
@@ -64,7 +52,7 @@ export const metadata = {
   openGraph: {
     title: "Nervous System States — M2 Model | TEG-Blue",
     description:
-      "The instrument that maps how the nervous system orients between safety and threat across four modes on a continuous gradient. Model M2 of the TEG-Blue system.",
+      "What happens after an emotion fires — the state it produces, how perception changes, and what happens when it becomes permanent. The second stage of the Emotional Somatic Cycle.",
     url: "https://teg-blue.org/model/m2-nervous-system-states",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -73,7 +61,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Nervous System States — TEG-Blue M2",
     description:
-      "How the nervous system orients between safety and threat. Model M2 of the TEG-Blue system.",
+      "Four states grounded in two biological branches. How the nervous system shifts after a signal fires — and what the state does to perception.",
   },
 };
 
@@ -96,14 +84,14 @@ export default function M2NervousSystemStatesPage() {
             <ModelHero
               badge="MODEL M2"
               title="Nervous System States"
-              subtitle="The Four-Mode Gradient"
-              description="How the nervous system orients between safety and threat, how emotions carry that orientation as signals, how four modes organise the response on a continuous gradient, and how the capacity to return to baseline determines whether the compass stays fluid or gets stuck. The first stage of the three-model sequence — Signal — mapping what the nervous system detected and how it responds."
-              coreQuestion="Where is the needle, can it move, and what does the person have access to from where they are?"
+              subtitle="The Instrument"
+              description="After a signal fires (M1), the nervous system shifts. The entire system — perception, cognition, empathy, relational capacity — reorganises around the finding. Four states grounded in two biological branches. What each state enables and restricts. And the mechanism that makes this consequential: the state changes what the person can see."
+              coreQuestion="What state is the nervous system in, and what can the person perceive, think, feel, and do from there?"
               drawsFrom={[
+                { label: "M1", href: "/model/m1-emotions-as-signals" },
+                { label: "M3", href: "/model/m3-regulation-capacities" },
+                { label: "M4", href: "/model/m4-awareness-capacities" },
                 { label: "F1", href: "/framework/f1-emotional-gradient" },
-                { label: "F3", href: "/framework/f3-false-coherence" },
-                { label: "F7", href: "/framework/f7-domination-regulates" },
-                { label: "F12", href: "/framework/f12-two-information-systems" },
               ]}
               color={MODEL_COLOR}
             />
@@ -130,123 +118,43 @@ export default function M2NervousSystemStatesPage() {
             <ModelPurpose color={MODEL_COLOR}>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
-                  Emotions are the nervous system's signalling language — the medium through which the body's continuous evaluation of safety and threat reaches the rest of the organism
-                </li>
-                <li style={propositionItemStyle}>
                   The nervous system continuously evaluates one question: <em>Is there enough safety to engage, or is protection needed?</em>
                 </li>
                 <li style={propositionItemStyle}>
-                  The inner compass orients between safety and threat — health is not a position but the capacity of the needle to move
+                  Four states emerge from two biological branches — parasympathetic (Safety & Openness) and sympathetic (Threat & Defence, Strategy & Management, Power & Dominance)
                 </li>
                 <li style={propositionItemStyle}>
-                  Four modes on a continuous gradient: two before awareness (Connection, Protection), two after awareness (Control, Domination)
+                  The first two states are body-first — automatic responses running for millions of years. The second two are cognition-first — what happened when cognition evolved and the system gained range
                 </li>
                 <li style={propositionItemStyle}>
-                  What a person can perceive, think, feel, and do depends on their current gradient position
+                  What a person can perceive, think, feel, and do depends on their current state — restore safety first, then expect capacity
                 </li>
                 <li style={propositionItemStyle}>
-                  The same emotion produces different outcomes depending on mode position — assess the mode, not the emotion
+                  Each state sets the sensory filter on all incoming data before cognition touches it — the person does not choose what they see, the state delivers it
                 </li>
                 <li style={propositionItemStyle}>
-                  Regulation is the return to baseline — the built-in mechanism by which the nervous system completes the threat cycle
+                  The same signal produces different outcomes depending on state position — assess the state, not the emotion
                 </li>
                 <li style={propositionItemStyle}>
-                  When the return is missing, the compass gets stuck — what should have been temporary becomes permanent, and identity forms around the mode
+                  Every state — including Safety & Openness — is a temporary activation. Health is not a state. Health is the capacity to move and return to rest
                 </li>
                 <li style={propositionItemStyle}>
-                  Two parallel information systems — emotional-somatic (fast, unconscious) and cognitive-logical (slower, conscious) — run simultaneously; understanding is cognitive, but the compass is somatic
+                  When the return is absent, a temporary state becomes permanent. Identity forms around it. The filter locks. The loop self-reinforces
+                </li>
+                <li style={propositionItemStyle}>
+                  Understanding is cognitive. The state is somatic. More cognition does not move a somatic system. What moves it is experience
                 </li>
               </ul>
             </ModelPurpose>
           </section>
 
-          {/* ─── CONCEPT 1: SIGNALLING LANGUAGE ─────────── */}
-          <section
-            id="signalling-language"
-            aria-labelledby="heading-signalling-language"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-signalling-language"
-              style={sectionHeadingStyle}
-            >
-              Emotions as the Nervous System's Signalling Language
-            </h2>
+          {/* ════════════════════════════════════════════════ */}
+          {/* PART 1: THE STATES                              */}
+          {/* ════════════════════════════════════════════════ */}
 
-            <p style={proseStyle}>
-              Emotions are not disruptions to clear thinking — they are the nervous system's signalling language. The medium through which the body's continuous evaluation of safety and threat reaches the rest of the organism. The body runs a distributed evaluation across the gut, heart, muscles, vagus nerve, amygdala — continuously, below conscious awareness. Emotions are how that evaluation gets delivered.
-            </p>
-            <p style={proseStyle}>
-              Fear is the signal that the evaluation found threat. Joy is the signal that it found safety and connection. Anger signals a boundary crossed. Each emotion carries specific information about what the evaluation detected — and each orients the organism toward a specific response.
-            </p>
-            <p style={proseStyle}>
-              This is the body's first language. It was running for millions of years before cognition evolved. When cognition arrived, it did not replace this language — it added a second one. The two systems — emotional signalling and cognitive reasoning — are separate but interdependent. Cognition can interpret emotional signals, override them, or replace them with its own narratives. But the emotional signals do not stop being generated. The body keeps talking whether cognition listens or not.
-            </p>
+          <PartDivider label="PART 1" title="The States" />
 
-            <OperationalStatement color={MODEL_COLOR}>
-              The clinical shift: from "emotion regulation" (emotions need controlling) to "signal interpretation" (emotions carry information that needs reading). The question is not "how do I manage this emotion?" but "what is this signal telling me?"
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Affective neuroscience:</strong> Panksepp (1998) — primary emotional systems as ancient biological processes; Damasio (1994) — somatic markers guide decision-making; LeDoux (1996) — threat detection before conscious processing. <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — the vagus nerve as bidirectional communication pathway, neuroception as continuous safety evaluation. <strong style={{ color: TEXT.primary }}>Emotion science:</strong> Frijda (1986) — emotions as action readiness, functional signals oriented toward environmental conditions.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  Emotions reframed as the body's first language — cognition is the second. Signal interpretation replaces emotion regulation as the primary clinical frame. The framing as "language" carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed. When cognition overrides the emotional signal, it is not correcting an error — it is silencing one language and replacing it with another.
-                </p>
-              </ExpandableSection>
-            </div>
-
-            <Link
-              href="/model/m1-emotions-as-signals"
-              style={{
-                display: "block",
-                textDecoration: "none",
-                background: BG.surface,
-                border: `1px solid ${hexToRgba(MODEL_COLOR, 0.2)}`,
-                borderRadius: RADIUS.md,
-                padding: "16px 20px",
-                marginTop: 8,
-              }}
-            >
-              <span style={{
-                fontFamily: FONT.mono,
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: MODEL_COLOR,
-                display: "block",
-                marginBottom: 6,
-              }}>
-                M1 INPUT LAYER
-              </span>
-              <span style={{
-                fontFamily: FONT.display,
-                fontSize: 15,
-                fontWeight: 600,
-                color: TEXT.primary,
-                display: "block",
-                marginBottom: 4,
-              }}>
-                Emotions as Signals &rarr;
-              </span>
-              <span style={{
-                fontFamily: FONT.display,
-                fontSize: 13,
-                color: TEXT.muted,
-                lineHeight: 1.5,
-              }}>
-                All nine emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle.
-              </span>
-            </Link>
-          </section>
-
-          {/* ─── CONCEPT 2: SAFETY ORIENTATION ──────────── */}
+          {/* ─── C0: THE QUESTION ─────────────────────────── */}
           <section
             id="safety-orientation"
             aria-labelledby="heading-safety-orientation"
@@ -256,170 +164,141 @@ export default function M2NervousSystemStatesPage() {
               id="heading-safety-orientation"
               style={sectionHeadingStyle}
             >
-              The Safety Orientation Question
+              The Question the Nervous System Asks
             </h2>
 
             <p style={proseStyle}>
-              The single question the nervous system continuously evaluates: <strong style={{ color: TEXT.primary }}>"Is there enough safety to engage, or is protection needed?"</strong> Every emotional signal is an answer to this question. The question is the same across all contexts — personal, relational, systemic. The answers vary. The mechanism does not.
+              The nervous system continuously evaluates a single question: <strong style={{ color: TEXT.primary }}>{"\u201C"}Is there enough safety to engage, or is protection needed?{"\u201D"}</strong> Every emotional signal the body generates (M1) is, at root, an answer to this question. And every answer produces a shift in the nervous system{"'"}s state — a reorganisation of what the person can perceive, think, feel, and do.
             </p>
             <p style={proseStyle}>
-              This evaluation is automatic, continuous, and below conscious awareness. Porges (2011) named this process <em>neuroception</em> — the nervous system's subconscious detection of safety and danger cues. It evaluates <em>experienced safety</em>, not objective danger. This is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The nervous system reads what it has learned to recognise as safe or threatening, which may not match current reality.
+              This evaluation is automatic, continuous, and below conscious awareness. Porges (2011) calls it <em>neuroception</em> — the nervous system{"'"}s assessment of safety and threat running underneath cognition. It does not wait for analysis. It evaluates <em>experienced safety</em>, not objective danger — which is why a person can feel threatened in an objectively safe room, or feel safe in an objectively dangerous situation. The nervous system reads what it has learned to recognise as safe or threatening, which may not match current reality.
+            </p>
+            <p style={proseStyle}>
+              This is not a flaw. It is a design feature optimised for survival. The cost of being wrong about safety is higher than the cost of being wrong about threat. The system is biased toward protection. This bias is the reason the four states exist.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Am I reacting to what is actually happening, or to what my nervous system learned to expect?
+              The question is not {"\u201C"}what is wrong with this person?{"\u201D"} but {"\u201C"}what is their nervous system evaluating as safe or threatening right now?{"\u201D"}
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — neuroception as continuous subconscious evaluation of safety and threat. <strong style={{ color: TEXT.primary }}>Attachment Theory:</strong> Bowlby (1969) — the attachment system scans for safety and threat; Schore (2003) — right-brain regulation shaped by early relational experience.
+                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — neuroception as continuous below-awareness safety/threat evaluation. <strong style={{ color: TEXT.primary }}>Somatic markers:</strong> Damasio (1994) — body-state signals guiding cognition. <strong style={{ color: TEXT.primary }}>Threat detection:</strong> LeDoux (1996) — threat processing running faster than conscious awareness.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  A single question that generates all emotional diversity. Neuroceptive evaluation as the independent variable; compass position as the dependent variable. Every emotion — from empathy to defensiveness, from curiosity to withdrawal — is a variation on: <em>safe enough, or not yet.</em>
+                  The safety orientation question as the single organising principle of the entire state system. Every state, every capacity change, every perceptual shift follows from the nervous system{"'"}s answer to this one question.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONCEPT 3: INNER COMPASS ───────────────── */}
+          {/* ─── C1-C5: THE FOUR STATES ───────────────────── */}
           <section
-            id="inner-compass"
-            aria-labelledby="heading-inner-compass"
+            id="the-four-states"
+            aria-labelledby="heading-the-four-states"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-inner-compass"
+              id="heading-the-four-states"
               style={sectionHeadingStyle}
             >
-              The Inner Compass — A Moving Needle
+              Two Branches, Four States
             </h2>
 
             <p style={proseStyle}>
-              The nervous system's continuous orientation between safety and threat can be understood through the metaphor of a compass. A compass with a moving needle that orients between safety and threat. The needle is constantly moving — there is no "correct" position. It points in a direction.
-            </p>
-            <p style={proseStyle}>
-              When the needle can move freely — shifting toward safety or threat as conditions change and returning to baseline (where the nervous system rests when nothing is activated) when the situation passes — the compass is <strong style={{ color: TEXT.primary }}>fluid</strong>. Fluid operation is not a position. It is the needle moving — responding, orienting, and coming back. The key diagnostic is needle return: whether the nervous system can come back after activation.
-            </p>
-            <p style={proseStyle}>
-              When the needle has lost its capacity to move — when what should have been a temporary orientation becomes a chronic position — the compass is <strong style={{ color: TEXT.primary }}>stuck</strong>. The person does not experience this as being stuck — they experience it as "just who I am." False coherence (F3) — when cognition replaces emotional signals with invented stable narratives — constructs identity around the locked position, making the stuckness invisible from the inside.
+              The nervous system has two main branches that govern the body{"'"}s response to its safety evaluation. The <strong style={{ color: TEXT.primary }}>parasympathetic branch</strong> (ventral vagal complex) — the system of safety, openness, and social engagement. The <strong style={{ color: TEXT.primary }}>sympathetic branch</strong> — the system of mobilisation and defence. From these two branches, four states emerge:
             </p>
 
-            <OperationalStatement color={MODEL_COLOR}>
-              Health is not a state. Health is a capacity. Not where the needle is, but whether it can move.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Dana (2018) — autonomic states as continuous orientation, polyvagal exercises for state awareness. <strong style={{ color: TEXT.primary }}>Developmental neuroscience:</strong> Siegel (2012) — window of tolerance as range of fluid movement; integration as the capacity to move between states. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004) — stress response designed for acute activation, not chronic residence.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The reframe of health from a state to a capacity. Compass fluidity as a continuous variable — not "are you in Connection?" but "can your needle move?" The compass makes "stuck" versus "fluid" the primary diagnostic question rather than "which state is the person in."
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── CONCEPT 4: THE FOUR MODES ──────────────── */}
-          <section
-            id="four-modes"
-            aria-labelledby="heading-four-modes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-four-modes"
-              style={sectionHeadingStyle}
-            >
-              The Four Modes
-            </h2>
-
-            <p style={proseStyle}>
-              The compass has four modes on a continuous gradient. Two operate before awareness — automatic responses the nervous system has been running for millions of years. Two operate after awareness — deliberate responses that emerged when cognition evolved and the system gained range.
-            </p>
-
-            {/* Four Modes Table */}
+            {/* Four States Overview Table */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.5fr 1.5fr 1.2fr", minWidth: 700 }}>
-                {/* Header row */}
-                <div style={gridHeaderStyle}>Mode</div>
-                <div style={gridHeaderStyle}>Type</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle}>State</div>
+                <div style={gridHeaderStyle}>Biology</div>
                 <div style={gridHeaderStyle}>Activation</div>
-                <div style={gridHeaderStyle}>Sequence</div>
                 <div style={gridHeaderStyle}>Design Duration</div>
-                {/* Connection */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
-                <div style={gridCellStyle}>Before awareness</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
+                <div style={gridCellStyle}>Parasympathetic (ventral vagal) dominant</div>
                 <div style={gridCellStyle}>Automatic — safety perceived</div>
-                <div style={gridCellStyle}>Engage, relate, repair, learn</div>
-                <div style={gridCellStyle}>Indefinite — designed for sustained living</div>
-                {/* Protection */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>Before awareness</div>
+                <div style={gridCellStyle}>Activates with genuine contact; returns to baseline</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Threat & Defence</div>
+                <div style={gridCellStyle}>Sympathetic activation</div>
                 <div style={gridCellStyle}>Automatic — threat perceived</div>
-                <div style={gridCellStyle}>Fight/flight &rarr; freeze/fawn</div>
-                <div style={gridCellStyle}>Minutes to hours</div>
-                {/* Control */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Control</div>
-                <div style={gridCellStyle}>After awareness</div>
-                <div style={gridCellStyle}>Deliberate — cognition recruited</div>
-                <div style={gridCellStyle}>Anticipate &rarr; Manage &rarr; Override</div>
+                <div style={gridCellStyle}>Minutes to hours — emergency</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategy & Management</div>
+                <div style={gridCellStyle}>Sympathetic + cognition recruited</div>
+                <div style={gridCellStyle}>Deliberate — cognition enters threat service</div>
                 <div style={gridCellStyle}>Time-limited — tool</div>
-                {/* Domination */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
-                <div style={gridCellStyle}>After awareness</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power & Dominance</div>
+                <div style={gridCellStyle}>Sympathetic + cognition at maximum</div>
                 <div style={gridCellStyle}>Deliberate — cognition at maximum</div>
-                <div style={gridCellStyle}>Override &rarr; Eliminate &rarr; Secure</div>
                 <div style={gridCellStyle}>Rare — last resort</div>
               </div>
             </div>
 
-            <h3 style={h3Style}>Connection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Safety & Openness</span></h3>
             <p style={proseStyle}>
-              Connection is not relaxation or happiness. It is the mode in which the nervous system has enough safety to engage with complexity. A person in Connection can grieve, argue, problem-solve, and sit with discomfort — because the system has sufficient safety resources to hold these without treating them as threats. Perception broadens, the awareness capacities come fully online — the ability to read emotions, feel with others, and observe one{"'"}s own patterns — cognitive flexibility increases, repair becomes possible, and learning capacity opens. Connection is the mode designed for sustained living.
+              TEG-Blue also refers to these four states by shorthand names: <strong style={{ color: TEXT.primary }}>Connection</strong> (Safety & Openness), <strong style={{ color: TEXT.primary }}>Protection</strong> (Threat & Defence), <strong style={{ color: TEXT.primary }}>Control</strong> (Strategy & Management), and <strong style={{ color: TEXT.primary }}>Domination</strong> (Power & Dominance). The descriptive names say what the nervous system is doing. The shorthand names are handles the reader can carry.
             </p>
 
-            <h3 style={h3Style}>Protection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Threat & Defence</span></h3>
+            <h3 style={h3Style}>Safety & Openness</h3>
             <p style={proseStyle}>
-              Protection is an extraordinary emergency system. When threat is perceived, the entire system mobilises: attention narrows toward threat, emotions amplify, and the capacity to feel with others is filtered to survival-relevant data. Fight and flight are the primary responses — active, energised. When those are unavailable, freeze and fawn emerge as the body's fallback. Protection is intelligent design for genuine threat. The problem is when it becomes a permanent address — when what was designed for minutes to hours becomes a lifetime of vigilance.
+              When the nervous system evaluates {"\u201C"}safe enough,{"\u201D"} the parasympathetic branch dominates and the body opens. Perception broadens — the person sees the full field. Empathy comes fully online. Cognition flexes — can hold complexity, tolerate ambiguity, consider multiple perspectives. Learning is available. Repair is possible. Vulnerability is available.
+            </p>
+            <p style={proseStyle}>
+              Safety & Openness is not relaxation. It is not happiness. It is the state in which the nervous system has enough safety to engage with complexity — including painful complexity. Grief experienced in Safety & Openness is different from grief experienced in Threat & Defence. Conflict navigated from Safety & Openness produces different outcomes than conflict navigated from Strategy & Management.
             </p>
 
-            <h3 style={h3Style}>Control <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Strategy & Management</span></h3>
+            <h3 style={h3Style}>Threat & Defence</h3>
             <p style={proseStyle}>
-              In a calibrated compass, Control is deliberate, time-limited, and returnable. The system registers that Protection is not enough — the situation requires structure, coordination, or strategic action under pressure. Cognition is recruited. The sequence is strategic: Anticipate, Manage, Override. When the situation resolves, cognition stands down. The compass moves back. Control was a tool. It was used. It was released.
+              When the nervous system evaluates {"\u201C"}threat,{"\u201D"} the sympathetic branch activates and the body mobilises. Heart rate rises, muscles tense, cortisol and adrenaline release. Attention narrows to threat-relevant signals. Emotions amplify. Cognition simplifies — binary thinking, speed over accuracy. Fight and flight are the primary responses; freeze and fawn emerge as fallbacks when fight/flight is unavailable.
+            </p>
+            <p style={proseStyle}>
+              Threat & Defence is not pathology. It is an extraordinary emergency system. The narrowing, the amplification, the simplification — all functional. The system is prioritising survival over nuance. The problem is never that the person entered Threat & Defence. The problem is when what was designed for minutes to hours becomes a permanent address.
+            </p>
+
+            <h3 style={h3Style}>Strategy & Management</h3>
+            <p style={proseStyle}>
+              When body-first responses are insufficient — when fight/flight/freeze/fawn cannot resolve the threat — cognition gets recruited. The thinking mind enters the service of defence. This is the <strong style={{ color: TEXT.primary }}>architectural break</strong> between body-first and cognition-first: not just more intensity, but a different kind of response. Safety & Openness and Threat & Defence <em>happen to you</em>. Strategy & Management is what <em>cognition does</em> when recruited into threat service.
+            </p>
+            <p style={proseStyle}>
+              In a healthy nervous system, Strategy & Management is deliberate, time-limited, and returnable. A parent managing a child{"'"}s medical emergency. A leader navigating an organisational crisis. An extraordinary survival tool — the intelligent upgrade that appeared when cognition evolved.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Connection and Protection activate automatically. Control and Domination are what cognition does when recruited into threat service.
+              Safety & Openness and Threat & Defence happen to you. Strategy & Management and Power & Dominance are what cognition does when recruited into threat service.
             </OperationalStatement>
 
-            <h3 style={h3Style}>Domination <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Power & Dominance</span></h3>
+            <h3 style={h3Style}>Power & Dominance</h3>
             <p style={proseStyle}>
-              Domination is the rarest mode. In a designed-operation compass, it is entered deliberately, used briefly, and followed by return. The person enters it knowing exactly what they are doing. Emotional Resonance (ER) — the capacity to feel what someone else is feeling — drops to near-zero, and the person chose to let it drop because the situation demanded decisive, unambiguous action. The sequence is final: Override, Eliminate, Secure. When the situation resolves, the person exits. The compass moves back. Emotional Resonance (ER) returns. The person feels the cost — the weight of having suspended resonance. In a designed-operation compass, this cost is felt and processed.
+              When Strategy & Management is insufficient — when the threat is evaluated as requiring elimination or total override — cognition escalates to maximum threat response. The ventromedial prefrontal cortex (vmPFC) — the region that carries guilt, care, empathy, and consequence — is suppressed. Not failed, not overwhelmed: suppressed. A designed feature for extreme situations. Decisions that would be impossible with full empathy online become available.
+            </p>
+            <p style={proseStyle}>
+              In a healthy nervous system, Power & Dominance is the rarest state: entered deliberately, used for the briefest time the situation demands, and followed by return. The person feels the cost — the weight of having suspended resonance. This cost is felt and processed. The return happens.
             </p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — hierarchical autonomic responses, social engagement system. <strong style={{ color: TEXT.primary }}>Evolutionary psychology:</strong> cognition evolved to solve survival problems the body alone could not. <strong style={{ color: TEXT.primary }}>Trauma research:</strong> van der Kolk (2014) — the body keeps the score; Levine (1997) — trauma as incomplete threat response, somatic experiencing.
+                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — ventral vagal (social engagement), sympathetic (mobilisation), autonomic hierarchy. Dana (2018) — clinical application. <strong style={{ color: TEXT.primary }}>Affective neuroscience:</strong> Panksepp (1998) — primary emotional systems as biological processes. <strong style={{ color: TEXT.primary }}>vmPFC and empathy:</strong> Koenigs et al. (2007) — vmPFC damage and impaired guilt processing. Blair (2007) — empathy suppression. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> Sapolsky (2004, 2017) — chronic mobilisation and biology of behaviour at the extremes.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The four-mode gradient with two before-awareness and two after-awareness modes. The architectural break between before awareness and after awareness as a qualitative distinction — not just intensity but kind. Connection and Protection are biological responses running for millions of years. Control and Domination require cognition to exist. The presentation of designed-operation Control and Domination <em>before</em> their chronic versions — most clinical frameworks encounter these modes only as problems.
+                  The four-state model grounded explicitly in two nervous system branches, with the sympathetic branch extending into two further states as cognition is recruited. The qualitative distinction between body-first states (automatic, pre-cognitive) and cognition-first states (deliberate, cognitive resources redirected to threat service) as an architectural break — not just a continuum of intensity but a different kind of response.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONCEPT 5: THE GRADIENT ────────────────── */}
+          {/* ─── C6: THE GRADIENT ─────────────────────────── */}
           <section
             id="the-gradient"
             aria-labelledby="heading-the-gradient"
@@ -433,203 +312,41 @@ export default function M2NervousSystemStatesPage() {
             </h2>
 
             <p style={proseStyle}>
-              The four modes are not four boxes — they are positions on a continuous gradient. There are no hard boundaries. There are shifts, transitions, degrees. The compass needle moves along the gradient. A fluid compass has access to the full range. A stuck compass is locked at one position.
+              The four states are not four boxes. They are positions on a continuous range — a gradient from full Safety & Openness to maximum Power & Dominance. The nervous system moves along this gradient, and any position on it has a specific, predictable effect on what the person can perceive, think, feel, and do.
             </p>
             <p style={proseStyle}>
-              Transitions between modes follow a characteristic pattern. Connection to Protection is automatic — the nervous system shifts when threat is perceived. Protection to Control involves an architectural break — cognition is recruited into the response. This is the point where the system shifts from before awareness to after awareness. Control to Domination is the crossroads (F7) — the turning point where defence stops being a state and becomes a strategy — the threshold beyond which cognition is no longer managing threat but overriding the other person's reality entirely.
+              The transitions between states are recognisable. <strong style={{ color: TEXT.primary }}>Safety & Openness → Threat & Defence</strong> is automatic — the body responding to perceived threat. <strong style={{ color: TEXT.primary }}>Threat & Defence → Strategy & Management</strong> is the architectural break — cognition gets recruited into threat service. <strong style={{ color: TEXT.primary }}>Strategy & Management → Power & Dominance</strong> is the most consequential transition on the gradient — where defence becomes strategy and strategy becomes override.
             </p>
             <p style={proseStyle}>
-              The gradient makes the proportionality question visible. The question is not "which box?" but "where on the gradient, and moving in which direction?" A brief shift into Protection during an argument is proportionate. A permanent residence in Control that began in childhood is not. The gradient makes both visible — and makes the difference between them measurable.
+              TEG-Blue uses the visual metaphor of a compass with a moving needle to make this gradient tangible — the <strong style={{ color: TEXT.primary }}>Inner Compass</strong>. The needle orients between safety and threat, moving along the four-state gradient. Health is not where the needle is. Health is whether the needle can move.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The question is not "which box?" but "where on the gradient, and moving in which direction?"
+              The question is not {"\u201C"}which box?{"\u201D"} but {"\u201C"}where on the gradient, and moving in which direction?{"\u201D"}
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Emotion science:</strong> Fredrickson (2001) — broaden-and-build as directional state, positivity ratio as continuous variable. <strong style={{ color: TEXT.primary }}>Stress physiology:</strong> McEwen (2000) — allostatic load as cumulative measure of chronic activation.
+                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — the autonomic hierarchy as a graded response system. Dana (2018) — the autonomic ladder as a clinical tool. <strong style={{ color: TEXT.primary }}>Window of tolerance:</strong> Ogden, Minton & Pain (2006) — a range, not a state.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The gradient as a continuous measure rather than categorical classification. Movement rate, range, and direction as primary variables — not "which state" but "how far, how fast, and can it come back." The gradient makes transitions, degrees, and proportionality visible in a way that categorical models cannot.
+                  The four-state gradient as a continuous range with a visual architecture (the Inner Compass) that makes the nervous system{"'"}s safety/threat orientation tangible and clinically usable. The reframe of health from a state to a capacity — not where the needle rests, but whether it can move and return.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── THE ACTIVATION CYCLE ─────────────────────── */}
-          <section
-            id="accumulated-activation"
-            aria-labelledby="heading-activation-cycle"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-activation-cycle"
-              style={sectionHeadingStyle}
-            >
-              The Activation Cycle — What Happens When It Does Not Complete
-            </h2>
+          {/* ════════════════════════════════════════════════ */}
+          {/* PART 2: WHAT THE STATE DOES                     */}
+          {/* ════════════════════════════════════════════════ */}
 
-            <p style={proseStyle}>
-              The nervous system was designed to activate and restore. Every mode generates activation — Connection through emotional contact, Protection through threat response, Control through cognitive load, Domination through power maintenance. In a fluid compass, each activation runs its biological cycle and completes. The breath that accelerated slows. The muscles that braced release. The hormones that flooded clear. The system returns to baseline.
-            </p>
-            <p style={proseStyle}>
-              This is what regulation is. Not the management of emotions. The completion of biological cycles.
-            </p>
+          <PartDivider label="PART 2" title="What the State Does" />
 
-            <h3 style={h3Style}>What Builds Up</h3>
-            <p style={proseStyle}>
-              When the cycle does not complete — when the return to baseline is blocked, interrupted, or never learned — activation accumulates. Each incomplete cycle leaves debris: stress hormones that did not clear, muscle tension that did not release, arousal that did not discharge. The baseline rises. The nervous system starts each new activation from a higher resting point.
-            </p>
-            <p style={proseStyle}>
-              This has a direct consequence: the regulation substitute that once produced felt relief now has to work harder — because it has to move the needle against a higher baseline. So the nervous system reaches for a stronger one. Which temporarily moves the needle — but does not clear the underlying activation. The baseline rises again. The next time, it needs more.
-            </p>
-
-            {/* Per-Mode Activation and Non-Completion */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>Mode</div>
-                <div style={gridHeaderStyle}>What activates</div>
-                <div style={gridHeaderStyle}>What chronic non-completion produces</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
-                <div style={gridCellStyle}>Others{"'"} emotional states absorbed through Emotional Resonance (ER) — every person nearby landing in the body</div>
-                <div style={gridCellStyle}>Any emotion from anyone overwhelms. The nervous system reaches for merger, spirituality, transcendence — regulation substitutes strong enough to produce relief against a rising baseline</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>Threat signals — danger cues from the environment, real or perceived</div>
-                <div style={gridCellStyle}>Small triggers produce full-intensity responses. Fight, flight, fawn, freeze at maximum from minimum input</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Control</div>
-                <div style={gridCellStyle}>Unpredictability, ambiguity, loss of control — cognitive load that never resolves</div>
-                <div style={gridCellStyle}>Any non-compliance or ambiguity feels catastrophic. Escalating need for management, certainty, compliance</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
-                <div style={gridCellStyle}>Challenge to power — any sign of independence, questioning, or non-submission</div>
-                <div style={gridCellStyle}>Any independent thought in others reads as existential threat. No ceiling. Escalation with no natural stopping point</div>
-              </div>
-            </div>
-
-            <h3 style={h3Style}>The Escalation Logic</h3>
-            <p style={proseStyle}>
-              This mechanism is what turns the gradient into an escalation sequence. When Connection{"'"}s regulation substitutes — merger, spirituality, caretaking — stop producing enough relief, the nervous system shifts toward Protection substitutes: fight, flight, fawn, freeze. When those stop working, it shifts toward Control substitutes: management, compliance, achievement, certainty. When those stop working, it shifts toward Domination substitutes: submission, elimination, absolute power.
-            </p>
-            <p style={proseStyle}>
-              Each step up the gradient is the nervous system reaching for a stronger regulation substitute because the previous one stopped producing enough relief against a rising baseline. This is the escalation pathway: Defence → Strategy → Entitlement → Empathy Collapse → Full-Spectrum Domination. Not a personality trajectory. A biological escalation driven by incomplete cycles.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              The gradient is not a psychological spectrum. It is the biological escalation of a system whose activation cycles cannot complete.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — cumulative physiological cost of chronic activation; rising baseline from repeated stress without recovery. <strong style={{ color: TEXT.primary }}>Tolerance and sensitisation:</strong> Koob & Le Moal (2001) — the escalation cycle in substance research: the regulation substitute that once produced relief now requires more input to produce the same effect.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The cycle-completion mechanism as a unifying explanation across all four modes. The escalation logic across the gradient: each mode{"'"}s regulation substitute stops working not because of the mode itself but because accumulated activation has raised the baseline above what that substitute can reach. The gradient becomes the biological escalation sequence of a system whose cycles cannot complete — making the escalation both mechanistically visible and potentially interruptible at each transition point.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── SENSORY FILTERING — MODE SETTINGS ──────── */}
-          <section
-            id="sensory-filtering"
-            aria-labelledby="heading-sensory-filtering"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-sensory-filtering"
-              style={sectionHeadingStyle}
-            >
-              Sensory Filtering — Mode Settings
-            </h2>
-
-            <p style={proseStyle}>
-              Each mode does not just change what the person can do. It changes how sensory input gets filtered before it becomes a thought. The nervous system evaluates from the periphery in — not from the brain down. Eyes, ears, nose, gut, skin — all feeding in simultaneously, below conscious awareness. The amygdala fires in 12 milliseconds. The mode is chosen before the mind has assembled a single thought about what is happening.
-            </p>
-
-            <h3 style={h3Style}>The Sensory Channels</h3>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Eyes</strong> — literally neural tissue, an extension of the brain outside the skull. Scanning for threat-relevant shapes, faces, movement before any meaning is assigned. <strong style={{ color: TEXT.primary }}>Ears</strong> — direct pathway to the brainstem. Tone of voice, rhythm, sudden sounds processed below conscious awareness before meaning forms. <strong style={{ color: TEXT.primary }}>Nose</strong> — the only sense with a direct pathway to the amygdala and hippocampus without going through the thalamus first. A smell can trigger a full threat or safety response before any thought forms. <strong style={{ color: TEXT.primary }}>Gut</strong> — approximately 100 million neurons. A second nervous system evaluating the internal environment and communicating upward through the vagus nerve. The gut feeling is a nervous system signal, not a metaphor. <strong style={{ color: TEXT.primary }}>Skin</strong> — touch receptors, temperature, pressure. The body reading its physical environment continuously.
-            </p>
-            <p style={proseStyle}>
-              All of these arrive simultaneously. The body has already chosen the mode before the mind has assembled a coherent thought about what is happening. Each mode sets specific filters on all incoming sensory data. These settings were designed to be temporary — activated when needed, released when the threat passed. When the compass is stuck, the settings lock.
-            </p>
-
-            <h3 style={h3Style}>The Mode Settings</h3>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Connection Settings:</strong> Sensory channels wide open. Eyes reading the full picture — faces, context, nuance. Ears picking up warmth, prosody, the full emotional range of tone. Gut relaxed, feeding accurate interoceptive data upward. Skin open to contact. The evaluation receives everything available.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Protection Settings:</strong> Channels narrow physically toward threat detection. Pupils dilate to track movement. Peripheral vision sharpens for escape routes. Ears tune to sudden sounds and threat-relevant frequencies — anger, alarm, the wrong kind of silence. Gut tightens. Same environment. Completely different input reaching the amygdala.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Control Settings:</strong> Narrowing continues but becomes strategic. Eyes scanning for what needs managing — who has power, what is being concealed, what could destabilise the situation. Ears reading under the surface of what people say. Gut suppressed — the cognitive system has overridden the somatic signal because it interferes with management. Channels still open but curated for strategic information.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Domination Settings:</strong> Tunnel. Visual field narrows to the obstacle or threat. Peripheral information drops. Ears hear what confirms the threat assessment and filter the rest. Gut gone — completely overridden. The system receives only what it needs to eliminate the threat.
-            </p>
-
-            <h3 style={h3Style}>When the Settings Lock</h3>
-            <p style={proseStyle}>
-              When the compass is stuck, the sensory filter that was designed to be temporary becomes permanent. The eyes that were supposed to widen do not. The ears that were supposed to soften back to warmth and prosody do not. The gut that was supposed to re-engage stays suppressed. The person walks into a neutral room and the sensory system delivers a threat-filtered picture of it. Not because there is threat. Because the settings are locked.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              The mode determines the filter. The filter shapes the input. The input confirms the mode. A self-reinforcing loop with no natural exit.
-            </OperationalStatement>
-
-            {/* What Each Chronic Mode Sees */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>Chronic Mode</div>
-                <div style={gridHeaderStyle}>What the settings deliver</div>
-                <div style={gridHeaderStyle}>What the person experiences</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Connection</div>
-                <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
-                <div style={gridCellStyle}>The world is other people{"'"}s states. Own needs invisible.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Protection</div>
-                <div style={gridCellStyle}>Threat signals everywhere, safety signals filtered out</div>
-                <div style={gridCellStyle}>The world is dangerous. Trust is impossible.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Control</div>
-                <div style={gridCellStyle}>Everyone appears to have an agenda, everything requires managing</div>
-                <div style={gridCellStyle}>The world is a system of competing interests.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Chronic Domination</div>
-                <div style={gridCellStyle}>Everyone appears to be trying to cheat, undermine, or challenge</div>
-                <div style={gridCellStyle}>The world is full of enemies. Preemptive attack as defence.</div>
-              </div>
-            </div>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Attentional bias:</strong> Bar-Haim et al. (2007) — threat-related attentional bias across anxiety conditions; MacLeod, Mathews, & Tata (1986) — dot-probe paradigm. <strong style={{ color: TEXT.primary }}>Interoception:</strong> Craig (2009) — interoceptive awareness as a primary source of subjective feeling; Garfinkel & Critchley (2013) — interoceptive accuracy varies by state. <strong style={{ color: TEXT.primary }}>Neuroception:</strong> Porges (2011) — pre-cognitive detection of safety and threat through sensory channels below conscious awareness.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  Sensory filtering as the mechanism connecting compass position to capacity restriction. State does not just limit capacity — it limits what sensory input reaches the person in the first place. The world the person perceives is already filtered before cognition touches it. This explains why the capacity table operates as it does: the person in a stuck mode is not choosing to see selectively — the sensory system is delivering a pre-filtered picture before any choice is possible.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── CONCEPT 6: STATE DETERMINES CAPACITY ───── */}
+          {/* ─── C7: STATE DETERMINES CAPACITY ───────────── */}
           <section
             id="state-determines-capacity"
             aria-labelledby="heading-state-determines-capacity"
@@ -642,534 +359,336 @@ export default function M2NervousSystemStatesPage() {
               State Determines Capacity
             </h2>
 
-            <h2 id="heading-state-capacity-question" style={sectionHeadingStyle}>
-              How does nervous system state determine what a person can perceive, think, and do?
-            </h2>
-
             <p style={proseStyle}>
-              What a person can perceive, think, feel, and do depends on their current gradient position. This is not metaphor — it is neurobiological reality. The current state literally shapes the capacities available.
+              What a person can perceive, think, feel, and do depends on their current position on the gradient. This is not a metaphor. It is the operational consequence of how the nervous system allocates resources under different levels of perceived safety.
             </p>
 
             {/* State-Capacity Table */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 700 }}>
-                {/* Header row */}
                 <div style={gridHeaderStyle}>Capacity</div>
-                <div style={gridHeaderStyle}>Connection</div>
-                <div style={gridHeaderStyle}>Protection</div>
-                <div style={gridHeaderStyle}>Control</div>
-                <div style={gridHeaderStyle}>Domination</div>
-                {/* Perception */}
+                <div style={gridHeaderStyle}>Safety & Openness</div>
+                <div style={gridHeaderStyle}>Threat & Defence</div>
+                <div style={gridHeaderStyle}>Strategy & Management</div>
+                <div style={gridHeaderStyle}>Power & Dominance</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Perception</div>
                 <div style={gridCellStyle}>Broad — sees the full field</div>
                 <div style={gridCellStyle}>Narrowed — threat-relevant signals</div>
                 <div style={gridCellStyle}>Strategic — what needs managing</div>
                 <div style={gridCellStyle}>Tunnel — obstacles and resources</div>
-                {/* Awareness Capacities */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Awareness Capacities</div>
-                <div style={gridCellStyle}>Full — Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) online</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Empathy</div>
+                <div style={gridCellStyle}>Full — resonance with others online</div>
                 <div style={gridCellStyle}>Filtered — resonance decreases</div>
-                <div style={gridCellStyle}>Redirected — Reading Emotions (RE) serving strategy</div>
-                <div style={gridCellStyle}>Collapsed — Emotional Resonance (ER) offline; Reading Emotions (RE) may be weaponised</div>
-                {/* Cognition */}
+                <div style={gridCellStyle}>Redirected — reading others for strategy, not understanding</div>
+                <div style={gridCellStyle}>Collapsed — resonance offline; reading others may be weaponised</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Cognition</div>
-                <div style={gridCellStyle}>Flexible — holds complexity</div>
-                <div style={gridCellStyle}>Simplified — binary thinking</div>
-                <div style={gridCellStyle}>Strategic — planning, anticipation</div>
+                <div style={gridCellStyle}>Flexible — holds complexity, tolerates ambiguity</div>
+                <div style={gridCellStyle}>Simplified — binary thinking, speed over accuracy</div>
+                <div style={gridCellStyle}>Strategic — planning and anticipation</div>
                 <div style={gridCellStyle}>Locked — rigid, self-confirming</div>
-                {/* Learning */}
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Learning</div>
-                <div style={gridCellStyle}>Available</div>
-                <div style={gridCellStyle}>Reduced</div>
-                <div style={gridCellStyle}>Selective</div>
-                <div style={gridCellStyle}>Unavailable</div>
-                {/* Relational capacity */}
+                <div style={gridCellStyle}>Available — new information integrates</div>
+                <div style={gridCellStyle}>Reduced — threat-contradicting information filtered</div>
+                <div style={gridCellStyle}>Selective — in service of the strategy only</div>
+                <div style={gridCellStyle}>Unavailable — system not open to revision</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Relational capacity</div>
-                <div style={gridCellStyle}>Full — repair, vulnerability, trust</div>
-                <div style={gridCellStyle}>Limited — vulnerability dangerous</div>
-                <div style={gridCellStyle}>Managed — relationships serve strategy</div>
-                <div style={gridCellStyle}>Absent — others are resources or threats</div>
+                <div style={gridCellStyle}>Full — repair, vulnerability, trust available</div>
+                <div style={gridCellStyle}>Limited — vulnerability feels dangerous</div>
+                <div style={gridCellStyle}>Managed — relationships serve the strategy</div>
+                <div style={gridCellStyle}>Absent — others are resources, obstacles, or threats</div>
               </div>
             </div>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Restore safety first, then expect capacity. If a person cannot learn, cannot empathise, cannot think flexibly — the first question is not "what is wrong with this person?" The first question is: where is their compass?
+              Restore safety first, then expect capacity. If a person cannot learn, cannot empathise, cannot think flexibly — the first question is not {"\u201C"}what is wrong with this person?{"\u201D"} The first question is: where is their nervous system?
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Broaden-and-build theory:</strong> Fredrickson (2001) — positive states broaden perception and build resources; threat states narrow both. <strong style={{ color: TEXT.primary }}>Stress and cognition:</strong> Sapolsky (2004) — chronic stress impairs hippocampal function, learning, and flexible cognition. <strong style={{ color: TEXT.primary }}>Developmental neuroscience:</strong> Siegel (2012) — state determines which neural circuits are available.
+                  <strong style={{ color: TEXT.primary }}>Broaden-and-build:</strong> Fredrickson (2001) — safety broadens cognitive and perceptual capacity. <strong style={{ color: TEXT.primary }}>Stress and cognition:</strong> Arnsten (2009) — prefrontal function degrades under stress. Sapolsky (2004) — chronic stress restricts learning and memory. <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — social engagement system availability depends on autonomic state.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  State-capacity correspondence tracked across all four modes as a clinically actionable framework. The table maps five dimensions of capacity across four gradient positions — making visible that what looks like "unwillingness" may be neurobiological unavailability. The intervention principle follows directly: restore safety first, then expect capacity.
+                  {"\u201C"}State Determines Capacity{"\u201D"} tracked systematically across all four states and five capacity dimensions as a clinically actionable framework. The reframe from {"\u201C"}what is wrong with this person?{"\u201D"} to {"\u201C"}what is their state?{"\u201D"} — making the capacity restriction visible as a state limitation rather than a personality one.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONCEPT 7: SAME EMOTION, TWO EXPRESSIONS ─ */}
+          {/* ─── C8: SENSORY FILTERING ────────────────────── */}
           <section
-            id="same-emotion-two-expressions"
-            aria-labelledby="heading-same-emotion"
+            id="sensory-filtering"
+            aria-labelledby="heading-sensory-filtering"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-same-emotion"
+              id="heading-sensory-filtering"
               style={sectionHeadingStyle}
             >
-              Same Emotion, Two Expressions
+              Sensory Filtering — How the State Sets the Input
             </h2>
 
             <p style={proseStyle}>
-              In a fluid compass — where Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) are all online — the same emotion produces different but proportionate responses across all four modes. The person is responding to real conditions, knows what they are doing, and can return. The emotion serves a different function at each gradient position, but it remains a signal, not a distortion.
+              The state does not just change what the person <em>can</em> do. It changes what sensory input reaches them <em>before any thought forms</em>.
+            </p>
+            <p style={proseStyle}>
+              The nervous system evaluates from the periphery in — not from the brain down. <strong style={{ color: TEXT.primary }}>Eyes</strong> — neural tissue, an extension of the brain outside the skull. <strong style={{ color: TEXT.primary }}>Ears</strong> — direct pathway to the brainstem. <strong style={{ color: TEXT.primary }}>Nose</strong> — the only sense with a direct pathway to the amygdala and hippocampus without going through the thalamus first. <strong style={{ color: TEXT.primary }}>Gut</strong> — approximately 100 million neurons, a second nervous system communicating upward through the vagus nerve. <strong style={{ color: TEXT.primary }}>Skin</strong> — touch receptors, temperature, pressure. All feeding in simultaneously, below conscious awareness.
+            </p>
+            <p style={proseStyle}>
+              The amygdala fires in 12 milliseconds. The state is active before the mind has assembled a single thought about what is happening. Each state sets the filter on all incoming sensory data.
             </p>
 
-            {/* Fluid Compass Table */}
-            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
-              Reading Emotions (RE) + Emotional Resonance (ER) + Self-Emotional Awareness (SEA) all online. Responding to real danger. Knows exactly what they{"'"}re doing and why.
-            </p>
+            {/* Filter Table */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
-                {/* Header row */}
-                <div style={gridHeaderStyle}></div>
-                <div style={gridHeaderStyle}>Connection</div>
-                <div style={gridHeaderStyle}>Protection</div>
-                <div style={gridHeaderStyle}>Control</div>
-                <div style={gridHeaderStyle}>Domination</div>
-                {/* Duration */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Duration</div>
-                <div style={gridCellStyle}>Designed for sustained living</div>
-                <div style={gridCellStyle}>Minutes — activates fast, returns fast</div>
-                <div style={gridCellStyle}>Hours to days — when Protection isn{"'"}t enough</div>
-                <div style={gridCellStyle}>Hours to days, rare — most extreme response, highest cost</div>
-                {/* Trigger logic */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trigger logic</div>
-                <div style={gridCellStyle}>Safety present</div>
-                <div style={gridCellStyle}>Real threat activates the body automatically</div>
-                <div style={gridCellStyle}>Threat persists beyond minutes — cognitive override kicks in deliberately</div>
-                <div style={gridCellStyle}>Threat is extreme or unresolvable — maximum force chosen consciously</div>
-                {/* Guilt */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
-                <div style={gridCellStyle}>Acknowledges impact, makes amends — Accountability</div>
-                <div style={gridCellStyle}>Recognises shame signal, holds it</div>
-                <div style={gridCellStyle}>Owns the harm, justifies nothing</div>
-                <div style={gridCellStyle}>Takes decisive corrective action</div>
-                {/* Fear */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
-                <div style={gridCellStyle}>Reads real threat, stays alert and grounded</div>
-                <div style={gridCellStyle}>Mobilises proportionally, body leads</div>
-                <div style={gridCellStyle}>Consciously contains the danger</div>
-                <div style={gridCellStyle}>Eliminates the threat, knows the cost</div>
-                {/* Anger */}
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2fr 2fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle}>State</div>
+                <div style={gridHeaderStyle}>What the filter delivers</div>
+                <div style={gridHeaderStyle}>What the person experiences</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
+                <div style={gridCellStyle}>Channels wide open — eyes reading faces, context, nuance. Ears picking up warmth, prosody. Gut relaxed, feeding accurate interoceptive data.</div>
+                <div style={gridCellStyle}>The world looks like it is.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Threat & Defence</div>
+                <div style={gridCellStyle}>Channels narrow toward threat detection. Pupils dilate. Peripheral vision sharpens for escape routes. Ears tune to sudden sounds and threat frequencies. Gut tightens.</div>
+                <div style={gridCellStyle}>The world looks dangerous.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategy & Management</div>
+                <div style={gridCellStyle}>Narrowing becomes strategic. Eyes scanning for who has power, what is concealed. Ears reading what people are really after. Gut suppressed — cognitive system has overridden the somatic signal.</div>
+                <div style={gridCellStyle}>The world looks like a system to be managed.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power & Dominance</div>
+                <div style={gridCellStyle}>Tunnel. Visual field narrows to the obstacle. Peripheral information drops. Ears hear only what confirms the threat assessment. Gut gone — completely overridden.</div>
+                <div style={gridCellStyle}>The world looks full of enemies.</div>
+              </div>
+            </div>
+
+            <p style={proseStyle}>
+              These filter settings were designed to be temporary — activated when needed, released when the threat passed. When the state becomes chronic, the settings lock.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The state does not just limit what the person can do in response to input — it limits what input reaches the person in the first place. The world the person perceives is already filtered before cognition touches it.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Threat detection:</strong> LeDoux (1996) — pre-conscious threat detection, amygdala processing before cortical awareness. <strong style={{ color: TEXT.primary }}>Attentional bias:</strong> Bar-Haim, Lamy, Pergamin, Bakermans-Kranenburg & van IJzendoorn (2007) — threat-related attentional bias. <strong style={{ color: TEXT.primary }}>Neuroception:</strong> Porges (2011) — operating below conscious awareness through multiple sensory channels.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  Sensory filtering mapped systematically across all four states as the physical mechanism that explains why state determines capacity. Five sensory channels (eyes, ears, nose, gut, skin) all delivering filtered input simultaneously, below conscious awareness. The formulation: the world the person perceives is already filtered before cognition touches it.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── C9: SAME SIGNAL, DIFFERENT EXPERIENCE ─────── */}
+          <section
+            id="same-signal-different-experience"
+            aria-labelledby="heading-same-signal"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-same-signal"
+              style={sectionHeadingStyle}
+            >
+              Same Signal, Different Experience
+            </h2>
+
+            <p style={proseStyle}>
+              Every emotional signal from M1 produces a different experience depending on which state the nervous system is in when the signal arrives. The signal does not change. What the state does to it changes everything.
+            </p>
+
+            {/* Signal × State Table */}
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
+                <div style={gridHeaderStyle}>Signal</div>
+                <div style={gridHeaderStyle}>In Safety & Openness</div>
+                <div style={gridHeaderStyle}>In Threat States</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
-                <div style={gridCellStyle}>Boundary signal — names and repairs</div>
-                <div style={gridCellStyle}>Activates defence, proportional and clear</div>
-                <div style={gridCellStyle}>Deploys anger strategically, no collateral damage</div>
-                <div style={gridCellStyle}>Overrides with force — chosen, deliberate</div>
-                {/* Shame */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
-                <div style={gridCellStyle}>Vulnerability in service of repair</div>
-                <div style={gridCellStyle}>Holds self-blame without losing self</div>
-                <div style={gridCellStyle}>Owns the failure, doesn{"'"}t perform it</div>
-                <div style={gridCellStyle}>Decisive course correction, no self-destruction</div>
-                {/* Sadness */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
-                <div style={gridCellStyle}>Shared grief, genuine empathy</div>
-                <div style={gridCellStyle}>Withdraws to process, knows why</div>
-                <div style={gridCellStyle}>Uses sadness purposefully, returns</div>
-                <div style={gridCellStyle}>Allows grief briefly, acts through it</div>
-                {/* Envy */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Envy</div>
-                <div style={gridCellStyle}>Turns envy into admiration and learning</div>
-                <div style={gridCellStyle}>Feels the gap, uses it as signal</div>
-                <div style={gridCellStyle}>Channels envy into strategic action</div>
-                <div style={gridCellStyle}>Eliminates the obstacle with full awareness</div>
-                {/* Joy */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
-                <div style={gridCellStyle}>Play, celebration, full presence</div>
-                <div style={gridCellStyle}>Allows joy cautiously, real threat nearby</div>
-                <div style={gridCellStyle}>Uses joy deliberately, knows the context</div>
-                <div style={gridCellStyle}>Intense, decisive — earned and conscious</div>
-                {/* Love */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
-                <div style={gridCellStyle}>Deepens real closeness and care</div>
-                <div style={gridCellStyle}>Protects the bond actively</div>
-                <div style={gridCellStyle}>Holds love while managing real danger</div>
-                <div style={gridCellStyle}>Protects at all costs — chosen sacrifice</div>
-              </div>
-            </div>
+                <div style={gridCellStyle}>Signals a boundary; motivates repair and clarity</div>
+                <div style={gridCellStyle}>Escalates; becomes self-blame, cold correction, or contempt depending on the state</div>
 
-            <OperationalStatement color={MODEL_COLOR}>
-              Assess mode position, not the emotion. Anger in Connection and anger in Domination are the same signal producing entirely different outcomes.
-            </OperationalStatement>
-
-            {/* Mode Lens — Social & Cultural Constructs */}
-            <h3 style={h3Style}>Mode Lens — Social &amp; Cultural Constructs</h3>
-            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
-              The same social constructs refract differently at each gradient position. In a fluid compass, the person knows what they are doing and why.
-            </p>
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
-                <div style={gridHeaderStyle}></div>
-                <div style={gridHeaderStyle}>Connection</div>
-                <div style={gridHeaderStyle}>Protection</div>
-                <div style={gridHeaderStyle}>Control</div>
-                <div style={gridHeaderStyle}>Domination</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power</div>
-                <div style={gridCellStyle}>Shared, mutual agency feels safe</div>
-                <div style={gridCellStyle}>Feels dangerous — steps back or holds ground consciously</div>
-                <div style={gridCellStyle}>Used deliberately to contain real threat</div>
-                <div style={gridCellStyle}>Enforced fully aware of the cost — temporary and purposeful</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Virtue / Obedience</div>
-                <div style={gridCellStyle}>Integrity means honesty + care</div>
-                <div style={gridCellStyle}>Complies where necessary to stay safe, knows they{"'"}re doing it</div>
-                <div style={gridCellStyle}>Performs virtue strategically, aware it{"'"}s a tool</div>
-                <div style={gridCellStyle}>Drops performance entirely — acts from raw necessity</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gender Roles</div>
-                <div style={gridCellStyle}>Expressive and fluid, emotions are human</div>
-                <div style={gridCellStyle}>Performs gender to navigate real danger, aware of the choice</div>
-                <div style={gridCellStyle}>Uses gender roles deliberately to manage the situation</div>
-                <div style={gridCellStyle}>Overrides gender norms entirely when survival demands it</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Success</div>
-                <div style={gridCellStyle}>Sustainability, contribution, and joy</div>
-                <div style={gridCellStyle}>Survival mode — focuses only on what keeps them safe</div>
-                <div style={gridCellStyle}>Pursues achievement consciously to neutralise threat</div>
-                <div style={gridCellStyle}>Dominates to secure survival — knows this is temporary</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
-                <div style={gridCellStyle}>Freedom, clarity, and mutual growth</div>
-                <div style={gridCellStyle}>Protects the bond actively — pulls back to keep it safe</div>
-                <div style={gridCellStyle}>Controls access to love deliberately, aware of the risk</div>
-                <div style={gridCellStyle}>Holds love fiercely — protection justified by real danger</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Goodness</div>
-                <div style={gridCellStyle}>Boundaries and compassion</div>
-                <div style={gridCellStyle}>Complies to avoid harm, knows the difference</div>
-                <div style={gridCellStyle}>Uses moral framing consciously as a tool</div>
-                <div style={gridCellStyle}>Suspends goodness temporarily — acts from necessity</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Provider Role</div>
-                <div style={gridCellStyle}>Care, presence, and reciprocity</div>
-                <div style={gridCellStyle}>Provides out of obligation temporarily — knows why</div>
-                <div style={gridCellStyle}>Providing becomes leverage, used deliberately</div>
-                <div style={gridCellStyle}>Uses provision to secure safety — aware of the power dynamic</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Silence / Confrontation</div>
-                <div style={gridCellStyle}>Silence means reflection, conflict brings repair</div>
-                <div style={gridCellStyle}>Silence feels safer — chooses it deliberately, not from fear</div>
-                <div style={gridCellStyle}>Silence is strategy — withholds truth to manage outcome</div>
-                <div style={gridCellStyle}>Silence becomes law — enforced consciously to end the threat</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Emotion Expression</div>
-                <div style={gridCellStyle}>Signals, shared to connect</div>
-                <div style={gridCellStyle}>Hides emotions to stay safe — knows they{"'"}re doing it</div>
-                <div style={gridCellStyle}>Uses emotions as tools deliberately, aware of the impact</div>
-                <div style={gridCellStyle}>Suppresses emotion fully — chosen, temporary, high cost</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Belonging</div>
-                <div style={gridCellStyle}>Authenticity</div>
-                <div style={gridCellStyle}>Conforms where necessary — conscious and temporary</div>
-                <div style={gridCellStyle}>Uses belonging as currency deliberately</div>
-                <div style={gridCellStyle}>Enforces belonging — conscious use of exclusion to neutralise threat</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Progress</div>
-                <div style={gridCellStyle}>Collective growth and learning together</div>
-                <div style={gridCellStyle}>Pushes forward to survive — focused, temporary</div>
-                <div style={gridCellStyle}>Pursues achievement to neutralise the threat consciously</div>
-                <div style={gridCellStyle}>Advances through domination — knows the cost, chooses it</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Truth</div>
-                <div style={gridCellStyle}>Shared — we seek understanding and repair</div>
-                <div style={gridCellStyle}>Protects truth where necessary — aware of what they{"'"}re withholding</div>
-                <div style={gridCellStyle}>Becomes selective — used deliberately to defend or persuade</div>
-                <div style={gridCellStyle}>Rewrites truth consciously to end the threat — temporary</div>
-              </div>
-            </div>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Affective neuroscience:</strong> Panksepp (1998) — primary emotional systems as functional biological processes, each with distinct action tendencies. <strong style={{ color: TEXT.primary }}>Emotion science:</strong> Frijda (1986) — emotions as action readiness; the same emotion can serve different functions depending on context and state.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The eight-emotion four-mode mapping showing that mode position, not emotion type, determines outcome. This inverts standard clinical practice: instead of classifying the emotion (anger = problem, joy = goal), the model classifies the mode and reads the emotion within it. The same emotion serves completely different functions depending on gradient position — and in a fluid compass, all four expressions are proportionate.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── CONCEPT 8: REGULATION — THE RETURN ──────── */}
-          <section
-            id="regulation-the-return"
-            aria-labelledby="heading-regulation"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-regulation"
-              style={sectionHeadingStyle}
-            >
-              Regulation — The Return
-            </h2>
-
-            <p style={proseStyle}>
-              Regulation is the built-in mechanism by which the nervous system returns from activation to baseline. It is not a skill imposed from outside — it is a process the system was built to run. The Complete Cycle — Perception → Signal → Mode Activation → Restoration — is what the body was designed to run: the breath that accelerated must slow, the muscles that braced must release, the hormones that flooded must clear. The body does not reason its way back to baseline. It restores through the same somatic channels it departed through. M3 maps the full regulation landscape — the return pathways, what blocks them, and what the nervous system reaches for instead.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              When the return is missing, the compass gets stuck. What should have been temporary becomes permanent.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Polyvagal Theory:</strong> Porges (2011) — ventral vagal system, co-regulation, vagal brake; Dana (2018) — polyvagal exercises. <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — trauma as incomplete threat response, the body completing the cycle. <strong style={{ color: TEXT.primary }}>Interpersonal neurobiology:</strong> Siegel (2012) — integration, window of tolerance, relationship shapes brain architecture.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  Regulation reframed as return, not control. The four return pathways as the nervous system's designed recovery channels — not techniques to be learned but processes to be allowed. The distinction separates regulation (the body completing its cycle) from cognitive management (cognition overriding the body's signals to produce apparent calm). What is commonly called "regulation" is often its opposite.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── CONCEPT 9: THE STUCK COMPASS ───────────── */}
-          <section
-            id="stuck-compass"
-            aria-labelledby="heading-stuck-compass"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-stuck-compass"
-              style={sectionHeadingStyle}
-            >
-              The Stuck Compass — When Modes Become Chronic
-            </h2>
-
-            <h2 id="heading-stuck-compass-question" style={sectionHeadingStyle}>
-              What happens when the compass gets stuck in one mode?
-            </h2>
-
-            <p style={proseStyle}>
-              When the return is absent — when the activation cycle never completes, when the compass needle never comes back — the mode that was meant to be temporary becomes permanent. Identity forms around the mode. False coherence (F3) constructs a self-narrative that makes the stuckness feel like character rather than position. The person does not experience being stuck. They experience being themselves. In some cases the stuckness is developmental — the return was never learned. In others it is structural compass lock — where the environment itself, not developmental history, holds the needle in threat position.
-            </p>
-
-            <h3 style={h3Style}>Chronic Connection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Safety & Openness (stuck)</span></h3>
-            <p style={proseStyle}>
-              Permanent appeasement. The nervous system locked in the mode designed for safety — but without the capacity to activate Protection when needed. The person in chronic Connection cannot say no, cannot feel anger, cannot set a boundary — not because they lack the knowledge but because the system has learned that activating Protection is more dangerous than staying fused. Emotional Resonance is flooded — the person feels everything everyone around them feels — while Self-Emotional Awareness is gone — they have no access to their own signals. Reading Emotions is locked outward, compulsively scanning others. Chronic Connection looks like healthy Connection from the outside. This is part of what makes it the hardest chronic mode to identify.
-            </p>
-
-            <h3 style={h3Style}>Chronic Protection <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Threat & Defence (stuck)</span></h3>
-            <p style={proseStyle}>
-              Permanent vigilance. The nervous system that never received the signal that the threat has passed. Approach-avoidance cycling — wanting connection but reading it as dangerous. Energy consumed by threat-scanning. The body running on emergency fuel indefinitely. Hypervigilance is not anxiety as a personality trait — it is a compass stuck in Protection, doing exactly what it was designed to do, without end.
-            </p>
-
-            <h3 style={h3Style}>Chronic Control <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Strategy & Management (stuck)</span></h3>
-            <p style={proseStyle}>
-              Permanent management. Strategic warmth, managed closeness, performed empathy. The person looks functional — often more than functional. They appear organised, competent, relationally skilled. But closeness is managed rather than felt. Vulnerability is performed rather than experienced. Relationships serve strategy rather than connection. Chronic Control is the mode that most reliably mimics Connection, making the stuckness invisible — to others and often to the person themselves.
-            </p>
-
-            <h3 style={h3Style}>Chronic Domination <span style={{ fontSize: 13, fontWeight: 400, fontStyle: "italic", color: TEXT.muted }}>— Power & Dominance (stuck)</span></h3>
-            <p style={proseStyle}>
-              Permanent override. Empathy Collapse — when felt resonance (ER) goes offline while Reading Emotions (RE) stays sharp — leaves the person appearing warm while managing strategically. Tolerance builds — what produced safety yesterday requires more force today. Escalation follows (F7). The person has lost the experience of the cost. In a fluid compass, the cost is felt. In chronic Domination, it has been absorbed into identity. The person does not feel the weight of what they are doing because the weight has become who they believe they are.
-            </p>
-
-            {/* Chronic Modes — System Locked Table */}
-            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
-              Mode is the default. Self-Emotional Awareness gone. Emotional distortion runs. Repair degrades.
-            </p>
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
-                {/* Header row */}
-                <div style={gridHeaderStyle}></div>
-                <div style={gridHeaderStyle}>Chronic Connection</div>
-                <div style={gridHeaderStyle}>Chronic Protection</div>
-                <div style={gridHeaderStyle}>Chronic Control</div>
-                <div style={gridHeaderStyle}>Chronic Domination</div>
-                {/* Duration */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Duration</div>
-                <div style={gridCellStyle}>Permanent — the only mode the system knows</div>
-                <div style={gridCellStyle}>Permanent alert — alarm never switches off</div>
-                <div style={gridCellStyle}>Permanent override — cognitive control is identity</div>
-                <div style={gridCellStyle}>Permanent extreme — power is the only safety</div>
-                {/* Trigger logic */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trigger logic</div>
-                <div style={gridCellStyle}>No trigger needed — appeasement runs regardless</div>
-                <div style={gridCellStyle}>No trigger needed — threat assumed before it arrives</div>
-                <div style={gridCellStyle}>No trigger needed — uncertainty itself is the threat</div>
-                <div style={gridCellStyle}>No trigger needed — any challenge activates elimination</div>
-                {/* Guilt */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
-                <div style={gridCellStyle}>Chronic apology — always the self{"'"}s fault</div>
-                <div style={gridCellStyle}>Guilt as permanent shield, never resolved</div>
-                <div style={gridCellStyle}>Guilt weaponised to manage others</div>
-                <div style={gridCellStyle}>Remorse structurally erased</div>
-                {/* Fear */}
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
-                <div style={gridCellStyle}>Hypervigilant caretaking — fear of abandonment drives all</div>
-                <div style={gridCellStyle}>Permanent anxiety, safety never trusted</div>
-                <div style={gridCellStyle}>Fear of losing control drives all management</div>
-                <div style={gridCellStyle}>Fear of exposure drives power — invisible to self</div>
-                {/* Anger */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
-                <div style={gridCellStyle}>Anger rerouted into guilt — forbidden, no outlet</div>
-                <div style={gridCellStyle}>Permanent reactive defence, no stand-down</div>
-                <div style={gridCellStyle}>Rage as management tool, framed as logic</div>
-                <div style={gridCellStyle}>Rage and contempt as default — punishment and coercion</div>
-                {/* Shame */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
-                <div style={gridCellStyle}>Compulsive vulnerability — self-erasure as identity</div>
-                <div style={gridCellStyle}>Self-blame is permanent identity</div>
-                <div style={gridCellStyle}>Hidden permanently under superiority</div>
-                <div style={gridCellStyle}>Humiliation projected outward — others carry it</div>
-                {/* Sadness */}
+                <div style={gridCellStyle}>Signals genuine threat; promotes appropriate caution</div>
+                <div style={gridCellStyle}>Generalises; becomes hypervigilance; or becomes invisible (Power & Dominance)</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
-                <div style={gridCellStyle}>Invisible pain — repairs others, never self</div>
-                <div style={gridCellStyle}>Permanently withdrawn, no reconnection</div>
-                <div style={gridCellStyle}>Guilt-tripping as relational default</div>
-                <div style={gridCellStyle}>Vulnerability weaponised — others{"'"} pain as leverage</div>
-                {/* Envy */}
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Envy</div>
-                <div style={gridCellStyle}>Chronic self-diminishment — admires, never claims</div>
-                <div style={gridCellStyle}>Permanently less-than, no growth possible</div>
-                <div style={gridCellStyle}>Compulsive competition, zero-sum always</div>
-                <div style={gridCellStyle}>What is envied must be destroyed</div>
-                {/* Joy */}
+                <div style={gridCellStyle}>Processes loss; invites support and reflection</div>
+                <div style={gridCellStyle}>Becomes withdrawal; deepens isolation; or becomes a cognitive description with no somatic substrate</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
-                <div style={gridCellStyle}>Performed happiness — exhausting, empty</div>
-                <div style={gridCellStyle}>Joy inaccessible — calm feels dangerous</div>
-                <div style={gridCellStyle}>Flaunted for status, never genuine</div>
-                <div style={gridCellStyle}>Sadistic pleasure — others{"'"} suffering as the source</div>
-                {/* Love */}
+                <div style={gridCellStyle}>Celebrates; connects; broadens capacity</div>
+                <div style={gridCellStyle}>Is distrusted; feels dangerous; or becomes the rush of power</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
-                <div style={gridCellStyle}>Self-abandoning — love as complete merger</div>
-                <div style={gridCellStyle}>Clinging, terror of loss, can never trust</div>
-                <div style={gridCellStyle}>All love conditional and transactional</div>
-                <div style={gridCellStyle}>Love as ownership and control</div>
+                <div style={gridCellStyle}>Opens; deepens; sustains</div>
+                <div style={gridCellStyle}>Attaches with desperation; becomes conditional; becomes ownership</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
+                <div style={gridCellStyle}>Signals misalignment; motivates repair</div>
+                <div style={gridCellStyle}>Becomes identity ({"\u201C"}I am wrong{"\u201D"}); or is projected outward as contempt for others</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
+                <div style={gridCellStyle}>Signals harm done; motivates accountability</div>
+                <div style={gridCellStyle}>Becomes paralysis; excessive self-blame; or is structurally erased when vmPFC is suppressed</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Disgust</div>
+                <div style={gridCellStyle}>Protects boundaries; signals contamination</div>
+                <div style={gridCellStyle}>Dehumanises; creates othering; justifies exclusion</div>
               </div>
             </div>
 
-            {/* Chronic Mode Lens — Social & Cultural Constructs */}
-            <h3 style={h3Style}>Chronic Mode Lens — Social &amp; Cultural Constructs</h3>
-            <p style={{ ...proseStyle, fontStyle: "italic", color: TEXT.muted, fontSize: 13 }}>
-              When the compass is stuck, social constructs stop being tools and become prisons. Self-Emotional Awareness gone. The person no longer knows they are doing it.
+            <p style={proseStyle}>
+              The state does not just amplify or dampen the signal — it <strong style={{ color: TEXT.primary }}>reroutes</strong> it. Each state converts the signal through a state-specific mechanism. The clinical reframe follows: <em>assess the state, not the emotion.</em> Anger in Safety & Openness and anger in Power & Dominance are the same emotional signal producing entirely different outcomes. Treating {"\u201C"}anger{"\u201D"} as the problem misses the actual variable: where the nervous system is when the anger arrives.
             </p>
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1.5fr 1.5fr 1.5fr 1.5fr", minWidth: 800 }}>
-                <div style={gridHeaderStyle}></div>
-                <div style={gridHeaderStyle}>Chronic Connection</div>
-                <div style={gridHeaderStyle}>Chronic Protection</div>
-                <div style={gridHeaderStyle}>Chronic Control</div>
-                <div style={gridHeaderStyle}>Chronic Domination</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power</div>
-                <div style={gridCellStyle}>Feels dangerous — compulsively yields to others</div>
-                <div style={gridCellStyle}>Seeks safety through control or withdrawal — permanent</div>
-                <div style={gridCellStyle}>A tool to dominate or avoid vulnerability</div>
-                <div style={gridCellStyle}>Enforced — others{"'"} safety feels irrelevant</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Virtue / Obedience</div>
-                <div style={gridCellStyle}>Integrity collapses into chronic compliance</div>
-                <div style={gridCellStyle}>Obedience feels necessary to avoid rejection — always</div>
-                <div style={gridCellStyle}>Virtue becomes performance, being {"\""}good{"\""}  for approval</div>
-                <div style={gridCellStyle}>Virtue becomes performance, being {"\""}good{"\""}  for dominance</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gender Roles</div>
-                <div style={gridCellStyle}>Performs gender compulsively to remain acceptable</div>
-                <div style={gridCellStyle}>Performs gender permanently to stay safe</div>
-                <div style={gridCellStyle}>Weaponises or idealises gender roles to gain control</div>
-                <div style={gridCellStyle}>Gender used to rank, suppress, or exploit</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Success</div>
-                <div style={gridCellStyle}>Not failing others — self{"'"}s needs invisible</div>
-                <div style={gridCellStyle}>Survival — fear of failure drives everything</div>
-                <div style={gridCellStyle}>Validation and superiority</div>
-                <div style={gridCellStyle}>Domination — others{"'"} failure ensures status</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
-                <div style={gridCellStyle}>Self-erasure — merger as the only safety</div>
-                <div style={gridCellStyle}>Protection — fear of loss or rejection dominates</div>
-                <div style={gridCellStyle}>Control — affection used to gain safety</div>
-                <div style={gridCellStyle}>Possession — control justified as care</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Goodness</div>
-                <div style={gridCellStyle}>Compliance — guilt for saying no</div>
-                <div style={gridCellStyle}>Compliance — guilt for saying no</div>
-                <div style={gridCellStyle}>Moral superiority — others are shamed</div>
-                <div style={gridCellStyle}>Purity enforcement — fear as the tool</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Provider Role</div>
-                <div style={gridCellStyle}>Compulsory self-sacrifice, no reciprocity</div>
-                <div style={gridCellStyle}>Permanent obligation or self-sacrifice</div>
-                <div style={gridCellStyle}>Proof of worth or leverage</div>
-                <div style={gridCellStyle}>Control — dependence used as power</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Silence / Confrontation</div>
-                <div style={gridCellStyle}>Self-erasure — conflict is forbidden</div>
-                <div style={gridCellStyle}>Silence feels safer — conflict feels permanently dangerous</div>
-                <div style={gridCellStyle}>Strategy — truth is permanently withheld</div>
-                <div style={gridCellStyle}>Law — conflict becomes punishment</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Emotion Expression</div>
-                <div style={gridCellStyle}>Hidden to keep others comfortable</div>
-                <div style={gridCellStyle}>Hidden permanently to stay safe</div>
-                <div style={gridCellStyle}>Tools — expressed only to manipulate outcomes</div>
-                <div style={gridCellStyle}>Weakness — suppression is mandatory</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Belonging</div>
-                <div style={gridCellStyle}>Permanent conformity — authenticity lost</div>
-                <div style={gridCellStyle}>Conformity — any difference feels dangerous</div>
-                <div style={gridCellStyle}>Currency — inclusion and exclusion as manipulation</div>
-                <div style={gridCellStyle}>Submission — exclusion becomes control</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Progress</div>
-                <div style={gridCellStyle}>Serving others{"'"} growth — self erased</div>
-                <div style={gridCellStyle}>Survival — permanently pushing to stay safe</div>
-                <div style={gridCellStyle}>Achievement for status and comparison — always</div>
-                <div style={gridCellStyle}>Domination — others{"'"} erasure ensures advancement</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Truth</div>
-                <div style={gridCellStyle}>Suppressed to protect others from discomfort</div>
-                <div style={gridCellStyle}>Permanently risky — self-protection from consequences</div>
-                <div style={gridCellStyle}>Selective — permanently used to defend or persuade</div>
-                <div style={gridCellStyle}>Controlled — rewritten to maintain power</div>
-              </div>
-            </div>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The person in chronic Control has a compass stuck in Control — likely since childhood — because the return to baseline was never learned.
+              Assess mode position, not the emotion. The same signal produces entirely different outcomes depending on where the nervous system is.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Trauma research:</strong> van der Kolk (2014) — the body keeps the score; Herman (1992) — complex trauma and identity-level effects. <strong style={{ color: TEXT.primary }}>Attachment theory:</strong> Bowlby (1969) — internal working models shaped by early experience; Main & Hesse (1990) — disorganised attachment. <strong style={{ color: TEXT.primary }}>Schema therapy:</strong> Young, Klosko, & Weishaar (2003) — early maladaptive schemas as chronic patterns built from unmet needs.
+                  <strong style={{ color: TEXT.primary }}>Emotion science:</strong> Frijda (1986) — emotions as action tendencies shaped by context. Barrett (2017) — constructed emotion theory: same physiological state producing different emotional experiences. Gross (2015) — emotion regulation as context-dependent process.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Chronic modes visible as positions, not personalities. The person is not "a controlling person" — they are a person stuck in Control. The identity built around the mode is false coherence (F3), not character. This reframe shifts the clinical question from "what kind of person is this?" to "where is their compass stuck, and why can't the needle move?"
+                  The systematic mapping of the same signal across all four states — showing that state position, not signal type, determines outcome. The identification of state-specific rerouting mechanisms. The reframe from {"\u201C"}assess the emotion{"\u201D"} to {"\u201C"}assess the state.{"\u201D"}
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── PROJECTION AS LOCKED FILTER ────────────── */}
+          {/* ════════════════════════════════════════════════ */}
+          {/* PART 3: WHEN STATES BECOME CHRONIC              */}
+          {/* ════════════════════════════════════════════════ */}
+
+          <PartDivider label="PART 3" title="When States Become Chronic" />
+
+          {/* ─── C10: ALL STATES ARE TEMPORARY ────────────── */}
           <section
-            id="projection-locked-filter"
+            id="all-states-temporary"
+            aria-labelledby="heading-all-states-temporary"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-all-states-temporary"
+              style={sectionHeadingStyle}
+            >
+              All States Are Temporary
+            </h2>
+
+            <p style={proseStyle}>
+              Every state — including Safety & Openness — is a temporary activation. The nervous system returns to a neutral resting point, not to a particular state.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Baseline</strong> is the neutral, stable platform below all four states. Not happy. Not connected. Not calm in the therapeutic sense. Just — running. Functional. Present. The nervous system not in any particular state, ready to move into any of them when conditions call for it, and returning when they pass.
+            </p>
+            <p style={proseStyle}>
+              In a healthy nervous system, all four states breathe — activating when needed, completing when done, and returning to baseline. Safety & Openness activates with genuine contact, fills, completes, returns. Threat & Defence activates when threat appears, mobilises, the threat passes, returns. Strategy & Management activates when a complex situation requires cognitive management, manages, resolves, returns. Power & Dominance activates in rare extreme situations, acts, the cost is felt, returns.
+            </p>
+            <p style={proseStyle}>
+              This correction matters because {"\u201C"}Connection is home base{"\u201D"} language makes chronic Safety & Openness invisible. Someone who is always absorbing, always emotionally open, always in contact — whose needle never rests at baseline — is as stuck as someone always in Strategy & Management. The states differ. The stuckness is the same.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Health is not living in Safety & Openness. Health is the needle{"'"}s capacity to move — to shift into whatever state the situation requires and come back to rest when it is done.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Autonomic flexibility:</strong> Porges (2011) — flexibility as a marker of health, not resting state. Thayer & Lane (2000) — heart rate variability as a measure of autonomic flexibility. <strong style={{ color: TEXT.primary }}>Window of tolerance:</strong> Ogden, Minton & Pain (2006) — a flexible range.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The identification of baseline as distinct from Safety & Openness — a neutral resting platform, not a state. The correction of the {"\u201C"}Connection is home{"\u201D"} framing that made chronic Safety & Openness invisible. The reframe of health as autonomic flexibility: not where the needle rests, but whether it can move and return.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── C11: THE STUCK STATE ─────────────────────── */}
+          <section
+            id="chronic-states"
+            aria-labelledby="heading-chronic-states"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-chronic-states"
+              style={sectionHeadingStyle}
+            >
+              The Stuck State — When Modes Become Chronic
+            </h2>
+
+            <p style={proseStyle}>
+              When the return to baseline does not happen — when it was never learned through co-regulation in development, or when environmental conditions prevent it — the state becomes chronic. A mode that was designed to be temporary becomes a permanent position. Identity forms around it. The state stops feeling like a state and starts feeling like {"\u201C"}who I am.{"\u201D"}
+            </p>
+
+            <h3 style={h3Style}>Chronic Safety & Openness</h3>
+            <p style={proseStyle}>
+              Permanent absorption. Always feeling. Always in contact. Always emotionally present. The nervous system absorbs others{"'"} emotional states continuously and never empties. The needle never rests. Because the culture celebrates emotional openness, this stuckness is the hardest to see. It looks like empathy. It is exhaustion with no floor.
+            </p>
+
+            <h3 style={h3Style}>Chronic Threat & Defence</h3>
+            <p style={proseStyle}>
+              Permanent vigilance. The world is read as dangerous. Relationships are approach-avoidance. Energy consumed by threat-scanning. The body running on emergency fuel indefinitely. What should have been minutes of emergency became a lifetime of alarm.
+            </p>
+
+            <h3 style={h3Style}>Chronic Strategy & Management</h3>
+            <p style={proseStyle}>
+              Permanent management. Strategic warmth, managed closeness, performed empathy. The person appears functional — often high-functioning — because cognitive regulation is efficient. But closeness is managed rather than felt. Vulnerability is performed rather than experienced. This is the state that most reliably mimics healthy Safety & Openness, making the stuckness invisible — to others and often to the person themselves.
+            </p>
+
+            <h3 style={h3Style}>Chronic Power & Dominance</h3>
+            <p style={proseStyle}>
+              Permanent override. vmPFC chronically suppressed — guilt, care, and consequence are structurally unavailable, not just temporarily suspended. The system builds tolerance: the same level of control produces diminishing relief. Escalation follows. There is no natural stopping point. The person cannot feel the cost because the cost has been absorbed into identity.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Why the stuck state is self-maintaining:</strong> activation accumulates when the cycle does not complete. The baseline rises. The nervous system reaches for stronger inputs to move the needle above the new baseline. When those stop working, it reaches for the next state up the gradient. The gradient is not a moral spectrum. It is the escalation logic of activation that was never allowed to discharge.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The person in chronic Strategy & Management is not {"\u201C"}a controlling person.{"\u201D"} They are a person whose nervous system has been stuck — likely since childhood — because the return was never learned.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Trauma research:</strong> van der Kolk (2014) — nervous systems calibrated to chronic threat. <strong style={{ color: TEXT.primary }}>Somatic experiencing:</strong> Levine (1997) — activation that does not complete stays in the body. <strong style={{ color: TEXT.primary }}>Developmental neuroscience:</strong> Schore (2003) — early relational conditions shaping regulatory capacity. <strong style={{ color: TEXT.primary }}>Allostatic load:</strong> McEwen (2000) — the cost of chronic adaptation.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The four chronic states mapped as positions, not personalities. The identity built around the state is a narrative constructed on filtered data, not character. This changes the intervention: not {"\u201C"}fix the personality{"\u201D"} but {"\u201C"}restore the return.{"\u201D"} The inclusion of chronic Safety & Openness as a stuck state — challenging the cultural assumption that emotional openness equals health.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── C12: PROJECTION AS LOCKED FILTER ─────────── */}
+          <section
+            id="projection"
             aria-labelledby="heading-projection"
             style={{ marginBottom: 48 }}
           >
@@ -1177,142 +696,122 @@ export default function M2NervousSystemStatesPage() {
               id="heading-projection"
               style={sectionHeadingStyle}
             >
-              Projection as Locked Filter
+              Projection — Accurate Perception Through a Locked Filter
             </h2>
 
             <p style={proseStyle}>
-              Projection is not a psychological defence mechanism layered on top of accurate perception. It is the stuck compass reading the environment through its own filter and calling the output reality — the first three layers of the Distortion Cascade (State → Perception → Emotion) running below awareness. The person is not imagining. They are reading real cues — through a filter calibrated to find exactly what the mode expects to find. The confirmation arrives through the same channels pre-set to find it. The threat feels real because the sensory system delivered it as real — before any thought formed.
+              When a state becomes chronic, the sensory filter that was designed to be temporary becomes permanent. The eyes that were supposed to widen — don{"'"}t. The ears that were supposed to soften back to warmth and prosody — don{"'"}t. The gut that was supposed to re-engage — stays suppressed.
             </p>
             <p style={proseStyle}>
-              This is why the person cannot see the filter. They only see what comes through it. The output feels like accurate perception. It feels like seeing clearly. The mode has been running long enough that this is just what the world looks like.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Control:</strong> everyone appears to be trying to control you. The filter is scanning for control attempts — so it finds them everywhere. Micro-expressions, ambiguous words, neutral requests — all read through the Control filter as power moves.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Domination:</strong> everyone appears to be trying to cheat, deceive, undermine, or challenge. The filter is scanning for threats to power and status — so it finds them in everything. A question becomes an attack. A boundary becomes a provocation. An independent thought in another person becomes a challenge to be eliminated.
+              Projection is not a psychological defence mechanism layered on top of accurate perception. It is the stuck state reading the environment through its own filter and calling the output reality. The person is not imagining. They are reading real cues — through a filter calibrated to find exactly what the state expects to find. The threat feels real because the sensory system delivered it as real — before any thought formed.
             </p>
 
-            <h3 style={h3Style}>Why Cognition Cannot Correct It</h3>
-            <p style={proseStyle}>
-              The information that would correct the filter has to arrive through the same sensory channels the filter is already shaping. Cognition cannot override a pre-cognitive process using data that was filtered before cognition received it. The cognitive system receives already-filtered input and builds a narrative from it. The narrative feels coherent — because it is coherent, given the data the cognitive system actually received. The problem is upstream of cognition. Talking about it does not reach it.
-            </p>
-            <p style={proseStyle}>
-              What can reach it: a change in the sensory environment significant enough to break through the filter — a regulation experience, a co-regulatory relationship where one nervous system helps stabilize another, genuine felt safety over time. This is why F8 is the repair arc — not cognitive insight, but conditions that change what the nervous system receives.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              Projection is accurate perception through a filter calibrated to a mode that is no longer responding to the present environment.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Confirmation bias:</strong> Nickerson (1998) — the tendency to search for, interpret, and recall information in a way that confirms prior expectations. <strong style={{ color: TEXT.primary }}>Attentional bias in threat processing:</strong> Cisler & Koster (2010) — mechanisms of attentional bias toward threat: engagement, difficulty disengaging, and avoidance. <strong style={{ color: TEXT.primary }}>Schema-consistent processing:</strong> Beck (1976) — cognitive schemas filter incoming information to match existing beliefs, maintaining the schema.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  Projection relocated from psychological defence (a cognitive mechanism) to locked sensory filtering (a pre-cognitive mechanism). The reframe shifts the clinical question from "why is this person projecting?" to "what mode is the filter locked in?" — and shifts intervention from cognitive correction (which arrives after the filter has already shaped the data) to sensory-level repair (which reaches the filter itself). False coherence (F3) is the downstream product: the narrative cognition builds on top of filter-shaped input.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── ATTACHMENT PATTERNS AS LOCKED MODE SETTINGS */}
-          <section
-            id="attachment-locked-settings"
-            aria-labelledby="heading-attachment-patterns"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-attachment-patterns"
-              style={sectionHeadingStyle}
-            >
-              Attachment Patterns as Locked Mode Settings
-            </h2>
-
-            <p style={proseStyle}>
-              Attachment patterns are not personality traits. They are nervous systems running their only available regulation pathway through the only sensory inputs they learned to use as safety signals — with mode settings locked to detect the specific threat that pathway was built around.
-            </p>
-
-            <h3 style={h3Style}>The Anxious Pattern</h3>
-            <p style={proseStyle}>
-              Two things happening simultaneously. First: the regulation pathway is relational and specific. This nervous system never learned to complete cycles internally. The only available return pathway runs through another person — not as a preference but as a biological requirement. The specific inputs learned as safety signals are the partner{"'"}s presence, responsiveness, location, confirmation that the bond holds. Without those inputs, the cycle stays open.
-            </p>
-            <p style={proseStyle}>
-              Second: the sensory filter is locked on abandonment and disconnection signals. The mode settings scan continuously for signs that the bond is breaking — absence, unresponsiveness, ambiguity, change in tone. These inputs arrive through the filter as threat: abandonment incoming. The check-in is the nervous system running its only available regulation pathway through the inputs it identified as the safety signal. It is a regulation attempt — not a control attempt.
-            </p>
-
-            <h3 style={h3Style}>The Avoidant Pattern</h3>
-            <p style={proseStyle}>
-              Running the opposite settings. The regulation pathway is internal through distance. This nervous system learned that proximity is the threat — closeness means loss of self, flooding, danger. The only available regulation pathway runs through withdrawal: creating enough distance that the sensory channels can quiet and the system can partially restore. The sensory filter is locked on proximity as threat — scanning for signs of encroachment, loss of autonomy, someone trying to regulate their internal state for them. These arrive through the filter as: threat. Control incoming.
-            </p>
-
-            <h3 style={h3Style}>The Pairing</h3>
-            <p style={proseStyle}>
-              Two nervous systems. Two completely different mode settings. Each running their only available regulation pathway. Each generating exactly the activation that the other{"'"}s filter is locked to detect. The anxious nervous system reaches for connection to regulate. The avoidant nervous system reads that reach as threat and withdraws to regulate. The withdrawal lands in the anxious filter as: abandonment confirmed. More activation. More reaching. The reaching lands in the avoidant filter as: proximity threat confirmed. More activation. More withdrawal.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              Each regulation attempt is perfectly calibrated to dysregulate the other. Not from malice. From locked mode settings running the only available pathway.
-            </OperationalStatement>
-
-            {/* Attachment Locked Settings Table */}
+            {/* Projection Table */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1.5fr 1.5fr", minWidth: 650 }}>
-                <div style={gridHeaderStyle}>Attachment</div>
-                <div style={gridHeaderStyle}>Mode settings locked on</div>
-                <div style={gridHeaderStyle}>Regulation pathway</div>
-                <div style={gridHeaderStyle}>What triggers activation</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2fr 2fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle}>Chronic State</div>
+                <div style={gridHeaderStyle}>What the locked filter finds</div>
+                <div style={gridHeaderStyle}>What the person experiences</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Secure</div>
-                <div style={gridCellStyle}>No lock — fluid</div>
-                <div style={gridCellStyle}>Internal + relational, both available</div>
-                <div style={gridCellStyle}>Proportionate to actual threat</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
+                <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
+                <div style={gridCellStyle}>The world is other people{"'"}s states. Own needs invisible.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anxious</div>
-                <div style={gridCellStyle}>Protection/Control — scanning for abandonment and bond-break signals</div>
-                <div style={gridCellStyle}>Relational — specific reassurance inputs</div>
-                <div style={gridCellStyle}>Partner absence, ambiguity, unresponsiveness</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Threat & Defence</div>
+                <div style={gridCellStyle}>Threat signals everywhere, safety signals filtered out</div>
+                <div style={gridCellStyle}>The world is dangerous. Trust is impossible.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Dismissive-Avoidant</div>
-                <div style={gridCellStyle}>Control — scanning for proximity and encroachment signals</div>
-                <div style={gridCellStyle}>Internal — through distance</div>
-                <div style={gridCellStyle}>Closeness, emotional demands, check-ins</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategy & Management</div>
+                <div style={gridCellStyle}>Everyone appears to have an agenda, everything requires managing</div>
+                <div style={gridCellStyle}>The world is a system of competing interests.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fearful-Avoidant</div>
-                <div style={gridCellStyle}>Oscillating Protection — scanning for both abandonment AND proximity</div>
-                <div style={gridCellStyle}>Neither stable — oscillates</div>
-                <div style={gridCellStyle}>Both closeness and distance</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power & Dominance</div>
+                <div style={gridCellStyle}>Everyone appears to be trying to cheat, undermine, or challenge</div>
+                <div style={gridCellStyle}>The world is full of enemies. Preemptive attack as defence.</div>
               </div>
             </div>
 
-            <h3 style={h3Style}>Why Cognition Cannot Exit the Loop</h3>
+            <h3 style={h3Style}>Why Cognition Cannot Correct It</h3>
             <p style={proseStyle}>
-              The anxious partner understands intellectually that constant check-ins push the partner away. The knowledge lives in the cognitive system. The regulation need lives in the somatic system. The filter is pre-cognitive. By the time the thought "I should not check in again" forms, the sensory system has already delivered the threat signal, the activation is already running, and the regulation pathway has already identified the required input. Cognition arrives late. Understanding the pattern does not change the filter. The filter operates upstream of understanding.
+              The information that would correct the filter has to arrive through the same sensory channels the filter is already shaping. Cognition receives already-filtered data and builds a coherent narrative from it. The narrative feels true because the input it was built from felt accurate. The problem is upstream of cognition. The person cannot see the filter. They only see what comes through it.
             </p>
-            <p style={proseStyle}>
-              What changes the filter: experiences of safety that arrive through the sensory channels themselves. The anxious nervous system receiving the relational evidence it needs — repeatedly, consistently, without the withdrawal — until the filter recalibrates. This is co-regulation as repair. Not insight. Experience.
-            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              Projection is accurate perception through a filter calibrated to a state that is no longer responding to the present environment.
+            </OperationalStatement>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Attachment theory:</strong> Bowlby (1969) — attachment behavioural system activated by perceived threat to the bond; Ainsworth (1978) — secure, anxious-ambivalent, avoidant classification. <strong style={{ color: TEXT.primary }}>Adult attachment:</strong> Hazan & Shaver (1987) — attachment patterns as relational regulation strategies; Bartholomew & Horowitz (1991) — four-category model including fearful-avoidant. <strong style={{ color: TEXT.primary }}>Interpersonal neurobiology:</strong> Schore (2003) — right-brain regulatory patterns shaped by early relational experience.
+                  <strong style={{ color: TEXT.primary }}>Attentional bias:</strong> Bar-Haim et al. (2007) — threat-related attentional bias as automatic, pre-conscious. Mathews & MacLeod (2005) — cognitive bias and emotional vulnerability. <strong style={{ color: TEXT.primary }}>Schema theory:</strong> Beck (1976) — pre-existing cognitive structures filtering incoming information.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Attachment patterns mapped as locked mode settings rather than personality traits. The anxious pattern is a compass stuck in Protection/Control with the filter locked on abandonment signals and the regulation pathway requiring specific relational inputs. The avoidant pattern is a compass stuck in Control with the filter locked on proximity signals and the regulation pathway running through distance. The pairing dynamic becomes mechanistically visible: each regulation attempt generates the exact input the other{"'"}s filter is calibrated to read as threat.
+                  Projection reframed as the operational consequence of locked sensory filtering — not a defence mechanism but a pre-cognitive perceptual process. The identification of why cognition cannot correct it: the information that would correct the filter has to arrive through the same sensory channels the filter is already shaping.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONCEPT 10: TWO INFORMATION SYSTEMS ────── */}
+          {/* ─── C13: THE SELF-REINFORCING LOOP ───────────── */}
+          <section
+            id="self-reinforcing-loop"
+            aria-labelledby="heading-self-reinforcing-loop"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-self-reinforcing-loop"
+              style={sectionHeadingStyle}
+            >
+              The Self-Reinforcing Loop
+            </h2>
+
+            <p style={proseStyle}>
+              The state determines the filter. The filter shapes the input. The input confirms the state. The loop has no natural exit.
+            </p>
+            <p style={proseStyle}>
+              Each chronic state produces the environmental conditions that confirm its own necessity. Chronic Safety & Openness: over-absorbing depletes the self, producing more need for connection to replenish, producing more absorption. Chronic Threat & Defence: perpetual vigilance confirms the threat, producing more isolation, confirming the danger. Chronic Strategy & Management: permanent management generates resistance in the people being managed, confirming the instability, requiring more management. Chronic Power & Dominance: tyranny produces fear and opposition, confirming the sense of life peril, requiring more force.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>What can break the loop is not insight but experience</strong> — the nervous system receiving different inputs through the same sensory channels, repeatedly and consistently enough that the filter recalibrates. A regulation experience. A co-regulatory relationship. Genuine felt safety over time. This is experience, not understanding.
+            </p>
+
+            <h3 style={h3Style}>Attachment Patterns as a Worked Example</h3>
+            <p style={proseStyle}>
+              The anxious nervous system and the avoidant nervous system illustrate the loop in practice. The anxious system{"'"}s only available regulation pathway runs through the partner{"'"}s presence and responsiveness — the sensory filter is locked on abandonment signals. The avoidant system{"'"}s only available regulation pathway runs through distance — the sensory filter is locked on proximity as threat.
+            </p>
+            <p style={proseStyle}>
+              Each regulation attempt is perfectly calibrated to dysregulate the other. The anxious partner reaches for connection; the avoidant reads it as encroachment and withdraws; the withdrawal lands as abandonment confirmed; the reaching intensifies. Both are running the only regulation pathway they have, through filters locked to detect exactly what the other is generating. The loop has no natural exit because both participants are running filtered perception that confirms the loop.
+            </p>
+
+            <OperationalStatement color={MODEL_COLOR}>
+              The exit is not insight but experience through the same sensory channels — repeatedly and consistently enough that the filter recalibrates.
+            </OperationalStatement>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Traditions" type="opendata">
+                <p style={expandedProseStyle}>
+                  <strong style={{ color: TEXT.primary }}>Schema theory:</strong> Beck (1976) — self-reinforcing cognitive schemas. <strong style={{ color: TEXT.primary }}>Attachment theory:</strong> Bowlby (1969, 1980) — attachment working models as self-confirming templates. Mikulincer & Shaver (2007) — attachment dynamics as self-reinforcing regulation patterns. <strong style={{ color: TEXT.primary }}>Systems theory:</strong> Watzlawick, Weakland & Fisch (1974) — the persistence of problems through attempted solutions.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The self-reinforcing loop identified at the level of pre-cognitive sensory filtering, not cognitive distortion. The exit is not insight but experience through the same sensory channels. The attachment pairing as the clearest worked example: two nervous systems whose regulation attempts are perfectly calibrated to dysregulate each other — not from malice, but from locked filter settings running the only available pathway.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ════════════════════════════════════════════════ */}
+          {/* PART 4: TWO INFORMATION SYSTEMS                 */}
+          {/* ════════════════════════════════════════════════ */}
+
+          <PartDivider label="PART 4" title="Two Information Systems" />
+
+          {/* ─── C14: WHY UNDERSTANDING ≠ CHANGE ──────────── */}
           <section
             id="two-information-systems"
             aria-labelledby="heading-two-information-systems"
@@ -1322,89 +821,67 @@ export default function M2NervousSystemStatesPage() {
               id="heading-two-information-systems"
               style={sectionHeadingStyle}
             >
-              The Two Information Systems
+              Why Understanding Doesn{"'"}t Equal Change
             </h2>
 
             <p style={proseStyle}>
-              Two parallel information systems run simultaneously at different speeds. They process different kinds of data, learn differently, and update at different rates. Both are always running. Neither can replace the other.
+              Underneath the states — underneath everything — are two parallel information systems running simultaneously at different speeds:
             </p>
-
-            <h3 style={h3Style}>Emotional-Somatic System</h3>
             <p style={proseStyle}>
-              Milliseconds. Unconscious. Experience-based. Slow to update. This is the system that runs the compass — the one that orients between safety and threat before conscious awareness begins. It learns from experience, not explanation. It updates through lived events, not insight. When someone understands cognitively that a situation is safe but their body still braces, this system is the reason. It has not received the update because the update it needs is experiential, not informational.
+              <strong style={{ color: TEXT.primary }}>The emotional-somatic system:</strong> milliseconds. Unconscious. Experience-based. Slow to update, slow to forget. This is the system that runs the states — the one that orients between safety and threat before conscious awareness begins.
             </p>
-
-            <h3 style={h3Style}>Cognitive-Logical System</h3>
             <p style={proseStyle}>
-              Hundreds of milliseconds. Conscious. Explanation-based. Fast to update. This is the system that processes information, constructs narratives, plans, analyses. It can update instantly with new information. It can understand a concept in a single conversation. But it does not run the compass. Cognition can understand a pattern without being able to change it — because understanding is cognitive and the compass is somatic.
+              <strong style={{ color: TEXT.primary }}>The cognitive-logical system:</strong> hundreds of milliseconds. Conscious. Explanation-based. Fast to update, fast to revise. This is the system that processes information, constructs narratives, plans, analyses.
+            </p>
+            <p style={proseStyle}>
+              The emotional-somatic system arrives first. By the time cognition engages, the state has already shifted. Cognition does not direct the process — it narrates a process already underway.
+            </p>
+            <p style={proseStyle}>
+              This is why a person can read M1 and M2, understand the entire architecture, see their own pattern clearly — and still react from the stuck state. Understanding is cognitive. The state is somatic. More cognition does not move a somatic system. What moves the system is experience — new experiences of safety, new experiences of co-regulation, new experiences of the return actually happening. Cognition supports. Experience changes.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Understanding is cognitive. The compass is somatic. More cognition doesn't move a somatic compass. What moves the compass is experience.
+              Understanding is cognitive. The state is somatic. More cognition does not move a somatic system. What moves it is experience.
             </OperationalStatement>
-
-            <p style={proseStyle}>
-              This explains the insight-behaviour gap — the universal experience of understanding something clearly and being unable to act on it. The cognitive system has the information. The somatic system has not received it. They are running on different timescales, learning from different inputs. Cognitive insight moves the cognitive system. Only experience moves the somatic one.
-            </p>
-            <p style={proseStyle}>
-              The clinical implication is direct: interventions that target the cognitive system (psychoeducation, cognitive reframing, insight-based therapy) can change understanding but may not change the compass position. Interventions that target the emotional-somatic system (body-based therapy, co-regulation, corrective relational experience) are predicted to produce more compass movement — because they speak the language the compass actually runs on.
-            </p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Traditions" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Dual-process theory:</strong> Kahneman (2011) — System 1 (fast, automatic) and System 2 (slow, deliberate); Stanovich, Evans — dual-process frameworks in reasoning and decision-making. <strong style={{ color: TEXT.primary }}>Somatic markers:</strong> Damasio (1994) — the body's signals guide decisions below conscious awareness.
+                  <strong style={{ color: TEXT.primary }}>Dual-process theory:</strong> Kahneman (2011) — System 1 (fast, automatic) and System 2 (slow, deliberate). <strong style={{ color: TEXT.primary }}>Threat detection:</strong> LeDoux (1996) — emotional processing preceding conscious awareness. <strong style={{ color: TEXT.primary }}>Somatic memory:</strong> van der Kolk (2014) — somatic memory operating independently of cognitive understanding.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The insight-behaviour gap as a testable prediction: cognitive interventions should produce less compass movement than somatic/relational interventions. Interventions matched to the emotional-somatic system are predicted to produce more compass movement than those matched to the cognitive-logical system. The framing explains why "knowing better" does not automatically produce "doing differently" — and makes the mechanism for that gap clinically actionable.
+                  The two information systems as the explanation for the insight-behaviour gap: why understanding the pattern does not change it. The clinical implication: if the goal is state change, the intervention must include somatic and relational experience, not only cognitive understanding.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── CONNECTION TO OTHER MODELS ──────────────── */}
+          {/* ─── THE FIRST HINT ──────────────────────────── */}
           <section
-            id="connection-to-models"
-            aria-labelledby="heading-connection-models"
+            id="the-first-hint"
+            aria-labelledby="heading-first-hint"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-connection-models"
+              id="heading-first-hint"
               style={sectionHeadingStyle}
             >
-              Connection to the Other Models
+              What This Model Does Not Yet Answer
             </h2>
 
-            <h3 style={h3Style}>M1 — Emotions as Signals</h3>
             <p style={proseStyle}>
-              M1 describes what the nervous system delivers — the signal language. M2 describes the states those signals produce. The signals are the input; the modes are the response organization. One names what arrives. The other names what the system does with it.
+              M2 has mapped what happens after a signal fires: the nervous system shifts into a state, that state changes what the person can perceive, and when the state becomes chronic, the filter locks and the loop self-reinforces.
             </p>
-
-            <h3 style={h3Style}>M4 — Awareness Capacities</h3>
             <p style={proseStyle}>
-              M2 describes what states the nervous system moves through — the compass, the modes, the gradient, the filters, the accumulated activation. M4 describes what determines how accurately the compass reads — which signals get through, how they are processed, whether the person has access to their own internal state. One describes the instrument. The other describes the calibration.
+              But each of these states was designed to resolve. Threat & Defence was designed for minutes to hours, then return. Strategy & Management was designed as a tool, then return. Even Power & Dominance was designed for the rarest situations, then return. The nervous system has a built-in mechanism for coming back to baseline. <strong style={{ color: TEXT.primary }}>So why doesn{"'"}t it?</strong> What accumulates when the return keeps not happening? What does the nervous system reach for instead? That is M3.
             </p>
-
-            <h3 style={h3Style}>M3 — Regulation Capacities</h3>
             <p style={proseStyle}>
-              M2 describes the states. M3 describes what the return to baseline requires — and what the nervous system does instead when the return does not complete. Accumulated activation lives in both: M2 describes what generates activation per mode and what accumulation looks like. M3 describes why the cycles do not complete, what the body reaches for instead, and what actual restoration requires.
+              And there is a second question — quieter, underneath the first. Some people feel the state shift. They notice the narrowing. They catch the filter engaging. Others do not. They are inside the state and have no awareness that they are inside it — they experience the filtered output as reality, not as a state-dependent perception. What determines this difference is the territory of M4.
             </p>
-
-            <h3 style={h3Style}>The Four Models as One Sequence</h3>
-            <p style={proseStyle}>
-              The four models describe one emotion moving through the nervous system: <strong style={{ color: TEXT.primary }}>M1</strong> maps what signal the emotion carries. <strong style={{ color: TEXT.primary }}>M2</strong> maps what state the signal produces. <strong style={{ color: TEXT.primary }}>M3</strong> maps whether the emotion can complete its cycle. <strong style={{ color: TEXT.primary }}>M4</strong> maps whether the emotion can be received. They are four stages of the same sequence — signal, state, regulation, perception.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              One emotion. Four stages. M1 maps the signal it carries. M2 maps the state it produces. M3 maps whether it can complete. M4 maps whether it can be received.
-            </OperationalStatement>
           </section>
-
-          {/* ─── RELATIONSHIP TO FRAMEWORKS ──────────────── */}
-          <DrawsFromPanel items={DRAWS_FROM} color={MODEL_COLOR} />
 
           {/* ─── CONNECTED RESEARCH ──────────────────────── */}
           <ConnectedResearch slug="m2-nervous-system-states" type="model" />
@@ -1435,45 +912,30 @@ export default function M2NervousSystemStatesPage() {
                 </thead>
                 <tbody>
                   <NavRow
-                    label="See the nine emotions mapped as biological signals"
+                    label="See the sixteen emotions mapped as biological signals — the input that triggers the state M2 describes"
                     href="/model/m1-emotions-as-signals"
-                    linkText="Emotions as Signals &rarr;"
+                    linkText="M1: Emotions as Signals &rarr;"
                   />
                   <NavRow
-                    label="Understand what determines how well the compass works"
-                    href="/model/m4-awareness-capacities"
-                    linkText="M4: Awareness Capacities &rarr;"
-                  />
-                  <NavRow
-                    label="Understand what happens when the activation cycle doesn't complete"
+                    label="Understand what happens when the activation cycle completes — and what happens when cognition blocks it"
                     href="/model/m3-regulation-capacities"
                     linkText="M3: Regulation Capacities &rarr;"
                   />
                   <NavRow
-                    label="See all twelve frameworks"
-                    href="/frameworks-map"
-                    linkText="12 Frameworks Map &rarr;"
+                    label="Understand what determines whether the person can feel the state shift at all"
+                    href="/model/m4-awareness-capacities"
+                    linkText="M4: Awareness Capacities &rarr;"
                   />
                   <NavRow
-                    label="Understand the foundational theory behind this model"
+                    label="Explore the foundational theory behind the four-state gradient"
                     href="/framework/f1-emotional-gradient"
                     linkText="F1: The Emotional Gradient &rarr;"
-                  />
-                  <NavRow
-                    label="Understand what maintains a stuck compass"
-                    href="/framework/f3-false-coherence"
-                    linkText="F3: False Coherence &rarr;"
                   />
                   <NavRow
                     label="Explore the interactive tools"
                     href="https://teg-blue.com/emotional-tools"
                     linkText="teg-blue.com &rarr;"
                     external
-                  />
-                  <NavRow
-                    label="Collaborate on validating this model"
-                    href="/collaborate"
-                    linkText="Collaborate &rarr;"
                   />
                 </tbody>
               </table>
@@ -1485,7 +947,7 @@ export default function M2NervousSystemStatesPage() {
 
       <SiteFooter />
 
-      {/* ─── JSON-LD: ScholarlyArticle ──────────────────── */}
+      {/* ─── JSON-LD ─────────────────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1493,9 +955,9 @@ export default function M2NervousSystemStatesPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m2-nervous-system-states#article",
-            headline: "Nervous System States: The Four-Mode Gradient",
+            headline: "Nervous System States: The Instrument",
             description:
-              "How the nervous system orients between safety and threat across four modes on a continuous gradient. Model M1 of the TEG-Blue system.",
+              "What happens after an emotion fires — four states grounded in two biological branches, how each state changes perception, and what happens when it becomes permanent. Model M2 of the TEG-Blue system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -1507,24 +969,24 @@ export default function M2NervousSystemStatesPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-05",
-            dateModified: "2026-03-05",
+            dateModified: "2026-03-27",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
               "@type": "CreativeWork",
               name: "TEG-Blue Models & Frameworks",
-              url: "https://teg-blue.org/frameworks-map",
+              url: "https://teg-blue.org/models",
             },
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": "https://teg-blue.org/model/m2-nervous-system-states",
             },
             about: [
-              { "@type": "Thing", name: "Inner Compass" },
+              { "@type": "Thing", name: "Nervous System States" },
               { "@type": "Thing", name: "Four-Mode Gradient" },
-              { "@type": "Thing", name: "Nervous System Regulation" },
-              { "@type": "Thing", name: "Polyvagal Theory" },
               { "@type": "Thing", name: "Safety-Threat Orientation" },
+              { "@type": "Thing", name: "Sensory Filtering" },
+              { "@type": "Thing", name: "State Determines Capacity" },
             ],
             citation: [
               { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
@@ -1532,82 +994,71 @@ export default function M2NervousSystemStatesPage() {
               { "@type": "ScholarlyArticle", name: "Descartes' Error (Damasio, 1994)" },
               { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (van der Kolk, 2014)" },
               { "@type": "ScholarlyArticle", name: "Waking the Tiger (Levine, 1997)" },
-              { "@type": "ScholarlyArticle", name: "The Developing Mind (Siegel, 2012)" },
               { "@type": "ScholarlyArticle", name: "Thinking, Fast and Slow (Kahneman, 2011)" },
             ],
             keywords: [
-              "inner compass",
+              "nervous system states",
               "four-mode gradient",
-              "nervous system regulation",
               "safety-threat orientation",
-              "stuck compass",
+              "sensory filtering",
               "state determines capacity",
+              "stuck state",
               "two information systems",
             ],
           }),
         }}
       />
-
-      {/* ─── JSON-LD: BreadcrumbList ────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "Models", url: "/models" },
+              { name: "The Emotional Somatic System", url: "/models" },
               { name: "M2: Nervous System States", url: "/model/m2-nervous-system-states" },
             ])
           ),
         }}
       />
-
-      {/* ─── JSON-LD: FAQPage ───────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What is the Inner Compass model?",
+                question: "What are the four nervous system states in the TEG-Blue model?",
                 answer:
-                  "The Inner Compass is a model for understanding how the nervous system continuously orients between safety and threat. It uses the metaphor of a compass with a moving needle — health is not a fixed position but the capacity of the needle to move fluidly across four modes (Connection, Protection, Control, Domination) and return to baseline.",
-              },
-              {
-                question: "What are the four modes of the Inner Compass?",
-                answer:
-                  "The four modes are Connection (before awareness, safety perceived — the system's baseline), Protection (before awareness, threat perceived — emergency system), Control (after awareness, deliberate strategic response), and Domination (after awareness, maximum override — rarest mode). They sit on a continuous gradient, not as discrete categories.",
+                  "The four states are Safety & Openness (parasympathetic dominant — perception broadens, empathy online), Threat & Defence (sympathetic activation — body mobilises for emergency), Strategy & Management (cognition recruited into threat service — strategic thinking, management), and Power & Dominance (cognition at maximum threat response — vmPFC suppressed, guilt and empathy structurally unavailable). The first two are body-first (automatic), the second two are cognition-first (deliberate). They sit on a continuous gradient, not as four separate boxes.",
               },
               {
                 question: "What does 'state determines capacity' mean?",
                 answer:
-                  "State determines capacity means that what a person can perceive, think, feel, and do depends on their current position on the gradient. In Connection, perception is broad and empathy is full. In threat modes, these capacities progressively narrow. The inability to empathise in a given moment is not unwillingness — the current state has literally reduced the neurobiological capacity to do so.",
-              },
-              {
-                question: "What is a stuck compass?",
-                answer:
-                  "A stuck compass is one where the needle has lost its capacity to move — what should have been a temporary orientation (Protection, Control, or Domination) has become a chronic position. The person does not experience being stuck; they experience it as 'just who I am.' Identity forms around the mode through false coherence (F3), making the stuckness invisible from the inside.",
+                  "State determines capacity means that what a person can perceive, think, feel, and do depends on their current nervous system state. In Safety & Openness, perception is broad and empathy is full. In threat states, these capacities progressively narrow — not through choice but through the nervous system's allocation of resources. The inability to empathise in a given moment is not unwillingness. It is a state limitation.",
               },
               {
                 question: "What is sensory filtering in the TEG-Blue model?",
                 answer:
-                  "Each mode sets specific filters on all incoming sensory data — eyes, ears, nose, gut, skin — before any conscious thought forms. In a fluid compass these settings are temporary. When the compass is stuck, the settings lock: the person perceives a pre-filtered version of reality calibrated to their chronic mode. The mode determines the filter, the filter shapes the input, and the input confirms the mode — a self-reinforcing loop with no natural exit.",
+                  "Each nervous system state sets specific filters on all incoming sensory data — eyes, ears, nose, gut, skin — before any conscious thought forms. The amygdala fires in 12 milliseconds. The state is active before the mind has assembled a coherent thought. In Safety & Openness the channels are wide open. In threat states they progressively narrow. When a state becomes chronic, the filter settings lock — the person perceives a pre-filtered version of reality calibrated to their chronic state.",
+              },
+              {
+                question: "What is a stuck state?",
+                answer:
+                  "A stuck state is one where a temporary nervous system activation has become permanent — the return to baseline does not happen. The person does not experience being stuck; they experience it as 'just who I am.' Identity forms around the state. All four states can become chronic, including Safety & Openness — someone always absorbing, always emotionally open, whose nervous system never rests at baseline, is as stuck as someone always in Strategy & Management.",
               },
               {
                 question: "How does TEG-Blue redefine projection?",
                 answer:
-                  "TEG-Blue redefines projection as locked sensory filtering rather than a psychological defence mechanism. The person is not imagining threat — they are reading real cues through a filter calibrated to a mode that is no longer responding to the present environment. Cognition cannot correct it because the information that would correct the filter has to arrive through the same sensory channels the filter is already shaping.",
+                  "TEG-Blue redefines projection as locked sensory filtering rather than a psychological defence mechanism. The person is not imagining threat — they are reading real cues through a filter calibrated to a state that is no longer responding to the present environment. Cognition cannot correct it because the information that would correct the filter has to arrive through the same sensory channels the filter is already shaping. The exit is not insight but experience.",
               },
               {
-                question: "How do attachment patterns relate to mode settings?",
+                question: "Why doesn't understanding a pattern change it?",
                 answer:
-                  "Attachment patterns are nervous systems running their only available regulation pathway with mode settings locked to detect specific threats. The anxious pattern has the filter locked on abandonment signals with regulation running through relational reassurance. The avoidant pattern has the filter locked on proximity signals with regulation running through distance. In the pairing, each regulation attempt generates exactly the input the other's filter reads as threat.",
+                  "Because two information systems run simultaneously at different speeds. The emotional-somatic system (milliseconds, unconscious, experience-based) runs the nervous system states. The cognitive-logical system (hundreds of milliseconds, conscious, explanation-based) processes information and constructs narratives. Understanding is cognitive. The state is somatic. More cognition does not move a somatic system. What moves it is experience — new experiences of safety and co-regulation.",
               },
             ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1702,6 +1153,42 @@ const navThStyle = {
 };
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
+
+function PartDivider({ label, title }) {
+  return (
+    <div
+      style={{
+        marginBottom: 32,
+        marginTop: 16,
+        paddingTop: 24,
+        borderTop: `1px solid ${BORDER.default}`,
+      }}
+    >
+      <span
+        style={{
+          fontFamily: FONT.mono,
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: MODEL_COLOR,
+        }}
+      >
+        {label}
+      </span>
+      <h2
+        style={{
+          fontSize: 18,
+          fontWeight: 600,
+          color: TEXT.primary,
+          margin: "4px 0 0",
+        }}
+      >
+        {title}
+      </h2>
+    </div>
+  );
+}
 
 function NavRow({ label, href, linkText, external }) {
   const linkStyle = {
