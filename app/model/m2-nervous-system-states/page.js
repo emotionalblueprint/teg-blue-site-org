@@ -136,7 +136,7 @@ export default function M2NervousSystemStatesPage() {
                   The same signal produces different outcomes depending on state position — assess the state, not the emotion
                 </li>
                 <li style={propositionItemStyle}>
-                  Every state — including Safety & Openness — is a temporary activation. Health is not a state. Health is the capacity to move and return to rest
+                  Every state — including Safety & Openness — is a temporary activation. The measure is not a state. The measure is the capacity to move and return to rest
                 </li>
                 <li style={propositionItemStyle}>
                   When the return is absent, a temporary state becomes permanent. Identity forms around it. The filter locks. The loop self-reinforces
@@ -268,7 +268,7 @@ export default function M2NervousSystemStatesPage() {
               When body-first responses are insufficient — when fight/flight/freeze/fawn cannot resolve the threat — cognition gets recruited. The thinking mind enters the service of defence. This is the <strong style={{ color: TEXT.primary }}>architectural break</strong> between body-first and cognition-first: not just more intensity, but a different kind of response. Safety & Openness and Threat & Defence <em>happen to you</em>. Strategy & Management is what <em>cognition does</em> when recruited into threat service.
             </p>
             <p style={proseStyle}>
-              In a healthy nervous system, Strategy & Management is deliberate, time-limited, and returnable. A parent managing a child{"'"}s medical emergency. A leader navigating an organisational crisis. An extraordinary survival tool — the intelligent upgrade that appeared when cognition evolved.
+              When the nervous system has full range of movement, Strategy & Management is deliberate, time-limited, and returnable. A parent managing a child{"'"}s medical emergency. A leader navigating an organisational crisis. An extraordinary survival tool — the intelligent upgrade that appeared when cognition evolved.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -280,7 +280,7 @@ export default function M2NervousSystemStatesPage() {
               When Strategy & Management is insufficient — when the threat is evaluated as requiring elimination or total override — cognition escalates to maximum threat response. The ventromedial prefrontal cortex (vmPFC) — the region that carries guilt, care, empathy, and consequence — is suppressed. Not failed, not overwhelmed: suppressed. A designed feature for extreme situations. Decisions that would be impossible with full empathy online become available.
             </p>
             <p style={proseStyle}>
-              In a healthy nervous system, Power & Dominance is the rarest state: entered deliberately, used for the briefest time the situation demands, and followed by return. The person feels the cost — the weight of having suspended resonance. This cost is felt and processed. The return happens.
+              When the nervous system has full range of movement, Power & Dominance is the rarest state: entered deliberately, used for the briefest time the situation demands, and followed by return. The person feels the cost — the weight of having suspended resonance. This cost is felt and processed. The return happens.
             </p>
 
             <div style={expandableRowStyle}>
@@ -318,7 +318,7 @@ export default function M2NervousSystemStatesPage() {
               The transitions between states are recognisable. <strong style={{ color: TEXT.primary }}>Safety & Openness → Threat & Defence</strong> is automatic — the body responding to perceived threat. <strong style={{ color: TEXT.primary }}>Threat & Defence → Strategy & Management</strong> is the architectural break — cognition gets recruited into threat service. <strong style={{ color: TEXT.primary }}>Strategy & Management → Power & Dominance</strong> is the most consequential transition on the gradient — where defence becomes strategy and strategy becomes override.
             </p>
             <p style={proseStyle}>
-              TEG-Blue uses the visual metaphor of a compass with a moving needle to make this gradient tangible — the <strong style={{ color: TEXT.primary }}>Inner Compass</strong>. The needle orients between safety and threat, moving along the four-state gradient. Health is not where the needle is. Health is whether the needle can move.
+              TEG-Blue uses the visual metaphor of a compass with a moving needle to make this gradient tangible — the <strong style={{ color: TEXT.primary }}>Inner Compass</strong>. The needle orients between safety and threat, moving along the four-state gradient. The measure is not where the needle is. The measure is whether the needle can move.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -334,7 +334,7 @@ export default function M2NervousSystemStatesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The four-state gradient as a continuous range with a visual architecture (the Inner Compass) that makes the nervous system{"'"}s safety/threat orientation tangible and clinically usable. The reframe of health from a state to a capacity — not where the needle rests, but whether it can move and return.
+                  The four-state gradient as a continuous range with a visual architecture (the Inner Compass) that makes the nervous system{"'"}s safety/threat orientation tangible and clinically usable. The reframe from position to capacity — not where the needle rests, but whether it can move and return.
                 </p>
               </ExpandableSection>
             </div>
@@ -601,14 +601,14 @@ export default function M2NervousSystemStatesPage() {
               <strong style={{ color: TEXT.primary }}>Baseline</strong> is the neutral, stable platform below all four states. Not happy. Not connected. Not calm in the therapeutic sense. Just — running. Functional. Present. The nervous system not in any particular state, ready to move into any of them when conditions call for it, and returning when they pass.
             </p>
             <p style={proseStyle}>
-              In a healthy nervous system, all four states breathe — activating when needed, completing when done, and returning to baseline. Safety & Openness activates with genuine contact, fills, completes, returns. Threat & Defence activates when threat appears, mobilises, the threat passes, returns. Strategy & Management activates when a complex situation requires cognitive management, manages, resolves, returns. Power & Dominance activates in rare extreme situations, acts, the cost is felt, returns.
+              When the nervous system has full range of movement, all four states breathe — activating when needed, completing when done, and returning to baseline. Safety & Openness activates with genuine contact, fills, completes, returns. Threat & Defence activates when threat appears, mobilises, the threat passes, returns. Strategy & Management activates when a complex situation requires cognitive management, manages, resolves, returns. Power & Dominance activates in rare extreme situations, acts, the cost is felt, returns.
             </p>
             <p style={proseStyle}>
-              This correction matters because {"\u201C"}Connection is home base{"\u201D"} language makes chronic Safety & Openness invisible. Someone who is always absorbing, always emotionally open, always in contact — whose needle never rests at baseline — is as stuck as someone always in Strategy & Management. The states differ. The stuckness is the same.
+              This correction matters because framing any single state as {"\u201C"}home{"\u201D"} makes chronic Safety & Openness invisible. Someone who is always absorbing, always emotionally open, always in contact — whose needle never rests at baseline — is as stuck as someone always in Strategy & Management. The states differ. The stuckness is the same.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Health is not living in Safety & Openness. Health is the needle{"'"}s capacity to move — to shift into whatever state the situation requires and come back to rest when it is done.
+              The measure is not living in Safety & Openness. The measure is the needle{"'"}s capacity to move — to shift into whatever state the situation requires and come back to rest when it is done.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
@@ -620,7 +620,7 @@ export default function M2NervousSystemStatesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The identification of baseline as distinct from Safety & Openness — a neutral resting platform, not a state. The correction of the {"\u201C"}Connection is home{"\u201D"} framing that made chronic Safety & Openness invisible. The reframe of health as autonomic flexibility: not where the needle rests, but whether it can move and return.
+                  The identification of baseline as distinct from Safety & Openness — a neutral resting platform, not a state. The correction of framing any single state as {"\u201C"}home{"\u201D"} — which made chronic Safety & Openness invisible. The reframe from position to capacity: not where the needle rests, but whether it can move and return.
                 </p>
               </ExpandableSection>
             </div>
@@ -655,7 +655,7 @@ export default function M2NervousSystemStatesPage() {
 
             <h3 style={h3Style}>Chronic Strategy & Management</h3>
             <p style={proseStyle}>
-              Permanent management. Strategic warmth, managed closeness, performed empathy. The person appears functional — often high-functioning — because cognitive regulation is efficient. But closeness is managed rather than felt. Vulnerability is performed rather than experienced. This is the state that most reliably mimics healthy Safety & Openness, making the stuckness invisible — to others and often to the person themselves.
+              Permanent management. Strategic warmth, managed closeness, performed empathy. The person appears functional — often high-functioning — because cognitive regulation is efficient. But closeness is managed rather than felt. Vulnerability is performed rather than experienced. This is the state that most reliably mimics Safety & Openness, making the stuckness invisible — to others and often to the person themselves.
             </p>
 
             <h3 style={h3Style}>Chronic Power & Dominance</h3>
@@ -664,7 +664,7 @@ export default function M2NervousSystemStatesPage() {
             </p>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Why the stuck state is self-maintaining:</strong> activation accumulates when the cycle does not complete. The baseline rises. The nervous system reaches for stronger inputs to move the needle above the new baseline. When those stop working, it reaches for the next state up the gradient. The gradient is not a moral spectrum. It is the escalation logic of activation that was never allowed to discharge.
+              <strong style={{ color: TEXT.primary }}>Why the stuck state is self-maintaining:</strong> activation accumulates when the activation does not complete — when the body cannot run the full sequence from mobilisation through to clearance and return to baseline. The baseline rises. The nervous system reaches for stronger inputs to move the needle above the new baseline. When those stop working, it reaches for the next state up the gradient. The gradient is not a moral spectrum. It is the escalation logic of activation that was never allowed to discharge.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -680,7 +680,7 @@ export default function M2NervousSystemStatesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The four chronic states mapped as positions, not personalities. The identity built around the state is a narrative constructed on filtered data, not character. This changes the intervention: not {"\u201C"}fix the personality{"\u201D"} but {"\u201C"}restore the return.{"\u201D"} The inclusion of chronic Safety & Openness as a stuck state — challenging the cultural assumption that emotional openness equals health.
+                  The four chronic states mapped as positions, not personalities. The identity built around the state is a narrative constructed on filtered data, not character. This changes the intervention: not {"\u201C"}fix the personality{"\u201D"} but {"\u201C"}restore the return.{"\u201D"} The inclusion of chronic Safety & Openness as a stuck state — challenging the cultural assumption that emotional openness equals autonomic flexibility.
                 </p>
               </ExpandableSection>
             </div>
