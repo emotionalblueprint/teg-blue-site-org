@@ -106,8 +106,8 @@ export default function M3RegulationCapacitiesPage() {
             <ModelHero
               badge="MODEL M3"
               title="Regulation Capacities"
-              subtitle="Restoration Capacities"
-              description="The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. The third stage of the three-model sequence — Return — mapping whether the activation cycle completes or stays open as accumulated debris."
+              subtitle="The Return Pathway"
+              description="The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. The third stage of the four-model sequence — Return — mapping whether the activation cycle completes or stays open as accumulated debris."
               coreQuestion="What is the body doing to regulate — and is the cycle completing?"
               drawsFrom={[
                 { label: "F1", href: "/framework/f1-emotional-gradient" },
@@ -1136,7 +1136,7 @@ export default function M3RegulationCapacitiesPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m3-regulation-capacities#article",
-            headline: "Regulation Capacities: Restoration Capacities",
+            headline: "Regulation Capacities: The Return Pathway",
             description:
               "The full regulation landscape: what the body was designed to do after activation, what blocks the return, what the nervous system reaches for instead, and why none of the substitutes close the cycle. Model M3 of the TEG-Blue system.",
             author: {

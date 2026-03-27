@@ -57,7 +57,7 @@ const MODELS = [
   },
   {
     id: "M3",
-    role: "Restoration Capacities",
+    role: "The Return Pathway",
     title: "Regulation Capacities",
     coreQuestion: "What is the body doing to regulate — and is the cycle completing?",
     summary:
