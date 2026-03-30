@@ -22,7 +22,7 @@ const NAV_ITEMS = [
   { label: "Overview", href: "/foundations" },
   { label: "How It Works", href: "/how-it-works" },
   {
-    label: "The Emotional Somatic System",
+    label: "ESS",
     href: "/models",
     children: [
       { label: "M1 — Emotions as Signals", href: "/model/m1-emotions-as-signals" },
