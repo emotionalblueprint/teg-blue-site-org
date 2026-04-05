@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What are the 12 TEG-Blue frameworks?",
-    answer: "The 12 frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1-F3: how the nervous system evaluates safety, calibrates through development, and compensates through cognition), Collective (F4-F7: how individual patterns scale into shared rules, hierarchies, perception biases, and domination), and The Reversal (F8-F12: how awareness capacities rebuild and what makes change possible).",
+    answer: "The 12 frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1-F3: how the nervous system evaluates safety, calibrates through development, and compensates through cognition), Collective (F4-F7: how individual patterns scale into shared rules, hierarchies, perception biases, and domination), and Repair (F8-F12: how awareness capacities rebuild and what makes change possible).",
   },
   {
     question: "What is the Regulation Thread?",
@@ -25,7 +25,7 @@ const SIDEBAR_SECTIONS = [
   { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all twelve frameworks — what regulates when the body can't, and how the original path rebuilds." },
   { label: "Individual · F1–F3", href: "#individual", description: "How the nervous system evaluates safety, calibrates through development, and compensates through cognition." },
   { label: "Collective · F4–F7", href: "#collective", description: "How individual patterns scale into shared rules, hierarchies, perception biases, and systemic domination." },
-  { label: "The Reversal · F8–F12", href: "#the-reversal", description: "How the awareness capacities rebuild, and what makes change possible." },
+  { label: "Repair · F8–F12", href: "#repair", description: "How the awareness capacities rebuild, and what makes change possible." },
   { label: "The Emotional Somatic System", href: "#the-emotional-somatic-system", description: "The measurement instruments: Emotions as Signals, Nervous System States, Regulation Capacities, Awareness Capacities." },
   { label: "Mechanics of Phenomena", href: "#mechanics-of-phenomena", description: "Long-form essays showing these mechanisms operating in real life." },
 ];
@@ -39,7 +39,7 @@ const FRAMEWORKS = [
     subtitle: "Scale: Biology",
     group: "Individual",
     summary: "The foundation. The nervous system evaluates safety and threat continuously — below awareness, before cognition. Emotions are how that evaluation gets delivered. They are the body's first language.",
-    purpose: "F1 introduces the Inner Compass and its four modes — Connection, Protection, Control, Domination — and the mechanism that keeps the compass moving: Biological Restoration, the body's designed process for completing the activation cycle and returning to Connection. It cannot be forced. It can only be allowed.\n\nF1 also names the full trajectory the remaining eleven frameworks elaborate: Perception → Emotion → Action → Biological Restoration → Behaviour → Social Structure → Escalation or Repair.\n\nBiological Restoration is the hinge. Everything that follows depends on whether it happened.",
+    purpose: "F1 introduces the Emotional Somatic Cycle and its four nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — and the mechanism that keeps the system moving: biological restoration, the body's designed process for completing the activation cycle and returning to physiological baseline. It cannot be forced. It can only be allowed.\n\nF1 also names the full trajectory the remaining eleven frameworks elaborate: the signal-to-system sequence, with biological restoration as the central pivot.\n\nBiological restoration is the hinge. Everything that follows depends on whether it happened.",
     buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
     claims: [
       "Emotional signals track needs, safety, and constraint — they are the body's data about its current state",
@@ -51,25 +51,25 @@ const FRAMEWORKS = [
   },
   {
     id: "F2",
-    displayName: "Awareness Teaches Awareness",
-    title: "How the Three Capacities Calibrate the Compass",
+    displayName: "Developmental Calibration",
+    title: "How the Relational Environment Calibrates the System",
     subtitle: "Scale: Developmental / Relational",
     group: "Individual",
-    summary: "The calibration. The three awareness capacities — Reading Emotions (RE), Emotional Resonance (ER), and Self-Emotional Awareness (SEA) — develop through relationship. The adults' capacity configuration creates the environment in which the child's capacities either develop or don't.",
-    purpose: "When co-regulation is available and consistent, the nervous system learns the return path: how to activate, complete the cycle, and come back to baseline. When it is not, the compass locks. The identity that forms around a locked position is the starting point for F3.",
+    summary: "The calibration. The three awareness capacities — Interpersonal Affect Perception (RE), Affective Resonance (ER), and Interoceptive Self-Awareness (SEA) — develop through relationship. The adults' capacity configuration creates the environment in which the child's capacities either develop or don't.",
+    purpose: "When co-regulation is available and consistent, the nervous system learns the return path: how to activate, complete the cycle, and come back to physiological baseline. When it is not, the state becomes chronic. The identity that forms around a chronic state is the starting point for F3.",
     buildsOn: "Attachment theory, developmental neuroscience, interpersonal neurobiology, polyvagal theory, somatic experiencing, object relations, schema theory.",
     claims: [
       "Awareness teaches awareness: the adults' awareness configuration is the child's developmental environment",
       "Children calibrate to what caregivers embody, not what they say — the transmission channel is the nervous system",
       "Identity is a cognitive structure built around whichever awareness capacities had conditions to develop — there is no hidden self to find",
-      "Restoration is developing the capacities that never had conditions to form and learning Biological Restoration",
+      "Restoration is developing the capacities that never had conditions to form and learning biological restoration",
     ],
     testable: "Predictive links between caregiver awareness configuration and child capacity development. Measurable state signatures and repair signatures in parent-child interaction. Longitudinal shifts in awareness capacities with sustained safety provision.",
   },
   {
     id: "F3",
     displayName: "Adult Cognition & False Coherence",
-    title: "Cognitive Regulation and Its Relational Consequences",
+    title: "The Lock",
     subtitle: "Scale: Individual adult cognition",
     group: "Individual",
     summary: "When Biological Restoration was never learned and co-regulation is not available, cognition steps in to manage what the body cannot complete. It is what happens when the system runs out of other options. The result is false coherence. It works. The cost is truth.",
@@ -154,10 +154,10 @@ const FRAMEWORKS = [
   },
   {
     id: "F8",
-    displayName: "Repairing Awareness & The Power of Difference",
-    title: "How the Three Capacities Develop and Why Difference Is Strength",
+    displayName: "Awareness Rebuilds Through Safety",
+    title: "How the Interoceptive Channel Reopens and Capacities Develop",
     subtitle: "Scale: Individual and collective repair",
-    group: "The Reversal",
+    group: "Repair",
     summary: "F8 turns the system around. F1–F7 trace escalating substitutes. F8 asks: how do you go back? The answer is specific: by rebuilding the awareness capacities that never had conditions to develop.",
     purpose: "Not by finding a hidden self, not by removing a mask, but by creating the relational and experiential conditions that allow RE, ER, and SEA to come online.\n\nF8 operates in two movements. Part 1: individual repair — how to assess where your three capacities currently sit, why repair is difficult, and what conditions make it possible. Part 2: collective strength — why different awareness configurations make collectives more resilient, and why conformity, not difference, is the vulnerability.\n\nThe two movements are one argument: repairing your own capacities and accepting that everyone's capacities are different are the same act of moving toward safety.",
     buildsOn: "Winnicott's True/False Self, Rogers' organismic valuing, IFS, mentalization theory, Polyvagal Theory, corrective emotional experience research.",
@@ -171,10 +171,10 @@ const FRAMEWORKS = [
   },
   {
     id: "F9",
-    displayName: "Neurodivergence as Nervous System Variation",
+    displayName: "Variation Is Configuration",
     title: "When the Environment Is the Mismatch",
     subtitle: "Scale: Structural",
-    group: "The Reversal",
+    group: "Repair",
     summary: "F9 reframes neurodivergence from deficit to variation. Different nervous systems process the emotional gradient differently. It is configuration. The problem is not the compass — it is the mismatch between how a nervous system is built and what the environment demands.",
     purpose: "When environments are designed for one configuration, others are required to mask — to perform the expected configuration at the cost of authentic expression and chronic regulation.\n\nF9 explains the costs of structural mismatch, the mechanism of forced masking as it connects to F2–F3, and what genuine inclusion requires: not accommodation of deficit, but design that recognises variation as a feature of collective intelligence.",
     buildsOn: "Neurodiversity paradigm (Singer, Walker, Silberman), Social Model of Disability (Oliver, Shakespeare), Polyvagal Theory, Intense World Theory, masking research (Price, Rose, Maté), Universal Design for Learning.",
@@ -188,10 +188,10 @@ const FRAMEWORKS = [
   },
   {
     id: "F10",
-    displayName: "Rebuilding Generational Bridges",
-    title: "How Patterns Transmit and How Repair Changes What the Next Generation Inherits",
+    displayName: "What the Adult Processes, the Child Does Not Inherit",
+    title: "Intergenerational Transmission and How Adult Repair Changes Developmental Conditions",
     subtitle: "Scale: Intergenerational",
-    group: "The Reversal",
+    group: "Repair",
     summary: "Emotional patterns do not begin with us. The compass calibrates in relationship — and the relational environment is shaped by the compass configurations of those who came before. F2's insight — awareness teaches awareness — applies across generations.",
     purpose: "Parents transmit not just genetics but regulatory patterns, emotional environments, and the specific capacity configurations their own conditions produced.\n\nF10 explains the transmission mechanism, the conditions that enable interruption, and what intergenerational repair actually requires. Understanding how you got here — and understanding how the people who shaped you got there — is not the same as being responsible for all of it.",
     buildsOn: "Family Systems (Bowen, Satir, Minuchin), Attachment Theory (Main, Hesse), intergenerational trauma research (van der Kolk, Herman), epigenetics (Yehuda, Meaney), Narrative Therapy (White, Epston), interpersonal neurobiology (Porges, Siegel, Schore).",
@@ -205,10 +205,10 @@ const FRAMEWORKS = [
   },
   {
     id: "F11",
-    displayName: "The Emotional Paradoxes",
-    title: "Multi-Rationality and Holding Capacity",
+    displayName: "Paradox Holds What Logic Cannot",
+    title: "Why Human Contradictions Are Predictable Outcomes of Multi-Need Systems",
     subtitle: "Scale: Multi-rational",
-    group: "The Reversal",
+    group: "Repair",
     summary: "When people begin to heal, they encounter paradoxes: knowing and not yet being able to act differently. Feeling worse as awareness increases. F11 explains why these paradoxes are the predictable result of two information systems producing different outputs at the same time.",
     purpose: "Five competing needs (connection, protection, authenticity, belonging, coherence) pull in different directions at once.\n\nThe framework introduces multi-rationality: the recognition that when multiple needs are simultaneously valid, behaviour serves more than one master. What looks contradictory from outside is perfectly logical from inside.",
     buildsOn: "Cognitive dissonance (Festinger), analytical psychology (Jung), systems theory (Bateson), Internal Family Systems (Schwartz), dialectics (Hegel), affective neuroscience (Damasio, Porges).",
@@ -223,9 +223,9 @@ const FRAMEWORKS = [
   {
     id: "F12",
     displayName: "The Two Information Systems",
-    title: "The Architecture Underneath",
+    title: "The Framework That Explains Why We Stopped Listening",
     subtitle: "Scale: Architectural",
-    group: "The Reversal",
+    group: "Repair",
     summary: "F12 steps back and asks: what is the architecture underneath all of this? Two parallel information systems — the emotional-somatic and the cognitive-logical — running simultaneously at different speeds. The emotional-somatic arrives first. Cognition narrates a process already underway.",
     purpose: "This is why a person can read F1–F11, understand the entire architecture, see their own pattern clearly — and still do the thing. Understanding is cognitive. The compass is somatic. More cognition does not move a somatic compass. What moves the compass is experience.\n\nF12 is not another link in the regulation thread. It is the explanation of why the thread works the way it does. It unifies the entire system: TEG-Blue is not twelve frameworks. It is one mechanism — state-dependent nervous system organisation responding to perceived safety — described from twelve angles.",
     buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma research (van der Kolk, Levine, Ogden), interpersonal neurobiology (Siegel, Schore), situational psychology (Milgram, Zimbardo).",
@@ -259,7 +259,7 @@ const FRAMEWORK_PATHS = {
 const groupColors = {
   "Individual": SPECTRUM.cobalt,
   "Collective": SPECTRUM.cobalt,
-  "The Reversal": SPECTRUM.blue,
+  "Repair": SPECTRUM.blue,
 };
 
 // Thread group definitions
@@ -279,11 +279,11 @@ const GROUPS = [
     description: "The scaling. How individual patterns become shared rules, how rules produce worth hierarchies, how hierarchies shape perception, and how protection escalates all the way to domination.",
   },
   {
-    key: "The Reversal",
-    slug: "the-reversal",
-    label: "The Reversal",
+    key: "Repair",
+    slug: "repair",
+    label: "Repair",
     range: "F8–F12",
-    description: "The return. Not by adding another substitute, but by building the original — rebuilding the awareness capacities, understanding variation, repairing generational patterns, holding paradox, and seeing the architecture underneath.",
+    description: "Reversal and restoration at every scale. Not by adding another substitute, but by building the original — rebuilding the awareness capacities, understanding variation, repairing generational patterns, holding paradox, and seeing the architecture underneath.",
   },
 ];
 
@@ -296,11 +296,11 @@ const REGULATION_THREAD = [
   { id: "F5", group: "Collective", regulator: "Worth hierarchies regulate", cost: "Equity" },
   { id: "F6", group: "Collective", regulator: "Bias regulates", cost: "Accuracy" },
   { id: "F7", group: "Collective", regulator: "Domination regulates", cost: "Everything" },
-  { id: "F8", group: "The Reversal", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
-  { id: "F9", group: "The Reversal", regulator: "Variation is configuration", restores: "Accuracy" },
-  { id: "F10", group: "The Reversal", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
-  { id: "F11", group: "The Reversal", regulator: "Paradox holds what logic cannot", restores: "Truth" },
-  { id: "F12", group: "The Reversal", regulator: "Two information systems reunite — body and mind", restores: "The design" },
+  { id: "F8", group: "Repair", regulator: "Awareness rebuilds — through safety, not instruction", restores: "The restoration path" },
+  { id: "F9", group: "Repair", regulator: "Variation is configuration", restores: "Accuracy" },
+  { id: "F10", group: "Repair", regulator: "What the adult processes, the child doesn't inherit", restores: "The bridge" },
+  { id: "F11", group: "Repair", regulator: "Paradox holds what logic cannot", restores: "Truth" },
+  { id: "F12", group: "Repair", regulator: "Two information systems reunite — body and mind", restores: "The design" },
 ];
 
 export default function TheoreticalFoundationsPage() {
@@ -330,7 +330,7 @@ export default function TheoreticalFoundationsPage() {
             What is the Regulation Thread?
           </h2>
           <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
-            The 12 TEG-Blue frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1–F3), Collective (F4–F7), and The Reversal (F8–F12). Together they map what happens when Biological Restoration is never learned, what substitutes the system develops, and what it takes to rebuild the original path.
+            The 12 TEG-Blue frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1–F3), Collective (F4–F7), and Repair (F8–F12). Together they map what happens when Biological Restoration is never learned, what substitutes the system develops, and what it takes to rebuild the original path.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             The nervous system was designed to complete a cycle. Detect threat, mobilise, respond — and then restore. Return to baseline. Come back.

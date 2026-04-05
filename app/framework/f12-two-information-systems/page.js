@@ -13,7 +13,6 @@ import {
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
-import BridgeSection from "@/src/components/BridgeSection";
 import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
@@ -24,73 +23,92 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", href: "#framework-position", description: "The architecture underneath everything. Two parallel information systems running at different speeds." },
-  { label: "The Regulation Thread", href: "#framework-position", description: "F12 is not another link. It explains why the thread works the way it does." },
-  { label: "The Two Systems", href: "#two-systems", description: "Emotional-somatic (milliseconds, unconscious) and cognitive-logical (seconds, conscious). Fixed sequence." },
-  { label: "Why Insight Alone Doesn't Change", href: "#why-insight-fails", description: "The timing problem, the domain mismatch, and the appropriate limitation." },
-  { label: "State-Dependent Behaviour", href: "#state-dependent-behavior", description: "Behaviour is state-dependent, not character-dependent. Change the state, and the person who shows up is different." },
-  { label: "One Mechanism, Twelve Angles", href: "#one-mechanism", description: "TEG-Blue is not twelve frameworks. It is one mechanism described twelve times." },
-  { label: "The Ethics of Architecture", href: "#accountability", description: "Causality and accountability are separable. Understanding does not produce unlimited compassion or excuse harm." },
-  { label: "Intervention Matching", href: "#gradient-matched-intervention", description: "Every intervention must be matched to compass position. State precedes method." },
-  { label: "The Design Implication", href: "#design-implication", description: "Systems designed to change behaviour must address state, not just information or consequence." },
-  { label: "The Complete Architecture", href: "#complete-architecture", description: "All human behaviour is state-dependent nervous system organisation responding to perceived safety." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F12 makes about the two information systems and why the species stopped listening." },
+  { label: "Two Systems, One Sequence", href: "#two-systems", description: "The Emotional Somatic System and the Cognitive-Logical System — running in parallel, at different speeds, in a fixed order." },
+  { label: "The Capacity Gap", href: "#capacity-gap", description: "What grew faster than what — and why the gap only became a problem when conditions changed." },
+  { label: "The Conditions That Rewarded Override", href: "#conditions-rewarded-override", description: "How agriculture created conditions where suppressing the ESS became a survival advantage." },
+  { label: "Cultural Inheritance of Override", href: "#cultural-inheritance", description: "How override transmits across generations until it becomes invisible — and identity." },
+  { label: "What the Species Forgot", href: "#what-species-forgot", description: "The current measurable condition: a species with two information systems, one of which it has largely forgotten how to read." },
+  { label: "Why Insight Alone Cannot Reverse the Override", href: "#why-insight-fails", description: "The timing problem, the domain mismatch, and what actually changes patterns." },
+  { label: "One Mechanism, All Twelve Frameworks", href: "#one-mechanism", description: "Every framework describes the same mechanism from a different angle." },
+  { label: "The Design Principle", href: "#design-principle", description: "What this framework prescribes at every scale." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
+  { label: "Connections Map", href: "#connections", description: "How F12 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Our Two Information Systems — Why Insight Alone Doesn't Change Behavior and What Actually Does (F12) | TEG-Blue Research",
+  title: "The Two Information Systems — The Framework That Explains Why We Stopped Listening (F12) | TEG-Blue Research",
   description:
-    "The architecture underneath all twelve frameworks: two parallel information systems — emotional-somatic and cognitive-logical — running simultaneously at different speeds. Why understanding patterns doesn't automatically change them, what actually produces change, and how one mechanism explains all human behavior. Framework F12 of 12.",
+    "Why did a species with a functioning Emotional Somatic System stop listening to it? F12 traces the sequence — biological, then environmental, then cultural — that turned a functioning information system into one most of the species no longer knows how to read. The final framework in the TEG-Blue 12-framework system.",
   keywords: [
     "two information systems",
-    "state-dependent behavior",
-    "emotional-somatic system",
-    "cognitive-logical system",
+    "cognitive override",
+    "emotional somatic system",
+    "cognitive logical system",
+    "agricultural transition",
+    "cultural inheritance",
     "insight doesn't change behavior",
     "dual-process theory",
     "state precedes capacity",
-    "accountability without demonization",
-    "gradient-matched intervention",
     "nervous system organization",
-    "emotional technology",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f12-two-information-systems",
   },
   openGraph: {
-    title: "Our Two Information Systems — F12 Framework | TEG-Blue",
+    title: "The Two Information Systems — F12 Framework | TEG-Blue",
     description:
-      "Why insight alone doesn't change behavior: two parallel information systems running at different speeds, and the single mechanism that explains all twelve frameworks.",
+      "Why did a species with a functioning Emotional Somatic System stop listening to it? The biological, environmental, and cultural sequence that made override invisible.",
     url: "https://teg-blue.org/framework/f12-two-information-systems",
     siteName: "TEG-Blue Research",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Two Information Systems — TEG-Blue F12",
+    title: "The Two Information Systems — TEG-Blue F12",
     description:
-      "Why insight alone doesn't change behavior: two parallel information systems at different speeds. The single mechanism underneath all twelve frameworks.",
+      "Why did a species with a functioning Emotional Somatic System stop listening to it? The origin story underneath all twelve frameworks.",
   },
   other: {
-    'citation_title': 'Our Two Information Systems: Why Insight Alone Does Not Change Behavior and What Actually Does',
+    'citation_title': 'The Two Information Systems: The Framework That Explains Why We Stopped Listening',
     'citation_author': 'Anna Paretas-Artacho',
     'citation_publication_date': '2026/03',
     'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
 
+// ─── FAQ ──────────────────────────────────────────────────
+
+const faqItems = [
+  {
+    q: "Why did humans stop listening to the Emotional Somatic System?",
+    a: "Not through a single event but through a sequence. The cognitive system scaled faster than the emotional system (the capacity gap). Agriculture created conditions where suppressing emotional-somatic signals became a survival advantage (the override). Over generations, the override transmitted culturally until it became invisible — it stopped feeling like override and started feeling like being a person.",
+  },
+  {
+    q: "Why doesn't understanding your patterns automatically change them?",
+    a: "Because the Emotional Somatic System and the Cognitive-Logical System operate at different speeds. The ESS detects cues in 10\u201350 milliseconds and organises a physiological response within 500ms. Conscious awareness arrives after 500ms. By the time insight is available, the body has already responded. The cognitive system narrates a process already underway \u2014 it does not direct it. The ESS updates through experience, not explanation.",
+  },
+  {
+    q: "What actually changes emotional patterns?",
+    a: "Since the Emotional Somatic System learns through experience, not explanation, pattern change requires: sustained safety (the nervous system recalibrates through accumulated safe experience), somatic awareness (reconnecting to the body\u2019s actual signals), co-regulation (another regulated nervous system provides a template), corrective experience (old patterns activated but different outcomes occur), and time and consistency (the ESS updates slowly through repeated experience).",
+  },
+  {
+    q: "How does F12 relate to the other eleven frameworks?",
+    a: "F12 reveals that TEG-Blue is not twelve separate frameworks \u2014 it is one mechanism (state-dependent nervous system organisation) described from twelve angles. Every substitution in F3\u2013F7 happens because the CLS cannot reach the ESS. Every repair in F8\u2013F10 works because it addresses the ESS through experience. Every paradox in F11 exists because two systems are producing different outputs simultaneously. F12 explains why the thread works the way it does.",
+  },
+];
+
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F12TwoInformationSystemsPage() {
 
-  /* ── local helpers ─────────────────────────────────── */
-
-
   function KeyStatement({ children }) {
     return (
       <blockquote style={{
-        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
+        borderLeft: `3px solid ${SPECTRUM.blue}`,
         paddingLeft: 16, margin: "20px 0", fontStyle: "italic",
         fontSize: 14, lineHeight: 1.7, color: TEXT.primary,
       }}>
@@ -98,95 +116,6 @@ export default function F12TwoInformationSystemsPage() {
       </blockquote>
     );
   }
-
-  function TableRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function ThreeColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function FiveColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "8px 10px", fontSize: 12, lineHeight: 1.5,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-
-  const thStyle = {
-    padding: "10px 14px", fontSize: 12, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const narrowThStyle = {
-    padding: "8px 10px", fontSize: 11, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-
-  /* ── data ──────────────────────────────────────────── */
-
-  const faqItems = [
-    {
-      q: "Why doesn't understanding your patterns automatically change them?",
-      a: "Because two information systems are operating at different speeds. The emotional-somatic system detects cues in 10\u201350 milliseconds, matches patterns in 50\u2013200ms, and organizes a physiological response within 500ms. Conscious awareness arrives after 500ms. By the time insight is available, the body has already responded and the compass has already moved. The cognitive system narrates a process already underway \u2014 it does not direct it.",
-    },
-    {
-      q: "What actually changes emotional patterns?",
-      a: "Since the emotional-somatic system learns through experience, not explanation, pattern change requires: sustained safety (the nervous system recalibrates through accumulated safe experience), somatic awareness (reconnecting to the body's actual signals), co-regulation (another regulated nervous system provides a template), corrective experience (old patterns activated but different outcomes occur), titrated exposure (gradual supported contact with what has been avoided), and time and consistency (the emotional-somatic system updates slowly through repeated experience).",
-    },
-    {
-      q: "If behavior is state-dependent, is anyone responsible for anything?",
-      a: "Yes. Understanding the mechanism does not eliminate accountability \u2014 it eliminates demonization. A person in chronic Control producing real harm is still producing real harm, regardless of the nervous system state organizing the behavior. Causality and accountability are separable: understanding why someone became who they became does not excuse what it costs others. The same person with different developmental conditions would have produced a different configuration. This is not excuse \u2014 it is precision.",
-    },
-    {
-      q: "What does 'state precedes capacity' mean?",
-      a: "Every dimension of human experience \u2014 perception, cognition, empathy, time orientation, learning, repair capacity, relationship to truth, accountability \u2014 shifts with nervous system state. A person in Connection and the same person in chronic Control are operating with different available equipment, not making different choices with the same equipment. The state determines what capacities come online. This is why the same person can be generous and cruel, insightful and blind.",
-    },
-    {
-      q: "How does F12 relate to the other eleven frameworks?",
-      a: "F12 reveals that TEG-Blue is not twelve separate frameworks \u2014 it is one mechanism (state-dependent nervous system organization) described from twelve angles. Every concept in F1\u2013F11 is an expression of this architecture: false coherence is the cognitive system narrating regulation as truth, rules are regulation scaled to groups, bias is state-dependent perception, domination is protection at maximum escalation, repair is developing the capacity to shift state. The scale changes. The mechanism doesn't.",
-    },
-  ];
-
-  /* ── render ────────────────────────────────────────── */
 
   return (
     <>
@@ -196,11 +125,11 @@ export default function F12TwoInformationSystemsPage() {
         header={
           <FrameworkHero
               badge="FRAMEWORK F12"
-              title="Our Two Information Systems"
-              subtitle="Why Insight Alone Doesn't Change Behavior and What Actually Does"
-              description="How two parallel information systems — cognitive and somatic — process emotional data through fundamentally different architectures, and why insight alone cannot change behavior when the somatic system holds the regulatory pattern. The final framework in the TEG-Blue system, providing the architectural foundation that explains why the regulation thread works the way it does."
-              group="The Reversal"
-              groupLabel="The Reversal · F8–F12"
+              title="The Two Information Systems"
+              subtitle="The Framework That Explains Why We Stopped Listening"
+              description="If the Emotional Somatic System has been running for hundreds of millions of years, producing accurate signals about safety, threat, belonging, and loss — why did an entire species stop listening to it? F12 traces the sequence: biological, then environmental, then cultural. The answer is not a single event. It is a pathway that turned a functioning information system into one that most of the species no longer knows how to use."
+              group="Repair"
+              groupLabel="Repair Arc · F8–F12"
               threadLabel="The Architecture Underneath"
               threadLine="The architecture that explains why the thread works the way it does"
               informsModels={[
@@ -208,7 +137,7 @@ export default function F12TwoInformationSystemsPage() {
                 { label: "M3", href: "/model/m3-regulation-capacities" },
               ]}
               adjacent={{
-                prev: { label: "F11 Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
+                prev: { label: "F11 Paradox Holds What Logic Cannot", href: "/framework/f11-emotional-paradoxes" },
               }}
             />
         }
@@ -229,678 +158,496 @@ export default function F12TwoInformationSystemsPage() {
               description: "The designed process of the entire system — what the two information systems must reunite to complete.",
               href: "/framework/f1-emotional-gradient#designed-process",
             },
+            {
+              concept: "Why experience changes the system and insight does not",
+              framework: "F8",
+              description: "Two systems, two substrates, different speeds. The CLS updates through information. The ESS updates through experience.",
+              href: "/framework/f8-repairing-awareness",
+            },
           ]} />
 
           {/* ── Core Claims ── */}
           <PropositionBox
             title="Core Propositions — F12"
             items={[
-              "Two parallel information systems \u2014 emotional-somatic and cognitive-logical \u2014 run simultaneously at different speeds, with the emotional-somatic system arriving first",
-              "Insight alone doesn't change behavior because the cognitive system narrates a process already underway \u2014 it does not direct it",
-              "Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience, titrated exposure, and time",
-              "All human behavior is state-dependent nervous system organization \u2014 every framework (F1\u2013F11) describes the same mechanism from a different angle",
-              "Understanding the mechanism does not eliminate accountability \u2014 it eliminates demonization. Causality and accountability are separable",
+              "Two parallel information systems — the Emotional Somatic System (ESS) and the Cognitive-Logical System (CLS) — run simultaneously at different speeds, with the ESS arriving first and the CLS narrating a process already underway",
+              "The cognitive system scaled faster than the emotional system — biologically first, then culturally. Agriculture created conditions where overriding the ESS became a survival advantage",
+              "After enough generations, cognitive override does not feel like override. It feels like being a person. The override became invisible through cultural transmission",
+              "Insight alone cannot reverse the override because insight is a cognitive operation — and cognition is the system running the replacement. Patterns change through experience, not explanation",
+              "Every framework describes the same mechanism — state-dependent nervous system organisation — from a different angle. The scale changes. The mechanism does not",
             ]}
           />
 
           {/* ════════════════════════════════════════════════
-              FRAMEWORK POSITION
+              PART 1: HOW THE OVERRIDE BECAME POSSIBLE
              ════════════════════════════════════════════════ */}
 
-          <section id="framework-position">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
+          <PartDivider
+            color={SPECTRUM.blue}
+            label="Part 1"
+            title="How the Override Became Possible"
+          />
 
-            <p style={proseStyle}>
-              F1–F11 describe a complete system: how the compass works (F1), how awareness develops or fails (F2), how cognition compensates (F3), how substitutes scale from rules to worth to bias to domination (F4–F7), how repair happens individually and structurally (F8–F9), how patterns transmit and conditions change across generations (F10), and how paradox emerges when the full picture becomes visible (F11).
-            </p>
-
-            <KeyStatement>
-              F12 steps back and asks: what is the architecture underneath all of this?
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              The answer: two parallel information systems — the emotional-somatic and the cognitive-logical — running simultaneously, inseparable, at different speeds. The emotional-somatic system arrives first. By the time cognition engages, the state has already shifted. The cognitive system does not direct the process — it narrates a process already underway.
-            </p>
-
-            <p style={proseStyle}>
-              This is not a new mechanism. It is the mechanism that has been operating in every framework from the first page. F12 makes it explicit — and in doing so, answers the question that every person who reads F1–F11 will ask:
-            </p>
-
-            <KeyStatement>
-              "I understand all of this now. Why can't I just change?"
-            </KeyStatement>
-
-            <h3 style={conceptHeadingStyle}>The Regulation Thread — F12's Position</h3>
-
-            <p style={proseStyle}>
-              F12 is not another link in the regulation thread. It is the explanation of <strong>why the thread works the way it does.</strong>
-            </p>
-
-            <p style={proseStyle}>
-              Every substitution in F3–F7 happens because the cognitive system cannot override the emotional-somatic system in real time. Every repair in F8–F10 works because it addresses the emotional-somatic system through experience, not the cognitive system through explanation. Every paradox in F11 exists because two systems are producing different outputs simultaneously.
-            </p>
-
-            <KeyStatement>
-              TEG-Blue is not twelve separate frameworks. F12 proposes that it is one mechanism — state-dependent nervous system organization — described from twelve angles.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              PART 1 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 1: The Architecture
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              What the two systems are, how they interact, and why insight alone doesn't change behavior.
-            </p>
-          </div>
-
-          {/* ════════════════════════════════════════════════
-              C1 — THE TWO INFORMATION SYSTEMS
-             ════════════════════════════════════════════════ */}
+          {/* ── C1: Two Systems, One Sequence ── */}
 
           <section id="two-systems">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Two Information Systems</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Two Systems, One Sequence</h2>
 
             <p style={proseStyle}>
-              Two parallel information systems running at the same time, impossible to isolate:
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Emotional-Somatic System</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Dimension</th>
-                    <th style={thStyle}>How It Operates</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Speed", "Milliseconds. Cue detection: 10\u201350ms. Pattern matching: 50\u2013200ms. Physiological response organized: 200\u2013500ms"]} />
-                  <TableRow cells={["Processing", "Largely unconscious. Automatic. The body responding before the mind knows"]} />
-                  <TableRow cells={["Domain", "Safety/threat detection. Relational cues. Values. Needs. Relevance. \"Does this matter? Is this safe? What should the body do?\""]} />
-                  <TableRow cells={["Learning", "Through experience. Through repetition. Through what happens, not what is explained. Implicit memory. Slow to update, slow to forget"]} />
-                  <TableRow cells={["Language", "Sensation. Emotion. Impulse. Gut feeling. The body's first language (F1)"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>The Cognitive-Logical System</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Dimension</th>
-                    <th style={thStyle}>How It Operates</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Speed", "Seconds to minutes. Conscious awareness: 500ms+. Analysis and planning: seconds. Narrative construction: minutes to hours"]} />
-                  <TableRow cells={["Processing", "Conscious. Deliberate. Effortful. The mind working on what the body has already responded to"]} />
-                  <TableRow cells={["Domain", "Language. Abstraction. Reasoning. Planning. Narrative construction. \"What does this mean? What should I do? How do I explain this?\""]} />
-                  <TableRow cells={["Learning", "Through explanation. Through insight. Through language. Explicit memory. Fast to update, fast to revise"]} />
-                  <TableRow cells={["Language", "Words. Concepts. Stories. Arguments. Cognition's own medium"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>The Critical Relationship</h3>
-
-            <p style={proseStyle}>
-              These systems are not competitors. They are <strong>interdependent partners</strong> in a sequence with a fixed order:
+              Two information systems run in parallel. They cannot be separated. They process the same events through different architectures, at different speeds, in different languages.
             </p>
 
             <p style={proseStyle}>
-              1. Cue detected by the emotional-somatic system (10–50ms). 2. Pattern matched to past experience (50–200ms). 3. Physiological response organized — heart rate, muscle tension, hormonal shift (200–500ms). 4. Nervous system state shifts — the compass moves (within 500ms). 5. <strong>Conscious awareness arrives</strong> (500ms+). 6. Cognitive system engages — analysis, narrative, planning (seconds to minutes).
+              The first system — the <strong style={{ color: TEXT.primary }}>Emotional Somatic System (ESS)</strong> — is ancient. Its core circuitry is conserved across mammals. It detects cues below conscious awareness, matches them against stored patterns, and organises a physiological response in milliseconds. It speaks in sensation, emotion, impulse, and gut feeling. It learns through experience. It updates slowly and forgets slowly.
             </p>
 
             <p style={proseStyle}>
-              By the time insight is available, steps 1–4 have already happened. The body has already responded. The compass has already moved. The state has already shifted.
+              The second system — the <strong style={{ color: TEXT.primary }}>Cognitive-Logical System (CLS)</strong> — is recent. The neocortex and prefrontal cortex expanded dramatically in primates, with marked amplification in humans. It processes through language, abstraction, and deliberate reasoning. It speaks in words, concepts, and narratives. It learns through explanation. It updates quickly and revises quickly.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>The Fixed Sequence</h3>
+
+            <p style={proseStyle}>
+              These systems are not competitors. They run in a fixed sequence: the ESS detects a cue (10–50ms), matches it to stored patterns (50–200ms), organises a physiological response — heart rate, muscle tension, hormonal shift (200–500ms), the nervous system state shifts (within 500ms), conscious awareness arrives (500ms+), and the cognitive system engages — analysis, narrative, planning (seconds to minutes).
+            </p>
+
+            <p style={proseStyle}>
+              By the time cognition is available, the body has already responded. The state has already shifted. The cognitive system does not direct this process. It narrates a process already underway.
             </p>
 
             <KeyStatement>
-              The cognitive system doesn't direct this process — it narrates a process already underway.
+              The Emotional Somatic System determines what rational behaviour is available. State precedes capacity. The ESS sets the state. The cognitive system operates within whatever state has been set.
             </KeyStatement>
 
-            <h3 style={conceptHeadingStyle}>The Reframe</h3>
+            <p style={proseStyle}>
+              In genuine threat, the body needs to act before the mind deliberates. The speed that prevents cognition from overriding patterns in everyday life is the same speed that saves lives in emergencies.
+            </p>
+
+            {/* Section diagram: Two systems timeline — ESS processing in milliseconds, CLS arriving after */}
+            {/* Diagram type: static */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Dual-process theory (Kahneman, Stanovich, Evans) describes two processing systems — fast/automatic and slow/deliberate. Affective neuroscience (Damasio, LeDoux) demonstrates that emotions precede and shape cognition through somatic markers. Polyvagal theory (Porges) maps how neuroception determines social capacity before conscious awareness.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  F12 reframes dual-process theory: the two systems are not error-prone versus corrective, but sequential partners where the first determines what the second can do. This adds the regulatory state dimension — what determines which thinking is available — and integrates the temporal sequence with F1&#39;s principle that state precedes capacity.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ── C2: The Capacity Gap ── */}
+
+          <section id="capacity-gap">
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Capacity Gap</h2>
 
             <p style={proseStyle}>
-              The emotional-somatic system is not an obstacle to rational behavior. It is not "System 1 making errors" that "System 2 corrects" (Kahneman's framing). It is the system that <strong>determines what rational behavior is available.</strong> State precedes capacity (F1). The emotional-somatic system sets the state. The cognitive system operates within whatever state has been set.
+              The Emotional Somatic System is old. Core emotion-related circuits — amygdala, hippocampus, hypothalamus, insula, cingulate — scale consistently across mammalian orders. Comparative studies show conservation, not reinvention. Humans refined this system. They did not replace it.
+            </p>
+
+            <p style={proseStyle}>
+              The cognitive system is new — and it grew fast. The neocortex and prefrontal cortex show human-biased expansion compared to other primates. Association cortex, the part that handles abstraction, planning, and symbolic reasoning, amplified dramatically. The anatomy we call &#34;modern human&#34; appears only in the last few hundred thousand years. The cultural acceleration — symbolic art, ritual burials, complex language — concentrates in the last 100,000–50,000 years.
             </p>
 
             <KeyStatement>
-              The emotional-somatic system is not the problem. It is the system that determines what solutions are available.
+              Culture sped up faster than biology. The reasoning tools scaled. The emotional hardware stayed largely the same.
             </KeyStatement>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Dual-process theory (Kahneman, Stanovich, Evans) describes two processing systems — fast/automatic and slow/deliberate. Affective neuroscience (Damasio, LeDoux) demonstrates that emotions precede and shape cognition through somatic markers. Polyvagal theory (Porges) maps how neuroception determines social capacity before conscious awareness.
-              </p>
-            </ExpandableSection>
+            <p style={proseStyle}>
+              This created a gap. Not between two systems that evolved together at the same pace, but between an ancient system that stayed largely the same and a new system that scaled rapidly — first biologically, then culturally. Agriculture, written language, institutions, technology — each built on the previous acceleration. The cognitive system gained tools, reach, and complexity at a rate the Emotional Somatic System was never designed to match.
+            </p>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F12 reframes dual-process theory: the two systems are not error-prone versus corrective, but sequential partners where the first determines what the second can do. This adds the regulatory state dimension — what determines which thinking is available — and integrates the temporal sequence with F1's principle that state precedes capacity.
-              </p>
-            </ExpandableSection>
+            <p style={proseStyle}>
+              For most of human history, the gap did not matter. Both systems ran. Both were needed. In mobile, small-group life, the Emotional Somatic System was survival infrastructure. Reading signals — from the body, from others, from the environment — was not optional. There was no advantage to overriding it. The gap only became a problem when conditions changed in a way that made overriding the first system advantageous.
+            </p>
+
+            {/* Section diagram: Timeline — ESS conserved, CLS scaling, cultural acceleration */}
+            {/* Diagram type: static */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Evolutionary psychology (Cosmides, Tooby, Dunbar) maps cognitive adaptations and the social brain hypothesis. Comparative neuroanatomy demonstrates human-biased expansion in association cortex. Cultural evolution research (Henrich, Boyd, Richerson) traces the acceleration of cultural transmission beyond biological rates.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The capacity gap as the structural precondition for override — not a flaw but a timing mismatch between how fast cultural complexity scaled and how slowly biological hardware changes. The gap only matters when conditions reward treating cognition as the primary system and the ESS as noise.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ── C3: The Conditions That Rewarded Override ── */}
+
+          <section id="conditions-rewarded-override">
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Conditions That Rewarded Override</h2>
+
+            <p style={proseStyle}>
+              Roughly 10,000 years ago, human life reorganised around agriculture. The shift was not sudden — it happened at different times in different regions, over centuries. But the structural consequences were consistent.
+            </p>
+
+            <p style={proseStyle}>
+              Mobile, small-group life became settled, land-dependent life. Resources that had been dispersed became concentrated. Survival that had depended on movement and cooperation now depended on staying, accumulating, and defending. This created conditions that had never existed before:
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Dependency on fixed resources.</strong> When survival depends on land and what it produces, leaving is no longer a viable response to unsafe conditions. The nervous system&#39;s signal — &#34;this is not safe, move away&#34; — becomes a signal that, if followed, leads to death. The signal is accurate. Acting on it is no longer possible.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Concentration of control.</strong> Fixed resources can be accumulated and defended. In conditions where physical force determines access to resources, control concentrates in fewer hands.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Structural dependence.</strong> Within a few generations of settled agriculture, the knowledge and skills required for mobile life degrade. The dependency is not chosen — it is inherited.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Override as survival strategy.</strong> In these conditions, the ability to suppress Emotional Somatic signals becomes a survival advantage. Suppress the signal that says &#34;this is not safe&#34; — because leaving is not an option. Suppress the signal that says &#34;this person is suffering&#34; — because responding to it threatens position. Suppress the signal that says &#34;this is wrong&#34; — because acting on it means losing access to resources.
+            </p>
+
+            <KeyStatement>
+              The signal is accurate. Acting on it is no longer possible. That is the condition agriculture created.
+            </KeyStatement>
+
+            <p style={proseStyle}>
+              Not biologically selected — culturally. The communities that developed the strongest cognitive override capacities — rule systems, hierarchies, belief structures, compliance mechanisms — were the ones that accumulated resources, expanded, and absorbed others. The Y-chromosome evidence shows that during this period, male genetic diversity crashed while female genetic diversity continued increasing — consistent with extreme concentration of reproductive access in settled agricultural societies.
+            </p>
+
+            {/* Section diagram: The shift — mobile/dispersed to settled/concentrated, and what it did to ESS signals */}
+            {/* Diagram type: static */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Archaeological genetics (Karmin et al., Zeng et al.) documents the Y-chromosome bottleneck coinciding with the agricultural transition. Comparative anthropology (Boehm, Woodburn, Kelly) describes egalitarian mechanisms in mobile foraging societies — the conditions that prevented override before agriculture. Polyvagal theory (Porges) maps state-dependent behaviour in conditions that prevent safe responses.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The environmental trigger connecting the capacity gap to the override: agriculture created conditions where the ESS&#39;s signals, while still accurate, could no longer be acted on — making the CLS&#39;s capacity for abstraction, narrative, and compliance the survival-critical system. The conditions did not just enable cognitive override. They rewarded it, transmitted it, and scaled it.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
           {/* ════════════════════════════════════════════════
-              C2 — WHY INSIGHT ALONE DOESN'T CHANGE BEHAVIOR
+              PART 2: HOW THE OVERRIDE BECAME INVISIBLE
              ════════════════════════════════════════════════ */}
+
+          <PartDivider
+            color={SPECTRUM.blue}
+            label="Part 2"
+            title="How the Override Became Invisible"
+          />
+
+          {/* ── C4: Cultural Inheritance of Override ── */}
+
+          <section id="cultural-inheritance">
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Cultural Inheritance of Override</h2>
+
+            <p style={proseStyle}>
+              Once cognitive override becomes the dominant survival strategy in a society, it transmits the same way any developmental pattern transmits (<Link href="/framework/f10-generational-bridges" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F10</Link>). Not through instruction — through the conditions the next generation is born into.
+            </p>
+
+            <p style={proseStyle}>
+              A generation that has learned to suppress Emotional Somatic signals raises the next generation in an environment where suppression is normal. The children do not learn to override their signals — they grow up in conditions where the signals are never validated, never named, never responded to as information. The override does not need to be taught. It is the water.
+            </p>
+
+            <p style={proseStyle}>
+              Over centuries, this produces a cumulative effect:
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The signals get reclassified.</strong> What was biological information becomes &#34;emotion&#34; — something to manage, control, or overcome. The cultural narrative flips: the ancient system becomes the primitive one. The new system becomes the advanced one. Reason over feeling. Logic over instinct. Mind over body.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The vocabulary disappears.</strong> When a society stops treating Emotional Somatic signals as information, it stops developing language for them. The precision that the nervous system produces — distinct signals, each with a specific finding and a specific need (<Link href="/model/m1-emotions-as-signals" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M1</Link>) — gets collapsed into a handful of words: happy, sad, angry, anxious. The resolution drops. The signals still fire. The capacity to read them degrades.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The body becomes background.</strong> In a culture that privileges cognition, the body becomes the thing that carries the brain around. Somatic signals — tension, fatigue, gut responses, activation patterns — become noise rather than data. The interoceptive capacity that <Link href="/model/m4-awareness-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M4</Link> maps as Interoceptive Self-Awareness (SEA) has no cultural support. It is not developed because the culture does not recognise it as a capacity.
+            </p>
+
+            <KeyStatement>
+              After enough generations, cognitive override does not feel like override. It feels like being a person.
+            </KeyStatement>
+
+            {/* Section diagram: The cumulative effect — signals reclassified, vocabulary lost, body backgrounded, override becomes identity */}
+            {/* Diagram type: static */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Interpersonal neurobiology (Siegel, Schore) maps how co-regulation and relational regulation shape development — the mechanism through which override transmits. Cultural evolution research (Henrich, Boyd, Richerson) traces how norms, practices, and cognitive styles transmit across generations through cultural learning, not genetic inheritance.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The cultural transmission mechanism connecting the environmental trigger (C3) to the current condition (C5): override becoming invisible through generational inheritance, using the same developmental transmission pathways F10 describes — not through instruction but through the conditions the next generation is born into.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ── C5: What the Species Forgot ── */}
+
+          <section id="what-species-forgot">
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>What the Species Forgot</h2>
+
+            <p style={proseStyle}>
+              The condition is measurable:
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Most people cannot name what they feel with precision.</strong> The signals <Link href="/model/m1-emotions-as-signals" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M1</Link> maps — each with a distinct somatic signature, a distinct finding, and a distinct need — are collapsed into broad categories. &#34;I feel bad&#34; covers everything from grief to shame to disgust to fear. The signal is still specific. The person receiving it has lost the resolution to read it.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Most people do not know what nervous system state they are in.</strong> The gradient <Link href="/model/m2-nervous-system-states" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M2</Link> maps — from Safety &amp; Openness through Threat &amp; Defence and Strategy &amp; Management to Power &amp; Dominance — shifts continuously. Without Interoceptive Self-Awareness (SEA), the person does not perceive the shift. They experience the consequences — perception narrows, empathy collapses, thinking rigidifies — without understanding the cause.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Most people treat regulation as a cognitive task.</strong> &#34;Calm down.&#34; &#34;Think positive.&#34; &#34;Just breathe.&#34; These instructions address the cognitive system. The Emotional Somatic System does not take instructions. It responds to conditions — safety, co-regulation, somatic discharge, time. The mismatch between how the culture tells people to regulate and how regulation actually works (<Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M3</Link>) is itself a product of cognitive override.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Most people have never been taught that they have awareness capacities.</strong> Interpersonal Affect Perception (RE), Affective Resonance (ER), and Interoceptive Self-Awareness (SEA) are not personality traits. They are capacities with developmental conditions (<Link href="/model/m4-awareness-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>M4</Link>). A culture that does not recognise the Emotional Somatic System as a legitimate information source does not develop the capacities required to use it.
+            </p>
+
+            <KeyStatement>
+              A species with two information systems — one of which it uses, one of which it has largely forgotten how to read.
+            </KeyStatement>
+
+            <p style={proseStyle}>
+              Hunter-gatherer life had violence, hierarchy, and suffering. The ESS generates accurate signals about what the nervous system detects, which can include inaccurate neuroception. And the CLS gave the species language, cooperation, art, science, medicine, and the capacity to understand itself. The conditions of the last several thousand years rewarded treating cognition as the only legitimate information system and the ESS as noise to be managed.
+            </p>
+
+            {/* Section diagram: The current condition — what each model maps and what is not being read */}
+            {/* Diagram type: static */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Emotion differentiation research (Barrett, 2017) documents that most people use broad categories rather than precise emotional labels. Interoception research documents wide individual variation in the capacity to perceive internal signals. Alexithymia research maps the clinical consequences of absent emotional vocabulary.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Connecting the measurable present-day condition — low emotional granularity, absent interoceptive awareness, regulation treated as cognitive task — to the historical sequence that produced it. The condition is not a deficiency in the individual. It is the predictable outcome of a species that built its cultural systems around one information system and forgot the other one.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ── C6: Why Insight Alone Cannot Reverse the Override ── */}
 
           <section id="why-insight-fails">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Why Insight Alone Doesn't Change Behavior</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Why doesn't understanding your patterns automatically change them?
-            </h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Why Insight Alone Cannot Reverse the Override</h2>
 
             <p style={proseStyle}>
-              A person reads F1–F11. Sees their configuration. Names their false coherence. Identifies their chronic mode. Understands the mechanism. Locates their paradoxes. And still does the thing. Still enters chronic Control under stress. Still masks. Still transmits.
+              A person reads this. Understands the history. Sees how the override developed, why it was rewarded, how it transmitted. They now have a complete cognitive map of why they are disconnected from their Emotional Somatic System.
             </p>
 
             <p style={proseStyle}>
-              It is <strong>architecture.</strong>
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Three Mechanisms</h3>
-
-            <p style={proseStyle}>
-              <strong>The Timing Problem.</strong> By the time insight is available (seconds), the emotional-somatic system has already detected the cue (milliseconds), matched it to past patterns, organized a physiological response, and shifted the nervous system state. The insight arrives to find the compass already moved.
+              And the insight changes nothing. The mechanism proves itself. The cognitive system can understand the override perfectly — and the understanding itself is a cognitive operation. The Emotional Somatic System does not update through understanding. It updates through experience.
             </p>
 
             <p style={proseStyle}>
-              <strong>The Domain Mismatch.</strong> The cognitive system can understand patterns retrospectively, create insight, plan future responses, and construct narratives about what happened. But it cannot interrupt patterns in real time, override a nervous system state, execute plans when the emotional system is activated, or change the underlying pattern through analysis. Expecting cognition to override the emotional-somatic system is like expecting a narrator to change the story by describing it differently.
+              <strong style={{ color: TEXT.primary }}>The timing problem.</strong> By the time insight is available (seconds), the ESS has already detected the cue (milliseconds), matched it to past patterns, organised a physiological response, and shifted the nervous system state. The insight arrives after the state has already shifted. Understanding happens after the fact, not before it.
             </p>
 
             <p style={proseStyle}>
-              <strong>The Appropriate Limitation.</strong> Cognition's limitation is structural — the emotional-somatic system needs to respond faster than cognition can process. In genuine threat, you need the body to act before the mind deliberates. The speed differential that prevents insight from overriding patterns in daily life is the same speed differential that saves lives in emergencies.
+              <strong style={{ color: TEXT.primary }}>The domain mismatch.</strong> The cognitive system can analyse patterns, construct narratives, and plan future responses. It cannot interrupt a nervous system state in real time, override an activation pattern, or change the underlying somatic response through explanation. These are different domains operating through different mechanisms.
             </p>
 
-            <h3 style={conceptHeadingStyle}>What Actually Changes Patterns</h3>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The appropriate limitation.</strong> The ESS needs to respond faster than cognition can process. Genuine threat requires the body to act before the mind deliberates. The speed differential that prevents insight from changing patterns is the same speed differential that keeps the organism alive.
+            </p>
 
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>What Changes Patterns</th>
-                    <th style={narrowThStyle}>Why It Works</th>
-                    <th style={narrowThStyle}>What Doesn't Work (and Why)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Sustained safety", "The nervous system recalibrates through accumulated safe experience. The compass learns it can return", "Intellectual understanding of safety. The cognitive system can know \"this is safe\" while the emotional-somatic system continues detecting threat"]} />
-                  <ThreeColRow cells={["Somatic awareness", "Reconnects the person to the body's signals \u2014 what is actually happening, not what the narrative says is happening", "Talking about the body. Describing sensations. The cognitive system can narrate embodiment without the person being embodied"]} />
-                  <ThreeColRow cells={["Co-regulation", "Another regulated nervous system provides the template the person's system can borrow. Regulation learned through being regulated with (F2)", "Instruction in regulation techniques. The technique is cognitive. The learning is somatic"]} />
-                  <ThreeColRow cells={["Corrective experience", "Experiences where the old pattern is activated but a different outcome occurs. The emotional-somatic system updates through new data", "Imagined scenarios. Cognitive rehearsal. The system updates from real experience, not simulated experience"]} />
-                  <ThreeColRow cells={["Titrated exposure", "Gradual, supported contact with what has been avoided. The system learns at its own pace that the avoided thing is survivable", "Flooding. Forced confrontation. Premature exposure that exceeds the system's current capacity and reinforces the pattern"]} />
-                  <ThreeColRow cells={["Time and consistency", "The emotional-somatic system updates slowly. It needs repeated experience, not single events", "Breakthrough moments. Single insights. One good conversation. These can be meaningful starting points but do not constitute the accumulated experience the system needs"]} />
-                </tbody>
-              </table>
+            <h3 style={conceptHeadingStyle}>What Actually Changes the Override</h3>
+
+            <p style={proseStyle}>
+              Since the Emotional Somatic System learns through experience, not explanation, reversing the override requires providing what was missing — not as concept, but as condition:
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Sustained safety.</strong> The nervous system recalibrates through accumulated safe experience. Not through being told &#34;this is safe&#34; — through being in conditions where safety is the sustained reality.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Somatic awareness.</strong> Reconnecting to the body&#39;s signals. Not talking about the body — being in the body. Noticing sensation, activation, discharge, state shifts. Rebuilding the interoceptive capacity that the culture did not develop.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Co-regulation.</strong> Another regulated nervous system providing the template the person&#39;s system can borrow. Regulation learned through being regulated with, not through instruction in regulation techniques.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Corrective experience.</strong> Experiences where the old pattern activates but a different outcome occurs. The ESS updates through new data, not through new narratives.
+            </p>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Time and consistency.</strong> The ESS updates slowly. It needs repeated experience, not single events. The override took thousands of years to become cultural inheritance. Reversing it in an individual takes sustained, consistent conditions — not a breakthrough.
+            </p>
+
+            {/* Section diagram: The paradox — cognitive understanding of the override cannot reverse a somatic pattern */}
+            {/* Diagram type: static */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Trauma research (van der Kolk, Levine, Ogden) demonstrates that the body keeps the score — somatic processing is required for change. Interpersonal neurobiology (Siegel, Schore) maps how integration, co-regulation, and relational regulation shape development and produce change through experience.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Three mechanisms explaining why insight-based approaches alone consistently underperform experience-based approaches: the timing problem (the ESS has already responded before insight arrives), the domain mismatch (cognition cannot reach the somatic substrate), and the appropriate limitation (the speed differential is a feature, not a flaw). This is not an argument against insight — it is an argument that insight addresses the CLS while the pattern lives in the ESS.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>The Willpower Assumption</h3>
-
-            <p style={proseStyle}>
-              The belief that understanding plus willpower equals change is one of the most damaging false coherences in contemporary culture. It locates failure in the individual ("you know what to do, why aren't you doing it?") when the architecture makes that expectation impossible.
-            </p>
-
-            <KeyStatement>
-              You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Trauma research (van der Kolk, Levine, Ogden) demonstrates that the body keeps the score — somatic processing is required for change. Interpersonal neurobiology (Siegel, Schore) maps how co-regulation and relational regulation shape development. Broaden-and-build theory (Fredrickson) shows how positive states broaden available responses while threat states narrow them.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F12 organizes these findings into a single architecture: the timing problem, the domain mismatch, and the appropriate limitation explain why insight-based approaches alone consistently underperform experience-based approaches. This is not an argument against insight — it is an argument for matching the intervention to the system it needs to reach.
-              </p>
-            </ExpandableSection>
           </section>
 
           {/* ════════════════════════════════════════════════
-              C3 — STATE-DEPENDENT BEHAVIOR
+              PART 3: WHAT THIS MEANS
              ════════════════════════════════════════════════ */}
 
-          <section id="state-dependent-behavior">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>State-Dependent Behavior</h2>
+          <PartDivider
+            color={SPECTRUM.blue}
+            label="Part 3"
+            title="What This Means"
+          />
 
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              How does nervous system state determine what a person can do?
-            </h2>
-
-            <h3 style={conceptHeadingStyle}>The Unifying Mechanism</h3>
-
-            <p style={proseStyle}>
-              F12 reveals that every framework in TEG-Blue describes the same thing: <strong>behavior organized by nervous system state.</strong>
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>What Changes by State</th>
-                    <th style={narrowThStyle}>Connection</th>
-                    <th style={narrowThStyle}>Protection</th>
-                    <th style={narrowThStyle}>Control</th>
-                    <th style={narrowThStyle}>Domination</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <FiveColRow cells={["Perception", "Broad \u2014 context, nuance, complexity available", "Narrow \u2014 threat-focused, binary", "Strategic \u2014 selective, management-oriented", "Tunnel \u2014 power-focused, elimination-oriented"]} />
-                  <FiveColRow cells={["Cognition", "Flexible \u2014 revision possible, ambiguity tolerable", "Simplified \u2014 fast decisions, either/or", "Sophisticated but rigid \u2014 complex analysis serving predetermined conclusions", "Weaponized \u2014 intelligence serving domination"]} />
-                  <FiveColRow cells={["Empathy", "Full \u2014 all three awareness capacities serving understanding", "Filtered \u2014 narrows to survival-relevant data", "Selective \u2014 Reading Emotions (RE) sharp, Emotional Resonance (ER) collapsed, serves strategy", "Absent \u2014 Reading Emotions (RE) redirected to exploitation, Emotional Resonance (ER) offline, Self-Emotional Awareness (SEA) absent"]} />
-                  <FiveColRow cells={["Time orientation", "Extended \u2014 past and future available", "Collapsed \u2014 only the immediate", "Controlled \u2014 future managed, past rewritten", "Irrelevant \u2014 only the current power equation"]} />
-                  <FiveColRow cells={["Learning", "Open \u2014 the system can afford to experiment", "Closed \u2014 the system cannot afford to be wrong", "Conditional \u2014 learns what serves the strategy", "Blocked \u2014 nothing can enter that threatens the structure"]} />
-                  <FiveColRow cells={["Repair capacity", "Available \u2014 vulnerability safe enough", "Dangerous \u2014 vulnerability is a cost", "Threatening \u2014 repair requires admitting the strategy failed", "Annihilating \u2014 vulnerability equals destruction"]} />
-                  <FiveColRow cells={["Relationship to truth", "Receivable \u2014 truth can be metabolized", "Threatening \u2014 truth competes with survival", "Manageable \u2014 truth is sorted into useful/dangerous", "Irrelevant \u2014 truth is whatever serves power"]} />
-                  <FiveColRow cells={["Accountability", "Possible \u2014 the person can see impact without collapsing", "Difficult \u2014 accountability feels like attack", "Performative \u2014 accountability becomes narrative management", "Rejected \u2014 accountability equals loss of control"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              Every dimension of human experience shifts with state. Not slightly — fundamentally. A person in Connection and the same person in chronic Control are operating with different perception, different cognition, different empathy, different relationship to truth. Not different "choices" — different <strong>available equipment.</strong>
-            </p>
-
-            <KeyStatement>
-              Every person is a person in a state. Change the state, and the person who shows up is different.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Polyvagal theory (Porges) maps how autonomic state determines social, cognitive, and emotional capacity. Window of tolerance research (Siegel) shows how arousal level constrains processing. State-dependent memory and learning research demonstrates that what is learned in one state is best recalled in that state.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F12 extends state-dependence from individual dimensions (perception, memory) to all dimensions simultaneously, showing that state organizes the complete package — perception, cognition, empathy, time orientation, learning, repair capacity, relationship to truth, and accountability all shift together as a coordinated state-dependent response.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              PART 2 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 2: The Integration
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              How F12 unifies TEG-Blue, what it means for intervention, and the principle that holds the entire system together.
-            </p>
-          </div>
-
-          {/* ════════════════════════════════════════════════
-              C4 — ONE MECHANISM, TWELVE ANGLES
-             ════════════════════════════════════════════════ */}
+          {/* ── C7: One Mechanism, All Twelve Frameworks ── */}
 
           <section id="one-mechanism">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>One Mechanism, Twelve Angles</h2>
-
-            <h3 style={conceptHeadingStyle}>TEG-Blue Is Not Twelve Frameworks</h3>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>One Mechanism, All Twelve Frameworks</h2>
 
             <p style={proseStyle}>
-              F12 proposes that it is one mechanism described from twelve angles:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Framework</th>
-                    <th style={thStyle}>Angle on State-Dependent Organization</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["F1", "The instrument \u2014 how state organizes through the compass and gradient"]} />
-                  <TableRow cells={["F2", "The calibration \u2014 how state-dependent awareness develops (or doesn't) through relational conditions"]} />
-                  <TableRow cells={["F3", "The cognitive layer \u2014 how cognition maintains whatever state the system is in"]} />
-                  <TableRow cells={["F4", "The collective expression \u2014 how state-dependent regulation becomes shared rules"]} />
-                  <TableRow cells={["F5", "The sorting mechanism \u2014 how state-dependent rules become worth hierarchies"]} />
-                  <TableRow cells={["F6", "The perceptual filter \u2014 how state-dependent worth becomes perception itself"]} />
-                  <TableRow cells={["F7", "The escalation pathway \u2014 how state-dependent protection becomes domination"]} />
-                  <TableRow cells={["F8", "The repair \u2014 how state-dependent capacities can be developed and how difference strengthens"]} />
-                  <TableRow cells={["F9", "The structural dimension \u2014 how state-dependent mismatch becomes architectural"]} />
-                  <TableRow cells={["F10", "The temporal dimension \u2014 how state-dependent patterns transmit and how repair transmits differently"]} />
-                  <TableRow cells={["F11", "The complexity \u2014 how state-dependent multi-rationality generates paradox"]} />
-                  <TableRow cells={["F12", "The architecture \u2014 why it all works this way"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>Internal Coherence</h3>
-
-            <p style={proseStyle}>
-              Every concept in F1–F11 is an expression of the same architecture:
+              Every framework in TEG-Blue describes the same mechanism from a different angle: behaviour organised by nervous system state, in a species that has largely lost access to the system that produces the state.
             </p>
 
             <p style={proseStyle}>
-              <strong>False coherence</strong> (F3) = the cognitive system narrating state-dependent regulation as truth. <strong>Rules</strong> (F4) = state-dependent regulation scaled to groups. <strong>Bias</strong> (F6) = state-dependent perception maintained because it serves regulation. <strong>Domination</strong> (F7) = state-dependent protection at maximum escalation. <strong>Repair</strong> (F8) = developing the capacity to shift state. <strong>Masking</strong> (F8–F9) = state-dependent performance maintained because authenticity triggers threat. <strong>Generational transmission</strong> (F10) = state-dependent patterns absorbed by the next nervous system. <strong>Paradox</strong> (F11) = the visible result of two information systems producing different outputs simultaneously.
+              <strong style={{ color: TEXT.primary }}>F1</strong> — how the compass reads the current state, and what happens when the reading is not received. <strong style={{ color: TEXT.primary }}>F2</strong> — how awareness capacities develop through conditions, and what happens when conditions do not support development. <strong style={{ color: TEXT.primary }}>F3</strong> — how cognition compensates for what the ESS cannot complete, and why the compensation feels like truth. <strong style={{ color: TEXT.primary }}>F4</strong> — how state-dependent regulation becomes shared rules, and why the rules feel necessary. <strong style={{ color: TEXT.primary }}>F5</strong> — how rules produce worth hierarchies, and why they feel deserved. <strong style={{ color: TEXT.primary }}>F6</strong> — how worth hierarchies become perception, and why bias feels like observation. <strong style={{ color: TEXT.primary }}>F7</strong> — how protection escalates to domination, and where accountability lives. <strong style={{ color: TEXT.primary }}>F8</strong> — how the interoceptive substrate rebuilds through relational safety, and why different configurations strengthen the collective. <strong style={{ color: TEXT.primary }}>F9</strong> — how the same regulatory instrument runs with different inputs, and why the environment is the variable. <strong style={{ color: TEXT.primary }}>F10</strong> — how capacity configuration transmits across generations, and how processing changes what transmits. <strong style={{ color: TEXT.primary }}>F11</strong> — how contradictions are predictable outcomes of multi-need systems, and why holding is the developmental achievement. <strong style={{ color: TEXT.primary }}>F12</strong> — why all of this works this way, and how the override became invisible.
             </p>
 
             <KeyStatement>
-              Every framework is the same architecture. The scale changes. The mechanism doesn't.
+              Every framework describes the same mechanism. The scale changes. The mechanism does not.
             </KeyStatement>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                The twelve-angle structure demonstrates internal coherence: every framework is a specific application of state-dependent nervous system organization. This makes the system testable as a unified architecture rather than as twelve independent claims — if state-dependent organization is the mechanism, then each framework's predictions should be consistent with the others.
-              </p>
-            </ExpandableSection>
+            <p style={proseStyle}>
+              Every substitution in F3–F7 happens because the cognitive system cannot reach the Emotional Somatic System. Every repair in F8–F10 works because it addresses the ESS through experience. Every paradox in F11 exists because two systems are producing different outputs simultaneously. F12 is the reason.
+            </p>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The twelve-angle structure demonstrates internal coherence: every framework is a specific application of state-dependent nervous system organisation. This makes the system testable as a unified architecture rather than as twelve independent claims — if state-dependent organisation is the mechanism, then each framework&#39;s predictions should be consistent with the others.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C5 — ACCOUNTABILITY WITHOUT DEMONIZATION
-             ════════════════════════════════════════════════ */}
+          {/* ── C8: The Design Principle ── */}
 
-          <section id="accountability">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Accountability Without Demonization</h2>
+          <section id="design-principle">
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Design Principle</h2>
 
             <p style={proseStyle}>
-              Understanding state-dependent behavior raises an immediate question: if behavior is organized by nervous system state, is anyone responsible for anything?
+              If all behaviour is state-dependent nervous system organisation, and the species has been running on cognitive override for thousands of years, then:
             </p>
 
             <p style={proseStyle}>
-              F12 holds both truths (F11's holding capacity applied to the hardest question):
+              <strong style={{ color: TEXT.primary }}>At the individual level:</strong> Reconnection to the Emotional Somatic System means restoring access to an information system that has been culturally suppressed. The work is not about &#34;getting in touch with feelings.&#34; It is about rebuilding the capacity to receive biological information that the nervous system never stopped producing.
             </p>
 
             <p style={proseStyle}>
-              <strong>Understanding the mechanism does not eliminate accountability.</strong> The person in chronic Control who manages and diminishes others is producing real harm — regardless of the nervous system state that organizes the behavior. The person in chronic Domination who subjugates others is producing real harm — regardless of the developmental history that produced the configuration. The system that excludes neurodivergent people (F9) is producing real harm — regardless of the regulatory logic that drives conformity.
+              <strong style={{ color: TEXT.primary }}>At the relational level:</strong> Relationships can be assessed by what nervous system state they produce, not just by what they provide. A relationship that chronically activates Threat &amp; Defence cannot also be the container for restoring somatic access.
             </p>
 
             <p style={proseStyle}>
-              <strong>Understanding the mechanism changes what is visible.</strong> The person is in a state. The state produces the behavior. The behavior produces harm. All of these are true simultaneously. Causality and accountability are separable (F7). Understanding why someone became who they became does not excuse what it costs others.
+              <strong style={{ color: TEXT.primary }}>At the institutional level:</strong> Environments designed for regulation first, performance second, produce different behaviour than environments designed for compliance. The design determines what state it produces. The state determines what capacity is available.
             </p>
 
-            <h3 style={conceptHeadingStyle}>The Five Transformations</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>From</th>
-                    <th style={thStyle}>To</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Judgment", "Discernment \u2014 \"This person is in a state that produces harmful behavior. The harm is real. The state is identifiable. The intervention can be matched\""]} />
-                  <TableRow cells={["Blame", "Mechanism \u2014 \"Their nervous system is organized in a way that produces this. Choice is available in some states and not in others\""]} />
-                  <TableRow cells={["Punishment", "Containment + conditions \u2014 \"The harm must be stopped AND the conditions that would enable different behavior can be identified\""]} />
-                  <TableRow cells={["Despair", "Architecture \u2014 \"People are state-dependent. Change the state, change what's available. Not always possible, but identifiable\""]} />
-                  <TableRow cells={["Moral character", "Configuration \u2014 \"They have a configuration that produces these patterns in these conditions. Different conditions, different patterns\""]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>The Limit</h3>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>At the systemic level:</strong> The conditions that rewarded cognitive override are still operating. Education systems that train cognition and ignore the body. Healthcare systems that treat symptoms and ignore states. Workplaces that demand performance and produce chronic activation. Legal systems that require accountability from people in states where accountability is not neurologically available.
+            </p>
 
             <p style={proseStyle}>
-              Accountability without demonization does not mean infinite patience or unlimited compassion. F7 establishes the limit: at the domination end of the gradient, protection of others is primary. Understanding the mechanism does not require remaining in its path.
+              These are not separate problems. They are the same pattern at different scales — a species that built its systems around one information system and forgot the other one.
             </p>
 
             <KeyStatement>
-              I understand the architecture. I see how you got here. And I will not remain where your state causes harm.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Restorative justice literature separates understanding causes from excusing harm. Situational psychology (Milgram, Zimbardo, Ross) demonstrates that situations predict behavior more than character — but situational understanding does not eliminate responsibility. Compassion-focused therapy (Gilbert) works with understanding mechanisms while maintaining accountability.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F12 grounds the accountability-understanding distinction in the two-system architecture: understanding operates in the cognitive system, behavior operates in the emotional-somatic system, and both are real simultaneously. This makes "I understand AND I hold accountable" an architectural description.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C6 — GRADIENT-MATCHED INTERVENTION
-             ════════════════════════════════════════════════ */}
-
-          <section id="gradient-matched-intervention">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Gradient-Matched Intervention</h2>
-
-            <p style={proseStyle}>
-              If state determines capacity, then intervention must match the state. Offering Connection-mode tools to a person in chronic Protection does not work — not because the tools are wrong, but because they require capacities the current state does not provide.
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Compass Position</th>
-                    <th style={narrowThStyle}>What Works</th>
-                    <th style={narrowThStyle}>What Doesn't Work (and Why)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Connection", "Direct engagement with complexity. Paradox work (F11). Deepening awareness. Integration of all three capacities", "Being treated as fragile. Simplification. Approaches that underestimate available capacity"]} />
-                  <ThreeColRow cells={["Protection", "Safety first. Co-regulation. Somatic work. Corrective experience. Building trust before building insight", "Insight-based approaches. Cognitive challenge. \"Think about why you do this.\" These require Connection-mode capacity the person doesn't currently have"]} />
-                  <ThreeColRow cells={["Control", "External accountability. Structured frameworks. Showing that the control strategy has costs the person hasn't calculated. Working with the cognitive system as entry point while building somatic and relational access", "Empathy-based appeals (\"think about how they feel\"). These are processed through the control strategy and managed, not felt. Also: admiration of the person's narrative"]} />
-                  <ThreeColRow cells={["Domination", "Containment. Protection of others. Clear consequences. External structure. Sustained pressure without escalation", "Vulnerability-based approaches. Trust-building. \"Let me help you feel.\" Vulnerability at this compass position feels like annihilation, not restoration"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>Pattern-Mismatch as Clinical Error</h3>
-
-            <p style={proseStyle}>
-              When the intervention does not match the state, three things happen: the intervention fails (the person cannot access what the intervention requires), the failure is attributed to the person ("resistant," "not ready," "not motivated"), and the person's false coherence is reinforced ("See, nothing works. This is just who I am").
-            </p>
-
-            <p style={proseStyle}>
-              The error is in the matching, not in the person. Identifying compass position before selecting intervention is not optional — it is the precondition for effectiveness.
-            </p>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                Gradient-matched intervention provides a framework for selecting approaches based on the state they need to reach, not the state the clinician or system prefers. This addresses the systematic pattern-mismatch error in therapeutic and institutional settings where one modality is applied regardless of compass position.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C7 — THE DESIGN IMPLICATION
-             ════════════════════════════════════════════════ */}
-
-          <section id="design-implication">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Design Implication</h2>
-
-            <p style={proseStyle}>
-              If behavior is state-dependent, then systems designed to change behavior must address state, not just information.
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Scale</th>
-                    <th style={thStyle}>Implication</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Individual", "Therapy that addresses the emotional-somatic system, not just the cognitive system. Somatic work, co-regulation, corrective experience, titrated exposure \u2014 not insight alone"]} />
-                  <TableRow cells={["Relational", "Relationships assessed by what state they produce, not just what they provide. A relationship that chronically activates Protection cannot also be the container for restoration"]} />
-                  <TableRow cells={["Institutional", "Environments designed for regulation first, performance second (F9). Policies that create safety produce different behavior than policies that demand compliance"]} />
-                  <TableRow cells={["Systemic", "\"Restore safety first, then expect capacity\" (F1) applied at every scale. Systems that operate through threat produce threat-state behavior. Systems that provide safety produce Connection-state capacity"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              Every system — from a family to an institution to a culture — is producing the behavior it is designed to produce. Not the behavior it intends to produce. Not the behavior it demands. The behavior that the state it creates makes available.
-            </p>
-
-            <KeyStatement>
-              The system gets the behavior the system creates conditions for. If you don't like the behavior, look at the conditions.
+              The Emotional Somatic System never stopped working. We stopped listening. The conditions that made us stop are identifiable. The conditions that would let us start again are buildable.
             </KeyStatement>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C8 — THE COMPLETE ARCHITECTURE
-             ════════════════════════════════════════════════ */}
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.blue}
+            items={[
+              {
+                term: "Two systems, one sequence",
+                definition: "The Emotional Somatic System arrives first. The Cognitive-Logical System narrates a process already underway. It does not direct it.",
+              },
+              {
+                term: "The capacity gap",
+                definition: "Culture sped up faster than biology. The reasoning tools scaled. The emotional hardware stayed largely the same.",
+              },
+              {
+                term: "The conditions that rewarded override",
+                definition: "Agriculture created conditions where acting on the signal was no longer possible. The signal is accurate. The environment changed.",
+              },
+              {
+                term: "Cultural inheritance of override",
+                definition: "After enough generations, cognitive override does not feel like override. It feels like being a person.",
+              },
+              {
+                term: "What the species forgot",
+                definition: "A species with two information systems — one of which it uses, one of which it has largely forgotten how to read.",
+              },
+              {
+                term: "Why insight alone cannot reverse the override",
+                definition: "The insight arrives after the state has already shifted. Understanding happens after the fact, not before it.",
+              },
+              {
+                term: "One mechanism, all twelve frameworks",
+                definition: "Every framework describes the same mechanism. The scale changes. The mechanism does not.",
+              },
+              {
+                term: "The design principle",
+                definition: "The Emotional Somatic System never stopped working. We stopped listening. The conditions that made us stop are identifiable. The conditions that would let us start again are buildable.",
+              },
+            ]}
+          />
 
-          <section id="complete-architecture">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Complete Architecture</h2>
-
-            <p style={proseStyle}>
-              One mechanism. Twelve angles. Every scale from a single nervous system to a civilization.
-            </p>
-
-            <p style={proseStyle}>
-              <strong>The mechanism:</strong> State-dependent nervous system organization responding to perceived safety.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>What It Explains</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Framework</th>
-                    <th style={thStyle}>What It Explains</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["F1", "Why emotions are information, not disruption"]} />
-                  <TableRow cells={["F2", "Why awareness develops through conditions, not instruction"]} />
-                  <TableRow cells={["F3", "Why cognition replaces what it can't regulate"]} />
-                  <TableRow cells={["F4\u2013F7", "Why rules, hierarchies, bias, and domination exist"]} />
-                  <TableRow cells={["F8", "Why repair requires experience, not explanation"]} />
-                  <TableRow cells={["F9", "Why inclusion requires design, not accommodation"]} />
-                  <TableRow cells={["F10", "Why patterns transmit through embodiment, not intention"]} />
-                  <TableRow cells={["F11", "Why contradictions are logical, not irrational"]} />
-                  <TableRow cells={["F12", "Why insight alone doesn't produce change"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>What It Prescribes</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Principle</th>
-                    <th style={thStyle}>Source</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Restore safety first, then expect capacity \u2014 at every scale", "F1"]} />
-                  <TableRow cells={["Develop the capacities that didn't have conditions to form", "F8"]} />
-                  <TableRow cells={["Design environments for the configurations that will use them", "F9"]} />
-                  <TableRow cells={["What the adult repairs, the child doesn't need to", "F10"]} />
-                  <TableRow cells={["Hold paradox rather than resolve it", "F11"]} />
-                  <TableRow cells={["Match the intervention to the state", "F12"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>The Sentence</h3>
-
-            <KeyStatement>
-              All human behavior is state-dependent nervous system organization responding to perceived safety — and understanding this changes everything about how we treat ourselves, each other, and the systems we build.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              KEY FORMULATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="key-formulations">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Key Formulations — F12</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Formulation</th>
-                    <th style={thStyle}>Concept</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["\"The cognitive system doesn't direct this process \u2014 it narrates a process already underway.\"", "Two Information Systems (C1)"]} />
-                  <TableRow cells={["\"The emotional-somatic system is not the problem. It is the system that determines what solutions are available.\"", "Two Information Systems (C1)"]} />
-                  <TableRow cells={["\"You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.\"", "Why Insight Fails (C2)"]} />
-                  <TableRow cells={["\"Every person is a person in a state. Change the state, and the person who shows up is different.\"", "State-Dependent Behavior (C3)"]} />
-                  <TableRow cells={["\"Every framework is the same architecture. The scale changes. The mechanism doesn't.\"", "One Mechanism (C4)"]} />
-                  <TableRow cells={["\"I understand the architecture. I see how you got here. And I will not remain where your state causes harm.\"", "Accountability (C5)"]} />
-                  <TableRow cells={["\"The system gets the behavior the system creates conditions for. If you don't like the behavior, look at the conditions.\"", "Design Implication (C7)"]} />
-                  <TableRow cells={["\"All human behavior is state-dependent nervous system organization responding to perceived safety \u2014 and understanding this changes everything.\"", "Complete Architecture (C8)"]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              RESEARCH FOUNDATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="research-foundations">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Research Foundations</h2>
-
-            <p style={{ ...proseStyle, marginBottom: 8 }}>
-              F12 integrates traditions that independently describe the two-system architecture and state-dependent organization:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Tradition</th>
-                    <th style={narrowThStyle}>Key Researchers</th>
-                    <th style={narrowThStyle}>F12 Integration</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Dual-Process Theory", "Kahneman, Stanovich, Evans", "C1 \u2014 reframed: not error-prone vs. corrective, but sequential partners where the first determines what the second can do"]} />
-                  <ThreeColRow cells={["Affective Neuroscience", "Damasio, LeDoux", "C1 \u2014 temporal primacy of emotion; somatic markers as the body's first language"]} />
-                  <ThreeColRow cells={["Polyvagal Theory", "Porges", "C3 \u2014 neuroception determines social capacity; autonomic state determines available behavior across all dimensions"]} />
-                  <ThreeColRow cells={["Trauma Research", "van der Kolk, Levine, Ogden", "C2 \u2014 why insight alone doesn't work; what actually changes patterns through somatic processing"]} />
-                  <ThreeColRow cells={["Interpersonal Neurobiology", "Siegel, Schore", "C2 \u2014 integration, co-regulation, and relational regulation as mechanisms of change"]} />
-                  <ThreeColRow cells={["Broaden-and-Build", "Fredrickson", "C3 \u2014 Connection mode broadens available responses; threat modes narrow them"]} />
-                  <ThreeColRow cells={["Situational Psychology", "Milgram, Zimbardo, Ross", "C7 \u2014 the system gets the behavior the system creates conditions for"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              <strong>F12's contribution:</strong> adding the regulatory state dimension to dual-process theory (what determines which thinking is available), integrating all twelve frameworks as expressions of one mechanism, and showing that the architecture itself — two systems, different speeds, state-dependent capacity — explains why every other framework works the way it does.
-            </p>
-          </section>
-
-                    {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
           <ConnectionsMap
             color={SPECTRUM.blue}
             connections={[
-              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 described the biological origin. F12 describes the architecture underneath — why the system works the way it does and why insight alone does not change it." },
+              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 described the biological origin — why the Emotional Somatic Cycle exists. F12 describes the history — why the species stopped listening to the system F1 maps." },
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 describes how awareness rebuilds through safety. F12 explains why the rebuilding must be experiential — because the ESS updates through experience, not the explanation the CLS provides." },
+              { id: "F10", href: "/framework/f10-generational-bridges", description: "F10 maps intergenerational transmission. F12 shows that the override itself transmitted through the same developmental mechanism — not through instruction, but through conditions." },
               { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps the four states. F12 shows the two information systems that produce and maintain those states." },
-              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps the restoration sequence. F12 explains why completion requires both systems operating together." },
-              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the awareness architecture. F12 shows why that architecture determines everything that follows." },
-              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 begins the return. F12 provides the architectural explanation for why the return follows the sequence it does." },
+              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the awareness capacities. F12 shows why a cognitive-override culture does not reliably develop them." },
             ]}
           />
 
@@ -908,10 +655,10 @@ export default function F12TwoInformationSystemsPage() {
           <NavSection
             color={SPECTRUM.blue}
             items={[
-              { label: "Return to the beginning", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient →" },
-              { label: "See the models the frameworks inform", href: "/models", linkText: "The Emotional Somatic Cycle →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Return to the beginning", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
+              { label: "See the models the frameworks inform", href: "/models", linkText: "The Emotional Somatic System \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) \u2192", external: true },
             ]}
           />
         </article>
@@ -920,14 +667,13 @@ export default function F12TwoInformationSystemsPage() {
 
       <SiteFooter />
 
-      {/* ── JSON-LD ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            headline: "Our Two Information Systems \u2014 Why Insight Alone Doesn't Change Behavior and What Actually Does",
+            headline: "The Two Information Systems \u2014 The Framework That Explains Why We Stopped Listening",
             description: metadata.description,
             author: {
               "@type": "Person",
@@ -941,7 +687,7 @@ export default function F12TwoInformationSystemsPage() {
             },
             url: "https://teg-blue.org/framework/f12-two-information-systems",
             datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            dateModified: "2026-04-05",
             isPartOf: {
               "@type": "CreativeWork",
               name: "TEG-Blue 12-Framework Architecture",
@@ -959,7 +705,7 @@ export default function F12TwoInformationSystemsPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "https://teg-blue.org" },
               { name: "12 Frameworks", url: "https://teg-blue.org/frameworks-map" },
-              { name: "F12 \u2014 Our Two Information Systems", url: "https://teg-blue.org/framework/f12-two-information-systems" },
+              { name: "F12 \u2014 The Two Information Systems", url: "https://teg-blue.org/framework/f12-two-information-systems" },
             ])
           ),
         }}
@@ -974,13 +720,12 @@ export default function F12TwoInformationSystemsPage() {
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Two Information Systems (F12) — TEG-Blue Research",
+              name: "The Two Information Systems (F12) \u2014 TEG-Blue Research",
               url: "https://teg-blue.org/framework/f12-two-information-systems",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -990,5 +735,3 @@ export default function F12TwoInformationSystemsPage() {
     </>
   );
 }
-
-const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };

@@ -32,7 +32,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Six Rule Categories", href: "#six-rule-systems", description: "Roles, Obedience, Performance, Dominance, Punishment, Entitlement — a regulatory taxonomy." },
   { label: "Rule Escalation", href: "#rule-escalation", description: "Four stages paralleling the four-mode gradient: from flexible norms through authoritarian control." },
   { label: "Cross-Theoretical Convergence", href: "#cross-theoretical-convergence", description: "Ten research traditions all describing the same mechanism. Rules as nervous system regulation at every scale." },
-  { label: "What F4 Establishes", href: "#what-f4-establishes", description: "The scaling mechanism defined, the seven-step loop mapped, the six-category taxonomy available." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "The scaling mechanism defined, the seven-step loop mapped, the six-category taxonomy available." },
   { label: "Research Foundations", href: "#research-foundations", description: "Sociology, social psychology, neuroscience, trauma studies, and political psychology." },
   { label: "Bridge to F5", href: "#bridge-to-f5", description: "Rule systems do not just organise behaviour. They organise value. Sorting formalises into worth hierarchies." },
 ];
@@ -547,7 +547,7 @@ export default function F4RulesRegulatePage() {
                 Each Rule System Expresses Differently Across the Gradient
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                In Connection, rules are held lightly — they serve the group and can be examined. In chronic Protection, rules are rigid — deviation feels dangerous. In chronic Control, rules serve management — they are selectively enforced to maintain the curated reality. In chronic Domination, rules are absolute — violation is met with punishment or elimination.
+                In Safety & Openness, rules are held lightly — they serve the group and can be examined. In chronic Threat & Defence, rules are rigid — deviation feels dangerous. In chronic Strategy & Management, rules serve management — they are selectively enforced to maintain the curated reality. In chronic Power & Dominance, rules are absolute — violation is met with punishment or elimination.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                 <strong style={{ color: TEXT.primary }}>The taxonomy is exhaustive at the regulatory level.</strong> These six categories cover the basic regulatory needs: identity, belonging, worth, power, boundaries, resources. Every specific rule ("boys don't cry," "respect your elders," "nice girls don't argue," "winners don't quit") can be located within this taxonomy by identifying which regulatory need it serves.
@@ -565,7 +565,7 @@ export default function F4RulesRegulatePage() {
                 Organizing six independently studied rule domains into a unified taxonomy where each category is defined by its regulatory function — not by its content but by what it does for the nervous system. The functional definition is original: Roles stabilize identity. Obedience protects belonging. Performance verifies worth. Dominance establishes power. Punishment enforces boundaries. Entitlement allocates resources.
               </p>
               <p style={expandedProseStyle}>
-                The gradient expression of each rule system across four modes connects to the Inner Compass: rule expression changes depending on where the compass is. The same rule ("respect your elders") operates as flexible guidance in Connection and as absolute enforcement in Domination. The punishment vs. accountability distinction is clinically significant — when punishment rules are normalized, people lose the ability to distinguish between being hurt and causing harm.
+                The gradient expression of each rule system across four modes connects to the Inner Compass: rule expression changes depending on where the compass is. The same rule ("respect your elders") operates as flexible guidance in Safety & Openness and as absolute enforcement in Power & Dominance. The punishment vs. accountability distinction is clinically significant — when punishment rules are normalized, people lose the ability to distinguish between being hurt and causing harm.
               </p>
             </ExpandableSection>
           </section>
@@ -597,22 +597,22 @@ export default function F4RulesRegulatePage() {
                   <TableRow cells={[
                     "Initial",
                     "Informal rules; social pressure; flexibility possible",
-                    "Connection-like flexibility",
+                    "Safety & Openness — flexibility",
                   ]} />
                   <TableRow cells={[
                     "Intermediate",
                     "Rules proliferate; deviation increasingly costly; moralization begins",
-                    "Protection-like narrowing",
+                    "Threat & Defence — narrowing",
                   ]} />
                   <TableRow cells={[
                     "Advanced",
                     "Reduced tolerance for deviation; increased punishment; obedience as virtue",
-                    "Control-like enforcement",
+                    "Strategy & Management — enforcement",
                   ]} />
                   <TableRow cells={[
                     "Extreme",
                     "Authoritarian enforcement; rule-breaking as identity threat; violence normalized",
-                    "Domination-like violence",
+                    "Power & Dominance — violence",
                   ]} />
                 </tbody>
               </table>
@@ -738,80 +738,40 @@ export default function F4RulesRegulatePage() {
             </ExpandableSection>
           </section>
 
-          {/* ─── WHAT F4 ESTABLISHES ───────────────────────── */}
-          <section
-            id="what-f4-establishes"
-            aria-labelledby="heading-what-f4-establishes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-f4-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What F4 Establishes
-            </h2>
-
-            <p style={proseStyle}>
-              F4 shows how individual nervous system patterns scale into collective rule systems — through the mechanisms F3 established operating at the group level. It is the first framework in the collective arc (F4–F7), each describing a progressively larger-scale substitute for the regulation that was never built.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              Core Concepts
-            </h3>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Concept</th>
-                    <th style={thStyle}>What It Means</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "From individual to collective",
-                    "F3's mechanisms scale: emotional distortion makes rule-violation feel like attack; external regulation makes compliance a nervous system need; false coherence absorbs rules as truth. Collective rules emerge from below, not imposed from above.",
-                  ]} />
-                  <TableRow cells={[
-                    "Seven-step rule internalization",
-                    "The mechanism: attention narrows → ambiguity decreases → deviation costs → conformity rewarded → self-policing → rules invisible → questioning activates threat. Self-reinforcing loop.",
-                  ]} />
-                  <TableRow cells={[
-                    "Six rule systems",
-                    "Roles (identity), Obedience (belonging), Performance (worth), Dominance (power), Punishment (boundaries), Entitlement (resources). Defined by regulatory function. Expressed across the gradient.",
-                  ]} />
-                  <TableRow cells={[
-                    "Rule escalation",
-                    "Four stages paralleling the four-mode gradient. Collective compass movement from flexibility through enforcement to authoritarian control. Predictable and interruptible.",
-                  ]} />
-                  <TableRow cells={[
-                    "Cross-theoretical convergence",
-                    "Ten traditions describing the same mechanism from different angles. Rules as nervous system regulation at every scale.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>
-              Key Formulations
-            </h3>
-
-            <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
-              {[
-                "\"Rule-following is often a nervous system regulation strategy, not a reasoning choice\"",
-                "\"Rules persist because of the regulatory function they now serve\"",
-                "\"Questioning rules recreates threat, because the rules are part of collective false coherence\"",
-                "\"The mechanism that created the rules is the mechanism that protects the rules\"",
-                "\"Not ideological anomalies, but predictable outcomes of prolonged collective threat\"",
-                "\"Collective rules are not imposed from above — they emerge from below\"",
-                "\"Every specific rule can be located within this taxonomy by identifying which regulatory need it serves\"",
-                "\"Restore safety first, then expect flexibility\"",
-                "\"Distinguish punishment (suffering) from accountability (understanding + repair)\"",
-                "\"The collective compass can move when the safety signal changes\"",
-              ].map((f, i) => (
-                <li key={i} style={{ ...listItemStyle, fontStyle: "italic" }}>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.cobalt}
+            items={[
+              {
+                term: "Three-mechanism scaling",
+                definition: "False Coherence absorbs rules as truth. Emotional distortion makes rule-violation feel like attack. External regulation makes compliance a nervous system need. Collective patterns emerge from below, not imposed from above.",
+              },
+              {
+                term: "Rules as regulatory material",
+                definition: "The CLS absorbs rules that stabilise, not rules that are accurate. The CLS cannot distinguish between the two.",
+              },
+              {
+                term: "The internalisation loop",
+                definition: "Seven steps from external enforcement to invisible truth. Self-sealing: questioning the rules activates the threat that created them.",
+              },
+              {
+                term: "Six regulatory functions",
+                definition: "Roles (identity), Obedience (belonging), Performance (worth), Dominance (power), Punishment (boundaries), Entitlement (resources). Exhaustive at the regulatory level.",
+              },
+              {
+                term: "Rules reproduce the substrate state",
+                definition: "Rule systems produce the caregiver profiles that produce the offspring substrate states. The loop operates across generations.",
+              },
+              {
+                term: "Three collective coherence forms",
+                definition: "Absent access: rules feel like reality. Contested access: something feels wrong. Full access: rules held as constructions. System stability depends on the ratio.",
+              },
+              {
+                term: "Rule escalation",
+                definition: "Four stages paralleling the nervous system gradient. Predictable and interruptible.",
+              },
+            ]}
+          />
 
           {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
           <section

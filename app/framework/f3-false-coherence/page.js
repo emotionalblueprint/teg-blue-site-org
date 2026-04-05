@@ -34,8 +34,8 @@ const SIDEBAR_SECTIONS = [
   { label: "The Self-Awareness Split", href: "#cognition-across-gradient", description: "Sharp pattern-reading capacity while SEA remains offline — intellectually sophisticated about everyone else." },
   { label: "Emotional Distortion", href: "#relational-turn", description: "Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence." },
   { label: "External Regulation", href: "#external-regulation", description: "When internal processing is unavailable, others must provide regulation. Four modes, four strategies." },
-  { label: "The Regulation Thread", href: "#what-f3-establishes", description: "The critical turn: from biological return through developmental failure to cognitive replacement." },
-  { label: "What F3 Establishes", href: "#what-f3-establishes", description: "False coherence defined, the self-reinforcing loop mapped, emotional distortion and external regulation named." },
+  { label: "The Regulation Thread", href: "#regulation-thread", description: "The critical turn: from biological return through developmental failure to cognitive replacement." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "False coherence defined, the self-reinforcing loop mapped, emotional distortion and external regulation named." },
   { label: "Research Foundations", href: "#research-foundations", description: "Psychoanalytic theory, cognitive psychology, neuroscience, trauma studies, and attachment." },
   { label: "Bridge to F4", href: "#bridge-to-f4", description: "What happens when enough people running these mechanisms are in proximity." },
 ];
@@ -154,12 +154,12 @@ export default function F3FalseCoherencePage() {
               {
                 title: "Projection",
                 commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
-                definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Reading the world through settings designed to protect your only return path. Without SEA (Self-Emotional Awareness), the scanning feels like accurate perception.",
+                definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Reading the world through settings designed to protect your only return path. Without SEA (Interoceptive Self-Awareness), the scanning feels like accurate perception.",
               },
               {
                 title: "Validation-Seeking",
                 commonUnderstanding: "Insecurity, neediness — fishing for compliments, needing constant reassurance.",
-                definition: "Emotional regulation — the nervous system seeking external confirmation to settle activation that SEA (Self-Emotional Awareness) cannot process internally. When the internal signal is missing, the system looks outward for what it cannot generate from within.",
+                definition: "Emotional regulation — the nervous system seeking external confirmation to settle activation that SEA (Interoceptive Self-Awareness) cannot process internally. When the internal signal is missing, the system looks outward for what it cannot generate from within.",
               },
             ]}
           />
@@ -191,7 +191,7 @@ export default function F3FalseCoherencePage() {
                   Cognitive dissonance is a regulatory stress response — safety must precede truth, not the other way around
                 </li>
                 <li style={propositionItemStyle}>
-                  When Self-Emotional Awareness is structurally absent, internal discomfort becomes perceived external threat — emotional distortion is sincere misattribution — the nervous system reporting a threat source it cannot accurately locate
+                  When Interoceptive Self-Awareness is structurally absent, internal discomfort becomes perceived external threat — emotional distortion is sincere misattribution — the nervous system reporting a threat source it cannot accurately locate
                 </li>
                 <li style={propositionItemStyle}>
                   External regulation — using others to manage what cannot be processed internally — is a structural necessity, expressed differently across each chronic mode
@@ -231,7 +231,7 @@ export default function F3FalseCoherencePage() {
               False coherence is not "bad thinking." It is a <strong style={{ color: TEXT.primary }}>regulation strategy</strong>: cognition managing what the body was never taught to process. The person can feel stable — even "logical" — while the underlying activation remains unresolved. The cost is truth, not function.
             </p>
             <p style={proseStyle}>
-              F3 also traces what this system <em>does to the people around it</em>. When internal emotional processing is structurally unavailable, two mechanisms emerge: <strong style={{ color: TEXT.primary }}>emotional distortion</strong> — where internal discomfort, unable to be identified as one's own, gets reclassified as external attack — and <strong style={{ color: TEXT.primary }}>external regulation</strong> — where the system recruits other people's emotional states, compliance, or fear to manage what Self-Emotional Awareness (SEA) cannot process internally.
+              F3 also traces what this system <em>does to the people around it</em>. When internal emotional processing is structurally unavailable, two mechanisms emerge: <strong style={{ color: TEXT.primary }}>emotional distortion</strong> — where internal discomfort, unable to be identified as one's own, gets reclassified as external attack — and <strong style={{ color: TEXT.primary }}>external regulation</strong> — where the system recruits other people's emotional states, compliance, or fear to manage what Interoceptive Self-Awareness (SEA) cannot process internally.
             </p>
             <p style={proseStyle}>
               This is the critical turn in the regulation thread: from F1's biological return, through F2's developmental failure of that return, to F3's cognitive replacement of the return and its relational consequences. Every framework that follows — F4 through F7 — describes a different scale at which the substitutes operate. Rules regulate (F4). Worth hierarchies regulate (F5). Bias regulates (F6). Domination regulates (F7). Each is a substitute for the emotional regulation that was never built. The substitutes work. They just are not the return.
@@ -348,19 +348,19 @@ export default function F3FalseCoherencePage() {
                   </thead>
                   <tbody>
                     <TableRow cells={[
-                      "Chronic Connection",
+                      "Chronic Safety & Openness",
                       "\"I'm just a caring person. I put others first because that's who I am.\"",
                     ]} />
                     <TableRow cells={[
-                      "Chronic Protection",
+                      "Chronic Threat & Defence",
                       "\"The world really is dangerous. I'm not paranoid — I'm realistic.\"",
                     ]} />
                     <TableRow cells={[
-                      "Chronic Control",
+                      "Chronic Strategy & Management",
                       "\"I'm just being strategic. I'm the responsible one. Someone has to hold it together.\"",
                     ]} />
                     <TableRow cells={[
-                      "Chronic Domination",
+                      "Chronic Power & Dominance",
                       "\"They deserved it. I'm strong. If they can't handle me, that's their problem.\"",
                     ]} />
                   </tbody>
@@ -509,22 +509,22 @@ export default function F3FalseCoherencePage() {
                 </thead>
                 <tbody>
                   <TableRow cells={[
-                    "Chronic Connection",
+                    "Chronic Safety & Openness",
                     "Collapse, guilt, self-blame: \"I'm so sorry, I'm terrible, you're right, I'll do better.\"",
                     "Restores the narrative \"I am the caring one\" by absorbing the blame — because absorbing blame is less threatening than examining the narrative.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Protection",
+                    "Chronic Threat & Defence",
                     "Withdrawal, attack, shutdown: \"You're the problem. I knew I couldn't trust you. I'm done.\"",
                     "Restores stability by eliminating the source of the contradiction.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Control",
+                    "Chronic Strategy & Management",
                     "Strategic reframing, blame reversal, rational dismantling: \"Actually, if you look at the facts...\" \"I think you're projecting.\"",
                     "Restores coherence by out-narrating the challenge — using cognition's own tools to neutralize the threat cognitively.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Domination",
+                    "Chronic Power & Dominance",
                     "Rage, punishment, elimination: \"You will regret this.\" \"Who do you think you are?\"",
                     "Restores stability by destroying the challenge entirely — the narrative cannot tolerate any contradiction at all.",
                   ]} />
@@ -561,10 +561,10 @@ export default function F3FalseCoherencePage() {
               The identity that cognition built around the capacity gaps does not stay static. It gets <em>upgraded</em> — refined through achievement, ideology, self-optimization, and spiritual or therapeutic narratives. These upgrades may resemble genuine capacity development while serving the same regulatory function as the original identity structure.
             </p>
             <p style={proseStyle}>
-              Examples: the person in chronic Control who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more sophisticated control strategy. The person in chronic Connection who adds "empowered empath" — but uses the language of empowerment to narrate continued self-erasure. The person in chronic Protection who adds "boundary expert" — but uses boundaries as walls that prevent connection rather than enable it.
+              Examples: the person in chronic Strategy & Management who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more sophisticated control strategy. The person in chronic Safety & Openness who adds "empowered empath" — but uses the language of empowerment to narrate continued self-erasure. The person in chronic Threat & Defence who adds "boundary expert" — but uses boundaries as walls that prevent connection rather than enable it.
             </p>
             <p style={proseStyle}>
-              A person can gain <strong style={{ color: TEXT.primary }}>skills</strong> (language, techniques, status) while still missing <strong style={{ color: TEXT.primary }}>capacities</strong> (Self-Emotional Awareness / SEA, emotional tolerance, the return to baseline). Upgrades often improve performance without changing the internal configuration.
+              A person can gain <strong style={{ color: TEXT.primary }}>skills</strong> (language, techniques, status) while still missing <strong style={{ color: TEXT.primary }}>capacities</strong> (Interoceptive Self-Awareness / SEA, emotional tolerance, the return to baseline). Upgrades often improve performance without changing the internal configuration.
             </p>
 
             <KeyStatement>
@@ -638,32 +638,32 @@ export default function F3FalseCoherencePage() {
                 </thead>
                 <tbody>
                   <TableRow cells={[
-                    "Connection",
+                    "Safety & Openness",
                     "Integrates, revises, tolerates ambiguity. Emotional signals received and used.",
                     "Minimal replacement needed. Cognition serves truth.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Connection",
+                    "Chronic Safety & Openness",
                     "Replaces own needs with others' needs. Self-signals overwritten by resonance data.",
                     "\"I'm fine. What do you need?\" \"I don't mind, really.\"",
                   ]} />
                   <TableRow cells={[
-                    "Protection",
+                    "Threat & Defence",
                     "Defends, simplifies, stabilizes. Temporary and proportionate.",
                     "Minimal replacement — system is responding to actual threat.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Protection",
+                    "Chronic Threat & Defence",
                     "Replaces vulnerability with threat narratives. Emotional signals reinterpreted as danger.",
                     "\"You can't trust anyone.\" \"I'm not anxious — I'm realistic.\"",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Control",
+                    "Chronic Strategy & Management",
                     "Replaces feeling with strategy. Emotional signals overwritten by management narratives.",
                     "\"I'm not controlling — I'm responsible.\" \"I don't have a problem. I have a plan.\"",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Domination",
+                    "Chronic Power & Dominance",
                     "Replaces fear with power narratives. Emotional signals fully overwritten.",
                     "\"They deserved it.\" \"I'm not angry — I'm right.\" \"If they can't handle me, that's their weakness.\"",
                   ]} />
@@ -684,7 +684,7 @@ export default function F3FalseCoherencePage() {
                 The Self-Awareness / Emotional Awareness Split
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                A person in chronic Control can have extremely high self-awareness — they can describe their patterns, analyze their dynamics, narrate their history with precision. But this is cognition narrating <em>about</em> emotions without connecting <em>to</em> them. Reading Emotions (RE) is sharp — they read everything. Self-Emotional Awareness (SEA) is offline — they feel nothing of their own.
+                A person in chronic Strategy & Management can have extremely high self-awareness — they can describe their patterns, analyze their dynamics, narrate their history with precision. But this is cognition narrating <em>about</em> emotions without connecting <em>to</em> them. Interpersonal Affect Perception (RE) is sharp — they read everything. Interoceptive Self-Awareness (SEA) is offline — they feel nothing of their own.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                 This explains why highly articulate, psychologically literate people can stay deeply stuck. Their system can generate sophisticated narratives <em>about</em> emotion while the original signal remains unreceived. <strong style={{ color: TEXT.primary }}>The story can sound like processing — while functioning as replacement.</strong>
@@ -710,7 +710,7 @@ export default function F3FalseCoherencePage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={expandedProseStyle}>
-                The gradient cognitive map showing how the same replacement mechanism produces different content at different positions — and serves different regulatory functions. The self-awareness / emotional awareness split as a direct consequence of capacity configuration: RE sharp, SEA offline = can narrate everything, feel nothing. This explains why insight fails differently in each mode — in chronic Connection, insight produces self-blame; in chronic Control, insight produces more sophisticated management; in chronic Domination, insight is weaponized as a tool for narrative control.
+                The gradient cognitive map showing how the same replacement mechanism produces different content at different positions — and serves different regulatory functions. The self-awareness / emotional awareness split as a direct consequence of capacity configuration: RE sharp, SEA offline = can narrate everything, feel nothing. This explains why insight fails differently in each mode — in chronic Safety & Openness, insight produces self-blame; in chronic Strategy & Management, insight produces more sophisticated management; in chronic Power & Dominance, insight is weaponized as a tool for narrative control.
               </p>
             </ExpandableSection>
           </section>
@@ -824,25 +824,25 @@ export default function F3FalseCoherencePage() {
                 </thead>
                 <tbody>
                   <TableRow cells={[
-                    "Chronic Connection — Fusion",
+                    "Chronic Safety & Openness — Fusion",
                     "Others' emotional states fill the void where self-awareness should be.",
                     "Others' calm makes them calm. Others' approval makes them okay. Others' distress destabilizes them — not empathy, but fusion.",
                     "Emotional exhaustion, guilt, feeling responsible for another person's entire regulation.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Protection — Distance",
+                    "Chronic Threat & Defence — Distance",
                     "Others' reliable distance serves as a buffer against activation.",
                     "Intimacy is the threat. Withdrawal is the regulation. Others kept at arm's length through anger, coldness, or performed self-sufficiency.",
                     "Rejection, confusion, walking on eggshells around unpredictable emotional availability.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Control — Management",
+                    "Chronic Strategy & Management — Management",
                     "Others' compliance substitutes for the self-regulation that SEA would provide.",
                     "Steers conversations, manages information, corrects behavior, maintains curated reality — not for power, but for internal stability.",
                     "Loss of agency, questioning your own reality, performing compliance to avoid subtle punishment.",
                   ]} />
                   <TableRow cells={[
-                    "Chronic Domination — Subjugation",
+                    "Chronic Power & Dominance — Subjugation",
                     "Others' fear and submission directly settle internal activation.",
                     "When others submit, the activation settles — temporarily. The environment is organized around their emotional state.",
                     "Living in fear, loss of autonomy, systematic dehumanization.",
@@ -851,7 +851,7 @@ export default function F3FalseCoherencePage() {
               </table>
             </div>
 
-            {/* Chronic Control deep dive */}
+            {/* Chronic Strategy & Management deep dive */}
             <div
               style={{
                 padding: 20,
@@ -862,20 +862,20 @@ export default function F3FalseCoherencePage() {
               }}
             >
               <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Mode That Most Reliably Mimics Connection
+                The Mode That Most Reliably Mimics Safety & Openness
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                Chronic Control is the mode most often invisible to outside observers. The performance of warmth <em>is</em> the regulation strategy. Apologies serve image. Generosity serves control. Vulnerability is offered strategically, never spontaneously. The person appears warm, competent, and caring in public — they perform empathy with precision (RE sharp, right words chosen, no felt resonance behind them). They manage their image with the same precision they manage everything else. They create a public narrative that directly contradicts the private reality.
+                Chronic Strategy & Management is the mode most often invisible to outside observers. The performance of warmth <em>is</em> the regulation strategy. Apologies serve image. Generosity serves control. Vulnerability is offered strategically, never spontaneously. The person appears warm, competent, and caring in public — they perform empathy with precision (RE sharp, right words chosen, no felt resonance behind them). They manage their image with the same precision they manage everything else. They create a public narrative that directly contradicts the private reality.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
                 The person on the receiving end — the partner, the child, the employee who sees behind the performance — lives inside the managed reality. They experience subtle coercion, narrative control, emotional manipulation, and strategic withdrawal of warmth. They often cannot name what is happening because nothing visible has occurred. They appear "unstable," "emotional," or "not coping" — because chronic exposure to reality distortion produces exactly these symptoms. And they are not believed when they describe what is happening — because it contradicts what everyone else sees.
               </p>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Control and pathologizes the person on the receiving end.</strong> This is not a conspiracy. It is the structural outcome of: chronic Control's regulation strategy (performance of Connection); the worth filter (F5) — the person in chronic Control often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
+                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Strategy & Management and pathologizes the person on the receiving end.</strong> This is not a conspiracy. It is the structural outcome of: chronic Strategy & Management's regulation strategy (performance of Safety & Openness); the worth filter (F5) — the person in chronic Strategy & Management often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
               </p>
             </div>
 
-            {/* Chronic Domination deep dive */}
+            {/* Chronic Power & Dominance deep dive */}
             <div
               style={{
                 padding: 20,
@@ -906,107 +906,44 @@ export default function F3FalseCoherencePage() {
             </ExpandableSection>
           </section>
 
-          {/* ─── WHAT F3 ESTABLISHES ───────────────────────── */}
-          <section
-            id="what-f3-establishes"
-            aria-labelledby="heading-what-f3-establishes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-f3-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What F3 Establishes
-            </h2>
-
-            <p style={proseStyle}>
-              F3 shows how the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. It completes the individual arc and provides the bridge to collective scaling.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              Core Concepts
-            </h3>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Concept</th>
-                    <th style={thStyle}>What It Means</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Cognition tells the emotional system \"you're not needed\"",
-                    "The core mechanism. Cognition on threat duty doesn't just miss emotional signals — it replaces them with invented narratives. The replacement feels like truth. The replacement is regulation.",
-                  ]} />
-                  <TableRow cells={[
-                    "False coherence",
-                    "Regulatory success at the cost of emotional truth. The narrative is complete, coherent, felt as real — and wrong. Regulation.",
-                  ]} />
-                  <TableRow cells={[
-                    "The self-reinforcing loop",
-                    "Each successful replacement teaches the system \"this works.\" The loop hardens through use. Insight can be incorporated without breaking it.",
-                  ]} />
-                  <TableRow cells={[
-                    "Cognitive dissonance as regulatory stress",
-                    "A nervous system event. Challenging false coherence threatens the only regulatory system the person has. Safety must precede truth.",
-                  ]} />
-                  <TableRow cells={[
-                    "Regulatory defense",
-                    "Any identity built around capacity gaps will defend itself when challenged — because the person is defending their regulation, not their opinion. Intensity tracks the gradient.",
-                  ]} />
-                  <TableRow cells={[
-                    "Identity upgrades",
-                    "Growth narratives can serve regulation rather than development. The diagnostic: is cognition serving truth or serving the mode?",
-                  ]} />
-                  <TableRow cells={[
-                    "Rigidity is state-dependent",
-                    "Not character. Cognitive load from running the replacement process permanently. When the body learns an alternative regulatory path, rigidity can release.",
-                  ]} />
-                  <TableRow cells={[
-                    "Cognition across the gradient",
-                    "Same replacement mechanism, different content. Self-awareness without emotional awareness = cognition narrating about feelings without feeling them.",
-                  ]} />
-                  <TableRow cells={[
-                    "Emotional distortion",
-                    "When SEA is offline, internal discomfort becomes perceived external threat. Retaliation feels like self-defense. Operates on a spectrum — SEA can be partial.",
-                  ]} />
-                  <TableRow cells={[
-                    "External regulation",
-                    "When internal processing is unavailable, the system uses others to regulate. Four modes: fusion, distance, management, subjugation. Chronic Control mimics Connection. Chronic Domination follows addiction logic.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>
-              Key Formulations
-            </h3>
-
-            <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
-              {[
-                "\"Cognition tells the emotional system: you're not needed here\"",
-                "\"False coherence is regulatory success at the cost of emotional truth\"",
-                "\"Beliefs feel true because they restore nervous system stability, not because they are accurate\"",
-                "\"A belief can be both regulating and accurate — but under threat, the system prioritizes what is stabilizing over what is informative\"",
-                "\"You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in.\"",
-                "\"The story can sound like processing — while functioning as replacement\"",
-                "\"Common sense may be a coherence strategy calibrated in childhood and presented as universal wisdom\"",
-                "\"This isn't becoming someone new. It's existing capacity returning once the system is no longer paying the tax of constant replacement.\"",
-                "\"Often this is not conscious manipulation — it is sincere misattribution\"",
-                "\"Retaliation feels like self-defense — because the nervous system is reporting a threat that is not there\"",
-                "\"Your boundaries become their evidence\"",
-                "\"External regulation is the only pathway the system has left when the internal channel is offline\"",
-                "\"The mode that most reliably mimics Connection\"",
-                "\"Tolerance builds — the same level of domination does not produce the same level of relief\"",
-                "\"There is no amount of domination that will make them feel safe — because the safety they need is internal\"",
-                "\"The cognitive system that replaces personal emotional truth is the same system that absorbs and enforces social truth\"",
-                "\"Every framework from F4 to F7 describes a different substitute for the regulation that was never built\"",
-              ].map((f, i) => (
-                <li key={i} style={{ ...listItemStyle, fontStyle: "italic" }}>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.cobalt}
+            items={[
+              {
+                term: "Cognitive Override as default architecture",
+                definition: "Override is not an event — it is the permanent structure. The CLS was built without the interoceptive channel and has never operated any other way. Where physiological data is absent, the CLS generates narrative.",
+              },
+              {
+                term: "False Coherence",
+                definition: "Signal Replacement: the CLS generates narrative that takes the place of the ESS's physiological signals. Produces Temporary Relief Without Completion — sympathetic activation decreases, the CLS encodes 'this works,' the pattern reinforces. A Restoration Substitute that operates through narrative.",
+              },
+              {
+                term: "The self-reinforcing loop",
+                definition: "Each narrative cycle strengthens the pattern. Merges with The State-Reinforcing Loop (M2) at the cognitive level: the state shapes perception, the narrative explains perception, both lock together. Why insight alone fails: insight is a CLS operation, the state is an ESS condition, and the interoceptive channel is absent.",
+              },
+              {
+                term: "Cognitive dissonance as regulatory threat",
+                definition: "Challenging the narrative threatens the Restoration Substitute. The nervous system responds as threat — cortisol spikes, muscles brace, attentional narrowing. Resolution strategies (denial, projection, counterattack) are the CLS performing its regulatory function, not thinking errors. Safety must precede truth.",
+              },
+              {
+                term: "Growth narratives serving regulation",
+                definition: "Skills are CLS acquisitions. Capacities require the body's restoration sequence to have run. The diagnostic question: has the body learned anything new about returning to physiological baseline?",
+              },
+              {
+                term: "Emotional Distortion",
+                definition: "When Interoceptive Self-Awareness (SEA) is absent, internal activation cannot be located internally. Internal discomfort becomes perceived external attack. The boundary-evidence loop: the other person's self-protection becomes evidence of being attacked. Structural, not a reasoning error.",
+              },
+              {
+                term: "External Regulation",
+                definition: "The nervous system recruits others to perform the regulatory function. Each Chronic State Organisation uses others differently — fusion (Chronic Safety & Openness), distance (Chronic Threat & Defence), management (Chronic Strategy & Management), subjugation (Chronic Power & Dominance). The self-sealing property: the substitute destroys the relational conditions genuine restoration would require.",
+              },
+              {
+                term: "From individual to collective",
+                definition: "The same CLS that maintains individual False Coherence absorbs and enforces collective rules. Individual narrative substitution scales to collective rule systems. The mechanism is the same. The scale changes. Bridge to F4.",
+              },
+            ]}
+          />
 
           {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
           <section
@@ -1216,12 +1153,12 @@ export default function F3FalseCoherencePage() {
               {
                 question: "What is emotional distortion in the TEG-Blue framework?",
                 answer:
-                  "Emotional distortion occurs when Self-Emotional Awareness (SEA) is structurally absent and internal discomfort cannot be identified as one's own. The feeling loses its name, the body attributes it to an external source, and the person genuinely perceives a threat that is not there. Retaliation feels like self-defense. This is sincere misattribution, not conscious manipulation.",
+                  "Emotional distortion occurs when Interoceptive Self-Awareness (SEA) is structurally absent and internal discomfort cannot be identified as one's own. The feeling loses its name, the body attributes it to an external source, and the person genuinely perceives a threat that is not there. Retaliation feels like self-defense. This is sincere misattribution, not conscious manipulation.",
               },
               {
                 question: "What is external regulation?",
                 answer:
-                  "External regulation is the use of other people's emotional states, compliance, or fear to manage internal activation that cannot be processed internally. Each chronic mode uses others differently: chronic Connection uses fusion, chronic Protection uses distance, chronic Control uses management, and chronic Domination uses subjugation. It is a structural necessity when internal regulation channels are offline.",
+                  "External regulation is the use of other people's emotional states, compliance, or fear to manage internal activation that cannot be processed internally. Each chronic mode uses others differently: chronic Safety & Openness uses fusion, chronic Threat & Defence uses distance, chronic Strategy & Management uses management, and chronic Power & Dominance uses subjugation. It is a structural necessity when internal regulation channels are offline.",
               },
               {
                 question: "How does F3 connect to the rest of the TEG-Blue system?",

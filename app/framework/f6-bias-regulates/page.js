@@ -33,7 +33,7 @@ const SIDEBAR_SECTIONS = [
   { label: "The Formation Loop", href: "#formation-loop", description: "Uncertainty → rapid interpretation → identity fusion → social reinforcement → challenge triggers defence." },
   { label: "Phenomenology of Certainty", href: "#phenomenology-of-certainty", description: "Certainty is physiological stability, not epistemic accuracy. Why bias feels like truth." },
   { label: "The Revision Pathway", href: "#revision-pathway", description: "Shame does not unlearn bias. Safety does. Five specific conditions for bias revision." },
-  { label: "What F6 Establishes", href: "#what-f6-establishes", description: "The regulatory reframe, the eight-construct architecture, the formation loop, the revision pathway." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "The regulatory reframe, the eight-construct architecture, the formation loop, the revision pathway." },
   { label: "Research Foundations", href: "#research-foundations", description: "Cognitive psychology, social psychology, neuroscience, clinical psychology, implicit cognition research." },
   { label: "Bridge to F7", href: "#bridge-to-f7", description: "When bias becomes rigid, systems seek stronger stabilisation. From filtering perception to enforcing it." },
 ];
@@ -137,7 +137,7 @@ export default function F6BiasRegulatesPage() {
               {
                 title: "Bias",
                 commonUnderstanding: "Prejudice, unfairness, a moral failing — something correctable through education, awareness, or shame.",
-                definition: "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering operates below conscious awareness. It is the mode's scanner running without SEA (Self-Emotional Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness.",
+                definition: "Perceptual regulation — the nervous system filtering information to protect a regulation pathway it depends on. The filtering operates below conscious awareness. It is the mode's scanner running without SEA (Interoceptive Self-Awareness). If believing something reduces threat, the nervous system keeps believing it — below conscious awareness.",
               },
             ]}
           />
@@ -310,7 +310,7 @@ export default function F6BiasRegulatesPage() {
                   ]} />
                   <TableRow cells={[
                     "3. State-Dependent Perception",
-                    "What you perceive depends on your regulatory state. In Connection, the field broadens. In chronic Protection, it narrows toward threat. In chronic Control, toward management data.",
+                    "What you perceive depends on your regulatory state. In Safety & Openness, the field broadens. In chronic Threat & Defence, it narrows toward threat. In chronic Strategy & Management, toward management data.",
                   ]} />
                   <TableRow cells={[
                     "4. Identity Filter",
@@ -322,7 +322,7 @@ export default function F6BiasRegulatesPage() {
                   ]} />
                   <TableRow cells={[
                     "6. Empathy Collapse",
-                    "State-dependent shutdown of Emotional Resonance (ER). Reading Emotions (RE) may remain sharp — serving strategy rather than understanding. The person can describe what others feel without being affected by it.",
+                    "State-dependent shutdown of Affective Resonance (ER). Interpersonal Affect Perception (RE) may remain sharp — serving strategy rather than understanding. The person can describe what others feel without being affected by it.",
                   ]} />
                   <TableRow cells={[
                     "7. Update Failure",
@@ -341,7 +341,7 @@ export default function F6BiasRegulatesPage() {
             </KeyStatement>
 
             <p style={proseStyle}>
-              Each construct expresses differently across the four modes. In Connection, all eight constructs are flexible — perception is open, identity is held lightly, empathy is online, revision is possible. In chronic Domination, all eight are locked — perception is rigid, identity is fused with beliefs, empathy is collapsed, revision is experienced as existential threat.
+              Each construct expresses differently across the four modes. In Safety & Openness, all eight constructs are flexible — perception is open, identity is held lightly, empathy is online, revision is possible. In chronic Power & Dominance, all eight are locked — perception is rigid, identity is fused with beliefs, empathy is collapsed, revision is experienced as existential threat.
             </p>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -672,82 +672,44 @@ export default function F6BiasRegulatesPage() {
             </ExpandableSection>
           </section>
 
-          {/* ─── WHAT F6 ESTABLISHES ───────────────────────── */}
-          <section
-            id="what-f6-establishes"
-            aria-labelledby="heading-what-f6-establishes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-f6-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What F6 Establishes
-            </h2>
-
-            <p style={proseStyle}>
-              F6 shows how worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why the resulting perceptual system resists correction even in intelligent, well-intentioned people.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              Core Concepts
-            </h3>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Concept</th>
-                    <th style={thStyle}>What It Means</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Bias as regulation",
-                    "The regulatory equation: if believing something reduces threat, the system keeps believing it. Not a thinking problem — a regulation strategy. Intervention target shifts from correction to safety.",
-                  ]} />
-                  <TableRow cells={[
-                    "Bias Architecture",
-                    "Eight interacting constructs. Critical interaction: Identity Filter + Empathy Collapse = Update Failure. Threshold equation formalizes revision conditions.",
-                  ]} />
-                  <TableRow cells={[
-                    "Three categories",
-                    "Cognitive biases provide certainty. Social biases provide belonging. Internalized biases provide identity coherence. Different regulatory functions require different interventions.",
-                  ]} />
-                  <TableRow cells={[
-                    "Six-step formation loop",
-                    "Uncertainty \u2192 fast interpretation \u2192 identity fusion \u2192 social reinforcement \u2192 defense \u2192 revision requires safety. Self-reinforcing. Scale-invariant parallel to F4 and F5 loops.",
-                  ]} />
-                  <TableRow cells={[
-                    "Phenomenology of certainty",
-                    "Certainty is physiological stability, not epistemic accuracy. Threat reduction \u2192 relief \u2192 \"rightness\" \u2192 mistaken for accuracy. Why bias feels like seeing clearly.",
-                  ]} />
-                  <TableRow cells={[
-                    "Revision pathway",
-                    "\"Shame does not unlearn bias \u2014 safety does.\" Five conditions: internal safety, relational safety, identity flexibility, alternative meaning, gradual exposure.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>
-              Key Formulations
-            </h3>
-
-            <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
-              {[
-                "\"Bias is pattern recognition in service of regulation, not a reasoning error\"",
-                "\"If believing something reduces threat, the nervous system keeps believing it \u2014 below conscious awareness\"",
-                "\"Certainty is physiological stability, not epistemic accuracy\"",
-                "\"Shame does not unlearn bias. Safety does.\"",
-                "\"Update capacity = (Internal safety + Relational safety) \u2212 (Identity threat + Belonging threat)\"",
-                "\"The person is not stubbornly maintaining a wrong belief \u2014 they are experiencing physiological confirmation\"",
-                "\"Common sense is normalized cultural bias\"",
-                "\"Bias-correction programs that rely on education, shame, or moral argument are predicted to fail\"",
-              ].map((f, i) => (
-                <li key={i} style={{ ...listItemStyle, fontStyle: "italic" }}>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.cobalt}
+            items={[
+              {
+                term: "Bias as regulation",
+                definition: "The regulatory equation — beliefs maintained because they settle the nervous system, not because they are accurate.",
+              },
+              {
+                term: "Eight constructs",
+                definition: "The layered architecture maintaining perceptual filtering. Interaction model: Identity Filter + Empathy Collapse = Update Failure. Threshold equation for revision conditions.",
+              },
+              {
+                term: "Three categories",
+                definition: "Cognitive (certainty), social (belonging), internalised (identity coherence) — different regulatory functions requiring different intervention directions.",
+              },
+              {
+                term: "Six-step formation loop",
+                definition: "Self-reinforcing: threat → interpretation → identity fusion → social reinforcement → defence → safety-dependent revision. Scale-invariant architecture.",
+              },
+              {
+                term: "Felt certainty as physiological relief",
+                definition: "Threat reduction → relief → 'rightness' → mistaken for accuracy. The mechanism that makes bias invisible to the person running it.",
+              },
+              {
+                term: "Collective state-locked perception",
+                definition: "When enough nervous systems share the same chronic state, collective perception locks — pre-cognitive in each individual, self-reinforcing across the group.",
+              },
+              {
+                term: "Substrate as the lock",
+                definition: "Correction targets the CLS. The bias is maintained by the substrate state. Education and moral argument miss the level where the bias operates.",
+              },
+              {
+                term: "Revision requires safety",
+                definition: "Five conditions. Threshold equation. The deepest biases require relational, not cognitive, revision.",
+              },
+            ]}
+          />
 
           {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
           <section

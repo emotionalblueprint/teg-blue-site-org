@@ -31,8 +31,9 @@ const SIDEBAR_SECTIONS = [
   { label: "What Isn't Processed Gets Passed On", href: "#what-isnt-processed", description: "The child doesn't inherit the event — the child inherits the regulatory consequence of the event." },
   { label: "Coherence, Not Content", href: "#what-isnt-processed", description: "It is not what happened that determines what is transmitted — it is whether the adult has made coherent sense of it." },
   { label: "Understanding Without Excusing", href: "#relationships-across-repair", description: "I understand why you became who you became — and I see what it cost me. Both are true." },
-  { label: "Relationships Across Repair", href: "#relationships-across-repair", description: "Does this relationship create conditions for Connection, or does it re-expose to the original configuration?" },
+  { label: "Relationships Across Repair", href: "#relationships-across-repair", description: "Does this relationship create conditions for Safety & Openness, or does it re-expose to the original configuration?" },
   { label: "True Elderhood", href: "#true-elderhood", description: "Not automatic — what the elder becomes when the work F8 describes has been done." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
   { label: "Bridge to F11", href: "#bridge-to-f11", description: "When the adult begins to see clearly, contradictions emerge that survival previously kept hidden." },
 ];
 
@@ -175,7 +176,7 @@ export default function F10GenerationalBridgesPage() {
     },
     {
       q: "What does 'enough, not perfect' mean for generational repair?",
-      a: "The demand for perfection recreates the regulation thread. What matters is not being a perfect parent but being one whose compass moves — who can enter Protection when needed, return to baseline, and repair after rupture. The child needs to see the return, not the absence of difficulty. Enough capacity development that the child's nervous system reads a different signal than what the adult received.",
+      a: "The demand for perfection recreates the regulation thread. What matters is not being a perfect parent but being one whose compass moves — who can enter Threat & Defence when needed, return to baseline, and repair after rupture. The child needs to see the return, not the absence of difficulty. Enough capacity development that the child's nervous system reads a different signal than what the adult received.",
     },
     {
       q: "Can generational transmission patterns be interrupted?",
@@ -183,7 +184,7 @@ export default function F10GenerationalBridgesPage() {
     },
     {
       q: "What is true elderhood?",
-      a: "A developmental achievement — the result of having done the awareness work F8 describes. True elders use experience for guidance rather than age for control. They earn respect through embodied capacity, support evolution rather than resisting change, and can hold the family's truth rather than demanding the family hold their version. It requires Self-Emotional Awareness (SEA) online, Emotional Resonance (ER) available, Reading Emotions (RE) accurate, and a compass that moves.",
+      a: "A developmental achievement — the result of having done the awareness work F8 describes. True elders use experience for guidance rather than age for control. They earn respect through embodied capacity, support evolution rather than resisting change, and can hold the family's truth rather than demanding the family hold their version. It requires Interoceptive Self-Awareness (SEA) online, Affective Resonance (ER) available, Interpersonal Affect Perception (RE) accurate, and a compass that moves.",
     },
   ];
 
@@ -200,8 +201,8 @@ export default function F10GenerationalBridgesPage() {
               title="Rebuilding Generational Bridges"
               subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
               description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the restoration arc (F8–F12), extending M2's awareness-teaches-awareness mechanism across generations."
-              group="The Reversal"
-              groupLabel="The Reversal · F8–F12"
+              group="Repair"
+              groupLabel="Repair Arc · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — what gets processed here changes what transmits next"
               informsModels={[
@@ -283,7 +284,7 @@ export default function F10GenerationalBridgesPage() {
                 </thead>
                 <tbody>
                   <TableRow cells={["Stuck compass \u2192 child calibrates to threat", "Moving compass \u2192 child calibrates to flexibility"]} />
-                  <TableRow cells={["Self-Emotional Awareness (SEA) offline \u2192 child's SEA has no model", "Self-Emotional Awareness (SEA) online \u2192 child absorbs self-awareness as normal"]} />
+                  <TableRow cells={["Interoceptive Self-Awareness (SEA) offline \u2192 child's SEA has no model", "Interoceptive Self-Awareness (SEA) online \u2192 child absorbs self-awareness as normal"]} />
                   <TableRow cells={["False coherence \u2192 child learns to narrate instead of feel", "True coherence \u2192 child learns that feeling and knowing can align"]} />
                   <TableRow cells={["Rules substitute for regulation \u2192 child internalizes rigid rules", "Regulation present \u2192 child learns to regulate, not just comply"]} />
                   <TableRow cells={["Worth-seeking substitutes for safety \u2192 child learns to perform for belonging", "Safety present \u2192 child belongs without performing"]} />
@@ -325,17 +326,17 @@ export default function F10GenerationalBridgesPage() {
             </p>
 
             <p style={proseStyle}>
-              A parent whose Self-Emotional Awareness (SEA) is offline cannot provide conditions for a child's SEA to develop — regardless of how much they want to, how many parenting books they have read, or how sincere their intention is. The child absorbs the configuration, not the aspiration.
+              A parent whose Interoceptive Self-Awareness (SEA) is offline cannot provide conditions for a child's SEA to develop — regardless of how much they want to, how many parenting books they have read, or how sincere their intention is. The child absorbs the configuration, not the aspiration.
             </p>
 
             <p style={proseStyle}>
-              A parent whose compass moves freely — who can enter Protection when needed, return to baseline, access Control under pressure without getting stuck — provides a child whose nervous system learns: the full gradient is available, and return is possible.
+              A parent whose compass moves freely — who can enter Threat & Defence when needed, return to baseline, access Strategy & Management under pressure without getting stuck — provides a child whose nervous system learns: the full gradient is available, and return is possible.
             </p>
 
             <h3 style={conceptHeadingStyle}>The Transmission Mechanism</h3>
 
             <p style={proseStyle}>
-              The parent whose Self-Emotional Awareness (SEA) is offline did not choose that configuration. Their own development did not provide conditions for SEA to develop (F2). Their own cognition built the best replacement it could (F3). Their own environment may have required chronic masking (F8–F9). They are transmitting what they have — which is what their parents transmitted to them.
+              The parent whose Interoceptive Self-Awareness (SEA) is offline did not choose that configuration. Their own development did not provide conditions for SEA to develop (F2). Their own cognition built the best replacement it could (F3). Their own environment may have required chronic masking (F8–F9). They are transmitting what they have — which is what their parents transmitted to them.
             </p>
 
             <KeyStatement>
@@ -482,7 +483,7 @@ export default function F10GenerationalBridgesPage() {
 
             <ExpandableSection title="The Shame Loop" type="framework">
               <p style={proseStyle}>
-                When regulation is achieved through controlling, criticizing, or harming others — the relational substitutes described in F3 and F7 — a shame signal is generated that cannot be metabolized in a chronic mode. The capacity to clearly feel and name shame requires Emotional Resonance (ER) to feel the other person's experience and Self-Emotional Awareness (SEA) to feel one's own role in it. Both are absent in chronic modes.
+                When regulation is achieved through controlling, criticizing, or harming others — the relational substitutes described in F3 and F7 — a shame signal is generated that cannot be metabolized in a chronic mode. The capacity to clearly feel and name shame requires Affective Resonance (ER) to feel the other person's experience and Interoceptive Self-Awareness (SEA) to feel one's own role in it. Both are absent in chronic modes.
               </p>
               <p style={proseStyle}>
                 The Shame Loop is uncloseable: the action that produced relief also produced shame that cannot be resolved, which increases the underlying pressure, which makes the next episode more urgent. What transmits across generations is not just the regulatory configuration but the accumulated shame that the configuration could not process.
@@ -491,7 +492,7 @@ export default function F10GenerationalBridgesPage() {
 
             <ExpandableSection title="Why Substitutes Escalate Across Generations" type="framework">
               <p style={proseStyle}>
-                The regulation substitute produces real relief. The relief fades. The debris is still there — plus the new debris from what the substitute cost. Self-Emotional Awareness (SEA) is gone, so the person cannot see that the relational environment changed. The tolerance curve operates identically to substance dependence: dose, relief, tolerance, escalation, dependence. But the "substance" is relational power — control, compliance, punishment. And the dose increase means more pain inflicted on others. There is no internal brake: the somatic echo that would register the cost to others requires Emotional Resonance (ER), which is absent.
+                The regulation substitute produces real relief. The relief fades. The debris is still there — plus the new debris from what the substitute cost. Interoceptive Self-Awareness (SEA) is gone, so the person cannot see that the relational environment changed. The tolerance curve operates identically to substance dependence: dose, relief, tolerance, escalation, dependence. But the "substance" is relational power — control, compliance, punishment. And the dose increase means more pain inflicted on others. There is no internal brake: the somatic echo that would register the cost to others requires Affective Resonance (ER), which is absent.
               </p>
               <p style={proseStyle}>
                 The mode destroys its own return pathway. Genuine restoration for all chronic modes would ultimately require safe relational contact — real co-regulation with someone genuinely present. The relational substitute systematically degrades the relational environment, and transmits this foreclosure to the next generation, who inherits a relational environment already depleted.
@@ -506,7 +507,7 @@ export default function F10GenerationalBridgesPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F10 connects earned security to the three-capacity model: what processing develops is Self-Emotional Awareness (SEA), Emotional Resonance (ER), and Reading Emotions (RE) — the capacities that change the adult's configuration, which changes the environment, which changes what the child absorbs. This makes "processing" specific rather than vague. And it explains why cognitive understanding fails: the child's calibration reads the somatic-emotional system (where the capacities operate), not the cognitive system (where understanding lives).
+                F10 connects earned security to the three-capacity model: what processing develops is Interoceptive Self-Awareness (SEA), Affective Resonance (ER), and Interpersonal Affect Perception (RE) — the capacities that change the adult's configuration, which changes the environment, which changes what the child absorbs. This makes "processing" specific rather than vague. And it explains why cognitive understanding fails: the child's calibration reads the somatic-emotional system (where the capacities operate), not the cognitive system (where understanding lives).
               </p>
             </ExpandableSection>
           </section>
@@ -533,22 +534,22 @@ export default function F10GenerationalBridgesPage() {
                 </thead>
                 <tbody>
                   <ThreeColRow cells={[
-                    "Connection (moving compass)",
+                    "Safety & Openness (moving compass)",
                     "Capacity for connection; flexible relating; repair after rupture; full emotional range",
                     "Secure base for exploration. Awareness capacities have conditions to develop. Child learns: the full gradient is available and return is possible",
                   ]} />
                   <ThreeColRow cells={[
-                    "Chronic Protection",
+                    "Chronic Threat & Defence",
                     "Anxiety patterns; threat sensitivity; hypervigilance; 'the world is dangerous'",
                     "Child absorbs: threat is the baseline. May develop hypervigilance, anxious attachment, parentification (monitoring the parent's state to manage own safety)",
                   ]} />
                   <ThreeColRow cells={[
-                    "Chronic Control",
+                    "Chronic Strategy & Management",
                     "Conditional relating; performance demands; emotional management as love; 'safety through being correct'",
-                    "Child absorbs: belonging requires performance. May develop achievement orientation, perfectionism, sharp Reading Emotions (RE) with collapsed Emotional Resonance (ER) and offline Self-Emotional Awareness (SEA)",
+                    "Child absorbs: belonging requires performance. May develop achievement orientation, perfectionism, sharp Interpersonal Affect Perception (RE) with collapsed Affective Resonance (ER) and offline Interoceptive Self-Awareness (SEA)",
                   ]} />
                   <ThreeColRow cells={[
-                    "Chronic Domination",
+                    "Chronic Power & Dominance",
                     "Power dynamics; submission patterns; reality distortion; 'safety through compliance'",
                     "Child absorbs: survival requires reading and complying. May develop trauma responses, dissociation, extreme adaptive strategies. The most costly transmission",
                   ]} />
@@ -569,22 +570,22 @@ export default function F10GenerationalBridgesPage() {
                 </thead>
                 <tbody>
                   <ThreeColRow cells={[
-                    "Connection",
+                    "Safety & Openness",
                     "High",
-                    "Can see patterns. Has resources for processing. Can tolerate what Self-Emotional Awareness (SEA) reveals. Can hold grief",
+                    "Can see patterns. Has resources for processing. Can tolerate what Interoceptive Self-Awareness (SEA) reveals. Can hold grief",
                   ]} />
                   <ThreeColRow cells={[
-                    "Chronic Protection",
+                    "Chronic Threat & Defence",
                     "Moderate — possible with support",
                     "Needs safety first (F8). Can engage when supported. Expect oscillation. The compass wants to move — it needs conditions",
                   ]} />
                   <ThreeColRow cells={[
-                    "Chronic Control",
+                    "Chronic Strategy & Management",
                     "Limited without external catalyst",
-                    "Control patterns resist self-examination because self-examination threatens the control strategy. May require external motivation — relationship crisis, child's suffering, health collapse",
+                    "Strategy & Management patterns resist self-examination because self-examination threatens the management strategy. May require external motivation — relationship crisis, child's suffering, health collapse",
                   ]} />
                   <ThreeColRow cells={[
-                    "Chronic Domination",
+                    "Chronic Power & Dominance",
                     "Very limited",
                     "Repair unlikely without sustained external intervention. The system has organized around power as regulation. Vulnerability feels like annihilation. Protection of others is primary (F7)",
                   ]} />
@@ -628,10 +629,10 @@ export default function F10GenerationalBridgesPage() {
             </p>
 
             <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              <strong>Step 1: Individual repair.</strong> The adult develops Self-Emotional Awareness (SEA), reconnects Emotional Resonance (ER), calibrates Reading Emotions (RE). The compass begins to move. False coherence loosens. The return path works.<br /><br />
+              <strong>Step 1: Individual repair.</strong> The adult develops Interoceptive Self-Awareness (SEA), reconnects Affective Resonance (ER), calibrates Interpersonal Affect Perception (RE). The compass begins to move. False coherence loosens. The return path works.<br /><br />
               <strong>Step 2: The adult's configuration changes.</strong> Not perfectly. Not completely. But enough that the nervous system the child reads is different from the one the adult's parents provided.<br /><br />
               <strong>Step 3: The child develops in a different environment.</strong> Not because the parent decided to parent differently (though they may). Because the parent <em>is</em> different. The emotional climate of the home changes because the nervous system generating that climate has changed.<br /><br />
-              <strong>Step 4: The child's capacities have conditions to develop.</strong> Self-Emotional Awareness (SEA) can come online because it is being modeled. Emotional Resonance (ER) can develop because it is being met. Reading Emotions (RE) can calibrate accurately because the adult's signals are more coherent.<br /><br />
+              <strong>Step 4: The child's capacities have conditions to develop.</strong> Interoceptive Self-Awareness (SEA) can come online because it is being modeled. Affective Resonance (ER) can develop because it is being met. Interpersonal Affect Perception (RE) can calibrate accurately because the adult's signals are more coherent.<br /><br />
               <strong>Step 5: The child transmits differently to the next generation.</strong> Not because they were told to. Because their configuration is different.
             </p>
 
@@ -658,7 +659,7 @@ export default function F10GenerationalBridgesPage() {
             </h2>
 
             <p style={proseStyle}>
-              The most important word in F10 is <strong>enough.</strong> Not perfect awareness. Not complete repair. Not an ideal childhood. Enough loosening of false coherence that the child absorbs different possibilities. Enough Self-Emotional Awareness (SEA) that the child sees self-awareness modeled. Enough return that the child learns: the compass comes back.
+              The most important word in F10 is <strong>enough.</strong> Not perfect awareness. Not complete repair. Not an ideal childhood. Enough loosening of false coherence that the child absorbs different possibilities. Enough Interoceptive Self-Awareness (SEA) that the child sees self-awareness modeled. Enough return that the child learns: the compass comes back.
             </p>
 
             <h3 style={conceptHeadingStyle}>Why "Enough" Matters</h3>
@@ -678,7 +679,7 @@ export default function F10GenerationalBridgesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Never entering Protection", "Returning from Protection — and the child seeing the return"]} />
+                  <TableRow cells={["Never entering Threat & Defence", "Returning from Threat & Defence — and the child seeing the return"]} />
                   <TableRow cells={["Never experiencing false coherence", "Recognizing false coherence — 'I'm doing the thing again' — and the child witnessing that recognition"]} />
                   <TableRow cells={["Having all three capacities perfectly online", "Having enough capacity development that the child's nervous system reads a different signal than what the adult received"]} />
                   <TableRow cells={["Never making mistakes", "Repairing after mistakes — and the child learning that repair is possible"]} />
@@ -690,7 +691,7 @@ export default function F10GenerationalBridgesPage() {
             <h3 style={conceptHeadingStyle}>Rupture and Repair</h3>
 
             <p style={proseStyle}>
-              The child does not need a parent who never ruptures. The child needs a parent who repairs. Repair teaches something rupture alone cannot: <strong>that relationships survive difficulty.</strong> That Connection can be lost and found again. That the compass returns.
+              The child does not need a parent who never ruptures. The child needs a parent who repairs. Repair teaches something rupture alone cannot: <strong>that relationships survive difficulty.</strong> That Safety & Openness can be lost and found again. That the compass returns.
             </p>
 
             <KeyStatement>
@@ -827,7 +828,7 @@ export default function F10GenerationalBridgesPage() {
                   <TableRow cells={["Demands deference", "Earns respect through embodied capacity"]} />
                   <TableRow cells={["Resists change — 'we survived, so should you'", "Supports evolution — 'I want you to have what I didn't'"]} />
                   <TableRow cells={["Requires the next generation to validate previous choices", "Allows the next generation to see clearly — even when what they see is painful"]} />
-                  <TableRow cells={["Operates from chronic Control — managing how the family sees itself", "Operates from Connection — can hold complexity, grief, and truth"]} />
+                  <TableRow cells={["Operates from chronic Strategy & Management — managing how the family sees itself", "Operates from Safety & Openness — can hold complexity, grief, and truth"]} />
                 </tbody>
               </table>
             </div>
@@ -835,7 +836,7 @@ export default function F10GenerationalBridgesPage() {
             <h3 style={conceptHeadingStyle}>The Developmental Achievement</h3>
 
             <p style={proseStyle}>
-              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>Self-Emotional Awareness (SEA) online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>Emotional Resonance (ER) available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>Reading Emotions (RE) accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to baseline after the discomfort of truth).
+              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>Interoceptive Self-Awareness (SEA) online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>Affective Resonance (ER) available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>Interpersonal Affect Perception (RE) accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to baseline after the discomfort of truth).
             </p>
 
             <KeyStatement>
@@ -843,7 +844,46 @@ export default function F10GenerationalBridgesPage() {
             </KeyStatement>
           </section>
 
-                    {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.blue}
+            items={[
+              {
+                term: "Capacity configuration teaches capacity configuration",
+                definition: "F2's mechanism at generational scale. The adult's configuration IS the child's environment.",
+              },
+              {
+                term: "Five simultaneous transmission pathways",
+                definition: "Implicit learning, co-regulation, environmental design, epigenetic, narrative. Why single interventions fail.",
+              },
+              {
+                term: "What transmits when activation was never processed",
+                definition: "Unprocessed experience becomes the child's developmental environment. The child inherits the consequence, not the event.",
+              },
+              {
+                term: "Each chronic state transmits a specific developmental environment",
+                definition: "Each chronic state produces specific conditions, specific capacity profiles, specific calibrations.",
+              },
+              {
+                term: "Processing changes the transmission",
+                definition: "Earned security. Content → coherence. Love does not override embodiment.",
+              },
+              {
+                term: "One generation of repair shifts the baseline",
+                definition: "Compound interest. Small, sustained shifts accumulate across generations.",
+              },
+              {
+                term: "Enough, not perfect",
+                definition: "The demand for perfection recreates the regulation thread. The child needs a parent who moves and comes back.",
+              },
+              {
+                term: "Understanding and accountability coexist",
+                definition: "Both true. Neither cancels the other. Relationships require consent.",
+              },
+            ]}
+          />
+
+          {/* ─── BRIDGE ────────────────────────────────── */}
           <BridgeSection
             color={SPECTRUM.blue}
             established="F10 established that what the adult processes changes what the next generation inherits — the intergenerational chain breaks where the adult's restoration becomes available."

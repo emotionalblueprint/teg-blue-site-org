@@ -34,6 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Relational Paradoxes", href: "#relational-paradoxes", description: "Both sides are real. The paradox is not in either person — it is in the interaction." },
   { label: "Systemic Paradoxes", href: "#systemic-paradoxes", description: "Freedom-seeking authoritarianism. Institutions that perpetuate what they were designed to solve." },
   { label: "Integration Means Holding", href: "#integration-means-holding", description: "True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
   { label: "Bridge to F12", href: "#bridge-to-f12", description: "A person can see their configuration, name their paradoxes — and still do the thing. F12 explains why." },
 ];
 
@@ -172,11 +173,11 @@ export default function F11EmotionalParadoxesPage() {
     },
     {
       q: "Is holding paradox the same as accepting contradiction?",
-      a: "Not exactly. Holding means both truths remain present without one being eliminated for comfort. It is not passive acceptance \u2014 it is a developmental capacity requiring Self-Emotional Awareness (SEA) online, emotional resilience to tolerate tension, and the relational awareness to hold complexity with others. Many paradoxes are structurally unresolvable, so the goal is not resolution but developing enough capacity that both truths can coexist.",
+      a: "Not exactly. Holding means both truths remain present without one being eliminated for comfort. It is not passive acceptance \u2014 it is a developmental capacity requiring Interoceptive Self-Awareness (SEA) online, emotional resilience to tolerate tension, and the relational awareness to hold complexity with others. Many paradoxes are structurally unresolvable, so the goal is not resolution but developing enough capacity that both truths can coexist.",
     },
     {
       q: "How does compass position affect the ability to hold paradox?",
-      a: "In Connection, a person can hold contradiction \u2014 both truths coexist because the system has enough safety for complexity. In Protection, paradox feels threatening and the system wants to simplify. In Control, false coherence constructs a narrative that appears to hold both truths but actually eliminates one. In Domination, paradox is not experienced \u2014 one truth is imposed and the other is erased.",
+      a: "In Safety & Openness, a person can hold contradiction \u2014 both truths coexist because the system has enough safety for complexity. In Threat & Defence, paradox feels threatening and the system wants to simplify. In Strategy & Management, false coherence constructs a narrative that appears to hold both truths but actually eliminates one. In Power & Dominance, paradox is not experienced \u2014 one truth is imposed and the other is erased.",
     },
     {
       q: "Why do contradictions become invisible?",
@@ -200,9 +201,9 @@ export default function F11EmotionalParadoxesPage() {
               badge="FRAMEWORK F11"
               title="The Emotional Logic Behind Paradoxes"
               subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
-              description="How every framework (F1–F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic — and how paradoxical behavior is multi-rational, serving multiple valid needs simultaneously rather than signaling failure of consistency. The first framework in the integration arc (F11–F12), mapping what becomes visible when M2's Self-Emotional Awareness (SEA) comes online and false coherence loosens."
-              group="The Reversal"
-              groupLabel="The Reversal · F8–F12"
+              description="How every framework (F1–F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic — and how paradoxical behavior is multi-rational, serving multiple valid needs simultaneously rather than signaling failure of consistency. The first framework in the integration arc (F11–F12), mapping what becomes visible when M2's Interoceptive Self-Awareness (SEA) comes online and false coherence loosens."
+              group="Repair"
+              groupLabel="Repair Arc · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — paradox as a sign of integration beginning"
               adjacent={{
@@ -237,7 +238,7 @@ export default function F11EmotionalParadoxesPage() {
               "Paradoxical behavior is multi-rational \u2014 it serves multiple valid needs simultaneously, serving multiple valid needs simultaneously",
               "Every framework (F1\u2013F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic",
               "False coherence hides paradox through a six-level cascade \u2014 from initial contradiction through identity absorption to generational transmission",
-              "The capacity to hold paradox depends on compass position \u2014 Connection enables holding, Protection simplifies, Control manages by elimination, Domination erases",
+              "The capacity to hold paradox depends on compass position \u2014 Safety & Openness enables holding, Threat & Defence simplifies, Strategy & Management manages by elimination, Power & Dominance erases",
               "Integration means holding, not resolving \u2014 true coherence is the capacity to contain contradiction without collapsing into a single story",
             ]}
           />
@@ -254,7 +255,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <KeyStatement>
-              When the compass begins to move — when Self-Emotional Awareness (SEA) starts coming online, when false coherence loosens, when the person begins to see clearly — contradictions emerge that were previously invisible.
+              When the compass begins to move — when Interoceptive Self-Awareness (SEA) starts coming online, when false coherence loosens, when the person begins to see clearly — contradictions emerge that were previously invisible.
             </KeyStatement>
 
             <p style={proseStyle}>
@@ -272,11 +273,11 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>The Regulation Thread — F11's Position</h3>
 
             <p style={proseStyle}>
-              F1–F7: each framework generates characteristic contradictions — but false coherence hides them. The person in chronic Control does not experience the contradiction between caring and controlling. The person with Self-Emotional Awareness (SEA) offline does not feel the gap between what they narrate and what they feel. False coherence makes paradox invisible by constructing a single story.
+              F1–F7: each framework generates characteristic contradictions — but false coherence hides them. The person in chronic Strategy & Management does not experience the contradiction between caring and controlling. The person with Interoceptive Self-Awareness (SEA) offline does not feel the gap between what they narrate and what they feel. False coherence makes paradox invisible by constructing a single story.
             </p>
 
             <p style={proseStyle}>
-              F8–F10: repair loosens false coherence. Self-Emotional Awareness (SEA) comes online. The single story breaks. And the contradictions that were always there become felt.
+              F8–F10: repair loosens false coherence. Interoceptive Self-Awareness (SEA) comes online. The single story breaks. And the contradictions that were always there become felt.
             </p>
 
             <KeyStatement>
@@ -393,7 +394,7 @@ export default function F11EmotionalParadoxesPage() {
                   <ThreeColRow cells={["F4 — Rules Regulate", "Internalized rules conflict with authentic needs", "Following rules that harm. Breaking rules that help. Defending rules that hurt the person defending them"]} />
                   <ThreeColRow cells={["F5 — Worth Hierarchies", "Worth-seeking drives override stated values", "Pursuing status that contradicts professed values. Performing for belonging while claiming to value authenticity"]} />
                   <ThreeColRow cells={["F6 — Bias Regulates", "Perception serves protection, not accuracy", "Seeing what confirms existing beliefs while missing what challenges them. Certainty increasing as accuracy decreases"]} />
-                  <ThreeColRow cells={["F7 — Domination Regulates", "Protection escalates beyond original intent", "Controlling what was meant to be cared for. Destroying what was meant to be protected"]} />
+                  <ThreeColRow cells={["F7 — Domination Regulates", "Threat & Defence escalates beyond original intent", "Controlling what was meant to be cared for. Destroying what was meant to be protected"]} />
                   <ThreeColRow cells={["F8 — Repairing Awareness", "Repair surfaces previously managed contradictions", "Getting worse before getting better. Knowing but not yet being. Seeing the pattern clearly while still living it"]} />
                   <ThreeColRow cells={["F9 — Neurodivergence", "Masking versus authentic configuration", "Performing normal while being different. Succeeding by standards that cost the person everything"]} />
                   <ThreeColRow cells={["F10 — Generational Bridges", "Inherited patterns versus conscious values", "Repeating what was vowed never to repeat. Loving the people who caused the patterns. Understanding and grieving simultaneously"]} />
@@ -500,10 +501,10 @@ export default function F11EmotionalParadoxesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Connection", "Can hold contradiction. Both truths coexist. The person can say \"I love them AND what they did hurt me\" without one canceling the other. Paradox is tolerable because the system has enough safety to hold complexity"]} />
-                  <TableRow cells={["Protection", "Paradox feels threatening. The system wants to resolve \u2014 pick a side, simplify, decide. Binary thinking is the nervous system reducing cognitive load under threat"]} />
-                  <TableRow cells={["Control", "Paradox is managed through narrative. False coherence constructs a story that appears to hold both truths but actually eliminates one. The narrative feels like integration but is actually resolution by elimination"]} />
-                  <TableRow cells={["Domination", "Paradox is not experienced. One truth is imposed. The other is erased, denied, or punished in anyone who names it"]} />
+                  <TableRow cells={["Safety & Openness", "Can hold contradiction. Both truths coexist. The person can say \"I love them AND what they did hurt me\" without one canceling the other. Paradox is tolerable because the system has enough safety to hold complexity"]} />
+                  <TableRow cells={["Threat & Defence", "Paradox feels threatening. The system wants to resolve \u2014 pick a side, simplify, decide. Binary thinking is the nervous system reducing cognitive load under threat"]} />
+                  <TableRow cells={["Strategy & Management", "Paradox is managed through narrative. False coherence constructs a story that appears to hold both truths but actually eliminates one. The narrative feels like integration but is actually resolution by elimination"]} />
+                  <TableRow cells={["Power & Dominance", "Paradox is not experienced. One truth is imposed. The other is erased, denied, or punished in anyone who names it"]} />
                 </tbody>
               </table>
             </div>
@@ -515,7 +516,7 @@ export default function F11EmotionalParadoxesPage() {
             </p>
 
             <p style={proseStyle}>
-              A person who can name both sides without distress is likely accessing Connection. A person who oscillates between the two sides with anxiety is likely in Protection. A person who has a smooth, coherent narrative that eliminates one side is likely in chronic Control — and the narrative should be examined, not admired. A person who denies the contradiction exists and attacks anyone who names it is likely in Domination.
+              A person who can name both sides without distress is likely accessing Safety & Openness. A person who oscillates between the two sides with anxiety is likely in Threat & Defence. A person who has a smooth, coherent narrative that eliminates one side is likely in chronic Strategy & Management — and the narrative should be examined, not admired. A person who denies the contradiction exists and attacks anyone who names it is likely in Power & Dominance.
             </p>
 
             <KeyStatement>
@@ -579,11 +580,11 @@ export default function F11EmotionalParadoxesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["Both/and thinking", "The cognitive capacity to hold two contradictory truths as simultaneously valid", "Self-Emotional Awareness (SEA) online \u2014 so the person can receive both truths without false coherence overriding one"]} />
-                  <ThreeColRow cells={["Somatic tolerance", "The body's capacity to hold the tension of unresolved contradiction without flooding or numbing", "Emotional Resonance (ER) developed \u2014 so the felt discomfort of paradox can be experienced without collapse"]} />
-                  <ThreeColRow cells={["Temporal flexibility", "The capacity to hold that something can be true now and different later \u2014 or true from one perspective and false from another", "Reading Emotions (RE) accurate \u2014 so the person can read context rather than demanding a single fixed truth"]} />
+                  <ThreeColRow cells={["Both/and thinking", "The cognitive capacity to hold two contradictory truths as simultaneously valid", "Interoceptive Self-Awareness (SEA) online \u2014 so the person can receive both truths without false coherence overriding one"]} />
+                  <ThreeColRow cells={["Somatic tolerance", "The body's capacity to hold the tension of unresolved contradiction without flooding or numbing", "Affective Resonance (ER) developed \u2014 so the felt discomfort of paradox can be experienced without collapse"]} />
+                  <ThreeColRow cells={["Temporal flexibility", "The capacity to hold that something can be true now and different later \u2014 or true from one perspective and false from another", "Interpersonal Affect Perception (RE) accurate \u2014 so the person can read context rather than demanding a single fixed truth"]} />
                   <ThreeColRow cells={["Part recognition", "The capacity to recognize that different needs are generating different pulls", "All three capacities working together \u2014 reading, feeling, and self-knowing"]} />
-                  <ThreeColRow cells={["Grief capacity", "The capacity to mourn what cannot be reconciled \u2014 some paradoxes are permanent losses", "Emotional Resonance (ER) and Self-Emotional Awareness (SEA) \u2014 the person must feel the grief and know it as their own"]} />
+                  <ThreeColRow cells={["Grief capacity", "The capacity to mourn what cannot be reconciled \u2014 some paradoxes are permanent losses", "Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) \u2014 the person must feel the grief and know it as their own"]} />
                 </tbody>
               </table>
             </div>
@@ -591,7 +592,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>The Connection to F8</h3>
 
             <p style={proseStyle}>
-              Holding capacity is not a separate skill. It is what the three awareness capacities produce when they are online. Self-Emotional Awareness (SEA) provides the self-knowledge to see both truths. Emotional Resonance (ER) provides the emotional resilience to tolerate the tension. Reading Emotions (RE) provides the relational awareness to hold complexity in relationship with others.
+              Holding capacity is not a separate skill. It is what the three awareness capacities produce when they are online. Interoceptive Self-Awareness (SEA) provides the self-knowledge to see both truths. Affective Resonance (ER) provides the emotional resilience to tolerate the tension. Interpersonal Affect Perception (RE) provides the relational awareness to hold complexity in relationship with others.
             </p>
 
             <KeyStatement>
@@ -695,7 +696,7 @@ export default function F11EmotionalParadoxesPage() {
             <h3 style={conceptHeadingStyle}>Love as Control</h3>
 
             <p style={proseStyle}>
-              In chronic Control, the distinction between caring and managing collapses. Every act of love becomes an act of management. They are caring through the only mode available. The paradox is genuine care expressed through a mode that the recipient experiences as control.
+              In chronic Strategy & Management, the distinction between caring and managing collapses. Every act of love becomes an act of management. They are caring through the only mode available. The paradox is genuine care expressed through a mode that the recipient experiences as control.
             </p>
 
             <h3 style={conceptHeadingStyle}>Helping That Maintains the Problem</h3>
@@ -811,7 +812,46 @@ export default function F11EmotionalParadoxesPage() {
             </ExpandableSection>
           </section>
 
-                    {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.blue}
+            items={[
+              {
+                term: "Multi-rationality",
+                definition: "Five competing needs generate paradoxes. The behaviour is not irrational — it serves multiple valid goals simultaneously.",
+              },
+              {
+                term: "Each framework generates characteristic paradoxes",
+                definition: "F1–F10 each produces specific contradictions from its specific mechanism.",
+              },
+              {
+                term: "The paradox cascade",
+                definition: "Six levels: initial contradiction → False Coherence → identity → social reinforcement → generational → invisible normal.",
+              },
+              {
+                term: "Holding capacity is state-dependent",
+                definition: "Safety & Openness: holds both. Threat & Defence: simplifies. Strategy & Management: manages through narrative. Power & Dominance: one truth imposed.",
+              },
+              {
+                term: "What holding capacity is",
+                definition: "Five components mapped to awareness capacities. Not a separate skill — what the capacities produce when online.",
+              },
+              {
+                term: "Repair generates its own paradoxes",
+                definition: "Feeling worse while getting better. Knowing without yet being able. Grieving absence. Relationships changing. Signs of depth, not failure.",
+              },
+              {
+                term: "Integration means holding, not resolving",
+                definition: "False Coherence: complexity eliminated. Somatic-cognitive alignment: complexity held. True coherence is the capacity to contain contradiction without collapsing.",
+              },
+              {
+                term: "The smooth story and the messy one",
+                definition: "Smooth may be coherence without the body. Messy may be the channel opening. The question: what is the narrative coherent from?",
+              },
+            ]}
+          />
+
+          {/* ─── BRIDGE ────────────────────────────────── */}
           <BridgeSection
             color={SPECTRUM.blue}
             established="F11 established that paradoxical behavior is multi-rational — serving multiple valid needs simultaneously — and that holding contradiction without forcing resolution is a capacity that develops when safety makes it possible."

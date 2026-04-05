@@ -33,6 +33,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Unmasking", href: "#unmasking-is-not-restoration", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
   { label: "From Accommodation to Design", href: "#design-principles", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
   { label: "The Structural Argument", href: "#the-structural-argument", description: "Systems designed for one configuration lose access to what other configurations provide." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
   { label: "Bridge to F10", href: "#bridge-to-f10", description: "What happens across generations when adults do this work — individual repair and structural repair simultaneously." },
 ];
 
@@ -166,7 +167,7 @@ export default function F9NeurodivergenceVariationPage() {
   const faqItems = [
     {
       q: "Is neurodivergence a deficit or disorder?",
-      a: "No. F9 frames neurodivergence as a difference in how the nervous system is configured — how it processes information, rhythm, sensory input, attention, social signals, and emotion. The framework rejects diagnostic language that embeds pathology assumptions and uses configuration language instead. A neurodivergent nervous system in a well-matched environment can sit in Connection just as sustainably as any other.",
+      a: "No. F9 frames neurodivergence as a difference in how the nervous system is configured — how it processes information, rhythm, sensory input, attention, social signals, and emotion. The framework rejects diagnostic language that embeds pathology assumptions and uses configuration language instead. A neurodivergent nervous system in a well-matched environment can sit in Safety & Openness just as sustainably as any other.",
     },
     {
       q: "What is System Mismatch?",
@@ -199,8 +200,8 @@ export default function F9NeurodivergenceVariationPage() {
               title="Neurodivergence as Nervous System Variation"
               subtitle="When the Environment Is the Mismatch"
               description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Maps variation as configuration — different regulatory rhythms running the same instrument. The second framework in the restoration arc (F8–F12)."
-              group="The Reversal"
-              groupLabel="The Reversal · F8–F12"
+              group="Repair"
+              groupLabel="Repair Arc · F8–F12"
               threadLabel="Reverses the Thread"
               threadLine="Builds the original — maps variation as configuration"
               adjacent={{
@@ -339,11 +340,11 @@ export default function F9NeurodivergenceVariationPage() {
             <h3 style={conceptHeadingStyle}>Connection to F1</h3>
 
             <p style={proseStyle}>
-              F1 describes how every nervous system orients between safety and threat. Neurodivergent nervous systems run the same instrument — the compass — with a different configuration. The compass still moves between Connection, Protection, Control, and Domination. The modes still function the same way. But the inputs are different (sensory thresholds, processing patterns, attention allocation), and therefore the compass responds differently to the same environment.
+              F1 describes how every nervous system orients between safety and threat. Neurodivergent nervous systems run the same instrument — the compass — with a different configuration. The compass still moves between Safety & Openness, Threat & Defence, Strategy & Management, and Power & Dominance. The modes still function the same way. But the inputs are different (sensory thresholds, processing patterns, attention allocation), and therefore the compass responds differently to the same environment.
             </p>
 
             <KeyStatement>
-              A neurodivergent nervous system in a well-matched environment can sit in Connection just as sustainably as any other. When the compass cannot move, the variable may be the environment.
+              A neurodivergent nervous system in a well-matched environment can sit in Safety & Openness just as sustainably as any other. When the compass cannot move, the variable may be the environment.
             </KeyStatement>
 
             <ExpandableSection title="The Sensory Filtering Mechanism" type="framework">
@@ -411,7 +412,7 @@ export default function F9NeurodivergenceVariationPage() {
 
             <ExpandableSection title="What TEG-Blue Adds" type="framework">
               <p style={proseStyle}>
-                F9 names the specific mechanism — System Mismatch — and connects it to the four-mode gradient. When the environment matches the configuration, the compass can access Connection. When mismatch is chronic, the compass is pushed toward Protection or Control not by internal pathology but by structural demand. This makes the problem measurable and the intervention architectural rather than clinical.
+                F9 names the specific mechanism — System Mismatch — and connects it to the four-mode gradient. When the environment matches the configuration, the compass can access Safety & Openness. When mismatch is chronic, the compass is pushed toward Threat & Defence or Strategy & Management not by internal pathology but by structural demand. This makes the problem measurable and the intervention architectural rather than clinical.
               </p>
             </ExpandableSection>
           </section>
@@ -446,7 +447,7 @@ export default function F9NeurodivergenceVariationPage() {
                 <tbody>
                   <TableRow cells={["Energetic", "Chronic fatigue; extended recovery time needed; energy unavailable for anything else"]} />
                   <TableRow cells={["Cognitive", "Processing capacity consumed by performance; decision fatigue; reduced capacity for actual work"]} />
-                  <TableRow cells={["Emotional", "Disconnection from authentic feeling; cannot tell what is real vs. performed; Emotional Resonance (ER) collapses under chronic load"]} />
+                  <TableRow cells={["Emotional", "Disconnection from authentic feeling; cannot tell what is real vs. performed; Affective Resonance (ER) collapses under chronic load"]} />
                   <TableRow cells={["Somatic", "Chronic tension; pain; stress-related illness; the body carrying what the mask suppresses"]} />
                   <TableRow cells={["Developmental", "Capacities that are suppressed do not develop. Masking does not just hide — it prevents growth. The three awareness capacities (F8) cannot develop while being chronically overridden"]} />
                   <TableRow cells={["Identity", "False coherence absorbs the mask: 'I'm just bad at this.' 'Something is wrong with me.' 'If I were better, this wouldn't be so hard.'"]} />
@@ -555,7 +556,7 @@ export default function F9NeurodivergenceVariationPage() {
 
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={proseStyle}>
-                Masking research (Price, Rose) documents the link between chronic masking and autistic burnout. Allostatic load theory (McEwen) provides the physiological mechanism for cumulative stress effects. F9 integrates these with the four-mode gradient: threshold crossing is the compass being pushed past its sustainable range by chronic mismatch, and burnout is the allostatic consequence of environments that hold the compass in Protection indefinitely.
+                Masking research (Price, Rose) documents the link between chronic masking and autistic burnout. Allostatic load theory (McEwen) provides the physiological mechanism for cumulative stress effects. F9 integrates these with the four-mode gradient: threshold crossing is the compass being pushed past its sustainable range by chronic mismatch, and burnout is the allostatic consequence of environments that hold the compass in Threat & Defence indefinitely.
               </p>
             </ExpandableSection>
 
@@ -661,22 +662,22 @@ export default function F9NeurodivergenceVariationPage() {
                 </thead>
                 <tbody>
                   <FourColRow cells={[
-                    "Reading Emotions (RE)",
+                    "Interpersonal Affect Perception (RE)",
                     "Implicit, automatic, moderate sensitivity",
                     "May be hyper-accurate (reads too much), systematically processed (explicit analysis vs. intuition), or differently channeled (reads patterns, not faces)",
-                    "\"Lacks empathy\" — when Reading Emotions (RE) is actually very high but expressed differently",
+                    "\"Lacks empathy\" — when Interpersonal Affect Perception (RE) is actually very high but expressed differently",
                   ]} />
                   <FourColRow cells={[
-                    "Emotional Resonance (ER)",
+                    "Affective Resonance (ER)",
                     "Moderate intensity, socially calibrated display",
                     "May be intense (higher amplitude, longer processing), delayed (response arrives after the social moment has passed), or internally deep but externally flat",
-                    "\"Doesn't care\" — when Emotional Resonance (ER) is actually flooded but not displayed",
+                    "\"Doesn't care\" — when Affective Resonance (ER) is actually flooded but not displayed",
                   ]} />
                   <FourColRow cells={[
-                    "Self-Emotional Awareness (SEA)",
+                    "Interoceptive Self-Awareness (SEA)",
                     "Develops through standard co-regulation",
                     "May be highly developed (intense interoception, detailed self-knowledge) or significantly disrupted by chronic masking (cannot distinguish real from performed)",
-                    "\"Not self-aware\" — when Self-Emotional Awareness (SEA) may be acute but expressed in non-standard language",
+                    "\"Not self-aware\" — when Interoceptive Self-Awareness (SEA) may be acute but expressed in non-standard language",
                   ]} />
                 </tbody>
               </table>
@@ -685,7 +686,7 @@ export default function F9NeurodivergenceVariationPage() {
             <h3 style={conceptHeadingStyle}>Masking Distorts the Capacities</h3>
 
             <p style={proseStyle}>
-              The greatest damage to neurodivergent awareness capacities comes not from the configuration itself but from chronic masking. <strong>Reading Emotions (RE) gets misdirected</strong> — used to monitor social danger and maintain the mask rather than to connect. <strong>Emotional Resonance (ER) gets suppressed</strong> — because emotional intensity that does not match neurotypical norms gets punished; over time, the dampening becomes automatic. <strong>Self-Emotional Awareness (SEA) gets confused</strong> — the person cannot distinguish their authentic internal state from the performed state; after years of masking, the question becomes genuinely unanswerable without support.
+              The greatest damage to neurodivergent awareness capacities comes not from the configuration itself but from chronic masking. <strong>Interpersonal Affect Perception (RE) gets misdirected</strong> — used to monitor social danger and maintain the mask rather than to connect. <strong>Affective Resonance (ER) gets suppressed</strong> — because emotional intensity that does not match neurotypical norms gets punished; over time, the dampening becomes automatic. <strong>Interoceptive Self-Awareness (SEA) gets confused</strong> — the person cannot distinguish their authentic internal state from the performed state; after years of masking, the question becomes genuinely unanswerable without support.
             </p>
 
             <h3 style={conceptHeadingStyle}>Repair Requires Rhythm Authenticity</h3>
@@ -763,7 +764,7 @@ export default function F9NeurodivergenceVariationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["Regulation First", "Environmental safety before performance demands", "When the environment supports regulation, the compass can access Connection. When it demands performance before safety, it pushes toward Protection or Control"]} />
+                  <ThreeColRow cells={["Regulation First", "Environmental safety before performance demands", "When the environment supports regulation, the compass can access Safety & Openness. When it demands performance before safety, it pushes toward Threat & Defence or Strategy & Management"]} />
                   <ThreeColRow cells={["Sensory Consideration", "Lighting, sound, space, temperature designed for variable sensitivity", "Removes chronic sensory mismatch — regulatory reserves are not consumed by environmental overload"]} />
                   <ThreeColRow cells={["Flexible Pacing", "Multiple timeline options; intensity variation allowed; interest-driven engagement accommodated", "Matches work to the nervous system's actual processing rhythm, not an arbitrary pace"]} />
                   <ThreeColRow cells={["Communication Clarity", "Explicit expectations; reduced hidden curriculum; say what is meant", "Removes the guessing that consumes processing capacity"]} />
@@ -795,7 +796,7 @@ export default function F9NeurodivergenceVariationPage() {
 
             <ExpandableSection title="Research Traditions" type="framework">
               <p style={proseStyle}>
-                Universal Design for Learning (CAST, Rose) provides the educational framework for building systems that work for variation. The Social Model of Disability (Oliver, Shakespeare) provides the theoretical basis for locating the problem in the environment rather than the individual. F9 integrates these with the four-mode gradient: the seven design principles are specifications for environments that support the compass in accessing Connection rather than forcing it into Protection.
+                Universal Design for Learning (CAST, Rose) provides the educational framework for building systems that work for variation. The Social Model of Disability (Oliver, Shakespeare) provides the theoretical basis for locating the problem in the environment rather than the individual. F9 integrates these with the four-mode gradient: the seven design principles are specifications for environments that support the compass in accessing Safety & Openness rather than forcing it into Threat & Defence.
               </p>
             </ExpandableSection>
 
@@ -838,7 +839,46 @@ export default function F9NeurodivergenceVariationPage() {
             </ExpandableSection>
           </section>
 
-                    {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.blue}
+            items={[
+              {
+                term: "Same instrument, different inputs",
+                definition: "The Emotional Somatic Cycle is universal. The sensory inputs arriving at it vary. The instrument is the same. The match between inputs and environment varies.",
+              },
+              {
+                term: "System Mismatch",
+                definition: "The gap between what an environment requires and what a nervous system can sustainably provide. Structural, testable.",
+              },
+              {
+                term: "Masking as incomplete restoration",
+                definition: "Each masked expression is an incomplete restoration sequence. Debris accumulates. Baseline rises.",
+              },
+              {
+                term: "Threshold dynamics",
+                definition: "Threshold equation. Three crossing presentations: activation, withdrawal, mixed. Regulatory collapse, not behavioural choice.",
+              },
+              {
+                term: "Neurodivergent burnout at the substrate level",
+                definition: "Baseline Elevation from accumulated masking. Not exhaustion — reorganisation. Different from general burnout.",
+              },
+              {
+                term: "Awareness capacities present differently across configurations",
+                definition: "Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA) present but differently channelled, expressed, reported. Assessment error as F6 bias.",
+              },
+              {
+                term: "Unmasking is not restoration",
+                definition: "Unmasking = dropping performance. Restoration = being received. The environment must be ready before the mask comes off.",
+              },
+              {
+                term: "Design for variation",
+                definition: "Seven design principles traced through the regulatory mechanisms each addresses. Design, not accommodation.",
+              },
+            ]}
+          />
+
+          {/* ─── BRIDGE ────────────────────────────────── */}
           <BridgeSection
             color={SPECTRUM.blue}
             established="F9 established that variation is configuration — different nervous systems running the same architecture with different settings, not deficits requiring correction."

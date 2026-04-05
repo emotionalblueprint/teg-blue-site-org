@@ -34,7 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Empathy Gating", href: "#empathy-gating", description: "What people call 'empathy' is three processes that diverge as escalation progresses." },
   { label: "Addiction Logic", href: "#addiction-logic", description: "External regulation through subjugation builds tolerance. There is no natural stopping point." },
   { label: "The Regulation Thread", href: "#regulation-thread", description: "One mechanism, seven scales, escalating costs. Biological return → developmental failure → domination." },
-  { label: "What F7 Establishes", href: "#what-f7-establishes", description: "The escalation pathway, the Crossroads, the marker system, the empathy gating model." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "The escalation pathway, the Crossroads, the marker system, the empathy gating model." },
   { label: "Research Foundations", href: "#research-foundations", description: "Behavioural reinforcement, psychoanalytic theory, organisational psychology, neuroscience, abuse research." },
 ];
 
@@ -145,7 +145,7 @@ export default function F7DominationRegulatesPage() {
               {
                 title: "Emotional Abuse",
                 commonUnderstanding: "A pattern of manipulation, control, and psychological harm — insults, threats, gaslighting, isolation — that damages self-esteem and emotional wellbeing.",
-                definition: "A structural dynamic that becomes possible when RE (Reading Emotions) exists without ER (Emotional Resonance), and when the capacity to feel deeply exists without SEA (Self-Emotional Awareness) to trust one's own experience as real. It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
+                definition: "A structural dynamic that becomes possible when RE (Interpersonal Affect Perception) exists without ER (Affective Resonance), and when the capacity to feel deeply exists without SEA (Interoceptive Self-Awareness) to trust one's own experience as real. It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
               },
               {
                 title: "Control (Relational)",
@@ -182,7 +182,7 @@ export default function F7DominationRegulatesPage() {
                   A five-stage escalation pathway from Fear Activation through Power Preservation, with internal logic, observable signs, compass position, and stage-appropriate interruption at each stage
                 </li>
                 <li style={propositionItemStyle}>
-                  Empathy gating follows a three-capacity model: Reading Emotions (RE) redirects toward management, Emotional Resonance (ER) collapses, Self-Emotional Awareness (SEA) was never there — the configuration that produces the most harm has the least visibility
+                  Empathy gating follows a three-capacity model: Interpersonal Affect Perception (RE) redirects toward management, Affective Resonance (ER) collapses, Interoceptive Self-Awareness (SEA) was never there — the configuration that produces the most harm has the least visibility
                 </li>
                 <li style={propositionItemStyle}>
                   External regulation through subjugation builds tolerance — escalation required, no natural stopping point — &ldquo;there is no amount of domination that will make them feel safe because the safety they need is internal&rdquo;
@@ -313,7 +313,7 @@ export default function F7DominationRegulatesPage() {
             </blockquote>
 
             <p style={proseStyle}>
-              This is the transition from Protection to Control (F1). Defense stops being a response to threat and becomes a method for managing threat by managing others. Tactics begin replacing repair — because tactics work faster, produce more reliable results, and do not require the vulnerability that repair demands.
+              This is the transition from Threat & Defence to Strategy & Management (F1). Defense stops being a response to threat and becomes a method for managing threat by managing others. Tactics begin replacing repair — because tactics work faster, produce more reliable results, and do not require the vulnerability that repair demands.
             </p>
             <p style={proseStyle}>
               The Crossroads is not a single moment. It is a transition zone — a period where the person begins deploying control strategies more consistently and repair less consistently. It is recognizable because the balance shifts: control increases while repair decreases. The person may still apologize, still show warmth, still appear connected — but the apologies begin serving image rather than relationship. The warmth begins serving management rather than connection.
@@ -330,7 +330,7 @@ export default function F7DominationRegulatesPage() {
                 The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, before awareness) to Control (strategy-based, after awareness). This connects to F1&rsquo;s architectural break: Connection and Protection operate before awareness — the nervous system responds before the person knows it's responding. Control and Domination operate after awareness — cognition has entered the picture.
               </p>
               <p style={expandedProseStyle}>
-                The naming serves early recognition. Before this terminology, the transition is often invisible — especially because the early stages of Control can look like competence, leadership, and responsibility. Naming the Crossroads makes the transition visible and teachable: repair is decreasing, control is increasing, tactics are replacing vulnerability. These are recognizable shifts.
+                The naming serves early recognition. Before this terminology, the transition is often invisible — especially because the early stages of Strategy & Management can look like competence, leadership, and responsibility. Naming the Crossroads makes the transition visible and teachable: repair is decreasing, control is increasing, tactics are replacing vulnerability. These are recognizable shifts.
               </p>
             </ExpandableSection>
           </section>
@@ -357,13 +357,13 @@ export default function F7DominationRegulatesPage() {
                 <strong style={{ color: TEXT.primary }}>Your reality becomes framed as the problem.</strong> The other person&rsquo;s perception, feelings, or boundaries are reframed as overreaction, instability, or unreasonableness. &ldquo;You&rsquo;re being too sensitive.&rdquo; &ldquo;That&rsquo;s not what happened.&rdquo;
               </li>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Accountability is replaced by performance.</strong> When confronted, the response is not genuine reflection but a rehearsed display of contrition — the right words without the felt resonance behind them. Reading Emotions (RE) sharp, Self-Emotional Awareness (SEA) offline.
+                <strong style={{ color: TEXT.primary }}>Accountability is replaced by performance.</strong> When confronted, the response is not genuine reflection but a rehearsed display of contrition — the right words without the felt resonance behind them. Interpersonal Affect Perception (RE) sharp, Interoceptive Self-Awareness (SEA) offline.
               </li>
               <li style={listItemStyle}>
                 <strong style={{ color: TEXT.primary }}>Confusion is used to destabilize.</strong> Conversations become circular. Facts are disputed. The other person begins doubting their own memory and perception. This is emotional distortion (F3) operating relationally.
               </li>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Empathy becomes selective.</strong> Emotional Resonance (ER) becomes available for those who serve the regulation strategy, withdrawn from those who challenge it. Reading Emotions stays sharp — because reading serves management. The person may appear deeply attuned. What has changed is not perception but resonance.
+                <strong style={{ color: TEXT.primary }}>Empathy becomes selective.</strong> Affective Resonance (ER) becomes available for those who serve the regulation strategy, withdrawn from those who challenge it. Interpersonal Affect Perception stays sharp — because reading serves management. The person may appear deeply attuned. What has changed is not perception but resonance.
               </li>
               <li style={listItemStyle}>
                 <strong style={{ color: TEXT.primary }}>Boundaries trigger escalation.</strong> When the other person sets a boundary, the response is not respect but intensified pressure. The other person&rsquo;s self-protection becomes evidence of attack. This connects to F4&rsquo;s punishment rules: &ldquo;pain teaches lessons&rdquo; normalizes escalation in response to boundary-setting.
@@ -426,35 +426,35 @@ export default function F7DominationRegulatesPage() {
                     "1 — Fear Activation",
                     "\"If I can't control it, I lose safety\"",
                     "Threat scanning, catastrophic thinking, urgency, need for predictability",
-                    "Protection — beginning to shift",
+                    "Threat & Defence — beginning to shift",
                     "Most accessible. Safety-based support, co-regulation, relational repair",
                   ]} />
                   <FiveColRow cells={[
                     "2 — Strategy Formation",
                     "\"Control creates stability\"",
                     "Behavior management of others, proliferating rules, selective self-presentation. Crossroads markers appear",
-                    "Crossing the Crossroads — Protection into Control",
+                    "Crossing the Crossroads — Threat & Defence into Strategy & Management",
                     "Direct naming, loss of reinforcement, firm but relational accountability",
                   ]} />
                   <FiveColRow cells={[
                     "3 — Entitlement Loop",
                     "\"I'm safer when others obey\"",
                     "Obedience expected, blame reversed, rules selectively enforced, narrative control intensified",
-                    "Locked in chronic Control. Mimics Connection from outside",
+                    "Locked in chronic Strategy & Management. Mimics Safety & Openness from outside",
                     "Requires external consequences. Internal motivation low because the system is working — for the person running it",
                   ]} />
                   <FiveColRow cells={[
                     "4 — Empathy Collapse",
                     "\"Their pain is my threat\"",
                     "Minimization of suffering, contempt, dehumanization language, sophisticated justifications for harm",
-                    "Moving from Control toward Domination. Resonance circuits offline",
+                    "Moving from Strategy & Management toward Power & Dominance. Resonance circuits offline",
                     "Requires external containment. Empathy appeals fail — the system needed to respond is the system that is offline",
                   ]} />
                   <FiveColRow cells={[
                     "5 — Power Preservation",
                     "\"I can't survive without control\"",
                     "Identity fused with dominance, escalated coercion, isolation of targets, elimination of dissent",
-                    "Locked in chronic Domination. Connection feels like extinction",
+                    "Locked in chronic Power & Dominance. Safety & Openness feels like extinction",
                     "Protection is primary. Rehabilitation is not a safety plan. The priority is protecting others",
                   ]} />
                 </tbody>
@@ -468,11 +468,11 @@ export default function F7DominationRegulatesPage() {
             <h3 style={conceptHeadingStyle}>Stage-by-Stage Detail</h3>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 3 — The Entitlement Loop</strong> deserves particular attention because it is the stage most likely to be invisible. The person does not experience themselves as controlling. They experience themselves as responsible, competent, and holding things together. This is the mode that most reliably mimics Connection (F3) — from outside, the person may appear warm, capable, and generous. From inside the inner circle, reality is managed. Interruption typically requires structural consequences: loss of position, legal accountability, or the managed system collapsing in a way the person cannot reframe.
+              <strong style={{ color: TEXT.primary }}>Stage 3 — The Entitlement Loop</strong> deserves particular attention because it is the stage most likely to be invisible. The person does not experience themselves as controlling. They experience themselves as responsible, competent, and holding things together. This is the mode that most reliably mimics Safety & Openness (F3) — from outside, the person may appear warm, capable, and generous. From inside the inner circle, reality is managed. Interruption typically requires structural consequences: loss of position, legal accountability, or the managed system collapsing in a way the person cannot reframe.
             </p>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 4 — Empathy Collapse</strong> marks the point where empathy appeals become structurally futile. It is regulatory state reality. Emotional Resonance is offline. Asking them to use it is asking them to use a capacity they do not currently have. Telling a person at Stage 4 to &ldquo;think about how the other person feels&rdquo; is asking them to use Emotional Resonance — which is offline. They may be able to use Reading Emotions to <em>describe</em> what the other person feels, sometimes with remarkable accuracy. But describing is not feeling. The intervention at this stage is containment and protection, not resonance restoration.
+              <strong style={{ color: TEXT.primary }}>Stage 4 — Empathy Collapse</strong> marks the point where empathy appeals become structurally futile. It is regulatory state reality. Affective Resonance is offline. Asking them to use it is asking them to use a capacity they do not currently have. Telling a person at Stage 4 to &ldquo;think about how the other person feels&rdquo; is asking them to use Affective Resonance — which is offline. They may be able to use Interpersonal Affect Perception to <em>describe</em> what the other person feels, sometimes with remarkable accuracy. But describing is not feeling. The intervention at this stage is containment and protection, not resonance restoration.
             </p>
 
             <p style={proseStyle}>
@@ -514,23 +514,23 @@ export default function F7DominationRegulatesPage() {
             </p>
 
             <p style={proseStyle}>
-              As the compass moves toward Domination, the three capacities do three different things:
+              As the compass moves toward Power & Dominance, the three capacities do three different things:
             </p>
 
             <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Reading Emotions (RE) does not collapse. It redirects.</strong> RE stays sharp or sharpens as escalation progresses. In chronic Control, RE serves management: the person reads everyone with precision, tracking who is compliant, who is a threat, who can be useful. In chronic Domination, RE serves exploitation: others&rsquo; emotional states become data for leverage.
+                <strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE) does not collapse. It redirects.</strong> RE stays sharp or sharpens as escalation progresses. In chronic Strategy & Management, RE serves management: the person reads everyone with precision, tracking who is compliant, who is a threat, who can be useful. In chronic Power & Dominance, RE serves exploitation: others&rsquo; emotional states become data for leverage.
               </li>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER) is what collapses.</strong> ER — the capacity to be affected by what others feel — progressively shuts down as the compass locks in threat-based modes. At Stage 3, ER becomes selective — available for those who serve the regulation strategy, performed for public consumption. At Stage 4, ER has been offline long enough that the person cannot feel the impact of their behavior on others. The natural brake on harm is structurally unavailable.
+                <strong style={{ color: TEXT.primary }}>Affective Resonance (ER) is what collapses.</strong> ER — the capacity to be affected by what others feel — progressively shuts down as the compass locks in threat-based modes. At Stage 3, ER becomes selective — available for those who serve the regulation strategy, performed for public consumption. At Stage 4, ER has been offline long enough that the person cannot feel the impact of their behavior on others. The natural brake on harm is structurally unavailable.
               </li>
               <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) was never there.</strong> SEA is the <em>precondition</em> for the entire escalation pathway, not a consequence of it. The person at Stage 4–5 does not have SEA that has been gated out. They have SEA that was never fully built (F2). Without SEA, the internal activation that drives domination is never processed. The person cannot feel what is driving them — they can only act on it.
+                <strong style={{ color: TEXT.primary }}>Interoceptive Self-Awareness (SEA) was never there.</strong> SEA is the <em>precondition</em> for the entire escalation pathway, not a consequence of it. The person at Stage 4–5 does not have SEA that has been gated out. They have SEA that was never fully built (F2). Without SEA, the internal activation that drives domination is never processed. The person cannot feel what is driving them — they can only act on it.
               </li>
             </ul>
 
             <KeyStatement>
-              The dangerous configuration: sharp RE + collapsed ER + absent SEA. The person reads you perfectly. Cannot feel your pain. Has no internal signal telling them any of this is happening. This is the capacity configuration that produces the most harm with the least visibility — and the mode that most reliably mimics Connection.
+              The dangerous configuration: sharp RE + collapsed ER + absent SEA. The person reads you perfectly. Cannot feel your pain. Has no internal signal telling them any of this is happening. This is the capacity configuration that produces the most harm with the least visibility — and the mode that most reliably mimics Safety & Openness.
             </KeyStatement>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -538,9 +538,9 @@ export default function F7DominationRegulatesPage() {
                 <thead>
                   <tr>
                     <th style={thStyle}>Stage</th>
-                    <th style={thStyle}>Reading Emotions (RE)</th>
-                    <th style={thStyle}>Emotional Resonance (ER)</th>
-                    <th style={thStyle}>Self-Emotional Awareness (SEA)</th>
+                    <th style={thStyle}>Interpersonal Affect Perception (RE)</th>
+                    <th style={thStyle}>Affective Resonance (ER)</th>
+                    <th style={thStyle}>Interoceptive Self-Awareness (SEA)</th>
                     <th style={thStyle}>What This Produces</th>
                   </tr>
                 </thead>
@@ -597,7 +597,7 @@ export default function F7DominationRegulatesPage() {
                 Clinical Implication
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Empathy appeals fail at later stages of escalation because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use Emotional Resonance (ER), which is collapsed. They may use Reading Emotions (RE) to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
+                Empathy appeals fail at later stages of escalation because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use Affective Resonance (ER), which is collapsed. They may use Interpersonal Affect Perception (RE) to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
               </p>
             </div>
 
@@ -811,92 +811,48 @@ export default function F7DominationRegulatesPage() {
             </p>
           </section>
 
-          {/* ─── WHAT F7 ESTABLISHES ───────────────────────── */}
-          <section
-            id="what-f7-establishes"
-            aria-labelledby="heading-what-f7-establishes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-f7-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What F7 Establishes
-            </h2>
-
-            <p style={proseStyle}>
-              F7 shows how self-protective regulation escalates into domination through reinforcement — and where that escalation can be recognized and interrupted. It completes the collective arc (F4–F7) and the regulation thread (F1–F7).
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              Core Concepts
-            </h3>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Concept</th>
-                    <th style={thStyle}>What It Means</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Domination is built through reinforcement",
-                    "Built through the same reinforcement logic that shapes all behavior. Interruptible at specific points.",
-                  ]} />
-                  <TableRow cells={[
-                    "The Crossroads",
-                    "Named critical turning point: defense becomes strategy. \"I am trying to feel safe\" \u2192 \"I will make you behave so I can feel safe.\" Transition from Protection to Control.",
-                  ]} />
-                  <TableRow cells={[
-                    "Early escalation markers",
-                    "Ten observable signals that the compass is moving through the Crossroads. Warnings, not labels. Pattern matters more than individual markers.",
-                  ]} />
-                  <TableRow cells={[
-                    "Five-stage escalation pathway",
-                    "Fear Activation \u2192 Strategy Formation \u2192 Entitlement Loop \u2192 Empathy Collapse \u2192 Power Preservation. Each stage: internal logic, signs, compass position, interruption approach.",
-                  ]} />
-                  <TableRow cells={[
-                    "Empathy gating",
-                    "Three-capacity model: RE redirects (understanding \u2192 management \u2192 weaponization). ER collapses (felt connection shuts down). SEA was never there (precondition, not consequence). Sharp RE + collapsed ER + absent SEA = most harm with least visibility.",
-                  ]} />
-                  <TableRow cells={[
-                    "Addiction logic",
-                    "External regulation through subjugation builds tolerance. Escalation required. No natural stopping point. Power amplifies access and removes constraints. \"No amount of domination will make them feel safe.\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Causality and accountability",
-                    "Same nervous system, same mechanism, same thread. Further along the gradient, at maximum cost. Understanding \u2260 excusing. \"Evil\" is not the frame because it is mechanistically inaccurate.",
-                  ]} />
-                  <TableRow cells={[
-                    "The regulation thread complete",
-                    "F1\u2013F7: biological return \u2192 developmental failure \u2192 cognitive replacement \u2192 rules \u2192 worth \u2192 bias \u2192 domination. Each = regulation substitute at different scale. Costs escalate. Intervention principle consistent: safety first.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>
-              Key Formulations
-            </h3>
-
-            <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
-              {[
-                "\"Domination is built through reinforcement, not born\"",
-                "\"I am trying to feel safe\" \u2192 \"I will make you behave so I can feel safe\"",
-                "\"Repair is decreasing, control is increasing, tactics are replacing vulnerability\"",
-                "\"Empathy is state-dependent, not character-dependent\"",
-                "\"There is no amount of domination that will make them feel safe \u2014 because the safety they need is internal\"",
-                "\"Causality and accountability are separable\"",
-                "\"Accountability without demonization, understanding without excuse\"",
-                "\"The same nervous system. The same mechanism. The same thread. Further along the gradient and at maximum cost.\"",
-                "\"The substitutes work. They just are not the return.\"",
-                "\"At every scale, the same principle: restore safety first, then expect capacity\"",
-              ].map((f, i) => (
-                <li key={i} style={{ ...listItemStyle, fontStyle: "italic" }}>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.cobalt}
+            items={[
+              {
+                term: "Domination built through reinforcement",
+                definition: "The same learning mechanism, the same nervous system, the same regulation thread — further along the gradient, at maximum cost.",
+              },
+              {
+                term: "The transition from defence to strategy",
+                definition: "Recognisable: repair decreasing, control increasing, tactics replacing vulnerability.",
+              },
+              {
+                term: "Five-stage pathway",
+                definition: "Fear → Strategy → Entitlement → Empathy Collapse → Power Preservation. Each interruptible. Earlier = more accessible.",
+              },
+              {
+                term: "Power-interoception inverse",
+                definition: "As power increases, interoceptive access decreases — power replaces the need for it. Access to power is itself a restoration substitute.",
+              },
+              {
+                term: "Three-capacity divergence",
+                definition: "Interpersonal Affect Perception (RE) redirects, Affective Resonance (ER) collapses, Interoceptive Self-Awareness (SEA) was never built. The configuration that produces the most harm with the least visibility.",
+              },
+              {
+                term: "Escalation without a brake",
+                definition: "The harm generates signals (shame, guilt, remorse). ER absent, SEA absent — no channel to process them. Escalation structurally required.",
+              },
+              {
+                term: "Addiction logic",
+                definition: "Subjugation builds tolerance. No natural stopping point. Power amplifies access.",
+              },
+              {
+                term: "Causality and accountability coexist",
+                definition: "The mechanism is traceable. The harm is real. Both are true simultaneously.",
+              },
+              {
+                term: "The regulation thread complete",
+                definition: "F1–F7: seven restoration substitutes at escalating scale and escalating cost.",
+              },
+            ]}
+          />
 
           {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
           <section
@@ -1096,12 +1052,12 @@ export default function F7DominationRegulatesPage() {
               {
                 question: "What is the five-stage escalation pathway?",
                 answer:
-                  "The five stages are: (1) Fear Activation — threat scanning, still reachable; (2) Strategy Formation — learning that managing others reduces distress, Crossroads markers appear; (3) Entitlement Loop — obedience expected, false coherence solidified, mimics Connection from outside; (4) Empathy Collapse — Emotional Resonance offline, empathy appeals fail; (5) Power Preservation — identity fused with dominance, protection of others is primary. Each stage has internal logic, observable signs, compass position, and stage-appropriate interruption.",
+                  "The five stages are: (1) Fear Activation — threat scanning, still reachable; (2) Strategy Formation — learning that managing others reduces distress, Crossroads markers appear; (3) Entitlement Loop — obedience expected, false coherence solidified, mimics Connection from outside; (4) Empathy Collapse — Affective Resonance offline, empathy appeals fail; (5) Power Preservation — identity fused with dominance, protection of others is primary. Each stage has internal logic, observable signs, compass position, and stage-appropriate interruption.",
               },
               {
                 question: "What is empathy gating?",
                 answer:
-                  "Empathy gating describes what happens to the three awareness capacities during escalation. Reading Emotions (RE) does not collapse — it redirects from understanding to management to weaponization. Emotional Resonance (ER) is what collapses — the felt connection channel progressively shuts down. Self-Emotional Awareness (SEA) was never there — it is the precondition, not the consequence. The configuration sharp RE + collapsed ER + absent SEA produces the most harm with the least visibility.",
+                  "Empathy gating describes what happens to the three awareness capacities during escalation. Interpersonal Affect Perception (RE) does not collapse — it redirects from understanding to management to weaponization. Affective Resonance (ER) is what collapses — the felt connection channel progressively shuts down. Interoceptive Self-Awareness (SEA) was never there — it is the precondition, not the consequence. The configuration sharp RE + collapsed ER + absent SEA produces the most harm with the least visibility.",
               },
               {
                 question: "How does F7 relate to the rest of the TEG-Blue system?",

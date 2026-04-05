@@ -30,9 +30,9 @@ const SIDEBAR_SECTIONS = [
   { label: "Safety Proxies", href: "#safety-proxies", description: "Economic, social, and cultural capital function as nervous system stabilisers." },
   { label: "The Filter of Worth", href: "#filter-of-worth", description: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy." },
   { label: "The Five-Step Worth Loop", href: "#five-step-worth-loop", description: "Threat → validation-seeking → power-as-proxy → formal sorting → internalised worth." },
-  { label: "Chronic Invisibility", href: "#chronic-invisibility", description: "Structural filtering produces chronic social threat. The compass gets stuck in Protection." },
+  { label: "Chronic Invisibility", href: "#chronic-invisibility", description: "Structural filtering produces chronic social threat. The compass gets stuck in Threat & Defence." },
   { label: "Double False Coherence", href: "#self-reinforcing-advantage", description: "'I earned this' and 'something is wrong with me' are both false coherence serving regulation." },
-  { label: "What F5 Establishes", href: "#what-f5-establishes", description: "The Filter of Worth as a named mechanism, the safety-proxy framework, the five-step loop." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "The Filter of Worth as a named mechanism, the safety-proxy framework, the five-step loop." },
   { label: "Research Foundations", href: "#research-foundations", description: "Sociology, social psychology, behavioural economics, network science, neuroscience, critical theory." },
   { label: "Bridge to F6", href: "#bridge-to-f6", description: "When worth sorting becomes stable and internalised, it stops being experienced as a system. It becomes perception." },
 ];
@@ -267,7 +267,7 @@ export default function F5WorthHierarchiesPage() {
             </KeyStatement>
 
             <p style={proseStyle}>
-              Worth sorting expresses differently across the four modes. In Connection, worth is recognized as inherent — all people have it. In chronic Protection, worth is something to defend — position feels fragile. In chronic Control, worth is managed — curated, displayed, strategically deployed. In chronic Domination, worth hierarchy is enforced as entitlement — some people simply matter more.
+              Worth sorting expresses differently across the four modes. In Safety & Openness, worth is recognised as inherent — all people have it. In chronic Threat & Defence, worth is something to defend — position feels fragile. In chronic Strategy & Management, worth is managed — curated, displayed, strategically deployed. In chronic Power & Dominance, worth hierarchy is enforced as entitlement — some people simply matter more.
             </p>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -337,7 +337,7 @@ export default function F5WorthHierarchiesPage() {
             </div>
 
             <p style={proseStyle}>
-              Each capital expresses differently across the gradient. In Connection, capitals are shared — resources, relationships, and knowledge serve the group. In chronic Protection, capitals are hoarded — losing them feels like losing safety. In chronic Control, capitals are deployed strategically — displayed to maintain position and manage perception. In chronic Domination, capitals are enforced — used to establish hierarchy and punish those who lack them.
+              Each capital expresses differently across the gradient. In Safety & Openness, capitals are shared — resources, relationships, and knowledge serve the group. In chronic Threat & Defence, capitals are hoarded — losing them feels like losing safety. In chronic Strategy & Management, capitals are deployed strategically — displayed to maintain position and manage perception. In chronic Power & Dominance, capitals are enforced — used to establish hierarchy and punish those who lack them.
             </p>
 
             <h3 style={conceptHeadingStyle}>
@@ -348,7 +348,7 @@ export default function F5WorthHierarchiesPage() {
               <strong style={{ color: TEXT.primary }}>Eigenvector centrality</strong> — the network science concept that a node's importance depends on the importance of its connections — applies directly to social capital. Social capital is not just who you know. It is who your connections know. Proximity to power multiplies safety signals.
             </p>
             <p style={proseStyle}>
-              But the metric is incomplete in human systems because it cannot weight for emotional intelligence, manipulation, or harm. It measures proximity, not integrity. A person in chronic Control whose network reads as high-value may be running external regulation through management — and network centrality cannot distinguish between genuine connection and strategic positioning.
+              But the metric is incomplete in human systems because it cannot weight for emotional intelligence, manipulation, or harm. It measures proximity, not integrity. A person in chronic Strategy & Management whose network reads as high-value may be running external regulation through management — and network centrality cannot distinguish between genuine connection and strategic positioning.
             </p>
 
             <ExpandableSection title="Research Traditions" type="framework">
@@ -519,7 +519,7 @@ export default function F5WorthHierarchiesPage() {
               The Filter of Worth does not just distribute resources unevenly. It produces measurable physiological effects. <strong style={{ color: TEXT.primary }}>Chronic invisibility</strong> — the repeated experience of being unheard, dismissed, passed over, disbelieved, and excluded — functions as chronic social threat. The cost is not only the event itself — it is the anticipation: the nervous system learns to expect dismissal, so threat activation begins before the next interaction.
             </p>
             <p style={proseStyle}>
-              This is the same mechanism F1 describes at the individual level, now operating structurally. The compass orients toward protection — not because the person is choosing a defensive posture, but because the environment is <em>holding</em> their compass there. Repeated non-response, dismissal, and exclusion are danger signals. The nervous system does what it was designed to do: it activates Protection mode (F1) and stays there.
+              This is the same mechanism F1 describes at the individual level, now operating structurally. The compass orients toward protection — not because the person is choosing a defensive posture, but because the environment is <em>holding</em> their compass there. Repeated non-response, dismissal, and exclusion are danger signals. The nervous system does what it was designed to do: it activates Threat & Defence (F1) and stays there.
             </p>
 
             <h3 style={conceptHeadingStyle}>
@@ -560,7 +560,7 @@ export default function F5WorthHierarchiesPage() {
             </div>
 
             <KeyStatement>
-              The person is not "choosing" chronic Protection. The filter is producing ongoing signals that keep their compass oriented toward defense. This is a stuck compass (F1) — but the sticking force is structural, not only developmental.
+              The person is not "choosing" chronic Threat & Defence. The filter is producing ongoing signals that keep their compass oriented toward defense. This is a stuck compass (F1) — but the sticking force is structural, not only developmental.
             </KeyStatement>
 
             <p style={proseStyle}>
@@ -665,83 +665,44 @@ export default function F5WorthHierarchiesPage() {
             </ExpandableSection>
           </section>
 
-          {/* ─── WHAT F5 ESTABLISHES ───────────────────────── */}
-          <section
-            id="what-f5-establishes"
-            aria-labelledby="heading-what-f5-establishes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-f5-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What F5 Establishes
-            </h2>
-
-            <p style={proseStyle}>
-              F5 shows how threat-stabilized rule systems (F4) produce worth hierarchies — through the nervous system's orientation toward whatever signals safety — and how those hierarchies formalize into self-reinforcing sorting systems that distribute credibility, resources, and protection based on signal access rather than intrinsic worth.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              Core Concepts
-            </h3>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Concept</th>
-                    <th style={thStyle}>What It Means</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Power as safety",
-                    "Worth-seeking is nervous system regulation — the compass orienting toward whatever reduces threat. An adaptation to conditional safety.",
-                  ]} />
-                  <TableRow cells={[
-                    "Safety proxies and three capitals",
-                    "Economic, social, and cultural capital function as nervous system stabilizers. Compelling because they genuinely reduce threat in systems where these markers predict protection.",
-                  ]} />
-                  <TableRow cells={[
-                    "The Filter of Worth",
-                    "Signal access mistaken for human value. Signal deprivation internalized as inadequacy. Not a belief system — a repeated pattern of who gets heard, believed, resourced, protected.",
-                  ]} />
-                  <TableRow cells={[
-                    "Five-step worth loop",
-                    "Threat → validation-seeking → power-as-proxy → formal sorting → internalized worth. Self-reinforcing. Scale-invariant parallel to F4's seven-step mechanism.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic invisibility",
-                    "Structural filtering produces chronic social threat → compass stuck in Protection. Not individual cognitive distortion — accurate adaptation to filtering environment. Clinical assessment must include structural conditions.",
-                  ]} />
-                  <TableRow cells={[
-                    "Self-reinforcing advantage",
-                    "Outcome gaps are structural artifacts of proxy access. Double false coherence: insider's \"I earned this\" and outsider's \"something is wrong with me\" are both regulation strategies.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>
-              Key Formulations
-            </h3>
-
-            <ul style={{ paddingLeft: 20, margin: "0 0 24px" }}>
-              {[
-                "\"Worth-seeking is a regulation strategy — the compass orienting toward whatever reduces threat\"",
-                "\"The compass reads worth signals as safety signals — because in these environments, they are\"",
-                "\"The Filter of Worth: signal access mistaken for human value; signal deprivation internalized as inadequacy\"",
-                "\"Both 'I earned this' and 'something is wrong with me' can be false coherence\"",
-                "\"Outcome gaps are proxy-access artifacts, not evidence of intrinsic differences\"",
-                "\"Merit is a rule the cognitive system absorbs as truth — and the filter's outcomes become the evidence\"",
-                "\"Do not pathologize accurate adaptations to filtering environments\"",
-                "\"Assess structural threat as part of nervous system load\"",
-                "\"Restore safety first — including structurally — then expect flexibility\"",
-              ].map((f, i) => (
-                <li key={i} style={{ ...listItemStyle, fontStyle: "italic" }}>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
+          <EstablishesSection
+            color={SPECTRUM.cobalt}
+            items={[
+              {
+                term: "Worth-seeking as regulation",
+                definition: "The nervous system orients toward worth signals because the developmental environment calibrated worth as safety.",
+              },
+              {
+                term: "Three capitals as nervous system stabilisers",
+                definition: "Economic, social, cultural capital reduce specific forms of activation.",
+              },
+              {
+                term: "Hierarchy distributes substrate-building conditions",
+                definition: "Worth hierarchies determine which caregivers have the conditions for co-regulation — sorting who gets the substrate.",
+              },
+              {
+                term: "The Filter of Worth",
+                definition: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy. Maintained by double False Coherence.",
+              },
+              {
+                term: "The worth loop",
+                definition: "Five-step self-reinforcing mechanism. Scale-invariant architecture matching F4's internalisation loop.",
+              },
+              {
+                term: "Three coherence forms by position",
+                definition: "Top: coherence without the body. Subject to hierarchy: contested. Deprived of conditions: absent. Distribution determines stability.",
+              },
+              {
+                term: "Structural compass lock",
+                definition: "The filter produces chronic social threat that holds the nervous system in a protective configuration. Measurable physiological effects.",
+              },
+              {
+                term: "Self-reinforcing advantage",
+                definition: "The filter produces the evidence that appears to justify it. Double False Coherence operating in both directions.",
+              },
+            ]}
+          />
 
           {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
           <section
