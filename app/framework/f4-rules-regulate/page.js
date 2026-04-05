@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
+import {
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -108,6 +115,28 @@ export default function F4RulesRegulatePage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "False Coherence",
+              framework: "F3",
+              description: "The CLS replacing the ESS's signals with narrative that produces physiological relief — the cognitive maintenance mechanism that individual patterns scale through.",
+              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+            },
+            {
+              concept: "External Regulation",
+              framework: "F3",
+              description: "When internal restoration is unavailable, the nervous system recruits others — each chronic state using others differently.",
+              href: "/framework/f3-false-coherence#external-regulation",
+            },
+            {
+              concept: "Biological Restoration",
+              framework: "F1",
+              description: "The body's designed process for completing the activation sequence — the process rules substitute for at collective scale.",
+              href: "/framework/f1-emotional-gradient#designed-process",
+            },
+          ]} />
+
           {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
           <CommonUnderstanding
             terms={[
@@ -132,7 +161,7 @@ export default function F4RulesRegulatePage() {
           >
             <h2
               id="heading-core-propositions"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.cobalt)}
             >
               Core Propositions
             </h2>
@@ -168,7 +197,7 @@ export default function F4RulesRegulatePage() {
           >
             <h2
               id="heading-overview"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.cobalt)}
             >
               Overview — The First Collective Framework
             </h2>
@@ -257,7 +286,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-individual-to-collective"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-individual-to-collective" style={sectionHeadingStyle}>
+            <h2 id="heading-individual-to-collective" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               From Individual to Collective — How F3's Mechanisms Scale
             </h2>
 
@@ -325,11 +354,11 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-seven-step-mechanism"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-how-rules-internalized" style={sectionHeadingStyle}>
+            <h2 id="heading-how-rules-internalized" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               How do rules become internalized as nervous system regulation?
             </h2>
 
-            <h2 id="heading-seven-step-mechanism" style={sectionHeadingStyle}>
+            <h2 id="heading-seven-step-mechanism" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Threat-Based Rule Internalization — The Seven-Step Mechanism
             </h2>
 
@@ -391,11 +420,11 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-six-rule-systems"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-types-of-rules" style={sectionHeadingStyle}>
+            <h2 id="heading-what-types-of-rules" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               What types of rules emerge from threat-based systems?
             </h2>
 
-            <h2 id="heading-six-rule-systems" style={sectionHeadingStyle}>
+            <h2 id="heading-six-rule-systems" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Six Rule Systems
             </h2>
 
@@ -547,7 +576,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-rule-escalation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-rule-escalation" style={sectionHeadingStyle}>
+            <h2 id="heading-rule-escalation" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Rule Escalation Under Sustained Threat
             </h2>
 
@@ -623,7 +652,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-cross-theoretical-convergence"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cross-theoretical-convergence" style={sectionHeadingStyle}>
+            <h2 id="heading-cross-theoretical-convergence" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Cross-Theoretical Convergence — Ten Traditions Describing One Mechanism
             </h2>
 
@@ -715,7 +744,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-what-f4-establishes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-f4-establishes" style={sectionHeadingStyle}>
+            <h2 id="heading-what-f4-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               What F4 Establishes
             </h2>
 
@@ -790,7 +819,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-research-foundations"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle}>
+            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Research Foundations
             </h2>
 
@@ -859,77 +888,39 @@ export default function F4RulesRegulatePage() {
             </div>
           </section>
 
-          {/* ─── BRIDGE TO F5 ──────────────────────────────── */}
-          <section
-            id="bridge-to-f5"
-            aria-labelledby="heading-bridge-to-f5"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-bridge-to-f5" style={sectionHeadingStyle}>
-              Bridge to F5: When Rules Become Worth
-            </h2>
+          {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.cobalt}
+            established="F4 established how individual nervous system patterns — false coherence, emotional distortion, external regulation — scale into collective rule systems when enough people run them in proximity. Rules function as regulatory material: the CLS absorbs them because they stabilize, not because they are accurate."
+            question="But rule systems do not just organize behavior. They organize value. When rule adherence becomes the social definition of safety, the system begins to sort people — and the sorting formalizes into worth hierarchies that distribute credibility, resources, and protection based on signal access rather than intrinsic capacity."
+            nextFramework="F5"
+            nextTitle="Worth Hierarchies Regulate"
+            nextHref="/framework/f5-worth-hierarchies"
+          />
 
-            <p style={proseStyle}>
-              F4 explains how individual nervous system patterns scale into collective rule systems through the mechanisms F3 established.
-            </p>
-            <p style={proseStyle}>
-              But rule systems do not just organize behavior. They organize value. When rule adherence becomes the social definition of safety, the system begins to sort people. Those who comply — who perform the right roles, follow the right rules, display the right markers — receive belonging, protection, and credibility. Those who do not — or cannot — receive less.
-            </p>
-            <p style={proseStyle}>
-              This sorting is not a deliberate policy. It is the structural consequence of rule-based regulation. When rules determine belonging and protection, the markers of rule-compliance become markers of worth. Status signals emerge. Hierarchies form. The system begins to distribute not just safety but value — and the distribution tracks the rule structure.
-            </p>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.cobalt}
+            connections={[
+              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 described the individual mechanisms — false coherence, emotional distortion, external regulation. F4 shows these same mechanisms operating at collective scale through rule systems." },
+              { id: "F5", href: "/framework/f5-worth-hierarchies", description: "F4 established rule systems. F5 shows what those rules sort — how rule-based regulation produces worth hierarchies that distribute safety and value." },
+              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps the four states. F4 shows how chronic states in enough individuals produce collective rule systems that enforce the same state configurations." },
+              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps individual restoration failure. F4 shows that failure scaling into collective regulatory structures." },
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F4 describes rule systems as collective regulation. F8 describes the conditions under which those systems can shift — safety before capacity, at collective scale." },
+            ]}
+          />
 
-            <KeyStatement>
-              F4 is rules. F5 is what rules sort.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              F5 explains how threat-stabilized rule systems produce worth hierarchies, how those hierarchies formalize into institutions, and how the sorting becomes so deeply internalized that it feels like objective reality rather than the product of collective nervous system regulation.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f4-rules-regulate" type="framework" />
-
-          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to…</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the next collective framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate →" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient →" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness →" />
-                  <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence →" />
-                  <NavRow label="See the applied models" href="/models" linkText="Core Models →" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary →" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications →" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) →" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.cobalt}
+            items={[
+              { label: "Continue to F5 — how rules become worth hierarchies", href: "/framework/f5-worth-hierarchies", linkText: "F5: Worth Hierarchies Regulate →" },
+              { label: "See the individual mechanisms that scale", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence →" },
+              { label: "See the restoration mechanism rules substitute for", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1067,110 +1058,29 @@ export default function F4RulesRegulatePage() {
   );
 }
 
-// ─── STYLE CONSTANTS ──────────────────────────────────────
+// ─── STYLE CONSTANTS (page-local only) ───────────────────
 
-const sectionHeadingStyle = {
-  fontSize: 20,
-  fontWeight: 700,
-  color: RESEARCHER.accent,
-  marginBottom: 20,
-  paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-};
-
-const conceptHeadingStyle = {
-  fontSize: 16,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 12,
-};
-
-const proseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 12,
-  maxWidth: 720,
-};
-
-const expandedProseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  margin: "8px 0 0",
-};
-
-const propositionItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
-
-const orderedListStyle = {
-  paddingLeft: 20,
-  margin: "0 0 16px",
-};
-
-const listItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
+const orderedListStyle = { paddingLeft: 20, margin: "0 0 16px" };
+const listItemStyle = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 };
 
 const tableStyle = {
-  width: "100%",
-  borderCollapse: "collapse",
-  background: BG.card,
-  borderRadius: 8,
-  overflow: "hidden",
-  border: `1px solid ${BORDER.default}`,
-  fontSize: 13,
+  width: "100%", borderCollapse: "collapse", background: BG.card,
+  borderRadius: 8, overflow: "hidden", border: `1px solid ${BORDER.default}`, fontSize: 13,
 };
-
 const thStyle = {
-  padding: "10px 14px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-  background: BG.surface,
-  borderBottom: `1px solid ${BORDER.default}`,
+  padding: "10px 14px", textAlign: "left", fontSize: 11, fontWeight: 600,
+  color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em",
+  fontFamily: FONT.mono, background: BG.surface, borderBottom: `1px solid ${BORDER.default}`,
 };
-
-const navThStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-};
-
-// ─── HELPER COMPONENTS ────────────────────────────────────
 
 function KeyStatement({ children }) {
   return (
-    <blockquote
-      style={{
-        padding: "16px 20px",
-        margin: "0 0 16px",
-        background: hexToRgba(SPECTRUM.cobalt, 0.06),
-        borderRadius: 8,
-        borderLeft: `4px solid ${SPECTRUM.cobalt}`,
-        fontSize: 15,
-        fontWeight: 500,
-        color: TEXT.primary,
-        lineHeight: 1.6,
-        fontStyle: "italic",
-      }}
-    >
+    <blockquote style={{
+      padding: "16px 20px", margin: "0 0 16px",
+      background: hexToRgba(SPECTRUM.cobalt, 0.06), borderRadius: 8,
+      borderLeft: `4px solid ${SPECTRUM.cobalt}`,
+      fontSize: 15, fontWeight: 500, color: TEXT.primary, lineHeight: 1.6, fontStyle: "italic",
+    }}>
       {children}
     </blockquote>
   );
@@ -1180,47 +1090,12 @@ function TableRow({ cells }) {
   return (
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       {cells.map((cell, i) => (
-        <td
-          key={i}
-          style={{
-            padding: "10px 14px",
-            fontSize: 13,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400,
-            lineHeight: 1.6,
-            verticalAlign: "top",
-          }}
-        >
-          {cell}
-        </td>
+        <td key={i} style={{
+          padding: "10px 14px", fontSize: 13,
+          color: i === 0 ? TEXT.primary : TEXT.secondary,
+          fontWeight: i === 0 ? 600 : 400, lineHeight: 1.6, verticalAlign: "top",
+        }}>{cell}</td>
       ))}
-    </tr>
-  );
-}
-
-function NavRow({ label, href, linkText, external }) {
-  const linkStyle = {
-    color: SPECTRUM.blue,
-    textDecoration: "none",
-    fontWeight: 500,
-  };
-
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
-        {label}
-      </td>
-      <td style={{ padding: "12px 16px", fontSize: 14 }}>
-        {external ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" style={linkStyle}>
-            {linkText}
-          </a>
-        ) : (
-          <Link href={href} style={linkStyle}>
-            {linkText}
-          </Link>
-        )}
-      </td>
     </tr>
   );
 }
