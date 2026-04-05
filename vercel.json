@@ -1,3 +1,3 @@
 {
-  "ignoreCommand": "bash -c 'if [ -z \"$VERCEL_GIT_PREVIOUS_SHA\" ]; then exit 1; fi; git diff --quiet $VERCEL_GIT_PREVIOUS_SHA HEAD -- app/ src/ content/ public/ next.config.js package.json package-lock.json tailwind.config.js postcss.config.js'"
+  "ignoreCommand": "bash -c 'if [ -z \"$VERCEL_GIT_PREVIOUS_SHA\" ]; then exit 1; fi; if ! git cat-file -e $VERCEL_GIT_PREVIOUS_SHA 2>/dev/null; then exit 1; fi; git diff --quiet $VERCEL_GIT_PREVIOUS_SHA HEAD -- app/ src/ content/ public/ next.config.js package.json package-lock.json tailwind.config.js postcss.config.js'"
 }
