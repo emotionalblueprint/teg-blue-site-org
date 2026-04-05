@@ -35,9 +35,6 @@ export const BORDER = {
   default:    "var(--border-default)",
   hover:      "var(--border-hover)",
   active:     "var(--border-active)",
-  brightBlue: "#4B8FFF",   // emphasis — callouts, focus rings
-  glowBlue:   "#93CFFF",   // high-visibility accent, sky spectrum
-  accentBlue: "#5BADFF",   // mid-tone bright accent, azure spectrum
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────
@@ -157,11 +154,9 @@ export const PATTERN = {
 
 export const PATTERN_GRADIENT = 'linear-gradient(90deg, #93CFFF, #5BADFF, #346AEC, #2563eb)';
 
-// ─── RESEARCHER ACCENT (legacy — used across 36+ files) ────
+// ─── RESEARCHER ACCENT (framework/research page accent) ────
 export const RESEARCHER = {
   accent: '#2563eb',
-  accentLight: '#3b82f6',
-  accentLighter: '#60a5fa',
 };
 
 // ─── THREE AWARENESS CAPACITIES (cross-site canonical — matches .com) ───
@@ -198,6 +193,15 @@ export const EDITORIAL = {
 // Helper: gradient card background
 export function gradientCardBg(color, startOpacity = 0.08) {
   return `linear-gradient(135deg, ${hexToRgba(color, startOpacity)}, transparent)`;
+}
+
+// Helper: card color set at standard opacities
+export function cardColors(hex) {
+  return {
+    bg: hexToRgba(hex, 0.07),
+    border: hexToRgba(hex, 0.22),
+    borderHover: hexToRgba(hex, 0.35),
+  };
 }
 
 // ─── UTILITY ─────────────────────────────────────────
