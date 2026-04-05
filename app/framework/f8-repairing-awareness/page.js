@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
+import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -114,6 +121,27 @@ export default function F8RepairingAwarenessPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "The Regulation Thread",
+              framework: "F1",
+              description: "When biological restoration is unavailable, the nervous system substitutes at escalating scales. F8 begins the reversal.",
+              href: "/framework/f1-emotional-gradient#regulation-thread",
+            },
+            {
+              concept: "Interoceptive Self-Awareness (SEA)",
+              framework: "F2",
+              description: "The interoceptive channel between ESS and CLS — the capacity that must rebuild for the branching point to shift from Path B to Path A.",
+              href: "/framework/f2-awareness-calibration#sea",
+            },
+            {
+              concept: "False Coherence",
+              framework: "F3",
+              description: "The cognitive maintenance mechanism — what loosens when safety makes awareness possible.",
+              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+            },
+          ]} />
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
@@ -122,7 +150,7 @@ export default function F8RepairingAwarenessPage() {
           >
             <h2
               id="heading-core-propositions"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.blue)}
             >
               Core Propositions
             </h2>
@@ -164,7 +192,7 @@ export default function F8RepairingAwarenessPage() {
           >
             <h2
               id="heading-overview"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.blue)}
             >
               Overview — The First Repair Framework
             </h2>
@@ -238,7 +266,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-assessing-configurations"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-assessing-configurations" style={sectionHeadingStyle}>
+            <h2 id="heading-assessing-configurations" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Assessing Awareness Configurations
             </h2>
 
@@ -354,11 +382,11 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-why-repair-is-difficult"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-why-repair-is-difficult" style={sectionHeadingStyle}>
+            <h2 id="heading-why-repair-is-difficult" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Why Repair Is Difficult
             </h2>
 
-            <h2 id="heading-repair-resistance-question" style={sectionHeadingStyle}>
+            <h2 id="heading-repair-resistance-question" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Why does the nervous system resist awareness repair?
             </h2>
 
@@ -417,11 +445,11 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-conditions-for-repair"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-conditions-for-repair" style={sectionHeadingStyle}>
+            <h2 id="heading-conditions-for-repair" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Conditions for Repair — Safety Before Capacity
             </h2>
 
-            <h2 id="heading-conditions-repair-question" style={sectionHeadingStyle}>
+            <h2 id="heading-conditions-repair-question" style={sectionHeadingStyle(SPECTRUM.blue)}>
               What conditions enable awareness capacity development?
             </h2>
 
@@ -505,7 +533,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-pathways-and-process"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-pathways-and-process" style={sectionHeadingStyle}>
+            <h2 id="heading-pathways-and-process" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Pathways to Capacity Development
             </h2>
 
@@ -589,7 +617,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-repair-process"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-repair-process" style={sectionHeadingStyle}>
+            <h2 id="heading-repair-process" style={sectionHeadingStyle(SPECTRUM.blue)}>
               The Repair Process — Five Phases
             </h2>
 
@@ -651,7 +679,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-what-repair-looks-like"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-repair-looks-like" style={sectionHeadingStyle}>
+            <h2 id="heading-what-repair-looks-like" style={sectionHeadingStyle(SPECTRUM.blue)}>
               What Repair Looks Like — Movement, Not Perfection
             </h2>
 
@@ -714,7 +742,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-everyone-masks"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-everyone-masks" style={sectionHeadingStyle}>
+            <h2 id="heading-everyone-masks" style={sectionHeadingStyle(SPECTRUM.blue)}>
               The Universal Pattern — Everyone Masks Their Configuration
             </h2>
 
@@ -777,7 +805,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-collective-strength"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-collective-strength" style={sectionHeadingStyle}>
+            <h2 id="heading-collective-strength" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Different Configurations, Collective Strength
             </h2>
 
@@ -846,7 +874,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-what-f8-establishes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-f8-establishes" style={sectionHeadingStyle}>
+            <h2 id="heading-what-f8-establishes" style={sectionHeadingStyle(SPECTRUM.blue)}>
               What F8 Establishes
             </h2>
 
@@ -933,7 +961,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-research-foundations"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle}>
+            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.blue)}>
               Research Foundations
             </h2>
 
@@ -962,79 +990,37 @@ export default function F8RepairingAwarenessPage() {
             </div>
           </section>
 
-          {/* ─── BRIDGE TO F9 ──────────────────────────────── */}
-          <section
-            id="bridge-to-f9"
-            aria-labelledby="heading-bridge-to-f9"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-bridge-to-f9" style={sectionHeadingStyle}>
-              Bridge to F9: From Universal Pattern to Structural Mismatch
-            </h2>
+                    {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.blue}
+            established="F8 established that awareness capacities rebuild through safety, not instruction — the biological sequence follows a specific order, and the conditions must precede the capacity."
+            question="But what happens when the nervous system that needs to rebuild was configured differently from the start — when the instrument itself has a different architecture? F9 maps variation as configuration, not deficit."
+            nextFramework="F9"
+            nextTitle="Variation Is Configuration"
+            nextHref="/framework/f9-neurodivergence-variation"
+          />
 
-            <p style={proseStyle}>
-              F8 Part 2 describes a universal pattern: everyone masks, conformity has costs, difference is strength. F9 asks: <strong style={{ color: TEXT.primary }}>what happens when this pattern becomes structural?</strong>
-            </p>
-            <p style={proseStyle}>
-              When environments — schools, workplaces, healthcare systems, social norms — are designed for one neurological configuration, the mismatch is not just social. It is architectural. The lighting, the seating, the pace, the communication style, the attention demands, the sensory environment — all built for one nervous system configuration.
-            </p>
-            <p style={proseStyle}>
-              For neurodivergent people, the universal cost of masking becomes a structural, daily, inescapable cost. The system mismatch is not interpersonal (&ldquo;these people don&rsquo;t accept me&rdquo;). It is environmental (&ldquo;this world was not designed for how my nervous system works&rdquo;).
-            </p>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.blue}
+            connections={[
+              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 describes the lock. F8 describes how it opens — awareness rebuilt through safety, not instruction." },
+              { id: "F7", href: "/framework/f7-domination-regulates", description: "F7 is the endpoint of escalation. F8 begins the return — the same principle at every stage: safety before capacity." },
+              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the three awareness capacities. F8 describes the conditions under which capacities that were never built can begin to develop." },
+              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps the restoration sequence. F8 describes the conditions that allow the restoration pathway to become available." },
+            ]}
+          />
 
-            <KeyStatement>
-              If difference is strength (F8), then structural exclusion of difference is structural loss of collective intelligence. If masking has costs (F8), then environments that make masking a daily survival requirement produce predictable burnout, threshold crossing, and developmental arrest.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              F8 provides the foundation. F9 provides the most urgent application.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f8-repairing-awareness" type="framework" />
-
-          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to...</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the neurodivergence framework (F9)" href="/framework/f9-neurodivergence-variation" linkText="Neurodivergence as Nervous System Variation \u2192" />
-                  <NavRow label="Read the escalation framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="Read the bias framework (F6)" href="/framework/f6-bias-regulates" linkText="Bias Regulates \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
-                  <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
-                  <NavRow label="Understand the physiological basis of what repair requires" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.blue}
+            items={[
+              { label: "Continue to F9 — variation as configuration", href: "/framework/f9-neurodivergence-variation", linkText: "F9: Variation Is Configuration →" },
+              { label: "See the lock this framework opens", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1172,43 +1158,10 @@ export default function F8RepairingAwarenessPage() {
 
 // ─── STYLE CONSTANTS ──────────────────────────────────────
 
-const sectionHeadingStyle = {
-  fontSize: 20,
-  fontWeight: 700,
-  color: RESEARCHER.accent,
-  marginBottom: 20,
-  paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-};
 
-const conceptHeadingStyle = {
-  fontSize: 16,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 12,
-};
 
-const proseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 12,
-  maxWidth: 720,
-};
 
-const expandedProseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  margin: "8px 0 0",
-};
 
-const propositionItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
 
 const orderedListStyle = {
   paddingLeft: 20,
@@ -1245,16 +1198,6 @@ const thStyle = {
   borderBottom: `1px solid ${BORDER.default}`,
 };
 
-const navThStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-};
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
 
@@ -1319,33 +1262,6 @@ function ThreeColRow({ cells }) {
           {cell}
         </td>
       ))}
-    </tr>
-  );
-}
-
-function NavRow({ label, href, linkText, external }) {
-  const linkStyle = {
-    color: SPECTRUM.blue,
-    textDecoration: "none",
-    fontWeight: 500,
-  };
-
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
-        {label}
-      </td>
-      <td style={{ padding: "12px 16px", fontSize: 14 }}>
-        {external ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" style={linkStyle}>
-            {linkText}
-          </a>
-        ) : (
-          <Link href={href} style={linkStyle}>
-            {linkText}
-          </Link>
-        )}
-      </td>
     </tr>
   );
 }

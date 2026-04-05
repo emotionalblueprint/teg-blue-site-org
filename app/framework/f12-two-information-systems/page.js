@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, FrameworkHero,
-  PropositionBox, ExpandableSection, PageLayout,
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
+import {
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -79,19 +86,6 @@ export default function F12TwoInformationSystemsPage() {
 
   /* ── local helpers ─────────────────────────────────── */
 
-  const sectionHeadingStyle = {
-    fontSize: 20, fontWeight: 700, color: RESEARCHER.accent,
-    borderBottom: `2px solid ${SPECTRUM.cobalt}`,
-    paddingBottom: 10, marginBottom: 20, marginTop: 48,
-  };
-  const conceptHeadingStyle = {
-    fontSize: 16, fontWeight: 600, color: TEXT.primary,
-    marginTop: 28, marginBottom: 10,
-  };
-  const proseStyle = {
-    fontSize: 14, color: TEXT.secondary, lineHeight: 1.8,
-    maxWidth: 720, marginBottom: 16,
-  };
 
   function KeyStatement({ children }) {
     return (
@@ -153,18 +147,6 @@ export default function F12TwoInformationSystemsPage() {
     );
   }
 
-  function NavRow({ label, href, linkText, external }) {
-    const El = external ? "a" : Link;
-    const extra = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        <td style={{ padding: "10px 14px", fontSize: 13, color: TEXT.secondary }}>{label}</td>
-        <td style={{ padding: "10px 14px", fontSize: 13 }}>
-          <El href={href} {...extra} style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>{linkText}</El>
-        </td>
-      </tr>
-    );
-  }
 
   const thStyle = {
     padding: "10px 14px", fontSize: 12, fontWeight: 600,
@@ -177,11 +159,6 @@ export default function F12TwoInformationSystemsPage() {
     color: TEXT.tertiary, textTransform: "uppercase",
     letterSpacing: "0.05em", textAlign: "left",
     borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const navThStyle = { ...thStyle };
-  const tableWrapStyle = {
-    overflowX: "auto", marginBottom: 24,
-    border: `1px solid ${BORDER.default}`, borderRadius: 8,
   };
 
   /* ── data ──────────────────────────────────────────── */
@@ -238,6 +215,21 @@ export default function F12TwoInformationSystemsPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "The Regulation Thread",
+              framework: "F1",
+              description: "The governing architecture connecting all twelve frameworks — substitution at escalating scales when biological restoration is unavailable.",
+              href: "/framework/f1-emotional-gradient#regulation-thread",
+            },
+            {
+              concept: "Biological Restoration",
+              framework: "F1",
+              description: "The designed process of the entire system — what the two information systems must reunite to complete.",
+              href: "/framework/f1-emotional-gradient#designed-process",
+            },
+          ]} />
 
           {/* ── Core Claims ── */}
           <PropositionBox
@@ -256,7 +248,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="framework-position">
-            <h2 style={sectionHeadingStyle}>Framework Position</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
 
             <p style={proseStyle}>
               F1–F11 describe a complete system: how the compass works (F1), how awareness develops or fails (F2), how cognition compensates (F3), how substitutes scale from rules to worth to bias to domination (F4–F7), how repair happens individually and structurally (F8–F9), how patterns transmit and conditions change across generations (F10), and how paradox emerges when the full picture becomes visible (F11).
@@ -315,7 +307,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="two-systems">
-            <h2 style={sectionHeadingStyle}>The Two Information Systems</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Two Information Systems</h2>
 
             <p style={proseStyle}>
               Two parallel information systems running at the same time, impossible to isolate:
@@ -407,9 +399,9 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="why-insight-fails">
-            <h2 style={sectionHeadingStyle}>Why Insight Alone Doesn't Change Behavior</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Why Insight Alone Doesn't Change Behavior</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               Why doesn't understanding your patterns automatically change them?
             </h2>
 
@@ -485,9 +477,9 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="state-dependent-behavior">
-            <h2 style={sectionHeadingStyle}>State-Dependent Behavior</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>State-Dependent Behavior</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               How does nervous system state determine what a person can do?
             </h2>
 
@@ -564,7 +556,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="one-mechanism">
-            <h2 style={sectionHeadingStyle}>One Mechanism, Twelve Angles</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>One Mechanism, Twelve Angles</h2>
 
             <h3 style={conceptHeadingStyle}>TEG-Blue Is Not Twelve Frameworks</h3>
 
@@ -623,7 +615,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="accountability">
-            <h2 style={sectionHeadingStyle}>Accountability Without Demonization</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Accountability Without Demonization</h2>
 
             <p style={proseStyle}>
               Understanding state-dependent behavior raises an immediate question: if behavior is organized by nervous system state, is anyone responsible for anything?
@@ -689,7 +681,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="gradient-matched-intervention">
-            <h2 style={sectionHeadingStyle}>Gradient-Matched Intervention</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Gradient-Matched Intervention</h2>
 
             <p style={proseStyle}>
               If state determines capacity, then intervention must match the state. Offering Connection-mode tools to a person in chronic Protection does not work — not because the tools are wrong, but because they require capacities the current state does not provide.
@@ -735,7 +727,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="design-implication">
-            <h2 style={sectionHeadingStyle}>The Design Implication</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Design Implication</h2>
 
             <p style={proseStyle}>
               If behavior is state-dependent, then systems designed to change behavior must address state, not just information.
@@ -772,7 +764,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="complete-architecture">
-            <h2 style={sectionHeadingStyle}>The Complete Architecture</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Complete Architecture</h2>
 
             <p style={proseStyle}>
               One mechanism. Twelve angles. Every scale from a single nervous system to a civilization.
@@ -839,7 +831,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="key-formulations">
-            <h2 style={sectionHeadingStyle}>Key Formulations — F12</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Key Formulations — F12</h2>
 
             <div style={tableWrapStyle}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -868,7 +860,7 @@ export default function F12TwoInformationSystemsPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="research-foundations">
-            <h2 style={sectionHeadingStyle}>Research Foundations</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Research Foundations</h2>
 
             <p style={{ ...proseStyle, marginBottom: 8 }}>
               F12 integrates traditions that independently describe the two-system architecture and state-dependent organization:
@@ -900,40 +892,28 @@ export default function F12TwoInformationSystemsPage() {
             </p>
           </section>
 
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f12-two-information-systems" type="framework" />
+                    {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.blue}
+            connections={[
+              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 described the biological origin. F12 describes the architecture underneath — why the system works the way it does and why insight alone does not change it." },
+              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps the four states. F12 shows the two information systems that produce and maintain those states." },
+              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps the restoration sequence. F12 explains why completion requires both systems operating together." },
+              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the awareness architecture. F12 shows why that architecture determines everything that follows." },
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 begins the return. F12 provides the architectural explanation for why the return follows the sequence it does." },
+            ]}
+          />
 
-          {/* ════════════════════════════════════════════════
-              WHERE TO GO NEXT
-             ════════════════════════════════════════════════ */}
-
-          <section id="where-to-go-next">
-            <h2 style={sectionHeadingStyle}>Where to Go Next</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={navThStyle}>If you want to…</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the emotional paradoxes framework (F11)" href="/framework/f11-emotional-paradoxes" linkText="The Emotional Logic Behind Paradoxes \u2192" />
-                  <NavRow label="Read the generational bridges framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
-                  <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="See the physiological model — the body's cascade that cognition cannot close" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.blue}
+            items={[
+              { label: "Return to the beginning", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient →" },
+              { label: "See the models the frameworks inform", href: "/models", linkText: "The Emotional Somatic Cycle →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1010,3 +990,5 @@ export default function F12TwoInformationSystemsPage() {
     </>
   );
 }
+
+const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };

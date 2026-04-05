@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, FrameworkHero,
-  PropositionBox, ExpandableSection, PageLayout,
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
+import {
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -80,19 +87,6 @@ export default function F10GenerationalBridgesPage() {
 
   /* ── local helpers ─────────────────────────────────── */
 
-  const sectionHeadingStyle = {
-    fontSize: 20, fontWeight: 700, color: RESEARCHER.accent,
-    borderBottom: `2px solid ${SPECTRUM.cobalt}`,
-    paddingBottom: 10, marginBottom: 20, marginTop: 48,
-  };
-  const conceptHeadingStyle = {
-    fontSize: 16, fontWeight: 600, color: TEXT.primary,
-    marginTop: 28, marginBottom: 10,
-  };
-  const proseStyle = {
-    fontSize: 14, color: TEXT.secondary, lineHeight: 1.8,
-    maxWidth: 720, marginBottom: 16,
-  };
 
   function KeyStatement({ children }) {
     return (
@@ -154,18 +148,6 @@ export default function F10GenerationalBridgesPage() {
     );
   }
 
-  function NavRow({ label, href, linkText, external }) {
-    const El = external ? "a" : Link;
-    const extra = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        <td style={{ padding: "10px 14px", fontSize: 13, color: TEXT.secondary }}>{label}</td>
-        <td style={{ padding: "10px 14px", fontSize: 13 }}>
-          <El href={href} {...extra} style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>{linkText}</El>
-        </td>
-      </tr>
-    );
-  }
 
   const thStyle = {
     padding: "10px 14px", fontSize: 12, fontWeight: 600,
@@ -178,11 +160,6 @@ export default function F10GenerationalBridgesPage() {
     color: TEXT.tertiary, textTransform: "uppercase",
     letterSpacing: "0.05em", textAlign: "left",
     borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const navThStyle = { ...thStyle };
-  const tableWrapStyle = {
-    overflowX: "auto", marginBottom: 24,
-    border: `1px solid ${BORDER.default}`, borderRadius: 8,
   };
 
   /* ── data ──────────────────────────────────────────── */
@@ -239,6 +216,21 @@ export default function F10GenerationalBridgesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "Intergenerational Transmission",
+              framework: "F2",
+              description: "The caregiver's nervous system IS the child's developmental environment — what the caregiver carries transmits through co-regulation.",
+              href: "/framework/f2-awareness-calibration#intergenerational",
+            },
+            {
+              concept: "Safety Before Capacity",
+              framework: "F8",
+              description: "Awareness capacities rebuild through safety — the same principle that applies within one lifetime applies across generations.",
+              href: "/framework/f8-repairing-awareness#safety-before-capacity",
+            },
+          ]} />
 
           {/* ── Core Claims ── */}
           <PropositionBox
@@ -257,7 +249,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="framework-position">
-            <h2 style={sectionHeadingStyle}>Framework Position</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
 
             <p style={proseStyle}>
               F8 describes individual repair — how to develop the awareness capacities that did not have conditions to develop. F9 describes the structural dimension — how environments designed for one configuration prevent repair and what genuine inclusion requires.
@@ -326,7 +318,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="awareness-across-generations">
-            <h2 style={sectionHeadingStyle}>Awareness Teaches Awareness Across Generations</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Awareness Teaches Awareness Across Generations</h2>
 
             <p style={proseStyle}>
               F2's core insight at generational scale: the adults' capacity configuration <em>is</em> the child's environment. Children calibrate to what adults embody, not what adults say. This is the mechanism of generational transmission. Not genetics alone. Not instruction. Not intention. <strong>Embodiment.</strong> The child's nervous system reads the adult's nervous system — continuously, implicitly, below conscious awareness — and calibrates accordingly.
@@ -377,7 +369,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="five-transmission-pathways">
-            <h2 style={sectionHeadingStyle}>The Five Transmission Pathways</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Five Transmission Pathways</h2>
 
             <p style={proseStyle}>
               Transmission operates through five simultaneous pathways. They reinforce each other. When one is interrupted, others can still maintain transmission. This is why single interventions (a parenting course, a therapy session, a good intention) often fail — they address one pathway while four others continue operating.
@@ -450,9 +442,9 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="what-isnt-processed">
-            <h2 style={sectionHeadingStyle}>What Isn't Processed Gets Passed On</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>What Isn't Processed Gets Passed On</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               Why do unprocessed emotional patterns transmit across generations?
             </h2>
 
@@ -524,7 +516,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="transmission-by-compass-position">
-            <h2 style={sectionHeadingStyle}>Transmission by Compass Position</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Transmission by Compass Position</h2>
 
             <p style={proseStyle}>
               The adult's compass position predicts what the child's nervous system absorbs. This is not diagnostic labeling — it is pattern recognition for where repair effort has the most leverage.
@@ -629,7 +621,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="mechanism-of-change">
-            <h2 style={sectionHeadingStyle}>The Mechanism of Generational Change</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Mechanism of Generational Change</h2>
 
             <p style={proseStyle}>
               When an adult develops their awareness capacities (F8), the change is not in what they say or intend. It is in what they embody. And what they embody is what the child's nervous system reads.
@@ -659,9 +651,9 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="enough-not-perfect">
-            <h2 style={sectionHeadingStyle}>Enough, Not Perfect</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Enough, Not Perfect</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               How much restoration is needed to change what the next generation inherits?
             </h2>
 
@@ -711,7 +703,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="intervention-points">
-            <h2 style={sectionHeadingStyle}>The Five Pathways as Intervention Points</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Five Pathways as Intervention Points</h2>
 
             <p style={proseStyle}>
               Each transmission pathway (C2) is also an intervention point. Repairing one pathway changes what transmits through it — even while others continue.
@@ -781,7 +773,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="relationships-across-repair">
-            <h2 style={sectionHeadingStyle}>Relationships Across Generational Repair</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Relationships Across Generational Repair</h2>
 
             <h3 style={conceptHeadingStyle}>Understanding Without Excusing</h3>
 
@@ -820,7 +812,7 @@ export default function F10GenerationalBridgesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="true-elderhood">
-            <h2 style={sectionHeadingStyle}>True Elderhood</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>True Elderhood</h2>
 
             <div style={tableWrapStyle}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -851,133 +843,36 @@ export default function F10GenerationalBridgesPage() {
             </KeyStatement>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C10 — BRIDGE TO F11
-             ════════════════════════════════════════════════ */}
+                    {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.blue}
+            established="F10 established that what the adult processes changes what the next generation inherits — the intergenerational chain breaks where the adult's restoration becomes available."
+            question="When the adult begins to see clearly — when SEA comes online and false coherence loosens — contradictions emerge that survival previously kept hidden. F11 maps what becomes visible when the system holds what logic cannot."
+            nextFramework="F11"
+            nextTitle="Paradox Holds What Logic Cannot"
+            nextHref="/framework/f11-emotional-paradoxes"
+          />
 
-          <section id="bridge-to-f11">
-            <h2 style={sectionHeadingStyle}>Bridge to F11 — Emotional Paradoxes</h2>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.blue}
+            connections={[
+              { id: "F2", href: "/framework/f2-awareness-calibration", description: "F2 maps intergenerational transmission forward. F10 maps it in reverse — how processing changes what transmits." },
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 describes individual repair. F10 extends the same principle across generations." },
+              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the awareness architecture. F10 shows that architecture transmitting — and changing — across generations." },
+            ]}
+          />
 
-            <p style={proseStyle}>
-              F10 shows that generational transmission is not destiny. The mechanism — awareness teaches awareness — operates in both directions. It transmits whatever configuration the adult carries. When the adult develops, what transmits changes. When what transmits changes, the next generation starts from a different place.
-            </p>
-
-            <p style={proseStyle}>
-              F10 surfaces a characteristic paradox: the adult who begins to see the mechanism clearly often experiences simultaneous gratitude and grief for the same people. Love for the parent who did their best and anger at what their best cost. Understanding of the system and heartbreak about its consequences. The desire to forgive and the need to be honest. These are not contradictions. They are the logical outcome of seeing clearly — of having Self-Emotional Awareness (SEA) online while looking at a complex emotional reality.
-            </p>
-
-            <KeyStatement>
-              F11 maps these paradoxes — and shows that holding them, rather than resolving them, is the developmental achievement.
-            </KeyStatement>
-
-            <ExpandableSection title="Group-Seeking as the Scaling Mechanism" type="framework">
-              <p style={proseStyle}>
-                F10's transmission mechanism does not stop at the family. The same biology operates at every scale — from one nervous system to a group to a structure. When a person's chronic mode produces behavior that generates cognitive dissonance (the awareness that the behavior is socially unacceptable without the felt guilt that would stop it), finding others whose systems work the same way removes the dissonance. The group says: this is normal. The locked filter is collectively confirmed. Individual tolerance curves become a collective tolerance curve — the behavior escalates together because each person's escalation is validated by the others.
-              </p>
-              <p style={proseStyle}>
-                One nervous system seeking relief through a substitute, then two validating each other, then a group normalizing the pattern, then a structure where the pattern is no longer hidden because the group has made it policy. At every scale, the biology is identical. What changes is the scale of the consequences. F11 maps the paradoxes that emerge when these patterns operate at collective scale.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              KEY FORMULATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="key-formulations">
-            <h2 style={sectionHeadingStyle}>Key Formulations — F10</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Formulation</th>
-                    <th style={thStyle}>Concept</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["\"What the adult embodies, the child absorbs. What the adult has repaired, the child doesn't need to.\"", "Awareness Across Generations (C1)"]} />
-                  <TableRow cells={["\"The family is a complete nervous system. It transmits a complete regulatory system.\"", "Five Pathways (C2)"]} />
-                  <TableRow cells={["\"Love does not override what the nervous system embodies.\"", "Processing (C3)"]} />
-                  <TableRow cells={["\"You don't have to heal everything. You have to heal enough that the next generation starts from a different place.\"", "Mechanism of Change (C5)"]} />
-                  <TableRow cells={["\"The child doesn't need a perfect parent. The child needs a parent whose compass moves — and who comes back.\"", "Enough, Not Perfect (C6)"]} />
-                  <TableRow cells={["\"I understand why you became who you became. And I see what it cost me. Both are true. Neither erases the other.\"", "Relationships (C8)"]} />
-                  <TableRow cells={["\"An elder whose compass moves is an elder who can hold the family's truth.\"", "True Elderhood (C9)"]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              RESEARCH FOUNDATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="research-foundations">
-            <h2 style={sectionHeadingStyle}>Research Foundations</h2>
-
-            <p style={{ ...proseStyle, marginBottom: 8 }}>
-              F10 integrates traditions that independently describe mechanisms of generational transmission:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Tradition</th>
-                    <th style={narrowThStyle}>Key Researchers</th>
-                    <th style={narrowThStyle}>F10 Integration</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Family Systems", "Bowen, Satir, Minuchin", "Multigenerational transmission of relational patterns — C1–C2 five-pathway model"]} />
-                  <ThreeColRow cells={["Attachment Theory", "Bowlby, Main, Hesse, Lyons-Ruth", "Attachment patterns transmit; earned security interrupts transmission — C3"]} />
-                  <ThreeColRow cells={["Intergenerational Trauma", "van der Kolk, Herman, Danieli", "Unprocessed trauma shapes the next generation's emotional environment — C3 central mechanism"]} />
-                  <ThreeColRow cells={["Epigenetics", "Yehuda, Meaney, Champagne", "Stress modifies gene expression across generations; reversible through experience — C2, C7"]} />
-                  <ThreeColRow cells={["Narrative Therapy", "White, Epston, McAdams", "Family stories shape identity and meaning-making — C2, C7"]} />
-                  <ThreeColRow cells={["Interpersonal Neurobiology", "Porges, Siegel, Schore", "Co-regulation patterns transmit through nervous system synchronization — C2, C7"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              <strong>F10's contribution:</strong> organizing these into a unified model where all five pathways transmit the same underlying content (F1–F7 regulatory system), where the central mechanism is coherence not content, and where repair in one generation genuinely changes conditions for the next.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f10-generational-bridges" type="framework" />
-
-          {/* ════════════════════════════════════════════════
-              WHERE TO GO NEXT
-             ════════════════════════════════════════════════ */}
-
-          <section id="where-to-go-next">
-            <h2 style={sectionHeadingStyle}>Where to Go Next</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={navThStyle}>If you want to…</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the emotional paradoxes framework (F11)" href="/framework/f11-emotional-paradoxes" linkText="The Emotional Logic Behind Paradoxes \u2192" />
-                  <NavRow label="Read the neurodivergence framework (F9)" href="/framework/f9-neurodivergence-variation" linkText="Neurodivergence as Nervous System Variation \u2192" />
-                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
-                  <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.blue}
+            items={[
+              { label: "Continue to F11 — when contradictions become visible", href: "/framework/f11-emotional-paradoxes", linkText: "F11: Paradox Holds What Logic Cannot →" },
+              { label: "See the transmission mechanism", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1054,3 +949,5 @@ export default function F10GenerationalBridgesPage() {
     </>
   );
 }
+
+const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };

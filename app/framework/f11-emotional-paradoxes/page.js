@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, FrameworkHero,
-  PropositionBox, ExpandableSection, PageLayout,
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
+import {
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -81,19 +88,6 @@ export default function F11EmotionalParadoxesPage() {
 
   /* ── local helpers ─────────────────────────────────── */
 
-  const sectionHeadingStyle = {
-    fontSize: 20, fontWeight: 700, color: RESEARCHER.accent,
-    borderBottom: `2px solid ${SPECTRUM.cobalt}`,
-    paddingBottom: 10, marginBottom: 20, marginTop: 48,
-  };
-  const conceptHeadingStyle = {
-    fontSize: 16, fontWeight: 600, color: TEXT.primary,
-    marginTop: 28, marginBottom: 10,
-  };
-  const proseStyle = {
-    fontSize: 14, color: TEXT.secondary, lineHeight: 1.8,
-    maxWidth: 720, marginBottom: 16,
-  };
 
   function KeyStatement({ children }) {
     return (
@@ -155,18 +149,6 @@ export default function F11EmotionalParadoxesPage() {
     );
   }
 
-  function NavRow({ label, href, linkText, external }) {
-    const El = external ? "a" : Link;
-    const extra = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        <td style={{ padding: "10px 14px", fontSize: 13, color: TEXT.secondary }}>{label}</td>
-        <td style={{ padding: "10px 14px", fontSize: 13 }}>
-          <El href={href} {...extra} style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>{linkText}</El>
-        </td>
-      </tr>
-    );
-  }
 
   const thStyle = {
     padding: "10px 14px", fontSize: 12, fontWeight: 600,
@@ -179,11 +161,6 @@ export default function F11EmotionalParadoxesPage() {
     color: TEXT.tertiary, textTransform: "uppercase",
     letterSpacing: "0.05em", textAlign: "left",
     borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const navThStyle = { ...thStyle };
-  const tableWrapStyle = {
-    overflowX: "auto", marginBottom: 24,
-    border: `1px solid ${BORDER.default}`, borderRadius: 8,
   };
 
   /* ── data ──────────────────────────────────────────── */
@@ -237,6 +214,21 @@ export default function F11EmotionalParadoxesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "False Coherence",
+              framework: "F3",
+              description: "The narrative structure that resolves contradictions by eliminating one side — what loosens when SEA comes online.",
+              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+            },
+            {
+              concept: "Safety Before Capacity",
+              framework: "F8",
+              description: "Holding paradox requires the same safety conditions that awareness rebuilding requires.",
+              href: "/framework/f8-repairing-awareness#safety-before-capacity",
+            },
+          ]} />
 
           {/* ── Core Claims ── */}
           <PropositionBox
@@ -255,7 +247,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="framework-position">
-            <h2 style={sectionHeadingStyle}>Framework Position</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
 
             <p style={proseStyle}>
               F8–F10 describe repair: individual capacity development (F8), structural inclusion (F9), generational transmission (F10). Repair is real. It works. And it surfaces something that surviving never did.
@@ -314,9 +306,9 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="multi-rationality">
-            <h2 style={sectionHeadingStyle}>Multi-Rationality</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Multi-Rationality</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               Why do people contradict themselves in predictable ways?
             </h2>
 
@@ -379,7 +371,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="paradox-map">
-            <h2 style={sectionHeadingStyle}>Each Framework Generates Paradox</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Each Framework Generates Paradox</h2>
 
             <p style={proseStyle}>
               Every mechanism in F1–F10 creates characteristic contradictions. These are not random — they follow from each framework's specific logic:
@@ -431,9 +423,9 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="paradox-cascade">
-            <h2 style={sectionHeadingStyle}>The Paradox Cascade</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Paradox Cascade</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               How do emotional contradictions become invisible over time?
             </h2>
 
@@ -491,7 +483,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="paradox-and-compass">
-            <h2 style={sectionHeadingStyle}>Paradox Intensity and Compass Position</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Paradox Intensity and Compass Position</h2>
 
             <h3 style={conceptHeadingStyle}>State Determines Holding Capacity</h3>
 
@@ -565,7 +557,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="holding-capacity">
-            <h2 style={sectionHeadingStyle}>Holding Capacity</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Holding Capacity</h2>
 
             <p style={proseStyle}>
               F11's central clinical contribution: the goal is not resolving paradox. Many paradoxes are structurally unresolvable — the needs genuinely conflict, and no solution satisfies both completely. The goal is developing the <strong>capacity to hold</strong> paradox without collapse.
@@ -624,7 +616,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="paradoxes-of-repair">
-            <h2 style={sectionHeadingStyle}>The Paradoxes of Repair</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Paradoxes of Repair</h2>
 
             <p style={proseStyle}>
               The repair arc (F8–F10) generates its own characteristic paradoxes. These are not signs of failure — they are signs that the work is reaching depth.
@@ -682,7 +674,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="relational-paradoxes">
-            <h2 style={sectionHeadingStyle}>The Relational Paradoxes</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Relational Paradoxes</h2>
 
             <p style={proseStyle}>
               The same logic that generates individual paradox generates relational paradox — and at relational scale, both people's competing needs interact.
@@ -730,7 +722,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="systemic-paradoxes">
-            <h2 style={sectionHeadingStyle}>The Systemic Paradoxes</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Systemic Paradoxes</h2>
 
             <p style={proseStyle}>
               The same mechanism operates at institutional and cultural scale. F4–F7 mechanisms generate paradoxes that are invisible from within the system.
@@ -778,7 +770,7 @@ export default function F11EmotionalParadoxesPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="integration-means-holding">
-            <h2 style={sectionHeadingStyle}>Integration Means Holding, Not Resolving</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Integration Means Holding, Not Resolving</h2>
 
             <p style={proseStyle}>
               F11's deepest contribution is the reframe of what "integration" means across the entire system.
@@ -819,127 +811,36 @@ export default function F11EmotionalParadoxesPage() {
             </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C10 — BRIDGE TO F12
-             ════════════════════════════════════════════════ */}
+                    {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.blue}
+            established="F11 established that paradoxical behavior is multi-rational — serving multiple valid needs simultaneously — and that holding contradiction without forcing resolution is a capacity that develops when safety makes it possible."
+            question="A person can see their configuration, name their paradoxes, and still do the thing. Understanding alone does not change the architecture. F12 explains why — and what does."
+            nextFramework="F12"
+            nextTitle="The Two Information Systems"
+            nextHref="/framework/f12-two-information-systems"
+          />
 
-          <section id="bridge-to-f12">
-            <h2 style={sectionHeadingStyle}>Bridge to F12 — Our Two Information Systems</h2>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.blue}
+            connections={[
+              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 describes false coherence resolving contradictions by eliminating one side. F11 describes what becomes possible when the system can hold both sides." },
+              { id: "F12", href: "/framework/f12-two-information-systems", description: "F11 shows the contradictions. F12 explains the architecture underneath — why insight alone doesn't change the system." },
+              { id: "M4", href: "/model/m4-awareness-capacities", description: "Holding paradox requires SEA online — perceiving contradictory internal states simultaneously without forcing resolution." },
+            ]}
+          />
 
-            <p style={proseStyle}>
-              F11 shows that paradox is the logical outcome of a multi-need system operating under real constraints. When the person can see the full picture — when self-emotional awareness is online, when false coherence has loosened, when the compass can move — contradictions become visible and holdable rather than invisible and rigid.
-            </p>
-
-            <p style={proseStyle}>
-              But a person can read F1–F11. Can see their configuration, name their paradoxes, understand the mechanism, locate themselves on the gradient. And still do the thing. Still enter chronic Control under stress. Still mask. Still transmit.
-            </p>
-
-            <p style={proseStyle}>
-              F12 explains why: because there are two information systems, and the one that produces understanding is not the one that organizes behavior. The cognitive system narrates. The emotional-somatic system drives. They operate at different speeds. Insight arrives after the state has already shifted.
-            </p>
-
-            <KeyStatement>
-              F11 maps the complexity of being human. F12 explains the architecture that makes that complexity inevitable — and shows what actually produces change.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              KEY FORMULATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="key-formulations">
-            <h2 style={sectionHeadingStyle}>Key Formulations — F11</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Formulation</th>
-                    <th style={thStyle}>Concept</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["\"Paradox is what truth looks like when you can finally see the whole picture.\"", "Framework Position"]} />
-                  <TableRow cells={["\"What competing needs is this behavior trying to serve?\"", "Multi-Rationality (C1)"]} />
-                  <TableRow cells={["\"The smooth story should worry you more than the messy one.\"", "Paradox and Compass Position (C4)"]} />
-                  <TableRow cells={["\"I am in more pain AND I am more alive.\"", "Paradoxes of Repair (C6)"]} />
-                  <TableRow cells={["\"I am becoming more myself AND some people cannot be with who I actually am.\"", "Paradoxes of Repair (C6)"]} />
-                  <TableRow cells={["\"I understand why you became who you became. And I see what it cost me. Both are true. Neither erases the other.\"", "Paradoxes of Repair (C6)"]} />
-                  <TableRow cells={["\"True coherence is not the absence of contradiction \u2014 it is the capacity to hold contradiction without collapsing.\"", "Integration (C9)"]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              RESEARCH FOUNDATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="research-foundations">
-            <h2 style={sectionHeadingStyle}>Research Foundations</h2>
-
-            <p style={{ ...proseStyle, marginBottom: 8 }}>
-              F11 integrates traditions that independently describe paradox, contradiction, and the capacity to hold opposing truths:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Tradition</th>
-                    <th style={narrowThStyle}>Key Researchers</th>
-                    <th style={narrowThStyle}>F11 Integration</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Cognitive Dissonance", "Festinger", "C1 \u2014 reframed: discomfort with inconsistency is regulatory, not logical. Resolution through elimination is false coherence"]} />
-                  <ThreeColRow cells={["Analytical Psychology", "Jung", "C5 \u2014 holding capacity as developmental achievement. Union of opposites grounded in the three awareness capacities"]} />
-                  <ThreeColRow cells={["Systems Theory", "Bateson", "C7\u2013C8 \u2014 double bind and systemic paradox through the same multi-rationality mechanism"]} />
-                  <ThreeColRow cells={["Internal Family Systems", "Schwartz", "C1 \u2014 multi-rationality: each \"part\" is pursuing a valid regulatory goal"]} />
-                  <ThreeColRow cells={["Dialectics", "Hegel", "C9 \u2014 reframed: synthesis is not resolution but holding capacity. True integration holds both, not eliminates one"]} />
-                  <ThreeColRow cells={["Affective Neuroscience", "Damasio, Porges", "C4 \u2014 state-dependent processing and somatic markers encoding conflicting information. Compass position determines holding capacity"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              <strong>F11's contribution:</strong> showing that all these traditions describe the same mechanism — multi-rationality generating predictable paradox at every scale — and that the capacity to hold paradox is not wisdom literature but the measurable consequence of the three awareness capacities being online.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f11-emotional-paradoxes" type="framework" />
-
-          {/* ════════════════════════════════════════════════
-              WHERE TO GO NEXT
-             ════════════════════════════════════════════════ */}
-
-          <section id="where-to-go-next">
-            <h2 style={sectionHeadingStyle}>Where to Go Next</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={navThStyle}>If you want to…</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the two information systems framework (F12)" href="/framework/f12-two-information-systems" linkText="Our Two Information Systems \u2192" />
-                  <NavRow label="Read the generational bridges framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
-                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
-                  <NavRow label="Read the false coherence framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition and False Coherence \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.blue}
+            items={[
+              { label: "Continue to F12 — the architecture underneath", href: "/framework/f12-two-information-systems", linkText: "F12: The Two Information Systems →" },
+              { label: "See the narrative structure paradox loosens", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1016,3 +917,5 @@ export default function F11EmotionalParadoxesPage() {
     </>
   );
 }
+
+const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };

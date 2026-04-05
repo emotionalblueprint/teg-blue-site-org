@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
 import {
-  SiteHeader, SiteFooter, FrameworkHero,
-  PropositionBox, ExpandableSection, PageLayout,
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
+import {
+  SiteHeader, SiteFooter, PageLayout, FrameworkHero,
+  PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -79,19 +86,6 @@ export default function F9NeurodivergenceVariationPage() {
 
   /* ── local helpers ─────────────────────────────────── */
 
-  const sectionHeadingStyle = {
-    fontSize: 20, fontWeight: 700, color: RESEARCHER.accent,
-    borderBottom: `2px solid ${SPECTRUM.cobalt}`,
-    paddingBottom: 10, marginBottom: 20, marginTop: 48,
-  };
-  const conceptHeadingStyle = {
-    fontSize: 16, fontWeight: 600, color: TEXT.primary,
-    marginTop: 28, marginBottom: 10,
-  };
-  const proseStyle = {
-    fontSize: 14, color: TEXT.secondary, lineHeight: 1.8,
-    maxWidth: 720, marginBottom: 16,
-  };
 
   function KeyStatement({ children }) {
     return (
@@ -153,18 +147,6 @@ export default function F9NeurodivergenceVariationPage() {
     );
   }
 
-  function NavRow({ label, href, linkText, external }) {
-    const El = external ? "a" : Link;
-    const extra = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        <td style={{ padding: "10px 14px", fontSize: 13, color: TEXT.secondary }}>{label}</td>
-        <td style={{ padding: "10px 14px", fontSize: 13 }}>
-          <El href={href} {...extra} style={{ color: SPECTRUM.cobalt, textDecoration: "none" }}>{linkText}</El>
-        </td>
-      </tr>
-    );
-  }
 
   const thStyle = {
     padding: "10px 14px", fontSize: 12, fontWeight: 600,
@@ -177,11 +159,6 @@ export default function F9NeurodivergenceVariationPage() {
     color: TEXT.tertiary, textTransform: "uppercase",
     letterSpacing: "0.05em", textAlign: "left",
     borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const navThStyle = { ...thStyle };
-  const tableWrapStyle = {
-    overflowX: "auto", marginBottom: 24,
-    border: `1px solid ${BORDER.default}`, borderRadius: 8,
   };
 
   /* ── data ──────────────────────────────────────────── */
@@ -235,6 +212,21 @@ export default function F9NeurodivergenceVariationPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "Safety Before Capacity",
+              framework: "F8",
+              description: "Awareness capacities rebuild through safety, not instruction — the conditions must precede the capacity.",
+              href: "/framework/f8-repairing-awareness#safety-before-capacity",
+            },
+            {
+              concept: "Developmental Calibration",
+              framework: "F2",
+              description: "How the nervous system gets configured through the relational environment — the same mechanism that produces variation.",
+              href: "/framework/f2-awareness-calibration#developmental-calibration",
+            },
+          ]} />
 
           {/* ── Core Claims ── */}
           <PropositionBox
@@ -253,7 +245,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="framework-position">
-            <h2 style={sectionHeadingStyle}>Framework Position</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
 
             <p style={proseStyle}>
               F8 establishes two principles: awareness capacities can be repaired (Part 1), and different configurations make the collective stronger (Part 2). F8 describes a universal pattern — everyone masks, conformity costs, difference is capacity.
@@ -313,7 +305,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="neurodivergence-as-configuration">
-            <h2 style={sectionHeadingStyle}>Neurodivergence as Nervous System Configuration</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Neurodivergence as Nervous System Configuration</h2>
 
             <p style={proseStyle}>
               Neurodivergence is a difference in how the nervous system is configured — how it processes information, rhythm, sensory input, attention, social signals, and emotion. The framework rejects diagnostic language that embeds pathology assumptions ("disorder," "deficit," "symptom") and uses configuration language: <em>your nervous system works this way.</em>
@@ -378,9 +370,9 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="system-mismatch">
-            <h2 style={sectionHeadingStyle}>System Mismatch</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>System Mismatch</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               What is System Mismatch and how does it affect neurodivergent people?
             </h2>
 
@@ -429,7 +421,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="masking-as-structural-survival">
-            <h2 style={sectionHeadingStyle}>Masking as Structural Survival</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Masking as Structural Survival</h2>
 
             <p style={proseStyle}>
               F8 describes the universal masking pattern: authentic configuration expression leads to environmental punishment, the nervous system learns authenticity is unsafe, a regulatory strategy forms, the mask becomes automatic, and false coherence absorbs it. For neurodivergent people, this pattern operates at structural scale. The punishment is not just interpersonal. It is environmental — built into every institution, every space, every norm. There is no environment to escape to. The masking must be sustained across all contexts, all day, every day.
@@ -492,9 +484,9 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="threshold-dynamics">
-            <h2 style={sectionHeadingStyle}>Threshold Dynamics</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Threshold Dynamics</h2>
 
-            <h2 style={sectionHeadingStyle}>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
               What causes neurodivergent burnout and how can it be predicted?
             </h2>
 
@@ -596,7 +588,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="unmasking-is-not-restoration">
-            <h2 style={sectionHeadingStyle}>Unmasking Is Not Restoration</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Unmasking Is Not Restoration</h2>
 
             <p style={proseStyle}>
               Growing awareness of masking's harm has created calls for unmasking. This is correct but incomplete. <strong>Unmasking</strong> means dropping the neurotypical performance. <strong>Repair</strong> means being received in authentic neurological expression. These are not equivalent. Unmasking into an environment that cannot hold authenticity can increase harm.
@@ -651,7 +643,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="awareness-capacities-in-neurodivergent-experience">
-            <h2 style={sectionHeadingStyle}>Awareness Capacities in Neurodivergent Experience</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Awareness Capacities in Neurodivergent Experience</h2>
 
             <p style={proseStyle}>
               A common clinical error: assuming neurodivergent people lack awareness capacities. In reality, the capacities are present but configured differently.
@@ -733,7 +725,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="design-principles">
-            <h2 style={sectionHeadingStyle}>Design Principles for Variation-Inclusive Systems</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Design Principles for Variation-Inclusive Systems</h2>
 
             <h3 style={conceptHeadingStyle}>From Accommodation to Design</h3>
 
@@ -819,7 +811,7 @@ export default function F9NeurodivergenceVariationPage() {
              ════════════════════════════════════════════════ */}
 
           <section id="the-structural-argument">
-            <h2 style={sectionHeadingStyle}>The Structural Argument</h2>
+            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Structural Argument</h2>
 
             <p style={proseStyle}>
               F9 is not only about neurodivergent wellbeing. It is about collective intelligence — F8's argument at institutional scale. When systems are designed for one configuration, they lose access to what other configurations provide: the pattern-seeing that nonlinear processing offers, the precision that detail-oriented processing provides, the depth that slow processing generates, the early-warning that sensory sensitivity detects. All excluded by design.
@@ -846,131 +838,36 @@ export default function F9NeurodivergenceVariationPage() {
             </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C9 — BRIDGE TO F10
-             ════════════════════════════════════════════════ */}
+                    {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.blue}
+            established="F9 established that variation is configuration — different nervous systems running the same architecture with different settings, not deficits requiring correction."
+            question="When an adult begins to process what they carry, what changes for the next generation? F10 maps the intergenerational chain — how what the adult processes changes what transmits."
+            nextFramework="F10"
+            nextTitle="What the Adult Processes, the Child Does Not Inherit"
+            nextHref="/framework/f10-generational-bridges"
+          />
 
-          <section id="bridge-to-f10">
-            <h2 style={sectionHeadingStyle}>Bridge to F10 — Generational Transmission</h2>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.blue}
+            connections={[
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 describes how awareness rebuilds. F9 shows that the rebuilt awareness meets different configurations — not one correct version." },
+              { id: "F2", href: "/framework/f2-awareness-calibration", description: "F2 describes developmental calibration. F9 maps what happens when the calibrating environment was designed for a different nervous system architecture." },
+              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps the four states. F9 shows the same gradient operating with different regulatory rhythms and sensory profiles." },
+            ]}
+          />
 
-            <p style={proseStyle}>
-              For neurodivergent people, repair requires both: <strong>individual repair</strong> (F8 Part 1) — developing awareness capacities, reconnecting to authentic rhythm, processing the grief, shame, and identity confusion that masking produced — and <strong>structural repair</strong> (F9) — changing the environments so that the person does not return daily to conditions that require the very masking they are trying to release. Neither alone is sufficient.
-            </p>
-
-            <p style={proseStyle}>
-              F10 asks: what happens across generations? F9's answer: neurodivergent adults who mask transmit both the configuration (partly genetic, partly epigenetic) and the regulatory patterns masking produced. Children inherit not just a different nervous system but the adaptive strategies their parents developed to survive mismatch.
-            </p>
-
-            <p style={proseStyle}>
-              When neurodivergent adults repair their own awareness capacities and inhabit environments designed for their configuration, the next generation inherits something different: a model of authentic rhythm, a demonstration that configuration is variation, and conditions where their own capacities can develop without chronic suppression.
-            </p>
-
-            <KeyStatement>
-              F2's core insight — awareness teaches awareness — applied at the intersection of neurodivergence and generational transmission.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              KEY FORMULATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="key-formulations">
-            <h2 style={sectionHeadingStyle}>Key Formulations — F9</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Formulation</th>
-                    <th style={thStyle}>Concept</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["\"When the compass cannot move, the variable may be the environment.\"", "Configuration (C1)"]} />
-                  <TableRow cells={["\"The fish doesn't know it's in water. The person whose configuration matches the environment doesn't know the environment was designed for them.\"", "System Mismatch (C2)"]} />
-                  <TableRow cells={["\"You cannot rest your way out of an environment that requires you to run a system your nervous system was not built to run.\"", "Threshold Dynamics (C4)"]} />
-                  <TableRow cells={["\"Unmasking into a vacuum fails. The environment must be ready before the mask comes off.\"", "Unmasking vs. Restoration (C5)"]} />
-                  <TableRow cells={["\"You cannot develop your capacities while suppressing the system those capacities run on.\"", "Awareness Capacities (C6)"]} />
-                  <TableRow cells={["\"Genuine inclusion is not charity. It is structural intelligence.\"", "Structural Argument (C8)"]} />
-                  <TableRow cells={["\"You cannot build what the environment keeps dismantling.\"", "Regulation Thread"]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              RESEARCH FOUNDATIONS
-             ════════════════════════════════════════════════ */}
-
-          <section id="research-foundations">
-            <h2 style={sectionHeadingStyle}>Research Foundations</h2>
-
-            <p style={{ ...proseStyle, marginBottom: 8 }}>
-              F9 integrates traditions that independently describe the interaction between nervous system variation and environmental design:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tradition</th>
-                    <th style={thStyle}>Key Researchers</th>
-                    <th style={thStyle}>F9 Integration</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Neurodiversity Paradigm", "Singer, Walker, Silberman", "Configuration — C1"]} />
-                  <ThreeColRow cells={["Social Model of Disability", "Oliver, Shakespeare", "Disability created by environment, not individual — C2 System Mismatch"]} />
-                  <ThreeColRow cells={["Polyvagal Theory", "Porges", "Safety detection shapes regulatory capacity — C1, C4 compass in mismatch"]} />
-                  <ThreeColRow cells={["Intense World Theory", "Markram & Markram", "Heightened perception as processing difference — C1 sensory configuration"]} />
-                  <ThreeColRow cells={["Trauma Research", "van der Kolk, Herman, Perry", "Chronic threat calibrates into protective states — C3, C4 masking as chronic threat"]} />
-                  <ThreeColRow cells={["Universal Design for Learning", "CAST, Rose", "Build for variation from the start — C7 design principles"]} />
-                  <ThreeColRow cells={["Masking Research", "Price, Rose, Maté", "Masking and burnout as mismatch outcomes — C3, C4, C5"]} />
-                  <ThreeColRow cells={["Attachment Neurobiology", "Bowlby, Schore", "Safety shapes regulatory development — C6 capacity development requires rhythm authenticity"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              <strong>F9's contribution:</strong> organizing these into a unified model showing that System Mismatch is the mechanism, masking is the predictable adaptation, burnout is the predictable outcome, and design is the primary intervention.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f9-neurodivergence-variation" type="framework" />
-
-          {/* ════════════════════════════════════════════════
-              WHERE TO GO NEXT
-             ════════════════════════════════════════════════ */}
-
-          <section id="where-to-go-next">
-            <h2 style={sectionHeadingStyle}>Where to Go Next</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={navThStyle}>If you want to…</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the generational framework (F10)" href="/framework/f10-generational-bridges" linkText="Rebuilding Generational Bridges \u2192" />
-                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
-                  <NavRow label="Read the domination framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
-                  <NavRow label="Read the false coherence framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
-                  <NavRow label="Read the rules framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.blue}
+            items={[
+              { label: "Continue to F10 — what changes across generations", href: "/framework/f10-generational-bridges", linkText: "F10: What the Adult Processes →" },
+              { label: "See how awareness rebuilds", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1047,3 +944,5 @@ export default function F9NeurodivergenceVariationPage() {
     </>
   );
 }
+
+const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };
