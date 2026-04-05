@@ -28,6 +28,9 @@ export { default as FrameworkTerms } from "./FrameworkTerms";
 // Framework components
 export { default as FrameworkHero } from "./FrameworkHero";
 export { default as CommonUnderstanding } from "./CommonUnderstanding";
+export { default as PrerequisitesBlock } from "./PrerequisitesBlock";
+export { default as BridgeSection } from "./BridgeSection";
+export { default as EstablishesSection } from "./EstablishesSection";
 
 // Model components
 export { default as ModelHero } from "./ModelHero";
