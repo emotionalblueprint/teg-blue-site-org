@@ -9,7 +9,7 @@ import {
   ACTIVATION_STAGES,
   RESOLUTION_PATH as RESOLUTION_STAGES,
   OVERRIDE_PATH as OVERRIDE_STAGES,
-} from "@/src/data/compass-diagram-data";
+} from "@/src/data/m3-data";
 
 // ─── Map PATTERN tokens to semantic names used in this component ──
 const BLUE = {

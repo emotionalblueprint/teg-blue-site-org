@@ -26,6 +26,8 @@ export const MODES = [
   {
     key: 'connection',
     label: 'Connection',
+    name: 'Connection',
+    hex: '#93CFFF',
     condition: 'When the nervous system reads safety and stays open',
     conditionShort: 'Safety & Openness',
     center: 0.125,
@@ -73,6 +75,8 @@ export const MODES = [
   {
     key: 'protection',
     label: 'Protection',
+    name: 'Protection',
+    hex: '#5BADFF',
     condition: 'When the nervous system reads threat and defends',
     conditionShort: 'Threat & Defence',
     center: 0.375,
@@ -120,6 +124,8 @@ export const MODES = [
   {
     key: 'control',
     label: 'Control',
+    name: 'Control',
+    hex: '#346AEC',
     condition: 'When the nervous system needs strategy and management',
     conditionShort: 'Strategy & Management',
     center: 0.625,
@@ -167,6 +173,8 @@ export const MODES = [
   {
     key: 'domination',
     label: 'Domination',
+    name: 'Domination',
+    hex: '#2563eb',
     condition: 'When the nervous system needs power and dominance',
     conditionShort: 'Power & Dominance',
     center: 0.875,

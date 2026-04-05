@@ -5,7 +5,7 @@ import {
   BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
   hexToRgba, AWARENESS, MODE_ORANGE,
 } from "@/src/styles/tokens";
-import { CAPACITY_DEFINITIONS } from "@/src/data/compass-diagram-data";
+import { CAPACITY_DEFINITIONS, EXPERIMENTS } from "@/src/data/m4-data";
 
 // ─── CAPACITY DEFINITIONS — colors applied from tokens.js ────
 
@@ -80,31 +80,6 @@ function getStateText(re, er, sea) {
     color: SPECTRUM.slate,
   };
 }
-
-// ─── PRESET EXPERIMENTS ──────────────────────────────────────
-
-const EXPERIMENTS = [
-  {
-    label: "The distant helper",
-    desc: "Turn ER all the way down. Leave RE and SEA high.",
-    values: { re: 0.9, er: 0.05, sea: 0.9 },
-  },
-  {
-    label: "The keystone collapse",
-    desc: "Turn only SEA to zero. Leave RE and ER full.",
-    values: { re: 1.0, er: 1.0, sea: 0.0 },
-  },
-  {
-    label: "The anxious reader",
-    desc: "High RE, high ER, low SEA.",
-    values: { re: 0.9, er: 0.85, sea: 0.15 },
-  },
-  {
-    label: "Full empathic integration",
-    desc: "All three online.",
-    values: { re: 1.0, er: 1.0, sea: 1.0 },
-  },
-];
 
 // ─── SIGNAL BAR ─────────────────────────────────────────────
 

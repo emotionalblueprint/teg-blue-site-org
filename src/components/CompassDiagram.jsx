@@ -5,10 +5,9 @@ import {
   FONT, TEXT, BG, BORDER, RADIUS,
   PATTERN, AWARENESS, MODE_ORANGE, hexToRgba,
 } from '@/src/styles/tokens';
-import {
-  COMPASS_CONDITIONS, MODES, FLUID_CURVES, CHRONIC_CURVES,
-  CAPACITIES, RESTORATION,
-} from '@/src/data/compass-diagram-data';
+import { COMPASS_CONDITIONS, MODES, FLUID_CURVES, CHRONIC_CURVES } from '@/src/data/m2-data';
+import { RESTORATION } from '@/src/data/m3-data';
+import { CAPACITIES } from '@/src/data/m4-data';
 
 // ─── CONSTANTS ───────────────────────────────────────────────────
 

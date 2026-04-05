@@ -6,6 +6,7 @@ import {
   BG, TEXT, BORDER, FONT, SPACING,
   RESEARCHER, PATTERN, MODE_ORANGE, hexToRgba, gradientCardBg,
 } from "@/src/styles/tokens";
+import { EMOTION_WAVE as MOMENTS } from "@/src/data/m1-data";
 
 // ─── Map token values to the names used throughout this component ──
 const MAIN_BLUE = PATTERN.B.primary;   // #3b82f6
@@ -20,29 +21,6 @@ const PH = VH - PT - PB;
 const BRANCH_T = 0.365;
 const DURATION = 9000;
 
-const MOMENTS = [
-  {
-    t: 0.115, id: "fast", color: MAIN_BLUE,
-    label: "Fast pathway",
-    sub: "~12 ms",
-    body: "The amygdala fires before the cortex knows what triggered it. The body responds before the mind understands.",
-    ref: "LeDoux, 1996"
-  },
-  {
-    t: BRANCH_T, id: "branch", color: ACCENT,
-    label: "Integration window",
-    sub: "300 ms – 5 s",
-    body: "The only point where processing is possible. Before this, both pathways are identical biology. After it, they diverge permanently.",
-    ref: "Ochsner & Gross, 2005"
-  },
-  {
-    t: 0.625, id: "w90", color: ORANGE,
-    label: "90-second window",
-    sub: "~90 s",
-    body: "If uninterrupted, the neurochemical cascade clears in roughly 90 seconds. Everything beyond that is re-triggering.",
-    ref: "Bolte Taylor, 2008"
-  }
-];
 
 function buildWaveforms() {
   const N = 600;

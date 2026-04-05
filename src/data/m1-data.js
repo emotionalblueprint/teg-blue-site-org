@@ -413,6 +413,7 @@ export const DISTORTIONS = [
 export const EMOTION_WAVE = [
   {
     t: 0.115, id: "fast",
+    color: "#5BADFF",
     label: "Fast pathway",
     sub: "~12 ms",
     body: "The amygdala fires before the cortex knows what triggered it. The body responds before the mind understands.",
@@ -420,6 +421,7 @@ export const EMOTION_WAVE = [
   },
   {
     t: 0.365, id: "branch",
+    color: "#2563eb",
     label: "Integration window",
     sub: "300 ms – 5 s",
     body: "The only point where processing is possible. Before this, both pathways are identical biology. After it, they diverge permanently.",
@@ -427,6 +429,7 @@ export const EMOTION_WAVE = [
   },
   {
     t: 0.625, id: "w90",
+    color: "#f97316",
     label: "90-second window",
     sub: "~90 s",
     body: "If uninterrupted, the neurochemical cascade clears in roughly 90 seconds. Everything beyond that is re-triggering.",

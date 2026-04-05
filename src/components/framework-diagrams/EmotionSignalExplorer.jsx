@@ -7,7 +7,7 @@ import {
 } from "@/src/styles/tokens";
 import {
   EMOTIONS, BODY_SIGNATURE_GROUPS, DISTORTIONS,
-} from "@/src/data/compass-diagram-data";
+} from "@/src/data/m1-data";
 
 // ─── CONSTANTS ──────────────────────────────────────
 
