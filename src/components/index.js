@@ -14,7 +14,6 @@ export { default as GlossaryInline } from "./GlossaryInline";
 export { default as ContextBlock } from "./ContextBlock";
 
 // Researcher components
-export { default as PatternGradientBar } from "./PatternGradientBar";
 export { default as FluidCompassExplorer } from "./FluidCompassExplorer";
 export { default as OpenCycleExplorer } from "./OpenCycleExplorer";
 export { default as EmpathicIntegrationExplorer } from "./EmpathicIntegrationExplorer";
@@ -34,10 +33,11 @@ export { default as ModelHero } from "./ModelHero";
 export { default as ModelAnchorStrip } from "./ModelAnchorStrip";
 export { default as ModelPurpose } from "./ModelPurpose";
 export { default as OperationalStatement } from "./OperationalStatement";
-export { default as DrawsFromPanel } from "./DrawsFromPanel";
+export { default as PartDivider } from "./PartDivider";
+export { default as NavSection } from "./NavSection";
+export { default as ConnectionsMap } from "./ConnectionsMap";
 
 // Visualizations
-export { default as TankDiagram } from "./TankDiagram";
 export { default as CompassBar } from "./CompassBar";
 export { default as CompassDiagram } from "./CompassDiagram";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
