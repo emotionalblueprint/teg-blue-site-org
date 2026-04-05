@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
+import {
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -127,7 +134,7 @@ export default function F6BiasRegulatesPage() {
           >
             <h2
               id="heading-core-propositions"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.cobalt)}
             >
               Core Propositions
             </h2>
@@ -163,7 +170,7 @@ export default function F6BiasRegulatesPage() {
           >
             <h2
               id="heading-overview"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.cobalt)}
             >
               Overview — The Third Collective Framework
             </h2>
@@ -199,7 +206,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-bias-as-regulation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-bias-as-regulation" style={sectionHeadingStyle}>
+            <h2 id="heading-bias-as-regulation" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Bias as Regulation, Not Reasoning Error
             </h2>
 
@@ -260,7 +267,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-bias-architecture"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-bias-architecture" style={sectionHeadingStyle}>
+            <h2 id="heading-bias-architecture" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Bias Architecture — The Eight Constructs and the Threshold Equation
             </h2>
 
@@ -343,7 +350,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-three-categories"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-three-categories" style={sectionHeadingStyle}>
+            <h2 id="heading-three-categories" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Three Bias Categories by Regulatory Function
             </h2>
 
@@ -423,7 +430,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-formation-loop"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-formation-loop" style={sectionHeadingStyle}>
+            <h2 id="heading-formation-loop" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Six-Step Bias Formation Loop
             </h2>
 
@@ -479,11 +486,11 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-phenomenology-of-certainty"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-why-bias-feels-like-truth" style={sectionHeadingStyle}>
+            <h2 id="heading-why-bias-feels-like-truth" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Why does bias feel like seeing clearly?
             </h2>
 
-            <h2 id="heading-phenomenology-of-certainty" style={sectionHeadingStyle}>
+            <h2 id="heading-phenomenology-of-certainty" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Phenomenology of Certainty — Why Bias Feels Like Truth
             </h2>
 
@@ -575,11 +582,11 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-revision-pathway"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-how-biases-revised" style={sectionHeadingStyle}>
+            <h2 id="heading-how-biases-revised" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               How can deeply held biases actually be revised?
             </h2>
 
-            <h2 id="heading-revision-pathway" style={sectionHeadingStyle}>
+            <h2 id="heading-revision-pathway" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Revision Pathway — Safety Before Correction
             </h2>
 
@@ -655,7 +662,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-what-f6-establishes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-f6-establishes" style={sectionHeadingStyle}>
+            <h2 id="heading-what-f6-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               What F6 Establishes
             </h2>
 
@@ -732,7 +739,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-research-foundations"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle}>
+            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Research Foundations
             </h2>
 
@@ -817,7 +824,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-bridge-to-f7"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-bridge-to-f7" style={sectionHeadingStyle}>
+            <h2 id="heading-bridge-to-f7" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Bridge to F7: When Perception Becomes Enforcement
             </h2>
 
@@ -849,7 +856,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-where-to-go-next"
             style={{ marginBottom: 32 }}
           >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle}>
+            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Where to Go Next
             </h2>
             <div
@@ -1022,43 +1029,6 @@ export default function F6BiasRegulatesPage() {
 
 // ─── STYLE CONSTANTS ──────────────────────────────────────
 
-const sectionHeadingStyle = {
-  fontSize: 20,
-  fontWeight: 700,
-  color: RESEARCHER.accent,
-  marginBottom: 20,
-  paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-};
-
-const conceptHeadingStyle = {
-  fontSize: 16,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 12,
-};
-
-const proseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 12,
-  maxWidth: 720,
-};
-
-const expandedProseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  margin: "8px 0 0",
-};
-
-const propositionItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
 
 const orderedListStyle = {
   paddingLeft: 20,
@@ -1093,17 +1063,6 @@ const thStyle = {
   fontFamily: FONT.mono,
   background: BG.surface,
   borderBottom: `1px solid ${BORDER.default}`,
-};
-
-const navThStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
 };
 
 // ─── HELPER COMPONENTS ────────────────────────────────────
@@ -1151,29 +1110,3 @@ function TableRow({ cells }) {
   );
 }
 
-function NavRow({ label, href, linkText, external }) {
-  const linkStyle = {
-    color: SPECTRUM.blue,
-    textDecoration: "none",
-    fontWeight: 500,
-  };
-
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
-        {label}
-      </td>
-      <td style={{ padding: "12px 16px", fontSize: 14 }}>
-        {external ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" style={linkStyle}>
-            {linkText}
-          </a>
-        ) : (
-          <Link href={href} style={linkStyle}>
-            {linkText}
-          </Link>
-        )}
-      </td>
-    </tr>
-  );
-}
