@@ -115,6 +115,22 @@ export default function F6BiasRegulatesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "False Coherence",
+              framework: "F3",
+              description: "The CLS replacing the ESS's signals with narrative — bias as collective False Coherence absorbed into what feels like seeing.",
+              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+            },
+            {
+              concept: "The Filter of Worth",
+              framework: "F5",
+              description: "Worth hierarchies distributing credibility and resources based on signal access — the sorting mechanism bias makes invisible.",
+              href: "/framework/f5-worth-hierarchies#filter-of-worth",
+            },
+          ]} />
+
           {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
           <CommonUnderstanding
             terms={[
@@ -819,77 +835,37 @@ export default function F6BiasRegulatesPage() {
           </section>
 
           {/* ─── BRIDGE TO F7 ──────────────────────────────── */}
-          <section
-            id="bridge-to-f7"
-            aria-labelledby="heading-bridge-to-f7"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-bridge-to-f7" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Bridge to F7: When Perception Becomes Enforcement
-            </h2>
+          {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.cobalt}
+            established="F6 established how perception becomes protection — how the nervous system maintains beliefs that stabilize regardless of accuracy, and why correction fails when safety is insufficient."
+            question="When bias becomes rigid and correction is experienced as threat, systems move from filtering perception to enforcing it. Disagreement is not tolerated as difference — it is experienced as threat. F7 describes how defense becomes strategy, strategy becomes domination, and domination becomes the nervous system's primary regulation source."
+            nextFramework="F7"
+            nextTitle="Domination Regulates"
+            nextHref="/framework/f7-domination-regulates"
+          />
 
-            <p style={proseStyle}>
-              F6 explains how perception becomes protection — how the nervous system maintains beliefs that stabilize, regardless of accuracy — and why correction fails when safety is insufficient.
-            </p>
-            <p style={proseStyle}>
-              But there is a further step. When bias becomes rigid and self-protective, and correction is experienced as threat, systems do not simply persist in distorted perception. They seek stronger stabilization. The system moves from <em>filtering</em> perception to <em>enforcing</em> it.
-            </p>
-            <p style={proseStyle}>
-              When the compass is locked in chronic Control or Domination, distorted perception is not just maintained — it is imposed. The person does not simply believe their version of reality. They require others to share it. Disagreement is not tolerated as difference. It is experienced as threat — and managed through emotional distortion, external regulation, and false coherence hardening the arrangement into "just how things are."
-            </p>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.cobalt}
+            connections={[
+              { id: "F5", href: "/framework/f5-worth-hierarchies", description: "F5 established worth sorting. F6 shows how that sorting becomes invisible — perception shaped by the hierarchy's logic." },
+              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 described False Coherence at the individual level. F6 shows the same mechanism at the perceptual level — bias as False Coherence absorbed into what feels like seeing." },
+              { id: "F7", href: "/framework/f7-domination-regulates", description: "F6 is perception as protection. F7 is perception as enforcement — when filtering becomes imposition." },
+              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps state-dependent perception. F6 shows that mechanism operating at collective scale — when enough nervous systems share the same chronic state, the collective shares the same perceptual filter." },
+            ]}
+          />
 
-            <KeyStatement>
-              F6 is perception as protection. F7 is perception as enforcement.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              F7 explains how defense becomes strategy, strategy becomes domination, and domination becomes the nervous system's primary regulation source. This is regulation at maximum cost — to others, to the system, and to the person themselves.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f6-bias-regulates" type="framework" />
-
-          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to...</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the next collective framework (F7)" href="/framework/f7-domination-regulates" linkText="Domination Regulates \u2192" />
-                  <NavRow label="Read the worth-sorting framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate \u2192" />
-                  <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
-                  <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.cobalt}
+            items={[
+              { label: "Continue to F7 — when perception becomes enforcement", href: "/framework/f7-domination-regulates", linkText: "F7: Domination Regulates →" },
+              { label: "See how worth hierarchies produce the filter", href: "/framework/f5-worth-hierarchies", linkText: "F5: Worth Hierarchies Regulate →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>

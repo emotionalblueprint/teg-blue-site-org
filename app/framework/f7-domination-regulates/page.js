@@ -118,6 +118,22 @@ export default function F7DominationRegulatesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "Bias as Regulation",
+              framework: "F6",
+              description: "Perception operating as nervous system protection — maintaining beliefs that stabilize regardless of accuracy.",
+              href: "/framework/f6-bias-regulates#bias-as-regulation",
+            },
+            {
+              concept: "The Regulation Thread",
+              framework: "F1",
+              description: "When biological restoration is unavailable, the nervous system substitutes at escalating scales. Domination is the maximum cost.",
+              href: "/framework/f1-emotional-gradient#regulation-thread",
+            },
+          ]} />
+
           {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
           <CommonUnderstanding
             terms={[
@@ -947,75 +963,37 @@ export default function F7DominationRegulatesPage() {
             </div>
           </section>
 
-          {/* ─── BRIDGE TO F8 ──────────────────────────────── */}
-          <section
-            id="bridge-to-f8"
-            aria-labelledby="heading-bridge-to-f8"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-bridge-to-f8" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Bridge to F8: From Maximum Cost to the Return
-            </h2>
+          {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.cobalt}
+            established="F7 completes the collective arc and the regulation thread (F1-F7). The pathway from biological restoration through domination is fully traced — each framework describing the same nervous system substituting a different regulation source at a different scale, with escalating costs."
+            question="At every stage of the escalation, the interruption principle is the same: restore safety first, then expect capacity. F8 asks what enables the return — how awareness capacities that were never built begin to develop, how the nervous system regains flexibility, and what repair looks like when the patterns have been running for decades."
+            nextFramework="F8"
+            nextTitle="Awareness Rebuilds Through Safety"
+            nextHref="/framework/f8-repairing-awareness"
+          />
 
-            <p style={proseStyle}>
-              F7 completes the collective arc (F4–F7) and the regulation thread (F1–F7). The pathway from Biological Restoration through domination is now fully traced — each framework describing the same nervous system substituting a different regulation source at a different scale, with escalating costs.
-            </p>
-            <p style={proseStyle}>
-              But the framework also shows something else. At every stage of the escalation, the interruption principle is the same: restore safety first, then expect capacity. Even at F7&rsquo;s later stages — where protection takes precedence over restoration — the underlying principle has not changed. It is the same principle that F1 established. The question is whether the conditions for safety can be provided.
-            </p>
-            <p style={proseStyle}>
-              This is what the restoration arc addresses. F8 asks: what enables the return? Not the return from domination specifically — though that is the most dramatic version — but the return from any position where the compass has been stuck. How do awareness capacities that were never built begin to develop? How does the compass regain flexibility? What does repair look like when the patterns have been running for decades?
-            </p>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.cobalt}
+            connections={[
+              { id: "F6", href: "/framework/f6-bias-regulates", description: "F6 is perception as protection. F7 is perception as enforcement — when filtering becomes imposition at maximum cost." },
+              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 established biological restoration as the designed process. F7 is the endpoint of the escalation when that process is permanently unavailable — regulation at maximum cost." },
+              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps Power & Dominance as the fourth state. F7 describes the escalation pathway that produces chronic operation from that state." },
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F7 is the final substitute. F8 begins the return — awareness rebuilt through safety, not instruction." },
+            ]}
+          />
 
-            <KeyStatement>
-              F7 is the final substitute. F8 begins the return.
-            </KeyStatement>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f7-domination-regulates" type="framework" />
-
-          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to...</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the restoration framework (F8)" href="/framework/f8-repairing-awareness" linkText="Repairing Awareness \u2192" />
-                  <NavRow label="Read the bias framework (F6)" href="/framework/f6-bias-regulates" linkText="Bias Regulates \u2192" />
-                  <NavRow label="Read the worth-sorting framework (F5)" href="/framework/f5-worth-hierarchies" linkText="Worth Hierarchies Regulate \u2192" />
-                  <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
-                  <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.cobalt}
+            items={[
+              { label: "Continue to F8 — the return begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety →" },
+              { label: "See the foundational framework", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>

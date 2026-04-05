@@ -114,6 +114,22 @@ export default function F5WorthHierarchiesPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "Rules as Regulatory Material",
+              framework: "F4",
+              description: "The CLS absorbs rules because they stabilize, not because they are accurate — rules function as collective regulation.",
+              href: "/framework/f4-rules-regulate#rules-as-regulation",
+            },
+            {
+              concept: "False Coherence",
+              framework: "F3",
+              description: "The CLS replacing the ESS's signals with narrative — worth hierarchies are maintained by double False Coherence.",
+              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+            },
+          ]} />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
             id="core-propositions"
@@ -802,75 +818,37 @@ export default function F5WorthHierarchiesPage() {
             </div>
           </section>
 
-          {/* ─── BRIDGE TO F6 ──────────────────────────────── */}
-          <section
-            id="bridge-to-f6"
-            aria-labelledby="heading-bridge-to-f6"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-bridge-to-f6" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Bridge to F6: When Sorting Becomes Perception
-            </h2>
+          {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.cobalt}
+            established="F5 established how rule systems produce worth hierarchies that distribute resources, credibility, and protection based on signal access rather than intrinsic capacity — and how the sorting internalizes until it feels like objective reality."
+            question="When worth sorting becomes stable and internalized, it stops being experienced as a system. It becomes perception. Bias is what happens when a long-running filter becomes pre-attentive — credibility and competence feel inherent before evaluation begins."
+            nextFramework="F6"
+            nextTitle="Bias Regulates"
+            nextHref="/framework/f6-bias-regulates"
+          />
 
-            <p style={proseStyle}>
-              F5 explains how rule systems produce worth hierarchies — and how those hierarchies formalize into self-reinforcing filters that distribute resources, credibility, and protection based on signal access rather than intrinsic worth.
-            </p>
-            <p style={proseStyle}>
-              But there is a further step. When worth sorting becomes stable and internalized, it stops being experienced as a system. It becomes perception. Bias is what happens when a long-running filter becomes pre-attentive perception: credibility and competence feel inherent before evaluation begins. The person who has been repeatedly validated and resourced <em>looks</em> competent. The person who has been repeatedly dismissed and underfunded <em>looks</em> like they lack something. The sorting disappears from view because it aligns with what feels like direct perception.
-            </p>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.cobalt}
+            connections={[
+              { id: "F4", href: "/framework/f4-rules-regulate", description: "F4 established rule systems. F5 shows what those rules sort — worth hierarchies as the distribution mechanism for safety, resources, and credibility." },
+              { id: "F6", href: "/framework/f6-bias-regulates", description: "F5 established worth sorting. F6 shows how that sorting becomes invisible — perception itself shaped by the hierarchy's logic." },
+              { id: "F3", href: "/framework/f3-false-coherence", description: "Worth hierarchies are maintained by double False Coherence — from those positioned above and those positioned below." },
+              { id: "M2", href: "/model/m2-nervous-system-states", description: "Worth hierarchies determine access to the safety conditions that nervous system state flexibility requires." },
+            ]}
+          />
 
-            <KeyStatement>
-              F5 is what rules sort. F6 is how sorting becomes invisible.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              F6 explains how this happens: how perception becomes protection, why bias resists correction even in intelligent, well-intentioned people, and what conditions allow perceptual flexibility to return.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f5-worth-hierarchies" type="framework" />
-
-          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to...</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the bias framework (F6)" href="/framework/f6-bias-regulates" linkText="Bias Regulates \u2192" />
-                  <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate \u2192" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient \u2192" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness \u2192" />
-                  <NavRow label="Read the cognitive maintenance framework (F3)" href="/framework/f3-false-coherence" linkText="Adult Cognition & False Coherence \u2192" />
-                  <NavRow label="See the applied models" href="/models" linkText="Core Models \u2192" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks \u2192" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations \u2192" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary \u2192" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications \u2192" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) \u2192" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.cobalt}
+            items={[
+              { label: "Continue to F6 — how sorting becomes invisible through perception", href: "/framework/f6-bias-regulates", linkText: "F6: Bias Regulates →" },
+              { label: "See how rules become sorting systems", href: "/framework/f4-rules-regulate", linkText: "F4: Rules Regulate →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
