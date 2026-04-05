@@ -1,13 +1,20 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER, PATTERN_GRADIENT,
+  hexToRgba, RESEARCHER,
 } from "@/src/styles/tokens";
+import {
+  proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
+  conceptHeadingStyle, propositionItemStyle,
+} from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
   PropositionBox, ExpandableSection, CommonUnderstanding,
+  PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
+import BridgeSection from "@/src/components/BridgeSection";
+import EstablishesSection from "@/src/components/EstablishesSection";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
@@ -96,18 +103,17 @@ export default function F3FalseCoherencePage() {
           <FrameworkHero
               badge="FRAMEWORK F3"
               title="Adult Cognition & False Coherence"
-              subtitle="How Cognition Maintains What the Body Never Learned to Regulate"
-              description="How the identity structures built in childhood maintain themselves in adulthood — through cognition actively replacing emotional signals with invented narratives — and what this system does to the people around it. Explains the mechanism that overrides M1/M2 signals, distorts M4 perception, and substitutes for M3 restoration — completing the individual arc (F1–F3)."
+              subtitle="The Lock"
+              description="F1 described the instrument. F2 described the calibration. F3 describes why the calibration persists. When higher-order cognition comes online, it arrives inside a nervous system already shaped by everything F2 described — and it does not passively carry the configuration forward. It actively maintains it, generating narrative substitutes that produce physiological relief, reinforcing the pattern through the relief they provide, and making the locked state invisible by constructing a coherent story around it."
               group="Individual"
-              groupLabel="Individual · F1–F3"
-              threadLine="False coherence — cognition replacing restoration · Cost: Truth"
+              groupLabel="Individual Arc · F1-F3"
+              threadLine="False coherence — the CLS replacing the ESS's signals with narrative. Cost: truth"
               informsModels={[
-                { label: "M2", href: "/model/m2-nervous-system-states" },
-                { label: "M4", href: "/model/m4-awareness-capacities" },
                 { label: "M3", href: "/model/m3-regulation-capacities" },
+                { label: "M4", href: "/model/m4-awareness-capacities" },
               ]}
               adjacent={{
-                prev: { label: "F2 Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
+                prev: { label: "F2 Developmental Calibration", href: "/framework/f2-awareness-calibration" },
                 next: { label: "F4 Rules Regulate", href: "/framework/f4-rules-regulate" },
               }}
             />
@@ -115,6 +121,28 @@ export default function F3FalseCoherencePage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+          {/* ─── PREREQUISITES ──────────────────────────── */}
+          <PrerequisitesBlock items={[
+            {
+              concept: "Biological Restoration",
+              framework: "F1",
+              description: "The body's designed process for completing the activation sequence and returning to physiological baseline — the pivot of the entire framework system.",
+              href: "/framework/f1-emotional-gradient#designed-process",
+            },
+            {
+              concept: "Interoceptive Self-Awareness (SEA)",
+              framework: "F2",
+              description: "Perceiving one's own internal states while they are happening — the interoceptive channel between the ESS and the CLS. When never built, the CLS operates without body data.",
+              href: "/framework/f2-awareness-calibration#sea",
+            },
+            {
+              concept: "Chronic State Organisation",
+              framework: "F2",
+              description: "When the nervous system never learned to return to physiological baseline, a temporary state becomes the permanent configuration the person lives inside.",
+              href: "/framework/f2-awareness-calibration#chronic-states",
+            },
+          ]} />
+
           {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
           <CommonUnderstanding
             terms={[
@@ -144,7 +172,7 @@ export default function F3FalseCoherencePage() {
           >
             <h2
               id="heading-core-propositions"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.cobalt)}
             >
               Core Propositions
             </h2>
@@ -183,7 +211,7 @@ export default function F3FalseCoherencePage() {
           >
             <h2
               id="heading-overview"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(SPECTRUM.cobalt)}
             >
               Overview — The Cognitive Maintenance Framework
             </h2>
@@ -250,11 +278,11 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-core-mechanism"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-happens-cognition-replaces" style={sectionHeadingStyle}>
+            <h2 id="heading-what-happens-cognition-replaces" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               What happens when cognition replaces emotional signals?
             </h2>
 
-            <h2 id="heading-core-mechanism" style={sectionHeadingStyle}>
+            <h2 id="heading-core-mechanism" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Core Mechanism — Cognition Replaces Emotional Signals
             </h2>
 
@@ -361,7 +389,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-self-reinforcing-loop"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-self-reinforcing-loop" style={sectionHeadingStyle}>
+            <h2 id="heading-self-reinforcing-loop" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Self-Reinforcing Loop
             </h2>
 
@@ -417,7 +445,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-cognitive-dissonance"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cognitive-dissonance" style={sectionHeadingStyle}>
+            <h2 id="heading-cognitive-dissonance" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Cognitive Dissonance as Regulatory Stress
             </h2>
 
@@ -455,7 +483,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-regulatory-defense"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-regulatory-defense" style={sectionHeadingStyle}>
+            <h2 id="heading-regulatory-defense" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Regulatory Defense
             </h2>
 
@@ -525,7 +553,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-identity-upgrades"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-identity-upgrades" style={sectionHeadingStyle}>
+            <h2 id="heading-identity-upgrades" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Identity Upgrades — Growth Narratives Serving Regulation
             </h2>
 
@@ -560,7 +588,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-rigidity"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-rigidity" style={sectionHeadingStyle}>
+            <h2 id="heading-rigidity" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Rigidity Is State-Dependent, Not Character
             </h2>
 
@@ -591,7 +619,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-cognition-across-gradient"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cognition-across-gradient" style={sectionHeadingStyle}>
+            <h2 id="heading-cognition-across-gradient" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Cognition Across the Gradient
             </h2>
 
@@ -693,7 +721,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-relational-turn"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-relational-turn" style={sectionHeadingStyle}>
+            <h2 id="heading-relational-turn" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               The Relational Turn — Emotional Distortion
             </h2>
 
@@ -764,11 +792,11 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-external-regulation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-why-regulate-through-others" style={sectionHeadingStyle}>
+            <h2 id="heading-why-regulate-through-others" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Why do some people regulate through others instead of themselves?
             </h2>
 
-            <h2 id="heading-external-regulation" style={sectionHeadingStyle}>
+            <h2 id="heading-external-regulation" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               External Regulation — Using Others to Manage
             </h2>
 
@@ -884,7 +912,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-what-f3-establishes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-what-f3-establishes" style={sectionHeadingStyle}>
+            <h2 id="heading-what-f3-establishes" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               What F3 Establishes
             </h2>
 
@@ -986,7 +1014,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-research-foundations"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle}>
+            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
               Research Foundations
             </h2>
 
@@ -1049,77 +1077,41 @@ export default function F3FalseCoherencePage() {
             </div>
           </section>
 
-          {/* ─── BRIDGE TO F4 ──────────────────────────────── */}
-          <section
-            id="bridge-to-f4"
-            aria-labelledby="heading-bridge-to-f4"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-bridge-to-f4" style={sectionHeadingStyle}>
-              Bridge to F4: How Individual Patterns Become Collective Rule Systems
-            </h2>
+          {/* ─── BRIDGE ────────────────────────────────── */}
+          <BridgeSection
+            color={SPECTRUM.cobalt}
+            established="F3 completes the individual arc. The regulation thread at the individual level is fully traced: the biological return was never learned, cognition replaced it with narrative, and the replacement produces emotional distortion and external regulation that operate in every relationship the person is in."
+            question="What happens when enough people in a system are running these mechanisms? When enough individuals are externally regulating through others, running emotional distortion, and absorbing rules as truth through false coherence? The answer is collective rule systems — nervous system regulation at the group level."
+            nextFramework="F4"
+            nextTitle="Rules Regulate"
+            nextHref="/framework/f4-rules-regulate"
+          />
 
-            <p style={proseStyle}>
-              F3 completes the individual arc — both the internal mechanisms and their relational consequences. The regulation thread at the individual level is now fully traced: the biological return was never learned, cognition replaced it, the replacement produces emotional distortion and external regulation, and these mechanisms operate in every relationship the person is in.
-            </p>
-            <p style={proseStyle}>
-              F4 asks: what happens when enough people in a system are running these mechanisms? When enough compasses are stuck in threat-based modes? When enough individuals are externally regulating through others, running emotional distortion, and absorbing rules as truth through false coherence?
-            </p>
-            <p style={proseStyle}>
-              The answer is collective rule systems. Not rational agreements or social contracts. Nervous system regulation at the group level. When enough individuals in a system need predictability, belonging protection, and conformity to stay regulated, the group develops structures that provide these — and the structures become self-reinforcing because questioning them activates the same threat response that created them.
-            </p>
+          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          <ConnectionsMap
+            color={SPECTRUM.cobalt}
+            connections={[
+              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps Cognitive Override as the branching point. F3 describes why override persists into adulthood — not because the CLS keeps choosing it, but because override is the only architecture the CLS was ever built with." },
+              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the three awareness capacities. F3 uses the capacity profile to show why false coherence operates: when SEA is absent, the CLS has no channel to receive the ESS's signals." },
+              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 established biological restoration as the designed process operating at no cost. F3 describes what happens when that process is permanently unavailable and the CLS substitutes narrative — at the cost of truth." },
+              { id: "F2", href: "/framework/f2-awareness-calibration", description: "F2 described how the system gets configured through the relational environment. F3 describes why the configuration persists — how cognition maintains it and why it resists change." },
+              { id: "F4", href: "/framework/f4-rules-regulate", description: "F3 completes the individual arc. F4 picks up the mechanism at collective scale: the same CLS that maintains individual false coherence absorbs and enforces social rules." },
+              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F3 and F8 are structural counterparts. F3 describes the lock. F8 describes how the lock can open — awareness restored through safety, not instruction." },
+            ]}
+          />
 
-            <KeyStatement>
-              The same cognitive system that maintains individual false coherence is the system that absorbs and maintains social rules. Individual false coherence → collective rule systems. The mechanism is the same. The scale changes.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              F3 is the individual. F4 is what the individuals produce together.
-            </p>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="f3-false-coherence" type="framework" />
-
-          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to…</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow label="Read the first collective framework (F4)" href="/framework/f4-rules-regulate" linkText="Rules Regulate →" />
-                  <NavRow label="Read the foundational framework (F1)" href="/framework/f1-emotional-gradient" linkText="The Emotional Gradient →" />
-                  <NavRow label="Read the calibration framework (F2)" href="/framework/f2-awareness-calibration" linkText="Awareness Teaches Awareness →" />
-                  <NavRow label="See the applied models" href="/models" linkText="Core Models →" />
-                  <NavRow label="See what cognition overrides — the biology underneath false coherence" href="/model/m3-regulation-capacities" linkText="Regulation Capacities (M3) →" />
-                  <NavRow label="Explore all 12 frameworks" href="/frameworks-map" linkText="12 Frameworks →" />
-                  <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
-                  <NavRow label="Look up key terms" href="/glossary" linkText="Glossary →" />
-                  <NavRow label="See published research" href="/publications" linkText="Publications →" />
-                  <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) →" external />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          <NavSection
+            color={SPECTRUM.cobalt}
+            items={[
+              { label: "Continue to F4 — how individual patterns become collective rule systems", href: "/framework/f4-rules-regulate", linkText: "F4: Rules Regulate →" },
+              { label: "See what cognition overrides — the biology underneath false coherence", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities →" },
+              { label: "See the awareness architecture that determines whether override occurs", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities →" },
+              { label: "Read the structural counterpart — how the lock opens", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety →" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
+              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+            ]}
+          />
         </article>
 
       </PageLayout>
@@ -1257,110 +1249,29 @@ export default function F3FalseCoherencePage() {
   );
 }
 
-// ─── STYLE CONSTANTS ──────────────────────────────────────
+// ─── STYLE CONSTANTS (page-local only) ───────────────────
 
-const sectionHeadingStyle = {
-  fontSize: 20,
-  fontWeight: 700,
-  color: RESEARCHER.accent,
-  marginBottom: 20,
-  paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-};
-
-const conceptHeadingStyle = {
-  fontSize: 16,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 12,
-};
-
-const proseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 12,
-  maxWidth: 720,
-};
-
-const expandedProseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  margin: "8px 0 0",
-};
-
-const propositionItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
-
-const orderedListStyle = {
-  paddingLeft: 20,
-  margin: "0 0 16px",
-};
-
-const listItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
+const orderedListStyle = { paddingLeft: 20, margin: "0 0 16px" };
+const listItemStyle = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 };
 
 const tableStyle = {
-  width: "100%",
-  borderCollapse: "collapse",
-  background: BG.card,
-  borderRadius: 8,
-  overflow: "hidden",
-  border: `1px solid ${BORDER.default}`,
-  fontSize: 13,
+  width: "100%", borderCollapse: "collapse", background: BG.card,
+  borderRadius: 8, overflow: "hidden", border: `1px solid ${BORDER.default}`, fontSize: 13,
 };
-
 const thStyle = {
-  padding: "10px 14px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-  background: BG.surface,
-  borderBottom: `1px solid ${BORDER.default}`,
+  padding: "10px 14px", textAlign: "left", fontSize: 11, fontWeight: 600,
+  color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em",
+  fontFamily: FONT.mono, background: BG.surface, borderBottom: `1px solid ${BORDER.default}`,
 };
-
-const navThStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-};
-
-// ─── HELPER COMPONENTS ────────────────────────────────────
 
 function KeyStatement({ children }) {
   return (
-    <blockquote
-      style={{
-        padding: "16px 20px",
-        margin: "0 0 16px",
-        background: hexToRgba(SPECTRUM.cobalt, 0.06),
-        borderRadius: 8,
-        borderLeft: `4px solid ${SPECTRUM.cobalt}`,
-        fontSize: 15,
-        fontWeight: 500,
-        color: TEXT.primary,
-        lineHeight: 1.6,
-        fontStyle: "italic",
-      }}
-    >
+    <blockquote style={{
+      padding: "16px 20px", margin: "0 0 16px",
+      background: hexToRgba(SPECTRUM.cobalt, 0.06), borderRadius: 8,
+      borderLeft: `4px solid ${SPECTRUM.cobalt}`,
+      fontSize: 15, fontWeight: 500, color: TEXT.primary, lineHeight: 1.6, fontStyle: "italic",
+    }}>
       {children}
     </blockquote>
   );
@@ -1370,47 +1281,12 @@ function TableRow({ cells }) {
   return (
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       {cells.map((cell, i) => (
-        <td
-          key={i}
-          style={{
-            padding: "10px 14px",
-            fontSize: 13,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400,
-            lineHeight: 1.6,
-            verticalAlign: "top",
-          }}
-        >
-          {cell}
-        </td>
+        <td key={i} style={{
+          padding: "10px 14px", fontSize: 13,
+          color: i === 0 ? TEXT.primary : TEXT.secondary,
+          fontWeight: i === 0 ? 600 : 400, lineHeight: 1.6, verticalAlign: "top",
+        }}>{cell}</td>
       ))}
-    </tr>
-  );
-}
-
-function NavRow({ label, href, linkText, external }) {
-  const linkStyle = {
-    color: SPECTRUM.blue,
-    textDecoration: "none",
-    fontWeight: 500,
-  };
-
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
-        {label}
-      </td>
-      <td style={{ padding: "12px 16px", fontSize: 14 }}>
-        {external ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" style={linkStyle}>
-            {linkText}
-          </a>
-        ) : (
-          <Link href={href} style={linkStyle}>
-            {linkText}
-          </Link>
-        )}
-      </td>
     </tr>
   );
 }
