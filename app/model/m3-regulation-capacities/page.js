@@ -231,7 +231,7 @@ export default function M3RegulationCapacitiesPage() {
             </p>
             <p style={proseStyle}>
               Biological restoration requires specific conditions: sufficient safety, sufficient time, and in many cases another regulated nervous system nearby — and the process cannot be accelerated, only allowed when those conditions are present. The capacity for biological restoration is not innate — it develops through thousands of co-regulation cycles in early life. How this capacity develops — what builds it and what fails to build it — is the territory of{" "}
-              <Link href="/framework/f2-developmental-blueprint" style={{ color: MODEL_COLOR, textDecoration: "none" }}>F2</Link>.
+              <Link href="/framework/f2-awareness-calibration" style={{ color: MODEL_COLOR, textDecoration: "none" }}>F2</Link>.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
@@ -405,8 +405,8 @@ export default function M3RegulationCapacitiesPage() {
             </p>
             <p style={proseStyle}>
               The override is not a single moment. It is a learned pattern. A person who grew up in an environment where emotional signals were punished, ignored, or dangerous learns to override automatically. It operates below conscious awareness, just like the original signal did. How cognition came to operate this way — what developmental conditions produced the override — is the territory of{" "}
-              <Link href="/framework/f2-developmental-blueprint" style={{ color: MODEL_COLOR, textDecoration: "none" }}>F2</Link> and{" "}
-              <Link href="/framework/f3-cognitive-override" style={{ color: MODEL_COLOR, textDecoration: "none" }}>F3</Link>.
+              <Link href="/framework/f2-awareness-calibration" style={{ color: MODEL_COLOR, textDecoration: "none" }}>F2</Link> and{" "}
+              <Link href="/framework/f3-false-coherence" style={{ color: MODEL_COLOR, textDecoration: "none" }}>F3</Link>.
             </p>
             <p style={proseStyle}>
               This is the mechanism that connects M2 and M3.{" "}
@@ -746,12 +746,12 @@ export default function M3RegulationCapacitiesPage() {
               },
               {
                 id: "F2: The Developmental Blueprint",
-                href: "/framework/f2-developmental-blueprint",
+                href: "/framework/f2-awareness-calibration",
                 description: "Explains how the capacity for biological restoration develops through early co-regulation — and what happens when that developmental environment is absent.",
               },
               {
                 id: "F3: Cognitive Override",
-                href: "/framework/f3-cognitive-override",
+                href: "/framework/f3-false-coherence",
                 description: "Explains how cognition comes to replace biological restoration as the dominant strategy — the developmental and maintenance mechanisms that produce the override M3 describes.",
               },
             ]}
@@ -778,7 +778,7 @@ export default function M3RegulationCapacitiesPage() {
               },
               {
                 label: "Explore how the capacity for biological restoration develops through early co-regulation",
-                href: "/framework/f2-developmental-blueprint",
+                href: "/framework/f2-awareness-calibration",
                 linkText: "F2: The Developmental Blueprint \u2192",
               },
               {

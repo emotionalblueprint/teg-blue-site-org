@@ -777,7 +777,7 @@ export default function M4AwarenessCapacitiesPage() {
               },
               {
                 id: "F3: Cognitive Override",
-                href: "/framework/f3-cognitive-override",
+                href: "/framework/f3-false-coherence",
                 description: "Explains how coherence without the body maintains itself \u2014 the self-reinforcing loop, signal replacement, and why it resists change.",
               },
             ]}

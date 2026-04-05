@@ -861,7 +861,7 @@ export default function M2NervousSystemStatesPage() {
               },
               {
                 id: "F2: The Developmental Blueprint",
-                href: "/framework/f2-developmental-blueprint",
+                href: "/framework/f2-awareness-calibration",
                 description: "Explains how the relational environment during development determines whether State Flexibility builds or the system becomes organized around a chronic position.",
               },
             ]}

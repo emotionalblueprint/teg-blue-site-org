@@ -564,7 +564,7 @@ export default function M1EmotionsAsSignalsPage() {
               },
               {
                 id: "F2: The Developmental Blueprint",
-                href: "/framework/f2-developmental-blueprint",
+                href: "/framework/f2-awareness-calibration",
                 description: "Explains how the relational environment during development determines which restoration pathways build and which remain absent — the origin of M1's developmental consequence.",
               },
             ]}
