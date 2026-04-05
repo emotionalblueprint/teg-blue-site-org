@@ -1,31 +1,42 @@
 import Link from "next/link";
-import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba,
-} from "@/src/styles/tokens";
+import dynamic from "next/dynamic";
+import { BG, TEXT, FONT, SPECTRUM, AWARENESS, hexToRgba } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, ModelAnchorStrip,
-  ModelPurpose, OperationalStatement,
-  ExpandableSection, PageLayout,
+  ModelPurpose, OperationalStatement, ExpandableSection,
+  PageLayout, PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import EmpathicIntegrationExplorer from "@/src/components/EmpathicIntegrationExplorer";
-import ConnectedResearch from "@/src/components/ConnectedResearch";
+import {
+  proseStyle, expandedProseStyle, propositionItemStyle,
+  sectionHeadingStyle, conceptHeadingStyle, expandableRowStyle,
+  gridHeaderStyle, gridCellStyle,
+} from "@/src/styles/pageStyles";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
   generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
+const InteroceptiveArchitectureMap = dynamic(
+  () => import("@/src/components/InteroceptiveArchitectureMap"),
+  { ssr: false }
+);
+const EmpathicIntegrationExplorer = dynamic(
+  () => import("@/src/components/EmpathicIntegrationExplorer"),
+  { ssr: false }
+);
+
 const MODEL_COLOR = SPECTRUM.cobalt;
 
 const ANCHOR_SECTIONS = [
+  { label: "Architecture of Empathy", href: "#architecture-of-empathy" },
+  { label: "Two Systems", href: "#awareness-architecture" },
+  { label: "Interoceptive Access", href: "#interoceptive-access" },
   { label: "Three Capacities", href: "#three-capacities" },
-  { label: "Multiplicative", href: "#multiplicative-system" },
-  { label: "Development", href: "#awareness-develops" },
-  { label: "Configuration", href: "#capacity-configuration" },
-  { label: "Coherence", href: "#true-false-coherence" },
-  { label: "Repair", href: "#repair" },
-  { label: "Full Cycle", href: "#cycle-completes" },
+  { label: "What SEA Determines", href: "#what-sea-determines" },
+  { label: "Coherence", href: "#coherence" },
+  { label: "Diagrams", href: "#diagrams" },
+  { label: "Connections", href: "#connections" },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -33,40 +44,35 @@ const ANCHOR_SECTIONS = [
 export const metadata = {
   title: "Awareness Capacities (M4) | TEG-Blue Research",
   description:
-    "The fourth stage of the Emotional Somatic Cycle — what determines whether the person can feel the cycle while it is running. Three biological capacities that the world calls empathy. They are not one thing. They are three things.",
+    "What determines whether the person can perceive the Emotional Somatic Cycle while it is running. Two information systems, two biological substrates, three awareness capacities, and the interoceptive architecture that connects or separates them.",
   keywords: [
     "awareness capacities",
-    "Reading Emotions",
-    "Emotional Resonance",
-    "Self-Emotional Awareness",
-    "empathy components",
-    "multiplicative system",
+    "interoceptive self-awareness",
+    "affective resonance",
+    "interpersonal affect perception",
+    "interoceptive access",
+    "two substrates",
+    "ESS CLS architecture",
+    "coherence",
     "capacity configuration",
-    "awareness teaches awareness",
-    "co-regulation",
-    "pre-SEA condition",
-    "true coherence",
-    "false coherence",
-    "tolerance thresholds",
-    "generational replication",
     "emotional somatic cycle",
   ],
   alternates: {
     canonical: "https://teg-blue.org/model/m4-awareness-capacities",
   },
   openGraph: {
-    title: "Awareness Capacities — M4 Model | TEG-Blue",
+    title: "Awareness Capacities \u2014 M4 Model | TEG-Blue",
     description:
-      "What determines whether the person can feel the cycle while it is running — three biological capacities, each with its own developmental trajectory and degradation pattern. The fourth stage of the Emotional Somatic Cycle.",
+      "Two information systems, two biological substrates, three awareness capacities. What determines whether the person can perceive the Emotional Somatic Cycle while it is running.",
     url: "https://teg-blue.org/model/m4-awareness-capacities",
     type: "article",
     siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Awareness Capacities — TEG-Blue M4",
+    title: "Awareness Capacities \u2014 TEG-Blue M4",
     description:
-      "What the world calls empathy is not one thing. It is three biological capacities — and when any one is missing, the whole system distorts.",
+      "Two information systems, two biological substrates, three awareness capacities. The architecture that determines whether the cycle can be observed.",
   },
 };
 
@@ -90,8 +96,8 @@ export default function M4AwarenessCapacitiesPage() {
               badge="MODEL M4"
               title="Awareness Capacities"
               subtitle="The Calibration"
-              description="The signal fired (M1). The state shifted (M2). The body mobilised, and either the cycle completed or it didn't (M3). But throughout — from the first signal to the last substitute — one question has been running underneath: can the person feel any of this happening? Some people feel the state shift. They notice the narrowing. They catch the override engaging. Others cannot. What determines this difference is not intelligence, insight, or willpower. It is three biological capacities — each with its own neural substrate, its own developmental trajectory, and its own degradation pattern under chronic activation."
-              coreQuestion="Can the person feel the cycle while it is running — and what determines whether they can?"
+              description="The body detected something. Hormones released. Muscles activated. Heart rate shifted. The entire nervous system reconfigured (M1, M2). Then the question: can the body reverse these physiological changes, or do they persist and accumulate (M3)? But throughout \u2014 from the first hormonal shift to the last substitute \u2014 one question has been running underneath: can the person feel any of these physiological changes while they are happening? What determines this is a biological architecture \u2014 two information systems operating through two separate substrates, producing three distinct channels of awareness."
+              coreQuestion="Can the person perceive the Emotional Somatic Cycle while it is running \u2014 and what determines whether they can?"
               drawsFrom={[
                 { label: "M1", href: "/model/m1-emotions-as-signals" },
                 { label: "M2", href: "/model/m2-nervous-system-states" },
@@ -104,9 +110,6 @@ export default function M4AwarenessCapacitiesPage() {
           </>
         }
       >
-        {/* ─── EMPATHIC INTEGRATION EXPLORER ────────────────── */}
-        <EmpathicIntegrationExplorer />
-
         <article>
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
@@ -116,1057 +119,709 @@ export default function M4AwarenessCapacitiesPage() {
           >
             <h2
               id="heading-core-propositions"
-              style={sectionHeadingStyle}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Core Propositions
             </h2>
             <ModelPurpose color={MODEL_COLOR}>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li style={propositionItemStyle}>
-                  What the world calls {"\u201C"}empathy{"\u201D"} is not one capacity. It is three distinct biological processes — <strong style={{ color: TEXT.primary }}>Reading Emotions (RE)</strong>, <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER)</strong>, and <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong> — each with a different neural substrate, developmental pathway, and degradation pattern
+                  Two information systems: the Emotional Somatic System (ESS) detects and generates physiological responses below conscious awareness; the Cognitive-Logical System (CLS) produces language, reasoning, and narrative from whatever data reaches it
                 </li>
                 <li style={propositionItemStyle}>
-                  The three capacities are multiplicative: RE × ER × SEA. All three can be present and the product is still zero if any one is gone
+                  Two biological substrates: the interoceptive substrate reads the body from the inside; the external observation substrate reads other bodies from the outside. They do not share hardware.
                 </li>
                 <li style={propositionItemStyle}>
-                  Self-Emotional Awareness (SEA) is the keystone. Without it, Reading Emotions (RE) is unanchored, Emotional Resonance (ER) is unfiltered, and cycle completion has no endpoint
+                  Three awareness capacities: Interpersonal Affect Perception (RE) identifies what others feel through observable signals; Affective Resonance (ER) feels what others feel in one{"'"}s own body; Interoceptive Self-Awareness (SEA) carries the ESS{"'"}s signals to the CLS
                 </li>
                 <li style={propositionItemStyle}>
-                  The capacity needed to observe the mode is the capacity the mode disables — Self-Emotional Awareness (SEA) is structurally absent in all four chronic positions
+                  Interoceptive access is the single upstream variable: substrate state determines which capacities can function, what data reaches the CLS, what coherence the CLS builds, and whether override is visible or invisible
                 </li>
                 <li style={propositionItemStyle}>
-                  Awareness teaches awareness — the adults{"'"} awareness configuration is the child{"'"}s developmental environment. Not instruction. Not intention. Not love. What the nervous system embodies is what transmits
+                  Interoceptive Self-Awareness (SEA) is the bridge between the two systems. Without it, the CLS operates disconnected from the body{"'"}s signals and builds coherence without them
                 </li>
                 <li style={propositionItemStyle}>
-                  Co-regulation teaches cycle completion. The caregiver{"'"}s capacity to regulate IS the child{"'"}s regulatory environment — the bridge between awareness (M4) and regulation (M3)
+                  Three forms of coherence: aligned with the body (full data), without the body (bridge closed), contested by the body (bridge active but flooded or contradicted)
                 </li>
                 <li style={propositionItemStyle}>
-                  Configuration → chronic mode → identity. Personality is not a type — it is a record of which capacities had conditions to develop and which didn{"'"}t
-                </li>
-                <li style={propositionItemStyle}>
-                  False coherence is not deception — it is cognition building a stable narrative from incomplete data. Regulation at the cost of truth
-                </li>
-                <li style={propositionItemStyle}>
-                  The chain replicates through the nervous system, not through words. It replicates until awareness changes, not just behaviour
-                </li>
-                <li style={propositionItemStyle}>
-                  The capacities were not damaged. They were not developed. Repair is not undoing the past — it is developing what the past didn{"'"}t provide conditions for
+                  The chain feeds itself in both directions: degradation amplifies degradation, restoration amplifies restoration. The architecture amplifies whichever direction it is running.
                 </li>
               </ul>
             </ModelPurpose>
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 1: THE THREE CAPACITIES                    */}
+          {/* PART 1: WHAT AWARENESS RUNS ON                  */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 1" title="The Three Capacities" />
+          <PartDivider label="PART 1" title="What Awareness Runs On" color={MODEL_COLOR} />
 
-          {/* ─── C0: WHAT EMPATHY ACTUALLY IS ──────────────── */}
+          {/* ─── C0: THE ARCHITECTURE OF EMPATHY ──────────── */}
           <section
-            id="what-empathy-is"
-            aria-labelledby="heading-what-empathy-is"
+            id="architecture-of-empathy"
+            aria-labelledby="heading-architecture-of-empathy"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-what-empathy-is"
-              style={sectionHeadingStyle}
+              id="heading-architecture-of-empathy"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              What Empathy Actually Is
+              The Architecture of Empathy
             </h2>
 
             <p style={proseStyle}>
-              The word {"\u201C"}empathy{"\u201D"} is used as if it names one capacity. It does not. What the culture calls empathy is actually three distinct biological processes — each with a different neural substrate, a different developmental pathway, and a different degradation pattern under chronic activation.
+              Some people read others with precision {"\u2014"} they identify emotional states in the room before anyone has spoken. The same people may have no access to what they themselves are feeling.
             </p>
             <p style={proseStyle}>
-              A person can have one of these capacities running at full strength and the other two completely offline. This is not a partial version of empathy. It is a fundamentally different configuration — producing a fundamentally different experience of self, others, and the world.
+              Some people feel others intensely {"\u2014"} when someone nearby is in pain, they experience a version of that pain in their own body. The same people may be unable to distinguish that resonance from their own internal state.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Reading Emotions (RE)</strong> — the capacity to identify what others are feeling. What is happening in this person? What are their signals telling me?
+              Some people can observe their own emotional responses while the responses are happening {"\u2014"} they notice the activation, name it, and hold it as information rather than being consumed by it. Others are inside the response with no observing position from which to see it.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER)</strong> — the capacity to feel what others are feeling. Not reading the signal from outside — experiencing it in one{"'"}s own body.
+              These are not variations of one capacity. They are three distinct awareness capacities, each accessing different information, each operating through different biological channels, and each with a different vulnerability under chronic activation. <Link href="/model/m2-nervous-system-states" style={{ color: MODEL_COLOR, textDecoration: "none" }}>M2</Link> said: {"\u201C"}Some people feel the state shift. Some don{"'"}t.{"\u201D"} <Link href="/model/m3-regulation-capacities" style={{ color: MODEL_COLOR, textDecoration: "none" }}>M3</Link> said: {"\u201C"}Some people feel the activation running. Others cannot.{"\u201D"} The gap was visible. The mechanism was not yet named.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA)</strong> — the capacity to identify, name, and trust one{"'"}s own emotional states. The capacity to have a feeling without being consumed by it. To observe one{"'"}s own internal process while it is running.
+              Three awareness capacities {"\u2014"} <strong style={{ color: AWARENESS.RE }}>Interpersonal Affect Perception (RE)</strong>, <strong style={{ color: AWARENESS.ER }}>Affective Resonance (ER)</strong>, and <strong style={{ color: AWARENESS.SEA }}>Interoceptive Self-Awareness (SEA)</strong> {"\u2014"} each with a different biological basis, each with a different degradation pattern, and each developable through specific relational conditions.
             </p>
             <p style={proseStyle}>
-              These are the three capacities that M2 and M3 have been describing without naming. M2 said: {"\u201C"}Some people feel the state shift. Some don{"'"}t.{"\u201D"} M3 said: {"\u201C"}Some people feel the activation running. Others cannot.{"\u201D"} The gap was visible. The mechanism was not yet named. This is where it gets named.
+              But the three capacities are not three independent dials. They are products of a biological architecture {"\u2014"} two information systems operating through two separate substrates. Before defining each capacity, this model maps what the capacities are built on. The architecture determines why they separate in specific, predictable patterns, why one survives when the other two degrade, and why the configuration a person carries determines whether they can observe the Emotional Somatic Cycle while it is running.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Not one thing but three. A person can have one component at full strength and the others completely offline. This is not partial empathy. It is a fundamentally different configuration.
+              Empathy as three channels: one CLS capacity, one ESS capacity, and the bridge between them. A person can have one channel open and the other two closed {"\u2014"} producing a fundamentally different awareness architecture.
             </OperationalStatement>
 
-            <p style={{ ...proseStyle, fontSize: 13, fontStyle: "italic" }}>
-              <strong style={{ color: TEXT.primary }}>Note on cross-model terms:</strong> {"\u201C"}The gradient{"\u201D"} refers to the continuous range from Safety & Openness through Threat & Defence, Strategy & Management, to Power & Dominance — the four nervous system states that M2 mapped. {"\u201C"}The compass{"\u201D"} (or {"\u201C"}Inner Compass{"\u201D"}) is M2{"'"}s visual tool for tracking where the nervous system currently sits on this gradient. Both terms are used throughout M4 as established vocabulary.
-            </p>
-
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Multi-component empathy:</strong> Decety & Jackson (2004) — empathy as requiring cognitive empathy (RE), affective empathy (ER), and self-referential processing (SEA). Singer & Lamm (2009) — distinct neural substrates for cognitive and affective empathy. <strong style={{ color: TEXT.primary }}>Dissociable components:</strong> Blair (2005) — independent degradation patterns with different clinical profiles.
+                  Decety & Jackson (2004) {"\u2014"} empathy as multi-component: cognitive empathy, affective empathy, and self-referential processing as distinguishable processes. Blair (2005) {"\u2014"} dissociable empathy components with independent degradation patterns, producing qualitatively different outcomes depending on which components are intact.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The identification of {"\u201C"}empathy{"\u201D"} as three biologically distinct capacities that develop independently, degrade independently, and can be present in any combination — explaining why a person can read others with surgical precision while feeling nothing (Reading Emotions (RE) without Emotional Resonance (ER)), or feel everything while unable to locate themselves (Emotional Resonance (ER) without Self-Emotional Awareness (SEA)). The framing of these three capacities as the awareness system that determines whether the Emotional Somatic Cycle can be observed and completed.
+                  The identification of the three awareness capacities as the mechanism M2 and M3 described without naming {"\u2014"} the gap between the person who can feel the Emotional Somatic Cycle running and the person who cannot, now traced to three specific channels. The reframe from degree to structure: the question is not how much empathy a person has, but which specific capacities are present and which are absent {"\u2014"} and the answer lies in the biological architecture those capacities are built on.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C1: READING EMOTIONS (RE) ─────────────────── */}
+          {/* ─── C1: THE AWARENESS ARCHITECTURE ──────────── */}
           <section
-            id="reading-emotions"
-            aria-labelledby="heading-reading-emotions"
+            id="awareness-architecture"
+            aria-labelledby="heading-awareness-architecture"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-reading-emotions"
-              style={sectionHeadingStyle}
+              id="heading-awareness-architecture"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Reading Emotions (RE) — Identifying What Others Feel
+              The Awareness Architecture
             </h2>
 
             <p style={proseStyle}>
-              The capacity to read the emotional signals of others — facial expressions, tone of voice, body language, behavioural patterns. Reading Emotions (RE) operates as a two-stage system. The first stage is bottom-up — the amygdala and sensory processing regions extract emotional signals rapidly and automatically, below conscious awareness. This stage fires in milliseconds. The person is already reading before they know they are reading.
+              The nervous system operates through two information systems.
             </p>
             <p style={proseStyle}>
-              The second stage is top-down — the prefrontal cortex integrates that reading with context, goal, and relationship history, determining what the reading is <em>used for</em>. This is the stage that changes across nervous system states. In Safety & Openness, the prefrontal cortex integrates the reading with curiosity and understanding. In chronic states, it routes the reading through the mode{"'"}s threat lens.
+              The <strong style={{ color: TEXT.primary }}>Emotional Somatic System (ESS)</strong> detects, evaluates, and generates physiological responses. It operates below conscious awareness. It is always running. When the ESS detects biologically relevant information {"\u2014"} a threat, a boundary crossed, a moment of safety, a relational signal {"\u2014"} it produces a specific physiological response: hormones release, muscles activate, heart rate shifts, neural circuits reorganize. The ESS does not need the person to be aware of it. It runs regardless.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Reading Emotions (RE) does not degrade across activation levels.</strong> The reading stays sharp — often sharpens — as the nervous system moves along the gradient. What changes is not the accuracy of the reading but what the reading serves. This is what makes Reading Emotions (RE) the most biologically robust of the three capacities. It is also what makes chronic states effective and difficult to interrupt from outside — the person in a chronic state is often the most accurate reader in the room. They are using that reading for something other than understanding.
+              The <strong style={{ color: TEXT.primary }}>Cognitive-Logical System (CLS)</strong> produces language, reasoning, planning, and narrative construction. It constructs what the person experiences as {"\u201C"}reality{"\u201D"} {"\u2014"} the story about what is happening, what it means, who they are. The CLS needs data. It builds from whatever data it has access to. The CLS does not distinguish between a complete data set and an incomplete one. It builds coherence from whatever reaches it {"\u2014"} and the coherence feels true, whether or not it includes what the body is doing.
+            </p>
+            <p style={proseStyle}>
+              The question that determines everything M4 maps is: <strong style={{ color: MODEL_COLOR }}>what data reaches the CLS?</strong>
             </p>
 
-            {/* RE Variant Map */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2.5fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle}>Variant</div>
-                <div style={gridHeaderStyle}>How It Functions</div>
+            {/* Data sources table */}
+            <div style={{ overflowX: "auto", marginBottom: 20, marginTop: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 2fr 0.8fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Data Source</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Channel</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Provides</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Interoceptive?</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Accurate RE</div>
-                <div style={gridCellStyle}>The design function. Reads for understanding. Calibrated to truth. Serves connection.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: AWARENESS.RE }}>External observation</div>
+                <div style={gridCellStyle}>Interpersonal Affect Perception (RE)</div>
+                <div style={gridCellStyle}>What other bodies are broadcasting {"\u2014"} faces, voices, behavior, postural changes</div>
+                <div style={gridCellStyle}>No</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Hypervigilant RE</div>
-                <div style={gridCellStyle}>Scanning for survival — reading every signal for threat indicators. The person knows what everyone in the room is feeling before they know it themselves. Exhausting. Accurate at detecting danger, miscalibrated for safety.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: AWARENESS.ER }}>Somatic resonance</div>
+                <div style={gridCellStyle}>Affective Resonance (ER)</div>
+                <div style={gridCellStyle}>What other bodies{"'"} states feel like in one{"'"}s own body {"\u2014"} the somatic echo</div>
+                <div style={gridCellStyle}>Yes</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Surface-calibrated RE</div>
-                <div style={gridCellStyle}>Reading performance, not authenticity. Tracking what people display, not what they feel. Excellent at social navigation, poor at genuine understanding.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: AWARENESS.SEA }}>Own body{"'"}s signals</div>
+                <div style={gridCellStyle}>Interoceptive Self-Awareness (SEA)</div>
+                <div style={gridCellStyle}>What the ESS is doing right now {"\u2014"} hormonal shifts, muscular tension, autonomic state</div>
+                <div style={gridCellStyle}>Yes</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Instrumental RE</div>
-                <div style={gridCellStyle}>Reading for strategy, compliance, or control. Using emotional data to manage situations or people.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Weaponised RE</div>
-                <div style={gridCellStyle}>Reading for leverage and exploitation. Using accurate emotional intelligence to identify vulnerabilities. The most precise reading in the system — in the service of power, not understanding.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Its own output</div>
+                <div style={gridCellStyle}>(default {"\u2014"} no channel)</div>
+                <div style={gridCellStyle}>Reasoning, narrative, abstraction, memory, pattern matching</div>
+                <div style={gridCellStyle}>No</div>
               </div>
             </div>
 
+            <h3 style={conceptHeadingStyle}>Two Substrates</h3>
             <p style={proseStyle}>
-              All of these are Reading Emotions (RE). They are all the same capacity — reading emotional signals in others. What changes is what the reading serves. A person with weaponised Reading Emotions (RE) is not {"\u201C"}lacking empathy.{"\u201D"} They have one component of it precisely intact and decoupled from the other two. This decoupling is what makes the harm both precise and invisible.
-            </p>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Cognitive empathy:</strong> Baron-Cohen (2003) — cognitive empathy as a distinct, dissociable capacity. <strong style={{ color: TEXT.primary }}>Double dissociation:</strong> Shamay-Tsoory, Aharon-Peretz & Perry (2009) — cognitive and affective empathy dissociable in brain injury. <strong style={{ color: TEXT.primary }}>Pre-conscious reading:</strong> LeDoux (1996) — amygdala processing emotional signals before conscious awareness.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The variant map showing how the same biological reading capacity redirects under different activation levels — from accurate to hypervigilant to instrumental to weaponised — as traceable products of specific nervous system states, not personality types. The identification that Reading Emotions (RE){"'"}s biological robustness is not a sign of empathic functioning but the mechanism that makes chronic states effective.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── C2: EMOTIONAL RESONANCE (ER) ──────────────── */}
-          <section
-            id="emotional-resonance"
-            aria-labelledby="heading-emotional-resonance"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-emotional-resonance"
-              style={sectionHeadingStyle}
-            >
-              Emotional Resonance (ER) — Feeling What Others Feel
-            </h2>
-
-            <p style={proseStyle}>
-              The capacity to feel what another person is feeling — not to register it cognitively, but to experience a version of it in one{"'"}s own body. When someone across the room is in pain, and the body produces a somatic echo of that pain — that is Emotional Resonance (ER). It is the felt dimension of connection.
+              The <strong style={{ color: TEXT.primary }}>interoceptive substrate</strong> {"\u2014"} the anterior insula, ventral vagal pathways, and visceral afferent nerves {"\u2014"} reads the body from the inside. It continuously maps visceral organ states, hormonal shifts, muscular tension changes, and autonomic activation levels.
             </p>
             <p style={proseStyle}>
-              Emotional Resonance (ER) requires functioning interoception — the body must be generating legible internal signals for the resonance to register. The anterior insula maps the body{"'"}s internal state and translates others{"'"} expressions into felt somatic experience. The ventral vagal pathways — the co-regulation circuit — carry the relational regulation signal. When safe, they are active. Under threat, they suppress.
+              The <strong style={{ color: TEXT.primary }}>external observation substrate</strong> {"\u2014"} the amygdala and prefrontal cortex {"\u2014"} reads other bodies from the outside, through visible and audible signals. The amygdala extracts emotional information from faces, voices, and postures within milliseconds, before conscious awareness arrives. The prefrontal cortex integrates that rapid reading with context, history, and relationship.
             </p>
             <p style={proseStyle}>
-              Sustainable Emotional Resonance (ER) means resonating with others while maintaining one{"'"}s own centre — feeling with, without losing oneself. The boundary between self and other is held by Self-Emotional Awareness (SEA) functioning simultaneously: Emotional Resonance (ER) tells the person what the other is feeling; Self-Emotional Awareness (SEA) tells them it is the other person{"'"}s feeling, not their own. When Self-Emotional Awareness (SEA) is absent, this boundary is the first thing to fail.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Emotional Resonance (ER) is the capacity most sensitive to nervous system state.</strong> It is the first of the three to degrade under chronic activation, and the one that degrades most completely.
-            </p>
-
-            {/* ER Variant Map */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2.5fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle}>Variant</div>
-                <div style={gridHeaderStyle}>How It Functions</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sustainable ER</div>
-                <div style={gridCellStyle}>The design function. Resonates with others while maintaining own centre. Feeling with, without losing oneself. Connection without fusion.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Flooded ER</div>
-                <div style={gridCellStyle}>Overwhelmed by others{"'"} emotional states. Absorbs everything. No filter. The boundary between self and other collapses. What appears as deep empathy is structural merger — the person cannot distinguish their own feelings from those of the person in front of them.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Confused / distrusted ER</div>
-                <div style={gridCellStyle}>The felt sense is present but has been contradicted by authority. {"\u201C"}I feel that something is wrong, but I{"'"}m told everything is fine.{"\u201D"} The resonance signal exists — the child learned to distrust it.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shut-down ER</div>
-                <div style={gridCellStyle}>Feeling was punished or overwhelmed. The system stopped resonating. Protective shutdown — the body learned that feeling with others was not safe.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Absent ER</div>
-                <div style={gridCellStyle}>No felt experience of others{"'"} emotional states. In chronic Power & Dominance, the ventromedial prefrontal cortex (vmPFC) — which carries care, guilt, and consequence signals — is suppressed. Others{"'"} pain registers as information about the environment, not shared experience.</div>
-              </div>
-            </div>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The critical pattern:</strong> Emotional Resonance (ER) degrades along a trajectory that maps directly onto the gradient. In Safety & Openness, resonance is open. In Threat & Defence, it is filtered — safety takes priority. In Strategy & Management, it is deliberately quieted — the prefrontal cortex suppresses the resonance signal to enable strategic action. In Power & Dominance, it is offline. When the nervous system has full range of movement, all of this modulation is chosen and reversible. In chronic states, the modulation is involuntary.
-            </p>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Empathic distress vs compassion:</strong> Singer & Klimecki (2014) — distinction between empathic distress (flooding) and compassion (sustainable resonance). <strong style={{ color: TEXT.primary }}>Vagal pathways:</strong> Porges (2011) — co-regulation circuit suppressed under threat. <strong style={{ color: TEXT.primary }}>Right-brain regulation:</strong> Schore (2003) — right-brain relational regulation and its developmental trajectory.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The variant map for Emotional Resonance (ER) showing flooded, confused, shut-down, and absent resonance as traceable products of developmental and activation conditions — not personality traits. The identification of Emotional Resonance (ER) as the most state-sensitive capacity, with a degradation trajectory that maps directly onto the four-state gradient. The mechanism: the boundary between self and other in resonance is maintained by Self-Emotional Awareness (SEA), not by Emotional Resonance (ER) itself — which explains why flooded Emotional Resonance (ER) co-occurs with absent Self-Emotional Awareness (SEA).
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── C3: SELF-EMOTIONAL AWARENESS (SEA) ────────── */}
-          <section
-            id="self-emotional-awareness"
-            aria-labelledby="heading-self-emotional-awareness"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-self-emotional-awareness"
-              style={sectionHeadingStyle}
-            >
-              Self-Emotional Awareness (SEA) — Knowing What You Yourself Feel
-            </h2>
-
-            <p style={proseStyle}>
-              The capacity to identify, name, and trust one{"'"}s own emotional states — including the drives that are not visible as emotions. The capacity to have a feeling without being consumed by it. To notice an internal state and say {"\u201C"}this is what I feel{"\u201D"} rather than {"\u201C"}this is what I am.{"\u201D"}
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) is the keystone of the awareness system.</strong> Without it, the other two capacities lose their anchor.
-            </p>
-            <p style={proseStyle}>
-              Without Self-Emotional Awareness (SEA), Reading Emotions (RE) is unanchored. The person can read others with extreme accuracy but has no internal reference point. They know what everyone else feels but not what they feel. Reading Emotions (RE) without Self-Emotional Awareness (SEA) produces hypervigilance, instrumental reading, or enmeshment — the reading serves the mode, not the person.
-            </p>
-            <p style={proseStyle}>
-              Without Self-Emotional Awareness (SEA), Emotional Resonance (ER) is unfiltered. The person resonates with everything but cannot distinguish their own states from others{"'"}. They feel everything and attribute it to themselves. Emotional Resonance (ER) without Self-Emotional Awareness (SEA) produces flooding, confusion, and emotional exhaustion.
-            </p>
-            <p style={proseStyle}>
-              Without Self-Emotional Awareness (SEA), the cycle completion mechanism mapped in M3 has no endpoint. The body processes the activation — but toward what resting state? Self-Emotional Awareness (SEA) provides the internal reference point that baseline is measured against. Without it, there is nothing to come back to. The compass needle has no home.
-            </p>
-
-            <h3 style={h3Style}>How Self-Emotional Awareness (SEA) Becomes Invisible in Chronic States</h3>
-            <p style={proseStyle}>
-              Two distinct mechanisms produce the loss of Self-Emotional Awareness (SEA), and the distinction matters:
-            </p>
-            <p style={proseStyle}>
-              First — under chronic activation, the body{"'"}s signals become habitual background noise. They are no longer flagged as information because the activated state has become the baseline. In chronic Threat & Defence, the alarm is constant and therefore invisible — there is nothing to contrast it against. The person does not know they are activated because they have never experienced not being activated.
-            </p>
-            <p style={proseStyle}>
-              Second — the prefrontal cortex{"'"}s processing of interoceptive signals is blocked by persistent cortisol elevation and sympathetic dominance. The body is still generating signals. The channel that would receive them is closed.
-            </p>
-            <p style={proseStyle}>
-              In either case, the activated state stops being legible as an activated state. It is experienced as identity. The person in chronic Strategy & Management does not experience their mode as a mode — they experience it as rationality, competence, being the responsible one. The person in chronic Power & Dominance does not experience fear driving the system — they experience certainty, strength, decisiveness.
+              Two substrates. Two separate sets of biological hardware. They do not share components. This single structural fact makes a specific prediction: if one substrate degrades under chronic activation, the capacities built on it should degrade together, while the capacity built on the other substrate should be unaffected. The interoceptive substrate degrades under sustained cortisol elevation and sympathetic dominance. Both capacities that depend on it {"\u2014"} Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) {"\u2014"} lose access. Interpersonal Affect Perception (RE) continues operating, often with greater precision. The separation is not random. It is hardware.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The capacity needed to observe the mode is the capacity the mode disables. Self-Emotional Awareness (SEA) absence makes the mode invisible from inside — the person cannot see the pattern because seeing the pattern requires the capacity the pattern has taken offline.
+              Two systems, two substrates, four data sources. What the CLS builds depends on which channels are reporting {"\u2014"} and which channels can report depends on which biological substrate they are built on.
             </OperationalStatement>
 
-            {/* SEA Online vs Offline */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2.5fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle}>State</div>
-                <div style={gridHeaderStyle}>How It Functions</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Online SEA</div>
-                <div style={gridCellStyle}>The design function. Internal experience is readable, nameable, trustworthy. The person can say: {"\u201C"}I feel angry, and I know that is anger, and I trust that signal.{"\u201D"} They can have the feeling without being consumed by it.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Absent SEA</div>
-                <div style={gridCellStyle}>No access to one{"'"}s own emotional states — including drives that are not visible as emotions. Cognition runs the narrative while the body is flooded with signals the person cannot identify or name.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Narrative-filtered SEA</div>
-                <div style={gridCellStyle}>Partially online but filtered through a contradicting story. The person senses something — {"\u201C"}I think I{"'"}m upset{"\u201D"} — but the narrative overrides: {"\u201C"}That doesn{"'"}t make sense, I shouldn{"'"}t feel that way.{"\u201D"} Present but subordinated to the false coherence that manages what the emerging awareness threatens.</div>
-              </div>
-            </div>
-
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Interoceptive awareness:</strong> Craig (2002) — interoceptive awareness as the substrate of emotional self-awareness. <strong style={{ color: TEXT.primary }}>Self-referential processing:</strong> Damasio (1999) — the feeling of what happens: self-referential emotional processing. <strong style={{ color: TEXT.primary }}>Levels of awareness:</strong> Lane & Schwartz (1987) — levels of emotional awareness as a developmental capacity.
+                  Craig (2002, 2009) {"\u2014"} the anterior insula as the cortical seat of interoceptive awareness, mapping visceral, hormonal, and autonomic states into conscious experience. Porges (2011) {"\u2014"} polyvagal theory: ventral vagal pathways as the substrate for social engagement, suppressed under chronic sympathetic activation. Shamay-Tsoory, Aharon-Peretz & Perry (2009) {"\u2014"} double dissociation between cognitive empathy (external observation) and affective empathy (interoceptive resonance).
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Self-Emotional Awareness (SEA) identified as the keystone capacity — its presence or absence determining whether Reading Emotions (RE) and Emotional Resonance (ER) serve understanding or serve the mode. The paradox formulation: the capacity needed to observe the mode is the capacity the mode disables. The two distinct mechanisms of loss (habituation and channel blockage) as clinically relevant — different routes to absence requiring different repair conditions. The identification that Self-Emotional Awareness (SEA) is structurally absent in all four chronic positions, including chronic Safety & Openness.
+                  The two-system, two-substrate architecture as the structural foundation for awareness. The ESS and CLS as two information systems, each operating through different biological hardware, producing a specific question: what data reaches the CLS? The four data sources {"\u2014"} three awareness channels plus the CLS{"'"}s own output {"\u2014"} mapped onto which substrate each requires. The prediction: when one substrate degrades, the capacities built on it degrade together while the capacity built on the other substrate is unaffected.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C4: THE MULTIPLICATIVE SYSTEM ─────────────── */}
+          {/* ─── C2: INTEROCEPTIVE ACCESS ────────────────── */}
           <section
-            id="multiplicative-system"
-            aria-labelledby="heading-multiplicative-system"
+            id="interoceptive-access"
+            aria-labelledby="heading-interoceptive-access"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-multiplicative-system"
-              style={sectionHeadingStyle}
+              id="heading-interoceptive-access"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              The Multiplicative System
+              Interoceptive Access
             </h2>
 
             <p style={proseStyle}>
-              The three capacities are not additive. They are multiplicative: RE × ER × SEA. All three can be present and the product is still zero if any one is gone. This relationship is not metaphorical — it reflects how the underlying circuits interact.
+              Interoceptive access is the state of the interoceptive substrate {"\u2014"} whether it is generating readable signals, whether those signals are reaching cortical processing, and whether the anterior insula can map them into conscious experience. Interoceptive access is not a capacity. It is a precondition. It is the ceiling that determines what Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) can do. Neither capacity can exceed what the substrate can carry.
+            </p>
+            <p style={proseStyle}>
+              Three states of interoceptive access produce three different downstream architectures {"\u2014"} and in each state, the ESS and CLS behave in predictably different ways.
             </p>
 
-            {/* Multiplicative Combinations Table */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2.5fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle}>Configuration</div>
-                <div style={gridHeaderStyle}>What It Produces</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>RE without SEA</div>
-                <div style={gridCellStyle}>A scanner that serves the mode. The reading is accurate. It is purposeful. It operates entirely in service of a state the person cannot see. The paradox of partial capacity: each component works, the product does not.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>ER without SEA</div>
-                <div style={gridCellStyle}>Resonance without boundary. In Safety & Openness, this manifests as fusion — the person feels everything but cannot tell what is theirs. In other chronic positions, Emotional Resonance (ER) shuts down entirely — the system chose absence over flooding.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>RE without ER</div>
-                <div style={gridCellStyle}>A reader who sees but does not feel. In Safety & Openness: accurate and disconnected. In chronic Power & Dominance: the most dangerous configuration in the system — someone who reads vulnerability with perfect accuracy and has no somatic echo of what the use of that reading costs.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>SEA without ER</div>
-                <div style={gridCellStyle}>Structurally possible in Strategy & Management and Power & Dominance. The person knows their resonance is turned down. This is only possible because Self-Emotional Awareness (SEA) is intact — it is the self-referential capacity that makes deliberate modulation different from involuntary loss.</div>
-              </div>
-            </div>
-
+            <h3 style={conceptHeadingStyle}>Fully Available</h3>
             <p style={proseStyle}>
-              The multiplier effect explains why the gradient positions look the way they do. Self-Emotional Awareness (SEA){"'"}s presence does not guarantee anything — but its absence guarantees that Reading Emotions (RE) and Emotional Resonance (ER) will serve the mode rather than the person.
+              The interoceptive substrate generates readable signals. The anterior insula maps visceral, hormonal, and autonomic changes clearly. The ventral vagal pathways are open. In this state, the ESS generates signals {"\u2014"} and the CLS knows. The person can feel the shift. The CLS receives data from all three awareness channels alongside its own narrative and reasoning. Override remains available, but it is a choice: the CLS knows there is a signal to intercept. The restoration sequence {"\u2014"} when the nervous system completes its activation and returns toward physiological baseline {"\u2014"} can be observed while it runs.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>Absent</h3>
+            <p style={proseStyle}>
+              The interoceptive substrate is unavailable. Two distinct mechanisms produce this state. In developmental absence, the interoceptive channels were never adequately built {"\u2014"} the relational environment did not provide the conditions under which the anterior insula develops its mapping precision. In chronic degradation, sustained cortisol elevation reduces the signal-to-noise ratio and persistent sympathetic activation suppresses the ventral vagal pathways. In either case, the CLS receives data from one awareness channel only {"\u2014"} Interpersonal Affect Perception (RE) {"\u2014"} plus its own narrative output. The CLS does not know it is missing data. The coherence it builds feels complete. The override runs without being experienced as an override.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>Partial {"\u2014"} Flooded or Contradicted</h3>
+            <p style={proseStyle}>
+              The interoceptive substrate is active. Signals are being generated. But they do not arrive at the CLS as usable information. In flooded access, the channels carry more signal than the cortex can process into distinct information {"\u2014"} the person feels intensely but cannot distinguish what they are feeling. In contradicted access, the signals reach cortical processing but the CLS{"'"}s own narrative disputes them: {"\u201C"}that doesn{"'"}t make sense, there{"'"}s no reason to feel this way.{"\u201D"} The body says one thing. The narrative says another. The external reading says a third.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The most dangerous configurations are not the ones with the least capacity — they are the ones with the most Reading Emotions (RE) and the least Self-Emotional Awareness (SEA).
+              The ESS does not change across any state of interoceptive access. It runs the same sequence regardless. Interoceptive access determines one thing only: whether the CLS knows the ESS is running.
             </OperationalStatement>
 
+            <h3 style={conceptHeadingStyle}>The Degradation Order</h3>
+            <p style={proseStyle}>
+              Affective Resonance (ER) degrades before Interoceptive Self-Awareness (SEA) under chronic activation because ER places greater demands on the interoceptive substrate. ER requires the channels to translate signals across bodies {"\u2014"} the anterior insula performing a cross-referencing operation between external emotional data and internal somatic representation. This is the most demanding use of the substrate. SEA requires the channels to carry self-referential signals only {"\u2014"} less demanding. As the substrate degrades, the more demanding operation fails first. ER drops out while SEA may still carry enough signal to function partially. Interpersonal Affect Perception (RE) never degrades through this mechanism {"\u2014"} it operates through a substrate that chronic activation does not suppress.
+            </p>
+
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Interacting systems:</strong> Decety & Jackson (2004) — empathy as requiring the interaction of multiple components, not their sum. <strong style={{ color: TEXT.primary }}>Dissociable but interacting:</strong> Shamay-Tsoory et al. (2009) — cognitive and affective empathy as dissociable but interacting systems. Blair (2005) — selective empathy deficits producing qualitatively different outcomes depending on which components are intact.
+                  Craig (2002, 2009) {"\u2014"} interoceptive accuracy as a measurable variable that differs across individuals and conditions. Khalsa et al. (2018) {"\u2014"} interoceptive accuracy as distinct from interoceptive sensibility and interoceptive awareness, establishing that substrate signal quality is separable from beliefs about that signal. van der Kolk (2014) {"\u2014"} chronic stress producing measurable reductions in interoceptive access. Porges (2011) {"\u2014"} ventral vagal suppression under sustained sympathetic activation.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The multiplicative framing (RE × ER × SEA) as the reason partial capacity produces distortion, not partial empathy. The specific predictions: Reading Emotions (RE) without Self-Emotional Awareness (SEA) serves the mode; Emotional Resonance (ER) without Self-Emotional Awareness (SEA) floods or shuts down; Reading Emotions (RE) without Emotional Resonance (ER) produces precision without feeling. The identification that the most dangerous configurations have the most Reading Emotions (RE) and the least Self-Emotional Awareness (SEA).
+                  The identification of interoceptive access as a single upstream variable {"\u2014"} not one capacity among three, but the precondition that determines whether two of the three capacities can function, what data the CLS receives, and whether the person can observe the ESS running. The three states as functional consequences of what the substrate is doing, each producing a specific downstream architecture. The degradation order explained through substrate demand: ER requires the most demanding use of the interoceptive substrate and degrades first.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 2: HOW AWARENESS DEVELOPS                  */}
+          {/* PART 2: THE THREE CAPACITIES                    */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 2" title="How Awareness Develops" />
+          <PartDivider label="PART 2" title="The Three Capacities" color={MODEL_COLOR} />
 
-          {/* ─── C5: THREE CAPACITIES CONNECTED AT BIRTH ───── */}
+          {/* ─── C3: INTERPERSONAL AFFECT PERCEPTION (RE) ── */}
           <section
-            id="awareness-develops"
-            aria-labelledby="heading-awareness-develops"
+            id="three-capacities"
+            aria-labelledby="heading-re"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-awareness-develops"
-              style={sectionHeadingStyle}
+              id="heading-re"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Three Capacities Connected at Birth
+              Interpersonal Affect Perception (RE)
             </h2>
 
             <p style={proseStyle}>
-              At birth, the emotional-somatic system is the only information system online. The infant already has the biological precursors of all three awareness capacities, operating as a single integrated system:
+              <strong style={{ color: AWARENESS.RE }}>Interpersonal Affect Perception (RE)</strong> is the capacity to identify what other people are feeling through observable signals {"\u2014"} facial expressions, tone of voice, body language, behavioral patterns. RE is a CLS capacity. The CLS reads what other bodies{"'"} emotional-somatic systems are broadcasting, from the outside, through observable signals. RE does not require the CLS to be connected to its own body{"'"}s internal state. It reads outward.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Proto-RE:</strong> the infant tracks faces, responds to tone, orients toward emotional signals. Mirroring is automatic. The baby reads before it knows it is reading.
+              The reading operates as a two-stage process. The first stage is rapid and automatic {"\u2014"} the amygdala and sensory processing regions extract emotional signals below conscious awareness, within milliseconds. The second stage is deliberate {"\u2014"} the prefrontal cortex integrates that reading with context, history, and relationship.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Proto-ER:</strong> the infant feels with others before knowing why. Emotional contagion is present from the start. When the caregiver is calm, the infant calms. When the caregiver is distressed, the infant registers distress.
+              RE is the most robust of the three awareness capacities. It survives chronic activation. It often sharpens under chronic states {"\u2014"} the reading becomes more precise. The structural reason: RE operates through the external observation substrate, which chronic activation does not suppress. When the interoceptive substrate degrades {"\u2014"} when Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) lose access {"\u2014"} the CLS is no longer processing felt data that competes for cognitive resources. All processing concentrates on the one channel that remains open.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Proto-SEA:</strong> the body registers states — hunger, discomfort, safety, distress — as raw sensation. There is no observing self to name them, but the signals exist. The body is already communicating.
-            </p>
-            <p style={proseStyle}>
-              This connected state — all three proto-capacities online and integrated — is what people remember when they say {"\u201C"}when I was a kid, I was just <em>me</em>.{"\u201D"} Not a memory of a different person hidden underneath. A memory of a capacity state — the three awarenesses connected before anything redirected them.
+              What changes under chronic activation is not the accuracy of the reading but what the reading serves. The same capacity that in a state of safety reads for understanding, in a chronic state reads for survival, strategy, or control.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Being yourself is not a personality. It is what happens when the three capacities are connected.
+              A person with strong Interpersonal Affect Perception (RE) can walk into a room and identify what every person is feeling. This tells you nothing about whether they can feel what those people are feeling in their own body. And nothing about whether they can identify what they themselves are feeling.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Neonatal imitation:</strong> Meltzoff & Moore (1977) — evidence of proto-RE. <strong style={{ color: TEXT.primary }}>Neonatal contagion:</strong> Field, Woodson, Greenberg & Cohen (1982) — neonatal emotional contagion. <strong style={{ color: TEXT.primary }}>Primary intersubjectivity:</strong> Trevarthen (1979) — the relational starting point.
+                  Baron-Cohen (2003) {"\u2014"} cognitive empathy as a distinct, dissociable capacity. LeDoux (1996) {"\u2014"} amygdala processing emotional signals before conscious awareness. Shamay-Tsoory, Aharon-Peretz & Perry (2009) {"\u2014"} double dissociation between cognitive and affective empathy.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The three proto-capacities as a unified starting point — not three separate skills to develop but an integrated system that was online before anything redirected it. The reframe of {"\u201C"}being yourself{"\u201D"} from a personality concept to a capacity state — the three awarenesses connected.
+                  The identification of Interpersonal Affect Perception (RE) as a CLS capacity operating through the external observation substrate {"\u2014"} explaining structurally why it survives and sharpens under chronic activation. RE sharpens in chronic states not despite the loss of the other channels but because of it: with the interoceptive substrate degraded, all cognitive resources concentrate on the one remaining channel.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C6: THE PRE-SEA CONDITION ──────────────────── */}
+          {/* ─── C4: AFFECTIVE RESONANCE (ER) ──────────────── */}
           <section
-            id="pre-sea-condition"
-            aria-labelledby="heading-pre-sea-condition"
+            id="affective-resonance"
+            aria-labelledby="heading-er"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-pre-sea-condition"
-              style={sectionHeadingStyle}
+              id="heading-er"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              The Pre-SEA Condition — Feeling = Being
+              Affective Resonance (ER)
             </h2>
 
             <p style={proseStyle}>
-              Before cognition develops, there is no observing self. No separation between experience and identity.
+              <strong style={{ color: AWARENESS.ER }}>Affective Resonance (ER)</strong> is the capacity to feel what other people are feeling {"\u2014"} not reading their state from outside, but experiencing a version of it in one{"'"}s own body. When someone nearby is in pain, and the body produces a somatic echo of that pain {"\u2014"} that is ER. It is the felt dimension of connection.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Feeling = being.</strong> A child does not think {"\u201C"}I feel scared{"\u201D"} — the child <em>is</em> scared.
+              ER is an ESS capacity. The ESS resonates with what other bodies are broadcasting {"\u2014"} directly, somatically, through the interoceptive substrate, before cognition arrives. The anterior insula maps the body{"'"}s internal state and translates others{"'"} expressions into felt somatic experience. The ventral vagal pathways carry the co-regulation signal.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Feedback = identity.</strong> A child does not think {"\u201C"}my caregiver is dysregulated{"\u201D"} — the child experiences {"\u201C"}something is wrong with me.{"\u201D"}
+              ER is the most fragile of the three awareness capacities. It is the first to degrade under chronic activation. The structural reason is substrate demand: ER requires the interoceptive channels to translate signals across bodies {"\u2014"} the most demanding use of the substrate. As chronic cortisol elevation degrades the anterior insula{"'"}s signal-to-noise ratio, the most demanding operation fails first.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>How I{"'"}m treated = who I am.</strong> The treatment becomes identity in the absence of an observing self that could separate them.
-            </p>
-            <p style={proseStyle}>
-              This is the pre-SEA condition — the normal developmental starting point before Self-Emotional Awareness (SEA) has had conditions to form. Every human begins here. The question is whether the environment provides sufficient conditions for Self-Emotional Awareness (SEA) to develop — for the child to eventually make the separation between {"\u201C"}this is what I feel{"\u201D"} and {"\u201C"}this is what is happening around me.{"\u201D"}
-            </p>
-            <p style={proseStyle}>
-              When Self-Emotional Awareness (SEA) develops, the child gains an observing position. They can feel something without <em>being</em> it. They can receive feedback without absorbing it as identity. When Self-Emotional Awareness (SEA) does not develop — when conditions do not support its emergence — the pre-SEA condition persists into adulthood. The adult may be cognitively sophisticated, professionally successful, psychologically literate — and still operating from Feeling = Being underneath. When they feel inadequate, they <em>are</em> inadequate. When they receive criticism, they <em>are</em> the criticism.
+              Sustainable ER means resonating with others while maintaining one{"'"}s own center. But the boundary between self and other is not maintained by ER alone. That boundary requires Interoceptive Self-Awareness (SEA) functioning simultaneously: ER registers what the other person is feeling; SEA tells the person that the feeling belongs to the other, not to themselves. When SEA is absent, ER has no anchor {"\u2014"} and what appears as deep empathy may be structural merger.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              The pre-SEA condition persisting into adulthood is one of the most consequential outcomes in the system — because it is invisible. The adult does not know Self-Emotional Awareness (SEA) is offline, because they have never experienced it being online.
+              The difference between Interpersonal Affect Perception (RE) and Affective Resonance (ER) is not degree. It is kind. RE identifies: {"\u201C"}this person is afraid.{"\u201D"} ER produces: the body generates a version of that fear. One is information. The other is experience.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>True/false self:</strong> Winnicott (1960) — developmental outcomes of early relational conditions. <strong style={{ color: TEXT.primary }}>Sense of self:</strong> Stern (1985) — development of the sense of self through stages. <strong style={{ color: TEXT.primary }}>Mentalization:</strong> Fonagy, Gergely, Jurist & Target (2002) — mentalization as a developmental achievement requiring specific relational conditions.
+                  Singer & Klimecki (2014) {"\u2014"} distinction between empathic distress (flooding) and compassion (sustainable resonance). Porges (2011) {"\u2014"} ventral vagal pathways as the co-regulation circuit, suppressed under threat. Schore (2003) {"\u2014"} right-brain relational regulation and its developmental trajectory.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The pre-SEA condition as a named developmental state — normal at birth, consequential when it persists — with the specific mechanism of persistence: Self-Emotional Awareness (SEA) never developed because conditions were absent. The distinction between a capacity that was lost and one that was never built. The identification that the pre-SEA condition{"'"}s invisibility (the person doesn{"'"}t know they don{"'"}t have Self-Emotional Awareness (SEA)) is its most consequential feature.
+                  The identification of Affective Resonance (ER) as an ESS capacity operating through the interoceptive substrate {"\u2014"} explaining why it is the most fragile awareness capacity. The structural observation that the boundary between self and other is maintained by Interoceptive Self-Awareness (SEA), not by ER itself {"\u2014"} explaining why flooded ER (absorbing everything) co-occurs with absent SEA (no anchor to locate the boundary).
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C7: AWARENESS TEACHES AWARENESS ───────────── */}
+          {/* ─── C5: INTEROCEPTIVE SELF-AWARENESS (SEA) ───── */}
           <section
-            id="awareness-teaches-awareness"
-            aria-labelledby="heading-awareness-teaches-awareness"
+            id="interoceptive-self-awareness"
+            aria-labelledby="heading-sea"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-awareness-teaches-awareness"
-              style={sectionHeadingStyle}
+              id="heading-sea"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Awareness Teaches Awareness — The Developmental Mechanism
+              Interoceptive Self-Awareness (SEA) {"\u2014"} The Bridge
             </h2>
 
             <p style={proseStyle}>
-              The organising principle of the entire awareness system. How do the three capacities develop? Through what mechanism?
+              <strong style={{ color: AWARENESS.SEA }}>Interoceptive Self-Awareness (SEA)</strong> occupies a structurally unique position. It operates through the interoceptive substrate {"\u2014"} the same hardware Affective Resonance (ER) uses {"\u2014"} but it does something neither RE nor ER can do: it connects the two systems.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The adults{"'"} awareness capacities create the child{"'"}s developmental environment. The environment shapes the child{"'"}s awareness capacities.</strong> This is the mechanism. Not instruction. Not intention. Not love. Embodiment.
+              Interpersonal Affect Perception (RE) reads outward from the CLS. Affective Resonance (ER) resonates through the ESS. Neither system knows what the other is doing. SEA is what connects them. It operates through interoception {"\u2014"} the ESS{"'"}s substrate {"\u2014"} but carries the ESS{"'"}s signals to the CLS. When the bridge is open, the CLS knows what the ESS is doing: <em>my body is responding to something.</em> When the bridge is closed, the CLS continues operating in its own domain with no awareness that the ESS is running a physiological sequence underneath.
             </p>
             <p style={proseStyle}>
-              A caregiver with online Self-Emotional Awareness (SEA) — who can access, name, and trust their own emotional states — creates an environment where the child{"'"}s emotional states are received, reflected accurately, and validated. The child{"'"}s proto-SEA has conditions to develop into full Self-Emotional Awareness (SEA).
+              SEA provides the <strong style={{ color: TEXT.primary }}>Interoceptive Channel</strong> {"\u2014"} the pathway through which the CLS receives the ESS{"'"}s physiological signals. SEA is the capacity. The Interoceptive Channel is the function SEA provides when it is present.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>The Family Lineage</h3>
+            <p style={proseStyle}>
+              ER and SEA are not two unrelated capacities that happen to share hardware. They are two applications of the same interoceptive access {"\u2014"} one directed outward, one directed inward. The substrate is the parent. The capacities are the children.
             </p>
             <p style={proseStyle}>
-              A caregiver with absent Self-Emotional Awareness (SEA) creates an environment where the child{"'"}s emotional states are unrecognised, misread, or overridden. The child{"'"}s signals either go unmet or get met with the caregiver{"'"}s own displaced material. Self-Emotional Awareness (SEA) does not develop — not because the child is incapable, but because the conditions were absent.
+              Having the substrate does not guarantee having the capacities built on it. The clearest demonstration: flooded ER with absent SEA. The interoceptive substrate is active {"\u2014"} ER is using it, the body resonates with everything. But the inward application was never built or was suppressed. The person feels what others feel but cannot feel what they themselves feel.
             </p>
 
-            {/* Transmission Table */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.5fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle}>If the Adult Has...</div>
-                <div style={gridHeaderStyle}>The Child Absorbs...</div>
-
-                <div style={gridCellStyle}>Accurate Reading Emotions (RE)</div>
-                <div style={gridCellStyle}>A model of emotional reading in service of understanding</div>
-
-                <div style={gridCellStyle}>Hypervigilant Reading Emotions (RE)</div>
-                <div style={gridCellStyle}>A model of emotional reading in service of survival</div>
-
-                <div style={gridCellStyle}>Sustainable Emotional Resonance (ER)</div>
-                <div style={gridCellStyle}>A model of emotional resonance that includes self-care</div>
-
-                <div style={gridCellStyle}>Flooded Emotional Resonance (ER)</div>
-                <div style={gridCellStyle}>A model where others{"'"} emotions swamp one{"'"}s own</div>
-
-                <div style={gridCellStyle}>Online Self-Emotional Awareness (SEA)</div>
-                <div style={gridCellStyle}>A model of being able to name and trust one{"'"}s own feelings</div>
-
-                <div style={gridCellStyle}>Absent Self-Emotional Awareness (SEA)</div>
-                <div style={gridCellStyle}>No model of internal emotional access</div>
-              </div>
-            </div>
+            <h3 style={conceptHeadingStyle}>The SEA {"\u2192"} ER Developmental Link</h3>
+            <p style={proseStyle}>
+              When SEA becomes available {"\u2014"} when the inward application of interoceptive access comes online {"\u2014"} ER rises with it. SEA requires the person to register their own body{"'"}s signals as readable information. Once the substrate is active for self-referential mapping, the same substrate is available for other-referential mapping. The reverse is not symmetrical. Flooded ER {"\u2014"} the substrate active for outward resonance {"\u2014"} does not build SEA. The person who absorbs everything others feel does not thereby develop the capacity to identify their own internal state.
+            </p>
+            <p style={proseStyle}>
+              SEA is the developmental entry point. A person cannot feel others accurately {"\u2014"} with boundaries, with differentiation {"\u2014"} if they cannot feel themselves.
+            </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Love does not override what the nervous system embodies. What transmits is what the nervous system carries, not what the heart intends.
+              Interoceptive Self-Awareness (SEA) is the only capacity that connects the two systems. Without the bridge, the CLS and ESS operate disconnected. Interpersonal Affect Perception (RE) reads, Affective Resonance (ER) resonates, neither system knows what the other is doing.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Right-brain development:</strong> Schore (2003) — the caregiver{"'"}s regulatory state shaping the child{"'"}s developing right hemisphere. <strong style={{ color: TEXT.primary }}>Mentalization:</strong> Fonagy et al. (2002) — mentalization developing through being mentalized. <strong style={{ color: TEXT.primary }}>Mutual regulation:</strong> Tronick (2007) — the quality of moment-to-moment emotional exchange shaping the infant{"'"}s regulatory repertoire.
+                  Craig (2002) {"\u2014"} interoceptive awareness as the substrate of emotional self-awareness. Damasio (1999) {"\u2014"} the feeling of what happens: self-referential emotional processing. Lane & Schwartz (1987) {"\u2014"} levels of emotional awareness as a developmental capacity. Schore (2003) {"\u2014"} right-hemisphere development of self-regulatory capacity through early relational experience.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Awareness teaches awareness as a named, testable transmission mechanism — making the developmental pathway concrete. The specific prediction: each capacity variant the adult carries predicts the corresponding variant the child develops. Not instruction, not intention, not love. What the nervous system embodies is what transmits.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── C8: CO-REGULATION ──────────────────────────── */}
-          <section
-            id="co-regulation"
-            aria-labelledby="heading-co-regulation"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-co-regulation"
-              style={sectionHeadingStyle}
-            >
-              Co-Regulation — How the Body Learns to Complete the Cycle
-            </h2>
-
-            <p style={proseStyle}>
-              Children are born with the biological capacity for regulation. They are not born with the ability to regulate. The difference is co-regulation — and this concept is the bridge between M4 and M3.
-            </p>
-            <p style={proseStyle}>
-              Co-regulation is the caregiver{"'"}s regulated nervous system teaching the child{"'"}s nervous system how to complete the activation cycle and reach baseline. The child is distressed. The caregiver{"'"}s system — through tone, rhythm, touch, breath, presence — sends safety signals. The child{"'"}s system synchronises. The activation settles. The child learns: <em>the activation can complete. Baseline is reachable.</em>
-            </p>
-            <p style={proseStyle}>
-              Through thousands of repetitions, this capacity becomes internalised. What was co-regulation becomes self-regulation — the child{"'"}s own capacity to complete the Activation Sequence (M3) and reach baseline. Not a skill taught through instruction. A capacity built through experience.
-            </p>
-
-            {/* Co-Regulation Disruptions Table */}
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 2fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>Disruption</div>
-                <div style={gridHeaderStyle}>Adult Configuration</div>
-                <div style={gridHeaderStyle}>What the Child Learns</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Disrupted regulation</div>
-                <div style={gridCellStyle}>Emotionally unpredictable — sometimes co-regulates, sometimes dysregulates</div>
-                <div style={gridCellStyle}>{"\u201C"}Sometimes the activation completes, sometimes it doesn{"'"}t. I cannot predict.{"\u201D"} → Unreliable cycle completion.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Misdirected regulation</div>
-                <div style={gridCellStyle}>Emotionally incongruent — co-regulation available but leads to compliance, not safety</div>
-                <div style={gridCellStyle}>{"\u201C"}The activation can settle — but only if I become what they need me to be.{"\u201D"} → Cycle completes to the wrong destination.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Blocked regulation</div>
-                <div style={gridCellStyle}>Emotional invalidation — the departure itself is forbidden</div>
-                <div style={gridCellStyle}>{"\u201C"}There is no departure. Do not feel. Do not signal.{"\u201D"} → No cycle to complete.</div>
-              </div>
-            </div>
-
-            <p style={proseStyle}>
-              Each disruption produces a specific relationship to the Emotional Somatic Cycle. Disrupted regulation produces a person who knows the cycle can complete but cannot rely on it. Misdirected regulation produces a person who learned cycle completion — but to compliance, not to baseline. Blocked regulation produces a person who never learned there was a cycle at all.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              The caregiver{"'"}s capacity to regulate IS the child{"'"}s regulatory environment. A caregiver who can regulate provides co-regulation. A caregiver who cannot provides co-dysregulation.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Co-regulation:</strong> Porges (2011) — co-regulation as the mammalian primary regulation pathway, operating through the ventral vagal complex. <strong style={{ color: TEXT.primary }}>Hidden regulators:</strong> Hofer (1984) — the mother as hidden regulator of the infant{"'"}s physiology. <strong style={{ color: TEXT.primary }}>Attachment as regulation:</strong> Bowlby (1969) — attachment as the relational regulation system.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  Co-regulation as the mechanism linking M4 (awareness capacities) to M3 (regulation). The three disruptions mapped as specific developmental conditions — each producing a specific relationship to the Emotional Somatic Cycle. The formulation: the caregiver{"'"}s capacity to regulate IS the child{"'"}s regulatory environment.
+                  The identification of SEA as the bridge between the two systems {"\u2014"} the only capacity that connects the CLS to the ESS. The family lineage as a hierarchical architecture: substrate as parent, interoceptive access as the state of the parent, ER and SEA as two applications (outward and inward). The SEA {"\u2192"} ER developmental direction: building the inward application activates the substrate for outward use, but flooding the outward application does not build the inward one.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 3: WHAT THE CONFIGURATION PRODUCES         */}
+          {/* PART 3: WHAT THE CHAIN DETERMINES                */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 3" title="What the Configuration Produces" />
+          <PartDivider label="PART 3" title="What the Chain Determines" color={MODEL_COLOR} />
 
-          {/* ─── C9: CAPACITY CONFIGURATION ─────────────────── */}
+          {/* ─── C6: WHAT SEA DETERMINES ───────────────────── */}
           <section
-            id="capacity-configuration"
-            aria-labelledby="heading-capacity-configuration"
+            id="what-sea-determines"
+            aria-labelledby="heading-what-sea-determines"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-capacity-configuration"
-              style={sectionHeadingStyle}
+              id="heading-what-sea-determines"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Capacity Configuration — The Pattern That Becomes Personality
+              What Interoceptive Self-Awareness (SEA) Determines
             </h2>
 
             <p style={proseStyle}>
-              The specific combination of Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA), and regulation a person carries is their capacity configuration. This configuration is not personality. It is the product of the awareness environment the person developed in — which capacities had conditions to develop, which were redirected, and which were never built.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Configuration → chronic mode → identity.</strong> This is the causal chain. The capacity configuration predicts the chronic mode. The chronic mode shapes what cognition narrates. What cognition narrates becomes personality.
+              The connection between the two systems {"\u2014"} or its absence {"\u2014"} determines five things:
             </p>
 
-            {/* Configuration Prediction Table */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1.2fr 1.8fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>Configuration</div>
-                <div style={gridHeaderStyle}>Predicted Chronic State</div>
-                <div style={gridHeaderStyle}>What It Looks Like</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1.5fr 3fr", minWidth: 500 }}>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Function</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>What SEA Provides</div>
 
-                <div style={gridCellStyle}>Sharp RE, absent ER, absent SEA</div>
-                <div style={gridCellStyle}>Chronic Strategy & Management or Power & Dominance</div>
-                <div style={gridCellStyle}>Reads everyone accurately, feels nothing, no internal reference. Strategic, effective, disconnected.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Activation observation</div>
+                <div style={gridCellStyle}>The person notices: <em>my body is responding to something.</em> The signal{"'"}s content is accessible. Without SEA, the activation runs without observation.</div>
 
-                <div style={gridCellStyle}>Hypervigilant RE, flooded ER, absent SEA</div>
-                <div style={gridCellStyle}>Chronic Threat & Defence</div>
-                <div style={gridCellStyle}>Reads threat everywhere, feels everything, cannot locate own states. Anxious, exhausted, overwhelmed.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Self-other distinction</div>
+                <div style={gridCellStyle}>Affective Resonance (ER) registers what the other person is feeling. SEA tells the CLS that the feeling belongs to the other person, not to oneself. Without SEA, ER floods or shuts down entirely.</div>
 
-                <div style={gridCellStyle}>Surface-calibrated RE, shut-down ER, narrative-filtered SEA</div>
-                <div style={gridCellStyle}>Chronic Strategy & Management</div>
-                <div style={gridCellStyle}>Reads performance, feels little, has partial but overridden self-awareness. Functional, managed, successful-looking.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Override detection</div>
+                <div style={gridCellStyle}>When the CLS overrides the ESS{"'"}s signals, SEA is the capacity that would allow the person to notice the replacement happening. Without SEA, the narrative feels like truth.</div>
 
-                <div style={gridCellStyle}>Accurate RE, sustainable ER, online SEA</div>
-                <div style={gridCellStyle}>Fluid compass — baseline as home</div>
-                <div style={gridCellStyle}>Reads accurately, feels sustainably, knows own states. Can move through all four states and reach baseline.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Substitute recognition</div>
+                <div style={gridCellStyle}>SEA allows the person to feel the difference between temporary relief and the biological completion process that returns the body to physiological baseline {"\u2014"} to notice that the felt intensity dropped but the activation is still there.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Cycle observability</div>
+                <div style={gridCellStyle}>Without SEA, the Emotional Somatic Cycle runs {"\u2014"} signals generate, states reconfigure, activation accumulates, substitutes repeat {"\u2014"} and the person has no awareness that any of it is happening.</div>
               </div>
             </div>
 
+            <h3 style={conceptHeadingStyle}>The Paradox</h3>
+            <p style={proseStyle}>
+              Under chronic activation, the interoceptive channels SEA requires are progressively depleted. The bridge closes not because the person chose to close it, but because the chronic activation that produces the pattern also degrades the biological substrate the bridge needs to function. The bridge needed to see the pattern is the bridge the pattern closes.
+            </p>
+            <p style={proseStyle}>
+              Two distinct mechanisms produce this closure. First {"\u2014"} under chronic activation, the ESS{"'"}s signals become habitual background noise. They are no longer flagged as information because the activated state has been continuous for so long that it registers as normal. Second {"\u2014"} the prefrontal cortex{"'"}s processing of interoceptive signals is blocked by persistent cortisol elevation and sympathetic dominance. In either case, the activated state stops being legible as an activated state. It is experienced as identity.
+            </p>
+
             <OperationalStatement color={MODEL_COLOR}>
-              Personality is not a type — it is a record of which capacities had conditions to develop and which didn{"'"}t.
+              The bridge needed to see the pattern is the bridge the pattern closes. The capacity needed to observe the mode is the capacity the mode disables. Interoceptive Self-Awareness (SEA) is structurally absent in all four chronic positions {"\u2014"} including chronic Safety & Openness.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Mentalization and functioning:</strong> Fonagy et al. (2002) — mentalizing capacity as a predictor of relational and emotional functioning. <strong style={{ color: TEXT.primary }}>Dimensional personality:</strong> Luyten, Campbell, Allison & Fonagy (2020) — dimensional approach to personality based on mentalizing capacity. <strong style={{ color: TEXT.primary }}>Interpersonal neurobiology:</strong> Siegel (2012) — the mind develops through relationships, producing specific patterns.
+                  Craig (2002) {"\u2014"} interoceptive awareness as the substrate linking affective resonance and self-awareness. Damasio (1999) {"\u2014"} self-referential emotional processing as distinct from other-referential processing.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Capacity configuration as the predictive unit — RE state × ER state × SEA state × regulation capacity = predicted compass behaviour, chronic mode, identity, and relational patterns. The causal chain: configuration → chronic mode → identity. The reframe: personality is not a type but a record of developmental conditions for awareness.
+                  The five-function mapping of what SEA specifically determines. The paradox formulation: the bridge needed to see the pattern is the bridge the pattern closes. The two distinct mechanisms of bridge closure (habituation and channel blockage) as clinically relevant. The identification that the bridge is closed in all four chronic positions, including chronic Safety & Openness.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C10: TRUE AND FALSE COHERENCE ──────────────── */}
+          {/* ─── C7: COHERENCE FROM AVAILABLE DATA ─────────── */}
           <section
-            id="true-false-coherence"
-            aria-labelledby="heading-true-false-coherence"
+            id="coherence"
+            aria-labelledby="heading-coherence"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-true-false-coherence"
-              style={sectionHeadingStyle}
+              id="heading-coherence"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              True Coherence and False Coherence
+              Coherence From Available Data
             </h2>
 
             <p style={proseStyle}>
-              When all three capacities are online and the body has learned to complete the cycle, the person has access to the full information set. What cognition builds with this complete data is <strong style={{ color: TEXT.primary }}>true coherence</strong> — a narrative that aligns with felt experience. The story matches what the body knows.
-            </p>
-            <p style={proseStyle}>
-              When the capacities are incomplete — when Self-Emotional Awareness (SEA) is absent, or Emotional Resonance (ER) is shut down, or Reading Emotions (RE) is redirected for survival — cognition builds with whatever is available. It generates a stable narrative from incomplete data. That narrative feels true — because cognition is the system that constructs what the person experiences as reality. But it replaces the emotional signals it cannot process. This is <strong style={{ color: TEXT.primary }}>false coherence</strong> — a stable-but-untrue narrative that serves regulation at the cost of truth.
+              The CLS builds a narrative from whatever data it has. Three states of interoceptive access produce three structurally different forms of coherence.
             </p>
 
-            {/* True vs False Coherence Table */}
+            {/* Coherence table */}
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1.5fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle}>&nbsp;</div>
-                <div style={gridHeaderStyle}>True Coherence</div>
-                <div style={gridHeaderStyle}>False Coherence</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1.5fr 1.5fr 1.5fr", minWidth: 600 }}>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>{" "}</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Aligned with the body</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Without the body</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Contested by the body</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Data source</div>
-                <div style={gridCellStyle}>All three capacities + regulation</div>
-                <div style={gridCellStyle}>Incomplete capacity set + cognitive replacement</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Narrative</div>
-                <div style={gridCellStyle}>Aligned with felt experience</div>
-                <div style={gridCellStyle}>Replaces felt experience</div>
+                <div style={gridCellStyle}>All three channels open + restoration learned</div>
+                <div style={gridCellStyle}>Incomplete channel access + cognitive replacement</div>
+                <div style={gridCellStyle}>Active but flooded/contradicted channels + narrative opposition</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Feels like</div>
                 <div style={gridCellStyle}>{"\u201C"}This is complex and I can hold it{"\u201D"}</div>
                 <div style={gridCellStyle}>{"\u201C"}This is clear and I know who I am{"\u201D"}</div>
+                <div style={gridCellStyle}>{"\u201C"}Something is wrong but I don{"'"}t know what{"\u201D"}</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Function</div>
                 <div style={gridCellStyle}>Understanding</div>
                 <div style={gridCellStyle}>Regulation</div>
+                <div style={gridCellStyle}>Neither {"\u2014"} the person is caught between</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Cost</div>
                 <div style={gridCellStyle}>Complexity (must hold more)</div>
                 <div style={gridCellStyle}>Truth (must suppress more)</div>
+                <div style={gridCellStyle}>Trust (cannot trust either source)</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Flexibility</div>
-                <div style={gridCellStyle}>Can update when new information arrives</div>
-                <div style={gridCellStyle}>Resists update — updating threatens regulation</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Requires</div>
+                <div style={gridCellStyle}>SEA open, ER sustainable, RE accurate</div>
+                <div style={gridCellStyle}>Bridge closed or never built</div>
+                <div style={gridCellStyle}>Bridge partially open but overridden or flooded</div>
               </div>
             </div>
 
             <p style={proseStyle}>
-              False coherence is not deception. It is cognition doing what the body was never taught to do. The person is regulated. The cost is truth.
+              Coherence without the body often appears more put-together than coherence aligned with the body. The person operating without the bridge has a clear narrative, a consistent identity, a well-articulated self-understanding. The person developing coherence aligned with the body is messy, contradictory, uncertain. The smooth narrative may be the CLS constructing clarity from incomplete data. The messy one may be someone whose bridge is opening for the first time.
             </p>
             <p style={proseStyle}>
-              The most important distinction: false coherence often looks more put-together than true coherence. The person running false coherence has a clear narrative, a consistent identity, a well-articulated self-understanding. The person developing true coherence is messy, contradictory, uncertain, and struggling to hold complexity. <strong style={{ color: TEXT.primary }}>The smooth story should worry more than the messy one.</strong> The smooth one may be false coherence performing integration. The messy one may be someone learning to hold complexity.
+              Coherence contested by the body may be the most clinically significant state. The substrate is still active. The signal is still arriving. The crack in the narrative is there. The person is not fully disconnected from their body {"\u2014"} they are in conflict with it. The bridge is not absent. It is contested.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              False coherence is not deception — it is regulation at the cost of truth. The smooth story should worry more than the messy one.
+              The CLS does not wait for a complete data set before producing coherence. It builds from whatever data reaches it. When interoceptive data is missing, the coherence it produces may still feel complete {"\u2014"} because the CLS does not register the absence as absence.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Coherent narrative:</strong> Main & Goldwyn (1998) — coherent narrative as a marker of earned security in the Adult Attachment Interview, requiring integration of felt experience. <strong style={{ color: TEXT.primary }}>Cognitive dissonance:</strong> Festinger (1957) — the drive toward coherent narrative. <strong style={{ color: TEXT.primary }}>Coherence-seeking:</strong> Kahneman (2011) — coherence-seeking as a fundamental cognitive process that builds plausible stories from available data, regardless of completeness.
+                  Main & Goldwyn (1998) {"\u2014"} coherent narrative as a marker of earned security in the Adult Attachment Interview. Festinger (1957) {"\u2014"} cognitive dissonance and the drive toward coherent narrative. Kahneman (2011) {"\u2014"} coherence-seeking as a fundamental cognitive process that builds plausible stories from available data, regardless of completeness.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  True coherence and false coherence as products of the capacity configuration — true coherence requiring all three capacities online, false coherence as cognition building with incomplete data. The clinical identification: false coherence often appears healthier than true coherence, because the narrative is smooth while the underlying data is suppressed. The formulation: false coherence is not deception — it is regulation at the cost of truth.
+                  Three forms of coherence mapped through the two-system architecture. The identification that contested coherence is the clinically significant entry point: the substrate is still active, the signal is still arriving, and the conflict between body and narrative indicates the bridge is reachable. The observation that coherence without the body often appears more coherent than coherence aligned with the body.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C11: TOLERANCE THRESHOLDS ──────────────────── */}
+          {/* ─── C8: FEELING-IDENTITY FUSION ───────────────── */}
           <section
-            id="tolerance-thresholds"
-            aria-labelledby="heading-tolerance-thresholds"
+            id="feeling-identity-fusion"
+            aria-labelledby="heading-feeling-identity"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-tolerance-thresholds"
-              style={sectionHeadingStyle}
+              id="heading-feeling-identity"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Tolerance Thresholds
+              Feeling-Identity Fusion
             </h2>
 
             <p style={proseStyle}>
-              The nervous system calibrates a baseline for what to endure. This calibration happens through the developmental conditions — through what the adults{"'"} configuration normalised.
+              When the bridge between the two systems has never been built {"\u2014"} or has closed under chronic activation {"\u2014"} the CLS has no channel to separate {"\u201C"}what I feel{"\u201D"} from {"\u201C"}what I am.{"\u201D"}
             </p>
             <p style={proseStyle}>
-              A child who grew up with a caregiver whose Emotional Resonance (ER) was flooded and Self-Emotional Awareness (SEA) was absent learns: this level of emotional overwhelm is normal. A child whose emotional signals were consistently invalidated learns: my feelings don{"'"}t count. The threshold becomes the set point. What was endured becomes what is tolerated.
+              <strong style={{ color: TEXT.primary }}>Feeling = being.</strong> The person does not experience {"\u201C"}I feel scared.{"\u201D"} They <em>are</em> scared. The ESS generates activation. Without the bridge, the CLS cannot register the activation as information about a state. The state is experienced as the person themselves.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The most consequential configuration for tolerance thresholds: flooded Emotional Resonance (ER) + absent Self-Emotional Awareness (SEA).</strong> The person feels the harm — Emotional Resonance (ER) is online, they feel everything. But they cannot locate it as harm — Self-Emotional Awareness (SEA) is offline, they cannot name what they feel or attribute it correctly. They feel terrible and don{"'"}t know why. Or they know something is wrong but can{"'"}t identify what. The body is communicating and the person has no translation.
+              <strong style={{ color: TEXT.primary }}>Feedback = identity.</strong> External input reaches the CLS through Interpersonal Affect Perception (RE). Without SEA to anchor the CLS to its own internal state, the CLS has no reference point to hold {"\u201C"}what was said to me{"\u201D"} apart from {"\u201C"}what I am.{"\u201D"}
             </p>
             <p style={proseStyle}>
-              This mechanism explains why a person can be in a condition that would be immediately recognisable to an outside observer — and genuinely not see it themselves. The threshold was calibrated before cognition arrived. The calibrated baseline is pre-cognitive. It operates below the level at which insight can touch it.
+              Every human being begins here. Before cognition develops, there is no observing self. The question is whether the bridge develops {"\u2014"} whether the CLS eventually gains a channel to receive the ESS{"'"}s signals and say {"\u201C"}this is what I feel{"\u201D"} rather than {"\u201C"}this is what I am.{"\u201D"} When the bridge develops, the person gains an observing position. When it does not, this condition persists into adulthood.
+            </p>
+            <p style={proseStyle}>
+              Two structurally different routes produce the same condition. <strong style={{ color: TEXT.primary }}>Chronic suppression</strong> {"\u2014"} the bridge developed and then closed under chronic activation. The pathway exists but is blocked. <strong style={{ color: TEXT.primary }}>Developmental absence</strong> {"\u2014"} the bridge was never built. The relational conditions that build it were never present. The distinction matters because unblocking an existing pathway and building a pathway that never existed are fundamentally different processes. How the bridge develops {"\u2014"} through what relational conditions {"\u2014"} is the territory of <Link href="/framework/f2-awareness-calibration" style={{ color: MODEL_COLOR, textDecoration: "none" }}>Framework 2</Link>.
             </p>
 
             <OperationalStatement color={MODEL_COLOR}>
-              Familiar can feel {"\u201C"}normal{"\u201D"} even when it is costly. The calibration is pre-cognitive — which is why insight alone does not move it.
+              The condition is invisible. The adult does not know the bridge is absent, because they have never experienced it being open.
             </OperationalStatement>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
+              <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Internal working models:</strong> Bowlby (1969) — calibrating expectations of relationship quality. <strong style={{ color: TEXT.primary }}>Body and memory:</strong> van der Kolk (2014) — the body maintaining calibrated baselines below conscious awareness. <strong style={{ color: TEXT.primary }}>Implicit memory:</strong> Siegel (2012) — implicit memory shaping tolerance for relational and emotional conditions without conscious recall.
+                  Winnicott (1960) {"\u2014"} the true self and false self as developmental outcomes of early relational conditions. Stern (1985) {"\u2014"} the development of the sense of self through stages. Fonagy, Gergely, Jurist & Target (2002) {"\u2014"} mentalization as a developmental achievement requiring specific relational conditions.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  Tolerance thresholds as a named mechanism linking the capacity configuration to what the person can and cannot recognise as harm. The specific identification of flooded Emotional Resonance (ER) + absent Self-Emotional Awareness (SEA) as the configuration that maximises endurance of harmful conditions — the person feels the cost somatically while being unable to identify it cognitively. The formulation: the calibration is pre-cognitive, which is why insight alone does not move it.
+                  The condition reframed through the CLS-ESS architecture: the CLS operating without the bridge to its own ESS, producing Feeling = Being as a structural consequence of channel absence. The distinction between chronic suppression and developmental absence as two routes to the same operational condition {"\u2014"} with different repair implications.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 4: THE CYCLE COMPLETES                     */}
+          {/* THE DIAGRAMS                                     */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 4" title="The Cycle Completes" />
+          <PartDivider label="EXPLORE" title="The Diagrams" color={MODEL_COLOR} />
 
-          {/* ─── C12: GENERATIONAL REPLICATION ──────────────── */}
           <section
-            id="generational-replication"
-            aria-labelledby="heading-generational-replication"
+            id="diagrams"
+            aria-labelledby="heading-diagrams"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-generational-replication"
-              style={sectionHeadingStyle}
+              id="heading-diagrams"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Generational Replication
+              Interoceptive Architecture Map
             </h2>
-
-            <p style={proseStyle}>
-              Awareness teaches awareness — and this mechanism does not stop after one generation. What the adult{"'"}s nervous system embodies is what the child absorbs. What the child absorbs becomes what they embody as an adult. What they embody as an adult is what the next child absorbs.
-            </p>
-            <p style={proseStyle}>
-              The chain transmits through the nervous system, not through words. A parent can say {"\u201C"}your feelings matter{"\u201D"} while their own Self-Emotional Awareness (SEA) is absent — and the child absorbs the absence, not the words. A parent can explain healthy boundaries while their own tolerance thresholds are calibrated to endure harm — and the child calibrates to the endurance, not the explanation.
-            </p>
-            <p style={proseStyle}>
-              This is why generational patterns persist despite intention, education, and love. The transmission pathway is somatic — it runs through the same two information systems M2 mapped. The emotional-somatic system learns through experience, not explanation. What the child experiences is the adult{"'"}s configuration. What the adult explains is cognition narrating over the top.
-            </p>
-            <p style={proseStyle}>
-              When an entire culture performs blocked regulation — {"\u201C"}boys don{"'"}t cry,{"\u201D"} {"\u201C"}be strong,{"\u201D"} {"\u201C"}don{"'"}t make a scene,{"\u201D"} {"\u201C"}that didn{"'"}t hurt{"\u201D"} — the invalidation is no longer experienced as a specific adult{"'"}s limitation. It is experienced as reality. The culture does not produce the condition. The condition produces the culture. And the culture reproduces the condition.
+            <p style={{ ...proseStyle, marginBottom: 24 }}>
+              Explore the two systems, the interoceptive channel between them, and the three states of interoceptive access. Each state produces a different downstream architecture {"\u2014"} different capacities available, different data reaching the CLS, different coherence, different relationship to override and restoration.
             </p>
 
-            <OperationalStatement color={MODEL_COLOR}>
-              The chain replicates until awareness changes, not just behaviour. The condition produces the culture, not the reverse.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Intergenerational attachment:</strong> Main & Hesse (1990) — intergenerational transmission of attachment patterns. <strong style={{ color: TEXT.primary }}>Epigenetic transmission:</strong> Yehuda et al. (2014) — epigenetic transmission of stress-response calibration. Meaney (2001) — maternal care altering offspring stress reactivity through epigenetic mechanisms.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  Generational replication as the downstream consequence of awareness teaches awareness — operating across generations, not just within one. The identification that the chain runs through the somatic transmission pathway (M2: two information systems), which is why words and intentions cannot interrupt it. The formulation: the condition produces the culture, not the reverse.
-                </p>
-              </ExpandableSection>
-            </div>
+            <InteroceptiveArchitectureMap />
           </section>
 
-          {/* ─── C13: REPAIR ────────────────────────────────── */}
           <section
-            id="repair"
-            aria-labelledby="heading-repair"
+            id="empathic-integration"
+            aria-labelledby="heading-empathic-integration"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-repair"
-              style={sectionHeadingStyle}
+              id="heading-empathic-integration"
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Repair — Developing What Was Missing
+              Empathic Integration Explorer
             </h2>
-
-            <p style={proseStyle}>
-              The three awareness capacities were not damaged. They were not developed. This distinction changes everything about repair.
-            </p>
-            <p style={proseStyle}>
-              The adult who never had conditions for Self-Emotional Awareness (SEA) to develop can develop it now. The adult whose Emotional Resonance (ER) was shut down can reconnect it. The adult whose Reading Emotions (RE) was redirected for survival can redirect it for understanding. But one distinction must be made first:
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic suppression</strong> means the capacities developed — partially or fully — and then went offline under chronic activation. The pathway exists but is blocked. Recovery is unblocking: safety long enough for the suppression to lift and the existing pathway to reopen.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Developmental absence</strong> means the capacities never developed. The conditions that build them — being regulated with, having signals received, having cycles complete through co-regulation — were never present. The pathway does not exist yet. Recovery is building: co-regulation that builds the pathway for the first time. Both require safety and time. The second requires more of both.
+            <p style={{ ...proseStyle, marginBottom: 24 }}>
+              Adjust the three awareness capacities and see what each configuration produces {"\u2014"} what the CLS can and cannot do, what the ESS does, and where the nervous system tends to settle.
             </p>
 
-            {/* Five Conditions for Repair */}
-            <h3 style={h3Style}>Five Conditions for Repair</h3>
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2.5fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle}>Condition</div>
-                <div style={gridHeaderStyle}>What It Means</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety</div>
-                <div style={gridCellStyle}>The nervous system must evaluate {"\u201C"}safe enough to risk change.{"\u201D"} Repair cannot happen under threat — because the system will prioritise regulation over development.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Relational support</div>
-                <div style={gridCellStyle}>New co-regulatory experiences. The nervous system needs to learn cycle completion through being regulated with — the same mechanism that would have built it originally.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Identity flexibility</div>
-                <div style={gridCellStyle}>False coherence must loosen enough for new data to enter. This is the hardest part — because loosening false coherence means losing the regulation it provided.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Time</div>
-                <div style={gridCellStyle}>Capacities develop through repeated experience, not single insight. The back-and-forth between old patterns and new capacity is not the problem — it is the process.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Structural conditions</div>
-                <div style={gridCellStyle}>The environment must not re-wound. Individual repair has limited impact when the person goes back daily to conditions that require chronic masking or exceed their nervous system{"'"}s capacity.</div>
-              </div>
-            </div>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Self-Emotional Awareness (SEA) is the last capacity to come back — and its reappearance is the mechanism of change.</strong> As Self-Emotional Awareness (SEA) gradually develops, the person starts catching glimpses of their own patterns from inside — not as insight delivered from outside, but as felt recognition: {"\u201C"}I can feel that I{"'"}m doing this.{"\u201D"} That felt recognition IS Self-Emotional Awareness (SEA) developing.
-            </p>
-            <p style={proseStyle}>
-              The chronic mode does not vanish. It becomes less invisible. The person starts to see it while it{"'"}s running. Over time, they can interrupt it earlier. Over more time, the biology shifts and the mode loosens. As Self-Emotional Awareness (SEA) comes back online, the other capacities shift with it. Reading Emotions (RE) shifts what it serves — the reading was always accurate; with Self-Emotional Awareness (SEA) present, the person can see what the reading is being used for. Emotional Resonance (ER) can begin to function without flooding or absence — the boundary between self and other, which Self-Emotional Awareness (SEA) maintains, starts to hold.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>This generates its own paradox:</strong> emerging awareness surfaces previously invisible contradictions. The person feels worse precisely because they are getting better. Pain that was always present but unfelt now becomes felt. The experience is one of deterioration while the biology is one of recovery.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              Not undoing the past — developing what the past didn{"'"}t provide conditions for. You cannot think your way into Self-Emotional Awareness (SEA). You can only experience your way there.
-            </OperationalStatement>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Traditions" type="opendata">
-                <p style={expandedProseStyle}>
-                  <strong style={{ color: TEXT.primary }}>Developable mentalizing:</strong> Fonagy et al. (2002) — mentalizing capacity as developable in adulthood through relational experience. <strong style={{ color: TEXT.primary }}>Innate completion:</strong> Levine (1997) — the innate completion capacity persisting despite chronic activation. <strong style={{ color: TEXT.primary }}>Lifelong co-regulation:</strong> Porges (2011) — co-regulation as available throughout the lifespan, not limited to development.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The chronic suppression vs developmental absence distinction as the clinically critical differential — determining whether repair is unblocking (the pathway exists) or building (it does not). The five conditions for repair connected to the full Emotional Somatic Cycle architecture: safety (M2{"'"}s state), relational support (M3{"'"}s co-regulation), identity flexibility (false coherence from C10), time (M3{"'"}s biological timescales), structural conditions (M3{"'"}s environmental requirements). The paradox of recovery: getting better feels like getting worse because awareness surfaces what was previously unfelt.
-                </p>
-              </ExpandableSection>
-            </div>
+            <EmpathicIntegrationExplorer />
           </section>
 
-          {/* ─── C14: THE CYCLE COMPLETES ───────────────────── */}
-          <section
-            id="cycle-completes"
-            aria-labelledby="heading-cycle-completes"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-cycle-completes"
-              style={sectionHeadingStyle}
-            >
-              The Cycle Completes
-            </h2>
-
-            <p style={proseStyle}>
-              M4 is the final model. The full Emotional Somatic Cycle is now visible.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The signal fires</strong> (M1). The nervous system detects something — threat, safety, loss, connection, boundary crossed — and generates a biological message. Sixteen signals, each carrying a specific finding. Each needing specific conditions to resolve.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The state shifts</strong> (M2). The signal produces a nervous system state. The entire system reorganises — perception, cognition, empathy, relational capacity — around the finding. The mode changes what the person can see, think, feel, and do. The filter is set before any thought forms.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The body responds</strong> (M3). The activation sequence runs. The body was designed to complete the cycle — the debris clears, the hormones metabolise, the muscles release, the system reaches baseline. Or: cognition overrides the signal, the cycle stays open, the debris accumulates, and the nervous system begins searching for anything that produces relief. Substitutes escalate. The alarm stays on.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The awareness system determines all of it</strong> (M4). Whether the person can read the signal when it fires. Whether they can feel the state when it shifts. Whether they can catch the override when it engages. Whether they can distinguish the substitute from genuine restoration. Whether they can observe the pattern while it is running — or are inside the pattern, invisible to themselves.
-            </p>
-            <p style={proseStyle}>
-              Reading Emotions (RE) determines whether the person can read the signals — in others and in the environment. Emotional Resonance (ER) determines whether the person can feel what those signals carry — the somatic dimension that makes the reading real. Self-Emotional Awareness (SEA) determines whether the person has access to their own internal state — the observing position that makes the difference between a cycle that can be felt and a cycle that runs unseen.
-            </p>
-            <p style={proseStyle}>
-              Without these capacities, the cycle runs anyway. The signals fire. The states shift. The activation accumulates. The substitutes escalate. It all happens — below the threshold of awareness, producing consequences the person cannot trace to their source.
-            </p>
-            <p style={proseStyle}>
-              With these capacities, the cycle becomes observable. The person can feel the signal arriving. Can notice the state shifting. Can catch the override engaging and choose whether to let the cycle complete. Can distinguish temporary relief from genuine restoration. Can feel the shame loop running and hold it long enough for the cycle to complete.
-            </p>
-            <p style={proseStyle}>
-              This is the answer M2 and M3 were building toward. The gap between the person who can feel the cycle running and the person who cannot is not a difference in intelligence, insight, or willpower. It is a difference in three biological capacities — each with a developmental origin, each with a degradation pattern under chronic activation, each developable through relational experience.
-            </p>
-
-            <OperationalStatement color={MODEL_COLOR}>
-              The Emotional Somatic Cycle runs in every nervous system. The awareness capacities determine whether the person knows it.
-            </OperationalStatement>
-          </section>
-
-          {/* ─── CONNECTED RESEARCH ──────────────────────── */}
-          <ConnectedResearch slug="m4-awareness-capacities" type="model" />
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
+          <ConnectionsMap
+            color={MODEL_COLOR}
+            connections={[
+              {
+                id: "M1: Emotions as Signals",
+                href: "/model/m1-emotions-as-signals",
+                description: "Describes the signal the nervous system generates \u2014 the physiological response pattern that the awareness architecture determines whether the person can perceive.",
+              },
+              {
+                id: "M2: Nervous System States",
+                href: "/model/m2-nervous-system-states",
+                description: "Describes the state the nervous system reorganizes into after the signal. M4 maps whether the person can feel the state shift \u2014 whether they notice the perception narrowing, the cognitive capacity changing.",
+              },
+              {
+                id: "M3: Regulation Capacities",
+                href: "/model/m3-regulation-capacities",
+                description: "Describes whether the body completes the activation sequence or stays open. M4 maps whether the person can observe the restoration sequence running, catch the override engaging, and distinguish a substitute from genuine restoration.",
+              },
+              {
+                id: "F1: The Emotional Gradient",
+                href: "/framework/f1-emotional-gradient",
+                description: "Provides the biological origin of the safety-threat gradient. The four gradient positions map to four different interoceptive access profiles.",
+              },
+              {
+                id: "F2: The Developmental Blueprint",
+                href: "/framework/f2-awareness-calibration",
+                description: "Explains how the three awareness capacities develop through early relational conditions \u2014 and what happens when those conditions are absent. The developmental origin of the bridge.",
+              },
+              {
+                id: "F3: Cognitive Override",
+                href: "/framework/f3-cognitive-override",
+                description: "Explains how coherence without the body maintains itself \u2014 the self-reinforcing loop, signal replacement, and why it resists change.",
+              },
+            ]}
+          />
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
-          <section
-            id="where-to-go-next"
-            aria-labelledby="heading-where-to-go-next"
-            style={{ marginBottom: 32 }}
-          >
-            <h2 id="heading-where-to-go-next" style={sectionHeadingStyle}>
-              Where to Go Next
-            </h2>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={navThStyle}>If you want to...</th>
-                    <th style={navThStyle}>Go here</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <NavRow
-                    label="See the sixteen emotions mapped as biological signals — the input that the awareness system reads"
-                    href="/model/m1-emotions-as-signals"
-                    linkText="M1: Emotions as Signals &rarr;"
-                  />
-                  <NavRow
-                    label="Understand the four nervous system states that the awareness capacities operate within"
-                    href="/model/m2-nervous-system-states"
-                    linkText="M2: Nervous System States &rarr;"
-                  />
-                  <NavRow
-                    label="Understand the activation cycle that awareness determines whether the person can observe"
-                    href="/model/m3-regulation-capacities"
-                    linkText="M3: Regulation Capacities &rarr;"
-                  />
-                  <NavRow
-                    label="Explore the foundational theory behind how awareness capacities develop and calibrate"
-                    href="/framework/f2-awareness-calibration"
-                    linkText="F2: Awareness Calibration &rarr;"
-                  />
-                  <NavRow
-                    label="Explore the interactive tools"
-                    href="https://teg-blue.com/emotional-tools"
-                    linkText="teg-blue.com &rarr;"
-                    external
-                  />
-                </tbody>
-              </table>
-            </div>
-          </section>
+          <NavSection
+            color={MODEL_COLOR}
+            items={[
+              {
+                label: "Return to where the cycle begins \u2014 the sixteen signals the nervous system generates",
+                href: "/model/m1-emotions-as-signals",
+                linkText: "M1: Emotions as Signals \u2192",
+              },
+              {
+                label: "See the four states the nervous system reorganizes into after the signal",
+                href: "/model/m2-nervous-system-states",
+                linkText: "M2: Nervous System States \u2192",
+              },
+              {
+                label: "See whether the body completes the activation sequence or stays open",
+                href: "/model/m3-regulation-capacities",
+                linkText: "M3: Regulation Capacities \u2192",
+              },
+              {
+                label: "Explore how the three awareness capacities develop through early relational conditions",
+                href: "/framework/f2-awareness-calibration",
+                linkText: "F2: The Developmental Blueprint \u2192",
+              },
+              {
+                label: "Explore the interactive tools",
+                href: "https://teg-blue.com/emotional-tools",
+                linkText: "teg-blue.com \u2192",
+                external: true,
+              },
+            ]}
+          />
         </article>
 
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ─── JSON-LD ─────────────────────────────────────── */}
+      {/* JSON-LD structured data — all content is static/hardcoded */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1176,7 +831,7 @@ export default function M4AwarenessCapacitiesPage() {
             "@id": "https://teg-blue.org/model/m4-awareness-capacities#article",
             headline: "Awareness Capacities: The Calibration",
             description:
-              "What determines whether the person can feel the Emotional Somatic Cycle while it is running — three biological capacities (Reading Emotions, Emotional Resonance, Self-Emotional Awareness), their developmental trajectories, degradation patterns, and the multiplicative system they form. Model M4 of the TEG-Blue system.",
+              "What determines whether the person can perceive the Emotional Somatic Cycle while it is running. Two information systems, two biological substrates, three awareness capacities. Model M4 of the TEG-Blue system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -1187,8 +842,8 @@ export default function M4AwarenessCapacitiesPage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            datePublished: "2026-03-05",
-            dateModified: "2026-03-27",
+            datePublished: "2026-03-06",
+            dateModified: "2026-04-05",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -1202,239 +857,49 @@ export default function M4AwarenessCapacitiesPage() {
             },
             about: [
               { "@type": "Thing", name: "Awareness Capacities" },
-              { "@type": "Thing", name: "Reading Emotions" },
-              { "@type": "Thing", name: "Emotional Resonance" },
-              { "@type": "Thing", name: "Self-Emotional Awareness" },
-              { "@type": "Thing", name: "Multiplicative Empathy System" },
+              { "@type": "Thing", name: "Interoceptive Self-Awareness" },
+              { "@type": "Thing", name: "Affective Resonance" },
+              { "@type": "Thing", name: "Interpersonal Affect Perception" },
+              { "@type": "Thing", name: "Interoceptive Access" },
+              { "@type": "Thing", name: "ESS CLS Architecture" },
+              { "@type": "Thing", name: "Coherence" },
             ],
             citation: [
-              { "@type": "ScholarlyArticle", name: "A social neuroscience perspective on empathy (Decety & Jackson, 2004)" },
+              { "@type": "ScholarlyArticle", name: "A neuroevolutionary approach to empathy (Decety & Jackson, 2004)" },
+              { "@type": "ScholarlyArticle", name: "Responding to the emotions of others (Blair, 2005)" },
+              { "@type": "ScholarlyArticle", name: "How do you feel? Interoception (Craig, 2002)" },
               { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
-              { "@type": "ScholarlyArticle", name: "Affect Regulation, Mentalization and the Development of the Self (Fonagy et al., 2002)" },
-              { "@type": "ScholarlyArticle", name: "Affect Dysregulation and Disorders of the Self (Schore, 2003)" },
-              { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (van der Kolk, 2014)" },
-              { "@type": "ScholarlyArticle", name: "Interoception: The Sense of the Physiological Condition of the Body (Craig, 2002)" },
+              { "@type": "ScholarlyArticle", name: "Empathy and the Brain (Shamay-Tsoory et al., 2009)" },
+              { "@type": "ScholarlyArticle", name: "Empathy and Compassion (Singer & Klimecki, 2014)" },
+              { "@type": "ScholarlyArticle", name: "The feeling of what happens (Damasio, 1999)" },
+              { "@type": "ScholarlyArticle", name: "Affect Regulation and the Origin of the Self (Schore, 2003)" },
             ],
-            keywords: [
-              "awareness capacities",
-              "Reading Emotions",
-              "Emotional Resonance",
-              "Self-Emotional Awareness",
-              "empathy components",
-              "multiplicative system",
-              "capacity configuration",
-              "true coherence",
-              "false coherence",
-              "generational replication",
-            ],
+            ...generateBreadcrumbJsonLd([
+              { name: "TEG-Blue Research", url: "https://teg-blue.org" },
+              { name: "Models", url: "https://teg-blue.org/models" },
+              { name: "M4: Awareness Capacities", url: "https://teg-blue.org/model/m4-awareness-capacities" },
+            ]),
+            ...generateSpeakableJsonLd(
+              ["heading-core-propositions", "heading-architecture-of-empathy", "heading-awareness-architecture"],
+              "https://teg-blue.org/model/m4-awareness-capacities"
+            ),
+            ...generateFAQJsonLd([
+              {
+                question: "What are awareness capacities?",
+                answer: "Three distinct biological processes that determine whether a person can perceive the Emotional Somatic Cycle while it is running: Interpersonal Affect Perception (RE), Affective Resonance (ER), and Interoceptive Self-Awareness (SEA).",
+              },
+              {
+                question: "What is interoceptive access?",
+                answer: "The state of the interoceptive substrate \u2014 whether it is generating readable signals and whether those signals reach conscious processing. It is the single upstream variable that determines which awareness capacities can function.",
+              },
+              {
+                question: "What is the bridge between the two systems?",
+                answer: "Interoceptive Self-Awareness (SEA) is the bridge. It operates through the interoceptive substrate but carries the ESS's signals to the CLS. When the bridge is open, the CLS knows what the body is doing. When closed, the CLS operates disconnected.",
+              },
+            ]),
           }),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateBreadcrumbJsonLd([
-              { name: "Home", url: "/" },
-              { name: "The Emotional Somatic System", url: "/models" },
-              { name: "M4: Awareness Capacities", url: "/model/m4-awareness-capacities" },
-            ])
-          ),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateFAQJsonLd([
-              {
-                question: "What are the three awareness capacities in the TEG-Blue model?",
-                answer:
-                  "The three awareness capacities are Reading Emotions (RE) — the capacity to identify what others are feeling; Emotional Resonance (ER) — the capacity to feel what others are feeling in one's own body; and Self-Emotional Awareness (SEA) — the capacity to identify, name, and trust one's own emotional states. These three capacities are what the world calls 'empathy,' but empathy is not one thing. Each has a distinct neural substrate, developmental trajectory, and degradation pattern under chronic activation.",
-              },
-              {
-                question: "Why is Self-Emotional Awareness (SEA) the keystone capacity?",
-                answer:
-                  "Self-Emotional Awareness (SEA) is the keystone because without it, the other two capacities lose their anchor. Without SEA, Reading Emotions (RE) serves the mode rather than understanding — the reading is accurate but unanchored. Without SEA, Emotional Resonance (ER) floods or shuts down — there is no boundary between self and other. Without SEA, cycle completion has no endpoint — there is nothing to come back to. SEA is also structurally absent in all four chronic states, creating the paradox: the capacity needed to observe the mode is the capacity the mode disables.",
-              },
-              {
-                question: "What is the multiplicative system in empathy?",
-                answer:
-                  "The three awareness capacities are multiplicative, not additive: RE × ER × SEA. If any one capacity is zero, the product is zero regardless of the other two. This explains why partial capacity produces distortion, not partial empathy. A person with sharp Reading Emotions (RE) and absent Self-Emotional Awareness (SEA) has a scanner serving a mode they cannot see. The most dangerous configurations are not the ones with the least capacity — they are the ones with the most RE and the least SEA.",
-              },
-              {
-                question: "How do the awareness capacities develop?",
-                answer:
-                  "Through the mechanism of 'awareness teaches awareness' — the adults' awareness capacities create the child's developmental environment. A caregiver with online Self-Emotional Awareness (SEA) creates conditions for the child's SEA to develop. A caregiver with absent SEA provides no model. This transmits through the nervous system, not through words — a parent can say 'your feelings matter' while their own SEA is absent, and the child absorbs the absence, not the words. Love does not override what the nervous system embodies.",
-              },
-              {
-                question: "What is false coherence?",
-                answer:
-                  "False coherence is a stable-but-untrue narrative that cognition builds from incomplete capacity data. When Self-Emotional Awareness (SEA) is absent or Emotional Resonance (ER) is shut down, cognition generates a coherent story that replaces felt experience. It serves regulation at the cost of truth. False coherence often looks more put-together than true coherence — the person has a clear narrative and consistent identity, while someone developing true coherence may appear messy and uncertain. The smooth story should worry more than the messy one.",
-              },
-              {
-                question: "Can awareness capacities be developed in adulthood?",
-                answer:
-                  "Yes. The three capacities were not damaged — they were not developed, which changes everything about repair. The critical distinction is between chronic suppression (the pathway exists but is blocked — recovery is unblocking through safety) and developmental absence (the pathway was never built — recovery is building through new co-regulatory experiences). Both require safety, relational support, identity flexibility, time, and structural conditions. SEA comes back last, and its reappearance is the mechanism of change.",
-              },
-            ])
-          ),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateSpeakableJsonLd({
-              name: "Awareness Capacities (M4) — TEG-Blue Research",
-              url: "https://teg-blue.org/model/m4-awareness-capacities",
-              cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
-            })
-          ),
-        }}
-      />
     </div>
-  );
-}
-
-// ─── STYLE CONSTANTS ──────────────────────────────────────
-
-const sectionHeadingStyle = {
-  fontSize: 20,
-  fontWeight: 700,
-  color: MODEL_COLOR,
-  letterSpacing: "-0.01em",
-  marginBottom: 16,
-  paddingBottom: 8,
-  borderBottom: `2px solid ${hexToRgba(MODEL_COLOR, 0.2)}`,
-};
-
-const h3Style = {
-  fontSize: 16,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 12,
-};
-
-const proseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  marginBottom: 16,
-  maxWidth: 720,
-};
-
-const expandedProseStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  margin: "8px 0 0",
-};
-
-const propositionItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
-};
-
-const expandableRowStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-  gap: 6,
-  marginTop: 4,
-};
-
-const gridHeaderStyle = {
-  padding: "10px 12px",
-  background: hexToRgba(MODEL_COLOR, 0.1),
-  borderBottom: `1px solid ${BORDER.default}`,
-  fontSize: 12,
-  fontWeight: 600,
-  color: TEXT.primary,
-  fontFamily: FONT.mono,
-};
-
-const gridCellStyle = {
-  padding: "10px 12px",
-  borderBottom: `1px solid ${BORDER.default}`,
-  fontSize: 13,
-  color: TEXT.secondary,
-  lineHeight: 1.6,
-};
-
-const navThStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
-};
-
-// ─── HELPER COMPONENTS ────────────────────────────────────
-
-function PartDivider({ label, title }) {
-  return (
-    <div
-      style={{
-        marginBottom: 32,
-        marginTop: 16,
-        paddingTop: 24,
-        borderTop: `1px solid ${BORDER.default}`,
-      }}
-    >
-      <span
-        style={{
-          fontFamily: FONT.mono,
-          fontSize: 10,
-          fontWeight: 700,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          color: MODEL_COLOR,
-        }}
-      >
-        {label}
-      </span>
-      <h2
-        style={{
-          fontSize: 18,
-          fontWeight: 600,
-          color: TEXT.primary,
-          margin: "4px 0 0",
-        }}
-      >
-        {title}
-      </h2>
-    </div>
-  );
-}
-
-function NavRow({ label, href, linkText, external }) {
-  const linkStyle = {
-    color: MODEL_COLOR,
-    textDecoration: "none",
-    fontWeight: 500,
-  };
-
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
-        {label}
-      </td>
-      <td style={{ padding: "12px 16px", fontSize: 14 }}>
-        {external ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" style={linkStyle}>
-            {linkText}
-          </a>
-        ) : (
-          <Link href={href} style={linkStyle}>
-            {linkText}
-          </Link>
-        )}
-      </td>
-    </tr>
   );
 }

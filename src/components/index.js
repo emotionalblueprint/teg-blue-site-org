@@ -17,6 +17,7 @@ export { default as ContextBlock } from "./ContextBlock";
 export { default as FluidCompassExplorer } from "./FluidCompassExplorer";
 export { default as OpenCycleExplorer } from "./OpenCycleExplorer";
 export { default as EmpathicIntegrationExplorer } from "./EmpathicIntegrationExplorer";
+export { default as InteroceptiveArchitectureMap } from "./InteroceptiveArchitectureMap";
 export { default as CapacityLabelsExplorer } from "./CapacityLabelsExplorer";
 export { default as ResearcherPatternCard } from "./ResearcherPatternCard";
 export { default as PropositionBox } from "./PropositionBox";
