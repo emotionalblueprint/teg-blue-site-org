@@ -4,7 +4,7 @@
  * Source: vault-2/data-source/root/root--M1.md
  * Derived spec: vault-2/data-source/derived/derived--M1-diagram-data.md
  *
- * Consumed by: EmotionSignalExplorer, EmotionWaveSection
+ * Consumed by: M1EmotionsAsSignals, EmotionWaveSection
  */
 
 // ─── EMOTIONS ──────────────────────────────────────────────────────

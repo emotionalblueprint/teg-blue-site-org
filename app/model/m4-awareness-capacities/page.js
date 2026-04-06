@@ -20,6 +20,11 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <p style={proseStyle}>M4 provides the conceptual foundation for that architecture. It reframes awareness as a structured biological problem, clarifies the difference between reading others, feeling others, and perceiving oneself, and explains why access to one{"'"}s own internal signals is not a secondary feature of emotional life, but one of its central conditions.</p>
 </section>
 
+{/* ─── AWARENESS ARCHITECTURE DIAGRAM ──────────── */}
+<section id="architecture-explorer" style={{ marginBottom: 48 }}>
+<InteroceptiveArchitectureMap />
+</section>
+
 <section id="core-propositions" aria-labelledby="heading-cp" style={{ marginBottom: 48 }}><h2 id="heading-cp" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2><ul style={{ paddingLeft: 20, margin: 0 }}>
 <li style={propositionItemStyle}>What the culture calls empathy is three distinct awareness capacities — each accessing different information, each operating through different biological channels, each with a different vulnerability under chronic activation.</li>
 <li style={propositionItemStyle}>Two information systems — the ESS and the CLS — operate through two separate substrates. The interoceptive substrate reads the body from the inside. The external observation substrate reads other bodies from the outside. They do not share hardware.</li>
@@ -126,8 +131,6 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <p style={proseStyle}>The Emotional Somatic Cycle runs in every nervous system. The biological architecture determines whether the person knows it.</p>
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>The loop draws on McEwen (2000), van der Kolk (2014), and Schore (2003).</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>The loop as bidirectional: degradation amplifies degradation, restoration amplifies restoration. The architecture amplifies whichever direction it is running.</p></ExpandableSection></div></section>
 
-<PartDivider label="EXPLORE" title="The Awareness Architecture" color={MODEL_COLOR} />
-<section id="architecture-explorer" style={{ marginBottom: 48 }}><p style={{ ...proseStyle, marginBottom: 24 }}>Explore the interoceptive architecture — two substrates, three awareness capacities, and how different configurations produce different awareness profiles.</p><InteroceptiveArchitectureMap /></section>
 <section id="empathic-explorer" style={{ marginBottom: 48 }}><EmpathicIntegrationExplorer /></section>
 
 <ConnectionsMap color={MODEL_COLOR} connections={[

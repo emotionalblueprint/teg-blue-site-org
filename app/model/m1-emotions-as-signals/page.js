@@ -16,8 +16,8 @@ import {
   generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
-const EmotionSignalExplorer = dynamic(
-  () => import("@/src/components/framework-diagrams/EmotionSignalExplorer"),
+const M1EmotionsAsSignals = dynamic(
+  () => import("@/src/components/M1EmotionsAsSignals"),
   { ssr: false }
 );
 
@@ -117,6 +117,9 @@ export default function M1EmotionsAsSignalsPage() {
               M1 provides the conceptual foundation for that approach. It defines emotions as information-bearing biological events and establishes the architecture needed for later models of state activation, distortion, accumulation, and repair.
             </p>
           </section>
+
+          {/* ─── SIGNAL MAP DIAGRAM ────────────────────── */}
+          <M1EmotionsAsSignals />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section
@@ -342,113 +345,6 @@ export default function M1EmotionsAsSignalsPage() {
             </div>
           </section>
 
-          {/* ─── SIGNAL MAP ────────────────────────────── */}
-          <section
-            id="signal-map"
-            aria-labelledby="heading-signal-map"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-signal-map"
-              style={sectionHeadingStyle(MODEL_COLOR)}
-            >
-              The Signal Map
-            </h2>
-
-            <p style={proseStyle}>
-              The somatic/relational distinction determines the structure of the signal library. Within each type, emotions are grouped by the physiological response pattern the nervous system generates — the body signature.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 1fr 1.5fr", minWidth: 600 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Emotion</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Signal Content</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Type</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Body Signature</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Fear</div>
-                <div style={gridCellStyle}>Threat detected</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Mobilization</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
-                <div style={gridCellStyle}>Boundary crossed</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Mobilization</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Stress</div>
-                <div style={gridCellStyle}>Demand-resource mismatch</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Mobilization</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anxiety</div>
-                <div style={gridCellStyle}>Anticipatory threat</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Mobilization</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Disgust</div>
-                <div style={gridCellStyle}>Contamination detected</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Expulsion</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Joy</div>
-                <div style={gridCellStyle}>Safety confirmed</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Approach & Expansion</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Happiness</div>
-                <div style={gridCellStyle}>Sustained positive condition</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Approach & Expansion</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Admiration</div>
-                <div style={gridCellStyle}>Value detected in another</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Approach & Expansion</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Pride</div>
-                <div style={gridCellStyle}>Own value recognized</div>
-                <div style={gridCellStyle}>Somatic</div>
-                <div style={gridCellStyle}>Approach & Expansion</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Shame</div>
-                <div style={gridCellStyle}>Belonging at risk</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Social Withdrawal</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Guilt</div>
-                <div style={gridCellStyle}>Harm done</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Social Withdrawal</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sadness</div>
-                <div style={gridCellStyle}>Loss</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Conservation</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Love</div>
-                <div style={gridCellStyle}>Bond</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Bonding & Proximity</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Trust</div>
-                <div style={gridCellStyle}>Safety confirmed in a specific person</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Bonding & Proximity</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gratitude</div>
-                <div style={gridCellStyle}>Something needed was received</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Bonding & Proximity</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Compassion</div>
-                <div style={gridCellStyle}>The other{"'"}s state resonates</div>
-                <div style={gridCellStyle}>Relational</div>
-                <div style={gridCellStyle}>Bonding & Proximity</div>
-              </div>
-            </div>
-          </section>
-
           {/* ════════════════════════════════════════════════ */}
           {/* PART 3: THE ARCHITECTURE                        */}
           {/* ════════════════════════════════════════════════ */}
@@ -573,24 +469,6 @@ export default function M1EmotionsAsSignalsPage() {
                 </p>
               </ExpandableSection>
             </div>
-          </section>
-
-          {/* ════════════════════════════════════════════════ */}
-          {/* THE SIGNAL LIBRARY — Interactive Explorer        */}
-          {/* ════════════════════════════════════════════════ */}
-
-          <PartDivider label="EXPLORE" title="The Signal Library" color={MODEL_COLOR} />
-
-          <section
-            id="signal-library"
-            aria-labelledby="heading-signal-library"
-            style={{ marginBottom: 48 }}
-          >
-            <p style={{ ...proseStyle, marginBottom: 24 }}>
-              Select any signal below to see its full anatomy: what the nervous system detected, the physiological response pattern, what the signal needs to restore, and the body signature group it belongs to.
-            </p>
-
-            <EmotionSignalExplorer />
           </section>
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}

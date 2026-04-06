@@ -107,6 +107,11 @@ export default function M2NervousSystemStatesPage() {
             </p>
           </section>
 
+          {/* ─── COMPASS DIAGRAM ───────────────────────── */}
+          <section id="compass-explorer" style={{ marginBottom: 48 }}>
+            <FluidCompassExplorer />
+          </section>
+
           {/* CORE PROPOSITIONS */}
           <section id="core-propositions" aria-labelledby="heading-core-propositions" style={{ marginBottom: 48 }}>
             <h2 id="heading-core-propositions" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>
@@ -500,16 +505,6 @@ export default function M2NervousSystemStatesPage() {
                 <p style={expandedProseStyle}>TEG-Blue proposes an account of the gap between understanding and change through the distinction between two information systems: a faster emotional-somatic system and a slower cognitive-logical system. This clarifies why insight may be real and still not be enough.</p>
               </ExpandableSection>
             </div>
-          </section>
-
-          {/* THE COMPASS — Interactive Explorer */}
-          <PartDivider label="EXPLORE" title="The Inner Compass" color={MODEL_COLOR} />
-
-          <section id="compass-explorer" style={{ marginBottom: 48 }}>
-            <p style={{ ...proseStyle, marginBottom: 24 }}>
-              The Inner Compass maps the four-state gradient. The compass position represents the Current State Position — where the nervous system is organised right now. Move through the gradient to see how each state reorganizes perception, cognition, empathy, and relational capacity.
-            </p>
-            <FluidCompassExplorer />
           </section>
 
           {/* CONNECTIONS MAP */}

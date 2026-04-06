@@ -55,6 +55,11 @@ export default function M3RegulationCapacitiesPage() {
             <p style={proseStyle}>The branching point is not dramatic. It is a learned pattern, often running below awareness: cognition deciding the signal is irrelevant, the body receiving no biological resolution. The consequences unfold from there — measurable, progressive, and in chronic states, invisible to the person inside them.</p>
           </section>
 
+          {/* ─── PATH A / PATH B DIAGRAM ───────────────── */}
+          <section id="path-explorer" style={{ marginBottom: 48 }}>
+            <OpenCycleExplorer />
+          </section>
+
           <section id="core-propositions" aria-labelledby="heading-cp" style={{ marginBottom: 48 }}>
             <h2 id="heading-cp" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
@@ -258,13 +263,6 @@ export default function M3RegulationCapacitiesPage() {
               <ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Koob & Le Moal (2001) — the allostatic model: tolerance, escalation, dependence. Robinson & Berridge (2003) — incentive sensitisation independent of subjective pleasure. Maier & Seligman (2016) — controllability as a modulator of the stress response.</p></ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>No restoration substitute contains its own stopping mechanism — the biological completion sequence does. Escalation as a physiological inevitability when the body{"'"}s designed completion mechanism is unavailable.</p></ExpandableSection>
             </div>
-          </section>
-
-          <PartDivider label="EXPLORE" title="Path A and Path B" color={MODEL_COLOR} />
-
-          <section id="path-explorer" style={{ marginBottom: 48 }}>
-            <p style={{ ...proseStyle, marginBottom: 24 }}>Explore the two pathways: Path A where biological restoration completes and the nervous system returns to baseline, and Path B where cognitive override blocks the sequence and the body carries the activation forward.</p>
-            <OpenCycleExplorer />
           </section>
 
           <ConnectionsMap color={MODEL_COLOR} connections={[
