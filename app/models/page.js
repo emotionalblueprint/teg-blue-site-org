@@ -1,4 +1,5 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
   hexToRgba,
@@ -7,6 +8,11 @@ import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
   PartDivider, ExpandableSection,
 } from "@/src/components";
+
+const ESCCycleDiagram = dynamic(
+  () => import("@/src/components/ESCCycleDiagram"),
+  { ssr: false }
+);
 import {
   proseStyle, expandedProseStyle, expandableRowStyle,
   conceptHeadingStyle,
@@ -167,6 +173,11 @@ export default function ModelsPage() {
               </p>
             </ExpandableSection>
           </div>
+        </section>
+
+        {/* ─── CYCLE DIAGRAM ──────────────────────────────── */}
+        <section style={{ marginBottom: 40 }}>
+          <ESCCycleDiagram />
         </section>
 
         {/* ─── The Stages ─────────────────────────────────── */}
