@@ -119,7 +119,7 @@ export default function F1EmotionalGradientPage() {
             subtitle="The Biological Origin of the Emotional Somatic Cycle"
             description="The four models describe what the Emotional Somatic Cycle does — signals fire, states shift, the restoration sequence completes or remains unresolved, awareness determines whether any of it is observable. F1 asks why. What biological architecture produces this system? Why do independent research traditions converge on the same structure? And what governs the entire framework system when the body's restoration sequence cannot complete?"
             group="Individual"
-            groupLabel="Individual Arc · F1-F3"
+            groupLabel="Individual Arc · F1–F3"
             threadLine="Biological restoration — the body completing its own cycle. Cost: none — the designed process"
             informsModels={[
               { label: "M2", href: "/model/m2-nervous-system-states" },

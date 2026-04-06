@@ -104,7 +104,7 @@ export default function F7DominationRegulatesPage() {
               subtitle="How Defense Becomes Strategy Becomes Domination"
               description="How bias (F6) hardens into enforcement — through escalation driven by reinforcement, not character — producing a five-stage pathway from fear activation through power preservation, with identifiable markers and intervention windows at each stage. The final framework in the collective arc (F4–F7), completing the regulation thread from F1 through F7."
               group="Collective"
-              groupLabel="Collective · F4–F7"
+              groupLabel="Collective Arc · F4–F7"
               threadLine="Domination regulates · Cost: Everything"
               informsModels={[
                 { label: "M2", href: "/model/m2-nervous-system-states" },

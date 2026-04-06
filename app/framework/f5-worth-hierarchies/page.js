@@ -103,7 +103,7 @@ export default function F5WorthHierarchiesPage() {
               subtitle="How Rules Become Sorting Systems"
               description="How threat-stabilized rule systems (F4) produce worth hierarchies — through the nervous system's orientation toward whatever signals safety — and how those hierarchies formalize into self-reinforcing sorting systems that distribute credibility, resources, and protection based on signal access rather than intrinsic worth. The second framework in the collective arc (F4–F7), mapping how structural sorting determines access to the safety conditions that M2 development and M3 restoration require."
               group="Collective"
-              groupLabel="Collective · F4–F7"
+              groupLabel="Collective Arc · F4–F7"
               threadLine="Worth hierarchies regulate · Cost: Equity"
               adjacent={{
                 prev: { label: "F4 Rules Regulate", href: "/framework/f4-rules-regulate" },

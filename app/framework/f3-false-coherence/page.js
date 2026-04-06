@@ -106,7 +106,7 @@ export default function F3FalseCoherencePage() {
               subtitle="The Lock"
               description="F1 described the instrument. F2 described the calibration. F3 describes why the calibration persists. When higher-order cognition comes online, it arrives inside a nervous system already shaped by everything F2 described — and it does not passively carry the configuration forward. It actively maintains it, generating narrative substitutes that produce physiological relief, reinforcing the pattern through the relief they provide, and making the locked state invisible by constructing a coherent story around it."
               group="Individual"
-              groupLabel="Individual Arc · F1-F3"
+              groupLabel="Individual Arc · F1–F3"
               threadLine="False coherence — the CLS replacing the ESS's signals with narrative. Cost: truth"
               informsModels={[
                 { label: "M3", href: "/model/m3-regulation-capacities" },

@@ -820,7 +820,7 @@ function ExpandableFrameworkCard({ framework }) {
               Read full framework →
             </Link>
             <a
-              href={`https://teg-blue.com/mapping-system/following-nervous-system/${framework.id.toLowerCase()}`}
+              href="https://teg-blue.com/emotional-tools"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -833,7 +833,7 @@ function ExpandableFrameworkCard({ framework }) {
                 textDecoration: "none",
               }}
             >
-              View on teg-blue.com →
+              Explore tools on teg-blue.com →
             </a>
           </div>
         </div>

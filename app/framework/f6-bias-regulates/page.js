@@ -104,7 +104,7 @@ export default function F6BiasRegulatesPage() {
               subtitle="How Perception Becomes Protection"
               description="How worth-sorting (F5) becomes perceptual default — through bias operating as nervous system regulation rather than reasoning error — and why the resulting perceptual system resists correction even in intelligent, well-intentioned people. The third framework in the collective arc (F4–F7), explaining why M2 perception capacities produce distorted readings when M1 mode position is chronic."
               group="Collective"
-              groupLabel="Collective · F4–F7"
+              groupLabel="Collective Arc · F4–F7"
               threadLine="Bias regulates · Cost: Accuracy"
               adjacent={{
                 prev: { label: "F5 Worth Hierarchies", href: "/framework/f5-worth-hierarchies" },

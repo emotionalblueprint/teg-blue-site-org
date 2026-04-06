@@ -105,7 +105,7 @@ export default function F2AwarenessCalibrationPage() {
             subtitle="How the Relational Environment Calibrates the System"
             description="F1 described the biological architecture — why the Emotional Somatic Cycle exists, why biological restoration is the designed process, and why relational signals require another person as a biological completion requirement. F2 describes what happens developmentally when that completion requirement is — or is not — met. The relational environment determines whether the restoration pathway is learned, which awareness capacities develop, and what the nervous system carries forward when relational signals have no completion pathway at all."
             group="Individual"
-            groupLabel="Individual Arc · F1-F3"
+            groupLabel="Individual Arc · F1–F3"
             threadLine="Co-regulation to self-restoration (when learned). When not learned: the restoration pathway is never built. Cost: the return path"
             informsModels={[
               { label: "M2", href: "/model/m2-nervous-system-states" },
@@ -605,8 +605,8 @@ export default function F2AwarenessCalibrationPage() {
                 description: "F2 describes how the calibration is set during development. F3 describes why it persists — how cognition actively maintains the configuration through narrative substitution.",
               },
               {
-                id: "F8: Individual Repair",
-                href: "/framework/f8-individual-repair",
+                id: "F8: Awareness Rebuilds Through Safety",
+                href: "/framework/f8-repairing-awareness",
                 description: "F2 and F8 are structural counterparts on the regulation thread. F2 describes the restoration pathway not being built. F8 describes the restoration pathway being rebuilt — awareness restored through safety, not instruction.",
               },
             ]}
