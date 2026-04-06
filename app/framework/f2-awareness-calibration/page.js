@@ -153,7 +153,7 @@ export default function F2AwarenessCalibrationPage() {
               {
                 title: "Identity",
                 commonUnderstanding: "Who you really are underneath — a true self waiting to be discovered, or a personality type you were born with.",
-                definition: "A cognitive structure built from whatever data the CLS receives. Which awareness capacities developed determines what data is available. The CLS constructs a coherent narrative from that data — whether the data set is complete or not. Configuration, not character.",
+                definition: "A cognitive structure built from whatever data the CLS receives. Which awareness capacities developed determines what data is available. The CLS constructs a coherent narrative from that data — whether the data set is complete or not.",
               },
             ]}
           />
@@ -271,7 +271,7 @@ export default function F2AwarenessCalibrationPage() {
               When the infant's nervous system generates a relational signal — about belonging, connection, the state of the bond — the activation cannot complete through the body's own channels regardless of developmental stage. The signal's content is relational. The body generated activation about a relational condition. The designed resolution requires relational input: another person staying present, regulated, and available while the activation runs.
             </p>
             <p style={proseStyle}>
-              This is not dependency. It is the design specification. The ventral vagal system — the evolutionary innovation <Link href="/framework/f1-emotional-gradient#autonomic-architecture" style={linkStyle}>F1</Link> described — evolved specifically to make this possible: safety-through-relationship as a biological pathway. Through co-regulation, the child's nervous system encodes that belonging signals complete when another person stays. That shame signals complete when another person remains present without withdrawing. That grief signals complete when another person holds the space while the activation runs.
+              The ventral vagal system — the evolutionary innovation <Link href="/framework/f1-emotional-gradient#autonomic-architecture" style={linkStyle}>F1</Link> described — evolved specifically to make this possible: safety-through-relationship as a biological pathway. Through co-regulation, the child's nervous system encodes that belonging signals complete when another person stays. That shame signals complete when another person remains present without withdrawing. That grief signals complete when another person holds the space while the activation runs.
             </p>
 
             <h3 style={conceptHeadingStyle}>When Co-Regulation Is Unavailable</h3>
@@ -332,7 +332,7 @@ export default function F2AwarenessCalibrationPage() {
 
             <h3 style={conceptHeadingStyle}>Perceiving What Others Feel</h3>
             <p style={proseStyle}>
-              The capacity to detect and interpret others' emotional states through external channels: facial expression, vocal prosody, body language, behavioural patterns. This is a cognitive capacity — it operates through observation and interpretation, not through the body's own felt experience. This is <strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE)</strong> — a CLS capacity operating through the external observation substrate.
+              The capacity to detect and interpret others' emotional states through external channels: facial expression, vocal prosody, body language, behavioral patterns. This is a cognitive capacity — it operates through observation and interpretation, not through the body's own felt experience. This is <strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE)</strong> — a CLS capacity operating through the external observation substrate.
             </p>
             <p style={proseStyle}>
               This capacity develops through the caregiver's own perceptual accuracy. A caregiver who reads the child's signals and responds to what the child is actually experiencing provides an environment where the child's affect perception calibrates toward accuracy. In an unpredictable environment, affect perception overdevelops into hypervigilance — the child reads everything because survival depends on detecting the change before it arrives. In an incongruent environment, it calibrates to surface performance rather than authenticity.
@@ -433,7 +433,7 @@ export default function F2AwarenessCalibrationPage() {
               The caregiver's RE is instrumental — reading the child for compliance and control. ER is shut down. SEA is absent. The caregiver's nervous system is chronically organized around Strategy & Management or Power & Dominance — experienced not as a stuck state but as competence, as maturity.
             </p>
             <p style={proseStyle}>
-              The caregiver transmits their nervous system state while being unaware it is one. They cannot offer what they cannot perceive — and they cannot perceive it because perceiving their own autonomic configuration as a configuration would require the SEA their own developmental environment did not build. The invalidation is not intentional. It is the structural output of a nervous system that has no channel to observe itself.
+              The caregiver transmits their nervous system state while being unaware it is one. They cannot offer what they cannot perceive — and they cannot perceive it because perceiving their own autonomic configuration as a configuration would require the SEA their own developmental environment did not build. The structural output of a nervous system that has no channel to observe itself.
             </p>
             <p style={proseStyle}>
               What develops in the child: RE develops instrumentally — reading for what the environment demands. ER shuts down — affect was punished or treated as weakness. SEA never develops — internal experience is explicitly declared wrong: "Don't be so sensitive," "Stop crying." The relational completion pathway is blocked: the child learns to suppress activation rather than complete it. The interoceptive substrate is never built — the anterior insula never develops the mapping precision that co-regulation would have provided.
@@ -477,7 +477,7 @@ export default function F2AwarenessCalibrationPage() {
             </h2>
 
             <p style={proseStyle}>
-              When the body's restoration sequence cannot complete — because co-regulation was unavailable or insufficient — the consequences follow the distinction between somatic and relational signals. Somatic signals may find partial completion through the body's own channels. Relational signals accumulate without resolution. Every signal the nervous system generated about belonging, connection, rejection, shame — every signal whose designed completion required another person — remains physiologically unresolved. The cortisol did not metabolise. The muscular bracing did not release. The HPA axis did not receive the all-clear. The debris from those signals is carried forward — not as emotional memory, but as physiology. As elevated cortisol. As chronic muscular tension. As inflammatory compounds that never cleared. As baseline.
+              When the body's restoration sequence cannot complete — because co-regulation was unavailable or insufficient — the consequences follow the distinction between somatic and relational signals. Somatic signals may find partial completion through the body's own channels. Relational signals accumulate without resolution. Every signal the nervous system generated about belonging, connection, rejection, shame — every signal whose designed completion required another person — remains physiologically unresolved. The cortisol did not metabolize. The muscular bracing did not release. The HPA axis did not receive the all-clear. The debris from those signals is carried forward — not as emotional memory, but as physiology. As elevated cortisol. As chronic muscular tension. As inflammatory compounds that never cleared. As baseline.
             </p>
             <p style={proseStyle}>
               This produces three sequential consequences.
@@ -489,7 +489,7 @@ export default function F2AwarenessCalibrationPage() {
               <strong style={{ color: TEXT.primary }}>Second: a chronic defensive state.</strong> One nervous system state becomes the default operating position regardless of context — the only state the system has learned to sustain, because the return pathway that would allow the system to shift back to physiological baseline was never encoded through co-regulation.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Third: loss of state flexibility.</strong> The system that should shift fluidly across the gradient is locked. Not because the biological mechanism is broken. Because the return pathway was never wired — and the relational signals whose resolution would require relational completion are still running, still unresolved.
+              <strong style={{ color: TEXT.primary }}>Third: loss of state flexibility.</strong> The system that should shift fluidly across the gradient is locked. The return pathway was never wired — and the relational signals whose resolution would require relational completion are still running, still unresolved.
             </p>
             <p style={proseStyle}>
               From inside, the locked state does not feel like a lock. It feels like accurate perception. The person whose nervous system is chronically organized around Strategy & Management — cortisol chronically elevated, cognitive systems organized around anticipation and control — experiences this as competence. Each locked state is invisible to the person inside it because perceiving one's own nervous system configuration as a configuration requires the SEA that the developmental conditions did not build.
@@ -533,7 +533,7 @@ export default function F2AwarenessCalibrationPage() {
                     "Condition 1 (unpredictable)",
                     "Substrate partially and unstably developed. ER floods or shuts down. SEA absent.",
                     "Unstable or flooded ESS data + hypervigilant external reading (RE) + own output",
-                    "Narrative organised around scanning — the CLS monitors externally because internal data is unreliable",
+                    "Narrative organized around scanning — the CLS monitors externally because internal data is unreliable",
                   ]} />
                 </tbody>
               </table>
@@ -553,7 +553,7 @@ export default function F2AwarenessCalibrationPage() {
               The capacity profile replicates across generations without anyone choosing to transmit it. The transmission unit is not beliefs, intentions, or parenting philosophy. It is the caregiver's autonomic state and capacity profile — the same variables that shaped the child's development now operating one generation forward. The four nervous system states are the transmission mechanism: the caregiver's chronic state determines which awareness capacities are available in the co-regulatory environment, the child develops a capacity profile that produces a chronic state, and that state becomes the next child's developmental environment. Each link in the chain is invisible to the person carrying it — because each person experiences their chronic state as identity, not as a nervous system configuration.
             </p>
             <p style={proseStyle}>
-              The chain replicates until the capacity profile changes. Not until behaviour changes. Not until intention changes. Until the caregiver's own nervous system develops capacities it did not have — through the same relational conditions that would have built them in the first place.
+              The chain replicates until the capacity profile changes. Not until behavior changes. Not until intention changes. Until the caregiver's own nervous system develops capacities it did not have — through the same relational conditions that would have built them in the first place.
             </p>
 
             {/* Section diagram placeholder */}
