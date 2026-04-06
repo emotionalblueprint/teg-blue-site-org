@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,41 +24,42 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
-  { label: "Core Propositions", href: "#core-propositions", description: "False coherence is regulation — cognition maintaining stability when somatic regulation is offline. The self-reinforcing loop maintains the stuck compass in adulthood." },
-  { label: "Overview", href: "#overview", description: "F2 sets the calibration. F3 explains why it holds. Cognition replaces emotional signals with invented narratives." },
-  { label: "The Core Mechanism", href: "#core-mechanism", description: "Emotional signals arrive, cognition intercepts and replaces them, the replacement produces physiological relief." },
-  { label: "False Coherence", href: "#self-reinforcing-loop", description: "A coherent internal story that feels true, functions as identity, and resists correction." },
-  { label: "Beliefs as Nervous System Events", href: "#cognitive-dissonance", description: "Cognitive dissonance is a regulatory response, not a logical error." },
-  { label: "Identity Under Threat", href: "#regulatory-defense", description: "When false coherence is challenged, the nervous system responds in proportion to the regulatory threat." },
-  { label: "The Self-Awareness Split", href: "#cognition-across-gradient", description: "Sharp pattern-reading capacity while SEA remains offline — intellectually sophisticated about everyone else." },
-  { label: "Emotional Distortion", href: "#relational-turn", description: "Internal discomfort gets reclassified as external attack. Retaliation feels like self-defence." },
-  { label: "External Regulation", href: "#external-regulation", description: "When internal processing is unavailable, others must provide regulation. Four modes, four strategies." },
-  { label: "The Regulation Thread", href: "#regulation-thread", description: "The critical turn: from biological return through developmental failure to cognitive replacement." },
-  { label: "What This Framework Establishes", href: "#establishes", description: "False coherence defined, the self-reinforcing loop mapped, emotional distortion and external regulation named." },
-  { label: "Research Foundations", href: "#research-foundations", description: "Psychoanalytic theory, cognitive psychology, neuroscience, trauma studies, and attachment." },
-  { label: "Bridge to F4", href: "#bridge-to-f4", description: "What happens when enough people running these mechanisms are in proximity." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F3 makes about how cognition maintains the developmental calibration." },
+  { label: "The CLS Arrives Inside a Configured System", href: "#cls-arrives", description: "Three simultaneous conditions: no state flexibility, unresolved activation load, no interoceptive channel." },
+  { label: "Cognitive Override as Default Architecture", href: "#override-architecture", description: "Override is not a choice — it is the only mode of operation the CLS has ever known." },
+  { label: "False Coherence", href: "#false-coherence", description: "The CLS generating narrative that replaces the ESS's physiological signals — a restoration substitute operating through cognition." },
+  { label: "The Self-Reinforcing Loop", href: "#self-reinforcing-loop", description: "Each narrative cycle strengthens the pattern. Why insight alone fails." },
+  { label: "Cognitive Dissonance as Regulatory Threat", href: "#cognitive-dissonance", description: "Challenging the narrative threatens the mechanism keeping the system stable." },
+  { label: "Growth Narratives Serving Regulation", href: "#growth-narratives", description: "Skills without capacities — the identity upgrades that change the narrative without changing the configuration." },
+  { label: "Emotional Distortion", href: "#emotional-distortion", description: "Internal activation misattributed as external threat when SEA is absent." },
+  { label: "Restoration Substitutes in Relationships", href: "#restoration-substitutes", description: "The nervous system recruiting others to perform the regulatory function." },
+  { label: "From Individual to Collective", href: "#individual-to-collective", description: "The same CLS that maintains individual false coherence absorbs and enforces collective rules." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
+  { label: "Bridge to F4", href: "#bridge", description: "The lock meets the rule system." },
+  { label: "Connections Map", href: "#connections", description: "How F3 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
-// ─── METADATA ──────────────────────────────────────────────
+// ─── METADATA ───────────────────────────��──────────────────
 
 export const metadata = {
   title: "Adult Cognition & False Coherence (F3) | TEG-Blue Research",
   description:
-    "How cognition maintains what the body never learned to regulate — false coherence, the self-reinforcing loop, emotional distortion, and external regulation. Framework F3 of 12.",
+    "How cognition maintains the developmental calibration — cognitive override as default architecture, false coherence as restoration substitute, and why the locked state extends into relationships through emotional distortion and external regulation. Framework F3 of the TEG-Blue 12-framework system.",
   keywords: [
     "false coherence",
-    "cognitive regulation",
+    "cognitive override",
+    "restoration substitute",
     "emotional distortion",
     "external regulation",
     "self-reinforcing loop",
     "cognitive dissonance",
-    "regulatory defense",
-    "identity upgrades",
-    "cognitive rigidity",
-    "self-emotional awareness",
-    "emotional technology",
+    "interoceptive self-awareness",
+    "signal replacement",
     "nervous system regulation",
+    "chronic state organisation",
+    "boundary-evidence loop",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f3-false-coherence",
@@ -66,7 +67,7 @@ export const metadata = {
   openGraph: {
     title: "Adult Cognition & False Coherence — F3 Framework | TEG-Blue",
     description:
-      "How cognition maintains what the body never learned to regulate. False coherence, emotional distortion, and external regulation. Framework F3 of the TEG-Blue 12-framework system.",
+      "How cognition maintains what development set — cognitive override as architecture, false coherence as restoration substitute, and why the internal system extends into relationships. Framework F3 of 12.",
     url: "https://teg-blue.org/framework/f3-false-coherence",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -75,7 +76,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Adult Cognition & False Coherence — TEG-Blue F3",
     description:
-      "How cognition maintains what the body never learned to regulate. The cognitive maintenance framework of the TEG-Blue system.",
+      "How cognition maintains what development set. The cognitive maintenance framework — why the calibration persists and what it does to others.",
   },
   other: {
     'citation_title': 'Adult Cognition and False Coherence',
@@ -88,6 +89,8 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F3FalseCoherencePage() {
+  const accent = SPECTRUM.cobalt;
+
   return (
     <div
       style={{
@@ -101,26 +104,46 @@ export default function F3FalseCoherencePage() {
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F3"
-              title="Adult Cognition & False Coherence"
-              subtitle="The Lock"
-              description="F1 described the instrument. F2 described the calibration. F3 describes why the calibration persists. When higher-order cognition comes online, it arrives inside a nervous system already shaped by everything F2 described — and it does not passively carry the configuration forward. It actively maintains it, generating narrative substitutes that produce physiological relief, reinforcing the pattern through the relief they provide, and making the locked state invisible by constructing a coherent story around it."
-              group="Individual"
-              groupLabel="Individual Arc · F1–F3"
-              threadLine="False coherence — the CLS replacing the ESS's signals with narrative. Cost: truth"
-              informsModels={[
-                { label: "M3", href: "/model/m3-regulation-capacities" },
-                { label: "M4", href: "/model/m4-awareness-capacities" },
-              ]}
-              adjacent={{
-                prev: { label: "F2 Developmental Calibration", href: "/framework/f2-awareness-calibration" },
-                next: { label: "F4 Rules Regulate", href: "/framework/f4-rules-regulate" },
-              }}
-            />
+            badge="FRAMEWORK F3"
+            title="Adult Cognition & False Coherence"
+            subtitle="The Lock"
+            description="F1 described the biological substrate — why the Emotional Somatic Cycle exists and what biological restoration is designed to do. F2 described how the system gets calibrated through the relational environment — and what happens when co-regulation is unavailable. F3 describes why the calibration persists. When higher-order cognition arrives inside a nervous system already shaped by its developmental conditions, it does not passively carry the configuration forward. It actively maintains it — generating narrative substitutes that produce physiological relief, reinforcing the pattern through the relief they provide, and making the locked state invisible by constructing a coherent story around it."
+            group="Individual"
+            groupLabel="Individual Arc · F1–F3"
+            threadLine="False coherence — the CLS replacing the ESS's signals with narrative. Scale: individual cognition. Cost: truth"
+            informsModels={[
+              { label: "M3", href: "/model/m3-regulation-capacities" },
+              { label: "M4", href: "/model/m4-awareness-capacities" },
+            ]}
+            adjacent={{
+              prev: { label: "F2 Developmental Calibration", href: "/framework/f2-awareness-calibration" },
+              next: { label: "F4 Rules Regulate", href: "/framework/f4-rules-regulate" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
+          {/* ─── ANNA'S INTRO ────────────────────────────── */}
+          <div style={{ ...proseStyle, fontStyle: "italic", borderLeft: `3px solid ${hexToRgba(accent, 0.3)}`, paddingLeft: 20, marginBottom: 32 }}>
+            <p style={{ ...proseStyle, marginBottom: 12 }}>
+              F3 establishes a foundational claim of TEG-Blue: <strong style={{ color: TEXT.primary }}>when cognition develops inside a nervous system organized around unresolved activation, it does not simply interpret that organization. It helps maintain it.</strong>
+            </p>
+            <p style={{ ...proseStyle, marginBottom: 12 }}>
+              If F1 defines the biological signal system, and F2 explains how chronic calibration emerges, F3 examines what happens next. Higher-order cognition comes online inside an already shaped system and begins generating the narratives that preserve its existing configuration. These narratives are not merely explanations. They are regulatory tools. They reduce distress, stabilize identity, and create a felt sense of coherence even when the underlying emotional truth remains unprocessed. TEG-Blue names this mechanism <strong style={{ color: TEXT.primary }}>false coherence</strong>.
+            </p>
+            <p style={{ ...proseStyle, marginBottom: 12 }}>
+              False coherence is not framed here as simple self-deception or faulty reasoning. It is a form of <strong style={{ color: TEXT.primary }}>cognitive regulation</strong>. When emotional signals cannot be adequately received or resolved, cognition constructs substitutes that organize experience in their place. The resulting narrative can feel internally consistent, morally certain, and experientially real because it produces physiological relief. The relief is genuine. The coherence is functional. But what has been achieved is stability, not integration.
+            </p>
+            <p style={{ ...proseStyle, marginBottom: 12 }}>
+              This is the central distinction of F3. The issue is not whether a person's story feels true to them. The issue is whether cognition is integrating the emotional signal or replacing it. Once replacement becomes the dominant strategy, the pattern reinforces itself. Identity hardens around the substitute, contradictory information becomes more threatening, and relational consequences begin to emerge through distortion, projection, and external regulation.
+            </p>
+            <p style={proseStyle}>
+              F3 lays the conceptual foundation for understanding adult cognition as part of the regulation architecture itself. It shows how unresolved patterns become narratively maintained, why coherence can persist at the cost of truth, and why lasting change requires more than insight alone.
+            </p>
+          </div>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
@@ -132,930 +155,642 @@ export default function F3FalseCoherencePage() {
             {
               concept: "Interoceptive Self-Awareness (SEA)",
               framework: "F2",
-              description: "Perceiving one's own internal states while they are happening — the interoceptive channel between the ESS and the CLS. When never built, the CLS operates without body data.",
-              href: "/framework/f2-awareness-calibration#sea",
+              description: "The capacity to perceive one's own internal states while they are happening — the interoceptive channel between the ESS and the CLS. When never built, the CLS operates without the body's data.",
+              href: "/framework/f2-awareness-calibration#awareness-capacities",
             },
             {
-              concept: "Chronic State Organisation",
+              concept: "Three Adverse Conditions",
               framework: "F2",
-              description: "When the nervous system never learned to return to physiological baseline, a temporary state becomes the permanent configuration the person lives inside.",
-              href: "/framework/f2-awareness-calibration#chronic-states",
+              description: "Unpredictable, incongruent, and invalidating developmental environments — each producing a different capacity profile and a different state of interoceptive access.",
+              href: "/framework/f2-awareness-calibration#disruption-conditions",
             },
           ]} />
 
-          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
           <CommonUnderstanding
             terms={[
               {
-                title: "False Coherence",
-                commonUnderstanding: "Self-deception, denial — lying to yourself about what's really happening.",
-                definition: "Cognitive regulation — the mind building narratives that maintain the current mode's regulation strategy. Cognition doing the only job it knows how to do when somatic regulation is offline. The narrative reduces threat. The reduction feels like clarity. The clarity hardens into certainty.",
+                title: "Self-deception",
+                commonUnderstanding: "Lying to yourself — knowing the truth and choosing to deny it.",
+                definition: "Cognitive regulation. The CLS, operating without the interoceptive channel, constructs narrative from its own output — reasoning, language, abstraction. The narrative coheres. The narrative regulates. The person is not denying truth. They have no channel through which to receive it.",
+              },
+              {
+                title: "Insight",
+                commonUnderstanding: "The breakthrough that changes everything — once you understand the pattern, you can stop it.",
+                definition: "A cognitive event inside the system running the replacement. The CLS can describe the pattern with precision and still be living inside it — because understanding is a CLS operation, and the state is an ESS condition, and the interoceptive channel between them is absent.",
               },
               {
                 title: "Projection",
                 commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
-                definition: "Outsourced regulation — mode-calibrated scanning that detects threats to the active regulation pathway. Reading the world through settings designed to protect your only return path. Without SEA (Interoceptive Self-Awareness), the scanning feels like accurate perception.",
-              },
-              {
-                title: "Validation-Seeking",
-                commonUnderstanding: "Insecurity, neediness — fishing for compliments, needing constant reassurance.",
-                definition: "Emotional regulation — the nervous system seeking external confirmation to settle activation that SEA (Interoceptive Self-Awareness) cannot process internally. When the internal signal is missing, the system looks outward for what it cannot generate from within.",
+                definition: "Internal physiological activation misattributed as external threat when the interoceptive channel is absent. The body activates. The CLS, with no pathway to register the activation as internal, constructs the only explanation available from its data: someone did this to me. The reattribution is sincere.",
               },
             ]}
           />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
-          <section
-            id="core-propositions"
-            aria-labelledby="heading-core-propositions"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-core-propositions"
-              style={sectionHeadingStyle(SPECTRUM.cobalt)}
-            >
-              Core Propositions
-            </h2>
-            <PropositionBox label="FOUNDATIONAL CLAIM">
-              <ul style={{ paddingLeft: 20, margin: 0 }}>
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
                 <li style={propositionItemStyle}>
-                  Cognition recruited into threat service during childhood does not just miss emotional signals — it actively replaces them with invented narratives
+                  The CLS arrives inside a nervous system already configured — a chronic state already set, unresolved activation load already present, no interoceptive channel between the ESS and the CLS
                 </li>
                 <li style={propositionItemStyle}>
-                  False coherence is regulatory success at the cost of emotional truth — cognition regulating what the body was never taught to regulate
+                  Cognitive override is not an event that happens at a specific moment — it is the permanent architecture of a system built without the interoceptive channel
                 </li>
                 <li style={propositionItemStyle}>
-                  The replacement process self-reinforces: each successful replacement teaches the system "this works" and deepens the disconnect from the biological return
+                  False coherence is a restoration substitute that operates through narrative — the CLS generating stable accounts that produce physiological relief without completing the body's restoration sequence
                 </li>
                 <li style={propositionItemStyle}>
-                  Cognitive dissonance is a regulatory stress response — safety must precede truth, not the other way around
+                  Each chronic state produces its own characteristic false coherence — the narrative content is predictable from the state, the state is maintained by the narrative, and the lock is mutual
                 </li>
                 <li style={propositionItemStyle}>
-                  When Interoceptive Self-Awareness is structurally absent, internal discomfort becomes perceived external threat — emotional distortion is sincere misattribution — the nervous system reporting a threat source it cannot accurately locate
+                  Insight alone fails because cognition is inside the loop, not outside it — the exit is not more understanding but the conditions under which the body's restoration sequence can begin to run
                 </li>
                 <li style={propositionItemStyle}>
-                  External regulation — using others to manage what cannot be processed internally — is a structural necessity, expressed differently across each chronic mode
+                  Cognitive dissonance is an autonomic event, not a debate — challenging the narrative threatens the mechanism keeping the system stable
                 </li>
                 <li style={propositionItemStyle}>
-                  Understanding the mechanism does not excuse harm — it explains why the system escalates, so accountability can be paired with accurate intervention
+                  When SEA is absent, internal activation is misattributed as external threat — emotional distortion is a structural consequence, and the boundary-evidence loop makes the pattern self-reinforcing
+                </li>
+                <li style={propositionItemStyle}>
+                  External regulation — the nervous system recruiting others to perform the regulatory function — is expressed differently through each chronic state, and the substitute destroys the conditions genuine restoration would require
                 </li>
               </ul>
-            </PropositionBox>
-          </section>
+            </ExpandableSection>
+          </div>
 
-          {/* ─── OVERVIEW ─────────────────────────────────── */}
+          {/* ─── PART 1: WHAT COGNITION INHERITS ─────────── */}
+          <PartDivider label="PART 1" title="What Cognition Inherits" color={accent} />
+
+          {/* Concept 0: The CLS Arrives Inside a Configured System */}
           <section
-            id="overview"
-            aria-labelledby="heading-overview"
+            id="cls-arrives"
+            aria-labelledby="heading-cls-arrives"
             style={{ marginBottom: 48 }}
           >
-            <h2
-              id="heading-overview"
-              style={sectionHeadingStyle(SPECTRUM.cobalt)}
-            >
-              Overview — The Cognitive Maintenance Framework
+            <h2 id="heading-cls-arrives" style={sectionHeadingStyle(accent)}>
+              The CLS Arrives Inside a Configured System
             </h2>
 
             <p style={proseStyle}>
-              F1 defines the complete instrument — the Inner Compass with its four modes, the gradient, Biological Restoration. F2 explains how the instrument gets calibrated — and what happens when the calibration goes wrong. F3 explains what happens next: how the identity structure built in childhood <em>maintains itself</em> in adulthood — and why it is so hard to break.
+              Higher-order cognition does not develop in a vacuum. The prefrontal cortex matures, language emerges, abstract reasoning comes online — and all of it builds inside a nervous system that is already organized. By the time the Cognitive-Logical System (CLS) is operational, the Emotional Somatic System (ESS) has been running for years. The autonomic configuration is already set. The capacity profile — which awareness capacities developed and which did not — is already in place. The body is already carrying the unresolved activation load from every relational signal whose designed completion was never available.
             </p>
             <p style={proseStyle}>
-              The central mechanism is <strong style={{ color: TEXT.primary }}>false coherence</strong>: cognition, still on threat duty from childhood, actively replacing emotional signals with its own invented narratives. The result is a stable internal story that feels true, functions as identity, and is experienced as "just who I am" — while the emotional truth it replaced continues to press from underneath.
+              The CLS inherits three conditions simultaneously.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>A nervous system without State Flexibility.</strong> The body does not know what returning to physiological baseline feels like — because biological restoration was never learned through co-regulation. The nervous system cannot shift back after activation. It is stuck in whatever chronic state the developmental conditions produced. The person is not experiencing a state. The person is experiencing what feels like reality — because the chronic state is the only reality they have ever known.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>A body carrying unresolved activation load.</strong> Every relational signal the nervous system generated about belonging, connection, rejection, shame — signals whose designed completion required another person, and that person was not available — is still physiologically present. Not as narrative. Not as memory that can be recalled and reprocessed. As cortisol that never cleared. As muscle tension that never released. As an HPA axis that never received the all-clear. As a baseline that has been elevated since before the CLS came online.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>No interoceptive channel between the ESS and the CLS.</strong> Interoceptive Self-Awareness (SEA) — the capacity to perceive one's own internal states while they are happening — was never built. The interoceptive channel through which the CLS would receive the ESS's physiological signals does not exist. The CLS does not know the body is activated. It does not know the baseline is elevated. It has no information that the ESS is doing anything at all.
+            </p>
+            <p style={proseStyle}>
+              The CLS builds with whatever data it receives. When the interoceptive channel is open, the CLS receives physiological data — and its narrative reflects what the body is actually doing. When the interoceptive channel is absent, the CLS receives no physiological data. It constructs from its own output: reasoning, language, abstraction, narrative. The story it builds may be internally coherent. It does not reflect the body's state. The CLS is not lying. It is constructing reality from the only source available — and that source does not include the body.
             </p>
 
-            <KeyStatement>
-              The regulation thread: F1 defines Biological Restoration as the return mechanism. F2 shows what happens when the return path is never learned. F3 shows what cognition does in its place: false coherence.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — three inherited conditions converging */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Damasio (1994, 1999) — the somatic marker hypothesis: emotion as bodily signal that informs cognition. Without access to somatic markers, decision-making loses its biological ground. Porges (2011) — neuroception: safety-threat evaluation below conscious awareness, gating what cognition has access to. Schore (2003) — right-hemisphere affect regulation developing before left-hemisphere language; when the right-hemisphere foundation is not built, the left hemisphere constructs narrative without it.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The specification of three conditions the CLS inherits simultaneously — not as separate deficits, but as a single configuration. The absent interoceptive channel (SEA), the chronic state, and the unresolved load are not three problems. They are one condition: a cognitive system built inside a body it cannot feel, carrying activation it does not know is there, stuck in a state it experiences as identity. This configuration follows predictably from the developmental conditions <Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link> described. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 1: Cognitive Override as Default Architecture */}
+          <section
+            id="override-architecture"
+            aria-labelledby="heading-override-architecture"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-override-architecture" style={sectionHeadingStyle(accent)}>
+              Cognitive Override as Default Architecture
+            </h2>
 
             <p style={proseStyle}>
-              False coherence is not "bad thinking." It is a <strong style={{ color: TEXT.primary }}>regulation strategy</strong>: cognition managing what the body was never taught to process. The person can feel stable — even "logical" — while the underlying activation remains unresolved. The cost is truth, not function.
+              When the interoceptive channel was never built, the CLS does not experience itself as overriding anything. There is no moment of interception — no signal arriving that cognition then suppresses. The CLS operates in its own domain because it has no information that another domain exists. Override is not a choice the person keeps making. It is the architecture the system was built with.
             </p>
             <p style={proseStyle}>
-              F3 also traces what this system <em>does to the people around it</em>. When internal emotional processing is structurally unavailable, two mechanisms emerge: <strong style={{ color: TEXT.primary }}>emotional distortion</strong> — where internal discomfort, unable to be identified as one's own, gets reclassified as external attack — and <strong style={{ color: TEXT.primary }}>external regulation</strong> — where the system recruits other people's emotional states, compliance, or fear to manage what Interoceptive Self-Awareness (SEA) cannot process internally.
+              <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link> maps cognitive override as the branching point in the Emotional Somatic Cycle — the point where the CLS overrides the ESS's physiological signals and the restoration sequence cannot begin. <Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link> described the developmental conditions that produce this configuration. F3 adds: by the time the person is an adult, override is not an event that happens at a specific moment. It is the permanent condition of the system.
             </p>
             <p style={proseStyle}>
-              This is the critical turn in the regulation thread: from F1's biological return, through F2's developmental failure of that return, to F3's cognitive replacement of the return and its relational consequences. Every framework that follows — F4 through F7 — describes a different scale at which the substitutes operate. Rules regulate (F4). Worth hierarchies regulate (F5). Bias regulates (F6). Domination regulates (F7). Each is a substitute for the emotional regulation that was never built. The substitutes work. They just are not the return.
+              The ESS generates a signal — cortisol releases, muscles brace, heart rate shifts. The signal carries information: what was detected, what was crossed, what is needed. In a system where SEA is functional, the CLS registers this activation as data. It feels the cortisol. It notices the bracing. It receives the finding. In a system where SEA was never built, the signal runs — the body activates — and the CLS does not register it. The CLS continues in its own domain: planning, narrating, reasoning, managing. Not because it chose to ignore the signal. Because it has no equipment to detect the signal.
+            </p>
+            <p style={proseStyle}>
+              Where physiological data is absent, the CLS generates its own content. It produces narrative — explanations, interpretations, identity statements — that fill the space where somatic information would have been. "I'm not angry — I'm being logical." "That didn't hurt — I'm fine." "Nothing is wrong — I'm in control." These are not lies. They are the CLS's best construction from the data it has. The data it has does not include the body.
+            </p>
+            <p style={proseStyle}>
+              The consequence is structural invisibility. The person does not experience themselves as disconnected from their body — because they have never experienced connection. They do not notice that physiological signals are being overridden — because they have never consciously received one. The override is invisible not because it is hidden but because it is the only mode of operation the CLS has ever known.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — override as permanent architecture, not event */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Freud (1915, 1926) — defence mechanisms: repression, denial, rationalisation as automatic processes operating below awareness. Kahneman (2011) — System 1/System 2: fast automatic processing generating judgments that the slower deliberate system rationalises post-hoc. Haidt (2001) — the social intuitionist model: moral reasoning as post-hoc justification for intuitive judgments already formed. Porges (2011) — neuroception gating cognition: the nervous system determining what information reaches conscious awareness before the person can choose.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The reframing of cognitive override from an event to an architecture. In most clinical and psychological frameworks, cognitive defence is something that happens — a mechanism that activates in response to threat. TEG-Blue proposes that when SEA was never built, override is not something that activates. It is the permanent structure. The CLS was built inside a system already running override and was never exposed to the alternative. The task is not stopping the override — the person is not aware it is happening. The task is building the interoceptive channel that was never built, which requires the conditions <Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8</Link> describes. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 2: HOW COGNITION MAINTAINS ─────────── */}
+          <PartDivider label="PART 2" title="How Cognition Maintains" color={accent} />
+
+          {/* Concept 2: False Coherence */}
+          <section
+            id="false-coherence"
+            aria-labelledby="heading-false-coherence"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-false-coherence" style={sectionHeadingStyle(accent)}>
+              False Coherence
+            </h2>
+
+            <p style={proseStyle}>
+              The CLS does not simply fail to receive the ESS's signals. It replaces them. Where the ESS generated a physiological finding — cortisol signalling threat, muscle tension carrying unresolved activation, shame signalling relational damage — the CLS generates a narrative that takes the place of the signal. The narrative provides an explanation for the body's state that does not require the person to feel the state. This operation — signal replacement — is the core mechanism inside cognitive override when it operates through narrative.
+            </p>
+            <p style={proseStyle}>
+              The replacement produces physiological relief. When the narrative coheres — when the explanation holds together, when the identity feels stable — sympathetic activation decreases measurably. Cortisol dips. Muscle tension partially releases. The CLS registers the relief and encodes the strategy: this works. The substitution is reinforced. But the underlying activation — the unresolved activation load the body has been carrying — remains. The narrative suppressed the felt intensity without the restoration sequence running to its endpoint. The stress hormones rebound. The activation returns. The CLS generates another narrative.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>False coherence</strong> is the enduring narrative structure that repeated signal replacement produces. Not a single rationalisation. Not a momentary defence. A complete, self-consistent account of who the person is, why they do what they do, and what the world is like — constructed entirely from the CLS's own output, without input from the body's physiological signals. The narrative feels like self-knowledge. It functions as a restoration substitute.
+            </p>
+            <p style={proseStyle}>
+              Each chronic state produces its own characteristic false coherence:
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
               <table style={tableStyle}>
                 <thead>
                   <tr>
-                    <th style={thStyle}>Framework</th>
-                    <th style={thStyle}>The Regulation Thread</th>
+                    <th style={thStyle}>Chronic State</th>
+                    <th style={thStyle}>What the CLS Constructs</th>
+                    <th style={thStyle}>What It Replaces</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={[
-                    "F1 — Biological Information",
-                    "The biological return mechanism — Biological Restoration. How the body is designed to complete the activation cycle and return to baseline.",
-                  ]} />
-                  <TableRow cells={[
-                    "F2 — Awareness Calibration",
-                    "The developmental failure of the return. When Biological Restoration is never learned, the compass gets stuck. Cognition is recruited into threat service and taught the absence of regulation is correct.",
-                  ]} />
-                  <TableRow cells={[
-                    "F3 — False Coherence",
-                    "The cognitive replacement of the return. Cognition replaces emotional signals with invented narratives. The replacement is itself regulation — but at the cost of truth. The system extends into relationships through emotional distortion and external regulation.",
-                  ]} />
+                  <TableRow cells={["Safety & Openness (as survival)", "\"I'm just a caring person. I put others first because that's who I am.\"", "The physiological signals of unresolved relational need — the body's signals that something is missing, overridden by a narrative of chosen selflessness"]} />
+                  <TableRow cells={["Threat & Defence", "\"The world really is dangerous. I'm not paranoid — I'm realistic.\"", "The elevated baseline and narrowed perception produced by the chronic state — overridden by a narrative that the perception is accurate rather than state-locked"]} />
+                  <TableRow cells={["Strategy & Management", "\"I'm just being strategic. I'm the responsible one. Someone has to hold this together.\"", "The activation load and need for control produced by the chronic state — overridden by a narrative of competence and necessity"]} />
+                  <TableRow cells={["Power & Dominance", "\"They deserved it. I'm strong. If they can't handle me, that's their problem.\"", "The harm-generated signals — shame, guilt, remorse — overridden by a narrative that reframes harm as strength"]} />
                 </tbody>
               </table>
             </div>
 
-            <ExpandableSection title="How This Framework Emerged" type="framework">
-              <p style={expandedProseStyle}>
-                F3 emerged from recognizing that multiple clinical and theoretical frameworks all describe the same adult phenomenon — how the mind protects identity through narrative control. Psychoanalytic theory (Freud, Winnicott) describes protective identity structures and defense mechanisms. Cognitive theory (Festinger, Beck, Kahneman) describes how beliefs are maintained despite contradictory evidence. Family systems (Bowen, Satir) describes how families maintain "accepted reality." Neuroscience (Siegel, Schore, Porges) describes how nervous system state gates cognition. Trauma studies (van der Kolk, Janet) describes narrative control. IFS (Schwartz) describes parts managing internal conflict. Attachment theory (Bowlby, Kohut, Kernberg) describes relational regulation strategies.
-              </p>
-              <p style={expandedProseStyle}>
-                The synthesis: organizing these into a unified model showing that adult cognition — when recruited into threat service and never released — actively replaces emotional signals with invented narratives, and that this replacement process is the mechanism by which childhood identity structures maintain themselves across a lifetime.
-              </p>
-            </ExpandableSection>
-          </section>
+            <p style={proseStyle}>
+              Each narrative makes the chronic state feel like accurate perception rather than a state that became the system's permanent configuration. Each narrative regulates — it stabilises the person within the state by providing the explanation that makes the state feel correct. And each narrative prevents the return to physiological baseline — because the return would require the person to perceive their current state as a state, and the narrative is precisely what makes the state invisible.
+            </p>
 
-          {/* ─── CORE MECHANISM ────────────────────────────── */}
-          <section
-            id="core-mechanism"
-            aria-labelledby="heading-core-mechanism"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-happens-cognition-replaces" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What happens when cognition replaces emotional signals?
-            </h2>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — signal replacement cycle per chronic state */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <h2 id="heading-core-mechanism" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Core Mechanism — Cognition Replaces Emotional Signals
-            </h2>
-
-            {/* Concept 1 */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>
-                Cognition Tells the Emotional System: "You're Not Needed Here"
-              </h3>
-
-              <p style={proseStyle}>
-                This is the core mechanism of F3. When cognition was recruited into the threat response during childhood (F2) and never released, it does not just passively fail to receive emotional signals. It actively <em>replaces</em> them.
-              </p>
-              <p style={proseStyle}>
-                The nervous system sends a signal: "I'm afraid." "This hurts." "Something is wrong." Cognition, still on threat duty, intercepts: "You're not needed here. I've got this." And then it generates a replacement: "I'm not afraid — I'm being strategic." "That didn't hurt — I'm fine." "Nothing is wrong — I'm in control."
-              </p>
-              <p style={proseStyle}>
-                The person experiences the replacement as truth — because cognition is the system that constructs what the person experiences as "reality." When it generates a replacement for an emotional signal, the replacement feels as real as any other belief. More real, in fact — because it is accompanied by <strong style={{ color: TEXT.primary }}>physiological relief</strong>. The narrative holds together. The body calms. Cognition learns: <em>this works.</em>
-              </p>
-              <p style={proseStyle}>
-                This is not integrative reframing — which updates meaning while keeping the emotional signal. This is <strong style={{ color: TEXT.primary }}>replacement</strong>: the narrative takes the place of the signal rather than integrating it. Often, underlying activation remains: tension stays, breath stays shallow, vigilance stays online — but the narrative reports, <em>I'm fine. I'm in control.</em>
-              </p>
-              <p style={proseStyle}>
-                The emotional signal does not disappear. It is still being generated. It still demands regulation. But it has been told it is not needed. So it finds other doors — addiction, compulsion, somatic symptoms, external regulation through others. These are the emotional signals that cognition replaced, still knocking. They are not separate problems. They are the cost of running cognitive regulation where emotional regulation was never built.
-              </p>
-
-              <ExpandableSection title="Research Traditions" type="framework">
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Freud — defense mechanisms (repression, denial, projection, rationalization) as automatic protective responses. Festinger (1957) — cognitive dissonance resolution. Haidt (2001) — moral reasoning as post-hoc justification. Kahneman (2011) — System 1/System 2, coherence-seeking. Porges (2011) — nervous system state gates cognition. Siegel (2012) — state-dependent processing capacity.
+                  Festinger (1957) — cognitive dissonance theory: the drive toward internal consistency producing motivated reasoning. Kahneman (2011) — coherence-seeking as a fundamental cognitive operation: the mind preferring a consistent story over an accurate one. Gazzaniga (1998) — the left-hemisphere interpreter: the brain constructing explanatory narratives for behaviours and states it did not generate. Nisbett & Wilson (1977) — people constructing plausible causal explanations for their own behaviour without access to the actual causes.
                 </p>
               </ExpandableSection>
-            </div>
-
-            {/* Concept 2 */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>
-                False Coherence — Regulatory Success at the Cost of Emotional Truth
-              </h3>
-
-              <KeyStatement>
-                The person genuinely believes their constructed narrative because believing it reduces threat. It is regulatory success at the cost of emotional truth.
-              </KeyStatement>
-
-              <p style={proseStyle}>
-                <strong style={{ color: TEXT.primary }}>False coherence</strong> occurs when cognition constructs a stable internal narrative that preserves identity consistency, suppresses emotional contradiction, and reduces nervous system stress — even when that narrative no longer reflects lived reality. It is experienced as certainty, moral clarity, being "right," and internal relief. This relief is <strong style={{ color: TEXT.primary }}>physiological</strong>, not epistemic — the body calms because the story holds together, not because the story is accurate.
-              </p>
-              <p style={proseStyle}>
-                A belief can be <em>both</em> regulating and accurate — but under threat, the system prioritizes what is <strong style={{ color: TEXT.primary }}>stabilizing</strong> over what is <strong style={{ color: TEXT.primary }}>informative</strong>.
-              </p>
-              <p style={proseStyle}>
-                This is what makes false coherence so hard to challenge. You are not confronting a lie. You are confronting a regulatory strategy that is actively keeping the person's nervous system stable. Challenging it directly increases threat — which triggers the system to produce <em>more</em> false coherence, not less.
-              </p>
-              <p style={proseStyle}>
-                False coherence is the cognitive mechanism that keeps a stuck compass stuck. When the compass is locked in a chronic mode, cognition constructs a narrative around the locked position:
-              </p>
-
-              <div style={{ overflowX: "auto", marginBottom: 16 }}>
-                <table style={tableStyle}>
-                  <thead>
-                    <tr>
-                      <th style={thStyle}>Chronic Mode</th>
-                      <th style={thStyle}>The Narrative</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <TableRow cells={[
-                      "Chronic Safety & Openness",
-                      "\"I'm just a caring person. I put others first because that's who I am.\"",
-                    ]} />
-                    <TableRow cells={[
-                      "Chronic Threat & Defence",
-                      "\"The world really is dangerous. I'm not paranoid — I'm realistic.\"",
-                    ]} />
-                    <TableRow cells={[
-                      "Chronic Strategy & Management",
-                      "\"I'm just being strategic. I'm the responsible one. Someone has to hold it together.\"",
-                    ]} />
-                    <TableRow cells={[
-                      "Chronic Power & Dominance",
-                      "\"They deserved it. I'm strong. If they can't handle me, that's their problem.\"",
-                    ]} />
-                  </tbody>
-                </table>
-              </div>
-
-              <p style={proseStyle}>
-                Each chronic mode has its own false coherence narrative. Each narrative makes the stuck compass feel like truth rather than a mode that got stuck. And each narrative <em>regulates</em> — it keeps the person stable within the mode. The cost is that the mode never releases because the narrative is doing the regulation that Biological Restoration was supposed to do.
-              </p>
-
-              <KeyStatement>
-                Pattern indicator: if a story produces relief but consistently reduces nuance, empathy, or accountability, it is likely functioning as false coherence.
-              </KeyStatement>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The term "false coherence" — capturing what no existing term does. It is not denial (which implies awareness of what is being denied). It is not rationalization (which implies a specific tactic). It is not defense mechanism (which implies a list). False coherence is the <em>outcome</em>: a narrative that works for stability but not for truth. Complete, coherent, felt as real — and wrong. The formulation "regulatory success at the cost of emotional truth" captures the non-pathologizing stance and connects directly to the regulation thread.
+                  The identification of false coherence as a specific type of restoration substitute — one that operates through narrative rather than through substances, activity, or other people. This places it within the same regulatory architecture as all Path B phenomena: the substitute produces temporary relief without completion, the underlying unresolved activation load remains, and the pattern self-reinforces through the relief it provides. The per-state narrative profiles show that false coherence is not a single phenomenon but four distinct patterns, each generated by the specific chronic state the person carries. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── SELF-REINFORCING LOOP ─────────────────────── */}
+          {/* Concept 3: The Self-Reinforcing Loop */}
           <section
             id="self-reinforcing-loop"
             aria-labelledby="heading-self-reinforcing-loop"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-self-reinforcing-loop" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
+            <h2 id="heading-self-reinforcing-loop" style={sectionHeadingStyle(accent)}>
               The Self-Reinforcing Loop
             </h2>
 
             <p style={proseStyle}>
-              False coherence does not just maintain itself passively. It gets stronger through use. The mechanism is a reinforcement loop:
+              False coherence strengthens through use. Each time the CLS generates a narrative that replaces a physiological signal, the replacement is reinforced by the relief it produces. The pattern consolidates: the ESS generates a signal, the CLS does not register it, the CLS generates a narrative, the narrative produces relief, the CLS encodes "this works," the replacement becomes more automatic, and the original signal is not processed. The body carries the unresolved activation load forward.
             </p>
-
-            <ol style={orderedListStyle}>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>State shifts under stress</strong> — the nervous system moves toward protection
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Attention narrows</strong> — toward threat cues, away from contradictory data
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Cognition generates a stabilizing narrative</strong> — replacing the emotional signal with an invented explanation
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>The narrative holds</strong> — identity feels coherent, the body calms
-                <p style={{ ...proseStyle, fontSize: 13, fontStyle: "italic", color: TEXT.muted, marginTop: 4, marginBottom: 0 }}>
-                  Example: I feel shame → I reframe it as "they're disrespecting me" → anger rises → shame disappears from awareness → I feel coherent again.
-                </p>
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Relief reinforces the pattern</strong> — cognition learns "this works"
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>The loop hardens</strong> — the replacement narrative becomes more automatic, more invisible, more "who I am"
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Over time, the replacement becomes the default</strong> — cognition no longer needs a trigger to generate it. It runs continuously. The emotional signal was replaced so long ago that its absence is invisible.
-              </li>
-            </ol>
-
             <p style={proseStyle}>
-              Each cycle also deepens the disconnect from the biological return. Every time cognition successfully replaces an emotional signal, the body's own regulatory system gets less practice. The muscles that would release do not release. The breath that would deepen does not deepen. The tears that would come do not come. Cognitive regulation does not just replace emotional regulation — it prevents the conditions under which emotional regulation could develop.
+              Each cycle also deepens the disconnection from biological restoration. Every time the CLS successfully replaces a physiological signal, the body's restoration sequence gets no practice. Muscles do not release. Breathing does not deepen. Cortisol does not clear through the biological completion process. The CLS is not only substituting for restoration — it is preventing the conditions under which restoration could develop. The substitute blocks the pathway it imitates.
+            </p>
+            <p style={proseStyle}>
+              This loop merges with the state-reinforcing loop that <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link> describes at the perceptual level. M2 describes the loop operating through perception: chronic state, sensory filter, biased input, confirmation of state. F3 adds the cognitive layer: the CLS takes the biased input and constructs a narrative around it. The narrative does not merely reflect the filter — it explains the filter, justifies it, and makes it feel like accurate perception. The perceptual loop and the narrative loop operate together: the state shapes what the person perceives, and the narrative shapes what the person believes about what they perceive.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>This is why insight alone fails.</strong> Insight is a cognitive event — and cognition is the system running the replacement. The loop can absorb, narrate, and even agree with the insight without releasing the underlying state. A person can understand that they are defensive and still be defensive. A person can describe their patterns with precision and still be living inside them. The understanding is a CLS operation. The state is an ESS condition. When the interoceptive channel between them is absent, the understanding does not reach the state.
+            </p>
+            <p style={proseStyle}>
+              More cognition often strengthens cognitive regulation rather than undermining it. Each new insight becomes another narrative — another construction the CLS can use to maintain coherence. "I know I do this because of my childhood." The sentence is accurate. It changes nothing about the nervous system's configuration. The body is still carrying the same unresolved activation load. The baseline is still elevated. The chronic state still organises perception. The insight sits on top of the architecture it describes — a new narrative layer that can even become its own form of false coherence.
             </p>
 
-            <KeyStatement>
-              This explains why insight alone often fails. Insight is a cognitive event — and cognition is the system running the replacement. The loop can absorb, narrate, and even agree with the insight without releasing the underlying state. More cognition often strengthens cognitive regulation.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: animated — the self-reinforcing cycle */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Learning theory — reinforcement strengthens behavior. Hebb (1949) — "neurons that fire together wire together." Cognitive therapy — schema maintenance through confirmation bias. Trauma psychology — defensive patterns become automatic.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Hebb (1949) — neural consolidation: pathways that fire together strengthen through repetition. Beck (1979) — schema maintenance through confirmation bias: existing beliefs filter information to confirm themselves. Van der Kolk (2014) — the body keeps the score: insight does not discharge somatic activation. Levine (1997) — somatic experiencing: physiological completion requires bodily engagement, not cognitive processing alone.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The structural explanation for why insight frequently fails to produce change. The loop operates at a level that cognitive insight cannot reach because cognition is inside the loop, not outside it. The exit is not more understanding. It is the conditions under which the body's restoration sequence can begin to run — which requires safety sufficient for the nervous system to release what it is carrying, not analysis sufficient for the CLS to describe what it is carrying. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ─── COGNITIVE DISSONANCE ──────────────────────── */}
+          {/* Concept 4: Cognitive Dissonance as Regulatory Threat */}
           <section
             id="cognitive-dissonance"
             aria-labelledby="heading-cognitive-dissonance"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cognitive-dissonance" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Cognitive Dissonance as Regulatory Stress
+            <h2 id="heading-cognitive-dissonance" style={sectionHeadingStyle(accent)}>
+              Cognitive Dissonance as Regulatory Threat
             </h2>
 
             <p style={proseStyle}>
-              Within TEG-Blue, cognitive dissonance is redefined as a <strong style={{ color: TEXT.primary }}>regulatory stress response</strong>, not a reasoning error. Dissonance occurs when reality contradicts the narrative that cognition built — when what the body signals and what cognition invented fall out of alignment. The nervous system experiences this misalignment as threat.
+              When reality contradicts the narrative the CLS built — when somatic signals and cognitive constructions fall out of alignment, or when external events cannot be absorbed by the existing story — the nervous system does not experience a reasoning error. It experiences a regulatory threat. Because the narrative IS the restoration substitute. Challenging the narrative threatens the mechanism keeping the system stable.
             </p>
             <p style={proseStyle}>
-              You can often see it in the body: <strong style={{ color: TEXT.primary }}>tightening, urgency, heat, collapse, narrowing attention</strong> — dissonance as an autonomic event, not a debate.
+              The person in chronic Strategy & Management has built a narrative: "I am strategic. I am in control. I handle things." When someone sets a boundary, says no, or identifies a pattern the person cannot absorb — the CLS does not evaluate the information. The ESS fires first. Cortisol spikes. Muscles brace. Heart rate increases. The body responds to the challenge the way it responds to any threat — because the challenge threatens the only regulatory mechanism available.
             </p>
             <p style={proseStyle}>
-              The resolution strategies — denial, projection, blame, narrative revision, counterattack — are not thinking errors. They are the cognitive system doing its job under threat: generating a stable narrative as fast as possible to restore regulatory equilibrium.
+              Observable somatic markers appear: tightening, urgency, heat, attentional narrowing, the chest constricting, breathing shallowing. These are the autonomic signature of a nervous system whose regulatory stability has been threatened. Cognitive dissonance is an autonomic event, not a debate.
+            </p>
+            <p style={proseStyle}>
+              The resolution strategies that follow — denial, projection, blame, narrative revision, counterattack — are the CLS performing its regulatory function under threat: generating a stable narrative as rapidly as possible to restore autonomic equilibrium. The strategies are proportionate to the regulatory threat, not to the external event. This is why the response appears disproportionate from outside and feels completely justified from inside — the person is defending the mechanism that keeps their nervous system stable, not defending a belief.
+            </p>
+            <p style={proseStyle}>
+              Cognitive dissonance is particularly destabilising when false coherence is the person's only restoration substitute. When biological restoration was never learned, when the body has no pathway back to physiological baseline, and the narrative is the sole mechanism maintaining autonomic stability — then challenging the narrative threatens the person's entire regulatory architecture. The nervous system will defend the narrative until conditions are safe enough that the narrative is no longer the only mechanism between the person and destabilisation.
             </p>
 
-            <KeyStatement>
-              You cannot out-think a regulatory response. You can only create conditions safe enough for the system to let truth in without collapsing.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — dissonance as regulatory threat, not reasoning error */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <p style={proseStyle}>
-              Cognitive dissonance is particularly threatening when false coherence is the person's <em>only</em> regulatory system. If the biological return was never learned, and cognition is the only thing keeping the system stable, then challenging the cognitive narrative threatens the person's entire regulatory architecture. It is a person clinging to the only regulation they have.
-            </p>
-            <p style={proseStyle}>
-              The clinical implication is significant: if dissonance is a regulatory response to threat, then correcting the person's thinking <em>increases</em> threat. The standard cognitive therapy approach — identify the distortion, challenge it, replace it — can trigger defensive escalation precisely because the challenge is experienced as an attack on regulatory stability. F3 says: create safety first. Truth follows safety. Not the other way around.
-            </p>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Festinger (1957) — cognitive dissonance: the psychological discomfort of holding contradictory cognitions, driving motivated resolution. Kunda (1990) — motivated reasoning: the tendency to arrive at desired conclusions, loosely constrained by plausibility. Kruglanski (1989) — need for cognitive closure: the preference for definite answers over ambiguity, especially under threat. Porges (2011) — neuroception gating cognition: safety-threat evaluation determining what processing is available.
+                </p>
+              </ExpandableSection>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Festinger (1957) — cognitive dissonance theory. Kunda (1990) — motivated reasoning. Haidt (2001) — moral reasoning as post-hoc justification. Kruglanski (1989) — need for cognitive closure. Porges (2011) — neuroception gating cognition. Freud — defense mechanisms as automatic protective responses.
-              </p>
-            </ExpandableSection>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The reframing of cognitive dissonance from a cognitive phenomenon to a regulatory one. The dissonance is not between two beliefs — it is between the narrative and the body's physiological state. The distress is the autonomic signature of a nervous system whose stability mechanism has been threatened. Standard cognitive restructuring — identify the distortion, challenge it, replace it — can trigger defensive escalation because the challenge is experienced as an attack on the regulatory architecture. The nervous system requires sufficient safety before it can tolerate information that threatens its regulatory architecture. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ─── REGULATORY DEFENSE ────────────────────────── */}
+          {/* Concept 5: Growth Narratives Serving Regulation */}
           <section
-            id="regulatory-defense"
-            aria-labelledby="heading-regulatory-defense"
+            id="growth-narratives"
+            aria-labelledby="heading-growth-narratives"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-regulatory-defense" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Regulatory Defense
+            <h2 id="heading-growth-narratives" style={sectionHeadingStyle(accent)}>
+              Growth Narratives Serving Regulation
             </h2>
 
             <p style={proseStyle}>
-              When external reality contradicts the identity that cognition built around the capacity gaps — when someone says something, does something, or presents evidence that the narrative cannot absorb — the system does not experience this as feedback. It experiences it as a <strong style={{ color: TEXT.primary }}>threat to its regulation</strong>.
+              The identity that false coherence constructed does not remain static. It gets upgraded — refined through achievement, ideology, self-optimisation, therapeutic vocabulary, and spiritual frameworks. The person acquires new language, new skills, new narratives. The identity evolves. But the underlying configuration — the chronic state, the unresolved activation load, the absence of SEA — does not change. The CLS has added sophistication to the narrative without the body learning anything new about returning to physiological baseline.
             </p>
             <p style={proseStyle}>
-              If false coherence is regulatory, and if it is the person's <em>only</em> regulatory system because the biological return was never learned, then challenging the narrative is not challenging a belief. It is threatening the mechanism that is keeping the person's nervous system stable. The response is proportionate to the regulatory threat, not to the external event. That is why it looks "disproportionate" from outside — and feels completely justified from inside.
+              A person in chronic Strategy & Management who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more refined control strategy, monitoring internal states with the same strategic vigilance that monitors external threats. The CLS gains a new language for what it was already doing.
             </p>
-
             <p style={proseStyle}>
-              The defense looks different across the gradient — because each chronic mode has a different regulatory strategy, and what gets defended is different:
+              A person in chronic Safety & Openness who adds "empowered empath" to their identity — but uses the language of empowerment to narrate continued self-erasure. "I set boundaries now" while the nervous system still organises around others' states. The vocabulary upgraded. The configuration did not.
+            </p>
+            <p style={proseStyle}>
+              Each upgrade can be distinguished from genuine development by a single question: <strong style={{ color: TEXT.primary }}>has the body learned anything new about returning to physiological baseline?</strong> A person can acquire skills — language, techniques, credentials, insight, vocabulary — while the capacities that require biological change remain absent. Skills are CLS acquisitions. Capacities require the body's restoration sequence to have run — muscles releasing, cortisol clearing, the nervous system settling into a configuration it did not previously have access to. The skill can be acquired in any state. The capacity requires the state to shift.
+            </p>
+            <p style={proseStyle}>
+              Growth that develops Interpersonal Affect Perception (RE), Affective Resonance (ER), or SEA — that teaches the body new pathways for restoration, that allows the person to feel what they previously overrode — is genuine development. Growth that gives the CLS better language for the same substitution is an identity upgrade. The difference is not in the vocabulary the person uses. It is in what their nervous system can do that it could not do before.
             </p>
 
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Chronic Mode</th>
-                    <th style={thStyle}>How Defense Looks</th>
-                    <th style={thStyle}>Regulatory Function</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Chronic Safety & Openness",
-                    "Collapse, guilt, self-blame: \"I'm so sorry, I'm terrible, you're right, I'll do better.\"",
-                    "Restores the narrative \"I am the caring one\" by absorbing the blame — because absorbing blame is less threatening than examining the narrative.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Threat & Defence",
-                    "Withdrawal, attack, shutdown: \"You're the problem. I knew I couldn't trust you. I'm done.\"",
-                    "Restores stability by eliminating the source of the contradiction.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Strategy & Management",
-                    "Strategic reframing, blame reversal, rational dismantling: \"Actually, if you look at the facts...\" \"I think you're projecting.\"",
-                    "Restores coherence by out-narrating the challenge — using cognition's own tools to neutralize the threat cognitively.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Power & Dominance",
-                    "Rage, punishment, elimination: \"You will regret this.\" \"Who do you think you are?\"",
-                    "Restores stability by destroying the challenge entirely — the narrative cannot tolerate any contradiction at all.",
-                  ]} />
-                </tbody>
-              </table>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — skills vs capacities distinction */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Rogers (1959) — conditions of worth: the self-concept organised around approval rather than organismic experience. Welwood (2000) — spiritual bypassing: using spiritual practices to avoid psychological material. Illouz (2008) — the therapeutic culture: therapeutic language becoming a tool for self-presentation rather than self-knowledge.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  A structural criterion for distinguishing genuine development from identity upgrades: whether the body's restoration capacity has changed. This removes the distinction from the subjective domain — where the person's narrative about their growth is self-confirming — and places it in the physiological domain. Not "do you believe you have grown?" but "can your nervous system do something now that it could not do before?" Skills without capacities do not change the configuration. They change the narrative about the configuration. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <p style={proseStyle}>
-              The clinical reframe: these responses are often mislabeled as "manipulation," "bad character," or "toxicity." The regulation-based framing allows <strong style={{ color: TEXT.primary }}>accountability without demonization</strong>. The person is responsible for impact. The mechanism is understandable. Understanding the mechanism does not excuse the harm — it explains why the response is so intense and why challenging false coherence directly often escalates rather than resolves.
-            </p>
-
-            <KeyStatement>
-              Accountability here means: name the impact, stop the behavior, repair where possible, and hold boundaries — without needing to label the person as monstrous in order to recognize the harm.
-            </KeyStatement>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Replacing the clinical framing of "ego injury" and "narcissistic wound" with a mechanistic account grounded in the regulation thread: the person is not defending an ego. They are defending their regulation. This reframe universalizes (any identity built around capacity gaps will produce defensive escalation when challenged), removes moral judgment without removing accountability, and connects directly to the regulation thread (the defense is so intense because the person has no fallback — no one ever taught them another way back).
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ─── IDENTITY UPGRADES ─────────────────────────── */}
+          {/* ─── PART 3: WHAT THE SYSTEM DOES TO OTHERS ──── */}
+          <PartDivider label="PART 3" title="What the System Does to Others" color={accent} />
+
+          {/* Concept 6: Internal Activation Perceived as External Threat */}
           <section
-            id="identity-upgrades"
-            aria-labelledby="heading-identity-upgrades"
+            id="emotional-distortion"
+            aria-labelledby="heading-emotional-distortion"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-identity-upgrades" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Identity Upgrades — Growth Narratives Serving Regulation
+            <h2 id="heading-emotional-distortion" style={sectionHeadingStyle(accent)}>
+              Internal Activation Perceived as External Threat
             </h2>
 
             <p style={proseStyle}>
-              The identity that cognition built around the capacity gaps does not stay static. It gets <em>upgraded</em> — refined through achievement, ideology, self-optimization, and spiritual or therapeutic narratives. These upgrades may resemble genuine capacity development while serving the same regulatory function as the original identity structure.
+              The internal architecture described in Part 2 does not operate in isolation. It operates inside relationships. When SEA is absent — when the person has no channel through which to perceive their own physiological states — the system has no mechanism for locating the source of its activation internally. This is the self-referential attribution default from <Link href="/framework/f2-awareness-calibration#pre-reflective" style={linkStyle}>F2</Link>, still operating in adulthood: internal discomfort, unable to be identified as one's own, gets reclassified as an external event.
             </p>
             <p style={proseStyle}>
-              Examples: the person in chronic Strategy & Management who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more sophisticated control strategy. The person in chronic Safety & Openness who adds "empowered empath" — but uses the language of empowerment to narrate continued self-erasure. The person in chronic Threat & Defence who adds "boundary expert" — but uses boundaries as walls that prevent connection rather than enable it.
+              The sequence: someone sets a boundary, offers feedback, says no, or reveals something the narrative cannot absorb. The ESS fires — cortisol spikes, muscles brace, the body mobilises a threat response. In a system where SEA is functional, the person catches the activation: "I feel defensive. This is mine." They locate the source internally, register the signal as information about their own state, and course-correct. The catching depends on SEA.
             </p>
             <p style={proseStyle}>
-              A person can gain <strong style={{ color: TEXT.primary }}>skills</strong> (language, techniques, status) while still missing <strong style={{ color: TEXT.primary }}>capacities</strong> (Interoceptive Self-Awareness / SEA, emotional tolerance, the return to baseline). Upgrades often improve performance without changing the internal configuration.
+              When SEA is structurally absent, the catching never happens. The body is activated. The CLS, operating without the interoceptive channel, does not register the activation as internal. The CLS constructs the only explanation available from its data: someone did this to me. The internal physiological event — the cortisol, the bracing, the mobilisation — is attributed to the other person's action. The other person's boundary becomes an attack. The other person's feedback becomes a threat. The reattribution is sincere.
             </p>
-
-            <KeyStatement>
-              The diagnostic question is not "has this person changed?" but "is cognition serving truth or serving the mode?" Has the body learned anything new about coming back?
-            </KeyStatement>
-
             <p style={proseStyle}>
-              Growth that increases capacity for emotional truth — that brings SEA online, that teaches the body the return path, that allows the person to feel what they actually feel — is genuine development. Growth that gives cognition better language for the same replacement is an identity upgrade.
+              <strong style={{ color: TEXT.primary }}>The boundary-evidence loop.</strong> One person crosses a line. The other sets a boundary. The first person — unable to register their own activation as internal, unable to feel the impact of their action on the other — experiences the boundary as an unprovoked attack. They push back. A firmer boundary is set. They experience this as escalation. The other person's self-protection becomes evidence of being attacked. The more boundaries are set, the more "evidence" accumulates. The pattern is self-reinforcing: the other person's attempts to protect themselves confirm the narrative that they are the aggressor.
+            </p>
+            <p style={proseStyle}>
+              This is emotional distortion — internal physiological activation misattributed as external threat when the interoceptive channel is absent. It is a structural consequence. As long as the interoceptive channel remains absent, the reattribution will continue — not because the person is choosing to misread the situation, but because the equipment that would allow accurate attribution is not available.
             </p>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Rogers — conditions of worth and the "ideal self" as distorted aspiration. Psychoanalytic theory — sublimation and intellectualization as higher-order defenses. Spiritual bypassing literature — using spiritual frameworks to avoid emotional truth. Self-help culture — the "optimized self" as identity project.
-              </p>
-            </ExpandableSection>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: animated — the boundary-evidence loop */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Damasio (1994) — somatic markers shaping attribution before conscious awareness. Porges (2011) — neuroception evaluating experienced safety, not objective danger. Freud (1911) — projection: internal states attributed to external sources. Beck (1976) — cognitive distortion: threat-biased attribution patterns maintaining negative schemas. Van der Kolk (2014) — trauma-based perception: the body's memory shaping what the person sees in the present.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The reframing of what is commonly called projection or cognitive distortion as a structural consequence of an absent awareness capacity. The misattribution is not a thinking error that can be corrected through cognitive restructuring. It is the predictable output of a system operating without the interoceptive channel (SEA) that would allow internal states to be recognised as internal. The boundary-evidence loop describes the relational pattern this architecture produces — and explains why it is self-reinforcing. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ─── RIGIDITY ──────────────────────────────────── */}
+          {/* Concept 7: Restoration Substitutes in Adult Relationships */}
           <section
-            id="rigidity"
-            aria-labelledby="heading-rigidity"
+            id="restoration-substitutes"
+            aria-labelledby="heading-restoration-substitutes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-rigidity" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Rigidity Is State-Dependent, Not Character
+            <h2 id="heading-restoration-substitutes" style={sectionHeadingStyle(accent)}>
+              Restoration Substitutes in Adult Relationships
             </h2>
 
             <p style={proseStyle}>
-              Maintaining false coherence consumes substantial cognitive and physiological resources. When cognition is permanently replacing emotional signals with invented narratives, the cost is visible in the body: chronic tension, persistent fatigue, emotional numbing, cognitive fog, difficulty relaxing even in safe environments. These are the somatic markers of a system working overtime to maintain a narrative that no longer fits reality.
+              When biological restoration is unavailable and the person cannot process physiological activation internally, the nervous system recruits other people to perform the regulatory function. This is external regulation — the nervous system using others' emotional states, compliance, or submission to produce the neurochemical shift that internal restoration would have provided. The mechanism follows directly from <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3's</Link> account of restoration substitutes. The nervous system searches for anything that produces relief. When the activation is relational in content, the substitute the nervous system reaches for is relational. It recruits the co-regulation pathway. But the pathway runs under conditions of control, not safety. The relief is real. The completion is not.
             </p>
             <p style={proseStyle}>
-              Rigidity, defensiveness, and intolerance of contradiction are <strong style={{ color: TEXT.primary }}>state-dependent outcomes, not character traits</strong>. They are predictable results of a nervous system under sustained threat running a cognitive system that has been on replacement duty for years or decades.
+              Each chronic state uses others differently:
             </p>
             <p style={proseStyle}>
-              When safety increases, the system can begin to let go. Defensive activation decreases. Emotional signals become tolerable. Cognition regains flexibility. What becomes available is not new capacity but <em>existing capacity freed from defensive use.</em>
+              <strong style={{ color: TEXT.primary }}>Chronic Safety & Openness</strong> (as survival) — fusion. Others' emotional states fill the space where SEA would have provided self-knowledge. Others' calm produces calm. Others' approval produces stability. Others' distress produces destabilisation — not affective resonance, but affective flooding where the other person's state becomes indistinguishable from one's own. The regulatory requirement: others must remain emotionally consistent.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Chronic Threat & Defence</strong> — distance. Intimacy is the threat. Others' reliable distance serves as a buffer against activation. Withdrawal, coldness, or performed self-sufficiency keeps the relational environment at a manageable distance. The regulatory requirement: others must not come too close.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Chronic Strategy & Management</strong> — management. Others' compliance substitutes for the internal regulation that SEA would have provided. Conversations are steered, information is managed, behaviour is corrected — for internal stability. The regulatory requirement: others must behave predictably within the managed reality.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Chronic Power & Dominance</strong> — subjugation. Others' fear and submission directly settle the internal activation. When others submit, the physiological response settles — temporarily. The regulatory requirement: others must comply or face escalation.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The self-sealing property.</strong> The restoration substitute prevents the conditions that would allow genuine restoration. The person who needs co-regulation is using others for regulation — which degrades the relational environment. The people who could provide genuine co-regulation become less safe, less honest, and less genuinely available as the regulatory demands intensify. The substitute systematically forecloses the pathway it imitates. The system cannot reach the solution through the strategy it is using — because the strategy destroys the conditions the solution requires.
             </p>
 
-            <KeyStatement>
-              This is not "becoming someone new." It is existing capacity returning once the system is no longer paying the tax of constant replacement.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — four relational patterns + self-sealing property */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Psychoanalytic theory — defenses require energy. Cognitive psychology — maintaining incongruent beliefs requires cognitive load. Ego depletion research — regulatory resources are finite. Polyvagal Theory — sustained threat affects vagal state. Body-based psychology — emotional constriction shows somatically. Attachment theory — secure attachment increases flexibility.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bowlby (1969, 1988) — attachment as a regulatory system: adults continue using attachment figures for autonomic regulation. Kohut (1977) — self-object needs: others experienced as extensions of one's own regulatory system. Kernberg (1975) — narcissistic pathology as a relational regulatory strategy. Flores (2004) — attachment as the framework for understanding addictive patterns: tolerance, escalation, the distinction between the substance and the underlying state.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The mapping of external regulation as a restoration substitute — the nervous system's structural response to the absence of internal restoration capacity. This places it within the same architecture as substance use, compulsive activity, and all other Path B phenomena: temporary relief without completion. The per-state profiles show that what appears as four different relational styles — fusion, distance, management, subjugation — are the same mechanism expressed through different chronic states. The self-sealing property explains why these patterns resist change: the substitute destroys the conditions it would need to become genuine. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ─── COGNITION ACROSS THE GRADIENT ──────────────── */}
+          {/* ─── PART 4: BRIDGE ──────────────────────────── */}
+          <PartDivider label="PART 4" title="From Individual to Collective" color={accent} />
+
+          {/* Concept 8: From Individual to Collective */}
           <section
-            id="cognition-across-gradient"
-            aria-labelledby="heading-cognition-across-gradient"
+            id="individual-to-collective"
+            aria-labelledby="heading-individual-to-collective"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cognition-across-gradient" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Cognition Across the Gradient
+            <h2 id="heading-individual-to-collective" style={sectionHeadingStyle(accent)}>
+              From Individual to Collective
             </h2>
 
             <p style={proseStyle}>
-              The replacement process presents differently across the gradient. The mechanism is the same — cognition replacing emotional signals — but the content of the replacement and the regulatory function it serves vary by mode position:
+              The same CLS that maintains individual false coherence is the same CLS that absorbs and enforces social rules.
+            </p>
+            <p style={proseStyle}>
+              The CLS does not have two modes — one for internal narrative and one for social participation. It has one mode: constructing coherent accounts from the data available to it. When the interoceptive channel to the ESS is absent, the CLS constructs internal coherence from its own output. It also constructs social coherence from the cultural narratives available to it — rules, norms, values, hierarchies, assumptions about how the world works. Both operations serve the same regulatory function: stability through narrative.
+            </p>
+            <p style={proseStyle}>
+              A person in chronic Strategy & Management who has built "I'm the responsible one" as internal false coherence absorbs social rules that confirm this narrative: "Hard work is the only thing that matters." "Emotions are unprofessional." "If you can't handle the pressure, you don't belong." These are not evaluated as propositions. They are absorbed as regulatory material — narratives that stabilise the chronic state by confirming it from the outside. The individual lock and the collective lock reinforce each other.
+            </p>
+            <p style={proseStyle}>
+              When enough people in a system carry chronic states — when enough individuals are running false coherence, external regulation, and emotional distortion simultaneously — the individual patterns consolidate into collective structures. Rules that regulate what individuals cannot regulate internally. Worth hierarchies that determine who deserves restoration and who does not. Perceptual biases that lock collective perception in the same way chronic states lock individual perception. Domination structures that run relational substitute escalation at institutional scale.
+            </p>
+            <p style={proseStyle}>
+              The mechanism is the same. The CLS constructing narrative from available data, without the interoceptive channel to the body's physiological signals, producing coherence that regulates without resolving. The scale changes. <Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link> picks up from here.
             </p>
 
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Mode</th>
-                    <th style={thStyle}>What Cognition Does</th>
-                    <th style={thStyle}>What the Replacement Sounds Like</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Safety & Openness",
-                    "Integrates, revises, tolerates ambiguity. Emotional signals received and used.",
-                    "Minimal replacement needed. Cognition serves truth.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Safety & Openness",
-                    "Replaces own needs with others' needs. Self-signals overwritten by resonance data.",
-                    "\"I'm fine. What do you need?\" \"I don't mind, really.\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Threat & Defence",
-                    "Defends, simplifies, stabilizes. Temporary and proportionate.",
-                    "Minimal replacement — system is responding to actual threat.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Threat & Defence",
-                    "Replaces vulnerability with threat narratives. Emotional signals reinterpreted as danger.",
-                    "\"You can't trust anyone.\" \"I'm not anxious — I'm realistic.\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Strategy & Management",
-                    "Replaces feeling with strategy. Emotional signals overwritten by management narratives.",
-                    "\"I'm not controlling — I'm responsible.\" \"I don't have a problem. I have a plan.\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Power & Dominance",
-                    "Replaces fear with power narratives. Emotional signals fully overwritten.",
-                    "\"They deserved it.\" \"I'm not angry — I'm right.\" \"If they can't handle me, that's their weakness.\"",
-                  ]} />
-                </tbody>
-              </table>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — individual patterns consolidating to collective structures */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Festinger (1957) — cognitive dissonance at the group level: shared beliefs maintained through mutual reinforcement. Haidt (2012) — moral foundations theory: moral reasoning as post-hoc justification for intuitions shaped by group identity. Jost & Banaji (1994) — system justification theory: the psychological tendency to defend existing social arrangements. Bourdieu (1977) — habitus: social structures internalised as dispositions that feel natural.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The proposal that collective rule systems, worth hierarchies, perceptual biases, and domination structures are regulatory phenomena — the same nervous system architecture that produces individual false coherence, operating at collective scale. The transition from F3 to F4 is not a metaphor. The same CLS operations, the same absent interoceptive channel, the same restoration substitute mechanism. What changes is the number of nervous systems running the pattern simultaneously and the structures that emerge when they do. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Self-Awareness / Emotional Awareness Split
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                A person in chronic Strategy & Management can have extremely high self-awareness — they can describe their patterns, analyze their dynamics, narrate their history with precision. But this is cognition narrating <em>about</em> emotions without connecting <em>to</em> them. Interpersonal Affect Perception (RE) is sharp — they read everything. Interoceptive Self-Awareness (SEA) is offline — they feel nothing of their own.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                This explains why highly articulate, psychologically literate people can stay deeply stuck. Their system can generate sophisticated narratives <em>about</em> emotion while the original signal remains unreceived. <strong style={{ color: TEXT.primary }}>The story can sound like processing — while functioning as replacement.</strong>
-              </p>
-            </div>
-
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                "Common Sense" as Pattern Imprint
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                What feels like obvious truth may be a coherence strategy calibrated in childhood. "That's just how the world works" is often false coherence from childhood conditions that cognition preserved and presents as universal wisdom. This connects to F2's tolerance thresholds: what the nervous system learned to endure becomes what cognition treats as "just how things are."
-              </p>
-            </div>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The gradient cognitive map showing how the same replacement mechanism produces different content at different positions — and serves different regulatory functions. The self-awareness / emotional awareness split as a direct consequence of capacity configuration: RE sharp, SEA offline = can narrate everything, feel nothing. This explains why insight fails differently in each mode — in chronic Safety & Openness, insight produces self-blame; in chronic Strategy & Management, insight produces more sophisticated management; in chronic Power & Dominance, insight is weaponized as a tool for narrative control.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── THE RELATIONAL TURN ───────────────────────── */}
-          <section
-            id="relational-turn"
-            aria-labelledby="heading-relational-turn"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-relational-turn" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Relational Turn — Emotional Distortion
-            </h2>
-
-            <p style={proseStyle}>
-              Concepts 1–8 complete the individual <em>internal</em> account. The regulation thread is fully traced at the individual internal level: biological return (F1) → developmental failure (F2) → cognitive replacement (F3). But the internal system does not operate in isolation. It operates inside relationships. What does this system <em>do to the people around it?</em>
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              How Internal Discomfort Becomes Perceived External Threat
-            </h3>
-
-            <p style={proseStyle}>
-              Every person has moments where internal discomfort gets misread as an external attack. Someone sets a reasonable boundary. The body reacts as if something much bigger happened. The response is disproportionate — sharper, more defensive, more retaliatory than the situation warrants. Usually, the person catches it. They feel the guilt or shame underneath and course-correct: "Sorry — that wasn't about you."
-            </p>
-            <p style={proseStyle}>
-              This catching depends on SEA. The person can identify what they feel ("I feel defensive," "I feel guilty about what I said"), locate the source inside themselves, and separate their internal discomfort from the external situation. But when SEA is structurally absent — not temporarily offline under stress, but never fully developed — the catching never happens.
-            </p>
-
-            <KeyStatement>
-              The sequence: (1) The feeling loses its name — shame, guilt, envy, fear all collapse into undifferentiated "I feel bad." (2) The body looks outward — "someone is making me feel bad" becomes "I am being attacked." (3) The body reacts — "someone hurt me, I need to hurt back." Retaliation feels like self-defense.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              This is <strong style={{ color: TEXT.primary }}>emotional distortion</strong>. Internal discomfort, unable to be processed as one's own, gets reclassified as an external attack. The person genuinely believes they are defending themselves. The nervous system is reporting a threat that is not there — because the processing channel that would identify the signal as internal (SEA) is structurally unavailable.
-            </p>
-            <p style={proseStyle}>
-              The connection to false coherence is direct. False coherence is the stable narrative that cognition builds. Emotional distortion is what happens in the <em>moments</em> when that narrative is challenged or when internal discomfort arises. The distortion produces the misread, and false coherence stabilizes it into the ongoing narrative.
-            </p>
-
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Boundary-Evidence Loop
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                One person crosses a line. The other sets a boundary. The first person — unable to register their own part or feel the other person's pain — experiences the boundary as an unprovoked attack. They push back. A firmer boundary gets set. They experience this as escalation. The other person's self-protection becomes proof of being attacked. The more boundaries are set, the more "evidence" accumulates. The pattern feeds itself.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-                Your boundaries become their evidence.
-              </p>
-            </div>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The spectrum matters.</strong> SEA can be partial. It might be present in calm moments and absent when stress rises or relational stakes increase. Each time someone catches the moment where "I feel bad" could actually be "I feel envious" or "I feel guilty," the loop loosens. When SEA is structurally absent across contexts, the loop tightens into the chronic patterns that external regulation describes.
-            </p>
-
-            <p style={proseStyle}>
-              Often this is not conscious manipulation — it is <strong style={{ color: TEXT.primary }}>sincere misattribution</strong>. But the same distortion can still produce manipulative outcomes, and the impact still requires accountability.
-            </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Porges (2011) — neuroception evaluates experienced safety, not objective danger. Damasio (1994) — somatic markers shape attribution before conscious awareness. Freud — projection as attribution of internal states to external sources. Cognitive therapy (Beck) — misattribution and cognitive distortion. Attachment theory — insecure attachment patterns produce threat-biased attribution. Schore (2003) — right-brain implicit processing shapes relational perception. Van der Kolk (2014) — trauma produces threat-biased perception and disproportionate response.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── EXTERNAL REGULATION ───────────────────────── */}
-          <section
-            id="external-regulation"
-            aria-labelledby="heading-external-regulation"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-why-regulate-through-others" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Why do some people regulate through others instead of themselves?
-            </h2>
-
-            <h2 id="heading-external-regulation" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              External Regulation — Using Others to Manage
-            </h2>
-
-            <p style={proseStyle}>
-              Emotional distortion describes what happens in the <em>moment</em> — internal discomfort misread as external threat. External regulation describes the <em>structural consequence</em>: when internal emotional processing is permanently unavailable, the system recruits other people to perform the regulatory function.
-            </p>
-
-            <KeyStatement>
-              External regulation is a structural necessity. When internal regulation channels are offline, external regulation is the only pathway the system has left.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              Each chronic mode uses others differently:
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Chronic Mode</th>
-                    <th style={thStyle}>Regulation Strategy</th>
-                    <th style={thStyle}>How Others Are Used</th>
-                    <th style={thStyle}>Cost to Others</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Chronic Safety & Openness — Fusion",
-                    "Others' emotional states fill the void where self-awareness should be.",
-                    "Others' calm makes them calm. Others' approval makes them okay. Others' distress destabilizes them — not empathy, but fusion.",
-                    "Emotional exhaustion, guilt, feeling responsible for another person's entire regulation.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Threat & Defence — Distance",
-                    "Others' reliable distance serves as a buffer against activation.",
-                    "Intimacy is the threat. Withdrawal is the regulation. Others kept at arm's length through anger, coldness, or performed self-sufficiency.",
-                    "Rejection, confusion, walking on eggshells around unpredictable emotional availability.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Strategy & Management — Management",
-                    "Others' compliance substitutes for the self-regulation that SEA would provide.",
-                    "Steers conversations, manages information, corrects behavior, maintains curated reality — not for power, but for internal stability.",
-                    "Loss of agency, questioning your own reality, performing compliance to avoid subtle punishment.",
-                  ]} />
-                  <TableRow cells={[
-                    "Chronic Power & Dominance — Subjugation",
-                    "Others' fear and submission directly settle internal activation.",
-                    "When others submit, the activation settles — temporarily. The environment is organized around their emotional state.",
-                    "Living in fear, loss of autonomy, systematic dehumanization.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            {/* Chronic Strategy & Management deep dive */}
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                The Mode That Most Reliably Mimics Safety & Openness
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                Chronic Strategy & Management is the mode most often invisible to outside observers. The performance of warmth <em>is</em> the regulation strategy. Apologies serve image. Generosity serves control. Vulnerability is offered strategically, never spontaneously. The person appears warm, competent, and caring in public — they perform empathy with precision (RE sharp, right words chosen, no felt resonance behind them). They manage their image with the same precision they manage everything else. They create a public narrative that directly contradicts the private reality.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                The person on the receiving end — the partner, the child, the employee who sees behind the performance — lives inside the managed reality. They experience subtle coercion, narrative control, emotional manipulation, and strategic withdrawal of warmth. They often cannot name what is happening because nothing visible has occurred. They appear "unstable," "emotional," or "not coping" — because chronic exposure to reality distortion produces exactly these symptoms. And they are not believed when they describe what is happening — because it contradicts what everyone else sees.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>The system protects the person in chronic Strategy & Management and pathologizes the person on the receiving end.</strong> This is not a conspiracy. It is the structural outcome of: chronic Strategy & Management's regulation strategy (performance of Safety & Openness); the worth filter (F5) — the person in chronic Strategy & Management often has higher capital signals (composure, articulation, status); and bias architecture (F6) — the system sees what it expects to see.
-              </p>
-            </div>
-
-            {/* Chronic Power & Dominance deep dive */}
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Addiction Logic Applied to Relational Domination
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                External regulation through subjugation has a specific property: <strong style={{ color: TEXT.primary }}>it builds tolerance</strong>. The first time the person dominates and feels the relief — the settling of internal activation — it is enough. For a while. But the relief fades. The activation returns — because SEA is offline and the actual emotional processing never happened. The same level of domination does not produce the same level of relief. They need more.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                The mechanism is identical to substance addiction: the substance (others' subjugation) provides temporary relief from an internal state; the internal state is never processed (because SEA is offline); tolerance builds; escalation is required; the person is never satisfied; there is no natural stopping point. Power and wealth amplify this by providing access to more regulation sources and protection from consequences.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.7, margin: 0, fontWeight: 500, fontStyle: "italic" }}>
-                There is no amount of domination that will make them feel safe — because the safety they need is internal. SEA cannot come back online through domination. It can only come back through the conditions described in F2's restoration account: safety, not power.
-              </p>
-            </div>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Bowlby (1969, 1988) — attachment as regulatory system. Porges (2011) — co-regulation as developmental pathway. Schore (2003) — right-brain regulation develops through relational experience. Winnicott (1960) — true self vs. false self, managing through others. Kohut (1977) — self-object needs. Kernberg (1975) — narcissistic pathology as escalation of external regulation needs. Addiction research — tolerance, escalation, and the distinction between the substance and the underlying state. Van der Kolk (2014) — trauma produces incomplete regulation stored somatically.
-              </p>
-            </ExpandableSection>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.cobalt}
+            color={accent}
             items={[
               {
-                term: "Cognitive Override as default architecture",
+                term: "The CLS inherits a configured system",
+                definition: "Three simultaneous conditions: no state flexibility (chronic state already set), unresolved activation load (relational signals that never completed, carried as physiology), and no interoceptive channel (SEA never built — the CLS has no pathway to receive the ESS's signals).",
+              },
+              {
+                term: "Cognitive override as architecture",
                 definition: "Override is not an event — it is the permanent structure. The CLS was built without the interoceptive channel and has never operated any other way. Where physiological data is absent, the CLS generates narrative.",
               },
               {
-                term: "False Coherence",
-                definition: "Signal Replacement: the CLS generates narrative that takes the place of the ESS's physiological signals. Produces Temporary Relief Without Completion — sympathetic activation decreases, the CLS encodes 'this works,' the pattern reinforces. A Restoration Substitute that operates through narrative.",
+                term: "Signal replacement",
+                definition: "The core operation inside cognitive override — the CLS generating a substitute narrative that takes the place of the ESS's physiological signals. The narrative produces temporary relief without completion.",
+              },
+              {
+                term: "False coherence",
+                definition: "The enduring narrative structure produced by repeated signal replacement — a restoration substitute operating through cognition. Each chronic state produces its own characteristic false coherence. The narrative content is predictable from the state. The state is maintained by the narrative.",
               },
               {
                 term: "The self-reinforcing loop",
-                definition: "Each narrative cycle strengthens the pattern. Merges with The State-Reinforcing Loop (M2) at the cognitive level: the state shapes perception, the narrative explains perception, both lock together. Why insight alone fails: insight is a CLS operation, the state is an ESS condition, and the interoceptive channel is absent.",
+                definition: "Each narrative cycle strengthens the pattern: signal, no registration, narrative, relief, reinforcement, more automatic. Merges with M2's state-reinforcing loop at the cognitive level. The substitute blocks the pathway it imitates.",
+              },
+              {
+                term: "Why insight fails",
+                definition: "Insight is a cognitive event — cognition is inside the loop, not outside it. The exit is not more understanding. It is the conditions under which the body's restoration sequence can begin to run.",
               },
               {
                 term: "Cognitive dissonance as regulatory threat",
-                definition: "Challenging the narrative threatens the Restoration Substitute. The nervous system responds as threat — cortisol spikes, muscles brace, attentional narrowing. Resolution strategies (denial, projection, counterattack) are the CLS performing its regulatory function, not thinking errors. Safety must precede truth.",
+                definition: "Challenging the narrative threatens the restoration substitute. The distress is the autonomic signature of a nervous system whose stability mechanism has been threatened — proportionate to the regulatory threat, not the external event.",
               },
               {
-                term: "Growth narratives serving regulation",
+                term: "Skills vs capacities",
                 definition: "Skills are CLS acquisitions. Capacities require the body's restoration sequence to have run. The diagnostic question: has the body learned anything new about returning to physiological baseline?",
               },
               {
-                term: "Emotional Distortion",
-                definition: "When Interoceptive Self-Awareness (SEA) is absent, internal activation cannot be located internally. Internal discomfort becomes perceived external attack. The boundary-evidence loop: the other person's self-protection becomes evidence of being attacked. Structural, not a reasoning error.",
+                term: "Emotional distortion",
+                definition: "Internal physiological activation misattributed as external threat when SEA is absent. The self-referential attribution default from F2, still operating in adulthood. The boundary-evidence loop: the other person's self-protection becomes evidence of being attacked.",
               },
               {
-                term: "External Regulation",
-                definition: "The nervous system recruits others to perform the regulatory function. Each Chronic State Organisation uses others differently — fusion (Chronic Safety & Openness), distance (Chronic Threat & Defence), management (Chronic Strategy & Management), subjugation (Chronic Power & Dominance). The self-sealing property: the substitute destroys the relational conditions genuine restoration would require.",
+                term: "External regulation",
+                definition: "The nervous system recruiting others to perform the regulatory function. Four patterns — fusion (chronic Safety & Openness), distance (chronic Threat & Defence), management (chronic Strategy & Management), subjugation (chronic Power & Dominance) — same mechanism, different chronic states.",
               },
               {
-                term: "From individual to collective",
-                definition: "The same CLS that maintains individual False Coherence absorbs and enforces collective rules. Individual narrative substitution scales to collective rule systems. The mechanism is the same. The scale changes. Bridge to F4.",
+                term: "The self-sealing property",
+                definition: "The restoration substitute destroys the relational conditions genuine restoration would require. The system cannot reach the solution through the strategy it is using.",
+              },
+              {
+                term: "Individual to collective",
+                definition: "The same CLS operations that maintain individual false coherence absorb and enforce collective narratives. The mechanism connecting individual cognition (F3) to collective rule systems (F4).",
               },
             ]}
           />
 
-          {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
-          <section
-            id="research-foundations"
-            aria-labelledby="heading-research-foundations"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Research Foundations
-            </h2>
-
-            <p style={proseStyle}>
-              F3 explicitly states: "The phenomena we describe are not novel — they have been independently identified, named, and described across a century of psychological research." The contribution is synthesis and reframing, not discovery.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tradition</th>
-                    <th style={thStyle}>Key Contribution</th>
-                    <th style={thStyle}>Researchers</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Psychoanalytic Theory",
-                    "Defense mechanisms, protective identity structures, projection, self-object needs",
-                    "Freud, 1923; Winnicott, 1960; Kohut, 1977; Kernberg, 1975",
-                  ]} />
-                  <TableRow cells={[
-                    "Cognitive Psychology",
-                    "Cognitive dissonance, motivated reasoning, coherence-seeking, misattribution",
-                    "Festinger, 1957; Kahneman, 2011; Haidt, 2001; Beck",
-                  ]} />
-                  <TableRow cells={[
-                    "Family Systems",
-                    "Accepted reality, communication patterns, emotional process",
-                    "Bowen; Satir",
-                  ]} />
-                  <TableRow cells={[
-                    "Polyvagal-Informed Neuroscience",
-                    "State-dependent cognition, neuroception gating, co-regulation, nervous system synchronization",
-                    "Porges, 2011; Siegel, 2012; Schore, 2003",
-                  ]} />
-                  <TableRow cells={[
-                    "Trauma Studies",
-                    "Narrative fragmentation and control, body-based memory, incomplete regulation, threat-biased perception",
-                    "Van der Kolk, 2014; Janet; Levine, 1997",
-                  ]} />
-                  <TableRow cells={[
-                    "Internal Family Systems",
-                    "Parts managing internal conflict, protective roles",
-                    "Schwartz, 1995",
-                  ]} />
-                  <TableRow cells={[
-                    "Attachment Theory",
-                    "Attachment as regulatory system, insecure attachment patterns, relational regulation",
-                    "Bowlby, 1969; Ainsworth, 1978",
-                  ]} />
-                  <TableRow cells={[
-                    "Addiction Research",
-                    "Tolerance, escalation, distinction between substance and underlying state",
-                    "Established literature",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.cobalt}
-            established="F3 completes the individual arc. The regulation thread at the individual level is fully traced: the biological return was never learned, cognition replaced it with narrative, and the replacement produces emotional distortion and external regulation that operate in every relationship the person is in."
-            question="What happens when enough people in a system are running these mechanisms? When enough individuals are externally regulating through others, running emotional distortion, and absorbing rules as truth through false coherence? The answer is collective rule systems — nervous system regulation at the group level."
+            color={accent}
+            established="F3 completed the individual arc. F1 described the biological substrate — what the system is. F2 described the developmental calibration — how each person's system gets configured. F3 described the lock — why the calibration persists into adulthood and how it extends into relationships."
+            question="What happens when enough nervous systems carrying these patterns inhabit the same social structure? When enough individuals are running false coherence, recruiting others for regulation, and absorbing cultural narratives as regulatory material — the individual patterns consolidate into collective rule systems."
             nextFramework="F4"
             nextTitle="Rules Regulate"
             nextHref="/framework/f4-rules-regulate"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.cobalt}
+            color={accent}
             connections={[
-              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps Cognitive Override as the branching point. F3 describes why override persists into adulthood — not because the CLS keeps choosing it, but because override is the only architecture the CLS was ever built with." },
-              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the three awareness capacities. F3 uses the capacity profile to show why false coherence operates: when SEA is absent, the CLS has no channel to receive the ESS's signals." },
-              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 established biological restoration as the designed process operating at no cost. F3 describes what happens when that process is permanently unavailable and the CLS substitutes narrative — at the cost of truth." },
-              { id: "F2", href: "/framework/f2-awareness-calibration", description: "F2 described how the system gets configured through the relational environment. F3 describes why the configuration persists — how cognition maintains it and why it resists change." },
-              { id: "F4", href: "/framework/f4-rules-regulate", description: "F3 completes the individual arc. F4 picks up the mechanism at collective scale: the same CLS that maintains individual false coherence absorbs and enforces social rules." },
-              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F3 and F8 are structural counterparts. F3 describes the lock. F8 describes how the lock can open — awareness restored through safety, not instruction." },
+              {
+                id: "M3: Regulation Capacities",
+                href: "/model/m3-regulation-capacities",
+                description: "M3 maps cognitive override as the branching point and restoration substitutes as what replaces biological restoration. F3 describes why override persists as architecture in adulthood and identifies false coherence as a narrative restoration substitute — temporary relief without completion operating through cognition.",
+              },
+              {
+                id: "M4: Awareness Capacities",
+                href: "/model/m4-awareness-capacities",
+                description: "M4 maps the three awareness capacities and the interoceptive channel. F3 uses the capacity profile to show why false coherence operates: when SEA is absent, the CLS has no channel to receive the ESS's signals, and override is the default architecture.",
+              },
+              {
+                id: "M2: Nervous System States",
+                href: "/model/m2-nervous-system-states",
+                description: "M2 describes the four states and the state-reinforcing loop. F3 adds the cognitive layer: each chronic state produces its own characteristic false coherence, and the narrative loop merges with the perceptual loop to lock both perception and belief.",
+              },
+              {
+                id: "F1: The Emotional Gradient",
+                href: "/framework/f1-emotional-gradient",
+                description: "F1 is the instrument. F1 described biological restoration as the designed process, operating at no cost. F3 describes what happens when that process is permanently unavailable and the CLS substitutes narrative in its place — at the cost of truth.",
+              },
+              {
+                id: "F2: Developmental Calibration",
+                href: "/framework/f2-awareness-calibration",
+                description: "F2 is the calibration. F3 is the lock. F2 described how the system gets configured — the developmental conditions that produced the capacity profile, the chronic state, and the unresolved relational signals. F3 describes why the calibration persists and how cognition maintains it.",
+              },
+              {
+                id: "F4: Rules Regulate",
+                href: "/framework/f4-rules-regulate",
+                description: "F3 completes the individual arc. F4 picks up the mechanism at collective scale: individual narrative substitution becomes collective rule systems. The same CLS that maintains individual false coherence absorbs and enforces social rules.",
+              },
+              {
+                id: "F8: Awareness Rebuilds Through Safety",
+                href: "/framework/f8-repairing-awareness",
+                description: "F3 and F8 are structural counterparts. F3 describes the lock — how cognition maintains the developmental calibration. F8 describes how the lock can open — awareness restored through safety, not instruction.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.cobalt}
+            color={accent}
             items={[
-              { label: "Continue to F4 — how individual patterns become collective rule systems", href: "/framework/f4-rules-regulate", linkText: "F4: Rules Regulate →" },
-              { label: "See what cognition overrides — the biology underneath false coherence", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities →" },
-              { label: "See the awareness architecture that determines whether override occurs", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities →" },
-              { label: "Read the structural counterpart — how the lock opens", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F4 — what happens when the mechanism operates at collective scale", href: "/framework/f4-rules-regulate", linkText: "F4: Rules Regulate \u2192" },
+              { label: "See cognitive override and restoration substitutes mapped in detail", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
+              { label: "See the awareness architecture that determines whether the interoceptive channel is open", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
+              { label: "Return to F2 — how the calibration was set", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration \u2192" },
+              { label: "See the structural counterpart — how the lock opens", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ─── JSON-LD: ScholarlyArticle ──────────────────── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1063,9 +798,9 @@ export default function F3FalseCoherencePage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f3-false-coherence#article",
-            headline: "Adult Cognition & False Coherence: How Cognition Maintains What the Body Never Learned to Regulate",
+            headline: "Adult Cognition & False Coherence: The Lock",
             description:
-              "How the identity structures built in childhood maintain themselves in adulthood through cognition actively replacing emotional signals with invented narratives. Framework F3 of the TEG-Blue 12-framework system.",
+              "How cognition maintains the developmental calibration — cognitive override as default architecture, false coherence as restoration substitute, emotional distortion, and external regulation. Framework F3 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -1077,7 +812,7 @@ export default function F3FalseCoherencePage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            dateModified: "2026-04-06",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -1091,36 +826,34 @@ export default function F3FalseCoherencePage() {
             },
             about: [
               { "@type": "Thing", name: "False Coherence" },
-              { "@type": "Thing", name: "Cognitive Regulation" },
+              { "@type": "Thing", name: "Cognitive Override" },
+              { "@type": "Thing", name: "Restoration Substitutes" },
               { "@type": "Thing", name: "Emotional Distortion" },
               { "@type": "Thing", name: "External Regulation" },
-              { "@type": "Thing", name: "Cognitive Dissonance" },
             ],
             citation: [
+              { "@type": "ScholarlyArticle", name: "Descartes' Error (Damasio, 1994)" },
+              { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
               { "@type": "ScholarlyArticle", name: "A Theory of Cognitive Dissonance (Festinger, 1957)" },
               { "@type": "ScholarlyArticle", name: "Thinking, Fast and Slow (Kahneman, 2011)" },
-              { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
               { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (van der Kolk, 2014)" },
+              { "@type": "ScholarlyArticle", name: "Waking the Tiger (Levine, 1997)" },
               { "@type": "ScholarlyArticle", name: "Affect Regulation and the Origin of the Self (Schore, 2003)" },
-              { "@type": "ScholarlyArticle", name: "The Maturational Processes (Winnicott, 1960)" },
               { "@type": "ScholarlyArticle", name: "Attachment and Loss (Bowlby, 1969)" },
-              { "@type": "ScholarlyArticle", name: "The Restoration of the Self (Kohut, 1977)" },
             ],
             keywords: [
               "false coherence",
-              "cognitive regulation",
+              "cognitive override",
+              "restoration substitute",
               "emotional distortion",
               "external regulation",
               "self-reinforcing loop",
-              "regulatory defense",
               "cognitive dissonance",
-              "nervous system regulation",
+              "interoceptive self-awareness",
             ],
           }),
         }}
       />
-
-      {/* ─── JSON-LD: BreadcrumbList ────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1128,13 +861,11 @@ export default function F3FalseCoherencePage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "12 Frameworks", url: "/frameworks-map" },
-              { name: "F3: False Coherence", url: "/framework/f3-false-coherence" },
+              { name: "F3: Adult Cognition & False Coherence", url: "/framework/f3-false-coherence" },
             ])
           ),
         }}
       />
-
-      {/* ─── JSON-LD: FAQPage ───────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1143,33 +874,27 @@ export default function F3FalseCoherencePage() {
               {
                 question: "What is false coherence in the TEG-Blue system?",
                 answer:
-                  "False coherence occurs when cognition constructs a stable internal narrative that preserves identity consistency and reduces nervous system stress — even when that narrative no longer reflects lived reality. It is experienced as certainty, moral clarity, and internal relief. The relief is physiological, not epistemic. False coherence is regulatory success at the cost of emotional truth.",
+                  "False coherence is the enduring narrative structure produced by repeated signal replacement — where the CLS generates narrative that takes the place of the ESS's physiological signals. It is a restoration substitute that operates through cognition: the narrative produces temporary relief without the body's restoration sequence completing. Each chronic state produces its own characteristic false coherence.",
               },
               {
-                question: "What is the self-reinforcing loop in false coherence?",
+                question: "Why doesn't insight alone change the pattern?",
                 answer:
-                  "False coherence gets stronger through use via a reinforcement loop: stress triggers narrowed attention, cognition generates a stabilizing narrative, the narrative produces physiological relief, and relief teaches the system 'this works.' Each cycle makes the replacement more automatic and the original emotional signal harder to detect. The loop can absorb insight without breaking.",
+                  "Insight is a cognitive event — and cognition is the system running the replacement. The self-reinforcing loop operates at a level that cognitive insight cannot reach because cognition is inside the loop, not outside it. The exit is not more understanding but the conditions under which the body's restoration sequence can begin to run — safety sufficient for the nervous system to release what it is carrying.",
               },
               {
-                question: "What is emotional distortion in the TEG-Blue framework?",
+                question: "What is emotional distortion?",
                 answer:
-                  "Emotional distortion occurs when Interoceptive Self-Awareness (SEA) is structurally absent and internal discomfort cannot be identified as one's own. The feeling loses its name, the body attributes it to an external source, and the person genuinely perceives a threat that is not there. Retaliation feels like self-defense. This is sincere misattribution, not conscious manipulation.",
+                  "Internal physiological activation misattributed as external threat when the interoceptive channel (SEA) is absent. The body activates. The CLS, with no pathway to register the activation as internal, constructs the only explanation available: someone did this to me. The boundary-evidence loop makes this self-reinforcing — the other person's self-protection becomes evidence of being attacked.",
               },
               {
-                question: "What is external regulation?",
+                question: "What is the self-sealing property?",
                 answer:
-                  "External regulation is the use of other people's emotional states, compliance, or fear to manage internal activation that cannot be processed internally. Each chronic mode uses others differently: chronic Safety & Openness uses fusion, chronic Threat & Defence uses distance, chronic Strategy & Management uses management, and chronic Power & Dominance uses subjugation. It is a structural necessity when internal regulation channels are offline.",
-              },
-              {
-                question: "How does F3 connect to the rest of the TEG-Blue system?",
-                answer:
-                  "F3 completes the individual arc of the regulation thread: F1 establishes the biological return mechanism, F2 shows what happens when it is never learned, and F3 shows what cognition does in its place. F3 also bridges to the collective arc (F4–F7) by showing how individual false coherence extends into relationships through emotional distortion and external regulation, and scales into collective rule systems.",
+                  "The restoration substitute destroys the relational conditions that genuine restoration would require. The person using others for regulation degrades the relational environment — making the people who could provide genuine co-regulation less safe, less honest, and less available. The system cannot reach the solution through the strategy it is using.",
               },
             ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1186,43 +911,56 @@ export default function F3FalseCoherencePage() {
   );
 }
 
-// ─── STYLE CONSTANTS (page-local only) ───────────────────
+// ─── STYLE CONSTANTS ──────────────────────────────────────
 
-const orderedListStyle = { paddingLeft: 20, margin: "0 0 16px" };
-const listItemStyle = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 };
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
+};
 
 const tableStyle = {
-  width: "100%", borderCollapse: "collapse", background: BG.card,
-  borderRadius: 8, overflow: "hidden", border: `1px solid ${BORDER.default}`, fontSize: 13,
-};
-const thStyle = {
-  padding: "10px 14px", textAlign: "left", fontSize: 11, fontWeight: 600,
-  color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em",
-  fontFamily: FONT.mono, background: BG.surface, borderBottom: `1px solid ${BORDER.default}`,
+  width: "100%",
+  borderCollapse: "collapse",
+  background: BG.card,
+  borderRadius: 8,
+  overflow: "hidden",
+  border: `1px solid ${BORDER.default}`,
+  fontSize: 13,
 };
 
-function KeyStatement({ children }) {
-  return (
-    <blockquote style={{
-      padding: "16px 20px", margin: "0 0 16px",
-      background: hexToRgba(SPECTRUM.cobalt, 0.06), borderRadius: 8,
-      borderLeft: `4px solid ${SPECTRUM.cobalt}`,
-      fontSize: 15, fontWeight: 500, color: TEXT.primary, lineHeight: 1.6, fontStyle: "italic",
-    }}>
-      {children}
-    </blockquote>
-  );
-}
+const thStyle = {
+  padding: "10px 14px",
+  textAlign: "left",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  fontFamily: FONT.mono,
+  background: BG.surface,
+  borderBottom: `1px solid ${BORDER.default}`,
+};
+
+// ─── HELPER COMPONENTS ────────────────────────────────────
 
 function TableRow({ cells }) {
   return (
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       {cells.map((cell, i) => (
-        <td key={i} style={{
-          padding: "10px 14px", fontSize: 13,
-          color: i === 0 ? TEXT.primary : TEXT.secondary,
-          fontWeight: i === 0 ? 600 : 400, lineHeight: 1.6, verticalAlign: "top",
-        }}>{cell}</td>
+        <td
+          key={i}
+          style={{
+            padding: "10px 14px",
+            fontSize: 13,
+            color: i === 0 ? TEXT.primary : TEXT.secondary,
+            fontWeight: i === 0 ? 600 : 400,
+            lineHeight: 1.6,
+            verticalAlign: "top",
+          }}
+        >
+          {cell}
+        </td>
       ))}
     </tr>
   );

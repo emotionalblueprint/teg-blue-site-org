@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,63 +24,63 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Turn Toward Repair", href: "#overview", description: "F7 completes the escalation arc. F8 turns the system around. How do you go back?" },
-  { label: "The Regulation Thread Reversed", href: "#overview", description: "Each substitute becomes unnecessary as the original develops. Repair means building the original." },
-  { label: "The Repair Question", href: "#core-propositions", description: "Developing what didn't have conditions to develop, not finding a hidden self beneath the adaptive one." },
-  { label: "Assessing Your Configuration", href: "#assessing-configurations", description: "Which capacities had conditions to develop, which didn't, and what is each one currently doing?" },
-  { label: "Common Configurations", href: "#assessing-configurations", description: "Five characteristic configurations, each producing a predictable chronic mode." },
-  { label: "Why Repair Is Difficult", href: "#why-repair-is-difficult", description: "The nervous system resists repair because repair requires the same conditions of safety that were missing." },
-  { label: "What Repair Requires", href: "#conditions-for-repair", description: "You cannot think your way into felt safety. You can only experience your way there." },
-  { label: "The Process", href: "#repair-process", description: "Repair does not move in a straight line. The back-and-forth is not the problem — it is the process." },
-  { label: "Why Everyone Masks", href: "#everyone-masks", description: "Masking is the predictable response to any system that regulates through enforced conformity." },
-  { label: "The Cost of Conformity", href: "#everyone-masks", description: "Regulatory exhaustion. Developmental arrest. Identity confusion. Relational disconnection." },
-  { label: "Different Configurations See Different Things", href: "#collective-strength", description: "What one configuration cannot see, another can. No single configuration is complete." },
-  { label: "Collective Intelligence", href: "#collective-strength", description: "Different configurations are different sensors. Masked configurations mean shared blind spots." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F8 makes about how awareness rebuilds through safety." },
+  { label: "The Regulation Thread Reversed", href: "#thread-reversed", description: "The same thread traces escalation and repair. The direction depends on conditions." },
+  { label: "Two Routes to the Same Condition", href: "#two-routes", description: "Chronic suppression (unblocking) vs developmental absence (building). Both require safety. The second requires more." },
+  { label: "Why the System Defends Against Repair", href: "#repair-defence", description: "Five mechanisms — not resistance, but the nervous system accurately assessing costs." },
+  { label: "Safety Before Capacity", href: "#safety-before-capacity", description: "Felt safety, not understood safety. Five conditions for the environment repair requires." },
+  { label: "What Replaces Repair in Each State", href: "#repair-substitutes", description: "Self-blame, defence, performance, image management — each invisible from inside." },
+  { label: "SEA as the Entry Point", href: "#sea-entry-point", description: "The multiplicative system: SEA's return transforms what the other capacities produce." },
+  { label: "Five Oscillating Phases", href: "#five-phases", description: "Unawareness → Recognition → Oscillation → Active Development → Integration." },
+  { label: "Why Experience Changes the System", href: "#experience-not-insight", description: "Two systems, two substrates, different speeds. The CLS updates through information. The ESS through experience." },
   { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
-  { label: "Bridge to F9", href: "#bridge-to-f9", description: "What happens when difference becomes structural — when environments are designed for one neurological configuration." },
+  { label: "Bridge to F9", href: "#bridge", description: "When the universal pattern of masking becomes structural." },
+  { label: "Connections Map", href: "#connections", description: "How F8 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Repairing Awareness — How the Three Capacities Develop and Why Difference Is Strength (F8) | TEG-Blue Research",
+  title: "Awareness Rebuilds Through Safety (F8) | TEG-Blue Research",
   description:
-    "How the three awareness capacities can be assessed, why repair is difficult, what conditions enable it, and what the process looks like — and why different awareness configurations make the collective stronger than conformity allows. Framework F8 of 12.",
+    "How the interoceptive channel reopens and capacities develop — two routes to the same condition, safety before capacity, SEA as the developmental entry point, and why experience changes the system while insight does not. Framework F8 of the TEG-Blue 12-framework system.",
   keywords: [
-    "repairing awareness",
-    "awareness configuration",
-    "capacity development",
-    "conditions for repair",
+    "awareness repair",
+    "interoceptive channel",
+    "safety before capacity",
+    "nervous system repair",
+    "co-regulation",
+    "interoceptive self-awareness",
+    "earned security",
+    "somatic experiencing",
+    "repair oscillation",
     "felt safety",
-    "oscillation",
-    "repair process",
-    "masking",
-    "collective intelligence",
-    "different configurations",
-    "nervous system regulation",
-    "emotional technology",
+    "developmental repair",
+    "configuration diversity",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f8-repairing-awareness",
   },
   openGraph: {
-    title: "Repairing Awareness — How the Three Capacities Develop — F8 Framework | TEG-Blue",
+    title: "Awareness Rebuilds Through Safety — F8 Framework | TEG-Blue",
     description:
-      "How the three awareness capacities can be assessed, repaired, and developed — and why different configurations make the collective stronger. The first framework in the restoration arc.",
+      "How the interoceptive channel reopens — the first framework in the repair arc. Framework F8 of 12.",
     url: "https://teg-blue.org/framework/f8-repairing-awareness",
     type: "article",
     siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Repairing Awareness — TEG-Blue F8",
+    title: "Awareness Rebuilds Through Safety — TEG-Blue F8",
     description:
-      "How awareness capacities develop, why repair is difficult, and why different configurations make the collective stronger.",
+      "The repair arc begins — how safety enables the interoceptive substrate to rebuild, and why experience changes the system while insight does not.",
   },
   other: {
-    'citation_title': 'Repairing Awareness: How the Three Capacities Develop and Why Difference Is Strength',
+    'citation_title': 'Awareness Rebuilds Through Safety',
     'citation_author': 'Anna Paretas-Artacho',
-    'citation_publication_date': '2026/03',
+    'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
@@ -88,6 +88,8 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F8RepairingAwarenessPage() {
+  const accent = SPECTRUM.cobalt;
+
   return (
     <div
       style={{
@@ -101,886 +103,596 @@ export default function F8RepairingAwarenessPage() {
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F8"
-              title="Repairing Awareness"
-              subtitle="How the Three Capacities Develop — and Why Difference Makes the Collective Stronger"
-              description="How the escalation arc (F1–F7) reverses — through developing the awareness capacities that never had conditions to form, learning the return path to baseline that was never taught, and recognizing that different awareness configurations make the collective stronger than conformity allows. The first framework in the restoration arc (F8–F12), directly addressing how M2 capacities develop and what enables the M3 return path."
-              group="Repair"
-              groupLabel="Repair Arc · F8–F12"
-              threadLabel="Reverses the Thread"
-              threadLine="Builds the original — developing the awareness capacities that substitutes replaced"
-              informsModels={[
-                { label: "M4", href: "/model/m4-awareness-capacities" },
-                { label: "M3", href: "/model/m3-regulation-capacities" },
-              ]}
-              adjacent={{
-                prev: { label: "F7 Domination Regulates", href: "/framework/f7-domination-regulates" },
-                next: { label: "F9 Neurodivergence", href: "/framework/f9-neurodivergence-variation" },
-              }}
-            />
+            badge="FRAMEWORK F8"
+            title="Awareness Rebuilds Through Safety"
+            subtitle="How the Interoceptive Channel Reopens and Capacities Develop"
+            description="F7 completed the collective arc: seven restoration substitutes at escalating scale, each offering temporary relief without completing biological restoration. F8 begins the repair arc. Not by undoing the collective mechanisms, but by changing the conditions underneath them. When safety replaces threat, the interoceptive substrate can rebuild. The capacities that were never built can develop. The return path is available — not because the person decides to take it, but because the conditions that would support it become available."
+            group="Repair"
+            groupLabel="Repair Arc · F8–F12"
+            threadLine="Awareness rebuilds through safety — the restoration pathway reopens. Restores: the return path"
+            informsModels={[
+              { label: "M3", href: "/model/m3-regulation-capacities" },
+              { label: "M4", href: "/model/m4-awareness-capacities" },
+            ]}
+            adjacent={{
+              prev: { label: "F7 Domination Regulates", href: "/framework/f7-domination-regulates" },
+              next: { label: "F9 Variation Is Configuration", href: "/framework/f9-variation-is-configuration" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
-              concept: "The Regulation Thread",
+              concept: "Biological Restoration",
               framework: "F1",
-              description: "When biological restoration is unavailable, the nervous system substitutes at escalating scales. F8 begins the reversal.",
-              href: "/framework/f1-emotional-gradient#regulation-thread",
-            },
-            {
-              concept: "Interoceptive Self-Awareness (SEA)",
-              framework: "F2",
-              description: "The interoceptive channel between ESS and CLS — the capacity that must rebuild for the branching point to shift from Path B to Path A.",
-              href: "/framework/f2-awareness-calibration#sea",
+              description: "The body's designed process for completing the activation sequence and returning to physiological baseline — the pivot of the entire framework system.",
+              href: "/framework/f1-emotional-gradient#designed-process",
             },
             {
               concept: "False Coherence",
               framework: "F3",
-              description: "The cognitive maintenance mechanism — what loosens when safety makes awareness possible.",
-              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+              description: "The CLS generating narrative that replaces the ESS's physiological signals — the cognitive maintenance that repair must work through, not argue against.",
+              href: "/framework/f3-false-coherence#false-coherence",
+            },
+            {
+              concept: "Interoceptive Self-Awareness (SEA)",
+              framework: "F2",
+              description: "The bridge between the ESS and the CLS — the capacity that must come online for the other capacities to function sustainably.",
+              href: "/framework/f2-awareness-calibration#awareness-capacities",
             },
           ]} />
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Healing",
+                commonUnderstanding: "A breakthrough moment — the insight that changes everything, the therapy session that unlocks it all.",
+                definition: "A biological process with a biological timeline. The interoceptive substrate rebuilds through sustained different conditions — cortisol levels that stay lower for longer, ventral vagal tone sustained across interactions, relational environments that are predictably safe across weeks and months. The nervous system tests new conditions cautiously, retreats to the familiar, tests again.",
+              },
+              {
+                title: "Resistance",
+                commonUnderstanding: "Unwillingness to change — being stubborn, in denial, not ready.",
+                definition: "The nervous system accurately assessing costs. False coherence treats the current configuration as truth. The cognitive substitute has been rewarded. SEA coming online means feeling what was previously unfelt. Relationships were built around the current configuration. The system is not resisting repair. It is assessing whether repair is safe.",
+              },
+              {
+                title: "Self-awareness",
+                commonUnderstanding: "Knowing your patterns — being able to describe what you do and why.",
+                definition: "Two different things. The CLS can describe patterns with precision (a cognitive skill). The ESS can perceive its own physiological states while they are happening (a biological capacity requiring the interoceptive substrate). A person can have the first without the second — and believe they have both.",
+              },
+            ]}
+          />
+
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
-          <section
-            id="core-propositions"
-            aria-labelledby="heading-core-propositions"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-core-propositions"
-              style={sectionHeadingStyle(SPECTRUM.blue)}
-            >
-              Core Propositions
-            </h2>
-            <PropositionBox label="FOUNDATIONAL CLAIM">
-              <ul style={{ paddingLeft: 20, margin: 0 }}>
-                <li style={propositionItemStyle}>
-                  Repair is return, not construction — developing what didn&rsquo;t have conditions to develop and reconnecting what got disconnected, not finding a hidden self or removing a mask
-                </li>
-                <li style={propositionItemStyle}>
-                  Each awareness capacity has a current state (online, offline, misdirected, collapsed, compensatory) — assessment is configuration, not diagnosis, and every configuration made sense given the original environment
-                </li>
-                <li style={propositionItemStyle}>
-                  The system that needs repair defends against repair — false coherence treats the current configuration as truth, cognitive replacement has been working, and the repair process requires the very capacities that are offline
-                </li>
-                <li style={propositionItemStyle}>
-                  Five conditions for repair: felt safety, accurate mirroring, discomfort tolerance, permission, and time — all necessary, none sufficient alone, and felt safety is experienced, not understood
-                </li>
-                <li style={propositionItemStyle}>
-                  Seven pathways develop different capacities — somatic awareness for Affective Resonance (ER), relational attunement for Interpersonal Affect Perception (RE), reflective practice for Interoceptive Self-Awareness (SEA), grief work for all three
-                </li>
-                <li style={propositionItemStyle}>
-                  Repair proceeds through five oscillating phases — the back-and-forth between new capacity and old configuration is the process
-                </li>
-                <li style={propositionItemStyle}>
-                  Everyone masks their configuration — masking is a regulation strategy, not individual choice — and the cost is both individual (regulatory exhaustion, developmental arrest) and collective (shared blind spots, lost capacity)
-                </li>
-                <li style={propositionItemStyle}>
-                  Different awareness configurations provide different capacities the collective needs — a team where everyone processes the same way has shared blind spots, not balance
-                </li>
-              </ul>
-            </PropositionBox>
-          </section>
-
-          {/* ─── OVERVIEW ─────────────────────────────────── */}
-          <section
-            id="overview"
-            aria-labelledby="heading-overview"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-overview"
-              style={sectionHeadingStyle(SPECTRUM.blue)}
-            >
-              Overview — The First Repair Framework
-            </h2>
-
-            <p style={proseStyle}>
-              F7 completes the escalation arc: F1 Biological Restoration &rarr; F2 developmental failure &rarr; F3 cognitive replacement &rarr; F4 collective rules &rarr; F5 worth hierarchies &rarr; F6 bias &rarr; F7 domination. Each framework describes a different substitute for the regulation that was never built.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>F8 turns the system around.</strong> It asks: how do you go back? The answer is specific: by reconnecting the awareness capacities that went offline. Not by finding a hidden self. Not by removing a mask. Not by building insight. By developing what didn&rsquo;t have conditions to develop — and learning the return path to baseline that was never taught.
-            </p>
-
-            <KeyStatement>
-              Every substitute was built because the original was missing. Repair means building the original.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              F8 operates in two movements. <strong style={{ color: TEXT.primary }}>Part 1</strong> — Individual repair: how to assess where the three awareness capacities currently sit, why repair is difficult, what conditions make it possible, and what the process looks like. <strong style={{ color: TEXT.primary }}>Part 2</strong> — Collective strength: why everyone masks aspects of their awareness configuration, what conformity costs, and why different configurations make the collective stronger. The two movements are one argument: repairing your own capacities and accepting that everyone&rsquo;s capacities are different are the same act of moving toward safety.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Escalation (F1–F7)</th>
-                    <th style={thStyle}>Repair (F8)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["F1: Biological Restoration fails", "Restore the return mechanism"]} />
-                  <TableRow cells={["F2: Awareness capacities don\u2019t develop", "Develop the capacities now"]} />
-                  <TableRow cells={["F3: Cognition replaces emotional signals", "Reconnect cognition to emotional truth"]} />
-                  <TableRow cells={["F4: Rules substitute for regulation", "Regulation replaces need for rigid rules"]} />
-                  <TableRow cells={["F5: Worth substitutes for safety", "Safety replaces need for worth-seeking"]} />
-                  <TableRow cells={["F6: Bias substitutes for perception", "Perception updates as safety increases"]} />
-                  <TableRow cells={["F7: Domination substitutes for all", "The earlier the intervention, the less escalation"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <ExpandableSection title="Framework Position in the Regulation Thread" type="framework">
-              <p style={expandedProseStyle}>
-                F8 is the first framework in the repair arc. Not a new substitute — the development of what was missing. The regulation thread doesn&rsquo;t just describe how substitutes form. It also describes what genuine repair requires: the same thread, reversed. F8&rsquo;s goal is F2 Concept 4&rsquo;s destination — accurate Interpersonal Affect Perception (RE), sustainable Affective Resonance (ER), online Interoceptive Self-Awareness (SEA), true coherence — arrived at by a different route. Not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ───────────────────────────────────────────────── */}
-          {/* PART 1: REPAIRING AWARENESS                      */}
-          {/* ───────────────────────────────────────────────── */}
-
-          <div
-            style={{
-              padding: "12px 20px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.08),
-              borderRadius: 8,
-              marginBottom: 32,
-              fontSize: 13,
-              fontWeight: 600,
-              color: SPECTRUM.cobalt,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-            }}
-          >
-            Part 1: Repairing Awareness
-          </div>
-
-          {/* ─── ASSESSING CONFIGURATIONS ─────────────────── */}
-          <section
-            id="assessing-configurations"
-            aria-labelledby="heading-assessing-configurations"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-assessing-configurations" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Assessing Awareness Configurations
-            </h2>
-
-            <p style={proseStyle}>
-              The three awareness capacities are not binary (on/off). Each can be in different states:
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>State</th>
-                    <th style={thStyle}>What It Means</th>
-                    <th style={thStyle}>Example</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Online", "Functioning and serving understanding", "Interpersonal Affect Perception (RE) reads emotions accurately and uses the data for connection"]} />
-                  <ThreeColRow cells={["Offline", "Never developed or fully shut down", "Interoceptive Self-Awareness (SEA) was never modeled; the person has no access to internal emotional data"]} />
-                  <ThreeColRow cells={["Misdirected", "Functioning but serving the wrong purpose", "Interpersonal Affect Perception (RE) is sharp but serves control \u2014 reading others to manage them, not to connect"]} />
-                  <ThreeColRow cells={["Collapsed", "Was developing but was overwhelmed", "Affective Resonance (ER) was available but chronic flooding caused it to shut down"]} />
-                  <ThreeColRow cells={["Compensatory", "One capacity doing another\u2019s job", "Interpersonal Affect Perception (RE) substituting for Interoceptive Self-Awareness (SEA) \u2014 tracking others\u2019 responses to infer own emotional state"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <KeyStatement>
-              The assessment question is not &ldquo;What&rsquo;s wrong with me?&rdquo; but: &ldquo;Which capacities had conditions to develop, which didn&rsquo;t, and what is each one currently doing?&rdquo; This is a configuration, not a diagnosis.
-            </KeyStatement>
-
-            <ExpandableSection title="Two Routes to the Same Configuration" type="framework">
-              <p style={expandedProseStyle}>
-                The assessment also distinguishes <em>how</em> the current state arose. A capacity can be offline for two different reasons &mdash; and the difference determines what repair requires.
-              </p>
-              <p style={expandedProseStyle}>
-                <strong style={{ color: TEXT.primary }}>Chronic suppression:</strong> The capacity developed &mdash; partially or fully &mdash; and then went offline under chronic activation. The pathway exists but is blocked. Recovery means unblocking: safety long enough for the suppression to lift and the existing pathway to reopen.
-              </p>
-              <p style={expandedProseStyle}>
-                <strong style={{ color: TEXT.primary }}>Developmental absence:</strong> The capacity never developed. The conditions that build it &mdash; being regulated with, having signals received, having cycles complete through co-regulation &mdash; were never present. The pathway does not exist yet. Recovery means building: co-regulation that constructs what was never constructed. Both require safety and time. The second requires more of both.
-              </p>
-            </ExpandableSection>
-
-            <h3 style={conceptHeadingStyle}>
-              Common Configurations and Their Costs
-            </h3>
-
-            <p style={proseStyle}>
-              The awareness configuration a person carries predicts where their compass tends to settle. It is the consequence of which capacities are available.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Configuration</th>
-                    <th style={thStyle}>What It Produces</th>
-                    <th style={thStyle}>Chronic Mode</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Interpersonal Affect Perception (RE) sharp + Affective Resonance (ER) collapsed + Interoceptive Self-Awareness (SEA) offline",
-                    "Reads everything, feels nothing, doesn\u2019t know own state. Narrates emotions without experiencing them.",
-                    "Chronic Strategy & Management \u2014 \u201Cthe most psychologically literate people can be the most stuck\u201D",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "RE collapsed + ER flooded + SEA offline",
-                    "Overwhelmed by feeling, can\u2019t read what\u2019s happening, doesn\u2019t know what\u2019s theirs vs. others\u2019.",
-                    "Chronic Threat & Defence \u2014 flooded, reactive, confused",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "RE sharp + ER high + SEA offline",
-                    "Reads and feels everything but can\u2019t locate self within it. Absorbs others\u2019 states as own.",
-                    "Chronic Threat & Defence or fawn \u2014 hyperattuned, boundary-less",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "RE misdirected + ER collapsed + SEA offline",
-                    "Reads others to manage outcomes, feels little, knows nothing about own internal state.",
-                    "Chronic Strategy & Management \u2014 strategic, effective, empty",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "All three offline",
-                    "Can\u2019t read, can\u2019t feel, can\u2019t self-locate. Cognition runs everything.",
-                    "Rigid false coherence \u2014 \u201Cthis is just who I am\u201D",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              F7 Concept 5 describes the dangerous configuration: <strong style={{ color: TEXT.primary }}>sharp Interpersonal Affect Perception (RE) + collapsed Affective Resonance (ER) + absent Interoceptive Self-Awareness (SEA) = most harm, least visibility</strong>. This configuration can read a room perfectly, feels no resonance with what others experience, and has no self-awareness that any of this is happening. A configuration. The same nervous system with different developmental conditions would have produced a different configuration.
-            </p>
-
-            <ExpandableSection title="Chronic Flatness" type="framework">
-              <p style={expandedProseStyle}>
-                A configuration where all three capacities sit at baseline minimum &mdash; not as acute shutdown (which is temporary) but as the operating state. The system has reorganised around that level. The biology is still generating activation &mdash; signals are still firing &mdash; but the channels for accessing, expressing, and using that activation are at minimum or offline.
-              </p>
-              <p style={expandedProseStyle}>
-                Chronic Flatness is not emotional absence. It is the accumulated effect of a system that learned the cycle was not safe to run. Regulation signature: external or none. The body generates activation with no internal pathway and no relational pathway. The only available channels are external regulation substitutes.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The five-state model for each awareness capacity (online, offline, misdirected, collapsed, compensatory) replaces the binary on/off framing with a clinically useful assessment. The configuration-predicts-mode table connects F2&rsquo;s developmental account to F1&rsquo;s mode model — making the link between which capacities are available and where the compass settles explicit and testable. The assessment reframe from diagnosis to configuration removes pathologizing while maintaining clinical precision.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── WHY REPAIR IS DIFFICULT ─────────────────── */}
-          <section
-            id="why-repair-is-difficult"
-            aria-labelledby="heading-why-repair-is-difficult"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-why-repair-is-difficult" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Why Repair Is Difficult
-            </h2>
-
-            <h2 id="heading-repair-resistance-question" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Why does the nervous system resist awareness repair?
-            </h2>
-
-            <p style={proseStyle}>
-              The central difficulty: the system that needs repair defends against repair. The awareness capacities that need developing are offline — and the systems that replaced them (F3 false coherence, F4 rules, F5 worth-seeking, F6 bias) actively defend against the capacities coming online.
-            </p>
-
-            <ol style={orderedListStyle}>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>False coherence treats the current configuration as truth.</strong> &ldquo;This is who I am.&rdquo; &ldquo;I don&rsquo;t need to feel things — I understand them.&rdquo; &ldquo;Emotions are weakness.&rdquo; These are not preferences — they are regulatory structures. Questioning them feels like regulatory collapse, not growth.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Cognitive replacement has been working.</strong> F3&rsquo;s core mechanism: cognition tells the emotional system &ldquo;you&rsquo;re not needed.&rdquo; If the person has been successful, functional, admired — the replacement has been rewarded. Why would the system abandon what has been rewarded?
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Interoceptive Self-Awareness (SEA) coming online means feeling what was previously unfelt.</strong> Grief for what was lost. Anger about what happened. Confusion about who one actually is without the narrative. The system accurately predicts this cost and resists it.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Relationships were built around the current configuration.</strong> People who needed the person to be the reader, the manager, the strong one — those relationships may not survive a configuration change. The nervous system accurately assesses this relational risk.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>The repair process requires the very capacities that are offline.</strong> Developing Interoceptive Self-Awareness (SEA) requires enough safety to tolerate what SEA will reveal. Developing Affective Resonance (ER) requires enough resilience to handle feeling without collapsing. The system needs what it doesn&rsquo;t have in order to develop what it doesn&rsquo;t have.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>The perceptual filter is pre-cognitive.</strong> In chronic modes, perception is filtered before cognition receives it. Five sensory channels &mdash; eyes, ears, nose, gut, skin &mdash; all feed into the amygdala in 12 milliseconds, before a single thought forms. The mode sets the filter on all incoming data. Cognition builds its narrative from already-filtered input. Insight addresses the narrative. The filter operates upstream of the narrative.
-              </li>
-            </ol>
-
-            <KeyStatement>
-              The system is not resisting repair. It is assessing whether repair is safe. When it is, it will move.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              Premature repair can escalate. Pushing for capacity development before sufficient safety exists can trigger defensive escalation — the compass moves further into Threat & Defence or Strategy & Management, not toward Safety & Openness. This is not treatment resistance. It is the nervous system correctly assessing that the conditions are not yet safe enough.
-            </p>
-
-            <ExpandableSection title="Repair as Capacity — What Replaces It" type="framework">
-              <p style={expandedProseStyle}>
-                In chronic modes, genuine repair (holding accountability for impact on others) requires Interoceptive Self-Awareness (SEA) to feel one&rsquo;s own impact, Affective Resonance (ER) to feel the other person&rsquo;s experience, and Interpersonal Affect Perception (RE) to read the situation accurately. Where SEA is gone, repair is replaced by a mode-specific substitute:
-              </p>
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
               <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Safety & Openness:</strong> Self-blame &mdash; accountability is indiscriminate; the person takes responsibility for everything, including what was done to them</li>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Threat & Defence:</strong> Defence &mdash; &ldquo;you caused harm&rdquo; registers as &ldquo;you are threatening me&rdquo;</li>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Strategy & Management:</strong> Performance &mdash; the right words, no felt accountability; behaviour does not change</li>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Chronic Power & Dominance:</strong> Image management &mdash; what looks like repair serves image; remorse never lands</li>
+                <li style={propositionItemStyle}>
+                  The regulation thread runs in both directions — every substitute was built because the original was missing, and when the original becomes available, the need for the substitute diminishes
+                </li>
+                <li style={propositionItemStyle}>
+                  Two routes to the same condition require different repair: chronic suppression (the pathway exists but is blocked — unblocking through sustained safety) and developmental absence (the pathway was never built — building through co-regulation)
+                </li>
+                <li style={propositionItemStyle}>
+                  The system that needs repair defends against repair through five structural mechanisms — not resistance but the nervous system accurately assessing costs
+                </li>
+                <li style={propositionItemStyle}>
+                  Safety before capacity: felt safety (the ESS's assessment), not understood safety (the CLS's conclusion) — five conditions create the environment repair requires
+                </li>
+                <li style={propositionItemStyle}>
+                  SEA is the developmental entry point — the multiplicative system means SEA's return does not add a capacity but transforms what the other two produce
+                </li>
+                <li style={propositionItemStyle}>
+                  The repair process oscillates through five phases — the oscillation IS the process, not a sign of failure
+                </li>
+                <li style={propositionItemStyle}>
+                  Experience changes the system and insight does not — the CLS updates through information, the ESS updates through physiological conditions sustained long enough for the substrate to change
+                </li>
               </ul>
-              <p style={expandedProseStyle}>
-                The substitute feels like repair to the person inside it. That is why it persists &mdash; the capacity that would recognise it as a substitute (SEA) is the capacity that is absent.
-              </p>
             </ExpandableSection>
-          </section>
-
-          {/* ─── CONDITIONS FOR REPAIR ────────────────────── */}
-          <section
-            id="conditions-for-repair"
-            aria-labelledby="heading-conditions-for-repair"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-conditions-for-repair" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Conditions for Repair — Safety Before Capacity
-            </h2>
-
-            <h2 id="heading-conditions-repair-question" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              What conditions enable awareness capacity development?
-            </h2>
-
-            <p style={proseStyle}>
-              The principle that organizes all of F8&rsquo;s repair work: <strong style={{ color: TEXT.primary }}>the nervous system must feel safe enough for capacities to come online</strong>. This is F1&rsquo;s foundational insight (restore safety first, then expect capacity) applied to the specific question of awareness development.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Condition</th>
-                    <th style={thStyle}>What It Provides</th>
-                    <th style={thStyle}>What Happens Without It</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Felt Safety",
-                    "Nervous system regulation sufficient for new capacity to come online. Not the absence of discomfort \u2014 the presence of enough regulation to tolerate discomfort",
-                    "Capacities stay offline. The system cannot afford the cost of development",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Accurate Mirroring",
-                    "Being seen as one actually is \u2014 not the performance, not the configuration, but what\u2019s underneath. Experienced through someone whose own awareness capacities are sufficiently online",
-                    "The person has no data about who they are without the configuration. Interoceptive Self-Awareness (SEA) cannot develop without external reflection",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Discomfort Tolerance",
-                    "Capacity to stay present with what arises when capacities begin coming online \u2014 grief, confusion, anger, vulnerability",
-                    "The system retreats at the first wave of feeling. Development stalls at the threshold",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Permission",
-                    "Internal and external acceptance that imperfection, not-knowing, and process are legitimate. The opposite of F3\u2019s demand for coherence",
-                    "Shame drives the person back into false coherence. Each failed attempt reinforces \u201Cthis is who I am\u201D",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Time",
-                    "Accumulated experience rather than single insight. The nervous system updates through repeated safe exposure, not breakthrough",
-                    "Pressure for speed recreates the very conditions (performance, urgency, evaluation) that kept capacities offline",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <KeyStatement>
-              You cannot think your way into felt safety. You can only experience your way there. A person can intellectually understand everything in F1–F7 and still have zero felt safety. Insight operates in the cognitive system. Felt safety operates in the emotional-somatic system. These are different systems with different timelines.
-            </KeyStatement>
-
-            <ExpandableSection title="The Biological Conditions for SEA Recovery" type="framework">
-              <p style={expandedProseStyle}>
-                Interoceptive Self-Awareness (SEA) &mdash; the keystone capacity &mdash; has three specific biological requirements for its return:
-              </p>
-              <ol style={{ paddingLeft: 20, margin: "8px 0 0" }}>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Safety</strong> long enough for the nervous system to begin registering the absence of threat</li>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Contact</strong> that is genuinely non-coercive &mdash; another person who is actually present, not performing safety</li>
-                <li style={expandedProseStyle}><strong style={{ color: TEXT.primary }}>Time</strong> without demand &mdash; the system needs space to begin recalibrating</li>
-              </ol>
-              <p style={expandedProseStyle}>
-                These are not cognitive conditions. A person can understand the entire framework and still have Interoceptive Self-Awareness (SEA) at zero &mdash; because SEA is a physiological capacity, not an intellectual one. It develops gradually, through biological change, not through insight.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Porges (2011) — safety as prerequisite for social engagement. Siegel (2012) — window of tolerance, integration. Bowlby (1969) — secure base for exploration. Schore (2003) — right-brain regulation through relational experience. Winnicott — holding environment. Edmondson (1999) — psychological safety. Fonagy &amp; Target — mentalization requires safety. Van der Kolk (2014) — somatic processing of trauma.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The five conditions organized as a unified model for awareness capacity development — connecting clinical safety research to the specific question of which conditions allow Interpersonal Affect Perception (RE), Affective Resonance (ER), and Interoceptive Self-Awareness (SEA) to come online. The distinction between felt safety and cognitive understanding addresses a common clinical error: treating insight as equivalent to safety. The emphasis on time as a necessary condition resists the urgency that most intervention contexts produce.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── PATHWAYS ────────────────────────────────── */}
-          <section
-            id="pathways-and-process"
-            aria-labelledby="heading-pathways-and-process"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-pathways-and-process" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Pathways to Capacity Development
-            </h2>
-
-            <p style={proseStyle}>
-              Not every pathway works for every capacity. The specificity matters:
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Pathway</th>
-                    <th style={thStyle}>Primary Capacity</th>
-                    <th style={thStyle}>How It Works</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Somatic awareness",
-                    "Affective Resonance (ER)",
-                    "The body learns to feel again. Not through understanding but through experiencing sensation without overwhelm. Reconnects the channel that was shut down",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Relational attunement",
-                    "Interpersonal Affect Perception (RE)",
-                    "Accurate reading develops through being accurately read. A relationship where the person experiences being seen teaches the system what accurate reading looks like",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Reflective practice",
-                    "Interoceptive Self-Awareness (SEA)",
-                    "The person begins receiving their own internal data with support from someone whose Interoceptive Self-Awareness (SEA) is online. SEA develops through SEA being modeled",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Grief work",
-                    "All three",
-                    "Grief requires feeling \u2014 Affective Resonance (ER), recognizing what\u2019s being mourned \u2014 Interpersonal Affect Perception (RE), and knowing it is one\u2019s own \u2014 Interoceptive Self-Awareness (SEA). Develops all three simultaneously",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Values clarification",
-                    "Interoceptive Self-Awareness (SEA) primarily",
-                    "Asks: \u201CWhat do I actually want \u2014 not what I\u2019ve been told to want, not what the configuration produces, but what is mine?\u201D",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Creative expression",
-                    "Affective Resonance (ER) primarily",
-                    "Bypasses cognitive replacement by working in domains where cognition is not the primary organizer. The emotional-somatic system can express when it\u2019s not being monitored",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Corrective experience",
-                    "All three",
-                    "Experiences where authenticity is met with acceptance rather than rejection. The nervous system receives evidence that the old rules no longer apply. Updates through experience, not explanation",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              Most people need multiple pathways. Treatment identifies which pathways are most accessible — meaning least defended — for each person&rsquo;s current configuration. The person with collapsed Affective Resonance (ER) may not begin with somatic work (too threatening). The person with misdirected Interpersonal Affect Perception (RE) may not begin with relational attunement (too activating). The person with offline Interoceptive Self-Awareness (SEA) may not begin with reflective practice (no data to reflect on).
-            </p>
-
-            <KeyStatement>
-              Follow the accessible pathway first. The other capacities come online as safety increases.
-            </KeyStatement>
-
-            <ExpandableSection title="The Multiplicative Pull — SEA as Lever" type="framework">
-              <p style={expandedProseStyle}>
-                The system is multiplicative: Interpersonal Affect Perception (RE) &times; Affective Resonance (ER) &times; Interoceptive Self-Awareness (SEA). All three can be present and the product is still zero if any one is gone. Interoceptive Self-Awareness (SEA) is the keystone &mdash; and its return is also the mechanism of change.
-              </p>
-              <p style={expandedProseStyle}>
-                As SEA gradually comes online: <strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE) shifts what it serves</strong> &mdash; the reading was always accurate; with SEA present, the person can see what the reading is being used for. <strong style={{ color: TEXT.primary }}>Affective Resonance (ER) can begin to function without flooding or absence</strong> &mdash; the boundary between self and other, which SEA maintains, starts to hold. <strong style={{ color: TEXT.primary }}>The compass position shifts as a biological consequence</strong> &mdash; not because the person decided to change, but because the capacity states changed and the compass reads the new state.
-              </p>
-              <p style={expandedProseStyle}>
-                The movement is gradual, nonlinear, and cannot be forced. But the direction is consistent: as Interoceptive Self-Awareness (SEA) develops, the other two capacities shift with it, and the chronic mode becomes progressively less chronic.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── REPAIR PROCESS ──────────────────────────── */}
-          <section
-            id="repair-process"
-            aria-labelledby="heading-repair-process"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-repair-process" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              The Repair Process — Five Phases
-            </h2>
-
-            <p style={proseStyle}>
-              Repair does not proceed in a straight line. The nervous system tests new capacity, retreats to the familiar configuration, tests again. This oscillation is not resistance — it is the system checking whether the new territory is safe.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Phase</th>
-                    <th style={thStyle}>What Happens</th>
-                    <th style={thStyle}>What It Looks Like</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Unawareness",
-                    "Configuration is invisible. False coherence is complete. \u201CThis is just who I am.\u201D",
-                    "No distress about the configuration itself. May present with symptoms (burnout, relationship failure, emptiness) without connecting them to awareness gaps",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Recognition",
-                    "Configuration becomes visible. The person begins to see the gap between what they narrate and what they feel",
-                    "Grief emerges. \u201CI\u2019ve been doing this my whole life.\u201D Relief and sadness simultaneously. Often the hardest phase",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Oscillation",
-                    "Movement between new capacity and old configuration. Interoceptive Self-Awareness (SEA) comes online, then false coherence activates, then SEA again",
-                    "Can feel like failure (\u201CI thought I was past this\u201D). The oscillation itself is progress \u2014 the compass is moving",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Active Development",
-                    "Experimenting with new capacity in real relationships. Authentic expression where there was performance. Feeling where there was numbness",
-                    "Vulnerability. Risk. Some relationships deepen. Some strain. The configuration is changing and the relational system responds",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Integration",
-                    "New capacity becomes available \u2014 not permanent, not perfect, but accessible. The old configuration becomes a choice rather than a compulsion",
-                    "The person can move through all four modes with more freedom. False coherence loosens. The compass moves. The return to baseline works",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <KeyStatement>
-              The back-and-forth is not the problem. The back-and-forth is the process. Each oscillation that doesn&rsquo;t result in catastrophe is a data point. The system is accumulating evidence that the new capacity is survivable.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              The clinical error is interpreting oscillation as regression and pushing harder. The correct response is normalizing the oscillation and maintaining conditions.
-            </p>
-          </section>
-
-          {/* ─── WHAT REPAIR LOOKS LIKE ──────────────────── */}
-          <section
-            id="what-repair-looks-like"
-            aria-labelledby="heading-what-repair-looks-like"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-repair-looks-like" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              What Repair Looks Like — Movement, Not Perfection
-            </h2>
-
-            <p style={proseStyle}>
-              Repair does not produce three perfectly balanced, permanently online awareness capacities. It produces a compass that can move.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Before Repair</th>
-                    <th style={thStyle}>After Repair</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Compass stuck in one position", "Compass moves more freely across the gradient"]} />
-                  <TableRow cells={["False coherence feels like truth", "False coherence is recognizable \u2014 \u201CI\u2019m doing the thing again\u201D"]} />
-                  <TableRow cells={["One or two capacities doing all the work", "All three capacities available, even if unevenly developed"]} />
-                  <TableRow cells={["Return mechanism absent or unreliable", "Return works \u2014 the person can come back from Threat & Defence, Strategy & Management, even Power & Dominance"]} />
-                  <TableRow cells={["Emotions bypassed or flooded", "Emotions experienced as information \u2014 sometimes overwhelming, sometimes quiet, but receivable"]} />
-                  <TableRow cells={["Relationships built on configuration", "Relationships that can hold more of who the person actually is"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              The destination is F2 Concept 4&rsquo;s designed development: accurate Interpersonal Affect Perception (RE), sustainable Affective Resonance (ER), online Interoceptive Self-Awareness (SEA), true coherence — narrative aligned with felt experience, not substituting for it. Arrived at by a different route: not through the developmental conditions a child needs, but through the conditions an adult can seek, create, and sustain.
-            </p>
-
-            <KeyStatement>
-              Not becoming someone new — being able to be yourself more of the time. Like Safety & Openness itself, repair is not a place to arrive and stay. It is a capacity that gets stronger with use, weakens with chronic threat, and needs maintaining.
-            </KeyStatement>
-          </section>
-
-          {/* ───────────────────────────────────────────────── */}
-          {/* PART 2: THE POWER OF DIFFERENCE                  */}
-          {/* ───────────────────────────────────────────────── */}
-
-          <div
-            style={{
-              padding: "12px 20px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.08),
-              borderRadius: 8,
-              marginBottom: 32,
-              fontSize: 13,
-              fontWeight: 600,
-              color: SPECTRUM.cobalt,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              fontFamily: FONT.mono,
-            }}
-          >
-            Part 2: The Power of Difference
           </div>
 
-          {/* ─── EVERYONE MASKS ──────────────────────────── */}
+          {/* ─── PART 1: WHAT REPAIR MEANS ──────────────── */}
+          <PartDivider label="PART 1" title="What Repair Means in This System" color={accent} />
+
+          {/* Concept 0: Regulation Thread Reversed */}
           <section
-            id="everyone-masks"
-            aria-labelledby="heading-everyone-masks"
+            id="thread-reversed"
+            aria-labelledby="heading-thread-reversed"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-everyone-masks" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              The Universal Pattern — Everyone Masks Their Configuration
+            <h2 id="heading-thread-reversed" style={sectionHeadingStyle(accent)}>
+              What the Regulation Thread Reversed Looks Like
             </h2>
 
             <p style={proseStyle}>
-              F2 describes how awareness configurations form: the adults&rsquo; capacity configuration creates the environment, the environment shapes the child&rsquo;s capacity configuration. F3 describes how cognition builds an identity around whatever configuration results. What F8 adds: <strong style={{ color: TEXT.primary }}>every configuration that doesn&rsquo;t match what the environment expects gets masked</strong>.
+              The regulation thread (<Link href="/framework/f1-emotional-gradient#regulation-thread" style={linkStyle}>F1</Link>, completed in <Link href="/framework/f7-domination-regulates#complete-arc" style={linkStyle}>F7</Link>) traces how the nervous system substitutes — at escalating scales and costs — when biological restoration is never learned. The thread runs in both directions. Every substitute was built because the original was missing. When the original becomes available, the need for the substitute diminishes — not through argument or correction, but through the conditions that built the substitute changing underneath it.
             </p>
             <p style={proseStyle}>
-              This is not a neurodivergent-only phenomenon. It is universal. The child who feels too much learns to perform calm. The child who reads too accurately learns to pretend they didn&rsquo;t notice. The child who doesn&rsquo;t feel what they&rsquo;re &ldquo;supposed to&rdquo; feel learns to perform the expected emotion. The child who is internally aware learns that self-knowledge is threatening to adults who don&rsquo;t have it.
+              What "the original" means, biologically: the restoration sequence runs to its endpoint. Stress hormones metabolise. Muscles release. The HPA axis stands down. The nervous system returns toward physiological baseline. The entire escalation arc — from individual false coherence through institutional domination — traces what happens when this biological completion is structurally unavailable.
             </p>
-
             <p style={proseStyle}>
-              Masking follows the same mechanism as every other substitute in the regulation thread: authentic capacity expression &rarr; environmental punishment &rarr; the nervous system learns authenticity is unsafe &rarr; a regulatory strategy forms &rarr; the mask becomes automatic &rarr; false coherence absorbs the mask as truth.
+              The repair arc does not undo the escalation arc. It does not argue against the mechanisms <Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>–<Link href="/framework/f7-domination-regulates" style={linkStyle}>F7</Link> describe. It maps what happens when the conditions underneath those mechanisms change: when the interoceptive substrate begins to rebuild, when the bridge between the ESS and CLS begins to carry signal, when the restoration sequence becomes available — and the substitutes begin to loosen because the system no longer needs them in the same way. The reversal is not symmetrical. The substitutes developed over years or decades. The nervous system tests new conditions cautiously, retreats to the familiar, tests again.
             </p>
 
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Configuration Feature</th>
-                    <th style={thStyle}>Why It Gets Masked</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["High Interpersonal Affect Perception (RE) (reads too much)", "\"You\u2019re too sensitive.\" \"Stop analyzing everyone.\" \"Why can\u2019t you just relax?\""]} />
-                  <TableRow cells={["High Affective Resonance (ER) (feels too deeply)", "\"You\u2019re overreacting.\" \"Toughen up.\" \"It\u2019s not that serious.\""]} />
-                  <TableRow cells={["Online Interoceptive Self-Awareness (SEA) (knows too much about self)", "\"You\u2019re overthinking.\" \"Just be normal.\" Others uncomfortable with self-awareness they don\u2019t have"]} />
-                  <TableRow cells={["Low Affective Resonance (ER) (doesn\u2019t feel what\u2019s expected)", "\"Don\u2019t you care?\" \"What\u2019s wrong with you?\" Performs emotion to meet expectations"]} />
-                  <TableRow cells={["Nonlinear processing", "\"Stay focused.\" \"That\u2019s off-topic.\" \"Pay attention.\""]} />
-                  <TableRow cells={["Intense focus patterns", "\"You\u2019re obsessed.\" \"Why can\u2019t you be more balanced?\""]} />
-                </tbody>
-              </table>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — regulation thread running in both directions */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Porges (2011) — the nervous system's capacity to shift from defensive to social engagement states when safety cues are sustained. Levine (1997) — the body's capacity to complete interrupted activation sequences at any point in life. Bowlby (1969/1988) — earned security: adults can develop secure attachment representations regardless of their history. Siegel (2012) — neural integration as a lifelong developmental capacity.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The regulation thread as a bidirectional architecture — the same thread that traces escalation also traces repair, and the direction depends on conditions, not on the person's decision. Repair framed not as undoing the past but as making the designed biological process available for the first time. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>
-              The Cost of Conformity
-            </h3>
-
-            <p style={proseStyle}>
-              Homogeneity is a regulatory strategy. It follows the same logic as every F4–F7 mechanism: sameness feels safe (F4), difference feels threatening (F6), enforcing one configuration reduces uncertainty (F5), and the system becomes more rigid and less adaptive (F7).
-            </p>
-
-            <KeyStatement>
-              The trap: the more homogeneous the system, the safer it feels — and the more fragile it actually is. A system where everyone reads the same way, feels the same way, and processes the same way has massive blind spots.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              For the person masking their configuration: regulatory exhaustion (every hour of performing draws down reserves), developmental arrest (capacities that are suppressed don&rsquo;t develop), identity confusion (false coherence absorbs the mask), relational disconnection (relationships built on the performed configuration cannot hold the real person), and the regulation thread applies — masking is another substitute with escalating costs.
-            </p>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The explicit naming of masking as a universal pattern — not limited to neurodivergent experience — positioned within the regulation thread. The masking mechanism follows the same structure as F3&rsquo;s false coherence, F4&rsquo;s rule internalization, and F5&rsquo;s worth-seeking: authentic expression &rarr; environmental punishment &rarr; regulatory strategy &rarr; automaticity &rarr; false coherence absorption. This positions masking not as a neurodivergent-specific phenomenon but as a universal consequence of environments that regulate through enforced conformity — with F9 then showing what happens when this universal pattern becomes structural.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ─── COLLECTIVE STRENGTH ─────────────────────── */}
+          {/* Concept 1: Two Routes */}
           <section
-            id="collective-strength"
-            aria-labelledby="heading-collective-strength"
+            id="two-routes"
+            aria-labelledby="heading-two-routes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-collective-strength" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Different Configurations, Collective Strength
+            <h2 id="heading-two-routes" style={sectionHeadingStyle(accent)}>
+              Two Routes to the Same Condition
             </h2>
 
             <p style={proseStyle}>
-              Different awareness configurations produce different capacities. What one configuration cannot see, another can. What one configuration cannot feel, another does. What one configuration misses, another catches.
+              The interoceptive channel can be absent for two structurally different reasons. The distinction determines what repair requires.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Chronic suppression.</strong> The bridge developed, partially or fully, and then closed under chronic activation. The interoceptive pathway exists. The channels are degraded — sustained cortisol elevation, sympathetic dominance, cortical suppression of visceral signals. But the architecture was built. Repair requires unblocking: sustained safety long enough for the existing pathway to reopen.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Developmental absence.</strong> The bridge was never built. The relational conditions that build the interoceptive substrate — being regulated with, having signals received, having activation sequences complete through co-regulation (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>) — were never present. Repair requires building: new relational experience that constructs the pathway for the first time. Not instruction, not explanation — the same relational process that builds the substrate in childhood, operating in adulthood.
+            </p>
+            <p style={proseStyle}>
+              Both routes produce the same operational condition: the CLS operates without its own ESS's data. The person may be cognitively sophisticated, professionally successful, psychologically literate — and still running without the interoceptive channel. The distinction matters because unblocking an existing pathway and building a pathway that never existed are fundamentally different biological processes — requiring different conditions, different relational inputs, and different timeframes.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — two routes, different repair requirements */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Schore (2003) — right-brain regulation develops through relational experience and can rebuild in adulthood. Fonagy & Target (2002) — mentalization as a developmental achievement acquirable through therapeutic relationships. Van der Kolk (2014) — physiological patterns persist until the body has conditions to complete what was interrupted.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The two-route distinction mapped through the interoceptive substrate architecture — not as clinical typology but as structural consequence of which system needs to change. Both routes produce identical conditions from outside, making the distinction invisible without assessment. What repair requires is determined by the route, not by the presenting condition. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 2: Why the System Defends */}
+          <section
+            id="repair-defence"
+            aria-labelledby="heading-repair-defence"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-repair-defence" style={sectionHeadingStyle(accent)}>
+              Why the System That Needs Repair Defends Against Repair
+            </h2>
+
+            <p style={proseStyle}>
+              The central difficulty is structural, not motivational. The awareness capacities that need developing are offline — and the systems that replaced them actively defend against the capacities coming online. Five mechanisms maintain the defence:
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>False coherence treats the current configuration as truth.</strong> "This is who I am." The narrative stabilises the chronic state. Questioning it threatens the only stability the system has.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The cognitive substitute has been rewarded.</strong> If the person has been successful and functional — and many people running Path B are — RE sharpened, the CLS built sophisticated models, the strategy has been producing results. Why would the nervous system abandon what has been reinforced?
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>SEA coming online means feeling what was previously unfelt.</strong> Grief for what was lost. Anger about what happened. Confusion about who one actually is without the narrative. The nervous system accurately predicts this cost.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Relationships were built around the current configuration.</strong> Partners, colleagues, family — all structured around who the person has been. A configuration change threatens every relationship that depended on the previous configuration.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The bootstrap problem.</strong> Developing SEA requires enough safety to tolerate what SEA will reveal. Developing ER requires enough resilience to handle feeling without collapsing. The system needs what it doesn't have in order to develop what it doesn't have. The system cannot start from inside itself. It requires external conditions to initiate the process.
+            </p>
+            <p style={proseStyle}>
+              Each mechanism is the nervous system doing what it is designed to do: assessing conditions, predicting costs, and organising to minimise threat. The defence dissolves when the conditions change — when the nervous system accumulates enough evidence that the new territory is survivable.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — five defence mechanisms */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Festinger (1957) — cognitive dissonance as regulatory threat to maintaining coherence. Bowlby (1980) — the attachment system's resistance to reorganisation even when existing patterns are costly. Porges (2011) — neuroception: safety-threat assessment below conscious awareness. Levine (1997) — the body's resistance to discharge as protective until conditions support completion.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The five-mechanism model traced through specific systems (false coherence, cognitive substitution, the interoceptive channel, relational structures, and the bootstrap problem) rather than as generalised resistance. The reframing from motivational language ("they're not ready") to structural language: the system is assessing conditions, and the assessment is accurate given the current configuration. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 2: CONDITIONS ─────────────────────── */}
+          <PartDivider label="PART 2" title="Conditions" color={accent} />
+
+          {/* Concept 3: Safety Before Capacity */}
+          <section
+            id="safety-before-capacity"
+            aria-labelledby="heading-safety-before-capacity"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-safety-before-capacity" style={sectionHeadingStyle(accent)}>
+              Safety Before Capacity — The Organising Principle
+            </h2>
+
+            <p style={proseStyle}>
+              The nervous system must assess conditions as safe enough for capacities to come online. Not cognitive safety — the person understanding that they are safe. Felt safety — the ESS registering the sustained absence of threat through its own channels: ventral vagal activation, cortisol clearance, muscle release, autonomic settling.
+            </p>
+            <p style={proseStyle}>
+              The distinction matters because the two systems operate on different data. The CLS can conclude "I am safe" from information. The ESS concludes "safe" from physiological signals: vocal prosody, pace of interaction, absence of sudden movement, sustained predictability. A person can understand they are safe and have a nervous system that has not updated. This is why insight does not produce repair.
+            </p>
+            <p style={proseStyle}>
+              Five conditions create the environment in which capacities can begin developing. Each is necessary. None is sufficient alone:
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Felt safety.</strong> Not the absence of discomfort — the presence of enough regulation to tolerate discomfort. Cortisol clearing. Ventral vagal tone increasing. The window within which new experience can be processed widening.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Accurate mirroring.</strong> Being perceived as one actually is — not the performance, not the configuration. This requires another person whose own awareness capacities are sufficiently online. SEA cannot develop without external reflection — because the channel that would provide internal data is the channel that is absent.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Discomfort tolerance.</strong> The capacity to remain present with what arises when capacities begin coming online — grief, confusion, anger, vulnerability. This develops through the process, not before it.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Permission.</strong> Internal and external acceptance that imperfection, not-knowing, and process are legitimate states. The opposite of false coherence's demand for coherence.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Time.</strong> Accumulated experience rather than single insight. The interoceptive substrate rebuilds through sustained different conditions — across weeks and months. Pressure for speed recreates the very conditions that kept capacities offline.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — five conditions for repair */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Porges (2011) — safety as prerequisite for social engagement. Siegel (2012) — window of tolerance. Bowlby (1988) — the secure base: relational conditions for exploration. Winnicott (1965) — the holding environment.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The five conditions traced through the two-system architecture. Each mapped to whether it operates through the ESS (felt safety, discomfort tolerance), the CLS (permission), or the relational environment (accurate mirroring, time). The distinction between cognitive safety and felt safety as the explanation for why understanding the framework does not produce repair. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 4: What Replaces Repair */}
+          <section
+            id="repair-substitutes"
+            aria-labelledby="heading-repair-substitutes"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-repair-substitutes" style={sectionHeadingStyle(accent)}>
+              What Replaces Repair in Each Chronic State
+            </h2>
+
+            <p style={proseStyle}>
+              Repair — holding accountability for one's impact on another person — requires three capacities working together: SEA to feel one's own role, ER to feel the other person's experience, and RE to read the situation accurately. Where SEA is absent, genuine repair is replaced by a substitute that follows the logic of the chronic state. The substitute feels like repair from inside — because SEA is the capacity that would recognise the difference.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
               <table style={tableStyle}>
                 <thead>
                   <tr>
-                    <th style={thStyle}>Configuration Strength</th>
-                    <th style={thStyle}>What It Provides to the Collective</th>
+                    <th style={thStyle}>Chronic State</th>
+                    <th style={thStyle}>What Replaces Repair</th>
+                    <th style={thStyle}>What's Missing</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["High Interpersonal Affect Perception (RE) \u2014 reads patterns, dynamics, unspoken signals", "Sees what\u2019s actually happening. Detects misalignment between what\u2019s said and what\u2019s meant. Identifies problems before they escalate"]} />
-                  <TableRow cells={["High Affective Resonance (ER) \u2014 deep emotional resonance", "Holds the emotional truth of the group. Knows when something is wrong even when metrics say everything is fine"]} />
-                  <TableRow cells={["Strong Interoceptive Self-Awareness (SEA) \u2014 accurate self-knowledge", "Names what\u2019s happening. Cuts through false coherence. Models the capacity for others"]} />
-                  <TableRow cells={["Nonlinear processing", "Finds connections that sequential thinkers miss. Sees the whole pattern, not just the steps"]} />
-                  <TableRow cells={["Detail-oriented processing", "Catches what broad thinkers skip. Identifies the one variable that changes everything"]} />
-                  <TableRow cells={["Slow, deep processing", "Finds what fast processors overlook. Sits with complexity long enough for the real answer to emerge"]} />
-                  <TableRow cells={["High sensory sensitivity", "Detects environmental signals others miss. Provides early warning when conditions shift"]} />
+                  <TableRow cells={["Safety & Openness (as survival)", "Self-blame. Accountability is indiscriminate — the person takes responsibility for everything, including what was done to them.", "The discrimination between 'this was mine' and 'this was not mine.' SEA would provide that discrimination."]} />
+                  <TableRow cells={["Threat & Defence", "Defence. 'You caused harm' registers as 'you are threatening me.' The state filters all incoming signals through threat detection.", "The capacity to process the request as anything other than danger."]} />
+                  <TableRow cells={["Strategy & Management", "Performance. The right words arrive. The apology sounds correct. Behaviour does not change.", "The physiological shift that genuine repair requires: feeling the impact in the body."]} />
+                  <TableRow cells={["Power & Dominance", "Image management. Remorse is performed for the audience that matters. The nervous system is not processing impact.", "ER is offline, SEA was never built. The image of repair is a regulatory tool."]} />
                 </tbody>
               </table>
             </div>
 
             <p style={proseStyle}>
-              No single configuration is complete. Every configuration has blind spots. The complete picture requires multiple configurations contributing openly — not one &ldquo;correct&rdquo; configuration performing at its best, but different configurations in genuine exchange.
+              Each substitute persists because it is invisible from inside. The capacity that would distinguish the substitute from genuine repair — SEA — is the capacity that is absent. The person inside the substitute believes they are repairing.
             </p>
 
-            <KeyStatement>
-              A team where everyone processes the same way is not a balanced team — it is a team with shared blind spots. The collective compass is more accurate when it has more sensors. Different configurations are different sensors.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — per-state repair substitutes */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>When Configurations Are Masked</th>
-                    <th style={thStyle}>When Configurations Contribute Openly</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Group sees only what the dominant configuration can see", "Group sees what all configurations can see \u2014 wider field, more dimensions"]} />
-                  <TableRow cells={["Emotional truth suppressed to maintain comfort", "Emotional truth available \u2014 the group knows what it actually feels"]} />
-                  <TableRow cells={["Problems invisible until crisis", "Problems visible early \u2014 different configurations detect different signals"]} />
-                  <TableRow cells={["\u201CGroupthink\u201D \u2014 false coherence at collective scale", "Genuine disagreement and integration \u2014 true coherence through difference"]} />
-                  <TableRow cells={["Fragile \u2014 shared blind spots produce shared failures", "Resilient \u2014 different blind spots compensate for each other"]} />
-                </tbody>
-              </table>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Herman (2015) — stages of trauma recovery: safety before processing. Gottman (1999) — repair attempts and conditions for success or failure. Fonagy & Target (2002) — mentalization failure under emotional arousal.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The per-state mapping of repair substitutes — showing that the substitute follows the logic of the chronic state, not random variation. SEA as the discriminating capacity whose absence makes the substitute self-maintaining. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
+          </section>
+
+          {/* ─── PART 3: THE REPAIR PROCESS ─────────────── */}
+          <PartDivider label="PART 3" title="The Repair Process" color={accent} />
+
+          {/* Concept 5: SEA as Entry Point */}
+          <section
+            id="sea-entry-point"
+            aria-labelledby="heading-sea-entry-point"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-sea-entry-point" style={sectionHeadingStyle(accent)}>
+              SEA as the Developmental Entry Point
+            </h2>
 
             <p style={proseStyle}>
-              This is not &ldquo;diversity for diversity&rsquo;s sake.&rdquo; This is a structural argument. Different awareness configurations provide different data. A collective that has access to more data makes better decisions. The argument is architectural, not just moral.
+              <Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link> established the awareness architecture as a multiplicative system: RE × ER × SEA. The product is zero if any one is absent — no matter how developed the other two are. SEA — Interoceptive Self-Awareness — is the developmental entry point. Building the inward channel activates the substrate for outward use. A person cannot feel others accurately — with boundaries, with differentiation — if they cannot feel themselves.
+            </p>
+            <p style={proseStyle}>
+              What happens as SEA begins to come online:
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>RE shifts what it serves.</strong> The reading was always accurate — RE operates through the external observation substrate, unaffected by chronic activation. What changes is what the reading is used for. With SEA absent, RE serves the chronic state: surveillance, management, leverage. With SEA present, the person can observe what the reading is being used for — and the observation itself begins to shift the function.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>ER can function without flooding or absence.</strong> The boundary between self and other, which SEA maintains, starts to hold. The person can feel with another person — resonance — without merging (absorbing the other's state as their own) or shutting down (blocking resonance to prevent overwhelm).
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>The nervous system's position on the gradient shifts as a biological consequence.</strong> Not because the person decided to change, but because the capacity configuration changed. When SEA opens, the CLS begins receiving data from the ESS. The data updates the CLS's model. Physiological baseline begins to shift — not through insight, but through the restoration sequence running more frequently because the conditions now support it.
             </p>
 
-            <KeyStatement>
-              Safety through sameness is false coherence at collective scale. The systems that feel safest (homogeneous, predictable, conformity-enforced) are the ones most at risk. The systems that feel most uncomfortable (heterogeneous, unpredictable, difference-tolerant) are the ones most resilient.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — multiplicative system: SEA returning transforms RE and ER */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Levine (1997) — somatic experiencing: completing interrupted activation through interoceptive awareness. Barrett (2017) — emotional granularity: the more precisely a person can differentiate internal states, the more effective regulatory capacity. Fonagy & Target (2002) — mentalization develops through being mentalized.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The multiplicative architecture applied to repair — showing that the entry point matters because the system is not additive. SEA's return does not just add a third capacity; it transforms what the other two produce. Each capacity shift traced through the interoceptive substrate architecture. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 6: Five Phases */}
+          <section
+            id="five-phases"
+            aria-labelledby="heading-five-phases"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-five-phases" style={sectionHeadingStyle(accent)}>
+              Five Oscillating Phases
+            </h2>
+
+            <p style={proseStyle}>
+              The repair process does not proceed in a straight line. The nervous system tests new capacity, retreats to the familiar, tests again. The oscillation is the nervous system checking whether the new territory is survivable.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Phase 1: Unawareness.</strong> The configuration is invisible from inside. False coherence is complete — the narrative accounts for everything. The chronic state feels like identity. This is not denial. The channel that would carry the information is absent.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Phase 2: Recognition.</strong> Something shifts — a relationship, a crisis, a repeated failure the narrative can no longer absorb — and the person begins to see the gap between what they narrate and what they feel. This often surfaces as grief. The recognition itself is evidence that the interoceptive channel is beginning to carry signal.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Phase 3: Oscillation.</strong> Movement between new capacity and old configuration. SEA comes online — the person catches the override in progress — and then false coherence activates and the familiar configuration returns. This phase can last months or years. It can feel like failure. But the oscillation itself IS the process. Each oscillation that lands safely extends the range of movement.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Phase 4: Active development.</strong> Experimenting with new capacity in real relationships. Authentic expression where there was performance. Feeling where there was numbness. This phase carries genuine risk: some relationships deepen, and some strain.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Phase 5: Integration.</strong> New capacity becomes available — not permanent, not perfect, but accessible. The old configuration becomes recognisable rather than invisible: "I'm doing the thing again." The return to physiological baseline works. Integration is not a destination. It is the capacity to move — and to recognise when movement has stalled.
+            </p>
+            <p style={proseStyle}>
+              The phases are not linear stages passed through once. The system revisits earlier phases under new stress, new relational configurations, new challenges.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: animated — five phases with oscillation between them */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Prochaska & DiClemente (1983) — stages of change: oscillation between contemplation and action. Bowlby (1980) — attachment system's gradual reorganisation through repeated safe experience. Siegel (2012) — neural integration as ongoing process. Levine (1997) — pendulation: the body's natural oscillation between activation and settling.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The five phases mapped through the interoceptive channel architecture — each defined by what the CLS is receiving from the ESS, not by behavioural presentation. The reframing of oscillation from treatment difficulty to biological mechanism: the nervous system's designed process for testing new conditions before committing to reorganisation. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 7: Experience vs Insight */}
+          <section
+            id="experience-not-insight"
+            aria-labelledby="heading-experience-not-insight"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-experience-not-insight" style={sectionHeadingStyle(accent)}>
+              Why Experience Changes the System and Insight Does Not
+            </h2>
+
+            <p style={proseStyle}>
+              A person can read F1 through F7. Can identify their capacity configuration, name their chronic state, trace the regulation thread through their own history. And still do the thing. Still enter the chronic state under pressure. Still run the substitute.
+            </p>
+            <p style={proseStyle}>
+              The explanation is architectural. Insight is a CLS operation. The CLS produces understanding through language and reasoning. The configuration is an ESS condition — maintained by the interoceptive substrate and the physiological state the nervous system has organised around. The system that produces understanding and the system that organises behaviour operate through separate biological substrates. They process at different speeds. They update through different mechanisms. The CLS updates through information. The ESS updates through experience — through physiological conditions sustained long enough for the substrate to change.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Relational conditions, not cognitive conditions.</strong> The restoration sequence runs because the nervous system assesses conditions as safe enough — not because the person understands that it should. The assessment is pre-cognitive: ventral vagal tone, cortisol levels, autonomic settling. Established through sustained relational experience.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Time at physiological scale.</strong> The CLS can update in a conversation. The interoceptive substrate changes over weeks and months of sustained different conditions. This timeline is biological, not motivational.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Experience of completion.</strong> The restoration sequence must actually run. The stress hormones must metabolise. The muscles must release. The experience of completion — not the understanding of completion — is what rebuilds the substrate. Each time the sequence runs to its endpoint, the substrate registers: the return is possible. Each completion makes the next one more likely. The loop runs in the restoration direction.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — CLS updates through information, ESS through experience */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Van der Kolk (2014) — physiological patterns persist until the body has conditions to complete what was interrupted. Porges (2011) — the social engagement system responds to safety cues, not cognitive conclusions. Damasio (1994) — somatic markers: the body's role operates through channels cognitive reasoning cannot access.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The structural explanation for why insight fails at the repair level — not as clinical observation but as consequence of the two-system, two-substrate architecture. The specific mechanism: the CLS and ESS operate through separate substrates, process at different speeds, and update through different mechanisms. What rebuilds the substrate is experiencing restoration, not understanding it. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
               {
                 term: "The regulation thread reversed",
-                definition: "The thread runs in both directions. Every substitute was built because the original was missing. Building the original is repair.",
+                definition: "The same thread traces escalation and repair. Every substitute was built because the original was missing. Building the original is repair. The direction depends on conditions.",
               },
               {
                 term: "Two routes to the same condition",
-                definition: "Chronic suppression (unblocking) vs developmental absence (building). Both require safety. The second requires more.",
+                definition: "Chronic suppression (pathway exists, blocked — unblocking through sustained safety) and developmental absence (pathway never built — building through co-regulation). Both produce the same operational condition. Different repair requirements.",
               },
               {
-                term: "Why the system defends against repair",
-                definition: "Five mechanisms: False Coherence, rewarded substitution, pain of Interoceptive Self-Awareness (SEA) online, relational risk, bootstrap problem.",
+                term: "Five mechanisms of repair defence",
+                definition: "False coherence as truth, rewarded substitution, pain of SEA online, relational risk, bootstrap problem. Not resistance — the nervous system accurately assessing costs.",
               },
               {
                 term: "Safety before capacity",
-                definition: "The organising principle. Felt safety (ESS), not understood safety (CLS). Five conditions: felt safety, accurate mirroring, discomfort tolerance, permission, time.",
+                definition: "Felt safety (ESS), not understood safety (CLS). Five conditions: felt safety, accurate mirroring, discomfort tolerance, permission, time.",
+              },
+              {
+                term: "Per-state repair substitutes",
+                definition: "Self-blame (Safety & Openness), defence (Threat & Defence), performance (Strategy & Management), image management (Power & Dominance). SEA's absence makes each invisible from inside.",
               },
               {
                 term: "SEA as the developmental entry point",
-                definition: "The multiplicative system. SEA's return shifts what Interpersonal Affect Perception (RE) serves and whether Affective Resonance (ER) can function with boundaries.",
+                definition: "The multiplicative system (RE × ER × SEA). SEA's return transforms what the other capacities produce — RE shifts what it serves, ER gains boundaries, the gradient position shifts as biological consequence.",
               },
               {
                 term: "Five oscillating phases",
-                definition: "Unawareness → Recognition → Oscillation → Active Development → Integration. The oscillation IS the process.",
+                definition: "Unawareness → Recognition → Oscillation → Active Development → Integration. The oscillation IS the process. Phases revisited under new conditions.",
               },
               {
-                term: "Why experience changes the system and insight does not",
-                definition: "Two systems, two substrates, different speeds. The CLS updates through information. The ESS updates through experience.",
-              },
-              {
-                term: "Why different configurations make the collective stronger",
-                definition: "Different configurations provide different data. Homogeneity is the collective equivalent of narrowed perception.",
+                term: "Experience changes, insight does not",
+                definition: "Two systems, two substrates, two update mechanisms. The CLS updates through information. The ESS updates through sustained physiological conditions. What rebuilds the substrate is experiencing restoration, not understanding it.",
               },
             ]}
           />
 
-          {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
-          <section
-            id="research-foundations"
-            aria-labelledby="heading-research-foundations"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Research Foundations
-            </h2>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tradition</th>
-                    <th style={thStyle}>Key Contribution</th>
-                    <th style={thStyle}>Researchers</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Attachment Theory", "Regulatory development through relational experience; secure base for exploration", "Bowlby, 1969; Ainsworth"]} />
-                  <ThreeColRow cells={["Interpersonal Neurobiology", "Integration, window of tolerance, state-dependent capacity development", "Siegel, 2012"]} />
-                  <ThreeColRow cells={["Polyvagal Theory", "Safety as prerequisite for social engagement and capacity", "Porges, 2011"]} />
-                  <ThreeColRow cells={["Affect Regulation", "Right-brain regulation develops through relational experience", "Schore, 2003"]} />
-                  <ThreeColRow cells={["Object Relations", "True/False Self; holding environment; development through relationship", "Winnicott"]} />
-                  <ThreeColRow cells={["Mentalization", "Capacity to understand mental states in self and others", "Fonagy & Target"]} />
-                  <ThreeColRow cells={["Somatic Experiencing", "Body-based trauma resolution; capacity through somatic awareness", "Levine"]} />
-                  <ThreeColRow cells={["Emotion Differentiation", "Emotional granularity predicts regulatory capacity", "Barrett"]} />
-                  <ThreeColRow cells={["Metacognition Research", "Self-awareness as developable capacity", "Flavell; Wells"]} />
-                  <ThreeColRow cells={["Neurodiversity Paradigm", "Different neurological configurations as natural variation", "Singer; Walker"]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-                    {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.blue}
-            established="F8 established that awareness capacities rebuild through safety, not instruction — the biological sequence follows a specific order, and the conditions must precede the capacity."
-            question="But what happens when the nervous system that needs to rebuild was configured differently from the start — when the instrument itself has a different architecture? F9 maps variation as configuration, not deficit."
+            color={accent}
+            established="F8 established how awareness rebuilds through safety — the regulation thread reversed, two routes to repair, five mechanisms of defence, safety before capacity, SEA as the entry point, five oscillating phases, and why experience changes the system while insight does not."
+            question="Every awareness configuration that does not match what the environment expects gets masked. When this universal pattern becomes structural — when environments are designed for one neurological configuration — the mismatch is not interpersonal. It is architectural. Individual repair has limited effect when the structural conditions keep dismantling what the person is trying to build."
             nextFramework="F9"
-            nextTitle="Variation Is Configuration"
-            nextHref="/framework/f9-neurodivergence-variation"
+            nextTitle="Variation Is Configuration, Not Deficit"
+            nextHref="/framework/f9-variation-is-configuration"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.blue}
+            color={accent}
             connections={[
-              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 describes the lock. F8 describes how it opens — awareness rebuilt through safety, not instruction." },
-              { id: "F7", href: "/framework/f7-domination-regulates", description: "F7 is the endpoint of escalation. F8 begins the return — the same principle at every stage: safety before capacity." },
-              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the three awareness capacities. F8 describes the conditions under which capacities that were never built can begin to develop." },
-              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps the restoration sequence. F8 describes the conditions that allow the restoration pathway to become available." },
+              {
+                id: "M3: Regulation Capacities",
+                href: "/model/m3-regulation-capacities",
+                description: "M3 maps the branching point — Path A (restoration completes) vs Path B (override persists). F8 maps the Path B → Path A transition: how the conditions that enable biological restoration can be established in a system that has been running Path B.",
+              },
+              {
+                id: "M4: Awareness Capacities",
+                href: "/model/m4-awareness-capacities",
+                description: "M4 maps the multiplicative system (RE × ER × SEA) and the bidirectional loop. F8 maps what happens when the loop runs in the restoration direction — how each capacity comes online, in what order, through what conditions.",
+              },
+              {
+                id: "F2: Developmental Calibration",
+                href: "/framework/f2-awareness-calibration",
+                description: "F2 maps how the substrate gets built — or doesn't — through the relational environment. F8 maps the same mechanism in adulthood: same biology, same requirements, same specificity. F2 is the calibration. F8 is the recalibration.",
+              },
+              {
+                id: "F3: Adult Cognition & False Coherence",
+                href: "/framework/f3-false-coherence",
+                description: "F3 maps cognitive override as permanent architecture. F8 maps what happens when the override begins to loosen — when the channel opens and the CLS begins receiving data it has never had.",
+              },
+              {
+                id: "F7: Domination Regulates",
+                href: "/framework/f7-domination-regulates",
+                description: "F7 completed the collective arc at maximum cost. F8 begins the repair arc — the bidirectional loop running in the restoration direction.",
+              },
+              {
+                id: "F9: Variation Is Configuration",
+                href: "/framework/f9-variation-is-configuration",
+                description: "F8 establishes that repair requires safety. F9 asks what happens when the environment itself prevents the safety — when structures are designed for one configuration and treat all others as deficient.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
-              { label: "Continue to F9 — variation as configuration", href: "/framework/f9-neurodivergence-variation", linkText: "F9: Variation Is Configuration →" },
-              { label: "See the lock this framework opens", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F9 — when the environment prevents the safety repair requires", href: "/framework/f9-variation-is-configuration", linkText: "F9: Variation Is Configuration \u2192" },
+              { label: "See the awareness architecture and the multiplicative system", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
+              { label: "See the restoration sequence mapped in detail", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
+              { label: "Return to F2 — how the calibration was set in the first place", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration \u2192" },
+              { label: "Return to F1 — biological restoration as the designed process", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ─── JSON-LD: ScholarlyArticle ──────────────────── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -988,9 +700,9 @@ export default function F8RepairingAwarenessPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f8-repairing-awareness#article",
-            headline: "Repairing Awareness: How the Three Capacities Develop and Why Difference Is Strength",
+            headline: "Awareness Rebuilds Through Safety: How the Interoceptive Channel Reopens",
             description:
-              "How the three awareness capacities can be assessed, why repair is difficult, what conditions enable it, and what the process looks like. Why different awareness configurations make the collective stronger. Framework F8 of the TEG-Blue 12-framework system.",
+              "How awareness capacities rebuild through safety — two routes to repair, the bootstrap problem, SEA as developmental entry point, five oscillating phases, and why experience changes the system while insight does not. Framework F8 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -1001,8 +713,8 @@ export default function F8RepairingAwarenessPage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            datePublished: "2026-03-07",
+            dateModified: "2026-04-06",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -1015,35 +727,33 @@ export default function F8RepairingAwarenessPage() {
               "@id": "https://teg-blue.org/framework/f8-repairing-awareness",
             },
             about: [
-              { "@type": "Thing", name: "Awareness Configuration" },
-              { "@type": "Thing", name: "Conditions for Repair" },
-              { "@type": "Thing", name: "Capacity Development Pathways" },
-              { "@type": "Thing", name: "Universal Masking" },
-              { "@type": "Thing", name: "Collective Intelligence Through Difference" },
+              { "@type": "Thing", name: "Awareness Repair" },
+              { "@type": "Thing", name: "Interoceptive Self-Awareness" },
+              { "@type": "Thing", name: "Safety Before Capacity" },
+              { "@type": "Thing", name: "Earned Security" },
+              { "@type": "Thing", name: "Somatic Experiencing" },
             ],
             citation: [
-              { "@type": "ScholarlyArticle", name: "Attachment Theory (Bowlby, 1969)" },
-              { "@type": "ScholarlyArticle", name: "The Developing Mind (Siegel, 2012)" },
               { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
-              { "@type": "ScholarlyArticle", name: "Affect Regulation (Schore, 2003)" },
-              { "@type": "ScholarlyArticle", name: "True/False Self (Winnicott)" },
-              { "@type": "ScholarlyArticle", name: "Mentalization (Fonagy & Target)" },
-              { "@type": "ScholarlyArticle", name: "Somatic Experiencing (Levine)" },
+              { "@type": "ScholarlyArticle", name: "The Developing Mind (Siegel, 2012)" },
+              { "@type": "ScholarlyArticle", name: "Attachment and Loss (Bowlby, 1969)" },
+              { "@type": "ScholarlyArticle", name: "Affect Regulation and the Origin of the Self (Schore, 2003)" },
+              { "@type": "ScholarlyArticle", name: "Waking the Tiger (Levine, 1997)" },
+              { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (van der Kolk, 2014)" },
             ],
             keywords: [
-              "repairing awareness",
-              "awareness configuration",
-              "capacity development",
-              "conditions for repair",
-              "masking",
-              "collective intelligence",
-              "different configurations",
+              "awareness repair",
+              "interoceptive channel",
+              "safety before capacity",
+              "co-regulation",
+              "earned security",
+              "somatic experiencing",
+              "repair oscillation",
+              "configuration diversity",
             ],
           }),
         }}
       />
-
-      {/* ─── JSON-LD: BreadcrumbList ────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1051,54 +761,46 @@ export default function F8RepairingAwarenessPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "12 Frameworks", url: "/frameworks-map" },
-              { name: "F8: Repairing Awareness", url: "/framework/f8-repairing-awareness" },
+              { name: "F8: Awareness Rebuilds Through Safety", url: "/framework/f8-repairing-awareness" },
             ])
           ),
         }}
       />
-
-      {/* ─── JSON-LD: FAQPage ───────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What does 'repairing awareness' mean in the TEG-Blue system?",
+                question: "Why doesn't insight produce repair?",
                 answer:
-                  "F8 proposes that repair means developing the awareness capacities — Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA) — that never had conditions to develop — not finding a hidden self or removing a mask. The destination is the same designed development F2 describes, arrived at by a different route: through conditions an adult can seek, create, and sustain. The regulation thread reversed: every substitute from F3–F7 was built because the original was missing. Repair means building the original.",
+                  "Insight is a CLS operation. The configuration is an ESS condition. The two systems operate through separate biological substrates, process at different speeds, and update through different mechanisms. The CLS updates through information. The ESS updates through experience — physiological conditions sustained long enough for the interoceptive substrate to change.",
               },
               {
-                question: "What is an awareness configuration?",
+                question: "What are the two routes to channel absence?",
                 answer:
-                  "An awareness configuration describes the current state of each of the three capacities: online (functioning for understanding), offline (never developed), misdirected (functioning but serving the wrong purpose), collapsed (was developing but overwhelmed), or compensatory (one capacity doing another's job). Configuration predicts chronic mode — for example, sharp Interpersonal Affect Perception (RE) + collapsed Affective Resonance (ER) + offline Interoceptive Self-Awareness (SEA) predicts chronic Strategy & Management. This is assessment, not diagnosis: every configuration made sense given the original environment.",
+                  "Chronic suppression: the pathway exists but is blocked under sustained activation — repair requires unblocking through sustained safety. Developmental absence: the pathway was never built — repair requires building through co-regulation, the same relational process that builds the substrate in childhood. Both produce the same condition from outside. Different repair requirements.",
               },
               {
-                question: "What conditions are needed for repair?",
+                question: "Why does the system defend against repair?",
                 answer:
-                  "Five conditions, all necessary, none sufficient alone: (1) Felt safety — nervous system regulation sufficient for new capacity to come online; (2) Accurate mirroring — being seen as one actually is; (3) Discomfort tolerance — capacity to stay present with grief, confusion, and vulnerability; (4) Permission — acceptance that imperfection and process are legitimate; (5) Time — accumulated experience rather than single insight. Critically, felt safety is experienced, not understood — insight alone does not produce safety.",
+                  "Five structural mechanisms: false coherence treats the configuration as truth, the cognitive substitute has been rewarded, SEA coming online means feeling what was previously unfelt, relationships were built around the current configuration, and the bootstrap problem — the system needs what it doesn't have to develop what it doesn't have. These are not resistance. They are the nervous system accurately assessing costs.",
               },
               {
-                question: "Why does everyone mask their awareness configuration?",
+                question: "What is the oscillation phase in repair?",
                 answer:
-                  "F8 proposes that masking is universal, not limited to neurodivergent experience. Every configuration that doesn't match what the environment expects gets masked — the child who feels too much performs calm, the child who reads too accurately pretends they didn't notice. Masking follows the regulation thread: authentic expression → environmental punishment → the nervous system learns authenticity is unsafe → a regulatory strategy forms → false coherence absorbs the mask as truth. The cost is both individual (regulatory exhaustion, developmental arrest) and collective (shared blind spots, lost capacity).",
-              },
-              {
-                question: "How does F8 connect to the rest of the TEG-Blue system?",
-                answer:
-                  "F8 is the first framework in the restoration arc (F8–F10). It reverses the escalation arc: where F1–F7 each describe a regulation substitute at escalating scale and cost, F8 describes developing what was missing. Part 1 covers individual repair (assessment, conditions, pathways, process). Part 2 covers collective strength (universal masking, conformity costs, different configurations as collective intelligence). F9 then takes F8's universal insight and shows what happens at the structural extreme — when environments are designed for one neurological configuration.",
+                  "Phase 3 of five. SEA comes online, the person catches the override — and then false coherence activates and the old configuration returns. This can last months or years and feel like failure. But the oscillation IS the process — the nervous system testing whether new conditions are survivable. Each oscillation that lands safely extends the range of movement.",
               },
             ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Repairing Awareness (F8) — TEG-Blue Research",
+              name: "Awareness Rebuilds Through Safety (F8) — TEG-Blue Research",
               url: "https://teg-blue.org/framework/f8-repairing-awareness",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -1111,21 +813,10 @@ export default function F8RepairingAwarenessPage() {
 
 // ─── STYLE CONSTANTS ──────────────────────────────────────
 
-
-
-
-
-
-const orderedListStyle = {
-  paddingLeft: 20,
-  margin: "0 0 16px",
-};
-
-const listItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
 };
 
 const tableStyle = {
@@ -1151,53 +842,9 @@ const thStyle = {
   borderBottom: `1px solid ${BORDER.default}`,
 };
 
-
 // ─── HELPER COMPONENTS ────────────────────────────────────
 
-function KeyStatement({ children }) {
-  return (
-    <blockquote
-      style={{
-        padding: "16px 20px",
-        margin: "0 0 16px",
-        background: hexToRgba(SPECTRUM.cobalt, 0.06),
-        borderRadius: 8,
-        borderLeft: `4px solid ${SPECTRUM.cobalt}`,
-        fontSize: 15,
-        fontWeight: 500,
-        color: TEXT.primary,
-        lineHeight: 1.6,
-        fontStyle: "italic",
-      }}
-    >
-      {children}
-    </blockquote>
-  );
-}
-
 function TableRow({ cells }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      {cells.map((cell, i) => (
-        <td
-          key={i}
-          style={{
-            padding: "10px 14px",
-            fontSize: 13,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400,
-            lineHeight: 1.6,
-            verticalAlign: "top",
-          }}
-        >
-          {cell}
-        </td>
-      ))}
-    </tr>
-  );
-}
-
-function ThreeColRow({ cells }) {
   return (
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       {cells.map((cell, i) => (

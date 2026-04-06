@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -169,6 +169,9 @@ export default function F2AwarenessCalibrationPage() {
                   Co-regulation is the designed completion pathway for relational signals — not emotional support but one regulated nervous system teaching another the path back to physiological baseline
                 </li>
                 <li style={propositionItemStyle}>
+                  The child needs a caregiver with State Flexibility — a nervous system that can access all four states when needed and return to physiological baseline after each — the child learns the movement, not one state
+                </li>
+                <li style={propositionItemStyle}>
                   Three awareness capacities develop through the relational environment, operating through two separate biological substrates — and what co-regulation builds at the deepest level is the interoceptive substrate
                 </li>
                 <li style={propositionItemStyle}>
@@ -210,8 +213,8 @@ export default function F2AwarenessCalibrationPage() {
               The infant is also generating relational signals from the beginning — signals whose content concerns belonging, connection, the state of the bond. These signals require relational completion (<Link href="/framework/f1-emotional-gradient#designed-process" style={linkStyle}>F1</Link>). The infant cannot complete them alone. When the caregiver is present and regulated, the relational signal completes: the activation resolves, the body returns. When the caregiver is absent, withdrawn, or the source of the threat the signal is about, the relational signal has no completion pathway. The activation stays. And the infant — who cannot separate experience from identity — absorbs that unresolved activation as self.
             </p>
 
-            {/* Section diagram: The pre-reflective condition — signal as identity, caregiver feedback as self-definition */}
-            {/* Diagram type: static */}
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — pre-reflective condition, signal as identity */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
@@ -251,10 +254,13 @@ export default function F2AwarenessCalibrationPage() {
               When the infant's nervous system activates in response to a somatic signal and a caregiver whose own nervous system is settled holds the infant through the activation, the caregiver's physiological state provides a template. Heart rate variability, respiratory rhythm, vagal tone — the caregiver's biology directly influences the infant's activated biology. The infant's nervous system entrains toward the caregiver's. The activation sequence completes: stress hormones metabolize, muscles release, the body returns toward physiological baseline.
             </p>
             <p style={proseStyle}>
-              What the child needs is not a caregiver permanently in Safety & Openness. It is a caregiver with State Flexibility — a nervous system that can access all four states when needed and return to physiological baseline after each. Safety & Openness to co-regulate and be present while the child's activation runs. Threat & Defence to protect the child from actual danger. Strategy & Management to navigate problems the child cannot handle alone. And the return to baseline after each — the system settling back, the body at rest.
+              What the child needs is not a caregiver permanently in Safety & Openness. It is a caregiver with <strong style={{ color: TEXT.primary }}>State Flexibility</strong> — a nervous system that can access all four states when needed and return to physiological baseline after each. Safety & Openness to co-regulate and be present while the child's activation runs. Threat & Defence to protect the child from actual danger. Strategy & Management to navigate problems the child cannot handle alone. And the return to baseline after each — the system settling back, the body at rest.
             </p>
             <p style={proseStyle}>
               The child does not learn one state. The child learns the movement. A caregiver who can shift into Threat & Defence to protect, then settle back to co-regulate the child's fear — that nervous system teaches the child that activation resolves. That all states are temporary because the child witnesses a nervous system that moves through them and returns.
+            </p>
+            <p style={proseStyle}>
+              A caregiver whose nervous system is chronically stuck in any state cannot provide this. A caregiver chronically in Strategy & Management may appear regulated — composed, controlled, competent — but the ventral vagal system is suppressed in that state. They can manage the child. They cannot co-regulate with the child. Each stuck caregiver offers only what one state allows, and critically, never models the return to physiological baseline. The child's nervous system never encounters the full range — and never learns that activation is temporary.
             </p>
             <p style={proseStyle}>
               Through thousands of repetitions, the child's nervous system encodes the somatic restoration sequence as an autonomous capacity. The child learns, at the level of the nervous system, that somatic activation resolves — that the body can complete the sequence and return.
@@ -278,9 +284,15 @@ export default function F2AwarenessCalibrationPage() {
             <p style={proseStyle}>
               What the caregiver can hold determines which specific signals the child learns to complete. When the caregiver can stay present through the child's anger, the child's nervous system encodes that anger resolves. When the caregiver withdraws from grief, grief becomes a signal without a completion pathway. The learning is specific, not global.
             </p>
+            <p style={proseStyle}>
+              The transmission channel is somatic and implicit. Schore (2003) describes it as right-brain-to-right-brain attunement — the caregiver's right hemisphere communicating with the child's right hemisphere through tone, rhythm, facial expression, and physical contact. Children calibrate to what caregivers' nervous systems embody, not to what caregivers say. A caregiver who says "it's okay" while their own cortisol is elevated and muscles are braced transmits the physiological state, not the verbal message.
+            </p>
+            <p style={proseStyle}>
+              The caregiver does not need to be perfectly regulated. The caregiver needs to be regulated enough — their own nervous system capable of returning to physiological baseline after activation often enough that the child's nervous system encounters the restoration sequence as a repeatable experience. Repair matters as much as attunement. A caregiver who becomes dysregulated and returns models the full range of the restoration sequence — that activation can escalate and the system can still come back.
+            </p>
 
-            {/* Section diagram: Two completion pathways — somatic (body's own channels, eventually autonomous) and relational (requires another person, cannot become fully autonomous) */}
-            {/* Diagram type: static */}
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — two completion pathways, somatic and relational */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
@@ -292,7 +304,7 @@ export default function F2AwarenessCalibrationPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The identification that co-regulation requires State Flexibility — not a caregiver permanently in Safety & Openness, but a nervous system that can access all states and return. The child learns the movement, not one state. The separation of co-regulation's developmental role by signal type: somatic signals learn restoration and eventually become autonomous; relational signals require co-regulation as their designed completion pathway and cannot become fully autonomous. When co-regulation is unavailable, somatic signals find partial completion while relational signals have no alternative pathway at all. This is a working hypothesis, open to testing.
+                  The identification that co-regulation requires State Flexibility — not a caregiver permanently in Safety & Openness, but a nervous system that can access all states and return. The child learns the movement, not one state. The separation of co-regulation's developmental role by signal type: somatic signals learn restoration and eventually become autonomous; relational signals require co-regulation as their designed completion pathway and cannot become fully autonomous. When co-regulation is unavailable, somatic signals find partial completion while relational signals have no alternative pathway at all. The signal-specific learning principle: what the caregiver could hold is what the child learns to complete. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -315,12 +327,12 @@ export default function F2AwarenessCalibrationPage() {
               Through the relational environment described above, three distinct awareness capacities develop — or fail to develop — in the child's nervous system. These capacities determine whether the person can perceive the Emotional Somatic Cycle while it is running. They also determine whether co-regulation can occur — whether two nervous systems can engage in the relational completion process that relational signals require.
             </p>
             <p style={proseStyle}>
-              The three capacities operate through two separate biological substrates. Two of them share the interoceptive substrate: the anterior insula, ventral vagal pathways, and visceral afferents — the hardware that reads the body from the inside. The third operates through a separate substrate entirely: the amygdala and prefrontal cortex — the hardware that reads other bodies from the outside. What co-regulation builds, at the deepest level, is the interoceptive substrate.
+              The three capacities operate through two separate biological substrates. Two of them share the interoceptive substrate: the anterior insula, ventral vagal pathways, and visceral afferents — the hardware that reads the body from the inside. The third operates through a separate substrate entirely: the amygdala and prefrontal cortex — the hardware that reads other bodies from the outside (<Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link> maps this architecture in full). What co-regulation builds, at the deepest level, is the interoceptive substrate.
             </p>
 
             <h3 style={conceptHeadingStyle}>Perceiving What Others Feel</h3>
             <p style={proseStyle}>
-              The capacity to detect and interpret others' emotional states through external channels: facial expression, vocal prosody, body language, behavioral patterns. This is a cognitive capacity — it operates through observation and interpretation, not through the body's own felt experience. This is Interpersonal Affect Perception (RE) — a CLS capacity operating through the external observation substrate.
+              The capacity to detect and interpret others' emotional states through external channels: facial expression, vocal prosody, body language, behavioural patterns. This is a cognitive capacity — it operates through observation and interpretation, not through the body's own felt experience. This is <strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE)</strong> — a CLS capacity operating through the external observation substrate.
             </p>
             <p style={proseStyle}>
               This capacity develops through the caregiver's own perceptual accuracy. A caregiver who reads the child's signals and responds to what the child is actually experiencing provides an environment where the child's affect perception calibrates toward accuracy. In an unpredictable environment, affect perception overdevelops into hypervigilance — the child reads everything because survival depends on detecting the change before it arrives. In an incongruent environment, it calibrates to surface performance rather than authenticity.
@@ -328,48 +340,53 @@ export default function F2AwarenessCalibrationPage() {
 
             <h3 style={conceptHeadingStyle}>Resonating With What Others Feel</h3>
             <p style={proseStyle}>
-              The somatic, pre-cognitive capacity to share another person's affective state. When someone nearby is in pain and the body produces a physiological echo of that pain — not a thought about their pain, but a felt version of it in one's own muscles, chest, gut — that is the second capacity. This operates through interoceptive channels — the anterior insula mapping others' expressions onto one's own internal felt experience, the ventral vagal pathways carrying the relational signal. This is Affective Resonance (ER) — an ESS capacity operating through the interoceptive substrate.
+              The somatic, pre-cognitive capacity to share another person's affective state. When someone nearby is in pain and the body produces a physiological echo of that pain — not a thought about their pain, but a felt version of it in one's own muscles, chest, gut — that is the second capacity. This operates through interoceptive channels — the anterior insula mapping others' expressions onto one's own internal felt experience, the ventral vagal pathways carrying the relational signal. This is <strong style={{ color: TEXT.primary }}>Affective Resonance (ER)</strong> — an ESS capacity operating through the interoceptive substrate.
             </p>
             <p style={proseStyle}>
-              This capacity is what makes relational completion possible between two nervous systems. A caregiver who can feel with the child without being overwhelmed — who resonates with the child's distress while remaining regulated enough to provide co-regulation — models that resonance is survivable. A caregiver who floods teaches the child's nervous system that resonance is dangerous. A caregiver whose resonance is shut down cannot enter the shared physiological field that relational completion requires.
+              This capacity is what makes relational completion possible between two nervous systems. A caregiver who can feel with the child without being overwhelmed — who resonates with the child's distress while remaining regulated enough to provide co-regulation — models that resonance is survivable. A caregiver who floods teaches the child's nervous system that resonance is dangerous. A caregiver whose resonance is shut down cannot enter the shared physiological field that relational completion requires — the child's relational signals stay unresolved, not because the caregiver is absent, but because the biological substrate for relational completion is not available in the caregiver.
             </p>
 
             <h3 style={conceptHeadingStyle}>Perceiving One's Own Internal States</h3>
             <p style={proseStyle}>
-              The capacity to perceive, differentiate, and identify one's own hormonal shifts, muscular tension, and autonomic changes while they are happening. The bridge between the body's signals and the person's awareness of those signals. When this capacity is online, the person can say: "I feel anger rising" — they can have the feeling without being consumed by it. This is the developmental resolution of the pre-reflective condition described above. This is Interoceptive Self-Awareness (SEA) — the bridge between the ESS and the CLS, operating through the interoceptive substrate.
+              The capacity to perceive, differentiate, and identify one's own hormonal shifts, muscular tension, and autonomic changes while they are happening. The bridge between the body's signals and the person's awareness of those signals. When this capacity is online, the person can say: "I feel anger rising" — they can have the feeling without being consumed by it. This is the developmental resolution of the pre-reflective condition described above. This is <strong style={{ color: TEXT.primary }}>Interoceptive Self-Awareness (SEA)</strong> — the bridge between the ESS and the CLS, operating through the interoceptive substrate.
             </p>
             <p style={proseStyle}>
-              This capacity develops through the caregiver's own interoceptive self-awareness — whether the caregiver can perceive, name, and tolerate their own internal states. A caregiver who treats their own physiological signals as information provides the conditions for the child's self-awareness to develop. A caregiver who actively contradicts the child's experience — "You're not angry," "That didn't hurt" — teaches the child that the signals the nervous system generates are unreliable, to be overridden rather than read.
+              This capacity develops through the caregiver's own interoceptive self-awareness — whether the caregiver can perceive, name, and tolerate their own internal states. A caregiver who treats their own physiological signals as information provides the conditions for the child's self-awareness to develop. The caregiver mirrors back what the child appears to be experiencing, providing a relational scaffold for the child's own interoceptive development. A caregiver who actively contradicts the child's experience — "You're not angry," "That didn't hurt," "Stop being so sensitive" — teaches the child that the signals the nervous system generates are unreliable, to be overridden rather than read. The pre-reflective condition persists: the person continues to operate without the capacity to separate what they feel from what they are.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>What Co-Regulation Builds</h3>
+            <p style={proseStyle}>
+              RE operates through the external observation substrate — separate hardware from the other two capacities. It develops through the caregiver's perceptual accuracy and is unaffected by the state of the interoceptive substrate. RE survives every chronic state — and often sharpens under chronic activation, because with the interoceptive channels degraded, the CLS's cognitive resources concentrate on the one remaining data source.
+            </p>
+            <p style={proseStyle}>
+              ER and SEA both operate through the interoceptive substrate. ER applies this substrate outward: translating another person's expressed state onto the body's own internal landscape — the most demanding use of the substrate. SEA applies it inward: registering the body's own hormonal shifts, muscular tension, and autonomic changes as readable information that reaches the CLS.
+            </p>
+            <p style={proseStyle}>
+              What co-regulation builds is this interoceptive substrate. When the caregiver stays present through the child's activation — when one regulated nervous system entrains an activated one through thousands of repetitions — the anterior insula develops its mapping precision and the ventral vagal pathways develop their carrying capacity. The substrate comes online. The capacities built on it become available.
             </p>
 
             <h3 style={conceptHeadingStyle}>The Developmental Sequence</h3>
             <p style={proseStyle}>
-              RE operates through the external observation substrate — separate hardware. It survives every chronic state and often sharpens under chronic activation, because with interoceptive channels degraded, the CLS concentrates on the one remaining data source.
+              ER and SEA share the interoceptive substrate — but the developmental direction between them is specific. When the child's nervous system develops the capacity to register its own signals as information — when the anterior insula can map the body's own state into identifiable experience — the same substrate becomes available for mapping the somatic echo of another person's state. The inward mapping is the foundational use. Once it is active, the outward mapping can draw on it.
             </p>
             <p style={proseStyle}>
-              ER and SEA both operate through the interoceptive substrate. ER applies this substrate outward: translating another person's expressed state onto the body's own internal landscape. SEA applies it inward: registering the body's own shifts as readable information that reaches the CLS.
-            </p>
-            <p style={proseStyle}>
-              The developmental direction between them is specific. When the child's nervous system develops the capacity to register its own signals as information — when the anterior insula can map the body's own state into identifiable experience — the same substrate becomes available for mapping the somatic echo of another person's state. The inward mapping is the foundational use. Once it is active, the outward mapping can draw on it.
-            </p>
-            <p style={proseStyle}>
-              The reverse does not hold. A child whose ER floods — whose body absorbs others' states without filter — does not thereby develop SEA. The substrate is active for outward resonance but the signals are not parsed, not differentiated, not held as self-referential information. This explains why SEA absence consistently co-occurs with flooded ER: without the inward application providing an anchor, the outward application has no reference point — the person resonates with everything and cannot locate which activation is theirs.
+              The reverse does not hold. A child whose ER floods — whose body absorbs others' states without filter — does not thereby develop SEA. The substrate is active for outward resonance but the signals are not parsed, not differentiated, not held as self-referential information. This explains why SEA absence consistently co-occurs with flooded ER: without the inward application providing an anchor, the outward application has no reference point — the person resonates with everything and cannot locate which activation is theirs. And it explains why building SEA improves ER: the substrate, activated for inward use, becomes available for sustainable outward use.
             </p>
 
-            {/* Section diagram: Two substrates, three capacities — RE on external observation substrate, ER and SEA on interoceptive substrate, with developmental direction from SEA (inward) to ER (outward) */}
-            {/* Diagram type: static */}
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — two substrates, three capacities, developmental direction */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Decety & Jackson (2004) — empathy as multi-component: cognitive empathy, affective empathy, and self-referential processing as dissociable capacities. Singer & Lamm (2009) — distinct neural substrates for cognitive and affective empathy. Blair (2005) — dissociable empathy components with independent developmental trajectories. Craig (2002) — interoceptive awareness as a developmental capacity with a maturing neural substrate. Schore (2003) — right-hemisphere development through attuned caregiving. Fonagy et al. (2002) — mentalization as a developmental product of contingent mirroring.
+                  Decety & Jackson (2004) — empathy as multi-component: cognitive empathy, affective empathy, and self-referential processing as dissociable capacities. Singer & Lamm (2009) — distinct neural substrates for cognitive and affective empathy. Blair (2005) — dissociable empathy components with independent developmental trajectories. Craig (2002) — interoceptive awareness as a developmental capacity with a maturing neural substrate. Schore (2003) — right-hemisphere development through attuned caregiving. Fonagy et al. (2002) — mentalization as a developmental product of contingent mirroring. Bandura (1977) — social modelling: the child calibrates to what is embodied, not what is instructed.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The identification that what co-regulation builds at the substrate level is the interoceptive hardware — and that the three capacities operate through two substrates, explaining structurally why specific separation patterns occur. The developmental mechanism for each capacity traced to a specific aspect of the caregiver's profile. The developmental sequence: SEA (inward application) is the entry point — building the inward channel activates the substrate for sustainable outward use (ER), but flooding the outward channel does not build the inward one. This is a working hypothesis, open to testing.
+                  The identification that what co-regulation builds at the substrate level is the interoceptive hardware — and that the three capacities operate through two substrates, explaining structurally why specific separation patterns occur. The developmental mechanism for each capacity traced to a specific aspect of the caregiver's profile. The developmental sequence: SEA (inward application) is the entry point — building the inward channel activates the substrate for sustainable outward use (ER), but flooding the outward channel does not build the inward one. The connection between the three awareness capacities and the relational completion pathway: these capacities are the biological substrate that determines whether co-regulation can occur. The caregiver's capacity profile IS the child's developmental environment. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -397,18 +414,18 @@ export default function F2AwarenessCalibrationPage() {
 
             <h3 style={conceptHeadingStyle}>Condition 1: The Unpredictable Affective Environment</h3>
             <p style={proseStyle}>
-              The caregiver's nervous system fluctuates unpredictably between Safety & Openness and Threat & Defence. Sometimes the ventral vagal system is online and co-regulation occurs. Sometimes sympathetic activation takes over and the caregiver becomes the source of threat. Their own RE is hyperactive — scanning for threat. Their ER is dysregulated — flooding or shutting down without pattern. Their SEA is absent — they do not perceive the fluctuation between states as fluctuation. Each state feels like "how things are right now."
+              The caregiver's nervous system fluctuates unpredictably between Safety & Openness and Threat & Defence. Sometimes the ventral vagal system is online and co-regulation occurs. Sometimes sympathetic activation takes over and the caregiver becomes the source of threat. Their own RE is hyperactive — scanning for threat. Their ER is dysregulated — flooding or shutting down without pattern. Their SEA is absent — they do not perceive the fluctuation between states as fluctuation. Each state feels like "how things are right now." The caregiver does not experience themselves as shifting between configurations. They experience the world as changing around them.
             </p>
             <p style={proseStyle}>
-              What develops in the child: RE overdevelops into hypervigilance — survival requires detecting the shift before it arrives. ER either floods or shuts down. SEA does not develop — all perceptual resources are directed outward. The relational completion pathway is disrupted: the same person who sometimes provides co-regulation sometimes provides threat. The child's nervous system cannot encode a reliable restoration sequence. The interoceptive substrate develops unstably — partially built, never consolidated.
+              What develops in the child: RE overdevelops into hypervigilance — survival requires detecting the shift before it arrives. ER either floods or shuts down. SEA does not develop — all perceptual resources are directed outward. The relational completion pathway is disrupted: the same person who sometimes provides co-regulation sometimes provides threat. The child's nervous system cannot encode a reliable restoration sequence because the evidence is contradictory. The interoceptive substrate develops unstably — partially built, never consolidated.
             </p>
 
             <h3 style={conceptHeadingStyle}>Condition 2: The Incongruent Affective Environment</h3>
             <p style={proseStyle}>
-              The caregiver's nervous system is organized around Strategy & Management while presenting Safety & Openness. Their RE is accurate — they read what the child is feeling. But their ER is disconnected from what they express — they know what the child feels without feeling it themselves. Their SEA is narrative-filtered: "I'm fine" while cortisol is elevated and muscles are braced. The surface says safe; the autonomic state is organized around threat management.
+              The caregiver's nervous system is organized around Strategy & Management while presenting Safety & Openness. Their RE is accurate — they read what the child is feeling. But their ER is disconnected from what they express — they know what the child feels without feeling it themselves. Their SEA is narrative-filtered: "I'm fine" while cortisol is elevated and muscles are braced. The surface says safe; the autonomic state is organized around threat management. The caregiver does not experience this divergence. They experience Strategy & Management as rationality, as calm competence.
             </p>
             <p style={proseStyle}>
-              What develops in the child: RE calibrates to surface performance rather than authenticity. ER becomes confused and distrusted — the child's body resonates with the caregiver's underlying state while the caregiver's presentation declares that state does not exist. SEA is actively undermined — "You're not angry," "That didn't happen." The relational completion pathway is misdirected: the child learns to regulate toward what the caregiver's narrative requires, not toward their own physiological baseline. The interoceptive substrate is active — ER develops because the hardware is generating signals — but SEA is contradicted. The interoceptive access is contested: signals arrive, the CLS has been taught to distrust them.
+              What develops in the child: RE calibrates to surface performance rather than authenticity. ER becomes confused and distrusted — the child's body resonates with the caregiver's underlying state while the caregiver's presentation declares that state does not exist. The child's felt sense is contradicted by authority. SEA is actively undermined — "You're not angry," "That didn't happen." The relational completion pathway is misdirected: the child learns to regulate toward what the caregiver's narrative requires, not toward their own physiological baseline. The body does not return. It learns to present as returned. The interoceptive substrate is active — ER develops because the hardware is generating signals — but SEA is contradicted. The interoceptive access is contested: signals arrive, the CLS has been taught to distrust them.
             </p>
 
             <h3 style={conceptHeadingStyle}>Condition 3: The Invalidating Affective Environment</h3>
@@ -416,7 +433,7 @@ export default function F2AwarenessCalibrationPage() {
               The caregiver's RE is instrumental — reading the child for compliance and control. ER is shut down. SEA is absent. The caregiver's nervous system is chronically organized around Strategy & Management or Power & Dominance — experienced not as a stuck state but as competence, as maturity.
             </p>
             <p style={proseStyle}>
-              The caregiver transmits their nervous system state while being unaware it is one. They cannot offer what they cannot perceive — and they cannot perceive it because perceiving their own autonomic configuration as a configuration would require the SEA their own developmental environment did not build.
+              The caregiver transmits their nervous system state while being unaware it is one. They cannot offer what they cannot perceive — and they cannot perceive it because perceiving their own autonomic configuration as a configuration would require the SEA their own developmental environment did not build. The invalidation is not intentional. It is the structural output of a nervous system that has no channel to observe itself.
             </p>
             <p style={proseStyle}>
               What develops in the child: RE develops instrumentally — reading for what the environment demands. ER shuts down — affect was punished or treated as weakness. SEA never develops — internal experience is explicitly declared wrong: "Don't be so sensitive," "Stop crying." The relational completion pathway is blocked: the child learns to suppress activation rather than complete it. The interoceptive substrate is never built — the anterior insula never develops the mapping precision that co-regulation would have provided.
@@ -425,20 +442,25 @@ export default function F2AwarenessCalibrationPage() {
               When a culture teaches "logic over emotion" or "boys don't cry," it performs this invalidation across entire populations. The adults delivering these messages are themselves the product of the same developmental conditions. The culture does not produce the condition. The condition produces the culture. And the culture reproduces the condition.
             </p>
 
-            {/* Section diagram: Three conditions mapped to caregiver profiles and substrate states — unpredictable (unstable), incongruent (contested), invalidating (absent) */}
-            {/* Diagram type: static */}
+            <h3 style={conceptHeadingStyle}>Signal-Type-Specific Disruption</h3>
+            <p style={proseStyle}>
+              The developmental disruption does not suppress "emotions" as a global category. It targets specific signal types — and the targeting maps onto <Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1's</Link> somatic/relational distinction. When socialization targets relational signals specifically — suppressing signals about belonging, connection, need, grief, shame — the interoceptive substrate is never built for those signal types. The child may still discharge somatic activation through the body's own channels. But the interoceptive access for relational content is absent. When socialization targets the trustworthiness of internal signals — contradicting what the body reports rather than suppressing which signals the body generates — the interoceptive substrate remains active, ER develops, but SEA is contradicted. These two patterns cut across the three conditions and gendered socialization applies them differentially.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — three conditions mapped to substrate states */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Van der Kolk (2014) — developmental environments and their long-term autonomic consequences. Linehan (1993) — the invalidating environment as a specific developmental condition. Porges (2011) — neuroception: the nervous system evaluating safety through physiological signals, not words. Schore (2003) — right-hemisphere development shaped by attuned caregiving. Main & Hesse (1990) — the caregiver as simultaneous source of safety and threat in disorganized attachment.
+                  Van der Kolk (2014) — developmental environments and their long-term autonomic consequences. Linehan (1993) — the invalidating environment as a specific developmental condition. Porges (2011) — neuroception: the nervous system evaluating safety through physiological signals, not words. Schore (2003) — right-hemisphere development shaped by attuned caregiving. Main & Hesse (1990) — the caregiver as simultaneous source of safety and threat in disorganized attachment. Young (1990) — early maladaptive schemas as stable patterns produced by early relational conditions.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The mapping of three adverse conditions to three specific caregiver capacity profiles — each producing traceable outcomes. Each condition disrupts the relational completion pathway through a different mechanism (unreliable, misdirected, blocked) and sets the interoceptive substrate to a specific state (unstable, contested, absent). In each condition, the caregiver does not perceive their own state as a state — transmitting the condition while unaware they are in one. This is a working hypothesis, open to testing.
+                  The mapping of three adverse conditions to three specific caregiver capacity profiles — each producing traceable outcomes. Each condition disrupts the relational completion pathway through a different mechanism (unreliable, misdirected, blocked) and sets the interoceptive substrate to a specific state (unstable, contested, absent). Signal-type-specific disruption: developmental conditions do not suppress "emotions" globally but target specific signal types. In each condition, the caregiver does not perceive their own state as a state — transmitting the condition while unaware they are in one. Cultural invalidation as Condition 3 operating at population scale. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -455,16 +477,19 @@ export default function F2AwarenessCalibrationPage() {
             </h2>
 
             <p style={proseStyle}>
-              When relational signals accumulate without resolution — every signal the nervous system generated about belonging, connection, rejection, shame — the consequences follow a specific sequence.
+              When the body's restoration sequence cannot complete — because co-regulation was unavailable or insufficient — the consequences follow the distinction between somatic and relational signals. Somatic signals may find partial completion through the body's own channels. Relational signals accumulate without resolution. Every signal the nervous system generated about belonging, connection, rejection, shame — every signal whose designed completion required another person — remains physiologically unresolved. The cortisol did not metabolise. The muscular bracing did not release. The HPA axis did not receive the all-clear. The debris from those signals is carried forward — not as emotional memory, but as physiology. As elevated cortisol. As chronic muscular tension. As inflammatory compounds that never cleared. As baseline.
             </p>
             <p style={proseStyle}>
-              First: sustained activation. The child's nervous system remains in a defensive configuration after the activating event has passed. What <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link> describes as Baseline Elevation begins — resting cortisol, resting muscle tension, and resting inflammatory markers remain chronically elevated.
+              This produces three sequential consequences.
             </p>
             <p style={proseStyle}>
-              Second: a chronic defensive state. One nervous system state becomes the default operating position regardless of context — the only state the system has learned to sustain, because the return pathway was never encoded through co-regulation.
+              <strong style={{ color: TEXT.primary }}>First: sustained activation.</strong> The child's nervous system remains in a defensive configuration after the activating event has passed. What <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link> describes as Baseline Elevation begins — resting cortisol, resting muscle tension, and resting inflammatory markers remain chronically elevated, and the nervous system treats this elevated state as its new resting point.
             </p>
             <p style={proseStyle}>
-              Third: loss of state flexibility. The system that should shift fluidly across the gradient is locked. Not because the biological mechanism is broken. Because the return pathway was never wired — and the relational signals whose resolution would require relational completion are still running, still unresolved.
+              <strong style={{ color: TEXT.primary }}>Second: a chronic defensive state.</strong> One nervous system state becomes the default operating position regardless of context — the only state the system has learned to sustain, because the return pathway that would allow the system to shift back to physiological baseline was never encoded through co-regulation.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Third: loss of state flexibility.</strong> The system that should shift fluidly across the gradient is locked. Not because the biological mechanism is broken. Because the return pathway was never wired — and the relational signals whose resolution would require relational completion are still running, still unresolved.
             </p>
             <p style={proseStyle}>
               From inside, the locked state does not feel like a lock. It feels like accurate perception. The person whose nervous system is chronically organized around Strategy & Management — cortisol chronically elevated, cognitive systems organized around anticipation and control — experiences this as competence. Each locked state is invisible to the person inside it because perceiving one's own nervous system configuration as a configuration requires the SEA that the developmental conditions did not build.
@@ -472,43 +497,79 @@ export default function F2AwarenessCalibrationPage() {
 
             <h3 style={conceptHeadingStyle}>What Development Sets</h3>
             <p style={proseStyle}>
-              The three conditions produce different capacity profiles. But the profiles are products of something deeper: the state of the interoceptive substrate — the single upstream variable that determines the entire downstream awareness architecture. The developmental conditions set this substrate's state — and the state determines what data the CLS receives, what coherence the CLS builds, and whether the person can observe the Emotional Somatic Cycle while it is running.
+              The three conditions produce different capacity profiles. But the profiles are products of something deeper: the state of the interoceptive substrate — the single upstream variable that <Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link> identifies as determining the entire downstream awareness architecture. The developmental conditions set this substrate's state — and the state determines what data the CLS receives, what coherence the CLS builds, and whether the person can observe the Emotional Somatic Cycle while it is running.
             </p>
-            <p style={proseStyle}>
-              With sufficient co-regulation, the substrate is built. SEA comes online. ER is sustainable. The CLS receives the ESS's physiological data and builds narrative that reflects what the body is actually doing — complex, sometimes uncomfortable, biologically accurate.
-            </p>
-            <p style={proseStyle}>
-              Under invalidating conditions, the substrate is never built. The CLS receives only external reading through RE and its own cognitive output. It constructs narrative without the body — structurally unaware the body's signals are missing, because it has never received them.
-            </p>
-            <p style={proseStyle}>
-              Under incongruent conditions, the substrate is active — ER develops — but SEA is contradicted. The CLS receives contested data: the body says one thing, the narrative built from years of "that's not really what's happening" says another.
-            </p>
+
+            <div style={{ overflowX: "auto", marginBottom: 16 }}>
+              <table style={tableStyle}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Developmental Path</th>
+                    <th style={thStyle}>What Happens to the Substrate</th>
+                    <th style={thStyle}>What the CLS Receives</th>
+                    <th style={thStyle}>What the CLS Builds</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <TableRow cells={[
+                    "Sufficient co-regulation",
+                    "Substrate built — anterior insula develops mapping precision, ventral vagal pathways develop carrying capacity. SEA comes online. ER sustainable.",
+                    "The ESS's physiological data + external reading (RE) + own output",
+                    "Narrative reflecting what the body is actually doing — complex, sometimes uncomfortable, biologically accurate",
+                  ]} />
+                  <TableRow cells={[
+                    "Condition 3 (invalidating)",
+                    "Substrate never built — anterior insula never develops mapping precision. SEA absent. ER absent or shut down.",
+                    "External reading (RE) + own output only",
+                    "Narrative without the body — structurally unaware the body's signals are missing",
+                  ]} />
+                  <TableRow cells={[
+                    "Condition 2 (incongruent)",
+                    "Substrate active — ER develops. SEA contradicted. Signals arrive but the CLS has been taught to distrust them.",
+                    "Contested ESS data + external reading (RE) + own output",
+                    "Narrative fighting the body — the person senses activation and cannot trust what it means",
+                  ]} />
+                  <TableRow cells={[
+                    "Condition 1 (unpredictable)",
+                    "Substrate partially and unstably developed. ER floods or shuts down. SEA absent.",
+                    "Unstable or flooded ESS data + hypervigilant external reading (RE) + own output",
+                    "Narrative organised around scanning — the CLS monitors externally because internal data is unreliable",
+                  ]} />
+                </tbody>
+              </table>
+            </div>
+
             <p style={proseStyle}>
               RE sits outside this chain — on separate hardware, feeding the CLS regardless. The CLS always has data. The question is not whether the CLS has data but whether the CLS has data from its own body. This is why the narrative the CLS builds when interoceptive access is absent can feel so complete — the CLS has RE, it has its own reasoning. It is missing the one source that would make the narrative biologically accurate.
             </p>
 
-            <h3 style={conceptHeadingStyle}>Intergenerational Transmission</h3>
+            <h3 style={conceptHeadingStyle}>Two Routes to the Same Condition</h3>
             <p style={proseStyle}>
-              The capacity profile replicates across generations without anyone choosing to transmit it. The transmission unit is not beliefs, intentions, or parenting philosophy. It is the caregiver's autonomic state and capacity profile — the same variables that shaped the child's development now operating one generation forward. The four nervous system states are the transmission mechanism: the caregiver's chronic state determines which awareness capacities are available, the child develops a capacity profile that produces a chronic state, and that state becomes the next child's developmental environment.
-            </p>
-            <p style={proseStyle}>
-              Each link in the chain is invisible to the person carrying it — because each person experiences their chronic state as identity, not as a nervous system configuration. The chain replicates until the capacity profile changes. Not until behavior changes. Not until intention changes. Until the caregiver's own nervous system develops capacities it did not have — through the same relational conditions that would have built them in the first place.
+              The interoceptive channel can be absent for two structurally different reasons. <strong style={{ color: TEXT.primary }}>Developmental absence:</strong> the channel was never built. The relational conditions that build SEA were never present. Change requires building — new relational experience that constructs the pathway for the first time, the conditions <Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8</Link> describes. <strong style={{ color: TEXT.primary }}>Chronic suppression:</strong> the channel developed, partially or fully, and then closed under chronic activation. Sustained cortisol elevation reduced the anterior insula's signal-to-noise ratio. The pathway exists but is blocked. Change requires unblocking — sustained safety long enough for the existing pathway to reopen. Building a pathway that never existed and unblocking a pathway that has been suppressed are fundamentally different processes — requiring different conditions and different timeframes.
             </p>
 
-            {/* Section diagram: The developmental through-line — from substrate state through interoceptive access through capacities through coherence form */}
-            {/* Diagram type: static */}
+            <h3 style={conceptHeadingStyle}>Intergenerational Transmission</h3>
+            <p style={proseStyle}>
+              The capacity profile replicates across generations without anyone choosing to transmit it. The transmission unit is not beliefs, intentions, or parenting philosophy. It is the caregiver's autonomic state and capacity profile — the same variables that shaped the child's development now operating one generation forward. The four nervous system states are the transmission mechanism: the caregiver's chronic state determines which awareness capacities are available in the co-regulatory environment, the child develops a capacity profile that produces a chronic state, and that state becomes the next child's developmental environment. Each link in the chain is invisible to the person carrying it — because each person experiences their chronic state as identity, not as a nervous system configuration.
+            </p>
+            <p style={proseStyle}>
+              The chain replicates until the capacity profile changes. Not until behaviour changes. Not until intention changes. Until the caregiver's own nervous system develops capacities it did not have — through the same relational conditions that would have built them in the first place.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — developmental through-line from substrate to path */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Van der Kolk (2014) — chronic autonomic states as products of developmental conditions. Porges (2011) — loss of autonomic flexibility under chronic activation. McEwen (2000) — allostatic load: the cumulative physiological cost of sustained activation without resolution. Main & Hesse (1990) — unresolved attachment in parents predicting disorganized attachment in children. Levine (1997) — the body carrying unresolved activation forward when the completion sequence was never learned.
+                  Van der Kolk (2014) — chronic autonomic states as products of developmental conditions. Porges (2011) — loss of autonomic flexibility under chronic activation. McEwen (2000) — allostatic load: the cumulative physiological cost of sustained activation without resolution. LeDoux (1996) — fear conditioning: the nervous system encoding threat thresholds through experience. Main & Hesse (1990) — unresolved attachment in parents predicting disorganized attachment in children. Levine (1997) — the body carrying unresolved activation forward when the completion sequence was never learned.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The developmental through-line: what the conditions set is the state of the interoceptive substrate, determining the chain from substrate through access through capacities through data through coherence through observability through Path A or Path B. Three developmental paths mapped to substrate states and coherence forms. The intergenerational transmission mechanism as the same variables operating one generation forward — the four states as the transmission mechanism, each link invisible to the person carrying it. This is a working hypothesis, open to testing.
+                  The developmental through-line: what the conditions set is the state of the interoceptive substrate, determining the chain from substrate through access through capacities through data through coherence through observability through Path A or Path B. Three developmental paths mapped to substrate states and coherence forms. Two routes to channel absence (developmental absence vs chronic suppression) as fundamentally different processes requiring different conditions. RE sitting outside the chain on separate hardware — explaining why the CLS always has data but the question is whether it has data from its own body. The intergenerational transmission mechanism as the same variables operating one generation forward — the four states as the transmission mechanism, each link invisible to the person carrying it. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -528,7 +589,7 @@ export default function F2AwarenessCalibrationPage() {
               },
               {
                 term: "State Flexibility",
-                definition: "The child needs a caregiver who can access all states and return to physiological baseline after each. The child learns the movement, not one state.",
+                definition: "The child needs a caregiver who can access all states and return to physiological baseline after each. The child learns the movement, not one state. Each stuck caregiver offers only what one state allows and never models the return.",
               },
               {
                 term: "Signal-specific learning",
@@ -548,7 +609,11 @@ export default function F2AwarenessCalibrationPage() {
               },
               {
                 term: "Three adverse conditions",
-                definition: "Unpredictable (unreliable completion, unstable substrate), incongruent (misdirected completion, contested substrate), invalidating (blocked completion, absent substrate). Each produced by a caregiver capacity profile.",
+                definition: "Unpredictable (unreliable completion, unstable substrate), incongruent (misdirected completion, contested substrate), invalidating (blocked completion, absent substrate). Each produced by a caregiver capacity profile, each setting the interoceptive substrate to a specific state.",
+              },
+              {
+                term: "Signal-type-specific disruption",
+                definition: "Developmental conditions do not suppress 'emotions' globally — they target specific signal types. Gendered socialization applies signal suppression and signal contradiction differentially.",
               },
               {
                 term: "The invisibility principle",
@@ -557,6 +622,10 @@ export default function F2AwarenessCalibrationPage() {
               {
                 term: "The developmental through-line",
                 definition: "What the conditions set is the state of the interoceptive substrate. The chain: substrate to access to capacities to data to coherence to observability to Path A or Path B. RE sits outside this chain on separate hardware.",
+              },
+              {
+                term: "Two routes to channel absence",
+                definition: "Developmental absence (never built — requires building) and chronic suppression (degraded — requires unblocking). Fundamentally different processes requiring different conditions and timeframes.",
               },
               {
                 term: "Intergenerational transmission",
@@ -587,12 +656,17 @@ export default function F2AwarenessCalibrationPage() {
               {
                 id: "M4: Awareness Capacities",
                 href: "/model/m4-awareness-capacities",
-                description: "F2 describes how the three awareness capacities develop through the relational environment and names them by their developmental mechanism. M4 maps the architecture — two substrates, three capacities, and what each configuration produces.",
+                description: "F2 describes how the three awareness capacities develop through the relational environment and identifies what co-regulation builds at the substrate level. M4 maps the architecture — two substrates, three capacities, and what each configuration produces.",
               },
               {
                 id: "M3: Regulation Capacities",
                 href: "/model/m3-regulation-capacities",
                 description: "F2 describes the developmental origin of what M3 maps as Path B — when co-regulation is unavailable, the M3 sequence runs on relational signals with no resolution.",
+              },
+              {
+                id: "M1: Emotions as Signals",
+                href: "/model/m1-emotions-as-signals",
+                description: "M1 maps the sixteen signals and the somatic/relational distinction. F2 describes what happens developmentally when the relational completion pathway is or is not available — and why signal-specific learning means the caregiver determines which restoration pathways the child learns.",
               },
               {
                 id: "F1: The Emotional Gradient",
@@ -653,7 +727,7 @@ export default function F2AwarenessCalibrationPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-04",
-            dateModified: "2026-04-05",
+            dateModified: "2026-04-06",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -759,3 +833,50 @@ const linkStyle = {
   textDecoration: "none",
   fontWeight: 500,
 };
+
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  background: BG.card,
+  borderRadius: 8,
+  overflow: "hidden",
+  border: `1px solid ${BORDER.default}`,
+  fontSize: 13,
+};
+
+const thStyle = {
+  padding: "10px 14px",
+  textAlign: "left",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  fontFamily: FONT.mono,
+  background: BG.surface,
+  borderBottom: `1px solid ${BORDER.default}`,
+};
+
+// ─── HELPER COMPONENTS ────────────────────────────────────
+
+function TableRow({ cells }) {
+  return (
+    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
+      {cells.map((cell, i) => (
+        <td
+          key={i}
+          style={{
+            padding: "10px 14px",
+            fontSize: 13,
+            color: i === 0 ? TEXT.primary : TEXT.secondary,
+            fontWeight: i === 0 ? 600 : 400,
+            lineHeight: 1.6,
+            verticalAlign: "top",
+          }}
+        >
+          {cell}
+        </td>
+      ))}
+    </tr>
+  );
+}

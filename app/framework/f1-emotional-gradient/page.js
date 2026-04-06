@@ -1,5 +1,4 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
   hexToRgba, RESEARCHER,
@@ -10,31 +9,18 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
-import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
 import BridgeSection from "@/src/components/BridgeSection";
 import EstablishesSection from "@/src/components/EstablishesSection";
-import {
-  F1SignalDiagram, F1ArchitectureDiagram, F1FullArcDiagram, DiagramToggle,
-} from "@/src/components/framework-diagrams";
 import {
   generateBreadcrumbJsonLd,
   generateFAQJsonLd,
   generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
-const F1InstrumentDiagram = dynamic(
-  () => import("@/src/components/framework-diagrams/F1InstrumentDiagram"),
-  { ssr: false }
-);
-const F1CognitiveUpgradeDiagram = dynamic(
-  () => import("@/src/components/framework-diagrams/F1CognitiveUpgradeDiagram"),
-  { ssr: false }
-);
-
-// ─── SIDEBAR ──────────────────────────────────────────────
+// ─── SIDEBAR ─────────────────────────────────────���────────
 
 const SIDEBAR_SECTIONS = [
   { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
@@ -195,35 +181,49 @@ export default function F1EmotionalGradientPage() {
             </h2>
 
             <p style={proseStyle}>
-              Every mechanism described across the four models rests on a physical substrate. The nervous system generates emotional signals not as psychological events that happen to have physical symptoms, but as coordinated biological events — produced by specific systems, carried by specific molecules, and resolved through specific physiological processes.
+              Every mechanism described across the four models rests on a physical substrate. Emotions are not psychological events that happen to have physical symptoms. They are biological events — produced by specific systems, carried by specific molecules, and resolved through specific physiological processes.
             </p>
             <p style={proseStyle}>
-              The process begins before awareness. The amygdala fires within 12 milliseconds of a relevant stimulus — before the cortex has processed what it is — evaluating incoming signals for threat relevance and initiating the response cascade. The insula translates the body's internal state into conscious feeling, bridging visceral sensation and subjective experience. The anterior cingulate cortex integrates emotional and cognitive signals, weighting attention. The prefrontal cortex arrives later, capable of modulating the response but always downstream of the initial evaluation.
-            </p>
-            <p style={proseStyle}>
-              When threat is detected, the amygdala activates the hypothalamic-pituitary-adrenal (HPA) axis: the hypothalamus signals the pituitary gland, which signals the adrenal glands to release cortisol and adrenaline. These flood the bloodstream within seconds. Simultaneously, the sympathetic nervous system accelerates heart rate, dilates airways, tenses muscles, redirects blood flow, and suppresses digestion. The vagus nerve — a bidirectional highway between brain and body — carries signals of safety or threat in both directions.
-            </p>
-            <p style={proseStyle}>
-              The signal is also shaped by neurotransmitter states. Serotonin modulates mood stability and threat sensitivity. Dopamine shapes approach motivation. Noradrenaline drives arousal and attention. Oxytocin — released through safe social contact — reduces amygdala reactivity and supports co-regulation, the process through which one regulated nervous system helps another complete its restoration sequence. These are not background conditions. They are part of the signal.
-            </p>
-            <p style={proseStyle}>
-              This substrate is what makes the Emotional Somatic System (ESS) measurable. When a nervous system state broadens perception, the vagal brake is engaged and the prefrontal cortex has access to its full range. When activation remains unresolved and the physical residue accumulates, specific molecules remain elevated in specific systems. When the ESS generates a signal and the body mobilizes before the Cognitive-Logical System (CLS) has formed a thought, the amygdala pathway has completed before the cortical pathway has begun.
+              An emotion begins before awareness. The process is distributed across multiple systems working in parallel — not a single brain region generating a feeling, but a whole-body coordination between neural, endocrine, and autonomic systems producing a signal the organism can act on.
             </p>
 
-            <DiagramToggle label="signal flow diagram" defaultOpen>
-              <F1SignalDiagram />
-            </DiagramToggle>
+            <h3 style={conceptHeadingStyle}>The Neural Architecture</h3>
+            <p style={proseStyle}>
+              The amygdala — the brain's primary threat-detection structure — fires within 12 milliseconds of a relevant stimulus, before the cortex has processed what it is. The amygdala evaluates incoming signals for threat relevance and initiates the response cascade. The insula translates the body's internal state into conscious feeling — bridging visceral sensation and subjective experience. The anterior cingulate cortex integrates emotional and cognitive signals, weighting attention. The prefrontal cortex arrives later — capable of modulating the response, but always downstream of the initial evaluation.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>The Endocrine Cascade</h3>
+            <p style={proseStyle}>
+              When the nervous system detects threat, the amygdala activates the hypothalamic-pituitary-adrenal (HPA) axis: the hypothalamus signals the pituitary gland, which signals the adrenal glands to release cortisol and adrenaline. These flood the bloodstream within seconds. Cortisol sustains the mobilisation; adrenaline initiates it. Both must metabolise for the body to return to physiological baseline — <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link> maps the process through which the body completes this, and what accumulates when the process does not run to its endpoint.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>The Autonomic Pathway</h3>
+            <p style={proseStyle}>
+              Simultaneously, the sympathetic nervous system activates — accelerating heart rate, dilating airways, tensing muscles, redirecting blood flow, suppressing digestion. The vagus nerve — a bidirectional highway between brain and body — carries signals of safety or threat in both directions. When safety is re-established, the vagal brake re-engages, the parasympathetic nervous system reasserts dominance, and the social engagement system comes back online. <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link> maps these as the four nervous system states and what each enables and restricts.
+            </p>
+
+            <h3 style={conceptHeadingStyle}>The Neurochemical Context</h3>
+            <p style={proseStyle}>
+              The emotional signal is shaped by neurotransmitter states. Serotonin modulates mood stability and threat sensitivity. Dopamine shapes approach motivation and reward anticipation. Noradrenaline drives arousal and attention. Oxytocin — released through safe social contact — reduces amygdala reactivity and supports co-regulation, the process through which one regulated nervous system helps another complete its restoration sequence. These are not background conditions. They are part of the signal.
+            </p>
+            <p style={proseStyle}>
+              This substrate is what makes the Emotional Somatic System (ESS) measurable. When a nervous system state broadens perception, the vagal brake is engaged and the prefrontal cortex has access to its full range. When activation stays open and the physical residue accumulates, specific molecules remain elevated in specific systems. When the ESS generates a signal and the body mobilises before the Cognitive-Logical System (CLS) has formed a thought, the amygdala pathway has completed before the cortical pathway has begun.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — signal flow from detection through biological substrate */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  LeDoux (1996) — amygdala as primary threat-detection structure, subcortical threat pathway. Craig (2009) — insula as the substrate of interoceptive awareness and subjective feeling. Damasio (1994) — somatic markers; emotion as body-state. Porges (2011) — vagus nerve as bidirectional safety/threat signalling pathway; the vagal brake. McEwen (2000) — HPA axis, cortisol, allostatic load. Panksepp (1998) — primary emotional systems as neurobiological circuits. Sapolsky (2004) — stress hormones and their behavioral effects. Carter (1998) — oxytocin and social bonding. Berridge & Kringelbach (2015) — dopamine and motivational systems.
+                  LeDoux (1996) — amygdala as primary threat-detection structure, subcortical threat pathway. Craig (2009) — insula as the substrate of interoceptive awareness and subjective feeling. Damasio (1994) — somatic markers; emotion as body-state. Porges (2011) — vagus nerve as bidirectional safety/threat signalling pathway; the vagal brake. McEwen (2000) — HPA axis, cortisol, allostatic load. Panksepp (1998) — primary emotional systems as neurobiological circuits. Sapolsky (2004) — stress hormones and their behavioural effects. Carter (1998) — oxytocin and social bonding. Berridge & Kringelbach (2015) — dopamine and motivational systems.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The positioning of the biological substrate as the foundation for the entire Emotional Somatic System. Established research identifies these biological components individually. TEG-Blue proposes that every mechanism described in the four models maps to a specific, measurable biological process — making the system testable through identifiable neural, endocrine, autonomic, and neurochemical markers at every stage.
+                  The positioning of the biological substrate as the measurable foundation underneath every mechanism the models describe — not "emotions have biological correlates" but "every mechanism in M1 through M4 describes a specific, measurable biological process." This substrate is what makes the system testable: each model describes events with identifiable neural, endocrine, autonomic, and neurochemical markers at every stage. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -243,7 +243,7 @@ export default function F1EmotionalGradientPage() {
               The autonomic nervous system developed in evolutionary stages — each layer adding a new capacity on top of what came before, without replacing the older systems. These layers produced the architecture that generates the states described in <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2: Nervous System States</Link>.
             </p>
             <p style={proseStyle}>
-              Two information systems share this architecture. The ESS — the body's detection, evaluation, and response system — is ancient. Core emotional circuitry (amygdala, hippocampus, hypothalamus, insula, cingulate) is conserved across mammals. The CLS — producing language, reasoning, and narrative — is newer. The neocortex and prefrontal cortex show human-biased expansion. But both evolved together as parts of one organism, each shaping what the other could do.
+              The ESS and CLS are not separate systems that developed independently. They co-evolved as parts of one organism. The emotional circuitry is ancient — core emotion-related circuits (amygdala, hippocampus, hypothalamus, insula, cingulate) are conserved across mammals, with human refinements rather than wholesale reinvention. The cognitive circuitry is newer — the neocortex and prefrontal cortex show human-biased expansion compared to other primates. But both evolved together, each shaping what the other could do.
             </p>
 
             <h3 style={conceptHeadingStyle}>The Two Branches</h3>
@@ -257,22 +257,18 @@ export default function F1EmotionalGradientPage() {
               This is the evolutionary innovation that made what M2 describes as Safety & Openness biologically possible. Before the ventral vagal system, there was no biological pathway for safety-through-relationship.
             </p>
             <p style={proseStyle}>
-              The older parasympathetic pathway — the dorsal vagal system — operates through the unmyelinated branch of the vagus nerve. Present in vertebrates for approximately 500 million years. When mobilization has failed or is unavailable, the dorsal vagal system produces the organism's last-resort response: freeze, collapse, metabolic conservation.
+              The older parasympathetic pathway — the dorsal vagal system — operates through the unmyelinated branch of the vagus nerve and is associated with immobilisation, conservation, and shutdown. Present in vertebrates for approximately 500 million years. When mobilisation is not available or has failed, the dorsal vagal system produces the organism's last-resort response: freeze, collapse, metabolic conservation.
             </p>
             <p style={proseStyle}>
-              The <strong style={{ color: TEXT.primary }}>sympathetic branch</strong> supports mobilization — the capacity to take action in response to threat. Heart rate accelerates, cortisol and adrenaline release, blood flow redirects to skeletal muscles, and the organism prepares for rapid defensive action.
+              The <strong style={{ color: TEXT.primary }}>sympathetic branch</strong> supports mobilisation — the capacity to take action in response to threat. The sympathetic nervous system accelerates heart rate, releases cortisol and adrenaline, redirects blood flow to skeletal muscles, and prepares the organism for rapid defensive action.
             </p>
-
-            <DiagramToggle label="instrument diagram" defaultOpen>
-              <F1InstrumentDiagram />
-            </DiagramToggle>
 
             <h3 style={conceptHeadingStyle}>How the CLS Extended the Threat Branch</h3>
             <p style={proseStyle}>
-              The continuous evaluation between safety and threat — what Porges (2011) calls neuroception — runs automatically and below conscious awareness. It is a biological assessment, not a decision. For hundreds of millions of years, this evaluation produced two possible responses: mobilize or shut down.
+              The continuous evaluation between safety and threat — what Porges (2011) calls neuroception — runs automatically and below conscious awareness. It is a biological assessment, not a decision. For hundreds of millions of years, this evaluation produced two possible responses: mobilise or shut down.
             </p>
             <p style={proseStyle}>
-              As the CLS developed — neocortex and prefrontal cortex expanding over millions of years, with marked amplification in humans — the threat branch gained new capacities. The sympathetic branch could now do more than fight or flee. With prefrontal involvement, the organism could anticipate threats that had not yet arrived, plan defensive strategies across time, manage complex social hierarchies, and coordinate group responses.
+              As the CLS developed — neocortex and prefrontal cortex expanding over millions of years, with marked amplification in humans — the threat branch gained new capacities. The CLS did not arrive as a separate system and get recruited. It grew alongside the ESS, and as it grew, the threat responses became more sophisticated. The sympathetic branch could now do more than fight or flee. With prefrontal involvement, the organism could anticipate threats that had not yet arrived, plan defensive strategies across time, manage complex social hierarchies, and coordinate group responses.
             </p>
             <p style={proseStyle}>
               This produced four states — not as two original states plus two later additions, but as a single co-evolved architecture:
@@ -282,25 +278,21 @@ export default function F1EmotionalGradientPage() {
                 <strong style={{ color: TEXT.primary }}>Safety & Openness</strong> — parasympathetic-dominant. The ventral vagal system at work. Perception broadens, social engagement activates.
               </li>
               <li style={propositionItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Threat & Defence</strong> — sympathetic activation. The ancient mobilization response. Under extreme or inescapable conditions, the dorsal vagal system may engage as a fallback.
+                <strong style={{ color: TEXT.primary }}>Threat & Defence</strong> — sympathetic activation. The ancient mobilisation response. Under extreme or inescapable conditions, the dorsal vagal system may engage as a fallback.
               </li>
               <li style={propositionItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Strategy & Management</strong> — the CLS extends the threat response into anticipation, planning, and management. Cognition is organizing around threat.
+                <strong style={{ color: TEXT.primary }}>Strategy & Management</strong> — the CLS extends the threat response into anticipation, planning, and management. Cognition is organising around threat.
               </li>
               <li style={propositionItemStyle}>
                 <strong style={{ color: TEXT.primary }}>Power & Dominance</strong> — the CLS at maximum threat response. The neural systems that carry guilt, care, and empathic constraint — particularly the ventromedial prefrontal cortex — are suppressed.
               </li>
             </ul>
             <p style={proseStyle}>
-              The cultural acceleration of the last 100,000-50,000 years — symbolic reasoning, language, complex social structures — amplified what the CLS could do without changing the ESS's biological pace. The emotional circuitry stayed largely the same. The cognitive tools scaled. This is the co-evolutionary context that F12 picks up.
+              The cultural acceleration of the last 100,000–50,000 years — symbolic reasoning, language, complex social structures — amplified what the CLS could do without changing the ESS's biological pace. The emotional circuitry stayed largely the same. The cognitive tools scaled. This is the co-evolutionary context that <Link href="/framework/f12-two-information-systems" style={linkStyle}>F12</Link> picks up: when cultural conditions changed to make override of the ESS advantageous, the CLS had the capacity to do it.
             </p>
 
-            <DiagramToggle label="four-state gradient diagram" defaultOpen>
-              <F1CognitiveUpgradeDiagram />
-            </DiagramToggle>
-
-            {/* Section diagram: Evolutionary timeline showing ESS (ancient) and CLS (newer) developing together, with the threat branch gaining cognitive extensions at each stage */}
-            {/* Diagram type: static */}
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — evolutionary layers, two branches, four states */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
@@ -318,7 +310,7 @@ export default function F1EmotionalGradientPage() {
             </div>
           </section>
 
-          {/* ─── PART 2: THE DESIGNED PROCESS ─────────────── */}
+          {/* ─── PART 2: THE DESIGNED PROCESS ──��──────────── */}
           <PartDivider label="PART 2" title="The Designed Process" color={accent} />
 
           {/* Concept 2: Why the Cycle Needs to Complete */}
@@ -332,25 +324,25 @@ export default function F1EmotionalGradientPage() {
             </h2>
 
             <p style={proseStyle}>
-              The autonomic architecture produces activation — the body mobilizes resources in response to what the nervous system detects. This mobilization is designed to be temporary.
+              The autonomic architecture produces activation — the body mobilises resources in response to what the nervous system detects. This mobilisation is designed to be temporary.
             </p>
             <p style={proseStyle}>
-              When the ESS detects threat, the sympathetic branch activates. Cortisol and adrenaline release. Heart rate increases. Muscles tense. Blood flow redirects. Inflammatory compounds deploy. The total physiological activation the body is carrying — the activation load — rises.
+              When the ESS detects threat, the sympathetic branch activates. Cortisol and adrenaline release. Heart rate increases. Muscles tense. Blood flow redirects. Inflammatory compounds deploy. The body organises for defensive action. The sum of this mobilised activation — the activation load — rises.
             </p>
             <p style={proseStyle}>
-              The biological system is designed to clear this load. Once the threat has passed, the body completes the sequence: stress hormones metabolize, muscles release, heart rate settles, organ systems restore, the HPA axis receives the all-clear signal from the hippocampus and stands down, the parasympathetic nervous system re-engages. The activation load returns toward zero. The system returns to physiological baseline.
+              The biological system is designed to clear this load. Once the threat has passed, the body completes the sequence: stress hormones metabolise, muscles release, heart rate settles, organ systems restore, the HPA axis receives the all-clear signal from the hippocampus and stands down, the parasympathetic nervous system re-engages. The activation load returns to zero. The system returns to physiological baseline.
             </p>
             <p style={proseStyle}>
               This completion process — not calming down, not emotion management, but the body running the second half of a sequence that began with activation — is what <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3: Regulation Capacities</Link> maps in detail. M3 describes how the sequence works, what each stage requires, and what accumulates when the sequence does not complete.
             </p>
             <p style={proseStyle}>
-              F1 establishes something different: <strong style={{ color: TEXT.primary }}>why the body needs to complete the cycle at all</strong>.
+              F1 establishes something different: <strong style={{ color: TEXT.primary }}>why the body needs to complete the cycle at all.</strong>
             </p>
             <p style={proseStyle}>
-              The need is architectural. Every component of the stress response has a metabolic cost. Cortisol remaining elevated suppresses immune function, disrupts sleep architecture, and impairs hippocampal function. Sustained muscular bracing produces pain and reduces range of motion. Chronic inflammatory signaling damages tissue. Neural circuits held in threat configuration lose flexibility. The body is spending resources continuously — resources that were mobilized for a temporary event.
+              The need is architectural. Every component of the stress response has a metabolic cost. Cortisol remaining elevated suppresses immune function, disrupts sleep architecture, and impairs hippocampal function. Sustained muscular bracing produces pain and reduces range of motion. Chronic inflammatory signalling damages tissue. Neural circuits held in threat configuration lose flexibility. The body is spending resources continuously — resources that were mobilised for a temporary event.
             </p>
             <p style={proseStyle}>
-              Biological restoration is the designed process. It operates at no cost — it is the design specification, not an intervention. Every other framework in the system describes what happens when this process is unavailable.
+              Biological restoration is the designed process. It operates at no cost — it is the design specification, not an intervention. It is what the system was built to do. Every other framework in the system describes what happens when this process is unavailable.
             </p>
 
             <h3 style={conceptHeadingStyle}>Two Designed Completion Pathways</h3>
@@ -370,8 +362,8 @@ export default function F1EmotionalGradientPage() {
               The capacity for biological restoration is not innate in the sense of being automatically available. The biological mechanism is present from birth. But the ability to complete the sequence under the full range of activation conditions must be learned through experience — specifically, through co-regulation with another nervous system that can itself complete the sequence. <Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link> describes how this learning occurs, and what happens when it does not.
             </p>
 
-            {/* Section diagram: Two pathways diverging — somatic (body's own channels) and relational (requires another person) — showing which signal types flow through each */}
-            {/* Diagram type: static */}
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — two completion pathways, somatic and relational */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
@@ -383,7 +375,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The positioning of biological restoration as the designed process of the entire framework system — not one mechanism among many, but the central mechanism around which all twelve frameworks are organized. The two designed completion pathways — somatic and relational — with the identification that relational signals require another person as a biological completion requirement, not a psychological preference. The distinction between the mechanism being present from birth and the capacity to use it being learned through co-regulation. This is a working hypothesis, open to testing.
+                  The positioning of biological restoration as the designed process of the entire framework system — not one mechanism among many, but the central mechanism around which all twelve frameworks are organised. The two designed completion pathways — somatic and relational — with the identification that relational signals require another person as a biological completion requirement, not a psychological preference. The distinction between the mechanism being present from birth and the capacity to use it being learned through co-regulation. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -406,7 +398,7 @@ export default function F1EmotionalGradientPage() {
               The architecture described in the previous sections — a biological system that detects, signals, shifts state, and needs to complete — has been independently identified across multiple research traditions. Each describes a piece of the same system from a different angle. None reference each other when arriving at the same structure.
             </p>
             <p style={proseStyle}>
-              The framework proposes that these traditions converge because they are all describing parts of the Emotional Somatic Cycle. The ESC provides a unifying architecture that shows where each tradition's findings sit within the same biological process.
+              TEG-Blue proposes that these traditions converge because they are all describing parts of the Emotional Somatic Cycle. The ESC provides a unifying architecture that shows where each tradition's findings sit within the same biological process.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -415,22 +407,25 @@ export default function F1EmotionalGradientPage() {
                   <tr>
                     <th style={thStyle}>Tradition</th>
                     <th style={thStyle}>Key Researcher(s)</th>
+                    <th style={thStyle}>What They Found</th>
                     <th style={thStyle}>Where It Sits in the ESC</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Polyvagal Theory", "Porges", "The autonomic architecture that produces the gradient. The states M2 maps."]} />
-                  <TableRow cells={["Affective Neuroscience", "Panksepp, Damasio, LeDoux", "The biological substrate. The signal architecture M1 maps."]} />
-                  <TableRow cells={["Stress Physiology", "Sapolsky, McEwen", "The activation load and why the cycle needs to complete. What accumulates when restoration does not run."]} />
-                  <TableRow cells={["Interoception Research", "Craig", "The biological substrate. The bridge between ESS activation and CLS awareness."]} />
-                  <TableRow cells={["Somatic Experiencing", "Levine", "The designed completion process. The mechanism M3 maps."]} />
-                  <TableRow cells={["Attachment Theory", "Bowlby, Ainsworth", "Co-regulation as the learning pathway for restoration. The developmental origin F2 maps."]} />
-                  <TableRow cells={["Developmental Neuroscience", "Siegel, Schore, Ogden", "The gradient and the developmental conditions for restoration capacity."]} />
-                  <TableRow cells={["Motivational Science", "Gray, Carver & Scheier", "The two-branch orientation between safety and threat."]} />
-                  <TableRow cells={["Broaden-and-Build", "Fredrickson", "The state-dependent capacity shift. What M2 maps as Safety & Openness vs threat states."]} />
-                  <TableRow cells={["Trauma & Body Research", "van der Kolk, Walker", "The consequences of incomplete restoration. What M3 maps as the incomplete cycle."]} />
-                  <TableRow cells={["Dual-Process Theory", "Kahneman, Stanovich", "The ESS and CLS as two information systems with different speeds and mechanisms."]} />
-                  <TableRow cells={["Emotion Regulation Research", "Gross, Eisenberg", "The restoration mechanism. The difference between completion and override."]} />
+                  <TableRow cells={["Polyvagal Theory", "Porges", "Autonomic states: ventral vagal (safety), sympathetic (mobilisation), dorsal vagal (immobilisation). Neuroception as continuous safety evaluation.", "The autonomic architecture that produces the gradient. The states M2 maps."]} />
+                  <TableRow cells={["Affective Neuroscience", "Panksepp, Damasio, LeDoux", "Primary emotional systems as ancient neural circuits. Somatic markers. Pre-conscious threat detection.", "The biological substrate. The signal architecture M1 maps."]} />
+                  <TableRow cells={["Stress Physiology", "Sapolsky, McEwen", "HPA axis, cortisol dynamics, allostatic load — the cumulative cost of chronic activation.", "The activation load and why the cycle needs to complete. What accumulates when restoration does not run."]} />
+                  <TableRow cells={["Interoception Research", "Craig", "The body's internal signalling system — the insula as the substrate of subjective feeling.", "The biological substrate. The bridge between ESS activation and CLS awareness."]} />
+                  <TableRow cells={["Somatic Experiencing", "Levine", "The body's completion mechanism — activation must discharge for the system to return to baseline.", "The designed process. The completion mechanism M3 maps."]} />
+                  <TableRow cells={["Attachment Theory", "Bowlby, Ainsworth", "Secure base vs threat activation. How early relational environment shapes the system's calibration.", "Co-regulation as the learning pathway for restoration. The developmental origin F2 maps."]} />
+                  <TableRow cells={["Developmental Neuroscience", "Siegel, Schore, Ogden", "Window of tolerance. Co-regulation shapes brain architecture. Interpersonal neurobiology.", "The gradient and the developmental conditions for restoration capacity."]} />
+                  <TableRow cells={["Motivational Science", "Gray, Carver & Scheier", "Approach / avoidance systems — behavioural activation and inhibition.", "The two-branch orientation between safety and threat."]} />
+                  <TableRow cells={["Broaden-and-Build", "Fredrickson", "Positive states broaden perception and build resources; negative states narrow.", "The state-dependent capacity shift. What M2 maps as Safety & Openness vs threat states."]} />
+                  <TableRow cells={["Trauma & Body Research", "van der Kolk, Walker", "The body keeps the score. Fight-flight-freeze-fawn.", "The consequences of incomplete restoration. What M3 maps as Path B."]} />
+                  <TableRow cells={["Dual-Process Theory", "Kahneman, Stanovich", "Two processing systems — fast/automatic and slow/deliberate.", "The ESS and CLS as two information systems with different speeds and mechanisms."]} />
+                  <TableRow cells={["Emotion Regulation Research", "Gross, Eisenberg", "Regulatory strategies, their physiological effects, and the cost of suppression.", "The restoration mechanism. What M3 maps as the difference between completion and override."]} />
+                  <TableRow cells={["Oxytocin Research", "Carter", "Oxytocin reduces amygdala reactivity and supports co-regulation through safe social contact.", "The biological substrate of co-regulation. The relational restoration pathway."]} />
+                  <TableRow cells={["Reward Systems", "Berridge & Kringelbach", "Dopamine and motivational systems — wanting vs liking, reward anticipation.", "The neurochemical context of the ESS. What drives restoration substitutes when the designed process is unavailable."]} />
                 </tbody>
               </table>
             </div>
@@ -439,8 +434,8 @@ export default function F1EmotionalGradientPage() {
               The convergence extends beyond the basic architecture. Each tradition also identifies what happens when the system loses flexibility — when a temporary state becomes persistent. Polyvagal theory describes loss of autonomic flexibility. Motivational science describes chronic avoidance or chronic approach. Broaden-and-build describes narrowing without the broadening return. Developmental neuroscience describes falling outside the window of tolerance. Attachment theory describes insecure attachment patterns. Trauma research describes chronic freeze, chronic fawn, chronic fight. These are all descriptions of the same phenomenon: the nervous system locked on a single position, unable to move through the gradient and return to physiological baseline.
             </p>
 
-            {/* Section diagram: Convergence map showing multiple traditions mapped onto the ESC architecture */}
-            {/* Diagram type: static */}
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — convergence map, traditions mapped to ESC architecture */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
@@ -452,7 +447,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The systematic mapping of independent research traditions against the Emotional Somatic Cycle to show that each describes a part of the same biological architecture. To the framework's knowledge, no existing work makes this unification explicit. The individual traditions are established. The integration — showing that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, fight-flight-freeze-fawn, dual-process theory, and somatic completion are all describing pieces of one cycle — is the framework's contribution, open to testing.
+                  The systematic mapping of independent research traditions against the Emotional Somatic Cycle to show that each describes a part of the same biological architecture. To the framework's knowledge, no existing work makes this unification explicit. The individual traditions are established. The integration — showing that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, fight-flight-freeze-fawn, dual-process theory, and somatic completion are all describing pieces of one cycle — is the framework's contribution, open to testing. The building blocks are established. The connections are the framework's hypothesis.
                 </p>
               </ExpandableSection>
             </div>
@@ -492,8 +487,8 @@ export default function F1EmotionalGradientPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["F1", "Biological restoration — the body completing its own cycle", "Individual biology", "None — the designed process"]} />
-                  <TableRow cells={["F2", "Co-regulation to self-restoration (when learned)", "Developmental", "The return path never develops"]} />
+                  <TableRow cells={["F1", "Biological restoration — the body completing its own cycle", "Individual biology", "No cost — the designed process"]} />
+                  <TableRow cells={["F2", "Co-regulation to self-restoration (when learned). When not learned: the restoration pathway never builds", "Developmental", "The return path never develops"]} />
                   <TableRow cells={["F3", "False coherence — the CLS replacing the ESS's signals with narrative", "Individual cognition", "Truth"]} />
                   <TableRow cells={["F4", "Rules regulate at the collective level", "Collective — social systems", "Flexibility"]} />
                   <TableRow cells={["F5", "Worth hierarchies regulate", "Collective — value systems", "Equity"]} />
@@ -504,8 +499,35 @@ export default function F1EmotionalGradientPage() {
             </div>
 
             <p style={proseStyle}>
-              The restoration arc (F8-F12) does not add another substitute. It builds the original. Each framework in the reversal restores what a corresponding framework in the escalation cost. The thread runs in both directions.
+              The restoration arc (F8–F12) does not add another substitute. It builds the original.
             </p>
+
+            <div style={{ overflowX: "auto", marginBottom: 16 }}>
+              <table style={tableStyle}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Framework</th>
+                    <th style={thStyle}>What It Restores</th>
+                    <th style={thStyle}>What Returns</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <TableRow cells={["F8", "Awareness rebuilds through safety, not instruction", "The restoration pathway"]} />
+                  <TableRow cells={["F9", "Variation is configuration, not deficit", "Accuracy"]} />
+                  <TableRow cells={["F10", "What the adult processes, the child does not inherit", "The generational bridge"]} />
+                  <TableRow cells={["F11", "Paradox holds what logic cannot", "Truth"]} />
+                  <TableRow cells={["F12", "Two information systems reunite — body and mind", "The designed process"]} />
+                </tbody>
+              </table>
+            </div>
+
+            <p style={proseStyle}>
+              Each framework in the reversal restores what a corresponding framework in the escalation cost. The thread runs in both directions.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — regulation thread, escalation and reversal */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
@@ -516,7 +538,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The regulation thread as the governing architecture connecting all twelve frameworks — showing that each framework describes the same nervous system substituting a different source at a different scale with a different cost. The reversal arc (F8-F12) as the structural counterpart: not adding substitutes but building the original. To the framework's knowledge, no existing work traces a single mechanism from individual signal through biological restoration through collective structure and shows that each level is the same nervous system running the same process at a different scale. This is a working hypothesis, open to testing.
+                  The regulation thread as the governing architecture connecting all twelve frameworks — showing that each framework describes the same nervous system substituting a different source at a different scale with a different cost. The reversal arc (F8–F12) as the structural counterpart: not adding substitutes but building the original. To the framework's knowledge, no existing work traces a single mechanism from individual signal through biological restoration through collective structure and shows that each level is the same nervous system running the same process at a different scale. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -533,7 +555,7 @@ export default function F1EmotionalGradientPage() {
             </h2>
 
             <p style={proseStyle}>
-              The Emotional Somatic Cycle operates at a scale larger than one activation event. The trajectory from a single signal to the structures that organize entire societies follows a biological arc — each step producing the conditions for the next.
+              The Emotional Somatic Cycle operates at a scale larger than one activation event. The trajectory from a single signal to the structures that organise entire societies follows a biological arc — each step producing the conditions for the next.
             </p>
 
             <p
@@ -553,33 +575,29 @@ export default function F1EmotionalGradientPage() {
             </p>
 
             <p style={proseStyle}>
-              Everything before biological restoration is the mechanism described in the models — operating within a single nervous system. The ESS detects. The nervous system shifts state. The body mobilizes. The CLS catches up. These are milliseconds to seconds.
+              Everything before biological restoration is the mechanism described in the models — operating within a single nervous system. The ESS detects (<Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1</Link>). The nervous system shifts state (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). The body mobilises. The CLS catches up. These are milliseconds to seconds.
             </p>
             <p style={proseStyle}>
               Biological restoration is where the arc pivots. It is step four of seven — three steps on each side.
             </p>
             <p style={proseStyle}>
-              When the body completes biological restoration and returns to physiological baseline, what follows is behavior with access to the full gradient. The person can perceive broadly. The CLS can receive the ESS's signals. Social structures built by people with this access tend toward flexibility, repair, and inclusion.
+              When the body completes biological restoration and returns to physiological baseline, what follows is behaviour with access to the full gradient. The person can perceive broadly. The CLS can receive the ESS's signals. Social structures built by people with this access tend toward flexibility, repair, and inclusion.
             </p>
             <p style={proseStyle}>
-              When the body cannot complete biological restoration, what follows is behavior organized by the state the nervous system is locked in. Perception narrows. The CLS overrides the ESS's signals. Unresolved activation accumulates. Over time, individual substitution patterns scale to collective structures: rules that enforce regulation, hierarchies that distribute worth, biases that filter perception, domination that replaces regulation with control.
+              When the body cannot complete biological restoration, what follows is behaviour organised by the state the nervous system is locked in. Perception narrows. The CLS overrides the ESS's signals. Unresolved activation accumulates. Restoration substitutes emerge. Over time, individual substitution patterns scale to collective structures: rules that enforce regulation (<Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>), hierarchies that distribute worth (<Link href="/framework/f5-filter-of-worth" style={linkStyle}>F5</Link>), biases that filter perception (<Link href="/framework/f6-bias-regulates" style={linkStyle}>F6</Link>), domination that replaces regulation with control (<Link href="/framework/f7-domination-regulates" style={linkStyle}>F7</Link>).
             </p>
             <p style={proseStyle}>
-              The arc is biological. Each step is a measurable process with identifiable physiological markers. Signal detection has a timeline (milliseconds). State activation has autonomic signatures. Biological restoration has endocrine markers. The behavior that follows has observable patterns. The social structures that emerge have structural characteristics.
+              The arc is biological. Each step is a measurable process with identifiable physiological markers. Signal detection has a timeline (milliseconds). State activation has autonomic signatures. Biological restoration has endocrine markers. The behaviour that follows has observable patterns. The social structures that emerge have structural characteristics.
             </p>
 
-            <DiagramToggle label="seven-step arc diagram" defaultOpen>
-              <F1FullArcDiagram />
-            </DiagramToggle>
-
-            <DiagramToggle label="capacity dimensions diagram" defaultOpen>
-              <F1ArchitectureDiagram />
-            </DiagramToggle>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — seven-step arc with biological restoration as pivot */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  The individual stages of the arc are established across their respective research traditions: signal detection (LeDoux, Panksepp), state activation (Porges), biological restoration (Levine, Nagoski), behavior as state-dependent (Siegel, Ogden), social structures as emergent from individual regulation patterns (Bowen, established in family systems research). The end-to-end arc is the framework's hypothesis.
+                  The individual stages of the arc are established across their respective research traditions: signal detection (LeDoux, Panksepp), state activation (Porges), biological restoration (Levine, Nagoski), behaviour as state-dependent (Siegel, Ogden), social structures as emergent from individual regulation patterns (Bowen, established in family systems research). The end-to-end arc is the framework's hypothesis.
                 </p>
               </ExpandableSection>
 
@@ -625,7 +643,7 @@ export default function F1EmotionalGradientPage() {
               },
               {
                 term: "The regulation thread",
-                definition: "When biological restoration is unavailable, the nervous system substitutes — at escalating scales, at escalating costs. Each framework describes a restoration substitute. F8-F12 reverse the thread by building the original.",
+                definition: "When biological restoration is unavailable, the nervous system substitutes — at escalating scales, at escalating costs. Each framework describes a restoration substitute. F8–F12 reverse the thread by building the original.",
               },
               {
                 term: "The signal-to-system sequence",
@@ -642,7 +660,7 @@ export default function F1EmotionalGradientPage() {
           <BridgeSection
             color={accent}
             established="F1 established that the body has a designed restoration process — biological restoration — that clears the activation load and returns the nervous system to physiological baseline, operating at zero cost."
-            question="But how does a person learn to let that process run? The biological mechanism is present from birth. The capacity to complete the sequence must be learned through experience. What determines whether the restoration sequence can complete?"
+            question="But how does a person learn to let that process run? The biological mechanism is present from birth. The capacity to complete the sequence must be learned through experience — specifically, through co-regulation with another nervous system that can itself complete the sequence. What determines whether the restoration sequence can complete?"
             nextFramework="F2"
             nextTitle="Developmental Calibration"
             nextHref="/framework/f2-awareness-calibration"
@@ -720,7 +738,7 @@ export default function F1EmotionalGradientPage() {
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-03",
-            dateModified: "2026-04-05",
+            dateModified: "2026-04-06",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {

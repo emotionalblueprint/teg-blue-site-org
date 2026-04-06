@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,878 +24,623 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", href: "#framework-position", description: "When the compass begins to move, contradictions emerge that were previously invisible. F11 maps these contradictions." },
-  { label: "The Regulation Thread", href: "#framework-position", description: "F1-F7 generate contradictions but false coherence hides them. F8-F10 loosen false coherence." },
-  { label: "Multi-Rationality", href: "#multi-rationality", description: "Paradoxical behaviour appears irrational only when assessed against a single set of values." },
-  { label: "Each Framework's Paradox", href: "#paradox-map", description: "Every mechanism in F1-F10 creates characteristic contradictions. A map of the contradictions each mechanism produces." },
-  { label: "The Paradox Cascade", href: "#paradox-cascade", description: "How contradictions go underground. The smooth story should worry you more than the messy one." },
-  { label: "Compass Position and Holding", href: "#paradox-and-compass", description: "The compass must be flexible enough to hold contradiction. Measurable consequence of repair." },
-  { label: "Individual Paradoxes", href: "#paradoxes-of-repair", description: "I am in more pain AND I am more alive. Not contradictions to resolve — contradictions to hold." },
-  { label: "Relational Paradoxes", href: "#relational-paradoxes", description: "Both sides are real. The paradox is not in either person — it is in the interaction." },
-  { label: "Systemic Paradoxes", href: "#systemic-paradoxes", description: "Freedom-seeking authoritarianism. Institutions that perpetuate what they were designed to solve." },
-  { label: "Integration Means Holding", href: "#integration-means-holding", description: "True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F11 makes about paradox, holding, and integration." },
+  { label: "Why Contradictions Are Multi-Rational", href: "#multi-rationality", description: "Five competing regulatory needs generate paradoxes that are rational when all needs are visible." },
+  { label: "Each Framework's Characteristic Paradox", href: "#framework-paradoxes", description: "F1–F10 each produces specific contradictions from its specific mechanism." },
+  { label: "How Contradictions Become Invisible", href: "#paradox-cascade", description: "Six levels from initial tension to invisible normal." },
+  { label: "State Determines Holding Capacity", href: "#state-and-holding", description: "Safety holds both truths. Threat simplifies. Control manages through narrative. Domination erases one." },
+  { label: "What Holding Capacity Is", href: "#holding-capacity", description: "Five components mapped to awareness capacities — not a separate skill but what the capacities produce." },
+  { label: "The Repair Arc's Own Paradoxes", href: "#repair-paradoxes", description: "Feeling worse while getting better. Knowing and not yet being. Signs of depth, not failure." },
+  { label: "Integration as Holding, Not Resolving", href: "#integration", description: "False coherence: complexity eliminated. Somatic-cognitive alignment: complexity held." },
   { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
-  { label: "Bridge to F12", href: "#bridge-to-f12", description: "A person can see their configuration, name their paradoxes — and still do the thing. F12 explains why." },
+  { label: "Bridge to F12", href: "#bridge", description: "Two information systems — the one that understands is not the one that organises behaviour." },
+  { label: "Connections Map", href: "#connections", description: "How F11 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "The Emotional Logic Behind Paradoxes — Why Contradictions Are Logical When the Full Picture Becomes Visible (F11) | TEG-Blue Research",
+  title: "Paradox Holds What Logic Cannot (F11) | TEG-Blue Research",
   description:
-    "Why human contradictions are predictable outcomes of a multi-need system. How each framework generates characteristic paradoxes, why holding capacity matters more than resolution, and what becomes visible when false coherence loosens. Framework F11 of 12.",
+    "Why human contradictions are predictable outcomes of multi-need systems — five competing regulatory needs, per-framework paradoxes, the six-level cascade, holding capacity through the awareness architecture, and integration as holding rather than resolving. Framework F11 of the TEG-Blue 12-framework system.",
   keywords: [
-    "emotional paradoxes",
+    "paradox",
     "multi-rationality",
     "holding capacity",
-    "competing needs",
-    "paradox cascade",
+    "emotional complexity",
+    "somatic-cognitive alignment",
     "false coherence",
-    "true coherence",
-    "state-dependent capacity",
-    "relational paradox",
-    "systemic paradox",
-    "integration versus resolution",
-    "emotional technology",
+    "integration",
+    "dialectical thinking",
+    "nervous system states",
+    "repair paradoxes",
+    "ambivalence",
+    "both/and thinking",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f11-emotional-paradoxes",
   },
   openGraph: {
-    title: "The Emotional Logic Behind Paradoxes — F11 Framework | TEG-Blue",
+    title: "Paradox Holds What Logic Cannot — F11 Framework | TEG-Blue",
     description:
-      "Why human contradictions are predictable outcomes of competing needs, and why holding paradox — rather than resolving it — is the developmental achievement.",
+      "Why human contradictions are predictable — and why holding them is the developmental achievement. Framework F11 of 12.",
     url: "https://teg-blue.org/framework/f11-emotional-paradoxes",
-    siteName: "TEG-Blue Research",
     type: "article",
+    siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Emotional Logic Behind Paradoxes — TEG-Blue F11",
+    title: "Paradox Holds What Logic Cannot — TEG-Blue F11",
     description:
-      "Why human contradictions are predictable outcomes of competing needs. Holding paradox — rather than resolving it — is the developmental achievement.",
+      "Integration is not the absence of contradiction — it is the capacity to hold contradiction without collapsing.",
   },
   other: {
-    'citation_title': 'The Emotional Logic Behind Paradoxes: Why Contradictions Are Logical When the Full Picture Becomes Visible',
+    'citation_title': 'Paradox Holds What Logic Cannot',
     'citation_author': 'Anna Paretas-Artacho',
-    'citation_publication_date': '2026/03',
+    'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────
 
-export default function F11EmotionalParadoxesPage() {
-
-  /* ── local helpers ─────────────────────────────────── */
-
-
-  function KeyStatement({ children }) {
-    return (
-      <blockquote style={{
-        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-        paddingLeft: 16, margin: "20px 0", fontStyle: "italic",
-        fontSize: 14, lineHeight: 1.7, color: TEXT.primary,
-      }}>
-        {children}
-      </blockquote>
-    );
-  }
-
-  function TableRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function ThreeColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function FourColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "8px 10px", fontSize: 12, lineHeight: 1.5,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-
-  const thStyle = {
-    padding: "10px 14px", fontSize: 12, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const narrowThStyle = {
-    padding: "8px 10px", fontSize: 11, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-
-  /* ── data ──────────────────────────────────────────── */
-
-  const faqItems = [
-    {
-      q: "Why do people contradict themselves?",
-      a: "Because multiple valid needs are operating simultaneously. A person who wants connection but pushes it away is not irrational \u2014 they are serving both the need for connection (the social engagement system) and the need for protection (the system's emergency response). When any two needs conflict, behavior serves multiple masters. The result looks contradictory from outside but is perfectly logical from inside.",
-    },
-    {
-      q: "Is holding paradox the same as accepting contradiction?",
-      a: "Not exactly. Holding means both truths remain present without one being eliminated for comfort. It is not passive acceptance \u2014 it is a developmental capacity requiring Interoceptive Self-Awareness (SEA) online, emotional resilience to tolerate tension, and the relational awareness to hold complexity with others. Many paradoxes are structurally unresolvable, so the goal is not resolution but developing enough capacity that both truths can coexist.",
-    },
-    {
-      q: "How does compass position affect the ability to hold paradox?",
-      a: "In Safety & Openness, a person can hold contradiction \u2014 both truths coexist because the system has enough safety for complexity. In Threat & Defence, paradox feels threatening and the system wants to simplify. In Strategy & Management, false coherence constructs a narrative that appears to hold both truths but actually eliminates one. In Power & Dominance, paradox is not experienced \u2014 one truth is imposed and the other is erased.",
-    },
-    {
-      q: "Why do contradictions become invisible?",
-      a: "Through the paradox cascade: an initial contradiction emerges from competing needs, false coherence constructs an explanation that hides it, the adaptive identity absorbs the explanation, rules and worth systems reinforce it, generational transmission passes it forward, and the contradiction becomes experienced as normal. A contradiction that has cascaded through all levels cannot be addressed at one level alone.",
-    },
-    {
-      q: "What does F11 mean by 'true coherence'?",
-      a: "True coherence is not a smoother story \u2014 it is a more honest one. It includes the contradictions, names them, holds them, and does not pretend they resolve. False coherence (F3) eliminates complexity for regulatory comfort. True coherence holds complexity without needing it resolved. It is the capacity to contain contradiction without collapsing.",
-    },
-  ];
-
-  /* ── render ────────────────────────────────────────── */
+export default function F11ParadoxPage() {
+  const accent = SPECTRUM.cobalt;
 
   return (
-    <>
-      <SiteHeader />
+    <div
+      style={{
+        minHeight: "100vh",
+        background: BG.page,
+        fontFamily: FONT.display,
+      }}
+    >
+      <SiteHeader currentPath="/framework/f11-emotional-paradoxes" />
 
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F11"
-              title="The Emotional Logic Behind Paradoxes"
-              subtitle="Why Contradictions Are Logical When the Full Picture Becomes Visible"
-              description="How every framework (F1–F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic — and how paradoxical behavior is multi-rational, serving multiple valid needs simultaneously rather than signaling failure of consistency. The first framework in the integration arc (F11–F12), mapping what becomes visible when M2's Interoceptive Self-Awareness (SEA) comes online and false coherence loosens."
-              group="Repair"
-              groupLabel="Repair Arc · F8–F12"
-              threadLabel="Reverses the Thread"
-              threadLine="Builds the original — paradox as a sign of integration beginning"
-              adjacent={{
-                prev: { label: "F10 Generational Bridges", href: "/framework/f10-generational-bridges" },
-                next: { label: "F12 Two Information Systems", href: "/framework/f12-two-information-systems" },
-              }}
-            />
+            badge="FRAMEWORK F11"
+            title="Paradox Holds What Logic Cannot"
+            subtitle="Why Human Contradictions Are Predictable Outcomes of Multi-Need Systems"
+            description="When false coherence was complete, it flattened complexity. The narrative constructed a single, coherent account — and the contradictions operating underneath were invisible. As the interoceptive channel opens — as SEA comes online, as the restoration sequence runs — the contradictions that were always there become felt. F11 maps what emerges: the system producing the complexity it was designed to hold. Holding paradox, rather than resolving it, is the developmental achievement."
+            group="Repair"
+            groupLabel="Repair Arc · F8–F12"
+            threadLine="Paradox holds what logic cannot — holding complexity. Restores: truth"
+            informsModels={[
+              { label: "M4", href: "/model/m4-awareness-capacities" },
+            ]}
+            adjacent={{
+              prev: { label: "F10 What the Adult Processes", href: "/framework/f10-generational-bridges" },
+              next: { label: "F12 Two Information Systems", href: "/framework/f12-two-information-systems" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
               concept: "False Coherence",
               framework: "F3",
-              description: "The narrative structure that resolves contradictions by eliminating one side — what loosens when SEA comes online.",
-              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+              description: "The CLS constructing a single narrative that eliminates complexity for regulatory comfort — what F11 maps the opposite of.",
+              href: "/framework/f3-false-coherence#false-coherence",
             },
             {
-              concept: "Safety Before Capacity",
+              concept: "SEA as the Developmental Entry Point",
               framework: "F8",
-              description: "Holding paradox requires the same safety conditions that awareness rebuilding requires.",
-              href: "/framework/f8-repairing-awareness#safety-before-capacity",
+              description: "When the interoceptive channel opens, the CLS begins receiving data it has never had — including contradictory signals that false coherence previously flattened.",
+              href: "/framework/f8-repairing-awareness#sea-entry-point",
             },
           ]} />
 
-          {/* ── Core Claims ── */}
-          <PropositionBox
-            title="Core Propositions — F11"
-            items={[
-              "Paradoxical behavior is multi-rational \u2014 it serves multiple valid needs simultaneously, serving multiple valid needs simultaneously",
-              "Every framework (F1\u2013F10) generates characteristic contradictions that follow predictably from each mechanism's specific logic",
-              "False coherence hides paradox through a six-level cascade \u2014 from initial contradiction through identity absorption to generational transmission",
-              "The capacity to hold paradox depends on compass position \u2014 Safety & Openness enables holding, Threat & Defence simplifies, Strategy & Management manages by elimination, Power & Dominance erases",
-              "Integration means holding, not resolving \u2014 true coherence is the capacity to contain contradiction without collapsing into a single story",
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Contradictory behaviour",
+                commonUnderstanding: "Inconsistency — hypocrisy, confusion, or a failure to commit to one position.",
+                definition: "Multi-rationality. The nervous system pursuing multiple valid regulatory goals simultaneously — connection AND protection, authenticity AND belonging, understanding AND grief. The behaviour oscillates because both needs are driving the system. Neither is the 'real' need. Neither is pathological.",
+              },
+              {
+                title: "Integration",
+                commonUnderstanding: "Resolving contradictions — finding the single truth, reaching clarity, getting to the other side.",
+                definition: "Developing enough holding capacity that both truths can remain present. The nervous system flexible enough to move between competing needs without getting stuck in one. Not the absence of contradiction — the capacity to contain it.",
+              },
+              {
+                title: "A smooth story",
+                commonUnderstanding: "A sign of integration — the person has made sense of their experience and can tell it coherently.",
+                definition: "May be coherence without the body — the CLS constructing clarity from incomplete data. The messy story may be someone whose interoceptive channel is opening for the first time. The question is not 'is the narrative coherent?' but 'what is the narrative coherent from?'",
+              },
             ]}
           />
 
-          {/* ════════════════════════════════════════════════
-              FRAMEWORK POSITION
-             ════════════════════════════════════════════════ */}
-
-          <section id="framework-position">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
-
-            <p style={proseStyle}>
-              F8–F10 describe repair: individual capacity development (F8), structural inclusion (F9), generational transmission (F10). Repair is real. It works. And it surfaces something that surviving never did.
-            </p>
-
-            <KeyStatement>
-              When the compass begins to move — when Interoceptive Self-Awareness (SEA) starts coming online, when false coherence loosens, when the person begins to see clearly — contradictions emerge that were previously invisible.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              Wanting connection and fearing it. Loving someone and needing distance from them. Understanding a parent's limitations and grieving what those limitations cost. Knowing something is harmful and doing it anyway. Seeking freedom and craving structure.
-            </p>
-
-            <p style={proseStyle}>
-              F11 maps these contradictions. Not to resolve them — many are structurally unresolvable — but to show that they are <strong>logical.</strong> Every apparent paradox is the predictable outcome of a system pursuing multiple valid needs simultaneously.
-            </p>
-
-            <KeyStatement>
-              The contradictions that become visible after this work are structurally real. Every apparent paradox is the predictable outcome of a system pursuing multiple valid needs simultaneously.
-            </KeyStatement>
-
-            <h3 style={conceptHeadingStyle}>The Regulation Thread — F11's Position</h3>
-
-            <p style={proseStyle}>
-              F1–F7: each framework generates characteristic contradictions — but false coherence hides them. The person in chronic Strategy & Management does not experience the contradiction between caring and controlling. The person with Interoceptive Self-Awareness (SEA) offline does not feel the gap between what they narrate and what they feel. False coherence makes paradox invisible by constructing a single story.
-            </p>
-
-            <p style={proseStyle}>
-              F8–F10: repair loosens false coherence. Interoceptive Self-Awareness (SEA) comes online. The single story breaks. And the contradictions that were always there become felt.
-            </p>
-
-            <KeyStatement>
-              F11 maps the contradictions that become visible when the system starts working as designed. Paradox indicates that the person can now hold complexity that false coherence previously flattened.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              PART 1 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 1: The Logic of Paradox
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              Why humans contradict themselves, why it makes sense, and how each framework generates its own characteristic contradictions.
-            </p>
+          {/* ─── CORE PROPOSITIONS ───────────────────────── */}
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
+                <li style={propositionItemStyle}>
+                  Paradoxical behaviour is multi-rational — five competing regulatory needs (connection, protection, authenticity, belonging, coherence) generate contradictions that are rational when all needs are visible
+                </li>
+                <li style={propositionItemStyle}>
+                  Each framework F1–F10 generates its own characteristic paradox — predictable from the mechanism, not random
+                </li>
+                <li style={propositionItemStyle}>
+                  Contradictions become invisible through a six-level cascade — from initial tension through false coherence, identity, social reinforcement, generational transmission, to invisible normal
+                </li>
+                <li style={propositionItemStyle}>
+                  Nervous system state determines holding capacity — Safety & Openness holds both truths, threat simplifies, Strategy & Management manages through narrative, Power & Dominance erases one
+                </li>
+                <li style={propositionItemStyle}>
+                  Holding capacity is what the three awareness capacities produce when online — not a separate skill but both/and thinking, somatic tolerance, temporal flexibility, part recognition, and grief capacity
+                </li>
+                <li style={propositionItemStyle}>
+                  The repair arc generates its own paradoxes — feeling worse while getting better, knowing and not yet being, grieving what was never there — signs of depth, not failure
+                </li>
+                <li style={propositionItemStyle}>
+                  Integration means holding complexity, not resolving it — false coherence eliminates complexity, somatic-cognitive alignment holds it
+                </li>
+              </ul>
+            </ExpandableSection>
           </div>
 
-          {/* ════════════════════════════════════════════════
-              C1 — MULTI-RATIONALITY
-             ════════════════════════════════════════════════ */}
+          {/* ─── PART 1: THE LOGIC OF PARADOX ──────────── */}
+          <PartDivider label="PART 1" title="The Logic of Paradox" color={accent} />
 
-          <section id="multi-rationality">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Multi-Rationality</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Why do people contradict themselves in predictable ways?
+          {/* Concept 0: Multi-Rationality */}
+          <section
+            id="multi-rationality"
+            aria-labelledby="heading-multi-rationality"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-multi-rationality" style={sectionHeadingStyle(accent)}>
+              Why Human Contradictions Are Multi-Rational
             </h2>
 
             <p style={proseStyle}>
-              Paradoxical behavior appears irrational only when assessed against a single set of values or goals. When multiple needs are recognized as simultaneously valid, behavior becomes <strong>multi-rational</strong> — serving several objectives at once.
+              Paradoxical behaviour appears irrational only when assessed against a single set of values. When multiple regulatory needs are recognised as simultaneously valid, behaviour becomes multi-rational — it serves multiple masters because the system pursuing the regulation has multiple legitimate goals operating at the same time.
             </p>
-
             <p style={proseStyle}>
-              A person who wants connection but pushes it away is not irrational. Two needs are real: the need for connection (F1 — the social engagement system, designed for sustained living) and the need for protection (F1 — the system's emergency response to perceived threat). The behavior oscillates or compromises because both needs are driving the system. Neither is wrong. Neither is the "real" need. Both are the nervous system pursuing valid regulatory goals.
+              A person who wants connection but pushes it away is not irrational. Two regulatory needs are both real: the need for connection — the social engagement system designed for belonging and co-regulation — and the need for protection — the defensive system responding to perceived threat. The behaviour oscillates because both needs are driving the nervous system.
             </p>
 
-            <h3 style={conceptHeadingStyle}>Five Competing Needs</h3>
-
-            <p style={proseStyle}>
-              F11 identifies five needs whose conflicts generate the characteristic paradoxes:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <div style={{ overflowX: "auto", marginBottom: 16 }}>
+              <table style={tableStyle}>
                 <thead>
                   <tr>
-                    <th style={narrowThStyle}>Need</th>
-                    <th style={narrowThStyle}>Regulatory Function</th>
-                    <th style={narrowThStyle}>Framework Source</th>
+                    <th style={thStyle}>Need</th>
+                    <th style={thStyle}>Regulatory Function</th>
+                    <th style={thStyle}>Where It Originates</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["Connection", "Belonging, attachment, being seen, co-regulation", "F1 (social engagement), F2 (attachment), F8 (relational repair)"]} />
-                  <ThreeColRow cells={["Protection", "Safety, boundaries, threat avoidance, survival", "F1 (defensive states), F2 (adaptive identity), F7 (escalation)"]} />
-                  <ThreeColRow cells={["Authenticity", "Genuine expression, configuration honesty, emotional truth", "F2 (capacity development), F8 (repair), F9 (unmasking)"]} />
-                  <ThreeColRow cells={["Belonging", "Group membership, social acceptance, not being excluded", "F4 (rules), F5 (worth hierarchies), F8\u2013F9 (masking)"]} />
-                  <ThreeColRow cells={["Coherence", "Making sense, predictability, internal consistency", "F3 (false coherence), F6 (bias architecture)"]} />
+                  <TableRow cells={["Connection", "Belonging, co-regulation, being perceived", "F1 (social engagement), F2 (co-regulation), F8 (relational repair)"]} />
+                  <TableRow cells={["Protection", "Safety, boundaries, threat avoidance", "F1 (defensive states), F2 (calibration to threat), F7 (escalation)"]} />
+                  <TableRow cells={["Authenticity", "Genuine expression, configuration honesty", "F2 (capacity development requires authentic conditions), F8–F9 (repair, unmasking)"]} />
+                  <TableRow cells={["Belonging", "Group membership, social acceptance", "F4 (rule compliance), F5 (worth in hierarchy), F8–F9 (the cost of masking)"]} />
+                  <TableRow cells={["Coherence", "Making sense, predictability, internal consistency", "F3 (false coherence), F6 (bias as perceptual certainty)"]} />
                 </tbody>
               </table>
             </div>
 
             <p style={proseStyle}>
-              When any two of these conflict, behavior serves <strong>multiple masters.</strong> The result looks contradictory from outside but is perfectly logical from inside — each side of the contradiction is pursuing a real need.
+              When any two of these needs conflict, the nervous system serves both — and the result looks contradictory from outside while being perfectly rational from inside. The assessment shift: from "why are you being inconsistent?" to "which competing needs is this behaviour trying to serve?"
             </p>
 
-            <KeyStatement>
-              The assessment shift: from "Why are you being inconsistent?" to "What competing needs is this behavior trying to serve?"
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — five competing needs generating paradox */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Cognitive dissonance theory (Festinger) describes the discomfort of holding inconsistent beliefs. Motivational interviewing (Miller & Rollnick) works with ambivalence as a real state rather than resistance. Internal Family Systems (Schwartz) models the psyche as containing multiple parts with different needs. Dialectical behavior therapy (Linehan) builds tolerance for opposing truths.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Festinger (1957) — cognitive dissonance as the discomfort of holding contradictory cognitions. Miller & Rollnick (2002) — ambivalence as a natural product of competing motivations. Schwartz (1995) — Internal Family Systems: parts with different needs as the structure of the mind.
+                </p>
+              </ExpandableSection>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 reframes dissonance as regulatory, not logical. The discomfort is the nervous system managing competing needs, not an error in reasoning. Resolution through elimination is false coherence. The multi-rationality framework identifies which specific needs are generating which specific paradox — making the intervention point visible rather than demanding the person "stop being contradictory."
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C2 — EACH FRAMEWORK GENERATES PARADOX
-             ════════════════════════════════════════════════ */}
-
-          <section id="paradox-map">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Each Framework Generates Paradox</h2>
-
-            <p style={proseStyle}>
-              Every mechanism in F1–F10 creates characteristic contradictions. These are not random — they follow from each framework's specific logic:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Framework</th>
-                    <th style={narrowThStyle}>Mechanism</th>
-                    <th style={narrowThStyle}>Paradox Generated</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["F1 — The Inner Compass", "Nervous system and conscious mind can be in different states", "Intending one thing, feeling another. Wanting to be brave while the body freezes"]} />
-                  <ThreeColRow cells={["F2 — Awareness Teaches Awareness", "The three capacities can be in different states", "Reading everyone perfectly while having no idea what you feel. Understanding emotions intellectually while being unable to experience them"]} />
-                  <ThreeColRow cells={["F3 — False Coherence", "Cognition maintains coherence regardless of evidence", "Believing what serves regulation while contradicting what the person can see. Knowing and not-knowing simultaneously"]} />
-                  <ThreeColRow cells={["F4 — Rules Regulate", "Internalized rules conflict with authentic needs", "Following rules that harm. Breaking rules that help. Defending rules that hurt the person defending them"]} />
-                  <ThreeColRow cells={["F5 — Worth Hierarchies", "Worth-seeking drives override stated values", "Pursuing status that contradicts professed values. Performing for belonging while claiming to value authenticity"]} />
-                  <ThreeColRow cells={["F6 — Bias Regulates", "Perception serves protection, not accuracy", "Seeing what confirms existing beliefs while missing what challenges them. Certainty increasing as accuracy decreases"]} />
-                  <ThreeColRow cells={["F7 — Domination Regulates", "Threat & Defence escalates beyond original intent", "Controlling what was meant to be cared for. Destroying what was meant to be protected"]} />
-                  <ThreeColRow cells={["F8 — Repairing Awareness", "Repair surfaces previously managed contradictions", "Getting worse before getting better. Knowing but not yet being. Seeing the pattern clearly while still living it"]} />
-                  <ThreeColRow cells={["F9 — Neurodivergence", "Masking versus authentic configuration", "Performing normal while being different. Succeeding by standards that cost the person everything"]} />
-                  <ThreeColRow cells={["F10 — Generational Bridges", "Inherited patterns versus conscious values", "Repeating what was vowed never to repeat. Loving the people who caused the patterns. Understanding and grieving simultaneously"]} />
-                </tbody>
-              </table>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Multi-rationality grounded in five regulatory needs traced through F1–F10 — each need with a specific biological function and a specific origin in the framework sequence. The reframing from irrationality to multi-rationality, with the five-need architecture explaining which specific needs are competing in any given paradox. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <p style={proseStyle}>
-              When a person can locate their contradiction on this map, it stops being a personal failing and becomes an identifiable pattern with a known mechanism. The shame reduces. The curiosity increases. And the intervention point becomes visible — not "stop being contradictory" but "which competing needs are generating this specific paradox?"
-            </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Each paradox in the map corresponds to a documented phenomenon in existing literature. Body–mind splits (F1) are described in somatic experiencing (Levine) and sensorimotor psychotherapy (Ogden). Knowing-and-not-knowing (F3) appears in denial research and trauma dissociation literature. Role conflicts (F4–F5) are documented across sociology and organizational psychology. Escalation beyond intent (F7) appears in aggression research and power studies.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 organizes these into a single map showing that every paradox is generated by the same mechanism — multi-rationality at the scale specific to each framework. This makes the contradictions predictable rather than random, locatable rather than diffuse, and addressable at the level where they are operating rather than at whatever level the person or clinician happens to notice first.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C3 — THE PARADOX CASCADE
-             ════════════════════════════════════════════════ */}
-
-          <section id="paradox-cascade">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Paradox Cascade</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              How do emotional contradictions become invisible over time?
+          {/* Concept 1: Per-Framework Paradoxes */}
+          <section
+            id="framework-paradoxes"
+            aria-labelledby="heading-framework-paradoxes"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-framework-paradoxes" style={sectionHeadingStyle(accent)}>
+              Each Framework's Characteristic Paradox
             </h2>
 
-            <h3 style={conceptHeadingStyle}>How Contradictions Become Invisible</h3>
-
-            <p style={proseStyle}>
-              Paradox does not stay visible. False coherence (F3) works to hide it. The cascade operates through six identifiable levels:
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <div style={{ overflowX: "auto", marginBottom: 16 }}>
+              <table style={tableStyle}>
                 <thead>
                   <tr>
-                    <th style={narrowThStyle}>Level</th>
-                    <th style={narrowThStyle}>What Happens</th>
-                    <th style={narrowThStyle}>Example</th>
+                    <th style={thStyle}>Framework</th>
+                    <th style={thStyle}>What the Mechanism Produces</th>
+                    <th style={thStyle}>The Paradox</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <ThreeColRow cells={["1. Initial contradiction", "Competing needs generate the paradox", "Connection vs. protection \u2014 wanting closeness while fearing vulnerability"]} />
-                  <ThreeColRow cells={["2. False coherence", "Cognition constructs an explanation that hides the contradiction", "\"I just prefer being alone\" (hides the desire for connection that protection blocks)"]} />
-                  <ThreeColRow cells={["3. Identity absorption", "The person's self-concept incorporates the false coherence", "\"I'm an introvert\" becomes identity rather than description of a regulatory pattern"]} />
-                  <ThreeColRow cells={["4. Social reinforcement", "Rules and worth systems (F4\u2013F5) reward the performance and punish the contradiction", "\"They're so independent\" is praised; vulnerability is seen as weakness"]} />
-                  <ThreeColRow cells={["5. Generational transmission", "The pattern becomes \"how things are\" in the family (F10)", "\"We don't do emotions in this family\" passes as family culture"]} />
-                  <ThreeColRow cells={["6. Invisible normal", "The contradiction is no longer experienced as contradiction", "Experienced as normal, natural, just \"the way I am\""]} />
+                  <TableRow cells={["F1", "ESS and CLS in different physiological states", "Intending one response while the body produces another"]} />
+                  <TableRow cells={["F2", "Three capacities in different states", "Reading everyone with precision while having no access to one's own internal state"]} />
+                  <TableRow cells={["F3", "CLS maintains coherence regardless of data", "Knowing and not-knowing simultaneously"]} />
+                  <TableRow cells={["F4", "Internalised rules conflict with authentic needs", "Defending norms that restrict the person defending them"]} />
+                  <TableRow cells={["F5", "Worth-seeking overrides stated values", "Pursuing status that contradicts professed values"]} />
+                  <TableRow cells={["F6", "Perception serves protection, not accuracy", "Certainty increasing as accuracy decreases"]} />
+                  <TableRow cells={["F7", "Protection escalates beyond the original need", "Controlling what was meant to be cared for"]} />
+                  <TableRow cells={["F8", "Repair surfaces previously managed contradictions", "Feeling worse while getting better"]} />
+                  <TableRow cells={["F9", "Masking and authentic configuration coexist", "Succeeding by standards that cost everything"]} />
+                  <TableRow cells={["F10", "Inherited patterns and conscious values operate through different systems", "Loving the people who carried the patterns that produced the harm"]} />
                 </tbody>
               </table>
             </div>
 
-            <h3 style={conceptHeadingStyle}>Why Single-Level Intervention Fails</h3>
-
             <p style={proseStyle}>
-              A contradiction that has cascaded through all six levels cannot be addressed at one level. Cognitive insight (level 2) does not reach the identity level (level 3). Individual therapy (levels 1–3) does not address the social reinforcement (level 4). Personal restoration (levels 1–5) does not interrupt the generational pattern (level 6).
+              The map does not resolve the contradictions. It makes them legible. When a person can see that their oscillation is a specific paradox generated by a specific mechanism, the contradiction becomes an identifiable pattern rather than a personal failure.
             </p>
 
-            <KeyStatement>
-              Effective intervention meets the paradox at the level where it is operating. F11 makes these levels visible so the intervention can be matched.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — per-framework paradox map */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Multi-level intervention models appear across clinical and systems literatures. Bronfenbrenner's ecological systems theory maps individual behavior within nested environmental contexts. Narrative therapy (White & Epston) addresses how stories become identity. Family systems theory (Bowen) tracks multigenerational pattern transmission. F11 integrates these into a single cascade model showing how the same contradiction moves through scales.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bateson (1972) — the double bind: contradictory messages producing paradoxical responses as predictable systemic outcomes. Watzlawick, Weakland & Fisch (1974) — paradoxes of change: the attempted solution that maintains the problem.
+                </p>
+              </ExpandableSection>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                The six-level cascade provides a diagnostic tool: where in the cascade is this particular paradox operating? The answer determines the intervention. Level 1 contradictions respond to awareness. Level 3 contradictions require identity work. Level 5 contradictions require family systems intervention. Matching the intervention to the level is the precondition for effectiveness.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C4 — PARADOX INTENSITY AND COMPASS POSITION
-             ════════════════════════════════════════════════ */}
-
-          <section id="paradox-and-compass">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Paradox Intensity and Compass Position</h2>
-
-            <h3 style={conceptHeadingStyle}>State Determines Holding Capacity</h3>
-
-            <p style={proseStyle}>
-              The capacity to hold paradox — to contain two contradictory truths without collapsing into one or the other — depends on compass position. State determines capacity (F1).
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Compass Position</th>
-                    <th style={thStyle}>Relationship to Paradox</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Safety & Openness", "Can hold contradiction. Both truths coexist. The person can say \"I love them AND what they did hurt me\" without one canceling the other. Paradox is tolerable because the system has enough safety to hold complexity"]} />
-                  <TableRow cells={["Threat & Defence", "Paradox feels threatening. The system wants to resolve \u2014 pick a side, simplify, decide. Binary thinking is the nervous system reducing cognitive load under threat"]} />
-                  <TableRow cells={["Strategy & Management", "Paradox is managed through narrative. False coherence constructs a story that appears to hold both truths but actually eliminates one. The narrative feels like integration but is actually resolution by elimination"]} />
-                  <TableRow cells={["Power & Dominance", "Paradox is not experienced. One truth is imposed. The other is erased, denied, or punished in anyone who names it"]} />
-                </tbody>
-              </table>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Each framework's characteristic paradox traced through that framework's specific mechanism — showing that the contradictions are predictable products of the regulatory architecture, not random inconsistency. The mapping function allows locating specific contradictions and identifying the generating mechanism. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>Paradox as Diagnostic</h3>
-
-            <p style={proseStyle}>
-              How a person relates to their own contradictions reveals their compass position:
-            </p>
-
-            <p style={proseStyle}>
-              A person who can name both sides without distress is likely accessing Safety & Openness. A person who oscillates between the two sides with anxiety is likely in Threat & Defence. A person who has a smooth, coherent narrative that eliminates one side is likely in chronic Strategy & Management — and the narrative should be examined, not admired. A person who denies the contradiction exists and attacks anyone who names it is likely in Power & Dominance.
-            </p>
-
-            <KeyStatement>
-              The smooth story should worry you more than the messy one. The messy one may be someone learning to hold complexity. The smooth one may be false coherence performing integration.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Polyvagal theory (Porges) describes how autonomic state constrains available cognitive and emotional capacities. Window of tolerance research (Siegel) maps how arousal states determine processing capacity. Attachment research (Main, Hesse) uses narrative coherence in the Adult Attachment Interview as a diagnostic tool — and notes that excessive coherence (dismissing classification) can indicate avoidance rather than integration.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 adds the paradox dimension to compass assessment. How someone holds contradiction is itself diagnostic — revealing not what they say about their state but what their state actually permits. This is clinically significant: the person who presents a perfectly coherent narrative may need more attention, not less, because the coherence itself may be the regulatory strategy.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              PART 2 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 2: Holding, Not Resolving
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              What it means to hold paradox, the specific capacities involved, and the paradoxes that emerge at every scale.
-            </p>
-          </div>
-
-          {/* ════════════════════════════════════════════════
-              C5 — HOLDING CAPACITY
-             ════════════════════════════════════════════════ */}
-
-          <section id="holding-capacity">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Holding Capacity</h2>
+          {/* Concept 2: Six-Level Cascade */}
+          <section
+            id="paradox-cascade"
+            aria-labelledby="heading-paradox-cascade"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-paradox-cascade" style={sectionHeadingStyle(accent)}>
+              How Contradictions Become Invisible Through Six Levels
+            </h2>
 
             <p style={proseStyle}>
-              F11's central clinical contribution: the goal is not resolving paradox. Many paradoxes are structurally unresolvable — the needs genuinely conflict, and no solution satisfies both completely. The goal is developing the <strong>capacity to hold</strong> paradox without collapse.
+              <strong style={{ color: TEXT.primary }}>Level 1: Initial contradiction.</strong> Two competing needs generate the paradox. The person experiences the tension — if the interoceptive channel is carrying any signal. <strong style={{ color: TEXT.primary }}>Level 2: False coherence.</strong> The CLS constructs an explanation that absorbs the contradiction. "I just prefer being alone" eliminates the connection need from the narrative. <strong style={{ color: TEXT.primary }}>Level 3: Identity absorption.</strong> The explanation becomes self-concept. "I'm an introvert" is identity. Questioning it now threatens identity (<Link href="/framework/f3-false-coherence#cognitive-dissonance" style={linkStyle}>F3</Link>). <strong style={{ color: TEXT.primary }}>Level 4: Social reinforcement.</strong> The norms of <Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link> and <Link href="/framework/f5-worth-hierarchies" style={linkStyle}>F5</Link> reward the performed identity and punish the contradiction. <strong style={{ color: TEXT.primary }}>Level 5: Generational transmission.</strong> The pattern becomes family culture (<Link href="/framework/f10-generational-bridges" style={linkStyle}>F10</Link>). "We handle things ourselves." <strong style={{ color: TEXT.primary }}>Level 6: Invisible normal.</strong> The contradiction is experienced as reality. Not a contradiction. Just how things are.
             </p>
-
             <p style={proseStyle}>
-              Holding means: both truths remain present. Neither is eliminated for comfort. The person can sit with the tension without the nervous system forcing a resolution.
+              A contradiction that has cascaded through all six levels cannot be addressed at one level. Cognitive insight (Level 2) does not reach identity (Level 3). Individual work (Levels 1–3) does not address social reinforcement (Level 4). Personal repair (Levels 1–5) does not interrupt the generational pattern (Level 6). Effective intervention meets the paradox at the level where it is operating.
             </p>
 
-            <h3 style={conceptHeadingStyle}>Five Components of Holding Capacity</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — six-level cascade */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Component</th>
-                    <th style={narrowThStyle}>What It Is</th>
-                    <th style={narrowThStyle}>What It Requires</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Both/and thinking", "The cognitive capacity to hold two contradictory truths as simultaneously valid", "Interoceptive Self-Awareness (SEA) online \u2014 so the person can receive both truths without false coherence overriding one"]} />
-                  <ThreeColRow cells={["Somatic tolerance", "The body's capacity to hold the tension of unresolved contradiction without flooding or numbing", "Affective Resonance (ER) developed \u2014 so the felt discomfort of paradox can be experienced without collapse"]} />
-                  <ThreeColRow cells={["Temporal flexibility", "The capacity to hold that something can be true now and different later \u2014 or true from one perspective and false from another", "Interpersonal Affect Perception (RE) accurate \u2014 so the person can read context rather than demanding a single fixed truth"]} />
-                  <ThreeColRow cells={["Part recognition", "The capacity to recognize that different needs are generating different pulls", "All three capacities working together \u2014 reading, feeling, and self-knowing"]} />
-                  <ThreeColRow cells={["Grief capacity", "The capacity to mourn what cannot be reconciled \u2014 some paradoxes are permanent losses", "Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) \u2014 the person must feel the grief and know it as their own"]} />
-                </tbody>
-              </table>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bronfenbrenner (1979) — ecological systems theory: influence across nested levels. White & Epston (1990) — narrative therapy: stories becoming lived realities. Bowen (1978) — multigenerational transmission: patterns becoming family identity.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The six-level cascade with each level traced through the framework that operates at that scale (F3 at Level 2, F4–F5 at Level 4, F10 at Level 5). The structural implication: intervention at the wrong level does not reach the paradox. Level 6 is the condition the person begins from — the repair arc (F8–F10) traverses the levels in reverse. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>The Connection to F8</h3>
-
-            <p style={proseStyle}>
-              Holding capacity is not a separate skill. It is what the three awareness capacities produce when they are online. Interoceptive Self-Awareness (SEA) provides the self-knowledge to see both truths. Affective Resonance (ER) provides the emotional resilience to tolerate the tension. Interpersonal Affect Perception (RE) provides the relational awareness to hold complexity in relationship with others.
-            </p>
-
-            <KeyStatement>
-              F8 repair builds the infrastructure. F11 describes what that infrastructure enables.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Jungian analytical psychology (Jung) describes holding opposites as a developmental achievement — the "transcendent function" that emerges when conscious and unconscious positions are held in tension. Dialectical behavior therapy (Linehan) teaches distress tolerance and "both/and" thinking. Attachment research describes earned security as the capacity to hold complex narratives about one's own history without resolving them into simple stories.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 grounds holding capacity in the three awareness capacities rather than treating it as a separate cognitive skill or a spiritual achievement. This makes it developable through the same mechanisms F8 describes — not through willpower or insight alone, but through creating conditions where the capacities have room to come online. Holding paradox is not only a philosophical ideal. It is the measurable consequence of the three awareness capacities being online.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C6 — THE PARADOXES OF REPAIR
-             ════════════════════════════════════════════════ */}
-
-          <section id="paradoxes-of-repair">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Paradoxes of Repair</h2>
-
-            <p style={proseStyle}>
-              The repair arc (F8–F10) generates its own characteristic paradoxes. These are not signs of failure — they are signs that the work is reaching depth.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Getting Worse Before Getting Better</h3>
+          {/* Concept 3: State and Holding */}
+          <section
+            id="state-and-holding"
+            aria-labelledby="heading-state-and-holding"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-state-and-holding" style={sectionHeadingStyle(accent)}>
+              How Nervous System State Determines Holding Capacity
+            </h2>
 
             <p style={proseStyle}>
-              When false coherence loosens and self-emotional awareness comes online, previously unfelt pain becomes felt. The person is not getting worse — they are feeling what was always there. But the experience is one of deterioration. This paradox requires the holding capacity to say: "I am in more pain AND I am more alive."
+              <strong style={{ color: TEXT.primary }}>Safety & Openness:</strong> The nervous system has the resources to hold both truths simultaneously. Cortisol is low. The prefrontal cortex is online. The perceptual field is wide. "I love them AND what they did produced real harm" — both truths present, neither cancelling the other. Paradox is tolerable because the system has enough regulatory margin for the complexity.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Knowing and Not Yet Being</h3>
-
             <p style={proseStyle}>
-              The person can see their patterns clearly — can describe their configuration, name their false coherence, identify their chronic mode — and still do the thing. Insight has arrived but the nervous system has not updated yet. This is F12's domain (the cognitive system narrates a process already underway), but F11 names the felt experience: the frustration of seeing clearly and not yet being able to act differently.
+              <strong style={{ color: TEXT.primary }}>Chronic Threat & Defence:</strong> Paradox feels threatening. The system wants to simplify — to identify which truth is the danger and which is safe. Binary thinking is the nervous system reducing cognitive load under threat conditions.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Grieving What You Never Had</h3>
-
             <p style={proseStyle}>
-              You cannot mourn something you never knew existed. When awareness capacities come online and the person begins to see what they missed — the attunement, the safety, the mirroring, the regulation — grief arrives for something that was never there. This is paradoxical: mourning an absence. But the grief is real, and it requires holding.
+              <strong style={{ color: TEXT.primary }}>Chronic Strategy & Management:</strong> Paradox is managed through narrative. The CLS constructs a story that appears to hold both truths but actually eliminates one. "I understand why they did it — and I've moved past the anger." The narrative sounds like integration. It may be coherence without the body.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Restoration Changing Relationships</h3>
-
             <p style={proseStyle}>
-              As the person's configuration shifts, relationships respond. Some deepen — they can now hold more of who the person actually is. Some strain — they were built on the old configuration and cannot accommodate the new one. The paradox: becoming more fluid may cost relationships.
+              <strong style={{ color: TEXT.primary }}>Chronic Power & Dominance:</strong> Paradox is not experienced. One truth is asserted. The other is erased, denied, or punished in anyone who names it.
             </p>
-
-            <KeyStatement>
-              I am becoming more myself AND some people cannot be with who I actually am.
-            </KeyStatement>
-
-            <h3 style={conceptHeadingStyle}>Understanding and Grieving Simultaneously</h3>
-
             <p style={proseStyle}>
-              F10's territory, but F11 names the felt experience: the simultaneous truth of "I understand why you became who you became" and "I grieve what it cost me." Neither truth cancels the other. Holding both is the work.
+              Paradox can function as a diagnostic. A person who can name both sides without urgency to resolve is likely accessing Safety & Openness. A person with a smooth, coherent narrative that elegantly eliminates one side is likely in chronic Strategy & Management — and the narrative should be examined, not admired.
             </p>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                The paradoxes of repair appear across clinical literatures. "Getting worse before better" is documented in exposure therapy, grief work, and trauma processing. The knowing-being gap appears in stages-of-change literature (Prochaska & DiClemente) and motivational interviewing. Ambiguous loss research (Boss) describes grieving what was never present. Relationship strain during personal growth is documented in family systems and couple therapy research.
-              </p>
-            </ExpandableSection>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — four states, four relationships to paradox */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 maps these paradoxes as predictable features of the repair arc. When clinicians and individuals expect these contradictions — and understand that they indicate capacity to hold complexity — the work can continue through the discomfort rather than retreating to the comfort of false coherence.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Porges (2011) — autonomic state determines available cognitive and social responses. Siegel (2012) — window of tolerance: the zone within which complexity can be processed. Main & Hesse (1990) — narrative coherence in the Adult Attachment Interview as a measure of paradox-holding.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Holding capacity mapped across the four nervous system states — showing that paradox tolerance is a physiological resource, not a cognitive skill. The diagnostic function: how the person relates to their contradictions reveals the state. The smooth narrative (Strategy & Management) is more likely performing holding than the messy narrative (the channel opening). This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C7 — THE RELATIONAL PARADOXES
-             ════════════════════════════════════════════════ */}
+          {/* ─── PART 2: HOLDING, NOT RESOLVING ────────── */}
+          <PartDivider label="PART 2" title="Holding, Not Resolving" color={accent} />
 
-          <section id="relational-paradoxes">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Relational Paradoxes</h2>
-
-            <p style={proseStyle}>
-              The same logic that generates individual paradox generates relational paradox — and at relational scale, both people's competing needs interact.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Connection-Protection Oscillation</h3>
-
-            <p style={proseStyle}>
-              One person moves toward connection; the other's nervous system reads vulnerability and activates protection; the first person reads the withdrawal and activates their own protection. Both want connection. Both are protecting. The paradox is not in either person — it is in the interaction. Both are right. Both are stuck.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Authenticity Demand, Honesty Punishment</h3>
+          {/* Concept 4: What Holding Capacity Is */}
+          <section
+            id="holding-capacity"
+            aria-labelledby="heading-holding-capacity"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-holding-capacity" style={sectionHeadingStyle(accent)}>
+              What Holding Capacity Is and What It Requires
+            </h2>
 
             <p style={proseStyle}>
-              "I want you to be honest with me" — followed by punishment when the honesty arrives. This is multi-rationality at relational scale: the need for authenticity is real AND the need for coherence (F3) makes truth threatening. The person genuinely wants honesty and genuinely cannot tolerate it. Both are true.
+              Holding capacity is not a separate skill to be learned. It is what the three awareness capacities produce when they are online. <Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8</Link> builds the infrastructure. F11 describes what that infrastructure enables.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Love as Control</h3>
-
             <p style={proseStyle}>
-              In chronic Strategy & Management, the distinction between caring and managing collapses. Every act of love becomes an act of management. They are caring through the only mode available. The paradox is genuine care expressed through a mode that the recipient experiences as control.
+              <strong style={{ color: TEXT.primary }}>Both/and thinking.</strong> The cognitive capacity to hold two contradictory truths as simultaneously valid. Requires SEA online — the CLS receiving the body's data rather than constructing a single narrative.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Helping That Maintains the Problem</h3>
-
             <p style={proseStyle}>
-              At relational and systemic scale — the helper whose identity depends on the person remaining in need. The parent whose anxiety requires the child to remain dependent. The system designed to solve a problem that would defund the system if solved. The helping is real. The maintenance of the problem is also real. Multi-rationality, not hypocrisy.
+              <strong style={{ color: TEXT.primary }}>Somatic tolerance.</strong> The body's capacity to hold the tension of unresolved contradiction without flooding or numbing. Requires ER developed — the resonance channel functioning within a sustainable range.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Temporal flexibility.</strong> The capacity to hold that something can be true now and different later — that the present tension does not require permanent resolution. Requires RE accurate — able to read context and change.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Part recognition.</strong> The capacity to recognise that different regulatory needs are generating different pulls — without requiring one to defeat the other. Requires all three capacities working together.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Grief capacity.</strong> The capacity to mourn what cannot be reconciled — some paradoxes are permanent losses. The understanding that will never fully cancel the grief. Requires ER and SEA — the person must feel the grief and recognise it as their own.
+            </p>
+            <p style={proseStyle}>
+              Each paradox held without collapse builds the capacity to hold the next. The nervous system accumulates evidence that the complexity is survivable.
             </p>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Double bind theory (Bateson) describes competing demands that create paradox in communication. Pursuer-withdrawer dynamics are documented extensively in couple therapy research (Gottman, Johnson). Codependency literature describes helping patterns that maintain the problem. Karpman's drama triangle maps the rescuer-persecutor-victim cycle.
-              </p>
-            </ExpandableSection>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — five components mapped to RE, ER, SEA */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 reframes relational paradoxes as multi-rationality operating across two nervous systems rather than as one person's pathology or communication failure. This shifts the intervention from "who is wrong" to "what competing needs are generating this interaction pattern" — making the dynamics visible without requiring blame.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Jung (1960) — the transcendent function: holding opposites until a third position emerges. Linehan (1993) — distress tolerance and dialectical thinking. Main & Hesse (1990) — earned security as the capacity to narrate complexity with emotional truth intact.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Holding capacity decomposed into five components, each mapped to the specific awareness capacity that provides it — showing that holding is a physiological achievement, not a cognitive one. The connection to F8: F8 builds the capacities, F11 describes what they produce. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C8 — THE SYSTEMIC PARADOXES
-             ════════════════════════════════════════════════ */}
-
-          <section id="systemic-paradoxes">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Systemic Paradoxes</h2>
-
-            <p style={proseStyle}>
-              The same mechanism operates at institutional and cultural scale. F4–F7 mechanisms generate paradoxes that are invisible from within the system.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Freedom-Seeking Authoritarianism</h3>
+          {/* Concept 5: Repair Paradoxes */}
+          <section
+            id="repair-paradoxes"
+            aria-labelledby="heading-repair-paradoxes"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-repair-paradoxes" style={sectionHeadingStyle(accent)}>
+              The Repair Arc's Own Paradoxes
+            </h2>
 
             <p style={proseStyle}>
-              People claiming to want freedom supporting authoritarian leaders. The nervous system equates structure with safety (F4). When uncertainty increases, the system reaches for predictability. The person genuinely wants freedom AND genuinely craves the regulation that authority provides.
+              The repair arc (<Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8</Link>–<Link href="/framework/f10-generational-bridges" style={linkStyle}>F10</Link>) generates characteristic paradoxes that indicate depth, not failure.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Revolution Recreating Hierarchy</h3>
-
             <p style={proseStyle}>
-              Liberation movements becoming what they opposed. Old patterns are the only available templates (F10). The revolutionaries carry the same configurations that the system they overthrew produced. The revolution succeeds. The patterns reproduce. Not because the ideals were false — because the nervous systems had not changed.
+              <strong style={{ color: TEXT.primary }}>Feeling worse while getting better.</strong> When false coherence loosens and the interoceptive channel begins carrying signal, previously unfelt activation becomes felt. Grief, anger, confusion arrive. "I am in more pain AND I am more aware" are the same event described from two sides of the interoceptive channel.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Institutions That Perpetuate What They Were Designed to Solve</h3>
-
             <p style={proseStyle}>
-              Healthcare systems that maintain illness. Justice systems that produce injustice. Education systems that prevent learning. Not conspiracy — <strong>multi-rationality at institutional scale.</strong> The stated purpose is real. The unstated regulatory functions (employment, control, coherence, resource allocation) are also real. When these conflict, the regulatory functions usually win — because they are operating in the emotional-somatic system, below the level of stated purpose.
+              <strong style={{ color: TEXT.primary }}>Knowing and not yet being.</strong> The person can see their patterns with precision — and the pattern still runs. The CLS has updated. The ESS has not. Insight arrives at CLS speed, change happens at ESS speed (<Link href="/framework/f8-repairing-awareness#experience-not-insight" style={linkStyle}>F8</Link>).
             </p>
-
-            <h3 style={conceptHeadingStyle}>Diversity Initiatives That Enforce Conformity</h3>
-
             <p style={proseStyle}>
-              The paradox of demanding that everyone value difference — in the same way. F8's insight applied here: genuine inclusion requires different configurations contributing differently. Inclusion programs that define one correct way to "be inclusive" have reproduced F4 (one correct way) in the language of diversity.
+              <strong style={{ color: TEXT.primary }}>Grieving what was never there.</strong> When capacities develop and the person perceives what they missed — the attunement that was not available, the co-regulation that was never present — grief arrives for an absence. The capacity to grieve what was never available is itself evidence that the capacities are developing.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Restoration changing relationships.</strong> As the configuration shifts, some relationships deepen and some strain. "I am becoming more myself AND some people cannot be with who I actually am."
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Understanding and grieving simultaneously.</strong> "I understand why you became who you became. And I grieve what it cost me. Both are true. Neither erases the other."
             </p>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Systems theory (Bateson, von Bertalanffy) describes how systems develop self-maintaining patterns that resist change. Institutional isomorphism (DiMaggio & Powell) explains how organizations converge toward similar structures regardless of stated purpose. Michel Foucault's work on power shows how disciplinary systems reproduce the conditions they claim to address. Zimbardo's situational psychology demonstrates how institutional design shapes individual behavior.
-              </p>
-            </ExpandableSection>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — repair paradoxes as developmental markers */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 applies the multi-rationality framework at institutional and cultural scale, showing that systemic paradoxes follow the same mechanism as individual ones — competing needs generating contradictory behavior — but operating through F4–F7 mechanisms rather than individual nervous system states alone. This makes systemic contradictions analyzable rather than simply lamentable.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Prochaska & DiClemente (1983) — the knowing-being gap as a predictable phase. Boss (2006) — ambiguous loss: grief for what was never available. Bowlby (1980) — the mourning process in attachment reorganisation.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Each repair paradox traced through the specific mechanism that produces it — feeling worse (the channel carrying previously unfelt activation), knowing-not-being (two systems updating at different speeds), grieving absence (the capacity to perceive the absence requires the channel that was absent). The reframing from difficulty to developmental marker. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C9 — INTEGRATION MEANS HOLDING, NOT RESOLVING
-             ════════════════════════════════════════════════ */}
-
-          <section id="integration-means-holding">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Integration Means Holding, Not Resolving</h2>
-
-            <p style={proseStyle}>
-              F11's deepest contribution is the reframe of what "integration" means across the entire system.
-            </p>
-
-            <p style={proseStyle}>
-              Integration does not mean resolving every contradiction, arriving at a single coherent narrative that accounts for everything, finding the "right" answer to competing needs, or eliminating the tension between authenticity and belonging, connection and protection, understanding and accountability.
-            </p>
+          {/* Concept 8-9: Integration + Smooth vs Messy */}
+          <section
+            id="integration"
+            aria-labelledby="heading-integration"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-integration" style={sectionHeadingStyle(accent)}>
+              Integration as Holding, Not Resolving
+            </h2>
 
             <p style={proseStyle}>
-              Integration means: developing enough holding capacity that both truths can remain present. The compass being flexible enough to move between the needs without getting stuck in one. The three awareness capacities being online enough to receive the full complexity. Grief capacity sufficient to mourn what cannot be reconciled.
+              <Link href="/framework/f3-false-coherence" style={linkStyle}>F3</Link> described false coherence — the CLS constructing a single narrative that eliminates complexity. F11 maps the other end: somatic-cognitive alignment — the CLS receiving the full data from the ESS and constructing a narrative that holds the complexity rather than flattening it.
             </p>
-
-            <h3 style={conceptHeadingStyle}>The Paradox of Coherence</h3>
-
             <p style={proseStyle}>
-              F3 describes false coherence — a single narrative that eliminates complexity for regulatory comfort. F11 describes <strong>true coherence</strong> — the capacity to hold complexity without needing it resolved.
+              False coherence is not a smoother story. It is a narrower one. The narrative is clean and confident because the contradictory information is not arriving. Remove the contradictions, and coherence is easy. Somatic-cognitive alignment is a more honest story. It is messier because more information is present. Include the contradictions, and coherence requires holding.
             </p>
-
             <p style={proseStyle}>
-              True coherence is not a smoother story. It is a more honest one. It includes the contradictions. It names them. It holds them. And it does not pretend they resolve.
+              Integration does not mean resolving every contradiction, arriving at a single coherent narrative, or eliminating the tension. Integration means developing enough holding capacity that both truths can remain present, the nervous system being flexible enough to move between the needs, the three capacities being online enough to receive the full complexity, and grief capacity sufficient to mourn what cannot be reconciled.
+            </p>
+            <p style={proseStyle}>
+              The diagnostic reversal: the smooth narrative should prompt examination, not admiration. Is the story smooth because both truths are genuinely held — or because one truth has been eliminated? Does the narrative include grief, anger, and contradiction — or has it been cleaned of them? The messy narrative may be someone in Phase 3 of <Link href="/framework/f8-repairing-awareness#five-phases" style={linkStyle}>F8's repair process</Link> — the interoceptive channel carrying signal, the CLS receiving data it has never had, the narrative not yet able to organise it. The mess is the channel opening.
+            </p>
+            <p style={proseStyle}>
+              The diagnostic question is not "is the narrative coherent?" but "what is the narrative coherent from?" Coherence from the CLS alone is false coherence. Coherence from the full data is somatic-cognitive alignment. The first is cleaner. The second is truer.
             </p>
 
-            <KeyStatement>
-              True coherence is not the absence of contradiction — it is the capacity to hold contradiction without collapsing.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — false coherence vs somatic-cognitive alignment */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Hegel's dialectics proposed thesis-antithesis-synthesis as the resolution of contradictions. Jungian individuation describes the integration of opposites as a developmental achievement. Dialectical behavior therapy (Linehan) teaches that two opposing truths can both be valid. Attachment research finds that the most secure narratives are not the simplest — they are the ones that hold complexity.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Jung (1960) — individuation: the integration of opposites as the central developmental task. Linehan (1993) — dialectical behaviour therapy: holding opposing truths as simultaneously valid. Main & Hesse (1990) — coherence of mind in the Adult Attachment Interview. Dismissing narratives score high on surface coherence and low on integration of affect and memory.
+                </p>
+              </ExpandableSection>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F11 reframes the Hegelian synthesis: true integration is not resolution into a third position that eliminates the contradiction. It is the capacity to hold both positions simultaneously. This is grounded in the three awareness capacities — holding paradox is what they produce when they are online — making integration a developmental capacity rather than a philosophical achievement.
-              </p>
-            </ExpandableSection>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Integration reframed through the two coherence forms: false coherence (complexity eliminated, story clean because data is absent) and somatic-cognitive alignment (complexity held, story messy because data is present). The diagnostic reversal grounded in the two-coherence-form architecture. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
               {
                 term: "Multi-rationality",
-                definition: "Five competing needs generate paradoxes. The behaviour is not irrational — it serves multiple valid goals simultaneously.",
+                definition: "Five competing regulatory needs (connection, protection, authenticity, belonging, coherence) generate paradoxes. The behaviour is not irrational — it serves multiple valid goals simultaneously.",
               },
               {
-                term: "Each framework generates characteristic paradoxes",
-                definition: "F1–F10 each produces specific contradictions from its specific mechanism.",
+                term: "Per-framework paradoxes",
+                definition: "Each F1–F10 mechanism generates its own characteristic contradiction — predictable from the mechanism, not random.",
               },
               {
-                term: "The paradox cascade",
-                definition: "Six levels: initial contradiction → False Coherence → identity → social reinforcement → generational → invisible normal.",
+                term: "The six-level cascade",
+                definition: "Initial contradiction → false coherence → identity → social reinforcement → generational → invisible normal. Intervention must meet the paradox at the level where it operates.",
               },
               {
-                term: "Holding capacity is state-dependent",
-                definition: "Safety & Openness: holds both. Threat & Defence: simplifies. Strategy & Management: manages through narrative. Power & Dominance: one truth imposed.",
+                term: "State determines holding",
+                definition: "Safety holds both truths. Threat simplifies. Control manages through narrative. Domination erases one. Paradox tolerance is a physiological resource, not a cognitive skill.",
               },
               {
-                term: "What holding capacity is",
-                definition: "Five components mapped to awareness capacities. Not a separate skill — what the capacities produce when online.",
+                term: "Five components of holding capacity",
+                definition: "Both/and thinking (SEA), somatic tolerance (ER), temporal flexibility (RE), part recognition (all three), grief capacity (ER + SEA). What the capacities produce when online.",
               },
               {
-                term: "Repair generates its own paradoxes",
-                definition: "Feeling worse while getting better. Knowing without yet being able. Grieving absence. Relationships changing. Signs of depth, not failure.",
+                term: "Repair paradoxes as developmental markers",
+                definition: "Feeling worse/getting better, knowing/not-yet-being, grieving absence, relationships changing. Signs of depth, not failure.",
               },
               {
-                term: "Integration means holding, not resolving",
-                definition: "False Coherence: complexity eliminated. Somatic-cognitive alignment: complexity held. True coherence is the capacity to contain contradiction without collapsing.",
-              },
-              {
-                term: "The smooth story and the messy one",
-                definition: "Smooth may be coherence without the body. Messy may be the channel opening. The question: what is the narrative coherent from?",
+                term: "Integration as holding",
+                definition: "False coherence: complexity eliminated (clean story, absent data). Somatic-cognitive alignment: complexity held (messy story, full data). The question: what is the narrative coherent from?",
               },
             ]}
           />
 
-          {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.blue}
-            established="F11 established that paradoxical behavior is multi-rational — serving multiple valid needs simultaneously — and that holding contradiction without forcing resolution is a capacity that develops when safety makes it possible."
-            question="A person can see their configuration, name their paradoxes, and still do the thing. Understanding alone does not change the architecture. F12 explains why — and what does."
+            color={accent}
+            established="F11 established why human contradictions are predictable, how paradox becomes invisible, what holding capacity requires, and why integration means holding complexity rather than resolving it."
+            question="A person can hold all of this — can see their configuration, name their paradoxes, understand the mechanism, develop holding capacity. And still do the thing under stress. Still enter the chronic state. Still override. F12 explains why: because there are two information systems, and the one that produces understanding is not the one that organises behaviour."
             nextFramework="F12"
-            nextTitle="The Two Information Systems"
+            nextTitle="Two Information Systems"
             nextHref="/framework/f12-two-information-systems"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.blue}
+            color={accent}
             connections={[
-              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 describes false coherence resolving contradictions by eliminating one side. F11 describes what becomes possible when the system can hold both sides." },
-              { id: "F12", href: "/framework/f12-two-information-systems", description: "F11 shows the contradictions. F12 explains the architecture underneath — why insight alone doesn't change the system." },
-              { id: "M4", href: "/model/m4-awareness-capacities", description: "Holding paradox requires SEA online — perceiving contradictory internal states simultaneously without forcing resolution." },
+              {
+                id: "M4: Awareness Capacities",
+                href: "/model/m4-awareness-capacities",
+                description: "M4 established the three coherence forms. F11 shows what somatic-cognitive alignment actually contains: not a smoother story but a story that holds contradictions. Holding capacity is what the multiplicative system produces.",
+              },
+              {
+                id: "F3: Adult Cognition & False Coherence",
+                href: "/framework/f3-false-coherence",
+                description: "F3 mapped false coherence — the CLS flattening complexity. F11 maps the opposite: what the CLS produces when it receives the full data and holds the complexity rather than eliminating it.",
+              },
+              {
+                id: "F8: Awareness Rebuilds Through Safety",
+                href: "/framework/f8-repairing-awareness",
+                description: "F8 builds the infrastructure. F11 describes what that infrastructure enables. The repair paradoxes are the predictable products of the repair process F8 describes.",
+              },
+              {
+                id: "F10: What the Adult Processes",
+                href: "/framework/f10-generational-bridges",
+                description: "F10's characteristic paradox — understanding and grieving simultaneously — is the specific content F11 maps. The capacity to hold it requires the holding architecture F11 describes.",
+              },
+              {
+                id: "F12: Two Information Systems",
+                href: "/framework/f12-two-information-systems",
+                description: "F11 mapped the complexity of being human. F12 explains the architecture that makes it inevitable — two systems, two substrates, two speeds.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
-              { label: "Continue to F12 — the architecture underneath", href: "/framework/f12-two-information-systems", linkText: "F12: The Two Information Systems →" },
-              { label: "See the narrative structure paradox loosens", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F12 — the architecture underneath", href: "/framework/f12-two-information-systems", linkText: "F12: Two Information Systems \u2192" },
+              { label: "See the awareness architecture that produces holding capacity", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
+              { label: "See how the repair arc builds the infrastructure", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
+              { label: "See false coherence — what F11 maps the opposite of", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ── JSON-LD ── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            headline: "The Emotional Logic Behind Paradoxes \u2014 Why Contradictions Are Logical When the Full Picture Becomes Visible",
-            description: metadata.description,
+            "@id": "https://teg-blue.org/framework/f11-emotional-paradoxes#article",
+            headline: "Paradox Holds What Logic Cannot: Why Human Contradictions Are Predictable",
+            description:
+              "Why contradictions are multi-rational, how paradox becomes invisible, what holding capacity requires, and why integration means holding complexity rather than resolving it. Framework F11 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -906,16 +651,44 @@ export default function F11EmotionalParadoxesPage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            url: "https://teg-blue.org/framework/f11-emotional-paradoxes",
-            datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            datePublished: "2026-03-08",
+            dateModified: "2026-04-06",
+            inLanguage: "en",
+            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
               "@type": "CreativeWork",
-              name: "TEG-Blue 12-Framework Architecture",
+              name: "TEG-Blue 12 Framework System",
               url: "https://teg-blue.org/frameworks-map",
             },
-            keywords: metadata.keywords,
-            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://teg-blue.org/framework/f11-emotional-paradoxes",
+            },
+            about: [
+              { "@type": "Thing", name: "Paradox" },
+              { "@type": "Thing", name: "Multi-Rationality" },
+              { "@type": "Thing", name: "Holding Capacity" },
+              { "@type": "Thing", name: "Integration" },
+              { "@type": "Thing", name: "Dialectical Thinking" },
+            ],
+            citation: [
+              { "@type": "ScholarlyArticle", name: "A Theory of Cognitive Dissonance (Festinger, 1957)" },
+              { "@type": "ScholarlyArticle", name: "The Archetypes and the Collective Unconscious (Jung, 1960)" },
+              { "@type": "ScholarlyArticle", name: "Steps to an Ecology of Mind (Bateson, 1972)" },
+              { "@type": "ScholarlyArticle", name: "Cognitive-Behavioral Treatment of Borderline Personality Disorder (Linehan, 1993)" },
+              { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
+              { "@type": "ScholarlyArticle", name: "Adult Attachment Interview (Main & Hesse, 1990)" },
+            ],
+            keywords: [
+              "paradox",
+              "multi-rationality",
+              "holding capacity",
+              "integration",
+              "somatic-cognitive alignment",
+              "false coherence",
+              "dialectical thinking",
+              "ambivalence",
+            ],
           }),
         }}
       />
@@ -924,9 +697,9 @@ export default function F11EmotionalParadoxesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
-              { name: "Home", url: "https://teg-blue.org" },
-              { name: "12 Frameworks", url: "https://teg-blue.org/frameworks-map" },
-              { name: "F11 \u2014 The Emotional Logic Behind Paradoxes", url: "https://teg-blue.org/framework/f11-emotional-paradoxes" },
+              { name: "Home", url: "/" },
+              { name: "12 Frameworks", url: "/frameworks-map" },
+              { name: "F11: Paradox Holds What Logic Cannot", url: "/framework/f11-emotional-paradoxes" },
             ])
           ),
         }}
@@ -935,27 +708,98 @@ export default function F11EmotionalParadoxesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            generateFAQJsonLd(
-              faqItems.map((f) => ({ question: f.q, answer: f.a }))
-            )
+            generateFAQJsonLd([
+              {
+                question: "Why are human contradictions predictable?",
+                answer:
+                  "Five competing regulatory needs — connection, protection, authenticity, belonging, coherence — generate paradoxes that are rational when all needs are visible. A person who wants connection but pushes it away is not irrational. Two regulatory needs are driving the nervous system simultaneously. The behaviour oscillates because both needs are real.",
+              },
+              {
+                question: "What is holding capacity?",
+                answer:
+                  "What the three awareness capacities produce when they are online — not a separate skill. Five components: both/and thinking (SEA), somatic tolerance (ER), temporal flexibility (RE), part recognition (all three), and grief capacity (ER + SEA). Holding capacity develops through the same process F8 describes. Each paradox held without collapse builds the capacity to hold the next.",
+              },
+              {
+                question: "Why does a smooth narrative warrant examination?",
+                answer:
+                  "The smooth narrative may be coherence without the body — the CLS constructing clarity from incomplete data. The messy narrative may be someone whose interoceptive channel is opening for the first time. The diagnostic question is not 'is the narrative coherent?' but 'what is the narrative coherent from?' Coherence from the CLS alone is false coherence. Coherence from the full data is somatic-cognitive alignment.",
+              },
+              {
+                question: "What is the difference between false coherence and somatic-cognitive alignment?",
+                answer:
+                  "False coherence: the narrative is clean and confident because the contradictory information is not arriving — complexity eliminated. Somatic-cognitive alignment: the narrative is messier because more information is present — complexity held. The first is cleaner. The second is truer. Integration is not the absence of contradiction but the capacity to contain it.",
+              },
+            ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Emotional Paradoxes (F11) — TEG-Blue Research",
+              name: "Paradox Holds What Logic Cannot (F11) — TEG-Blue Research",
               url: "https://teg-blue.org/framework/f11-emotional-paradoxes",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),
         }}
       />
-    </>
+    </div>
   );
 }
 
-const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };
+// ─── STYLE CONSTANTS ──────────────────────────────────────
+
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
+};
+
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  background: BG.card,
+  borderRadius: 8,
+  overflow: "hidden",
+  border: `1px solid ${BORDER.default}`,
+  fontSize: 13,
+};
+
+const thStyle = {
+  padding: "10px 14px",
+  textAlign: "left",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  fontFamily: FONT.mono,
+  background: BG.surface,
+  borderBottom: `1px solid ${BORDER.default}`,
+};
+
+// ─── HELPER COMPONENTS ────────────────────────────────────
+
+function TableRow({ cells }) {
+  return (
+    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
+      {cells.map((cell, i) => (
+        <td
+          key={i}
+          style={{
+            padding: "10px 14px",
+            fontSize: 13,
+            color: i === 0 ? TEXT.primary : TEXT.secondary,
+            fontWeight: i === 0 ? 600 : 400,
+            lineHeight: 1.6,
+            verticalAlign: "top",
+          }}
+        >
+          {cell}
+        </td>
+      ))}
+    </tr>
+  );
+}

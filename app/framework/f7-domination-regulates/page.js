@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,47 +24,49 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
-  { label: "Core Propositions", href: "#core-propositions", description: "Domination is built through reinforcement, not born. Causality and accountability are separable." },
-  { label: "Overview", href: "#overview", description: "F6 explains why we see distortedly. F7 explains what happens when the system starts making others see its way." },
-  { label: "Domination Built Through Reinforcement", href: "#core-claim", description: "When control consistently produces relief, the nervous system adopts control as its preferred solution." },
-  { label: "The Crossroads", href: "#the-crossroads", description: "The critical transition: 'I am trying to feel safe' → 'I will make you behave so I can feel safe.'" },
-  { label: "Early Escalation Markers", href: "#escalation-markers", description: "Ten observable signals indicating the compass is moving through the Crossroads." },
-  { label: "Five-Stage Escalation", href: "#five-stage-pathway", description: "Fear Activation → Strategy Formation → Entitlement Loop → Empathy Collapse → Power Preservation." },
-  { label: "Empathy Gating", href: "#empathy-gating", description: "What people call 'empathy' is three processes that diverge as escalation progresses." },
-  { label: "Addiction Logic", href: "#addiction-logic", description: "External regulation through subjugation builds tolerance. There is no natural stopping point." },
-  { label: "The Regulation Thread", href: "#regulation-thread", description: "One mechanism, seven scales, escalating costs. Biological return → developmental failure → domination." },
-  { label: "What This Framework Establishes", href: "#establishes", description: "The escalation pathway, the Crossroads, the marker system, the empathy gating model." },
-  { label: "Research Foundations", href: "#research-foundations", description: "Behavioural reinforcement, psychoanalytic theory, organisational psychology, neuroscience, abuse research." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F7 makes about how defence becomes domination." },
+  { label: "How Reinforcement Builds the Pathway", href: "#reinforcement", description: "What produces relief gets repeated. What gets repeated becomes default. The pathway follows reinforcement, not personality." },
+  { label: "When Defence Becomes Strategy", href: "#transition", description: "The critical shift — repair decreasing, control increasing, tactics replacing vulnerability." },
+  { label: "Five Stages from Fear to Power Preservation", href: "#five-stages", description: "Each stage identifiable, each interruptible — with decreasing accessibility as escalation progresses." },
+  { label: "The Power-Interoception Inverse", href: "#power-interoception", description: "As external power increases, interoceptive access decreases — power replaces the need for it." },
+  { label: "How Awareness Capacities Diverge", href: "#capacity-divergence", description: "RE redirects, ER collapses, SEA was never built — and why the brake is structurally absent." },
+  { label: "Escalation Without a Stopping Point", href: "#escalation-logic", description: "Addiction logic: subjugation builds tolerance. No amount of domination completes biological restoration." },
+  { label: "Institutions That Reproduce the Configuration", href: "#institutional-reproduction", description: "How institutions select for, reward, and reproduce the configuration that cannot feel impact." },
+  { label: "The Complete Arc", href: "#complete-arc", description: "Seven restoration substitutes at escalating scale and escalating cost." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
+  { label: "Bridge to F8", href: "#bridge", description: "The maximum cost — and the beginning of the return." },
+  { label: "Connections Map", href: "#connections", description: "How F7 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Domination Regulates — How Defense Becomes Strategy Becomes Domination (F7) | TEG-Blue Research",
+  title: "Domination Regulates (F7) | TEG-Blue Research",
   description:
-    "How defense becomes strategy, strategy becomes domination, and domination becomes the nervous system's primary regulation source — a five-stage escalation pathway with identifiable markers and intervention windows at each stage. Framework F7 of 12.",
+    "How defence becomes strategy becomes domination — reinforcement-driven escalation, the power-interoception inverse, three-capacity divergence, and why the mechanism that would stop the escalation is absent. Framework F7 of the TEG-Blue 12-framework system.",
   keywords: [
     "domination regulates",
-    "escalation pathway",
-    "the crossroads",
-    "empathy gating",
-    "addiction logic",
-    "five-stage pathway",
-    "intervention windows",
-    "crossroads signals",
-    "reinforcement not character",
-    "regulation thread",
-    "nervous system regulation",
-    "emotional technology",
+    "nervous system escalation",
+    "power and interoception",
+    "empathy collapse",
+    "coercive control",
+    "institutional domination",
+    "restoration substitute",
+    "narcissistic escalation",
+    "reinforcement pathway",
+    "vmPFC suppression",
+    "regulatory escalation",
+    "collective arc",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f7-domination-regulates",
   },
   openGraph: {
-    title: "Domination Regulates — How Defense Becomes Strategy Becomes Domination — F7 Framework | TEG-Blue",
+    title: "Domination Regulates — F7 Framework | TEG-Blue",
     description:
-      "How defense becomes strategy, strategy becomes domination, and domination becomes the nervous system's primary regulation source. The final framework in the collective arc.",
+      "How defence becomes strategy becomes domination — the final framework in the collective arc. Framework F7 of 12.",
     url: "https://teg-blue.org/framework/f7-domination-regulates",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -73,10 +75,10 @@ export const metadata = {
     card: "summary_large_image",
     title: "Domination Regulates — TEG-Blue F7",
     description:
-      "How defense becomes strategy, strategy becomes domination. A five-stage escalation pathway with intervention windows at each stage.",
+      "The final substitute at maximum cost — how reinforcement builds the escalation pathway, and why the brake is structurally absent.",
   },
   other: {
-    'citation_title': 'Domination Regulates: How Defense Becomes Strategy Becomes Domination',
+    'citation_title': 'Domination Regulates',
     'citation_author': 'Anna Paretas-Artacho',
     'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
@@ -86,6 +88,8 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F7DominationRegulatesPage() {
+  const accent = SPECTRUM.cobalt;
+
   return (
     <div
       style={{
@@ -99,636 +103,438 @@ export default function F7DominationRegulatesPage() {
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F7"
-              title="Domination Regulates"
-              subtitle="How Defense Becomes Strategy Becomes Domination"
-              description="How bias (F6) hardens into enforcement — through escalation driven by reinforcement, not character — producing a five-stage pathway from fear activation through power preservation, with identifiable markers and intervention windows at each stage. The final framework in the collective arc (F4–F7), completing the regulation thread from F1 through F7."
-              group="Collective"
-              groupLabel="Collective Arc · F4–F7"
-              threadLine="Domination regulates · Cost: Everything"
-              informsModels={[
-                { label: "M2", href: "/model/m2-nervous-system-states" },
-              ]}
-              adjacent={{
-                prev: { label: "F6 Bias Regulates", href: "/framework/f6-bias-regulates" },
-                next: { label: "F8 Repairing Awareness", href: "/framework/f8-repairing-awareness" },
-              }}
-            />
+            badge="FRAMEWORK F7"
+            title="Domination Regulates"
+            subtitle="How Defence Becomes Strategy Becomes Domination"
+            description="When bias becomes rigid and correction is experienced as threat, the system does not simply persist in filtered perception. It seeks stronger stabilisation. F7 maps the escalation. Domination is built through reinforcement: what produces physiological relief gets repeated, what gets repeated gets stronger, what gets stronger becomes default. Defence hardens into strategy. Strategy hardens into entitlement. Entitlement hardens into domination. F7 completes the collective arc — the final substitute at maximum cost."
+            group="Collective"
+            groupLabel="Collective Arc · F4–F7"
+            threadLine="Domination regulates — direct control of others as restoration substitute. Scale: power systems. Cost: everything"
+            informsModels={[
+              { label: "M3", href: "/model/m3-regulation-capacities" },
+              { label: "M4", href: "/model/m4-awareness-capacities" },
+            ]}
+            adjacent={{
+              prev: { label: "F6 Bias Regulates", href: "/framework/f6-bias-regulates" },
+              next: { label: "F8 Awareness Rebuilds Through Safety", href: "/framework/f8-repairing-awareness" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
-              concept: "Bias as Regulation",
-              framework: "F6",
-              description: "Perception operating as nervous system protection — maintaining beliefs that stabilize regardless of accuracy.",
-              href: "/framework/f6-bias-regulates#bias-as-regulation",
+              concept: "External Regulation",
+              framework: "F3",
+              description: "The nervous system recruiting others to perform the regulatory function — fusion, distance, management, or subjugation depending on the chronic state.",
+              href: "/framework/f3-false-coherence#restoration-substitutes",
             },
             {
-              concept: "The Regulation Thread",
-              framework: "F1",
-              description: "When biological restoration is unavailable, the nervous system substitutes at escalating scales. Domination is the maximum cost.",
-              href: "/framework/f1-emotional-gradient#regulation-thread",
+              concept: "Three Awareness Capacities",
+              framework: "M4",
+              description: "RE (reads others — CLS capacity), ER (resonates with others — ESS capacity), SEA (perceives own states — the bridge). Different substrates, different degradation patterns under chronic activation.",
+              href: "/model/m4-awareness-capacities",
+            },
+            {
+              concept: "Relational Substitute Escalation",
+              framework: "M3",
+              description: "The mechanism by which the nervous system requires progressively stronger neurochemical events to produce the same regulatory shift — tolerance building without an endpoint.",
+              href: "/model/m3-regulation-capacities",
             },
           ]} />
 
-          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
           <CommonUnderstanding
             terms={[
               {
                 title: "Domination",
-                commonUnderstanding: "Power hunger, abuse of authority — the exercise of control over others through coercion, intimidation, or force.",
-                definition: "Emotional regulation — subjugation of others to settle internal activation that has no other return pathway. There is no amount of domination that will make them feel safe — because the safety they need is internal. It is the structural account of why chronic domination escalates without limit.",
+                commonUnderstanding: "A personality type — some people are just controlling, abusive, or power-hungry by nature.",
+                definition: "A reinforcement-driven pathway. When control reliably reduces activation — when managing others' compliance settles the cortisol — the nervous system adopts control as its primary regulation strategy. If the strategy is socially rewarded and accountability is absent, it escalates. The pathway follows reinforcement, not personality.",
               },
               {
-                title: "Emotional Abuse",
-                commonUnderstanding: "A pattern of manipulation, control, and psychological harm — insults, threats, gaslighting, isolation — that damages self-esteem and emotional wellbeing.",
-                definition: "A structural dynamic that becomes possible when RE (Interpersonal Affect Perception) exists without ER (Affective Resonance), and when the capacity to feel deeply exists without SEA (Interoceptive Self-Awareness) to trust one's own experience as real. It does not require malice to cause harm. But when malice is present, it marks a shift in mode: the other's pain has become the resource. The harm is no longer a byproduct of dysregulation. It is the regulation.",
+                title: "Lack of empathy",
+                commonUnderstanding: "A single deficit — the person can't feel for others, full stop.",
+                definition: "Three distinct processes diverging under escalation. RE (reading others) does not collapse — it redirects from understanding to leverage and sharpens as stakes increase. ER (resonating with others) collapses — the body no longer feels what others feel. SEA (perceiving one's own states) was never built — the person has no internal signal that anything is wrong.",
               },
               {
-                title: "Control (Relational)",
-                commonUnderstanding: "Trust issues, micromanagement — someone who can't let go or let others be.",
-                definition: "Emotional regulation — the nervous system using predictability as its return pathway. Unpredictability threatens the only regulation strategy the system has. The controlling behaviour is not about the other person. It is about maintaining the conditions the nervous system requires to feel safe.",
+                title: "Strong leadership",
+                commonUnderstanding: "Decisive action, tough decisions, not letting emotions get in the way — what organisations need at the top.",
+                definition: "A description that can apply to genuine state flexibility — or to the configuration that produces the most control with the least felt impact: sharp RE, absent ER, absent SEA. The same words describe two fundamentally different nervous system architectures.",
               },
             ]}
           />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
-          <section
-            id="core-propositions"
-            aria-labelledby="heading-core-propositions"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-core-propositions"
-              style={sectionHeadingStyle(SPECTRUM.cobalt)}
-            >
-              Core Propositions
-            </h2>
-            <PropositionBox label="FOUNDATIONAL CLAIM">
-              <ul style={{ paddingLeft: 20, margin: 0 }}>
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
                 <li style={propositionItemStyle}>
-                  Domination is built through reinforcement, not born — the same learning mechanism that shapes all behavior, interruptible at specific stages with decreasing accessibility as escalation progresses
+                  Domination is built through reinforcement — what produces physiological relief gets repeated, what gets repeated becomes default — the pathway follows reinforcement, not personality
                 </li>
                 <li style={propositionItemStyle}>
-                  The Crossroads is a named critical turning point where defense becomes strategy — the internal logic shifts from &ldquo;I am trying to feel safe&rdquo; to &ldquo;I will make you behave so I can feel safe&rdquo;
+                  The critical transition is from defence to strategy — from reacting to the environment to managing the environment, recognisable through repair decreasing and control increasing
                 </li>
                 <li style={propositionItemStyle}>
-                  Ten early escalation markers signal the compass moving through the Crossroads — warnings, not labels — the pattern of multiple markers with decreasing repair is the signal
+                  Five stages from fear to power preservation — each identifiable, each interruptible, with decreasing accessibility as escalation progresses
                 </li>
                 <li style={propositionItemStyle}>
-                  A five-stage escalation pathway from Fear Activation through Power Preservation, with internal logic, observable signs, compass position, and stage-appropriate interruption at each stage
+                  As external power increases, interoceptive access decreases — power replaces the need for it, and access to power is itself a restoration substitute
                 </li>
                 <li style={propositionItemStyle}>
-                  Empathy gating follows a three-capacity model: Interpersonal Affect Perception (RE) redirects toward management, Affective Resonance (ER) collapses, Interoceptive Self-Awareness (SEA) was never there — the configuration that produces the most harm has the least visibility
+                  RE redirects, ER collapses, SEA was never built — the configuration that produces the most harm with the least visibility, and the configuration that reads as competence to the systems that select for it
                 </li>
                 <li style={propositionItemStyle}>
-                  External regulation through subjugation builds tolerance — escalation required, no natural stopping point — &ldquo;there is no amount of domination that will make them feel safe because the safety they need is internal&rdquo;
+                  The escalation has no natural brake — the harm generates signals (shame, guilt, remorse) that would produce course correction, but the configuration that produces domination cannot process them
                 </li>
                 <li style={propositionItemStyle}>
-                  Causality and accountability are separable — &ldquo;evil&rdquo; closes inquiry where mechanism enables recognition and interruption
+                  Institutions select for, reward, and reproduce the configuration that cannot feel impact — suppressing the interoceptive substrate across the population they govern
                 </li>
                 <li style={propositionItemStyle}>
-                  F7 completes the regulation thread: each framework from F1 through F7 describes a regulation substitute at a different scale, with escalating costs and a consistent intervention principle
+                  Causality and accountability coexist — the mechanism is traceable and the harm is real, both are true simultaneously
                 </li>
               </ul>
-            </PropositionBox>
-          </section>
+            </ExpandableSection>
+          </div>
 
-          {/* ─── OVERVIEW ─────────────────────────────────── */}
+          {/* ─── PART 1: WHAT DOMINATION IS ─────────────── */}
+          <PartDivider label="PART 1" title="What Domination Is" color={accent} />
+
+          {/* Concept 0: Reinforcement */}
           <section
-            id="overview"
-            aria-labelledby="heading-overview"
+            id="reinforcement"
+            aria-labelledby="heading-reinforcement"
             style={{ marginBottom: 48 }}
           >
-            <h2
-              id="heading-overview"
-              style={sectionHeadingStyle(SPECTRUM.cobalt)}
-            >
-              Overview — The Final Collective Framework
+            <h2 id="heading-reinforcement" style={sectionHeadingStyle(accent)}>
+              How Reinforcement Builds the Escalation Pathway
             </h2>
 
             <p style={proseStyle}>
-              F6 explains how perception becomes protection — how the nervous system maintains beliefs that stabilize, regardless of accuracy — and why correction fails when safety is insufficient. Bias regulates. It provides perceptual certainty that reduces threat.
+              Under sustained threat, the nervous system seeks to reduce vulnerability. When the return path (<Link href="/framework/f1-emotional-gradient#designed-process" style={linkStyle}>F1</Link>) was never learned and the system is already locked in threat-based states (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>), it looks for whatever stabiliser works. In some environments, the stabiliser that produces the fastest relief is control — managing others' behaviour to manage one's own activation.
             </p>
             <p style={proseStyle}>
-              But when bias becomes rigid and self-protective, and correction is experienced as threat, systems do not simply persist in distorted perception. They seek stronger stabilization. The system moves from <em>filtering</em> perception to <em>enforcing</em> it. F7 explains what happens next: how defense becomes strategy, strategy becomes domination, and domination becomes the nervous system&rsquo;s primary regulation source.
-            </p>
-
-            <KeyStatement>
-              The regulation thread: F1 defines Biological Restoration as the return mechanism. F2 shows what happens when the return is never learned. F3 shows what cognition does in its place. F4 shows how individual patterns scale to collective rule systems. F5 shows what those rules sort — worth. F6 shows how sorting becomes invisible through perception itself. F7 shows what happens when all of these are insufficient: the system escalates to direct domination of others. This is regulation at maximum cost.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              This is not a sudden transformation. It is built through reinforcement. When control reliably reduces fear, restores stability, or produces access and protection, the nervous system can adopt control as its default regulation strategy. If that strategy is socially rewarded and accountability is absent, it escalates — from self-protection through strategic management of others through entitlement through empathy collapse through full-spectrum domination. The pathway is recognizable. It follows reinforcement, not personality. And it is interruptible at specific points.
-            </p>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Ethical stance:</strong> F7 intentionally separates causality from accountability. Causality and accountability are separable. The mechanism is understandable. The framework makes escalation legible early to interrupt it.
-            </p>
-
-            <ExpandableSection title="How This Framework Emerged" type="framework">
-              <p style={expandedProseStyle}>
-                F7 emerged from recognizing that multiple frameworks all describe the same escalation mechanism: how self-protection hardens into strategy and escalates into domination. Psychoanalytic theory (Kohut, Kernberg) describes narcissistic pathology as escalation of self-protection. Trauma psychology (Van der Kolk, Herman) describes how threat shapes escalation pathways. Organizational psychology (Argyris &amp; Sch&ouml;n) shows how defensive routines escalate in systems. Behavioral reinforcement (Skinner) explains how reward patterns shape and escalate behavior. Neuroscience (Porges, Siegel) explains how threat physiology changes perception and empathy. Abuse research (Bancroft) documents empirical patterns of escalation in relationships. Addiction research describes tolerance, escalation, and the distinction between substance and underlying state. Systems theory explains how feedback loops drive escalation without deliberate design.
-              </p>
-              <p style={expandedProseStyle}>
-                The synthesis: organizing these into a model showing that domination escalation is a predictable pathway driven by specific reinforcement patterns, with identifiable markers and interruption windows — a nervous system trajectory that can be recognized and interrupted.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── CORE CLAIM ───────────────────────────────── */}
-          <section
-            id="core-claim"
-            aria-labelledby="heading-core-claim"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-core-claim" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Core Claim — Reinforcement, Not Character
-            </h2>
-
-            <p style={proseStyle}>
-              Domination does not appear suddenly. It is not a personality type. It is not born. It is built — through reinforcement.
+              When control consistently produces physiological settling — when cortisol drops after others comply, when a brief period of stability arrives after submission — the nervous system encodes the pattern. What works gets repeated. What gets repeated gets refined. What gets refined becomes default. The same learning mechanism that teaches any organism to repeat rewarded behaviour teaches this: control works.
             </p>
             <p style={proseStyle}>
-              The mechanism is specific: under sustained threat, the nervous system seeks to reduce vulnerability. When connection does not feel safe or reliable — when the return path (F1) was never learned and the compass is already stuck in threat-based modes (F2) — the system looks for another stabilizer. In some environments, the stabilizer that works fastest is control. When control consistently produces relief, compliance, or protection, the nervous system adopts control as its preferred solution — even when it harms others.
-            </p>
-            <p style={proseStyle}>
-              If that strategy continues to work — if it is socially rewarded, if it produces access and protection, if accountability is absent — it escalates. Defense hardens into strategy. Strategy hardens into entitlement. Entitlement hardens into domination. Each step follows the same reinforcement logic: what works gets repeated, what gets repeated gets stronger, what gets stronger becomes default.
+              If the strategy is socially rewarded — if the person's environment treats control as competence, leadership, or strength — and if accountability is absent — if the consequences of escalation never arrive — the reinforcement continues without interruption. Defence hardens into strategy. Strategy hardens into entitlement. Entitlement hardens into domination. The pathway is stages, not a switch. It follows reinforcement, not destiny. Each stage is interruptible — with decreasing accessibility as escalation progresses.
             </p>
 
-            <KeyStatement>
-              This is reinforcement. The same learning mechanism that teaches a child to avoid a hot stove teaches a person in chronic threat that control works. The difference is not the mechanism. The difference is what gets reinforced — and whether anything interrupts the reinforcement before it escalates.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — reinforcement pathway from defence through domination */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The connection to the regulation thread:</strong> domination is the final substitute. When Biological Restoration (F1) was never learned, and cognitive replacement (F3) is running, and rules (F4) and worth hierarchies (F5) and perceptual certainty (F6) are all insufficient to regulate — the system escalates to direct domination of others. The person does not experience connection as available. What they experience is: control works. Nothing else does.
-            </p>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Skinner (1953) — behaviour shaped by reinforcement: rewarded behaviour strengthens and repeats. Kohut (1977) — narcissistic regulation as escalation of self-protection. Porges (2011) — threat physiology promoting control-seeking through sympathetic activation and ventral vagal withdrawal. Bancroft (2002) — empirical patterns of escalation in controlling behaviour.
+                </p>
+              </ExpandableSection>
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Skinner (1953) — behavior shaped by reinforcement; rewarded behavior escalates. Psychoanalytic theory — defense mechanisms can escalate and rigidify. Trauma psychology — threat responses can become habitual. Polyvagal Theory (Porges, 2011) — defensive states promote control-seeking. Anxiety psychology — control reduces uncertainty. Attachment theory — when relational safety fails, alternatives are sought.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The explicit articulation of a defined escalation pathway — showing that domination is built through reinforcement across identifiable stages, not born as personality or character. While individual mechanisms are known (reinforcement, threat response, control-seeking), to our knowledge, no existing framework traces the complete pathway from defense through strategy through domination as a single reinforcement-driven trajectory with specific interruption windows at each stage.
-              </p>
-              <p style={expandedProseStyle}>
-                The connection to the regulation thread positions domination as the <em>final</em> regulation substitute — the most costly version of the same mechanism that began with false coherence (F3) and scaled through rules (F4), worth hierarchies (F5), and bias (F6). This framing removes the othering that makes domination seem like a different phenomenon from the regulatory mechanisms described in earlier frameworks. It is the same mechanism. The same nervous system. The same thread. Just further along the gradient and at maximum cost.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── THE CROSSROADS ───────────────────────────── */}
-          <section
-            id="the-crossroads"
-            aria-labelledby="heading-the-crossroads"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-the-crossroads" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Crossroads — Where Defense Becomes Strategy
-            </h2>
-
-            <p style={proseStyle}>
-              There is a critical turning point in the escalation pathway. F7 names it <strong style={{ color: TEXT.primary }}>the Crossroads</strong>: the moment when defense stops being a state and becomes a strategy.
-            </p>
-            <p style={proseStyle}>
-              Before the Crossroads, the person is in Protection mode (F1). They are trying to feel safe. Their responses — withdrawal, reactivity, vigilance, appeasement — are the body&rsquo;s emergency system doing what it was designed to do. These responses are state-based: the nervous system is activated, the person is reacting, and when the activation passes, the response can pass with it. This is where repair is still possible — because the person is still experiencing their responses as responses, not as strategies.
-            </p>
-
-            <p style={proseStyle}>
-              At the Crossroads, something shifts. The internal logic changes from:
-            </p>
-
-            <blockquote style={{ ...keyStatementBase, fontStyle: "normal", marginBottom: 8 }}>
-              &ldquo;I am trying to feel safe&rdquo;
-            </blockquote>
-            <p style={{ ...proseStyle, marginBottom: 4, textAlign: "center", fontSize: 13, color: TEXT.muted }}>to:</p>
-            <blockquote style={{ ...keyStatementBase, fontStyle: "normal", marginBottom: 16 }}>
-              &ldquo;I will make you behave so I can feel safe.&rdquo;
-            </blockquote>
-
-            <p style={proseStyle}>
-              This is the transition from Threat & Defence to Strategy & Management (F1). Defense stops being a response to threat and becomes a method for managing threat by managing others. Tactics begin replacing repair — because tactics work faster, produce more reliable results, and do not require the vulnerability that repair demands.
-            </p>
-            <p style={proseStyle}>
-              The Crossroads is not a single moment. It is a transition zone — a period where the person begins deploying control strategies more consistently and repair less consistently. It is recognizable because the balance shifts: control increases while repair decreases. The person may still apologize, still show warmth, still appear connected — but the apologies begin serving image rather than relationship. The warmth begins serving management rather than connection.
-            </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Psychoanalytic theory — defense becomes strategic. Behavioral psychology — state-based response becomes deliberate strategy. Clinical observation — the turning point is recognized in relationship and abuse literature. Bancroft (2002) — patterns of intentionality in controlling behavior. Trauma psychology — threat prioritizes tactics over repair.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The explicit naming of &ldquo;the Crossroads&rdquo; as a recognizable critical moment — and its positioning within the Inner Compass model as the transition from Protection (state-based, before awareness) to Control (strategy-based, after awareness). This connects to F1&rsquo;s architectural break: Connection and Protection operate before awareness — the nervous system responds before the person knows it's responding. Control and Domination operate after awareness — cognition has entered the picture.
-              </p>
-              <p style={expandedProseStyle}>
-                The naming serves early recognition. Before this terminology, the transition is often invisible — especially because the early stages of Strategy & Management can look like competence, leadership, and responsibility. Naming the Crossroads makes the transition visible and teachable: repair is decreasing, control is increasing, tactics are replacing vulnerability. These are recognizable shifts.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── EARLY ESCALATION MARKERS ────────────────── */}
-          <section
-            id="escalation-markers"
-            aria-labelledby="heading-escalation-markers"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-escalation-markers" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Early Escalation Markers — Crossroads Signals
-            </h2>
-
-            <p style={proseStyle}>
-              The transition through the Crossroads produces observable signals. F7 identifies ten markers — early warnings that defense is becoming control:
-            </p>
-
-            <ol style={orderedListStyle}>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Repair disappears while control increases.</strong> Apologies become less frequent or become performative. Conflict resolution is replaced by conflict management. The goal shifts from &ldquo;how do we fix this&rdquo; to &ldquo;how do I ensure this doesn&rsquo;t happen again.&rdquo;
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Your reality becomes framed as the problem.</strong> The other person&rsquo;s perception, feelings, or boundaries are reframed as overreaction, instability, or unreasonableness. &ldquo;You&rsquo;re being too sensitive.&rdquo; &ldquo;That&rsquo;s not what happened.&rdquo;
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Accountability is replaced by performance.</strong> When confronted, the response is not genuine reflection but a rehearsed display of contrition — the right words without the felt resonance behind them. Interpersonal Affect Perception (RE) sharp, Interoceptive Self-Awareness (SEA) offline.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Confusion is used to destabilize.</strong> Conversations become circular. Facts are disputed. The other person begins doubting their own memory and perception. This is emotional distortion (F3) operating relationally.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Empathy becomes selective.</strong> Affective Resonance (ER) becomes available for those who serve the regulation strategy, withdrawn from those who challenge it. Interpersonal Affect Perception stays sharp — because reading serves management. The person may appear deeply attuned. What has changed is not perception but resonance.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Boundaries trigger escalation.</strong> When the other person sets a boundary, the response is not respect but intensified pressure. The other person&rsquo;s self-protection becomes evidence of attack. This connects to F4&rsquo;s punishment rules: &ldquo;pain teaches lessons&rdquo; normalizes escalation in response to boundary-setting.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Relationships are managed rather than respected.</strong> Alliances are strategic. Information is controlled. People are positioned relative to the person&rsquo;s needs rather than their own. Social capital (F5) is deployed for insulation rather than connection.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Fear becomes a stabilizer.</strong> Others begin modifying their behavior to avoid the person&rsquo;s reactions. The person does not need to be explicitly threatening — the pattern of consequences has taught the environment to self-regulate around them. This is external regulation (F3) operating at scale.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Rules are used to avoid truth.</strong> Policies, procedures, norms, and &ldquo;fairness&rdquo; are invoked selectively — to control outcomes rather than to serve justice. This connects to F4&rsquo;s rule systems deployed as control tools.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Power-as-safety logic appears.</strong> Statements and behaviors begin reflecting the core F5 equation: power reduces vulnerability. &ldquo;I need to be in charge.&rdquo; &ldquo;If I&rsquo;m not on top of this, it falls apart.&rdquo; Position is treated as safety. Loss of position is treated as existential threat.
-              </li>
-            </ol>
-
-            <KeyStatement>
-              These are warnings, not labels. Any person under sustained threat may show some of these markers temporarily. The signal is the pattern: multiple markers, increasing frequency, decreasing repair. The pattern indicates that the compass is moving through the Crossroads — that defense is becoming strategy.
-            </KeyStatement>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Organizing individually known markers into a unified list positioned within the escalation framework — so each marker is understood not as an isolated behavior but as a signal of where the compass is moving. The connection to F3&rsquo;s emotional distortion (markers 2, 4), F3&rsquo;s external regulation (markers 1, 7, 8), F4&rsquo;s rule systems (markers 6, 9), and F5&rsquo;s worth logic (marker 10) shows that these markers are not new phenomena. They are the mechanisms described in earlier frameworks now serving escalation.
-              </p>
-              <p style={expandedProseStyle}>
-                The framing as &ldquo;warnings, not labels&rdquo; prevents the markers from becoming diagnostic categories that pathologize individuals. The question is not &ldquo;is this person a controller?&rdquo; The question is &ldquo;is the compass moving through the Crossroads, and what would interrupt the reinforcement?&rdquo;
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── FIVE-STAGE PATHWAY ─────────────────────────── */}
-          <section
-            id="five-stage-pathway"
-            aria-labelledby="heading-five-stage-pathway"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-five-stage-pathway" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Five-Stage Escalation Pathway
-            </h2>
-
-            <p style={proseStyle}>
-              The escalation from defense to domination follows five identifiable stages. Each stage has an internal logic, observable signs, a compass position, and a specific interruption approach. The stages are not sudden. They follow reinforcement. And the earlier the interruption, the more accessible the return.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Stage</th>
-                    <th style={thStyle}>Internal Logic</th>
-                    <th style={thStyle}>Observable Signs</th>
-                    <th style={thStyle}>Compass Position</th>
-                    <th style={thStyle}>Interruption</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <FiveColRow cells={[
-                    "1 — Fear Activation",
-                    "\"If I can't control it, I lose safety\"",
-                    "Threat scanning, catastrophic thinking, urgency, need for predictability",
-                    "Threat & Defence — beginning to shift",
-                    "Most accessible. Safety-based support, co-regulation, relational repair",
-                  ]} />
-                  <FiveColRow cells={[
-                    "2 — Strategy Formation",
-                    "\"Control creates stability\"",
-                    "Behavior management of others, proliferating rules, selective self-presentation. Crossroads markers appear",
-                    "Crossing the Crossroads — Threat & Defence into Strategy & Management",
-                    "Direct naming, loss of reinforcement, firm but relational accountability",
-                  ]} />
-                  <FiveColRow cells={[
-                    "3 — Entitlement Loop",
-                    "\"I'm safer when others obey\"",
-                    "Obedience expected, blame reversed, rules selectively enforced, narrative control intensified",
-                    "Locked in chronic Strategy & Management. Mimics Safety & Openness from outside",
-                    "Requires external consequences. Internal motivation low because the system is working — for the person running it",
-                  ]} />
-                  <FiveColRow cells={[
-                    "4 — Empathy Collapse",
-                    "\"Their pain is my threat\"",
-                    "Minimization of suffering, contempt, dehumanization language, sophisticated justifications for harm",
-                    "Moving from Strategy & Management toward Power & Dominance. Resonance circuits offline",
-                    "Requires external containment. Empathy appeals fail — the system needed to respond is the system that is offline",
-                  ]} />
-                  <FiveColRow cells={[
-                    "5 — Power Preservation",
-                    "\"I can't survive without control\"",
-                    "Identity fused with dominance, escalated coercion, isolation of targets, elimination of dissent",
-                    "Locked in chronic Power & Dominance. Safety & Openness feels like extinction",
-                    "Protection is primary. Rehabilitation is not a safety plan. The priority is protecting others",
-                  ]} />
-                </tbody>
-              </table>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The explicit articulation of domination as a reinforcement-driven pathway — built through the same learning mechanism that shapes all behaviour, traceable through the regulation thread as the final substitute. The same mechanism, the same nervous system, the same thread as false coherence and rule absorption and worth-seeking — further along the gradient, at maximum cost. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <KeyStatement>
-              What the pathway shows: escalation is stages, not a switch. It follows reinforcement, not personality. Each stage is interruptible — but the cost and difficulty of interruption increase as the pathway progresses. The question is always: what would interrupt the reinforcement at this stage?
-            </KeyStatement>
-
-            <h3 style={conceptHeadingStyle}>Stage-by-Stage Detail</h3>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 3 — The Entitlement Loop</strong> deserves particular attention because it is the stage most likely to be invisible. The person does not experience themselves as controlling. They experience themselves as responsible, competent, and holding things together. This is the mode that most reliably mimics Safety & Openness (F3) — from outside, the person may appear warm, capable, and generous. From inside the inner circle, reality is managed. Interruption typically requires structural consequences: loss of position, legal accountability, or the managed system collapsing in a way the person cannot reframe.
-            </p>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 4 — Empathy Collapse</strong> marks the point where empathy appeals become structurally futile. It is regulatory state reality. Affective Resonance is offline. Asking them to use it is asking them to use a capacity they do not currently have. Telling a person at Stage 4 to &ldquo;think about how the other person feels&rdquo; is asking them to use Affective Resonance — which is offline. They may be able to use Interpersonal Affect Perception to <em>describe</em> what the other person feels, sometimes with remarkable accuracy. But describing is not feeling. The intervention at this stage is containment and protection, not resonance restoration.
-            </p>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Stage 5 — Power Preservation:</strong> losing control does not feel like losing a strategy. It feels like ceasing to exist. The person&rsquo;s entire regulatory architecture depends on maintaining dominance. Vulnerability is not experienced as an option — it is experienced as annihilation.
-            </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Developmental psychology — stage-based progressions. Escalation research — documented stages. Fear/anxiety psychology (Stage 1). Learning theory (Stage 2). Entitlement/narcissism research, Kohut (1977), Kernberg (1975) (Stage 3). Neuroscience of empathy, Porges (2011), Siegel (Stage 4). Power dynamics research, Herman (1992) (Stage 5). Clinical intervention research — early intervention is more effective.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The explicit five-stage pathway with named internal logic, observable signs, compass position, and specific interruption approaches at each stage. While clinical and abuse literature recognizes progression, to our knowledge, no existing framework maps the complete trajectory from fear activation through strategy formation through entitlement through empathy collapse through power preservation — and connects each stage to the Inner Compass model&rsquo;s regulatory concepts with stage-appropriate intervention.
-              </p>
-              <p style={expandedProseStyle}>
-                The practical contribution: the pathway makes domination recognizable as a <em>process</em> rather than a <em>type</em>. This enables prevention (recognize Stages 1–2 and intervene), protection (recognize Stages 4–5 and prioritize containment), and appropriate intervention matching (different stages require fundamentally different approaches).
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ─── EMPATHY GATING ──────────────────────────── */}
+          {/* Concept 1: Defence Becomes Strategy */}
           <section
-            id="empathy-gating"
-            aria-labelledby="heading-empathy-gating"
+            id="transition"
+            aria-labelledby="heading-transition"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-empathy-gating" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Empathy Gating — What Happens to the Awareness Capacities
-            </h2>
-
-            <h2 id="heading-empathy-escalation-question" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What happens to empathy when the nervous system escalates toward domination?
+            <h2 id="heading-transition" style={sectionHeadingStyle(accent)}>
+              When Defence Becomes Strategy
             </h2>
 
             <p style={proseStyle}>
-              What people call &ldquo;empathy&rdquo; collapses three distinct processes that TEG-Blue has already separated (F2). Understanding what happens in escalation requires tracking each one independently — because they do not move together.
+              Before the transition, the person is in Threat & Defence (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). Cortisol is elevated, the amygdala is sensitised, the perceptual field has narrowed. The responses — withdrawal, reactivity, vigilance, appeasement — are state-based: the nervous system is activated, the person is reacting, and when the activation passes, the response can pass with it. Repair is still possible — because the person still experiences their responses as responses.
             </p>
-
             <p style={proseStyle}>
-              As the compass moves toward Power & Dominance, the three capacities do three different things:
+              At the transition, the internal logic shifts. The CLS is recruited into threat organisation — anticipation, planning, management. The person moves from reacting to the environment to managing the environment. From "I am trying to feel safe" to "I will make you behave so I can feel safe." This is the transition from Threat & Defence to Strategy & Management.
+            </p>
+            <p style={proseStyle}>
+              Tactics begin replacing repair. Apologies begin serving image rather than relationship. Warmth begins serving management rather than connection. Observable signals: repair disappears while control increases. Others' reality is reframed as the problem. Accountability is replaced by performance. Confusion is used to destabilise. Boundaries trigger escalation. Relationships are managed rather than respected. Fear becomes a stabiliser — others modify their behaviour to avoid the person's reactions.
             </p>
 
-            <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE) does not collapse. It redirects.</strong> RE stays sharp or sharpens as escalation progresses. In chronic Strategy & Management, RE serves management: the person reads everyone with precision, tracking who is compliant, who is a threat, who can be useful. In chronic Power & Dominance, RE serves exploitation: others&rsquo; emotional states become data for leverage.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Affective Resonance (ER) is what collapses.</strong> ER — the capacity to be affected by what others feel — progressively shuts down as the compass locks in threat-based modes. At Stage 3, ER becomes selective — available for those who serve the regulation strategy, performed for public consumption. At Stage 4, ER has been offline long enough that the person cannot feel the impact of their behavior on others. The natural brake on harm is structurally unavailable.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Interoceptive Self-Awareness (SEA) was never there.</strong> SEA is the <em>precondition</em> for the entire escalation pathway, not a consequence of it. The person at Stage 4–5 does not have SEA that has been gated out. They have SEA that was never fully built (F2). Without SEA, the internal activation that drives domination is never processed. The person cannot feel what is driving them — they can only act on it.
-              </li>
-            </ul>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — transition from state-based defence to strategic control */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <KeyStatement>
-              The dangerous configuration: sharp RE + collapsed ER + absent SEA. The person reads you perfectly. Cannot feel your pain. Has no internal signal telling them any of this is happening. This is the capacity configuration that produces the most harm with the least visibility — and the mode that most reliably mimics Safety & Openness.
-            </KeyStatement>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bancroft (2002) — patterns of intentionality in controlling behaviour. Herman (1992) — coercive control patterns. Argyris & Schön (1974) — defensive routines: how organisations and individuals systematise self-protection.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The transition positioned within the nervous system gradient as the shift from Threat & Defence (state-based, ESS-driven) to Strategy & Management (strategy-based, CLS-recruited). The observable pattern — repair decreasing, control increasing — provides recognisable markers for early identification. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 3: Five Stages */}
+          <section
+            id="five-stages"
+            aria-labelledby="heading-five-stages"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-five-stages" style={sectionHeadingStyle(accent)}>
+              Five Stages from Fear to Power Preservation
+            </h2>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
               <table style={tableStyle}>
                 <thead>
                   <tr>
                     <th style={thStyle}>Stage</th>
-                    <th style={thStyle}>Interpersonal Affect Perception (RE)</th>
-                    <th style={thStyle}>Affective Resonance (ER)</th>
-                    <th style={thStyle}>Interoceptive Self-Awareness (SEA)</th>
-                    <th style={thStyle}>What This Produces</th>
+                    <th style={thStyle}>Internal Logic</th>
+                    <th style={thStyle}>Interruption</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <FiveColRow cells={[
-                    "1 — Fear Activation",
-                    "Narrowing toward threat cues",
-                    "Still partially available",
-                    "If ever partially online, still accessible",
-                    "Person is still reachable. Repair still possible.",
-                  ]} />
-                  <FiveColRow cells={[
-                    "2 — Strategy Formation",
-                    "Sharpening toward management data",
-                    "Becoming selective",
-                    "Offline",
-                    "Reading others to manage, not understand.",
-                  ]} />
-                  <FiveColRow cells={[
-                    "3 — Entitlement Loop",
-                    "Instrumental — reads for compliance",
-                    "Selective or performed",
-                    "Offline",
-                    "Appears empathic. Sharp RE + performed ER = convincing warmth. No felt experience behind it.",
-                  ]} />
-                  <FiveColRow cells={[
-                    "4 — Empathy Collapse",
-                    "Weaponized — reads for leverage",
-                    "Collapsed",
-                    "Absent",
-                    "No corrective signal. Cannot feel impact. Cannot recognize own part.",
-                  ]} />
-                  <FiveColRow cells={[
-                    "5 — Power Preservation",
-                    "Weaponized",
-                    "Absent",
-                    "Absent",
-                    "All three capacities either serving domination or offline.",
-                  ]} />
+                  <TableRow cells={["1. Fear Activation", "\"If I can't control it, I lose safety.\" State-based. The person still recognises their state as distress.", "Most accessible: co-regulation, relational safety, repair."]} />
+                  <TableRow cells={["2. Strategy Formation", "\"Control creates stability.\" The CLS recruited into managing others. Transition markers appear.", "Direct naming, loss of reinforcement, firm relational accountability."]} />
+                  <TableRow cells={["3. Entitlement Loop", "\"I'm safer when others obey.\" Compliance expected, blame reversed, false coherence solidified around the control position.", "Consequences from outside the managed system. Internal motivation for change is low."]} />
+                  <TableRow cells={["4. Empathy Collapse", "\"Their pain is my threat.\" Others' suffering minimised or justified. ER functionally offline. RE remains sharp for leverage.", "External containment. Empathy appeals fail — the capacity they target is offline. Protection of others takes precedence."]} />
+                  <TableRow cells={["5. Power Preservation", "\"I can't survive without control.\" Identity fused with dominance. Connection feels like dissolution. Vulnerability experienced as annihilation.", "Protection — protecting others from the harm the system produces."]} />
                 </tbody>
               </table>
             </div>
 
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Clinical Implication
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                Empathy appeals fail at later stages of escalation because the empathy system they would need in order to respond to the appeal is the system that is offline. Telling a person at Stage 4–5 to &ldquo;think about how others feel&rdquo; is asking them to use Affective Resonance (ER), which is collapsed. They may use Interpersonal Affect Perception (RE) to <em>describe</em> what others feel with remarkable accuracy. But describing is not feeling. The appeal fails because the performance channel (RE) is intact while the felt connection channel (ER) is offline.
-              </p>
+            <p style={proseStyle}>
+              Each stage is interruptible — but the cost and difficulty increase as the pathway progresses. Earlier intervention is most accessible. Late intervention requires structural containment.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — five stages with intervention at each */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Kohut (1977), Kernberg (1975) — narcissistic escalation through identifiable stages. Herman (1992) — patterns of coercive control. Bancroft (2002) — stage-recognisable escalation. Staub (1989) — collective escalation toward extreme group behaviour through identifiable stages.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The five stages with named internal logic and stage-appropriate interruption — making domination recognisable as a process rather than a type. The unified pathway connected to the nervous system gradient, with intervention matched to what the system can support at each stage. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The decomposition of &ldquo;empathy&rdquo; into three capacity trajectories that diverge under escalation — replacing the single-channel model (empathy on/off) with a three-channel model (RE redirects, ER collapses, SEA was never there). This is clinically significant because it explains: why chronic Control mimics Connection (sharp RE + performed ER + absent SEA); why victims are not believed (they describe the gap between performance and felt reality, and the gap is invisible to outsiders); why &ldquo;empathy appeals&rdquo; fail at later stages; and why RE <em>sharpening</em> is itself a warning sign.
-              </p>
-              <p style={expandedProseStyle}>
-                The stage-by-stage capacity table provides a precision tool: at any point in the escalation, the clinician or observer can assess which capacities are available, which are redirected, and which are offline — and match the intervention to what the system can actually support.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ─── ADDICTION LOGIC ─────────────────────────── */}
+          {/* ─── PART 2: HOW DOMINATION ESCALATES ─────────── */}
+          <PartDivider label="PART 2" title="How Domination Escalates" color={accent} />
+
+          {/* Concept 4: Power-Interoception Inverse */}
           <section
-            id="addiction-logic"
-            aria-labelledby="heading-addiction-logic"
+            id="power-interoception"
+            aria-labelledby="heading-power-interoception"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-addiction-logic" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Addiction Logic — Why Domination Escalates and Never Stops
-            </h2>
-
-            <h2 id="heading-domination-escalation-question" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Why does domination escalate without a natural stopping point?
+            <h2 id="heading-power-interoception" style={sectionHeadingStyle(accent)}>
+              The Power-Interoception Inverse
             </h2>
 
             <p style={proseStyle}>
-              F3 established that when SEA is offline, the system uses others to regulate — and that in chronic Domination, this takes the form of subjugation: others&rsquo; fear, submission, and diminishment provide temporary relief from internal activation. F7 adds the critical observation: <strong style={{ color: TEXT.primary }}>external regulation through subjugation builds tolerance</strong>.
+              <Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link> established a pattern: as access to external power increases, interoceptive access decreases.
             </p>
             <p style={proseStyle}>
-              The first time the person dominates and feels the relief — the settling of internal activation, the brief moment where the fear quiets and the emptiness fills — it is enough. For a while. But the relief fades. The activation returns. The internal state that drove the domination is unchanged — because SEA is offline and the actual emotional processing never happened.
+              The mechanism: when the CLS can control the environment through RE alone — reading others, managing situations, acquiring resources — the nervous system does not need the interoceptive substrate. RE provides sufficient data. The CLS builds coherence without the body and the coherence functions — the narrative is clean, clear, confident. The person never encounters the conditions where RE alone is insufficient.
             </p>
             <p style={proseStyle}>
-              So the person needs the regulation source again. But the same level of domination does not produce the same level of relief. The tolerance has built. They need more intense subjugation, more people subjected, more extreme acts of domination, more power to access more regulation sources.
+              Access to external power is itself a restoration substitute. It provides the CLS with enough data (through RE) and enough environmental control to function without the ESS's signals. It produces the physiological settling that safety would provide — through control rather than through connection. The cortisol drops when the environment complies. The amygdala quiets when the threats are managed. The regulation is real. The source is not.
             </p>
-
-            <KeyStatement>
-              This is addiction logic applied to relational domination. The mechanism is identical to substance addiction: the substance (others&rsquo; subjugation) provides temporary relief from an internal state. The internal state is never processed. Tolerance builds. Escalation is required. There is no natural stopping point.
-            </KeyStatement>
-
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Power and wealth amplify this mechanism.</strong> A person in chronic Domination with limited power has limited access — they can dominate their family, their employees, their immediate circle. The harm is real but contained by structural constraints. A person in chronic Domination with vast power has unlimited access. They can purchase compliance. They can enforce silence. They can create entire systems organized around their regulation needs. And because their power also protects them from consequences, there is no external check on the escalation.
+              This is F7's central structural mechanism. The configuration that produces the most control — sharp RE, absent ER, absent SEA — is the configuration most disconnected from the body's data. The hierarchy (<Link href="/framework/f5-worth-hierarchies" style={linkStyle}>F5</Link>) rewards this configuration because it produces results. The perceptual system (<Link href="/framework/f6-bias-regulates" style={linkStyle}>F6</Link>) confirms it because it reads as competence. The rule systems (<Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>) normalise it because "strong leadership" and "tough decisions" are dominance rules the CLS absorbs as truth.
             </p>
 
-            <KeyStatement>
-              There is no amount of domination that will make them feel safe. Because the safety they need is internal — it is SEA coming back online. And SEA cannot come back online through domination. It can only come back online through the conditions described in F2&rsquo;s restoration account: safety, not power.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — power increasing, interoceptive access decreasing */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Addiction research — tolerance, escalation, the distinction between substance and underlying state. Kohut (1977) — narcissistic regulation through self-objects. Kernberg (1975) — narcissistic pathology as escalation. Bowlby (1969, 1988) — attachment as regulatory system. Porges (2011) — co-regulation; when self-regulation is not learned, the system continues to seek external regulatory input. Van der Kolk (2014) — trauma produces incomplete regulation stored somatically. Schore (2003) — right-brain regulation develops through relational experience.
-              </p>
-            </ExpandableSection>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Keltner, Gruenfeld & Anderson (2003) — approach/inhibition theory of power: power increases approach behaviour and decreases sensitivity to others' states. Koenigs et al. (2007) — vmPFC suppression in utilitarian decision-making. Galinsky et al. (2006) — power reduces perspective-taking and increases egocentric anchoring.
+                </p>
+              </ExpandableSection>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The addiction-logic framing for chronic Domination — connecting relational domination to substance addiction through a shared mechanism: temporary relief from an internal state that is never processed because the processing channel is offline. The formulation &ldquo;there is no amount of domination that will make them feel safe — because the safety they need is internal&rdquo; captures the structural impossibility: the regulation source (domination) cannot address the regulation need (SEA restoration).
-              </p>
-              <p style={expandedProseStyle}>
-                The power-and-wealth amplification explains why escalation patterns are most extreme where power is most concentrated. Power removes the structural constraints that would otherwise limit the escalation cycle — and provides unlimited access to regulation sources. The mechanism is the same. The scale is determined by access.
-              </p>
-            </ExpandableSection>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The power-interoception inverse traced through the awareness architecture: external power replaces the need for interoceptive data, making the substrate irrelevant rather than suppressing it. The configuration that accumulates power is the configuration that does not need the body's data — and the power ensures it will never encounter the conditions where the body's data becomes necessary. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ─── CAUSALITY AND ACCOUNTABILITY ─────────────── */}
+          {/* Concepts 5-6: Capacity Divergence + No Brake */}
           <section
-            id="causality-accountability"
-            aria-labelledby="heading-causality-accountability"
+            id="capacity-divergence"
+            aria-labelledby="heading-capacity-divergence"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-causality-accountability" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Causality and Accountability — Why &ldquo;Evil&rdquo; Is Not the Frame
+            <h2 id="heading-capacity-divergence" style={sectionHeadingStyle(accent)}>
+              How Awareness Capacities Diverge Along the Pathway
             </h2>
 
             <p style={proseStyle}>
-              F7 does not use &ldquo;evil&rdquo; as a category. &ldquo;Evil&rdquo; as a frame implies something fundamentally different about the person. It implies a character trait — something inherent, fixed, and moral. It implies that the person who dominates is a different kind of human from everyone else.
+              <strong style={{ color: TEXT.primary }}>RE does not collapse. It redirects.</strong> The CLS capacity that reads others' emotional states stays sharp or sharpens as escalation progresses. In Safety & Openness, RE serves understanding. In chronic Strategy & Management, RE serves management. In chronic Power & Dominance, RE serves leverage — others' emotional states become data for exploitation. The person at Stage 4-5 may read with more accuracy than anyone in the room. What they cannot do is feel what they read.
             </p>
             <p style={proseStyle}>
-              The regulation thread shows they are not. They are running the same nervous system as everyone else. The same mechanisms. The same compass. The same modes. The same false coherence. The same external regulation. The same reinforcement logic. They are further along the gradient — further from the return — at higher cost to others. But the mechanism is the same mechanism.
+              <strong style={{ color: TEXT.primary }}>ER collapses.</strong> The ESS capacity that resonates with others' states degrades along the gradient. In chronic Power & Dominance, the ventromedial prefrontal cortex (vmPFC) — which carries care, guilt, and empathic constraint — is suppressed. Others' pain registers as information about the environment, not shared experience. ER is offline.
             </p>
-
-            <KeyStatement>
-              Understanding mechanism does not reduce accountability. Causality and accountability are separable. Causality asks: how did this happen? Accountability asks: what must be named, stopped, repaired, and who must be protected? Both questions are necessary. Answering the first does not weaken the second.
-            </KeyStatement>
-
             <p style={proseStyle}>
-              Understanding the mechanism <em>increases</em> the precision of intervention:
+              <strong style={{ color: TEXT.primary }}>SEA was never there.</strong> The bridge between the CLS and the ESS is the precondition for the entire escalation pathway, not a consequence of it. The person at Stage 4-5 does not have SEA that was suppressed by the escalation. They have SEA that was never built (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>). This is why the escalation has no internal brake: without SEA, the activation that drives domination is never processed. And without SEA, there is no internal signal telling the person that their reading of others (sharp RE) is serving leverage rather than understanding.
             </p>
-
-            <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Prevention:</strong> address the developmental conditions (F2) before the compass locks
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Early intervention:</strong> recognize Stages 1–2 and interrupt the reinforcement before it escalates
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Systemic design:</strong> build institutions that do not reward chronic Control or chronic Domination — that do not provide escalating access to regulation sources
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Victim protection:</strong> name the mechanism so victims can recognize what is happening, stop blaming themselves, and access support that believes them
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Accountability without demonization:</strong> hold the person responsible for impact while understanding the mechanism that produced it
-              </li>
-            </ul>
-
             <p style={proseStyle}>
-              &ldquo;Evil&rdquo; prevents all of this. It closes inquiry. It makes the person incomprehensible — and therefore uninterruptible. It treats the harm as arising from a different kind of human rather than from a recognizable, traceable, interruptible mechanism operating in the same nervous system everyone shares.
+              The configuration at the far end: sharp RE + absent ER + absent SEA. Reads everyone in the room. Feels nothing of the impact. Has no internal signal that anything is wrong. This is the configuration that produces the most harm with the least visibility. It is also the configuration that most reliably mimics connection — because sharp RE provides the data and the CLS provides the performance script.
             </p>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                The explicit positioning of this ethical stance within the framework — not as a philosophical addendum, but as an integral part of the model. The regulation thread makes the case: if domination is the same mechanism as false coherence (F3), rule internalization (F4), worth-sorting (F5), and bias (F6) — operating at a different scale and at maximum cost — then treating it as a categorically different phenomenon is not just imprecise — it is mechanistically inaccurate. The framework offers: accountability without demonization, understanding without excuse.
-              </p>
-            </ExpandableSection>
+            <h3 style={conceptHeadingStyle}>Why the Brake Is Structurally Absent</h3>
+            <p style={proseStyle}>
+              The escalation generates signals that would, in a complete system, produce course correction. Harm generates shame — the ESS producing a signal that something violated a relational boundary. Guilt fires — the ESS signalling that the action produced cost to another person. Remorse fires — the ESS signalling that repair is needed.
+            </p>
+            <p style={proseStyle}>
+              In the configuration that produces domination, the signals fire in the ESS and have no channel to reach the CLS. ER is offline: there is no somatic echo of what the harm cost the other person. SEA is absent: there is no bridge to receive the shame, guilt, and remorse signals as information about the self. The signals become unresolved activation. The activation load increases. The nervous system requires a stronger neurochemical event to produce the same regulatory shift.
+            </p>
+            <p style={proseStyle}>
+              This is <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3's</Link> Relational Substitute Escalation operating without a brake. Escalation is structurally required. The harm-generated signals that would produce the brake are the signals the system cannot process.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — three capacities diverging along pathway */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Singer & Klimecki (2014) — distinction between empathic distress and compassion as separate resonance states. Blair (2007) — selective empathy deficits producing different outcomes depending on channel affected. Porges (2011) — ventral vagal suppression under chronic threat. Tangney & Dearing (2002) — shame and guilt as regulatory emotions with distinct functions. Koenigs et al. (2007) — vmPFC suppression and the absence of felt moral weight.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The three-capacity divergence model replacing the single-channel model (empathy on/off) with three trajectories. This explains why chronic control mimics connection (sharp RE + performed warmth + absent self-knowledge), why empathy appeals fail at late stages (the appeal targets ER which is offline while RE narrates empathy-language back), and why RE sharpening is a warning signal. The structural explanation for escalation without a brake: the harm generates the signals that would produce the brake, but the configuration that produces the harm is the configuration that cannot process those signals. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
-          {/* ─── REGULATION THREAD ──────────────────────── */}
+          {/* Concept 7: Addiction Logic */}
           <section
-            id="regulation-thread"
-            aria-labelledby="heading-regulation-thread"
+            id="escalation-logic"
+            aria-labelledby="heading-escalation-logic"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-regulation-thread" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Regulation Thread Complete — F1 Through F7
+            <h2 id="heading-escalation-logic" style={sectionHeadingStyle(accent)}>
+              Escalation Without a Stopping Point
             </h2>
 
             <p style={proseStyle}>
-              F7 is the final framework in the collective arc (F4–F7). With its completion, the regulation thread — the single throughline connecting all frameworks — is fully traced:
+              External regulation through subjugation — others' fear, submission, and compliance producing the neurochemical shift that biological restoration would have provided — builds tolerance. The mechanism is identical to substance tolerance.
+            </p>
+            <p style={proseStyle}>
+              The first time the person dominates and the activation settles — cortisol drops, the amygdala quiets, the brief period of stability arrives — it is enough. For a while. But the relief fades. The activation returns. The internal state that drove the domination is unchanged — because SEA is absent and the physiological activation was never processed. The same level of domination does not produce the same relief. The nervous system requires more intense subjugation, more people subjected, more extreme acts, more power to access more regulation sources.
+            </p>
+            <p style={proseStyle}>
+              There is no natural stopping point. The underlying activation is structural — it is the cumulative unresolved load from a lifetime of incomplete restoration sequences. No amount of domination completes the biological restoration that would resolve the load. The domination produces temporary discharge. The discharge fades. The load remains. The cycle repeats at higher intensity.
+            </p>
+            <p style={proseStyle}>
+              Power and wealth amplify this mechanism. A person in chronic Power & Dominance with limited structural power has limited access — the harm is real but contained by structural constraints. A person in chronic Power & Dominance with vast structural power has unlimited access — unlimited regulation sources, unlimited capacity to enforce compliance, and structural protection from consequences.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — addiction-logic: tolerance, escalation, no endpoint */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Addiction research — tolerance, escalation, and the absence of a natural stopping point when the underlying condition is structural. Kohut (1977) — narcissistic regulation through self-objects. Bowlby (1969) — when internal regulation is unavailable, the system continues seeking external regulatory input.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The addiction-logic framing for domination — connecting relational domination to substance tolerance through a shared mechanism: temporary relief from an internal state that is never processed because the processing channel is absent. There is no amount of domination that produces actual safety — because the safety the person needs is internal, and domination moves in the opposite direction. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 3: WHAT DOMINATION PRODUCES AT SCALE ── */}
+          <PartDivider label="PART 3" title="What Domination Produces at Scale" color={accent} />
+
+          {/* Concepts 8-10: Institutions */}
+          <section
+            id="institutional-reproduction"
+            aria-labelledby="heading-institutional-reproduction"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-institutional-reproduction" style={sectionHeadingStyle(accent)}>
+              How Institutions Reproduce the Configuration
+            </h2>
+
+            <p style={proseStyle}>
+              Domination structures do not only use power. They reproduce the substrate state that makes power the only regulation available — and that makes the structure invisible from the inside.
+            </p>
+            <p style={proseStyle}>
+              When an institution is governed by the configuration that produces domination (sharp RE, absent ER, absent SEA), the institution selects for that configuration. It rewards decisive action (RE-driven), penalises emotional expression (ER-threatening), and treats interoceptive signals as weakness (SEA-irrelevant). Over time, the institution's selection pressures produce a leadership layer that carries the configuration the institution rewards.
+            </p>
+            <p style={proseStyle}>
+              The institution then operates on the population it governs the way a developmental environment operates on a child (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>). Condition 3 at institutional scale: emotional expression is blocked. The interoceptive channel is suppressed across the population. The people within the institution develop absent interoceptive access — and the rules the institution produces feel like reality (<Link href="/framework/f4-rules-regulate#three-coherence-forms" style={linkStyle}>F4</Link>).
+            </p>
+            <p style={proseStyle}>
+              The vmPFC — the neural substrate that carries care, guilt, and empathic constraint — is suppressed at organisational scale. The institution processes others' distress as data. The decision-making produces outcomes that are simultaneously rational within the data set and blind to the felt dimension. This connects to <Link href="/framework/f4-rules-regulate#re-only-institutions" style={linkStyle}>F4's RE-only institutions</Link> at their most extreme expression — the institution not only running on cognitive data but actively selecting for and reproducing the configuration that ensures cognitive data is all it has.
+            </p>
+            <p style={proseStyle}>
+              The loop runs in whichever direction the institution is currently running. The institution that suppresses the substrate produces the conditions that make further suppression invisible. The institution that rebuilds the substrate produces the conditions that make further rebuilding possible. A single intervention that shifts the institutional conditions operates on every nervous system in the system simultaneously.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — institutional selection loop */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Argyris & Schön (1974) — defensive routines becoming self-reinforcing. DiMaggio & Powell (1983) — institutional isomorphism. Pfeffer (1981) — how selection and reward systems reproduce particular configurations. Bazerman & Tenbrunsel (2011) — ethical blind spots. Senge (1990) — reinforcing feedback loops. Edmondson (1999) — psychological safety producing measurable differences.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The substrate-level explanation for how institutions self-reproduce: the institution's conditions suppress the interoceptive substrate across the population, producing the biological condition that makes the institution's operation invisible from the inside. The bidirectional loop showing that institutions amplify whichever direction they are running — degradation or restoration. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 4: THE ARC COMPLETES ──────────────── */}
+          <PartDivider label="PART 4" title="The Arc Completes" color={accent} />
+
+          {/* Concepts 11-12: Accountability + Complete Arc */}
+          <section
+            id="complete-arc"
+            aria-labelledby="heading-complete-arc"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-complete-arc" style={sectionHeadingStyle(accent)}>
+              Seven Restoration Substitutes at Escalating Scale
+            </h2>
+
+            <p style={proseStyle}>
+              F7 has traced a mechanism: reinforcement driving escalation, capacity configurations enabling harm, institutions reproducing the conditions that produce more harm. The mechanism is understandable. The causality is traceable. Causality asks: how did this happen? Accountability asks: what must be named? What must be stopped? Who must be protected? Both questions are necessary. Understanding the mechanism increases the precision of intervention — without diminishing accountability.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -736,96 +542,64 @@ export default function F7DominationRegulatesPage() {
                 <thead>
                   <tr>
                     <th style={thStyle}>Framework</th>
-                    <th style={thStyle}>What Regulates</th>
+                    <th style={thStyle}>What Provides the Substitute</th>
                     <th style={thStyle}>Scale</th>
                     <th style={thStyle}>Cost</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <FourColRow cells={[
-                    "F1",
-                    "Biological Restoration — the body completing the cycle",
-                    "Individual biology",
-                    "No cost — the system working as designed",
-                  ]} />
-                  <FourColRow cells={[
-                    "F2",
-                    "Co-regulation \u2192 self-restoration (when learned). When not learned: compass locks",
-                    "Developmental / relational",
-                    "The return path is never built",
-                  ]} />
-                  <FourColRow cells={[
-                    "F3 (C1\u20138)",
-                    "False coherence — cognition replacing the emotional return",
-                    "Individual adult cognition",
-                    "Truth",
-                  ]} />
-                  <FourColRow cells={[
-                    "F3 (C9\u201311)",
-                    "Emotional distortion + external regulation",
-                    "Individual \u2192 relational",
-                    "Relationships",
-                  ]} />
-                  <FourColRow cells={[
-                    "F4",
-                    "Rules regulate — collective rule systems",
-                    "Collective — social systems",
-                    "Flexibility",
-                  ]} />
-                  <FourColRow cells={[
-                    "F5",
-                    "Worth hierarchies — filtering by signal access",
-                    "Collective — value systems",
-                    "Equity",
-                  ]} />
-                  <FourColRow cells={[
-                    "F6",
-                    "Bias regulates — perceptual certainty",
-                    "Collective — perceptual systems",
-                    "Accuracy",
-                  ]} />
-                  <FourColRow cells={[
-                    "F7",
-                    "Domination regulates — direct control of others",
-                    "Collective — power systems",
-                    "Everything",
-                  ]} />
+                  <TableRow cells={["F1", "Biological restoration — the designed process", "Individual biology", "No cost"]} />
+                  <TableRow cells={["F2", "Co-regulation → self-restoration (when learned)", "Developmental", "The return path"]} />
+                  <TableRow cells={["F3", "False coherence — narrative replacing signals", "Individual cognition", "Truth"]} />
+                  <TableRow cells={["F4", "Rules regulate — collective predictability", "Social systems", "Flexibility"]} />
+                  <TableRow cells={["F5", "Worth hierarchies regulate — position as regulation", "Value systems", "Equity"]} />
+                  <TableRow cells={["F6", "Bias regulates — perceptual certainty", "Perceptual systems", "Accuracy"]} />
+                  <TableRow cells={["F7", "Domination regulates — direct control of others", "Power systems", "Everything"]} />
                 </tbody>
               </table>
             </div>
 
             <p style={proseStyle}>
-              Each framework describes a regulation substitute at a different scale. Each substitute works — it provides the nervous system with stability. Each comes at a cost. Each traces to the same origin: a nervous system that never learned the return path.
+              Each substitute produces physiological settling — temporary relief without completing biological restoration. Each traces to the same origin: a nervous system that never learned the return path. The costs escalate. The mechanism is the same at every scale. The intervention principle is consistent: restore safety first, then expect capacity. At F7's early stages, safety enables return. At F7's late stages, protection takes precedence over restoration.
             </p>
-
-            <KeyStatement>
-              The costs escalate. From individual truth-loss (F3) through collective sorting (F5) to maximum harm (F7). The mechanism is the same at every scale. The intervention principle is consistent across all frameworks: restore safety first, then expect capacity. This is F1&rsquo;s principle. It operates at every scale.
-            </KeyStatement>
-
             <p style={proseStyle}>
-              The thread also reveals why late-stage domination is so resistant to intervention. Every previous framework&rsquo;s substitute is operating simultaneously: false coherence maintains the narrative. Rules enforce the structure. Worth hierarchies justify the position. Bias confirms the perception. And domination provides the direct regulation that all of these are serving. Interrupting one substitute while the others remain intact is insufficient. The system has redundancy built in — not by design, but because each substitute reinforced the next.
+              The thread also reveals why late-stage domination is resistant to intervention. Every previous framework's substitute operates simultaneously: false coherence maintains the narrative. Rules enforce the structure. Worth hierarchies justify the position. Bias confirms the perception. And domination provides the direct regulation that all of these serve. The system has redundancy — not by design, but because each substitute reinforced the next.
             </p>
 
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>What the full thread shows:</strong> the distance from F1 (Biological Restoration) to F7 (domination) is long — but every point on the pathway is connected. Every framework describes the same nervous system failing to return and substituting something else. The substitutes work. They just are not the return.
-            </p>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — complete regulation thread F1-F7 */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  The foundations for each framework are documented in F1-F6 and the concepts above. Restorative justice literature — understanding context while maintaining accountability. Strawson (1962) — moral responsibility as compatible with causal explanation. Herman (1992) — naming the mechanism as essential to recovery.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The complete regulation thread as the connective tissue of F1-F7. No existing framework traces a single mechanism from individual biological restoration through developmental failure through cognitive replacement through collective rules through worth sorting through bias through domination — and shows that each level is the same nervous system substituting a different regulation source at a different scale, with escalating costs and a consistent intervention principle. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.cobalt}
+            color={accent}
             items={[
               {
                 term: "Domination built through reinforcement",
-                definition: "The same learning mechanism, the same nervous system, the same regulation thread — further along the gradient, at maximum cost.",
+                definition: "The same learning mechanism, the same nervous system, the same regulation thread — further along the gradient, at maximum cost. The pathway follows reinforcement, not personality.",
               },
               {
                 term: "The transition from defence to strategy",
-                definition: "Recognisable: repair decreasing, control increasing, tactics replacing vulnerability.",
+                definition: "Repair decreasing, control increasing, tactics replacing vulnerability. The shift from state-based reaction to CLS-recruited management of others.",
               },
               {
                 term: "Five-stage pathway",
-                definition: "Fear → Strategy → Entitlement → Empathy Collapse → Power Preservation. Each interruptible. Earlier = more accessible.",
+                definition: "Fear → Strategy → Entitlement → Empathy Collapse → Power Preservation. Each interruptible. Earlier = more accessible. Late = structural containment.",
               },
               {
                 term: "Power-interoception inverse",
@@ -833,130 +607,98 @@ export default function F7DominationRegulatesPage() {
               },
               {
                 term: "Three-capacity divergence",
-                definition: "Interpersonal Affect Perception (RE) redirects, Affective Resonance (ER) collapses, Interoceptive Self-Awareness (SEA) was never built. The configuration that produces the most harm with the least visibility.",
+                definition: "RE redirects (from understanding to leverage), ER collapses (impact unfelt), SEA was never built (no brake). The configuration that produces the most harm with the least visibility.",
               },
               {
                 term: "Escalation without a brake",
-                definition: "The harm generates signals (shame, guilt, remorse). ER absent, SEA absent — no channel to process them. Escalation structurally required.",
+                definition: "The harm generates signals (shame, guilt, remorse). ER absent, SEA absent — no channel to process them. Tolerance builds. No natural stopping point.",
               },
               {
                 term: "Addiction logic",
-                definition: "Subjugation builds tolerance. No natural stopping point. Power amplifies access.",
+                definition: "Subjugation builds tolerance. The same level of domination produces less relief. The cycle repeats at higher intensity. Power amplifies access.",
+              },
+              {
+                term: "Institutions reproduce the substrate state",
+                definition: "The institution suppresses the interoceptive substrate across the population — producing the biological condition that makes the institution invisible from the inside. The bidirectional loop amplifies whichever direction the institution is running.",
               },
               {
                 term: "Causality and accountability coexist",
-                definition: "The mechanism is traceable. The harm is real. Both are true simultaneously.",
+                definition: "The mechanism is traceable. The harm is real. Both are true simultaneously. Understanding increases the precision of intervention.",
               },
               {
                 term: "The regulation thread complete",
-                definition: "F1–F7: seven restoration substitutes at escalating scale and escalating cost.",
+                definition: "F1-F7: seven restoration substitutes at escalating scale and escalating cost. Each traces to the same origin. The intervention principle is consistent across all seven.",
               },
             ]}
           />
 
-          {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
-          <section
-            id="research-foundations"
-            aria-labelledby="heading-research-foundations"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Research Foundations
-            </h2>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tradition</th>
-                    <th style={thStyle}>Key Contribution</th>
-                    <th style={thStyle}>Researchers</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Behavioral Reinforcement",
-                    "Behavior shaped by reinforcement; rewarded behavior escalates",
-                    "Skinner, 1953",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Psychoanalytic Theory",
-                    "Narcissistic development, escalation of self-protection",
-                    "Kohut, 1977; Kernberg, 1975",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Organizational Psychology",
-                    "Defensive routines escalate in systems",
-                    "Argyris & Sch\u00f6n, 1974",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Neuroscience",
-                    "Threat physiology, state-dependent perception and empathy",
-                    "Porges, 2011; Siegel, 2012; Schore, 2003",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Trauma Psychology",
-                    "Threat shapes escalation; complex trauma",
-                    "Van der Kolk, 2014; Herman, 1992",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Abuse/Violence Research",
-                    "Pattern recognition in abuse; escalation markers",
-                    "Bancroft, 2002",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Attachment Theory",
-                    "Attachment as regulatory system; external regulation",
-                    "Bowlby, 1969",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Addiction Research",
-                    "Tolerance, escalation, structural dependence",
-                    "Established literature",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.cobalt}
-            established="F7 completes the collective arc and the regulation thread (F1-F7). The pathway from biological restoration through domination is fully traced — each framework describing the same nervous system substituting a different regulation source at a different scale, with escalating costs."
-            question="At every stage of the escalation, the interruption principle is the same: restore safety first, then expect capacity. F8 asks what enables the return — how awareness capacities that were never built begin to develop, how the nervous system regains flexibility, and what repair looks like when the patterns have been running for decades."
+            color={accent}
+            established="F7 completed the collective arc. F1 through F7 have traced how the nervous system substitutes — at escalating scales and escalating costs — when the biological restoration that was designed to complete the cycle is never learned."
+            question="The repair arc (F8-F12) does not undo the collective arc. It maps what happens when the conditions that produce the substitutes change — when safety replaces threat, when the interoceptive channel begins to reopen, when the substrate that was suppressed begins to rebuild. Not through instruction, insight, or correction — through the relational conditions that build the substrate in the first place."
             nextFramework="F8"
             nextTitle="Awareness Rebuilds Through Safety"
             nextHref="/framework/f8-repairing-awareness"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.cobalt}
+            color={accent}
             connections={[
-              { id: "F6", href: "/framework/f6-bias-regulates", description: "F6 is perception as protection. F7 is perception as enforcement — when filtering becomes imposition at maximum cost." },
-              { id: "F1", href: "/framework/f1-emotional-gradient", description: "F1 established biological restoration as the designed process. F7 is the endpoint of the escalation when that process is permanently unavailable — regulation at maximum cost." },
-              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps Power & Dominance as the fourth state. F7 describes the escalation pathway that produces chronic operation from that state." },
-              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F7 is the final substitute. F8 begins the return — awareness rebuilt through safety, not instruction." },
+              {
+                id: "M3: Regulation Capacities",
+                href: "/model/m3-regulation-capacities",
+                description: "M3 maps Relational Substitute Escalation — tolerance building without endpoint. F7 shows this mechanism operating at maximum scale: domination through subjugation builds tolerance, escalation is structurally required.",
+              },
+              {
+                id: "M4: Awareness Capacities",
+                href: "/model/m4-awareness-capacities",
+                description: "M4 established the capacity configuration that defines F7: sharp RE, absent ER, absent SEA. M4 established the power-interoception inverse. F7 maps what happens when this configuration occupies positions of institutional power.",
+              },
+              {
+                id: "F6: Bias Regulates",
+                href: "/framework/f6-bias-regulates",
+                description: "F6 is perception as protection. F7 is perception as enforcement — what happens when the system moves from maintaining distorted perception to imposing it.",
+              },
+              {
+                id: "F3: Adult Cognition & False Coherence",
+                href: "/framework/f3-false-coherence",
+                description: "F3's external regulation through subjugation is the individual-level mechanism that F7 maps at maximum scale. The self-sealing property operates throughout: the substitute destroys the conditions genuine restoration would require.",
+              },
+              {
+                id: "F2: Developmental Calibration",
+                href: "/framework/f2-awareness-calibration",
+                description: "SEA was never built (F2). This is the precondition for the entire escalation pathway — not a consequence of it. Institutions reproduce the developmental conditions at population scale.",
+              },
+              {
+                id: "F8: Awareness Rebuilds Through Safety",
+                href: "/framework/f8-repairing-awareness",
+                description: "F7 completes the collective arc. F8 begins the repair arc — how the interoceptive channel can reopen through safety, not instruction.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.cobalt}
+            color={accent}
             items={[
-              { label: "Continue to F8 — the return begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety →" },
-              { label: "See the foundational framework", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F8 — how the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
+              { label: "See the restoration substitutes and escalation M3 maps", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
+              { label: "See the awareness architecture that diverges along the pathway", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
+              { label: "Return to F6 — how perception becomes protection", href: "/framework/f6-bias-regulates", linkText: "F6: Bias Regulates \u2192" },
+              { label: "Return to F1 — where the regulation thread begins", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ─── JSON-LD: ScholarlyArticle ──────────────────── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -964,9 +706,9 @@ export default function F7DominationRegulatesPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f7-domination-regulates#article",
-            headline: "Domination Regulates: How Defense Becomes Strategy Becomes Domination",
+            headline: "Domination Regulates: How Defence Becomes Strategy Becomes Domination",
             description:
-              "How defense becomes strategy, strategy becomes domination, and domination becomes the nervous system's primary regulation source. A five-stage escalation pathway with identifiable markers and intervention windows. Framework F7 of the TEG-Blue 12-framework system.",
+              "How reinforcement builds the escalation pathway, the power-interoception inverse, three-capacity divergence, and why the mechanism that would stop the escalation is structurally absent. Framework F7 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -977,8 +719,8 @@ export default function F7DominationRegulatesPage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            datePublished: "2026-03-06",
+            dateModified: "2026-04-06",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -991,35 +733,33 @@ export default function F7DominationRegulatesPage() {
               "@id": "https://teg-blue.org/framework/f7-domination-regulates",
             },
             about: [
-              { "@type": "Thing", name: "Domination as Regulation" },
-              { "@type": "Thing", name: "Five-Stage Escalation Pathway" },
-              { "@type": "Thing", name: "The Crossroads" },
-              { "@type": "Thing", name: "Empathy Gating" },
-              { "@type": "Thing", name: "Addiction Logic" },
+              { "@type": "Thing", name: "Domination" },
+              { "@type": "Thing", name: "Coercive Control" },
+              { "@type": "Thing", name: "Power and Empathy" },
+              { "@type": "Thing", name: "Institutional Harm" },
+              { "@type": "Thing", name: "Narcissistic Escalation" },
             ],
             citation: [
-              { "@type": "ScholarlyArticle", name: "Operant Conditioning (Skinner, 1953)" },
-              { "@type": "ScholarlyArticle", name: "Narcissistic Pathology (Kohut, 1977; Kernberg, 1975)" },
+              { "@type": "ScholarlyArticle", name: "Affect Regulation and the Origin of the Self (Schore, 2003)" },
               { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
-              { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (Van der Kolk, 2014)" },
               { "@type": "ScholarlyArticle", name: "Trauma and Recovery (Herman, 1992)" },
               { "@type": "ScholarlyArticle", name: "Why Does He Do That? (Bancroft, 2002)" },
-              { "@type": "ScholarlyArticle", name: "Attachment Theory (Bowlby, 1969)" },
+              { "@type": "ScholarlyArticle", name: "The Analysis of the Self (Kohut, 1977)" },
+              { "@type": "ScholarlyArticle", name: "The Roots of Evil (Staub, 1989)" },
             ],
             keywords: [
               "domination regulates",
-              "escalation pathway",
-              "the crossroads",
-              "empathy gating",
-              "addiction logic",
-              "intervention windows",
-              "regulation thread",
+              "nervous system escalation",
+              "coercive control",
+              "power interoception",
+              "empathy collapse",
+              "narcissistic escalation",
+              "institutional domination",
+              "restoration substitute",
             ],
           }),
         }}
       />
-
-      {/* ─── JSON-LD: BreadcrumbList ────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1032,43 +772,35 @@ export default function F7DominationRegulatesPage() {
           ),
         }}
       />
-
-      {/* ─── JSON-LD: FAQPage ───────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What does 'domination regulates' mean in the TEG-Blue system?",
+                question: "How is domination built through reinforcement?",
                 answer:
-                  "F7 proposes that domination is a regulation strategy built through reinforcement. When the nervous system never learned Biological Restoration (F1), and all previous substitutes (false coherence, rules, worth hierarchies, bias) are insufficient, the system escalates to direct domination of others. The person does not experience connection as available. Domination provides temporary regulatory relief at maximum cost to others.",
+                  "When control reliably reduces nervous system activation — when cortisol drops after others comply — the nervous system adopts control as its primary regulation strategy. If the strategy is socially rewarded and accountability is absent, it escalates. Defence hardens into strategy, strategy into entitlement, entitlement into domination. The pathway follows reinforcement, not personality.",
               },
               {
-                question: "What is the Crossroads in the TEG-Blue escalation model?",
+                question: "What is the power-interoception inverse?",
                 answer:
-                  "The Crossroads is the named critical turning point where defense becomes strategy — the moment the internal logic shifts from 'I am trying to feel safe' to 'I will make you behave so I can feel safe.' It marks the transition from Protection (state-based, before awareness) to Control (strategy-based, after awareness). It is not a single moment but a transition zone where control increases while repair decreases, recognizable through ten early escalation markers.",
+                  "As access to external power increases, interoceptive access decreases — because power replaces the need for it. When the CLS can control the environment through RE alone, the nervous system does not need the interoceptive substrate. Access to power is itself a restoration substitute, providing physiological settling through control rather than connection.",
               },
               {
-                question: "What is the five-stage escalation pathway?",
+                question: "Why does the escalation have no natural brake?",
                 answer:
-                  "The five stages are: (1) Fear Activation — threat scanning, still reachable; (2) Strategy Formation — learning that managing others reduces distress, Crossroads markers appear; (3) Entitlement Loop — obedience expected, false coherence solidified, mimics Connection from outside; (4) Empathy Collapse — Affective Resonance offline, empathy appeals fail; (5) Power Preservation — identity fused with dominance, protection of others is primary. Each stage has internal logic, observable signs, compass position, and stage-appropriate interruption.",
+                  "The harm generates signals — shame, guilt, remorse — that would produce course correction in a complete system. But the configuration that produces domination (sharp RE, absent ER, absent SEA) is the configuration that cannot process those signals. ER is offline — the body does not feel others' pain. SEA is absent — no bridge to receive the shame. The brake is structurally absent.",
               },
               {
-                question: "What is empathy gating?",
+                question: "What are the five stages of escalation?",
                 answer:
-                  "Empathy gating describes what happens to the three awareness capacities during escalation. Interpersonal Affect Perception (RE) does not collapse — it redirects from understanding to management to weaponization. Affective Resonance (ER) is what collapses — the felt connection channel progressively shuts down. Interoceptive Self-Awareness (SEA) was never there — it is the precondition, not the consequence. The configuration sharp RE + collapsed ER + absent SEA produces the most harm with the least visibility.",
-              },
-              {
-                question: "How does F7 relate to the rest of the TEG-Blue system?",
-                answer:
-                  "F7 is the final framework in the collective arc (F4–F7) and completes the regulation thread (F1–F7). Each framework describes a regulation substitute at a different scale: F1 (biological return), F2 (developmental failure), F3 (cognitive replacement), F4 (rules), F5 (worth hierarchies), F6 (bias), F7 (domination). The costs escalate from truth-loss to everything. The intervention principle is consistent: restore safety first, then expect capacity. F7 is the final substitute. F8 begins the restoration arc.",
+                  "1. Fear Activation (state-based, repair still possible). 2. Strategy Formation (CLS recruited, control increasing). 3. Entitlement Loop (compliance expected, blame reversed). 4. Empathy Collapse (impact unfelt, RE serves leverage). 5. Power Preservation (identity fused with dominance, connection feels like dissolution). Each is interruptible — earlier is more accessible.",
               },
             ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1087,17 +819,10 @@ export default function F7DominationRegulatesPage() {
 
 // ─── STYLE CONSTANTS ──────────────────────────────────────
 
-
-const orderedListStyle = {
-  paddingLeft: 20,
-  margin: "0 0 16px",
-};
-
-const listItemStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.7,
-  marginBottom: 8,
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
 };
 
 const tableStyle = {
@@ -1123,28 +848,7 @@ const thStyle = {
   borderBottom: `1px solid ${BORDER.default}`,
 };
 
-const keyStatementBase = {
-  padding: "16px 20px",
-  margin: "0 0 16px",
-  background: hexToRgba(SPECTRUM.cobalt, 0.06),
-  borderRadius: 8,
-  borderLeft: `4px solid ${SPECTRUM.cobalt}`,
-  fontSize: 15,
-  fontWeight: 500,
-  color: TEXT.primary,
-  lineHeight: 1.6,
-  fontStyle: "italic",
-};
-
 // ─── HELPER COMPONENTS ────────────────────────────────────
-
-function KeyStatement({ children }) {
-  return (
-    <blockquote style={keyStatementBase}>
-      {children}
-    </blockquote>
-  );
-}
 
 function TableRow({ cells }) {
   return (
@@ -1167,70 +871,3 @@ function TableRow({ cells }) {
     </tr>
   );
 }
-
-function ThreeColRow({ cells }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      {cells.map((cell, i) => (
-        <td
-          key={i}
-          style={{
-            padding: "10px 14px",
-            fontSize: 13,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400,
-            lineHeight: 1.6,
-            verticalAlign: "top",
-          }}
-        >
-          {cell}
-        </td>
-      ))}
-    </tr>
-  );
-}
-
-function FourColRow({ cells }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      {cells.map((cell, i) => (
-        <td
-          key={i}
-          style={{
-            padding: "10px 14px",
-            fontSize: 13,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400,
-            lineHeight: 1.6,
-            verticalAlign: "top",
-          }}
-        >
-          {cell}
-        </td>
-      ))}
-    </tr>
-  );
-}
-
-function FiveColRow({ cells }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      {cells.map((cell, i) => (
-        <td
-          key={i}
-          style={{
-            padding: "8px 10px",
-            fontSize: 12,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400,
-            lineHeight: 1.5,
-            verticalAlign: "top",
-          }}
-        >
-          {cell}
-        </td>
-      ))}
-    </tr>
-  );
-}
-

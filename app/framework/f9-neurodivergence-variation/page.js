@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,905 +24,649 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", href: "#framework-position", description: "F8 describes a universal cost. F9 asks what happens when that cost is architectural, daily, and inescapable." },
-  { label: "The Regulation Thread", href: "#framework-position", description: "What if the environment itself prevents the building? You cannot build what the environment keeps dismantling." },
-  { label: "Nervous System Configuration", href: "#neurodivergence-as-configuration", description: "Neurodivergence is a difference in how the nervous system is configured. A variation in regulatory rhythm." },
-  { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what an environment requires and what a nervous system can sustainably provide." },
-  { label: "Masking as Structural Survival", href: "#masking-as-structural-survival", description: "When every environment punishes authentic configuration, masking becomes the only available survival strategy." },
-  { label: "Threshold Crossing and Burnout", href: "#threshold-dynamics", description: "The predictable outcome of a system running a design it was not built to run." },
-  { label: "Unmasking", href: "#unmasking-is-not-restoration", description: "Unmasking into an environment that remains mismatched fails. The environment must be able to receive what becomes visible." },
-  { label: "From Accommodation to Design", href: "#design-principles", description: "Seven core design principles: regulation first, sensory consideration, flexible pacing, and more." },
-  { label: "The Structural Argument", href: "#the-structural-argument", description: "Systems designed for one configuration lose access to what other configurations provide." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F9 makes about configuration variation and environmental mismatch." },
+  { label: "Same Instrument, Different Inputs", href: "#different-inputs", description: "The ESC is universal. What varies is the sensory, attention, and processing inputs arriving at it." },
+  { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what the environment requires and what a nervous system can sustainably provide." },
+  { label: "Masking at Structural Scale", href: "#structural-masking", description: "Each masked expression is an incomplete restoration sequence. Baseline rises." },
+  { label: "Threshold Dynamics", href: "#threshold-dynamics", description: "Meltdown, shutdown, mixed — regulatory collapse when accumulated activation exceeds the remaining margin." },
+  { label: "Neurodivergent Burnout", href: "#burnout", description: "Not exhaustion — baseline reorganisation. Different from general burnout." },
+  { label: "How Capacities Present Differently", href: "#capacity-presentation", description: "RE, ER, SEA present but differently channelled, expressed, and reported." },
+  { label: "How Masking Distorts Capacities", href: "#capacity-distortion", description: "RE misdirected, ER suppressed, SEA confused — distortion, not absence." },
+  { label: "What Repair Requires", href: "#repair-requirements", description: "Unmasking is not restoration. Seven design principles for environments built for variation." },
   { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
-  { label: "Bridge to F10", href: "#bridge-to-f10", description: "What happens across generations when adults do this work — individual repair and structural repair simultaneously." },
+  { label: "Bridge to F10", href: "#bridge", description: "What transmits when adults have done the work in environments that support it." },
+  { label: "Connections Map", href: "#connections", description: "How F9 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Neurodivergence as Nervous System Variation — When the Environment Is the Mismatch (F9) | TEG-Blue Research",
+  title: "Variation Is Configuration, Not Deficit (F9) | TEG-Blue Research",
   description:
-    "How neurodivergent nervous systems run the same compass with a different configuration, why system mismatch — not individual deficit — drives masking and burnout, and what variation-inclusive design looks like. Framework F9 of 12.",
+    "When the environment is the mismatch — configuration variation through the ESC architecture, system mismatch as structural concept, masking through the restoration sequence, and environments designed for variation. Framework F9 of the TEG-Blue 12-framework system.",
   keywords: [
     "neurodivergence",
-    "nervous system variation",
+    "configuration variation",
     "system mismatch",
-    "neurodivergent masking",
-    "masking costs",
-    "threshold dynamics",
+    "masking cost",
     "neurodivergent burnout",
-    "variation-inclusive design",
-    "unmasking",
-    "awareness capacities",
-    "emotional technology",
+    "sensory processing",
+    "universal design",
+    "nervous system variation",
+    "interoceptive substrate",
+    "structural accommodation",
+    "capacity distortion",
+    "environmental design",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f9-neurodivergence-variation",
   },
   openGraph: {
-    title: "Neurodivergence as Nervous System Variation — F9 Framework | TEG-Blue",
+    title: "Variation Is Configuration, Not Deficit — F9 Framework | TEG-Blue",
     description:
-      "How neurodivergent nervous systems run the same compass with a different configuration, why system mismatch drives masking and burnout, and what variation-inclusive design looks like.",
+      "When the environment is the mismatch — the second framework in the repair arc. Framework F9 of 12.",
     url: "https://teg-blue.org/framework/f9-neurodivergence-variation",
-    siteName: "TEG-Blue Research",
     type: "article",
+    siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neurodivergence as Nervous System Variation — TEG-Blue F9",
+    title: "Variation Is Configuration — TEG-Blue F9",
     description:
-      "How neurodivergent nervous systems run the same compass with a different configuration. Why system mismatch drives masking and burnout.",
+      "The same regulatory instrument, different inputs. When the environment is designed for one configuration, every other configuration pays the cost.",
   },
   other: {
-    'citation_title': 'Neurodivergence as Nervous System Variation: When the Environment Is the Mismatch',
+    'citation_title': 'Variation Is Configuration, Not Deficit',
     'citation_author': 'Anna Paretas-Artacho',
-    'citation_publication_date': '2026/03',
+    'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
 
 // ─── PAGE ──────────────────────────────────────────────────
 
-export default function F9NeurodivergenceVariationPage() {
-
-  /* ── local helpers ─────────────────────────────────── */
-
-
-  function KeyStatement({ children }) {
-    return (
-      <blockquote style={{
-        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-        paddingLeft: 16, margin: "20px 0", fontStyle: "italic",
-        fontSize: 14, lineHeight: 1.7, color: TEXT.primary,
-      }}>
-        {children}
-      </blockquote>
-    );
-  }
-
-  function TableRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function ThreeColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function FourColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "8px 10px", fontSize: 12, lineHeight: 1.5,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-
-  const thStyle = {
-    padding: "10px 14px", fontSize: 12, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const narrowThStyle = {
-    padding: "8px 10px", fontSize: 11, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-
-  /* ── data ──────────────────────────────────────────── */
-
-  const faqItems = [
-    {
-      q: "Is neurodivergence a deficit or disorder?",
-      a: "No. F9 frames neurodivergence as a difference in how the nervous system is configured — how it processes information, rhythm, sensory input, attention, social signals, and emotion. The framework rejects diagnostic language that embeds pathology assumptions and uses configuration language instead. A neurodivergent nervous system in a well-matched environment can sit in Safety & Openness just as sustainably as any other.",
-    },
-    {
-      q: "What is System Mismatch?",
-      a: "System Mismatch is the gap between what an environment requires and what a nervous system can sustainably provide. It relocates the problem from 'the person is disordered' to 'the environment is mismatched.' The same person may function well in one context and struggle in another — the variable is context, not neurology.",
-    },
-    {
-      q: "Why is unmasking alone not sufficient for repair?",
-      a: "Unmasking means dropping neurotypical performance; repair means being received in authentic neurological expression. Unmasking into an environment that cannot hold authenticity can increase harm — triggering rejection, job loss, or more rigid masking afterward. Restoration requires an accommodating environment, accurate mirroring, internalized shame repair, grief work, identity reconstruction, and relational renegotiation.",
-    },
-    {
-      q: "How does neurodivergent burnout differ from general burnout?",
-      a: "Neurodivergent burnout involves skill regression (previously manageable tasks become impossible), increased sensitivity (lower threshold for all input), extended recovery (weeks to months), masking collapse (the mask drops by depletion), and identity confusion. It results from accumulated masking cost plus chronic mismatch, not overwork alone. Recovery requires environmental change, not just rest.",
-    },
-    {
-      q: "What does variation-inclusive design look like?",
-      a: "Rather than treating neurodivergent needs as exceptions requiring special accommodation, variation-inclusive design builds for neurological variation from the start. Seven core principles: regulation first (safety before performance), sensory consideration, flexible pacing, communication clarity, autonomy respect, multiple modalities, and rest integration.",
-    },
-  ];
-
-  /* ── render ────────────────────────────────────────── */
+export default function F9VariationPage() {
+  const accent = SPECTRUM.cobalt;
 
   return (
-    <>
-      <SiteHeader />
+    <div
+      style={{
+        minHeight: "100vh",
+        background: BG.page,
+        fontFamily: FONT.display,
+      }}
+    >
+      <SiteHeader currentPath="/framework/f9-neurodivergence-variation" />
 
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F9"
-              title="Neurodivergence as Nervous System Variation"
-              subtitle="When the Environment Is the Mismatch"
-              description="How neurodivergent nervous systems run the same compass with different configurations — and how the gap between what environments require and what a nervous system can sustainably provide produces masking, burnout, and developmental arrest. Maps variation as configuration — different regulatory rhythms running the same instrument. The second framework in the restoration arc (F8–F12)."
-              group="Repair"
-              groupLabel="Repair Arc · F8–F12"
-              threadLabel="Reverses the Thread"
-              threadLine="Builds the original — maps variation as configuration"
-              adjacent={{
-                prev: { label: "F8 Repairing Awareness", href: "/framework/f8-repairing-awareness" },
-                next: { label: "F10 Generational Bridges", href: "/framework/f10-generational-bridges" },
-              }}
-            />
+            badge="FRAMEWORK F9"
+            title="Variation Is Configuration, Not Deficit"
+            subtitle="When the Environment Is the Mismatch"
+            description="F8 established that repair requires safety before capacity, that every configuration gets masked when the environment cannot hold it, and that different configurations make the collective stronger. F9 asks: what happens when that pattern becomes structural? When environments are designed for one set of nervous system inputs, the mismatch is not interpersonal — it is architectural. For nervous systems configured differently, the cost of masking becomes structural, daily, and inescapable."
+            group="Repair"
+            groupLabel="Repair Arc · F8–F12"
+            threadLine="Variation is configuration, not deficit — environments redesigned for variation. Restores: accuracy"
+            informsModels={[
+              { label: "M1", href: "/model/m1-emotions-as-signals" },
+              { label: "M2", href: "/model/m2-nervous-system-states" },
+            ]}
+            adjacent={{
+              prev: { label: "F8 Awareness Rebuilds Through Safety", href: "/framework/f8-repairing-awareness" },
+              next: { label: "F10 What the Adult Processes", href: "/framework/f10-generational-repair" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
               concept: "Safety Before Capacity",
               framework: "F8",
-              description: "Awareness capacities rebuild through safety, not instruction — the conditions must precede the capacity.",
+              description: "Felt safety (the ESS's assessment), not understood safety (the CLS's conclusion) — five conditions create the environment repair requires.",
               href: "/framework/f8-repairing-awareness#safety-before-capacity",
             },
             {
-              concept: "Developmental Calibration",
-              framework: "F2",
-              description: "How the nervous system gets configured through the relational environment — the same mechanism that produces variation.",
-              href: "/framework/f2-awareness-calibration#developmental-calibration",
+              concept: "State-Dependent Sensory Filtering",
+              framework: "M2",
+              description: "The nervous system's physiological configuration shaping what sensory input reaches the person before conscious thought — the same environment can produce different states in different nervous systems.",
+              href: "/model/m2-nervous-system-states",
+            },
+            {
+              concept: "The Bias Mechanism",
+              framework: "F6",
+              description: "If believing something reduces activation, the system keeps believing it — the regulatory equation that produces 'disorder' language when configuration variation is read as deficit.",
+              href: "/framework/f6-bias-regulates#bias-regulation",
             },
           ]} />
 
-          {/* ── Core Claims ── */}
-          <PropositionBox
-            title="Core Propositions — F9"
-            items={[
-              "Neurodivergence is a difference in nervous system configuration — the compass is the same, the configuration is different",
-              "System Mismatch — the gap between what an environment requires and what a nervous system can sustainably provide — is the named mechanism that produces masking, burnout, and developmental arrest",
-              "Masking has cumulative, compounding costs across energetic, cognitive, emotional, somatic, developmental, and identity domains",
-              "Unmasking is not equivalent to restoration — dropping the mask without an accommodating environment can increase harm",
-              "Variation-inclusive design is not accommodation but structural intelligence — different configurations see different things, and the collective benefits from that diversity",
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Neurodivergence",
+                commonUnderstanding: "A disorder — a brain that doesn't work correctly, needing treatment or correction to function normally.",
+                definition: "A description of input variation across the universal system. The Emotional Somatic Cycle runs in every nervous system. What varies is the inputs: sensory thresholds, attention patterns, processing speeds, emotional intensity, communication channels. The regulatory instrument is the same. The data arriving at it is different.",
+              },
+              {
+                title: "Accommodation",
+                commonUnderstanding: "A special exception made for people with disabilities — an extra cost the system bears for individuals who can't keep up.",
+                definition: "A retrofit that identifies individuals and modifies their experience. The alternative is design: environments built for the range of nervous system variation from the start — anticipating that inputs will vary, without requiring disclosure or exception.",
+              },
+              {
+                title: "Meltdown",
+                commonUnderstanding: "An overreaction, a tantrum, a failure of self-control — something the person should be able to manage.",
+                definition: "Threshold crossing. The accumulated activation — from masking cost, environmental demand, and unresolved activation — exceeded the remaining regulatory margin. The nervous system shifted involuntarily. The response is proportional to the accumulated load, not to the triggering event.",
+              },
             ]}
           />
 
-          {/* ════════════════════════════════════════════════
-              FRAMEWORK POSITION
-             ════════════════════════════════════════════════ */}
-
-          <section id="framework-position">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
-
-            <p style={proseStyle}>
-              F8 establishes two principles: awareness capacities can be repaired (Part 1), and different configurations make the collective stronger (Part 2). F8 describes a universal pattern — everyone masks, conformity costs, difference is capacity.
-            </p>
-
-            <KeyStatement>
-              F9 asks: what happens when that pattern becomes structural?
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              When environments — schools, workplaces, healthcare systems, social norms — are designed around one neurological configuration, the cost of difference is no longer interpersonal. It is architectural. The pace, the sensory environment, the communication norms, the attention demands, the social rules — all built for one nervous system design. Everyone who does not match that design pays a daily, structural, inescapable regulatory cost.
-            </p>
-
-            <p style={proseStyle}>
-              F9 is not a framework <em>about</em> neurodivergent people. It is a framework about what happens when systems are built for one configuration and nervous systems arrive that work differently. The neurodivergent experience is the most visible, most costly, most structurally entrenched case of the universal pattern F8 describes.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Regulation Thread — F9's Position</h3>
-
-            <p style={proseStyle}>
-              The regulation thread through F1–F7 describes substitutes for regulation that was never built. F8 describes how to build what was missing. F9 adds a critical variable: <strong>what if the environment itself prevents the building?</strong>
-            </p>
-
-            <p style={proseStyle}>
-              Individual repair (F8) has limited impact when the person returns daily to an environment that requires chronic masking, exceeds their nervous system's sustainable capacity, and treats their authentic configuration as deficient. For neurodivergent people, the regulation thread operates at two levels simultaneously:
-            </p>
-
-            <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              <strong>1. The internal thread</strong> — the same F1–F7 mechanisms operating in every nervous system<br />
-              <strong>2. The structural thread</strong> — environments designed for a different configuration creating chronic mismatch that drives the internal thread harder
-            </p>
-
-            <KeyStatement>
-              You cannot build what the environment keeps dismantling.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              PART 1 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 1: Variation, Not Deficit
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              What neurodivergence is, what System Mismatch means, and why the problem is architectural.
-            </p>
+          {/* ─── CORE PROPOSITIONS ───────────────────────── */}
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
+                <li style={propositionItemStyle}>
+                  The Emotional Somatic Cycle is universal — the same signal architecture, the same state gradient, the same restoration sequence, the same awareness architecture — running with different sensory, attention, and processing inputs
+                </li>
+                <li style={propositionItemStyle}>
+                  System Mismatch is the gap between what an environment requires and what a nervous system can sustainably provide — structural, testable, and invisible to people whose configuration matches the design
+                </li>
+                <li style={propositionItemStyle}>
+                  Each masked expression is an incomplete restoration sequence — the body mobilised a response, the response was suppressed, and the activation remains unresolved, producing baseline elevation
+                </li>
+                <li style={propositionItemStyle}>
+                  The internal thread (F1–F7) and the structural thread (environmental mismatch) operate simultaneously — the structural thread amplifies the internal thread through chronic sensory activation, masking as sustained override, and social evaluation as chronic threat
+                </li>
+                <li style={propositionItemStyle}>
+                  Awareness capacities may be present but differently channelled (RE), differently expressed (ER), or differently reported (SEA) — assessment error follows F6's bias mechanism
+                </li>
+                <li style={propositionItemStyle}>
+                  Masking distorts the capacities it hides — RE misdirected to surveillance, ER suppressed below expression, SEA confused by sustained incongruence between internal state and external performance
+                </li>
+                <li style={propositionItemStyle}>
+                  Unmasking is not restoration — dropping the performance is not the same as the ESS receiving evidence that authenticity is safe — environments must be designed for variation, not retrofitted for exceptions
+                </li>
+              </ul>
+            </ExpandableSection>
           </div>
 
-          {/* ════════════════════════════════════════════════
-              C1 — NEURODIVERGENCE AS CONFIGURATION
-             ════════════════════════════════════════════════ */}
+          {/* ─── PART 1: CONFIGURATION, NOT DEFICIT ─────── */}
+          <PartDivider label="PART 1" title="Configuration, Not Deficit" color={accent} />
 
-          <section id="neurodivergence-as-configuration">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Neurodivergence as Nervous System Configuration</h2>
-
-            <p style={proseStyle}>
-              Neurodivergence is a difference in how the nervous system is configured — how it processes information, rhythm, sensory input, attention, social signals, and emotion. The framework rejects diagnostic language that embeds pathology assumptions ("disorder," "deficit," "symptom") and uses configuration language: <em>your nervous system works this way.</em>
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Dimension</th>
-                    <th style={thStyle}>What Varies</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Attention", "Sustained vs. hyperfocus and diffuse states; variable intensity; interest-driven rather than demand-driven"]} />
-                  <TableRow cells={["Sensory processing", "Low or high threshold; filtered vs. unfiltered input; seeking vs. avoiding"]} />
-                  <TableRow cells={["Emotional intensity", "Amplitude varying from baseline; processing time longer or shorter; different recovery patterns"]} />
-                  <TableRow cells={["Social processing", "Intuitive vs. explicit; implicit vs. systematic analysis; different signaling patterns"]} />
-                  <TableRow cells={["Cognitive style", "Linear/sequential vs. associative/parallel/nonlinear; different speeds for different tasks"]} />
-                  <TableRow cells={["Motor regulation", "Variable consistency; movement needs; stimming as regulation strategy"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>What Neurodivergence Is Not</h3>
-
-            <p style={proseStyle}>
-              Neurodivergence is a <strong>configuration</strong> — a different way the nervous system was built.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Connection to F1</h3>
-
-            <p style={proseStyle}>
-              F1 describes how every nervous system orients between safety and threat. Neurodivergent nervous systems run the same instrument — the compass — with a different configuration. The compass still moves between Safety & Openness, Threat & Defence, Strategy & Management, and Power & Dominance. The modes still function the same way. But the inputs are different (sensory thresholds, processing patterns, attention allocation), and therefore the compass responds differently to the same environment.
-            </p>
-
-            <KeyStatement>
-              A neurodivergent nervous system in a well-matched environment can sit in Safety & Openness just as sustainably as any other. When the compass cannot move, the variable may be the environment.
-            </KeyStatement>
-
-            <ExpandableSection title="The Sensory Filtering Mechanism" type="framework">
-              <p style={proseStyle}>
-                Perception begins at the periphery &mdash; eyes, ears, nose, gut, skin &mdash; all feeding in simultaneously, below conscious awareness. The amygdala fires in 12 milliseconds, before a single thought forms. In neurodivergent nervous systems, the baseline sensitivity of these channels varies &mdash; higher threshold, lower threshold, or differently calibrated. A nervous system with high sensory sensitivity is receiving more data through these channels before any filtering occurs. The compass is the same instrument. The inputs arriving at it are different. This is why the same environment can produce Connection in one nervous system and Protection in another.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                The neurodiversity paradigm (Singer, Walker, Silberman) frames neurodivergence as natural human variation rather than pathology. The Intense World Theory (Markram & Markram) describes heightened perception as a processing difference rather than a dysfunction. Polyvagal Theory (Porges) provides the mechanism: how safety detection shapes regulatory capacity differently across nervous system configurations.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 integrates the neurodiversity paradigm with the four-mode gradient, showing that neurodivergent nervous systems run the same compass with different inputs. This connects what the neurodiversity movement describes (variation) with what Polyvagal Theory explains (how safety and threat are detected) and what F1 provides (a measurement system for regulatory states). The compass is universal; the configuration is variable.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C2 — SYSTEM MISMATCH
-             ════════════════════════════════════════════════ */}
-
-          <section id="system-mismatch">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>System Mismatch</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              What is System Mismatch and how does it affect neurodivergent people?
+          {/* Concept 0: Same Instrument, Different Inputs */}
+          <section
+            id="different-inputs"
+            aria-labelledby="heading-different-inputs"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-different-inputs" style={sectionHeadingStyle(accent)}>
+              How the Same Regulatory Instrument Runs With Different Inputs
             </h2>
 
             <p style={proseStyle}>
-              <strong>System Mismatch</strong> is the gap between what an environment requires and what a nervous system can sustainably provide. This is not a metaphor. It is structural:
+              The Emotional Somatic Cycle runs in every nervous system. The four states are universal. The restoration sequence is universal. The awareness architecture is universal. What varies is the inputs.
             </p>
-
-            <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              A school that requires sustained seated attention for six hours is designed for one attention configuration. A nervous system with variable, interest-driven attention faces daily mismatch — not because the nervous system is broken, but because the school is designed for a different configuration.
-            </p>
-            <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              A workplace with open-plan offices, fluorescent lighting, and ambient noise is designed for one sensory configuration. A nervous system with high sensory sensitivity faces chronic sensory overload — not because the person is fragile, but because the workspace is designed for a different threshold.
-            </p>
-
-            <KeyStatement>
-              The fish doesn't know it's in water. The person whose configuration matches the environment doesn't know the environment was designed for them.
-            </KeyStatement>
-
-            <h3 style={conceptHeadingStyle}>Relocation of the Problem</h3>
-
             <p style={proseStyle}>
-              System Mismatch relocates the problem from "the person is disordered" to "the environment is mismatched." The same nervous system may function well in one context and struggle in another. The variable is context, not neurology. This is testable: place the same person in an environment designed for their configuration and observe what happens. The "symptoms" often reduce or disappear — not because the person was cured, but because the mismatch was removed.
+              Nervous system configuration varies across multiple dimensions: sensory processing (threshold, filtering, seeking or avoiding), attention (sustained, variable, interest-driven, demand-driven), emotional intensity (amplitude, processing time, recovery pattern), social processing (implicit, explicit, intuitive, systematic), cognitive style (linear, associative, parallel, sequential), and motor regulation (consistency, movement needs, stimming as regulatory strategy).
             </p>
-
-            <h3 style={conceptHeadingStyle}>Structural, Not Interpersonal</h3>
-
             <p style={proseStyle}>
-              System Mismatch is not about individual acceptance. It is about how environments are designed: schools built for sustained attention, workplaces built for neurotypical sensory baselines, social norms built for implicit communication, healthcare systems built for neurotypical presentation, bureaucracies built for sequential processing. These are design decisions, embedded in architecture, policy, and norm. They are invisible to people whose configuration matches the design — because for them, the environment simply feels "normal."
+              These are not personality traits. They are differences in how the nervous system is wired — how it receives sensory data, processes information, allocates attention, and generates physiological responses. The ESS in a nervous system with high sensory sensitivity receives more data through its sensory channels before any filtering occurs. The amygdala fires in 12 milliseconds — before a single thought forms. The amount and intensity of data arriving at the evaluation stage is different. The Safety-Threat Evaluation runs the same process on different inputs.
             </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                The Social Model of Disability (Oliver, Shakespeare) locates disability in the environment rather than the individual. Universal Design (CAST, Rose) argues that systems should be built for variation from the start rather than retrofitted. F9 integrates these with Polyvagal Theory's mechanism: the nervous system's safety detection responds to environmental match or mismatch, not to the person's "disorder."
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 names the specific mechanism — System Mismatch — and connects it to the four-mode gradient. When the environment matches the configuration, the compass can access Safety & Openness. When mismatch is chronic, the compass is pushed toward Threat & Defence or Strategy & Management not by internal pathology but by structural demand. This makes the problem measurable and the intervention architectural rather than clinical.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C3 — MASKING AS STRUCTURAL SURVIVAL
-             ════════════════════════════════════════════════ */}
-
-          <section id="masking-as-structural-survival">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Masking as Structural Survival</h2>
-
             <p style={proseStyle}>
-              F8 describes the universal masking pattern: authentic configuration expression leads to environmental punishment, the nervous system learns authenticity is unsafe, a regulatory strategy forms, the mask becomes automatic, and false coherence absorbs it. For neurodivergent people, this pattern operates at structural scale. The punishment is not just interpersonal. It is environmental — built into every institution, every space, every norm. There is no environment to escape to. The masking must be sustained across all contexts, all day, every day.
+              This means the same environment can produce different states in different nervous systems — not because one is functioning correctly and another is not, but because the inputs arriving at the regulatory instrument are different. A nervous system in a well-matched environment can sit in Safety & Openness as sustainably as any other.
             </p>
 
-            <h3 style={conceptHeadingStyle}>What Neurodivergent Masking Requires</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — same instrument, different inputs, different states */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <p style={proseStyle}>
-              The mask has an additional layer beyond what F8 describes. It requires hiding not just vulnerability or social performance, but <strong>the rhythm of the nervous system itself</strong>: suppressing stims (the body's own regulation strategy), forcing eye contact (overriding the system's authentic processing), moderating expression (performing neurotypical emotional display), performing social fluency (running explicit analysis to mimic implicit processing), maintaining pace (forcing the system to process at a speed it was not built for), and filtering display (hiding sensory responses the environment treats as dramatic or weak).
-            </p>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Singer (1998) — the neurodiversity paradigm: neurological variation as natural human variation. Markram & Markram (2010) — Intense World Theory: heightened perception as processing difference. Porges (2011) — safety detection operates through sensory channels that vary in threshold and sensitivity.
+                </p>
+              </ExpandableSection>
 
-            <h3 style={conceptHeadingStyle}>Cumulative and Compounding Costs</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Domain</th>
-                    <th style={thStyle}>What Masking Costs</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Energetic", "Chronic fatigue; extended recovery time needed; energy unavailable for anything else"]} />
-                  <TableRow cells={["Cognitive", "Processing capacity consumed by performance; decision fatigue; reduced capacity for actual work"]} />
-                  <TableRow cells={["Emotional", "Disconnection from authentic feeling; cannot tell what is real vs. performed; Affective Resonance (ER) collapses under chronic load"]} />
-                  <TableRow cells={["Somatic", "Chronic tension; pain; stress-related illness; the body carrying what the mask suppresses"]} />
-                  <TableRow cells={["Developmental", "Capacities that are suppressed do not develop. Masking does not just hide — it prevents growth. The three awareness capacities (F8) cannot develop while being chronically overridden"]} />
-                  <TableRow cells={["Identity", "False coherence absorbs the mask: 'I'm just bad at this.' 'Something is wrong with me.' 'If I were better, this wouldn't be so hard.'"]} />
-                </tbody>
-              </table>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Configuration variation mapped through the ESC architecture — the same signal architecture (<Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1</Link>), state gradient (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>), restoration sequence (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>), and awareness architecture (<Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link>) operate in every nervous system, with inputs that vary. This reframes "neurodivergence" from a category of people to a description of input variation across the universal system. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <ExpandableSection title="Masking Prevents Activation Cycle Completion" type="framework">
-              <p style={proseStyle}>
-                Beyond regulatory exhaustion, masking has a specific biological consequence: it prevents the activation cycle from completing. Every suppressed stim, every forced expression, every overridden sensory response is an activation that was started and not allowed to finish. The expression was the body&rsquo;s attempt to complete the cycle &mdash; and masking stopped it mid-sequence. Open cycles accumulate. The person starts each new day from a progressively more activated baseline &mdash; less room to handle new stress, lower threshold for crossing.
-              </p>
-            </ExpandableSection>
-
-            <h3 style={conceptHeadingStyle}>Connection to F3</h3>
-
-            <p style={proseStyle}>
-              F3's core mechanism — cognition tells the emotional system "you're not needed" — operates with particular intensity in neurodivergent masking. The false coherence is specific: <strong>"My authentic rhythm is wrong. My nervous system is defective. Safety requires performing neurotypicality."</strong> It is a regulatory structure — challenging it feels like regulatory collapse (F3 C4, cognitive dissonance as regulatory stress).
-            </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Masking research (Price, Rose, Mate) documents the costs of camouflaging across autistic and ADHD populations. Trauma research (van der Kolk, Herman, Perry) shows how chronic threat calibrates the nervous system into protective states. F9 integrates these: structural masking is chronic threat at environmental scale, producing the same regulatory consequences that individual threat produces — but without escape.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 connects F8's universal masking pattern to structural scale, showing that neurodivergent masking is not a separate phenomenon but the same mechanism operating under conditions of no escape. The six-domain cost model provides a measurable framework for what masking research describes qualitatively, and the connection to F3 explains why "just stop masking" fails: the false coherence is a regulatory structure, not a belief.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C4 — THRESHOLD DYNAMICS
-             ════════════════════════════════════════════════ */}
-
-          <section id="threshold-dynamics">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Threshold Dynamics</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              What causes neurodivergent burnout and how can it be predicted?
+          {/* Concept 1: System Mismatch */}
+          <section
+            id="system-mismatch"
+            aria-labelledby="heading-system-mismatch"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-system-mismatch" style={sectionHeadingStyle(accent)}>
+              When the Environment Is the Mismatch
             </h2>
 
             <p style={proseStyle}>
-              Every nervous system has a threshold — the point at which regulatory capacity is exceeded. F9 names the equation:
+              <strong style={{ color: TEXT.primary }}>System Mismatch</strong> is the gap between what an environment requires and what a nervous system can sustainably provide. The concept is structural: it relocates the source of difficulty from the person's neurology to the relationship between the person's neurology and the environment's design.
+            </p>
+            <p style={proseStyle}>
+              A school that requires sustained seated attention for six hours is designed for one attention configuration. A nervous system with variable, interest-driven attention faces daily mismatch. A workplace with open-plan offices, fluorescent lighting, and ambient noise is designed for one sensory configuration. A nervous system with high sensory sensitivity faces chronic overload.
+            </p>
+            <p style={proseStyle}>
+              The mismatch is testable. Place the same nervous system in an environment designed for its configuration and observe what happens. When the sensory environment matches the sensory threshold, when the pacing matches the processing rhythm — the "symptoms" often reduce or disappear.
+            </p>
+            <p style={proseStyle}>
+              System Mismatch is embedded in architecture, policy, and norm — not in individual attitudes. The lighting was chosen. The pacing was set. These are design decisions. They are invisible to people whose configuration matches the design — because for them, the environment feels normal. This is the structural equivalent of <Link href="/framework/f2-awareness-calibration#disruption-conditions" style={linkStyle}>F2's</Link> invisibility principle: the person inside the matched configuration does not know the environment was designed for them, just as the person inside a chronic state does not know it is a state.
             </p>
 
-            <div style={{
-              padding: "16px 20px", margin: "16px 0 24px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.08),
-              borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-              fontFamily: "monospace", fontSize: 14, color: TEXT.primary,
-              textAlign: "center",
-            }}>
-              Threshold = Baseline capacity − (Masking cost + Environmental demand + Accumulated stress)
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — system mismatch: same environment, different inputs, different states */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Oliver (1990) — the Social Model of Disability: disability as environmental barrier. Shakespeare (2006) — the interactional model: disability as the relationship between individual and environment. Rose & Meyer (2002) — Universal Design for Learning: environments designed for the range of human variation.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  System Mismatch grounded in the ESC architecture — the same environment produces different nervous system states because the inputs arriving at the regulatory instrument differ. The structural application of F2's invisibility principle. The testability: change the environment, observe the configuration's response. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <p style={proseStyle}>
-              For a nervous system facing chronic mismatch and sustained masking, the threshold is under constant pressure. Crossing is not an anomaly — it is the predictable outcome when the equation turns negative.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>What Threshold Crossing Looks Like</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Response</th>
-                    <th style={thStyle}>Presentation</th>
-                    <th style={thStyle}>Internal Experience</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Meltdown", "Emotional explosion — tears, rage, panic", "Overwhelm; loss of regulatory control; shame afterward"]} />
-                  <ThreeColRow cells={["Shutdown", "Withdrawal — silence, immobility, absence", "Numbness; disconnection; the system pulling the emergency brake"]} />
-                  <ThreeColRow cells={["Mixed", "Oscillation between activation and withdrawal", "Dysregulation across all systems simultaneously"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              These responses are frequently misinterpreted — as manipulation, overreaction, drama, laziness, or attention-seeking. They are regulatory collapse following prolonged strain. The same responses that any nervous system would produce if run at unsustainable load for long enough.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Neurodivergent Burnout</h3>
-
-            <p style={proseStyle}>
-              Distinct from general burnout. Not exhaustion that recovery addresses. A shift in the nervous system's baseline: <strong>skill regression</strong> (previously manageable tasks become impossible — not unwillingness but incapacity), <strong>increased sensitivity</strong> (lower threshold for sensory, emotional, and social input), <strong>extended recovery</strong> (weeks to months, not days), <strong>masking collapse</strong> (inability to maintain the performance — the mask drops not by choice but by depletion), and <strong>identity confusion</strong> ("Is this my real capacity? Was I always this incapable? Or was the previous performance the real me?").
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Chronic Threshold State</h3>
-
-            <p style={proseStyle}>
-              When the system is persistently close to threshold — chronic Protection or chronic Control — the threshold itself lowers over time. Accumulated stress, sustained masking, and compounding environmental demand create a descending spiral. Recovery requires environmental change, not just individual intervention. Treating burnout as an individual problem (self-care, rest, resilience training) fails because the source is structural. Sustainable recovery requires lowering demands, reducing masking requirements, and environmental redesign.
-            </p>
-
-            <ExpandableSection title="Chronic Flatness as Masking Endpoint" type="framework">
-              <p style={proseStyle}>
-                When masking is sustained long enough, a specific configuration can emerge: Chronic Flatness. All three awareness capacities sit at baseline minimum &mdash; not as acute shutdown (which is temporary) but as the operating state. The biology is still generating activation, but the channels for accessing, expressing, and using that activation are at minimum or offline. Regulation signature: external or none. This is the endpoint of the descending spiral &mdash; not threshold crossing as crisis, but threshold crossing as new operating state.
-              </p>
-            </ExpandableSection>
-
-            <KeyStatement>
-              You cannot rest your way out of an environment that requires you to run a system your nervous system was not built to run.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Masking research (Price, Rose) documents the link between chronic masking and autistic burnout. Allostatic load theory (McEwen) provides the physiological mechanism for cumulative stress effects. F9 integrates these with the four-mode gradient: threshold crossing is the compass being pushed past its sustainable range by chronic mismatch, and burnout is the allostatic consequence of environments that hold the compass in Threat & Defence indefinitely.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                The threshold equation provides a testable, predictive model: when the right side exceeds the left, crossing is predicted. The chronic threshold state concept explains why burnout worsens over time even without new stressors — the equation becomes more negative as baseline capacity erodes. And the treatment principle follows directly: if the source is structural, the intervention must be structural.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              PART 2 DIVIDER
-             ════════════════════════════════════════════════ */}
+          {/* ─── PART 2: WHAT MISMATCH PRODUCES ────────── */}
+          <PartDivider label="PART 2" title="What Mismatch Produces" color={accent} />
 
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 2: Repair in Context
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              What repair requires for neurodivergent people, why unmasking without safety fails, and what genuine inclusion looks like.
-            </p>
-          </div>
-
-          {/* ════════════════════════════════════════════════
-              C5 — UNMASKING IS NOT RESTORATION
-             ════════════════════════════════════════════════ */}
-
-          <section id="unmasking-is-not-restoration">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Unmasking Is Not Restoration</h2>
+          {/* Concept 2: Structural Masking */}
+          <section
+            id="structural-masking"
+            aria-labelledby="heading-structural-masking"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-structural-masking" style={sectionHeadingStyle(accent)}>
+              Why Masking at Structural Scale Has Specific Biological Consequences
+            </h2>
 
             <p style={proseStyle}>
-              Growing awareness of masking's harm has created calls for unmasking. This is correct but incomplete. <strong>Unmasking</strong> means dropping the neurotypical performance. <strong>Repair</strong> means being received in authentic neurological expression. These are not equivalent. Unmasking into an environment that cannot hold authenticity can increase harm.
+              For nervous systems configured differently from the environmental default, the masking pattern <Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8</Link> described operates at structural scale. The punishment is not interpersonal — it is environmental, built into every institution. There is no environment to escape to. The masking must be sustained across all contexts, all day, every day.
+            </p>
+            <p style={proseStyle}>
+              Beyond what F8 describes, structural masking requires hiding the rhythm of the nervous system itself: suppressing stims (the body's own regulation strategy — movement that discharges activation), forcing eye contact (overriding authentic processing to perform neurotypical signalling), moderating expression (performing expected display when the authentic intensity differs), performing social fluency (running explicit cognitive analysis to replicate what implicit processing produces in other configurations), maintaining pace (forcing the system to process at a speed it was not built for).
+            </p>
+            <p style={proseStyle}>
+              Each of these performances has a specific biological consequence. Every suppressed stim is an activation sequence that was started and not allowed to complete. Every forced expression is a physiological response overridden by cognitive control. These are the restoration sequence (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>) interrupted at the mobilisation stage — the body mobilised a response, the response was suppressed, and the activation remains unresolved. Cortisol stays elevated. Muscle tension persists. The debris accumulates. The person starts each new day from a progressively more activated baseline.
             </p>
 
-            <h3 style={conceptHeadingStyle}>What Repair Actually Requires</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — masking as interrupted restoration, debris accumulation */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Requirement</th>
-                    <th style={thStyle}>What It Means</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Accommodating environment", "Settings that do not require neurotypical performance for safety, belonging, or functioning"]} />
-                  <TableRow cells={["Accurate mirroring", "Being seen as a person with a different configuration — not as defective, broken, or special"]} />
-                  <TableRow cells={["Internalized shame repair", "Undoing the false coherence that says 'my authentic rhythm is wrong' — F3 repair at the deepest level"]} />
-                  <TableRow cells={["Grief work", "Mourning what was lost to masking and mismatch — developmental time, authentic relationships, accurate self-understanding, embodied experience"]} />
-                  <TableRow cells={["Identity reconstruction", "Discovering who one is without the mask — F8's repair process applied to the specific question of neurodivergent identity"]} />
-                  <TableRow cells={["Relational renegotiation", "Updating relationships built on the masked presentation — some deepen, some cannot survive the change"]} />
-                </tbody>
-              </table>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Price (2022) — the physiological cost of sustained masking across neurodivergent populations. Van der Kolk (2014) — incomplete activation cycles as the mechanism of chronic stress accumulation. McEwen (1998) — allostatic load.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Masking's biological cost traced through the specific ESC mechanism: each masked expression is an incomplete restoration sequence. The debris accumulation (M3) applied to structural masking — the specific accumulation of unresolved activation from interrupted mobilisation responses. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>The Clinical Danger of Premature Unmasking</h3>
-
-            <p style={proseStyle}>
-              Encouraging unmasking without environmental support can trigger rejection experiences that confirm the original assessment (authenticity is dangerous), cause job loss, relationship rupture, or social exclusion, lead to more rigid masking after the failed attempt (the nervous system now has fresh evidence that the mask is necessary), and retraumatize — the person risks again what they risked as a child and gets the same result.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Sequence Matters</h3>
-
-            <p style={proseStyle}>
-              1. <strong>Assess available environments</strong> — Does the person have any context that can hold authentic expression? If not, build that first. 2. <strong>Build understanding of configuration</strong> — Does the person know who they are without the mask? This is F8 Part 1 applied to neurodivergent self-knowledge. 3. <strong>Develop skills for communicating needs</strong> — Can the person advocate for accommodation? 4. <strong>Create support network</strong> — Are there people who will welcome the unmasked self?
-            </p>
-
-            <KeyStatement>
-              Unmasking into a vacuum fails. The environment must be ready before the mask comes off.
-            </KeyStatement>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 distinguishes unmasking from restoration and provides a sequenced model: assess environment, build self-understanding, develop communication capacity, create support, then unmask. This prevents the clinical error of encouraging authenticity into environments that will punish it — the same error F8 identifies for repair generally, applied to the specific structural conditions neurodivergent people face.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C6 — AWARENESS CAPACITIES IN NEURODIVERGENT EXPERIENCE
-             ════════════════════════════════════════════════ */}
-
-          <section id="awareness-capacities-in-neurodivergent-experience">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Awareness Capacities in Neurodivergent Experience</h2>
+          {/* Concepts 3-4: Two Threads + Threshold Dynamics */}
+          <section
+            id="threshold-dynamics"
+            aria-labelledby="heading-threshold-dynamics"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-threshold-dynamics" style={sectionHeadingStyle(accent)}>
+              Threshold Dynamics and What Crossing Looks Like
+            </h2>
 
             <p style={proseStyle}>
-              A common clinical error: assuming neurodivergent people lack awareness capacities. In reality, the capacities are present but configured differently.
+              For a nervous system facing chronic mismatch, the regulation thread operates at two levels simultaneously. The <strong style={{ color: TEXT.primary }}>internal thread</strong> — the F1–F7 mechanisms — runs in every nervous system regardless of configuration. The <strong style={{ color: TEXT.primary }}>structural thread</strong> — environmental mismatch — is an additional, external source of chronic activation that drives the internal thread harder. Chronic sensory activation raises the baseline, masking prevents discharge, social evaluation adds new activation. The structural thread amplifies the internal thread.
+            </p>
+            <p style={proseStyle}>
+              Every nervous system has a threshold — the point at which regulatory capacity is exceeded and the system shifts involuntarily. For a nervous system under chronic mismatch and sustained masking, the threshold is under constant pressure:
             </p>
 
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Capacity</th>
-                    <th style={narrowThStyle}>Neurotypical Norm</th>
-                    <th style={narrowThStyle}>Common ND Configuration</th>
-                    <th style={narrowThStyle}>What Gets Misread</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <FourColRow cells={[
-                    "Interpersonal Affect Perception (RE)",
-                    "Implicit, automatic, moderate sensitivity",
-                    "May be hyper-accurate (reads too much), systematically processed (explicit analysis vs. intuition), or differently channeled (reads patterns, not faces)",
-                    "\"Lacks empathy\" — when Interpersonal Affect Perception (RE) is actually very high but expressed differently",
-                  ]} />
-                  <FourColRow cells={[
-                    "Affective Resonance (ER)",
-                    "Moderate intensity, socially calibrated display",
-                    "May be intense (higher amplitude, longer processing), delayed (response arrives after the social moment has passed), or internally deep but externally flat",
-                    "\"Doesn't care\" — when Affective Resonance (ER) is actually flooded but not displayed",
-                  ]} />
-                  <FourColRow cells={[
-                    "Interoceptive Self-Awareness (SEA)",
-                    "Develops through standard co-regulation",
-                    "May be highly developed (intense interoception, detailed self-knowledge) or significantly disrupted by chronic masking (cannot distinguish real from performed)",
-                    "\"Not self-aware\" — when Interoceptive Self-Awareness (SEA) may be acute but expressed in non-standard language",
-                  ]} />
-                </tbody>
-              </table>
+            <p
+              style={{
+                fontSize: 14,
+                fontFamily: FONT.mono,
+                color: TEXT.muted,
+                padding: "12px 16px",
+                background: hexToRgba(accent, 0.08),
+                borderRadius: 6,
+                marginBottom: 16,
+                textAlign: "center",
+                lineHeight: 1.6,
+              }}
+            >
+              Baseline capacity − (masking cost + environmental demand + accumulated unresolved activation) = remaining regulatory margin
+            </p>
+
+            <p style={proseStyle}>
+              When the margin reaches zero, the system crosses. <strong style={{ color: TEXT.primary }}>Activation crossing (meltdown):</strong> sympathetic activation surges — cortisol spikes, the perceptual field narrows. The nervous system discharging activation it could no longer contain. <strong style={{ color: TEXT.primary }}>Withdrawal crossing (shutdown):</strong> dorsal vagal withdrawal — heart rate drops, sensory processing dims, cognitive access disconnects. The nervous system going offline. <strong style={{ color: TEXT.primary }}>Mixed crossing:</strong> rapid oscillation between activation and withdrawal — the regulatory instrument overwhelmed.
+            </p>
+            <p style={proseStyle}>
+              These responses are frequently misinterpreted — as manipulation, overreaction, laziness — because the observer's nervous system does not experience the same activation in the same environment. The observer's configuration matches the environmental design. The threshold is not visible from outside.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — threshold equation and three crossing types */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Porges (2011) — the autonomic hierarchy: sympathetic activation, then dorsal vagal withdrawal when exceeded. Siegel (2012) — window of tolerance. Perry (2006) — dose-response in chronic stress: state-dependent functioning. McEwen (1998) — allostatic overload when cumulative cost exceeds capacity.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The two-thread model — internal and structural as simultaneous, compounding sources. The threshold equation with three specific variables. Three crossing presentations traced through the nervous system gradient. The structural explanation for why the observer does not perceive the threshold: their configuration matches the environment. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>Masking Distorts the Capacities</h3>
-
-            <p style={proseStyle}>
-              The greatest damage to neurodivergent awareness capacities comes not from the configuration itself but from chronic masking. <strong>Interpersonal Affect Perception (RE) gets misdirected</strong> — used to monitor social danger and maintain the mask rather than to connect. <strong>Affective Resonance (ER) gets suppressed</strong> — because emotional intensity that does not match neurotypical norms gets punished; over time, the dampening becomes automatic. <strong>Interoceptive Self-Awareness (SEA) gets confused</strong> — the person cannot distinguish their authentic internal state from the performed state; after years of masking, the question becomes genuinely unanswerable without support.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Repair Requires Rhythm Authenticity</h3>
-
-            <p style={proseStyle}>
-              F8's repair pathways apply — but with a critical addition. For neurodivergent people, awareness capacity repair requires reconnection to <strong>neurodivergent rhythm</strong>. Not "learning to regulate like a neurotypical person with extra steps." Returning to the processing speed, sensory experience, emotional intensity, and attention patterns that are the person's authentic configuration.
-            </p>
-
-            <KeyStatement>
-              You cannot develop your capacities while suppressing the system those capacities run on.
-            </KeyStatement>
-
-            <ExpandableSection title="Developmental Absence and Restoration Unavailability" type="framework">
-              <p style={proseStyle}>
-                F8&rsquo;s distinction between chronic suppression and developmental absence applies with particular force here. If the environment never provided the conditions for a capacity to develop &mdash; because the person&rsquo;s authentic rhythm was masked from childhood &mdash; the capacity was not suppressed. It was never built. Recovery means building, not unblocking.
-              </p>
-              <p style={proseStyle}>
-                Chronic masking also forces a chronic mode &mdash; and the chronic mode blocks the specific restoration type that mode requires. Chronic Connection from masking needs genuine relational contact, but the connection being produced is performed, not real. Chronic Protection from masking needs safety long enough for the alarm to stand down, but the environment keeps requiring the very performance that sustains the alarm. Chronic Control from masking needs Control Restoration (releasing the cognitive override), but the mask IS the override. The structural mismatch does not just cost energy. It blocks the biological return pathway.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Attachment neurobiology (Bowlby, Schore) shows that safety shapes regulatory development. Mentalization theory (Fonagy, Target) explains how reflective capacity develops in conditions of emotional safety. F9 integrates these with F2's core insight (awareness teaches awareness): when the environment chronically punishes the nervous system's authentic processing, the awareness capacities that depend on that processing cannot develop.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 applies F2's three-capacity model to neurodivergent experience, showing that the capacities are not absent but configured differently — and that the primary damage comes from masking rather than from the configuration itself. The principle of rhythm authenticity connects F8's repair pathways to the specific developmental requirement that the system those capacities run on must be operating authentically for repair to proceed.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C7 — DESIGN PRINCIPLES
-             ════════════════════════════════════════════════ */}
-
-          <section id="design-principles">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Design Principles for Variation-Inclusive Systems</h2>
-
-            <h3 style={conceptHeadingStyle}>From Accommodation to Design</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Accommodation Model</th>
-                    <th style={thStyle}>Design Model</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Retrofit after failure", "Build for variation from the start"]} />
-                  <TableRow cells={["Exception process required (stigma attached)", "Standard options available (variation normalized)"]} />
-                  <TableRow cells={["Individual burden to request", "System responsibility to provide"]} />
-                  <TableRow cells={["Reactive — responds to identified need", "Proactive — anticipates variation"]} />
-                  <TableRow cells={["\"What special thing does this person need?\"", "\"What range of configurations will use this system?\""]} />
-                </tbody>
-              </table>
-            </div>
+          {/* Concept 5: Neurodivergent Burnout */}
+          <section
+            id="burnout"
+            aria-labelledby="heading-burnout"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-burnout" style={sectionHeadingStyle(accent)}>
+              What Neurodivergent Burnout Is at the Substrate Level
+            </h2>
 
             <p style={proseStyle}>
-              The shift from accommodation to design is the shift from F4 thinking (one correct way, exceptions managed) to F8 Part 2 thinking (variation is expected, design includes it).
+              Neurodivergent burnout is distinct from general burnout. It is not exhaustion that rest addresses. It is a shift in the nervous system's baseline organisation — the system has reorganised around a higher resting activation level and a lower threshold, and the reorganisation does not reverse with rest alone.
+            </p>
+            <p style={proseStyle}>
+              The distinction is biological. General burnout depletes resources. Rest replenishes them. The system returns to its previous baseline. Neurodivergent burnout involves a shift in the baseline itself. The sustained masking and chronic mismatch produced enough unresolved activation, over enough time, that the nervous system's resting state has recalibrated upward (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>: Baseline Elevation). The floor has risen. The threshold has lowered. The window has narrowed — not temporarily, but as the new organisation.
+            </p>
+            <p style={proseStyle}>
+              What this looks like: <strong style={{ color: TEXT.primary }}>Skill regression</strong> — tasks that were previously manageable become impossible, because regulatory margin has been consumed. <strong style={{ color: TEXT.primary }}>Increased sensitivity</strong> — lower threshold for sensory, emotional, and social input. <strong style={{ color: TEXT.primary }}>Extended recovery</strong> — weeks to months, not days, because the shift is in the baseline organisation, requiring sustained different conditions. <strong style={{ color: TEXT.primary }}>Masking collapse</strong> — the mask drops not by choice but by depletion, the person's authentic configuration becoming visible, often for the first time in years.
             </p>
 
-            <h3 style={conceptHeadingStyle}>Core Design Principles</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — general burnout (depletion) vs neurodivergent burnout (reorganisation) */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Principle</th>
-                    <th style={narrowThStyle}>What It Means</th>
-                    <th style={narrowThStyle}>Why It Matters</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={["Regulation First", "Environmental safety before performance demands", "When the environment supports regulation, the compass can access Safety & Openness. When it demands performance before safety, it pushes toward Threat & Defence or Strategy & Management"]} />
-                  <ThreeColRow cells={["Sensory Consideration", "Lighting, sound, space, temperature designed for variable sensitivity", "Removes chronic sensory mismatch — regulatory reserves are not consumed by environmental overload"]} />
-                  <ThreeColRow cells={["Flexible Pacing", "Multiple timeline options; intensity variation allowed; interest-driven engagement accommodated", "Matches work to the nervous system's actual processing rhythm, not an arbitrary pace"]} />
-                  <ThreeColRow cells={["Communication Clarity", "Explicit expectations; reduced hidden curriculum; say what is meant", "Removes the guessing that consumes processing capacity"]} />
-                  <ThreeColRow cells={["Autonomy Respect", "Self-determined rhythms within broad parameters", "Respects that the person with the nervous system knows what that system needs"]} />
-                  <ThreeColRow cells={["Multiple Modalities", "Various ways to engage, learn, contribute", "Different configurations engage differently — requiring one modality excludes every configuration that processes through a different one"]} />
-                  <ThreeColRow cells={["Rest Integration", "Recovery built into structure, not punished", "When rest is designed in, threshold crossing is prevented rather than treated"]} />
-                </tbody>
-              </table>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  McEwen (1998) — allostatic load leading to system reorganisation. Price (2022) — neurodivergent burnout as distinct from occupational burnout. Maté (2003) — physiological consequences of sustained self-suppression.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Neurodivergent burnout traced through M3's Baseline Elevation — the resting activation level rising through accumulated unresolved activation from masking-interrupted restoration sequences. The structural distinction from general burnout: resource depletion (rest helps) vs baseline reorganisation (sustained different conditions required). This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>Institutional Application</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Setting</th>
-                    <th style={thStyle}>Design Changes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Schools", "Movement options; sensory breaks; multiple learning modes; explicit instruction; interest-following alongside curriculum; pacing flexibility"]} />
-                  <TableRow cells={["Workplaces", "Flexible scheduling; quiet spaces; written communication option; outcome focus over process control; meeting alternatives; sensory-friendly environments"]} />
-                  <TableRow cells={["Healthcare", "Extended appointments; sensory-friendly environments; clear communication; recognition of atypical presentation; configuration-informed assessment"]} />
-                  <TableRow cells={["Social Services", "Reduced bureaucratic complexity; multiple contact modes; accommodation by default rather than by request"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Universal Design for Learning (CAST, Rose) provides the educational framework for building systems that work for variation. The Social Model of Disability (Oliver, Shakespeare) provides the theoretical basis for locating the problem in the environment rather than the individual. F9 integrates these with the four-mode gradient: the seven design principles are specifications for environments that support the compass in accessing Safety & Openness rather than forcing it into Threat & Defence.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 translates the universal design literature into seven testable principles grounded in nervous system regulation. Each principle can be evaluated by its effect on the compass: does this design feature make it easier or harder for a nervous system with this configuration to access Connection? This provides a measurable standard for genuine inclusion — one that goes beyond compliance to design.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              C8 — THE STRUCTURAL ARGUMENT
-             ════════════════════════════════════════════════ */}
+          {/* ─── PART 3: CONFIGURATION DISTORTION ────────── */}
+          <PartDivider label="PART 3" title="Configuration Distortion" color={accent} />
 
-          <section id="the-structural-argument">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Structural Argument</h2>
-
-            <p style={proseStyle}>
-              F9 is not only about neurodivergent wellbeing. It is about collective intelligence — F8's argument at institutional scale. When systems are designed for one configuration, they lose access to what other configurations provide: the pattern-seeing that nonlinear processing offers, the precision that detail-oriented processing provides, the depth that slow processing generates, the early-warning that sensory sensitivity detects. All excluded by design.
-            </p>
-
-            <p style={proseStyle}>
-              They produce avoidable suffering — burnout, threshold crossing, developmental arrest, identity confusion — all predictable outcomes of chronic mismatch, all preventable through design. And they perpetuate the regulation thread: environments that demand masking create the same conditions F2 describes (authentic expression punished, false coherence built, capacities suppressed). Institutional design that excludes variation is F4 (rules regulate) applied at system level.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The False Economy</h3>
+          {/* Concepts 6-7: Capacity Presentation + Distortion */}
+          <section
+            id="capacity-presentation"
+            aria-labelledby="heading-capacity-presentation"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-capacity-presentation" style={sectionHeadingStyle(accent)}>
+              How Capacities Present Differently — and How Masking Distorts Them
+            </h2>
 
             <p style={proseStyle}>
-              Systems designed for one configuration appear efficient — one process, one standard, one pace. This efficiency is false. It excludes the contributions that different configurations would make, it generates avoidable healthcare, disability, and turnover costs, it produces compliant surfaces over genuine capacity, and it makes the system fragile through shared blind spots.
+              A common assessment error: concluding that a differently configured nervous system lacks awareness capacities. In many configurations, the capacities are present but expressed differently.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>RE</strong> may be hyper-accurate — reading system-level dynamics rather than individual facial expressions, identifying inconsistencies between verbal content and physiological signals, processing through explicit analysis rather than implicit detection. From outside: "missing social cues." The RE is present. The channel is different.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>ER</strong> may be intense — high amplitude, long processing time, deep physiological response — but externally flat. The resonance is happening in the body. The display is minimal because the configuration does not automatically translate internal experience into standard external expression. From outside: "doesn't care." The ER is present. The expression pathway is different.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>SEA</strong> may be highly developed — precise interoceptive signals, detailed awareness of internal states — but expressed in non-standard language. Sensory metaphor, body-location language, pattern description rather than standard emotion vocabulary. From outside: "not self-aware." The SEA is present. The reporting format is different.
+            </p>
+            <p style={proseStyle}>
+              The assessment error follows <Link href="/framework/f6-bias-regulates#bias-regulation" style={linkStyle}>F6's bias mechanism</Link>: the assessor's perception is calibrated to one configuration's expression pattern. When expression arrives through a different pattern, the perceptual filter reads absence rather than difference.
             </p>
 
-            <KeyStatement>
-              Genuine inclusion is not charity. It is structural intelligence.
-            </KeyStatement>
+            <h3 style={conceptHeadingStyle}>How Masking Distorts the Capacities It Hides</h3>
+            <p style={proseStyle}>
+              Chronic masking does not merely conceal capacities. It distorts them. <strong style={{ color: TEXT.primary }}>RE gets misdirected</strong> — redirected from understanding and connection toward monitoring social danger. The capacity is intact. Its function has shifted from connection to surveillance. <strong style={{ color: TEXT.primary }}>ER gets suppressed</strong> — when emotional intensity is punished, the nervous system blocks the expression pathway. Over time, the person may no longer recognise the resonance as present. <strong style={{ color: TEXT.primary }}>SEA gets confused</strong> — after years of performing a configuration, SEA cannot distinguish authentic internal state from the physiological residue of the performance itself.
+            </p>
+            <p style={proseStyle}>
+              The distortion compounds. Misdirected RE provides data about threat, reinforcing the assessment that the environment is unsafe. Suppressed ER means emotional responses are unavailable as information, impoverishing what SEA has to work with. Confused SEA makes the person more dependent on RE's social monitoring. Each distortion reinforces the others.
+            </p>
 
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F9 connects F8's collective intelligence argument to institutional design, showing that variation-exclusion is not just an ethical failure but a structural intelligence failure. The false economy analysis provides a cost-benefit framework that goes beyond accommodation compliance to genuine design optimization — building systems that are more capable because they include the full range of human nervous system configurations.
-              </p>
-            </ExpandableSection>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — three capacities: present differently + distorted by masking */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Milton (2012) — the double empathy problem: empathy difficulties between neurotypes as bidirectional. Crompton et al. (2020) — autistic-to-autistic communication is as effective as non-autistic-to-non-autistic. Barrett (2017) — emotion concepts as culturally constructed categories. Schore (2003) — affect regulation disrupted by sustained incongruence. Hull et al. (2017) — cognitive and emotional cost of camouflaging.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Awareness capacities mapped across configuration variation — what is assessed as absence may be different channelling (RE), different expression (ER), or different reporting (SEA). The assessment error traced through F6's bias architecture. Capacity distortion through masking — misdirection, suppression, confusion — as structural consequences, not properties of the configuration. The compounding cycle showing how each distortion reinforces the others. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 4: WHAT REPAIR REQUIRES ──────────── */}
+          <PartDivider label="PART 4" title="What Repair Requires" color={accent} />
+
+          {/* Concepts 8-9: Unmasking + Design */}
+          <section
+            id="repair-requirements"
+            aria-labelledby="heading-repair-requirements"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-repair-requirements" style={sectionHeadingStyle(accent)}>
+              Why Unmasking Is Not Restoration — and What Is
+            </h2>
+
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Unmasking</strong> means dropping the performance: expressing authentic rhythm, authentic intensity, authentic processing. <strong style={{ color: TEXT.primary }}>Restoration</strong> means being received in that authentic expression — another nervous system registering the authentic configuration without threat, without correction, without the signals that originally installed the mask. These are not equivalent.
+            </p>
+            <p style={proseStyle}>
+              Unmasking into an environment that cannot hold the authentic configuration can increase harm. The person drops the mask, expresses authentically, and the environment responds with the same signals that installed the mask in the first place — rejection, correction, exclusion. The nervous system receives confirmation: authenticity is dangerous. The mask reinstalls, often more rigidly.
+            </p>
+            <p style={proseStyle}>
+              The deeper structural answer is environments designed for variation from the start — not retrofitting for identified individuals but building for the range of nervous system configurations that will inhabit the space. The shift from accommodation (identifying individuals, modifying their experience) to design (modifying the environment, removing the mismatch for everyone).
+            </p>
+
+            <h3 style={conceptHeadingStyle}>Seven Design Principles</h3>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Regulation first.</strong> Environmental safety before performance demands. The design question: what conditions would allow this nervous system to access the state in which performance is available?
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Sensory consideration.</strong> Lighting, sound, spatial design for variable sensitivity. A nervous system not forced to process chronic sensory overload has more regulatory capacity available for everything else.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Flexible pacing.</strong> Multiple timeline options, engagement driven by actual processing rhythm rather than arbitrary standard.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Communication clarity.</strong> Explicit expectations, reduced hidden curriculum. When social rules are implicit, every nervous system that processes explicitly is running a translation operation on top of the actual task.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Autonomy respect.</strong> Self-determined rhythms within broad parameters. The person with the nervous system knows what that system needs.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Multiple modalities.</strong> Various ways to engage, learn, contribute, communicate. A single modality requirement excludes every configuration that processes through a different channel.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Rest integration.</strong> Recovery built into structure, not punished. When rest is available only as accommodation — requiring disclosure, requesting exception — the cost of accessing it may exceed the benefit.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — seven design principles mapped to regulatory mechanisms */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Rose & Meyer (2002) — Universal Design for Learning: proactive design for variation. Edmondson (1999) — psychological safety: team performance increases when members can contribute without performance risk. Oliver (1990) — the Social Model: removing environmental barriers rather than fixing individuals. Price (2022) — risks of unmasking without environmental support. Cage & Troxell-Whitman (2019) — masking, mental health, and environmental factors.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The unmasking-restoration distinction — dropping the performance (CLS stopping the override) is not the same as the nervous system updating (the ESS receiving evidence that authenticity is safe). Seven design principles traced through the specific regulatory mechanisms each addresses — each principle is a structural intervention in the nervous system's regulatory equation, not a preference or a kindness. The shift from accommodation to design, grounded in the ESC architecture. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
               {
                 term: "Same instrument, different inputs",
-                definition: "The Emotional Somatic Cycle is universal. The sensory inputs arriving at it vary. The instrument is the same. The match between inputs and environment varies.",
+                definition: "The ESC is universal. What varies is sensory threshold, attention pattern, processing speed, emotional intensity. The regulatory instrument is the same. The data arriving at it is different.",
               },
               {
                 term: "System Mismatch",
-                definition: "The gap between what an environment requires and what a nervous system can sustainably provide. Structural, testable.",
+                definition: "The gap between what an environment requires and what a nervous system can sustainably provide. Structural, testable, invisible to the matched configuration.",
               },
               {
-                term: "Masking as incomplete restoration",
-                definition: "Each masked expression is an incomplete restoration sequence. Debris accumulates. Baseline rises.",
+                term: "Masking as interrupted restoration",
+                definition: "Each masked expression is an incomplete restoration sequence. The body mobilised, the response was suppressed, the activation remains. Baseline rises.",
+              },
+              {
+                term: "Two-thread model",
+                definition: "The internal thread (F1–F7) and the structural thread (environmental mismatch) as simultaneous, compounding sources of activation.",
               },
               {
                 term: "Threshold dynamics",
-                definition: "Threshold equation. Three crossing presentations: activation, withdrawal, mixed. Regulatory collapse, not behavioural choice.",
+                definition: "Baseline capacity minus (masking cost + environmental demand + accumulated activation) = remaining margin. Three crossing types: activation, withdrawal, mixed.",
               },
               {
-                term: "Neurodivergent burnout at the substrate level",
-                definition: "Baseline Elevation from accumulated masking. Not exhaustion — reorganisation. Different from general burnout.",
+                term: "Neurodivergent burnout",
+                definition: "Baseline Elevation from accumulated masking — not exhaustion (rest helps) but reorganisation (sustained different conditions required).",
               },
               {
-                term: "Awareness capacities present differently across configurations",
-                definition: "Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA) present but differently channelled, expressed, reported. Assessment error as F6 bias.",
+                term: "Capacities present differently",
+                definition: "RE differently channelled, ER differently expressed, SEA differently reported. Assessment error as F6 bias.",
+              },
+              {
+                term: "Capacity distortion through masking",
+                definition: "RE misdirected (surveillance), ER suppressed (expression blocked), SEA confused (authentic vs performed). Compounding cycle.",
               },
               {
                 term: "Unmasking is not restoration",
-                definition: "Unmasking = dropping performance. Restoration = being received. The environment must be ready before the mask comes off.",
+                definition: "Dropping performance ≠ ESS receiving evidence that authenticity is safe. The environment must be ready.",
               },
               {
-                term: "Design for variation",
-                definition: "Seven design principles traced through the regulatory mechanisms each addresses. Design, not accommodation.",
+                term: "Seven design principles",
+                definition: "Regulation first, sensory consideration, flexible pacing, communication clarity, autonomy respect, multiple modalities, rest integration. Design, not accommodation.",
               },
             ]}
           />
 
-          {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.blue}
-            established="F9 established that variation is configuration — different nervous systems running the same architecture with different settings, not deficits requiring correction."
-            question="When an adult begins to process what they carry, what changes for the next generation? F10 maps the intergenerational chain — how what the adult processes changes what transmits."
+            color={accent}
+            established="F9 established how configuration variation operates through the universal ESC architecture, how system mismatch produces structural activation, how masking interrupts the restoration sequence, and how environments can be designed for variation rather than retrofitted for exceptions."
+            question="When adults repair their own capacities (F8) and inhabit environments that support their authentic configuration (F9), the next generation develops in different conditions. The caregiver's configuration IS the child's developmental environment. When the adult is different, the child develops differently — not because the adult decided to parent differently, but because the adult IS different."
             nextFramework="F10"
-            nextTitle="What the Adult Processes, the Child Does Not Inherit"
-            nextHref="/framework/f10-generational-bridges"
+            nextTitle="What the Adult Processes"
+            nextHref="/framework/f10-generational-repair"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.blue}
+            color={accent}
             connections={[
-              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 describes how awareness rebuilds. F9 shows that the rebuilt awareness meets different configurations — not one correct version." },
-              { id: "F2", href: "/framework/f2-awareness-calibration", description: "F2 describes developmental calibration. F9 maps what happens when the calibrating environment was designed for a different nervous system architecture." },
-              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps the four states. F9 shows the same gradient operating with different regulatory rhythms and sensory profiles." },
+              {
+                id: "M1: Emotions as Signals",
+                href: "/model/m1-emotions-as-signals",
+                description: "M1 maps the signal architecture. F9 shows that different nervous systems run the same architecture with different sensory inputs — different thresholds, different filtering, different processing speeds.",
+              },
+              {
+                id: "M2: Nervous System States",
+                href: "/model/m2-nervous-system-states",
+                description: "M2 maps the four states as a continuous gradient. F9 shows that the same environment can produce Safety & Openness in one configuration and Threat & Defence in another — because the inputs differ.",
+              },
+              {
+                id: "M3: Regulation Capacities",
+                href: "/model/m3-regulation-capacities",
+                description: "Each masked expression interrupts the restoration sequence at the mobilisation stage. Neurodivergent burnout is M3's Baseline Elevation from accumulated masking-interrupted restoration.",
+              },
+              {
+                id: "F6: Bias Regulates",
+                href: "/framework/f6-bias-regulates",
+                description: "F6's bias mechanism produces the 'disorder' reading — the assessor's perceptual filter, calibrated to one configuration, reads absence where there is difference.",
+              },
+              {
+                id: "F8: Awareness Rebuilds Through Safety",
+                href: "/framework/f8-repairing-awareness",
+                description: "F8 describes individual repair. F9 adds the structural dimension: individual repair has limited effect when the person returns daily to an environment that requires chronic masking.",
+              },
+              {
+                id: "F10: What the Adult Processes",
+                href: "/framework/f10-generational-repair",
+                description: "When adults repair their capacities (F8) and inhabit matched environments (F9), the next generation develops in different conditions.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
-              { label: "Continue to F10 — what changes across generations", href: "/framework/f10-generational-bridges", linkText: "F10: What the Adult Processes →" },
-              { label: "See how awareness rebuilds", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F10 — what transmits when adults have done the work", href: "/framework/f10-generational-repair", linkText: "F10: What the Adult Processes \u2192" },
+              { label: "See the signal architecture that runs with different inputs", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
+              { label: "See how individual repair works", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
+              { label: "See the bias mechanism that produces the 'disorder' reading", href: "/framework/f6-bias-regulates", linkText: "F6: Bias Regulates \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ── JSON-LD ── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            headline: "Neurodivergence as Nervous System Variation — When the Environment Is the Mismatch",
-            description: metadata.description,
+            "@id": "https://teg-blue.org/framework/f9-neurodivergence-variation#article",
+            headline: "Variation Is Configuration, Not Deficit: When the Environment Is the Mismatch",
+            description:
+              "How nervous system configuration variation operates through the universal ESC architecture, system mismatch as structural concept, masking through the restoration sequence, and environments designed for variation. Framework F9 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -933,16 +677,44 @@ export default function F9NeurodivergenceVariationPage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            url: "https://teg-blue.org/framework/f9-neurodivergence-variation",
-            datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            datePublished: "2026-03-07",
+            dateModified: "2026-04-06",
+            inLanguage: "en",
+            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
               "@type": "CreativeWork",
-              name: "TEG-Blue 12-Framework Architecture",
+              name: "TEG-Blue 12 Framework System",
               url: "https://teg-blue.org/frameworks-map",
             },
-            keywords: metadata.keywords,
-            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://teg-blue.org/framework/f9-neurodivergence-variation",
+            },
+            about: [
+              { "@type": "Thing", name: "Neurodivergence" },
+              { "@type": "Thing", name: "System Mismatch" },
+              { "@type": "Thing", name: "Universal Design" },
+              { "@type": "Thing", name: "Masking" },
+              { "@type": "Thing", name: "Configuration Variation" },
+            ],
+            citation: [
+              { "@type": "ScholarlyArticle", name: "The Politics of Disablement (Oliver, 1990)" },
+              { "@type": "ScholarlyArticle", name: "Universal Design for Learning (Rose & Meyer, 2002)" },
+              { "@type": "ScholarlyArticle", name: "Neurodiversity (Singer, 1998)" },
+              { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
+              { "@type": "ScholarlyArticle", name: "Unmasking Autism (Price, 2022)" },
+              { "@type": "ScholarlyArticle", name: "Allostatic Load (McEwen, 1998)" },
+            ],
+            keywords: [
+              "neurodivergence",
+              "system mismatch",
+              "universal design",
+              "configuration variation",
+              "masking cost",
+              "neurodivergent burnout",
+              "sensory processing",
+              "capacity distortion",
+            ],
           }),
         }}
       />
@@ -951,9 +723,9 @@ export default function F9NeurodivergenceVariationPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
-              { name: "Home", url: "https://teg-blue.org" },
-              { name: "12 Frameworks", url: "https://teg-blue.org/frameworks-map" },
-              { name: "F9 — Neurodivergence as Nervous System Variation", url: "https://teg-blue.org/framework/f9-neurodivergence-variation" },
+              { name: "Home", url: "/" },
+              { name: "12 Frameworks", url: "/frameworks-map" },
+              { name: "F9: Variation Is Configuration", url: "/framework/f9-neurodivergence-variation" },
             ])
           ),
         }}
@@ -962,27 +734,98 @@ export default function F9NeurodivergenceVariationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            generateFAQJsonLd(
-              faqItems.map((f) => ({ question: f.q, answer: f.a }))
-            )
+            generateFAQJsonLd([
+              {
+                question: "What is System Mismatch?",
+                answer:
+                  "The gap between what an environment requires and what a nervous system can sustainably provide. A school requiring six hours of seated attention is designed for one attention configuration. A nervous system with variable attention faces daily mismatch. The concept relocates the difficulty from the person's neurology to the relationship between neurology and environmental design. It is testable: change the environment, observe the response.",
+              },
+              {
+                question: "Why is neurodivergent burnout different from general burnout?",
+                answer:
+                  "General burnout depletes resources — rest replenishes them. Neurodivergent burnout involves a shift in the nervous system's baseline organisation — accumulated masking-interrupted restoration sequences raise the resting activation level. Recovery requires sustained different conditions, not just rest, because the shift is in the baseline itself.",
+              },
+              {
+                question: "Why is unmasking alone insufficient?",
+                answer:
+                  "Unmasking means dropping the performance. Restoration means being received in authentic expression — another nervous system registering the configuration without threat. Unmasking into an environment that cannot hold the authentic configuration can increase harm — the environment responds with the same signals that installed the mask. The mask reinstalls, often more rigidly.",
+              },
+              {
+                question: "What are the seven design principles?",
+                answer:
+                  "Regulation first (environmental safety before performance demands), sensory consideration (design for variable sensitivity), flexible pacing (multiple timelines matching processing rhythms), communication clarity (explicit expectations), autonomy respect (self-determined rhythms), multiple modalities (various ways to engage), rest integration (recovery built in, not punished). Each is a structural intervention in the nervous system's regulatory equation.",
+              },
+            ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Neurodivergence as Nervous System Variation (F9) — TEG-Blue Research",
+              name: "Variation Is Configuration, Not Deficit (F9) — TEG-Blue Research",
               url: "https://teg-blue.org/framework/f9-neurodivergence-variation",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),
         }}
       />
-    </>
+    </div>
   );
 }
 
-const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };
+// ─── STYLE CONSTANTS ──────────────────────────────────────
+
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
+};
+
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  background: BG.card,
+  borderRadius: 8,
+  overflow: "hidden",
+  border: `1px solid ${BORDER.default}`,
+  fontSize: 13,
+};
+
+const thStyle = {
+  padding: "10px 14px",
+  textAlign: "left",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  fontFamily: FONT.mono,
+  background: BG.surface,
+  borderBottom: `1px solid ${BORDER.default}`,
+};
+
+// ─── HELPER COMPONENTS ────────────────────────────────────
+
+function TableRow({ cells }) {
+  return (
+    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
+      {cells.map((cell, i) => (
+        <td
+          key={i}
+          style={{
+            padding: "10px 14px",
+            fontSize: 13,
+            color: i === 0 ? TEXT.primary : TEXT.secondary,
+            fontWeight: i === 0 ? 600 : 400,
+            lineHeight: 1.6,
+            verticalAlign: "top",
+          }}
+        >
+          {cell}
+        </td>
+      ))}
+    </tr>
+  );
+}

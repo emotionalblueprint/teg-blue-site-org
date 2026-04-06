@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,60 +24,61 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Framework Position", href: "#framework-position", description: "F8 describes individual repair. F9 describes structural repair. F10 asks what happens across generations." },
-  { label: "The Regulation Thread", href: "#framework-position", description: "What transmits differently when the original is present. The thread runs in both directions." },
-  { label: "Awareness Across Generations", href: "#awareness-across-generations", description: "The child absorbs the configuration, not the aspiration. Develop the capacity, and what transmits changes." },
-  { label: "Five Transmission Pathways", href: "#five-transmission-pathways", description: "Implicit learning, co-regulation modelling, environmental design, epigenetic modification, narrative inheritance." },
-  { label: "What Isn't Processed Gets Passed On", href: "#what-isnt-processed", description: "The child doesn't inherit the event — the child inherits the regulatory consequence of the event." },
-  { label: "Coherence, Not Content", href: "#what-isnt-processed", description: "It is not what happened that determines what is transmitted — it is whether the adult has made coherent sense of it." },
-  { label: "Understanding Without Excusing", href: "#relationships-across-repair", description: "I understand why you became who you became — and I see what it cost me. Both are true." },
-  { label: "Relationships Across Repair", href: "#relationships-across-repair", description: "Does this relationship create conditions for Safety & Openness, or does it re-expose to the original configuration?" },
-  { label: "True Elderhood", href: "#true-elderhood", description: "Not automatic — what the elder becomes when the work F8 describes has been done." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F10 makes about intergenerational transmission and repair." },
+  { label: "How Configuration Teaches Configuration", href: "#configuration-teaches", description: "The adult's capacity configuration IS the child's developmental environment." },
+  { label: "Five Transmission Pathways", href: "#five-pathways", description: "Implicit learning, co-regulation, environmental design, epigenetic, narrative — simultaneously." },
+  { label: "What Transmits When Activation Was Never Processed", href: "#unprocessed-transmission", description: "The child inherits the consequence, not the event." },
+  { label: "How Processing Changes the Transmission", href: "#processing-changes", description: "Earned security. Love does not override what the nervous system embodies." },
+  { label: "One Generation Shifts the Baseline", href: "#compound-interest", description: "Small sustained shifts accumulate. Compound interest across generations." },
+  { label: "Enough, Not Perfect", href: "#enough-not-perfect", description: "The child needs a parent whose nervous system moves — and who comes back." },
   { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
-  { label: "Bridge to F11", href: "#bridge-to-f11", description: "When the adult begins to see clearly, contradictions emerge that survival previously kept hidden." },
+  { label: "Bridge to F11", href: "#bridge", description: "Repair surfaces paradox. Holding, not resolving." },
+  { label: "Connections Map", href: "#connections", description: "How F10 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Rebuilding Generational Bridges — How Patterns Transmit and How Repair Changes What the Next Generation Inherits (F10) | TEG-Blue Research",
+  title: "What the Adult Processes, the Child Does Not Inherit (F10) | TEG-Blue Research",
   description:
-    "How emotional patterns transmit across generations through five simultaneous pathways, why single interventions often fail, and how adult repair genuinely changes the conditions the next generation develops within. Framework F10 of 12.",
+    "Intergenerational transmission and how adult repair changes developmental conditions — five transmission pathways, earned security, compound interest across generations, and enough not perfect. Framework F10 of the TEG-Blue 12-framework system.",
   keywords: [
-    "generational transmission",
-    "intergenerational patterns",
-    "five transmission pathways",
-    "earned security",
-    "awareness teaches awareness",
+    "intergenerational transmission",
     "generational repair",
-    "enough not perfect",
-    "true elderhood",
+    "earned security",
     "co-regulation",
-    "epigenetic modification",
-    "narrative inheritance",
-    "emotional technology",
+    "epigenetic transmission",
+    "developmental conditions",
+    "capacity configuration",
+    "compound interest",
+    "good enough parent",
+    "attachment transmission",
+    "nervous system repair",
+    "family systems",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f10-generational-bridges",
   },
   openGraph: {
-    title: "Rebuilding Generational Bridges — F10 Framework | TEG-Blue",
+    title: "What the Adult Processes, the Child Does Not Inherit — F10 Framework | TEG-Blue",
     description:
-      "How emotional patterns transmit across generations through five simultaneous pathways, and how adult repair changes what the next generation inherits.",
+      "How adult repair changes developmental conditions across generations. Framework F10 of 12.",
     url: "https://teg-blue.org/framework/f10-generational-bridges",
-    siteName: "TEG-Blue Research",
     type: "article",
+    siteName: "TEG-Blue Research",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rebuilding Generational Bridges — TEG-Blue F10",
+    title: "What the Adult Processes — TEG-Blue F10",
     description:
-      "How emotional patterns transmit across generations through five pathways, and how adult repair changes what the next generation inherits.",
+      "What the adult embodies, the child absorbs. What the adult has processed, the child does not need to carry.",
   },
   other: {
-    'citation_title': 'Rebuilding Generational Bridges: How Patterns Transmit and How Repair Changes What the Next Generation Inherits',
+    'citation_title': 'What the Adult Processes, the Child Does Not Inherit',
     'citation_author': 'Anna Paretas-Artacho',
-    'citation_publication_date': '2026/03',
+    'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
@@ -85,593 +86,354 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F10GenerationalBridgesPage() {
-
-  /* ── local helpers ─────────────────────────────────── */
-
-
-  function KeyStatement({ children }) {
-    return (
-      <blockquote style={{
-        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-        paddingLeft: 16, margin: "20px 0", fontStyle: "italic",
-        fontSize: 14, lineHeight: 1.7, color: TEXT.primary,
-      }}>
-        {children}
-      </blockquote>
-    );
-  }
-
-  function TableRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function ThreeColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "10px 14px", fontSize: 13, lineHeight: 1.6,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-  function FourColRow({ cells }) {
-    return (
-      <tr style={{ borderBottom: `1px solid ${BORDER.default}` }}>
-        {cells.map((c, i) => (
-          <td key={i} style={{
-            padding: "8px 10px", fontSize: 12, lineHeight: 1.5,
-            color: i === 0 ? TEXT.primary : TEXT.secondary,
-            fontWeight: i === 0 ? 600 : 400, verticalAlign: "top",
-          }}>
-            {c}
-          </td>
-        ))}
-      </tr>
-    );
-  }
-
-
-  const thStyle = {
-    padding: "10px 14px", fontSize: 12, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-  const narrowThStyle = {
-    padding: "8px 10px", fontSize: 11, fontWeight: 600,
-    color: TEXT.tertiary, textTransform: "uppercase",
-    letterSpacing: "0.05em", textAlign: "left",
-    borderBottom: `2px solid ${BORDER.default}`,
-  };
-
-  /* ── data ──────────────────────────────────────────── */
-
-  const faqItems = [
-    {
-      q: "How do emotional patterns transmit across generations?",
-      a: "Through five simultaneous pathways: implicit learning (children absorb what adults model), co-regulation modeling (the adult's regulatory capacity becomes the child's template), environmental design (adults create the conditions requiring specific adaptations), epigenetic modification (stress exposure modifies gene expression in ways that affect offspring), and narrative inheritance (family stories and silences shape meaning-making). These pathways reinforce each other, which is why single interventions often fail.",
-    },
-    {
-      q: "Does understanding the transmission mechanism mean excusing harm?",
-      a: "No. F10 holds both truths simultaneously: understanding why a parent became who they became, and seeing what it cost. Understanding does not minimize impact. Accountability does not require demonization. Neither truth cancels the other. The integrative position enables grief for what was lost, release from waiting for acknowledgment that may never come, and agency in deciding how to relate going forward.",
-    },
-    {
-      q: "What does 'enough, not perfect' mean for generational repair?",
-      a: "The demand for perfection recreates the regulation thread. What matters is not being a perfect parent but being one whose compass moves — who can enter Threat & Defence when needed, return to baseline, and repair after rupture. The child needs to see the return, not the absence of difficulty. Enough capacity development that the child's nervous system reads a different signal than what the adult received.",
-    },
-    {
-      q: "Can generational transmission patterns be interrupted?",
-      a: "Yes. Earned security research (Main & Hesse) demonstrates that when adults process their own attachment history and develop awareness capacities, their children show more secure attachment — regardless of what that history contained. The processing itself changes what transmits, not because the adult performs better but because the configuration has genuinely changed.",
-    },
-    {
-      q: "What is true elderhood?",
-      a: "A developmental achievement — the result of having done the awareness work F8 describes. True elders use experience for guidance rather than age for control. They earn respect through embodied capacity, support evolution rather than resisting change, and can hold the family's truth rather than demanding the family hold their version. It requires Interoceptive Self-Awareness (SEA) online, Affective Resonance (ER) available, Interpersonal Affect Perception (RE) accurate, and a compass that moves.",
-    },
-  ];
-
-  /* ── render ────────────────────────────────────────── */
+  const accent = SPECTRUM.cobalt;
 
   return (
-    <>
-      <SiteHeader />
+    <div
+      style={{
+        minHeight: "100vh",
+        background: BG.page,
+        fontFamily: FONT.display,
+      }}
+    >
+      <SiteHeader currentPath="/framework/f10-generational-bridges" />
 
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F10"
-              title="Rebuilding Generational Bridges"
-              subtitle="How Patterns Transmit and How Repair Changes What the Next Generation Inherits"
-              description="How unprocessed regulatory patterns transmit across generations — through the same awareness-teaches-awareness mechanism (F2) operating in reverse — and how what an adult processes changes what the next generation inherits. The third framework in the restoration arc (F8–F12), extending M2's awareness-teaches-awareness mechanism across generations."
-              group="Repair"
-              groupLabel="Repair Arc · F8–F12"
-              threadLabel="Reverses the Thread"
-              threadLine="Builds the original — what gets processed here changes what transmits next"
-              informsModels={[
-                { label: "M4", href: "/model/m4-awareness-capacities" },
-              ]}
-              adjacent={{
-                prev: { label: "F9 Neurodivergence", href: "/framework/f9-neurodivergence-variation" },
-                next: { label: "F11 Emotional Paradoxes", href: "/framework/f11-emotional-paradoxes" },
-              }}
-            />
+            badge="FRAMEWORK F10"
+            title="What the Adult Processes, the Child Does Not Inherit"
+            subtitle="Intergenerational Transmission and How Adult Repair Changes Developmental Conditions"
+            description="F2 established the foundational mechanism: what the caregiver embodies — not what they say, intend, or believe — is what the child's nervous system absorbs. F10 maps this mechanism running in both directions: transmission of patterns and transmission of repair. When adults develop their own capacities (F8) and inhabit environments that support their authentic configuration (F9), the next generation develops in different conditions — not because the adult decided to parent differently, but because the adult IS different."
+            group="Repair"
+            groupLabel="Repair Arc · F8–F12"
+            threadLine="What the adult processes, the child does not inherit — generational repair. Restores: the generational bridge"
+            informsModels={[
+              { label: "M4", href: "/model/m4-awareness-capacities" },
+            ]}
+            adjacent={{
+              prev: { label: "F9 Variation Is Configuration", href: "/framework/f9-neurodivergence-variation" },
+              next: { label: "F11 Paradox Holds What Logic Cannot", href: "/framework/f11-paradox-holds" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
-              concept: "Intergenerational Transmission",
+              concept: "Co-Regulation Builds the Substrate",
               framework: "F2",
-              description: "The caregiver's nervous system IS the child's developmental environment — what the caregiver carries transmits through co-regulation.",
-              href: "/framework/f2-awareness-calibration#intergenerational",
+              description: "What the caregiver could hold is what the child learns to complete — the biological pathway through which capacities transmit across generations.",
+              href: "/framework/f2-awareness-calibration#co-regulation",
             },
             {
-              concept: "Safety Before Capacity",
+              concept: "The Repair Process",
               framework: "F8",
-              description: "Awareness capacities rebuild through safety — the same principle that applies within one lifetime applies across generations.",
-              href: "/framework/f8-repairing-awareness#safety-before-capacity",
+              description: "SEA as the developmental entry point, five oscillating phases, safety before capacity — how the adult's configuration changes.",
+              href: "/framework/f8-repairing-awareness#sea-entry-point",
+            },
+            {
+              concept: "Intergenerational Transmission",
+              framework: "F2",
+              description: "The four states are the transmission mechanism. The caregiver's capacity profile IS the child's developmental environment. Each link invisible to the person carrying it.",
+              href: "/framework/f2-awareness-calibration#developmental-consequence",
             },
           ]} />
 
-          {/* ── Core Claims ── */}
-          <PropositionBox
-            title="Core Propositions — F10"
-            items={[
-              "Generational transmission operates through five simultaneous pathways (implicit learning, co-regulation modeling, environmental design, epigenetic modification, narrative inheritance) — single interventions fail because they address one while four continue",
-              "What the adult embodies, the child absorbs — the child's nervous system reads the adult's nervous system, not the adult's intentions, knowledge, or aspirations",
-              "What isn't processed gets passed on — but what is processed changes what transmits, as earned security research demonstrates",
-              "Repair does not require perfection — it requires enough capacity development that the next generation starts from a different place",
-              "True elderhood is a developmental achievement, not an automatic function of age — it requires awareness capacities online and a compass that moves",
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Breaking the cycle",
+                commonUnderstanding: "Deciding to be different from your parents — choosing to parent better, making conscious changes in how you raise your children.",
+                definition: "Changing what the nervous system embodies, not what the CLS intends. The child calibrates to the ESS channel — the adult's autonomic state, physiological response, co-regulatory capacity — not to the CLS channel — intention, words, decisions. Love does not override what the nervous system embodies.",
+              },
+              {
+                title: "Generational trauma",
+                commonUnderstanding: "A psychological inheritance — stories, memories, and pain passed down through families.",
+                definition: "The transmission of the regulatory consequence of unprocessed experience. The child does not inherit the event. The child inherits the configuration the adult built to survive it — the chronic state, the capacity profile, the nervous system organisation that becomes the child's developmental environment.",
+              },
+              {
+                title: "Good enough parenting",
+                commonUnderstanding: "Lowering the bar — accepting that you won't be perfect, doing your best.",
+                definition: "A nervous system with State Flexibility — one that enters Threat & Defence when conditions require it and returns to Safety & Openness when the situation resolves. The child does not learn one state. The child learns the movement. Not never rupturing — repairing after rupture, and the child witnessing the return.",
+              },
             ]}
           />
 
-          {/* ════════════════════════════════════════════════
-              FRAMEWORK POSITION
-             ════════════════════════════════════════════════ */}
-
-          <section id="framework-position">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Framework Position</h2>
-
-            <p style={proseStyle}>
-              F8 describes individual repair — how to develop the awareness capacities that did not have conditions to develop. F9 describes the structural dimension — how environments designed for one configuration prevent repair and what genuine inclusion requires.
-            </p>
-
-            <KeyStatement>
-              F10 asks: what happens across generations when adults do this work?
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              The answer lives in F2's foundational insight: <strong>awareness teaches awareness.</strong> The adults' capacity configuration creates the environment. The environment shapes the child's capacity configuration. What the adult embodies — not says, not intends, not believes — is what the child absorbs.
-            </p>
-
-            <p style={proseStyle}>
-              F10 is not about interrupting damage. It is about building conditions. When adults develop their own awareness capacities (F8), inhabit environments that support authentic configuration (F9), and learn the return path their own development did not provide — the next generation grows in a different world. Not a perfect world. A world where three awareness capacities have conditions to develop, where regulation is learned through being regulated with, and where the compass has room to move.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Regulation Thread — F10's Position</h3>
-
-            <p style={proseStyle}>
-              F1–F7: substitutes for regulation, escalating across scales. F8–F9: building the original, individually and structurally. F10: <strong>transmitting the original instead of the substitutes.</strong>
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>What Transmitted Before (F2–F7)</th>
-                    <th style={thStyle}>What Transmits After Repair (F10)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Stuck compass \u2192 child calibrates to threat", "Moving compass \u2192 child calibrates to flexibility"]} />
-                  <TableRow cells={["Interoceptive Self-Awareness (SEA) offline \u2192 child's SEA has no model", "Interoceptive Self-Awareness (SEA) online \u2192 child absorbs self-awareness as normal"]} />
-                  <TableRow cells={["False coherence \u2192 child learns to narrate instead of feel", "True coherence \u2192 child learns that feeling and knowing can align"]} />
-                  <TableRow cells={["Rules substitute for regulation \u2192 child internalizes rigid rules", "Regulation present \u2192 child learns to regulate, not just comply"]} />
-                  <TableRow cells={["Worth-seeking substitutes for safety \u2192 child learns to perform for belonging", "Safety present \u2192 child belongs without performing"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <KeyStatement>
-              What the adult embodies, the child absorbs. What the adult has repaired, the child doesn't need to.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              PART 1 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 1: How Patterns Transmit
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              The five pathways through which generational transmission operates, and why single interventions often fail.
-            </p>
+          {/* ─── CORE PROPOSITIONS ───────────────────────── */}
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
+                <li style={propositionItemStyle}>
+                  The adult's capacity configuration IS the child's developmental environment — the child reads the adult's nervous system continuously, implicitly, below conscious awareness, and calibrates to what it embodies
+                </li>
+                <li style={propositionItemStyle}>
+                  Five transmission pathways operate simultaneously — implicit learning, co-regulation modelling, environmental design, epigenetic modification, narrative inheritance — which is why single interventions often fail
+                </li>
+                <li style={propositionItemStyle}>
+                  Unprocessed experience becomes the environment the next generation develops within — the child inherits the regulatory consequence, not the event
+                </li>
+                <li style={propositionItemStyle}>
+                  Processing changes the transmission — when the adult's ESS processes what the CLS has understood, the activation that was shaping the relational environment begins to resolve
+                </li>
+                <li style={propositionItemStyle}>
+                  One generation of repair shifts the baseline through compound interest — small, sustained shifts accumulate across time
+                </li>
+                <li style={propositionItemStyle}>
+                  The child needs enough, not perfect — a nervous system that moves and comes back, not one that is permanently in Safety & Openness
+                </li>
+              </ul>
+            </ExpandableSection>
           </div>
 
-          {/* ════════════════════════════════════════════════
-              C1 — AWARENESS ACROSS GENERATIONS
-             ════════════════════════════════════════════════ */}
+          {/* ─── PART 1: THE CORE MECHANISM ─────────────── */}
+          <PartDivider label="PART 1" title="The Core Mechanism" color={accent} />
 
-          <section id="awareness-across-generations">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Awareness Teaches Awareness Across Generations</h2>
-
-            <p style={proseStyle}>
-              F2's core insight at generational scale: the adults' capacity configuration <em>is</em> the child's environment. Children calibrate to what adults embody, not what adults say. This is the mechanism of generational transmission. Not genetics alone. Not instruction. Not intention. <strong>Embodiment.</strong> The child's nervous system reads the adult's nervous system — continuously, implicitly, below conscious awareness — and calibrates accordingly.
-            </p>
-
-            <p style={proseStyle}>
-              A parent whose Interoceptive Self-Awareness (SEA) is offline cannot provide conditions for a child's SEA to develop — regardless of how much they want to, how many parenting books they have read, or how sincere their intention is. The child absorbs the configuration, not the aspiration.
-            </p>
-
-            <p style={proseStyle}>
-              A parent whose compass moves freely — who can enter Threat & Defence when needed, return to baseline, access Strategy & Management under pressure without getting stuck — provides a child whose nervous system learns: the full gradient is available, and return is possible.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Transmission Mechanism</h3>
-
-            <p style={proseStyle}>
-              The parent whose Interoceptive Self-Awareness (SEA) is offline did not choose that configuration. Their own development did not provide conditions for SEA to develop (F2). Their own cognition built the best replacement it could (F3). Their own environment may have required chronic masking (F8–F9). They are transmitting what they have — which is what their parents transmitted to them.
-            </p>
-
-            <KeyStatement>
-              Understanding the mechanism identifies where change is possible.
-            </KeyStatement>
-
-            <ExpandableSection title="The Biological Chain" type="framework">
-              <p style={proseStyle}>
-                The mechanism of generational transmission has a specific biological structure. Regulation develops through being regulated with — not through instruction, modeling, or intention alone. A child regulated with completes activation cycles, and capacities develop through completing them — the child can receive and regulate their own emotions. A child not regulated with has cycles that stay open — no conditions for capacities to develop, no ability to receive or regulate, and the capacities flatten.
-              </p>
-              <p style={proseStyle}>
-                The adult's regulatory capacity is not a background influence on the child's development. It is the mechanism through which the child's capacities develop — or fail to. Co-regulation is not a parenting technique. It is the biological pathway through which the three awareness capacities are built.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Family Systems Theory (Bowen, Satir, Minuchin) describes multigenerational transmission of relational patterns. Attachment Theory (Bowlby, Main, Hesse) demonstrates that attachment patterns transmit across generations but can be interrupted through earned security. Interpersonal Neurobiology (Porges, Siegel, Schore) shows that co-regulation patterns transmit through nervous system synchronization.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F10 connects F2's three-capacity model to generational transmission, showing that what transmits is not behavior or belief but capacity configuration. The specific prediction: the adult's awareness configuration (which capacities are online, which are offline) predicts the conditions the child develops within — and therefore which capacities the child has conditions to develop. This makes the transmission mechanism specific and the intervention target clear.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C2 — FIVE TRANSMISSION PATHWAYS
-             ════════════════════════════════════════════════ */}
-
-          <section id="five-transmission-pathways">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Five Transmission Pathways</h2>
-
-            <p style={proseStyle}>
-              Transmission operates through five simultaneous pathways. They reinforce each other. When one is interrupted, others can still maintain transmission. This is why single interventions (a parenting course, a therapy session, a good intention) often fail — they address one pathway while four others continue operating.
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Pathway</th>
-                    <th style={narrowThStyle}>What Transmits</th>
-                    <th style={narrowThStyle}>How</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Implicit Learning",
-                    "The child observes and absorbs the adult's emotional patterns — what emotions are expressed, which are suppressed, how distress is handled",
-                    "Not through instruction. Through continuous, pre-verbal observation. The child watches what the adult does, not what the adult says to do",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Co-Regulation Modeling",
-                    "The adult's nervous system functions as the child's external regulator. The adult's regulatory capacity becomes the child's template",
-                    "What the adult can hold, the child learns is holdable. What the adult cannot tolerate becomes intolerable. The adult's window of tolerance shapes the child's",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Environmental Design",
-                    "The adult creates the physical, emotional, and social environment in which development occurs",
-                    "The home's emotional climate, the family's relational patterns, the permitted range of expression — all designed (usually unconsciously) by the adult's own configuration",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Epigenetic Modification",
-                    "Stress exposure can modify gene expression in ways that affect offspring's stress response, emotional reactivity, and regulatory capacity",
-                    "Not permanent genetic change. Reversible modifications responsive to environment and experience. Chronic stress in one generation can raise the threat baseline in the next",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Narrative Inheritance",
-                    "Family stories, silences, and meaning-making frameworks shape how children understand themselves and their place in the world",
-                    "Children inherit not just events but frameworks for understanding events. What is spoken about, what is silent, what is celebrated, what is shameful — all transmitted as the story of 'who we are'",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>All Five Transmit F1–F7 Content</h3>
-
-            <p style={proseStyle}>
-              The transmission is not random. What crosses generations is the complete system: compass calibration (F1), awareness capacity configuration (F2), false coherence patterns (F3), rules (F4), worth hierarchies (F5), bias architecture (F6), and escalation patterns (F7).
-            </p>
-
-            <KeyStatement>
-              The family is a complete nervous system. It transmits a complete regulatory system.
-            </KeyStatement>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Epigenetics research (Yehuda, Meaney, Champagne) demonstrates that stress modifies gene expression across generations in reversible ways. Narrative Therapy (White, Epston, McAdams) shows how family stories shape identity and meaning-making. Interpersonal Neurobiology (Porges, Siegel, Schore) demonstrates co-regulation pattern transmission through nervous system synchronization. Each tradition describes one pathway; F10 integrates all five.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F10 organizes five independently documented transmission pathways into a unified model showing they all transmit the same underlying content: the F1–F7 regulatory system. This explains why single-pathway interventions (parenting classes address narrative; therapy addresses the adult's processing) often fail: four other pathways continue transmitting. Effective intervention must address multiple pathways — which is why F10 requires F8 (individual repair) plus F9 (structural repair) plus pathway awareness.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C3 — WHAT ISN'T PROCESSED GETS PASSED ON
-             ════════════════════════════════════════════════ */}
-
-          <section id="what-isnt-processed">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>What Isn't Processed Gets Passed On</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              Why do unprocessed emotional patterns transmit across generations?
+          {/* Concept 0: Configuration Teaches Configuration */}
+          <section
+            id="configuration-teaches"
+            aria-labelledby="heading-configuration-teaches"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-configuration-teaches" style={sectionHeadingStyle(accent)}>
+              How Capacity Configuration Teaches Capacity Configuration
             </h2>
 
             <p style={proseStyle}>
-              Unprocessed experience becomes the environment the next generation develops within. The specific claim: unprocessed grief becomes an emotional climate of suppression, unprocessed rage becomes volatility or rigid control, unprocessed shame becomes performance and conditional belonging, unprocessed trauma becomes hypervigilance or dissociation. The child does not inherit the event. The child inherits the <strong>regulatory consequence</strong> of the event — the configuration the adult built to survive it.
+              The child's nervous system reads the adult's nervous system through every available channel. The adult's vocal prosody — whether it carries ventral vagal warmth or sympathetic tension. The adult's body — whether it is settled or braced. The adult's responsiveness — whether it tracks the child's state or imposes the adult's. The adult's range — whether it can enter Threat & Defence and return to Safety & Openness, or whether it is stuck in one position. All of this is data the child's nervous system processes below conscious awareness, in milliseconds, continuously.
             </p>
-
-            <h3 style={conceptHeadingStyle}>Processing Changes What Transmits</h3>
-
             <p style={proseStyle}>
-              This is the hope in the mechanism. Earned security research (Main & Hesse) demonstrates it operationally: when adults process their own attachment history — make coherent sense of what happened and how it shaped them — their children show more secure attachment patterns. Regardless of what the history contained.
+              A caregiver whose SEA is offline cannot provide conditions for the child's SEA to develop — regardless of intention, knowledge, or effort. "You can tell me anything" is a verbal message that operates through the CLS. The adult's nervous system state — whether it tenses or settles when the child expresses — is the somatic message that operates through the ESS. The child's nervous system calibrates to the somatic message.
             </p>
-
             <p style={proseStyle}>
-              The processing itself changes transmission. Not because the adult performs a better version. Because processing develops the awareness capacities (F8), which changes the configuration, which changes what the child's nervous system absorbs.
+              A caregiver whose nervous system moves freely — who enters defensive states when conditions require it and returns when the situation resolves — provides a child whose nervous system learns: the full gradient is available, and the return is possible. The child does not learn one state. The child learns the movement between states, and the return.
             </p>
 
-            <KeyStatement>
-              The shift is from content to coherence. Not "what happened to you" but "have you made sense of what happened?" Not "was your childhood good?" but "can you narrate your experience with emotional truth intact?"
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — CLS channel vs ESS channel, child calibrating to ESS */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <h3 style={conceptHeadingStyle}>Why Knowing Better Does Not Stop Transmission</h3>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bowlby (1969/1988) — attachment patterns transmit through caregiver behaviour, not intention. Main & Hesse (1990) — the adult's unresolved attachment history predicts the child's attachment classification. Schore (2003) — right-brain-to-right-brain communication: the caregiver's autonomic state shapes the child's autonomic development. Porges (2011) — co-regulation through the social engagement system operates below conscious awareness.
+                </p>
+              </ExpandableSection>
 
-            <p style={proseStyle}>
-              Intellectual understanding without nervous system processing does not interrupt transmission. A parent can read every parenting book, understand attachment theory, and articulate everything in F1–F10 — and still transmit their unprocessed patterns. Because the child's nervous system reads the adult's nervous system, not the adult's library.
-            </p>
-
-            <KeyStatement>
-              Love does not override what the nervous system embodies.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              The parent's conscious intention operates in the cognitive system. The child's calibration reads the emotional-somatic system. These are different systems (F12). Understanding this architectural mismatch is not discouraging — it redirects effort from trying harder to developing differently.
-            </p>
-
-            <ExpandableSection title="The Shame Loop" type="framework">
-              <p style={proseStyle}>
-                When regulation is achieved through controlling, criticizing, or harming others — the relational substitutes described in F3 and F7 — a shame signal is generated that cannot be metabolized in a chronic mode. The capacity to clearly feel and name shame requires Affective Resonance (ER) to feel the other person's experience and Interoceptive Self-Awareness (SEA) to feel one's own role in it. Both are absent in chronic modes.
-              </p>
-              <p style={proseStyle}>
-                The Shame Loop is uncloseable: the action that produced relief also produced shame that cannot be resolved, which increases the underlying pressure, which makes the next episode more urgent. What transmits across generations is not just the regulatory configuration but the accumulated shame that the configuration could not process.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="Why Substitutes Escalate Across Generations" type="framework">
-              <p style={proseStyle}>
-                The regulation substitute produces real relief. The relief fades. The debris is still there — plus the new debris from what the substitute cost. Interoceptive Self-Awareness (SEA) is gone, so the person cannot see that the relational environment changed. The tolerance curve operates identically to substance dependence: dose, relief, tolerance, escalation, dependence. But the "substance" is relational power — control, compliance, punishment. And the dose increase means more pain inflicted on others. There is no internal brake: the somatic echo that would register the cost to others requires Affective Resonance (ER), which is absent.
-              </p>
-              <p style={proseStyle}>
-                The mode destroys its own return pathway. Genuine restoration for all chronic modes would ultimately require safe relational contact — real co-regulation with someone genuinely present. The relational substitute systematically degrades the relational environment, and transmits this foreclosure to the next generation, who inherits a relational environment already depleted.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={proseStyle}>
-                Attachment Theory (Main, Hesse, Lyons-Ruth) provides the empirical basis through earned security research. Intergenerational trauma research (van der Kolk, Herman, Danieli) documents how unprocessed trauma shapes the next generation's emotional environment. F10 integrates these with F2's capacity model: what processing actually develops is the awareness capacities that change the configuration that changes what transmits.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F10 connects earned security to the three-capacity model: what processing develops is Interoceptive Self-Awareness (SEA), Affective Resonance (ER), and Interpersonal Affect Perception (RE) — the capacities that change the adult's configuration, which changes the environment, which changes what the child absorbs. This makes "processing" specific rather than vague. And it explains why cognitive understanding fails: the child's calibration reads the somatic-emotional system (where the capacities operate), not the cognitive system (where understanding lives).
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C4 — TRANSMISSION BY COMPASS POSITION
-             ════════════════════════════════════════════════ */}
-
-          <section id="transmission-by-compass-position">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Transmission by Compass Position</h2>
-
-            <p style={proseStyle}>
-              The adult's compass position predicts what the child's nervous system absorbs. This is not diagnostic labeling — it is pattern recognition for where repair effort has the most leverage.
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Adult's Chronic Mode</th>
-                    <th style={narrowThStyle}>What Primarily Transmits</th>
-                    <th style={narrowThStyle}>Child's Common Adaptation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Safety & Openness (moving compass)",
-                    "Capacity for connection; flexible relating; repair after rupture; full emotional range",
-                    "Secure base for exploration. Awareness capacities have conditions to develop. Child learns: the full gradient is available and return is possible",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Chronic Threat & Defence",
-                    "Anxiety patterns; threat sensitivity; hypervigilance; 'the world is dangerous'",
-                    "Child absorbs: threat is the baseline. May develop hypervigilance, anxious attachment, parentification (monitoring the parent's state to manage own safety)",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Chronic Strategy & Management",
-                    "Conditional relating; performance demands; emotional management as love; 'safety through being correct'",
-                    "Child absorbs: belonging requires performance. May develop achievement orientation, perfectionism, sharp Interpersonal Affect Perception (RE) with collapsed Affective Resonance (ER) and offline Interoceptive Self-Awareness (SEA)",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Chronic Power & Dominance",
-                    "Power dynamics; submission patterns; reality distortion; 'safety through compliance'",
-                    "Child absorbs: survival requires reading and complying. May develop trauma responses, dissociation, extreme adaptive strategies. The most costly transmission",
-                  ]} />
-                </tbody>
-              </table>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The transmission mechanism traced through the capacity configuration — the adult's CLS output (what they say) and ESS state (what their nervous system is doing) as two separate channels, the child calibrating to the ESS channel. The ESS channel is the channel the adult often cannot observe — because SEA is what would enable that observation. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>Capacity for Repair by Compass Position</h3>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Adult's Position</th>
-                    <th style={narrowThStyle}>Repair Capacity</th>
-                    <th style={narrowThStyle}>What Makes It Possible or Difficult</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Safety & Openness",
-                    "High",
-                    "Can see patterns. Has resources for processing. Can tolerate what Interoceptive Self-Awareness (SEA) reveals. Can hold grief",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Chronic Threat & Defence",
-                    "Moderate — possible with support",
-                    "Needs safety first (F8). Can engage when supported. Expect oscillation. The compass wants to move — it needs conditions",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Chronic Strategy & Management",
-                    "Limited without external catalyst",
-                    "Strategy & Management patterns resist self-examination because self-examination threatens the management strategy. May require external motivation — relationship crisis, child's suffering, health collapse",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Chronic Power & Dominance",
-                    "Very limited",
-                    "Repair unlikely without sustained external intervention. The system has organized around power as regulation. Vulnerability feels like annihilation. Protection of others is primary (F7)",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={proseStyle}>
-                F10 connects the four-mode gradient to generational transmission prediction: the adult's chronic compass position predicts both what the child absorbs and how accessible repair is for the adult. This makes generational intervention plannable: identify the adult's compass position, assess repair capacity, and match intervention to what that position can accept. The most psychologically literate people can be the most stuck (F3) — understanding does not equal capacity.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ════════════════════════════════════════════════
-              PART 2 DIVIDER
-             ════════════════════════════════════════════════ */}
-
-          <div style={{
-            margin: "48px 0 40px", padding: "14px 20px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.10),
-            borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: SPECTRUM.cobalt, margin: 0 }}>
-              Part 2: Building Conditions
-            </p>
-            <p style={{ fontSize: 13, color: TEXT.secondary, margin: "4px 0 0" }}>
-              How adults who develop awareness create different conditions for the next generation — and what "enough" looks like.
-            </p>
-          </div>
-
-          {/* ════════════════════════════════════════════════
-              C5 — MECHANISM OF CHANGE
-             ════════════════════════════════════════════════ */}
-
-          <section id="mechanism-of-change">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Mechanism of Generational Change</h2>
-
-            <p style={proseStyle}>
-              When an adult develops their awareness capacities (F8), the change is not in what they say or intend. It is in what they embody. And what they embody is what the child's nervous system reads.
-            </p>
-
-            <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              <strong>Step 1: Individual repair.</strong> The adult develops Interoceptive Self-Awareness (SEA), reconnects Affective Resonance (ER), calibrates Interpersonal Affect Perception (RE). The compass begins to move. False coherence loosens. The return path works.<br /><br />
-              <strong>Step 2: The adult's configuration changes.</strong> Not perfectly. Not completely. But enough that the nervous system the child reads is different from the one the adult's parents provided.<br /><br />
-              <strong>Step 3: The child develops in a different environment.</strong> Not because the parent decided to parent differently (though they may). Because the parent <em>is</em> different. The emotional climate of the home changes because the nervous system generating that climate has changed.<br /><br />
-              <strong>Step 4: The child's capacities have conditions to develop.</strong> Interoceptive Self-Awareness (SEA) can come online because it is being modeled. Affective Resonance (ER) can develop because it is being met. Interpersonal Affect Perception (RE) can calibrate accurately because the adult's signals are more coherent.<br /><br />
-              <strong>Step 5: The child transmits differently to the next generation.</strong> Not because they were told to. Because their configuration is different.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>The Compound Effect</h3>
-
-            <p style={proseStyle}>
-              One generation of repair does not produce perfection. It produces a <strong>shift in baseline.</strong> The child develops with slightly more capacity, slightly more flexibility, slightly more accurate calibration. That child, as an adult, transmits from that shifted baseline. The next generation shifts further. Generational change is compound interest. Small, sustained shifts accumulate across time.
-            </p>
-
-            <KeyStatement>
-              You don't have to heal everything. You have to heal enough that the next generation starts from a different place.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C6 — ENOUGH, NOT PERFECT
-             ════════════════════════════════════════════════ */}
-
-          <section id="enough-not-perfect">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Enough, Not Perfect</h2>
-
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>
-              How much restoration is needed to change what the next generation inherits?
+          {/* Concept 1: Five Pathways */}
+          <section
+            id="five-pathways"
+            aria-labelledby="heading-five-pathways"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-five-pathways" style={sectionHeadingStyle(accent)}>
+              Five Simultaneous Transmission Pathways
             </h2>
 
             <p style={proseStyle}>
-              The most important word in F10 is <strong>enough.</strong> Not perfect awareness. Not complete repair. Not an ideal childhood. Enough loosening of false coherence that the child absorbs different possibilities. Enough Interoceptive Self-Awareness (SEA) that the child sees self-awareness modeled. Enough return that the child learns: the compass comes back.
+              Transmission operates through five pathways simultaneously. They reinforce each other. When one is interrupted, the others can maintain the pattern. This is why single interventions often fail — they address one pathway while four continue transmitting.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>1. Implicit learning.</strong> The child observes and absorbs the adult's emotional patterns — which emotions are expressed, which suppressed, how distress is handled. Continuous, pre-verbal, below conscious awareness.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>2. Co-regulation modelling.</strong> The adult's nervous system functions as the child's external regulator. What the adult can hold, the child learns is holdable. The adult's window of tolerance shapes the child's.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>3. Environmental design.</strong> The home's emotional climate — whether expression is safe, whether activation is met with settling or escalation, whether repair follows rupture. Designed by the adult's configuration, usually below conscious awareness.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>4. Epigenetic modification.</strong> Chronic stress exposure can modify gene expression affecting the offspring's stress response, emotional reactivity, and regulatory capacity. These are reversible modifications — responsive to environment and experience. Sustained cortisol elevation in one generation can raise the cortisol baseline in the next. Sustained safety can lower it.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>5. Narrative inheritance.</strong> Family stories, silences, and meaning-making frameworks. What is spoken about, what is silenced, what is celebrated, what is shameful. Children inherit not just events but frameworks for interpreting events.
+            </p>
+            <p style={proseStyle}>
+              Through these five pathways, the child absorbs the complete regulatory system: the adult's calibration on the gradient (<Link href="/framework/f1-emotional-gradient" style={linkStyle}>F1</Link>), the capacity configuration (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>), the false coherence patterns (<Link href="/framework/f3-false-coherence" style={linkStyle}>F3</Link>), the rule systems (<Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>), the worth hierarchies (<Link href="/framework/f5-worth-hierarchies" style={linkStyle}>F5</Link>), the biases (<Link href="/framework/f6-bias-regulates" style={linkStyle}>F6</Link>), and the escalation patterns (<Link href="/framework/f7-domination-regulates" style={linkStyle}>F7</Link>). The family transmits a complete regulatory architecture.
             </p>
 
-            <h3 style={conceptHeadingStyle}>Why "Enough" Matters</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — five pathways operating simultaneously */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bowen (1978) — multigenerational transmission of relational patterns. Yehuda et al. (2005) — epigenetic transmission of stress response across generations. White & Epston (1990) — narrative therapy: family stories shape identity. Schore (2003) — co-regulation as the mechanism through which regulatory capacity shapes development.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The five-pathway model of simultaneous transmission — the pathways reinforce each other and single-pathway intervention is structurally limited. The framing that the family transmits the complete regulatory system (F1–F7), not just attachment patterns. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 2: What Transmits When Unprocessed */}
+          <section
+            id="unprocessed-transmission"
+            aria-labelledby="heading-unprocessed-transmission"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-unprocessed-transmission" style={sectionHeadingStyle(accent)}>
+              What Transmits When the Activation Was Never Processed
+            </h2>
 
             <p style={proseStyle}>
-              The demand for perfection recreates the regulation thread. If the parent believes they must be perfectly restored before they can provide good conditions, they have replaced one false coherence ("I'm fine, everything is fine") with another ("I must be completely restored or I'm damaging my child"). The performance demands of F5 (worth through achievement) now operate in the domain of restoration itself.
+              Unprocessed experience does not stay in the adult. It becomes the environment the next generation develops within. The child does not inherit the event. The child inherits the regulatory consequence of the event — the configuration the adult built to survive it.
+            </p>
+            <p style={proseStyle}>
+              Unprocessed grief produces an emotional climate of suppression — the adult's nervous system shifts when grief-related activation arises. The child's ESS learns: these signals are not safe to generate. Unprocessed rage produces volatility or rigid control — accumulated activation compounds with new activation, the response proportional to the total load. The child's nervous system reads: activation in this environment is unpredictable. Unprocessed shame produces performance and conditional belonging — the adult organises around managing the shame. The child reads: belonging requires performance.
+            </p>
+            <p style={proseStyle}>
+              In each case: the adult's unresolved activation produces a nervous system state. The state produces the relational environment. The child develops inside the environment. What transmits is the state — through the five pathways, continuously, below conscious awareness. The adult's intention — which operates through the CLS — does not override the transmission, which operates through the ESS.
             </p>
 
-            <h3 style={conceptHeadingStyle}>What "Enough" Looks Like</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — unprocessed experience → state → environment → child calibration */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Main & Hesse (1990) — unresolved loss predicts disorganised attachment in children. Van der Kolk (2014) — the body carries unprocessed experience as physiological organisation. Herman (1992) — the impact of unprocessed experience on relational capacity and developmental conditions.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The mechanism traced through the two-system architecture: the adult's unresolved activation (ESS) produces the developmental conditions regardless of what the adult's CLS intends. Each form of unprocessed experience mapped to the specific state it produces and the specific calibration the child absorbs. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 2: WHY PROCESSING CHANGES WHAT TRANSMITS ── */}
+          <PartDivider label="PART 2" title="Why Processing Changes What Transmits" color={accent} />
+
+          {/* Concept 4: Processing Changes Transmission */}
+          <section
+            id="processing-changes"
+            aria-labelledby="heading-processing-changes"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-processing-changes" style={sectionHeadingStyle(accent)}>
+              How Processing Changes the Transmission
+            </h2>
+
+            <p style={proseStyle}>
+              Earned security research demonstrates a finding that changes everything about the generational transmission model: when adults make coherent sense of their own attachment history — processing what happened and how it shaped them — their children show more secure attachment patterns. Regardless of what the history contained.
+            </p>
+            <p style={proseStyle}>
+              The shift is from content to coherence. Not "was your childhood good?" but "have you made sense of what happened?" Not "were your caregivers adequate?" but "can you narrate your experience with emotional data intact — grief where grief belongs, anger where anger belongs, the events named rather than suppressed?"
+            </p>
+            <p style={proseStyle}>
+              The biological mechanism: processing changes the adult's nervous system state. When the adult makes sense of what happened — not cognitively (the CLS constructing an explanation) but somatically (the ESS processing the activation that was never discharged) — the activation that has been shaping the relational environment begins to resolve. Cortisol levels begin to lower. Muscle tension begins to release. The nervous system's resting state begins to shift. The child reads a different nervous system.
+            </p>
+            <p style={proseStyle}>
+              This is why love does not override what the nervous system embodies. The parent who wants to be warm but whose nervous system tenses when the child expresses anger is transmitting two messages — the CLS message ("you can tell me anything") and the ESS message (tension, withdrawal, elevated cortisol). The child calibrates to the ESS message.
+            </p>
+            <p style={proseStyle}>
+              Understanding this redirects effort from trying harder to developing differently. The question is not "how can I parent better?" (a CLS operation). The question is "what does my nervous system do when my child is activated?" (an ESS observation). <Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8's</Link> repair process is not preparation for parenting. It IS the parenting intervention — because the adult's changed configuration is what the child reads.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — CLS intention vs ESS state, child calibrating to state */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Main & Hesse (1990) — earned security: coherent narrative of attachment history predicts secure attachment in offspring. Siegel (2012) — making sense of experience as the mechanism of intergenerational change. Van der Kolk (2014) — the body must process what the mind has understood. Fonagy & Target (2002) — reflective functioning in parents predicting child attachment security.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The processing mechanism traced through the two-system architecture: the CLS understanding and the ESS processing as two different operations, both necessary. The explanation for why love does not override embodiment: the CLS channel and the ESS channel transmit different messages, and the child calibrates to the ESS channel. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 5: Compound Interest */}
+          <section
+            id="compound-interest"
+            aria-labelledby="heading-compound-interest"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-compound-interest" style={sectionHeadingStyle(accent)}>
+              How One Generation of Repair Shifts the Baseline
+            </h2>
+
+            <p style={proseStyle}>
+              One generation of repair does not produce perfection. It produces a shift in baseline. The adult develops some capacity. The nervous system moves somewhat more freely. The restoration sequence works sometimes. False coherence loosens partially. And the child develops in conditions that are different from the conditions the adult developed in — not ideal, but shifted.
+            </p>
+            <p style={proseStyle}>
+              The mechanism: the adult develops their capacities (<Link href="/framework/f8-repairing-awareness" style={linkStyle}>F8</Link>) — SEA comes partially online, ER becomes accessible, RE begins serving understanding. The adult's configuration changes. Not perfectly. But enough that the nervous system the child reads is different. The child's capacities have conditions to develop that the adult's did not. The child, as an adult, transmits from the shifted baseline.
+            </p>
+            <p style={proseStyle}>
+              This is compound interest. Small, sustained shifts accumulate across time. One generation shifts the baseline by a small margin. The next generation starts from the shifted baseline and shifts it further. The change is not dramatic in any single generation — but across generations, the compound effect transforms the regulatory conditions.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — compound interest across generations */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Main & Hesse (1990) — earned security breaking the intergenerational chain. Siegel (2012) — intergenerational neural integration. Meaney (2001) — epigenetic evidence that caregiving behaviour changes stress-response gene expression in offspring.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The compound interest model — the mechanism is not dramatic transformation in one generation but small, sustained shifts that accumulate. The framing eliminates the demand for perfection: the question is not "have I healed completely?" but "does my nervous system move differently than my parents' did?" This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 3: BUILDING CONDITIONS ────────────── */}
+          <PartDivider label="PART 3" title="Building Conditions" color={accent} />
+
+          {/* Concept 6: Enough, Not Perfect */}
+          <section
+            id="enough-not-perfect"
+            aria-labelledby="heading-enough-not-perfect"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-enough-not-perfect" style={sectionHeadingStyle(accent)}>
+              Enough, Not Perfect
+            </h2>
+
+            <p style={proseStyle}>
+              Not perfect awareness. Not complete repair. Not an ideal developmental environment. Enough loosening of false coherence that the child absorbs different possibilities. Enough SEA that the child sees self-observation modelled. Enough return that the child learns: the nervous system comes back from activation.
+            </p>
+            <p style={proseStyle}>
+              The demand for perfection recreates the regulation thread. If the adult believes they must be perfectly restored before they can provide adequate conditions, they have replaced one false coherence with another. The narrative has shifted from "I don't need to feel" to "I must feel perfectly" — and the regulatory function is the same.
+            </p>
+            <p style={proseStyle}>
+              The child does not need a caregiver who never ruptures. The child needs a caregiver who repairs. Rupture and repair teaches what rupture alone cannot: that relationships survive difficulty. That activation arrives, the nervous system shifts, and the return happens. A caregiver who never ruptures has eliminated the data that would teach the child the most important capacity: the return is possible.
+            </p>
+
+            <div style={{ overflowX: "auto", marginBottom: 16 }}>
+              <table style={tableStyle}>
                 <thead>
                   <tr>
                     <th style={thStyle}>Not Required</th>
@@ -679,255 +441,145 @@ export default function F10GenerationalBridgesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Never entering Threat & Defence", "Returning from Threat & Defence — and the child seeing the return"]} />
-                  <TableRow cells={["Never experiencing false coherence", "Recognizing false coherence — 'I'm doing the thing again' — and the child witnessing that recognition"]} />
-                  <TableRow cells={["Having all three capacities perfectly online", "Having enough capacity development that the child's nervous system reads a different signal than what the adult received"]} />
+                  <TableRow cells={["Never entering defensive states", "Returning from defensive states — and the child witnessing the return"]} />
+                  <TableRow cells={["Never experiencing false coherence", "Recognising it — \"I'm doing the thing again\" — and the child witnessing that recognition"]} />
+                  <TableRow cells={["All three capacities perfectly online", "Enough capacity development that the child's nervous system reads a different signal"]} />
                   <TableRow cells={["Never making mistakes", "Repairing after mistakes — and the child learning that repair is possible"]} />
-                  <TableRow cells={["Providing a perfect emotional environment", "Providing an environment where the compass can move, where feelings are received, and where the child's configuration is not punished"]} />
+                  <TableRow cells={["A perfect emotional environment", "An environment where the nervous system can move, expression is received, and the child's configuration is not punished"]} />
                 </tbody>
               </table>
             </div>
 
-            <h3 style={conceptHeadingStyle}>Rupture and Repair</h3>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — "enough" defined at the nervous system level */}
+            {/* Diagram pass — not implemented in content rewrite */}
 
-            <p style={proseStyle}>
-              The child does not need a parent who never ruptures. The child needs a parent who repairs. Repair teaches something rupture alone cannot: <strong>that relationships survive difficulty.</strong> That Safety & Openness can be lost and found again. That the compass returns.
-            </p>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Winnicott (1953) — the "good enough" mother: adequate, not perfect. Tronick (2007) — the still-face paradigm: disruption and repair as the mechanism of relational development. Main & Hesse (1990) — earned security does not require a perfect history — it requires processing of whatever history existed.
+                </p>
+              </ExpandableSection>
 
-            <KeyStatement>
-              The child doesn't need a perfect parent. The child needs a parent whose compass moves — and who comes back.
-            </KeyStatement>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C7 — INTERVENTION POINTS
-             ════════════════════════════════════════════════ */}
-
-          <section id="intervention-points">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>The Five Pathways as Intervention Points</h2>
-
-            <p style={proseStyle}>
-              Each transmission pathway (C2) is also an intervention point. Repairing one pathway changes what transmits through it — even while others continue.
-            </p>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={narrowThStyle}>Pathway</th>
-                    <th style={narrowThStyle}>Intervention</th>
-                    <th style={narrowThStyle}>What Changes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ThreeColRow cells={[
-                    "Implicit Learning",
-                    "Making patterns explicit. The adult becomes aware of what they model and begins developing alternatives through F8 repair",
-                    "The child absorbs different patterns because the adult's patterns have actually changed",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Co-Regulation Modeling",
-                    "The adult expands their own regulatory capacity. Learns to hold more. Develops the return. Provides co-regulation the child can borrow",
-                    "The child's nervous system template shifts. What is holdable expands. What is intolerable reduces",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Environmental Design",
-                    "Changing the conditions: the emotional climate, the permitted range of expression, the response to distress, the relational patterns",
-                    "The child's adaptations are less extreme because the environment requires less defensive adaptation",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Epigenetic",
-                    "Stress reduction, positive experiences, therapeutic intervention, environmental safety. Epigenetic marks are responsive to experience — they can shift",
-                    "The next generation's stress-response baseline shifts. Not erased — modified through sustained different experience",
-                  ]} />
-                  <ThreeColRow cells={[
-                    "Narrative",
-                    "Re-authoring family stories. Naming what was silenced. Replacing false coherence narratives with coherent, emotionally honest accounts",
-                    "The child inherits a different story — one where difficulty is named, felt, and survived, rather than denied or performed around",
-                  ]} />
-                </tbody>
-              </table>
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  "Enough" grounded in the ESC architecture: what "enough" means at the nervous system level is that the child reads a nervous system with State Flexibility — a system that moves and returns, not one permanently in Safety & Openness. The identification that the demand for perfection recreates the regulation thread. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <h3 style={conceptHeadingStyle}>Why Single Interventions Fail</h3>
-
-            <p style={proseStyle}>
-              No single intervention addresses all five pathways. Parenting classes alone often fail (address narrative and perhaps implicit learning, but not co-regulation or environmental design). Individual therapy alone has limited generational impact (addresses the adult's processing, but the child needs to experience the change, not hear about it). Good intentions without capacity development fail (address narrative, but the nervous system the child reads has not changed).
-            </p>
-
-            <KeyStatement>
-              The most effective generational intervention combines F8 individual repair (changes what the adult embodies) with F9 structural repair (changes the environment the family inhabits) with F10 awareness of transmission pathways (makes the mechanisms visible and addressable).
-            </KeyStatement>
-
-            <ExpandableSection title="Somatic vs Relational Restoration" type="framework">
-              <p style={proseStyle}>
-                Generational repair requires understanding two distinct completion types. <strong>Somatic restoration</strong> completes the activation cycle through the body alone — movement, shaking, breathing, sleep, crying. No other person is required. <strong>Relational restoration</strong> completes the activation cycle through co-regulation with another nervous system — the debris cannot discharge through the body alone when the activation was generated relationally.
-              </p>
-              <p style={proseStyle}>
-                Most generational patterns are relational. The configurations transmitted across generations — the attachment patterns, the regulation templates, the false coherence structures — were all generated in relationship and stored as relational content. They require relational completion. This is why individual somatic work, though genuinely beneficial, often cannot fully interrupt generational transmission on its own. The activation that drives transmission was laid down relationally and needs to be processed relationally.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C8 — RELATIONSHIPS ACROSS REPAIR
-             ════════════════════════════════════════════════ */}
-
-          <section id="relationships-across-repair">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>Relationships Across Generational Repair</h2>
-
-            <h3 style={conceptHeadingStyle}>Understanding Without Excusing</h3>
-
-            <p style={proseStyle}>
-              When adults begin to see the transmission mechanism — to understand that their parents transmitted what they had, which is what their parents transmitted to them — a complex emotional territory opens. F10 holds both truths simultaneously:
-            </p>
-
-            <p style={{ ...proseStyle, paddingLeft: 16 }}>
-              <strong>Understanding:</strong> "I can see the system that shaped you. I can see what you never had conditions to develop. I can see that you transmitted what you had."<br /><br />
-              <strong>Accountability:</strong> "And I can see what it cost me. The awareness capacities that did not develop. The false coherence I absorbed. The regulation I never learned. That cost is real."
-            </p>
-
-            <p style={proseStyle}>
-              Neither truth cancels the other. Understanding does not minimize impact. Accountability does not require demonization.
-            </p>
-
-            <KeyStatement>
-              I understand why you became who you became. And I see what it cost me. Both are true. Neither erases the other.
-            </KeyStatement>
-
-            <h3 style={conceptHeadingStyle}>Relationships Require Consent</h3>
-
-            <p style={proseStyle}>
-              Family relationships, like all relationships, require consent. F10 does not assume that understanding the mechanism means maintaining contact. Assessment considers: current safety (does the relationship create conditions for Connection?), caregiver capacity (has the parent developed?), what contact serves (growth, guilt, obligation, or genuine connection?), and alternatives (what becomes possible without contact?). The goal is clear-eyed assessment and genuine choice — neither guilt-driven contact nor reflexive cutoff.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>Chosen Family</h3>
-
-            <p style={proseStyle}>
-              When the family of origin cannot provide safety, chosen family can provide what was missing: corrective relational experience, alternative configuration models, accurate mirroring from people whose capacities are online, and an environment where the person's authentic configuration is welcomed. Chosen family is not replacement or escape. It is legitimate relational ground where the three awareness capacities can develop.
-            </p>
-          </section>
-
-          {/* ════════════════════════════════════════════════
-              C9 — TRUE ELDERHOOD
-             ════════════════════════════════════════════════ */}
-
-          <section id="true-elderhood">
-            <h2 style={sectionHeadingStyle(SPECTRUM.blue)}>True Elderhood</h2>
-
-            <div style={tableWrapStyle}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Positional Elderhood</th>
-                    <th style={thStyle}>True Elderhood</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={["Uses age and experience for control", "Uses age and experience for guidance"]} />
-                  <TableRow cells={["Demands deference", "Earns respect through embodied capacity"]} />
-                  <TableRow cells={["Resists change — 'we survived, so should you'", "Supports evolution — 'I want you to have what I didn't'"]} />
-                  <TableRow cells={["Requires the next generation to validate previous choices", "Allows the next generation to see clearly — even when what they see is painful"]} />
-                  <TableRow cells={["Operates from chronic Strategy & Management — managing how the family sees itself", "Operates from Safety & Openness — can hold complexity, grief, and truth"]} />
-                </tbody>
-              </table>
-            </div>
-
-            <h3 style={conceptHeadingStyle}>The Developmental Achievement</h3>
-
-            <p style={proseStyle}>
-              True elderhood is not automatic. It is a developmental achievement — the result of the adult having done the work F8 describes. It requires <strong>Interoceptive Self-Awareness (SEA) online</strong> (the elder can see their own patterns, name their own limitations, and acknowledge what they transmitted), <strong>Affective Resonance (ER) available</strong> (the elder can feel the grief of what they did not provide, without collapsing or defending), <strong>Interpersonal Affect Perception (RE) accurate</strong> (the elder can see the next generation clearly, not through the filter of their own needs), and <strong>compass moving</strong> (the elder can hold difficulty, tolerate being seen imperfectly, and return to baseline after the discomfort of truth).
-            </p>
-
-            <KeyStatement>
-              An elder whose compass moves is an elder who can hold the family's truth. An elder whose compass is stuck demands the family hold the elder's version.
-            </KeyStatement>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
               {
-                term: "Capacity configuration teaches capacity configuration",
-                definition: "F2's mechanism at generational scale. The adult's configuration IS the child's environment.",
+                term: "Configuration teaches configuration",
+                definition: "The adult's capacity configuration IS the child's developmental environment. The child calibrates to the ESS channel, not the CLS channel. Not one input among many — the environment.",
               },
               {
-                term: "Five simultaneous transmission pathways",
-                definition: "Implicit learning, co-regulation, environmental design, epigenetic, narrative. Why single interventions fail.",
+                term: "Five simultaneous pathways",
+                definition: "Implicit learning, co-regulation modelling, environmental design, epigenetic modification, narrative inheritance. They reinforce each other. Single interventions fail because they address one pathway while four continue.",
               },
               {
-                term: "What transmits when activation was never processed",
-                definition: "Unprocessed experience becomes the child's developmental environment. The child inherits the consequence, not the event.",
-              },
-              {
-                term: "Each chronic state transmits a specific developmental environment",
-                definition: "Each chronic state produces specific conditions, specific capacity profiles, specific calibrations.",
+                term: "Unprocessed experience transmits",
+                definition: "The child inherits the regulatory consequence, not the event. The adult's unresolved activation produces the nervous system state that produces the relational environment.",
               },
               {
                 term: "Processing changes the transmission",
-                definition: "Earned security. Content → coherence. Love does not override embodiment.",
+                definition: "Earned security: when the adult's ESS processes what happened, the activation shaping the relational environment resolves. Love does not override embodiment — the CLS and ESS transmit different messages.",
               },
               {
-                term: "One generation of repair shifts the baseline",
-                definition: "Compound interest. Small, sustained shifts accumulate across generations.",
+                term: "Compound interest",
+                definition: "One generation of partial repair shifts the baseline. The next starts from the shifted baseline. Small, sustained shifts accumulate across time.",
               },
               {
                 term: "Enough, not perfect",
-                definition: "The demand for perfection recreates the regulation thread. The child needs a parent who moves and comes back.",
+                definition: "State Flexibility: a nervous system that moves and comes back. Rupture and repair as developmental data. The demand for perfection recreates the regulation thread.",
               },
               {
                 term: "Understanding and accountability coexist",
-                definition: "Both true. Neither cancels the other. Relationships require consent.",
+                definition: "I can see the system that shaped you. I see what it cost me. Both are true. Neither cancels the other. Relationships require consent, not obligation.",
               },
             ]}
           />
 
-          {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.blue}
-            established="F10 established that what the adult processes changes what the next generation inherits — the intergenerational chain breaks where the adult's restoration becomes available."
-            question="When the adult begins to see clearly — when SEA comes online and false coherence loosens — contradictions emerge that survival previously kept hidden. F11 maps what becomes visible when the system holds what logic cannot."
+            color={accent}
+            established="F10 established how adult repair changes developmental conditions across generations — five transmission pathways, earned security through processing, compound interest, and enough not perfect."
+            question="The adult who begins to see the mechanism clearly often experiences simultaneous gratitude and grief for the same people. Love for the parent who did their best — and anger at what their best cost. When false coherence was complete, the narrative resolved the tension: either good or bad. With the interoceptive channel open, both truths arrive. Holding them, rather than resolving them, is the developmental achievement F11 maps."
             nextFramework="F11"
             nextTitle="Paradox Holds What Logic Cannot"
-            nextHref="/framework/f11-emotional-paradoxes"
+            nextHref="/framework/f11-paradox-holds"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.blue}
+            color={accent}
             connections={[
-              { id: "F2", href: "/framework/f2-awareness-calibration", description: "F2 maps intergenerational transmission forward. F10 maps it in reverse — how processing changes what transmits." },
-              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F8 describes individual repair. F10 extends the same principle across generations." },
-              { id: "M4", href: "/model/m4-awareness-capacities", description: "M4 maps the awareness architecture. F10 shows that architecture transmitting — and changing — across generations." },
+              {
+                id: "F2: Developmental Calibration",
+                href: "/framework/f2-awareness-calibration",
+                description: "F2 is F10's foundation. Every mechanism F10 describes is F2's mechanism at generational scale. F10 shows F2's mechanism running in both directions — transmitting patterns when unrepaired, transmitting repair when the adult has done the work.",
+              },
+              {
+                id: "M4: Awareness Capacities",
+                href: "/model/m4-awareness-capacities",
+                description: "M4 established that the interoceptive substrate is developable through relational experience. F10 extends: the developed substrate transmits. When the adult's channel is functioning, the child develops in the presence of a nervous system that is receiving its own signals.",
+              },
+              {
+                id: "F8: Awareness Rebuilds Through Safety",
+                href: "/framework/f8-repairing-awareness",
+                description: "F8 maps how the adult's configuration changes. F10 maps what happens when that changed configuration becomes the child's developmental environment. F8's repair process IS the parenting intervention.",
+              },
+              {
+                id: "F3: Adult Cognition & False Coherence",
+                href: "/framework/f3-false-coherence",
+                description: "F3 mapped false coherence. F10 shows what transmits when false coherence loosens: the child develops in the presence of a nervous system where the narrative and the body's state are less divergent.",
+              },
+              {
+                id: "F9: Variation Is Configuration",
+                href: "/framework/f9-neurodivergence-variation",
+                description: "F9 mapped structural repair. F10 adds the generational dimension: when adults inhabit environments that support their configuration, the next generation develops in different structural conditions.",
+              },
+              {
+                id: "F11: Paradox Holds What Logic Cannot",
+                href: "/framework/f11-paradox-holds",
+                description: "F10 surfaces the paradox: gratitude and grief for the same people. Understanding and accountability simultaneously. F11 maps the capacity to hold contradictory truths without collapsing into one.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.blue}
+            color={accent}
             items={[
-              { label: "Continue to F11 — when contradictions become visible", href: "/framework/f11-emotional-paradoxes", linkText: "F11: Paradox Holds What Logic Cannot →" },
-              { label: "See the transmission mechanism", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F11 — holding paradox when both truths arrive", href: "/framework/f11-paradox-holds", linkText: "F11: Paradox Holds What Logic Cannot \u2192" },
+              { label: "See how the adult's configuration changes", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
+              { label: "See the developmental mechanism that transmits", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration \u2192" },
+              { label: "See the awareness architecture that determines what transmits", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ── JSON-LD ── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
-            headline: "Rebuilding Generational Bridges — How Patterns Transmit and How Repair Changes What the Next Generation Inherits",
-            description: metadata.description,
+            "@id": "https://teg-blue.org/framework/f10-generational-bridges#article",
+            headline: "What the Adult Processes, the Child Does Not Inherit",
+            description:
+              "Intergenerational transmission and how adult repair changes developmental conditions — five pathways, earned security, compound interest, and enough not perfect. Framework F10 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -938,16 +590,44 @@ export default function F10GenerationalBridgesPage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            url: "https://teg-blue.org/framework/f10-generational-bridges",
-            datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            datePublished: "2026-03-08",
+            dateModified: "2026-04-06",
+            inLanguage: "en",
+            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
               "@type": "CreativeWork",
-              name: "TEG-Blue 12-Framework Architecture",
+              name: "TEG-Blue 12 Framework System",
               url: "https://teg-blue.org/frameworks-map",
             },
-            keywords: metadata.keywords,
-            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://teg-blue.org/framework/f10-generational-bridges",
+            },
+            about: [
+              { "@type": "Thing", name: "Intergenerational Transmission" },
+              { "@type": "Thing", name: "Earned Security" },
+              { "@type": "Thing", name: "Generational Repair" },
+              { "@type": "Thing", name: "Co-Regulation" },
+              { "@type": "Thing", name: "Epigenetic Transmission" },
+            ],
+            citation: [
+              { "@type": "ScholarlyArticle", name: "Attachment and Loss (Bowlby, 1969)" },
+              { "@type": "ScholarlyArticle", name: "Adult Attachment Interview (Main & Hesse, 1990)" },
+              { "@type": "ScholarlyArticle", name: "Affect Regulation and the Origin of the Self (Schore, 2003)" },
+              { "@type": "ScholarlyArticle", name: "The Developing Mind (Siegel, 2012)" },
+              { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (van der Kolk, 2014)" },
+              { "@type": "ScholarlyArticle", name: "Epigenetic Inheritance (Yehuda et al., 2005)" },
+            ],
+            keywords: [
+              "intergenerational transmission",
+              "earned security",
+              "generational repair",
+              "co-regulation",
+              "epigenetic transmission",
+              "good enough parenting",
+              "compound interest",
+              "capacity configuration",
+            ],
           }),
         }}
       />
@@ -956,9 +636,9 @@ export default function F10GenerationalBridgesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
-              { name: "Home", url: "https://teg-blue.org" },
-              { name: "12 Frameworks", url: "https://teg-blue.org/frameworks-map" },
-              { name: "F10 — Rebuilding Generational Bridges", url: "https://teg-blue.org/framework/f10-generational-bridges" },
+              { name: "Home", url: "/" },
+              { name: "12 Frameworks", url: "/frameworks-map" },
+              { name: "F10: What the Adult Processes", url: "/framework/f10-generational-bridges" },
             ])
           ),
         }}
@@ -967,27 +647,98 @@ export default function F10GenerationalBridgesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            generateFAQJsonLd(
-              faqItems.map((f) => ({ question: f.q, answer: f.a }))
-            )
+            generateFAQJsonLd([
+              {
+                question: "How does intergenerational transmission work?",
+                answer:
+                  "The adult's capacity configuration IS the child's developmental environment. The child's nervous system reads the adult through five simultaneous pathways: implicit learning, co-regulation modelling, environmental design, epigenetic modification, and narrative inheritance. The child calibrates to the ESS channel (autonomic state, physiological response) not the CLS channel (intention, words). This is why single interventions often fail — they address one pathway while four continue.",
+              },
+              {
+                question: "Why doesn't love override the pattern?",
+                answer:
+                  "The parent's conscious intention operates through the CLS. The child's calibration reads the ESS. These are different systems transmitting different messages. The parent who wants to be warm but whose nervous system tenses when the child expresses anger is transmitting two messages — the CLS message ('you can tell me anything') and the ESS message (tension, withdrawal). The child calibrates to the ESS message.",
+              },
+              {
+                question: "How does one generation of repair change the next?",
+                answer:
+                  "Compound interest. The adult develops some capacity — SEA comes partially online, the restoration sequence works sometimes. The child develops in conditions that are different from what the adult had. The child, as an adult, transmits from the shifted baseline. Small sustained shifts accumulate. The question is not 'have I healed completely?' but 'does my nervous system move differently than my parents' did?'",
+              },
+              {
+                question: "What does 'enough' mean at the nervous system level?",
+                answer:
+                  "State Flexibility — a nervous system that moves and comes back. Not never entering defensive states but returning from them. Not never rupturing but repairing. Not all three capacities perfectly online but enough development that the child reads a different signal. The demand for perfection recreates the regulation thread — replacing one false coherence with another.",
+              },
+            ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Rebuilding Generational Bridges (F10) — TEG-Blue Research",
+              name: "What the Adult Processes, the Child Does Not Inherit (F10) — TEG-Blue Research",
               url: "https://teg-blue.org/framework/f10-generational-bridges",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),
         }}
       />
-    </>
+    </div>
   );
 }
 
-const tableWrapStyle = { overflowX: "auto", marginBottom: 16 };
+// ─── STYLE CONSTANTS ──────────────────────────────────────
+
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
+};
+
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  background: BG.card,
+  borderRadius: 8,
+  overflow: "hidden",
+  border: `1px solid ${BORDER.default}`,
+  fontSize: 13,
+};
+
+const thStyle = {
+  padding: "10px 14px",
+  textAlign: "left",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  fontFamily: FONT.mono,
+  background: BG.surface,
+  borderBottom: `1px solid ${BORDER.default}`,
+};
+
+// ─── HELPER COMPONENTS ────────────────────────────────────
+
+function TableRow({ cells }) {
+  return (
+    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
+      {cells.map((cell, i) => (
+        <td
+          key={i}
+          style={{
+            padding: "10px 14px",
+            fontSize: 13,
+            color: i === 0 ? TEXT.primary : TEXT.secondary,
+            fontWeight: i === 0 ? 600 : 400,
+            lineHeight: 1.6,
+            verticalAlign: "top",
+          }}
+        >
+          {cell}
+        </td>
+      ))}
+    </tr>
+  );
+}

@@ -9,7 +9,7 @@ import {
 } from "@/src/styles/pageStyles";
 import {
   SiteHeader, SiteFooter, PageLayout, FrameworkHero,
-  PropositionBox, ExpandableSection, CommonUnderstanding,
+  ExpandableSection, CommonUnderstanding,
   PartDivider, NavSection, ConnectionsMap,
 } from "@/src/components";
 import PrerequisitesBlock from "@/src/components/PrerequisitesBlock";
@@ -24,47 +24,49 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
-  { label: "Core Propositions", href: "#core-propositions", description: "Rule-following is often a nervous system regulation strategy rather than a reasoning choice." },
-  { label: "Overview", href: "#overview", description: "F3 completes the individual arc. F4 asks what happens when enough people running those mechanisms are in proximity." },
-  { label: "The Scaling Mechanism", href: "#individual-to-collective", description: "How F3's three mechanisms aggregate into group structures." },
-  { label: "How Rules Get Internalised", href: "#seven-step-mechanism", description: "The seven-step mechanism: attention narrows, ambiguity decreases, deviation costs, conformity rewarded." },
-  { label: "Six Rule Categories", href: "#six-rule-systems", description: "Roles, Obedience, Performance, Dominance, Punishment, Entitlement — a regulatory taxonomy." },
-  { label: "Rule Escalation", href: "#rule-escalation", description: "Four stages paralleling the four-mode gradient: from flexible norms through authoritarian control." },
-  { label: "Cross-Theoretical Convergence", href: "#cross-theoretical-convergence", description: "Ten research traditions all describing the same mechanism. Rules as nervous system regulation at every scale." },
-  { label: "What This Framework Establishes", href: "#establishes", description: "The scaling mechanism defined, the seven-step loop mapped, the six-category taxonomy available." },
-  { label: "Research Foundations", href: "#research-foundations", description: "Sociology, social psychology, neuroscience, trauma studies, and political psychology." },
-  { label: "Bridge to F5", href: "#bridge-to-f5", description: "Rule systems do not just organise behaviour. They organise value. Sorting formalises into worth hierarchies." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F4 makes about how individual patterns scale to collective rule systems." },
+  { label: "How Individual Patterns Consolidate", href: "#consolidation", description: "Three mechanisms drive scaling: false coherence absorbs rules, emotional distortion makes violation feel like attack, external regulation makes compliance a need." },
+  { label: "What Rules Are at the Biological Level", href: "#rules-biological", description: "A rule is material the CLS absorbs because it stabilises the chronic state." },
+  { label: "From External Enforcement to Invisible Truth", href: "#internalisation", description: "Seven steps from imposed rule to experienced reality." },
+  { label: "Six Regulatory Functions", href: "#six-functions", description: "Roles, obedience, performance, dominance, punishment, entitlement — each defined by what the nervous system gets." },
+  { label: "How Rules Set the Next Generation's Substrate", href: "#substrate-reproduction", description: "Rules reproduce the biological conditions that make the rules feel true." },
+  { label: "How Populations Relate to Rules", href: "#three-coherence-forms", description: "Absent, contested, and full interoceptive access produce different relationships to the same rule system." },
+  { label: "Institutions on Cognitive Data Alone", href: "#re-only-institutions", description: "When the collective reads accurately, resonates with nothing, and cannot feel its own impact." },
+  { label: "How Rules Escalate", href: "#escalation", description: "Four stages paralleling the nervous system gradient at collective scale." },
+  { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
+  { label: "Bridge to F5", href: "#bridge", description: "Rules organise behaviour. They also sort who gets the conditions for restoration." },
+  { label: "Connections Map", href: "#connections", description: "How F4 relates to models and other frameworks." },
+  { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "Rules Regulate — How Individual Patterns Scale to Collective Rule Systems (F4) | TEG-Blue Research",
+  title: "Rules Regulate (F4) | TEG-Blue Research",
   description:
-    "How individual nervous system patterns aggregate into collective rule systems — through emotional distortion, external regulation, and false coherence operating at the group level. Framework F4 of 12.",
+    "How individual nervous system patterns scale to collective rule systems — three scaling mechanisms, the internalisation loop, six regulatory functions, and how rules reproduce the substrate state across generations. Framework F4 of the TEG-Blue 12-framework system.",
   keywords: [
-    "collective rule systems",
-    "rule internalization",
+    "rules regulate",
+    "collective regulation",
+    "rule internalisation",
     "nervous system regulation",
+    "false coherence",
+    "collective rule systems",
+    "regulatory functions",
+    "interoceptive substrate",
     "conformity",
     "obedience",
-    "social rules",
-    "threat-based compliance",
-    "rule escalation",
-    "authoritarianism",
-    "emotional distortion",
-    "external regulation",
-    "false coherence",
-    "emotional technology",
+    "system justification",
+    "authoritarian escalation",
   ],
   alternates: {
     canonical: "https://teg-blue.org/framework/f4-rules-regulate",
   },
   openGraph: {
-    title: "Rules Regulate — How Individual Patterns Scale to Collective Rule Systems — F4 Framework | TEG-Blue",
+    title: "Rules Regulate — F4 Framework | TEG-Blue",
     description:
-      "How individual nervous system patterns aggregate into collective rule systems. The first framework in the collective arc of the TEG-Blue 12-framework system.",
+      "How individual nervous system patterns scale to collective rule systems — the first framework in the collective arc. Framework F4 of 12.",
     url: "https://teg-blue.org/framework/f4-rules-regulate",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -73,10 +75,10 @@ export const metadata = {
     card: "summary_large_image",
     title: "Rules Regulate — TEG-Blue F4",
     description:
-      "How individual nervous system patterns aggregate into collective rule systems. The first framework in the collective arc.",
+      "How individual nervous system patterns consolidate into collective rule systems — and how rules reproduce the biological conditions that make them feel true.",
   },
   other: {
-    'citation_title': 'Rules Regulate: How Individual Patterns Scale to Collective Rule Systems',
+    'citation_title': 'Rules Regulate',
     'citation_author': 'Anna Paretas-Artacho',
     'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
@@ -86,6 +88,8 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F4RulesRegulatePage() {
+  const accent = SPECTRUM.cobalt;
+
   return (
     <div
       style={{
@@ -99,489 +103,477 @@ export default function F4RulesRegulatePage() {
       <PageLayout
         header={
           <FrameworkHero
-              badge="FRAMEWORK F4"
-              title="Rules Regulate"
-              subtitle="How Individual Patterns Scale to Collective Rule Systems"
-              description="How emotional distortion, external regulation, and false coherence — the individual mechanisms established in F3 — aggregate into collective rule systems when enough people run them in proximity. The first framework in the collective arc (F4–F7), showing how individual M3 restoration failure scales into collective regulatory structures."
-              group="Collective"
-              groupLabel="Collective Arc · F4–F7"
-              threadLine="Rules regulate · Cost: Flexibility"
-              adjacent={{
-                prev: { label: "F3 False Coherence", href: "/framework/f3-false-coherence" },
-                next: { label: "F5 Worth Hierarchies", href: "/framework/f5-worth-hierarchies" },
-              }}
-            />
+            badge="FRAMEWORK F4"
+            title="Rules Regulate"
+            subtitle="How Individual Patterns Scale to Collective Rule Systems"
+            description="F3 completed the individual arc: the biological return was never learned, the CLS constructed a narrative substitute, and the substitute extended into relationships. F4 asks: what happens when enough people in a system are running those same mechanisms? The answer is collective rule systems — shared narratives that reduce uncertainty, manage belonging, and enforce conformity. The regulatory function is the same. The scale changes."
+            group="Collective"
+            groupLabel="Collective Arc · F4–F7"
+            threadLine="Rules regulate — collective rule compliance as restoration substitute. Scale: social systems. Cost: flexibility"
+            informsModels={[
+              { label: "M2", href: "/model/m2-nervous-system-states" },
+              { label: "M4", href: "/model/m4-awareness-capacities" },
+            ]}
+            adjacent={{
+              prev: { label: "F3 Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
+              next: { label: "F5 The Filter of Worth", href: "/framework/f5-filter-of-worth" },
+            }}
+          />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
+
           {/* ─── PREREQUISITES ──────────────────────────── */}
           <PrerequisitesBlock items={[
             {
               concept: "False Coherence",
               framework: "F3",
-              description: "The CLS replacing the ESS's signals with narrative that produces physiological relief — the cognitive maintenance mechanism that individual patterns scale through.",
-              href: "/framework/f3-false-coherence#self-reinforcing-loop",
+              description: "The CLS generating narrative that replaces the ESS's physiological signals — a restoration substitute operating through cognition. Each chronic state produces its own characteristic narrative.",
+              href: "/framework/f3-false-coherence#false-coherence",
+            },
+            {
+              concept: "Emotional Distortion",
+              framework: "F3",
+              description: "Internal physiological activation misattributed as external threat when the interoceptive channel (SEA) is absent.",
+              href: "/framework/f3-false-coherence#emotional-distortion",
             },
             {
               concept: "External Regulation",
               framework: "F3",
-              description: "When internal restoration is unavailable, the nervous system recruits others — each chronic state using others differently.",
-              href: "/framework/f3-false-coherence#external-regulation",
-            },
-            {
-              concept: "Biological Restoration",
-              framework: "F1",
-              description: "The body's designed process for completing the activation sequence — the process rules substitute for at collective scale.",
-              href: "/framework/f1-emotional-gradient#designed-process",
+              description: "The nervous system recruiting others to perform the regulatory function it cannot perform internally — fusion, distance, management, or subjugation depending on the chronic state.",
+              href: "/framework/f3-false-coherence#restoration-substitutes",
             },
           ]} />
 
-          {/* ─── THE COMMON UNDERSTANDING ──────────────────── */}
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
           <CommonUnderstanding
             terms={[
               {
-                title: "Entitlement",
-                commonUnderstanding: "Arrogance, selfishness, a personality flaw — someone who thinks they deserve more than others.",
-                definition: "Emotional regulation — the enforcement mechanism that ensures external regulation continues when internal capacity was never built. The demand is not for more than is fair. It is for the only return pathway the system has.",
+                title: "Rules",
+                commonUnderstanding: "Rational agreements made by reasonable people to organise society — social contracts that can be evaluated and changed through discussion.",
+                definition: "Material the CLS absorbs because it stabilises the chronic state. The CLS cannot distinguish between a rule that is accurate and a rule that regulates. A rule that confirms the person's chronic state is absorbed without friction — it feels true because it stabilises.",
               },
               {
-                title: "Punishment (Relational)",
-                commonUnderstanding: "Discipline, consequences, tough love — holding someone accountable for their behaviour.",
-                definition: "Regulation enforcement — the system's response when its regulation supply is threatened. Boundaries are experienced as attack because they cut off the only return pathway. The punishment is not about the other person's behaviour. It is about restoring the regulation source.",
+                title: "Conformity",
+                commonUnderstanding: "Weakness — giving in to peer pressure, lacking the courage to be different.",
+                definition: "A physiological event. Matching the group reduces unpredictability. The ventral vagal system registers group alignment as relational safety. The nervous system rewards sameness with reduced activation. Deviation signals unpredictability and triggers neuroception of threat.",
+              },
+              {
+                title: "Common sense",
+                commonUnderstanding: "Obvious truths that everyone can see — facts so basic they don't need justification.",
+                definition: "Rules that have completed the internalisation loop — from external enforcement through self-policing to experienced truth. They are no longer perceived as rules. Questioning them activates the same threat response that installed them.",
               },
             ]}
           />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
-          <section
-            id="core-propositions"
-            aria-labelledby="heading-core-propositions"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-core-propositions"
-              style={sectionHeadingStyle(SPECTRUM.cobalt)}
-            >
-              Core Propositions
-            </h2>
-            <PropositionBox label="FOUNDATIONAL CLAIM">
-              <ul style={{ paddingLeft: 20, margin: 0 }}>
+          <div id="core-propositions" style={{ marginBottom: 24 }}>
+            <ExpandableSection title="Core Propositions" type="framework">
+              <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
                 <li style={propositionItemStyle}>
-                  Rule-following is often a nervous system regulation strategy, not a reasoning choice — under threat, the nervous system prioritizes predictability, belonging protection, and risk minimization
+                  When enough nervous systems carrying chronic states inhabit the same system, individual patterns consolidate into collective rule systems without deliberate design — through false coherence absorbing rules, emotional distortion making violation feel like attack, and external regulation making compliance a nervous system need
                 </li>
                 <li style={propositionItemStyle}>
-                  Individual nervous system patterns (F3's false coherence, emotional distortion, and external regulation) aggregate into collective rule systems when enough people run them in proximity
+                  A rule, at the biological level, is material the CLS absorbs because it stabilises — the same mechanism as individual false coherence, operating on collective material
                 </li>
                 <li style={propositionItemStyle}>
-                  Rules persist not because they are reasonable but because they are regulating — questioning rules activates the same threat response that created them
+                  Rules move from external enforcement to experienced truth through a seven-step internalisation loop — and the loop is self-sealing: questioning the rules activates the threat that created them
                 </li>
                 <li style={propositionItemStyle}>
-                  Six categories of rules emerge from threat-based internalization, each defined by regulatory function: roles (identity), obedience (belonging), performance (worth), dominance (power), punishment (boundaries), entitlement (resources)
+                  Six rule systems emerge from collective regulation needs — roles, obedience, performance, dominance, punishment, entitlement — each defined by its regulatory function, not its content
                 </li>
                 <li style={propositionItemStyle}>
-                  Rule systems escalate under sustained threat through stages that parallel the four-mode gradient — from flexibility through enforcement to authoritarian control
+                  Rule systems reproduce the interoceptive substrate state across generations — producing the caregiver profiles that produce the offspring substrate states that make the rules feel true
                 </li>
                 <li style={propositionItemStyle}>
-                  This framing does not remove responsibility — it explains why compliance becomes compelling, so intervention can address the regulation need and accountability can remain intact
+                  Three collective coherence forms — absent, contested, and full interoceptive access — explain why the same rule system produces different relationships in different populations
+                </li>
+                <li style={propositionItemStyle}>
+                  When collective threat increases, rule systems escalate through four stages paralleling the nervous system gradient — predictable and interruptible
                 </li>
               </ul>
-            </PropositionBox>
-          </section>
+            </ExpandableSection>
+          </div>
 
-          {/* ─── OVERVIEW ─────────────────────────────────── */}
+          {/* ─── PART 1: HOW INDIVIDUAL PATTERNS SCALE ──── */}
+          <PartDivider label="PART 1" title="How Individual Patterns Scale" color={accent} />
+
+          {/* Concept 0: How Individual False Coherence Consolidates */}
           <section
-            id="overview"
-            aria-labelledby="heading-overview"
+            id="consolidation"
+            aria-labelledby="heading-consolidation"
             style={{ marginBottom: 48 }}
           >
-            <h2
-              id="heading-overview"
-              style={sectionHeadingStyle(SPECTRUM.cobalt)}
-            >
-              Overview — The First Collective Framework
+            <h2 id="heading-consolidation" style={sectionHeadingStyle(accent)}>
+              How Individual Patterns Consolidate Into Shared Narratives
             </h2>
 
             <p style={proseStyle}>
-              F3 completes the individual arc. The biological return was never learned (F2), cognition stepped in to replace it (F3), and the replacement extends into relationships through emotional distortion and external regulation. F4 asks: what happens when enough people in a system are running those same mechanisms?
+              The scaling does not require deliberate design. It requires proximity. When enough nervous systems in a group carry chronic states — when each person's CLS is constructing narrative from available data without the interoceptive channel to the body's physiological signals — the individual narratives begin to consolidate. Shared explanations emerge. Shared rules follow.
             </p>
             <p style={proseStyle}>
-              The answer is <strong style={{ color: TEXT.primary }}>collective rule systems</strong>. Not rational agreements or social contracts — but nervous system regulation at the group level. When enough individuals need predictability, belonging protection, and conformity to stay regulated, groups generate structures that provide those needs. Rules emerge as the collective equivalent of false coherence: shared narratives that reduce uncertainty, manage belonging, and enforce conformity.
+              Three mechanisms drive the consolidation. Each was established in <Link href="/framework/f3-false-coherence" style={linkStyle}>F3</Link> as an individual process. Each operates identically at collective scale.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>False coherence absorbs rules as truth.</strong> The CLS that maintains individual false coherence — "I'm the responsible one," "I don't do emotions" — absorbs collective narratives that confirm the chronic state. "Hard work is the only thing that matters." "Emotions are unprofessional." These are not evaluated as propositions. They are absorbed as regulatory material — narratives that stabilise the chronic state by confirming it from the outside. The individual lock and the collective lock reinforce each other.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Emotional distortion makes rule-violation feel like personal attack.</strong> When a person in a position of authority runs emotional distortion — when internal activation is misattributed as external threat — everyone around them adapts. The group learns: this person's discomfort is your emergency. At collective scale, questioning the rules activates the same misattribution in multiple people simultaneously. The challenge is experienced not as a question but as an attack.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>External regulation makes rule-compliance a nervous system need.</strong> When multiple people in a system are running external regulation — when each person's stability depends on others' compliance, approval, distance, or submission — the system develops structures to manage these competing regulation needs. Rules emerge as the collective equivalent of false coherence: shared narratives that stabilise the group by reducing unpredictability.
             </p>
 
-            <KeyStatement>
-              The regulation thread: F1 defines Biological Restoration as the return mechanism. F2 shows what happens when the return is never learned. F3 shows what cognition does in its place. F4 shows what happens when enough people running those mechanisms are in proximity: individual substitutes aggregate into collective rule systems.
-            </KeyStatement>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — three individual mechanisms scaling to collective */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bourdieu (1977) — habitus as embodied social structure reproduced below awareness. Bowen — family systems theory: anxiety propagating through systems, producing rule-based stability. Porges (2011) — nervous system synchronisation under shared threat conditions. Goffman (1959) — dramaturgical performance and social maintenance through unspoken rules.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The specific mechanism by which individual nervous system patterns become collective structures — traced through three named processes (false coherence absorption, emotional distortion, external regulation) that F3 established at the individual level. The existing literature describes the phenomenon but does not trace the pathway from individual capacity gaps through the specific mechanisms to collective rule formation. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 1: What Rules Are at the Biological Level */}
+          <section
+            id="rules-biological"
+            aria-labelledby="heading-rules-biological"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-rules-biological" style={sectionHeadingStyle(accent)}>
+              What Rules Are at the Biological Level
+            </h2>
 
             <p style={proseStyle}>
-              F4 is the first framework in the collective arc (F4–F7). Each describes a progressively larger-scale substitute for the regulation that was never built:
+              A rule, at the biological level, is material the CLS absorbs because it stabilises the chronic state. The CLS does not have two modes — one for internal narrative and one for social participation. It has one mode: constructing coherent accounts from the data available to it. When the interoceptive channel to the ESS is absent, the CLS constructs internal coherence from its own output. It also constructs social coherence from the cultural narratives available to it. Both operations serve the same regulatory function: stability through narrative.
+            </p>
+            <p style={proseStyle}>
+              This means the CLS cannot distinguish between a rule that is accurate and a rule that regulates. A social rule that confirms the chronic state is absorbed without friction — it feels true because it stabilises. A social rule that contradicts the chronic state is resisted or ignored — not because the person evaluated it and disagreed, but because absorbing it would threaten the regulatory structure.
+            </p>
+            <p style={proseStyle}>
+              The mechanism is the same as F3's signal replacement, operating on collective material. The cultural rule "boys don't cry" and the individual false coherence "I don't do emotions" are the same operation — the CLS building stability from available data without the interoceptive channel to check whether the narrative matches the body's state.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — individual and collective false coherence as same operation */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bernstein — pedagogic codes: invisible rules governing what can be said, thought, and known within a social system. Haidt (2001) — moral foundations as intuitive rules that feel like direct perception. Jost & Banaji (1994) — system justification: the psychological tendency to defend existing social arrangements because they provide regulatory stability.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Rules reframed as regulatory material rather than social contracts — absorbed by the same CLS mechanism that maintains individual false coherence. The functional definition: a rule is what the CLS absorbs because it stabilises, regardless of whether it is accurate. This changes the intervention logic: the question is not whether the rule is rational but what regulatory function the rule serves and what conditions would allow the nervous system to release it. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 2: From External Enforcement to Invisible Truth */}
+          <section
+            id="internalisation"
+            aria-labelledby="heading-internalisation"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-internalisation" style={sectionHeadingStyle(accent)}>
+              From External Enforcement to Invisible Truth
+            </h2>
+
+            <p style={proseStyle}>
+              Under perceived threat, a seven-step mechanism moves rules from external enforcement to experienced truth:
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 1:</strong> Attention narrows toward threat and social-risk cues. Cortisol elevation narrows the perceptual field. Social cues that signal risk — disapproval, exclusion signals, authority displeasure — receive disproportionate processing weight.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 2:</strong> Tolerance for ambiguity decreases. Uncertainty activates the same threat circuits as physical danger. Clear answers — even inaccurate ones — settle the activation. The CLS prioritises coherence over accuracy.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 3:</strong> Deviation becomes costly. Standing out risks exclusion. The group begins to treat variation as a threat signal.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 4:</strong> Conformity becomes protective. Matching the group reduces unpredictability. The ventral vagal system registers group alignment as relational safety.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 5:</strong> Compliance receives belonging signals. The group rewards rule-adherence with approval, inclusion, reduced scrutiny. Belonging signals activate oxytocin pathways and reduce cortisol. Exclusion signals activate the same neural circuits as physical pain.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 6:</strong> External enforcement gives way to self-policing. The person no longer needs someone else to enforce the rule. Shame, guilt, and fear of exclusion become the self-policing engine.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Step 7:</strong> Rules become invisible. Through repetition, rules transition from external enforcement through self-policing to experienced truth. They are no longer perceived as rules. They are "how things are." "Common sense." "Just the way it works."
+            </p>
+            <p style={proseStyle}>
+              The loop closes at Step 7. Rules that have become invisible regulate the activation that would arise from examining them. Questioning the rules recreates the original threat — because the rules are now part of the collective false coherence. The mechanism that installed the rules is the mechanism that protects them from examination.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: animated — seven-step loop with self-sealing closure */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Milgram (1963) — obedience to authority under conditions that override individual judgment. Asch (1951) — conformity under group pressure even when the group is visibly wrong. Zimbardo (1971) — situational power of social systems to override individual disposition. Greenberg, Pyszczynski & Solomon — Terror Management Theory: mortality salience increases conformity and rule-adherence. Eisenberger, Lieberman & Williams (2003) — social exclusion activating the same neural circuit as physical pain.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The full pathway from individual nervous system activation through collective rule invisibility, with the self-sealing closure: questioning rules activates the same threat response that created them. The existing literature documents each step independently. No existing model traces the complete pathway from individual threat activation through seven steps to collective rule invisibility and back to the threat activation that prevents examination. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 2: WHAT RULE SYSTEMS PRODUCE ──────── */}
+          <PartDivider label="PART 2" title="What Rule Systems Produce" color={accent} />
+
+          {/* Concept 3: Six Regulatory Functions */}
+          <section
+            id="six-functions"
+            aria-labelledby="heading-six-functions"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-six-functions" style={sectionHeadingStyle(accent)}>
+              Six Regulatory Functions That Rule Systems Serve
+            </h2>
+
+            <p style={proseStyle}>
+              Six categories of rules consistently emerge from the internalisation mechanism. Each is defined by the regulatory function it serves — not by its content.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Framework</th>
-                    <th style={thStyle}>What Regulates</th>
-                    <th style={thStyle}>The Regulation Thread</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "F1 — Biological Information",
-                    "The body",
-                    "The biological return mechanism — Biological Restoration.",
-                  ]} />
-                  <TableRow cells={[
-                    "F2 — Awareness Calibration",
-                    "Development",
-                    "The developmental failure of the return. Cognition recruited into threat service.",
-                  ]} />
-                  <TableRow cells={[
-                    "F3 — False Coherence",
-                    "Cognition",
-                    "The cognitive replacement of the return. Emotional distortion and external regulation.",
-                  ]} />
-                  <TableRow cells={[
-                    "F4 — Rules Regulate",
-                    "Collective rules",
-                    "Individual substitutes aggregate into collective rule systems. Predictability + conformity.",
-                  ]} />
-                  <TableRow cells={[
-                    "F5 — Worth Hierarchies",
-                    "Worth sorting",
-                    "Rules begin to sort people by value. Status + credibility.",
-                  ]} />
-                  <TableRow cells={[
-                    "F6 — Bias",
-                    "Group boundaries",
-                    "Group protection through othering.",
-                  ]} />
-                  <TableRow cells={[
-                    "F7 — Domination",
-                    "Power override",
-                    "Power through control and elimination.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <p style={proseStyle}>
-              The regulation thread does not change at scale. The same nervous system logic that drives individual false coherence drives collective rule formation. The mechanism is the same. The scale changes.
-            </p>
-
-            <ExpandableSection title="How This Framework Emerged" type="framework">
-              <p style={expandedProseStyle}>
-                F4 emerged from recognizing that multiple frameworks all describe the same phenomenon: how collective threat creates rule-based systems that prioritize conformity over flexibility. Sociology (Bourdieu, Bernstein, Goffman) describes habitus, social reproduction, and dramaturgical performance. Social psychology (Milgram, Asch, Cialdini) describes obedience, conformity, and compliance under authority. Neuroscience (Porges, Siegel) describes how threat synchronizes nervous systems. Attachment theory (Bowlby) describes internal working models and belonging pressure. Systems theory (Bowen, Satir) describes anxiety spreading through systems. Trauma studies (van der Kolk, Herman, Walker) describes intergenerational transmission. Cultural analysis (hooks, Eisler) describes domination systems.
-              </p>
-              <p style={expandedProseStyle}>
-                The synthesis: organizing these into a unified model showing that rule internalization is the mechanism through which individual nervous system threat (F1–F3) becomes collective regulation — producing identifiable rule categories, each serving a distinct regulatory function.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── FROM INDIVIDUAL TO COLLECTIVE ──────────────── */}
-          <section
-            id="individual-to-collective"
-            aria-labelledby="heading-individual-to-collective"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-individual-to-collective" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              From Individual to Collective — How F3's Mechanisms Scale
-            </h2>
-
-            <p style={proseStyle}>
-              F3 established the mechanisms. F4 shows how they scale.
-            </p>
-
-            <h3 style={conceptHeadingStyle}>
-              Three Scaling Pathways
-            </h3>
-
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Emotional distortion scales.</strong> When a person in a position of authority runs emotional distortion — when their internal discomfort gets reclassified as others' wrongdoing — everyone around them must adapt. This can happen without deliberate intent — the person may sincerely experience discomfort as "wrongdoing" — but the impact is the same: the group is organized around their state. The team, the family, the organization learns: this person's discomfort is your emergency. Their internal state becomes your responsibility to manage.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>External regulation scales.</strong> When multiple people in a system are running external regulation — when each person's stability depends on others' compliance, approval, distance, or fear — the system develops structures to manage these competing regulation needs. Rules emerge. Not as conscious agreements, but as the collective equivalent of false coherence: shared narratives that stabilize the group by reducing unpredictability, managing belonging, and enforcing conformity.
-            </p>
-            <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>False coherence absorbs rules.</strong> The same cognitive system that maintains individual false coherence absorbs and maintains social rules. If cognition can replace an emotional signal with "I'm not angry — I'm being logical," it can just as easily replace it with "that's just how things are done" or "that's the policy" or "everyone knows that." Social rules that support the person's chronic mode are absorbed effortlessly. Social rules that challenge it are resisted or ignored.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Scaling Mechanism</th>
-                    <th style={thStyle}>What It Does</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "False coherence absorbs rules",
-                    "Rules are experienced as truth: \"that's just how it is.\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Emotional distortion makes violations feel like attacks",
-                    "Rule-breaking triggers the same defensive response as personal attack.",
-                  ]} />
-                  <TableRow cells={[
-                    "External regulation makes compliance a nervous system need",
-                    "Following rules settles activation. Breaking them destabilizes.",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-
-            <KeyStatement>
-              Together, rules persist not because they are reasonable, but because they are regulating. The rules are not maintained by the threat that generated them. They are maintained by the regulatory function they now serve.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              This is why rules persist long after the original conditions that created them have passed. Questioning the rules activates the same threat response that created them — because the rules have become part of the collective false coherence. They feel like truth. Challenging them feels like an attack on the group's regulation.
-            </p>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Providing the specific mechanism by which individual nervous system patterns become collective structures. The existing literature describes the phenomenon (Bourdieu's habitus, Bowen's family systems anxiety, Durkheim's collective consciousness) but does not trace the pathway from individual capacity gaps through the named mechanisms of emotional distortion and external regulation (F3) to collective rule formation (F4). F4 provides that pathway: SEA offline → emotional distortion → external regulation → collective rule systems. The chain is traceable from the individual's missing awareness capacity to the institution's rule structure.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── SEVEN-STEP MECHANISM ──────────────────────── */}
-          <section
-            id="seven-step-mechanism"
-            aria-labelledby="heading-seven-step-mechanism"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-how-rules-internalized" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              How do rules become internalized as nervous system regulation?
-            </h2>
-
-            <h2 id="heading-seven-step-mechanism" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Threat-Based Rule Internalization — The Seven-Step Mechanism
-            </h2>
-
-            <p style={proseStyle}>
-              Under perceived threat, individuals shift toward defensive regulation (F1). When this happens across a group, a seven-step mechanism produces internalized rules:
-            </p>
-
-            <ol style={orderedListStyle}>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Attention narrows toward threat and social-risk cues.</strong> The nervous system prioritizes: who is dangerous, what is expected, what deviation costs.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Tolerance for ambiguity decreases.</strong> Uncertainty feels dangerous. Clear answers, even wrong ones, feel safer than open questions.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Deviation becomes costly.</strong> Difference signals potential threat. Standing out risks exclusion. The group begins to treat variation as risk.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Sameness becomes protective.</strong> Conformity reduces unpredictability. Matching the group signals safety. The group begins to reward uniformity.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Behaviors that reduce uncertainty are rewarded.</strong> Compliance receives belonging signals: approval, inclusion, reduced scrutiny, and often status.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>External enforcement gives way to self-policing.</strong> The person no longer needs someone else to enforce the rule. Belonging becomes conditional on rule adherence. The person polices themselves — and others. Fear of exclusion and shame become the self-policing engine.
-              </li>
-              <li style={listItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Rules become invisible.</strong> Through repetition, rules transition from external enforcement → self-policing → experienced as truth. They are no longer perceived as rules. They are "how things are." "Common sense." "Just the way it works."
-              </li>
-            </ol>
-
-            <KeyStatement>
-              The loop closes at Step 7: rules regulate the threat that created them, so examining the rules recreates threat. Questioning rules activates the same nervous system response that installed them. The mechanism that created the rules is the mechanism that protects the rules.
-            </KeyStatement>
-
-            <p style={proseStyle}>
-              This connects directly to F3's false coherence: Step 7 is collective false coherence. The rules are experienced as truth because they stabilize. The mechanism is the same at both scales — individual and collective — because the cognitive system running the replacement is the same system.
-            </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Milgram (1963) — obedience to authority. Asch (1951) — conformity under group pressure. Zimbardo (1971) — situational power of social systems. Bourdieu (1977) — habitus, embodied social structures. Bernstein — pedagogic codes, invisible pedagogies. Porges (2011) — neuroception-driven behavior, group threat response. Siegel (2012) — co-regulation and dysregulation. Van der Kolk (2014) — intergenerational trauma patterns. Herman (1992) — complex trauma and relational adaptation. Cialdini — compliance and influence. Greenberg, Pyszczynski — Terror Management Theory; mortality salience increases conformity.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Organizing the full process from individual nervous system activation through collective rule formation into a single seven-step mechanism with a critical self-reinforcing element: Step 7 — questioning rules activates the same threat response that created them. The loop closure is the distinctive contribution. While conformity (Asch), obedience (Milgram), and social reproduction (Bourdieu) are all well-documented, to our knowledge, no existing model traces the complete pathway from individual threat activation through collective rule invisibility and back to the threat activation that prevents examination.
-              </p>
-              <p style={expandedProseStyle}>
-                The reframe of rules as regulation rather than ideology changes the intervention logic. Critical theory treats rules as power structures to be dismantled. Psychology treats them as cognitive schemas to be corrected. F4 treats them as nervous system regulation strategies — and the intervention follows F1's principle: restore safety first, then expect flexibility.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── SIX RULE SYSTEMS ──────────────────────────── */}
-          <section
-            id="six-rule-systems"
-            aria-labelledby="heading-six-rule-systems"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-what-types-of-rules" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              What types of rules emerge from threat-based systems?
-            </h2>
-
-            <h2 id="heading-six-rule-systems" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              The Six Rule Systems
-            </h2>
-
-            <p style={proseStyle}>
-              Six categories of rules consistently emerge from threat-based internalization. Each category is defined by <strong style={{ color: TEXT.primary }}>regulatory function</strong> — not by moral content. The same surface rule can serve different functions depending on the mode and system.
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 24 }}>
               <table style={tableStyle}>
                 <thead>
                   <tr>
                     <th style={thStyle}>Rule System</th>
                     <th style={thStyle}>Regulatory Function</th>
-                    <th style={thStyle}>Core Pattern</th>
+                    <th style={thStyle}>What the Nervous System Gets</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={[
-                    "Roles",
-                    "Identity stabilization",
-                    "\"You are who others need you to be\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Obedience",
-                    "Belonging protection",
-                    "\"Safety comes from compliance\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Performance",
-                    "Worth verification",
-                    "\"Value is earned through image\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Dominance",
-                    "Power establishment",
-                    "\"Strength means control\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Punishment",
-                    "Boundary enforcement",
-                    "\"Pain teaches lessons\"",
-                  ]} />
-                  <TableRow cells={[
-                    "Entitlement",
-                    "Resource allocation",
-                    "\"Some people are owed more\"",
-                  ]} />
+                  <TableRow cells={["Roles", "Identity stabilisation", "A fixed position that secures belonging"]} />
+                  <TableRow cells={["Obedience", "Belonging protection", "Reduced threat through compliance"]} />
+                  <TableRow cells={["Performance", "Worth verification", "Validation signals that settle activation"]} />
+                  <TableRow cells={["Dominance", "Power establishment", "Control that replaces internal regulation"]} />
+                  <TableRow cells={["Punishment", "Boundary enforcement", "Pain as compliance mechanism"]} />
+                  <TableRow cells={["Entitlement", "Resource allocation", "Guaranteed access to regulation sources"]} />
                 </tbody>
               </table>
             </div>
 
-            {/* Role Rules */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>Role Rules</h3>
-              <p style={proseStyle}>
-                Role rules assign fixed identity positions — The Helper, The Good One, The Achiever, The Strong One, The Quiet One. These are not personality types. They are nervous system solutions to the problem of conditional love: the child learns which version of themselves secures connection and adopts that version as identity. F2's capacity configuration determines which role gets adopted. F3's false coherence maintains it as "just who I am."
-              </p>
-              <KeyStatement>
-                Diagnostic: if the role collapses when belonging is threatened — it is not "personality." It is attachment regulation.
-              </KeyStatement>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Role rules</strong> assign fixed identity positions — The Helper, The Achiever, The Strong One. These are patterns in which awareness capacities developed or did not develop based on early relational conditions (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>), then became chronic and were absorbed as identity through false coherence (<Link href="/framework/f3-false-coherence" style={linkStyle}>F3</Link>). The rule system formalises this at collective scale.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Obedience rules</strong> teach that safety comes from compliance. The nervous system under sustained activation prefers the certainty of compliance to the vulnerability of independent evaluation — because independent evaluation requires tolerating ambiguity, and ambiguity activates the same threat circuits.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Performance rules</strong> teach that worth must be earned and displayed. Performing produces validation signals — approval, recognition, status markers — and those signals activate oxytocin pathways and reduce cortisol.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Dominance rules</strong> teach that strength means control and vulnerability means weakness. This includes what appears as neutrality in asymmetric conditions — when "treating everyone the same" in unequal conditions protects the side with more power, the neutrality functions as a dominance rule.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Punishment rules</strong> teach that pain is a legitimate corrective tool. When internalised, the person whose internal activation is misattributed as external attack cannot distinguish between someone setting a boundary and someone causing harm. Punishment rules normalise this collapse at collective scale.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Entitlement rules</strong> teach that some people are inherently owed more. At the nervous system level, entitlement operates as external regulation — "others must absorb my activation so I can stay stable."
+            </p>
+            <p style={proseStyle}>
+              Each rule system expresses differently across the gradient. In Safety & Openness, rules are held with flexibility. In chronic Threat & Defence, rules are rigid — deviation activates the threat response. In chronic Strategy & Management, rules are selectively enforced to maintain predictability. In chronic Power & Dominance, rules are absolute — violation is met with escalation.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — six rule systems by regulatory function */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Bourdieu (1977) — habitus and social reproduction through embodied rule systems. Goffman (1959) — impression management and emotional labour as rule-governed performance. Milgram (1963) — obedience as structural, not dispositional. Sidanius & Pratto (1999) — Social Dominance Theory: hierarchical rule systems maintaining group-based inequality. Kohut (1977), Kernberg (1975) — narcissistic entitlement as a protective regulatory strategy. Young, Klosko & Weishaar (2003) — early maladaptive schemas as internalised rule structures.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Six rule domains organised by regulatory function — what each does for the nervous system, not what it prescribes. The gradient expression connects collective rule dynamics to the nervous system states <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link> maps. The taxonomy is proposed as exhaustive at the regulatory level: these six categories cover the basic regulatory needs of identity, belonging, worth, power, boundaries, and resources. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            {/* Obedience Rules */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>Obedience Rules</h3>
-              <p style={proseStyle}>
-                Obedience rules teach that safety comes from compliance. Question authority and lose belonging. The regulatory function is threat reduction through predictability: as long as everyone follows the authority, no one has to evaluate for themselves. This is why obedience persists even when the authority is visibly wrong — the nervous system prefers the certainty of compliance to the vulnerability of independent evaluation.
-              </p>
-            </div>
-
-            {/* Performance Rules */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>Performance Rules</h3>
-              <p style={proseStyle}>
-                Performance rules teach that worth must be earned and displayed. Value is not inherent — it is conditional on meeting external standards. The regulatory function is worth verification: performing produces validation signals, and validation signals reduce the threat of worthlessness. F5 extends this into systemic worth hierarchies.
-              </p>
-            </div>
-
-            {/* Dominance Rules */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>Dominance Rules</h3>
-              <p style={proseStyle}>
-                Dominance rules teach that strength means control and vulnerability means weakness. The regulatory function is power establishment: in a system where vulnerability was punished, control feels like the only safe position. This includes the <strong style={{ color: TEXT.primary }}>weaponization of neutrality</strong>: when "neutrality" in an asymmetric situation protects the side with more power, neutrality becomes a dominance rule.
-              </p>
-            </div>
-
-            {/* Punishment Rules */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>Punishment Rules</h3>
-              <p style={proseStyle}>
-                Punishment rules teach that pain is a legitimate teaching tool. "Pain teaches lessons" normalizes harm as corrective. The regulatory function is boundary enforcement: the system uses pain to maintain compliance.
-              </p>
-              <p style={proseStyle}>
-                The <strong style={{ color: TEXT.primary }}>punishment vs. accountability distinction</strong> is critical here. Punishment aims to cause suffering; accountability aims to create understanding. Accountability can include consequences — but the intent is learning and repair, not suffering. When punishment rules are internalized, the distinction becomes invisible and all correction feels like (and is delivered as) infliction of pain.
-              </p>
-              <p style={proseStyle}>
-                This connects directly to F3's emotional distortion: the person whose discomfort is misread as external attack genuinely cannot tell the difference between "you hurt my feelings by setting a boundary" and "you are harming me." Punishment rules normalize this confusion at the collective level.
-              </p>
-            </div>
-
-            {/* Entitlement Rules */}
-            <div style={{ marginBottom: 32 }}>
-              <h3 style={conceptHeadingStyle}>Entitlement Rules</h3>
-              <p style={proseStyle}>
-                Entitlement rules teach that some people are inherently owed more — more resources, more attention, more protection, more benefit of the doubt. The regulatory function is resource allocation: entitlement rules determine who receives and who provides. At the nervous system level, entitlement often functions as external regulation: "others must absorb my discomfort so I can stay stable."
-              </p>
-            </div>
-
-            {/* Gradient expression */}
-            <div
-              style={{
-                padding: 20,
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                Each Rule System Expresses Differently Across the Gradient
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>
-                In Safety & Openness, rules are held lightly — they serve the group and can be examined. In chronic Threat & Defence, rules are rigid — deviation feels dangerous. In chronic Strategy & Management, rules serve management — they are selectively enforced to maintain the curated reality. In chronic Power & Dominance, rules are absolute — violation is met with punishment or elimination.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>The taxonomy is exhaustive at the regulatory level.</strong> These six categories cover the basic regulatory needs: identity, belonging, worth, power, boundaries, resources. Every specific rule ("boys don't cry," "respect your elders," "nice girls don't argue," "winners don't quit") can be located within this taxonomy by identifying which regulatory need it serves.
-              </p>
-            </div>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Role Theory (sociology) — fixed identity positions in social systems. Milgram (1963), Asch (1951) — obedience and conformity under authority and group pressure. Goffman (1959), Hochschild — impression management, emotional labor. Sidanius &amp; Pratto — Social Dominance Theory. Kohut (1977), Kernberg (1975) — narcissistic entitlement as protective strategy. Restorative justice literature — punishment vs. accountability distinction. Gender socialization research (Fine, Connell, Fausto-Sterling) — gender differentiation as learned regulation. Bowlby (1969) — internal working models. Young, Klosko, &amp; Weishaar (2003) — early maladaptive schemas.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Organizing six independently studied rule domains into a unified taxonomy where each category is defined by its regulatory function — not by its content but by what it does for the nervous system. The functional definition is original: Roles stabilize identity. Obedience protects belonging. Performance verifies worth. Dominance establishes power. Punishment enforces boundaries. Entitlement allocates resources.
-              </p>
-              <p style={expandedProseStyle}>
-                The gradient expression of each rule system across four modes connects to the Inner Compass: rule expression changes depending on where the compass is. The same rule ("respect your elders") operates as flexible guidance in Safety & Openness and as absolute enforcement in Power & Dominance. The punishment vs. accountability distinction is clinically significant — when punishment rules are normalized, people lose the ability to distinguish between being hurt and causing harm.
-              </p>
-            </ExpandableSection>
           </section>
 
-          {/* ─── RULE ESCALATION ───────────────────────────── */}
+          {/* Concept 4: How Rules Set the Next Generation's Substrate */}
           <section
-            id="rule-escalation"
-            aria-labelledby="heading-rule-escalation"
+            id="substrate-reproduction"
+            aria-labelledby="heading-substrate-reproduction"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-rule-escalation" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Rule Escalation Under Sustained Threat
+            <h2 id="heading-substrate-reproduction" style={sectionHeadingStyle(accent)}>
+              How Rules Set the Next Generation's Interoceptive Substrate
             </h2>
 
             <p style={proseStyle}>
-              When threat persists or intensifies, rule systems escalate through identifiable stages:
+              Rules do not only regulate behaviour. They set the state of the interoceptive substrate across the population they govern.
+            </p>
+            <p style={proseStyle}>
+              The interoceptive substrate develops through relational experience (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>). What the caregiver could hold is what the child's substrate learns to process. Rule systems operate on this mechanism at population scale. A rule system that teaches "logic over emotion" — that rewards cognitive override and punishes emotional expression — produces caregivers whose interoceptive substrates are suppressed. Those caregivers cannot hold what they cannot feel. Their children's substrates develop in the absence of the co-regulation that would build the channels. The rule does not directly suppress the substrate. It produces the caregiver profile that produces the substrate state.
+            </p>
+            <p style={proseStyle}>
+              Three rule-to-substrate pathways, mapping to <Link href="/framework/f2-awareness-calibration#disruption-conditions" style={linkStyle}>F2's three disruption conditions</Link>:
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Rules that block emotional expression → Condition 3 at population scale.</strong> "Don't cry." "Be strong." "Emotions are weakness." These produce caregivers who override their own signals. The child encounters a caregiver who cannot feel — and the substrate is never built. The population carries absent interoceptive access.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Rules that contradict emotional experience → Condition 2 at population scale.</strong> "You're overreacting." "That's not what happened." These produce caregivers who override the child's signals. The substrate is active but SEA is contradicted. The population carries contested interoceptive access.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Rules that make emotional availability unpredictable → Condition 1 at population scale.</strong> Rules that shift depending on the authority's state produce caregivers whose availability is unreliable. The substrate develops partially, never consolidates. The population carries unstable interoceptive access.
+            </p>
+            <p style={proseStyle}>
+              The rule system is a mechanism for reproducing the substrate state across generations. The rules that a generation absorbs determine which caregivers that generation produces. Which caregivers determine which substrates the next generation builds. The substrate state determines which rules that generation absorbs — because the CLS builds from whatever data it has, and the rules that feel true are the rules that match the substrate state.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — generational loop: rules → caregivers → substrates → rules */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Schore (2001) — right-brain-to-right-brain attunement: caregiver regulation as the mechanism through which neural architecture develops. Fonagy et al. (2002) — mentalization capacity as a product of relational environment, transmitted intergenerationally. Meaney (2001) — epigenetic programming: maternal care behaviour altering offspring stress-response architecture. Bourdieu (1977) — cultural reproduction: habitus transmitted through practice, not instruction.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The specific pathway from collective rules through caregiver profiles to offspring substrate state — traced through the three developmental disruption conditions operating at population scale. The contribution is the closed loop: rules produce the caregiver substrate state that produces the offspring substrate state that makes the rules feel true to the next generation. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 5: How Populations Relate to Rules */}
+          <section
+            id="three-coherence-forms"
+            aria-labelledby="heading-three-coherence-forms"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-three-coherence-forms" style={sectionHeadingStyle(accent)}>
+              How Different Populations Relate to the Same Rule System
+            </h2>
+
+            <p style={proseStyle}>
+              Not everyone relates to the rules the same way. The relationship depends on the state of the interoceptive substrate.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Absent interoceptive access — rules feel like reality.</strong> When the interoceptive substrate was never built, the CLS has only its own output, what RE provides, and the cultural narratives available. The rules are absorbed into the same regulatory structure as individual false coherence. They feel true — not "believed" in the sense of a proposition the person could examine, but true in the sense that they constitute what the person experiences as reality. Correction is experienced as regulatory threat. This is typically the largest group in any established rule system.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Contested interoceptive access — something feels wrong but the group says otherwise.</strong> When the substrate is active but the CLS has learned to distrust its signals, the person oscillates. The body signals one thing. The rules say another. The system works to maintain this oscillation: "you're too sensitive," "that's not really happening," "everyone else is fine with it." These phrases target the contested access directly — they discredit the sensing that would reveal the rules as constructions.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Full interoceptive access — rules held as constructions.</strong> When all three awareness channels are delivering data, the rules can be held as what they are: collective regulatory material. The person can follow a rule while knowing it is a rule. This configuration is rare under chronic collective conditions — because the rule system itself suppresses the substrate state that would produce it.
+            </p>
+            <p style={proseStyle}>
+              The stability of a rule system depends on the ratio of these three groups. When the majority carry absent access, the system is stable. When the contested-access group grows, the system must invest more in discrediting the sensing: more enforcement, more gaslighting of bodily signals, more punishment of those who name the mismatch. What the contested group needs is not more information but conditions safe enough to trust the body's signals over the collective narrative.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — three groups and system stability */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Jost & Banaji (1994) — system justification: why people defend systems that disadvantage them. Festinger (1957) — cognitive dissonance: the uncomfortable state when two cognitions conflict. Freire (1970) — conscientização: critical consciousness as recognising social structures as constructions. Kahneman (2011) — coherence-seeking: the CLS builds plausible stories regardless of completeness.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Three collective coherence forms mapped through the interoceptive substrate state — showing them as three expressions of one variable. Absent access produces system justification. Contested access produces dissonance. Full access produces the capacity for critical evaluation. The substrate state determines the relationship to the rule. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* Concept 6: RE-Only Institutions */}
+          <section
+            id="re-only-institutions"
+            aria-labelledby="heading-re-only-institutions"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-re-only-institutions" style={sectionHeadingStyle(accent)}>
+              When Institutions Run on Cognitive Data Alone
+            </h2>
+
+            <p style={proseStyle}>
+              When enough people in a system carry sharp Interpersonal Affect Perception (RE) with absent Affective Resonance (ER) and absent Interoceptive Self-Awareness (SEA), the collective operates through cognitive data without somatic data. The institution reads. It does not feel.
+            </p>
+            <p style={proseStyle}>
+              RE — the CLS capacity that identifies what others are feeling through observable signals — survives and sharpens under chronic activation (<Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link>). It redirects from understanding to strategy, from connection to management, from accuracy to leverage. But it remains precise. The institution staffed by people running redirected RE can read the room, track compliance, identify vulnerability, and manage performance with accuracy.
+            </p>
+            <p style={proseStyle}>
+              ER — the ESS capacity that resonates with others' states in the body — degrades first because it places the greatest demands on the interoceptive substrate. When ER is offline across the institution, others' distress registers as information about the environment — a data point to be managed — not as felt experience that produces a somatic response in the perceiver.
+            </p>
+            <p style={proseStyle}>
+              SEA is absent. The institution's members do not know what their own nervous systems are doing. The activation generated by the institution's impact on others — the shame, guilt, and remorse that would arise from harming — fires in the ESS and has no channel to reach the CLS. The institution operates without the signals that would produce course correction.
+            </p>
+            <p style={proseStyle}>
+              The result is institutional logic that is genuinely rational — clear, precise, internally consistent — and not biologically accurate. The logic is constructed from RE data alone: what people display, how they comply, what the metrics show. The somatic data — what the institution's impact actually does to the nervous systems it touches — is not part of the information set. The decision-making process is sound within the data set it has access to. The data set is incomplete.
+            </p>
+
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — RE-only institutional architecture */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Koenigs et al. (2007) — vmPFC suppression and utilitarian decision-making: precise, consequentialist, missing the felt dimension. Bazerman & Tenbrunsel (2011) — ethical blind spots in organisations: systematic inability to recognise ethical dimensions. Porges (2011) — collective neuroception: institutions composed of nervous systems running threat-based neuroception produce collective perceptual environments that filter out safety signals.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  The structural explanation for rational-but-harmful institutional decision-making — traced through the awareness architecture. When the decision-making layer operates through RE alone — reading accurately, resonating with nothing, and disconnected from its own activation — the institution processes others' experience as data rather than felt impact. The logic is not flawed. The information set is incomplete. This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── PART 3: HOW RULES ESCALATE ──────────────── */}
+          <PartDivider label="PART 3" title="How Rules Escalate" color={accent} />
+
+          {/* Concept 7: How Rules Tighten */}
+          <section
+            id="escalation"
+            aria-labelledby="heading-escalation"
+            style={{ marginBottom: 48 }}
+          >
+            <h2 id="heading-escalation" style={sectionHeadingStyle(accent)}>
+              How Rules Tighten When Collective Threat Increases
+            </h2>
+
+            <p style={proseStyle}>
+              When threat persists or intensifies across a population, rule systems escalate through identifiable stages. The escalation parallels the four nervous system states (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>) operating at collective scale:
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -589,166 +581,60 @@ export default function F4RulesRegulatePage() {
                 <thead>
                   <tr>
                     <th style={thStyle}>Stage</th>
-                    <th style={thStyle}>Characteristics</th>
-                    <th style={thStyle}>Compass Parallel</th>
+                    <th style={thStyle}>What the Collective Does</th>
+                    <th style={thStyle}>Rule Expression</th>
+                    <th style={thStyle}>Parallel</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={[
-                    "Initial",
-                    "Informal rules; social pressure; flexibility possible",
-                    "Safety & Openness — flexibility",
-                  ]} />
-                  <TableRow cells={[
-                    "Intermediate",
-                    "Rules proliferate; deviation increasingly costly; moralization begins",
-                    "Threat & Defence — narrowing",
-                  ]} />
-                  <TableRow cells={[
-                    "Advanced",
-                    "Reduced tolerance for deviation; increased punishment; obedience as virtue",
-                    "Strategy & Management — enforcement",
-                  ]} />
-                  <TableRow cells={[
-                    "Extreme",
-                    "Authoritarian enforcement; rule-breaking as identity threat; violence normalized",
-                    "Power & Dominance — violence",
-                  ]} />
+                  <TableRow cells={["Initial", "Collective activation is low. State flexibility is available.", "Rules are informal. Deviation is tolerated. Flexibility is possible.", "Safety & Openness"]} />
+                  <TableRow cells={["Intermediate", "Collective activation increases. Tolerance narrows.", "Rules proliferate. Deviation becomes costly. Moralisation begins — rule-breaking framed as character failure.", "Threat & Defence"]} />
+                  <TableRow cells={["Advanced", "The collective CLS is recruited into threat organisation.", "Reduced tolerance. Surveillance increases. Obedience is framed as virtue.", "Strategy & Management"]} />
+                  <TableRow cells={["Extreme", "Collective nervous system at maximum threat.", "Rule-breaking treated as existential threat. Enforcement becomes violent. Elimination of deviants normalised.", "Power & Dominance"]} />
                 </tbody>
               </table>
             </div>
 
             <p style={proseStyle}>
-              The escalation parallels the four-mode gradient at the collective level. This is not metaphor — it is the same nervous system logic operating at a different scale. As collective threat increases, the group's tolerance thresholds shift. What would be unacceptable at the Initial stage becomes normalized at Intermediate, then enforced at Advanced, then absolute at Extreme.
+              The same physiological processes that shift an individual from Safety & Openness toward Power & Dominance — cortisol elevation, amygdala sensitisation, prefrontal narrowing, ventral vagal withdrawal — operate in the individuals who compose the group. When enough shift simultaneously, the collective system shifts.
             </p>
-
-            <KeyStatement>
-              Not ideological anomalies, but predictable outcomes of prolonged collective threat. If escalation follows the same nervous system logic as individual compass movement, then every system is capable of it under sustained threat — and the question is always about conditions and safety.
-            </KeyStatement>
-
             <p style={proseStyle}>
-              The staged model allows recognition of where a system is in the escalation — and identification of intervention points before reaching extreme stages. The collective compass can move when the safety signal changes.
+              A population whose collective nervous system has been running at elevated activation — through war, economic collapse, displacement, pandemic — produces rule systems that tighten along this gradient. The content of the rules varies by culture. The escalation pattern does not.
             </p>
-
-            <ExpandableSection title="Research Traditions" type="framework">
-              <p style={expandedProseStyle}>
-                Altemeyer (1996) — right-wing authoritarianism. Adorno (1950) — authoritarian personality. Terror Management Theory (Greenberg, Pyszczynski) — mortality salience increases conformity. Systems theory — positive feedback loops. Conflict research — escalation patterns. Political psychology — authoritarian escalation under threat conditions.
-              </p>
-            </ExpandableSection>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Framing rule escalation as the same nervous system logic operating at individual and collective levels — the gradient applied to groups. The escalation parallels the four-mode gradient: Initial (Connection-like flexibility) → Intermediate (Protection-like narrowing) → Advanced (Control-like enforcement) → Extreme (Domination-like violence). This parallel enables prediction (where is this system heading?) and intervention (what safety conditions would allow de-escalation?).
-              </p>
-              <p style={expandedProseStyle}>
-                The reframe removes the othering that makes authoritarian patterns invisible in one's own systems. If escalation follows the same nervous system logic as individual compass movement, then every system is capable of it under sustained threat.
-              </p>
-            </ExpandableSection>
-          </section>
-
-          {/* ─── CROSS-THEORETICAL CONVERGENCE ─────────────── */}
-          <section
-            id="cross-theoretical-convergence"
-            aria-labelledby="heading-cross-theoretical-convergence"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-cross-theoretical-convergence" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Cross-Theoretical Convergence — Ten Traditions Describing One Mechanism
-            </h2>
-
             <p style={proseStyle}>
-              Ten research traditions independently describe the same phenomenon — rule internalization as collective regulation under threat — from different angles:
+              Each stage is identifiable and each is interruptible. The intervention logic follows the same principle across all twelve frameworks: restore safety conditions first, then the nervous system can release the regulatory strategy it no longer needs. At collective scale: reduce the activation that drives the escalation, and the rule system can loosen. Attempting to loosen rules while the collective activation remains elevated fails — because the rules are performing the regulatory function the population's nervous systems require.
             </p>
 
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tradition</th>
-                    <th style={thStyle}>What They Observe</th>
-                    <th style={thStyle}>What F4 Names It</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Bourdieu (Sociology)",
-                    "Habitus — embodied social structures reproduced below awareness",
-                    "Rules as embodied regulation",
-                  ]} />
-                  <TableRow cells={[
-                    "Bernstein (Education)",
-                    "Pedagogic codes — invisible rules governing what can be said, thought, known",
-                    "Rule invisibility (Step 7)",
-                  ]} />
-                  <TableRow cells={[
-                    "Goffman (Sociology)",
-                    "Dramaturgy — social performance maintained by unspoken rules",
-                    "Performance rules",
-                  ]} />
-                  <TableRow cells={[
-                    "Beck / Young (Clinical)",
-                    "Core beliefs and schemas — rule-like structures governing perception",
-                    "False coherence",
-                  ]} />
-                  <TableRow cells={[
-                    "Bowlby / Ainsworth (Attachment)",
-                    "Internal working models — relational rules formed in early experience",
-                    "Belonging protection rules",
-                  ]} />
-                  <TableRow cells={[
-                    "Schwartz (IFS)",
-                    "Protective parts — internal rule-enforcers managing threat",
-                    "Internal policing (Steps 6–7)",
-                  ]} />
-                  <TableRow cells={[
-                    "Porges (Neuroscience)",
-                    "Neuroception — nervous system evaluation that produces rule-like responses",
-                    "Threat-based internalization (Steps 1–2)",
-                  ]} />
-                  <TableRow cells={[
-                    "Haidt (Moral Psychology)",
-                    "Moral foundations — intuitive moral rules that feel like truth",
-                    "Rules experienced as truth",
-                  ]} />
-                  <TableRow cells={[
-                    "Milgram (Social Psychology)",
-                    "Obedience — rule-following under authority pressure",
-                    "Compliance as regulation",
-                  ]} />
-                  <TableRow cells={[
-                    "Van der Kolk / Herman (Trauma)",
-                    "Intergenerational transmission — traumatic rules passed across generations",
-                    "Rule replication across generations",
-                  ]} />
-                </tbody>
-              </table>
+            {/* Section diagram placeholder */}
+            {/* Diagram type: static — four escalation stages mapped to gradient */}
+            {/* Diagram pass — not implemented in content rewrite */}
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="framework">
+                <p style={expandedProseStyle}>
+                  Altemeyer (1996) — right-wing authoritarianism as a response to perceived threat. Adorno et al. (1950) — the authoritarian personality and collective threat conditions. Greenberg, Pyszczynski & Solomon — Terror Management Theory: existential threat increases worldview defence and punishment of deviants. Staub (1989) — the roots of evil: collective threat producing increasingly extreme group behaviour through identifiable stages.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="framework">
+                <p style={expandedProseStyle}>
+                  Rule escalation framed as the nervous system gradient operating at collective scale — each stage mapping to a specific collective physiological configuration. The parallel enables prediction (where is this system on the gradient?) and intervention (what safety conditions would allow de-escalation?). This is a working hypothesis, open to testing.
+                </p>
+              </ExpandableSection>
             </div>
-
-            <p style={proseStyle}>
-              The framework proposes that these traditions are observing the same mechanism: when the nervous system is under threat, it produces regulation strategies that look like rules — and these rules operate at every scale from individual cognition to institutional structure.
-            </p>
-
-            <ExpandableSection title="What TEG-Blue Adds" type="framework">
-              <p style={expandedProseStyle}>
-                Making explicit that these ten traditions are describing one mechanism, not ten separate phenomena. To our knowledge, no existing work maps Bourdieu's habitus, Milgram's obedience, IFS's protective parts, polyvagal neuroception, and moral foundations as variations on the same underlying process: nervous system regulation through rule internalization.
-              </p>
-              <p style={expandedProseStyle}>
-                The convergence claim is testable: if all ten traditions are describing the same mechanism, then interventions that address the underlying regulation need (rather than the specific rule content) should be effective across domains.
-              </p>
-            </ExpandableSection>
           </section>
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={SPECTRUM.cobalt}
+            color={accent}
             items={[
               {
                 term: "Three-mechanism scaling",
-                definition: "False Coherence absorbs rules as truth. Emotional distortion makes rule-violation feel like attack. External regulation makes compliance a nervous system need. Collective patterns emerge from below, not imposed from above.",
+                definition: "False coherence absorbs rules as truth. Emotional distortion makes rule-violation feel like attack. External regulation makes compliance a nervous system need. Collective patterns emerge from below, without deliberate design.",
               },
               {
                 term: "Rules as regulatory material",
-                definition: "The CLS absorbs rules that stabilise, not rules that are accurate. The CLS cannot distinguish between the two.",
+                definition: "The CLS absorbs rules that stabilise, not rules that are accurate. The CLS cannot distinguish between the two. A rule is what the CLS absorbs because it stabilises.",
               },
               {
                 term: "The internalisation loop",
@@ -756,138 +642,94 @@ export default function F4RulesRegulatePage() {
               },
               {
                 term: "Six regulatory functions",
-                definition: "Roles (identity), Obedience (belonging), Performance (worth), Dominance (power), Punishment (boundaries), Entitlement (resources). Exhaustive at the regulatory level.",
+                definition: "Roles (identity), Obedience (belonging), Performance (worth), Dominance (power), Punishment (boundaries), Entitlement (resources). Proposed as exhaustive at the regulatory level.",
               },
               {
                 term: "Rules reproduce the substrate state",
-                definition: "Rule systems produce the caregiver profiles that produce the offspring substrate states. The loop operates across generations.",
+                definition: "Rule systems produce the caregiver profiles that produce the offspring substrate states. The loop operates across generations. The rules reproduce the biological conditions that make them feel true.",
               },
               {
                 term: "Three collective coherence forms",
                 definition: "Absent access: rules feel like reality. Contested access: something feels wrong. Full access: rules held as constructions. System stability depends on the ratio.",
               },
               {
+                term: "RE-only institutions",
+                definition: "When the collective operates through cognitive data alone, institutional logic is rational and not biologically accurate. The data set is incomplete. The mechanism that would complete it is absent.",
+              },
+              {
                 term: "Rule escalation",
-                definition: "Four stages paralleling the nervous system gradient. Predictable and interruptible.",
+                definition: "Four stages paralleling the nervous system gradient. Initial (informal), intermediate (moralisation), advanced (surveillance), extreme (elimination). Predictable and interruptible.",
               },
             ]}
           />
 
-          {/* ─── RESEARCH FOUNDATIONS ──────────────────────── */}
-          <section
-            id="research-foundations"
-            aria-labelledby="heading-research-foundations"
-            style={{ marginBottom: 48 }}
-          >
-            <h2 id="heading-research-foundations" style={sectionHeadingStyle(SPECTRUM.cobalt)}>
-              Research Foundations
-            </h2>
-
-            <div style={{ overflowX: "auto", marginBottom: 16 }}>
-              <table style={tableStyle}>
-                <thead>
-                  <tr>
-                    <th style={thStyle}>Tradition</th>
-                    <th style={thStyle}>Key Contribution</th>
-                    <th style={thStyle}>Researchers</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <TableRow cells={[
-                    "Sociology",
-                    "Habitus, social reproduction, dramaturgical performance",
-                    "Bourdieu, 1977; Bernstein; Goffman, 1959",
-                  ]} />
-                  <TableRow cells={[
-                    "Social Psychology",
-                    "Obedience, conformity, compliance under authority",
-                    "Milgram, 1963; Asch, 1951; Zimbardo, 1971; Cialdini",
-                  ]} />
-                  <TableRow cells={[
-                    "Neuroscience",
-                    "Nervous system synchronization, neuroception, co-regulation",
-                    "Porges, 2011; Siegel, 2012",
-                  ]} />
-                  <TableRow cells={[
-                    "Attachment Theory",
-                    "Internal working models, belonging pressure, regulatory needs",
-                    "Bowlby, 1969; Ainsworth, 1978",
-                  ]} />
-                  <TableRow cells={[
-                    "Systems Theory",
-                    "Anxiety propagation, family rule systems",
-                    "Bowen; Satir",
-                  ]} />
-                  <TableRow cells={[
-                    "Trauma Studies",
-                    "Intergenerational transmission, fawn response, coercive control",
-                    "Van der Kolk, 2014; Herman, 1992; Walker",
-                  ]} />
-                  <TableRow cells={[
-                    "Cultural Analysis",
-                    "Domination systems, partnership vs. domination",
-                    "hooks; Eisler",
-                  ]} />
-                  <TableRow cells={[
-                    "Political Psychology",
-                    "Authoritarianism, terror management",
-                    "Altemeyer, 1996; Greenberg, Pyszczynski",
-                  ]} />
-                  <TableRow cells={[
-                    "Moral Psychology",
-                    "Moral foundations as intuitive rules",
-                    "Haidt, 2001",
-                  ]} />
-                  <TableRow cells={[
-                    "Clinical Psychology",
-                    "Core beliefs, schemas, protective parts",
-                    "Beck; Young, 2003; Schwartz, 1995",
-                  ]} />
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* ─── BRIDGE ────────────────────────────────── */}
+          {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={SPECTRUM.cobalt}
-            established="F4 established how individual nervous system patterns — false coherence, emotional distortion, external regulation — scale into collective rule systems when enough people run them in proximity. Rules function as regulatory material: the CLS absorbs them because they stabilize, not because they are accurate."
-            question="But rule systems do not just organize behavior. They organize value. When rule adherence becomes the social definition of safety, the system begins to sort people — and the sorting formalizes into worth hierarchies that distribute credibility, resources, and protection based on signal access rather than intrinsic capacity."
+            color={accent}
+            established="F4 established how individual nervous system patterns consolidate into collective rule systems — how rules are absorbed as regulatory material, how they move from external enforcement to invisible truth, how six rule systems each serve a distinct regulatory function, and how rules reproduce the substrate state across generations."
+            question="Rules organise behaviour. They also organise value. When rule adherence becomes the collective definition of safety, the system begins to sort people — who gets the conditions that allow biological restoration to develop, and who does not."
             nextFramework="F5"
-            nextTitle="Worth Hierarchies Regulate"
-            nextHref="/framework/f5-worth-hierarchies"
+            nextTitle="The Filter of Worth"
+            nextHref="/framework/f5-filter-of-worth"
           />
 
-          {/* ─── CONNECTIONS MAP ────────────────────────── */}
+          {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={SPECTRUM.cobalt}
+            color={accent}
             connections={[
-              { id: "F3", href: "/framework/f3-false-coherence", description: "F3 described the individual mechanisms — false coherence, emotional distortion, external regulation. F4 shows these same mechanisms operating at collective scale through rule systems." },
-              { id: "F5", href: "/framework/f5-worth-hierarchies", description: "F4 established rule systems. F5 shows what those rules sort — how rule-based regulation produces worth hierarchies that distribute safety and value." },
-              { id: "M2", href: "/model/m2-nervous-system-states", description: "M2 maps the four states. F4 shows how chronic states in enough individuals produce collective rule systems that enforce the same state configurations." },
-              { id: "M3", href: "/model/m3-regulation-capacities", description: "M3 maps individual restoration failure. F4 shows that failure scaling into collective regulatory structures." },
-              { id: "F8", href: "/framework/f8-repairing-awareness", description: "F4 describes rule systems as collective regulation. F8 describes the conditions under which those systems can shift — safety before capacity, at collective scale." },
+              {
+                id: "M2: Nervous System States",
+                href: "/model/m2-nervous-system-states",
+                description: "F4 shows what happens when chronic states synchronise across a group. The four-stage escalation parallels the nervous system gradient. Each rule system expresses differently across the four states.",
+              },
+              {
+                id: "M3: Regulation Capacities",
+                href: "/model/m3-regulation-capacities",
+                description: "F4 shows what happens when enough restoration sequences remain unresolved across a population: the collective generates structures that regulate what individuals cannot regulate internally. Rules are collective restoration substitutes.",
+              },
+              {
+                id: "M4: Awareness Capacities",
+                href: "/model/m4-awareness-capacities",
+                description: "F4 shows what rule systems do to the interoceptive substrate at population scale — and what happens when institutions run on RE alone without ER or SEA.",
+              },
+              {
+                id: "F3: Adult Cognition & False Coherence",
+                href: "/framework/f3-false-coherence",
+                description: "F3 C8 is the bridge: the same CLS that maintains individual false coherence absorbs and enforces social rules. F4 picks up from there — individual narrative substitution becomes collective rule systems.",
+              },
+              {
+                id: "F2: Developmental Calibration",
+                href: "/framework/f2-awareness-calibration",
+                description: "F2's three developmental disruption conditions operate at population scale through rule systems: rules that block expression (Condition 3), rules that contradict experience (Condition 2), rules that make availability unpredictable (Condition 1).",
+              },
+              {
+                id: "F5: The Filter of Worth",
+                href: "/framework/f5-filter-of-worth",
+                description: "F4 describes what rules do to populations. F5 describes what rules sort — who gets the conditions that allow biological restoration to develop, and who does not.",
+              },
             ]}
           />
 
-          {/* ─── WHERE TO GO NEXT ──────────────────────── */}
+          {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={SPECTRUM.cobalt}
+            color={accent}
             items={[
-              { label: "Continue to F5 — how rules become worth hierarchies", href: "/framework/f5-worth-hierarchies", linkText: "F5: Worth Hierarchies Regulate →" },
-              { label: "See the individual mechanisms that scale", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence →" },
-              { label: "See the restoration mechanism rules substitute for", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities →" },
-              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map →" },
-              { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) →", external: true },
+              { label: "Continue to F5 — how rules sort who gets the conditions for restoration", href: "/framework/f5-filter-of-worth", linkText: "F5: The Filter of Worth \u2192" },
+              { label: "See the nervous system gradient that rules escalate along", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },
+              { label: "See the awareness architecture that institutions operate without", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
+              { label: "Return to F3 — how individual false coherence works", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence \u2192" },
+              { label: "See where the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
+              { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
+              { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
             ]}
           />
-        </article>
 
+        </article>
       </PageLayout>
 
       <SiteFooter />
 
-      {/* ─── JSON-LD: ScholarlyArticle ──────────────────── */}
+      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -897,7 +739,7 @@ export default function F4RulesRegulatePage() {
             "@id": "https://teg-blue.org/framework/f4-rules-regulate#article",
             headline: "Rules Regulate: How Individual Patterns Scale to Collective Rule Systems",
             description:
-              "How individual nervous system patterns aggregate into collective rule systems through emotional distortion, external regulation, and false coherence operating at the group level. Framework F4 of the TEG-Blue 12-framework system.",
+              "How individual nervous system patterns consolidate into collective rule systems — three scaling mechanisms, the internalisation loop, six regulatory functions, substrate reproduction, and rule escalation. Framework F4 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -908,8 +750,8 @@ export default function F4RulesRegulatePage() {
               name: "TEG-Blue Research",
               url: "https://teg-blue.org",
             },
-            datePublished: "2026-03-04",
-            dateModified: "2026-03-04",
+            datePublished: "2026-03-05",
+            dateModified: "2026-04-06",
             inLanguage: "en",
             license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
@@ -923,36 +765,32 @@ export default function F4RulesRegulatePage() {
             },
             about: [
               { "@type": "Thing", name: "Collective Rule Systems" },
-              { "@type": "Thing", name: "Rule Internalization" },
-              { "@type": "Thing", name: "Conformity and Obedience" },
-              { "@type": "Thing", name: "Rule Escalation" },
+              { "@type": "Thing", name: "Rule Internalisation" },
               { "@type": "Thing", name: "Social Regulation" },
+              { "@type": "Thing", name: "Conformity" },
+              { "@type": "Thing", name: "Authoritarian Escalation" },
             ],
             citation: [
-              { "@type": "ScholarlyArticle", name: "Reproduction in Education, Society and Culture (Bourdieu, 1977)" },
+              { "@type": "ScholarlyArticle", name: "Distinction (Bourdieu, 1977)" },
               { "@type": "ScholarlyArticle", name: "Obedience to Authority (Milgram, 1963)" },
               { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
-              { "@type": "ScholarlyArticle", name: "Attachment and Loss (Bowlby, 1969)" },
-              { "@type": "ScholarlyArticle", name: "The Body Keeps the Score (van der Kolk, 2014)" },
-              { "@type": "ScholarlyArticle", name: "Trauma and Recovery (Herman, 1992)" },
-              { "@type": "ScholarlyArticle", name: "The Presentation of Self in Everyday Life (Goffman, 1959)" },
-              { "@type": "ScholarlyArticle", name: "The Authoritarian Specter (Altemeyer, 1996)" },
+              { "@type": "ScholarlyArticle", name: "The Moral Animal (Haidt, 2001)" },
+              { "@type": "ScholarlyArticle", name: "The Roots of Evil (Staub, 1989)" },
+              { "@type": "ScholarlyArticle", name: "Social Dominance (Sidanius & Pratto, 1999)" },
             ],
             keywords: [
-              "collective rule systems",
-              "rule internalization",
+              "rules regulate",
+              "collective regulation",
+              "rule internalisation",
               "conformity",
               "obedience",
-              "rule escalation",
-              "nervous system regulation",
-              "emotional distortion",
-              "external regulation",
+              "system justification",
+              "authoritarian escalation",
+              "interoceptive substrate",
             ],
           }),
         }}
       />
-
-      {/* ─── JSON-LD: BreadcrumbList ────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -965,43 +803,35 @@ export default function F4RulesRegulatePage() {
           ),
         }}
       />
-
-      {/* ─── JSON-LD: FAQPage ───────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "What does 'rules regulate' mean in the TEG-Blue system?",
+                question: "What is a rule at the biological level?",
                 answer:
-                  "F4 proposes that rule-following is often a nervous system regulation strategy, not primarily a reasoning choice. Under perceived threat, the nervous system prioritizes predictability, belonging protection, and conformity. Rules emerge as the collective equivalent of false coherence — shared narratives that reduce uncertainty and stabilize the group. Rules persist because they serve a regulatory function, not because they are rational.",
+                  "A rule is material the CLS absorbs because it stabilises the chronic state. The CLS cannot distinguish between a rule that is accurate and a rule that regulates — a rule that confirms the person's chronic state is absorbed without friction because it feels true. The mechanism is the same as individual false coherence, operating on collective material.",
               },
               {
-                question: "How do individual nervous system patterns become collective rule systems?",
+                question: "How do rules become invisible?",
                 answer:
-                  "Through three scaling mechanisms identified in F3: false coherence absorbs rules as truth ('that's just how it is'), emotional distortion makes rule-violation feel like personal attack, and external regulation makes rule-compliance a nervous system need. When enough individuals in proximity run these mechanisms, collective structures emerge without deliberate design.",
+                  "Through a seven-step internalisation loop: attention narrows, ambiguity tolerance decreases, deviation becomes costly, conformity becomes protective, compliance receives belonging signals, external enforcement gives way to self-policing, and rules become experienced truth. The loop is self-sealing — questioning rules activates the same threat response that installed them.",
               },
               {
-                question: "What are the six rule systems in TEG-Blue?",
+                question: "How do rule systems reproduce across generations?",
                 answer:
-                  "Six categories of rules emerge from threat-based internalization, each defined by regulatory function: Roles (identity stabilization), Obedience (belonging protection), Performance (worth verification), Dominance (power establishment), Punishment (boundary enforcement), and Entitlement (resource allocation). Every specific rule can be located within this taxonomy by identifying which regulatory need it serves.",
+                  "Rules produce the caregiver profiles that produce the offspring substrate states. A rule system that teaches 'logic over emotion' produces caregivers whose interoceptive substrates are suppressed. Those caregivers cannot hold what they cannot feel. Their children's substrates develop without the co-regulation that would build the channels. The rule reproduces the biological conditions that make the rules feel true.",
               },
               {
-                question: "How do rule systems escalate?",
+                question: "How do rules escalate under collective threat?",
                 answer:
-                  "Under sustained threat, rule systems escalate through four stages that parallel the four-mode gradient: Initial (informal rules, flexibility possible), Intermediate (rules proliferate, deviation costly), Advanced (reduced tolerance, obedience as virtue), and Extreme (authoritarian enforcement, violence normalized). This explains authoritarianism not as ideological anomaly but as a predictable outcome of prolonged collective threat.",
-              },
-              {
-                question: "How does F4 connect to the rest of the TEG-Blue system?",
-                answer:
-                  "F4 is the first framework in the collective arc (F4–F7). It builds directly on F3's individual mechanisms — emotional distortion, external regulation, false coherence — showing how they aggregate into collective structures. F1 defines the biological return, F2 shows the developmental failure, F3 shows the cognitive replacement, and F4 shows what happens when enough people running those replacements are in proximity. F5 then explains how rule systems begin to sort people by worth.",
+                  "Rule systems escalate through four stages paralleling the nervous system gradient: initial (informal, flexible), intermediate (deviation costly, moralisation), advanced (surveillance, obedience as virtue), extreme (elimination of deviants). Each stage is predictable and interruptible — the intervention is restoring safety conditions so the nervous system can release the regulatory strategy.",
               },
             ])
           ),
         }}
       />
-      {/* ─── JSON-LD: Speakable ──────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1018,43 +848,56 @@ export default function F4RulesRegulatePage() {
   );
 }
 
-// ─── STYLE CONSTANTS (page-local only) ───────────────────
+// ─── STYLE CONSTANTS ──────────────────────────────────────
 
-const orderedListStyle = { paddingLeft: 20, margin: "0 0 16px" };
-const listItemStyle = { fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 };
+const linkStyle = {
+  color: SPECTRUM.cobalt,
+  textDecoration: "none",
+  fontWeight: 500,
+};
 
 const tableStyle = {
-  width: "100%", borderCollapse: "collapse", background: BG.card,
-  borderRadius: 8, overflow: "hidden", border: `1px solid ${BORDER.default}`, fontSize: 13,
-};
-const thStyle = {
-  padding: "10px 14px", textAlign: "left", fontSize: 11, fontWeight: 600,
-  color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em",
-  fontFamily: FONT.mono, background: BG.surface, borderBottom: `1px solid ${BORDER.default}`,
+  width: "100%",
+  borderCollapse: "collapse",
+  background: BG.card,
+  borderRadius: 8,
+  overflow: "hidden",
+  border: `1px solid ${BORDER.default}`,
+  fontSize: 13,
 };
 
-function KeyStatement({ children }) {
-  return (
-    <blockquote style={{
-      padding: "16px 20px", margin: "0 0 16px",
-      background: hexToRgba(SPECTRUM.cobalt, 0.06), borderRadius: 8,
-      borderLeft: `4px solid ${SPECTRUM.cobalt}`,
-      fontSize: 15, fontWeight: 500, color: TEXT.primary, lineHeight: 1.6, fontStyle: "italic",
-    }}>
-      {children}
-    </blockquote>
-  );
-}
+const thStyle = {
+  padding: "10px 14px",
+  textAlign: "left",
+  fontSize: 11,
+  fontWeight: 600,
+  color: TEXT.muted,
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  fontFamily: FONT.mono,
+  background: BG.surface,
+  borderBottom: `1px solid ${BORDER.default}`,
+};
+
+// ─── HELPER COMPONENTS ────────────────────────────────────
 
 function TableRow({ cells }) {
   return (
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       {cells.map((cell, i) => (
-        <td key={i} style={{
-          padding: "10px 14px", fontSize: 13,
-          color: i === 0 ? TEXT.primary : TEXT.secondary,
-          fontWeight: i === 0 ? 600 : 400, lineHeight: 1.6, verticalAlign: "top",
-        }}>{cell}</td>
+        <td
+          key={i}
+          style={{
+            padding: "10px 14px",
+            fontSize: 13,
+            color: i === 0 ? TEXT.primary : TEXT.secondary,
+            fontWeight: i === 0 ? 600 : 400,
+            lineHeight: 1.6,
+            verticalAlign: "top",
+          }}
+        >
+          {cell}
+        </td>
       ))}
     </tr>
   );
