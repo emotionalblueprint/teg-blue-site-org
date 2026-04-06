@@ -1,5 +1,4 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
@@ -16,10 +15,6 @@ import {
   generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
-const M1EmotionsAsSignals = dynamic(
-  () => import("@/src/components/M1EmotionsAsSignals"),
-  { ssr: false }
-);
 
 const MODEL_COLOR = SPECTRUM.azure;
 
@@ -118,8 +113,6 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
           </section>
 
-          {/* ─── SIGNAL MAP DIAGRAM ────────────────────── */}
-          <M1EmotionsAsSignals />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <section

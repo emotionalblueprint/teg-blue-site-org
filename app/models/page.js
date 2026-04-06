@@ -1,29 +1,43 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg,
+  hexToRgba,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
+  PartDivider, ExpandableSection,
 } from "@/src/components";
-import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+import {
+  proseStyle, expandedProseStyle, expandableRowStyle,
+  conceptHeadingStyle,
+} from "@/src/styles/pageStyles";
+import {
+  generateBreadcrumbJsonLd,
+  generateFAQJsonLd,
+  generateSpeakableJsonLd,
+} from "@/src/lib/jsonld";
 
-// ─── METADATA ──────────────────────────────────────────────
+// ─── CONSTANTS ────────────────────────────────────────────
+
+const PAGE_COLOR = SPECTRUM.cobalt;
+const linkStyle = { color: PAGE_COLOR, textDecoration: "none" };
+
+// ─── METADATA ─────────────────────────────────────────────
 
 export const metadata = {
   title: "The Emotional Somatic Cycle | TEG-Blue Research",
   description:
-    "The Emotional Somatic Cycle (ESC) — the repeating biological sequence two information systems run together. Four models describe different stages: signal generation, state activation, restoration or incompletion, and awareness.",
+    "The Emotional Somatic Cycle (ESC) — the repeating biological sequence two information systems run together. From detection through activation to restoration or incompletion.",
   keywords: [
     "emotional somatic cycle",
     "nervous system",
     "biological restoration",
     "signal generation",
     "state activation",
-    "awareness capacities",
-    "regulation capacities",
+    "cognitive override",
     "ESS",
     "CLS",
+    "physiological baseline",
   ],
   alternates: {
     canonical: "https://teg-blue.org/models",
@@ -31,10 +45,22 @@ export const metadata = {
   openGraph: {
     title: "The Emotional Somatic Cycle | TEG-Blue Research",
     description:
-      "Four models describing the repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
+      "The repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
     url: "https://teg-blue.org/models",
     type: "article",
     siteName: "TEG-Blue Research",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Emotional Somatic Cycle | TEG-Blue Research",
+    description:
+      "The repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
+  },
+  other: {
+    "citation_title": "The Emotional Somatic Cycle",
+    "citation_author": "Anna Paretas-Artacho",
+    "citation_publication_date": "2026/02",
+    "citation_technical_report_institution": "TEG-Blue Research",
   },
 };
 
@@ -57,66 +83,7 @@ const FAQ_ITEMS = [
   },
 ];
 
-// ─── MODEL DATA ─────────────────────────────────────────────
-
-const MODELS = [
-  {
-    id: "M1",
-    role: "The Signal Language",
-    title: "Emotions as Signals",
-    coreQuestion: "What is this signal telling me?",
-    summary:
-      "What the nervous system detects and the physiological response it generates — hormonal, neurochemical, muscular — encoding a finding about what was detected. Sixteen emotions, each with a distinct finding, grouped by whether the body can complete the restoration sequence through its own channels or requires another person.",
-    concepts: 16,
-    drawsFrom: "F1",
-    color: SPECTRUM.azure,
-    href: "/model/m1-emotions-as-signals",
-  },
-  {
-    id: "M2",
-    role: "The Instrument",
-    title: "Nervous System States",
-    coreQuestion: "Where is the needle?",
-    summary:
-      "How the nervous system reorganises into four configurations along a continuous physiological gradient — from parasympathetic-dominant states of engagement through sympathetic activation and defensive mobilisation. What each state enables and restricts, how states become chronic, and how the return to physiological baseline restores flexibility.",
-    concepts: 10,
-    drawsFrom: "F1, F3, F7, F12",
-    color: SPECTRUM.azure,
-    href: "/model/m2-nervous-system-states",
-  },
-  {
-    id: "M3",
-    role: "The Return Pathway",
-    title: "Regulation Capacities",
-    coreQuestion: "Is the cycle completing?",
-    summary:
-      "Whether the restoration sequence completes — mobilisation response, biological restoration, return to physiological baseline — or the activation remains unresolved. What completion looks like at each state. What replaces it when it cannot happen. How the residue accumulates across repeated incomplete cycles.",
-    concepts: 9,
-    drawsFrom: "F1, F2, F3, F12",
-    color: SPECTRUM.indigo,
-    href: "/model/m3-regulation-capacities",
-  },
-  {
-    id: "M4",
-    role: "The Calibration",
-    title: "Awareness Capacities",
-    coreQuestion: "What determines which path?",
-    summary:
-      "The biological architecture that determines whether the CLS can receive the ESS's physiological signals. Whether that architecture is available determines which path the cycle follows — whether the body completes its restoration sequence or the CLS overrides and the activation remains unresolved.",
-    concepts: 10,
-    drawsFrom: "F2, F3, F8, F10",
-    color: SPECTRUM.cobalt,
-    href: "/model/m4-awareness-capacities",
-  },
-];
-
-const CONNECTORS = [
-  { label: "produces", description: "The physiological response M1 maps produces the state M2 maps" },
-  { label: "determines return", description: "M3 maps whether the activation cycle M2 opened can complete" },
-  { label: "calibrates", description: "M4 determines which path the cycle follows" },
-];
-
-// ─── PAGE ───────────────────────────────────────────────────
+// ─── PAGE ─────────────────────────────────────────────────
 
 export default function ModelsPage() {
   return (
@@ -134,241 +101,412 @@ export default function ModelsPage() {
           <ModelHero
             badge="THE EMOTIONAL SOMATIC CYCLE"
             title="The Emotional Somatic Cycle"
-            subtitle="Signal → State → Regulation → Perception"
-            description="Two information systems run a repeating biological sequence together. The Emotional Somatic System (ESS) detects, evaluates, and generates physiological responses below conscious awareness. The Cognitive-Logical System (CLS) produces language, reasoning, and narrative. The nervous system detects something in the environment, evaluates it for safety or threat, generates a physiological response, reorganises into a different configuration — and then either the restoration sequence runs to its endpoint or the activation remains unresolved."
-            color={SPECTRUM.cobalt}
+            subtitle="Detection → Signal → State → Restoration or Incompletion"
+            description="A biological information system runs continuously in every human body. It detects changes in the environment, evaluates them for safety or threat, and organises a physiological response before conscious awareness arrives. A second information system operates alongside it: language, reasoning, narrative. These two systems run a repeating biological sequence together — and whether that sequence completes or remains unresolved determines what the person can perceive, think, feel, and do."
+            color={PAGE_COLOR}
           />
         }
       >
-        {/* ─── THE CYCLE ─────────────────────────────────── */}
+
+        {/* ════════════════════════════════════════════════════
+            TWO INFORMATION SYSTEMS
+            ════════════════════════════════════════════════════ */}
+
         <section style={{ marginBottom: 48 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            The Cycle
-          </h2>
-          <p style={bodyStyle}>
-            Every cycle begins at physiological baseline — the nervous system at rest, resources available but not deployed. The nervous system detects something, evaluates it for safety or threat, generates a physiological response encoding what was detected, and reorganises into a different physiological configuration. By the time the CLS registers that something has happened, the ESS has already detected the cue, matched it to past patterns, organised a response, and shifted the nervous system&#39;s configuration.
+          <h2 style={conceptHeadingStyle}>Two Information Systems</h2>
+
+          <p style={proseStyle}>
+            A biological information system runs continuously in every human body. It detects changes in the environment through the sensory periphery — eyes, ears, nose, gut, skin — and organises a physiological response before conscious awareness arrives. Cue detection begins at 10–50ms. Pattern matching completes within 50–200ms. A full physiological response — heart rate change, muscle tension, hormonal shifts — is organised within 200–500ms. Its domain: safety and threat detection, relational cues, values, needs, relevance. Its learning: through experience, through repetition, through what happens — slow to update, slow to forget. This is the Emotional Somatic System (ESS).
           </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            The cycle has two possible paths. When the CLS can receive the ESS&#39;s physiological signals — when the biological architecture connecting the two systems is available — the body completes its restoration sequence: stress hormones metabolise, muscles release, the HPA axis stands down, and the nervous system returns toward physiological baseline. The activation resolves. The cycle does not need to repeat.
+
+          <p style={proseStyle}>
+            A second information system operates alongside it: language, reasoning, planning, abstraction, narrative construction. Conscious. Deliberate. Effortful. Conscious awareness arrives at 500ms+. Analysis and planning take seconds. Narrative construction takes minutes to hours. Its learning: through explanation, through insight, through language — fast to update, fast to revise. This is the Cognitive-Logical System (CLS).
           </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            When the CLS cannot receive the ESS&#39;s signals — when it overrides the physiological activation with narrative, management, or suppression — the restoration sequence does not run to its endpoint. Cortisol continues circulating. Muscles stay braced. Neural circuits remain organised for threat. Across repeated incomplete cycles, the residue accumulates, the resting activation level shifts upward, and the nervous system searches for anything that produces the neurochemical relief that biological restoration would have provided.
+
+          <p style={proseStyle}>
+            These are not competitors. They are interdependent capacities running in one organism, operating at different speeds, in different domains, through different mechanisms. By the time the CLS registers that something has happened, the ESS has already detected the cue, matched it to past patterns, organised a physiological response, and shifted the nervous system{"'"}s configuration. The CLS arrives to find the body already in a different state.
+          </p>
+
+          <p style={proseStyle}>
+            The nervous system{"'"}s current physiological configuration — set by the ESS — determines what the person can perceive, think, feel, and learn. The CLS operates within whatever configuration has been set. State precedes capacity.
           </p>
         </section>
 
-        {/* ─── VISUAL RELATIONSHIP MAP ────────────────────── */}
-        <section style={{ marginBottom: 48 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Four Models, One Sequence
-          </h2>
-          <p style={{ ...bodyStyle, marginBottom: 16 }}>
-            Each model maps a different stage of the Emotional Somatic Cycle. Together they describe one process — from the signal the nervous system generates through the state it produces through whether the cycle completes to whether the person can perceive any of it happening.
+        {/* ════════════════════════════════════════════════════
+            PART 1: THE CYCLE
+            ════════════════════════════════════════════════════ */}
+
+        <PartDivider label="Part 1" title="The Cycle" color={PAGE_COLOR} />
+
+        {/* ─── The Emotional Somatic Cycle ────────────────── */}
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>The Emotional Somatic Cycle</h3>
+
+          <p style={proseStyle}>
+            The Emotional Somatic Cycle is the repeating biological sequence that the ESS and CLS run together. It begins at physiological baseline — the nervous system at rest, resources available but not deployed. The nervous system detects something in the environment, evaluates it for safety or threat, generates a physiological response encoding what was detected, and reorganises into a different physiological configuration. The CLS catches up — arriving to find the body already mobilised.
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-            {MODELS.map((model, i) => (
-              <div key={model.id}>
-                <ModelLayer model={model} />
-                {i < MODELS.length - 1 && (
-                  <Connector connector={CONNECTORS[i]} topColor={model.color} bottomColor={MODELS[i + 1].color} />
-                )}
-              </div>
-            ))}
+
+          <p style={proseStyle}>
+            The cycle has two possible paths. When the CLS can receive the ESS{"'"}s physiological signals — when the biological architecture connecting the two systems is available — the body completes its restoration sequence: stress hormones metabolise, muscles release, the HPA axis stands down, and the nervous system returns toward physiological baseline. The activation resolves. The person knows what fired, why it fired, and what it needed. The cycle does not need to repeat.
+          </p>
+
+          <p style={proseStyle}>
+            When the CLS cannot receive the ESS{"'"}s signals — when it overrides the physiological activation with narrative, management, or suppression — the restoration sequence does not run to its endpoint. The physiological activation remains unresolved. Cortisol continues circulating. Muscles stay braced. Neural circuits remain organised for threat. Across repeated incomplete cycles, the residue accumulates, the resting activation level shifts upward, and the nervous system searches for anything that produces the neurochemical relief that biological restoration would have provided.
+          </p>
+
+          <div style={expandableRowStyle}>
+            <ExpandableSection title="Research Foundations" type="opendata">
+              <p style={expandedProseStyle}>
+                Porges (2011) — polyvagal theory: the autonomic nervous system organises physiological state through hierarchical neural circuits. Damasio (1994) — somatic marker hypothesis: the body{"'"}s physiological responses inform decision-making before conscious reasoning arrives. Levine (1997) — somatic experiencing: the body{"'"}s stress response requires completion, not management. Nagoski & Nagoski (2019) — the stress cycle requires physiological completion independent of the stressor.
+              </p>
+            </ExpandableSection>
+
+            <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+              <p style={expandedProseStyle}>
+                The complete sequence mapped as a single biological architecture involving both information systems — from detection through activation through branching to completion or incompletion. The branching point identified as a biological condition: whether the architecture connecting the ESS and CLS is available. The CLS placed as a participant in the cycle, not an observer — what the CLS does when it arrives determines the cycle{"'"}s outcome.
+              </p>
+            </ExpandableSection>
           </div>
         </section>
 
-        {/* ─── M1 DETAIL ────────────────────────────────────── */}
-        <ModelDetail
-          id="M1"
-          title="Emotions as Signals"
-          role="The Signal Language"
-          color={SPECTRUM.azure}
-          href="/model/m1-emotions-as-signals"
-        >
-          <p style={bodyStyle}>
-            The nervous system generates a physiological response pattern — hormonal, neurochemical, muscular — encoding a finding about what was detected. Each pattern is distinct. The hormonal, neurochemical, and muscular configuration the nervous system generates for a boundary crossing is different from the configuration it generates for a loss, a threat, or a moment of safety.
-          </p>
-          <div style={modesLabelStyle(SPECTRUM.azure)}>
-            Sixteen emotions organized by body signature:
+        {/* ─── The Stages ─────────────────────────────────── */}
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>The Stages</h3>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <StageStep
+              number="1"
+              title="Physiological Baseline"
+              model={null}
+            >
+              The nervous system at rest. Cortisol at resting level. Muscles at resting tension. Heart rate at resting pace. The HPA axis standing down. Not numb, not inactive — ready. The body{"'"}s resources available, not deployed. The state the nervous system is designed to return to after activation. Physiological baseline is the start and endpoint of the Emotional Somatic Cycle. In Path A, the restoration sequence runs to its endpoint and the nervous system returns here. In Path B, the baseline shifts upward — the resting activation level itself changes as unresolved physiological activation accumulates.
+            </StageStep>
+
+            <StageStep
+              number="2"
+              title="Safety-Threat Evaluation"
+              model={{ id: "M1", href: "/model/m1-emotions-as-signals" }}
+            >
+              The sensory periphery detects, the nervous system evaluates for safety or threat. Five channels feed in simultaneously — eyes, ears, nose, gut, skin — below conscious awareness. The evaluation is automatic, continuous, and operates at millisecond speed: the amygdala fires in 12 milliseconds. A full safety-threat evaluation is complete before the CLS has assembled a single thought. This evaluation runs 100% of the time. It is not triggered by events — it is the nervous system{"'"}s ongoing read of the environment and the body{"'"}s own internal state.
+            </StageStep>
+
+            <StageStep
+              number="3"
+              title="Signal Generation"
+              model={{ id: "M1", href: "/model/m1-emotions-as-signals" }}
+            >
+              The nervous system generates a physiological response pattern — hormonal, neurochemical, muscular — encoding a finding about what was detected. This response pattern is biological information. It carries a specific message: what was detected, what matters, what the body should do. Each pattern is distinct. The hormonal, neurochemical, and muscular configuration the nervous system generates for a boundary crossing is different from the configuration it generates for a loss, a threat, or a moment of safety. This is what the nervous system produces as an emotion — a physiological finding. The feeling is the CLS{"'"}s registration of what the ESS already generated.
+            </StageStep>
+
+            <StageStep
+              number="4"
+              title="State Activation"
+              model={{ id: "M2", href: "/model/m2-nervous-system-states" }}
+            >
+              The nervous system reorganises into a different physiological configuration in response to the signal. Perception narrows or widens. Cognitive flexibility increases or decreases. Empathic capacity opens or closes. Muscle tension redistributes. Sensory filtering adjusts. The body configures itself for what the evaluation determined the situation requires. The configuration moves along a continuous physiological gradient — from parasympathetic-dominant states of engagement and broader perception through sympathetic activation and defensive mobilisation. The current position on this gradient determines what the person can perceive, think, feel, and learn.
+            </StageStep>
+
+            <StageStep
+              number="5"
+              title="The Branching Point"
+              model={{ id: "M4", href: "/model/m4-awareness-capacities" }}
+            >
+              Everything above happened in milliseconds. The ESS detected, evaluated, generated a physiological response, and shifted the nervous system{"'"}s configuration before the CLS registered that anything changed. Now the CLS catches up. Whether the CLS can feel what the ESS is doing — whether it can receive the physiological signals the ESS has generated — determines everything that follows. When the CLS receives the signal, the person knows what fired and why, and the body can complete its restoration sequence. When the CLS cannot receive the signal — when the biological architecture connecting the two systems is unavailable — the CLS overrides: it manages, plans, pushes through, narrates, without knowing there is a physiological signal to receive.
+            </StageStep>
           </div>
-          <ul style={listStyle}>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Mobilization</strong> — Fear, Anger, Stress, Anxiety</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Expulsion</strong> — Disgust</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Social Withdrawal</strong> — Shame, Guilt</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Conservation</strong> — Sadness</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Approach &amp; Expansion</strong> — Joy, Happiness, Admiration, Pride</li>
-            <li><strong style={{ color: TEXT.primary }}>Bonding &amp; Proximity</strong> — Love, Trust, Gratitude, Compassion</li>
-          </ul>
-          <p style={{ ...bodyStyle, marginTop: 16 }}>
-            <strong style={{ color: TEXT.primary }}>The central distinction:</strong> Somatic emotions can complete through the body&#39;s own channels — movement, discharge, physiological settling. Relational emotions require another person. Relational completion is a biological requirement built into the signal architecture.
-          </p>
-        </ModelDetail>
+        </section>
 
-        {/* ─── M2 DETAIL ────────────────────────────────────── */}
-        <ModelDetail
-          id="M2"
-          title="Nervous System States"
-          role="The Instrument"
-          color={SPECTRUM.azure}
-          href="/model/m2-nervous-system-states"
-        >
-          <p style={bodyStyle}>
-            The nervous system reorganises into a different physiological configuration in response to the signal. Perception narrows or widens. Cognitive flexibility increases or decreases. Muscle tension redistributes. Sensory filtering adjusts. The body configures itself for what the evaluation determined the situation requires.
+        {/* ════════════════════════════════════════════════════
+            PART 2: PATH A — THE COMPLETED PATHWAY
+            ════════════════════════════════════════════════════ */}
+
+        <PartDivider label="Part 2" title="Path A — The Completed Pathway" color={PAGE_COLOR} />
+
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>Mobilisation Response</h3>
+          <ModelTag id="M3" href="/model/m3-regulation-capacities" />
+
+          <p style={proseStyle}>
+            The mobilised physiological resources are expended — through movement, action, expression, or holding. The body does what the activation mobilised it to do. Stress hormones that were released to fuel action are used. Muscle tension that was organised for response is discharged. The physiological resources deployed during state activation serve their intended function.
           </p>
-          <div style={modesLabelStyle(SPECTRUM.azure)}>
-            Four modes — positions on a continuous gradient:
+
+          <p style={proseStyle}>
+            The form depends on what was detected and what state was activated. A boundary crossing may mobilise confrontation or withdrawal. A loss may mobilise conservation and grief. A threat may mobilise flight or fight. A moment of safety may mobilise approach and engagement.
+          </p>
+        </section>
+
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>Biological Restoration</h3>
+          <ModelTag id="M3" href="/model/m3-regulation-capacities" />
+
+          <p style={proseStyle}>
+            The body{"'"}s stress response requires physical completion — stress hormones need to metabolise, muscles need to unclench, inflammatory compounds need to clear, neural circuits need to recover. This biological completion is how the nervous system returns toward physiological baseline. The restoration sequence runs to its endpoint. The HPA axis stands down. The nervous system returns toward physiological baseline.
+          </p>
+
+          <p style={proseStyle}>
+            This is the body{"'"}s designed completion process. It operates at zero cost — this is the design specification, not an intervention.
+          </p>
+
+          <p style={proseStyle}>
+            Two designed completion pathways exist. Somatic emotions — those whose signal content is about the body{"'"}s own state — can complete through the body{"'"}s own channels: movement, discharge, physiological settling. Relational emotions — those whose signal content is about belonging, connection, or the state of the bond — require another person. Relational completion is a biological requirement built into the signal architecture.
+          </p>
+
+          <p style={proseStyle}>
+            When the restoration sequence completes: the activation resolves. The signal{"'"}s information has landed — the person knows what fired, why it fired, and what it needed. The cycle does not need to repeat. The nervous system returns to physiological baseline, ready for the next signal.
+          </p>
+        </section>
+
+        {/* ════════════════════════════════════════════════════
+            PART 3: PATH B — THE INCOMPLETE PATHWAY
+            ════════════════════════════════════════════════════ */}
+
+        <PartDivider label="Part 3" title="Path B — The Incomplete Pathway" color={PAGE_COLOR} />
+
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>Cognitive Override</h3>
+          <ModelTag id="M3" href="/model/m3-regulation-capacities" />
+
+          <p style={proseStyle}>
+            The CLS overrides the ESS{"'"}s physiological signals. The branching point has resolved to Path B. The CLS cannot feel the ESS{"'"}s activation — or it can feel it but the activation is too threatening to the current narrative — and it intercepts: manages, plans, pushes through, controls, constructs a narrative that replaces the physiological signal with an invented account.
+          </p>
+
+          <p style={proseStyle}>
+            The physiological activation does not disappear. The nervous system still carries it — cortisol still circulating, muscles still braced, neural circuits still organised for threat. What changes is that the person no longer registers it as information. The CLS is operating without data from the ESS.
+          </p>
+
+          <p style={proseStyle}>
+            When the biological architecture connecting the two systems was never built — when the interoceptive substrate was never developed during early relational experience — cognitive override is not an event. It is the permanent structure the CLS was built with. The CLS has never operated any other way.
+          </p>
+        </section>
+
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>The Cascade</h3>
+          <ModelTag id="M3" href="/model/m3-regulation-capacities" />
+
+          <p style={proseStyle}>
+            When cognitive override occurs, the restoration sequence does not run to its endpoint. A cascade of physiological consequences follows — each stage producing the conditions for the next.
+          </p>
+
+          <CascadeItem title="Incomplete Biological Restoration">
+            The restoration sequence runs partially or not at all. Hormone metabolism stalls. Muscle release does not occur. Neural recovery is interrupted. The body carries forward physiological activation that was mobilised but not completed.
+          </CascadeItem>
+
+          <CascadeItem title="Unresolved Activation Load">
+            The physiological activation that remains when the restoration sequence does not reach its endpoint. Stress hormones still circulating. Muscles still braced. Neural circuits still organised for threat. This is the load the body carries forward into the next cycle.
+          </CascadeItem>
+
+          <CascadeItem title="Debris Accumulation">
+            Across repeated incomplete cycles, the physical residue accumulates — cortisol, muscle tension, sensitised neural circuits, inflammatory compounds. This is the measurable physiological residue of activation sequences that were mobilised but never completed.
+          </CascadeItem>
+
+          <CascadeItem title="Baseline Elevation">
+            The nervous system adapts its resting activation level upward to reflect the unresolved load. The floor rises. States that require lower activation — parasympathetic-dominant states of safety and openness — become physiologically inaccessible. The person is stuck because their resting level of activation already places them in a state that was designed for temporary use.
+          </CascadeItem>
+
+          <CascadeItem title="Restoration Substitutes">
+            The nervous system searches for anything that produces the neurochemical shift that biological restoration would have provided. Non-relational restoration substitutes alter internal state directly — substances, intensity, work, distraction — producing a slow upward drift of the resting activation level. Relational restoration substitutes act through another nervous system — fusion, control, subjugation — producing an accelerated rise. Each produces measurable short-term relief. Neither runs the restoration sequence.
+          </CascadeItem>
+
+          <p style={{ ...proseStyle, marginTop: 8 }}>
+            The substitute suppresses felt intensity but the restoration sequence does not run. The activation rebounds. The cycle repeats from a higher baseline. Each incomplete cycle raises the floor. The next activation starts from a system already carrying unresolved load.
+          </p>
+        </section>
+
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>What Chronic Activation Produces</h3>
+
+          <p style={proseStyle}>
+            The cascade described the biological consequences of the incomplete pathway. Each consequence is measurable and progressive. Together they produce a condition in which the nervous system{"'"}s state configuration, the restoration sequence, and the awareness architecture converge — and the convergence produces something none of the three describes alone.
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+              marginBottom: 20,
+            }}
+          >
+            <ConditionCard
+              title="From physiological baseline"
+              color={PAGE_COLOR}
+            >
+              The nervous system is at rest. Capacities are available but not deployed. The restoration sequence is not running — the architecture exists, the conditions are not being tested. The body{"'"}s internal signals are reaching conscious processing as readable information — the full data set is reporting. The person can enter any state and return.
+            </ConditionCard>
+
+            <ConditionCard
+              title="From acute activation"
+              color={SPECTRUM.azure}
+            >
+              The nervous system has shifted configuration. Capacities have shifted with it — temporary resource reallocation, the whole system reorganised for the current demand. The restoration sequence is available — when conditions are present, the body completes and returns to physiological baseline. The person can feel the state shift. The restrictions are temporary. This is the system working as designed.
+            </ConditionCard>
+
+            <ConditionCard
+              title="From chronic activation"
+              color={SPECTRUM.indigo}
+            >
+              The person operates from a nervous system that has reorganised permanently. Perception has narrowed or tunnelled — delivering a filtered version of reality that confirms the state. Cognition has simplified, locked into strategic or threat-based processing. Empathy has redirected or collapsed — reading others for strategy, threat, or control rather than understanding. The temporal horizon has compressed — the person cannot hold long-term consequences. The restoration sequence cannot complete — the resting activation level has shifted upward, cognitive override is automatic and invisible, substitutes feel like resolution. The person does not experience themselves as compromised. They experience narrowed perception as accurate perception. Locked cognition as clear thinking. Collapsed empathy as rational detachment. The narrative is internally consistent.
+            </ConditionCard>
           </div>
-          <ul style={listStyle}>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Connection</strong> (Teal) — Safety perceived. Parasympathetic-dominant. Broader perception, cognitive flexibility, empathic capacity available.</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Protection</strong> (Yellow) — Threat perceived. Attention narrows, self-preservation prioritised. Temporary by design.</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Control</strong> (Orange) — Cognition recruited into threat service. Deliberate, anticipatory, time-limited in designed operation.</li>
-            <li><strong style={{ color: TEXT.primary }}>Domination</strong> (Pink) — Maximum cognitive override. Designed as rare; costly if chronic.</li>
-          </ul>
-          <p style={{ ...bodyStyle, marginTop: 16 }}>
-            <strong style={{ color: TEXT.primary }}>The central principle:</strong> The current position on the gradient determines what the person can perceive, think, feel, and learn. Any state can be temporary and functional. Any state can also become chronic when the nervous system cannot return to physiological baseline.
-          </p>
-        </ModelDetail>
 
-        {/* ─── M3 DETAIL ────────────────────────────────────── */}
-        <ModelDetail
-          id="M3"
-          title="Regulation Capacities"
-          role="The Return Pathway"
-          color={SPECTRUM.indigo}
-          href="/model/m3-regulation-capacities"
-        >
-          <p style={bodyStyle}>
-            The cycle has two paths. In Path A, the mobilised physiological resources are expended, the restoration sequence runs to its endpoint — stress hormones metabolise, muscles release, the HPA axis stands down, inflammatory compounds clear — and the nervous system returns toward physiological baseline. This is the body&#39;s designed completion process, operating at zero cost.
+          <p style={proseStyle}>
+            The capacity restrictions are permanent. The restoration pathway is blocked. And the instrument that would detect either condition is the instrument that chronic activation disables.
           </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            In Path B, the CLS overrides the ESS&#39;s physiological signals. The restoration sequence does not run to its endpoint. A cascade follows: incomplete restoration, unresolved activation load, debris accumulation — cortisol, muscle tension, sensitised neural circuits, inflammatory compounds — baseline elevation, and restoration substitutes. Each incomplete cycle raises the floor. The next activation starts from a system already carrying unresolved load.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            Two designed completion pathways exist. Somatic emotions can complete through the body&#39;s own channels. Relational emotions require another person — relational completion is a biological requirement, not a psychological preference.
-          </p>
-        </ModelDetail>
 
-        {/* ─── M4 DETAIL ────────────────────────────────────── */}
-        <ModelDetail
-          id="M4"
-          title="Awareness Capacities"
-          role="The Calibration"
-          color={SPECTRUM.cobalt}
-          href="/model/m4-awareness-capacities"
-        >
-          <p style={bodyStyle}>
-            Everything in the cycle above happened in milliseconds. The ESS detected, evaluated, generated a physiological response, and shifted the nervous system&#39;s configuration before the CLS registered that anything changed. Whether the CLS can receive the ESS&#39;s physiological signals determines everything that follows — the fork between Path A and Path B.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            This is determined by the state of the biological architecture connecting the two systems — whether the CLS has a channel to receive the ESS&#39;s physiological signals, or whether it is operating without that data. When the biological architecture connecting the two systems was never built — when the interoceptive substrate was never developed during early relational experience — cognitive override is not an event. It is the permanent structure the CLS was built with.
-          </p>
-          <div style={modesLabelStyle(SPECTRUM.cobalt)}>
-            Three awareness capacities:
+          <div style={expandableRowStyle}>
+            <ExpandableSection title="Research Foundations" type="opendata">
+              <p style={expandedProseStyle}>
+                Fredrickson (2001) — broaden-and-build theory and capacity restriction under sustained negative affect. Arnsten (2009) — prefrontal cortex degradation under chronic stress. Sapolsky (2004) — glucocorticoid cascade and hippocampal damage. Levine (1997) — somatic completion and what happens when it cannot occur. Gross (1998) — suppression maintaining physiological arousal. Craig (2002) — interoceptive substrate architecture. Porges (2011) — neuroception and autonomic state detection. Damasio (1999) — somatic marker hypothesis and the role of body-state data in decision-making.
+              </p>
+            </ExpandableSection>
+
+            <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+              <p style={expandedProseStyle}>
+                The assembly of state configuration, restoration sequence, and awareness architecture into a single picture of what chronic activation produces — not three separate deficits but one condition in which capacity is restricted, restoration is blocked, and the instrument that would detect either is offline. The three-condition frame — physiological baseline, acute activation, chronic activation — as structurally different relationships between the nervous system and the person operating inside it.
+              </p>
+            </ExpandableSection>
           </div>
-          <ul style={listStyle}>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Interpersonal Affect Perception (RE)</strong> — Perceiving what others are feeling through facial expression, tone, body language, context.</li>
-            <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Affective Resonance (ER)</strong> — Feeling what others are feeling. The body&#39;s resonance with another person&#39;s physiological state.</li>
-            <li><strong style={{ color: TEXT.primary }}>Interoceptive Self-Awareness (SEA)</strong> — Whether the body&#39;s internal signals are reaching conscious processing as readable information.</li>
-          </ul>
-        </ModelDetail>
+        </section>
 
-        {/* ─── INTEGRATION ────────────────────────────────── */}
+        {/* ════════════════════════════════════════════════════
+            PART 4: THE SYSTEM
+            ════════════════════════════════════════════════════ */}
+
+        <PartDivider label="Part 4" title="The System" color={PAGE_COLOR} />
+
+        {/* ─── The Four Models ────────────────────────────── */}
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>The Four Models</h3>
+
+          <p style={proseStyle}>
+            Each model maps a different part of the Emotional Somatic Cycle. Together they describe one process — from the signal the nervous system generates through the state it produces through whether the cycle completes to whether the person can perceive any of it happening.
+          </p>
+
+          <p style={proseStyle}>
+            Every concept in every model maps a part of this cycle. Every framework explains why the cycle runs the way it does in a specific person.
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 20 }}>
+            <ModelEntryCard
+              id="M1"
+              title="Emotions as Signals"
+              role="The Signal Language"
+              question="What is this signal telling me?"
+              stage="Safety-Threat Evaluation and Signal Generation"
+              description="What the ESS detects and the physiological response it generates — sixteen emotions, each with a distinct finding, grouped by somatic (can complete through the body's own channels) and relational (requires another person)."
+              color={SPECTRUM.azure}
+              href="/model/m1-emotions-as-signals"
+            />
+            <ModelEntryCard
+              id="M2"
+              title="Nervous System States"
+              role="The Instrument"
+              question="Where is the needle?"
+              stage="State Activation and the nervous system gradient"
+              description="How the nervous system reorganises into four configurations along a continuous physiological range — what each state enables and restricts, how states become chronic, how the return to physiological baseline restores flexibility."
+              color={SPECTRUM.azure}
+              href="/model/m2-nervous-system-states"
+            />
+            <ModelEntryCard
+              id="M3"
+              title="Regulation Capacities"
+              role="The Return Pathway"
+              question="Is the cycle completing?"
+              stage="Path A and Path B"
+              description="Whether the restoration sequence completes — mobilisation response, biological restoration, return to baseline — or the activation remains unresolved. What completion looks like at each state. What replaces it when it cannot happen."
+              color={SPECTRUM.indigo}
+              href="/model/m3-regulation-capacities"
+            />
+            <ModelEntryCard
+              id="M4"
+              title="Awareness Capacities"
+              role="The Calibration"
+              question="What determines which path?"
+              stage="The Branching Point"
+              description="The biological architecture that determines whether the CLS can receive the ESS's physiological signals. Whether that architecture is available determines which path the cycle follows."
+              color={SPECTRUM.cobalt}
+              href="/model/m4-awareness-capacities"
+            />
+          </div>
+        </section>
+
+        {/* ─── The Twelve Frameworks ─────────────────────── */}
+        <section style={{ marginBottom: 40 }}>
+          <h3 style={conceptHeadingStyle}>The Twelve Frameworks</h3>
+
+          <p style={proseStyle}>
+            The models describe <em>what is happening</em> — the mechanism as it operates right now, in any person. The frameworks describe <em>why it is happening this way</em> — the origin, development, and scaling of the mechanism. Where it comes from, how a specific person got their specific configuration, and what happens when the mechanism operates at collective scale.
+          </p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 8,
+              marginTop: 16,
+            }}
+          >
+            <FrameworkArcCard
+              arc="Individual"
+              range="F1 – F3"
+              description="The mechanism inside one nervous system — the biological origin, how the awareness architecture develops through relational experience, and how the CLS maintains the incomplete pathway through narrative."
+              color={SPECTRUM.azure}
+            />
+            <FrameworkArcCard
+              arc="Collective"
+              range="F4 – F7"
+              description="The same mechanism at social and institutional scales — rules, worth hierarchies, perceptual bias, and domination as escalating forms of regulation substitution."
+              color={SPECTRUM.indigo}
+            />
+            <FrameworkArcCard
+              arc="Repair"
+              range="F8 – F12"
+              description="Reversal and restoration at every scale — how the awareness capacities rebuild through safety, how variation is configuration, how processing breaks the intergenerational chain, and why understanding alone does not change the architecture."
+              color={SPECTRUM.cobalt}
+            />
+          </div>
+
+          <div style={{ marginTop: 16 }}>
+            <Link href="/frameworks-map" style={{ ...linkStyle, fontSize: 13, fontWeight: 500 }}>
+              See the twelve frameworks →
+            </Link>
+          </div>
+        </section>
+
+        {/* ─── Where to Go Next ──────────────────────────── */}
         <section
-          id="integration"
           style={{
             marginBottom: 48,
             padding: "20px 24px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.04),
+            background: hexToRgba(PAGE_COLOR, 0.04),
             borderRadius: RADIUS.md,
-            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.12)}`,
+            border: `1px solid ${hexToRgba(PAGE_COLOR, 0.12)}`,
           }}
         >
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            How the Four Models Work Together
-          </h2>
-          <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
-            One Process, Four Questions
-          </div>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px" }}>
-            Every concept in every model maps a part of the same cycle. M1 maps what the nervous system detects and the physiological response it generates. M2 maps how the nervous system reorganises in response to that signal. M3 maps whether the restoration sequence completes or the activation remains unresolved. M4 maps the biological architecture that determines which path the cycle follows.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px" }}>
-            The relationship between M3 and M4 is the branching point. M4 determines whether the CLS can receive the ESS&#39;s physiological signals. That single condition determines whether the body&#39;s activation sequence completes (Path A) or stays open (Path B). The awareness capacities develop through the restoration sequence completing. And the restoration sequence completes through the awareness architecture being available.
-          </p>
-          <div style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, padding: "12px 16px", background: hexToRgba(SPECTRUM.cobalt, 0.04), borderRadius: RADIUS.sm, borderLeft: `2px solid ${hexToRgba(SPECTRUM.cobalt, 0.3)}` }}>
-            <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>At physiological baseline:</strong> Capacities are available but not deployed. The restoration sequence is not running — the architecture exists, the conditions are not being tested. The person can enter any state and return.</p>
-            <p style={{ margin: "0 0 8px" }}><strong style={{ color: TEXT.primary }}>In acute activation:</strong> Capacities have shifted — temporary resource reallocation. The restoration sequence is available when conditions are present. The awareness architecture is under load but functional. The restrictions are temporary.</p>
-            <p style={{ margin: 0 }}><strong style={{ color: TEXT.primary }}>In chronic activation:</strong> The capacity restrictions are sustained. The restoration pathway is blocked. And the instrument that would detect either condition is the instrument that chronic activation degrades.</p>
-          </div>
-        </section>
-
-        {/* ─── THE FRAMEWORKS ────────────────────────────── */}
-        <section
-          style={{
-            marginBottom: 48,
-            padding: "12px 16px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
-            borderRadius: RADIUS.md,
-            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-          }}
-        >
-          <div style={sectionLabelStyle(SPECTRUM.cobalt)}>
-            Models and Frameworks
-          </div>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
-            The models describe <em>what is happening</em> — the mechanism as it operates right now, in any person. The twelve frameworks describe <em>why it is happening this way</em> — the origin, development, and scaling of the mechanism. Where it comes from, how a specific person got their specific configuration, and what happens when the mechanism operates at collective scale.
-          </p>
-          <Link
-            href="/frameworks-map"
-            style={{
-              fontSize: 13,
-              color: SPECTRUM.cobalt,
-              textDecoration: "none",
-              fontWeight: 500,
-            }}
-          >
-            See the twelve frameworks →
-          </Link>
-        </section>
-
-        {/* ─── FOOTER LINKS ───────────────────────────────── */}
-        <section
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          {[
-            { href: "/publications/validation-study", label: "Validation Study" },
-            { href: "/frameworks-map", label: "12 Frameworks" },
-            { href: "/foundations", label: "System Overview" },
-            { href: "/collaborate", label: "Collaborate" },
-            { href: "/explore/labels", label: "Capacity Labels Explorer" },
-            { href: "https://teg-blue.com/compass-explorer", label: "Inner Compass (teg-blue.com)", external: true },
-          ].map(({ href, label, external }) => {
-            const style = {
-              padding: "10px 20px",
-              background: external ? hexToRgba(SPECTRUM.azure, 0.08) : "transparent",
-              color: external ? SPECTRUM.azure : TEXT.muted,
-              border: `1px solid ${external ? hexToRgba(SPECTRUM.azure, 0.2) : BORDER.default}`,
-              borderRadius: RADIUS.md,
-              fontWeight: 500,
-              fontSize: 13,
-              fontFamily: FONT.mono,
-              textDecoration: "none",
-              letterSpacing: "0.02em",
-            };
-            return external ? (
-              <a key={href} href={href} target="_blank" rel="noopener noreferrer" style={style}>
-                {label}
-              </a>
-            ) : (
-              <Link key={href} href={href} style={style}>
-                {label}
-              </Link>
-            );
-          })}
+          <h3 style={{ ...conceptHeadingStyle, marginBottom: 16 }}>Where to Go Next</h3>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+            <NavItem href="/model/m1-emotions-as-signals" color={SPECTRUM.azure}>
+              Start with what the nervous system detects — M1: Emotions as Signals
+            </NavItem>
+            <NavItem href="/model/m2-nervous-system-states" color={SPECTRUM.azure}>
+              See how the nervous system reorganises in response — M2: Nervous System States
+            </NavItem>
+            <NavItem href="/model/m3-regulation-capacities" color={SPECTRUM.indigo}>
+              Follow the two paths — M3: Regulation Capacities
+            </NavItem>
+            <NavItem href="/model/m4-awareness-capacities" color={SPECTRUM.cobalt}>
+              Understand what determines the branching point — M4: Awareness Capacities
+            </NavItem>
+            <NavItem href="/frameworks-map" color={PAGE_COLOR}>
+              Explore why the cycle runs this way — The Twelve Frameworks
+            </NavItem>
+            <NavItem href="/publications/validation-study" color={TEXT.muted}>
+              Read the validation study
+            </NavItem>
+            <NavItem href="https://teg-blue.com/compass-explorer" color={TEXT.muted} external>
+              Explore the Inner Compass interactively (teg-blue.com)
+            </NavItem>
+          </ul>
         </section>
 
       </PageLayout>
@@ -408,199 +546,236 @@ export default function ModelsPage() {
   );
 }
 
-// ─── HELPER COMPONENTS ──────────────────────────────────────
+// ─── HELPER COMPONENTS ────────────────────────────────────
 
-function ModelDetail({ id, title, role, color, href, children }) {
+function StageStep({ number, title, model, children }) {
   return (
-    <section
+    <div
       style={{
-        marginBottom: 32,
-        padding: "20px 24px",
-        background: gradientCardBg(color, 0.04),
-        borderRadius: RADIUS.lg,
+        display: "flex",
+        gap: 16,
+        padding: "16px 20px",
+        background: hexToRgba(PAGE_COLOR, 0.03),
+        borderRadius: RADIUS.md,
+        borderLeft: `3px solid ${hexToRgba(PAGE_COLOR, 0.25)}`,
+      }}
+    >
+      <div
+        style={{
+          flexShrink: 0,
+          width: 28,
+          height: 28,
+          borderRadius: "50%",
+          background: hexToRgba(PAGE_COLOR, 0.1),
+          color: PAGE_COLOR,
+          fontSize: 13,
+          fontWeight: 700,
+          fontFamily: FONT.mono,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {number}
+      </div>
+      <div style={{ flex: 1 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+          <h4 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, margin: 0 }}>
+            {title}
+          </h4>
+          {model && (
+            <Link
+              href={model.href}
+              style={{
+                fontSize: 10,
+                fontWeight: 600,
+                fontFamily: FONT.mono,
+                padding: "2px 8px",
+                borderRadius: 100,
+                background: hexToRgba(PAGE_COLOR, 0.1),
+                color: PAGE_COLOR,
+                textDecoration: "none",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+              }}
+            >
+              {model.id}
+            </Link>
+          )}
+        </div>
+        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
+          {children}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ModelTag({ id, href }) {
+  return (
+    <div style={{ marginBottom: 12 }}>
+      <Link
+        href={href}
+        style={{
+          fontSize: 10,
+          fontWeight: 600,
+          fontFamily: FONT.mono,
+          padding: "3px 10px",
+          borderRadius: 100,
+          background: hexToRgba(PAGE_COLOR, 0.1),
+          color: PAGE_COLOR,
+          textDecoration: "none",
+          textTransform: "uppercase",
+          letterSpacing: "0.06em",
+        }}
+      >
+        {id}
+      </Link>
+    </div>
+  );
+}
+
+function CascadeItem({ title, children }) {
+  return (
+    <div
+      style={{
+        padding: "12px 16px",
+        marginBottom: 8,
+        background: hexToRgba(PAGE_COLOR, 0.03),
+        borderRadius: RADIUS.sm,
+        borderLeft: `2px solid ${hexToRgba(PAGE_COLOR, 0.2)}`,
+      }}
+    >
+      <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, margin: "0 0 4px" }}>
+        {title}
+      </p>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function ConditionCard({ title, color, children }) {
+  return (
+    <div
+      style={{
+        padding: "16px 20px",
+        background: hexToRgba(color, 0.04),
+        borderRadius: RADIUS.md,
+        border: `1px solid ${hexToRgba(color, 0.12)}`,
+        borderLeft: `3px solid ${hexToRgba(color, 0.4)}`,
+      }}
+    >
+      <p style={{ fontSize: 13, fontWeight: 600, color: color, margin: "0 0 8px" }}>
+        {title}
+      </p>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function ModelEntryCard({ id, title, role, question, stage, description, color, href }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "block",
+        textDecoration: "none",
+        padding: "16px 20px",
+        background: hexToRgba(color, 0.04),
+        borderRadius: RADIUS.md,
         border: `1px solid ${hexToRgba(color, 0.12)}`,
         borderLeft: `4px solid ${color}`,
       }}
     >
-      <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 4 }}>
-        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: FONT.mono, color: color }}>{id}</span>
-        <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, margin: 0 }}>{title}</h3>
-      </div>
-      <p style={{ fontSize: 12, fontStyle: "italic", color: TEXT.muted, marginBottom: 16, marginTop: 2 }}>
-        {role}
-      </p>
-      {children}
-      <div style={{ marginTop: 16 }}>
-        <Link href={href} style={{ fontSize: 13, color: color, textDecoration: "none", fontWeight: 500 }}>
-          Full model →
-        </Link>
-      </div>
-    </section>
-  );
-}
-
-function ModelLayer({ model }) {
-  return (
-    <Link
-      href={model.href}
-      style={{
-        display: "block",
-        textDecoration: "none",
-        padding: "20px 24px",
-        background: gradientCardBg(model.color, 0.06),
-        borderRadius: RADIUS.md,
-        border: `1px solid ${hexToRgba(model.color, 0.15)}`,
-        borderLeft: `4px solid ${model.color}`,
-        transition: "border-color 200ms ease, background 200ms ease",
-      }}
-    >
-      {/* Top row: ID + Role badge */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: FONT.mono, color: model.color }}>
-          {model.id}
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+        <span style={{ fontSize: 13, fontWeight: 700, fontFamily: FONT.mono, color }}>
+          {id}
+        </span>
+        <span style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary }}>
+          {title}
         </span>
         <span
           style={{
             fontSize: 10,
             fontWeight: 600,
             fontFamily: FONT.mono,
-            padding: "3px 10px",
+            padding: "2px 8px",
             borderRadius: 100,
-            background: hexToRgba(model.color, 0.12),
-            color: model.color,
+            background: hexToRgba(color, 0.1),
+            color,
             textTransform: "uppercase",
             letterSpacing: "0.06em",
           }}
         >
-          {model.role}
-        </span>
-        <span style={{ marginLeft: "auto", fontSize: 11, fontFamily: FONT.mono, color: TEXT.hint }}>
-          {model.concepts} concepts
+          {role}
         </span>
       </div>
-
-      {/* Title */}
-      <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, margin: "0 0 6px", lineHeight: 1.3 }}>
-        {model.title}
-      </h2>
-
-      {/* Core question */}
-      <p style={{ fontSize: 14, fontWeight: 500, color: model.color, fontStyle: "italic", margin: "0 0 10px" }}>
-        {model.coreQuestion}
+      <p style={{ fontSize: 12, fontWeight: 500, fontFamily: FONT.mono, color: TEXT.muted, margin: "0 0 4px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+        Maps: {stage}
       </p>
-
-      {/* Summary */}
-      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 12px" }}>
-        {model.summary}
+      <p style={{ fontSize: 14, fontWeight: 500, color, fontStyle: "italic", margin: "0 0 8px" }}>
+        {question}
       </p>
-
-      {/* Footer: draws from + read link */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 600,
-              fontFamily: FONT.mono,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              color: TEXT.hint,
-            }}
-          >
-            Draws from
-          </span>
-          <span style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted }}>
-            {model.drawsFrom}
-          </span>
-        </div>
-        <span style={{ fontSize: 13, fontWeight: 500, color: model.color }}>
-          Read full model →
-        </span>
-      </div>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+        {description}
+      </p>
     </Link>
   );
 }
 
-function Connector({ connector, topColor, bottomColor }) {
+function FrameworkArcCard({ arc, range, description, color }) {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "6px 0",
-        position: "relative",
+        padding: "14px 16px",
+        background: hexToRgba(color, 0.04),
+        borderRadius: RADIUS.md,
+        border: `1px solid ${hexToRgba(color, 0.12)}`,
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          left: 28,
-          top: 0,
-          bottom: 0,
-          width: 2,
-          background: `linear-gradient(to bottom, ${hexToRgba(topColor, 0.4)}, ${hexToRgba(bottomColor, 0.4)})`,
-          borderRadius: 1,
-        }}
-        aria-hidden="true"
-      />
-      <div
-        style={{
-          fontSize: 10,
-          fontWeight: 600,
-          fontFamily: FONT.mono,
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          color: TEXT.muted,
-          background: BG.page,
-          padding: "2px 12px",
-          zIndex: 1,
-        }}
-      >
-        {connector.label}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <span style={{ fontSize: 11, fontWeight: 600, fontFamily: FONT.mono, color }}>
+          {range}
+        </span>
+        <span style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary }}>
+          {arc}
+        </span>
       </div>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+        {description}
+      </p>
     </div>
   );
 }
 
-// ─── SHARED STYLES ──────────────────────────────────────
-
-const bodyStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  margin: 0,
-};
-
-const listStyle = {
-  paddingLeft: 20,
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  margin: 0,
-};
-
-function modesLabelStyle(color) {
-  return {
-    fontSize: 9,
-    fontWeight: 700,
-    fontFamily: FONT.mono,
-    textTransform: "uppercase",
-    letterSpacing: "0.1em",
-    color: color,
-    marginBottom: 8,
-    marginTop: 16,
+function NavItem({ href, color, external, children }) {
+  const style = {
+    fontSize: 13,
+    color,
+    textDecoration: "none",
+    fontWeight: 500,
+    display: "flex",
+    alignItems: "center",
+    gap: 8,
   };
-}
 
-function sectionLabelStyle(color) {
-  return {
-    fontSize: 9,
-    fontWeight: 700,
-    fontFamily: FONT.mono,
-    textTransform: "uppercase",
-    letterSpacing: "0.1em",
-    color: color,
-    marginBottom: 10,
-  };
+  const arrow = <span style={{ fontSize: 11, opacity: 0.6 }}>→</span>;
+
+  return (
+    <li>
+      {external ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" style={style}>
+          {arrow} {children}
+        </a>
+      ) : (
+        <Link href={href} style={style}>
+          {arrow} {children}
+        </Link>
+      )}
+    </li>
+  );
 }

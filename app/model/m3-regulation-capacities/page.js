@@ -1,5 +1,4 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { BG, TEXT, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, ExpandableSection,
@@ -12,7 +11,6 @@ import {
 } from "@/src/styles/pageStyles";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
-const OpenCycleExplorer = dynamic(() => import("@/src/components/OpenCycleExplorer"), { ssr: false });
 
 const MODEL_COLOR = SPECTRUM.indigo;
 const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
@@ -55,10 +53,6 @@ export default function M3RegulationCapacitiesPage() {
             <p style={proseStyle}>The branching point is not dramatic. It is a learned pattern, often running below awareness: cognition deciding the signal is irrelevant, the body receiving no biological resolution. The consequences unfold from there — measurable, progressive, and in chronic states, invisible to the person inside them.</p>
           </section>
 
-          {/* ─── PATH A / PATH B DIAGRAM ───────────────── */}
-          <section id="path-explorer" style={{ marginBottom: 48 }}>
-            <OpenCycleExplorer />
-          </section>
 
           <section id="core-propositions" aria-labelledby="heading-cp" style={{ marginBottom: 48 }}>
             <h2 id="heading-cp" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>

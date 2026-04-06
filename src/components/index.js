@@ -15,9 +15,6 @@ export { default as ContextBlock } from "./ContextBlock";
 
 // Researcher components
 export { default as FluidCompassExplorer } from "./FluidCompassExplorer";
-export { default as OpenCycleExplorer } from "./OpenCycleExplorer";
-export { default as EmpathicIntegrationExplorer } from "./EmpathicIntegrationExplorer";
-export { default as InteroceptiveArchitectureMap } from "./InteroceptiveArchitectureMap";
 export { default as CapacityLabelsExplorer } from "./CapacityLabelsExplorer";
 export { default as ResearcherPatternCard } from "./ResearcherPatternCard";
 export { default as PropositionBox } from "./PropositionBox";
@@ -44,7 +41,6 @@ export { default as ConnectionsMap } from "./ConnectionsMap";
 // Visualizations
 export { default as CompassBar } from "./CompassBar";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
-export { default as M1EmotionsAsSignals } from "./M1EmotionsAsSignals";
 export { default as ActivationCurveExplorer } from "./ActivationCurveExplorer";
 
 // Author

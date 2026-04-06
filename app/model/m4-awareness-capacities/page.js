@@ -1,11 +1,8 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { BG, TEXT, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ModelHero, ExpandableSection, PageLayout, PartDivider, NavSection, ConnectionsMap } from "@/src/components";
 import { proseStyle, expandedProseStyle, propositionItemStyle, sectionHeadingStyle, conceptHeadingStyle, expandableRowStyle, gridHeaderStyle, gridCellStyle } from "@/src/styles/pageStyles";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
-const InteroceptiveArchitectureMap = dynamic(() => import("@/src/components/InteroceptiveArchitectureMap"), { ssr: false });
-const EmpathicIntegrationExplorer = dynamic(() => import("@/src/components/EmpathicIntegrationExplorer"), { ssr: false });
 const MODEL_COLOR = SPECTRUM.cobalt;
 const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
 export const metadata = { title: "Awareness Capacities (M4) | TEG-Blue Research", description: "What determines whether the person can perceive the Emotional Somatic Cycle while it is running. Two systems, two substrates, three awareness capacities.", keywords: ["awareness capacities","interoceptive self-awareness","affective resonance","interpersonal affect perception","interoceptive access","two substrates","empathy architecture"], alternates: { canonical: "https://teg-blue.org/model/m4-awareness-capacities" }, openGraph: { title: "Awareness Capacities \u2014 M4 Model | TEG-Blue", description: "Two systems, two substrates, three awareness capacities.", url: "https://teg-blue.org/model/m4-awareness-capacities", type: "article", siteName: "TEG-Blue Research" }, twitter: { card: "summary_large_image", title: "Awareness Capacities \u2014 TEG-Blue M4", description: "The biological architecture of self-awareness." }, other: { "citation_title": "Awareness Capacities", "citation_author": "Anna Paretas-Artacho", "citation_publication_date": "2026/02", "citation_technical_report_institution": "TEG-Blue Research" } };
@@ -20,10 +17,6 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <p style={proseStyle}>M4 provides the conceptual foundation for that architecture. It reframes awareness as a structured biological problem, clarifies the difference between reading others, feeling others, and perceiving oneself, and explains why access to one{"'"}s own internal signals is not a secondary feature of emotional life, but one of its central conditions.</p>
 </section>
 
-{/* ─── AWARENESS ARCHITECTURE DIAGRAM ──────────── */}
-<section id="architecture-explorer" style={{ marginBottom: 48 }}>
-<InteroceptiveArchitectureMap />
-</section>
 
 <section id="core-propositions" aria-labelledby="heading-cp" style={{ marginBottom: 48 }}><h2 id="heading-cp" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2><ul style={{ paddingLeft: 20, margin: 0 }}>
 <li style={propositionItemStyle}>What the culture calls empathy is three distinct awareness capacities — each accessing different information, each operating through different biological channels, each with a different vulnerability under chronic activation.</li>
@@ -131,7 +124,6 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <p style={proseStyle}>The Emotional Somatic Cycle runs in every nervous system. The biological architecture determines whether the person knows it.</p>
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>The loop draws on McEwen (2000), van der Kolk (2014), and Schore (2003).</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>The loop as bidirectional: degradation amplifies degradation, restoration amplifies restoration. The architecture amplifies whichever direction it is running.</p></ExpandableSection></div></section>
 
-<section id="empathic-explorer" style={{ marginBottom: 48 }}><EmpathicIntegrationExplorer /></section>
 
 <ConnectionsMap color={MODEL_COLOR} connections={[
 { id: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals", description: "Describes the signals the ESS generates — what RE reads from the outside, what ER feels in the body, what SEA carries to the CLS." },
