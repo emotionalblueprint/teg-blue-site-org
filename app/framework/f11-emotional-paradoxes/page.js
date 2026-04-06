@@ -105,7 +105,7 @@ export default function F11ParadoxPage() {
             badge="FRAMEWORK F11"
             title="Paradox Holds What Logic Cannot"
             subtitle="Why Human Contradictions Are Predictable Outcomes of Multi-Need Systems"
-            description="When false coherence was complete, it flattened complexity. The narrative constructed a single, coherent account — and the contradictions operating underneath were invisible. As the interoceptive channel opens — as SEA comes online, as the restoration sequence runs — the contradictions that were always there become felt. F11 maps what emerges: the system producing the complexity it was designed to hold. Holding paradox, rather than resolving it, is the developmental achievement."
+            description="People want connection and push it away. Understand the pattern and repeat it. Love someone and grieve what that love cost. These contradictions are not failures of logic — they are the predictable output of a nervous system pursuing multiple valid regulatory needs simultaneously. F11 maps why contradictions are predictable, how they become invisible, what capacity is required to hold them, and why integration means holding complexity rather than resolving it."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Paradox holds what logic cannot — holding complexity. Restores: truth"
@@ -574,7 +574,7 @@ export default function F11ParadoxPage() {
           <BridgeSection
             color={accent}
             established="F11 established why human contradictions are predictable, how paradox becomes invisible, what holding capacity requires, and why integration means holding complexity rather than resolving it."
-            question="A person can hold all of this — can see their configuration, name their paradoxes, understand the mechanism, develop holding capacity. And still do the thing under stress. Still enter the chronic state. Still override. F12 explains why: because there are two information systems, and the one that produces understanding is not the one that organises behaviour."
+            question="A person can hold all of this — can see their configuration, name their paradoxes, develop holding capacity — and still enter the chronic state under stress. There are two information systems, and the one that produces understanding is not the one that organizes behavior."
             nextFramework="F12"
             nextTitle="Two Information Systems"
             nextHref="/framework/f12-two-information-systems"

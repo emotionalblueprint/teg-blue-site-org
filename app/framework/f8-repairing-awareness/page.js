@@ -106,7 +106,7 @@ export default function F8RepairingAwarenessPage() {
             badge="FRAMEWORK F8"
             title="Awareness Rebuilds Through Safety"
             subtitle="How the Interoceptive Channel Reopens and Capacities Develop"
-            description="F7 completed the collective arc: seven restoration substitutes at escalating scale, each offering temporary relief without completing biological restoration. F8 begins the repair arc. Not by undoing the collective mechanisms, but by changing the conditions underneath them. When safety replaces threat, the interoceptive substrate can rebuild. The capacities that were never built can develop. The return path is available — not because the person decides to take it, but because the conditions that would support it become available."
+            description="When safety replaces threat, the interoceptive substrate can rebuild. The capacities that were never built can develop. The return path becomes available — not because the person decides to take it, but because the conditions that would support it become available. F8 maps how the interoceptive channel reopens, why the system that needs repair defends against it, what conditions allow capacities to develop, and why experience changes the nervous system while insight does not."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Awareness rebuilds through safety — the restoration pathway reopens. Restores: the return path"
@@ -116,7 +116,7 @@ export default function F8RepairingAwarenessPage() {
             ]}
             adjacent={{
               prev: { label: "F7 Domination Regulates", href: "/framework/f7-domination-regulates" },
-              next: { label: "F9 Variation Is Configuration", href: "/framework/f9-variation-is-configuration" },
+              next: { label: "F9 Variation Is Configuration", href: "/framework/f9-neurodivergence-variation" },
             }}
           />
         }
@@ -629,11 +629,11 @@ export default function F8RepairingAwarenessPage() {
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
             color={accent}
-            established="F8 established how awareness rebuilds through safety — the regulation thread reversed, two routes to repair, five mechanisms of defence, safety before capacity, SEA as the entry point, five oscillating phases, and why experience changes the system while insight does not."
-            question="Every awareness configuration that does not match what the environment expects gets masked. When this universal pattern becomes structural — when environments are designed for one neurological configuration — the mismatch is not interpersonal. It is architectural. Individual repair has limited effect when the structural conditions keep dismantling what the person is trying to build."
+            established="F8 established how awareness rebuilds through safety — two routes to repair, safety before capacity, SEA as the entry point, and why experience changes the system while insight does not."
+            question="Every awareness configuration that does not match what the environment expects gets masked. When environments are designed for one neurological configuration, the mismatch is architectural — and individual repair has limited effect when the structural conditions keep dismantling what the person is trying to build."
             nextFramework="F9"
             nextTitle="Variation Is Configuration, Not Deficit"
-            nextHref="/framework/f9-variation-is-configuration"
+            nextHref="/framework/f9-neurodivergence-variation"
           />
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
@@ -667,7 +667,7 @@ export default function F8RepairingAwarenessPage() {
               },
               {
                 id: "F9: Variation Is Configuration",
-                href: "/framework/f9-variation-is-configuration",
+                href: "/framework/f9-neurodivergence-variation",
                 description: "F8 establishes that repair requires safety. F9 asks what happens when the environment itself prevents the safety — when structures are designed for one configuration and treat all others as deficient.",
               },
             ]}
@@ -677,7 +677,7 @@ export default function F8RepairingAwarenessPage() {
           <NavSection
             color={accent}
             items={[
-              { label: "Continue to F9 — when the environment prevents the safety repair requires", href: "/framework/f9-variation-is-configuration", linkText: "F9: Variation Is Configuration \u2192" },
+              { label: "Continue to F9 — when the environment prevents the safety repair requires", href: "/framework/f9-neurodivergence-variation", linkText: "F9: Variation Is Configuration \u2192" },
               { label: "See the awareness architecture and the multiplicative system", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
               { label: "See the restoration sequence mapped in detail", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
               { label: "Return to F2 — how the calibration was set in the first place", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration \u2192" },

@@ -103,7 +103,7 @@ export default function F2AwarenessCalibrationPage() {
             badge="FRAMEWORK F2"
             title="Developmental Calibration"
             subtitle="How the Relational Environment Calibrates the System"
-            description="F1 described the biological architecture — why the Emotional Somatic Cycle exists, why biological restoration is the designed process, and why relational signals require another person as a biological completion requirement. F2 describes what happens developmentally when that completion requirement is — or is not — met. The relational environment determines whether the restoration pathway is learned, which awareness capacities develop, and what the nervous system carries forward when relational signals have no completion pathway at all."
+            description="The nervous system's capacity to complete its own activation cycle is not innate — it is learned through the relational environment. When a caregiver's regulated nervous system stays present through a child's activation, it teaches the child's nervous system the path back to physiological baseline. F2 describes what this learning builds, what happens when the relational environment cannot provide it, and what the nervous system carries forward when its signals have no completion pathway at all."
             group="Individual"
             groupLabel="Individual Arc · F1–F3"
             threadLine="Co-regulation to self-restoration (when learned). When not learned: the restoration pathway is never built. Cost: the return path"

@@ -106,7 +106,7 @@ export default function F7DominationRegulatesPage() {
             badge="FRAMEWORK F7"
             title="Domination Regulates"
             subtitle="How Defence Becomes Strategy Becomes Domination"
-            description="When bias becomes rigid and correction is experienced as threat, the system does not simply persist in filtered perception. It seeks stronger stabilisation. F7 maps the escalation. Domination is built through reinforcement: what produces physiological relief gets repeated, what gets repeated gets stronger, what gets stronger becomes default. Defence hardens into strategy. Strategy hardens into entitlement. Entitlement hardens into domination. F7 completes the collective arc — the final substitute at maximum cost."
+            description="When the nervous system cannot complete biological restoration and control reliably reduces activation, the system adopts control as its primary regulation strategy. Domination is built through reinforcement: what produces physiological relief gets repeated, what gets repeated gets stronger, what gets stronger becomes default. F7 maps this escalation pathway — how defense hardens into strategy, strategy into entitlement, entitlement into domination — and why the mechanism that would stop it is structurally absent."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Domination regulates — direct control of others as restoration substitute. Scale: power systems. Cost: everything"
@@ -635,8 +635,8 @@ export default function F7DominationRegulatesPage() {
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
             color={accent}
-            established="F7 completed the collective arc. F1 through F7 have traced how the nervous system substitutes — at escalating scales and escalating costs — when the biological restoration that was designed to complete the cycle is never learned."
-            question="The repair arc (F8-F12) does not undo the collective arc. It maps what happens when the conditions that produce the substitutes change — when safety replaces threat, when the interoceptive channel begins to reopen, when the substrate that was suppressed begins to rebuild. Not through instruction, insight, or correction — through the relational conditions that build the substrate in the first place."
+            established="F7 completed the collective arc — seven restoration substitutes at escalating scales and escalating costs, each tracing to the same origin: a nervous system that never learned the return path."
+            question="The repair arc (F8-F12) maps what happens when the conditions change — when safety replaces threat, when the interoceptive channel begins to reopen, when the substrate rebuilds through the relational conditions that build it in the first place."
             nextFramework="F8"
             nextTitle="Awareness Rebuilds Through Safety"
             nextHref="/framework/f8-repairing-awareness"

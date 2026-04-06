@@ -104,7 +104,7 @@ export default function F6BiasRegulatesPage() {
             badge="FRAMEWORK F6"
             title="Bias Regulates"
             subtitle="How Perception Becomes Protection"
-            description="F5 described how rule systems produce worth hierarchies — sorting who gets belonging, protection, and credibility. When that sorting becomes stable and internalised, it stops being experienced as a system. It becomes perception. F6 maps how this happens. Bias is pattern recognition in service of regulation. Under threat, the same efficiency that serves rapid categorisation becomes rigid certainty — beliefs maintained because they settle the nervous system, not because they are accurate."
+            description="The nervous system maintains beliefs that settle activation — below conscious awareness, before reasoning begins. Under stable conditions, this operates as efficient pattern recognition. Under threat, the same efficiency becomes rigid certainty: beliefs maintained because they reduce activation, not because they are accurate. F6 maps how perception becomes protection, how individual perceptual filters synchronize across populations, and why correction fails when it targets reasoning while the body maintains the bias."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Bias regulates — perceptual certainty as restoration substitute. Scale: collective perceptual systems. Cost: accuracy"

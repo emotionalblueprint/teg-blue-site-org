@@ -106,7 +106,7 @@ export default function F9VariationPage() {
             badge="FRAMEWORK F9"
             title="Variation Is Configuration, Not Deficit"
             subtitle="When the Environment Is the Mismatch"
-            description="F8 established that repair requires safety before capacity, that every configuration gets masked when the environment cannot hold it, and that different configurations make the collective stronger. F9 asks: what happens when that pattern becomes structural? When environments are designed for one set of nervous system inputs, the mismatch is not interpersonal — it is architectural. For nervous systems configured differently, the cost of masking becomes structural, daily, and inescapable."
+            description="The Emotional Somatic Cycle runs in every nervous system — the same signal architecture, the same state gradient, the same restoration sequence. What varies is the inputs: sensory thresholds, attention patterns, processing speeds, emotional intensity. When environments are designed for one set of inputs, every other configuration pays a structural cost — masking that interrupts the restoration sequence daily, producing activation that accumulates without resolution. F9 maps this mismatch, what it produces biologically, and what environments designed for variation look like."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Variation is configuration, not deficit — environments redesigned for variation. Restores: accuracy"
@@ -116,7 +116,7 @@ export default function F9VariationPage() {
             ]}
             adjacent={{
               prev: { label: "F8 Awareness Rebuilds Through Safety", href: "/framework/f8-repairing-awareness" },
-              next: { label: "F10 What the Adult Processes", href: "/framework/f10-generational-repair" },
+              next: { label: "F10 What the Adult Processes", href: "/framework/f10-generational-bridges" },
             }}
           />
         }
@@ -594,11 +594,11 @@ export default function F9VariationPage() {
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
             color={accent}
-            established="F9 established how configuration variation operates through the universal ESC architecture, how system mismatch produces structural activation, how masking interrupts the restoration sequence, and how environments can be designed for variation rather than retrofitted for exceptions."
-            question="When adults repair their own capacities (F8) and inhabit environments that support their authentic configuration (F9), the next generation develops in different conditions. The caregiver's configuration IS the child's developmental environment. When the adult is different, the child develops differently — not because the adult decided to parent differently, but because the adult IS different."
+            established="F9 established how configuration variation operates through the universal ESC architecture — system mismatch as structural activation, masking as interrupted restoration, and environments designed for variation rather than retrofitted for exceptions."
+            question="When adults repair their own capacities and inhabit environments that support their authentic configuration, the next generation develops in different conditions. The caregiver's nervous system IS the child's developmental environment — when the adult is different, the child develops differently."
             nextFramework="F10"
             nextTitle="What the Adult Processes"
-            nextHref="/framework/f10-generational-repair"
+            nextHref="/framework/f10-generational-bridges"
           />
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
@@ -632,7 +632,7 @@ export default function F9VariationPage() {
               },
               {
                 id: "F10: What the Adult Processes",
-                href: "/framework/f10-generational-repair",
+                href: "/framework/f10-generational-bridges",
                 description: "When adults repair their capacities (F8) and inhabit matched environments (F9), the next generation develops in different conditions.",
               },
             ]}
@@ -642,7 +642,7 @@ export default function F9VariationPage() {
           <NavSection
             color={accent}
             items={[
-              { label: "Continue to F10 — what transmits when adults have done the work", href: "/framework/f10-generational-repair", linkText: "F10: What the Adult Processes \u2192" },
+              { label: "Continue to F10 — what transmits when adults have done the work", href: "/framework/f10-generational-bridges", linkText: "F10: What the Adult Processes \u2192" },
               { label: "See the signal architecture that runs with different inputs", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
               { label: "See how individual repair works", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "See the bias mechanism that produces the 'disorder' reading", href: "/framework/f6-bias-regulates", linkText: "F6: Bias Regulates \u2192" },

@@ -104,7 +104,7 @@ export default function F10GenerationalBridgesPage() {
             badge="FRAMEWORK F10"
             title="What the Adult Processes, the Child Does Not Inherit"
             subtitle="Intergenerational Transmission and How Adult Repair Changes Developmental Conditions"
-            description="F2 established the foundational mechanism: what the caregiver embodies — not what they say, intend, or believe — is what the child's nervous system absorbs. F10 maps this mechanism running in both directions: transmission of patterns and transmission of repair. When adults develop their own capacities (F8) and inhabit environments that support their authentic configuration (F9), the next generation develops in different conditions — not because the adult decided to parent differently, but because the adult IS different."
+            description="What the caregiver's nervous system embodies — not what they say, intend, or believe — is what the child's nervous system absorbs. The child calibrates to the adult's autonomic state, physiological responses, and co-regulatory capacity, continuously, below conscious awareness. When adults develop their own capacities and the activation they carry begins to resolve, the next generation develops in different conditions — not because the adult decided to parent differently, but because the adult IS different. F10 maps this mechanism running in both directions: transmission of patterns and transmission of repair."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="What the adult processes, the child does not inherit — generational repair. Restores: the generational bridge"
@@ -113,7 +113,7 @@ export default function F10GenerationalBridgesPage() {
             ]}
             adjacent={{
               prev: { label: "F9 Variation Is Configuration", href: "/framework/f9-neurodivergence-variation" },
-              next: { label: "F11 Paradox Holds What Logic Cannot", href: "/framework/f11-paradox-holds" },
+              next: { label: "F11 Paradox Holds What Logic Cannot", href: "/framework/f11-emotional-paradoxes" },
             }}
           />
         }
@@ -508,10 +508,10 @@ export default function F10GenerationalBridgesPage() {
           <BridgeSection
             color={accent}
             established="F10 established how adult repair changes developmental conditions across generations — five transmission pathways, earned security through processing, compound interest, and enough not perfect."
-            question="The adult who begins to see the mechanism clearly often experiences simultaneous gratitude and grief for the same people. Love for the parent who did their best — and anger at what their best cost. When false coherence was complete, the narrative resolved the tension: either good or bad. With the interoceptive channel open, both truths arrive. Holding them, rather than resolving them, is the developmental achievement F11 maps."
+            question="With the interoceptive channel open, both truths arrive simultaneously — gratitude and grief for the same people, love for the parent who did their best and anger at what their best cost. Holding them, rather than resolving them, is the developmental achievement F11 maps."
             nextFramework="F11"
             nextTitle="Paradox Holds What Logic Cannot"
-            nextHref="/framework/f11-paradox-holds"
+            nextHref="/framework/f11-emotional-paradoxes"
           />
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
@@ -545,7 +545,7 @@ export default function F10GenerationalBridgesPage() {
               },
               {
                 id: "F11: Paradox Holds What Logic Cannot",
-                href: "/framework/f11-paradox-holds",
+                href: "/framework/f11-emotional-paradoxes",
                 description: "F10 surfaces the paradox: gratitude and grief for the same people. Understanding and accountability simultaneously. F11 maps the capacity to hold contradictory truths without collapsing into one.",
               },
             ]}
@@ -555,7 +555,7 @@ export default function F10GenerationalBridgesPage() {
           <NavSection
             color={accent}
             items={[
-              { label: "Continue to F11 — holding paradox when both truths arrive", href: "/framework/f11-paradox-holds", linkText: "F11: Paradox Holds What Logic Cannot \u2192" },
+              { label: "Continue to F11 — holding paradox when both truths arrive", href: "/framework/f11-emotional-paradoxes", linkText: "F11: Paradox Holds What Logic Cannot \u2192" },
               { label: "See how the adult's configuration changes", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "See the developmental mechanism that transmits", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration \u2192" },
               { label: "See the awareness architecture that determines what transmits", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },

@@ -30,7 +30,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Three Capitals as Nervous System Stabilisers", href: "#three-capitals", description: "Economic, social, cultural capital — each reducing specific forms of activation." },
   { label: "How Hierarchies Distribute the Substrate", href: "#substrate-distribution", description: "Worth hierarchies determine which children get the conditions that build the interoceptive substrate." },
   { label: "Which Signals Get Suppressed Where", href: "#signal-suppression", description: "Signal-type-specific disruption distributed by position in the hierarchy." },
-  { label: "The Filter of Worth", href: "#filter-of-worth", description: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy." },
+  { label: "The Filter of Worth", href: "#filter-of-worth", description: "Signal access mistaken for human value. Signal deprivation internalized as inadequacy." },
   { label: "How Worth Hierarchies Self-Reinforce", href: "#self-reinforcing", description: "Five steps from threat to sorting to self-justifying evidence." },
   { label: "Coherence Form by Position", href: "#coherence-by-position", description: "Top: coherence without the body. Subject: contested. Deprived: absent." },
   { label: "Structural Filtering and the Nervous System", href: "#structural-filtering", description: "How the filter holds the nervous system in a chronic state — measurable, not metaphorical." },
@@ -45,7 +45,7 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "The Filter of Worth (F5) | TEG-Blue Research",
   description:
-    "How rules become sorting systems — worth-seeking as nervous system regulation, three capitals as stabilisers, the Filter of Worth, and how hierarchies distribute the developmental conditions that build the interoceptive substrate. Framework F5 of the TEG-Blue 12-framework system.",
+    "How rules become sorting systems — worth-seeking as nervous system regulation, three capitals as stabilizers, the Filter of Worth, and how hierarchies distribute the developmental conditions that build the interoceptive substrate. Framework F5 of the TEG-Blue 12-framework system.",
   keywords: [
     "worth hierarchies",
     "filter of worth",
@@ -106,7 +106,7 @@ export default function F5WorthHierarchiesPage() {
             badge="FRAMEWORK F5"
             title="The Filter of Worth"
             subtitle="How Rules Become Sorting Systems"
-            description="F4 described how individual nervous system patterns consolidate into collective rule systems. But rule systems do not only organise behaviour. They organise value. When rule adherence becomes the collective definition of safety, the system begins to sort people — who gets belonging, protection, and credibility, and who does not. F5 maps this sorting. Worth hierarchies emerge when the markers of rule-compliance become markers of value — and the institutions determine who gets the developmental conditions that build the interoceptive substrate."
+            description="Collective rule systems do not only organize behavior — they organize value. When rule adherence becomes the collective definition of safety, the system begins to sort people: who gets belonging, protection, and credibility, and who does not. Worth hierarchies emerge when the markers of compliance become markers of human value, and the sorting determines which children get the developmental conditions that build the capacity to perceive their own physiological signals. F5 maps how this sorting works, how it reproduces itself through biology, and how it produces the evidence that appears to justify it."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Worth hierarchies regulate — position within the hierarchy as restoration substitute. Scale: value systems. Cost: equity"
@@ -152,7 +152,7 @@ export default function F5WorthHierarchiesPage() {
               {
                 title: "Merit",
                 commonUnderstanding: "Earned achievement — the natural result of talent, effort, and hard work. The fair basis for distributing resources and opportunity.",
-                definition: "Proximity to the signals the system already recognises. Hiring criteria that measure cultural capital, promotion systems that reward social capital, funding structures that require economic capital. Performance rules teach that worth must be earned and displayed. The Filter of Worth shows what 'earning' measures: signal access, not intrinsic capacity.",
+                definition: "Proximity to the signals the system already recognizes. Hiring criteria that measure cultural capital, promotion systems that reward social capital, funding structures that require economic capital. Performance rules teach that worth must be earned and displayed. The Filter of Worth shows what 'earning' measures: signal access, not intrinsic capacity.",
               },
               {
                 title: "Self-worth",
@@ -175,7 +175,7 @@ export default function F5WorthHierarchiesPage() {
                   Worth-seeking is nervous system regulation — when love, protection, or belonging were conditional, the nervous system orients toward whatever reduces threat, and in systems where worth determines protection, worth signals are safety signals
                 </li>
                 <li style={propositionItemStyle}>
-                  Three capitals — economic, social, cultural — function as nervous system stabilisers, each reducing specific forms of activation
+                  Three capitals — economic, social, cultural — function as nervous system stabilizers, each reducing specific forms of activation
                 </li>
                 <li style={propositionItemStyle}>
                   Worth hierarchies determine which children get the relational conditions that build the interoceptive substrate — the hierarchy distributes the developmental conditions differently
@@ -184,13 +184,13 @@ export default function F5WorthHierarchiesPage() {
                   Signal-type-specific disruption is distributed by position in the hierarchy — different populations receive different signal suppression, producing different substrate states
                 </li>
                 <li style={propositionItemStyle}>
-                  The Filter of Worth is the process by which signal access is mistaken for human value and signal deprivation is internalised as inadequacy — maintained by double false coherence operating in both directions
+                  The Filter of Worth is the process by which signal access is mistaken for human value and signal deprivation is internalized as inadequacy — maintained by double false coherence operating in both directions
                 </li>
                 <li style={propositionItemStyle}>
                   The filter produces the evidence that appears to justify it — accumulated advantage compounds inside, compounding barriers compound outside, and both positions are absorbed through false coherence as truth about the self
                 </li>
                 <li style={propositionItemStyle}>
-                  Structural filtering holds the nervous system in a chronic state through sustained social threat — measurable as allostatic load and accelerated biological ageing
+                  Structural filtering holds the nervous system in a chronic state through sustained social threat — measurable as allostatic load and accelerated biological aging
                 </li>
               </ul>
             </ExpandableSection>
@@ -349,13 +349,13 @@ export default function F5WorthHierarchiesPage() {
               Developmental disruption does not suppress "emotions" as a global category. It targets specific signal types in specific populations (<Link href="/framework/f2-awareness-calibration#disruption-conditions" style={linkStyle}>F2</Link>). Worth hierarchies are the mechanism that distributes this targeting at population scale.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Populations socialised to suppress relational signals</strong> — sadness, grief, loneliness, longing, shame. The interoceptive substrate for these signals is never built. The person develops sharp Interpersonal Affect Perception (RE) — reading others with precision — without Affective Resonance (ER) and without Interoceptive Self-Awareness (SEA). The chain starts at absent interoceptive access. Coherence without the body. The override is invisible because it was never experienced as an override.
+              <strong style={{ color: TEXT.primary }}>Populations socialized to suppress relational signals</strong> — sadness, grief, loneliness, longing, shame. The interoceptive substrate for these signals is never built. The person develops sharp Interpersonal Affect Perception (RE) — reading others with precision — without Affective Resonance (ER) and without Interoceptive Self-Awareness (SEA). The chain starts at absent interoceptive access. Coherence without the body. The override is invisible because it was never experienced as an override.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Populations socialised to contradict internal signals</strong> — the body's signals are active but the person is taught to distrust them. "You're overreacting." "That's not what happened." The interoceptive substrate is present (ER is online) but SEA was contradicted. The chain starts at contested interoceptive access. Coherence contested by the body. The person senses something is wrong and cannot trust the sensing.
+              <strong style={{ color: TEXT.primary }}>Populations socialized to contradict internal signals</strong> — the body's signals are active but the person is taught to distrust them. "You're overreacting." "That's not what happened." The interoceptive substrate is present (ER is online) but SEA was contradicted. The chain starts at contested interoceptive access. Coherence contested by the body. The person senses something is wrong and cannot trust the sensing.
             </p>
             <p style={proseStyle}>
-              The worth hierarchy determines which populations receive which form of disruption. Populations at the top tend toward absent access (relational signals suppressed, external reading sharpened). Populations subject to the hierarchy tend toward contested access (signals active, sensing contradicted by the hierarchy's narrative that the sorting is fair). This extends beyond gender — racialised socialisation, class-based socialisation, and other structural sorting systems each produce their own signal-type-specific disruption patterns.
+              The worth hierarchy determines which populations receive which form of disruption. Populations at the top tend toward absent access (relational signals suppressed, external reading sharpened). Populations subject to the hierarchy tend toward contested access (signals active, sensing contradicted by the hierarchy's narrative that the sorting is fair). This extends beyond gender — racialized socialisation, class-based socialisation, and other structural sorting systems each produce their own signal-type-specific disruption patterns.
             </p>
 
             {/* Section diagram placeholder */}
@@ -388,16 +388,16 @@ export default function F5WorthHierarchiesPage() {
             </h2>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The Filter of Worth</strong> is the process by which external safety signals are mistaken for human value, and repeated signal deprivation is internalised as personal inadequacy.
+              <strong style={{ color: TEXT.primary }}>The Filter of Worth</strong> is the process by which external safety signals are mistaken for human value, and repeated signal deprivation is internalized as personal inadequacy.
             </p>
             <p style={proseStyle}>
-              The filter operates through repeated allocation patterns — who gets believed, who gets resourced, who gets protected, whose version of events gets accepted — that stabilise into what feels like direct perception of people's value. The filter is not a belief system someone adopts. It operates below conscious evaluation: who gets taken seriously in a meeting, whose pain gets responded to, whose potential gets recognised, whose mistakes get forgiven.
+              The filter operates through repeated allocation patterns — who gets believed, who gets resourced, who gets protected, whose version of events gets accepted — that stabilize into what feels like direct perception of people's value. The filter is not a belief system someone adopts. It operates below conscious evaluation: who gets taken seriously in a meeting, whose pain gets responded to, whose potential gets recognized, whose mistakes get forgiven.
             </p>
             <p style={proseStyle}>
               The connection to false coherence is direct. The person inside the filter absorbs the position through false coherence: "I earned this through merit." The person outside the filter absorbs a different narrative: "Something is wrong with me." Both narratives serve regulation — the CLS building a coherent account from available data that reduces activation. Neither reflects the structural operation of the filter.
             </p>
             <p style={proseStyle}>
-              The connection to <Link href="/framework/f4-rules-regulate#six-functions" style={linkStyle}>F4's rule systems</Link> is structural. The filter formalises through rules that appear meritocratic but measure signal access: hiring criteria that measure cultural capital, promotion systems that reward social capital, funding structures that require economic capital. Performance rules teach that worth must be earned. The Filter of Worth shows what "earning" measures: proximity to the markers the system already recognises.
+              The connection to <Link href="/framework/f4-rules-regulate#six-functions" style={linkStyle}>F4's rule systems</Link> is structural. The filter formalizes through rules that appear meritocratic but measure signal access: hiring criteria that measure cultural capital, promotion systems that reward social capital, funding structures that require economic capital. Performance rules teach that worth must be earned. The Filter of Worth shows what "earning" measures: proximity to the markers the system already recognizes.
             </p>
 
             {/* Section diagram placeholder */}
@@ -433,13 +433,13 @@ export default function F5WorthHierarchiesPage() {
             </h2>
 
             <p style={proseStyle}>
-              The mechanism by which threat produces worth sorting and worth sorting stabilises itself operates through five steps:
+              The mechanism by which threat produces worth sorting and worth sorting stabilizes itself operates through five steps:
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Step 1:</strong> Threat increases dependency sensitivity. When the nervous system is under sustained activation, it becomes hypervigilant to ranking and exclusion signals. Where do I stand? Am I safe here?
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Step 2:</strong> Validation becomes a stabiliser. Belonging signals reduce cortisol and activate oxytocin pathways. When safety is unreliable, validation-seeking becomes a regulation strategy.
+              <strong style={{ color: TEXT.primary }}>Step 2:</strong> Validation becomes a stabilizer. Belonging signals reduce cortisol and activate oxytocin pathways. When safety is unreliable, validation-seeking becomes a regulation strategy.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Step 3:</strong> Power becomes the highest safety proxy. Control over access, consequences, and protection provides the most reliable threat reduction. The three capitals converge on this.
@@ -448,7 +448,7 @@ export default function F5WorthHierarchiesPage() {
               <strong style={{ color: TEXT.primary }}>Step 4:</strong> Proxies become sorting rules. The informal signals of who-is-safe formalise into criteria, metrics, and standards. This is <Link href="/framework/f4-rules-regulate#internalisation" style={linkStyle}>F4's internalisation loop</Link> operating at the worth level.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Step 5:</strong> The filter becomes internalised as self-worth. Inside the filter: success, competence, merit. Outside: failure, inadequacy, insufficient effort. Both positions are absorbed through false coherence as truth about the self rather than the structural outcome of signal access.
+              <strong style={{ color: TEXT.primary }}>Step 5:</strong> The filter becomes internalized as self-worth. Inside the filter: success, competence, merit. Outside: failure, inadequacy, insufficient effort. Both positions are absorbed through false coherence as truth about the self rather than the structural outcome of signal access.
             </p>
             <p style={proseStyle}>
               The loop closes at Step 5. The outcomes appear to justify the original sorting. The people inside the filter have more resources, more visibility, more opportunities — and their accumulation is cited as evidence that the sorting was correct.
@@ -461,7 +461,7 @@ export default function F5WorthHierarchiesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Gilbert & Price — social rank theory: hierarchical sensitivity under threat. Merton (1968) — Matthew effect: accumulated advantage in institutions. DiMaggio & Powell — institutional isomorphism: organisations converging on the same sorting criteria. Jost & Banaji (1994) — system justification: how the sorted defend the sorting.
+                  Gilbert & Price — social rank theory: hierarchical sensitivity under threat. Merton (1968) — Matthew effect: accumulated advantage in institutions. DiMaggio & Powell — institutional isomorphism: organizations converging on the same sorting criteria. Jost & Banaji (1994) — system justification: how the sorted defend the sorting.
                 </p>
               </ExpandableSection>
 
@@ -493,7 +493,7 @@ export default function F5WorthHierarchiesPage() {
               <strong style={{ color: TEXT.primary }}>Bottom of the hierarchy — absent access through deprivation.</strong> When the hierarchy has systematically deprived a population of the conditions that build the interoceptive substrate across generations, the coherence form is absent access. The rules feel like reality. The sorting feels natural. The person does not sense the filter because the substrate that would signal "something doesn't match" was never built. This is the deepest structural effect: the hierarchy produces the biological condition that makes the hierarchy invisible from the inside.
             </p>
             <p style={proseStyle}>
-              The hierarchy's stability depends on the distribution of these three forms. When most of the population carries either absent access or contested access with the sensing successfully discredited, the system is stable. When the contested group begins trusting the body's signals over the hierarchy's narrative, the system destabilises.
+              The hierarchy's stability depends on the distribution of these three forms. When most of the population carries either absent access or contested access with the sensing successfully discredited, the system is stable. When the contested group begins trusting the body's signals over the hierarchy's narrative, the system destabilizes.
             </p>
 
             {/* Section diagram placeholder */}
@@ -529,13 +529,13 @@ export default function F5WorthHierarchiesPage() {
               The Filter of Worth does not only distribute resources unevenly. It produces measurable physiological effects in the people it filters out. Chronic invisibility — the repeated experience of being unheard, dismissed, passed over, disbelieved, and excluded — functions as chronic social threat.
             </p>
             <p style={proseStyle}>
-              The nervous system interprets these signals as it interprets any sustained threat: cortisol elevation is sustained, the HPA axis does not stand down, muscle tension is maintained, the perceptual field narrows. The ventral vagal system — which supports social engagement and co-regulation — withdraws. The nervous system shifts into chronic Threat & Defence. Not because the person is choosing a defensive posture — because the filter is producing ongoing signals that hold the nervous system in a protective configuration.
+              The nervous system interprets these signals as it interprets any sustained threat: cortisol elevation is sustained, the HPA axis does not stand down, muscle tension is maintained, the perceptual field narrows. The ventral vagal system — which supports social engagement and co-regulation — withdraws. The nervous system shifts into chronic Threat & Defence. The filter is producing ongoing signals that hold the nervous system in a protective configuration.
             </p>
             <p style={proseStyle}>
               The cost is not only the events themselves. It is the anticipation. The nervous system that has learned to expect dismissal begins activating before the next interaction. The activation becomes the baseline. The person presents with chronic hypervigilance, fatigue, self-doubt, understating needs, overworking to prove worth, anticipatory bracing.
             </p>
             <p style={proseStyle}>
-              The physiological consequences are documented as allostatic load (McEwen) — the cumulative cost of repeated stress adaptation — and the weathering hypothesis (Geronimus) — accelerated biological ageing produced by sustained structural stress. These are not metaphors. They are measurable: elevated cortisol, inflammatory markers, cardiovascular strain, telomere shortening.
+              The physiological consequences are documented as allostatic load (McEwen) — the cumulative cost of repeated stress adaptation — and the weathering hypothesis (Geronimus) — accelerated biological aging produced by sustained structural stress. These are not metaphors. They are measurable: elevated cortisol, inflammatory markers, cardiovascular strain, telomere shortening.
             </p>
 
             {/* Section diagram placeholder */}
@@ -545,7 +545,7 @@ export default function F5WorthHierarchiesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  McEwen (1998) — allostatic load: cumulative physiological cost of repeated stress adaptation. Geronimus (1992) — weathering hypothesis: accelerated biological ageing from sustained structural stress. Krieger (2001) — embodiment: social inequality producing measurable biological effects. Porges (2011) — chronic social threat producing sustained defensive physiological states. Wilkinson & Pickett (2009) — inequality as a determinant of health outcomes.
+                  McEwen (1998) — allostatic load: cumulative physiological cost of repeated stress adaptation. Geronimus (1992) — weathering hypothesis: accelerated biological aging from sustained structural stress. Krieger (2001) — embodiment: social inequality producing measurable biological effects. Porges (2011) — chronic social threat producing sustained defensive physiological states. Wilkinson & Pickett (2009) — inequality as a determinant of health outcomes.
                 </p>
               </ExpandableSection>
 
@@ -566,7 +566,7 @@ export default function F5WorthHierarchiesPage() {
                 definition: "The nervous system orients toward worth signals because the developmental environment calibrated worth as safety. The pursuit is physiological, not abstract.",
               },
               {
-                term: "Three capitals as nervous system stabilisers",
+                term: "Three capitals as nervous system stabilizers",
                 definition: "Economic (independence signals), social (alliance signals), cultural (predictability signals). Each reduces specific forms of activation. Each expresses differently across the gradient.",
               },
               {
@@ -579,11 +579,11 @@ export default function F5WorthHierarchiesPage() {
               },
               {
                 term: "The Filter of Worth",
-                definition: "Signal access mistaken for human value. Signal deprivation internalised as inadequacy. Maintained by double false coherence operating in both directions.",
+                definition: "Signal access mistaken for human value. Signal deprivation internalized as inadequacy. Maintained by double false coherence operating in both directions.",
               },
               {
                 term: "The worth loop",
-                definition: "Five-step self-reinforcing mechanism: threat → dependency sensitivity → validation as stabiliser → power as proxy → sorting formalises → filter internalised as self-worth. Loop closes with the evidence appearing to justify the sorting.",
+                definition: "Five-step self-reinforcing mechanism: threat → dependency sensitivity → validation as stabilizer → power as proxy → sorting formalizes → filter internalized as self-worth. Loop closes with the evidence appearing to justify the sorting.",
               },
               {
                 term: "Three coherence forms by position",
@@ -591,7 +591,7 @@ export default function F5WorthHierarchiesPage() {
               },
               {
                 term: "Structural filtering holds the nervous system",
-                definition: "Chronic invisibility functions as chronic social threat. Measurable as allostatic load and accelerated biological ageing. The person's chronic state is an adaptation to the conditions the hierarchy provides.",
+                definition: "Chronic invisibility functions as chronic social threat. Measurable as allostatic load and accelerated biological aging. The person's chronic state is an adaptation to the conditions the hierarchy provides.",
               },
             ]}
           />
@@ -599,8 +599,8 @@ export default function F5WorthHierarchiesPage() {
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
             color={accent}
-            established="F5 established how rules become sorting systems — how worth-seeking serves regulation, how three capitals stabilise the nervous system, how hierarchies distribute the conditions that build the substrate, how signal access gets mistaken for human value, and how the filter self-reinforces through the evidence it produces."
-            question="When worth sorting becomes stable and internalised, it stops being experienced as a system. It becomes perception. Who 'looks' competent, who 'seems' trustworthy, who 'feels' credible — these assessments arrive before conscious evaluation begins, shaped by the same state-dependent sensory filtering that shapes individual perception, now operating across populations."
+            established="F5 established how rules become sorting systems — how worth-seeking serves regulation, how three capitals stabilize the nervous system, how hierarchies distribute the conditions that build the substrate, how signal access gets mistaken for human value, and how the filter self-reinforces through the evidence it produces."
+            question="When worth sorting becomes stable and internalized, it stops being experienced as a system. It becomes perception. Who 'looks' competent, who 'seems' trustworthy, who 'feels' credible — these assessments arrive before conscious evaluation begins, shaped by the same state-dependent sensory filtering that shapes individual perception, now operating across populations."
             nextFramework="F6"
             nextTitle="Bias Regulates"
             nextHref="/framework/f6-bias-regulates"
@@ -613,7 +613,7 @@ export default function F5WorthHierarchiesPage() {
               {
                 id: "M2: Nervous System States",
                 href: "/model/m2-nervous-system-states",
-                description: "The four states express through worth-seeking. In Safety & Openness, worth is recognised without conditions. In chronic states, worth must be defended, curated, or enforced. Structural filtering holds nervous systems in chronic states.",
+                description: "The four states express through worth-seeking. In Safety & Openness, worth is recognized without conditions. In chronic states, worth must be defended, curated, or enforced. Structural filtering holds nervous systems in chronic states.",
               },
               {
                 id: "M4: Awareness Capacities",
@@ -623,7 +623,7 @@ export default function F5WorthHierarchiesPage() {
               {
                 id: "F4: Rules Regulate",
                 href: "/framework/f4-rules-regulate",
-                description: "F4 showed how rules organise behaviour. F5 shows what rules sort — who gets the conditions that allow biological restoration to develop, and who does not. The worth loop is F4's internalisation loop operating at the worth level.",
+                description: "F4 showed how rules organize behavior. F5 shows what rules sort — who gets the conditions that allow biological restoration to develop, and who does not. The worth loop is F4's internalisation loop operating at the worth level.",
               },
               {
                 id: "F3: Adult Cognition & False Coherence",
@@ -744,7 +744,7 @@ export default function F5WorthHierarchiesPage() {
               {
                 question: "What is the Filter of Worth?",
                 answer:
-                  "The process by which external safety signals are mistaken for human value, and repeated signal deprivation is internalised as personal inadequacy. The filter operates through allocation patterns — who gets believed, resourced, protected — that stabilise into what feels like direct perception of people's value. Maintained by double false coherence: both insider ('I earned this') and outsider ('something is wrong with me') narratives serve regulation.",
+                  "The process by which external safety signals are mistaken for human value, and repeated signal deprivation is internalized as personal inadequacy. The filter operates through allocation patterns — who gets believed, resourced, protected — that stabilize into what feels like direct perception of people's value. Maintained by double false coherence: both insider ('I earned this') and outsider ('something is wrong with me') narratives serve regulation.",
               },
               {
                 question: "How do worth hierarchies reproduce across generations?",
@@ -752,7 +752,7 @@ export default function F5WorthHierarchiesPage() {
                   "The hierarchy determines which caregivers have safety, time, and co-regulatory capacity. Those conditions determine which children's interoceptive substrates get built. The substrate state determines which coherence form the next generation's CLS builds. The hierarchy reproduces the biological conditions that make the hierarchy feel natural — not in every individual, but across populations.",
               },
               {
-                question: "What are the three capitals as nervous system stabilisers?",
+                question: "What are the three capitals as nervous system stabilizers?",
                 answer:
                   "Economic capital provides independence signals (reduced dependency on others' goodwill). Social capital provides alliance signals (network connection as relational safety). Cultural capital provides predictability signals (environmental legibility reducing threat detection). Each genuinely reduces nervous system activation in systems where these markers predict who gets protected.",
               },
