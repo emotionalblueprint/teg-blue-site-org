@@ -118,7 +118,7 @@ export default async function Image() {
                 color: '#4A9BE8',
               }}
             >
-              Four-Mode Gradient validated on 10,000+ conflict narratives
+              Nervous System Gradient validated on 10,000+ conflict narratives
             </div>
           </div>
 

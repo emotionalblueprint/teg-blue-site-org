@@ -9,7 +9,7 @@ export const size = {
 }
 export const contentType = 'image/png'
 
-// Mode colors from the Four-Mode Gradient
+// Mode colors from the Nervous System Gradient
 const MODES = {
   connection: '#14b8a6',
   protection: '#eab308',
@@ -100,7 +100,7 @@ export default async function Image() {
             Structured emotional intelligence infrastructure for safer AI systems
           </div>
 
-          {/* Four-Mode Gradient strip */}
+          {/* Nervous System Gradient strip */}
           <div
             style={{
               display: 'flex',
@@ -172,7 +172,7 @@ export default async function Image() {
               color: '#6B7A99',
             }}
           >
-            TEG-Code · EMLU Benchmark · Four-Mode Gradient
+            TEG-Code · EMLU Benchmark · Nervous System Gradient
           </div>
         </div>
 

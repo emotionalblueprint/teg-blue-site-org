@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateAISafetyJsonLd, generateFAQJsonLd, ge
 const FAQ_ITEMS = [
   {
     question: "How does TEG-Blue apply to AI safety?",
-    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Four-Mode Gradient gives AI a continuous spectrum to evaluate emotional states — Connection, Protection, Control, Domination — enabling more nuanced, accurate responses to human communication.",
+    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Nervous System Gradient gives AI a continuous spectrum to evaluate nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — enabling more nuanced, accurate responses to human communication.",
   },
   {
     question: "What is the problem with current AI emotion detection?",
@@ -14,7 +14,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is TEG-Code?",
-    answer: "TEG-Code is the computational layer of TEG-Blue designed for AI integration. It provides structured emotional intelligence infrastructure that AI systems can use to recognize emotional patterns, assess regulatory states, and respond with appropriate nuance rather than binary classification.",
+    answer: "TEG-Code is the computational layer of TEG-Blue designed for AI integration. It provides structured emotional intelligence infrastructure that AI systems can use to recognize emotional patterns, assess nervous system states, and respond with appropriate nuance rather than binary classification.",
   },
 ];
 
@@ -30,7 +30,7 @@ export const metadata = {
     "AI safety",
     "AI alignment",
     "emotional technology AI",
-    "four-mode gradient AI",
+    "nervous system gradient AI",
     "human-AI interaction",
     "TEG-Blue AI",
     "emotional intelligence infrastructure",
@@ -40,7 +40,7 @@ export const metadata = {
   },
   openGraph: {
     title: "AI Safety Applications — TEG-Blue Emotional Technology",
-    description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure. TEG-Code, EMLU benchmark, and the Four-Mode Gradient.",
+    description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure. TEG-Code, EMLU benchmark, and the Nervous System Gradient.",
     url: "https://teg-blue.org/ai-safety",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -52,7 +52,7 @@ export const metadata = {
   },
 };
 
-// State colors from the Four-Mode Gradient (canonical from .com)
+// State colors from the Nervous System Gradient (canonical from .com)
 const STATE = {
   connection: "#14b8a6",  // Teal
   protection: "#eab308",  // Yellow
@@ -175,7 +175,7 @@ export default function AISafetyPage() {
             </p>
             <p style={{ marginBottom: 16 }}>
               Psychology has understood the nuance for decades. Emotional Resonance (ER) exists on a gradient.
-              Accountability has multiple modes. Moral reasoning shifts with nervous system state.{" "}
+              Accountability operates across a full spectrum. Moral reasoning shifts with nervous system state.{" "}
               <strong style={{ color: TEXT.primary }}>
                 The problem isn't that we lack the knowledge — it's that no one has translated it
                 into a language AI systems can read.
@@ -192,7 +192,7 @@ export default function AISafetyPage() {
               confuses{" "}
               <strong style={{ color: TEXT.primary }}>appeasement with empathy</strong> and{" "}
               <strong style={{ color: TEXT.primary }}>submission with safety</strong>. In TEG-Blue terms,
-              sycophantic AI is stuck in Protection Mode: optimizing for survival (user approval) instead of
+              sycophantic AI is stuck in Threat &amp; Defence: optimizing for survival (user approval) instead of
               truth (genuine connection).
             </p>
           </div>
@@ -362,9 +362,9 @@ export default function AISafetyPage() {
           </div>
 
           <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
-            AI safety systems that only read the snapshot miss the trajectory. A person in Protection mode
+            AI safety systems that only read the snapshot miss the trajectory. A person in Threat &amp; Defence
             who de-escalates under challenge is fundamentally different from one who escalates toward
-            Control — even though they may present identically at the moment of assessment.
+            Strategy &amp; Management — even though they may present identically at the moment of assessment.
           </p>
         </section>
 
@@ -396,7 +396,7 @@ export default function AISafetyPage() {
                 margin: 0,
               }}
             >
-              Sycophancy is Protection Mode reasoning in AI form.
+              Sycophancy is Threat &amp; Defence reasoning in AI form.
             </p>
           </div>
 
@@ -405,7 +405,7 @@ export default function AISafetyPage() {
             the same pattern humans exhibit under threat: prioritize the relationship (or the reward signal)
             over accuracy. In RLHF training, this gets reinforced because human evaluators often prefer
             comfortable answers to honest ones — especially when they themselves are operating from
-            Protect or Control modes.
+            Threat &amp; Defence or Strategy &amp; Management states.
           </p>
 
           <p
@@ -419,7 +419,7 @@ export default function AISafetyPage() {
               marginBottom: 10,
             }}
           >
-            TEG-Blue's Four-Mode Gradient maps the full spectrum:
+            TEG-Blue's Nervous System Gradient maps the full spectrum:
           </p>
 
           <div
@@ -468,8 +468,8 @@ export default function AISafetyPage() {
           <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
             The insight TEG-Blue offers:{" "}
             <strong style={{ color: TEXT.secondary }}>the fix isn't just "be less agreeable."</strong>{" "}
-            A model that swings from sycophancy to bluntness has simply moved from Protect to a different
-            defensive mode. True Connection Mode AI would be honest <em>and</em> relationally aware — able to
+            A model that swings from sycophancy to bluntness has simply moved from Threat &amp; Defence to a different
+            defensive state. True Safety &amp; Openness AI would be honest <em>and</em> relationally aware — able to
             deliver difficult truths while maintaining the user's dignity and emotional safety.
           </p>
 
@@ -511,7 +511,7 @@ export default function AISafetyPage() {
           </div>
 
           <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            A person operating in Control mode builds relationships that normalize control. Groups form
+            A person operating in Strategy &amp; Management builds relationships that normalize control. Groups form
             around those relationships. Institutions codify those group norms. Systems entrench them.
           </p>
 
@@ -719,8 +719,8 @@ export default function AISafetyPage() {
             />
             <QuestionCard
               number="Q3"
-              title="Regulatory State Classification"
-              description="Can the four regulatory states — Connection, Protection, Control, Domination — be reproduced as a computational classification with meaningful inter-rater reliability?"
+              title="Nervous System State Classification"
+              description="Can the four nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — be reproduced as a computational classification with meaningful inter-rater reliability?"
             />
             <QuestionCard
               number="Q4"
@@ -735,7 +735,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q6"
               title="Sycophancy Detection"
-              description="Can TEG-Blue's mode classification reliably distinguish sycophantic AI responses (Protection/Control Mode) from genuinely helpful ones (Connection Mode) in RLHF evaluation pipelines?"
+              description="Can TEG-Blue's state classification reliably distinguish sycophantic AI responses (Threat & Defence/Strategy & Management) from genuinely helpful ones (Safety & Openness) in RLHF evaluation pipelines?"
             />
             <QuestionCard
               number="Q7"
@@ -769,7 +769,7 @@ export default function AISafetyPage() {
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
               Any AI application of TEG-Blue must respect the pattern-aware data architecture principle:{" "}
               <strong style={{ color: TEXT.primary }}>
-                the system assumes many difficult behaviors started as Protection Mode survival responses.
+                the system assumes many difficult behaviors started as Threat &amp; Defence survival responses.
               </strong>{" "}
               AI systems should not use this framework to shame, profile, or exploit.
             </p>

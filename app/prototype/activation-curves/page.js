@@ -5,7 +5,7 @@ import { SiteHeader, SiteFooter, ActivationCurveExplorer } from '@/src/component
 
 export const metadata = {
   title: 'Activation-Restoration Curves — Prototype | TEG-Blue Research',
-  description: 'Prototype: Parametric activation-restoration curves across the four-mode gradient.',
+  description: 'Prototype: Parametric activation-restoration curves across the nervous system gradient.',
   robots: { index: false, follow: false },
 };
 
@@ -64,7 +64,7 @@ export default function ActivationCurvesPage() {
             marginBottom: 32,
           }}
         >
-          How activation rises and falls across the four-mode gradient.
+          How activation rises and falls across the nervous system gradient.
           Fluid curves return to baseline. Stuck curves do not.
         </p>
 

@@ -141,7 +141,7 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity is measurable through &quot;complexity markers&quot; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
+              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current nervous system state, but their <strong style={{ color: TEXT.primary }}>State Flexibility — capacity to return to physiological baseline when challenged</strong>. This capacity is measurable through complexity markers — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
             </p>
           </div>
         </section>
@@ -151,7 +151,7 @@ export default function AboutPage() {
           <h2 style={sectionHeading}>Empirical validation</h2>
 
           <p style={bodyStyle}>
-            An initial validation study — a computational analysis of 10,000+ natural conflict narratives (Reddit AITA posts) — tested whether the Four-Mode Gradient could be reliably detected in unstructured text.
+            An initial validation study — a computational analysis of 10,000+ natural conflict narratives (Reddit AITA posts) — tested whether the four nervous system states could be reliably detected in unstructured text.
           </p>
 
           <div
@@ -283,7 +283,7 @@ export default function AboutPage() {
               "Can complexity markers be standardized as a psychometric instrument?",
               "What do escalation pathways look like in natural language?",
               "Can the four-mode classification be reproduced by independent researchers?",
-              "Does regulatory state shape moral perception?",
+              "Does nervous system state shape moral perception?",
               "Can the emotional tools be validated as psychometric instruments?",
             ].map((q, i) => (
               <div
@@ -352,7 +352,7 @@ export default function AboutPage() {
               Anna Paretas-Artacho
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              Independent researcher and systems designer based in Barcelona, with 25+ years of professional experience in systems thinking and visual design. The Four-Mode Gradient emerged through building each framework one by one — nearly two years of independent development creating an integrated emotional intelligence system.
+              Independent researcher and systems designer based in Barcelona, with 25+ years of professional experience in systems thinking and visual design. The Emotional Somatic System emerged through building each framework one by one — nearly two years of independent development creating an integrated system mapping how nervous system states shape behaviour.
             </p>
           </div>
 

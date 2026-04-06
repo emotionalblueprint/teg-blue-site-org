@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the core testable claim of TEG-Blue?",
-    answer: "The key variable that predicts relational and behavioral outcomes is not a person's current regulatory state, but their capacity to return to baseline when challenged. This capacity is measurable through complexity markers in natural language.",
+    answer: "The key variable that predicts relational and behavioral outcomes is not a person's current nervous system state, but their State Flexibility — capacity to return to physiological baseline when challenged. This capacity is measurable through complexity markers in natural language.",
   },
   {
     question: "How can researchers collaborate with TEG-Blue?",
@@ -21,7 +21,7 @@ const FAQ_ITEMS = [
 const SIDEBAR_SECTIONS = [
   { label: "What Is Original?", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
   { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
-  { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current regulatory state but capacity to return to baseline when challenged." },
+  { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current nervous system state but State Flexibility — capacity to return to baseline when challenged." },
   { label: "Open Research Questions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
@@ -35,7 +35,7 @@ export const metadata = {
     "emotional regulation research",
     "open science psychology",
     "research collaboration",
-    "complexity markers",
+    "state flexibility",
     "emotional intelligence measurement",
     "AI safety research",
     "computational social science",
@@ -208,7 +208,7 @@ export default function ResearchEntryPage() {
             title="Return capacity predicts relational outcomes"
           >
             <p style={{ margin: 0, fontStyle: "italic" }}>
-              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong>capacity to return to baseline when challenged</strong>.
+              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current nervous system state, but their <strong>State Flexibility — capacity to return to physiological baseline when challenged</strong>.
             </p>
           </PropositionBox>
           <div
@@ -250,7 +250,7 @@ export default function ResearchEntryPage() {
               questions={[
                 "If Biological Restoration is a learnable capacity and not just an automatic function, what are the developmental windows during which co-regulatory experience most determines whether the return path forms?",
                 "Can the absence of a learned restoration path be distinguished from dysregulation caused by acute overwhelm using existing neurobiological markers — and if so, what would that distinction require clinically?",
-                "Does a chronically stuck compass produce different physiological signatures than a slowly returning one — and does that distinction predict different intervention needs?",
+                "Does a Chronic State Organisation produce different physiological signatures than a slowly returning nervous system — and does that distinction predict different intervention needs?",
               ]}
               refLinks={[
                 { href: "/framework/f1-emotions-as-biological-information", label: "F1" },
@@ -413,7 +413,7 @@ export default function ResearchEntryPage() {
             },
             about: [
               { "@type": "Thing", name: "Open Research Questions", description: "Five priority research directions across biological mechanism, clinical, developmental, collective, and AI domains" },
-              { "@type": "Thing", name: "Core Testable Claim", description: "The key variable is not current regulatory state but capacity to return to baseline when challenged" },
+              { "@type": "Thing", name: "Core Testable Claim", description: "The key variable is not current nervous system state but State Flexibility — capacity to return to physiological baseline when challenged" },
             ],
           }),
         }}

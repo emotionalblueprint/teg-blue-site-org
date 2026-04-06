@@ -8,8 +8,8 @@ const FAQ_ITEMS = [
     answer: "TEG-Blue is an open-science emotional technology research platform that maps how nervous system states shape emotional behavior. It integrates 145+ established theories into testable hypotheses organized as 12 frameworks, 4 foundational models, emotional tools, and AI safety infrastructure.",
   },
   {
-    question: "What is the Four-Mode Gradient?",
-    answer: "The Four-Mode Gradient is TEG-Blue's measurement system mapping four nervous system regulatory states — Connection, Protection, Control, and Domination — on a continuous gradient. Health is defined as mobility between modes, not a fixed position.",
+    question: "What are the four nervous system states?",
+    answer: "TEG-Blue maps four nervous system states along a continuous physiological gradient: Safety & Openness, Threat & Defence, Strategy & Management, and Power & Dominance. The key measure is State Flexibility — whether the nervous system can shift between states, not which state it occupies.",
   },
   {
     question: "Is TEG-Blue open access?",
@@ -23,7 +23,7 @@ const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSec
 
 const REGULATION_THREAD = [
   { id: "F1", href: "/framework/f1-emotional-gradient", regulator: "Biological Restoration — the body completing its own cycle", cost: "No cost — this is the design" },
-  { id: "F2", href: "/framework/f2-awareness-calibration", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", cost: "The restoration path is never built" },
+  { id: "F2", href: "/framework/f2-awareness-calibration", regulator: "Co-regulation → self-restoration (when learned). When not learned: the state locks", cost: "The restoration pathway is never built" },
   { id: "F3", href: "/framework/f3-false-coherence", regulator: "False coherence — cognition replacing restoration", cost: "Truth" },
   { id: "F4", href: "/framework/f4-rules-regulate", regulator: "Rules regulate", cost: "Flexibility" },
   { id: "F5", href: "/framework/f5-worth-hierarchies", regulator: "Worth hierarchies regulate", cost: "Equity" },
@@ -38,7 +38,7 @@ const REGULATION_THREAD = [
 
 const SIDEBAR_SECTIONS = [
   { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost. F8–F12 reverse the thread." },
-  { label: "Empirical Evidence", href: "#empirical-evidence", description: "The four-mode gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
+  { label: "Empirical Evidence", href: "#empirical-evidence", description: "The nervous system gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
   { label: "What Is TEG-Blue?", href: "#what-teg-blue-is", description: "Four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety." },
   { label: "Work With the Material", href: "#work-with-the-material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
 ];
@@ -49,7 +49,7 @@ export const metadata = {
   keywords: [
     "emotional technology",
     "emotional regulation research",
-    "four-mode gradient",
+    "nervous system gradient",
     "nervous system regulation",
     "pattern-aware research",
     "TEG-Blue",
@@ -326,10 +326,10 @@ export default function ResearchHub() {
           {/* ── Validation Evidence ── */}
           <section id="empirical-evidence">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              What evidence supports the four-mode gradient?
+              What evidence supports the nervous system gradient?
             </h2>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-              The four-mode gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
+              The nervous system gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
             </p>
             <div
               style={{
@@ -351,7 +351,7 @@ export default function ResearchHub() {
                   fontFamily: FONT.mono,
                 }}
               >
-                Empirical Validation — Four-Mode Gradient Framework
+                Empirical Validation — Nervous System Gradient
               </p>
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16, marginBottom: 16 }}>
@@ -361,7 +361,7 @@ export default function ResearchHub() {
               </div>
 
               <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-                Computational analysis of unstructured text. Four regulatory modes reliably detected. De-escalators showed significantly higher rates of self-awareness, perspective-taking, and emotional differentiation. Mode classifications correlated with independent community moral judgments.
+                Computational analysis of unstructured text. Four nervous system states reliably detected. De-escalators showed significantly higher rates of self-awareness, perspective-taking, and emotional differentiation. State classifications correlated with independent community moral judgments.
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16 }}>

@@ -55,7 +55,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How is TEG-Blue research validated?",
-    answer: "TEG-Blue uses multiple validation methods: inter-rater reliability testing, convergent validity comparing against established instruments, discriminant validity testing between regulatory states, and ecological validity using naturalistic language samples and real-world contexts."
+    answer: "TEG-Blue uses multiple validation methods: inter-rater reliability testing, convergent validity comparing against established instruments, discriminant validity testing between nervous system states, and ecological validity using naturalistic language samples and real-world contexts."
   },
   {
     question: "How was TEG-Blue developed?",
@@ -163,7 +163,7 @@ export default function MethodologyPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginBottom: 16 }}>
             <MethodCard
               title="Inter-rater reliability"
-              description="Independent raters assess the same samples to test consistent identification of regulatory states."
+              description="Independent raters assess the same samples to test consistent identification of nervous system states."
             />
             <MethodCard
               title="Convergent validity"
@@ -171,7 +171,7 @@ export default function MethodologyPage() {
             />
             <MethodCard
               title="Discriminant validity"
-              description="Testing that measures differentiate between distinct regulatory states, not just general distress."
+              description="Testing that measures differentiate between distinct nervous system states, not just general distress."
             />
             <MethodCard
               title="Ecological validity"

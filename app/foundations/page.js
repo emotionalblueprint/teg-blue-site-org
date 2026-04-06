@@ -34,7 +34,7 @@ export const metadata = {
   keywords: [
     "TEG-Blue architecture",
     "emotional regulation system",
-    "four-mode gradient",
+    "nervous system gradient",
     "12 frameworks",
     "emotional tools",
     "AI safety",
@@ -134,7 +134,7 @@ export default function FoundationsPage() {
             >
               <div style={labelStyle(SPECTRUM.cobalt)}>Core Insight</div>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>State determines capacity</strong> — what someone can perceive, feel, think, and do depends on their nervous system regulatory state, not their character or intelligence.
+                <strong style={{ color: TEXT.primary }}>State determines capacity</strong> — what someone can perceive, feel, think, and do depends on their nervous system state, not their character or intelligence.
               </p>
             </div>
             <div
@@ -148,7 +148,7 @@ export default function FoundationsPage() {
             >
               <div style={labelStyle(SPECTRUM.indigo)}>The Core Testable Claim</div>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                The key variable that predicts relational and behavioral outcomes is not a person&apos;s current regulatory state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity is measurable through &ldquo;complexity markers&rdquo; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
+                The key variable that predicts relational and behavioral outcomes is not a person&apos;s current nervous system state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity is measurable through &ldquo;complexity markers&rdquo; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
               </p>
             </div>
           </div>
@@ -181,9 +181,9 @@ export default function FoundationsPage() {
             </p>
             <ul style={listStyle}>
               <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M1 — Emotions as Signals</strong> <em style={{ color: TEXT.muted }}>(The signal language)</em> — What is the nervous system delivering? Sixteen emotions mapped as biological signals carrying specific information about needs, safety, and constraint.</li>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M2 — Nervous System States</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four modes.</li>
+              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M2 — Nervous System States</strong> <em style={{ color: TEXT.muted }}>(The instrument)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four states.</li>
               <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>M3 — Regulation Capacities</strong> <em style={{ color: TEXT.muted }}>(The return pathway)</em> — What is the body doing underneath? The physiological sequence that runs when emotion doesn&apos;t complete — and the designed return path that can only be allowed, not forced.</li>
-              <li><strong style={{ color: TEXT.primary }}>M4 — Awareness Capacities</strong> <em style={{ color: TEXT.muted }}>(The calibration)</em> — What is holding it there? The three awarenesses that determine what data the compass receives and whether the person has access to their own internal state.</li>
+              <li><strong style={{ color: TEXT.primary }}>M4 — Awareness Capacities</strong> <em style={{ color: TEXT.muted }}>(The calibration)</em> — What is holding it there? The three awarenesses that determine what data the nervous system receives and whether the person has access to their own internal state.</li>
             </ul>
             <StatusBadge status="Proposed models with early evidence" color={SPECTRUM.azure} />
             <div style={{ marginTop: 16 }}>
@@ -251,7 +251,7 @@ export default function FoundationsPage() {
               Applied Instruments
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The emotional tools translate the architecture into practical instruments. Each tool maps one dimension of human behavior across the full Four-Mode Gradient — from regulated to dysregulated — with observable markers at every point. The gradient structure means each tool shows not just where a pattern sits, but the direction of movement: toward connection or away from it.
+              The emotional tools translate the architecture into practical instruments. Each tool maps one dimension of human behavior across the full Nervous System Gradient — from regulated to dysregulated — with observable markers at every point. The gradient structure means each tool shows not just where a pattern sits, but the direction of movement: toward safety or away from it.
             </p>
 
             <div style={labelStyle(SPECTRUM.indigo)}>Who the tools are for</div>
@@ -332,17 +332,17 @@ export default function FoundationsPage() {
             <FunctionCard
               number={1}
               title="Measurement and recognition"
-              description="Turning subjective states into observable, trackable patterns using gradients, modes, and markers."
+              description="Turning subjective states into observable, trackable patterns using gradients, states, and markers."
             />
             <FunctionCard
               number={2}
               title="Prediction and prevention"
-              description="Mapping how states shift and escalate across the gradient. Harm often follows predictable progressions from Protection into Control and Domination."
+              description="Mapping how states shift and escalate across the gradient. Harm often follows predictable progressions from Threat &amp; Defence into Strategy &amp; Management and Power &amp; Dominance."
             />
             <FunctionCard
               number={3}
               title="Navigation and intervention"
-              description="Identifying interventions that help systems move from Control back toward Protection and Connection. Routes back to safety exist."
+              description="Identifying interventions that help systems move from Strategy &amp; Management back toward Threat &amp; Defence and Safety &amp; Openness. Routes back to safety exist."
             />
             <FunctionCard
               number={4}

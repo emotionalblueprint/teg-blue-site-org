@@ -55,7 +55,7 @@ export const metadata = {
   },
 };
 
-// State colors from the Four-Mode Gradient
+// State colors from the Nervous System Gradient
 const STATE = {
   connection: "#14b8a6",  // Teal
   protection: "#eab308",  // Yellow

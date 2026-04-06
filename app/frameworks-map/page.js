@@ -43,7 +43,7 @@ const FRAMEWORKS = [
     buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
     claims: [
       "Emotional signals track needs, safety, and constraint — they are the body's data about its current state",
-      "State-dependent capacity is neurobiological: what can be perceived, thought, and done varies with regulatory state",
+      "State-dependent capacity is neurobiological: what can be perceived, thought, and done varies with nervous system state",
       "The same emotion has two expressions depending on pattern position (safety vs. threat)",
       "Calibration through early experience shapes the neuroceptive template",
     ],
@@ -81,7 +81,7 @@ const FRAMEWORKS = [
       "External regulation uses others to manage what cannot be processed internally — fusion, distance, management, or subjugation depending on chronic mode",
       "Safety must precede truth — challenging false coherence directly increases threat because you are confronting the person's only regulatory system",
     ],
-    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on coherence markers. Prediction of rationalization patterns from regulatory state. Boundary-evidence loop patterns in relational transcripts.",
+    testable: "Within-person state shifts and language feature shifts. Inter-rater reliability on coherence markers. Prediction of rationalization patterns from nervous system state. Boundary-evidence loop patterns in relational transcripts.",
   },
   {
     id: "F4",
@@ -95,7 +95,7 @@ const FRAMEWORKS = [
     claims: [
       "Rule-following is often a nervous system regulation strategy, not a reasoning choice",
       "Six rule categories (roles, obedience, performance, dominance, punishment, entitlement) emerge from threat-based internalization, each defined by regulatory function",
-      "Rule systems escalate under sustained threat through stages paralleling the four-mode gradient",
+      "Rule systems escalate under sustained threat through stages paralleling the nervous system gradient",
       "Ten research traditions independently describe the same mechanism — rule internalization as collective regulation under threat",
       "Questioning rules recreates threat, because rules are part of collective false coherence",
     ],
@@ -111,12 +111,12 @@ const FRAMEWORKS = [
     purpose: "F5 explains how this sorting happens: how threat-stabilised rule systems produce worth hierarchies, how those hierarchies formalise into institutions, and how the sorting becomes so deeply internalised that it feels like objective reality rather than collective nervous system regulation.",
     buildsOn: "Capital theory (Bourdieu), social dominance (Sidanius & Pratto), system justification (Jost), signaling theory (Spence), network science (Bonacich), allostatic load (McEwen), intersectionality (Crenshaw), weathering hypothesis (Geronimus), Matthew effect (Merton).",
     claims: [
-      "Worth-seeking is often a nervous system regulation strategy — the compass orienting toward whatever reduces threat",
+      "Worth-seeking is often a nervous system regulation strategy — the nervous system orienting toward whatever reduces threat",
       "The Filter of Worth is a systemic mechanism: signal access mistaken for human value, signal deprivation internalized as inadequacy",
-      "Chronic invisibility produces a structurally stuck compass — not cognitive distortion but accurate adaptation to filtering environments",
+      "Chronic invisibility produces Chronic State Organisation — not cognitive distortion but accurate adaptation to filtering environments",
       "Outcome gaps are structural artifacts of proxy access, maintained by double false coherence operating in both directions",
     ],
-    testable: "Measuring safety proxy access and its correlation with credibility allocation. Testing whether the five-step worth loop operates at both individual and institutional scales. Comparing chronic invisibility presentations with structural filtering metrics. Assessing whether addressing structural conditions improves compass flexibility.",
+    testable: "Measuring safety proxy access and its correlation with credibility allocation. Testing whether the five-step worth loop operates at both individual and institutional scales. Comparing chronic invisibility presentations with structural filtering metrics. Assessing whether addressing structural conditions improves State Flexibility.",
   },
   {
     id: "F6",
@@ -133,7 +133,7 @@ const FRAMEWORKS = [
       "Certainty is physiological stability, not epistemic accuracy — bias feels like truth because threat reduction produces relief mistaken for confirmation",
       "Bias-correction programs relying on education, shame, or moral argument are predicted to fail; safety-based approaches are predicted to succeed",
     ],
-    testable: "Testing whether safety-based bias interventions outperform education-based ones. Measuring the threshold equation variables across regulatory states. Validating the six-step formation loop as self-reinforcing. Comparing revision outcomes across the three bias categories.",
+    testable: "Testing whether safety-based bias interventions outperform education-based ones. Measuring the threshold equation variables across nervous system states. Validating the six-step formation loop as self-reinforcing. Comparing revision outcomes across the three bias categories.",
   },
   {
     id: "F7",
@@ -175,11 +175,11 @@ const FRAMEWORKS = [
     title: "When the Environment Is the Mismatch",
     subtitle: "Scale: Structural",
     group: "Repair",
-    summary: "F9 reframes neurodivergence from deficit to variation. Different nervous systems process the emotional gradient differently. It is configuration. The problem is not the compass — it is the mismatch between how a nervous system is built and what the environment demands.",
+    summary: "F9 reframes neurodivergence from deficit to variation. Different nervous systems process the emotional gradient differently. It is configuration. The problem is not the nervous system — it is the mismatch between how a nervous system is built and what the environment demands.",
     purpose: "When environments are designed for one configuration, others are required to mask — to perform the expected configuration at the cost of authentic expression and chronic regulation.\n\nF9 explains the costs of structural mismatch, the mechanism of forced masking as it connects to F2–F3, and what genuine inclusion requires: not accommodation of deficit, but design that recognises variation as a feature of collective intelligence.",
     buildsOn: "Neurodiversity paradigm (Singer, Walker, Silberman), Social Model of Disability (Oliver, Shakespeare), Polyvagal Theory, Intense World Theory, masking research (Price, Rose, Maté), Universal Design for Learning.",
     claims: [
-      "Neurodivergence is a difference in nervous system configuration — the compass is the same, the configuration is different",
+      "Neurodivergence is a difference in nervous system configuration — the nervous system is the same, the configuration is different",
       "System Mismatch — the gap between what an environment requires and what a nervous system can sustainably provide — is the named mechanism that produces masking and burnout",
       "Masking has cumulative, compounding costs across six domains (energetic, cognitive, emotional, somatic, developmental, identity)",
       "Variation-inclusive design is not accommodation but structural intelligence — different configurations see different things",
@@ -192,7 +192,7 @@ const FRAMEWORKS = [
     title: "Intergenerational Transmission and How Adult Repair Changes Developmental Conditions",
     subtitle: "Scale: Intergenerational",
     group: "Repair",
-    summary: "Emotional patterns do not begin with us. The compass calibrates in relationship — and the relational environment is shaped by the compass configurations of those who came before. F2's insight — awareness teaches awareness — applies across generations.",
+    summary: "Emotional patterns do not begin with us. The nervous system calibrates in relationship — and the relational environment is shaped by the nervous system configurations of those who came before. F2's insight — awareness teaches awareness — applies across generations.",
     purpose: "Parents transmit not just genetics but regulatory patterns, emotional environments, and the specific capacity configurations their own conditions produced.\n\nF10 explains the transmission mechanism, the conditions that enable interruption, and what intergenerational repair actually requires. Understanding how you got here — and understanding how the people who shaped you got there — is not the same as being responsible for all of it.",
     buildsOn: "Family Systems (Bowen, Satir, Minuchin), Attachment Theory (Main, Hesse), intergenerational trauma research (van der Kolk, Herman), epigenetics (Yehuda, Meaney), Narrative Therapy (White, Epston), interpersonal neurobiology (Porges, Siegel, Schore).",
     claims: [
@@ -201,7 +201,7 @@ const FRAMEWORKS = [
       "What isn't processed gets passed on — but processing develops awareness capacities that change what transmits",
       "Repair does not require perfection — enough capacity development shifts the generational baseline",
     ],
-    testable: "Earned security replication with three-capacity assessment. Five-pathway intervention compared to single-pathway. Compass mobility in parent predicting capacity development in child. Compound effect across three generations.",
+    testable: "Earned security replication with three-capacity assessment. Five-pathway intervention compared to single-pathway. State Flexibility in parent predicting capacity development in child. Compound effect across three generations.",
   },
   {
     id: "F11",
@@ -215,10 +215,10 @@ const FRAMEWORKS = [
     claims: [
       "Paradoxical behavior is multi-rational — serving multiple valid needs simultaneously, serving multiple valid needs simultaneously",
       "Every framework (F1–F10) generates characteristic paradoxes that follow predictably from each mechanism's specific logic",
-      "The capacity to hold paradox depends on compass position — Connection enables holding, Domination erases",
+      "The capacity to hold paradox depends on nervous system state — Safety & Openness enables holding, Power & Dominance erases",
       "Integration means holding, not resolving — true coherence is the capacity to contain contradiction without collapsing",
     ],
-    testable: "Paradox-holding capacity correlated with compass flexibility. Paradox expression as diagnostic of compass position. Multi-rationality framework applied to predict which paradoxes emerge from which framework mechanisms.",
+    testable: "Paradox-holding capacity correlated with State Flexibility. Paradox expression as diagnostic of nervous system state. Multi-rationality framework applied to predict which paradoxes emerge from which framework mechanisms.",
   },
   {
     id: "F12",
@@ -227,7 +227,7 @@ const FRAMEWORKS = [
     subtitle: "Scale: Architectural",
     group: "Repair",
     summary: "F12 steps back and asks: what is the architecture underneath all of this? Two parallel information systems — the emotional-somatic and the cognitive-logical — running simultaneously at different speeds. The emotional-somatic arrives first. Cognition narrates a process already underway.",
-    purpose: "This is why a person can read F1–F11, understand the entire architecture, see their own pattern clearly — and still do the thing. Understanding is cognitive. The compass is somatic. More cognition does not move a somatic compass. What moves the compass is experience.\n\nF12 is not another link in the regulation thread. It is the explanation of why the thread works the way it does. It unifies the entire system: TEG-Blue is not twelve frameworks. It is one mechanism — state-dependent nervous system organisation responding to perceived safety — described from twelve angles.",
+    purpose: "This is why a person can read F1–F11, understand the entire architecture, see their own pattern clearly — and still do the thing. Understanding is cognitive. The nervous system is somatic. More cognition does not move a somatic nervous system. What moves it is experience.\n\nF12 is not another link in the regulation thread. It is the explanation of why the thread works the way it does. It unifies the entire system: TEG-Blue is not twelve frameworks. It is one mechanism — state-dependent nervous system organisation responding to perceived safety — described from twelve angles.",
     buildsOn: "Dual-process theory (Kahneman, Stanovich), Polyvagal Theory (Porges), somatic markers (Damasio), trauma research (van der Kolk, Levine, Ogden), interpersonal neurobiology (Siegel, Schore), situational psychology (Milgram, Zimbardo).",
     claims: [
       "The emotional-somatic system determines what rational behavior is available — state precedes capacity",
@@ -235,7 +235,7 @@ const FRAMEWORKS = [
       "Patterns change through experience, not explanation: sustained safety, somatic awareness, co-regulation, corrective experience, titrated exposure, time",
       "All twelve frameworks describe the same mechanism (state-dependent nervous system organization) from different angles — the scale changes, the mechanism doesn't",
     ],
-    testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Gradient-matched intervention outcomes by compass position. Cross-framework coherence as unified architecture.",
+    testable: "Timing studies of emotional vs. cognitive processing. Intervention effectiveness comparing insight-based vs. somatic/relational approaches. Gradient-matched intervention outcomes by nervous system state. Cross-framework coherence as unified architecture.",
   },
 ];
 
@@ -269,7 +269,7 @@ const GROUPS = [
     slug: "individual",
     label: "Individual",
     range: "F1–F3",
-    description: "The instrument. How the nervous system evaluates safety, how the compass calibrates through development, and how cognition steps in when the return path is missing.",
+    description: "The instrument. How the nervous system evaluates safety, how it calibrates through development, and how cognition steps in when the return path is missing.",
   },
   {
     key: "Collective",
@@ -290,7 +290,7 @@ const GROUPS = [
 // Regulation thread data — all 12 frameworks
 const REGULATION_THREAD = [
   { id: "F1", group: "Individual", regulator: "Biological Restoration — the body completing its own cycle", cost: "No cost — this is the design" },
-  { id: "F2", group: "Individual", regulator: "Co-regulation → self-restoration (when learned). When not learned: the compass locks", cost: "The restoration path is never built" },
+  { id: "F2", group: "Individual", regulator: "Co-regulation → self-restoration (when learned). When not learned: the state locks", cost: "The restoration path is never built" },
   { id: "F3", group: "Individual", regulator: "False coherence — cognition replacing restoration", cost: "Truth" },
   { id: "F4", group: "Collective", regulator: "Rules regulate", cost: "Flexibility" },
   { id: "F5", group: "Collective", regulator: "Worth hierarchies regulate", cost: "Equity" },

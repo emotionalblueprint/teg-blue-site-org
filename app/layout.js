@@ -25,7 +25,7 @@ export const metadata = {
     template: '%s | TEG-Blue Research',
   },
   description: 'Open science platform for TEG-Blue research. An integrative emotional intelligence framework connecting 145+ theories into computationally legible gradients for AI safety, alignment research, and human emotional understanding.',
-  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'four-mode gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'regulatory states', 'complexity markers', 'open science'],
+  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'nervous system gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'nervous system states', 'complexity markers', 'open science'],
   authors: [{ name: 'TEG-Blue Research', url: 'https://teg-blue.org' }],
   creator: 'TEG-Blue Research',
   publisher: 'TEG-Blue Research',
@@ -146,7 +146,7 @@ const organizationJsonLd = {
     "Natural language processing",
     "Harm detection",
     "Moral reasoning",
-    "Regulatory state classification",
+    "Nervous system state classification",
     "Structured emotional data",
     "Cross-disciplinary research",
     "Integrative frameworks"
@@ -159,7 +159,7 @@ const websiteJsonLd = {
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
   inLanguage: "en",
-  description: "Open science platform providing structured emotional intelligence frameworks for AI safety research. The Four-Mode Gradient offers computationally legible representations of human regulatory states (Connection, Protection, Control, Domination) detectable in natural language. Designed for AI/ML researchers, safety practitioners, and computational social scientists.",
+  description: "Open science platform providing structured emotional intelligence frameworks for AI safety research. The Nervous System Gradient offers computationally legible representations of four nervous system states (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance) detectable in natural language. Designed for AI/ML researchers, safety practitioners, and computational social scientists.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research",
@@ -172,8 +172,8 @@ const websiteJsonLd = {
     },
     {
       "@type": "Thing",
-      name: "Four-Mode Gradient",
-      description: "Measurement system mapping nervous system regulatory states: Connection, Protection, Control, Domination"
+      name: "Nervous System Gradient",
+      description: "Measurement system mapping four nervous system states: Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance"
     }
   ],
 }

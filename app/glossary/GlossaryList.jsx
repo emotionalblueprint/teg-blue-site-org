@@ -27,27 +27,27 @@ const FRAMEWORK_URLS = {
 
 // Framework to Arc mapping
 const FRAMEWORK_ARC = {
-  1: "Formation",
-  2: "Formation",
-  3: "Formation",
-  4: "Scaling",
-  5: "Scaling",
-  6: "Scaling",
-  7: "Turning Point",
-  8: "Restoration",
-  9: "Restoration",
-  10: "Restoration",
-  11: "Integration",
-  12: "Integration",
+  1: "Individual Arc",
+  2: "Individual Arc",
+  3: "Individual Arc",
+  4: "Collective Arc",
+  5: "Collective Arc",
+  6: "Collective Arc",
+  7: "Collective Arc",
+  8: "Repair Arc",
+  9: "Repair Arc",
+  10: "Repair Arc",
+  11: "Repair Arc",
+  12: "Repair Arc",
 };
 
 // Arc order for sorting
-const ARC_ORDER = ["Formation", "Scaling", "Turning Point", "Restoration", "Integration", "Models", "General"];
+const ARC_ORDER = ["System-Level", "Models", "Individual Arc", "Collective Arc", "Repair Arc", "General"];
 
 // Sort options
 const SORT_OPTIONS = [
   { value: "alphabetical", label: "Alphabetical (A-Z)" },
-  { value: "framework", label: "By Framework (F1 → F12, M1 → M3)" },
+  { value: "framework", label: "By Source (ESC → M1-M4 → F1-F12)" },
   { value: "arc", label: "By Arc" },
   { value: "type", label: "By Type" },
 ];
@@ -68,11 +68,12 @@ export default function GlossaryList({ terms = [] }) {
     );
   });
 
-  // Helper: get a sortable value from framework (numeric or string like "M3")
+  // Helper: get a sortable value from framework (numeric or string like "M3" or "ESC")
   const fwSortKey = (fw) => {
     if (!fw) return 99;
     if (typeof fw === "number") return fw;
-    // Model strings: M1=13, M2=14, M3=15
+    if (fw === "ESC") return -1; // System-level first
+    // Model strings: M1=13, M2=14, M3=15, M4=16
     const m = String(fw).match(/^M(\d+)$/);
     return m ? 12 + parseInt(m[1], 10) : 99;
   };
@@ -80,13 +81,14 @@ export default function GlossaryList({ terms = [] }) {
   // Helper: get display label from framework value
   const fwLabel = (fw) => {
     if (!fw) return "General";
-    if (typeof fw === "string") return fw; // "M3" stays "M3"
+    if (typeof fw === "string") return fw; // "M3", "ESC" stay as-is
     return `F${fw}`;
   };
 
   // Helper: get arc name from framework value
   const fwArc = (fw) => {
     if (!fw) return "General";
+    if (fw === "ESC") return "System-Level";
     if (typeof fw === "string") return "Models";
     return FRAMEWORK_ARC[fw] || "General";
   };

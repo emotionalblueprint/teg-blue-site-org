@@ -7,11 +7,11 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What has TEG-Blue published?",
-    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Four-Mode Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.18428907), plus a Theoretical Architecture Contribution Record documenting the 145+ source theories across 12 frameworks.",
+    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Nervous System Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.18428907), plus a Theoretical Architecture Contribution Record documenting the 145+ source theories across 12 frameworks.",
   },
   {
-    question: "What did the Four-Mode Gradient validation study find?",
-    answer: "All four regulatory modes (Connection, Protection, Control, Domination) were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. 33.8% of individuals escalated toward Control/Domination when challenged, 22.2% de-escalated toward Connection, and de-escalators showed 78% higher rates of complexity markers than escalators.",
+    question: "What did the Nervous System Gradient validation study find?",
+    answer: "All four nervous system states (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance) were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. 33.8% of individuals escalated toward Strategy & Management/Power & Dominance when challenged, 22.2% de-escalated toward Safety & Openness, and de-escalators showed 78% higher rates of complexity markers than escalators.",
   },
   {
     question: "Are TEG-Blue datasets publicly available?",
@@ -21,11 +21,11 @@ const FAQ_ITEMS = [
 
 export const metadata = {
   title: "Research Publications & Validation Studies | TEG-Blue Research",
-  description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Four-Mode Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.18428907).",
+  description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Nervous System Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.18428907).",
   keywords: [
     "TEG-Blue publications",
     "emotional regulation research papers",
-    "four mode gradient validation",
+    "nervous system gradient validation",
     "computational linguistics emotions",
     "natural language processing psychology",
     "open science datasets",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Publications — TEG-Blue Research",
-    description: "Validation studies, research papers, and open datasets. Four-Mode Gradient validated on 10,000+ conflict narratives.",
+    description: "Validation studies, research papers, and open datasets. Nervous System Gradient validated on 10,000+ conflict narratives.",
     url: "https://teg-blue.org/publications",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -53,7 +53,7 @@ export const metadata = {
     description: "Research papers, validation studies, and open datasets for emotional regulation research.",
   },
   other: {
-    'citation_title': 'Detecting Regulatory States in Natural Language: Empirical Validation of the Four-Mode Gradient Framework',
+    'citation_title': 'Detecting Nervous System States in Natural Language: Empirical Validation of the Nervous System Gradient Framework',
     'citation_author': 'Anna Paretas-Artacho',
     'citation_publication_date': '2026/02',
     'citation_doi': '10.5281/zenodo.18428907',
@@ -66,7 +66,7 @@ const datasetSchema = {
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "TEG-Blue Validation Study Dataset",
-  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with regulatory state markers, complexity markers, and community moral judgments. Used to validate the Four-Mode Gradient framework.",
+  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments. Used to validate the Nervous System Gradient framework.",
   "url": "https://doi.org/10.5281/zenodo.18428907",
   "identifier": "10.5281/zenodo.18428907",
   "keywords": [
@@ -100,7 +100,7 @@ const datasetSchema = {
   },
   "measurementTechnique": "Computational linguistic analysis with polyvagal markers, contempt markers, and moral disengagement markers",
   "variableMeasured": [
-    "Regulatory state classification (Connection, Protection, Control, Domination)",
+    "Nervous system state classification (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance)",
     "Complexity markers in language",
     "Escalation/de-escalation trajectories",
     "Community moral judgments"
@@ -110,8 +110,8 @@ const datasetSchema = {
 const scholarlyArticleSchema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "Empirical validation of the Four-Mode Gradient framework",
-  "alternativeHeadline": "Detecting Regulatory States in Natural Language",
+  "headline": "Empirical validation of the Nervous System Gradient framework",
+  "alternativeHeadline": "Detecting Nervous System States in Natural Language",
   "author": {
     "@type": "Person",
     "name": "Anna Paretas-Artacho",
@@ -128,13 +128,13 @@ const scholarlyArticleSchema = {
     "Emotional regulation",
     "Natural language processing",
     "Polyvagal theory",
-    "Four-Mode Gradient"
+    "Nervous System Gradient"
   ],
-  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the four-mode gradient can be reliably detected in unstructured text. Key findings: All four regulatory modes successfully detected; 33.8% of individuals escalated toward Control/Domination when challenged; 22.2% de-escalated toward Connection; De-escalators showed 78% higher rates of complexity markers."
+  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text. Key findings: All four nervous system states successfully detected; 33.8% of individuals escalated toward Strategy & Management/Power & Dominance when challenged; 22.2% de-escalated toward Safety & Openness; De-escalators showed 78% higher rates of complexity markers."
 };
 
 const SIDEBAR_SECTIONS = [
-  { label: "Validation Study", href: "#validation-study", description: "Computational analysis of 10,000+ natural conflict narratives. The empirical backbone of the four-mode gradient." },
+  { label: "Validation Study", href: "#validation-study", description: "Computational analysis of 10,000+ natural conflict narratives. The empirical backbone of the nervous system gradient." },
   { label: "All Publications", href: "#all-publications", description: "Published research papers, working papers, and theoretical architecture documents." },
   { label: "Datasets", href: "#datasets", description: "Open datasets supporting the validation study and ongoing research." },
   { label: "How to Cite", href: "#how-to-cite", description: "Citation format and examples for academic use." },
@@ -206,10 +206,10 @@ export default function PublicationsPage() {
               </span>
             </div>
             <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Detecting Regulatory States in Natural Language
+              Detecting Nervous System States in Natural Language
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-              A computational analysis of 10,000+ natural conflict narratives testing whether the four-mode gradient can be reliably detected in unstructured text.
+              A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text.
             </p>
             <div style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, marginBottom: 16 }}>
               Anna Paretas-Artacho · February 2026 · DOI: 10.5281/zenodo.18428907
@@ -226,11 +226,11 @@ export default function PublicationsPage() {
                 Key Findings
               </h4>
               <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.secondary, lineHeight: 1.7 }}>
-                <li style={{ marginBottom: 4 }}>All four regulatory modes successfully detected</li>
-                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>33.8%</strong> of individuals escalated toward Control/Domination when challenged</li>
-                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>22.2%</strong> de-escalated toward Connection</li>
+                <li style={{ marginBottom: 4 }}>All four nervous system states successfully detected</li>
+                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>33.8%</strong> of individuals escalated toward Strategy & Management/Power & Dominance when challenged</li>
+                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>22.2%</strong> de-escalated toward Safety & Openness</li>
                 <li style={{ marginBottom: 4 }}>De-escalators showed <strong style={{ color: TEXT.primary }}>78% higher rates of complexity markers</strong></li>
-                <li>Mode classifications correlated with independent community moral judgments</li>
+                <li>State classifications correlated with independent community moral judgments</li>
               </ul>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -307,7 +307,7 @@ export default function PublicationsPage() {
               AITA Conflict Narratives Dataset
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
-              10,000+ anonymized conflict narratives from Reddit AITA, annotated with regulatory state markers, complexity markers, and community moral judgments.
+              10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments.
             </p>
             <span
               style={{

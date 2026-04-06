@@ -39,7 +39,7 @@ export const metadata = {
   },
   openGraph: {
     title: "How to Cite TEG-Blue | TEG-Blue Research",
-    description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats for the Four-Mode Gradient validation study and Theoretical Architecture.",
+    description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats for the Nervous System Gradient validation study and Theoretical Architecture.",
     url: "https://teg-blue.org/citations",
     siteName: "TEG-Blue Research",
     type: "website",

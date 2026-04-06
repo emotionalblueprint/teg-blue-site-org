@@ -104,7 +104,7 @@ export default function CollaboratePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 16 }}>
             <CollabCard
               title="Validation studies"
-              description="Independent replication of the Four-Mode Gradient detection, testing in new contexts (clinical, educational, organizational), cross-cultural validation."
+              description="Independent replication of the Nervous System Gradient detection, testing in new contexts (clinical, educational, organizational), cross-cultural validation."
             />
             <CollabCard
               title="Cross-disciplinary research"
