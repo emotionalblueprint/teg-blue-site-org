@@ -101,7 +101,7 @@ const THEORIES = [
     frameworks: ["F2", "F3", "F5", "F11"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Jung's Analytical Psychology describes the Persona as the social mask we wear — the face we present to the world. The Shadow contains everything the ego rejects: traits, desires, and capacities deemed unacceptable. Individuation is the process of integrating Persona and Shadow into a more authentic whole." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates Jung into developmental and regulatory terms. The Persona is the Role Mask — built early, through necessity. The Shadow contains suppressed aspects of the Real Self: emotions, needs, and capacities that weren't safe to express. Integration requires nervous system safety first." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates Jung into developmental and regulatory terms. The Persona maps to Universal Masking — the configuration built early through necessity, absorbed by False Coherence. The Shadow contains suppressed aspects of the authentic capacity configuration: emotions, needs, and capacities that were not safe to express. Integration requires felt safety first." },
       { id: "key-sources", title: "Key Sources", content: "Jung, C. G. (1928). Two Essays on Analytical Psychology. Routledge. \u00b7 Jung, C. G. (1959). The Archetypes and the Collective Unconscious. Princeton University Press." },
     ],
   },
@@ -149,7 +149,7 @@ const THEORIES = [
     frameworks: ["F1", "F2"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Developmental psychology research established that infants arrive with distinct temperamental patterns. Chess and Thomas identified dimensions like activity level and adaptability. Kagan documented behavioral inhibition as a stable trait. Stern mapped how infants develop self-experience through 'vitality affects' and 'implicit relational knowing.'" },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses temperament research to ground the Real Self in biology: there are innate differences in how nervous systems are organized. These aren't pathology — they're variation. Stern's implicit relational knowing explains calibration: the nervous system learns what to expect from relationships before conscious memory begins." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses temperament research to ground configuration variation in biology: there are innate differences in how nervous systems are organised. These are not pathology — they are variation (F9: same instrument, different inputs). Stern's implicit relational knowing explains calibration: the nervous system learns what to expect from relationships before conscious memory begins." },
       { id: "key-sources", title: "Key Sources", content: "Chess, S. & Thomas, A. (1996). Temperament: Theory and Practice. Brunner/Mazel. \u00b7 Kagan, J. (1994). Galen's Prophecy. Basic Books. \u00b7 Stern, D. N. (1985). The Interpersonal World of the Infant. Basic Books." },
     ],
   },
@@ -161,7 +161,7 @@ const THEORIES = [
     frameworks: ["F1", "F8", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Gross developed the process model showing five points where regulation can occur. Siegel introduced the window of tolerance — the zone where emotions can be processed without overwhelm. Fredrickson's broaden-and-build theory shows that positive emotions expand cognitive and behavioral repertoires." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the gradient: Connection is within the window (broad capacity), Protection is at the edge (narrowing), Control and Domination are chronic states outside the window. The broaden-and-build model explains why Connection enables learning and repair." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the nervous system gradient: Safety & Openness is within the window (broad capacity), Threat & Defence is at the edge (narrowing), Strategy & Management and Power & Dominance are chronic states outside the window. The broaden-and-build model explains why Safety & Openness enables learning and repair." },
       { id: "key-sources", title: "Key Sources", content: "Gross, J. J. (2014). Handbook of Emotion Regulation. Guilford Press. \u00b7 Siegel, D. J. (1999). The Developing Mind. Guilford Press. \u00b7 Fredrickson, B. L. (2001). The broaden-and-build theory. American Psychologist." },
     ],
   },
@@ -185,7 +185,7 @@ const THEORIES = [
     frameworks: ["F1", "F8", "F11"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Humanistic Psychology proposes that humans have an inherent drive toward growth and self-actualization. Rogers' organismic self describes an inner knowing that accurately perceives what the organism needs. Problems arise when conditions of worth override this inner sensing." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Real Self — the emotional-somatic system that processes safety, threat, and need before cognition. The actualizing tendency is what emerges when Connection is restored." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Emotional Somatic System — detecting, evaluating, and responding before cognition arrives. The actualising tendency is what emerges when Safety & Openness is restored and the restoration sequence can run." },
       { id: "key-sources", title: "Key Sources", content: "Rogers, C. R. (1961). On Becoming a Person. Houghton Mifflin. \u00b7 Maslow, A. H. (1968). Toward a Psychology of Being. Van Nostrand." },
     ],
   },
@@ -245,7 +245,7 @@ const THEORIES = [
     frameworks: ["F2", "F3", "F5", "F8"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Object Relations Theory proposes that the self is formed through early relationships with caregivers ('objects'). Winnicott distinguished between the True Self — spontaneous, authentic, alive — and the False Self — compliant, adaptive, protective. The False Self develops when caregiving fails to meet the infant's spontaneous gestures." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates Winnicott into nervous system terms. The Real Self is the baseline emotional-somatic configuration present at birth. The Role Mask is the cognitive-behavioral structure built when the Real Self couldn't be safely expressed." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates Winnicott into nervous system terms. The True Self maps to the authentic capacity configuration — what develops when conditions support it. The False Self maps to Universal Masking — the structure built when authenticity could not be safely expressed, absorbed by False Coherence." },
       { id: "key-sources", title: "Key Sources", content: "Winnicott, D. W. (1960). Ego distortion in terms of true and false self. In The Maturational Processes. Hogarth Press. \u00b7 Winnicott, D. W. (1971). Playing and Reality. Tavistock." },
     ],
   },
@@ -293,7 +293,7 @@ const THEORIES = [
     frameworks: ["F2", "F3", "F5"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Kohut's Self Psychology proposes that the self develops through relationships with self-objects — others who provide essential developmental functions: mirroring (reflecting value), idealizing (providing strength), and twinship (offering belonging). When these needs go chronically unmet, compensatory structures develop." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates self-object needs into nervous system terms. Mirroring is co-regulation: the caregiver's attunement teaches the child's system that its states matter. Compensatory structures are Role Mask architecture — built to secure connection when authenticity couldn't." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates self-object needs into nervous system terms. Mirroring is co-regulation: the caregiver's attunement teaches the child's system that its states matter. Compensatory structures map to False Coherence — built to secure belonging when the authentic configuration could not be safely expressed." },
       { id: "key-sources", title: "Key Sources", content: "Kohut, H. (1971). The Analysis of the Self. International Universities Press. \u00b7 Kohut, H. (1977). The Restoration of the Self. International Universities Press." },
     ],
   },
@@ -529,7 +529,7 @@ const globalModels = [
     author: "Robert Plutchik",
     coreContribution: "Maps 8 primary emotions and shows how they combine into complex feelings — one of the most widely used tools for teaching emotional vocabulary.",
     tegBlueAdds: [
-      "Places each emotion inside a systemic context (Connection, Protection, Control, Domination) so the same emotion reads differently depending on the nervous system state it emerges from",
+      "Places each emotion inside the nervous system gradient (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance) so the same emotion reads differently depending on the state it emerges from",
       "Adds trauma-informed gradients within each emotion — distinguishing hurt, neglect, abuse, and malicious intent",
       "Connects emotional identification to relational repair, not just classification",
     ],
@@ -541,7 +541,7 @@ const globalModels = [
     author: "Marshall Rosenberg",
     coreContribution: "Provides a clear language structure — observation, feeling, need, request — that promotes empathy and reduces blame in conflict.",
     tegBlueAdds: [
-      "Maps the conditions under which NVC works well (Connection/Protection) and where it breaks down (Control/Domination dynamics)",
+      "Maps the conditions under which NVC works well (Safety & Openness / Threat & Defence) and where it breaks down (Strategy & Management / Power & Dominance dynamics)",
       "Adds emotional gradients that help distinguish discomfort from genuine harm",
       "Provides visual tools that make feelings and patterns visible — helpful for neurodivergent users and people in survival states",
     ],
@@ -571,7 +571,7 @@ const globalModels = [
       "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
       "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the nervous system in Threat & Defence",
       "F6 uses state-dependent perception to explain how nervous system state determines what is perceived — bias as neuroception operating at the cognitive level",
-      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Reading Emotions toward management while collapsing Emotional Resonance, producing the capacity configuration that most reliably mimics Connection",
+      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Interpersonal Affect Perception (RE) toward management while collapsing Affective Resonance (ER), producing the capacity configuration that most reliably mimics Safety & Openness",
       "F8 maps how ventral vagal safety enables capacity development — felt safety as the first of five conditions for repair, and why cognitive insight without nervous system regulation cannot produce lasting change",
       "F9 uses neuroception to explain System Mismatch — how the nervous system responds to environmental match or mismatch, why neurodivergent nervous systems are pushed toward Threat & Defence by structural design rather than individual pathology",
       "F10 maps co-regulation as a generational transmission pathway — the adult's nervous system functions as the child's external regulator, transmitting regulatory capacity through nervous system synchronization",
@@ -646,7 +646,7 @@ const globalModels = [
     coreContribution: "Trauma-informed model that views the mind as made of parts (protectors, managers, exiles, Self) — treats protective strategies as functional adaptations rather than symptoms.",
     tegBlueAdds: [
       "Integrates inner parts into a relational and systemic gradient",
-      "Shows how inner protectors mirror relational patterns across Connection, Protection, Control, and Domination",
+      "Shows how inner protectors mirror relational patterns across the four nervous system states",
       "F4 maps IFS's protective parts as internal rule-enforcers — the self-policing mechanism (Steps 6–7 of rule internalization)",
       "Adds harm-measurement scales that connect personal restoration to collective repair",
     ],
@@ -1869,7 +1869,7 @@ function ValidationMethod() {
                 lineHeight: 1.7,
               }}
             >
-              <li>Four-mode detection in natural language</li>
+              <li>Nervous system state detection in natural language</li>
               <li>Complexity markers as regulatory capacity signals</li>
               <li>Escalation / de-escalation patterns</li>
             </ul>
