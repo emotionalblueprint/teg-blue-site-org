@@ -16,8 +16,8 @@ const FAQ_ITEMS = [
     answer: "Yes. All research, frameworks, models, and methodology are published under CC BY-NC-SA 4.0. No access restrictions. Researchers can independently use the framework, data, and methodology.",
   },
 ];
-import { BG, FONT, TEXT, BORDER, SPECTRUM, RESEARCHER, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
+import { BG, FONT, TEXT, BORDER, SPECTRUM, MAIN_ORG, PATTERN_GRADIENT, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, BadgePill } from "@/src/components";
 
 const EmotionWaveSection = dynamic(() => import("@/src/components/EmotionWaveSection"), { ssr: false });
 
@@ -93,23 +93,8 @@ export default function ResearchHub() {
               {/* ── Hero ── */}
               <section style={{ paddingTop: "clamp(20px, 4vw, 32px)", paddingBottom: "clamp(16px, 3vw, 24px)" }}>
                 {/* Badge pill */}
-                <div
-                  style={{
-                    display: "inline-block",
-                    padding: "4px 12px",
-                    borderRadius: 100,
-                    fontSize: 10,
-                    fontWeight: 700,
-                    fontFamily: FONT.mono,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    color: RESEARCHER.accent,
-                    backgroundColor: hexToRgba(RESEARCHER.accent, 0.15),
-                    border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.3)}`,
-                    marginBottom: 24,
-                  }}
-                >
-                  Emotional Technology Research
+                <div style={{ marginBottom: 24 }}>
+                  <BadgePill color={MAIN_ORG.accent}>Emotional Technology Research</BadgePill>
                 </div>
 
                 {/* Title */}
@@ -151,7 +136,7 @@ export default function ResearchHub() {
                       alignItems: "center",
                       gap: 8,
                       padding: "12px 24px",
-                      background: RESEARCHER.accent,
+                      background: MAIN_ORG.accent,
                       color: "#fff",
                       borderRadius: 8,
                       fontWeight: 500,
@@ -168,13 +153,13 @@ export default function ResearchHub() {
                       alignItems: "center",
                       gap: 8,
                       padding: "12px 24px",
-                      background: hexToRgba(RESEARCHER.accent, 0.1),
-                      color: RESEARCHER.accent,
+                      background: hexToRgba(MAIN_ORG.accent, 0.1),
+                      color: MAIN_ORG.accent,
                       borderRadius: 8,
                       fontWeight: 500,
                       fontSize: 14,
                       textDecoration: "none",
-                      border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
+                      border: `1px solid ${hexToRgba(MAIN_ORG.accent, 0.2)}`,
                     }}
                   >
                     See the Frameworks
@@ -220,23 +205,8 @@ export default function ResearchHub() {
           {/* ── The Regulation Thread ── */}
           <section id="the-regulation-thread">
             {/* Badge pill */}
-            <div
-              style={{
-                display: "inline-block",
-                padding: "4px 12px",
-                borderRadius: 100,
-                fontSize: 10,
-                fontWeight: 700,
-                fontFamily: FONT.mono,
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: SPECTRUM.cobalt,
-                backgroundColor: hexToRgba(SPECTRUM.cobalt, 0.15),
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.3)}`,
-                marginBottom: 16,
-              }}
-            >
-              The Regulation Thread
+            <div style={{ marginBottom: 16 }}>
+              <BadgePill color={SPECTRUM.cobalt}>The Regulation Thread</BadgePill>
             </div>
 
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
@@ -333,10 +303,10 @@ export default function ResearchHub() {
             </p>
             <div
               style={{
-                background: gradientCardBg(RESEARCHER.accent),
+                background: gradientCardBg(MAIN_ORG.accent),
                 borderRadius: 10,
                 border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${RESEARCHER.accent}`,
+                borderLeft: `3px solid ${MAIN_ORG.accent}`,
                 padding: "24px 28px",
               }}
             >
@@ -373,7 +343,7 @@ export default function ResearchHub() {
                       alignItems: "center",
                       gap: 6,
                       padding: "10px 18px",
-                      background: RESEARCHER.accent,
+                      background: MAIN_ORG.accent,
                       color: "#fff",
                       borderRadius: 6,
                       fontWeight: 500,
@@ -390,13 +360,13 @@ export default function ResearchHub() {
                       alignItems: "center",
                       gap: 6,
                       padding: "10px 18px",
-                      background: hexToRgba(RESEARCHER.accent, 0.1),
-                      color: RESEARCHER.accent,
+                      background: hexToRgba(MAIN_ORG.accent, 0.1),
+                      color: MAIN_ORG.accent,
                       borderRadius: 6,
                       fontWeight: 500,
                       fontSize: 13,
                       textDecoration: "none",
-                      border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
+                      border: `1px solid ${hexToRgba(MAIN_ORG.accent, 0.2)}`,
                     }}
                   >
                     See methodology

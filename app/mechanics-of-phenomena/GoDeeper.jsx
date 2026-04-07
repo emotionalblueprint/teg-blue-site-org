@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TEXT, FONT, EDITORIAL, hexToRgba } from "@/src/styles/tokens";
+import { TEXT, FONT, ACCENT, hexToRgba } from "@/src/styles/tokens";
 
 /**
  * GoDeeper — Amber-tinted panel at the bottom of each piece.
@@ -14,8 +14,8 @@ export default function GoDeeper({ items }) {
       style={{
         marginTop: 48,
         padding: "32px 28px",
-        background: hexToRgba(EDITORIAL.accentMuted, 0.25),
-        border: `1px solid ${hexToRgba(EDITORIAL.accent, 0.2)}`,
+        background: hexToRgba(ACCENT.amberMuted, 0.25),
+        border: `1px solid ${hexToRgba(ACCENT.amber, 0.2)}`,
         borderRadius: 8,
       }}
     >
@@ -23,7 +23,7 @@ export default function GoDeeper({ items }) {
         style={{
           fontSize: 16,
           fontWeight: 600,
-          color: EDITORIAL.accent,
+          color: ACCENT.amber,
           marginBottom: 24,
           letterSpacing: "-0.01em",
         }}
@@ -49,7 +49,7 @@ export default function GoDeeper({ items }) {
               href={item.href}
               style={{
                 fontSize: 14,
-                color: EDITORIAL.accent,
+                color: ACCENT.amber,
                 textDecoration: "none",
                 fontFamily: FONT.mono,
                 letterSpacing: "0.01em",

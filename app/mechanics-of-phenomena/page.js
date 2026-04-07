@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, FONT, BORDER, EDITORIAL, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, FONT, BORDER, ACCENT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
@@ -83,7 +83,7 @@ export default function MechanicsOfPhenomenaPage() {
                     fontWeight: 600,
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: EDITORIAL.accent,
+                    color: ACCENT.amber,
                     marginBottom: 6,
                   }}
                 >
@@ -114,7 +114,7 @@ export default function MechanicsOfPhenomenaPage() {
                         background: BG.card,
                         borderRadius: 10,
                         border: `1px solid ${BORDER.default}`,
-                        borderLeft: `3px solid ${piece.featured ? EDITORIAL.accent : hexToRgba(EDITORIAL.accent, 0.3)}`,
+                        borderLeft: `3px solid ${piece.featured ? ACCENT.amber : hexToRgba(ACCENT.amber, 0.3)}`,
                         textDecoration: "none",
                         transition: "border-color 0.2s ease",
                       }}
@@ -125,7 +125,7 @@ export default function MechanicsOfPhenomenaPage() {
                             fontFamily: FONT.mono,
                             fontSize: 11,
                             fontWeight: 600,
-                            color: EDITORIAL.accent,
+                            color: ACCENT.amber,
                             letterSpacing: "0.04em",
                           }}
                         >
@@ -165,7 +165,7 @@ export default function MechanicsOfPhenomenaPage() {
                         style={{
                           fontSize: 17,
                           fontWeight: 600,
-                          color: piece.featured ? EDITORIAL.accent : TEXT.primary,
+                          color: piece.featured ? ACCENT.amber : TEXT.primary,
                           lineHeight: 1.3,
                           marginBottom: 8,
                         }}

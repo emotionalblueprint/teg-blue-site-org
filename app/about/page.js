@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
@@ -537,7 +537,7 @@ export default function AboutPage() {
 const sectionHeading = {
   fontSize: 18,
   fontWeight: 600,
-  color: RESEARCHER.accent,
+  color: MAIN_ORG.accent,
   marginBottom: 12,
 };
 
@@ -598,13 +598,13 @@ function NavLink({ href, label }) {
         alignItems: "center",
         gap: 6,
         padding: "10px 18px",
-        background: hexToRgba(RESEARCHER.accent, 0.1),
-        color: RESEARCHER.accent,
+        background: hexToRgba(MAIN_ORG.accent, 0.1),
+        color: MAIN_ORG.accent,
         borderRadius: 6,
         fontWeight: 500,
         fontSize: 13,
         textDecoration: "none",
-        border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
+        border: `1px solid ${hexToRgba(MAIN_ORG.accent, 0.2)}`,
       }}
     >
       {label} →

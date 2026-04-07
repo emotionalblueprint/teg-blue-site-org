@@ -1,7 +1,7 @@
 import {
   BG, TEXT, BORDER, FONT, SPACING, RADIUS, TRANSITION, OPACITY,
-  SPECTRUM, PATTERN, PATTERN_GRADIENT, AWARENESS, STATUS,
-  MODE_ORANGE, MODE_PINK,
+  SPECTRUM, PATTERN, PATTERN_GRADIENT, AWARENESS, AWARENESS_TONES, STATUS,
+  ACCENT, MAIN_ORG,
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, FluidCompassExplorer } from "@/src/components";
@@ -161,14 +161,20 @@ export default function DesignSystemPage() {
           }} />
 
           <SwatchRow label="Awareness Capacities">
+            <Swatch color={AWARENESS.SEA} label="SEA" sublabel={AWARENESS.SEA} />
             <Swatch color={AWARENESS.RE} label="RE" sublabel={AWARENESS.RE} />
             <Swatch color={AWARENESS.ER} label="ER" sublabel={AWARENESS.ER} />
-            <Swatch color={AWARENESS.SEA} label="SEA" sublabel={AWARENESS.SEA} />
           </SwatchRow>
 
-          <SwatchRow label="Mode Accents">
-            <Swatch color={MODE_ORANGE} label="Orange" sublabel={MODE_ORANGE} />
-            <Swatch color={MODE_PINK} label="Pink" sublabel={MODE_PINK} />
+          <SwatchRow label="Accent Colors">
+            <Swatch color={ACCENT.green} label="Green" sublabel={ACCENT.green} />
+            <Swatch color={ACCENT.amber} label="Amber" sublabel={ACCENT.amber} />
+            <Swatch color={ACCENT.orange} label="Orange" sublabel={ACCENT.orange} />
+            <Swatch color={ACCENT.pink} label="Pink" sublabel={ACCENT.pink} />
+          </SwatchRow>
+
+          <SwatchRow label="Main">
+            <Swatch color={MAIN_ORG.accent} label="MAIN_ORG" sublabel={MAIN_ORG.accent} />
           </SwatchRow>
 
           <SwatchRow label="Status">
@@ -695,11 +701,11 @@ export default function DesignSystemPage() {
                 ["Zone dividers", "3px wide · rgba(0,0,0,0.6) · at 25%, 50%, 75%"],
                 ["Mode labels", "11px mono · active: 700 weight + mode color · inactive: 400 weight + 35% opacity"],
                 ["Mode title", "18px 700 · mode-colored"],
-                ["Type pill", "10px mono 600 uppercase · BG.surface bg · BORDER.default · stuck: MODE_ORANGE + 10% bg + 25% border"],
+                ["Type pill", "10px mono 600 uppercase · BG.surface bg · BORDER.default · stuck: ACCENT.orange + 10% bg + 25% border"],
                 ["Metadata", "12px mono · TEXT.muted · items separated by dot"],
                 ["Description", "14px · TEXT.secondary · line-height 1.7 · max-width 640px"],
                 ["Insight quote", "13px 500 italic · TEXT.primary · 3px left border in mode color · 6% bg · radius: 0 6px 6px 0"],
-                ["Sequence label", "10px mono 600 uppercase · TEXT.muted (fluid) or MODE_ORANGE (stuck)"],
+                ["Sequence label", "10px mono 600 uppercase · TEXT.muted (fluid) or ACCENT.orange (stuck)"],
                 ["Sequence value", "12px mono 600 · mode-colored (fluid) or italic TEXT.secondary (stuck)"],
                 ["Capacity cards", "grid auto-fit minmax(150px, 1fr) · gap: 8px · 10px 12px padding · 8px radius"],
                 ["Card title", "11px mono 700 uppercase · mode-colored · 0.04em tracking"],

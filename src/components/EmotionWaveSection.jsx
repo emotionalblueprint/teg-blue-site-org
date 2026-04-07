@@ -4,14 +4,14 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPACING,
-  RESEARCHER, PATTERN, MODE_ORANGE, hexToRgba, gradientCardBg,
+  MAIN_ORG, PATTERN, ACCENT, hexToRgba, gradientCardBg,
 } from "@/src/styles/tokens";
 import { EMOTION_WAVE as MOMENTS } from "@/src/data/m1-data";
 
 // ─── Map token values to the names used throughout this component ──
 const MAIN_BLUE = PATTERN.B.primary;   // #3b82f6
-const ORANGE = MODE_ORANGE;            // #f97316
-const ACCENT = RESEARCHER.accent;      // #2563eb
+const ORANGE = ACCENT.orange;          // #e87b35
+const ORG_ACCENT = MAIN_ORG.accent;   // #2563eb
 
 // ─── Chart Constants ──────────────────────────────────────────
 const VW = 900, VH = 220;
@@ -190,7 +190,7 @@ export default function EmotionWaveSection({
         <div style={{
           position: "absolute", top: "18%", left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "300px",
-          background: `radial-gradient(ellipse, ${hexToRgba(ACCENT, 0.04)} 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse, ${hexToRgba(ORG_ACCENT, 0.04)} 0%, transparent 70%)`,
           pointerEvents: "none", zIndex: 0
         }}/>
 
@@ -202,8 +202,8 @@ export default function EmotionWaveSection({
               display: "inline-block",
               padding: "4px 10px",
               borderRadius: 6,
-              background: hexToRgba(ACCENT, 0.12),
-              border: `1px solid ${hexToRgba(ACCENT, 0.25)}`,
+              background: hexToRgba(ORG_ACCENT, 0.12),
+              border: `1px solid ${hexToRgba(ORG_ACCENT, 0.25)}`,
               marginBottom: "16px"
             }}>
               <span style={{
@@ -281,16 +281,16 @@ export default function EmotionWaveSection({
                 <line key={v}
                   x1={PL} y1={PT + (1 - v) * PH}
                   x2={PL + PW} y2={PT + (1 - v) * PH}
-                  stroke={hexToRgba(ACCENT, 0.06)} strokeWidth="1"/>
+                  stroke={hexToRgba(ORG_ACCENT, 0.06)} strokeWidth="1"/>
               ))}
 
               {/* Baseline */}
               <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
-                stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
+                stroke={hexToRgba(ORG_ACCENT, 0.15)} strokeWidth="1"/>
 
               {/* Y-axis */}
               <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
-                stroke={hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
+                stroke={hexToRgba(ORG_ACCENT, 0.15)} strokeWidth="1"/>
               <text x={14} y={PT + PH / 2} textAnchor="middle"
                 transform={`rotate(-90,14,${PT + PH / 2})`}
                 style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px", fill: TEXT.hint, letterSpacing: "0.12em" }}>
@@ -353,7 +353,7 @@ export default function EmotionWaveSection({
                 return (
                   <g key={m.id}>
                     <line x1={mx} y1={PT + PH} x2={mx} y2={PT + PH + 5}
-                      stroke={reached ? m.color : hexToRgba(ACCENT, 0.15)} strokeWidth="1"/>
+                      stroke={reached ? m.color : hexToRgba(ORG_ACCENT, 0.15)} strokeWidth="1"/>
                     <text x={mx} y={PT + PH + 15} textAnchor="middle"
                       style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px",
                         fill: reached ? m.color : TEXT.hint, letterSpacing: "0.05em" }}>
@@ -372,10 +372,10 @@ export default function EmotionWaveSection({
               return (
                 <div key={m.id} className={`moment-pill ${reached ? "visible" : ""}`}
                   style={{
-                    background: `linear-gradient(135deg, ${hexToRgba(ACCENT, 0.06)}, transparent)`,
+                    background: `linear-gradient(135deg, ${hexToRgba(ORG_ACCENT, 0.06)}, transparent)`,
                     padding: "18px 16px",
                     borderRadius: "12px",
-                    border: `1px solid ${reached ? hexToRgba(ACCENT, 0.2) : BORDER.default}`,
+                    border: `1px solid ${reached ? hexToRgba(ORG_ACCENT, 0.2) : BORDER.default}`,
                     borderLeft: `3px solid ${reached ? m.color : BORDER.default}`,
                     transition: "border-color 0.5s ease, opacity 0.4s ease, transform 0.4s ease"
                   }}>
@@ -419,8 +419,8 @@ export default function EmotionWaveSection({
                 alignItems: "center",
                 gap: "10px",
                 padding: "12px 24px",
-                border: `1px solid ${hexToRgba(ACCENT, 0.3)}`,
-                background: hexToRgba(ACCENT, 0.08),
+                border: `1px solid ${hexToRgba(ORG_ACCENT, 0.3)}`,
+                background: hexToRgba(ORG_ACCENT, 0.08),
                 color: MAIN_BLUE,
                 borderRadius: "8px",
                 fontFamily: FONT.mono,

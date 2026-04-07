@@ -5,7 +5,7 @@
  * Update this file when adding new pieces.
  */
 
-import { TEXT, FONT, BORDER, EDITORIAL } from "@/src/styles/tokens";
+import { TEXT, FONT, BORDER, ACCENT } from "@/src/styles/tokens";
 
 // ─── SIDEBAR DATA ────────────────────────────────────────
 
@@ -174,7 +174,7 @@ export const READING = {
     fontSize: 11,
     fontWeight: 500,
     letterSpacing: "0.04em",
-    color: EDITORIAL.accent,
+    color: ACCENT.amber,
     marginBottom: 12,
   },
   subtitle: {

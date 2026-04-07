@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, EDITORIAL, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, ACCENT, hexToRgba, MAIN_ORG, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
@@ -569,10 +569,10 @@ export default function TheoreticalFoundationsPage() {
             href="/mechanics-of-phenomena"
             style={{
               padding: 20,
-              background: gradientCardBg(EDITORIAL.accent),
+              background: gradientCardBg(ACCENT.amber),
               borderRadius: 10,
               border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${EDITORIAL.accent}`,
+              borderLeft: `3px solid ${ACCENT.amber}`,
               textDecoration: "none",
               display: "block",
             }}
@@ -581,7 +581,7 @@ export default function TheoreticalFoundationsPage() {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: EDITORIAL.accent,
+                color: ACCENT.amber,
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
                 fontFamily: FONT.mono,

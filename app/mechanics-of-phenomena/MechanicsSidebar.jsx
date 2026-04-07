@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { TEXT, FONT, BORDER, EDITORIAL } from "@/src/styles/tokens";
+import { TEXT, FONT, BORDER, ACCENT } from "@/src/styles/tokens";
 import { SERIES } from "./mechanics-config";
 
 /**
@@ -51,7 +51,7 @@ export default function MechanicsSidebar({ activePiece, showBackLink = false, ar
             display: "block",
             fontSize: 12,
             fontFamily: FONT.mono,
-            color: EDITORIAL.accent,
+            color: ACCENT.amber,
             textDecoration: "none",
             marginBottom: 20,
             letterSpacing: "0.02em",
@@ -111,13 +111,13 @@ export default function MechanicsSidebar({ activePiece, showBackLink = false, ar
                   style={{
                     display: "block",
                     fontSize: 12,
-                    color: isActive ? EDITORIAL.accent : TEXT.muted,
+                    color: isActive ? ACCENT.amber : TEXT.muted,
                     fontWeight: isActive ? 500 : 400,
                     textDecoration: "none",
                     lineHeight: 1.5,
                     paddingLeft: isActive ? 10 : 0,
                     borderLeft: isActive
-                      ? `2px solid ${EDITORIAL.accent}`
+                      ? `2px solid ${ACCENT.amber}`
                       : "2px solid transparent",
                     transition: "all 150ms ease",
                   }}
@@ -179,13 +179,13 @@ export default function MechanicsSidebar({ activePiece, showBackLink = false, ar
                   style={{
                     display: "block",
                     fontSize: 12,
-                    color: isActiveSection ? EDITORIAL.accentLight : EDITORIAL.accent,
+                    color: isActiveSection ? ACCENT.amberLight : ACCENT.amber,
                     fontWeight: isActiveSection ? 500 : 400,
                     textDecoration: "none",
                     lineHeight: 1.5,
                     paddingLeft: isActiveSection ? 10 : 0,
                     borderLeft: isActiveSection
-                      ? `2px solid ${EDITORIAL.accentLight}`
+                      ? `2px solid ${ACCENT.amberLight}`
                       : "2px solid transparent",
                     transition: "all 150ms ease",
                   }}

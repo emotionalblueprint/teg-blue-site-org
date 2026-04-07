@@ -1,4 +1,4 @@
-import { TEXT, FONT, RESEARCHER, hexToRgba, gradientCardBg } from "../styles/tokens";
+import { TEXT, FONT, MAIN_ORG, hexToRgba, gradientCardBg } from "../styles/tokens";
 
 /**
  * MechanismBox — Left-border accent box for key insights/mechanisms
@@ -12,9 +12,9 @@ export default function MechanismBox({ label, children }) {
       style={{
         borderRadius: 12,
         padding: 20,
-        background: gradientCardBg(RESEARCHER.accent),
-        border: `1px solid ${hexToRgba(RESEARCHER.accent, 0.2)}`,
-        borderLeft: `3px solid ${RESEARCHER.accent}`,
+        background: gradientCardBg(MAIN_ORG.accent),
+        border: `1px solid ${hexToRgba(MAIN_ORG.accent, 0.2)}`,
+        borderLeft: `3px solid ${MAIN_ORG.accent}`,
       }}
     >
       {label && (
@@ -25,7 +25,7 @@ export default function MechanismBox({ label, children }) {
             textTransform: "uppercase",
             letterSpacing: "0.1em",
             fontFamily: FONT.mono,
-            color: RESEARCHER.accent,
+            color: MAIN_ORG.accent,
             marginBottom: 8,
           }}
         >

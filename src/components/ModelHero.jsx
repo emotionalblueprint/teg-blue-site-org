@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TEXT, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
+import BadgePill from "./BadgePill";
 
 /**
  * ModelHero — Hero section for model pages.
@@ -32,23 +33,8 @@ export default function ModelHero({
     >
       {/* Badge pill */}
       {badge && (
-        <div
-          style={{
-            display: "inline-block",
-            padding: "4px 12px",
-            borderRadius: 100,
-            fontSize: 10,
-            fontWeight: 700,
-            fontFamily: FONT.mono,
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            color: color,
-            backgroundColor: hexToRgba(color, 0.15),
-            border: `1px solid ${hexToRgba(color, 0.3)}`,
-            marginBottom: 16,
-          }}
-        >
-          {badge}
+        <div style={{ marginBottom: 16 }}>
+          <BadgePill color={color}>{badge}</BadgePill>
         </div>
       )}
 

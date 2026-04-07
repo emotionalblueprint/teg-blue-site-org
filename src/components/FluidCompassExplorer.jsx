@@ -4,7 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import {
   FONT, TEXT, BG, BORDER,
   PATTERN, hexToRgba,
-  MODE_ORANGE,
+  ACCENT,
 } from "@/src/styles/tokens";
 import { COMPASS_CONDITIONS, MODES } from "@/src/data/m2-data";
 
@@ -38,7 +38,7 @@ export default function FluidCompassExplorer() {
   const isDragging = useRef(false);
   const activeMode = getActiveMode(position);
   const data = isStuck ? activeMode.chronic : activeMode.fluid;
-  const accentColor = isStuck ? MODE_ORANGE : activeMode.hex;
+  const accentColor = isStuck ? ACCENT.orange : activeMode.hex;
 
   const updatePosition = useCallback((clientX) => {
     if (!barRef.current) return;
@@ -178,9 +178,9 @@ export default function FluidCompassExplorer() {
                 cursor: "pointer",
                 transition: "all 200ms ease",
                 background: isStuck
-                  ? hexToRgba(MODE_ORANGE, 0.15)
+                  ? hexToRgba(ACCENT.orange, 0.15)
                   : "transparent",
-                color: isStuck ? MODE_ORANGE : TEXT.muted,
+                color: isStuck ? ACCENT.orange : TEXT.muted,
               }}
             >
               Stuck
@@ -371,15 +371,15 @@ export default function FluidCompassExplorer() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              color: isStuck ? MODE_ORANGE : TEXT.muted,
+              color: isStuck ? ACCENT.orange : TEXT.muted,
               padding: "2px 8px",
               borderRadius: 100,
               background: isStuck
-                ? hexToRgba(MODE_ORANGE, 0.1)
+                ? hexToRgba(ACCENT.orange, 0.1)
                 : BG.surface,
               border: `1px solid ${
                 isStuck
-                  ? hexToRgba(MODE_ORANGE, 0.25)
+                  ? hexToRgba(ACCENT.orange, 0.25)
                   : BORDER.default
               }`,
               transition: "all 300ms ease",
@@ -449,8 +449,8 @@ export default function FluidCompassExplorer() {
               marginBottom: 24,
               padding: "12px 16px",
               borderRadius: 8,
-              background: hexToRgba(MODE_ORANGE, 0.05),
-              border: `1px solid ${hexToRgba(MODE_ORANGE, 0.12)}`,
+              background: hexToRgba(ACCENT.orange, 0.05),
+              border: `1px solid ${hexToRgba(ACCENT.orange, 0.12)}`,
             }}
           >
             <span
@@ -460,7 +460,7 @@ export default function FluidCompassExplorer() {
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
-                color: MODE_ORANGE,
+                color: ACCENT.orange,
                 flexShrink: 0,
               }}
             >

@@ -7,6 +7,8 @@
  *
  * BG, TEXT, and BORDER reference CSS custom properties
  * defined in globals.css — they auto-switch with theme.
+ *
+ * Updated session 121: vault-2 color overhaul.
  */
 
 // ─── BACKGROUNDS ─────────────────────────────────────
@@ -38,15 +40,15 @@ export const BORDER = {
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────
-// Six flat tones. No gradients. Each maps to a content type.
+// Six tones with full hue/lightness spread. Each maps to a content type.
 
 export const SPECTRUM = {
-  sky:    "#93CFFF",   // Glossary — light, accessible
-  azure:  "#5BADFF",   // Open Data — clear, transparent
-  blue:   "#4B8FFF",   // Publications — core, authoritative
-  cobalt: "#4472EE",   // Frameworks (F1-F12) — structured
-  indigo: "#5B62D4",   // Foundations & Theory — deep
-  slate:  "#7B8BB0",   // Methodology & Meta — neutral
+  sky:    "#b6ebfc",   // Glossary — ice, light
+  azure:  "#76e2ff",   // Open Data — cyan, clear
+  blue:   "#00b1ff",   // Publications — bright blue-cyan, core
+  cobalt: "#0590e5",   // Frameworks (F1-F12) — deep blue
+  indigo: "#7b7bff",   // Foundations & Theory — violet
+  slate:  "#808493",   // Methodology & Meta — neutral grey
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────
@@ -143,52 +145,65 @@ export const OPACITY = {
   borderActive: 0.45, // Active/expanded border
 };
 
-// ─── PATTERN COLORS (Four-Mode Gradient — monochromatic blue) ───
+// ─── PATTERN COLORS (Four-Mode Gradient) ─────────────
 
 export const PATTERN = {
-  A: { primary: '#93CFFF', bg: 'rgba(147,207,255,0.08)', border: 'rgba(147,207,255,0.25)' },
-  B: { primary: '#5BADFF', bg: 'rgba(91,173,255,0.08)',  border: 'rgba(91,173,255,0.25)' },
-  C: { primary: '#346AEC', bg: 'rgba(52,106,236,0.08)',  border: 'rgba(52,106,236,0.25)' },
-  D: { primary: '#2563eb', bg: 'rgba(37,99,235,0.08)',   border: 'rgba(37,99,235,0.25)' },
+  A: { primary: '#a0cdfb', bg: 'rgba(160,205,251,0.08)', border: 'rgba(160,205,251,0.25)' },
+  B: { primary: '#6fabf8', bg: 'rgba(111,171,248,0.08)', border: 'rgba(111,171,248,0.25)' },
+  C: { primary: '#4f80f7', bg: 'rgba(79,128,247,0.08)',  border: 'rgba(79,128,247,0.25)' },
+  D: { primary: '#1255fc', bg: 'rgba(18,85,252,0.08)',   border: 'rgba(18,85,252,0.25)' },
 };
 
-export const PATTERN_GRADIENT = 'linear-gradient(90deg, #93CFFF, #5BADFF, #346AEC, #2563eb)';
+export const PATTERN_GRADIENT = 'linear-gradient(90deg, #a0cdfb, #6fabf8, #4f80f7, #1255fc)';
 
-// ─── RESEARCHER ACCENT (framework/research page accent) ────
-export const RESEARCHER = {
+// ─── MAIN_ORG (primary action color — badges, CTAs, links) ──
+export const MAIN_ORG = {
   accent: '#2563eb',
 };
 
-// ─── THREE AWARENESS CAPACITIES (cross-site canonical — matches .com) ───
+// ─── THREE AWARENESS CAPACITIES ──────────────────────
 
 export const AWARENESS = {
-  RE:  '#a080ff',   // violet — Reading Emotions
-  ER:  '#22d3ee',   // cyan — Emotional Resonance
-  SEA: '#a0e85a',   // green — Self-Emotional Awareness
+  SEA: '#4129ff',   // deep violet — Interoceptive Self-Awareness
+  RE:  '#00b1ff',   // bright cyan-blue — Interpersonal Affect Perception
+  ER:  '#0d879b',   // dark teal — Affective Resonance
 };
 
-// ─── STATUS COLORS ──────────────────────────────────────
+// Lighter tones for diagram backgrounds, borders, labels
+export const AWARENESS_TONES = {
+  SEA: ['#5850ff', '#7b7bff', '#a9a9ff'],
+  RE:  ['#3bccff', '#76e2ff', '#bbf2ff'],
+  ER:  ['#3eacb7', '#6bd1d6', '#91eded'],
+};
+
+// ─── ACCENT COLORS ───────────────────────────────────
+// Four accents for diagrams, highlights, states, and editorial.
+
+export const ACCENT = {
+  green:      '#55b685',   // positive indicators, diagrams
+  amber:      '#e9a23b',   // editorial, warm highlights
+  amberLight: '#f2b856',   // hover/active states
+  amberMuted: '#7d5418',   // subtle dark backgrounds
+  orange:     '#e87b35',   // "stuck" state, external regulation
+  pink:       '#da5597',   // domination emphasis, diagrams
+};
+
+// ─── STATUS COLORS (derives from accent + spectrum) ──
 
 export const STATUS = {
-  draft:    '#f59e0b',      // amber
+  draft:     ACCENT.amber,
   published: SPECTRUM.blue,
-  reviewed: '#10b981',      // emerald
+  reviewed:  ACCENT.green,
 };
 
-// ─── MODE ACCENT COLORS (canonical mode colors — matches .com) ──
+// ─── UTILITY ─────────────────────────────────────────
 
-export const MODE_TEAL   = '#14b8a6'; // connection / safety & openness
-export const MODE_YELLOW = '#eab308'; // protection / threat & defence
-export const MODE_ORANGE = '#f97316'; // control / strategy & management
-export const MODE_PINK   = '#ec4899'; // domination / power & dominance
-
-// ─── EDITORIAL ACCENT (Mechanics of Phenomena section) ──
-
-export const EDITORIAL = {
-  accent:      '#f59e0b',  // amber-500 — primary editorial accent
-  accentLight: '#fbbf24',  // amber-400 — hover/active
-  accentMuted: '#92400e',  // amber-900 — subtle backgrounds
-};
+export function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 
 // Helper: gradient card background
 export function gradientCardBg(color, startOpacity = 0.08) {
@@ -202,15 +217,6 @@ export function cardColors(hex) {
     border: hexToRgba(hex, 0.22),
     borderHover: hexToRgba(hex, 0.35),
   };
-}
-
-// ─── UTILITY ─────────────────────────────────────────
-
-export function hexToRgba(hex, alpha) {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
 export function getContentTypeColor(type) {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, RESEARCHER, gradientCardBg } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, MAIN_ORG, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 

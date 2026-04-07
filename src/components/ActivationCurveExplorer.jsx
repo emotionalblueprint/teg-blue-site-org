@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useMemo } from 'react';
 import {
   FONT, TEXT, BG, BORDER, RADIUS,
-  PATTERN, MODE_ORANGE, hexToRgba,
+  PATTERN, ACCENT, hexToRgba,
 } from '@/src/styles/tokens';
 import { MODES, FLUID_CURVES, CHRONIC_CURVES } from '@/src/data/m2-data';
 import { RESTORATION } from '@/src/data/m3-data';

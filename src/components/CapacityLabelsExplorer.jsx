@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, AWARENESS, PATTERN, MODE_ORANGE,
+  hexToRgba, AWARENESS, PATTERN, ACCENT,
 } from "@/src/styles/tokens";
 
 // ─── CAPACITY STATE VALUES ──────────────────────────────────
@@ -19,7 +19,7 @@ const CAPACITY_STATES = {
 const REGULATION_COLORS = {
   Internal:   SPECTRUM.sky,       // blue — same as fluid compass
   Relational: AWARENESS.ER,       // ER color — resonance-based
-  External:   MODE_ORANGE,        // orange — same as "stuck" indicator
+  External:   ACCENT.orange,        // orange — same as "stuck" indicator
   Oscillates: SPECTRUM.azure,     // mid blue — unstable
   None:       TEXT.muted,         // grey — offline
 };
@@ -330,7 +330,7 @@ function getManualInsight(re, er, sea) {
   if (sea < 0.05 && er > 0.5) return {
     headline: "Resonance without self-tracking.",
     body: "Emotional signals from others land in the body, but the internal compass has no return address. The system absorbs without boundaries.",
-    color: MODE_ORANGE,
+    color: ACCENT.orange,
   };
 
   if (sea < 0.05 && re > 0.7 && er < 0.3) return {
@@ -564,10 +564,10 @@ function CompassVisualization({ position, isStuck, isFluid, disabled }) {
         <span style={{
           fontSize: 10, fontFamily: FONT.mono, fontWeight: 700,
           textTransform: "uppercase", letterSpacing: "0.08em",
-          color: isStuck ? MODE_ORANGE : (isFluid ? SPECTRUM.sky : TEXT.muted),
+          color: isStuck ? ACCENT.orange : (isFluid ? SPECTRUM.sky : TEXT.muted),
           padding: "2px 8px", borderRadius: 100,
-          background: isStuck ? hexToRgba(MODE_ORANGE, 0.1) : (isFluid ? hexToRgba(SPECTRUM.sky, 0.08) : "transparent"),
-          border: `1px solid ${isStuck ? hexToRgba(MODE_ORANGE, 0.2) : (isFluid ? hexToRgba(SPECTRUM.sky, 0.15) : "transparent")}`,
+          background: isStuck ? hexToRgba(ACCENT.orange, 0.1) : (isFluid ? hexToRgba(SPECTRUM.sky, 0.08) : "transparent"),
+          border: `1px solid ${isStuck ? hexToRgba(ACCENT.orange, 0.2) : (isFluid ? hexToRgba(SPECTRUM.sky, 0.15) : "transparent")}`,
         }}>
           {isStuck ? "STUCK" : isFluid ? "FLUID" : "\u2014"}
         </span>

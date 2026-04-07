@@ -2,12 +2,12 @@
 
 :root {
   /* Blue Spectrum */
-  --spectrum-sky:    #93CFFF;
-  --spectrum-azure:  #5BADFF;
-  --spectrum-blue:   #4B8FFF;
-  --spectrum-cobalt: #4472EE;
-  --spectrum-indigo: #5B62D4;
-  --spectrum-slate:  #7B8BB0;
+  --spectrum-sky:    #b6ebfc;
+  --spectrum-azure:  #76e2ff;
+  --spectrum-blue:   #00b1ff;
+  --spectrum-cobalt: #0590e5;
+  --spectrum-indigo: #7b7bff;
+  --spectrum-slate:  #808493;
 
   /* Backgrounds — Tailwind Slate scale */
   --bg-page:    #111729;
@@ -28,9 +28,9 @@
   --border-hover:   rgba(148, 163, 184, 0.20);
   --border-active:  rgba(148, 163, 184, 0.30);
 
-  /* Editorial section */
-  --editorial-accent: #f59e0b;
-  --editorial-accent-light: #fbbf24;
+  /* Accent — amber (editorial + warm highlights) */
+  --accent-amber: #e9a23b;
+  --accent-amber-light: #f2b856;
 
   /* Fonts — loaded via next/font in layout.js */
   --font-display: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -107,13 +107,13 @@ a:hover {
 /* ─── EDITORIAL SECTION LINK OVERRIDE ──────────────── */
 
 .mop-reading a {
-  color: var(--editorial-accent);
-  text-decoration-color: color-mix(in srgb, var(--editorial-accent) 40%, transparent);
+  color: var(--accent-amber);
+  text-decoration-color: color-mix(in srgb, var(--accent-amber) 40%, transparent);
 }
 
 .mop-reading a:hover {
-  color: var(--editorial-accent-light);
-  text-decoration-color: var(--editorial-accent-light);
+  color: var(--accent-amber-light);
+  text-decoration-color: var(--accent-amber-light);
 }
 
 code, pre {
@@ -198,16 +198,16 @@ details > section {
   --border-hover:   rgba(0, 0, 0, 0.15);
   --border-active:  rgba(0, 0, 0, 0.25);
 
-  --editorial-accent: #d97706;
-  --editorial-accent-light: #b45309;
+  --accent-amber: #d97706;
+  --accent-amber-light: #b45309;
 
-  /* Spectrum — slightly darker for light background contrast */
-  --spectrum-sky:    #3a9be0;
-  --spectrum-azure:  #3580e0;
-  --spectrum-blue:   #2d6fd6;
-  --spectrum-cobalt: #2a52b8;
-  --spectrum-indigo: #3d3fa8;
-  --spectrum-slate:  #586a8a;
+  /* Spectrum — darker for light background contrast */
+  --spectrum-sky:    #2a8ab8;
+  --spectrum-azure:  #1fa8d4;
+  --spectrum-blue:   #0088c7;
+  --spectrum-cobalt: #0470b5;
+  --spectrum-indigo: #5555d4;
+  --spectrum-slate:  #5a5e6d;
 }
 
 /* ─── SCROLLBAR STYLING ─────────────────────────────── */

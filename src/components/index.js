@@ -6,6 +6,7 @@
  */
 
 // Core components
+export { default as BadgePill } from "./BadgePill";
 export { default as TypeTag } from "./TypeTag";
 export { default as StatusBadge } from "./StatusBadge";
 export { default as ExpandableSection } from "./ExpandableSection";

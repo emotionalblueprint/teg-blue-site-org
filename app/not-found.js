@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RESEARCHER, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 
 const SIDEBAR_SECTIONS = [];
@@ -211,7 +211,7 @@ export default function NotFound() {
               alignItems: "center",
               gap: 8,
               padding: "12px 24px",
-              background: RESEARCHER.accent,
+              background: MAIN_ORG.accent,
               color: "#fff",
               borderRadius: 8,
               fontWeight: 500,

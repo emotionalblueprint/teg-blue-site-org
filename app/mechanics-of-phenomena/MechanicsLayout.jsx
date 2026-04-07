@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BG, TEXT, FONT, BORDER, EDITORIAL, SPACING, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, FONT, BORDER, ACCENT, SPACING, hexToRgba } from "@/src/styles/tokens";
 import MechanicsSidebar from "./MechanicsSidebar";
 import { findPiece, parseConnection } from "./mechanics-config";
 
@@ -89,7 +89,7 @@ export default function MechanicsLayout({
             style={{
               paddingTop: 48,
               paddingBottom: 32,
-              borderBottom: `1px solid ${hexToRgba(EDITORIAL.accent, 0.12)}`,
+              borderBottom: `1px solid ${hexToRgba(ACCENT.amber, 0.12)}`,
               marginBottom: 40,
             }}
           >
@@ -139,7 +139,7 @@ export default function MechanicsLayout({
             style={{
               paddingTop: 48,
               paddingBottom: 32,
-              borderBottom: `1px solid ${hexToRgba(EDITORIAL.accent, 0.12)}`,
+              borderBottom: `1px solid ${hexToRgba(ACCENT.amber, 0.12)}`,
               marginBottom: 40,
             }}
           >
@@ -149,7 +149,7 @@ export default function MechanicsLayout({
                 fontSize: 11,
                 fontWeight: 500,
                 letterSpacing: "0.04em",
-                color: EDITORIAL.accent,
+                color: ACCENT.amber,
                 marginBottom: 14,
               }}
             >
@@ -250,7 +250,7 @@ export default function MechanicsLayout({
                     <span style={{ fontFamily: FONT.mono, fontSize: 10, color: TEXT.hint, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                       {"\u2190"} Previous
                     </span>
-                    <p style={{ fontSize: 14, fontWeight: 600, color: EDITORIAL.accent, lineHeight: 1.4, marginTop: 4 }}>
+                    <p style={{ fontSize: 14, fontWeight: 600, color: ACCENT.amber, lineHeight: 1.4, marginTop: 4 }}>
                       {prevPiece.piece.title}
                     </p>
                   </Link>
@@ -268,7 +268,7 @@ export default function MechanicsLayout({
                     <span style={{ fontFamily: FONT.mono, fontSize: 10, color: TEXT.hint, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                       Next {"\u2192"}
                     </span>
-                    <p style={{ fontSize: 14, fontWeight: 600, color: EDITORIAL.accent, lineHeight: 1.4, marginTop: 4 }}>
+                    <p style={{ fontSize: 14, fontWeight: 600, color: ACCENT.amber, lineHeight: 1.4, marginTop: 4 }}>
                       {nextPiece.piece.title}
                     </p>
                   </Link>

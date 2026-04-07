@@ -6,8 +6,8 @@ export const alt = "Mechanics of Phenomena | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Amber palette — hardcoded hex for edge runtime (source: tokens.js EDITORIAL)
-const AMBER_500 = "#f59e0b"; // EDITORIAL.accent
+// Amber palette — hardcoded hex for edge runtime (source: tokens.js ACCENT.amber)
+const AMBER_500 = "#e9a23b"; // ACCENT.amber
 const AMBER_BG = "rgba(245, 158, 11, 0.15)";
 const AMBER_BORDER = "rgba(245, 158, 11, 0.3)";
 
