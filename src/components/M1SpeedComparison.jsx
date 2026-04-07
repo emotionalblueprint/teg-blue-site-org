@@ -115,7 +115,7 @@ export default function M1SpeedComparison() {
           sublabel="Cortical"
           steps={COGNITIVE_STEPS}
           currentMs={currentMs}
-          color={SPECTRUM.slate}
+          color={SPECTRUM.indigo}
           totalMs={TOTAL_MS}
         />
       </div>

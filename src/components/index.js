@@ -49,6 +49,7 @@ export { default as M1DistortionPathway } from "./M1DistortionPathway";
 export { default as M1DevelopmentalLoss } from "./M1DevelopmentalLoss";
 export { default as M1SpeedComparison } from "./M1SpeedComparison";
 export { default as M1RestorationPathways } from "./M1RestorationPathways";
+export { default as M1SignalLifecycle } from "./M1SignalLifecycle";
 export { default as M2StateDiagram } from "./M2StateDiagram";
 export { default as M2SignalState } from "./M2SignalState";
 export { default as M2ReinforcingLoop } from "./M2ReinforcingLoop";

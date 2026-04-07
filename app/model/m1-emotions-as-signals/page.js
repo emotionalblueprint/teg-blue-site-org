@@ -8,6 +8,7 @@ const M1DistortionPathway = dynamic(() => import("@/src/components/M1DistortionP
 const M1DevelopmentalLoss = dynamic(() => import("@/src/components/M1DevelopmentalLoss"), { ssr: false });
 const M1SpeedComparison = dynamic(() => import("@/src/components/M1SpeedComparison"), { ssr: false });
 const M1RestorationPathways = dynamic(() => import("@/src/components/M1RestorationPathways"), { ssr: false });
+const M1SignalLifecycle = dynamic(() => import("@/src/components/M1SignalLifecycle"), { ssr: false });
 import {
   SiteHeader, SiteFooter, ModelHero, ModelPurpose, PageLayout,
   PartDivider, NavSection, ConnectionsMap, ExpandableSection,
@@ -100,6 +101,8 @@ export default function M1EmotionsAsSignalsPage() {
           />
         }
       >
+        <M1SignalLifecycle />
+
         <article>
 
           {/* ─── INTRODUCTION ───────────────────────────── */}
