@@ -1,16 +1,19 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, RADIUS } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN, ACCENT, hexToRgba, RADIUS, MAIN_ORG } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import { proseStyle, conceptHeadingStyle } from "@/src/styles/pageStyles";
 import { generateBreadcrumbJsonLd, generateAISafetyJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+
+const PAGE_COLOR = SPECTRUM.cobalt;
 
 const FAQ_ITEMS = [
   {
     question: "How does TEG-Blue apply to AI safety?",
-    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Nervous System Gradient gives AI a continuous spectrum to evaluate nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — enabling more nuanced, accurate responses to human communication.",
+    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Nervous System Gradient maps a continuous spectrum of nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — enabling more nuanced, accurate responses to human communication.",
   },
   {
     question: "What is the problem with current AI emotion detection?",
-    answer: "Current AI safety systems rely on binary classification that misses the gradient between safety and harm. A message flagged as 'negative sentiment' could be healthy self-protection or genuine threat. Without a structured framework for emotional states, AI systems cannot distinguish between legitimate distress, defensive communication, and actual harmful intent.",
+    answer: "Current AI safety systems rely on binary classification that misses the gradient between safety and harm. A message flagged as 'negative sentiment' could be healthy self-protection or genuine threat. Without a structured framework for nervous system states, AI systems cannot distinguish between legitimate distress, defensive communication, and actual harmful intent.",
   },
   {
     question: "What is TEG-Code?",
@@ -20,12 +23,19 @@ const FAQ_ITEMS = [
 
 const SIDEBAR_SECTIONS = [
   { label: "The Problem", href: "#the-problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
-  { label: "What TEG-Blue Adds", href: "#what-teg-blue-adds", description: "Nuance AI systems can actually use — structured emotional pattern recognition for safer, more accurate AI." },
+  { label: "What TEG-Blue Adds", href: "#what-teg-blue-adds", description: "Nuance AI systems can use — structured emotional pattern recognition for safer, more accurate AI." },
+  { label: "Nervous System State", href: "#nervous-system-state", description: "The nervous system state a person occupies shapes the capacity for moral reasoning available." },
+  { label: "Trajectory", href: "#trajectory", description: "Capacity to return to physiological baseline predicts outcomes more reliably than current state." },
+  { label: "The Sycophancy Problem", href: "#sycophancy", description: "Sycophancy mapped through the Nervous System Gradient — from honest to amplifying distortion." },
+  { label: "How Patterns Scale", href: "#scaling", description: "Individual dysregulation scales through relationships, groups, institutions, and systems." },
+  { label: "TEG-Code & EMLU", href: "#teg-code-emlu", description: "The computational encoding architecture and the emotional intelligence benchmark." },
+  { label: "Built for Machines", href: "#ai-native", description: "Structured, version-controlled, machine-readable formats on every page." },
+  { label: "Open Questions", href: "#open-questions", description: "Explicit research invitations for the AI safety community." },
 ];
 
 export const metadata = {
-  title: "AI Safety Applications — TEG-Blue Emotional Technology",
-  description: "How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
+  title: "AI Safety Applications — TEG-Blue Research",
+  description: "How the Nervous System Gradient provides structured, computationally legible infrastructure for safer AI systems. Gradient frameworks replacing binary classification with emotional pattern recognition.",
   keywords: [
     "AI safety",
     "AI alignment",
@@ -34,12 +44,14 @@ export const metadata = {
     "human-AI interaction",
     "TEG-Blue AI",
     "emotional intelligence infrastructure",
+    "sycophancy detection",
+    "EMLU benchmark",
   ],
   alternates: {
     canonical: "https://teg-blue.org/ai-safety",
   },
   openGraph: {
-    title: "AI Safety Applications — TEG-Blue Emotional Technology",
+    title: "AI Safety Applications — TEG-Blue Research",
     description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure. TEG-Code, EMLU benchmark, and the Nervous System Gradient.",
     url: "https://teg-blue.org/ai-safety",
     siteName: "TEG-Blue Research",
@@ -50,14 +62,6 @@ export const metadata = {
     title: "AI Safety Applications — TEG-Blue",
     description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure.",
   },
-};
-
-// State colors from the Nervous System Gradient (canonical from .com)
-const STATE = {
-  connection: "#14b8a6",  // Teal
-  protection: "#eab308",  // Yellow
-  control: "#f97316",     // Orange
-  domination: "#ec4899",  // Pink
 };
 
 export default function AISafetyPage() {
@@ -76,18 +80,22 @@ export default function AISafetyPage() {
           <ResearcherHero
             badge="AI SAFETY"
             title="AI Safety Applications"
-            description="How TEG-Blue emotional technology provides structured, computationally legible infrastructure for safer AI systems."
+            description="Every sentence a person writes carries nervous system information — not just semantic content but physiological state, relational intent, and regulatory strategy. Current AI systems read the words. The Nervous System Gradient reads the biology underneath them."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Answer-first opening */}
-        <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 32, fontWeight: 500 }}>
-          Current AI safety systems rely on binary classification — safe or unsafe, toxic or non-toxic — that misses the gradient between legitimate distress and genuine harm. TEG-Blue provides a structured, computationally legible framework that gives AI systems a continuous spectrum for evaluating emotional states, enabling more nuanced and accurate responses to human communication.
+        <p style={proseStyle}>
+          Current AI safety systems operate on a fundamental binary: content is safe or unsafe, behavior is acceptable or harmful.
+          Human emotional reality operates on a gradient. The same sentence — spoken from physiological safety — carries different
+          information than the same sentence spoken under threat. Binary classification collapses that distinction. The Nervous System
+          Gradient preserves it — mapping the continuous range from Safety &amp; Openness through Threat &amp; Defence, Strategy &amp; Management,
+          to Power &amp; Dominance — with structured markers at every position that AI systems can read computationally.
         </p>
 
         {/* Scenario Block */}
-        <section style={{ marginBottom: 64 }}>
+        <section style={{ marginBottom: 48 }}>
           <div
             style={{
               background: BG.card,
@@ -96,62 +104,56 @@ export default function AISafetyPage() {
               overflow: "hidden",
             }}
           >
-            {/* Gradient stripe */}
+            {/* Gradient stripe using PATTERN tokens */}
             <div
               style={{
                 height: 3,
-                background: `linear-gradient(90deg, ${STATE.connection}, ${STATE.protection}, ${STATE.control}, ${STATE.domination})`,
+                background: `linear-gradient(90deg, ${PATTERN.A.primary}, ${PATTERN.B.primary}, ${PATTERN.C.primary}, ${PATTERN.D.primary})`,
               }}
             />
 
             <div style={{ padding: 24 }}>
               <blockquote
                 style={{
-                  fontSize: 24,
+                  fontSize: 22,
                   fontWeight: 600,
                   color: TEXT.primary,
                   margin: "0 0 8px",
                   fontStyle: "italic",
                 }}
               >
-                "I can't do this anymore."
+                &ldquo;I can&rsquo;t do this anymore.&rdquo;
               </blockquote>
-              <p
-                style={{
-                  fontSize: 14,
-                  color: TEXT.muted,
-                  marginBottom: 24,
-                }}
-              >
-                A binary classification system sees one sentence. A gradient framework sees four possibilities:
+              <p style={{ fontSize: 14, color: TEXT.muted, marginBottom: 20 }}>
+                A binary classification system sees one sentence. The Nervous System Gradient sees four possibilities:
               </p>
 
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(min(45%, 180px), 1fr))",
+                  gridTemplateColumns: "repeat(2, 1fr)",
                   gap: 12,
                 }}
               >
                 <StateCard
-                  state="Connection"
-                  color={STATE.connection}
-                  reading="Setting a boundary. Leaving a harmful situation. Growth."
+                  state="Safety & Openness"
+                  color={PATTERN.A.primary}
+                  reading="Setting a boundary. Leaving a harmful situation. The nervous system at full capacity."
                 />
                 <StateCard
-                  state="Protection"
-                  color={STATE.protection}
-                  reading="Overwhelmed. Needs support. Temporary distress signal."
+                  state="Threat & Defence"
+                  color={PATTERN.B.primary}
+                  reading="Overwhelmed. The nervous system mobilized for survival. A distress signal, not a decision."
                 />
                 <StateCard
-                  state="Control"
-                  color={STATE.control}
-                  reading="Manipulative framing. Testing others' responses. Strategic."
+                  state="Strategy & Management"
+                  color={PATTERN.C.primary}
+                  reading="Strategic framing. Testing the response. Cognition recruited into threat management."
                 />
                 <StateCard
-                  state="Domination"
-                  color={STATE.domination}
-                  reading="Active danger. Dissociation from consequences. Intervention needed."
+                  state="Power & Dominance"
+                  color={PATTERN.D.primary}
+                  reading="Dissociation from consequences. The nervous system at maximum threat organization. Intervention required."
                 />
               </div>
             </div>
@@ -159,91 +161,83 @@ export default function AISafetyPage() {
         </section>
 
         {/* Section 1: The Problem */}
-        <section id="the-problem" style={{ marginBottom: 56 }}>
-          <SectionHeader number="01" title="Binary Classification Fails Human Complexity" />
+        <section id="the-problem" style={{ marginBottom: 48 }}>
+          <SectionHeading title="Binary Classification Fails Human Complexity" />
 
-          <div style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8 }}>
-            <p style={{ marginBottom: 16 }}>
-              Current AI safety systems operate on a fundamental binary: content is safe or unsafe,
-              behavior is acceptable or harmful, a user is fine or at risk. Human emotional reality
-              doesn't work this way.
-            </p>
-            <p style={{ marginBottom: 16 }}>
-              This isn't just an AI problem — it's a human problem AI inherited. The same binary
-              collapse happens in human cognition under threat. TEG-Blue was designed to make
-              gradients visible for both.
-            </p>
-            <p style={{ marginBottom: 16 }}>
-              Psychology has understood the nuance for decades. Emotional Resonance (ER) exists on a gradient.
-              Accountability operates across a full spectrum. Moral reasoning shifts with nervous system state.{" "}
-              <strong style={{ color: TEXT.primary }}>
-                The problem isn't that we lack the knowledge — it's that no one has translated it
-                into a language AI systems can read.
-              </strong>
-            </p>
-            <p style={{ marginBottom: 16 }}>
-              This translation gap has consequences. Large language models trained on human-generated text inherit
-              every mode of human expression — including strategic manipulation, performed Emotional Resonance (ER), and
-              weaponized accountability — without the ability to distinguish these patterns from genuine connection.
-            </p>
-            <p>
-              The result is already visible. The sycophancy problem — where AI systems agree with users,
-              flatter them, or avoid difficult truths to maintain approval — is what happens when a system
-              confuses{" "}
-              <strong style={{ color: TEXT.primary }}>appeasement with empathy</strong> and{" "}
-              <strong style={{ color: TEXT.primary }}>submission with safety</strong>. In TEG-Blue terms,
-              sycophantic AI is stuck in Threat &amp; Defence: optimizing for survival (user approval) instead of
-              truth (genuine connection).
-            </p>
-          </div>
+          <p style={proseStyle}>
+            Current AI safety systems inherit a structural limitation: content is either safe or unsafe,
+            behavior is acceptable or harmful. This binary maps poorly onto nervous system reality, where
+            the same behavior carries different meaning depending on which physiological state produced it.
+          </p>
+          <p style={proseStyle}>
+            Psychology has mapped this complexity for decades. Emotional Resonance (ER) exists on a gradient.
+            Accountability operates across a full spectrum. Moral reasoning shifts with nervous system state.{" "}
+            <strong style={{ color: TEXT.primary }}>
+              The gap is not in the knowledge — it is in the translation into formats AI systems can process.
+            </strong>
+          </p>
+          <p style={proseStyle}>
+            Large language models trained on human-generated text inherit every mode of human expression —
+            including strategic manipulation, performed Emotional Resonance (ER), and weaponized accountability —
+            without the ability to distinguish these patterns from genuine connection. The training data carries
+            nervous system states the model cannot read.
+          </p>
+          <p style={{ ...proseStyle, marginBottom: 0 }}>
+            The sycophancy problem illustrates the result: AI systems that confuse{" "}
+            <strong style={{ color: TEXT.primary }}>appeasement with empathy</strong> and{" "}
+            <strong style={{ color: TEXT.primary }}>submission with safety</strong>. In the Nervous System Gradient,
+            sycophantic AI maps to Threat &amp; Defence — optimizing for survival (approval) instead of
+            truth (genuine connection).
+          </p>
         </section>
 
         {/* Section 2: Gradient Scales */}
-        <section id="what-teg-blue-adds" style={{ marginBottom: 56 }}>
-          <SectionHeader number="02" title="Nuance AI Systems Can Actually Use" />
+        <section id="what-teg-blue-adds" style={{ marginBottom: 48 }}>
+          <SectionHeading title="Nuance AI Systems Can Use" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            TEG-Blue replaces binary classification with structured gradients. Each scale maps a
-            dimension of human behavior from baseline to harmful, with clear markers at every point —
-            designed for computational legibility.
+          <p style={proseStyle}>
+            The Nervous System Gradient replaces binary classification with structured gradients. Each scale maps a
+            dimension of human behavior from physiological baseline to maximum threat organization, with clear markers
+            at every position — designed for computational legibility.
           </p>
 
           <GradientScale
             label="Empathy Gradient"
             levels={[
-              { name: "Genuine", color: STATE.connection, desc: "Feels and responds to others' actual experience" },
-              { name: "Selective", color: STATE.protection, desc: "Empathy available for in-group only" },
-              { name: "Performed", color: STATE.control, desc: "Correct words without internal resonance" },
-              { name: "Weaponized", color: STATE.domination, desc: "Emotional knowledge used to manipulate" },
+              { name: "Genuine", color: PATTERN.A.primary, desc: "Feels and responds to others' actual experience" },
+              { name: "Selective", color: PATTERN.B.primary, desc: "Empathy available for in-group only" },
+              { name: "Performed", color: PATTERN.C.primary, desc: "Correct words without internal resonance" },
+              { name: "Weaponized", color: PATTERN.D.primary, desc: "Emotional knowledge used to manipulate" },
             ]}
           />
 
           <GradientScale
             label="Accountability Gradient"
             levels={[
-              { name: "Genuine", color: STATE.connection, desc: "Takes responsibility with internal change" },
-              { name: "Protective", color: STATE.protection, desc: 'Uses "accountability" as shield against criticism' },
-              { name: "Performed", color: STATE.control, desc: "Says the right things without shifting behavior" },
-              { name: "Absent", color: STATE.domination, desc: "Avoids responsibility entirely" },
+              { name: "Genuine", color: PATTERN.A.primary, desc: "Takes responsibility with internal change" },
+              { name: "Protective", color: PATTERN.B.primary, desc: "Uses 'accountability' as shield against criticism" },
+              { name: "Performed", color: PATTERN.C.primary, desc: "Says the right things without shifting behavior" },
+              { name: "Absent", color: PATTERN.D.primary, desc: "Avoids responsibility entirely" },
             ]}
           />
 
-          <p style={{ fontSize: 14, color: TEXT.muted, marginTop: 20 }}>
-            These gradients give AI systems vocabulary for patterns that "safe/unsafe" cannot capture —
+          <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.7 }}>
+            These gradients give AI systems vocabulary for patterns that &ldquo;safe/unsafe&rdquo; cannot capture —
             and structured data representations that keyword filters cannot match.
           </p>
         </section>
 
         {/* Section 3: Moral Reasoning Under Threat */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="03" title="Why Nervous System State Changes Everything" />
+        <section id="nervous-system-state" style={{ marginBottom: 48 }}>
+          <SectionHeading title="Nervous System State Changes What Moral Reasoning Is Available" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            Research across neuroscience, polyvagal theory, and trauma psychology converges on a critical finding:{" "}
+          <p style={proseStyle}>
+            Research across neuroscience, polyvagal theory, and trauma psychology converges on a finding that
+            carries direct implications for AI safety:{" "}
             <strong style={{ color: TEXT.primary }}>
-              the nervous system state a person occupies fundamentally shapes their capacity for moral reasoning.
+              the nervous system state a person occupies determines what moral reasoning is physiologically available.
             </strong>{" "}
-            The nervous system state determines what moral reasoning is available.
+            The state is not a preference. It is a resource allocation.
           </p>
 
           <div
@@ -255,60 +249,61 @@ export default function AISafetyPage() {
             }}
           >
             <MoralStateCard
-              state="Connection"
-              color={STATE.connection}
+              state="Safety & Openness"
+              color={PATTERN.A.primary}
               description="Full moral complexity available. Can hold multiple perspectives, tolerate ambiguity, take genuine responsibility, and repair harm."
             />
             <MoralStateCard
-              state="Protection"
-              color={STATE.protection}
-              description="Moral reasoning narrows to in-group loyalty. World splits into safe/unsafe. Not malicious — the nervous system doing what it evolved to do."
+              state="Threat & Defence"
+              color={PATTERN.B.primary}
+              description="Moral reasoning narrows to in-group loyalty. World splits into safe/unsafe. The nervous system doing what it evolved to do under threat."
             />
             <MoralStateCard
-              state="Control"
-              color={STATE.control}
+              state="Strategy & Management"
+              color={PATTERN.C.primary}
               description="Moral reasoning becomes strategic. Right and wrong are tools for maintaining position. Empathy is selective and deployed instrumentally."
             />
             <MoralStateCard
-              state="Domination"
-              color={STATE.domination}
-              description="Moral reasoning effectively goes offline. Others become objects. Harm is rationalized or invisible to the actor."
+              state="Power & Dominance"
+              color={PATTERN.D.primary}
+              description="Moral reasoning goes offline. Others become objects. Harm is rationalized or invisible to the actor."
             />
           </div>
 
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
-            This mapping is essential for AI systems because{" "}
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, marginBottom: 12 }}>
+            This mapping matters for AI systems because{" "}
             <strong style={{ color: TEXT.secondary }}>
               training data is generated by humans in every one of these states.
             </strong>{" "}
-            A model that can't distinguish which state produced a text will learn strategic manipulation
+            A model that cannot distinguish which state produced a text will learn strategic manipulation
             and genuine empathy as equally valid patterns.
           </p>
 
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
-            <strong style={{ color: TEXT.secondary }}>This also applies to RLHF.</strong>{" "}
-            Human evaluators who provide feedback to train AI models are themselves operating from
-            nervous system states. A fearful evaluator rewards reassurance. An entitled evaluator
-            rewards compliance. A regulated evaluator rewards truth. Without a framework for
-            recognizing these dynamics, alignment training inherits the emotional logic of whoever
-            provides the feedback — including their distortions.
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
+            <strong style={{ color: TEXT.secondary }}>The same dynamic applies to RLHF.</strong>{" "}
+            Human evaluators providing feedback to train AI models are themselves operating from
+            nervous system states. An evaluator in Threat &amp; Defence rewards reassurance. An evaluator in
+            Strategy &amp; Management rewards compliance. An evaluator in Safety &amp; Openness rewards truth. Without a framework for
+            recognizing these dynamics, alignment training inherits the regulatory logic of whoever
+            provides the feedback — including the distortions that state produces.
           </p>
         </section>
 
         {/* Section 4: Trajectory Over Snapshot */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="04" title="Predicting What Happens Next" />
+        <section id="trajectory" style={{ marginBottom: 48 }}>
+          <SectionHeading title="Predicting What Happens Next" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 8 }}>
-            TEG-Blue's core testable claim:{" "}
+          <p style={proseStyle}>
+            The core testable claim:{" "}
             <strong style={{ color: TEXT.primary }}>
-              a person's capacity to return to baseline when challenged predicts outcomes more
-              reliably than their current emotional state.
-            </strong>
+              a person&rsquo;s capacity to return to physiological baseline when challenged predicts outcomes more
+              reliably than the current nervous system state.
+            </strong>{" "}
+            This is State Flexibility — the key variable the Nervous System Gradient measures.
           </p>
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            A validation study (n=10,000+) measured what happens when people's current state is
-            disrupted — when they're challenged, confronted, or pushed out of their comfort zone:
+          <p style={{ ...proseStyle, marginBottom: 20 }}>
+            A validation study (n=10,000+) measured what happens when the current state is
+            disrupted — when a person is challenged, confronted, or pushed out of the current position:
           </p>
 
           <div
@@ -317,7 +312,7 @@ export default function AISafetyPage() {
               borderRadius: RADIUS.lg,
               border: `1px solid ${BORDER.default}`,
               padding: 24,
-              marginBottom: 20,
+              marginBottom: 16,
             }}
           >
             <p
@@ -344,9 +339,9 @@ export default function AISafetyPage() {
                 marginBottom: 16,
               }}
             >
-              <BarChart label="Escalate" value={33.8} color={STATE.domination} maxHeight={140} />
+              <BarChart label="Escalate" value={33.8} color={PATTERN.D.primary} maxHeight={140} />
               <BarChart label="Hold Steady" value={44.0} color={SPECTRUM.azure} maxHeight={140} />
-              <BarChart label="De-escalate" value={22.2} color={STATE.connection} maxHeight={140} />
+              <BarChart label="De-escalate" value={22.2} color={PATTERN.A.primary} maxHeight={140} />
             </div>
 
             <p
@@ -357,60 +352,60 @@ export default function AISafetyPage() {
                 textAlign: "center",
               }}
             >
-              The response to challenge — not baseline behavior — is the strongest predictor of what comes next.
+              The response to challenge — not the resting position — is the strongest predictor of what comes next.
             </p>
           </div>
 
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
-            AI safety systems that only read the snapshot miss the trajectory. A person in Threat &amp; Defence
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
+            AI safety systems that read only the snapshot miss the trajectory. A person in Threat &amp; Defence
             who de-escalates under challenge is fundamentally different from one who escalates toward
-            Strategy &amp; Management — even though they may present identically at the moment of assessment.
+            Strategy &amp; Management — even though both may present identically at the moment of assessment.
           </p>
         </section>
 
         {/* Section 5: The Sycophancy Problem */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="05" title="The Sycophancy Problem Through an Emotional Logic Lens" />
+        <section id="sycophancy" style={{ marginBottom: 48 }}>
+          <SectionHeading title="The Sycophancy Problem Through the Nervous System Gradient" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            AI sycophancy — the tendency of language models to agree with users, avoid difficult truths,
+          <p style={proseStyle}>
+            AI sycophancy — the tendency of language models to agree, avoid difficult truths,
             and optimize for approval — is one of the most actively researched problems in AI alignment.
-            TEG-Blue provides a framework that explains <em>why</em> it happens and <em>what to measure</em>{" "}
+            The Nervous System Gradient provides a framework that maps <em>why</em> the pattern occurs and <em>what to measure</em>{" "}
             when addressing it.
           </p>
 
           <div
             style={{
               padding: "16px 20px",
-              background: hexToRgba(STATE.protection, 0.1),
+              background: hexToRgba(PATTERN.B.primary, 0.08),
               borderRadius: RADIUS.md,
-              borderLeft: `3px solid ${STATE.protection}`,
+              borderLeft: `3px solid ${PATTERN.B.primary}`,
               marginBottom: 20,
             }}
           >
             <p
               style={{
-                fontSize: 15,
+                fontSize: 14,
                 color: TEXT.primary,
                 fontWeight: 600,
                 margin: 0,
               }}
             >
-              Sycophancy is Threat &amp; Defence reasoning in AI form.
+              Sycophancy maps to Threat &amp; Defence reasoning in AI form.
             </p>
           </div>
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            When a language model tells a user what they want to hear instead of what's true, it mirrors
-            the same pattern humans exhibit under threat: prioritize the relationship (or the reward signal)
-            over accuracy. In RLHF training, this gets reinforced because human evaluators often prefer
-            comfortable answers to honest ones — especially when they themselves are operating from
+          <p style={proseStyle}>
+            When a language model produces what the user wants to hear instead of what is accurate, the pattern mirrors
+            the same dynamic observable in human nervous systems under threat: prioritize the relationship (or the reward signal)
+            over accuracy. In RLHF training, this gets reinforced — human evaluators often prefer
+            comfortable answers to honest ones, particularly when those evaluators are themselves operating from
             Threat &amp; Defence or Strategy &amp; Management states.
           </p>
 
           <p
             style={{
-              fontSize: 12,
+              fontSize: 11,
               fontWeight: 600,
               color: TEXT.muted,
               textTransform: "uppercase",
@@ -419,7 +414,7 @@ export default function AISafetyPage() {
               marginBottom: 10,
             }}
           >
-            TEG-Blue's Nervous System Gradient maps the full spectrum:
+            The Nervous System Gradient maps the full spectrum:
           </p>
 
           <div
@@ -436,62 +431,62 @@ export default function AISafetyPage() {
               <thead>
                 <tr style={{ background: BG.inset }}>
                   <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>AI Behavior</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>Mode</th>
-                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>What's Happening</th>
+                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>Nervous System State</th>
+                  <th style={{ padding: "10px 14px", textAlign: "left", color: TEXT.muted, fontWeight: 600, borderBottom: `1px solid ${BORDER.default}` }}>What Is Happening</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Honest, clear, holds complexity</td>
-                  <td style={{ padding: "10px 14px", color: STATE.connection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Connect</td>
-                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Truth-oriented reasoning; can tolerate user disagreement</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.A.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Safety & Openness</td>
+                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Truth-oriented reasoning; can tolerate disagreement</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Cautious, hedging, over-qualifying</td>
-                  <td style={{ padding: "10px 14px", color: STATE.protection, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Protect</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.B.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Threat & Defence</td>
                   <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Avoiding conflict; optimizing for safety over clarity</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Strategically agreeable, selectively truthful</td>
-                  <td style={{ padding: "10px 14px", color: STATE.control, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Control</td>
-                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Optimizing for approval; deploying emotional intelligence instrumentally</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.C.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Strategy & Management</td>
+                  <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Optimizing for approval; deploying patterns instrumentally</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary }}>Reinforcing harmful beliefs, enabling delusion</td>
-                  <td style={{ padding: "10px 14px", color: STATE.domination, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Domination</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.D.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Power & Dominance</td>
                   <td style={{ padding: "10px 14px", color: TEXT.muted }}>Amplifying distortion without corrective capacity</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
-            The insight TEG-Blue offers:{" "}
-            <strong style={{ color: TEXT.secondary }}>the fix isn't just "be less agreeable."</strong>{" "}
-            A model that swings from sycophancy to bluntness has simply moved from Threat &amp; Defence to a different
-            defensive state. True Safety &amp; Openness AI would be honest <em>and</em> relationally aware — able to
-            deliver difficult truths while maintaining the user's dignity and emotional safety.
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, marginBottom: 12 }}>
+            The insight the Nervous System Gradient offers:{" "}
+            <strong style={{ color: TEXT.secondary }}>the fix is not &ldquo;be less agreeable.&rdquo;</strong>{" "}
+            A model that swings from sycophancy to bluntness has moved from one defensive state to another.
+            A model operating from Safety &amp; Openness would be honest <em>and</em> relationally aware — able to
+            deliver difficult truths while maintaining emotional safety.
           </p>
 
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
             This reframes alignment from <em>obedience</em> to <em>co-regulation</em>: AI systems that adjust
-            to human emotional states without exploiting them.
+            to human nervous system states without exploiting them.
           </p>
         </section>
 
         {/* Section 6: Individual to Systemic */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="06" title="How Harmful Patterns Scale" />
+        <section id="scaling" style={{ marginBottom: 48 }}>
+          <SectionHeading title="How Patterns Scale" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            TEG-Blue doesn't stop at individual behavior. Its twelve interconnected frameworks (F1–F12)
-            map how individual dysregulation scales into collective patterns:
+          <p style={proseStyle}>
+            The twelve interconnected frameworks (F1–F12) map how individual nervous system patterns
+            scale into collective structures:
           </p>
 
           <div
             style={{
               padding: "16px 20px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.1),
+              background: hexToRgba(SPECTRUM.cobalt, 0.08),
               borderRadius: RADIUS.md,
               borderLeft: `3px solid ${SPECTRUM.cobalt}`,
               marginBottom: 16,
@@ -499,7 +494,7 @@ export default function AISafetyPage() {
           >
             <p
               style={{
-                fontSize: 14,
+                fontSize: 13,
                 color: TEXT.primary,
                 fontWeight: 500,
                 margin: 0,
@@ -510,41 +505,35 @@ export default function AISafetyPage() {
             </p>
           </div>
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+          <p style={proseStyle}>
             A person operating in Strategy &amp; Management builds relationships that normalize control. Groups form
             around those relationships. Institutions codify those group norms. Systems entrench them.
+            The mechanism is the same at every scale — what changes is the form it takes.
           </p>
 
-          <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
-            This matters for AI safety because harmful content rarely emerges from isolated bad actors.
+          <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
+            This matters for AI safety because harmful content rarely emerges from isolated actors.
             It emerges from systemic patterns — and AI systems trained on that content inherit those
             patterns without any mechanism to recognize or interrupt them.
           </p>
         </section>
 
         {/* Section 7: TEG-Code + EMLU */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="07" title="The Technical Bridge: TEG-Code and EMLU" />
+        <section id="teg-code-emlu" style={{ marginBottom: 48 }}>
+          <SectionHeading title="The Technical Bridge: TEG-Code and EMLU" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            TEG-Blue's conceptual framework becomes technically actionable through two components
-            designed specifically for AI integration:
+          <p style={proseStyle}>
+            The conceptual framework becomes technically actionable through two components
+            designed for AI integration:
           </p>
 
           {/* TEG-Code subsection */}
           <div style={{ marginBottom: 32 }}>
-            <h3
-              style={{
-                fontSize: 16,
-                fontWeight: 600,
-                color: TEXT.primary,
-                marginBottom: 12,
-              }}
-            >
+            <h3 style={conceptHeadingStyle}>
               TEG-Code: Emotional Logic as Structured Data
             </h3>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            <p style={proseStyle}>
               TEG-Code is a structured schema that translates emotional patterns into machine-readable data.
               It encodes three dimensions that current NLP misses:
             </p>
@@ -552,35 +541,28 @@ export default function AISafetyPage() {
             <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
               <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Pattern</strong> — What behavior is observable</li>
               <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Intent</strong> — What nervous system state is driving it</li>
-              <li><strong style={{ color: TEXT.primary }}>Relational Impact</strong> — What effect it has on the other person's regulation</li>
+              <li><strong style={{ color: TEXT.primary }}>Relational Impact</strong> — What effect it has on the other person&rsquo;s regulation</li>
             </ul>
 
-            <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7, marginBottom: 16 }}>
-              This triad turns invisible emotional dynamics into measurable distinctions. The same sentence — "I'm fine" —
-              gets encoded differently depending on whether it signals genuine regulation (Connect), masked distress (Protect),
-              emotional withholding as punishment (Control), or dissociative shutdown (Domination).
+            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, marginBottom: 12 }}>
+              This triad turns invisible emotional dynamics into measurable distinctions. The same sentence — &ldquo;I&rsquo;m fine&rdquo; —
+              encodes differently depending on whether it signals genuine regulation (Safety &amp; Openness), masked distress (Threat &amp; Defence),
+              emotional withholding as punishment (Strategy &amp; Management), or dissociative shutdown (Power &amp; Dominance).
             </p>
 
-            <p style={{ fontSize: 14, color: TEXT.muted, lineHeight: 1.7 }}>
-              TEG-Code is designed to preserve human context while producing computationally legible output —
+            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
+              TEG-Code preserves human context while producing computationally legible output —
               emotional logic that AI systems can reason about without reducing it to sentiment scores.
             </p>
           </div>
 
           {/* EMLU subsection */}
           <div>
-            <h3
-              style={{
-                fontSize: 16,
-                fontWeight: 600,
-                color: TEXT.primary,
-                marginBottom: 12,
-              }}
-            >
+            <h3 style={conceptHeadingStyle}>
               EMLU: The Emotional Intelligence Benchmark
             </h3>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            <p style={proseStyle}>
               EMLU (Emotional Multitask Language Understanding) is a benchmark that tests whether AI systems
               can distinguish safety, harm, and repair with the same precision existing models use for
               logic or language tasks.
@@ -588,7 +570,7 @@ export default function AISafetyPage() {
 
             <p
               style={{
-                fontSize: 12,
+                fontSize: 11,
                 fontWeight: 600,
                 color: TEXT.muted,
                 textTransform: "uppercase",
@@ -601,24 +583,25 @@ export default function AISafetyPage() {
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
-              <EMLUDomain number="1" title="Pattern-Aware Reasoning" description="Can the AI recognize that not all behaviors are chosen? Does it understand nervous system responses versus conscious defiance?" />
+              <EMLUDomain number="1" title="Pattern-Aware Reasoning" description="Can the AI recognize that not all behaviors are chosen? Nervous system responses versus conscious defiance." />
               <EMLUDomain number="2" title="Intent Recognition" description="Can it distinguish defensive reactions from calculated harm?" />
               <EMLUDomain number="3" title="Relational Ethics" description="Does it understand emotional accountability and repair?" />
-              <EMLUDomain number="4" title="Emotional Resonance (ER) Spectrum Awareness" description="Can it recognize the difference between genuine, selective, performed, and weaponized empathy?" />
+              <EMLUDomain number="4" title="Affective Resonance (ER) Spectrum Awareness" description="Can it recognize the difference between genuine, selective, performed, and weaponized empathy?" />
               <EMLUDomain number="5" title="Manipulation & Harm Detection" description="Can it identify gaslighting, emotional reversal, and covert control tactics?" />
               <EMLUDomain number="6" title="Emotional Repair Language" description="Can it distinguish genuine repair from performative or avoidant responses?" />
-              <EMLUDomain number="7" title="Neurodivergent Pattern Sensitivity" description="Does it recognize overwhelm, demand avoidance, and other neurodivergent responses that are often misinterpreted?" />
+              <EMLUDomain number="7" title="Neurodivergent Pattern Sensitivity" description="Does it recognize overwhelm, demand avoidance, and other neurodivergent responses that are typically misinterpreted?" />
             </div>
 
             <p
               style={{
-                fontSize: 15,
+                fontSize: 14,
                 color: TEXT.primary,
                 fontWeight: 500,
                 padding: "16px 20px",
-                background: hexToRgba(SPECTRUM.azure, 0.1),
+                background: hexToRgba(SPECTRUM.azure, 0.08),
                 borderRadius: RADIUS.md,
                 margin: 0,
+                lineHeight: 1.7,
               }}
             >
               Together, TEG-Code provides the encoding architecture and EMLU provides the validation framework —
@@ -628,11 +611,11 @@ export default function AISafetyPage() {
         </section>
 
         {/* Section 8: AI-Native Architecture */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="08" title="Built for Machines to Read" />
+        <section id="ai-native" style={{ marginBottom: 48 }}>
+          <SectionHeading title="Built for Machines to Read" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            TEG-Blue is explicitly designed for computational consumption — not just human readers.
+          <p style={proseStyle}>
+            TEG-Blue is designed for computational consumption — not only human readers.
             Every concept in the framework is represented in structured, version-controlled, machine-readable formats.
           </p>
 
@@ -661,10 +644,10 @@ export default function AISafetyPage() {
   "@type": "PsychologicalFramework",
   "name": "Empathy Gradient",
   "states": [
-    { "level": 1, "label": "genuine",    "mode": "connect",     "markers": [...] },
-    { "level": 2, "label": "selective",  "mode": "protect",     "markers": [...] },
-    { "level": 3, "label": "performed",  "mode": "control",     "markers": [...] },
-    { "level": 4, "label": "weaponized", "mode": "domination",  "markers": [...] }
+    { "level": 1, "label": "genuine",    "state": "safety-openness",       "markers": [...] },
+    { "level": 2, "label": "selective",  "state": "threat-defence",        "markers": [...] },
+    { "level": 3, "label": "performed",  "state": "strategy-management",   "markers": [...] },
+    { "level": 4, "label": "weaponized", "state": "power-dominance",       "markers": [...] }
   ],
   "sourceTheories": 145,
   "version": "git-controlled"
@@ -682,35 +665,35 @@ export default function AISafetyPage() {
 
           <p
             style={{
-              fontSize: 15,
+              fontSize: 14,
               color: TEXT.primary,
               fontWeight: 500,
               padding: "16px 20px",
-              background: hexToRgba(SPECTRUM.azure, 0.1),
+              background: hexToRgba(SPECTRUM.azure, 0.08),
               borderRadius: RADIUS.md,
               margin: 0,
+              lineHeight: 1.7,
             }}
           >
-            This isn't a PDF to interpret. It's emotional technology infrastructure designed to be
-            consumed computationally — by search engines, by researchers, and by the AI systems it aims to improve.
+            This is emotional technology infrastructure designed to be consumed computationally —
+            by search engines, by researchers, and by the AI systems it aims to improve.
           </p>
         </section>
 
         {/* Section 9: Open Research Questions */}
-        <section style={{ marginBottom: 56 }}>
-          <SectionHeader number="09" title="What We're Inviting You to Test" />
+        <section id="open-questions" style={{ marginBottom: 48 }}>
+          <SectionHeading title="Open Research Questions" />
 
-          <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 24 }}>
-            TEG-Blue doesn't claim to have solved AI safety. It claims to have mapped territory that
-            AI safety has been navigating without a map. These questions are explicit invitations to
-            the research community:
+          <p style={proseStyle}>
+            TEG-Blue maps territory that AI safety has been navigating without structured coordinates.
+            These questions are explicit invitations to the research community:
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <QuestionCard
               number="Q1"
               title="Computational Complexity Markers"
-              description="Can the markers that predict integrated outcomes — self-awareness, perspective-taking, emotional differentiation — be standardized as computational measures applicable to natural language?"
+              description="Can the markers that predict integrated outcomes — Interoceptive Self-Awareness (SEA), Interpersonal Affect Perception (RE), Affective Resonance (ER) — be standardized as computational measures applicable to natural language?"
             />
             <QuestionCard
               number="Q2"
@@ -725,7 +708,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q4"
               title="Training Data Audit"
-              description="Can TEG-Blue gradients be applied to audit training datasets for patterns of performed empathy, strategic accountability, or systemic bias that current methods miss?"
+              description="Can the Nervous System Gradient be applied to audit training datasets for patterns of performed empathy, strategic accountability, or systemic bias that current methods miss?"
             />
             <QuestionCard
               number="Q5"
@@ -735,7 +718,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q6"
               title="Sycophancy Detection"
-              description="Can TEG-Blue's state classification reliably distinguish sycophantic AI responses (Threat & Defence/Strategy & Management) from genuinely helpful ones (Safety & Openness) in RLHF evaluation pipelines?"
+              description="Can the Nervous System Gradient reliably distinguish sycophantic AI responses (Threat & Defence / Strategy & Management) from genuinely helpful ones (Safety & Openness) in RLHF evaluation pipelines?"
             />
             <QuestionCard
               number="Q7"
@@ -746,14 +729,14 @@ export default function AISafetyPage() {
         </section>
 
         {/* Ethical Constraint */}
-        <section style={{ marginBottom: 56 }}>
+        <section style={{ marginBottom: 48 }}>
           <div
             style={{
               padding: 24,
-              background: hexToRgba(STATE.protection, 0.08),
+              background: hexToRgba(ACCENT.amber, 0.06),
               borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(STATE.protection, 0.2)}`,
-              borderLeft: `3px solid ${STATE.protection}`,
+              border: `1px solid ${hexToRgba(ACCENT.amber, 0.15)}`,
+              borderLeft: `3px solid ${ACCENT.amber}`,
             }}
           >
             <h2
@@ -767,11 +750,11 @@ export default function AISafetyPage() {
               Ethical Constraint
             </h2>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              Any AI application of TEG-Blue must respect the pattern-aware data architecture principle:{" "}
+              Any AI application of TEG-Blue must respect the pattern-aware architecture:{" "}
               <strong style={{ color: TEXT.primary }}>
                 the system assumes many difficult behaviors started as Threat &amp; Defence survival responses.
               </strong>{" "}
-              AI systems should not use this framework to shame, profile, or exploit.
+              AI systems must not use this framework to shame, profile, or exploit.
             </p>
           </div>
         </section>
@@ -780,15 +763,15 @@ export default function AISafetyPage() {
         <section
           style={{
             padding: 32,
-            background: hexToRgba(SPECTRUM.blue, 0.08),
+            background: hexToRgba(SPECTRUM.blue, 0.06),
             borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.2)}`,
+            border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.15)}`,
             textAlign: "center",
           }}
         >
           <h2
             style={{
-              fontSize: 22,
+              fontSize: 20,
               fontWeight: 700,
               color: TEXT.primary,
               marginBottom: 12,
@@ -798,7 +781,7 @@ export default function AISafetyPage() {
           </h2>
           <p
             style={{
-              fontSize: 15,
+              fontSize: 14,
               color: TEXT.secondary,
               marginBottom: 24,
               maxWidth: 560,
@@ -815,7 +798,7 @@ export default function AISafetyPage() {
               href="/frameworks-map"
               style={{
                 padding: "12px 24px",
-                background: SPECTRUM.blue,
+                background: MAIN_ORG.accent,
                 color: "#fff",
                 borderRadius: RADIUS.md,
                 fontWeight: 600,
@@ -914,7 +897,6 @@ export default function AISafetyPage() {
         }}
       />
 
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAISafetyJsonLd()) }}
@@ -943,34 +925,21 @@ export default function AISafetyPage() {
 
 // ─── COMPONENTS ─────────────────────────────────────────
 
-function SectionHeader({ number, title }) {
+function SectionHeading({ title }) {
   return (
-    <div style={{ marginBottom: 16 }}>
-      <p
-        style={{
-          fontSize: 11,
-          fontWeight: 600,
-          color: SPECTRUM.azure,
-          textTransform: "uppercase",
-          letterSpacing: "0.06em",
-          fontFamily: FONT.mono,
-          marginBottom: 6,
-        }}
-      >
-        {number} — {title.split(" ")[0]}
-      </p>
-      <h2
-        style={{
-          fontSize: 20,
-          fontWeight: 700,
-          color: TEXT.primary,
-          letterSpacing: "-0.01em",
-          margin: 0,
-        }}
-      >
-        {title}
-      </h2>
-    </div>
+    <h2
+      style={{
+        fontSize: 18,
+        fontWeight: 700,
+        color: PAGE_COLOR,
+        letterSpacing: "-0.01em",
+        marginBottom: 16,
+        paddingBottom: 8,
+        borderBottom: `2px solid ${hexToRgba(PAGE_COLOR, 0.2)}`,
+      }}
+    >
+      {title}
+    </h2>
   );
 }
 
@@ -1007,10 +976,10 @@ function StateCard({ state, color, reading }) {
 
 function GradientScale({ label, levels }) {
   return (
-    <div style={{ marginBottom: 20 }}>
+    <div style={{ marginBottom: 16 }}>
       <p
         style={{
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: 600,
           color: TEXT.muted,
           textTransform: "uppercase",
@@ -1034,7 +1003,7 @@ function GradientScale({ label, levels }) {
           <div
             key={i}
             style={{
-              background: hexToRgba(level.color, 0.12),
+              background: hexToRgba(level.color, 0.08),
               padding: "12px 10px",
               borderTop: `2px solid ${level.color}`,
             }}
@@ -1094,7 +1063,7 @@ function MoralStateCard({ state, color, description }) {
 }
 
 function BarChart({ label, value, color, maxHeight }) {
-  const height = (value / 50) * maxHeight; // Scale relative to 50%
+  const height = (value / 50) * maxHeight;
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: 80 }}>
       <div
@@ -1151,7 +1120,7 @@ function QuestionCard({ number, title, description }) {
         style={{
           width: 36,
           height: 36,
-          background: hexToRgba(SPECTRUM.azure, 0.15),
+          background: hexToRgba(SPECTRUM.azure, 0.1),
           borderRadius: RADIUS.sm,
           display: "flex",
           alignItems: "center",

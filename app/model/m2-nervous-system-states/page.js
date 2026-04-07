@@ -28,6 +28,10 @@ const M2ReinforcingLoop = dynamic(
   () => import("@/src/components/M2ReinforcingLoop"),
   { ssr: false }
 );
+const M2SafetyEvaluation = dynamic(
+  () => import("@/src/components/M2SafetyEvaluation"),
+  { ssr: false }
+);
 
 const MODEL_COLOR = MODEL_COLORS.M2;
 
@@ -143,6 +147,11 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>This evaluation operates continuously and outside conscious awareness. Emotional signals can be understood as outputs of this process, and nervous system states as the system-wide reorganization that follows from it.</p>
             <p style={proseStyle}>This process does not depend on deliberate reasoning. It is rapid, automatic, and based on experienced safety, not objective conditions alone. For that reason, a person may feel threatened in an environment that appears objectively safe, or may fail to detect danger in an environment that is objectively unsafe. The nervous system responds to what it has learned to classify as safe or threatening, whether or not that classification matches present reality.</p>
             <p style={proseStyle}>From a survival perspective, false negatives are more costly than false positives. Failing to detect danger may be fatal, while unnecessarily activating protection is usually less costly. For that reason, the system is biased toward protection under uncertainty.</p>
+
+            <div style={{ margin: "24px 0" }}>
+              <M2SafetyEvaluation />
+            </div>
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>Porges (2011) — neuroception as continuous below-awareness safety/threat evaluation. Damasio (1994) — somatic markers guiding cognition through body-state signals. LeDoux (1996) — threat detection running faster than conscious processing.</p>
