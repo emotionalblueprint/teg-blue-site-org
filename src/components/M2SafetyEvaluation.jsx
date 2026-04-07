@@ -2,177 +2,123 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, MAIN_ORG,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
   hexToRgba, gradientCardBg, diagramContainer,
 } from '../styles/tokens';
-import { MODES } from '../data/m2-data';
 
 // ─── Constants ──────────────────────────────────────
-const MODEL_COLOR = '#4B8FFF';
-const SAFETY_COLOR = MODES[0].hex;   // #93CFFF
-const THREAT_COLOR = MODES[1].hex;   // #5BADFF
-const WARNING_COLOR = '#e87b35';
+const EVAL_COLOR = SPECTRUM.slate;     // #808493 — the scanner
+const SAFETY_COLOR = SPECTRUM.azure;   // #76e2ff — open
+const THREAT_COLOR = SPECTRUM.cobalt;  // #0590e5 — mobilised
 
 // SVG
 const SIZE = 300;
 const CX = SIZE / 2;
 const CY = SIZE / 2;
-const R = 115;           // radar radius
-const SWEEP_SPEED = 4;   // seconds per revolution
-const TOTAL_SWEEPS = 2.5;
-const DURATION = SWEEP_SPEED * TOTAL_SWEEPS * 1000;
-
-// ─── Blips around the radar ─────────────────────────
-// angle in degrees (0=top, clockwise), distance from center as fraction of R
-const BLIPS = [
-  { angle: 35,  dist: 0.55, type: 'safety',  label: 'Familiar voice' },
-  { angle: 80,  dist: 0.75, type: 'safety',  label: 'Warm tone' },
-  { angle: 130, dist: 0.40, type: 'threat',  label: 'Sudden movement' },
-  { angle: 170, dist: 0.85, type: 'safety',  label: 'Known space' },
-  { angle: 210, dist: 0.60, type: 'threat',  label: 'Raised voice' },
-  { angle: 260, dist: 0.48, type: 'ambiguous', label: 'Unfamiliar face' },
-  { angle: 310, dist: 0.70, type: 'safety',  label: 'Eye contact' },
-  { angle: 345, dist: 0.35, type: 'ambiguous', label: 'Silence' },
-];
-
-// Convert angle (degrees from top) + distance to SVG coords
-function blipPos(angle, dist) {
-  const rad = (angle - 90) * Math.PI / 180;
-  return {
-    x: CX + R * dist * Math.cos(rad),
-    y: CY + R * dist * Math.sin(rad),
-  };
-}
-
-// ─── Info cards ─────────────────────────────────────
-const CARDS = [
-  {
-    phase: 0,
-    label: 'Continuous scanning',
-    body: 'The nervous system monitors safety and threat below conscious awareness — automatic, rapid, and based on experienced safety, not objective conditions.',
-    ref: 'Porges, 2011',
-    color: MODEL_COLOR,
-  },
-  {
-    phase: 1,
-    label: 'Detection → response',
-    body: 'Each detection triggers a system-wide response. Safety signals open engagement. Threat signals mobilise protection. The body reorganises before conscious thought can form.',
-    ref: 'LeDoux, 1996',
-    color: THREAT_COLOR,
-  },
-  {
-    phase: 2,
-    label: 'Biased toward protection',
-    body: 'Ambiguous signals read as threat. Failing to detect danger may be fatal — unnecessary protection is less costly. The system is biased toward defence under uncertainty.',
-    ref: 'Damasio, 1994',
-    color: WARNING_COLOR,
-  },
-];
+const R = 115;
+const SWEEP_DURATION = 3000; // one full rotation
 
 // ─── Component ──────────────────────────────────────
 
 export default function M2SafetyEvaluation() {
+  const [mode, setMode] = useState(null);       // null | 'safety' | 'threat'
   const [sweepAngle, setSweepAngle] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const [done, setDone] = useState(false);
-  const [revealedBlips, setRevealedBlips] = useState(new Set());
-  const [lastDetection, setLastDetection] = useState(null); // 'safety' | 'threat' | 'ambiguous'
-  const [pulses, setPulses] = useState([]); // { id, cx, cy, color, t }
-  const sectionRef = useRef(null);
+  const [sweeping, setSweeping] = useState(false);
+  const [result, setResult] = useState(null);    // null | 'safety' | 'threat'
   const rafRef = useRef(null);
   const t0Ref = useRef(null);
-  const runRef = useRef(0);
-  const pulseIdRef = useRef(0);
 
-  function play() {
+  function startSweep(type) {
     cancelAnimationFrame(rafRef.current);
     t0Ref.current = null;
+    setMode(type);
     setSweepAngle(0);
-    setDone(false);
-    setHasStarted(true);
-    setRevealedBlips(new Set());
-    setLastDetection(null);
-    setPulses([]);
-    runRef.current += 1;
+    setSweeping(true);
+    setResult(null);
   }
 
-  // Scroll trigger
+  // Sweep animation
   useEffect(() => {
-    if (hasStarted) return;
-    const el = sectionRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { play(); obs.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [hasStarted]);
-
-  // Animation loop
-  useEffect(() => {
-    if (!hasStarted) return;
-    const thisRun = runRef.current;
+    if (!sweeping) return;
     const tick = (ts) => {
-      if (thisRun !== runRef.current) return;
       if (!t0Ref.current) t0Ref.current = ts;
       const elapsed = ts - t0Ref.current;
-      const p = Math.min(elapsed / DURATION, 1);
-      const currentAngle = (p * TOTAL_SWEEPS * 360) % 360;
-      setSweepAngle(currentAngle);
-
-      // Check if sweep passes a blip (within ±12 degrees)
-      setRevealedBlips(prev => {
-        const next = new Set(prev);
-        let newDetection = null;
-        BLIPS.forEach((blip, i) => {
-          if (!next.has(i)) {
-            const diff = ((currentAngle - blip.angle) % 360 + 360) % 360;
-            if (diff < 12 || diff > 348) {
-              next.add(i);
-              newDetection = blip;
-            }
-          }
-        });
-        if (newDetection) {
-          const pos = blipPos(newDetection.angle, newDetection.dist);
-          const isThreaty = newDetection.type === 'threat' || newDetection.type === 'ambiguous';
-          setLastDetection(isThreaty ? 'threat' : 'safety');
-          setPulses(prev => [...prev.slice(-4), {
-            id: ++pulseIdRef.current,
-            cx: pos.x,
-            cy: pos.y,
-            color: isThreaty ? (newDetection.type === 'ambiguous' ? WARNING_COLOR : THREAT_COLOR) : SAFETY_COLOR,
-          }]);
-        }
-        return next;
-      });
-
-      if (p < 1) rafRef.current = requestAnimationFrame(tick);
-      else setDone(true);
+      const p = Math.min(elapsed / SWEEP_DURATION, 1);
+      // Ease out — slows as it finishes
+      const eased = 1 - Math.pow(1 - p, 2.5);
+      setSweepAngle(eased * 360);
+      if (p < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        setSweeping(false);
+        setResult(mode);
+      }
     };
     rafRef.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [hasStarted, runRef.current]);
+  }, [sweeping, mode]);
 
-  // Cleanup
   useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
 
-  // Sweep arm endpoint
+  // Derived
   const sweepRad = (sweepAngle - 90) * Math.PI / 180;
   const sweepX = CX + R * Math.cos(sweepRad);
   const sweepY = CY + R * Math.sin(sweepRad);
 
-  // Sweep trail (arc behind the arm)
-  const trailAngle = 30;
-  const trailStart = sweepAngle - trailAngle;
+  // Active color — shifts during sweep, lands on result
+  const activeColor = result
+    ? (result === 'safety' ? SAFETY_COLOR : THREAT_COLOR)
+    : sweeping
+      ? EVAL_COLOR
+      : EVAL_COLOR;
 
-  // Current phase for cards
-  const revealCount = revealedBlips.size;
-  const currentPhase = revealCount >= 6 ? 2 : revealCount >= 2 ? 1 : revealCount >= 1 ? 0 : -1;
+  // Ring builds as sweep progresses
+  const resultColor = mode === 'safety' ? SAFETY_COLOR : THREAT_COLOR;
+  const ringSegments = [];
+  if (sweeping || result) {
+    const segCount = 60;
+    const maxAngle = result ? 360 : sweepAngle;
+    for (let i = 0; i < segCount; i++) {
+      const a1 = (i / segCount) * 360;
+      if (a1 > maxAngle) break;
+      const a2 = Math.min(((i + 1) / segCount) * 360, maxAngle);
+      const r1 = (a1 - 90) * Math.PI / 180;
+      const r2 = (a2 - 90) * Math.PI / 180;
+      const rInner = R - 5;
+      const rOuter = R;
+      ringSegments.push({
+        key: i,
+        d: `M${CX + rInner * Math.cos(r1)},${CY + rInner * Math.sin(r1)} L${CX + rOuter * Math.cos(r1)},${CY + rOuter * Math.sin(r1)} A${rOuter},${rOuter} 0 0,1 ${CX + rOuter * Math.cos(r2)},${CY + rOuter * Math.sin(r2)} L${CX + rInner * Math.cos(r2)},${CY + rInner * Math.sin(r2)} A${rInner},${rInner} 0 0,0 ${CX + rInner * Math.cos(r1)},${CY + rInner * Math.sin(r1)} Z`,
+      });
+    }
+  }
+
+  // Sweep trail
+  const trailDeg = 30;
+  const trailStart = sweepAngle - trailDeg;
+  const trailRad = (trailStart - 90) * Math.PI / 180;
+  const trailX = CX + R * Math.cos(trailRad);
+  const trailY = CY + R * Math.sin(trailRad);
+
+  // Card content depends on result
+  const cardData = result === 'safety'
+    ? {
+        label: 'Safety detected → engage',
+        body: 'The evaluation reads safety. Perception broadens, social engagement comes online, the body settles. Resources become available for connection, learning, and repair.',
+        ref: 'Porges, 2011',
+        color: SAFETY_COLOR,
+      }
+    : result === 'threat'
+    ? {
+        label: 'Threat detected → protect',
+        body: 'The evaluation reads threat. Attention narrows, muscles tense, heart rate rises, cognition simplifies — the entire system reorganises before conscious awareness forms an interpretation.',
+        ref: 'LeDoux, 1996',
+        color: THREAT_COLOR,
+      }
+    : null;
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32, ...diagramContainer() }}>
+    <section style={{ marginBottom: 32, ...diagramContainer() }}>
       <style>{`
         .m2-cse-layout {
           display: flex;
@@ -181,25 +127,12 @@ export default function M2SafetyEvaluation() {
           flex-wrap: wrap;
           justify-content: center;
         }
-        .m2-cse-cards {
+        .m2-cse-right {
           flex: 1;
           min-width: 260px;
           display: flex;
           flex-direction: column;
-          gap: 10px;
-        }
-        .m2-cse-card {
-          opacity: 0;
-          transform: translateY(6px);
-          transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        .m2-cse-card.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        @keyframes m2Pulse {
-          from { r: 4; opacity: 0.6; }
-          to { r: 30; opacity: 0; }
+          gap: 14px;
         }
         @media (max-width: 640px) {
           .m2-cse-layout {
@@ -214,7 +147,7 @@ export default function M2SafetyEvaluation() {
         marginBottom: 16, flexWrap: 'wrap',
       }}>
         <span style={{
-          fontFamily: FONT.mono, fontSize: 8, color: MODEL_COLOR,
+          fontFamily: FONT.mono, fontSize: 8, color: EVAL_COLOR,
           letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600,
         }}>
           Neuroception
@@ -223,45 +156,17 @@ export default function M2SafetyEvaluation() {
           fontFamily: FONT.mono, fontSize: 8, color: TEXT.hint,
           letterSpacing: '0.06em',
         }}>
-          Continuous safety/threat evaluation
+          Is there enough safety to engage, or is protection needed?
         </span>
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
-          {lastDetection && !done && (
-            <span style={{
-              fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,
-              color: lastDetection === 'threat' ? WARNING_COLOR : SAFETY_COLOR,
-              transition: 'color 0.3s ease',
-            }}>
-              {lastDetection === 'threat' ? 'Protection required' : 'Safe to engage'}
-            </span>
-          )}
-          {done && (
-            <button
-              onClick={play}
-              aria-label="Replay animation"
-              style={{
-                display: 'flex', alignItems: 'center', gap: 6,
-                padding: '4px 12px',
-                border: `1px solid ${BORDER.default}`,
-                background: 'transparent',
-                color: TEXT.muted,
-                borderRadius: 6,
-                fontFamily: FONT.mono,
-                fontSize: 9,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                fontWeight: 500,
-                cursor: 'pointer',
-              }}
-            >
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" />
-              </svg>
-              Replay
-            </button>
-          )}
-        </div>
+        {result && (
+          <span style={{
+            fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,
+            color: result === 'safety' ? SAFETY_COLOR : THREAT_COLOR,
+            marginLeft: 'auto',
+          }}>
+            {result === 'safety' ? 'Engage' : 'Protect'}
+          </span>
+        )}
       </div>
 
       <div className="m2-cse-layout">
@@ -269,145 +174,235 @@ export default function M2SafetyEvaluation() {
         <svg viewBox={`0 0 ${SIZE} ${SIZE}`} style={{
           width: 280, height: 280, flexShrink: 0,
         }}>
+          {/* Background glow — appears on result */}
+          {result && (
+            <circle cx={CX} cy={CY} r={R * 0.8}
+              fill={hexToRgba(resultColor, 0.06)}
+              style={{ transition: 'fill 0.6s ease' }}
+            />
+          )}
+
           {/* Radar rings */}
           {[0.33, 0.66, 1].map(f => (
             <circle key={f} cx={CX} cy={CY} r={R * f}
-              fill="none" stroke={hexToRgba(MODEL_COLOR, 0.08)}
+              fill="none" stroke={hexToRgba(EVAL_COLOR, 0.08)}
               strokeWidth="1" />
           ))}
 
           {/* Cross hairs */}
           <line x1={CX} y1={CY - R} x2={CX} y2={CY + R}
-            stroke={hexToRgba(MODEL_COLOR, 0.06)} strokeWidth="1" />
+            stroke={hexToRgba(EVAL_COLOR, 0.05)} strokeWidth="1" />
           <line x1={CX - R} y1={CY} x2={CX + R} y2={CY}
-            stroke={hexToRgba(MODEL_COLOR, 0.06)} strokeWidth="1" />
+            stroke={hexToRgba(EVAL_COLOR, 0.05)} strokeWidth="1" />
 
-          {/* Sweep trail gradient */}
-          {hasStarted && (
+          {/* Result ring — builds during sweep, stays on result */}
+          {ringSegments.map(seg => (
+            <path key={seg.key} d={seg.d}
+              fill={resultColor} fillOpacity={result ? 0.35 : 0.2} />
+          ))}
+
+          {/* Sweep trail */}
+          {sweeping && sweepAngle > 5 && (
             <>
               <defs>
-                <radialGradient id="m2-sweep-grad">
-                  <stop offset="0%" stopColor={MODEL_COLOR} stopOpacity="0" />
-                  <stop offset="100%" stopColor={MODEL_COLOR} stopOpacity="0.12" />
+                <radialGradient id="m2-cse-trail">
+                  <stop offset="0%" stopColor={EVAL_COLOR} stopOpacity="0" />
+                  <stop offset="100%" stopColor={EVAL_COLOR} stopOpacity="0.08" />
                 </radialGradient>
               </defs>
               <path
-                d={`M${CX},${CY} L${CX + R * Math.cos((trailStart - 90) * Math.PI / 180)},${CY + R * Math.sin((trailStart - 90) * Math.PI / 180)} A${R},${R} 0 0,1 ${sweepX},${sweepY} Z`}
-                fill="url(#m2-sweep-grad)"
+                d={`M${CX},${CY} L${trailX.toFixed(1)},${trailY.toFixed(1)} A${R},${R} 0 0,1 ${sweepX.toFixed(1)},${sweepY.toFixed(1)} Z`}
+                fill="url(#m2-cse-trail)"
               />
             </>
           )}
 
           {/* Sweep arm */}
-          {hasStarted && (
+          {sweeping && (
             <line x1={CX} y1={CY} x2={sweepX} y2={sweepY}
-              stroke={MODEL_COLOR} strokeWidth="1.5" strokeOpacity="0.6" />
+              stroke={EVAL_COLOR}
+              strokeWidth="1.5" strokeOpacity="0.5" />
           )}
 
-          {/* Blips */}
-          {BLIPS.map((blip, i) => {
-            const pos = blipPos(blip.angle, blip.dist);
-            const revealed = revealedBlips.has(i);
-            const isThreaty = blip.type === 'threat' || blip.type === 'ambiguous';
-            const blipColor = blip.type === 'ambiguous' ? WARNING_COLOR
-              : isThreaty ? THREAT_COLOR : SAFETY_COLOR;
-
-            return (
-              <g key={i} style={{
-                opacity: revealed ? 1 : 0.08,
-                transition: 'opacity 0.3s ease',
-              }}>
-                {/* Outer glow when revealed */}
-                {revealed && (
-                  <circle cx={pos.x} cy={pos.y} r="8"
-                    fill={hexToRgba(blipColor, 0.12)} />
-                )}
-                {/* Blip dot */}
-                <circle cx={pos.x} cy={pos.y}
-                  r={revealed ? 4 : 2.5}
-                  fill={revealed ? blipColor : hexToRgba(MODEL_COLOR, 0.2)}
-                  style={{ transition: 'all 0.3s ease' }}
-                />
-                {/* Label */}
-                {revealed && (
-                  <text
-                    x={pos.x}
-                    y={pos.y + 14}
-                    textAnchor="middle"
-                    style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: 6.5,
-                      fill: blipColor,
-                      letterSpacing: '0.04em',
-                      opacity: 0.8,
-                    }}
-                  >
-                    {blip.label}
-                  </text>
-                )}
-              </g>
-            );
-          })}
-
-          {/* Detection pulses */}
-          {pulses.map(pulse => (
-            <circle key={pulse.id} cx={pulse.cx} cy={pulse.cy}
-              fill="none" stroke={pulse.color} strokeWidth="1"
-              style={{ animation: 'm2Pulse 1.2s ease-out forwards' }}
-            />
-          ))}
-
           {/* Center dot */}
-          <circle cx={CX} cy={CY} r="4" fill={MODEL_COLOR} fillOpacity="0.3" />
-          <circle cx={CX} cy={CY} r="2" fill={MODEL_COLOR} />
+          <circle cx={CX} cy={CY} r="6"
+            fill={hexToRgba(activeColor, 0.25)}
+            style={{ transition: 'fill 0.5s ease' }} />
+          <circle cx={CX} cy={CY} r="3"
+            fill={activeColor}
+            style={{ transition: 'fill 0.5s ease' }} />
+
+          {/* Result label in center */}
+          {result && (
+            <>
+              <text x={CX} y={CY - 16} textAnchor="middle"
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: 8, fontWeight: 600,
+                  letterSpacing: '0.14em',
+                  fill: resultColor,
+                  textTransform: 'uppercase',
+                }}>
+                {result === 'safety' ? 'Safety' : 'Threat'}
+              </text>
+              <text x={CX} y={CY + 24} textAnchor="middle"
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: 7,
+                  letterSpacing: '0.08em',
+                  fill: TEXT.hint,
+                }}>
+                {result === 'safety' ? 'System opens' : 'System mobilises'}
+              </text>
+            </>
+          )}
+
+          {/* Idle label */}
+          {!sweeping && !result && (
+            <text x={CX} y={CY + 4} textAnchor="middle"
+              dominantBaseline="central"
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: 7,
+                letterSpacing: '0.08em',
+                fill: TEXT.hint,
+              }}>
+              Press to evaluate
+            </text>
+          )}
         </svg>
 
-        {/* ─── Info cards ───────────────── */}
-        <div className="m2-cse-cards">
-          {CARDS.map((card, i) => {
-            const reached = currentPhase >= card.phase;
-            return (
-              <div key={card.label}
-                className={`m2-cse-card${reached ? ' visible' : ''}`}
-                style={{
-                  background: gradientCardBg(card.color, reached ? 0.06 : 0.02),
-                  padding: '14px 14px 16px',
-                  borderRadius: RADIUS.lg,
-                  border: `1px solid ${reached ? hexToRgba(card.color, 0.25) : BORDER.default}`,
-                  borderLeft: `3px solid ${reached ? card.color : BORDER.default}`,
-                  transition: 'border-color 0.4s ease, background 0.4s ease',
-                }}
-              >
-                <div style={{
-                  display: 'flex', alignItems: 'center', gap: 8,
-                  marginBottom: 6,
-                }}>
-                  <span style={{
-                    fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
-                    letterSpacing: '0.14em', textTransform: 'uppercase',
-                    color: reached ? card.color : TEXT.hint,
-                    transition: 'color 0.3s ease',
-                  }}>
-                    {card.label}
-                  </span>
-                </div>
-                <p style={{
-                  fontSize: 13, lineHeight: 1.65,
-                  color: reached ? TEXT.secondary : TEXT.hint,
-                  transition: 'color 0.4s ease',
-                  margin: 0, marginBottom: 6,
-                }}>
-                  {card.body}
-                </p>
-                <span style={{
-                  fontFamily: FONT.mono, fontSize: 7.5,
-                  color: TEXT.hint, letterSpacing: '0.04em',
-                }}>
-                  {card.ref}
-                </span>
+        {/* ─── Right side: buttons + card ── */}
+        <div className="m2-cse-right">
+          {/* Two buttons */}
+          <div style={{ display: 'flex', gap: 10 }}>
+            <button
+              onClick={() => startSweep('safety')}
+              disabled={sweeping}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                borderRadius: RADIUS.md,
+                border: `1.5px solid ${result === 'safety' ? SAFETY_COLOR : hexToRgba(SAFETY_COLOR, 0.3)}`,
+                background: result === 'safety' ? hexToRgba(SAFETY_COLOR, 0.12) : 'transparent',
+                cursor: sweeping ? 'default' : 'pointer',
+                opacity: sweeping ? 0.5 : 1,
+                transition: 'all 0.3s ease',
+                textAlign: 'left',
+              }}
+            >
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 9, fontWeight: 600,
+                letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: SAFETY_COLOR, marginBottom: 3,
+              }}>
+                Safety
               </div>
-            );
-          })}
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 7.5,
+                color: TEXT.hint, letterSpacing: '0.04em',
+              }}>
+                Engage
+              </div>
+            </button>
+
+            <button
+              onClick={() => startSweep('threat')}
+              disabled={sweeping}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                borderRadius: RADIUS.md,
+                border: `1.5px solid ${result === 'threat' ? THREAT_COLOR : hexToRgba(THREAT_COLOR, 0.3)}`,
+                background: result === 'threat' ? hexToRgba(THREAT_COLOR, 0.12) : 'transparent',
+                cursor: sweeping ? 'default' : 'pointer',
+                opacity: sweeping ? 0.5 : 1,
+                transition: 'all 0.3s ease',
+                textAlign: 'left',
+              }}
+            >
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 9, fontWeight: 600,
+                letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: THREAT_COLOR, marginBottom: 3,
+              }}>
+                Threat
+              </div>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 7.5,
+                color: TEXT.hint, letterSpacing: '0.04em',
+              }}>
+                Protect
+              </div>
+            </button>
+          </div>
+
+          {/* Evaluation description — always visible */}
+          <div style={{
+            padding: '14px 14px 16px',
+            borderRadius: RADIUS.lg,
+            border: `1px solid ${hexToRgba(EVAL_COLOR, 0.2)}`,
+            borderLeft: `3px solid ${EVAL_COLOR}`,
+            background: gradientCardBg(EVAL_COLOR, 0.04),
+          }}>
+            <div style={{
+              fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+              letterSpacing: '0.14em', textTransform: 'uppercase',
+              color: EVAL_COLOR, marginBottom: 6,
+            }}>
+              Continuous evaluation
+            </div>
+            <p style={{
+              fontSize: 13, lineHeight: 1.65,
+              color: TEXT.secondary, margin: 0, marginBottom: 6,
+            }}>
+              The nervous system monitors safety and threat below conscious awareness — automatic, rapid, and based on experienced safety, not objective conditions.
+            </p>
+            <span style={{
+              fontFamily: FONT.mono, fontSize: 7.5,
+              color: TEXT.hint, letterSpacing: '0.04em',
+            }}>
+              Porges, 2011
+            </span>
+          </div>
+
+          {/* Result card — appears after sweep */}
+          {cardData && (
+            <div style={{
+              padding: '14px 14px 16px',
+              borderRadius: RADIUS.lg,
+              border: `1px solid ${hexToRgba(cardData.color, 0.25)}`,
+              borderLeft: `3px solid ${cardData.color}`,
+              background: gradientCardBg(cardData.color, 0.06),
+              animation: 'm2CseCardIn 0.4s ease',
+            }}>
+              <style>{`
+                @keyframes m2CseCardIn {
+                  from { opacity: 0; transform: translateY(6px); }
+                  to { opacity: 1; transform: translateY(0); }
+                }
+              `}</style>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+                letterSpacing: '0.14em', textTransform: 'uppercase',
+                color: cardData.color, marginBottom: 6,
+              }}>
+                {cardData.label}
+              </div>
+              <p style={{
+                fontSize: 13, lineHeight: 1.65,
+                color: TEXT.secondary, margin: 0, marginBottom: 6,
+              }}>
+                {cardData.body}
+              </p>
+              <span style={{
+                fontFamily: FONT.mono, fontSize: 7.5,
+                color: TEXT.hint, letterSpacing: '0.04em',
+              }}>
+                {cardData.ref}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </section>
