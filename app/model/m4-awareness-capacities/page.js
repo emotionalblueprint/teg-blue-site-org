@@ -1,12 +1,20 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { BG, TEXT, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ModelHero, ExpandableSection, PageLayout, PartDivider, NavSection, ConnectionsMap } from "@/src/components";
+
+const M4SystemsDiagram = dynamic(() => import("@/src/components/M4SystemsDiagram"), { ssr: false });
+const M4AwarenessDiagram = dynamic(() => import("@/src/components/M4AwarenessDiagram"), { ssr: false });
 import { proseStyle, expandedProseStyle, propositionItemStyle, sectionHeadingStyle, conceptHeadingStyle, expandableRowStyle, gridHeaderStyle, gridCellStyle } from "@/src/styles/pageStyles";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 const MODEL_COLOR = SPECTRUM.cobalt;
 const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
 export const metadata = { title: "Awareness Capacities (M4) | TEG-Blue Research", description: "What determines whether the person can perceive the Emotional Somatic Cycle while it is running. Two systems, two substrates, three awareness capacities.", keywords: ["awareness capacities","interoceptive self-awareness","affective resonance","interpersonal affect perception","interoceptive access","two substrates","empathy architecture"], alternates: { canonical: "https://teg-blue.org/model/m4-awareness-capacities" }, openGraph: { title: "Awareness Capacities \u2014 M4 Model | TEG-Blue", description: "Two systems, two substrates, three awareness capacities.", url: "https://teg-blue.org/model/m4-awareness-capacities", type: "article", siteName: "TEG-Blue Research" }, twitter: { card: "summary_large_image", title: "Awareness Capacities \u2014 TEG-Blue M4", description: "The biological architecture of self-awareness." }, other: { "citation_title": "Awareness Capacities", "citation_author": "Anna Paretas-Artacho", "citation_publication_date": "2026/02", "citation_technical_report_institution": "TEG-Blue Research" } };
-export default function M4AwarenessCapacitiesPage() { return (<div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}><SiteHeader currentPath="/model/m4-awareness-capacities" /><PageLayout header={<ModelHero badge="MODEL M4" title="Awareness Capacities" subtitle="The Calibration" description="M4 maps the biological architecture that determines whether the person can perceive the Emotional Somatic Cycle while it is running \u2014 two systems, two substrates, three awareness capacities." coreQuestion="Can the person feel any of these physiological changes while they are happening?" drawsFrom={[{ label: "M1", href: "/model/m1-emotions-as-signals" },{ label: "M2", href: "/model/m2-nervous-system-states" },{ label: "M3", href: "/model/m3-regulation-capacities" },{ label: "F2", href: "/framework/f2-awareness-calibration" }]} color={MODEL_COLOR} />}><article>
+export default function M4AwarenessCapacitiesPage() { return (<div style={{ minHeight: "100vh", background: BG.page, fontFamily: FONT.display }}><SiteHeader currentPath="/model/m4-awareness-capacities" /><PageLayout header={<ModelHero badge="MODEL M4" title="Awareness Capacities" subtitle="The Calibration" description="M4 maps the biological architecture that determines whether the person can perceive the Emotional Somatic Cycle while it is running \u2014 two systems, two substrates, three awareness capacities." coreQuestion="Can the person feel any of these physiological changes while they are happening?" drawsFrom={[{ label: "M1", href: "/model/m1-emotions-as-signals" },{ label: "M2", href: "/model/m2-nervous-system-states" },{ label: "M3", href: "/model/m3-regulation-capacities" },{ label: "F2", href: "/framework/f2-awareness-calibration" }]} color={MODEL_COLOR} />}>
+
+<M4SystemsDiagram />
+
+<article>
 
 <section style={{ marginBottom: 48 }}>
 <p style={proseStyle}>M4 establishes a foundational claim of TEG-Blue: <strong style={{ color: TEXT.primary }}>the ability to perceive emotional life is not unitary. It depends on a specific awareness architecture composed of distinct systems, substrates, and channels.</strong></p>
@@ -82,6 +90,8 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <h3 style={conceptHeadingStyle}>The Family Lineage</h3>
 <p style={proseStyle}>ER and SEA are two applications of the same interoceptive access — one directed outward, one directed inward. SEA is the developmental entry point: a person cannot feel others accurately if they cannot feel themselves. Building the inward channel activates the substrate for outward use. The reverse is not symmetrical.</p>
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Craig (2002) — interoceptive awareness as substrate of self-awareness. Damasio (1999) — self-referential emotional processing. Lane & Schwartz (1987) — levels of emotional awareness. Schore (2003) — right-hemisphere self-regulatory development.</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>SEA as the bridge between the two systems. The family lineage: substrate as parent, ER and SEA as two applications. The SEA → ER developmental direction.</p></ExpandableSection></div></section>
+
+<M4AwarenessDiagram />
 
 <PartDivider label="PART 3" title="What the Chain Determines" color={MODEL_COLOR} />
 

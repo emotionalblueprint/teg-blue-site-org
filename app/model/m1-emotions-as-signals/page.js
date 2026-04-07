@@ -1,5 +1,11 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+
+const M1SignalDiagram = dynamic(() => import("@/src/components/M1SignalDiagram"), { ssr: false });
+const M1SignalMap = dynamic(() => import("@/src/components/M1SignalMap"), { ssr: false });
+const M1DistortionPathway = dynamic(() => import("@/src/components/M1DistortionPathway"), { ssr: false });
+const M1DevelopmentalLoss = dynamic(() => import("@/src/components/M1DevelopmentalLoss"), { ssr: false });
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
   PartDivider, NavSection, ConnectionsMap, ExpandableSection,
@@ -92,6 +98,8 @@ export default function M1EmotionsAsSignalsPage() {
           />
         }
       >
+        <M1SignalDiagram />
+
         <article>
 
           {/* ─── INTRODUCTION ───────────────────────────── */}
@@ -262,6 +270,8 @@ export default function M1EmotionsAsSignalsPage() {
 
           <PartDivider label="PART 2" title="The Signal System" color={MODEL_COLOR} />
 
+          <M1SignalMap />
+
           {/* ─── C2: SOMATIC EMOTIONS ──────────────────── */}
           <section
             id="somatic-emotions"
@@ -383,6 +393,8 @@ export default function M1EmotionsAsSignalsPage() {
                 </p>
               </ExpandableSection>
             </div>
+
+            <M1DistortionPathway />
           </section>
 
           {/* ─── C21: WHAT RESTORATION IS ──────────────── */}
@@ -462,6 +474,8 @@ export default function M1EmotionsAsSignalsPage() {
                 </p>
               </ExpandableSection>
             </div>
+
+            <M1DevelopmentalLoss />
           </section>
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}

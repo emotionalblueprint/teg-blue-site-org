@@ -1,5 +1,9 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { BG, TEXT, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+
+const M3PathDiagram = dynamic(() => import("@/src/components/M3PathDiagram"), { ssr: false });
+const M3RestorationByMode = dynamic(() => import("@/src/components/M3RestorationByMode"), { ssr: false });
 import {
   SiteHeader, SiteFooter, ModelHero, ExpandableSection,
   PageLayout, PartDivider, NavSection, ConnectionsMap,
@@ -44,6 +48,8 @@ export default function M3RegulationCapacitiesPage() {
           />
         }
       >
+        <M3PathDiagram />
+
         <article>
 
           <section style={{ marginBottom: 48 }}>
@@ -99,25 +105,8 @@ export default function M3RegulationCapacitiesPage() {
           <section id="restoration-by-mode" aria-labelledby="heading-mode" style={{ marginBottom: 48 }}>
             <h2 id="heading-mode" style={sectionHeadingStyle(MODEL_COLOR)}>Restoration Requirements by Mode</h2>
             <p style={proseStyle}>Four activation levels produce four distinct restoration requirements. Each has a physiological mechanism, specific conditions, and a timescale.</p>
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2.5fr 1fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Restoration</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Timescale</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
-                <div style={gridCellStyle}>Tending — preventive, not corrective. Sensory engagement, creative activity, gentle co-presence. Substituting productivity for tending creates a slow upward drift in baseline.</div>
-                <div style={gridCellStyle}>Continuous</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Threat & Defence</div>
-                <div style={gridCellStyle}>Completing the sequence — full exhale, physical movement that allows discharge, co-regulation with a safe other. Time without new demands before current activation has cleared.</div>
-                <div style={gridCellStyle}>20 min – 2 hours</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategy & Management</div>
-                <div style={gridCellStyle}>Releasing the cognitive override — putting down the management, allowing overridden emotions to surface. The override does not release while cognition is still steering.</div>
-                <div style={gridCellStyle}>2–8 hours</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power & Dominance</div>
-                <div style={gridCellStyle}>The full discharge arc — extended rest, minimal demand, full somatic discharge. Guilt, grief, relief, and physical exhaustion move through in sequence.</div>
-                <div style={gridCellStyle}>24–72+ hours</div>
-              </div>
-            </div>
+
+            <M3RestorationByMode />
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Porges (2011) — vagal brake and parasympathetic restoration. Levine (1997) — the completion of the threat response through somatic discharge. Nagoski & Nagoski (2019) — the stress cycle requiring completion, not suppression.</p></ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>Biological Restoration by mode — showing that restoration must be matched to activation level rather than treated as a generic self-care process. Each restoration type is qualitatively different, not just longer.</p></ExpandableSection>

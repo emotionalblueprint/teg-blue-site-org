@@ -16,8 +16,16 @@ import {
   generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
 
-const FluidCompassExplorer = dynamic(
-  () => import("@/src/components/FluidCompassExplorer"),
+const M2StateDiagram = dynamic(
+  () => import("@/src/components/M2StateDiagram"),
+  { ssr: false }
+);
+const M2SignalState = dynamic(
+  () => import("@/src/components/M2SignalState"),
+  { ssr: false }
+);
+const M2ReinforcingLoop = dynamic(
+  () => import("@/src/components/M2ReinforcingLoop"),
   { ssr: false }
 );
 
@@ -89,6 +97,8 @@ export default function M2NervousSystemStatesPage() {
           />
         }
       >
+        <M2StateDiagram />
+
         <article>
 
           {/* INTRODUCTION */}
@@ -105,11 +115,6 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>
               The key measure in M2 is not which state the system occupies. It is whether the system retains the capacity to move — to shift in response to changing conditions, and to return to rest.
             </p>
-          </section>
-
-          {/* ─── COMPASS DIAGRAM ───────────────────────── */}
-          <section id="compass-explorer" style={{ marginBottom: 48 }}>
-            <FluidCompassExplorer />
           </section>
 
           {/* CORE PROPOSITIONS */}
@@ -376,6 +381,8 @@ export default function M2NervousSystemStatesPage() {
                 <p style={expandedProseStyle}>TEG-Blue proposes that outcomes depend on the interaction between the emotional signal and the nervous system state through which that signal is being processed — State-Modified Signal Experience.</p>
               </ExpandableSection>
             </div>
+
+            <M2SignalState />
           </section>
 
           {/* PART 3: WHEN STATES BECOME CHRONIC */}
@@ -485,6 +492,8 @@ export default function M2NervousSystemStatesPage() {
                 <p style={expandedProseStyle}>TEG-Blue locates the self-reinforcing loop not only at the level of belief, but at the level of state-shaped perception. This helps explain why interrupting the loop often requires experience that changes the state at the physiological level — not only cognitive reinterpretation of the filtered input.</p>
               </ExpandableSection>
             </div>
+
+            <M2ReinforcingLoop />
           </section>
 
           {/* PART 4: TWO INFORMATION SYSTEMS */}
