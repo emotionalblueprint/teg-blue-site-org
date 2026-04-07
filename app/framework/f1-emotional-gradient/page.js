@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -103,7 +103,7 @@ export default function F1EmotionalGradientPage() {
             badge="FRAMEWORK F1"
             title="The Emotional Gradient"
             subtitle="The Biological Origin of the Emotional Somatic Cycle"
-            description="Every emotional response is a biological event — produced by specific neural, endocrine, and autonomic systems, generating physiological changes before conscious awareness begins. F1 asks what architecture produces this system, why independent research traditions converge on the same structure, and what governs the entire framework system when the body's designed completion process is unavailable."
+            description="Every emotional response is a biological event — neural, endocrine, and autonomic systems generating physiological changes before conscious awareness begins. Independent research traditions across affective science, neuroscience, developmental psychology, and trauma studies converge on the same structure. This framework asks what biological architecture produces it, why the convergence occurs, and what governs the entire system when the body's designed completion process is unavailable."
             group="Individual"
             groupLabel="Individual Arc · F1–F3"
             threadLine="Biological restoration — the body completing its own cycle. Cost: none — the designed process"

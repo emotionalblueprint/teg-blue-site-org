@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -105,7 +105,7 @@ export default function F11ParadoxPage() {
             badge="FRAMEWORK F11"
             title="Paradox Holds What Logic Cannot"
             subtitle="Why Human Contradictions Are Predictable Outcomes of Multi-Need Systems"
-            description="People want connection and push it away. Understand the pattern and repeat it. Love someone and grieve what that love cost. These contradictions are not failures of logic — they are the predictable output of a nervous system pursuing multiple valid regulatory needs simultaneously. F11 maps why contradictions are predictable, how they become invisible, what capacity is required to hold them, and why integration means holding complexity rather than resolving it."
+            description="People want connection and push it away. Understand a pattern and repeat it. Love someone and grieve what that love cost. These contradictions are not failures of logic — they are the predictable output of a nervous system pursuing multiple valid needs simultaneously. This framework maps why contradictions are predictable, how they become invisible, what capacity is required to hold them, and why integration means holding complexity rather than resolving it."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Paradox holds what logic cannot — holding complexity. Restores: truth"

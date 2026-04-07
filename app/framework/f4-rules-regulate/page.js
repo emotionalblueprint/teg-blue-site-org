@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -106,7 +106,7 @@ export default function F4RulesRegulatePage() {
             badge="FRAMEWORK F4"
             title="Rules Regulate"
             subtitle="How Individual Patterns Scale to Collective Rule Systems"
-            description="When enough nervous systems in a group cannot complete biological restoration internally, the individual patterns consolidate into collective rule systems — shared narratives that reduce uncertainty, manage belonging, and enforce conformity. Rules are absorbed by the same cognitive mechanism that maintains individual narrative substitution, and they reproduce the biological conditions that make the rules feel true across generations. F4 describes how individual regulation scales to social structure, what regulatory functions rule systems serve, and how rules escalate under collective threat."
+            description="When enough people in a group cannot complete the body's stress response internally, individual patterns consolidate into collective rule systems — shared narratives that reduce uncertainty, manage belonging, and enforce conformity. Rules are absorbed by the same cognitive mechanism that maintains individual narrative substitution, and they reproduce the biological conditions that make the rules feel true across generations. This framework describes how individual patterns scale to social structure, what regulatory functions rule systems serve, and how rules escalate under collective threat."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Rules regulate — collective rule compliance as restoration substitute. Scale: social systems. Cost: flexibility"

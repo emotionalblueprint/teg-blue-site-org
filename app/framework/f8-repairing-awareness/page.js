@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -106,7 +106,7 @@ export default function F8RepairingAwarenessPage() {
             badge="FRAMEWORK F8"
             title="Awareness Rebuilds Through Safety"
             subtitle="How the Interoceptive Channel Reopens and Capacities Develop"
-            description="When safety replaces threat, the interoceptive substrate can rebuild. The capacities that were never built can develop. The return path becomes available — not because the person decides to take it, but because the conditions that would support it become available. F8 maps how the interoceptive channel reopens, why the system that needs repair defends against it, what conditions allow capacities to develop, and why experience changes the nervous system while insight does not."
+            description="When safety replaces threat, the biological channels that connect the body's signals to conscious awareness can rebuild. Capacities that were never built can develop. The return path becomes available — not because of a decision to take it, but because the conditions that would support it become present. This framework maps how the channel between body and awareness reopens, why the system that needs repair defends against it, what conditions allow capacities to develop, and why experience changes the nervous system while insight alone does not."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Awareness rebuilds through safety — the restoration pathway reopens. Restores: the return path"

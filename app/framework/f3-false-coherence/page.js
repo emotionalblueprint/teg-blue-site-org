@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -107,7 +107,7 @@ export default function F3FalseCoherencePage() {
             badge="FRAMEWORK F3"
             title="Adult Cognition & False Coherence"
             subtitle="The Lock"
-            description="When higher-order cognition develops inside a nervous system that has no channel to its own physiological signals, it does not passively inherit the configuration — it actively maintains it. The cognitive system generates narratives that produce real physiological relief without the body's restoration sequence completing, reinforces the pattern through the relief those narratives provide, and makes the locked state invisible by constructing a coherent story around it. F3 describes why this lock resists insight, what it does inside relationships, and how individual narrative substitution scales to collective structures."
+            description="When higher-order cognition develops inside a nervous system with no channel to its own physiological signals, it does not passively inherit the disconnection — it actively maintains it. The cognitive system generates narratives that produce real physiological relief without the body's completion sequence running, reinforces the pattern through the relief those narratives provide, and makes the locked state invisible by constructing a coherent story around it. This framework describes why this lock resists insight, what it does inside relationships, and how individual narrative substitution scales to collective structures."
             group="Individual"
             groupLabel="Individual Arc · F1–F3"
             threadLine="False coherence — the CLS replacing the ESS's signals with narrative. Scale: individual cognition. Cost: truth"

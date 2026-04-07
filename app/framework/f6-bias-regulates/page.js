@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -104,7 +104,7 @@ export default function F6BiasRegulatesPage() {
             badge="FRAMEWORK F6"
             title="Bias Regulates"
             subtitle="How Perception Becomes Protection"
-            description="The nervous system maintains beliefs that settle activation — below conscious awareness, before reasoning begins. Under stable conditions, this operates as efficient pattern recognition. Under threat, the same efficiency becomes rigid certainty: beliefs maintained because they reduce activation, not because they are accurate. F6 maps how perception becomes protection, how individual perceptual filters synchronize across populations, and why correction fails when it targets reasoning while the body maintains the bias."
+            description="The nervous system maintains beliefs that settle activation — below conscious awareness, before reasoning begins. Under stable conditions, this operates as efficient pattern recognition. Under threat, the same efficiency becomes rigid certainty: beliefs maintained because they reduce activation, not because they are accurate. This framework maps how perception becomes protection, how individual perceptual filters synchronize across populations, and why correction fails when it targets reasoning while the body maintains the bias."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Bias regulates — perceptual certainty as restoration substitute. Scale: collective perceptual systems. Cost: accuracy"

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -106,7 +106,7 @@ export default function F5WorthHierarchiesPage() {
             badge="FRAMEWORK F5"
             title="The Filter of Worth"
             subtitle="How Rules Become Sorting Systems"
-            description="Collective rule systems do not only organize behavior — they organize value. When rule adherence becomes the collective definition of safety, the system begins to sort people: who gets belonging, protection, and credibility, and who does not. Worth hierarchies emerge when the markers of compliance become markers of human value, and the sorting determines which children get the developmental conditions that build the capacity to perceive their own physiological signals. F5 maps how this sorting works, how it reproduces itself through biology, and how it produces the evidence that appears to justify it."
+            description="Collective rule systems do not only organize behavior — they organize value. When rule adherence becomes the collective definition of safety, the system begins to sort: who gets belonging, protection, and credibility, and who does not. Worth hierarchies emerge when markers of compliance become markers of human value — and the sorting determines which children get the developmental conditions that build the capacity to perceive their own physiological signals. This framework maps how the sorting works, how it reproduces itself through biology, and how it produces the evidence that appears to justify it."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Worth hierarchies regulate — position within the hierarchy as restoration substitute. Scale: value systems. Cost: equity"

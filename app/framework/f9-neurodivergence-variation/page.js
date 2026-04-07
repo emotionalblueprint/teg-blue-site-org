@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -106,7 +106,7 @@ export default function F9VariationPage() {
             badge="FRAMEWORK F9"
             title="Variation Is Configuration, Not Deficit"
             subtitle="When the Environment Is the Mismatch"
-            description="The Emotional Somatic Cycle runs in every nervous system — the same signal architecture, the same state gradient, the same restoration sequence. What varies is the inputs: sensory thresholds, attention patterns, processing speeds, emotional intensity. When environments are designed for one set of inputs, every other configuration pays a structural cost — masking that interrupts the restoration sequence daily, producing activation that accumulates without resolution. F9 maps this mismatch, what it produces biologically, and what environments designed for variation look like."
+            description="The same signal architecture runs in every nervous system — the same detection process, the same state responses, the same restoration sequence. What varies is the inputs: sensory thresholds, attention patterns, processing speeds, emotional intensity. When environments are designed for one set of inputs, every other configuration pays a structural cost — daily masking that interrupts the body's completion process, producing activation that accumulates without resolution. This framework maps the mismatch, what it produces biologically, and what environments designed for variation look like."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Variation is configuration, not deficit — environments redesigned for variation. Restores: accuracy"

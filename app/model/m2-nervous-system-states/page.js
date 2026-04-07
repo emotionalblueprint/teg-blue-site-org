@@ -85,7 +85,7 @@ export default function M2NervousSystemStatesPage() {
             badge="MODEL M2"
             title="Nervous System States"
             subtitle="The Instrument"
-            description="M2 describes what happens after an emotional signal is generated. The nervous system reorganizes into a state — and that state determines what the person can perceive, think, feel, and do."
+            description="When something registers as safe or threatening, the nervous system does not simply detect it and move on. It reorganizes — muscle tension redistributes, heart rate shifts, hormonal balance changes, sensory filtering adjusts, cognitive access expands or contracts. The result is a state: a system-wide physiological configuration that determines what can be perceived, thought, felt, and done. This model maps four such states, what each one makes available or restricts, and whether the system can move between them."
             coreQuestion="What state is the nervous system in right now — and can it move?"
             drawsFrom={[
               { label: "M1", href: "/model/m1-emotions-as-signals" },
@@ -104,16 +104,16 @@ export default function M2NervousSystemStatesPage() {
           {/* INTRODUCTION */}
           <section style={{ marginBottom: 48 }}>
             <p style={proseStyle}>
-              M2 describes what happens after an emotional signal is generated. The nervous system does not simply detect and leave the rest of the system unchanged. It reorganizes — muscle tension redistributes, heart rate shifts, hormonal balance changes, sensory filtering adjusts, and cognitive access expands or contracts. The result is a state: a system-wide physiological configuration that determines what the person can perceive, think, feel, and do.
+              The nervous system is continuously evaluating a core question: is there sufficient safety to engage, or is protection required? This evaluation is automatic, rapid, and based on experienced safety — not objective conditions alone. A person may feel threatened in an environment that appears objectively safe, or fail to detect danger in an environment that is objectively unsafe. The system responds to what it has learned to classify, whether or not that classification matches present reality.
             </p>
             <p style={proseStyle}>
-              This model maps four such states, grounded in two biological branches of autonomic regulation. The central principle is that state changes perception. It changes not only how a person responds to reality, but what aspects of reality are likely to be registered in the first place. A threat-related signal narrows processing. A safety-related signal broadens it. This shift is automatic, rapid, and largely outside conscious awareness.
+              When this evaluation shifts, the entire system reorganizes. Muscle tension redistributes. Sensory filtering adjusts. Cognitive access expands or contracts. Heart rate and hormonal balance change. The result is not a mood or an emotion — it is a physiological configuration that determines what aspects of reality are likely to be registered in the first place. A threat-related signal narrows processing. A safety-related signal broadens it. This shift happens before conscious awareness has time to form an interpretation.
             </p>
             <p style={proseStyle}>
-              All four states — including the safest — are designed to be temporary. The nervous system is built to return to physiological baseline after each activation. When it does not, any state can become chronic — and a chronic state reorganizes perception, cognition, and relational capacity so thoroughly that the person may no longer recognize the reorganization as a state at all.
+              All four states — including the safest — are designed to be temporary. The nervous system is built to return to physiological baseline after each activation. When it does not, any state can become chronic — and a chronic state reorganizes perception, cognition, and relational capacity so thoroughly that the reorganization may no longer be recognizable as a state at all.
             </p>
             <p style={proseStyle}>
-              The key measure in M2 is not which state the system occupies. It is whether the system retains the capacity to move — to shift in response to changing conditions, and to return to rest.
+              The key measure is not which state the system occupies. It is whether the system retains the capacity to move — to shift in response to changing conditions, and to return to rest.
             </p>
           </section>
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -103,7 +103,7 @@ export default function F12TwoInformationSystemsPage() {
             badge="FRAMEWORK F12"
             title="Two Information Systems"
             subtitle="The Framework That Explains Why We Stopped Listening"
-            description="If the Emotional Somatic System has been running for hundreds of millions of years, producing accurate signals about safety, threat, belonging, and loss — why did an entire species stop listening to it? The answer is not a single event. It is a sequence — biological, then environmental, then cultural — that turned a functioning information system into one that most of the species no longer knows how to use. F12 closes the system."
+            description="If the body's emotional signaling system has been running for hundreds of millions of years, producing accurate signals about safety, threat, belonging, and loss — why did an entire species stop listening to it? The answer is not a single event. It is a sequence — biological, then environmental, then cultural — that turned a functioning information system into one that most of the species no longer knows how to use. This framework closes the system."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="Two information systems reunite — body and mind. Restores: the designed process"

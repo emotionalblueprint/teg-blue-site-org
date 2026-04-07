@@ -36,7 +36,7 @@ export default function M3RegulationCapacitiesPage() {
       <PageLayout
         header={
           <ModelHero badge="MODEL M3" title="Regulation Capacities" subtitle="The Return Pathway"
-            description="M3 describes the third stage of the Emotional Somatic Cycle: whether the body completes what activation started — or carries it forward."
+            description="When the body mobilizes under stress — heart rate rises, stress hormones release, muscles brace — a biological sequence has started. The nervous system is designed to complete that sequence: cortisol metabolizes, muscles unclench, the body returns to rest. But completion is not guaranteed. When cognition overrides the signal and the sequence stays open, the activation accumulates — and the body begins searching for anything that produces the relief that completion would have provided. This model maps what completion looks like, what prevents it, and what the body does instead."
             coreQuestion="Did the body complete the restoration sequence — or is it still running?"
             drawsFrom={[
               { label: "M1", href: "/model/m1-emotions-as-signals" },
@@ -53,10 +53,10 @@ export default function M3RegulationCapacitiesPage() {
         <article>
 
           <section style={{ marginBottom: 48 }}>
-            <p style={proseStyle}>M3 addresses a question that follows directly from the first two models. M1 described the signal. M2 described the state the signal produces. The body mobilised — stress hormones released, muscles braced, heart rate increased. M3 begins here: with a body that has mobilised and needs to complete the sequence.</p>
-            <p style={proseStyle}>The nervous system is organised to complete this sequence under the right conditions. Cortisol metabolises, muscles unclench, the HPA axis stands down, and the body returns toward physiological baseline. This is biological restoration — not emotion management, but a completion process with a measurable endpoint.</p>
-            <p style={proseStyle}>This model maps two pathways. In Path A, the restoration sequence runs to its endpoint and the body reaches physiological baseline. In Path B, cognition overrides the signal, the restoration sequence remains unresolved, and the body carries the activation forward — debris accumulates, the baseline elevates, and the nervous system searches for anything that produces the neurochemical shift that completion would have provided.</p>
-            <p style={proseStyle}>The branching point is not dramatic. It is a learned pattern, often running below awareness: cognition deciding the signal is irrelevant, the body receiving no biological resolution. The consequences unfold from there — measurable, progressive, and in chronic states, invisible to the person inside them.</p>
+            <p style={proseStyle}>When the nervous system detects something that matters, the body mobilizes. Stress hormones release, muscles brace, heart rate increases. This activation is not the problem. It is a designed response. The question is what happens next.</p>
+            <p style={proseStyle}>The nervous system is organized to complete this sequence under the right conditions. Cortisol metabolizes, muscles unclench, the HPA axis stands down, and the body returns toward physiological baseline. This is biological restoration — not emotion management, but a completion process with a measurable endpoint.</p>
+            <p style={proseStyle}>This model maps two pathways. In one, the restoration sequence runs to completion and the body reaches physiological baseline. In the other, cognition overrides the signal, the restoration sequence remains unresolved, and the body carries the activation forward — residue accumulates, the baseline elevates, and the nervous system searches for anything that produces the neurochemical shift that completion would have provided.</p>
+            <p style={proseStyle}>The branching point is not dramatic. It is a learned pattern, often running below awareness: cognition deciding the signal is irrelevant, the body receiving no biological resolution. The consequences unfold from there — measurable, progressive, and in chronic states, invisible from the inside.</p>
           </section>
 
 

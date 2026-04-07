@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -104,7 +104,7 @@ export default function F10GenerationalBridgesPage() {
             badge="FRAMEWORK F10"
             title="What the Adult Processes, the Child Does Not Inherit"
             subtitle="Intergenerational Transmission and How Adult Repair Changes Developmental Conditions"
-            description="What the caregiver's nervous system embodies — not what they say, intend, or believe — is what the child's nervous system absorbs. The child calibrates to the adult's autonomic state, physiological responses, and co-regulatory capacity, continuously, below conscious awareness. When adults develop their own capacities and the activation they carry begins to resolve, the next generation develops in different conditions — not because the adult decided to parent differently, but because the adult IS different. F10 maps this mechanism running in both directions: transmission of patterns and transmission of repair."
+            description="What the caregiver's nervous system carries — not what is said, intended, or believed — is what the child's nervous system absorbs. Children calibrate to the adult's autonomic state, physiological responses, and co-regulatory capacity, continuously, below conscious awareness. When adults develop their own capacities and the activation they carry begins to resolve, the next generation develops in different conditions — not because of a decision to parent differently, but because the adult is physiologically different. This framework maps the mechanism running in both directions: transmission of patterns and transmission of repair."
             group="Repair"
             groupLabel="Repair Arc · F8–F12"
             threadLine="What the adult processes, the child does not inherit — generational repair. Restores: the generational bridge"

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba, RESEARCHER,
+  hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
   proseStyle, expandedProseStyle, sectionHeadingStyle, expandableRowStyle,
@@ -106,7 +106,7 @@ export default function F7DominationRegulatesPage() {
             badge="FRAMEWORK F7"
             title="Domination Regulates"
             subtitle="How Defense Becomes Strategy Becomes Domination"
-            description="When the nervous system cannot complete biological restoration and control reliably reduces activation, the system adopts control as its primary regulation strategy. Domination is built through reinforcement: what produces physiological relief gets repeated, what gets repeated gets stronger, what gets stronger becomes default. F7 maps this escalation pathway — how defense hardens into strategy, strategy into entitlement, entitlement into domination — and why the mechanism that would stop it is structurally absent."
+            description="When the nervous system cannot complete its stress response and control reliably reduces activation, the system adopts control as its primary strategy. Domination is built through reinforcement: what produces physiological relief gets repeated, what gets repeated gets stronger, what gets stronger becomes default. This framework maps the escalation pathway — how defense hardens into strategy, strategy into entitlement, entitlement into domination — and why the mechanism that would stop it is structurally absent."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
             threadLine="Domination regulates — direct control of others as restoration substitute. Scale: power systems. Cost: everything"
