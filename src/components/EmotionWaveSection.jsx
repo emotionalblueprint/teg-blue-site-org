@@ -151,8 +151,8 @@ export default function EmotionWaveSection({
   return (
     <section ref={sectionRef} style={{
       background: BG.page,
-      padding: "40px 0 48px",
-      marginBottom: "clamp(28px, 5vw, 48px)",
+      padding: "32px 0 36px",
+      marginBottom: "clamp(20px, 4vw, 36px)",
       position: "relative",
       overflow: "hidden",
       marginLeft: "calc(-50vw + 50%)",
@@ -194,7 +194,7 @@ export default function EmotionWaveSection({
           pointerEvents: "none", zIndex: 0
         }}/>
 
-        <div style={{ maxWidth: "1060px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 24px)", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 24px)", position: "relative", zIndex: 1 }}>
 
           {/* Section header */}
           <div style={{ marginBottom: "40px" }}>

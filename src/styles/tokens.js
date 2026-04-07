@@ -136,10 +136,10 @@ export const TRANSITION = {
 // ─── OPACITY SCALE (for spectrum colors) ─────────────
 
 export const OPACITY = {
-  tint:       0.02,   // Page-level tint
-  cardBg:     0.07,   // Card background
+  tint:       0.03,   // Page-level tint
+  cardBg:     0.10,   // Card background
   badgeBg:    0.12,   // Badge/tag background
-  borderSoft: 0.15,   // Subtle border
+  borderSoft: 0.18,   // Subtle border
   border:     0.22,   // Default border
   borderHover: 0.35,  // Hover border
   borderActive: 0.45, // Active/expanded border

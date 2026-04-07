@@ -121,7 +121,7 @@ export default function ResearchHub() {
                     color: TEXT.secondary,
                     lineHeight: 1.7,
                     margin: "0 0 10px",
-                    maxWidth: 640,
+                    maxWidth: 680,
                   }}
                 >
                   Open science — transparent research, credited sources, testable claims. Built on 145+ established theories. Open to critique and validation.
@@ -177,7 +177,7 @@ export default function ResearchHub() {
                     color: TEXT.secondary,
                     letterSpacing: "-0.01em",
                     lineHeight: 1.6,
-                    maxWidth: 640,
+                    maxWidth: 680,
                   }}
                 >
                   The building blocks are validated science.{" "}
@@ -213,7 +213,7 @@ export default function ResearchHub() {
               When the body can&apos;t restore itself, something else steps in.
             </h2>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
               A single thread runs through all twelve frameworks. Describing a regulation substitute — at a different scale, at a different cost, and a way to reverse the thread — not by adding another substitute, but by building the original.
             </p>
 
@@ -298,7 +298,7 @@ export default function ResearchHub() {
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               What evidence supports the nervous system gradient?
             </h2>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
               The nervous system gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
             </p>
             <div
@@ -388,7 +388,7 @@ export default function ResearchHub() {
               What is TEG-Blue?
             </h2>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
               An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as four connected parts:
             </p>
 
@@ -445,7 +445,7 @@ export default function ResearchHub() {
               Open science — no gates, no applications
             </h2>
 
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
               Everything here is published under CC BY-NC-SA 4.0. No access restrictions. No required collaborations. A researcher can take the framework, the data, and the methodology and work with them independently.
             </p>
 
