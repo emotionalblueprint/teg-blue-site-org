@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT, MAIN_ORG,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, MAIN_ORG,
   hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 import { DISTORTIONS } from '@/src/data/m1-data';
@@ -10,7 +10,7 @@ import { DISTORTIONS } from '@/src/data/m1-data';
 // ─── Constants ──────────────────────────────────────────
 const MODEL_COLOR = PATTERN.A.primary;
 const CHART_BLUE = MAIN_ORG.accent;
-const DISTORTION_COLOR = ACCENT.orange;
+const DISTORTION_COLOR = '#e87b35';
 
 const PATHWAYS = [
   {

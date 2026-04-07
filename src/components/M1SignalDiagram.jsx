@@ -23,8 +23,8 @@ const DRAW_MS = 3800;
 // Each step uses a distinct blue from the SPECTRUM
 const STEPS = [
   { t: 0.08, label: 'Signal', sub: 'What the nervous system detected', color: SPECTRUM.azure },
-  { t: 0.35, label: 'Response', sub: 'How the body reorganizes', color: SPECTRUM.cobalt },
-  { t: 0.72, label: 'Restoration', sub: 'What resolves the activation', color: SPECTRUM.indigo },
+  { t: 0.35, label: 'Response', sub: 'How the body reorganizes', color: SPECTRUM.blue },
+  { t: 0.72, label: 'Restoration', sub: 'What resolves the activation', color: SPECTRUM.cobalt },
 ];
 
 // ─── Wave generation ────────────────────────────────────
@@ -518,7 +518,7 @@ export default function M1SignalDiagram() {
           Select a signal
         </div>
         {[
-          { label: 'Somatic', color: SPECTRUM.cobalt, filter: (em) => em.type === 'somatic' && !(em.restorationType && em.restorationType.includes('relational')) },
+          { label: 'Somatic', color: SPECTRUM.sky, filter: (em) => em.type === 'somatic' && !(em.restorationType && em.restorationType.includes('relational')) },
           { label: 'Relational', color: SPECTRUM.indigo, filter: (em) => em.type === 'relational' || (em.restorationType && em.restorationType.includes('relational')) },
         ].map(group => (
           <div key={group.label} style={{ marginBottom: 8 }}>

@@ -43,12 +43,14 @@ export const BORDER = {
 // Six tones with full hue/lightness spread. Use freely — no color owns a page.
 
 export const SPECTRUM = {
-  sky:    "#b6ebfc",   // lightest — ice
-  azure:  "#76e2ff",   // cyan, clear
-  blue:   "#00b1ff",   // bright blue-cyan, core
-  cobalt: "#0590e5",   // deep blue
-  indigo: "#7b7bff",   // violet
-  slate:  "#808493",   // neutral grey
+  sky:      "#b6ebfc",   // lightest — ice
+  azure:    "#76e2ff",   // cyan, clear
+  blue:     "#00b1ff",   // bright blue-cyan, core
+  cobalt:   "#0590e5",   // deep blue
+  lavender: "#a9a9ff",   // light violet
+  indigo:   "#7b7bff",   // violet
+  silver:   "#b2b5bf",   // light grey
+  slate:    "#808493",   // neutral grey
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────

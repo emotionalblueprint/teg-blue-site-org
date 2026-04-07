@@ -8,14 +8,14 @@ import {
 import { EMOTIONS, BODY_SIGNATURE_GROUPS } from '@/src/data/m1-data';
 
 // ─── Constants ──────────────────────────────────────────
-const SOMATIC_COLOR = SPECTRUM.cobalt;
+const SOMATIC_COLOR = SPECTRUM.sky;
 const RELATIONAL_COLOR = SPECTRUM.indigo;
 
-// Detail card colors — same 3-step blues as the Signal Diagram
+// Detail card colors — same 3-step colors as the Signal Diagram
 const DETAIL_COLORS = {
   Signal: SPECTRUM.azure,
-  'Body Response': SPECTRUM.cobalt,
-  Restoration: SPECTRUM.indigo,
+  'Body Response': SPECTRUM.blue,
+  Restoration: SPECTRUM.cobalt,
 };
 
 // Body signature groups split naturally by restoration type

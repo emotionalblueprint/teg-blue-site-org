@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT, MAIN_ORG,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, MAIN_ORG,
   hexToRgba, diagramContainer,
 } from '@/src/styles/tokens';
 
 // ─── Constants ──────────────────────────────────────────
 const MODEL_COLOR = PATTERN.A.primary;
 const CHART_BLUE = MAIN_ORG.accent;
-const WARNING_COLOR = ACCENT.orange;
+const WARNING_COLOR = SPECTRUM.silver;
 
 // SVG dimensions
 const VW = 880, VH = 240;
