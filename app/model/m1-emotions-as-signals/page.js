@@ -1,13 +1,13 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN, MODEL_COLORS, hexToRgba } from "@/src/styles/tokens";
 
 const M1SignalDiagram = dynamic(() => import("@/src/components/M1SignalDiagram"), { ssr: false });
 const M1SignalMap = dynamic(() => import("@/src/components/M1SignalMap"), { ssr: false });
 const M1DistortionPathway = dynamic(() => import("@/src/components/M1DistortionPathway"), { ssr: false });
 const M1DevelopmentalLoss = dynamic(() => import("@/src/components/M1DevelopmentalLoss"), { ssr: false });
 import {
-  SiteHeader, SiteFooter, ModelHero, PageLayout,
+  SiteHeader, SiteFooter, ModelHero, ModelPurpose, PageLayout,
   PartDivider, NavSection, ConnectionsMap, ExpandableSection,
 } from "@/src/components";
 import {
@@ -22,9 +22,9 @@ import {
 } from "@/src/lib/jsonld";
 
 
-const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
+const MODEL_COLOR = MODEL_COLORS.M1;
 
-const linkStyle = { color: P.B, textDecoration: "none" };
+const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
 
 // ─── METADATA ──────────────────────────────────────────────
 
@@ -94,7 +94,7 @@ export default function M1EmotionsAsSignalsPage() {
               { label: "M4", href: "/model/m4-awareness-capacities" },
               { label: "F1", href: "/framework/f1-emotional-gradient" },
             ]}
-            color={P.A}
+            color={MODEL_COLOR}
           />
         }
       >
@@ -127,10 +127,11 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-core-propositions"
-              style={sectionHeadingStyle(P.A)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Core Propositions
             </h2>
+            <ModelPurpose color={MODEL_COLOR}>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
               <li style={propositionItemStyle}>
                 The nervous system has two information systems. The first — and oldest — is emotion. The second is cognition. The signal does not stop being generated when cognition overrides or suppresses it.
@@ -154,13 +155,14 @@ export default function M1EmotionsAsSignalsPage() {
                 The question is not {"\u201C"}how do I manage this emotion?{"\u201D"} but {"\u201C"}what is this signal telling me?{"\u201D"}
               </li>
             </ul>
+            </ModelPurpose>
           </section>
 
           {/* ════════════════════════════════════════════════ */}
           {/* PART 1: THE LANGUAGE                            */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 1" title="The Language" color={P.A} />
+          <PartDivider label="PART 1" title="The Language" color={MODEL_COLOR} />
 
           {/* ─── C0: EMOTION PRECEDES COGNITION ─────────── */}
           <section
@@ -170,7 +172,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-emotion-precedes-cognition"
-              style={sectionHeadingStyle(P.A)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Emotion Precedes Cognition
             </h2>
@@ -214,7 +216,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-signal-anatomy"
-              style={sectionHeadingStyle(P.A)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Anatomy of an Emotional Signal
             </h2>
@@ -225,8 +227,8 @@ export default function M1EmotionsAsSignalsPage() {
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr", minWidth: 400 }}>
-                <div style={gridHeaderStyle(P.A)}>Step</div>
-                <div style={gridHeaderStyle(P.A)}>What It Is</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Step</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Is</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>1. The Signal</div>
                 <div style={gridCellStyle}>What the nervous system detected. The finding. What was evaluated and what the evaluation concluded.</div>
@@ -265,7 +267,7 @@ export default function M1EmotionsAsSignalsPage() {
           {/* PART 2: THE SIGNAL SYSTEM                       */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 2" title="The Signal System" color={P.B} />
+          <PartDivider label="PART 2" title="The Signal System" color={MODEL_COLOR} />
 
           <M1SignalMap />
 
@@ -277,7 +279,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-somatic-emotions"
-              style={sectionHeadingStyle(P.B)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Somatic Emotions
             </h2>
@@ -315,7 +317,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-relational-emotions"
-              style={sectionHeadingStyle(P.B)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Relational Emotions
             </h2>
@@ -349,7 +351,7 @@ export default function M1EmotionsAsSignalsPage() {
           {/* PART 3: THE ARCHITECTURE                        */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 3" title="The Architecture" color={P.C} />
+          <PartDivider label="PART 3" title="The Architecture" color={MODEL_COLOR} />
 
           {/* ─── C20: DISTORTED SIGNAL RECEPTION ─────────── */}
           <section
@@ -359,7 +361,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-distorted-signal-reception"
-              style={sectionHeadingStyle(P.C)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Distorted Signal Reception
             </h2>
@@ -402,7 +404,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-what-restoration-is"
-              style={sectionHeadingStyle(P.C)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               What Restoration Is
             </h2>
@@ -440,7 +442,7 @@ export default function M1EmotionsAsSignalsPage() {
           >
             <h2
               id="heading-developmental-loss"
-              style={sectionHeadingStyle(P.C)}
+              style={sectionHeadingStyle(MODEL_COLOR)}
             >
               Developmental Loss of Restoration Pathways
             </h2>
@@ -477,7 +479,7 @@ export default function M1EmotionsAsSignalsPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={P.A}
+            color={MODEL_COLOR}
             connections={[
               {
                 id: "M2: Nervous System States",
@@ -509,7 +511,7 @@ export default function M1EmotionsAsSignalsPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={P.A}
+            color={MODEL_COLOR}
             items={[
               {
                 label: "See what happens after the signal is generated — the nervous system state it produces and how it changes perception",

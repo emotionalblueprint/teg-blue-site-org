@@ -41,24 +41,30 @@ export default function ExpandableSection({
       ref={ref}
       open={defaultOpen || undefined}
       id={id}
-      style={{ marginBottom: 6 }}
+      style={{
+        marginBottom: 2,
+        border: "none",
+        borderRadius: 0,
+        background: "transparent",
+      }}
     >
       <summary
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "12px 18px",
+          padding: "8px 0",
           cursor: "pointer",
           fontFamily: FONT.mono,
           fontSize: 11,
           fontWeight: 600,
-          color: TEXT.muted,
+          color: TEXT.hint,
           textTransform: "uppercase",
           letterSpacing: "0.06em",
-          background: BG.card,
-          border: `1px solid ${BORDER.default}`,
-          borderRadius: 6,
+          background: "transparent",
+          border: "none",
+          borderBottom: `1px solid ${BORDER.default}`,
+          borderRadius: 0,
           transition: `all ${TRANSITION.normal}`,
           listStyle: "none",
         }}
@@ -68,8 +74,8 @@ export default function ExpandableSection({
         <span
           className="expandable-chevron"
           style={{
-            fontSize: 9,
-            color: hexToRgba(color, 0.6),
+            fontSize: 8,
+            color: hexToRgba(color, 0.4),
             transition: `transform ${TRANSITION.fast}`,
             display: "inline-block",
           }}
@@ -82,14 +88,13 @@ export default function ExpandableSection({
       <div
         className="expandable-content"
         style={{
-          padding: "14px 18px 16px",
-          fontSize: 14,
+          padding: "10px 0 12px 12px",
+          fontSize: 13,
           lineHeight: 1.7,
-          color: TEXT.secondary,
-          background: `linear-gradient(135deg, ${hexToRgba(color, 0.06)}, ${hexToRgba(color, 0.03)}, transparent)`,
-          border: `1px solid ${hexToRgba(color, 0.15)}`,
-          borderTop: "none",
-          borderRadius: "0 0 6px 6px",
+          color: TEXT.muted,
+          borderLeft: `2px solid ${hexToRgba(color, 0.2)}`,
+          marginLeft: 0,
+          marginTop: 4,
         }}
       >
         {children}
@@ -99,31 +104,37 @@ export default function ExpandableSection({
       <style jsx>{`
         details summary::-webkit-details-marker { display: none; }
         details summary::marker { display: none; }
+        details summary::after { display: none; }
+
+        details:hover { border-color: transparent; }
+        details[open] { border-color: transparent; }
+
+        details > div, details > section { padding: 0; }
 
         details summary:hover {
-          border-color: ${hexToRgba(color, 0.35)};
-          color: ${TEXT.primary};
+          color: ${TEXT.secondary};
+          border-bottom-color: ${hexToRgba(color, 0.3)};
         }
 
         details[open] > summary {
-          background: ${BG.surface};
-          border-color: ${hexToRgba(color, 0.25)};
-          border-radius: 6px 6px 0 0;
-          color: ${TEXT.primary};
+          color: ${TEXT.secondary};
+          border-bottom-color: ${hexToRgba(color, 0.3)};
+          background: transparent;
+          border-radius: 0;
         }
 
         details[open] > summary .expandable-chevron {
           transform: rotate(90deg);
-          color: ${color};
+          color: ${hexToRgba(color, 0.6)};
         }
 
         details[open] > .expandable-content {
-          animation: expandIn 200ms ease-out;
+          animation: expandIn 150ms ease-out;
         }
 
         @keyframes expandIn {
-          from { opacity: 0; transform: translateY(-4px); }
-          to { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         @media (prefers-reduced-motion: reduce) {

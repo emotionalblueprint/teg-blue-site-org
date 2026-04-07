@@ -105,7 +105,7 @@ export const TYPE_SCALE = {
 // ─── SPACING ─────────────────────────────────────────
 
 export const SPACING = {
-  containerMax: 1000,
+  containerMax: 850,
   containerPadding: { desktop: "0 24px", mobile: "0 16px" },
   // Responsive side padding — use in inline styles (no media queries needed)
   pagePadding: "clamp(16px, 4vw, 24px)",
@@ -136,10 +136,10 @@ export const TRANSITION = {
 // ─── OPACITY SCALE (for spectrum colors) ─────────────
 
 export const OPACITY = {
-  tint:       0.03,   // Page-level tint
-  cardBg:     0.10,   // Card background
+  tint:       0.02,   // Page-level tint
+  cardBg:     0.07,   // Card background
   badgeBg:    0.12,   // Badge/tag background
-  borderSoft: 0.18,   // Subtle border
+  borderSoft: 0.15,   // Subtle border
   border:     0.22,   // Default border
   borderHover: 0.35,  // Hover border
   borderActive: 0.45, // Active/expanded border
@@ -155,6 +155,15 @@ export const PATTERN = {
 };
 
 export const PATTERN_GRADIENT = 'linear-gradient(90deg, #a0cdfb, #6fabf8, #4f80f7, #1255fc)';
+
+// ─── MODEL PAGE COLORS (one muted academic blue per model) ──
+
+export const MODEL_COLORS = {
+  M1: '#5BADFF',  // azure — Emotions as Signals
+  M2: '#4B8FFF',  // blue — Nervous System States
+  M3: '#5B62D4',  // indigo — Regulation Capacities
+  M4: '#4472EE',  // cobalt — Awareness Capacities
+};
 
 // ─── MAIN_ORG (primary action color — badges, CTAs, links) ──
 export const MAIN_ORG = {

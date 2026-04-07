@@ -7,14 +7,14 @@ import { TEXT, BORDER, FONT, hexToRgba } from "./tokens";
 // ─── TEXT STYLES ─────────────────────────────────────────
 
 export const proseStyle = {
-  fontSize: 15,
+  fontSize: 14,
   color: TEXT.secondary,
   lineHeight: 1.8,
-  marginBottom: 20,
+  marginBottom: 16,
 };
 
 export const expandedProseStyle = {
-  fontSize: 15,
+  fontSize: 14,
   color: TEXT.secondary,
   lineHeight: 1.7,
   margin: "8px 0 0",
@@ -35,12 +35,9 @@ export function sectionHeadingStyle(color) {
     fontWeight: 700,
     color: color,
     letterSpacing: "-0.01em",
-    marginTop: 48,
-    marginBottom: 20,
-    paddingLeft: 16,
+    marginBottom: 16,
     paddingBottom: 8,
-    borderLeft: `3px solid ${color}`,
-    borderBottom: `1px solid ${hexToRgba(color, 0.15)}`,
+    borderBottom: `2px solid ${hexToRgba(color, 0.2)}`,
   };
 }
 
@@ -48,7 +45,6 @@ export const conceptHeadingStyle = {
   fontSize: 16,
   fontWeight: 600,
   color: TEXT.primary,
-  marginTop: 32,
   marginBottom: 12,
 };
 
