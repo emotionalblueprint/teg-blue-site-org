@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { BG, TEXT, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, FONT, SPECTRUM, PATTERN, hexToRgba } from "@/src/styles/tokens";
 
 const M3PathDiagram = dynamic(() => import("@/src/components/M3PathDiagram"), { ssr: false });
 const M3RestorationByMode = dynamic(() => import("@/src/components/M3RestorationByMode"), { ssr: false });
@@ -16,8 +16,8 @@ import {
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 
-const MODEL_COLOR = SPECTRUM.indigo;
-const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
+const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
+const linkStyle = { color: P.B, textDecoration: "none" };
 
 export const metadata = {
   title: "Regulation Capacities (M3) | TEG-Blue Research",
@@ -44,7 +44,7 @@ export default function M3RegulationCapacitiesPage() {
               { label: "M4", href: "/model/m4-awareness-capacities" },
               { label: "F1", href: "/framework/f1-emotional-gradient" },
             ]}
-            color={MODEL_COLOR}
+            color={P.A}
           />
         }
       >
@@ -61,7 +61,7 @@ export default function M3RegulationCapacitiesPage() {
 
 
           <section id="core-propositions" aria-labelledby="heading-cp" style={{ marginBottom: 48 }}>
-            <h2 id="heading-cp" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>
+            <h2 id="heading-cp" style={sectionHeadingStyle(P.A)}>Core Propositions</h2>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
               <li style={propositionItemStyle}>Regulation is not a psychological skill. It is a biological completion process — the body running the second half of a sequence that began with activation.</li>
               <li style={propositionItemStyle}>The restoration sequence has two stages: the mobilisation response (energy spent) and biological restoration (residue cleared). The endpoint is physiological baseline.</li>
@@ -73,10 +73,10 @@ export default function M3RegulationCapacitiesPage() {
             </ul>
           </section>
 
-          <PartDivider label="PART 1" title="The Restoration Pathway" color={MODEL_COLOR} />
+          <PartDivider label="PART 1" title="The Restoration Pathway" color={P.A} />
 
           <section id="what-restoration-is" aria-labelledby="heading-r" style={{ marginBottom: 48 }}>
-            <h2 id="heading-r" style={sectionHeadingStyle(MODEL_COLOR)}>What Restoration Is</h2>
+            <h2 id="heading-r" style={sectionHeadingStyle(P.A)}>What Restoration Is</h2>
             <p style={proseStyle}>Regulation is often described as calming down, managing emotion, or bringing oneself back under control.</p>
             <p style={proseStyle}>In this model, regulation is understood differently. It is not primarily a psychological skill. It is a biological completion process. After activation, the body is organised to metabolise stress chemistry, release muscular bracing, restore organ-level functioning, and return toward physiological baseline.</p>
             <p style={proseStyle}>This matters because the word regulation often implies deliberate control. But much of what supports regulation is not produced by effort alone. It depends on whether the body is able to complete a sequence that has already been initiated.</p>
@@ -88,7 +88,7 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="restoration-sequence" aria-labelledby="heading-seq" style={{ marginBottom: 48 }}>
-            <h2 id="heading-seq" style={sectionHeadingStyle(MODEL_COLOR)}>The Restoration Sequence</h2>
+            <h2 id="heading-seq" style={sectionHeadingStyle(P.A)}>The Restoration Sequence</h2>
             <p style={proseStyle}>The nervous system generated a signal (<Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1</Link>). The nervous system shifted state (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). The body mobilised. M3 begins here: with a body that has mobilised and needs to complete the sequence.</p>
             <h3 style={conceptHeadingStyle}>Mobilisation Response</h3>
             <p style={proseStyle}>The body uses what it mobilised. The energy that was deployed in the state shift is spent — through movement, action, expression, discharge. The mobilised resources are used for their intended purpose. This stage is the bridge between activation and restoration — the energy must be spent before the body can begin to clear the residue.</p>
@@ -103,7 +103,7 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="restoration-by-mode" aria-labelledby="heading-mode" style={{ marginBottom: 48 }}>
-            <h2 id="heading-mode" style={sectionHeadingStyle(MODEL_COLOR)}>Restoration Requirements by Mode</h2>
+            <h2 id="heading-mode" style={sectionHeadingStyle(P.A)}>Restoration Requirements by Mode</h2>
             <p style={proseStyle}>Four activation levels produce four distinct restoration requirements. Each has a physiological mechanism, specific conditions, and a timescale.</p>
 
             <M3RestorationByMode />
@@ -114,7 +114,7 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="two-pathways" aria-labelledby="heading-paths" style={{ marginBottom: 48 }}>
-            <h2 id="heading-paths" style={sectionHeadingStyle(MODEL_COLOR)}>Two Restoration Pathways</h2>
+            <h2 id="heading-paths" style={sectionHeadingStyle(P.A)}>Two Restoration Pathways</h2>
             <p style={proseStyle}>Not all activation resolves through the same pathway. Some activation is primarily somatic in content and can move toward completion through internal physiological processes. Other activation is primarily relational in content and may not fully resolve through physiology alone — requiring relational input or co-regulation from another regulated person.</p>
             <p style={proseStyle}>This distinction matters because many failed attempts at regulation are actually pathway mismatches. The system is being given a somatic intervention for a relational burden, or a relational need is being approached as if it were only bodily activation.</p>
             <p style={proseStyle}>Relational restoration requires genuine safety with another person — and chronic states degrade exactly that capacity.</p>
@@ -124,10 +124,10 @@ export default function M3RegulationCapacitiesPage() {
             </div>
           </section>
 
-          <PartDivider label="PART 2" title="The Branching Point" color={MODEL_COLOR} />
+          <PartDivider label="PART 2" title="The Branching Point" color={P.B} />
 
           <section id="cognitive-override" aria-labelledby="heading-override" style={{ marginBottom: 48 }}>
-            <h2 id="heading-override" style={sectionHeadingStyle(MODEL_COLOR)}>Cognitive Override</h2>
+            <h2 id="heading-override" style={sectionHeadingStyle(P.B)}>Cognitive Override</h2>
             <p style={proseStyle}>The branching point in the Emotional Somatic Cycle. The nervous system generated a signal. The nervous system shifted state. The body mobilised. The body{"'"}s designed restoration mechanism exists. Now: does cognition override the signal?</p>
             <p style={proseStyle}>Cognitive override is what happens when cognition decides the emotional signal is irrelevant and overrides access to it. The mind says: {"\u201C"}I don{"'"}t have time for this.{"\u201D"} {"\u201C"}This isn{"'"}t important.{"\u201D"} {"\u201C"}I need to keep going.{"\u201D"} Cognition overrides the signal. The restoration sequence remains unresolved.</p>
             <p style={proseStyle}>The override is not a single moment. It is a learned pattern. A person who grew up in an environment where emotional signals were punished, ignored, or dangerous learns to override automatically.</p>
@@ -144,10 +144,10 @@ export default function M3RegulationCapacitiesPage() {
             </div>
           </section>
 
-          <PartDivider label="PART 3" title="What Happens Instead" color={MODEL_COLOR} />
+          <PartDivider label="PART 3" title="What Happens Instead" color={P.C} />
 
           <section id="incomplete-restoration" aria-labelledby="heading-inc" style={{ marginBottom: 48 }}>
-            <h2 id="heading-inc" style={sectionHeadingStyle(MODEL_COLOR)}>Incomplete Biological Restoration</h2>
+            <h2 id="heading-inc" style={sectionHeadingStyle(P.C)}>Incomplete Biological Restoration</h2>
             <p style={proseStyle}>When conditions are absent — or when cognition overrides the signal — the restoration sequence remains unresolved. The body{"'"}s completion mechanism runs partially or not at all. The HPA axis does not receive the all-clear signal. Cortisol continues releasing.</p>
             <p style={proseStyle}>The sequence requires the activation to be registered by cognition and not overridden, and for the conditions of completion to be present. When cognition neither registers the activation nor allows the restoration sequence to run, the sequence has no way to begin.</p>
             <p style={proseStyle}>When biological restoration does not complete, the body does not reset. It carries the activation forward. What was designed as a temporary emergency configuration becomes the operating state.</p>
@@ -158,7 +158,7 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="debris-accumulation" aria-labelledby="heading-debris" style={{ marginBottom: 48 }}>
-            <h2 id="heading-debris" style={sectionHeadingStyle(MODEL_COLOR)}>Debris Accumulation</h2>
+            <h2 id="heading-debris" style={sectionHeadingStyle(P.C)}>Debris Accumulation</h2>
             <p style={proseStyle}>The physical residue of an incomplete restoration sequence stays in the body. This is not metaphor. It is measurable, biological, and still running:</p>
             <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
               <li style={propositionItemStyle}>Cortisol still circulating in the bloodstream</li>
@@ -178,7 +178,7 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="baseline-elevation" aria-labelledby="heading-elev" style={{ marginBottom: 48 }}>
-            <h2 id="heading-elev" style={sectionHeadingStyle(MODEL_COLOR)}>Baseline Elevation</h2>
+            <h2 id="heading-elev" style={sectionHeadingStyle(P.C)}>Baseline Elevation</h2>
             <p style={proseStyle}>The nervous system adapts its resting level to the accumulated debris. Two variables define the operating window:</p>
             <p style={proseStyle}><strong style={{ color: TEXT.primary }}>The floor</strong> is the elevated baseline itself — the resting level of cortisol, muscle tension, heart rate, and HPA axis activation that the nervous system now treats as normal. With each incomplete sequence, the floor rises.</p>
             <p style={proseStyle}><strong style={{ color: TEXT.primary }}>The ceiling</strong> is the activation threshold — how little it takes to trigger the next response. With each incomplete sequence, the ceiling drops.</p>
@@ -191,15 +191,15 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="restoration-substitutes" aria-labelledby="heading-subs" style={{ marginBottom: 48 }}>
-            <h2 id="heading-subs" style={sectionHeadingStyle(MODEL_COLOR)}>Restoration Substitutes</h2>
+            <h2 id="heading-subs" style={sectionHeadingStyle(P.C)}>Restoration Substitutes</h2>
             <p style={proseStyle}>When the restoration pathway is blocked, the nervous system searches for anything that produces the neurochemical shift that completion would have provided. The mechanism is identical across all substitutes: temporary discharge, no resolution, escalating need.</p>
             <h3 style={conceptHeadingStyle}>Non-Relational Substitutes</h3>
             <p style={proseStyle}>Substances, physical intensity, work and achievement, screens and consumption, conscious self-soothing — each acts on a specific part of the stress response. Each produces real relief. Each requires more over time, because the underlying sequences are still open.</p>
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Typical Substitutes</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Mechanism</div>
+                <div style={gridHeaderStyle(P.C)}>Chronic State</div>
+                <div style={gridHeaderStyle(P.C)}>Typical Substitutes</div>
+                <div style={gridHeaderStyle(P.C)}>Mechanism</div>
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
                 <div style={gridCellStyle}>Food, numbing substances, screens, over-availability, compulsive helping</div>
                 <div style={gridCellStyle}>Mutes the alarm without addressing what triggered it</div>
@@ -222,10 +222,10 @@ export default function M3RegulationCapacitiesPage() {
             </div>
           </section>
 
-          <PartDivider label="PART 4" title="Where It Leads" color={MODEL_COLOR} />
+          <PartDivider label="PART 4" title="Where It Leads" color={P.D} />
 
           <section id="relational-escalation" aria-labelledby="heading-rse" style={{ marginBottom: 48 }}>
-            <h2 id="heading-rse" style={sectionHeadingStyle(MODEL_COLOR)}>Relational Substitute Escalation</h2>
+            <h2 id="heading-rse" style={sectionHeadingStyle(P.D)}>Relational Substitute Escalation</h2>
             <p style={proseStyle}>When restoration is sought through controlling, criticising, or harming others, a specific secondary mechanism activates. The action generates a shame signal. In a fluid state, shame is a useful signal — it says misalignment happened, repair is needed.</p>
             <p style={proseStyle}>In a chronic state, the signal arrives but the equipment that would process it is not available. The capacity to feel what the harm did to the other person is offline. The capacity to hold {"\u201C"}I did this{"\u201D"} without collapsing or defending is offline. Without those pathways, shame cannot move through the sequence it requires. It accumulates as debris.</p>
             <p style={proseStyle}>But it does not just accumulate. It reinforces the mode that generated it. The unprocessed shame becomes background activation. That activation increases the pressure for relief. The person reaches for the same substitute. The action generates more shame. The loop is self-sealing.</p>
@@ -237,7 +237,7 @@ export default function M3RegulationCapacitiesPage() {
           </section>
 
           <section id="escalation-without-endpoint" aria-labelledby="heading-noe" style={{ marginBottom: 48 }}>
-            <h2 id="heading-noe" style={sectionHeadingStyle(MODEL_COLOR)}>Escalation Without Endpoint</h2>
+            <h2 id="heading-noe" style={sectionHeadingStyle(P.D)}>Escalation Without Endpoint</h2>
             <p style={proseStyle}>Discharge is the release of mobilised energy. It reduces the felt pressure. It temporarily suppresses parts of the stress response. Discharge is real. It is not resolution.</p>
             <p style={proseStyle}>Restoring physiological baseline requires the full biological sequence to run: the discharge phase, the parasympathetic restoration, the HPA negative feedback loop, cortisol clearance, the restoration of serotonin and oxytocin, the hippocampus encoding the event as finished.</p>
             <p style={proseStyle}>The alarm stays on because the debris is still there. The bar rises because dopaminergic conditioning means the same input produces less relief over time. There is no internal brake because the capacities that would make the cost felt are not online in chronic states.</p>
@@ -248,7 +248,7 @@ export default function M3RegulationCapacitiesPage() {
             </div>
           </section>
 
-          <ConnectionsMap color={MODEL_COLOR} connections={[
+          <ConnectionsMap color={P.D} connections={[
             { id: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals", description: "Describes the signal that triggered the activation — and the somatic/relational distinction that determines which restoration pathway is needed." },
             { id: "M2: Nervous System States", href: "/model/m2-nervous-system-states", description: "Describes the state the signal produced — M2 shows how the state filters reality, M3 shows how the override blocks the correction. Together: why people don\u2019t know they don\u2019t know." },
             { id: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities", description: "Describes what determines whether the person can feel the activation running — whether they can detect the override and distinguish a substitute from genuine restoration." },
@@ -256,7 +256,7 @@ export default function M3RegulationCapacitiesPage() {
             { id: "F2: Developmental Calibration", href: "/framework/f2-awareness-calibration", description: "Explains how the capacity for biological restoration develops through early co-regulation — and what happens when it does not." },
           ]} />
 
-          <NavSection color={MODEL_COLOR} items={[
+          <NavSection color={P.D} items={[
             { label: "Understand the signals that trigger activation — and which restoration pathway each requires", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
             { label: "See how the state filters perception before cognition arrives", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },
             { label: "Understand what determines whether the person can perceive the activation while it runs", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },

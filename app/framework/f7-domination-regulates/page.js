@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -88,7 +88,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F7DominationRegulatesPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -200,7 +200,7 @@ export default function F7DominationRegulatesPage() {
           </div>
 
           {/* ─── PART 1: WHAT DOMINATION IS ─────────────── */}
-          <PartDivider label="PART 1" title="What Domination Is" color={accent} />
+          <PartDivider label="PART 1" title="What Domination Is" color={P.A} />
 
           {/* Concept 0: Reinforcement */}
           <section
@@ -208,7 +208,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-reinforcement"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-reinforcement" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-reinforcement" style={sectionHeadingStyle(P.B)}>
               How Reinforcement Builds the Escalation Pathway
             </h2>
 
@@ -247,7 +247,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-transition"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-transition" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-transition" style={sectionHeadingStyle(P.B)}>
               When Defense Becomes Strategy
             </h2>
 
@@ -286,7 +286,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-five-stages"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-five-stages" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-five-stages" style={sectionHeadingStyle(P.B)}>
               Five Stages from Fear to Power Preservation
             </h2>
 
@@ -333,7 +333,7 @@ export default function F7DominationRegulatesPage() {
           </section>
 
           {/* ─── PART 2: HOW DOMINATION ESCALATES ─────────── */}
-          <PartDivider label="PART 2" title="How Domination Escalates" color={accent} />
+          <PartDivider label="PART 2" title="How Domination Escalates" color={P.B} />
 
           {/* Concept 4: Power-Interoception Inverse */}
           <section
@@ -341,7 +341,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-power-interoception"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-power-interoception" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-power-interoception" style={sectionHeadingStyle(P.B)}>
               The Power-Interoception Inverse
             </h2>
 
@@ -383,7 +383,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-capacity-divergence"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-capacity-divergence" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-capacity-divergence" style={sectionHeadingStyle(P.B)}>
               How Awareness Capacities Diverge Along the Pathway
             </h2>
 
@@ -436,7 +436,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-escalation-logic"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-escalation-logic" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-escalation-logic" style={sectionHeadingStyle(P.B)}>
               Escalation Without a Stopping Point
             </h2>
 
@@ -473,7 +473,7 @@ export default function F7DominationRegulatesPage() {
           </section>
 
           {/* ─── PART 3: WHAT DOMINATION PRODUCES AT SCALE ── */}
-          <PartDivider label="PART 3" title="What Domination Produces at Scale" color={accent} />
+          <PartDivider label="PART 3" title="What Domination Produces at Scale" color={P.C} />
 
           {/* Concepts 8-10: Institutions */}
           <section
@@ -481,7 +481,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-institutional-reproduction"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-institutional-reproduction" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-institutional-reproduction" style={sectionHeadingStyle(P.B)}>
               How Institutions Reproduce the Configuration
             </h2>
 
@@ -521,7 +521,7 @@ export default function F7DominationRegulatesPage() {
           </section>
 
           {/* ─── PART 4: THE ARC COMPLETES ──────────────── */}
-          <PartDivider label="PART 4" title="The Arc Completes" color={accent} />
+          <PartDivider label="PART 4" title="The Arc Completes" color={P.D} />
 
           {/* Concepts 11-12: Accountability + Complete Arc */}
           <section
@@ -529,7 +529,7 @@ export default function F7DominationRegulatesPage() {
             aria-labelledby="heading-complete-arc"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-complete-arc" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-complete-arc" style={sectionHeadingStyle(P.B)}>
               Seven Restoration Substitutes at Escalating Scale
             </h2>
 
@@ -587,7 +587,7 @@ export default function F7DominationRegulatesPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Domination built through reinforcement",
@@ -634,7 +634,7 @@ export default function F7DominationRegulatesPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F7 completed the collective arc — seven restoration substitutes at escalating scales and escalating costs, each tracing to the same origin: a nervous system that never learned the return path."
             question="The repair arc (F8-F12) maps what happens when the conditions change — when safety replaces threat, when the interoceptive channel begins to reopen, when the substrate rebuilds through the relational conditions that build it in the first place."
             nextFramework="F8"
@@ -644,7 +644,7 @@ export default function F7DominationRegulatesPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M3: Regulation Capacities",
@@ -681,7 +681,7 @@ export default function F7DominationRegulatesPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F8 — how the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "See the restoration substitutes and escalation M3 maps", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },

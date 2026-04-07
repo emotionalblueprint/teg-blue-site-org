@@ -2,15 +2,14 @@
 
 import { useState, useCallback } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 import { MODES } from '@/src/data/m2-data';
 import { EMOTIONS } from '@/src/data/m1-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
-const ACCENT = '#2563eb';
+const MODEL_COLOR = PATTERN.B.primary;
 
 // Curated selection — mix of somatic and relational, high-contrast transformations
 const FEATURED_KEYS = ['fear', 'anger', 'joy', 'shame', 'love', 'sadness', 'disgust', 'trust'];
@@ -29,7 +28,10 @@ export default function M2SignalState() {
   const hasStuckData = emotion.stuckCompass !== null;
 
   return (
-    <section style={{ marginBottom: 32 }}>
+    <section style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m2-ss-grid {
           display: grid;

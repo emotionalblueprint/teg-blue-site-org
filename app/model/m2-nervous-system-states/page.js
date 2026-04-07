@@ -1,6 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { BG, TEXT, FONT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, FONT, SPECTRUM, PATTERN, hexToRgba } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, ExpandableSection,
   PageLayout, PartDivider, NavSection, ConnectionsMap,
@@ -29,9 +29,9 @@ const M2ReinforcingLoop = dynamic(
   { ssr: false }
 );
 
-const MODEL_COLOR = SPECTRUM.azure;
+const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
-const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
+const linkStyle = { color: P.B, textDecoration: "none" };
 
 export const metadata = {
   title: "Nervous System States (M2) | TEG-Blue Research",
@@ -93,7 +93,7 @@ export default function M2NervousSystemStatesPage() {
               { label: "M4", href: "/model/m4-awareness-capacities" },
               { label: "F1", href: "/framework/f1-emotional-gradient" },
             ]}
-            color={MODEL_COLOR}
+            color={P.A}
           />
         }
       >
@@ -119,7 +119,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* CORE PROPOSITIONS */}
           <section id="core-propositions" aria-labelledby="heading-core-propositions" style={{ marginBottom: 48 }}>
-            <h2 id="heading-core-propositions" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>
+            <h2 id="heading-core-propositions" style={sectionHeadingStyle(P.A)}>Core Propositions</h2>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
               <li style={propositionItemStyle}>The nervous system continuously evaluates whether conditions are safe enough for engagement or require protection. This evaluation is automatic, rapid, and based on experienced safety — not objective conditions alone.</li>
               <li style={propositionItemStyle}>Four nervous system states are grounded in two biological branches: parasympathetic regulation supports Safety & Openness; sympathetic activation supports Threat & Defence, Strategy & Management, and Power & Dominance.</li>
@@ -132,11 +132,11 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 1: THE STATES */}
-          <PartDivider label="PART 1" title="The States" color={MODEL_COLOR} />
+          <PartDivider label="PART 1" title="The States" color={P.A} />
 
           {/* C0: CORE SAFETY EVALUATION */}
           <section id="core-safety-evaluation" aria-labelledby="heading-cse" style={{ marginBottom: 48 }}>
-            <h2 id="heading-cse" style={sectionHeadingStyle(MODEL_COLOR)}>The Core Safety Evaluation</h2>
+            <h2 id="heading-cse" style={sectionHeadingStyle(P.A)}>The Core Safety Evaluation</h2>
             <p style={proseStyle}>The nervous system is continuously evaluating a core question: <strong style={{ color: TEXT.primary }}>Is there sufficient safety to engage, or is protection required?</strong></p>
             <p style={proseStyle}>This evaluation operates continuously and outside conscious awareness. Emotional signals can be understood as outputs of this process, and nervous system states as the system-wide reorganization that follows from it.</p>
             <p style={proseStyle}>This process does not depend on deliberate reasoning. It is rapid, automatic, and based on experienced safety, not objective conditions alone. For that reason, a person may feel threatened in an environment that appears objectively safe, or may fail to detect danger in an environment that is objectively unsafe. The nervous system responds to what it has learned to classify as safe or threatening, whether or not that classification matches present reality.</p>
@@ -153,7 +153,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C1: PHYSIOLOGICAL BASELINE */}
           <section id="physiological-baseline" aria-labelledby="heading-baseline" style={{ marginBottom: 48 }}>
-            <h2 id="heading-baseline" style={sectionHeadingStyle(MODEL_COLOR)}>Physiological Baseline</h2>
+            <h2 id="heading-baseline" style={sectionHeadingStyle(P.A)}>Physiological Baseline</h2>
             <p style={proseStyle}>The nervous system at rest. Not numb, not inactive — ready. The body{"'"}s resources available, not deployed. Cortisol at resting level. Muscles at resting tension. Heart rate at resting pace. The HPA axis standing down.</p>
             <p style={proseStyle}>Physiological baseline is the condition the nervous system is designed to return to after activation. It is not one of the four states. It is the neutral ground from which the system enters a state when conditions require it, and returns when the body{"'"}s activation sequence has completed.</p>
             <p style={proseStyle}>This distinction matters because Safety & Openness — the state closest to baseline — is still a state. It is a parasympathetic-dominant activation that arises when conditions support engagement. Baseline is what exists before any activation, and what the system returns to when activation resolves. A person in Safety & Openness is engaged. A person at physiological baseline is at rest.</p>
@@ -170,7 +170,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C2: TWO BRANCHES, FOUR STATES */}
           <section id="four-states" aria-labelledby="heading-four-states" style={{ marginBottom: 48 }}>
-            <h2 id="heading-four-states" style={sectionHeadingStyle(MODEL_COLOR)}>Two Biological Branches, Four Nervous System States</h2>
+            <h2 id="heading-four-states" style={sectionHeadingStyle(P.A)}>Two Biological Branches, Four Nervous System States</h2>
             <p style={proseStyle}>The state system is grounded in two primary biological branches of autonomic regulation. The <strong style={{ color: TEXT.primary }}>parasympathetic branch</strong>, particularly the ventral vagal system, supports safety, social engagement, and physiological settling. The <strong style={{ color: TEXT.primary }}>sympathetic branch</strong> supports mobilization, vigilance, and defensive action.</p>
             <p style={proseStyle}>From these biological foundations, four distinct states are described:</p>
 
@@ -200,7 +200,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C7: THE GRADIENT */}
           <section id="the-gradient" aria-labelledby="heading-gradient" style={{ marginBottom: 48 }}>
-            <h2 id="heading-gradient" style={sectionHeadingStyle(MODEL_COLOR)}>The Nervous System Gradient</h2>
+            <h2 id="heading-gradient" style={sectionHeadingStyle(P.A)}>The Nervous System Gradient</h2>
             <p style={proseStyle}>The four states are positions along a continuous gradient of nervous system organisation — a gradient of autonomic tone, from parasympathetic dominance through increasing sympathetic activation, with measurable shifts in heart rate variability, cortisol levels, muscle tension, and sensory filtering at each point.</p>
             <p style={proseStyle}>The system{"'"}s position on the gradient at any given moment is its <strong style={{ color: TEXT.primary }}>Current State Position</strong> — a continuously updated read-out of how the nervous system is currently organised, determined by the safety-threat evaluation running below conscious awareness. The position is never static unless the state has become chronic.</p>
             <p style={proseStyle}>Whether the system can move is the most important measure in M2. TEG-Blue calls this <strong style={{ color: TEXT.primary }}>State Flexibility</strong> — the nervous system{"'"}s capacity to shift state in response to changing conditions and return toward physiological baseline when activation has served its function. A person in Threat & Defence who can move back toward Safety & Openness when conditions change is fundamentally different from a person in Threat & Defence whose system has locked there. The Current State Position tells you where the system is. State Flexibility tells you whether it can leave.</p>
@@ -216,21 +216,21 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 2: WHAT THE STATE DOES */}
-          <PartDivider label="PART 2" title="What the State Does" color={MODEL_COLOR} />
+          <PartDivider label="PART 2" title="What the State Does" color={P.B} />
 
           {/* C8: STATE DETERMINES CAPACITY */}
           <section id="state-determines-capacity" aria-labelledby="heading-sdc" style={{ marginBottom: 48 }}>
-            <h2 id="heading-sdc" style={sectionHeadingStyle(MODEL_COLOR)}>State Determines Capacity</h2>
+            <h2 id="heading-sdc" style={sectionHeadingStyle(P.B)}>State Determines Capacity</h2>
             <p style={proseStyle}>What a person can perceive, think, feel, learn, tolerate, and do depends on their Current State Position on the gradient. The nervous system configures what becomes available based on the level of safety or threat it has detected — resource allocation determined by state, not by choice.</p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr", minWidth: 900 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Capacity</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Baseline</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Safety & Openness</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Threat & Defence</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Strategy & Mgmt</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Power & Dominance</div>
+                <div style={gridHeaderStyle(P.B)}>Capacity</div>
+                <div style={gridHeaderStyle(P.B)}>Baseline</div>
+                <div style={gridHeaderStyle(P.B)}>Safety & Openness</div>
+                <div style={gridHeaderStyle(P.B)}>Threat & Defence</div>
+                <div style={gridHeaderStyle(P.B)}>Strategy & Mgmt</div>
+                <div style={gridHeaderStyle(P.B)}>Power & Dominance</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Perception</div>
                 <div style={gridCellStyle}>Open — available but not directed</div>
@@ -290,15 +290,15 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C9: SENSORY FILTERING */}
           <section id="sensory-filtering" aria-labelledby="heading-sf" style={{ marginBottom: 48 }}>
-            <h2 id="heading-sf" style={sectionHeadingStyle(MODEL_COLOR)}>State-Dependent Sensory Filtering</h2>
+            <h2 id="heading-sf" style={sectionHeadingStyle(P.B)}>State-Dependent Sensory Filtering</h2>
             <p style={proseStyle}>The state does not only shape what the person does with reality. It also shapes what aspects of reality are most likely to be registered in the first place.</p>
             <p style={proseStyle}>Sensory input reaches the nervous system before conscious interpretation is assembled. Once a state is active, incoming information is filtered accordingly. In states of greater safety, sensory input is processed with more openness to context, nuance, tone, and relational meaning. In states of greater threat, sensory systems become increasingly tuned toward danger, instability, and threat-relevant cues.</p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What the Filter Delivers</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What the Person Experiences</div>
+                <div style={gridHeaderStyle(P.B)}>State</div>
+                <div style={gridHeaderStyle(P.B)}>What the Filter Delivers</div>
+                <div style={gridHeaderStyle(P.B)}>What the Person Experiences</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
                 <div style={gridCellStyle}>Channels wide open. Eyes reading faces, context, nuance. Ears picking up warmth, prosody. Gut relaxed, feeding accurate interoceptive data.</div>
@@ -332,14 +332,14 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C10: STATE-MODIFIED SIGNAL EXPERIENCE */}
           <section id="state-modified-signal" aria-labelledby="heading-sms" style={{ marginBottom: 48 }}>
-            <h2 id="heading-sms" style={sectionHeadingStyle(MODEL_COLOR)}>State-Modified Signal Experience</h2>
+            <h2 id="heading-sms" style={sectionHeadingStyle(P.B)}>State-Modified Signal Experience</h2>
             <p style={proseStyle}>An emotional signal does not produce the same lived experience in every state. The signal itself may remain the same, but the state in which it arrives changes how it is processed, expressed, tolerated, and interpreted.</p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Signal</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>In Safety & Openness</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>In Threat States</div>
+                <div style={gridHeaderStyle(P.B)}>Signal</div>
+                <div style={gridHeaderStyle(P.B)}>In Safety & Openness</div>
+                <div style={gridHeaderStyle(P.B)}>In Threat States</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Anger</div>
                 <div style={gridCellStyle}>Signals a boundary; motivates repair and clarity</div>
@@ -386,11 +386,11 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 3: WHEN STATES BECOME CHRONIC */}
-          <PartDivider label="PART 3" title="When States Become Chronic" color={MODEL_COLOR} />
+          <PartDivider label="PART 3" title="When States Become Chronic" color={P.C} />
 
           {/* C11: STATES AS TEMPORARY */}
           <section id="states-as-temporary" aria-labelledby="heading-temp" style={{ marginBottom: 48 }}>
-            <h2 id="heading-temp" style={sectionHeadingStyle(MODEL_COLOR)}>States as Temporary Activations</h2>
+            <h2 id="heading-temp" style={sectionHeadingStyle(P.C)}>States as Temporary Activations</h2>
             <p style={proseStyle}>All four nervous system states are designed as temporary activations, not permanent conditions. The nervous system is built to shift in response to changing conditions, organize around what is needed in the moment, and then return toward physiological baseline once the restoration sequence has run.</p>
             <p style={proseStyle}>Safety & Openness is the state closest to baseline, and it is often treated — implicitly or explicitly — as the destination: the place a person should try to reach and remain. It is not. It is a parasympathetic-dominant activation, not rest. A nervous system that remains perpetually organized around Safety & Openness — absorbing, engaging, resonating without returning to physiological rest — is as chronically activated as one organized around threat. The state is different. The structural problem is the same: the system is not returning to baseline.</p>
             <p style={proseStyle}>Any state that the nervous system cannot leave becomes chronic. The defining measure is not which state the system occupies. It is whether the system retains the capacity to move, respond, and return to physiological baseline.</p>
@@ -406,14 +406,14 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C12: CHRONIC STATE ORGANISATION */}
           <section id="chronic-states" aria-labelledby="heading-chronic" style={{ marginBottom: 48 }}>
-            <h2 id="heading-chronic" style={sectionHeadingStyle(MODEL_COLOR)}>Chronic State Organisation</h2>
+            <h2 id="heading-chronic" style={sectionHeadingStyle(P.C)}>Chronic State Organisation</h2>
             <p style={proseStyle}>A state becomes chronic when the nervous system does not return to physiological baseline — when stress hormones remain elevated, muscles stay braced, the HPA axis does not stand down, and the restoration sequence does not run to its endpoint. The mechanism is the same for every state: baseline is not restored, and the temporary activation becomes the system{"'"}s default organization.</p>
             <p style={proseStyle}>When this happens, perception, behaviour, and relational patterns begin to organise around the chronic state. What began as a state-dependent physiological configuration becomes indistinguishable, from the inside, from who the person is.</p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", minWidth: 400 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Looks Like</div>
+                <div style={gridHeaderStyle(P.C)}>Chronic State</div>
+                <div style={gridHeaderStyle(P.C)}>What It Looks Like</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
                 <div style={gridCellStyle}>Continual emotional absorption — resonating, engaging, taking in others{"'"} states without the nervous system ever returning to rest. Permanently available to others, permanently unavailable to self.</div>
@@ -441,15 +441,15 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C13: PROJECTION */}
           <section id="projection" aria-labelledby="heading-projection" style={{ marginBottom: 48 }}>
-            <h2 id="heading-projection" style={sectionHeadingStyle(MODEL_COLOR)}>Projection as State-Locked Perceptual Bias</h2>
+            <h2 id="heading-projection" style={sectionHeadingStyle(P.C)}>Projection as State-Locked Perceptual Bias</h2>
             <p style={proseStyle}>When a state becomes chronic, the perceptual filter associated with that state may also become chronic. At that point, the person is no longer only reacting to present conditions. They are perceiving new situations through a filter calibrated by past activation.</p>
             <p style={proseStyle}>Because the filtering occurs upstream of deliberate reasoning, cognition may simply build a coherent explanation around already-biased input. The person does not experience themselves as distorting reality. They experience themselves as perceiving it directly.</p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What the Locked Filter Finds</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What the Person Experiences</div>
+                <div style={gridHeaderStyle(P.C)}>Chronic State</div>
+                <div style={gridHeaderStyle(P.C)}>What the Locked Filter Finds</div>
+                <div style={gridHeaderStyle(P.C)}>What the Person Experiences</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
                 <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
@@ -481,7 +481,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* C14: THE STATE-REINFORCING LOOP */}
           <section id="state-reinforcing-loop" aria-labelledby="heading-loop" style={{ marginBottom: 48 }}>
-            <h2 id="heading-loop" style={sectionHeadingStyle(MODEL_COLOR)}>The State-Reinforcing Loop</h2>
+            <h2 id="heading-loop" style={sectionHeadingStyle(P.C)}>The State-Reinforcing Loop</h2>
             <p style={proseStyle}>Once a state becomes chronic, it can begin to sustain itself through a recursive loop: <strong style={{ color: TEXT.primary }}>state → filter → input → confirmation of state</strong>.</p>
             <p style={proseStyle}>The physiological configuration of the active state shapes what information reaches the person. That filtered input then appears to confirm the necessity of the state. The nervous system receives ongoing evidence that its current organisation is correct, and the physiological configuration that produced the filtering remains in place — even when the environment has changed.</p>
             <div style={expandableRowStyle}>
@@ -497,11 +497,11 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 4: TWO INFORMATION SYSTEMS */}
-          <PartDivider label="PART 4" title="Two Information Systems" color={MODEL_COLOR} />
+          <PartDivider label="PART 4" title="Two Information Systems" color={P.D} />
 
           {/* C15: THE UNDERSTANDING-CHANGE GAP */}
           <section id="understanding-change-gap" aria-labelledby="heading-gap" style={{ marginBottom: 48 }}>
-            <h2 id="heading-gap" style={sectionHeadingStyle(MODEL_COLOR)}>The Understanding-Change Gap</h2>
+            <h2 id="heading-gap" style={sectionHeadingStyle(P.D)}>The Understanding-Change Gap</h2>
             <p style={proseStyle}>A person can understand their pattern cognitively and still remain organized by the same state under stress.</p>
             <p style={proseStyle}>This is because cognitive understanding and nervous system organization do not operate at the same speed or through the same mechanisms. The emotional-somatic system activates rapidly, often before conscious thought has fully formed. Cognition comes later. It can describe, interpret, and reflect on the process, but it does not necessarily interrupt the state once it has been activated.</p>
             <p style={proseStyle}>Insight can support recognition, language, and meaning-making. But recognition alone does not guarantee that the nervous system will reorganize differently in real time.</p>
@@ -518,7 +518,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* CONNECTIONS MAP */}
           <ConnectionsMap
-            color={MODEL_COLOR}
+            color={P.D}
             connections={[
               { id: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals", description: "Describes the signals that trigger state activation — M1 maps the signal, M2 maps the state the signal produces." },
               { id: "M3: Regulation Capacities", href: "/model/m3-regulation-capacities", description: "Describes whether activation resolves — whether the body completes the restoration sequence and the nervous system returns to baseline, or the activation persists and the state becomes chronic." },
@@ -530,7 +530,7 @@ export default function M2NervousSystemStatesPage() {
 
           {/* WHERE TO GO NEXT */}
           <NavSection
-            color={MODEL_COLOR}
+            color={P.D}
             items={[
               { label: "Understand how emotional signals are generated — the first stage of the cycle", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
               { label: "See whether the activation sequence completes — and what accumulates when it does not", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },

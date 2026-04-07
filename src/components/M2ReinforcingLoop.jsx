@@ -2,14 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT,
+  hexToRgba, diagramContainer,
 } from '@/src/styles/tokens';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
-const ACCENT = '#2563eb';
-const WARNING = '#f97316';
+const MODEL_COLOR = PATTERN.B.primary;
+const WARNING = ACCENT.orange;
 
 // Loop stages — the self-reinforcing cycle
 const STAGES = [
@@ -105,7 +104,10 @@ export default function M2ReinforcingLoop() {
   const displayStage = activeStage !== null ? activeStage : (animStage >= 0 && animStage < STAGES.length ? animStage : null);
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m2-loop-container {
           display: flex;

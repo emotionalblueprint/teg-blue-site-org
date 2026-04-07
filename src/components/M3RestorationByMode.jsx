@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN,
-  hexToRgba, gradientCardBg,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.indigo;
+const MODEL_COLOR = PATTERN.C.primary;
 
 const RESTORATIONS = [
   {
@@ -58,7 +58,10 @@ export default function M3RestorationByMode() {
   const [expandedIdx, setExpandedIdx] = useState(null);
 
   return (
-    <section style={{ marginBottom: 32 }}>
+    <section style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m3-mode-card {
           padding: 14px 16px;
@@ -187,7 +190,7 @@ export default function M3RestorationByMode() {
                   <span style={{
                     fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
                     letterSpacing: '0.1em', textTransform: 'uppercase',
-                    color: '#f97316',
+                    color: ACCENT.orange,
                   }}>
                     What cannot replace it
                   </span>

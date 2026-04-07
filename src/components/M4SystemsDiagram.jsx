@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, AWARENESS,
-  hexToRgba, gradientCardBg,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, AWARENESS, ACCENT,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.cobalt;
+const MODEL_COLOR = PATTERN.D.primary;
 const ESS_COLOR = AWARENESS.SEA;   // green — the body's system
 const CLS_COLOR = AWARENESS.RE;    // violet — the thinking system
 const BRIDGE_COLOR = AWARENESS.ER; // cyan — the bridge
@@ -70,7 +70,10 @@ export default function M4SystemsDiagram() {
   const clsBuilds = phase === 'builds';
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m4s-system {
           padding: 20px;
@@ -168,8 +171,8 @@ export default function M4SystemsDiagram() {
             </span>
             {!bridgeOpen && (
               <span className="m4s-signal" style={{
-                background: hexToRgba('#f97316', 0.1),
-                color: '#f97316',
+                background: hexToRgba(ACCENT.orange, 0.1),
+                color: ACCENT.orange,
                 animation: 'm4sPulse 1.5s ease infinite',
               }}>
                 {bridgeClosing ? 'Data source narrowing...' : 'Does not know what it\'s missing'}
@@ -192,9 +195,9 @@ export default function M4SystemsDiagram() {
                 fontFamily: FONT.mono, fontSize: 7, letterSpacing: '0.04em',
                 padding: '3px 8px', borderRadius: 10,
                 background: d.lost
-                  ? hexToRgba('#f97316', 0.08)
+                  ? hexToRgba(ACCENT.orange, 0.08)
                   : hexToRgba(CLS_COLOR, 0.08),
-                color: d.lost ? '#f97316' : TEXT.muted,
+                color: d.lost ? ACCENT.orange : TEXT.muted,
                 textDecoration: d.lost ? 'line-through' : 'none',
                 transition: 'all 0.5s ease',
               }}>
@@ -225,7 +228,7 @@ export default function M4SystemsDiagram() {
               <span style={{
                 fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
                 letterSpacing: '0.1em', textTransform: 'uppercase',
-                color: bridgeClosed ? '#f97316' : BRIDGE_COLOR,
+                color: bridgeClosed ? ACCENT.orange : BRIDGE_COLOR,
                 transition: 'color 0.5s ease',
                 whiteSpace: 'nowrap',
               }}>
@@ -315,8 +318,8 @@ export default function M4SystemsDiagram() {
             marginTop: 16,
             padding: '14px 16px',
             borderRadius: RADIUS.md,
-            background: gradientCardBg('#f97316', 0.06),
-            border: `1px solid ${hexToRgba('#f97316', 0.15)}`,
+            background: gradientCardBg(ACCENT.orange, 0.06),
+            border: `1px solid ${hexToRgba(ACCENT.orange, 0.15)}`,
             borderLeft: `3px solid #f97316`,
             animation: 'm4sFadeIn 0.5s ease',
           }}>

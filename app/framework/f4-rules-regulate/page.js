@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -88,7 +88,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F4RulesRegulatePage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -197,7 +197,7 @@ export default function F4RulesRegulatePage() {
           </div>
 
           {/* ─── PART 1: HOW INDIVIDUAL PATTERNS SCALE ──── */}
-          <PartDivider label="PART 1" title="How Individual Patterns Scale" color={accent} />
+          <PartDivider label="PART 1" title="How Individual Patterns Scale" color={P.A} />
 
           {/* Concept 0: How Individual False Coherence Consolidates */}
           <section
@@ -205,7 +205,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-consolidation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-consolidation" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-consolidation" style={sectionHeadingStyle(P.B)}>
               How Individual Patterns Consolidate Into Shared Narratives
             </h2>
 
@@ -250,7 +250,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-rules-biological"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-rules-biological" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-rules-biological" style={sectionHeadingStyle(P.B)}>
               What Rules Are at the Biological Level
             </h2>
 
@@ -289,7 +289,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-internalization"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-internalization" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-internalization" style={sectionHeadingStyle(P.B)}>
               From External Enforcement to Invisible Truth
             </h2>
 
@@ -341,7 +341,7 @@ export default function F4RulesRegulatePage() {
           </section>
 
           {/* ─── PART 2: WHAT RULE SYSTEMS PRODUCE ──────── */}
-          <PartDivider label="PART 2" title="What Rule Systems Produce" color={accent} />
+          <PartDivider label="PART 2" title="What Rule Systems Produce" color={P.B} />
 
           {/* Concept 3: Six Regulatory Functions */}
           <section
@@ -349,7 +349,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-six-functions"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-six-functions" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-six-functions" style={sectionHeadingStyle(P.B)}>
               Six Regulatory Functions That Rule Systems Serve
             </h2>
 
@@ -424,7 +424,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-substrate-reproduction"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-substrate-reproduction" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-substrate-reproduction" style={sectionHeadingStyle(P.B)}>
               How Rules Set the Next Generation's Interoceptive Substrate
             </h2>
 
@@ -475,7 +475,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-three-coherence-forms"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-three-coherence-forms" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-three-coherence-forms" style={sectionHeadingStyle(P.B)}>
               How Different Populations Relate to the Same Rule System
             </h2>
 
@@ -520,7 +520,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-re-only-institutions"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-re-only-institutions" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-re-only-institutions" style={sectionHeadingStyle(P.B)}>
               When Institutions Run on Cognitive Data Alone
             </h2>
 
@@ -560,7 +560,7 @@ export default function F4RulesRegulatePage() {
           </section>
 
           {/* ─── PART 3: HOW RULES ESCALATE ──────────────── */}
-          <PartDivider label="PART 3" title="How Rules Escalate" color={accent} />
+          <PartDivider label="PART 3" title="How Rules Escalate" color={P.C} />
 
           {/* Concept 7: How Rules Tighten */}
           <section
@@ -568,7 +568,7 @@ export default function F4RulesRegulatePage() {
             aria-labelledby="heading-escalation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-escalation" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-escalation" style={sectionHeadingStyle(P.B)}>
               How Rules Tighten When Collective Threat Increases
             </h2>
 
@@ -626,7 +626,7 @@ export default function F4RulesRegulatePage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Three-mechanism scaling",
@@ -665,7 +665,7 @@ export default function F4RulesRegulatePage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F4 established how individual nervous system patterns consolidate into collective rule systems — how rules are absorbed as regulatory material, how they move from external enforcement to invisible truth, how six rule systems each serve a distinct regulatory function, and how rules reproduce the substrate state across generations."
             question="Rules organize behavior. They also organize value. When rule adherence becomes the collective definition of safety, the system begins to sort people — who gets the conditions that allow biological restoration to develop, and who does not."
             nextFramework="F5"
@@ -675,7 +675,7 @@ export default function F4RulesRegulatePage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M2: Nervous System States",
@@ -712,7 +712,7 @@ export default function F4RulesRegulatePage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F5 — how rules sort who gets the conditions for restoration", href: "/framework/f5-worth-hierarchies", linkText: "F5: The Filter of Worth \u2192" },
               { label: "See the nervous system gradient that rules escalate along", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },

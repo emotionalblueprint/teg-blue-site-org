@@ -40,15 +40,15 @@ export const BORDER = {
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────
-// Six tones with full hue/lightness spread. Each maps to a content type.
+// Six tones with full hue/lightness spread. Use freely — no color owns a page.
 
 export const SPECTRUM = {
-  sky:    "#b6ebfc",   // Glossary — ice, light
-  azure:  "#76e2ff",   // Open Data — cyan, clear
-  blue:   "#00b1ff",   // Publications — bright blue-cyan, core
-  cobalt: "#0590e5",   // Frameworks (F1-F12) — deep blue
-  indigo: "#7b7bff",   // Foundations & Theory — violet
-  slate:  "#808493",   // Methodology & Meta — neutral grey
+  sky:    "#b6ebfc",   // lightest — ice
+  azure:  "#76e2ff",   // cyan, clear
+  blue:   "#00b1ff",   // bright blue-cyan, core
+  cobalt: "#0590e5",   // deep blue
+  indigo: "#7b7bff",   // violet
+  slate:  "#808493",   // neutral grey
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────
@@ -195,6 +195,19 @@ export const STATUS = {
   published: SPECTRUM.blue,
   reviewed:  ACCENT.green,
 };
+
+// ─── DIAGRAM CONTAINERS ─────────────────────────────
+// M diagrams use the four-mode gradient as their container atmosphere.
+// F diagrams will use a different treatment (TBD).
+
+export function diagramContainer() {
+  return {
+    padding: 'clamp(16px, 3vw, 24px)',
+    background: `linear-gradient(135deg, ${hexToRgba(PATTERN.A.primary, 0.04)}, ${hexToRgba(PATTERN.D.primary, 0.03)})`,
+    border: `1px solid ${hexToRgba(PATTERN.B.primary, 0.10)}`,
+    borderRadius: 12,
+  };
+}
 
 // ─── UTILITY ─────────────────────────────────────────
 

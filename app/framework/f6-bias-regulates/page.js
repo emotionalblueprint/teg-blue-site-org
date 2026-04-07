@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -86,7 +86,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F6BiasRegulatesPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -195,7 +195,7 @@ export default function F6BiasRegulatesPage() {
           </div>
 
           {/* ─── PART 1: WHAT BIAS IS ───────────────────── */}
-          <PartDivider label="PART 1" title="What Bias Is" color={accent} />
+          <PartDivider label="PART 1" title="What Bias Is" color={P.A} />
 
           {/* Concept 0: How Bias Serves Regulation */}
           <section
@@ -203,7 +203,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-bias-regulation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-bias-regulation" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-bias-regulation" style={sectionHeadingStyle(P.B)}>
               How Bias Serves Regulation Rather Than Reasoning
             </h2>
 
@@ -245,7 +245,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-filtering-architecture"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-filtering-architecture" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-filtering-architecture" style={sectionHeadingStyle(P.B)}>
               The Architecture of Perceptual Filtering
             </h2>
 
@@ -262,7 +262,7 @@ export default function F6BiasRegulatesPage() {
                 fontFamily: FONT.mono,
                 color: TEXT.muted,
                 padding: "12px 16px",
-                background: hexToRgba(accent, 0.08),
+                background: hexToRgba(P.B, 0.08),
                 borderRadius: 6,
                 marginBottom: 16,
                 textAlign: "center",
@@ -319,7 +319,7 @@ export default function F6BiasRegulatesPage() {
           </section>
 
           {/* ─── PART 2: HOW BIAS FORMS AND LOCKS ────────── */}
-          <PartDivider label="PART 2" title="How Bias Forms and Locks" color={accent} />
+          <PartDivider label="PART 2" title="How Bias Forms and Locks" color={P.B} />
 
           {/* Concepts 3-4: Formation Loop + Why It Feels Like Perception */}
           <section
@@ -327,7 +327,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-bias-formation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-bias-formation" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-bias-formation" style={sectionHeadingStyle(P.B)}>
               How Bias Forms, Locks, and Feels Like Direct Perception
             </h2>
 
@@ -374,7 +374,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-collective-perception"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-collective-perception" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-collective-perception" style={sectionHeadingStyle(P.B)}>
               Collective State-Locked Perception
             </h2>
 
@@ -411,7 +411,7 @@ export default function F6BiasRegulatesPage() {
           </section>
 
           {/* ─── PART 3: THREE PERCEPTUAL ARCHITECTURES ─── */}
-          <PartDivider label="PART 3" title="Three Collective Perceptual Architectures" color={accent} />
+          <PartDivider label="PART 3" title="Three Collective Perceptual Architectures" color={P.C} />
 
           {/* Concepts 6-8: Three Architectures */}
           <section
@@ -419,7 +419,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-three-architectures"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-three-architectures" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-three-architectures" style={sectionHeadingStyle(P.B)}>
               Three Relationships to the Same Bias
             </h2>
 
@@ -456,7 +456,7 @@ export default function F6BiasRegulatesPage() {
           </section>
 
           {/* ─── PART 4: WHY CORRECTION FAILS ───────────── */}
-          <PartDivider label="PART 4" title="Why Correction Fails and What Works" color={accent} />
+          <PartDivider label="PART 4" title="Why Correction Fails and What Works" color={P.D} />
 
           {/* Concepts 9-10: Correction Failure + Revision Conditions */}
           <section
@@ -464,7 +464,7 @@ export default function F6BiasRegulatesPage() {
             aria-labelledby="heading-correction"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-correction" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-correction" style={sectionHeadingStyle(P.B)}>
               Why Education Fails and What Conditions Allow Revision
             </h2>
 
@@ -519,7 +519,7 @@ export default function F6BiasRegulatesPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Bias as regulation",
@@ -562,7 +562,7 @@ export default function F6BiasRegulatesPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F6 established how perception becomes protection — bias as regulation rather than reasoning error, the architecture of perceptual filtering, collective state-locked perception, three perceptual architectures through the interoceptive substrate, and why correction fails when it targets the narrative while the substrate maintains the bias."
             question="When bias becomes rigid and self-protective, and correction is experienced as threat, the system does not simply persist in filtered perception. It seeks stronger stabilization. The system moves from maintaining the perceptual filter to imposing it — requiring others to share the perception, treating disagreement as threat, managing through escalation."
             nextFramework="F7"
@@ -572,7 +572,7 @@ export default function F6BiasRegulatesPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M2: Nervous System States",
@@ -604,7 +604,7 @@ export default function F6BiasRegulatesPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F7 — when the system moves from filtered perception to enforcement", href: "/framework/f7-domination-regulates", linkText: "F7: Domination Regulates \u2192" },
               { label: "See the state-dependent filtering that operates in each individual", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },

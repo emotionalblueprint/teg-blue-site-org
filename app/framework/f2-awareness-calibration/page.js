@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -85,7 +85,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F2AwarenessCalibrationPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -188,7 +188,7 @@ export default function F2AwarenessCalibrationPage() {
           </div>
 
           {/* ─── PART 1: THE LEARNING PATHWAY ────────────── */}
-          <PartDivider label="PART 1" title="The Learning Pathway" color={accent} />
+          <PartDivider label="PART 1" title="The Learning Pathway" color={P.A} />
 
           {/* Concept 0: The Pre-Reflective Starting Condition */}
           <section
@@ -196,7 +196,7 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-pre-reflective"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-pre-reflective" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-pre-reflective" style={sectionHeadingStyle(P.B)}>
               The Pre-Reflective Starting Condition
             </h2>
 
@@ -238,7 +238,7 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-co-regulation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-co-regulation" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-co-regulation" style={sectionHeadingStyle(P.B)}>
               Co-Regulation and the Two Completion Pathways
             </h2>
 
@@ -311,7 +311,7 @@ export default function F2AwarenessCalibrationPage() {
           </section>
 
           {/* ─── PART 2: WHAT DEVELOPS ───────────────────── */}
-          <PartDivider label="PART 2" title="What Develops" color={accent} />
+          <PartDivider label="PART 2" title="What Develops" color={P.B} />
 
           {/* Concept 2: Three Awareness Capacities */}
           <section
@@ -319,7 +319,7 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-awareness-capacities"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-awareness-capacities" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-awareness-capacities" style={sectionHeadingStyle(P.B)}>
               Three Awareness Capacities as Developmental Products
             </h2>
 
@@ -393,7 +393,7 @@ export default function F2AwarenessCalibrationPage() {
           </section>
 
           {/* ─── PART 3: WHEN DEVELOPMENT IS DISRUPTED ───── */}
-          <PartDivider label="PART 3" title="When Development Is Disrupted" color={accent} />
+          <PartDivider label="PART 3" title="When Development Is Disrupted" color={P.C} />
 
           {/* Concept 3: Three Developmental Disruption Conditions */}
           <section
@@ -401,7 +401,7 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-disruption-conditions"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-disruption-conditions" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-disruption-conditions" style={sectionHeadingStyle(P.B)}>
               Three Developmental Disruption Conditions
             </h2>
 
@@ -472,7 +472,7 @@ export default function F2AwarenessCalibrationPage() {
             aria-labelledby="heading-developmental-consequence"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-developmental-consequence" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-developmental-consequence" style={sectionHeadingStyle(P.B)}>
               The Developmental Consequence
             </h2>
 
@@ -577,7 +577,7 @@ export default function F2AwarenessCalibrationPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "The pre-reflective starting condition",
@@ -636,7 +636,7 @@ export default function F2AwarenessCalibrationPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F2 established how the system gets calibrated — the pre-reflective starting condition, co-regulation and the two completion pathways, three awareness capacities as developmental products, three adverse conditions that disrupt development, and the consequence: chronic states, unresolved relational signals, and intergenerational transmission."
             question="But childhood ends, and the calibration persists. When higher-order cognition arrives inside a nervous system already shaped by its developmental conditions — carrying the accumulated debris of every relational signal that never found completion — does cognition passively inherit the calibration, or does it actively maintain it?"
             nextFramework="F3"
@@ -646,7 +646,7 @@ export default function F2AwarenessCalibrationPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M2: Nervous System States",
@@ -688,7 +688,7 @@ export default function F2AwarenessCalibrationPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F3 — why the calibration persists into adulthood", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence \u2192" },
               { label: "See the awareness architecture mapped in full", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },

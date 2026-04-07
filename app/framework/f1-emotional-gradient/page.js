@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -85,7 +85,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F1EmotionalGradientPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -168,7 +168,7 @@ export default function F1EmotionalGradientPage() {
           </div>
 
           {/* ─── PART 1: THE BIOLOGICAL ORIGIN ────────────── */}
-          <PartDivider label="PART 1" title="The Biological Origin" color={accent} />
+          <PartDivider label="PART 1" title="The Biological Origin" color={P.A} />
 
           {/* Concept 0: The Biological Substrate */}
           <section
@@ -176,7 +176,7 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-biological-substrate"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-biological-substrate" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-biological-substrate" style={sectionHeadingStyle(P.B)}>
               The Biological Substrate of Emotion
             </h2>
 
@@ -235,7 +235,7 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-autonomic-architecture"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-autonomic-architecture" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-autonomic-architecture" style={sectionHeadingStyle(P.B)}>
               The Autonomic Architecture
             </h2>
 
@@ -311,7 +311,7 @@ export default function F1EmotionalGradientPage() {
           </section>
 
           {/* ─── PART 2: THE DESIGNED PROCESS ──��──────────── */}
-          <PartDivider label="PART 2" title="The Designed Process" color={accent} />
+          <PartDivider label="PART 2" title="The Designed Process" color={P.B} />
 
           {/* Concept 2: Why the Cycle Needs to Complete */}
           <section
@@ -319,7 +319,7 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-designed-process"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-designed-process" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-designed-process" style={sectionHeadingStyle(P.B)}>
               Why the Cycle Needs to Complete
             </h2>
 
@@ -382,7 +382,7 @@ export default function F1EmotionalGradientPage() {
           </section>
 
           {/* ─── PART 3: CONVERGENT EVIDENCE ──────────────── */}
-          <PartDivider label="PART 3" title="Convergent Evidence" color={accent} />
+          <PartDivider label="PART 3" title="Convergent Evidence" color={P.C} />
 
           {/* Concept 3: Cross-Disciplinary Convergence */}
           <section
@@ -390,7 +390,7 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-convergence"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-convergence" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-convergence" style={sectionHeadingStyle(P.B)}>
               Cross-Disciplinary Convergence
             </h2>
 
@@ -454,7 +454,7 @@ export default function F1EmotionalGradientPage() {
           </section>
 
           {/* ─── PART 4: THE GOVERNING ARCHITECTURE ──────── */}
-          <PartDivider label="PART 4" title="The Governing Architecture" color={accent} />
+          <PartDivider label="PART 4" title="The Governing Architecture" color={P.D} />
 
           {/* Concept 4: The Regulation Thread */}
           <section
@@ -462,7 +462,7 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-regulation-thread"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-regulation-thread" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-regulation-thread" style={sectionHeadingStyle(P.B)}>
               The Regulation Thread
             </h2>
 
@@ -550,7 +550,7 @@ export default function F1EmotionalGradientPage() {
             aria-labelledby="heading-signal-to-system"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-signal-to-system" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-signal-to-system" style={sectionHeadingStyle(P.B)}>
               The Signal-to-System Sequence
             </h2>
 
@@ -564,14 +564,14 @@ export default function F1EmotionalGradientPage() {
                 fontFamily: FONT.mono,
                 color: TEXT.muted,
                 padding: "12px 16px",
-                background: hexToRgba(accent, 0.08),
+                background: hexToRgba(P.B, 0.08),
                 borderRadius: 6,
                 marginBottom: 16,
                 textAlign: "center",
                 lineHeight: 1.6,
               }}
             >
-              Signal Detection &rarr; Emotion &rarr; Action &rarr; <strong style={{ color: accent }}>Biological Restoration</strong> &rarr; Behaviour &rarr; Social Structure &rarr; Escalation or Repair
+              Signal Detection &rarr; Emotion &rarr; Action &rarr; <strong style={{ color: P.B }}>Biological Restoration</strong> &rarr; Behaviour &rarr; Social Structure &rarr; Escalation or Repair
             </p>
 
             <p style={proseStyle}>
@@ -611,7 +611,7 @@ export default function F1EmotionalGradientPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "The biological substrate",
@@ -658,7 +658,7 @@ export default function F1EmotionalGradientPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F1 established that the body has a designed restoration process — biological restoration — that clears the activation load and returns the nervous system to physiological baseline, operating at zero cost."
             question="But how does a person learn to let that process run? The biological mechanism is present from birth, but the capacity to complete the sequence must be learned through experience — specifically, through co-regulation with another nervous system that can itself complete the sequence."
             nextFramework="F2"
@@ -668,7 +668,7 @@ export default function F1EmotionalGradientPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M1: Emotions as Signals",
@@ -700,7 +700,7 @@ export default function F1EmotionalGradientPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F2 — how biological restoration gets learned or doesn't", href: "/framework/f2-awareness-calibration", linkText: "F2: Developmental Calibration \u2192" },
               { label: "See the applied model for nervous system states", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },

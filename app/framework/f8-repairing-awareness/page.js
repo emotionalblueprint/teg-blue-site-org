@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -88,7 +88,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F8RepairingAwarenessPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -197,7 +197,7 @@ export default function F8RepairingAwarenessPage() {
           </div>
 
           {/* ─── PART 1: WHAT REPAIR MEANS ──────────────── */}
-          <PartDivider label="PART 1" title="What Repair Means in This System" color={accent} />
+          <PartDivider label="PART 1" title="What Repair Means in This System" color={P.A} />
 
           {/* Concept 0: Regulation Thread Reversed */}
           <section
@@ -205,7 +205,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-thread-reversed"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-thread-reversed" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-thread-reversed" style={sectionHeadingStyle(P.B)}>
               What the Regulation Thread Reversed Looks Like
             </h2>
 
@@ -244,7 +244,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-two-routes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-two-routes" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-two-routes" style={sectionHeadingStyle(P.B)}>
               Two Routes to the Same Condition
             </h2>
 
@@ -286,7 +286,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-repair-defense"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-repair-defense" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-repair-defense" style={sectionHeadingStyle(P.B)}>
               Why the System That Needs Repair Defends Against Repair
             </h2>
 
@@ -332,7 +332,7 @@ export default function F8RepairingAwarenessPage() {
           </section>
 
           {/* ─── PART 2: CONDITIONS ─────────────────────── */}
-          <PartDivider label="PART 2" title="Conditions" color={accent} />
+          <PartDivider label="PART 2" title="Conditions" color={P.B} />
 
           {/* Concept 3: Safety Before Capacity */}
           <section
@@ -340,7 +340,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-safety-before-capacity"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-safety-before-capacity" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-safety-before-capacity" style={sectionHeadingStyle(P.B)}>
               Safety Before Capacity — The Organizing Principle
             </h2>
 
@@ -394,7 +394,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-repair-substitutes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-repair-substitutes" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-repair-substitutes" style={sectionHeadingStyle(P.B)}>
               What Replaces Repair in Each Chronic State
             </h2>
 
@@ -444,7 +444,7 @@ export default function F8RepairingAwarenessPage() {
           </section>
 
           {/* ─── PART 3: THE REPAIR PROCESS ─────────────── */}
-          <PartDivider label="PART 3" title="The Repair Process" color={accent} />
+          <PartDivider label="PART 3" title="The Repair Process" color={P.C} />
 
           {/* Concept 5: SEA as Entry Point */}
           <section
@@ -452,7 +452,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-sea-entry-point"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-sea-entry-point" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-sea-entry-point" style={sectionHeadingStyle(P.B)}>
               SEA as the Developmental Entry Point
             </h2>
 
@@ -497,7 +497,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-five-phases"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-five-phases" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-five-phases" style={sectionHeadingStyle(P.B)}>
               Five Oscillating Phases
             </h2>
 
@@ -548,7 +548,7 @@ export default function F8RepairingAwarenessPage() {
             aria-labelledby="heading-experience-not-insight"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-experience-not-insight" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-experience-not-insight" style={sectionHeadingStyle(P.B)}>
               Why Experience Changes the System and Insight Does Not
             </h2>
 
@@ -589,7 +589,7 @@ export default function F8RepairingAwarenessPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "The regulation thread reversed",
@@ -628,7 +628,7 @@ export default function F8RepairingAwarenessPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F8 established how awareness rebuilds through safety — two routes to repair, safety before capacity, SEA as the entry point, and why experience changes the system while insight does not."
             question="Every awareness configuration that does not match what the environment expects gets masked. When environments are designed for one neurological configuration, the mismatch is architectural — and individual repair has limited effect when the structural conditions keep dismantling what the person is trying to build."
             nextFramework="F9"
@@ -638,7 +638,7 @@ export default function F8RepairingAwarenessPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M3: Regulation Capacities",
@@ -675,7 +675,7 @@ export default function F8RepairingAwarenessPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F9 — when the environment prevents the safety repair requires", href: "/framework/f9-neurodivergence-variation", linkText: "F9: Variation Is Configuration \u2192" },
               { label: "See the awareness architecture and the multiplicative system", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },

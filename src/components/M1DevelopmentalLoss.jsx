@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM,
-  hexToRgba,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT, MAIN_ORG,
+  hexToRgba, diagramContainer,
 } from '@/src/styles/tokens';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
-const ACCENT = '#2563eb';
-const WARNING_COLOR = '#f97316';
+const MODEL_COLOR = PATTERN.A.primary;
+const CHART_BLUE = MAIN_ORG.accent;
+const WARNING_COLOR = ACCENT.orange;
 
 // SVG dimensions
 const VW = 880, VH = 240;
@@ -139,7 +139,10 @@ export default function M1DevelopmentalLoss() {
     : '';
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       {/* ─── Legend ─────────────────────────── */}
       <div style={{
         display: 'flex', alignItems: 'center', gap: 16,
@@ -185,14 +188,14 @@ export default function M1DevelopmentalLoss() {
           <line key={v}
             x1={PL} y1={PT + (1 - v) * PH}
             x2={PL + PW} y2={PT + (1 - v) * PH}
-            stroke={hexToRgba(ACCENT, 0.05)} strokeWidth="1" />
+            stroke={hexToRgba(CHART_BLUE, 0.05)} strokeWidth="1" />
         ))}
 
         {/* Axes */}
         <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
-          stroke={hexToRgba(ACCENT, 0.12)} strokeWidth="1" />
+          stroke={hexToRgba(CHART_BLUE, 0.12)} strokeWidth="1" />
         <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
-          stroke={hexToRgba(ACCENT, 0.12)} strokeWidth="1" />
+          stroke={hexToRgba(CHART_BLUE, 0.12)} strokeWidth="1" />
 
         {/* Y-axis label */}
         <text x={16} y={PT + PH / 2} textAnchor="middle"
@@ -211,7 +214,7 @@ export default function M1DevelopmentalLoss() {
           return (
             <g key={stage.label}>
               <line x1={sx} y1={PT + PH} x2={sx} y2={PT + PH + 6}
-                stroke={reached ? hexToRgba(MODEL_COLOR, 0.4) : hexToRgba(ACCENT, 0.1)}
+                stroke={reached ? hexToRgba(MODEL_COLOR, 0.4) : hexToRgba(CHART_BLUE, 0.1)}
                 strokeWidth="1" />
               <text x={sx + 4} y={PT + PH + 18} textAnchor="start"
                 style={{

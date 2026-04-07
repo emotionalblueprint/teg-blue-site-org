@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN, RADIUS,
   hexToRgba,
 } from "@/src/styles/tokens";
 import {
@@ -20,8 +20,8 @@ import {
 
 // ─── CONSTANTS ────────────────────────────────────────────
 
-const PAGE_COLOR = SPECTRUM.cobalt;
-const linkStyle = { color: PAGE_COLOR, textDecoration: "none" };
+const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
+const linkStyle = { color: P.B, textDecoration: "none" };
 
 // ─── METADATA ─────────────────────────────────────────────
 
@@ -104,7 +104,7 @@ export default function ModelsPage() {
             title="The Emotional Somatic Cycle"
             subtitle="Detection → Signal → State → Restoration or Incompletion"
             description="A biological information system runs continuously in every human body. It detects changes in the environment, evaluates them for safety or threat, and organises a physiological response before conscious awareness arrives. A second information system operates alongside it: language, reasoning, narrative. These two systems run a repeating biological sequence together — and whether that sequence completes or remains unresolved determines what the person can perceive, think, feel, and do."
-            color={PAGE_COLOR}
+            color={P.B}
           />
         }
       >
@@ -137,7 +137,7 @@ export default function ModelsPage() {
             PART 1: THE CYCLE
             ════════════════════════════════════════════════════ */}
 
-        <PartDivider label="Part 1" title="The Cycle" color={PAGE_COLOR} />
+        <PartDivider label="Part 1" title="The Cycle" color={P.A} />
 
         {/* ─── The Emotional Somatic Cycle ────────────────── */}
         <section style={{ marginBottom: 40 }}>
@@ -224,7 +224,7 @@ export default function ModelsPage() {
             PART 2: PATH A — THE COMPLETED PATHWAY
             ════════════════════════════════════════════════════ */}
 
-        <PartDivider label="Part 2" title="Path A — The Completed Pathway" color={PAGE_COLOR} />
+        <PartDivider label="Part 2" title="Path A — The Completed Pathway" color={P.B} />
 
         <section style={{ marginBottom: 40 }}>
           <h3 style={conceptHeadingStyle}>Mobilisation Response</h3>
@@ -264,7 +264,7 @@ export default function ModelsPage() {
             PART 3: PATH B — THE INCOMPLETE PATHWAY
             ════════════════════════════════════════════════════ */}
 
-        <PartDivider label="Part 3" title="Path B — The Incomplete Pathway" color={PAGE_COLOR} />
+        <PartDivider label="Part 3" title="Path B — The Incomplete Pathway" color={P.C} />
 
         <section style={{ marginBottom: 40 }}>
           <h3 style={conceptHeadingStyle}>Cognitive Override</h3>
@@ -333,7 +333,7 @@ export default function ModelsPage() {
           >
             <ConditionCard
               title="From physiological baseline"
-              color={PAGE_COLOR}
+              color={P.B}
             >
               The nervous system is at rest. Capacities are available but not deployed. The restoration sequence is not running — the architecture exists, the conditions are not being tested. The body{"'"}s internal signals are reaching conscious processing as readable information — the full data set is reporting. The person can enter any state and return.
             </ConditionCard>
@@ -376,7 +376,7 @@ export default function ModelsPage() {
             PART 4: THE SYSTEM
             ════════════════════════════════════════════════════ */}
 
-        <PartDivider label="Part 4" title="The System" color={PAGE_COLOR} />
+        <PartDivider label="Part 4" title="The System" color={P.D} />
 
         {/* ─── The Four Models ────────────────────────────── */}
         <section style={{ marginBottom: 40 }}>
@@ -482,9 +482,9 @@ export default function ModelsPage() {
           style={{
             marginBottom: 48,
             padding: "20px 24px",
-            background: hexToRgba(PAGE_COLOR, 0.04),
+            background: hexToRgba(P.B, 0.04),
             borderRadius: RADIUS.md,
-            border: `1px solid ${hexToRgba(PAGE_COLOR, 0.12)}`,
+            border: `1px solid ${hexToRgba(P.B, 0.12)}`,
           }}
         >
           <h3 style={{ ...conceptHeadingStyle, marginBottom: 16 }}>Where to Go Next</h3>
@@ -501,7 +501,7 @@ export default function ModelsPage() {
             <NavItem href="/model/m4-awareness-capacities" color={SPECTRUM.cobalt}>
               Understand what determines the branching point — M4: Awareness Capacities
             </NavItem>
-            <NavItem href="/frameworks-map" color={PAGE_COLOR}>
+            <NavItem href="/frameworks-map" color={P.B}>
               Explore why the cycle runs this way — The Twelve Frameworks
             </NavItem>
             <NavItem href="/publications/validation-study" color={TEXT.muted}>
@@ -559,9 +559,9 @@ function StageStep({ number, title, model, children }) {
         display: "flex",
         gap: 16,
         padding: "16px 20px",
-        background: hexToRgba(PAGE_COLOR, 0.03),
+        background: hexToRgba(P.B, 0.03),
         borderRadius: RADIUS.md,
-        borderLeft: `3px solid ${hexToRgba(PAGE_COLOR, 0.25)}`,
+        borderLeft: `3px solid ${hexToRgba(P.B, 0.25)}`,
       }}
     >
       <div
@@ -570,8 +570,8 @@ function StageStep({ number, title, model, children }) {
           width: 28,
           height: 28,
           borderRadius: "50%",
-          background: hexToRgba(PAGE_COLOR, 0.1),
-          color: PAGE_COLOR,
+          background: hexToRgba(P.B, 0.1),
+          color: P.B,
           fontSize: 13,
           fontWeight: 700,
           fontFamily: FONT.mono,
@@ -596,8 +596,8 @@ function StageStep({ number, title, model, children }) {
                 fontFamily: FONT.mono,
                 padding: "2px 8px",
                 borderRadius: 100,
-                background: hexToRgba(PAGE_COLOR, 0.1),
-                color: PAGE_COLOR,
+                background: hexToRgba(P.B, 0.1),
+                color: P.B,
                 textDecoration: "none",
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
@@ -626,8 +626,8 @@ function ModelTag({ id, href }) {
           fontFamily: FONT.mono,
           padding: "3px 10px",
           borderRadius: 100,
-          background: hexToRgba(PAGE_COLOR, 0.1),
-          color: PAGE_COLOR,
+          background: hexToRgba(P.B, 0.1),
+          color: P.B,
           textDecoration: "none",
           textTransform: "uppercase",
           letterSpacing: "0.06em",
@@ -645,9 +645,9 @@ function CascadeItem({ title, children }) {
       style={{
         padding: "12px 16px",
         marginBottom: 8,
-        background: hexToRgba(PAGE_COLOR, 0.03),
+        background: hexToRgba(P.B, 0.03),
         borderRadius: RADIUS.sm,
-        borderLeft: `2px solid ${hexToRgba(PAGE_COLOR, 0.2)}`,
+        borderLeft: `2px solid ${hexToRgba(P.B, 0.2)}`,
       }}
     >
       <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, margin: "0 0 4px" }}>

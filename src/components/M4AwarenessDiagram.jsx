@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, AWARENESS, PATTERN,
-  hexToRgba,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, AWARENESS, PATTERN, ACCENT,
+  hexToRgba, diagramContainer,
 } from '@/src/styles/tokens';
 import { CAPACITIES } from '@/src/data/m4-data';
 import { MODES } from '@/src/data/m2-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.cobalt;
+const MODEL_COLOR = PATTERN.D.primary;
 
 // Capacity meta
 const CAPS = [
@@ -94,7 +94,10 @@ export default function M4AwarenessDiagram() {
   const mode = MODES[stateIdx];
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m4-substrate {
           padding: 16px;
@@ -221,16 +224,16 @@ export default function M4AwarenessDiagram() {
         {/* Interoceptive substrate */}
         <div className="m4-substrate" style={{
           borderColor: isChronicView && stateIdx > 0
-            ? hexToRgba('#f97316', 0.3)
+            ? hexToRgba(ACCENT.orange, 0.3)
             : hexToRgba(MODEL_COLOR, 0.2),
           background: isChronicView && stateIdx > 0
-            ? hexToRgba('#f97316', 0.03)
+            ? hexToRgba(ACCENT.orange, 0.03)
             : 'transparent',
         }}>
           <div style={{
             fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
             letterSpacing: '0.1em', textTransform: 'uppercase',
-            color: isChronicView && stateIdx > 0 ? '#f97316' : TEXT.muted,
+            color: isChronicView && stateIdx > 0 ? ACCENT.orange : TEXT.muted,
             marginBottom: 10,
             transition: 'color 0.3s ease',
           }}>
@@ -285,8 +288,8 @@ export default function M4AwarenessDiagram() {
           marginTop: 14,
           padding: '10px 14px',
           borderRadius: RADIUS.md,
-          background: hexToRgba('#f97316', 0.04),
-          border: `1px solid ${hexToRgba('#f97316', 0.12)}`,
+          background: hexToRgba(ACCENT.orange, 0.04),
+          border: `1px solid ${hexToRgba(ACCENT.orange, 0.12)}`,
           animation: 'm4FadeIn 0.3s ease',
         }}>
           <style>{`

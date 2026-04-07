@@ -1,11 +1,18 @@
 import Link from "next/link";
-import { TEXT, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { TEXT, FONT, PATTERN, PATTERN_GRADIENT, hexToRgba } from "../styles/tokens";
 import BadgePill from "./BadgePill";
+
+// Map M/F labels to their PATTERN color
+const PILL_COLORS = {
+  M1: PATTERN.A.primary,
+  M2: PATTERN.B.primary,
+  M3: PATTERN.C.primary,
+  M4: PATTERN.D.primary,
+};
 
 /**
  * ModelHero — Hero section for model pages.
- * Distinct from ResearcherHero: left border band, plain title,
- * core question callout, and framework-link pills.
+ * Uses all four PATTERN colors across its elements.
  *
  * @param {string} badge - Badge text (e.g., "MODEL M1")
  * @param {string} title - Main title
@@ -28,13 +35,14 @@ export default function ModelHero({
     <div
       style={{
         padding: "28px 0 28px 20px",
-        borderLeft: `4px solid ${color}`,
+        borderLeft: `4px solid transparent`,
+        borderImage: `${PATTERN_GRADIENT} 1`,
       }}
     >
       {/* Badge pill */}
       {badge && (
         <div style={{ marginBottom: 16 }}>
-          <BadgePill color={color}>{badge}</BadgePill>
+          <BadgePill color={PATTERN.B.primary}>{badge}</BadgePill>
         </div>
       )}
 
@@ -86,9 +94,9 @@ export default function ModelHero({
         <div
           style={{
             padding: "12px 16px",
-            background: hexToRgba(color, 0.06),
+            background: hexToRgba(PATTERN.C.primary, 0.06),
             borderRadius: 8,
-            border: `1px solid ${hexToRgba(color, 0.15)}`,
+            border: `1px solid ${hexToRgba(PATTERN.C.primary, 0.15)}`,
             marginBottom: 16,
           }}
         >
@@ -99,7 +107,7 @@ export default function ModelHero({
               fontFamily: FONT.mono,
               textTransform: "uppercase",
               letterSpacing: "0.1em",
-              color: color,
+              color: PATTERN.C.primary,
               marginBottom: 6,
             }}
           >
@@ -135,27 +143,30 @@ export default function ModelHero({
           >
             Draws from
           </span>
-          {drawsFrom.map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              style={{
-                display: "inline-block",
-                padding: "2px 8px",
-                borderRadius: 4,
-                fontSize: 10,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: SPECTRUM.cobalt,
-                backgroundColor: hexToRgba(SPECTRUM.cobalt, 0.1),
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.2)}`,
-                textDecoration: "none",
-                letterSpacing: "0.04em",
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+          {drawsFrom.map(({ label, href }) => {
+            const pillColor = PILL_COLORS[label] || PATTERN.D.primary;
+            return (
+              <Link
+                key={label}
+                href={href}
+                style={{
+                  display: "inline-block",
+                  padding: "2px 8px",
+                  borderRadius: 4,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  fontFamily: FONT.mono,
+                  color: pillColor,
+                  backgroundColor: hexToRgba(pillColor, 0.1),
+                  border: `1px solid ${hexToRgba(pillColor, 0.2)}`,
+                  textDecoration: "none",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>

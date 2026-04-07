@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.indigo;
-const PATH_A_COLOR = '#10b981'; // emerald — completion
-const PATH_B_COLOR = '#f97316'; // orange — override/accumulation
+const MODEL_COLOR = PATTERN.C.primary;
+const PATH_A_COLOR = ACCENT.green;
+const PATH_B_COLOR = ACCENT.orange;
 
 // Flow stages — sequential reveal
 const SHARED = [
@@ -82,7 +82,10 @@ export default function M3PathDiagram() {
   const pathStep = step - 2; // steps into the parallel paths
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m3-node {
           padding: 12px 16px;

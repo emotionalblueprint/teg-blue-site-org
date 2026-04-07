@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT,
+  hexToRgba, diagramContainer,
 } from '@/src/styles/tokens';
 import { MODES } from '@/src/data/m2-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
+const MODEL_COLOR = PATTERN.B.primary;
 
 // Capacity dimensions — values at each state position (0–1, where 1 = full capacity)
 const CAPACITIES = [
@@ -165,7 +165,10 @@ export default function M2StateDiagram() {
   const gradientBar = `linear-gradient(90deg, ${MODES.map(m => m.hex).join(', ')})`;
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m2-cap-row {
           display: flex;
@@ -319,7 +322,7 @@ export default function M2StateDiagram() {
           return (
             <div key={cap.label} className="m2-cap-row">
               <span className="m2-cap-label" style={{
-                color: value > 0.5 ? TEXT.muted : value > 0.2 ? TEXT.hint : hexToRgba('#f97316', 0.7),
+                color: value > 0.5 ? TEXT.muted : value > 0.2 ? TEXT.hint : hexToRgba(ACCENT.orange, 0.7),
                 transition: 'color 0.3s ease',
               }}>
                 {cap.label}

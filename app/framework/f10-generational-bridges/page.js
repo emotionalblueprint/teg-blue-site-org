@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -86,7 +86,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F10GenerationalBridgesPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -191,7 +191,7 @@ export default function F10GenerationalBridgesPage() {
           </div>
 
           {/* ─── PART 1: THE CORE MECHANISM ─────────────── */}
-          <PartDivider label="PART 1" title="The Core Mechanism" color={accent} />
+          <PartDivider label="PART 1" title="The Core Mechanism" color={P.A} />
 
           {/* Concept 0: Configuration Teaches Configuration */}
           <section
@@ -199,7 +199,7 @@ export default function F10GenerationalBridgesPage() {
             aria-labelledby="heading-configuration-teaches"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-configuration-teaches" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-configuration-teaches" style={sectionHeadingStyle(P.B)}>
               How Capacity Configuration Teaches Capacity Configuration
             </h2>
 
@@ -238,7 +238,7 @@ export default function F10GenerationalBridgesPage() {
             aria-labelledby="heading-five-pathways"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-five-pathways" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-five-pathways" style={sectionHeadingStyle(P.B)}>
               Five Simultaneous Transmission Pathways
             </h2>
 
@@ -289,7 +289,7 @@ export default function F10GenerationalBridgesPage() {
             aria-labelledby="heading-unprocessed-transmission"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-unprocessed-transmission" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-unprocessed-transmission" style={sectionHeadingStyle(P.B)}>
               What Transmits When the Activation Was Never Processed
             </h2>
 
@@ -323,7 +323,7 @@ export default function F10GenerationalBridgesPage() {
           </section>
 
           {/* ─── PART 2: WHY PROCESSING CHANGES WHAT TRANSMITS ── */}
-          <PartDivider label="PART 2" title="Why Processing Changes What Transmits" color={accent} />
+          <PartDivider label="PART 2" title="Why Processing Changes What Transmits" color={P.B} />
 
           {/* Concept 4: Processing Changes Transmission */}
           <section
@@ -331,7 +331,7 @@ export default function F10GenerationalBridgesPage() {
             aria-labelledby="heading-processing-changes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-processing-changes" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-processing-changes" style={sectionHeadingStyle(P.B)}>
               How Processing Changes the Transmission
             </h2>
 
@@ -376,7 +376,7 @@ export default function F10GenerationalBridgesPage() {
             aria-labelledby="heading-compound-interest"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-compound-interest" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-compound-interest" style={sectionHeadingStyle(P.B)}>
               How One Generation of Repair Shifts the Baseline
             </h2>
 
@@ -410,7 +410,7 @@ export default function F10GenerationalBridgesPage() {
           </section>
 
           {/* ─── PART 3: BUILDING CONDITIONS ────────────── */}
-          <PartDivider label="PART 3" title="Building Conditions" color={accent} />
+          <PartDivider label="PART 3" title="Building Conditions" color={P.C} />
 
           {/* Concept 6: Enough, Not Perfect */}
           <section
@@ -418,7 +418,7 @@ export default function F10GenerationalBridgesPage() {
             aria-labelledby="heading-enough-not-perfect"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-enough-not-perfect" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-enough-not-perfect" style={sectionHeadingStyle(P.B)}>
               Enough, Not Perfect
             </h2>
 
@@ -471,7 +471,7 @@ export default function F10GenerationalBridgesPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Configuration teaches configuration",
@@ -506,7 +506,7 @@ export default function F10GenerationalBridgesPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F10 established how adult repair changes developmental conditions across generations — five transmission pathways, earned security through processing, compound interest, and enough not perfect."
             question="With the interoceptive channel open, both truths arrive simultaneously — gratitude and grief for the same people, love for the parent who did their best and anger at what their best cost. Holding them, rather than resolving them, is the developmental achievement F11 maps."
             nextFramework="F11"
@@ -516,7 +516,7 @@ export default function F10GenerationalBridgesPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "F2: Developmental Calibration",
@@ -553,7 +553,7 @@ export default function F10GenerationalBridgesPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F11 — holding paradox when both truths arrive", href: "/framework/f11-emotional-paradoxes", linkText: "F11: Paradox Holds What Logic Cannot \u2192" },
               { label: "See how the adult's configuration changes", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },

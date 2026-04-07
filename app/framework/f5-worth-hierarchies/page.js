@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -88,7 +88,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F5WorthHierarchiesPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -197,7 +197,7 @@ export default function F5WorthHierarchiesPage() {
           </div>
 
           {/* ─── PART 1: WHAT WORTH-SEEKING IS ──────────── */}
-          <PartDivider label="PART 1" title="What Worth-Seeking Is" color={accent} />
+          <PartDivider label="PART 1" title="What Worth-Seeking Is" color={P.A} />
 
           {/* Concept 0: Why Worth-Seeking Is Regulation */}
           <section
@@ -205,7 +205,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-worth-seeking"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-worth-seeking" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-worth-seeking" style={sectionHeadingStyle(P.B)}>
               Why Worth-Seeking Is Nervous System Regulation
             </h2>
 
@@ -244,7 +244,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-three-capitals"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-three-capitals" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-three-capitals" style={sectionHeadingStyle(P.B)}>
               Three Capitals as Nervous System Stabilisers
             </h2>
 
@@ -291,7 +291,7 @@ export default function F5WorthHierarchiesPage() {
           </section>
 
           {/* ─── PART 2: HOW HIERARCHIES DISTRIBUTE ─────── */}
-          <PartDivider label="PART 2" title="How Hierarchies Distribute the Substrate" color={accent} />
+          <PartDivider label="PART 2" title="How Hierarchies Distribute the Substrate" color={P.B} />
 
           {/* Concept 2: How Hierarchies Determine Substrate */}
           <section
@@ -299,7 +299,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-substrate-distribution"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-substrate-distribution" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-substrate-distribution" style={sectionHeadingStyle(P.B)}>
               How Hierarchies Determine Which Children's Substrates Get Built
             </h2>
 
@@ -341,7 +341,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-signal-suppression"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-signal-suppression" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-signal-suppression" style={sectionHeadingStyle(P.B)}>
               Which Signals Get Suppressed in Which Populations
             </h2>
 
@@ -383,7 +383,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-filter-of-worth"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-filter-of-worth" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-filter-of-worth" style={sectionHeadingStyle(P.B)}>
               How Signal Access Gets Mistaken for Human Value
             </h2>
 
@@ -420,7 +420,7 @@ export default function F5WorthHierarchiesPage() {
           </section>
 
           {/* ─── PART 3: HOW HIERARCHIES SELF-REINFORCE ─── */}
-          <PartDivider label="PART 3" title="How Hierarchies Self-Reinforce" color={accent} />
+          <PartDivider label="PART 3" title="How Hierarchies Self-Reinforce" color={P.C} />
 
           {/* Concept 5: Self-Reinforcing Loop */}
           <section
@@ -428,7 +428,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-self-reinforcing"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-self-reinforcing" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-self-reinforcing" style={sectionHeadingStyle(P.B)}>
               How Worth Hierarchies Self-Reinforce
             </h2>
 
@@ -479,7 +479,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-coherence-by-position"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-coherence-by-position" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-coherence-by-position" style={sectionHeadingStyle(P.B)}>
               How Position Determines Coherence Form
             </h2>
 
@@ -521,7 +521,7 @@ export default function F5WorthHierarchiesPage() {
             aria-labelledby="heading-structural-filtering"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-structural-filtering" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-structural-filtering" style={sectionHeadingStyle(P.B)}>
               How Structural Filtering Holds the Nervous System in Place
             </h2>
 
@@ -559,7 +559,7 @@ export default function F5WorthHierarchiesPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Worth-seeking as regulation",
@@ -598,7 +598,7 @@ export default function F5WorthHierarchiesPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F5 established how rules become sorting systems — how worth-seeking serves regulation, how three capitals stabilize the nervous system, how hierarchies distribute the conditions that build the substrate, how signal access gets mistaken for human value, and how the filter self-reinforces through the evidence it produces."
             question="When worth sorting becomes stable and internalized, it stops being experienced as a system. It becomes perception. Who 'looks' competent, who 'seems' trustworthy, who 'feels' credible — these assessments arrive before conscious evaluation begins, shaped by the same state-dependent sensory filtering that shapes individual perception, now operating across populations."
             nextFramework="F6"
@@ -608,7 +608,7 @@ export default function F5WorthHierarchiesPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M2: Nervous System States",
@@ -645,7 +645,7 @@ export default function F5WorthHierarchiesPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F6 — how the sorting becomes invisible through perception", href: "/framework/f6-bias-regulates", linkText: "F6: Bias Regulates \u2192" },
               { label: "See the nervous system states that structural filtering produces", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },

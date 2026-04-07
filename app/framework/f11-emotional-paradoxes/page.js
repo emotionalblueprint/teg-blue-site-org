@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -87,7 +87,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F11ParadoxPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -189,7 +189,7 @@ export default function F11ParadoxPage() {
           </div>
 
           {/* ─── PART 1: THE LOGIC OF PARADOX ──────────── */}
-          <PartDivider label="PART 1" title="The Logic of Paradox" color={accent} />
+          <PartDivider label="PART 1" title="The Logic of Paradox" color={P.A} />
 
           {/* Concept 0: Multi-Rationality */}
           <section
@@ -197,7 +197,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-multi-rationality"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-multi-rationality" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-multi-rationality" style={sectionHeadingStyle(P.B)}>
               Why Human Contradictions Are Multi-Rational
             </h2>
 
@@ -256,7 +256,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-framework-paradoxes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-framework-paradoxes" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-framework-paradoxes" style={sectionHeadingStyle(P.B)}>
               Each Framework's Characteristic Paradox
             </h2>
 
@@ -313,7 +313,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-paradox-cascade"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-paradox-cascade" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-paradox-cascade" style={sectionHeadingStyle(P.B)}>
               How Contradictions Become Invisible Through Six Levels
             </h2>
 
@@ -349,7 +349,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-state-and-holding"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-state-and-holding" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-state-and-holding" style={sectionHeadingStyle(P.B)}>
               How Nervous System State Determines Holding Capacity
             </h2>
 
@@ -389,7 +389,7 @@ export default function F11ParadoxPage() {
           </section>
 
           {/* ─── PART 2: HOLDING, NOT RESOLVING ────────── */}
-          <PartDivider label="PART 2" title="Holding, Not Resolving" color={accent} />
+          <PartDivider label="PART 2" title="Holding, Not Resolving" color={P.B} />
 
           {/* Concept 4: What Holding Capacity Is */}
           <section
@@ -397,7 +397,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-holding-capacity"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-holding-capacity" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-holding-capacity" style={sectionHeadingStyle(P.B)}>
               What Holding Capacity Is and What It Requires
             </h2>
 
@@ -448,7 +448,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-repair-paradoxes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-repair-paradoxes" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-repair-paradoxes" style={sectionHeadingStyle(P.B)}>
               The Repair Arc's Own Paradoxes
             </h2>
 
@@ -496,7 +496,7 @@ export default function F11ParadoxPage() {
             aria-labelledby="heading-integration"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-integration" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-integration" style={sectionHeadingStyle(P.B)}>
               Integration as Holding, Not Resolving
             </h2>
 
@@ -537,7 +537,7 @@ export default function F11ParadoxPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Multi-rationality",
@@ -572,7 +572,7 @@ export default function F11ParadoxPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F11 established why human contradictions are predictable, how paradox becomes invisible, what holding capacity requires, and why integration means holding complexity rather than resolving it."
             question="A person can hold all of this — can see their configuration, name their paradoxes, develop holding capacity — and still enter the chronic state under stress. There are two information systems, and the one that produces understanding is not the one that organizes behavior."
             nextFramework="F12"
@@ -582,7 +582,7 @@ export default function F11ParadoxPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M4: Awareness Capacities",
@@ -614,7 +614,7 @@ export default function F11ParadoxPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F12 — the architecture underneath", href: "/framework/f12-two-information-systems", linkText: "F12: Two Information Systems \u2192" },
               { label: "See the awareness architecture that produces holding capacity", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },

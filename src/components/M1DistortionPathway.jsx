@@ -2,15 +2,15 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg,
+  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT, MAIN_ORG,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 import { DISTORTIONS } from '@/src/data/m1-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
-const ACCENT = '#2563eb';
-const DISTORTION_COLOR = '#f97316'; // orange — signal couldn't land
+const MODEL_COLOR = PATTERN.A.primary;
+const CHART_BLUE = MAIN_ORG.accent;
+const DISTORTION_COLOR = ACCENT.orange;
 
 const PATHWAYS = [
   {
@@ -54,7 +54,10 @@ export default function M1DistortionPathway() {
   }, []);
 
   return (
-    <section ref={sectionRef} style={{ marginBottom: 32 }}>
+    <section ref={sectionRef} style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m1-dist-row {
           display: grid;
@@ -258,8 +261,8 @@ export default function M1DistortionPathway() {
         marginTop: 8,
         padding: '12px 16px',
         borderRadius: RADIUS.md,
-        background: gradientCardBg(ACCENT, 0.04),
-        border: `1px solid ${hexToRgba(ACCENT, 0.12)}`,
+        background: gradientCardBg(CHART_BLUE, 0.04),
+        border: `1px solid ${hexToRgba(CHART_BLUE, 0.12)}`,
         opacity: revealed ? 1 : 0,
         transition: 'opacity 0.6s ease 0.5s',
       }}>

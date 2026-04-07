@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg,
+  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT, MAIN_ORG,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 import { EMOTIONS, BODY_SIGNATURE_GROUPS } from '@/src/data/m1-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
-const ACCENT = '#2563eb';
+const MODEL_COLOR = PATTERN.A.primary;
+const CHART_BLUE = MAIN_ORG.accent;
 
 // Chart
 const VW = 880, VH = 190;
@@ -236,6 +236,7 @@ export default function M1SignalDiagram() {
     <section ref={sectionRef} style={{
       marginBottom: 32,
       position: 'relative',
+      ...diagramContainer(),
     }}>
       <style>{`
         .m1-info-cards {
@@ -340,16 +341,16 @@ export default function M1SignalDiagram() {
             <line key={v}
               x1={PL} y1={PT + (1 - v) * PH}
               x2={PL + PW} y2={PT + (1 - v) * PH}
-              stroke={hexToRgba(ACCENT, 0.05)} strokeWidth="1" />
+              stroke={hexToRgba(CHART_BLUE, 0.05)} strokeWidth="1" />
           ))}
 
           {/* Baseline */}
           <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
-            stroke={hexToRgba(ACCENT, 0.12)} strokeWidth="1" />
+            stroke={hexToRgba(CHART_BLUE, 0.12)} strokeWidth="1" />
 
           {/* Y axis */}
           <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
-            stroke={hexToRgba(ACCENT, 0.12)} strokeWidth="1" />
+            stroke={hexToRgba(CHART_BLUE, 0.12)} strokeWidth="1" />
           <text x={16} y={PT + PH / 2} textAnchor="middle"
             transform={`rotate(-90,16,${PT + PH / 2})`}
             style={{
@@ -366,7 +367,7 @@ export default function M1SignalDiagram() {
             return (
               <g key={step.label}>
                 <line x1={sx} y1={PT - 4} x2={sx} y2={PT + PH}
-                  stroke={hexToRgba(ACCENT, reached ? 0.2 : 0.08)}
+                  stroke={hexToRgba(CHART_BLUE, reached ? 0.2 : 0.08)}
                   strokeWidth="1" strokeDasharray="3,4" />
                 <text x={sx} y={PT + PH + 14} textAnchor="middle"
                   style={{
@@ -473,10 +474,10 @@ export default function M1SignalDiagram() {
           },
         ].map(card => (
           <div key={card.step} style={{
-            background: gradientCardBg(ACCENT, card.reached ? 0.06 : 0.02),
+            background: gradientCardBg(CHART_BLUE, card.reached ? 0.06 : 0.02),
             padding: '14px 14px 16px',
             borderRadius: RADIUS.lg,
-            border: `1px solid ${card.reached ? hexToRgba(ACCENT, 0.2) : BORDER.default}`,
+            border: `1px solid ${card.reached ? hexToRgba(CHART_BLUE, 0.2) : BORDER.default}`,
             borderTop: `2px solid ${card.reached ? MODEL_COLOR : BORDER.default}`,
             transition: 'border-color 0.4s ease, background 0.4s ease',
             opacity: card.reached ? 1 : 0.4,

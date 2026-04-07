@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -85,7 +85,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F12TwoInformationSystemsPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -189,7 +189,7 @@ export default function F12TwoInformationSystemsPage() {
           </div>
 
           {/* ─── PART 1: HOW THE OVERRIDE BECAME POSSIBLE ── */}
-          <PartDivider label="PART 1" title="How the Override Became Possible" color={accent} />
+          <PartDivider label="PART 1" title="How the Override Became Possible" color={P.A} />
 
           {/* Concept 1: Two Systems, One Sequence */}
           <section
@@ -197,7 +197,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-two-systems"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-two-systems" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-two-systems" style={sectionHeadingStyle(P.B)}>
               Two Systems, One Sequence
             </h2>
 
@@ -242,7 +242,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-capacity-gap"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-capacity-gap" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-capacity-gap" style={sectionHeadingStyle(P.B)}>
               The Capacity Gap
             </h2>
 
@@ -284,7 +284,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-conditions-rewarded"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-conditions-rewarded" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-conditions-rewarded" style={sectionHeadingStyle(P.B)}>
               The Conditions That Rewarded Override
             </h2>
 
@@ -330,7 +330,7 @@ export default function F12TwoInformationSystemsPage() {
           </section>
 
           {/* ─── PART 2: HOW THE OVERRIDE BECAME INVISIBLE ── */}
-          <PartDivider label="PART 2" title="How the Override Became Invisible" color={accent} />
+          <PartDivider label="PART 2" title="How the Override Became Invisible" color={P.B} />
 
           {/* Concept 4: Cultural Inheritance */}
           <section
@@ -338,7 +338,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-override-invisible"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-override-invisible" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-override-invisible" style={sectionHeadingStyle(P.B)}>
               How Override Became Identity
             </h2>
 
@@ -383,7 +383,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-species-forgot"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-species-forgot" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-species-forgot" style={sectionHeadingStyle(P.B)}>
               What the Species Forgot
             </h2>
 
@@ -419,7 +419,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-insight-cannot-reverse"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-insight-cannot-reverse" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-insight-cannot-reverse" style={sectionHeadingStyle(P.B)}>
               Why Insight Alone Cannot Reverse the Override
             </h2>
 
@@ -453,7 +453,7 @@ export default function F12TwoInformationSystemsPage() {
           </section>
 
           {/* ─── PART 3: WHAT THIS MEANS ────────────────── */}
-          <PartDivider label="PART 3" title="What This Means" color={accent} />
+          <PartDivider label="PART 3" title="What This Means" color={P.C} />
 
           {/* Concept 7: One Mechanism, All Twelve */}
           <section
@@ -461,7 +461,7 @@ export default function F12TwoInformationSystemsPage() {
             aria-labelledby="heading-one-mechanism"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-one-mechanism" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-one-mechanism" style={sectionHeadingStyle(P.B)}>
               One Mechanism, All Twelve Frameworks
             </h2>
 
@@ -522,7 +522,7 @@ export default function F12TwoInformationSystemsPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Two systems, one sequence",
@@ -561,7 +561,7 @@ export default function F12TwoInformationSystemsPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "F1: The Emotional Gradient",
@@ -593,7 +593,7 @@ export default function F12TwoInformationSystemsPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Return to the beginning — biological restoration as the designed process", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
               { label: "See where the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },

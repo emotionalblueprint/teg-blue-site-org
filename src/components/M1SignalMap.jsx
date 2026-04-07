@@ -2,14 +2,14 @@
 
 import { useState, useCallback } from 'react';
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg,
+  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, MAIN_ORG,
+  hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 import { EMOTIONS, BODY_SIGNATURE_GROUPS } from '@/src/data/m1-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = SPECTRUM.azure;
-const ACCENT = '#2563eb';
+const MODEL_COLOR = PATTERN.A.primary;
+const CHART_BLUE = MAIN_ORG.accent;
 
 // Body signature groups split naturally by restoration type
 const SOMATIC_GROUPS = ['mobilization', 'expulsion', 'approach'];
@@ -34,7 +34,10 @@ export default function M1SignalMap() {
   }, []);
 
   return (
-    <section style={{ marginBottom: 32 }}>
+    <section style={{
+      marginBottom: 32,
+      ...diagramContainer(),
+    }}>
       <style>{`
         .m1-map-card {
           padding: 10px 14px;
@@ -274,10 +277,10 @@ export default function M1SignalMap() {
               badge: selected.type === 'relational' ? 'Relational' : 'Somatic' },
           ].map(card => (
             <div key={card.label} style={{
-              background: gradientCardBg(ACCENT, 0.05),
+              background: gradientCardBg(CHART_BLUE, 0.05),
               padding: '14px 14px 16px',
               borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(ACCENT, 0.18)}`,
+              border: `1px solid ${hexToRgba(CHART_BLUE, 0.18)}`,
               borderTop: `2px solid ${MODEL_COLOR}`,
             }}>
               <div style={{

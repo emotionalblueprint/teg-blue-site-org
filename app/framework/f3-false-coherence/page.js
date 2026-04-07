@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -89,7 +89,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F3FalseCoherencePage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -201,7 +201,7 @@ export default function F3FalseCoherencePage() {
           </div>
 
           {/* ─── PART 1: WHAT COGNITION INHERITS ─────────── */}
-          <PartDivider label="PART 1" title="What Cognition Inherits" color={accent} />
+          <PartDivider label="PART 1" title="What Cognition Inherits" color={P.A} />
 
           {/* Concept 0: The CLS Arrives Inside a Configured System */}
           <section
@@ -209,7 +209,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-cls-arrives"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cls-arrives" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-cls-arrives" style={sectionHeadingStyle(P.B)}>
               The CLS Arrives Inside a Configured System
             </h2>
 
@@ -257,7 +257,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-override-architecture"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-override-architecture" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-override-architecture" style={sectionHeadingStyle(P.B)}>
               Cognitive Override as Default Architecture
             </h2>
 
@@ -297,7 +297,7 @@ export default function F3FalseCoherencePage() {
           </section>
 
           {/* ─── PART 2: HOW COGNITION MAINTAINS ─────────── */}
-          <PartDivider label="PART 2" title="How Cognition Maintains" color={accent} />
+          <PartDivider label="PART 2" title="How Cognition Maintains" color={P.B} />
 
           {/* Concept 2: False Coherence */}
           <section
@@ -305,7 +305,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-false-coherence"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-false-coherence" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-false-coherence" style={sectionHeadingStyle(P.B)}>
               False Coherence
             </h2>
 
@@ -369,7 +369,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-self-reinforcing-loop"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-self-reinforcing-loop" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-self-reinforcing-loop" style={sectionHeadingStyle(P.B)}>
               The Self-Reinforcing Loop
             </h2>
 
@@ -414,7 +414,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-cognitive-dissonance"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-cognitive-dissonance" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-cognitive-dissonance" style={sectionHeadingStyle(P.B)}>
               Cognitive Dissonance as Regulatory Threat
             </h2>
 
@@ -459,7 +459,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-growth-narratives"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-growth-narratives" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-growth-narratives" style={sectionHeadingStyle(P.B)}>
               Growth Narratives Serving Regulation
             </h2>
 
@@ -499,7 +499,7 @@ export default function F3FalseCoherencePage() {
           </section>
 
           {/* ─── PART 3: WHAT THE SYSTEM DOES TO OTHERS ──── */}
-          <PartDivider label="PART 3" title="What the System Does to Others" color={accent} />
+          <PartDivider label="PART 3" title="What the System Does to Others" color={P.C} />
 
           {/* Concept 6: Internal Activation Perceived as External Threat */}
           <section
@@ -507,7 +507,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-emotional-distortion"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-emotional-distortion" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-emotional-distortion" style={sectionHeadingStyle(P.B)}>
               Internal Activation Perceived as External Threat
             </h2>
 
@@ -552,7 +552,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-restoration-substitutes"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-restoration-substitutes" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-restoration-substitutes" style={sectionHeadingStyle(P.B)}>
               Restoration Substitutes in Adult Relationships
             </h2>
 
@@ -598,7 +598,7 @@ export default function F3FalseCoherencePage() {
           </section>
 
           {/* ─── PART 4: BRIDGE ──────────────────────────── */}
-          <PartDivider label="PART 4" title="From Individual to Collective" color={accent} />
+          <PartDivider label="PART 4" title="From Individual to Collective" color={P.D} />
 
           {/* Concept 8: From Individual to Collective */}
           <section
@@ -606,7 +606,7 @@ export default function F3FalseCoherencePage() {
             aria-labelledby="heading-individual-to-collective"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-individual-to-collective" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-individual-to-collective" style={sectionHeadingStyle(P.B)}>
               From Individual to Collective
             </h2>
 
@@ -647,7 +647,7 @@ export default function F3FalseCoherencePage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "The CLS inherits a configured system",
@@ -702,7 +702,7 @@ export default function F3FalseCoherencePage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F3 completed the individual arc — the biological substrate, the developmental calibration, and the cognitive lock that maintains it through narrative substitution."
             question="What happens when enough nervous systems carrying these patterns inhabit the same social structure? The individual patterns consolidate into collective rule systems."
             nextFramework="F4"
@@ -712,7 +712,7 @@ export default function F3FalseCoherencePage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M3: Regulation Capacities",
@@ -754,7 +754,7 @@ export default function F3FalseCoherencePage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F4 — what happens when the mechanism operates at collective scale", href: "/framework/f4-rules-regulate", linkText: "F4: Rules Regulate \u2192" },
               { label: "See cognitive override and restoration substitutes mapped in detail", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },

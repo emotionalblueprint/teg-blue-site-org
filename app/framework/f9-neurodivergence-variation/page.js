@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM,
+  BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN,
   hexToRgba, MAIN_ORG,
 } from "@/src/styles/tokens";
 import {
@@ -88,7 +88,7 @@ export const metadata = {
 // ─── PAGE ──────────────────────────────────────────────────
 
 export default function F9VariationPage() {
-  const accent = SPECTRUM.cobalt;
+  const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
 
   return (
     <div
@@ -197,7 +197,7 @@ export default function F9VariationPage() {
           </div>
 
           {/* ─── PART 1: CONFIGURATION, NOT DEFICIT ─────── */}
-          <PartDivider label="PART 1" title="Configuration, Not Deficit" color={accent} />
+          <PartDivider label="PART 1" title="Configuration, Not Deficit" color={P.A} />
 
           {/* Concept 0: Same Instrument, Different Inputs */}
           <section
@@ -205,7 +205,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-different-inputs"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-different-inputs" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-different-inputs" style={sectionHeadingStyle(P.B)}>
               How the Same Regulatory Instrument Runs With Different Inputs
             </h2>
 
@@ -247,7 +247,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-system-mismatch"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-system-mismatch" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-system-mismatch" style={sectionHeadingStyle(P.B)}>
               When the Environment Is the Mismatch
             </h2>
 
@@ -284,7 +284,7 @@ export default function F9VariationPage() {
           </section>
 
           {/* ─── PART 2: WHAT MISMATCH PRODUCES ────────── */}
-          <PartDivider label="PART 2" title="What Mismatch Produces" color={accent} />
+          <PartDivider label="PART 2" title="What Mismatch Produces" color={P.B} />
 
           {/* Concept 2: Structural Masking */}
           <section
@@ -292,7 +292,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-structural-masking"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-structural-masking" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-structural-masking" style={sectionHeadingStyle(P.B)}>
               Why Masking at Structural Scale Has Specific Biological Consequences
             </h2>
 
@@ -331,7 +331,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-threshold-dynamics"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-threshold-dynamics" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-threshold-dynamics" style={sectionHeadingStyle(P.B)}>
               Threshold Dynamics and What Crossing Looks Like
             </h2>
 
@@ -348,7 +348,7 @@ export default function F9VariationPage() {
                 fontFamily: FONT.mono,
                 color: TEXT.muted,
                 padding: "12px 16px",
-                background: hexToRgba(accent, 0.08),
+                background: hexToRgba(P.B, 0.08),
                 borderRadius: 6,
                 marginBottom: 16,
                 textAlign: "center",
@@ -390,7 +390,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-burnout"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-burnout" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-burnout" style={sectionHeadingStyle(P.B)}>
               What Neurodivergent Burnout Is at the Substrate Level
             </h2>
 
@@ -424,7 +424,7 @@ export default function F9VariationPage() {
           </section>
 
           {/* ─── PART 3: CONFIGURATION DISTORTION ────────── */}
-          <PartDivider label="PART 3" title="Configuration Distortion" color={accent} />
+          <PartDivider label="PART 3" title="Configuration Distortion" color={P.C} />
 
           {/* Concepts 6-7: Capacity Presentation + Distortion */}
           <section
@@ -432,7 +432,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-capacity-presentation"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-capacity-presentation" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-capacity-presentation" style={sectionHeadingStyle(P.B)}>
               How Capacities Present Differently — and How Masking Distorts Them
             </h2>
 
@@ -480,7 +480,7 @@ export default function F9VariationPage() {
           </section>
 
           {/* ─── PART 4: WHAT REPAIR REQUIRES ──────────── */}
-          <PartDivider label="PART 4" title="What Repair Requires" color={accent} />
+          <PartDivider label="PART 4" title="What Repair Requires" color={P.D} />
 
           {/* Concepts 8-9: Unmasking + Design */}
           <section
@@ -488,7 +488,7 @@ export default function F9VariationPage() {
             aria-labelledby="heading-repair-requirements"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-repair-requirements" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-repair-requirements" style={sectionHeadingStyle(P.B)}>
               Why Unmasking Is Not Restoration — and What Is
             </h2>
 
@@ -546,7 +546,7 @@ export default function F9VariationPage() {
 
           {/* ─── WHAT THIS FRAMEWORK ESTABLISHES ─────────── */}
           <EstablishesSection
-            color={accent}
+            color={P.B}
             items={[
               {
                 term: "Same instrument, different inputs",
@@ -593,7 +593,7 @@ export default function F9VariationPage() {
 
           {/* ─── BRIDGE ──────────────────────────────────── */}
           <BridgeSection
-            color={accent}
+            color={P.B}
             established="F9 established how configuration variation operates through the universal ESC architecture — system mismatch as structural activation, masking as interrupted restoration, and environments designed for variation rather than retrofitted for exceptions."
             question="When adults repair their own capacities and inhabit environments that support their authentic configuration, the next generation develops in different conditions. The caregiver's nervous system IS the child's developmental environment — when the adult is different, the child develops differently."
             nextFramework="F10"
@@ -603,7 +603,7 @@ export default function F9VariationPage() {
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
-            color={accent}
+            color={P.D}
             connections={[
               {
                 id: "M1: Emotions as Signals",
@@ -640,7 +640,7 @@ export default function F9VariationPage() {
 
           {/* ─── WHERE TO GO NEXT ────────────────────────── */}
           <NavSection
-            color={accent}
+            color={P.D}
             items={[
               { label: "Continue to F10 — what transmits when adults have done the work", href: "/framework/f10-generational-bridges", linkText: "F10: What the Adult Processes \u2192" },
               { label: "See the signal architecture that runs with different inputs", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
