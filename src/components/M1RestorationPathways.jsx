@@ -10,7 +10,7 @@ const MODEL_COLOR = MODEL_COLORS.M1;
 const CHART_BLUE = MAIN_ORG.accent;
 const SOMATIC_COLOR = SPECTRUM.sky;       // ice — body's own channels
 const RELATIONAL_COLOR = SPECTRUM.indigo;  // violet — requires another person
-const MISMATCH_COLOR = SPECTRUM.silver;    // light grey — pathway doesn't match
+const MISMATCH_COLOR = '#e87b35';          // orange — pathway doesn't match
 
 // ─── Chart constants ─────────────────────────────────
 const VW = 880, VH = 200;
@@ -29,16 +29,19 @@ const VIEWS = {
         t: 0.08,
         label: 'Signal fires',
         body: 'Threat, boundary, demand-resource mismatch — the nervous system detects a body-state condition.',
+        ref: 'Frijda, 1986',
       },
       {
         t: 0.38,
         label: 'Somatic restoration',
         body: 'Breathing, movement, time, stillness, crying, sleep. The body runs the sequence — stress hormones metabolise, muscles release, HPA axis stands down.',
+        ref: 'Levine, 1997',
       },
       {
         t: 0.72,
         label: 'Activation resolves',
         body: 'The nervous system returns toward physiological baseline. The signal has completed its arc.',
+        ref: 'Porges, 2011',
       },
     ],
   },
@@ -50,16 +53,19 @@ const VIEWS = {
         t: 0.08,
         label: 'Signal fires',
         body: 'Bond, connection, inclusion, recognition — the nervous system detects a belonging-state condition.',
+        ref: 'Bowlby, 1969',
       },
       {
         t: 0.38,
         label: 'Relational restoration',
         body: 'Another person stays. Provides relational evidence. Co-regulation — the presence of another who provides what the signal content requires.',
+        ref: 'Schore, 2003',
       },
       {
         t: 0.72,
         label: 'Activation resolves',
         body: 'The nervous system returns toward physiological baseline. The relational evidence completed the restoration sequence.',
+        ref: 'Porges, 2011',
       },
     ],
   },
@@ -71,16 +77,19 @@ const VIEWS = {
         t: 0.08,
         label: 'Signal fires',
         body: 'Belonging at risk — a relational signal. The nervous system has detected something about the state of the bond.',
+        ref: 'Bowlby, 1969',
       },
       {
         t: 0.38,
         label: 'Somatic techniques applied',
         body: 'Breathing, exercise, grounding. Discharge occurs — but does not match signal content. The body has moved but the question remains unanswered.',
+        ref: 'Levine, 1997',
       },
       {
         t: 0.72,
         label: 'Activation remains',
         body: 'The signal is still active. The body carries it forward. The pathway must match the content.',
+        ref: 'TEG-Blue',
       },
     ],
   },
@@ -269,7 +278,33 @@ export default function M1RestorationPathways() {
           </span>
         </div>
 
-        <div style={{ marginLeft: 'auto', display: 'flex', gap: 6 }}>
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
+          {done && (
+            <button
+              onClick={() => { playedViews.current.delete(activeView); play(); }}
+              aria-label="Replay animation"
+              style={{
+                display: 'flex', alignItems: 'center', gap: 6,
+                padding: '4px 12px',
+                border: `1px solid ${BORDER.default}`,
+                background: 'transparent',
+                color: TEXT.muted,
+                borderRadius: 6,
+                fontFamily: FONT.mono,
+                fontSize: 9,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                fontWeight: 500,
+                cursor: 'pointer',
+              }}
+            >
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" />
+              </svg>
+              Replay
+            </button>
+          )}
           {Object.entries(VIEWS).map(([key, v]) => (
             <button
               key={key}
@@ -414,6 +449,12 @@ export default function M1RestorationPathways() {
               }}>
                 {card.body}
               </p>
+              <span style={{
+                fontFamily: FONT.mono, fontSize: 7.5,
+                color: TEXT.hint, letterSpacing: '0.04em',
+              }}>
+                {card.ref}
+              </span>
             </div>
           );
         })}

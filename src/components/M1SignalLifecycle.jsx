@@ -18,9 +18,9 @@ const DRAW_MS = 3800;
 
 // ─── Phase markers on the timeline ──────────────────
 const PHASES = [
-  { t: 0.08, label: 'Evaluating', sub: 'Continuous monitoring', color: SPECTRUM.azure },
-  { t: 0.35, label: 'Detected', sub: 'Condition identified', color: SPECTRUM.blue },
-  { t: 0.65, label: 'Signal', sub: 'Body responds', color: SPECTRUM.cobalt },
+  { t: 0.08, label: 'Evaluating', sub: 'Continuous monitoring', color: SPECTRUM.azure, ref: 'Porges, 2011' },
+  { t: 0.35, label: 'Detected', sub: 'Condition identified', color: SPECTRUM.blue, ref: 'LeDoux, 1996' },
+  { t: 0.65, label: 'Signal', sub: 'Body responds', color: SPECTRUM.cobalt, ref: 'Damasio, 1994' },
 ];
 
 // ─── Signal examples ────────────────────────────────
@@ -249,12 +249,40 @@ export default function M1SignalLifecycle() {
             How an emotional signal forms
           </span>
         </div>
-        <span style={{
-          fontFamily: FONT.mono, fontSize: 8, color: TEXT.hint,
-          letterSpacing: '0.06em', marginLeft: 'auto',
-        }}>
-          {signal.emotion}
-        </span>
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 16 }}>
+          <span style={{
+            fontFamily: FONT.mono, fontSize: 8, color: TEXT.hint,
+            letterSpacing: '0.06em',
+          }}>
+            {signal.emotion}
+          </span>
+          {done && (
+            <button
+              onClick={() => { playedRef.current.delete(selectedIdx); startDraw(); }}
+              aria-label="Replay animation"
+              style={{
+                display: 'flex', alignItems: 'center', gap: 6,
+                padding: '4px 12px',
+                border: `1px solid ${BORDER.default}`,
+                background: 'transparent',
+                color: TEXT.muted,
+                borderRadius: 6,
+                fontFamily: FONT.mono,
+                fontSize: 9,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                fontWeight: 500,
+                cursor: 'pointer',
+              }}
+            >
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" />
+              </svg>
+              Replay
+            </button>
+          )}
+        </div>
       </div>
 
       {/* SVG Chart */}
@@ -408,10 +436,16 @@ export default function M1SignalLifecycle() {
                 fontSize: 13, lineHeight: 1.65,
                 color: reached ? TEXT.secondary : TEXT.hint,
                 transition: 'color 0.4s ease',
-                margin: 0,
+                margin: 0, marginBottom: 8,
               }}>
                 {card.body}
               </p>
+              <span style={{
+                fontFamily: FONT.mono, fontSize: 7.5,
+                color: TEXT.hint, letterSpacing: '0.04em',
+              }}>
+                {phase.ref}
+              </span>
             </div>
           );
         })}

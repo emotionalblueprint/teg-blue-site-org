@@ -36,6 +36,7 @@ const CARDS = [
     sub: '12 ms',
     body: 'The amygdala detects the stimulus and begins generating a physiological response before the signal reaches the cortex.',
     color: MODEL_COLOR,
+    ref: 'LeDoux, 1996',
   },
   {
     t: 150 / TOTAL_MS,
@@ -43,6 +44,7 @@ const CARDS = [
     sub: '150 ms',
     body: 'Heart rate has shifted, hormones are releasing, muscles are reorganizing. A full nervous system state is active. Cognition has not yet arrived.',
     color: MODEL_COLOR,
+    ref: 'Damasio, 1994',
   },
   {
     t: 300 / TOTAL_MS,
@@ -50,6 +52,7 @@ const CARDS = [
     sub: '300 ms',
     body: 'The signal reaches the cortex. Conscious processing begins — but the body has been responding for nearly 300 milliseconds already.',
     color: COGNITIVE_COLOR,
+    ref: 'Panksepp, 1998',
   },
 ];
 
@@ -447,10 +450,16 @@ export default function M1SpeedComparison() {
                 fontSize: 13, lineHeight: 1.65,
                 color: reached ? TEXT.secondary : TEXT.hint,
                 transition: 'color 0.4s ease',
-                margin: 0,
+                margin: 0, marginBottom: 8,
               }}>
                 {card.body}
               </p>
+              <span style={{
+                fontFamily: FONT.mono, fontSize: 7.5,
+                color: TEXT.hint, letterSpacing: '0.04em',
+              }}>
+                {card.ref}
+              </span>
             </div>
           );
         })}

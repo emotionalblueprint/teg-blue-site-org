@@ -9,7 +9,7 @@ import {
 // ─── Constants ──────────────────────────────────────────
 const MODEL_COLOR = PATTERN.A.primary;
 const CHART_BLUE = MAIN_ORG.accent;
-const WARNING_COLOR = SPECTRUM.silver;
+const WARNING_COLOR = '#e87b35';
 
 // SVG dimensions
 const VW = 880, VH = 240;
