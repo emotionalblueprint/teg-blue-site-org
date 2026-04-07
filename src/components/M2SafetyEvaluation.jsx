@@ -1,150 +1,114 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS,
-  hexToRgba, gradientCardBg, diagramContainer,
+  TEXT, FONT, SPECTRUM, RADIUS,
+  hexToRgba, diagramContainer,
 } from '../styles/tokens';
 
 // ─── Constants ──────────────────────────────────────
-const EVAL_COLOR = SPECTRUM.slate;     // #808493 — the scanner
-const SAFETY_COLOR = SPECTRUM.azure;   // #76e2ff — open
-const THREAT_COLOR = SPECTRUM.cobalt;  // #0590e5 — mobilised
-
-// SVG
-const SIZE = 300;
-const CX = SIZE / 2;
-const CY = SIZE / 2;
-const R = 115;
-const SWEEP_DURATION = 3000; // one full rotation
+const EVAL_COLOR  = SPECTRUM.slate;    // #808493 — neutral evaluation
+const SAFETY_COLOR = SPECTRUM.azure;   // #76e2ff — safety path
+const THREAT_COLOR = SPECTRUM.cobalt;  // #0590e5 — threat path
 
 // ─── Component ──────────────────────────────────────
 
 export default function M2SafetyEvaluation() {
-  const [mode, setMode] = useState(null);       // null | 'safety' | 'threat'
-  const [sweepAngle, setSweepAngle] = useState(0);
-  const [sweeping, setSweeping] = useState(false);
-  const [result, setResult] = useState(null);    // null | 'safety' | 'threat'
-  const rafRef = useRef(null);
-  const t0Ref = useRef(null);
+  const [active, setActive] = useState(null); // null | 'safety' | 'threat'
 
-  function startSweep(type) {
-    cancelAnimationFrame(rafRef.current);
-    t0Ref.current = null;
-    setMode(type);
-    setSweepAngle(0);
-    setSweeping(true);
-    setResult(null);
-  }
-
-  // Sweep animation
-  useEffect(() => {
-    if (!sweeping) return;
-    const tick = (ts) => {
-      if (!t0Ref.current) t0Ref.current = ts;
-      const elapsed = ts - t0Ref.current;
-      const p = Math.min(elapsed / SWEEP_DURATION, 1);
-      // Ease out — slows as it finishes
-      const eased = 1 - Math.pow(1 - p, 2.5);
-      setSweepAngle(eased * 360);
-      if (p < 1) {
-        rafRef.current = requestAnimationFrame(tick);
-      } else {
-        setSweeping(false);
-        setResult(mode);
-      }
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [sweeping, mode]);
-
-  useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
-
-  // Derived
-  const sweepRad = (sweepAngle - 90) * Math.PI / 180;
-  const sweepX = CX + R * Math.cos(sweepRad);
-  const sweepY = CY + R * Math.sin(sweepRad);
-
-  // Active color — shifts during sweep, lands on result
-  const activeColor = result
-    ? (result === 'safety' ? SAFETY_COLOR : THREAT_COLOR)
-    : sweeping
-      ? EVAL_COLOR
-      : EVAL_COLOR;
-
-  // Ring builds as sweep progresses
-  const resultColor = mode === 'safety' ? SAFETY_COLOR : THREAT_COLOR;
-  const ringSegments = [];
-  if (sweeping || result) {
-    const segCount = 60;
-    const maxAngle = result ? 360 : sweepAngle;
-    for (let i = 0; i < segCount; i++) {
-      const a1 = (i / segCount) * 360;
-      if (a1 > maxAngle) break;
-      const a2 = Math.min(((i + 1) / segCount) * 360, maxAngle);
-      const r1 = (a1 - 90) * Math.PI / 180;
-      const r2 = (a2 - 90) * Math.PI / 180;
-      const rInner = R - 5;
-      const rOuter = R;
-      ringSegments.push({
-        key: i,
-        d: `M${CX + rInner * Math.cos(r1)},${CY + rInner * Math.sin(r1)} L${CX + rOuter * Math.cos(r1)},${CY + rOuter * Math.sin(r1)} A${rOuter},${rOuter} 0 0,1 ${CX + rOuter * Math.cos(r2)},${CY + rOuter * Math.sin(r2)} L${CX + rInner * Math.cos(r2)},${CY + rInner * Math.sin(r2)} A${rInner},${rInner} 0 0,0 ${CX + rInner * Math.cos(r1)},${CY + rInner * Math.sin(r1)} Z`,
-      });
-    }
-  }
-
-  // Sweep trail
-  const trailDeg = 30;
-  const trailStart = sweepAngle - trailDeg;
-  const trailRad = (trailStart - 90) * Math.PI / 180;
-  const trailX = CX + R * Math.cos(trailRad);
-  const trailY = CY + R * Math.sin(trailRad);
-
-  // Card content depends on result
-  const cardData = result === 'safety'
-    ? {
-        label: 'Safety detected → engage',
-        body: 'The evaluation reads safety. Perception broadens, social engagement comes online, the body settles. Resources become available for connection, learning, and repair.',
-        ref: 'Porges, 2011',
-        color: SAFETY_COLOR,
-      }
-    : result === 'threat'
-    ? {
-        label: 'Threat detected → protect',
-        body: 'The evaluation reads threat. Attention narrows, muscles tense, heart rate rises, cognition simplifies — the entire system reorganises before conscious awareness forms an interpretation.',
-        ref: 'LeDoux, 1996',
-        color: THREAT_COLOR,
-      }
-    : null;
+  // Path-dependent styling helpers
+  const isSafety = active === 'safety';
+  const isThreat = active === 'threat';
 
   return (
     <section style={{ marginBottom: 32, ...diagramContainer() }}>
       <style>{`
-        .m2-cse-layout {
-          display: flex;
-          align-items: center;
-          gap: 32px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .m2-cse-right {
-          flex: 1;
-          min-width: 260px;
+        .m2-cse-flow {
           display: flex;
           flex-direction: column;
-          gap: 14px;
+          align-items: center;
+          gap: 0;
+          position: relative;
         }
-        @media (max-width: 640px) {
-          .m2-cse-layout {
+
+        /* ─── Node base ─── */
+        .m2-cse-node {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          transition: opacity 0.4s ease, transform 0.3s ease;
+        }
+        .m2-cse-node.faded {
+          opacity: 0.25;
+        }
+
+        /* ─── Arrow connector ─── */
+        .m2-cse-arrow {
+          width: 1px;
+          height: 28px;
+          position: relative;
+          z-index: 0;
+          transition: background 0.4s ease, opacity 0.4s ease;
+        }
+        .m2-cse-arrow::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          transition: border-top-color 0.4s ease;
+        }
+        .m2-cse-arrow.faded {
+          opacity: 0.15;
+        }
+
+        /* ─── Branch container ─── */
+        .m2-cse-branches {
+          display: flex;
+          gap: 24px;
+          width: 100%;
+          max-width: 520px;
+          justify-content: center;
+        }
+        @media (max-width: 500px) {
+          .m2-cse-branches {
             flex-direction: column;
+            align-items: center;
+            gap: 16px;
           }
+        }
+
+        /* ─── Branch column ─── */
+        .m2-cse-branch {
+          flex: 1;
+          max-width: 240px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+          transition: opacity 0.4s ease;
+        }
+        .m2-cse-branch.faded {
+          opacity: 0.2;
+        }
+
+        /* ─── Fork SVG ─── */
+        .m2-cse-fork-svg {
+          width: 100%;
+          max-width: 520px;
+          height: 40px;
+          overflow: visible;
         }
       `}</style>
 
-      {/* Header */}
+      {/* ─── Header ─── */}
       <div style={{
         display: 'flex', alignItems: 'center', gap: 12,
-        marginBottom: 16, flexWrap: 'wrap',
+        marginBottom: 20, flexWrap: 'wrap',
       }}>
         <span style={{
           fontFamily: FONT.mono, fontSize: 8, color: EVAL_COLOR,
@@ -156,254 +120,323 @@ export default function M2SafetyEvaluation() {
           fontFamily: FONT.mono, fontSize: 8, color: TEXT.hint,
           letterSpacing: '0.06em',
         }}>
-          Is there enough safety to engage, or is protection needed?
+          The Safety-Threat Evaluation
         </span>
-        {result && (
-          <span style={{
-            fontFamily: FONT.mono, fontSize: 10, fontWeight: 600,
-            color: result === 'safety' ? SAFETY_COLOR : THREAT_COLOR,
-            marginLeft: 'auto',
-          }}>
-            {result === 'safety' ? 'Engage' : 'Protect'}
-          </span>
-        )}
       </div>
 
-      <div className="m2-cse-layout">
-        {/* ─── Radar SVG ────────────────── */}
-        <svg viewBox={`0 0 ${SIZE} ${SIZE}`} style={{
-          width: 280, height: 280, flexShrink: 0,
+      <div className="m2-cse-flow">
+
+        {/* ── STAGE 1: Environmental Cues ── */}
+        <div className="m2-cse-node" style={{
+          padding: '10px 24px',
+          borderRadius: RADIUS.md,
+          border: `1px solid ${hexToRgba(EVAL_COLOR, 0.25)}`,
+          background: hexToRgba(EVAL_COLOR, 0.06),
         }}>
-          {/* Background glow — appears on result */}
-          {result && (
-            <circle cx={CX} cy={CY} r={R * 0.8}
-              fill={hexToRgba(resultColor, 0.06)}
-              style={{ transition: 'fill 0.6s ease' }}
-            />
-          )}
+          <div style={{
+            fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+            letterSpacing: '0.12em', textTransform: 'uppercase',
+            color: EVAL_COLOR, marginBottom: 3,
+          }}>
+            Environmental Cues
+          </div>
+          <div style={{
+            fontSize: 12, color: TEXT.muted, lineHeight: 1.5,
+          }}>
+            Face, voice, posture, context
+          </div>
+        </div>
 
-          {/* Radar rings */}
-          {[0.33, 0.66, 1].map(f => (
-            <circle key={f} cx={CX} cy={CY} r={R * f}
-              fill="none" stroke={hexToRgba(EVAL_COLOR, 0.08)}
-              strokeWidth="1" />
-          ))}
+        {/* Arrow down */}
+        <div className="m2-cse-arrow" style={{
+          background: hexToRgba(EVAL_COLOR, 0.3),
+        }}>
+          <div style={{
+            position: 'absolute', bottom: -3, left: '50%', transform: 'translateX(-50%)',
+            width: 0, height: 0,
+            borderLeft: '4px solid transparent',
+            borderRight: '4px solid transparent',
+            borderTop: `5px solid ${hexToRgba(EVAL_COLOR, 0.3)}`,
+          }} />
+        </div>
 
-          {/* Cross hairs */}
-          <line x1={CX} y1={CY - R} x2={CX} y2={CY + R}
-            stroke={hexToRgba(EVAL_COLOR, 0.05)} strokeWidth="1" />
-          <line x1={CX - R} y1={CY} x2={CX + R} y2={CY}
-            stroke={hexToRgba(EVAL_COLOR, 0.05)} strokeWidth="1" />
+        {/* ── STAGE 2: The Evaluation ── */}
+        <div className="m2-cse-node" style={{
+          padding: '14px 28px 16px',
+          borderRadius: RADIUS.lg,
+          border: `1.5px solid ${hexToRgba(EVAL_COLOR, 0.35)}`,
+          background: hexToRgba(EVAL_COLOR, 0.08),
+          maxWidth: 340,
+        }}>
+          <div style={{
+            fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
+            letterSpacing: '0.14em', textTransform: 'uppercase',
+            color: EVAL_COLOR, marginBottom: 5,
+          }}>
+            Neuroception
+          </div>
+          <div style={{
+            fontSize: 13, color: TEXT.secondary, lineHeight: 1.6,
+            fontStyle: 'italic',
+          }}>
+            Is there sufficient safety to engage, or is protection required?
+          </div>
+          <div style={{
+            fontFamily: FONT.mono, fontSize: 7, color: TEXT.hint,
+            letterSpacing: '0.06em', marginTop: 6, marginBottom: 10,
+          }}>
+            Below conscious awareness · Continuous · Automatic
+          </div>
 
-          {/* Result ring — builds during sweep, stays on result */}
-          {ringSegments.map(seg => (
-            <path key={seg.key} d={seg.d}
-              fill={resultColor} fillOpacity={result ? 0.35 : 0.2} />
-          ))}
-
-          {/* Sweep trail */}
-          {sweeping && sweepAngle > 5 && (
-            <>
-              <defs>
-                <radialGradient id="m2-cse-trail">
-                  <stop offset="0%" stopColor={EVAL_COLOR} stopOpacity="0" />
-                  <stop offset="100%" stopColor={EVAL_COLOR} stopOpacity="0.08" />
-                </radialGradient>
-              </defs>
-              <path
-                d={`M${CX},${CY} L${trailX.toFixed(1)},${trailY.toFixed(1)} A${R},${R} 0 0,1 ${sweepX.toFixed(1)},${sweepY.toFixed(1)} Z`}
-                fill="url(#m2-cse-trail)"
-              />
-            </>
-          )}
-
-          {/* Sweep arm */}
-          {sweeping && (
-            <line x1={CX} y1={CY} x2={sweepX} y2={sweepY}
-              stroke={EVAL_COLOR}
-              strokeWidth="1.5" strokeOpacity="0.5" />
-          )}
-
-          {/* Center dot */}
-          <circle cx={CX} cy={CY} r="6"
-            fill={hexToRgba(activeColor, 0.25)}
-            style={{ transition: 'fill 0.5s ease' }} />
-          <circle cx={CX} cy={CY} r="3"
-            fill={activeColor}
-            style={{ transition: 'fill 0.5s ease' }} />
-
-          {/* Result label in center */}
-          {result && (
-            <>
-              <text x={CX} y={CY - 16} textAnchor="middle"
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: 8, fontWeight: 600,
-                  letterSpacing: '0.14em',
-                  fill: resultColor,
-                  textTransform: 'uppercase',
-                }}>
-                {result === 'safety' ? 'Safety' : 'Threat'}
-              </text>
-              <text x={CX} y={CY + 24} textAnchor="middle"
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: 7,
-                  letterSpacing: '0.08em',
-                  fill: TEXT.hint,
-                }}>
-                {result === 'safety' ? 'System opens' : 'System mobilises'}
-              </text>
-            </>
-          )}
-
-          {/* Idle label */}
-          {!sweeping && !result && (
-            <text x={CX} y={CY + 4} textAnchor="middle"
-              dominantBaseline="central"
+          {/* ── Small detection buttons ── */}
+          <div style={{
+            display: 'flex', gap: 8, justifyContent: 'center',
+          }}>
+            <button
+              onClick={() => setActive(isSafety ? null : 'safety')}
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: 7,
+                padding: '4px 14px',
+                borderRadius: 20,
+                border: `1px solid ${hexToRgba(SAFETY_COLOR, isSafety ? 0.6 : 0.25)}`,
+                background: isSafety ? hexToRgba(SAFETY_COLOR, 0.15) : 'transparent',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                fontFamily: FONT.mono,
+                fontSize: 7.5,
+                fontWeight: 600,
                 letterSpacing: '0.08em',
-                fill: TEXT.hint,
-              }}>
-              Press to evaluate
-            </text>
-          )}
+                textTransform: 'uppercase',
+                color: isSafety ? SAFETY_COLOR : hexToRgba(SAFETY_COLOR, 0.6),
+              }}
+            >
+              Detect safety
+            </button>
+            <button
+              onClick={() => setActive(isThreat ? null : 'threat')}
+              style={{
+                padding: '4px 14px',
+                borderRadius: 20,
+                border: `1px solid ${hexToRgba(THREAT_COLOR, isThreat ? 0.6 : 0.25)}`,
+                background: isThreat ? hexToRgba(THREAT_COLOR, 0.15) : 'transparent',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                fontFamily: FONT.mono,
+                fontSize: 7.5,
+                fontWeight: 600,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: isThreat ? THREAT_COLOR : hexToRgba(THREAT_COLOR, 0.6),
+              }}
+            >
+              Detect threat
+            </button>
+          </div>
+        </div>
+
+        {/* ── Fork: the branching point ── */}
+        <svg className="m2-cse-fork-svg" viewBox="0 0 520 40" preserveAspectRatio="xMidYMid meet">
+          {/* Center stem down */}
+          <line x1="260" y1="0" x2="260" y2="14"
+            stroke={hexToRgba(EVAL_COLOR, 0.3)} strokeWidth="1" />
+          {/* Horizontal bar */}
+          <line x1="130" y1="14" x2="390" y2="14"
+            stroke={hexToRgba(EVAL_COLOR, 0.3)} strokeWidth="1" />
+          {/* Left branch down (safety) */}
+          <line x1="130" y1="14" x2="130" y2="36"
+            stroke={isSafety ? hexToRgba(SAFETY_COLOR, 0.6) : hexToRgba(EVAL_COLOR, 0.3)}
+            strokeWidth="1"
+            style={{ transition: 'stroke 0.4s ease' }} />
+          <polygon
+            points="126,34 134,34 130,40"
+            fill={isSafety ? hexToRgba(SAFETY_COLOR, 0.6) : hexToRgba(EVAL_COLOR, 0.3)}
+            style={{ transition: 'fill 0.4s ease' }} />
+          {/* Right branch down (threat) */}
+          <line x1="390" y1="14" x2="390" y2="36"
+            stroke={isThreat ? hexToRgba(THREAT_COLOR, 0.6) : hexToRgba(EVAL_COLOR, 0.3)}
+            strokeWidth="1"
+            style={{ transition: 'stroke 0.4s ease' }} />
+          <polygon
+            points="386,34 394,34 390,40"
+            fill={isThreat ? hexToRgba(THREAT_COLOR, 0.6) : hexToRgba(EVAL_COLOR, 0.3)}
+            style={{ transition: 'fill 0.4s ease' }} />
         </svg>
 
-        {/* ─── Right side: buttons + card ── */}
-        <div className="m2-cse-right">
-          {/* Two buttons */}
-          <div style={{ display: 'flex', gap: 10 }}>
-            <button
-              onClick={() => startSweep('safety')}
-              disabled={sweeping}
-              style={{
-                flex: 1,
-                padding: '10px 16px',
-                borderRadius: RADIUS.md,
-                border: `1.5px solid ${result === 'safety' ? SAFETY_COLOR : hexToRgba(SAFETY_COLOR, 0.3)}`,
-                background: result === 'safety' ? hexToRgba(SAFETY_COLOR, 0.12) : 'transparent',
-                cursor: sweeping ? 'default' : 'pointer',
-                opacity: sweeping ? 0.5 : 1,
-                transition: 'all 0.3s ease',
-                textAlign: 'left',
-              }}
-            >
-              <div style={{
-                fontFamily: FONT.mono, fontSize: 9, fontWeight: 600,
-                letterSpacing: '0.1em', textTransform: 'uppercase',
-                color: SAFETY_COLOR, marginBottom: 3,
-              }}>
-                Safety
-              </div>
-              <div style={{
-                fontFamily: FONT.mono, fontSize: 7.5,
-                color: TEXT.hint, letterSpacing: '0.04em',
-              }}>
-                Engage
-              </div>
-            </button>
+        {/* ── STAGE 3 + 4: Two branches ── */}
+        <div className="m2-cse-branches">
 
-            <button
-              onClick={() => startSweep('threat')}
-              disabled={sweeping}
-              style={{
-                flex: 1,
-                padding: '10px 16px',
-                borderRadius: RADIUS.md,
-                border: `1.5px solid ${result === 'threat' ? THREAT_COLOR : hexToRgba(THREAT_COLOR, 0.3)}`,
-                background: result === 'threat' ? hexToRgba(THREAT_COLOR, 0.12) : 'transparent',
-                cursor: sweeping ? 'default' : 'pointer',
-                opacity: sweeping ? 0.5 : 1,
-                transition: 'all 0.3s ease',
-                textAlign: 'left',
-              }}
-            >
-              <div style={{
-                fontFamily: FONT.mono, fontSize: 9, fontWeight: 600,
-                letterSpacing: '0.1em', textTransform: 'uppercase',
-                color: THREAT_COLOR, marginBottom: 3,
-              }}>
-                Threat
-              </div>
-              <div style={{
-                fontFamily: FONT.mono, fontSize: 7.5,
-                color: TEXT.hint, letterSpacing: '0.04em',
-              }}>
-                Protect
-              </div>
-            </button>
-          </div>
-
-          {/* Evaluation description — always visible */}
-          <div style={{
-            padding: '14px 14px 16px',
-            borderRadius: RADIUS.lg,
-            border: `1px solid ${hexToRgba(EVAL_COLOR, 0.2)}`,
-            borderLeft: `3px solid ${EVAL_COLOR}`,
-            background: gradientCardBg(EVAL_COLOR, 0.04),
-          }}>
-            <div style={{
-              fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
-              letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: EVAL_COLOR, marginBottom: 6,
+          {/* ─── SAFETY PATH ─── */}
+          <div className={`m2-cse-branch ${isThreat ? 'faded' : ''}`}>
+            {/* Signal Generation */}
+            <div className="m2-cse-node" style={{
+              padding: '10px 20px',
+              borderRadius: RADIUS.md,
+              border: `1px solid ${hexToRgba(SAFETY_COLOR, isSafety ? 0.4 : 0.2)}`,
+              background: hexToRgba(SAFETY_COLOR, isSafety ? 0.1 : 0.04),
+              width: '100%',
+              transition: 'all 0.4s ease',
             }}>
-              Continuous evaluation
-            </div>
-            <p style={{
-              fontSize: 13, lineHeight: 1.65,
-              color: TEXT.secondary, margin: 0, marginBottom: 6,
-            }}>
-              The nervous system monitors safety and threat below conscious awareness — automatic, rapid, and based on experienced safety, not objective conditions.
-            </p>
-            <span style={{
-              fontFamily: FONT.mono, fontSize: 7.5,
-              color: TEXT.hint, letterSpacing: '0.04em',
-            }}>
-              Porges, 2011
-            </span>
-          </div>
-
-          {/* Result card — appears after sweep */}
-          {cardData && (
-            <div style={{
-              padding: '14px 14px 16px',
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${hexToRgba(cardData.color, 0.25)}`,
-              borderLeft: `3px solid ${cardData.color}`,
-              background: gradientCardBg(cardData.color, 0.06),
-              animation: 'm2CseCardIn 0.4s ease',
-            }}>
-              <style>{`
-                @keyframes m2CseCardIn {
-                  from { opacity: 0; transform: translateY(6px); }
-                  to { opacity: 1; transform: translateY(0); }
-                }
-              `}</style>
               <div style={{
                 fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
-                letterSpacing: '0.14em', textTransform: 'uppercase',
-                color: cardData.color, marginBottom: 6,
+                letterSpacing: '0.12em', textTransform: 'uppercase',
+                color: SAFETY_COLOR, marginBottom: 3,
               }}>
-                {cardData.label}
+                Safety Signal
               </div>
-              <p style={{
-                fontSize: 13, lineHeight: 1.65,
-                color: TEXT.secondary, margin: 0, marginBottom: 6,
+              <div style={{
+                fontSize: 12, color: TEXT.muted, lineHeight: 1.5,
               }}>
-                {cardData.body}
-              </p>
-              <span style={{
-                fontFamily: FONT.mono, fontSize: 7.5,
-                color: TEXT.hint, letterSpacing: '0.04em',
-              }}>
-                {cardData.ref}
-              </span>
+                Evaluation reads safety
+              </div>
             </div>
-          )}
+
+            {/* Arrow */}
+            <div style={{
+              width: 1, height: 20,
+              background: hexToRgba(SAFETY_COLOR, isSafety ? 0.4 : 0.15),
+              transition: 'background 0.4s ease',
+              position: 'relative',
+            }}>
+              <div style={{
+                position: 'absolute', bottom: -3, left: '50%', transform: 'translateX(-50%)',
+                width: 0, height: 0,
+                borderLeft: '3px solid transparent',
+                borderRight: '3px solid transparent',
+                borderTop: `4px solid ${hexToRgba(SAFETY_COLOR, isSafety ? 0.4 : 0.15)}`,
+                transition: 'border-top-color 0.4s ease',
+              }} />
+            </div>
+
+            {/* NS State Outcome */}
+            <div className="m2-cse-node" style={{
+              padding: '12px 16px',
+              borderRadius: RADIUS.lg,
+              border: `1.5px solid ${hexToRgba(SAFETY_COLOR, isSafety ? 0.45 : 0.18)}`,
+              background: hexToRgba(SAFETY_COLOR, isSafety ? 0.12 : 0.04),
+              width: '100%',
+              transition: 'all 0.4s ease',
+            }}>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
+                letterSpacing: '0.12em', textTransform: 'uppercase',
+                color: SAFETY_COLOR, marginBottom: 4,
+              }}>
+                Safety & Openness
+              </div>
+              <div style={{
+                fontSize: 12, color: isSafety ? TEXT.secondary : TEXT.muted,
+                lineHeight: 1.55,
+                transition: 'color 0.4s ease',
+              }}>
+                Perception broadens, social engagement activates, body settles
+              </div>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 7, color: TEXT.hint,
+                letterSpacing: '0.06em', marginTop: 5,
+              }}>
+                Ventral vagal · Engage
+              </div>
+            </div>
+          </div>
+
+          {/* ─── THREAT PATH ─── */}
+          <div className={`m2-cse-branch ${isSafety ? 'faded' : ''}`}>
+            {/* Signal Generation */}
+            <div className="m2-cse-node" style={{
+              padding: '10px 20px',
+              borderRadius: RADIUS.md,
+              border: `1px solid ${hexToRgba(THREAT_COLOR, isThreat ? 0.4 : 0.2)}`,
+              background: hexToRgba(THREAT_COLOR, isThreat ? 0.1 : 0.04),
+              width: '100%',
+              transition: 'all 0.4s ease',
+            }}>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+                letterSpacing: '0.12em', textTransform: 'uppercase',
+                color: THREAT_COLOR, marginBottom: 3,
+              }}>
+                Threat Signal
+              </div>
+              <div style={{
+                fontSize: 12, color: TEXT.muted, lineHeight: 1.5,
+              }}>
+                Evaluation reads threat
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div style={{
+              width: 1, height: 20,
+              background: hexToRgba(THREAT_COLOR, isThreat ? 0.4 : 0.15),
+              transition: 'background 0.4s ease',
+              position: 'relative',
+            }}>
+              <div style={{
+                position: 'absolute', bottom: -3, left: '50%', transform: 'translateX(-50%)',
+                width: 0, height: 0,
+                borderLeft: '3px solid transparent',
+                borderRight: '3px solid transparent',
+                borderTop: `4px solid ${hexToRgba(THREAT_COLOR, isThreat ? 0.4 : 0.15)}`,
+                transition: 'border-top-color 0.4s ease',
+              }} />
+            </div>
+
+            {/* NS State Outcome */}
+            <div className="m2-cse-node" style={{
+              padding: '12px 16px',
+              borderRadius: RADIUS.lg,
+              border: `1.5px solid ${hexToRgba(THREAT_COLOR, isThreat ? 0.45 : 0.18)}`,
+              background: hexToRgba(THREAT_COLOR, isThreat ? 0.12 : 0.04),
+              width: '100%',
+              transition: 'all 0.4s ease',
+            }}>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
+                letterSpacing: '0.12em', textTransform: 'uppercase',
+                color: THREAT_COLOR, marginBottom: 4,
+              }}>
+                Threat & Defense
+              </div>
+              <div style={{
+                fontSize: 12, color: isThreat ? TEXT.secondary : TEXT.muted,
+                lineHeight: 1.55,
+                transition: 'color 0.4s ease',
+              }}>
+                Attention narrows, muscles tense, cognition simplifies, system mobilises
+              </div>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 7, color: TEXT.hint,
+                letterSpacing: '0.06em', marginTop: 5,
+              }}>
+                Sympathetic · Protect
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* ── Bottom note ── */}
+        <div style={{
+          marginTop: 20,
+          padding: '10px 16px',
+          borderRadius: RADIUS.md,
+          border: `1px solid ${hexToRgba(EVAL_COLOR, 0.15)}`,
+          background: hexToRgba(EVAL_COLOR, 0.04),
+          maxWidth: 420,
+          textAlign: 'center',
+        }}>
+          <p style={{
+            fontSize: 12, lineHeight: 1.6,
+            color: TEXT.muted, margin: 0,
+          }}>
+            The system is biased toward protection under uncertainty. False negatives (missing a threat) are more costly than false positives (unnecessary defense).
+          </p>
+          <span style={{
+            fontFamily: FONT.mono, fontSize: 7,
+            color: TEXT.hint, letterSpacing: '0.06em',
+          }}>
+            Porges, 2011 · LeDoux, 1996
+          </span>
+        </div>
+
       </div>
     </section>
   );
