@@ -91,7 +91,7 @@ export const FONT = {
 export const TYPE_SCALE = {
   pageTitle:       { size: 28, weight: 700, tracking: "-0.02em", lineHeight: 1.2 },
   sectionHead:     { size: 18, weight: 600, tracking: "-0.01em", lineHeight: 1.2, color: "var(--text-primary)" },
-  expandableTitle: { size: 15, weight: 600, tracking: "normal",  lineHeight: 1.4, color: "rgba(168, 180, 200, 0.75)" },
+  expandableTitle: { size: 15, weight: 600, tracking: "normal",  lineHeight: 1.4, color: "rgba(168, 180, 200, 0.88)" },
   body:            { size: 15, weight: 400, tracking: "normal",  lineHeight: 1.75 },
   summary:         { size: 13, weight: 400, tracking: "normal",  lineHeight: 1.72 },
   doi:             { size: 12, weight: 400, tracking: "0.01em",  lineHeight: 1.4, font: "mono" },
@@ -105,7 +105,7 @@ export const TYPE_SCALE = {
 // ─── SPACING ─────────────────────────────────────────
 
 export const SPACING = {
-  containerMax: 1100,
+  containerMax: 1000,
   containerPadding: { desktop: "0 24px", mobile: "0 16px" },
   // Responsive side padding — use in inline styles (no media queries needed)
   pagePadding: "clamp(16px, 4vw, 24px)",

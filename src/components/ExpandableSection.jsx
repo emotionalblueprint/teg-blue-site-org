@@ -58,7 +58,7 @@ export default function ExpandableSection({
           letterSpacing: "0.06em",
           background: BG.card,
           border: `1px solid ${BORDER.default}`,
-          borderRadius: 10,
+          borderRadius: 6,
           transition: `all ${TRANSITION.normal}`,
           listStyle: "none",
         }}
@@ -89,7 +89,7 @@ export default function ExpandableSection({
           background: `linear-gradient(135deg, ${hexToRgba(color, 0.06)}, ${hexToRgba(color, 0.03)}, transparent)`,
           border: `1px solid ${hexToRgba(color, 0.15)}`,
           borderTop: "none",
-          borderRadius: "0 0 10px 10px",
+          borderRadius: "0 0 6px 6px",
         }}
       >
         {children}
@@ -108,7 +108,7 @@ export default function ExpandableSection({
         details[open] > summary {
           background: ${BG.surface};
           border-color: ${hexToRgba(color, 0.25)};
-          border-radius: 10px 10px 0 0;
+          border-radius: 6px 6px 0 0;
           color: ${TEXT.primary};
         }
 
