@@ -25,9 +25,9 @@ import {
 
 const SIDEBAR_SECTIONS = [
   { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
-  { label: "Core Propositions", href: "#core-propositions", description: "The claims F7 makes about how defence becomes domination." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F7 makes about how defense becomes domination." },
   { label: "How Reinforcement Builds the Pathway", href: "#reinforcement", description: "What produces relief gets repeated. What gets repeated becomes default. The pathway follows reinforcement, not personality." },
-  { label: "When Defence Becomes Strategy", href: "#transition", description: "The critical shift — repair decreasing, control increasing, tactics replacing vulnerability." },
+  { label: "When Defense Becomes Strategy", href: "#transition", description: "The critical shift — repair decreasing, control increasing, tactics replacing vulnerability." },
   { label: "Five Stages from Fear to Power Preservation", href: "#five-stages", description: "Each stage identifiable, each interruptible — with decreasing accessibility as escalation progresses." },
   { label: "The Power-Interoception Inverse", href: "#power-interoception", description: "As external power increases, interoceptive access decreases — power replaces the need for it." },
   { label: "How Awareness Capacities Diverge", href: "#capacity-divergence", description: "RE redirects, ER collapses, SEA was never built — and why the brake is structurally absent." },
@@ -45,7 +45,7 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "Domination Regulates (F7) | TEG-Blue Research",
   description:
-    "How defence becomes strategy becomes domination — reinforcement-driven escalation, the power-interoception inverse, three-capacity divergence, and why the mechanism that would stop the escalation is absent. Framework F7 of the TEG-Blue 12-framework system.",
+    "How defense becomes strategy becomes domination — reinforcement-driven escalation, the power-interoception inverse, three-capacity divergence, and why the mechanism that would stop the escalation is absent. Framework F7 of the TEG-Blue 12-framework system.",
   keywords: [
     "domination regulates",
     "nervous system escalation",
@@ -66,7 +66,7 @@ export const metadata = {
   openGraph: {
     title: "Domination Regulates — F7 Framework | TEG-Blue",
     description:
-      "How defence becomes strategy becomes domination — the final framework in the collective arc. Framework F7 of 12.",
+      "How defense becomes strategy becomes domination — the final framework in the collective arc. Framework F7 of 12.",
     url: "https://teg-blue.org/framework/f7-domination-regulates",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -105,7 +105,7 @@ export default function F7DominationRegulatesPage() {
           <FrameworkHero
             badge="FRAMEWORK F7"
             title="Domination Regulates"
-            subtitle="How Defence Becomes Strategy Becomes Domination"
+            subtitle="How Defense Becomes Strategy Becomes Domination"
             description="When the nervous system cannot complete biological restoration and control reliably reduces activation, the system adopts control as its primary regulation strategy. Domination is built through reinforcement: what produces physiological relief gets repeated, what gets repeated gets stronger, what gets stronger becomes default. F7 maps this escalation pathway — how defense hardens into strategy, strategy into entitlement, entitlement into domination — and why the mechanism that would stop it is structurally absent."
             group="Collective"
             groupLabel="Collective Arc · F4–F7"
@@ -161,7 +161,7 @@ export default function F7DominationRegulatesPage() {
               },
               {
                 title: "Strong leadership",
-                commonUnderstanding: "Decisive action, tough decisions, not letting emotions get in the way — what organisations need at the top.",
+                commonUnderstanding: "Decisive action, tough decisions, not letting emotions get in the way — what organizations need at the top.",
                 definition: "A description that can apply to genuine state flexibility — or to the configuration that produces the most control with the least felt impact: sharp RE, absent ER, absent SEA. The same words describe two fundamentally different nervous system architectures.",
               },
             ]}
@@ -175,7 +175,7 @@ export default function F7DominationRegulatesPage() {
                   Domination is built through reinforcement — what produces physiological relief gets repeated, what gets repeated becomes default — the pathway follows reinforcement, not personality
                 </li>
                 <li style={propositionItemStyle}>
-                  The critical transition is from defence to strategy — from reacting to the environment to managing the environment, recognisable through repair decreasing and control increasing
+                  The critical transition is from defense to strategy — from reacting to the environment to managing the environment, recognizable through repair decreasing and control increasing
                 </li>
                 <li style={propositionItemStyle}>
                   Five stages from fear to power preservation — each identifiable, each interruptible, with decreasing accessibility as escalation progresses
@@ -213,68 +213,68 @@ export default function F7DominationRegulatesPage() {
             </h2>
 
             <p style={proseStyle}>
-              Under sustained threat, the nervous system seeks to reduce vulnerability. When the return path (<Link href="/framework/f1-emotional-gradient#designed-process" style={linkStyle}>F1</Link>) was never learned and the system is already locked in threat-based states (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>), it looks for whatever stabiliser works. In some environments, the stabiliser that produces the fastest relief is control — managing others' behaviour to manage one's own activation.
+              Under sustained threat, the nervous system seeks to reduce vulnerability. When the return path (<Link href="/framework/f1-emotional-gradient#designed-process" style={linkStyle}>F1</Link>) was never learned and the system is already locked in threat-based states (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>), it looks for whatever stabilizer works. In some environments, the stabilizer that produces the fastest relief is control — managing others' behavior to manage one's own activation.
             </p>
             <p style={proseStyle}>
-              When control consistently produces physiological settling — when cortisol drops after others comply, when a brief period of stability arrives after submission — the nervous system encodes the pattern. What works gets repeated. What gets repeated gets refined. What gets refined becomes default. The same learning mechanism that teaches any organism to repeat rewarded behaviour teaches this: control works.
+              When control consistently produces physiological settling — when cortisol drops after others comply, when a brief period of stability arrives after submission — the nervous system encodes the pattern. What works gets repeated. What gets repeated gets refined. What gets refined becomes default. The same learning mechanism that teaches any organism to repeat rewarded behavior teaches this: control works.
             </p>
             <p style={proseStyle}>
-              If the strategy is socially rewarded — if the person's environment treats control as competence, leadership, or strength — and if accountability is absent — if the consequences of escalation never arrive — the reinforcement continues without interruption. Defence hardens into strategy. Strategy hardens into entitlement. Entitlement hardens into domination. The pathway is stages, not a switch. It follows reinforcement, not destiny. Each stage is interruptible — with decreasing accessibility as escalation progresses.
+              If the strategy is socially rewarded — if the person's environment treats control as competence, leadership, or strength — and if accountability is absent — if the consequences of escalation never arrive — the reinforcement continues without interruption. Defense hardens into strategy. Strategy hardens into entitlement. Entitlement hardens into domination. The pathway is stages, not a switch. It follows reinforcement, not destiny. Each stage is interruptible — with decreasing accessibility as escalation progresses.
             </p>
 
             {/* Section diagram placeholder */}
-            {/* Diagram type: static — reinforcement pathway from defence through domination */}
+            {/* Diagram type: static — reinforcement pathway from defense through domination */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Skinner (1953) — behaviour shaped by reinforcement: rewarded behaviour strengthens and repeats. Kohut (1977) — narcissistic regulation as escalation of self-protection. Porges (2011) — threat physiology promoting control-seeking through sympathetic activation and ventral vagal withdrawal. Bancroft (2002) — empirical patterns of escalation in controlling behaviour.
+                  Skinner (1953) — behavior shaped by reinforcement: rewarded behavior strengthens and repeats. Kohut (1977) — narcissistic regulation as escalation of self-protection. Porges (2011) — threat physiology promoting control-seeking through sympathetic activation and ventral vagal withdrawal. Bancroft (2002) — empirical patterns of escalation in controlling behavior.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The explicit articulation of domination as a reinforcement-driven pathway — built through the same learning mechanism that shapes all behaviour, traceable through the regulation thread as the final substitute. The same mechanism, the same nervous system, the same thread as false coherence and rule absorption and worth-seeking — further along the gradient, at maximum cost. This is a working hypothesis, open to testing.
+                  The explicit articulation of domination as a reinforcement-driven pathway — built through the same learning mechanism that shapes all behavior, traceable through the regulation thread as the final substitute. The same mechanism, the same nervous system, the same thread as false coherence and rule absorption and worth-seeking — further along the gradient, at maximum cost. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* Concept 1: Defence Becomes Strategy */}
+          {/* Concept 1: Defense Becomes Strategy */}
           <section
             id="transition"
             aria-labelledby="heading-transition"
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-transition" style={sectionHeadingStyle(accent)}>
-              When Defence Becomes Strategy
+              When Defense Becomes Strategy
             </h2>
 
             <p style={proseStyle}>
-              Before the transition, the person is in Threat & Defence (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). Cortisol is elevated, the amygdala is sensitised, the perceptual field has narrowed. The responses — withdrawal, reactivity, vigilance, appeasement — are state-based: the nervous system is activated, the person is reacting, and when the activation passes, the response can pass with it. Repair is still possible — because the person still experiences their responses as responses.
+              Before the transition, the person is in Threat & Defense (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). Cortisol is elevated, the amygdala is sensitized, the perceptual field has narrowed. The responses — withdrawal, reactivity, vigilance, appeasement — are state-based: the nervous system is activated, the person is reacting, and when the activation passes, the response can pass with it. Repair is still possible — because the person still experiences their responses as responses.
             </p>
             <p style={proseStyle}>
-              At the transition, the internal logic shifts. The CLS is recruited into threat organisation — anticipation, planning, management. The person moves from reacting to the environment to managing the environment. From "I am trying to feel safe" to "I will make you behave so I can feel safe." This is the transition from Threat & Defence to Strategy & Management.
+              At the transition, the internal logic shifts. The CLS is recruited into threat organization — anticipation, planning, management. The person moves from reacting to the environment to managing the environment. From "I am trying to feel safe" to "I will make you behave so I can feel safe." This is the transition from Threat & Defense to Strategy & Management.
             </p>
             <p style={proseStyle}>
-              Tactics begin replacing repair. Apologies begin serving image rather than relationship. Warmth begins serving management rather than connection. Observable signals: repair disappears while control increases. Others' reality is reframed as the problem. Accountability is replaced by performance. Confusion is used to destabilise. Boundaries trigger escalation. Relationships are managed rather than respected. Fear becomes a stabiliser — others modify their behaviour to avoid the person's reactions.
+              Tactics begin replacing repair. Apologies begin serving image rather than relationship. Warmth begins serving management rather than connection. Observable signals: repair disappears while control increases. Others' reality is reframed as the problem. Accountability is replaced by performance. Confusion is used to destabilize. Boundaries trigger escalation. Relationships are managed rather than respected. Fear becomes a stabilizer — others modify their behavior to avoid the person's reactions.
             </p>
 
             {/* Section diagram placeholder */}
-            {/* Diagram type: static — transition from state-based defence to strategic control */}
+            {/* Diagram type: static — transition from state-based defense to strategic control */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Bancroft (2002) — patterns of intentionality in controlling behaviour. Herman (1992) — coercive control patterns. Argyris & Schön (1974) — defensive routines: how organisations and individuals systematise self-protection.
+                  Bancroft (2002) — patterns of intentionality in controlling behavior. Herman (1992) — coercive control patterns. Argyris & Schön (1974) — defensive routines: how organizations and individuals systematize self-protection.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The transition positioned within the nervous system gradient as the shift from Threat & Defence (state-based, ESS-driven) to Strategy & Management (strategy-based, CLS-recruited). The observable pattern — repair decreasing, control increasing — provides recognisable markers for early identification. This is a working hypothesis, open to testing.
+                  The transition positioned within the nervous system gradient as the shift from Threat & Defense (state-based, ESS-driven) to Strategy & Management (strategy-based, CLS-recruited). The observable pattern — repair decreasing, control increasing — provides recognizable markers for early identification. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -300,10 +300,10 @@ export default function F7DominationRegulatesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["1. Fear Activation", "\"If I can't control it, I lose safety.\" State-based. The person still recognises their state as distress.", "Most accessible: co-regulation, relational safety, repair."]} />
+                  <TableRow cells={["1. Fear Activation", "\"If I can't control it, I lose safety.\" State-based. The person still recognizes their state as distress.", "Most accessible: co-regulation, relational safety, repair."]} />
                   <TableRow cells={["2. Strategy Formation", "\"Control creates stability.\" The CLS recruited into managing others. Transition markers appear.", "Direct naming, loss of reinforcement, firm relational accountability."]} />
                   <TableRow cells={["3. Entitlement Loop", "\"I'm safer when others obey.\" Compliance expected, blame reversed, false coherence solidified around the control position.", "Consequences from outside the managed system. Internal motivation for change is low."]} />
-                  <TableRow cells={["4. Empathy Collapse", "\"Their pain is my threat.\" Others' suffering minimised or justified. ER functionally offline. RE remains sharp for leverage.", "External containment. Empathy appeals fail — the capacity they target is offline. Protection of others takes precedence."]} />
+                  <TableRow cells={["4. Empathy Collapse", "\"Their pain is my threat.\" Others' suffering minimized or justified. ER functionally offline. RE remains sharp for leverage.", "External containment. Empathy appeals fail — the capacity they target is offline. Protection of others takes precedence."]} />
                   <TableRow cells={["5. Power Preservation", "\"I can't survive without control.\" Identity fused with dominance. Connection feels like dissolution. Vulnerability experienced as annihilation.", "Protection — protecting others from the harm the system produces."]} />
                 </tbody>
               </table>
@@ -320,13 +320,13 @@ export default function F7DominationRegulatesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Kohut (1977), Kernberg (1975) — narcissistic escalation through identifiable stages. Herman (1992) — patterns of coercive control. Bancroft (2002) — stage-recognisable escalation. Staub (1989) — collective escalation toward extreme group behaviour through identifiable stages.
+                  Kohut (1977), Kernberg (1975) — narcissistic escalation through identifiable stages. Herman (1992) — patterns of coercive control. Bancroft (2002) — stage-recognizable escalation. Staub (1989) — collective escalation toward extreme group behavior through identifiable stages.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The five stages with named internal logic and stage-appropriate interruption — making domination recognisable as a process rather than a type. The unified pathway connected to the nervous system gradient, with intervention matched to what the system can support at each stage. This is a working hypothesis, open to testing.
+                  The five stages with named internal logic and stage-appropriate interruption — making domination recognizable as a process rather than a type. The unified pathway connected to the nervous system gradient, with intervention matched to what the system can support at each stage. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -355,7 +355,7 @@ export default function F7DominationRegulatesPage() {
               Access to external power is itself a restoration substitute. It provides the CLS with enough data (through RE) and enough environmental control to function without the ESS's signals. It produces the physiological settling that safety would provide — through control rather than through connection. The cortisol drops when the environment complies. The amygdala quiets when the threats are managed. The regulation is real. The source is not.
             </p>
             <p style={proseStyle}>
-              This is F7's central structural mechanism. The configuration that produces the most control — sharp RE, absent ER, absent SEA — is the configuration most disconnected from the body's data. The hierarchy (<Link href="/framework/f5-worth-hierarchies" style={linkStyle}>F5</Link>) rewards this configuration because it produces results. The perceptual system (<Link href="/framework/f6-bias-regulates" style={linkStyle}>F6</Link>) confirms it because it reads as competence. The rule systems (<Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>) normalise it because "strong leadership" and "tough decisions" are dominance rules the CLS absorbs as truth.
+              This is F7's central structural mechanism. The configuration that produces the most control — sharp RE, absent ER, absent SEA — is the configuration most disconnected from the body's data. The hierarchy (<Link href="/framework/f5-worth-hierarchies" style={linkStyle}>F5</Link>) rewards this configuration because it produces results. The perceptual system (<Link href="/framework/f6-bias-regulates" style={linkStyle}>F6</Link>) confirms it because it reads as competence. The rule systems (<Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>) normalize it because "strong leadership" and "tough decisions" are dominance rules the CLS absorbs as truth.
             </p>
 
             {/* Section diagram placeholder */}
@@ -365,7 +365,7 @@ export default function F7DominationRegulatesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Keltner, Gruenfeld & Anderson (2003) — approach/inhibition theory of power: power increases approach behaviour and decreases sensitivity to others' states. Koenigs et al. (2007) — vmPFC suppression in utilitarian decision-making. Galinsky et al. (2006) — power reduces perspective-taking and increases egocentric anchoring.
+                  Keltner, Gruenfeld & Anderson (2003) — approach/inhibition theory of power: power increases approach behavior and decreases sensitivity to others' states. Koenigs et al. (2007) — vmPFC suppression in utilitarian decision-making. Galinsky et al. (2006) — power reduces perspective-taking and increases egocentric anchoring.
                 </p>
               </ExpandableSection>
 
@@ -489,13 +489,13 @@ export default function F7DominationRegulatesPage() {
               Domination structures do not only use power. They reproduce the substrate state that makes power the only regulation available — and that makes the structure invisible from the inside.
             </p>
             <p style={proseStyle}>
-              When an institution is governed by the configuration that produces domination (sharp RE, absent ER, absent SEA), the institution selects for that configuration. It rewards decisive action (RE-driven), penalises emotional expression (ER-threatening), and treats interoceptive signals as weakness (SEA-irrelevant). Over time, the institution's selection pressures produce a leadership layer that carries the configuration the institution rewards.
+              When an institution is governed by the configuration that produces domination (sharp RE, absent ER, absent SEA), the institution selects for that configuration. It rewards decisive action (RE-driven), penalizes emotional expression (ER-threatening), and treats interoceptive signals as weakness (SEA-irrelevant). Over time, the institution's selection pressures produce a leadership layer that carries the configuration the institution rewards.
             </p>
             <p style={proseStyle}>
               The institution then operates on the population it governs the way a developmental environment operates on a child (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>). Condition 3 at institutional scale: emotional expression is blocked. The interoceptive channel is suppressed across the population. The people within the institution develop absent interoceptive access — and the rules the institution produces feel like reality (<Link href="/framework/f4-rules-regulate#three-coherence-forms" style={linkStyle}>F4</Link>).
             </p>
             <p style={proseStyle}>
-              The vmPFC — the neural substrate that carries care, guilt, and empathic constraint — is suppressed at organisational scale. The institution processes others' distress as data. The decision-making produces outcomes that are simultaneously rational within the data set and blind to the felt dimension. This connects to <Link href="/framework/f4-rules-regulate#re-only-institutions" style={linkStyle}>F4's RE-only institutions</Link> at their most extreme expression — the institution not only running on cognitive data but actively selecting for and reproducing the configuration that ensures cognitive data is all it has.
+              The vmPFC — the neural substrate that carries care, guilt, and empathic constraint — is suppressed at organizational scale. The institution processes others' distress as data. The decision-making produces outcomes that are simultaneously rational within the data set and blind to the felt dimension. This connects to <Link href="/framework/f4-rules-regulate#re-only-institutions" style={linkStyle}>F4's RE-only institutions</Link> at their most extreme expression — the institution not only running on cognitive data but actively selecting for and reproducing the configuration that ensures cognitive data is all it has.
             </p>
             <p style={proseStyle}>
               The loop runs in whichever direction the institution is currently running. The institution that suppresses the substrate produces the conditions that make further suppression invisible. The institution that rebuilds the substrate produces the conditions that make further rebuilding possible. A single intervention that shifts the institutional conditions operates on every nervous system in the system simultaneously.
@@ -594,7 +594,7 @@ export default function F7DominationRegulatesPage() {
                 definition: "The same learning mechanism, the same nervous system, the same regulation thread — further along the gradient, at maximum cost. The pathway follows reinforcement, not personality.",
               },
               {
-                term: "The transition from defence to strategy",
+                term: "The transition from defense to strategy",
                 definition: "Repair decreasing, control increasing, tactics replacing vulnerability. The shift from state-based reaction to CLS-recruited management of others.",
               },
               {
@@ -706,7 +706,7 @@ export default function F7DominationRegulatesPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f7-domination-regulates#article",
-            headline: "Domination Regulates: How Defence Becomes Strategy Becomes Domination",
+            headline: "Domination Regulates: How Defense Becomes Strategy Becomes Domination",
             description:
               "How reinforcement builds the escalation pathway, the power-interoception inverse, three-capacity divergence, and why the mechanism that would stop the escalation is structurally absent. Framework F7 of the TEG-Blue 12-framework system.",
             author: {
@@ -780,7 +780,7 @@ export default function F7DominationRegulatesPage() {
               {
                 question: "How is domination built through reinforcement?",
                 answer:
-                  "When control reliably reduces nervous system activation — when cortisol drops after others comply — the nervous system adopts control as its primary regulation strategy. If the strategy is socially rewarded and accountability is absent, it escalates. Defence hardens into strategy, strategy into entitlement, entitlement into domination. The pathway follows reinforcement, not personality.",
+                  "When control reliably reduces nervous system activation — when cortisol drops after others comply — the nervous system adopts control as its primary regulation strategy. If the strategy is socially rewarded and accountability is absent, it escalates. Defense hardens into strategy, strategy into entitlement, entitlement into domination. The pathway follows reinforcement, not personality.",
               },
               {
                 question: "What is the power-interoception inverse?",

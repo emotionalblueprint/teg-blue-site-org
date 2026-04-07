@@ -28,9 +28,9 @@ const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F8 makes about how awareness rebuilds through safety." },
   { label: "The Regulation Thread Reversed", href: "#thread-reversed", description: "The same thread traces escalation and repair. The direction depends on conditions." },
   { label: "Two Routes to the Same Condition", href: "#two-routes", description: "Chronic suppression (unblocking) vs developmental absence (building). Both require safety. The second requires more." },
-  { label: "Why the System Defends Against Repair", href: "#repair-defence", description: "Five mechanisms — not resistance, but the nervous system accurately assessing costs." },
+  { label: "Why the System Defends Against Repair", href: "#repair-defense", description: "Five mechanisms — not resistance, but the nervous system accurately assessing costs." },
   { label: "Safety Before Capacity", href: "#safety-before-capacity", description: "Felt safety, not understood safety. Five conditions for the environment repair requires." },
-  { label: "What Replaces Repair in Each State", href: "#repair-substitutes", description: "Self-blame, defence, performance, image management — each invisible from inside." },
+  { label: "What Replaces Repair in Each State", href: "#repair-substitutes", description: "Self-blame, defense, performance, image management — each invisible from inside." },
   { label: "SEA as the Entry Point", href: "#sea-entry-point", description: "The multiplicative system: SEA's return transforms what the other capacities produce." },
   { label: "Five Oscillating Phases", href: "#five-phases", description: "Unawareness → Recognition → Oscillation → Active Development → Integration." },
   { label: "Why Experience Changes the System", href: "#experience-not-insight", description: "Two systems, two substrates, different speeds. The CLS updates through information. The ESS through experience." },
@@ -213,7 +213,7 @@ export default function F8RepairingAwarenessPage() {
               The regulation thread (<Link href="/framework/f1-emotional-gradient#regulation-thread" style={linkStyle}>F1</Link>, completed in <Link href="/framework/f7-domination-regulates#complete-arc" style={linkStyle}>F7</Link>) traces how the nervous system substitutes — at escalating scales and costs — when biological restoration is never learned. The thread runs in both directions. Every substitute was built because the original was missing. When the original becomes available, the need for the substitute diminishes — not through argument or correction, but through the conditions that built the substitute changing underneath it.
             </p>
             <p style={proseStyle}>
-              What "the original" means, biologically: the restoration sequence runs to its endpoint. Stress hormones metabolise. Muscles release. The HPA axis stands down. The nervous system returns toward physiological baseline. The entire escalation arc — from individual false coherence through institutional domination — traces what happens when this biological completion is structurally unavailable.
+              What "the original" means, biologically: the restoration sequence runs to its endpoint. Stress hormones metabolize. Muscles release. The HPA axis stands down. The nervous system returns toward physiological baseline. The entire escalation arc — from individual false coherence through institutional domination — traces what happens when this biological completion is structurally unavailable.
             </p>
             <p style={proseStyle}>
               The repair arc does not undo the escalation arc. It does not argue against the mechanisms <Link href="/framework/f4-rules-regulate" style={linkStyle}>F4</Link>–<Link href="/framework/f7-domination-regulates" style={linkStyle}>F7</Link> describe. It maps what happens when the conditions underneath those mechanisms change: when the interoceptive substrate begins to rebuild, when the bridge between the ESS and CLS begins to carry signal, when the restoration sequence becomes available — and the substitutes begin to loosen because the system no longer needs them in the same way. The reversal is not symmetrical. The substitutes developed over years or decades. The nervous system tests new conditions cautiously, retreats to the familiar, tests again.
@@ -282,19 +282,19 @@ export default function F8RepairingAwarenessPage() {
 
           {/* Concept 2: Why the System Defends */}
           <section
-            id="repair-defence"
-            aria-labelledby="heading-repair-defence"
+            id="repair-defense"
+            aria-labelledby="heading-repair-defense"
             style={{ marginBottom: 48 }}
           >
-            <h2 id="heading-repair-defence" style={sectionHeadingStyle(accent)}>
+            <h2 id="heading-repair-defense" style={sectionHeadingStyle(accent)}>
               Why the System That Needs Repair Defends Against Repair
             </h2>
 
             <p style={proseStyle}>
-              The central difficulty is structural, not motivational. The awareness capacities that need developing are offline — and the systems that replaced them actively defend against the capacities coming online. Five mechanisms maintain the defence:
+              The central difficulty is structural, not motivational. The awareness capacities that need developing are offline — and the systems that replaced them actively defend against the capacities coming online. Five mechanisms maintain the defense:
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>False coherence treats the current configuration as truth.</strong> "This is who I am." The narrative stabilises the chronic state. Questioning it threatens the only stability the system has.
+              <strong style={{ color: TEXT.primary }}>False coherence treats the current configuration as truth.</strong> "This is who I am." The narrative stabilizes the chronic state. Questioning it threatens the only stability the system has.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>The cognitive substitute has been rewarded.</strong> If the person has been successful and functional — and many people running Path B are — RE sharpened, the CLS built sophisticated models, the strategy has been producing results. Why would the nervous system abandon what has been reinforced?
@@ -309,23 +309,23 @@ export default function F8RepairingAwarenessPage() {
               <strong style={{ color: TEXT.primary }}>The bootstrap problem.</strong> Developing SEA requires enough safety to tolerate what SEA will reveal. Developing ER requires enough resilience to handle feeling without collapsing. The system needs what it doesn't have in order to develop what it doesn't have. The system cannot start from inside itself. It requires external conditions to initiate the process.
             </p>
             <p style={proseStyle}>
-              Each mechanism is the nervous system doing what it is designed to do: assessing conditions, predicting costs, and organising to minimise threat. The defence dissolves when the conditions change — when the nervous system accumulates enough evidence that the new territory is survivable.
+              Each mechanism is the nervous system doing what it is designed to do: assessing conditions, predicting costs, and organizing to minimize threat. The defense dissolves when the conditions change — when the nervous system accumulates enough evidence that the new territory is survivable.
             </p>
 
             {/* Section diagram placeholder */}
-            {/* Diagram type: static — five defence mechanisms */}
+            {/* Diagram type: static — five defense mechanisms */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Festinger (1957) — cognitive dissonance as regulatory threat to maintaining coherence. Bowlby (1980) — the attachment system's resistance to reorganisation even when existing patterns are costly. Porges (2011) — neuroception: safety-threat assessment below conscious awareness. Levine (1997) — the body's resistance to discharge as protective until conditions support completion.
+                  Festinger (1957) — cognitive dissonance as regulatory threat to maintaining coherence. Bowlby (1980) — the attachment system's resistance to reorganization even when existing patterns are costly. Porges (2011) — neuroception: safety-threat assessment below conscious awareness. Levine (1997) — the body's resistance to discharge as protective until conditions support completion.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The five-mechanism model traced through specific systems (false coherence, cognitive substitution, the interoceptive channel, relational structures, and the bootstrap problem) rather than as generalised resistance. The reframing from motivational language ("they're not ready") to structural language: the system is assessing conditions, and the assessment is accurate given the current configuration. This is a working hypothesis, open to testing.
+                  The five-mechanism model traced through specific systems (false coherence, cognitive substitution, the interoceptive channel, relational structures, and the bootstrap problem) rather than as generalized resistance. The reframing from motivational language ("they're not ready") to structural language: the system is assessing conditions, and the assessment is accurate given the current configuration. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -341,7 +341,7 @@ export default function F8RepairingAwarenessPage() {
             style={{ marginBottom: 48 }}
           >
             <h2 id="heading-safety-before-capacity" style={sectionHeadingStyle(accent)}>
-              Safety Before Capacity — The Organising Principle
+              Safety Before Capacity — The Organizing Principle
             </h2>
 
             <p style={proseStyle}>
@@ -399,7 +399,7 @@ export default function F8RepairingAwarenessPage() {
             </h2>
 
             <p style={proseStyle}>
-              Repair — holding accountability for one's impact on another person — requires three capacities working together: SEA to feel one's own role, ER to feel the other person's experience, and RE to read the situation accurately. Where SEA is absent, genuine repair is replaced by a substitute that follows the logic of the chronic state. The substitute feels like repair from inside — because SEA is the capacity that would recognise the difference.
+              Repair — holding accountability for one's impact on another person — requires three capacities working together: SEA to feel one's own role, ER to feel the other person's experience, and RE to read the situation accurately. Where SEA is absent, genuine repair is replaced by a substitute that follows the logic of the chronic state. The substitute feels like repair from inside — because SEA is the capacity that would recognize the difference.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -414,7 +414,7 @@ export default function F8RepairingAwarenessPage() {
                 <tbody>
                   <TableRow cells={["Safety & Openness (as survival)", "Self-blame. Accountability is indiscriminate — the person takes responsibility for everything, including what was done to them.", "The discrimination between 'this was mine' and 'this was not mine.' SEA would provide that discrimination."]} />
                   <TableRow cells={["Threat & Defence", "Defence. 'You caused harm' registers as 'you are threatening me.' The state filters all incoming signals through threat detection.", "The capacity to process the request as anything other than danger."]} />
-                  <TableRow cells={["Strategy & Management", "Performance. The right words arrive. The apology sounds correct. Behaviour does not change.", "The physiological shift that genuine repair requires: feeling the impact in the body."]} />
+                  <TableRow cells={["Strategy & Management", "Performance. The right words arrive. The apology sounds correct. Behavior does not change.", "The physiological shift that genuine repair requires: feeling the impact in the body."]} />
                   <TableRow cells={["Power & Dominance", "Image management. Remorse is performed for the audience that matters. The nervous system is not processing impact.", "ER is offline, SEA was never built. The image of repair is a regulatory tool."]} />
                 </tbody>
               </table>
@@ -517,7 +517,7 @@ export default function F8RepairingAwarenessPage() {
               <strong style={{ color: TEXT.primary }}>Phase 4: Active development.</strong> Experimenting with new capacity in real relationships. Authentic expression where there was performance. Feeling where there was numbness. This phase carries genuine risk: some relationships deepen, and some strain.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Phase 5: Integration.</strong> New capacity becomes available — not permanent, not perfect, but accessible. The old configuration becomes recognisable rather than invisible: "I'm doing the thing again." The return to physiological baseline works. Integration is not a destination. It is the capacity to move — and to recognise when movement has stalled.
+              <strong style={{ color: TEXT.primary }}>Phase 5: Integration.</strong> New capacity becomes available — not permanent, not perfect, but accessible. The old configuration becomes recognizable rather than invisible: "I'm doing the thing again." The return to physiological baseline works. Integration is not a destination. It is the capacity to move — and to recognize when movement has stalled.
             </p>
             <p style={proseStyle}>
               The phases are not linear stages passed through once. The system revisits earlier phases under new stress, new relational configurations, new challenges.
@@ -530,13 +530,13 @@ export default function F8RepairingAwarenessPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Prochaska & DiClemente (1983) — stages of change: oscillation between contemplation and action. Bowlby (1980) — attachment system's gradual reorganisation through repeated safe experience. Siegel (2012) — neural integration as ongoing process. Levine (1997) — pendulation: the body's natural oscillation between activation and settling.
+                  Prochaska & DiClemente (1983) — stages of change: oscillation between contemplation and action. Bowlby (1980) — attachment system's gradual reorganization through repeated safe experience. Siegel (2012) — neural integration as ongoing process. Levine (1997) — pendulation: the body's natural oscillation between activation and settling.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The five phases mapped through the interoceptive channel architecture — each defined by what the CLS is receiving from the ESS, not by behavioural presentation. The reframing of oscillation from treatment difficulty to biological mechanism: the nervous system's designed process for testing new conditions before committing to reorganisation. This is a working hypothesis, open to testing.
+                  The five phases mapped through the interoceptive channel architecture — each defined by what the CLS is receiving from the ESS, not by behavioral presentation. The reframing of oscillation from treatment difficulty to biological mechanism: the nervous system's designed process for testing new conditions before committing to reorganization. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -556,7 +556,7 @@ export default function F8RepairingAwarenessPage() {
               A person can read F1 through F7. Can identify their capacity configuration, name their chronic state, trace the regulation thread through their own history. And still do the thing. Still enter the chronic state under pressure. Still run the substitute.
             </p>
             <p style={proseStyle}>
-              The explanation is architectural. Insight is a CLS operation. The CLS produces understanding through language and reasoning. The configuration is an ESS condition — maintained by the interoceptive substrate and the physiological state the nervous system has organised around. The system that produces understanding and the system that organises behaviour operate through separate biological substrates. They process at different speeds. They update through different mechanisms. The CLS updates through information. The ESS updates through experience — through physiological conditions sustained long enough for the substrate to change.
+              The explanation is architectural. Insight is a CLS operation. The CLS produces understanding through language and reasoning. The configuration is an ESS condition — maintained by the interoceptive substrate and the physiological state the nervous system has organized around. The system that produces understanding and the system that organizes behavior operate through separate biological substrates. They process at different speeds. They update through different mechanisms. The CLS updates through information. The ESS updates through experience — through physiological conditions sustained long enough for the substrate to change.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Relational conditions, not cognitive conditions.</strong> The restoration sequence runs because the nervous system assesses conditions as safe enough — not because the person understands that it should. The assessment is pre-cognitive: ventral vagal tone, cortisol levels, autonomic settling. Established through sustained relational experience.
@@ -565,7 +565,7 @@ export default function F8RepairingAwarenessPage() {
               <strong style={{ color: TEXT.primary }}>Time at physiological scale.</strong> The CLS can update in a conversation. The interoceptive substrate changes over weeks and months of sustained different conditions. This timeline is biological, not motivational.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Experience of completion.</strong> The restoration sequence must actually run. The stress hormones must metabolise. The muscles must release. The experience of completion — not the understanding of completion — is what rebuilds the substrate. Each time the sequence runs to its endpoint, the substrate registers: the return is possible. Each completion makes the next one more likely. The loop runs in the restoration direction.
+              <strong style={{ color: TEXT.primary }}>Experience of completion.</strong> The restoration sequence must actually run. The stress hormones must metabolize. The muscles must release. The experience of completion — not the understanding of completion — is what rebuilds the substrate. Each time the sequence runs to its endpoint, the substrate registers: the return is possible. Each completion makes the next one more likely. The loop runs in the restoration direction.
             </p>
 
             {/* Section diagram placeholder */}
@@ -600,7 +600,7 @@ export default function F8RepairingAwarenessPage() {
                 definition: "Chronic suppression (pathway exists, blocked — unblocking through sustained safety) and developmental absence (pathway never built — building through co-regulation). Both produce the same operational condition. Different repair requirements.",
               },
               {
-                term: "Five mechanisms of repair defence",
+                term: "Five mechanisms of repair defense",
                 definition: "False coherence as truth, rewarded substitution, pain of SEA online, relational risk, bootstrap problem. Not resistance — the nervous system accurately assessing costs.",
               },
               {
@@ -609,7 +609,7 @@ export default function F8RepairingAwarenessPage() {
               },
               {
                 term: "Per-state repair substitutes",
-                definition: "Self-blame (Safety & Openness), defence (Threat & Defence), performance (Strategy & Management), image management (Power & Dominance). SEA's absence makes each invisible from inside.",
+                definition: "Self-blame (Safety & Openness), defense (Threat & Defence), performance (Strategy & Management), image management (Power & Dominance). SEA's absence makes each invisible from inside.",
               },
               {
                 term: "SEA as the developmental entry point",

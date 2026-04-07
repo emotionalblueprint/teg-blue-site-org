@@ -154,7 +154,7 @@ export default function F10GenerationalBridgesPage() {
               {
                 title: "Generational trauma",
                 commonUnderstanding: "A psychological inheritance — stories, memories, and pain passed down through families.",
-                definition: "The transmission of the regulatory consequence of unprocessed experience. The child does not inherit the event. The child inherits the configuration the adult built to survive it — the chronic state, the capacity profile, the nervous system organisation that becomes the child's developmental environment.",
+                definition: "The transmission of the regulatory consequence of unprocessed experience. The child does not inherit the event. The child inherits the configuration the adult built to survive it — the chronic state, the capacity profile, the nervous system organization that becomes the child's developmental environment.",
               },
               {
                 title: "Good enough parenting",
@@ -220,7 +220,7 @@ export default function F10GenerationalBridgesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Bowlby (1969/1988) — attachment patterns transmit through caregiver behaviour, not intention. Main & Hesse (1990) — the adult's unresolved attachment history predicts the child's attachment classification. Schore (2003) — right-brain-to-right-brain communication: the caregiver's autonomic state shapes the child's autonomic development. Porges (2011) — co-regulation through the social engagement system operates below conscious awareness.
+                  Bowlby (1969/1988) — attachment patterns transmit through caregiver behavior, not intention. Main & Hesse (1990) — the adult's unresolved attachment history predicts the child's attachment classification. Schore (2003) — right-brain-to-right-brain communication: the caregiver's autonomic state shapes the child's autonomic development. Porges (2011) — co-regulation through the social engagement system operates below conscious awareness.
                 </p>
               </ExpandableSection>
 
@@ -297,7 +297,7 @@ export default function F10GenerationalBridgesPage() {
               Unprocessed experience does not stay in the adult. It becomes the environment the next generation develops within. The child does not inherit the event. The child inherits the regulatory consequence of the event — the configuration the adult built to survive it.
             </p>
             <p style={proseStyle}>
-              Unprocessed grief produces an emotional climate of suppression — the adult's nervous system shifts when grief-related activation arises. The child's ESS learns: these signals are not safe to generate. Unprocessed rage produces volatility or rigid control — accumulated activation compounds with new activation, the response proportional to the total load. The child's nervous system reads: activation in this environment is unpredictable. Unprocessed shame produces performance and conditional belonging — the adult organises around managing the shame. The child reads: belonging requires performance.
+              Unprocessed grief produces an emotional climate of suppression — the adult's nervous system shifts when grief-related activation arises. The child's ESS learns: these signals are not safe to generate. Unprocessed rage produces volatility or rigid control — accumulated activation compounds with new activation, the response proportional to the total load. The child's nervous system reads: activation in this environment is unpredictable. Unprocessed shame produces performance and conditional belonging — the adult organizes around managing the shame. The child reads: belonging requires performance.
             </p>
             <p style={proseStyle}>
               In each case: the adult's unresolved activation produces a nervous system state. The state produces the relational environment. The child develops inside the environment. What transmits is the state — through the five pathways, continuously, below conscious awareness. The adult's intention — which operates through the CLS — does not override the transmission, which operates through the ESS.
@@ -310,7 +310,7 @@ export default function F10GenerationalBridgesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Main & Hesse (1990) — unresolved loss predicts disorganised attachment in children. Van der Kolk (2014) — the body carries unprocessed experience as physiological organisation. Herman (1992) — the impact of unprocessed experience on relational capacity and developmental conditions.
+                  Main & Hesse (1990) — unresolved loss predicts disorganized attachment in children. Van der Kolk (2014) — the body carries unprocessed experience as physiological organization. Herman (1992) — the impact of unprocessed experience on relational capacity and developmental conditions.
                 </p>
               </ExpandableSection>
 
@@ -397,7 +397,7 @@ export default function F10GenerationalBridgesPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Main & Hesse (1990) — earned security breaking the intergenerational chain. Siegel (2012) — intergenerational neural integration. Meaney (2001) — epigenetic evidence that caregiving behaviour changes stress-response gene expression in offspring.
+                  Main & Hesse (1990) — earned security breaking the intergenerational chain. Siegel (2012) — intergenerational neural integration. Meaney (2001) — epigenetic evidence that caregiving behavior changes stress-response gene expression in offspring.
                 </p>
               </ExpandableSection>
 
@@ -442,7 +442,7 @@ export default function F10GenerationalBridgesPage() {
                 </thead>
                 <tbody>
                   <TableRow cells={["Never entering defensive states", "Returning from defensive states — and the child witnessing the return"]} />
-                  <TableRow cells={["Never experiencing false coherence", "Recognising it — \"I'm doing the thing again\" — and the child witnessing that recognition"]} />
+                  <TableRow cells={["Never experiencing false coherence", "Recognizing it — \"I'm doing the thing again\" — and the child witnessing that recognition"]} />
                   <TableRow cells={["All three capacities perfectly online", "Enough capacity development that the child's nervous system reads a different signal"]} />
                   <TableRow cells={["Never making mistakes", "Repairing after mistakes — and the child learning that repair is possible"]} />
                   <TableRow cells={["A perfect emotional environment", "An environment where the nervous system can move, expression is received, and the child's configuration is not punished"]} />

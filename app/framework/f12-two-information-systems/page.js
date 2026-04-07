@@ -153,7 +153,7 @@ export default function F12TwoInformationSystemsPage() {
               },
               {
                 title: "Human progress",
-                commonUnderstanding: "The triumph of reason — civilisation as the achievement of overcoming our animal nature.",
+                commonUnderstanding: "The triumph of reason — civilization as the achievement of overcoming our animal nature.",
                 definition: "A species that built its systems around one information system and forgot the other one. The cognitive tools scaled. The conditions that rewarded treating cognition as the only legitimate system are still operating. The cost is measurable in every model.",
               },
             ]}
@@ -182,7 +182,7 @@ export default function F12TwoInformationSystemsPage() {
                   Insight cannot reverse the override — the cognitive system can understand the problem perfectly, and the understanding is itself a cognitive operation that does not reach the ESS
                 </li>
                 <li style={propositionItemStyle}>
-                  Every framework describes the same mechanism from a different angle — behaviour organised by nervous system state, in a species that has largely lost access to the system that produces the state
+                  Every framework describes the same mechanism from a different angle — behavior organized by nervous system state, in a species that has largely lost access to the system that produces the state
                 </li>
               </ul>
             </ExpandableSection>
@@ -205,16 +205,16 @@ export default function F12TwoInformationSystemsPage() {
               Two information systems run in parallel. They cannot be separated. They process the same events through different architectures, at different speeds, in different languages.
             </p>
             <p style={proseStyle}>
-              The first — the Emotional Somatic System (ESS) — is ancient. Its core circuitry is conserved across mammals. It detects cues below conscious awareness, matches them against stored patterns, and organises a physiological response in milliseconds. It speaks in sensation, emotion, impulse, and gut feeling. It learns through experience. It updates slowly and forgets slowly.
+              The first — the Emotional Somatic System (ESS) — is ancient. Its core circuitry is conserved across mammals. It detects cues below conscious awareness, matches them against stored patterns, and organizes a physiological response in milliseconds. It speaks in sensation, emotion, impulse, and gut feeling. It learns through experience. It updates slowly and forgets slowly.
             </p>
             <p style={proseStyle}>
               The second — the Cognitive-Logical System (CLS) — is recent. The neocortex and prefrontal cortex expanded dramatically in primates, with marked amplification in humans. It processes through language, abstraction, and deliberate reasoning. It speaks in words, concepts, and narratives. It learns through explanation. It updates quickly and revises quickly.
             </p>
             <p style={proseStyle}>
-              These two systems run in a fixed sequence: the ESS detects a cue (10–50ms), matches it against stored patterns (50–200ms), organises a physiological response (200–500ms), and the nervous system state shifts (within 500ms). Conscious awareness arrives after 500ms. The cognitive system engages — analysis, narrative, planning — in seconds to minutes. By the time cognition is available, the body has already responded. The state has already shifted. The cognitive system does not direct this process. It narrates a process already underway.
+              These two systems run in a fixed sequence: the ESS detects a cue (10–50ms), matches it against stored patterns (50–200ms), organizes a physiological response (200–500ms), and the nervous system state shifts (within 500ms). Conscious awareness arrives after 500ms. The cognitive system engages — analysis, narrative, planning — in seconds to minutes. By the time cognition is available, the body has already responded. The state has already shifted. The cognitive system does not direct this process. It narrates a process already underway.
             </p>
             <p style={proseStyle}>
-              In genuine threat, the body needs to act before the mind deliberates. The speed that prevents cognition from overriding patterns in everyday life is the same speed that saves lives in emergencies. The ESS determines what rational behaviour is available. State precedes capacity.
+              In genuine threat, the body needs to act before the mind deliberates. The speed that prevents cognition from overriding patterns in everyday life is the same speed that saves lives in emergencies. The ESS determines what rational behavior is available. State precedes capacity.
             </p>
 
             {/* Section diagram placeholder */}
@@ -289,7 +289,7 @@ export default function F12TwoInformationSystemsPage() {
             </h2>
 
             <p style={proseStyle}>
-              Roughly 10,000 years ago, human life reorganised around agriculture. The shift was not sudden — it happened at different times in different regions, over centuries. But the structural consequences were consistent.
+              Roughly 10,000 years ago, human life reorganized around agriculture. The shift was not sudden — it happened at different times in different regions, over centuries. But the structural consequences were consistent.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Dependency on fixed resources.</strong> When survival depends on land and what it produces, leaving is no longer a viable response to unsafe conditions. The nervous system's signal — "this is not safe, move away" — becomes a signal that, if followed, leads to death. The signal is accurate. Acting on it is no longer possible.
@@ -352,7 +352,7 @@ export default function F12TwoInformationSystemsPage() {
               <strong style={{ color: TEXT.primary }}>The vocabulary disappears.</strong> When a society stops treating ESS signals as information, it stops developing language for them. The precision the nervous system produces — distinct signals, each with a specific finding and a specific need — gets collapsed into a handful of words: happy, sad, angry, anxious. The signals still fire. The capacity to read them degrades.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>The body becomes background.</strong> In a culture that privileges cognition, the body becomes the thing that carries the brain around. Somatic signals — tension, fatigue, gut responses, activation patterns — become noise rather than data. Interoceptive Self-Awareness (SEA) has no cultural support. It is not developed because the culture does not recognise it as a capacity.
+              <strong style={{ color: TEXT.primary }}>The body becomes background.</strong> In a culture that privileges cognition, the body becomes the thing that carries the brain around. Somatic signals — tension, fatigue, gut responses, activation patterns — become noise rather than data. Interoceptive Self-Awareness (SEA) has no cultural support. It is not developed because the culture does not recognize it as a capacity.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>The override becomes identity.</strong> After enough generations, cognitive override does not feel like override. It feels like being a person. "I think, therefore I am" is not a philosophical observation — it is the cultural endpoint of a species that has been running on cognitive override for so long that it has forgotten there is another system.
@@ -427,7 +427,7 @@ export default function F12TwoInformationSystemsPage() {
               A person reads this. Understands the history. Sees how the override developed, why it was rewarded, how it transmitted. They now have a complete cognitive map of why they are disconnected from their ESS. And the insight changes nothing. The mechanism proves itself.
             </p>
             <p style={proseStyle}>
-              Three mechanisms explain why. <strong style={{ color: TEXT.primary }}>The timing problem:</strong> by the time insight is available (seconds), the ESS has already detected the cue (milliseconds), matched it, organised a response, and shifted the state. The insight arrives after the state has already shifted. <strong style={{ color: TEXT.primary }}>The domain mismatch:</strong> the CLS can analyse patterns and plan responses. It cannot interrupt a nervous system state in real time or change the underlying somatic response through explanation. Different domains, different mechanisms. <strong style={{ color: TEXT.primary }}>The appropriate limitation:</strong> the ESS needs to respond faster than cognition can process. The speed differential that prevents insight from changing patterns is the same speed differential that keeps the organism alive.
+              Three mechanisms explain why. <strong style={{ color: TEXT.primary }}>The timing problem:</strong> by the time insight is available (seconds), the ESS has already detected the cue (milliseconds), matched it, organized a response, and shifted the state. The insight arrives after the state has already shifted. <strong style={{ color: TEXT.primary }}>The domain mismatch:</strong> the CLS can analyse patterns and plan responses. It cannot interrupt a nervous system state in real time or change the underlying somatic response through explanation. Different domains, different mechanisms. <strong style={{ color: TEXT.primary }}>The appropriate limitation:</strong> the ESS needs to respond faster than cognition can process. The speed differential that prevents insight from changing patterns is the same speed differential that keeps the organism alive.
             </p>
             <p style={proseStyle}>
               Since the ESS learns through experience, not explanation, reversing the override requires providing what was missing — not as concept, but as condition: <strong style={{ color: TEXT.primary }}>sustained safety</strong> (the nervous system recalibrating through accumulated safe experience), <strong style={{ color: TEXT.primary }}>somatic awareness</strong> (rebuilding interoceptive capacity — being in the body, not talking about it), <strong style={{ color: TEXT.primary }}>co-regulation</strong> (another regulated nervous system providing the template), <strong style={{ color: TEXT.primary }}>corrective experience</strong> (the old pattern activating but a different outcome occurring), and <strong style={{ color: TEXT.primary }}>time and consistency</strong> (the ESS updates slowly through repeated experience, not single events).
@@ -466,7 +466,7 @@ export default function F12TwoInformationSystemsPage() {
             </h2>
 
             <p style={proseStyle}>
-              Every framework in TEG-Blue describes the same mechanism from a different angle: behaviour organised by nervous system state, in a species that has largely lost access to the system that produces the state.
+              Every framework in TEG-Blue describes the same mechanism from a different angle: behavior organized by nervous system state, in a species that has largely lost access to the system that produces the state.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -554,7 +554,7 @@ export default function F12TwoInformationSystemsPage() {
               },
               {
                 term: "One mechanism, twelve frameworks",
-                definition: "Every framework describes behaviour organised by nervous system state, in a species that has largely lost access to the system that produces the state. The scale changes. The mechanism does not.",
+                definition: "Every framework describes behavior organized by nervous system state, in a species that has largely lost access to the system that produces the state. The scale changes. The mechanism does not.",
               },
             ]}
           />
@@ -707,7 +707,7 @@ export default function F12TwoInformationSystemsPage() {
               {
                 question: "What connects all twelve frameworks?",
                 answer:
-                  "Every framework describes behaviour organised by nervous system state, in a species that has largely lost access to the system that produces the state. Every substitution in F3-F7 happens because the CLS cannot reach the ESS. Every repair in F8-F10 works because it addresses the ESS through experience. Every paradox in F11 exists because two systems produce different outputs simultaneously. F12 is the reason.",
+                  "Every framework describes behavior organized by nervous system state, in a species that has largely lost access to the system that produces the state. Every substitution in F3-F7 happens because the CLS cannot reach the ESS. Every repair in F8-F10 works because it addresses the ESS through experience. Every paradox in F11 exists because two systems produce different outputs simultaneously. F12 is the reason.",
               },
             ])
           ),

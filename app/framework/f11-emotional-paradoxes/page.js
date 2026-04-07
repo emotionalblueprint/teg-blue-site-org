@@ -34,7 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "The Repair Arc's Own Paradoxes", href: "#repair-paradoxes", description: "Feeling worse while getting better. Knowing and not yet being. Signs of depth, not failure." },
   { label: "Integration as Holding, Not Resolving", href: "#integration", description: "False coherence: complexity eliminated. Somatic-cognitive alignment: complexity held." },
   { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
-  { label: "Bridge to F12", href: "#bridge", description: "Two information systems — the one that understands is not the one that organises behaviour." },
+  { label: "Bridge to F12", href: "#bridge", description: "Two information systems — the one that understands is not the one that organizes behavior." },
   { label: "Connections Map", href: "#connections", description: "How F11 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
 ];
@@ -142,9 +142,9 @@ export default function F11ParadoxPage() {
           <CommonUnderstanding
             terms={[
               {
-                title: "Contradictory behaviour",
+                title: "Contradictory behavior",
                 commonUnderstanding: "Inconsistency — hypocrisy, confusion, or a failure to commit to one position.",
-                definition: "Multi-rationality. The nervous system pursuing multiple valid regulatory goals simultaneously — connection AND protection, authenticity AND belonging, understanding AND grief. The behaviour oscillates because both needs are driving the system. Neither is the 'real' need. Neither is pathological.",
+                definition: "Multi-rationality. The nervous system pursuing multiple valid regulatory goals simultaneously — connection AND protection, authenticity AND belonging, understanding AND grief. The behavior oscillates because both needs are driving the system. Neither is the 'real' need. Neither is pathological.",
               },
               {
                 title: "Integration",
@@ -164,7 +164,7 @@ export default function F11ParadoxPage() {
             <ExpandableSection title="Core Propositions" type="framework">
               <ul style={{ paddingLeft: 20, margin: "8px 0 0" }}>
                 <li style={propositionItemStyle}>
-                  Paradoxical behaviour is multi-rational — five competing regulatory needs (connection, protection, authenticity, belonging, coherence) generate contradictions that are rational when all needs are visible
+                  Paradoxical behavior is multi-rational — five competing regulatory needs (connection, protection, authenticity, belonging, coherence) generate contradictions that are rational when all needs are visible
                 </li>
                 <li style={propositionItemStyle}>
                   Each framework F1–F10 generates its own characteristic paradox — predictable from the mechanism, not random
@@ -202,10 +202,10 @@ export default function F11ParadoxPage() {
             </h2>
 
             <p style={proseStyle}>
-              Paradoxical behaviour appears irrational only when assessed against a single set of values. When multiple regulatory needs are recognised as simultaneously valid, behaviour becomes multi-rational — it serves multiple masters because the system pursuing the regulation has multiple legitimate goals operating at the same time.
+              Paradoxical behavior appears irrational only when assessed against a single set of values. When multiple regulatory needs are recognized as simultaneously valid, behavior becomes multi-rational — it serves multiple masters because the system pursuing the regulation has multiple legitimate goals operating at the same time.
             </p>
             <p style={proseStyle}>
-              A person who wants connection but pushes it away is not irrational. Two regulatory needs are both real: the need for connection — the social engagement system designed for belonging and co-regulation — and the need for protection — the defensive system responding to perceived threat. The behaviour oscillates because both needs are driving the nervous system.
+              A person who wants connection but pushes it away is not irrational. Two regulatory needs are both real: the need for connection — the social engagement system designed for belonging and co-regulation — and the need for protection — the defensive system responding to perceived threat. The behavior oscillates because both needs are driving the nervous system.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -228,7 +228,7 @@ export default function F11ParadoxPage() {
             </div>
 
             <p style={proseStyle}>
-              When any two of these needs conflict, the nervous system serves both — and the result looks contradictory from outside while being perfectly rational from inside. The assessment shift: from "why are you being inconsistent?" to "which competing needs is this behaviour trying to serve?"
+              When any two of these needs conflict, the nervous system serves both — and the result looks contradictory from outside while being perfectly rational from inside. The assessment shift: from "why are you being inconsistent?" to "which competing needs is this behavior trying to serve?"
             </p>
 
             {/* Section diagram placeholder */}
@@ -273,7 +273,7 @@ export default function F11ParadoxPage() {
                   <TableRow cells={["F1", "ESS and CLS in different physiological states", "Intending one response while the body produces another"]} />
                   <TableRow cells={["F2", "Three capacities in different states", "Reading everyone with precision while having no access to one's own internal state"]} />
                   <TableRow cells={["F3", "CLS maintains coherence regardless of data", "Knowing and not-knowing simultaneously"]} />
-                  <TableRow cells={["F4", "Internalised rules conflict with authentic needs", "Defending norms that restrict the person defending them"]} />
+                  <TableRow cells={["F4", "Internalized rules conflict with authentic needs", "Defending norms that restrict the person defending them"]} />
                   <TableRow cells={["F5", "Worth-seeking overrides stated values", "Pursuing status that contradicts professed values"]} />
                   <TableRow cells={["F6", "Perception serves protection, not accuracy", "Certainty increasing as accuracy decreases"]} />
                   <TableRow cells={["F7", "Protection escalates beyond the original need", "Controlling what was meant to be cared for"]} />
@@ -414,10 +414,10 @@ export default function F11ParadoxPage() {
               <strong style={{ color: TEXT.primary }}>Temporal flexibility.</strong> The capacity to hold that something can be true now and different later — that the present tension does not require permanent resolution. Requires RE accurate — able to read context and change.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Part recognition.</strong> The capacity to recognise that different regulatory needs are generating different pulls — without requiring one to defeat the other. Requires all three capacities working together.
+              <strong style={{ color: TEXT.primary }}>Part recognition.</strong> The capacity to recognize that different regulatory needs are generating different pulls — without requiring one to defeat the other. Requires all three capacities working together.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Grief capacity.</strong> The capacity to mourn what cannot be reconciled — some paradoxes are permanent losses. The understanding that will never fully cancel the grief. Requires ER and SEA — the person must feel the grief and recognise it as their own.
+              <strong style={{ color: TEXT.primary }}>Grief capacity.</strong> The capacity to mourn what cannot be reconciled — some paradoxes are permanent losses. The understanding that will never fully cancel the grief. Requires ER and SEA — the person must feel the grief and recognize it as their own.
             </p>
             <p style={proseStyle}>
               Each paradox held without collapse builds the capacity to hold the next. The nervous system accumulates evidence that the complexity is survivable.
@@ -478,7 +478,7 @@ export default function F11ParadoxPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Prochaska & DiClemente (1983) — the knowing-being gap as a predictable phase. Boss (2006) — ambiguous loss: grief for what was never available. Bowlby (1980) — the mourning process in attachment reorganisation.
+                  Prochaska & DiClemente (1983) — the knowing-being gap as a predictable phase. Boss (2006) — ambiguous loss: grief for what was never available. Bowlby (1980) — the mourning process in attachment reorganization.
                 </p>
               </ExpandableSection>
 
@@ -510,7 +510,7 @@ export default function F11ParadoxPage() {
               Integration does not mean resolving every contradiction, arriving at a single coherent narrative, or eliminating the tension. Integration means developing enough holding capacity that both truths can remain present, the nervous system being flexible enough to move between the needs, the three capacities being online enough to receive the full complexity, and grief capacity sufficient to mourn what cannot be reconciled.
             </p>
             <p style={proseStyle}>
-              The diagnostic reversal: the smooth narrative should prompt examination, not admiration. Is the story smooth because both truths are genuinely held — or because one truth has been eliminated? Does the narrative include grief, anger, and contradiction — or has it been cleaned of them? The messy narrative may be someone in Phase 3 of <Link href="/framework/f8-repairing-awareness#five-phases" style={linkStyle}>F8's repair process</Link> — the interoceptive channel carrying signal, the CLS receiving data it has never had, the narrative not yet able to organise it. The mess is the channel opening.
+              The diagnostic reversal: the smooth narrative should prompt examination, not admiration. Is the story smooth because both truths are genuinely held — or because one truth has been eliminated? Does the narrative include grief, anger, and contradiction — or has it been cleaned of them? The messy narrative may be someone in Phase 3 of <Link href="/framework/f8-repairing-awareness#five-phases" style={linkStyle}>F8's repair process</Link> — the interoceptive channel carrying signal, the CLS receiving data it has never had, the narrative not yet able to organize it. The mess is the channel opening.
             </p>
             <p style={proseStyle}>
               The diagnostic question is not "is the narrative coherent?" but "what is the narrative coherent from?" Coherence from the CLS alone is false coherence. Coherence from the full data is somatic-cognitive alignment. The first is cleaner. The second is truer.
@@ -523,7 +523,7 @@ export default function F11ParadoxPage() {
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  Jung (1960) — individuation: the integration of opposites as the central developmental task. Linehan (1993) — dialectical behaviour therapy: holding opposing truths as simultaneously valid. Main & Hesse (1990) — coherence of mind in the Adult Attachment Interview. Dismissing narratives score high on surface coherence and low on integration of affect and memory.
+                  Jung (1960) — individuation: the integration of opposites as the central developmental task. Linehan (1993) — dialectical behavior therapy: holding opposing truths as simultaneously valid. Main & Hesse (1990) — coherence of mind in the Adult Attachment Interview. Dismissing narratives score high on surface coherence and low on integration of affect and memory.
                 </p>
               </ExpandableSection>
 
@@ -541,7 +541,7 @@ export default function F11ParadoxPage() {
             items={[
               {
                 term: "Multi-rationality",
-                definition: "Five competing regulatory needs (connection, protection, authenticity, belonging, coherence) generate paradoxes. The behaviour is not irrational — it serves multiple valid goals simultaneously.",
+                definition: "Five competing regulatory needs (connection, protection, authenticity, belonging, coherence) generate paradoxes. The behavior is not irrational — it serves multiple valid goals simultaneously.",
               },
               {
                 term: "Per-framework paradoxes",
@@ -712,7 +712,7 @@ export default function F11ParadoxPage() {
               {
                 question: "Why are human contradictions predictable?",
                 answer:
-                  "Five competing regulatory needs — connection, protection, authenticity, belonging, coherence — generate paradoxes that are rational when all needs are visible. A person who wants connection but pushes it away is not irrational. Two regulatory needs are driving the nervous system simultaneously. The behaviour oscillates because both needs are real.",
+                  "Five competing regulatory needs — connection, protection, authenticity, belonging, coherence — generate paradoxes that are rational when all needs are visible. A person who wants connection but pushes it away is not irrational. Two regulatory needs are driving the nervous system simultaneously. The behavior oscillates because both needs are real.",
               },
               {
                 question: "What is holding capacity?",

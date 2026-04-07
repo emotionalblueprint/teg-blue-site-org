@@ -30,7 +30,7 @@ const SIDEBAR_SECTIONS = [
   { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what the environment requires and what a nervous system can sustainably provide." },
   { label: "Masking at Structural Scale", href: "#structural-masking", description: "Each masked expression is an incomplete restoration sequence. Baseline rises." },
   { label: "Threshold Dynamics", href: "#threshold-dynamics", description: "Meltdown, shutdown, mixed — regulatory collapse when accumulated activation exceeds the remaining margin." },
-  { label: "Neurodivergent Burnout", href: "#burnout", description: "Not exhaustion — baseline reorganisation. Different from general burnout." },
+  { label: "Neurodivergent Burnout", href: "#burnout", description: "Not exhaustion — baseline reorganization. Different from general burnout." },
   { label: "How Capacities Present Differently", href: "#capacity-presentation", description: "RE, ER, SEA present but differently channelled, expressed, and reported." },
   { label: "How Masking Distorts Capacities", href: "#capacity-distortion", description: "RE misdirected, ER suppressed, SEA confused — distortion, not absence." },
   { label: "What Repair Requires", href: "#repair-requirements", description: "Unmasking is not restoration. Seven design principles for environments built for variation." },
@@ -178,7 +178,7 @@ export default function F9VariationPage() {
                   System Mismatch is the gap between what an environment requires and what a nervous system can sustainably provide — structural, testable, and invisible to people whose configuration matches the design
                 </li>
                 <li style={propositionItemStyle}>
-                  Each masked expression is an incomplete restoration sequence — the body mobilised a response, the response was suppressed, and the activation remains unresolved, producing baseline elevation
+                  Each masked expression is an incomplete restoration sequence — the body mobilized a response, the response was suppressed, and the activation remains unresolved, producing baseline elevation
                 </li>
                 <li style={propositionItemStyle}>
                   The internal thread (F1–F7) and the structural thread (environmental mismatch) operate simultaneously — the structural thread amplifies the internal thread through chronic sensory activation, masking as sustained override, and social evaluation as chronic threat
@@ -303,7 +303,7 @@ export default function F9VariationPage() {
               Beyond what F8 describes, structural masking requires hiding the rhythm of the nervous system itself: suppressing stims (the body's own regulation strategy — movement that discharges activation), forcing eye contact (overriding authentic processing to perform neurotypical signalling), moderating expression (performing expected display when the authentic intensity differs), performing social fluency (running explicit cognitive analysis to replicate what implicit processing produces in other configurations), maintaining pace (forcing the system to process at a speed it was not built for).
             </p>
             <p style={proseStyle}>
-              Each of these performances has a specific biological consequence. Every suppressed stim is an activation sequence that was started and not allowed to complete. Every forced expression is a physiological response overridden by cognitive control. These are the restoration sequence (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>) interrupted at the mobilisation stage — the body mobilised a response, the response was suppressed, and the activation remains unresolved. Cortisol stays elevated. Muscle tension persists. The debris accumulates. The person starts each new day from a progressively more activated baseline.
+              Each of these performances has a specific biological consequence. Every suppressed stim is an activation sequence that was started and not allowed to complete. Every forced expression is a physiological response overridden by cognitive control. These are the restoration sequence (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>) interrupted at the mobilization stage — the body mobilized a response, the response was suppressed, and the activation remains unresolved. Cortisol stays elevated. Muscle tension persists. The debris accumulates. The person starts each new day from a progressively more activated baseline.
             </p>
 
             {/* Section diagram placeholder */}
@@ -319,7 +319,7 @@ export default function F9VariationPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Masking's biological cost traced through the specific ESC mechanism: each masked expression is an incomplete restoration sequence. The debris accumulation (M3) applied to structural masking — the specific accumulation of unresolved activation from interrupted mobilisation responses. This is a working hypothesis, open to testing.
+                  Masking's biological cost traced through the specific ESC mechanism: each masked expression is an incomplete restoration sequence. The debris accumulation (M3) applied to structural masking — the specific accumulation of unresolved activation from interrupted mobilization responses. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -395,29 +395,29 @@ export default function F9VariationPage() {
             </h2>
 
             <p style={proseStyle}>
-              Neurodivergent burnout is distinct from general burnout. It is not exhaustion that rest addresses. It is a shift in the nervous system's baseline organisation — the system has reorganised around a higher resting activation level and a lower threshold, and the reorganisation does not reverse with rest alone.
+              Neurodivergent burnout is distinct from general burnout. It is not exhaustion that rest addresses. It is a shift in the nervous system's baseline organization — the system has reorganized around a higher resting activation level and a lower threshold, and the reorganization does not reverse with rest alone.
             </p>
             <p style={proseStyle}>
-              The distinction is biological. General burnout depletes resources. Rest replenishes them. The system returns to its previous baseline. Neurodivergent burnout involves a shift in the baseline itself. The sustained masking and chronic mismatch produced enough unresolved activation, over enough time, that the nervous system's resting state has recalibrated upward (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>: Baseline Elevation). The floor has risen. The threshold has lowered. The window has narrowed — not temporarily, but as the new organisation.
+              The distinction is biological. General burnout depletes resources. Rest replenishes them. The system returns to its previous baseline. Neurodivergent burnout involves a shift in the baseline itself. The sustained masking and chronic mismatch produced enough unresolved activation, over enough time, that the nervous system's resting state has recalibrated upward (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>: Baseline Elevation). The floor has risen. The threshold has lowered. The window has narrowed — not temporarily, but as the new organization.
             </p>
             <p style={proseStyle}>
-              What this looks like: <strong style={{ color: TEXT.primary }}>Skill regression</strong> — tasks that were previously manageable become impossible, because regulatory margin has been consumed. <strong style={{ color: TEXT.primary }}>Increased sensitivity</strong> — lower threshold for sensory, emotional, and social input. <strong style={{ color: TEXT.primary }}>Extended recovery</strong> — weeks to months, not days, because the shift is in the baseline organisation, requiring sustained different conditions. <strong style={{ color: TEXT.primary }}>Masking collapse</strong> — the mask drops not by choice but by depletion, the person's authentic configuration becoming visible, often for the first time in years.
+              What this looks like: <strong style={{ color: TEXT.primary }}>Skill regression</strong> — tasks that were previously manageable become impossible, because regulatory margin has been consumed. <strong style={{ color: TEXT.primary }}>Increased sensitivity</strong> — lower threshold for sensory, emotional, and social input. <strong style={{ color: TEXT.primary }}>Extended recovery</strong> — weeks to months, not days, because the shift is in the baseline organization, requiring sustained different conditions. <strong style={{ color: TEXT.primary }}>Masking collapse</strong> — the mask drops not by choice but by depletion, the person's authentic configuration becoming visible, often for the first time in years.
             </p>
 
             {/* Section diagram placeholder */}
-            {/* Diagram type: static — general burnout (depletion) vs neurodivergent burnout (reorganisation) */}
+            {/* Diagram type: static — general burnout (depletion) vs neurodivergent burnout (reorganization) */}
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="framework">
                 <p style={expandedProseStyle}>
-                  McEwen (1998) — allostatic load leading to system reorganisation. Price (2022) — neurodivergent burnout as distinct from occupational burnout. Maté (2003) — physiological consequences of sustained self-suppression.
+                  McEwen (1998) — allostatic load leading to system reorganization. Price (2022) — neurodivergent burnout as distinct from occupational burnout. Maté (2003) — physiological consequences of sustained self-suppression.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Neurodivergent burnout traced through M3's Baseline Elevation — the resting activation level rising through accumulated unresolved activation from masking-interrupted restoration sequences. The structural distinction from general burnout: resource depletion (rest helps) vs baseline reorganisation (sustained different conditions required). This is a working hypothesis, open to testing.
+                  Neurodivergent burnout traced through M3's Baseline Elevation — the resting activation level rising through accumulated unresolved activation from masking-interrupted restoration sequences. The structural distinction from general burnout: resource depletion (rest helps) vs baseline reorganization (sustained different conditions required). This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -454,7 +454,7 @@ export default function F9VariationPage() {
 
             <h3 style={conceptHeadingStyle}>How Masking Distorts the Capacities It Hides</h3>
             <p style={proseStyle}>
-              Chronic masking does not merely conceal capacities. It distorts them. <strong style={{ color: TEXT.primary }}>RE gets misdirected</strong> — redirected from understanding and connection toward monitoring social danger. The capacity is intact. Its function has shifted from connection to surveillance. <strong style={{ color: TEXT.primary }}>ER gets suppressed</strong> — when emotional intensity is punished, the nervous system blocks the expression pathway. Over time, the person may no longer recognise the resonance as present. <strong style={{ color: TEXT.primary }}>SEA gets confused</strong> — after years of performing a configuration, SEA cannot distinguish authentic internal state from the physiological residue of the performance itself.
+              Chronic masking does not merely conceal capacities. It distorts them. <strong style={{ color: TEXT.primary }}>RE gets misdirected</strong> — redirected from understanding and connection toward monitoring social danger. The capacity is intact. Its function has shifted from connection to surveillance. <strong style={{ color: TEXT.primary }}>ER gets suppressed</strong> — when emotional intensity is punished, the nervous system blocks the expression pathway. Over time, the person may no longer recognize the resonance as present. <strong style={{ color: TEXT.primary }}>SEA gets confused</strong> — after years of performing a configuration, SEA cannot distinguish authentic internal state from the physiological residue of the performance itself.
             </p>
             <p style={proseStyle}>
               The distortion compounds. Misdirected RE provides data about threat, reinforcing the assessment that the environment is unsafe. Suppressed ER means emotional responses are unavailable as information, impoverishing what SEA has to work with. Confused SEA makes the person more dependent on RE's social monitoring. Each distortion reinforces the others.
@@ -558,7 +558,7 @@ export default function F9VariationPage() {
               },
               {
                 term: "Masking as interrupted restoration",
-                definition: "Each masked expression is an incomplete restoration sequence. The body mobilised, the response was suppressed, the activation remains. Baseline rises.",
+                definition: "Each masked expression is an incomplete restoration sequence. The body mobilized, the response was suppressed, the activation remains. Baseline rises.",
               },
               {
                 term: "Two-thread model",
@@ -570,7 +570,7 @@ export default function F9VariationPage() {
               },
               {
                 term: "Neurodivergent burnout",
-                definition: "Baseline Elevation from accumulated masking — not exhaustion (rest helps) but reorganisation (sustained different conditions required).",
+                definition: "Baseline Elevation from accumulated masking — not exhaustion (rest helps) but reorganization (sustained different conditions required).",
               },
               {
                 term: "Capacities present differently",
@@ -618,7 +618,7 @@ export default function F9VariationPage() {
               {
                 id: "M3: Regulation Capacities",
                 href: "/model/m3-regulation-capacities",
-                description: "Each masked expression interrupts the restoration sequence at the mobilisation stage. Neurodivergent burnout is M3's Baseline Elevation from accumulated masking-interrupted restoration.",
+                description: "Each masked expression interrupts the restoration sequence at the mobilization stage. Neurodivergent burnout is M3's Baseline Elevation from accumulated masking-interrupted restoration.",
               },
               {
                 id: "F6: Bias Regulates",
@@ -743,7 +743,7 @@ export default function F9VariationPage() {
               {
                 question: "Why is neurodivergent burnout different from general burnout?",
                 answer:
-                  "General burnout depletes resources — rest replenishes them. Neurodivergent burnout involves a shift in the nervous system's baseline organisation — accumulated masking-interrupted restoration sequences raise the resting activation level. Recovery requires sustained different conditions, not just rest, because the shift is in the baseline itself.",
+                  "General burnout depletes resources — rest replenishes them. Neurodivergent burnout involves a shift in the nervous system's baseline organization — accumulated masking-interrupted restoration sequences raise the resting activation level. Recovery requires sustained different conditions, not just rest, because the shift is in the baseline itself.",
               },
               {
                 question: "Why is unmasking alone insufficient?",
