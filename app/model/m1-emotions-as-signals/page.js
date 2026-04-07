@@ -6,6 +6,8 @@ const M1SignalDiagram = dynamic(() => import("@/src/components/M1SignalDiagram")
 const M1SignalMap = dynamic(() => import("@/src/components/M1SignalMap"), { ssr: false });
 const M1DistortionPathway = dynamic(() => import("@/src/components/M1DistortionPathway"), { ssr: false });
 const M1DevelopmentalLoss = dynamic(() => import("@/src/components/M1DevelopmentalLoss"), { ssr: false });
+const M1SpeedComparison = dynamic(() => import("@/src/components/M1SpeedComparison"), { ssr: false });
+const M1RestorationPathways = dynamic(() => import("@/src/components/M1RestorationPathways"), { ssr: false });
 import {
   SiteHeader, SiteFooter, ModelHero, ModelPurpose, PageLayout,
   PartDivider, NavSection, ConnectionsMap, ExpandableSection,
@@ -98,8 +100,6 @@ export default function M1EmotionsAsSignalsPage() {
           />
         }
       >
-        <M1SignalDiagram />
-
         <article>
 
           {/* ─── INTRODUCTION ───────────────────────────── */}
@@ -186,6 +186,11 @@ export default function M1EmotionsAsSignalsPage() {
             <p style={proseStyle}>
               The second information system is cognition. Cognition supports reflection, interpretation, planning, and symbolic reasoning. However, cognition does not generate the original biological signal. It interprets, modulates, suppresses, or reorganizes it.
             </p>
+
+            <div style={{ margin: "24px 0" }}>
+              <M1SpeedComparison />
+            </div>
+
             <p style={proseStyle}>
               When cognition overrides emotional signaling, the biological signal remains active at the physiological level. The signal is still being generated, whether or not it is consciously acknowledged.
             </p>
@@ -241,6 +246,10 @@ export default function M1EmotionsAsSignalsPage() {
               </div>
             </div>
 
+            <div style={{ margin: "24px 0" }}>
+              <M1SignalDiagram />
+            </div>
+
             <p style={proseStyle}>
               This architecture is universal. Fear, joy, shame, compassion — each carries a different message, but each follows the same three-step sequence. The message varies. The sequence does not.
             </p>
@@ -269,8 +278,6 @@ export default function M1EmotionsAsSignalsPage() {
 
           <PartDivider label="PART 2" title="The Signal System" color={MODEL_COLOR} />
 
-          <M1SignalMap />
-
           {/* ─── C2: SOMATIC EMOTIONS ──────────────────── */}
           <section
             id="somatic-emotions"
@@ -293,6 +300,8 @@ export default function M1EmotionsAsSignalsPage() {
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Somatic emotions:</strong> Fear, Anger, Stress, Anxiety, Disgust, Joy, Happiness, Admiration, Pride.
             </p>
+
+            <M1SignalMap filter="somatic" />
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
@@ -331,6 +340,8 @@ export default function M1EmotionsAsSignalsPage() {
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>Relational emotions:</strong> Shame, Guilt, Sadness, Love, Trust, Gratitude, Compassion.
             </p>
+
+            <M1SignalMap filter="relational" />
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
@@ -418,6 +429,10 @@ export default function M1EmotionsAsSignalsPage() {
             <p style={proseStyle}>
               This is a structural constraint of the signal system, not a preference. The pathway must match the content. A person who attempts somatic restoration for relational content — exercising to clear shame, breathing techniques to process grief — produces discharge but does not complete the restoration sequence. The activation remains. The body carries it forward.
             </p>
+
+            <div style={{ margin: "24px 0" }}>
+              <M1RestorationPathways />
+            </div>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">

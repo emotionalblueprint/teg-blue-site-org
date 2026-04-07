@@ -19,10 +19,17 @@ const px = SPACING.pagePadding;
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Start Here", href: "/research-entry" },
-  { label: "Overview", href: "/foundations" },
-  { label: "How It Works", href: "/how-it-works" },
   {
-    label: "ESS",
+    label: "Theory",
+    href: "/foundations",
+    children: [
+      { label: "Overview", href: "/foundations" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Scientific Foundations", href: "/scientific-foundations" },
+    ],
+  },
+  {
+    label: "Emotional Somatic System",
     href: "/models",
     children: [
       { label: "M1 — Emotions as Signals", href: "/model/m1-emotions-as-signals" },
@@ -49,14 +56,19 @@ const NAV_ITEMS = [
       { label: "F12 — The Two Information Systems", href: "/framework/f12-two-information-systems" },
     ],
   },
-  { label: "Publications", href: "/publications" },
-  { label: "Scientific Foundations", href: "/scientific-foundations" },
-  { label: "Glossary", href: "/glossary" },
-  { label: "Reframes", href: "/reframes" },
-  { label: "AI Safety", href: "/ai-safety" },
+  {
+    label: "Library",
+    href: "/publications",
+    children: [
+      { label: "Publications", href: "/publications" },
+      { label: "Glossary", href: "/glossary" },
+      { label: "Reframes", href: "/reframes" },
+      { label: "Phenomena", href: "/mechanics-of-phenomena" },
+    ],
+  },
   { label: "About", href: "/about" },
   { label: "Ethics", href: "/ethics" },
-  { label: "Phenomena", href: "/mechanics-of-phenomena" },
+  { label: "AI Safety", href: "/ai-safety" },
 ];
 
 // ─── RESPONSIVE STYLES (injected once) ────────────────────
@@ -496,7 +508,7 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
               alignItems: "center",
               gap: 0,
               flex: 1,
-              justifyContent: "center",
+              justifyContent: "flex-start",
             }}
           >
             {NAV_ITEMS.map((item) => (
