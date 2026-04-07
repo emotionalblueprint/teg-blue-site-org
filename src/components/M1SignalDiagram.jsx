@@ -2,13 +2,12 @@
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
-  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT, MAIN_ORG,
+  BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, MAIN_ORG,
   hexToRgba, gradientCardBg, diagramContainer,
 } from '@/src/styles/tokens';
 import { EMOTIONS, BODY_SIGNATURE_GROUPS } from '@/src/data/m1-data';
 
 // ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = PATTERN.A.primary;
 const CHART_BLUE = MAIN_ORG.accent;
 
 // Chart
@@ -19,20 +18,14 @@ const PH = VH - PT - PB;
 
 // Timing
 const DRAW_MS = 3800;
-const HOLD_MS = 2200;
-const CYCLE_MS = DRAW_MS + HOLD_MS;
-const MANUAL_PAUSE_MS = 8000;
 
 // Step markers on the timeline (fractional positions)
+// Each step uses a distinct blue from the SPECTRUM
 const STEPS = [
-  { t: 0.08, label: 'Signal', sub: 'What the nervous system detected' },
-  { t: 0.35, label: 'Response', sub: 'How the body reorganizes' },
-  { t: 0.72, label: 'Restoration', sub: 'What resolves the activation' },
+  { t: 0.08, label: 'Signal', sub: 'What the nervous system detected', color: SPECTRUM.azure },
+  { t: 0.35, label: 'Response', sub: 'How the body reorganizes', color: SPECTRUM.cobalt },
+  { t: 0.72, label: 'Restoration', sub: 'What resolves the activation', color: SPECTRUM.indigo },
 ];
-
-// Curated showcase — alternates somatic / relational for contrast
-const SHOWCASE_KEYS = ['fear', 'shame', 'joy', 'love', 'anger', 'sadness', 'disgust', 'trust'];
-const SHOWCASE = SHOWCASE_KEYS.map(k => EMOTIONS.find(e => e.key === k)).filter(Boolean);
 
 // ─── Wave generation ────────────────────────────────────
 
@@ -118,8 +111,7 @@ function yAtProgress(points, t) {
 // ─── Component ──────────────────────────────────────────
 
 export default function M1SignalDiagram() {
-  const [activeKey, setActiveKey] = useState(SHOWCASE_KEYS[0]);
-  const [showcaseIdx, setShowcaseIdx] = useState(0);
+  const [activeKey, setActiveKey] = useState('fear');
   const [progress, setProgress] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const [done, setDone] = useState(false);
@@ -127,15 +119,12 @@ export default function M1SignalDiagram() {
   const rafRef = useRef(null);
   const t0Ref = useRef(null);
   const runRef = useRef(0);
-  const cycleTimerRef = useRef(null);
-  const manualTimerRef = useRef(null);
-  const autoCycleRef = useRef(true);
+  const hasPlayedRef = useRef(new Set());
 
   const emotion = EMOTIONS.find(e => e.key === activeKey) || EMOTIONS[0];
   const wave = useMemo(() => generateWave(emotion), [emotion]);
   const isRelational = emotion.type === 'relational' ||
     (emotion.restorationType && emotion.restorationType.includes('relational'));
-
   // ─── Animation ──────────────────────────────────────
 
   const startDraw = useCallback(() => {
@@ -180,41 +169,26 @@ export default function M1SignalDiagram() {
 
   // Trigger draw when hasStarted or activeKey changes
   useEffect(() => {
-    if (hasStarted) startDraw();
+    if (!hasStarted) return;
+    // Only animate once per emotion; after that, show the full wave instantly
+    if (hasPlayedRef.current.has(activeKey)) {
+      setProgress(1);
+      setDone(true);
+    } else {
+      hasPlayedRef.current.add(activeKey);
+      startDraw();
+    }
   }, [hasStarted, activeKey, startDraw]);
 
-  // Auto-cycle to next emotion after wave completes
-  useEffect(() => {
-    if (!done || !autoCycleRef.current) return;
-    cycleTimerRef.current = setTimeout(() => {
-      const nextIdx = (showcaseIdx + 1) % SHOWCASE_KEYS.length;
-      setShowcaseIdx(nextIdx);
-      setActiveKey(SHOWCASE_KEYS[nextIdx]);
-    }, HOLD_MS);
-    return () => clearTimeout(cycleTimerRef.current);
-  }, [done, showcaseIdx]);
-
-  // Manual selection
+  // Manual selection — no auto-cycle
   const selectEmotion = useCallback((key) => {
-    clearTimeout(cycleTimerRef.current);
-    clearTimeout(manualTimerRef.current);
-    autoCycleRef.current = false;
     setActiveKey(key);
-    // Resume auto-cycle after pause
-    manualTimerRef.current = setTimeout(() => {
-      autoCycleRef.current = true;
-      // Resume from nearest showcase position
-      const sIdx = SHOWCASE_KEYS.indexOf(key);
-      setShowcaseIdx(sIdx !== -1 ? sIdx : 0);
-    }, MANUAL_PAUSE_MS);
   }, []);
 
   // Cleanup
   useEffect(() => {
     return () => {
       cancelAnimationFrame(rafRef.current);
-      clearTimeout(cycleTimerRef.current);
-      clearTimeout(manualTimerRef.current);
     };
   }, []);
 
@@ -224,11 +198,16 @@ export default function M1SignalDiagram() {
   const cursorY = PT + (1 - yAtProgress(wave, progress)) * PH;
   const revealPath = buildPath(wave, progress);
   const ghostPath = buildPath(wave);
-  const accentColor = MODEL_COLOR;
 
   const groupLabel = BODY_SIGNATURE_GROUPS.find(
     g => g.emotions.includes(emotion.key)
   )?.label || '';
+
+  // Cursor color follows the gradient — picks the step color for current position
+  const cursorColor = progress >= STEPS[2].t ? STEPS[2].color
+    : progress >= STEPS[1].t ? STEPS[1].color
+    : progress >= STEPS[0].t ? STEPS[0].color
+    : SPECTRUM.slate;
 
   // ─── Render ─────────────────────────────────────────
 
@@ -252,19 +231,9 @@ export default function M1SignalDiagram() {
           align-items: center;
           justify-content: center;
         }
-        .m1-group-cluster {
-          display: flex;
-          gap: 4px;
-          align-items: center;
-          padding: 0 8px;
-        }
-        .m1-group-cluster + .m1-group-cluster {
-          border-left: 1px solid ${BORDER.default};
-        }
-        .m1-dot {
-          width: 28px;
-          height: 28px;
-          border-radius: 50%;
+        .m1-pill {
+          height: 26px;
+          border-radius: 13px;
           border: 1.5px solid ${BORDER.default};
           background: transparent;
           cursor: pointer;
@@ -272,31 +241,20 @@ export default function M1SignalDiagram() {
           align-items: center;
           justify-content: center;
           font-family: ${FONT.mono};
-          font-size: 7px;
+          font-size: 8px;
           font-weight: 600;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.06em;
           color: ${TEXT.hint};
           transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
-          padding: 0;
+          padding: 0 10px;
+          white-space: nowrap;
         }
-        .m1-dot:hover {
-          border-color: ${hexToRgba(MODEL_COLOR, 0.5)};
-          color: ${TEXT.muted};
-        }
-        .m1-dot.active {
-          border-color: ${MODEL_COLOR};
-          background: ${hexToRgba(MODEL_COLOR, 0.15)};
-          color: ${MODEL_COLOR};
+        .m1-pill:hover {
+          color: ${TEXT.secondary};
         }
         @media (max-width: 768px) {
           .m1-info-cards {
             grid-template-columns: 1fr;
-          }
-          .m1-group-cluster {
-            padding: 0 4px;
-          }
-          .m1-group-cluster + .m1-group-cluster {
-            border-left: none;
           }
         }
       `}</style>
@@ -308,10 +266,18 @@ export default function M1SignalDiagram() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <svg width="20" height="8">
-            <line x1="0" y1="4" x2="20" y2="4" stroke={MODEL_COLOR} strokeWidth="1.5" />
+            <defs>
+              <linearGradient id="m1-legend-grad" x1="0" y1="0" x2="20" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor={SPECTRUM.slate} />
+                <stop offset="20%" stopColor={STEPS[0].color} />
+                <stop offset="60%" stopColor={STEPS[1].color} />
+                <stop offset="100%" stopColor={STEPS[2].color} />
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="4" x2="20" y2="4" stroke="url(#m1-legend-grad)" strokeWidth="1.5" />
           </svg>
           <span style={{
-            fontFamily: FONT.mono, fontSize: 8, color: MODEL_COLOR,
+            fontFamily: FONT.mono, fontSize: 8, color: STEPS[1].color,
             letterSpacing: '0.12em', textTransform: 'uppercase',
           }}>
             Activation
@@ -367,13 +333,13 @@ export default function M1SignalDiagram() {
             return (
               <g key={step.label}>
                 <line x1={sx} y1={PT - 4} x2={sx} y2={PT + PH}
-                  stroke={hexToRgba(CHART_BLUE, reached ? 0.2 : 0.08)}
+                  stroke={hexToRgba(step.color, reached ? 0.3 : 0.08)}
                   strokeWidth="1" strokeDasharray="3,4" />
                 <text x={sx} y={PT + PH + 14} textAnchor="middle"
                   style={{
                     fontFamily: 'JetBrains Mono, monospace', fontSize: 8,
                     fontWeight: 600, letterSpacing: '0.1em',
-                    fill: reached ? MODEL_COLOR : TEXT.hint,
+                    fill: reached ? step.color : TEXT.hint,
                     transition: 'fill 0.3s ease',
                     textTransform: 'uppercase',
                   }}>
@@ -392,60 +358,80 @@ export default function M1SignalDiagram() {
             );
           })}
 
+          {/* Gradient definitions */}
+          <defs>
+            <linearGradient id="m1-line-grad" x1={PL} y1="0" x2={PL + PW} y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor={SPECTRUM.slate} />
+              <stop offset="6%" stopColor={SPECTRUM.slate} />
+              <stop offset="12%" stopColor={STEPS[0].color} />
+              <stop offset="35%" stopColor={STEPS[1].color} />
+              <stop offset="72%" stopColor={STEPS[2].color} />
+              <stop offset="100%" stopColor={STEPS[2].color} />
+            </linearGradient>
+            <linearGradient id="m1-area-grad" x1={PL} y1="0" x2={PL + PW} y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor={SPECTRUM.slate} stopOpacity="0.06" />
+              <stop offset="12%" stopColor={STEPS[0].color} stopOpacity="0.10" />
+              <stop offset="35%" stopColor={STEPS[1].color} stopOpacity="0.08" />
+              <stop offset="72%" stopColor={STEPS[2].color} stopOpacity="0.03" />
+              <stop offset="100%" stopColor={STEPS[2].color} stopOpacity="0.01" />
+            </linearGradient>
+          </defs>
+
           {/* Ghost path */}
           <path d={ghostPath} fill="none"
-            stroke={MODEL_COLOR} strokeWidth="1" strokeOpacity="0.08" />
+            stroke="url(#m1-line-grad)" strokeWidth="1" strokeOpacity="0.08" />
 
           {/* Revealed path */}
           {hasStarted && (
             <path d={revealPath} fill="none"
-              stroke={MODEL_COLOR} strokeWidth="2.2" strokeOpacity="0.9" />
+              stroke="url(#m1-line-grad)" strokeWidth="2.2" strokeOpacity="0.9" />
           )}
 
           {/* Area fill under revealed path */}
           {hasStarted && progress > 0.05 && (
             <path
               d={`${revealPath}L${cx.toFixed(1)},${PT + PH}L${PL},${PT + PH}Z`}
-              fill={`url(#m1-area-grad)`}
+              fill="url(#m1-area-grad)"
             />
           )}
-
-          {/* Area gradient definition */}
-          <defs>
-            <linearGradient id="m1-area-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={MODEL_COLOR} stopOpacity="0.12" />
-              <stop offset="100%" stopColor={MODEL_COLOR} stopOpacity="0.01" />
-            </linearGradient>
-          </defs>
 
           {/* Cursor dot */}
           {progress > 0.03 && (
             <>
               <circle cx={cx} cy={cursorY} r="5"
-                fill={MODEL_COLOR} fillOpacity="0.15" />
+                fill={cursorColor} fillOpacity="0.15" />
               <circle cx={cx} cy={cursorY} r="2.5"
-                fill={MODEL_COLOR} />
+                fill={cursorColor} />
             </>
           )}
 
           {/* End label */}
-          {done && (
+          {done && !isRelational && (
             <text x={PL + PW + 8} y={cursorY + 4}
               style={{
                 fontFamily: 'JetBrains Mono, monospace', fontSize: 8.5,
-                fill: MODEL_COLOR,
+                fill: SPECTRUM.slate,
               }}>
-              {isRelational ? 'needs' : 'baseline'}
+              baseline
             </text>
           )}
           {done && isRelational && (
-            <text x={PL + PW + 8} y={cursorY + 16}
-              style={{
-                fontFamily: 'JetBrains Mono, monospace', fontSize: 7.5,
-                fill: TEXT.hint,
-              }}>
-              co-regulation
-            </text>
+            <>
+              <text x={PL + PW + 8} y={cursorY + 4}
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace', fontSize: 8.5,
+                  fill: STEPS[2].color,
+                }}>
+                needs
+              </text>
+              <text x={PL + PW + 8} y={cursorY + 16}
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace', fontSize: 7.5,
+                  fill: STEPS[2].color, opacity: 0.7,
+                }}>
+                co-regulation
+              </text>
+            </>
           )}
         </svg>
       </div>
@@ -458,12 +444,14 @@ export default function M1SignalDiagram() {
             title: 'Signal',
             content: emotion.signal,
             reached: progress >= STEPS[0].t,
+            color: STEPS[0].color,
           },
           {
             step: '2',
             title: 'Body Response',
             content: emotion.bodyResponse,
             reached: progress >= STEPS[1].t,
+            color: STEPS[1].color,
           },
           {
             step: '3',
@@ -471,16 +459,18 @@ export default function M1SignalDiagram() {
             content: emotion.restorationNeeds,
             reached: progress >= STEPS[2].t,
             badge: isRelational ? 'Relational' : 'Somatic',
+            color: STEPS[2].color,
           },
         ].map(card => (
           <div key={card.step} style={{
-            background: gradientCardBg(CHART_BLUE, card.reached ? 0.06 : 0.02),
+            background: gradientCardBg(card.color, card.reached ? 0.06 : 0.02),
             padding: '14px 14px 16px',
             borderRadius: RADIUS.lg,
-            border: `1px solid ${card.reached ? hexToRgba(CHART_BLUE, 0.2) : BORDER.default}`,
-            borderTop: `2px solid ${card.reached ? MODEL_COLOR : BORDER.default}`,
-            transition: 'border-color 0.4s ease, background 0.4s ease',
+            border: `1px solid ${card.reached ? hexToRgba(card.color, 0.25) : BORDER.default}`,
+            borderTop: `2px solid ${card.reached ? card.color : BORDER.default}`,
+            transition: 'border-color 0.4s ease, background 0.4s ease, opacity 0.4s ease',
             opacity: card.reached ? 1 : 0.4,
+            minHeight: 90,
           }}>
             <div style={{
               display: 'flex', alignItems: 'center', gap: 8,
@@ -489,7 +479,7 @@ export default function M1SignalDiagram() {
               <span style={{
                 fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
                 letterSpacing: '0.14em', textTransform: 'uppercase',
-                color: card.reached ? MODEL_COLOR : TEXT.hint,
+                color: card.reached ? card.color : TEXT.hint,
                 transition: 'color 0.3s ease',
               }}>
                 {card.title}
@@ -499,8 +489,8 @@ export default function M1SignalDiagram() {
                   fontFamily: FONT.mono, fontSize: 7, fontWeight: 600,
                   letterSpacing: '0.1em', textTransform: 'uppercase',
                   padding: '2px 6px', borderRadius: 4,
-                  background: hexToRgba(MODEL_COLOR, 0.1),
-                  color: MODEL_COLOR,
+                  background: hexToRgba(card.color, 0.1),
+                  color: card.color,
                 }}>
                   {card.badge}
                 </span>
@@ -527,29 +517,49 @@ export default function M1SignalDiagram() {
         }}>
           Select a signal
         </div>
-        <div className="m1-emotion-grid">
-          {BODY_SIGNATURE_GROUPS.map(group => (
-            <div key={group.key} className="m1-group-cluster">
-              {group.emotions.map(ek => {
-                const isActive = emotion.key === ek;
-                const em = EMOTIONS.find(e => e.key === ek);
-                if (!em) return null;
-
+        {[
+          { label: 'Somatic', color: SPECTRUM.cobalt, filter: (em) => em.type === 'somatic' && !(em.restorationType && em.restorationType.includes('relational')) },
+          { label: 'Relational', color: SPECTRUM.indigo, filter: (em) => em.type === 'relational' || (em.restorationType && em.restorationType.includes('relational')) },
+        ].map(group => (
+          <div key={group.label} style={{ marginBottom: 8 }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6,
+              justifyContent: 'center',
+            }}>
+              <div style={{
+                width: 6, height: 6, borderRadius: '50%',
+                background: group.color,
+              }} />
+              <span style={{
+                fontFamily: FONT.mono, fontSize: 7, color: group.color,
+                letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600,
+              }}>
+                {group.label}
+              </span>
+            </div>
+            <div className="m1-emotion-grid">
+              {EMOTIONS.filter(group.filter).map(em => {
+                const isActive = emotion.key === em.key;
                 return (
                   <button
-                    key={ek}
-                    className={`m1-dot${isActive ? ' active' : ''}`}
-                    onClick={() => selectEmotion(ek)}
-                    title={`${em.name}: ${em.signal}`}
+                    key={em.key}
+                    className="m1-pill"
+                    onClick={() => selectEmotion(em.key)}
+                    title={em.signal}
                     aria-label={`${em.name} — ${em.signal}`}
+                    style={{
+                      borderColor: isActive ? group.color : hexToRgba(group.color, 0.25),
+                      background: isActive ? hexToRgba(group.color, 0.12) : undefined,
+                      color: isActive ? group.color : hexToRgba(group.color, 0.6),
+                    }}
                   >
-                    {em.name.slice(0, 2).toUpperCase()}
+                    {em.name}
                   </button>
                 );
               })}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
