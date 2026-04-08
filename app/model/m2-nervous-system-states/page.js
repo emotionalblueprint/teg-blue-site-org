@@ -32,6 +32,18 @@ const M2SafetyEvaluation = dynamic(
   () => import("@/src/components/M2SafetyEvaluation"),
   { ssr: false }
 );
+const M2PhysiologicalBaseline = dynamic(
+  () => import("@/src/components/M2PhysiologicalBaseline"),
+  { ssr: false }
+);
+const M2FourStates = dynamic(
+  () => import("@/src/components/M2FourStates"),
+  { ssr: false }
+);
+const M2Gradient = dynamic(
+  () => import("@/src/components/M2Gradient"),
+  { ssr: false }
+);
 
 const MODEL_COLOR = MODEL_COLORS.M2;
 
@@ -169,6 +181,11 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>Physiological baseline is the condition the nervous system is designed to return to after activation. It is not one of the four states. It is the neutral ground from which the system enters a state when conditions require it, and returns when the body{"'"}s activation sequence has completed.</p>
             <p style={proseStyle}>This distinction matters because Safety & Openness — the state closest to baseline — is still a state. It is a parasympathetic-dominant activation that arises when conditions support engagement. Baseline is what exists before any activation, and what the system returns to when activation resolves. A person in Safety & Openness is engaged. A person at physiological baseline is at rest.</p>
             <p style={proseStyle}>If the nervous system never returns to this resting condition, any state — including Safety & Openness — can become the system{"'"}s chronic organizing mode. In Path A (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>), activation resolves and the system returns to physiological baseline. In Path B (M3), the baseline itself shifts upward — baseline elevation, where resting cortisol, muscle tension, and inflammatory markers remain chronically elevated — and the system treats the elevated level as its new resting state.</p>
+
+            <div style={{ margin: "24px 0" }}>
+              <M2PhysiologicalBaseline />
+            </div>
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>McEwen (2000) — allostasis and the distinction between resting baseline and adapted set-point. Porges (2011) — autonomic flexibility measured relative to resting vagal tone. Thayer & Lane (2000) — heart rate variability as a marker of baseline autonomic regulation.</p>
@@ -199,6 +216,10 @@ export default function M2NervousSystemStatesPage() {
 
             <p style={proseStyle}>The first two states are primarily organised by the emotional-somatic system — the body{"'"}s detection and response architecture sets the state before conscious processing arrives. The latter two are states in which the cognitive-logical system is increasingly recruited into the threat response. This is not simply greater intensity. It is a shift in which system organises the response.</p>
 
+            <div style={{ margin: "24px 0" }}>
+              <M2FourStates />
+            </div>
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>Porges (2011) — polyvagal theory: ventral vagal (social engagement), sympathetic (mobilisation), dorsal vagal (immobilisation). Dana (2018) — clinical application of the autonomic hierarchy. Panksepp (1998) — primary emotional systems as biological processes.</p>
@@ -216,6 +237,11 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>The system{"'"}s position on the gradient at any given moment is its <strong style={{ color: TEXT.primary }}>Current State Position</strong> — a continuously updated read-out of how the nervous system is currently organised, determined by the safety-threat evaluation running below conscious awareness. The position is never static unless the state has become chronic.</p>
             <p style={proseStyle}>Whether the system can move is the most important measure in M2. TEG-Blue calls this <strong style={{ color: TEXT.primary }}>State Flexibility</strong> — the nervous system{"'"}s capacity to shift state in response to changing conditions and return toward physiological baseline when activation has served its function. A person in Threat & Defence who can move back toward Safety & Openness when conditions change is fundamentally different from a person in Threat & Defence whose system has locked there. The Current State Position tells you where the system is. State Flexibility tells you whether it can leave.</p>
             <p style={proseStyle}>When State Flexibility is present, the system responds — it shifts into threat states when needed and returns to baseline when the threat has passed. When State Flexibility is lost, the system is locked. Restoration (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>) is what restores flexibility — as biological completion lowers the baseline, states that were previously inaccessible become reachable again. State Flexibility is not built through insight. It is restored through the body completing what it started.</p>
+
+            <div style={{ margin: "24px 0" }}>
+              <M2Gradient />
+            </div>
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>Porges (2011) — the autonomic hierarchy as a graded response system. Dana (2018) — the autonomic ladder as a clinical tool. Ogden, Minton & Pain (2006) — the window of tolerance as a range, not a state.</p>

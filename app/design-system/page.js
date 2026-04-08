@@ -562,9 +562,9 @@ export default function DesignSystemPage() {
           </div>
         </section>
 
-        {/* ─── 11. INNER COMPASS + FOUR-MODE GRADIENT ──── */}
+        {/* ─── 11. 4 NERVOUS SYSTEM STATES GRADIENT ──── */}
         <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
-          <SectionTitle>Inner Compass + Four-Mode Gradient</SectionTitle>
+          <SectionTitle>4 Nervous System States Gradient</SectionTitle>
           <p style={{
             fontFamily: FONT.mono,
             fontSize: TYPE_SCALE.tagLabel.size,
@@ -574,7 +574,7 @@ export default function DesignSystemPage() {
             textTransform: "uppercase",
             marginBottom: 16,
           }}>
-            Drag the Needle to explore modes
+            Drag the slider to explore State Position
           </p>
           <CompassBar />
         </section>

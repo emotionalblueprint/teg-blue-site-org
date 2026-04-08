@@ -4,10 +4,10 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/tokens'
 
 const MODES = [
-  { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety',     conditionShort: 'Safety & Openness' },
-  { name: 'PROTECTION',  hex: '#5BADFF', center: 0.375, signal: 'Threat',     conditionShort: 'Threat & Defence' },
-  { name: 'CONTROL',     hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'Strategy & Management' },
-  { name: 'DOMINATION',  hex: '#2563eb', center: 0.875, signal: 'Life peril', conditionShort: 'Power & Dominance' },
+  { name: 'Connection',  hex: '#93CFFF', center: 0.125, signal: 'Safety',     conditionShort: 'SAFETY & OPENNESS' },
+  { name: 'Protection',  hex: '#5BADFF', center: 0.375, signal: 'Threat',     conditionShort: 'THREAT & DEFENCE' },
+  { name: 'Control',     hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'STRATEGY & MANAGEMENT' },
+  { name: 'Domination',  hex: '#2563eb', center: 0.875, signal: 'Life peril', conditionShort: 'POWER & DOMINANCE' },
 ]
 
 const BAR_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)'
@@ -21,26 +21,6 @@ function getActiveIdx(p) {
   return 3
 }
 
-function ArrowRow({ activeIdx, direction }) {
-  const char = direction === 'down' ? '\u25BC' : '\u25B2'
-  return (
-    <div style={{ display: 'flex', marginBottom: 4 }}>
-      {MODES.map((m, i) => (
-        <div key={i} style={{
-          flex: 1,
-          textAlign: 'center',
-          fontSize: 9,
-          opacity: i === activeIdx ? 0.7 : 0.1,
-          color: i === activeIdx ? m.hex : TEXT.micro,
-          transition: 'all 200ms',
-        }}>
-          {char}
-        </div>
-      ))}
-    </div>
-  )
-}
-
 export default function CompassBar({ showSpecs = true }) {
   const [pos, setPos] = useState(0.125)
   const [isStuck, setIsStuck] = useState(false)
@@ -48,7 +28,6 @@ export default function CompassBar({ showSpecs = true }) {
   const dragging = useRef(false)
   const activeIdx = getActiveIdx(pos)
   const activeMode = MODES[activeIdx]
-  const stateDesc = isStuck ? 'chronic' : 'perceived'
   const toggleHex = isStuck ? MODES[3].hex : MODES[0].hex
 
   const handleMove = useCallback((clientX) => {
@@ -85,45 +64,6 @@ export default function CompassBar({ showSpecs = true }) {
 
   return (
     <div style={{ userSelect: 'none' }}>
-      {/* Signal labels (top) */}
-      <div style={{ display: 'flex', marginBottom: 6 }}>
-        {MODES.map((m, i) => {
-          const isActive = i === activeIdx
-          return (
-            <div key={`s${i}`} style={{
-              flex: 1,
-              textAlign: 'center',
-              opacity: isActive ? 1 : 0.3,
-              transition: 'opacity 200ms',
-            }}>
-              <div style={{
-                fontFamily: FONT.mono,
-                fontSize: 9,
-                fontWeight: 500,
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                color: isActive ? m.hex : TEXT.hint,
-                transition: 'color 200ms',
-              }}>
-                {m.signal}
-              </div>
-              <div style={{
-                fontFamily: FONT.mono,
-                fontSize: 9,
-                fontStyle: 'italic',
-                letterSpacing: '0.04em',
-                color: isActive ? hexToRgba(m.hex, 0.6) : TEXT.micro,
-                transition: 'color 200ms',
-              }}>
-                {stateDesc}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-
-      <ArrowRow activeIdx={activeIdx} direction="down" />
-
       {/* The gradient bar + needle */}
       <div
         ref={barRef}
@@ -185,10 +125,8 @@ export default function CompassBar({ showSpecs = true }) {
         </div>
       </div>
 
-      <ArrowRow activeIdx={activeIdx} direction="up" />
-
-      {/* Mode labels (bottom) */}
-      <div style={{ display: 'flex' }}>
+      {/* State + mode labels (bottom) */}
+      <div style={{ display: 'flex', marginTop: 6 }}>
         {MODES.map((m, i) => {
           const isActive = i === activeIdx
           return (
@@ -200,23 +138,24 @@ export default function CompassBar({ showSpecs = true }) {
             }}>
               <div style={{
                 fontFamily: FONT.mono,
-                fontSize: 10,
+                fontSize: 9,
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 color: isActive ? m.hex : TEXT.hint,
                 transition: 'color 200ms',
               }}>
-                {m.name}
+                {m.conditionShort}
               </div>
               <div style={{
                 fontFamily: FONT.mono,
                 fontSize: 8,
-                fontStyle: 'italic',
-                letterSpacing: '0.04em',
+                fontWeight: 500,
+                letterSpacing: '0.06em',
                 color: isActive ? hexToRgba(m.hex, 0.6) : TEXT.micro,
                 transition: 'color 200ms',
+                marginTop: 2,
               }}>
-                {isActive ? m.conditionShort : 'MODE'}
+                {m.name}
               </div>
               {isActive && (
                 <div style={{
@@ -277,10 +216,10 @@ export default function CompassBar({ showSpecs = true }) {
         {[
           ['Bar', '14px height, rounded-full, 4-color gradient'],
           ['Needle', '28px circle, white, 3px colored border, glow'],
+          ['States', 'Safety & Openness · Threat & Defence · Strategy & Management · Power & Dominance'],
           ['Modes', 'Connection #93CFFF · Protection #5BADFF · Control #346AEC · Domination #2563eb'],
-          ['Signals', 'Safety · Threat · Danger · Life peril'],
-          ['Fluid', 'All signals show "perceived" — temporary, returnable'],
-          ['Stuck', 'All signals show "chronic" — fixed position, lost mobility'],
+          ['Fluid', 'Temporary activation — returnable'],
+          ['Stuck', 'Chronic — fixed position, lost mobility'],
           ['Snap', '4% magnet radius at each mode center (12.5%, 37.5%, 62.5%, 87.5%)'],
           ['Dividers', '1.5px at 25%, 50%, 75% — rgba(0,0,0,0.45)'],
         ].map(([label, value]) => (
