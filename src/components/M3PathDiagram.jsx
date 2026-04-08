@@ -1,263 +1,556 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import {
-  TEXT, BORDER, FONT, SPECTRUM, RADIUS, PATTERN, ACCENT,
-  hexToRgba, gradientCardBg, diagramContainer,
+  TEXT, FONT, SPECTRUM, RADIUS, MODEL_COLORS, ACCENT,
+  hexToRgba, diagramContainer,
 } from '@/src/styles/tokens';
 
-// ─── Constants ──────────────────────────────────────────
-const MODEL_COLOR = PATTERN.C.primary;
-const PATH_A_COLOR = ACCENT.green;
-const PATH_B_COLOR = ACCENT.orange;
+// ─── Constants ──────────────────────────────────────
+const MODEL_COLOR = MODEL_COLORS.M3;
+const ORANGE = ACCENT.orange;    // override / debris / accumulation
 
-// Flow stages — sequential reveal
-const SHARED = [
-  { id: 'activation', label: 'Signal fires', sub: 'The body mobilises — stress hormones, muscles, heart rate' },
+const STATES = [
+  { name: 'SAFETY & OPENNESS',     mode: 'Connection',  hex: '#93CFFF', pos: 0.125 },
+  { name: 'THREAT & DEFENCE',      mode: 'Protection',  hex: '#5BADFF', pos: 0.375 },
+  { name: 'STRATEGY & MANAGEMENT', mode: 'Control',     hex: '#346AEC', pos: 0.625 },
+  { name: 'POWER & DOMINANCE',     mode: 'Domination',  hex: '#2563eb', pos: 0.875 },
 ];
 
-const BRANCH = {
-  label: 'The Branching Point',
-  sub: 'Does cognition override the signal?',
-};
+const LIVE_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)';
+const SNAP_RADIUS = 0.04;
 
-const PATH_A = [
-  { id: 'a-mob', label: 'Mobilisation response', sub: 'Energy spent — movement, expression, discharge' },
-  { id: 'a-restore', label: 'Biological restoration', sub: 'Cortisol clears, muscles release, HPA stands down' },
-  { id: 'a-baseline', label: 'Physiological baseline', sub: 'The sequence completes. The signal does not need to repeat.' },
-];
+function getActiveIdx(p) {
+  if (p < 0.25) return 0;
+  if (p < 0.5) return 1;
+  if (p < 0.75) return 2;
+  return 3;
+}
 
-const PATH_B = [
-  { id: 'b-override', label: 'Cognitive override', sub: '"I don\'t have time for this" — restoration cannot begin' },
-  { id: 'b-debris', label: 'Debris accumulates', sub: 'Cortisol, tension, sensitised amygdala — still running' },
-  { id: 'b-elevation', label: 'Baseline elevates', sub: 'Floor rises, ceiling drops. The window narrows.' },
-  { id: 'b-substitute', label: 'Substitutes → escalation', sub: 'Relief without completion. The substitute changes. The mechanism does not.' },
-];
+// ─── Override thresholds (from CA data) ─────────────
+// - Each override: amygdala sensitises, cortisol stays, floor rises
+// - After 3 overrides: amygdala begins firing at smaller inputs → needle starts drifting
+// - After 6: "smaller triggers, larger responses" → drift accelerates
+// - After 10: chronic architecture — override is no longer an event, it's the default
+// - Debris per override scales with state depth (deeper state = more debris)
+const DEBRIS_PER_OVERRIDE = [4, 8, 14, 20]; // by state index
+const DRIFT_THRESHOLD = 3;      // overrides before needle starts auto-moving
+const DRIFT_ACCELERATE = 6;     // overrides before drift speeds up
+const CHRONIC_THRESHOLD = 10;   // override becomes the architecture
 
-const TOTAL_STEPS = 1 + 1 + Math.max(PATH_A.length, PATH_B.length); // shared + branch + max path length
-const STEP_DELAY = 600;
+// SVG dimensions for the debris mountain
+const SVG_W = 600;
+const SVG_H = 100;
+const MAX_LOAD = 200;
 
-// ─── Component ──────────────────────────────────────────
+// ─── Component ──────────────────────────────────────
 
 export default function M3PathDiagram() {
-  const [step, setStep] = useState(-1);
-  const [hasStarted, setHasStarted] = useState(false);
-  const sectionRef = useRef(null);
-  const timerRef = useRef(null);
+  const [pos, setPos] = useState(0.125);
+  const [overrideCount, setOverrideCount] = useState(0);
+  const [totalLoad, setTotalLoad] = useState(0);
+  // Debris distributed across the gradient (40 bins)
+  const [debrisBins, setDebrisBins] = useState(new Array(40).fill(0));
+  const [narrative, setNarrative] = useState('');
+  const [driftInterval, setDriftInterval] = useState(null);
 
-  // Scroll trigger
-  useEffect(() => {
-    if (hasStarted) return;
-    const el = sectionRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasStarted(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.25 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [hasStarted]);
+  const barRef = useRef(null);
+  const dragging = useRef(false);
+  const driftRef = useRef(null);
 
-  // Sequential reveal
+  const activeIdx = getActiveIdx(pos);
+  const active = STATES[activeIdx];
+
+  // Orange intensity based on total load
+  const orangeIntensity = Math.min(1, totalLoad / MAX_LOAD);
+  const barTint = orangeIntensity > 0 ? hexToRgba(ORANGE, orangeIntensity * 0.25) : 'transparent';
+
+  // ─── Drag interaction ─────────────────────────────
+  const handleMove = useCallback((clientX) => {
+    if (!barRef.current) return;
+    const rect = barRef.current.getBoundingClientRect();
+    let raw = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    for (const s of STATES) {
+      if (Math.abs(raw - s.pos) < SNAP_RADIUS) { raw = s.pos; break; }
+    }
+    setPos(raw);
+  }, []);
+
   useEffect(() => {
-    if (!hasStarted) return;
-    let current = 0;
-    const advance = () => {
-      setStep(current);
-      current++;
-      if (current <= TOTAL_STEPS + 1) {
-        timerRef.current = setTimeout(advance, STEP_DELAY);
-      }
+    const onMove = (e) => {
+      if (dragging.current) handleMove(e.touches ? e.touches[0].clientX : e.clientX);
     };
-    timerRef.current = setTimeout(advance, 200);
-    return () => clearTimeout(timerRef.current);
-  }, [hasStarted]);
+    const onUp = () => { dragging.current = false; };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('touchmove', onMove);
+    window.addEventListener('touchend', onUp);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      window.removeEventListener('touchmove', onMove);
+      window.removeEventListener('touchend', onUp);
+    };
+  }, [handleMove]);
 
-  const branchRevealed = step >= 1;
-  const pathStep = step - 2; // steps into the parallel paths
+  const onDown = useCallback((e) => {
+    dragging.current = true;
+    handleMove(e.touches ? e.touches[0].clientX : e.clientX);
+  }, [handleMove]);
 
-  return (
-    <section ref={sectionRef} style={{
-      marginBottom: 32,
-      ...diagramContainer(),
-    }}>
-      <style>{`
-        .m3-node {
-          padding: 12px 16px;
-          border-radius: ${RADIUS.md}px;
-          border: 1.5px solid ${BORDER.default};
-          opacity: 0;
-          transform: translateY(8px);
-          transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease;
-        }
-        .m3-node.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .m3-paths {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-          margin-top: 12px;
-        }
-        .m3-path-col {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .m3-connector {
-          width: 1.5px;
-          height: 16px;
-          margin: 0 auto;
-          transition: background 0.4s ease;
-        }
-        @media (max-width: 640px) {
-          .m3-paths {
-            grid-template-columns: 1fr;
+  // ─── Override action ──────────────────────────────
+  const doOverride = () => {
+    const stateIdx = getActiveIdx(pos);
+    const debris = DEBRIS_PER_OVERRIDE[stateIdx];
+    const newCount = overrideCount + 1;
+    const newLoad = Math.min(MAX_LOAD, totalLoad + debris);
+
+    // ── Debris distribution: cascading activation ──────
+    // Override in any state loads the states underneath it too.
+    // Connection override → also loads Protection (suppressed signal generates threat debris)
+    // Protection override → loads Protection (primary)
+    // Control override → loads Control + Protection underneath (sympathetic still running)
+    // Domination override → loads Domination + Control + Protection (everything underneath)
+    //
+    // The activation is sympathetic — it doesn't stay in one box.
+    // Deeper overrides carry more downstream debris.
+    const binIdx = Math.floor(pos * 39);
+    setDebrisBins(prev => {
+      const next = [...prev];
+
+      // Helper: add debris in a zone (center bin, spread, amount)
+      const addZone = (centerBin, spread, amount) => {
+        for (let i = -spread; i <= spread; i++) {
+          const bi = centerBin + i;
+          if (bi >= 0 && bi < 40) {
+            const weight = 1 - Math.abs(i) / (spread + 1);
+            next[bi] = Math.min(MAX_LOAD / 2, next[bi] + amount * weight);
           }
         }
-      `}</style>
+      };
 
-      {/* ─── Shared: Activation ─────────── */}
-      <div className={`m3-node${step >= 0 ? ' visible' : ''}`} style={{
-        maxWidth: 500,
-        margin: '0 auto',
-        textAlign: 'center',
-        borderColor: step >= 0 ? hexToRgba(MODEL_COLOR, 0.3) : BORDER.default,
-        background: step >= 0 ? gradientCardBg(MODEL_COLOR, 0.04) : 'transparent',
+      // Primary debris at override position
+      addZone(binIdx, 2, debris * 0.7);
+
+      // Cascading debris into lower states:
+      if (stateIdx === 0) {
+        // Connection override → Protection also loads (the suppressed signal creates threat activation)
+        addZone(15, 2, debris * 0.4);  // bin 15 ≈ Protection center (0.375)
+      } else if (stateIdx === 1) {
+        // Protection override → primary only (already at sympathetic base)
+      } else if (stateIdx === 2) {
+        // Control override → Protection underneath (sympathetic activation unresolved)
+        addZone(15, 2, debris * 0.5);
+      } else if (stateIdx === 3) {
+        // Domination override → Control + Protection underneath
+        addZone(25, 2, debris * 0.4);  // bin 25 ≈ Control center (0.625)
+        addZone(15, 2, debris * 0.5);  // Protection
+      }
+
+      return next;
+    });
+
+    setOverrideCount(newCount);
+    setTotalLoad(newLoad);
+
+    // Narrative based on count
+    if (newCount === 1) {
+      setNarrative('"I don\u2019t have time for this." The restoration sequence stays open. Cortisol still circulating.');
+    } else if (newCount === 2) {
+      setNarrative('Another override. The body receives no biological resolution. Debris compounds.');
+    } else if (newCount === DRIFT_THRESHOLD) {
+      setNarrative('The amygdala has sensitised — threshold lowered, firing faster. The needle will start drifting on its own.');
+    } else if (newCount === DRIFT_ACCELERATE) {
+      setNarrative('Smaller triggers now produce larger responses. The window between floor and ceiling has narrowed.');
+    } else if (newCount === CHRONIC_THRESHOLD) {
+      setNarrative('The override is no longer an event. It is the architecture. The person does not register the activation as activation.');
+    } else if (newCount > CHRONIC_THRESHOLD) {
+      setNarrative('The system treats the elevated level as normal. The person may have no reference point for what rest feels like.');
+    } else {
+      const phrases = [
+        'Cortisol still circulating. Muscles still braced.',
+        'The HPA axis never received the all-clear.',
+        'Somatic debt accumulates underneath what feels like stability.',
+        'The floor rises. Each increment feels like the current normal.',
+        'The override consumes physiological resources continuously.',
+      ];
+      setNarrative(phrases[(newCount - 1) % phrases.length]);
+    }
+
+    // Start drift after threshold
+    if (newCount >= DRIFT_THRESHOLD && !driftRef.current) {
+      startDrift(newCount);
+    }
+  };
+
+  // ─── Auto-drift — the needle moves on its own ────
+  const startDrift = useCallback((count) => {
+    if (driftRef.current) clearInterval(driftRef.current);
+    const speed = count >= DRIFT_ACCELERATE ? 0.008 : 0.004;
+    driftRef.current = setInterval(() => {
+      setPos(prev => {
+        const next = Math.min(0.95, prev + speed);
+        return next;
+      });
+    }, 300);
+  }, []);
+
+  // Update drift speed when override count changes
+  useEffect(() => {
+    if (overrideCount >= DRIFT_THRESHOLD && driftRef.current) {
+      clearInterval(driftRef.current);
+      const speed = overrideCount >= DRIFT_ACCELERATE ? 0.008 : 0.004;
+      driftRef.current = setInterval(() => {
+        setPos(prev => Math.min(0.95, prev + speed));
+      }, 300);
+    }
+  }, [overrideCount]);
+
+  // ─── Reset ────────────────────────────────────────
+  const reset = () => {
+    if (driftRef.current) { clearInterval(driftRef.current); driftRef.current = null; }
+    setPos(0.125);
+    setOverrideCount(0);
+    setTotalLoad(0);
+    setDebrisBins(new Array(40).fill(0));
+    setNarrative('');
+  };
+
+  useEffect(() => () => {
+    if (driftRef.current) clearInterval(driftRef.current);
+  }, []);
+
+  // ─── Build SVG mountain path ──────────────────────
+  const maxBin = Math.max(...debrisBins, 1);
+  const mountainPoints = debrisBins.map((val, i) => {
+    const x = (i / 39) * SVG_W;
+    const h = (val / (MAX_LOAD / 2)) * (SVG_H - 5);
+    const y = SVG_H - h;
+    return `${x},${y}`;
+  }).join(' ');
+  const mountainArea = `0,${SVG_H} ${mountainPoints} ${SVG_W},${SVG_H}`;
+
+  return (
+    <section style={{ marginBottom: 32, ...diagramContainer() }}>
+
+      {/* ─── Header ─── */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 12,
+        marginBottom: 20, flexWrap: 'wrap',
       }}>
         <span style={{
-          fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
-          letterSpacing: '0.12em', textTransform: 'uppercase',
-          color: MODEL_COLOR,
+          fontFamily: FONT.mono, fontSize: 8,
+          color: orangeIntensity > 0.3 ? ORANGE : MODEL_COLOR,
+          letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600,
+          transition: 'color 0.5s ease',
         }}>
-          {SHARED[0].label}
+          Path A / Path B
         </span>
-        <p style={{
-          fontSize: 13, lineHeight: 1.5, color: TEXT.muted,
-          margin: '4px 0 0',
-        }}>
-          {SHARED[0].sub}
-        </p>
-      </div>
-
-      {/* Connector */}
-      <div className="m3-connector" style={{
-        background: branchRevealed ? hexToRgba(MODEL_COLOR, 0.3) : hexToRgba(MODEL_COLOR, 0.08),
-      }} />
-
-      {/* ─── Branch Point ──────────────── */}
-      <div className={`m3-node${branchRevealed ? ' visible' : ''}`} style={{
-        maxWidth: 500,
-        margin: '0 auto',
-        textAlign: 'center',
-        borderColor: branchRevealed ? MODEL_COLOR : BORDER.default,
-        background: branchRevealed ? hexToRgba(MODEL_COLOR, 0.08) : 'transparent',
-        borderWidth: 2,
-      }}>
         <span style={{
-          fontFamily: FONT.mono, fontSize: 9, fontWeight: 700,
-          letterSpacing: '0.12em', textTransform: 'uppercase',
-          color: MODEL_COLOR,
+          fontFamily: FONT.mono, fontSize: 8, color: TEXT.hint,
+          letterSpacing: '0.06em',
         }}>
-          {BRANCH.label}
+          Whether the body completes — or the activation accumulates
         </span>
-        <p style={{
-          fontSize: 14, lineHeight: 1.5, color: TEXT.primary,
-          margin: '4px 0 0', fontWeight: 500,
-        }}>
-          {BRANCH.sub}
-        </p>
       </div>
 
-      {/* ─── Two Paths ─────────────────── */}
-      <div className="m3-paths">
-        {/* Path A */}
-        <div className="m3-path-col">
+      {/* ─── Status ─── */}
+      <div style={{
+        display: 'flex', gap: 12, marginBottom: 16, flexWrap: 'wrap',
+      }}>
+        <div style={{
+          flex: 1, minWidth: 140,
+          padding: '8px 12px',
+          borderRadius: RADIUS.sm,
+          border: `1px solid ${hexToRgba(overrideCount > 0 ? ORANGE : SPECTRUM.slate, 0.2)}`,
+          background: hexToRgba(overrideCount > 0 ? ORANGE : SPECTRUM.slate, 0.05),
+          transition: 'all 0.4s ease',
+        }}>
           <div style={{
-            fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
-            letterSpacing: '0.12em', textTransform: 'uppercase',
-            color: PATH_A_COLOR,
-            textAlign: 'center',
-            padding: '8px 0',
-            opacity: branchRevealed ? 1 : 0,
-            transition: 'opacity 0.4s ease',
+            fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+            letterSpacing: '0.10em', textTransform: 'uppercase',
+            color: hexToRgba(overrideCount > 0 ? ORANGE : SPECTRUM.slate, 0.6),
+            transition: 'color 0.4s ease',
           }}>
-            Path A — No
+            Overrides
           </div>
-          {PATH_A.map((node, i) => (
-            <div key={node.id}
-              className={`m3-node${pathStep >= i ? ' visible' : ''}`}
-              style={{
-                borderColor: pathStep >= i ? hexToRgba(PATH_A_COLOR, 0.3) : BORDER.default,
-                borderLeft: `3px solid ${pathStep >= i ? PATH_A_COLOR : BORDER.default}`,
-                background: node.id === 'a-baseline' && pathStep >= i
-                  ? gradientCardBg(PATH_A_COLOR, 0.06) : 'transparent',
-                transition: 'opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, background 0.3s ease',
-                transitionDelay: `${i * 0.1}s`,
-              }}
-            >
-              <span style={{
-                fontSize: 14, fontWeight: 600,
-                color: pathStep >= i ? TEXT.primary : TEXT.muted,
-              }}>
-                {node.label}
-              </span>
-              <p style={{
-                fontSize: 12.5, lineHeight: 1.55, color: TEXT.muted,
-                margin: '3px 0 0',
-              }}>
-                {node.sub}
-              </p>
-            </div>
-          ))}
+          <div style={{
+            fontFamily: FONT.mono, fontSize: 14, fontWeight: 700,
+            color: overrideCount > 0 ? ORANGE : TEXT.hint,
+            transition: 'color 0.4s ease',
+          }}>
+            {overrideCount}
+          </div>
         </div>
+        <div style={{
+          flex: 1, minWidth: 140,
+          padding: '8px 12px',
+          borderRadius: RADIUS.sm,
+          border: `1px solid ${hexToRgba(active.hex, 0.2)}`,
+          background: hexToRgba(active.hex, 0.05),
+          transition: 'all 0.4s ease',
+        }}>
+          <div style={{
+            fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+            letterSpacing: '0.10em', textTransform: 'uppercase',
+            color: hexToRgba(active.hex, 0.6),
+            transition: 'color 0.4s ease',
+          }}>
+            Current State Position
+          </div>
+          <div style={{
+            fontFamily: FONT.mono, fontSize: 11, fontWeight: 700,
+            color: active.hex,
+            transition: 'color 0.4s ease',
+          }}>
+            {active.name}
+          </div>
+        </div>
+        {overrideCount >= DRIFT_THRESHOLD && (
+          <div style={{
+            flex: 1, minWidth: 140,
+            padding: '8px 12px',
+            borderRadius: RADIUS.sm,
+            border: `1px solid ${hexToRgba(ORANGE, 0.3)}`,
+            background: hexToRgba(ORANGE, 0.08),
+          }}>
+            <div style={{
+              fontFamily: FONT.mono, fontSize: 7.5, fontWeight: 600,
+              letterSpacing: '0.10em', textTransform: 'uppercase',
+              color: hexToRgba(ORANGE, 0.7),
+            }}>
+              Amygdala
+            </div>
+            <div style={{
+              fontFamily: FONT.mono, fontSize: 11, fontWeight: 700,
+              color: ORANGE,
+            }}>
+              {overrideCount >= CHRONIC_THRESHOLD ? 'CHRONIC' : overrideCount >= DRIFT_ACCELERATE ? 'SENSITISED' : 'DRIFTING'}
+            </div>
+          </div>
+        )}
+      </div>
 
-        {/* Path B */}
-        <div className="m3-path-col">
-          <div style={{
-            fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
-            letterSpacing: '0.12em', textTransform: 'uppercase',
-            color: PATH_B_COLOR,
-            textAlign: 'center',
-            padding: '8px 0',
-            opacity: branchRevealed ? 1 : 0,
-            transition: 'opacity 0.4s ease',
-          }}>
-            Path B — Yes
-          </div>
-          {PATH_B.map((node, i) => (
-            <div key={node.id}
-              className={`m3-node${pathStep >= i ? ' visible' : ''}`}
-              style={{
-                borderColor: pathStep >= i ? hexToRgba(PATH_B_COLOR, 0.3) : BORDER.default,
-                borderLeft: `3px solid ${pathStep >= i ? PATH_B_COLOR : BORDER.default}`,
-                background: node.id === 'b-substitute' && pathStep >= i
-                  ? gradientCardBg(PATH_B_COLOR, 0.06) : 'transparent',
-                transition: 'opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease, background 0.3s ease',
-                transitionDelay: `${i * 0.1}s`,
-              }}
+      {/* ─── Debris mountain (SVG above the bar) ─── */}
+      <div style={{ position: 'relative' }}>
+        <svg
+          viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+          style={{
+            width: '100%', height: 60, display: 'block',
+            marginBottom: -1,
+          }}
+          preserveAspectRatio="none"
+        >
+          {/* Mountain fill */}
+          {totalLoad > 0 && (
+            <polygon
+              points={mountainArea}
+              fill={hexToRgba(ORANGE, 0.15 + orangeIntensity * 0.25)}
+              style={{ transition: 'fill 0.4s ease' }}
+            />
+          )}
+          {/* Mountain outline */}
+          {totalLoad > 0 && (
+            <polyline
+              points={mountainPoints}
+              fill="none"
+              stroke={hexToRgba(ORANGE, 0.3 + orangeIntensity * 0.4)}
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              style={{ transition: 'stroke 0.4s ease' }}
+            />
+          )}
+          {/* Label */}
+          {totalLoad > 20 && (
+            <text x="10" y="16"
+              fill={hexToRgba(ORANGE, 0.5 + orangeIntensity * 0.3)}
+              fontSize="10"
+              fontFamily={FONT.mono}
+              fontWeight="600"
+              letterSpacing="0.08em"
             >
-              <span style={{
-                fontSize: 14, fontWeight: 600,
-                color: pathStep >= i ? TEXT.primary : TEXT.muted,
-              }}>
-                {node.label}
-              </span>
-              <p style={{
-                fontSize: 12.5, lineHeight: 1.55, color: TEXT.muted,
-                margin: '3px 0 0',
-              }}>
-                {node.sub}
-              </p>
-            </div>
-          ))}
+              UNRESOLVED ACTIVATION LOAD
+            </text>
+          )}
+        </svg>
+      </div>
+
+      {/* ─── The gradient bar ─── */}
+      <div
+        ref={barRef}
+        style={{ position: 'relative', height: 42, paddingTop: 7, cursor: 'pointer' }}
+        onMouseDown={onDown}
+        onTouchStart={onDown}
+      >
+        {/* Orange tint overlay */}
+        <div style={{
+          position: 'absolute', top: 7, left: 0, right: 0,
+          height: 14, borderRadius: 100,
+          background: LIVE_GRADIENT,
+          overflow: 'hidden',
+        }}>
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: barTint,
+            transition: 'background 0.5s ease',
+            borderRadius: 100,
+          }} />
         </div>
+        {/* Mode boundary markers */}
+        {[0.25, 0.5, 0.75].map(b => (
+          <div key={b} style={{
+            position: 'absolute',
+            left: `${b * 100}%`,
+            top: 6, bottom: 21,
+            width: 1.5,
+            background: 'rgba(0,0,0,0.45)',
+            borderRadius: 1,
+            transform: 'translateX(-50%)',
+            zIndex: 2,
+          }} />
+        ))}
+        {/* Needle */}
+        <div style={{
+          position: 'absolute',
+          left: `${pos * 100}%`,
+          top: 14,
+          width: 28, height: 28,
+          transform: 'translate(-50%, -50%)',
+          borderRadius: '50%',
+          background: orangeIntensity > 0.5
+            ? `radial-gradient(circle at 35% 35%, ${hexToRgba(ORANGE, 0.3)}, ${hexToRgba(ORANGE, 0.15)})`
+            : 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.95), rgba(255,255,255,0.8))',
+          border: `3px solid ${orangeIntensity > 0.4 ? ORANGE : active.hex}`,
+          boxShadow: `0 2px 8px rgba(0,0,0,0.4), 0 0 16px ${hexToRgba(orangeIntensity > 0.4 ? ORANGE : active.hex, 0.5)}`,
+          cursor: 'grab',
+          transition: 'border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease',
+          zIndex: 10,
+        }} />
+      </div>
+
+      {/* ─── State labels ─── */}
+      <div style={{ display: 'flex', marginTop: 6 }}>
+        {STATES.map((s, i) => {
+          const isCurrent = i === activeIdx;
+          return (
+            <div key={s.name} style={{
+              flex: 1, textAlign: 'center',
+              opacity: isCurrent ? 1 : 0.3,
+              transition: 'opacity 0.3s ease',
+            }}>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 9, fontWeight: 700,
+                letterSpacing: '0.08em',
+                color: isCurrent ? (orangeIntensity > 0.5 ? ORANGE : s.hex) : TEXT.hint,
+                transition: 'color 0.3s ease',
+              }}>
+                {s.name}
+              </div>
+              <div style={{
+                fontFamily: FONT.mono, fontSize: 8, fontWeight: 500,
+                letterSpacing: '0.06em',
+                color: isCurrent ? hexToRgba(orangeIntensity > 0.5 ? ORANGE : s.hex, 0.6) : TEXT.micro,
+                transition: 'color 0.3s ease',
+                marginTop: 2,
+              }}>
+                {s.mode}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ─── Narrative ─── */}
+      {narrative && (
+        <div style={{
+          textAlign: 'center', marginTop: 16,
+          fontSize: 12, color: TEXT.muted, lineHeight: 1.55,
+          fontStyle: 'italic',
+          minHeight: 36,
+        }}>
+          {narrative}
+        </div>
+      )}
+
+      {/* ─── Controls ─── */}
+      <div style={{
+        display: 'flex', gap: 8, justifyContent: 'center',
+        marginTop: 16, flexWrap: 'wrap',
+      }}>
+        <button
+          onClick={doOverride}
+          style={{
+            padding: '6px 20px',
+            borderRadius: 20,
+            border: `1px solid ${hexToRgba(ORANGE, 0.4)}`,
+            background: hexToRgba(ORANGE, 0.12),
+            cursor: 'pointer',
+            fontFamily: FONT.mono,
+            fontSize: 9,
+            fontWeight: 600,
+            letterSpacing: '0.10em',
+            textTransform: 'uppercase',
+            color: ORANGE,
+            transition: 'all 0.3s ease',
+          }}
+        >
+          Override +
+        </button>
+        {overrideCount > 0 && (
+          <button
+            onClick={reset}
+            style={{
+              padding: '6px 16px',
+              borderRadius: 20,
+              border: `1px solid ${hexToRgba(SPECTRUM.slate, 0.3)}`,
+              background: hexToRgba(SPECTRUM.slate, 0.08),
+              cursor: 'pointer',
+              fontFamily: FONT.mono,
+              fontSize: 9,
+              fontWeight: 600,
+              letterSpacing: '0.10em',
+              textTransform: 'uppercase',
+              color: SPECTRUM.slate,
+              transition: 'all 0.3s ease',
+            }}
+          >
+            Reset
+          </button>
+        )}
+      </div>
+
+      {/* ─── Instructions ─── */}
+      {overrideCount === 0 && (
+        <div style={{
+          textAlign: 'center', marginTop: 12,
+          fontFamily: FONT.mono, fontSize: 8,
+          color: TEXT.hint, letterSpacing: '0.06em',
+        }}>
+          Drag the slider to a state, then press Override + to see what accumulates
+        </div>
+      )}
+
+      {/* ─── Bottom note ─── */}
+      <div style={{
+        marginTop: 16,
+        padding: '10px 16px',
+        borderRadius: RADIUS.md,
+        border: `1px solid ${hexToRgba(orangeIntensity > 0.3 ? ORANGE : SPECTRUM.slate, 0.15)}`,
+        background: hexToRgba(orangeIntensity > 0.3 ? ORANGE : SPECTRUM.slate, 0.04),
+        textAlign: 'center',
+        transition: 'all 0.5s ease',
+      }}>
+        <p style={{
+          fontSize: 12, lineHeight: 1.6,
+          color: TEXT.muted, margin: 0,
+        }}>
+          {overrideCount >= CHRONIC_THRESHOLD
+            ? 'The person in chronic activation cannot restore, operates from locked capacity restrictions experienced as normal, and has no awareness that any of this is happening.'
+            : overrideCount >= DRIFT_THRESHOLD
+            ? 'The amygdala has sensitised — it fires faster at smaller inputs. The needle drifts toward threat on its own. The person did not choose this. The nervous system recalibrated.'
+            : 'Every override adds to what is already there. The restoration sequence stays open. The body carries the accumulation forward.'
+          }
+        </p>
       </div>
     </section>
   );
