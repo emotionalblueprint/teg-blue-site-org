@@ -101,7 +101,15 @@ export default function M1EmotionsAsSignalsPage() {
           />
         }
       >
-        <M1SignalLifecycle />
+        <figure role="figure" aria-label="Signal lifecycle diagram">
+          <M1SignalLifecycle />
+          <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+            The three phases every emotional signal passes through: environmental evaluation, physiological detection, and conscious signal formation — complete in under 200 milliseconds.
+          </figcaption>
+          <noscript>
+            <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: the three phases of signal formation — evaluating (continuous monitoring), detected (condition identified), and signal (body responds). Ten selectable emotions show how each signal varies in waveform shape and intensity.</p>
+          </noscript>
+        </figure>
 
         <article>
 
@@ -190,9 +198,15 @@ export default function M1EmotionsAsSignalsPage() {
               The second information system is cognition. Cognition supports reflection, interpretation, planning, and symbolic reasoning. However, cognition does not generate the original biological signal. It interprets, modulates, suppresses, or reorganizes it.
             </p>
 
-            <div style={{ margin: "24px 0" }}>
+            <figure role="figure" aria-label="Speed comparison diagram" style={{ margin: "24px 0" }}>
               <M1SpeedComparison />
-            </div>
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                Emotional processing reaches the body at 12 milliseconds and produces a full physiological response by 150 milliseconds. Cognitive processing reaches the cortex at 300 milliseconds. The body responds before thought arrives.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: dual timeline comparing emotional processing (12ms amygdala, 80ms physiological response, 150ms nervous system state) with cognitive processing (300ms cortex, 500ms evaluation complete).</p>
+              </noscript>
+            </figure>
 
             <p style={proseStyle}>
               When cognition overrides emotional signaling, the biological signal remains active at the physiological level. The signal is still being generated, whether or not it is consciously acknowledged.
@@ -249,9 +263,15 @@ export default function M1EmotionsAsSignalsPage() {
               </div>
             </div>
 
-            <div style={{ margin: "24px 0" }}>
+            <figure role="figure" aria-label="Signal anatomy diagram" style={{ margin: "24px 0" }}>
               <M1SignalDiagram />
-            </div>
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                The universal three-step anatomy: a signal fires, the body responds, and restoration begins. Each of the 16 emotions follows this same biological sequence.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: animated waveform showing the three-step signal anatomy (Signal, Response, Restoration) for each of the 16 emotions, selectable by emotion name.</p>
+              </noscript>
+            </figure>
 
             <p style={proseStyle}>
               This architecture is universal. Fear, joy, shame, compassion — each carries a different message, but each follows the same three-step sequence. The message varies. The sequence does not.
@@ -304,7 +324,15 @@ export default function M1EmotionsAsSignalsPage() {
               <strong style={{ color: TEXT.primary }}>Somatic emotions:</strong> Fear, Anger, Stress, Anxiety, Disgust, Joy, Happiness, Admiration, Pride.
             </p>
 
-            <M1SignalMap filter="somatic" />
+            <figure role="figure" aria-label="Somatic emotions signal map">
+              <M1SignalMap filter="somatic" />
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                Eight somatic emotions organised by body signature group — mobilisation, expulsion, approach and expansion. Each carries a specific signal, body response, and restoration need that completes through the body's own channels.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: grid of eight somatic emotions (Fear, Anger, Stress, Anxiety, Disgust, Joy, Happiness, Admiration) organised by body signature group. Select an emotion to see its signal, body response, and restoration need.</p>
+              </noscript>
+            </figure>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
@@ -344,7 +372,15 @@ export default function M1EmotionsAsSignalsPage() {
               <strong style={{ color: TEXT.primary }}>Relational emotions:</strong> Shame, Guilt, Sadness, Love, Trust, Gratitude, Compassion.
             </p>
 
-            <M1SignalMap filter="relational" />
+            <figure role="figure" aria-label="Relational emotions signal map">
+              <M1SignalMap filter="relational" />
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                Seven relational emotions that require another person's nervous system for completion. The signal fires in one body; restoration requires a second.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: grid of seven relational emotions (Shame, Guilt, Sadness, Love, Trust, Gratitude, Compassion) organised by body signature group. Select an emotion to see its signal, body response, and restoration need.</p>
+              </noscript>
+            </figure>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
@@ -407,7 +443,15 @@ export default function M1EmotionsAsSignalsPage() {
               </ExpandableSection>
             </div>
 
-            <M1DistortionPathway />
+            <figure role="figure" aria-label="Distortion pathway diagram">
+              <M1DistortionPathway />
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                When admiration cannot be received, it distorts into envy. When pride cannot be received, it distorts into arrogance. The original signal remains underneath.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: two branching pathways. Admiration (value detected in another) branches to either recognition (signal received) or envy (signal blocked). Pride (own value recognised) branches to either self-recognition (signal received) or arrogance (signal blocked).</p>
+              </noscript>
+            </figure>
           </section>
 
           {/* ─── C21: WHAT RESTORATION IS ──────────────── */}
@@ -433,9 +477,15 @@ export default function M1EmotionsAsSignalsPage() {
               This is a structural constraint of the signal system, not a preference. The pathway must match the content. A person who attempts somatic restoration for relational content — exercising to clear shame, breathing techniques to process grief — produces discharge but does not complete the restoration sequence. The activation remains. The body carries it forward.
             </p>
 
-            <div style={{ margin: "24px 0" }}>
+            <figure role="figure" aria-label="Restoration pathways diagram" style={{ margin: "24px 0" }}>
               <M1RestorationPathways />
-            </div>
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                Three restoration scenarios: somatic signals completing through the body, relational signals completing through co-regulation, and what happens when the restoration type mismatches the signal type.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: three togglable views showing restoration pathways. Somatic: signal fires, body runs the restoration sequence, activation resolves. Relational: signal fires, another person provides co-regulation, activation resolves. Mismatch: relational signal fires, somatic methods applied, activation persists.</p>
+              </noscript>
+            </figure>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
@@ -492,7 +542,15 @@ export default function M1EmotionsAsSignalsPage() {
               </ExpandableSection>
             </div>
 
-            <M1DevelopmentalLoss />
+            <figure role="figure" aria-label="Developmental loss diagram">
+              <M1DevelopmentalLoss />
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                When restoration is unavailable early in life, resting activation rises and the available window between activation and shutdown narrows — until shutdown becomes the only available exit.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Animated diagram: two lines over developmental time. Resting activation (baseline) rises steadily from early development through accumulation. Shutdown threshold remains constant. The gap between the two lines narrows, showing the shrinking window available before the nervous system shuts down.</p>
+              </noscript>
+            </figure>
           </section>
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
@@ -597,6 +655,12 @@ export default function M1EmotionsAsSignalsPage() {
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": "https://teg-blue.org/model/m1-emotions-as-signals",
+            },
+            image: {
+              "@type": "ImageObject",
+              url: "https://teg-blue.org/model/m1-emotions-as-signals/opengraph-image",
+              name: "Emotions as Signals — Model M1",
+              description: "Interactive diagrams showing signal lifecycle, emotion map, speed comparison, distortion pathways, restoration pathways, and developmental loss of restoration capacity.",
             },
             about: [
               { "@type": "Thing", name: "Emotions as Signals" },

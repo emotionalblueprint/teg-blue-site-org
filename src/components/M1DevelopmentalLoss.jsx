@@ -180,9 +180,11 @@ export default function M1DevelopmentalLoss() {
       </div>
 
       {/* ─── SVG ───────────────────────────── */}
-      <svg viewBox={`0 0 ${VW} ${VH}`} style={{
+      <svg viewBox={`0 0 ${VW} ${VH}`} role="img" aria-labelledby="m1-devloss-title m1-devloss-desc" style={{
         width: '100%', height: 'auto', display: 'block',
       }}>
+        <title id="m1-devloss-title">Developmental Loss of Restoration Pathways</title>
+        <desc id="m1-devloss-desc">When restoration is unavailable early in life, resting activation rises and the available window between activation and shutdown narrows — until shutdown becomes the only available exit.</desc>
         {/* Grid */}
         {[0.25, 0.5, 0.75, 1].map(v => (
           <line key={v}

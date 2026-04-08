@@ -299,9 +299,11 @@ export default function M1SignalDiagram() {
 
       {/* ─── SVG Waveform ─────────────────────── */}
       <div style={{ position: 'relative' }}>
-        <svg viewBox={`0 0 ${VW} ${VH}`} style={{
+        <svg viewBox={`0 0 ${VW} ${VH}`} role="img" aria-labelledby="m1-anatomy-title m1-anatomy-desc" style={{
           width: '100%', height: 'auto', display: 'block',
         }}>
+          <title id="m1-anatomy-title">Anatomy of an Emotional Signal</title>
+          <desc id="m1-anatomy-desc">The universal three-step anatomy: a signal fires, the body responds, and restoration begins. Each of the 16 emotions follows this same biological sequence.</desc>
           {/* Grid lines */}
           {[0.25, 0.5, 0.75, 1].map(v => (
             <line key={v}

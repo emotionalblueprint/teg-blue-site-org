@@ -331,7 +331,9 @@ export default function M1RestorationPathways() {
 
       {/* SVG Chart */}
       <div style={{ position: 'relative' }}>
-        <svg viewBox={`0 0 ${VW} ${VH}`} style={{ width: '100%', height: 'auto', display: 'block' }}>
+        <svg viewBox={`0 0 ${VW} ${VH}`} role="img" aria-labelledby="m1-restore-title m1-restore-desc" style={{ width: '100%', height: 'auto', display: 'block' }}>
+          <title id="m1-restore-title">Restoration Pathways</title>
+          <desc id="m1-restore-desc">Three restoration scenarios: somatic signals completing through the body, relational signals completing through co-regulation, and what happens when the restoration type mismatches the signal type.</desc>
           {/* Grid lines */}
           {[0.25, 0.5, 0.75, 1].map(v => (
             <line key={v}
