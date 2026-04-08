@@ -32,8 +32,8 @@ const SIDEBAR_SECTIONS = [
 ];
 
 export const metadata = {
-  title: "About | TEG-Blue Emotional Technology",
-  description: "About TEG-Blue — the first complete emotional technology system. An integrative framework connecting 145+ theories from 47+ scientific domains into testable hypotheses about emotional regulation. Initial validation on 10,000+ narratives.",
+  title: "About | TEG-Blue Research",
+  description: "About TEG-Blue — an integrative architecture connecting 145+ theories from 47+ scientific domains into testable hypotheses about how the nervous system regulates. Initial validation on 10,000+ narratives.",
   keywords: [
     "TEG-Blue",
     "emotional technology",
@@ -481,7 +481,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue — the first complete emotional technology system. An integrative framework connecting 145+ theories from 47+ scientific domains.",
+            description: "About TEG-Blue — an integrative architecture connecting 145+ theories from 47+ scientific domains.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",

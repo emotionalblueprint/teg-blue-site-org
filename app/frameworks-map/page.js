@@ -61,7 +61,7 @@ const FRAMEWORKS = [
     claims: [
       "Awareness teaches awareness: the adults' awareness configuration is the child's developmental environment",
       "Children calibrate to what caregivers embody, not what they say — the transmission channel is the nervous system",
-      "Identity is a cognitive structure built around whichever awareness capacities had conditions to develop — there is no hidden self to find",
+      "Identity is a cognitive structure built around whichever awareness capacities had conditions to develop",
       "Restoration is developing the capacities that never had conditions to form and learning biological restoration",
     ],
     testable: "Predictive links between caregiver awareness configuration and child capacity development. Measurable state signatures and repair signatures in parent-child interaction. Longitudinal shifts in awareness capacities with sustained safety provision.",
@@ -90,7 +90,7 @@ const FRAMEWORKS = [
     subtitle: "Scale: Social systems · Cost: Flexibility",
     group: "Collective",
     summary: "The first collective framework. When enough people in a system are running the mechanisms F3 describes — false coherence, emotional distortion, external regulation — the group develops structures to stay stable: rules. Rules are not rational agreements. They are nervous system regulation at the group level.",
-    purpose: "People do not follow harmful rules because they are unintelligent or immoral. They follow them because under threat, the nervous system prioritises predictability, belonging protection, and risk minimisation — and rules provide all three. Questioning a rule activates the same threat that created it.\n\nF4 explains six categories of rules that consistently emerge, and why they persist long after the original threat has passed.",
+    purpose: "Under threat, the nervous system prioritises predictability, belonging protection, and risk minimisation — and rules provide all three. Questioning a rule activates the same threat that created it.\n\nF4 explains six categories of rules that consistently emerge, and why they persist long after the original threat has passed.",
     buildsOn: "Sociology (Bourdieu, Bernstein, Goffman), social psychology (Milgram, Asch, Cialdini), neuroscience (Porges, Siegel), attachment theory (Bowlby), systems theory (Bowen, Satir), trauma studies (van der Kolk, Herman), political psychology (Altemeyer), moral psychology (Haidt).",
     claims: [
       "Rule-following is often a nervous system regulation strategy, not a reasoning choice",
@@ -147,7 +147,7 @@ const FRAMEWORKS = [
     claims: [
       "Domination is built through reinforcement, not born — the same learning mechanism that shapes all behavior, interruptible at specific stages",
       "The Crossroads is a named critical turning point where defense becomes strategy, recognizable through ten early escalation markers",
-      "Empathy gating follows a three-capacity model: RE redirects, ER collapses, SEA was never there — the most harmful configuration has the least visibility",
+      "Empathy gating follows a three-capacity model: Interpersonal Affect Perception (RE) redirects, Affective Resonance (ER) collapses, Interoceptive Self-Awareness (SEA) was never there — the most harmful configuration has the least visibility",
       "External regulation through subjugation builds tolerance with no natural stopping point — addiction logic applied to relational domination",
     ],
     testable: "Behavioral outcome prediction under stress and power asymmetry. Coding Crossroads markers and five-stage progression in language. Testing whether stage-appropriate intervention outperforms generic approaches. Validating the three-capacity empathy gating model.",
@@ -159,7 +159,7 @@ const FRAMEWORKS = [
     subtitle: "Scale: Individual and collective repair",
     group: "Repair",
     summary: "F8 turns the system around. F1–F7 trace escalating substitutes. F8 asks: how do you go back? The answer is specific: by rebuilding the awareness capacities that never had conditions to develop.",
-    purpose: "Not by finding a hidden self, not by removing a mask, but by creating the relational and experiential conditions that allow RE, ER, and SEA to come online.\n\nF8 operates in two movements. Part 1: individual repair — how to assess where your three capacities currently sit, why repair is difficult, and what conditions make it possible. Part 2: collective strength — why different awareness configurations make collectives more resilient, and why conformity, not difference, is the vulnerability.\n\nThe two movements are one argument: repairing your own capacities and accepting that everyone's capacities are different are the same act of moving toward safety.",
+    purpose: "By creating the relational and experiential conditions that allow Interpersonal Affect Perception (RE), Affective Resonance (ER), and Interoceptive Self-Awareness (SEA) to come online.\n\nF8 operates in two movements. Part 1: individual repair — how to assess where your three capacities currently sit, why repair is difficult, and what conditions make it possible. Part 2: collective strength — why different awareness configurations make collectives more resilient, and why conformity, not difference, is the vulnerability.\n\nThe two movements are one argument: repairing your own capacities and accepting that everyone's capacities are different are the same act of moving toward safety.",
     buildsOn: "Winnicott's True/False Self, Rogers' organismic valuing, IFS, mentalization theory, Polyvagal Theory, corrective emotional experience research.",
     claims: [
       "Awareness capacities can be assessed across five distinct states — from fully disconnected to reliably available under pressure",
@@ -175,7 +175,7 @@ const FRAMEWORKS = [
     title: "When the Environment Is the Mismatch",
     subtitle: "Scale: Structural",
     group: "Repair",
-    summary: "F9 reframes neurodivergence from deficit to variation. Different nervous systems process the emotional gradient differently. It is configuration. The problem is not the nervous system — it is the mismatch between how a nervous system is built and what the environment demands.",
+    summary: "Different nervous systems process the emotional gradient differently. Neurodivergence is configuration. The problem is not the nervous system — it is the mismatch between how a nervous system is built and what the environment demands.",
     purpose: "When environments are designed for one configuration, others are required to mask — to perform the expected configuration at the cost of authentic expression and chronic regulation.\n\nF9 explains the costs of structural mismatch, the mechanism of forced masking as it connects to F2–F3, and what genuine inclusion requires: not accommodation of deficit, but design that recognises variation as a feature of collective intelligence.",
     buildsOn: "Neurodiversity paradigm (Singer, Walker, Silberman), Social Model of Disability (Oliver, Shakespeare), Polyvagal Theory, Intense World Theory, masking research (Price, Rose, Maté), Universal Design for Learning.",
     claims: [
@@ -213,7 +213,7 @@ const FRAMEWORKS = [
     purpose: "Five competing needs (connection, protection, authenticity, belonging, coherence) pull in different directions at once.\n\nThe framework introduces multi-rationality: the recognition that when multiple needs are simultaneously valid, behaviour serves more than one master. What looks contradictory from outside is perfectly logical from inside.",
     buildsOn: "Cognitive dissonance (Festinger), analytical psychology (Jung), systems theory (Bateson), Internal Family Systems (Schwartz), dialectics (Hegel), affective neuroscience (Damasio, Porges).",
     claims: [
-      "Paradoxical behavior is multi-rational — serving multiple valid needs simultaneously, serving multiple valid needs simultaneously",
+      "Paradoxical behavior is multi-rational — serving multiple valid needs simultaneously",
       "Every framework (F1–F10) generates characteristic paradoxes that follow predictably from each mechanism's specific logic",
       "The capacity to hold paradox depends on nervous system state — Safety & Openness enables holding, Power & Dominance erases",
       "Integration means holding, not resolving — true coherence is the capacity to contain contradiction without collapsing",

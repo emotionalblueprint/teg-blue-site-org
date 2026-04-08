@@ -274,7 +274,7 @@ export default function MethodologyPage() {
               Pattern-aware data architecture
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              The system assumes many difficult behaviors started as Protection Mode survival responses. Data systems built on this framework should not be designed to shame, profile, or exploit. This is an architectural constraint, not just an aspiration.
+              The system maps behavior as a function of nervous system state. When the nervous system learned that return was not safe, it organises around protection — and the data architecture tracks state, pattern, and position as independent dimensions, each of which can change when conditions change. This is an architectural constraint, not an aspiration.
             </p>
           </div>
         </section>

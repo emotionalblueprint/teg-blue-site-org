@@ -252,7 +252,7 @@ export default function HowItWorksPage() {
                 { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals" },
                 { label: "M2 — Nervous System States", detail: "What the system does: the instrument, the modes, the observable compass" },
                 { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires" },
-                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA)" },
+                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)" },
               ]}
               href="/models"
               linkText="See the four models →"
@@ -288,14 +288,14 @@ export default function HowItWorksPage() {
               number={1}
               title="Emotions as Signals"
               role="The input — what fires the system"
-              details="Nine canonical emotions, each mapped across four modes in fluid and chronic states. How each emotion signals, what it requires to complete, and how it reroutes under different regulatory conditions."
+              details="Sixteen emotions (nine somatic, seven relational), each mapped across four modes in fluid and chronic states. How each emotion signals, what it requires to complete, and how it reroutes under different regulatory conditions."
               color={SPECTRUM.sky}
             />
             <RootFileCard
               number={2}
               title="Awareness Capacities"
               role="The receiver — determines if the signal lands"
-              details="Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA). How the three capacities interact, what happens when each is absent or suppressed, and how they recover."
+              details="Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA). How the three capacities interact, what happens when each is absent or suppressed, and how they recover."
               color={SPECTRUM.azure}
             />
             <RootFileCard
@@ -376,7 +376,7 @@ export default function HowItWorksPage() {
                   <ExportRow
                     library="Emotions data library"
                     source="Emotions as Signals"
-                    exports="All nine emotions mapped across modes and states"
+                    exports="All sixteen emotions mapped across modes and states"
                   />
                   <ExportRow
                     library="Tool query engine"

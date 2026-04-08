@@ -134,7 +134,7 @@ export default function FoundationsPage() {
             >
               <div style={labelStyle(SPECTRUM.cobalt)}>Core Insight</div>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>State determines capacity</strong> — what someone can perceive, feel, think, and do depends on their nervous system state, not their character or intelligence.
+                <strong style={{ color: TEXT.primary }}>State determines capacity</strong> — what someone can perceive, feel, think, and do depends on their nervous system state.
               </p>
             </div>
             <div
@@ -367,10 +367,10 @@ export default function FoundationsPage() {
             }}
           >
             <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 600, marginBottom: 12 }}>
-              This is not a tagline. It is an architectural constraint that applies to every tool, schema, and classification derived from TEG-Blue.
+              An architectural constraint that applies to every tool, schema, and classification derived from TEG-Blue.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The system assumes that many difficult behaviors began as Protection Mode survival responses. A person stuck in Control or Domination is not a category. They are a person whose nervous system learned that return was not safe. Data systems built on this framework are not designed to shame, profile, or exploit — they are designed to distinguish state from character, pattern from identity, and current position from permanent destination.
+              The system maps behavior as a function of nervous system state. When the nervous system learned that return was not safe, it organises around protection — and the patterns that follow reflect that organisation, not a fixed category. The data architecture tracks state, pattern, and position as independent dimensions, each of which can change when conditions change.
             </p>
 
             <div style={{ ...labelStyle(SPECTRUM.indigo), marginBottom: 8 }}>

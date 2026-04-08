@@ -28,7 +28,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "Start Here | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — a pattern recognition system based on nervous system science. Open access, open questions, open to validation.",
+  description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — a pattern recognition system connecting 145+ established theories. Open access, open questions, open to validation.",
   keywords: [
     "TEG-Blue research",
     "emotional technology",
@@ -78,7 +78,7 @@ export default function ResearchEntryPage() {
               badge="ENTRY POINT"
               title="Start Here"
               subtitle="Pattern recognition based on nervous system science"
-              description="TEG-Blue is the first complete emotional technology system — an integrative architecture that synthesizes 145+ established theories into testable claims about emotional regulation. Open access, open questions, open to validation."
+              description="TEG-Blue is an integrative architecture that synthesizes 145+ established theories into testable claims about how the nervous system regulates. Open access, open questions, open to validation."
             />
             <div style={{ marginTop: 20 }}>
               <Link
@@ -261,7 +261,7 @@ export default function ResearchEntryPage() {
               title="On individual and clinical questions"
               questions={[
                 "False coherence is proposed as a cognitive regulation strategy. Does it produce measurable physiological stabilisation — and what is the cost of removing it without first building the restoration capacity it replaced?",
-                "The three awareness capacities — Reading Emotions (RE), Emotional Resonance (ER), Self-Emotional Awareness (SEA) — are proposed as developmentally distinct. Do they dissociate independently — and can high Reading Emotions (RE) and Emotional Resonance (ER) with absent Self-Emotional Awareness (SEA) be distinguished from existing clinical categories?",
+                "The three awareness capacities — Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA) — are proposed as developmentally distinct. Do they dissociate independently — and can high Interpersonal Affect Perception (RE) and Affective Resonance (ER) with absent Interoceptive Self-Awareness (SEA) be distinguished from existing clinical categories?",
                 "If mode position determines what an emotion produces — not the emotion itself — what would a mode-position assessment look like in practice, and how does it differ from existing affect regulation measures?",
               ]}
               refLinks={[
@@ -404,7 +404,7 @@ export default function ResearchEntryPage() {
             "@type": "WebPage",
             name: "Start Here — TEG-Blue Research",
             url: "https://teg-blue.org/research-entry",
-            description: "Entry point for researchers and academics. TEG-Blue is the first complete emotional technology system — a pattern recognition system based on nervous system science.",
+            description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — connecting 145+ established theories into testable claims.",
             inLanguage: "en",
             isPartOf: {
               "@type": "ResearchProject",
