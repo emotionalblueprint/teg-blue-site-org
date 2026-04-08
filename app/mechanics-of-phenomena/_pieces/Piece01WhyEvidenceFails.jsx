@@ -5,7 +5,7 @@ export default function Piece01WhyEvidenceFails() {
   return (
     <article>
       {/* Opening paragraphs */}
-      <p style={READING.paragraph}>I{"\u2019"}ve been collecting this pattern for years. It shows up in every field where someone careful is trying to change someone else{"\u2019"}s mind with evidence {"\u2014"} and failing. Scientists, educators, clinicians, policy researchers. Different domains. Same wall.</p>
+      <p style={READING.paragraph}>It shows up in every field where someone careful is trying to change someone else{"\u2019"}s mind with evidence {"\u2014"} and failing. Scientists, educators, clinicians, policy researchers. Different domains. Same wall.</p>
 
       <p style={READING.paragraph}>You present the data. Irrefutable, in some cases {"\u2014"} photographs, measurements, peer-reviewed consensus. The person doesn{"\u2019"}t update. Doesn{"\u2019"}t pause. In some cases becomes more certain than before you started.</p>
 

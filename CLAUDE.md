@@ -31,6 +31,7 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 3. If build passes and checks are clean, offer to commit and push
 4. Update any active `_session-state.md` files in vault directories you worked in
 5. Update `teg-blue-vault/_plans/pending-tasks.md` with all unfinished work, open decisions, and what the next session should start with
+   Note: `teg-blue-vault/` is the promoted vault (was vault-2). Archive at `teg-blue-vault-archive/`.
 
 ### Debt Prevention Rules
 
@@ -53,7 +54,7 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 
 For shared rules (core messaging, forbidden terms, voice, mode colors) → auto-memory (always loaded).
 For content architecture and source-of-truth rules → `teg-blue-vault/CLAUDE.md`.
-For .org site goals and writing principles → `teg-blue-vault/_system/CLAUDE-org-site-goals.md`.
+For .org site goals and writing principles → `teg-blue-vault/_system/writing-foundations.md` + `writing-style-org-pages.md`.
 
 **.org links to .com** for interactive tools. **.com links to .org** for open research.
 
@@ -65,7 +66,7 @@ For .org site goals and writing principles → `teg-blue-vault/_system/CLAUDE-or
 
 All .org content falls under **Tier 3: Researcher & Frameworks**. All content is designed to be readable by both humans and AI systems.
 
-> **Full writing reference:** `teg-blue-vault/_system/writing-guidelines.md` — single source of truth for all TEG-Blue writing.
+> **Full writing reference:** `teg-blue-vault/_system/writing-foundations.md` — shared rules for all TEG-Blue writing. Style-specific: `writing-style-ca.md` (CAs), `writing-style-org-pages.md` (.org pages).
 
 ---
 

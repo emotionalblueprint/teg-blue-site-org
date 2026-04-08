@@ -1,7 +1,7 @@
 /**
  * Compass Diagram — Structured Data
  *
- * Single data file derived from all 5 root files in teg-blue-vault/data-source/root/.
+ * Single data file derived from all 5 root files in teg-blue-vault-archive/data-source/root/.
  * Every field has a source comment tracing back to the root.
  *
  * Sources:

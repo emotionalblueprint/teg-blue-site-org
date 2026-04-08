@@ -7,9 +7,7 @@ export default function PiecePBN01Octopus() {
   return (
     <article>
       {/* Continuous prose */}
-      <p style={READING.paragraph}>I keep a running list of the places I find the same architecture operating in completely different hardware. The octopus was on it early.</p>
-
-      <p style={READING.paragraph}>Here is the mechanism: across the octopus{"\u2019"}s skin, millions of tiny neuromuscular organs called chromatophores sit waiting. Each one is a pigment sac wrapped in 10 to 20 radial muscles, wired directly to the brain via motor neurons. When the brain detects a threat, a rival, a potential mate {"\u2014"} it fires. The muscles contract or expand. The pigment sac opens or closes. Across the entire body, simultaneously, a pattern appears.</p>
+      <p style={READING.paragraph}>Across the octopus{"\u2019"}s skin, millions of tiny neuromuscular organs called chromatophores sit waiting. Each one is a pigment sac wrapped in 10 to 20 radial muscles, wired directly to the brain via motor neurons. When the brain detects a threat, a rival, a potential mate {"\u2014"} it fires. The muscles contract or expand. The pigment sac opens or closes. Across the entire body, simultaneously, a pattern appears.</p>
 
       <p style={READING.paragraph}>In <em>Octopus vulgaris</em> alone, there are over half a million neurons dedicated to chromatophore control, with receptors for all classical neurotransmitters present {"\u2014"} different transmitters activating or inhibiting different color classes. This is not a reflex. It is a full neural broadcast.</p>
 
