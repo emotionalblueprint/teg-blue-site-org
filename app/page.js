@@ -114,6 +114,20 @@ export default function ResearchHub() {
                   Emotions are structured biological signals.<br />TEG-Blue makes them legible.
                 </h1>
 
+                {/* Subtitle */}
+                <p
+                  style={{
+                    fontSize: "clamp(14px, 2.5vw, 16px)",
+                    color: TEXT.secondary,
+                    lineHeight: 1.5,
+                    margin: "0 0 6px",
+                    maxWidth: 680,
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  An Integrative Architecture Mapping Nervous System States, Signals, and Restoration
+                </p>
+
                 {/* Lead description */}
                 <p
                   style={{
@@ -124,7 +138,7 @@ export default function ResearchHub() {
                     maxWidth: 680,
                   }}
                 >
-                  Open science — transparent research, credited sources, testable claims. Built on 145+ established theories. Open to critique and validation.
+                  Open science — built on 145+ established theories. Open to critique and validation.
                 </p>
 
                 {/* CTAs */}
@@ -171,7 +185,7 @@ export default function ResearchHub() {
                   style={{
                     marginTop: "clamp(24px, 4vw, 36px)",
                     marginBottom: 0,
-                    fontSize: "clamp(14px, 2.2vw, 16px)",
+                    fontSize: "clamp(12px, 1.8vw, 14px)",
                     fontFamily: FONT.mono,
                     fontWeight: 500,
                     color: TEXT.secondary,
@@ -446,7 +460,7 @@ export default function ResearchHub() {
             </h2>
 
             <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              Everything here is published under CC BY-NC-SA 4.0. No access restrictions. No required collaborations. A researcher can take the framework, the data, and the methodology and work with them independently.
+              Everything here is published under CC BY-NC-SA 4.0. Use it, test it, build on it.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

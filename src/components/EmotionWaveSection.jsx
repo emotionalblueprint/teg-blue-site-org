@@ -76,9 +76,9 @@ export default function EmotionWaveSection({
   badge = "Framework 1 · The biological substrate",
   heading = <>Emotions are data.<br/><span style={{ color: TEXT.muted, fontWeight: 400 }}>They are biological information.</span></>,
   description = "Before behavior, before belief, before pattern — there is a neurochemical arc with a precise biological window for integration. TEG-Blue begins here.",
-  ctaText = "F1 maps this arc in full — from thalamic detection to chronic mode consolidation — and identifies the precise conditions under which integration fails.",
-  ctaHref = "/framework/f1-emotional-gradient",
-  ctaLabel = "Explore Framework 1",
+  ctaText = "Four models map the full arc — from signal detection to nervous system state, from regulation capacity to awareness calibration.",
+  ctaHref = "/models",
+  ctaLabel = "Explore the Emotional Somatic System",
   showCta = true,
 } = {}) {
   const [progress, setProgress] = useState(0);
