@@ -249,10 +249,10 @@ export default function HowItWorksPage() {
               description="One per model. Models describe how something works as a usable instrument. They draw from the framework CAs but serve a different, applied scope."
               color={SPECTRUM.azure}
               items={[
-                { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals" },
-                { label: "M2 — Nervous System States", detail: "What the system does: the instrument, the modes, the observable compass" },
-                { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires" },
-                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)" },
+                { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals", href: "/model/m1-emotions-as-signals" },
+                { label: "M2 — Nervous System States", detail: "What the system does: the instrument, the modes, the observable compass", href: "/model/m2-nervous-system-states" },
+                { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires", href: "/model/m3-regulation-capacities" },
+                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)", href: "/model/m4-awareness-capacities" },
               ]}
               href="/models"
               linkText="See the four models →"
@@ -737,7 +737,9 @@ function CAGroupCard({ title, description, color, items, href, linkText }) {
         {items.map((item) => (
           <div key={item.label}>
             <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, margin: "0 0 2px" }}>
-              {item.label}
+              {item.href ? (
+                <Link href={item.href} style={{ color: SPECTRUM.blue, textDecoration: "none" }}>{item.label}</Link>
+              ) : item.label}
             </p>
             <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.5, margin: 0 }}>
               {item.detail}

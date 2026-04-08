@@ -87,7 +87,10 @@ All .org content falls under **Tier 3: Researcher & Frameworks**. All content is
 ### Navigation
 
 ```
-Hub | For Researchers | Publications | Theory Map | Glossary | About | Collaborate
+Home | Start Here | Theory (Overview, How It Works, Scientific Foundations)
+Emotional Somatic System (M1, M2, M3, M4)
+Frameworks (F1–F12) | Library (Publications, Glossary, Reframes, Phenomena)
+About | Ethics | AI Safety
 ```
 
 ---

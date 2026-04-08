@@ -140,6 +140,73 @@ export default function NotFound() {
           </div>
         </section>
 
+        {/* Model pages */}
+        <section style={{ marginBottom: 40 }}>
+          <h2
+            style={{
+              fontSize: 16,
+              fontWeight: 600,
+              color: TEXT.primary,
+              marginBottom: 8,
+            }}
+          >
+            Looking for a model?
+          </h2>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.7,
+              marginBottom: 16,
+            }}
+          >
+            The four models map what the nervous system does — signals, states, regulation, and awareness.
+          </p>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 8,
+            }}
+          >
+            {[
+              { id: "M1", label: "Emotions as Signals", href: "/model/m1-emotions-as-signals" },
+              { id: "M2", label: "Nervous System States", href: "/model/m2-nervous-system-states" },
+              { id: "M3", label: "Regulation Capacities", href: "/model/m3-regulation-capacities" },
+              { id: "M4", label: "Awareness Capacities", href: "/model/m4-awareness-capacities" },
+            ].map((m) => (
+              <Link
+                key={m.id}
+                href={m.href}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "8px 14px",
+                  background: hexToRgba(SPECTRUM.azure, 0.08),
+                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+                  borderRadius: 6,
+                  textDecoration: "none",
+                  fontSize: 13,
+                  color: TEXT.secondary,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: SPECTRUM.azure,
+                  }}
+                >
+                  {m.id}
+                </span>
+                {m.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Framework pages */}
         <section style={{ marginBottom: 40 }}>
           <h2
