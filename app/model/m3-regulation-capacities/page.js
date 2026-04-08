@@ -256,6 +256,7 @@ export default function M3RegulationCapacitiesPage() {
             { id: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities", description: "Describes what determines whether the person can feel the activation running — whether they can detect the override and distinguish a substitute from genuine restoration." },
             { id: "F1: The Emotional Gradient", href: "/framework/f1-emotional-gradient", description: "Establishes biological restoration as the designed process of the entire system — the process around which all twelve frameworks are organised." },
             { id: "F2: Developmental Calibration", href: "/framework/f2-awareness-calibration", description: "Explains how the capacity for biological restoration develops through early co-regulation — and what happens when it does not." },
+            { id: "F12: Two Information Systems", href: "/framework/f12-two-information-systems", description: "Maps the architecture underneath the branching point — cognitive override is the CLS overriding the ESS. The two-system architecture explains why the override can run without awareness and why restoration requires the systems to be in contact." },
           ]} />
 
           <NavSection color={MODEL_COLOR} items={[
@@ -263,6 +264,7 @@ export default function M3RegulationCapacitiesPage() {
             { label: "See how the state filters perception before cognition arrives", href: "/model/m2-nervous-system-states", linkText: "M2: Nervous System States \u2192" },
             { label: "Understand what determines whether the person can perceive the activation while it runs", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
             { label: "Explore the biological origin of the restoration architecture", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
+            { label: "See the two-system architecture underneath the branching point", href: "/framework/f12-two-information-systems", linkText: "F12: Two Information Systems \u2192" },
             { label: "Explore the interactive tools", href: "https://teg-blue.com/emotional-tools", linkText: "teg-blue.com \u2192", external: true },
           ]} />
         </article>

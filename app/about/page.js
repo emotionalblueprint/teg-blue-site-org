@@ -256,8 +256,8 @@ export default function AboutPage() {
 
           <p style={bodyStyle}>
             Full theoretical mapping available at the{" "}
-            <Link href="/theoretical-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Theoretical Foundations
+            <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              Scientific Foundations
             </Link>
             {" "}page, with 145+ source theories documented and cross-referenced.
           </p>
@@ -433,7 +433,7 @@ export default function AboutPage() {
             <NavLink href="/research-entry" label="Research Entry" />
             <NavLink href="/methodology" label="Methodology" />
             <NavLink href="/publications" label="Publications" />
-            <NavLink href="/theoretical-foundations" label="Theory Map" />
+            <NavLink href="/scientific-foundations" label="Theory Map" />
             <NavLink href="/collaborate" label="Collaborate" />
             <a
               href="https://teg-blue.com/emotional-tools"

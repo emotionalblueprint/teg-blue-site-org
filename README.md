@@ -139,7 +139,7 @@ This site is deployed on [Vercel](https://vercel.com) as a standalone site.
 | Hub | `/` | Content grid with all publications, theories, glossary |
 | For Researchers | `/research-entry` | Entry point explaining TEG-Blue structure |
 | Publications | `/publications` | Published research and validation studies |
-| Theory Map | `/theoretical-foundations` | 12 frameworks with 145+ source theories |
+| Theory Map | `/scientific-foundations` | 12 frameworks with 145+ source theories |
 | Glossary | `/glossary` | Key terms and definitions |
 | Collaborate | `/collaborate` | Collaboration opportunities |
 

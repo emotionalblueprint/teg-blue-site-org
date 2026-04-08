@@ -79,7 +79,7 @@ All .org content falls under **Tier 3: Researcher & Frameworks**. All content is
 | Hub | `/` | Content grid showing all publications, theories, etc. |
 | For Researchers | `/research-entry` | Entry point explaining TEG-Blue structure, what's original, open questions |
 | Publications | `/publications` | Published research and validation studies |
-| Theory Map | `/theoretical-foundations` | 12 frameworks with 145+ source theories |
+| Theory Map | `/scientific-foundations` | 12 frameworks with 145+ source theories |
 | Glossary | `/glossary` | Key terms and definitions |
 | About | `/about` | About TEG-Blue and the research consortium |
 | Collaborate | `/collaborate` | Collaboration opportunities |
@@ -155,7 +155,7 @@ Content in markdown...
 |------|---------|
 | `app/page.js` | Home page (Hub) |
 | `app/research-entry/page.js` | Research Entry Point |
-| `app/theoretical-foundations/page.js` | Theory Map with 12 frameworks |
+| `app/scientific-foundations/page.js` | Theory Map with 12 frameworks |
 | `app/publications/page.js` | Publications listing |
 | `src/components/SiteHeader.jsx` | Main navigation |
 | `src/components/SiteFooter.jsx` | Footer with .com links |

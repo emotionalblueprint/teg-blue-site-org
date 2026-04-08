@@ -109,6 +109,9 @@ export default function F10GenerationalBridgesPage() {
             groupLabel="Repair Arc · F8–F12"
             threadLine="What the adult processes, the child does not inherit — generational repair. Restores: the generational bridge"
             informsModels={[
+              { label: "M1", href: "/model/m1-emotions-as-signals" },
+              { label: "M2", href: "/model/m2-nervous-system-states" },
+              { label: "M3", href: "/model/m3-regulation-capacities" },
               { label: "M4", href: "/model/m4-awareness-capacities" },
             ]}
             adjacent={{

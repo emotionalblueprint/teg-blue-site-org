@@ -582,6 +582,11 @@ export default function M1EmotionsAsSignalsPage() {
                 href: "/framework/f2-awareness-calibration",
                 description: "Explains how the relational environment during development determines which restoration pathways build and which remain absent — the origin of the developmental consequence M1 describes.",
               },
+              {
+                id: "F12: Two Information Systems",
+                href: "/framework/f12-two-information-systems",
+                description: "Maps the architecture underneath the signal system — two information systems (ESS and CLS) operating through two substrates at two speeds. The signals M1 describes are the ESS output. Whether they reach conscious awareness depends on the architecture F12 maps.",
+              },
             ]}
           />
 
@@ -608,6 +613,11 @@ export default function M1EmotionsAsSignalsPage() {
                 label: "Explore the biological origin of the safety-threat gradient that drives signal generation",
                 href: "/framework/f1-emotional-gradient",
                 linkText: "F1: The Emotional Gradient \u2192",
+              },
+              {
+                label: "See the two-system architecture underneath — ESS and CLS, two substrates, two speeds",
+                href: "/framework/f12-two-information-systems",
+                linkText: "F12: Two Information Systems \u2192",
               },
               {
                 label: "Explore the interactive tools",

@@ -228,7 +228,7 @@ export default function ResearchEntryPage() {
             </p>
           </div>
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
-            Related frameworks: F8 (Repairing Awareness), F9 (Neurodivergence as Nervous System Variation), F10 (Rebuilding Generational Bridges).
+            Related frameworks: <Link href="/framework/f8-repairing-awareness" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F8 (Repairing Awareness)</Link>, <Link href="/framework/f9-neurodivergence-variation" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F9 (Neurodivergence as Nervous System Variation)</Link>, <Link href="/framework/f10-generational-bridges" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F10 (Rebuilding Generational Bridges)</Link>.
           </p>
         </section>
 
@@ -253,7 +253,7 @@ export default function ResearchEntryPage() {
                 "Does a Chronic State Organisation produce different physiological signatures than a slowly returning nervous system — and does that distinction predict different intervention needs?",
               ]}
               refLinks={[
-                { href: "/framework/f1-emotions-as-biological-information", label: "F1" },
+                { href: "/framework/f1-emotional-gradient", label: "F1" },
                 { href: "/model/m2-nervous-system-states", label: "Nervous System States (M2)" },
               ]}
             />
@@ -265,8 +265,8 @@ export default function ResearchEntryPage() {
                 "If mode position determines what an emotion produces — not the emotion itself — what would a mode-position assessment look like in practice, and how does it differ from existing affect regulation measures?",
               ]}
               refLinks={[
-                { href: "/framework/f2-awareness-teaches-awareness", label: "F2" },
-                { href: "/framework/f3-adult-cognition-false-coherence", label: "F3" },
+                { href: "/framework/f2-awareness-calibration", label: "F2" },
+                { href: "/framework/f3-false-coherence", label: "F3" },
                 { href: "/methodology", label: "Methodology" },
               ]}
             />
@@ -278,8 +278,8 @@ export default function ResearchEntryPage() {
                 "If what the adult embodies — not says, not intends — is the determining variable, what does intervention need to target in caregivers to change developmental outcomes in the next generation?",
               ]}
               refLinks={[
-                { href: "/framework/f2-awareness-teaches-awareness", label: "F2" },
-                { href: "/framework/f10-rebuilding-generational-bridges", label: "F10" },
+                { href: "/framework/f2-awareness-calibration", label: "F2" },
+                { href: "/framework/f10-generational-bridges", label: "F10" },
               ]}
             />
             <ResearchDomainCard

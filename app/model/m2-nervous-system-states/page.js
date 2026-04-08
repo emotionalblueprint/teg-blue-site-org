@@ -562,6 +562,7 @@ export default function M2NervousSystemStatesPage() {
               { id: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities", description: "Describes what determines whether the person can perceive the state shift while it is happening — why some people notice the narrowing and others remain fully identified with the filtered output." },
               { id: "F1: The Emotional Gradient", href: "/framework/f1-emotional-gradient", description: "Provides the evolutionary origin of the autonomic architecture — why two biological branches produce four states and how the ESS and CLS co-evolved to produce this gradient." },
               { id: "F2: Developmental Calibration", href: "/framework/f2-awareness-calibration", description: "Explains how the relational environment during development shapes which states become chronic and whether State Flexibility develops." },
+              { id: "F12: Two Information Systems", href: "/framework/f12-two-information-systems", description: "Maps the two-system architecture that operates through the four states — the ESS generating the state shift, the CLS interpreting it. State determines what data moves between the systems and what the CLS builds from it." },
             ]}
           />
 
@@ -573,6 +574,7 @@ export default function M2NervousSystemStatesPage() {
               { label: "See whether the activation sequence completes — and what accumulates when it does not", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
               { label: "Understand what determines whether the person can perceive the state shift", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
               { label: "Explore the biological origin of the four-state gradient", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
+              { label: "See the two-system architecture that operates through the four states", href: "/framework/f12-two-information-systems", linkText: "F12: Two Information Systems \u2192" },
               { label: "Explore the interactive tools", href: "https://teg-blue.com/emotional-tools", linkText: "teg-blue.com \u2192", external: true },
             ]}
           />
