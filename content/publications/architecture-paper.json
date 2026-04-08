@@ -1,42 +1,48 @@
 {
   "slug": "architecture-paper",
   "type": "working-paper",
-  "title": "TEG-Blue: The Emotional Gradient Blueprint — An Integrative Architecture for Emotional Intelligence",
-  "status": "draft",
+  "title": "TEG-Blue: The Emotional Gradient Blueprint — An Integrative Framework Mapping How the Nervous System Organises Behavior",
+  "status": "source-verified",
 
-  "summary": "Presents the complete theoretical architecture of TEG-Blue, synthesizing polyvagal theory, attachment theory, dual-process cognition, trauma research, and systems thinking into a unified framework with four core components.",
-  "keyFinding": "Emotional regulation follows predictable gradient patterns that can be mapped across individual, relational, and systemic scales using a unified architecture.",
+  "summary": "Complete theoretical architecture of TEG-Blue, mapping how the nervous system organises behaviour across scales. Grounded in a two-system model: an Emotional Somatic System (ESS) that detects and responds before conscious awareness, and a Cognitive-Logical System (CLS) that builds narrative from whatever data reaches it. Four components: Four Foundational Models (M1-M4) mapping the Emotional Somatic Cycle, Twelve Frameworks (F1-F12) explaining origin and scaling, Emotional Tools, and AI Safety Infrastructure.",
+  "keyFinding": "The relationship between the ESS and CLS — specifically, whether the interoceptive channel connecting them is open — determines which path the Emotional Somatic Cycle follows: biological restoration (Path A) or cognitive override and accumulation (Path B).",
 
   "author": "Anna Paretas-Artacho",
-  "date": "2026",
-  "doi": "10.5281/zenodo.18499576",
-  "doiUrl": "https://doi.org/10.5281/zenodo.18499576",
+  "date": "2026-04",
+  "doi": "10.5281/zenodo.19472675",
+  "doiUrl": "https://doi.org/10.5281/zenodo.19472675",
+  "versionHistory": "Version 1.0 (February 2026): Initial Contribution Record published as 'The Emotional Gradient Blueprint' with 4-Mode Gradient, 12 Map Levels, Circuit Board, and Emotional Tools. Version 2.0 (April 2026): ESS/CLS two-system architecture introduced; 12 Map Levels restructured into M1-M4 and F1-F12; Emotional Somatic Cycle and Path A/Path B introduced; three awareness capacities mapped to two substrates; AI Safety added as core component. Methods and empirical results unchanged.",
 
-  "tags": ["emotional intelligence", "integrative framework", "polyvagal theory", "attachment theory", "systems thinking", "emotional regulation", "architecture"],
+  "tags": ["nervous system states", "emotional regulation", "emotional somatic cycle", "ESS/CLS architecture", "interoceptive self-awareness", "integrative framework", "polyvagal theory", "regulatory gradient", "trauma-informed theory", "state-determined capacity"],
 
   "glossaryTerms": ["four-mode-gradient", "emotional-circuit", "filter-of-worth", "regulatory-state"],
 
   "content": [
     {
-      "id": "overview",
-      "title": "Overview",
+      "id": "abstract",
+      "title": "Abstract",
       "defaultOpen": true,
-      "content": "This working paper presents TEG-Blue (The Emotional Gradient Blueprint), an integrative architecture that unifies insights from polyvagal theory, attachment theory, dual-process cognition, trauma neuroscience, and systems thinking into a coherent framework for understanding emotional regulation across scales."
+      "content": "This paper presents the complete theoretical architecture of TEG-Blue (The Emotional Gradient Blueprint), an integrative framework mapping how the nervous system organises human behaviour across scales — from individual signal detection to collective dynamics. TEG-Blue synthesizes polyvagal theory, attachment theory, trauma research, social psychology, critical theory, and systems thinking into a unified architecture with four core components: (1) Four Foundational Models (M1-M4) mapping the Emotional Somatic Cycle — from signal detection (M1) through nervous system states (M2) to regulation capacities (M3) and awareness architecture (M4); (2) Twelve Frameworks (F1-F12) explaining the origin, development, and scaling of the cycle; (3) Emotional Tools — gradient-based practical instruments; and (4) AI Safety Infrastructure — structured schemas for contextual, state-aware assessments.\n\nThe architecture is grounded in a two-system model: the Emotional Somatic System (ESS), which detects, evaluates, and generates physiological responses before conscious awareness, and the Cognitive-Logical System (CLS), which builds narrative from whatever data reaches it. Whether the interoceptive channel connecting these systems is open determines which path the Emotional Somatic Cycle follows: biological restoration (Path A) or cognitive override and accumulation (Path B)."
     },
     {
       "id": "four-components",
       "title": "The Four Components",
-      "content": "TEG-Blue organizes through four interconnected components: The Inner Compass (Four-Mode Gradient), The Map (12-level mapping system), Emotional Tools (16 practical instruments), and The Circuit Board (pattern origin tracking). Each component addresses a different question about emotional experience."
+      "content": "1. Four Foundational Models (M1-M4): M1 maps what the nervous system detects and the physiological response it generates (signal architecture). M2 maps how the nervous system reorganises into different physiological configurations along a continuous gradient — four states: Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance. M3 maps whether the restoration sequence completes (Path A) or cognition overrides (Path B). M4 maps whether the person can perceive the cycle while it is running — three awareness capacities (RE, ER, SEA) on two biological substrates.\n\n2. Twelve Frameworks (F1-F12): F1-F3 map individual biology and development. F4-F7 map what happens when individual patterns scale to collective systems. F8-F12 map restoration. The Regulation Thread runs through all twelve: when biological restoration is unavailable, the nervous system substitutes — at escalating scales, at escalating costs.\n\n3. Emotional Tools: Gradient-based instruments showing how dimensions (empathy, accountability, confidence, integrity) express differently across each nervous system state.\n\n4. AI Safety Infrastructure: Structured schemas designed to replace binary safe/unsafe classifications with contextual, state-aware assessments."
     },
     {
-      "id": "theoretical-synthesis",
-      "title": "Theoretical Synthesis",
-      "content": "The framework synthesizes 65+ theories across neuroscience, psychology, sociology, and trauma research. Key integrations include Porges' polyvagal hierarchy with Bowlby's attachment patterns, Kahneman's dual-process model with trauma responses, and Gottman's relational dynamics with systemic power analysis."
+      "id": "two-system-architecture",
+      "title": "The ESS/CLS Two-System Architecture",
+      "content": "Two information systems run continuously in every human being. The Emotional Somatic System (ESS) detects environmental changes through the sensory periphery and organises a complete physiological response before conscious awareness arrives (10-500ms). The Cognitive-Logical System (CLS) operates alongside: language, reasoning, narrative construction (500ms+). The CLS does not distinguish between a complete data set and an incomplete one — it builds coherence from whatever data reaches it.\n\nThe four nervous system states map onto this architecture through a structural distinction: Safety & Openness and Threat & Defence are ESS-led states. Strategy & Management and Power & Dominance are states in which the CLS is increasingly recruited into threat organisation — a qualitative shift, not merely an intensification.\n\nInteroceptive Self-Awareness (SEA) is the bridge: the capacity through which the CLS receives the ESS's physiological signals. When open, the person can register activation as information. When closed, the CLS operates without the body's data."
     },
     {
-      "id": "twelve-frameworks",
-      "title": "The 12 Frameworks (F1-F12)",
-      "content": "The architecture is organized into 12 interconnected frameworks spanning individual regulation (F1-F3), relational patterns (F4-F7), systemic dynamics (F8-F10), and integration pathways (F11-F12). Each framework maps specific emotional processes across the four regulatory modes."
+      "id": "original-contributions",
+      "title": "Original Contributions",
+      "content": "This document records the author's original intellectual contributions, distinguishing novel propositions from integrated research. Key architectural innovations include: the ESS/CLS two-system architecture; the Emotional Somatic Cycle (ESC) with Path A/Path B; the continuous gradient model; the ESS-led / CLS-recruited structural distinction; four patterns from one mechanism; same mechanism across all scales; Interoceptive Self-Awareness (SEA) as the gate; three awareness capacities on two substrates; and the models/frameworks structural distinction.\n\nOriginal terminology includes: Emotional Somatic Cycle, Path A/Path B, Interoceptive Channel, Biological Restoration, Cognitive Override, Restoration Substitutes, The Self-Sealing Property, Somatic Debt, False Coherence, Signal Replacement, Chronic State Organisation, State Flexibility, The Regulation Thread, The Signal-to-System Sequence, The Filter of Worth, Feeling-Identity Fusion, The Chronic State Invisibility Principle, Capacity Configuration Profiles, and Awareness Degradation Pattern."
+    },
+    {
+      "id": "validation",
+      "title": "Empirical Validation",
+      "content": "The architecture has received initial empirical support through the validation study (DOI: 10.5281/zenodo.19472342). All four nervous system states were detected in natural language across 10,000+ posts. Complexity markers — operationalizing Interoceptive Self-Awareness (SEA) — were 78% higher in de-escalators than escalators. The study proved generative: the clustering result established the ESS/CLS qualitative distinction, the complexity marker finding established SEA as a distinct capacity, and the ownership-performativity observation established coherence without the body as a recognisable CLS configuration."
     }
   ],
 
@@ -67,5 +73,5 @@
     }
   ],
 
-  "lastUpdated": "2026-02-01"
+  "lastUpdated": "2026-04-08"
 }

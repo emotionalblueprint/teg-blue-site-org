@@ -169,6 +169,6 @@ Content in markdown...
 
 ## Validation Study
 
-DOI: 10.5281/zenodo.18428907
+DOI: 10.5281/zenodo.19472342 (validation study v2)
 
 Kept here as reference for when the DOI needs to appear in code or metadata.

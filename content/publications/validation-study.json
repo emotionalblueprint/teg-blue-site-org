@@ -1,19 +1,20 @@
 {
   "slug": "validation-study",
   "type": "publication",
-  "title": "Detecting Regulatory States in Natural Language",
+  "title": "Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient",
   "status": "source-verified",
 
-  "summary": "A validation study testing whether the Four-Mode Gradient framework can reliably detect emotional regulatory states in natural language, with implications for therapeutic and educational applications.",
-  "keyFinding": "Self-awareness predicts whether individuals escalate toward harm or return to connection when challenged.",
+  "summary": "First empirical validation of the Four Nervous System States Gradient (pre-registered as the Four-Mode Gradient). Using natural language analysis of 10,000+ Reddit AITA posts, four regulatory states — Safety & Openness, Threat & Defence, Strategy & Management, and Power & Dominance — were detected using validated constructs from polyvagal theory, attachment research, Gottman's contempt markers, and Bandura's moral disengagement theory. Grounded in a two-system architecture: an Emotional Somatic System (ESS) that detects and responds before conscious awareness, and a Cognitive-Logical System (CLS) that builds from whatever data reaches it.",
+  "keyFinding": "Interoceptive Self-Awareness (SEA) — the bridge between the ESS and CLS, operationalized through complexity markers (ability to hold multiple perspectives) — differentiates those who de-escalate toward Safety & Openness from those who escalate toward Strategy & Management/Power & Dominance when challenged. De-escalators showed 78% higher complexity marker rates than escalators.",
 
   "author": "Anna Paretas-Artacho",
-  "date": "2026",
-  "doi": "10.5281/zenodo.18428907",
-  "doiUrl": "https://doi.org/10.5281/zenodo.18428907",
+  "date": "2026-04",
+  "doi": "10.5281/zenodo.19472342",
+  "doiUrl": "https://doi.org/10.5281/zenodo.19472342",
   "preregistration": "https://osf.io/f4x6y",
+  "versionHistory": "Version 1.0 (January 2026): Initial preprint published as 'Four-Mode Gradient.' Version 2.0 (April 2026): Framework renamed to Four Nervous System States Gradient; ESS/CLS architecture added; clustering result reinterpreted as structural prediction confirmed; self-awareness gate reframed through Interoceptive Self-Awareness (SEA). Methods and results unchanged.",
 
-  "tags": ["emotional regulation", "four-mode gradient", "natural language", "validation", "inter-rater reliability"],
+  "tags": ["emotional regulation", "polyvagal theory", "nervous system states", "natural language processing", "self-awareness", "interoceptive self-awareness", "conflict escalation", "four nervous system states gradient", "ESS/CLS architecture", "validation"],
 
   "glossaryTerms": ["four-mode-gradient", "regulatory-state", "emotional-circuit"],
 
@@ -22,22 +23,32 @@
       "id": "abstract",
       "title": "Abstract",
       "defaultOpen": true,
-      "content": "This study examines whether trained and untrained raters can reliably identify four regulatory states — Connection, Protection, Control, and Domination — in natural language samples. Using a mixed-methods design with 120 text samples rated by 8 independent raters, we found substantial inter-rater reliability (κ = 0.74) and strong convergent validity with existing emotional regulation measures."
+      "content": "This study presents the first empirical validation of the Four Nervous System States Gradient (pre-registered as the 'Four-Mode Gradient'), a theoretical framework proposing that human regulatory states can be classified into four states — Safety & Openness (Connection), Threat & Defence (Protection), Strategy & Management (Control), and Power & Dominance (Domination) — based on perceived safety or threat. The framework is grounded in a two-system architecture: an Emotional Somatic System (ESS) that detects, evaluates, and generates physiological responses before conscious awareness, and a Cognitive-Logical System (CLS) that builds from whatever data reaches it. Safety & Openness and Threat & Defence are ESS-led states; Strategy & Management and Power & Dominance are states in which the CLS is increasingly recruited into threat organisation — a qualitative shift, not merely an intensification.\n\nUsing natural language analysis of 10,000+ Reddit AITA posts, we tested whether these four states could be detected using validated psychological constructs from polyvagal theory, attachment research, contempt markers (Gottman), and moral disengagement theory (Bandura). All four states were successfully detected. State classifications correlated meaningfully with external community judgments. Clustering analysis confirmed three distinct state clusters (Connection, Control, Domination), with Protection functioning as a transitional state — a finding that Version 2.0 understands as a structural prediction confirmed rather than a measurement limitation.\n\nAnalysis of 1,294 posts where authors responded to negative feedback revealed that Interoceptive Self-Awareness (SEA) — operationalized through complexity markers (ability to hold multiple perspectives) — significantly differentiated de-escalators (22.2%) from escalators (33.8%), with de-escalators showing 78% higher complexity marker rates."
     },
     {
       "id": "findings",
       "title": "Key Findings",
-      "content": "Three primary findings emerged: (1) Regulatory states are detectable in natural language with high reliability, (2) The Four-Mode Gradient maps onto established constructs while offering greater granularity, and (3) Self-awareness emerged as the primary differentiator between adaptive and maladaptive regulatory trajectories."
+      "content": "1. All four nervous system states were successfully detected in natural language across 10,000+ posts. Safety & Openness dominated as the most frequent state (51.4% as dominant), followed by Strategy & Management (29.7%), Threat & Defence (14.8%), and Power & Dominance (4.1%).\n\n2. State classifications correlated meaningfully with community verdicts (N=11,670). YTA posters used more Safety & Openness/Threat & Defence language (self-favorable framing), while NTA posters described more Strategy & Management/Power & Dominance — reporting what was done to them.\n\n3. Three states cluster clearly (Safety & Openness, Strategy & Management, Power & Dominance). Threat & Defence does not form a separate cluster — it co-occurs with other states, functioning as a transitional state. Version 2.0 identifies this as a structural prediction confirmed: ESS-led states (Safety & Openness, Threat & Defence) are organised by the same system, while CLS-recruited states (Strategy & Management, Power & Dominance) share the defining quality of cognitive recruitment into threat organisation.\n\n4. Of 1,294 posts with edit sections: 33.8% escalated toward Strategy & Management/Power & Dominance, 22.2% de-escalated toward Safety & Openness, and 44.0% maintained the same state.\n\n5. Complexity markers — operationalizing Interoceptive Self-Awareness (SEA), the bridge between the ESS and CLS — were 78% higher in de-escalators than escalators. Surface-level ownership ('I was wrong') without genuine complexity may be performative: the CLS producing accurate-sounding self-reflection without the internal state that would make it genuine."
     },
     {
       "id": "methodology",
       "title": "Methodology",
-      "content": "Mixed-methods design combining quantitative inter-rater reliability analysis with qualitative thematic coding. Pre-registered on OSF (osf.io/f4x6y). 120 text samples sourced from naturalistic communication contexts, rated independently by 8 raters across clinical and non-clinical backgrounds."
+      "content": "Pre-registered observational study using natural language analysis (OSF: osf.io/f4x6y). Rather than imposing the four-state structure on data, each state was operationalized using established psychological constructs and tested for organic emergence.\n\nData source: Kaggle AITA Dataset (nird96) — Reddit 'Am I The Asshole' community. Sample sizes: 10,000+ posts for state detection, 11,670 posts for verdict analysis, 1,294 posts for escalation analysis.\n\nDetection schema: Safety & Openness (LIWC affiliation, polyvagal safety cues, attachment linguistics), Threat & Defence (threat-response markers, anxiety markers, withdrawal patterns), Strategy & Management (power discourse analysis, LIWC certainty, demand patterns), Power & Dominance (Gottman contempt markers, Bandura moral disengagement).\n\nSelf-awareness markers: Ownership (self-responsibility), Complexity (multiple perspective-taking), Deflection (other-blame), Attack (escalation).\n\nAnalysis: State detection via marker scoring, K-means clustering (k=2 through k=6), chi-square analysis of state distribution by community verdict, escalation trajectory classification, and self-awareness marker comparison between escalators and de-escalators."
+    },
+    {
+      "id": "theoretical-contributions",
+      "title": "Theoretical Contributions (Version 2.0)",
+      "content": "Version 2.0 documents the generative relationship between empirical observation and architectural development. Three findings drove theoretical precision:\n\n1. The Protection clustering result raised a question the original framework could not answer: why does Threat & Defence co-occur with other states rather than standing alone? Answering this required articulating the ESS/CLS qualitative distinction — the difference between body-led and cognition-recruited states. The clustering data forced the precision.\n\n2. The self-awareness gate finding raised a different question: what exactly is 'complexity' doing mechanically? The observation that perspective-taking predicted de-escalation while ownership alone did not required identifying Interoceptive Self-Awareness (SEA) as a distinct biological capacity — the channel through which the CLS receives the ESS's signals.\n\n3. The ownership-performativity observation pushed further: how can a person produce accurate-sounding self-reflection without the internal state? This required mapping coherence without the body as a distinct CLS configuration — not dishonesty, but a system building narratives from incomplete data without knowing the data is incomplete.\n\nThe data came first. The precision followed."
     },
     {
       "id": "implications",
       "title": "Implications",
-      "content": "Results suggest the Four-Mode Gradient framework offers a practical, accessible tool for identifying emotional regulation patterns in everyday communication. Applications include therapeutic assessment, educational emotional literacy programs, and AI-assisted emotional pattern detection."
+      "content": "The central contribution shifts focus from state detection to trajectory prediction: the question is not 'what state are you in?' but 'is the interoceptive channel open?' — because an open channel is what makes return to Safety & Openness possible regardless of current state.\n\nApplications: Conflict de-escalation through early detection of escalation trajectory via complexity marker analysis. Relationship assessment — whether a person can receive feedback predicts relationship safety. Therapeutic intervention targeting Interoceptive Self-Awareness (SEA) and perspective-taking capacity directly. Online moderation flagging high-escalation linguistic patterns. Education developing interoceptive self-awareness as a learnable, teachable capacity."
+    },
+    {
+      "id": "limitations",
+      "title": "Limitations",
+      "content": "Single data source — results require replication across different platforms and contexts. Self-report bias — AITA posts represent the author's framing; actual behavior may differ. English language only — marker dictionaries validated for English; cross-cultural validity untested. Cross-sectional design — cannot establish causality; longitudinal studies needed. Marker operationalization — complexity markers capture a behavioral expression of SEA, not SEA directly; development of more specific interoceptive-channel markers is a priority for future work."
     }
   ],
 
@@ -62,15 +73,15 @@
     },
     {
       "type": "validates",
-      "targetSlug": "f1-emotional-gradient",
-      "targetType": "framework",
-      "label": "F1: Emotional Gradient"
+      "targetSlug": "four-mode-gradient",
+      "targetType": "glossary",
+      "label": "Four Nervous System States Gradient"
     },
     {
       "type": "defines",
       "targetSlug": "four-mode-gradient",
       "targetType": "glossary",
-      "label": "Four-Mode Gradient"
+      "label": "Four Nervous System States Gradient"
     },
     {
       "type": "defines",
@@ -80,5 +91,5 @@
     }
   ],
 
-  "lastUpdated": "2026-02-01"
+  "lastUpdated": "2026-04-08"
 }
