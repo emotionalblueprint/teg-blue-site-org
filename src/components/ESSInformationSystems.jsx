@@ -12,7 +12,8 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
  */
 
 const ACCENT = SPECTRUM.azure;
-const ACCENT_WARM = '#e9a23b'; // ACCENT.amber from tokens
+const ACCENT_WARM = '#e9a23b';
+const STAGE_BLUE = '#a0cdfb';
 
 // ─── STAGE DATA ─────────────────────────────────────────
 
@@ -122,13 +123,18 @@ export default function ESSInformationSystems() {
     border: `1px solid ${hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.3)}`,
     background: hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.06),
     textAlign: "center",
+    fontFamily: FONT.mono,
     fontSize: 13,
     fontWeight: 600,
     color: isESS ? ACCENT : ACCENT_WARM,
     letterSpacing: "0.01em",
     cursor: "default",
     transition: "all 0.2s ease",
-    opacity: hoveredSystem && hoveredSystem !== (isESS ? "ess" : "cls") ? 0.4 : 1,
+    ...(hoveredSystem === (isESS ? "ess" : "cls") ? {
+      background: hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.12),
+      border: `1px solid ${hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.45)}`,
+      boxShadow: `0 0 12px ${hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.15)}`,
+    } : {}),
   });
 
   const stageContainer = {
@@ -144,11 +150,12 @@ export default function ESSInformationSystems() {
     fontSize: 11,
     fontWeight: 600,
     color: TEXT.muted,
+    fontFamily: FONT.mono,
     textTransform: "uppercase",
     letterSpacing: "0.08em",
     borderRadius: 4,
-    background: hexToRgba(SPECTRUM.cobalt, 0.08),
-    border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+    background: hexToRgba(STAGE_BLUE, 0.08),
+    border: `1px solid ${hexToRgba(STAGE_BLUE, 0.15)}`,
   };
 
   const stageRowStyle = {
@@ -161,8 +168,11 @@ export default function ESSInformationSystems() {
 
   const columnStyle = (isESS) => ({
     padding: "12px 16px",
-    transition: "opacity 0.2s ease",
-    opacity: hoveredSystem && hoveredSystem !== (isESS ? "ess" : "cls") ? 0.25 : 1,
+    borderRadius: 8,
+    transition: "all 0.2s ease",
+    ...(hoveredSystem === (isESS ? "ess" : "cls") ? {
+      background: hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.05),
+    } : {}),
   });
 
   const itemStyle = {
@@ -199,8 +209,8 @@ export default function ESSInformationSystems() {
     marginTop: 24,
     padding: "16px 24px",
     borderRadius: 8,
-    background: hexToRgba(SPECTRUM.cobalt, 0.04),
-    border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.1)}`,
+    background: hexToRgba(STAGE_BLUE, 0.04),
+    border: `1px solid ${hexToRgba(STAGE_BLUE, 0.1)}`,
   };
 
   const footerTextStyle = {
