@@ -42,6 +42,7 @@ export { default as ConnectionsMap } from "./ConnectionsMap";
 // Visualizations
 export { default as ESSInformationSystems } from "./ESSInformationSystems";
 export { default as ESCCycleDiagram } from "./ESCCycleDiagram";
+export { default as ESCCycleDiagramV2 } from "./ESCCycleDiagramV2";
 export { default as CompassBar } from "./CompassBar";
 export { default as EmotionWaveSection } from "./EmotionWaveSection";
 export { default as M1SignalDiagram } from "./M1SignalDiagram";

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN, RADIUS,
   hexToRgba,
@@ -17,6 +18,13 @@ import {
   generateFAQJsonLd,
   generateSpeakableJsonLd,
 } from "@/src/lib/jsonld";
+
+// ─── DYNAMIC IMPORTS ────────────────────────────────────
+
+const ESCCycleDiagramV2 = dynamic(
+  () => import("@/src/components/ESCCycleDiagramV2"),
+  { ssr: false }
+);
 
 // ─── CONSTANTS ────────────────────────────────────────────
 
@@ -103,34 +111,26 @@ export default function ModelsPage() {
             badge="THE EMOTIONAL SOMATIC CYCLE"
             title="The Emotional Somatic Cycle"
             subtitle="Detection → Signal → State → Restoration or Incompletion"
-            description="A biological information system runs continuously in every human body. It detects changes in the environment, evaluates them for safety or threat, and organises a physiological response before conscious awareness arrives. A second information system operates alongside it: language, reasoning, narrative. These two systems run a repeating biological sequence together — and whether that sequence completes or remains unresolved determines what the person can perceive, think, feel, and do."
+            description="The Emotional Somatic System and the Cognitive-Logical System run a repeating biological sequence together. The nervous system detects, evaluates, generates a physiological response, and reorganises into a different configuration. Whether that sequence completes — or remains unresolved — determines what the person can perceive, think, feel, and do."
             color={P.B}
           />
         }
       >
 
         {/* ════════════════════════════════════════════════════
-            TWO INFORMATION SYSTEMS
+            ESS POINTER + CYCLE DIAGRAM
             ════════════════════════════════════════════════════ */}
 
+        <section style={{ marginBottom: 32 }}>
+          <p style={proseStyle}>
+            This page maps the cycle these{" "}
+            <Link href="/emotional-somatic-system" style={linkStyle}>two information systems</Link>
+            {" "}run together — the Emotional Somatic System (ESS) and the Cognitive-Logical System (CLS).
+          </p>
+        </section>
+
         <section style={{ marginBottom: 48 }}>
-          <h2 style={conceptHeadingStyle}>Two Information Systems</h2>
-
-          <p style={proseStyle}>
-            A biological information system runs continuously in every human body. It detects changes in the environment through the sensory periphery — eyes, ears, nose, gut, skin — and organises a physiological response before conscious awareness arrives. Cue detection begins at 10–50ms. Pattern matching completes within 50–200ms. A full physiological response — heart rate change, muscle tension, hormonal shifts — is organised within 200–500ms. Its domain: safety and threat detection, relational cues, values, needs, relevance. Its learning: through experience, through repetition, through what happens — slow to update, slow to forget. This is the Emotional Somatic System (ESS).
-          </p>
-
-          <p style={proseStyle}>
-            A second information system operates alongside it: language, reasoning, planning, abstraction, narrative construction. Conscious. Deliberate. Effortful. Conscious awareness arrives at 500ms+. Analysis and planning take seconds. Narrative construction takes minutes to hours. Its learning: through explanation, through insight, through language — fast to update, fast to revise. This is the Cognitive-Logical System (CLS).
-          </p>
-
-          <p style={proseStyle}>
-            These are not competitors. They are interdependent capacities running in one organism, operating at different speeds, in different domains, through different mechanisms. By the time the CLS registers that something has happened, the ESS has already detected the cue, matched it to past patterns, organised a physiological response, and shifted the nervous system{"'"}s configuration. The CLS arrives to find the body already in a different state.
-          </p>
-
-          <p style={proseStyle}>
-            The nervous system{"'"}s current physiological configuration — set by the ESS — determines what the person can perceive, think, feel, and learn. The CLS operates within whatever configuration has been set. State precedes capacity.
-          </p>
+          <ESCCycleDiagramV2 />
         </section>
 
         {/* ════════════════════════════════════════════════════
@@ -169,9 +169,6 @@ export default function ModelsPage() {
             </ExpandableSection>
           </div>
         </section>
-
-        {/* ─── CYCLE DIAGRAM ──────────────────────────────── */}
-        {/* Diagram removed — to be rebuilt */}
 
         {/* ─── The Stages ─────────────────────────────────── */}
         <section style={{ marginBottom: 40 }}>
