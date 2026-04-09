@@ -105,7 +105,7 @@ const organizationJsonLd = {
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
-    "https://doi.org/10.5281/zenodo.18428907",
+    "https://doi.org/10.5281/zenodo.19472342",
     "https://github.com/emotionalblueprint",
     "https://zenodo.org/communities/teg-blue",
     "https://x.com/tegblue",

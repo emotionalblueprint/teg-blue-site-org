@@ -130,7 +130,7 @@ export default async function Image() {
               fontFamily: 'monospace',
             }}
           >
-            DOI: 10.5281/zenodo.18428907
+            DOI: 10.5281/zenodo.19472342
           </div>
         </div>
 

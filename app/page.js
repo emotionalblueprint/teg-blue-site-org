@@ -387,7 +387,7 @@ export default function ResearchHub() {
                   </Link>
                 </div>
                 <span style={{ fontSize: 12, color: TEXT.muted, fontFamily: FONT.mono }}>
-                  DOI: 10.5281/zenodo.18428907
+                  DOI: 10.5281/zenodo.19472342
                 </span>
               </div>
             </div>

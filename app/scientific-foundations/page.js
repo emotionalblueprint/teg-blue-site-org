@@ -17,7 +17,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is TEG-Blue peer-reviewed?",
-    answer: "The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published with DOI 10.5281/zenodo.18428907. The theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes all methods, data, and code openly under CC-BY-NC-SA-4.0.",
+    answer: "The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published with DOI 10.5281/zenodo.19472342. The theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes all methods, data, and code openly under CC-BY-NC-SA-4.0.",
   },
 ];
 

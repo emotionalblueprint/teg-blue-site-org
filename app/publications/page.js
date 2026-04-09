@@ -7,7 +7,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What has TEG-Blue published?",
-    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Nervous System Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.18428907), plus a Theoretical Architecture Contribution Record documenting the 145+ source theories across 12 frameworks.",
+    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Nervous System Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.19472342), plus a Theoretical Architecture Contribution Record documenting the 145+ source theories across 12 frameworks.",
   },
   {
     question: "What did the Nervous System Gradient validation study find?",
@@ -21,7 +21,7 @@ const FAQ_ITEMS = [
 
 export const metadata = {
   title: "Research Publications & Validation Studies | TEG-Blue Research",
-  description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Nervous System Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.18428907).",
+  description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Nervous System Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.19472342).",
   keywords: [
     "TEG-Blue publications",
     "emotional regulation research papers",
@@ -53,10 +53,10 @@ export const metadata = {
     description: "Research papers, validation studies, and open datasets for emotional regulation research.",
   },
   other: {
-    'citation_title': 'Detecting Nervous System States in Natural Language: Empirical Validation of the Nervous System Gradient Framework',
+    'citation_title': 'Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient',
     'citation_author': 'Anna Paretas-Artacho',
-    'citation_publication_date': '2026/02',
-    'citation_doi': '10.5281/zenodo.18428907',
+    'citation_publication_date': '2026/04',
+    'citation_doi': '10.5281/zenodo.19472342',
     'citation_technical_report_institution': 'TEG-Blue Research',
   },
 };
@@ -67,8 +67,8 @@ const datasetSchema = {
   "@type": "Dataset",
   "name": "TEG-Blue Validation Study Dataset",
   "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments. Used to validate the Nervous System Gradient framework.",
-  "url": "https://doi.org/10.5281/zenodo.18428907",
-  "identifier": "10.5281/zenodo.18428907",
+  "url": "https://doi.org/10.5281/zenodo.19472342",
+  "identifier": "10.5281/zenodo.19472342",
   "keywords": [
     "emotional regulation",
     "natural language processing",
@@ -86,7 +86,7 @@ const datasetSchema = {
     "@type": "Organization",
     "name": "TEG-Blue Research"
   },
-  "datePublished": "2026-02",
+  "datePublished": "2026-04",
   "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   "isAccessibleForFree": true,
   "includedInDataCatalog": {
@@ -96,7 +96,7 @@ const datasetSchema = {
   "distribution": {
     "@type": "DataDownload",
     "encodingFormat": "application/pdf",
-    "contentUrl": "https://doi.org/10.5281/zenodo.18428907"
+    "contentUrl": "https://doi.org/10.5281/zenodo.19472342"
   },
   "measurementTechnique": "Computational linguistic analysis with polyvagal markers, contempt markers, and moral disengagement markers",
   "variableMeasured": [
@@ -110,20 +110,20 @@ const datasetSchema = {
 const scholarlyArticleSchema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "Empirical validation of the Nervous System Gradient framework",
-  "alternativeHeadline": "Detecting Nervous System States in Natural Language",
+  "headline": "Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient",
+  "alternativeHeadline": "Validation Study of the Four Nervous System States Gradient",
   "author": {
     "@type": "Person",
     "name": "Anna Paretas-Artacho",
     "identifier": "https://orcid.org/0009-0005-2394-7162"
   },
-  "datePublished": "2026-02",
+  "datePublished": "2026-04",
   "publisher": {
     "@type": "Organization",
     "name": "Zenodo"
   },
-  "identifier": "10.5281/zenodo.18428907",
-  "url": "https://doi.org/10.5281/zenodo.18428907",
+  "identifier": "10.5281/zenodo.19472342",
+  "url": "https://doi.org/10.5281/zenodo.19472342",
   "about": [
     "Emotional regulation",
     "Natural language processing",
@@ -212,7 +212,7 @@ export default function PublicationsPage() {
               A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text.
             </p>
             <div style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, marginBottom: 16 }}>
-              Anna Paretas-Artacho · February 2026 · DOI: 10.5281/zenodo.18428907
+              Anna Paretas-Artacho · April 2026 · DOI: 10.5281/zenodo.19472342
             </div>
             <div
               style={{
@@ -235,7 +235,7 @@ export default function PublicationsPage() {
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a
-                href="https://doi.org/10.5281/zenodo.18428907"
+                href="https://doi.org/10.5281/zenodo.19472342"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

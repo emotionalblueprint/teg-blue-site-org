@@ -190,8 +190,8 @@ export default function AboutPage() {
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             Published on Zenodo:{" "}
-            <a href="https://zenodo.org/records/18428907" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              DOI: 10.5281/zenodo.18428907
+            <a href="https://zenodo.org/records/19472342" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              DOI: 10.5281/zenodo.19472342
             </a>
           </p>
 
@@ -368,7 +368,7 @@ export default function AboutPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <tbody>
                 <IdentityRow label="ORCID" href="https://orcid.org/0009-0005-2394-7162" text="0009-0005-2394-7162" />
-                <IdentityRow label="Zenodo" href="https://zenodo.org/records/18428907" text="DOI: 10.5281/zenodo.18428907" />
+                <IdentityRow label="Zenodo" href="https://zenodo.org/records/19472342" text="DOI: 10.5281/zenodo.19472342" />
                 <IdentityRow label="GitHub" href="https://github.com/emotionalblueprint" text="github.com/emotionalblueprint" />
                 <IdentityRow label="Contact" href="mailto:research@teg-blue.org" text="research@teg-blue.org" />
               </tbody>
@@ -492,7 +492,7 @@ export default function AboutPage() {
               sameAs: [
                 "https://orcid.org/0009-0005-2394-7162",
                 "https://github.com/emotionalblueprint",
-                "https://zenodo.org/records/18428907",
+                "https://zenodo.org/records/19472342",
               ],
               knowsAbout: [
                 "Emotional Technology",

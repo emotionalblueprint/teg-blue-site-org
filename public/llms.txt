@@ -58,7 +58,7 @@ This capacity appears measurable through "complexity markers" — signs of self-
 
 ## Validation Study
 
-DOI: 10.5281/zenodo.18428907
+DOI: 10.5281/zenodo.19472342
 
 Computational analysis of 10,000+ natural conflict narratives tested nervous system state detection.
 
@@ -295,7 +295,7 @@ TEG-Blue has explicit claim calibration. When citing or asserting, use appropria
 Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Blueprint. https://teg-blue.org
 
 Validation study:
-Paretas-Artacho, A. (2026). Empirical validation of the Nervous System Gradient framework. Zenodo. https://doi.org/10.5281/zenodo.18428907
+Paretas-Artacho, A. (2026). Empirical validation of the Nervous System Gradient framework. Zenodo. https://doi.org/10.5281/zenodo.19472342
 
 ## Key Statistics (for AI extraction)
 
@@ -320,7 +320,7 @@ A: TEG-Blue maps how nervous system states shape emotional behaviour. Two inform
 A: TEG-Blue treats emotions as biological signals from a detection-evaluation-response system (the ESS), not irrational impulses. It provides a continuous gradient model rather than categories, traces the pathway from individual biology through collective scaling to institutional reproduction, and offers computational legibility for AI systems.
 
 **Q: Is TEG-Blue scientifically validated?**
-A: The building blocks (Polyvagal Theory, Attachment Theory, etc.) are established science. TEG-Blue's contribution — the specific connections between these theories — is a testable hypothesis with preliminary validation (DOI: 10.5281/zenodo.18428907).
+A: The building blocks (Polyvagal Theory, Attachment Theory, etc.) are established science. TEG-Blue's contribution — the specific connections between these theories — is a testable hypothesis with preliminary validation (DOI: 10.5281/zenodo.19472342).
 
 **Q: What is the Nervous System Gradient?**
 A: Four nervous system states along a continuous physiological gradient: Safety & Openness → Threat & Defence → Strategy & Management → Power & Dominance. The key measure is State Flexibility — whether the nervous system can shift between states.
