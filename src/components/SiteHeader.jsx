@@ -28,10 +28,12 @@ const NAV_ITEMS = [
       { label: "Scientific Foundations", href: "/scientific-foundations" },
     ],
   },
+  { label: "Emotional Somatic System", href: "/emotional-somatic-system" },
   {
-    label: "Emotional Somatic System",
+    label: "Emotional Somatic Cycle",
     href: "/models",
     children: [
+      { label: "The Cycle (ESC)", href: "/models" },
       { label: "M1 — Emotions as Signals", href: "/model/m1-emotions-as-signals" },
       { label: "M2 — Nervous System States", href: "/model/m2-nervous-system-states" },
       { label: "M3 — Regulation Capacities", href: "/model/m3-regulation-capacities" },
