@@ -21,8 +21,8 @@ import {
 
 // ─── DYNAMIC IMPORTS ────────────────────────────────────
 
-const ESCCycleDiagramV2 = dynamic(
-  () => import("@/src/components/ESCCycleDiagramV2"),
+const ESCCycleDiagramV3 = dynamic(
+  () => import("@/src/components/ESCCycleDiagramV3"),
   { ssr: false }
 );
 
@@ -130,7 +130,7 @@ export default function ModelsPage() {
         </section>
 
         <section style={{ marginBottom: 48 }}>
-          <ESCCycleDiagramV2 />
+          <ESCCycleDiagramV3 />
         </section>
 
         {/* ════════════════════════════════════════════════════

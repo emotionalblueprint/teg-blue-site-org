@@ -11,10 +11,10 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, ACCENT, hexToRgba } from "../styles/t
  * Design reference: ESC-PATH-A.png, ESC-PATH-B-from-*.png
  */
 
-const SIZE = 280;
+const SIZE = 360;
 const CX = SIZE / 2;
 const CY = SIZE / 2;
-const R = 105;
+const R = 115;
 const STROKE = 6;
 
 // Stage positions around the circle (in degrees, 0 = top/12 o'clock, clockwise)
@@ -129,7 +129,7 @@ export default function ESCCycleDiagramV2() {
       <div style={{
         display: "flex",
         justifyContent: "center",
-        gap: 40,
+        gap: 60,
         flexWrap: "wrap",
         marginBottom: 24,
       }}>
@@ -137,14 +137,18 @@ export default function ESCCycleDiagramV2() {
         {showA && (
           <div style={{ position: "relative", width: SIZE, height: SIZE, transition: "opacity 0.3s ease" }}>
             <div style={{
-              position: "absolute", top: -20, left: 0, right: 0,
-              textAlign: "center", fontSize: 11, fontWeight: 700,
-              color: pathAColor, textTransform: "uppercase", letterSpacing: "0.1em",
+              position: "absolute", top: -28, left: 0, right: 0,
+              textAlign: "center",
             }}>
-              Path A
+              <div style={{ fontSize: 11, fontWeight: 700, color: pathAColor, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                Path A
+              </div>
+              <div style={{ fontSize: 10, color: TEXT.muted, marginTop: 2, fontFamily: FONT.mono }}>
+                The cycle completes
+              </div>
             </div>
 
-            <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
+            <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} style={{ overflow: "visible" }}>
               {/* Background circle */}
               <circle cx={CX} cy={CY} r={R} fill="none" stroke={hexToRgba(SPECTRUM.slate, 0.1)} strokeWidth={STROKE} />
 
@@ -178,14 +182,14 @@ export default function ESCCycleDiagramV2() {
               })}
 
               {/* ESS-CLS Bridge indicator */}
-              <line x1={CX} y1={CY + R + 12} x2={CX} y2={CY + R + 28} stroke={pathAColor} strokeWidth={1.5} opacity={0.5} />
-              <text x={CX} y={CY + R + 40} textAnchor="middle" fontSize={9} fill={TEXT.muted} fontFamily={FONT.mono}>
+              <line x1={CX} y1={CY + R + 14} x2={CX} y2={CY + R + 30} stroke={pathAColor} strokeWidth={1.5} opacity={0.5} />
+              <text x={CX} y={CY + R + 44} textAnchor="middle" fontSize={10} fill={TEXT.muted} fontFamily={FONT.mono}>
                 ESS → CLS Bridge
               </text>
 
               {/* Stage labels outside circle */}
               {STAGES.map((s, i) => {
-                const labelR = R + 28;
+                const labelR = R + 30;
                 const p = toXY(s.angle, labelR);
                 const isRight = s.angle > 10 && s.angle < 180;
                 const isLeft = s.angle > 180 && s.angle < 350;
@@ -195,16 +199,16 @@ export default function ESCCycleDiagramV2() {
                     x={p.x}
                     y={p.y}
                     textAnchor={isRight ? "start" : isLeft ? "end" : "middle"}
-                    fontSize={9}
+                    fontSize={11}
                     fill={hoveredStage === s.label ? TEXT.primary : TEXT.muted}
-                    fontFamily={FONT.display}
+                    fontFamily={FONT.mono}
                     style={{ cursor: "pointer", transition: "fill 0.2s ease" }}
                     onMouseEnter={() => setHoveredStage(s.label)}
                     onMouseLeave={() => setHoveredStage(null)}
                   >
                     {s.short}
                     {s.model && (
-                      <tspan fontSize={8} fill={hexToRgba(pathAColor, 0.6)}>{` (${s.model})`}</tspan>
+                      <tspan fontSize={9} fill={hexToRgba(pathAColor, 0.7)}>{` (${s.model})`}</tspan>
                     )}
                   </text>
                 );
@@ -229,14 +233,18 @@ export default function ESCCycleDiagramV2() {
         {showB && (
           <div style={{ position: "relative", width: SIZE, height: SIZE, transition: "opacity 0.3s ease" }}>
             <div style={{
-              position: "absolute", top: -20, left: 0, right: 0,
-              textAlign: "center", fontSize: 11, fontWeight: 700,
-              color: pathBColor, textTransform: "uppercase", letterSpacing: "0.1em",
+              position: "absolute", top: -28, left: 0, right: 0,
+              textAlign: "center",
             }}>
-              Path B
+              <div style={{ fontSize: 11, fontWeight: 700, color: pathBColor, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                Path B
+              </div>
+              <div style={{ fontSize: 10, color: TEXT.muted, marginTop: 2, fontFamily: FONT.mono }}>
+                The cycle does not complete
+              </div>
             </div>
 
-            <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
+            <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} style={{ overflow: "visible" }}>
               {/* Background circle with gap at top */}
               <circle cx={CX} cy={CY} r={R} fill="none" stroke={hexToRgba(SPECTRUM.slate, 0.1)} strokeWidth={STROKE} />
 
@@ -318,14 +326,14 @@ export default function ESCCycleDiagramV2() {
               />
 
               {/* ESS-CLS Bridge — blocked */}
-              <line x1={CX} y1={CY + R + 12} x2={CX} y2={CY + R + 28} stroke={pathBColor} strokeWidth={1.5} opacity={0.5} />
-              <text x={CX} y={CY + R + 40} textAnchor="middle" fontSize={9} fill={TEXT.muted} fontFamily={FONT.mono}>
+              <line x1={CX} y1={CY + R + 14} x2={CX} y2={CY + R + 30} stroke={pathBColor} strokeWidth={1.5} opacity={0.5} />
+              <text x={CX} y={CY + R + 44} textAnchor="middle" fontSize={10} fill={TEXT.muted} fontFamily={FONT.mono}>
                 Bridge unavailable
               </text>
 
               {/* Stage labels */}
               {STAGES.map((s, i) => {
-                const labelR = R + 28;
+                const labelR = R + 30;
                 const p = toXY(s.angle, labelR);
                 const isRight = s.angle > 10 && s.angle < 180;
                 const isLeft = s.angle > 180 && s.angle < 350;
@@ -335,16 +343,16 @@ export default function ESCCycleDiagramV2() {
                     x={p.x}
                     y={p.y}
                     textAnchor={isRight ? "start" : isLeft ? "end" : "middle"}
-                    fontSize={9}
+                    fontSize={11}
                     fill={hoveredStage === s.label ? TEXT.primary : TEXT.muted}
-                    fontFamily={FONT.display}
+                    fontFamily={FONT.mono}
                     style={{ cursor: "pointer", transition: "fill 0.2s ease" }}
                     onMouseEnter={() => setHoveredStage(s.label)}
                     onMouseLeave={() => setHoveredStage(null)}
                   >
                     {s.short}
                     {s.model && (
-                      <tspan fontSize={8} fill={hexToRgba(pathBColor, 0.6)}>{` (${s.model})`}</tspan>
+                      <tspan fontSize={9} fill={hexToRgba(pathBColor, 0.7)}>{` (${s.model})`}</tspan>
                     )}
                   </text>
                 );
@@ -359,8 +367,8 @@ export default function ESCCycleDiagramV2() {
         minHeight: 60,
         padding: "12px 20px",
         borderRadius: 8,
-        background: hexToRgba(SPECTRUM.cobalt, 0.04),
-        border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.1)}`,
+        background: hexToRgba('#a0cdfb', 0.04),
+        border: `1px solid ${hexToRgba('#a0cdfb', 0.1)}`,
         textAlign: "center",
         transition: "all 0.2s ease",
       }}>
