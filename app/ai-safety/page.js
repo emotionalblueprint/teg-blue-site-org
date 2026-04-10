@@ -658,7 +658,7 @@ export default function AISafetyPage() {
           <ul style={{ paddingLeft: 20, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
             <li style={{ marginBottom: 6 }}>JSON-LD structured data on every page (Schema.org)</li>
             <li style={{ marginBottom: 6 }}>JSON content files — git-versioned, non-binary</li>
-            <li style={{ marginBottom: 6 }}>Consistent terminology across 145+ integrated source theories</li>
+            <li style={{ marginBottom: 6 }}>Consistent terminology across 41 research traditions and 145+ theoretical contributions</li>
             <li style={{ marginBottom: 6 }}>Semantic HTML for reliable parsing</li>
             <li>Open endpoints for programmatic access</li>
           </ul>

@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 36,
             }}
           >
-            Open science platform connecting 145+ theories into testable propositions
+            Open science platform connecting 41 research traditions into testable propositions
           </div>
 
           {/* Research questions highlight */}

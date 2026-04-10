@@ -229,7 +229,7 @@ export default function FoundationsPage() {
               <li><strong style={{ color: TEXT.primary }}>Repair and complexity arc (F8–F12)</strong> — How the awareness capacities rebuild, neurodivergent variation, generational transmission, paradox, and the two-information-system architecture underneath.</li>
             </ul>
 
-            <StatusBadge status="Proposed synthesis grounded in 145+ established theories" color={SPECTRUM.cobalt} />
+            <StatusBadge status="Proposed synthesis grounded in 145+ theoretical contributions from 41 research traditions" color={SPECTRUM.cobalt} />
             <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
               Each framework credits its sources. The connections between them are TEG-Blue&apos;s contribution, open to structured review and testing.
             </p>

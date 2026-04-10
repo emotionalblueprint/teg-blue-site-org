@@ -7,7 +7,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What has TEG-Blue published?",
-    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Nervous System Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.19472342), plus a Theoretical Architecture Contribution Record documenting the 145+ source theories across 12 frameworks.",
+    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Nervous System Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.19472342), plus a Theoretical Architecture Contribution Record documenting the 145+ theoretical contributions across 41 research traditions and 12 frameworks.",
   },
   {
     question: "What did the Nervous System Gradient validation study find?",

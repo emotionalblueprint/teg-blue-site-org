@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 32,
             }}
           >
-            Explanatory architecture connecting 145+ theories
+            Built on 41 research traditions, 145+ contributions
           </div>
 
           {/* Framework phases */}

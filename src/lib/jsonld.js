@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "An integrative framework synthesizing 145+ theories from neuroscience, psychology, and trauma research into a practical emotional intelligence system.",
+  description: "An integrative framework synthesizing 145+ theoretical contributions from neuroscience, psychology, and trauma research into a practical emotional intelligence system.",
   inLanguage: LANGUAGE,
 };
 
@@ -314,7 +314,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 2,
           name: "Explanatory Layer",
-          description: "12 Frameworks (F1-F12) explaining why patterns emerge, how they escalate, and how repair becomes possible. Integrates 145+ established theories.",
+          description: "12 Frameworks (F1-F12) explaining why patterns emerge, how they escalate, and how repair becomes possible. Integrates 145+ theoretical contributions from 41 research traditions.",
           url: `${BASE_URL}/frameworks-map`
         },
         {
@@ -358,7 +358,7 @@ export function generateScientificFoundationsJsonLd() {
     "@type": "WebPage",
     name: "Scientific Foundations — TEG-Blue Research",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "How TEG-Blue extends 15 major psychological models (Plutchik, NVC, CBT, Polyvagal Theory, IFS, and more) and integrates 145+ established theories into a unified system.",
+    description: "How TEG-Blue extends 15 major psychological models (Plutchik, NVC, CBT, Polyvagal Theory, IFS, and more) and integrates 145+ theoretical contributions from 41 research traditions into a unified system.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
@@ -408,7 +408,7 @@ export function generateTheoreticalFoundationsJsonLd() {
     "@type": "WebPage",
     name: "Theoretical Foundations — TEG-Blue Research",
     url: `${BASE_URL}/frameworks-map`,
-    description: "The 12 Frameworks (F1-F12) that explain why regulatory patterns emerge, how they scale from individual to systemic, and what makes repair possible. Integrates 145+ established theories.",
+    description: "The 12 Frameworks (F1-F12) that explain why regulatory patterns emerge, how they scale from individual to systemic, and what makes repair possible. Integrates 145+ theoretical contributions from 41 research traditions.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {

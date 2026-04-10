@@ -5,7 +5,7 @@ import { generateResearchHubJsonLd, generateSearchActionJsonLd, generateFAQJsonL
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is an open-science emotional technology research platform that maps how nervous system states shape emotional behavior. It integrates 145+ established theories into testable hypotheses organized as 12 frameworks, 4 foundational models, emotional tools, and AI safety infrastructure.",
+    answer: "TEG-Blue is an open-science emotional technology research platform that maps how nervous system states shape emotional behavior. It integrates 145+ theoretical contributions from 41 research traditions into testable hypotheses organized as 12 frameworks, 4 foundational models, emotional tools, and AI safety infrastructure.",
   },
   {
     question: "What are the four nervous system states?",
@@ -45,7 +45,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
-  description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
+  description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
   keywords: [
     "emotional technology",
     "emotional regulation research",
@@ -60,7 +60,7 @@ export const metadata = {
   },
   openGraph: {
     title: "TEG-Blue | Emotional Technology Research",
-    description: "Open science — 145+ established theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
+    description: "Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
     url: "https://teg-blue.org",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -68,7 +68,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TEG-Blue | Emotional Technology Research",
-    description: "Open science — 145+ theories mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
+    description: "Open science — 145+ theoretical contributions mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
   },
 };
 
@@ -138,7 +138,7 @@ export default function ResearchHub() {
                     maxWidth: 680,
                   }}
                 >
-                  Open science — built on 145+ established theories. Open to critique and validation.
+                  Open science — built on 145+ theoretical contributions from 41 research traditions. Open to critique and validation.
                 </p>
 
                 {/* CTAs */}
@@ -445,7 +445,7 @@ export default function ResearchHub() {
             <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
               The full architecture, including how the parts connect, is at{" "}
               <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
-              The 145+ source theories are documented at{" "}
+              The 145+ theoretical contributions across 41 research traditions are documented at{" "}
               <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
             </p>
           </section>
@@ -467,7 +467,7 @@ export default function ResearchHub() {
               <OpenItem label="Cite it" description="Full citation format and examples" href="/citations" />
               <OpenItem label="Use the data" description="Anonymized conflict narratives, emotional gradient data" href="/publications" />
               <OpenItem label="Test the claims" description="Five open research questions, four research directions" href="/research-entry" />
-              <OpenItem label="Read the source theories" description="145+ established theories, credited and documented" href="/scientific-foundations" />
+              <OpenItem label="Read the source theories" description="145+ theoretical contributions from 41 research traditions, credited and documented" href="/scientific-foundations" />
               <OpenItem label="Read the reframes" description="15 common terms traced back to the nervous system" href="/reframes" />
               <OpenItem label="Explore the labels" description="19 psychology labels mapped to 3 awareness capacities" href="/explore/labels" />
             </div>

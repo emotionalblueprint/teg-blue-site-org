@@ -10,7 +10,7 @@ export default function Image() {
     badge: 'About',
     badgeColor: 'azure',
     title: 'The First Complete Emotional Technology System',
-    subtitle: 'Founded by Anna Paretas-Artacho \u00b7 145+ theories \u00b7 12 frameworks',
+    subtitle: 'Founded by Anna Paretas-Artacho \u00b7 41 research traditions \u00b7 12 frameworks',
     url: 'teg-blue.org/about',
     needle: 0.125,
   })

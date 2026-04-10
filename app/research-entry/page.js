@@ -28,7 +28,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "Start Here | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — a pattern recognition system connecting 145+ established theories. Open access, open questions, open to validation.",
+  description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — a pattern recognition system connecting 145+ theoretical contributions from 41 research traditions. Open access, open questions, open to validation.",
   keywords: [
     "TEG-Blue research",
     "emotional technology",
@@ -56,7 +56,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Start Here — TEG-Blue",
-    description: "Open science platform connecting 145+ theories. Open research questions, everything open access.",
+    description: "Open science platform connecting 145+ theoretical contributions. Open research questions, everything open access.",
   },
 };
 
@@ -78,7 +78,7 @@ export default function ResearchEntryPage() {
               badge="ENTRY POINT"
               title="Start Here"
               subtitle="Pattern recognition based on nervous system science"
-              description="TEG-Blue is an integrative architecture that synthesizes 145+ established theories into testable claims about how the nervous system regulates. Open access, open questions, open to validation."
+              description="TEG-Blue is an integrative architecture that synthesizes 145+ theoretical contributions from 41 research traditions into testable claims about how the nervous system regulates. Open access, open questions, open to validation."
             />
             <div style={{ marginTop: 20 }}>
               <Link
@@ -404,7 +404,7 @@ export default function ResearchEntryPage() {
             "@type": "WebPage",
             name: "Start Here — TEG-Blue Research",
             url: "https://teg-blue.org/research-entry",
-            description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — connecting 145+ established theories into testable claims.",
+            description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — connecting 145+ theoretical contributions from 41 research traditions into testable claims.",
             inLanguage: "en",
             isPartOf: {
               "@type": "ResearchProject",

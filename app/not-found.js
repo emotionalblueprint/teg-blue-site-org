@@ -28,7 +28,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/", description: "Research hub" },
   { label: "Start Here", href: "/research-entry", description: "Entry point for researchers" },
   { label: "Frameworks Map", href: "/frameworks-map", description: "12 frameworks overview" },
-  { label: "Scientific Foundations", href: "/scientific-foundations", description: "145+ source theories" },
+  { label: "Scientific Foundations", href: "/scientific-foundations", description: "41 research traditions, 145+ contributions" },
   { label: "Glossary", href: "/glossary", description: "Key terms and definitions" },
   { label: "Publications", href: "/publications", description: "Validation studies and papers" },
 ];

@@ -5,7 +5,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const SIDEBAR_SECTIONS = [
   { label: "The Data System", href: "#the-data-system", description: "Five layers from established science to published tools. How each layer feeds the next." },
-  { label: "Established Science", href: "#established-science", description: "145+ peer-reviewed theories from neuroscience, psychology, attachment, and trauma research." },
+  { label: "Established Science", href: "#established-science", description: "145+ peer-reviewed theoretical contributions from 41 research traditions from neuroscience, psychology, attachment, and trauma research." },
   { label: "Concept Architectures", href: "#concept-architectures", description: "How 12 frameworks and 4 models connect established theories into testable structures." },
   { label: "Root Data", href: "#root-data", description: "Five files organized by biological function. The operational consolidation layer." },
   { label: "From Root to Output", href: "#from-root-to-output", description: "How root data becomes JavaScript libraries, interactive tools, diagrams, and research pages." },
@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
 
 export const metadata = {
   title: "How TEG-Blue Works | TEG-Blue Research",
-  description: "The data system behind TEG-Blue. How 145+ established theories connect through Concept Architectures, consolidate into root data files organized by biological function, and distribute to research pages and interactive tools.",
+  description: "The data system behind TEG-Blue. How 145+ theoretical contributions from 41 research traditions connect through Concept Architectures, consolidate into root data files organized by biological function, and distribute to research pages and interactive tools.",
   keywords: [
     "TEG-Blue data system",
     "concept architectures",
@@ -52,7 +52,7 @@ export const metadata = {
   },
   openGraph: {
     title: "How TEG-Blue Works — TEG-Blue Research",
-    description: "The data system: from 145+ established theories through Concept Architectures to root data files to published tools and research. Traceable, auditable, open.",
+    description: "The data system: from 145+ theoretical contributions from 41 research traditions through Concept Architectures to root data files to published tools and research. Traceable, auditable, open.",
     url: "https://teg-blue.org/how-it-works",
     siteName: "TEG-Blue Research",
     type: "article",
@@ -105,7 +105,7 @@ export default function HowItWorksPage() {
             <PipelineLayer
               number={1}
               title="Established science"
-              description="145+ peer-reviewed theories from neuroscience, psychology, attachment research, and trauma studies. Every source credited."
+              description="145+ peer-reviewed theoretical contributions from 41 research traditions from neuroscience, psychology, attachment research, and trauma studies. Every source credited."
               color={SPECTRUM.sky}
               arrow
             />
@@ -156,7 +156,7 @@ export default function HowItWorksPage() {
         <section id="established-science" style={{ marginBottom: 40 }}>
           <h2 style={sectionHeadStyle}>Established science</h2>
           <p style={{ ...bodyStyle, marginBottom: 16 }}>
-            TEG-Blue synthesizes 145+ established theories from independent research traditions that developed in separate disciplines, often without reference to each other. Every source theory is credited. The system does not replace these theories — it proposes specific connections between them.
+            TEG-Blue synthesizes 145+ theoretical contributions across 41 research traditions that developed in separate disciplines, often without reference to each other. Every source theory is credited. The system does not replace these theories — it proposes specific connections between them.
           </p>
 
           <div

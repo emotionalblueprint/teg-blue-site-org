@@ -10,7 +10,7 @@ export default function Image() {
     badge: 'System Architecture',
     badgeColor: 'indigo',
     title: 'How TEG-Blue Works',
-    subtitle: 'From 145+ established theories to consolidated root data to published research and tools. The pipeline that makes TEG-Blue traceable, auditable, and open.',
+    subtitle: 'From 41 research traditions and 145+ theoretical contributions to consolidated root data to published research and tools. The pipeline that makes TEG-Blue traceable, auditable, and open.',
     url: 'teg-blue.org/how-it-works',
     needle: 0.125,
   })

@@ -18,14 +18,14 @@ const FAQ_ITEMS = [
   },
   {
     question: "What scientific domains does TEG-Blue draw from?",
-    answer: "TEG-Blue synthesizes established research from 47+ domains including polyvagal theory, attachment theory, affect regulation, social identity theory, moral development research, and neurodivergence research. The originality is in the integration, not the individual theories.",
+    answer: "TEG-Blue synthesizes established research from 24 scientific domains including polyvagal theory, attachment theory, affect regulation, social identity theory, moral development research, and neurodivergence research. The originality is in the integration, not the individual theories.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "The Core Premise", href: "#core-premise", description: "The foundational scientific claim and what makes it testable." },
   { label: "Validation", href: "#validation", description: "Initial empirical findings from 10,000+ natural conflict narratives." },
-  { label: "Scientific Foundations", href: "#foundations", description: "47+ domains, 145+ source theories, and what the integration reveals." },
+  { label: "Scientific Foundations", href: "#foundations", description: "24 scientific domains, 145+ theoretical contributions across 41 research traditions, and what the integration reveals." },
   { label: "Open Questions", href: "#open-questions", description: "Priority research directions for independent verification." },
   { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — background and research identity." },
   { label: "Two Sites", href: "#two-sites", description: "Open research (.org) and interactive tools (.com)." },
@@ -33,7 +33,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "About | TEG-Blue Research",
-  description: "About TEG-Blue — an integrative architecture connecting 145+ theories from 47+ scientific domains into testable hypotheses about how the nervous system regulates. Initial validation on 10,000+ narratives.",
+  description: "About TEG-Blue — an integrative architecture connecting 145+ theoretical contributions from 24 scientific domains into testable hypotheses about how the nervous system regulates. Initial validation on 10,000+ narratives.",
   keywords: [
     "TEG-Blue",
     "emotional technology",
@@ -56,7 +56,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About — TEG-Blue Research",
-    description: "An integrative framework connecting 145+ theories from 47+ scientific domains. Initial validation on 10,000+ narratives. Open science, testable hypotheses, inviting collaboration.",
+    description: "An integrative framework connecting 145+ theoretical contributions from 24 scientific domains. Initial validation on 10,000+ narratives. Open science, testable hypotheses, inviting collaboration.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue Research",
     type: "profile",
@@ -65,7 +65,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "About — TEG-Blue Research",
-    description: "Open research developing an integrative emotional intelligence framework. 47+ domains. 145+ theories. 10,000+ narratives validated.",
+    description: "Open research developing an integrative emotional intelligence framework. 24 scientific domains. 145+ theoretical contributions. 10,000+ narratives validated.",
   },
 };
 
@@ -85,7 +85,7 @@ export default function AboutPage() {
           <ResearcherHero
             badge="ABOUT"
             title="About TEG-Blue"
-            description="An integrative framework connecting 145+ theories from 47+ scientific domains into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
+            description="An integrative framework connecting 145+ theoretical contributions from 24 scientific domains into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -216,7 +216,7 @@ export default function AboutPage() {
           <h2 style={sectionHeading}>Scientific foundations</h2>
 
           <p style={bodyStyle}>
-            The framework synthesizes established research from <strong style={{ color: TEXT.primary }}>47+ scientific domains</strong> into <strong style={{ color: TEXT.primary }}>12 integrative frameworks</strong> organized in three arcs:
+            The framework synthesizes established research from <strong style={{ color: TEXT.primary }}>24 scientific domains</strong> into <strong style={{ color: TEXT.primary }}>12 integrative frameworks</strong> organized in three arcs:
           </p>
 
           <div style={{ marginTop: 16, marginBottom: 16 }}>
@@ -259,7 +259,7 @@ export default function AboutPage() {
             <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
               Scientific Foundations
             </Link>
-            {" "}page, with 145+ source theories documented and cross-referenced.
+            {" "}page, with 145+ theoretical contributions across 41 research traditions documented and cross-referenced.
           </p>
         </section>
 
@@ -481,13 +481,13 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue — an integrative architecture connecting 145+ theories from 47+ scientific domains.",
+            description: "About TEG-Blue — an integrative architecture connecting 145+ theoretical contributions from 24 scientific domains.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
               jobTitle: "Founder & Lead Researcher",
-              description: "Independent researcher and systems designer. Creator of TEG-Blue, an integrative emotional technology framework synthesizing 47+ scientific domains.",
+              description: "Independent researcher and systems designer. Creator of TEG-Blue, an integrative emotional technology framework synthesizing 24 scientific domains.",
               url: "https://teg-blue.org/about",
               sameAs: [
                 "https://orcid.org/0009-0005-2394-7162",
