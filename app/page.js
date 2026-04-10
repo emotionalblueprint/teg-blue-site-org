@@ -460,7 +460,7 @@ export default function ResearchHub() {
             </h2>
 
             <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              Everything here is published under CC BY-NC-SA 4.0. Use it, test it, build on it.
+              Everything here is published under CC BY-NC-SA 4.0 — open to read, cite, test, extend, and build on alongside us.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
