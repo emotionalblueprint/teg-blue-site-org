@@ -340,7 +340,7 @@ export default function ResearchHub() {
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16, marginBottom: 16 }}>
                 <MetricCard value="10,000+" label="natural conflict narratives analyzed" />
-                <MetricCard value="κ = 0.74" label="inter-rater reliability" />
+                <MetricCard value="Pre-registered" label="on OSF (osf.io/f4x6y)" />
                 <MetricCard value="+78%" label="complexity markers in de-escalators" />
               </div>
 

@@ -14,7 +14,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Has TEG-Blue been validated?",
-    answer: "An initial validation study analyzed 10,000+ natural conflict narratives, achieving inter-rater reliability of kappa = 0.74. De-escalators showed 78% higher rates of complexity markers than escalators. This is a beginning — five open research questions are documented for further validation.",
+    answer: "An initial validation study analyzed 10,000+ natural conflict narratives using validated psychological constructs (polyvagal markers, contempt markers, moral disengagement markers), pre-registered on OSF. All four nervous system states were successfully detected. De-escalators showed 78% higher rates of complexity markers than escalators. This is a beginning — five open research questions are documented for further validation.",
   },
   {
     question: "What scientific domains does TEG-Blue draw from?",
@@ -165,8 +165,8 @@ export default function AboutPage() {
           >
             {[
               { stat: "10,000+", label: "narratives analyzed" },
-              { stat: "κ = 0.74", label: "inter-rater reliability" },
-              { stat: "78%", label: "higher complexity markers in de-escalators" },
+              { stat: "Pre-registered", label: "on OSF (osf.io/f4x6y)" },
+              { stat: "+78%", label: "higher complexity markers in de-escalators" },
               { stat: "33.8%", label: "escalated toward Control/Domination" },
             ].map((item) => (
               <div
