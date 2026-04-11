@@ -1,359 +1,410 @@
 "use client";
 
-import { useState } from "react";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { FONT } from "../styles/tokens";
 
 /**
- * ESSInformationSystems — Two parallel information systems diagram
- * Shows CLS and ESS as parallel processing pipelines:
- * Input → Processing → Output → Timeframe
+ * ESSInformationSystems — Two Information Systems diagram
  *
- * Design reference: ESS-Two-Information-Systems.png
+ * Static visual comparing ESS and CLS across speed timeline, domain,
+ * mechanism, output, learning, and closing substrates/interdependence pills.
+ *
+ * Design reference: teg-blue-vault/_animations/TIS-diagram.html
+ * NOTE: This component intentionally uses hardcoded colors and dimensions
+ * from the design prototype. The tokens.js update pass will formalise
+ * the "diagram palette" later.
  */
 
-const ACCENT = SPECTRUM.azure;
-const ACCENT_WARM = '#e9a23b';
-const STAGE_BLUE = '#a0cdfb';
-
-// ─── STAGE DATA ─────────────────────────────────────────
-
-const STAGES = [
-  {
-    label: "Domain",
-    sublabel: "What each system processes",
-    cls: [
-      "External facts, logical problems, causal relationships",
-      "Abstract planning and sequential reasoning",
-      "Language production and narrative construction",
-      "Pattern matching against learned rules and models",
-    ],
-    ess: [
-      "Safety-threat evaluation of the environment via neuroception",
-      "Relational cues from other bodies — faces, voices, postures",
-      "The body's own physiological state — visceral, hormonal, muscular",
-      "What matters for survival, bonding, and biological integrity",
-    ],
-  },
-  {
-    label: "Mechanism",
-    sublabel: "How each system operates",
-    cls: [
-      "Conscious deliberation requiring attention and effort",
-      "Linguistic analysis and abstract reasoning",
-      "Narrative construction — assembling causal stories from available data",
-      "Builds coherence from whatever data reaches it, complete or not",
-    ],
-    ess: [
-      "Neuroception — subconscious scanning of environment and relationships",
-      "Autonomic nervous system activation and state reorganisation",
-      "Hormonal and neurochemical cascades (cortisol, adrenaline, oxytocin)",
-      "Muscular and visceral reorganisation — the body configures before thought",
-    ],
-  },
-  {
-    label: "Output",
-    sublabel: "What each system produces",
-    cls: [
-      "Explanations, plans, and conscious decisions",
-      "Narratives about what is happening and what it means",
-      "Coherent accounts — which feel true whether data is complete or not",
-    ],
-    ess: [
-      "Physiological response patterns — hormonal, neurochemical, muscular",
-      "Nervous system state reconfiguration along the safety-threat gradient",
-      "Behavioural impulses organised before conscious awareness arrives",
-      "Biological information about what was detected and what it requires",
-    ],
-  },
-  {
-    label: "Timeframe",
-    cls: null,
-    ess: null,
-    custom: true,
-  },
-];
-
-// ─── COMPONENT ──────────────────────────────────────────
+// ─── HARDCODED DESIGN CONSTANTS (from TIS-diagram.html) ──
+const BG        = "#000";
+const WHITE     = "#fff";
+const BLUE      = "#4062eb";
+const MUTED     = "rgba(160,205,251,0.55)";
+const MUTED_2   = "rgba(160,205,251,0.35)";
+const BORDER    = "rgba(160,205,251,0.14)";
+const ITEM_TEXT = "rgba(255,255,255,0.9)";
+const ITEM_TEXT_ESS = "rgba(255,255,255,0.9)";
 
 export default function ESSInformationSystems() {
-  const [hoveredSystem, setHoveredSystem] = useState(null);
-
-  const containerStyle = {
-    background: BG.primary,
-    border: `1px solid ${BORDER.default}`,
-    borderRadius: 12,
-    padding: "40px 24px",
-    maxWidth: 720,
-    margin: "0 auto",
-    fontFamily: FONT.display,
-  };
-
-  const headerStyle = {
-    textAlign: "center",
-    marginBottom: 32,
-  };
-
-  const titleStyle = {
-    fontSize: 18,
-    fontWeight: 700,
-    color: TEXT.primary,
-    letterSpacing: "-0.01em",
-    marginBottom: 12,
-    textTransform: "uppercase",
-  };
-
-  const subtitleStyle = {
-    fontSize: 14,
-    color: TEXT.secondary,
-    lineHeight: 1.7,
-    maxWidth: 500,
-    margin: "0 auto",
-  };
-
-  const systemLabelContainer = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: 16,
-    marginBottom: 32,
-  };
-
-  const systemLabelStyle = (isESS) => ({
-    padding: "10px 16px",
-    borderRadius: 8,
-    border: `1px solid ${hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.3)}`,
-    background: hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.06),
-    textAlign: "center",
-    fontFamily: FONT.mono,
-    fontSize: 13,
-    fontWeight: 600,
-    color: isESS ? ACCENT : ACCENT_WARM,
-    letterSpacing: "0.01em",
-    cursor: "default",
-    transition: "all 0.2s ease",
-    ...(hoveredSystem === (isESS ? "ess" : "cls") ? {
-      background: hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.12),
-      border: `1px solid ${hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.45)}`,
-      boxShadow: `0 0 12px ${hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.15)}`,
-    } : {}),
-  });
-
-  const stageContainer = {
-    display: "flex",
-    flexDirection: "column",
-    gap: 0,
-  };
-
-  const stageLabelStyle = {
-    textAlign: "center",
-    padding: "8px 16px",
-    margin: "0 auto 20px",
-    fontSize: 11,
-    fontWeight: 600,
-    color: TEXT.muted,
-    fontFamily: FONT.mono,
-    textTransform: "uppercase",
-    letterSpacing: "0.08em",
-    borderRadius: 4,
-    background: hexToRgba(STAGE_BLUE, 0.08),
-    border: `1px solid ${hexToRgba(STAGE_BLUE, 0.15)}`,
-  };
-
-  const stageRowStyle = {
-    display: "grid",
-    gridTemplateColumns: "1fr 40px 1fr",
-    gap: 0,
-    alignItems: "start",
-    marginBottom: 4,
-  };
-
-  const columnStyle = (isESS) => ({
-    padding: "12px 16px",
-    borderRadius: 8,
-    transition: "all 0.2s ease",
-    ...(hoveredSystem === (isESS ? "ess" : "cls") ? {
-      background: hexToRgba(isESS ? ACCENT : ACCENT_WARM, 0.05),
-    } : {}),
-  });
-
-  const itemStyle = {
-    fontSize: 13,
-    color: TEXT.secondary,
-    lineHeight: 1.7,
-    padding: "2px 0",
-  };
-
-  const arrowStyle = (isESS) => ({
-    color: isESS ? ACCENT : ACCENT_WARM,
-    marginRight: 6,
-    fontSize: 12,
-    fontWeight: 600,
-  });
-
-  const dividerStyle = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-    gap: 4,
-  };
-
-  const connectorLine = {
-    width: 1,
-    height: 20,
-    background: hexToRgba(SPECTRUM.slate, 0.3),
-    margin: "8px auto",
-  };
-
-  const footerStyle = {
-    textAlign: "center",
-    marginTop: 24,
-    padding: "16px 24px",
-    borderRadius: 8,
-    background: hexToRgba(STAGE_BLUE, 0.04),
-    border: `1px solid ${hexToRgba(STAGE_BLUE, 0.1)}`,
-  };
-
-  const footerTextStyle = {
-    fontSize: 13,
-    color: TEXT.secondary,
-    lineHeight: 1.7,
-  };
-
   return (
-    <div style={containerStyle}>
-      {/* Header */}
-      <div style={headerStyle}>
-        <h3 style={titleStyle}>Two Information Systems</h3>
-        <p style={subtitleStyle}>
-          Two parallel information systems operate in every human body,
-          each processing different domains through different biological mechanisms.
-        </p>
+    <div
+      style={{
+        background: BG,
+        color: WHITE,
+        fontFamily: FONT.diagram,
+        maxWidth: 1080,
+        margin: "0 auto",
+        padding: "38px 42px 56px",
+        border: `1px solid ${BORDER}`,
+      }}
+    >
+      {/* ── HEADER ─────────────────────────────────────── */}
+      <div
+        style={{
+          fontSize: 9,
+          letterSpacing: "0.2em",
+          color: MUTED,
+          textTransform: "uppercase",
+          fontWeight: 300,
+          marginBottom: 6,
+        }}
+      >
+        TEG-Blue · ESS + CLS
+      </div>
+      <div
+        style={{
+          fontSize: 20,
+          fontWeight: 500,
+          letterSpacing: "0.01em",
+          marginBottom: 5,
+          color: WHITE,
+        }}
+      >
+        Two Information Systems
+      </div>
+      <div
+        style={{
+          fontSize: 10.5,
+          fontWeight: 300,
+          color: "rgba(255,255,255,0.9)",
+          letterSpacing: "0.04em",
+          fontStyle: "italic",
+        }}
+      >
+        Detection · Evaluation · Response — before conscious awareness arrives
       </div>
 
-      {/* System Labels */}
-      <div style={systemLabelContainer}>
+      <Divider />
+
+      {/* ── SPEED TIMELINE ─────────────────────────────── */}
+      <div style={{ marginBottom: 32 }}>
         <div
-          style={systemLabelStyle(false)}
-          onMouseEnter={() => setHoveredSystem("cls")}
-          onMouseLeave={() => setHoveredSystem(null)}
+          style={{
+            fontSize: 9,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "#0590e5",
+            marginBottom: 14,
+            fontWeight: 300,
+          }}
         >
-          The Cognitive-Logical System
+          Speed gap — before conscious thought begins
         </div>
-        <div
-          style={systemLabelStyle(true)}
-          onMouseEnter={() => setHoveredSystem("ess")}
-          onMouseLeave={() => setHoveredSystem(null)}
+        <svg
+          viewBox="0 0 960 92"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ width: "100%", display: "block" }}
         >
-          The Emotional Somatic System
-        </div>
+          <defs>
+            <marker
+              id="ess-ah"
+              viewBox="0 0 10 10"
+              refX="8"
+              refY="5"
+              markerWidth="5"
+              markerHeight="5"
+              orient="auto"
+            >
+              <path
+                d="M2 2L8 5L2 8"
+                fill="none"
+                stroke="context-stroke"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </marker>
+          </defs>
+
+          {/* Track */}
+          <line x1="0" y1="46" x2="950" y2="46" stroke="rgba(160,205,251,.15)" strokeWidth="1" />
+
+          {/* ESS segment: 0 → 296 (500ms mark) */}
+          <line x1="0" y1="46" x2="296" y2="46" stroke={BLUE} strokeWidth="2" strokeLinecap="round" />
+
+          {/* CLS segment: 296 → end */}
+          <line
+            x1="296"
+            y1="46"
+            x2="940"
+            y2="46"
+            stroke="rgba(160,205,251,.7)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            markerEnd="url(#ess-ah)"
+          />
+
+          {/* ESS tick: 10–50ms cue detection */}
+          <line x1="18" y1="40" x2="18" y2="52" stroke={BLUE} strokeWidth="1.5" strokeLinecap="round" />
+          <text x="18" y="34" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8.5" fontWeight="400" fill={BLUE}>
+            10–50ms
+          </text>
+          <text x="18" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(64,98,235,.6)">
+            cue detection
+          </text>
+
+          {/* ESS tick: 50–200ms pattern matching */}
+          <line x1="110" y1="40" x2="110" y2="52" stroke={BLUE} strokeWidth="1.5" strokeLinecap="round" />
+          <text x="110" y="34" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8.5" fontWeight="400" fill={BLUE}>
+            50–200ms
+          </text>
+          <text x="110" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(64,98,235,.6)">
+            pattern matching
+          </text>
+
+          {/* ESS tick: 200–500ms full response */}
+          <line x1="228" y1="40" x2="228" y2="52" stroke={BLUE} strokeWidth="1.5" strokeLinecap="round" />
+          <text x="228" y="34" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8.5" fontWeight="400" fill={BLUE}>
+            200–500ms
+          </text>
+          <text x="228" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(64,98,235,.6)">
+            full physiological response
+          </text>
+
+          {/* Divider at 500ms */}
+          <line x1="296" y1="30" x2="296" y2="62" stroke="rgba(160,205,251,.35)" strokeWidth="1" strokeDasharray="3 3" />
+          <text x="296" y="22" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="300" fill="rgba(160,205,251,.55)">
+            500ms
+          </text>
+
+          {/* CLS ticks */}
+          <line x1="350" y1="40" x2="350" y2="52" stroke="rgba(160,205,251,.7)" strokeWidth="1.5" strokeLinecap="round" />
+          <text x="350" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(160,205,251,.75)">
+            conscious awareness
+          </text>
+
+          <line x1="570" y1="40" x2="570" y2="52" stroke="rgba(160,205,251,.7)" strokeWidth="1.5" strokeLinecap="round" />
+          <text x="570" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(160,205,251,.75)">
+            analysis &amp; planning
+          </text>
+
+          <line x1="790" y1="40" x2="790" y2="52" stroke="rgba(160,205,251,.7)" strokeWidth="1.5" strokeLinecap="round" />
+          <text x="790" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(160,205,251,.75)">
+            narrative construction
+          </text>
+
+          {/* Labels */}
+          <text x="148" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="500" fill="rgba(64,98,235,.7)" letterSpacing="0.08em">
+            ESS — complete
+          </text>
+          <text x="620" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="400" fill="rgba(160,205,251,.6)" letterSpacing="0.08em">
+            CLS — arrives here
+          </text>
+        </svg>
       </div>
 
-      {/* Stages */}
-      <div style={stageContainer}>
-        {STAGES.map((stage, i) => (
-          <div key={i}>
-            {/* Stage label */}
-            <div style={stageLabelStyle}>
-              {stage.label}
-              {stage.sublabel && (
-                <span style={{ display: "block", fontSize: 10, fontWeight: 400, marginTop: 2, color: TEXT.hint }}>
-                  {stage.sublabel}
-                </span>
-              )}
-            </div>
+      <Divider />
 
-            {stage.custom ? (
-              /* Timeframe — special layout */
-              <div style={stageRowStyle}>
-                <div
-                  style={columnStyle(false)}
-                  onMouseEnter={() => setHoveredSystem("cls")}
-                  onMouseLeave={() => setHoveredSystem(null)}
-                >
-                  <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                    Slow and effortful
-                  </div>
-                  <div style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6, marginBottom: 3 }}>
-                    Conscious awareness: 500ms+
-                  </div>
-                  <div style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6, marginBottom: 3 }}>
-                    Analysis and planning: seconds
-                  </div>
-                  <div style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6 }}>
-                    Narrative construction: minutes to hours
-                  </div>
-                </div>
+      {/* ── COMPARISON GRID ─────────────────────────────── */}
+      <Section
+        label="Domain"
+        ess={[
+          "Safety-threat evaluation via neuroception",
+          "Relational cues — faces, voices, postures",
+          "The body's own physiological state",
+          "Survival, bonding, biological integrity",
+        ]}
+        cls={[
+          "External facts, logical problems, causal relationships",
+          "Abstract planning and sequential reasoning",
+          "Language production and narrative construction",
+          "Pattern matching against learned rules and models",
+        ]}
+      />
+      <Section
+        label="Mechanism"
+        ess={[
+          "Neuroception — subconscious environmental scan",
+          "Autonomic nervous system state reorganisation",
+          "Hormonal and neurochemical cascades",
+          "Muscular and visceral reorganisation before thought",
+        ]}
+        cls={[
+          "Conscious deliberation — attention and effort",
+          "Linguistic analysis and abstract reasoning",
+          "Narrative construction from available data",
+          "Builds coherence — complete data or not",
+        ]}
+      />
+      <Section
+        label="Output"
+        ess={[
+          "Physiological response patterns — hormonal, neurochemical, muscular",
+          "Nervous system state reconfiguration",
+          "Behavioural impulses organised before awareness",
+          "Biological information about what was detected",
+        ]}
+        cls={[
+          "Explanations, plans, and conscious decisions",
+          "Narratives about what is happening",
+          "Coherent accounts — which feel true whether data is complete or not",
+        ]}
+      />
+      <Section
+        label="Learning"
+        ess={[
+          "Through experience, repetition, what happens",
+          "Slow to update — slow to forget",
+        ]}
+        cls={[
+          "Through explanation, insight, language",
+          "Fast to update — fast to revise",
+        ]}
+      />
 
-                <div style={dividerStyle}>
-                  <div style={{ width: 1, height: 60, background: hexToRgba(SPECTRUM.slate, 0.2) }} />
-                </div>
+      <Divider />
 
-                <div
-                  style={columnStyle(true)}
-                  onMouseEnter={() => setHoveredSystem("ess")}
-                  onMouseLeave={() => setHoveredSystem(null)}
-                >
-                  <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
-                    Before conscious thought begins
-                  </div>
-                  <div style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6, marginBottom: 3 }}>
-                    Cue detection: 10–50ms
-                  </div>
-                  <div style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6, marginBottom: 3 }}>
-                    Pattern matching: 50–200ms
-                  </div>
-                  <div style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6 }}>
-                    Full physiological response: 200–500ms
-                  </div>
-                </div>
-              </div>
-            ) : (
-              /* Regular stages — bullet lists */
-              <div style={stageRowStyle}>
-                <div
-                  style={columnStyle(false)}
-                  onMouseEnter={() => setHoveredSystem("cls")}
-                  onMouseLeave={() => setHoveredSystem(null)}
-                >
-                  {stage.cls.map((item, j) => (
-                    <div key={j} style={itemStyle}>
-                      <span style={arrowStyle(false)}>→</span>{item}
-                    </div>
-                  ))}
-                </div>
-
-                <div style={dividerStyle}>
-                  <div style={{ width: 1, height: 80, background: hexToRgba(SPECTRUM.slate, 0.2) }} />
-                </div>
-
-                <div
-                  style={columnStyle(true)}
-                  onMouseEnter={() => setHoveredSystem("ess")}
-                  onMouseLeave={() => setHoveredSystem(null)}
-                >
-                  {stage.ess.map((item, j) => (
-                    <div key={j} style={itemStyle}>
-                      <span style={arrowStyle(true)}>→</span>{item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Connector between stages */}
-            {i < STAGES.length - 1 && <div style={connectorLine} />}
-          </div>
-        ))}
-      </div>
-
-      {/* Footer */}
-      <div style={footerStyle}>
-        <p style={footerTextStyle}>
-          These systems are <strong style={{ color: TEXT.primary }}>not in competition</strong>.
-          They are <strong style={{ color: TEXT.primary }}>interdependent</strong> partners
-          serving different functions.
-        </p>
+      {/* ── FOOTER PILLS ─────────────────────────────────── */}
+      <div
+        style={{
+          marginTop: 32,
+          paddingTop: 18,
+          borderTop: `1px solid ${BORDER}`,
+          display: "flex",
+          gap: 32,
+          flexWrap: "wrap",
+        }}
+      >
+        <Pill eyebrow="Two biological substrates">
+          The two systems operate through <Strong>physically separate hardware</Strong>. The{" "}
+          <Strong>interoceptive substrate</Strong> — anterior insula, ventral vagal pathways,
+          visceral afferents — reads the body from the inside. The{" "}
+          <Strong>external observation substrate</Strong> — amygdala, prefrontal cortex — reads
+          other bodies from the outside. When one degrades, the capacities built on it degrade
+          together. The other is unaffected.
+        </Pill>
+        <Pill eyebrow="Not competitors — interdependent">
+          The ESS sets the nervous system&apos;s configuration. The CLS operates{" "}
+          <Strong>within whatever state has been set</Strong>. State precedes capacity. The CLS
+          can narrate, manage, or suppress the ESS&apos;s activation — but the physiological
+          state remains. <Strong>Whether the CLS can feel what the ESS is doing</Strong>{" "}
+          determines everything that follows. This is the central question the Emotional
+          Somatic Cycle maps.
+        </Pill>
       </div>
     </div>
   );
+}
+
+// ─── INTERNAL HELPERS ─────────────────────────────────
+
+function Divider() {
+  return <div style={{ height: 1, background: BORDER, margin: "24px 0" }} />;
+}
+
+function Section({ label, ess, cls }) {
+  return (
+    <div
+      style={{
+        padding: "16px 0",
+        borderTop: `1px solid ${BORDER}`,
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 0,
+        }}
+      >
+        <Cell ess label={label} items={ess} />
+        <Cell label={label} items={cls} />
+      </div>
+    </div>
+  );
+}
+
+function Cell({ ess, label, items }) {
+  const eyebrow = ess ? "Emotional Somatic System" : "Cognitive Logical System";
+  return (
+    <div
+      style={
+        ess
+          ? {
+              padding: "0 28px 6px 0",
+              borderRight: `1px solid ${BORDER}`,
+            }
+          : {
+              padding: "0 0 6px 28px",
+            }
+      }
+    >
+      <div
+        style={{
+          fontSize: 8.5,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: ess ? BLUE : "#a0cdfb",
+          fontWeight: 300,
+          marginBottom: 10,
+        }}
+      >
+        {eyebrow} · {label}
+      </div>
+      {items.map((item, i) => (
+        <Item key={i} ess={ess}>
+          {item}
+        </Item>
+      ))}
+    </div>
+  );
+}
+
+function Item({ ess, children }) {
+  return (
+    <div
+      style={{
+        fontSize: 10,
+        fontWeight: 300,
+        lineHeight: 1.72,
+        color: ess ? ITEM_TEXT_ESS : ITEM_TEXT,
+        padding: "2px 0",
+        display: "flex",
+        alignItems: "baseline",
+        gap: 7,
+      }}
+    >
+      <span style={{ color: MUTED_2, flexShrink: 0, fontSize: 9 }}>—</span>
+      <span>{children}</span>
+    </div>
+  );
+}
+
+function Pill({ eyebrow, children }) {
+  return (
+    <div
+      style={{
+        background: "rgba(160,205,251,.05)",
+        border: `1px solid ${BORDER}`,
+        padding: "12px 16px",
+        flex: "1 1 320px",
+      }}
+    >
+      <div
+        style={{
+          fontSize: 8,
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: MUTED,
+          fontWeight: 300,
+          marginBottom: 5,
+        }}
+      >
+        {eyebrow}
+      </div>
+      <div
+        style={{
+          fontSize: 9.5,
+          fontWeight: 300,
+          lineHeight: 1.7,
+          color: "rgba(255,255,255,0.9)",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function Strong({ children }) {
+  return <strong style={{ fontWeight: 500, color: "rgba(160,205,251,.95)" }}>{children}</strong>;
 }

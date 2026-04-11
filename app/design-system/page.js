@@ -335,8 +335,17 @@ export default function DesignSystemPage() {
               fontFamily: FONT.mono,
               fontSize: TYPE_SCALE.body.size,
               color: TEXT.primary,
+              marginBottom: 8,
             }}>
               JetBrains Mono — const emotion = &apos;biological information&apos;
+            </p>
+            <p style={{
+              fontFamily: FONT.diagram,
+              fontSize: TYPE_SCALE.body.size,
+              fontWeight: 300,
+              color: TEXT.primary,
+            }}>
+              IBM Plex Mono — diagram labels · 10–50ms · neuroception
             </p>
           </div>
 

@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/src/components/theme/ThemeScript'
 import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
@@ -17,6 +17,14 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-jetbrains',
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-plex',
 })
 
 export const metadata = {
@@ -180,7 +188,7 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
       <head>
         <ThemeScript />
 

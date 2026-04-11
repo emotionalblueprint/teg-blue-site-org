@@ -88,6 +88,7 @@ export const CONTENT_TYPE_LABELS = {
 export const FONT = {
   display: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   mono:    "'JetBrains Mono', 'SF Mono', 'Consolas', monospace",
+  diagram: "var(--font-diagram, 'IBM Plex Mono'), 'Courier New', monospace",
 };
 
 export const TYPE_SCALE = {

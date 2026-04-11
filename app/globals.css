@@ -35,6 +35,7 @@
   /* Fonts — loaded via next/font in layout.js */
   --font-display: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-jetbrains), 'SF Mono', 'Consolas', monospace;
+  --font-diagram: var(--font-plex), 'IBM Plex Mono', 'Courier New', monospace;
 }
 
 /* ─── BASE RESET ────────────────────────────────────── */
