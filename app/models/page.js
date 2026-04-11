@@ -21,8 +21,8 @@ import {
 
 // ─── DYNAMIC IMPORTS ────────────────────────────────────
 
-const ESCCycleDiagramV3 = dynamic(
-  () => import("@/src/components/ESCCycleDiagramV3"),
+const ESCCycleDiagram = dynamic(
+  () => import("@/src/components/ESCCycleDiagram"),
   { ssr: false }
 );
 
@@ -99,8 +99,24 @@ export default function ModelsPage() {
     <div
       style={{
         minHeight: "100vh",
-        background: BG.page,
         fontFamily: FONT.display,
+        // Force dark "exhibit" palette on this page regardless of user theme.
+        // Same convention as /emotional-somatic-system — gives ESS / ESC /
+        // Models a visually distinct surface from the rest of the site.
+        "--bg-page": "#0a0d17",
+        "--bg-primary": "#111729",
+        "--bg-card": "#151c35",
+        "--bg-surface": "#162035",
+        "--bg-inset": "#0a0d17",
+        "--text-primary": "#f1f5f9",
+        "--text-secondary": "#cbd5e1",
+        "--text-muted": "#94a3b8",
+        "--text-hint": "#64748b",
+        "--text-micro": "#475569",
+        "--border-default": "rgba(148, 163, 184, 0.12)",
+        "--border-hover": "rgba(148, 163, 184, 0.20)",
+        "--border-active": "rgba(148, 163, 184, 0.30)",
+        background: "#0a0d17",
       }}
     >
       <SiteHeader currentPath="/models" />
@@ -130,7 +146,7 @@ export default function ModelsPage() {
         </section>
 
         <section style={{ marginBottom: 48 }}>
-          <ESCCycleDiagramV3 />
+          <ESCCycleDiagram />
         </section>
 
         {/* ════════════════════════════════════════════════════
