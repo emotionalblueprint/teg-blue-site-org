@@ -8,14 +8,15 @@ import {
 
 const MODEL_COLOR = MODEL_COLORS.M1;
 const CHART_BLUE = MAIN_ORG.accent;
-const COGNITIVE_COLOR = SPECTRUM.indigo;
+const COGNITIVE_COLOR = '#1255fc';
 
 // ─── Chart constants ─────────────────────────────────
 const VW = 880, VH = 200;
 const PL = 44, PT = 20, PR = 70, PB = 48;
 const PW = VW - PL - PR;
 const PH = VH - PT - PB;
-const DURATION = 5000;
+const DURATION_REAL = 500;
+const DURATION_SLOW = 5000;
 
 // ─── Timeline markers (ms) ──────────────────────────
 const MARKERS = [
@@ -144,6 +145,7 @@ export default function M1SpeedComparison() {
   const [progress, setProgress] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const [done, setDone] = useState(false);
+  const [speed, setSpeed] = useState('slow'); // 'real' | 'slow'
   const sectionRef = useRef(null);
   const rafRef = useRef(null);
   const t0Ref = useRef(null);
@@ -152,12 +154,15 @@ export default function M1SpeedComparison() {
   const emotional = useMemo(() => buildEmotionalPath(), []);
   const cognitive = useMemo(() => buildCognitivePath(), []);
 
-  function play() {
+  const duration = speed === 'real' ? DURATION_REAL : DURATION_SLOW;
+
+  function play(newSpeed) {
     cancelAnimationFrame(rafRef.current);
     t0Ref.current = null;
     setProgress(0);
     setDone(false);
     setHasStarted(true);
+    if (newSpeed) setSpeed(newSpeed);
     runRef.current += 1;
   }
 
@@ -178,17 +183,18 @@ export default function M1SpeedComparison() {
   useEffect(() => {
     if (!hasStarted) return;
     const thisRun = runRef.current;
+    const dur = duration;
     const tick = (ts) => {
       if (thisRun !== runRef.current) return;
       if (!t0Ref.current) t0Ref.current = ts;
-      const p = Math.min((ts - t0Ref.current) / DURATION, 1);
+      const p = Math.min((ts - t0Ref.current) / dur, 1);
       setProgress(p);
       if (p < 1) rafRef.current = requestAnimationFrame(tick);
       else setDone(true);
     };
     rafRef.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [hasStarted, runRef.current]);
+  }, [hasStarted, duration, runRef.current]);
 
   // Derived values
   const cx = PL + progress * PW;
@@ -254,40 +260,51 @@ export default function M1SpeedComparison() {
             </span>
           </div>
         ))}
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
+          {/* Speed toggle */}
+          <div style={{
+            display: 'flex', borderRadius: 6,
+            border: `1px solid ${BORDER.default}`,
+            overflow: 'hidden',
+          }}>
+            {[
+              { key: 'real', label: 'Real Time' },
+              { key: 'slow', label: '10× Slower' },
+            ].map(opt => {
+              const isActive = speed === opt.key;
+              return (
+                <button
+                  key={opt.key}
+                  onClick={() => play(opt.key)}
+                  style={{
+                    padding: '4px 12px',
+                    border: 'none',
+                    background: isActive ? hexToRgba(MODEL_COLOR, 0.12) : 'transparent',
+                    color: isActive ? MODEL_COLOR : TEXT.muted,
+                    fontFamily: FONT.mono,
+                    fontSize: 9,
+                    fontWeight: isActive ? 600 : 400,
+                    letterSpacing: '0.06em',
+                    cursor: 'pointer',
+                    transition: 'all 150ms ease',
+                    borderRight: opt.key === 'real' ? `1px solid ${BORDER.default}` : 'none',
+                  }}
+                >
+                  {opt.label}
+                </button>
+              );
+            })}
+          </div>
+
           {progress > 0.01 && (
             <span style={{
               fontFamily: FONT.mono, fontSize: 14, fontWeight: 700,
               color: TEXT.secondary,
+              minWidth: 52,
+              textAlign: 'right',
             }}>
               {currentMs} ms
             </span>
-          )}
-          {done && (
-            <button
-              onClick={play}
-              aria-label="Replay animation"
-              style={{
-                display: 'flex', alignItems: 'center', gap: 6,
-                padding: '4px 12px',
-                border: `1px solid ${BORDER.default}`,
-                background: 'transparent',
-                color: TEXT.muted,
-                borderRadius: 6,
-                fontFamily: FONT.mono,
-                fontSize: 9,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                fontWeight: 500,
-                cursor: 'pointer',
-              }}
-            >
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                <path d="M1 1v4h4" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M1.5 5A5 5 0 1 1 2 8.5" stroke={TEXT.muted} strokeWidth="1.3" strokeLinecap="round" />
-              </svg>
-              Replay
-            </button>
           )}
         </div>
       </div>
@@ -393,19 +410,19 @@ export default function M1SpeedComparison() {
           {/* End labels */}
           {done && (
             <>
-              <text x={PL + PW + 8} y={eY + 4}
+              <text x={PL + PW + 8} y={eY - 6}
                 style={{
                   fontFamily: 'JetBrains Mono, monospace', fontSize: 8,
                   fill: MODEL_COLOR,
                 }}>
-                complete
+                state active
               </text>
-              <text x={PL + PW + 8} y={cY + 4}
+              <text x={PL + PW + 8} y={cY + 12}
                 style={{
                   fontFamily: 'JetBrains Mono, monospace', fontSize: 8,
                   fill: COGNITIVE_COLOR,
                 }}>
-                arriving
+                processing begins
               </text>
             </>
           )}

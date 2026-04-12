@@ -7,9 +7,29 @@
  * Consumed by: M1EmotionsAsSignals, EmotionWaveSection
  */
 
+// ─── NS STATE GROUPS ──────────────────────────────────────────────
+// Emotions activate one of two ancient, pre-cognitive nervous system states.
+// Strategy & Management and Power & Dominance require cognition — they are M2 territory.
+
+export const NS_STATE_GROUPS = [
+  {
+    key: 'safety',
+    label: 'Safety & Openness',
+    description: 'The nervous system evaluates conditions as safe — the body opens, approaches, connects',
+    emotions: ['joy', 'happiness', 'admiration', 'pride', 'love', 'trust', 'gratitude', 'compassion'],
+  },
+  {
+    key: 'threat',
+    label: 'Threat & Defence',
+    description: 'The nervous system evaluates conditions as threatening — the body mobilises, withdraws, or expels',
+    emotions: ['fear', 'anger', 'stress', 'anxiety', 'disgust', 'shame', 'guilt', 'sadness'],
+  },
+];
+
 // ─── EMOTIONS ──────────────────────────────────────────────────────
 // Source: root--emotions-as-signals.md
-// 9 canonical emotions. Each carries a specific nervous system signal.
+// 16 canonical emotions. Each carries a specific nervous system signal.
+// nsState = which ancient NS state this emotion activates (safety | threat).
 // defaultMode = which mode this emotion typically activates in a fluid compass.
 // type = somatic (can complete through body alone) | relational (requires co-regulation).
 
@@ -17,6 +37,7 @@ export const EMOTIONS = [
   {
     key: 'fear',
     name: 'Fear',
+    nsState: 'threat',
     signal: 'Threat detected',
     bodyResponse: 'Sympathetic activation — heart rate rises, muscles tense, sensory acuity sharpens',
     restorationNeeds: 'Threat must resolve — danger passes, person acts, or safety established',
@@ -39,6 +60,7 @@ export const EMOTIONS = [
   {
     key: 'anger',
     name: 'Anger',
+    nsState: 'threat',
     signal: 'Boundary crossed',
     bodyResponse: 'Sympathetic activation directed outward — energy toward confrontation, assertion, correction',
     restorationNeeds: 'Boundary must be reasserted or acknowledged — through communication, action, or change',
@@ -61,6 +83,7 @@ export const EMOTIONS = [
   {
     key: 'stress',
     name: 'Stress',
+    nsState: 'threat',
     signal: 'Demand-resource mismatch',
     bodyResponse: 'HPA axis activation — cortisol rises, energy redirects toward the demand, body prioritises the mismatch and mobilises toward resolution',
     restorationNeeds: 'Demand must be met or resource restored — when the gap closes, the activation discharges; when it does not, cortisol remains elevated',
@@ -83,6 +106,7 @@ export const EMOTIONS = [
   {
     key: 'anxiety',
     name: 'Anxiety',
+    nsState: 'threat',
     signal: 'Anticipatory threat',
     bodyResponse: 'Chronic cortisol elevation — BNST activates (sustained anxiety circuit, distinct from amygdala\'s acute fear), body scans continuously for unresolved future conditions',
     restorationNeeds: 'Uncertainty must resolve — future condition assessed and accepted, threat materialises and converts to actionable fear, or relational support for tolerating uncertainty',
@@ -105,6 +129,7 @@ export const EMOTIONS = [
   {
     key: 'disgust',
     name: 'Disgust',
+    nsState: 'threat',
     signal: 'Contamination detected',
     bodyResponse: 'Nausea, retching, mouth/nose closing — gustatory cortex and insula activate',
     restorationNeeds: 'Removal — contaminant expelled, distance established, or environment confirmed safe',
@@ -127,6 +152,7 @@ export const EMOTIONS = [
   {
     key: 'shame',
     name: 'Shame',
+    nsState: 'threat',
     signal: 'Belonging at risk',
     bodyResponse: 'Withdrawal, shrinking, heat, desire to disappear — social survival signal',
     restorationNeeds: 'Relational evidence — another person stays present without contempt after seeing the shameful thing',
@@ -149,6 +175,7 @@ export const EMOTIONS = [
   {
     key: 'guilt',
     name: 'Guilt',
+    nsState: 'threat',
     signal: 'Harm done',
     bodyResponse: 'Discomfort, restlessness, pull toward repair — corrective signal',
     restorationNeeds: 'Acknowledgment of impact, genuine repair, other person\'s experience felt through ER',
@@ -171,6 +198,7 @@ export const EMOTIONS = [
   {
     key: 'sadness',
     name: 'Sadness',
+    nsState: 'threat',
     signal: 'Loss',
     bodyResponse: 'Withdrawal, slowing, tears — energy turns inward, conservation signal',
     restorationNeeds: 'Time, space, and for relational losses the presence of someone who holds without fixing',
@@ -193,6 +221,7 @@ export const EMOTIONS = [
   {
     key: 'joy',
     name: 'Joy',
+    nsState: 'safety',
     signal: 'Safety confirmed',
     bodyResponse: 'Expansion, energy, approach — body opens, dopamine flows, system moves toward source',
     restorationNeeds: 'Presence — fully experienced in body without scanning for what will take it away',
@@ -215,6 +244,7 @@ export const EMOTIONS = [
   {
     key: 'happiness',
     name: 'Happiness',
+    nsState: 'safety',
     signal: 'Sustained positive condition',
     bodyResponse: 'Serotonergic tone rises — general positive affect, body maintains openness without urgency of approach, a settled sustained state',
     restorationNeeds: 'Presence without interruption — the signal completes through continued contact with the condition that produced it',
@@ -237,6 +267,7 @@ export const EMOTIONS = [
   {
     key: 'admiration',
     name: 'Admiration',
+    nsState: 'safety',
     signal: 'Value detected in another',
     bodyResponse: 'Orientation toward the other — body opens in the direction of what was detected, approach and inspiration, sometimes a brief pause of recognition',
     restorationNeeds: 'Presence with the recognition — allowing the detection to land without converting it into comparison, obligation, or self-diminishment',
@@ -255,6 +286,7 @@ export const EMOTIONS = [
   {
     key: 'pride',
     name: 'Pride',
+    nsState: 'safety',
     signal: 'Own value recognised',
     bodyResponse: 'Expansion, warmth, upward energy — chest lifts, posture shifts, the body opens from the inside',
     restorationNeeds: 'Presence with the recognition, without requiring external validation — the signal completes through own awareness of contribution',
@@ -273,6 +305,7 @@ export const EMOTIONS = [
   {
     key: 'love',
     name: 'Love',
+    nsState: 'safety',
     signal: 'Bond',
     bodyResponse: 'Oxytocin, warmth, pull toward closeness — co-regulation circuit activates',
     restorationNeeds: 'Reciprocity — signal received and returned through genuine felt presence, not performance',
@@ -295,6 +328,7 @@ export const EMOTIONS = [
   {
     key: 'trust',
     name: 'Trust',
+    nsState: 'safety',
     signal: 'Safety confirmed in a specific person',
     bodyResponse: 'Guard-dropping — vagal tone shifts, body moves from monitoring to open contact, muscles around eyes and throat soften',
     restorationNeeds: 'Reciprocity — the signal met with equivalent openness; trust extended must be matched by the other\'s',
@@ -317,6 +351,7 @@ export const EMOTIONS = [
   {
     key: 'gratitude',
     name: 'Gratitude',
+    nsState: 'safety',
     signal: 'Something needed was received',
     bodyResponse: 'Warmth, orientation toward the other, brief vulnerability in receiving — body opens toward the source with the settling of something received',
     restorationNeeds: 'Expression — the signal completing through acknowledgment that reaches the other person, not as performance but as genuine contact',
@@ -339,6 +374,7 @@ export const EMOTIONS = [
   {
     key: 'compassion',
     name: 'Compassion',
+    nsState: 'safety',
     signal: 'Other\'s state resonates, calls for approach',
     bodyResponse: 'Movement toward the other — body orients, approaches, reaches; resonance with the other\'s state while maintaining boundary',
     restorationNeeds: 'Contact with the other\'s state without absorption — presence without fixing, being in contact while remaining in own body',

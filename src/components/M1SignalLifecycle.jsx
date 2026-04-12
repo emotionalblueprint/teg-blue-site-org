@@ -32,9 +32,15 @@ const SIGNALS = [
   { condition: 'Contamination detected', emotion: 'Disgust', body: 'Nausea, throat constriction, physical recoil — expulsion readiness' },
   { condition: 'Loss', emotion: 'Sadness', body: 'Energy withdraws, tears, slowing — system conserves and turns inward' },
   { condition: 'Belonging at risk', emotion: 'Shame', body: 'Heat, shrinking, gaze aversion — the body pulls inward and hides' },
+  { condition: 'Harm done', emotion: 'Guilt', body: 'Weight in the chest, restlessness, pull toward repair — sustained discomfort orienting toward the affected person' },
   { condition: 'Safety confirmed', emotion: 'Joy', body: 'Parasympathetic ease, lightness, expansive movement, energy available for exploration' },
+  { condition: 'Sustained positive condition', emotion: 'Happiness', body: 'Serotonergic tone rises — settled openness, positive affect sustained without urgency' },
   { condition: 'Value detected in another', emotion: 'Admiration', body: 'Warmth, openness, orientation toward — the body approaches what it recognises' },
+  { condition: 'Own value recognised', emotion: 'Pride', body: 'Expansion, warmth, upward energy — chest lifts, posture shifts, the body opens from the inside' },
   { condition: 'Bond', emotion: 'Love', body: 'Oxytocin, warmth, orientation toward the other — the body moves closer' },
+  { condition: 'Safety confirmed in a specific person', emotion: 'Trust', body: 'Guard-dropping — vagal tone shifts, muscles around eyes and throat soften, body opens to contact' },
+  { condition: 'Something needed was received', emotion: 'Gratitude', body: 'Warmth, orientation toward the other, brief vulnerability in receiving — the body settles' },
+  { condition: 'Other\'s state resonates', emotion: 'Compassion', body: 'Movement toward the other — resonance with the other\'s state while maintaining boundary' },
 ];
 
 // ─── Wave shape varies by signal ────────────────────
@@ -43,8 +49,9 @@ function buildWave(idx) {
   const N = 300;
   const points = [];
   // Different peak heights and rise rates per signal type
-  const peaks = [0.92, 0.88, 0.78, 0.82, 0.90, 0.62, 0.70, 0.75, 0.72, 0.68];
-  const rates = [8, 7, 5, 6, 9, 3.5, 4, 5, 4, 3.5];
+  // Fear, Anger, Stress, Anxiety, Disgust, Sadness, Shame, Guilt, Joy, Happiness, Admiration, Pride, Love, Trust, Gratitude, Compassion
+  const peaks = [0.92, 0.88, 0.78, 0.82, 0.90, 0.62, 0.70, 0.68, 0.75, 0.65, 0.72, 0.70, 0.68, 0.60, 0.58, 0.64];
+  const rates = [8, 7, 5, 6, 9, 3.5, 4, 4, 5, 3, 4, 4.5, 3.5, 3, 3, 3.5];
   const peak = peaks[idx] || 0.78;
   const rate = rates[idx] || 5;
 
@@ -216,7 +223,7 @@ export default function M1SignalLifecycle() {
         }
         .m1-lc-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
           gap: 6px;
         }
         @media (max-width: 768px) {
@@ -225,6 +232,52 @@ export default function M1SignalLifecycle() {
           }
         }
       `}</style>
+
+      {/* Signal selector — top of diagram */}
+      <div style={{ marginBottom: 16 }}>
+        <div style={{
+          fontFamily: FONT.mono, fontSize: 7.5, color: TEXT.hint,
+          letterSpacing: '0.1em', textTransform: 'uppercase',
+          marginBottom: 10,
+        }}>
+          Select a condition to trace the signal
+        </div>
+        <div className="m1-lc-grid">
+          {SIGNALS.map((s, i) => {
+            const isActive = selectedIdx === i;
+            return (
+              <button
+                key={s.emotion}
+                onClick={() => setSelectedIdx(i)}
+                style={{
+                  padding: '8px 12px',
+                  borderRadius: 6,
+                  border: `1px solid ${isActive ? MODEL_COLOR : BORDER.default}`,
+                  background: isActive ? hexToRgba(MODEL_COLOR, 0.1) : 'transparent',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'all 200ms ease',
+                }}
+              >
+                <div style={{
+                  fontFamily: FONT.display,
+                  fontSize: 12, fontWeight: 600,
+                  color: isActive ? MODEL_COLOR : TEXT.primary,
+                  transition: 'color 200ms ease',
+                }}>
+                  {s.emotion}
+                </div>
+                <div style={{
+                  fontFamily: FONT.mono,
+                  fontSize: 8, color: TEXT.hint, marginTop: 2,
+                }}>
+                  {s.condition}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Legend */}
       <div style={{
@@ -453,51 +506,6 @@ export default function M1SignalLifecycle() {
         })}
       </div>
 
-      {/* Signal selector */}
-      <div style={{ marginTop: 20 }}>
-        <div style={{
-          fontFamily: FONT.mono, fontSize: 7.5, color: TEXT.hint,
-          letterSpacing: '0.1em', textTransform: 'uppercase',
-          marginBottom: 10,
-        }}>
-          Select a condition to trace the signal
-        </div>
-        <div className="m1-lc-grid">
-          {SIGNALS.map((s, i) => {
-            const isActive = selectedIdx === i && done;
-            return (
-              <button
-                key={s.emotion}
-                onClick={() => setSelectedIdx(i)}
-                style={{
-                  padding: '8px 12px',
-                  borderRadius: 6,
-                  border: `1px solid ${isActive ? MODEL_COLOR : BORDER.default}`,
-                  background: isActive ? hexToRgba(MODEL_COLOR, 0.1) : 'transparent',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  transition: 'all 200ms ease',
-                }}
-              >
-                <div style={{
-                  fontFamily: FONT.display,
-                  fontSize: 12, fontWeight: 600,
-                  color: isActive ? MODEL_COLOR : TEXT.primary,
-                  transition: 'color 200ms ease',
-                }}>
-                  {s.emotion}
-                </div>
-                <div style={{
-                  fontFamily: FONT.mono,
-                  fontSize: 8, color: TEXT.hint, marginTop: 2,
-                }}>
-                  {s.condition}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
     </section>
   );
 }
