@@ -127,6 +127,7 @@ export default function ModelsPage() {
             badge="THE EMOTIONAL SOMATIC CYCLE"
             title="The Emotional Somatic Cycle"
             subtitle="Detection → Signal → State → Restoration or Incompletion"
+            subtitleStyle={{ fontFamily: FONT.diagram }}
             description="The Emotional Somatic System and the Cognitive-Logical System run a repeating biological sequence together. The nervous system detects, evaluates, generates a physiological response, and reorganises into a different configuration. Whether that sequence completes — or remains unresolved — determines what the person can perceive, think, feel, and do."
             color={P.B}
           />

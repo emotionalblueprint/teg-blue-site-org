@@ -26,6 +26,7 @@ export default function ModelHero({
   badge,
   title,
   subtitle,
+  subtitleStyle,
   description,
   coreQuestion,
   drawsFrom = [],
@@ -68,6 +69,7 @@ export default function ModelHero({
             fontStyle: "italic",
             color: TEXT.muted,
             margin: "0 0 12px",
+            ...subtitleStyle,
           }}
         >
           {subtitle}

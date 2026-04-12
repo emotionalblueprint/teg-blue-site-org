@@ -11,6 +11,7 @@
 
   /* Backgrounds — Tailwind Slate scale */
   --bg-page:    #111729;
+  --bg-diagram: #131a2f;
   --bg-primary: #151c35;
   --bg-card:    #1a2240;
   --bg-surface: #162035;
@@ -182,6 +183,7 @@ details > section {
 [data-theme="light"] {
   /* Warm Stone backgrounds (matches .com light mode) */
   --bg-page:    #fafaf9;
+  --bg-diagram: #f4f4f2;
   --bg-primary: #ffffff;
   --bg-card:    #f5f5f4;
   --bg-surface: #e7e5e4;

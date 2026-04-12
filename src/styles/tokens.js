@@ -15,6 +15,7 @@
 
 export const BG = {
   page:    "var(--bg-page)",
+  diagram: "var(--bg-diagram)",   // Raised instrument surface — lift from page, base for all .org diagrams
   primary: "var(--bg-primary)",
   card:    "var(--bg-card)",
   surface: "var(--bg-surface)",
@@ -206,6 +207,81 @@ export const STATUS = {
   draft:     ACCENT.amber,
   published: SPECTRUM.blue,
   reviewed:  ACCENT.green,
+};
+
+// ─── DIAGRAM SYSTEM (.org instrument style) ──────────
+// Canonical palette for .org instrument-style diagrams (ESS, ESC, and future).
+// Full style guide: teg-blue-vault/_system/diagram-style.md
+//
+// This system is SEPARATE from the M1–M4 model-page diagrams, which consume
+// diagramContainer() below and are visually locked to their model pages.
+// The DIAGRAM tokens govern the newer instrument aesthetic: single-voice blue,
+// orange-for-break, IBM Plex Mono, near-black page background, very light weights.
+
+export const DIAGRAM = {
+  // ── Frame ──────────────────────────────────────────
+  bg:             BG.diagram,                       // raised instrument surface — lifted from page
+  frame:          'rgba(160,205,251,0.14)',         // optional 1px container border
+  divider:        'rgba(160,205,251,0.18)',         // internal dividers, card strokes
+  surface:        'rgba(160,205,251,0.05)',         // pill/card surfaces on dark bg
+
+  // ── Voice (the one saturated color — "follow this line") ──
+  primary:        '#4062eb',
+  primaryDim:     'rgba(64,98,235,0.60)',
+  primaryGhost:   'rgba(64,98,235,0.10)',
+
+  // ── Break (only for override / chronic / stuck / Path B / unprocessed) ──
+  break:          '#e05e2e',
+  breakDim:       'rgba(224,94,46,0.78)',
+  breakGhost:     'rgba(224,94,46,0.10)',
+
+  // ── Text inside diagrams ──────────────────────────
+  white:          '#ffffff',                        // highest emphasis (rare)
+  textStrong:     'rgba(255,255,255,0.90)',         // primary label text
+  textBody:       'rgba(255,255,255,0.85)',         // body sentences in pills
+  textMuted:      'rgba(160,205,251,0.55)',         // eyebrows, axis labels
+  textMicro:      'rgba(160,205,251,0.35)',         // tick labels, dashes, footnotes
+
+  // ── Structure lines ───────────────────────────────
+  gridSoft:       'rgba(160,205,251,0.06)',         // baseline grid (barely there)
+  gridLine:       'rgba(160,205,251,0.15)',         // axis lines
+  connector:      'rgba(160,205,251,0.22)',         // arc baseline, circle outlines
+  connectorFine:  'rgba(160,205,251,0.28)',         // thin connector lines to labels
+};
+
+// Stroke widths — 5-tier ladder matching ESS/ESC prototypes
+export const DIAGRAM_STROKE = {
+  hairline: 0.5,   // connector lines to labels, dotted guides
+  fine:     1,     // default structure, grid lines
+  medium:   1.5,   // standard lines, CLS track, tick marks, base circle outline
+  primary:  2,     // main data paths (EmotionWave processed line)
+  voice:    2.5,   // the active arc / primary voice line (ESC arc)
+};
+
+// Opacity ladder — 6 tiers
+export const DIAGRAM_OPACITY = {
+  ghost:    0.10,  // pre-reveal state, faintest ghost paths
+  micro:    0.15,  // baseline grid, faintest structural lines
+  muted:    0.35,  // muted secondary, inactive ticks
+  support:  0.55,  // eyebrow text, supporting lines
+  body:     0.85,  // body text in pills
+  strong:   0.90,  // primary label text (near-white)
+};
+
+// Typography scale for diagrams — all use FONT.diagram (IBM Plex Mono)
+export const DIAGRAM_TYPE = {
+  eyebrow:    { size: 9,    weight: 300, tracking: '0.18em', upper: true },  // "TEG-Blue · ESS + CLS"
+  eyebrowSm:  { size: 8,    weight: 300, tracking: '0.20em', upper: true },  // footnote eyebrows
+  title:      { size: 20,   weight: 500, tracking: '0.01em' },               // diagram title
+  titleSm:    { size: 13,   weight: 500, tracking: '0.03em' },               // compact title (ESC header)
+  subtitle:   { size: 10.5, weight: 300, tracking: '0.04em', italic: true }, // italic descriptor under title
+  sectionTag: { size: 8.5,  weight: 300, tracking: '0.18em', upper: true },  // "Emotional Somatic System · Domain"
+  body:       { size: 10,   weight: 300, lineHeight: 1.72 },                 // list items, pill body
+  bodySm:     { size: 9.5,  weight: 300, lineHeight: 1.65 },                 // compact body
+  label:      { size: 10.5, weight: 300 },                                   // SVG text labels
+  labelBold:  { size: 10,   weight: 500 },                                   // emphasis inside labels
+  tick:       { size: 8.5,  weight: 400 },                                   // tick labels inside SVG
+  tickMicro:  { size: 7.5,  weight: 300 },                                   // smallest annotations
 };
 
 // ─── DIAGRAM CONTAINERS ─────────────────────────────

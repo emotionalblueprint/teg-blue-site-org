@@ -2,13 +2,15 @@ import {
   BG, TEXT, BORDER, FONT, SPACING, RADIUS, TRANSITION, OPACITY,
   SPECTRUM, PATTERN, PATTERN_GRADIENT, AWARENESS, AWARENESS_TONES, STATUS,
   ACCENT, MAIN_ORG,
+  DIAGRAM, DIAGRAM_STROKE, DIAGRAM_OPACITY, DIAGRAM_TYPE,
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout, FluidCompassExplorer } from "@/src/components";
+import { SiteHeader, SiteFooter, PageLayout, FluidCompassExplorer, ESSInformationSystems, ESCCycleDiagram } from "@/src/components";
 import CompassBar from "@/src/components/CompassBar";
 
 const SIDEBAR_SECTIONS = [
   { label: "Design Tokens", description: "The visual language: spectrum colors, typography, spacing, and component patterns.", href: "#design-tokens" },
+  { label: "Diagram Style", description: "Instrument-style palette, typography, stroke/opacity scales, and the three archetypes — with two live diagrams.", href: "#diagram-style" },
   { label: "Fluid Compass Explorer", description: "Interactive explorer pattern — gradient bar with mode-reactive content panel.", href: "#fluid-compass-explorer" },
   { label: "Section Separators", description: "One gradient style in three thicknesses.", href: "#section-separators" },
   { label: "Page Navigator", description: "Sticky sidebar with anchor links and section descriptions.", href: "#page-navigator" },
@@ -586,6 +588,474 @@ export default function DesignSystemPage() {
             Drag the slider to explore State Position
           </p>
           <CompassBar />
+        </section>
+
+        {/* ─── 11.5. DIAGRAM STYLE ────────────────────────── */}
+        <section id="diagram-style" style={{ marginBottom: SPACING.sectionGap.desktop }}>
+          <SectionTitle>Diagram Style</SectionTitle>
+          <p style={{
+            fontSize: TYPE_SCALE.body.size,
+            lineHeight: TYPE_SCALE.body.lineHeight,
+            color: TEXT.secondary,
+            marginBottom: 16,
+          }}>
+            The canonical .org instrument style. All new diagrams consume these tokens and
+            follow these conventions. Instrument, not illustration — tick marks, axes, ghost
+            paths, measured strokes. Surgical, but with presence.
+          </p>
+          <p style={{
+            fontSize: TYPE_SCALE.body.size,
+            lineHeight: TYPE_SCALE.body.lineHeight,
+            color: TEXT.secondary,
+            marginBottom: 24,
+          }}>
+            Canonical style guide:{" "}
+            <code style={{ fontFamily: FONT.mono, fontSize: 13, color: TEXT.primary }}>
+              teg-blue-vault/_system/diagram-style.md
+            </code>
+            . Does NOT apply to the locked M1–M4 model-page diagrams (those use{" "}
+            <code style={{ fontFamily: FONT.mono, fontSize: 13, color: TEXT.primary }}>
+              diagramContainer()
+            </code>{" "}
+            + PATTERN colors — a separate, locked visual family).
+          </p>
+
+          {/* ── The rule: three semantic roles ── */}
+          <div style={{
+            padding: 24,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              The rule — three roles
+            </p>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: TEXT.secondary, marginBottom: 16 }}>
+              Every color plays one of three roles. If a color can&apos;t be named, it&apos;s noise.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {[
+                ["Voice", DIAGRAM.primary, "#4062eb", "Follow this line — main path, active arc, primary data series, the designed pathway"],
+                ["Break", DIAGRAM.break, "#e05e2e", "Against design — override, chronic, stuck, cascade, Path B. Rare and meaningful."],
+                ["Structure", DIAGRAM.connector, "rgba(160,205,251,X)", "Scaffolding — grid, axes, connectors, frames, dividers. Barely there."],
+              ].map(([name, color, hex, desc]) => (
+                <div key={name} style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 16,
+                  padding: "12px 14px",
+                  background: hexToRgba(color, 0.04),
+                  border: `1px solid ${hexToRgba(color, 0.15)}`,
+                  borderLeft: `3px solid ${color}`,
+                  borderRadius: 6,
+                }}>
+                  <div style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: 6,
+                    background: color,
+                    flexShrink: 0,
+                  }} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{
+                      fontFamily: FONT.mono,
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: color,
+                      marginBottom: 2,
+                    }}>
+                      {name} <span style={{ color: TEXT.muted, fontWeight: 400 }}>· {hex}</span>
+                    </div>
+                    <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>
+                      {desc}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── DIAGRAM palette swatches ── */}
+          <div style={{
+            padding: 24,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              DIAGRAM Tokens
+            </p>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: 10,
+            }}>
+              {[
+                ["primary",       DIAGRAM.primary,       "voice"],
+                ["primaryDim",    DIAGRAM.primaryDim,    "voice dim"],
+                ["primaryGhost",  DIAGRAM.primaryGhost,  "pre-reveal"],
+                ["break",         DIAGRAM.break,         "against design"],
+                ["breakDim",      DIAGRAM.breakDim,      "break label"],
+                ["breakGhost",    DIAGRAM.breakGhost,    "pre-reveal break"],
+                ["textStrong",    DIAGRAM.textStrong,    "labels"],
+                ["textBody",      DIAGRAM.textBody,      "pill body"],
+                ["textMuted",     DIAGRAM.textMuted,     "eyebrows"],
+                ["textMicro",     DIAGRAM.textMicro,     "ticks / dashes"],
+                ["connector",     DIAGRAM.connector,     "circle outlines"],
+                ["connectorFine", DIAGRAM.connectorFine, "label connectors"],
+                ["gridLine",      DIAGRAM.gridLine,      "axes"],
+                ["gridSoft",      DIAGRAM.gridSoft,      "grid"],
+                ["divider",       DIAGRAM.divider,       "dividers"],
+                ["frame",         DIAGRAM.frame,         "container"],
+                ["surface",       DIAGRAM.surface,       "pill surface"],
+              ].map(([name, value, role]) => (
+                <div key={name} style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 4,
+                }}>
+                  <div style={{
+                    height: 36,
+                    borderRadius: 4,
+                    background: DIAGRAM.bg,
+                    border: `1px solid ${BORDER.default}`,
+                    overflow: "hidden",
+                    position: "relative",
+                  }}>
+                    <div style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: value,
+                    }} />
+                  </div>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 9.5,
+                    fontWeight: 600,
+                    letterSpacing: "0.04em",
+                    color: TEXT.secondary,
+                  }}>
+                    {name}
+                  </span>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 9,
+                    color: TEXT.hint,
+                  }}>
+                    {role}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Typography scale ── */}
+          <div style={{
+            padding: 24,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              Typography — FONT.diagram (IBM Plex Mono)
+            </p>
+            <div style={{
+              padding: 20,
+              background: DIAGRAM.bg,
+              border: `1px solid ${DIAGRAM.frame}`,
+              display: "flex",
+              flexDirection: "column",
+              gap: 14,
+            }}>
+              {Object.entries(DIAGRAM_TYPE).map(([key, spec]) => (
+                <div key={key} style={{
+                  display: "grid",
+                  gridTemplateColumns: "140px 1fr",
+                  alignItems: "baseline",
+                  gap: 16,
+                }}>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10,
+                    color: TEXT.hint,
+                    letterSpacing: "0.04em",
+                  }}>
+                    {key}
+                  </span>
+                  <span style={{
+                    fontFamily: FONT.diagram,
+                    fontSize: spec.size,
+                    fontWeight: spec.weight,
+                    letterSpacing: spec.tracking || "normal",
+                    fontStyle: spec.italic ? "italic" : "normal",
+                    textTransform: spec.upper ? "uppercase" : "none",
+                    color: key.includes("eyebrow") || key === "sectionTag"
+                      ? DIAGRAM.textMuted
+                      : DIAGRAM.textStrong,
+                    lineHeight: spec.lineHeight || 1.4,
+                  }}>
+                    {spec.upper
+                      ? `${spec.size}PX · WEIGHT ${spec.weight} · TRACK ${spec.tracking}`
+                      : `${spec.size}px · weight ${spec.weight} — Detection · Evaluation · Response`}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Stroke + opacity ladders ── */}
+          <div style={{
+            padding: 24,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 32,
+          }}>
+            <div>
+              <p style={{
+                fontFamily: FONT.mono,
+                fontSize: TYPE_SCALE.tagLabel.size,
+                fontWeight: TYPE_SCALE.tagLabel.weight,
+                letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                color: TEXT.muted,
+                textTransform: "uppercase",
+                marginBottom: 14,
+              }}>
+                Stroke Ladder
+              </p>
+              <div style={{
+                padding: 16,
+                background: DIAGRAM.bg,
+                border: `1px solid ${DIAGRAM.frame}`,
+                display: "flex",
+                flexDirection: "column",
+                gap: 14,
+              }}>
+                {Object.entries(DIAGRAM_STROKE).map(([key, width]) => (
+                  <div key={key} style={{
+                    display: "grid",
+                    gridTemplateColumns: "80px 40px 1fr",
+                    alignItems: "center",
+                    gap: 12,
+                  }}>
+                    <span style={{
+                      fontFamily: FONT.diagram,
+                      fontSize: 10,
+                      color: DIAGRAM.textMuted,
+                      letterSpacing: "0.04em",
+                    }}>
+                      {key}
+                    </span>
+                    <span style={{
+                      fontFamily: FONT.diagram,
+                      fontSize: 10,
+                      color: DIAGRAM.textMicro,
+                    }}>
+                      {width}px
+                    </span>
+                    <svg viewBox="0 0 200 6" style={{ width: "100%", height: 6 }}>
+                      <line
+                        x1="0" y1="3" x2="200" y2="3"
+                        stroke={DIAGRAM.primary}
+                        strokeWidth={width}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p style={{
+                fontFamily: FONT.mono,
+                fontSize: TYPE_SCALE.tagLabel.size,
+                fontWeight: TYPE_SCALE.tagLabel.weight,
+                letterSpacing: TYPE_SCALE.tagLabel.tracking,
+                color: TEXT.muted,
+                textTransform: "uppercase",
+                marginBottom: 14,
+              }}>
+                Opacity Ladder
+              </p>
+              <div style={{
+                padding: 16,
+                background: DIAGRAM.bg,
+                border: `1px solid ${DIAGRAM.frame}`,
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+              }}>
+                {Object.entries(DIAGRAM_OPACITY).map(([key, opacity]) => (
+                  <div key={key} style={{
+                    display: "grid",
+                    gridTemplateColumns: "80px 40px 1fr",
+                    alignItems: "center",
+                    gap: 12,
+                  }}>
+                    <span style={{
+                      fontFamily: FONT.diagram,
+                      fontSize: 10,
+                      color: DIAGRAM.textMuted,
+                      letterSpacing: "0.04em",
+                    }}>
+                      {key}
+                    </span>
+                    <span style={{
+                      fontFamily: FONT.diagram,
+                      fontSize: 10,
+                      color: DIAGRAM.textMicro,
+                    }}>
+                      {opacity}
+                    </span>
+                    <div style={{
+                      height: 14,
+                      background: DIAGRAM.primary,
+                      opacity,
+                      borderRadius: 2,
+                    }} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Archetypes ── */}
+          <div style={{
+            padding: 24,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>
+              Three archetypes
+            </p>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: TEXT.secondary, marginBottom: 16 }}>
+              Every .org diagram built so far fits one of these. Pick the closest archetype
+              when sketching a new diagram.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 14 }}>
+              {[
+                ["Chart",  "Timeline, axes, paths. Time-based or measurement-based data.", "EmotionWaveSection (home), ESS speed timeline"],
+                ["Grid",   "Two-column comparison. Two systems, two paths, two states.",   "ESSInformationSystems"],
+                ["Orbit",  "Circular walkthrough. Cycles, sequences, single-loop narratives.", "ESCCycleDiagram"],
+              ].map(([name, desc, example]) => (
+                <div key={name} style={{
+                  padding: "16px 18px",
+                  background: hexToRgba(DIAGRAM.primary, 0.04),
+                  border: `1px solid ${hexToRgba(DIAGRAM.primary, 0.15)}`,
+                  borderLeft: `3px solid ${DIAGRAM.primary}`,
+                  borderRadius: 6,
+                }}>
+                  <div style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: DIAGRAM.primary,
+                    marginBottom: 6,
+                  }}>
+                    {name}
+                  </div>
+                  <div style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.55, marginBottom: 8 }}>
+                    {desc}
+                  </div>
+                  <div style={{
+                    fontFamily: FONT.mono,
+                    fontSize: 10.5,
+                    color: TEXT.hint,
+                    letterSpacing: "0.02em",
+                  }}>
+                    {example}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Live component — ESSInformationSystems ── */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+            marginBottom: 24,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              Live Component — Grid archetype (ESS / CLS)
+            </p>
+            <ESSInformationSystems />
+          </div>
+
+          {/* ── Live component — ESCCycleDiagram ── */}
+          <div style={{
+            padding: 20,
+            background: BG.card,
+            borderRadius: RADIUS.md,
+            border: `1px solid ${BORDER.default}`,
+          }}>
+            <p style={{
+              fontFamily: FONT.mono,
+              fontSize: TYPE_SCALE.tagLabel.size,
+              fontWeight: TYPE_SCALE.tagLabel.weight,
+              letterSpacing: TYPE_SCALE.tagLabel.tracking,
+              color: TEXT.muted,
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              Live Component — Orbit archetype (Emotional Somatic Cycle)
+            </p>
+            <ESCCycleDiagram />
+          </div>
         </section>
 
         {/* ─── 12. FLUID COMPASS EXPLORER ────────────────── */}

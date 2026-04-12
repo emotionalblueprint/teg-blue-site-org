@@ -1,6 +1,6 @@
 "use client";
 
-import { FONT } from "../styles/tokens";
+import { FONT, DIAGRAM, hexToRgba } from "../styles/tokens";
 
 /**
  * ESSInformationSystems — Two Information Systems diagram
@@ -9,32 +9,24 @@ import { FONT } from "../styles/tokens";
  * mechanism, output, learning, and closing substrates/interdependence pills.
  *
  * Design reference: teg-blue-vault/_animations/TIS-diagram.html
- * NOTE: This component intentionally uses hardcoded colors and dimensions
- * from the design prototype. The tokens.js update pass will formalise
- * the "diagram palette" later.
+ * Style system: teg-blue-vault/_system/diagram-style.md
+ * Consumes DIAGRAM tokens from tokens.js — no hardcoded colors.
  */
 
-// ─── HARDCODED DESIGN CONSTANTS (from TIS-diagram.html) ──
-const BG        = "#000";
-const WHITE     = "#fff";
-const BLUE      = "#4062eb";
-const MUTED     = "rgba(160,205,251,0.55)";
-const MUTED_2   = "rgba(160,205,251,0.35)";
-const BORDER    = "rgba(160,205,251,0.14)";
-const ITEM_TEXT = "rgba(255,255,255,0.9)";
-const ITEM_TEXT_ESS = "rgba(255,255,255,0.9)";
+const BLUE = DIAGRAM.primary;
+const CLS_COLOR = "#a0cdfb"; // muted blue-grey used as CLS voice (PATTERN.A.primary)
 
 export default function ESSInformationSystems() {
   return (
     <div
       style={{
-        background: BG,
-        color: WHITE,
+        background: DIAGRAM.bg,
+        color: DIAGRAM.white,
         fontFamily: FONT.diagram,
         maxWidth: 1080,
         margin: "0 auto",
         padding: "38px 42px 56px",
-        border: `1px solid ${BORDER}`,
+        border: `1px solid ${DIAGRAM.frame}`,
       }}
     >
       {/* ── HEADER ─────────────────────────────────────── */}
@@ -42,7 +34,7 @@ export default function ESSInformationSystems() {
         style={{
           fontSize: 9,
           letterSpacing: "0.2em",
-          color: MUTED,
+          color: DIAGRAM.textMuted,
           textTransform: "uppercase",
           fontWeight: 300,
           marginBottom: 6,
@@ -56,7 +48,7 @@ export default function ESSInformationSystems() {
           fontWeight: 500,
           letterSpacing: "0.01em",
           marginBottom: 5,
-          color: WHITE,
+          color: DIAGRAM.white,
         }}
       >
         Two Information Systems
@@ -65,7 +57,7 @@ export default function ESSInformationSystems() {
         style={{
           fontSize: 10.5,
           fontWeight: 300,
-          color: "rgba(255,255,255,0.9)",
+          color: DIAGRAM.textStrong,
           letterSpacing: "0.04em",
           fontStyle: "italic",
         }}
@@ -82,7 +74,7 @@ export default function ESSInformationSystems() {
             fontSize: 9,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#0590e5",
+            color: DIAGRAM.textMuted,
             marginBottom: 14,
             fontWeight: 300,
           }}
@@ -116,7 +108,7 @@ export default function ESSInformationSystems() {
           </defs>
 
           {/* Track */}
-          <line x1="0" y1="46" x2="950" y2="46" stroke="rgba(160,205,251,.15)" strokeWidth="1" />
+          <line x1="0" y1="46" x2="950" y2="46" stroke={DIAGRAM.gridLine} strokeWidth="1" />
 
           {/* ESS segment: 0 → 296 (500ms mark) */}
           <line x1="0" y1="46" x2="296" y2="46" stroke={BLUE} strokeWidth="2" strokeLinecap="round" />
@@ -127,7 +119,7 @@ export default function ESSInformationSystems() {
             y1="46"
             x2="940"
             y2="46"
-            stroke="rgba(160,205,251,.7)"
+            stroke={hexToRgba(CLS_COLOR, 0.7)}
             strokeWidth="1.5"
             strokeLinecap="round"
             markerEnd="url(#ess-ah)"
@@ -138,7 +130,7 @@ export default function ESSInformationSystems() {
           <text x="18" y="34" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8.5" fontWeight="400" fill={BLUE}>
             10–50ms
           </text>
-          <text x="18" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(64,98,235,.6)">
+          <text x="18" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill={DIAGRAM.primaryDim}>
             cue detection
           </text>
 
@@ -147,7 +139,7 @@ export default function ESSInformationSystems() {
           <text x="110" y="34" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8.5" fontWeight="400" fill={BLUE}>
             50–200ms
           </text>
-          <text x="110" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(64,98,235,.6)">
+          <text x="110" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill={DIAGRAM.primaryDim}>
             pattern matching
           </text>
 
@@ -156,37 +148,37 @@ export default function ESSInformationSystems() {
           <text x="228" y="34" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8.5" fontWeight="400" fill={BLUE}>
             200–500ms
           </text>
-          <text x="228" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(64,98,235,.6)">
+          <text x="228" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill={DIAGRAM.primaryDim}>
             full physiological response
           </text>
 
           {/* Divider at 500ms */}
-          <line x1="296" y1="30" x2="296" y2="62" stroke="rgba(160,205,251,.35)" strokeWidth="1" strokeDasharray="3 3" />
-          <text x="296" y="22" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="300" fill="rgba(160,205,251,.55)">
+          <line x1="296" y1="30" x2="296" y2="62" stroke={DIAGRAM.textMicro} strokeWidth="1" strokeDasharray="3 3" />
+          <text x="296" y="22" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="300" fill={DIAGRAM.textMuted}>
             500ms
           </text>
 
           {/* CLS ticks */}
-          <line x1="350" y1="40" x2="350" y2="52" stroke="rgba(160,205,251,.7)" strokeWidth="1.5" strokeLinecap="round" />
-          <text x="350" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(160,205,251,.75)">
+          <line x1="350" y1="40" x2="350" y2="52" stroke={hexToRgba(CLS_COLOR, 0.7)} strokeWidth="1.5" strokeLinecap="round" />
+          <text x="350" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill={hexToRgba(CLS_COLOR, 0.75)}>
             conscious awareness
           </text>
 
-          <line x1="570" y1="40" x2="570" y2="52" stroke="rgba(160,205,251,.7)" strokeWidth="1.5" strokeLinecap="round" />
-          <text x="570" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(160,205,251,.75)">
+          <line x1="570" y1="40" x2="570" y2="52" stroke={hexToRgba(CLS_COLOR, 0.7)} strokeWidth="1.5" strokeLinecap="round" />
+          <text x="570" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill={hexToRgba(CLS_COLOR, 0.75)}>
             analysis &amp; planning
           </text>
 
-          <line x1="790" y1="40" x2="790" y2="52" stroke="rgba(160,205,251,.7)" strokeWidth="1.5" strokeLinecap="round" />
-          <text x="790" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill="rgba(160,205,251,.75)">
+          <line x1="790" y1="40" x2="790" y2="52" stroke={hexToRgba(CLS_COLOR, 0.7)} strokeWidth="1.5" strokeLinecap="round" />
+          <text x="790" y="66" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="7.5" fontWeight="300" fill={hexToRgba(CLS_COLOR, 0.75)}>
             narrative construction
           </text>
 
           {/* Labels */}
-          <text x="148" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="500" fill="rgba(64,98,235,.7)" letterSpacing="0.08em">
+          <text x="148" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="500" fill={hexToRgba(BLUE, 0.7)} letterSpacing="0.08em">
             ESS — complete
           </text>
-          <text x="620" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="400" fill="rgba(160,205,251,.6)" letterSpacing="0.08em">
+          <text x="620" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="8" fontWeight="400" fill={hexToRgba(CLS_COLOR, 0.6)} letterSpacing="0.08em">
             CLS — arrives here
           </text>
         </svg>
@@ -258,7 +250,7 @@ export default function ESSInformationSystems() {
         style={{
           marginTop: 32,
           paddingTop: 18,
-          borderTop: `1px solid ${BORDER}`,
+          borderTop: `1px solid ${DIAGRAM.frame}`,
           display: "flex",
           gap: 32,
           flexWrap: "wrap",
@@ -288,7 +280,7 @@ export default function ESSInformationSystems() {
 // ─── INTERNAL HELPERS ─────────────────────────────────
 
 function Divider() {
-  return <div style={{ height: 1, background: BORDER, margin: "24px 0" }} />;
+  return <div style={{ height: 1, background: DIAGRAM.divider, margin: "24px 0" }} />;
 }
 
 function Section({ label, ess, cls }) {
@@ -296,7 +288,7 @@ function Section({ label, ess, cls }) {
     <div
       style={{
         padding: "16px 0",
-        borderTop: `1px solid ${BORDER}`,
+        borderTop: `1px solid ${DIAGRAM.frame}`,
       }}
     >
       <div
@@ -321,7 +313,7 @@ function Cell({ ess, label, items }) {
         ess
           ? {
               padding: "0 28px 6px 0",
-              borderRight: `1px solid ${BORDER}`,
+              borderRight: `1px solid ${DIAGRAM.frame}`,
             }
           : {
               padding: "0 0 6px 28px",
@@ -333,7 +325,7 @@ function Cell({ ess, label, items }) {
           fontSize: 8.5,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
-          color: ess ? BLUE : "#a0cdfb",
+          color: ess ? BLUE : CLS_COLOR,
           fontWeight: 300,
           marginBottom: 10,
         }}
@@ -356,14 +348,14 @@ function Item({ ess, children }) {
         fontSize: 10,
         fontWeight: 300,
         lineHeight: 1.72,
-        color: ess ? ITEM_TEXT_ESS : ITEM_TEXT,
+        color: DIAGRAM.textStrong,
         padding: "2px 0",
         display: "flex",
         alignItems: "baseline",
         gap: 7,
       }}
     >
-      <span style={{ color: MUTED_2, flexShrink: 0, fontSize: 9 }}>—</span>
+      <span style={{ color: DIAGRAM.textMicro, flexShrink: 0, fontSize: 9 }}>—</span>
       <span>{children}</span>
     </div>
   );
@@ -373,8 +365,8 @@ function Pill({ eyebrow, children }) {
   return (
     <div
       style={{
-        background: "rgba(160,205,251,.05)",
-        border: `1px solid ${BORDER}`,
+        background: DIAGRAM.surface,
+        border: `1px solid ${DIAGRAM.frame}`,
         padding: "12px 16px",
         flex: "1 1 320px",
       }}
@@ -384,7 +376,7 @@ function Pill({ eyebrow, children }) {
           fontSize: 8,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: MUTED,
+          color: DIAGRAM.textMuted,
           fontWeight: 300,
           marginBottom: 5,
         }}
@@ -396,7 +388,7 @@ function Pill({ eyebrow, children }) {
           fontSize: 9.5,
           fontWeight: 300,
           lineHeight: 1.7,
-          color: "rgba(255,255,255,0.9)",
+          color: DIAGRAM.textStrong,
         }}
       >
         {children}
@@ -406,5 +398,5 @@ function Pill({ eyebrow, children }) {
 }
 
 function Strong({ children }) {
-  return <strong style={{ fontWeight: 500, color: "rgba(160,205,251,.95)" }}>{children}</strong>;
+  return <strong style={{ fontWeight: 500, color: hexToRgba(CLS_COLOR, 0.95) }}>{children}</strong>;
 }

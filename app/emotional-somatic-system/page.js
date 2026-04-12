@@ -2,7 +2,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import {
   BG, TEXT, BORDER, FONT, SPECTRUM, PATTERN, RADIUS,
-  hexToRgba,
+  DIAGRAM, hexToRgba,
 } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, PageLayout,
@@ -27,9 +27,10 @@ const ESSInformationSystems = dynamic(
 
 // ─── CONSTANTS ──────────────────────────────────────────
 
-const PAGE_COLOR = SPECTRUM.azure;
+const PAGE_COLOR = DIAGRAM.primary;
+const CLS_COLOR = "#a0cdfb"; // muted blue-grey — CLS voice (matches ESS diagram)
 const P = { A: PATTERN.A.primary, B: PATTERN.B.primary, C: PATTERN.C.primary, D: PATTERN.D.primary };
-const linkStyle = { color: SPECTRUM.azure, textDecoration: "none" };
+const linkStyle = { color: DIAGRAM.primary, textDecoration: "none" };
 
 // ─── METADATA ───────────────────────────────────────────
 
@@ -115,7 +116,7 @@ function StageStep({ number, title, children }) {
         fontSize: 12,
         fontWeight: 700,
         color: PAGE_COLOR,
-        fontFamily: FONT.mono,
+        fontFamily: FONT.diagram,
         flexShrink: 0,
         marginTop: 2,
       }}>
@@ -155,6 +156,7 @@ export default function EmotionalSomaticSystemPage() {
         // rest of the site. CSS variable overrides cascade to all children
         // (SiteHeader, PageLayout, ModelHero, expandables, etc.).
         "--bg-page": "#0a0d17",
+        "--bg-diagram": "#0f1525",
         "--bg-primary": "#111729",
         "--bg-card": "#151c35",
         "--bg-surface": "#162035",
@@ -178,6 +180,7 @@ export default function EmotionalSomaticSystemPage() {
             badge="THE EMOTIONAL SOMATIC SYSTEM"
             title="Two Information Systems"
             subtitle="Detection · Evaluation · Response — before conscious awareness arrives"
+            subtitleStyle={{ fontFamily: FONT.diagram }}
             description="A biological information system runs continuously in every human body. It detects changes in the environment, evaluates them for safety or threat, and organises a physiological response — all within milliseconds. A second information system operates alongside it: language, reasoning, narrative. By the time conscious thought begins, the body has already shifted into a different physiological state."
             color={PAGE_COLOR}
           />
@@ -311,13 +314,13 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "20px",
               borderRadius: 8,
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+              background: hexToRgba(PAGE_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(PAGE_COLOR, 0.15)}`,
             }}>
               <div style={{
                 fontSize: 13,
                 fontWeight: 700,
-                color: SPECTRUM.azure,
+                color: PAGE_COLOR,
                 marginBottom: 12,
               }}>
                 The Interoceptive Substrate
@@ -333,13 +336,13 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "20px",
               borderRadius: 8,
-              background: hexToRgba('#e9a23b', 0.06),
-              border: `1px solid ${hexToRgba('#e9a23b', 0.15)}`,
+              background: hexToRgba(CLS_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(CLS_COLOR, 0.15)}`,
             }}>
               <div style={{
                 fontSize: 13,
                 fontWeight: 700,
-                color: '#e9a23b',
+                color: CLS_COLOR,
                 marginBottom: 12,
               }}>
                 The External Observation Substrate
@@ -396,34 +399,34 @@ export default function EmotionalSomaticSystemPage() {
           {/* Data sources table */}
           <div style={{
             borderRadius: 8,
-            border: `1px solid ${BORDER.default}`,
+            border: `1px solid ${DIAGRAM.frame}`,
             overflow: "hidden",
             margin: "20px 0",
           }}>
             <div style={{
               display: "grid",
               gridTemplateColumns: "1fr 2fr 100px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.08),
-              borderBottom: `1px solid ${BORDER.default}`,
+              background: hexToRgba(PAGE_COLOR, 0.08),
+              borderBottom: `1px solid ${DIAGRAM.divider}`,
             }}>
-              <div style={{ padding: "10px 14px", fontSize: 11, fontWeight: 600, color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.mono }}>Source</div>
-              <div style={{ padding: "10px 14px", fontSize: 11, fontWeight: 600, color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.mono }}>What it provides</div>
-              <div style={{ padding: "10px 14px", fontSize: 11, fontWeight: 600, color: TEXT.muted, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.mono }}>Substrate</div>
+              <div style={{ padding: "10px 14px", fontSize: 11, fontWeight: 600, color: DIAGRAM.textMuted, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.diagram }}>Source</div>
+              <div style={{ padding: "10px 14px", fontSize: 11, fontWeight: 600, color: DIAGRAM.textMuted, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.diagram }}>What it provides</div>
+              <div style={{ padding: "10px 14px", fontSize: 11, fontWeight: 600, color: DIAGRAM.textMuted, textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: FONT.diagram }}>Substrate</div>
             </div>
             {[
-              { source: "External observation", provides: "What other bodies are broadcasting — facial expression, vocal tone, behaviour, postural changes", substrate: "External", color: '#e9a23b' },
-              { source: "Somatic resonance", provides: "What other bodies' physiological states produce in the person's own body — the somatic echo", substrate: "Interoceptive", color: SPECTRUM.azure },
-              { source: "The body's own signals", provides: "What the ESS is doing right now — hormonal shifts, muscular tension, autonomic state changes", substrate: "Interoceptive", color: SPECTRUM.azure },
+              { source: "External observation", provides: "What other bodies are broadcasting — facial expression, vocal tone, behaviour, postural changes", substrate: "External", color: CLS_COLOR },
+              { source: "Somatic resonance", provides: "What other bodies' physiological states produce in the person's own body — the somatic echo", substrate: "Interoceptive", color: PAGE_COLOR },
+              { source: "The body's own signals", provides: "What the ESS is doing right now — hormonal shifts, muscular tension, autonomic state changes", substrate: "Interoceptive", color: PAGE_COLOR },
               { source: "Its own output", provides: "Reasoning, narrative, abstraction, memory, pattern matching", substrate: "None (default)", color: TEXT.muted },
             ].map((row, i) => (
               <div key={i} style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 2fr 100px",
-                borderBottom: i < 3 ? `1px solid ${BORDER.default}` : "none",
+                borderBottom: i < 3 ? `1px solid ${DIAGRAM.divider}` : "none",
               }}>
                 <div style={{ padding: "10px 14px", fontSize: 13, fontWeight: 600, color: TEXT.primary, lineHeight: 1.5 }}>{row.source}</div>
                 <div style={{ padding: "10px 14px", fontSize: 13, color: TEXT.secondary, lineHeight: 1.6 }}>{row.provides}</div>
-                <div style={{ padding: "10px 14px", fontSize: 12, color: row.color, fontWeight: 500, fontFamily: FONT.mono }}>{row.substrate}</div>
+                <div style={{ padding: "10px 14px", fontSize: 12, color: row.color, fontWeight: 500, fontFamily: FONT.diagram }}>{row.substrate}</div>
               </div>
             ))}
           </div>
@@ -468,10 +471,10 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "16px 20px",
               borderRadius: 8,
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+              background: hexToRgba(PAGE_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(PAGE_COLOR, 0.15)}`,
             }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: SPECTRUM.azure, marginBottom: 8 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: PAGE_COLOR, marginBottom: 8 }}>
                 Fully available
               </div>
               <p style={{ ...proseStyle, marginBottom: 6 }}>
@@ -486,10 +489,10 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "16px 20px",
               borderRadius: 8,
-              background: hexToRgba('#e87b35', 0.06),
-              border: `1px solid ${hexToRgba('#e87b35', 0.15)}`,
+              background: hexToRgba(DIAGRAM.break, 0.06),
+              border: `1px solid ${hexToRgba(DIAGRAM.break, 0.15)}`,
             }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#e87b35', marginBottom: 8 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: DIAGRAM.break, marginBottom: 8 }}>
                 Absent
               </div>
               <p style={{ ...proseStyle, marginBottom: 6 }}>
@@ -507,10 +510,10 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "16px 20px",
               borderRadius: 8,
-              background: hexToRgba('#e9a23b', 0.06),
-              border: `1px solid ${hexToRgba('#e9a23b', 0.15)}`,
+              background: hexToRgba(DIAGRAM.breakDim, 0.08),
+              border: `1px solid ${hexToRgba(DIAGRAM.break, 0.12)}`,
             }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#e9a23b', marginBottom: 8 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: DIAGRAM.breakDim, marginBottom: 8 }}>
                 Partial, flooded, or contradicted
               </div>
               <p style={{ ...proseStyle, marginBottom: 6 }}>
@@ -572,17 +575,17 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "16px 20px",
               borderRadius: 8,
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+              background: hexToRgba(PAGE_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(PAGE_COLOR, 0.15)}`,
             }}>
               <div style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: SPECTRUM.azure,
+                color: PAGE_COLOR,
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
                 marginBottom: 12,
-                fontFamily: FONT.mono,
+                fontFamily: FONT.diagram,
               }}>
                 ESS Timeline
               </div>
@@ -600,17 +603,17 @@ export default function EmotionalSomaticSystemPage() {
             <div style={{
               padding: "16px 20px",
               borderRadius: 8,
-              background: hexToRgba('#e9a23b', 0.06),
-              border: `1px solid ${hexToRgba('#e9a23b', 0.15)}`,
+              background: hexToRgba(CLS_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(CLS_COLOR, 0.15)}`,
             }}>
               <div style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: '#e9a23b',
+                color: CLS_COLOR,
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
                 marginBottom: 12,
-                fontFamily: FONT.mono,
+                fontFamily: FONT.diagram,
               }}>
                 CLS Timeline
               </div>
@@ -693,8 +696,8 @@ export default function EmotionalSomaticSystemPage() {
               display: "block",
               padding: "14px 20px",
               borderRadius: 8,
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.15)}`,
+              background: hexToRgba(PAGE_COLOR, 0.06),
+              border: `1px solid ${hexToRgba(PAGE_COLOR, 0.15)}`,
               transition: "border-color 0.2s ease",
             }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
@@ -710,8 +713,8 @@ export default function EmotionalSomaticSystemPage() {
               display: "block",
               padding: "14px 20px",
               borderRadius: 8,
-              background: hexToRgba(SPECTRUM.cobalt, 0.04),
-              border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.1)}`,
+              background: hexToRgba(PAGE_COLOR, 0.04),
+              border: `1px solid ${hexToRgba(PAGE_COLOR, 0.1)}`,
               transition: "border-color 0.2s ease",
             }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
@@ -727,8 +730,8 @@ export default function EmotionalSomaticSystemPage() {
               display: "block",
               padding: "14px 20px",
               borderRadius: 8,
-              background: hexToRgba(SPECTRUM.cobalt, 0.04),
-              border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.1)}`,
+              background: hexToRgba(PAGE_COLOR, 0.04),
+              border: `1px solid ${hexToRgba(PAGE_COLOR, 0.1)}`,
               transition: "border-color 0.2s ease",
             }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>

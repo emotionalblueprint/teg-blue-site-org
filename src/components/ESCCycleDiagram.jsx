@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FONT } from "../styles/tokens";
+import { FONT, DIAGRAM, hexToRgba } from "../styles/tokens";
 
 /**
  * ESCCycleDiagram — The Emotional Somatic Cycle (animated)
@@ -10,17 +10,12 @@ import { FONT } from "../styles/tokens";
  * restoration) and Path B (override → cascade → elevated baseline) toggles.
  *
  * Design reference: teg-blue-vault/_animations/ESC-animation.html
- * Hardcoded design values preserved from the prototype — the "diagram
- * palette" will be formalised into tokens.js in a follow-up pass.
+ * Style system: teg-blue-vault/_system/diagram-style.md
+ * Consumes DIAGRAM tokens from tokens.js — no hardcoded colors.
  */
 
-// ─── HARDCODED DESIGN CONSTANTS ───────────────────────
-const BG     = "#000";
-const WHITE  = "#fff";
-const BLUE   = "#4062eb";
-const ORANGE = "#e05e2e";
-const MUTED  = "rgba(160,205,251,0.55)";
-const BORDER = "rgba(160,205,251,0.18)";
+const BLUE   = DIAGRAM.primary;
+const ORANGE = DIAGRAM.break;
 
 const R = 176;
 const C = 2 * Math.PI * R; // circumference ≈ 1106.0
@@ -264,15 +259,15 @@ export default function ESCCycleDiagram() {
   };
 
   const arcColor = isOrange ? ORANGE : BLUE;
-  const branchDotFill = isOrange ? ORANGE : WHITE;
+  const branchDotFill = isOrange ? ORANGE : DIAGRAM.white;
 
   return (
     <div
       style={{
-        background: BG,
-        color: WHITE,
+        background: DIAGRAM.bg,
+        color: DIAGRAM.white,
         fontFamily: FONT.diagram,
-        border: `1px solid ${BORDER}`,
+        border: `1px solid ${DIAGRAM.divider}`,
         padding: "22px 38px 18px",
         maxWidth: 1080,
         margin: "0 auto",
@@ -295,7 +290,7 @@ export default function ESCCycleDiagram() {
             style={{
               fontSize: 9,
               letterSpacing: "0.18em",
-              color: MUTED,
+              color: DIAGRAM.textMuted,
               textTransform: "uppercase",
               fontWeight: 300,
               marginBottom: 3,
@@ -308,14 +303,14 @@ export default function ESCCycleDiagram() {
               fontSize: 13,
               fontWeight: 500,
               letterSpacing: "0.03em",
-              color: WHITE,
+              color: DIAGRAM.white,
             }}
           >
             Emotional Somatic Cycle
           </div>
         </div>
 
-        <div style={{ display: "flex", border: `1px solid ${BORDER}` }}>
+        <div style={{ display: "flex", border: `1px solid ${DIAGRAM.divider}` }}>
           <PathButton
             label="Path A"
             active={activePath === "A"}
@@ -363,7 +358,7 @@ export default function ESCCycleDiagram() {
             cy="255"
             r={R}
             fill="none"
-            stroke="rgba(160,205,251,.22)"
+            stroke={DIAGRAM.connector}
             strokeWidth="1.5"
           />
 
@@ -382,82 +377,82 @@ export default function ESCCycleDiagram() {
           />
 
           {/* ── DOTS ── */}
-          <circle cx="440" cy="79" r="4" fill={WHITE} opacity={visible("d0")} />
-          <circle cx="584" cy="157" r="3.5" fill={WHITE} opacity={visible("d1")} />
-          <circle cx="614" cy="285" r="3.5" fill={WHITE} opacity={visible("d2")} />
-          <circle cx="540" cy="399" r="3.5" fill={WHITE} opacity={visible("d3")} />
+          <circle cx="440" cy="79" r="4" fill={DIAGRAM.white} opacity={visible("d0")} />
+          <circle cx="584" cy="157" r="3.5" fill={DIAGRAM.white} opacity={visible("d1")} />
+          <circle cx="614" cy="285" r="3.5" fill={DIAGRAM.white} opacity={visible("d2")} />
+          <circle cx="540" cy="399" r="3.5" fill={DIAGRAM.white} opacity={visible("d3")} />
           <circle cx="440" cy="431" r="8.5" fill="none" stroke={branchDotFill} strokeWidth="1.5" opacity={visible("d4r")} />
           <circle cx="440" cy="431" r="4" fill={branchDotFill} opacity={visible("d4f")} />
-          <circle cx="302" cy="366" r="3.5" fill={WHITE} opacity={visible("d5")} />
-          <circle cx="266" cy="218" r="3.5" fill={WHITE} opacity={visible("d6")} />
+          <circle cx="302" cy="366" r="3.5" fill={DIAGRAM.white} opacity={visible("d5")} />
+          <circle cx="266" cy="218" r="3.5" fill={DIAGRAM.white} opacity={visible("d6")} />
 
           {/* ── CONNECTOR LINES ── */}
-          <line x1="440" y1="75"  x2="440" y2="53"  stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln0")} />
-          <line x1="588" y1="157" x2="618" y2="152" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln1")} />
-          <line x1="618" y1="285" x2="650" y2="285" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln2")} />
-          <line x1="544" y1="399" x2="572" y2="411" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln3")} />
-          <line x1="440" y1="440" x2="440" y2="455" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln4")} />
-          <line x1="440" y1="469" x2="440" y2="482" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln4b")} />
-          <line x1="298" y1="366" x2="265" y2="370" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln5")} />
-          <line x1="262" y1="218" x2="228" y2="220" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("ln6")} />
-          <line x1="288" y1="157" x2="240" y2="157" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("b-ln1")} />
-          <line x1="263" y1="213" x2="240" y2="213" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("b-ln2")} />
-          <line x1="264" y1="270" x2="240" y2="270" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("b-ln3")} />
-          <line x1="273" y1="327" x2="240" y2="327" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("b-ln4")} />
-          <line x1="310" y1="384" x2="240" y2="384" stroke="rgba(160,205,251,.28)" strokeWidth=".5" opacity={visible("b-ln5")} />
+          <line x1="440" y1="75"  x2="440" y2="53"  stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln0")} />
+          <line x1="588" y1="157" x2="618" y2="152" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln1")} />
+          <line x1="618" y1="285" x2="650" y2="285" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln2")} />
+          <line x1="544" y1="399" x2="572" y2="411" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln3")} />
+          <line x1="440" y1="440" x2="440" y2="455" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln4")} />
+          <line x1="440" y1="469" x2="440" y2="482" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln4b")} />
+          <line x1="298" y1="366" x2="265" y2="370" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln5")} />
+          <line x1="262" y1="218" x2="228" y2="220" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln6")} />
+          <line x1="288" y1="157" x2="240" y2="157" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln1")} />
+          <line x1="263" y1="213" x2="240" y2="213" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln2")} />
+          <line x1="264" y1="270" x2="240" y2="270" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln3")} />
+          <line x1="273" y1="327" x2="240" y2="327" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln4")} />
+          <line x1="310" y1="384" x2="240" y2="384" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln5")} />
 
           {/* ── LABELS ── */}
-          <text x="440" y="46" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("lbl0")}>
+          <text x="440" y="46" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl0")}>
             Physiological Baseline
           </text>
-          <text x="440" y="46" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(224,94,46,.95)" opacity={visible("lbl0b")}>
+          <text x="440" y="46" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={hexToRgba(ORANGE, 0.95)} opacity={visible("lbl0b")}>
             Baseline Elevation
           </text>
 
-          <text x="625" y="155" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("lbl1")}>
+          <text x="625" y="155" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl1")}>
             Safety-Threat Evaluation (M1)
           </text>
-          <text x="657" y="289" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("lbl2")}>
+          <text x="657" y="289" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl2")}>
             Signal Generation (M1)
           </text>
-          <text x="578" y="413" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("lbl3")}>
+          <text x="578" y="413" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl3")}>
             State Activation (M2)
           </text>
 
-          <text x="440" y="465" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill="rgba(255,255,255,0.85)" opacity={visible("lbl-ba")}>
+          <text x="440" y="465" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill={DIAGRAM.textBody} opacity={visible("lbl-ba")}>
             ESS — CLS  Bridge
           </text>
-          <text x="440" y="465" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill="rgba(224,94,46,.9)" opacity={visible("lbl-bb")}>
+          <text x="440" y="465" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill={hexToRgba(ORANGE, 0.9)} opacity={visible("lbl-bb")}>
             ESS — CLS  NO Bridge
           </text>
 
-          <polygon points="435,480 445,480 440,488" fill="rgba(255,255,255,.55)" opacity={visible("arr-a")} />
-          <polygon points="435,480 445,480 440,488" fill="rgba(224,94,46,.65)" opacity={visible("arr-b")} />
+          <polygon points="435,480 445,480 440,488" fill={hexToRgba(DIAGRAM.white, 0.55)} opacity={visible("arr-a")} />
+          <polygon points="435,480 445,480 440,488" fill={hexToRgba(ORANGE, 0.65)} opacity={visible("arr-b")} />
 
-          <text x="440" y="494" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="9.5" fontWeight="300" fill="rgba(224,94,46,.78)" opacity={visible("lbl-ov")}>
+          <text x="440" y="494" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="9.5" fontWeight="300" fill={DIAGRAM.breakDim} opacity={visible("lbl-ov")}>
             Cognitive Override
           </text>
 
-          <text x="260" y="372" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("lbl5")}>
+          <text x="260" y="372" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl5")}>
             Mobilisation Response (M3)
           </text>
-          <text x="222" y="222" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("lbl6")}>
+          <text x="222" y="222" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl6")}>
             Biological Restoration (M3)
           </text>
 
-          <text x="235" y="160" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("b-lb1")}>
+          <text x="235" y="160" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb1")}>
             Temporary Relief
           </text>
-          <text x="235" y="216" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("b-lb2")}>
+          <text x="235" y="216" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb2")}>
             Restoration Substitutes
           </text>
-          <text x="235" y="273" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("b-lb3")}>
+          <text x="235" y="273" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb3")}>
             Debris Accumulation
           </text>
-          <text x="235" y="330" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("b-lb4")}>
+          <text x="235" y="330" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb4")}>
             Unresolved Activation Load
           </text>
-          <text x="235" y="387" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill="rgba(255,255,255,0.9)" opacity={visible("b-lb5")}>
+          <text x="235" y="387" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb5")}>
             Incomplete Restoration
           </text>
         </svg>
@@ -479,7 +474,7 @@ export default function ESCCycleDiagram() {
             style={{
               fontSize: 9,
               letterSpacing: "0.16em",
-              color: MUTED,
+              color: DIAGRAM.textMuted,
               textTransform: "uppercase",
               marginBottom: 4,
               minHeight: 13,
@@ -494,7 +489,7 @@ export default function ESCCycleDiagram() {
               letterSpacing: "0.01em",
               marginBottom: 4,
               minHeight: 22,
-              color: WHITE,
+              color: DIAGRAM.white,
             }}
           >
             {scene.ti}
@@ -503,7 +498,7 @@ export default function ESCCycleDiagram() {
             style={{
               fontSize: 9.5,
               fontWeight: 300,
-              color: "rgba(255,255,255,0.9)",
+              color: DIAGRAM.textStrong,
               lineHeight: 1.65,
               maxWidth: 490,
               minHeight: 30,
@@ -539,7 +534,7 @@ export default function ESCCycleDiagram() {
                   width: 4,
                   height: 4,
                   borderRadius: "50%",
-                  background: i === sceneIdx ? "rgba(255,255,255,.88)" : "rgba(160,205,251,.22)",
+                  background: i === sceneIdx ? hexToRgba(DIAGRAM.white, 0.88) : DIAGRAM.connector,
                   cursor: "pointer",
                   transition: "background 0.2s",
                 }}
@@ -575,9 +570,9 @@ function PathButton({ label, active, path, onClick, borderLeft }) {
         letterSpacing: "0.12em",
         textTransform: "uppercase",
         background: active ? hexToRgba(color, 0.1) : "transparent",
-        color: active ? color : MUTED,
+        color: active ? color : DIAGRAM.textMuted,
         border: "none",
-        borderLeft: borderLeft ? `1px solid ${BORDER}` : "none",
+        borderLeft: borderLeft ? `1px solid ${DIAGRAM.divider}` : "none",
         cursor: "pointer",
         transition: "all 0.2s",
       }}
@@ -596,8 +591,8 @@ function NavButton({ onClick, disabled, children }) {
         width: 32,
         height: 32,
         background: "transparent",
-        border: `1px solid ${BORDER}`,
-        color: WHITE,
+        border: `1px solid ${DIAGRAM.divider}`,
+        color: DIAGRAM.white,
         fontFamily: FONT.diagram,
         fontSize: 12,
         cursor: disabled ? "default" : "pointer",
@@ -608,21 +603,13 @@ function NavButton({ onClick, disabled, children }) {
         transition: "border-color 0.2s",
       }}
       onMouseEnter={(e) => {
-        if (!disabled) e.currentTarget.style.borderColor = "rgba(160,205,251,.5)";
+        if (!disabled) e.currentTarget.style.borderColor = hexToRgba("#a0cdfb", 0.5);
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = BORDER;
+        e.currentTarget.style.borderColor = DIAGRAM.divider;
       }}
     >
       {children}
     </button>
   );
-}
-
-function hexToRgba(hex, alpha) {
-  const h = hex.replace("#", "");
-  const r = parseInt(h.substring(0, 2), 16);
-  const g = parseInt(h.substring(2, 4), 16);
-  const b = parseInt(h.substring(4, 6), 16);
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }

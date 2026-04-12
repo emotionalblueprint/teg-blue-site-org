@@ -4,14 +4,17 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import {
   BG, TEXT, BORDER, FONT, SPACING,
-  MAIN_ORG, PATTERN, ACCENT, hexToRgba, gradientCardBg,
+  MAIN_ORG, DIAGRAM, hexToRgba, gradientCardBg,
 } from "@/src/styles/tokens";
 import { EMOTION_WAVE as MOMENTS } from "@/src/data/m1-data";
 
-// ─── Map token values to the names used throughout this component ──
-const MAIN_BLUE = PATTERN.B.primary;   // #3b82f6
-const ORANGE = ACCENT.orange;          // #e87b35
-const ORG_ACCENT = MAIN_ORG.accent;   // #2563eb
+// ─── Diagram voice + break ─────────────────────────────
+// Section consumes DIAGRAM tokens for chart content and MAIN_ORG for
+// page-level accents (badge, CTA, card borders). Style system:
+// teg-blue-vault/_system/diagram-style.md
+const MAIN_BLUE = DIAGRAM.primary;     // #4062eb — voice
+const ORANGE = DIAGRAM.break;          // #e05e2e — break
+const ORG_ACCENT = MAIN_ORG.accent;    // #2563eb — page accent (badge, CTA, cards)
 
 // ─── Chart Constants ──────────────────────────────────────────
 const VW = 900, VH = 220;
@@ -150,7 +153,7 @@ export default function EmotionWaveSection({
 
   return (
     <section ref={sectionRef} style={{
-      background: BG.page,
+      background: DIAGRAM.bg,
       padding: "32px 0 36px",
       marginBottom: "clamp(20px, 4vw, 36px)",
       position: "relative",
@@ -207,7 +210,7 @@ export default function EmotionWaveSection({
               marginBottom: "16px"
             }}>
               <span style={{
-                fontFamily: FONT.mono,
+                fontFamily: FONT.diagram,
                 fontSize: "10px", fontWeight: 600,
                 letterSpacing: "0.12em", color: MAIN_BLUE, textTransform: "uppercase",
               }}>
@@ -235,11 +238,11 @@ export default function EmotionWaveSection({
             {[[MAIN_BLUE, "Processed"], [ORANGE, "Unprocessed"]].map(([color, label]) => (
               <div key={label} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
                 <svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke={color} strokeWidth="1.5"/></svg>
-                <span style={{ fontFamily: FONT.mono, fontSize: "8.5px", color, letterSpacing: "0.12em" }}>{label}</span>
+                <span style={{ fontFamily: FONT.diagram, fontSize: "8.5px", color, letterSpacing: "0.12em" }}>{label}</span>
               </div>
             ))}
             <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "16px" }}>
-              <span style={{ fontFamily: FONT.mono, fontSize: "8px", color: TEXT.hint, letterSpacing: "0.08em" }}>
+              <span style={{ fontFamily: FONT.diagram, fontSize: "8px", color: TEXT.hint, letterSpacing: "0.08em" }}>
                 x-axis: compressed time (ms → min)
               </span>
               {done && (
@@ -253,7 +256,7 @@ export default function EmotionWaveSection({
                     background: "transparent",
                     color: TEXT.muted,
                     borderRadius: "6px",
-                    fontFamily: FONT.mono,
+                    fontFamily: FONT.diagram,
                     fontSize: "9px",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
@@ -281,19 +284,19 @@ export default function EmotionWaveSection({
                 <line key={v}
                   x1={PL} y1={PT + (1 - v) * PH}
                   x2={PL + PW} y2={PT + (1 - v) * PH}
-                  stroke={hexToRgba(ORG_ACCENT, 0.06)} strokeWidth="1"/>
+                  stroke={DIAGRAM.gridSoft} strokeWidth="1"/>
               ))}
 
               {/* Baseline */}
               <line x1={PL} y1={PT + PH} x2={PL + PW} y2={PT + PH}
-                stroke={hexToRgba(ORG_ACCENT, 0.15)} strokeWidth="1"/>
+                stroke={DIAGRAM.gridLine} strokeWidth="1"/>
 
               {/* Y-axis */}
               <line x1={PL} y1={PT} x2={PL} y2={PT + PH}
-                stroke={hexToRgba(ORG_ACCENT, 0.15)} strokeWidth="1"/>
+                stroke={DIAGRAM.gridLine} strokeWidth="1"/>
               <text x={14} y={PT + PH / 2} textAnchor="middle"
                 transform={`rotate(-90,14,${PT + PH / 2})`}
-                style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px", fill: TEXT.hint, letterSpacing: "0.12em" }}>
+                style={{ fontFamily: "'IBM Plex Mono', 'SF Mono', 'Consolas', monospace", fontSize: "7.5px", fill: DIAGRAM.textMuted, letterSpacing: "0.12em" }}>
                 ACTIVATION
               </text>
 
@@ -316,7 +319,7 @@ export default function EmotionWaveSection({
               {/* Cursor */}
               {progress > 0.01 && (
                 <line x1={cx} y1={PT - 4} x2={cx} y2={PT + PH}
-                  stroke={hexToRgba('#94a3b8', 0.1)} strokeWidth="1"/>
+                  stroke={DIAGRAM.textMicro} strokeWidth="1"/>
               )}
 
               {/* Cursor dots */}
@@ -336,11 +339,11 @@ export default function EmotionWaveSection({
               {done && (
                 <>
                   <text x={PL + PW + 6} y={pyAtCursor + 4}
-                    style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "8.5px", fill: MAIN_BLUE }}>
+                    style={{ fontFamily: "'IBM Plex Mono', 'SF Mono', 'Consolas', monospace", fontSize: "8.5px", fill: MAIN_BLUE }}>
                     baseline
                   </text>
                   <text x={PL + PW + 6} y={uyAtCursor + 4}
-                    style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "8.5px", fill: ORANGE }}>
+                    style={{ fontFamily: "'IBM Plex Mono', 'SF Mono', 'Consolas', monospace", fontSize: "8.5px", fill: ORANGE }}>
                     chronic
                   </text>
                 </>
@@ -353,10 +356,10 @@ export default function EmotionWaveSection({
                 return (
                   <g key={m.id}>
                     <line x1={mx} y1={PT + PH} x2={mx} y2={PT + PH + 5}
-                      stroke={reached ? m.color : hexToRgba(ORG_ACCENT, 0.15)} strokeWidth="1"/>
+                      stroke={reached ? m.color : DIAGRAM.gridLine} strokeWidth="1"/>
                     <text x={mx} y={PT + PH + 15} textAnchor="middle"
-                      style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "7.5px",
-                        fill: reached ? m.color : TEXT.hint, letterSpacing: "0.05em" }}>
+                      style={{ fontFamily: "'IBM Plex Mono', 'SF Mono', 'Consolas', monospace", fontSize: "7.5px",
+                        fill: reached ? m.color : DIAGRAM.textMuted, letterSpacing: "0.05em" }}>
                       {m.sub}
                     </text>
                   </g>
@@ -382,7 +385,7 @@ export default function EmotionWaveSection({
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
                       <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: m.color, flexShrink: 0 }}/>
-                      <span style={{ fontFamily: FONT.mono, fontSize: "8px",
+                      <span style={{ fontFamily: FONT.diagram, fontSize: "8px",
                         color: m.color, letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>
                         {m.label}
                       </span>
@@ -392,7 +395,7 @@ export default function EmotionWaveSection({
                       transition: "color 0.5s ease" }}>
                       {m.body}
                     </p>
-                    <span style={{ fontFamily: FONT.mono, fontSize: "7.5px",
+                    <span style={{ fontFamily: FONT.diagram, fontSize: "7.5px",
                       color: TEXT.hint, letterSpacing: "0.04em" }}>
                       {m.ref}
                     </span>
@@ -423,7 +426,7 @@ export default function EmotionWaveSection({
                 background: hexToRgba(ORG_ACCENT, 0.08),
                 color: MAIN_BLUE,
                 borderRadius: "8px",
-                fontFamily: FONT.mono,
+                fontFamily: FONT.diagram,
                 fontSize: "11px",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
