@@ -697,7 +697,7 @@ Paretas-Artacho, A. (2026). Empirical validation of the Nervous System Gradient 
 - System Overview: https://teg-blue.org/foundations
 - Research Entry Point: https://teg-blue.org/research-entry
 - AI Safety Applications: https://teg-blue.org/ai-safety
-- The Emotional Somatic System: https://teg-blue.org/models
+- The Emotional Somatic System: https://teg-blue.org/emotional-somatic-cycle
   - M1 Emotions as Signals: https://teg-blue.org/model/m1-emotions-as-signals
   - M2 Nervous System States: https://teg-blue.org/model/m2-nervous-system-states
   - M3 Regulation Capacities: https://teg-blue.org/model/m3-regulation-capacities

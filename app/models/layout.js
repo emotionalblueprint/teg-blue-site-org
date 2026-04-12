@@ -19,13 +19,13 @@ export const metadata = {
     "calibration system",
   ],
   alternates: {
-    canonical: "https://teg-blue.org/models",
+    canonical: "https://teg-blue.org/emotional-somatic-cycle",
   },
   openGraph: {
     title: "The Emotional Somatic System — Signal + State + Regulation + Perception | TEG-Blue",
     description:
       "Emotions as Signals (what the nervous system delivers), Nervous System States (what state it produces), Regulation Capacities (whether the cycle completes), and Awareness Capacities (whether the signal can be received). Four foundational models.",
-    url: "https://teg-blue.org/models",
+    url: "https://teg-blue.org/emotional-somatic-cycle",
     siteName: "TEG-Blue Research",
     type: "article",
     locale: "en_US",
@@ -43,7 +43,7 @@ export default function ModelsLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "The Emotional Somatic System — TEG-Blue",
-    url: "https://teg-blue.org/models",
+    url: "https://teg-blue.org/emotional-somatic-cycle",
     description:
       "The four foundational models of TEG-Blue: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration system).",
     inLanguage: "en",

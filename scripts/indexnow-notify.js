@@ -28,7 +28,7 @@ const ALL_PAGES = [
   '/foundations',
   '/epistemological-foundations',
   '/ai-safety',
-  '/models',
+  '/emotional-somatic-cycle',
   '/glossary',
   '/methodology',
   '/citations',

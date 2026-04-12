@@ -239,7 +239,7 @@ export function generateModelsJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "The Emotional Somatic System — TEG-Blue",
-    url: `${BASE_URL}/models`,
+    url: `${BASE_URL}/emotional-somatic-cycle`,
     description: "The four foundational models of TEG-Blue: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration system).",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
@@ -308,7 +308,7 @@ export function generateSystemOverviewJsonLd() {
           position: 1,
           name: "Measurement Layer",
           description: "Four foundational models: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration). Observable nervous system states, awareness configurations, and regulation biology.",
-          url: `${BASE_URL}/models`
+          url: `${BASE_URL}/emotional-somatic-cycle`
         },
         {
           "@type": "ListItem",

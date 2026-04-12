@@ -585,7 +585,7 @@ export default function F12TwoInformationSystemsPage() {
               },
               {
                 id: "M1–M4: The Four Models",
-                href: "/models",
+                href: "/emotional-somatic-cycle",
                 description: "Each model describes a different dimension of the system that F12 explains is largely unused: signals not read (M1), states not perceived (M2), restoration not completed (M3), awareness capacities not developed (M4).",
               },
             ]}

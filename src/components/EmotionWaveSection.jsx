@@ -80,7 +80,7 @@ export default function EmotionWaveSection({
   heading = <>Emotions are data.<br/><span style={{ color: TEXT.muted, fontWeight: 400 }}>They are biological information.</span></>,
   description = "Before behavior, before belief, before pattern — there is a neurochemical arc with a precise biological window for integration. TEG-Blue begins here.",
   ctaText = "Four models map the full arc — from signal detection to nervous system state, from regulation capacity to awareness calibration.",
-  ctaHref = "/models",
+  ctaHref = "/emotional-somatic-cycle",
   ctaLabel = "Explore the Emotional Somatic System",
   showCta = true,
 } = {}) {

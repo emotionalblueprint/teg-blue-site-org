@@ -78,19 +78,19 @@ const nextConfig = {
       // /emotional-technology-tools/* → /models (6 old URLs)
       {
         source: '/emotional-technology-tools/:path*',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
       // /emotional-circuit-board/* → /models (3 old URLs)
       {
         source: '/emotional-circuit-board/:path*',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/emotional-circuit-board',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
@@ -121,12 +121,12 @@ const nextConfig = {
       // /four-modes/* → /models (2 old URLs)
       {
         source: '/four-modes/:path*',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/four-modes',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
@@ -164,12 +164,12 @@ const nextConfig = {
       // /learning-lab/* → /models
       {
         source: '/learning-lab/:path*',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/learning-lab',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
@@ -212,7 +212,7 @@ const nextConfig = {
       // /four-mode-gradient → /models (replaced by Models hub)
       {
         source: '/four-mode-gradient',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
@@ -233,12 +233,12 @@ const nextConfig = {
       },
       {
         source: '/the-toolbox-library',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/four-mode-color-gradient',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
@@ -275,22 +275,22 @@ const nextConfig = {
       // Old toolbox/library pages → /models
       {
         source: '/emotional-intelligence-toolset-library',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/empathy-visual-scale',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/entitlement-visual-scale',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
       {
         source: '/the-emotional-hurt-scale-how-bad-was-it-really',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
@@ -447,7 +447,7 @@ const nextConfig = {
       },
       {
         source: '/emotional-technology-tools',
-        destination: '/models',
+        destination: '/emotional-somatic-cycle',
         permanent: true,
       },
 
