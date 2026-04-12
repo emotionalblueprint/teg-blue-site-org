@@ -85,7 +85,7 @@ export default function Image() {
               marginBottom: 32,
             }}
           >
-            Detection → Emotional Signal → Nervous System State → Restoration or Incompletion
+            Threat & Safety Detection → Emotional Signal → Nervous System State → Restoration or Incompletion
           </div>
 
           {/* Four model cards */}

@@ -110,7 +110,7 @@ export default function EmotionalSomaticCyclePage() {
           <ModelHero
             badge="THE EMOTIONAL SOMATIC CYCLE"
             title="The Emotional Somatic Cycle"
-            subtitle="Detection → Emotional Signal → Nervous System State → Restoration or Incompletion"
+            subtitle="Threat & Safety Detection → Emotional Signal → Nervous System State → Restoration or Incompletion"
             subtitleStyle={{ fontFamily: FONT.diagram }}
             description="The Emotional Somatic System and the Cognitive-Logical System run a repeating biological sequence together. The nervous system detects, evaluates, generates a physiological response, and reorganises into a different configuration. Whether that sequence completes — or remains unresolved — determines what the person can perceive, think, feel, and do."
             color={PAGE_COLOR}
@@ -131,7 +131,7 @@ export default function EmotionalSomaticCyclePage() {
         </section>
 
         <section style={{ marginBottom: 48 }}>
-          <h3 style={{ ...conceptHeadingStyle, marginBottom: 12 }}>One Cycle, Two Outcomes</h3>
+          <h3 style={{ ...conceptHeadingStyle, marginBottom: 12 }}>How the Cycle Runs</h3>
 
           <p style={proseStyle}>
             Something happens. A voice rises in the next room. A message arrives. A face changes. The nervous system detects it through the sensory periphery — eyes, ears, gut, skin — and evaluates for safety or threat. This evaluation completes in milliseconds, below conscious awareness, before a single conscious thought has assembled. The body already knows something changed.
@@ -142,21 +142,29 @@ export default function EmotionalSomaticCyclePage() {
           </p>
 
           <p style={proseStyle}>
-            The whole nervous system reorganises. Perception narrows or widens. Cognitive flexibility increases or decreases. The body configures itself for what the evaluation determined the situation requires. And all of this — detection, signal, reconfiguration — has happened before conscious awareness arrives.
+            The whole nervous system reorganises. Perception narrows or widens. Cognitive flexibility increases or decreases. Muscle tension redistributes. The body configures itself for what the evaluation determined the situation requires. Detection, emotional signal generation, nervous system state activation — all completed before conscious awareness arrives.
           </p>
 
           <p style={proseStyle}>
-            Now the conscious mind catches up. The body feels different — chest tight, muscles braced, something shifted. What happens next depends on one biological condition: whether the conscious mind can feel what the body is doing. Whether it can receive the physiological signals that have already been generated.
+            Now the conscious mind catches up. The body feels different — chest tight, muscles braced, something shifted. What happens next depends on one biological condition: whether the Cognitive-Logical System can access what the Emotional Somatic System is doing. Whether the biological architecture connecting the two systems delivers the physiological signals that have already been generated. This is interoceptive access — and it determines everything that follows.
           </p>
 
           <p style={proseStyle}>
-            <strong style={{ color: TEXT.primary }}>Path A — Completion.</strong>{" "}
-            When the conscious mind can receive what the body is doing, the body completes what it started. Stress hormones metabolise. Muscles release. The HPA axis stands down. The nervous system returns toward its resting state. The activation resolves. The cycle is complete.
+            <strong style={{ color: TEXT.primary }}>Path A — Biological Restoration Available.</strong>{" "}
+            When interoceptive access is present, the body completes what it started. The mobilised physiological resources are expended — through movement, action, expression, or holding. Then the restoration sequence runs. Somatic emotions — those about the body{"'"}s own state — complete through the body{"'"}s own channels: stress hormones metabolise, muscles release, the HPA axis stands down. Relational emotions — those about belonging, connection, or the state of the bond — require another person to complete. Both pathways return the nervous system toward physiological baseline. The activation resolves. The cycle is complete.
           </p>
 
           <p style={proseStyle}>
-            <strong style={{ color: TEXT.primary }}>Path B — The Cascade.</strong>{" "}
-            When the conscious mind cannot receive the signal — when the biological architecture connecting these two systems is unavailable — it overrides: manages, plans, pushes through, without knowing there is a physiological signal to receive. The physiological activation does not disappear. Cortisol keeps circulating. Muscles stay braced. The restoration sequence does not run. Across repeated incomplete cycles, the residue accumulates, the resting activation level shifts upward, and the nervous system searches for anything that produces the relief that biological completion would have provided.
+            <strong style={{ color: TEXT.primary }}>Path B — Cognitive Override of Emotional Signal.</strong>{" "}
+            When interoceptive access is absent — when the biological architecture connecting the two systems is unavailable — the CLS overrides: manages, plans, pushes through, without knowing there is a physiological signal to receive. The physiological activation does not disappear. The restoration sequence does not run to its endpoint.
+          </p>
+
+          <p style={proseStyle}>
+            The nervous system reaches for substitutes — anything that produces the neurochemical shift that biological restoration would have provided. Somatic substitutes alter internal state directly — substances, intensity, distraction — producing temporary relief: the activation settles briefly, then rebounds. Relational substitutes act through another nervous system — fusion, control, subjugation — producing counterfeit relief: a real neurochemical shift, but the substitute generates new physiological signals that exceed the relief it provides. What remains is debt — somatic debt from unmet somatic restoration, relational debt from unmet relational restoration — unresolved activation the body carries forward.
+          </p>
+
+          <p style={proseStyle}>
+            Across repeated incomplete cycles, the residue accumulates — cortisol, muscle tension, sensitised neural circuits, inflammatory compounds. The resting activation level shifts upward. The nervous system now begins the next cycle from an elevated baseline, carrying load that was never discharged.
           </p>
         </section>
 
