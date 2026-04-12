@@ -91,7 +91,7 @@ export default function Image() {
               marginBottom: "20px",
             }}
           >
-            The Nervous System Language to Communicate with Us
+            The Nervous System Language
           </div>
 
           {/* Description */}
@@ -105,7 +105,7 @@ export default function Image() {
               maxWidth: "800px",
             }}
           >
-            Sixteen emotions mapped as biological signals — what each one detects, what the body does, and what restores the cycle.
+            Emotions mapped as biological signals — what each one detects, what the body does, and what conditions resolve the activation.
           </div>
         </div>
 

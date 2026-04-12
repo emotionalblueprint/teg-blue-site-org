@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MODEL_COLORS, hexToRgba } from "@/src/styles/tokens";
 
-const M1SignalDiagram = dynamic(() => import("@/src/components/M1SignalDiagram"), { ssr: false });
 const M1SpeedComparison = dynamic(() => import("@/src/components/M1SpeedComparison"), { ssr: false });
 const M1SignalLifecycle = dynamic(() => import("@/src/components/M1SignalLifecycle"), { ssr: false });
 const M1EmotionNav = dynamic(() => import("@/src/components/M1EmotionNav"), { ssr: false });
@@ -60,9 +59,6 @@ function EmotionSection({ id, name, signal, bodySignature, mechanism, activates,
         <span style={{ fontFamily: FONT.mono, fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: TEXT.muted, paddingTop: 2 }}>Body</span>
         <span style={{ color: TEXT.secondary }}>{bodySignature}</span>
 
-        <span style={{ fontFamily: FONT.mono, fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: TEXT.muted, paddingTop: 2 }}>NS Activation</span>
-        <span style={{ color: activatesColor, fontWeight: 500 }}>{activates}</span>
-
         <span style={{ fontFamily: FONT.mono, fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: TEXT.muted, paddingTop: 2 }}>Restoration</span>
         <span style={{ color: TEXT.secondary }}>
           <strong style={{ color: TEXT.primary }}>{restorationType}</strong> — {restorationDetail}
@@ -97,7 +93,7 @@ function EmotionSection({ id, name, signal, bodySignature, mechanism, activates,
 export const metadata = {
   title: "Emotions as Signals (M1) | TEG-Blue Research",
   description:
-    "Emotions mapped as biological signals — what each one detects, what the body does, and which nervous system state it activates. The first stage of the Emotional Somatic Cycle.",
+    "Emotions mapped as biological signals — what each one detects, what the body does, and what conditions resolve the activation. The first stage of the Emotional Somatic Cycle.",
   keywords: [
     "emotions as signals",
     "nervous system signals",
@@ -114,7 +110,7 @@ export const metadata = {
   openGraph: {
     title: "Emotions as Signals — M1 Model | TEG-Blue",
     description:
-      "Emotions mapped as biological signals. What each one detects, what the body does, and which nervous system state it activates.",
+      "Emotions mapped as biological signals. What each one detects, what the body does, and what conditions resolve the activation.",
     url: "https://teg-blue.org/model/m1-emotions-as-signals",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -123,7 +119,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Emotions as Signals — TEG-Blue M1",
     description:
-      "Emotions mapped as biological signals. What each one detects, what the body does, and which nervous system state it activates.",
+      "Emotions mapped as biological signals. What each one detects, what the body does, and what conditions resolve the activation.",
   },
   other: {
     "citation_title": "Emotions as Signals",
@@ -132,6 +128,19 @@ export const metadata = {
     "citation_technical_report_institution": "TEG-Blue Research",
   },
 };
+
+// ─── SIDEBAR ──────────────────────────────────────────────
+
+const SIDEBAR_SECTIONS = [
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims M1 makes about the signal system." },
+  { label: "Continuous Evaluation", href: "#continuous-evaluation", description: "The nervous system monitors for safety and threat continuously, below conscious awareness." },
+  { label: "Multiple Channels Converging", href: "#multiple-channels", description: "Sensory input, interoceptive data, relational cues, contextual memory — all converging." },
+  { label: "Detection", href: "#detection", description: "The evaluation concludes. A specific condition is identified." },
+  { label: "Signal Generation", href: "#signal-generation", description: "The detection becomes a physiological event." },
+  { label: "The Speed", href: "#the-speed", description: "12 milliseconds vs 300 milliseconds. The body responds before thought arrives." },
+  { label: "Safety & Openness", href: "#safety-openness", description: "Signals generated when conditions support safety, connection, or approach." },
+  { label: "Threat & Defence", href: "#threat-defence", description: "Signals generated when conditions indicate danger, violation, loss, or contamination." },
+];
 
 // ─── PAGE ──────────────────────────────────────────────────
 
@@ -150,12 +159,13 @@ export default function M1EmotionsAsSignalsPage() {
       <SiteHeader currentPath="/model/m1-emotions-as-signals" />
 
       <PageLayout
+        sidebarSections={SIDEBAR_SECTIONS}
         header={
           <ModelHero
             badge="MODEL M1"
             title="Emotions as Signals"
             subtitle="The Nervous System Language"
-            description="Before a thought finishes forming, the body has already responded. The nervous system evaluates environmental conditions continuously — safety, threat, loss, connection — and generates a full physiological response in milliseconds. Heart rate shifts, hormones release, muscles brace or soften. These responses are emotions: biological signals carrying specific information about what was detected. This model maps what the nervous system evaluates, how each signal activates one of two ancient nervous system states, and what each emotion detects."
+            description="Before a thought finishes forming, the body has already responded. The nervous system evaluates environmental conditions continuously — safety, threat, loss, connection, contamination — and generates a full physiological response in milliseconds. Heart rate shifts, hormones release, muscles brace or soften. These responses are emotions: biological signals carrying specific information about what was detected. This model maps what the nervous system evaluates, how each signal is generated, and what each emotion detects."
             coreQuestion="What is this signal telling me?"
             drawsFrom={[
               { label: "M2", href: "/model/m2-nervous-system-states" },
@@ -167,7 +177,7 @@ export default function M1EmotionsAsSignalsPage() {
           />
         }
       >
-        <figure role="figure" aria-label="Signal lifecycle diagram">
+        <figure role="figure" aria-label="Signal lifecycle diagram" style={{ marginBottom: 40 }}>
           <M1SignalLifecycle />
           <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
             The three phases every emotional signal passes through: environmental evaluation, physiological detection, and conscious signal formation — complete in under 200 milliseconds.
@@ -182,16 +192,16 @@ export default function M1EmotionsAsSignalsPage() {
           {/* ─── INTRODUCTION ───────────────────────────── */}
           <section style={{ marginBottom: 48 }}>
             <p style={proseStyle}>
-              The nervous system continuously monitors internal and external conditions below conscious awareness. It evaluates for safety, threat, boundary violation, loss, and relational stability — and produces signals that orient the body toward response. Heart rate changes. Stress hormones release. Muscles reorganize. A full physiological response is organized before the first conscious thought has assembled a single sentence. Cognition arrives to find the body already responding.
+              The nervous system continuously monitors internal and external conditions below conscious awareness. It evaluates for safety and threat — and produces signals that orient the body toward response. Heart rate changes. Stress hormones release. Muscles reorganize. A full physiological response is organized before the first conscious thought has assembled a single sentence. Cognition arrives to find the body already responding.
             </p>
             <p style={proseStyle}>
               Emotion, in this model, is a functional output of that detection process — not opposed to reason, but operating through a different channel, one that is faster, older, and largely independent of conscious processing. Cognition shapes how the signal is interpreted, named, explained, suppressed, or overridden — but does not generate the original signal itself.
             </p>
             <p style={proseStyle}>
-              Each emotion corresponds to a specific type of detection and carries a characteristic physiological response pattern. An emotional signal does not merely express a state. It indicates that the nervous system has registered something consequential and has begun reorganizing the body accordingly. The architecture is consistent across all signals: what was detected, how the body responds, and which nervous system state the signal activates.
+              Each emotion corresponds to a specific type of detection and carries a characteristic physiological response pattern. An emotional signal does not merely express a feeling. It indicates that the nervous system has registered something consequential and has begun reorganizing the body accordingly. The architecture is consistent across all signals: what was detected and how the body responds.
             </p>
             <p style={proseStyle}>
-              This reframes the central question. Not how emotion should be controlled, but what each signal is indicating — and which state the body has shifted into as a result.
+              This reframes the central question. Not how emotion should be controlled, but what each signal is indicating.
             </p>
           </section>
 
@@ -211,19 +221,19 @@ export default function M1EmotionsAsSignalsPage() {
             <ModelPurpose color={MODEL_COLOR}>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
               <li style={propositionItemStyle}>
-                The nervous system has two information systems. The first — and oldest — is emotion. The second is cognition. The signal does not stop being generated when cognition overrides or suppresses it.
-              </li>
-              <li style={propositionItemStyle}>
-                Every emotion follows three steps: signal (what was detected), physiological response (what the body does), restoration pathway (what resolves it). The message varies. The sequence does not.
-              </li>
-              <li style={propositionItemStyle}>
                 The nervous system continuously evaluates environmental conditions along a safety-threat axis. The evaluation is pre-cognitive — it completes before conscious processing begins.
               </li>
               <li style={propositionItemStyle}>
-                Each signal activates one of two ancient nervous system states: Safety {"&"} Openness or Threat {"&"} Defence. These are pre-cognitive states — the body shifts before cognition arrives.
+                The evaluation draws on multiple channels simultaneously — sensory input, interoceptive data, relational cues, contextual memory — all converging below conscious awareness to produce a finding.
               </li>
               <li style={propositionItemStyle}>
-                Somatic emotions can complete through the body{"'"}s own channels. Relational emotions require another person as a biological completion requirement — not a psychological preference.
+                Each detection produces a specific signal — a full physiological response pattern carrying information about what was found. The signal reaches the body at 12 milliseconds. Cognition reaches the cortex at 300 milliseconds. The body responds before thought arrives.
+              </li>
+              <li style={propositionItemStyle}>
+                Signals divide into two groups: safety signals and threat signals. Within each group, the detection carries nuance — boundary violation, loss, contamination, connection, belonging — but the primary axis is safety or threat.
+              </li>
+              <li style={propositionItemStyle}>
+                Somatic signals can complete through the body{"'"}s own channels. Relational signals require another person as a biological completion requirement — not a psychological preference.
               </li>
               <li style={propositionItemStyle}>
                 When a signal cannot be received, it does not disappear — it distorts. The finding is the same. What changes is what the person experiences.
@@ -241,118 +251,135 @@ export default function M1EmotionsAsSignalsPage() {
 
           <PartDivider label="PART 1" title="Safety-Threat Evaluation" color={MODEL_COLOR} />
 
-          {/* ─── C0: EMOTION PRECEDES COGNITION ─────────── */}
+          {/* ─── C1: CONTINUOUS EVALUATION ─────────────── */}
           <section
-            id="emotion-precedes-cognition"
-            aria-labelledby="heading-emotion-precedes-cognition"
+            id="continuous-evaluation"
+            aria-labelledby="heading-continuous-evaluation"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-emotion-precedes-cognition"
+              id="heading-continuous-evaluation"
               style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Emotion Precedes Cognition
+              Continuous Evaluation
             </h2>
 
             <p style={proseStyle}>
-              The nervous system operates through at least two interacting information systems.
+              The nervous system evaluates environmental and relational conditions continuously, below conscious awareness. This is not an episodic process triggered by events. It runs all the time — a constant assessment of whether current conditions support safety or indicate threat.
             </p>
             <p style={proseStyle}>
-              The first, and evolutionarily older, is emotion. Emotions function as biologically mediated signals that communicate the outcome of ongoing evaluations of environmental and relational conditions. These signals indicate findings such as threat, safety, social inclusion, exclusion, contamination, loss, or connection. They are generated rapidly and often outside conscious awareness.
+              Porges (2011) named this process neuroception: the nervous system{"'"}s capacity to evaluate risk and safety without conscious involvement. The evaluation operates along a single axis — safety to threat — as a continuous gradient, not a binary switch. At one end, conditions support approach, openness, and connection. At the other, conditions indicate danger, violation, loss, or contamination. The nervous system{"'"}s position on that gradient determines which class of signal is generated.
             </p>
             <p style={proseStyle}>
-              The second information system is cognition. Cognition supports reflection, interpretation, planning, and symbolic reasoning. However, cognition does not generate the original biological signal. It interprets, modulates, suppresses, or reorganizes it.
-            </p>
-
-            <figure role="figure" aria-label="Speed comparison diagram" style={{ margin: "24px 0" }}>
-              <M1SpeedComparison />
-              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
-                Emotional processing reaches the body at 12 milliseconds and produces a full physiological response by 150 milliseconds. Cognitive processing reaches the cortex at 300 milliseconds. The body responds before thought arrives.
-              </figcaption>
-              <noscript>
-                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: dual timeline comparing emotional processing (12ms amygdala, 80ms physiological response, 150ms nervous system state) with cognitive processing (300ms cortex, 500ms evaluation complete).</p>
-              </noscript>
-            </figure>
-
-            <p style={proseStyle}>
-              When cognition overrides emotional signaling, the biological signal remains active at the physiological level. The signal is still being generated, whether or not it is consciously acknowledged.
+              The evaluation produces two classes of output: safety or threat. Within each class, the detection carries nuance — threat includes boundary violation, loss, contamination; safety includes connection, belonging confirmed, conditions supporting approach — but the primary axis is binary in direction: the nervous system is evaluating whether current conditions are safe or threatening.
             </p>
             <p style={proseStyle}>
-              From this perspective, the central question is not {"\u201C"}How do I control this emotion?{"\u201D"} but {"\u201C"}What condition is this emotion signaling?{"\u201D"} The framework shifts from emotion management to signal identification.
+              The evaluation is the origin. The signal is the output.
             </p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  Panksepp (1998) — primary emotional systems as ancient biological processes. Damasio (1994) — somatic markers as the body{"'"}s signal system guiding cognition. LeDoux (1996) — threat detection running faster than conscious processing. Porges (2011) — neuroception as continuous safety evaluation below awareness. Frijda (1986) — emotions as action readiness, functional signals oriented toward environmental conditions.
+                  Porges (2011) — neuroception as continuous safety-threat evaluation below awareness. LeDoux (1996) — subcortical threat detection preceding cortical processing. Damasio (1994) — somatic markers as body-state information guiding evaluation. Adolphs (2002) — the amygdala{"'"}s role in evaluating biological significance of stimuli.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The reframe from {"\u201C"}emotion regulation{"\u201D"} to {"\u201C"}signal interpretation.{"\u201D"} The framing of emotions as the body{"'"}s first language — cognition is the second. The framing as {"\u201C"}language{"\u201D"} carries specific implications: a language can be listened to or ignored, interpreted accurately or misread, spoken fluently or suppressed.
+                  The explicit mapping of the safety-threat evaluation as the origin stage of every emotional signal — not a background process but the first step in the Emotional Somatic Cycle. The evaluation produces the signal. This positions the evaluation as the entry point of the entire system architecture.
                 </p>
               </ExpandableSection>
             </div>
           </section>
 
-          {/* ─── C1: ANATOMY OF AN EMOTIONAL SIGNAL ──────── */}
+          {/* ─── C2: MULTIPLE CHANNELS CONVERGING ──────── */}
           <section
-            id="signal-anatomy"
-            aria-labelledby="heading-signal-anatomy"
+            id="multiple-channels"
+            aria-labelledby="heading-multiple-channels"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-signal-anatomy"
+              id="heading-multiple-channels"
               style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Anatomy of an Emotional Signal
+              Multiple Channels Converging
             </h2>
 
             <p style={proseStyle}>
-              Every emotion follows three steps — a universal sequence that applies across all signals:
+              The evaluation draws on multiple information channels simultaneously, all converging below the threshold of conscious processing.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr", minWidth: 400 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Step</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Is</div>
+              <div style={{ display: "grid", gridTemplateColumns: "120px 1fr", minWidth: 400 }}>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Channel</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Delivers</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>1. The Signal</div>
-                <div style={gridCellStyle}>What the nervous system detected. The finding. What was evaluated and what the evaluation concluded.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sensory Input</div>
+                <div style={gridCellStyle}>Eyes, ears, nose, skin, tongue — these are the nervous system{"'"}s detection instruments. Each feeds the safety-threat evaluation directly. The retina sends light data to the amygdala before the visual cortex has assembled an image. The cochlea transmits sound frequency data that the nervous system evaluates for threat or safety before the auditory cortex identifies the source. The olfactory bulb — one synapse from the amygdala — delivers chemical information with almost no processing delay.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>2. Physiological Response</div>
-                <div style={gridCellStyle}>How the body reorganizes in response to the finding. Hormonal, neurochemical, muscular changes that are automatic, below conscious awareness, and have been running for millions of years before cognition existed.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Interoceptive Data</div>
+                <div style={gridCellStyle}>The body{"'"}s internal state. Heart rate, muscle tension, hormonal levels, gut signals, breathing pattern. The nervous system reads its own physiology as information about current conditions.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>3. Restoration Pathway</div>
-                <div style={gridCellStyle}>The conditions required for the activation to resolve. The conditions under which the nervous system stands down and returns toward physiological baseline. When the restoration pathway is unavailable, the activation remains unresolved — and accumulates.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Relational Cues</div>
+                <div style={gridCellStyle}>Facial expression, vocal prosody, postural orientation of others. The social engagement system reads other bodies for signals of safety or threat. A softened face, an open posture, a regulated vocal tone — biological safety signals. A rigid face, a raised voice, a turned back — threat signals the nervous system processes before conscious evaluation begins.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Contextual Memory</div>
+                <div style={gridCellStyle}>Whether this environment or this person has been safe or dangerous before. The hippocampus and amygdala encode prior experience as pattern data that shapes current evaluation. A room that was safe last time shifts the gradient toward safety. A person whose presence preceded pain shifts it toward threat.</div>
               </div>
             </div>
 
-            <figure role="figure" aria-label="Signal anatomy diagram" style={{ margin: "24px 0" }}>
-              <M1SignalDiagram />
-              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
-                The universal three-step anatomy: a signal fires, the body responds, and restoration begins. Each of the 16 emotions follows this same biological sequence.
-              </figcaption>
-              <noscript>
-                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: animated waveform showing the three-step signal anatomy (Signal, Response, Restoration) for each of the 16 emotions, selectable by emotion name.</p>
-              </noscript>
-            </figure>
-
             <p style={proseStyle}>
-              This architecture is universal. Fear, joy, shame, compassion — each carries a different message, but each follows the same three-step sequence. The message varies. The sequence does not.
+              These channels do not report sequentially. They converge. The body reaches a conclusion — a position on the safety-threat gradient — before the mind has formulated a question.
             </p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  Frijda (1986) — emotions as action tendencies with specific eliciting conditions and behavioural outcomes. Levine (1997) — the activation cycle as a sequence that must complete. Porges (2011) — the autonomic nervous system as a bidirectional communication system.
+                  Craig (2002) — interoception as a primary information channel for evaluating internal conditions. Porges (2011) — the social engagement system as the pathway for reading relational safety signals. LeDoux (1996) — the amygdala integrating multiple sensory channels for threat evaluation. Phelps (2004) — amygdala-hippocampal interaction in contextual fear conditioning.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The formalisation of the three-step sequence as a uniform anatomy applied across every emotion. Existing research describes each step separately — action tendencies (Frijda), completion cycles (Levine), autonomic communication (Porges) — but does not unify them into a single architecture that applies identically across all signals. TEG-Blue proposes that the restoration pathway is not a separate therapeutic concern but a structural third step built into the signal itself — and that the somatic/relational split at step 3 determines which pathway is needed for each emotion.
+                  The explicit mapping of four converging channels as the input architecture of the safety-threat evaluation. Existing research describes each channel separately — interoception (Craig), neuroception (Porges), threat detection (LeDoux), contextual memory (Phelps). TEG-Blue proposes that these channels converge into a single evaluative process that produces a position on the safety-threat gradient — and that position determines which signal is generated.
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── C3: DETECTION ─────────────────────────── */}
+          <section
+            id="detection"
+            aria-labelledby="heading-detection"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-detection"
+              style={sectionHeadingStyle(MODEL_COLOR)}
+            >
+              Detection: Condition Identified
+            </h2>
+
+            <p style={proseStyle}>
+              The evaluation concludes. A condition is identified. The nervous system has processed the converging channels and reached a finding: safety confirmed, threat present, boundary crossed, bond active, belonging at risk, contamination detected, loss registered.
+            </p>
+            <p style={proseStyle}>
+              This finding is the output of the evaluation and the input to signal generation. The detection is specific — not a general sense of good or bad, but a particular category of condition that the nervous system has identified as biologically relevant. The specificity of the detection determines which signal is generated. A boundary violation produces a different signal than a loss detection. A safety confirmation produces a different signal than a contamination finding.
+            </p>
+            <p style={proseStyle}>
+              The detection is pre-cognitive. It completes before conscious processing begins. The body has identified the condition and begun organizing a response before a single thought has formed about what is happening.
+            </p>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="opendata">
+                <p style={expandedProseStyle}>
+                  LeDoux (1996) — the amygdala completing threat evaluation before cortical processing. Porges (2011) — neuroception producing a finding below conscious awareness. Frijda (1986) — emotions as action readiness triggered by specific eliciting conditions.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The explicit identification of detection as a discrete stage — the bridge between evaluation (continuous monitoring) and signal generation (physiological response). Existing research describes evaluation and response but does not isolate the moment the evaluation concludes and a specific finding is produced. TEG-Blue proposes that the specificity of this finding — what category of condition was detected — is what determines which signal the nervous system generates.
                 </p>
               </ExpandableSection>
             </div>
@@ -364,48 +391,7 @@ export default function M1EmotionsAsSignalsPage() {
 
           <PartDivider label="PART 2" title="Emotional Signal Generation" color={MODEL_COLOR} />
 
-          {/* ─── SAFETY-THREAT EVALUATION ──────────────── */}
-          <section
-            id="safety-threat-evaluation"
-            aria-labelledby="heading-safety-threat-evaluation"
-            style={{ marginBottom: 48 }}
-          >
-            <h2
-              id="heading-safety-threat-evaluation"
-              style={sectionHeadingStyle(MODEL_COLOR)}
-            >
-              Safety-Threat Evaluation
-            </h2>
-
-            <p style={proseStyle}>
-              Before a signal is generated, the nervous system has already completed an evaluation. This process runs continuously, below conscious awareness, scanning environmental and relational conditions for biologically relevant information. Porges (2011) named this process neuroception — the nervous system{"'"}s capacity to evaluate risk and safety without conscious involvement.
-            </p>
-            <p style={proseStyle}>
-              The evaluation operates along a single axis: safety to threat. At one end, conditions support approach, openness, and connection — the body softens, the social engagement system activates, and energy moves outward. At the other end, conditions indicate danger, violation, loss, or contamination — the body mobilizes, withdraws, or braces. The evaluation is not binary. It is a continuous gradient, and the nervous system{"'"}s position on that gradient determines which class of signal is generated.
-            </p>
-            <p style={proseStyle}>
-              The evaluation draws on multiple channels simultaneously: sensory input (what is seen, heard, felt), interoceptive data (the body{"'"}s internal state — heart rate, muscle tension, hormonal levels), relational cues (facial expression, vocal prosody, postural orientation of others), and contextual memory (whether this environment or this person has been safe or dangerous before). These channels converge below the threshold of conscious processing. The body reaches a conclusion before the mind has formulated a question.
-            </p>
-            <p style={proseStyle}>
-              This is the foundation of M1. Every signal described in this model originates from this evaluation process. The nervous system detects a condition — safety confirmed, threat present, boundary crossed, bond active, belonging at risk — and generates a signal carrying that specific finding. The evaluation is the origin. The signal is the output.
-            </p>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
-                <p style={expandedProseStyle}>
-                  Porges (2011) — neuroception as continuous safety-threat evaluation below awareness. LeDoux (1996) — subcortical threat detection preceding cortical processing. Damasio (1994) — somatic markers as body-state information guiding evaluation. Craig (2002) — interoception as a primary information channel for evaluating internal conditions. Adolphs (2002) — the amygdala{"'"}s role in evaluating biological significance of stimuli.
-                </p>
-              </ExpandableSection>
-
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>
-                  The explicit mapping of the safety-threat evaluation as the origin stage of every emotional signal — not a background process but the first step in the Emotional Somatic Cycle. The evaluation produces the signal; the signal activates a state. This positions the evaluation as the entry point of the entire system architecture, connecting M1 to the biological origin described in <Link href="/framework/f1-emotional-gradient" style={linkStyle}>F1</Link>.
-                </p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* ─── SIGNAL GENERATION ────────────────────── */}
+          {/* ─── C4: SIGNAL GENERATION ────────────────── */}
           <section
             id="signal-generation"
             aria-labelledby="heading-signal-generation"
@@ -419,50 +405,74 @@ export default function M1EmotionsAsSignalsPage() {
             </h2>
 
             <p style={proseStyle}>
-              The evaluation concludes. The nervous system has detected a specific condition — and now generates a signal carrying that finding. This is signal generation: the moment the evaluation{"'"}s conclusion becomes a physiological event. Hormones release, muscles reorganize, heart rate shifts, neurochemistry changes. The body is now responding to what was detected.
+              The detection becomes a physiological event. The nervous system has identified a condition — and now generates a signal carrying that finding. Hormones release, muscles reorganize, heart rate shifts, neurochemistry changes. The body is responding to what was detected.
             </p>
             <p style={proseStyle}>
-              Each signal carries two outputs. The first is the specific emotion — the particular finding the nervous system registered (threat, boundary violation, safety confirmed, belonging at risk). The second is a state activation. Every signal pushes the nervous system toward one of two ancient states:
-            </p>
-
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minWidth: 400 }}>
-                <div style={gridHeaderStyle(SAFETY_COLOR)}>Safety {"&"} Openness</div>
-                <div style={gridHeaderStyle(THREAT_COLOR)}>Threat {"&"} Defence</div>
-
-                <div style={{ ...gridCellStyle, lineHeight: 1.7 }}>
-                  Conditions evaluate as safe. The parasympathetic nervous system engages. Muscles soften, breathing deepens, the social engagement system activates. The body opens toward approach, connection, and exploration.
-                </div>
-                <div style={{ ...gridCellStyle, lineHeight: 1.7 }}>
-                  Conditions evaluate as threatening. The sympathetic nervous system activates. Heart rate rises, stress hormones release, muscles brace. The body mobilizes toward defence, withdrawal, or expulsion.
-                </div>
-
-                <div style={{ ...gridCellStyle, fontSize: 12, color: TEXT.muted }}>
-                  Joy, Happiness, Admiration, Pride, Love, Trust, Gratitude, Compassion
-                </div>
-                <div style={{ ...gridCellStyle, fontSize: 12, color: TEXT.muted }}>
-                  Fear, Anger, Stress, Anxiety, Disgust, Shame, Guilt, Sadness
-                </div>
-              </div>
-            </div>
-
-            <p style={proseStyle}>
-              These two states are pre-cognitive. They activate before cognition has processed the signal. The body has already shifted — heart rate, muscle tension, hormonal profile — by the time conscious thought begins to evaluate what happened. This is why emotion precedes cognition: the state activation is complete before the cortex receives the data.
+              This is signal generation: the moment the evaluation{"'"}s conclusion becomes a full physiological response pattern. The response is not a reaction to a thought. It is a biologically generated output of the detection process. The hormonal profile changes, the muscular configuration shifts, the autonomic nervous system recalibrates — all before cognition has processed the event.
             </p>
             <p style={proseStyle}>
-              Two additional nervous system states exist — Strategy {"&"} Management and Power {"&"} Dominance — but these require cognition to have caught up with the physiological response. They are not direct signal outputs. They emerge when cognition interacts with the state the signal already produced. How states evolve once cognition engages is the territory of <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>.
+              Each signal carries a specific finding. Fear carries: threat detected. Shame carries: belonging at risk. Joy carries: safety confirmed. The physiological response pattern differs across signals — different hormones, different muscle groups, different autonomic profiles — because each signal is responding to a different category of detection. The message varies. The physiological architecture is consistent: detection produces signal, signal reorganizes the body.
             </p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  Porges (2011) — the autonomic hierarchy: ventral vagal (social engagement, safety) and sympathetic (mobilization, threat) as the two primary response branches. Panksepp (1998) — primary emotional systems generating distinct physiological configurations. LeDoux (1996) — the amygdala generating threat responses before cortical processing. Fredrickson (2001) — broaden-and-build: positive emotions activating approach, expansion, and exploration.
+                  Panksepp (1998) — primary emotional systems generating distinct physiological configurations. Frijda (1986) — emotions as action tendencies with specific eliciting conditions and characteristic response patterns. Levine (1997) — the activation cycle as a physiological sequence initiated by detection.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The explicit mapping of each emotion to one of two ancient state activations — Safety {"&"} Openness or Threat {"&"} Defence — as the direct output of signal generation. This creates the structural bridge between M1 (what was detected) and M2 (what state the body shifts into). The distinction between pre-cognitive state activation (two ancient states) and post-cognitive state elaboration (four modes) positions cognition{"'"}s role precisely: it does not generate the state shift, but it shapes what happens after.
+                  The positioning of signal generation as a discrete stage in the Emotional Somatic Cycle — the bridge between detection (what was found) and the physiological response the body organizes. The signal is not the emotion felt. It is the physiological event the nervous system generates in response to a specific detection. This reframes the central question from {"\u201C"}how do I manage this emotion?{"\u201D"} to {"\u201C"}what is this signal telling me?{"\u201D"}
+                </p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* ─── C5: THE SPEED ────────────────────────── */}
+          <section
+            id="the-speed"
+            aria-labelledby="heading-the-speed"
+            style={{ marginBottom: 48 }}
+          >
+            <h2
+              id="heading-the-speed"
+              style={sectionHeadingStyle(MODEL_COLOR)}
+            >
+              The Speed
+            </h2>
+
+            <p style={proseStyle}>
+              Emotional processing reaches the body before cognition arrives. The amygdala receives sensory input and generates a threat response in approximately 12 milliseconds. A full physiological response — hormonal release, muscular reorganization, autonomic reconfiguration — is organized by 150 milliseconds. Cognitive processing reaches the cortex at approximately 300 milliseconds.
+            </p>
+
+            <figure role="figure" aria-label="Speed comparison diagram" style={{ margin: "24px 0" }}>
+              <M1SpeedComparison />
+              <figcaption style={{ fontSize: 13, color: '#94a3b8', fontStyle: 'italic', padding: '8px 16px 0', lineHeight: 1.5 }}>
+                Emotional processing reaches the body at 12 milliseconds and produces a full physiological response by 150 milliseconds. Cognitive processing reaches the cortex at 300 milliseconds. The body responds before thought arrives.
+              </figcaption>
+              <noscript>
+                <p style={{ padding: 16, color: '#94a3b8' }}>Interactive diagram: dual timeline comparing emotional processing (12ms amygdala, 80ms physiological response, 150ms nervous system state) with cognitive processing (300ms cortex, 500ms evaluation complete).</p>
+              </noscript>
+            </figure>
+
+            <p style={proseStyle}>
+              The body has already responded before thought begins. Heart rate has shifted, stress hormones have released, muscles have braced or softened — and the cortex is only now receiving the data. Cognition arrives to find the body already in a different physiological configuration.
+            </p>
+            <p style={proseStyle}>
+              This timing gap has a structural consequence. The signal is generated and the body responds through the older, faster system. Cognition processes the signal through the newer, slower system. Cognition can interpret, modulate, suppress, or override the signal — but it does not generate the original signal itself. The signal originates from the evaluation process, not from thought.
+            </p>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="opendata">
+                <p style={expandedProseStyle}>
+                  LeDoux (1996) — the amygdala{"'"}s fast pathway: threat detection at 12 milliseconds, before cortical processing at 300 milliseconds. Panksepp (1998) — primary emotional systems operating independently of cortical control. Damasio (1994) — somatic markers as body-state signals that precede and guide cognitive evaluation.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>
+                  The timing gap positioned as the structural basis for the entire signal system. The 12ms-to-300ms difference is not a curiosity of neuroscience but the reason emotions function as a separate information channel. The body{"'"}s first information system is faster, older, and largely independent of the second. This is why emotion precedes cognition — and why the signal does not stop being generated when cognition arrives to override or suppress it.
                 </p>
               </ExpandableSection>
             </div>
@@ -475,14 +485,26 @@ export default function M1EmotionsAsSignalsPage() {
           <PartDivider label="PART 3" title="Threat Signals and Safety Signals" color={MODEL_COLOR} />
 
           <p style={{ ...proseStyle, marginBottom: 8 }}>
-            Each emotion below is mapped through the same architecture: what the nervous system detected, how the body responds, which state it activates, and what conditions resolve the activation. The somatic/relational distinction indicates whether the restoration pathway requires another person — this distinction is explored in depth in <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>.
+            Each signal below is mapped through the same architecture: what the nervous system detected, how the body responds, and what conditions resolve the activation. The somatic/relational distinction indicates whether the restoration pathway requires another person — this is a structural constraint of the signal system, explored in depth in <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>. How the body reorganizes into a sustained nervous system state after the signal is generated is the territory of <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>.
           </p>
 
           <M1EmotionNav />
 
+          {/* ─── C6: SAFETY & OPENNESS VS THREAT & DEFENCE ── */}
+          <section style={{ marginBottom: 48 }}>
+            <p style={proseStyle}>
+              The signals the nervous system generates divide into two groups based on what the evaluation detected.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: SAFETY_COLOR }}>Safety {"&"} Openness signals</strong> are generated when the evaluation concludes that conditions support safety, connection, or approach. The physiological response pattern is characteristic: muscles soften, breathing deepens, the social engagement system activates, and the body opens toward approach and exploration.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: THREAT_COLOR }}>Threat {"&"} Defence signals</strong> are generated when the evaluation concludes that conditions indicate danger, violation, loss, contamination, or risk to belonging. The physiological response pattern is characteristic: heart rate rises, stress hormones release, muscles brace, and sensory filtering narrows toward the source of threat. Energy redirects from exploration and connection toward defence, withdrawal, or expulsion.
+            </p>
+          </section>
 
           {/* ─── SAFETY & OPENNESS ──────────────────────── */}
-          <section style={{ marginBottom: 24 }}>
+          <section id="safety-openness" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
             <h2 style={{
               ...sectionHeadingStyle(SAFETY_COLOR),
               display: "flex",
@@ -496,9 +518,13 @@ export default function M1EmotionsAsSignalsPage() {
               Safety {"&"} Openness
             </h2>
             <p style={proseStyle}>
-              When the nervous system evaluates conditions as safe, the parasympathetic branch engages. Muscles soften, breathing deepens, the vagal brake modulates heart rate downward, and the social engagement system — facial expression, vocal prosody, middle ear muscles — activates. The body opens toward approach, connection, and exploration. The following emotions generate this state activation.
+              When the evaluation concludes that conditions support safety, connection, or approach, the parasympathetic branch engages. Muscles soften, breathing deepens, the social engagement system activates, and the body opens toward approach and exploration.
             </p>
           </section>
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: SAFETY_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Approach {"&"} Expansion — opening, energy moves outward
+          </p>
 
           <EmotionSection
             id="joy"
@@ -555,8 +581,12 @@ export default function M1EmotionsAsSignalsPage() {
             restorationDetail="Presence with the self-recognition, without requiring external validation — the signal completes through own awareness of contribution"
             research="Tracy & Robins (2007) — authentic vs hubristic pride as distinct self-conscious emotions. Williams & DeSteno (2008) — pride as functional social emotion."
             tegBlueAdds="Pride mapped as a detection signal (own value recognised) with a specific distortion pathway. The distinction between authentic pride (signal received) and hubristic pride (signal unable to land) reframed as a signal-reception question rather than a character distinction."
-            distortion={"When this signal cannot be received — when one's own value cannot be stably held through internal recognition — the detection does not disappear. It distorts. The same self-recognition that would have landed as pride lands instead as elevation over others. This is arrogance: own value expressed as positioning rather than settled recognition."}
+            distortion={"When this signal cannot be received — when one's own value cannot be stably held through internal recognition — the detection does not disappear. It distorts along two pathways. The same self-recognition that would have landed as pride may land as elevation over others — this is arrogance: own value expressed as positioning rather than settled recognition. Or it may land as guarding against others being valued — this is jealousy: the detection of own value cannot be held securely enough to tolerate value being recognized in others."}
           />
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: SAFETY_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Bonding {"&"} Proximity — orientation toward the other
+          </p>
 
           <EmotionSection
             id="love"
@@ -616,7 +646,7 @@ export default function M1EmotionsAsSignalsPage() {
 
 
           {/* ─── THREAT & DEFENCE ───────────────────────── */}
-          <section style={{ marginBottom: 24 }}>
+          <section id="threat-defence" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
             <h2 style={{
               ...sectionHeadingStyle(THREAT_COLOR),
               display: "flex",
@@ -630,9 +660,13 @@ export default function M1EmotionsAsSignalsPage() {
               Threat {"&"} Defence
             </h2>
             <p style={proseStyle}>
-              When the nervous system evaluates conditions as threatening, the sympathetic branch activates. Heart rate rises, stress hormones release, muscles brace, and sensory filtering narrows toward the source of threat. Energy redirects from exploration and connection toward defence, withdrawal, or expulsion. The following emotions generate this state activation.
+              When the evaluation concludes that conditions indicate danger, violation, loss, contamination, or risk to belonging, the sympathetic branch activates. Heart rate rises, stress hormones release, muscles brace, and sensory filtering narrows toward the source of threat. Energy redirects from exploration and connection toward defence, withdrawal, or expulsion.
             </p>
           </section>
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Mobilization — sympathetic activation, energy rises
+          </p>
 
           <EmotionSection
             id="fear"
@@ -691,6 +725,38 @@ export default function M1EmotionsAsSignalsPage() {
           />
 
           <EmotionSection
+            id="frustration"
+            name="Frustration"
+            signal="Action blocked"
+            bodySignature="Sympathetic activation intensifies — heart rate rises, jaw tightens, muscles brace. Energy builds with no outlet. Noradrenaline sustains alertness toward the obstruction."
+            mechanism="Frustration is the signal generated when a goal, path, or intended action is obstructed. The nervous system detects that effort is being expended without producing the expected result. Energy builds with no outlet — the body mobilizes for action but the action cannot complete. The activation is distinct from anger: anger detects a boundary crossed, frustration detects a path blocked. When the obstruction persists without resolution, the activation accumulates."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Somatic"
+            restorationDetail="The blocked action must complete — obstacle removed, alternative path found, or goal achieved"
+            research="Dollard, Miller, Doob, Mowrer & Sears (1939) — frustration-aggression hypothesis. Amsel (1958) — frustrative nonreward as a primary motivational state. Berkowitz (1989) — frustration as aversive stimulation generating negative affect."
+            tegBlueAdds="Frustration mapped as a distinct signal from anger — both mobilize, but the detection differs. Anger detects a boundary crossed (violation). Frustration detects a path blocked (obstruction). The distinction changes intervention logic: anger resolves through boundary restoration, frustration resolves through the obstruction clearing or an alternative route."
+          />
+
+          <EmotionSection
+            id="resentment"
+            name="Resentment"
+            signal="Accumulated unresolved boundary violations"
+            bodySignature="Sustained sympathetic tone — chronic cortisol and noradrenaline elevation, persistent muscle tension, narrowed attention. A low burn, not a spike."
+            mechanism="Resentment is the signal generated when boundary violations have occurred repeatedly without resolution. The nervous system carries the accumulated activation from multiple anger signals that never completed their restoration pathway. The activation is not spiking — it is sustained at a low burn. The body maintains mobilization against a threat that is not acute but has never been resolved."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Somatic"
+            restorationDetail="The unresolved boundary violations must be addressed — the pattern itself must be interrupted or acknowledged"
+            research="Worthington (2006) — unforgiveness and resentment as sustained stress response. Enright & Fitzgibbons (2000) — resentment as maintained emotional state with physiological consequences. Sapolsky (2004) — chronic stress activation from sustained unresolved threat."
+            tegBlueAdds="Resentment mapped as accumulated anger — multiple boundary violations that never completed restoration. The cumulative nature explains why resentment feels different from anger: anger spikes in response to a specific violation, resentment sustains as a chronic load from many violations that never resolved."
+          />
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Expulsion — visceral rejection, nausea, closure
+          </p>
+
+          <EmotionSection
             id="disgust"
             name="Disgust"
             signal="Contamination detected"
@@ -703,6 +769,24 @@ export default function M1EmotionsAsSignalsPage() {
             research="Rozin, Haidt & McCauley (2008) — disgust as contamination-avoidance expanding into the moral domain. Chapman & Anderson (2013) — shared neural substrates of physical and moral disgust."
             tegBlueAdds="Disgust mapped as the most visceral rejection signal in the system, with the shared neural substrate between physical and moral disgust explaining how contamination-avoidance circuitry enables dehumanisation — when disgust is directed at people, the same expulsion mechanism that protects against physical toxins produces social exclusion and moral condemnation."
           />
+
+          <EmotionSection
+            id="contempt"
+            name="Contempt"
+            signal="Other evaluated as beneath engagement"
+            bodySignature="Cold disengagement — one side of the upper lip raises (the only reliably asymmetric facial expression across cultures). Energy withdraws from the other, not toward them."
+            mechanism="Contempt is the signal generated when another person or group is evaluated as not worth engaging with — inferior, incompetent, or beneath consideration. The body organizes toward dismissal and distancing. The nervous system withdraws engagement — not with the urgency of disgust's expulsion, but with cold disengagement. Energy does not mobilize toward the other. It withdraws from them. Chronic contempt in relationships is a strong predictor of relational breakdown because the withdrawal of engagement removes the conditions for relational restoration."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Somatic"
+            restorationDetail="Re-evaluation of the other — or recognition that the contempt is serving a regulatory function (maintaining distance, preserving superiority that stabilizes position)"
+            research="Ekman (1992) — contempt as the only reliably asymmetric facial expression. Gottman (1994) — contempt as the strongest predictor of relationship dissolution. Fischer & Roseman (2007) — contempt as a distancing emotion distinct from anger and disgust."
+            tegBlueAdds="Contempt mapped as a distinct signal from disgust — both reject, but the mechanism differs. Disgust expels (visceral, nausea, closure). Contempt withdraws engagement (cold, dismissive, distancing). Gottman's finding that contempt predicts relational breakdown more reliably than any other signal aligns with the signal architecture: contempt removes the conditions under which relational restoration can occur."
+          />
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Social Withdrawal — shrinking, heat, pull inward
+          </p>
 
           <EmotionSection
             id="shame"
@@ -733,6 +817,38 @@ export default function M1EmotionsAsSignalsPage() {
           />
 
           <EmotionSection
+            id="loneliness"
+            name="Loneliness"
+            signal="Connection absent"
+            bodySignature="The body contracts and pulls inward. Cortisol rises, sleep architecture degrades, immune function suppresses. A characteristic ache — a felt absence that is physiological, not just psychological."
+            mechanism="Loneliness is the signal generated when the nervous system detects that meaningful connection is absent. Not solitude — which can be safe — but the evaluation that the relational environment does not contain the contact the system requires. The social engagement system remains active — scanning for connection — but the scanning finds nothing. The body is oriented toward contact that is not available. Proximity without felt connection does not resolve the signal — the body distinguishes between being around people and being in connection."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="Genuine connection — not proximity, not performance, but felt relational contact where the nervous system registers another person as safe and available"
+            research="Cacioppo & Patrick (2008) — loneliness as a biological signal with distinct physiological consequences (cortisol, immune function, sleep). Hawkley & Cacioppo (2010) — loneliness and health: mechanisms and interventions. Holt-Lunstad, Smith & Layton (2010) — social relationships and mortality risk."
+            tegBlueAdds="Loneliness mapped as a distinct signal from sadness — both withdraw, but the detection differs. Sadness detects loss (something valued has ended). Loneliness detects absence (connection is not available). The body distinguishes between grieving what was lost and aching for what is not present. The physiological consequences — cortisol elevation, immune suppression, degraded sleep — position loneliness as a threat signal with measurable biological cost."
+          />
+
+          <EmotionSection
+            id="disappointment"
+            name="Disappointment"
+            signal="Trustworthiness evaluation failed"
+            bodySignature="The body withdraws — energy turns inward, posture drops, engagement decreases. A characteristic deflation distinct from sadness's conservation."
+            mechanism="Disappointment is the signal generated when something or someone that was expected to deliver did not. The nervous system registers that a condition, person, or outcome evaluated as reliable has failed the evaluation. The body had oriented toward something expected, and the expectation collapsed. The social engagement system partially disengages from the source. Disappointment is distinct from sadness: sadness detects loss, disappointment detects unreliability."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="Updated evaluation — the source proves trustworthy through new evidence, or expectations recalibrate to match what the source can actually deliver"
+            research="van Dijk & Zeelenberg (2002) — disappointment as outcome-related emotion distinct from regret. Bell (1985) — disappointment and decision theory. Zeelenberg, van Dijk, Manstead & van der Pligt (2000) — disappointment as distinct from other negative emotions."
+            tegBlueAdds="Disappointment mapped as a trustworthiness signal — what was detected is not loss but unreliability. The distinction changes what the signal is asking for: sadness asks for presence with what was lost, disappointment asks for updated evaluation of what can be trusted. When neither occurs, the body carries the failed evaluation forward and may generalize the distrust."
+          />
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Conservation — slowing, tears, energy turns inward
+          </p>
+
+          <EmotionSection
             id="sadness"
             name="Sadness"
             signal="Loss"
@@ -746,6 +862,34 @@ export default function M1EmotionsAsSignalsPage() {
             tegBlueAdds="Sadness mapped as a relational signal (loss) requiring presence without fixing. The tears are part of the discharge mechanism — interrupting sadness prevents restoration. The restoration pathway does not require the loss to be resolved (it cannot be). It requires another person to be present with what was lost."
           />
 
+          <EmotionSection
+            id="grief"
+            name="Grief"
+            signal="Loss that is ongoing or unresolvable"
+            bodySignature="Deep conservation — activity slows profoundly, waves of activation alternate with periods of numbness. Sympathetic spikes occur when the loss is re-detected."
+            mechanism="Grief is the signal generated when a loss does not end. The nervous system continues to detect the absence of something or someone that was deeply bonded, and the detection recurs because the loss is permanent or unresolvable. Grief has a characteristic oscillation that sadness does not: the nervous system moves between active processing (tears, ache, seeking) and shutdown (numbness, withdrawal, depletion). Sympathetic spikes occur when the loss is re-detected — a face in a crowd, a sound, a context that the body still associates with the person or condition that is gone."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="The presence of someone who stays with the loss over time — not once, but repeatedly, as the waves recur"
+            research="Bowlby (1980) — grief as attachment behaviour persisting after the attachment figure is gone. Stroebe & Schut (1999) — dual process model: oscillation between loss-oriented and restoration-oriented coping. Shear (2015) — complicated grief as prolonged activation when the restoration process cannot complete."
+            tegBlueAdds="Grief mapped as distinct from sadness — both detect loss, but grief detects loss that does not end. The oscillation pattern (active processing alternating with shutdown) is characteristic of grief and absent in sadness. The restoration process is not resolution of the loss — which cannot be undone — but the gradual reorganization of the nervous system around the absence. This requires repeated relational presence, not a single encounter."
+          />
+
+          <EmotionSection
+            id="confusion"
+            name="Confusion"
+            signal="Cannot process current information"
+            bodySignature="The body slows and turns inward. Cognitive processing loops. A freeze-adjacent quality — partial withdrawal from engagement while the system attempts to process."
+            mechanism="Confusion is the signal generated when the nervous system detects that incoming information cannot be organized into a coherent evaluation. The data is contradictory, incomplete, or exceeds the system's current processing capacity. The safety-threat evaluation cannot conclude — the system cannot determine whether conditions are safe or threatening. Attention narrows inward rather than toward a specific external source. The body signals that action should be paused until the information becomes readable."
+            activates="Threat & Defence"
+            activatesColor={THREAT_COLOR}
+            restorationType="Somatic"
+            restorationDetail="Space and time to process — engagement reduced until the data becomes readable"
+            research="Festinger (1957) — cognitive dissonance as the state produced by contradictory information. Schwartz (2004) — the paradox of choice: information overload degrading decision capacity. Kagan (2002) — uncertainty as a primary source of distress in development."
+            tegBlueAdds="Confusion mapped as a threat signal — not a cognitive failure but a nervous system detection that current information cannot be processed. The body's response (slow down, withdraw, pause action) is protective: rushing through confusion — forcing a conclusion before the evaluation can complete — may produce a false evaluation. The signal is telling the system to take space and time."
+          />
+
 
           {/* ─── CONNECTIONS MAP ─────────────────────────── */}
           <ConnectionsMap
@@ -754,7 +898,7 @@ export default function M1EmotionsAsSignalsPage() {
               {
                 id: "M2: Nervous System States",
                 href: "/model/m2-nervous-system-states",
-                description: "Describes what happens after the signal activates a state — how the nervous system reorganizes perception, cognition, and available behaviour. M1 maps the two ancient states (Safety & Openness, Threat & Defence). M2 maps the full four-state gradient once cognition engages.",
+                description: "Describes what happens after the signal is generated — how the nervous system reorganizes into a sustained state that changes perception, cognition, and available behaviour. M2 maps the full four-state gradient.",
               },
               {
                 id: "M3: Regulation Capacities",
@@ -836,7 +980,7 @@ export default function M1EmotionsAsSignalsPage() {
             "@id": "https://teg-blue.org/model/m1-emotions-as-signals#article",
             headline: "Emotions as Signals: The Nervous System Language",
             description:
-              "Emotions mapped as biological signals — what each one detects, what the body does, and which nervous system state it activates. Model M1 of the TEG-Blue system.",
+              "Emotions mapped as biological signals — what each one detects, what the body does, and what conditions resolve the activation. Model M1 of the TEG-Blue system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -906,7 +1050,7 @@ export default function M1EmotionsAsSignalsPage() {
               {
                 question: "What are emotions in the TEG-Blue system?",
                 answer:
-                  "TEG-Blue maps emotions as biological signals — information the nervous system generates when it detects something in the environment that matters. Each signal carries a specific finding (threat, safety, boundary violation, loss, connection), triggers a characteristic physiological response, and activates one of two ancient nervous system states: Safety & Openness or Threat & Defence.",
+                  "TEG-Blue maps emotions as biological signals — information the nervous system generates when it detects something in the environment that matters. Each signal carries a specific finding (safety, threat, boundary violation, loss, contamination, connection) and triggers a characteristic physiological response. Signals divide into two groups: safety signals and threat signals.",
               },
               {
                 question: "What is the difference between somatic and relational emotions?",
@@ -916,7 +1060,7 @@ export default function M1EmotionsAsSignalsPage() {
               {
                 question: "What is the safety-threat evaluation?",
                 answer:
-                  "The safety-threat evaluation is the continuous, pre-cognitive monitoring process through which the nervous system scans environmental and relational conditions for biologically relevant information. It draws on sensory input, interoceptive data, relational cues, and contextual memory — all converging below conscious awareness. The evaluation determines which emotional signal is generated and which nervous system state activates.",
+                  "The safety-threat evaluation is the continuous, pre-cognitive monitoring process through which the nervous system scans environmental and relational conditions for biologically relevant information. It draws on sensory input, interoceptive data, relational cues, and contextual memory — all converging below conscious awareness. The evaluation determines which emotional signal is generated.",
               },
             ])
           ),

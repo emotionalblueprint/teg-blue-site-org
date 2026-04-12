@@ -7,22 +7,21 @@
  * Consumed by: M1EmotionsAsSignals, EmotionWaveSection
  */
 
-// ─── NS STATE GROUPS ──────────────────────────────────────────────
-// Emotions activate one of two ancient, pre-cognitive nervous system states.
-// Strategy & Management and Power & Dominance require cognition — they are M2 territory.
+// ─── SIGNAL GROUPS ────────────────────────────────────────────────
+// Signals divide into two groups based on what the evaluation detected.
 
 export const NS_STATE_GROUPS = [
   {
     key: 'safety',
     label: 'Safety & Openness',
-    description: 'The nervous system evaluates conditions as safe — the body opens, approaches, connects',
+    description: 'The evaluation concludes that conditions support safety, connection, or approach — the body opens',
     emotions: ['joy', 'happiness', 'admiration', 'pride', 'love', 'trust', 'gratitude', 'compassion'],
   },
   {
     key: 'threat',
     label: 'Threat & Defence',
-    description: 'The nervous system evaluates conditions as threatening — the body mobilises, withdraws, or expels',
-    emotions: ['fear', 'anger', 'stress', 'anxiety', 'disgust', 'shame', 'guilt', 'sadness'],
+    description: 'The evaluation concludes that conditions indicate danger, violation, loss, contamination, or risk to belonging — the body mobilises',
+    emotions: ['fear', 'anger', 'stress', 'anxiety', 'frustration', 'resentment', 'disgust', 'contempt', 'shame', 'guilt', 'loneliness', 'disappointment', 'sadness', 'grief', 'confusion'],
   },
 ];
 
@@ -219,6 +218,83 @@ export const EMOTIONS = [
     },
   },
   {
+    key: 'frustration',
+    name: 'Frustration',
+    nsState: 'threat',
+    signal: 'Action blocked',
+    bodyResponse: 'Sympathetic activation intensifies — heart rate rises, jaw tightens, muscles brace, energy builds with no outlet',
+    restorationNeeds: 'The blocked action must complete — obstacle removed, alternative path found, or goal achieved',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'protection',
+  },
+  {
+    key: 'resentment',
+    name: 'Resentment',
+    nsState: 'threat',
+    signal: 'Accumulated unresolved boundary violations',
+    bodyResponse: 'Sustained sympathetic tone — chronic cortisol and noradrenaline elevation, persistent muscle tension, a low burn',
+    restorationNeeds: 'The unresolved boundary violations must be addressed — the pattern itself must be interrupted or acknowledged',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'protection',
+  },
+  {
+    key: 'contempt',
+    name: 'Contempt',
+    nsState: 'threat',
+    signal: 'Other evaluated as beneath engagement',
+    bodyResponse: 'Cold disengagement — one side of the upper lip raises, energy withdraws from the other',
+    restorationNeeds: 'Re-evaluation of the other — or recognition that the contempt is serving a regulatory function',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'protection',
+  },
+  {
+    key: 'loneliness',
+    name: 'Loneliness',
+    nsState: 'threat',
+    signal: 'Connection absent',
+    bodyResponse: 'The body contracts and pulls inward, cortisol rises, sleep architecture degrades, immune function suppresses',
+    restorationNeeds: 'Genuine connection — felt relational contact where the nervous system registers another person as safe and available',
+    type: 'relational',
+    restorationType: 'relational',
+    defaultMode: 'connection',
+  },
+  {
+    key: 'disappointment',
+    name: 'Disappointment',
+    nsState: 'threat',
+    signal: 'Trustworthiness evaluation failed',
+    bodyResponse: 'The body withdraws — energy turns inward, posture drops, engagement decreases, a characteristic deflation',
+    restorationNeeds: 'Updated evaluation — the source proves trustworthy through new evidence, or expectations recalibrate',
+    type: 'relational',
+    restorationType: 'relational',
+    defaultMode: 'connection',
+  },
+  {
+    key: 'grief',
+    name: 'Grief',
+    nsState: 'threat',
+    signal: 'Loss that is ongoing or unresolvable',
+    bodyResponse: 'Deep conservation — activity slows profoundly, waves of activation alternate with periods of numbness',
+    restorationNeeds: 'The presence of someone who stays with the loss over time — not once, but repeatedly, as the waves recur',
+    type: 'relational',
+    restorationType: 'relational',
+    defaultMode: 'connection',
+  },
+  {
+    key: 'confusion',
+    name: 'Confusion',
+    nsState: 'threat',
+    signal: 'Cannot process current information',
+    bodyResponse: 'The body slows and turns inward, cognitive processing loops, a freeze-adjacent quality',
+    restorationNeeds: 'Space and time to process — engagement reduced until the data becomes readable',
+    type: 'somatic',
+    restorationType: 'somatic',
+    defaultMode: 'protection',
+  },
+  {
     key: 'joy',
     name: 'Joy',
     nsState: 'safety',
@@ -401,12 +477,12 @@ export const EMOTIONS = [
 // Emotions cluster by what the body does with them — the physiological signature.
 
 export const BODY_SIGNATURE_GROUPS = [
-  { key: 'mobilization', label: 'Mobilization', signature: 'Sympathetic activation, energy rises', emotions: ['fear', 'anger', 'stress', 'anxiety'] },
-  { key: 'expulsion', label: 'Expulsion', signature: 'Visceral rejection, nausea, closure', emotions: ['disgust'] },
-  { key: 'social-withdrawal', label: 'Social Withdrawal', signature: 'Shrinking, heat, pull inward', emotions: ['shame', 'guilt'] },
-  { key: 'conservation', label: 'Conservation', signature: 'Slowing, tears, energy turns inward', emotions: ['sadness'] },
-  { key: 'approach', label: 'Approach & Expansion', signature: 'Opening, energy moves outward', emotions: ['joy', 'happiness', 'admiration', 'pride'] },
-  { key: 'bonding', label: 'Bonding & Proximity', signature: 'Orientation toward the other', emotions: ['love', 'trust', 'gratitude', 'compassion'] },
+  { key: 'approach', label: 'Approach & Expansion', signature: 'Opening, energy moves outward', nsState: 'safety', emotions: ['joy', 'happiness', 'admiration', 'pride'] },
+  { key: 'bonding', label: 'Bonding & Proximity', signature: 'Orientation toward the other', nsState: 'safety', emotions: ['love', 'trust', 'gratitude', 'compassion'] },
+  { key: 'mobilization', label: 'Mobilization', signature: 'Sympathetic activation, energy rises', nsState: 'threat', emotions: ['fear', 'anger', 'stress', 'anxiety', 'frustration', 'resentment'] },
+  { key: 'expulsion', label: 'Expulsion', signature: 'Visceral rejection, nausea, closure', nsState: 'threat', emotions: ['disgust', 'contempt'] },
+  { key: 'social-withdrawal', label: 'Social Withdrawal', signature: 'Shrinking, heat, pull inward', nsState: 'threat', emotions: ['shame', 'guilt', 'loneliness', 'disappointment'] },
+  { key: 'conservation', label: 'Conservation', signature: 'Slowing, tears, energy turns inward', nsState: 'threat', emotions: ['sadness', 'grief', 'confusion'] },
 ];
 
 // ─── DISTORTIONS ─────────────────────────────────────────────────
@@ -431,13 +507,13 @@ export const DISTORTIONS = [
     key: 'arrogance',
     name: 'Arrogance',
     distortionOf: 'pride',
-    description: 'What occupies the space where Pride would have been — when SEA is absent and the compass is stuck. Own value cannot be received through SEA; elevation above others substitutes for internal recognition.',
-    stuckCompass: {
-      connection: null,
-      protection: null,
-      control: 'Superiority as management tool — own value maintained by keeping others positioned below',
-      domination: 'Signals dominance — reinforces superiority, prevents contact, creates distance',
-    },
+    description: 'What occupies the space where Pride would have been — own value cannot be stably held through internal recognition; elevation above others substitutes for settled recognition.',
+  },
+  {
+    key: 'jealousy',
+    name: 'Jealousy',
+    distortionOf: 'pride',
+    description: 'The second distortion of Pride — own value cannot be held securely enough to tolerate value being recognized in others. The detection guards against others being valued.',
   },
 ];
 
