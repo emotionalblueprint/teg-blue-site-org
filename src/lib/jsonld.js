@@ -240,29 +240,29 @@ export function generateModelsJsonLd() {
     "@type": "WebPage",
     name: "The Emotional Somatic System — TEG-Blue",
     url: `${BASE_URL}/emotional-somatic-cycle`,
-    description: "The four foundational models of TEG-Blue: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration system).",
+    description: "The four foundational models of TEG-Blue: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (biological restoration), and Awareness Capacities (ESS awareness of CLS).",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
       {
         "@type": "DefinedTerm",
         name: "Emotions as Signals (M1)",
-        description: "The signal language — sixteen emotions mapped as biological signals delivering specific information about needs, safety, and constraint."
+        description: "The nervous system language — sixteen emotions mapped as biological signals delivering specific information about needs, safety, and constraint."
       },
       {
         "@type": "DefinedTerm",
         name: "Nervous System States (M2)",
-        description: "The instrument — how the nervous system communicates through four modes on a continuous gradient. Primary tools: the Inner Compass and the Four-Mode Gradient."
+        description: "Physiological reorganization — how the nervous system reorganizes and configures to respond to threat or safety through four modes on a continuous gradient."
       },
       {
         "@type": "DefinedTerm",
         name: "Regulation Capacities (M3)",
-        description: "The return pathway — Biological Restoration, the body's designed process for completing the activation cycle."
+        description: "Biological restoration — the nervous system's designed process for completing the activation cycle and restoring physiological baseline."
       },
       {
         "@type": "DefinedTerm",
         name: "Awareness Capacities (M4)",
-        description: "The calibration — the three awareness capacities (RE, ER, SEA) that determine what data the compass receives and how it is processed."
+        description: "The three awareness capacities (RE, ER, SEA) — is the Emotional Somatic System aware of the Cognitive Linguistic System?"
       }
     ],
     keywords: [
@@ -307,7 +307,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 1,
           name: "Measurement Layer",
-          description: "Four foundational models: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration). Observable nervous system states, awareness configurations, and regulation biology.",
+          description: "Four foundational models: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (biological restoration), and Awareness Capacities (ESS awareness of CLS). Observable nervous system states, awareness configurations, and regulation biology.",
           url: `${BASE_URL}/emotional-somatic-cycle`
         },
         {

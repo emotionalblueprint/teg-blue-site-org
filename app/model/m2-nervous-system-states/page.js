@@ -100,7 +100,7 @@ export default function M2NervousSystemStatesPage() {
           <ModelHero
             badge="MODEL M2"
             title="Nervous System States"
-            subtitle="The Instrument"
+            subtitle="The Physiological Reorganization and Configuration to Respond to Threat or Safety"
             description="When something registers as safe or threatening, the nervous system does not simply detect it and move on. It reorganizes — muscle tension redistributes, heart rate shifts, hormonal balance changes, sensory filtering adjusts, cognitive access expands or contracts. The result is a state: a system-wide physiological configuration that determines what can be perceived, thought, felt, and done. This model maps four such states, what each one makes available or restricts, and whether the system can move between them."
             coreQuestion="What state is the nervous system in right now — and can it move?"
             drawsFrom={[
@@ -586,7 +586,7 @@ export default function M2NervousSystemStatesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "ScholarlyArticle",
         "@id": "https://teg-blue.org/model/m2-nervous-system-states#article",
-        headline: "Nervous System States: The Instrument",
+        headline: "Nervous System States: The Physiological Reorganization and Configuration to Respond to Threat or Safety",
         description: "Four nervous system states on a continuous gradient — how each reorganizes perception, cognition, and relational capacity. Model M2 of the TEG-Blue system.",
         author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://teg-blue.org/about" },
         publisher: { "@type": "Organization", name: "TEG-Blue Research", url: "https://teg-blue.org" },

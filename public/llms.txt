@@ -82,19 +82,19 @@ The first two states are primarily led by the ESS. The latter two are states in 
 ## The Emotional Somatic System (Four Foundational Models)
 
 ### M1: Emotions as Signals
-The signal language — what the nervous system delivers. Every emotional signal follows three steps: finding, physiological response, restoration pathway. Sixteen signals across somatic and relational categories.
+The nervous system language — what the nervous system delivers. Every emotional signal follows three steps: finding, physiological response, restoration pathway. Sixteen signals across somatic and relational categories.
 URL: https://teg-blue.org/model/m1-emotions-as-signals
 
 ### M2: Nervous System States
-The instrument — four nervous system states along a continuous physiological gradient. The key measure: State Flexibility.
+The physiological reorganization and configuration to respond to threat or safety — four nervous system states along a continuous physiological gradient. The key measure: State Flexibility.
 URL: https://teg-blue.org/model/m2-nervous-system-states
 
 ### M3: Regulation Capacities
-The return pathway — whether the restoration sequence completes (Path A) or the activation remains unresolved (Path B). What blocks the return, what the nervous system reaches for instead (Restoration Substitutes), why none of the substitutes close the cycle.
+The biological restoration the nervous system needs in order to restore physiological baseline — whether the restoration sequence completes (Path A) or the activation remains unresolved (Path B). What blocks the return, what the nervous system reaches for instead (Restoration Substitutes), why none of the substitutes close the cycle.
 URL: https://teg-blue.org/model/m3-regulation-capacities
 
 ### M4: Awareness Capacities
-The calibration — three awareness capacities on two biological substrates: Interpersonal Affect Perception (RE) on the external observation substrate, Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) on the interoceptive substrate. What data reaches the CLS depends on which substrate is available.
+Is the Emotional Somatic System aware of the Cognitive Linguistic System? Three awareness capacities on two biological substrates: Interpersonal Affect Perception (RE) on the external observation substrate, Affective Resonance (ER) and Interoceptive Self-Awareness (SEA) on the interoceptive substrate. What data reaches the CLS depends on which substrate is available.
 URL: https://teg-blue.org/model/m4-awareness-capacities
 
 ## The 12 Frameworks

@@ -449,7 +449,7 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M1 — The Signal Language
+                M1 — The Nervous System Language
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Emotions as Signals →
@@ -481,7 +481,7 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M2 — The Instrument
+                M2 — Physiological Reorganization
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Nervous System States →
@@ -513,7 +513,7 @@ export default function TheoreticalFoundationsPage() {
                   marginBottom: 6,
                 }}
               >
-                M3 — The Return Pathway
+                M3 — Biological Restoration
               </p>
               <p style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>
                 Regulation Capacities →

@@ -94,6 +94,23 @@ export const SERIES = [
           { id: "framework-behind", label: "Framework behind these answers" },
         ],
       },
+      {
+        number: 6,
+        slug: "06-why-every-great-show-dies-the-same-death",
+        title: "Why Every Great Show Dies the Same Death",
+        subtitle: "Euphoria as the case \u2014 a prediction written before Season 3 airs, to be checked against what the audience encounters",
+        metaDescription: "Why great TV shows decay in a predictable pattern \u2014 the regulatory architecture behind creative extraction, with Euphoria as the traceable case.",
+        connection: "F5 Worth Hierarchies / F7 Compass Outsourcing / M2 Operating Modes / M4 Awareness Capacities",
+        readingTime: 13,
+        sections: [
+          { id: "the-mechanism", label: "The mechanism" },
+          { id: "euphoria-before-euphoria", label: "Euphoria before Euphoria" },
+          { id: "the-second-signal-leaves", label: "The second signal leaves" },
+          { id: "what-structure-predicts", label: "What the structure already predicts" },
+          { id: "not-about-television", label: "Why this is not about television" },
+          { id: "framework-behind", label: "The framework behind this piece" },
+        ],
+      },
     ],
   },
   {

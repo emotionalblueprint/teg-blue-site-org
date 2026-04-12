@@ -154,7 +154,7 @@ export default function M1EmotionsAsSignalsPage() {
           <ModelHero
             badge="MODEL M1"
             title="Emotions as Signals"
-            subtitle="The Signal Language"
+            subtitle="The Nervous System Language"
             description="Before a thought finishes forming, the body has already responded. The nervous system evaluates environmental conditions continuously — safety, threat, loss, connection — and generates a full physiological response in milliseconds. Heart rate shifts, hormones release, muscles brace or soften. These responses are emotions: biological signals carrying specific information about what was detected. This model maps what the nervous system evaluates, how each signal activates one of two ancient nervous system states, and what each emotion detects."
             coreQuestion="What is this signal telling me?"
             drawsFrom={[
@@ -834,7 +834,7 @@ export default function M1EmotionsAsSignalsPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/model/m1-emotions-as-signals#article",
-            headline: "Emotions as Signals: The Signal Language",
+            headline: "Emotions as Signals: The Nervous System Language",
             description:
               "Emotions mapped as biological signals — what each one detects, what the body does, and which nervous system state it activates. Model M1 of the TEG-Blue system.",
             author: {

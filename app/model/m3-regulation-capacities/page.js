@@ -35,7 +35,7 @@ export default function M3RegulationCapacitiesPage() {
       <SiteHeader currentPath="/model/m3-regulation-capacities" />
       <PageLayout
         header={
-          <ModelHero badge="MODEL M3" title="Regulation Capacities" subtitle="The Return Pathway"
+          <ModelHero badge="MODEL M3" title="Regulation Capacities" subtitle="The Biological Restoration the Nervous System Needs in Order to Restore Physiological Baseline"
             description="When the body mobilizes under stress — heart rate rises, stress hormones release, muscles brace — a biological sequence has started. The nervous system is designed to complete that sequence: cortisol metabolizes, muscles unclench, the body returns to rest. But completion is not guaranteed. When cognition overrides the signal and the sequence stays open, the activation accumulates — and the body begins searching for anything that produces the relief that completion would have provided. This model maps what completion looks like, what prevents it, and what the body does instead."
             coreQuestion="Did the body complete the restoration sequence — or is it still running?"
             drawsFrom={[
@@ -281,7 +281,7 @@ export default function M3RegulationCapacitiesPage() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": "https://teg-blue.org/model/m3-regulation-capacities#article",
-        headline: "Regulation Capacities: The Return Pathway",
+        headline: "Regulation Capacities: The Biological Restoration the Nervous System Needs in Order to Restore Physiological Baseline",
         description: "Whether the body completes what activation started — biological restoration or cognitive override. Model M3 of the TEG-Blue system.",
         author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://teg-blue.org/about" },
         publisher: { "@type": "Organization", name: "TEG-Blue Research", url: "https://teg-blue.org" },

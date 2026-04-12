@@ -85,7 +85,7 @@ export default function Image() {
               marginBottom: 32,
             }}
           >
-            Signal + State + Regulation + Perception
+            Detection → Emotional Signal → Nervous System State → Restoration or Incompletion
           </div>
 
           {/* Four model cards */}
@@ -103,7 +103,7 @@ export default function Image() {
             >
               <div style={{ fontSize: 11, fontWeight: 700, color: "#7ABAEB", marginBottom: 4, letterSpacing: "0.08em" }}>M1</div>
               <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Emotions as Signals</div>
-              <div style={{ fontSize: 12, color: "#7ABAEB" }}>The Signal Language</div>
+              <div style={{ fontSize: 12, color: "#7ABAEB" }}>The Nervous System Language</div>
             </div>
             <div
               style={{
@@ -118,7 +118,7 @@ export default function Image() {
             >
               <div style={{ fontSize: 11, fontWeight: 700, color: "#4A9BE8", marginBottom: 4, letterSpacing: "0.08em" }}>M2</div>
               <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Nervous System States</div>
-              <div style={{ fontSize: 12, color: "#4A9BE8" }}>The Instrument</div>
+              <div style={{ fontSize: 12, color: "#4A9BE8" }}>Physiological Reorganization</div>
             </div>
             <div
               style={{
@@ -133,7 +133,7 @@ export default function Image() {
             >
               <div style={{ fontSize: 11, fontWeight: 700, color: "#3B7DE5", marginBottom: 4, letterSpacing: "0.08em" }}>M3</div>
               <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 4 }}>Regulation Capacities</div>
-              <div style={{ fontSize: 12, color: "#3B7DE5" }}>The Return Pathway</div>
+              <div style={{ fontSize: 12, color: "#3B7DE5" }}>Biological Restoration</div>
             </div>
             <div
               style={{

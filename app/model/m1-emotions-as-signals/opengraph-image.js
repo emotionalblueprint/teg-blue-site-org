@@ -91,7 +91,7 @@ export default function Image() {
               marginBottom: "20px",
             }}
           >
-            The Signal Language
+            The Nervous System Language to Communicate with Us
           </div>
 
           {/* Description */}

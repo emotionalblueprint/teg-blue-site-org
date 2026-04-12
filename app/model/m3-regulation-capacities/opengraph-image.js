@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Return Pathway
+            The Biological Restoration the Nervous System Needs in Order to Restore Physiological Baseline
           </div>
         </div>
 

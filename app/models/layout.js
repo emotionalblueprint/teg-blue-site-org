@@ -1,7 +1,7 @@
 export const metadata = {
   title: "The Emotional Somatic System | TEG-Blue Research",
   description:
-    "Four foundational models: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration). Signal → State → Regulation → Perception.",
+    "Four foundational models: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (biological restoration), and Awareness Capacities (ESS awareness of CLS). Detection → Emotional Signal → Nervous System State → Restoration or Incompletion.",
   keywords: [
     "TEG-Blue models",
     "emotional somatic system",
@@ -22,7 +22,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/emotional-somatic-cycle",
   },
   openGraph: {
-    title: "The Emotional Somatic System — Signal + State + Regulation + Perception | TEG-Blue",
+    title: "The Emotional Somatic System — Detection → Emotional Signal → Nervous System State → Restoration or Incompletion | TEG-Blue",
     description:
       "Emotions as Signals (what the nervous system delivers), Nervous System States (what state it produces), Regulation Capacities (whether the cycle completes), and Awareness Capacities (whether the signal can be received). Four foundational models.",
     url: "https://teg-blue.org/emotional-somatic-cycle",
@@ -34,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "The Emotional Somatic System — TEG-Blue Research",
     description:
-      "Signal + State + Regulation + Perception. Four foundational models that make the nervous system's orientation visible and measurable.",
+      "Detection → Emotional Signal → Nervous System State → Restoration or Incompletion. Four foundational models that make the nervous system's orientation visible and measurable.",
   },
 };
 
@@ -45,7 +45,7 @@ export default function ModelsLayout({ children }) {
     name: "The Emotional Somatic System — TEG-Blue",
     url: "https://teg-blue.org/emotional-somatic-cycle",
     description:
-      "The four foundational models of TEG-Blue: Emotions as Signals (the signal language), Nervous System States (the instrument), Regulation Capacities (the return pathway), and Awareness Capacities (the calibration system).",
+      "The four foundational models of TEG-Blue: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (biological restoration), and Awareness Capacities (ESS awareness of CLS).",
     inLanguage: "en",
     isPartOf: {
       "@type": "ResearchProject",
