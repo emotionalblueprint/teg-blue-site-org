@@ -85,7 +85,7 @@ export default function Image() {
               marginBottom: 32,
             }}
           >
-            Signal + State + Regulation + Perception
+            Detection → Emotional Signal → Nervous System State → Restoration or Incompletion
           </div>
 
           {/* Four model cards */}
