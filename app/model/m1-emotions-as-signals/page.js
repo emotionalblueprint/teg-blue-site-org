@@ -236,10 +236,10 @@ export default function M1EmotionsAsSignalsPage() {
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 1: THE LANGUAGE                            */}
+          {/* PART 1: SAFETY-THREAT EVALUATION                  */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 1" title="The Language" color={MODEL_COLOR} />
+          <PartDivider label="PART 1" title="Safety-Threat Evaluation" color={MODEL_COLOR} />
 
           {/* ─── C0: EMOTION PRECEDES COGNITION ─────────── */}
           <section
@@ -359,10 +359,10 @@ export default function M1EmotionsAsSignalsPage() {
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 2: THE EVALUATION                          */}
+          {/* PART 2: EMOTIONAL SIGNAL GENERATION               */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 2" title="The Evaluation" color={MODEL_COLOR} />
+          <PartDivider label="PART 2" title="Emotional Signal Generation" color={MODEL_COLOR} />
 
           {/* ─── SAFETY-THREAT EVALUATION ──────────────── */}
           <section
@@ -469,10 +469,10 @@ export default function M1EmotionsAsSignalsPage() {
           </section>
 
           {/* ════════════════════════════════════════════════ */}
-          {/* PART 3: THE SIGNAL SYSTEM                       */}
+          {/* PART 3: THREAT SIGNALS AND SAFETY SIGNALS         */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 3" title="The Signal System" color={MODEL_COLOR} />
+          <PartDivider label="PART 3" title="Threat Signals and Safety Signals" color={MODEL_COLOR} />
 
           <p style={{ ...proseStyle, marginBottom: 8 }}>
             Each emotion below is mapped through the same architecture: what the nervous system detected, how the body responds, which state it activates, and what conditions resolve the activation. The somatic/relational distinction indicates whether the restoration pathway requires another person — this distinction is explored in depth in <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>.

@@ -150,7 +150,7 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 1: THE STATES */}
-          <PartDivider label="PART 1" title="The States" color={MODEL_COLOR} />
+          <PartDivider label="PART 1" title="Threat and Safety Nervous System States" color={MODEL_COLOR} />
 
           {/* C0: CORE SAFETY EVALUATION */}
           <section id="core-safety-evaluation" aria-labelledby="heading-cse" style={{ marginBottom: 48 }}>
@@ -253,7 +253,7 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 2: WHAT THE STATE DOES */}
-          <PartDivider label="PART 2" title="What the State Does" color={MODEL_COLOR} />
+          <PartDivider label="PART 2" title="Threat Extension States" color={MODEL_COLOR} />
 
           {/* C8: STATE DETERMINES CAPACITY */}
           <section id="state-determines-capacity" aria-labelledby="heading-sdc" style={{ marginBottom: 48 }}>
@@ -423,7 +423,7 @@ export default function M2NervousSystemStatesPage() {
           </section>
 
           {/* PART 3: WHEN STATES BECOME CHRONIC */}
-          <PartDivider label="PART 3" title="When States Become Chronic" color={MODEL_COLOR} />
+          <PartDivider label="PART 3" title="Chronic States" color={MODEL_COLOR} />
 
           {/* C11: STATES AS TEMPORARY */}
           <section id="states-as-temporary" aria-labelledby="heading-temp" style={{ marginBottom: 48 }}>
@@ -532,9 +532,6 @@ export default function M2NervousSystemStatesPage() {
 
             <M2ReinforcingLoop />
           </section>
-
-          {/* PART 4: TWO INFORMATION SYSTEMS */}
-          <PartDivider label="PART 4" title="Two Information Systems" color={MODEL_COLOR} />
 
           {/* C15: THE UNDERSTANDING-CHANGE GAP */}
           <section id="understanding-change-gap" aria-labelledby="heading-gap" style={{ marginBottom: 48 }}>

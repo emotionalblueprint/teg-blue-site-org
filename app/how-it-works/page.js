@@ -250,7 +250,7 @@ export default function HowItWorksPage() {
               color={SPECTRUM.azure}
               items={[
                 { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals", href: "/model/m1-emotions-as-signals" },
-                { label: "M2 — Nervous System States", detail: "What the system does: the instrument, the modes, the observable compass", href: "/model/m2-nervous-system-states" },
+                { label: "M2 — Nervous System States", detail: "What the system does: physiological reorganization, the modes, the observable compass", href: "/model/m2-nervous-system-states" },
                 { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires", href: "/model/m3-regulation-capacities" },
                 { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)", href: "/model/m4-awareness-capacities" },
               ]}

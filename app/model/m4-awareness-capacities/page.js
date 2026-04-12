@@ -34,7 +34,7 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <li style={propositionItemStyle}>The chain feeds itself in both directions. Degradation amplifies degradation. Restoration amplifies restoration.</li>
 </ul></ModelPurpose></section>
 
-<PartDivider label="PART 1" title="What Awareness Runs On" color={MODEL_COLOR} />
+<PartDivider label="PART 1" title="Interoceptive Access vs Interoceptive No Access" color={MODEL_COLOR} />
 
 <section id="architecture-of-empathy" aria-labelledby="heading-ae" style={{ marginBottom: 48 }}><h2 id="heading-ae" style={sectionHeadingStyle(MODEL_COLOR)}>The Architecture of Empathy</h2>
 <p style={proseStyle}>Some people read others with precision — they identify emotional states in the room before anyone has spoken. The same people may have no access to what they themselves are feeling.</p>
@@ -65,7 +65,7 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <p style={{ ...proseStyle, fontFamily: FONT.mono, fontSize: 12, color: TEXT.muted, padding: "12px 16px", background: hexToRgba(MODEL_COLOR, 0.06), borderRadius: 6, lineHeight: 1.8 }}>Interoceptive substrate → Interoceptive access → Which capacities can function → What data reaches the CLS → What the CLS builds → Whether override is visible or invisible → Whether the restoration sequence can be observed</p>
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Craig (2002, 2009) — interoceptive accuracy as measurable. Khalsa et al. (2018) — interoceptive accuracy distinct from sensibility. van der Kolk (2014) — chronic stress reducing interoceptive access. Porges (2011) — ventral vagal suppression.</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>Interoceptive access as the single upstream variable. The degradation order: ER first (highest substrate demand), then SEA. RE unaffected.</p></ExpandableSection></div></section>
 
-<PartDivider label="PART 2" title="The Three Capacities" color={MODEL_COLOR} />
+<PartDivider label="PART 2" title="Interpersonal Affect Perception (RE)" color={MODEL_COLOR} />
 
 <section id="interpersonal-affect-perception" aria-labelledby="heading-re" style={{ marginBottom: 48 }}><h2 id="heading-re" style={sectionHeadingStyle(MODEL_COLOR)}>Interpersonal Affect Perception (RE)</h2>
 <p style={proseStyle}>RE is the capacity to identify what other people are feeling through observable signals. A CLS capacity on the external observation substrate. Two-stage: rapid automatic reading (amygdala, milliseconds) + deliberate integration (prefrontal cortex, context).</p>
@@ -74,12 +74,16 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <p style={proseStyle}>A person with strong RE can identify what every person in the room is feeling. This tells you nothing about whether they can feel what those people are feeling (ER). And nothing about whether they can identify what they themselves are feeling (SEA).</p>
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Baron-Cohen (2003) — cognitive empathy as distinct and dissociable. LeDoux (1996) — amygdala processing before conscious awareness. Shamay-Tsoory et al. (2009) — double dissociation.</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>RE as a CLS capacity on the external observation substrate — explaining why it survives and sharpens. RE sharpens not despite the loss of the other channels but because of it.</p></ExpandableSection></div></section>
 
+<PartDivider label="PART 3" title="Affective Resonance (ER)" color={MODEL_COLOR} />
+
 <section id="affective-resonance" aria-labelledby="heading-er" style={{ marginBottom: 48 }}><h2 id="heading-er" style={sectionHeadingStyle(MODEL_COLOR)}>Affective Resonance (ER)</h2>
 <p style={proseStyle}>ER is the capacity to feel what other people are feeling — not reading from outside, but experiencing a version of it in one{"'"}s own body. An ESS capacity on the interoceptive substrate. The body resonates before any decision or interpretation occurs.</p>
 <p style={proseStyle}>Most fragile of the three. Degrades first and most completely — because it places the greatest demands on the interoceptive substrate (cross-body translation).</p>
 <p style={proseStyle}>The boundary between self and other is not maintained by ER alone. That boundary requires SEA functioning simultaneously. When SEA is absent, ER has no anchor — and what appears as deep empathy may be structural merger.</p>
 <p style={proseStyle}>The difference between RE and ER is not degree. It is kind. RE identifies: {"\u201C"}this person is afraid.{"\u201D"} ER produces: the body generates a version of that fear. One is information. The other is experience.</p>
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Singer & Klimecki (2014) — empathic distress vs compassion. Porges (2011) — ventral vagal pathways suppressed under threat. Schore (2003) — right-brain relational regulation.</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>ER as an ESS capacity — explaining its fragility. The boundary between self and other maintained by SEA, not by ER itself.</p></ExpandableSection></div></section>
+
+<PartDivider label="PART 4" title="Interoceptive Self-Awareness (SEA)" color={MODEL_COLOR} />
 
 <section id="interoceptive-self-awareness" aria-labelledby="heading-sea" style={{ marginBottom: 48 }}><h2 id="heading-sea" style={sectionHeadingStyle(MODEL_COLOR)}>Interoceptive Self-Awareness (SEA)</h2>
 <p style={proseStyle}>SEA occupies a structurally unique position. It operates through the interoceptive substrate but does something neither RE nor ER can do: it connects the two systems. When the bridge is open, the CLS knows what the ESS is doing. When the bridge is closed, the CLS continues operating with no awareness that the ESS is running a sequence underneath.</p>
@@ -90,8 +94,6 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <div style={expandableRowStyle}><ExpandableSection title="Research Foundations" type="opendata"><p style={expandedProseStyle}>Craig (2002) — interoceptive awareness as substrate of self-awareness. Damasio (1999) — self-referential emotional processing. Lane & Schwartz (1987) — levels of emotional awareness. Schore (2003) — right-hemisphere self-regulatory development.</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>SEA as the bridge between the two systems. The family lineage: substrate as parent, ER and SEA as two applications. The SEA → ER developmental direction.</p></ExpandableSection></div></section>
 
 <M4AwarenessDiagram />
-
-<PartDivider label="PART 3" title="What the Chain Determines" color={MODEL_COLOR} />
 
 <section id="what-sea-determines" aria-labelledby="heading-wsd" style={{ marginBottom: 48 }}><h2 id="heading-wsd" style={sectionHeadingStyle(MODEL_COLOR)}>What Self-Awareness Determines</h2>
 <p style={proseStyle}>SEA is the only capacity that connects the two systems. This connection — or its absence — determines five things:</p>

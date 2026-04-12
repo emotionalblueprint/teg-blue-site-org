@@ -75,7 +75,7 @@ export default function M3RegulationCapacitiesPage() {
             </ModelPurpose>
           </section>
 
-          <PartDivider label="PART 1" title="The Restoration Pathway" color={MODEL_COLOR} />
+          <PartDivider label="PART 1" title="Biological Restoration" color={MODEL_COLOR} />
 
           <section id="what-restoration-is" aria-labelledby="heading-r" style={{ marginBottom: 48 }}>
             <h2 id="heading-r" style={sectionHeadingStyle(MODEL_COLOR)}>What Restoration Is</h2>
@@ -133,7 +133,7 @@ export default function M3RegulationCapacitiesPage() {
             </div>
           </section>
 
-          <PartDivider label="PART 2" title="The Branching Point" color={MODEL_COLOR} />
+          <PartDivider label="PART 2" title="Cognitive Override" color={MODEL_COLOR} />
 
           <section id="cognitive-override" aria-labelledby="heading-override" style={{ marginBottom: 48 }}>
             <h2 id="heading-override" style={sectionHeadingStyle(MODEL_COLOR)}>Cognitive Override</h2>
@@ -152,8 +152,6 @@ export default function M3RegulationCapacitiesPage() {
               <ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>Cognitive override identified as the specific branching point. Somatic debt as the named cost of sustained override. The M2+M3 connection: state filters reality, override blocks the correction signal. The three-condition distinction: from acute activation (an event) vs from chronic activation (the architecture).</p></ExpandableSection>
             </div>
           </section>
-
-          <PartDivider label="PART 3" title="What Happens Instead" color={MODEL_COLOR} />
 
           <section id="incomplete-restoration" aria-labelledby="heading-inc" style={{ marginBottom: 48 }}>
             <h2 id="heading-inc" style={sectionHeadingStyle(MODEL_COLOR)}>Incomplete Biological Restoration</h2>
@@ -230,8 +228,6 @@ export default function M3RegulationCapacitiesPage() {
               <ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>The unified restoration substitute mechanism — substances, physical intensity, work, screens, self-soothing, and domination as the same biological search at different intensity levels.</p></ExpandableSection>
             </div>
           </section>
-
-          <PartDivider label="PART 4" title="Where It Leads" color={MODEL_COLOR} />
 
           <section id="relational-escalation" aria-labelledby="heading-rse" style={{ marginBottom: 48 }}>
             <h2 id="heading-rse" style={sectionHeadingStyle(MODEL_COLOR)}>Relational Substitute Escalation</h2>

@@ -269,7 +269,7 @@ const GROUPS = [
     slug: "individual",
     label: "Individual",
     range: "F1–F3",
-    description: "The instrument. How the nervous system evaluates safety, how it calibrates through development, and how cognition steps in when the return path is missing.",
+    description: "The biological architecture. How the nervous system evaluates safety, how it calibrates through development, and how cognition steps in when the return path is missing.",
   },
   {
     key: "Collective",
