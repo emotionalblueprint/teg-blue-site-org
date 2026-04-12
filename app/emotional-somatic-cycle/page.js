@@ -119,6 +119,14 @@ export default function EmotionalSomaticCyclePage() {
       >
 
         {/* ════════════════════════════════════════════════════
+            INTERACTIVE CYCLE DIAGRAM (the circle walkthrough)
+            ════════════════════════════════════════════════════ */}
+
+        <section style={{ marginBottom: 48 }}>
+          <ESCCycleDiagram />
+        </section>
+
+        {/* ════════════════════════════════════════════════════
             INTRO + NARRATIVE WALKTHROUGH
             ════════════════════════════════════════════════════ */}
 
@@ -168,13 +176,7 @@ export default function EmotionalSomaticCyclePage() {
           </p>
         </section>
 
-        {/* ════════════════════════════════════════════════════
-            INTERACTIVE CYCLE DIAGRAM
-            ════════════════════════════════════════════════════ */}
-
-        <section style={{ marginBottom: 48 }}>
-          <ESCCycleDiagram />
-        </section>
+        {/* (ESCCycleDiagram moved to top of page, after hero) */}
 
         {/* ════════════════════════════════════════════════════
             STEP-BY-STEP FLOW DIAGRAM

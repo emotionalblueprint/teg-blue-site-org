@@ -17,7 +17,7 @@ import { FONT, DIAGRAM, hexToRgba } from "../styles/tokens";
 const BLUE   = DIAGRAM.primary;
 const ORANGE = DIAGRAM.break;
 
-const R = 176;
+const R = 140;
 const C = 2 * Math.PI * R; // circumference ≈ 1106.0
 
 // ─── SCENE DATA ───────────────────────────────────────
@@ -35,7 +35,7 @@ const PATH_A = [
     arrs: [],
   },
   {
-    ey: "Stage 1 · M1 · Emotions as Signals",
+    ey: "Stage 1",
     ti: "Safety-Threat Evaluation",
     de: "Five sensory channels feed in simultaneously below conscious awareness. The amygdala fires in 12ms. A full evaluation completes before the CLS has assembled a single thought.",
     arc: 55,
@@ -46,8 +46,8 @@ const PATH_A = [
     arrs: [],
   },
   {
-    ey: "Stage 2 · M1 · Emotions as Signals",
-    ti: "Signal Generation",
+    ey: "Stage 2",
+    ti: "Emotional Signal Generation",
     de: "The nervous system generates a physiological response pattern — hormonal, neurochemical, muscular — encoding a finding about what was detected. Each pattern is distinct. This is what the nervous system produces as an emotion.",
     arc: 100,
     fillB: 0,
@@ -57,8 +57,8 @@ const PATH_A = [
     arrs: [],
   },
   {
-    ey: "Stage 3 · M2 · Nervous System States",
-    ti: "State Activation",
+    ey: "Stage 3",
+    ti: "Nervous System State Activation",
     de: "The nervous system reorganises into a different physiological configuration. Perception narrows or widens. Cognitive flexibility shifts. The body configures itself for what the evaluation determined the situation requires.",
     arc: 145,
     fillB: 0,
@@ -68,8 +68,8 @@ const PATH_A = [
     arrs: [],
   },
   {
-    ey: "Branching Point · M4 · Awareness Capacities",
-    ti: "The Branching Point",
+    ey: "Stage 4 · Branching Point",
+    ti: "Interoceptive Access",
     de: "The CLS catches up. Whether the interoceptive channel is open — whether it can feel what the ESS is doing — determines everything that follows. This is the fork between Path A and Path B.",
     arc: 180,
     fillB: 0,
@@ -79,7 +79,7 @@ const PATH_A = [
     arrs: ["arr-a"],
   },
   {
-    ey: "Stage 4 · M3 · Regulation Capacities · Path A",
+    ey: "Stage 5 · Path A",
     ti: "Mobilisation Response",
     de: "The mobilised physiological resources are expended — through movement, action, expression, or holding. The body does what the activation mobilised it to do. Stress hormones deployed are used. Muscle tension discharged.",
     arc: 232,
@@ -90,7 +90,7 @@ const PATH_A = [
     arrs: ["arr-a"],
   },
   {
-    ey: "Stage 5 · M3 · Regulation Capacities · Path A",
+    ey: "Stage 6 · Path A",
     ti: "Biological Restoration",
     de: "The restoration sequence runs to its endpoint. Stress hormones metabolise. Muscles release. The HPA axis stands down. Neural circuits recover. The nervous system returns toward physiological baseline.",
     arc: 290,
@@ -126,7 +126,7 @@ const PATH_B = [
     arrs: [],
   },
   {
-    ey: "Stage 1 · M1 · Emotions as Signals",
+    ey: "Stage 1",
     ti: "Safety-Threat Evaluation",
     de: "Five sensory channels feed in simultaneously. Identical to Path A at this stage. The amygdala fires in 12ms. The divergence has not yet happened.",
     arc: 55,
@@ -137,8 +137,8 @@ const PATH_B = [
     arrs: [],
   },
   {
-    ey: "Stage 2 · M1 · Emotions as Signals",
-    ti: "Signal Generation",
+    ey: "Stage 2",
+    ti: "Emotional Signal Generation",
     de: "The nervous system generates the same physiological response pattern. The biological message is identical. The divergence comes later — at the point where the CLS tries to receive it.",
     arc: 100,
     fillB: 0,
@@ -148,8 +148,8 @@ const PATH_B = [
     arrs: [],
   },
   {
-    ey: "Stage 3 · M2 · Nervous System States",
-    ti: "State Activation",
+    ey: "Stage 3",
+    ti: "Nervous System State Activation",
     de: "The nervous system reorganises into a different physiological configuration. Identical to Path A. The CLS is about to catch up — and what it finds determines the path.",
     arc: 145,
     fillB: 0,
@@ -159,8 +159,8 @@ const PATH_B = [
     arrs: [],
   },
   {
-    ey: "Branching Point · M4 · Awareness Capacities",
-    ti: "The Branching Point — No Bridge",
+    ey: "Stage 4 · Branching Point",
+    ti: "No Interoceptive Access",
     de: "The CLS catches up and cannot feel what the ESS is doing. The interoceptive channel is absent. There is no bridge between the two information systems.",
     arc: 180,
     fillB: 0,
@@ -170,7 +170,7 @@ const PATH_B = [
     arrs: ["arr-b"],
   },
   {
-    ey: "Stage 4 · M3 · Regulation Capacities · Path B",
+    ey: "Stage 7 · Path B",
     ti: "Cognitive Override",
     de: "The CLS overrides the ESS's physiological signals. It manages, plans, pushes through — without registering the physiological activation as information. The override runs without being experienced as override.",
     arc: 180,
@@ -181,7 +181,7 @@ const PATH_B = [
     arrs: ["arr-b"],
   },
   {
-    ey: "Stage 5 · M3 · Regulation Capacities · Path B",
+    ey: "Stages 8–11 · Path B",
     ti: "The Cascade",
     de: "The restoration sequence does not run. Debris accumulates. The baseline shifts upward. The nervous system searches for anything that produces the neurochemical shift that biological completion would have provided.",
     arc: 180,
@@ -198,8 +198,8 @@ const PATH_B = [
     arrs: ["arr-b"],
   },
   {
-    ey: "Path B · Elevated Baseline",
-    ti: "Baseline Elevation",
+    ey: "Stage 12 · Path B",
+    ti: "Elevated Baseline",
     de: "The nervous system adapts its resting activation level upward to reflect the unresolved load. The floor rises. States requiring lower activation become physiologically inaccessible. The cycle repeats from a higher floor.",
     arc: 0,
     fillB: 1,
@@ -212,17 +212,32 @@ const PATH_B = [
 
 // ─── COMPONENT ────────────────────────────────────────
 
+// All element IDs that should be visible in the overview frame
+const OVERVIEW_IDS = [
+  "d0", "d1", "d2", "d3", "d4r", "d4f", "d5", "d6",
+  "ln0", "ln1", "ln2", "ln3", "ln4", "ln4b", "ln5", "ln6",
+  "lbl0", "lbl1", "lbl2", "lbl3", "lbl-ba", "lbl5", "lbl6",
+  "arr-a",
+];
+
 export default function ESCCycleDiagram() {
   const [activePath, setActivePath] = useState("A");
   const [sceneIdx, setSceneIdx] = useState(0);
+  const [started, setStarted] = useState(false);
 
   const scenes = activePath === "A" ? PATH_A : PATH_B;
   const scene = scenes[sceneIdx];
-  const isOrange = activePath === "B" && sceneIdx >= 4;
-  const arcLength = (scene.arc / 360) * C;
+  const isOrange = started && activePath === "B" && sceneIdx >= 4;
+  const arcLength = started ? (scene.arc / 360) * C : C;
 
   const switchPath = (p) => {
     setActivePath(p);
+    setSceneIdx(0);
+    setStarted(true);
+  };
+
+  const startCycle = () => {
+    setStarted(true);
     setSceneIdx(0);
   };
 
@@ -235,6 +250,7 @@ export default function ESCCycleDiagram() {
     const handler = (e) => {
       if (e.key === "ArrowRight" || e.key === " ") {
         e.preventDefault();
+        if (!started) { startCycle(); return; }
         step(1);
       } else if (e.key === "ArrowLeft") {
         e.preventDefault();
@@ -248,9 +264,10 @@ export default function ESCCycleDiagram() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activePath, scenes.length]);
+  }, [activePath, scenes.length, started]);
 
   const visible = (id) => {
+    if (!started) return OVERVIEW_IDS.includes(id) ? 1 : 0;
     if ((scene.dots || []).includes(id)) return 1;
     if ((scene.lines || []).includes(id)) return 1;
     if ((scene.lbls || []).includes(id)) return 1;
@@ -271,8 +288,8 @@ export default function ESCCycleDiagram() {
         padding: "22px 38px 18px",
         maxWidth: 1080,
         margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
+        height: 540,
+        overflow: "hidden",
       }}
     >
       {/* ── HEADER ─────────────────────────────────────── */}
@@ -296,7 +313,7 @@ export default function ESCCycleDiagram() {
               marginBottom: 3,
             }}
           >
-            TEG-Blue · M1 + M2 + M3 + M4
+            TEG-Blue
           </div>
           <div
             style={{
@@ -306,24 +323,45 @@ export default function ESCCycleDiagram() {
               color: DIAGRAM.white,
             }}
           >
-            Emotional Somatic Cycle
+            The Emotional Somatic Cycle
           </div>
         </div>
 
-        <div style={{ display: "flex", border: `1px solid ${DIAGRAM.divider}` }}>
-          <PathButton
-            label="Path A"
-            active={activePath === "A"}
-            path="A"
-            onClick={() => switchPath("A")}
-          />
-          <PathButton
-            label="Path B"
-            active={activePath === "B"}
-            path="B"
-            onClick={() => switchPath("B")}
-            borderLeft
-          />
+        <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+          {!started && (
+            <button
+              onClick={startCycle}
+              style={{
+                padding: "5px 14px",
+                fontFamily: FONT.diagram,
+                fontSize: 9,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                background: hexToRgba(BLUE, 0.15),
+                color: BLUE,
+                border: `1px solid ${hexToRgba(BLUE, 0.4)}`,
+                cursor: "pointer",
+                transition: "all 0.2s",
+              }}
+            >
+              Start Cycle
+            </button>
+          )}
+          <div style={{ display: "flex", border: `1px solid ${DIAGRAM.divider}` }}>
+            <PathButton
+              label="Path A"
+              active={activePath === "A"}
+              path="A"
+              onClick={() => switchPath("A")}
+            />
+            <PathButton
+              label="Path B"
+              active={activePath === "B"}
+              path="B"
+              onClick={() => switchPath("B")}
+              borderLeft
+            />
+          </div>
         </div>
       </header>
 
@@ -333,14 +371,13 @@ export default function ESCCycleDiagram() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "16px 0",
-          minHeight: 0,
+          padding: "4px 0",
         }}
       >
         <svg
-          viewBox="0 0 880 500"
+          viewBox="0 60 880 420"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ width: "100%", height: "auto", maxWidth: 920 }}
+          style={{ width: "100%", height: 380, maxWidth: 920 }}
         >
           {/* Orange fill — Path B cascade */}
           <circle
@@ -376,84 +413,84 @@ export default function ESCCycleDiagram() {
             style={{ transition: "stroke-dasharray 0.88s cubic-bezier(.4,0,.2,1)" }}
           />
 
-          {/* ── DOTS ── */}
-          <circle cx="440" cy="79" r="4" fill={DIAGRAM.white} opacity={visible("d0")} />
-          <circle cx="584" cy="157" r="3.5" fill={DIAGRAM.white} opacity={visible("d1")} />
-          <circle cx="614" cy="285" r="3.5" fill={DIAGRAM.white} opacity={visible("d2")} />
-          <circle cx="540" cy="399" r="3.5" fill={DIAGRAM.white} opacity={visible("d3")} />
-          <circle cx="440" cy="431" r="8.5" fill="none" stroke={branchDotFill} strokeWidth="1.5" opacity={visible("d4r")} />
-          <circle cx="440" cy="431" r="4" fill={branchDotFill} opacity={visible("d4f")} />
-          <circle cx="302" cy="366" r="3.5" fill={DIAGRAM.white} opacity={visible("d5")} />
-          <circle cx="266" cy="218" r="3.5" fill={DIAGRAM.white} opacity={visible("d6")} />
+          {/* ── DOTS (R=140, center 440,255) ── */}
+          <circle cx="440" cy="115" r="5.5" fill={DIAGRAM.white} opacity={visible("d0")} />
+          <circle cx="555" cy="175" r="5" fill={DIAGRAM.white} opacity={visible("d1")} />
+          <circle cx="578" cy="279" r="5" fill={DIAGRAM.white} opacity={visible("d2")} />
+          <circle cx="520" cy="370" r="5" fill={DIAGRAM.white} opacity={visible("d3")} />
+          <circle cx="440" cy="395" r="10" fill="none" stroke={branchDotFill} strokeWidth="2" opacity={visible("d4r")} />
+          <circle cx="440" cy="395" r="5" fill={branchDotFill} opacity={visible("d4f")} />
+          <circle cx="330" cy="341" r="5" fill={DIAGRAM.white} opacity={visible("d5")} />
+          <circle cx="308" cy="207" r="5" fill={DIAGRAM.white} opacity={visible("d6")} />
 
           {/* ── CONNECTOR LINES ── */}
-          <line x1="440" y1="75"  x2="440" y2="53"  stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln0")} />
-          <line x1="588" y1="157" x2="618" y2="152" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln1")} />
-          <line x1="618" y1="285" x2="650" y2="285" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln2")} />
-          <line x1="544" y1="399" x2="572" y2="411" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln3")} />
-          <line x1="440" y1="440" x2="440" y2="455" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln4")} />
-          <line x1="440" y1="469" x2="440" y2="482" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln4b")} />
-          <line x1="298" y1="366" x2="265" y2="370" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln5")} />
-          <line x1="262" y1="218" x2="228" y2="220" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("ln6")} />
-          <line x1="288" y1="157" x2="240" y2="157" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln1")} />
-          <line x1="263" y1="213" x2="240" y2="213" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln2")} />
-          <line x1="264" y1="270" x2="240" y2="270" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln3")} />
-          <line x1="273" y1="327" x2="240" y2="327" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln4")} />
-          <line x1="310" y1="384" x2="240" y2="384" stroke={DIAGRAM.connectorFine} strokeWidth=".5" opacity={visible("b-ln5")} />
+          <line x1="440" y1="109" x2="440" y2="93"  stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln0")} />
+          <line x1="559" y1="173" x2="589" y2="170" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln1")} />
+          <line x1="582" y1="277" x2="614" y2="279" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln2")} />
+          <line x1="524" y1="372" x2="552" y2="382" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln3")} />
+          <line x1="440" y1="405" x2="440" y2="419" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln4")} />
+          <line x1="440" y1="433" x2="440" y2="446" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln4b")} />
+          <line x1="325" y1="341" x2="293" y2="345" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln5")} />
+          <line x1="303" y1="207" x2="270" y2="209" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("ln6")} />
+          <line x1="318" y1="170" x2="270" y2="170" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("b-ln1")} />
+          <line x1="305" y1="205" x2="270" y2="205" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("b-ln2")} />
+          <line x1="302" y1="252" x2="270" y2="252" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("b-ln3")} />
+          <line x1="310" y1="302" x2="270" y2="302" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("b-ln4")} />
+          <line x1="335" y1="352" x2="270" y2="352" stroke={DIAGRAM.connector} strokeWidth="1" opacity={visible("b-ln5")} />
 
           {/* ── LABELS ── */}
-          <text x="440" y="46" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl0")}>
+          <text x="440" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl0")}>
             Physiological Baseline
           </text>
-          <text x="440" y="46" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={hexToRgba(ORANGE, 0.95)} opacity={visible("lbl0b")}>
-            Baseline Elevation
+          <text x="440" y="86" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={hexToRgba(ORANGE, 0.95)} opacity={visible("lbl0b")}>
+            Elevated Baseline
           </text>
 
-          <text x="625" y="155" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl1")}>
-            Safety-Threat Evaluation (M1)
+          <text x="595" y="173" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl1")}>
+            Safety-Threat Evaluation
           </text>
-          <text x="657" y="289" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl2")}>
-            Signal Generation (M1)
+          <text x="620" y="283" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl2")}>
+            Emotional Signal Generation
           </text>
-          <text x="578" y="413" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl3")}>
-            State Activation (M2)
-          </text>
-
-          <text x="440" y="465" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill={DIAGRAM.textBody} opacity={visible("lbl-ba")}>
-            ESS — CLS  Bridge
-          </text>
-          <text x="440" y="465" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill={hexToRgba(ORANGE, 0.9)} opacity={visible("lbl-bb")}>
-            ESS — CLS  NO Bridge
+          <text x="558" y="384" textAnchor="start" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl3")}>
+            Nervous System State Activation
           </text>
 
-          <polygon points="435,480 445,480 440,488" fill={hexToRgba(DIAGRAM.white, 0.55)} opacity={visible("arr-a")} />
-          <polygon points="435,480 445,480 440,488" fill={hexToRgba(ORANGE, 0.65)} opacity={visible("arr-b")} />
+          <text x="440" y="429" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill={DIAGRAM.textBody} opacity={visible("lbl-ba")}>
+            Interoceptive Access
+          </text>
+          <text x="440" y="429" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="10" fontWeight="500" fill={hexToRgba(ORANGE, 0.9)} opacity={visible("lbl-bb")}>
+            No Interoceptive Access
+          </text>
 
-          <text x="440" y="494" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="9.5" fontWeight="300" fill={DIAGRAM.breakDim} opacity={visible("lbl-ov")}>
+          <polygon points="433,442 447,442 440,454" fill={hexToRgba(DIAGRAM.white, 0.7)} opacity={visible("arr-a")} />
+          <polygon points="433,442 447,442 440,454" fill={hexToRgba(ORANGE, 0.8)} opacity={visible("arr-b")} />
+
+          <text x="440" y="462" textAnchor="middle" fontFamily="'IBM Plex Mono',monospace" fontSize="9.5" fontWeight="300" fill={DIAGRAM.breakDim} opacity={visible("lbl-ov")}>
             Cognitive Override
           </text>
 
-          <text x="260" y="372" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl5")}>
-            Mobilisation Response (M3)
+          <text x="288" y="347" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl5")}>
+            Mobilisation Response
           </text>
-          <text x="222" y="222" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl6")}>
-            Biological Restoration (M3)
+          <text x="264" y="211" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("lbl6")}>
+            Biological Restoration
           </text>
 
-          <text x="235" y="160" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb1")}>
+          <text x="265" y="172" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb1")}>
             Temporary Relief
           </text>
-          <text x="235" y="216" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb2")}>
+          <text x="265" y="207" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb2")}>
             Restoration Substitutes
           </text>
-          <text x="235" y="273" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb3")}>
-            Debris Accumulation
+          <text x="265" y="254" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb3")}>
+            Load Accumulation (Debris)
           </text>
-          <text x="235" y="330" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb4")}>
+          <text x="265" y="304" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb4")}>
             Unresolved Activation Load
           </text>
-          <text x="235" y="387" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb5")}>
-            Incomplete Restoration
+          <text x="265" y="354" textAnchor="end" fontFamily="'IBM Plex Mono',monospace" fontSize="10.5" fontWeight="300" fill={DIAGRAM.textStrong} opacity={visible("b-lb5")}>
+            Elevated Baseline
           </text>
         </svg>
       </div>
@@ -462,14 +499,13 @@ export default function ESCCycleDiagram() {
       <footer
         style={{
           flexShrink: 0,
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-          gap: 20,
+          position: "relative",
           paddingTop: 5,
+          height: 80,
+          visibility: started ? "visible" : "hidden",
         }}
       >
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ maxWidth: 490 }}>
           <div
             style={{
               fontSize: 9,
@@ -477,10 +513,9 @@ export default function ESCCycleDiagram() {
               color: DIAGRAM.textMuted,
               textTransform: "uppercase",
               marginBottom: 4,
-              minHeight: 13,
             }}
           >
-            {scene.ey || ""}
+            {scene.ey || "\u00A0"}
           </div>
           <div
             style={{
@@ -488,7 +523,6 @@ export default function ESCCycleDiagram() {
               fontWeight: 500,
               letterSpacing: "0.01em",
               marginBottom: 4,
-              minHeight: 22,
               color: DIAGRAM.white,
             }}
           >
@@ -500,8 +534,6 @@ export default function ESCCycleDiagram() {
               fontWeight: 300,
               color: DIAGRAM.textStrong,
               lineHeight: 1.65,
-              maxWidth: 490,
-              minHeight: 30,
             }}
           >
             {scene.de}
@@ -510,11 +542,13 @@ export default function ESCCycleDiagram() {
 
         <div
           style={{
+            position: "absolute",
+            right: 0,
+            bottom: 0,
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-end",
             gap: 9,
-            flexShrink: 0,
           }}
         >
           <div
