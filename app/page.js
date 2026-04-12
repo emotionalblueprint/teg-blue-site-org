@@ -412,7 +412,7 @@ export default function ResearchHub() {
                 label="1 — Measurement"
                 title="Four Foundational Models"
                 description="Emotions as Signals (M1) maps what the nervous system delivers. Nervous System States (M2) maps where the nervous system is pointing. Regulation Capacities (M3) describes the body's designed return path. Awareness Capacities (M4) explain how accurately it reads — and what goes offline when it gets stuck."
-                href="/models"
+                href="/emotional-somatic-cycle"
                 linkText="Core Models →"
               />
               <PartCard

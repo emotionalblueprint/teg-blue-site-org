@@ -669,7 +669,7 @@ export default function EmotionalSomaticSystemPage() {
 
           <p style={proseStyle}>
             Whether the CLS can feel what the ESS is doing — whether it can receive the physiological signals the ESS has generated — determines everything that follows. This is the central question the{" "}
-            <Link href="/models" style={linkStyle}>Emotional Somatic Cycle</Link> maps.
+            <Link href="/emotional-somatic-cycle" style={linkStyle}>Emotional Somatic Cycle</Link> maps.
           </p>
         </section>
 
@@ -691,7 +691,7 @@ export default function EmotionalSomaticSystemPage() {
           </h2>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <Link href="/models" style={{
+            <Link href="/emotional-somatic-cycle" style={{
               ...linkStyle,
               display: "block",
               padding: "14px 20px",

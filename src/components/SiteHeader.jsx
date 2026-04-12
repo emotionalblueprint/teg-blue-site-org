@@ -31,9 +31,9 @@ const NAV_ITEMS = [
   { label: "Emotional Somatic System", href: "/emotional-somatic-system" },
   {
     label: "Emotional Somatic Cycle",
-    href: "/models",
+    href: "/emotional-somatic-cycle",
     children: [
-      { label: "The Cycle (ESC)", href: "/models" },
+      { label: "The Cycle (ESC)", href: "/emotional-somatic-cycle" },
       { label: "M1 — Emotions as Signals", href: "/model/m1-emotions-as-signals" },
       { label: "M2 — Nervous System States", href: "/model/m2-nervous-system-states" },
       { label: "M3 — Regulation Capacities", href: "/model/m3-regulation-capacities" },

@@ -1297,7 +1297,7 @@ export default function GlossaryPage() {
 
         {/* Cross-site link */}
         <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 16 }}>
-          <Link href="/models" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+          <Link href="/emotional-somatic-cycle" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
             The Emotional Somatic Cycle →
           </Link>
           <Link href="/frameworks-map" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>

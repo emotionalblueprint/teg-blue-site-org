@@ -254,7 +254,7 @@ export default function HowItWorksPage() {
                 { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires", href: "/model/m3-regulation-capacities" },
                 { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)", href: "/model/m4-awareness-capacities" },
               ]}
-              href="/models"
+              href="/emotional-somatic-cycle"
               linkText="See the four models →"
             />
           </div>
@@ -570,7 +570,7 @@ export default function HowItWorksPage() {
               </thead>
               <tbody>
                 <NavRow label="See what the system contains" href="/foundations" linkText="System Overview →" />
-                <NavRow label="Explore the four models" href="/models" linkText="The Emotional Somatic System →" />
+                <NavRow label="Explore the four models" href="/emotional-somatic-cycle" linkText="The Emotional Somatic System →" />
                 <NavRow label="See the twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="Review research methods" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Read the evidence" href="/publications" linkText="Publications →" />

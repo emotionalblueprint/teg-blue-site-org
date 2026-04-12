@@ -357,7 +357,7 @@ export default function EmotionalTechnologyPage() {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
-              href="/models"
+              href="/emotional-somatic-cycle"
               style={{
                 padding: "12px 24px",
                 background: SPECTRUM.blue,

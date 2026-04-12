@@ -163,7 +163,7 @@ export default function FoundationsPage() {
               gap: 12,
             }}
           >
-            <PartIntroCard number={1} title="Measurement" subtitle="Four Foundational Models" color={SPECTRUM.azure} href="/models" />
+            <PartIntroCard number={1} title="Measurement" subtitle="Four Foundational Models" color={SPECTRUM.azure} href="/emotional-somatic-cycle" />
             <PartIntroCard number={2} title="Explanatory" subtitle="12 Frameworks" color={SPECTRUM.cobalt} href="/frameworks-map" />
             <PartIntroCard number={3} title="Emotional Tools" subtitle="Applied Instruments" color={SPECTRUM.indigo} href="https://teg-blue.com/emotional-tools" external />
             <PartIntroCard number={4} title="AI Safety" subtitle="Structured Schemas" color={SPECTRUM.slate} href="/ai-safety" />
@@ -187,7 +187,7 @@ export default function FoundationsPage() {
             </ul>
             <StatusBadge status="Proposed models with early evidence" color={SPECTRUM.azure} />
             <div style={{ marginTop: 16 }}>
-              <Link href="/models" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
+              <Link href="/emotional-somatic-cycle" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
                 See all four models →
               </Link>
             </div>
@@ -412,7 +412,7 @@ export default function FoundationsPage() {
               </thead>
               <tbody>
                 <NavRow label="See how the system is built" href="/how-it-works" linkText="How It Works →" />
-                <NavRow label="Go deeper into the four models" href="/models" linkText="The Emotional Somatic System →" />
+                <NavRow label="Go deeper into the four models" href="/emotional-somatic-cycle" linkText="The Emotional Somatic System →" />
                 <NavRow label="See all twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
                 <NavRow label="See the mechanics in action" href="/mechanics-of-phenomena" linkText="Mechanics →" />
                 <NavRow label="Review the evidence" href="/publications" linkText="Publications →" />
