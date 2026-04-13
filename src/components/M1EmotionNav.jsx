@@ -7,8 +7,8 @@ const SAFETY_COLOR = '#a0cdfb';
 const THREAT_COLOR = '#6fabf8';
 
 const GROUPS = [
-  { key: 'safety', label: 'Safety & Openness', anchor: 'safety-openness', color: SAFETY_COLOR },
-  { key: 'threat', label: 'Threat & Defence', anchor: 'threat-defence', color: THREAT_COLOR },
+  { key: 'somatic', label: 'Somatic Signals', anchor: 'somatic-signals', color: SAFETY_COLOR },
+  { key: 'relational', label: 'Relational Signals', anchor: 'relational-signals', color: THREAT_COLOR },
 ];
 
 export default function M1EmotionNav() {

@@ -139,8 +139,8 @@ const SIDEBAR_SECTIONS = [
   { label: "Detection", href: "#detection", description: "The evaluation concludes. A specific condition is identified." },
   { label: "Signal Generation", href: "#signal-generation", description: "The detection becomes a physiological event." },
   { label: "The Speed", href: "#the-speed", description: "12 milliseconds vs 300 milliseconds. The body responds before thought arrives." },
-  { label: "Safety & Openness", href: "#safety-openness", description: "Signals generated when conditions support safety, connection, or approach." },
-  { label: "Threat & Defence", href: "#threat-defence", description: "Signals generated when conditions indicate danger, violation, loss, or contamination." },
+  { label: "Somatic Signals", href: "#somatic-signals", description: "Signals that tell the nervous system to respond with the body — can complete through the body's own channels." },
+  { label: "Relational Signals", href: "#relational-signals", description: "Signals that tell the nervous system to respond through connection — require another person for completion." },
 ];
 
 // ─── PAGE ──────────────────────────────────────────────────
@@ -231,10 +231,13 @@ export default function M1EmotionsAsSignalsPage() {
                 Each detection produces a specific signal — a full physiological response pattern carrying information about what was found. The signal reaches the body at 12 milliseconds. Cognition reaches the cortex at 300 milliseconds. The body responds before thought arrives.
               </li>
               <li style={propositionItemStyle}>
-                Signals divide into two groups: safety signals and threat signals. Within each group, the detection carries nuance — boundary violation, loss, contamination, connection, belonging — but the primary axis is safety or threat.
+                Signals divide into two groups based on what they tell the nervous system to do: somatic signals (respond with the body) and relational signals (respond through connection). This determines the restoration pathway.
               </li>
               <li style={propositionItemStyle}>
                 Somatic signals can complete through the body{"'"}s own channels. Relational signals require another person as a biological completion requirement — not a psychological preference.
+              </li>
+              <li style={propositionItemStyle}>
+                Relational signals that detect risk — shame, guilt, loneliness, disappointment, sadness, grief — are designed as connection signals. They distort into threat signals when interoceptive access is absent.
               </li>
               <li style={propositionItemStyle}>
                 When a signal cannot be received, it does not disappear — it distorts. The finding is the same. What changes is what the person experiences.
@@ -512,29 +515,59 @@ export default function M1EmotionsAsSignalsPage() {
           {/* PART 3: THREAT SIGNALS AND SAFETY SIGNALS         */}
           {/* ════════════════════════════════════════════════ */}
 
-          <PartDivider label="PART 3" title="Threat Signals and Safety Signals" color={MODEL_COLOR} />
+          <PartDivider label="PART 3" title="Somatic Signals and Relational Signals" color={MODEL_COLOR} />
 
           <p style={{ ...proseStyle, marginBottom: 8 }}>
-            Each signal below is mapped through the same architecture: what the nervous system detected, how the body responds, and what conditions resolve the activation. The somatic/relational distinction indicates whether the restoration pathway requires another person — this is a structural constraint of the signal system, explored in depth in <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>. How the body reorganizes into a sustained nervous system state after the signal is generated is the territory of <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>.
+            Each signal below is mapped through the same architecture: what the nervous system detected, how the body responds, and what conditions resolve the activation. How the body reorganises into a sustained nervous system state after the signal is generated is the territory of <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>. Whether the restoration sequence completes or remains unresolved is the territory of <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>.
           </p>
 
           <M1EmotionNav />
 
-          {/* ─── C6: SAFETY & OPENNESS VS THREAT & DEFENCE ── */}
+          {/* ─── C6: SOMATIC VS RELATIONAL SIGNALS ── */}
           <section style={{ marginBottom: 48 }}>
             <p style={proseStyle}>
-              The signals the nervous system generates divide into two groups based on what the evaluation detected.
+              The signals the nervous system generates divide into two groups based on what the signal tells the nervous system to do.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: SAFETY_COLOR }}>Safety {"&"} Openness signals</strong> are generated when the evaluation concludes that conditions support safety, connection, or approach. The physiological response pattern is characteristic: muscles soften, breathing deepens, the social engagement system activates, and the body opens toward approach and exploration.
+              <strong style={{ color: SAFETY_COLOR }}>Somatic signals</strong> tell the nervous system to respond with the body. The detection is about conditions in the physical environment. Somatic signals can complete through the body{"'"}s own channels. Restoration does not require another person.
             </p>
+            <ul style={{ paddingLeft: 20, margin: "8px 0 20px", fontSize: 14, lineHeight: 1.8, color: TEXT.secondary }}>
+              <li>Joy — safety confirmed</li>
+              <li>Happiness — sustained positive condition</li>
+              <li>Admiration — value detected in another</li>
+              <li>Pride — own value recognised</li>
+              <li>Fear — threat detected</li>
+              <li>Anger — boundary crossed</li>
+              <li>Stress — demands exceed resources</li>
+              <li>Anxiety — anticipatory threat</li>
+              <li>Frustration — action blocked</li>
+              <li>Resentment — accumulated unresolved boundary violations</li>
+              <li>Disgust — contamination detected</li>
+              <li>Contempt — other evaluated as beneath engagement</li>
+              <li>Confusion — cannot process current information</li>
+            </ul>
             <p style={proseStyle}>
-              <strong style={{ color: THREAT_COLOR }}>Threat {"&"} Defence signals</strong> are generated when the evaluation concludes that conditions indicate danger, violation, loss, contamination, or risk to belonging. The physiological response pattern is characteristic: heart rate rises, stress hormones release, muscles brace, and sensory filtering narrows toward the source of threat. Energy redirects from exploration and connection toward defence, withdrawal, or expulsion.
+              <strong style={{ color: THREAT_COLOR }}>Relational signals</strong> detect conditions in the belonging field. The detection is about whether belonging is present, at risk, ruptured, or absent. Relational signals require another person for completion — not as a psychological preference but as a biological design constraint.
+            </p>
+            <ul style={{ paddingLeft: 20, margin: "8px 0 20px", fontSize: 14, lineHeight: 1.8, color: TEXT.secondary }}>
+              <li>Love — belonging is present</li>
+              <li>Trust — belonging is confirmed in a specific person</li>
+              <li>Gratitude — belonging was reinforced</li>
+              <li>Compassion — belonging extends to the other{"'"}s experience</li>
+              <li>Shame — belonging is at risk</li>
+              <li>Guilt — belonging was ruptured by harm</li>
+              <li>Loneliness — belonging is absent</li>
+              <li>Disappointment — belonging was expected but not delivered</li>
+              <li>Sadness — belonging was lost</li>
+              <li>Grief — belonging is permanently gone</li>
+            </ul>
+            <p style={proseStyle}>
+              Relational signals that detect risk or absence — shame, guilt, loneliness, disappointment, sadness, grief — are designed as connection signals. Each was designed to complete through relational contact, operating from Safety {"&"} Openness. Whether these signals stay connection signals or become threat signals depends on interoceptive access (<Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link>). When interoceptive access is present, the person registers the signal as information and the body opens toward repair. When it is absent, the nervous system escalates to Threat {"&"} Defence — the signal distorts from a connection signal into a threat signal.
             </p>
           </section>
 
           {/* ─── SAFETY & OPENNESS ──────────────────────── */}
-          <section id="safety-openness" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
+          <section id="somatic-signals" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
             <h2 style={{
               ...sectionHeadingStyle(SAFETY_COLOR),
               display: "flex",
@@ -545,10 +578,10 @@ export default function M1EmotionsAsSignalsPage() {
                 width: 10, height: 10, borderRadius: "50%",
                 background: SAFETY_COLOR, display: "inline-block", flexShrink: 0,
               }} />
-              Safety {"&"} Openness
+              Somatic Signals
             </h2>
             <p style={proseStyle}>
-              When the evaluation concludes that conditions support safety, connection, or approach, the parasympathetic branch engages. Muscles soften, breathing deepens, the social engagement system activates, and the body opens toward approach and exploration.
+              Somatic signals tell the nervous system to respond with the body. The detection is about conditions in the physical environment. The body{"'"}s own channels — movement, breathing, crying, sleep, temperature — can complete the restoration sequence without requiring another person.
             </p>
           </section>
 
@@ -615,88 +648,11 @@ export default function M1EmotionsAsSignalsPage() {
           />
 
           <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: SAFETY_COLOR, marginBottom: 8, marginTop: 32 }}>
-            Bonding {"&"} Proximity — orientation toward the other
-          </p>
-
-          <EmotionSection
-            id="love"
-            name="Love"
-            signal="Bond"
-            bodySignature="Oxytocin releases, warmth, pull toward closeness — the co-regulation circuit activates, the body orients toward the other."
-            mechanism="Love is the signal generated when the nervous system detects a meaningful bond — present, real, and experienced in the body. The organism orients toward closeness, warmth, reciprocity, and co-regulated contact. Oxytocin mediates the approach — not as a feeling of affection but as the activation of the co-regulation circuitry that makes sustained proximity possible. The signal is relational in content: what was detected is something between two people, not a condition of the body alone."
-            activates="Safety & Openness"
-            activatesColor={SAFETY_COLOR}
-            restorationType="Relational"
-            restorationDetail="Reciprocity — the signal received and returned through genuine felt presence, not performance"
-            research="Bowlby (1969) — attachment as a primary biological system requiring reciprocity. Panksepp (1998) — CARE system as primary emotional circuit. Uvnas-Moberg (2003) — oxytocin and the calm-and-connection system. Coan (2008) — social baseline theory."
-            tegBlueAdds="Love mapped as a relational signal requiring reciprocity for completion. The co-regulation circuit is the mechanism — oxytocin is not the feeling of love but the neurochemical substrate that enables sustained proximity. When the bond is one-sided, unavailable, or instrumentalised, the restoration sequence remains incomplete."
-          />
-
-          <EmotionSection
-            id="trust"
-            name="Trust"
-            signal="Safety confirmed in a specific person"
-            bodySignature="Guard-dropping — vagal tone shifts, body moves from monitoring to open contact, muscles around eyes and throat soften."
-            mechanism="Trust is the signal generated when repeated evidence indicates that a particular person is safe enough to lower defensive monitoring around. The body shifts from scanning to openness — muscles soften, guarding decreases, and the nervous system reallocates energy from vigilance to contact. Trust is not a decision. It is a physiological shift: the body has accumulated enough evidence to change its monitoring posture around a specific person. It builds slowly through consistent evidence and collapses rapidly when violated."
-            activates="Safety & Openness"
-            activatesColor={SAFETY_COLOR}
-            restorationType="Relational"
-            restorationDetail="Reciprocity — openness met with equivalent openness, consistent evidence over time"
-            research="Rempel, Holmes & Zanna (1985) — trust as a relationship-specific construct building through repeated interactions. Kosfeld, Heinrichs, Zak, Fischbacher & Fehr (2005) — oxytocin and trust."
-            tegBlueAdds="Trust mapped as a person-specific safety evaluation, not a general disposition. The body changes its monitoring posture around a specific person — this is a physiological shift, not a cognitive decision. The asymmetry between building (slow, evidence-dependent) and collapse (fast, single-violation) reflects the nervous system's threat-detection bias."
-          />
-
-          <EmotionSection
-            id="gratitude"
-            name="Gratitude"
-            signal="Something needed was received"
-            bodySignature="Warmth, orientation toward the other, brief vulnerability in receiving — the body opens toward the source with the settling of something received."
-            mechanism="Gratitude is the signal generated when a needed resource, gesture, or act of care has been received. The body orients toward the source — warmth, relational approach, and a brief increase in receptive vulnerability. The signal is relational: something was given, and the receiving is a two-person event. Gratitude completes through acknowledgment that reaches the other person — not as performance but as genuine contact with what was received. Gratitude felt but unexpressed stays partially open."
-            activates="Safety & Openness"
-            activatesColor={SAFETY_COLOR}
-            restorationType="Relational"
-            restorationDetail="Expression that reaches the other person — not performance but genuine contact with what was received"
-            research="Emmons & McCullough (2003) — gratitude as a relational emotion strengthening social bonds. Algoe (2012) — find, remind, and bind theory of gratitude."
-            tegBlueAdds="Gratitude mapped as a signal requiring expression for completion — felt gratitude that is not expressed stays partially open. The vulnerability of receiving is the mechanism: the body opens to take something in, and the signal completes when acknowledgment returns to the giver."
-          />
-
-          <EmotionSection
-            id="compassion"
-            name="Compassion"
-            signal="The other's state resonates, calls for approach"
-            bodySignature="Movement toward the other — body orients, approaches, reaches. Resonance with the other's state while maintaining boundary."
-            mechanism="Compassion is the signal generated when another person's suffering is detected and registers as relevant. The body orients toward approach and care — not fusion, not absorption, but contact with the other's state while maintaining self-other differentiation. The mechanism requires resonance (the other's state is felt in one's own body) and boundary (the person remains in their own physiological state while feeling what the other is experiencing). Compassion that absorbs — where the boundary dissolves — does not complete for either person."
-            activates="Safety & Openness"
-            activatesColor={SAFETY_COLOR}
-            restorationType="Relational"
-            restorationDetail="Contact with the other's state without absorption — present with what the other is feeling while remaining in one's own body"
-            research="Singer & Klimecki (2014) — compassion vs empathic distress as distinct neural and experiential states. Goetz, Keltner & Simon-Thomas (2010) — compassion as a distinct affective state orienting toward care. Neff (2003) — self-compassion."
-            tegBlueAdds="Compassion mapped as a signal requiring maintained boundary during resonance. The resonance-boundary distinction separates compassion (sustainable, restorative) from empathic distress (absorptive, depleting). The mechanism requires two capacities: feeling the other's state (resonance) and remaining in one's own body (boundary)."
-          />
-
-
-          {/* ─── THREAT & DEFENCE ───────────────────────── */}
-          <section id="threat-defence" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
-            <h2 style={{
-              ...sectionHeadingStyle(THREAT_COLOR),
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-            }}>
-              <span style={{
-                width: 10, height: 10, borderRadius: "50%",
-                background: THREAT_COLOR, display: "inline-block", flexShrink: 0,
-              }} />
-              Threat {"&"} Defence
-            </h2>
-            <p style={proseStyle}>
-              When the evaluation concludes that conditions indicate danger, violation, loss, contamination, or risk to belonging, the sympathetic branch activates. Heart rate rises, stress hormones release, muscles brace, and sensory filtering narrows toward the source of threat. Energy redirects from exploration and connection toward defence, withdrawal, or expulsion.
-            </p>
-          </section>
-
-          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
             Mobilization — sympathetic activation, energy rises
           </p>
+
+
+
 
           <EmotionSection
             id="fear"
@@ -814,64 +770,166 @@ export default function M1EmotionsAsSignalsPage() {
             tegBlueAdds="Contempt mapped as a distinct signal from disgust — both reject, but the mechanism differs. Disgust expels (visceral, nausea, closure). Contempt withdraws engagement (cold, dismissive, distancing). Gottman's finding that contempt predicts relational breakdown more reliably than any other signal aligns with the signal architecture: contempt removes the conditions under which relational restoration can occur."
           />
 
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: SAFETY_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Processing pause — slowing, freeze-adjacent, energy turns inward
+          </p>
+
+          <EmotionSection
+            id="confusion"
+            name="Confusion"
+            signal="Cannot process current information"
+            bodySignature="The body slows and turns inward. Cognitive processing loops. A freeze-adjacent quality — partial withdrawal from engagement while the system attempts to process."
+            mechanism="Confusion is the signal generated when the nervous system detects that incoming information cannot be organized into a coherent evaluation. The data is contradictory, incomplete, or exceeds the system's current processing capacity. The safety-threat evaluation cannot conclude — the system cannot determine whether conditions are safe or threatening. Attention narrows inward rather than toward a specific external source. The body signals that action should be paused until the information becomes readable."
+            activates="Somatic"
+            activatesColor={SAFETY_COLOR}
+            restorationType="Somatic"
+            restorationDetail="Space and time to process — engagement reduced until the data becomes readable"
+            research="Festinger (1957) — cognitive dissonance as the state produced by contradictory information. Schwartz (2004) — the paradox of choice: information overload degrading decision capacity. Kagan (2002) — uncertainty as a primary source of distress in development."
+            tegBlueAdds="Confusion mapped as a somatic signal — not a cognitive failure but a nervous system detection that current information cannot be processed. The body's response (slow down, withdraw, pause action) is protective: rushing through confusion — forcing a conclusion before the evaluation can complete — may produce a false evaluation. The signal is telling the system to take space and time."
+          />
+
+
+          {/* ─── RELATIONAL SIGNALS ─────────────────────── */}
+          <section id="relational-signals" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
+            <h2 style={{
+              ...sectionHeadingStyle(THREAT_COLOR),
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+            }}>
+              <span style={{
+                width: 10, height: 10, borderRadius: "50%",
+                background: THREAT_COLOR, display: "inline-block", flexShrink: 0,
+              }} />
+              Relational Signals
+            </h2>
+            <p style={proseStyle}>
+              Relational signals tell the nervous system to respond through connection. The detection is about conditions in the relational field — bond, belonging, harm, absence, loss. These signals require another person for completion: not as a psychological preference but as a biological design constraint. The nervous system evolved to complete relational activation through co-regulation.
+            </p>
+          </section>
+
           <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
-            Social Withdrawal — shrinking, heat, pull inward
+            Bonding {"&"} Proximity — orientation toward the other
+          </p>
+
+          <EmotionSection
+            id="love"
+            name="Love"
+            signal="Belonging is present"
+            bodySignature="Oxytocin releases, warmth, pull toward closeness — the co-regulation circuit activates, the body orients toward the other."
+            mechanism="Love is the signal generated when the nervous system detects a meaningful bond — present, real, and experienced in the body. The organism orients toward closeness, warmth, reciprocity, and co-regulated contact. Oxytocin mediates the approach — not as a feeling of affection but as the activation of the co-regulation circuitry that makes sustained proximity possible. The signal is relational in content: what was detected is something between two people, not a condition of the body alone."
+            activates="Relational"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="Reciprocity — the signal received and returned through genuine felt presence, not performance"
+            research="Bowlby (1969) — attachment as a primary biological system requiring reciprocity. Panksepp (1998) — CARE system as primary emotional circuit. Uvnas-Moberg (2003) — oxytocin and the calm-and-connection system. Coan (2008) — social baseline theory."
+            tegBlueAdds="Love mapped as a relational signal requiring reciprocity for completion. The co-regulation circuit is the mechanism — oxytocin is not the feeling of love but the neurochemical substrate that enables sustained proximity. When the bond is one-sided, unavailable, or instrumentalised, the restoration sequence remains incomplete."
+          />
+
+          <EmotionSection
+            id="trust"
+            name="Trust"
+            signal="Belonging confirmed in a specific person"
+            bodySignature="Guard-dropping — vagal tone shifts, body moves from monitoring to open contact, muscles around eyes and throat soften."
+            mechanism="Trust is the signal generated when repeated evidence indicates that a particular person is safe enough to lower defensive monitoring around. The body shifts from scanning to openness — muscles soften, guarding decreases, and the nervous system reallocates energy from vigilance to contact. Trust is not a decision. It is a physiological shift: the body has accumulated enough evidence to change its monitoring posture around a specific person. It builds slowly through consistent evidence and collapses rapidly when violated."
+            activates="Relational"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="Reciprocity — openness met with equivalent openness, consistent evidence over time"
+            research="Rempel, Holmes & Zanna (1985) — trust as a relationship-specific construct building through repeated interactions. Kosfeld, Heinrichs, Zak, Fischbacher & Fehr (2005) — oxytocin and trust."
+            tegBlueAdds="Trust mapped as a person-specific safety evaluation, not a general disposition. The body changes its monitoring posture around a specific person — this is a physiological shift, not a cognitive decision. The asymmetry between building (slow, evidence-dependent) and collapse (fast, single-violation) reflects the nervous system's threat-detection bias."
+          />
+
+          <EmotionSection
+            id="gratitude"
+            name="Gratitude"
+            signal="Belonging was reinforced"
+            bodySignature="Warmth, orientation toward the other, brief vulnerability in receiving — the body opens toward the source with the settling of something received."
+            mechanism="Gratitude is the signal generated when a needed resource, gesture, or act of care has been received. The body orients toward the source — warmth, relational approach, and a brief increase in receptive vulnerability. The signal is relational: something was given, and the receiving is a two-person event. Gratitude completes through acknowledgment that reaches the other person — not as performance but as genuine contact with what was received. Gratitude felt but unexpressed stays partially open."
+            activates="Relational"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="Expression that reaches the other person — not performance but genuine contact with what was received"
+            research="Emmons & McCullough (2003) — gratitude as a relational emotion strengthening social bonds. Algoe (2012) — find, remind, and bind theory of gratitude."
+            tegBlueAdds="Gratitude mapped as a signal requiring expression for completion — felt gratitude that is not expressed stays partially open. The vulnerability of receiving is the mechanism: the body opens to take something in, and the signal completes when acknowledgment returns to the giver."
+          />
+
+          <EmotionSection
+            id="compassion"
+            name="Compassion"
+            signal="Belonging extends to the other's experience"
+            bodySignature="Movement toward the other — body orients, approaches, reaches. Resonance with the other's state while maintaining boundary."
+            mechanism="Compassion is the signal generated when another person's suffering is detected and registers as relevant. The body orients toward approach and care — not fusion, not absorption, but contact with the other's state while maintaining self-other differentiation. The mechanism requires resonance (the other's state is felt in one's own body) and boundary (the person remains in their own physiological state while feeling what the other is experiencing). Compassion that absorbs — where the boundary dissolves — does not complete for either person."
+            activates="Relational"
+            activatesColor={THREAT_COLOR}
+            restorationType="Relational"
+            restorationDetail="Contact with the other's state without absorption — present with what the other is feeling while remaining in one's own body"
+            research="Singer & Klimecki (2014) — compassion vs empathic distress as distinct neural and experiential states. Goetz, Keltner & Simon-Thomas (2010) — compassion as a distinct affective state orienting toward care. Neff (2003) — self-compassion."
+            tegBlueAdds="Compassion mapped as a signal requiring maintained boundary during resonance. The resonance-boundary distinction separates compassion (sustainable, restorative) from empathic distress (absorptive, depleting). The mechanism requires two capacities: feeling the other's state (resonance) and remaining in one's own body (boundary)."
+          />
+
+          <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
+            Connection signals — designed to repair, seek, or witness
+          </p>
+
+          <p style={proseStyle}>
+            Each signal below was designed to complete through relational contact, operating from Safety {"&"} Openness. When interoceptive access is present, the person registers the signal as information and the body opens toward repair or seeking. When interoceptive access is absent, the nervous system escalates to Threat {"&"} Defence — the signal distorts from a connection signal into a threat signal.
           </p>
 
           <EmotionSection
             id="shame"
             name="Shame"
-            signal="Belonging at risk"
-            bodySignature="Withdrawal, shrinking, heat, desire to disappear — the body contracts, gaze averts, the social survival signal fires."
-            mechanism="Shame is the signal generated when the nervous system detects that belonging is at risk — the self is experienced as at risk of rejection, exclusion, or social devaluation. The body contracts: heat, shrinking, gaze aversion, and the urge to hide or disappear. This is a social survival signal — in ancestral environments, exclusion from the group was a death sentence, and the nervous system responds to belonging-at-risk with the urgency of a physical threat. Shame is relational in content: the signal is about what is happening between the person and the group, not about the body's own state."
-            activates="Threat & Defence"
+            signal="Belonging is at risk"
+            bodySignature="Heat, shrinking, gaze aversion, the body contracts and makes itself smaller — vasodilation to skin surface (the blush). Mixed autonomic when distorted into threat."
+            mechanism={"Shame is the signal generated when the nervous system detects that belonging is at risk. Its designed function is appeasement and repair — the body makes itself smaller, averts gaze, shows vulnerability. These are visible signals to the group: \"I know something went wrong, I'm not a threat, please don't exclude me.\" Designed to operate from Safety & Openness, with the body opening toward the other for repair. When the other person stays, belonging is confirmed, and the signal completes. When interoceptive access is absent, the content — \"I might lose belonging\" — hits the threat evaluation without being processed as readable information. The nervous system escalates to Threat & Defence. Now the body runs two contradictory programs: the signal says collapse, hide, make smaller (appeasement) while the state says mobilise, brace, defend (threat). The pain of shame as commonly experienced is this conflict — not the original signal."}
+            activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
             restorationDetail="Another person who stays — present without contempt after seeing the thing that feels shameful. That staying is the biological signal the restoration pathway needs."
             research="Schore (2003) — shame as a primary regulatory affect requiring relational processing. Tangney & Dearing (2002) — shame vs guilt as distinct self-conscious emotions. Brown (2006) — shame resilience requiring relational connection."
-            tegBlueAdds="Shame mapped as a relational signal (belonging at risk) that cannot complete through somatic channels. No amount of breathing resolves shame — the restoration sequence requires another person to stay. This structural constraint explains why shame is the most treatment-resistant emotional signal: the restoration pathway requires the very thing the signal makes the person want to avoid — being seen."
+            tegBlueAdds="Shame identified as a connection signal designed to complete through relational repair from Safety & Openness — not a threat signal. The pain of shame is the distortion: the signal and the threat state running in opposite autonomic directions simultaneously. The distortion occurs when interoceptive access is absent and the content hits the threat evaluation raw. This explains why shame is the most biologically expensive emotional signal — the body is fighting itself."
           />
 
           <EmotionSection
             id="guilt"
             name="Guilt"
-            signal="Harm done"
+            signal="Belonging was ruptured by harm"
             bodySignature="Weight or tension in the chest, restlessness, pull toward repair — the nervous system generates sustained discomfort that orients toward the person who was affected."
-            mechanism="Guilt is the signal generated when the nervous system detects that one's behaviour has negatively affected another person. A weight or tension in the chest, restlessness, and orientation toward the person who was affected. The signal is corrective — it generates sustained discomfort that pulls toward acknowledgment and repair. Guilt is distinct from shame: shame signals belonging at risk (about the self), while guilt signals harm done (about the behaviour and its impact on another). Cognitive acknowledgment without embodied repair may leave the signal unresolved."
-            activates="Threat & Defence"
+            mechanism={"Guilt is the signal generated when the nervous system detects that one's behaviour has negatively affected another person. Its designed function is repair — the body orients toward the person who was affected, generating sustained discomfort that pulls toward acknowledgment and action. Designed to operate from Safety & Openness, with the body moving toward the other to restore the bond. When repair occurs, the signal completes. When interoceptive access is absent, the content — \"I did harm\" — hits the threat evaluation. The signal says approach, repair, go toward the other. The state says defend, escape, protect. The weight, the churning, the self-punishment — that is the conflict between the designed function (repair) and the threat state (defence)."}
+            activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
             restorationDetail="Acknowledgment of impact, genuine repair, and the other person's experience felt in the body — not just cognitively registered"
             research="Tangney & Dearing (2002) — guilt as behaviour-focused self-conscious emotion. Baumeister, Stillwell & Heatherton (1994) — guilt as relational regulator. Koenigs et al. (2007) — vmPFC damage and impaired guilt processing."
-            tegBlueAdds="Guilt mapped as a relational corrective signal — what was detected is the impact of behaviour on another person. The distinction between cognitive acknowledgment (knowing harm was done) and embodied repair (the other person's experience felt in the body) explains why apologies that are technically correct but somatically empty leave both parties unsettled."
+            tegBlueAdds="Guilt identified as a repair signal designed to complete through relational contact — the body moving toward the other to restore the bond. The distortion occurs when the repair signal hits a threat state: the approach-avoidance conflict (repair vs self-protection) produces the characteristic weight and self-punishment. Cognitive acknowledgment without embodied repair leaves the signal open."
           />
 
           <EmotionSection
             id="loneliness"
             name="Loneliness"
-            signal="Connection absent"
+            signal="Belonging is absent"
             bodySignature="The body contracts and pulls inward. Cortisol rises, sleep architecture degrades, immune function suppresses. A characteristic ache — a felt absence that is physiological, not just psychological."
-            mechanism="Loneliness is the signal generated when the nervous system detects that meaningful connection is absent. Not solitude — which can be safe — but the evaluation that the relational environment does not contain the contact the system requires. The social engagement system remains active — scanning for connection — but the scanning finds nothing. The body is oriented toward contact that is not available. Proximity without felt connection does not resolve the signal — the body distinguishes between being around people and being in connection."
-            activates="Threat & Defence"
+            mechanism={"Loneliness is the signal generated when the nervous system detects that meaningful connection is absent. Its designed function is seeking — the body orients toward others, scanning for someone safe and available. Designed to drive approach from Safety & Openness. When genuine connection is found, the signal completes. When interoceptive access is absent, the content — \"I am alone\" — hits the threat evaluation. The signal says seek, approach, find connection. The state says defend, withdraw, protect. The person is biologically driven toward connection while physiologically mobilised against approach. This is why loneliness isolates — the signal drives seeking while the state makes approach feel dangerous."}
+            activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
             restorationDetail="Genuine connection — not proximity, not performance, but felt relational contact where the nervous system registers another person as safe and available"
             research="Cacioppo & Patrick (2008) — loneliness as a biological signal with distinct physiological consequences (cortisol, immune function, sleep). Hawkley & Cacioppo (2010) — loneliness and health: mechanisms and interventions. Holt-Lunstad, Smith & Layton (2010) — social relationships and mortality risk."
-            tegBlueAdds="Loneliness mapped as a distinct signal from sadness — both withdraw, but the detection differs. Sadness detects loss (something valued has ended). Loneliness detects absence (connection is not available). The body distinguishes between grieving what was lost and aching for what is not present. The physiological consequences — cortisol elevation, immune suppression, degraded sleep — position loneliness as a threat signal with measurable biological cost."
+            tegBlueAdds="Loneliness identified as a seeking signal designed to drive approach — not a withdrawal signal. The isolation loneliness produces is the distortion: the seeking signal running inside a threat state that makes approach feel dangerous. The body distinguishes between proximity and connection — being around people does not resolve the signal."
           />
 
           <EmotionSection
             id="disappointment"
             name="Disappointment"
-            signal="Trustworthiness evaluation failed"
+            signal="Belonging was expected but not delivered"
             bodySignature="The body withdraws — energy turns inward, posture drops, engagement decreases. A characteristic deflation distinct from sadness's conservation."
-            mechanism="Disappointment is the signal generated when something or someone that was expected to deliver did not. The nervous system registers that a condition, person, or outcome evaluated as reliable has failed the evaluation. The body had oriented toward something expected, and the expectation collapsed. The social engagement system partially disengages from the source. Disappointment is distinct from sadness: sadness detects loss, disappointment detects unreliability."
-            activates="Threat & Defence"
+            mechanism={"Disappointment is the signal generated when something or someone that was expected to deliver did not. Its designed function is recalibration — updating expectations from Safety & Openness. Either the source re-proves trustworthiness through new evidence, or expectations adjust to match reality. When recalibration occurs, the signal completes. When interoceptive access is absent, the failed evaluation generalises — distrust spreads beyond the source. Deflation (the signal) and mobilisation (the threat state) run simultaneously."}
+            activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
             restorationDetail="Updated evaluation — the source proves trustworthy through new evidence, or expectations recalibrate to match what the source can actually deliver"
             research="van Dijk & Zeelenberg (2002) — disappointment as outcome-related emotion distinct from regret. Bell (1985) — disappointment and decision theory. Zeelenberg, van Dijk, Manstead & van der Pligt (2000) — disappointment as distinct from other negative emotions."
-            tegBlueAdds="Disappointment mapped as a trustworthiness signal — what was detected is not loss but unreliability. The distinction changes what the signal is asking for: sadness asks for presence with what was lost, disappointment asks for updated evaluation of what can be trusted. When neither occurs, the body carries the failed evaluation forward and may generalize the distrust."
+            tegBlueAdds="Disappointment identified as a recalibration signal designed to update trustworthiness evaluations. The distortion occurs when the failed evaluation generalises — distrust spreads beyond the source because the content was not processed as specific information but as a general threat."
           />
 
           <p style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: THREAT_COLOR, marginBottom: 8, marginTop: 32 }}>
@@ -881,43 +939,29 @@ export default function M1EmotionsAsSignalsPage() {
           <EmotionSection
             id="sadness"
             name="Sadness"
-            signal="Loss"
+            signal="Belonging was lost"
             bodySignature="Activity slows, energy turns inward, tears, heaviness, withdrawal — the body enters conservation mode."
-            mechanism="Sadness is the signal generated when the nervous system detects that something valued has ended, is absent, or is no longer available. Activity slows, energy turns inward, and the body enters a conservation state — reducing output, withdrawing from engagement, and directing resources toward processing what was lost. Tears are part of the discharge mechanism. Sadness is relational in content: loss is about what was between — a person, a condition, a connection — and the restoration process requires presence with what was lost, not a solution to it."
-            activates="Threat & Defence"
+            mechanism={"Sadness is the signal generated when the nervous system detects that something valued has ended, is absent, or is no longer available. Its designed function is witnessing — the body enters conservation (slowing, tears, energy inward), designed to operate from Safety & Openness in the presence of someone who holds the loss without fixing it. The tears are part of the discharge mechanism (lacrimal-vagal pathway). When someone stays present with the loss, the signal completes. When interoceptive access is absent, the content hits the threat evaluation. The signal says slow down, yield, let someone be with this. The state says mobilise, brace, act. The autonomic conflict is strong — sadness is parasympathetic while Threat & Defence is sympathetic."}
+            activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
-            restorationDetail="The presence of someone who stays with the loss without trying to resolve it. Time and space support the process, but restoration requires relational evidence — someone present with what was lost."
+            restorationDetail="The presence of someone who stays with the loss without trying to resolve it. Restoration requires relational evidence — someone present with what was lost."
             research="Bowlby (1980) — grief as attachment behaviour. Panksepp (1998) — GRIEF/PANIC system as primary emotional circuit. Stroebe & Schut (1999) — dual process model of bereavement."
-            tegBlueAdds="Sadness mapped as a relational signal (loss) requiring presence without fixing. The tears are part of the discharge mechanism — interrupting sadness prevents restoration. The restoration pathway does not require the loss to be resolved (it cannot be). It requires another person to be present with what was lost."
+            tegBlueAdds="Sadness identified as a witnessing signal designed to complete through relational presence — not a withdrawal signal. The tears are part of the biological discharge mechanism. Interrupting sadness prevents restoration. The restoration pathway does not require the loss to be resolved. It requires another person to be present with what was lost."
           />
 
           <EmotionSection
             id="grief"
             name="Grief"
-            signal="Loss that is ongoing or unresolvable"
+            signal="Belonging is permanently gone"
             bodySignature="Deep conservation — activity slows profoundly, waves of activation alternate with periods of numbness. Sympathetic spikes occur when the loss is re-detected."
-            mechanism="Grief is the signal generated when a loss does not end. The nervous system continues to detect the absence of something or someone that was deeply bonded, and the detection recurs because the loss is permanent or unresolvable. Grief has a characteristic oscillation that sadness does not: the nervous system moves between active processing (tears, ache, seeking) and shutdown (numbness, withdrawal, depletion). Sympathetic spikes occur when the loss is re-detected — a face in a crowd, a sound, a context that the body still associates with the person or condition that is gone."
-            activates="Threat & Defence"
+            mechanism={"Grief is the signal generated when a loss does not end. Its designed function is accompaniment — the body enters deep conservation, oscillating between active processing and shutdown, designed to be sustained in the presence of someone who stays over time. Grief has a characteristic oscillation that sadness does not: active processing (tears, ache, seeking) alternating with shutdown (numbness, withdrawal, depletion). When accompaniment is present, the nervous system gradually reorganises around the absence. When interoceptive access is absent, the waves of re-detection keep hitting the threat evaluation. The oscillation between parasympathetic depths and sympathetic spikes is the most biologically expensive autonomic pattern in the system."}
+            activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
             restorationDetail="The presence of someone who stays with the loss over time — not once, but repeatedly, as the waves recur"
             research="Bowlby (1980) — grief as attachment behaviour persisting after the attachment figure is gone. Stroebe & Schut (1999) — dual process model: oscillation between loss-oriented and restoration-oriented coping. Shear (2015) — complicated grief as prolonged activation when the restoration process cannot complete."
-            tegBlueAdds="Grief mapped as distinct from sadness — both detect loss, but grief detects loss that does not end. The oscillation pattern (active processing alternating with shutdown) is characteristic of grief and absent in sadness. The restoration process is not resolution of the loss — which cannot be undone — but the gradual reorganization of the nervous system around the absence. This requires repeated relational presence, not a single encounter."
-          />
-
-          <EmotionSection
-            id="confusion"
-            name="Confusion"
-            signal="Cannot process current information"
-            bodySignature="The body slows and turns inward. Cognitive processing loops. A freeze-adjacent quality — partial withdrawal from engagement while the system attempts to process."
-            mechanism="Confusion is the signal generated when the nervous system detects that incoming information cannot be organized into a coherent evaluation. The data is contradictory, incomplete, or exceeds the system's current processing capacity. The safety-threat evaluation cannot conclude — the system cannot determine whether conditions are safe or threatening. Attention narrows inward rather than toward a specific external source. The body signals that action should be paused until the information becomes readable."
-            activates="Threat & Defence"
-            activatesColor={THREAT_COLOR}
-            restorationType="Somatic"
-            restorationDetail="Space and time to process — engagement reduced until the data becomes readable"
-            research="Festinger (1957) — cognitive dissonance as the state produced by contradictory information. Schwartz (2004) — the paradox of choice: information overload degrading decision capacity. Kagan (2002) — uncertainty as a primary source of distress in development."
-            tegBlueAdds="Confusion mapped as a threat signal — not a cognitive failure but a nervous system detection that current information cannot be processed. The body's response (slow down, withdraw, pause action) is protective: rushing through confusion — forcing a conclusion before the evaluation can complete — may produce a false evaluation. The signal is telling the system to take space and time."
+            tegBlueAdds="Grief identified as an accompaniment signal — the most biologically expensive signal in the system when the designed pathway (sustained relational presence) is unavailable. The oscillation pattern is distinct from sadness. The restoration is not resolution of the loss but gradual reorganization of the nervous system around the absence, requiring repeated relational presence over time."
           />
 
 
