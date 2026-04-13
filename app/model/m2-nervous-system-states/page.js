@@ -100,10 +100,10 @@ export default function M2NervousSystemStatesPage() {
             description="When something registers as safe or threatening, the nervous system does not simply detect it and move on. It reorganizes — muscle tension redistributes, heart rate shifts, hormonal balance changes, sensory filtering adjusts, cognitive access expands or contracts. The result is a state: a system-wide physiological configuration that determines what can be perceived, thought, felt, and done. This model maps four such states, what each one makes available or restricts, and whether the system can move between them."
             coreQuestion="What state is the nervous system in right now — and can it move?"
             drawsFrom={[
-              { label: "M1", href: "/model/m1-emotions-as-signals" },
-              { label: "M3", href: "/model/m3-regulation-capacities" },
-              { label: "M4", href: "/model/m4-awareness-capacities" },
-              { label: "F1", href: "/framework/f1-emotional-gradient" },
+              { label: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals" },
+              { label: "M3: Regulation Capacities", href: "/model/m3-regulation-capacities" },
+              { label: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities" },
+              { label: "F1: The Emotional Gradient", href: "/framework/f1-emotional-gradient" },
             ]}
             color={MODEL_COLOR}
           />
@@ -134,7 +134,7 @@ export default function M2NervousSystemStatesPage() {
             <h2 id="heading-core-propositions" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>
             <ModelPurpose color={MODEL_COLOR}>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
-              <li style={propositionItemStyle}>When the nervous system generates an emotional signal (M1), it does not simply detect and move on. It reorganizes into a different physiological configuration — a state that determines what becomes available in perception, cognition, and relational capacity.</li>
+              <li style={propositionItemStyle}>When the nervous system generates an emotional signal (M1: Emotions as Signals), it does not simply detect and move on. It reorganizes into a different physiological configuration — a state that determines what becomes available in perception, cognition, and relational capacity.</li>
               <li style={propositionItemStyle}>Two biological branches produce two primary states: parasympathetic regulation supports Safety & Openness; sympathetic activation supports Threat & Defence. Both are automatic, rapid, and organised by the emotional-somatic system.</li>
               <li style={propositionItemStyle}>When threat is prolonged and body-level defence does not resolve it, the cognitive-logical system is recruited into the threat response — slower, not automatic. This produces two further states: Strategy & Management and Power & Dominance.</li>
               <li style={propositionItemStyle}>State determines capacity. What a person can perceive, think, feel, learn, and tolerate depends on their current state position — resource allocation, not choice.</li>
@@ -154,7 +154,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>The nervous system at rest. Not numb, not inactive — ready. The body{"'"}s resources available, not deployed. Cortisol at resting level. Muscles at resting tension. Heart rate at resting pace. The HPA axis standing down.</p>
             <p style={proseStyle}>Physiological baseline is the condition the nervous system is designed to return to after activation. It is not one of the four states. It is the neutral ground from which the system enters a state when conditions require it, and returns when the body{"'"}s activation sequence has completed.</p>
             <p style={proseStyle}>This distinction matters because Safety & Openness — the state closest to physiological baseline — is still a state. It is a parasympathetic-dominant activation that arises when conditions support engagement. Physiological baseline is what exists before any activation, and what the system returns to when activation resolves. A person in Safety & Openness is engaged. A person at physiological baseline is at rest.</p>
-            <p style={proseStyle}>If the nervous system never returns to this resting condition, any state — including Safety & Openness — can become the system{"'"}s chronic organizing mode. In Path A (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>), activation resolves and the system returns to physiological baseline. In Path B (M3), the baseline itself shifts upward — baseline elevation, where resting cortisol, muscle tension, and inflammatory markers remain chronically elevated — and the system treats the elevated level as its new resting state.</p>
+            <p style={proseStyle}>If the nervous system never returns to this resting condition, any state — including Safety & Openness — can become the system{"'"}s chronic organizing mode. In Path A (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3: Regulation Capacities</Link>), activation resolves and the system restores physiological baseline. In Path B (M3), the baseline itself shifts upward — baseline elevation, where resting cortisol, muscle tension, and inflammatory markers remain chronically elevated — and the system treats the elevated level as its new resting state.</p>
 
             <div style={{ margin: "24px 0" }}>
               <M2PhysiologicalBaseline />
