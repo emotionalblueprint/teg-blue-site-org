@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import {
   TEXT, FONT, SPECTRUM, RADIUS,
   hexToRgba, diagramContainer,
@@ -8,8 +8,6 @@ import {
 
 // ─── Constants ──────────────────────────────────────
 const BASELINE_COLOR = SPECTRUM.silver;  // grey — at rest
-const RESTORE_COLOR  = SPECTRUM.azure;   // Path A
-const CHRONIC_COLOR  = SPECTRUM.cobalt;  // Path B
 
 const GREY_GRADIENT  = `linear-gradient(90deg, ${hexToRgba(SPECTRUM.slate, 0.35)} 0%, ${hexToRgba(SPECTRUM.slate, 0.25)} 50%, ${hexToRgba(SPECTRUM.slate, 0.35)} 100%)`;
 const LIVE_GRADIENT  = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)';
@@ -21,31 +19,39 @@ const STATES = [
   { name: 'POWER & DOMINANCE',  mode: 'Domination',  hex: '#2563eb', pos: 0.875 },
 ];
 
-// Phases: rest → activated → pathA (restoring) → rest  OR  → pathB (chronic)
+// Example signals — activation timing based on real nervous system speed
+// Threat: amygdala fires in 12ms, full sympathetic snap ~200ms
+// Safety: ventral vagal engagement is gradual ~800ms
+// CLS-recruited states: cognitive recruitment is slower, not automatic
+const SIGNALS = [
+  { label: 'Joy',          stateIdx: 0, activationMs: 800  },
+  { label: 'Gratitude',    stateIdx: 0, activationMs: 800  },
+  { label: 'Fear',         stateIdx: 1, activationMs: 200  },
+  { label: 'Anger',        stateIdx: 1, activationMs: 200  },
+  { label: 'Resentment',   stateIdx: 2, activationMs: 1200 },
+  { label: 'Contempt',     stateIdx: 3, activationMs: 1500 },
+];
+
+// Phases: rest → activated → rest
 // rest: grey bar, no needle
 // activated: gradient bar, needle at target
-// pathA: gradient fades back to grey, needle fades
-// pathB: gradient stays, "chronic" label
 
 const MARKERS = [
-  { label: 'Cortisol',        rest: 'Resting level',       active: 'Elevated',           chronic: 'Chronically elevated' },
-  { label: 'Muscle tension',  rest: 'Resting tension',     active: 'Braced',             chronic: 'Chronically braced' },
-  { label: 'Heart rate',      rest: 'Resting pace',        active: 'Accelerated',        chronic: 'Chronically accelerated' },
-  { label: 'HPA axis',        rest: 'Standing down',       active: 'Activated',          chronic: 'Cannot stand down' },
+  { label: 'Cortisol',        rest: 'Resting level',       active: 'Elevated' },
+  { label: 'Muscle tension',  rest: 'Resting tension',     active: 'Braced' },
+  { label: 'Heart rate',      rest: 'Resting pace',        active: 'Accelerated' },
+  { label: 'HPA axis',        rest: 'Standing down',       active: 'Activated' },
 ];
 
 export default function M2PhysiologicalBaseline() {
-  const [phase, setPhase] = useState('rest');       // rest | activated | pathA | pathB
+  const [phase, setPhase] = useState('rest');       // rest | activated
   const [targetIdx, setTargetIdx] = useState(1);    // which state the signal activates
   const [needlePos, setNeedlePos] = useState(-1);   // -1 = hidden
   const [barOpacity, setBarOpacity] = useState(0);  // 0 = grey, 1 = gradient
-  const timeoutRef = useRef(null);
-
-  const clear = () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
+  const [transitionMs, setTransitionMs] = useState(600); // needle movement speed
 
   // Reset everything
   const goToRest = () => {
-    clear();
     setPhase('rest');
     setNeedlePos(-1);
     setBarOpacity(0);
@@ -53,34 +59,14 @@ export default function M2PhysiologicalBaseline() {
 
   // Fire signal → activate
   const fireSignal = () => {
-    clear();
     setPhase('activated');
     setBarOpacity(1);
     // needle moves to target after a brief delay
     setTimeout(() => setNeedlePos(STATES[targetIdx].pos), 80);
   };
 
-  // Path A: restoration → return to baseline
-  const triggerPathA = () => {
-    clear();
-    setPhase('pathA');
-    // fade bar and needle over 1.5s
-    setBarOpacity(0);
-    setNeedlePos(-1);
-    timeoutRef.current = setTimeout(() => setPhase('rest'), 1600);
-  };
-
-  // Path B: no restoration → chronic
-  const triggerPathB = () => {
-    clear();
-    setPhase('pathB');
-  };
-
-  useEffect(() => () => clear(), []);
-
-  const isActive = phase === 'activated' || phase === 'pathB';
-  const isChronic = phase === 'pathB';
-  const isResting = phase === 'rest' || phase === 'pathA';
+  const isActive = phase === 'activated';
+  const isResting = phase === 'rest';
   const showNeedle = needlePos >= 0;
   const activeState = STATES[targetIdx];
 
@@ -114,24 +100,20 @@ export default function M2PhysiologicalBaseline() {
         <div style={{
           fontFamily: FONT.mono, fontSize: 11, fontWeight: 600,
           letterSpacing: '0.06em',
-          color: phase === 'rest' ? TEXT.primary
-            : phase === 'pathA' ? RESTORE_COLOR
-            : phase === 'pathB' ? CHRONIC_COLOR
-            : activeState.hex,
+          color: isResting ? TEXT.primary : activeState.hex,
           transition: 'color 0.4s ease',
         }}>
-          {phase === 'rest' && 'PHYSIOLOGICAL BASELINE'}
-          {phase === 'activated' && `STATE ACTIVATED — ${activeState.name}`}
-          {phase === 'pathA' && 'PATH A — RESTORATION'}
-          {phase === 'pathB' && 'PATH B — BASELINE ELEVATION'}
+          {isResting && 'PHYSIOLOGICAL BASELINE'}
+          {isActive && `STATE ACTIVATED — ${activeState.name}`}
         </div>
         <div style={{
           fontSize: 12, color: TEXT.muted, lineHeight: 1.5, marginTop: 4,
         }}>
-          {phase === 'rest' && 'Resources available, not deployed. Not a state — the neutral ground.'}
-          {phase === 'activated' && 'The nervous system has reorganised. Resources deployed.'}
-          {phase === 'pathA' && 'Activation resolves. The system returns to physiological baseline.'}
-          {phase === 'pathB' && 'Restoration does not complete. The elevated state becomes the new resting condition.'}
+          {isResting && 'Resources available, not deployed. Not a state — the neutral ground.'}
+          {isActive && transitionMs <= 200 && 'Activation in milliseconds — the amygdala fires before conscious thought arrives.'}
+          {isActive && transitionMs > 200 && transitionMs <= 800 && 'Ventral vagal engagement — parasympathetic settling is gradual, not instant.'}
+          {isActive && transitionMs > 800 && transitionMs <= 1200 && 'Cognitive recruitment — the CLS is recruited into the threat response. Slower, not automatic.'}
+          {isActive && transitionMs > 1200 && 'Maximum cognitive override — full CLS recruitment into threat elimination.'}
         </div>
       </div>
 
@@ -184,7 +166,7 @@ export default function M2PhysiologicalBaseline() {
             ? `0 2px 8px rgba(0,0,0,0.4), 0 0 16px ${hexToRgba(activeState.hex, 0.5)}`
             : '0 2px 8px rgba(0,0,0,0.2)',
           opacity: showNeedle ? 1 : 0,
-          transition: 'left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease, border-color 0.4s ease, box-shadow 0.4s ease',
+          transition: `left ${transitionMs}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease, border-color 0.4s ease, box-shadow 0.4s ease`,
           zIndex: 10,
         }} />
       </div>
@@ -255,8 +237,8 @@ export default function M2PhysiologicalBaseline() {
         marginTop: 20,
       }}>
         {MARKERS.map(m => {
-          const value = isChronic ? m.chronic : isActive ? m.active : m.rest;
-          const color = isChronic ? CHRONIC_COLOR : isActive ? activeState.hex : BASELINE_COLOR;
+          const value = isActive ? m.active : m.rest;
+          const color = isActive ? activeState.hex : BASELINE_COLOR;
           return (
             <div key={m.label} style={{
               padding: '8px 10px',
@@ -292,96 +274,33 @@ export default function M2PhysiologicalBaseline() {
         display: 'flex', gap: 8, justifyContent: 'center',
         marginTop: 20, flexWrap: 'wrap',
       }}>
-        {phase === 'rest' && (
-          <>
-            {/* State selector */}
-            <div style={{
-              display: 'flex', gap: 4, alignItems: 'center',
-              marginRight: 8,
-            }}>
-              {STATES.map((s, i) => (
-                <button
-                  key={s.name}
-                  onClick={() => setTargetIdx(i)}
-                  style={{
-                    width: 8, height: 8,
-                    borderRadius: '50%',
-                    border: `1.5px solid ${i === targetIdx ? s.hex : hexToRgba(BASELINE_COLOR, 0.3)}`,
-                    background: i === targetIdx ? hexToRgba(s.hex, 0.4) : 'transparent',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    padding: 0,
-                  }}
-                  title={s.name}
-                />
-              ))}
-            </div>
+        {isResting && SIGNALS.map(sig => {
+          const state = STATES[sig.stateIdx];
+          return (
             <button
-              onClick={fireSignal}
+              key={sig.label}
+              onClick={() => { setTargetIdx(sig.stateIdx); setTransitionMs(sig.activationMs); setTimeout(() => { setPhase('activated'); setBarOpacity(1); setTimeout(() => setNeedlePos(state.pos), 80); }, 0); }}
               style={{
-                padding: '5px 16px',
+                padding: '5px 14px',
                 borderRadius: 20,
-                border: `1px solid ${hexToRgba(activeState.hex, 0.35)}`,
-                background: hexToRgba(activeState.hex, 0.1),
+                border: `1px solid ${hexToRgba(state.hex, 0.35)}`,
+                background: hexToRgba(state.hex, 0.08),
                 cursor: 'pointer',
                 fontFamily: FONT.mono,
                 fontSize: 8,
                 fontWeight: 600,
-                letterSpacing: '0.10em',
+                letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                color: activeState.hex,
-                transition: 'all 0.3s ease',
+                color: state.hex,
+                transition: 'all 0.2s ease',
               }}
             >
-              Fire signal
+              {sig.label}
             </button>
-          </>
-        )}
+          );
+        })}
 
-        {phase === 'activated' && (
-          <>
-            <button
-              onClick={triggerPathA}
-              style={{
-                padding: '5px 16px',
-                borderRadius: 20,
-                border: `1px solid ${hexToRgba(RESTORE_COLOR, 0.35)}`,
-                background: hexToRgba(RESTORE_COLOR, 0.1),
-                cursor: 'pointer',
-                fontFamily: FONT.mono,
-                fontSize: 8,
-                fontWeight: 600,
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: RESTORE_COLOR,
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Path A — Restoration completes
-            </button>
-            <button
-              onClick={triggerPathB}
-              style={{
-                padding: '5px 16px',
-                borderRadius: 20,
-                border: `1px solid ${hexToRgba(CHRONIC_COLOR, 0.35)}`,
-                background: hexToRgba(CHRONIC_COLOR, 0.1),
-                cursor: 'pointer',
-                fontFamily: FONT.mono,
-                fontSize: 8,
-                fontWeight: 600,
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: CHRONIC_COLOR,
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Path B — Restoration fails
-            </button>
-          </>
-        )}
-
-        {phase !== 'rest' && (
+        {isActive && (
           <button
             onClick={goToRest}
             style={{
@@ -399,9 +318,20 @@ export default function M2PhysiologicalBaseline() {
               transition: 'all 0.3s ease',
             }}
           >
-            Reset
+            Physiological Baseline
           </button>
         )}
+      </div>
+
+      {/* ─── Timing note ─── */}
+      <div style={{ textAlign: 'center', marginTop: 10 }}>
+        <span style={{
+          fontFamily: FONT.mono, fontSize: 7.5,
+          letterSpacing: '0.06em',
+          color: TEXT.micro,
+        }}>
+          Activation speeds are proportional to real nervous system timing — threat in milliseconds (LeDoux, 1996), safety settling in seconds (Porges, 2011), cognitive recruitment slower still (Arnsten, 2009)
+        </span>
       </div>
 
       {/* ─── Bottom note ─── */}
@@ -417,10 +347,7 @@ export default function M2PhysiologicalBaseline() {
           fontSize: 12, lineHeight: 1.6,
           color: TEXT.muted, margin: 0,
         }}>
-          {isChronic
-            ? 'The system treats the elevated level as its new resting state. The person may have no reference point for what rest actually feels like.'
-            : 'Safety & Openness — the state closest to baseline — is still a state. A person at physiological baseline is at rest. A person in Safety & Openness is engaged.'
-          }
+          The nervous system is designed to restore Physiological Baseline after every activation. When it does, the state was temporary. When it does not, any state — including the safest — can become chronic.
         </p>
       </div>
     </section>

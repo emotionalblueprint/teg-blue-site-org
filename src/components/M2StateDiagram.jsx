@@ -9,33 +9,45 @@ import { MODES } from '@/src/data/m2-data';
 
 // ─── Constants ──────────────────────────────────────────
 const LIVE_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)';
+const GREY_GRADIENT = 'linear-gradient(90deg, #b2b5bf 0%, #b2b5bf 100%)';
+const BASELINE_COLOR = SPECTRUM.slate;
 
 // Capacity dimensions — values at each state position (0–1, where 1 = full capacity)
 const CAPACITIES = [
   {
     label: 'Perception',
     values: [1, 0.55, 0.35, 0.15],
+    baselineValue: 0.75,
     descriptions: ['Broad — sees the full field', 'Narrowed — threat-relevant signals', 'Strategic — what needs managing', 'Tunnel — obstacles and resources'],
+    baselineDesc: 'Open — available but not directed',
   },
   {
     label: 'Cognition',
     values: [1, 0.5, 0.4, 0.12],
+    baselineValue: 0.75,
     descriptions: ['Flexible — holds complexity', 'Simplified — binary thinking', 'Strategic — planning, anticipation', 'Locked — rigid, self-confirming'],
+    baselineDesc: 'Resting — capable but not mobilised',
   },
   {
     label: 'Empathy',
     values: [1, 0.4, 0.25, 0.05],
+    baselineValue: 0.65,
     descriptions: ['Full — resonance with others online', 'Filtered — resonance decreases', 'Redirected — reading for strategy', 'Collapsed — resonance offline'],
+    baselineDesc: 'Available — channels exist, not engaged',
   },
   {
     label: 'Learning',
     values: [1, 0.45, 0.3, 0.05],
+    baselineValue: 0.7,
     descriptions: ['Available — new information integrates', 'Reduced — threat info only', 'Selective — serves strategy only', 'Unavailable — system closed'],
+    baselineDesc: 'Receptive — open, no active integration',
   },
   {
     label: 'Repair',
     values: [1, 0.35, 0.2, 0.0],
+    baselineValue: 0.6,
     descriptions: ['Available — vulnerability and trust open', 'Limited — vulnerability dangerous', 'Managed — strategic, not felt', 'Absent — relational system overridden'],
+    baselineDesc: 'Present — capacity exists, not deployed',
   },
 ];
 
@@ -59,56 +71,12 @@ function getModeAtPosition(position) {
 
 export default function M2StateDiagram() {
   const [position, setPosition] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const [phase, setPhase] = useState('sweep');
-  const sectionRef = useRef(null);
-  const rafRef = useRef(null);
-  const t0Ref = useRef(null);
+  const [isBaseline, setIsBaseline] = useState(true);
   const isDragging = useRef(false);
   const barRef = useRef(null);
 
   const activeMode = getModeAtPosition(position);
-  const activeColor = activeMode.hex;
-
-  // Scroll trigger
-  useEffect(() => {
-    if (hasStarted) return;
-    const el = sectionRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasStarted(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [hasStarted]);
-
-  // Auto-sweep animation
-  useEffect(() => {
-    if (!hasStarted || phase !== 'sweep') return;
-    const totalDuration = 6000;
-    const tick = (ts) => {
-      if (!t0Ref.current) t0Ref.current = ts;
-      const elapsed = ts - t0Ref.current;
-      const raw = Math.min(elapsed / totalDuration, 1);
-      const eased = raw < 0.5
-        ? 2 * raw * raw
-        : 1 - Math.pow(-2 * raw + 2, 2) / 2;
-      setPosition(eased);
-      if (raw < 1) {
-        rafRef.current = requestAnimationFrame(tick);
-      } else {
-        setPhase('done');
-      }
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [hasStarted, phase]);
+  const activeColor = isBaseline ? BASELINE_COLOR : activeMode.hex;
 
   // Drag interaction
   const updateFromPointer = useCallback((clientX) => {
@@ -116,6 +84,7 @@ export default function M2StateDiagram() {
     const rect = barRef.current.getBoundingClientRect();
     const raw = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
     setPosition(raw);
+    setIsBaseline(false);
   }, []);
 
   useEffect(() => {
@@ -137,17 +106,14 @@ export default function M2StateDiagram() {
 
   const onDown = useCallback((e) => {
     isDragging.current = true;
-    setPhase('done');
-    cancelAnimationFrame(rafRef.current);
+    setIsBaseline(false);
     updateFromPointer(e.touches ? e.touches[0].clientX : e.clientX);
   }, [updateFromPointer]);
-
-  useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
 
   const stateIdx = position < 0.25 ? 0 : position < 0.5 ? 1 : position < 0.75 ? 2 : 3;
 
   return (
-    <section ref={sectionRef} style={{
+    <section style={{
       marginBottom: 32,
       ...diagramContainer(),
     }}>
@@ -182,34 +148,54 @@ export default function M2StateDiagram() {
           color: activeColor,
           transition: 'color 0.2s ease',
         }}>
-          {activeMode.conditionShort}
+          {isBaseline ? 'Physiological Baseline' : activeMode.conditionShort}
         </span>
         <span style={{
           fontFamily: FONT.mono, fontSize: 8,
           letterSpacing: '0.06em',
           color: TEXT.hint,
         }}>
-          {activeMode.condition}
+          {isBaseline ? 'The nervous system at rest — no state active' : activeMode.condition}
         </span>
+      </div>
+
+      {/* ─── Physiological Baseline button ─── */}
+      <div style={{ marginBottom: 12 }}>
+        <button
+          onClick={() => setIsBaseline(true)}
+          style={{
+            fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
+            letterSpacing: '0.1em', textTransform: 'uppercase',
+            padding: '5px 12px',
+            borderRadius: RADIUS.sm,
+            border: `1px solid ${isBaseline ? BASELINE_COLOR : hexToRgba(BASELINE_COLOR, 0.3)}`,
+            background: isBaseline ? hexToRgba(BASELINE_COLOR, 0.12) : 'transparent',
+            color: isBaseline ? BASELINE_COLOR : TEXT.hint,
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+          }}
+        >
+          Physiological Baseline
+        </button>
       </div>
 
       {/* ─── Gradient bar ─── */}
       <div
         ref={barRef}
-        style={{ position: 'relative', height: 42, paddingTop: 7, cursor: 'pointer' }}
+        style={{ position: 'relative', height: 42, paddingTop: 7, cursor: isBaseline ? 'default' : 'pointer' }}
         onMouseDown={onDown}
         onTouchStart={onDown}
       >
         <div style={{
           height: 14, borderRadius: 100,
-          background: LIVE_GRADIENT,
+          background: isBaseline ? GREY_GRADIENT : LIVE_GRADIENT,
           position: 'relative',
           overflow: 'visible',
-          boxShadow: `0 0 20px ${hexToRgba(activeColor, 0.3)}`,
-          transition: 'box-shadow 0.3s ease',
+          boxShadow: isBaseline ? 'none' : `0 0 20px ${hexToRgba(activeColor, 0.3)}`,
+          transition: 'box-shadow 0.3s ease, background 0.3s ease',
         }}>
           {/* Mode boundary markers */}
-          {[0.25, 0.5, 0.75].map(b => (
+          {!isBaseline && [0.25, 0.5, 0.75].map(b => (
             <div key={b} style={{
               position: 'absolute',
               left: `${b * 100}%`,
@@ -221,32 +207,34 @@ export default function M2StateDiagram() {
               boxShadow: '0 0 4px rgba(0,0,0,0.4)',
             }} />
           ))}
-          {/* Needle */}
-          <div style={{
-            position: 'absolute',
-            left: `${position * 100}%`,
-            top: '50%',
-            width: 28, height: 28,
-            transform: 'translate(-50%, -50%)',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.95), rgba(255,255,255,0.8))',
-            border: `3px solid ${activeColor}`,
-            boxShadow: `0 2px 8px rgba(0,0,0,0.4), 0 0 16px ${hexToRgba(activeColor, 0.5)}`,
-            cursor: 'grab',
-            transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-            zIndex: 10,
-          }} />
+          {/* Needle — hidden at baseline */}
+          {!isBaseline && (
+            <div style={{
+              position: 'absolute',
+              left: `${position * 100}%`,
+              top: '50%',
+              width: 28, height: 28,
+              transform: 'translate(-50%, -50%)',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.95), rgba(255,255,255,0.8))',
+              border: `3px solid ${activeColor}`,
+              boxShadow: `0 2px 8px rgba(0,0,0,0.4), 0 0 16px ${hexToRgba(activeColor, 0.5)}`,
+              cursor: 'grab',
+              transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+              zIndex: 10,
+            }} />
+          )}
         </div>
       </div>
 
       {/* ─── State labels below bar ─── */}
       <div style={{ display: 'flex', marginTop: 6, marginBottom: 16 }}>
         {MODES.map((mode, i) => {
-          const isCurrent = i === stateIdx;
+          const isCurrent = !isBaseline && i === stateIdx;
           return (
             <div key={mode.key} style={{
               flex: 1, textAlign: 'center',
-              opacity: isCurrent ? 1 : 0.3,
+              opacity: isBaseline ? 0.2 : isCurrent ? 1 : 0.3,
               transition: 'opacity 0.3s ease',
             }}>
               <div style={{
@@ -274,9 +262,10 @@ export default function M2StateDiagram() {
       {/* ─── Capacity bars ─── */}
       <div>
         {CAPACITIES.map(cap => {
-          const value = interpolateCapacity(cap.values, position);
+          const value = isBaseline ? cap.baselineValue : interpolateCapacity(cap.values, position);
           const pct = Math.max(3, value * 100);
-          const desc = cap.descriptions[stateIdx];
+          const desc = isBaseline ? cap.baselineDesc : cap.descriptions[stateIdx];
+          const barColor = isBaseline ? BASELINE_COLOR : activeColor;
 
           return (
             <div key={cap.label} style={{
@@ -288,14 +277,14 @@ export default function M2StateDiagram() {
                 fontFamily: FONT.mono, fontSize: 8, fontWeight: 600,
                 letterSpacing: '0.1em', textTransform: 'uppercase',
                 textAlign: 'right',
-                color: value > 0.5 ? TEXT.muted : value > 0.2 ? TEXT.hint : hexToRgba(ACCENT.orange, 0.7),
+                color: isBaseline ? TEXT.muted : value > 0.5 ? TEXT.muted : value > 0.2 ? TEXT.hint : hexToRgba(ACCENT.orange, 0.7),
                 transition: 'color 0.3s ease',
               }}>
                 {cap.label}
               </span>
               <div style={{
                 flex: 1, height: 20,
-                background: hexToRgba(activeColor, 0.04),
+                background: hexToRgba(barColor, 0.04),
                 borderRadius: 4,
                 overflow: 'hidden',
                 position: 'relative',
@@ -304,8 +293,10 @@ export default function M2StateDiagram() {
                   height: '100%',
                   width: `${pct}%`,
                   borderRadius: 4,
-                  background: hexToRgba(activeColor, 0.2 + value * 0.25),
-                  transition: 'width 0.15s ease, background 0.3s ease',
+                  background: isBaseline
+                    ? `linear-gradient(90deg, ${hexToRgba(barColor, 0.3)} 0%, ${hexToRgba(barColor, 0)} 100%)`
+                    : hexToRgba(barColor, 0.2 + value * 0.25),
+                  transition: 'width 0.3s ease, background 0.3s ease',
                   display: 'flex', alignItems: 'center',
                   paddingLeft: 8,
                 }}>
@@ -342,9 +333,14 @@ export default function M2StateDiagram() {
           color: TEXT.muted, margin: 0,
           fontStyle: 'italic',
         }}>
-          {activeMode.autonomic}. Design duration: {activeMode.fluid.duration.toLowerCase()}.
-          {position > 0.6 && ' Cognitive resources redirect from understanding to strategy.'}
-          {position > 0.8 && ' Empathic constraint suppressed.'}
+          {isBaseline
+            ? 'The nervous system at rest. Resources available, not deployed. No state is organizing perception, cognition, or relational capacity. This is the condition the system is designed to return to after every activation.'
+            : <>
+                {activeMode.autonomic}. Design duration: {activeMode.fluid.duration.toLowerCase()}.
+                {position > 0.6 && ' Cognitive resources redirect from understanding to strategy.'}
+                {position > 0.8 && ' Empathic constraint suppressed.'}
+              </>
+          }
         </p>
       </div>
     </section>

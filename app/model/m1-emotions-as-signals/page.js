@@ -5,6 +5,7 @@ import { BG, TEXT, BORDER, FONT, SPECTRUM, MODEL_COLORS, hexToRgba } from "@/src
 const M1SpeedComparison = dynamic(() => import("@/src/components/M1SpeedComparison"), { ssr: false });
 const M1SignalLifecycle = dynamic(() => import("@/src/components/M1SignalLifecycle"), { ssr: false });
 const M1EmotionNav = dynamic(() => import("@/src/components/M1EmotionNav"), { ssr: false });
+const M1SafetyEvaluation = dynamic(() => import("@/src/components/M2SafetyEvaluation"), { ssr: false });
 import {
   SiteHeader, SiteFooter, ModelHero, ModelPurpose, PageLayout,
   PartDivider, NavSection, ConnectionsMap, ExpandableSection,
@@ -134,7 +135,7 @@ export const metadata = {
 const SIDEBAR_SECTIONS = [
   { label: "Core Propositions", href: "#core-propositions", description: "The claims M1 makes about the signal system." },
   { label: "Continuous Evaluation", href: "#continuous-evaluation", description: "The nervous system monitors for safety and threat continuously, below conscious awareness." },
-  { label: "Multiple Channels Converging", href: "#multiple-channels", description: "Sensory input, interoceptive data, relational cues, contextual memory — all converging." },
+  { label: "Somatic Contextual Memory", href: "#somatic-contextual-memory", description: "The body's accumulated learning calibrates the evaluation before the current moment is fully processed." },
   { label: "Detection", href: "#detection", description: "The evaluation concludes. A specific condition is identified." },
   { label: "Signal Generation", href: "#signal-generation", description: "The detection becomes a physiological event." },
   { label: "The Speed", href: "#the-speed", description: "12 milliseconds vs 300 milliseconds. The body responds before thought arrives." },
@@ -276,6 +277,16 @@ export default function M1EmotionsAsSignalsPage() {
             <p style={proseStyle}>
               The evaluation is the origin. The signal is the output.
             </p>
+            <p style={proseStyle}>
+              This process does not depend on deliberate reasoning. It is rapid, automatic, and based on experienced safety, not objective conditions alone. The nervous system responds to what it has learned to classify as safe or threatening, whether or not that classification matches present reality. A person may feel threatened in an environment that appears objectively safe, or may fail to detect danger in an environment that is objectively unsafe.
+            </p>
+            <p style={proseStyle}>
+              From a survival perspective, false negatives are more costly than false positives. Failing to detect danger may be fatal, while unnecessarily activating protection is usually less costly. The system is biased toward protection under uncertainty.
+            </p>
+
+            <div style={{ margin: "24px 0" }}>
+              <M1SafetyEvaluation />
+            </div>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
@@ -292,56 +303,75 @@ export default function M1EmotionsAsSignalsPage() {
             </div>
           </section>
 
-          {/* ─── C2: MULTIPLE CHANNELS CONVERGING ──────── */}
+          {/* ─── C2: SOMATIC CONTEXTUAL MEMORY ──────────── */}
           <section
-            id="multiple-channels"
-            aria-labelledby="heading-multiple-channels"
+            id="somatic-contextual-memory"
+            aria-labelledby="heading-somatic-contextual-memory"
             style={{ marginBottom: 48 }}
           >
             <h2
-              id="heading-multiple-channels"
+              id="heading-somatic-contextual-memory"
               style={sectionHeadingStyle(MODEL_COLOR)}
             >
-              Multiple Channels Converging
+              Somatic Contextual Memory
             </h2>
 
             <p style={proseStyle}>
-              The evaluation draws on multiple information channels simultaneously, all converging below the threshold of conscious processing.
+              The safety-threat evaluation does not operate on the current moment alone. It is calibrated by the body{"'"}s accumulated learning — every prior experience of safety and threat encoded somatically, below conscious awareness.
+            </p>
+            <p style={proseStyle}>
+              The hippocampus and amygdala encode prior experience as pattern data that shapes every subsequent evaluation. A room that was safe last time shifts the gradient toward safety. A person whose presence preceded pain shifts it toward threat. This calibration is not cognitive — it is not a belief about what is dangerous or a memory the person recalls. It is the body{"'"}s learned weighting, carried in the nervous system{"'"}s detection architecture and applied automatically before conscious processing begins.
+            </p>
+            <p style={proseStyle}>
+              This is why two people in the same room, hearing the same voice, can have their nervous systems reach opposite conclusions. One nervous system learned that tone is safe. The other learned it precedes harm. The sensory input is identical. The somatic contextual memory is different. The evaluation — and the signal it produces — follows the body{"'"}s learning, not the objective conditions.
+            </p>
+
+            <p style={{ ...proseStyle, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
+              The sensory channels:
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "120px 1fr", minWidth: 400 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "80px 1fr", minWidth: 400 }}>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Channel</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Delivers</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Detects</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Sensory Input</div>
-                <div style={gridCellStyle}>Eyes, ears, nose, skin, tongue — these are the nervous system{"'"}s detection instruments. Each feeds the safety-threat evaluation directly. The retina sends light data to the amygdala before the visual cortex has assembled an image. The cochlea transmits sound frequency data that the nervous system evaluates for threat or safety before the auditory cortex identifies the source. The olfactory bulb — one synapse from the amygdala — delivers chemical information with almost no processing delay.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Eyes</div>
+                <div style={gridCellStyle}>Neural tissue, an extension of the brain outside the skull. The retina sends light data to the amygdala before the visual cortex has assembled an image. Faces, movement, spatial configuration — all evaluated for safety or threat before conscious vision completes.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Interoceptive Data</div>
-                <div style={gridCellStyle}>The body{"'"}s internal state. Heart rate, muscle tension, hormonal levels, gut signals, breathing pattern. The nervous system reads its own physiology as information about current conditions.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Ears</div>
+                <div style={gridCellStyle}>Direct pathway to the brainstem. The cochlea transmits sound frequency data that the nervous system evaluates for threat (sharp, sudden) or safety (rhythmic, prosodic) before the auditory cortex identifies the source. Tone of voice, rhythm, sudden sounds — processed below conscious awareness before meaning forms.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Relational Cues</div>
-                <div style={gridCellStyle}>Facial expression, vocal prosody, postural orientation of others. The social engagement system reads other bodies for signals of safety or threat. A softened face, an open posture, a regulated vocal tone — biological safety signals. A rigid face, a raised voice, a turned back — threat signals the nervous system processes before conscious evaluation begins.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Nose</div>
+                <div style={gridCellStyle}>The only sense with a direct pathway to the amygdala and hippocampus without going through the thalamus first. The olfactory bulb — one synapse from the amygdala — delivers chemical information with almost no processing delay. A smell can trigger a full safety or threat response before any thought forms.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Contextual Memory</div>
-                <div style={gridCellStyle}>Whether this environment or this person has been safe or dangerous before. The hippocampus and amygdala encode prior experience as pattern data that shapes current evaluation. A room that was safe last time shifts the gradient toward safety. A person whose presence preceded pain shifts it toward threat.</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Skin</div>
+                <div style={gridCellStyle}>Nociceptors and thermoreceptors report contact, temperature, and pressure. The body reading its physical environment continuously.</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Gut</div>
+                <div style={gridCellStyle}>Approximately 100 million neurons. A second nervous system evaluating the internal environment and communicating upward through the vagus nerve.</div>
               </div>
             </div>
 
             <p style={proseStyle}>
-              These channels do not report sequentially. They converge. The body reaches a conclusion — a position on the safety-threat gradient — before the mind has formulated a question.
+              <strong style={{ color: TEXT.primary }}>Interoceptive data</strong> — the body{"'"}s internal state. Heart rate, muscle tension, hormonal levels, gut signals, breathing pattern. The nervous system reads its own physiology as information about current conditions.
+            </p>
+            <p style={proseStyle}>
+              <strong style={{ color: TEXT.primary }}>Relational cues</strong> — facial expression, vocal prosody, postural orientation of others. The social engagement system reads other bodies for signals of safety or threat. A softened face, an open posture, a regulated vocal tone — biological safety signals. A rigid face, a raised voice, a turned back — threat signals the nervous system processes before conscious evaluation begins.
+            </p>
+            <p style={proseStyle}>
+              These channels do not report sequentially. They converge. The body reaches a conclusion — a position on the safety-threat gradient — before the mind has formulated a question. Somatic Contextual Memory is what calibrates that conclusion. The sensory channels are the instruments. The body{"'"}s accumulated learning is what sets their weighting.
             </p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>
-                  Craig (2002) — interoception as a primary information channel for evaluating internal conditions. Porges (2011) — the social engagement system as the pathway for reading relational safety signals. LeDoux (1996) — the amygdala integrating multiple sensory channels for threat evaluation. Phelps (2004) — amygdala-hippocampal interaction in contextual fear conditioning.
+                  Craig (2002) — interoception as a primary information channel for evaluating internal conditions. Porges (2011) — the social engagement system as the pathway for reading relational safety signals. LeDoux (1996) — the amygdala integrating multiple sensory channels for threat evaluation. Phelps (2004) — amygdala-hippocampal interaction in contextual fear conditioning. van der Kolk (2014) — the body encoding traumatic experience as somatic memory independent of cognitive recall.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>
-                  The explicit mapping of four converging channels as the input architecture of the safety-threat evaluation. Existing research describes each channel separately — interoception (Craig), neuroception (Porges), threat detection (LeDoux), contextual memory (Phelps). TEG-Blue proposes that these channels converge into a single evaluative process that produces a position on the safety-threat gradient — and that position determines which signal is generated.
+                  TEG-Blue names the body{"'"}s accumulated learning as Somatic Contextual Memory — a somatic, pre-cognitive bias that calibrates the safety-threat evaluation before the current moment is fully processed. Existing research describes each input channel separately — interoception (Craig), neuroception (Porges), threat detection (LeDoux), contextual memory (Phelps). TEG-Blue proposes that these channels converge into a single evaluative process calibrated by somatic learning, and that this calibration — not the objective conditions — determines the position on the safety-threat gradient and the signal that follows. This is bias, but it is somatic bias, not cognitive bias. It operates in the body{"'"}s detection architecture, not in the mind{"'"}s reasoning.
                 </p>
               </ExpandableSection>
             </div>

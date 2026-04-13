@@ -19,13 +19,9 @@ const MODE_KEYS = ['connection', 'protection', 'control', 'domination'];
 
 export default function M2SignalState() {
   const [activeKey, setActiveKey] = useState('fear');
-  const [isStuck, setIsStuck] = useState(false);
 
   const emotion = EMOTIONS.find(e => e.key === activeKey) || EMOTIONS[0];
-  const compassData = isStuck ? emotion.stuckCompass : emotion.fluidCompass;
-
-  // Some emotions (admiration, pride) have null stuckCompass — distortions occupy that space
-  const hasStuckData = emotion.stuckCompass !== null;
+  const compassData = emotion.fluidCompass;
 
   return (
     <section style={{
@@ -129,25 +125,8 @@ export default function M2SignalState() {
           letterSpacing: '0.06em',
           color: TEXT.hint,
         }}>
-          "{emotion.signal}" — same signal, four states
+          {"\u201C"}{emotion.signal}{"\u201D"} — same signal, four states
         </span>
-        <div style={{ marginLeft: 'auto' }}>
-          <div className="m2-ss-toggle">
-            <button
-              className={!isStuck ? 'active' : ''}
-              onClick={() => setIsStuck(false)}
-            >
-              Fluid
-            </button>
-            <button
-              className={isStuck ? 'active' : ''}
-              onClick={() => hasStuckData && setIsStuck(true)}
-              style={!hasStuckData ? { opacity: 0.3, cursor: 'not-allowed' } : {}}
-            >
-              Stuck
-            </button>
-          </div>
-        </div>
       </div>
 
       {/* ─── Four state cards ────────────── */}
@@ -172,7 +151,7 @@ export default function M2SignalState() {
                 color: TEXT.hint, margin: 0,
                 fontStyle: 'italic',
               }}>
-                {isStuck ? 'Distortion occupies this space' : '—'}
+                —
               </p>
             </div>
           );
@@ -210,7 +189,7 @@ export default function M2SignalState() {
             <button
               key={ek}
               className={`m2-ss-pill${activeKey === ek ? ' active' : ''}`}
-              onClick={() => { setActiveKey(ek); setIsStuck(false); }}
+              onClick={() => setActiveKey(ek)}
             >
               {em.name}
             </button>
@@ -221,7 +200,7 @@ export default function M2SignalState() {
           <button
             key={em.key}
             className={`m2-ss-pill${activeKey === em.key ? ' active' : ''}`}
-            onClick={() => { setActiveKey(em.key); setIsStuck(false); }}
+            onClick={() => setActiveKey(em.key)}
             style={{ fontSize: 11, padding: '4px 10px' }}
           >
             {em.name}
@@ -242,10 +221,7 @@ export default function M2SignalState() {
           color: TEXT.muted, margin: 0,
           fontStyle: 'italic',
         }}>
-          {isStuck
-            ? 'When the state becomes chronic, the signal no longer serves its original function — it serves the state.'
-            : 'The signal is the same. The state changes what it becomes. What a person experiences as "their anger" or "their fear" is always signal + state.'
-          }
+          The signal is the same. The state changes what it becomes. What a person experiences as {"\u201C"}their anger{"\u201D"} or {"\u201C"}their fear{"\u201D"} is always signal + state.
         </p>
       </div>
     </section>

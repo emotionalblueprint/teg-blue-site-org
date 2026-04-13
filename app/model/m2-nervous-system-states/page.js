@@ -28,10 +28,6 @@ const M2ReinforcingLoop = dynamic(
   () => import("@/src/components/M2ReinforcingLoop"),
   { ssr: false }
 );
-const M2SafetyEvaluation = dynamic(
-  () => import("@/src/components/M2SafetyEvaluation"),
-  { ssr: false }
-);
 const M2PhysiologicalBaseline = dynamic(
   () => import("@/src/components/M2PhysiologicalBaseline"),
   { ssr: false }
@@ -120,16 +116,16 @@ export default function M2NervousSystemStatesPage() {
           {/* INTRODUCTION */}
           <section style={{ marginBottom: 48 }}>
             <p style={proseStyle}>
-              The nervous system is continuously evaluating a core question: is there sufficient safety to engage, or is protection required? This evaluation is automatic, rapid, and based on experienced safety — not objective conditions alone. A person may feel threatened in an environment that appears objectively safe, or fail to detect danger in an environment that is objectively unsafe. The system responds to what it has learned to classify, whether or not that classification matches present reality.
+              In <Link href="/model/m1-emotions-as-signals" style={linkStyle}>Model 1 — Emotions as Signals</Link>, the nervous system evaluates for safety or threat and generates a signal carrying information about what was detected. In M2, that signal reorganizes the entire system. Muscle tension redistributes. Sensory filtering adjusts. Cognitive access expands or contracts. Heart rate and hormonal balance change. The result is not a mood or an emotion — it is a physiological configuration that determines what aspects of reality are likely to be registered in the first place.
             </p>
             <p style={proseStyle}>
-              When this evaluation shifts, the entire system reorganizes. Muscle tension redistributes. Sensory filtering adjusts. Cognitive access expands or contracts. Heart rate and hormonal balance change. The result is not a mood or an emotion — it is a physiological configuration that determines what aspects of reality are likely to be registered in the first place. A threat-related signal narrows processing. A safety-related signal broadens it. This shift happens before conscious awareness has time to form an interpretation.
+              A threat-related signal narrows processing. A safety-related signal broadens it. This shift happens before conscious awareness has time to form an interpretation. The nervous system does not simply detect and move on. It reorganizes into a different state — and that state determines what the person can perceive, think, feel, and do.
             </p>
             <p style={proseStyle}>
-              All four states — including the safest — are designed to be temporary. The nervous system is built to return to physiological baseline after each activation. When it does not, any state can become chronic — and a chronic state reorganizes perception, cognition, and relational capacity so thoroughly that the reorganization may no longer be recognizable as a state at all.
+              All four states — including the safest — are designed to be temporary. The nervous system is designed to restore Physiological Baseline after each activation. When it does not, any state can become chronic — and a chronic state reorganizes perception, cognition, and relational capacity so thoroughly that the reorganization may no longer be recognizable as a state at all.
             </p>
             <p style={proseStyle}>
-              The key measure is not which state the system occupies. It is whether the system retains the capacity to move — to shift in response to changing conditions, and to return to rest.
+              The key measure is not which state the system occupies. It is whether the system retains the capacity to move — to shift in response to changing conditions, and to restore Physiological Baseline.
             </p>
           </section>
 
@@ -138,48 +134,26 @@ export default function M2NervousSystemStatesPage() {
             <h2 id="heading-core-propositions" style={sectionHeadingStyle(MODEL_COLOR)}>Core Propositions</h2>
             <ModelPurpose color={MODEL_COLOR}>
             <ul style={{ paddingLeft: 20, margin: 0 }}>
-              <li style={propositionItemStyle}>The nervous system continuously evaluates whether conditions are safe enough for engagement or require protection. This evaluation is automatic, rapid, and based on experienced safety — not objective conditions alone.</li>
-              <li style={propositionItemStyle}>Four nervous system states are grounded in two biological branches: parasympathetic regulation supports Safety & Openness; sympathetic activation supports Threat & Defence, Strategy & Management, and Power & Dominance.</li>
+              <li style={propositionItemStyle}>When the nervous system generates an emotional signal (M1), it does not simply detect and move on. It reorganizes into a different physiological configuration — a state that determines what becomes available in perception, cognition, and relational capacity.</li>
+              <li style={propositionItemStyle}>Two biological branches produce two primary states: parasympathetic regulation supports Safety & Openness; sympathetic activation supports Threat & Defence. Both are automatic, rapid, and organised by the emotional-somatic system.</li>
+              <li style={propositionItemStyle}>When threat is prolonged and body-level defence does not resolve it, the cognitive-logical system is recruited into the threat response — slower, not automatic. This produces two further states: Strategy & Management and Power & Dominance.</li>
               <li style={propositionItemStyle}>State determines capacity. What a person can perceive, think, feel, learn, and tolerate depends on their current state position — resource allocation, not choice.</li>
-              <li style={propositionItemStyle}>The state shapes what sensory information reaches the person before deliberate thought is formed. The world the person perceives is already filtered.</li>
-              <li style={propositionItemStyle}>All four states — including Safety & Openness — are temporary activations designed to return to physiological baseline. No state is the destination.</li>
-              <li style={propositionItemStyle}>The key measure is State Flexibility — whether the nervous system can shift state and return to physiological baseline. The current state position tells you where the system is. State Flexibility tells you whether it can leave.</li>
-              <li style={propositionItemStyle}>Cognitive understanding and nervous system organization do not operate at the same speed. Insight supports recognition but does not guarantee that the nervous system will reorganize differently in real time.</li>
+              <li style={propositionItemStyle}>The state shapes what sensory information reaches the person before deliberate thought is formed. The filter is calibrated by Somatic Contextual Memory (M1) — the body{"'"}s accumulated learning, not cognitive assessment.</li>
+              <li style={propositionItemStyle}>All four states — including Safety & Openness — are temporary activations designed to restore Physiological Baseline. No state is the destination.</li>
+              <li style={propositionItemStyle}>The key measure is State Flexibility — whether the nervous system can shift state and restore Physiological Baseline. The current state position tells you where the system is. State Flexibility tells you whether it can leave.</li>
             </ul>
             </ModelPurpose>
           </section>
 
-          {/* PART 1: THE STATES */}
-          <PartDivider label="PART 1" title="Threat and Safety Nervous System States" color={MODEL_COLOR} />
+          {/* PART 1: PHYSIOLOGICAL BASELINE */}
+          <PartDivider label="PART 1" title="Physiological Baseline" color={MODEL_COLOR} />
 
-          {/* C0: CORE SAFETY EVALUATION */}
-          <section id="core-safety-evaluation" aria-labelledby="heading-cse" style={{ marginBottom: 48 }}>
-            <h2 id="heading-cse" style={sectionHeadingStyle(MODEL_COLOR)}>The Core Safety Evaluation</h2>
-            <p style={proseStyle}>The nervous system is continuously evaluating a core question: <strong style={{ color: TEXT.primary }}>Is there sufficient safety to engage, or is protection required?</strong></p>
-            <p style={proseStyle}>This evaluation operates continuously and outside conscious awareness. Emotional signals can be understood as outputs of this process, and nervous system states as the system-wide reorganization that follows from it.</p>
-            <p style={proseStyle}>This process does not depend on deliberate reasoning. It is rapid, automatic, and based on experienced safety, not objective conditions alone. For that reason, a person may feel threatened in an environment that appears objectively safe, or may fail to detect danger in an environment that is objectively unsafe. The nervous system responds to what it has learned to classify as safe or threatening, whether or not that classification matches present reality.</p>
-            <p style={proseStyle}>From a survival perspective, false negatives are more costly than false positives. Failing to detect danger may be fatal, while unnecessarily activating protection is usually less costly. For that reason, the system is biased toward protection under uncertainty.</p>
-
-            <div style={{ margin: "24px 0" }}>
-              <M2SafetyEvaluation />
-            </div>
-
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
-                <p style={expandedProseStyle}>Porges (2011) — neuroception as continuous below-awareness safety/threat evaluation. Damasio (1994) — somatic markers guiding cognition through body-state signals. LeDoux (1996) — threat detection running faster than conscious processing.</p>
-              </ExpandableSection>
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>TEG-Blue frames this safety evaluation as the central organizing principle of the entire state architecture. The question M2 answers is what the nervous system is currently evaluating as safe or threatening.</p>
-              </ExpandableSection>
-            </div>
-          </section>
-
-          {/* C1: PHYSIOLOGICAL BASELINE */}
+          {/* C0: PHYSIOLOGICAL BASELINE */}
           <section id="physiological-baseline" aria-labelledby="heading-baseline" style={{ marginBottom: 48 }}>
             <h2 id="heading-baseline" style={sectionHeadingStyle(MODEL_COLOR)}>Physiological Baseline</h2>
             <p style={proseStyle}>The nervous system at rest. Not numb, not inactive — ready. The body{"'"}s resources available, not deployed. Cortisol at resting level. Muscles at resting tension. Heart rate at resting pace. The HPA axis standing down.</p>
             <p style={proseStyle}>Physiological baseline is the condition the nervous system is designed to return to after activation. It is not one of the four states. It is the neutral ground from which the system enters a state when conditions require it, and returns when the body{"'"}s activation sequence has completed.</p>
-            <p style={proseStyle}>This distinction matters because Safety & Openness — the state closest to baseline — is still a state. It is a parasympathetic-dominant activation that arises when conditions support engagement. Baseline is what exists before any activation, and what the system returns to when activation resolves. A person in Safety & Openness is engaged. A person at physiological baseline is at rest.</p>
+            <p style={proseStyle}>This distinction matters because Safety & Openness — the state closest to physiological baseline — is still a state. It is a parasympathetic-dominant activation that arises when conditions support engagement. Physiological baseline is what exists before any activation, and what the system returns to when activation resolves. A person in Safety & Openness is engaged. A person at physiological baseline is at rest.</p>
             <p style={proseStyle}>If the nervous system never returns to this resting condition, any state — including Safety & Openness — can become the system{"'"}s chronic organizing mode. In Path A (<Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>), activation resolves and the system returns to physiological baseline. In Path B (M3), the baseline itself shifts upward — baseline elevation, where resting cortisol, muscle tension, and inflammatory markers remain chronically elevated — and the system treats the elevated level as its new resting state.</p>
 
             <div style={{ margin: "24px 0" }}>
@@ -196,25 +170,44 @@ export default function M2NervousSystemStatesPage() {
             </div>
           </section>
 
-          {/* C2: TWO BRANCHES, FOUR STATES */}
-          <section id="four-states" aria-labelledby="heading-four-states" style={{ marginBottom: 48 }}>
-            <h2 id="heading-four-states" style={sectionHeadingStyle(MODEL_COLOR)}>Two Biological Branches, Four Nervous System States</h2>
-            <p style={proseStyle}>The state system is grounded in two primary biological branches of autonomic regulation. The <strong style={{ color: TEXT.primary }}>parasympathetic branch</strong>, particularly the ventral vagal system, supports safety, social engagement, and physiological settling. The <strong style={{ color: TEXT.primary }}>sympathetic branch</strong> supports mobilization, vigilance, and defensive action.</p>
-            <p style={proseStyle}>From these biological foundations, four distinct states are described:</p>
+          {/* PART 2: FOUR NERVOUS SYSTEM STATES */}
+          <PartDivider label="PART 2" title="Four Nervous System States" color={MODEL_COLOR} />
 
-            <h3 style={conceptHeadingStyle}>1. Safety & Openness</h3>
+          {/* C1: TWO BIOLOGICAL BRANCHES */}
+          <section id="two-branches" aria-labelledby="heading-two-branches" style={{ marginBottom: 48 }}>
+            <h2 id="heading-two-branches" style={sectionHeadingStyle(MODEL_COLOR)}>Two Biological Branches</h2>
+            <p style={proseStyle}>The state system is grounded in two primary biological branches of autonomic regulation. The <strong style={{ color: TEXT.primary }}>parasympathetic branch</strong>, particularly the ventral vagal system, supports safety, social engagement, and physiological settling. The <strong style={{ color: TEXT.primary }}>sympathetic branch</strong> supports mobilization, vigilance, and defensive action.</p>
+            <p style={proseStyle}>These two branches produce two primary nervous system states — both automatic, rapid, and organised by the emotional-somatic system before conscious processing arrives:</p>
+
+            <h3 style={{ ...conceptHeadingStyle, color: '#93CFFF' }}>Safety & Openness (Connection)</h3>
             <p style={proseStyle}>A parasympathetic-dominant state organized around engagement, connection, and broader perception. Heart rate settles. Vagal tone is high. The social engagement system activates — face, voice, middle ear orient toward connection. Perception broadens. Empathy comes fully online. Cognition can hold complexity, tolerate ambiguity, consider multiple perspectives. Learning, repair, and vulnerability become available. A person can experience grief, conflict, or difficulty while remaining in this state — what defines it is not the emotional content but the nervous system{"'"}s capacity to stay engaged without shifting into defensive narrowing.</p>
 
-            <h3 style={conceptHeadingStyle}>2. Threat & Defence</h3>
+            <h3 style={{ ...conceptHeadingStyle, color: '#5BADFF' }}>Threat & Defence (Protection)</h3>
             <p style={proseStyle}>A sympathetic state organized around immediate protection. Heart rate rises, muscles tense, cortisol and adrenaline release. Attention narrows toward threat-relevant cues. Emotional intensity increases. Cognition simplifies — binary thinking, speed over accuracy. The time horizon collapses to the immediate. Fight or flight as primary response; freeze or fawn as energy-depletion fallbacks when fight/flight is not available. This is an emergency system designed for minutes to hours.</p>
 
-            <h3 style={conceptHeadingStyle}>3. Strategy & Management</h3>
+            <p style={proseStyle}>When threat persists and body-level defence alone does not resolve it, the cognitive-logical system can be recruited into the threat response, producing two further states.</p>
+
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="opendata">
+                <p style={expandedProseStyle}>Porges (2011) — polyvagal theory: ventral vagal (social engagement), sympathetic (mobilisation), dorsal vagal (immobilisation). Dana (2018) — clinical application of the autonomic hierarchy. Panksepp (1998) — primary emotional systems as biological processes.</p>
+              </ExpandableSection>
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>TEG-Blue grounds the state system in two biological branches and distinguishes two primary states that are automatic, rapid, and organised by the emotional-somatic system — before introducing the cognitive extensions that follow under prolonged threat.</p>
+              </ExpandableSection>
+            </div>
+          </section>
+
+          {/* C4: THREAT EXTENSION STATES */}
+          <section id="threat-extension-states" aria-labelledby="heading-threat-ext" style={{ marginBottom: 48 }}>
+            <h2 id="heading-threat-ext" style={sectionHeadingStyle(MODEL_COLOR)}>Threat Extension States</h2>
+            <p style={proseStyle}>Safety & Openness and Threat & Defence are automatic. The emotional-somatic system sets the state before conscious processing arrives — milliseconds, not deliberation. These are the two primary biological states.</p>
+            <p style={proseStyle}>When threat becomes <strong style={{ color: TEXT.primary }}>prolonged</strong> and body-level defence alone does not resolve it, a qualitative shift occurs. The cognitive-logical system is recruited into the threat response — not for open reflection or exploration, but in service of survival. This recruitment is slower and not automatic. It represents a different kind of activation: cognition solving survival problems the body alone could not.</p>
+
+            <h3 style={{ ...conceptHeadingStyle, color: '#346AEC' }}>Strategy & Management (Control)</h3>
             <p style={proseStyle}>A continued threat state in which cognitive resources are recruited into defensive organization. The system shifts from immediate survival response to strategic anticipation, control, and management. Cognition is not being used for open exploration — it is organizing around threat. The future is a threat landscape to be mapped, not an open space to inhabit. This state can appear highly functional from the outside. The person may seem composed, capable, and organized. But the underlying system is still operating under threat conditions.</p>
 
-            <h3 style={conceptHeadingStyle}>4. Power & Dominance</h3>
+            <h3 style={{ ...conceptHeadingStyle, color: '#2563eb' }}>Power & Dominance (Domination)</h3>
             <p style={proseStyle}>A maximal threat state organized around control, suppression of resistance, and elimination of obstacle. The ventromedial prefrontal cortex — the region that carries guilt, care, empathy, and consequence — is suppressed. Other people are processed in terms of threat, utility, resistance, or obstacle value. In temporary and extreme situations, this state may serve survival. When it becomes chronic, the system loses access to the internal signals that would normally restrain harmful action.</p>
-
-            <p style={proseStyle}>The first two states are primarily organised by the emotional-somatic system — the body{"'"}s detection and response architecture sets the state before conscious processing arrives. The latter two are states in which the cognitive-logical system is increasingly recruited into the threat response. This is not simply greater intensity. It is a shift in which system organises the response.</p>
 
             <div style={{ margin: "24px 0" }}>
               <M2FourStates />
@@ -222,7 +215,7 @@ export default function M2NervousSystemStatesPage() {
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
-                <p style={expandedProseStyle}>Porges (2011) — polyvagal theory: ventral vagal (social engagement), sympathetic (mobilisation), dorsal vagal (immobilisation). Dana (2018) — clinical application of the autonomic hierarchy. Panksepp (1998) — primary emotional systems as biological processes.</p>
+                <p style={expandedProseStyle}>Evolutionary psychology — cognition evolved to solve survival problems body-level responses alone could not. Arnsten (2009) — prefrontal cortex recruited under stress for threat-management, not open exploration. Kahneman (2011) — dual-process theory: System 2 recruited for effortful processing when automatic responses are insufficient.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
                 <p style={expandedProseStyle}>TEG-Blue makes explicit the distinction between emotional-somatic-led and cognitive-logical-recruited states, treating this not as a simple escalation in intensity but as a qualitative shift in which system organises the response.</p>
@@ -252,10 +245,26 @@ export default function M2NervousSystemStatesPage() {
             </div>
           </section>
 
-          {/* PART 2: WHAT THE STATE DOES */}
-          <PartDivider label="PART 2" title="Threat Extension States" color={MODEL_COLOR} />
+          {/* C8: STATES AS TEMPORARY ACTIVATIONS */}
+          <section id="states-as-temporary" aria-labelledby="heading-temp" style={{ marginBottom: 48 }}>
+            <h2 id="heading-temp" style={sectionHeadingStyle(MODEL_COLOR)}>States as Temporary Activations</h2>
+            <p style={proseStyle}>All four nervous system states are designed as temporary activations, not permanent conditions. The nervous system is built to shift in response to changing conditions, organize around what is needed in the moment, and then return toward physiological baseline once the restoration sequence has run.</p>
+            <p style={proseStyle}>Safety & Openness is the state closest to baseline, and it is often treated — implicitly or explicitly — as the destination: the place a person should try to reach and remain. It is not. It is a parasympathetic-dominant activation, not rest. A nervous system that remains perpetually organized around Safety & Openness — absorbing, engaging, resonating without returning to physiological rest — is as chronically activated as one organized around threat. The state is different. The structural problem is the same: the system is not returning to baseline.</p>
+            <p style={proseStyle}>Any state that the nervous system cannot leave becomes chronic. The defining measure is not which state the system occupies. It is whether the system retains the capacity to move, respond, and return to physiological baseline.</p>
+            <div style={expandableRowStyle}>
+              <ExpandableSection title="Research Foundations" type="opendata">
+                <p style={expandedProseStyle}>Porges (2011) — autonomic flexibility as a marker of health, not resting state. Thayer & Lane (2000) — heart rate variability as a measure of autonomic flexibility. Ogden, Minton & Pain (2006) — the window of tolerance as a flexible range.</p>
+              </ExpandableSection>
+              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
+                <p style={expandedProseStyle}>TEG-Blue distinguishes physiological baseline from Safety & Openness: baseline is not the same as Safety & Openness, and no state is the destination. Chronicity is defined by one thing: whether the nervous system returns to physiological baseline.</p>
+              </ExpandableSection>
+            </div>
+          </section>
 
-          {/* C8: STATE DETERMINES CAPACITY */}
+          {/* PART 3: WHAT THE STATE DOES */}
+          <PartDivider label="PART 3" title="What the State Does" color={MODEL_COLOR} />
+
+          {/* C9: STATE DETERMINES CAPACITY */}
           <section id="state-determines-capacity" aria-labelledby="heading-sdc" style={{ marginBottom: 48 }}>
             <h2 id="heading-sdc" style={sectionHeadingStyle(MODEL_COLOR)}>State Determines Capacity</h2>
             <p style={proseStyle}>What a person can perceive, think, feel, learn, tolerate, and do depends on their Current State Position on the gradient. The nervous system configures what becomes available based on the level of safety or threat it has detected — resource allocation determined by state, not by choice.</p>
@@ -263,7 +272,7 @@ export default function M2NervousSystemStatesPage() {
             <div style={{ overflowX: "auto", marginBottom: 20 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr", minWidth: 900 }}>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Capacity</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Baseline</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Physiological Baseline</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Safety & Openness</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Threat & Defence</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Strategy & Mgmt</div>
@@ -337,9 +346,13 @@ export default function M2NervousSystemStatesPage() {
                 <div style={gridHeaderStyle(MODEL_COLOR)}>What the Filter Delivers</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>What the Person Experiences</div>
 
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Physiological Baseline</div>
+                <div style={gridCellStyle}>Channels open, not directed. No state organizing perception. The system is at rest — available but not scanning for anything.</div>
+                <div style={gridCellStyle}>The world as it is — no filter active.</div>
+
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
-                <div style={gridCellStyle}>Channels wide open. Eyes reading faces, context, nuance. Ears picking up warmth, prosody. Gut relaxed, feeding accurate interoceptive data.</div>
-                <div style={gridCellStyle}>The world looks like it is.</div>
+                <div style={gridCellStyle}>Channels broadened toward connection, nuance, relational meaning. Eyes reading faces for warmth. Ears picking up prosody. Safety cues amplified. Gut relaxed.</div>
+                <div style={gridCellStyle}>The world looks safe. Approach feels available.</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Threat & Defence</div>
                 <div style={gridCellStyle}>Channels narrow toward threat detection. Pupils dilate. Peripheral vision sharpens. Ears tune to sudden sounds. Gut tightens.</div>
@@ -355,14 +368,16 @@ export default function M2NervousSystemStatesPage() {
               </div>
             </div>
 
+            <p style={proseStyle}>The filter is not configured arbitrarily. It is calibrated by <strong style={{ color: TEXT.primary }}>Somatic Contextual Memory</strong> (<Link href="/model/m1-emotions-as-signals#somatic-contextual-memory" style={linkStyle}>M1</Link>) — the body{"'"}s accumulated learning about what has been safe or threatening. The safety-threat evaluation that produced the current state was already weighted by prior somatic experience. The state that resulted from that evaluation now reconfigures the same sensory channels that fed the evaluation in the first place. The instruments that detected are now being filtered by what they detected.</p>
+            <p style={proseStyle}>This is why the same environment produces different perceptual worlds for different nervous systems. The sensory input may be identical. The Somatic Contextual Memory calibrating each nervous system{"'"}s evaluation is not. The state each system enters is different. The filter each state applies is different. The world each person perceives is already different before cognition touches it.</p>
             <p style={proseStyle}>This is the mechanism behind {"\u201C"}State Determines Capacity.{"\u201D"} The state does not just limit what the person can do in response to input — it limits what input reaches the person in the first place.</p>
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
-                <p style={expandedProseStyle}>LeDoux (1996) — pre-conscious threat detection, amygdala processing before cortical awareness. Bar-Haim et al. (2007) — threat-related attentional bias. Porges (2011) — neuroception operating below conscious awareness through multiple sensory channels.</p>
+                <p style={expandedProseStyle}>LeDoux (1996) — pre-conscious threat detection, amygdala processing before cortical awareness. Bar-Haim et al. (2007) — threat-related attentional bias. Porges (2011) — neuroception operating below conscious awareness through multiple sensory channels. Phelps (2004) — amygdala-hippocampal interaction in contextual fear conditioning.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>TEG-Blue makes sensory filtering central to the explanation of why state determines capacity. The state is not only a reaction to perception. It is also a mechanism that shapes perception itself.</p>
+                <p style={expandedProseStyle}>TEG-Blue makes sensory filtering central to the explanation of why state determines capacity, and links the filter to its origin: Somatic Contextual Memory (M1). The state is not only a reaction to perception. It is also a mechanism that shapes perception itself — and the calibration of that mechanism is set by the body{"'"}s accumulated learning, not by cognitive assessment of the current environment.</p>
               </ExpandableSection>
             </div>
           </section>
@@ -410,6 +425,8 @@ export default function M2NervousSystemStatesPage() {
 
             <p style={proseStyle}>For this reason, it is often insufficient to assess an emotion in isolation. What matters clinically and structurally is the combination of signal + state.</p>
 
+            <M2SignalState />
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>Frijda (1986) — emotions as action tendencies shaped by context. Barrett (2017) — constructed emotion theory: the same physiological state producing different emotional experiences depending on context. Gross (2015) — emotion regulation as context-dependent process.</p>
@@ -418,28 +435,10 @@ export default function M2NervousSystemStatesPage() {
                 <p style={expandedProseStyle}>TEG-Blue proposes that outcomes depend on the interaction between the emotional signal and the nervous system state through which that signal is being processed — State-Modified Signal Experience.</p>
               </ExpandableSection>
             </div>
-
-            <M2SignalState />
           </section>
 
-          {/* PART 3: WHEN STATES BECOME CHRONIC */}
-          <PartDivider label="PART 3" title="Chronic States" color={MODEL_COLOR} />
-
-          {/* C11: STATES AS TEMPORARY */}
-          <section id="states-as-temporary" aria-labelledby="heading-temp" style={{ marginBottom: 48 }}>
-            <h2 id="heading-temp" style={sectionHeadingStyle(MODEL_COLOR)}>States as Temporary Activations</h2>
-            <p style={proseStyle}>All four nervous system states are designed as temporary activations, not permanent conditions. The nervous system is built to shift in response to changing conditions, organize around what is needed in the moment, and then return toward physiological baseline once the restoration sequence has run.</p>
-            <p style={proseStyle}>Safety & Openness is the state closest to baseline, and it is often treated — implicitly or explicitly — as the destination: the place a person should try to reach and remain. It is not. It is a parasympathetic-dominant activation, not rest. A nervous system that remains perpetually organized around Safety & Openness — absorbing, engaging, resonating without returning to physiological rest — is as chronically activated as one organized around threat. The state is different. The structural problem is the same: the system is not returning to baseline.</p>
-            <p style={proseStyle}>Any state that the nervous system cannot leave becomes chronic. The defining measure is not which state the system occupies. It is whether the system retains the capacity to move, respond, and return to physiological baseline.</p>
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
-                <p style={expandedProseStyle}>Porges (2011) — autonomic flexibility as a marker of health, not resting state. Thayer & Lane (2000) — heart rate variability as a measure of autonomic flexibility. Ogden, Minton & Pain (2006) — the window of tolerance as a flexible range.</p>
-              </ExpandableSection>
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>TEG-Blue distinguishes physiological baseline from Safety & Openness: baseline is not the same as Safety & Openness, and no state is the destination. Chronicity is defined by one thing: whether the nervous system returns to physiological baseline.</p>
-              </ExpandableSection>
-            </div>
-          </section>
+          {/* PART 4: CHRONIC STATES */}
+          <PartDivider label="PART 4" title="Chronic States" color={MODEL_COLOR} />
 
           {/* C12: CHRONIC STATE ORGANISATION */}
           <section id="chronic-states" aria-labelledby="heading-chronic" style={{ marginBottom: 48 }}>
@@ -451,6 +450,9 @@ export default function M2NervousSystemStatesPage() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", minWidth: 400 }}>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>What It Looks Like</div>
+
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.muted, fontStyle: "italic" }}>Physiological Baseline</div>
+                <div style={{ ...gridCellStyle, color: TEXT.muted, fontStyle: "italic" }}>Not reachable. The nervous system no longer returns to rest. The temporary state has replaced physiological baseline as the system{"'"}s default organization.</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
                 <div style={gridCellStyle}>Continual emotional absorption — resonating, engaging, taking in others{"'"} states without the nervous system ever returning to rest. Permanently available to others, permanently unavailable to self.</div>
@@ -521,6 +523,8 @@ export default function M2NervousSystemStatesPage() {
             <h2 id="heading-loop" style={sectionHeadingStyle(MODEL_COLOR)}>The State-Reinforcing Loop</h2>
             <p style={proseStyle}>Once a state becomes chronic, it can begin to sustain itself through a recursive loop: <strong style={{ color: TEXT.primary }}>state → filter → input → confirmation of state</strong>.</p>
             <p style={proseStyle}>The physiological configuration of the active state shapes what information reaches the person. That filtered input then appears to confirm the necessity of the state. The nervous system receives ongoing evidence that its current organisation is correct, and the physiological configuration that produced the filtering remains in place — even when the environment has changed.</p>
+            <M2ReinforcingLoop />
+
             <div style={expandableRowStyle}>
               <ExpandableSection title="Research Foundations" type="opendata">
                 <p style={expandedProseStyle}>Beck (1976) — self-reinforcing cognitive schemas. Bowlby (1969, 1980) — attachment working models as self-confirming templates. Mikulincer & Shaver (2007) — attachment dynamics as self-reinforcing regulation patterns.</p>
@@ -529,33 +533,15 @@ export default function M2NervousSystemStatesPage() {
                 <p style={expandedProseStyle}>TEG-Blue locates the self-reinforcing loop not only at the level of belief, but at the level of state-shaped perception. This helps explain why interrupting the loop often requires experience that changes the state at the physiological level — not only cognitive reinterpretation of the filtered input.</p>
               </ExpandableSection>
             </div>
-
-            <M2ReinforcingLoop />
-          </section>
-
-          {/* C15: THE UNDERSTANDING-CHANGE GAP */}
-          <section id="understanding-change-gap" aria-labelledby="heading-gap" style={{ marginBottom: 48 }}>
-            <h2 id="heading-gap" style={sectionHeadingStyle(MODEL_COLOR)}>The Understanding-Change Gap</h2>
-            <p style={proseStyle}>A person can understand their pattern cognitively and still remain organized by the same state under stress.</p>
-            <p style={proseStyle}>This is because cognitive understanding and nervous system organization do not operate at the same speed or through the same mechanisms. The emotional-somatic system activates rapidly, often before conscious thought has fully formed. Cognition comes later. It can describe, interpret, and reflect on the process, but it does not necessarily interrupt the state once it has been activated.</p>
-            <p style={proseStyle}>Insight can support recognition, language, and meaning-making. But recognition alone does not guarantee that the nervous system will reorganize differently in real time.</p>
-            <p style={proseStyle}>State change usually requires new experience, especially repeated experiences of sufficient safety, biological restoration running to its endpoint, or co-regulated contact. These experiences update the system at the level where the state is being generated. Understanding supports the process. It does not replace the need for nervous system change through lived experience.</p>
-            <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
-                <p style={expandedProseStyle}>Kahneman (2011) — System 1 (fast, automatic) and System 2 (slow, deliberate). LeDoux (1996) — emotional processing preceding conscious awareness. van der Kolk (2014) — somatic memory operating independently of cognitive understanding.</p>
-              </ExpandableSection>
-              <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>TEG-Blue proposes an account of the gap between understanding and change through the distinction between two information systems: a faster emotional-somatic system and a slower cognitive-logical system. This clarifies why insight may be real and still not be enough.</p>
-              </ExpandableSection>
-            </div>
           </section>
 
           {/* CONNECTIONS MAP */}
           <ConnectionsMap
             color={MODEL_COLOR}
             connections={[
-              { id: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals", description: "Describes the signals that trigger state activation — M1 maps the signal, M2 maps the state the signal produces." },
-              { id: "M3: Regulation Capacities", href: "/model/m3-regulation-capacities", description: "Describes whether activation resolves — whether the body completes the restoration sequence and the nervous system returns to baseline, or the activation persists and the state becomes chronic." },
+              { id: "The Emotional Somatic Cycle", href: "/model/emotional-somatic-cycle", description: "The full cycle that M2 is part of — from safety-threat evaluation (M1), through state activation (M2), to whether the restoration sequence completes or the activation persists (M3), and whether the person can perceive any of it (M4)." },
+              { id: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals", description: "Describes the signals that trigger state activation — M1 maps the signal, M2 maps the state the signal produces. Somatic Contextual Memory (M1) calibrates the sensory filter M2 describes." },
+              { id: "M3: Regulation Capacities", href: "/model/m3-regulation-capacities", description: "Describes whether activation resolves — whether the body completes the restoration sequence and restores Physiological Baseline, or the activation persists and the state becomes chronic." },
               { id: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities", description: "Describes what determines whether the person can perceive the state shift while it is happening — why some people notice the narrowing and others remain fully identified with the filtered output." },
               { id: "F1: The Emotional Gradient", href: "/framework/f1-emotional-gradient", description: "Provides the evolutionary origin of the autonomic architecture — why two biological branches produce four states and how the ESS and CLS co-evolved to produce this gradient." },
               { id: "F2: Developmental Calibration", href: "/framework/f2-awareness-calibration", description: "Explains how the relational environment during development shapes which states become chronic and whether State Flexibility develops." },
@@ -567,6 +553,7 @@ export default function M2NervousSystemStatesPage() {
           <NavSection
             color={MODEL_COLOR}
             items={[
+              { label: "See the full cycle M2 is part of — from detection to restoration or incompletion", href: "/model/emotional-somatic-cycle", linkText: "The Emotional Somatic Cycle \u2192" },
               { label: "Understand how emotional signals are generated — the first stage of the cycle", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
               { label: "See whether the activation sequence completes — and what accumulates when it does not", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
               { label: "Understand what determines whether the person can perceive the state shift", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
