@@ -45,7 +45,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
-  description: "The biology is already established. TEG-Blue makes the architecture legible. Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
+  description: "Individual nervous systems. Collective patterns. One architecture. TEG-Blue makes it legible. Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
   keywords: [
     "emotional technology",
     "emotional regulation research",
@@ -111,7 +111,7 @@ export default function ResearchHub() {
                     backgroundClip: "text",
                   }}
                 >
-                  The biology is already established.<br />TEG-Blue makes the architecture legible.
+                  Individual nervous systems. Collective patterns. One architecture.<br />TEG-Blue makes it legible.
                 </h1>
 
                 {/* Subtitle */}
