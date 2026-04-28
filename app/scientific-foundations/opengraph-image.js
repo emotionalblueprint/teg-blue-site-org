@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Scientific Foundations - TEG-Blue Research Platform'
+export const alt = 'Established Research - TEG-Blue Research Platform'
 export const size = {
   width: 1200,
   height: 630,
@@ -76,7 +76,7 @@ export default async function Image() {
               lineHeight: 1.1,
             }}
           >
-            Scientific Foundations
+            Established Research
           </div>
 
           <div
@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 36,
             }}
           >
-            How TEG-Blue builds on and extends established emotional science
+            How TEG-Blue integrates findings from 41 research traditions into one architecture
           </div>
 
           {/* Models grid */}
@@ -127,7 +127,7 @@ export default async function Image() {
               textAlign: 'center',
             }}
           >
-            Comparing 10+ established models with TEG-Blue integration
+            Each source connected to its architectural function
           </div>
         </div>
 

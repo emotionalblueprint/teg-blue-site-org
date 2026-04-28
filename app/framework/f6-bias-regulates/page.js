@@ -225,7 +225,7 @@ export default function F6BiasRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Kunda (1990) — motivated reasoning: directional goals shape which beliefs are maintained. Friston — predictive coding: the brain as a prediction machine that minimizes surprise, treating belief-confirmation as physiological relief. Damasio (1994) — somatic marker hypothesis: bodily states guiding decision-making below awareness. Kahneman & Tversky — heuristics and biases: systematic patterns serving efficiency over accuracy.
                 </p>
@@ -304,7 +304,7 @@ export default function F6BiasRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Damasio (1994), Slovic & Finucane — affect heuristic, somatic markers. Porges (2011), Fredrickson — neuroception, broaden-and-build. Festinger (1957), Kahan — cognitive dissonance, identity-protective cognition. Tajfel & Turner, Asch — social identity, conformity. Blair (2007) — selective empathy deficits. Nyhan & Reifler — backfire effect. Edmondson (1999) — psychological safety. Kahneman & Tversky, Kruglanski — heuristics, need for closure. Jost & Banaji, Sidanius & Pratto — system justification, social dominance. Beck — core beliefs. Young — early maladaptive schemas.
                 </p>
@@ -354,7 +354,7 @@ export default function F6BiasRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Kahneman & Tversky — heuristics. Kahan — identity-protective cognition. Tajfel & Turner — social identity theory. Nyhan & Reifler — backfire effect. Edmondson (1999) — psychological safety. Damasio (1994) — somatic marker hypothesis. Schwarz & Clore (1983) — affect-as-information. Friston — predictive coding: belief-confirmation as physiological relief.
                 </p>
@@ -396,7 +396,7 @@ export default function F6BiasRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — neuroception operating below awareness across populations sharing threat conditions. Easterbrook (1959) — attentional narrowing under arousal. Janis (1972) — groupthink: collective convergence under pressure. Moscovici (1985) — social representations: shared interpretive frameworks below individual awareness.
                 </p>
@@ -441,7 +441,7 @@ export default function F6BiasRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Jost & Banaji (1994) — system justification at different positions. Greenwald & Banaji (1995) — implicit bias as perceptual defaults. Kahan — cultural cognition. Festinger (1957) — cognitive dissonance. Herman (1992) — sustained contradiction under coercive conditions. Freire (1970) — conscientização. Main & Goldwyn (1998) — coherent narrative as integration of felt experience with articulated understanding. Fonagy et al. (2002) — mentalization as holding multiple perspectives.
                 </p>
@@ -503,7 +503,7 @@ export default function F6BiasRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Paluck & Green (2009) — meta-analysis: most prejudice-reduction interventions produce attitude change that does not translate to behavioral change. Forscher et al. (2019) — meta-analysis of implicit bias interventions: small effects, poor durability. Devine et al. (2012) — awareness alone insufficient without sustained practice. Edmondson (1999) — psychological safety as prerequisite for learning. Allport (1954) — contact hypothesis: prejudice reduction under specific conditions. Siegel — window of tolerance. Miller & Rollnick — motivational interviewing: non-confrontational change through safety and autonomy.
                 </p>

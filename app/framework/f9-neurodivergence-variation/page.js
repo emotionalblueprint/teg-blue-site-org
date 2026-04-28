@@ -227,7 +227,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Singer (1998) — the neurodiversity paradigm: neurological variation as natural human variation. Markram & Markram (2010) — Intense World Theory: heightened perception as processing difference. Porges (2011) — safety detection operates through sensory channels that vary in threshold and sensitivity.
                 </p>
@@ -269,7 +269,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Oliver (1990) — the Social Model of Disability: disability as environmental barrier. Shakespeare (2006) — the interactional model: disability as the relationship between individual and environment. Rose & Meyer (2002) — Universal Design for Learning: environments designed for the range of human variation.
                 </p>
@@ -311,7 +311,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Price (2022) — the physiological cost of sustained masking across neurodivergent populations. Van der Kolk (2014) — incomplete activation cycles as the mechanism of chronic stress accumulation. McEwen (1998) — allostatic load.
                 </p>
@@ -370,7 +370,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — the autonomic hierarchy: sympathetic activation, then dorsal vagal withdrawal when exceeded. Siegel (2012) — window of tolerance. Perry (2006) — dose-response in chronic stress: state-dependent functioning. McEwen (1998) — allostatic overload when cumulative cost exceeds capacity.
                 </p>
@@ -409,7 +409,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   McEwen (1998) — allostatic load leading to system reorganization. Price (2022) — neurodivergent burnout as distinct from occupational burnout. Maté (2003) — physiological consequences of sustained self-suppression.
                 </p>
@@ -465,7 +465,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Milton (2012) — the double empathy problem: empathy difficulties between neurotypes as bidirectional. Crompton et al. (2020) — autistic-to-autistic communication is as effective as non-autistic-to-non-autistic. Barrett (2017) — emotion concepts as culturally constructed categories. Schore (2003) — affect regulation disrupted by sustained incongruence. Hull et al. (2017) — cognitive and emotional cost of camouflaging.
                 </p>
@@ -530,7 +530,7 @@ export default function F9VariationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Rose & Meyer (2002) — Universal Design for Learning: proactive design for variation. Edmondson (1999) — psychological safety: team performance increases when members can contribute without performance risk. Oliver (1990) — the Social Model: removing environmental barriers rather than fixing individuals. Price (2022) — risks of unmasking without environmental support. Cage & Troxell-Whitman (2019) — masking, mental health, and environmental factors.
                 </p>

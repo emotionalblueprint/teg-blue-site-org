@@ -225,7 +225,7 @@ export default function EmotionalSomaticSystemPage() {
           </p>
 
           <div style={expandableRowStyle}>
-            <ExpandableSection title="Research Foundations" type="opendata">
+            <ExpandableSection title="Established Research" type="opendata">
               <p style={expandedProseStyle}>
                 Porges (2011) — polyvagal theory: the autonomic nervous system organises physiological state through hierarchical neural circuits, with neuroception as the subconscious evaluation of environmental safety and threat. LeDoux (1996) — the amygdala fires in 12 milliseconds, generating a physiological threat response before cortical processing begins. Damasio (1994) — somatic marker hypothesis: the body{"'"}s physiological responses inform decision-making before conscious reasoning arrives. Craig (2009) — interoception as a distinct sensory system providing the brain with information about the body{"'"}s internal state.
               </p>
@@ -269,7 +269,7 @@ export default function EmotionalSomaticSystemPage() {
           </p>
 
           <div style={expandableRowStyle}>
-            <ExpandableSection title="Research Foundations" type="opendata">
+            <ExpandableSection title="Established Research" type="opendata">
               <p style={expandedProseStyle}>
                 Kahneman (2011) — dual-process theory: System 2 as slow, deliberate, effortful processing. Gazzaniga (1985) — the interpreter module: the left hemisphere constructs narrative explanations for behaviour it did not generate. Nisbett & Wilson (1977) — people often cannot accurately report on the causes of their own behaviour, constructing plausible explanations post-hoc.
               </p>
@@ -361,7 +361,7 @@ export default function EmotionalSomaticSystemPage() {
           </p>
 
           <div style={expandableRowStyle}>
-            <ExpandableSection title="Research Foundations" type="opendata">
+            <ExpandableSection title="Established Research" type="opendata">
               <p style={expandedProseStyle}>
                 Craig (2002, 2009) — the anterior insula as the cortical seat of interoceptive awareness, mapping visceral, hormonal, and autonomic states into conscious experience. Porges (2011) — polyvagal theory: ventral vagal pathways as the substrate for social engagement and co-regulation, suppressed under chronic sympathetic activation. Shamay-Tsoory, Aharon-Peretz & Perry (2009) — double dissociation between cognitive empathy (external observation) and affective empathy (interoceptive resonance), demonstrating that the two operate through independent neural substrates.
               </p>
@@ -530,7 +530,7 @@ export default function EmotionalSomaticSystemPage() {
           </p>
 
           <div style={expandableRowStyle}>
-            <ExpandableSection title="Research Foundations" type="opendata">
+            <ExpandableSection title="Established Research" type="opendata">
               <p style={expandedProseStyle}>
                 Craig (2002, 2009) — interoceptive accuracy varies systematically across individuals and conditions, with anterior insula activation correlating with interoceptive performance. Paulus & Stein (2010) — interoceptive dysfunction in anxiety: altered anterior insula processing changes how bodily signals reach awareness. Critchley et al. (2004) — individual differences in interoceptive sensitivity predict emotional experience intensity, demonstrating that the same physiological activation produces different conscious experience depending on interoceptive access.
               </p>

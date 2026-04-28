@@ -236,7 +236,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Festinger (1957) — cognitive dissonance as the discomfort of holding contradictory cognitions. Miller & Rollnick (2002) — ambivalence as a natural product of competing motivations. Schwartz (1995) — Internal Family Systems: parts with different needs as the structure of the mind.
                 </p>
@@ -293,7 +293,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bateson (1972) — the double bind: contradictory messages producing paradoxical responses as predictable systemic outcomes. Watzlawick, Weakland & Fisch (1974) — paradoxes of change: the attempted solution that maintains the problem.
                 </p>
@@ -329,7 +329,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bronfenbrenner (1979) — ecological systems theory: influence across nested levels. White & Epston (1990) — narrative therapy: stories becoming lived realities. Bowen (1978) — multigenerational transmission: patterns becoming family identity.
                 </p>
@@ -374,7 +374,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — autonomic state determines available cognitive and social responses. Siegel (2012) — window of tolerance: the zone within which complexity can be processed. Main & Hesse (1990) — narrative coherence in the Adult Attachment Interview as a measure of paradox-holding.
                 </p>
@@ -428,7 +428,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Jung (1960) — the transcendent function: holding opposites until a third position emerges. Linehan (1993) — distress tolerance and dialectical thinking. Main & Hesse (1990) — earned security as the capacity to narrate complexity with emotional truth intact.
                 </p>
@@ -476,7 +476,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Prochaska & DiClemente (1983) — the knowing-being gap as a predictable phase. Boss (2006) — ambiguous loss: grief for what was never available. Bowlby (1980) — the mourning process in attachment reorganization.
                 </p>
@@ -521,7 +521,7 @@ export default function F11ParadoxPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Jung (1960) — individuation: the integration of opposites as the central developmental task. Linehan (1993) — dialectical behavior therapy: holding opposing truths as simultaneously valid. Main & Hesse (1990) — coherence of mind in the Adult Attachment Interview. Dismissing narratives score high on surface coherence and low on integration of affect and memory.
                 </p>

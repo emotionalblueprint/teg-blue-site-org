@@ -25,7 +25,7 @@ const FAQ_ITEMS = [
 const SIDEBAR_SECTIONS = [
   { label: "The Core Premise", href: "#core-premise", description: "The foundational scientific claim and what makes it testable." },
   { label: "Validation", href: "#validation", description: "Initial empirical findings from 10,000+ natural conflict narratives." },
-  { label: "Scientific Foundations", href: "#foundations", description: "24 scientific domains, 145+ theoretical contributions across 41 research traditions, and what the integration reveals." },
+  { label: "Established Research", href: "#foundations", description: "24 scientific domains, 145+ theoretical contributions across 41 research traditions, and what the integration reveals." },
   { label: "Open Questions", href: "#open-questions", description: "Priority research directions for independent verification." },
   { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — background and research identity." },
   { label: "Two Sites", href: "#two-sites", description: "Open research (.org) and interactive tools (.com)." },
@@ -211,9 +211,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Scientific Foundations */}
+        {/* Established Research */}
         <section id="foundations" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Scientific foundations</h2>
+          <h2 style={sectionHeading}>Established research</h2>
 
           <p style={bodyStyle}>
             The framework synthesizes established research from <strong style={{ color: TEXT.primary }}>24 scientific domains</strong> into <strong style={{ color: TEXT.primary }}>12 integrative frameworks</strong> organized in three arcs:
@@ -255,9 +255,9 @@ export default function AboutPage() {
           </div>
 
           <p style={bodyStyle}>
-            Full theoretical mapping available at the{" "}
+            Full source mapping available at the{" "}
             <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Scientific Foundations
+              Established Research
             </Link>
             {" "}page, with 145+ theoretical contributions across 41 research traditions documented and cross-referenced.
           </p>
@@ -433,7 +433,7 @@ export default function AboutPage() {
             <NavLink href="/research-entry" label="Research Entry" />
             <NavLink href="/methodology" label="Methodology" />
             <NavLink href="/publications" label="Publications" />
-            <NavLink href="/scientific-foundations" label="Theory Map" />
+            <NavLink href="/scientific-foundations" label="Established Research" />
             <NavLink href="/collaborate" label="Collaborate" />
             <a
               href="https://teg-blue.com/emotional-tools"

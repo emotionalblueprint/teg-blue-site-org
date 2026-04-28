@@ -218,7 +218,7 @@ export default function F2AwarenessCalibrationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Stern (1985) — emergent self-experience before reflective self-awareness. Schore (2003) — right-hemisphere implicit processing precedes explicit cognition; early relational experience shapes the neural substrate of self-observation. Zajonc (1980) — affective primacy: emotional responses precede and operate independently of cognitive appraisal. Craig (2002) — interoceptive awareness as a developmental capacity with a maturing neural substrate. Winnicott (1960) — the infant as a unit inseparable from the caregiving environment.
                 </p>
@@ -296,7 +296,7 @@ export default function F2AwarenessCalibrationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — the ventral vagal system as the substrate for co-regulation; vagal tone entrainment between caregiver and infant. Schore (2003) — right-brain-to-right-brain attunement as the primary channel for affective transmission. Bowlby (1969) — the attachment system as a biological regulation mechanism. Ainsworth (1978) — the secure base: consistent co-regulation predicting regulatory capacity. Tronick (1998) — mutual regulation model. Levine (1997) — the body's activation sequence requires completion through discharge. Winnicott (1960) — "good enough" caregiving: sufficient, not perfect. McEwen (2000) — allostatic load: the cumulative cost of unresolved activation.
                 </p>
@@ -378,7 +378,7 @@ export default function F2AwarenessCalibrationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Decety & Jackson (2004) — empathy as multi-component: cognitive empathy, affective empathy, and self-referential processing as dissociable capacities. Singer & Lamm (2009) — distinct neural substrates for cognitive and affective empathy. Blair (2005) — dissociable empathy components with independent developmental trajectories. Craig (2002) — interoceptive awareness as a developmental capacity with a maturing neural substrate. Schore (2003) — right-hemisphere development through attuned caregiving. Fonagy et al. (2002) — mentalization as a developmental product of contingent mirroring. Bandura (1977) — social modelling: the child calibrates to what is embodied, not what is instructed.
                 </p>
@@ -452,7 +452,7 @@ export default function F2AwarenessCalibrationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Van der Kolk (2014) — developmental environments and their long-term autonomic consequences. Linehan (1993) — the invalidating environment as a specific developmental condition. Porges (2011) — neuroception: the nervous system evaluating safety through physiological signals, not words. Schore (2003) — right-hemisphere development shaped by attuned caregiving. Main & Hesse (1990) — the caregiver as simultaneous source of safety and threat in disorganized attachment. Young (1990) — early maladaptive schemas as stable patterns produced by early relational conditions.
                 </p>
@@ -561,7 +561,7 @@ export default function F2AwarenessCalibrationPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Van der Kolk (2014) — chronic autonomic states as products of developmental conditions. Porges (2011) — loss of autonomic flexibility under chronic activation. McEwen (2000) — allostatic load: the cumulative physiological cost of sustained activation without resolution. LeDoux (1996) — fear conditioning: the nervous system encoding threat thresholds through experience. Main & Hesse (1990) — unresolved attachment in parents predicting disorganized attachment in children. Levine (1997) — the body carrying unresolved activation forward when the completion sequence was never learned.
                 </p>

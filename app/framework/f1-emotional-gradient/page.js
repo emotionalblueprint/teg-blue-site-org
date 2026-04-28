@@ -215,7 +215,7 @@ export default function F1EmotionalGradientPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   LeDoux (1996) — amygdala as primary threat-detection structure, subcortical threat pathway. Craig (2009) — insula as the substrate of interoceptive awareness and subjective feeling. Damasio (1994) — somatic markers; emotion as body-state. Porges (2011) — vagus nerve as bidirectional safety/threat signalling pathway; the vagal brake. McEwen (2000) — HPA axis, cortisol, allostatic load. Panksepp (1998) — primary emotional systems as neurobiological circuits. Sapolsky (2004) — stress hormones and their behavioural effects. Carter (1998) — oxytocin and social bonding. Berridge & Kringelbach (2015) — dopamine and motivational systems.
                 </p>
@@ -296,7 +296,7 @@ export default function F1EmotionalGradientPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — polyvagal theory: three-layered autonomic hierarchy, neuroception. Dana (2018) — clinical application of polyvagal principles. Jackson (1884) — dissolution: newer circuits inhibit older ones; under stress, older circuits re-emerge. Panksepp (1998) — primary emotional systems conserved across mammals. Preuss (2021) — PFC evolution in primates; human expansion of granular PFC and association cortex. Dunbar (1998) — social brain hypothesis: brain size expanded with group size. Arnsten (2009) — prefrontal cortex function under stress. Koenigs et al. (2007) — vmPFC damage and impaired guilt processing.
                 </p>
@@ -367,7 +367,7 @@ export default function F1EmotionalGradientPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Levine (1997) — somatic experiencing: the body's completion mechanism. Nagoski & Nagoski (2019) — the stress cycle requires completion, not management. Porges (2011) — parasympathetic restoration through the vagal brake; co-regulation as the mammalian primary restoration pathway. Gross (1998) — emotion suppression maintains physiological arousal even when expression stops. McEwen (2000) — allostatic load: the cumulative cost of incomplete stress responses. Sapolsky (2004) — chronic cortisol elevation and its systemic effects.
                 </p>
@@ -439,7 +439,7 @@ export default function F1EmotionalGradientPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011). Gray (1970). Carver & Scheier (1990). Fredrickson (2001). Siegel (2012). Ogden, Minton & Pain (2006). Bowlby (1969). Walker (2013). van der Kolk (2014). Kahneman (2011). Gross (1998). Panksepp (1998). Damasio (1994). LeDoux (1996). Levine (1997). Craig (2009). McEwen (2000). Sapolsky (2004). Carter (1998). Berridge & Kringelbach (2015). Schore (2001).
                 </p>
@@ -530,7 +530,7 @@ export default function F1EmotionalGradientPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   The individual mechanisms at each scale are established within their respective research traditions. No single tradition maps this trajectory end-to-end — from individual perception through biological restoration through collective structures. The integration is the framework's hypothesis, open to testing.
                 </p>
@@ -595,7 +595,7 @@ export default function F1EmotionalGradientPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   The individual stages of the arc are established across their respective research traditions: signal detection (LeDoux, Panksepp), state activation (Porges), biological restoration (Levine, Nagoski), behaviour as state-dependent (Siegel, Ogden), social structures as emergent from individual regulation patterns (Bowen, established in family systems research). The end-to-end arc is the framework's hypothesis.
                 </p>

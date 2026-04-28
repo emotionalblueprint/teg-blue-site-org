@@ -8,8 +8,8 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const FAQ_ITEMS = [
   {
-    question: "What scientific theories does TEG-Blue build on?",
-    answer: "TEG-Blue integrates 145+ theoretical contributions from 41 research traditions across 24 research domains including polyvagal theory, attachment theory, affective neuroscience, trauma research, cognitive science, developmental psychology, family systems, and social dominance theory. Every source theory is credited. The originality is in the cross-disciplinary connections, not the individual theories.",
+    question: "What established research does TEG-Blue integrate?",
+    answer: "TEG-Blue integrates 145+ theoretical contributions from 41 research traditions across 24 research domains including polyvagal theory, attachment theory, affective neuroscience, trauma research, cognitive science, developmental psychology, family systems, and social dominance theory. Each source is connected to its architectural function — what mechanism, condition, or pattern it helps make visible — not used as symbolic authority. The contribution is the integration, not the individual pieces.",
   },
   {
     question: "How many research domains does TEG-Blue span?",
@@ -803,16 +803,16 @@ export default function ScientificFoundationsPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="SCIENTIFIC FOUNDATIONS"
-            title="Scientific Foundations"
-            description={`The established research that TEG-Blue builds on — ${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains, integrating 145+ theoretical contributions.`}
+            badge="ESTABLISHED RESEARCH"
+            title="Established Research"
+            description={`${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains underwrite specific parts of the TEG-Blue architecture. Each source is connected to its architectural function — what mechanism, condition, or pattern it makes visible — not used as symbolic authority.`}
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* ─── Answer-first opening ─────────────────────────────── */}
         <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 24, fontWeight: 500 }}>
-          TEG-Blue integrates {THEORIES.length} research traditions across {RESEARCH_DOMAINS.length} domains — from polyvagal theory and attachment research to social dominance theory and epigenetics — into one shared map. Every source theory is credited. The originality is not in the individual theories but in the cross-disciplinary connections between them.
+          TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. A finding from neuroscience may explain the mechanism; a finding from attachment research may explain the developmental imprint; a finding from trauma research may explain the chronic adaptation; a finding from sociology may explain how the same pattern becomes collective. Each source remains accurate to its own discipline, language, and evidence base. TEG-Blue places these findings in sequence — field → finding → function → position in the architecture. The contribution is the placement, not the individual pieces.
         </p>
 
         {/* ─── Regulation Thread framing ──────────────────────────── */}
@@ -836,10 +836,10 @@ export default function ScientificFoundationsPage() {
               marginBottom: 6,
             }}
           >
-            Why These Theories Connect
+            Why These Sources Connect
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
-            These research traditions developed independently, across separate disciplines. TEG-Blue proposes that they describe the same underlying mechanism at different scales: when the body&apos;s natural return path is missing, something else regulates instead — cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost.
+            These research traditions developed independently, across separate disciplines. TEG-Blue proposes that they describe parts of the same underlying pattern: when the body cannot complete biological restoration, the nervous system organizes around substitutes — cognition, rules, hierarchies, bias, domination. Each source helps make one part of this sequence visible.
           </p>
           <Link
             href="/frameworks-map#the-regulation-thread"
@@ -1152,7 +1152,7 @@ export default function ScientificFoundationsPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "Scientific Foundations", url: "/scientific-foundations" },
+              { name: "Established Research", url: "/scientific-foundations" },
             ])
           ),
         }}
@@ -1168,7 +1168,7 @@ export default function ScientificFoundationsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Scientific Foundations | TEG-Blue Research",
+              name: "Established Research | TEG-Blue Research",
               url: "https://teg-blue.org/scientific-foundations",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

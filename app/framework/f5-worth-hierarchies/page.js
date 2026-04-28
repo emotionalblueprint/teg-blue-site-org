@@ -224,7 +224,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bowlby (1969, 1988) — conditional attachment produces seeking for alternative safety sources. Adler (1927) — power-seeking as compensation for experienced powerlessness. Keltner, Gruenfeld & Anderson — power and approach/inhibition theory: power reduces threat sensitivity. Eisenberger, Lieberman & Williams (2003) — social exclusion activating dorsal anterior cingulate cortex.
                 </p>
@@ -276,7 +276,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bourdieu (1986) — three forms of capital: economic, social, cultural. Weber — status and class as independent dimensions of stratification. Spence (1973) — signalling theory: how markers signal value in competitive systems. Sen (1999) — capability approach: what people can actually do and be, constrained by their access.
                 </p>
@@ -321,7 +321,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Schore (2001) — caregiver regulation as the mechanism through which neural architecture develops. Meaney (2001) — epigenetic effects of maternal care on offspring stress-response systems. Fonagy et al. (2002) — mentalization capacity as intergenerational. Wilkinson & Pickett (2009) — inequality as a determinant of health and developmental outcomes.
                 </p>
@@ -363,7 +363,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Fine (2010) — gendered socialisation as signal-specific. Connell (2005) — masculinities as socially constructed configurations. Krieger (2001) — embodiment: how social inequality gets under the skin through specific biological pathways. Collins (2000) — intersecting systems producing qualitatively different experiences at each intersection.
                 </p>
@@ -405,7 +405,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bourdieu & Passeron (1977) — social reproduction through credential systems. Jost & Banaji (1994) — system justification: defending existing arrangements as fair. Crenshaw (1989) — intersectionality: how multiple axes of structural filtering compound. Collins (2000) — the matrix of domination. Goffman (1963) — stigma: deviance from expected signals producing spoiled identity.
                 </p>
@@ -459,7 +459,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Gilbert & Price — social rank theory: hierarchical sensitivity under threat. Merton (1968) — Matthew effect: accumulated advantage in institutions. DiMaggio & Powell — institutional isomorphism: organizations converging on the same sorting criteria. Jost & Banaji (1994) — system justification: how the sorted defend the sorting.
                 </p>
@@ -501,7 +501,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Jost & Banaji (1994) — system justification operating differently at different positions. Freire (1970) — conscientização as moving from absorbed oppression to critical awareness. Festinger (1957) — cognitive dissonance when two data sources conflict.
                 </p>
@@ -543,7 +543,7 @@ export default function F5WorthHierarchiesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   McEwen (1998) — allostatic load: cumulative physiological cost of repeated stress adaptation. Geronimus (1992) — weathering hypothesis: accelerated biological aging from sustained structural stress. Krieger (2001) — embodiment: social inequality producing measurable biological effects. Porges (2011) — chronic social threat producing sustained defensive physiological states. Wilkinson & Pickett (2009) — inequality as a determinant of health outcomes.
                 </p>

@@ -224,7 +224,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — the nervous system's capacity to shift from defensive to social engagement states when safety cues are sustained. Levine (1997) — the body's capacity to complete interrupted activation sequences at any point in life. Bowlby (1969/1988) — earned security: adults can develop secure attachment representations regardless of their history. Siegel (2012) — neural integration as a lifelong developmental capacity.
                 </p>
@@ -266,7 +266,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Schore (2003) — right-brain regulation develops through relational experience and can rebuild in adulthood. Fonagy & Target (2002) — mentalization as a developmental achievement acquirable through therapeutic relationships. Van der Kolk (2014) — physiological patterns persist until the body has conditions to complete what was interrupted.
                 </p>
@@ -317,7 +317,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Festinger (1957) — cognitive dissonance as regulatory threat to maintaining coherence. Bowlby (1980) — the attachment system's resistance to reorganization even when existing patterns are costly. Porges (2011) — neuroception: safety-threat assessment below conscious awareness. Levine (1997) — the body's resistance to discharge as protective until conditions support completion.
                 </p>
@@ -374,7 +374,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Porges (2011) — safety as prerequisite for social engagement. Siegel (2012) — window of tolerance. Bowlby (1988) — the secure base: relational conditions for exploration. Winnicott (1965) — the holding environment.
                 </p>
@@ -429,7 +429,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Herman (2015) — stages of trauma recovery: safety before processing. Gottman (1999) — repair attempts and conditions for success or failure. Fonagy & Target (2002) — mentalization failure under emotional arousal.
                 </p>
@@ -477,7 +477,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Levine (1997) — somatic experiencing: completing interrupted activation through interoceptive awareness. Barrett (2017) — emotional granularity: the more precisely a person can differentiate internal states, the more effective regulatory capacity. Fonagy & Target (2002) — mentalization develops through being mentalized.
                 </p>
@@ -528,7 +528,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Prochaska & DiClemente (1983) — stages of change: oscillation between contemplation and action. Bowlby (1980) — attachment system's gradual reorganization through repeated safe experience. Siegel (2012) — neural integration as ongoing process. Levine (1997) — pendulation: the body's natural oscillation between activation and settling.
                 </p>
@@ -573,7 +573,7 @@ export default function F8RepairingAwarenessPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Van der Kolk (2014) — physiological patterns persist until the body has conditions to complete what was interrupted. Porges (2011) — the social engagement system responds to safety cues, not cognitive conclusions. Damasio (1994) — somatic markers: the body's role operates through channels cognitive reasoning cannot access.
                 </p>

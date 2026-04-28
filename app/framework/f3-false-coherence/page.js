@@ -237,7 +237,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Damasio (1994, 1999) — the somatic marker hypothesis: emotion as bodily signal that informs cognition. Without access to somatic markers, decision-making loses its biological ground. Porges (2011) — neuroception: safety-threat evaluation below conscious awareness, gating what cognition has access to. Schore (2003) — right-hemisphere affect regulation developing before left-hemisphere language; when the right-hemisphere foundation is not built, the left hemisphere constructs narrative without it.
                 </p>
@@ -282,7 +282,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Freud (1915, 1926) — defense mechanisms: repression, denial, rationalization as automatic processes operating below awareness. Kahneman (2011) — System 1/System 2: fast automatic processing generating judgments that the slower deliberate system rationalizes post-hoc. Haidt (2001) — the social intuitionist model: moral reasoning as post-hoc justification for intuitive judgments already formed. Porges (2011) — neuroception gating cognition: the nervous system determining what information reaches conscious awareness before the person can choose.
                 </p>
@@ -349,7 +349,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Festinger (1957) — cognitive dissonance theory: the drive toward internal consistency producing motivated reasoning. Kahneman (2011) — coherence-seeking as a fundamental cognitive operation: the mind preferring a consistent story over an accurate one. Gazzaniga (1998) — the left-hemisphere interpreter: the brain constructing explanatory narratives for behaviors and states it did not generate. Nisbett & Wilson (1977) — people constructing plausible causal explanations for their own behavior without access to the actual causes.
                 </p>
@@ -394,7 +394,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Hebb (1949) — neural consolidation: pathways that fire together strengthen through repetition. Beck (1979) — schema maintenance through confirmation bias: existing beliefs filter information to confirm themselves. Van der Kolk (2014) — the body keeps the score: insight does not discharge somatic activation. Levine (1997) — somatic experiencing: physiological completion requires bodily engagement, not cognitive processing alone.
                 </p>
@@ -439,7 +439,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Festinger (1957) — cognitive dissonance: the psychological discomfort of holding contradictory cognitions, driving motivated resolution. Kunda (1990) — motivated reasoning: the tendency to arrive at desired conclusions, loosely constrained by plausibility. Kruglanski (1989) — need for cognitive closure: the preference for definite answers over ambiguity, especially under threat. Porges (2011) — neuroception gating cognition: safety-threat evaluation determining what processing is available.
                 </p>
@@ -484,7 +484,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Rogers (1959) — conditions of worth: the self-concept organized around approval rather than organismic experience. Welwood (2000) — spiritual bypassing: using spiritual practices to avoid psychological material. Illouz (2008) — the therapeutic culture: therapeutic language becoming a tool for self-presentation rather than self-knowledge.
                 </p>
@@ -532,7 +532,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Damasio (1994) — somatic markers shaping attribution before conscious awareness. Porges (2011) — neuroception evaluating experienced safety, not objective danger. Freud (1911) — projection: internal states attributed to external sources. Beck (1976) — cognitive distortion: threat-biased attribution patterns maintaining negative schemas. Van der Kolk (2014) — trauma-based perception: the body's memory shaping what the person sees in the present.
                 </p>
@@ -583,7 +583,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bowlby (1969, 1988) — attachment as a regulatory system: adults continue using attachment figures for autonomic regulation. Kohut (1977) — self-object needs: others experienced as extensions of one's own regulatory system. Kernberg (1975) — narcissistic pathology as a relational regulatory strategy. Flores (2004) — attachment as the framework for understanding addictive patterns: tolerance, escalation, the distinction between the substance and the underlying state.
                 </p>
@@ -631,7 +631,7 @@ export default function F3FalseCoherencePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Festinger (1957) — cognitive dissonance at the group level: shared beliefs maintained through mutual reinforcement. Haidt (2012) — moral foundations theory: moral reasoning as post-hoc justification for intuitions shaped by group identity. Jost & Banaji (1994) — system justification theory: the psychological tendency to defend existing social arrangements. Bourdieu (1977) — habitus: social structures internalized as dispositions that feel natural.
                 </p>

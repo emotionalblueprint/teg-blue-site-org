@@ -25,7 +25,7 @@ const NAV_ITEMS = [
     children: [
       { label: "Overview", href: "/foundations" },
       { label: "How It Works", href: "/how-it-works" },
-      { label: "Scientific Foundations", href: "/scientific-foundations" },
+      { label: "Established Research", href: "/scientific-foundations" },
     ],
   },
   { label: "Emotional Somatic System", href: "/emotional-somatic-system" },

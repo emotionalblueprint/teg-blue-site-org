@@ -32,7 +32,7 @@ export default function SiteFooter() {
         </Link>
         {" · "}
         <Link href="/scientific-foundations" style={{ color: TEXT.hint, textDecoration: "none" }}>
-          Scientific Foundations
+          Established Research
         </Link>
         {" · "}
         <Link href="/foundations" style={{ color: TEXT.hint, textDecoration: "none" }}>

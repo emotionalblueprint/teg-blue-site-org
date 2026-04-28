@@ -356,9 +356,9 @@ export function generateScientificFoundationsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Scientific Foundations — TEG-Blue Research",
+    name: "Established Research — TEG-Blue Research",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "How TEG-Blue extends 15 major psychological models (Plutchik, NVC, CBT, Polyvagal Theory, IFS, and more) and integrates 145+ theoretical contributions from 41 research traditions into a unified system.",
+    description: "The bodies of established research that underwrite specific parts of the TEG-Blue architecture. 145+ theoretical contributions from 41 research traditions — Plutchik, NVC, CBT, Polyvagal Theory, IFS, attachment, trauma, and more — each connected to its architectural function.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {

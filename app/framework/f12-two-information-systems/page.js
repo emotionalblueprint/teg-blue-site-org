@@ -222,7 +222,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Kahneman (2011) — System 1/System 2: fast automatic and slow deliberate processing. Damasio (1994) — somatic markers: emotions precede and shape cognition. LeDoux (1996) — the amygdala pathway completing before the cortical pathway. Porges (2011) — neuroception: autonomic state determining social capacity before conscious awareness.
                 </p>
@@ -264,7 +264,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Preuss (2021) — PFC evolution in primates; human expansion of association cortex. Dunbar (1998) — social brain hypothesis: brain size expanding with group size. Panksepp (1998) — primary emotional systems conserved across mammals. McBrearty & Brooks (2000), Henrich (2016) — cultural acceleration outpacing biological change.
                 </p>
@@ -315,7 +315,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Karmin et al., Zeng et al. — Y-chromosome bottleneck coinciding with cultural transition: genetic evidence for extreme concentration of power. Boehm (2001) — egalitarian mechanisms in mobile foraging societies. Woodburn (1982) — immediate-return vs delayed-return societies. Diamond (1997) — the structural consequences of the agricultural transition.
                 </p>
@@ -363,7 +363,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Henrich (2016), Boyd & Richerson — cultural transmission of norms, practices, and cognitive styles. Siegel (2012), Schore (2003) — interpersonal neurobiology: how override transmits developmentally. Barrett (2017) — how emotion concepts are culturally constructed rather than biologically fixed.
                 </p>
@@ -399,7 +399,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Barrett (2017) — emotional granularity: most people lack precision in naming internal states. Porges (2011) — most people do not know what autonomic state they are in. Van der Kolk (2014) — the body keeps the score: the consequences of treating regulation as a cognitive task.
                 </p>
@@ -438,7 +438,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Van der Kolk (2014) — the body keeps the score: physiological patterns persist regardless of cognitive understanding. Porges (2011) — the social engagement system responds to safety cues, not cognitive conclusions. Damasio (1994) — somatic markers operate through channels cognitive reasoning cannot access. Levine (1997) — somatic experiencing: the body requires conditions, not explanation.
                 </p>
@@ -506,7 +506,7 @@ export default function F12TwoInformationSystemsPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Each tradition documented across F1–F11. The convergence — that all twelve frameworks describe one mechanism at different scales — is TEG-Blue's architectural hypothesis.
                 </p>

@@ -449,7 +449,7 @@ export default function EmotionalSomaticCyclePage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>
                   Fredrickson (2001) — broaden-and-build theory and capacity restriction under sustained negative affect. Arnsten (2009) — prefrontal cortex degradation under chronic stress. Sapolsky (2004) — glucocorticoid cascade and hippocampal damage. Levine (1997) — somatic completion and what happens when it cannot occur. Gross (1998) — suppression maintaining physiological arousal. Craig (2002) — interoceptive substrate architecture. Porges (2011) — neuroception and autonomic state detection. Damasio (1999) — somatic marker hypothesis and the role of body-state data in decision-making.
                 </p>

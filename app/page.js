@@ -45,7 +45,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
-  description: "Emotions are structured biological signals. TEG-Blue makes them legible. Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
+  description: "The biology is already established. TEG-Blue makes the architecture legible. Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
   keywords: [
     "emotional technology",
     "emotional regulation research",
@@ -111,7 +111,7 @@ export default function ResearchHub() {
                     backgroundClip: "text",
                   }}
                 >
-                  Emotions are structured biological signals.<br />TEG-Blue makes them legible.
+                  The biology is already established.<br />TEG-Blue makes the architecture legible.
                 </h1>
 
                 {/* Subtitle */}
@@ -125,7 +125,7 @@ export default function ResearchHub() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  An Integrative Architecture Mapping Nervous System States, Signals, and Restoration
+                  An integrative architecture mapping emotional information, nervous system states, and biological restoration.
                 </p>
 
                 {/* Lead description */}
@@ -179,24 +179,6 @@ export default function ResearchHub() {
                     See the Frameworks
                   </Link>
                 </div>
-
-                {/* Epistemological position */}
-                <p
-                  style={{
-                    marginTop: "clamp(24px, 4vw, 36px)",
-                    marginBottom: 0,
-                    fontSize: "clamp(12px, 1.8vw, 14px)",
-                    fontFamily: FONT.mono,
-                    fontWeight: 500,
-                    color: TEXT.secondary,
-                    letterSpacing: "-0.01em",
-                    lineHeight: 1.6,
-                    maxWidth: 680,
-                  }}
-                >
-                  The building blocks are validated science.{" "}
-                  <span style={{ color: TEXT.primary }}>The connections are the hypothesis.</span>
-                </p>
 
                 {/* Accent bar separator */}
                 <div
@@ -446,7 +428,7 @@ export default function ResearchHub() {
               The full architecture, including how the parts connect, is at{" "}
               <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
               The 145+ theoretical contributions across 41 research traditions are documented at{" "}
-              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Scientific Foundations</Link>.
+              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Established Research</Link>.
             </p>
           </section>
 
@@ -467,7 +449,7 @@ export default function ResearchHub() {
               <OpenItem label="Cite it" description="Full citation format and examples" href="/citations" />
               <OpenItem label="Use the data" description="Anonymized conflict narratives, emotional gradient data" href="/publications" />
               <OpenItem label="Test the claims" description="Five open research questions, four research directions" href="/research-entry" />
-              <OpenItem label="Read the source theories" description="145+ theoretical contributions from 41 research traditions, credited and documented" href="/scientific-foundations" />
+              <OpenItem label="Review the established research" description="145+ theoretical contributions from 41 research traditions, each connected to its architectural function" href="/scientific-foundations" />
               <OpenItem label="Read the reframes" description="15 common terms traced back to the nervous system" href="/reframes" />
               <OpenItem label="Explore the labels" description="19 psychology labels mapped to 3 awareness capacities" href="/explore/labels" />
             </div>

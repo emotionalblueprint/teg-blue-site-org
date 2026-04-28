@@ -197,7 +197,7 @@ export default function CollaboratePage() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 20 }}>
             <NavLink href="/research-entry" label="Research Entry" />
             <NavLink href="/publications" label="Publications" />
-            <NavLink href="/scientific-foundations" label="Scientific Foundations" />
+            <NavLink href="/scientific-foundations" label="Established Research" />
             <NavLink href="/frameworks-map" label="Framework Architecture" />
             <a
               href="https://teg-blue.com/emotional-tools"

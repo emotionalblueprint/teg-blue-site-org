@@ -221,7 +221,7 @@ export default function F10GenerationalBridgesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bowlby (1969/1988) — attachment patterns transmit through caregiver behavior, not intention. Main & Hesse (1990) — the adult's unresolved attachment history predicts the child's attachment classification. Schore (2003) — right-brain-to-right-brain communication: the caregiver's autonomic state shapes the child's autonomic development. Porges (2011) — co-regulation through the social engagement system operates below conscious awareness.
                 </p>
@@ -272,7 +272,7 @@ export default function F10GenerationalBridgesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bowen (1978) — multigenerational transmission of relational patterns. Yehuda et al. (2005) — epigenetic transmission of stress response across generations. White & Epston (1990) — narrative therapy: family stories shape identity. Schore (2003) — co-regulation as the mechanism through which regulatory capacity shapes development.
                 </p>
@@ -311,7 +311,7 @@ export default function F10GenerationalBridgesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Main & Hesse (1990) — unresolved loss predicts disorganized attachment in children. Van der Kolk (2014) — the body carries unprocessed experience as physiological organization. Herman (1992) — the impact of unprocessed experience on relational capacity and developmental conditions.
                 </p>
@@ -359,7 +359,7 @@ export default function F10GenerationalBridgesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Main & Hesse (1990) — earned security: coherent narrative of attachment history predicts secure attachment in offspring. Siegel (2012) — making sense of experience as the mechanism of intergenerational change. Van der Kolk (2014) — the body must process what the mind has understood. Fonagy & Target (2002) — reflective functioning in parents predicting child attachment security.
                 </p>
@@ -398,7 +398,7 @@ export default function F10GenerationalBridgesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Main & Hesse (1990) — earned security breaking the intergenerational chain. Siegel (2012) — intergenerational neural integration. Meaney (2001) — epigenetic evidence that caregiving behavior changes stress-response gene expression in offspring.
                 </p>
@@ -458,7 +458,7 @@ export default function F10GenerationalBridgesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Winnicott (1953) — the "good enough" mother: adequate, not perfect. Tronick (2007) — the still-face paradigm: disruption and repair as the mechanism of relational development. Main & Hesse (1990) — earned security does not require a perfect history — it requires processing of whatever history existed.
                 </p>

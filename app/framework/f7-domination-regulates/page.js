@@ -227,7 +227,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Skinner (1953) — behavior shaped by reinforcement: rewarded behavior strengthens and repeats. Kohut (1977) — narcissistic regulation as escalation of self-protection. Porges (2011) — threat physiology promoting control-seeking through sympathetic activation and ventral vagal withdrawal. Bancroft (2002) — empirical patterns of escalation in controlling behavior.
                 </p>
@@ -266,7 +266,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bancroft (2002) — patterns of intentionality in controlling behavior. Herman (1992) — coercive control patterns. Argyris & Schön (1974) — defensive routines: how organizations and individuals systematize self-protection.
                 </p>
@@ -318,7 +318,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Kohut (1977), Kernberg (1975) — narcissistic escalation through identifiable stages. Herman (1992) — patterns of coercive control. Bancroft (2002) — stage-recognizable escalation. Staub (1989) — collective escalation toward extreme group behavior through identifiable stages.
                 </p>
@@ -363,7 +363,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Keltner, Gruenfeld & Anderson (2003) — approach/inhibition theory of power: power increases approach behavior and decreases sensitivity to others' states. Koenigs et al. (2007) — vmPFC suppression in utilitarian decision-making. Galinsky et al. (2006) — power reduces perspective-taking and increases egocentric anchoring.
                 </p>
@@ -416,7 +416,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Singer & Klimecki (2014) — distinction between empathic distress and compassion as separate resonance states. Blair (2007) — selective empathy deficits producing different outcomes depending on channel affected. Porges (2011) — ventral vagal suppression under chronic threat. Tangney & Dearing (2002) — shame and guilt as regulatory emotions with distinct functions. Koenigs et al. (2007) — vmPFC suppression and the absence of felt moral weight.
                 </p>
@@ -458,7 +458,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Addiction research — tolerance, escalation, and the absence of a natural stopping point when the underlying condition is structural. Kohut (1977) — narcissistic regulation through self-objects. Bowlby (1969) — when internal regulation is unavailable, the system continues seeking external regulatory input.
                 </p>
@@ -506,7 +506,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Argyris & Schön (1974) — defensive routines becoming self-reinforcing. DiMaggio & Powell (1983) — institutional isomorphism. Pfeffer (1981) — how selection and reward systems reproduce particular configurations. Bazerman & Tenbrunsel (2011) — ethical blind spots. Senge (1990) — reinforcing feedback loops. Edmondson (1999) — psychological safety producing measurable differences.
                 </p>
@@ -571,7 +571,7 @@ export default function F7DominationRegulatesPage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   The foundations for each framework are documented in F1-F6 and the concepts above. Restorative justice literature — understanding context while maintaining accountability. Strawson (1962) — moral responsibility as compatible with causal explanation. Herman (1992) — naming the mechanism as essential to recovery.
                 </p>

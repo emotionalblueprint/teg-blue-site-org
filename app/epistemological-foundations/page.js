@@ -487,7 +487,7 @@ export default function EpistemologicalFoundationsPage() {
                 <NavRow label="See how the system is organized" href="/foundations" linkText="System Overview →" />
                 <NavRow label="Understand the applied models" href="/emotional-somatic-cycle" linkText="Core Models →" />
                 <NavRow label="Explore the 12 frameworks" href="/frameworks-map" linkText="Frameworks →" />
-                <NavRow label="Review the source theories" href="/scientific-foundations" linkText="Scientific Foundations →" />
+                <NavRow label="Review the established research" href="/scientific-foundations" linkText="Established Research →" />
                 <NavRow label="See published research" href="/publications" linkText="Publications →" />
                 <NavRow label="Experience the tools" href="https://teg-blue.com/emotional-tools" linkText="Emotional Tools (teg-blue.com) →" external />
               </tbody>

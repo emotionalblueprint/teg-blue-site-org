@@ -77,7 +77,7 @@ function EmotionSection({ id, name, signal, bodySignature, mechanism, activates,
       {children}
 
       <div style={expandableRowStyle}>
-        <ExpandableSection title="Research Foundations" type="opendata">
+        <ExpandableSection title="Established Research" type="opendata">
           <p style={expandedProseStyle}>{research}</p>
         </ExpandableSection>
         <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -292,7 +292,7 @@ export default function M1EmotionsAsSignalsPage() {
             </div>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>
                   Porges (2011) — neuroception as continuous safety-threat evaluation below awareness. LeDoux (1996) — subcortical threat detection preceding cortical processing. Damasio (1994) — somatic markers as body-state information guiding evaluation. Adolphs (2002) — the amygdala{"'"}s role in evaluating biological significance of stimuli.
                 </p>
@@ -366,7 +366,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>
                   Craig (2002) — interoception as a primary information channel for evaluating internal conditions. Porges (2011) — the social engagement system as the pathway for reading relational safety signals. LeDoux (1996) — the amygdala integrating multiple sensory channels for threat evaluation. Phelps (2004) — amygdala-hippocampal interaction in contextual fear conditioning. van der Kolk (2014) — the body encoding traumatic experience as somatic memory independent of cognitive recall.
                 </p>
@@ -404,7 +404,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>
                   LeDoux (1996) — the amygdala completing threat evaluation before cortical processing. Porges (2011) — neuroception producing a finding below conscious awareness. Frijda (1986) — emotions as action readiness triggered by specific eliciting conditions.
                 </p>
@@ -448,7 +448,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>
                   Panksepp (1998) — primary emotional systems generating distinct physiological configurations. Frijda (1986) — emotions as action tendencies with specific eliciting conditions and characteristic response patterns. Levine (1997) — the activation cycle as a physiological sequence initiated by detection.
                 </p>
@@ -497,7 +497,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>
                   LeDoux (1996) — the amygdala{"'"}s fast pathway: threat detection at 12 milliseconds, before cortical processing at 300 milliseconds. Panksepp (1998) — primary emotional systems operating independently of cortical control. Damasio (1994) — somatic markers as body-state signals that precede and guide cognitive evaluation.
                 </p>

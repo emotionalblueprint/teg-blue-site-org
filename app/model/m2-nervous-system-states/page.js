@@ -161,7 +161,7 @@ export default function M2NervousSystemStatesPage() {
             </div>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>McEwen (2000) — allostasis and the distinction between resting baseline and adapted set-point. Porges (2011) — autonomic flexibility measured relative to resting vagal tone. Thayer & Lane (2000) — heart rate variability as a marker of baseline autonomic regulation.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -188,7 +188,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>When threat persists and body-level defence alone does not resolve it, the cognitive-logical system can be recruited into the threat response, producing two further states.</p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Porges (2011) — polyvagal theory: ventral vagal (social engagement), sympathetic (mobilisation), dorsal vagal (immobilisation). Dana (2018) — clinical application of the autonomic hierarchy. Panksepp (1998) — primary emotional systems as biological processes.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -214,7 +214,7 @@ export default function M2NervousSystemStatesPage() {
             </div>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Evolutionary psychology — cognition evolved to solve survival problems body-level responses alone could not. Arnsten (2009) — prefrontal cortex recruited under stress for threat-management, not open exploration. Kahneman (2011) — dual-process theory: System 2 recruited for effortful processing when automatic responses are insufficient.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -236,7 +236,7 @@ export default function M2NervousSystemStatesPage() {
             </div>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Porges (2011) — the autonomic hierarchy as a graded response system. Dana (2018) — the autonomic ladder as a clinical tool. Ogden, Minton & Pain (2006) — the window of tolerance as a range, not a state.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -252,7 +252,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>Safety & Openness is the state closest to baseline, and it is often treated — implicitly or explicitly — as the destination: the place a person should try to reach and remain. It is not. It is a parasympathetic-dominant activation, not rest. A nervous system that remains perpetually organized around Safety & Openness — absorbing, engaging, resonating without returning to physiological rest — is as chronically activated as one organized around threat. The state is different. The structural problem is the same: the system is not returning to baseline.</p>
             <p style={proseStyle}>Any state that the nervous system cannot leave becomes chronic. The defining measure is not which state the system occupies. It is whether the system retains the capacity to move, respond, and return to physiological baseline.</p>
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Porges (2011) — autonomic flexibility as a marker of health, not resting state. Thayer & Lane (2000) — heart rate variability as a measure of autonomic flexibility. Ogden, Minton & Pain (2006) — the window of tolerance as a flexible range.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -325,7 +325,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>The mechanism is structurally different depending on whether the state is absent, temporary, or permanent. From <strong style={{ color: TEXT.primary }}>physiological baseline</strong>, capacities are available but not deployed. From <strong style={{ color: TEXT.primary }}>acute activation</strong>, the nervous system has shifted configuration — the person knows they are activated, the state is temporary, and when activation resolves capacity restrictions lift. From <strong style={{ color: TEXT.primary }}>chronic activation</strong>, three things converge: the capacity restrictions become the operating architecture, the biological substrate that awareness requires degrades over time, and the state becomes invisible to the person inside it.</p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Fredrickson (2001) — broaden-and-build: safety broadens cognitive and perceptual capacity. Arnsten (2009) — prefrontal function degrades under stress. Sapolsky (2004) — chronic stress restricts learning, memory, and temporal horizon. Porges (2011) — social engagement system availability depends on autonomic state.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -373,7 +373,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>This is the mechanism behind {"\u201C"}State Determines Capacity.{"\u201D"} The state does not just limit what the person can do in response to input — it limits what input reaches the person in the first place.</p>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>LeDoux (1996) — pre-conscious threat detection, amygdala processing before cortical awareness. Bar-Haim et al. (2007) — threat-related attentional bias. Porges (2011) — neuroception operating below conscious awareness through multiple sensory channels. Phelps (2004) — amygdala-hippocampal interaction in contextual fear conditioning.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -428,7 +428,7 @@ export default function M2NervousSystemStatesPage() {
             <M2SignalState />
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Frijda (1986) — emotions as action tendencies shaped by context. Barrett (2017) — constructed emotion theory: the same physiological state producing different emotional experiences depending on context. Gross (2015) — emotion regulation as context-dependent process.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -469,7 +469,7 @@ export default function M2NervousSystemStatesPage() {
             </div>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>van der Kolk (2014) — nervous systems calibrated to chronic threat; the body keeping score. Levine (1997) — activation that does not complete stays in the body. Schore (2003) — early relational conditions shaping regulatory capacity. McEwen (2000) — allostatic load as the cost of chronic adaptation.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -509,7 +509,7 @@ export default function M2NervousSystemStatesPage() {
             </div>
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Bar-Haim et al. (2007) — threat-related attentional bias as automatic, pre-conscious. Mathews & MacLeod (2005) — cognitive bias and emotional vulnerability. Beck (1976) — schema theory: pre-existing cognitive structures filtering incoming information.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
@@ -526,7 +526,7 @@ export default function M2NervousSystemStatesPage() {
             <M2ReinforcingLoop />
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="opendata">
+              <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>Beck (1976) — self-reinforcing cognitive schemas. Bowlby (1969, 1980) — attachment working models as self-confirming templates. Mikulincer & Shaver (2007) — attachment dynamics as self-reinforcing regulation patterns.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">

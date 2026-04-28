@@ -230,7 +230,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bourdieu (1977) — habitus as embodied social structure reproduced below awareness. Bowen — family systems theory: anxiety propagating through systems, producing rule-based stability. Porges (2011) — nervous system synchronization under shared threat conditions. Goffman (1959) — dramaturgical performance and social maintenance through unspoken rules.
                 </p>
@@ -269,7 +269,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bernstein — pedagogic codes: invisible rules governing what can be said, thought, and known within a social system. Haidt (2001) — moral foundations as intuitive rules that feel like direct perception. Jost & Banaji (1994) — system justification: the psychological tendency to defend existing social arrangements because they provide regulatory stability.
                 </p>
@@ -326,7 +326,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Milgram (1963) — obedience to authority under conditions that override individual judgment. Asch (1951) — conformity under group pressure even when the group is visibly wrong. Zimbardo (1971) — situational power of social systems to override individual disposition. Greenberg, Pyszczynski & Solomon — Terror Management Theory: mortality salience increases conformity and rule-adherence. Eisenberger, Lieberman & Williams (2003) — social exclusion activating the same neural circuit as physical pain.
                 </p>
@@ -404,7 +404,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Bourdieu (1977) — habitus and social reproduction through embodied rule systems. Goffman (1959) — impression management and emotional labour as rule-governed performance. Milgram (1963) — obedience as structural, not dispositional. Sidanius & Pratto (1999) — Social Dominance Theory: hierarchical rule systems maintaining group-based inequality. Kohut (1977), Kernberg (1975) — narcissistic entitlement as a protective regulatory strategy. Young, Klosko & Weishaar (2003) — early maladaptive schemas as internalized rule structures.
                 </p>
@@ -455,7 +455,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Schore (2001) — right-brain-to-right-brain attunement: caregiver regulation as the mechanism through which neural architecture develops. Fonagy et al. (2002) — mentalization capacity as a product of relational environment, transmitted intergenerationally. Meaney (2001) — epigenetic programming: maternal care behavior altering offspring stress-response architecture. Bourdieu (1977) — cultural reproduction: habitus transmitted through practice, not instruction.
                 </p>
@@ -500,7 +500,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Jost & Banaji (1994) — system justification: why people defend systems that disadvantage them. Festinger (1957) — cognitive dissonance: the uncomfortable state when two cognitions conflict. Freire (1970) — conscientização: critical consciousness as recognizing social structures as constructions. Kahneman (2011) — coherence-seeking: the CLS builds plausible stories regardless of completeness.
                 </p>
@@ -545,7 +545,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Koenigs et al. (2007) — vmPFC suppression and utilitarian decision-making: precise, consequentialist, missing the felt dimension. Bazerman & Tenbrunsel (2011) — ethical blind spots in organizations: systematic inability to recognize ethical dimensions. Porges (2011) — collective neuroception: institutions composed of nervous systems running threat-based neuroception produce collective perceptual environments that filter out safety signals.
                 </p>
@@ -610,7 +610,7 @@ export default function F4RulesRegulatePage() {
             {/* Diagram pass — not implemented in content rewrite */}
 
             <div style={expandableRowStyle}>
-              <ExpandableSection title="Research Foundations" type="framework">
+              <ExpandableSection title="Established Research" type="framework">
                 <p style={expandedProseStyle}>
                   Altemeyer (1996) — right-wing authoritarianism as a response to perceived threat. Adorno et al. (1950) — the authoritarian personality and collective threat conditions. Greenberg, Pyszczynski & Solomon — Terror Management Theory: existential threat increases worldview defense and punishment of deviants. Staub (1989) — the roots of evil: collective threat producing increasingly extreme group behavior through identifiable stages.
                 </p>
