@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "Who created TEG-Blue?",
-    answer: "TEG-Blue was created by Anna Paretas-Artacho, an independent researcher and systems designer based in Barcelona with 25+ years of experience in systems thinking and visual design.",
+    answer: "TEG-Blue was created by Anna Paretas-Artacho, working independently from Barcelona, with 25+ years of professional practice in systems thinking and visual design.",
   },
   {
     question: "What is the difference between teg-blue.org and teg-blue.com?",
@@ -48,7 +48,6 @@ export const metadata = {
     "affect regulation",
     "emotional intelligence",
     "AI safety",
-    "independent researcher",
     "validation study",
   ],
   alternates: {
@@ -352,7 +351,7 @@ export default function AboutPage() {
               Anna Paretas-Artacho
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              Independent researcher and systems designer based in Barcelona, with 25+ years of professional experience in systems thinking and visual design. The Emotional Somatic System emerged through building each framework one by one — nearly two years of independent development creating an integrated system mapping how nervous system states shape behaviour.
+              Founder and creator of TEG-Blue, working independently from Barcelona, with 25+ years of professional practice in systems thinking and visual design. The Emotional Somatic System emerged through building each framework one by one — nearly two years of independent development creating an integrated system mapping how nervous system states shape behaviour.
             </p>
           </div>
 
@@ -486,8 +485,8 @@ export default function AboutPage() {
             mainEntity: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
-              jobTitle: "Founder & Lead Researcher",
-              description: "Independent researcher and systems designer. Creator of TEG-Blue, an integrative emotional technology framework synthesizing 24 scientific domains.",
+              jobTitle: "Founder and creator of TEG-Blue",
+              description: "Founder and creator of TEG-Blue, an integrative emotional technology framework synthesizing 24 scientific domains. Independent · Barcelona.",
               url: "https://teg-blue.org/about",
               sameAs: [
                 "https://orcid.org/0009-0005-2394-7162",
