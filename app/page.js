@@ -141,19 +141,6 @@ export default function ResearchHub() {
                   It connects what happens inside one nervous system with the patterns that repeat across relationships, families, institutions, cultures, and AI systems.
                 </p>
 
-                {/* Open science credibility line */}
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: TEXT.muted,
-                    lineHeight: 1.7,
-                    margin: "0 0 10px",
-                    maxWidth: 680,
-                  }}
-                >
-                  Open science — built on 145+ theoretical contributions from 41 research traditions. Open to critique and validation.
-                </p>
-
                 {/* CTAs */}
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 32 }}>
                   <Link
