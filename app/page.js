@@ -114,17 +114,31 @@ export default function ResearchHub() {
                   Individual nervous systems. Collective patterns. One architecture.<br />TEG-Blue makes it legible.
                 </h1>
 
-                {/* Lead description — scope */}
+                {/* Subtitle */}
+                <p
+                  style={{
+                    fontSize: "clamp(14px, 2.5vw, 16px)",
+                    color: TEXT.secondary,
+                    lineHeight: 1.5,
+                    margin: "0 0 6px",
+                    maxWidth: 680,
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  An integrative architecture mapping emotional information, nervous system states, and biological restoration.
+                </p>
+
+                {/* Lead description */}
                 <p
                   style={{
                     fontSize: 15,
                     color: TEXT.secondary,
                     lineHeight: 1.7,
-                    margin: "0 0 8px",
+                    margin: "0 0 10px",
                     maxWidth: 680,
                   }}
                 >
-                  It connects what happens inside one nervous system with the patterns that repeat across relationships, families, institutions, cultures, and AI systems.
+                  Open science — built on 145+ theoretical contributions from 41 research traditions. Open to critique and validation.
                 </p>
 
                 {/* CTAs */}
