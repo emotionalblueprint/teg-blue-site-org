@@ -114,20 +114,6 @@ export default function ResearchHub() {
                   Individual nervous systems. Collective patterns. One architecture.<br />TEG-Blue makes it legible.
                 </h1>
 
-                {/* Subtitle */}
-                <p
-                  style={{
-                    fontSize: "clamp(14px, 2.5vw, 16px)",
-                    color: TEXT.secondary,
-                    lineHeight: 1.5,
-                    margin: "0 0 6px",
-                    maxWidth: 680,
-                    letterSpacing: "0.01em",
-                  }}
-                >
-                  An emotional technology for understanding the body-mind system — translating emotional, nervous system, cognitive, relational, and social patterns into a visible architecture for recognition, regulation, and repair.
-                </p>
-
                 {/* Lead description — scope */}
                 <p
                   style={{
