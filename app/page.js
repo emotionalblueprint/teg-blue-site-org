@@ -125,14 +125,27 @@ export default function ResearchHub() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  An integrative architecture mapping emotional information, nervous system states, and biological restoration.
+                  An emotional technology for understanding the body-mind system — translating emotional, nervous system, cognitive, relational, and social patterns into a visible architecture for recognition, regulation, and repair.
                 </p>
 
-                {/* Lead description */}
+                {/* Lead description — scope */}
                 <p
                   style={{
                     fontSize: 15,
                     color: TEXT.secondary,
+                    lineHeight: 1.7,
+                    margin: "0 0 8px",
+                    maxWidth: 680,
+                  }}
+                >
+                  It connects what happens inside one nervous system with the patterns that repeat across relationships, families, institutions, cultures, and AI systems.
+                </p>
+
+                {/* Open science credibility line */}
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: TEXT.muted,
                     lineHeight: 1.7,
                     margin: "0 0 10px",
                     maxWidth: 680,

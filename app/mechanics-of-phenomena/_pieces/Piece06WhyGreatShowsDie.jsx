@@ -1,4 +1,3 @@
-import { BORDER, TEXT } from "@/src/styles/tokens";
 import { READING } from "../mechanics-config";
 import GoDeeper from "../GoDeeper";
 
@@ -9,19 +8,6 @@ export default function Piece06WhyGreatShowsDie() {
       <p style={READING.paragraph}>Every great TV show follows the same arc. It starts strong. It declines. By the final season, it barely resembles what made it worth watching. Audiences blame lazy writing, network interference, or the impossibility of maintaining quality across years. Those are descriptions, not explanations. The pattern runs deeper than any of them, and once the mechanism underneath it becomes visible, the decay becomes predictable before it happens.</p>
 
       <p style={READING.paragraph}>The pattern can be seen on IMDb ratings pages. Season by season, across almost any long-running show, the shape is not subtle. Season 1 high. Each subsequent season lower. The final season almost always the worst. This is not the exhaustion of good ideas. It is a structural outcome.</p>
-
-      {/* Visual placeholder */}
-      <div
-        style={{
-          borderLeft: `2px solid ${BORDER.default}`,
-          paddingLeft: 16,
-          margin: "28px 0",
-        }}
-      >
-        <p style={{ ...READING.finePrint, margin: 0, color: TEXT.hint }}>
-          [Visual forthcoming {"\u2014"} <em>Ratings Decay Sequence</em>: an auto-cycling carousel of IMDb episode-rating grids for five long-running shows (Game of Thrones, Dexter, How I Met Your Mother, Heroes, The Umbrella Academy), with episodes as columns and seasons as rows, color-banded from dark green at the top of the scale down to purple at the collapse band. A prepared visual from Anna{"\u2019"}s design tool will replace this note.]
-        </p>
-      </div>
 
       <p style={READING.paragraph}>What conventional analysis misses is a question almost no one asks: <em>who is in the room at each stage?</em></p>
 
