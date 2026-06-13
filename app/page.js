@@ -102,16 +102,18 @@ export default function ResearchHub() {
                   style={{
                     fontSize: "clamp(26px, 5vw, 36px)",
                     fontWeight: 700,
-                    margin: "0 0 12px",
-                    lineHeight: 1.15,
+                    margin: "0 0 16px",
+                    maxWidth: 720,
+                    lineHeight: 1.2,
                     letterSpacing: "-0.02em",
+                    textWrap: "balance",
                     background: PATTERN_GRADIENT,
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                   }}
                 >
-                  Individual nervous systems. Collective patterns. One architecture.<br />TEG-Blue makes it legible.
+                  Individual nervous systems.<br />Collective patterns. One architecture.<br />TEG-Blue makes it legible.
                 </h1>
 
                 {/* Subtitle */}
@@ -120,8 +122,8 @@ export default function ResearchHub() {
                     fontSize: "clamp(14px, 2.5vw, 16px)",
                     color: TEXT.secondary,
                     lineHeight: 1.5,
-                    margin: "0 0 6px",
-                    maxWidth: 680,
+                    margin: "0 0 10px",
+                    maxWidth: 600,
                     letterSpacing: "0.01em",
                   }}
                 >
@@ -135,7 +137,7 @@ export default function ResearchHub() {
                     color: TEXT.secondary,
                     lineHeight: 1.7,
                     margin: "0 0 10px",
-                    maxWidth: 680,
+                    maxWidth: 600,
                   }}
                 >
                   Open science — built on 145+ theoretical contributions from 41 research traditions. Open to critique and validation.
