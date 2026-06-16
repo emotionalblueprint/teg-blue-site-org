@@ -192,6 +192,63 @@ export default function ResearchHub() {
             </>
           }
         >
+          {/* ── What TEG-Blue Is ── */}
+          <section id="what-teg-blue-is">
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
+              What is TEG-Blue?
+            </h2>
+
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 720 }}>
+              An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as four connected parts:
+            </p>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+              <PartCard
+                color={SPECTRUM.azure}
+                label="1 — Measurement"
+                title="Four Foundational Models"
+                description="Emotions as Signals (M1) maps what the nervous system delivers. Nervous System States (M2) maps where the nervous system is pointing. Regulation Capacities (M3) describes the body's designed return path. Awareness Capacities (M4) explain how accurately it reads — and what goes offline when it gets stuck."
+                href="/emotional-somatic-cycle"
+                linkText="Core Models →"
+              />
+              <PartCard
+                color={SPECTRUM.cobalt}
+                label="2 — Explanatory"
+                title="12 Frameworks"
+                description="Why these patterns exist, how they escalate from one person into social systems, and what makes repair possible. One mechanism runs through all twelve: when the body's natural return path is missing, something else steps in."
+                href="/frameworks-map"
+                linkText="12 Frameworks →"
+              />
+              <PartCard
+                color={SPECTRUM.indigo}
+                label="3 — Applied"
+                title="Emotional Tools"
+                description="Gradient-based scales that map behavioral dimensions from regulated to dysregulated, with observable markers at every point. Empathy, accountability, integrity, boundary dynamics, and more."
+                href="https://teg-blue.com/emotional-tools"
+                linkText="Explore Tools →"
+                external
+              />
+              <PartCard
+                color={SPECTRUM.slate}
+                label="4 — AI Safety"
+                title="Structured Schemas"
+                description="A computationally legible translation of the system for AI alignment — designed to replace binary safe/unsafe classifications with contextual, state-aware assessments."
+                href="/ai-safety"
+                linkText="AI Safety →"
+              />
+            </div>
+
+            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
+              The full architecture, including how the parts connect, is at{" "}
+              <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
+              The 145+ theoretical contributions across 41 research traditions are documented at{" "}
+              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Established Research</Link>.
+            </p>
+          </section>
+
+          {/* ── Separator: Spectrum ── */}
+          <SpectrumSeparator />
+
           {/* ── The Regulation Thread ── */}
           <section id="the-regulation-thread">
             {/* Badge pill */}
@@ -278,63 +335,6 @@ export default function ResearchHub() {
             >
               See the full framework architecture →
             </Link>
-          </section>
-
-          {/* ── Separator: Spectrum ── */}
-          <SpectrumSeparator />
-
-          {/* ── What TEG-Blue Is ── */}
-          <section id="what-teg-blue-is">
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              What is TEG-Blue?
-            </h2>
-
-            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 720 }}>
-              An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as four connected parts:
-            </p>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-              <PartCard
-                color={SPECTRUM.azure}
-                label="1 — Measurement"
-                title="Four Foundational Models"
-                description="Emotions as Signals (M1) maps what the nervous system delivers. Nervous System States (M2) maps where the nervous system is pointing. Regulation Capacities (M3) describes the body's designed return path. Awareness Capacities (M4) explain how accurately it reads — and what goes offline when it gets stuck."
-                href="/emotional-somatic-cycle"
-                linkText="Core Models →"
-              />
-              <PartCard
-                color={SPECTRUM.cobalt}
-                label="2 — Explanatory"
-                title="12 Frameworks"
-                description="Why these patterns exist, how they escalate from one person into social systems, and what makes repair possible. One mechanism runs through all twelve: when the body's natural return path is missing, something else steps in."
-                href="/frameworks-map"
-                linkText="12 Frameworks →"
-              />
-              <PartCard
-                color={SPECTRUM.indigo}
-                label="3 — Applied"
-                title="Emotional Tools"
-                description="Gradient-based scales that map behavioral dimensions from regulated to dysregulated, with observable markers at every point. Empathy, accountability, integrity, boundary dynamics, and more."
-                href="https://teg-blue.com/emotional-tools"
-                linkText="Explore Tools →"
-                external
-              />
-              <PartCard
-                color={SPECTRUM.slate}
-                label="4 — AI Safety"
-                title="Structured Schemas"
-                description="A computationally legible translation of the system for AI alignment — designed to replace binary safe/unsafe classifications with contextual, state-aware assessments."
-                href="/ai-safety"
-                linkText="AI Safety →"
-              />
-            </div>
-
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 16, lineHeight: 1.6 }}>
-              The full architecture, including how the parts connect, is at{" "}
-              <Link href="/foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>System Overview</Link>.
-              The 145+ theoretical contributions across 41 research traditions are documented at{" "}
-              <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>Established Research</Link>.
-            </p>
           </section>
 
           {/* Trust — How this work is sustained */}
