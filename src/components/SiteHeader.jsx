@@ -415,21 +415,6 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
             {/* Full branding — desktop only */}
             <div className="teg-branding-full" style={{ marginTop: 16, marginBottom: 16 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-                <Link
-                  href="/"
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: 10,
-                    fontWeight: 600,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: TEXT.hint,
-                    textDecoration: "none",
-                  }}
-                >
-                  TEG-Blue
-                </Link>
-                <span style={{ color: TEXT.micro }}>·</span>
                 <a
                   href="https://teg-blue.com"
                   style={{
@@ -453,10 +438,10 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
                   letterSpacing: "-0.02em",
                 }}
               >
-                Open Research
+                TEG-Blue Research
               </h1>
               <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 4 }}>
-                Transparent methods, credited sources, testable claims
+                Open research · transparent methods, credited sources, testable claims
               </p>
             </div>
 
@@ -471,10 +456,10 @@ export default function SiteHeader({ currentPath = "/", hideBranding = false }) 
                   letterSpacing: "-0.02em",
                 }}
               >
-                Open Research
+                TEG-Blue Research
               </h1>
               <p style={{ fontSize: 12, color: TEXT.muted, marginTop: 2 }}>
-                Transparent methods, credited sources, testable claims
+                Open research · transparent methods, credited sources, testable claims
               </p>
             </div>
           </div>
