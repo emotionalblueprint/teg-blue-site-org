@@ -36,13 +36,6 @@ const REGULATION_THREAD = [
   { id: "F12", href: "/framework/f12-two-information-systems", regulator: "Two information systems reunite — body and mind", restores: "The design" },
 ];
 
-const SIDEBAR_SECTIONS = [
-  { label: "The Regulation Thread", href: "#the-regulation-thread", description: "One mechanism running through all 12 frameworks — regulation substitutes at different scales, each at a cost. F8–F12 reverse the thread." },
-  { label: "Empirical Evidence", href: "#empirical-evidence", description: "The nervous system gradient tested against 10,000+ natural conflict narratives. Key findings and validation metrics." },
-  { label: "What Is TEG-Blue?", href: "#what-teg-blue-is", description: "Four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety." },
-  { label: "Work With the Material", href: "#work-with-the-material", description: "Cite it, use the data, test the claims, read the source theories. Open science, open access." },
-];
-
 export const metadata = {
   title: "TEG-Blue | Emotional Technology Research",
   description: "Individual nervous systems. Collective patterns. One architecture. TEG-Blue makes it legible. Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. Transparent research, credited sources, testable claims.",
@@ -198,7 +191,6 @@ export default function ResearchHub() {
               <EmotionWaveSection />
             </>
           }
-          sidebarSections={SIDEBAR_SECTIONS}
         >
           {/* ── The Regulation Thread ── */}
           <section id="the-regulation-thread">
@@ -211,7 +203,7 @@ export default function ResearchHub() {
               When the body can&apos;t restore itself, something else steps in.
             </h2>
 
-            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 720 }}>
               A single thread runs through all twelve frameworks. Describing a regulation substitute — at a different scale, at a different cost, and a way to reverse the thread — not by adding another substitute, but by building the original.
             </p>
 
@@ -291,102 +283,13 @@ export default function ResearchHub() {
           {/* ── Separator: Spectrum ── */}
           <SpectrumSeparator />
 
-          {/* ── Validation Evidence ── */}
-          <section id="empirical-evidence">
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              What evidence supports the nervous system gradient?
-            </h2>
-            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-              The nervous system gradient has been tested against 10,000+ natural conflict narratives. Here are the key findings.
-            </p>
-            <div
-              style={{
-                background: gradientCardBg(MAIN_ORG.accent),
-                borderRadius: 10,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${MAIN_ORG.accent}`,
-                padding: "24px 28px",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.blue,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                  marginBottom: 16,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                Empirical Validation — Nervous System Gradient
-              </p>
-
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16, marginBottom: 16 }}>
-                <MetricCard value="10,000+" label="natural conflict narratives analyzed" />
-                <MetricCard value="Pre-registered" label="on OSF (osf.io/f4x6y)" />
-                <MetricCard value="+78%" label="complexity markers in de-escalators" />
-              </div>
-
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-                Computational analysis of unstructured text. Four nervous system states reliably detected. De-escalators showed significantly higher rates of self-awareness, perspective-taking, and emotional differentiation. State classifications correlated with independent community moral judgments.
-              </p>
-
-              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16 }}>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-                  <Link
-                    href="/publications"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 6,
-                      padding: "10px 18px",
-                      background: MAIN_ORG.accent,
-                      color: "#fff",
-                      borderRadius: 6,
-                      fontWeight: 500,
-                      fontSize: 13,
-                      textDecoration: "none",
-                    }}
-                  >
-                    Read the study →
-                  </Link>
-                  <Link
-                    href="/methodology"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 6,
-                      padding: "10px 18px",
-                      background: hexToRgba(MAIN_ORG.accent, 0.1),
-                      color: MAIN_ORG.accent,
-                      borderRadius: 6,
-                      fontWeight: 500,
-                      fontSize: 13,
-                      textDecoration: "none",
-                      border: `1px solid ${hexToRgba(MAIN_ORG.accent, 0.2)}`,
-                    }}
-                  >
-                    See methodology
-                  </Link>
-                </div>
-                <span style={{ fontSize: 12, color: TEXT.muted, fontFamily: FONT.mono }}>
-                  DOI: 10.5281/zenodo.19472342
-                </span>
-              </div>
-            </div>
-          </section>
-
-          {/* ── Separator: Spectrum ── */}
-          <SpectrumSeparator />
-
           {/* ── What TEG-Blue Is ── */}
           <section id="what-teg-blue-is">
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
               What is TEG-Blue?
             </h2>
 
-            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
+            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 720 }}>
               An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as four connected parts:
             </p>
 
@@ -434,29 +337,6 @@ export default function ResearchHub() {
             </p>
           </section>
 
-          {/* ── Separator: Spectrum ── */}
-          <SpectrumSeparator />
-
-          {/* ── Open Science ── */}
-          <section id="work-with-the-material" style={{ marginBottom: "clamp(28px, 5vw, 48px)" }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              Open science — no gates, no applications
-            </h2>
-
-            <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              Everything here is published under CC BY-NC-SA 4.0 — open to read, cite, test, extend, and build on alongside us.
-            </p>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <OpenItem label="Cite it" description="Full citation format and examples" href="/citations" />
-              <OpenItem label="Use the data" description="Anonymized conflict narratives, emotional gradient data" href="/publications" />
-              <OpenItem label="Test the claims" description="Five open research questions, four research directions" href="/research-entry" />
-              <OpenItem label="Review the established research" description="145+ theoretical contributions from 41 research traditions, each connected to its architectural function" href="/scientific-foundations" />
-              <OpenItem label="Read the reframes" description="15 common terms traced back to the nervous system" href="/reframes" />
-              <OpenItem label="Explore the labels" description="19 psychology labels mapped to 3 awareness capacities" href="/explore/labels" />
-            </div>
-          </section>
-
           {/* Trust — How this work is sustained */}
           <section style={{ marginBottom: 32 }}>
             <div
@@ -471,7 +351,7 @@ export default function ResearchHub() {
               <h3 style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", color: SPECTRUM.indigo, marginBottom: 10 }}>
                 How this work is sustained
               </h3>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0, marginBottom: 10 }}>
+              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 auto 10px", maxWidth: 620 }}>
                 The application site (teg-blue.com) offers paid tools to fund ongoing research and development. These tiers do not create dependency loops or exploit emotional vulnerability for engagement. The research — the frameworks, the models, the data — stays open.
               </p>
               <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.6, margin: 0 }}>
@@ -517,28 +397,6 @@ export default function ResearchHub() {
 }
 
 // ── Helper Components ──
-
-function MetricCard({ value, label }) {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <div
-        style={{
-          fontSize: 22,
-          fontWeight: 700,
-          color: TEXT.primary,
-          fontFamily: FONT.mono,
-          letterSpacing: "-0.02em",
-          lineHeight: 1.2,
-        }}
-      >
-        {value}
-      </div>
-      <div style={{ fontSize: 11, color: TEXT.muted, marginTop: 4, lineHeight: 1.4 }}>
-        {label}
-      </div>
-    </div>
-  );
-}
 
 function PartCard({ color, label, title, description, href, linkText, external }) {
   return (
@@ -635,30 +493,5 @@ function SpectrumSeparator() {
         background: `linear-gradient(90deg, ${hexToRgba(SPECTRUM.sky, 0)}, ${SPECTRUM.sky}, ${SPECTRUM.azure}, ${SPECTRUM.cobalt}, ${SPECTRUM.indigo}, ${hexToRgba(SPECTRUM.indigo, 0)})`,
       }} />
     </div>
-  );
-}
-
-function OpenItem({ label, description, href }) {
-  return (
-    <Link
-      href={href}
-      style={{
-        display: "flex",
-        alignItems: "baseline",
-        gap: 10,
-        padding: "12px 16px",
-        background: BG.card,
-        borderRadius: 8,
-        border: `1px solid ${BORDER.default}`,
-        textDecoration: "none",
-      }}
-    >
-      <span style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, whiteSpace: "nowrap" }}>
-        {label}
-      </span>
-      <span style={{ fontSize: 13, color: TEXT.muted }}>
-        — {description}
-      </span>
-    </Link>
   );
 }
