@@ -20,8 +20,8 @@ const FAQ_ITEMS = [
 
 const SIDEBAR_SECTIONS = [
   { label: "What Is Original?", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
-  { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current nervous system state but State Flexibility — capacity to return to baseline when challenged." },
+  { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Open Research Questions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
@@ -175,40 +175,6 @@ export default function ResearchEntryPage() {
           </div>
         </section>
 
-        {/* Status snapshot */}
-        <section id="status-snapshot" style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Status snapshot
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            This project separates what exists from what is being tested.
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <StatusCard
-              label="Established"
-              color={SPECTRUM.indigo}
-              description="Many underlying theories and measures in affective science, clinical psychology, neuroscience, developmental psychology, social psychology, and linguistics."
-            />
-            <StatusCard
-              label="Proposed synthesis"
-              color={SPECTRUM.azure}
-              description="The full cross-framework mapping. The reversal thread across Frameworks 8–12. The architecture that connects regulation, identity adaptation, and social escalation."
-            />
-            <StatusCard
-              label="Preliminary evidence"
-              color={SPECTRUM.blue}
-              description={
-                <>The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published (DOI 10.5281/zenodo.19472342). Further analyses in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
-              }
-            />
-            <StatusCard
-              label="Open to validation"
-              color={SPECTRUM.slate}
-              description="Psychometric validation and replication. Construct validity across cultures, contexts, and modalities. External benchmarking against existing instruments."
-            />
-          </div>
-        </section>
-
         {/* Core hypothesis */}
         <section id="core-testable-claim" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
@@ -241,6 +207,40 @@ export default function ResearchEntryPage() {
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
             Related frameworks: <Link href="/framework/f8-repairing-awareness" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F8 (Repairing Awareness)</Link>, <Link href="/framework/f9-neurodivergence-variation" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F9 (Neurodivergence as Nervous System Variation)</Link>, <Link href="/framework/f10-generational-bridges" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F10 (Rebuilding Generational Bridges)</Link>.
           </p>
+        </section>
+
+        {/* Status snapshot */}
+        <section id="status-snapshot" style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            Status snapshot
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
+            This project separates what exists from what is being tested.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <StatusCard
+              label="Established"
+              color={SPECTRUM.indigo}
+              description="Many underlying theories and measures in affective science, clinical psychology, neuroscience, developmental psychology, social psychology, and linguistics."
+            />
+            <StatusCard
+              label="Proposed synthesis"
+              color={SPECTRUM.azure}
+              description="The full cross-framework mapping. The reversal thread across Frameworks 8–12. The architecture that connects regulation, identity adaptation, and social escalation."
+            />
+            <StatusCard
+              label="Preliminary evidence"
+              color={SPECTRUM.blue}
+              description={
+                <>The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published (DOI 10.5281/zenodo.19472342). Further analyses in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
+              }
+            />
+            <StatusCard
+              label="Open to validation"
+              color={SPECTRUM.slate}
+              description="Psychometric validation and replication. Construct validity across cultures, contexts, and modalities. External benchmarking against existing instruments."
+            />
+          </div>
         </section>
 
         {/* Open research directions */}
