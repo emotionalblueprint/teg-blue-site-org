@@ -28,7 +28,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "Start Here | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — a pattern recognition system connecting 145+ theoretical contributions from 41 research traditions. Open access, open questions, open to validation.",
+  description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture grounded in nervous system science — a pattern recognition system connecting 145+ theoretical contributions from 41 research traditions. Open access, open questions, open to validation.",
   keywords: [
     "TEG-Blue research",
     "emotional technology",
@@ -77,10 +77,18 @@ export default function ResearchEntryPage() {
             <ResearcherHero
               badge="ENTRY POINT"
               title="Start Here"
-              subtitle="Pattern recognition based on nervous system science"
+              subtitle="Pattern recognition grounded in nervous system science"
               description="TEG-Blue is an integrative architecture that synthesizes 145+ theoretical contributions from 41 research traditions into testable claims about how the nervous system regulates. Open access, open questions, open to validation."
             />
-            <div style={{ marginTop: 20 }}>
+            <div style={{ marginTop: 16, padding: "12px 16px", background: hexToRgba(SPECTRUM.cobalt, 0.06), borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}` }}>
+              <div style={{ fontSize: 9, fontWeight: 700, fontFamily: FONT.mono, textTransform: "uppercase", letterSpacing: "0.1em", color: SPECTRUM.cobalt, marginBottom: 6 }}>
+                The testable core
+              </div>
+              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+                What predicts how a person behaves under pressure is not their current nervous system state but their capacity to return to baseline — State Flexibility — and that capacity leaves measurable traces in natural language.
+              </p>
+            </div>
+            <div style={{ marginTop: 16 }}>
               <Link
                 href="/foundations"
                 style={{
@@ -95,6 +103,9 @@ export default function ResearchEntryPage() {
               >
                 If you want the full system map first: System Overview →
               </Link>
+            </div>
+            <div style={{ marginTop: 16, fontSize: 13, color: TEXT.muted }}>
+              Open access · CC BY-NC-SA 4.0 · <Link href="/publications#how-to-cite" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>How to cite →</Link>
             </div>
           </header>
         }
@@ -148,7 +159,7 @@ export default function ResearchEntryPage() {
               The Regulation Thread
             </div>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
-              The clearest example of the &quot;3&quot;: a single mechanism — regulation substitutes — runs through all 12 frameworks. When the body&apos;s natural return path is missing, something else steps in: cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost. F8–F12 reverse the thread.
+              The clearest example of the &quot;3&quot;: a single mechanism — restoration substitutes — runs through all 12 frameworks. When the body&apos;s natural return path is missing, something else steps in: cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost. F8–F12 reverse the thread.
             </p>
             <Link
               href="/frameworks-map#the-regulation-thread"
@@ -187,7 +198,7 @@ export default function ResearchEntryPage() {
               label="Preliminary evidence"
               color={SPECTRUM.blue}
               description={
-                <>Initial studies and analyses listed in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
+                <>The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published (DOI 10.5281/zenodo.19472342). Further analyses in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
               }
             />
             <StatusCard
@@ -290,7 +301,7 @@ export default function ResearchEntryPage() {
                 "Domination is proposed as the end state of a pathway driven by reinforcement, not personality. Does this model make predictions about which organisational and cultural conditions accelerate or interrupt that pathway — and are those predictions testable?",
               ]}
               refLinks={[
-                { href: "/frameworks-map", label: "Frameworks F4–F8" },
+                { href: "/frameworks-map", label: "Frameworks F4–F7" },
               ]}
             />
             <ResearchDomainCard
@@ -404,7 +415,7 @@ export default function ResearchEntryPage() {
             "@type": "WebPage",
             name: "Start Here — TEG-Blue Research",
             url: "https://teg-blue.org/research-entry",
-            description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture based on nervous system science — connecting 145+ theoretical contributions from 41 research traditions into testable claims.",
+            description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture grounded in nervous system science — connecting 145+ theoretical contributions from 41 research traditions into testable claims.",
             inLanguage: "en",
             isPartOf: {
               "@type": "ResearchProject",
