@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, hexToRgba, MAIN_ORG, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, MechanismBox, AuthorBlock } from "@/src/components";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero, PropositionBox, AuthorBlock } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
@@ -19,9 +19,9 @@ const FAQ_ITEMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "What Is Original?", href: "#what-is-original", description: "The '1 + 2 = 3' principle — the originality is not in the individual theories but in the connections between them." },
+  { label: "What TEG-Blue Is", href: "#what-is-original", description: "The architecture is the contribution — established findings held in one frame to show the pattern that only appears together." },
+  { label: "What's Been Built", href: "#whats-been-built", description: "A developed, openly published body of work: 12 frameworks, 4 models, an integrated corpus, and a first validation study." },
   { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current nervous system state but State Flexibility — capacity to return to baseline when challenged." },
-  { label: "Status Snapshot", href: "#status-snapshot", description: "Where TEG-Blue currently stands: what has been validated, what is proposed, what remains open." },
   { label: "Open Research Questions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
@@ -77,18 +77,10 @@ export default function ResearchEntryPage() {
             <ResearcherHero
               badge="ENTRY POINT"
               title="Start Here"
-              subtitle="Pattern recognition grounded in nervous system science"
-              description="TEG-Blue is an integrative architecture that synthesizes 145+ theoretical contributions from 41 research traditions into testable claims about how the nervous system regulates. Open access, open questions, open to validation."
+              subtitle="An integrative architecture of how the nervous system organizes — from one body to whole societies"
+              description="TEG-Blue synthesizes 41 research traditions into one coherent, testable system: how the nervous system organizes around safety and threat, and how the same mechanism scales from individual regulation to identity, relationships, and social structure. Openly published, grounded in established science, and examined in a first validation study against 10,000+ real-world conflict narratives."
             />
-            <div style={{ marginTop: 16, padding: "12px 16px", background: hexToRgba(SPECTRUM.cobalt, 0.06), borderRadius: 8, border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}` }}>
-              <div style={{ fontSize: 9, fontWeight: 700, fontFamily: FONT.mono, textTransform: "uppercase", letterSpacing: "0.1em", color: SPECTRUM.cobalt, marginBottom: 6 }}>
-                The testable core
-              </div>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                What predicts how a person behaves under pressure is not their current nervous system state but their capacity to return to baseline — State Flexibility — and that capacity leaves measurable traces in natural language.
-              </p>
-            </div>
-            <div style={{ marginTop: 16 }}>
+            <div style={{ marginTop: 20 }}>
               <Link
                 href="/foundations"
                 style={{
@@ -114,28 +106,25 @@ export default function ResearchEntryPage() {
         {/* What is original */}
         <section id="what-is-original" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What is original about TEG-Blue?
+            What TEG-Blue is
           </h2>
-          <MechanismBox label="THE 1 + 2 = 3 PRINCIPLE">
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              TEG-Blue doesn&apos;t invent the building blocks. Polyvagal Theory, Attachment Theory, Affective Neuroscience, developmental research — these are established. They are the{" "}
-              <strong style={{ color: TEXT.primary }}>&quot;1&quot; and the &quot;2&quot;</strong>.
-            </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              <strong style={{ color: TEXT.primary }}>What TEG-Blue proposes is the &quot;3&quot;</strong> — specific connections between these established theories:
-            </p>
-            <ul style={{ paddingLeft: 20, marginBottom: 16, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-              <li style={{ marginBottom: 6 }}>Nervous system regulation → moral perception</li>
-              <li style={{ marginBottom: 6 }}>Attachment patterns → social stratification</li>
-              <li style={{ marginBottom: 6 }}>Protection → domination as a continuous gradient</li>
-              <li>Linguistic complexity → regulatory capacity</li>
-            </ul>
-            <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 500, margin: 0 }}>
-              The building blocks are validated science. The connections are the hypothesis.
-            </p>
-          </MechanismBox>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
+            TEG-Blue&apos;s contribution is the architecture. The findings it draws on are established — what no single field had done is hold them in one frame and show the pattern that only appears when they sit together: the nervous system&apos;s organization around safety and threat, running through emotion, identity, relationships, and social structure as one mechanism, at every scale.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
+            The integration is the work — the sequence, the cross-scale structure, the map that makes those findings legible as one system. What it makes visible:
+          </p>
+          <ul style={{ paddingLeft: 20, marginBottom: 16, fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
+            <li style={{ marginBottom: 6 }}>Nervous system regulation and moral perception</li>
+            <li style={{ marginBottom: 6 }}>Attachment patterns and social stratification</li>
+            <li style={{ marginBottom: 6 }}>Protection-to-domination as one continuous gradient</li>
+            <li>Linguistic complexity as a marker of regulatory capacity</li>
+          </ul>
+          <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 500, margin: 0 }}>
+            The findings it integrates are established. The architecture that connects them is TEG-Blue&apos;s contribution — and its specific predictions are open to testing.
+          </p>
 
-          {/* The Regulation Thread — concrete example of "3" */}
+          {/* The Regulation Thread — the through-line across the frameworks */}
           <div
             style={{
               marginTop: 20,
@@ -159,7 +148,7 @@ export default function ResearchEntryPage() {
               The Regulation Thread
             </div>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
-              The clearest example of the &quot;3&quot;: a single mechanism — restoration substitutes — runs through all 12 frameworks. When the body&apos;s natural return path is missing, something else steps in: cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost. F8–F12 reverse the thread.
+              The through-line: a single mechanism — restoration substitutes — runs through all 12 frameworks. When the body&apos;s natural return path is missing, something else steps in: cognition, rules, hierarchies, bias, domination. Each substitute works. Each comes at a cost. F8–F12 reverse the thread.
             </p>
             <Link
               href="/frameworks-map#the-regulation-thread"
@@ -172,6 +161,42 @@ export default function ResearchEntryPage() {
             >
               See the full thread →
             </Link>
+          </div>
+        </section>
+
+        {/* What's been built */}
+        <section id="whats-been-built" style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
+            What&apos;s been built
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
+            TEG-Blue is not a proposal in search of a foundation. It is a developed body of work, openly published and inspectable.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <StatusCard
+              label="The architecture"
+              color={SPECTRUM.indigo}
+              description="12 frameworks and 4 models tracing one mechanism from the individual nervous system to collective structure."
+            />
+            <StatusCard
+              label="An integrated corpus"
+              color={SPECTRUM.azure}
+              description={
+                <>145+ theoretical contributions from 41 research traditions, cross-referenced to where each underwrites the architecture. See <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue }}>Established Research</Link>.</>
+              }
+            />
+            <StatusCard
+              label="A first validation study"
+              color={SPECTRUM.blue}
+              description={
+                <>A computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection, published (DOI 10.5281/zenodo.19472342). More in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
+              }
+            />
+            <StatusCard
+              label="Fully open"
+              color={SPECTRUM.slate}
+              description="Methods, data, and frameworks published under CC BY-NC-SA 4.0 — for independent use, testing, and replication."
+            />
           </div>
         </section>
 
@@ -207,40 +232,6 @@ export default function ResearchEntryPage() {
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
             Related frameworks: <Link href="/framework/f8-repairing-awareness" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F8 (Repairing Awareness)</Link>, <Link href="/framework/f9-neurodivergence-variation" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F9 (Neurodivergence as Nervous System Variation)</Link>, <Link href="/framework/f10-generational-bridges" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>F10 (Rebuilding Generational Bridges)</Link>.
           </p>
-        </section>
-
-        {/* Status snapshot */}
-        <section id="status-snapshot" style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Status snapshot
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            This project separates what exists from what is being tested.
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <StatusCard
-              label="Established"
-              color={SPECTRUM.indigo}
-              description="Many underlying theories and measures in affective science, clinical psychology, neuroscience, developmental psychology, social psychology, and linguistics."
-            />
-            <StatusCard
-              label="Proposed synthesis"
-              color={SPECTRUM.azure}
-              description="The full cross-framework mapping. The reversal thread across Frameworks 8–12. The architecture that connects regulation, identity adaptation, and social escalation."
-            />
-            <StatusCard
-              label="Preliminary evidence"
-              color={SPECTRUM.blue}
-              description={
-                <>The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published (DOI 10.5281/zenodo.19472342). Further analyses in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
-              }
-            />
-            <StatusCard
-              label="Open to validation"
-              color={SPECTRUM.slate}
-              description="Psychometric validation and replication. Construct validity across cultures, contexts, and modalities. External benchmarking against existing instruments."
-            />
-          </div>
         </section>
 
         {/* Open research directions */}
