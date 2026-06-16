@@ -400,7 +400,7 @@ export default function EpistemologicalFoundationsPage() {
                 { label: "Research Integration", text: "Including emotional factors as legitimate variables in research across disciplines" },
                 { label: "Methodology Development", text: "Creating research methods that can study emotional patterns systematically" },
                 { label: "Interdisciplinary Bridge", text: "Connecting emotional understanding with neuroscience, sociology, economics, and other fields" },
-                { label: "Evidence Base", text: "Building scientific foundation for emotional intelligence as measurable, meaningful phenomenon" },
+                { label: "Evidence Base", text: "Building an established research base for emotional intelligence as measurable, meaningful phenomenon" },
               ]}
             />
           </div>

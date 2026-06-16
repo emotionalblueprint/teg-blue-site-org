@@ -743,7 +743,7 @@ function Tooltip({ level, position, onMouseEnter, onMouseLeave }) {
       {/* Divider */}
       <div style={{ height: 1, margin: '12px 0', background: BORDER.default }} />
 
-      {/* Research foundation */}
+      {/* Established research */}
       <div style={{ marginBottom: 16 }}>
         <div
           style={{
@@ -755,7 +755,7 @@ function Tooltip({ level, position, onMouseEnter, onMouseLeave }) {
             color: TEXT.hint,
           }}
         >
-          Research foundation
+          Established research
         </div>
         <p
           style={{

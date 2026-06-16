@@ -124,7 +124,7 @@ export const SERIES = [
         slug: "01-octopus-chromatophores",
         title: "Octopuses Change Color With Their Emotions",
         subtitle: "The signal function of emotional states \u2014 running in completely different hardware",
-        metaDescription: "The octopus chromatophore system as independent evidence that emotions function as information \u2014 not decoration. A Proof by Nature from TEG-Blue.",
+        metaDescription: "The octopus chromatophore system as independent evidence that emotions function as information \u2014 not decoration. A pattern made visible in nature.",
         connection: "F1 Emotional Gradient / Signal function",
         readingTime: 3,
         sections: [

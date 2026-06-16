@@ -384,7 +384,7 @@ export function generateScientificFoundationsJsonLd() {
       ]
     },
     keywords: [
-      "scientific foundations",
+      "established research",
       "emotional regulation models",
       "Plutchik wheel",
       "NVC nonviolent communication",

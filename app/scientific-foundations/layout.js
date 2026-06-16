@@ -14,7 +14,7 @@ export const metadata = {
     "attachment theory",
     "nervous system regulation",
     "emotional intelligence frameworks",
-    "TEG-Blue scientific foundations",
+    "TEG-Blue established research",
     "psychology integration",
     "neuroscience emotions",
     "Carl Rogers organismic valuing",

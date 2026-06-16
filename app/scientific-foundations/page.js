@@ -857,7 +857,7 @@ export default function ScientificFoundationsPage() {
         {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
         <CoreFoundations />
 
-        {/* ─── 3. HOW TEG-BLUE BUILDS ON EXISTING MODELS ─────────── */}
+        {/* ─── 3. HOW TEG-BLUE INTEGRATES EXISTING MODELS ─────────── */}
         <section style={{ marginBottom: 48 }}>
           <h2
             style={{
@@ -867,13 +867,14 @@ export default function ScientificFoundationsPage() {
               margin: "0 0 12px 0",
             }}
           >
-            How TEG-Blue Builds on Existing Models
+            How TEG-Blue Integrates Existing Models
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            TEG-Blue does not replace these models. It works like a translation layer that
-            helps them speak to each other inside one shared map. Each card shows what the
-            model contributes and what TEG-Blue translates or adds.
+            TEG-Blue does not replace these models, and it is not contained in any of them.
+            Each establishes part of the pattern from inside its own field; the contribution
+            is the architecture that places those parts in relation and makes them legible as
+            one system. Each card shows what the model establishes and what TEG-Blue adds.
           </p>
 
           {globalModels.map((model) => (

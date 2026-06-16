@@ -330,46 +330,19 @@ export default function TheoreticalFoundationsPage() {
             What is the Regulation Thread?
           </h2>
           <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
-            The 12 TEG-Blue frameworks trace one mechanism — state-dependent nervous system organization — across three arcs: Individual (F1–F3), Collective (F4–F7), and Repair (F8–F12). Together they map what happens when Biological Restoration is never learned, what substitutes the system develops, and what it takes to rebuild the original path.
+            The twelve TEG-Blue frameworks form one integrative arc. They connect what research usually keeps in separate fields — emotional regulation, identity, internal organization, and social systems — into a single architecture, by tracing one mechanism through all of them. This page lays out the whole arc: the twelve frameworks, and the thread that runs through them.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            The nervous system was designed to complete a cycle. Detect threat, mobilise, respond — and then restore. Return to baseline. Come back.
+            The nervous system is built to complete a cycle. It detects threat, mobilises, responds — and then restores: stress hormones clear, muscles release, the body returns to baseline. The frameworks follow what happens when that return is never learned — when the conditions that teach a developing nervous system how to restore were not there. The capacity exists. But the path back from activation is built through experience, and for many people, in ordinary environments that meet no clinical threshold, that experience never came.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            Six research traditions have independently mapped the mobilisation side of that cycle: polyvagal theory, affective neuroscience, attachment research, trauma science, stress physiology, developmental psychology. The evidence for what the body does under threat is substantial, cross-validated, and growing.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
-            The restoration side is less studied.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            We know the parasympathetic system reasserts. We know cortisol clears. We know the vagal brake re-engages. But there is a prior question the literature has not yet fully addressed: what happens when the return path is never learned?
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            Not disrupted by a single event. Not dysregulated by acute trauma. Never built — because the co-regulatory conditions that teach a developing nervous system how to restore were simply not present. The mechanism exists. The capacity was always there. But the path from activation back to baseline requires experience to form — and for many people, in many ordinary environments that would not meet clinical thresholds, that experience never came.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 500 }}>
-            If that is true, the implications scale.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            At the individual level: a nervous system without a return path does not stop. It compensates. Cognition replaces restoration. Narrative replaces signal. Identity forms around the absence — stable, functional, and systematically disconnected from the emotional information the body is still generating. The cost is not dysfunction. The cost is truth.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            At the relational level: a nervous system that cannot restore recruits. It recruits compliance, predictability, emotional suppression from others — not through intention, but because external regulation is the only regulation available. The people closest to it pay the cost.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            At the collective level: when enough nervous systems without restoration capacity share an environment — a family, an institution, a culture — the compensations aggregate. Rules substitute for internal regulation. Worth hierarchies sort people by safety-value. Perceptual bias stabilises threat by stabilising belief. And when all of that is insufficient, domination substitutes for everything else.
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            Which produces the question this framework is built around:
+            A nervous system that cannot regulate does not stop. It compensates — and the same compensation repeats at every scale. In the individual, cognition stands in for restoration, and identity forms around the activation the body never completed. In relationships, the system recruits others to manage what it cannot settle internally. In groups and institutions, those compensations aggregate into structure: rules, worth hierarchies, perceptual bias, and — where those fail — domination.
           </p>
           <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 16, fontWeight: 600 }}>
-            Is what we call emotional dysregulation at the individual level and social dysfunction at the collective level the same missing mechanism — Biological Restoration never learned — operating at different scales?
-          </p>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            If it is, the research implications are significant. The intervention point is not where the dysfunction appears. It is where the return path was never built. And the question of how to build it after the developmental window has passed is, to our knowledge, not yet answered.
+            This is the thread the frameworks are organized around, carried across all twelve as a single question: is what we call emotional dysregulation in a person and dysfunction in a society the same missing mechanism — restoration never learned — operating at different scales?
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 0 }}>
-            The TEG-Blue framework traces this thread across twelve concept architectures. It is a map of where the questions lead — and where the research is needed.
+            The frameworks fall into three arcs. Individual (F1–F3) traces the mechanism inside one nervous system. Collective (F4–F7) follows it into shared rules, hierarchies, and systems. Repair (F8–F12) describes how the return path rebuilds. Each stands on its own. Read together, they are the arc.
           </p>
         </section>
 
