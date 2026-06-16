@@ -42,10 +42,10 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "Two Information Systems (F12) | TEG-Blue Research",
   description:
-    "Why the species stopped listening — two information systems, the capacity gap, the conditions that rewarded override, and why the Emotional Somatic System never stopped working. Framework F12 of the TEG-Blue 12-framework system.",
+    "Why the species stopped listening — two information systems, the capacity gap, the conditions that rewarded override, and why the Emotional-Somatic System never stopped working. Framework F12 of the TEG-Blue 12-framework system.",
   keywords: [
     "two information systems",
-    "emotional somatic system",
+    "emotional-somatic system",
     "cognitive logical system",
     "cognitive override",
     "species history",
@@ -72,7 +72,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Two Information Systems — TEG-Blue F12",
     description:
-      "The Emotional Somatic System never stopped working. We stopped listening. The conditions that made us stop are identifiable. The conditions that would let us start again are buildable.",
+      "The Emotional-Somatic System never stopped working. We stopped listening. The conditions that made us stop are identifiable. The conditions that would let us start again are buildable.",
   },
   other: {
     'citation_title': 'Two Information Systems',
@@ -205,7 +205,7 @@ export default function F12TwoInformationSystemsPage() {
               Two information systems run in parallel. They cannot be separated. They process the same events through different architectures, at different speeds, in different languages.
             </p>
             <p style={proseStyle}>
-              The first — the Emotional Somatic System (ESS) — is ancient. Its core circuitry is conserved across mammals. It detects cues below conscious awareness, matches them against stored patterns, and organizes a physiological response in milliseconds. It speaks in sensation, emotion, impulse, and gut feeling. It learns through experience. It updates slowly and forgets slowly.
+              The first — the Emotional-Somatic System (ESS) — is ancient. Its core circuitry is conserved across mammals. It detects cues below conscious awareness, matches them against stored patterns, and organizes a physiological response in milliseconds. It speaks in sensation, emotion, impulse, and gut feeling. It learns through experience. It updates slowly and forgets slowly.
             </p>
             <p style={proseStyle}>
               The second — the Cognitive-Logical System (CLS) — is recent. The neocortex and prefrontal cortex expanded dramatically in primates, with marked amplification in humans. It processes through language, abstraction, and deliberate reasoning. It speaks in words, concepts, and narratives. It learns through explanation. It updates quickly and revises quickly.
@@ -391,7 +391,7 @@ export default function F12TwoInformationSystemsPage() {
               The condition is measurable. Most people cannot name what they feel with precision — the signals <Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1</Link> maps, each with a distinct somatic signature, are collapsed into broad categories. Most people do not know what nervous system state they are in — the gradient <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link> maps shifts continuously, invisible without SEA. Most people treat regulation as a cognitive task — "calm down," "think positive" — when the ESS does not take instructions but responds to conditions. Most people have never been taught that they have awareness capacities — RE, ER, and SEA are not personality traits but capacities with developmental conditions (<Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link>).
             </p>
             <p style={proseStyle}>
-              Every model in the Emotional Somatic System describes the cost. <Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1</Link>: signals that are not read do not stop — they accumulate, distort, or redirect. <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>: without awareness of state shifts, the person experiences the outputs without understanding the input. <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>: when override prevents completion, debris accumulates and the baseline rises. <Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link>: the awareness capacities require developmental conditions a cognitive-override culture does not reliably provide. The capacities are not lost. They are undeveloped. The difference matters: what was not built can be built.
+              Every model in the Emotional-Somatic System describes the cost. <Link href="/model/m1-emotions-as-signals" style={linkStyle}>M1</Link>: signals that are not read do not stop — they accumulate, distort, or redirect. <Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>: without awareness of state shifts, the person experiences the outputs without understanding the input. <Link href="/model/m3-regulation-capacities" style={linkStyle}>M3</Link>: when override prevents completion, debris accumulates and the baseline rises. <Link href="/model/m4-awareness-capacities" style={linkStyle}>M4</Link>: the awareness capacities require developmental conditions a cognitive-override culture does not reliably provide. The capacities are not lost. They are undeveloped. The difference matters: what was not built can be built.
             </p>
 
             {/* Section diagram placeholder */}
@@ -498,7 +498,7 @@ export default function F12TwoInformationSystemsPage() {
               Every substitution in F3–F7 happens because the CLS cannot reach the ESS. Every repair in F8–F10 works because it addresses the ESS through experience. Every paradox in F11 exists because two systems are producing different outputs simultaneously. F12 is the reason.
             </p>
             <p style={proseStyle}>
-              If this framework had to be reduced to one sentence: <strong style={{ color: TEXT.primary }}>The Emotional Somatic System never stopped working. We stopped listening. The conditions that made us stop are identifiable. The conditions that would let us start again are buildable.</strong>
+              If this framework had to be reduced to one sentence: <strong style={{ color: TEXT.primary }}>The Emotional-Somatic System never stopped working. We stopped listening. The conditions that made us stop are identifiable. The conditions that would let us start again are buildable.</strong>
             </p>
 
             {/* Section diagram placeholder */}
@@ -514,7 +514,7 @@ export default function F12TwoInformationSystemsPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Connecting the biological timeline (conserved emotional circuitry vs rapidly scaled cognition), the environmental trigger (agricultural transition creating conditions that rewarded override), and the cultural transmission mechanism (override becoming invisible through generational inheritance) into a single framework that explains why a species with a functioning Emotional Somatic System largely stopped using it — and what conditions would be required to reverse that. This is a working hypothesis, open to testing.
+                  Connecting the biological timeline (conserved emotional circuitry vs rapidly scaled cognition), the environmental trigger (agricultural transition creating conditions that rewarded override), and the cultural transmission mechanism (override becoming invisible through generational inheritance) into a single framework that explains why a species with a functioning Emotional-Somatic System largely stopped using it — and what conditions would be required to reverse that. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -620,7 +620,7 @@ export default function F12TwoInformationSystemsPage() {
             "@id": "https://teg-blue.org/framework/f12-two-information-systems#article",
             headline: "Two Information Systems: Why We Stopped Listening",
             description:
-              "Why the species stopped listening to the Emotional Somatic System — two information systems, the capacity gap, the agricultural transition, and what conditions would let us start again. Framework F12 of the TEG-Blue 12-framework system.",
+              "Why the species stopped listening to the Emotional-Somatic System — two information systems, the capacity gap, the agricultural transition, and what conditions would let us start again. Framework F12 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -646,7 +646,7 @@ export default function F12TwoInformationSystemsPage() {
             },
             about: [
               { "@type": "Thing", name: "Two Information Systems" },
-              { "@type": "Thing", name: "Emotional Somatic System" },
+              { "@type": "Thing", name: "Emotional-Somatic System" },
               { "@type": "Thing", name: "Cognitive Override" },
               { "@type": "Thing", name: "Agricultural Transition" },
               { "@type": "Thing", name: "Species History" },
@@ -661,7 +661,7 @@ export default function F12TwoInformationSystemsPage() {
             ],
             keywords: [
               "two information systems",
-              "emotional somatic system",
+              "emotional-somatic system",
               "cognitive override",
               "agricultural transition",
               "dual process theory",
@@ -690,7 +690,7 @@ export default function F12TwoInformationSystemsPage() {
           __html: JSON.stringify(
             generateFAQJsonLd([
               {
-                question: "Why did the species stop listening to the Emotional Somatic System?",
+                question: "Why did the species stop listening to the Emotional-Somatic System?",
                 answer:
                   "Agriculture created conditions where acting on the ESS's accurate signals became dangerous. Suppress the signal that says 'this is not safe' — because leaving is not an option. Over generations, cognitive override became the dominant survival strategy and transmitted as invisible normal. The signals got reclassified as 'emotion,' the vocabulary disappeared, the body became background, and the override became identity.",
               },

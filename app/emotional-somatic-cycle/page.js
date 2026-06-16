@@ -35,11 +35,11 @@ const linkStyle = { color: PAGE_COLOR, textDecoration: "none" };
 // ─── METADATA ─────────────────────────────────────────────
 
 export const metadata = {
-  title: "The Emotional Somatic Cycle | TEG-Blue Research",
+  title: "The Emotional-Somatic Cycle | TEG-Blue Research",
   description:
-    "The Emotional Somatic Cycle (ESC) — the repeating biological sequence two information systems run together. From detection through activation to restoration or incompletion.",
+    "The Emotional-Somatic Cycle (ESC) — the repeating biological sequence two information systems run together. From detection through activation to restoration or incompletion.",
   keywords: [
-    "emotional somatic cycle",
+    "emotional-somatic cycle",
     "nervous system",
     "biological restoration",
     "signal generation",
@@ -53,7 +53,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/emotional-somatic-cycle",
   },
   openGraph: {
-    title: "The Emotional Somatic Cycle | TEG-Blue Research",
+    title: "The Emotional-Somatic Cycle | TEG-Blue Research",
     description:
       "The repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
     url: "https://teg-blue.org/emotional-somatic-cycle",
@@ -62,12 +62,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Emotional Somatic Cycle | TEG-Blue Research",
+    title: "The Emotional-Somatic Cycle | TEG-Blue Research",
     description:
       "The repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
   },
   other: {
-    "citation_title": "The Emotional Somatic Cycle",
+    "citation_title": "The Emotional-Somatic Cycle",
     "citation_author": "Anna Paretas-Artacho",
     "citation_publication_date": "2026/02",
     "citation_technical_report_institution": "TEG-Blue Research",
@@ -76,12 +76,12 @@ export const metadata = {
 
 const FAQ_ITEMS = [
   {
-    question: "What is the Emotional Somatic Cycle?",
-    answer: "The Emotional Somatic Cycle (ESC) is the repeating biological sequence that two information systems — the Emotional Somatic System (ESS) and the Cognitive-Logical System (CLS) — run together. The nervous system detects something in the environment, evaluates it for safety or threat, generates a physiological response, reorganises into a different configuration, and then either the restoration sequence runs to its endpoint or the activation remains unresolved.",
+    question: "What is the Emotional-Somatic Cycle?",
+    answer: "The Emotional-Somatic Cycle (ESC) is the repeating biological sequence that two information systems — the Emotional-Somatic System (ESS) and the Cognitive-Logical System (CLS) — run together. The nervous system detects something in the environment, evaluates it for safety or threat, generates a physiological response, reorganises into a different configuration, and then either the restoration sequence runs to its endpoint or the activation remains unresolved.",
   },
   {
     question: "What are the four TEG-Blue models?",
-    answer: "The four models each map a different stage of the Emotional Somatic Cycle. M1: Emotions as Signals maps what the nervous system detects and the physiological response it generates. M2: Nervous System States maps how the nervous system reorganises into different configurations along a continuous gradient. M3: Regulation Capacities maps whether the restoration sequence completes or the activation remains unresolved. M4: Awareness Capacities maps the biological architecture that determines whether the CLS can receive the ESS's physiological signals.",
+    answer: "The four models each map a different stage of the Emotional-Somatic Cycle. M1: Emotions as Signals maps what the nervous system detects and the physiological response it generates. M2: Nervous System States maps how the nervous system reorganises into different configurations along a continuous gradient. M3: Regulation Capacities maps whether the restoration sequence completes or the activation remains unresolved. M4: Awareness Capacities maps the biological architecture that determines whether the CLS can receive the ESS's physiological signals.",
   },
   {
     question: "What determines whether the cycle completes?",
@@ -108,11 +108,11 @@ export default function EmotionalSomaticCyclePage() {
       <PageLayout
         header={
           <ModelHero
-            badge="THE EMOTIONAL SOMATIC CYCLE"
-            title="The Emotional Somatic Cycle"
+            badge="THE EMOTIONAL-SOMATIC CYCLE"
+            title="The Emotional-Somatic Cycle"
             subtitle="Threat & Safety Detection → Emotional Signal → Nervous System State → Restoration or Incompletion"
             subtitleStyle={{ fontFamily: FONT.diagram }}
-            description="The Emotional Somatic System and the Cognitive-Logical System run a repeating biological sequence together. The nervous system detects, evaluates, generates a physiological response, and reorganises into a different configuration. Whether that sequence completes — or remains unresolved — determines what the person can perceive, think, feel, and do."
+            description="The Emotional-Somatic System and the Cognitive-Logical System run a repeating biological sequence together. The nervous system detects, evaluates, generates a physiological response, and reorganises into a different configuration. Whether that sequence completes — or remains unresolved — determines what the person can perceive, think, feel, and do."
             color={PAGE_COLOR}
           />
         }
@@ -134,7 +134,7 @@ export default function EmotionalSomaticCyclePage() {
           <p style={proseStyle}>
             This page maps the cycle these{" "}
             <Link href="/emotional-somatic-system" style={linkStyle}>two information systems</Link>
-            {" "}run together — the Emotional Somatic System (ESS) and the Cognitive-Logical System (CLS).
+            {" "}run together — the Emotional-Somatic System (ESS) and the Cognitive-Logical System (CLS).
           </p>
         </section>
 
@@ -154,7 +154,7 @@ export default function EmotionalSomaticCyclePage() {
           </p>
 
           <p style={proseStyle}>
-            Now the conscious mind catches up. The body feels different — chest tight, muscles braced, something shifted. What happens next depends on one biological condition: whether the Cognitive-Logical System can access what the Emotional Somatic System is doing. Whether the biological architecture connecting the two systems delivers the physiological signals that have already been generated. This is interoceptive access — and it determines everything that follows.
+            Now the conscious mind catches up. The body feels different — chest tight, muscles braced, something shifted. What happens next depends on one biological condition: whether the Cognitive-Logical System can access what the Emotional-Somatic System is doing. Whether the biological architecture connecting the two systems delivers the physiological signals that have already been generated. This is interoceptive access — and it determines everything that follows.
           </p>
 
           <p style={proseStyle}>
@@ -185,7 +185,7 @@ export default function EmotionalSomaticCyclePage() {
         <section style={{ marginBottom: 48 }}>
           <h3 style={{ ...conceptHeadingStyle, marginBottom: 12 }}>The Cycle Step by Step</h3>
           <p style={{ ...proseStyle, marginBottom: 20 }}>
-            Each stage of the Emotional Somatic Cycle mapped in sequence — from physiological baseline through detection, signal, and state activation to the branching point where the cycle either completes or the activation remains unresolved.
+            Each stage of the Emotional-Somatic Cycle mapped in sequence — from physiological baseline through detection, signal, and state activation to the branching point where the cycle either completes or the activation remains unresolved.
           </p>
           <ESCFlowDiagram />
         </section>
@@ -200,7 +200,7 @@ export default function EmotionalSomaticCyclePage() {
               The nervous system at rest. Cortisol at resting level. Muscles at resting tension. Heart rate at resting pace. The HPA axis standing down. Not numb, not inactive — ready. The body{"'"}s resources available, not deployed.
             </p>
             <p style={stageProse}>
-              Physiological baseline is the start and endpoint of the Emotional Somatic Cycle. In Path A, the restoration sequence runs to its endpoint and the nervous system returns here. In Path B, the baseline shifts upward — the resting activation level itself changes as unresolved physiological activation accumulates.
+              Physiological baseline is the start and endpoint of the Emotional-Somatic Cycle. In Path A, the restoration sequence runs to its endpoint and the nervous system returns here. In Path B, the baseline shifts upward — the resting activation level itself changes as unresolved physiological activation accumulates.
             </p>
           </StageSection>
         </section>
@@ -493,7 +493,7 @@ export default function EmotionalSomaticCyclePage() {
             <ModelLink id="M1" title="Emotions as Signals" role="The Nervous System Language" href="/model/m1-emotions-as-signals" color={SPECTRUM.azure} />
             <ModelLink id="M2" title="Nervous System States" role="The Physiological Reorganization and Configuration to Respond to Threat or Safety" href="/model/m2-nervous-system-states" color={SPECTRUM.azure} />
             <ModelLink id="M3" title="Regulation Capacities" role="The Biological Restoration the Nervous System Needs in Order to Restore Physiological Baseline" href="/model/m3-regulation-capacities" color={SPECTRUM.indigo} />
-            <ModelLink id="M4" title="Awareness Capacities" role="Is the Emotional Somatic System Aware of the Cognitive Linguistic System?" href="/model/m4-awareness-capacities" color={SPECTRUM.cobalt} />
+            <ModelLink id="M4" title="Awareness Capacities" role="Is the Emotional-Somatic System Aware of the Cognitive Linguistic System?" href="/model/m4-awareness-capacities" color={SPECTRUM.cobalt} />
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -519,7 +519,7 @@ export default function EmotionalSomaticCyclePage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "The Emotional Somatic Cycle", url: "/emotional-somatic-cycle" },
+              { name: "The Emotional-Somatic Cycle", url: "/emotional-somatic-cycle" },
             ])
           ),
         }}
@@ -535,7 +535,7 @@ export default function EmotionalSomaticCyclePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Emotional Somatic Cycle | TEG-Blue Research",
+              name: "The Emotional-Somatic Cycle | TEG-Blue Research",
               url: "https://teg-blue.org/emotional-somatic-cycle",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

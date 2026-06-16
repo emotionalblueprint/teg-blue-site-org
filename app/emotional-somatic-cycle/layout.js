@@ -1,9 +1,9 @@
 export const metadata = {
-  title: "The Emotional Somatic Cycle | TEG-Blue Research",
+  title: "The Emotional-Somatic Cycle | TEG-Blue Research",
   description:
-    "The Emotional Somatic Cycle (ESC) — the repeating biological sequence two information systems run together. Detection → Signal → State → Restoration or Incompletion.",
+    "The Emotional-Somatic Cycle (ESC) — the repeating biological sequence two information systems run together. Detection → Signal → State → Restoration or Incompletion.",
   keywords: [
-    "emotional somatic cycle",
+    "emotional-somatic cycle",
     "ESC",
     "nervous system",
     "biological restoration",
@@ -18,7 +18,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/emotional-somatic-cycle",
   },
   openGraph: {
-    title: "The Emotional Somatic Cycle | TEG-Blue Research",
+    title: "The Emotional-Somatic Cycle | TEG-Blue Research",
     description:
       "The repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
     url: "https://teg-blue.org/emotional-somatic-cycle",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Emotional Somatic Cycle | TEG-Blue Research",
+    title: "The Emotional-Somatic Cycle | TEG-Blue Research",
     description:
       "The repeating biological sequence the nervous system runs — from signal through state through restoration or incompletion.",
   },
@@ -38,10 +38,10 @@ export default function ESCLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "The Emotional Somatic Cycle — TEG-Blue",
+    name: "The Emotional-Somatic Cycle — TEG-Blue",
     url: "https://teg-blue.org/emotional-somatic-cycle",
     description:
-      "The Emotional Somatic Cycle (ESC) — the repeating biological sequence the ESS and CLS run together. Detection, signal generation, state activation, and the branching point that determines completion or incompletion.",
+      "The Emotional-Somatic Cycle (ESC) — the repeating biological sequence the ESS and CLS run together. Detection, signal generation, state activation, and the branching point that determines completion or incompletion.",
     inLanguage: "en",
     isPartOf: {
       "@type": "ResearchProject",

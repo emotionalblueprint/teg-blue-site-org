@@ -24,7 +24,7 @@ import {
 
 const SIDEBAR_SECTIONS = [
   { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
-  { label: "Core Propositions", href: "#core-propositions", description: "The claims F1 makes about the biological origin of the Emotional Somatic Cycle." },
+  { label: "Core Propositions", href: "#core-propositions", description: "The claims F1 makes about the biological origin of the Emotional-Somatic Cycle." },
   { label: "The Biological Substrate", href: "#biological-substrate", description: "The neural, endocrine, autonomic, and neurochemical systems that produce emotion." },
   { label: "The Autonomic Architecture", href: "#autonomic-architecture", description: "Two branches, four states, and the co-evolution of the ESS and CLS." },
   { label: "Why the Cycle Needs to Complete", href: "#designed-process", description: "Biological restoration as the designed process — and the two completion pathways." },
@@ -42,11 +42,11 @@ const SIDEBAR_SECTIONS = [
 export const metadata = {
   title: "The Emotional Gradient (F1) | TEG-Blue Research",
   description:
-    "The biological origin of the Emotional Somatic Cycle. Why the nervous system generates emotional signals, why the autonomic architecture produces four states, and why biological restoration is the designed process around which all twelve frameworks are organized.",
+    "The biological origin of the Emotional-Somatic Cycle. Why the nervous system generates emotional signals, why the autonomic architecture produces four states, and why biological restoration is the designed process around which all twelve frameworks are organized.",
   keywords: [
     "biological substrate of emotion",
     "autonomic architecture",
-    "emotional somatic cycle",
+    "emotional-somatic cycle",
     "biological restoration",
     "polyvagal theory",
     "nervous system states",
@@ -63,7 +63,7 @@ export const metadata = {
   openGraph: {
     title: "The Emotional Gradient — F1 Framework | TEG-Blue",
     description:
-      "The biological origin of the Emotional Somatic Cycle — why the nervous system produces emotional signals, why the autonomic architecture generates four states, and why biological restoration is the pivot of the entire framework system.",
+      "The biological origin of the Emotional-Somatic Cycle — why the nervous system produces emotional signals, why the autonomic architecture generates four states, and why biological restoration is the pivot of the entire framework system.",
     url: "https://teg-blue.org/framework/f1-emotional-gradient",
     type: "article",
     siteName: "TEG-Blue Research",
@@ -72,7 +72,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "The Emotional Gradient — TEG-Blue F1",
     description:
-      "The biological origin of the Emotional Somatic Cycle and the governing architecture that connects all twelve frameworks.",
+      "The biological origin of the Emotional-Somatic Cycle and the governing architecture that connects all twelve frameworks.",
   },
   other: {
     'citation_title': 'The Emotional Gradient',
@@ -102,7 +102,7 @@ export default function F1EmotionalGradientPage() {
           <FrameworkHero
             badge="FRAMEWORK F1"
             title="The Emotional Gradient"
-            subtitle="The Biological Origin of the Emotional Somatic Cycle"
+            subtitle="The Biological Origin of the Emotional-Somatic Cycle"
             description="Every emotional response is a biological event — neural, endocrine, and autonomic systems generating physiological changes before conscious awareness begins. Independent research traditions across affective science, neuroscience, developmental psychology, and trauma studies converge on the same structure. This framework asks what biological architecture produces it, why the convergence occurs, and what governs the entire system when the body's designed completion process is unavailable."
             group="Individual"
             groupLabel="Individual Arc · F1–F3"
@@ -152,7 +152,7 @@ export default function F1EmotionalGradientPage() {
                   The autonomic nervous system developed in evolutionary stages, producing the architecture that generates four nervous system states as a continuous gradient from safety to maximum threat
                 </li>
                 <li style={propositionItemStyle}>
-                  The Emotional Somatic System (ESS) and the Cognitive-Logical System (CLS) co-evolved as parts of one organism — the emotional circuitry is ancient, the cognitive circuitry is newer, and the CLS extended the threat branch as it developed
+                  The Emotional-Somatic System (ESS) and the Cognitive-Logical System (CLS) co-evolved as parts of one organism — the emotional circuitry is ancient, the cognitive circuitry is newer, and the CLS extended the threat branch as it developed
                 </li>
                 <li style={propositionItemStyle}>
                   Biological restoration is the designed process of the entire system — it operates at no cost, and every other framework describes what happens when this process is unavailable
@@ -207,7 +207,7 @@ export default function F1EmotionalGradientPage() {
               The emotional signal is shaped by neurotransmitter states. Serotonin modulates mood stability and threat sensitivity. Dopamine shapes approach motivation and reward anticipation. Noradrenaline drives arousal and attention. Oxytocin — released through safe social contact — reduces amygdala reactivity and supports co-regulation, the process through which one regulated nervous system helps another complete its restoration sequence. These are not background conditions. They are part of the signal.
             </p>
             <p style={proseStyle}>
-              This substrate is what makes the Emotional Somatic System (ESS) measurable. When a nervous system state broadens perception, the vagal brake is engaged and the prefrontal cortex has access to its full range. When activation stays open and the physical residue accumulates, specific molecules remain elevated in specific systems. When the ESS generates a signal and the body mobilizes before the Cognitive-Logical System (CLS) has formed a thought, the amygdala pathway has completed before the cortical pathway has begun.
+              This substrate is what makes the Emotional-Somatic System (ESS) measurable. When a nervous system state broadens perception, the vagal brake is engaged and the prefrontal cortex has access to its full range. When activation stays open and the physical residue accumulates, specific molecules remain elevated in specific systems. When the ESS generates a signal and the body mobilizes before the Cognitive-Logical System (CLS) has formed a thought, the amygdala pathway has completed before the cortical pathway has begun.
             </p>
 
             {/* Section diagram placeholder */}
@@ -398,7 +398,7 @@ export default function F1EmotionalGradientPage() {
               The architecture described in the previous sections — a biological system that detects, signals, shifts state, and needs to complete — has been independently identified across multiple research traditions. Each describes a piece of the same system from a different angle. None reference each other when arriving at the same structure.
             </p>
             <p style={proseStyle}>
-              TEG-Blue proposes that these traditions converge because they are all describing parts of the Emotional Somatic Cycle. The ESC provides a unifying architecture that shows where each tradition's findings sit within the same biological process.
+              TEG-Blue proposes that these traditions converge because they are all describing parts of the Emotional-Somatic Cycle. The ESC provides a unifying architecture that shows where each tradition's findings sit within the same biological process.
             </p>
 
             <div style={{ overflowX: "auto", marginBottom: 16 }}>
@@ -447,7 +447,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The systematic mapping of independent research traditions against the Emotional Somatic Cycle to show that each describes a part of the same biological architecture. To the framework's knowledge, no existing work makes this unification explicit. The individual traditions are established. The integration — showing that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, fight-flight-freeze-fawn, dual-process theory, and somatic completion are all describing pieces of one cycle — is the framework's contribution, open to testing. The building blocks are established. The connections are the framework's hypothesis.
+                  The systematic mapping of independent research traditions against the Emotional-Somatic Cycle to show that each describes a part of the same biological architecture. To the framework's knowledge, no existing work makes this unification explicit. The individual traditions are established. The integration — showing that polyvagal states, approach/avoidance, broaden-and-build, window of tolerance, secure base, fight-flight-freeze-fawn, dual-process theory, and somatic completion are all describing pieces of one cycle — is the framework's contribution, open to testing. The building blocks are established. The connections are the framework's hypothesis.
                 </p>
               </ExpandableSection>
             </div>
@@ -555,7 +555,7 @@ export default function F1EmotionalGradientPage() {
             </h2>
 
             <p style={proseStyle}>
-              The Emotional Somatic Cycle operates at a scale larger than one activation event. The trajectory from a single signal to the structures that organize entire societies follows a biological arc — each step producing the conditions for the next.
+              The Emotional-Somatic Cycle operates at a scale larger than one activation event. The trajectory from a single signal to the structures that organize entire societies follows a biological arc — each step producing the conditions for the next.
             </p>
 
             <p
@@ -724,7 +724,7 @@ export default function F1EmotionalGradientPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f1-emotional-gradient#article",
-            headline: "The Emotional Gradient: The Biological Origin of the Emotional Somatic Cycle",
+            headline: "The Emotional Gradient: The Biological Origin of the Emotional-Somatic Cycle",
             description:
               "Why the nervous system generates emotional signals, why the autonomic architecture produces four states, and why biological restoration is the designed process around which all twelve frameworks are organized. Framework F1 of the TEG-Blue 12-framework system.",
             author: {
@@ -755,7 +755,7 @@ export default function F1EmotionalGradientPage() {
               { "@type": "Thing", name: "Autonomic Nervous System" },
               { "@type": "Thing", name: "Polyvagal Theory" },
               { "@type": "Thing", name: "Biological Restoration" },
-              { "@type": "Thing", name: "Emotional Somatic Cycle" },
+              { "@type": "Thing", name: "Emotional-Somatic Cycle" },
             ],
             citation: [
               { "@type": "ScholarlyArticle", name: "The Polyvagal Theory (Porges, 2011)" },
@@ -771,7 +771,7 @@ export default function F1EmotionalGradientPage() {
             keywords: [
               "biological substrate of emotion",
               "autonomic architecture",
-              "emotional somatic cycle",
+              "emotional-somatic cycle",
               "biological restoration",
               "polyvagal theory",
               "cross-disciplinary convergence",
@@ -816,7 +816,7 @@ export default function F1EmotionalGradientPage() {
               {
                 question: "Why do different research traditions converge on the same structure?",
                 answer:
-                  "TEG-Blue proposes that traditions across affective science, neuroscience, developmental psychology, clinical psychology, and trauma studies converge because they are all describing parts of the Emotional Somatic Cycle. The individual traditions are established. The integration is the framework's contribution, open to testing.",
+                  "TEG-Blue proposes that traditions across affective science, neuroscience, developmental psychology, clinical psychology, and trauma studies converge because they are all describing parts of the Emotional-Somatic Cycle. The individual traditions are established. The integration is the framework's contribution, open to testing.",
               },
               {
                 question: "What are the two completion pathways?",

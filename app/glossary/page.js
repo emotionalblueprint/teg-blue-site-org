@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is the TEG-Blue glossary?",
-    answer: "The TEG-Blue glossary defines canonical terms across 4 models (M1-M4) and 12 frameworks (F1-F12). It covers the Emotional Somatic System, Cognitive-Logical System, the Emotional Somatic Cycle, nervous system states, regulation capacities, awareness capacities, and every core concept — searchable and sorted by model or framework.",
+    answer: "The TEG-Blue glossary defines canonical terms across 4 models (M1-M4) and 12 frameworks (F1-F12). It covers the Emotional-Somatic System, Cognitive-Logical System, the Emotional-Somatic Cycle, nervous system states, regulation capacities, awareness capacities, and every core concept — searchable and sorted by model or framework.",
   },
   {
     question: "What are the four nervous system states in TEG-Blue?",
@@ -14,21 +14,21 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the difference between the ESS and the CLS?",
-    answer: "The Emotional Somatic System (ESS) is the biological detection-evaluation-response system — it detects cues below conscious awareness and organises physiological responses in milliseconds. The Cognitive-Logical System (CLS) is language, reasoning, and narrative construction — it arrives after the ESS has already responded. The ESS determines what state the person is in. The CLS operates within whatever state has been set.",
+    answer: "The Emotional-Somatic System (ESS) is the biological detection-evaluation-response system — it detects cues below conscious awareness and organises physiological responses in milliseconds. The Cognitive-Logical System (CLS) is language, reasoning, and narrative construction — it arrives after the ESS has already responded. The ESS determines what state the person is in. The CLS operates within whatever state has been set.",
   },
 ];
 import GlossaryList from "./GlossaryList";
 
 export const metadata = {
   title: "Glossary — Canonical Terms | TEG-Blue Research",
-  description: "Canonical terms across 4 models and 12 frameworks. Definitions for the Emotional Somatic System, nervous system states, regulation capacities, awareness capacities, and every core TEG-Blue concept — searchable and sorted by source.",
+  description: "Canonical terms across 4 models and 12 frameworks. Definitions for the Emotional-Somatic System, nervous system states, regulation capacities, awareness capacities, and every core TEG-Blue concept — searchable and sorted by source.",
   keywords: [
-    "emotional somatic system glossary",
+    "emotional-somatic system glossary",
     "nervous system regulation terms",
     "TEG-Blue glossary",
     "awareness capacities",
     "regulation capacities",
-    "emotional somatic cycle",
+    "emotional-somatic cycle",
     "false coherence",
   ],
   alternates: {
@@ -36,7 +36,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Glossary — Canonical Terms | TEG-Blue Research",
-    description: "Canonical terms across 4 models and 12 frameworks. The Emotional Somatic System, nervous system states, regulation capacities, awareness capacities, and every core TEG-Blue concept.",
+    description: "Canonical terms across 4 models and 12 frameworks. The Emotional-Somatic System, nervous system states, regulation capacities, awareness capacities, and every core TEG-Blue concept.",
     url: "https://teg-blue.org/glossary",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -44,7 +44,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Glossary — Canonical Terms | TEG-Blue Research",
-    description: "Canonical terms across 4 models and 12 frameworks. The Emotional Somatic System, nervous system states, regulation capacities, awareness capacities, and every core concept.",
+    description: "Canonical terms across 4 models and 12 frameworks. The Emotional-Somatic System, nervous system states, regulation capacities, awareness capacities, and every core concept.",
   },
 };
 
@@ -58,7 +58,7 @@ const GLOSSARY_TERMS = [
 
   {
     slug: "emotional-somatic-system",
-    title: "Emotional Somatic System (ESS)",
+    title: "Emotional-Somatic System (ESS)",
     type: "concept",
     status: "established",
     definition: "The biological detection-evaluation-response system that runs continuously in every body. Detects changes in the environment through the sensory periphery, evaluates for safety or threat, and organises a physiological response before conscious awareness arrives. Cue detection begins at 10–50ms; pattern matching completes within 50–200ms; a full physiological response is organised within 200–500ms. Its language: sensation, impulse, gut feeling. Slow to update, slow to forget.",
@@ -76,7 +76,7 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "emotional-somatic-cycle",
-    title: "Emotional Somatic Cycle (ESC)",
+    title: "Emotional-Somatic Cycle (ESC)",
     type: "concept",
     status: "established",
     definition: "The repeating biological sequence that the ESS and CLS run together. Begins at physiological baseline, the nervous system activates in response to what the environment requires, and either the restoration sequence runs to its endpoint (Path A) or the activation remains unresolved (Path B). Every concept in every model maps a part of this cycle. Every framework explains why the cycle runs the way it does.",
@@ -1285,7 +1285,7 @@ export default function GlossaryPage() {
           <ResearcherHero
             badge="GLOSSARY"
             title="Canonical Terms"
-            description={<>Definitions for the Emotional Somatic System, nervous system states, regulation capacities, awareness capacities, and every core concept across four models and twelve frameworks. Each term sourced from the concept architectures.</>}
+            description={<>Definitions for the Emotional-Somatic System, nervous system states, regulation capacities, awareness capacities, and every core concept across four models and twelve frameworks. Each term sourced from the concept architectures.</>}
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -1298,7 +1298,7 @@ export default function GlossaryPage() {
         {/* Cross-site link */}
         <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 16 }}>
           <Link href="/emotional-somatic-cycle" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            The Emotional Somatic Cycle →
+            The Emotional-Somatic Cycle →
           </Link>
           <Link href="/frameworks-map" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
             12 Frameworks →
@@ -1337,12 +1337,12 @@ export default function GlossaryPage() {
             "@type": "DefinedTermSet",
             name: "TEG-Blue Canonical Terms Glossary",
             url: "https://teg-blue.org/glossary",
-            description: `${GLOSSARY_TERMS.length} canonical terms across 4 models and 12 frameworks. Definitions for the Emotional Somatic System, nervous system states, regulation capacities, awareness capacities, and every core TEG-Blue concept.`,
+            description: `${GLOSSARY_TERMS.length} canonical terms across 4 models and 12 frameworks. Definitions for the Emotional-Somatic System, nervous system states, regulation capacities, awareness capacities, and every core TEG-Blue concept.`,
             inLanguage: "en",
             hasDefinedTerm: [
-              { "@type": "DefinedTerm", name: "Emotional Somatic System (ESS)", description: "The biological detection-evaluation-response system that runs continuously in every body." },
+              { "@type": "DefinedTerm", name: "Emotional-Somatic System (ESS)", description: "The biological detection-evaluation-response system that runs continuously in every body." },
               { "@type": "DefinedTerm", name: "Cognitive-Logical System (CLS)", description: "Language, reasoning, planning, abstraction, narrative construction — the second information system." },
-              { "@type": "DefinedTerm", name: "Emotional Somatic Cycle (ESC)", description: "The repeating biological sequence the ESS and CLS run together." },
+              { "@type": "DefinedTerm", name: "Emotional-Somatic Cycle (ESC)", description: "The repeating biological sequence the ESS and CLS run together." },
               { "@type": "DefinedTerm", name: "Path A", description: "The completed biological regulation pathway — from signal through state through restoration to baseline." },
               { "@type": "DefinedTerm", name: "Path B", description: "The incomplete biological regulation pathway — override, incomplete restoration, accumulation, substitution." },
               { "@type": "DefinedTerm", name: "False Coherence", description: "The enduring narrative structure produced by repeated override — cognition replacing physiological signals with invented narratives." },

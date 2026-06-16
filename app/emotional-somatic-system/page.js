@@ -35,11 +35,11 @@ const linkStyle = { color: DIAGRAM.primary, textDecoration: "none" };
 // ─── METADATA ───────────────────────────────────────────
 
 export const metadata = {
-  title: "The Emotional Somatic System | TEG-Blue Research",
+  title: "The Emotional-Somatic System | TEG-Blue Research",
   description:
-    "Two parallel information systems operate in every human body — the Emotional Somatic System (ESS) and the Cognitive-Logical System (CLS). The ESS detects, evaluates, and generates physiological responses before conscious awareness arrives. The CLS produces language, reasoning, and narrative. These systems are interdependent, not in competition.",
+    "Two parallel information systems operate in every human body — the Emotional-Somatic System (ESS) and the Cognitive-Logical System (CLS). The ESS detects, evaluates, and generates physiological responses before conscious awareness arrives. The CLS produces language, reasoning, and narrative. These systems are interdependent, not in competition.",
   keywords: [
-    "emotional somatic system",
+    "emotional-somatic system",
     "ESS",
     "cognitive logical system",
     "CLS",
@@ -54,7 +54,7 @@ export const metadata = {
     canonical: "https://teg-blue.org/emotional-somatic-system",
   },
   openGraph: {
-    title: "The Emotional Somatic System | TEG-Blue Research",
+    title: "The Emotional-Somatic System | TEG-Blue Research",
     description:
       "Two parallel information systems — the ESS and the CLS — operating at different speeds, in different domains, through different mechanisms.",
     url: "https://teg-blue.org/emotional-somatic-system",
@@ -63,12 +63,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Emotional Somatic System | TEG-Blue Research",
+    title: "The Emotional-Somatic System | TEG-Blue Research",
     description:
       "Two parallel information systems — the ESS and the CLS — operating at different speeds, in different domains, through different mechanisms.",
   },
   other: {
-    "citation_title": "Two Information Systems: The Emotional Somatic System and the Cognitive-Logical System",
+    "citation_title": "Two Information Systems: The Emotional-Somatic System and the Cognitive-Logical System",
     "citation_author": "Anna Paretas-Artacho",
     "citation_publication_date": "2026/02",
     "citation_technical_report_institution": "TEG-Blue Research",
@@ -77,8 +77,8 @@ export const metadata = {
 
 const FAQ_ITEMS = [
   {
-    question: "What is the Emotional Somatic System (ESS)?",
-    answer: "The Emotional Somatic System (ESS) is a biological information system that runs continuously in every human body. It detects changes in the environment through the sensory periphery — eyes, ears, nose, gut, skin — evaluates them for safety or threat, and organises a physiological response before conscious awareness arrives. Cue detection begins at 10–50ms, pattern matching completes within 50–200ms, and a full physiological response is organised within 200–500ms.",
+    question: "What is the Emotional-Somatic System (ESS)?",
+    answer: "The Emotional-Somatic System (ESS) is a biological information system that runs continuously in every human body. It detects changes in the environment through the sensory periphery — eyes, ears, nose, gut, skin — evaluates them for safety or threat, and organises a physiological response before conscious awareness arrives. Cue detection begins at 10–50ms, pattern matching completes within 50–200ms, and a full physiological response is organised within 200–500ms.",
   },
   {
     question: "What is the Cognitive-Logical System (CLS)?",
@@ -89,8 +89,8 @@ const FAQ_ITEMS = [
     answer: "The ESS and CLS are not competitors. They are interdependent capacities running in one organism, operating at different speeds, in different domains, through different mechanisms. By the time the CLS registers that something has happened, the ESS has already detected, evaluated, and shifted the nervous system's configuration. The CLS operates within whatever state the ESS has set — state precedes capacity.",
   },
   {
-    question: "What is the Emotional Somatic Cycle?",
-    answer: "The Emotional Somatic Cycle (ESC) is the repeating biological sequence that the ESS and CLS run together — from detection through signal generation through state activation to restoration or incompletion. Whether the CLS can feel what the ESS is doing determines whether the cycle completes.",
+    question: "What is the Emotional-Somatic Cycle?",
+    answer: "The Emotional-Somatic Cycle (ESC) is the repeating biological sequence that the ESS and CLS run together — from detection through signal generation through state activation to restoration or incompletion. Whether the CLS can feel what the ESS is doing determines whether the cycle completes.",
   },
 ];
 
@@ -177,7 +177,7 @@ export default function EmotionalSomaticSystemPage() {
       <PageLayout
         header={
           <ModelHero
-            badge="THE EMOTIONAL SOMATIC SYSTEM"
+            badge="THE EMOTIONAL-SOMATIC SYSTEM"
             title="Two Information Systems"
             subtitle="Detection · Evaluation · Response — before conscious awareness arrives"
             subtitleStyle={{ fontFamily: FONT.diagram }}
@@ -196,7 +196,7 @@ export default function EmotionalSomaticSystemPage() {
         </section>
 
         {/* ════════════════════════════════════════════════════
-            THE EMOTIONAL SOMATIC SYSTEM
+            THE EMOTIONAL-SOMATIC SYSTEM
             ════════════════════════════════════════════════════ */}
 
         <section style={{ marginBottom: 48 }}>
@@ -209,7 +209,7 @@ export default function EmotionalSomaticSystemPage() {
             paddingBottom: 8,
             borderBottom: `2px solid ${hexToRgba(PAGE_COLOR, 0.2)}`,
           }}>
-            The Emotional Somatic System
+            The Emotional-Somatic System
           </h2>
 
           <p style={proseStyle}>
@@ -217,7 +217,7 @@ export default function EmotionalSomaticSystemPage() {
           </p>
 
           <p style={proseStyle}>
-            Its domain: safety and threat detection, relational cues, values, needs, relevance. Its learning: through experience, through repetition, through what happens — slow to update, slow to forget. This is the Emotional Somatic System (ESS).
+            Its domain: safety and threat detection, relational cues, values, needs, relevance. Its learning: through experience, through repetition, through what happens — slow to update, slow to forget. This is the Emotional-Somatic System (ESS).
           </p>
 
           <p style={proseStyle}>
@@ -669,7 +669,7 @@ export default function EmotionalSomaticSystemPage() {
 
           <p style={proseStyle}>
             Whether the CLS can feel what the ESS is doing — whether it can receive the physiological signals the ESS has generated — determines everything that follows. This is the central question the{" "}
-            <Link href="/emotional-somatic-cycle" style={linkStyle}>Emotional Somatic Cycle</Link> maps.
+            <Link href="/emotional-somatic-cycle" style={linkStyle}>Emotional-Somatic Cycle</Link> maps.
           </p>
         </section>
 
@@ -701,7 +701,7 @@ export default function EmotionalSomaticSystemPage() {
               transition: "border-color 0.2s ease",
             }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-                The Emotional Somatic Cycle →
+                The Emotional-Somatic Cycle →
               </div>
               <div style={{ fontSize: 13, color: TEXT.muted }}>
                 The repeating biological sequence these two systems run together — from detection through activation to restoration or incompletion.
