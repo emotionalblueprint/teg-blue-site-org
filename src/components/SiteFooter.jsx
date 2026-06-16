@@ -67,6 +67,7 @@ export default function SiteFooter() {
         <a
           href="https://teg-blue.com"
           style={{
+            display: "block",
             fontSize: 12,
             fontFamily: FONT.mono,
             color: SPECTRUM.azure,
@@ -76,6 +77,21 @@ export default function SiteFooter() {
           rel="noopener noreferrer"
         >
           Explore TEG-Blue.com →
+        </a>
+        <a
+          href="https://teg-blue.com/for-therapists"
+          style={{
+            display: "block",
+            marginTop: 6,
+            fontSize: 12,
+            fontFamily: FONT.mono,
+            color: SPECTRUM.azure,
+            textDecoration: "none",
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          For therapists →
         </a>
       </div>
 
