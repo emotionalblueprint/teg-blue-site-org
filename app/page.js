@@ -53,7 +53,7 @@ export const metadata = {
   },
   openGraph: {
     title: "TEG-Blue | Emotional Technology Research",
-    description: "Open science — 145+ theoretical contributions from 41 research traditions mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
+    description: "An integrative architecture drawing together 145+ theoretical contributions from 41 research traditions into testable hypotheses about emotional regulation. 12 frameworks, 4 models — open science, credited sources, testable claims.",
     url: "https://teg-blue.org",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -61,7 +61,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TEG-Blue | Emotional Technology Research",
-    description: "Open science — 145+ theoretical contributions mapped into testable hypotheses about emotional regulation. 12 frameworks, 4 models, transparent research.",
+    description: "An integrative architecture drawing together 145+ theoretical contributions into testable hypotheses about emotional regulation. 12 frameworks, 4 models — open science.",
   },
 };
 
@@ -133,7 +133,7 @@ export default function ResearchHub() {
                     maxWidth: 600,
                   }}
                 >
-                  Open science — built on 145+ theoretical contributions from 41 research traditions. Open to critique and validation.
+                  It draws together 145+ theoretical contributions from 41 research traditions into one testable system — open science, open to critique and validation.
                 </p>
 
                 {/* CTAs */}
