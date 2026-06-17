@@ -65,7 +65,6 @@ const NAV_ITEMS = [
       { label: "Publications", href: "/publications" },
       { label: "Glossary", href: "/glossary" },
       { label: "Reframes", href: "/reframes" },
-      { label: "Phenomena", href: "/mechanics-of-phenomena" },
     ],
   },
   { label: "About", href: "/about" },

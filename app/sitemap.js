@@ -1,5 +1,4 @@
 import { loadAllContent } from '@/src/lib/content'
-import { SERIES } from './mechanics-of-phenomena/mechanics-config'
 
 // Known last-modified dates for static pages (YYYY-MM-DD)
 // Update these when making significant content changes
@@ -36,7 +35,6 @@ const PAGE_DATES = {
   '/framework/f10-generational-bridges': '2026-04-05',
   '/framework/f11-emotional-paradoxes': '2026-04-05',
   '/framework/f12-two-information-systems': '2026-04-05',
-  '/mechanics-of-phenomena': '2026-03-10',
   '/reframes': '2026-03-17',
   '/explore/labels': '2026-03-17',
   '/how-it-works': '2026-03-21',
@@ -240,12 +238,6 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/mechanics-of-phenomena`,
-      lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena']),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/reframes`,
       lastModified: new Date(PAGE_DATES['/reframes']),
       changeFrequency: 'monthly',
@@ -263,15 +255,6 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // Auto-generated from SERIES config — no manual maintenance needed
-    ...SERIES.flatMap((series) =>
-      series.pieces.map((piece) => ({
-        url: `${baseUrl}/mechanics-of-phenomena/${series.slug}/${piece.slug}`,
-        lastModified: new Date(PAGE_DATES['/mechanics-of-phenomena']),
-        changeFrequency: 'monthly',
-        priority: piece.featured ? 0.8 : 0.7,
-      }))
-    ),
   ]
 
   // Dynamic content pages — only publications (actual separate pages)
