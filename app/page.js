@@ -199,7 +199,7 @@ export default function ResearchHub() {
             </h2>
 
             <p style={{ fontSize: 15, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 720 }}>
-              An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as four connected parts:
+              An integrative architecture that maps how nervous system states shape emotional behavior — and what it takes to move between them. Organized as three connected parts:
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
@@ -227,14 +227,6 @@ export default function ResearchHub() {
                 href="https://teg-blue.com/emotional-tools"
                 linkText="Explore Tools →"
                 external
-              />
-              <PartCard
-                color={SPECTRUM.slate}
-                label="4 — AI Safety"
-                title="Structured Schemas"
-                description="A computationally legible translation of the system for AI alignment — designed to replace binary safe/unsafe classifications with contextual, state-aware assessments."
-                href="/ai-safety"
-                linkText="AI Safety →"
               />
             </div>
 
