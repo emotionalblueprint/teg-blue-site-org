@@ -28,7 +28,6 @@ const NAV_ITEMS = [
       { label: "Established Research", href: "/scientific-foundations" },
     ],
   },
-  { label: "Emotional Somatic System", href: "/emotional-somatic-system" },
   {
     label: "Emotional Somatic Cycle",
     href: "/emotional-somatic-cycle",

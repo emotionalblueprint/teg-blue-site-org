@@ -78,21 +78,6 @@ export default function SiteFooter() {
         >
           Explore TEG-Blue.com →
         </a>
-        <a
-          href="https://teg-blue.com/for-therapists"
-          style={{
-            display: "block",
-            marginTop: 6,
-            fontSize: 12,
-            fontFamily: FONT.mono,
-            color: SPECTRUM.azure,
-            textDecoration: "none",
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          For therapists →
-        </a>
       </div>
 
       <p
