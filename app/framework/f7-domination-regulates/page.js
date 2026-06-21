@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F7 makes about how defense becomes domination." },
   { label: "How Reinforcement Builds the Pathway", href: "#reinforcement", description: "What produces relief gets repeated. What gets repeated becomes default. The pathway follows reinforcement, not personality." },
   { label: "When Defense Becomes Strategy", href: "#transition", description: "The critical shift — repair decreasing, control increasing, tactics replacing vulnerability." },
@@ -38,6 +37,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F8", href: "#bridge", description: "The maximum cost — and the beginning of the return." },
   { label: "Connections Map", href: "#connections", description: "How F7 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -146,26 +146,6 @@ export default function F7DominationRegulatesPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Domination",
-                commonUnderstanding: "A personality type — some people are just controlling, abusive, or power-hungry by nature.",
-                definition: "A reinforcement-driven pathway. When control reliably reduces activation — when managing others' compliance settles the cortisol — the nervous system adopts control as its primary regulation strategy. If the strategy is socially rewarded and accountability is absent, it escalates. The pathway follows reinforcement, not personality.",
-              },
-              {
-                title: "Lack of empathy",
-                commonUnderstanding: "A single deficit — the person can't feel for others, full stop.",
-                definition: "Three distinct processes diverging under escalation. RE (reading others) does not collapse — it redirects from understanding to leverage and sharpens as stakes increase. ER (resonating with others) collapses — the body no longer feels what others feel. SEA (perceiving one's own states) was never built — the person has no internal signal that anything is wrong.",
-              },
-              {
-                title: "Strong leadership",
-                commonUnderstanding: "Decisive action, tough decisions, not letting emotions get in the way — what organizations need at the top.",
-                definition: "A description that can apply to genuine state flexibility — or to the configuration that produces the most control with the least felt impact: sharp RE, absent ER, absent SEA. The same words describe two fundamentally different nervous system architectures.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -690,6 +670,28 @@ export default function F7DominationRegulatesPage() {
               { label: "Return to F1 — where the regulation thread begins", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Domination",
+                commonUnderstanding: "A personality type — some people are just controlling, abusive, or power-hungry by nature.",
+                definition: "A reinforcement-driven pathway. When control reliably reduces activation — when managing others' compliance settles the cortisol — the nervous system adopts control as its primary regulation strategy. If the strategy is socially rewarded and accountability is absent, it escalates. The pathway follows reinforcement, not personality.",
+              },
+              {
+                title: "Lack of empathy",
+                commonUnderstanding: "A single deficit — the person can't feel for others, full stop.",
+                definition: "Three distinct processes diverging under escalation. RE (reading others) does not collapse — it redirects from understanding to leverage and sharpens as stakes increase. ER (resonating with others) collapses — the body no longer feels what others feel. SEA (perceiving one's own states) was never built — the person has no internal signal that anything is wrong.",
+              },
+              {
+                title: "Strong leadership",
+                commonUnderstanding: "Decisive action, tough decisions, not letting emotions get in the way — what organizations need at the top.",
+                definition: "A description that can apply to genuine state flexibility — or to the configuration that produces the most control with the least felt impact: sharp RE, absent ER, absent SEA. The same words describe two fundamentally different nervous system architectures.",
+              },
             ]}
           />
 

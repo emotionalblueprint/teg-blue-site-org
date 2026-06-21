@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F10 makes about intergenerational transmission and repair." },
   { label: "How Configuration Teaches Configuration", href: "#configuration-teaches", description: "The adult's capacity configuration IS the child's developmental environment." },
   { label: "Five Transmission Pathways", href: "#five-pathways", description: "Implicit learning, co-regulation, environmental design, epigenetic, narrative — simultaneously." },
@@ -36,6 +35,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F11", href: "#bridge", description: "Repair surfaces paradox. Holding, not resolving." },
   { label: "Connections Map", href: "#connections", description: "How F10 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -146,26 +146,6 @@ export default function F10GenerationalBridgesPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Breaking the cycle",
-                commonUnderstanding: "Deciding to be different from your parents — choosing to parent better, making conscious changes in how you raise your children.",
-                definition: "Changing what the nervous system embodies, not what the CLS intends. The child calibrates to the ESS channel — the adult's autonomic state, physiological response, co-regulatory capacity — not to the CLS channel — intention, words, decisions. Love does not override what the nervous system embodies.",
-              },
-              {
-                title: "Generational trauma",
-                commonUnderstanding: "A psychological inheritance — stories, memories, and pain passed down through families.",
-                definition: "The transmission of the regulatory consequence of unprocessed experience. The child does not inherit the event. The child inherits the configuration the adult built to survive it — the chronic state, the capacity profile, the nervous system organization that becomes the child's developmental environment.",
-              },
-              {
-                title: "Good enough parenting",
-                commonUnderstanding: "Lowering the bar — accepting that you won't be perfect, doing your best.",
-                definition: "A nervous system with State Flexibility — one that enters Threat & Defence when conditions require it and returns to Safety & Openness when the situation resolves. The child does not learn one state. The child learns the movement. Not never rupturing — repairing after rupture, and the child witnessing the return.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -564,6 +544,28 @@ export default function F10GenerationalBridgesPage() {
               { label: "See the awareness architecture that determines what transmits", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Breaking the cycle",
+                commonUnderstanding: "Deciding to be different from your parents — choosing to parent better, making conscious changes in how you raise your children.",
+                definition: "Changing what the nervous system embodies, not what the CLS intends. The child calibrates to the ESS channel — the adult's autonomic state, physiological response, co-regulatory capacity — not to the CLS channel — intention, words, decisions. Love does not override what the nervous system embodies.",
+              },
+              {
+                title: "Generational trauma",
+                commonUnderstanding: "A psychological inheritance — stories, memories, and pain passed down through families.",
+                definition: "The transmission of the regulatory consequence of unprocessed experience. The child does not inherit the event. The child inherits the configuration the adult built to survive it — the chronic state, the capacity profile, the nervous system organization that becomes the child's developmental environment.",
+              },
+              {
+                title: "Good enough parenting",
+                commonUnderstanding: "Lowering the bar — accepting that you won't be perfect, doing your best.",
+                definition: "A nervous system with State Flexibility — one that enters Threat & Defence when conditions require it and returns to Safety & Openness when the situation resolves. The child does not learn one state. The child learns the movement. Not never rupturing — repairing after rupture, and the child witnessing the return.",
+              },
             ]}
           />
 

@@ -23,7 +23,6 @@ import {
 // ─── SIDEBAR ─────────────────────────────────────���────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F1 makes about the biological origin of the Emotional-Somatic Cycle." },
   { label: "The Biological Substrate", href: "#biological-substrate", description: "The neural, endocrine, autonomic, and neurochemical systems that produce emotion." },
   { label: "The Autonomic Architecture", href: "#autonomic-architecture", description: "Two branches, four states, and the co-evolution of the ESS and CLS." },
@@ -35,6 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F2", href: "#bridge", description: "Why biological restoration must be learned, not just designed." },
   { label: "Connections Map", href: "#connections", description: "How F1 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -119,27 +119,6 @@ export default function F1EmotionalGradientPage() {
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <article>
-
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Emotions",
-                commonUnderstanding: "Irrational feelings that interfere with clear thinking — something to manage, override, or push past.",
-                definition: "Biological events produced by specific neural, endocrine, autonomic, and neurochemical systems. The nervous system generates these signals when it detects something in the environment that matters — carrying information about safety or threat. The signal arrives before conscious awareness begins.",
-              },
-              {
-                title: "Regulation",
-                commonUnderstanding: "Calming down, managing your emotions, getting yourself under control.",
-                definition: "The body completing a biological sequence: stress hormones metabolize, muscles release, the HPA axis stands down, the parasympathetic nervous system re-engages, and the body returns toward physiological baseline. This biological completion process — not a psychological skill — is what the framework calls restoration.",
-              },
-              {
-                title: "The stress response",
-                commonUnderstanding: "An overreaction, a sign that something is wrong with you — being too sensitive or not resilient enough.",
-                definition: "A coordinated mobilization across multiple physiological systems — cortisol and adrenaline release, heart rate accelerates, muscles brace, blood flow redirects — designed to be temporary. The body built to clear this activation once the threat has passed.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -708,6 +687,28 @@ export default function F1EmotionalGradientPage() {
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
               { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) \u2192", external: true },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Emotions",
+                commonUnderstanding: "Irrational feelings that interfere with clear thinking — something to manage, override, or push past.",
+                definition: "Biological events produced by specific neural, endocrine, autonomic, and neurochemical systems. The nervous system generates these signals when it detects something in the environment that matters — carrying information about safety or threat. The signal arrives before conscious awareness begins.",
+              },
+              {
+                title: "Regulation",
+                commonUnderstanding: "Calming down, managing your emotions, getting yourself under control.",
+                definition: "The body completing a biological sequence: stress hormones metabolize, muscles release, the HPA axis stands down, the parasympathetic nervous system re-engages, and the body returns toward physiological baseline. This biological completion process — not a psychological skill — is what the framework calls restoration.",
+              },
+              {
+                title: "The stress response",
+                commonUnderstanding: "An overreaction, a sign that something is wrong with you — being too sensitive or not resilient enough.",
+                definition: "A coordinated mobilization across multiple physiological systems — cortisol and adrenaline release, heart rate accelerates, muscles brace, blood flow redirects — designed to be temporary. The body built to clear this activation once the threat has passed.",
+              },
             ]}
           />
 

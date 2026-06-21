@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F4 makes about how individual patterns scale to collective rule systems." },
   { label: "How Individual Patterns Consolidate", href: "#consolidation", description: "Three mechanisms drive scaling: false coherence absorbs rules, emotional distortion makes violation feel like attack, external regulation makes compliance a need." },
   { label: "What Rules Are at the Biological Level", href: "#rules-biological", description: "A rule is material the CLS absorbs because it stabilizes the chronic state." },
@@ -38,6 +37,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F5", href: "#bridge", description: "Rules organize behavior. They also sort who gets the conditions for restoration." },
   { label: "Connections Map", href: "#connections", description: "How F4 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -146,26 +146,6 @@ export default function F4RulesRegulatePage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Rules",
-                commonUnderstanding: "Rational agreements made by reasonable people to organize society — social contracts that can be evaluated and changed through discussion.",
-                definition: "Material the CLS absorbs because it stabilizes the chronic state. The CLS cannot distinguish between a rule that is accurate and a rule that regulates. A rule that confirms the person's chronic state is absorbed without friction — it feels true because it stabilizes.",
-              },
-              {
-                title: "Conformity",
-                commonUnderstanding: "Weakness — giving in to peer pressure, lacking the courage to be different.",
-                definition: "A physiological event. Matching the group reduces unpredictability. The ventral vagal system registers group alignment as relational safety. The nervous system rewards sameness with reduced activation. Deviation signals unpredictability and triggers neuroception of threat.",
-              },
-              {
-                title: "Common sense",
-                commonUnderstanding: "Obvious truths that everyone can see — facts so basic they don't need justification.",
-                definition: "Rules that have completed the internalization loop — from external enforcement through self-policing to experienced truth. They are no longer perceived as rules. Questioning them activates the same threat response that installed them.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -721,6 +701,28 @@ export default function F4RulesRegulatePage() {
               { label: "See where the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Rules",
+                commonUnderstanding: "Rational agreements made by reasonable people to organize society — social contracts that can be evaluated and changed through discussion.",
+                definition: "Material the CLS absorbs because it stabilizes the chronic state. The CLS cannot distinguish between a rule that is accurate and a rule that regulates. A rule that confirms the person's chronic state is absorbed without friction — it feels true because it stabilizes.",
+              },
+              {
+                title: "Conformity",
+                commonUnderstanding: "Weakness — giving in to peer pressure, lacking the courage to be different.",
+                definition: "A physiological event. Matching the group reduces unpredictability. The ventral vagal system registers group alignment as relational safety. The nervous system rewards sameness with reduced activation. Deviation signals unpredictability and triggers neuroception of threat.",
+              },
+              {
+                title: "Common sense",
+                commonUnderstanding: "Obvious truths that everyone can see — facts so basic they don't need justification.",
+                definition: "Rules that have completed the internalization loop — from external enforcement through self-policing to experienced truth. They are no longer perceived as rules. Questioning them activates the same threat response that installed them.",
+              },
             ]}
           />
 

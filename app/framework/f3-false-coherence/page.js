@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F3 makes about how cognition maintains the developmental calibration." },
   { label: "The CLS Arrives Inside a Configured System", href: "#cls-arrives", description: "Three simultaneous conditions: no state flexibility, unresolved activation load, no interoceptive channel." },
   { label: "Cognitive Override as Default Architecture", href: "#override-architecture", description: "Override is not a choice — it is the only mode of operation the CLS has ever known." },
@@ -39,6 +38,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F4", href: "#bridge", description: "The lock meets the rule system." },
   { label: "Connections Map", href: "#connections", description: "How F3 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ───────────────────────────��──────────────────
@@ -147,26 +147,6 @@ export default function F3FalseCoherencePage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Self-deception",
-                commonUnderstanding: "Lying to yourself — knowing the truth and choosing to deny it.",
-                definition: "Cognitive regulation. The CLS, operating without the interoceptive channel, constructs narrative from its own output — reasoning, language, abstraction. The narrative coheres. The narrative regulates. The person is not denying truth. They have no channel through which to receive it.",
-              },
-              {
-                title: "Insight",
-                commonUnderstanding: "The breakthrough that changes everything — once you understand the pattern, you can stop it.",
-                definition: "A cognitive event inside the system running the replacement. The CLS can describe the pattern with precision and still be living inside it — because understanding is a CLS operation, and the state is an ESS condition, and the interoceptive channel between them is absent.",
-              },
-              {
-                title: "Projection",
-                commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
-                definition: "Internal physiological activation misattributed as external threat when the interoceptive channel is absent. The body activates. The CLS, with no pathway to register the activation as internal, constructs the only explanation available from its data: someone did this to me. The reattribution is sincere.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -763,6 +743,28 @@ export default function F3FalseCoherencePage() {
               { label: "See the structural counterpart — how the lock opens", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Self-deception",
+                commonUnderstanding: "Lying to yourself — knowing the truth and choosing to deny it.",
+                definition: "Cognitive regulation. The CLS, operating without the interoceptive channel, constructs narrative from its own output — reasoning, language, abstraction. The narrative coheres. The narrative regulates. The person is not denying truth. They have no channel through which to receive it.",
+              },
+              {
+                title: "Insight",
+                commonUnderstanding: "The breakthrough that changes everything — once you understand the pattern, you can stop it.",
+                definition: "A cognitive event inside the system running the replacement. The CLS can describe the pattern with precision and still be living inside it — because understanding is a CLS operation, and the state is an ESS condition, and the interoceptive channel between them is absent.",
+              },
+              {
+                title: "Projection",
+                commonUnderstanding: "A defense mechanism — putting your unwanted feelings onto others.",
+                definition: "Internal physiological activation misattributed as external threat when the interoceptive channel is absent. The body activates. The CLS, with no pathway to register the activation as internal, constructs the only explanation available from its data: someone did this to me. The reattribution is sincere.",
+              },
             ]}
           />
 

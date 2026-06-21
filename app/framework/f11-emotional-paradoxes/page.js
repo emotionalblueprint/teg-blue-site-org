@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F11 makes about paradox, holding, and integration." },
   { label: "Why Contradictions Are Multi-Rational", href: "#multi-rationality", description: "Five competing regulatory needs generate paradoxes that are rational when all needs are visible." },
   { label: "Each Framework's Characteristic Paradox", href: "#framework-paradoxes", description: "F1–F10 each produces specific contradictions from its specific mechanism." },
@@ -37,6 +36,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F12", href: "#bridge", description: "Two information systems — the one that understands is not the one that organizes behavior." },
   { label: "Connections Map", href: "#connections", description: "How F11 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -138,26 +138,6 @@ export default function F11ParadoxPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Contradictory behavior",
-                commonUnderstanding: "Inconsistency — hypocrisy, confusion, or a failure to commit to one position.",
-                definition: "Multi-rationality. The nervous system pursuing multiple valid regulatory goals simultaneously — connection AND protection, authenticity AND belonging, understanding AND grief. The behavior oscillates because both needs are driving the system. Neither is the 'real' need. Neither is pathological.",
-              },
-              {
-                title: "Integration",
-                commonUnderstanding: "Resolving contradictions — finding the single truth, reaching clarity, getting to the other side.",
-                definition: "Developing enough holding capacity that both truths can remain present. The nervous system flexible enough to move between competing needs without getting stuck in one. Not the absence of contradiction — the capacity to contain it.",
-              },
-              {
-                title: "A smooth story",
-                commonUnderstanding: "A sign of integration — the person has made sense of their experience and can tell it coherently.",
-                definition: "May be coherence without the body — the CLS constructing clarity from incomplete data. The messy story may be someone whose interoceptive channel is opening for the first time. The question is not 'is the narrative coherent?' but 'what is the narrative coherent from?'",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -622,6 +602,28 @@ export default function F11ParadoxPage() {
               { label: "See false coherence — what F11 maps the opposite of", href: "/framework/f3-false-coherence", linkText: "F3: Adult Cognition & False Coherence \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Contradictory behavior",
+                commonUnderstanding: "Inconsistency — hypocrisy, confusion, or a failure to commit to one position.",
+                definition: "Multi-rationality. The nervous system pursuing multiple valid regulatory goals simultaneously — connection AND protection, authenticity AND belonging, understanding AND grief. The behavior oscillates because both needs are driving the system. Neither is the 'real' need. Neither is pathological.",
+              },
+              {
+                title: "Integration",
+                commonUnderstanding: "Resolving contradictions — finding the single truth, reaching clarity, getting to the other side.",
+                definition: "Developing enough holding capacity that both truths can remain present. The nervous system flexible enough to move between competing needs without getting stuck in one. Not the absence of contradiction — the capacity to contain it.",
+              },
+              {
+                title: "A smooth story",
+                commonUnderstanding: "A sign of integration — the person has made sense of their experience and can tell it coherently.",
+                definition: "May be coherence without the body — the CLS constructing clarity from incomplete data. The messy story may be someone whose interoceptive channel is opening for the first time. The question is not 'is the narrative coherent?' but 'what is the narrative coherent from?'",
+              },
             ]}
           />
 

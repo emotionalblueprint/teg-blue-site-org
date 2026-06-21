@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F9 makes about configuration variation and environmental mismatch." },
   { label: "Same Instrument, Different Inputs", href: "#different-inputs", description: "The ESC is universal. What varies is the sensory, attention, and processing inputs arriving at it." },
   { label: "System Mismatch", href: "#system-mismatch", description: "The gap between what the environment requires and what a nervous system can sustainably provide." },
@@ -38,6 +37,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F10", href: "#bridge", description: "What transmits when adults have done the work in environments that support it." },
   { label: "Connections Map", href: "#connections", description: "How F9 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -146,26 +146,6 @@ export default function F9VariationPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Neurodivergence",
-                commonUnderstanding: "A disorder — a brain that doesn't work correctly, needing treatment or correction to function normally.",
-                definition: "A description of input variation across the universal system. The Emotional Somatic Cycle runs in every nervous system. What varies is the inputs: sensory thresholds, attention patterns, processing speeds, emotional intensity, communication channels. The regulatory instrument is the same. The data arriving at it is different.",
-              },
-              {
-                title: "Accommodation",
-                commonUnderstanding: "A special exception made for people with disabilities — an extra cost the system bears for individuals who can't keep up.",
-                definition: "A retrofit that identifies individuals and modifies their experience. The alternative is design: environments built for the range of nervous system variation from the start — anticipating that inputs will vary, without requiring disclosure or exception.",
-              },
-              {
-                title: "Meltdown",
-                commonUnderstanding: "An overreaction, a tantrum, a failure of self-control — something the person should be able to manage.",
-                definition: "Threshold crossing. The accumulated activation — from masking cost, environmental demand, and unresolved activation — exceeded the remaining regulatory margin. The nervous system shifted involuntarily. The response is proportional to the accumulated load, not to the triggering event.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -648,6 +628,28 @@ export default function F9VariationPage() {
               { label: "See the bias mechanism that produces the 'disorder' reading", href: "/framework/f6-bias-regulates", linkText: "F6: Bias Regulates \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Neurodivergence",
+                commonUnderstanding: "A disorder — a brain that doesn't work correctly, needing treatment or correction to function normally.",
+                definition: "A description of input variation across the universal system. The Emotional Somatic Cycle runs in every nervous system. What varies is the inputs: sensory thresholds, attention patterns, processing speeds, emotional intensity, communication channels. The regulatory instrument is the same. The data arriving at it is different.",
+              },
+              {
+                title: "Accommodation",
+                commonUnderstanding: "A special exception made for people with disabilities — an extra cost the system bears for individuals who can't keep up.",
+                definition: "A retrofit that identifies individuals and modifies their experience. The alternative is design: environments built for the range of nervous system variation from the start — anticipating that inputs will vary, without requiring disclosure or exception.",
+              },
+              {
+                title: "Meltdown",
+                commonUnderstanding: "An overreaction, a tantrum, a failure of self-control — something the person should be able to manage.",
+                definition: "Threshold crossing. The accumulated activation — from masking cost, environmental demand, and unresolved activation — exceeded the remaining regulatory margin. The nervous system shifted involuntarily. The response is proportional to the accumulated load, not to the triggering event.",
+              },
             ]}
           />
 

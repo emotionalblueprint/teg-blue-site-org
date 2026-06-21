@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F8 makes about how awareness rebuilds through safety." },
   { label: "The Regulation Thread Reversed", href: "#thread-reversed", description: "The same thread traces escalation and repair. The direction depends on conditions." },
   { label: "Two Routes to the Same Condition", href: "#two-routes", description: "Chronic suppression (unblocking) vs developmental absence (building). Both require safety. The second requires more." },
@@ -38,6 +37,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F9", href: "#bridge", description: "When the universal pattern of masking becomes structural." },
   { label: "Connections Map", href: "#connections", description: "How F8 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -146,26 +146,6 @@ export default function F8RepairingAwarenessPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Healing",
-                commonUnderstanding: "A breakthrough moment — the insight that changes everything, the therapy session that unlocks it all.",
-                definition: "A biological process with a biological timeline. The interoceptive substrate rebuilds through sustained different conditions — cortisol levels that stay lower for longer, ventral vagal tone sustained across interactions, relational environments that are predictably safe across weeks and months. The nervous system tests new conditions cautiously, retreats to the familiar, tests again.",
-              },
-              {
-                title: "Resistance",
-                commonUnderstanding: "Unwillingness to change — being stubborn, in denial, not ready.",
-                definition: "The nervous system accurately assessing costs. False coherence treats the current configuration as truth. The cognitive substitute has been rewarded. SEA coming online means feeling what was previously unfelt. Relationships were built around the current configuration. The system is not resisting repair. It is assessing whether repair is safe.",
-              },
-              {
-                title: "Self-awareness",
-                commonUnderstanding: "Knowing your patterns — being able to describe what you do and why.",
-                definition: "Two different things. The CLS can describe patterns with precision (a cognitive skill). The ESS can perceive its own physiological states while they are happening (a biological capacity requiring the interoceptive substrate). A person can have the first without the second — and believe they have both.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -684,6 +664,28 @@ export default function F8RepairingAwarenessPage() {
               { label: "Return to F1 — biological restoration as the designed process", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Healing",
+                commonUnderstanding: "A breakthrough moment — the insight that changes everything, the therapy session that unlocks it all.",
+                definition: "A biological process with a biological timeline. The interoceptive substrate rebuilds through sustained different conditions — cortisol levels that stay lower for longer, ventral vagal tone sustained across interactions, relational environments that are predictably safe across weeks and months. The nervous system tests new conditions cautiously, retreats to the familiar, tests again.",
+              },
+              {
+                title: "Resistance",
+                commonUnderstanding: "Unwillingness to change — being stubborn, in denial, not ready.",
+                definition: "The nervous system accurately assessing costs. False coherence treats the current configuration as truth. The cognitive substitute has been rewarded. SEA coming online means feeling what was previously unfelt. Relationships were built around the current configuration. The system is not resisting repair. It is assessing whether repair is safe.",
+              },
+              {
+                title: "Self-awareness",
+                commonUnderstanding: "Knowing your patterns — being able to describe what you do and why.",
+                definition: "Two different things. The CLS can describe patterns with precision (a cognitive skill). The ESS can perceive its own physiological states while they are happening (a biological capacity requiring the interoceptive substrate). A person can have the first without the second — and believe they have both.",
+              },
             ]}
           />
 

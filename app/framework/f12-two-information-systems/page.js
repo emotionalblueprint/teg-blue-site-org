@@ -23,7 +23,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F12 makes about why the species stopped listening." },
   { label: "Two Systems, One Sequence", href: "#two-systems", description: "The ESS detects in milliseconds. The CLS narrates a process already underway." },
   { label: "The Capacity Gap", href: "#capacity-gap", description: "Culture scaled faster than biology. The reasoning tools expanded. The emotional hardware stayed." },
@@ -35,6 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "What This Framework Establishes", href: "#establishes", description: "Consolidated reference: every core concept defined." },
   { label: "Connections Map", href: "#connections", description: "How F12 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -138,26 +138,6 @@ export default function F12TwoInformationSystemsPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Reason vs emotion",
-                commonUnderstanding: "Two opposing forces — reason is reliable, emotion is irrational, and maturity means choosing the first over the second.",
-                definition: "Two information systems running in sequence. The ESS detects and responds in milliseconds — before cognition is available. The CLS narrates a process already underway. The cognitive system does not direct this process. It operates within whatever state the ESS has already set.",
-              },
-              {
-                title: "Getting in touch with feelings",
-                commonUnderstanding: "A soft skill — something nice to do for wellbeing, but not essential for functioning in the real world.",
-                definition: "Rebuilding access to a biological information system that the nervous system never stopped producing signals through. The interoceptive capacity the culture did not develop. The designed process the species forgot it had.",
-              },
-              {
-                title: "Human progress",
-                commonUnderstanding: "The triumph of reason — civilization as the achievement of overcoming our animal nature.",
-                definition: "A species that built its systems around one information system and forgot the other one. The cognitive tools scaled. The conditions that rewarded treating cognition as the only legitimate system are still operating. The cost is measurable in every model.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -602,6 +582,28 @@ export default function F12TwoInformationSystemsPage() {
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
               { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) \u2192", external: true },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Reason vs emotion",
+                commonUnderstanding: "Two opposing forces — reason is reliable, emotion is irrational, and maturity means choosing the first over the second.",
+                definition: "Two information systems running in sequence. The ESS detects and responds in milliseconds — before cognition is available. The CLS narrates a process already underway. The cognitive system does not direct this process. It operates within whatever state the ESS has already set.",
+              },
+              {
+                title: "Getting in touch with feelings",
+                commonUnderstanding: "A soft skill — something nice to do for wellbeing, but not essential for functioning in the real world.",
+                definition: "Rebuilding access to a biological information system that the nervous system never stopped producing signals through. The interoceptive capacity the culture did not develop. The designed process the species forgot it had.",
+              },
+              {
+                title: "Human progress",
+                commonUnderstanding: "The triumph of reason — civilization as the achievement of overcoming our animal nature.",
+                definition: "A species that built its systems around one information system and forgot the other one. The cognitive tools scaled. The conditions that rewarded treating cognition as the only legitimate system are still operating. The cost is measurable in every model.",
+              },
             ]}
           />
 

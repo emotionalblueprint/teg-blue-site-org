@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F5 makes about how rules become sorting systems." },
   { label: "Why Worth-Seeking Is Regulation", href: "#worth-seeking", description: "When love, protection, or belonging were conditional, the nervous system orients toward whatever signals safety." },
   { label: "Three Capitals as Nervous System Stabilisers", href: "#three-capitals", description: "Economic, social, cultural capital — each reducing specific forms of activation." },
@@ -38,6 +37,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F6", href: "#bridge", description: "When sorting becomes stable, it stops being experienced as a system. It becomes perception." },
   { label: "Connections Map", href: "#connections", description: "How F5 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -146,26 +146,6 @@ export default function F5WorthHierarchiesPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Merit",
-                commonUnderstanding: "Earned achievement — the natural result of talent, effort, and hard work. The fair basis for distributing resources and opportunity.",
-                definition: "Proximity to the signals the system already recognizes. Hiring criteria that measure cultural capital, promotion systems that reward social capital, funding structures that require economic capital. Performance rules teach that worth must be earned and displayed. The Filter of Worth shows what 'earning' measures: signal access, not intrinsic capacity.",
-              },
-              {
-                title: "Self-worth",
-                commonUnderstanding: "An internal quality you either have or lack — confidence, self-esteem, believing in yourself.",
-                definition: "A regulation strategy. When love, protection, or belonging were conditional, the nervous system calibrates a specific equation: being valued reduces threat. Worth signals — approval, status, credibility — produce measurable physiological effects: belonging signals activate oxytocin pathways and reduce cortisol.",
-              },
-              {
-                title: "Inequality",
-                commonUnderstanding: "An unfortunate but natural outcome of different abilities and effort levels — or a political problem requiring redistribution.",
-                definition: "The structural distribution of the developmental conditions that build the interoceptive substrate. The hierarchy determines which children develop under safety and which develop under sustained threat. The substrate state follows. The hierarchy reproduces itself through the biology.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -654,6 +634,28 @@ export default function F5WorthHierarchiesPage() {
               { label: "See where the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Merit",
+                commonUnderstanding: "Earned achievement — the natural result of talent, effort, and hard work. The fair basis for distributing resources and opportunity.",
+                definition: "Proximity to the signals the system already recognizes. Hiring criteria that measure cultural capital, promotion systems that reward social capital, funding structures that require economic capital. Performance rules teach that worth must be earned and displayed. The Filter of Worth shows what 'earning' measures: signal access, not intrinsic capacity.",
+              },
+              {
+                title: "Self-worth",
+                commonUnderstanding: "An internal quality you either have or lack — confidence, self-esteem, believing in yourself.",
+                definition: "A regulation strategy. When love, protection, or belonging were conditional, the nervous system calibrates a specific equation: being valued reduces threat. Worth signals — approval, status, credibility — produce measurable physiological effects: belonging signals activate oxytocin pathways and reduce cortisol.",
+              },
+              {
+                title: "Inequality",
+                commonUnderstanding: "An unfortunate but natural outcome of different abilities and effort levels — or a political problem requiring redistribution.",
+                definition: "The structural distribution of the developmental conditions that build the interoceptive substrate. The hierarchy determines which children develop under safety and which develop under sustained threat. The substrate state follows. The hierarchy reproduces itself through the biology.",
+              },
             ]}
           />
 

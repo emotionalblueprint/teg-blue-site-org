@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F2 makes about how the relational environment calibrates the system." },
   { label: "The Pre-Reflective Starting Condition", href: "#pre-reflective", description: "Before self-observation matures, experience is identity. Every infant begins here." },
   { label: "Co-Regulation and the Two Completion Pathways", href: "#co-regulation", description: "How somatic and relational restoration are learned — and what happens when co-regulation is unavailable." },
@@ -35,6 +34,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F3", href: "#bridge", description: "Why the calibration persists — what cognition inherits and actively maintains." },
   { label: "Connections Map", href: "#connections", description: "How F2 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -137,26 +137,6 @@ export default function F2AwarenessCalibrationPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Co-regulation",
-                commonUnderstanding: "Emotional support — comforting someone, helping them calm down, being there for them.",
-                definition: "The biological completion pathway for relational signals. One regulated nervous system entrains an activated one through vagal tone, respiratory rhythm, and physiological presence — teaching the child's nervous system the path back to physiological baseline. The mechanism through which restoration capacity is learned.",
-              },
-              {
-                title: "Empathy",
-                commonUnderstanding: "A single trait you either have or lack — being a caring person, or not.",
-                definition: "Three independent awareness capacities operating through two separate biological substrates. Interpersonal Affect Perception (RE) reads others through external channels — a cognitive capacity. Affective Resonance (ER) produces a somatic echo of another's state — an ESS capacity. Interoceptive Self-Awareness (SEA) perceives one's own internal states — the bridge between the ESS and the CLS. Different combinations produce different configurations.",
-              },
-              {
-                title: "Identity",
-                commonUnderstanding: "Who you really are underneath — a true self waiting to be discovered, or a personality type you were born with.",
-                definition: "A cognitive structure built from whatever data the CLS receives. Which awareness capacities developed determines what data is available. The CLS constructs a coherent narrative from that data — whether the data set is complete or not.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -697,6 +677,28 @@ export default function F2AwarenessCalibrationPage() {
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
               { label: "Experience the tools", href: "https://teg-blue.com/emotional-tools", linkText: "Emotional Tools (teg-blue.com) \u2192", external: true },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Co-regulation",
+                commonUnderstanding: "Emotional support — comforting someone, helping them calm down, being there for them.",
+                definition: "The biological completion pathway for relational signals. One regulated nervous system entrains an activated one through vagal tone, respiratory rhythm, and physiological presence — teaching the child's nervous system the path back to physiological baseline. The mechanism through which restoration capacity is learned.",
+              },
+              {
+                title: "Empathy",
+                commonUnderstanding: "A single trait you either have or lack — being a caring person, or not.",
+                definition: "Three independent awareness capacities operating through two separate biological substrates. Interpersonal Affect Perception (RE) reads others through external channels — a cognitive capacity. Affective Resonance (ER) produces a somatic echo of another's state — an ESS capacity. Interoceptive Self-Awareness (SEA) perceives one's own internal states — the bridge between the ESS and the CLS. Different combinations produce different configurations.",
+              },
+              {
+                title: "Identity",
+                commonUnderstanding: "Who you really are underneath — a true self waiting to be discovered, or a personality type you were born with.",
+                definition: "A cognitive structure built from whatever data the CLS receives. Which awareness capacities developed determines what data is available. The CLS constructs a coherent narrative from that data — whether the data set is complete or not.",
+              },
             ]}
           />
 

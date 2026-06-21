@@ -24,7 +24,6 @@ import {
 // ─── SIDEBAR ──────────────────────────────────────────────
 
 const SIDEBAR_SECTIONS = [
-  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
   { label: "Core Propositions", href: "#core-propositions", description: "The claims F6 makes about how perception becomes protection." },
   { label: "How Bias Serves Regulation", href: "#bias-regulation", description: "Not a reasoning error — a regulation strategy. If believing it reduces activation, keep believing it." },
   { label: "The Architecture of Perceptual Filtering", href: "#filtering-architecture", description: "Seven constructs, three categories, and the threshold equation for revision." },
@@ -36,6 +35,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Bridge to F7", href: "#bridge", description: "From maintaining the filter to imposing it." },
   { label: "Connections Map", href: "#connections", description: "How F6 relates to models and other frameworks." },
   { label: "Where to Go Next", href: "#where-to-go-next", description: "Paths forward depending on what you need." },
+  { label: "Common Understanding", href: "#common-understanding", description: "What most people think these words mean — and what the nervous system is actually doing." },
 ];
 
 // ─── METADATA ──────────────────────────────────────────────
@@ -144,26 +144,6 @@ export default function F6BiasRegulatesPage() {
             },
           ]} />
 
-          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
-          <CommonUnderstanding
-            terms={[
-              {
-                title: "Bias",
-                commonUnderstanding: "A reasoning error that education can fix — prejudice based on ignorance, correctable through exposure and information.",
-                definition: "Pattern recognition in service of regulation. Under stable conditions, rapid and efficient. Under threat, rigid and self-protective. The nervous system maintains beliefs that reduce activation — below conscious awareness, before reasoning begins. The criterion is stability, not accuracy.",
-              },
-              {
-                title: "Objectivity",
-                commonUnderstanding: "Seeing things as they really are — perceiving without the distortion of emotion or personal agenda.",
-                definition: "A perceptual configuration, not a neutral default. The nervous system's physiological state shapes what reaches perception before conscious processing. What feels like 'seeing clearly' may be the perceptual filter operating so smoothly it is invisible to the person running it.",
-              },
-              {
-                title: "Being corrected",
-                commonUnderstanding: "Receiving new information that updates your thinking — an intellectual event.",
-                definition: "A regulatory threat. When the belief being challenged is part of the regulatory architecture — when it stabilizes the chronic state — the correction threatens the mechanism keeping the system stable. The nervous system responds as to threat. The correction activates defense, not revision.",
-              },
-            ]}
-          />
 
           {/* ─── CORE PROPOSITIONS ───────────────────────── */}
           <div id="core-propositions" style={{ marginBottom: 24 }}>
@@ -613,6 +593,28 @@ export default function F6BiasRegulatesPage() {
               { label: "See where the repair arc begins", href: "/framework/f8-repairing-awareness", linkText: "F8: Awareness Rebuilds Through Safety \u2192" },
               { label: "Explore all 12 frameworks", href: "/frameworks-map", linkText: "Framework Map \u2192" },
               { label: "Look up key terms", href: "/glossary", linkText: "Glossary \u2192" },
+            ]}
+          />
+
+
+          {/* ─── COMMON UNDERSTANDING ──────────────────────── */}
+          <CommonUnderstanding
+            terms={[
+              {
+                title: "Bias",
+                commonUnderstanding: "A reasoning error that education can fix — prejudice based on ignorance, correctable through exposure and information.",
+                definition: "Pattern recognition in service of regulation. Under stable conditions, rapid and efficient. Under threat, rigid and self-protective. The nervous system maintains beliefs that reduce activation — below conscious awareness, before reasoning begins. The criterion is stability, not accuracy.",
+              },
+              {
+                title: "Objectivity",
+                commonUnderstanding: "Seeing things as they really are — perceiving without the distortion of emotion or personal agenda.",
+                definition: "A perceptual configuration, not a neutral default. The nervous system's physiological state shapes what reaches perception before conscious processing. What feels like 'seeing clearly' may be the perceptual filter operating so smoothly it is invisible to the person running it.",
+              },
+              {
+                title: "Being corrected",
+                commonUnderstanding: "Receiving new information that updates your thinking — an intellectual event.",
+                definition: "A regulatory threat. When the belief being challenged is part of the regulatory architecture — when it stabilizes the chronic state — the correction threatens the mechanism keeping the system stable. The nervous system responds as to threat. The correction activates defense, not revision.",
+              },
             ]}
           />
 
