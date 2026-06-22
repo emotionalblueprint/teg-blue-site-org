@@ -2,22 +2,22 @@ import { BG, BORDER, FONT, PATTERN_GRADIENT, SPACING, TEXT } from "@/src/styles/
 import { SiteFooter, SiteHeader } from "@/src/components";
 
 export const metadata = {
-  title: "TEG-Blue Research is being rebuilt",
-  description: "TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.",
+  title: "TEG-Blue.org is being rebuilt",
+  description: "TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.",
   alternates: {
     canonical: "https://teg-blue.org",
   },
   openGraph: {
-    title: "TEG-Blue Research is being rebuilt",
-    description: "The new Emotional Gradient Blueprint research site is in progress.",
+    title: "TEG-Blue.org is being rebuilt",
+    description: "The new Emotional Gradient Blueprint site is in progress.",
     url: "https://teg-blue.org",
     siteName: "TEG-Blue Research",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "TEG-Blue Research is being rebuilt",
-    description: "The new Emotional Gradient Blueprint research site is in progress.",
+    title: "TEG-Blue.org is being rebuilt",
+    description: "The new Emotional Gradient Blueprint site is in progress.",
   },
 };
 
@@ -79,7 +79,7 @@ export default function ResearchHub() {
               maxWidth: 760,
             }}
           >
-            TEG-Blue Research is being rebuilt.
+            TEG-Blue.org is being rebuilt.
           </h1>
 
           <p
@@ -91,7 +91,7 @@ export default function ResearchHub() {
               lineHeight: 1.7,
             }}
           >
-            The new Emotional Gradient Blueprint research site is in progress. The public research platform is paused while the new structure is prepared.
+            The new Emotional Gradient Blueprint site is in progress. The public site is paused while the new structure is prepared.
           </p>
 
           <div

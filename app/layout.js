@@ -29,10 +29,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata = {
   title: {
-    default: 'TEG-Blue Research is being rebuilt',
+    default: 'TEG-Blue.org is being rebuilt',
     template: '%s | TEG-Blue Research',
   },
-  description: 'TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.',
+  description: 'TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'nervous system gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'nervous system states', 'complexity markers', 'open science'],
   authors: [{ name: 'TEG-Blue Research', url: 'https://teg-blue.org' }],
   creator: 'TEG-Blue Research',
@@ -46,13 +46,13 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue Research',
-    title: 'TEG-Blue Research is being rebuilt',
-    description: 'The new Emotional Gradient Blueprint research site is in progress.',
+    title: 'TEG-Blue.org is being rebuilt',
+    description: 'The new Emotional Gradient Blueprint site is in progress.',
   },
   twitter: {
     card: 'summary',
-    title: 'TEG-Blue Research is being rebuilt',
-    description: 'The new Emotional Gradient Blueprint research site is in progress.',
+    title: 'TEG-Blue.org is being rebuilt',
+    description: 'The new Emotional Gradient Blueprint site is in progress.',
     creator: '@tegblue',
   },
   robots: {
@@ -109,7 +109,7 @@ const organizationJsonLd = {
   name: "TEG-Blue Research",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.",
+  description: "TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -167,7 +167,7 @@ const websiteJsonLd = {
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
   inLanguage: "en",
-  description: "TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.",
+  description: "TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research",

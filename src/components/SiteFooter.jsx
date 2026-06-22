@@ -16,7 +16,7 @@ export default function SiteFooter() {
       <SpectrumBar variant="pattern" />
 
       <p style={{ fontSize: 11, color: TEXT.micro, marginTop: 16 }}>
-        TEG-Blue Research is being rebuilt.
+        TEG-Blue.org is being rebuilt.
       </p>
 
       <p

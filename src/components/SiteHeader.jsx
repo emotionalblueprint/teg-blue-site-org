@@ -29,7 +29,7 @@ export default function SiteHeader() {
               transition: `color ${TRANSITION.normal}`,
             }}
           >
-            TEG-Blue Research
+            TEG-Blue.org
           </Link>
           <ThemeToggle />
         </nav>
