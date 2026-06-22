@@ -1,6 +1,6 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, ACCENT } from "@/src/styles/tokens";
-import { SiteFooter, SiteHeader, EmotionalGradient } from "@/src/components";
-import { positions, autonomic, scienceGrounding, faq } from "@/src/lib/gradient-data";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM } from "@/src/styles/tokens";
+import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/components";
+import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
 const TITLE = "The Emotional Gradient — a map of the nervous system's states";
@@ -109,6 +109,15 @@ const eyebrowStyle = {
   textTransform: "uppercase",
   color: TEXT.muted,
 };
+// Section eyebrows lead in the blue "diagram voice"; the hero eyebrow stays muted.
+const sectionEyebrowStyle = { ...eyebrowStyle, color: "var(--spectrum-indigo)" };
+// Bordered instrument-surface card — the research register from the prototype.
+const cardStyle = {
+  background: BG.diagram,
+  border: `1px solid ${BORDER.default}`,
+  borderRadius: RADIUS.xl,
+  padding: "clamp(20px, 3vw, 28px)",
+};
 
 export default function Home() {
   return (
@@ -124,7 +133,7 @@ export default function Home() {
         {/* Hero — static, crawlable */}
         <section style={{ ...sectionStyle, paddingTop: "clamp(48px, 8vw, 88px)", paddingBottom: 40, textAlign: "center" }}>
           <p style={eyebrowStyle}>The Emotional Gradient Blueprint</p>
-          <h1 style={{ margin: "0 auto", maxWidth: 820, fontSize: "clamp(32px, 6vw, 52px)", lineHeight: 1.08, letterSpacing: "-0.02em", color: TEXT.primary }}>
+          <h1 style={{ margin: "0 auto", maxWidth: 720, fontSize: "clamp(26px, 4vw, 34px)", lineHeight: 1.12, letterSpacing: "-0.02em", color: TEXT.primary }}>
             The Emotional Gradient
           </h1>
           <p style={{ margin: "20px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
@@ -139,6 +148,32 @@ export default function Home() {
             <strong style={{ color: TEXT.primary, fontWeight: 600 }}>fight · flight · fawn</strong> when it is threatened, and{" "}
             <strong style={{ color: TEXT.primary, fontWeight: 600 }}>freeze</strong> when nothing is left.
           </p>
+          <div style={{ width: 48, height: 2, borderRadius: 2, background: "var(--spectrum-azure)", opacity: 0.7, margin: "24px auto 0" }} aria-hidden="true" />
+        </section>
+
+        {/* What the gradient is — definitional note with its own convergent-science trace */}
+        <section style={sectionStyle}>
+          <div style={{ ...cardStyle, padding: "clamp(16px, 2.5vw, 22px)" }}>
+            <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure)", margin: "0 0 8px" }}>What the gradient is</p>
+            <div style={{ display: "grid", gap: 6, fontSize: 14, lineHeight: 1.6, color: TEXT.secondary }}>
+              <p style={{ margin: 0 }}>
+                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>One continuous range of nervous-system states</strong> — not separate boxes.
+              </p>
+              <p style={{ margin: 0 }}>
+                The system reads for safety and settles along it: connection at the safe end, escalating defence toward the other, shutdown off the far edge.
+              </p>
+              <p style={{ margin: 0 }}>Fluid, it flows between positions. Under chronic load it stops flowing and snaps to fixed points.</p>
+            </div>
+            <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px solid ${BORDER.default}` }}>
+              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
+                <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 9, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--spectrum-azure)" }}>Convergent science</p>
+                <span style={{ fontFamily: FONT.diagram, fontSize: 9, letterSpacing: "0.06em", color: TEXT.muted }}>Polyvagal · F1</span>
+              </div>
+              <p style={{ margin: "6px 0 0", paddingLeft: 10, borderLeft: `2px solid ${BORDER.default}`, fontSize: 13, lineHeight: 1.6, color: TEXT.secondary }}>
+                The autonomic hierarchy — ordered states selected by neuroception, the nervous system’s read for safety (Porges).
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Interactive instrument */}
@@ -148,140 +183,102 @@ export default function Home() {
 
         {/* What the gradient explains — the payoff, directly under the instrument */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="explains-heading">
-          <p style={eyebrowStyle}>What the gradient explains</p>
-          <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
-            From personal patterns to societal systems
-          </h2>
-          <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-            The same shape repeats — from one nervous system to whole groups. Reading it makes four things visible.
-          </p>
-          <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
-            {[
-              ["Why people who care can still cause harm", "Under threat, empathy narrows — even in someone who means well."],
-              ["How ordinary defence hardens into control, even oppression", "The same pattern, scaled from a person to a system."],
-              ["Language for the shifts as they happen", "Recognised in ourselves and in others — not judged as character."],
-              ["A way back to connection", "And a way to interrupt cycles of harm before they repeat."],
-            ].map(([head, body]) => (
-              <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: SPECTRUM.azure }} aria-hidden="true" />
-                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: TEXT.secondary }}>
-                  <strong style={{ fontWeight: 600, color: TEXT.primary }}>{head}</strong> — {body}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
-            <a
-              href="https://teg-blue.com/"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 16px",
-                borderRadius: RADIUS.md,
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.3)}`,
-                background: hexToRgba(SPECTRUM.azure, 0.1),
-                color: SPECTRUM.azure,
-                fontFamily: FONT.mono,
-                fontSize: 12,
-                fontWeight: 600,
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Put it to use — explore the tools ↗
-            </a>
-            <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.04em", color: TEXT.muted }}>teg-blue.com</span>
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>What the gradient explains</p>
+            <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+              From personal patterns to societal systems
+            </h2>
+            <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
+              The same shape repeats — from one nervous system to whole groups. Reading it makes four things visible.
+            </p>
+            <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
+              {[
+                ["Why people who care can still cause harm", "Under threat, empathy narrows — even in someone who means well."],
+                ["How ordinary defence hardens into control, even oppression", "The same pattern, scaled from a person to a system."],
+                ["Language for the shifts as they happen", "Recognised in ourselves and in others — not judged as character."],
+                ["A way back to connection", "And a way to interrupt cycles of harm before they repeat."],
+              ].map(([head, body]) => (
+                <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                  <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: "var(--spectrum-indigo)" }} aria-hidden="true" />
+                  <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: TEXT.secondary }}>
+                    <strong style={{ fontWeight: 600, color: TEXT.primary }}>{head}</strong> — {body}
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
+              <a
+                href="https://teg-blue.com/"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "10px 16px",
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.3)}`,
+                  background: hexToRgba(SPECTRUM.indigo, 0.1),
+                  color: "var(--spectrum-indigo)",
+                  fontFamily: FONT.mono,
+                  fontSize: 12,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Put it to use — explore the tools ↗
+              </a>
+              <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.04em", color: TEXT.muted }}>teg-blue.com</span>
+            </div>
           </div>
         </section>
 
-        {/* The seven positions — static, crawlable reference */}
-        <section style={{ ...sectionStyle, paddingTop: 8, paddingBottom: 56 }} aria-labelledby="positions-heading">
-          <p style={eyebrowStyle}>The map</p>
-          <h2 id="positions-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
-            The seven positions, in order
-          </h2>
-          <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-            One continuum, from rest through connection and the defences down to shutdown. Each position is a
-            whole-system configuration, not a mood — and a passing response the system is built to move through and
-            leave. When a position cannot be left, it hardens into the default.
-          </p>
-          <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "grid", gap: 12 }}>
-            {positions.map((p) => (
-              <li
-                key={p.id}
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "baseline",
-                  gap: "6px 14px",
-                  padding: "14px 16px",
-                  borderRadius: RADIUS.lg,
-                  background: BG.diagram,
-                  border: `1px solid ${BORDER.default}`,
-                }}
-              >
-                <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, minWidth: 190 }}>{p.mode}</span>
-                <span style={{ fontFamily: FONT.mono, fontSize: 11, color: TEXT.muted }}>
-                  {[p.familiar, autonomic[p.id]].filter(Boolean).join(" · ")}
-                </span>
-                <div style={{ flex: "1 1 280px", fontSize: 14, lineHeight: 1.55 }}>
-                  <span style={{ color: TEXT.secondary }}>{p.mechanism}</span>
-                  <span style={{ display: "block", marginTop: 4, color: TEXT.muted }}>
-                    <strong style={{ fontWeight: 600, color: ACCENT.orange }}>Chronic</strong> — {p.mechanismChronic}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
+        {/* The seven positions — colour-keyed map (client: theme-aware Formation colours) */}
+        <GradientMap
+          sectionStyle={{ ...sectionStyle, paddingTop: 8, paddingBottom: 56 }}
+          cardStyle={cardStyle}
+          eyebrowStyle={sectionEyebrowStyle}
+        />
 
         {/* Grounded in established science — static, crawlable */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="science-heading">
-          <p style={eyebrowStyle}>Grounding</p>
-          <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
-            Grounded in established science
-          </h2>
-          <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-            The architecture leads; the following established research <em>converges with</em> and underwrites
-            specific parts of it. The science traces the map — it does not frame it.
-          </p>
-          <div style={{ display: "grid", gap: 10 }}>
-            {scienceGrounding.map((s) => (
-              <div
-                key={s.part}
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "baseline",
-                  gap: "4px 14px",
-                  paddingBottom: 10,
-                  borderBottom: `1px solid ${BORDER.default}`,
-                }}
-              >
-                <span style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, minWidth: 190 }}>{s.part}</span>
-                <span style={{ flex: "1 1 300px", fontSize: 14, lineHeight: 1.55, color: TEXT.secondary }}>
-                  {s.science} <span style={{ color: TEXT.muted }}>· {s.authors}</span>
-                </span>
-              </div>
-            ))}
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>Grounding</p>
+            <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+              Grounded in established science
+            </h2>
+            <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
+              The architecture leads — the following established research <em>converges with</em> and underwrites
+              specific parts of it. The science traces the map, it does not frame it.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
+              {scienceGrounding.map((s) => (
+                <div key={s.part}>
+                  <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--spectrum-indigo)" }}>{s.part}</p>
+                  <p style={{ margin: "4px 0 0", fontSize: 13.5, lineHeight: 1.55, color: TEXT.secondary }}>
+                    {s.science} <span style={{ color: TEXT.muted }}>· {s.authors}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* FAQ — static, crawlable (AEO / answer engines / voice) */}
+        {/* FAQ — static, crawlable (AEO / answer engines / voice); native <details> */}
         <section style={{ ...sectionStyle, paddingBottom: 40 }} aria-labelledby="faq-heading">
-          <p style={eyebrowStyle}>Questions</p>
-          <h2 id="faq-heading" style={{ margin: "0 0 24px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
-            Common questions
-          </h2>
-          <div style={{ display: "grid", gap: 24 }}>
-            {faq.map((q) => (
-              <div key={q.question}>
-                <h3 className="faq-question" style={{ margin: "0 0 8px", fontSize: 17, fontWeight: 600, color: TEXT.primary }}>
-                  {q.question}
-                </h3>
-                <p style={{ margin: 0, maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>{q.answer}</p>
-              </div>
-            ))}
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>Questions</p>
+            <h2 id="faq-heading" style={{ margin: "0 0 24px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+              Common questions
+            </h2>
+            <div style={{ display: "grid", gap: 10 }}>
+              {faq.map((q) => (
+                <details key={q.question}>
+                  <summary className="faq-question">{q.question}</summary>
+                  <div>
+                    <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>{q.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 

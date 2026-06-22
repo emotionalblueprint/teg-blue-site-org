@@ -75,6 +75,7 @@ export { default as HubContent } from "./HubContent";
 export { default as SiteHeader } from "./SiteHeader";
 export { default as SiteFooter } from "./SiteFooter";
 export { default as EmotionalGradient } from "./EmotionalGradient";
+export { default as GradientMap } from "./GradientMap";
 export { default as PageLayout } from "./PageLayout";
 
 // Layout
