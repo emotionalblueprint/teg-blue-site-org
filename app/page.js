@@ -1,4 +1,4 @@
-import { BG, BORDER, FONT, PATTERN_GRADIENT, SPACING, TEXT } from "@/src/styles/tokens";
+import { BG, BORDER, FONT, PATTERN_GRADIENT, SPACING, TEXT, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
 import { SiteFooter, SiteHeader } from "@/src/components";
 
 export const metadata = {
@@ -111,6 +111,46 @@ export default function ResearchHub() {
             >
               For now, only essential site files and deployment routes remain available.
             </p>
+          </div>
+
+          <div
+            style={{
+              marginTop: 30,
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: 14,
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                color: TEXT.secondary,
+                fontSize: 14,
+                lineHeight: 1.7,
+              }}
+            >
+              While this site is being rebuilt, you can use the tools on TEG-Blue.com.
+            </p>
+            <a
+              href="https://teg-blue.com/emotional-tools"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "10px 16px",
+                borderRadius: 8,
+                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.25)}`,
+                background: hexToRgba(SPECTRUM.azure, 0.08),
+                color: SPECTRUM.azure,
+                fontFamily: FONT.mono,
+                fontSize: 12,
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
+            >
+              Check out the tools
+            </a>
           </div>
         </section>
       </main>
