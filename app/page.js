@@ -127,18 +127,71 @@ export default function Home() {
           <h1 style={{ margin: "0 auto", maxWidth: 820, fontSize: "clamp(32px, 6vw, 52px)", lineHeight: 1.08, letterSpacing: "-0.02em", color: TEXT.primary }}>
             The Emotional Gradient
           </h1>
-          <p id="gradient-intro" style={{ margin: "20px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.65, color: TEXT.secondary }}>
-            The nervous system is constantly scanning — is it safe? Is there any danger? It reads our
-            environment faster than our thoughts and answers on its own:{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>rest-and-digest</strong> when it is safe,{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>fight, flight or fawn</strong> when it is not, and{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>freeze</strong> when nothing else is left.
+          <p style={{ margin: "20px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
+            We don’t stay the same person in every situation — open and trusting one moment, guarded or
+            controlling the next. These shifts aren’t random — they follow a pattern in the nervous system.
+          </p>
+          <p id="gradient-intro" style={{ margin: "14px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
+            Underneath everything, it is asking one question —{" "}
+            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>is it safe, or is there danger?</strong> — and it
+            answers on its own, faster than thought. That answer moves it along a gradient:{" "}
+            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>connection and rest</strong> when it is safe,{" "}
+            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>fight · flight · fawn</strong> when it is threatened, and{" "}
+            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>freeze</strong> when nothing is left.
           </p>
         </section>
 
         {/* Interactive instrument */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }}>
           <EmotionalGradient />
+        </section>
+
+        {/* What the gradient explains — the payoff, directly under the instrument */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="explains-heading">
+          <p style={eyebrowStyle}>What the gradient explains</p>
+          <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+            From personal patterns to societal systems
+          </h2>
+          <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
+            The same shape repeats — from one nervous system to whole groups. Reading it makes four things visible.
+          </p>
+          <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
+            {[
+              ["Why people who care can still cause harm", "Under threat, empathy narrows — even in someone who means well."],
+              ["How ordinary defence hardens into control, even oppression", "The same pattern, scaled from a person to a system."],
+              ["Language for the shifts as they happen", "Recognised in ourselves and in others — not judged as character."],
+              ["A way back to connection", "And a way to interrupt cycles of harm before they repeat."],
+            ].map(([head, body]) => (
+              <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: SPECTRUM.azure }} aria-hidden="true" />
+                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: TEXT.secondary }}>
+                  <strong style={{ fontWeight: 600, color: TEXT.primary }}>{head}</strong> — {body}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
+            <a
+              href="https://teg-blue.com/"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                padding: "10px 16px",
+                borderRadius: RADIUS.md,
+                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.3)}`,
+                background: hexToRgba(SPECTRUM.azure, 0.1),
+                color: SPECTRUM.azure,
+                fontFamily: FONT.mono,
+                fontSize: 12,
+                fontWeight: 600,
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Put it to use — explore the tools ↗
+            </a>
+            <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.04em", color: TEXT.muted }}>teg-blue.com</span>
+          </div>
         </section>
 
         {/* The seven positions — static, crawlable reference */}
@@ -232,45 +285,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Cross-link to .com tools */}
-        <section style={{ ...sectionStyle }}>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: 16,
-              padding: "20px 24px",
-              borderRadius: RADIUS.lg,
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.22)}`,
-            }}
-          >
-            <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: TEXT.secondary }}>
-              Looking for the interactive tools and assessments? They live on TEG-Blue.com.
-            </p>
-            <a
-              href="https://teg-blue.com/"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "10px 16px",
-                borderRadius: RADIUS.md,
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.3)}`,
-                background: hexToRgba(SPECTRUM.azure, 0.1),
-                color: SPECTRUM.azure,
-                fontFamily: FONT.mono,
-                fontSize: 12,
-                fontWeight: 600,
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Explore the tools ↗
-            </a>
-          </div>
-        </section>
       </main>
 
       <SiteFooter />
