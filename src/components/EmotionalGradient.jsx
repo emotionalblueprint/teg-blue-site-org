@@ -195,8 +195,11 @@ export default function EmotionalGradient() {
             <div style={{ borderRadius: RADIUS.md, padding: 12, background: tile.detailBg, border: `1px solid ${tile.detailBorder}` }}>
               <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.6, color: tile.soft }}>{card.description}</p>
               <div style={{ marginTop: 10, paddingTop: 10, borderTop: `1px solid ${tile.detailBorder}` }}>
-                <p style={{ margin: 0, fontFamily: FONT.mono, fontSize: 9.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: tile.cText }}>Trace the science</p>
-                <p style={{ margin: '4px 0 0', fontSize: 12.5, lineHeight: 1.6, color: tile.ink }}>{card.science}</p>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12 }}>
+                  <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 9, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.2em', color: tile.cText }}>Convergent science</p>
+                  <span style={{ fontFamily: FONT.diagram, fontSize: 9, letterSpacing: '0.06em', color: tile.soft, opacity: 0.85 }}>{card.source}</span>
+                </div>
+                <p style={{ margin: '6px 0 0', paddingLeft: 10, borderLeft: `2px solid ${tile.detailBorder}`, fontSize: 12.5, lineHeight: 1.6, color: tile.ink }}>{card.science}</p>
               </div>
             </div>
           </div>
@@ -209,7 +212,7 @@ export default function EmotionalGradient() {
     <div style={{ borderRadius: RADIUS.lg, padding: '14px 16px', background: tile.cardBg, border: `1px solid ${tile.line}` }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
         <span style={{ width: 8, height: 8, borderRadius: '50%', background: tile.cDot }} />
-        <span style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', color: tile.cText }}>{g.label}</span>
+        <span style={{ fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.18em', color: tile.cText }}>{g.label}</span>
       </div>
       <div>{g.ids.map(renderRow)}</div>
     </div>
@@ -342,7 +345,7 @@ export default function EmotionalGradient() {
         </p>
 
         {/* source-trace — internal Pattern code + converging science (quiet, never leads) */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 6, fontFamily: FONT.mono, fontSize: 11, color: panel.faint }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 6, fontFamily: FONT.diagram, fontSize: 11, letterSpacing: '0.02em', color: panel.faint }}>
           <span>{position.pattern}</span>
           <span style={{ opacity: 0.5 }}>·</span>
           <span>{position.sub}</span>
@@ -355,7 +358,7 @@ export default function EmotionalGradient() {
         {/* configuration readout */}
         <div style={{ marginTop: 28 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontFamily: FONT.mono, fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: panel.cText }}>State</span>
+            <span style={{ fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.22em', color: panel.cText }}>State</span>
             <span style={{ height: 1, flex: 1, background: hexToRgba(panel.cDot, 0.25) }} />
             <span style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.12em', color: panel.faint }}>the configuration</span>
           </div>

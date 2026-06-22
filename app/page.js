@@ -102,10 +102,10 @@ const sectionStyle = {
 };
 const eyebrowStyle = {
   margin: "0 0 12px",
-  fontFamily: FONT.mono,
+  fontFamily: FONT.diagram,
   fontSize: 10,
-  fontWeight: 600,
-  letterSpacing: "0.18em",
+  fontWeight: 500,
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
   color: TEXT.muted,
 };
