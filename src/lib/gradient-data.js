@@ -59,7 +59,7 @@ export const positions = [
   {
     id: 'strategic',
     mode: 'Strategic Management',
-    familiar: 'control / management',
+    familiar: 'control / strategic management',
     sub: 'sustained control',
     pattern: 'Pattern C · sustained sympathetic',
     mechanism: 'Threat persists — the system manages the environment instead of connecting with it.',
