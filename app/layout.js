@@ -29,10 +29,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata = {
   title: {
-    default: 'TEG-Blue Research',
+    default: 'TEG-Blue Research is being rebuilt',
     template: '%s | TEG-Blue Research',
   },
-  description: 'Open science platform for TEG-Blue research. An integrative emotional intelligence framework connecting 145+ theoretical contributions into computationally legible gradients for AI safety, alignment research, and human emotional understanding.',
+  description: 'TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'nervous system gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'nervous system states', 'complexity markers', 'open science'],
   authors: [{ name: 'TEG-Blue Research', url: 'https://teg-blue.org' }],
   creator: 'TEG-Blue Research',
@@ -46,13 +46,13 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue Research',
-    title: 'TEG-Blue Research Platform',
-    description: 'Open science platform connecting 145+ theoretical contributions from 41 research traditions into testable hypotheses about emotional regulation. The building blocks are validated; the connections need verification.',
+    title: 'TEG-Blue Research is being rebuilt',
+    description: 'The new Emotional Gradient Blueprint research site is in progress.',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'TEG-Blue Research Platform',
-    description: 'Open science platform connecting 145+ theoretical contributions from 41 research traditions into testable hypotheses about emotional regulation.',
+    card: 'summary',
+    title: 'TEG-Blue Research is being rebuilt',
+    description: 'The new Emotional Gradient Blueprint research site is in progress.',
     creator: '@tegblue',
   },
   robots: {
@@ -109,7 +109,7 @@ const organizationJsonLd = {
   name: "TEG-Blue Research",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "Open science research developing TEG-Blue, an integrative architecture connecting 145+ theoretical contributions across 41 research traditions from neuroscience, psychology, and sociology. The building blocks (Polyvagal Theory, Attachment Theory, Trauma Research) are validated; the connections between them are hypotheses requiring scientific verification.",
+  description: "TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -167,23 +167,11 @@ const websiteJsonLd = {
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
   inLanguage: "en",
-  description: "Open science platform providing structured emotional intelligence frameworks for AI safety research. The Nervous System Gradient offers computationally legible representations of four nervous system states (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance) detectable in natural language. Designed for AI/ML researchers, safety practitioners, and computational social scientists.",
+  description: "TEG-Blue Research is being rebuilt. The new Emotional Gradient Blueprint research site is in progress.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research",
   },
-  about: [
-    {
-      "@type": "Thing",
-      name: "AI Safety",
-      description: "Structured gradients for emotional pattern detection in AI systems"
-    },
-    {
-      "@type": "Thing",
-      name: "Nervous System Gradient",
-      description: "Measurement system mapping four nervous system states: Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance"
-    }
-  ],
 }
 
 export default function RootLayout({ children }) {
