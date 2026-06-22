@@ -3,10 +3,12 @@ import { SpectrumBar } from "./SharedComponents";
 
 const LINKS = [
   { label: "Tools ↗", href: "https://teg-blue.com/" },
+  { label: "Substack", href: "https://annaparetas.substack.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
+  { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },
   { label: "GitHub", href: "https://github.com/emotionalblueprint" },
   { label: "Zenodo", href: "https://zenodo.org/communities/teg-blue" },
   { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162" },
-  { label: "X", href: "https://x.com/tegblue" },
 ];
 
 export default function SiteFooter() {

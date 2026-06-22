@@ -53,7 +53,6 @@ export const metadata = {
     card: 'summary',
     title: 'TEG-Blue — The Emotional Gradient',
     description: 'A map of the nervous system’s states — grounded in established science.',
-    creator: '@tegblue',
   },
   robots: {
     index: true,
@@ -116,7 +115,9 @@ const organizationJsonLd = {
     "https://doi.org/10.5281/zenodo.19472342",
     "https://github.com/emotionalblueprint",
     "https://zenodo.org/communities/teg-blue",
-    "https://x.com/tegblue",
+    "https://www.tiktok.com/@emotionalblueprint",
+    "https://www.linkedin.com/company/teg-blue/",
+    "https://annaparetas.substack.com",
   ],
   foundingDate: "2024",
   inLanguage: "en",
@@ -126,7 +127,8 @@ const organizationJsonLd = {
     url: "https://teg-blue.org/about",
     sameAs: [
       "https://orcid.org/0009-0005-2394-7162",
-      "https://x.com/tegblue",
+      "https://www.linkedin.com/in/annaparetas/",
+      "https://annaparetas.substack.com",
     ],
     jobTitle: "Founder & Lead Researcher",
     affiliation: {

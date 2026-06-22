@@ -63,7 +63,7 @@ TEG-Blue proposes specific connections between these established theories:
 
 Four nervous system states along a continuous physiological gradient:
 
-## State 1: Safety & Openness (Connection)
+## State 1: Connection
 - **Autonomic state:** Ventral vagal (social engagement)
 - **Neuroception:** Safety perceived
 - **Empathy:** Fully online
@@ -71,7 +71,7 @@ Four nervous system states along a continuous physiological gradient:
 - **Flexibility:** High
 - **Key marker:** Can hear difficult feedback without collapsing
 
-## State 2: Threat & Defence (Protection)
+## State 2: Protection
 - **Autonomic state:** Mixed sympathetic/ventral
 - **Neuroception:** Threat detected
 - **Empathy:** Partial, narrowed
@@ -79,7 +79,7 @@ Four nervous system states along a continuous physiological gradient:
 - **Flexibility:** Reduced
 - **Key marker:** Defensive but aware, recoverable
 
-## State 3: Strategy & Management (Control)
+## State 3: Strategic Management
 - **Autonomic state:** Sympathetic dominant
 - **Neuroception:** Chronic threat
 - **Empathy:** Strategic (used to predict/manage)
@@ -87,7 +87,7 @@ Four nervous system states along a continuous physiological gradient:
 - **Flexibility:** Limited to control strategy
 - **Key marker:** Others become objects to manage
 
-## State 4: Power & Dominance (Domination)
+## State 4: Domination
 - **Autonomic state:** Collapsed/frozen or hyperaroused fixed
 - **Neuroception:** Power = only safety
 - **Empathy:** Offline

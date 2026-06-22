@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, ACCENT } from "@/src/styles/tokens";
 import { SiteFooter, SiteHeader, EmotionalGradient } from "@/src/components";
 import { positions, autonomic, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
@@ -171,7 +171,12 @@ export default function Home() {
                 <span style={{ fontFamily: FONT.mono, fontSize: 11, color: TEXT.muted }}>
                   {[p.familiar, autonomic[p.id]].filter(Boolean).join(" · ")}
                 </span>
-                <span style={{ flex: "1 1 280px", fontSize: 14, lineHeight: 1.55, color: TEXT.secondary }}>{p.mechanism}</span>
+                <div style={{ flex: "1 1 280px", fontSize: 14, lineHeight: 1.55 }}>
+                  <span style={{ color: TEXT.secondary }}>{p.mechanism}</span>
+                  <span style={{ display: "block", marginTop: 4, color: TEXT.muted }}>
+                    <strong style={{ fontWeight: 600, color: ACCENT.orange }}>Chronic</strong> — {p.mechanismChronic}
+                  </span>
+                </div>
               </li>
             ))}
           </ol>

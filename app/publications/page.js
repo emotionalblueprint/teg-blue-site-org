@@ -11,7 +11,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What did the Nervous System Gradient validation study find?",
-    answer: "All four nervous system states (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance) were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. 33.8% of individuals escalated toward Strategy & Management/Power & Dominance when challenged, 22.2% de-escalated toward Safety & Openness, and de-escalators showed 78% higher rates of complexity markers than escalators.",
+    answer: "All four nervous system states (Connection, Protection, Strategic Management, Domination) were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. 33.8% of individuals escalated toward Strategic Management/Domination when challenged, 22.2% de-escalated toward Connection, and de-escalators showed 78% higher rates of complexity markers than escalators.",
   },
   {
     question: "Are TEG-Blue datasets publicly available?",
@@ -100,7 +100,7 @@ const datasetSchema = {
   },
   "measurementTechnique": "Computational linguistic analysis with polyvagal markers, contempt markers, and moral disengagement markers",
   "variableMeasured": [
-    "Nervous system state classification (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance)",
+    "Nervous system state classification (Connection, Protection, Strategic Management, Domination)",
     "Complexity markers in language",
     "Escalation/de-escalation trajectories",
     "Community moral judgments"
@@ -130,7 +130,7 @@ const scholarlyArticleSchema = {
     "Polyvagal theory",
     "Nervous System Gradient"
   ],
-  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text. Key findings: All four nervous system states successfully detected; 33.8% of individuals escalated toward Strategy & Management/Power & Dominance when challenged; 22.2% de-escalated toward Safety & Openness; De-escalators showed 78% higher rates of complexity markers."
+  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text. Key findings: All four nervous system states successfully detected; 33.8% of individuals escalated toward Strategic Management/Domination when challenged; 22.2% de-escalated toward Connection; De-escalators showed 78% higher rates of complexity markers."
 };
 
 const SIDEBAR_SECTIONS = [
@@ -227,11 +227,14 @@ export default function PublicationsPage() {
               </h4>
               <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.secondary, lineHeight: 1.7 }}>
                 <li style={{ marginBottom: 4 }}>All four nervous system states successfully detected</li>
-                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>33.8%</strong> of individuals escalated toward Strategy & Management/Power & Dominance when challenged</li>
-                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>22.2%</strong> de-escalated toward Safety & Openness</li>
+                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>33.8%</strong> of individuals escalated toward Strategic Management/Domination when challenged</li>
+                <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>22.2%</strong> de-escalated toward Connection</li>
                 <li style={{ marginBottom: 4 }}>De-escalators showed <strong style={{ color: TEXT.primary }}>78% higher rates of complexity markers</strong></li>
                 <li>State classifications correlated with independent community moral judgments</li>
               </ul>
+              <p style={{ marginTop: 12, fontSize: 11, color: TEXT.muted, lineHeight: 1.6 }}>
+                State labels shown in current naming (Connection · Protection · Strategic Management · Domination). The published study on Zenodo reported these as Safety &amp; Openness · Threat &amp; Defence · Strategy &amp; Management · Power &amp; Dominance — the same four constructs.
+              </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a
