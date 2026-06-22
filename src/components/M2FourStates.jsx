@@ -9,7 +9,7 @@ import {
 // ─── Constants ──────────────────────────────────────
 const STATES = [
   {
-    name: 'SAFETY & OPENNESS', mode: 'Connection', hex: '#93CFFF', pos: 0.125,
+    name: 'CONNECTION', mode: 'Connection', hex: '#93CFFF', pos: 0.125,
     branch: 'parasympathetic', system: 'Emotional-Somatic',
     biology: 'Ventral vagal dominant. Heart rate settles. Vagal tone high. Social engagement system activates — face, voice, middle ear orient toward connection.',
     activation: 'Automatic — safety perceived',
@@ -18,7 +18,7 @@ const STATES = [
     evolutionary: 'Belonging, caring, cooperating, relating',
   },
   {
-    name: 'THREAT & DEFENCE', mode: 'Protection', hex: '#5BADFF', pos: 0.375,
+    name: 'PROTECTION', mode: 'Protection', hex: '#5BADFF', pos: 0.375,
     branch: 'sympathetic', system: 'Emotional-Somatic',
     biology: 'Sympathetic activation. Heart rate rises, muscles tense, cortisol and adrenaline release. The body prepares for action.',
     activation: 'Automatic — threat perceived',
@@ -27,7 +27,7 @@ const STATES = [
     evolutionary: 'Defending, fleeing, hunting, surviving',
   },
   {
-    name: 'STRATEGY & MANAGEMENT', mode: 'Control', hex: '#346AEC', pos: 0.625,
+    name: 'STRATEGIC MANAGEMENT', mode: 'Control', hex: '#346AEC', pos: 0.625,
     branch: 'sympathetic', system: 'Cognitive-Logical',
     biology: 'Sympathetic activation continues. Prefrontal cortex recruited — not for exploration but for threat-management.',
     activation: 'Deliberate — cognition recruited into threat service',
@@ -36,7 +36,7 @@ const STATES = [
     evolutionary: 'Coordinating hunts, planning migration, navigating social hierarchies',
   },
   {
-    name: 'POWER & DOMINANCE', mode: 'Domination', hex: '#2563eb', pos: 0.875,
+    name: 'DOMINATION', mode: 'Domination', hex: '#2563eb', pos: 0.875,
     branch: 'sympathetic', system: 'Cognitive-Logical',
     biology: 'Sympathetic at maximum. The vmPFC — guilt, care, empathy, consequence — is suppressed. Cognitive resources fully redirected to threat elimination.',
     activation: 'Deliberate — cognition at maximum threat response',

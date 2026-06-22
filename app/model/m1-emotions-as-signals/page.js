@@ -566,7 +566,7 @@ export default function M1EmotionsAsSignalsPage() {
             </p>
           </section>
 
-          {/* ─── SAFETY & OPENNESS ──────────────────────── */}
+          {/* ─── CONNECTION ──────────────────────── */}
           <section id="somatic-signals" style={{ marginBottom: 24, scrollMarginTop: 80 }}>
             <h2 style={{
               ...sectionHeadingStyle(SAFETY_COLOR),

@@ -4,10 +4,10 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/tokens'
 
 const MODES = [
-  { name: 'Connection',  hex: '#93CFFF', center: 0.125, signal: 'Safety',     conditionShort: 'SAFETY & OPENNESS' },
-  { name: 'Protection',  hex: '#5BADFF', center: 0.375, signal: 'Threat',     conditionShort: 'THREAT & DEFENCE' },
-  { name: 'Control',     hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'STRATEGY & MANAGEMENT' },
-  { name: 'Domination',  hex: '#2563eb', center: 0.875, signal: 'Life peril', conditionShort: 'POWER & DOMINANCE' },
+  { name: 'Connection',  hex: '#93CFFF', center: 0.125, signal: 'Safety',     conditionShort: 'CONNECTION' },
+  { name: 'Protection',  hex: '#5BADFF', center: 0.375, signal: 'Threat',     conditionShort: 'PROTECTION' },
+  { name: 'Control',     hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'STRATEGIC MANAGEMENT' },
+  { name: 'Domination',  hex: '#2563eb', center: 0.875, signal: 'Life peril', conditionShort: 'DOMINATION' },
 ]
 
 const BAR_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)'

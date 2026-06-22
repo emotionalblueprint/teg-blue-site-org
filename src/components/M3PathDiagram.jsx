@@ -11,10 +11,10 @@ const MODEL_COLOR = MODEL_COLORS.M3;
 const ORANGE = ACCENT.orange;    // override / debris / accumulation
 
 const STATES = [
-  { name: 'SAFETY & OPENNESS',     mode: 'Connection',  hex: '#93CFFF', pos: 0.125 },
-  { name: 'THREAT & DEFENCE',      mode: 'Protection',  hex: '#5BADFF', pos: 0.375 },
-  { name: 'STRATEGY & MANAGEMENT', mode: 'Control',     hex: '#346AEC', pos: 0.625 },
-  { name: 'POWER & DOMINANCE',     mode: 'Domination',  hex: '#2563eb', pos: 0.875 },
+  { name: 'CONNECTION',     mode: 'Connection',  hex: '#93CFFF', pos: 0.125 },
+  { name: 'PROTECTION',      mode: 'Protection',  hex: '#5BADFF', pos: 0.375 },
+  { name: 'STRATEGIC MANAGEMENT', mode: 'Control',     hex: '#346AEC', pos: 0.625 },
+  { name: 'DOMINATION',     mode: 'Domination',  hex: '#2563eb', pos: 0.875 },
 ];
 
 const LIVE_GRADIENT = 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)';
