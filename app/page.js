@@ -133,7 +133,7 @@ export default function ResearchHub() {
               While this site is being rebuilt, you can use the tools on TEG-Blue.com.
             </p>
             <a
-              href="https://teg-blue.com/emotional-tools"
+              href="https://teg-blue.com/"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
