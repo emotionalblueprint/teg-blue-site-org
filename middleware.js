@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const ALLOWED_PREFIXES = [
   "/api/",
   "/_next/",
+  "/opengraph-image", // home share image — must serve through the single-page gate
   "/tegblue8a4f2c9d7e6b5a3f.txt",
   "/feed.xml",
 ];
