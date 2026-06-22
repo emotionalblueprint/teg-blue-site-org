@@ -31,7 +31,22 @@ export default function SiteHeader() {
           >
             TEG-Blue.org
           </Link>
-          <ThemeToggle />
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <a
+              href="https://teg-blue.com/"
+              style={{
+                color: TEXT.secondary,
+                fontFamily: FONT.display,
+                fontSize: 13,
+                fontWeight: 500,
+                textDecoration: "none",
+                transition: `color ${TRANSITION.normal}`,
+              }}
+            >
+              Tools ↗
+            </a>
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
       <SpectrumBar height={3} variant="pattern" />

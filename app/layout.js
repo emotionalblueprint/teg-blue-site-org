@@ -29,10 +29,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata = {
   title: {
-    default: 'TEG-Blue.org is being rebuilt',
+    default: 'TEG-Blue — The Emotional Gradient Blueprint',
     template: '%s | TEG-Blue Research',
   },
-  description: 'TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.',
+  description: 'TEG-Blue maps how nervous-system states shape perception, feeling, and behaviour — a continuous gradient from safety through the defences to shutdown, grounded in established science.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'nervous system gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'nervous system states', 'complexity markers', 'open science'],
   authors: [{ name: 'TEG-Blue Research', url: 'https://teg-blue.org' }],
   creator: 'TEG-Blue Research',
@@ -46,13 +46,13 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue Research',
-    title: 'TEG-Blue.org is being rebuilt',
-    description: 'The new Emotional Gradient Blueprint site is in progress.',
+    title: 'TEG-Blue — The Emotional Gradient',
+    description: 'A map of the nervous system’s states — grounded in established science.',
   },
   twitter: {
     card: 'summary',
-    title: 'TEG-Blue.org is being rebuilt',
-    description: 'The new Emotional Gradient Blueprint site is in progress.',
+    title: 'TEG-Blue — The Emotional Gradient',
+    description: 'A map of the nervous system’s states — grounded in established science.',
     creator: '@tegblue',
   },
   robots: {
@@ -109,7 +109,7 @@ const organizationJsonLd = {
   name: "TEG-Blue Research",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.",
+  description: "TEG-Blue maps how nervous-system states shape perception, feeling, and behaviour — a continuous gradient from safety through the defences to shutdown, grounded in established science.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -167,7 +167,7 @@ const websiteJsonLd = {
   name: "TEG-Blue Research Platform",
   url: "https://teg-blue.org",
   inLanguage: "en",
-  description: "TEG-Blue.org is being rebuilt. The new Emotional Gradient Blueprint site is in progress.",
+  description: "TEG-Blue maps how nervous-system states shape perception, feeling, and behaviour — a continuous gradient from safety through the defences to shutdown, grounded in established science.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue Research",
