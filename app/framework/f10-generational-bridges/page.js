@@ -167,7 +167,7 @@ export default function F10GenerationalBridgesPage() {
                   One generation of repair shifts the baseline through compound interest — small, sustained shifts accumulate across time
                 </li>
                 <li style={propositionItemStyle}>
-                  The child needs enough, not perfect — a nervous system that moves and comes back, not one that is permanently in Safety & Openness
+                  The child needs enough, not perfect — a nervous system that moves and comes back, not one that is permanently in Connection
                 </li>
               </ul>
             </ExpandableSection>
@@ -187,7 +187,7 @@ export default function F10GenerationalBridgesPage() {
             </h2>
 
             <p style={proseStyle}>
-              The child's nervous system reads the adult's nervous system through every available channel. The adult's vocal prosody — whether it carries ventral vagal warmth or sympathetic tension. The adult's body — whether it is settled or braced. The adult's responsiveness — whether it tracks the child's state or imposes the adult's. The adult's range — whether it can enter Threat & Defence and return to Safety & Openness, or whether it is stuck in one position. All of this is data the child's nervous system processes below conscious awareness, in milliseconds, continuously.
+              The child's nervous system reads the adult's nervous system through every available channel. The adult's vocal prosody — whether it carries ventral vagal warmth or sympathetic tension. The adult's body — whether it is settled or braced. The adult's responsiveness — whether it tracks the child's state or imposes the adult's. The adult's range — whether it can enter Protection and return to Connection, or whether it is stuck in one position. All of this is data the child's nervous system processes below conscious awareness, in milliseconds, continuously.
             </p>
             <p style={proseStyle}>
               A caregiver whose SEA is offline cannot provide conditions for the child's SEA to develop — regardless of intention, knowledge, or effort. "You can tell me anything" is a verbal message that operates through the CLS. The adult's nervous system state — whether it tenses or settles when the child expresses — is the somatic message that operates through the ESS. The child's nervous system calibrates to the somatic message.
@@ -446,7 +446,7 @@ export default function F10GenerationalBridgesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  "Enough" grounded in the ESC architecture: what "enough" means at the nervous system level is that the child reads a nervous system with State Flexibility — a system that moves and returns, not one permanently in Safety & Openness. The identification that the demand for perfection recreates the regulation thread. This is a working hypothesis, open to testing.
+                  "Enough" grounded in the ESC architecture: what "enough" means at the nervous system level is that the child reads a nervous system with State Flexibility — a system that moves and returns, not one permanently in Connection. The identification that the demand for perfection recreates the regulation thread. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -564,7 +564,7 @@ export default function F10GenerationalBridgesPage() {
               {
                 title: "Good enough parenting",
                 commonUnderstanding: "Lowering the bar — accepting that you won't be perfect, doing your best.",
-                definition: "A nervous system with State Flexibility — one that enters Threat & Defence when conditions require it and returns to Safety & Openness when the situation resolves. The child does not learn one state. The child learns the movement. Not never rupturing — repairing after rupture, and the child witnessing the return.",
+                definition: "A nervous system with State Flexibility — one that enters Protection when conditions require it and returns to Connection when the situation resolves. The child does not learn one state. The child learns the movement. Not never rupturing — repairing after rupture, and the child witnessing the return.",
               },
             ]}
           />

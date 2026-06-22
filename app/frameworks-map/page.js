@@ -38,7 +38,7 @@ const FRAMEWORKS = [
     subtitle: "Scale: Biology",
     group: "Individual",
     summary: "The foundation. The nervous system evaluates safety and threat continuously — below awareness, before cognition. Emotions are how that evaluation gets delivered. They are the body's first language.",
-    purpose: "F1 introduces the Emotional Somatic Cycle and its four nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — and the mechanism that keeps the system moving: biological restoration, the body's designed process for completing the activation cycle and returning to physiological baseline. It cannot be forced. It can only be allowed.\n\nF1 also names the full trajectory the remaining eleven frameworks elaborate: the signal-to-system sequence, with biological restoration as the central pivot.\n\nBiological restoration is the hinge. Everything that follows depends on whether it happened.",
+    purpose: "F1 introduces the Emotional Somatic Cycle and its four nervous system states — Connection, Protection, Strategic Management, Domination — and the mechanism that keeps the system moving: biological restoration, the body's designed process for completing the activation cycle and returning to physiological baseline. It cannot be forced. It can only be allowed.\n\nF1 also names the full trajectory the remaining eleven frameworks elaborate: the signal-to-system sequence, with biological restoration as the central pivot.\n\nBiological restoration is the hinge. Everything that follows depends on whether it happened.",
     buildsOn: "Polyvagal Theory and autonomic neuroscience, affective neuroscience, trauma research, attachment theory, emotion science.",
     claims: [
       "Emotional signals track needs, safety, and constraint — they are the body's data about its current state",
@@ -214,7 +214,7 @@ const FRAMEWORKS = [
     claims: [
       "Paradoxical behavior is multi-rational — serving multiple valid needs simultaneously",
       "Every framework (F1–F10) generates characteristic paradoxes that follow predictably from each mechanism's specific logic",
-      "The capacity to hold paradox depends on nervous system state — Safety & Openness enables holding, Power & Dominance erases",
+      "The capacity to hold paradox depends on nervous system state — Connection enables holding, Domination erases",
       "Integration means holding, not resolving — true coherence is the capacity to contain contradiction without collapsing",
     ],
     testable: "Paradox-holding capacity correlated with State Flexibility. Paradox expression as diagnostic of nervous system state. Multi-rationality framework applied to predict which paradoxes emerge from which framework mechanisms.",

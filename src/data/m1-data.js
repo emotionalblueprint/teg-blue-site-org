@@ -13,13 +13,13 @@
 export const NS_STATE_GROUPS = [
   {
     key: 'safety',
-    label: 'Safety & Openness',
+    label: 'Connection',
     description: 'The evaluation concludes that conditions support safety, connection, or approach — the body opens',
     emotions: ['joy', 'happiness', 'admiration', 'pride', 'love', 'trust', 'gratitude', 'compassion'],
   },
   {
     key: 'threat',
-    label: 'Threat & Defence',
+    label: 'Protection',
     description: 'The evaluation concludes that conditions indicate danger, violation, loss, contamination, or risk to belonging — the body mobilises',
     emotions: ['fear', 'anger', 'stress', 'anxiety', 'frustration', 'resentment', 'disgust', 'contempt', 'shame', 'guilt', 'loneliness', 'disappointment', 'sadness', 'grief', 'confusion'],
   },

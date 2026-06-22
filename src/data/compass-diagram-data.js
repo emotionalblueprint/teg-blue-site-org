@@ -30,7 +30,7 @@ export const MODES = [
     key: 'connection',
     label: 'Connection',
     condition: 'When the nervous system reads safety and stays open',  // naming-architecture.md
-    conditionShort: 'Safety & Openness',  // table header form
+    conditionShort: 'Connection',  // table header form
     center: 0.125,        // gradient bar position (0–1)
     zone: [0, 0.25],      // zone boundaries
     perception: 'Safety',  // root--mode-positions.md §Perception — "All channels wide open"
@@ -42,7 +42,7 @@ export const MODES = [
     key: 'protection',
     label: 'Protection',
     condition: 'When the nervous system reads threat and defends',
-    conditionShort: 'Threat & Defence',
+    conditionShort: 'Protection',
     center: 0.375,
     zone: [0.25, 0.5],
     perception: 'Threat',  // root--mode-positions.md §Perception — "Narrowed toward threat"
@@ -54,7 +54,7 @@ export const MODES = [
     key: 'control',
     label: 'Control',
     condition: 'When the nervous system needs strategy and management',
-    conditionShort: 'Strategy & Management',
+    conditionShort: 'Strategic Management',
     center: 0.625,
     zone: [0.5, 0.75],
     perception: 'Danger',  // root--mode-positions.md §Perception — "Strategic"
@@ -66,7 +66,7 @@ export const MODES = [
     key: 'domination',
     label: 'Domination',
     condition: 'When the nervous system needs power and dominance',
-    conditionShort: 'Power & Dominance',
+    conditionShort: 'Domination',
     center: 0.875,
     zone: [0.75, 1.0],
     perception: 'Life Peril',  // root--mode-positions.md §Perception — "Tunnel"

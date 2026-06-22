@@ -216,7 +216,7 @@ export default function CompassBar({ showSpecs = true }) {
         {[
           ['Bar', '14px height, rounded-full, 4-color gradient'],
           ['Needle', '28px circle, white, 3px colored border, glow'],
-          ['States', 'Safety & Openness · Threat & Defence · Strategy & Management · Power & Dominance'],
+          ['States', 'Connection · Protection · Strategic Management · Domination'],
           ['Modes', 'Connection #93CFFF · Protection #5BADFF · Control #346AEC · Domination #2563eb'],
           ['Fluid', 'Temporary activation — returnable'],
           ['Stuck', 'Chronic — fixed position, lost mobility'],

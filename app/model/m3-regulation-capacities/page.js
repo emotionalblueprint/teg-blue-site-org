@@ -207,16 +207,16 @@ export default function M3RegulationCapacitiesPage() {
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Typical Substitutes</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Mechanism</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Safety & Openness</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
                 <div style={gridCellStyle}>Food, numbing substances, screens, over-availability, compulsive helping</div>
                 <div style={gridCellStyle}>Mutes the alarm without addressing what triggered it</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Threat & Defence</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
                 <div style={gridCellStyle}>Stimulants, intense exercise, alcohol, withdrawal into controlled environments</div>
                 <div style={gridCellStyle}>Overrides the alarm with a stronger sensation or removes inputs</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategy & Management</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategic Management</div>
                 <div style={gridCellStyle}>Work, planning, information, substances that sharpen focus</div>
                 <div style={gridCellStyle}>Maintains the suppression of limbic signals</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Power & Dominance</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
                 <div style={gridCellStyle}>Intense physical activity, substances that amplify certainty, risk</div>
                 <div style={gridCellStyle}>Channels sympathetic activation into output rather than discharge</div>
               </div>

@@ -334,12 +334,12 @@ export default function FoundationsPage() {
             <FunctionCard
               number={2}
               title="Prediction and prevention"
-              description="Mapping how states shift and escalate across the gradient. Harm often follows predictable progressions from Threat &amp; Defence into Strategy &amp; Management and Power &amp; Dominance."
+              description="Mapping how states shift and escalate across the gradient. Harm often follows predictable progressions from Protection into Strategic Management and Domination."
             />
             <FunctionCard
               number={3}
               title="Navigation and intervention"
-              description="Identifying interventions that help systems move from Strategy &amp; Management back toward Threat &amp; Defence and Safety &amp; Openness. Routes back to safety exist."
+              description="Identifying interventions that help systems move from Strategic Management back toward Protection and Connection. Routes back to safety exist."
             />
             <FunctionCard
               number={4}

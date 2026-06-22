@@ -595,7 +595,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Safety confirmed"
             bodySignature="Muscle tension releases, breathing deepens, posture opens. Dopamine flows, attention broadens, the body moves toward the source."
             mechanism="Joy is the signal the nervous system generates when conditions are evaluated as safe and the environment supports approach. The body expands — energy moves outward, sensory engagement broadens, and the system orients toward pleasurable contact. The dopaminergic system activates not as reward but as approach circuitry: the body moves toward what is safe. Joy is not an absence of threat. It is a positive detection — the nervous system has confirmed that conditions support openness."
-            activates="Safety & Openness"
+            activates="Connection"
             activatesColor={SAFETY_COLOR}
             restorationType="Somatic"
             restorationDetail="Presence — fully experienced in the body without scanning for what will take it away"
@@ -609,7 +609,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Sustained positive condition"
             bodySignature="Serotonergic tone rises — general positive affect, body maintains openness without the urgency of approach, a settled sustained state."
             mechanism="Happiness is the signal generated when a stable condition of sufficiency or well-being is present. Unlike joy, which spikes in response to a specific safety confirmation, happiness operates through serotonergic rather than dopaminergic chemistry — the nervous system maintains an open, settled configuration over time. Positive affect is sustained rather than spiking. The body is not approaching a source; it is resting in a condition that continues to support openness."
-            activates="Safety & Openness"
+            activates="Connection"
             activatesColor={SAFETY_COLOR}
             restorationType="Somatic"
             restorationDetail="Presence without interruption — continued contact with the condition that produced it"
@@ -623,7 +623,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Value detected in another"
             bodySignature="Orientation toward the other — body opens, approach circuitry activates, attention focuses on what was detected. Sometimes a brief pause of recognition."
             mechanism="Admiration is the signal generated when the nervous system detects something valuable, skillful, or meaningful in another person. The body orients toward what was recognised — posture opens, attention focuses, and the system opens toward learning, inspiration, or appreciation. The detection is accurate: something of value is present. The signal completes when cognition allows the recognition to land without converting it into comparison or self-diminishment."
-            activates="Safety & Openness"
+            activates="Connection"
             activatesColor={SAFETY_COLOR}
             restorationType="Somatic"
             restorationDetail="Presence with the recognition — allowing the detection to land without converting it into comparison, obligation, or self-diminishment"
@@ -638,7 +638,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Own value recognised"
             bodySignature="Expansion, warmth, upward energy — chest lifts, posture shifts, the body opens from the inside."
             mechanism="Pride is the signal generated when the nervous system registers one's own contribution, quality, or growth as meaningful or valuable. The body organizes toward internal expansion — warmth, uprightness, an opening from the inside. The signal completes through internal recognition. When the recognition depends entirely on external validation, the signal may remain unstable — the body generates the finding but cognition routes it outward rather than allowing it to settle internally."
-            activates="Safety & Openness"
+            activates="Connection"
             activatesColor={SAFETY_COLOR}
             restorationType="Somatic"
             restorationDetail="Presence with the self-recognition, without requiring external validation — the signal completes through own awareness of contribution"
@@ -660,7 +660,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Threat detected"
             bodySignature="Sympathetic activation — heart rate rises, muscles tense, sensory acuity sharpens, breathing shifts to rapid and shallow."
             mechanism="Fear is the signal generated when the nervous system evaluates a condition as dangerous. The amygdala fires through the fast pathway — 12 milliseconds, before the cortex has begun processing — and the body mobilizes. Heart rate rises, adrenaline releases, muscles brace for action, and sensory acuity sharpens toward the source of threat. This is the fastest signal in the system: the body is already responding before a single conscious thought has formed. Fear is not irrational. It is the nervous system's most urgent mobilization signal, generated when the safety-threat evaluation concludes: danger present."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="Threat must resolve — danger passes, person acts, or safety is established"
@@ -674,7 +674,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Boundary crossed"
             bodySignature="Blood pressure rises, muscles in the jaw, arms, and shoulders brace. Energy directed outward — the body mobilises for assertion, interruption, or correction."
             mechanism="Anger is the signal generated when the nervous system detects that a limit, need, right, or territory has been violated. Energy is directed outward — the organism mobilises for assertion, interruption, or correction. The physiological signature is distinct: blood pressure rises, jaw and shoulder muscles brace, and the sympathetic system channels activation toward confrontation rather than flight. Anger is a boundary-maintenance signal. When the boundary is restored, acknowledged, or effectively defended, the activation resolves. When it does not, the activation may persist and become displaced or rerouted."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="Boundary must be reasserted or acknowledged — through communication, action, or environmental change"
@@ -688,7 +688,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Demand-resource mismatch"
             bodySignature="HPA axis activation — cortisol rises, energy redirects toward the demand, non-essential functions suppress, attention narrows."
             mechanism="Stress is the signal generated when current demands exceed available physiological, cognitive, or emotional resources. The nervous system reallocates energy toward what is most urgent. Cortisol sustains alertness, non-essential functions suppress, and attention narrows toward the mismatch. Stress is an allocation signal: the body is reorganizing its resources to address a gap. The activation resolves when demands decrease, resources increase, or the mismatch is brought back within a tolerable range."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="Demand must be met or resource restored — the gap between what is required and what is available must close"
@@ -702,7 +702,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Anticipatory threat"
             bodySignature="Chronic cortisol elevation — BNST activates (sustained anxiety circuit, distinct from amygdala's acute fear), body scans continuously for unresolved future conditions."
             mechanism="Anxiety is the signal generated when the nervous system detects a possible future threat that remains unresolved. The BNST (bed nucleus of the stria terminalis) — a sustained anxiety circuit distinct from the amygdala's acute fear response — maintains readiness under uncertainty. Vigilance increases, scanning continues, and activation is sustained over time. Unlike fear, which responds to present danger, anxiety responds to unresolved future conditions. The body maintains mobilization for a threat that has not yet arrived and may not arrive."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="Uncertainty must resolve — future condition assessed and accepted, threat materialises and converts to actionable fear, or sufficient safety established"
@@ -716,7 +716,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Action blocked"
             bodySignature="Sympathetic activation intensifies — heart rate rises, jaw tightens, muscles brace. Energy builds with no outlet. Noradrenaline sustains alertness toward the obstruction."
             mechanism="Frustration is the signal generated when a goal, path, or intended action is obstructed. The nervous system detects that effort is being expended without producing the expected result. Energy builds with no outlet — the body mobilizes for action but the action cannot complete. The activation is distinct from anger: anger detects a boundary crossed, frustration detects a path blocked. When the obstruction persists without resolution, the activation accumulates."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="The blocked action must complete — obstacle removed, alternative path found, or goal achieved"
@@ -730,7 +730,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Accumulated unresolved boundary violations"
             bodySignature="Sustained sympathetic tone — chronic cortisol and noradrenaline elevation, persistent muscle tension, narrowed attention. A low burn, not a spike."
             mechanism="Resentment is the signal generated when boundary violations have occurred repeatedly without resolution. The nervous system carries the accumulated activation from multiple anger signals that never completed their restoration pathway. The activation is not spiking — it is sustained at a low burn. The body maintains mobilization against a threat that is not acute but has never been resolved."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="The unresolved boundary violations must be addressed — the pattern itself must be interrupted or acknowledged"
@@ -748,7 +748,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Contamination detected"
             bodySignature="Nausea, retching, mouth and nose closing — gustatory cortex and insula activate. The body organises toward rejection."
             mechanism="Disgust is the signal generated when the nervous system evaluates something as unsafe to take in, incorporate, or remain close to. The body organizes toward rejection and expulsion — nausea, aversion, withdrawal, and sensory closure. The insula and gustatory cortex activate, producing the visceral rejection response. Disgust originated as a contamination-avoidance mechanism (physical toxins, spoiled food) and expanded to evaluate social and moral contamination through shared neural substrates."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="Removal — contaminant expelled, distance established, or environment confirmed safe"
@@ -762,7 +762,7 @@ export default function M1EmotionsAsSignalsPage() {
             signal="Other evaluated as beneath engagement"
             bodySignature="Cold disengagement — one side of the upper lip raises (the only reliably asymmetric facial expression across cultures). Energy withdraws from the other, not toward them."
             mechanism="Contempt is the signal generated when another person or group is evaluated as not worth engaging with — inferior, incompetent, or beneath consideration. The body organizes toward dismissal and distancing. The nervous system withdraws engagement — not with the urgency of disgust's expulsion, but with cold disengagement. Energy does not mobilize toward the other. It withdraws from them. Chronic contempt in relationships is a strong predictor of relational breakdown because the withdrawal of engagement removes the conditions for relational restoration."
-            activates="Threat & Defence"
+            activates="Protection"
             activatesColor={THREAT_COLOR}
             restorationType="Somatic"
             restorationDetail="Re-evaluation of the other — or recognition that the contempt is serving a regulatory function (maintaining distance, preserving superiority that stabilizes position)"
@@ -881,13 +881,13 @@ export default function M1EmotionsAsSignalsPage() {
             name="Shame"
             signal="Belonging is at risk"
             bodySignature="Heat, shrinking, gaze aversion, the body contracts and makes itself smaller — vasodilation to skin surface (the blush). Mixed autonomic when distorted into threat."
-            mechanism={"Shame is the signal generated when the nervous system detects that belonging is at risk. Its designed function is appeasement and repair — the body makes itself smaller, averts gaze, shows vulnerability. These are visible signals to the group: \"I know something went wrong, I'm not a threat, please don't exclude me.\" Designed to operate from Safety & Openness, with the body opening toward the other for repair. When the other person stays, belonging is confirmed, and the signal completes. When interoceptive access is absent, the content — \"I might lose belonging\" — hits the threat evaluation without being processed as readable information. The nervous system escalates to Threat & Defence. Now the body runs two contradictory programs: the signal says collapse, hide, make smaller (appeasement) while the state says mobilise, brace, defend (threat). The pain of shame as commonly experienced is this conflict — not the original signal."}
+            mechanism={"Shame is the signal generated when the nervous system detects that belonging is at risk. Its designed function is appeasement and repair — the body makes itself smaller, averts gaze, shows vulnerability. These are visible signals to the group: \"I know something went wrong, I'm not a threat, please don't exclude me.\" Designed to operate from Connection, with the body opening toward the other for repair. When the other person stays, belonging is confirmed, and the signal completes. When interoceptive access is absent, the content — \"I might lose belonging\" — hits the threat evaluation without being processed as readable information. The nervous system escalates to Protection. Now the body runs two contradictory programs: the signal says collapse, hide, make smaller (appeasement) while the state says mobilise, brace, defend (threat). The pain of shame as commonly experienced is this conflict — not the original signal."}
             activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
             restorationDetail="Another person who stays — present without contempt after seeing the thing that feels shameful. That staying is the biological signal the restoration pathway needs."
             research="Schore (2003) — shame as a primary regulatory affect requiring relational processing. Tangney & Dearing (2002) — shame vs guilt as distinct self-conscious emotions. Brown (2006) — shame resilience requiring relational connection."
-            tegBlueAdds="Shame identified as a connection signal designed to complete through relational repair from Safety & Openness — not a threat signal. The pain of shame is the distortion: the signal and the threat state running in opposite autonomic directions simultaneously. The distortion occurs when interoceptive access is absent and the content hits the threat evaluation raw. This explains why shame is the most biologically expensive emotional signal — the body is fighting itself."
+            tegBlueAdds="Shame identified as a connection signal designed to complete through relational repair from Connection — not a threat signal. The pain of shame is the distortion: the signal and the threat state running in opposite autonomic directions simultaneously. The distortion occurs when interoceptive access is absent and the content hits the threat evaluation raw. This explains why shame is the most biologically expensive emotional signal — the body is fighting itself."
           />
 
           <EmotionSection
@@ -895,7 +895,7 @@ export default function M1EmotionsAsSignalsPage() {
             name="Guilt"
             signal="Belonging was ruptured by harm"
             bodySignature="Weight or tension in the chest, restlessness, pull toward repair — the nervous system generates sustained discomfort that orients toward the person who was affected."
-            mechanism={"Guilt is the signal generated when the nervous system detects that one's behaviour has negatively affected another person. Its designed function is repair — the body orients toward the person who was affected, generating sustained discomfort that pulls toward acknowledgment and action. Designed to operate from Safety & Openness, with the body moving toward the other to restore the bond. When repair occurs, the signal completes. When interoceptive access is absent, the content — \"I did harm\" — hits the threat evaluation. The signal says approach, repair, go toward the other. The state says defend, escape, protect. The weight, the churning, the self-punishment — that is the conflict between the designed function (repair) and the threat state (defence)."}
+            mechanism={"Guilt is the signal generated when the nervous system detects that one's behaviour has negatively affected another person. Its designed function is repair — the body orients toward the person who was affected, generating sustained discomfort that pulls toward acknowledgment and action. Designed to operate from Connection, with the body moving toward the other to restore the bond. When repair occurs, the signal completes. When interoceptive access is absent, the content — \"I did harm\" — hits the threat evaluation. The signal says approach, repair, go toward the other. The state says defend, escape, protect. The weight, the churning, the self-punishment — that is the conflict between the designed function (repair) and the threat state (defence)."}
             activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
@@ -909,7 +909,7 @@ export default function M1EmotionsAsSignalsPage() {
             name="Loneliness"
             signal="Belonging is absent"
             bodySignature="The body contracts and pulls inward. Cortisol rises, sleep architecture degrades, immune function suppresses. A characteristic ache — a felt absence that is physiological, not just psychological."
-            mechanism={"Loneliness is the signal generated when the nervous system detects that meaningful connection is absent. Its designed function is seeking — the body orients toward others, scanning for someone safe and available. Designed to drive approach from Safety & Openness. When genuine connection is found, the signal completes. When interoceptive access is absent, the content — \"I am alone\" — hits the threat evaluation. The signal says seek, approach, find connection. The state says defend, withdraw, protect. The person is biologically driven toward connection while physiologically mobilised against approach. This is why loneliness isolates — the signal drives seeking while the state makes approach feel dangerous."}
+            mechanism={"Loneliness is the signal generated when the nervous system detects that meaningful connection is absent. Its designed function is seeking — the body orients toward others, scanning for someone safe and available. Designed to drive approach from Connection. When genuine connection is found, the signal completes. When interoceptive access is absent, the content — \"I am alone\" — hits the threat evaluation. The signal says seek, approach, find connection. The state says defend, withdraw, protect. The person is biologically driven toward connection while physiologically mobilised against approach. This is why loneliness isolates — the signal drives seeking while the state makes approach feel dangerous."}
             activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
@@ -923,7 +923,7 @@ export default function M1EmotionsAsSignalsPage() {
             name="Disappointment"
             signal="Belonging was expected but not delivered"
             bodySignature="The body withdraws — energy turns inward, posture drops, engagement decreases. A characteristic deflation distinct from sadness's conservation."
-            mechanism={"Disappointment is the signal generated when something or someone that was expected to deliver did not. Its designed function is recalibration — updating expectations from Safety & Openness. Either the source re-proves trustworthiness through new evidence, or expectations adjust to match reality. When recalibration occurs, the signal completes. When interoceptive access is absent, the failed evaluation generalises — distrust spreads beyond the source. Deflation (the signal) and mobilisation (the threat state) run simultaneously."}
+            mechanism={"Disappointment is the signal generated when something or someone that was expected to deliver did not. Its designed function is recalibration — updating expectations from Connection. Either the source re-proves trustworthiness through new evidence, or expectations adjust to match reality. When recalibration occurs, the signal completes. When interoceptive access is absent, the failed evaluation generalises — distrust spreads beyond the source. Deflation (the signal) and mobilisation (the threat state) run simultaneously."}
             activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"
@@ -941,7 +941,7 @@ export default function M1EmotionsAsSignalsPage() {
             name="Sadness"
             signal="Belonging was lost"
             bodySignature="Activity slows, energy turns inward, tears, heaviness, withdrawal — the body enters conservation mode."
-            mechanism={"Sadness is the signal generated when the nervous system detects that something valued has ended, is absent, or is no longer available. Its designed function is witnessing — the body enters conservation (slowing, tears, energy inward), designed to operate from Safety & Openness in the presence of someone who holds the loss without fixing it. The tears are part of the discharge mechanism (lacrimal-vagal pathway). When someone stays present with the loss, the signal completes. When interoceptive access is absent, the content hits the threat evaluation. The signal says slow down, yield, let someone be with this. The state says mobilise, brace, act. The autonomic conflict is strong — sadness is parasympathetic while Threat & Defence is sympathetic."}
+            mechanism={"Sadness is the signal generated when the nervous system detects that something valued has ended, is absent, or is no longer available. Its designed function is witnessing — the body enters conservation (slowing, tears, energy inward), designed to operate from Connection in the presence of someone who holds the loss without fixing it. The tears are part of the discharge mechanism (lacrimal-vagal pathway). When someone stays present with the loss, the signal completes. When interoceptive access is absent, the content hits the threat evaluation. The signal says slow down, yield, let someone be with this. The state says mobilise, brace, act. The autonomic conflict is strong — sadness is parasympathetic while Protection is sympathetic."}
             activates="Relational"
             activatesColor={THREAT_COLOR}
             restorationType="Relational"

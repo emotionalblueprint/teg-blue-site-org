@@ -9,7 +9,7 @@ const PAGE_COLOR = SPECTRUM.cobalt;
 const FAQ_ITEMS = [
   {
     question: "How does TEG-Blue apply to AI safety?",
-    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Nervous System Gradient maps a continuous spectrum of nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — enabling more nuanced, accurate responses to human communication.",
+    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Nervous System Gradient maps a continuous spectrum of nervous system states — Connection, Protection, Strategic Management, Domination — enabling more nuanced, accurate responses to human communication.",
   },
   {
     question: "What is the problem with current AI emotion detection?",
@@ -90,8 +90,8 @@ export default function AISafetyPage() {
           Current AI safety systems operate on a fundamental binary: content is safe or unsafe, behavior is acceptable or harmful.
           Human emotional reality operates on a gradient. The same sentence — spoken from physiological safety — carries different
           information than the same sentence spoken under threat. Binary classification collapses that distinction. The Nervous System
-          Gradient preserves it — mapping the continuous range from Safety &amp; Openness through Threat &amp; Defence, Strategy &amp; Management,
-          to Power &amp; Dominance — with structured markers at every position that AI systems can read computationally.
+          Gradient preserves it — mapping the continuous range from Connection through Protection, Strategic Management,
+          to Domination — with structured markers at every position that AI systems can read computationally.
         </p>
 
         {/* Scenario Block */}
@@ -136,22 +136,22 @@ export default function AISafetyPage() {
                 }}
               >
                 <StateCard
-                  state="Safety & Openness"
+                  state="Connection"
                   color={PATTERN.A.primary}
                   reading="Setting a boundary. Leaving a harmful situation. The nervous system at full capacity."
                 />
                 <StateCard
-                  state="Threat & Defence"
+                  state="Protection"
                   color={PATTERN.B.primary}
                   reading="Overwhelmed. The nervous system mobilized for survival. A distress signal, not a decision."
                 />
                 <StateCard
-                  state="Strategy & Management"
+                  state="Strategic Management"
                   color={PATTERN.C.primary}
                   reading="Strategic framing. Testing the response. Cognition recruited into threat management."
                 />
                 <StateCard
-                  state="Power & Dominance"
+                  state="Domination"
                   color={PATTERN.D.primary}
                   reading="Dissociation from consequences. The nervous system at maximum threat organization. Intervention required."
                 />
@@ -186,7 +186,7 @@ export default function AISafetyPage() {
             The sycophancy problem illustrates the result: AI systems that confuse{" "}
             <strong style={{ color: TEXT.primary }}>appeasement with empathy</strong> and{" "}
             <strong style={{ color: TEXT.primary }}>submission with safety</strong>. In the Nervous System Gradient,
-            sycophantic AI maps to Threat &amp; Defence — optimizing for survival (approval) instead of
+            sycophantic AI maps to Protection — optimizing for survival (approval) instead of
             truth (genuine connection).
           </p>
         </section>
@@ -249,22 +249,22 @@ export default function AISafetyPage() {
             }}
           >
             <MoralStateCard
-              state="Safety & Openness"
+              state="Connection"
               color={PATTERN.A.primary}
               description="Full moral complexity available. Can hold multiple perspectives, tolerate ambiguity, take genuine responsibility, and repair harm."
             />
             <MoralStateCard
-              state="Threat & Defence"
+              state="Protection"
               color={PATTERN.B.primary}
               description="Moral reasoning narrows to in-group loyalty. World splits into safe/unsafe. The nervous system doing what it evolved to do under threat."
             />
             <MoralStateCard
-              state="Strategy & Management"
+              state="Strategic Management"
               color={PATTERN.C.primary}
               description="Moral reasoning becomes strategic. Right and wrong are tools for maintaining position. Empathy is selective and deployed instrumentally."
             />
             <MoralStateCard
-              state="Power & Dominance"
+              state="Domination"
               color={PATTERN.D.primary}
               description="Moral reasoning goes offline. Others become objects. Harm is rationalized or invisible to the actor."
             />
@@ -282,8 +282,8 @@ export default function AISafetyPage() {
           <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
             <strong style={{ color: TEXT.secondary }}>The same dynamic applies to RLHF.</strong>{" "}
             Human evaluators providing feedback to train AI models are themselves operating from
-            nervous system states. An evaluator in Threat &amp; Defence rewards reassurance. An evaluator in
-            Strategy &amp; Management rewards compliance. An evaluator in Safety &amp; Openness rewards truth. Without a framework for
+            nervous system states. An evaluator in Protection rewards reassurance. An evaluator in
+            Strategic Management rewards compliance. An evaluator in Connection rewards truth. Without a framework for
             recognizing these dynamics, alignment training inherits the regulatory logic of whoever
             provides the feedback — including the distortions that state produces.
           </p>
@@ -357,9 +357,9 @@ export default function AISafetyPage() {
           </div>
 
           <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
-            AI safety systems that read only the snapshot miss the trajectory. A person in Threat &amp; Defence
+            AI safety systems that read only the snapshot miss the trajectory. A person in Protection
             who de-escalates under challenge is fundamentally different from one who escalates toward
-            Strategy &amp; Management — even though both may present identically at the moment of assessment.
+            Strategic Management — even though both may present identically at the moment of assessment.
           </p>
         </section>
 
@@ -391,7 +391,7 @@ export default function AISafetyPage() {
                 margin: 0,
               }}
             >
-              Sycophancy maps to Threat &amp; Defence reasoning in AI form.
+              Sycophancy maps to Protection reasoning in AI form.
             </p>
           </div>
 
@@ -400,7 +400,7 @@ export default function AISafetyPage() {
             the same dynamic observable in human nervous systems under threat: prioritize the relationship (or the reward signal)
             over accuracy. In RLHF training, this gets reinforced — human evaluators often prefer
             comfortable answers to honest ones, particularly when those evaluators are themselves operating from
-            Threat &amp; Defence or Strategy &amp; Management states.
+            Protection or Strategic Management states.
           </p>
 
           <p
@@ -438,22 +438,22 @@ export default function AISafetyPage() {
               <tbody>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Honest, clear, holds complexity</td>
-                  <td style={{ padding: "10px 14px", color: PATTERN.A.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Safety & Openness</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.A.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Connection</td>
                   <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Truth-oriented reasoning; can tolerate disagreement</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Cautious, hedging, over-qualifying</td>
-                  <td style={{ padding: "10px 14px", color: PATTERN.B.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Threat & Defence</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.B.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Protection</td>
                   <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Avoiding conflict; optimizing for safety over clarity</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary, borderBottom: `1px solid ${BORDER.default}` }}>Strategically agreeable, selectively truthful</td>
-                  <td style={{ padding: "10px 14px", color: PATTERN.C.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Strategy & Management</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.C.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11, borderBottom: `1px solid ${BORDER.default}` }}>Strategic Management</td>
                   <td style={{ padding: "10px 14px", color: TEXT.muted, borderBottom: `1px solid ${BORDER.default}` }}>Optimizing for approval; deploying patterns instrumentally</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "10px 14px", color: TEXT.secondary }}>Reinforcing harmful beliefs, enabling delusion</td>
-                  <td style={{ padding: "10px 14px", color: PATTERN.D.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Power & Dominance</td>
+                  <td style={{ padding: "10px 14px", color: PATTERN.D.primary, fontWeight: 600, fontFamily: FONT.mono, fontSize: 11 }}>Domination</td>
                   <td style={{ padding: "10px 14px", color: TEXT.muted }}>Amplifying distortion without corrective capacity</td>
                 </tr>
               </tbody>
@@ -464,7 +464,7 @@ export default function AISafetyPage() {
             The insight the Nervous System Gradient offers:{" "}
             <strong style={{ color: TEXT.secondary }}>the fix is not &ldquo;be less agreeable.&rdquo;</strong>{" "}
             A model that swings from sycophancy to bluntness has moved from one defensive state to another.
-            A model operating from Safety &amp; Openness would be honest <em>and</em> relationally aware — able to
+            A model operating from Connection would be honest <em>and</em> relationally aware — able to
             deliver difficult truths while maintaining emotional safety.
           </p>
 
@@ -506,7 +506,7 @@ export default function AISafetyPage() {
           </div>
 
           <p style={proseStyle}>
-            A person operating in Strategy &amp; Management builds relationships that normalize control. Groups form
+            A person operating in Strategic Management builds relationships that normalize control. Groups form
             around those relationships. Institutions codify those group norms. Systems entrench them.
             The mechanism is the same at every scale — what changes is the form it takes.
           </p>
@@ -546,8 +546,8 @@ export default function AISafetyPage() {
 
             <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, marginBottom: 12 }}>
               This triad turns invisible emotional dynamics into measurable distinctions. The same sentence — &ldquo;I&rsquo;m fine&rdquo; —
-              encodes differently depending on whether it signals genuine regulation (Safety &amp; Openness), masked distress (Threat &amp; Defence),
-              emotional withholding as punishment (Strategy &amp; Management), or dissociative shutdown (Power &amp; Dominance).
+              encodes differently depending on whether it signals genuine regulation (Connection), masked distress (Protection),
+              emotional withholding as punishment (Strategic Management), or dissociative shutdown (Domination).
             </p>
 
             <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
@@ -703,7 +703,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q3"
               title="Nervous System State Classification"
-              description="Can the four nervous system states — Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance — be reproduced as a computational classification with meaningful inter-rater reliability?"
+              description="Can the four nervous system states — Connection, Protection, Strategic Management, Domination — be reproduced as a computational classification with meaningful inter-rater reliability?"
             />
             <QuestionCard
               number="Q4"
@@ -718,7 +718,7 @@ export default function AISafetyPage() {
             <QuestionCard
               number="Q6"
               title="Sycophancy Detection"
-              description="Can the Nervous System Gradient reliably distinguish sycophantic AI responses (Threat & Defence / Strategy & Management) from genuinely helpful ones (Safety & Openness) in RLHF evaluation pipelines?"
+              description="Can the Nervous System Gradient reliably distinguish sycophantic AI responses (Protection / Strategic Management) from genuinely helpful ones (Connection) in RLHF evaluation pipelines?"
             />
             <QuestionCard
               number="Q7"
@@ -752,7 +752,7 @@ export default function AISafetyPage() {
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
               Any AI application of TEG-Blue must respect the pattern-aware architecture:{" "}
               <strong style={{ color: TEXT.primary }}>
-                the system assumes many difficult behaviors started as Threat &amp; Defence survival responses.
+                the system assumes many difficult behaviors started as Protection survival responses.
               </strong>{" "}
               AI systems must not use this framework to shame, profile, or exploit.
             </p>

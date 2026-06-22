@@ -6,22 +6,22 @@ import { FONT, TEXT, SPECTRUM, BORDER, BG, hexToRgba } from "@/src/styles/tokens
 // ─── Mode Data ──────────────────────────────────────────
 const MODES = [
   {
-    key: "A", name: "Connection", conditionShort: "Safety & Openness", center: 0.125,
+    key: "A", name: "Connection", conditionShort: "Connection", center: 0.125,
     type: "Before awareness",
     fluid: "Enough safety to engage, relate, and repair. The needle\u2019s baseline.",
   },
   {
-    key: "B", name: "Protection", conditionShort: "Threat & Defence", center: 0.375,
+    key: "B", name: "Protection", conditionShort: "Protection", center: 0.375,
     type: "Before awareness",
     fluid: "The system mobilizes. Attention narrows, emotions amplify. Fight or flight.",
   },
   {
-    key: "C", name: "Control", conditionShort: "Strategy & Management", center: 0.625,
+    key: "C", name: "Control", conditionShort: "Strategic Management", center: 0.625,
     type: "After awareness",
     fluid: "Cognition recruited deliberately. Structure, strategy, released when done.",
   },
   {
-    key: "D", name: "Domination", conditionShort: "Power & Dominance", center: 0.875,
+    key: "D", name: "Domination", conditionShort: "Domination", center: 0.875,
     type: "After awareness",
     fluid: "Last resort. Entered deliberately, used briefly. The cost is felt and processed.",
   },

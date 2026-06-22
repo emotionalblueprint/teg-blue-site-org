@@ -233,7 +233,7 @@ export default function F1EmotionalGradientPage() {
               The <strong style={{ color: TEXT.primary }}>parasympathetic branch</strong> — particularly the ventral vagal system — supports safety, social engagement, and physiological settling. The ventral vagal system is the most recent evolutionary development, found only in mammals. It operates through the myelinated branch of the vagus nerve and regulates the muscles of the face, the middle ear, the larynx, and the pharynx — the structures that enable facial expression, vocal prosody, and the detection of social safety signals. When this system is active, the nervous system can evaluate safety not only through threat detection, but through relational contact. The organism can use the presence of another regulated nervous system as a safety signal.
             </p>
             <p style={proseStyle}>
-              This is the evolutionary innovation that made what M2 describes as Safety & Openness biologically possible. Before the ventral vagal system, there was no biological pathway for safety-through-relationship.
+              This is the evolutionary innovation that made what M2 describes as Connection biologically possible. Before the ventral vagal system, there was no biological pathway for safety-through-relationship.
             </p>
             <p style={proseStyle}>
               The older parasympathetic pathway — the dorsal vagal system — operates through the unmyelinated branch of the vagus nerve and is associated with immobilization, conservation, and shutdown. Present in vertebrates for approximately 500 million years. When mobilization is not available or has failed, the dorsal vagal system produces the organism's last-resort response: freeze, collapse, metabolic conservation.
@@ -254,16 +254,16 @@ export default function F1EmotionalGradientPage() {
             </p>
             <ul style={{ paddingLeft: 20, margin: "0 0 16px" }}>
               <li style={propositionItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Safety & Openness</strong> — parasympathetic-dominant. The ventral vagal system at work. Perception broadens, social engagement activates.
+                <strong style={{ color: TEXT.primary }}>Connection</strong> — parasympathetic-dominant. The ventral vagal system at work. Perception broadens, social engagement activates.
               </li>
               <li style={propositionItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Threat & Defence</strong> — sympathetic activation. The ancient mobilization response. Under extreme or inescapable conditions, the dorsal vagal system may engage as a fallback.
+                <strong style={{ color: TEXT.primary }}>Protection</strong> — sympathetic activation. The ancient mobilization response. Under extreme or inescapable conditions, the dorsal vagal system may engage as a fallback.
               </li>
               <li style={propositionItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Strategy & Management</strong> — the CLS extends the threat response into anticipation, planning, and management. Cognition is organizing around threat.
+                <strong style={{ color: TEXT.primary }}>Strategic Management</strong> — the CLS extends the threat response into anticipation, planning, and management. Cognition is organizing around threat.
               </li>
               <li style={propositionItemStyle}>
-                <strong style={{ color: TEXT.primary }}>Power & Dominance</strong> — the CLS at maximum threat response. The neural systems that carry guilt, care, and empathic constraint — particularly the ventromedial prefrontal cortex — are suppressed.
+                <strong style={{ color: TEXT.primary }}>Domination</strong> — the CLS at maximum threat response. The neural systems that carry guilt, care, and empathic constraint — particularly the ventromedial prefrontal cortex — are suppressed.
               </li>
             </ul>
             <p style={proseStyle}>
@@ -283,7 +283,7 @@ export default function F1EmotionalGradientPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The framing of the four nervous system states as the product of co-evolution between the ESS and CLS — not as an ancient two-mode system that cognition was later recruited into, but as a single architecture that developed its full range as both systems grew together. The identification of the ventral vagal system as the specific evolutionary innovation that made Safety & Openness — and therefore co-regulation, relational restoration, and the relational branch of the entire framework system — biologically possible. This is a working hypothesis, open to testing.
+                  The framing of the four nervous system states as the product of co-evolution between the ESS and CLS — not as an ancient two-mode system that cognition was later recruited into, but as a single architecture that developed its full range as both systems grew together. The identification of the ventral vagal system as the specific evolutionary innovation that made Connection — and therefore co-regulation, relational restoration, and the relational branch of the entire framework system — biologically possible. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -399,7 +399,7 @@ export default function F1EmotionalGradientPage() {
                   <TableRow cells={["Attachment Theory", "Bowlby, Ainsworth", "Secure base vs threat activation. How early relational environment shapes the system's calibration.", "Co-regulation as the learning pathway for restoration. The developmental origin F2 maps."]} />
                   <TableRow cells={["Developmental Neuroscience", "Siegel, Schore, Ogden", "Window of tolerance. Co-regulation shapes brain architecture. Interpersonal neurobiology.", "The gradient and the developmental conditions for restoration capacity."]} />
                   <TableRow cells={["Motivational Science", "Gray, Carver & Scheier", "Approach / avoidance systems — behavioural activation and inhibition.", "The two-branch orientation between safety and threat."]} />
-                  <TableRow cells={["Broaden-and-Build", "Fredrickson", "Positive states broaden perception and build resources; negative states narrow.", "The state-dependent capacity shift. What M2 maps as Safety & Openness vs threat states."]} />
+                  <TableRow cells={["Broaden-and-Build", "Fredrickson", "Positive states broaden perception and build resources; negative states narrow.", "The state-dependent capacity shift. What M2 maps as Connection vs threat states."]} />
                   <TableRow cells={["Trauma & Body Research", "van der Kolk, Walker", "The body keeps the score. Fight-flight-freeze-fawn.", "The consequences of incomplete restoration. What M3 maps as Path B."]} />
                   <TableRow cells={["Dual-Process Theory", "Kahneman, Stanovich", "Two processing systems — fast/automatic and slow/deliberate.", "The ESS and CLS as two information systems with different speeds and mechanisms."]} />
                   <TableRow cells={["Emotion Regulation Research", "Gross, Eisenberg", "Regulatory strategies, their physiological effects, and the cost of suppression.", "The restoration mechanism. What M3 maps as the difference between completion and override."]} />
@@ -602,7 +602,7 @@ export default function F1EmotionalGradientPage() {
               },
               {
                 term: "The autonomic architecture",
-                definition: "Two autonomic branches produce a continuous gradient of four states. The ventral vagal system is the specific innovation that made Safety & Openness — and therefore co-regulation and relational restoration — biologically possible.",
+                definition: "Two autonomic branches produce a continuous gradient of four states. The ventral vagal system is the specific innovation that made Connection — and therefore co-regulation and relational restoration — biologically possible.",
               },
               {
                 term: "Neuroception",

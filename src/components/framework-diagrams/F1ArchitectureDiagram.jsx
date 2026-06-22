@@ -14,10 +14,10 @@ const BAR_MAX = COL_W - 16;
 function colX(i) { return COL_START + i * (COL_W + COL_GAP); }
 
 const MODES = [
-  { letter: "A", name: "Connection",  conditionShort: "Safety & Openness",      color: SPECTRUM.sky },
-  { letter: "B", name: "Protection",  conditionShort: "Threat & Defence",       color: SPECTRUM.azure },
-  { letter: "C", name: "Control",     conditionShort: "Strategy & Management",  color: SPECTRUM.blue },
-  { letter: "D", name: "Domination",  conditionShort: "Power & Dominance",      color: SPECTRUM.cobalt },
+  { letter: "A", name: "Connection",  conditionShort: "Connection",      color: SPECTRUM.sky },
+  { letter: "B", name: "Protection",  conditionShort: "Protection",       color: SPECTRUM.azure },
+  { letter: "C", name: "Control",     conditionShort: "Strategic Management",  color: SPECTRUM.blue },
+  { letter: "D", name: "Domination",  conditionShort: "Domination",      color: SPECTRUM.cobalt },
 ];
 
 const DIMENSIONS = [

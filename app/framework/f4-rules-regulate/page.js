@@ -376,7 +376,7 @@ export default function F4RulesRegulatePage() {
               <strong style={{ color: TEXT.primary }}>Entitlement rules</strong> teach that some people are inherently owed more. At the nervous system level, entitlement operates as external regulation — "others must absorb my activation so I can stay stable."
             </p>
             <p style={proseStyle}>
-              Each rule system expresses differently across the gradient. In Safety & Openness, rules are held with flexibility. In chronic Threat & Defence, rules are rigid — deviation activates the threat response. In chronic Strategy & Management, rules are selectively enforced to maintain predictability. In chronic Power & Dominance, rules are absolute — violation is met with escalation.
+              Each rule system expresses differently across the gradient. In Connection, rules are held with flexibility. In chronic Protection, rules are rigid — deviation activates the threat response. In chronic Strategic Management, rules are selectively enforced to maintain predictability. In chronic Domination, rules are absolute — violation is met with escalation.
             </p>
 
             {/* Section diagram placeholder */}
@@ -567,16 +567,16 @@ export default function F4RulesRegulatePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Initial", "Collective activation is low. State flexibility is available.", "Rules are informal. Deviation is tolerated. Flexibility is possible.", "Safety & Openness"]} />
-                  <TableRow cells={["Intermediate", "Collective activation increases. Tolerance narrows.", "Rules proliferate. Deviation becomes costly. Moralization begins — rule-breaking framed as character failure.", "Threat & Defence"]} />
-                  <TableRow cells={["Advanced", "The collective CLS is recruited into threat organization.", "Reduced tolerance. Surveillance increases. Obedience is framed as virtue.", "Strategy & Management"]} />
-                  <TableRow cells={["Extreme", "Collective nervous system at maximum threat.", "Rule-breaking treated as existential threat. Enforcement becomes violent. Elimination of deviants normalized.", "Power & Dominance"]} />
+                  <TableRow cells={["Initial", "Collective activation is low. State flexibility is available.", "Rules are informal. Deviation is tolerated. Flexibility is possible.", "Connection"]} />
+                  <TableRow cells={["Intermediate", "Collective activation increases. Tolerance narrows.", "Rules proliferate. Deviation becomes costly. Moralization begins — rule-breaking framed as character failure.", "Protection"]} />
+                  <TableRow cells={["Advanced", "The collective CLS is recruited into threat organization.", "Reduced tolerance. Surveillance increases. Obedience is framed as virtue.", "Strategic Management"]} />
+                  <TableRow cells={["Extreme", "Collective nervous system at maximum threat.", "Rule-breaking treated as existential threat. Enforcement becomes violent. Elimination of deviants normalized.", "Domination"]} />
                 </tbody>
               </table>
             </div>
 
             <p style={proseStyle}>
-              The same physiological processes that shift an individual from Safety & Openness toward Power & Dominance — cortisol elevation, amygdala sensitization, prefrontal narrowing, ventral vagal withdrawal — operate in the individuals who compose the group. When enough shift simultaneously, the collective system shifts.
+              The same physiological processes that shift an individual from Connection toward Domination — cortisol elevation, amygdala sensitization, prefrontal narrowing, ventral vagal withdrawal — operate in the individuals who compose the group. When enough shift simultaneously, the collective system shifts.
             </p>
             <p style={proseStyle}>
               A population whose collective nervous system has been running at elevated activation — through war, economic collapse, displacement, pandemic — produces rule systems that tighten along this gradient. The content of the rules varies by culture. The escalation pattern does not.

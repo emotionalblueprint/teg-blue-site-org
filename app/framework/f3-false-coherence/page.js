@@ -312,10 +312,10 @@ export default function F3FalseCoherencePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Safety & Openness (as survival)", "\"I'm just a caring person. I put others first because that's who I am.\"", "The physiological signals of unresolved relational need — the body's signals that something is missing, overridden by a narrative of chosen selflessness"]} />
-                  <TableRow cells={["Threat & Defence", "\"The world really is dangerous. I'm not paranoid — I'm realistic.\"", "The elevated baseline and narrowed perception produced by the chronic state — overridden by a narrative that the perception is accurate rather than state-locked"]} />
-                  <TableRow cells={["Strategy & Management", "\"I'm just being strategic. I'm the responsible one. Someone has to hold this together.\"", "The activation load and need for control produced by the chronic state — overridden by a narrative of competence and necessity"]} />
-                  <TableRow cells={["Power & Dominance", "\"They deserved it. I'm strong. If they can't handle me, that's their problem.\"", "The harm-generated signals — shame, guilt, remorse — overridden by a narrative that reframes harm as strength"]} />
+                  <TableRow cells={["Connection (as survival)", "\"I'm just a caring person. I put others first because that's who I am.\"", "The physiological signals of unresolved relational need — the body's signals that something is missing, overridden by a narrative of chosen selflessness"]} />
+                  <TableRow cells={["Protection", "\"The world really is dangerous. I'm not paranoid — I'm realistic.\"", "The elevated baseline and narrowed perception produced by the chronic state — overridden by a narrative that the perception is accurate rather than state-locked"]} />
+                  <TableRow cells={["Strategic Management", "\"I'm just being strategic. I'm the responsible one. Someone has to hold this together.\"", "The activation load and need for control produced by the chronic state — overridden by a narrative of competence and necessity"]} />
+                  <TableRow cells={["Domination", "\"They deserved it. I'm strong. If they can't handle me, that's their problem.\"", "The harm-generated signals — shame, guilt, remorse — overridden by a narrative that reframes harm as strength"]} />
                 </tbody>
               </table>
             </div>
@@ -402,7 +402,7 @@ export default function F3FalseCoherencePage() {
               When reality contradicts the narrative the CLS built — when somatic signals and cognitive constructions fall out of alignment, or when external events cannot be absorbed by the existing story — the nervous system does not experience a reasoning error. It experiences a regulatory threat. Because the narrative IS the restoration substitute. Challenging the narrative threatens the mechanism keeping the system stable.
             </p>
             <p style={proseStyle}>
-              The person in chronic Strategy & Management has built a narrative: "I am strategic. I am in control. I handle things." When someone sets a boundary, says no, or identifies a pattern the person cannot absorb — the CLS does not evaluate the information. The ESS fires first. Cortisol spikes. Muscles brace. Heart rate increases. The body responds to the challenge the way it responds to any threat — because the challenge threatens the only regulatory mechanism available.
+              The person in chronic Strategic Management has built a narrative: "I am strategic. I am in control. I handle things." When someone sets a boundary, says no, or identifies a pattern the person cannot absorb — the CLS does not evaluate the information. The ESS fires first. Cortisol spikes. Muscles brace. Heart rate increases. The body responds to the challenge the way it responds to any threat — because the challenge threatens the only regulatory mechanism available.
             </p>
             <p style={proseStyle}>
               Observable somatic markers appear: tightening, urgency, heat, attentional narrowing, the chest constricting, breathing shallowing. These are the autonomic signature of a nervous system whose regulatory stability has been threatened. Cognitive dissonance is an autonomic event, not a debate.
@@ -447,10 +447,10 @@ export default function F3FalseCoherencePage() {
               The identity that false coherence constructed does not remain static. It gets upgraded — refined through achievement, ideology, self-optimization, therapeutic vocabulary, and spiritual frameworks. The person acquires new language, new skills, new narratives. The identity evolves. But the underlying configuration — the chronic state, the unresolved activation load, the absence of SEA — does not change. The CLS has added sophistication to the narrative without the body learning anything new about returning to physiological baseline.
             </p>
             <p style={proseStyle}>
-              A person in chronic Strategy & Management who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more refined control strategy, monitoring internal states with the same strategic vigilance that monitors external threats. The CLS gains a new language for what it was already doing.
+              A person in chronic Strategic Management who adds "mindful leader" to their identity through meditation practice — but uses mindfulness as a more refined control strategy, monitoring internal states with the same strategic vigilance that monitors external threats. The CLS gains a new language for what it was already doing.
             </p>
             <p style={proseStyle}>
-              A person in chronic Safety & Openness who adds "empowered empath" to their identity — but uses the language of empowerment to narrate continued self-erasure. "I set boundaries now" while the nervous system still organizes around others' states. The vocabulary upgraded. The configuration did not.
+              A person in chronic Connection who adds "empowered empath" to their identity — but uses the language of empowerment to narrate continued self-erasure. "I set boundaries now" while the nervous system still organizes around others' states. The vocabulary upgraded. The configuration did not.
             </p>
             <p style={proseStyle}>
               Each upgrade can be distinguished from genuine development by a single question: <strong style={{ color: TEXT.primary }}>has the body learned anything new about returning to physiological baseline?</strong> A person can acquire skills — language, techniques, credentials, insight, vocabulary — while the capacities that require biological change remain absent. Skills are CLS acquisitions. Capacities require the body's restoration sequence to have run — muscles releasing, cortisol clearing, the nervous system settling into a configuration it did not previously have access to. The skill can be acquired in any state. The capacity requires the state to shift.
@@ -543,16 +543,16 @@ export default function F3FalseCoherencePage() {
               Each chronic state uses others differently:
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Safety & Openness</strong> (as survival) — fusion. Others' emotional states fill the space where SEA would have provided self-knowledge. Others' calm produces calm. Others' approval produces stability. Others' distress produces destabilization — not affective resonance, but affective flooding where the other person's state becomes indistinguishable from one's own. The regulatory requirement: others must remain emotionally consistent.
+              <strong style={{ color: TEXT.primary }}>Chronic Connection</strong> (as survival) — fusion. Others' emotional states fill the space where SEA would have provided self-knowledge. Others' calm produces calm. Others' approval produces stability. Others' distress produces destabilization — not affective resonance, but affective flooding where the other person's state becomes indistinguishable from one's own. The regulatory requirement: others must remain emotionally consistent.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Threat & Defence</strong> — distance. Intimacy is the threat. Others' reliable distance serves as a buffer against activation. Withdrawal, coldness, or performed self-sufficiency keeps the relational environment at a manageable distance. The regulatory requirement: others must not come too close.
+              <strong style={{ color: TEXT.primary }}>Chronic Protection</strong> — distance. Intimacy is the threat. Others' reliable distance serves as a buffer against activation. Withdrawal, coldness, or performed self-sufficiency keeps the relational environment at a manageable distance. The regulatory requirement: others must not come too close.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Strategy & Management</strong> — management. Others' compliance substitutes for the internal regulation that SEA would have provided. Conversations are steered, information is managed, behavior is corrected — for internal stability. The regulatory requirement: others must behave predictably within the managed reality.
+              <strong style={{ color: TEXT.primary }}>Chronic Strategic Management</strong> — management. Others' compliance substitutes for the internal regulation that SEA would have provided. Conversations are steered, information is managed, behavior is corrected — for internal stability. The regulatory requirement: others must behave predictably within the managed reality.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Power & Dominance</strong> — subjugation. Others' fear and submission directly settle the internal activation. When others submit, the physiological response settles — temporarily. The regulatory requirement: others must comply or face escalation.
+              <strong style={{ color: TEXT.primary }}>Chronic Domination</strong> — subjugation. Others' fear and submission directly settle the internal activation. When others submit, the physiological response settles — temporarily. The regulatory requirement: others must comply or face escalation.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>The self-sealing property.</strong> The restoration substitute prevents the conditions that would allow genuine restoration. The person who needs co-regulation is using others for regulation — which degrades the relational environment. The people who could provide genuine co-regulation become less safe, less honest, and less genuinely available as the regulatory demands intensify. The substitute systematically forecloses the pathway it imitates. The system cannot reach the solution through the strategy it is using — because the strategy destroys the conditions the solution requires.
@@ -597,7 +597,7 @@ export default function F3FalseCoherencePage() {
               The CLS does not have two modes — one for internal narrative and one for social participation. It has one mode: constructing coherent accounts from the data available to it. When the interoceptive channel to the ESS is absent, the CLS constructs internal coherence from its own output. It also constructs social coherence from the cultural narratives available to it — rules, norms, values, hierarchies, assumptions about how the world works. Both operations serve the same regulatory function: stability through narrative.
             </p>
             <p style={proseStyle}>
-              A person in chronic Strategy & Management who has built "I'm the responsible one" as internal false coherence absorbs social rules that confirm this narrative: "Hard work is the only thing that matters." "Emotions are unprofessional." "If you can't handle the pressure, you don't belong." These are not evaluated as propositions. They are absorbed as regulatory material — narratives that stabilise the chronic state by confirming it from the outside. The individual lock and the collective lock reinforce each other.
+              A person in chronic Strategic Management who has built "I'm the responsible one" as internal false coherence absorbs social rules that confirm this narrative: "Hard work is the only thing that matters." "Emotions are unprofessional." "If you can't handle the pressure, you don't belong." These are not evaluated as propositions. They are absorbed as regulatory material — narratives that stabilise the chronic state by confirming it from the outside. The individual lock and the collective lock reinforce each other.
             </p>
             <p style={proseStyle}>
               When enough people in a system carry chronic states — when enough individuals are running false coherence, external regulation, and emotional distortion simultaneously — the individual patterns consolidate into collective structures. Rules that regulate what individuals cannot regulate internally. Worth hierarchies that determine who deserves restoration and who does not. Perceptual biases that lock collective perception in the same way chronic states lock individual perception. Domination structures that run relational substitute escalation at institutional scale.
@@ -667,7 +667,7 @@ export default function F3FalseCoherencePage() {
               },
               {
                 term: "External regulation",
-                definition: "The nervous system recruiting others to perform the regulatory function. Four patterns — fusion (chronic Safety & Openness), distance (chronic Threat & Defence), management (chronic Strategy & Management), subjugation (chronic Power & Dominance) — same mechanism, different chronic states.",
+                definition: "The nervous system recruiting others to perform the regulatory function. Four patterns — fusion (chronic Connection), distance (chronic Protection), management (chronic Strategic Management), subjugation (chronic Domination) — same mechanism, different chronic states.",
               },
               {
                 term: "The self-sealing property",

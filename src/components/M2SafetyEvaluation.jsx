@@ -320,7 +320,7 @@ export default function M2SafetyEvaluation() {
                 letterSpacing: '0.12em', textTransform: 'uppercase',
                 color: SAFETY_COLOR, marginBottom: 4,
               }}>
-                Safety & Openness
+                Connection
               </div>
               <div style={{
                 fontSize: 12, color: isSafety ? TEXT.secondary : TEXT.muted,
@@ -394,7 +394,7 @@ export default function M2SafetyEvaluation() {
                 letterSpacing: '0.12em', textTransform: 'uppercase',
                 color: THREAT_COLOR, marginBottom: 4,
               }}>
-                Threat & Defense
+                Protection
               </div>
               <div style={{
                 fontSize: 12, color: isThreat ? TEXT.secondary : TEXT.muted,

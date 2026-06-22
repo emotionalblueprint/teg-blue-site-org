@@ -11,7 +11,7 @@ const MODEL_COLOR = PATTERN.C.primary;
 
 const RESTORATIONS = [
   {
-    mode: 'Safety & Openness',
+    mode: 'Connection',
     color: PATTERN.A.primary,
     type: 'Tending',
     subtitle: 'Preventive, not corrective',
@@ -21,7 +21,7 @@ const RESTORATIONS = [
     barWidth: 100,
   },
   {
-    mode: 'Threat & Defence',
+    mode: 'Protection',
     color: PATTERN.B.primary,
     type: 'Completing the sequence',
     subtitle: 'Discharge, co-regulation, time',
@@ -31,7 +31,7 @@ const RESTORATIONS = [
     barWidth: 75,
   },
   {
-    mode: 'Strategy & Management',
+    mode: 'Strategic Management',
     color: PATTERN.C.primary,
     type: 'Releasing the override',
     subtitle: 'Putting down the cognitive management',
@@ -41,7 +41,7 @@ const RESTORATIONS = [
     barWidth: 50,
   },
   {
-    mode: 'Power & Dominance',
+    mode: 'Domination',
     color: PATTERN.D.primary,
     type: 'The full discharge arc',
     subtitle: 'Extended rest from maximum activation',

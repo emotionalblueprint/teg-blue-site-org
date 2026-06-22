@@ -199,7 +199,7 @@ export default function F9VariationPage() {
               These are not personality traits. They are differences in how the nervous system is wired — how it receives sensory data, processes information, allocates attention, and generates physiological responses. The ESS in a nervous system with high sensory sensitivity receives more data through its sensory channels before any filtering occurs. The amygdala fires in 12 milliseconds — before a single thought forms. The amount and intensity of data arriving at the evaluation stage is different. The Safety-Threat Evaluation runs the same process on different inputs.
             </p>
             <p style={proseStyle}>
-              This means the same environment can produce different states in different nervous systems — not because one is functioning correctly and another is not, but because the inputs arriving at the regulatory instrument are different. A nervous system in a well-matched environment can sit in Safety & Openness as sustainably as any other.
+              This means the same environment can produce different states in different nervous systems — not because one is functioning correctly and another is not, but because the inputs arriving at the regulatory instrument are different. A nervous system in a well-matched environment can sit in Connection as sustainably as any other.
             </p>
 
             {/* Section diagram placeholder */}
@@ -593,7 +593,7 @@ export default function F9VariationPage() {
               {
                 id: "M2: Nervous System States",
                 href: "/model/m2-nervous-system-states",
-                description: "M2 maps the four states as a continuous gradient. F9 shows that the same environment can produce Safety & Openness in one configuration and Threat & Defence in another — because the inputs differ.",
+                description: "M2 maps the four states as a continuous gradient. F9 shows that the same environment can produce Connection in one configuration and Protection in another — because the inputs differ.",
               },
               {
                 id: "M3: Regulation Capacities",

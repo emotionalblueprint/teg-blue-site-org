@@ -248,7 +248,7 @@ export default function F5WorthHierarchiesPage() {
               Each capital is compelling because it genuinely reduces nervous system activation in systems where these markers predict who gets protected and who gets exposed.
             </p>
             <p style={proseStyle}>
-              Each expresses differently across the gradient. In Safety & Openness, capitals are shared — resources, relationships, and knowledge serve the group. In chronic Threat & Defence, capitals are hoarded — losing them activates the threat response. In chronic Strategy & Management, capitals are deployed strategically — displayed and managed to maintain position. In chronic Power & Dominance, capitals are enforced — used to establish hierarchy and to exclude those who lack them.
+              Each expresses differently across the gradient. In Connection, capitals are shared — resources, relationships, and knowledge serve the group. In chronic Protection, capitals are hoarded — losing them activates the threat response. In chronic Strategic Management, capitals are deployed strategically — displayed and managed to maintain position. In chronic Domination, capitals are enforced — used to establish hierarchy and to exclude those who lack them.
             </p>
 
             {/* Section diagram placeholder */}
@@ -290,7 +290,7 @@ export default function F5WorthHierarchiesPage() {
               The interoceptive substrate develops through thousands of co-regulation repetitions (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>). The caregiver's nervous system must be available — regulated enough to hold the child's activation, present enough to respond, flexible enough to move between states and return. This requires safety, time, and co-regulatory capacity in the caregiver.
             </p>
             <p style={proseStyle}>
-              Worth hierarchies determine which caregivers have these conditions. A caregiver working three jobs, carrying chronic financial precarity, navigating unsafe housing, and absorbing the physiological cost of structural invisibility has less of all three — because the hierarchy has allocated less safety, less time, and more sustained activation. The caregiver's nervous system runs at elevated baseline. The co-regulation that would build the child's interoceptive substrate requires the caregiver to be in or near Safety & Openness. A caregiver whose nervous system is held in chronic Threat & Defence by structural conditions provides a different developmental environment.
+              Worth hierarchies determine which caregivers have these conditions. A caregiver working three jobs, carrying chronic financial precarity, navigating unsafe housing, and absorbing the physiological cost of structural invisibility has less of all three — because the hierarchy has allocated less safety, less time, and more sustained activation. The caregiver's nervous system runs at elevated baseline. The co-regulation that would build the child's interoceptive substrate requires the caregiver to be in or near Connection. A caregiver whose nervous system is held in chronic Protection by structural conditions provides a different developmental environment.
             </p>
             <p style={proseStyle}>
               The claim is structural: when a hierarchy systematically allocates less safety to a population, that population's children develop under conditions that produce a different distribution of substrate states. The hierarchy reproduces the substrate state — not in every individual, but across the population.
@@ -509,7 +509,7 @@ export default function F5WorthHierarchiesPage() {
               The Filter of Worth does not only distribute resources unevenly. It produces measurable physiological effects in the people it filters out. Chronic invisibility — the repeated experience of being unheard, dismissed, passed over, disbelieved, and excluded — functions as chronic social threat.
             </p>
             <p style={proseStyle}>
-              The nervous system interprets these signals as it interprets any sustained threat: cortisol elevation is sustained, the HPA axis does not stand down, muscle tension is maintained, the perceptual field narrows. The ventral vagal system — which supports social engagement and co-regulation — withdraws. The nervous system shifts into chronic Threat & Defence. The filter is producing ongoing signals that hold the nervous system in a protective configuration.
+              The nervous system interprets these signals as it interprets any sustained threat: cortisol elevation is sustained, the HPA axis does not stand down, muscle tension is maintained, the perceptual field narrows. The ventral vagal system — which supports social engagement and co-regulation — withdraws. The nervous system shifts into chronic Protection. The filter is producing ongoing signals that hold the nervous system in a protective configuration.
             </p>
             <p style={proseStyle}>
               The cost is not only the events themselves. It is the anticipation. The nervous system that has learned to expect dismissal begins activating before the next interaction. The activation becomes the baseline. The person presents with chronic hypervigilance, fatigue, self-doubt, understating needs, overworking to prove worth, anticipatory bracing.
@@ -593,7 +593,7 @@ export default function F5WorthHierarchiesPage() {
               {
                 id: "M2: Nervous System States",
                 href: "/model/m2-nervous-system-states",
-                description: "The four states express through worth-seeking. In Safety & Openness, worth is recognized without conditions. In chronic states, worth must be defended, curated, or enforced. Structural filtering holds nervous systems in chronic states.",
+                description: "The four states express through worth-seeking. In Connection, worth is recognized without conditions. In chronic states, worth must be defended, curated, or enforced. Structural filtering holds nervous systems in chronic states.",
               },
               {
                 id: "M4: Awareness Capacities",

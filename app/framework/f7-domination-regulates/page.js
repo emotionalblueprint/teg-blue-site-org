@@ -232,10 +232,10 @@ export default function F7DominationRegulatesPage() {
             </h2>
 
             <p style={proseStyle}>
-              Before the transition, the person is in Threat & Defense (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). Cortisol is elevated, the amygdala is sensitized, the perceptual field has narrowed. The responses — withdrawal, reactivity, vigilance, appeasement — are state-based: the nervous system is activated, the person is reacting, and when the activation passes, the response can pass with it. Repair is still possible — because the person still experiences their responses as responses.
+              Before the transition, the person is in Protection (<Link href="/model/m2-nervous-system-states" style={linkStyle}>M2</Link>). Cortisol is elevated, the amygdala is sensitized, the perceptual field has narrowed. The responses — withdrawal, reactivity, vigilance, appeasement — are state-based: the nervous system is activated, the person is reacting, and when the activation passes, the response can pass with it. Repair is still possible — because the person still experiences their responses as responses.
             </p>
             <p style={proseStyle}>
-              At the transition, the internal logic shifts. The CLS is recruited into threat organization — anticipation, planning, management. The person moves from reacting to the environment to managing the environment. From "I am trying to feel safe" to "I will make you behave so I can feel safe." This is the transition from Threat & Defense to Strategy & Management.
+              At the transition, the internal logic shifts. The CLS is recruited into threat organization — anticipation, planning, management. The person moves from reacting to the environment to managing the environment. From "I am trying to feel safe" to "I will make you behave so I can feel safe." This is the transition from Protection to Strategic Management.
             </p>
             <p style={proseStyle}>
               Tactics begin replacing repair. Apologies begin serving image rather than relationship. Warmth begins serving management rather than connection. Observable signals: repair disappears while control increases. Others' reality is reframed as the problem. Accountability is replaced by performance. Confusion is used to destabilize. Boundaries trigger escalation. Relationships are managed rather than respected. Fear becomes a stabilizer — others modify their behavior to avoid the person's reactions.
@@ -254,7 +254,7 @@ export default function F7DominationRegulatesPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  The transition positioned within the nervous system gradient as the shift from Threat & Defense (state-based, ESS-driven) to Strategy & Management (strategy-based, CLS-recruited). The observable pattern — repair decreasing, control increasing — provides recognizable markers for early identification. This is a working hypothesis, open to testing.
+                  The transition positioned within the nervous system gradient as the shift from Protection (state-based, ESS-driven) to Strategic Management (strategy-based, CLS-recruited). The observable pattern — repair decreasing, control increasing — provides recognizable markers for early identification. This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>
@@ -368,10 +368,10 @@ export default function F7DominationRegulatesPage() {
             </h2>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>RE does not collapse. It redirects.</strong> The CLS capacity that reads others' emotional states stays sharp or sharpens as escalation progresses. In Safety & Openness, RE serves understanding. In chronic Strategy & Management, RE serves management. In chronic Power & Dominance, RE serves leverage — others' emotional states become data for exploitation. The person at Stage 4-5 may read with more accuracy than anyone in the room. What they cannot do is feel what they read.
+              <strong style={{ color: TEXT.primary }}>RE does not collapse. It redirects.</strong> The CLS capacity that reads others' emotional states stays sharp or sharpens as escalation progresses. In Connection, RE serves understanding. In chronic Strategic Management, RE serves management. In chronic Domination, RE serves leverage — others' emotional states become data for exploitation. The person at Stage 4-5 may read with more accuracy than anyone in the room. What they cannot do is feel what they read.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>ER collapses.</strong> The ESS capacity that resonates with others' states degrades along the gradient. In chronic Power & Dominance, the ventromedial prefrontal cortex (vmPFC) — which carries care, guilt, and empathic constraint — is suppressed. Others' pain registers as information about the environment, not shared experience. ER is offline.
+              <strong style={{ color: TEXT.primary }}>ER collapses.</strong> The ESS capacity that resonates with others' states degrades along the gradient. In chronic Domination, the ventromedial prefrontal cortex (vmPFC) — which carries care, guilt, and empathic constraint — is suppressed. Others' pain registers as information about the environment, not shared experience. ER is offline.
             </p>
             <p style={proseStyle}>
               <strong style={{ color: TEXT.primary }}>SEA was never there.</strong> The bridge between the CLS and the ESS is the precondition for the entire escalation pathway, not a consequence of it. The person at Stage 4-5 does not have SEA that was suppressed by the escalation. They have SEA that was never built (<Link href="/framework/f2-awareness-calibration" style={linkStyle}>F2</Link>). This is why the escalation has no internal brake: without SEA, the activation that drives domination is never processed. And without SEA, there is no internal signal telling the person that their reading of others (sharp RE) is serving leverage rather than understanding.
@@ -430,7 +430,7 @@ export default function F7DominationRegulatesPage() {
               There is no natural stopping point. The underlying activation is structural — it is the cumulative unresolved load from a lifetime of incomplete restoration sequences. No amount of domination completes the biological restoration that would resolve the load. The domination produces temporary discharge. The discharge fades. The load remains. The cycle repeats at higher intensity.
             </p>
             <p style={proseStyle}>
-              Power and wealth amplify this mechanism. A person in chronic Power & Dominance with limited structural power has limited access — the harm is real but contained by structural constraints. A person in chronic Power & Dominance with vast structural power has unlimited access — unlimited regulation sources, unlimited capacity to enforce compliance, and structural protection from consequences.
+              Power and wealth amplify this mechanism. A person in chronic Domination with limited structural power has limited access — the harm is real but contained by structural constraints. A person in chronic Domination with vast structural power has unlimited access — unlimited regulation sources, unlimited capacity to enforce compliance, and structural protection from consequences.
             </p>
 
             {/* Section diagram placeholder */}

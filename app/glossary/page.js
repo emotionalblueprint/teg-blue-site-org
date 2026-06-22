@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What are the four nervous system states in TEG-Blue?",
-    answer: "The four states are Safety & Openness (parasympathetic-dominant — engagement and broader perception), Threat & Defence (sympathetic activation — immediate defensive mobilisation), Strategy & Management (the CLS recruited into threat organisation — anticipation, planning, override), and Power & Dominance (the CLS at maximum threat response — control, suppression, relational constraint reduced). These are nervous system configurations along a continuous physiological gradient, not personality types.",
+    answer: "The four states are Connection (parasympathetic-dominant — engagement and broader perception), Protection (sympathetic activation — immediate defensive mobilisation), Strategic Management (the CLS recruited into threat organisation — anticipation, planning, override), and Domination (the CLS at maximum threat response — control, suppression, relational constraint reduced). These are nervous system configurations along a continuous physiological gradient, not personality types.",
   },
   {
     question: "What is the difference between the ESS and the CLS?",
@@ -163,7 +163,7 @@ const GLOSSARY_TERMS = [
 
   {
     slug: "safety-and-openness",
-    title: "Safety & Openness",
+    title: "Connection",
     type: "concept",
     status: "established",
     aliases: ["Connection mode"],
@@ -173,7 +173,7 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "threat-and-defence",
-    title: "Threat & Defence",
+    title: "Protection",
     type: "concept",
     status: "established",
     aliases: ["Protection mode"],
@@ -183,7 +183,7 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "strategy-and-management",
-    title: "Strategy & Management",
+    title: "Strategic Management",
     type: "concept",
     status: "established",
     aliases: ["Control mode"],
@@ -193,7 +193,7 @@ const GLOSSARY_TERMS = [
   },
   {
     slug: "power-and-dominance",
-    title: "Power & Dominance",
+    title: "Domination",
     type: "concept",
     status: "established",
     aliases: ["Domination mode"],
@@ -584,7 +584,7 @@ const GLOSSARY_TERMS = [
     title: "The Autonomic Architecture",
     type: "concept",
     status: "established",
-    definition: "Two autonomic branches (parasympathetic + sympathetic) co-evolved with the CLS and produced the four nervous system states M2 maps. The ventral vagal system is the evolutionary innovation that made Safety & Openness possible.",
+    definition: "Two autonomic branches (parasympathetic + sympathetic) co-evolved with the CLS and produced the four nervous system states M2 maps. The ventral vagal system is the evolutionary innovation that made Connection possible.",
     tags: ["F1", "biological-origin"],
     framework: 1,
   },
@@ -827,7 +827,7 @@ const GLOSSARY_TERMS = [
     title: "Rule Escalation",
     type: "concept",
     status: "established",
-    definition: "Four stages paralleling the nervous system gradient at collective scale: informal (Safety & Openness) → proliferating (Threat & Defence) → managed (Strategy & Management) → absolute (Power & Dominance). Predictable and interruptible.",
+    definition: "Four stages paralleling the nervous system gradient at collective scale: informal (Connection) → proliferating (Protection) → managed (Strategic Management) → absolute (Domination). Predictable and interruptible.",
     tags: ["F4", "rules-regulate"],
     framework: 4,
   },
@@ -1169,7 +1169,7 @@ const GLOSSARY_TERMS = [
     title: "Enough, Not Perfect",
     type: "concept",
     status: "established",
-    definition: "The demand for perfection recreates the regulation thread. The child needs a parent whose nervous system moves — and who comes back. State Flexibility, not permanent Safety & Openness.",
+    definition: "The demand for perfection recreates the regulation thread. The child needs a parent whose nervous system moves — and who comes back. State Flexibility, not permanent Connection.",
     tags: ["F10", "intergenerational"],
     framework: 10,
   },

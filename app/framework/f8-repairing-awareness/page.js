@@ -392,10 +392,10 @@ export default function F8RepairingAwarenessPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow cells={["Safety & Openness (as survival)", "Self-blame. Accountability is indiscriminate — the person takes responsibility for everything, including what was done to them.", "The discrimination between 'this was mine' and 'this was not mine.' SEA would provide that discrimination."]} />
-                  <TableRow cells={["Threat & Defence", "Defence. 'You caused harm' registers as 'you are threatening me.' The state filters all incoming signals through threat detection.", "The capacity to process the request as anything other than danger."]} />
-                  <TableRow cells={["Strategy & Management", "Performance. The right words arrive. The apology sounds correct. Behavior does not change.", "The physiological shift that genuine repair requires: feeling the impact in the body."]} />
-                  <TableRow cells={["Power & Dominance", "Image management. Remorse is performed for the audience that matters. The nervous system is not processing impact.", "ER is offline, SEA was never built. The image of repair is a regulatory tool."]} />
+                  <TableRow cells={["Connection (as survival)", "Self-blame. Accountability is indiscriminate — the person takes responsibility for everything, including what was done to them.", "The discrimination between 'this was mine' and 'this was not mine.' SEA would provide that discrimination."]} />
+                  <TableRow cells={["Protection", "Defence. 'You caused harm' registers as 'you are threatening me.' The state filters all incoming signals through threat detection.", "The capacity to process the request as anything other than danger."]} />
+                  <TableRow cells={["Strategic Management", "Performance. The right words arrive. The apology sounds correct. Behavior does not change.", "The physiological shift that genuine repair requires: feeling the impact in the body."]} />
+                  <TableRow cells={["Domination", "Image management. Remorse is performed for the audience that matters. The nervous system is not processing impact.", "ER is offline, SEA was never built. The image of repair is a regulatory tool."]} />
                 </tbody>
               </table>
             </div>
@@ -589,7 +589,7 @@ export default function F8RepairingAwarenessPage() {
               },
               {
                 term: "Per-state repair substitutes",
-                definition: "Self-blame (Safety & Openness), defense (Threat & Defence), performance (Strategy & Management), image management (Power & Dominance). SEA's absence makes each invisible from inside.",
+                definition: "Self-blame (Connection), defense (Protection), performance (Strategic Management), image management (Domination). SEA's absence makes each invisible from inside.",
               },
               {
                 term: "SEA as the developmental entry point",

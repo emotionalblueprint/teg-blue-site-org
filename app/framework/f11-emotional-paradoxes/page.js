@@ -153,7 +153,7 @@ export default function F11ParadoxPage() {
                   Contradictions become invisible through a six-level cascade — from initial tension through false coherence, identity, social reinforcement, generational transmission, to invisible normal
                 </li>
                 <li style={propositionItemStyle}>
-                  Nervous system state determines holding capacity — Safety & Openness holds both truths, threat simplifies, Strategy & Management manages through narrative, Power & Dominance erases one
+                  Nervous system state determines holding capacity — Connection holds both truths, threat simplifies, Strategic Management manages through narrative, Domination erases one
                 </li>
                 <li style={propositionItemStyle}>
                   Holding capacity is what the three awareness capacities produce when online — not a separate skill but both/and thinking, somatic tolerance, temporal flexibility, part recognition, and grief capacity
@@ -334,19 +334,19 @@ export default function F11ParadoxPage() {
             </h2>
 
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Safety & Openness:</strong> The nervous system has the resources to hold both truths simultaneously. Cortisol is low. The prefrontal cortex is online. The perceptual field is wide. "I love them AND what they did produced real harm" — both truths present, neither cancelling the other. Paradox is tolerable because the system has enough regulatory margin for the complexity.
+              <strong style={{ color: TEXT.primary }}>Connection:</strong> The nervous system has the resources to hold both truths simultaneously. Cortisol is low. The prefrontal cortex is online. The perceptual field is wide. "I love them AND what they did produced real harm" — both truths present, neither cancelling the other. Paradox is tolerable because the system has enough regulatory margin for the complexity.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Threat & Defence:</strong> Paradox feels threatening. The system wants to simplify — to identify which truth is the danger and which is safe. Binary thinking is the nervous system reducing cognitive load under threat conditions.
+              <strong style={{ color: TEXT.primary }}>Chronic Protection:</strong> Paradox feels threatening. The system wants to simplify — to identify which truth is the danger and which is safe. Binary thinking is the nervous system reducing cognitive load under threat conditions.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Strategy & Management:</strong> Paradox is managed through narrative. The CLS constructs a story that appears to hold both truths but actually eliminates one. "I understand why they did it — and I've moved past the anger." The narrative sounds like integration. It may be coherence without the body.
+              <strong style={{ color: TEXT.primary }}>Chronic Strategic Management:</strong> Paradox is managed through narrative. The CLS constructs a story that appears to hold both truths but actually eliminates one. "I understand why they did it — and I've moved past the anger." The narrative sounds like integration. It may be coherence without the body.
             </p>
             <p style={proseStyle}>
-              <strong style={{ color: TEXT.primary }}>Chronic Power & Dominance:</strong> Paradox is not experienced. One truth is asserted. The other is erased, denied, or punished in anyone who names it.
+              <strong style={{ color: TEXT.primary }}>Chronic Domination:</strong> Paradox is not experienced. One truth is asserted. The other is erased, denied, or punished in anyone who names it.
             </p>
             <p style={proseStyle}>
-              Paradox can function as a diagnostic. A person who can name both sides without urgency to resolve is likely accessing Safety & Openness. A person with a smooth, coherent narrative that elegantly eliminates one side is likely in chronic Strategy & Management — and the narrative should be examined, not admired.
+              Paradox can function as a diagnostic. A person who can name both sides without urgency to resolve is likely accessing Connection. A person with a smooth, coherent narrative that elegantly eliminates one side is likely in chronic Strategic Management — and the narrative should be examined, not admired.
             </p>
 
             {/* Section diagram placeholder */}
@@ -362,7 +362,7 @@ export default function F11ParadoxPage() {
 
               <ExpandableSection title="What TEG-Blue Adds" type="framework">
                 <p style={expandedProseStyle}>
-                  Holding capacity mapped across the four nervous system states — showing that paradox tolerance is a physiological resource, not a cognitive skill. The diagnostic function: how the person relates to their contradictions reveals the state. The smooth narrative (Strategy & Management) is more likely performing holding than the messy narrative (the channel opening). This is a working hypothesis, open to testing.
+                  Holding capacity mapped across the four nervous system states — showing that paradox tolerance is a physiological resource, not a cognitive skill. The diagnostic function: how the person relates to their contradictions reveals the state. The smooth narrative (Strategic Management) is more likely performing holding than the messy narrative (the channel opening). This is a working hypothesis, open to testing.
                 </p>
               </ExpandableSection>
             </div>

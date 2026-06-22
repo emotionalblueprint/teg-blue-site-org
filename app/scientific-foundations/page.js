@@ -113,7 +113,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "F4", "F5", "F8", "F10", "F12"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Attachment Theory proposes that the quality of early caregiving relationships creates internal working models — mental templates for how relationships function. These models influence emotional regulation strategies, interpersonal behavior, and stress responses throughout life." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps attachment patterns as default nervous system positions within the Nervous System Gradient. Secure attachment produces a default Safety & Openness state with flexible movement. Insecure patterns create gravitational pulls toward specific states — anxious toward Threat & Defence, avoidant toward Strategy & Management." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps attachment patterns as default nervous system positions within the Nervous System Gradient. Secure attachment produces a default Connection state with flexible movement. Insecure patterns create gravitational pulls toward specific states — anxious toward Protection, avoidant toward Strategic Management." },
       { id: "key-sources", title: "Key Sources", content: "Bowlby, J. (1969/1982). Attachment and Loss, Vol. 1. Basic Books. \u00b7 Ainsworth, M. D. S. et al. (1978). Patterns of Attachment. Erlbaum. \u00b7 Main, M. & Hesse, E. (1990). Parents' unresolved traumatic experiences are related to infant disorganized attachment status." },
     ],
   },
@@ -161,7 +161,7 @@ const THEORIES = [
     frameworks: ["F1", "F8", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Gross developed the process model showing five points where regulation can occur. Siegel introduced the window of tolerance — the zone where emotions can be processed without overwhelm. Fredrickson's broaden-and-build theory shows that positive emotions expand cognitive and behavioral repertoires." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the nervous system gradient: Safety & Openness is within the window (broad capacity), Threat & Defence is at the edge (narrowing), Strategy & Management and Power & Dominance are chronic states outside the window. The broaden-and-build model explains why Safety & Openness enables learning and repair." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the nervous system gradient: Connection is within the window (broad capacity), Protection is at the edge (narrowing), Strategic Management and Domination are chronic states outside the window. The broaden-and-build model explains why Connection enables learning and repair." },
       { id: "key-sources", title: "Key Sources", content: "Gross, J. J. (2014). Handbook of Emotion Regulation. Guilford Press. \u00b7 Siegel, D. J. (1999). The Developing Mind. Guilford Press. \u00b7 Fredrickson, B. L. (2001). The broaden-and-build theory. American Psychologist." },
     ],
   },
@@ -173,7 +173,7 @@ const THEORIES = [
     frameworks: ["F1", "F12"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Emotions evolved as rapid survival signals before cognition existed. Cognition evolved as an additional layer for problems too complex for body-level responses. Social cognition — the capacity to model other minds — evolved to navigate increasingly complex group dynamics." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses evolutionary framing to explain the four-state architecture: Safety & Openness and Threat & Defence are before-awareness states — the nervous system responded this way for millions of years before cognition evolved. Strategy & Management and Power & Dominance are after-awareness states — what cognition does when recruited into the threat response." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses evolutionary framing to explain the four-state architecture: Connection and Protection are before-awareness states — the nervous system responded this way for millions of years before cognition evolved. Strategic Management and Domination are after-awareness states — what cognition does when recruited into the threat response." },
       { id: "key-sources", title: "Key Sources", content: "Cosmides, L. & Tooby, J. (1992). Cognitive adaptations for social exchange. In The Adapted Mind. \u00b7 Dunbar, R. I. M. (1998). The social brain hypothesis. Evolutionary Anthropology." },
     ],
   },
@@ -185,7 +185,7 @@ const THEORIES = [
     frameworks: ["F1", "F8", "F11"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Humanistic Psychology proposes that humans have an inherent drive toward growth and self-actualization. Rogers' organismic self describes an inner knowing that accurately perceives what the organism needs. Problems arise when conditions of worth override this inner sensing." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Emotional Somatic System — detecting, evaluating, and responding before cognition arrives. The actualising tendency is what emerges when Safety & Openness is restored and the restoration sequence can run." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Emotional Somatic System — detecting, evaluating, and responding before cognition arrives. The actualising tendency is what emerges when Connection is restored and the restoration sequence can run." },
       { id: "key-sources", title: "Key Sources", content: "Rogers, C. R. (1961). On Becoming a Person. Houghton Mifflin. \u00b7 Maslow, A. H. (1968). Toward a Psychology of Being. Van Nostrand." },
     ],
   },
@@ -233,7 +233,7 @@ const THEORIES = [
     frameworks: ["F1"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Gray's Reinforcement Sensitivity Theory proposes two systems: the Behavioral Activation System (BAS) driving approach toward rewards, and the Behavioral Inhibition System (BIS) driving avoidance of threats. These are neurobiological orientations that can become trait-like through repeated activation." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue treats approach/avoidance as the motivational substrate of the Nervous System Gradient. Safety & Openness represents balanced, flexible motivation with approach available. Strategy & Management and Power & Dominance represent chronic avoidance orientation — where the system has learned that approach is dangerous." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue treats approach/avoidance as the motivational substrate of the Nervous System Gradient. Connection represents balanced, flexible motivation with approach available. Strategic Management and Domination represent chronic avoidance orientation — where the system has learned that approach is dangerous." },
       { id: "key-sources", title: "Key Sources", content: "Gray, J. A. (1982). The Neuropsychology of Anxiety. Oxford University Press. \u00b7 Carver, C. S. & Scheier, M. F. (1998). On the Self-Regulation of Behavior. Cambridge University Press." },
     ],
   },
@@ -257,7 +257,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement. The sympathetic branch activates fight-or-flight. The oldest (dorsal vagal) produces shutdown. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Nervous System Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Strategy & Management and Power & Dominance. The gradient tracks the progression from adaptive Threat & Defence to entrenched Strategy & Management — and the capacity to return to baseline, which is the key variable predicting relational outcomes." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Nervous System Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Strategic Management and Domination. The gradient tracks the progression from adaptive Protection to entrenched Strategic Management — and the capacity to return to baseline, which is the key variable predicting relational outcomes." },
       { id: "key-sources", title: "Key Sources", content: "Porges, S. W. (2011). The Polyvagal Theory. Norton. \u00b7 Porges, S. W. (2017). The Pocket Guide to the Polyvagal Theory. Norton. \u00b7 Dana, D. (2018). The Polyvagal Theory in Therapy. Norton." },
     ],
   },
@@ -329,7 +329,7 @@ const THEORIES = [
     frameworks: ["F1", "F5", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "The stress response (HPA axis activation, cortisol release, sympathetic arousal) is designed for acute, time-limited threats. When activation becomes chronic — through sustained threat, poverty, or traumatic environments — the cumulative cost (allostatic load) damages cardiovascular, immune, metabolic, and neural systems." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the designed stress response onto Threat & Defence — acute, time-limited, and restorable. Chronic stress maps onto Chronic State Organisation. Strategy & Management and Power & Dominance are costly — they recruit the stress response chronically, burning fuel designed to last hours, not years." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the designed stress response onto Protection — acute, time-limited, and restorable. Chronic stress maps onto Chronic State Organisation. Strategic Management and Domination are costly — they recruit the stress response chronically, burning fuel designed to last hours, not years." },
       { id: "key-sources", title: "Key Sources", content: "Sapolsky, R. M. (2004). Why Zebras Don't Get Ulcers (3rd ed.). Holt. \u00b7 McEwen, B. S. (2000). Allostasis and allostatic load. Neuropsychopharmacology." },
     ],
   },
@@ -341,7 +341,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "F3", "F7", "F8", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Traumatic experiences are encoded in the body's implicit memory systems. When threat overwhelms the nervous system's capacity to respond, defensive actions (fight, flight, freeze, fawn) remain incomplete. These unfinished responses continue to organize physiology and behavior." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps trauma responses onto the Nervous System Gradient: fight and flight as active Threat & Defence, freeze and fawn as collapsed Threat & Defence or early Strategy & Management patterns. Chronic trauma calibrates the system toward Strategy & Management or Power & Dominance. The framework explains why cognitive insight alone rarely resolves trauma." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps trauma responses onto the Nervous System Gradient: fight and flight as active Protection, freeze and fawn as collapsed Protection or early Strategic Management patterns. Chronic trauma calibrates the system toward Strategic Management or Domination. The framework explains why cognitive insight alone rarely resolves trauma." },
       { id: "key-sources", title: "Key Sources", content: "van der Kolk, B. (2014). The Body Keeps the Score. Viking. \u00b7 Herman, J. (1992). Trauma and Recovery. Basic Books. \u00b7 Walker, P. (2013). Complex PTSD: From Surviving to Thriving. Azure Coyote." },
     ],
   },
@@ -529,7 +529,7 @@ const globalModels = [
     author: "Robert Plutchik",
     coreContribution: "Maps 8 primary emotions and shows how they combine into complex feelings — one of the most widely used tools for teaching emotional vocabulary.",
     tegBlueAdds: [
-      "Places each emotion inside the nervous system gradient (Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance) so the same emotion reads differently depending on the state it emerges from",
+      "Places each emotion inside the nervous system gradient (Connection, Protection, Strategic Management, Domination) so the same emotion reads differently depending on the state it emerges from",
       "Adds trauma-informed gradients within each emotion — distinguishing hurt, neglect, abuse, and malicious intent",
       "Connects emotional identification to relational repair, not just classification",
     ],
@@ -541,7 +541,7 @@ const globalModels = [
     author: "Marshall Rosenberg",
     coreContribution: "Provides a clear language structure — observation, feeling, need, request — that promotes empathy and reduces blame in conflict.",
     tegBlueAdds: [
-      "Maps the conditions under which NVC works well (Safety & Openness / Threat & Defence) and where it breaks down (Strategy & Management / Power & Dominance dynamics)",
+      "Maps the conditions under which NVC works well (Connection / Protection) and where it breaks down (Strategic Management / Domination dynamics)",
       "Adds emotional gradients that help distinguish discomfort from genuine harm",
       "Provides visual tools that make feelings and patterns visible — helpful for neurodivergent users and people in survival states",
     ],
@@ -569,13 +569,13 @@ const globalModels = [
       "Extends physiological states into observable patterns of connection, defense, manipulation, and oppression",
       "Bridges somatic awareness with relational repair through visual, accessible tools",
       "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
-      "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the nervous system in Threat & Defence",
+      "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the nervous system in Protection",
       "F6 uses state-dependent perception to explain how nervous system state determines what is perceived — bias as neuroception operating at the cognitive level",
-      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Interpersonal Affect Perception (RE) toward management while collapsing Affective Resonance (ER), producing the capacity configuration that most reliably mimics Safety & Openness",
+      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Interpersonal Affect Perception (RE) toward management while collapsing Affective Resonance (ER), producing the capacity configuration that most reliably mimics Connection",
       "F8 maps how ventral vagal safety enables capacity development — felt safety as the first of five conditions for repair, and why cognitive insight without nervous system regulation cannot produce lasting change",
-      "F9 uses neuroception to explain System Mismatch — how the nervous system responds to environmental match or mismatch, why neurodivergent nervous systems are pushed toward Threat & Defence by structural design rather than individual pathology",
+      "F9 uses neuroception to explain System Mismatch — how the nervous system responds to environmental match or mismatch, why neurodivergent nervous systems are pushed toward Protection by structural design rather than individual pathology",
       "F10 maps co-regulation as a generational transmission pathway — the adult's nervous system functions as the child's external regulator, transmitting regulatory capacity through nervous system synchronization",
-      "F11 uses state-dependent processing to explain paradox holding capacity — nervous system state determines whether contradictions can be held (Safety & Openness), simplified (Threat & Defence), managed by narrative (Strategy & Management), or erased (Power & Dominance)",
+      "F11 uses state-dependent processing to explain paradox holding capacity — nervous system state determines whether contradictions can be held (Connection), simplified (Protection), managed by narrative (Strategic Management), or erased (Domination)",
     ],
     frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"],
   },
@@ -598,7 +598,7 @@ const globalModels = [
     coreContribution: "Groundbreaking attempt to describe inner psychological conflict through id, ego, and superego — recognized that much of the self works unconsciously.",
     tegBlueAdds: [
       "Reframes ego as shaped by survival strategies rather than inherent structure",
-      "Expands beyond three parts into a continuous gradient of states: Safety & Openness, Threat & Defence, Strategy & Management, Power & Dominance",
+      "Expands beyond three parts into a continuous gradient of states: Connection, Protection, Strategic Management, Domination",
       "Connects intrapsychic patterns to relational dynamics and systemic harm",
     ],
     frameworks: ["F3", "F5"],
