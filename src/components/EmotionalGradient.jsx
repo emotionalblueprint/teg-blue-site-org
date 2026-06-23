@@ -88,10 +88,34 @@ export default function EmotionalGradient() {
   const [mounted, setMounted] = useState(false)
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
   const [chronic, setChronic] = useState(false)
+  const [compactSticky, setCompactSticky] = useState(false)
   const barRef = useRef(null)
+  const readoutRef = useRef(null)
   const dragging = useRef(false)
 
   useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    let raf = null
+    const updateCompact = () => {
+      raf = null
+      const readout = readoutRef.current
+      if (!readout) return
+      const mobile = window.matchMedia('(max-width: 720px)').matches
+      const readoutTop = readout.getBoundingClientRect().top
+      setCompactSticky(mobile && readoutTop < 320)
+    }
+    const schedule = () => {
+      if (raf == null) raf = window.requestAnimationFrame(updateCompact)
+    }
+    updateCompact()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    return () => {
+      if (raf != null) window.cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+    }
+  }, [])
 
   const position = positions[posIndex]
   const isShutdown = posIndex === SHUT
@@ -226,7 +250,7 @@ export default function EmotionalGradient() {
         '--readout-detail-border': tile.detailBorder,
       }}
     >
-      <div className="gradient-sticky">
+      <div className={`gradient-sticky${compactSticky ? ' is-compact' : ''}`}>
         {/* state ribbon — current position stays in view while reading */}
         <div className="gradient-toolbar">
           <div className="sticky-state-title">
@@ -240,8 +264,9 @@ export default function EmotionalGradient() {
 
         {/* gradient bar + detached Shutdown */}
         <div className="gradient-track-shell">
-        <div style={{ display: 'flex', alignItems: 'stretch', gap: 12 }}>
+        <div className="gradient-track-row" style={{ display: 'flex', alignItems: 'stretch', gap: 12 }}>
           <div
+            className="gradient-bar-hitbox"
             style={{ position: 'relative', flex: 1, cursor: 'pointer', userSelect: 'none', padding: '12px 0', touchAction: 'none' }}
             onPointerDown={(e) => {
               dragging.current = true
@@ -255,7 +280,7 @@ export default function EmotionalGradient() {
               dragging.current = false
             }}
           >
-            <div ref={barRef} style={{ position: 'relative', height: 14, borderRadius: 999, background: barBg, boxShadow: panelLight ? 'inset 0 0 0 1px rgba(0,0,0,0.06)' : 'none' }}>
+            <div ref={barRef} className="gradient-bar" style={{ position: 'relative', height: 14, borderRadius: 999, background: barBg, boxShadow: panelLight ? 'inset 0 0 0 1px rgba(0,0,0,0.06)' : 'none' }}>
               {Array.from({ length: G - 1 }, (_, i) => (
                 <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: chronic ? 2 : 1, transform: 'translateX(-50%)', left: `${((i + 1) / G) * 100}%`, background: chronic ? (panelLight ? 'rgba(255,255,255,0.72)' : 'rgba(10,13,20,0.42)') : (panelLight ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.3)') }} />
               ))}
@@ -279,6 +304,7 @@ export default function EmotionalGradient() {
               ))}
               {!isShutdown && (
                 <div
+                  className="gradient-needle"
                   style={{
                     position: 'absolute',
                     top: '50%',
@@ -298,10 +324,11 @@ export default function EmotionalGradient() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
-            <div style={{ height: 20, borderLeft: `1px dashed ${panel.line}` }} />
-            <button onClick={() => setPosIndex(SHUT)} aria-label="Shutdown — off-gradient" style={{ padding: '12px 0', background: 'transparent', border: 'none', cursor: 'pointer' }}>
+          <div className="gradient-shutdown-track" style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
+            <div className="gradient-shutdown-divider" style={{ height: 20, borderLeft: `1px dashed ${panel.line}` }} />
+            <button className="gradient-shutdown-button" onClick={() => setPosIndex(SHUT)} aria-label="Shutdown — off-gradient" style={{ padding: '12px 0', background: 'transparent', border: 'none', cursor: 'pointer' }}>
               <div
+                className="gradient-shutdown-pill"
                 style={{
                   height: 14,
                   width: 48,
@@ -316,7 +343,7 @@ export default function EmotionalGradient() {
         </div>
 
         {/* labels */}
-        <div style={{ display: 'flex', gap: 12, marginTop: 10 }}>
+        <div className="gradient-track-labels" style={{ display: 'flex', gap: 12, marginTop: 10 }}>
           <div style={{ display: 'flex', flex: 1 }}>
             {GRAD.map((p, i) => (
               <button
@@ -387,7 +414,7 @@ export default function EmotionalGradient() {
         </p>
 
         {/* configuration readout */}
-        <div className="state-readout">
+        <div ref={readoutRef} className="state-readout">
           <div className="readout-head">
             <span className="readout-kicker">State</span>
             <span className="readout-rule" aria-hidden="true" />
@@ -410,6 +437,7 @@ export default function EmotionalGradient() {
           background: var(--gradient-sticky-bg);
           backdrop-filter: blur(14px);
           box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+          transition: border-radius 180ms ease, box-shadow 180ms ease, margin-bottom 180ms ease;
         }
 
         .gradient-toolbar {
@@ -703,6 +731,102 @@ export default function EmotionalGradient() {
           .readout-science {
             margin-left: 0;
           }
+
+          .gradient-sticky.is-compact {
+            border-radius: 0;
+            margin-bottom: 12px;
+            box-shadow:
+              0 10px 24px rgba(0, 0, 0, 0.2),
+              0 16px 0 var(--gradient-sticky-bg);
+          }
+
+          .gradient-sticky.is-compact .gradient-toolbar {
+            align-items: center;
+            padding: 8px 12px 0;
+            gap: 6px;
+          }
+
+          .gradient-sticky.is-compact .sticky-state-title {
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+          }
+
+          .gradient-sticky.is-compact .state-pill {
+            padding: 4px 7px !important;
+          }
+
+          .gradient-sticky.is-compact .state-pill-dot {
+            width: 7px !important;
+            height: 7px !important;
+          }
+
+          .gradient-sticky.is-compact .state-pill-text {
+            font-size: 8.5px !important;
+            letter-spacing: 0.045em !important;
+          }
+
+          .gradient-sticky.is-compact .sticky-state-name {
+            max-width: min(38vw, 144px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 12px;
+          }
+
+          .gradient-sticky.is-compact .chronic-toggle {
+            gap: 6px !important;
+            padding: 4px 8px !important;
+            font-size: 11px !important;
+          }
+
+          .gradient-sticky.is-compact .mode-caption {
+            display: none;
+          }
+
+          .gradient-sticky.is-compact .gradient-track-shell {
+            padding: 7px 12px 8px;
+          }
+
+          .gradient-sticky.is-compact .gradient-track-row {
+            gap: 8px !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-bar-hitbox {
+            padding: 5px 0 !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-bar {
+            height: 8px !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-needle {
+            width: 18px !important;
+            height: 18px !important;
+            border-width: 2px !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-shutdown-track {
+            gap: 8px !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-shutdown-divider {
+            height: 14px !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-shutdown-button {
+            padding: 5px 0 !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-shutdown-pill {
+            width: 32px !important;
+            height: 8px !important;
+            border-width: 1px !important;
+          }
+
+          .gradient-sticky.is-compact .gradient-track-labels {
+            display: none !important;
+          }
         }
       `}</style>
     </section>
@@ -712,6 +836,7 @@ export default function EmotionalGradient() {
 function ChronicToggle({ chronic, onChange }) {
   return (
     <button
+      className="chronic-toggle"
       onClick={() => onChange(!chronic)}
       role="switch"
       aria-checked={chronic}
