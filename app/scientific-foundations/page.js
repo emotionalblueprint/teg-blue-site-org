@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
@@ -21,28 +20,11 @@ const FAQ_ITEMS = [
   },
 ];
 
-// ─── FRAMEWORK URL MAPPING ──────────────────────────────────────
-const FRAMEWORK_URLS = {
-  F1: "/framework/f1-emotional-gradient",
-  F2: "/framework/f2-awareness-calibration",
-  F3: "/framework/f3-false-coherence",
-  F4: "/framework/f4-rules-regulate",
-  F5: "/framework/f5-worth-hierarchies",
-  F6: "/framework/f6-bias-regulates",
-  F7: "/framework/f7-domination-regulates",
-  F8: "/framework/f8-repairing-awareness",
-  F9: "/framework/f9-neurodivergence-variation",
-  F10: "/framework/f10-generational-bridges",
-  F11: "/framework/f11-emotional-paradoxes",
-  F12: "/framework/f12-two-information-systems",
-  M1: "/model/m1-emotions-as-signals",
-  M2: "/model/m2-nervous-system-states",
-  M4: "/model/m4-awareness-capacities",
-};
-
-function getFrameworkUrl(tag) {
-  return FRAMEWORK_URLS[tag] || "/frameworks-map";
-}
+// Framework/model pill links (F1–F12, M1/M2/M4 → /framework/… and /model/…) were
+// removed for the single-page phase: those targets are still gated, so the pills now
+// render as non-clickable <span> badges. Phase 2 (unlocking /framework/) + Phase 3
+// (/model/) must restore them as <Link href={getFrameworkUrl(f)}> + re-add the
+// FRAMEWORK_URLS map + the next/link import. Plan: _plans/org/2026-06-23-org-repopulation-plan.md
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
@@ -841,17 +823,6 @@ export default function ScientificFoundationsPage() {
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
             These research traditions developed independently, across separate disciplines. TEG-Blue proposes that they describe parts of the same underlying pattern: when the body cannot complete biological restoration, the nervous system organizes around substitutes — cognition, rules, hierarchies, bias, domination. Each source helps make one part of this sequence visible.
           </p>
-          <Link
-            href="/frameworks-map#the-regulation-thread"
-            style={{
-              fontSize: 13,
-              color: SPECTRUM.cobalt,
-              textDecoration: "none",
-              fontWeight: 500,
-            }}
-          >
-            See the Regulation Thread →
-          </Link>
         </div>
 
         {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
@@ -1121,28 +1092,6 @@ export default function ScientificFoundationsPage() {
           <AuthorBlock />
         </section>
 
-        <footer
-          style={{
-            paddingTop: 24,
-            borderTop: `1px solid ${BORDER.default}`,
-            textAlign: "center",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
-            <Link
-              href="/methodology"
-              style={{ fontSize: 13, color: TEXT.muted, textDecoration: "none" }}
-            >
-              Methodology
-            </Link>
-            <Link
-              href="/collaborate"
-              style={{ fontSize: 13, color: TEXT.muted, textDecoration: "none" }}
-            >
-              Collaborate
-            </Link>
-          </div>
-        </footer>
       </PageLayout>
 
       <SiteFooter />
@@ -1284,9 +1233,8 @@ function ModelCard({ model }) {
           <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
           <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
             {model.frameworks.map((f) => (
-              <Link
+              <span
                 key={f}
-                href={getFrameworkUrl(f)}
                 style={{
                   fontSize: 10,
                   fontWeight: 600,
@@ -1295,11 +1243,10 @@ function ModelCard({ model }) {
                   borderRadius: 3,
                   background: hexToRgba(SPECTRUM.cobalt, 0.12),
                   color: SPECTRUM.cobalt,
-                  textDecoration: "none",
                 }}
               >
                 {f}
-              </Link>
+              </span>
             ))}
           </div>
         </div>
@@ -1437,9 +1384,8 @@ function ModelCard({ model }) {
           >
             <span style={{ fontSize: 12, color: TEXT.muted }}>Appears in:</span>
             {model.frameworks.map((f) => (
-              <Link
+              <span
                 key={f}
-                href="/frameworks-map"
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
@@ -1448,11 +1394,10 @@ function ModelCard({ model }) {
                   borderRadius: 4,
                   background: hexToRgba(SPECTRUM.cobalt, 0.1),
                   color: SPECTRUM.cobalt,
-                  textDecoration: "none",
                 }}
               >
                 {f}
-              </Link>
+              </span>
             ))}
           </div>
         </div>
@@ -1521,9 +1466,8 @@ function ExpandableTheoryCard({ theory }) {
           {theory.frameworks && theory.frameworks.length > 0 && (
             <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
               {theory.frameworks.map((f) => (
-                <Link
+                <span
                   key={f}
-                  href={getFrameworkUrl(f)}
                   style={{
                     fontSize: 10,
                     fontWeight: 600,
@@ -1532,11 +1476,10 @@ function ExpandableTheoryCard({ theory }) {
                     borderRadius: 3,
                     background: hexToRgba(SPECTRUM.cobalt, 0.12),
                     color: SPECTRUM.cobalt,
-                    textDecoration: "none",
                   }}
                 >
                   {f}
-                </Link>
+                </span>
               ))}
             </div>
           )}
@@ -1711,9 +1654,8 @@ function ExpandableTheoryCard({ theory }) {
               <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                 <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
                 {theory.frameworks.map((f) => (
-                  <Link
+                  <span
                     key={f}
-                    href={getFrameworkUrl(f)}
                     style={{
                       fontSize: 11,
                       fontWeight: 600,
@@ -1722,11 +1664,10 @@ function ExpandableTheoryCard({ theory }) {
                       borderRadius: 4,
                       background: hexToRgba(SPECTRUM.cobalt, 0.1),
                       color: SPECTRUM.cobalt,
-                      textDecoration: "none",
                     }}
                   >
                     {f}
-                  </Link>
+                  </span>
                 ))}
               </div>
             </div>
@@ -1777,10 +1718,7 @@ function ValidationMethod() {
           The architecture was developed first — through independent research, observation, and
           cross-disciplinary reading. Once the structure was established, AI research tools
           (Claude, Perplexity, Microsoft Copilot) were used to systematically identify which
-          established theories align with each framework.{" "}
-          <Link href="/methodology" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-            Full methodology →
-          </Link>
+          established theories align with each framework.
         </p>
       </div>
 
@@ -1928,10 +1866,7 @@ function ValidationMethod() {
         <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px 0" }}>
           We are preparing for pre-registration of the core testable claims, with open data
           and open methodology. We explicitly invite independent replication, correction, and
-          critique.{" "}
-          <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-            Collaborate with us →
-          </Link>
+          critique.
         </p>
       </div>
     </section>

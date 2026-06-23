@@ -334,7 +334,7 @@ export default function PublicationsPage() {
             How to cite
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            See the <Link href="/citations" style={{ color: SPECTRUM.blue }}>Citations page</Link> for full citation formats and guidelines.
+            Cite the validation study by its DOI: 10.5281/zenodo.19472342.
           </p>
         </section>
 
@@ -381,12 +381,6 @@ export default function PublicationsPage() {
 
         {/* Cross-site link */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
-          <Link href="/citations" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            How to Cite →
-          </Link>
-          <Link href="/collaborate" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            Collaborate →
-          </Link>
           <a
             href="https://teg-blue.com/emotional-tools"
             target="_blank"

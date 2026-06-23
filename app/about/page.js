@@ -302,10 +302,7 @@ export default function AboutPage() {
           </div>
 
           <p style={{ ...bodyStyle, marginTop: 12 }}>
-            Full details and four research directions at{" "}
-            <Link href="/research-entry" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Research Entry
-            </Link>.
+            Full details and four research directions are documented in the research entry point.
           </p>
         </section>
 
@@ -429,11 +426,8 @@ export default function AboutPage() {
         {/* Navigation */}
         <section style={{ marginBottom: 32 }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-            <NavLink href="/research-entry" label="Research Entry" />
-            <NavLink href="/methodology" label="Methodology" />
             <NavLink href="/publications" label="Publications" />
             <NavLink href="/scientific-foundations" label="Established Research" />
-            <NavLink href="/collaborate" label="Collaborate" />
             <a
               href="https://teg-blue.com/emotional-tools"
               target="_blank"

@@ -18,11 +18,18 @@ const INDEXNOW_ENDPOINTS = [
   'https://api.indexnow.org/indexnow', // Forwards to all participating engines
 ]
 
-// All pages to notify — comprehensive list matching sitemap.js
+// The gate's allowlist (live-paths.js) is the single source of truth for what's public.
+const { isLive } = require('../src/lib/live-paths.js')
+
+// Universe of known routes. Only those currently live (per the gate) are actually
+// submitted below — staged routes stay out of IndexNow until they unlock. Keep this
+// roughly in sync with sitemap.js's route list.
 const ALL_PAGES = [
   // Core pages
   '/',
   '/publications',
+  '/publications/validation-study',
+  '/publications/architecture-paper',
   '/frameworks-map',
   '/research-entry',
   '/foundations',
@@ -67,7 +74,8 @@ const ALL_PAGES = [
 ]
 
 async function notifyIndexNow(dryRun = false) {
-  const urls = ALL_PAGES.map(path => `${BASE_URL}${path}`)
+  // Only ping search engines about routes that are actually live (single-page gate).
+  const urls = ALL_PAGES.filter(isLive).map(path => `${BASE_URL}${path}`)
 
   console.log(`\n📢 IndexNow Notification`)
   console.log(`   URLs to submit: ${urls.length}`)

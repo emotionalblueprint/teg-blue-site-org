@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
@@ -1297,12 +1296,6 @@ export default function GlossaryPage() {
 
         {/* Cross-site link */}
         <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 16 }}>
-          <Link href="/emotional-somatic-cycle" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            The Emotional-Somatic Cycle →
-          </Link>
-          <Link href="/frameworks-map" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            12 Frameworks →
-          </Link>
           <a
             href="https://teg-blue.com/glossary"
             target="_blank"
