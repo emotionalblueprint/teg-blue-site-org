@@ -366,6 +366,30 @@ export default function EmotionalGradient() {
             </button>
           </div>
         </div>
+
+        <div className="mobile-state-list" aria-label="State selector">
+          {positions.map((p, i) => {
+            const selected = i === posIndex
+            const stateColor = labelColor(i)
+            return (
+              <button
+                key={p.id}
+                className={`mobile-state-option${selected ? ' is-active' : ''}`}
+                onClick={() => setPosIndex(i)}
+                aria-label={`State ${p.code}: ${p.atlasLabel}`}
+                aria-pressed={selected}
+                style={{
+                  '--state-option-color': stateColor,
+                  '--state-option-bg': hexToRgba(stateColor, panelLight ? 0.1 : 0.14),
+                  '--state-option-border': hexToRgba(stateColor, panelLight ? 0.34 : 0.4),
+                }}
+              >
+                <span className="mobile-state-code">{p.code}</span>
+                <span className="mobile-state-label">{p.atlasLabel}</span>
+              </button>
+            )
+          })}
+        </div>
       </div>
       </div>
 
@@ -474,6 +498,10 @@ export default function EmotionalGradient() {
 
         .gradient-track-shell {
           padding: 16px 24px 18px;
+        }
+
+        .mobile-state-list {
+          display: none;
         }
 
         .selected-state {
@@ -707,6 +735,63 @@ export default function EmotionalGradient() {
             padding: 10px 18px 12px;
           }
 
+          .gradient-track-labels {
+            display: none !important;
+          }
+
+          .mobile-state-list {
+            display: grid;
+            gap: 4px;
+            margin-top: 10px;
+          }
+
+          .mobile-state-option {
+            display: grid;
+            width: 100%;
+            min-height: 31px;
+            grid-template-columns: 42px minmax(0, 1fr);
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            background: transparent;
+            color: var(--readout-soft);
+            cursor: pointer;
+            padding: 5px 9px;
+            text-align: left;
+            transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+          }
+
+          .mobile-state-option.is-active {
+            border-color: var(--state-option-border);
+            background: var(--state-option-bg);
+            color: var(--readout-ink);
+          }
+
+          .mobile-state-option:focus-visible {
+            outline: 2px solid var(--state-option-color);
+            outline-offset: 2px;
+          }
+
+          .mobile-state-code {
+            color: var(--state-option-color);
+            font-family: var(--font-diagram), monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1;
+          }
+
+          .mobile-state-label {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 12px;
+            font-weight: 620;
+            line-height: 1.2;
+          }
+
           .selected-state {
             padding: 24px 18px 28px;
           }
@@ -825,6 +910,10 @@ export default function EmotionalGradient() {
           }
 
           .gradient-sticky.is-compact .gradient-track-labels {
+            display: none !important;
+          }
+
+          .gradient-sticky.is-compact .mobile-state-list {
             display: none !important;
           }
         }
