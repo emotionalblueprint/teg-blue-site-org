@@ -172,7 +172,6 @@ export default function EmotionalGradient() {
       <div key={id} className="readout-row">
         <div className="readout-row-main">
           <span className="readout-label">
-            <span className="readout-label-mark" aria-hidden="true" />
             {card.label}
           </span>
           <p className="readout-value">{text}</p>
@@ -550,28 +549,18 @@ export default function EmotionalGradient() {
 
         .readout-row-main {
           display: grid;
-          grid-template-columns: minmax(116px, 148px) minmax(0, 1fr);
-          gap: 18px;
-          align-items: baseline;
+          grid-template-columns: 1fr;
+          gap: 6px;
+          align-items: start;
         }
 
         .readout-label {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
           color: var(--readout-accent);
           font-size: 12px;
           font-weight: 700;
           line-height: 1.35;
-        }
-
-        .readout-label-mark {
-          width: 6px;
-          height: 6px;
-          flex: 0 0 auto;
-          border-radius: 50%;
-          background: var(--readout-dot);
-          box-shadow: 0 0 0 4px color-mix(in srgb, var(--readout-dot) 12%, transparent);
         }
 
         .readout-value {
@@ -583,14 +572,14 @@ export default function EmotionalGradient() {
         }
 
         .readout-description {
-          margin: 8px 0 0 166px;
+          margin: 7px 0 0;
           color: var(--readout-soft);
           font-size: 12.75px;
           line-height: 1.62;
         }
 
         .readout-science {
-          margin: 9px 0 0 166px;
+          margin: 9px 0 0;
           border: 0 !important;
           background: transparent !important;
         }
@@ -708,11 +697,6 @@ export default function EmotionalGradient() {
 
           .readout-note {
             display: none;
-          }
-
-          .readout-row-main {
-            grid-template-columns: 1fr;
-            gap: 5px;
           }
 
           .readout-description,
