@@ -99,9 +99,11 @@ export default function EmotionalGradient() {
   const accent = colorOf(posIndex)
 
   const isDark = mounted ? resolvedTheme !== 'light' : true
-  const baselineWhite = position.id === 'baseline' && !chronic
   const panelLight = !isDark
-  const tileLight = panelLight || baselineWhite
+  const isAcuteBaseline = position.id === 'baseline' && !chronic
+  const restingText = panelLight ? '#475569' : '#e2e8f0'
+  const restingDot = panelLight ? '#94a3b8' : '#cbd5e1'
+  const tileLight = panelLight
 
   // panel = the instrument surface (follows theme via CSS-var tokens)
   const panel = {
@@ -109,24 +111,29 @@ export default function EmotionalGradient() {
     soft: TEXT.secondary,
     faint: TEXT.muted,
     line: BORDER.default,
-    cText: panelLight ? ink(accent) : accent,
-    cDot: panelLight ? swatch(accent) : accent,
+    cText: isAcuteBaseline ? restingText : (panelLight ? ink(accent) : accent),
+    cDot: isAcuteBaseline ? restingDot : (panelLight ? swatch(accent) : accent),
   }
-  // tile = the readout group cards (Baseline forces white even in dark mode)
-  const tileCDot = tileLight ? swatch(accent) : accent
-  const tileCText = tileLight ? ink(accent) : accent
+  // tile = the readout groups
+  const tileCDot = isAcuteBaseline ? restingDot : (tileLight ? swatch(accent) : accent)
+  const tileCText = isAcuteBaseline ? restingText : (tileLight ? ink(accent) : accent)
   const tile = {
-    cardBg: baselineWhite ? '#ffffff' : hexToRgba(tileCDot, 0.06),
+    cardBg: hexToRgba(tileCDot, 0.06),
     ink: tileLight ? '#1c1917' : '#f1f5f9',
     soft: tileLight ? 'rgba(28,25,23,0.6)' : 'rgba(241,245,249,0.6)',
     cText: tileCText,
     cDot: tileCDot,
     line: hexToRgba(tileCDot, 0.2),
     divider: hexToRgba(tileCDot, tileLight ? 0.16 : 0.14),
-    detailBg: baselineWhite ? hexToRgba(tileCDot, 0.06) : hexToRgba(tileCDot, isDark ? 0.09 : 0.08),
+    detailBg: hexToRgba(tileCDot, isDark ? 0.09 : 0.08),
     detailBorder: hexToRgba(tileCDot, 0.22),
   }
 
+  const labelColor = (i) => {
+    const selectedAcuteBaseline = i === 0 && !chronic
+    if (selectedAcuteBaseline) return restingText
+    return panelLight ? ink(colorOf(i)) : colorOf(i)
+  }
   const barStop = (i) => (panelLight ? swatch(colorOf(i)) : colorOf(i))
   const shutColor = panelLight ? swatch(colorOf(SHUT)) : colorOf(SHUT)
   const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${GRAD.map(
@@ -160,6 +167,7 @@ export default function EmotionalGradient() {
     const card = cardById[id]
     const reading = content[id][position.id]
     const text = chronic ? reading.c : reading.a
+    const description = card.descriptions?.[position.id]?.[chronic ? 'c' : 'a'] || card.description
     return (
       <div key={id} className="readout-row">
         <div className="readout-row-main">
@@ -169,7 +177,7 @@ export default function EmotionalGradient() {
           </span>
           <p className="readout-value">{text}</p>
         </div>
-        <p className="readout-description">{card.description}</p>
+        <p className="readout-description">{description}</p>
         <details className="readout-science">
           <summary>
             <span>Grounding science</span>
@@ -223,7 +231,7 @@ export default function EmotionalGradient() {
         {/* state ribbon — current position stays in view while reading */}
         <div className="gradient-toolbar">
           <div className="sticky-state-title">
-            <Badge color={chronic ? WARM : accent} light={panelLight}>{chronic ? 'Chronic' : 'Fluid'} · State {position.code}</Badge>
+            <Badge color={chronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{chronic ? 'Chronic' : 'Fluid'} · State {position.code}</Badge>
             <span className="sticky-state-name">{position.mode}</span>
           </div>
           <ChronicToggle chronic={chronic} onChange={setChronic} />
@@ -317,7 +325,7 @@ export default function EmotionalGradient() {
                 onClick={() => setPosIndex(i)}
                 aria-label={`State ${p.code}: ${p.mode}`}
                 title={`State ${p.code}: ${p.mode}`}
-                style={{ flex: 1, minHeight: 34, padding: '0 2px', textAlign: 'center', background: 'transparent', border: 'none', cursor: 'pointer', color: i === posIndex ? (panelLight ? ink(colorOf(i)) : colorOf(i)) : panel.faint }}
+                style={{ flex: 1, minHeight: 34, padding: '0 2px', textAlign: 'center', background: 'transparent', border: 'none', cursor: 'pointer', color: i === posIndex ? labelColor(i) : panel.faint }}
               >
                 <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, letterSpacing: '0.08em' }}>{p.code}</span>
                 <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, fontFamily: FONT.display }}>{p.mode}</span>

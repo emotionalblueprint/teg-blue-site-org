@@ -138,7 +138,43 @@ export const cards = [
   { id: 'empathy', label: 'Empathy', description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
   { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
   { id: 'time', label: 'Time horizon', description: 'The state changes how much time the system can hold: in safety, past, present, and future can stay connected; under threat, time compresses toward the immediate problem or freezes.', science: 'Cognitive Science + Stress Physiology', source: 'M2-C18' },
-  { id: 'emotions', label: 'Emotions / signals', description: 'The state shapes which signal family comes online: safety produces signals for bonding and repair; threat produces signals for protection, control, or last-resort survival.', science: 'Affective Neuroscience (Panksepp, Damasio, Barrett, LeDoux) + Emotion Science', source: 'M1' },
+  {
+    id: 'emotions',
+    label: 'Emotions / signals',
+    description: 'The emotion row shows what kind of signal the system is using to solve the situation.',
+    descriptions: {
+      baseline: {
+        a: 'The point here is not a dominant emotion; it is the absence of a problem signal. Feeling can stay quiet because nothing needs defending, pursuing, or repairing.',
+        c: 'What looks like rest is not fully quiet. An unresolved signal keeps running underneath, so the body never drops all the way into restoration.',
+      },
+      connection: {
+        a: 'Signals organize toward contact. Warmth, trust, hope, and affection make approach, bonding, and repair easier.',
+        c: 'Connection is present but not settled. Warmth is mixed with fear of losing safety, so longing and vigilance travel together.',
+      },
+      calibration: {
+        a: 'The signal is a relational question: did something change, and can the bond be repaired? Unease, shame, sadness, and fear all point attention back to safety.',
+        c: 'The question never resolves. Grief and watchfulness fuse together, so the system keeps checking for rupture even when the moment has moved on.',
+      },
+      protection: {
+        a: 'The signal turns defensive. Fear, anger, and disgust push the system to create distance, set a boundary, escape, or fight back.',
+        c: 'Defence no longer comes and goes cleanly. Closeness itself can trigger threat, so protective emotion stays tangled with the wish to connect.',
+      },
+      strategic: {
+        a: 'Emotion is held under pressure rather than expressed directly. Anxiety and tension become management signals: watch, predict, contain, stay ahead.',
+        c: 'Feeling gets flattened into control. The system still carries pressure, but the original hurt or fear is harder to find.',
+      },
+      domination: {
+        a: 'The signal has reached survival pitch. Rage and force organize the system around overpowering what feels dangerous.',
+        c: 'The signal hardens into a destructive operating style. Harm can start to feel justified because power has become the route to safety.',
+      },
+      shutdown: {
+        a: 'The signal system is going offline. Instead of producing a clear emotion, the body conserves, goes flat, and reduces contact.',
+        c: 'Numbness becomes the familiar state. Signals may still exist underneath, but they are difficult to feel, name, or use for repair.',
+      },
+    },
+    science: 'Affective Neuroscience (Panksepp, Damasio, Barrett, LeDoux) + Emotion Science',
+    source: 'M1',
+  },
   { id: 'behaviour', label: 'Behaviour / response', description: 'The state narrows or opens the action menu: in safety, the system can approach, cooperate, and repair; under threat, it moves toward defending, managing, overpowering, or withdrawing.', science: 'Polyvagal (mobilise / immobilise) + Trauma Research (defence)', source: 'M3' },
   { id: 'repair', label: 'Repair', description: 'The state determines whether activation can complete: safety lets the system settle and reconnect; threat keeps protection first, so repair has to wait until enough safety returns.', science: 'Trauma Research — completion (Levine, van der Kolk) + Attachment (Bowlby)', source: 'M3 · ESC' },
   { id: 'rush', label: 'Rush (tempo)', description: "The state sets the system's pace: safety can move at the speed of the situation; threat accelerates into urgency or pressured management; shutdown slows time toward freeze.", science: 'Tachypsychia + hurry sickness / hyperarousal — Stress Physiology + Cognitive Science', source: 'derived · M2 + C18' },
