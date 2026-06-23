@@ -1,4 +1,5 @@
 import { loadAllContent } from '@/src/lib/content'
+import { isLive } from '@/src/lib/live-paths'
 
 // Known last-modified dates for static pages (YYYY-MM-DD)
 // Update these when making significant content changes
@@ -273,5 +274,10 @@ export default function sitemap() {
       priority: 0.8,
     }))
 
-  return [...staticPages, ...contentPages]
+  // Only advertise pages that are actually live (single-page gate). As routes are
+  // added to LIVE_PATHS / LIVE_PREFIXES, they re-enter the sitemap automatically
+  // with the metadata already defined above.
+  return [...staticPages, ...contentPages].filter((entry) =>
+    isLive(entry.url.replace(baseUrl, '') || '/')
+  )
 }

@@ -1,23 +1,13 @@
 import { NextResponse } from "next/server";
+import { isLive } from "./src/lib/live-paths";
 
-const ALLOWED_PREFIXES = [
-  "/api/",
-  "/_next/",
-  "/opengraph-image", // home share image — must serve through the single-page gate
-  "/tegblue8a4f2c9d7e6b5a3f.txt",
-  "/feed.xml",
-];
-
-function shouldShowMaintenancePage(path) {
-  if (path === "/") return false;
-  if (path.includes(".")) return false;
-  return !ALLOWED_PREFIXES.some((prefix) => path.startsWith(prefix));
-}
-
+// Single-page gate (allowlist model): serve only the live routes defined in
+// src/lib/live-paths.js; everything else 307-redirects to the home while the rest
+// of the platform is staged. Repopulate by adding paths there — additive and safe.
 export function middleware(request) {
   const path = request.nextUrl.pathname;
 
-  if (!shouldShowMaintenancePage(path)) {
+  if (isLive(path)) {
     return NextResponse.next();
   }
 
