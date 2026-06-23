@@ -64,6 +64,7 @@ function Badge({ color, light, children }) {
   const txt = light ? ink(color) : color
   return (
     <span
+      className="state-pill"
       style={{
         display: 'inline-flex',
         alignItems: 'center',
@@ -74,8 +75,8 @@ function Badge({ color, light, children }) {
         border: `1px solid ${hexToRgba(dot, 0.3)}`,
       }}
     >
-      <span style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: dot }} />
-      <span style={{ fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: txt }}>
+      <span className="state-pill-dot" style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: dot }} />
+      <span className="state-pill-text" style={{ fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: txt }}>
         {children}
       </span>
     </span>
@@ -87,7 +88,6 @@ export default function EmotionalGradient() {
   const [mounted, setMounted] = useState(false)
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
   const [chronic, setChronic] = useState(false)
-  const [openCard, setOpenCard] = useState(null)
   const barRef = useRef(null)
   const dragging = useRef(false)
 
@@ -132,7 +132,10 @@ export default function EmotionalGradient() {
   const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${GRAD.map(
     (_, i) => `${barStop(i)} ${(((i + 0.5) / G) * 100).toFixed(2)}%`,
   ).join(', ')}, ${barStop(G - 1)} 100%)`
-  const barBg = chronic ? (panelLight ? '#e7e5e4' : '#1e2742') : barGradient
+  const barBg = barGradient
+  const modeCaption = chronic
+    ? 'Chronic — this state has become hard to leave; the gradient pulls into fixed points instead of flowing.'
+    : 'Fluid — a live response the system can move through, complete, and leave again.'
 
   function setFromClientX(clientX) {
     const el = barRef.current
@@ -150,15 +153,6 @@ export default function EmotionalGradient() {
       setPosIndex((i) => Math.max(i - 1, 0))
     }
   }
-  useEffect(() => {
-    if (!openCard) return
-    const onKey = (e) => {
-      if (e.key === 'Escape') setOpenCard(null)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [openCard])
-
   const stateText = chronic ? content.state[position.id].c : content.state[position.id].a
   const familiarLabel = chronic && position.familiarChronic ? position.familiarChronic : position.familiar
 
@@ -166,56 +160,36 @@ export default function EmotionalGradient() {
     const card = cardById[id]
     const reading = content[id][position.id]
     const text = chronic ? reading.c : reading.a
-    const open = openCard === id
     return (
-      <div key={id} style={{ borderTop: `1px solid ${tile.divider}` }}>
-        <button
-          onClick={() => setOpenCard(open ? null : id)}
-          aria-expanded={open}
-          style={{
-            display: 'flex',
-            width: '100%',
-            flexWrap: 'wrap',
-            alignItems: 'baseline',
-            gap: 14,
-            padding: '10px 0',
-            textAlign: 'left',
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            fontFamily: FONT.display,
-          }}
-        >
-          <span style={{ fontSize: 12, fontWeight: 500, width: 112, flexShrink: 0, color: tile.soft }}>{card.label}</span>
-          <span style={{ flex: 1, minWidth: 160, fontSize: 14, lineHeight: 1.4, color: tile.ink }}>{text}</span>
-          <span style={{ fontSize: 10, color: tile.cText, opacity: 0.7, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 150ms' }}>▾</span>
-        </button>
-        {open && (
-          <div style={{ paddingBottom: 12 }}>
-            <div style={{ borderRadius: RADIUS.md, padding: 12, background: tile.detailBg, border: `1px solid ${tile.detailBorder}` }}>
-              <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.6, color: tile.soft }}>{card.description}</p>
-              <div style={{ marginTop: 10, paddingTop: 10, borderTop: `1px solid ${tile.detailBorder}` }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12 }}>
-                  <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 9, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.2em', color: tile.cText }}>Convergent science</p>
-                  <span style={{ fontFamily: FONT.diagram, fontSize: 9, letterSpacing: '0.06em', color: tile.soft, opacity: 0.85 }}>{card.source}</span>
-                </div>
-                <p style={{ margin: '6px 0 0', paddingLeft: 10, borderLeft: `2px solid ${tile.detailBorder}`, fontSize: 12.5, lineHeight: 1.6, color: tile.ink }}>{card.science}</p>
-              </div>
-            </div>
-          </div>
-        )}
+      <div key={id} className="readout-row">
+        <div className="readout-row-main">
+          <span className="readout-label">
+            <span className="readout-label-mark" aria-hidden="true" />
+            {card.label}
+          </span>
+          <p className="readout-value">{text}</p>
+        </div>
+        <p className="readout-description">{card.description}</p>
+        <details className="readout-science">
+          <summary>
+            <span>Grounding science</span>
+            <span className="readout-science-icon" aria-hidden="true">▸</span>
+          </summary>
+          <p>{card.science}</p>
+        </details>
       </div>
     )
   }
 
   const renderBlock = (g) => (
-    <div style={{ borderRadius: RADIUS.lg, padding: '14px 16px', background: tile.cardBg, border: `1px solid ${tile.line}` }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-        <span style={{ width: 8, height: 8, borderRadius: '50%', background: tile.cDot }} />
-        <span style={{ fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.18em', color: tile.cText }}>{g.label}</span>
+    <section key={g.label} className="readout-group">
+      <div className="readout-group-head">
+        <span className="readout-group-dot" aria-hidden="true" />
+        <span className="readout-group-title">{g.label}</span>
+        <span className="readout-group-count">{g.ids.length} dimensions</span>
       </div>
-      <div>{g.ids.map(renderRow)}</div>
-    </div>
+      <div className="readout-row-list">{g.ids.map(renderRow)}</div>
+    </section>
   )
 
   return (
@@ -224,29 +198,41 @@ export default function EmotionalGradient() {
       onKeyDown={onTrackKey}
       aria-label="The Emotional Gradient"
       style={{
-        overflow: 'hidden',
+        overflow: 'visible',
         borderRadius: 20,
         outline: 'none',
         background: BG.diagram,
         border: `1px solid ${hexToRgba(panel.cDot, 0.22)}`,
         fontFamily: FONT.display,
+        boxShadow: `0 18px 48px ${hexToRgba('#000000', isDark ? 0.16 : 0.08)}`,
+        '--gradient-sticky-bg': panelLight ? '#f4f4f2' : '#131a2f',
+        '--gradient-line': panel.line,
+        '--gradient-accent': panel.cDot,
+        '--gradient-accent-text': panel.cText,
+        '--readout-bg': tile.cardBg,
+        '--readout-ink': tile.ink,
+        '--readout-soft': tile.soft,
+        '--readout-accent': tile.cText,
+        '--readout-dot': tile.cDot,
+        '--readout-line': tile.divider,
+        '--readout-detail-bg': tile.detailBg,
+        '--readout-detail-border': tile.detailBorder,
       }}
     >
-      {/* header — status badge + chronic toggle */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '20px 24px 0' }}>
-        <Badge color={chronic ? WARM : accent} light={panelLight}>{chronic ? 'Stuck · chronic' : 'Fluid · gradient'}</Badge>
-        <ChronicToggle chronic={chronic} onChange={setChronic} />
-      </div>
+      <div className="gradient-sticky">
+        {/* state ribbon — current position stays in view while reading */}
+        <div className="gradient-toolbar">
+          <div className="sticky-state-title">
+            <Badge color={chronic ? WARM : accent} light={panelLight}>{chronic ? 'Chronic' : 'Fluid'} · State {position.code}</Badge>
+            <span className="sticky-state-name">{position.mode}</span>
+          </div>
+          <ChronicToggle chronic={chronic} onChange={setChronic} />
+        </div>
 
-      {/* chronic caption — only when on */}
-      {chronic && (
-        <p style={{ margin: 0, padding: '12px 24px 0', fontSize: 12.5, lineHeight: 1.6, color: panel.soft }}>
-          Chronic — each mode read as one the system can’t leave, not one it moves through. The gradient stops flowing and snaps between fixed points.
-        </p>
-      )}
+        <p className="mode-caption">{modeCaption}</p>
 
-      {/* gradient bar + detached Shutdown */}
-      <div style={{ padding: '20px 24px 0' }}>
+        {/* gradient bar + detached Shutdown */}
+        <div className="gradient-track-shell">
         <div style={{ display: 'flex', alignItems: 'stretch', gap: 12 }}>
           <div
             style={{ position: 'relative', flex: 1, cursor: 'pointer', userSelect: 'none', padding: '12px 0', touchAction: 'none' }}
@@ -264,7 +250,25 @@ export default function EmotionalGradient() {
           >
             <div ref={barRef} style={{ position: 'relative', height: 14, borderRadius: 999, background: barBg, boxShadow: panelLight ? 'inset 0 0 0 1px rgba(0,0,0,0.06)' : 'none' }}>
               {Array.from({ length: G - 1 }, (_, i) => (
-                <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: 1, transform: 'translateX(-50%)', left: `${((i + 1) / G) * 100}%`, background: panelLight ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.3)' }} />
+                <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: chronic ? 2 : 1, transform: 'translateX(-50%)', left: `${((i + 1) / G) * 100}%`, background: chronic ? (panelLight ? 'rgba(255,255,255,0.72)' : 'rgba(10,13,20,0.42)') : (panelLight ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.3)') }} />
+              ))}
+              {chronic && GRAD.map((_, i) => (
+                <div
+                  key={`fixed-${i}`}
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: `${((i + 0.5) / G) * 100}%`,
+                    width: 5,
+                    height: 5,
+                    borderRadius: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    background: panelLight ? 'rgba(255,255,255,0.82)' : 'rgba(10,13,20,0.58)',
+                    boxShadow: `0 0 0 1px ${hexToRgba(barStop(i), 0.55)}`,
+                    pointerEvents: 'none',
+                  }}
+                />
               ))}
               {!isShutdown && (
                 <div
@@ -311,24 +315,44 @@ export default function EmotionalGradient() {
               <button
                 key={p.id}
                 onClick={() => setPosIndex(i)}
-                style={{ flex: 1, padding: '0 2px', textAlign: 'center', background: 'transparent', border: 'none', cursor: 'pointer', color: i === posIndex ? (panelLight ? ink(colorOf(i)) : colorOf(i)) : panel.faint }}
+                aria-label={`State ${p.code}: ${p.mode}`}
+                title={`State ${p.code}: ${p.mode}`}
+                style={{ flex: 1, minHeight: 34, padding: '0 2px', textAlign: 'center', background: 'transparent', border: 'none', cursor: 'pointer', color: i === posIndex ? (panelLight ? ink(colorOf(i)) : colorOf(i)) : panel.faint }}
               >
-                <span style={{ display: 'block', fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, fontFamily: FONT.display }}>{p.mode}</span>
+                <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, letterSpacing: '0.08em' }}>{p.code}</span>
+                <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, fontFamily: FONT.display }}>{p.mode}</span>
               </button>
             ))}
           </div>
           <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12 }}>
             <div style={{ height: 20, borderLeft: '1px solid transparent' }} />
-            <button onClick={() => setPosIndex(SHUT)} style={{ width: 48, textAlign: 'center', background: 'transparent', border: 'none', cursor: 'pointer', color: isShutdown ? (panelLight ? ink(colorOf(SHUT)) : colorOf(SHUT)) : panel.faint }}>
-              <span style={{ display: 'block', fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, fontFamily: FONT.display }}>Shutdown</span>
+            <button onClick={() => setPosIndex(SHUT)} aria-label={`State ${positions[SHUT].code}: Shutdown`} title={`State ${positions[SHUT].code}: Shutdown`} style={{ width: 48, minHeight: 34, textAlign: 'center', background: 'transparent', border: 'none', cursor: 'pointer', color: isShutdown ? (panelLight ? ink(colorOf(SHUT)) : colorOf(SHUT)) : panel.faint }}>
+              <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, letterSpacing: '0.08em' }}>{positions[SHUT].code}</span>
+              <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, fontFamily: FONT.display }}>Shutdown</span>
             </button>
           </div>
         </div>
       </div>
+      </div>
 
       {/* selected position */}
-      <div style={{ padding: '28px 24px 32px' }}>
+      <div className="selected-state">
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12 }}>
+          <span
+            style={{
+              borderRadius: RADIUS.md,
+              border: `1px solid ${hexToRgba(panel.cDot, 0.34)}`,
+              background: hexToRgba(panel.cDot, panelLight ? 0.1 : 0.12),
+              padding: '5px 9px',
+              fontFamily: FONT.diagram,
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+              color: panel.cText,
+            }}
+          >
+            State {position.code}
+          </span>
           <span style={{ width: 14, height: 14, borderRadius: '50%', background: panel.cDot }} />
           <span style={{ fontSize: 'clamp(22px, 3vw, 29px)', fontWeight: 800, letterSpacing: '-0.02em', color: panel.cText }}>{position.mode}</span>
         </div>
@@ -356,24 +380,339 @@ export default function EmotionalGradient() {
         </p>
 
         {/* configuration readout */}
-        <div style={{ marginTop: 28 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.22em', color: panel.cText }}>State</span>
-            <span style={{ height: 1, flex: 1, background: hexToRgba(panel.cDot, 0.25) }} />
-            <span style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.12em', color: panel.faint }}>the configuration</span>
+        <div className="state-readout">
+          <div className="readout-head">
+            <span className="readout-kicker">State</span>
+            <span className="readout-rule" aria-hidden="true" />
+            <span className="readout-note">the configuration</span>
           </div>
-          <p style={{ margin: '10px 0 0', maxWidth: 720, fontSize: 'clamp(16px, 2.2vw, 18px)', fontWeight: 500, lineHeight: 1.4, color: panel.ink }}>{stateText}</p>
+          <p className="state-reading">{stateText}</p>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 20 }}>
-            <div style={{ flex: '1 1 280px' }}>{renderBlock(groups[0])}</div>
-            <div style={{ flex: '1 1 280px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {renderBlock(groups[1])}
-              {renderBlock(groups[2])}
-              {renderBlock(groups[3])}
-            </div>
+          <div className="readout-grid">
+            {groups.map(renderBlock)}
           </div>
         </div>
       </div>
+      <style>{`
+        .gradient-sticky {
+          position: sticky;
+          top: 68px;
+          z-index: 30;
+          border-radius: 20px 20px 0 0;
+          border-bottom: 1px solid var(--gradient-line);
+          background: var(--gradient-sticky-bg);
+          backdrop-filter: blur(14px);
+          box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+        }
+
+        .gradient-toolbar {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          padding: 18px 24px 0;
+        }
+
+        .sticky-state-title {
+          display: flex;
+          min-width: 0;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px 12px;
+        }
+
+        .sticky-state-name {
+          color: var(--readout-ink);
+          font-size: 14px;
+          font-weight: 650;
+          line-height: 1.2;
+        }
+
+        .mode-caption {
+          margin: 0;
+          padding: 12px 24px 0;
+          color: var(--readout-soft);
+          font-size: 12.5px;
+          line-height: 1.6;
+        }
+
+        .gradient-track-shell {
+          padding: 16px 24px 18px;
+        }
+
+        .selected-state {
+          padding: 28px 24px 32px;
+        }
+
+        .state-readout {
+          margin-top: 30px;
+          border-top: 1px solid var(--readout-line);
+        }
+
+        .readout-head {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding-top: 18px;
+        }
+
+        .readout-kicker {
+          color: var(--gradient-accent-text);
+          font-family: var(--font-diagram), monospace;
+          font-size: 10px;
+          font-weight: 500;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+        }
+
+        .readout-rule {
+          height: 1px;
+          flex: 1;
+          background: color-mix(in srgb, var(--gradient-accent) 26%, transparent);
+        }
+
+        .readout-note {
+          color: var(--readout-soft);
+          font-size: 10px;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .state-reading {
+          margin: 10px 0 0;
+          max-width: 760px;
+          color: var(--readout-ink);
+          font-size: clamp(16px, 2.2vw, 18px);
+          font-weight: 560;
+          line-height: 1.45;
+        }
+
+        .readout-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 34px;
+          margin-top: 8px;
+        }
+
+        .readout-group {
+          padding: 22px 0;
+          border-bottom: 1px solid var(--readout-line);
+        }
+
+        .readout-group-head {
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+          margin-bottom: 2px;
+        }
+
+        .readout-group-dot {
+          width: 8px;
+          height: 8px;
+          flex: 0 0 auto;
+          border-radius: 50%;
+          background: var(--readout-dot);
+        }
+
+        .readout-group-title {
+          color: var(--readout-accent);
+          font-family: var(--font-diagram), monospace;
+          font-size: 10px;
+          font-weight: 500;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+        }
+
+        .readout-group-count {
+          margin-left: auto;
+          color: var(--readout-soft);
+          font-size: 11px;
+          opacity: 0.72;
+        }
+
+        .readout-row {
+          padding: 16px 0;
+          border-top: 1px solid var(--readout-line);
+        }
+
+        .readout-row:first-child {
+          border-top: 0;
+        }
+
+        .readout-row-main {
+          display: grid;
+          grid-template-columns: minmax(116px, 148px) minmax(0, 1fr);
+          gap: 18px;
+          align-items: baseline;
+        }
+
+        .readout-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--readout-accent);
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 1.35;
+        }
+
+        .readout-label-mark {
+          width: 6px;
+          height: 6px;
+          flex: 0 0 auto;
+          border-radius: 50%;
+          background: var(--readout-dot);
+          box-shadow: 0 0 0 4px color-mix(in srgb, var(--readout-dot) 12%, transparent);
+        }
+
+        .readout-value {
+          margin: 0;
+          color: var(--readout-ink);
+          font-size: 14px;
+          font-weight: 620;
+          line-height: 1.42;
+        }
+
+        .readout-description {
+          margin: 8px 0 0 166px;
+          color: var(--readout-soft);
+          font-size: 12.75px;
+          line-height: 1.62;
+        }
+
+        .readout-science {
+          margin: 9px 0 0 166px;
+          border: 0 !important;
+          background: transparent !important;
+        }
+
+        .readout-science summary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 0;
+          color: var(--readout-accent);
+          font-family: var(--font-diagram), monospace;
+          font-size: 9px;
+          font-weight: 500;
+          letter-spacing: 0.14em;
+          line-height: 1.4;
+          text-transform: uppercase;
+        }
+
+        .readout-science summary::after {
+          display: none !important;
+        }
+
+        .readout-science-icon {
+          display: inline-block;
+          color: var(--readout-accent);
+          font-size: 10px;
+          line-height: 1;
+          transform: translateY(-1px);
+          transition: transform 150ms ease;
+        }
+
+        .readout-science[open] .readout-science-icon {
+          transform: translateY(-1px) rotate(90deg);
+        }
+
+        .readout-science p {
+          margin: 8px 0 0;
+          padding: 0 0 0 12px;
+          border-left: 2px solid var(--readout-detail-border);
+          color: var(--readout-soft);
+          font-size: 12px;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+          .readout-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 720px) {
+          .gradient-sticky {
+            top: 66px;
+          }
+
+          .gradient-toolbar {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: start;
+            padding: 12px 18px 0;
+            gap: 8px;
+          }
+
+          .sticky-state-title {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+          }
+
+          .state-pill {
+            gap: 6px !important;
+            padding: 5px 9px !important;
+          }
+
+          .state-pill-dot {
+            width: 8px !important;
+            height: 8px !important;
+          }
+
+          .state-pill-text {
+            font-size: 9.5px !important;
+            letter-spacing: 0.055em !important;
+          }
+
+          .sticky-state-name {
+            font-size: 13px;
+          }
+
+          .mode-caption {
+            padding: 10px 18px 0;
+          }
+
+          .gradient-track-shell {
+            padding: 10px 18px 12px;
+          }
+
+          .selected-state {
+            padding: 24px 18px 28px;
+          }
+
+          .gradient-track-label {
+            display: none !important;
+          }
+
+          .gradient-track-code {
+            font-size: 11px !important;
+          }
+
+          .readout-head {
+            align-items: flex-start;
+          }
+
+          .readout-note {
+            display: none;
+          }
+
+          .readout-row-main {
+            grid-template-columns: 1fr;
+            gap: 5px;
+          }
+
+          .readout-description,
+          .readout-science {
+            margin-left: 0;
+          }
+        }
+      `}</style>
     </section>
   )
 }

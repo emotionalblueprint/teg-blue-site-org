@@ -1,7 +1,7 @@
 /**
  * The Emotional Gradient — data model (ported from the visual-system build).
  * Concise readings in the plain-mechanism voice (no jargon, no pronouns,
- * nervous-system anchor). Public labels lead; internal Pattern / Formation codes
+ * nervous-system anchor). Public labels lead; internal state codes
  * stay as source-trace, never as the public lead.
  */
 
@@ -10,10 +10,13 @@
 export const positions = [
   {
     id: 'baseline',
+    code: 'X',
     mode: 'Baseline',
+    atlasLabel: 'Safe & at rest',
     familiar: 'rest-and-digest',
     sub: 'resting availability',
-    pattern: 'Formation X · resting',
+    pattern: 'State X · resting',
+    reality: 'SAFETY',
     mechanism: 'Nothing to meet — the system rests, open and fully available.',
     mechanismChronic: 'Rest never fully arrives — the body stays switched on even with no threat in the room.',
     acuteColor: '#cce0ff',
@@ -22,10 +25,13 @@ export const positions = [
   },
   {
     id: 'connection',
+    code: 'A',
     mode: 'Connection / Belonging',
+    atlasLabel: 'Safe with others',
     familiar: 'social engagement',
     sub: 'safety → reciprocity',
-    pattern: 'Pattern A · ventral vagal',
+    pattern: 'State A · ventral vagal',
+    reality: 'SAFETY',
     mechanism: 'Safety detected — the system regulates through connection.',
     mechanismChronic: 'Safety is read but never quite trusted — connection stays conditional, watched, kept safe.',
     acuteColor: '#6eeafb',
@@ -34,10 +40,13 @@ export const positions = [
   },
   {
     id: 'calibration',
+    code: 'A↔B',
     mode: 'Safety Checking',
+    atlasLabel: 'Is it still safe?',
     familiar: '',
     sub: 'A↔B transition',
-    pattern: 'Transition A↔B',
+    pattern: 'State A↔B · transition',
+    reality: 'UNCERTAINTY',
     mechanism: 'Belonging has changed — the system checks whether it is still safe here.',
     mechanismChronic: 'The safety check never resolves — the system stays caught between leaning in and bracing.',
     acuteColor: '#76faa1',
@@ -46,10 +55,13 @@ export const positions = [
   },
   {
     id: 'protection',
+    code: 'B',
     mode: 'Protection / Defence',
+    atlasLabel: 'Threat',
     familiar: 'fight · flight · fawn',
     sub: 'threat → defence',
-    pattern: 'Pattern B · sympathetic',
+    pattern: 'State B · sympathetic',
+    reality: 'THREAT',
     mechanism: 'Threat detected — the system regulates through self-protection.',
     mechanismChronic: 'Threat is read as always present — defence stops being a response and becomes the resting state.',
     acuteColor: '#b6fc50',
@@ -58,10 +70,13 @@ export const positions = [
   },
   {
     id: 'strategic',
+    code: 'C',
     mode: 'Strategic Management',
+    atlasLabel: 'Bigger threat',
     familiar: 'control / strategic management',
     sub: 'sustained control',
-    pattern: 'Pattern C · sustained sympathetic',
+    pattern: 'State C · sympathetic + brake',
+    reality: 'DANGER',
     mechanism: 'Threat persists — the system manages the environment instead of connecting with it.',
     mechanismChronic: 'The threat never lifts — managing and controlling the environment hardens into a way of being.',
     acuteColor: '#e3fd54',
@@ -70,11 +85,14 @@ export const positions = [
   },
   {
     id: 'domination',
+    code: 'D',
     mode: 'Domination',
+    atlasLabel: 'Life threat',
     familiar: 'power mobilisation',
     familiarChronic: 'coercive control',
     sub: 'power → survival',
-    pattern: 'Pattern D · peak sympathetic',
+    pattern: 'State D · peak sympathetic',
+    reality: 'LIFE PERIL',
     mechanism: 'Survival at stake — the system organises around power because nothing else has worked.',
     mechanismChronic: 'Nothing else has ever been trusted to work — power and force set as identity.',
     acuteColor: '#f7d448',
@@ -83,10 +101,13 @@ export const positions = [
   },
   {
     id: 'shutdown',
+    code: 'Z',
     mode: 'Shutdown',
+    atlasLabel: 'Shutdown',
     familiar: 'freeze · collapse',
     sub: 'conservation / collapse',
-    pattern: 'Formation Z · dorsal',
+    pattern: 'State Z · dorsal',
+    reality: 'OVERWHELM',
     mechanism: 'Mobilisation cannot form — the system conserves and collapses inward.',
     mechanismChronic: 'Mobilising never feels available — collapse becomes the place the system keeps returning to.',
     acuteColor: '#a1adbf',
@@ -102,7 +123,7 @@ export const autonomic = {
   connection: 'parasympathetic · ventral vagal',
   calibration: 'parasympathetic → sympathetic',
   protection: 'sympathetic',
-  strategic: 'sympathetic',
+  strategic: 'sympathetic + vagal brake',
   domination: 'sympathetic',
   shutdown: 'parasympathetic · dorsal vagal',
 }
@@ -110,17 +131,17 @@ export const autonomic = {
 // ─── DIMENSION CARDS ─────────────────────────────────────────────────────────
 
 export const cards = [
-  { id: 'state', label: 'State', description: "The mode the whole system is in right now — the master setting everything else here is shaped by. Change it, and perception, thinking, feeling, and action all shift with it.", science: 'Polyvagal Theory (Porges) + Stress Physiology (Sapolsky, McEwen)', source: 'M2' },
-  { id: 'perception', label: 'Perception', description: 'What gets noticed and what gets missed — whether attention is wide open or narrowed to a single point.', science: 'Cognitive Science — state-dependent perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
-  { id: 'cognition', label: 'Cognition', description: 'How much clear thinking is available — free to weigh and plan, or narrowed to the immediate problem.', science: 'Cognitive Science — cognitive load, state-dependent (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
-  { id: 'selfAwareness', label: 'Self-awareness', description: "How clearly the body’s own inner state can be read — its signals, its needs, what it is feeling.", science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
-  { id: 'empathy', label: 'Empathy', description: "How much another’s state can be read and felt — resonance with what someone else is going through.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
-  { id: 'body', label: 'Body / activation', description: 'What the body is physically doing — resting and repairing, or revved up and ready to act.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
-  { id: 'time', label: 'Time horizon', description: 'How far the system reaches across time — open to past and future, or compressed to the immediate now.', science: 'Cognitive Science + Stress Physiology', source: 'M2-C18' },
-  { id: 'emotions', label: 'Emotions / signals', description: 'What the emotion carries — the condition the body has picked up, and the response it pushes toward.', science: 'Affective Neuroscience (Panksepp, Damasio, Barrett, LeDoux) + Emotion Science', source: 'M1' },
-  { id: 'behaviour', label: 'Behaviour / response', description: 'The action the state drives toward — reaching out, defending, controlling, or overpowering.', science: 'Polyvagal (mobilise / immobilise) + Trauma Research (defence)', source: 'M3' },
-  { id: 'repair', label: 'Repair', description: 'Whether the system can come back down — settling, reconnecting, and returning to safety after threat.', science: 'Trauma Research — completion (Levine, van der Kolk) + Attachment (Bowlby)', source: 'M3 · ESC' },
-  { id: 'rush', label: 'Rush (tempo)', description: "The system’s inner tempo — unhurried and steady, or speeding up into urgency and rush.", science: 'Tachypsychia + hurry sickness / hyperarousal — Stress Physiology + Cognitive Science', source: 'derived · M2 + C18' },
+  { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Polyvagal Theory (Porges) + Stress Physiology (Sapolsky, McEwen)', source: 'M2 + GC' },
+  { id: 'perception', label: 'Perception', description: 'The state sets the filter on the world: in safety, the whole situation can be taken in; under threat, attention selects for what matters to protection, risk, escape, or control.', science: 'Cognitive Science — state-dependent perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
+  { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load, state-dependent (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
+  { id: 'selfAwareness', label: 'Self-awareness', description: "The state controls access to the body's own information: in safety, signals can be felt and named; under threat, the inner read gets muted, narrowed, or cut off.", science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
+  { id: 'empathy', label: 'Empathy', description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
+  { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
+  { id: 'time', label: 'Time horizon', description: 'The state changes how much time the system can hold: in safety, past, present, and future can stay connected; under threat, time compresses toward the immediate problem or freezes.', science: 'Cognitive Science + Stress Physiology', source: 'M2-C18' },
+  { id: 'emotions', label: 'Emotions / signals', description: 'The state shapes which signal family comes online: safety produces signals for bonding and repair; threat produces signals for protection, control, or last-resort survival.', science: 'Affective Neuroscience (Panksepp, Damasio, Barrett, LeDoux) + Emotion Science', source: 'M1' },
+  { id: 'behaviour', label: 'Behaviour / response', description: 'The state narrows or opens the action menu: in safety, the system can approach, cooperate, and repair; under threat, it moves toward defending, managing, overpowering, or withdrawing.', science: 'Polyvagal (mobilise / immobilise) + Trauma Research (defence)', source: 'M3' },
+  { id: 'repair', label: 'Repair', description: 'The state determines whether activation can complete: safety lets the system settle and reconnect; threat keeps protection first, so repair has to wait until enough safety returns.', science: 'Trauma Research — completion (Levine, van der Kolk) + Attachment (Bowlby)', source: 'M3 · ESC' },
+  { id: 'rush', label: 'Rush (tempo)', description: "The state sets the system's pace: safety can move at the speed of the situation; threat accelerates into urgency or pressured management; shutdown slows time toward freeze.", science: 'Tachypsychia + hurry sickness / hyperarousal — Stress Physiology + Cognitive Science', source: 'derived · M2 + C18' },
 ]
 
 // ─── READINGS (acute `a` / chronic `c`) ──────────────────────────────────────
@@ -264,7 +285,7 @@ export const faq = [
   {
     question: 'How does the nervous system choose a state?',
     answer:
-      'Through neuroception — a continuous, pre-conscious read of safety versus danger. Based on that read, the system organises itself into one of seven ordered positions: Baseline, Connection, Safety Checking, Protection, Strategic Management, Domination, and Shutdown. Each is a complete configuration of perception, cognition, the body, feeling, and behaviour — not a mood.',
+      'Through neuroception — a continuous, pre-conscious read of safety versus danger. Based on that read, the system organises itself into one of seven ordered states: X, A, A↔B, B, C, D, and Z. Each state is a complete configuration of perception, cognition, the body, feeling, and behaviour — not a mood.',
   },
   {
     question: 'What is the difference between a passing state and a chronic one?',

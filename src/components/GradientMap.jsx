@@ -60,12 +60,12 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
       <div style={cardStyle}>
         <p style={eyebrowStyle}>The map</p>
         <h2 id="positions-heading" style={{ margin: '0 0 8px', fontSize: 'clamp(22px, 3.4vw, 30px)', letterSpacing: '-0.02em', color: TEXT.primary }}>
-          The seven positions, in order
+          The seven states, in order
         </h2>
         <p style={{ margin: '0 0 20px', maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-          One continuum, from rest through connection and the defences down to shutdown. Each position is a
-          whole-system configuration, not a mood — and a passing response the system is built to move through and
-          leave. When a position cannot be left, it hardens into the default.
+          One continuum, from rest through connection and the defences down to shutdown. Each state is a
+          whole-system configuration, not a mood: the position on the line and the nervous-system configuration are the
+          same thing seen two ways.
         </p>
         <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
           {positions.map((p) => {
@@ -83,11 +83,32 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
                   borderLeftColor: c,
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      minWidth: 42,
+                      borderRadius: RADIUS.md,
+                      border: `1px solid ${hexToRgba(c, 0.38)}`,
+                      background: hexToRgba(c, 0.1),
+                      padding: '4px 7px',
+                      fontFamily: FONT.diagram,
+                      fontSize: 11,
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      color: c,
+                    }}
+                  >
+                    {p.code}
+                  </span>
                   <span style={{ width: 8, height: 8, borderRadius: '50%', flexShrink: 0, background: c }} />
                   <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary }}>{p.mode}</span>
                 </div>
-                <p style={{ margin: '4px 0 0', fontFamily: FONT.diagram, fontSize: 11, letterSpacing: '0.02em', color: TEXT.muted }}>{meta}</p>
+                <p style={{ margin: '6px 0 0', fontFamily: FONT.diagram, fontSize: 11, letterSpacing: '0.02em', color: TEXT.muted }}>
+                  {p.atlasLabel} · {p.reality}{meta ? ` · ${meta}` : ''}
+                </p>
                 <p style={{ margin: '8px 0 0', fontSize: 14, lineHeight: 1.55, color: TEXT.secondary }}>{p.mechanism}</p>
                 <p style={{ margin: '4px 0 0', fontSize: 13.5, lineHeight: 1.55, color: TEXT.secondary }}>
                   <strong style={{ fontWeight: 600, color: WARM }}>Chronic</strong> — {p.mechanismChronic}
