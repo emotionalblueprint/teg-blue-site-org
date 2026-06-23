@@ -2,12 +2,15 @@
 /**
  * IndexNow Notification Script
  *
- * Notifies search engines about all site URLs after deployment.
- * Run automatically via `npm run postbuild` or manually with `npm run indexnow`
+ * Notifies search engines about all site URLs after production deployment.
+ * `postbuild` submits only on Vercel production deploys. Manual `npm run indexnow`
+ * submits immediately.
  *
  * Usage:
- *   node scripts/indexnow-notify.js           # Submit all pages
- *   node scripts/indexnow-notify.js --dry-run # Preview without submitting
+ *   npm run indexnow                         # Submit all live pages
+ *   npm run indexnow:dry                     # Preview without submitting
+ *   node scripts/indexnow-notify.js --force  # Submit outside Vercel production
+ *   node scripts/indexnow-notify.js --strict # Fail with non-zero status on errors
  */
 
 const INDEXNOW_KEY = 'tegblue8a4f2c9d7e6b5a3f'
@@ -73,7 +76,26 @@ const ALL_PAGES = [
   '/mechanics-of-phenomena/proofs-by-nature/01-octopus-chromatophores',
 ]
 
-async function notifyIndexNow(dryRun = false) {
+const dryRun = process.argv.includes('--dry-run')
+const force = process.argv.includes('--force')
+const strict = process.argv.includes('--strict')
+const lifecycle = process.env.npm_lifecycle_event
+const isProductionDeploy = process.env.VERCEL === '1' && process.env.VERCEL_ENV === 'production'
+const isManualNpmRun = lifecycle === 'indexnow'
+
+function failSoft(message) {
+  console.error(message)
+  if (strict) process.exitCode = 1
+}
+
+async function notifyIndexNow() {
+  if (!dryRun && !force && !isProductionDeploy && !isManualNpmRun) {
+    console.log('\n📢 IndexNow Notification')
+    console.log('   Skipped: not a Vercel production deploy.')
+    console.log('   Use `npm run indexnow` or `node scripts/indexnow-notify.js --force` to submit manually.\n')
+    return
+  }
+
   // Only ping search engines about routes that are actually live (single-page gate).
   const urls = ALL_PAGES.filter(isLive).map(path => `${BASE_URL}${path}`)
 
@@ -113,16 +135,12 @@ async function notifyIndexNow(dryRun = false) {
       console.log(`   Search engines will crawl these pages soon.\n`)
     } else {
       const text = await response.text()
-      console.error(`❌ Failed with status ${response.status}`)
-      console.error(`   Response: ${text}\n`)
-      process.exit(1)
+      failSoft(`❌ Failed with status ${response.status}\n   Response: ${text}\n`)
     }
   } catch (error) {
-    console.error(`❌ Error: ${error.message}\n`)
-    process.exit(1)
+    failSoft(`❌ Error: ${error.message}\n`)
   }
 }
 
 // Run if called directly
-const dryRun = process.argv.includes('--dry-run')
-notifyIndexNow(dryRun)
+notifyIndexNow()
