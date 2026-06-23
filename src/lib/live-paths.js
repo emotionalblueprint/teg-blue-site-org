@@ -20,8 +20,9 @@ const LIVE_PATHS = new Set([
   // Phase 3 (models + rest): "/model/...", "/ethics", "/ai-safety", "/collaborate", ...
 ]);
 
-// Whole sections opened at once, e.g. "/framework/" to unlock all F pages together.
-const LIVE_PREFIXES = [];
+// Whole sections opened at once. Phase 2 (2026-06-23): frameworks + models unlocked
+// together — they are one tightly cross-linked cluster, clean only when live as a whole.
+const LIVE_PREFIXES = ["/framework/", "/model/"];
 
 // Technical / SEO routes that are always served (never gated).
 const TECH_PREFIXES = [

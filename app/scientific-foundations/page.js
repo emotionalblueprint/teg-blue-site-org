@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
@@ -20,11 +21,32 @@ const FAQ_ITEMS = [
   },
 ];
 
-// Framework/model pill links (F1–F12, M1/M2/M4 → /framework/… and /model/…) were
-// removed for the single-page phase: those targets are still gated, so the pills now
-// render as non-clickable <span> badges. Phase 2 (unlocking /framework/) + Phase 3
-// (/model/) must restore them as <Link href={getFrameworkUrl(f)}> + re-add the
-// FRAMEWORK_URLS map + the next/link import. Plan: _plans/org/2026-06-23-org-repopulation-plan.md
+// ─── FRAMEWORK / MODEL URL MAPPING ──────────────────────────────
+// Pills on this page link each F/M tag to its page. Frameworks + models are live (gate
+// prefixes "/framework/", "/model/"); keep every tag used in the data mapped so no pill
+// falls through to the gated "/frameworks-map" fallback. Restored 2026-06-23 (Phase 2).
+const FRAMEWORK_URLS = {
+  F1: "/framework/f1-emotional-gradient",
+  F2: "/framework/f2-awareness-calibration",
+  F3: "/framework/f3-false-coherence",
+  F4: "/framework/f4-rules-regulate",
+  F5: "/framework/f5-worth-hierarchies",
+  F6: "/framework/f6-bias-regulates",
+  F7: "/framework/f7-domination-regulates",
+  F8: "/framework/f8-repairing-awareness",
+  F9: "/framework/f9-neurodivergence-variation",
+  F10: "/framework/f10-generational-bridges",
+  F11: "/framework/f11-emotional-paradoxes",
+  F12: "/framework/f12-two-information-systems",
+  M1: "/model/m1-emotions-as-signals",
+  M2: "/model/m2-nervous-system-states",
+  M3: "/model/m3-regulation-capacities",
+  M4: "/model/m4-awareness-capacities",
+};
+
+function getFrameworkUrl(tag) {
+  return FRAMEWORK_URLS[tag] || "/frameworks-map";
+}
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
@@ -1233,8 +1255,9 @@ function ModelCard({ model }) {
           <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
           <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
             {model.frameworks.map((f) => (
-              <span
+              <Link
                 key={f}
+                href={getFrameworkUrl(f)}
                 style={{
                   fontSize: 10,
                   fontWeight: 600,
@@ -1243,10 +1266,11 @@ function ModelCard({ model }) {
                   borderRadius: 3,
                   background: hexToRgba(SPECTRUM.cobalt, 0.12),
                   color: SPECTRUM.cobalt,
+                  textDecoration: "none",
                 }}
               >
                 {f}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -1384,8 +1408,9 @@ function ModelCard({ model }) {
           >
             <span style={{ fontSize: 12, color: TEXT.muted }}>Appears in:</span>
             {model.frameworks.map((f) => (
-              <span
+              <Link
                 key={f}
+                href={getFrameworkUrl(f)}
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
@@ -1394,10 +1419,11 @@ function ModelCard({ model }) {
                   borderRadius: 4,
                   background: hexToRgba(SPECTRUM.cobalt, 0.1),
                   color: SPECTRUM.cobalt,
+                  textDecoration: "none",
                 }}
               >
                 {f}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -1466,8 +1492,9 @@ function ExpandableTheoryCard({ theory }) {
           {theory.frameworks && theory.frameworks.length > 0 && (
             <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
               {theory.frameworks.map((f) => (
-                <span
+                <Link
                   key={f}
+                  href={getFrameworkUrl(f)}
                   style={{
                     fontSize: 10,
                     fontWeight: 600,
@@ -1476,10 +1503,11 @@ function ExpandableTheoryCard({ theory }) {
                     borderRadius: 3,
                     background: hexToRgba(SPECTRUM.cobalt, 0.12),
                     color: SPECTRUM.cobalt,
+                    textDecoration: "none",
                   }}
                 >
                   {f}
-                </span>
+                </Link>
               ))}
             </div>
           )}
@@ -1654,8 +1682,9 @@ function ExpandableTheoryCard({ theory }) {
               <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                 <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
                 {theory.frameworks.map((f) => (
-                  <span
+                  <Link
                     key={f}
+                    href={getFrameworkUrl(f)}
                     style={{
                       fontSize: 11,
                       fontWeight: 600,
@@ -1664,10 +1693,11 @@ function ExpandableTheoryCard({ theory }) {
                       borderRadius: 4,
                       background: hexToRgba(SPECTRUM.cobalt, 0.1),
                       color: SPECTRUM.cobalt,
+                      textDecoration: "none",
                     }}
                   >
                     {f}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </div>
