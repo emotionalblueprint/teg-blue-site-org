@@ -235,14 +235,15 @@ export default function Home() {
               From personal patterns to societal systems
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The same shape can be read from one nervous system to whole groups. It makes four shifts easier to see.
+              The same shape can be read from one nervous system to families, institutions, and whole groups. It helps explain how harm forms without excusing the harm.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
-                ["Why people who care can still cause harm", "under threat, empathy narrows even when intent is good."],
-                ["How defence hardens into control", "the same state logic can scale from a person to a system."],
-                ["Language for shifts as they happen", "recognised as state changes, not judged as character."],
-                ["A route back to connection", "repair begins with the state the system is actually in."],
+                ["Why care is not always enough", "under threat, empathy narrows even when intent is good."],
+                ["How harm can become normal", "when empathy stays offline for too long, the cost to others stops being fully registered."],
+                ["How defence hardens into control", "repeated protection can become rule, punishment, exclusion, or system logic."],
+                ["Language for shifts as they happen", "recognised as state changes without reducing people to character."],
+                ["A route back to connection", "repair begins with the state the system is actually in, and with enough safety for empathy to return."],
               ].map(([head, body]) => (
                 <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: "var(--spectrum-indigo)" }} aria-hidden="true" />
