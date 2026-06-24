@@ -194,13 +194,17 @@ export default function EmotionalGradient() {
     const description = card.descriptions?.[position.id]?.[chronic ? 'c' : 'a'] || card.description
     return (
       <div key={id} className="readout-row">
-        <div className="readout-row-main">
-          <span className="readout-label">
-            {card.label}
-          </span>
-          <p className="readout-value">{text}</p>
-        </div>
-        <p className="readout-description">{description}</p>
+        <details className="readout-explanation">
+          <summary className="readout-row-toggle">
+            <span className="readout-row-main">
+              <span className="readout-label">
+                {card.label}
+              </span>
+              <span className="readout-value">{text}</span>
+            </span>
+          </summary>
+          <p className="readout-description">{description}</p>
+        </details>
         <details className="readout-science">
           <summary>
             <span>Grounding science</span>
@@ -579,11 +583,30 @@ export default function EmotionalGradient() {
           border-top: 0;
         }
 
+        .readout-row-toggle {
+          display: block;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+          list-style: none;
+          border-radius: 4px;
+          outline: none;
+        }
+
+        .readout-row-toggle::after {
+          display: none !important;
+        }
+
+        .readout-row-toggle::-webkit-details-marker {
+          display: none;
+        }
+
         .readout-row-main {
           display: grid;
           grid-template-columns: 1fr;
           gap: 6px;
           align-items: start;
+          min-width: 0;
         }
 
         .readout-label {
@@ -596,18 +619,30 @@ export default function EmotionalGradient() {
         }
 
         .readout-value {
+          display: inline;
           margin: 0;
           color: var(--readout-ink);
           font-size: 14px;
           font-weight: 620;
           line-height: 1.42;
+          transition: color 150ms ease;
         }
 
-        .readout-description {
-          margin: 7px 0 0;
-          color: var(--readout-soft);
-          font-size: 12.75px;
-          line-height: 1.62;
+        .readout-row-toggle:hover .readout-value,
+        .readout-row-toggle:focus-visible .readout-value,
+        .readout-explanation[open] .readout-value {
+          color: var(--readout-accent);
+        }
+
+        .readout-row-toggle:focus-visible {
+          outline: 1px solid color-mix(in srgb, var(--readout-accent) 34%, transparent);
+          outline-offset: 3px;
+        }
+
+        .readout-explanation {
+          margin: 0;
+          border: 0 !important;
+          background: transparent !important;
         }
 
         .readout-science {
@@ -622,39 +657,60 @@ export default function EmotionalGradient() {
           justify-content: flex-start;
           gap: 8px;
           padding: 0;
-          color: var(--readout-accent);
+          color: color-mix(in srgb, var(--readout-accent) 54%, var(--readout-soft));
           font-family: var(--font-diagram), monospace;
           font-size: 9px;
           font-weight: 500;
           letter-spacing: 0.14em;
           line-height: 1.4;
           text-transform: uppercase;
+          cursor: pointer;
+          list-style: none;
+          transition: color 150ms ease;
+        }
+
+        .readout-science summary:hover,
+        .readout-science summary:focus-visible,
+        .readout-science[open] summary {
+          color: var(--readout-accent);
         }
 
         .readout-science summary::after {
           display: none !important;
         }
 
+        .readout-science summary::-webkit-details-marker {
+          display: none;
+        }
+
         .readout-science-icon {
           display: inline-block;
-          color: var(--readout-accent);
           font-size: 10px;
           line-height: 1;
           transform: translateY(-1px);
           transition: transform 150ms ease;
         }
 
+        .readout-science-icon {
+          color: currentColor;
+        }
+
         .readout-science[open] .readout-science-icon {
           transform: translateY(-1px) rotate(90deg);
         }
 
+        .readout-description,
         .readout-science p {
-          margin: 8px 0 0;
+          margin: 9px 0 0;
           padding: 0 0 0 12px;
           border-left: 2px solid var(--readout-detail-border);
           color: var(--readout-soft);
           font-size: 12px;
           line-height: 1.6;
+        }
+
+        .readout-description {
+          font-size: 12.5px;
         }
 
         @media (max-width: 900px) {
