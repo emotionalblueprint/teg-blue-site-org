@@ -5,7 +5,7 @@ import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } 
 
 const TITLE = "The Nervous System Gradient — a map of the nervous system's states";
 const DESCRIPTION =
-  "The nervous system continuously asks one question — is it safe, or is there danger? — and shifts the whole system into the state that fits. The seven states form one gradient from rest, through connection and the defences, down to shutdown.";
+  "A one-page map of seven nervous-system states, showing how safety and threat reshape perception, emotion, body activation, behaviour, and repair.";
 
 export const metadata = {
   title: TITLE,
