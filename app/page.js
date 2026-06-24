@@ -202,25 +202,20 @@ export default function Home() {
             <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure)", margin: "0 0 8px" }}>What the gradient is</p>
             <div style={{ display: "grid", gap: 6, fontSize: 14, lineHeight: 1.6, color: TEXT.secondary }}>
               <p style={{ margin: 0 }}>
-                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>One continuous state-spine</strong> — not separate boxes.
+                The gradient is the continuous range of nervous system organisation the body moves through as it reads
+                safety, threat, and whether rest is possible.
               </p>
               <p style={{ margin: 0 }}>
-                The seven states are whole-system configurations:
-                perception, thinking, body activation, feeling, behaviour, and repair route move together.
+                In fluid movement, the system can mobilise when danger is present, return toward safety when danger has
+                passed, and settle into baseline when rest becomes possible.
               </p>
               <p style={{ margin: 0 }}>
-                Fluid, the system moves through the line and leaves states again. Under chronic load, it stops
-                flowing and snaps to fixed points.
+                Wherever the system lands, the whole organism reorganises around that state: body, mind, emotion,
+                behaviour, perception, and the capacity for repair.
               </p>
-            </div>
-            <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px solid ${BORDER.default}` }}>
-              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
-                <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 9, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--spectrum-azure)" }}>Atlas trace</p>
-                <span style={{ fontFamily: FONT.diagram, fontSize: 9, letterSpacing: "0.06em", color: TEXT.muted }}>M2 + GC · F1</span>
-              </div>
-              <p style={{ margin: "6px 0 0", paddingLeft: 10, borderLeft: `2px solid ${BORDER.default}`, fontSize: 13, lineHeight: 1.6, color: TEXT.secondary }}>
-                The state is the position on the line, and the line is the gradient. What selects the state is the
-                body’s below-thought read for safe-or-dangerous.
+              <p style={{ margin: 0 }}>
+                But when threat has lasted too long, the organism can get stuck operating from threat physiology,
+                scanning for danger even when the present moment is safe.
               </p>
             </div>
           </div>
