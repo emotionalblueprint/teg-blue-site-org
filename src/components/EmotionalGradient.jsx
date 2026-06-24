@@ -255,7 +255,6 @@ export default function EmotionalGradient() {
         <div className="gradient-toolbar">
           <div className="sticky-state-title">
             <Badge color={chronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{chronic ? 'Chronic' : 'Fluid'} · State {position.code}</Badge>
-            <span className="sticky-state-name">{position.mode}</span>
           </div>
           <ChronicToggle chronic={chronic} onChange={setChronic} />
         </div>
@@ -342,6 +341,18 @@ export default function EmotionalGradient() {
           </div>
         </div>
 
+        <div
+          className="gradient-bar-name"
+          style={{
+            '--gradient-bar-name-color': panel.cText,
+            '--gradient-bar-name-bg': hexToRgba(panel.cDot, panelLight ? 0.1 : 0.14),
+            '--gradient-bar-name-border': hexToRgba(panel.cDot, panelLight ? 0.34 : 0.4),
+          }}
+        >
+          <span className="gradient-bar-name-code">{position.code}</span>
+          <span className="gradient-bar-name-label">{position.atlasLabel}</span>
+        </div>
+
         {/* labels */}
         <div className="gradient-track-labels" style={{ display: 'flex', gap: 12, marginTop: 10 }}>
           <div style={{ display: 'flex', flex: 1 }}>
@@ -366,65 +377,26 @@ export default function EmotionalGradient() {
             </button>
           </div>
         </div>
-
-        <div className="mobile-state-list" aria-label="State selector">
-          {positions.map((p, i) => {
-            const selected = i === posIndex
-            const stateColor = labelColor(i)
-            return (
-              <button
-                key={p.id}
-                className={`mobile-state-option${selected ? ' is-active' : ''}`}
-                onClick={() => setPosIndex(i)}
-                aria-label={`State ${p.code}: ${p.atlasLabel}`}
-                aria-pressed={selected}
-                style={{
-                  '--state-option-color': stateColor,
-                  '--state-option-bg': hexToRgba(stateColor, panelLight ? 0.1 : 0.14),
-                  '--state-option-border': hexToRgba(stateColor, panelLight ? 0.34 : 0.4),
-                }}
-              >
-                <span className="mobile-state-code">{p.code}</span>
-                <span className="mobile-state-label">{p.atlasLabel}</span>
-              </button>
-            )
-          })}
-        </div>
       </div>
       </div>
 
       {/* selected position */}
       <div className="selected-state">
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12 }}>
-          <span
-            style={{
-              borderRadius: RADIUS.md,
-              border: `1px solid ${hexToRgba(panel.cDot, 0.34)}`,
-              background: hexToRgba(panel.cDot, panelLight ? 0.1 : 0.12),
-              padding: '5px 9px',
-              fontFamily: FONT.diagram,
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: '0.08em',
-              color: panel.cText,
-            }}
-          >
-            State {position.code}
-          </span>
           <span style={{ width: 14, height: 14, borderRadius: '50%', background: panel.cDot }} />
           <span style={{ fontSize: 'clamp(22px, 3vw, 29px)', fontWeight: 800, letterSpacing: '-0.02em', color: panel.cText }}>{position.mode}</span>
         </div>
 
+        {/* recognisable autonomic branch — convergent grounding */}
+        <p style={{ margin: '8px 0 0', fontSize: 13, color: panel.soft }}>
+          autonomic state — <span style={{ fontWeight: 600, color: panel.cText }}>{autonomic[position.id]}</span>
+        </p>
+
         {familiarLabel && (
-          <p style={{ margin: '8px 0 0', fontSize: 13, color: panel.soft }}>
+          <p style={{ margin: '4px 0 0', fontSize: 13, color: panel.soft }}>
             also known as <span style={{ fontWeight: 600, color: panel.cText }}>{familiarLabel}</span>
           </p>
         )}
-
-        {/* recognisable autonomic branch — convergent grounding */}
-        <p style={{ margin: '4px 0 0', fontSize: 13, color: panel.soft }}>
-          autonomic state — <span style={{ fontWeight: 600, color: panel.cText }}>{autonomic[position.id]}</span>
-        </p>
 
         {/* source-trace — internal Pattern code + converging science (quiet, never leads) */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 6, fontFamily: FONT.diagram, fontSize: 11, letterSpacing: '0.02em', color: panel.faint }}>
@@ -481,13 +453,6 @@ export default function EmotionalGradient() {
           gap: 10px 12px;
         }
 
-        .sticky-state-name {
-          color: var(--readout-ink);
-          font-size: 14px;
-          font-weight: 650;
-          line-height: 1.2;
-        }
-
         .mode-caption {
           margin: 0;
           padding: 12px 24px 0;
@@ -500,12 +465,12 @@ export default function EmotionalGradient() {
           padding: 16px 24px 18px;
         }
 
-        .mobile-state-list {
+        .gradient-bar-name {
           display: none;
         }
 
         .selected-state {
-          padding: 28px 24px 32px;
+          padding: 88px 24px 32px;
         }
 
         .state-readout {
@@ -723,10 +688,6 @@ export default function EmotionalGradient() {
             letter-spacing: 0.055em !important;
           }
 
-          .sticky-state-name {
-            font-size: 13px;
-          }
-
           .mode-caption {
             padding: 10px 18px 0;
           }
@@ -739,61 +700,40 @@ export default function EmotionalGradient() {
             display: none !important;
           }
 
-          .mobile-state-list {
-            display: grid;
-            gap: 4px;
-            margin-top: 10px;
-          }
-
-          .mobile-state-option {
-            display: grid;
-            width: 100%;
-            min-height: 31px;
-            grid-template-columns: 42px minmax(0, 1fr);
+          .gradient-bar-name {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            background: transparent;
-            color: var(--readout-soft);
-            cursor: pointer;
-            padding: 5px 9px;
-            text-align: left;
-            transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+            max-width: 100%;
+            margin-top: 9px;
+            border: 1px solid var(--gradient-bar-name-border);
+            border-radius: 999px;
+            background: var(--gradient-bar-name-bg);
+            color: var(--gradient-bar-name-color);
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: 650;
+            line-height: 1.2;
           }
 
-          .mobile-state-option.is-active {
-            border-color: var(--state-option-border);
-            background: var(--state-option-bg);
-            color: var(--readout-ink);
-          }
-
-          .mobile-state-option:focus-visible {
-            outline: 2px solid var(--state-option-color);
-            outline-offset: 2px;
-          }
-
-          .mobile-state-code {
-            color: var(--state-option-color);
+          .gradient-bar-name-code {
+            flex: 0 0 auto;
             font-family: var(--font-diagram), monospace;
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 700;
             letter-spacing: 0.08em;
             line-height: 1;
           }
 
-          .mobile-state-label {
+          .gradient-bar-name-label {
             min-width: 0;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 12px;
-            font-weight: 620;
-            line-height: 1.2;
           }
 
           .selected-state {
-            padding: 24px 18px 28px;
+            padding: 86px 18px 28px;
           }
 
           .gradient-track-label {
@@ -851,14 +791,6 @@ export default function EmotionalGradient() {
             letter-spacing: 0.045em !important;
           }
 
-          .gradient-sticky.is-compact .sticky-state-name {
-            max-width: min(38vw, 144px);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-size: 12px;
-          }
-
           .gradient-sticky.is-compact .chronic-toggle {
             gap: 6px !important;
             padding: 4px 8px !important;
@@ -913,7 +845,7 @@ export default function EmotionalGradient() {
             display: none !important;
           }
 
-          .gradient-sticky.is-compact .mobile-state-list {
+          .gradient-sticky.is-compact .gradient-bar-name {
             display: none !important;
           }
         }
