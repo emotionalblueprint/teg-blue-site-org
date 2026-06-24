@@ -164,7 +164,6 @@ export default function EmotionalGradient() {
     (_, i) => `${barStop(i)} ${(((i + 0.5) / G) * 100).toFixed(2)}%`,
   ).join(', ')}, ${barStop(G - 1)} 100%)`
   const barBg = barGradient
-  const selectionX = isShutdown ? 'calc(100% - 48px)' : `${(((posIndex + 0.5) / G) * 100).toFixed(2)}%`
   const modeCaption = chronic
     ? 'Chronic — the gradient has become rigid: the nervous system gets stuck in protective patterns, reacting from threat even when the present moment is safe.'
     : 'Fluid — the nervous system can move flexibly between safety, threat, and rest, depending on what is happening around it.'
@@ -186,7 +185,10 @@ export default function EmotionalGradient() {
     }
   }
   const stateText = chronic ? content.state[position.id].c : content.state[position.id].a
-  const familiarLabel = chronic && position.familiarChronic ? position.familiarChronic : position.familiar
+  const readoutColumns = [
+    groups.filter((group) => group.label === 'Mind' || group.label === 'Feeling'),
+    groups.filter((group) => group.label === 'Body' || group.label === 'Response'),
+  ]
 
   const renderRow = (id) => {
     const card = cardById[id]
@@ -254,7 +256,6 @@ export default function EmotionalGradient() {
         '--readout-line': tile.divider,
         '--readout-detail-bg': tile.detailBg,
         '--readout-detail-border': tile.detailBorder,
-        '--selection-x': selectionX,
       }}
     >
       <div className={`gradient-sticky${compactSticky ? ' is-compact' : ''}`}>
@@ -420,42 +421,23 @@ export default function EmotionalGradient() {
 
       {/* selected position */}
       <div className="selected-state">
-        <div className="state-lens">
-          <div className="state-lens-title">
-            <div className="state-title-row">
-              <span className="state-title-dot" aria-hidden="true" />
-              <span className="state-mode-title">{position.mode}</span>
-            </div>
-
-            {familiarLabel && (
-              <p className="state-alias">
-                also known as <span>{familiarLabel}</span>
-              </p>
-            )}
-
-            {/* source-trace — internal Pattern code + converging science (quiet, never leads) */}
-            <div className="state-source-trace">
-              <span>{position.pattern}</span>
-              <span aria-hidden="true">·</span>
-              <span>{position.sub}</span>
-            </div>
-          </div>
-
-          <p className="state-mechanism">
-            {chronic ? position.mechanismChronic : position.mechanism}
-          </p>
-        </div>
-
         {/* configuration readout */}
         <div ref={readoutRef} className="state-readout">
-          <div className="readout-head">
-            <span className="readout-kicker">State</span>
-            <span className="readout-rule" aria-hidden="true" />
-            <span className="readout-note">the configuration</span>
+          <div className="state-configuration-title">
+            <span className="state-configuration-dot" aria-hidden="true" />
+            <h2 className="state-configuration-name">{position.mode}</h2>
           </div>
           <p className="state-reading">{stateText}</p>
 
-          <div className="readout-grid">
+          <div className="readout-grid readout-grid-desktop">
+            {readoutColumns.map((columnGroups, index) => (
+              <div key={index} className="readout-column">
+                {columnGroups.map(renderBlock)}
+              </div>
+            ))}
+          </div>
+
+          <div className="readout-mobile-stack">
             {groups.map(renderBlock)}
           </div>
         </div>
@@ -556,97 +538,35 @@ export default function EmotionalGradient() {
           padding: calc(10px + var(--gradient-sticky-offset)) 24px 32px;
         }
 
-        .selected-state::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: var(--selection-x);
-          width: 1px;
-          height: 28px;
-          background: linear-gradient(180deg, var(--readout-line), transparent);
-          opacity: 0.75;
-          pointer-events: none;
+        .state-readout {
+          margin-top: 0;
         }
 
-        .state-lens {
-          display: grid;
-          grid-template-columns: minmax(260px, 0.78fr) minmax(320px, 1fr);
-          gap: 24px;
-          align-items: start;
-          padding-bottom: 24px;
-          border-bottom: 1px solid var(--readout-line);
-        }
-
-        .state-lens-title {
-          min-width: 0;
-        }
-
-        .state-title-row {
+        .state-configuration-title {
           display: flex;
           align-items: center;
           gap: 12px;
+          margin: 0 0 10px;
           min-width: 0;
         }
 
-        .state-title-dot {
-          width: 13px;
-          height: 13px;
+        .state-configuration-dot {
+          width: 10px;
+          height: 10px;
           flex: 0 0 auto;
           border-radius: 50%;
           background: var(--gradient-accent);
-          box-shadow: 0 0 0 5px color-mix(in srgb, var(--gradient-accent) 12%, transparent);
+          box-shadow: 0 0 0 4px color-mix(in srgb, var(--gradient-accent) 12%, transparent);
         }
 
-        .state-mode-title {
+        .state-configuration-name {
+          margin: 0;
           min-width: 0;
           color: var(--gradient-accent-text);
-          font-size: clamp(24px, 3.2vw, 34px);
+          font-size: clamp(21px, 2.8vw, 30px);
           font-weight: 800;
           letter-spacing: -0.02em;
-          line-height: 1.05;
-        }
-
-        .state-alias {
-          margin: 10px 0 0;
-          color: var(--readout-soft);
-          font-size: 13px;
-          line-height: 1.45;
-        }
-
-        .state-alias span {
-          color: var(--gradient-accent-text);
-          font-weight: 650;
-        }
-
-        .state-source-trace {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-top: 8px;
-          color: var(--readout-soft);
-          font-family: var(--font-diagram), monospace;
-          font-size: 11px;
-          letter-spacing: 0.02em;
-          line-height: 1.45;
-          opacity: 0.82;
-        }
-
-        .state-source-trace span[aria-hidden="true"] {
-          opacity: 0.5;
-        }
-
-        .state-mechanism {
-          margin: 0;
-          max-width: 680px;
-          padding-left: 16px;
-          border-left: 2px solid color-mix(in srgb, var(--gradient-accent) 32%, transparent);
-          color: var(--readout-ink);
-          font-size: 15.5px;
-          line-height: 1.62;
-        }
-
-        .state-readout {
-          margin-top: 22px;
+          line-height: 1.08;
         }
 
         .readout-head {
@@ -678,23 +598,33 @@ export default function EmotionalGradient() {
         }
 
         .state-reading {
-          margin: 10px 0 0;
-          max-width: 760px;
+          margin: 0;
+          padding-bottom: 28px;
+          border-bottom: 1px solid var(--readout-line);
           color: var(--readout-ink);
-          font-size: clamp(16px, 2.2vw, 18px);
-          font-weight: 560;
-          line-height: 1.45;
+          font-size: clamp(18px, 2.2vw, 24px);
+          font-weight: 650;
+          line-height: 1.25;
+          letter-spacing: -0.02em;
         }
 
         .readout-grid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          column-gap: 34px;
-          margin-top: 8px;
+          column-gap: clamp(26px, 4vw, 44px);
+          margin-top: 0;
+        }
+
+        .readout-column {
+          min-width: 0;
+        }
+
+        .readout-mobile-stack {
+          display: none;
         }
 
         .readout-group {
-          padding: 22px 0;
+          padding: 34px 0 28px;
           border-bottom: 1px solid var(--readout-line);
         }
 
@@ -869,8 +799,12 @@ export default function EmotionalGradient() {
         }
 
         @media (max-width: 900px) {
-          .readout-grid {
-            grid-template-columns: 1fr;
+          .readout-grid-desktop {
+            display: none;
+          }
+
+          .readout-mobile-stack {
+            display: block;
           }
         }
 
@@ -974,39 +908,35 @@ export default function EmotionalGradient() {
           }
 
           .selected-state {
-            padding: calc(12px + var(--gradient-sticky-offset)) 18px 28px;
+            padding: calc(4px + var(--gradient-sticky-offset)) 18px 28px;
           }
 
-          .selected-state::before {
-            height: 22px;
-          }
-
-          .state-lens {
-            grid-template-columns: 1fr;
-            gap: 16px;
-            padding-bottom: 20px;
-          }
-
-          .state-title-row {
-            align-items: flex-start;
+          .state-configuration-title {
             gap: 10px;
+            margin-bottom: 8px;
+            align-items: flex-start;
           }
 
-          .state-title-dot {
-            width: 11px;
-            height: 11px;
+          .state-configuration-dot {
+            width: 9px;
+            height: 9px;
+            margin-top: 7px;
             box-shadow: 0 0 0 4px color-mix(in srgb, var(--gradient-accent) 12%, transparent);
           }
 
-          .state-mode-title {
+          .state-configuration-name {
             font-size: clamp(22px, 7vw, 28px);
             overflow-wrap: anywhere;
           }
 
-          .state-mechanism {
-            padding-left: 12px;
-            font-size: 14.5px;
-            line-height: 1.58;
+          .state-reading {
+            padding-bottom: 22px;
+            font-size: 16px;
+            line-height: 1.35;
+          }
+
+          .readout-group {
+            padding: 24px 0 22px;
           }
 
           .gradient-track-label {
