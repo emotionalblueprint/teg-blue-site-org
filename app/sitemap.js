@@ -4,7 +4,7 @@ import { isLive } from '@/src/lib/live-paths'
 // Known last-modified dates for static pages (YYYY-MM-DD)
 // Update these when making significant content changes
 const PAGE_DATES = {
-  '/': '2026-06-23',
+  '/': '2026-06-24',
   '/publications': '2026-04-06',
   '/frameworks-map': '2026-04-06',
   '/research-entry': '2026-04-06',

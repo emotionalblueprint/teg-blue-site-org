@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const { isLive } = require('./src/lib/live-paths.js')
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -8,7 +10,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
-    return [
+    const redirects = [
       // ============================================================
       // PATTERN-BASED REDIRECTS (catches bulk of old Notion/super.so URLs)
       // ============================================================
@@ -493,6 +495,16 @@ const nextConfig = {
         permanent: true,
       },
     ]
+
+    return redirects.map((redirect) => {
+      const destinationIsLive = isLive(redirect.destination)
+
+      return {
+        ...redirect,
+        destination: destinationIsLive ? redirect.destination : '/',
+        permanent: destinationIsLive ? redirect.permanent : false,
+      }
+    })
   },
   async headers() {
     return [
