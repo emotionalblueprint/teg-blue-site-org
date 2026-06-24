@@ -551,8 +551,8 @@ export default function EmotionalGradient() {
         }
 
         .readout-group-dot {
-          width: 8px;
-          height: 8px;
+          width: 9px;
+          height: 9px;
           flex: 0 0 auto;
           border-radius: 50%;
           background: var(--readout-dot);
@@ -561,9 +561,9 @@ export default function EmotionalGradient() {
         .readout-group-title {
           color: var(--readout-accent);
           font-family: var(--font-diagram), monospace;
-          font-size: 10px;
+          font-size: 11px;
           font-weight: 500;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.16em;
           text-transform: uppercase;
         }
 
@@ -878,7 +878,7 @@ export default function EmotionalGradient() {
           }
 
           .gradient-sticky.is-compact .gradient-track-shell {
-            padding: 7px 12px 8px;
+            padding: 8px 12px 9px;
           }
 
           .gradient-sticky.is-compact .gradient-track-row {
@@ -886,16 +886,16 @@ export default function EmotionalGradient() {
           }
 
           .gradient-sticky.is-compact .gradient-bar-hitbox {
-            padding: 5px 0 !important;
+            padding: 7px 0 !important;
           }
 
           .gradient-sticky.is-compact .gradient-bar {
-            height: 8px !important;
+            height: 12px !important;
           }
 
           .gradient-sticky.is-compact .gradient-needle {
-            width: 18px !important;
-            height: 18px !important;
+            width: 24px !important;
+            height: 24px !important;
             border-width: 2px !important;
           }
 
@@ -904,16 +904,16 @@ export default function EmotionalGradient() {
           }
 
           .gradient-sticky.is-compact .gradient-shutdown-divider {
-            height: 14px !important;
+            height: 18px !important;
           }
 
           .gradient-sticky.is-compact .gradient-shutdown-button {
-            padding: 5px 0 !important;
+            padding: 7px 0 !important;
           }
 
           .gradient-sticky.is-compact .gradient-shutdown-pill {
-            width: 32px !important;
-            height: 8px !important;
+            width: 34px !important;
+            height: 12px !important;
             border-width: 1px !important;
           }
 
