@@ -185,6 +185,7 @@ export default function EmotionalGradient() {
     }
   }
   const stateText = chronic ? content.state[position.id].c : content.state[position.id].a
+  const familiarLabel = chronic && position.familiarChronic ? position.familiarChronic : position.familiar
   const readoutColumns = [
     groups.filter((group) => group.label === 'Mind' || group.label === 'Feeling'),
     groups.filter((group) => group.label === 'Body' || group.label === 'Response'),
@@ -427,6 +428,19 @@ export default function EmotionalGradient() {
             <span className="state-configuration-dot" aria-hidden="true" />
             <h2 className="state-configuration-name">{position.mode}</h2>
           </div>
+          <div className="state-configuration-context">
+            {familiarLabel && (
+              <p className="state-alias">
+                also known as <span>{familiarLabel}</span>
+              </p>
+            )}
+            <div className="state-source-trace">
+              <span>{position.pattern} · {position.sub}</span>
+            </div>
+            <p className="state-mechanism">
+              {chronic ? position.mechanismChronic : position.mechanism}
+            </p>
+          </div>
           <p className="state-reading">{stateText}</p>
 
           <div className="readout-grid readout-grid-desktop">
@@ -569,6 +583,45 @@ export default function EmotionalGradient() {
           line-height: 1.08;
         }
 
+        .state-configuration-context {
+          display: grid;
+          gap: 6px;
+          max-width: 760px;
+          margin: 0 0 18px;
+        }
+
+        .state-alias {
+          margin: 0;
+          color: var(--readout-soft);
+          font-size: 13px;
+          line-height: 1.45;
+        }
+
+        .state-alias span {
+          color: var(--gradient-accent-text);
+          font-weight: 650;
+        }
+
+        .state-source-trace {
+          display: block;
+          color: var(--readout-soft);
+          font-family: var(--font-diagram), monospace;
+          font-size: 11px;
+          letter-spacing: 0.02em;
+          line-height: 1.45;
+          opacity: 0.82;
+        }
+
+        .state-mechanism {
+          margin: 2px 0 0;
+          max-width: 680px;
+          padding-left: 12px;
+          border-left: 2px solid color-mix(in srgb, var(--gradient-accent) 28%, transparent);
+          color: var(--readout-ink);
+          font-size: 14px;
+          line-height: 1.55;
+        }
+
         .readout-head {
           display: flex;
           align-items: center;
@@ -689,7 +742,7 @@ export default function EmotionalGradient() {
         .readout-row-main {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 6px;
+          gap: 7px;
           align-items: start;
           min-width: 0;
         }
@@ -698,16 +751,16 @@ export default function EmotionalGradient() {
           display: inline-flex;
           align-items: center;
           color: var(--readout-accent);
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 1.35;
+          font-size: 15px;
+          font-weight: 760;
+          line-height: 1.25;
         }
 
         .readout-value {
           display: inline;
           margin: 0;
           color: var(--readout-ink);
-          font-size: 14px;
+          font-size: 15px;
           font-weight: 620;
           line-height: 1.42;
           transition: color 150ms ease;
@@ -929,6 +982,15 @@ export default function EmotionalGradient() {
             overflow-wrap: anywhere;
           }
 
+          .state-configuration-context {
+            margin-bottom: 16px;
+          }
+
+          .state-mechanism {
+            font-size: 13.5px;
+            line-height: 1.55;
+          }
+
           .state-reading {
             padding-bottom: 22px;
             font-size: 16px;
@@ -937,6 +999,14 @@ export default function EmotionalGradient() {
 
           .readout-group {
             padding: 24px 0 22px;
+          }
+
+          .readout-label {
+            font-size: 15.5px;
+          }
+
+          .readout-value {
+            font-size: 15.5px;
           }
 
           .gradient-track-label {
