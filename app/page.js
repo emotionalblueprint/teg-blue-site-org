@@ -3,7 +3,7 @@ import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/co
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "The Emotional Gradient — a map of the nervous system's states";
+const TITLE = "The Nervous System Gradient — a map of the nervous system's states";
 const DESCRIPTION =
   "The nervous system continuously asks one question — is it safe, or is there danger? — and shifts the whole system into the state that fits. The seven states form one gradient from rest, through connection and the defences, down to shutdown.";
 
@@ -32,7 +32,7 @@ export const metadata = {
 
 const positionsItemList = {
   "@type": "ItemList",
-  name: "Nervous-system states on the Emotional Gradient",
+  name: "Nervous-system states on the Nervous System Gradient",
   itemListOrder: "https://schema.org/ItemListOrderAscending",
   numberOfItems: positions.length,
   itemListElement: positions.map((p, i) => ({
@@ -45,7 +45,7 @@ const positionsItemList = {
       ...(p.familiar ? { alternateName: p.familiar } : {}),
       inDefinedTermSet: {
         "@type": "DefinedTermSet",
-        name: "The Emotional Gradient",
+        name: "The Nervous System Gradient",
         url: "https://teg-blue.org",
       },
     },
@@ -55,7 +55,7 @@ const positionsItemList = {
 const gradientJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  name: "The Emotional Gradient",
+  name: "The Nervous System Gradient",
   alternateName: "The Emotional Gradient Blueprint",
   url: "https://teg-blue.org",
   inLanguage: "en",
@@ -79,13 +79,13 @@ const gradientJsonLd = {
 
 const faqJsonLd = generateFAQJsonLd(faq);
 const speakableJsonLd = generateSpeakableJsonLd({
-  name: "The Emotional Gradient",
+  name: "The Nervous System Gradient",
   url: "https://teg-blue.org",
   cssSelectors: ["#gradient-intro", "h1", ".faq-question"],
 });
 const breadcrumbJsonLd = generateBreadcrumbJsonLd([
   { name: "TEG-Blue", url: "/" },
-  { name: "The Emotional Gradient", url: "/" },
+  { name: "The Nervous System Gradient", url: "/" },
 ]);
 
 function Ld({ data }) {
@@ -178,7 +178,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingTop: "clamp(48px, 8vw, 88px)", paddingBottom: 40, textAlign: "center" }}>
           <p style={eyebrowStyle}>The Emotional Gradient Blueprint</p>
           <h1 style={{ margin: "0 auto", maxWidth: 720, fontSize: "clamp(26px, 4vw, 34px)", lineHeight: 1.12, letterSpacing: "-0.02em", color: TEXT.primary }}>
-            The Emotional Gradient
+            The Nervous System Gradient
           </h1>
           <p style={{ margin: "20px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
             We do not stay the same in every situation — open and trusting one moment, guarded or controlling
@@ -202,20 +202,27 @@ export default function Home() {
             <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure)", margin: "0 0 8px" }}>What the gradient is</p>
             <div style={{ display: "grid", gap: 6, fontSize: 14, lineHeight: 1.6, color: TEXT.secondary }}>
               <p style={{ margin: 0 }}>
-                The gradient is the continuous range of nervous system organisation the body moves through as it reads
-                safety, threat, and whether rest is possible.
+                The gradient is the <strong style={{ color: TEXT.primary, fontWeight: 600 }}>continuous range</strong> of
+                nervous system organisation the body moves through as it reads{" "}
+                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>safety, threat, and whether rest is possible</strong>.
               </p>
               <p style={{ margin: 0 }}>
-                In fluid movement, the system can mobilise when danger is present, return toward safety when danger has
-                passed, and settle into baseline when rest becomes possible.
+                In <strong style={{ color: TEXT.primary, fontWeight: 600 }}>fluid movement</strong>, the system can{" "}
+                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>mobilise</strong> when danger is present,{" "}
+                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>return toward safety</strong> when danger has
+                passed, and <strong style={{ color: TEXT.primary, fontWeight: 600 }}>settle into baseline</strong> when
+                rest becomes possible.
               </p>
               <p style={{ margin: 0 }}>
-                Wherever the system lands, the whole organism reorganises around that state: body, mind, emotion,
-                behaviour, perception, and the capacity for repair.
+                Wherever the system lands, <strong style={{ color: TEXT.primary, fontWeight: 600 }}>the whole organism
+                reorganises</strong> around that state: body, mind, emotion, behaviour, perception, and the{" "}
+                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>capacity for repair</strong>.
               </p>
               <p style={{ margin: 0 }}>
-                But when threat has lasted too long, the organism can get stuck operating from threat physiology,
-                scanning for danger even when the present moment is safe.
+                But when <strong style={{ color: TEXT.primary, fontWeight: 600 }}>threat has lasted too long</strong>, the
+                organism can get <strong style={{ color: TEXT.primary, fontWeight: 600 }}>stuck operating from threat
+                physiology</strong>, <strong style={{ color: TEXT.primary, fontWeight: 600 }}>scanning for danger</strong>{" "}
+                even when the present moment is safe.
               </p>
             </div>
           </div>

@@ -165,8 +165,8 @@ export default function EmotionalGradient() {
   ).join(', ')}, ${barStop(G - 1)} 100%)`
   const barBg = barGradient
   const modeCaption = chronic
-    ? 'Chronic — this state has become hard to leave; the gradient pulls into fixed points instead of flowing.'
-    : 'Fluid — a live response the system can move through, complete, and leave again.'
+    ? 'Chronic — the gradient has become rigid: the nervous system gets stuck in protective patterns, reacting from threat even when the present moment is safe.'
+    : 'Fluid — the nervous system can move flexibly between safety, threat, and rest, depending on what is happening around it.'
 
   function setFromClientX(clientX) {
     const el = barRef.current
@@ -227,7 +227,7 @@ export default function EmotionalGradient() {
     <section
       tabIndex={0}
       onKeyDown={onTrackKey}
-      aria-label="The Emotional Gradient"
+      aria-label="The Nervous System Gradient"
       style={{
         overflow: 'visible',
         borderRadius: 20,
@@ -255,6 +255,9 @@ export default function EmotionalGradient() {
         <div className="gradient-toolbar">
           <div className="sticky-state-title">
             <Badge color={chronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{chronic ? 'Chronic' : 'Fluid'} · State {position.code}</Badge>
+            <p className="sticky-autonomic-line">
+              autonomic state — <span>{autonomic[position.id]}</span>
+            </p>
           </div>
           <ChronicToggle chronic={chronic} onChange={setChronic} />
         </div>
@@ -387,13 +390,8 @@ export default function EmotionalGradient() {
           <span style={{ fontSize: 'clamp(22px, 3vw, 29px)', fontWeight: 800, letterSpacing: '-0.02em', color: panel.cText }}>{position.mode}</span>
         </div>
 
-        {/* recognisable autonomic branch — convergent grounding */}
-        <p style={{ margin: '8px 0 0', fontSize: 13, color: panel.soft }}>
-          autonomic state — <span style={{ fontWeight: 600, color: panel.cText }}>{autonomic[position.id]}</span>
-        </p>
-
         {familiarLabel && (
-          <p style={{ margin: '4px 0 0', fontSize: 13, color: panel.soft }}>
+          <p style={{ margin: '8px 0 0', fontSize: 13, color: panel.soft }}>
             also known as <span style={{ fontWeight: 600, color: panel.cText }}>{familiarLabel}</span>
           </p>
         )}
@@ -447,10 +445,23 @@ export default function EmotionalGradient() {
 
         .sticky-state-title {
           display: flex;
+          flex: 1 1 auto;
           min-width: 0;
           flex-wrap: wrap;
           align-items: center;
           gap: 10px 12px;
+        }
+
+        .sticky-autonomic-line {
+          margin: 0;
+          color: var(--readout-soft);
+          font-size: 12.5px;
+          line-height: 1.45;
+        }
+
+        .sticky-autonomic-line span {
+          color: var(--gradient-accent-text);
+          font-weight: 650;
         }
 
         .mode-caption {
@@ -470,7 +481,7 @@ export default function EmotionalGradient() {
         }
 
         .selected-state {
-          padding: 88px 24px 32px;
+          padding: 48px 24px 32px;
         }
 
         .state-readout {
@@ -692,6 +703,11 @@ export default function EmotionalGradient() {
             padding: 10px 18px 0;
           }
 
+          .sticky-autonomic-line {
+            font-size: 11.5px;
+            line-height: 1.4;
+          }
+
           .gradient-track-shell {
             padding: 10px 18px 12px;
           }
@@ -733,7 +749,7 @@ export default function EmotionalGradient() {
           }
 
           .selected-state {
-            padding: 86px 18px 28px;
+            padding: 42px 18px 28px;
           }
 
           .gradient-track-label {
@@ -775,6 +791,10 @@ export default function EmotionalGradient() {
             flex-direction: row;
             align-items: center;
             gap: 8px;
+          }
+
+          .gradient-sticky.is-compact .sticky-autonomic-line {
+            display: none;
           }
 
           .gradient-sticky.is-compact .state-pill {
