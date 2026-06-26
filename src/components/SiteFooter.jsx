@@ -3,7 +3,6 @@ import { SpectrumBar } from "./SharedComponents";
 
 const LINKS = [
   { label: "Tools ↗", href: "https://teg-blue.com/" },
-  { label: "Engine ↗", href: "https://www.teg-blue.com/engine" },
   { label: "Substack", href: "https://annaparetas.substack.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
   { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },

@@ -124,7 +124,7 @@ const organizationJsonLd = {
   founder: {
     "@type": "Person",
     name: "Anna Paretas-Artacho",
-    url: "https://teg-blue.org/about",
+    url: "https://orcid.org/0009-0005-2394-7162",
     sameAs: [
       "https://orcid.org/0009-0005-2394-7162",
       "https://www.linkedin.com/in/annaparetas/",
@@ -180,8 +180,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/teg-blue_logo_blue.png" />
 
-        {/* RSS feed autodiscovery */}
-        <link rel="alternate" type="application/rss+xml" title="TEG-Blue Research Publications" href="/feed.xml" />
         {/* Cross-site alternate for application platform */}
         <link rel="alternate" href="https://teg-blue.com" hrefLang="en" title="TEG-Blue Interactive Tools" />
 

@@ -60,7 +60,7 @@ const gradientJsonLd = {
   url: "https://teg-blue.org",
   inLanguage: "en",
   description: DESCRIPTION,
-  author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://teg-blue.org/about" },
+  author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://orcid.org/0009-0005-2394-7162" },
   publisher: { "@type": "Organization", name: "TEG-Blue", url: "https://teg-blue.org" },
   isPartOf: {
     "@type": "ResearchProject",

@@ -21,17 +21,32 @@ const LIVE_PATHS = new Set([
 // open them only when the cluster is ready to be public as a whole.
 const LIVE_PREFIXES = [];
 
+const LIVE_FILES = new Set([
+  "/favicon.ico",
+  "/icon.svg",
+  "/llms.txt",
+  "/llms-full.txt",
+  "/robots.txt",
+  "/sitemap.xml",
+  "/teg-blue_logo_blue.png",
+  "/teg-blue_logo_blue.svg",
+  "/teg-blue_logo_dark_blue.png",
+  "/teg-blue_logo_dark_blue.svg",
+  "/teg-blue_logo_white.png",
+  "/teg-blue_logo_white.svg",
+  "/tegblue8a4f2c9d7e6b5a3f.txt",
+]);
+
 // Technical / SEO routes that are always served (never gated).
 const TECH_PREFIXES = [
   "/api/",
   "/_next/",
   "/opengraph-image", // home share image — must serve through the gate
-  "/tegblue8a4f2c9d7e6b5a3f.txt", // IndexNow key
-  "/feed.xml",
+  "/fonts/",
 ];
 
 function isLive(path) {
-  if (path.includes(".")) return true; // dotted files: llms.txt, sitemap.xml, robots.txt…
+  if (LIVE_FILES.has(path)) return true;
   if (TECH_PREFIXES.some((p) => path.startsWith(p))) return true;
   if (LIVE_PATHS.has(path)) return true;
   if (LIVE_PREFIXES.some((p) => path.startsWith(p))) return true;
@@ -40,4 +55,4 @@ function isLive(path) {
 
 // CommonJS so the same allowlist is read by the Next app (middleware.js + app/sitemap.js
 // via webpack's CJS interop) AND the plain-node IndexNow script (scripts/indexnow-notify.js).
-module.exports = { LIVE_PATHS, LIVE_PREFIXES, TECH_PREFIXES, isLive };
+module.exports = { LIVE_PATHS, LIVE_PREFIXES, LIVE_FILES, TECH_PREFIXES, isLive };
