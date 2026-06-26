@@ -543,7 +543,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: blob: https://zenodo.org",
               "font-src 'self' data: https://fonts.gstatic.com",
-              "connect-src 'self' https://va.vercel-scripts.com",
+              "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com",
               "frame-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",
