@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — Connection Utilities
+ * TEG-Blue — Connection Utilities
  *
  * Routing helpers for the content connection graph.
  * No fs dependency — safe for both server and client components.
@@ -18,7 +18,7 @@ export function getConnectionHref(conn) {
 
 export const CONNECTION_LABELS = {
   cites: "Built on",
-  validates: "Validates",
+  studies: "Studies",
   "part-of": "Part of",
   defines: "Defines",
   extends: "Extends",

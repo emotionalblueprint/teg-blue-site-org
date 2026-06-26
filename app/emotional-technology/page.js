@@ -398,7 +398,7 @@ export default function EmotionalTechnologyPage() {
                 textDecoration: "none",
               }}
             >
-              AI Safety
+              Computational Applications
             </Link>
           </div>
         </section>

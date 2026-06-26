@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "The Emotional Gradient — F1 Framework | TEG-Blue";
+export const alt = "The Nervous System Gradient — F1 Framework | TEG-Blue";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            The Emotional Gradient
+            The Nervous System Gradient
           </div>
 
           {/* Subtitle */}
@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Safety-Threat Orientation System
+            Source traces for the safety-threat orientation system
           </div>
         </div>
 
@@ -122,7 +122,7 @@ export default function Image() {
               letterSpacing: "0.04em",
             }}
           >
-            TEG-Blue Research
+            TEG-Blue
           </div>
         </div>
       </div>

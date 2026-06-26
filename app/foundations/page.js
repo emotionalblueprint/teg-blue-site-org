@@ -6,7 +6,7 @@ import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJson
 const FAQ_ITEMS = [
   {
     question: "How is TEG-Blue organized?",
-    answer: "TEG-Blue is organized as four interconnected parts: measurement (Four Foundational Models), explanatory frameworks (12 Frameworks), emotional tools (gradient-based scales), and AI safety infrastructure (structured schemas for machine consumption).",
+    answer: "TEG-Blue is currently organized across distinct surfaces: the public framework and research-grounding home on teg-blue.org, practical public tools on teg-blue.com, and separate applied Engine logic for bounded institutional or partner tools.",
   },
   {
     question: "What problem does TEG-Blue address?",
@@ -22,28 +22,26 @@ const SIDEBAR_SECTIONS = [
   { label: "The Problem", href: "#the-problem", description: "What problem does TEG-Blue address? Ambiguity between nervous system protection and intentional manipulation." },
   { label: "Part 1 — Measurement", href: "#part-1-measurement", description: "Four Foundational Models: Emotions as Signals, Nervous System States, Regulation Capacities, and Awareness Capacities." },
   { label: "Part 2 — Frameworks", href: "#part-2-frameworks", description: "12 explanatory frameworks across three arcs. The Regulation Thread." },
-  { label: "Part 3 — Emotional Tools", href: "#part-3-emotional-tools", description: "Applied instruments for practitioners, clinicians, researchers, and individuals." },
-  { label: "Part 4 — AI Safety", href: "#part-4-ai-safety", description: "Structured schemas giving AI systems access to emotional pattern recognition." },
+  { label: "Part 3 — Emotional Tools", href: "#part-3-emotional-tools", description: "Applied instruments for practitioners, researchers, and individuals." },
+  { label: "Part 4 — Applied Context", href: "#part-4-ai-safety", description: "Structured context for bounded applied and computational uses." },
   { label: "Core Functions", href: "#core-functions", description: "What are the four core functions of TEG-Blue and how the parts interact." },
   { label: "Ethical Constraint", href: "#ethical-constraint", description: "Pattern-aware data architecture. Intent–Impact–Pattern logic." },
 ];
 
 export const metadata = {
-  title: "System Overview | TEG-Blue Research",
-  description: "How the parts fit together. TEG-Blue is organized as four interconnected parts: measurement (Four Foundational Models), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+  title: "System Overview | TEG-Blue",
+  description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
   keywords: [
     "TEG-Blue architecture",
     "emotional regulation system",
     "nervous system gradient",
     "12 frameworks",
     "emotional tools",
-    "AI safety",
     "nervous system regulation",
-    "measurement system",
-    "explanatory framework",
+    "research grounding",
+    "source traces",
     "integrative architecture",
     "pattern-aware architecture",
-    "computational emotion",
     "polyvagal theory",
     "attachment theory",
   ],
@@ -51,16 +49,16 @@ export const metadata = {
     canonical: "https://teg-blue.org/foundations",
   },
   openGraph: {
-    title: "System Overview — TEG-Blue Research",
-    description: "How the parts fit together. TEG-Blue is organized as four interconnected parts: measurement, explanatory frameworks, emotional tools, and AI safety infrastructure.",
+    title: "System Overview — TEG-Blue",
+    description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
     url: "https://teg-blue.org/foundations",
     type: "article",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
   },
   twitter: {
     card: "summary_large_image",
-    title: "System Overview — TEG-Blue Research",
-    description: "How the parts fit together. TEG-Blue's four-part architecture: measurement, frameworks, tools, and AI safety.",
+    title: "System Overview — TEG-Blue",
+    description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
   },
 };
 
@@ -81,7 +79,7 @@ export default function FoundationsPage() {
             badge="SYSTEM ARCHITECTURE"
             title="System Overview"
             subtitle="How the parts fit together"
-            description="TEG-Blue is organized as four interconnected parts. Each part has a different job, a different evidence status, and a different kind of person who can engage with it — researcher, practitioner, clinician, or engineer."
+            description="TEG-Blue is a layered framework with distinct public, practical, and applied surfaces. The current public center is the Nervous System Gradient."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -148,7 +146,7 @@ export default function FoundationsPage() {
             >
               <div style={labelStyle(SPECTRUM.indigo)}>The Core Testable Claim</div>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                The key variable that predicts relational and behavioral outcomes is not a person&apos;s current nervous system state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity is measurable through &ldquo;complexity markers&rdquo; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
+                The key variable that may help explain relational and behavioral outcomes is not only a person&apos;s current nervous system state, but their <strong style={{ color: TEXT.primary }}>capacity to return to baseline when challenged</strong>. This capacity can be studied through &ldquo;complexity markers&rdquo; — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
               </p>
             </div>
           </div>
@@ -166,7 +164,7 @@ export default function FoundationsPage() {
             <PartIntroCard number={1} title="Measurement" subtitle="Four Foundational Models" color={SPECTRUM.azure} href="/emotional-somatic-cycle" />
             <PartIntroCard number={2} title="Explanatory" subtitle="12 Frameworks" color={SPECTRUM.cobalt} href="/frameworks-map" />
             <PartIntroCard number={3} title="Emotional Tools" subtitle="Applied Instruments" color={SPECTRUM.indigo} href="https://teg-blue.com/emotional-tools" external />
-            <PartIntroCard number={4} title="AI Safety" subtitle="Structured Schemas" color={SPECTRUM.slate} href="/ai-safety" />
+            <PartIntroCard number={4} title="Applied Context" subtitle="Structured Schemas" color={SPECTRUM.slate} href="/ai-safety" />
           </div>
         </section>
 
@@ -255,7 +253,7 @@ export default function FoundationsPage() {
             <ul style={{ ...listStyle, marginTop: 8, marginBottom: 16 }}>
               <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For therapists and clinicians</strong> — <span style={{ color: TEXT.secondary }}>A shared language for patterns that are otherwise hard to name. Support for session work, supervision, and formulation — not as diagnostic instruments, but as structured maps for noticing and conversation.</span></li>
               <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For coaches and organizational practitioners</strong> — <span style={{ color: TEXT.secondary }}>The tools apply to professional and institutional contexts: conflict patterns, leadership dynamics, communication under pressure, relational safety in teams.</span></li>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For researchers</strong> — <span style={{ color: TEXT.secondary }}>Designed instruments awaiting formal validation. An open research need: psychometric design, factor structure exploration, convergent and discriminant validity, cultural adaptation, and bias evaluation.</span></li>
+              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For researchers</strong> — <span style={{ color: TEXT.secondary }}>Designed instruments needing formal psychometric testing. An open research need: psychometric design, factor structure exploration, convergent and discriminant validity, cultural adaptation, and bias evaluation.</span></li>
               <li><strong style={{ color: TEXT.primary }}>For individuals</strong> — <span style={{ color: TEXT.secondary }}>Available for personal exploration and self-understanding. They are not diagnostic. They are maps.</span></li>
             </ul>
 
@@ -264,10 +262,10 @@ export default function FoundationsPage() {
               Empathy Gradient (genuine → selective → performed → weaponised) · Accountability Gradient (genuine → performed → absent → protective) · Integrity Scale (value-aligned → conditional → performed → remorseless) · Boundary Dynamics (permeable → reactive → rigid → exploitative) · Emotional Resonance Scale (open → filtered → absent → weaponised)
             </p>
 
-            <StatusBadge status="Designed, not yet psychometrically validated" color={SPECTRUM.indigo} />
+            <StatusBadge status="Designed, not yet psychometrically tested" color={SPECTRUM.indigo} />
             <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
               Available for exploration on{" "}
-              <a href="https://teg-blue.com/emotional-tools" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>teg-blue.com</a>, awaiting formal validation studies.
+              <a href="https://teg-blue.com/emotional-tools" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>teg-blue.com</a>, awaiting formal psychometric testing.
             </p>
             <div
               style={{
@@ -286,7 +284,7 @@ export default function FoundationsPage() {
 
         {/* ─── PART 4: AI SAFETY ──────────────────────────── */}
         <section id="part-4-ai-safety" style={{ marginBottom: 40 }}>
-          <PartCard number={4} title="AI Safety" color={SPECTRUM.slate}>
+          <PartCard number={4} title="Applied Context" color={SPECTRUM.slate}>
             <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
               Structured Schemas for AI Systems
             </h3>
@@ -294,7 +292,7 @@ export default function FoundationsPage() {
               As AI systems mediate more human interaction, the ambiguity that TEG-Blue addresses is amplified. Emotional dynamics scale faster than the ability to interpret them. Systems trained on human language inherit human emotional patterns — including the dysregulated ones — without the nervous system context that makes those patterns legible.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              The AI Safety part translates the emotional pattern logic into forms AI systems can read safely. This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications designed to replace binary safe/unsafe models with contextual, state-aware assessments.
+              This applied context translates emotional-pattern logic into structured forms that can support bounded tool-building, research review, and computational use. This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications that avoid flattening complex states into simple labels.
             </p>
             <StatusBadge status="Proposed architecture with early implementation" color={SPECTRUM.slate} />
             <div
@@ -306,12 +304,12 @@ export default function FoundationsPage() {
               }}
             >
               <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>Research need:</strong> Schema design feedback, evaluation protocols, risk analysis, misuse prevention design, alignment with existing AI safety research frameworks.
+                <strong style={{ color: TEXT.primary }}>Research need:</strong> Schema design feedback, evaluation protocols, risk analysis, misuse prevention design, and alignment with existing computational safety research.
               </p>
             </div>
             <div style={{ marginTop: 16 }}>
               <Link href="/ai-safety" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                AI Safety →
+                Computational Applications →
               </Link>
             </div>
           </PartCard>
@@ -414,7 +412,7 @@ export default function FoundationsPage() {
                 <NavRow label="Review the evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Understand the methodology" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Explore the emotional tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />
-                <NavRow label="Explore AI applications" href="/ai-safety" linkText="AI Safety →" />
+                <NavRow label="Explore computational applications" href="/ai-safety" linkText="Computational Applications →" />
                 <NavRow label="Collaborate or validate" href="/collaborate" linkText="Collaborate →" />
               </tbody>
             </table>

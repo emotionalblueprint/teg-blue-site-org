@@ -30,13 +30,13 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata = {
   title: {
     default: 'TEG-Blue — The Emotional Gradient Blueprint',
-    template: '%s | TEG-Blue Research',
+    template: '%s | TEG-Blue',
   },
-  description: 'TEG-Blue maps how nervous-system states shape perception, feeling, and behaviour — a continuous gradient from safety through the defences to shutdown, grounded in established science.',
-  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'AI safety', 'AI alignment', 'emotional intelligence', 'nervous system gradient', 'machine learning', 'NLP', 'computational social science', 'harm detection', 'moral reasoning', 'nervous system states', 'complexity markers', 'open science'],
-  authors: [{ name: 'TEG-Blue Research', url: 'https://teg-blue.org' }],
-  creator: 'TEG-Blue Research',
-  publisher: 'TEG-Blue Research',
+  description: 'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.',
+  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'emotional patterns', 'nervous system gradient', 'source traces', 'research grounding', 'state-dependent capacity', 'repair', 'survival strategies', 'identity', 'social patterns'],
+  authors: [{ name: 'TEG-Blue', url: 'https://teg-blue.org' }],
+  creator: 'TEG-Blue',
+  publisher: 'TEG-Blue',
   metadataBase: new URL('https://teg-blue.org'),
   alternates: {
     canonical: 'https://teg-blue.org',
@@ -45,14 +45,14 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://teg-blue.org',
-    siteName: 'TEG-Blue Research',
-    title: 'TEG-Blue — The Emotional Gradient',
-    description: 'A map of the nervous system’s states — grounded in established science.',
+    siteName: 'TEG-Blue',
+    title: 'TEG-Blue — The Nervous System Gradient',
+    description: 'The public framework and research-grounding home for TEG-Blue, currently centered on the Nervous System Gradient.',
   },
   twitter: {
     card: 'summary',
-    title: 'TEG-Blue — The Emotional Gradient',
-    description: 'A map of the nervous system’s states — grounded in established science.',
+    title: 'TEG-Blue — The Nervous System Gradient',
+    description: 'The public framework and research-grounding home for TEG-Blue, currently centered on the Nervous System Gradient.',
   },
   robots: {
     index: true,
@@ -105,10 +105,10 @@ const skipLinkFocusStyles = `
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ResearchOrganization",
-  name: "TEG-Blue Research",
+  name: "TEG-Blue",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue maps how nervous-system states shape perception, feeling, and behaviour — a continuous gradient from safety through the defences to shutdown, grounded in established science.",
+  description: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -133,7 +133,7 @@ const organizationJsonLd = {
     jobTitle: "Founder & Lead Researcher",
     affiliation: {
       "@type": "Organization",
-      name: "TEG-Blue Research",
+      name: "TEG-Blue",
     },
     knowsAbout: [
       "Emotional technology",
@@ -149,15 +149,9 @@ const organizationJsonLd = {
     "Attachment theory",
     "Nervous system",
     "Trauma research",
-    "Emotional intelligence",
-    "AI safety",
-    "AI alignment",
-    "Computational social science",
-    "Natural language processing",
-    "Harm detection",
-    "Moral reasoning",
+    "Emotional patterns",
     "Nervous system state classification",
-    "Structured emotional data",
+    "Structured emotional patterns",
     "Cross-disciplinary research",
     "Integrative frameworks"
   ],
@@ -166,13 +160,13 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "TEG-Blue Research Platform",
+  name: "TEG-Blue.org",
   url: "https://teg-blue.org",
   inLanguage: "en",
-  description: "TEG-Blue maps how nervous-system states shape perception, feeling, and behaviour — a continuous gradient from safety through the defences to shutdown, grounded in established science.",
+  description: "Public framework and research-grounding home for TEG-Blue, currently centered on the Nervous System Gradient.",
   publisher: {
     "@type": "Organization",
-    name: "TEG-Blue Research",
+    name: "TEG-Blue",
   },
 }
 

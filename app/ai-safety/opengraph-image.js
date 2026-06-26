@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'AI Safety Applications — TEG-Blue Emotional Technology'
+export const alt = 'Computational Applications — TEG-Blue'
 export const size = {
   width: 1200,
   height: 630,
@@ -71,7 +71,7 @@ export default async function Image() {
               textTransform: 'uppercase',
             }}
           >
-            TEG-Blue · AI Safety
+            TEG-Blue · Computational Applications
           </div>
 
           <div
@@ -84,7 +84,7 @@ export default async function Image() {
               lineHeight: 1.1,
             }}
           >
-            AI Safety Applications
+            Computational Applications
           </div>
 
           <div
@@ -97,7 +97,7 @@ export default async function Image() {
               marginBottom: 32,
             }}
           >
-            Structured emotional intelligence infrastructure for safer AI systems
+            Structured language for state-aware computational contexts
           </div>
 
           {/* Nervous System Gradient strip */}

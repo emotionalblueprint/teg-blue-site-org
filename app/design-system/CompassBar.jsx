@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/tokens'
 
-// ─── Four-Mode Gradient (canonical colors — matches .com) ────
+// ─── Nervous System Gradient (canonical colors — matches .com) ────
 
 const MODES = [
   { name: 'CONNECTION',  hex: '#93CFFF', center: 0.125, signal: 'Safety',    desc: 'perceived' },

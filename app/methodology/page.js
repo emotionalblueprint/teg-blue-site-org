@@ -4,28 +4,29 @@ import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock, PageLayout } from 
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "Open Science Principles", href: "#open-science-principles", description: "Everything published, everything testable, everything open access. The governing research principles." },
-  { label: "Status Ladder", href: "#status-ladder", description: "Where each component stands: validated, proposed, or open. Transparent about certainty levels." },
-  { label: "Validation Approach", href: "#validation-approach", description: "How TEG-Blue tests its claims — computational analysis, natural language data, independent replication." },
+  { label: "Research Grounding Principles", href: "#research-grounding-principles", description: "Source traces, transparent methods, working questions, and open correction." },
+  { label: "Status Ladder", href: "#status-ladder", description: "Where each component stands: established, proposed, preliminary, or open." },
+  { label: "Testing Approach", href: "#testing-approach", description: "How TEG-Blue tests working claims — computational analysis, natural language data, independent replication." },
   { label: "How TEG-Blue Was Developed", href: "#how-teg-blue-was-developed", description: "The architecture, the literature mapping, AI-assisted research tools, and honest limitations." },
   { label: "Ethical Standards", href: "#ethical-standards", description: "Pattern-aware data architecture. What research ethics look like for emotional technology." },
-  { label: "AI-Readable Research", href: "#ai-readable-research", description: "Designed for both human and AI consumption. Structured for machine legibility." },
+  { label: "Structured Page Context", href: "#structured-page-context", description: "Structured metadata, semantic HTML, and consistent terminology for reuse and citation." },
   { label: "Where We Stand Honestly", href: "#where-we-stand-honestly", description: "A candid assessment of current methodology — what is strong, what needs work." },
 ];
 
 export const metadata = {
-  title: "Methodology | TEG-Blue Research",
-  description: "How TEG-Blue research is conducted. Open science principles, pre-registration, open data (Zenodo), transparent methodology, ethical standards, and pattern-aware data architecture.",
+  title: "Methodology | TEG-Blue",
+  description: "How TEG-Blue documents research grounding: source traces, transparent methods, working questions, ethical standards, and pattern-aware data architecture.",
   keywords: [
     "research methodology",
-    "open science principles",
+    "research grounding",
+    "source traces",
     "pre-registration",
-    "open data Zenodo",
+    "Zenodo",
     "research ethics",
     "pattern-aware research",
     "inter-rater reliability",
-    "convergent validity",
-    "ecological validity",
+    "replication",
+    "working questions",
     "reproducible research",
     "transparent methodology"
   ],
@@ -33,29 +34,29 @@ export const metadata = {
     canonical: "https://teg-blue.org/methodology",
   },
   openGraph: {
-    title: "Methodology — TEG-Blue Research",
-    description: "Open science commitment: pre-registration, open data, transparent reporting, ethical standards, pattern-aware design.",
+    title: "Methodology — TEG-Blue",
+    description: "Source traces, transparent reporting, working questions, ethical standards, and pattern-aware design.",
     url: "https://teg-blue.org/methodology",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "article",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: "Methodology — TEG-Blue Research",
-    description: "Our open science principles, validation methods, and ethical standards.",
+    title: "Methodology — TEG-Blue",
+    description: "Research-grounding principles, testing methods, and ethical standards.",
   },
 };
 
 // FAQ content for structured data
 const FAQ_ITEMS = [
   {
-    question: "What are TEG-Blue's open science principles?",
-    answer: "TEG-Blue follows open science principles including: pre-registration of studies before data collection, open data sharing via Zenodo, open access publication of all findings, transparent reporting of methodology and results, and reproducible analysis pipelines documented in public repositories."
+    question: "What are TEG-Blue's research-grounding principles?",
+    answer: "TEG-Blue documents source traces, methods, working questions, limitations, and updates so the framework can be reviewed, corrected, tested, and cited carefully."
   },
   {
-    question: "How is TEG-Blue research validated?",
-    answer: "TEG-Blue uses multiple validation methods: inter-rater reliability testing, convergent validity comparing against established instruments, discriminant validity testing between nervous system states, and ecological validity using naturalistic language samples and real-world contexts."
+    question: "How are TEG-Blue claims tested?",
+    answer: "TEG-Blue uses and proposes multiple testing methods: inter-rater reliability, comparison with established instruments, differentiation between nervous-system states, replication, and naturalistic language samples. Not all methods have been completed."
   },
   {
     question: "How was TEG-Blue developed?",
@@ -83,38 +84,38 @@ export default function MethodologyPage() {
           <ResearcherHero
             badge="METHODOLOGY"
             title="Research Methodology"
-            description="How TEG-Blue research is conducted. Open science principles, pre-registration, open data, transparent methodology."
+            description="How TEG-Blue documents research grounding: source traces, transparent methodology, working questions, and limitations."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* Open Science Principles */}
-        <section id="open-science-principles" style={{ marginBottom: 32 }}>
+        {/* Research Grounding Principles */}
+        <section id="research-grounding-principles" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Open science principles
+            Research grounding principles
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            TEG-Blue research aims to follow open science principles:
+            TEG-Blue research aims to keep the framework traceable and correctable:
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
             <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 6 }}>
               Pre-registration of studies before data collection (where applicable)
             </li>
             <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 6 }}>
-              Open data sharing (anonymized) via Zenodo
+              Source traces and method notes for framework claims
             </li>
             <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 6 }}>
-              Open access publication of all findings
+              Open access publication of selected findings and working papers where appropriate
             </li>
             <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 6 }}>
               Transparent reporting of methodology and results
             </li>
             <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8 }}>
-              Reproducible analysis pipelines documented in public repositories
+              Reproducible analysis pipelines where a study makes empirical claims
             </li>
           </ul>
           <StatusNote>
-            These are our working standards. Not all studies to date have been fully pre-registered. We are transparent about where current work meets these standards and where it does not yet.
+            These are working standards. Not all work to date meets every standard. The site should be transparent about what is established, what is proposed, what has preliminary support, and what still needs testing.
           </StatusNote>
         </section>
 
@@ -145,20 +146,20 @@ export default function MethodologyPage() {
               linkHref="/publications"
             />
             <StatusCard
-              title="Open to validation"
+              title="Open to testing"
               color={SPECTRUM.slate}
-              description="Constructs, tools, and claims that need independent replication, psychometric validation, cross-cultural testing, or external benchmarking."
+              description="Constructs, tools, and claims that need independent replication, psychometric testing, cross-cultural testing, or external benchmarking."
             />
           </div>
         </section>
 
-        {/* Validation Approach */}
-        <section id="validation-approach" style={{ marginBottom: 32 }}>
+        {/* Testing Approach */}
+        <section id="testing-approach" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Validation approach
+            Testing approach
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            Our validation approach aims to use multiple methods:
+            The testing approach aims to use multiple methods:
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginBottom: 16 }}>
             <MethodCard
@@ -167,7 +168,7 @@ export default function MethodologyPage() {
             />
             <MethodCard
               title="Convergent validity"
-              description="New measures compared against established instruments (e.g., DERS, AAQ-II) to verify they capture related constructs."
+              description="New measures compared against established instruments (e.g., DERS, AAQ-II) to assess whether they capture related constructs."
             />
             <MethodCard
               title="Discriminant validity"
@@ -179,7 +180,7 @@ export default function MethodologyPage() {
             />
           </div>
           <StatusNote>
-            The initial validation study used computational analysis of natural language. Formal psychometric validation studies using these methods are planned but not yet completed. We need collaborators to design and run these studies.
+            The initial study used computational analysis of natural language. Formal psychometric studies using these methods are planned but not yet completed. We need collaborators to design and run these studies.
           </StatusNote>
         </section>
 
@@ -217,7 +218,7 @@ export default function MethodologyPage() {
                 What this means
               </h3>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation, not a finished academic work. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
+                The theoretical mapping is a working hypothesis — a starting point for deeper scholarly testing, not a finished academic work. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
               </p>
             </div>
             <div>
@@ -279,13 +280,13 @@ export default function MethodologyPage() {
           </div>
         </section>
 
-        {/* AI-Readable Research */}
-        <section id="ai-readable-research" style={{ marginBottom: 32 }}>
+        {/* Structured Page Context */}
+        <section id="structured-page-context" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            AI-readable research
+            Structured page context
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-            All publications are designed for both human and AI consumption:
+            Publications and framework pages are structured so they can be cited, reviewed, corrected, and reused carefully:
           </p>
           <ul style={{ paddingLeft: 20 }}>
             <li style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 6 }}>
@@ -324,12 +325,12 @@ export default function MethodologyPage() {
                 </tr>
               </thead>
               <tbody>
-                <StatusRow area="Open science principles" status="Working standard; not all work meets full pre-registration yet" />
-                <StatusRow area="Validation study (n=10,000+)" status="Completed; computational analysis of natural language" statusColor={SPECTRUM.azure} />
-                <StatusRow area="Psychometric validation of tools" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
+                <StatusRow area="Research-grounding principles" status="Working standard; not all work meets full pre-registration yet" />
+                <StatusRow area="Initial natural-language study (n=10,000+)" status="Completed; computational analysis of natural language" statusColor={SPECTRUM.azure} />
+                <StatusRow area="Psychometric testing of tools" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
                 <StatusRow area="Cross-cultural replication" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
-                <StatusRow area="Independent replication of four-mode classification" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
-                <StatusRow area="AI schema evaluation" status="Early implementation; needs formal evaluation" statusColor={SPECTRUM.indigo} isLast />
+                <StatusRow area="Independent replication of regulatory-state classification" status="Not yet started; collaborators needed" statusColor={SPECTRUM.slate} />
+                <StatusRow area="Structured schema evaluation" status="Early implementation; needs formal evaluation" statusColor={SPECTRUM.indigo} isLast />
               </tbody>
             </table>
           </div>
@@ -394,7 +395,7 @@ export default function MethodologyPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Methodology | TEG-Blue Research",
+              name: "Methodology | TEG-Blue",
               url: "https://teg-blue.org/methodology",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

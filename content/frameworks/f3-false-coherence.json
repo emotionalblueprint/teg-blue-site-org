@@ -18,7 +18,7 @@
     { "type": "cites", "targetSlug": "analytical-psychology", "targetType": "theory" },
     { "type": "cites", "targetSlug": "internal-family-systems", "targetType": "theory" },
     { "type": "cites", "targetSlug": "attachment", "targetType": "theory" },
-    { "type": "validates", "targetSlug": "validation-study", "targetType": "publication" }
+    { "type": "studies", "targetSlug": "validation-study", "targetType": "publication" }
   ],
 
   "lastUpdated": "2026-03-05"

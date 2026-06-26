@@ -103,7 +103,7 @@ export default function F1CognitiveUpgradeDiagram() {
           letterSpacing: "0.08em", textTransform: "uppercase",
           color: TEXT.muted,
         }}>
-          Inner Compass + Four-Mode Gradient
+          Inner Compass + Nervous System Gradient
         </span>
         <span style={{
           fontFamily: FONT.mono, fontSize: 10, color: TEXT.hint,
@@ -137,7 +137,7 @@ export default function F1CognitiveUpgradeDiagram() {
       <div
         role="slider"
         tabIndex={0}
-        aria-label="Four-mode gradient position"
+        aria-label="Nervous system gradient position"
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(position * 100)}

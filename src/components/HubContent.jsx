@@ -54,7 +54,7 @@ export default function HubContent({ items = [] }) {
           maxWidth: 600,
         }}>
           Established research that TEG-Blue builds on.
-          These theories have been developed and validated by independent
+          These theories have been developed, tested, and debated by independent
           researchers across neuroscience, psychology, and related fields.
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -81,7 +81,7 @@ export default function HubContent({ items = [] }) {
         }}>
           Original contributions from the TEG-Blue project.
           This work proposes new connections between established theories
-          and is in early stages of independent validation.
+          and is in early stages of independent testing.
         </p>
         <p style={{
           fontSize: 12,

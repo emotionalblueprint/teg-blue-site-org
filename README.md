@@ -1,105 +1,82 @@
-# TEG-Blue Research Platform
+# TEG-Blue .org
 
-Open science platform for TEG-Blue research. Designed to be readable by both humans and AI systems.
+Public framework and research-grounding home for **TEG-Blue: The Emotional Gradient Blueprint** — a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.
+
+The current public center of the site is **The Nervous System Gradient**: a research-grounded, read-first map of how nervous-system state changes reshape perception, emotion, body activation, behavior, and repair.
+
+This repo keeps the framework and its research context close together: scientific foundations, source traces, methodology, working questions, citations, publication pages, glossary, and collaboration/research materials.
 
 > **New here?** See the [TEG-Blue Overview](https://github.com/emotionalblueprint/teg-blue-overview) for a complete project map.
 
-## Two Sites, One Framework
+## Two Sites, One Project
 
 TEG-Blue uses two complementary sites:
 
 | Site | URL | Purpose |
 |------|-----|---------|
-| **teg-blue.com** | [teg-blue-site-com](https://github.com/emotionalblueprint/teg-blue-site-com) | Interactive tools and application for everyday users |
-| **teg-blue.org** | This repo | Open science platform for researchers |
+| **teg-blue.org** | This repo | Public framework and research-grounding home, currently centered on The Nervous System Gradient |
+| **teg-blue.com** | [teg-blue-site-com](https://github.com/emotionalblueprint/teg-blue-site-com) | Practical public tools and application surfaces |
 
-**.org** is for research — Publications, theoretical foundations, open research questions, collaboration opportunities.
+**.org** is the public framework and research-grounding home. It can describe methodology, source traces, publications, scientific foundations, working questions, and research grounding.
 
-**.com** is for application — Interactive tools, the Four-Mode Gradient, the 12 Map Levels. Accessible entry points for everyday people.
+**.com** remains the practical public tools surface. The **TEG-Blue Engine** is separate applied/licensable tool-building logic for turning the architecture into specific tools and institutional implementations.
 
-Both sites link to each other. The .org footer links to .com for interactive tools. The .com header links to .org for open research.
-
-## Architecture Overview
-
-Fractal architecture where every page follows the same structural DNA: **IDENTITY → CONTEXT → CORE → CONNECTIONS → DEPTH**.
+Both sites link to each other, with .org carrying the framework and research context, and .com carrying applied public tools.
 
 ## Architecture Overview
+
+This is a Next.js App Router site. The homepage (`app/page.js`) leads with The Nervous System Gradient and mounts the interactive `EmotionalGradient` component. Supporting routes preserve the research grounding, foundations, methodology, publications, glossary, collaboration, working questions, and source-trace material.
 
 ```
-research-platform/
+teg-blue-site-org/
+├── app/
+│   ├── page.js                       <- Nervous System Gradient homepage
+│   ├── about/
+│   ├── foundations/
+│   ├── scientific-foundations/
+│   ├── methodology/
+│   ├── publications/
+│   ├── glossary/
+│   ├── collaborate/
+│   ├── model/                        <- supporting model/source-trace pages
+│   └── framework/                    <- supporting framework/source-trace pages
+│
+├── content/                          <- JSON content files (git-versioned)
+│   ├── TEMPLATES.md                  <- Blank templates for content types
+│   ├── publications/
+│   ├── theories/
+│   └── frameworks/
 │
 ├── src/
+│   ├── components/                   <- Site UI, gradient, diagrams, research components
+│   ├── lib/                          <- Gradient data, content loading, JSON-LD, routing helpers
 │   ├── styles/
-│   │   └── tokens.js              ← Design tokens (Blue Spectrum palette, typography, spacing)
-│   │
-│   ├── types/
-│   │   └── research.ts            ← TypeScript types (ResearchNode, Connection, ContentBlock)
-│   │
-│   ├── lib/
-│   │   ├── jsonld.js              ← JSON-LD generators (Schema.org structured data)
-│   │   └── content.js             ← Content loader (reads JSON files, resolves connections)
-│   │
-│   ├── components/
-│   │   ├── index.js               ← Component barrel export
-│   │   ├── TypeTag.jsx            ← Content type identifier (● PUBLICATION, ● THEORY, etc.)
-│   │   ├── StatusBadge.jsx        ← Publication status (Published, Preprint, etc.)
-│   │   ├── ExpandableSection.jsx  ← Core content unit (<details>/<summary> for AI crawlability)
-│   │   ├── ConnectionCard.jsx     ← Links between research nodes
-│   │   ├── GlossaryInline.jsx     ← Inline term with tooltip (<abbr> for accessibility)
-│   │   ├── ContextBlock.jsx       ← Summary + Key Finding callout
-│   │   ├── ResearchLayout.jsx     ← Page wrapper (header, nav, footer)
-│   │   └── SharedComponents.jsx   ← SpectrumBar, DepthBar, SearchInput
-│   │
-│   └── templates/
-│       └── PublicationPage.jsx    ← Full page template for publications
+│   ├── templates/
+│   └── types/
 │
-├── content/                        ← JSON content files (git-versioned)
-│   ├── TEMPLATES.md               ← Blank templates for each content type
-│   ├── publications/
-│   │   ├── validation-study.json
-│   │   └── architecture-paper.json
-│   ├── theories/
-│   │   ├── polyvagal.json
-│   │   └── attachment.json
-│   ├── glossary/
-│   │   ├── four-mode-gradient.json
-│   │   └── regulatory-state.json
-│   └── frameworks/                 ← Empty, ready for F1-F12
-│
-├── app/research/                   ← Next.js page routes
-│   ├── publications/[slug]/
-│   │   └── index.jsx              ← Dynamic publication pages
-│   ├── foundations/
-│   ├── glossary/
-│   ├── methodology/
-│   ├── citations/
-│   └── collaborate/
-│
-└── public/research/                ← Static assets
+└── public/                           <- Static assets, fonts, verification files
 ```
 
 ## Design System
 
-**Blue Spectrum** — six flat colors, no gradients:
+**Blue Spectrum** - blue-spectrum palette used across research and instrument surfaces:
 
 | Name | Hex | Content Type |
 |------|-----|-------------|
 | Sky | `#7ABAEB` | Glossary |
-| Azure | `#4A9BE8` | Open Data |
+| Azure | `#4A9BE8` | Source traces |
 | Blue | `#3B7DE5` | Publications |
 | Cobalt | `#3560CC` | Frameworks |
 | Indigo | `#4A50B0` | Foundations |
 | Slate | `#6B7A99` | Methodology |
 
 **Rules:**
-- No gradients anywhere
-- Dark backgrounds: `#080C18` → `#0C1222` → `#111827` → `#1A2234`
+- Use flat color surfaces for research content; use gradients intentionally where they communicate the gradient/instrument itself
+- Dark backgrounds: `#080C18` -> `#0C1222` -> `#111827` -> `#1A2234`
 - Fonts: Inter (display) + JetBrains Mono (labels, DOIs, tags)
-- `<details>/<summary>` for all expandable sections (native HTML, AI-readable)
-- JSON-LD on every page
+- `<details>/<summary>` for expandable sections where native disclosure fits
+- JSON-LD for structured page context
 - Max 7 expandable sections per page
-
-Full design system spec: `teg-blue-research-design-system.md`
 
 ## How to Add Content
 
@@ -107,17 +84,17 @@ Full design system spec: `teg-blue-research-design-system.md`
 2. Fill in all fields
 3. Save as `your-slug.json` in the appropriate `content/` subfolder
 4. Add connections to/from existing content
-5. The page generates automatically — no code changes needed
+5. Content-backed pages generate from JSON where the route uses the content loader
 
 ## Key Technical Decisions
 
 | Decision | Rationale |
 |----------|-----------|
 | JSON content files (not MDX) | Simpler for non-developers, easy to validate, works with any renderer |
-| `<details>/<summary>` | Native HTML, zero JS, fully accessible, AI crawlers see all content |
-| JSON-LD on every page | Schema.org structured data for AI comprehension |
-| Static generation | Pre-rendered at build time for speed (Lighthouse 95+) |
-| Flat colors only | Distinct from main TEG-Blue site, simpler rendering, cleaner feel |
+| `<details>/<summary>` | Native HTML, zero JS, accessible disclosure where content benefits from expansion |
+| JSON-LD | Schema.org structured data for search, sharing, and entity context |
+| Static generation | Pre-rendered where possible for speed |
+| Blue-spectrum visual system | Keeps research, diagrams, and instrument surfaces visually connected |
 | Connection system | Every node links to others via typed relationships, creating a knowledge graph |
 
 ## Deployment
@@ -129,20 +106,24 @@ This site is deployed on [Vercel](https://vercel.com) as a standalone site.
 
 ### Tech Stack
 - Next.js 14 (App Router)
-- No additional packages required
+- React 18
+- Tailwind/PostCSS config
+- Vercel Analytics, next-themes, lucide-react
 - Fonts: Inter + JetBrains Mono
 
 ### Key Pages
 
 | Page | Path | Purpose |
 |------|------|---------|
-| Hub | `/` | Content grid with all publications, theories, glossary |
-| For Researchers | `/research-entry` | Entry point explaining TEG-Blue structure |
-| Publications | `/publications` | Published research and validation studies |
-| Theory Map | `/scientific-foundations` | 12 frameworks with 145+ source theories |
+| Nervous System Gradient | `/` | Public read-first framework homepage with the interactive gradient component |
+| How It Works | `/how-it-works` | Short explanatory entry into the gradient |
+| Scientific Foundations | `/scientific-foundations` | Research grounding and source traces |
+| Foundations | `/foundations` | Foundational concepts and context |
+| Methodology | `/methodology` | Research method and evidence orientation |
+| Publications | `/publications` | Publications, working papers, and research materials |
 | Glossary | `/glossary` | Key terms and definitions |
-| Collaborate | `/collaborate` | Collaboration opportunities |
+| Collaborate | `/collaborate` | Collaboration and research opportunities |
 
 ---
 
-*TEG-Blue Research Platform · v1.0 · Anna Paretas-Artacho*
+*TEG-Blue .org · The Nervous System Gradient · Anna Paretas-Artacho*

@@ -5,12 +5,12 @@ import { SiteHeader, SiteFooter, PageLayout } from "@/src/components";
 const SIDEBAR_SECTIONS = [];
 
 export const metadata = {
-  title: "Page Not Found | TEG-Blue Research",
-  description: "The page you're looking for may have moved during our recent site migration. Browse the TEG-Blue open science platform for emotional technology research.",
+  title: "Page Not Found | TEG-Blue",
+  description: "The page you're looking for may have moved during our recent site migration. Browse the TEG-Blue framework and research-grounding home.",
 };
 
 const FRAMEWORK_LINKS = [
-  { id: "F1", label: "The Emotional Gradient", href: "/framework/f1-emotional-gradient" },
+  { id: "F1", label: "The Nervous System Gradient", href: "/framework/f1-emotional-gradient" },
   { id: "F2", label: "Awareness Teaches Awareness", href: "/framework/f2-awareness-calibration" },
   { id: "F3", label: "Adult Cognition & False Coherence", href: "/framework/f3-false-coherence" },
   { id: "F4", label: "Rules Regulate", href: "/framework/f4-rules-regulate" },
@@ -25,12 +25,12 @@ const FRAMEWORK_LINKS = [
 ];
 
 const NAV_LINKS = [
-  { label: "Home", href: "/", description: "Research hub" },
+  { label: "Home", href: "/", description: "Framework home" },
   { label: "Start Here", href: "/research-entry", description: "Entry point for researchers" },
   { label: "Frameworks Map", href: "/frameworks-map", description: "12 frameworks overview" },
   { label: "Established Research", href: "/scientific-foundations", description: "41 research traditions, 145+ contributions" },
   { label: "Glossary", href: "/glossary", description: "Key terms and definitions" },
-  { label: "Publications", href: "/publications", description: "Validation studies and papers" },
+  { label: "Publications", href: "/publications", description: "Papers and research grounding" },
 ];
 
 export default function NotFound() {
@@ -80,7 +80,7 @@ export default function NotFound() {
               maxWidth: 560,
             }}
           >
-            TEG-Blue recently migrated from its original platform. If you followed a link here, the content has likely moved to a new location. Try one of the pages below, or start from the research hub.
+            TEG-Blue recently migrated from its original platform. If you followed a link here, the content has likely moved to a new location. Try one of the pages below, or start from the framework home.
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import { loadAllNodes } from '@/src/lib/content'
+import { isLive } from '@/src/lib/live-paths'
 
 export async function GET() {
   const baseUrl = 'https://teg-blue.org'
@@ -6,7 +7,7 @@ export async function GET() {
 
   // Build RSS XML
   const rssItems = publications
-    .filter(pub => pub.status !== 'draft')
+    .filter(pub => pub.status !== 'draft' && isLive(`/publications/${pub.slug}`))
     .map(pub => {
       const pubDate = pub.lastUpdated || pub.date || new Date().toISOString()
       const dateObj = new Date(pubDate)
@@ -36,15 +37,15 @@ export async function GET() {
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>TEG-Blue Research Publications</title>
+    <title>TEG-Blue Framework Publications</title>
     <link>${baseUrl}</link>
-    <description>Research publications, validation studies, and working papers from TEG-Blue. Open science for emotional regulation research.</description>
+    <description>Publications, working papers, and research-grounding materials from TEG-Blue when those routes are live.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>${baseUrl}/icon.png</url>
-      <title>TEG-Blue Research</title>
+      <title>TEG-Blue</title>
       <link>${baseUrl}</link>
     </image>
     <copyright>CC BY-NC-SA 4.0 TEG-Blue Research</copyright>

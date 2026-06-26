@@ -3,9 +3,9 @@ import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/co
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "The Nervous System Gradient — a map of the nervous system's states";
+const TITLE = "TEG-Blue — The Nervous System Gradient";
 const DESCRIPTION =
-  "A one-page map of seven nervous-system states, showing how safety and threat reshape perception, emotion, body activation, behaviour, and repair.";
+  "The current public center of TEG-Blue: a research-grounded map of seven nervous-system states, showing how safety and threat reshape perception, emotion, body activation, behaviour, and repair.";
 
 export const metadata = {
   title: TITLE,
@@ -22,7 +22,7 @@ export const metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: "https://teg-blue.org",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
@@ -56,15 +56,16 @@ const gradientJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   name: "The Nervous System Gradient",
-  alternateName: "The Emotional Gradient Blueprint",
+  alternateName: "TEG-Blue: The Emotional Gradient Blueprint",
   url: "https://teg-blue.org",
   inLanguage: "en",
   description: DESCRIPTION,
   author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://teg-blue.org/about" },
-  publisher: { "@type": "Organization", name: "TEG-Blue Research", url: "https://teg-blue.org" },
+  publisher: { "@type": "Organization", name: "TEG-Blue", url: "https://teg-blue.org" },
   isPartOf: {
     "@type": "ResearchProject",
     name: "TEG-Blue: The Emotional Gradient Blueprint",
+    description: "A layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
     url: "https://teg-blue.org",
   },
   about: positionsItemList,
@@ -176,11 +177,15 @@ export default function Home() {
       <main id="main-content" style={{ background: BG.page, fontFamily: FONT.display, paddingBottom: 64 }}>
         {/* Hero — static, crawlable */}
         <section style={{ ...sectionStyle, paddingTop: "clamp(48px, 8vw, 88px)", paddingBottom: 40, textAlign: "center" }}>
-          <p style={eyebrowStyle}>The Emotional Gradient Blueprint</p>
+          <p style={eyebrowStyle}>TEG-Blue · The Emotional Gradient Blueprint</p>
           <h1 style={{ margin: "0 auto", maxWidth: 720, fontSize: "clamp(26px, 4vw, 34px)", lineHeight: 1.12, letterSpacing: "-0.02em", color: TEXT.primary }}>
             The Nervous System Gradient
           </h1>
           <p style={{ margin: "20px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
+            TEG-Blue is a layered visual framework for mapping how emotions, nervous systems, survival
+            strategies, identity, and social patterns form and evolve. The Nervous System Gradient is its current public center.
+          </p>
+          <p style={{ margin: "14px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
             We do not stay the same in every situation — open and trusting one moment, guarded or controlling
             the next. These shifts are not random. They are state changes in the nervous system.
           </p>
@@ -296,11 +301,12 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Grounding</p>
             <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
-              Grounded in established science
+              Research grounding and source traces
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The architecture leads — the following established research <em>converges with</em> and underwrites
-              specific parts of it. The science traces the map, it does not frame it.
+              The architecture leads, and the public framework shows where established research <em>converges with</em>
+              specific parts of the map. These are source traces and grounding points, not a claim that the whole system
+              has clinical validation.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
               {scienceGrounding.map((s) => (

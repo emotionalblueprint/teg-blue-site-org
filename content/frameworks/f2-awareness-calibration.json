@@ -18,7 +18,7 @@
     { "type": "cites", "targetSlug": "self-psychology", "targetType": "theory" },
     { "type": "cites", "targetSlug": "schema-theory", "targetType": "theory" },
     { "type": "defines", "targetSlug": "calibration", "targetType": "glossary" },
-    { "type": "validates", "targetSlug": "validation-study", "targetType": "publication" }
+    { "type": "studies", "targetSlug": "validation-study", "targetType": "publication" }
   ],
 
   "lastUpdated": "2026-03-05"

@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — Design Tokens
+ * TEG-Blue — Design Tokens
  * Blue Spectrum · System Theme · Dark Default
  *
  * Single source of truth for all visual decisions.
@@ -149,7 +149,7 @@ export const OPACITY = {
   borderActive: 0.45, // Active/expanded border
 };
 
-// ─── PATTERN COLORS (Four-Mode Gradient) ─────────────
+// ─── PATTERN COLORS (Nervous System Gradient) ─────────────
 
 export const PATTERN = {
   A: { primary: '#a0cdfb', bg: 'rgba(160,205,251,0.08)', border: 'rgba(160,205,251,0.25)' },

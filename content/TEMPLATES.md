@@ -26,7 +26,7 @@ Use for: theories by established researchers (Porges, Bowlby, etc.), standard te
 | `source-verified` | "Source Verified" | Key sources manually checked |
 | `community-reviewed` | "Community Reviewed" | Verified by external researcher |
 
-Use for: TEG-Blue original terms (Four-Mode Gradient, Calibration, etc.), publications, our synthesis work.
+Use for: TEG-Blue original terms (Nervous System Gradient, Calibration, etc.), publications, our synthesis work.
 
 **Philosophy:** This system tells the story: "Here's what exists (Established). Here's what we built from it (Open for Review). Here's the evidence (Source Verified)."
 
@@ -175,7 +175,7 @@ Save to: `/content/glossary/your-slug.json`
 | Type | Meaning | Example |
 |------|---------|---------|
 | `cites` | References this source | Paper → Theory |
-| `validates` | Empirically tests | Study → Framework |
+| `studies` | Empirically studies or tests | Study -> Framework |
 | `defines` | Provides core definition | Glossary → Paper using it |
 | `extends` | Builds upon | Framework → Framework |
 | `contradicts` | Challenges or critiques | Critique → TEG-Blue claim |

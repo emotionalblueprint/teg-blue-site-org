@@ -1,7 +1,7 @@
 {
   "name": "teg-blue-research",
   "version": "1.0.0",
-  "description": "TEG-Blue Research Platform — Open Science Publishing",
+  "description": "TEG-Blue .org — public framework and research-grounding home",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",

@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the core testable claim of TEG-Blue?",
-    answer: "The key variable that predicts relational and behavioral outcomes is not a person's current nervous system state, but their State Flexibility — capacity to return to physiological baseline when challenged. This capacity is measurable through complexity markers in natural language.",
+    answer: "TEG-Blue proposes that State Flexibility — capacity to return to physiological baseline when challenged — may help explain relational and behavioral outcomes better than current state alone. Complexity markers in natural language may be one measurable trace of that capacity.",
   },
   {
     question: "How can researchers collaborate with TEG-Blue?",
@@ -20,24 +20,24 @@ const FAQ_ITEMS = [
 
 const SIDEBAR_SECTIONS = [
   { label: "What TEG-Blue Is", href: "#what-is-original", description: "The architecture is the contribution — established findings held in one frame to show the pattern that only appears together." },
-  { label: "What's Been Built", href: "#whats-been-built", description: "A developed, openly published body of work: 12 frameworks, 4 models, an integrated corpus, and a first validation study." },
-  { label: "Core Testable Claim", href: "#core-testable-claim", description: "The key variable is not current nervous system state but State Flexibility — capacity to return to baseline when challenged." },
+  { label: "What's Been Built", href: "#whats-been-built", description: "A developed body of work: 12 frameworks, 4 models, an integrated corpus, and an initial natural-language study." },
+  { label: "Core Working Proposition", href: "#core-testable-claim", description: "State Flexibility may help explain relational outcomes better than current state alone." },
   { label: "Open Research Questions", href: "#open-research-directions", description: "Research questions across biological mechanism, clinical, developmental, collective, and AI domains." },
   { label: "Where to Go From Here", href: "#where-to-go-from-here", description: "Navigation paths into the framework depending on your research interest." },
 ];
 
 export const metadata = {
-  title: "Start Here | TEG-Blue Research",
-  description: "Entry point for researchers and academics. TEG-Blue is an integrative architecture grounded in nervous system science — a pattern recognition system connecting 145+ theoretical contributions from 41 research traditions. Open access, open questions, open to validation.",
+  title: "Start Here | TEG-Blue",
+  description: "Entry point for researchers and academics. TEG-Blue is a layered visual framework grounded through source traces, working questions, and research traditions across nervous-system science and social patterns.",
   keywords: [
     "TEG-Blue research",
     "emotional technology",
     "emotional regulation research",
-    "open science psychology",
+    "research grounding",
     "research collaboration",
     "state flexibility",
-    "emotional intelligence measurement",
-    "AI safety research",
+    "source traces",
+    "computational applications",
     "computational social science",
     "nervous system regulation research",
     "attachment research",
@@ -46,17 +46,17 @@ export const metadata = {
     canonical: "https://teg-blue.org/research-entry",
   },
   openGraph: {
-    title: "Start Here — TEG-Blue Open Science Platform",
-    description: "Entry point for academics. Open research questions, clear methodology, everything open access. The building blocks are validated; the connections need verification.",
+    title: "Start Here — TEG-Blue",
+    description: "Entry point for academics. Research grounding, working questions, source traces, and testable propositions.",
     url: "https://teg-blue.org/research-entry",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "article",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Start Here — TEG-Blue",
-    description: "Open science platform connecting 145+ theoretical contributions. Open research questions, everything open access.",
+    description: "Research grounding, working questions, source traces, and testable propositions.",
   },
 };
 
@@ -78,7 +78,7 @@ export default function ResearchEntryPage() {
               badge="ENTRY POINT"
               title="Start Here"
               subtitle="An integrative architecture of how the nervous system organizes — from one body to whole societies"
-              description="TEG-Blue synthesizes 41 research traditions into one coherent, testable system: how the nervous system organizes around safety and threat, and how the same mechanism scales from individual regulation to identity, relationships, and social structure. Openly published, grounded in established science, and examined in a first validation study against 10,000+ real-world conflict narratives."
+              description="TEG-Blue draws from 41 research traditions to build a coherent, testable framework: how the nervous system organizes around safety and threat, and how related patterns may scale from individual regulation to identity, relationships, and social structure. The work is documented through source traces, working questions, and an initial natural-language study of 10,000+ real-world conflict narratives."
             />
             <div style={{ marginTop: 20 }}>
               <Link
@@ -121,7 +121,7 @@ export default function ResearchEntryPage() {
             <li>Linguistic complexity as a marker of regulatory capacity</li>
           </ul>
           <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 500, margin: 0 }}>
-            The findings it integrates are established. The architecture that connects them is TEG-Blue&apos;s contribution — and its specific predictions are open to testing.
+            The findings it integrates are established. The architecture that connects them is TEG-Blue&apos;s contribution — and its specific propositions are open to testing.
           </p>
 
           {/* The Regulation Thread — the through-line across the frameworks */}
@@ -170,7 +170,7 @@ export default function ResearchEntryPage() {
             What&apos;s been built
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16, maxWidth: 640 }}>
-            TEG-Blue is not a proposal in search of a foundation. It is a developed body of work, openly published and inspectable.
+            TEG-Blue is not a proposal in search of a foundation. It is a developed body of work with research grounding, source traces, and working questions.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <StatusCard
@@ -182,20 +182,20 @@ export default function ResearchEntryPage() {
               label="An integrated corpus"
               color={SPECTRUM.azure}
               description={
-                <>145+ theoretical contributions from 41 research traditions, cross-referenced to where each underwrites the architecture. See <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue }}>Established Research</Link>.</>
+                <>145+ theoretical contributions from 41 research traditions, cross-referenced to where each grounds or informs the architecture. See <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue }}>Scientific Foundations</Link>.</>
               }
             />
             <StatusCard
-              label="A first validation study"
+              label="An initial natural-language study"
               color={SPECTRUM.blue}
               description={
-                <>A computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection, published (DOI 10.5281/zenodo.19472342). More in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
+                <>A computational analysis of 10,000+ conflict narratives testing regulatory-state markers, published (DOI 10.5281/zenodo.19472342). More in <Link href="/publications" style={{ color: SPECTRUM.blue }}>Publications</Link>.</>
               }
             />
             <StatusCard
-              label="Fully open"
+              label="Documented for review"
               color={SPECTRUM.slate}
-              description="Methods, data, and frameworks published under CC BY-NC-SA 4.0 — for reading, citation, independent testing, adaptation, and replication."
+              description="Methods, data, and frameworks documented where appropriate under CC BY-NC-SA 4.0 — for reading, citation, independent testing, adaptation, and replication."
             />
           </div>
         </section>
@@ -203,14 +203,14 @@ export default function ResearchEntryPage() {
         {/* Core hypothesis */}
         <section id="core-testable-claim" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Core testable claim
+            Core working proposition
           </h2>
           <PropositionBox
             label="CORE HYPOTHESIS"
-            title="Return capacity predicts relational outcomes"
+            title="Return capacity may help explain relational outcomes"
           >
             <p style={{ margin: 0, fontStyle: "italic" }}>
-              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current nervous system state, but their <strong>State Flexibility — capacity to return to physiological baseline when challenged</strong>.
+              TEG-Blue proposes that a key variable in relational and behavioral outcomes may be <strong>State Flexibility — capacity to return to physiological baseline when challenged</strong>, not only a person&apos;s current nervous system state.
             </p>
           </PropositionBox>
           <div
@@ -226,7 +226,7 @@ export default function ResearchEntryPage() {
               <strong style={{ color: TEXT.primary }}>Operationalization:</strong> Measurable in language via complexity markers — accountability without collapse, perspective-taking, repair attempts, emotional differentiation, reduced coercion under stress.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 0 }}>
-              <strong style={{ color: TEXT.primary }}>Research need:</strong> Replication and cross-context validation. Which markers are reliable? Which are context-dependent? How do they shift across stress load, power dynamics, and attachment history?
+              <strong style={{ color: TEXT.primary }}>Research need:</strong> Replication and cross-context testing. Which markers are reliable? Which are context-dependent? How do they shift across stress load, power dynamics, and attachment history?
             </p>
           </div>
           <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 12 }}>
@@ -302,7 +302,7 @@ export default function ResearchEntryPage() {
                 "Is emotional pattern recognition across contexts — individual, relational, institutional — sufficiently consistent to be mapped and tested in AI systems, and what would the framework need to specify for that to be possible?",
               ]}
               refLinks={[
-                { href: "/ai-safety", label: "AI Safety" },
+                { href: "/ai-safety", label: "Computational Applications" },
                 { href: "https://github.com/TEG-Blue/ai-safety", label: "GitHub" },
               ]}
             />

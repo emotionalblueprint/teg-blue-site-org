@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — Content Loader
+ * TEG-Blue — Content Loader
  * 
  * Reads JSON content files from /content/ directory.
  * Resolves connections between nodes.

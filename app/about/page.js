@@ -10,11 +10,11 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the difference between teg-blue.org and teg-blue.com?",
-    answer: "teg-blue.org is the open research hub for publications, methodology, frameworks, and collaboration. teg-blue.com is the application site with interactive tools and guided experiences for individuals and practitioners.",
+    answer: "teg-blue.org is the public framework and research-grounding home for TEG-Blue. teg-blue.com is the practical tools site with interactive tools and guided experiences.",
   },
   {
-    question: "Has TEG-Blue been validated?",
-    answer: "An initial validation study analyzed 10,000+ natural conflict narratives using validated psychological constructs (polyvagal markers, contempt markers, moral disengagement markers), pre-registered on OSF. All four nervous system states were successfully detected. De-escalators showed 78% higher rates of complexity markers than escalators. This is a beginning — five open research questions are documented for further validation.",
+    question: "What research evidence exists so far?",
+    answer: "One initial computational study analyzed 10,000+ natural conflict narratives using markers drawn from established psychological constructs. It reported detectable regulatory-state patterns and higher complexity-marker rates in de-escalation patterns. This is a beginning, not validation of the whole framework; open research questions remain documented for further testing.",
   },
   {
     question: "What scientific domains does TEG-Blue draw from?",
@@ -23,48 +23,48 @@ const FAQ_ITEMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Core Premise", href: "#core-premise", description: "The foundational scientific claim and what makes it testable." },
-  { label: "Validation", href: "#validation", description: "Initial empirical findings from 10,000+ natural conflict narratives." },
+  { label: "The Core Premise", href: "#core-premise", description: "The foundational working proposition and what makes it testable." },
+  { label: "Research Status", href: "#research-status", description: "Initial computational findings from 10,000+ natural conflict narratives." },
   { label: "Established Research", href: "#foundations", description: "24 scientific domains, 145+ theoretical contributions across 41 research traditions, and what the integration reveals." },
   { label: "Open Questions", href: "#open-questions", description: "Priority research directions for independent verification." },
   { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — background and research identity." },
-  { label: "Two Sites", href: "#two-sites", description: "Open research (.org) and interactive tools (.com)." },
+  { label: "Two Sites", href: "#two-sites", description: "Framework/research grounding (.org) and practical tools (.com)." },
 ];
 
 export const metadata = {
-  title: "About | TEG-Blue Research",
-  description: "About TEG-Blue — an integrative architecture connecting 145+ theoretical contributions from 24 scientific domains into testable hypotheses about how the nervous system regulates. Initial validation on 10,000+ narratives.",
+  title: "About | TEG-Blue",
+  description: "About TEG-Blue — The Emotional Gradient Blueprint, a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
   keywords: [
     "TEG-Blue",
     "emotional technology",
     "Anna Paretas-Artacho",
     "emotional regulation",
-    "open research",
+    "research grounding",
     "integrative framework",
-    "open science",
+    "source traces",
     "neuroscience psychology integration",
     "polyvagal theory",
     "attachment theory",
     "affect regulation",
     "emotional intelligence",
-    "AI safety",
-    "validation study",
+    "computational applications",
+    "working questions",
   ],
   alternates: {
     canonical: "https://teg-blue.org/about",
   },
   openGraph: {
-    title: "About — TEG-Blue Research",
-    description: "An integrative framework connecting 145+ theoretical contributions from 24 scientific domains. Initial validation on 10,000+ narratives. Open science, testable hypotheses, inviting collaboration.",
+    title: "About — TEG-Blue",
+    description: "The Emotional Gradient Blueprint: a layered visual framework with research grounding, source traces, and working questions.",
     url: "https://teg-blue.org/about",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "profile",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: "About — TEG-Blue Research",
-    description: "Open research developing an integrative emotional intelligence framework. 24 scientific domains. 145+ theoretical contributions. 10,000+ narratives validated.",
+    title: "About — TEG-Blue",
+    description: "Public framework and research-grounding home for The Emotional Gradient Blueprint.",
   },
 };
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
           <ResearcherHero
             badge="ABOUT"
             title="About TEG-Blue"
-            description="An integrative framework connecting 145+ theoretical contributions from 24 scientific domains into testable hypotheses about emotional regulation. The originality is not in the individual theories — it is in the connections between them."
+            description="The Emotional Gradient Blueprint: a layered visual framework for mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -92,10 +92,10 @@ export default function AboutPage() {
         {/* Intro */}
         <section style={{ marginTop: 32, marginBottom: 32 }}>
           <p style={bodyStyle}>
-            <strong style={{ color: TEXT.primary }}>TEG-Blue</strong> (The Emotional Gradient Blueprint) is a translation architecture that takes established research from neuroscience, psychology, sociology, and related fields and organizes it into a unified system for understanding emotional experience.
+            <strong style={{ color: TEXT.primary }}>TEG-Blue</strong> (The Emotional Gradient Blueprint) is a layered visual framework that takes established research from neuroscience, psychology, sociology, and related fields and organizes it into a working map of emotional experience, nervous-system states, survival strategies, identity, and social patterns.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
-            It does not generate new theories. It reorganizes existing knowledge into a coherent, testable framework — accessible to researchers, practitioners, and AI systems alike.
+            It does not claim to replace the theories it draws from. It reorganizes existing knowledge into a coherent, testable framework with source traces, working questions, and research grounding.
           </p>
         </section>
 
@@ -130,7 +130,7 @@ export default function AboutPage() {
             Applied consistently across individual, relational, institutional, and cultural scales, this premise reveals how living systems organize around perceived safety and threat.
           </p>
 
-          <h3 style={{ ...subsectionHeading, marginTop: 20 }}>The core testable claim</h3>
+          <h3 style={{ ...subsectionHeading, marginTop: 20 }}>The core working proposition</h3>
           <div
             style={{
               padding: "16px 20px",
@@ -140,17 +140,17 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              The key variable that predicts relational and behavioral outcomes is not a person&apos;s current nervous system state, but their <strong style={{ color: TEXT.primary }}>State Flexibility — capacity to return to physiological baseline when challenged</strong>. This capacity is measurable through complexity markers — signs of self-awareness, perspective-taking, and emotional differentiation in natural language.
+              TEG-Blue proposes that a key variable in relational and behavioral outcomes may be <strong style={{ color: TEXT.primary }}>State Flexibility — capacity to return to physiological baseline when challenged</strong>, not only a person&apos;s current nervous system state. Complexity markers may offer one language-based trace of self-awareness, perspective-taking, and emotional differentiation.
             </p>
           </div>
         </section>
 
-        {/* Validation */}
-        <section id="validation" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Empirical validation</h2>
+        {/* Research Status */}
+        <section id="research-status" style={{ marginBottom: 32 }}>
+          <h2 style={sectionHeading}>Research status</h2>
 
           <p style={bodyStyle}>
-            An initial validation study — a computational analysis of 10,000+ natural conflict narratives (Reddit AITA posts) — tested whether the four nervous system states could be reliably detected in unstructured text.
+            An initial computational study analyzed 10,000+ natural conflict narratives (Reddit AITA posts) to test whether regulatory-state markers could be detected in unstructured text.
           </p>
 
           <div
@@ -185,7 +185,7 @@ export default function AboutPage() {
           </div>
 
           <p style={bodyStyle}>
-            All four regulatory modes were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. Mode classifications correlated with independent community moral judgments.
+            The study reported detectable patterns using markers drawn from polyvagal theory, contempt research, and moral disengagement theory. Mode classifications correlated with independent community moral judgments.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             Published on Zenodo:{" "}
@@ -205,7 +205,7 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-              This is a beginning, not a conclusion. The theoretical mapping is a working hypothesis — a starting point for deeper scholarly validation. Human researchers are needed to verify accuracy, correct errors, and deepen the analysis.
+              This is a beginning, not a conclusion. The theoretical mapping is a working hypothesis — a starting point for deeper scholarly testing. Human researchers are needed to verify accuracy, correct errors, replicate findings, and deepen the analysis.
             </p>
           </div>
         </section>
@@ -283,7 +283,7 @@ export default function AboutPage() {
               "What do escalation pathways look like in natural language?",
               "Can the four-mode classification be reproduced by independent researchers?",
               "Does nervous system state shape moral perception?",
-              "Can the emotional tools be validated as psychometric instruments?",
+              "Can the emotional tools be psychometrically tested as instruments?",
             ].map((q, i) => (
               <div
                 key={i}
@@ -395,10 +395,10 @@ export default function AboutPage() {
                 teg-blue.org (you are here)
               </h3>
               <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                The open research hub. Publications, methodology, frameworks, open questions, collaboration. All content freely available under CC BY-NC-SA 4.0.
+              The public framework and research-grounding home. Methodology, source traces, scientific foundations, publications, working questions, and collaboration materials belong here when live.
               </p>
               <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
-                For researchers, academics, clinicians, and AI safety researchers.
+                For researchers, academics, practitioners, and applied-tool collaborators.
               </p>
             </div>
             <div
@@ -414,7 +414,7 @@ export default function AboutPage() {
                 teg-blue.com
               </h3>
               <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                The application site. 16+ interactive tools for pattern recognition — gradient scales, signal tests, discernment tools, and feelings navigators.
+                The practical tools site. Interactive tools for pattern recognition — gradient scales, signal tests, discernment tools, and feelings navigators.
               </p>
               <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
                 For everyday people, coaches, therapists, and organizational professionals.
@@ -474,13 +474,13 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue — an integrative architecture connecting 145+ theoretical contributions from 24 scientific domains.",
+            description: "About TEG-Blue — The Emotional Gradient Blueprint, a layered visual framework with research grounding and source traces.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
               jobTitle: "Founder and creator of TEG-Blue",
-              description: "Founder and creator of TEG-Blue, an integrative emotional technology framework synthesizing 24 scientific domains. Independent · Barcelona.",
+              description: "Founder and creator of TEG-Blue, The Emotional Gradient Blueprint. Independent · Barcelona.",
               url: "https://teg-blue.org/about",
               sameAs: [
                 "https://orcid.org/0009-0005-2394-7162",
@@ -493,7 +493,7 @@ export default function AboutPage() {
                 "Polyvagal Theory",
                 "Attachment Theory",
                 "Systems Design",
-                "AI Safety",
+                "Computational Applications",
               ],
               affiliation: {
                 "@type": "Organization",
@@ -514,7 +514,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "About TEG-Blue | TEG-Blue Research",
+              name: "About TEG-Blue | TEG-Blue",
               url: "https://teg-blue.org/about",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

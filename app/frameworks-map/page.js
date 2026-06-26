@@ -166,7 +166,7 @@ const FRAMEWORKS = [
       "Oscillation between old and new patterns is the nervous system's natural consolidation process",
       "Different awareness configurations see different things — collective intelligence requires diversity, not conformity",
     ],
-    testable: "Five-state capacity assessment validated against clinical observation. Five-condition model tested in therapeutic settings. Oscillation frequency as repair progress indicator. Diverse-configuration teams outperforming uniform teams on complex problems.",
+    testable: "Five-state capacity assessment can be compared with clinical observation. Five-condition model can be tested in therapeutic settings. Oscillation frequency as repair progress indicator. Diverse-configuration teams outperforming uniform teams on complex problems.",
   },
   {
     id: "F9",

@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — Data Types
+ * TEG-Blue — Data Types
  * 
  * Every piece of content is a ResearchNode.
  * Nodes connect to each other via typed Connections.
@@ -30,7 +30,7 @@ export type ContentStatus =
 
 export type ConnectionType =
   | "cites"        // Paper → Theory it references
-  | "validates"    // Study → Framework it tests
+  | "studies"      // Study -> Framework or claim it tests
   | "defines"      // Glossary term → Papers using it
   | "extends"      // Framework → Framework it builds on
   | "contradicts"  // External critique → TEG-Blue response

@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'For Researchers - TEG-Blue Open Science Platform'
+export const alt = 'For Researchers - TEG-Blue Research Grounding'
 export const size = {
   width: 1200,
   height: 630,
@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 36,
             }}
           >
-            Open science platform connecting 41 research traditions into testable propositions
+            Research grounding, source traces, and working questions for a testable framework
           </div>
 
           {/* Research questions highlight */}
@@ -196,7 +196,7 @@ export default async function Image() {
               textAlign: 'center',
             }}
           >
-            The building blocks are validated. The connections need verification.
+            Established research grounds the map. The connections remain open to testing.
           </div>
         </div>
 

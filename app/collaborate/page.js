@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What types of collaboration does TEG-Blue need?",
-    answer: "TEG-Blue needs validation studies (independent replication), cross-disciplinary research (testing specific propositions), permissioned translation or adaptation for specific populations or contexts, and critique (identifying where the framework overclaims or where alternatives are stronger).",
+    answer: "TEG-Blue needs independent replication, cross-disciplinary research testing specific propositions, permissioned translation or adaptation for specific populations or contexts, and critique identifying where the framework overclaims or where alternatives are stronger.",
   },
   {
     question: "What are the ethical expectations for collaborators?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Collaboration Types", href: "#what-were-looking-for", description: "How can researchers collaborate with TEG-Blue? Validation, cross-disciplinary, translation, critique." },
+  { label: "Collaboration Types", href: "#what-were-looking-for", description: "How can researchers collaborate with TEG-Blue? Replication, cross-disciplinary testing, translation, critique." },
   { label: "How to Engage", href: "#how-to-engage", description: "Process, what to expect, and how to reach out." },
   { label: "Ethical Expectations", href: "#ethical-expectations", description: "What are the ethical expectations for TEG-Blue collaborators?" },
   { label: "Current Status", href: "#current-status", description: "Where the project is, what's active, and what's open." },
@@ -27,13 +27,13 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "Collaborate | TEG-Blue",
-  description: "How to collaborate with TEG-Blue. Validation studies, cross-disciplinary research, translation, and critique — what we're looking for, how to engage, and what to expect.",
+  description: "How to collaborate with TEG-Blue. Replication, cross-disciplinary research, translation, and critique — what we're looking for, how to engage, and what to expect.",
   keywords: [
     "research collaboration",
     "emotional technology",
     "TEG-Blue",
-    "open science collaboration",
-    "validation research",
+    "research collaboration",
+    "replication research",
     "replication studies",
     "cross-disciplinary research",
   ],
@@ -41,16 +41,16 @@ export const metadata = {
     canonical: "https://teg-blue.org/collaborate",
   },
   openGraph: {
-    title: "Collaborate — TEG-Blue Research",
-    description: "How to collaborate with TEG-Blue. Validation, cross-disciplinary research, translation, and critique.",
+    title: "Collaborate — TEG-Blue",
+    description: "How to collaborate with TEG-Blue. Replication, cross-disciplinary research, translation, and critique.",
     url: "https://teg-blue.org/collaborate",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: "Collaborate — TEG-Blue Research",
+    title: "Collaborate — TEG-Blue",
     description: "Research collaboration opportunities with TEG-Blue.",
   },
 };

@@ -7,30 +7,30 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What has TEG-Blue published?",
-    answer: "TEG-Blue has published an empirical validation study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether the Nervous System Gradient can be reliably detected in unstructured text (DOI: 10.5281/zenodo.19472342), plus a Theoretical Architecture Contribution Record documenting the 145+ theoretical contributions across 41 research traditions and 12 frameworks.",
+    answer: "TEG-Blue has published an initial computational study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether regulatory-state markers could be detected in unstructured text (DOI: 10.5281/zenodo.19472342), plus a Theoretical Architecture Contribution Record documenting research grounding across the framework.",
   },
   {
-    question: "What did the Nervous System Gradient validation study find?",
-    answer: "All four nervous system states (Connection, Protection, Strategic Management, Domination) were successfully detected using polyvagal markers, contempt markers, and moral disengagement markers. 33.8% of individuals escalated toward Strategic Management/Domination when challenged, 22.2% de-escalated toward Connection, and de-escalators showed 78% higher rates of complexity markers than escalators.",
+    question: "What did the initial natural-language study report?",
+    answer: "The study reported detectable regulatory-state patterns using markers drawn from polyvagal theory, contempt research, and moral disengagement theory. In the sample, 33.8% of individuals escalated toward Strategic Management/Domination when challenged, 22.2% de-escalated toward Connection, and de-escalators showed 78% higher rates of complexity markers than escalators.",
   },
   {
     question: "Are TEG-Blue datasets publicly available?",
-    answer: "Yes. TEG-Blue publishes all methods, data, and code openly under CC BY-NC-SA 4.0. Datasets are available on Zenodo with DOIs for reproducibility and independent replication.",
+    answer: "TEG-Blue aims to publish methods, data, and code where appropriate for reproducibility and independent replication. Dataset availability depends on privacy, licensing, and study-specific constraints.",
   },
 ];
 
 export const metadata = {
-  title: "Research Publications & Validation Studies | TEG-Blue Research",
-  description: "Research publications, validation studies, and datasets from TEG-Blue. Includes empirical validation of the Nervous System Gradient on 10,000+ narratives (DOI: 10.5281/zenodo.19472342).",
+  title: "Publications & Research Grounding | TEG-Blue",
+  description: "Publications, working papers, source traces, and research-grounding materials from TEG-Blue, including an initial computational study of regulatory-state markers in natural language.",
   keywords: [
     "TEG-Blue publications",
     "emotional regulation research papers",
-    "nervous system gradient validation",
+    "nervous system gradient research",
     "computational linguistics emotions",
     "natural language processing psychology",
-    "open science datasets",
+    "source traces",
     "Zenodo research data",
-    "emotional intelligence validation",
+    "research grounding",
     "Reddit AITA analysis",
     "conflict narrative analysis",
     "polyvagal markers",
@@ -40,17 +40,17 @@ export const metadata = {
     canonical: "https://teg-blue.org/publications",
   },
   openGraph: {
-    title: "Publications — TEG-Blue Research",
-    description: "Validation studies, research papers, and open datasets. Nervous System Gradient validated on 10,000+ conflict narratives.",
+    title: "Publications — TEG-Blue",
+    description: "Publications, working papers, source traces, and research-grounding materials from TEG-Blue.",
     url: "https://teg-blue.org/publications",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Publications — TEG-Blue Research",
-    description: "Research papers, validation studies, and open datasets for emotional regulation research.",
+    title: "Publications — TEG-Blue",
+    description: "Research papers, working questions, and source traces for TEG-Blue.",
   },
   other: {
     'citation_title': 'Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient',
@@ -65,8 +65,8 @@ export const metadata = {
 const datasetSchema = {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "TEG-Blue Validation Study Dataset",
-  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments. Used to validate the Nervous System Gradient framework.",
+  "name": "TEG-Blue Natural-Language Regulatory-State Study Dataset",
+  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments for an initial computational study of regulatory-state markers.",
   "url": "https://doi.org/10.5281/zenodo.19472342",
   "identifier": "10.5281/zenodo.19472342",
   "keywords": [
@@ -84,7 +84,7 @@ const datasetSchema = {
   },
   "publisher": {
     "@type": "Organization",
-    "name": "TEG-Blue Research"
+    "name": "TEG-Blue"
   },
   "datePublished": "2026-04",
   "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
@@ -111,7 +111,7 @@ const scholarlyArticleSchema = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   "headline": "Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient",
-  "alternativeHeadline": "Validation Study of the Four Nervous System States Gradient",
+  "alternativeHeadline": "Initial Computational Study of Regulatory-State Markers",
   "author": {
     "@type": "Person",
     "name": "Anna Paretas-Artacho",
@@ -130,13 +130,13 @@ const scholarlyArticleSchema = {
     "Polyvagal theory",
     "Nervous System Gradient"
   ],
-  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text. Key findings: All four nervous system states successfully detected; 33.8% of individuals escalated toward Strategic Management/Domination when challenged; 22.2% de-escalated toward Connection; De-escalators showed 78% higher rates of complexity markers."
+  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether regulatory-state markers could be detected in unstructured text. Reported findings include detectable state-pattern markers, 33.8% of individuals escalating toward Strategic Management/Domination when challenged, 22.2% de-escalating toward Connection, and 78% higher complexity-marker rates among de-escalators."
 };
 
 const SIDEBAR_SECTIONS = [
-  { label: "Validation Study", href: "#validation-study", description: "Computational analysis of 10,000+ natural conflict narratives. The empirical backbone of the nervous system gradient." },
+  { label: "Initial Study", href: "#initial-study", description: "Computational analysis of 10,000+ natural conflict narratives." },
   { label: "All Publications", href: "#all-publications", description: "Published research papers, working papers, and theoretical architecture documents." },
-  { label: "Datasets", href: "#datasets", description: "Open datasets supporting the validation study and ongoing research." },
+  { label: "Datasets", href: "#datasets", description: "Dataset status for the initial study and ongoing research." },
   { label: "How to Cite", href: "#how-to-cite", description: "Citation format and examples for academic use." },
   { label: "Author", href: "#author", description: "About the research team and collaboration opportunities." },
 ];
@@ -168,16 +168,16 @@ export default function PublicationsPage() {
         header={
           <ResearcherHero
             badge="PUBLICATIONS"
-            title="Publications & Datasets"
-            description="Research publications, validation studies, and datasets from TEG-Blue."
+            title="Publications & Research Grounding"
+            description="Publications, working papers, source traces, and research-grounding materials from TEG-Blue."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* Validation study card */}
-        <section id="validation-study" style={{ marginBottom: 32 }}>
+        {/* Initial study card */}
+        <section id="initial-study" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            What did the TEG-Blue validation study find?
+            What did the initial TEG-Blue study report?
           </h2>
           <div
             style={{
@@ -209,7 +209,7 @@ export default function PublicationsPage() {
               Detecting Nervous System States in Natural Language
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-              A computational analysis of 10,000+ natural conflict narratives testing whether the nervous system gradient can be reliably detected in unstructured text.
+              A computational analysis of 10,000+ natural conflict narratives testing whether regulatory-state markers could be detected in unstructured text.
             </p>
             <div style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, marginBottom: 16 }}>
               Anna Paretas-Artacho · April 2026 · DOI: 10.5281/zenodo.19472342
@@ -223,17 +223,17 @@ export default function PublicationsPage() {
               }}
             >
               <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 10 }}>
-                Key Findings
+                Reported Findings
               </h4>
               <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.secondary, lineHeight: 1.7 }}>
-                <li style={{ marginBottom: 4 }}>All four nervous system states successfully detected</li>
+                <li style={{ marginBottom: 4 }}>Regulatory-state marker patterns were detected in the sample</li>
                 <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>33.8%</strong> of individuals escalated toward Strategic Management/Domination when challenged</li>
                 <li style={{ marginBottom: 4 }}><strong style={{ color: TEXT.primary }}>22.2%</strong> de-escalated toward Connection</li>
                 <li style={{ marginBottom: 4 }}>De-escalators showed <strong style={{ color: TEXT.primary }}>78% higher rates of complexity markers</strong></li>
                 <li>State classifications correlated with independent community moral judgments</li>
               </ul>
               <p style={{ marginTop: 12, fontSize: 11, color: TEXT.muted, lineHeight: 1.6 }}>
-                State labels shown in current naming (Connection · Protection · Strategic Management · Domination). The published study on Zenodo reported these as Safety &amp; Openness · Threat &amp; Defence · Strategy &amp; Management · Power &amp; Dominance — the same four constructs.
+                State labels shown in current naming (Connection · Protection · Strategic Management · Domination). The published study on Zenodo reported these as Safety &amp; Openness · Threat &amp; Defence · Strategy &amp; Management · Power &amp; Dominance — corresponding constructs. These findings do not validate clinical use or the whole TEG-Blue framework.
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -334,7 +334,7 @@ export default function PublicationsPage() {
             How to cite
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            Cite the validation study by its DOI: 10.5281/zenodo.19472342.
+            Cite the initial natural-language study by its DOI: 10.5281/zenodo.19472342.
           </p>
         </section>
 
@@ -417,7 +417,7 @@ export default function PublicationsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Publications | TEG-Blue Research",
+              name: "Publications | TEG-Blue",
               url: "https://teg-blue.org/publications",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

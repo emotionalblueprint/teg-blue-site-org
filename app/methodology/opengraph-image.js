@@ -142,7 +142,7 @@ export default async function Image() {
               }}
             >
               <div style={{ fontSize: 16, fontWeight: 600, color: '#3B7DE5' }}>3</div>
-              <div style={{ fontSize: 14, color: '#8892a6' }}>Empirical Validation</div>
+              <div style={{ fontSize: 14, color: '#8892a6' }}>Initial Testing</div>
             </div>
           </div>
 
@@ -157,7 +157,7 @@ export default async function Image() {
               color: '#6B7A99',
             }}
           >
-            AI-assisted literature mapping · Human-verified connections · Open science
+            AI-assisted literature mapping · Human-reviewed connections · Research grounding
           </div>
         </div>
 

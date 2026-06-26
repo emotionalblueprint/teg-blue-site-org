@@ -31,7 +31,7 @@ export default function PublicationPage({ node }) {
   // Group connections by type for display
   const connectionLabels = {
     cites: "Built on",
-    validates: "Validates",
+    studies: "Studies",
     "part-of": "Part of",
     defines: "Defines",
     extends: "Extends",

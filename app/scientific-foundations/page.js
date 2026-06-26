@@ -8,7 +8,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What established research does TEG-Blue integrate?",
-    answer: "TEG-Blue integrates 145+ theoretical contributions from 41 research traditions across 24 research domains including polyvagal theory, attachment theory, affective neuroscience, trauma research, cognitive science, developmental psychology, family systems, and social dominance theory. Each source is connected to its architectural function — what mechanism, condition, or pattern it helps make visible — not used as symbolic authority. The contribution is the integration, not the individual pieces.",
+    answer: "TEG-Blue draws from 145+ theoretical contributions from 41 research traditions across 24 research domains including polyvagal theory, attachment theory, affective neuroscience, trauma research, cognitive science, developmental psychology, family systems, and social dominance theory. Each source is connected to its architectural function — what mechanism, condition, or pattern it helps make visible — not used as symbolic authority. The contribution is the proposed integration, not the individual pieces.",
   },
   {
     question: "How many research domains does TEG-Blue span?",
@@ -16,12 +16,12 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is TEG-Blue peer-reviewed?",
-    answer: "The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published with DOI 10.5281/zenodo.19472342. The theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes all methods, data, and code openly under CC BY-NC-SA 4.0.",
+    answer: "An initial computational study of 10,000+ conflict narratives is published with DOI 10.5281/zenodo.19472342. The broader theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes methods, data, and code where appropriate for reproducibility and responsible access.",
   },
 ];
 
 // Framework/model pages remain staged in this release. Keep F/M tags visible as
-// labels, not links, so the public proof layer does not route into gated pages.
+// labels, not links, so the research-grounding page does not route into gated pages.
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
@@ -236,7 +236,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement. The sympathetic branch activates fight-or-flight. The oldest (dorsal vagal) produces shutdown. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Nervous System Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Strategic Management and Domination. The gradient tracks the progression from adaptive Protection to entrenched Strategic Management — and the capacity to return to baseline, which is the key variable predicting relational outcomes." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Nervous System Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Strategic Management and Domination. The gradient tracks the progression from adaptive Protection to entrenched Strategic Management — and the capacity to return to baseline, which TEG-Blue proposes may help explain relational outcomes." },
       { id: "key-sources", title: "Key Sources", content: "Porges, S. W. (2011). The Polyvagal Theory. Norton. \u00b7 Porges, S. W. (2017). The Pocket Guide to the Polyvagal Theory. Norton. \u00b7 Dana, D. (2018). The Polyvagal Theory in Therapy. Norton." },
     ],
   },
@@ -476,7 +476,7 @@ const coreFoundations = [
   },
   {
     concept: "Regulation",
-    explanation: "The capacity to shift between states is more predictive than any single state (self-regulation research, Gross)",
+    explanation: "The capacity to shift between states may explain more than any single state alone (self-regulation research, Gross)",
   },
   {
     concept: "Attachment",
@@ -586,7 +586,7 @@ const globalModels = [
     id: 7,
     name: "Winnicott's True/False Self",
     author: "Donald Winnicott",
-    coreContribution: "Explains how children develop a True Self when caregivers attune, and a False Self when they must comply for survival — validates the pain of losing authenticity.",
+    coreContribution: "Explains how children develop a True Self when caregivers attune, and a False Self when they must comply for survival — gives language for the pain of losing authenticity.",
     tegBlueAdds: [
       "Reframes True/False Self as awareness configuration: which capacities had conditions to develop and which didn't",
       "Maps how adaptive identities form around incomplete awareness sets and escalate across the gradient",
@@ -1080,7 +1080,7 @@ export default function ScientificFoundationsPage() {
           )}
         </section>
 
-        {/* ─── 5. HOW WE VALIDATE ────────────────────────────────── */}
+        {/* ─── 5. HOW WE GROUND AND TEST ──────────────────────────── */}
         <ValidationMethod />
 
         {/* ─── 6. FOOTER ──────────────────────────────────────────── */}
@@ -1679,7 +1679,7 @@ function ExpandableTheoryCard({ theory }) {
   );
 }
 
-// ─── VALIDATION METHOD COMPONENT ────────────────────────────────
+// ─── GROUNDING AND TESTING METHOD COMPONENT ─────────────────────
 
 function ValidationMethod() {
   return (
@@ -1700,7 +1700,7 @@ function ValidationMethod() {
           margin: "0 0 20px 0",
         }}
       >
-        How We Validate
+        How We Ground and Test
       </h2>
 
       {/* How the mapping was built */}
@@ -1844,7 +1844,7 @@ function ValidationMethod() {
                 lineHeight: 1.7,
               }}
             >
-              <li>Psychometric validation of emotional tools</li>
+              <li>Psychometric testing of emotional tools</li>
               <li>Cross-cultural replication</li>
               <li>Longitudinal studies</li>
             </ul>

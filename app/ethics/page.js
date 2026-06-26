@@ -198,7 +198,7 @@ export default function EthicsPage() {
             Methodology, limitations, and open questions are published for independent verification.
           </PrincipleQuote>
           <p style={body}>
-            TEG-Blue maintains transparency about its theoretical foundations, limitations, and areas of ongoing development. Claims are grounded in evidence and clearly distinguished from hypotheses or emerging models. The framework is subject to ongoing empirical validation and revision.
+            TEG-Blue maintains transparency about its theoretical foundations, limitations, and areas of ongoing development. Claims are grounded in evidence and clearly distinguished from hypotheses or emerging models. The framework is subject to ongoing testing, critique, and revision.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             TEG-Blue is a working hypothesis — not a settled framework. The validation study, the theoretical mapping, the open research questions, and the framework architecture are all published for independent verification. The{" "}

@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name: 'TEG-Blue Research Platform',
-    short_name: 'TEG-Blue Research',
-    description: 'Open science publishing for emotional regulation research',
+    name: 'TEG-Blue.org',
+    short_name: 'TEG-Blue',
+    description: 'Public framework and research-grounding home for The Emotional Gradient Blueprint',
     start_url: '/',
     display: 'standalone',
     background_color: '#0a0f1a',

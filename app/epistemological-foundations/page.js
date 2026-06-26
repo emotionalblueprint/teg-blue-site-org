@@ -532,7 +532,7 @@ export default function EpistemologicalFoundationsPage() {
             isPartOf: {
               "@type": "WebSite",
               "@id": "https://teg-blue.org/#website",
-              name: "TEG-Blue Research Platform"
+              name: "TEG-Blue"
             }
           }),
         }}

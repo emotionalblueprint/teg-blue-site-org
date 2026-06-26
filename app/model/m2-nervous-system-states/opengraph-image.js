@@ -90,7 +90,7 @@ export default function Image() {
               fontStyle: "italic",
             }}
           >
-            The Four-Mode Gradient
+            The Nervous System Gradient
           </div>
         </div>
 
@@ -122,7 +122,7 @@ export default function Image() {
               letterSpacing: "0.04em",
             }}
           >
-            TEG-Blue Research
+            TEG-Blue
           </div>
         </div>
       </div>

@@ -20,11 +20,11 @@ const FAQ_ITEMS = [
   },
   {
     question: "What are Concept Architectures?",
-    answer: "Each of the 12 frameworks (F1-F12) and 4 models (M1-M4) has a Concept Architecture — a formal working document that maps which established theories it draws from, the cross-disciplinary connections it proposes, the mechanisms it describes, and the testable predictions it generates. These are the intellectual origin of all downstream data.",
+    answer: "Each of the 12 frameworks (F1-F12) and 4 models (M1-M4) has a Concept Architecture — a formal working document that maps which established theories it draws from, the cross-disciplinary connections it proposes, the mechanisms it describes, and the working questions it generates. These are the intellectual origin of downstream data.",
   },
   {
     question: "How does root data reach the public sites?",
-    answer: "Root data exports to JavaScript data libraries which feed 20+ interactive tools on teg-blue.com. On teg-blue.org, root data is verified against inline content in framework pages, model pages, and the glossary.",
+    answer: "Root data exports to JavaScript data libraries that feed practical tools on teg-blue.com. On teg-blue.org, root data is used for framework pages, model pages, glossary materials, and source-trace review when those routes are live.",
   },
   {
     question: "How does TEG-Blue trace claims to their source?",
@@ -33,8 +33,8 @@ const FAQ_ITEMS = [
 ];
 
 export const metadata = {
-  title: "How TEG-Blue Works | TEG-Blue Research",
-  description: "The data system behind TEG-Blue. How 145+ theoretical contributions from 41 research traditions connect through Concept Architectures, consolidate into root data files organized by biological function, and distribute to research pages and interactive tools.",
+  title: "How TEG-Blue Works | TEG-Blue",
+  description: "The data system behind TEG-Blue: how source traces and Concept Architectures consolidate into root data files and distribute to framework pages, research-grounding materials, and practical tools.",
   keywords: [
     "TEG-Blue data system",
     "concept architectures",
@@ -44,24 +44,24 @@ export const metadata = {
     "emotional regulation data",
     "cross-disciplinary integration",
     "data pipeline",
-    "open science",
+    "source traces",
     "traceability",
   ],
   alternates: {
     canonical: "https://teg-blue.org/how-it-works",
   },
   openGraph: {
-    title: "How TEG-Blue Works — TEG-Blue Research",
-    description: "The data system: from 145+ theoretical contributions from 41 research traditions through Concept Architectures to root data files to published tools and research. Traceable, auditable, open.",
+    title: "How TEG-Blue Works — TEG-Blue",
+    description: "The data system: from source traces and Concept Architectures to root data, framework pages, research-grounding materials, and practical tools.",
     url: "https://teg-blue.org/how-it-works",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "article",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How TEG-Blue Works — TEG-Blue Research",
-    description: "The data system: established theories → Concept Architectures → root data → published outputs. Every claim traceable.",
+    title: "How TEG-Blue Works — TEG-Blue",
+    description: "The data system: established theories -> Concept Architectures -> root data -> published outputs. Every claim traceable.",
   },
 };
 
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
           <ResearcherHero
             badge="SYSTEM ARCHITECTURE"
             title="How TEG-Blue Works"
-            description="The data system behind TEG-Blue. How established theories connect through frameworks, consolidate into root data organized by biological function, and distribute to research pages and interactive tools."
+            description="The data system behind TEG-Blue. How established theories connect through frameworks, consolidate into root data organized by biological function, and distribute to research-grounding materials and practical tools."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
             <PipelineLayer
               number={2}
               title="Concept Architectures"
-              description="12 framework CAs (F1–F12) and 4 model CAs (M1–M4). Each maps which theories connect, what mechanisms operate, and what predictions follow."
+              description="12 framework CAs (F1–F12) and 4 model CAs (M1–M4). Each maps which theories connect, what mechanisms operate, and what working questions follow."
               color={SPECTRUM.azure}
               arrow
             />
@@ -227,14 +227,14 @@ export default function HowItWorksPage() {
               <li style={{ marginBottom: 6 }}>Which established theories and researchers it draws from</li>
               <li style={{ marginBottom: 6 }}>The cross-disciplinary connections it proposes</li>
               <li style={{ marginBottom: 6 }}>The mechanisms it describes — inputs, processes, outputs</li>
-              <li>The testable predictions it generates</li>
+              <li>The working questions and testable propositions it generates</li>
             </ul>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginBottom: 20 }}>
             <CAGroupCard
               title="12 Framework CAs (F1–F12)"
-              description="One per framework, organized in three arcs. Each maps the complete intellectual structure: what it explains, what research supports it, what it predicts."
+              description="One per framework, organized in three arcs. Each maps the complete intellectual structure: what it explains, what research grounds it, and what questions it raises."
               color={SPECTRUM.cobalt}
               items={[
                 { label: "Individual arc (F1–F3)", detail: "How the nervous system evaluates safety, calibrates through development, compensates through cognition" },
@@ -340,7 +340,7 @@ export default function HowItWorksPage() {
         <section id="from-root-to-output" style={{ marginBottom: 40 }}>
           <h2 style={sectionHeadStyle}>From root to output</h2>
           <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            Root data distributes to two sites through different mechanisms. On teg-blue.com, root data is exported as JavaScript data libraries that feed interactive tools. On teg-blue.org, root data is verified against inline content in research pages.
+            Root data distributes to two sites through different mechanisms. On teg-blue.com, root data is exported as JavaScript data libraries that feed practical tools. On teg-blue.org, root data is used to support framework pages, source traces, and research-grounding materials.
           </p>
 
           {/* .com export chain */}
@@ -429,7 +429,7 @@ export default function HowItWorksPage() {
               </table>
             </div>
             <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6 }}>
-              The .org site has no JavaScript imports from vault data. All content is inline in page files. Root data serves as the verification source — content on the research site must be consistent with root data.
+              The .org site has no JavaScript imports from vault data. All content is inline in page files. Root data serves as a source-trace reference — content on the framework site should stay consistent with root data.
             </p>
           </div>
 
@@ -451,7 +451,7 @@ export default function HowItWorksPage() {
                 </tr>
               </thead>
               <tbody>
-                <ComparisonRow aspect="Purpose" orgValue="Open science and research" comValue="Interactive tools and application" />
+                <ComparisonRow aspect="Purpose" orgValue="Framework and research grounding" comValue="Practical public tools and application" />
                 <ComparisonRow aspect="Audience" orgValue="Researchers, academics, practitioners" comValue="Anyone seeking clarity about patterns" />
                 <ComparisonRow aspect="How root data arrives" orgValue="Inline content verified against root" comValue="JS data libraries imported from root" />
                 <ComparisonRow aspect="Data source" orgValue="Same consolidated root data" comValue="Same consolidated root data" isLast />
@@ -500,7 +500,7 @@ export default function HowItWorksPage() {
               TEG-Blue addresses this by making provenance part of the architecture itself. Each cross-disciplinary connection is documented at its intellectual origin, consolidated with its biological context, and published with its traceability intact. A researcher who questions a specific connection can follow it backward to the exact document where it was first proposed, see the reasoning, and evaluate the evidence independently.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              This does not make the connections correct. It makes them auditable. That is the minimum requirement for integrative work to be taken seriously as science.
+              This does not make the connections correct. It makes them auditable. That is the minimum requirement for a working integrative framework to be reviewed seriously.
             </p>
           </ExpandableSection>
         </section>
@@ -535,8 +535,8 @@ export default function HowItWorksPage() {
             />
             <PrincipleCard
               number={5}
-              title="Open by default"
-              description="Methods, data structures, and reasoning are published openly. The system is designed to be audited, tested, corrected, and replicated."
+              title="Traceable by default"
+              description="Methods, data structures, and reasoning are documented where possible. The system is designed to be audited, tested, corrected, and replicated."
             />
           </div>
         </section>
@@ -567,7 +567,7 @@ export default function HowItWorksPage() {
               <tbody>
                 <NavRow label="See what the system contains" href="/scientific-foundations" linkText="Scientific Foundations →" />
                 <NavRow label="Explore the research grounding" href="/scientific-foundations" linkText="Research Foundations →" />
-                <NavRow label="Understand the open proof layer" href="/about" linkText="About TEG-Blue →" />
+                <NavRow label="Understand the framework home" href="/about" linkText="About TEG-Blue →" />
                 <NavRow label="Review research methods" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Read the evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Try the interactive tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />
@@ -604,7 +604,7 @@ export default function HowItWorksPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "How TEG-Blue Works | TEG-Blue Research",
+              name: "How TEG-Blue Works | TEG-Blue",
               url: "https://teg-blue.org/how-it-works",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

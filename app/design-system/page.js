@@ -147,7 +147,7 @@ export default function DesignSystemPage() {
         <section style={{ marginBottom: SPACING.sectionGap.desktop }}>
           <SectionTitle>Semantic Colors</SectionTitle>
 
-          <SwatchRow label="Four-Mode Gradient">
+          <SwatchRow label="Nervous System Gradient">
             <Swatch color={PATTERN.A.primary} label="Connection" sublabel={PATTERN.A.primary} />
             <Swatch color={PATTERN.B.primary} label="Protection" sublabel={PATTERN.B.primary} />
             <Swatch color={PATTERN.C.primary} label="Control" sublabel={PATTERN.C.primary} />

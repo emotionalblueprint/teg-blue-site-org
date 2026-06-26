@@ -40,9 +40,9 @@ const SIDEBAR_SECTIONS = [
 // ─── METADATA ──────────────────────────────────────────────
 
 export const metadata = {
-  title: "The Emotional Gradient (F1) | TEG-Blue Research",
+  title: "The Nervous System Gradient (F1) | TEG-Blue",
   description:
-    "The biological origin of the Emotional-Somatic Cycle. Why the nervous system generates emotional signals, why the autonomic architecture produces four states, and why biological restoration is the designed process around which all twelve frameworks are organized.",
+    "The biological origin of the Emotional-Somatic Cycle and the framework basis for the Nervous System Gradient. A working source-trace page for how nervous-system state, emotional signals, and biological restoration are mapped in TEG-Blue.",
   keywords: [
     "biological substrate of emotion",
     "autonomic architecture",
@@ -61,21 +61,21 @@ export const metadata = {
     canonical: "https://teg-blue.org/framework/f1-emotional-gradient",
   },
   openGraph: {
-    title: "The Emotional Gradient — F1 Framework | TEG-Blue",
+    title: "The Nervous System Gradient — F1 Framework | TEG-Blue",
     description:
-      "The biological origin of the Emotional-Somatic Cycle — why the nervous system produces emotional signals, why the autonomic architecture generates four states, and why biological restoration is the pivot of the entire framework system.",
+      "The framework basis for the Nervous System Gradient — how nervous-system state, emotional signals, and biological restoration are mapped in TEG-Blue.",
     url: "https://teg-blue.org/framework/f1-emotional-gradient",
     type: "article",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Emotional Gradient — TEG-Blue F1",
+    title: "The Nervous System Gradient — TEG-Blue F1",
     description:
-      "The biological origin of the Emotional-Somatic Cycle and the governing architecture that connects all twelve frameworks.",
+      "The framework basis for the Nervous System Gradient and its source traces.",
   },
   other: {
-    'citation_title': 'The Emotional Gradient',
+    'citation_title': 'The Nervous System Gradient',
     'citation_author': 'Anna Paretas-Artacho',
     'citation_publication_date': '2026/02',
     'citation_technical_report_institution': 'TEG-Blue Research',
@@ -101,9 +101,9 @@ export default function F1EmotionalGradientPage() {
         header={
           <FrameworkHero
             badge="FRAMEWORK F1"
-            title="The Emotional Gradient"
+            title="The Nervous System Gradient"
             subtitle="The Biological Origin of the Emotional-Somatic Cycle"
-            description="Every emotional response is a biological event — neural, endocrine, and autonomic systems generating physiological changes before conscious awareness begins. Independent research traditions across affective science, neuroscience, developmental psychology, and trauma studies converge on the same structure. This framework asks what biological architecture produces it, why the convergence occurs, and what governs the entire system when the body's designed completion process is unavailable."
+            description="Every emotional response is a biological event — neural, endocrine, and autonomic systems generating physiological changes before conscious awareness begins. Independent research traditions across affective science, neuroscience, developmental psychology, and trauma studies offer source traces for this working map. This framework asks what biological architecture produces it, why the convergence may occur, and what governs the system when the body's designed completion process is unavailable."
             group="Individual"
             groupLabel="Individual Arc · F1–F3"
             threadLine="Biological restoration — the body completing its own cycle. Cost: none — the designed process"
@@ -725,9 +725,9 @@ export default function F1EmotionalGradientPage() {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
             "@id": "https://teg-blue.org/framework/f1-emotional-gradient#article",
-            headline: "The Emotional Gradient: The Biological Origin of the Emotional-Somatic Cycle",
+            headline: "The Nervous System Gradient: The Biological Origin of the Emotional-Somatic Cycle",
             description:
-              "Why the nervous system generates emotional signals, why the autonomic architecture produces four states, and why biological restoration is the designed process around which all twelve frameworks are organized. Framework F1 of the TEG-Blue 12-framework system.",
+              "How TEG-Blue maps nervous-system state, emotional signals, and biological restoration as a working framework with source traces. Framework F1 of the TEG-Blue 12-framework system.",
             author: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
@@ -735,7 +735,7 @@ export default function F1EmotionalGradientPage() {
             },
             publisher: {
               "@type": "Organization",
-              name: "TEG-Blue Research",
+              name: "TEG-Blue",
               url: "https://teg-blue.org",
             },
             datePublished: "2026-03-03",
@@ -789,7 +789,7 @@ export default function F1EmotionalGradientPage() {
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
               { name: "12 Frameworks", url: "/frameworks-map" },
-              { name: "F1: Emotional Gradient", url: "/framework/f1-emotional-gradient" },
+              { name: "F1: Nervous System Gradient", url: "/framework/f1-emotional-gradient" },
             ])
           ),
         }}
@@ -833,7 +833,7 @@ export default function F1EmotionalGradientPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "The Emotional Gradient (F1) — TEG-Blue Research",
+              name: "The Nervous System Gradient (F1) — TEG-Blue",
               url: "https://teg-blue.org/framework/f1-emotional-gradient",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

@@ -46,12 +46,12 @@ const MODEL_COLOR = MODEL_COLORS.M2;
 const linkStyle = { color: MODEL_COLOR, textDecoration: "none" };
 
 export const metadata = {
-  title: "Nervous System States (M2) | TEG-Blue Research",
+  title: "Nervous System States (M2) | TEG-Blue",
   description:
-    "What happens after an emotion fires — the nervous system state it produces, how that state changes perception, and what happens when it becomes permanent. The second stage of the Emotional Somatic Cycle.",
+    "A working model within the Nervous System Gradient: how nervous-system states change perception, capacity, and repair, and what happens when a state becomes chronic.",
   keywords: [
     "nervous system states",
-    "four-mode gradient",
+    "nervous system gradient",
     "safety threat orientation",
     "Connection",
     "Protection",
@@ -67,16 +67,16 @@ export const metadata = {
   openGraph: {
     title: "Nervous System States — M2 Model | TEG-Blue",
     description:
-      "Four nervous system states on a continuous gradient — how each reorganizes perception, cognition, and relational capacity.",
+      "A working model within the Nervous System Gradient — how each state reorganizes perception, cognition, and relational capacity.",
     url: "https://teg-blue.org/model/m2-nervous-system-states",
     type: "article",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nervous System States — TEG-Blue M2",
     description:
-      "Four nervous system states on a continuous gradient — how each reorganizes perception, cognition, and relational capacity.",
+      "A working model within the Nervous System Gradient — how each state reorganizes perception, cognition, and relational capacity.",
   },
   other: {
     "citation_title": "Nervous System States",
@@ -103,7 +103,7 @@ export default function M2NervousSystemStatesPage() {
               { label: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals" },
               { label: "M3: Regulation Capacities", href: "/model/m3-regulation-capacities" },
               { label: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities" },
-              { label: "F1: The Emotional Gradient", href: "/framework/f1-emotional-gradient" },
+              { label: "F1: The Nervous System Gradient", href: "/framework/f1-emotional-gradient" },
             ]}
             color={MODEL_COLOR}
           />
@@ -543,7 +543,7 @@ export default function M2NervousSystemStatesPage() {
               { id: "M1: Emotions as Signals", href: "/model/m1-emotions-as-signals", description: "Describes the signals that trigger state activation — M1 maps the signal, M2 maps the state the signal produces. Somatic Contextual Memory (M1) calibrates the sensory filter M2 describes." },
               { id: "M3: Regulation Capacities", href: "/model/m3-regulation-capacities", description: "Describes whether activation resolves — whether the body completes the restoration sequence and restores Physiological Baseline, or the activation persists and the state becomes chronic." },
               { id: "M4: Awareness Capacities", href: "/model/m4-awareness-capacities", description: "Describes what determines whether the person can perceive the state shift while it is happening — why some people notice the narrowing and others remain fully identified with the filtered output." },
-              { id: "F1: The Emotional Gradient", href: "/framework/f1-emotional-gradient", description: "Provides the evolutionary origin of the autonomic architecture — why two biological branches produce four states and how the ESS and CLS co-evolved to produce this gradient." },
+              { id: "F1: The Nervous System Gradient", href: "/framework/f1-emotional-gradient", description: "Provides the evolutionary origin of the autonomic architecture — why two biological branches produce four states and how the ESS and CLS co-evolved to produce this gradient." },
               { id: "F2: Developmental Calibration", href: "/framework/f2-awareness-calibration", description: "Explains how the relational environment during development shapes which states become chronic and whether State Flexibility develops." },
               { id: "F12: Two Information Systems", href: "/framework/f12-two-information-systems", description: "Maps the two-system architecture that operates through the four states — the ESS generating the state shift, the CLS interpreting it. State determines what data moves between the systems and what the CLS builds from it." },
             ]}
@@ -557,7 +557,7 @@ export default function M2NervousSystemStatesPage() {
               { label: "Understand how emotional signals are generated — the first stage of the cycle", href: "/model/m1-emotions-as-signals", linkText: "M1: Emotions as Signals \u2192" },
               { label: "See whether the activation sequence completes — and what accumulates when it does not", href: "/model/m3-regulation-capacities", linkText: "M3: Regulation Capacities \u2192" },
               { label: "Understand what determines whether the person can perceive the state shift", href: "/model/m4-awareness-capacities", linkText: "M4: Awareness Capacities \u2192" },
-              { label: "Explore the biological origin of the four-state gradient", href: "/framework/f1-emotional-gradient", linkText: "F1: The Emotional Gradient \u2192" },
+              { label: "Explore the biological origin of the nervous-system gradient", href: "/framework/f1-emotional-gradient", linkText: "F1: The Nervous System Gradient \u2192" },
               { label: "See the two-system architecture that operates through the four states", href: "/framework/f12-two-information-systems", linkText: "F12: Two Information Systems \u2192" },
               { label: "Explore the interactive tools", href: "https://teg-blue.com/emotional-tools", linkText: "teg-blue.com \u2192", external: true },
             ]}
@@ -571,9 +571,9 @@ export default function M2NervousSystemStatesPage() {
         "@context": "https://schema.org", "@type": "ScholarlyArticle",
         "@id": "https://teg-blue.org/model/m2-nervous-system-states#article",
         headline: "Nervous System States: The Physiological Reorganization and Configuration to Respond to Threat or Safety",
-        description: "Four nervous system states on a continuous gradient — how each reorganizes perception, cognition, and relational capacity. Model M2 of the TEG-Blue system.",
+        description: "A working model within the Nervous System Gradient — how each state reorganizes perception, cognition, and relational capacity. Model M2 of the TEG-Blue system.",
         author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://teg-blue.org/about" },
-        publisher: { "@type": "Organization", name: "TEG-Blue Research", url: "https://teg-blue.org" },
+        publisher: { "@type": "Organization", name: "TEG-Blue", url: "https://teg-blue.org" },
         datePublished: "2026-03-21", dateModified: "2026-04-06", inLanguage: "en",
         license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
         isPartOf: { "@type": "CreativeWork", name: "TEG-Blue Models & Frameworks", url: "https://teg-blue.org/models" },

@@ -1,8 +1,8 @@
 import { generateScientificFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "Established Research — 41 Research Traditions | TEG-Blue Research",
-  description: "The bodies of established research that underwrite specific parts of the TEG-Blue architecture. 41 research traditions across 24 domains — from Polyvagal Theory and Attachment to CBT, IFS, and Moral Psychology — with 145+ theoretical contributions, each connected to its architectural function (F1-F12, M1-M4).",
+  title: "Scientific Foundations — 41 Research Traditions | TEG-Blue",
+  description: "The bodies of established research that TEG-Blue draws from as source traces and research grounding. 41 research traditions across 24 domains, each connected to its proposed architectural function (F1-F12, M1-M4).",
   keywords: [
     "emotional regulation models",
     "Plutchik wheel of emotions",
@@ -30,17 +30,17 @@ export const metadata = {
     canonical: "https://teg-blue.org/scientific-foundations",
   },
   openGraph: {
-    title: "Established Research — How TEG-Blue Integrates Cross-Disciplinary Findings",
-    description: "TEG-Blue connects findings from 41 research traditions — Plutchik, NVC, CBT, Polyvagal, IFS, attachment, trauma, and more — by placing each in sequence inside one architecture. 145+ theoretical contributions, each connected to its architectural function.",
+    title: "Scientific Foundations — How TEG-Blue Draws From Cross-Disciplinary Research",
+    description: "TEG-Blue draws from 41 research traditions — Plutchik, NVC, CBT, Polyvagal, IFS, attachment, trauma, and more — as source traces and research grounding for the proposed architecture.",
     url: "https://teg-blue.org/scientific-foundations",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "article",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Established Research — TEG-Blue Research",
-    description: "The 41 research traditions and 145+ theoretical contributions that underwrite specific parts of the TEG-Blue architecture.",
+    title: "Scientific Foundations — TEG-Blue",
+    description: "Research traditions and theoretical contributions that TEG-Blue draws from as source traces and grounding.",
   },
 };
 

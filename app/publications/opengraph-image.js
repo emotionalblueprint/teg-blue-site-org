@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'TEG-Blue Publications - Research & Validation Studies'
+export const alt = 'TEG-Blue Publications - Research Grounding and Working Papers'
 export const size = {
   width: 1200,
   height: 630,
@@ -63,7 +63,7 @@ export default async function Image() {
               textTransform: 'uppercase',
             }}
           >
-            TEG-Blue Research
+            TEG-Blue
           </div>
 
           <div
@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 32,
             }}
           >
-            Validation studies, research papers, and open datasets
+            Research grounding, working papers, and source traces
           </div>
 
           {/* Featured study highlight */}
@@ -118,7 +118,7 @@ export default async function Image() {
                 color: '#4A9BE8',
               }}
             >
-              Nervous System Gradient validated on 10,000+ conflict narratives
+              Initial natural-language study on 10,000+ conflict narratives
             </div>
           </div>
 

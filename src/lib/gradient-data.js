@@ -314,9 +314,14 @@ export const scienceGrounding = [
 
 export const faq = [
   {
-    question: 'What is the Emotional Gradient?',
+    question: 'What is TEG-Blue?',
     answer:
-      'The Emotional Gradient is a map of the nervous system’s states. The nervous system continuously appraises one question — is it safe, or is there danger? — faster than conscious thought, and shifts the whole organism into the state that fits what it found, along a single continuum from rest, through connection and the defences, down to shutdown.',
+      'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.',
+  },
+  {
+    question: 'What is the Nervous System Gradient?',
+    answer:
+      'The Nervous System Gradient is a map of the nervous system’s states. The nervous system continuously appraises one question — is it safe, or is there danger? — faster than conscious thought, and shifts the whole organism into the state that fits what it found, along a single continuum from rest, through connection and the defences, down to shutdown.',
   },
   {
     question: 'How does the nervous system choose a state?',
@@ -329,9 +334,9 @@ export const faq = [
       'Each position is a passing response the system is built to move through and leave (acute). When a position cannot be left, it stops being a passing response and hardens into the default (chronic). The chronic reading shows restriction, repetition and substitute routing — it describes a system that cannot leave a state, never a verdict about a person.',
   },
   {
-    question: 'What research is the Emotional Gradient grounded in?',
+    question: 'What research is the Nervous System Gradient grounded in?',
     answer:
-      'The architecture leads; established research converges with and underwrites specific claims. The gradient’s autonomic hierarchy converges with Polyvagal Theory (Porges); activation and chronic load with Stress Physiology (Sapolsky, McEwen); state-dependent perception and cognition with Cognitive Science (Barrett, Kahneman); interoception with A. D. Craig; empathy with Interpersonal Neurobiology (Siegel); emotions with Affective Neuroscience (Panksepp, Damasio, LeDoux); defence and repair with Trauma Research (Levine, van der Kolk) and Attachment (Bowlby).',
+      'The architecture leads; established research provides source traces and grounding for specific claims. The gradient’s autonomic hierarchy draws from Polyvagal Theory (Porges); activation and chronic load from Stress Physiology (Sapolsky, McEwen); state-dependent perception and cognition from Cognitive Science (Barrett, Kahneman); interoception from A. D. Craig; empathy from Interpersonal Neurobiology (Siegel); emotions from Affective Neuroscience (Panksepp, Damasio, LeDoux); defence and repair from Trauma Research (Levine, van der Kolk) and Attachment (Bowlby).',
   },
   {
     question: 'What are fight, flight, fawn and freeze?',

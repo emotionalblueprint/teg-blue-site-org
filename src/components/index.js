@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — Component Index
+ * TEG-Blue — Component Index
  *
  * Import all components from here:
  * import { TypeTag, ExpandableSection, ContentGrid } from "@/src/components";

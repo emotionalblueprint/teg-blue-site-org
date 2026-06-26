@@ -10,7 +10,7 @@ export default function Image() {
     badge: 'Citations',
     badgeColor: 'azure',
     title: 'How to Cite TEG-Blue',
-    subtitle: 'APA 7th Edition \u00b7 BibTeX \u00b7 Framework \u00b7 Validation Study',
+    subtitle: 'APA 7th Edition \u00b7 BibTeX \u00b7 Framework \u00b7 Source Records',
     url: 'teg-blue.org/citations',
     needle: 0.125,
   })

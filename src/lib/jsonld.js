@@ -1,5 +1,5 @@
 /**
- * TEG-Blue Research Platform — JSON-LD Generators
+ * TEG-Blue — JSON-LD Generators
  * 
  * Generates Schema.org structured data for every content type.
  * Called at build time (getStaticProps) or in page <head>.
@@ -23,13 +23,13 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "An integrative framework synthesizing 145+ theoretical contributions from neuroscience, psychology, and trauma research into a practical emotional intelligence system.",
+  description: "A layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its public framework and research-grounding home is teg-blue.org.",
   inLanguage: LANGUAGE,
 };
 
 const AUTHOR = {
   "@type": "Organization",
-  name: "TEG-Blue Research",
+  name: "TEG-Blue",
   url: "https://teg-blue.org",
 };
 
@@ -189,45 +189,41 @@ export function generateAISafetyJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "AI Safety Applications — TEG-Blue",
+    name: "Computational Applications — TEG-Blue",
     url: `${BASE_URL}/ai-safety`,
-    description: "How TEG-Blue provides structured, computationally legible emotional intelligence infrastructure for safer AI systems. Gradient frameworks for AI alignment, safety, and human-AI interaction.",
+    description: "Exploratory computational applications of the Nervous System Gradient: structured emotional-pattern context, state-dependent language, and open research questions.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
       {
         "@type": "Thing",
-        name: "AI Safety",
-        description: "Research and practices aimed at making AI systems safe and beneficial"
+        name: "Computational Applications",
+        description: "Exploratory uses of structured emotional-pattern context in computational systems"
       },
       {
         "@type": "Thing",
-        name: "AI Alignment",
-        description: "Ensuring AI systems are aligned with human values and intentions"
+        name: "State-Dependent Language",
+        description: "Language patterns understood in relation to nervous-system state and available capacity"
       },
       {
         "@type": "Thing",
-        name: "Emotional Intelligence Infrastructure",
-        description: "Structured frameworks for AI systems to understand human emotional states"
+        name: "Structured Emotional Patterns",
+        description: "Framework language for describing emotional and nervous-system patterns without reducing them to fixed labels"
       }
     ],
     keywords: [
-      "AI safety",
-      "AI alignment",
-      "emotional intelligence",
-      "harm detection",
+      "computational applications",
+      "emotional patterns",
+      "nervous system gradient",
       "regulatory states",
       "gradient classification",
-      "moral reasoning",
-      "computational social science",
-      "NLP",
-      "machine learning"
+      "state-dependent language",
+      "open research questions"
     ],
     mainEntity: {
-      "@type": "SoftwareApplication",
-      name: "TEG-Blue Four-Mode Gradient",
-      applicationCategory: "AI Safety Framework",
-      description: "Computationally legible gradient framework for classifying human regulatory states: Connection, Protection, Control, Domination"
+      "@type": "CreativeWork",
+      name: "Nervous System Gradient",
+      description: "A research-grounded map for describing nervous-system states and their effects on perception, emotion, body activation, behaviour, and repair."
     }
   };
 }
@@ -288,64 +284,61 @@ export function generateSystemOverviewJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "System Overview — TEG-Blue Research",
+    name: "System Overview — TEG-Blue",
     url: `${BASE_URL}/foundations`,
-    description: "How the parts fit together. TEG-Blue is organized as a four-layer system: measurement (Four-Mode Gradient), explanatory frameworks (12 Frameworks), emotional tools, and AI safety infrastructure.",
+    description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "Thing",
       name: "TEG-Blue Architecture",
-      description: "A layered system for understanding and measuring emotional regulation patterns"
+      description: "A layered visual framework for understanding emotional and nervous-system patterns"
     },
     mainEntity: {
       "@type": "ItemList",
-      name: "TEG-Blue Four-Layer Architecture",
-      description: "The complete TEG-Blue system organized as four interconnected layers",
+      name: "TEG-Blue Ecosystem",
+      description: "The current TEG-Blue ecosystem organized by public framework, research grounding, practical tools, and applied implementations",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "Measurement Layer",
-          description: "Four foundational models: Emotions as Signals (the nervous system language), Nervous System States (physiological reorganization), Regulation Capacities (biological restoration), and Awareness Capacities (ESS awareness of CLS). Observable nervous system states, awareness configurations, and regulation biology.",
-          url: `${BASE_URL}/emotional-somatic-cycle`
+          name: "Public Framework",
+          description: "The Emotional Gradient Blueprint, currently centered publicly on the Nervous System Gradient.",
+          url: BASE_URL
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Explanatory Layer",
-          description: "12 Frameworks (F1-F12) explaining why patterns emerge, how they escalate, and how repair becomes possible. Integrates 145+ theoretical contributions from 41 research traditions.",
-          url: `${BASE_URL}/frameworks-map`
+          name: "Research Grounding",
+          description: "Source traces, scientific foundations, publications, methodology, limitations, and working questions.",
+          url: `${BASE_URL}/scientific-foundations`
         },
         {
           "@type": "ListItem",
           position: 3,
-          name: "Emotional Tools Layer",
-          description: "16 gradient-based scales and assessments translating the system into practical instruments for individuals, practitioners, and clinical settings.",
+          name: "Practical Public Tools",
+          description: "Public tools on teg-blue.com that help people recognize emotional and nervous-system patterns in everyday situations.",
           url: "https://teg-blue.com/emotional-tools"
         },
         {
           "@type": "ListItem",
           position: 4,
-          name: "AI Safety Layer",
-          description: "Structured schemas for AI systems: JSON-LD data, semantic HTML, gradient classifications replacing binary safe/unsafe models.",
-          url: `${BASE_URL}/ai-safety`
+          name: "Applied Engine Logic",
+          description: "Separate applied/licensable tool-building logic for bounded institutional and partner implementations.",
+          url: "https://www.teg-blue.com/engine"
         }
       ]
     },
     keywords: [
       "TEG-Blue architecture",
-      "emotional regulation system",
-      "four-mode gradient",
-      "12 frameworks",
-      "emotional tools",
-      "AI safety",
+      "emotional patterns",
+      "nervous system gradient",
+      "research grounding",
+      "source traces",
+      "practical tools",
       "nervous system regulation",
-      "measurement system",
-      "explanatory framework",
       "integrative architecture",
-      "trauma-informed",
-      "computational emotion"
+      "trauma-informed"
     ]
   };
 }

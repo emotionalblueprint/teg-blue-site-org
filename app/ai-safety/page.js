@@ -8,59 +8,57 @@ const PAGE_COLOR = SPECTRUM.cobalt;
 
 const FAQ_ITEMS = [
   {
-    question: "How does TEG-Blue apply to AI safety?",
-    answer: "TEG-Blue provides structured, computationally legible emotional pattern recognition for AI systems. Instead of binary classification (safe/unsafe, toxic/non-toxic), the Nervous System Gradient maps a continuous spectrum of nervous system states — Connection, Protection, Strategic Management, Domination — enabling more nuanced, accurate responses to human communication.",
+    question: "How might TEG-Blue apply to computational systems?",
+    answer: "TEG-Blue may provide structured, computationally legible emotional-pattern context for bounded research and tool-building. Instead of flattening communication into binary categories, the Nervous System Gradient offers a way to describe state-dependent patterns with more nuance. This is exploratory and not the core public identity of TEG-Blue.",
   },
   {
-    question: "What is the problem with current AI emotion detection?",
-    answer: "Current AI safety systems rely on binary classification that misses the gradient between safety and harm. A message flagged as 'negative sentiment' could be healthy self-protection or genuine threat. Without a structured framework for nervous system states, AI systems cannot distinguish between legitimate distress, defensive communication, and actual harmful intent.",
+    question: "What is the problem with binary emotion detection?",
+    answer: "Binary classification can miss the gradient between distress, self-protection, control, and harm. A message flagged as negative sentiment could be healthy self-protection, defensive communication, or genuine risk. TEG-Blue offers structured language for studying those differences without claiming automated certainty.",
   },
   {
     question: "What is TEG-Code?",
-    answer: "TEG-Code is the computational layer of TEG-Blue designed for AI integration. It provides structured emotional intelligence infrastructure that AI systems can use to recognize emotional patterns, assess nervous system states, and respond with appropriate nuance rather than binary classification.",
+    answer: "TEG-Code is a proposed computational layer for representing TEG-Blue patterns in structured formats. It should be treated as exploratory applied infrastructure, not as a validated inference system.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "The Problem", href: "#the-problem", description: "Binary classification fails human complexity. Current AI systems miss the gradient between safety and harm." },
-  { label: "What TEG-Blue Adds", href: "#what-teg-blue-adds", description: "Nuance AI systems can use — structured emotional pattern recognition for safer, more accurate AI." },
+  { label: "What TEG-Blue Adds", href: "#what-teg-blue-adds", description: "Structured emotional-pattern language for bounded computational contexts." },
   { label: "Nervous System State", href: "#nervous-system-state", description: "The nervous system state a person occupies shapes the capacity for moral reasoning available." },
   { label: "Trajectory", href: "#trajectory", description: "Capacity to return to physiological baseline predicts outcomes more reliably than current state." },
   { label: "The Sycophancy Problem", href: "#sycophancy", description: "Sycophancy mapped through the Nervous System Gradient — from honest to amplifying distortion." },
   { label: "How Patterns Scale", href: "#scaling", description: "Individual dysregulation scales through relationships, groups, institutions, and systems." },
-  { label: "TEG-Code & EMLU", href: "#teg-code-emlu", description: "The computational encoding architecture and the emotional intelligence benchmark." },
-  { label: "Built for Machines", href: "#ai-native", description: "Structured, version-controlled, machine-readable formats on every page." },
-  { label: "Open Questions", href: "#open-questions", description: "Explicit research invitations for the AI safety community." },
+  { label: "TEG-Code & EMLU", href: "#teg-code-emlu", description: "Proposed computational encoding and benchmark ideas." },
+  { label: "Structured Context", href: "#ai-native", description: "Structured, version-controlled formats on every page." },
+  { label: "Open Questions", href: "#open-questions", description: "Research invitations for computational and safety contexts." },
 ];
 
 export const metadata = {
-  title: "AI Safety Applications — TEG-Blue Research",
-  description: "How the Nervous System Gradient provides structured, computationally legible infrastructure for safer AI systems. Gradient frameworks replacing binary classification with emotional pattern recognition.",
+  title: "Computational Applications — TEG-Blue",
+  description: "Exploratory computational applications of the Nervous System Gradient: structured emotional-pattern context, state-dependent language, and open research questions.",
   keywords: [
-    "AI safety",
-    "AI alignment",
-    "emotional technology AI",
-    "nervous system gradient AI",
+    "computational applications",
+    "emotional pattern recognition",
+    "nervous system gradient",
     "human-AI interaction",
-    "TEG-Blue AI",
-    "emotional intelligence infrastructure",
-    "sycophancy detection",
-    "EMLU benchmark",
+    "structured emotional patterns",
+    "state-dependent language",
+    "open research questions",
   ],
   alternates: {
     canonical: "https://teg-blue.org/ai-safety",
   },
   openGraph: {
-    title: "AI Safety Applications — TEG-Blue Research",
-    description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure. TEG-Code, EMLU benchmark, and the Nervous System Gradient.",
+    title: "Computational Applications — TEG-Blue",
+    description: "Exploratory computational applications of the Nervous System Gradient.",
     url: "https://teg-blue.org/ai-safety",
-    siteName: "TEG-Blue Research",
+    siteName: "TEG-Blue",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Safety Applications — TEG-Blue",
-    description: "Gradient frameworks for AI alignment: replacing binary classification with structured emotional intelligence infrastructure.",
+    title: "Computational Applications — TEG-Blue",
+    description: "Exploratory computational applications of the Nervous System Gradient.",
   },
 };
 
@@ -78,20 +76,20 @@ export default function AISafetyPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="AI SAFETY"
-            title="AI Safety Applications"
-            description="Every sentence a person writes carries nervous system information — not just semantic content but physiological state, relational intent, and regulatory strategy. Current AI systems read the words. The Nervous System Gradient reads the biology underneath them."
+            badge="COMPUTATIONAL APPLICATIONS"
+            title="Computational Applications"
+            description="The Nervous System Gradient may offer structured language for computational contexts. This page is exploratory application territory, not the core public identity of TEG-Blue."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         {/* Answer-first opening */}
         <p style={proseStyle}>
-          Current AI safety systems operate on a fundamental binary: content is safe or unsafe, behavior is acceptable or harmful.
+          Current computational safety systems often operate on a fundamental binary: content is safe or unsafe, behavior is acceptable or harmful.
           Human emotional reality operates on a gradient. The same sentence — spoken from physiological safety — carries different
           information than the same sentence spoken under threat. Binary classification collapses that distinction. The Nervous System
           Gradient preserves it — mapping the continuous range from Connection through Protection, Strategic Management,
-          to Domination — with structured markers at every position that AI systems can read computationally.
+          to Domination — with structured markers that may be useful in computational contexts.
         </p>
 
         {/* Scenario Block */}
@@ -165,7 +163,7 @@ export default function AISafetyPage() {
           <SectionHeading title="Binary Classification Fails Human Complexity" />
 
           <p style={proseStyle}>
-            Current AI safety systems inherit a structural limitation: content is either safe or unsafe,
+            Current computational safety systems inherit a structural limitation: content is either safe or unsafe,
             behavior is acceptable or harmful. This binary maps poorly onto nervous system reality, where
             the same behavior carries different meaning depending on which physiological state produced it.
           </p>
@@ -233,7 +231,7 @@ export default function AISafetyPage() {
 
           <p style={proseStyle}>
             Research across neuroscience, polyvagal theory, and trauma psychology converges on a finding that
-            carries direct implications for AI safety:{" "}
+            carries direct implications for language-system safety:{" "}
             <strong style={{ color: TEXT.primary }}>
               the nervous system state a person occupies determines what moral reasoning is physiologically available.
             </strong>{" "}
@@ -326,7 +324,7 @@ export default function AISafetyPage() {
                 letterSpacing: "0.06em",
               }}
             >
-              Response to Challenge — Validation Study
+              Response to Challenge — Initial Study
             </p>
 
             <div
@@ -357,7 +355,7 @@ export default function AISafetyPage() {
           </div>
 
           <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
-            AI safety systems that read only the snapshot miss the trajectory. A person in Protection
+            Computational safety systems that read only the snapshot miss the trajectory. A person in Protection
             who de-escalates under challenge is fundamentally different from one who escalates toward
             Strategic Management — even though both may present identically at the moment of assessment.
           </p>
@@ -369,7 +367,7 @@ export default function AISafetyPage() {
 
           <p style={proseStyle}>
             AI sycophancy — the tendency of language models to agree, avoid difficult truths,
-            and optimize for approval — is one of the most actively researched problems in AI alignment.
+            and optimize for approval — is one of the actively researched problems in AI behavior and safety.
             The Nervous System Gradient provides a framework that maps <em>why</em> the pattern occurs and <em>what to measure</em>{" "}
             when addressing it.
           </p>
@@ -512,7 +510,7 @@ export default function AISafetyPage() {
           </p>
 
           <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7 }}>
-            This matters for AI safety because harmful content rarely emerges from isolated actors.
+            This matters for computational systems because harmful content rarely emerges from isolated actors.
             It emerges from systemic patterns — and AI systems trained on that content inherit those
             patterns without any mechanism to recognize or interrupt them.
           </p>
@@ -685,7 +683,7 @@ export default function AISafetyPage() {
           <SectionHeading title="Open Research Questions" />
 
           <p style={proseStyle}>
-            TEG-Blue maps territory that AI safety has been navigating without structured coordinates.
+            TEG-Blue maps territory that language-system safety has often navigated without structured coordinates.
             These questions are explicit invitations to the research community:
           </p>
 
@@ -836,7 +834,7 @@ export default function AISafetyPage() {
                 textDecoration: "none",
               }}
             >
-              View Validation Study
+              View Initial Study
             </Link>
             <a
               href="https://github.com/emotionalblueprint/ai-safety"
@@ -891,7 +889,7 @@ export default function AISafetyPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "AI Safety", url: "/ai-safety" },
+              { name: "Computational Applications", url: "/ai-safety" },
             ])
           ),
         }}
@@ -912,7 +910,7 @@ export default function AISafetyPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "AI Safety Applications | TEG-Blue Research",
+              name: "Computational Applications | TEG-Blue",
               url: "https://teg-blue.org/ai-safety",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })

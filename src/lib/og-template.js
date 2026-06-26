@@ -49,7 +49,7 @@ function activeStateIndex(needle) {
 
 export function OgImage(params = {}) {
   const title = params.title || 'The Nervous System Gradient'
-  const badge = params.badge || 'The Emotional Gradient Blueprint'
+  const badge = params.badge || 'TEG-Blue · The Emotional Gradient Blueprint'
   const subtitle =
     params.subtitle ||
     'We do not stay the same in every situation — open and trusting one moment, guarded or controlling the next. The body keeps reading one question: is it safe, or is there danger?'
