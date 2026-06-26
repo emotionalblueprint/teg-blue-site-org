@@ -181,10 +181,6 @@ export default function Home() {
           <h1 style={{ margin: "0 auto", maxWidth: 720, fontSize: "clamp(26px, 4vw, 34px)", lineHeight: 1.12, letterSpacing: "-0.02em", color: TEXT.primary }}>
             The Nervous System Gradient
           </h1>
-          <p style={{ margin: "20px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
-            TEG-Blue is a layered visual framework for mapping how emotions, nervous systems, survival
-            strategies, identity, and social patterns form and evolve. The Nervous System Gradient is its current public center.
-          </p>
           <p style={{ margin: "14px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
             We do not stay the same in every situation — open and trusting one moment, guarded or controlling
             the next. These shifts are not random. They are state changes in the nervous system.
