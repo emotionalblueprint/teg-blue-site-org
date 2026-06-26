@@ -395,7 +395,7 @@ export default function AboutPage() {
                 teg-blue.org (you are here)
               </h3>
               <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                The open research hub. Publications, methodology, frameworks, open questions, collaboration. All content freely available under CC-BY-NC-SA-4.0.
+                The open research hub. Publications, methodology, frameworks, open questions, collaboration. All content freely available under CC BY-NC-SA 4.0.
               </p>
               <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
                 For researchers, academics, clinicians, and AI safety researchers.

@@ -10,7 +10,7 @@ export default function Image() {
     badge: 'Ethics',
     badgeColor: 'indigo',
     title: 'Foundational Commitments',
-    subtitle: 'Non-pathologisation \u00b7 Open science \u00b7 Transparency \u00b7 CC-BY-NC-SA-4.0',
+    subtitle: 'Non-pathologisation \u00b7 Open science \u00b7 Transparency \u00b7 CC BY-NC-SA 4.0',
     url: 'teg-blue.org/ethics',
     needle: 0.125,
   })

@@ -195,7 +195,7 @@ export default function ResearchEntryPage() {
             <StatusCard
               label="Fully open"
               color={SPECTRUM.slate}
-              description="Methods, data, and frameworks published under CC BY-NC-SA 4.0 — for independent use, testing, and replication."
+              description="Methods, data, and frameworks published under CC BY-NC-SA 4.0 — for reading, citation, independent testing, adaptation, and replication."
             />
           </div>
         </section>

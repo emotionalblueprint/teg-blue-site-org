@@ -10,11 +10,11 @@ const FAQ_ITEMS = [
   },
   {
     question: "What types of collaboration does TEG-Blue need?",
-    answer: "TEG-Blue needs validation studies (independent replication), cross-disciplinary research (testing specific propositions), translation and adaptation (for specific populations or contexts), and critique (identifying where the framework overclaims or where alternatives are stronger).",
+    answer: "TEG-Blue needs validation studies (independent replication), cross-disciplinary research (testing specific propositions), permissioned translation or adaptation for specific populations or contexts, and critique (identifying where the framework overclaims or where alternatives are stronger).",
   },
   {
     question: "What are the ethical expectations for collaborators?",
-    answer: "Collaborators must accept the CC-BY-NC-SA-4.0 license and ethical commitments. The framework will not be used for surveillance or manipulation. Findings are published openly. Attribution is maintained on all derivative work.",
+    answer: "Collaborators must accept the CC BY-NC-SA 4.0 license and ethical commitments. The framework will not be used for surveillance or manipulation. Findings are published openly. Attribution is maintained whenever the work is cited, shared, adapted, or used with permission.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function CollaboratePage() {
           <ResearcherHero
             badge="COLLABORATE"
             title="Collaborate"
-            description="TEG-Blue is open access under CC-BY-NC-SA-4.0. The frameworks, models, datasets, and methodology are available for independent use. Here is how to work with us."
+            description="TEG-Blue is open access under CC BY-NC-SA 4.0. The frameworks, models, datasets, and methodology are available for reading, citation, testing, critique, adaptation, and permitted collaboration. Here is how to work with us."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -111,8 +111,8 @@ export default function CollaboratePage() {
               description="The framework proposes connections across neuroscience, psychology, sociology, and trauma studies. Researchers in any of these fields can test specific propositions within their own methods."
             />
             <CollabCard
-              title="Translation and adaptation"
-              description="Adapting the framework for specific populations, clinical contexts, or educational settings. Building on TEG-Blue's architecture for new applications."
+              title="Permissioned translation and adaptation"
+              description="Coordinated translation or adaptation for specific populations, clinical contexts, or educational settings, with explicit permission and attribution."
             />
             <CollabCard
               title="Critique and challenge"
@@ -175,7 +175,7 @@ export default function CollaboratePage() {
             <li style={{ marginBottom: 8 }}>The framework will not be used for surveillance, manipulation, or coercive applications.</li>
             <li style={{ marginBottom: 8 }}>Research involving human participants follows standard ethical review processes.</li>
             <li style={{ marginBottom: 8 }}>Findings are published openly — not shaped to serve commercial interests.</li>
-            <li style={{ marginBottom: 8 }}>Attribution is maintained. The CC-BY-NC-SA-4.0 license applies to all derivative work.</li>
+            <li style={{ marginBottom: 8 }}>Attribution is maintained. Adapted, translated, or modified versions follow the same or a compatible license unless a separate permission agreement is made.</li>
           </ul>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             Full ethical principles are documented on the{" "}

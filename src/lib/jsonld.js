@@ -489,8 +489,8 @@ export function generateMetaTags(node) {
 
 function getNodeUrl(node) {
   const paths = {
-    publication: `/research/publications/${node.slug}`,
-    "working-paper": `/research/publications/${node.slug}`,
+    publication: `/publications/${node.slug}`,
+    "working-paper": `/publications/${node.slug}`,
     theory: `/research/foundations?theory=${node.slug}`,
     glossary: `/research/glossary?term=${node.slug}`,
     framework: `/research/frameworks/${node.slug}`,

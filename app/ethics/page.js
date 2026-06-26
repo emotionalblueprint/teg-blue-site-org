@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What license does TEG-Blue use?",
-    answer: "TEG-Blue is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA-4.0). The framework may be cited, tested, and built upon — but not used for commercial purposes without permission.",
+    answer: "TEG-Blue is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). The framework may be cited, shared, tested, critiqued, and adapted non-commercially with attribution under the same license.",
   },
   {
     question: "How does TEG-Blue handle patterns shaped by adversity?",
@@ -27,7 +27,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Transparency", href: "#transparency", description: "Methodology is visible. Claims are testable. Limitations are stated." },
   { label: "Responsible Technology", href: "#responsible-technology", description: "Safeguards, human oversight, and transparency in AI-assisted tools." },
   { label: "Collaboration", href: "#collaboration", description: "What we expect from research collaborators and contributors." },
-  { label: "Attribution & Licensing", href: "#attribution-and-licensing", description: "CC-BY-NC-SA-4.0. How to cite. What collaborators should know." },
+  { label: "Attribution & Licensing", href: "#attribution-and-licensing", description: "CC BY-NC-SA 4.0. How to cite. What collaborators should know." },
 ];
 
 export const metadata = {
@@ -41,7 +41,7 @@ export const metadata = {
     "non-pathologisation",
     "intersectional research",
     "contextual embeddedness",
-    "CC-BY-NC-SA-4.0",
+    "CC BY-NC-SA 4.0",
     "TEG-Blue",
   ],
   alternates: {
@@ -175,7 +175,7 @@ export default function EthicsPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, marginTop: 20 }}>
             <CompactCard
               title="Open science"
-              description="The framework — the maps, the models, the theoretical foundations — is public. This site makes it available to anyone who wants to read, test, critique, or build on it."
+              description="The framework — the maps, the models, the theoretical foundations — is public. This site makes it available to anyone who wants to read, cite, test, critique, share, or adapt it with attribution under the same license."
               color={SPECTRUM.azure}
             />
             <CompactCard
@@ -206,10 +206,10 @@ export default function EthicsPage() {
               methodology
             </Link>{" "}
             documents how the work was done, including the use of AI-assisted literature mapping. The{" "}
-            <Link href="/research-entry" style={linkStyle}>
-              research entry
+            <Link href="/publications" style={linkStyle}>
+              publications page
             </Link>{" "}
-            lists five priority questions still open.
+            lists the current evidence base.
           </p>
           <ContextNote>
             Independent verification, alternative interpretations, and direct critique are more useful to this research than acceptance. The framework is designed to be interrogated.
@@ -225,10 +225,10 @@ export default function EthicsPage() {
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             All publications are designed for both human and AI consumption — structured JSON-LD metadata, semantic HTML, Dublin Core annotations, and consistent terminology throughout. The{" "}
-            <Link href="/ai-safety" style={linkStyle}>
-              AI safety
+            <Link href="/how-it-works" style={linkStyle}>
+              system architecture page
             </Link>{" "}
-            page details how TEG-Blue approaches emotional technology in artificial intelligence.
+            details how TEG-Blue keeps claims traceable across research and tools.
           </p>
         </section>
 
@@ -257,11 +257,10 @@ export default function EthicsPage() {
           </div>
 
           <p style={{ ...body, marginTop: 20 }}>
-            For full details, see the{" "}
-            <Link href="/collaborate" style={linkStyle}>
-              Collaborate
-            </Link>{" "}
-            page.
+            For collaboration questions, contact{" "}
+            <a href="mailto:research@teg-blue.org" style={linkStyle}>
+              research@teg-blue.org
+            </a>.
           </p>
         </section>
 
@@ -271,7 +270,7 @@ export default function EthicsPage() {
           <h2 style={sectionHeading}>Attribution and licensing</h2>
           <p style={body}>
             TEG-Blue is published under{" "}
-            <strong style={{ color: TEXT.primary }}>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA-4.0)</strong>.
+            <strong style={{ color: TEXT.primary }}>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong>.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
@@ -298,7 +297,7 @@ export default function EthicsPage() {
           </div>
 
           <p style={{ ...body, marginTop: 20 }}>
-            Engaging with TEG-Blue means accepting both the license terms and the ethical commitments on this page. The framework is open for testing, critique, extension, and independent use — within these boundaries.
+            Engaging with TEG-Blue means accepting both the license terms and the ethical commitments on this page. The framework is open for reading, citation, sharing, testing, critique, adaptation, and independent verification — within these boundaries.
           </p>
         </section>
 

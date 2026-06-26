@@ -334,10 +334,10 @@ export default function MethodologyPage() {
             </table>
           </div>
           <p style={{ fontSize: 14, color: TEXT.secondary, marginTop: 16 }}>
-            If you can help with any of these, see{" "}
-            <Link href="/collaborate" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Collaborate →
-            </Link>
+            If you can help with any of these, contact{" "}
+            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              research@teg-blue.org
+            </a>
           </p>
         </section>
 
@@ -354,9 +354,9 @@ export default function MethodologyPage() {
           <Link href="/publications" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
             Publications →
           </Link>
-          <Link href="/collaborate" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            Collaborate →
-          </Link>
+          <a href="mailto:research@teg-blue.org" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Research contact →
+          </a>
           <a
             href="https://teg-blue.com/emotional-tools"
             target="_blank"

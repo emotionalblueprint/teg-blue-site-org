@@ -241,21 +241,21 @@ export default function HowItWorksPage() {
                 { label: "Collective arc (F4–F7)", detail: "How individual patterns scale into rules, hierarchies, bias, and domination" },
                 { label: "Repair arc (F8–F12)", detail: "How capacities rebuild, neurodivergent variation, generational patterns, paradox, and the two information systems" },
               ]}
-              href="/frameworks-map"
-              linkText="See all 12 Frameworks →"
+              href="/scientific-foundations"
+              linkText="See the research grounding →"
             />
             <CAGroupCard
               title="4 Model CAs (M1–M4)"
               description="One per model. Models describe how something works as a usable instrument. They draw from the framework CAs but serve a different, applied scope."
               color={SPECTRUM.azure}
               items={[
-                { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals", href: "/model/m1-emotions-as-signals" },
-                { label: "M2 — Nervous System States", detail: "What the system does: physiological reorganization, the modes, the observable compass", href: "/model/m2-nervous-system-states" },
-                { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires", href: "/model/m3-regulation-capacities" },
-                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)", href: "/model/m4-awareness-capacities" },
+                { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals" },
+                { label: "M2 — Nervous System States", detail: "What the system does: physiological reorganization, the modes, the observable compass" },
+                { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires" },
+                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)" },
               ]}
-              href="/emotional-somatic-cycle"
-              linkText="See the four models →"
+              href="/scientific-foundations"
+              linkText="See the foundations →"
             />
           </div>
 
@@ -331,11 +331,7 @@ export default function HowItWorksPage() {
           >
             <div style={labelStyle(SPECTRUM.cobalt)}>The causal chain</div>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "8px 0 0" }}>
-              Emotion fires → Capacities determine if it lands → Mode configures the system state → Restoration completes or fails. When restoration fails, a regulation substitute steps in. This is the Regulation Thread — the mechanism that runs through all{" "}
-              <Link href="/frameworks-map" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                twelve frameworks
-              </Link>
-              .
+              Emotion fires → Capacities determine if it lands → Mode configures the system state → Restoration completes or fails. When restoration fails, a regulation substitute steps in. This is the Regulation Thread — the mechanism that runs through all twelve frameworks.
             </p>
           </div>
         </section>
@@ -569,13 +565,13 @@ export default function HowItWorksPage() {
                 </tr>
               </thead>
               <tbody>
-                <NavRow label="See what the system contains" href="/foundations" linkText="System Overview →" />
-                <NavRow label="Explore the four models" href="/emotional-somatic-cycle" linkText="The Emotional Somatic System →" />
-                <NavRow label="See the twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
+                <NavRow label="See what the system contains" href="/scientific-foundations" linkText="Scientific Foundations →" />
+                <NavRow label="Explore the research grounding" href="/scientific-foundations" linkText="Research Foundations →" />
+                <NavRow label="Understand the open proof layer" href="/about" linkText="About TEG-Blue →" />
                 <NavRow label="Review research methods" href="/methodology" linkText="Methodology →" />
                 <NavRow label="Read the evidence" href="/publications" linkText="Publications →" />
                 <NavRow label="Try the interactive tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />
-                <NavRow label="Collaborate or validate" href="/collaborate" linkText="Collaborate →" />
+                <NavRow label="Collaborate or validate" href="mailto:research@teg-blue.org" linkText="Research contact →" external />
               </tbody>
             </table>
           </div>

@@ -11,17 +11,17 @@ const FAQ_ITEMS = [
   },
   {
     question: "What license does TEG-Blue use?",
-    answer: "TEG-Blue is published under CC-BY-NC-SA-4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International). Independent research building on TEG-Blue should cite the framework as the originating architecture.",
+    answer: "TEG-Blue is published under CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International). Independent research that cites, tests, critiques, adapts, or references TEG-Blue should cite the framework as the originating architecture.",
   },
   {
-    question: "How should I attribute independent work that builds on TEG-Blue?",
+    question: "How should I attribute independent work that uses or references TEG-Blue?",
     answer: "Independent research should cite the TEG-Blue framework as the originating architecture. If you are unsure how to attribute, contact research@teg-blue.org for guidance.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "How to Cite", description: "How do I cite TEG-Blue? Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
-  { label: "Attribution", description: "How should I attribute independent work that builds on TEG-Blue?", href: "#attribution" },
+  { label: "Attribution", description: "How should I attribute independent work that cites, tests, adapts, or references TEG-Blue?", href: "#attribution" },
 ];
 
 export const metadata = {
@@ -208,7 +208,7 @@ export default function CitationsPage() {
               marginBottom: 8,
             }}
           >
-            How should I attribute independent work that builds on TEG-Blue?
+            How should I attribute independent work that uses, adapts, or references TEG-Blue?
           </h2>
           <p
             style={{
@@ -218,7 +218,7 @@ export default function CitationsPage() {
               margin: 0,
             }}
           >
-            Independent research that builds on TEG-Blue should cite the framework as the originating architecture.
+            Independent research that cites, tests, critiques, adapts, or references TEG-Blue should cite the framework as the originating architecture.
             If you are unsure how to attribute, contact{" "}
             <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
               research@teg-blue.org
@@ -231,9 +231,9 @@ export default function CitationsPage() {
           <Link href="/publications" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
             Publications →
           </Link>
-          <Link href="/collaborate" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
-            Collaborate →
-          </Link>
+          <a href="mailto:research@teg-blue.org" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Research contact →
+          </a>
           <a
             href="https://teg-blue.com/emotional-tools"
             target="_blank"

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
@@ -17,36 +16,12 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is TEG-Blue peer-reviewed?",
-    answer: "The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published with DOI 10.5281/zenodo.19472342. The theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes all methods, data, and code openly under CC-BY-NC-SA-4.0.",
+    answer: "The first validation study — a computational analysis of 10,000+ conflict narratives testing Nervous System Gradient detection — is published with DOI 10.5281/zenodo.19472342. The theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes all methods, data, and code openly under CC BY-NC-SA 4.0.",
   },
 ];
 
-// ─── FRAMEWORK / MODEL URL MAPPING ──────────────────────────────
-// Pills on this page link each F/M tag to its page. Frameworks + models are live (gate
-// prefixes "/framework/", "/model/"); keep every tag used in the data mapped so no pill
-// falls through to the gated "/frameworks-map" fallback. Restored 2026-06-23 (Phase 2).
-const FRAMEWORK_URLS = {
-  F1: "/framework/f1-emotional-gradient",
-  F2: "/framework/f2-awareness-calibration",
-  F3: "/framework/f3-false-coherence",
-  F4: "/framework/f4-rules-regulate",
-  F5: "/framework/f5-worth-hierarchies",
-  F6: "/framework/f6-bias-regulates",
-  F7: "/framework/f7-domination-regulates",
-  F8: "/framework/f8-repairing-awareness",
-  F9: "/framework/f9-neurodivergence-variation",
-  F10: "/framework/f10-generational-bridges",
-  F11: "/framework/f11-emotional-paradoxes",
-  F12: "/framework/f12-two-information-systems",
-  M1: "/model/m1-emotions-as-signals",
-  M2: "/model/m2-nervous-system-states",
-  M3: "/model/m3-regulation-capacities",
-  M4: "/model/m4-awareness-capacities",
-};
-
-function getFrameworkUrl(tag) {
-  return FRAMEWORK_URLS[tag] || "/frameworks-map";
-}
+// Framework/model pages remain staged in this release. Keep F/M tags visible as
+// labels, not links, so the public proof layer does not route into gated pages.
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
@@ -1255,9 +1230,8 @@ function ModelCard({ model }) {
           <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
           <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
             {model.frameworks.map((f) => (
-              <Link
+              <span
                 key={f}
-                href={getFrameworkUrl(f)}
                 style={{
                   fontSize: 10,
                   fontWeight: 600,
@@ -1270,7 +1244,7 @@ function ModelCard({ model }) {
                 }}
               >
                 {f}
-              </Link>
+              </span>
             ))}
           </div>
         </div>
@@ -1408,9 +1382,8 @@ function ModelCard({ model }) {
           >
             <span style={{ fontSize: 12, color: TEXT.muted }}>Appears in:</span>
             {model.frameworks.map((f) => (
-              <Link
+              <span
                 key={f}
-                href={getFrameworkUrl(f)}
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
@@ -1423,7 +1396,7 @@ function ModelCard({ model }) {
                 }}
               >
                 {f}
-              </Link>
+              </span>
             ))}
           </div>
         </div>
@@ -1492,9 +1465,8 @@ function ExpandableTheoryCard({ theory }) {
           {theory.frameworks && theory.frameworks.length > 0 && (
             <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
               {theory.frameworks.map((f) => (
-                <Link
+                <span
                   key={f}
-                  href={getFrameworkUrl(f)}
                   style={{
                     fontSize: 10,
                     fontWeight: 600,
@@ -1507,7 +1479,7 @@ function ExpandableTheoryCard({ theory }) {
                   }}
                 >
                   {f}
-                </Link>
+                </span>
               ))}
             </div>
           )}
@@ -1682,9 +1654,8 @@ function ExpandableTheoryCard({ theory }) {
               <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                 <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
                 {theory.frameworks.map((f) => (
-                  <Link
+                  <span
                     key={f}
-                    href={getFrameworkUrl(f)}
                     style={{
                       fontSize: 11,
                       fontWeight: 600,
@@ -1697,7 +1668,7 @@ function ExpandableTheoryCard({ theory }) {
                     }}
                   >
                     {f}
-                  </Link>
+                  </span>
                 ))}
               </div>
             </div>

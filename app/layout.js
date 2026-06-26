@@ -194,7 +194,7 @@ export default function RootLayout({ children }) {
         {/* Dublin Core metadata for academic crawlers */}
         <meta name="DC.publisher" content="TEG-Blue Research" />
         <meta name="DC.language" content="en" />
-        <meta name="DC.rights" content="CC-BY-NC-SA-4.0" />
+        <meta name="DC.rights" content="CC BY-NC-SA 4.0" />
         <meta name="DC.type" content="Collection" />
 
         {/* Organization structured data */}

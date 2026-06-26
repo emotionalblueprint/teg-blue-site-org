@@ -1,18 +1,26 @@
 // Single source of truth for which teg-blue.org routes are publicly live.
 //
-// Single-page phase (now): only the home. To repopulate (Phase 1+), add an exact
-// path to LIVE_PATHS, or a section prefix to LIVE_PREFIXES. The gate
+// Core proof-layer phase: the home plus a small set of research, methodology,
+// citation, ethics, and foundation pages are public. To repopulate further, add
+// an exact path to LIVE_PATHS, or a section prefix to LIVE_PREFIXES. The gate
 // (middleware.js), sitemap (app/sitemap.js), legacy redirect guard
 // (next.config.js), and IndexNow script all read from here, so a page goes live
 // and enters search surfaces from one edit. Everything not live 307-redirects to
-// the home. Plan: teg-blue-vault/_plans/org/2026-06-23-org-repopulation-plan.md
+// the home.
 
 const LIVE_PATHS = new Set([
   "/",
-  // Phase 1 candidates: "/about", "/publications", "/publications/validation-study",
-  // "/publications/architecture-paper", "/scientific-foundations", "/glossary"
+  "/about",
+  "/how-it-works",
+  "/methodology",
+  "/publications",
+  "/publications/validation-study",
+  "/publications/architecture-paper",
+  "/citations",
+  "/ethics",
+  "/scientific-foundations",
   // Phase 2 candidates: add "/framework/" to LIVE_PREFIXES, or list F-pages here
-  // Phase 3 candidates: "/model/...", "/ethics", "/ai-safety", "/collaborate", ...
+  // Phase 3 candidates: "/model/...", "/ai-safety", "/collaborate", ...
 ]);
 
 // Whole sections opened at once. Frameworks + models are tightly cross-linked, so

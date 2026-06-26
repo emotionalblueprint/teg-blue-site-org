@@ -15,7 +15,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Are TEG-Blue datasets publicly available?",
-    answer: "Yes. TEG-Blue publishes all methods, data, and code openly under CC-BY-NC-SA-4.0. Datasets are available on Zenodo with DOIs for reproducibility and independent replication.",
+    answer: "Yes. TEG-Blue publishes all methods, data, and code openly under CC BY-NC-SA 4.0. Datasets are available on Zenodo with DOIs for reproducibility and independent replication.",
   },
 ];
 

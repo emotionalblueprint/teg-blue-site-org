@@ -3,6 +3,7 @@ import { SpectrumBar } from "./SharedComponents";
 
 const LINKS = [
   { label: "Tools ↗", href: "https://teg-blue.com/" },
+  { label: "Engine ↗", href: "https://www.teg-blue.com/engine" },
   { label: "Substack", href: "https://annaparetas.substack.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
   { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },
@@ -58,7 +59,7 @@ export default function SiteFooter() {
       </p>
 
       <p style={{ marginTop: 8, fontFamily: FONT.mono, fontSize: 10, color: TEXT.micro }}>
-        CC-BY-NC-SA-4.0
+        CC BY-NC-SA 4.0
       </p>
 
       <style>{`.footer-link:hover { color: var(--text-primary); }`}</style>
