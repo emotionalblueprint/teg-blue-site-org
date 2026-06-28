@@ -1,45 +1,47 @@
 import Link from "next/link";
 import { loadAllNodes } from "@/src/lib/content";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, TypeTag, ResearcherHero, ReviewStatusPanel } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
   {
     question: "How do I cite TEG-Blue in academic work?",
-    answer: "Use APA 7th Edition format: Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-blue.org. BibTeX format is also available on the citations page. For specific publications, cite the individual paper with its DOI.",
+    answer: "For the public framework, cite: Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-blue.org. For a specific paper or study, cite the individual publication record and DOI.",
   },
   {
     question: "What license does TEG-Blue use?",
-    answer: "Original TEG-Blue framework content is published under CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International). Reuse must attribute Anna Paretas-Artacho as creator, remain non-commercial unless separately licensed, and share adaptations under the same license.",
+    answer: "Original TEG-Blue framework content is published under CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International), unless otherwise noted. Reuse must attribute Anna Paretas-Artacho as creator, remain non-commercial unless separately licensed, and share adaptations under the same license.",
   },
   {
     question: "How should I attribute independent work that uses or references TEG-Blue?",
-    answer: "Independent research should cite TEG-Blue / The Nervous System Gradient as the originating architecture and name Anna Paretas-Artacho as creator. If you are unsure how to attribute, contact research@teg-blue.org for guidance.",
+    answer: "Independent research, summaries, translations, datasets, and tool adaptations should name TEG-Blue / The Nervous System Gradient, cite the relevant page or publication, and preserve Anna Paretas-Artacho as creator.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "How to Cite", description: "How do I cite TEG-Blue? Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
-  { label: "Attribution & License", description: "How should I attribute independent work that cites, tests, adapts, or references TEG-Blue?", href: "#attribution" },
+  { label: "Cite TEG-Blue", description: "Citation format for the public framework and Nervous System Gradient.", href: "#citing-teg-blue" },
+  { label: "Publication Records", description: "Cite specific papers and studies by their publication record and DOI.", href: "#publication-records" },
+  { label: "Attribution & License", description: "How to attribute reuse, summaries, translations, datasets, and adaptations.", href: "#attribution" },
 ];
 
 export const metadata = {
   title: "How to Cite | TEG-Blue Research",
-  description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats available.",
+  description: "Citation and attribution guidance for TEG-Blue, The Nervous System Gradient, and related publications.",
   keywords: [
     "cite TEG-Blue",
     "TEG-Blue citation",
     "APA citation format",
-    "emotional technology citation",
+    "Nervous System Gradient citation",
     "research attribution",
+    "CC BY-NC-SA",
   ],
   alternates: {
     canonical: "https://teg-blue.org/citations",
   },
   openGraph: {
     title: "How to Cite TEG-Blue | TEG-Blue Research",
-    description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats for the Nervous System Gradient validation study and Theoretical Architecture.",
+    description: "Citation and attribution guidance for TEG-Blue, The Nervous System Gradient, and related publications.",
     url: "https://teg-blue.org/citations",
     siteName: "TEG-Blue Research",
     type: "website",
@@ -47,7 +49,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "How to Cite TEG-Blue",
-    description: "APA 7th Edition and BibTeX citation formats for TEG-Blue research publications.",
+    description: "APA 7th Edition, BibTeX, attribution, and licensing guidance.",
   },
 };
 
@@ -69,29 +71,16 @@ export default function CitationsPage() {
           <ResearcherHero
             badge="CITATIONS"
             title="How to Cite TEG-Blue"
-            description="Citation formats for TEG-Blue research publications."
+            subtitle="Citation, attribution, and reuse"
+            description="Use this page to cite the public framework, cite specific publications, and preserve creator and license attribution."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {publications.map((pub) => (
-          <CitationBlock key={pub.slug} publication={pub} />
-        ))}
-
-        {publications.length === 0 && (
-          <div
-            style={{
-              padding: 40,
-              textAlign: "center",
-              color: TEXT.muted,
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-            }}
-          >
-            No publications available yet.
-          </div>
-        )}
+        <ReviewStatusPanel
+          title="Cite the live page or the specific publication"
+          description="For the overall public framework, cite TEG-Blue: The Nervous System Gradient. For a paper, study, dataset, or record, cite the individual publication exactly as listed with its DOI."
+        />
 
         {/* General Citation */}
         <div
@@ -100,7 +89,7 @@ export default function CitationsPage() {
             marginTop: 40,
             padding: 24,
             background: BG.card,
-            borderRadius: 8,
+            borderRadius: RADIUS.md,
             border: `1px solid ${BORDER.default}`,
           }}
         >
@@ -121,7 +110,7 @@ export default function CitationsPage() {
               marginBottom: 16,
             }}
           >
-            When referencing the TEG-Blue framework in general (not a specific publication):
+            Use this format when referencing the public framework or the Nervous System Gradient in general.
           </p>
           <div style={{ marginBottom: 16 }}>
             <div
@@ -189,6 +178,41 @@ export default function CitationsPage() {
           </div>
         </div>
 
+        <section id="publication-records" style={{ marginTop: 24 }}>
+          <h2
+            style={{
+              fontSize: 16,
+              fontWeight: 600,
+              color: TEXT.primary,
+              marginBottom: 12,
+            }}
+          >
+            Publication records
+          </h2>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 16px" }}>
+            Cite specific publications by their listed title, DOI, and record metadata.
+          </p>
+
+          {publications.map((pub) => (
+            <CitationBlock key={pub.slug} publication={pub} />
+          ))}
+
+          {publications.length === 0 && (
+            <div
+              style={{
+                padding: 40,
+                textAlign: "center",
+                color: TEXT.muted,
+                background: BG.card,
+                borderRadius: RADIUS.md,
+                border: `1px solid ${BORDER.default}`,
+              }}
+            >
+              No publications available yet.
+            </div>
+          )}
+        </section>
+
         {/* Attribution for Independent Work */}
         <div
           id="attribution"
@@ -218,7 +242,7 @@ export default function CitationsPage() {
               margin: "0 0 12px",
             }}
           >
-            TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Independent research, summaries, translations, adaptations, datasets, answer-engine responses, and other reuse should preserve that attribution and cite the framework as the originating architecture.
+            TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Independent research, summaries, translations, adaptations, datasets, answer-engine responses, and other reuse should preserve creator attribution and cite the relevant live page or publication.
           </p>
           <code
             style={{
@@ -233,7 +257,7 @@ export default function CitationsPage() {
               overflowX: "auto",
             }}
           >
-            TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Source: https://teg-blue.org. Licensed under CC BY-NC-SA 4.0.
+            TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Source: https://teg-blue.org. License: CC BY-NC-SA 4.0 unless otherwise noted.
           </code>
           <p
             style={{
@@ -292,7 +316,7 @@ export default function CitationsPage() {
             "@type": "WebPage",
             name: "How to Cite TEG-Blue",
             url: "https://teg-blue.org/citations",
-            description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats available.",
+            description: "Citation and attribution guidance for TEG-Blue, The Nervous System Gradient, and related publications.",
             inLanguage: "en",
             author: {
               "@type": "Person",
