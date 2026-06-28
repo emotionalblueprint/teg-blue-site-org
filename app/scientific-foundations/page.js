@@ -3,16 +3,16 @@
 import { useState, useMemo, useCallback } from "react";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock, ReviewStatusPanel } from "@/src/components";
-import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateScientificFoundationsJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
   {
     question: "What established research does TEG-Blue integrate?",
-    answer: "TEG-Blue draws from 145+ theoretical contributions from 41 research traditions across 24 research domains including polyvagal theory, attachment theory, affective neuroscience, trauma research, cognitive science, developmental psychology, family systems, and social dominance theory. Each source is connected to its architectural function — what mechanism, condition, or pattern it helps make visible — not used as symbolic authority. The contribution is the proposed integration, not the individual pieces.",
+    answer: "TEG-Blue draws from established research traditions, clinical approaches, communication models, emotion taxonomies, trauma studies, attachment research, and educational regulation tools. Each source is connected to its architectural function — what mechanism, condition, or pattern it helps make visible — not used as symbolic authority. The contribution is the proposed integration, not the individual pieces.",
   },
   {
-    question: "How many research domains does TEG-Blue span?",
-    answer: "TEG-Blue spans 24 research domains, from affective neuroscience and attachment theory to social psychology and epigenetics. Each of the 12 frameworks and 4 models draws on specific research traditions, with framework cross-reference tags (F1-F12, M1-M4) mapping every theory to the framework it supports.",
+    question: "How should the comparison models be read?",
+    answer: "The comparison models should be read appreciatively. Plutchik, NVC, CBT, Zones of Regulation, Polyvagal Theory, attachment models, trauma studies, narcissism research, and other traditions each contribute something important. TEG-Blue does not replace them; it organizes what they make visible inside the Nervous System Gradient.",
   },
   {
     question: "Is TEG-Blue peer-reviewed?",
@@ -29,9 +29,12 @@ const domainColors = {
   "Attachment Theory": SPECTRUM.cobalt,
   "Behavioral Science": SPECTRUM.slate,
   "Clinical Psychology": SPECTRUM.indigo,
+  "Communication Frameworks": SPECTRUM.azure,
   "Cognitive Science": SPECTRUM.blue,
   "Developmental Psychology": SPECTRUM.cobalt,
   "Emotion Science": SPECTRUM.azure,
+  "Emotion Taxonomy": SPECTRUM.blue,
+  "Educational Regulation Tools": SPECTRUM.cobalt,
   "Epigenetics": SPECTRUM.indigo,
   "Evolutionary Psychology": SPECTRUM.slate,
   "Family Systems": SPECTRUM.cobalt,
@@ -56,7 +59,7 @@ function getDomainColor(domain) {
 }
 
 // ─── COMPREHENSIVE THEORY DATABASE ─────────────────────────────
-// 41 tradition-level entries consolidating 145+ theoretical contributions
+// Tradition-level entries consolidating theoretical contributions
 // Each entry represents a research tradition with key researchers and framework cross-references
 const THEORIES = [
   // ─── Existing entries (migrated from content/theories/*.json) ───
@@ -142,6 +145,54 @@ const THEORIES = [
       { id: "core-concept", title: "Core Concept", content: "Gross developed the process model showing five points where regulation can occur. Siegel introduced the window of tolerance — the zone where emotions can be processed without overwhelm. Fredrickson's broaden-and-build theory shows that positive emotions expand cognitive and behavioral repertoires." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the nervous system gradient: Connection is within the window (broad capacity), Protection is at the edge (narrowing), Strategic Management and Domination are chronic states outside the window. The broaden-and-build model explains why Connection enables learning and repair." },
       { id: "key-sources", title: "Key Sources", content: "Gross, J. J. (2014). Handbook of Emotion Regulation. Guilford Press. \u00b7 Siegel, D. J. (1999). The Developing Mind. Guilford Press. \u00b7 Fredrickson, B. L. (2001). The broaden-and-build theory. American Psychologist." },
+    ],
+  },
+  {
+    slug: "plutchik-emotion-taxonomy", title: "Plutchik's Wheel of Emotions", domain: "Emotion Taxonomy",
+    originAuthor: "Robert Plutchik",
+    summary: "A widely used visual taxonomy of eight primary emotions, their intensities, and their combinations. It gives emotional literacy a memorable map and remains useful for naming basic feeling categories.",
+    tags: ["Plutchik", "emotion wheel", "emotion taxonomy", "emotional literacy"],
+    frameworks: ["F1", "M1", "M2"],
+    content: [
+      { id: "core-concept", title: "Core Concept", content: "Plutchik's model organizes eight primary emotions into a wheel, showing intensity gradients and blended emotions. Its strength is not causal explanation but accessible vocabulary: it helps people name what they feel and see how emotions relate." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue keeps the emotional-literacy strength and adds state context. The same named emotion can carry different information depending on the nervous-system position it emerges from. Anger in Protection may mark boundary defense; anger in Domination may organize control." },
+      { id: "key-sources", title: "Key Sources", content: "Plutchik, R. (1980). Emotion: A Psychoevolutionary Synthesis. Harper & Row." },
+    ],
+  },
+  {
+    slug: "zones-of-regulation", title: "Zones of Regulation", domain: "Educational Regulation Tools",
+    originAuthor: "Leah Kuypers",
+    summary: "A widely adopted color-coded educational framework that helps children and educators talk about alertness, regulation, and readiness to learn.",
+    tags: ["Zones of Regulation", "education", "self-regulation", "emotional literacy"],
+    frameworks: ["F1", "F2", "M2"],
+    content: [
+      { id: "core-concept", title: "Core Concept", content: "Zones of Regulation groups states into accessible color categories so students and adults can name regulation states and select supports. Its strength is shared language and practical classroom use." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue extends the color-zone idea into a trauma-aware gradient. Instead of treating high activation as a behavior problem, it asks what the state is protecting, what capacity is available, and what kind of repair or support can actually work." },
+      { id: "key-sources", title: "Key Sources", content: "Kuypers, L. M. (2011). The Zones of Regulation. Think Social Publishing." },
+    ],
+  },
+  {
+    slug: "cognitive-behavioral-therapy", title: "Cognitive Behavioral Therapy", domain: "Clinical Psychology",
+    originAuthor: "Aaron T. Beck, Albert Ellis, Judith Beck",
+    summary: "A structured clinical approach showing how thoughts, emotions, body sensations, and behaviors influence one another. CBT is strongly established for many anxiety and mood difficulties.",
+    tags: ["CBT", "cognitive therapy", "cognitive distortions", "behavioral activation"],
+    frameworks: ["F1", "F3", "F8", "F11", "M2"],
+    content: [
+      { id: "core-concept", title: "Core Concept", content: "CBT identifies links between interpretation, emotion, body response, and behavior. It gives people practical ways to test thoughts, change behavioral patterns, and build skills." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue places cognitive work inside state-dependent capacity. Reframing may help when enough safety and reflective capacity are available. Under threat, cognition may be recruited for protection, control, or coherence-preservation, so body-level safety and relational context matter." },
+      { id: "key-sources", title: "Key Sources", content: "Beck, A. T. (1976). Cognitive Therapy and the Emotional Disorders. International Universities Press. \u00b7 Beck, J. S. (2011). Cognitive Behavior Therapy: Basics and Beyond. Guilford Press. \u00b7 Ellis, A. (1962). Reason and Emotion in Psychotherapy. Lyle Stuart." },
+    ],
+  },
+  {
+    slug: "nonviolent-communication", title: "Nonviolent Communication", domain: "Communication Frameworks",
+    originAuthor: "Marshall Rosenberg",
+    summary: "A communication framework built around observation, feeling, need, and request. It gives conflict a language for empathy and reduces blame when enough goodwill and safety are present.",
+    tags: ["NVC", "communication", "needs", "empathy", "conflict"],
+    frameworks: ["F1", "F7", "F8", "M2"],
+    content: [
+      { id: "core-concept", title: "Core Concept", content: "Nonviolent Communication teaches a practical sequence: distinguish observation from evaluation, name feelings, identify needs, and make clear requests. It is strongest where parties retain enough safety, goodwill, and accountability to use the structure sincerely." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue keeps NVC's empathy language and adds state and power context. It asks when the structure supports repair, when it fails because safety is absent, and when language of feelings or needs can be used strategically to avoid accountability or control another person." },
+      { id: "key-sources", title: "Key Sources", content: "Rosenberg, M. B. (2003). Nonviolent Communication: A Language of Life. PuddleDancer Press." },
     ],
   },
   {
@@ -277,6 +328,18 @@ const THEORIES = [
     ],
   },
   {
+    slug: "narcissism-research", title: "Narcissism Research", domain: "Clinical Psychology",
+    originAuthor: "Heinz Kohut, Otto Kernberg, Elsa Ronningstam, Aaron Pincus",
+    summary: "Narcissism research differentiates self-esteem regulation, narcissistic injury, shame, entitlement, grandiose and vulnerable presentations, empathy disruption, and harmful relational patterns.",
+    tags: ["narcissism", "narcissistic injury", "grandiose narcissism", "vulnerable narcissism", "empathy"],
+    frameworks: ["F2", "F3", "F5", "F7", "F8", "M2"],
+    content: [
+      { id: "core-concept", title: "Core Concept", content: "Narcissism research describes patterns of self-structure, self-esteem regulation, shame sensitivity, entitlement, admiration-seeking, devaluation, and empathy disruption. Contemporary work distinguishes grandiose and vulnerable presentations and separates developmental injury from harmful impact." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses the Gradient to separate developmental adaptation, present-state capacity, and relational impact. This allows narcissistic patterns to be mapped without collapsing them into either moral condemnation or excuse: protection, strategic management, empathy gating, accountability, harm, and repair are tracked separately." },
+      { id: "key-sources", title: "Key Sources", content: "Kohut, H. (1971). The Analysis of the Self. International Universities Press. \u00b7 Kernberg, O. (1975). Borderline Conditions and Pathological Narcissism. Jason Aronson. \u00b7 Ronningstam, E. (2005). Identifying and Understanding the Narcissistic Personality. Oxford University Press. \u00b7 Pincus, A. L. & Lukowitsky, M. R. (2010). Pathological narcissism and narcissistic personality disorder. Annual Review of Clinical Psychology." },
+    ],
+  },
+  {
     slug: "social-psychology", title: "Social Psychology", domain: "Social Psychology",
     originAuthor: "Milgram, Asch, Cialdini",
     summary: "The study of how individuals think, feel, and behave in social contexts — including conformity, obedience, group dynamics, and how situational pressures shape behavior.",
@@ -322,6 +385,18 @@ const THEORIES = [
       { id: "core-concept", title: "Core Concept", content: "Traumatic experiences are encoded in the body's implicit memory systems. When threat overwhelms the nervous system's capacity to respond, defensive actions (fight, flight, freeze, fawn) remain incomplete. These unfinished responses continue to organize physiology and behavior." },
       { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps trauma responses onto the Nervous System Gradient: fight and flight as active Protection, freeze and fawn as collapsed Protection or early Strategic Management patterns. Chronic trauma calibrates the system toward Strategic Management or Domination. The framework explains why cognitive insight alone rarely resolves trauma." },
       { id: "key-sources", title: "Key Sources", content: "van der Kolk, B. (2014). The Body Keeps the Score. Viking. \u00b7 Herman, J. (1992). Trauma and Recovery. Basic Books. \u00b7 Walker, P. (2013). Complex PTSD: From Surviving to Thriving. Azure Coyote." },
+    ],
+  },
+  {
+    slug: "disorganized-attachment-complex-ptsd", title: "Disorganized Attachment & Complex PTSD", domain: "Trauma Research",
+    originAuthor: "Mary Main, Erik Hesse, Judith Herman, Bessel van der Kolk",
+    summary: "Disorganized attachment and Complex PTSD models describe what happens when the same relational field carries both safety needs and threat. Closeness can become both longed for and dangerous.",
+    tags: ["disorganized attachment", "Complex PTSD", "developmental trauma", "push-pull dynamics"],
+    frameworks: ["F1", "F2", "F3", "F4", "F7", "F8", "F10", "M2", "M3"],
+    content: [
+      { id: "core-concept", title: "Core Concept", content: "Disorganized attachment research shows that children can face an unsolvable relational problem when the caregiver is both a needed source of safety and a source of threat. Complex PTSD research describes the long-term effects of chronic interpersonal trauma on affect regulation, self-concept, relationships, and meaning." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps these patterns across the Gradient: connection-preservation and organism-protection can be activated at the same time. That explains push-pull dynamics, chronic safety checking, collapse, strategic management, and why repair requires more than insight." },
+      { id: "key-sources", title: "Key Sources", content: "Main, M. & Solomon, J. (1990). Procedures for identifying infants as disorganized/disoriented. \u00b7 Main, M. & Hesse, E. (1990). Parents' unresolved traumatic experiences are related to infant disorganized attachment status. \u00b7 Herman, J. (1992). Trauma and Recovery. Basic Books. \u00b7 van der Kolk, B. (2014). The Body Keeps the Score. Viking." },
     ],
   },
 
@@ -468,7 +543,7 @@ const RESEARCH_DOMAINS = [...new Set(THEORIES.map((t) => t.domain))].sort();
 const coreFoundations = [
   {
     concept: "Nervous system states",
-    explanation: "Safety and threat shift what we can feel, think, and do (Polyvagal Theory, Porges)",
+    explanation: "Safety and threat shift what we can feel, think, and do (Polyvagal Theory, Porges; stress physiology; affective neuroscience)",
   },
   {
     concept: "Emotion as information",
@@ -484,7 +559,15 @@ const coreFoundations = [
   },
   {
     concept: "Identity under threat",
-    explanation: "The self adapts, masks, and fragments under chronic stress (Winnicott, IFS, ego development)",
+    explanation: "The self adapts, masks, and fragments under chronic stress (Winnicott, IFS, ego development, narcissism research)",
+  },
+  {
+    concept: "Communication and repair",
+    explanation: "Language can support repair when safety, accountability, and goodwill are available; under threat it can also protect, deflect, or control (NVC, CBT, mentalization, trauma-informed practice)",
+  },
+  {
+    concept: "Emotional literacy tools",
+    explanation: "Emotion wheels and color-zone systems help people name states; the Gradient adds state, context, and repair logic (Plutchik, Zones of Regulation)",
   },
   {
     concept: "Learning and development",
@@ -500,12 +583,44 @@ const coreFoundations = [
   },
 ];
 
+const gradientEvidencePrinciples = [
+  {
+    principle: "Continuous safety/threat read",
+    sourceAreas: "Polyvagal neuroception, interoception, affective neuroscience, threat detection, stress physiology",
+    tegBlueUse: "Grounds the idea that the body is continuously reading whether it can stay open or must protect.",
+    openQuestion: "How reliably can state-dependent language, body markers, and relational context identify the held state?",
+    color: SPECTRUM.azure,
+  },
+  {
+    principle: "Two survival problems",
+    sourceAreas: "Attachment theory, social engagement, evolutionary psychology, motivational science, trauma studies",
+    tegBlueUse: "Separates connection-preservation under safety from organism-protection under threat.",
+    openQuestion: "How do mixed states appear when connection and protection are both active, such as in disorganized attachment?",
+    color: SPECTRUM.blue,
+  },
+  {
+    principle: "Graded perception scale",
+    sourceAreas: "Cognitive science, emotion science, Plutchik's taxonomy, CBT, cognitive dissonance, predictive processing",
+    tegBlueUse: "Explains why perception, thought, emotion, and meaning change by Gradient position.",
+    openQuestion: "Which perception markers best distinguish Safety, Ambivalent Safety, Threat, Increased Threat, Life Peril, and Overwhelm?",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    principle: "Two autonomic territories",
+    sourceAreas: "Autonomic physiology, trauma research, Zones of Regulation, somatic therapies, Complex PTSD models",
+    tegBlueUse: "Reads the same seven positions through rest/engagement, mobilisation, and shutdown fallback.",
+    openQuestion: "Which interventions fit each territory, and when does communication need to wait for body-level safety?",
+    color: SPECTRUM.indigo,
+  },
+];
+
 // ─── GLOBAL MODELS DATA ────────────────────────────────────────
 const globalModels = [
   {
     id: 1,
-    name: "Plutchik's Wheel of Emotions",
+    name: "Plutchik's Wheel of Emotions (1980)",
     author: "Robert Plutchik",
+    kind: "Emotion taxonomy",
     coreContribution: "Maps 8 primary emotions and shows how they combine into complex feelings — one of the most widely used tools for teaching emotional vocabulary.",
     tegBlueAdds: [
       "Places each emotion inside the nervous system gradient (Connection, Protection, Strategic Management, Domination) so the same emotion reads differently depending on the state it emerges from",
@@ -518,6 +633,7 @@ const globalModels = [
     id: 2,
     name: "Nonviolent Communication (NVC)",
     author: "Marshall Rosenberg",
+    kind: "Communication framework",
     coreContribution: "Provides a clear language structure — observation, feeling, need, request — that promotes empathy and reduces blame in conflict.",
     tegBlueAdds: [
       "Maps the conditions under which NVC works well (Connection / Protection) and where it breaks down (Strategic Management / Domination dynamics)",
@@ -530,6 +646,7 @@ const globalModels = [
     id: 3,
     name: "Cognitive Behavioral Therapy (CBT)",
     author: "Aaron Beck, Albert Ellis",
+    kind: "Clinical approach",
     coreContribution: "Practical, evidence-based approach connecting thoughts, feelings, and behaviors — highly effective for anxiety, depression, and phobias.",
     tegBlueAdds: [
       "Integrates body and nervous system patterns alongside cognitive reframing",
@@ -542,6 +659,7 @@ const globalModels = [
     id: 4,
     name: "Polyvagal Theory",
     author: "Stephen Porges",
+    kind: "Autonomic theory",
     coreContribution: "Explains how the autonomic nervous system shifts between safety (ventral vagal), fight/flight (sympathetic), and shutdown (dorsal vagal) — foundational for trauma-informed practice.",
     tegBlueAdds: [
       "Translates nervous system states into emotional logic and relational meaning",
@@ -560,8 +678,9 @@ const globalModels = [
   },
   {
     id: 5,
-    name: "Zones of Regulation",
+    name: "Zones of Regulation (2011)",
     author: "Leah Kuypers",
+    kind: "Educational tool",
     coreContribution: "Simple, widely adopted color-coded system that gives children and educators a shared language for recognizing emotional states.",
     tegBlueAdds: [
       "Adds gradients within each zone — showing that 'red' contains everything from righteous anger to terror to rage, each needing different responses",
@@ -673,6 +792,7 @@ const globalModels = [
     id: 14,
     name: "Cognitive Dissonance Theory",
     author: "Leon Festinger",
+    kind: "Social psychology theory",
     coreContribution: "Explains the discomfort when beliefs, emotions, or actions conflict — and how people resolve it through changing beliefs, justifying actions, or denial.",
     tegBlueAdds: [
       "Shows how dissonance is experienced somatically and emotionally, not just cognitively",
@@ -686,6 +806,7 @@ const globalModels = [
     id: 15,
     name: "Disorganized Attachment & Complex PTSD",
     author: "Mary Main, Judith Herman, Bessel van der Kolk",
+    kind: "Attachment and trauma models",
     coreContribution: "Explains paradoxical push-pull dynamics where closeness itself feels dangerous — connects childhood relational trauma to lifelong patterns of dysregulation and identity disturbance.",
     tegBlueAdds: [
       "Integrates attachment disruption and CPTSD into the Emotional Gradient Framework",
@@ -696,12 +817,28 @@ const globalModels = [
     ],
     frameworks: ["F1", "F2", "F3", "F4", "F5", "F8", "F10", "F12"],
   },
+  {
+    id: 16,
+    name: "Narcissism & Self-Structure Research",
+    author: "Heinz Kohut, Otto Kernberg, Elsa Ronningstam, Aaron Pincus",
+    kind: "Clinical psychology",
+    coreContribution: "Differentiates narcissistic injury, self-esteem regulation, shame, entitlement, empathy disruption, and grandiose or vulnerable presentations.",
+    tegBlueAdds: [
+      "Separates developmental adaptation, present-state capacity, relational impact, and accountability instead of collapsing them into one label",
+      "Maps how empathy, repair, responsibility, and control shift across Protection, Strategic Management, Domination, and Shutdown",
+      "Creates a way to describe harmful patterns without either moralizing the person or excusing the harm",
+      "Connects narcissistic patterns to state-dependent capacity and testable relational markers",
+    ],
+    frameworks: ["F2", "F3", "F5", "F7", "F8", "F12"],
+  },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "Review Status", href: "#review-status-heading", description: "What is peer-reviewed source literature, what is TEG-Blue's original synthesis, and what remains open to testing." },
-  { label: "41 Research Traditions", href: "#research-traditions", description: "Every research tradition TEG-Blue draws from, credited and documented — together synthesizing 145+ theoretical contributions." },
-  { label: "24 Research Domains", href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
+  { label: "Gradient Evidence", href: "#gradient-evidence", description: "The four source principles behind the Nervous System Gradient." },
+  { label: "Model Bridges", href: "#model-bridges", description: "Widely used models, their strengths, and where the Gradient extends them." },
+  { label: `${THEORIES.length} Research Traditions`, href: "#research-traditions", description: "Every research tradition TEG-Blue draws from, credited and documented." },
+  { label: `${RESEARCH_DOMAINS.length} Research Domains`, href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
   { label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
   { label: "CSV Download", href: "#csv-download", description: "Full dataset available for download. Open data, open access." },
 ];
@@ -783,56 +920,33 @@ export default function ScientificFoundationsPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="ESTABLISHED RESEARCH"
-            title="Established Research"
-            description={`${THEORIES.length} research traditions across ${RESEARCH_DOMAINS.length} domains underwrite specific parts of the TEG-Blue architecture. Each source is connected to its architectural function — what mechanism, condition, or pattern it makes visible — not used as symbolic authority.`}
+            badge="SOURCE GROUNDING"
+            title="Scientific Foundations"
+            subtitle="The evidence ladder behind the Gradient"
+            description={`How established research traditions, clinical models, communication frameworks, and educational tools ground the Nervous System Gradient. Each source is connected to what it helps make visible — mechanism, condition, pattern, or repair pathway.`}
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <ReviewStatusPanel
-          title="An evidence map of cited research, not a claim that the whole synthesis is peer-reviewed."
-          description="This page organizes established scientific and scholarly sources by the function they serve in the TEG-Blue architecture. The source literature includes peer-reviewed research; the cross-disciplinary placement is TEG-Blue's original contribution and remains open to scholarly correction, replication, and testing."
+          title="Source literature is established; the synthesis is original."
+          description="This page organizes cited science and widely used models by the function they serve in the TEG-Blue architecture. The source literature includes peer-reviewed research and established scholarly work. The cross-disciplinary placement, Gradient language, and visual synthesis are TEG-Blue's original contribution and remain open to correction, replication, and testing."
         />
 
         {/* ─── Answer-first opening ─────────────────────────────── */}
         <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 24, fontWeight: 500 }}>
-          TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. A finding from neuroscience may explain the mechanism; a finding from attachment research may explain the developmental imprint; a finding from trauma research may explain the chronic adaptation; a finding from sociology may explain how the same pattern becomes collective. Each source remains accurate to its own discipline, language, and evidence base. TEG-Blue places these findings in sequence — field → finding → function → position in the architecture. The contribution is the placement, not the individual pieces.
+          TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. A finding from neuroscience may explain the mechanism; attachment research may explain the developmental imprint; trauma research may explain chronic adaptation; CBT and cognitive dissonance may explain how thought protects coherence; NVC may explain when repair language works; Plutchik and Zones may explain emotional naming. Each source remains itself. TEG-Blue places the pieces in relation.
         </p>
 
-        {/* ─── Regulation Thread framing ──────────────────────────── */}
-        <div
-          style={{
-            padding: "12px 16px",
-            background: hexToRgba(SPECTRUM.cobalt, 0.06),
-            borderRadius: 8,
-            border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-            marginBottom: 40,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 9,
-              fontWeight: 700,
-              fontFamily: FONT.mono,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: SPECTRUM.cobalt,
-              marginBottom: 6,
-            }}
-          >
-            Why These Sources Connect
-          </div>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: "0 0 8px" }}>
-            These research traditions developed independently, across separate disciplines. TEG-Blue proposes that they describe parts of the same underlying pattern: when the body cannot complete biological restoration, the nervous system organizes around substitutes — cognition, rules, hierarchies, bias, domination. Each source helps make one part of this sequence visible.
-          </p>
-        </div>
+        <SourceStatusNote />
+
+        <GradientEvidenceLadder />
 
         {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
         <CoreFoundations />
 
         {/* ─── 3. HOW TEG-BLUE INTEGRATES EXISTING MODELS ─────────── */}
-        <section style={{ marginBottom: 48 }}>
+        <section id="model-bridges" style={{ marginBottom: 48 }}>
           <h2
             style={{
               fontSize: 20,
@@ -841,14 +955,14 @@ export default function ScientificFoundationsPage() {
               margin: "0 0 12px 0",
             }}
           >
-            How TEG-Blue Integrates Existing Models
+            Model Bridges
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            TEG-Blue does not replace these models, and it is not contained in any of them.
-            Each establishes part of the pattern from inside its own field; the contribution
-            is the architecture that places those parts in relation and makes them legible as
-            one system. Each card shows what the model establishes and what TEG-Blue adds.
+            The comparison document frames these models generously: each one gave the field a
+            useful way to see emotion, cognition, communication, regulation, identity, or trauma.
+            TEG-Blue does not replace them. It asks where each model works, what it makes visible,
+            and what becomes clearer when the same material is placed on the Gradient.
           </p>
 
           {globalModels.map((model) => (
@@ -894,8 +1008,8 @@ export default function ScientificFoundationsPage() {
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            TEG-Blue integrates 145+ theoretical contributions from 41 research traditions organized into {RESEARCH_DOMAINS.length} research
-            domain groupings and {THEORIES.length} tradition-level entries. Each entry represents a research
+            TEG-Blue integrates theoretical contributions from {THEORIES.length} research traditions organized into {RESEARCH_DOMAINS.length} research
+            domain groupings. Each entry represents a research
             tradition with its key researchers and cross-references to the frameworks that draw on it.
             This section exists for inspection — to show what the grounding is,
             how it was selected, and how to audit it.
@@ -1105,7 +1219,7 @@ export default function ScientificFoundationsPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "Established Research", url: "/scientific-foundations" },
+              { name: "Scientific Foundations", url: "/scientific-foundations" },
             ])
           ),
         }}
@@ -1118,16 +1232,140 @@ export default function ScientificFoundationsPage() {
 
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateScientificFoundationsJsonLd()) }}
+      />
+
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Established Research | TEG-Blue Research",
+              name: "Scientific Foundations | TEG-Blue Research",
               url: "https://teg-blue.org/scientific-foundations",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
           ),
         }}
       />
+    </div>
+  );
+}
+
+// ─── SOURCE STATUS COMPONENT ───────────────────────────────────
+
+function SourceStatusNote() {
+  return (
+    <section
+      style={{
+        marginBottom: 40,
+        padding: 18,
+        background: hexToRgba(SPECTRUM.cobalt, 0.06),
+        borderRadius: 10,
+        border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 9,
+          fontWeight: 700,
+          fontFamily: FONT.mono,
+          textTransform: "uppercase",
+          letterSpacing: 0,
+          color: SPECTRUM.cobalt,
+          marginBottom: 8,
+        }}
+      >
+        How to read the evidence
+      </div>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.75, margin: 0 }}>
+        This page separates <strong style={{ color: TEXT.primary }}>source grounding</strong> from{" "}
+        <strong style={{ color: TEXT.primary }}>TEG-Blue synthesis</strong>. Some entries are peer-reviewed
+        research traditions. Some are clinical models, educational tools, or communication frameworks.
+        The page credits what each one contributes, then shows how the Gradient organizes those
+        contributions into one state-dependent map.
+      </p>
+    </section>
+  );
+}
+
+// ─── GRADIENT EVIDENCE LADDER COMPONENT ─────────────────────────
+
+function GradientEvidenceLadder() {
+  return (
+    <section id="gradient-evidence" style={{ marginBottom: 48 }}>
+      <h2
+        style={{
+          fontSize: 20,
+          fontWeight: 600,
+          color: TEXT.primary,
+          margin: "0 0 12px 0",
+        }}
+      >
+        Evidence Ladder Behind the Gradient
+      </h2>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 18 }}>
+        The public Gradient rests on four principles. Each principle is grounded in existing
+        source areas, then translated into TEG-Blue language as part of the original visual
+        synthesis.
+      </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+          gap: 12,
+        }}
+      >
+        {gradientEvidencePrinciples.map((item) => (
+          <div
+            key={item.principle}
+            style={{
+              padding: 16,
+              background: BG.card,
+              borderRadius: 10,
+              border: `1px solid ${hexToRgba(item.color, 0.18)}`,
+              borderTop: `3px solid ${item.color}`,
+            }}
+          >
+            <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 10px" }}>
+              {item.principle}
+            </h3>
+            <EvidenceField label="Source areas" color={item.color}>
+              {item.sourceAreas}
+            </EvidenceField>
+            <EvidenceField label="What TEG-Blue uses" color={item.color}>
+              {item.tegBlueUse}
+            </EvidenceField>
+            <EvidenceField label="Open to testing" color={item.color}>
+              {item.openQuestion}
+            </EvidenceField>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function EvidenceField({ label, color, children }) {
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <div
+        style={{
+          fontSize: 9,
+          fontWeight: 700,
+          fontFamily: FONT.mono,
+          textTransform: "uppercase",
+          letterSpacing: 0,
+          color,
+          marginBottom: 3,
+        }}
+      >
+        {label}
+      </div>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+        {children}
+      </p>
     </div>
   );
 }
@@ -1145,7 +1383,7 @@ function CoreFoundations() {
           margin: "0 0 16px 0",
         }}
       >
-        Core Foundations
+        Source Areas Behind the Gradient
       </h2>
 
       <div
@@ -1166,7 +1404,8 @@ function CoreFoundations() {
             marginBottom: 20,
           }}
         >
-          The essential science TEG-Blue builds on, drawn from multiple disciplines:
+          The Gradient is not built from one discipline. It organizes several kinds of source
+          knowledge into a single visual map:
         </p>
 
         <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -1234,6 +1473,19 @@ function ModelCard({ model }) {
             {model.name}
           </span>
           <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 700,
+              fontFamily: FONT.mono,
+              padding: "3px 7px",
+              borderRadius: 4,
+              background: hexToRgba(SPECTRUM.azure, 0.1),
+              color: SPECTRUM.azure,
+            }}
+          >
+            {model.kind || "Comparative model"}
+          </span>
           <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
             {model.frameworks.map((f) => (
               <span
@@ -1270,7 +1522,7 @@ function ModelCard({ model }) {
         {/* Expand indicator */}
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
           <span style={{ fontSize: 12, color: TEXT.muted }}>
-            {isOpen ? "Hide details" : "Show what TEG-Blue adds"}
+            {isOpen ? "Hide details" : "Show how the Gradient extends this"}
           </span>
           <span
             style={{
@@ -1318,11 +1570,11 @@ function ModelCard({ model }) {
                   marginBottom: 10,
                   marginTop: 0,
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: 0,
                   fontFamily: FONT.mono,
                 }}
               >
-                Core contribution
+                What this gives us
               </h4>
               <p
                 style={{
@@ -1336,7 +1588,7 @@ function ModelCard({ model }) {
               </p>
             </div>
 
-            {/* What TEG-Blue translates / adds */}
+            {/* What the Gradient translates / extends */}
             <div
               style={{
                 padding: 16,
@@ -1353,11 +1605,11 @@ function ModelCard({ model }) {
                   marginBottom: 10,
                   marginTop: 0,
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: 0,
                   fontFamily: FONT.mono,
                 }}
               >
-                What TEG-Blue translates / adds
+                Where the Gradient extends it
               </h4>
               <ul style={{ margin: 0, paddingLeft: 16 }}>
                 {model.tegBlueAdds.map((t, i) => (
@@ -1549,7 +1801,7 @@ function ExpandableTheoryCard({ theory }) {
                   marginBottom: 6,
                   marginTop: 0,
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: 0,
                   fontFamily: FONT.mono,
                 }}
               >
@@ -1571,7 +1823,7 @@ function ExpandableTheoryCard({ theory }) {
                   marginBottom: 6,
                   marginTop: 0,
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: 0,
                   fontFamily: FONT.mono,
                 }}
               >
@@ -1593,7 +1845,7 @@ function ExpandableTheoryCard({ theory }) {
                   marginBottom: 6,
                   marginTop: 0,
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: 0,
                   fontFamily: FONT.mono,
                 }}
               >
@@ -1623,7 +1875,7 @@ function ExpandableTheoryCard({ theory }) {
                   marginBottom: 8,
                   marginTop: 0,
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: 0,
                   fontFamily: FONT.mono,
                 }}
               >
@@ -1742,7 +1994,7 @@ function ValidationMethod() {
           The {RESEARCH_DOMAINS.length} research domains
         </h3>
         <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 10px 0" }}>
-          The 145+ theoretical contributions are organized into {RESEARCH_DOMAINS.length} research domain
+          The theoretical contributions are organized into {RESEARCH_DOMAINS.length} research domain
           groupings with {THEORIES.length} tradition-level entries. Each entry can be audited,
           corrected, or extended:
         </p>
@@ -1800,7 +2052,7 @@ function ValidationMethod() {
                 fontFamily: FONT.mono,
                 color: SPECTRUM.azure,
                 textTransform: "uppercase",
-                letterSpacing: "0.05em",
+                letterSpacing: 0,
                 margin: "0 0 8px 0",
               }}
             >
@@ -1835,7 +2087,7 @@ function ValidationMethod() {
                 fontFamily: FONT.mono,
                 color: SPECTRUM.slate,
                 textTransform: "uppercase",
-                letterSpacing: "0.05em",
+                letterSpacing: 0,
                 margin: "0 0 8px 0",
               }}
             >
