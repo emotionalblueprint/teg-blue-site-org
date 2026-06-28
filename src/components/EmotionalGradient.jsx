@@ -347,9 +347,6 @@ export default function EmotionalGradient() {
           <div className="gradient-toolbar-copy">
             <div className="sticky-state-title">
               <Badge color={readingChronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
-              <p className="sticky-autonomic-line">
-                autonomic state — <span>{selectedItem.autonomic || autonomic[position.id]}</span>
-              </p>
             </div>
             <p className="mode-caption">{modeCaption}</p>
           </div>
@@ -525,6 +522,9 @@ export default function EmotionalGradient() {
                 also known as <span>{familiarLabel}</span>
               </p>
             )}
+            <p className="state-autonomic-line">
+              autonomic state — <span>{selectedItem.autonomic || autonomic[position.id]}</span>
+            </p>
             <div className="state-source-trace">
               <span>{selectedItem.pattern || position.pattern} · {selectedItem.sub || position.sub}</span>
             </div>
@@ -638,18 +638,6 @@ export default function EmotionalGradient() {
           gap: 8px 10px;
         }
 
-        .sticky-autonomic-line {
-          margin: 0;
-          color: var(--readout-soft);
-          font-size: 12px;
-          line-height: 1.45;
-        }
-
-        .sticky-autonomic-line span {
-          color: var(--gradient-accent-text);
-          font-weight: 650;
-        }
-
         .mode-caption {
           margin: 0;
           max-width: 720px;
@@ -732,6 +720,18 @@ export default function EmotionalGradient() {
         }
 
         .state-alias span {
+          color: var(--gradient-accent-text);
+          font-weight: 650;
+        }
+
+        .state-autonomic-line {
+          margin: 0;
+          color: var(--readout-soft);
+          font-size: 12.5px;
+          line-height: 1.45;
+        }
+
+        .state-autonomic-line span {
           color: var(--gradient-accent-text);
           font-weight: 650;
         }
@@ -942,11 +942,6 @@ export default function EmotionalGradient() {
             padding: 0;
             font-size: 12px;
             line-height: 1.55;
-          }
-
-          .sticky-autonomic-line {
-            font-size: 11.5px;
-            line-height: 1.4;
           }
 
           .gradient-track-shell {
