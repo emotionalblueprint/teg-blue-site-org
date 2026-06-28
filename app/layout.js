@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter, JetBrains_Mono, IBM_Plex_Mono } from 'next/font/google'
+import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/src/components/theme/ThemeScript'
 import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
@@ -171,8 +172,10 @@ const websiteJsonLd = {
 }
 
 export default function RootLayout({ children }) {
+  const documentLanguage = headers().get('x-teg-blue-language') === 'es' ? 'es' : 'en'
+
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
+    <html lang={documentLanguage} className={`${inter.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
       <head>
         <ThemeScript />
 
@@ -185,7 +188,7 @@ export default function RootLayout({ children }) {
 
         {/* Dublin Core metadata for academic crawlers */}
         <meta name="DC.publisher" content="TEG-Blue Research" />
-        <meta name="DC.language" content="en" />
+        <meta name="DC.language" content={documentLanguage} />
         <meta name="DC.rights" content="CC BY-NC-SA 4.0" />
         <meta name="DC.type" content="Collection" />
 

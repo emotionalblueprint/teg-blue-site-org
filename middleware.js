@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { isLive } from "./src/lib/live-paths";
 
+function getRequestLanguage(path) {
+  return path === "/es" || path.startsWith("/es/") ? "es" : "en";
+}
+
 // Single-page gate (allowlist model): serve only the live routes defined in
 // src/lib/live-paths.js. Everything else returns 410 Gone with
 // X-Robots-Tag: noindex so search engines DROP these URLs from their index —
@@ -30,9 +34,15 @@ const GONE_HTML = `<!doctype html>
 
 export function middleware(request) {
   const path = request.nextUrl.pathname;
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-teg-blue-language", getRequestLanguage(path));
 
   if (isLive(path)) {
-    return NextResponse.next();
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
   }
 
   return new NextResponse(GONE_HTML, {
