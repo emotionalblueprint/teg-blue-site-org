@@ -56,9 +56,87 @@ const WARM = ACCENT.orange // chronic accent — oranges signal chronic only
 const N = positions.length
 const SHUT = N - 1
 const GRAD = positions.slice(0, SHUT)
-const G = GRAD.length
 const cardById = Object.fromEntries(cards.map((c) => [c.id, c]))
 const HOME_READOUT_IDS = ['perception', 'cognition', 'time', 'selfAwareness', 'empathy']
+const VERSION_FOUR = 'four'
+const VERSION_EXTENDED = 'extended'
+const EXTENDED_TRACK = GRAD.map((position, index) => ({
+  id: position.id,
+  positionIndex: index,
+  code: position.code,
+  mode: position.mode,
+  atlasLabel: position.atlasLabel,
+  readout: 'auto',
+}))
+const SHUTDOWN_ITEM = {
+  id: positions[SHUT].id,
+  positionIndex: SHUT,
+  code: positions[SHUT].code,
+  mode: positions[SHUT].mode,
+  atlasLabel: positions[SHUT].atlasLabel,
+  readout: 'auto',
+}
+const FOUR_MODE_TRACK = [
+  {
+    id: 'acute-connection',
+    positionIndex: 1,
+    code: 'A',
+    mode: 'Acute Connection',
+    atlasLabel: 'Connection / Belonging',
+    readout: 'acute',
+    pattern: 'State A · acute',
+    sub: 'safety → reciprocity',
+    mechanism: positions[1].mechanism,
+    familiar: positions[1].familiar,
+    autonomic: autonomic.connection,
+  },
+  {
+    id: 'chronic-defence',
+    positionIndex: 3,
+    code: 'A↔B + B',
+    mode: 'Chronic Defence',
+    atlasLabel: 'Safety Checking + Protection',
+    readout: 'chronic',
+    pattern: 'States A↔B + B · chronic',
+    sub: 'safety question unresolved + mobilisation held',
+    mechanism: `${positions[2].mechanismChronic}. ${positions[3].mechanismChronic}.`,
+    familiar: 'safety checking · fight / flight / fawn',
+    autonomic: 'parasympathetic → sympathetic / sympathetic',
+  },
+  {
+    id: 'chronic-control',
+    positionIndex: 4,
+    code: 'C',
+    mode: 'Chronic Control',
+    atlasLabel: 'Control / Management',
+    readout: 'chronic',
+    pattern: 'State C · chronic',
+    sub: positions[4].sub,
+    mechanism: positions[4].mechanismChronic,
+    familiar: positions[4].familiar,
+    autonomic: autonomic.strategic,
+  },
+  {
+    id: 'chronic-domination',
+    positionIndex: 5,
+    code: 'D',
+    mode: 'Chronic Domination',
+    atlasLabel: 'Domination',
+    readout: 'chronic',
+    pattern: 'State D · chronic',
+    sub: positions[5].sub,
+    mechanism: positions[5].mechanismChronic,
+    familiar: positions[5].familiarChronic || positions[5].familiar,
+    autonomic: autonomic.domination,
+  },
+]
+
+function fourModeIndexForExtended(positionIndex) {
+  if (positionIndex <= 1) return 0
+  if (positionIndex <= 3) return 1
+  if (positionIndex === 4) return 2
+  return 3
+}
 
 function Badge({ color, light, children }) {
   const dot = light ? swatch(color) : color
@@ -88,7 +166,9 @@ function Badge({ color, light, children }) {
 export default function EmotionalGradient() {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [gradientVersion, setGradientVersion] = useState(VERSION_FOUR)
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
+  const [fourModeIndex, setFourModeIndex] = useState(0)
   const [chronic, setChronic] = useState(false)
   const [selectedReadoutId, setSelectedReadoutId] = useState(HOME_READOUT_IDS[0])
   const barRef = useRef(null)
@@ -96,14 +176,27 @@ export default function EmotionalGradient() {
 
   useEffect(() => setMounted(true), [])
 
-  const position = positions[posIndex]
-  const isShutdown = posIndex === SHUT
+  const isFourMode = gradientVersion === VERSION_FOUR
+  const trackItems = isFourMode ? FOUR_MODE_TRACK : EXTENDED_TRACK
+  const trackCount = trackItems.length
+  const activeTrackIndex = isFourMode ? fourModeIndex : Math.min(posIndex, trackCount - 1)
+  const selectedItem = isFourMode
+    ? FOUR_MODE_TRACK[fourModeIndex]
+    : (posIndex === SHUT ? SHUTDOWN_ITEM : EXTENDED_TRACK[posIndex])
+  const position = positions[selectedItem.positionIndex]
+  const itemUsesChronic = (item) => item.readout === 'chronic' || (item.readout === 'auto' && chronic)
+  const readingChronic = itemUsesChronic(selectedItem)
+  const isShutdown = !isFourMode && selectedItem.positionIndex === SHUT
+  const colorForItem = (item) => {
+    const itemPosition = positions[item.positionIndex]
+    return itemUsesChronic(item) ? itemPosition.chronicColor : itemPosition.acuteColor
+  }
   const colorOf = (i) => (chronic ? positions[i].chronicColor : positions[i].acuteColor)
-  const accent = colorOf(posIndex)
+  const accent = colorForItem(selectedItem)
 
   const isDark = mounted ? resolvedTheme !== 'light' : true
   const panelLight = !isDark
-  const isAcuteBaseline = position.id === 'baseline' && !chronic
+  const isAcuteBaseline = position.id === 'baseline' && !readingChronic
   const restingText = panelLight ? '#475569' : '#e2e8f0'
   const restingDot = panelLight ? '#94a3b8' : '#cbd5e1'
   const tileLight = panelLight
@@ -129,50 +222,84 @@ export default function EmotionalGradient() {
   }
 
   const labelColor = (i) => {
-    const selectedAcuteBaseline = i === 0 && !chronic
+    const item = trackItems[i]
+    const itemPosition = positions[item.positionIndex]
+    const selectedAcuteBaseline = itemPosition.id === 'baseline' && !itemUsesChronic(item)
     if (selectedAcuteBaseline) return restingText
-    return panelLight ? ink(colorOf(i)) : colorOf(i)
+    return panelLight ? ink(colorForItem(item)) : colorForItem(item)
   }
-  const barStop = (i) => (panelLight ? swatch(colorOf(i)) : colorOf(i))
+  const barStop = (i) => (panelLight ? swatch(colorForItem(trackItems[i])) : colorForItem(trackItems[i]))
   const shutColor = panelLight ? swatch(colorOf(SHUT)) : colorOf(SHUT)
-  const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${GRAD.map(
-    (_, i) => `${barStop(i)} ${(((i + 0.5) / G) * 100).toFixed(2)}%`,
-  ).join(', ')}, ${barStop(G - 1)} 100%)`
+  const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${trackItems.map(
+    (_, i) => `${barStop(i)} ${(((i + 0.5) / trackCount) * 100).toFixed(2)}%`,
+  ).join(', ')}, ${barStop(trackCount - 1)} 100%)`
   const barBg = barGradient
-  const modeCaption = chronic
+  const modeCaption = isFourMode
+    ? '4-Mode Gradient — the same readout simplified to Acute Connection, then Chronic Defence, Chronic Control, and Chronic Domination.'
+    : chronic
     ? 'Chronic — the gradient has become rigid: the nervous system gets stuck in protective patterns, reacting from threat even when the present moment is safe.'
     : 'Fluid — the nervous system can move flexibly between safety, threat, and rest, depending on what is happening around it.'
-  const gradientBadgeLabel = `${chronic ? 'Rigid Gradient' : 'Fluid Gradient'} · ${chronic ? 'Chronic' : 'Acute'} ${position.code} State`
+  const gradientBadgeLabel = isFourMode
+    ? `4-Mode Gradient · ${selectedItem.mode}`
+    : `${chronic ? 'Rigid Gradient' : 'Fluid Gradient'} · ${chronic ? 'Chronic' : 'Acute'} ${position.code} State`
+
+  function setTrackIndex(index) {
+    if (isFourMode) setFourModeIndex(index)
+    else setPosIndex(index)
+  }
+
+  function moveTrackIndex(delta) {
+    if (isFourMode) {
+      setFourModeIndex((i) => Math.max(0, Math.min(i + delta, FOUR_MODE_TRACK.length - 1)))
+    } else {
+      setPosIndex((i) => Math.max(0, Math.min(i + delta, N - 1)))
+    }
+  }
+
+  function toggleGradientVersion() {
+    if (isFourMode) {
+      setPosIndex(selectedItem.positionIndex)
+      setChronic(selectedItem.readout === 'chronic')
+      setGradientVersion(VERSION_EXTENDED)
+    } else {
+      setFourModeIndex(fourModeIndexForExtended(posIndex))
+      setGradientVersion(VERSION_FOUR)
+    }
+  }
 
   function setFromClientX(clientX) {
     const el = barRef.current
     if (!el) return
     const rect = el.getBoundingClientRect()
     const raw = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
-    setPosIndex(Math.min(Math.floor(raw * G), G - 1))
+    setTrackIndex(Math.min(Math.floor(raw * trackCount), trackCount - 1))
   }
   function onTrackKey(e) {
     if (e.target.closest?.('.readout-row')) return
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault()
-      setPosIndex((i) => Math.min(i + 1, N - 1))
+      moveTrackIndex(1)
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       e.preventDefault()
-      setPosIndex((i) => Math.max(i - 1, 0))
+      moveTrackIndex(-1)
     }
   }
-  const stateText = chronic ? content.state[position.id].c : content.state[position.id].a
-  const familiarLabel = chronic && position.familiarChronic ? position.familiarChronic : position.familiar
+  const readoutText = (id) => {
+    const reading = content[id][position.id]
+    return selectedItem.readoutOverrides?.[id] || (readingChronic ? reading.c : reading.a)
+  }
+  const stateText = readoutText('state')
+  const familiarLabel = selectedItem.familiar ?? (readingChronic && position.familiarChronic ? position.familiarChronic : position.familiar)
   const selectedReadoutCard = cardById[selectedReadoutId]
-  const selectedReadoutReading = content[selectedReadoutId][position.id]
-  const selectedReadoutText = chronic ? selectedReadoutReading.c : selectedReadoutReading.a
+  const selectedReadoutText = readoutText(selectedReadoutId)
   const selectedReadoutDescription =
-    selectedReadoutCard.descriptions?.[position.id]?.[chronic ? 'c' : 'a'] || selectedReadoutCard.description
+    selectedItem.descriptionOverrides?.[selectedReadoutId] ||
+    selectedReadoutCard.descriptions?.[position.id]?.[readingChronic ? 'c' : 'a'] ||
+    selectedReadoutCard.description
 
   const renderRow = (id) => {
     const card = cardById[id]
-    const reading = content[id][position.id]
-    const text = chronic ? reading.c : reading.a
+    const text = readoutText(id)
     const selected = selectedReadoutId === id
     return (
       <button
@@ -194,7 +321,7 @@ export default function EmotionalGradient() {
       className="gradient-card"
       tabIndex={0}
       onKeyDown={onTrackKey}
-      aria-label="The Nervous System Gradient"
+      aria-label={isFourMode ? 'The Nervous System Gradient, 4-mode view' : 'The Nervous System Gradient, extended view'}
       style={{
         overflow: 'visible',
         borderRadius: 8,
@@ -219,14 +346,17 @@ export default function EmotionalGradient() {
         <div className="gradient-toolbar">
           <div className="gradient-toolbar-copy">
             <div className="sticky-state-title">
-              <Badge color={chronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
+              <Badge color={readingChronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
               <p className="sticky-autonomic-line">
-                autonomic state — <span>{autonomic[position.id]}</span>
+                autonomic state — <span>{selectedItem.autonomic || autonomic[position.id]}</span>
               </p>
             </div>
             <p className="mode-caption">{modeCaption}</p>
           </div>
-          <ChronicToggle chronic={chronic} onChange={setChronic} />
+          <div className="gradient-toolbar-controls">
+            <VersionToggle extended={!isFourMode} onClick={toggleGradientVersion} />
+            {!isFourMode && <ChronicToggle chronic={chronic} onChange={setChronic} />}
+          </div>
         </div>
 
         {/* gradient bar + detached Shutdown */}
@@ -248,17 +378,17 @@ export default function EmotionalGradient() {
             }}
           >
             <div ref={barRef} className="gradient-bar" style={{ position: 'relative', height: 14, borderRadius: 999, background: barBg, boxShadow: panelLight ? 'inset 0 0 0 1px rgba(0,0,0,0.06)' : 'none' }}>
-              {Array.from({ length: G - 1 }, (_, i) => (
-                <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: chronic ? 2 : 1, transform: 'translateX(-50%)', left: `${((i + 1) / G) * 100}%`, background: chronic ? (panelLight ? 'rgba(255,255,255,0.72)' : 'rgba(10,13,20,0.42)') : (panelLight ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.3)') }} />
+              {Array.from({ length: trackCount - 1 }, (_, i) => (
+                <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: readingChronic ? 2 : 1, transform: 'translateX(-50%)', left: `${((i + 1) / trackCount) * 100}%`, background: readingChronic ? (panelLight ? 'rgba(255,255,255,0.72)' : 'rgba(10,13,20,0.42)') : (panelLight ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.3)') }} />
               ))}
-              {chronic && GRAD.map((_, i) => (
+              {trackItems.map((item, i) => itemUsesChronic(item) && (
                 <div
                   key={`fixed-${i}`}
                   aria-hidden="true"
                   style={{
                     position: 'absolute',
                     top: '50%',
-                    left: `${((i + 0.5) / G) * 100}%`,
+                    left: `${((i + 0.5) / trackCount) * 100}%`,
                     width: 5,
                     height: 5,
                     borderRadius: '50%',
@@ -275,7 +405,7 @@ export default function EmotionalGradient() {
                   style={{
                     position: 'absolute',
                     top: '50%',
-                    left: `${((posIndex + 0.5) / G) * 100}%`,
+                    left: `${((activeTrackIndex + 0.5) / trackCount) * 100}%`,
                     width: 28,
                     height: 28,
                     transform: 'translate(-50%, -50%)',
@@ -291,9 +421,9 @@ export default function EmotionalGradient() {
             </div>
           </div>
 
-          <div className="gradient-shutdown-track" style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
+          {!isFourMode && <div className="gradient-shutdown-track" style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12, alignSelf: 'center' }}>
             <div className="gradient-shutdown-divider" style={{ height: 20, borderLeft: `1px dashed ${panel.line}` }} />
-            <button className="gradient-shutdown-button" onClick={() => setPosIndex(SHUT)} aria-label="Shutdown — off-gradient" style={{ padding: '12px 0', background: 'transparent', border: 'none', cursor: 'pointer' }}>
+            <button type="button" className="gradient-shutdown-button" onClick={() => setPosIndex(SHUT)} aria-label="Shutdown — off-gradient" style={{ padding: '12px 0', background: 'transparent', border: 'none', cursor: 'pointer' }}>
               <div
                 className="gradient-shutdown-pill"
                 style={{
@@ -306,7 +436,7 @@ export default function EmotionalGradient() {
                 }}
               />
             </button>
-          </div>
+          </div>}
         </div>
 
         <div
@@ -317,40 +447,46 @@ export default function EmotionalGradient() {
             '--gradient-bar-name-border': hexToRgba(panel.cDot, panelLight ? 0.34 : 0.4),
           }}
         >
-          <span className="gradient-bar-name-code">{position.code}</span>
-          <span className="gradient-bar-name-label">{position.atlasLabel}</span>
+          <span className="gradient-bar-name-code">{selectedItem.code}</span>
+          <span className="gradient-bar-name-label">{selectedItem.atlasLabel}</span>
         </div>
 
         {/* labels */}
         <div className="gradient-track-labels" style={{ display: 'flex', gap: 12, marginTop: 10 }}>
           <div style={{ display: 'flex', flex: 1 }}>
-            {GRAD.map((p, i) => (
+            {trackItems.map((item, i) => {
+              const itemColor = colorForItem(item)
+              const selected = i === activeTrackIndex && !isShutdown
+              return (
               <button
-                key={p.id}
-                onClick={() => setPosIndex(i)}
-                aria-label={`State ${p.code}: ${p.mode}`}
-                title={`State ${p.code}: ${p.mode}`}
-                className={i === posIndex ? 'gradient-label-button is-active' : 'gradient-label-button'}
+                key={item.id}
+                type="button"
+                onClick={() => setTrackIndex(i)}
+                aria-label={`${item.code}: ${item.mode}`}
+                title={`${item.code}: ${item.mode}`}
+                className={selected ? 'gradient-label-button is-active' : 'gradient-label-button'}
                 style={{
                   flex: 1,
                   minHeight: 38,
                   padding: '5px 4px',
                   textAlign: 'center',
-                  background: i === posIndex ? hexToRgba(colorOf(i), panelLight ? 0.08 : 0.12) : 'transparent',
-                  border: `1px solid ${i === posIndex ? hexToRgba(colorOf(i), panelLight ? 0.24 : 0.28) : 'transparent'}`,
+                  background: selected ? hexToRgba(itemColor, panelLight ? 0.08 : 0.12) : 'transparent',
+                  border: `1px solid ${selected ? hexToRgba(itemColor, panelLight ? 0.24 : 0.28) : 'transparent'}`,
                   borderRadius: 8,
                   cursor: 'pointer',
-                  color: i === posIndex ? labelColor(i) : panel.faint,
+                  color: selected ? labelColor(i) : panel.faint,
                 }}
               >
-                <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, letterSpacing: '0.08em' }}>{p.code}</span>
-                <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: i === posIndex ? 700 : 500, fontFamily: FONT.display }}>{p.mode}</span>
+                <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: selected ? 700 : 500, letterSpacing: '0.08em' }}>{item.code}</span>
+                <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: selected ? 700 : 500, fontFamily: FONT.display }}>{item.mode}</span>
               </button>
-            ))}
+              )
+            })}
           </div>
-          <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12 }}>
+          {!isFourMode && <div style={{ display: 'flex', flexShrink: 0, alignItems: 'center', gap: 12 }}>
             <div style={{ height: 20, borderLeft: '1px solid transparent' }} />
             <button
+              type="button"
               onClick={() => setPosIndex(SHUT)}
               aria-label={`State ${positions[SHUT].code}: Shutdown`}
               title={`State ${positions[SHUT].code}: Shutdown`}
@@ -370,7 +506,7 @@ export default function EmotionalGradient() {
               <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, letterSpacing: '0.08em' }}>{positions[SHUT].code}</span>
               <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, fontFamily: FONT.display }}>Shutdown</span>
             </button>
-          </div>
+          </div>}
         </div>
       </div>
       </div>
@@ -381,7 +517,7 @@ export default function EmotionalGradient() {
         <div className="state-readout">
           <div className="state-configuration-title">
             <span className="state-configuration-dot" aria-hidden="true" />
-            <h2 className="state-configuration-name">{position.mode}</h2>
+            <h2 className="state-configuration-name">{selectedItem.mode}</h2>
           </div>
           <div className="state-configuration-context">
             {familiarLabel && (
@@ -390,10 +526,10 @@ export default function EmotionalGradient() {
               </p>
             )}
             <div className="state-source-trace">
-              <span>{position.pattern} · {position.sub}</span>
+              <span>{selectedItem.pattern || position.pattern} · {selectedItem.sub || position.sub}</span>
             </div>
             <p className="state-mechanism">
-              {chronic ? position.mechanismChronic : position.mechanism}
+              {selectedItem.mechanism || (readingChronic ? position.mechanismChronic : position.mechanism)}
             </p>
           </div>
           <p className="state-reading">{stateText}</p>
@@ -451,6 +587,47 @@ export default function EmotionalGradient() {
           flex-wrap: wrap;
           align-items: center;
           gap: 8px 14px;
+        }
+
+        .gradient-toolbar-controls {
+          display: flex;
+          flex: 0 0 auto;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 8px;
+        }
+
+        .version-toggle {
+          appearance: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 30px;
+          border: 1px solid color-mix(in srgb, var(--gradient-accent) 28%, var(--gradient-line));
+          border-radius: 999px;
+          background: color-mix(in srgb, var(--gradient-accent) 8%, transparent);
+          color: var(--gradient-accent-text);
+          cursor: pointer;
+          font: inherit;
+          font-size: 12px;
+          font-weight: 650;
+          line-height: 1.2;
+          padding: 6px 12px;
+          transition:
+            background-color 160ms ease,
+            border-color 160ms ease,
+            color 160ms ease;
+        }
+
+        .version-toggle:hover {
+          background: color-mix(in srgb, var(--gradient-accent) 13%, transparent);
+          border-color: color-mix(in srgb, var(--gradient-accent) 42%, var(--gradient-line));
+        }
+
+        .version-toggle:focus-visible {
+          outline: 1px solid color-mix(in srgb, var(--gradient-accent) 42%, transparent);
+          outline-offset: 3px;
         }
 
         .sticky-state-title {
@@ -721,7 +898,7 @@ export default function EmotionalGradient() {
         @media (max-width: 720px) {
           .gradient-toolbar {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-columns: minmax(0, 1fr);
             align-items: start;
             padding: 12px 18px 0;
             gap: 8px;
@@ -731,6 +908,10 @@ export default function EmotionalGradient() {
             flex-direction: column;
             align-items: flex-start;
             gap: 7px;
+          }
+
+          .gradient-toolbar-controls {
+            justify-content: flex-start;
           }
 
           .sticky-state-title {
@@ -898,9 +1079,23 @@ export default function EmotionalGradient() {
   )
 }
 
+function VersionToggle({ extended, onClick }) {
+  return (
+    <button
+      type="button"
+      className="version-toggle"
+      onClick={onClick}
+      aria-pressed={extended}
+    >
+      {extended ? 'Back to 4-Mode Gradient' : 'Full 7-Mode Gradient'}
+    </button>
+  )
+}
+
 function ChronicToggle({ chronic, onChange }) {
   return (
     <button
+      type="button"
       className="chronic-toggle"
       onClick={() => onChange(!chronic)}
       role="switch"
