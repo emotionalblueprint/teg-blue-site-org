@@ -324,8 +324,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 4,
           name: "Applied Engine Logic",
-          description: "Separate applied/licensable tool-building logic for bounded institutional and partner implementations.",
-          url: "https://www.teg-blue.com/engine"
+          description: "Separate internal and potentially licensable tool-building logic for bounded institutional and partner implementations."
         }
       ]
     },
