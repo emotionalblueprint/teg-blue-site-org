@@ -13,6 +13,57 @@ import { DEEP_ENGINE_FORMATIONS } from "./deep-engine-formations";
 
 const cell = (lead, sub, note) => ({ lead, sub, note });
 
+export const DEEP_ENGINE_CHRONIC_FORMATION_META = {
+  baseline: {
+    chronicConfig: "Chronic Elevated Physiological Baseline",
+    chronicConfigDetail: "No resting availability",
+    plainChronic: "Switched on even when nothing is wrong — rest never fully arrives",
+    chronicColor: "#ffe680",
+  },
+  connection: {
+    chronicConfig: "Chronic Connection / Belonging",
+    chronicConfigDetail: "No real Safety Access (pretending safety is the normal)",
+    plainChronic: "Safety with others is read but never quite trusted — connection stays conditional",
+    chronicColor: "#ffce00",
+  },
+  calibration: {
+    chronicConfig: "Chronic Safety Checking",
+    chronicConfigDetail: "Sustained threat",
+    plainChronic: "The safety question never resolves — caught between leaning in and bracing",
+    chronicColor: "#ffa300",
+  },
+  protection: {
+    chronicConfig: "Chronic Protection / Defence",
+    chronicConfigDetail: "Defence as default",
+    plainChronic: "Threat read as always present — defence becomes the resting state",
+    chronicColor: "#ff7e1d",
+  },
+  strategic: {
+    chronicConfig: "Chronic Control / Management",
+    chronicConfigDetail: "Chronic Control / Management",
+    plainChronic: "Control as the only way to feel safe",
+    chronicColor: "#ff5a05",
+  },
+  domination: {
+    familiarChronic: "coercive control",
+    chronicConfig: "Chronic Domination",
+    chronicConfigDetail: "Power as identity",
+    plainChronic: "Nothing else has ever been trusted to work — power and force set as identity",
+    chronicColor: "#ff404a",
+  },
+  shutdown: {
+    chronicConfig: "Shutdown",
+    chronicConfigDetail: "Shutdown",
+    plainChronic: "Mobilising never feels available — collapse is where the system keeps returning",
+    chronicColor: "#a1adbf",
+  },
+};
+
+export const withChronicFormationMeta = (formation) => ({
+  ...formation,
+  ...DEEP_ENGINE_CHRONIC_FORMATION_META[formation.id],
+});
+
 export const DEEP_ENGINE_CHRONIC_ROWS = {
   ess: {
     label: "Body state",
@@ -187,22 +238,25 @@ export function atlasCellText(value) {
   return [lead, sub, note].filter(Boolean).join(" — ");
 }
 
-export const DEEP_ENGINE_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formation) => ({
-  ...formation,
-  bodyState: DEEP_ENGINE_CHRONIC_ROWS.ess.cells[formation.id],
-  cognition: DEEP_ENGINE_CHRONIC_ROWS.cls.cells[formation.id],
-  lockedPerception: DEEP_ENGINE_CHRONIC_ROWS.lockedPerception.cells[formation.id],
-  signalConfiguration: DEEP_ENGINE_CHRONIC_ROWS.signalConfiguration.cells[formation.id],
-  stuckState: DEEP_ENGINE_CHRONIC_ROWS.stuckState.cells[formation.id],
-  physiologicalCapacity: DEEP_ENGINE_CHRONIC_ROWS.physiologicalCapacity.cells[formation.id],
-  actionReadiness: DEEP_ENGINE_CHRONIC_ROWS.actionReadiness.cells[formation.id],
-  regulationNeeded: DEEP_ENGINE_CHRONIC_ROWS.regulationNeeded.cells[formation.id],
-  restoration: DEEP_ENGINE_CHRONIC_ROWS.restoration.cells[formation.id],
-  completion: DEEP_ENGINE_CHRONIC_ROWS.completion.cells[formation.id],
-  awarenessAccess: DEEP_ENGINE_CHRONIC_ROWS.awarenessAccess.cells[formation.id],
-  empathyAccess: DEEP_ENGINE_CHRONIC_ROWS.empathyAccess.cells[formation.id],
-  selfOtherDifferentiation: DEEP_ENGINE_CHRONIC_ROWS.selfOtherDifferentiation.cells[formation.id],
-}));
+export const DEEP_ENGINE_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formation) => {
+  const chronicFormation = withChronicFormationMeta(formation);
+  return {
+    ...chronicFormation,
+    bodyState: DEEP_ENGINE_CHRONIC_ROWS.ess.cells[formation.id],
+    cognition: DEEP_ENGINE_CHRONIC_ROWS.cls.cells[formation.id],
+    lockedPerception: DEEP_ENGINE_CHRONIC_ROWS.lockedPerception.cells[formation.id],
+    signalConfiguration: DEEP_ENGINE_CHRONIC_ROWS.signalConfiguration.cells[formation.id],
+    stuckState: DEEP_ENGINE_CHRONIC_ROWS.stuckState.cells[formation.id],
+    physiologicalCapacity: DEEP_ENGINE_CHRONIC_ROWS.physiologicalCapacity.cells[formation.id],
+    actionReadiness: DEEP_ENGINE_CHRONIC_ROWS.actionReadiness.cells[formation.id],
+    regulationNeeded: DEEP_ENGINE_CHRONIC_ROWS.regulationNeeded.cells[formation.id],
+    restoration: DEEP_ENGINE_CHRONIC_ROWS.restoration.cells[formation.id],
+    completion: DEEP_ENGINE_CHRONIC_ROWS.completion.cells[formation.id],
+    awarenessAccess: DEEP_ENGINE_CHRONIC_ROWS.awarenessAccess.cells[formation.id],
+    empathyAccess: DEEP_ENGINE_CHRONIC_ROWS.empathyAccess.cells[formation.id],
+    selfOtherDifferentiation: DEEP_ENGINE_CHRONIC_ROWS.selfOtherDifferentiation.cells[formation.id],
+  };
+});
 
 export const PUBLIC_CHRONIC_ROWS = {
   state: {
@@ -315,20 +369,23 @@ export const PUBLIC_CHRONIC_ROWS = {
   },
 };
 
-export const PUBLIC_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formation) => ({
-  ...formation,
-  positionLabel: `${formation.code} · ${formation.mode}`,
-  chronicLabel: formation.plainChronic,
-  state: PUBLIC_CHRONIC_ROWS.state[formation.id],
-  perception: PUBLIC_CHRONIC_ROWS.perception[formation.id],
-  cognition: PUBLIC_CHRONIC_ROWS.cognition[formation.id],
-  signalConfiguration: PUBLIC_CHRONIC_ROWS.signalConfiguration[formation.id],
-  physiologicalCapacity: PUBLIC_CHRONIC_ROWS.physiologicalCapacity[formation.id],
-  actionReadiness: PUBLIC_CHRONIC_ROWS.actionReadiness[formation.id],
-  regulationNeeded: PUBLIC_CHRONIC_ROWS.regulationNeeded[formation.id],
-  restoration: PUBLIC_CHRONIC_ROWS.restoration[formation.id],
-  completion: PUBLIC_CHRONIC_ROWS.completion[formation.id],
-  awarenessAccess: PUBLIC_CHRONIC_ROWS.awarenessAccess[formation.id],
-  empathyAccess: PUBLIC_CHRONIC_ROWS.empathyAccess[formation.id],
-  selfOtherDifferentiation: PUBLIC_CHRONIC_ROWS.selfOtherDifferentiation[formation.id],
-}));
+export const PUBLIC_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formation) => {
+  const chronicFormation = withChronicFormationMeta(formation);
+  return {
+    ...chronicFormation,
+    positionLabel: `${formation.code} · ${formation.mode}`,
+    chronicLabel: chronicFormation.plainChronic,
+    state: PUBLIC_CHRONIC_ROWS.state[formation.id],
+    perception: PUBLIC_CHRONIC_ROWS.perception[formation.id],
+    cognition: PUBLIC_CHRONIC_ROWS.cognition[formation.id],
+    signalConfiguration: PUBLIC_CHRONIC_ROWS.signalConfiguration[formation.id],
+    physiologicalCapacity: PUBLIC_CHRONIC_ROWS.physiologicalCapacity[formation.id],
+    actionReadiness: PUBLIC_CHRONIC_ROWS.actionReadiness[formation.id],
+    regulationNeeded: PUBLIC_CHRONIC_ROWS.regulationNeeded[formation.id],
+    restoration: PUBLIC_CHRONIC_ROWS.restoration[formation.id],
+    completion: PUBLIC_CHRONIC_ROWS.completion[formation.id],
+    awarenessAccess: PUBLIC_CHRONIC_ROWS.awarenessAccess[formation.id],
+    empathyAccess: PUBLIC_CHRONIC_ROWS.empathyAccess[formation.id],
+    selfOtherDifferentiation: PUBLIC_CHRONIC_ROWS.selfOtherDifferentiation[formation.id],
+  };
+});

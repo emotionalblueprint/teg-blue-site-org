@@ -594,11 +594,11 @@ export const CAPACITIES = {
 export const RESTORATION = {
   fluid: [
     {
-      // Connection — §Connection Restoration: "preventive, not corrective"
+      // Connection — engagement can stay open, then stand down to baseline
       name: 'Connection Restoration',
-      timescale: 'Continuous',
+      timescale: 'Ongoing while engaged',
       type: 'somatic',  // "Somatic restoration... system tends itself"
-      description: 'System at functional baseline. Preventive, not corrective.',
+      description: 'Engagement can stay open while resources remain available; restoration completes when the system can stand down to physiological baseline.',
     },
     {
       // Protection — §Protection Restoration: "Activation Sequence must complete"

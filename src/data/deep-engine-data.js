@@ -12,10 +12,12 @@
 
 export { DEEP_ENGINE_FORMATIONS } from "./deep-engine-formations";
 export {
+  DEEP_ENGINE_CHRONIC_FORMATION_META,
   DEEP_ENGINE_CHRONIC_ROWS,
   DEEP_ENGINE_CHRONIC_CONFIGURATIONS,
   PUBLIC_CHRONIC_ROWS,
   PUBLIC_CHRONIC_CONFIGURATIONS,
   atlasCellParts,
   atlasCellText,
+  withChronicFormationMeta,
 } from "./deep-engine-chronic-data";

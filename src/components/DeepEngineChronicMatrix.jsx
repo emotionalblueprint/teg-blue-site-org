@@ -9,7 +9,7 @@ const VARIANTS = {
     eyebrow: "Chronic configurations",
     title: "Seven chronic positions",
     intro:
-      "The chronic layer follows the seven nervous-system positions directly: baseline, connection, transition, protection, control / management, domination, and shutdown.",
+      "The acute positions are the movable state definitions. This chronic layer begins when a position cannot complete and return to physiological baseline, so the configuration becomes the default organization.",
     columns: [
       { label: "Position", key: "position" },
       { label: "Chronic reading", key: "chronicLabel" },
@@ -21,7 +21,7 @@ const VARIANTS = {
     eyebrow: "Locked perception",
     title: "State-locked perception by position",
     intro:
-      "Chronic perception is not generic projection. Each position locks a different filter before cognition builds its explanation.",
+      "Chronic perception is not generic projection or high-intensity acute activation. It is the filter that remains when the position stops resetting before cognition builds its explanation.",
     columns: [
       { label: "Position", key: "position" },
       { label: "Perception", key: "perception" },

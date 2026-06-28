@@ -8,6 +8,7 @@
 import {
   DEEP_ENGINE_FORMATIONS,
   PUBLIC_CHRONIC_ROWS,
+  withChronicFormationMeta,
 } from '../data/deep-engine-data'
 
 // ─── POSITIONS (the seven, in gradient order) ────────────────────────────────
@@ -52,11 +53,14 @@ const FORMATION_EXTRAS = {
 
 const chronicText = (row, id) => PUBLIC_CHRONIC_ROWS[row][id]
 
-export const positions = DEEP_ENGINE_FORMATIONS.map((formation) => ({
-  ...formation,
-  ...FORMATION_EXTRAS[formation.id],
-  mechanismChronic: formation.plainChronic,
-}))
+export const positions = DEEP_ENGINE_FORMATIONS.map((formation) => {
+  const chronicFormation = withChronicFormationMeta(formation);
+  return {
+    ...chronicFormation,
+    ...FORMATION_EXTRAS[formation.id],
+    mechanismChronic: chronicFormation.plainChronic,
+  }
+})
 
 // ─── AUTONOMIC BRANCH (recognisable grounding) ───────────────────────────────
 
@@ -76,10 +80,10 @@ export const cards = [
   { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Polyvagal Theory (Porges) + Stress Physiology (Sapolsky, McEwen)', source: 'M2 + GC' },
   { id: 'perception', label: 'Perception', description: 'The state sets the filter on the world: in safety, the whole situation can be taken in; under threat, attention selects for what matters to protection, risk, escape, or control.', science: 'Cognitive Science — state-dependent perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
   { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load, state-dependent (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
-  { id: 'selfAwareness', label: 'Self-awareness', description: "The state controls access to the body's own information: in safety, signals can be felt and named; under threat, the inner read gets muted, narrowed, or cut off.", science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
+  { id: 'selfAwareness', label: 'Self-Awareness', description: "The state controls access to the body's own information: in safety, signals can be felt and named; under threat, the inner read gets muted, narrowed, or cut off.", science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
   { id: 'empathy', label: 'Empathy', description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
   { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
-  { id: 'time', label: 'Time horizon', description: 'The state changes how much time the system can hold: in safety, past, present, and future can stay connected; under threat, time compresses toward the immediate problem or freezes.', science: 'Cognitive Science + Stress Physiology', source: 'M2-C18' },
+  { id: 'time', label: 'Time Horizon', description: 'The state changes how much time the system can hold: in safety, past, present, and future can stay connected; under threat, time compresses toward the immediate problem or freezes.', science: 'Cognitive Science + Stress Physiology', source: 'M2-C18' },
   {
     id: 'emotions',
     label: 'Emotions / signals',

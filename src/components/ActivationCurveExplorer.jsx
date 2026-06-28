@@ -30,7 +30,7 @@ const ZONE_BOUNDARIES = [0.25, 0.50, 0.75];
 
 const CURVE_DESCRIPTIONS = {
   fluid: [
-    'Lowest activation — settled, ventral vagal. Symmetric bell contained within its zone. The nervous system at functional baseline.',
+    'Lowest activation state — settled, ventral vagal. Symmetric bell contained within its zone. Close to baseline, but still an active connection state.',
     'Sympathetic spike — proportional, temporary. Symmetric bell. Activation rises fast, returns fast when threat passes.',
     'PFC override engages after sympathetic activation. The left tail extending into Protection zone shows cognition building on the body\'s alert state.',
     'Maximum sustained activation. Extends far left through Protection and Control zones — the entire system mobilised for decisive action.',

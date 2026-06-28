@@ -208,9 +208,9 @@ export const RESTORATION = {
   fluid: [
     {
       name: 'Connection Restoration',
-      timescale: 'Continuous',
+      timescale: 'Ongoing while engaged',
       type: 'somatic',
-      description: 'System at functional baseline. Preventive, not corrective.',
+      description: 'Engagement can stay open while resources remain available; restoration completes when the system can stand down to physiological baseline.',
     },
     {
       name: 'Protection Restoration',

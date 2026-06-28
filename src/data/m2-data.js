@@ -42,11 +42,11 @@ export const MODES = [
       fullName: 'Connection Mode',
       pattern: 'Connection',
       type: 'Before awareness',
-      duration: 'Indefinite — baseline',
+      duration: 'Movable — returns to physiological baseline when engagement completes',
       sequence: 'Engage → Relate → Repair → Learn',
       description:
-        'The nervous system has enough safety to engage with complexity. Perception broadens, empathy comes fully online, repair becomes possible, and learning capacity opens.',
-      insight: 'The mode designed for sustained living — the system\'s baseline',
+        'The nervous system has enough safety to engage with complexity. Perception broadens, empathy comes fully online, repair becomes possible, and learning capacity opens. This is still an active state: it can move and return to physiological baseline.',
+      insight: 'A state for engaged living — not the physiological baseline itself',
       capacities: [
         { name: 'Perception', text: 'Broad — sees the full field' },
         { name: 'Cognition', text: 'Flexible — holds complexity' },
@@ -226,7 +226,7 @@ export const MODES = [
 // Gaussian curve parameters for the fluid compass activation diagram.
 
 export const FLUID_CURVES = [
-  // Connection: lowest activation, settled, ventral vagal, symmetric bell
+  // Connection: lowest activation state, settled, ventral vagal, symmetric bell
   { peak: 0.125, height: 0.60, spread: 0.08, skew: 0 },
   // Protection: sympathetic spike, proportional, temporary, symmetric bell
   { peak: 0.375, height: 0.75, spread: 0.09, skew: 0 },

@@ -4,8 +4,9 @@
  * Source: /Users/annaparetas/Projects/teg-blue-engine/atlas-data.js
  * Snapshot: 2026-06-28 chronic build / ESC rewrite.
  *
- * This file owns the seven formation positions and their acute labels. Chronic
- * configuration rows live in deep-engine-chronic-data.js.
+ * This file owns the seven formation positions and their acute labels only.
+ * Chronic configuration rows and chronic display metadata live in
+ * deep-engine-chronic-data.js.
  */
 
 export const DEEP_ENGINE_FORMATIONS = [
@@ -20,11 +21,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "SAFETY",
     acuteConfig: "Physiological Baseline",
     acuteConfigDetail: "Safe & Rest, Rest & Digest",
-    chronicConfig: "Chronic Elevated Physiological Baseline",
-    chronicConfigDetail: "No resting availability",
-    plainChronic: "Switched on even when nothing is wrong — rest never fully arrives",
     acuteColor: "#cce0ff",
-    chronicColor: "#ffe680",
     active: false,
   },
   {
@@ -38,11 +35,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "SAFETY",
     acuteConfig: "Connection-Belonging",
     acuteConfigDetail: "Open Engagement, Safe With Others",
-    chronicConfig: "Chronic Connection / Belonging",
-    chronicConfigDetail: "No real Safety Access (pretending safety is the normal)",
-    plainChronic: "Safety with others is read but never quite trusted — connection stays conditional",
     acuteColor: "#6eeafb",
-    chronicColor: "#ffce00",
     active: true,
   },
   {
@@ -56,11 +49,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "UNCERTAINTY",
     acuteConfig: "Safety Checking",
     acuteConfigDetail: "Is it still safe?",
-    chronicConfig: "Chronic Safety Checking",
-    chronicConfigDetail: "Sustained threat",
-    plainChronic: "The safety question never resolves — caught between leaning in and bracing",
     acuteColor: "#76faa1",
-    chronicColor: "#ffa300",
     active: true,
   },
   {
@@ -74,11 +63,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "THREAT",
     acuteConfig: "Protection / Defence",
     acuteConfigDetail: "Protective Mobilisation",
-    chronicConfig: "Chronic Protection / Defence",
-    chronicConfigDetail: "Defence as default",
-    plainChronic: "Threat read as always present — defence becomes the resting state",
     acuteColor: "#b6fc50",
-    chronicColor: "#ff7e1d",
     active: true,
   },
   {
@@ -92,11 +77,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "BIGGER THREAT",
     acuteConfig: "Control / Management",
     acuteConfigDetail: "Control / Management",
-    chronicConfig: "Chronic Control / Management",
-    chronicConfigDetail: "Chronic Control / Management",
-    plainChronic: "Control as the only way to feel safe",
     acuteColor: "#e3fd54",
-    chronicColor: "#ff5a05",
     active: true,
   },
   {
@@ -106,16 +87,11 @@ export const DEEP_ENGINE_FORMATIONS = [
     mode: "Domination",
     atlasLabel: "Life threat",
     familiar: "power mobilisation",
-    familiarChronic: "coercive control",
     autonomic: "sympathetic",
     reality: "LIFE THREAT",
     acuteConfig: "Domination",
     acuteConfigDetail: "Power Mobilisation",
-    chronicConfig: "Chronic Domination",
-    chronicConfigDetail: "Power as identity",
-    plainChronic: "Nothing else has ever been trusted to work — power and force set as identity",
     acuteColor: "#f7d448",
-    chronicColor: "#ff404a",
     active: true,
   },
   {
@@ -129,11 +105,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "SHUTDOWN",
     acuteConfig: "Shutdown",
     acuteConfigDetail: "Overwhelm, Freeze, Collapse",
-    chronicConfig: "Shutdown",
-    chronicConfigDetail: "Shutdown",
-    plainChronic: "Mobilising never feels available — collapse is where the system keeps returning",
     acuteColor: "#a1adbf",
-    chronicColor: "#a1adbf",
     active: false,
   },
 ];
