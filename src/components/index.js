@@ -23,6 +23,7 @@ export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
 export { default as FrameworkTerms } from "./FrameworkTerms";
 export { default as ReviewStatusPanel } from "./ReviewStatusPanel";
+export { default as TEGBlueEnginePanel } from "./TEGBlueEnginePanel";
 
 // Framework components
 export { default as FrameworkHero } from "./FrameworkHero";

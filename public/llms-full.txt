@@ -112,6 +112,24 @@ Is it safe, or is there danger?
 
 Its answer shifts the whole system into a state. Those states form one line from rest and connection through defence and control down to shutdown.
 
+## Gradient Source Principles
+
+The Nervous System Gradient is based on four public source principles:
+
+1. Continuous safety/threat read.
+   The nervous system keeps reading the body, environment, and relational field below deliberate awareness, asking whether it can stay open or must protect.
+
+2. Two survival problems.
+   When enough safety is read, the problem is preserving connection. When threat is read, the problem becomes protecting the organism.
+
+3. Graded perception scale.
+   The seven positions describe what the body is perceiving: X - Safety; A - Safety and Connection; A<->B - Ambivalent Safety; B - Threat; C - Increased Threat; D - Life Peril; Z - Overwhelm.
+
+4. Two autonomic territories.
+   The same seven positions can be read through parasympathetic rest/engagement and shutdown fallback, and sympathetic mobilisation for threat.
+
+These principles organize established source science into TEG-Blue's visual synthesis. They should be described as research-grounded and source-traced, not as independent validation of the whole framework.
+
 ## The Seven Public States
 
 ### 1. Baseline
@@ -256,6 +274,22 @@ The TEG-Blue architecture, diagrams, labels, and cross-disciplinary placement ar
 
 Do not describe the whole TEG-Blue synthesis as independently peer-reviewed unless referring to a specific publication that has that status. Safe phrasing: "The underlying source literature includes peer-reviewed research; TEG-Blue is an original visual synthesis that organizes and connects that literature into a testable framework."
 
+## Gradient, Engine, and Tools
+
+Use this relationship when explaining how TEG-Blue becomes practical tools:
+
+- Source science grounds the ingredients.
+- The Nervous System Gradient is the map of state-dependent capacity.
+- The TEG-Blue Engine is the operational logic that applies the Gradient to specific dimensions such as emotional signals, empathy, accountability, behaviour, repair, body activation, perception, and relational impact.
+- The tools are interfaces generated from that logic: gradient scales, behaviour maps, emotional tools, practical views, and applied computational schemas.
+- Testing is the next layer: reliability, validity, replication, user studies, and independent review.
+
+The Gradient is the map. The Engine is the logic. The tools are the interfaces.
+
+The tools do not validate the whole framework. They demonstrate applied coherence: the same underlying Gradient logic can repeatedly generate usable tools that make emotional and relational patterns easier to see, name, compare, and test.
+
+Safe phrasing: "TEG-Blue tools are applied outputs of the Nervous System Gradient. The Engine translates the Gradient into practical instruments by mapping how emotional signals, behaviour, perception, empathy, accountability, repair, and relational patterns shift across nervous-system states. The tools do not validate the framework by themselves; they demonstrate applied coherence and provide testable surfaces for future research."
+
 ## Frequently Asked Questions
 
 ### What is TEG-Blue?
@@ -269,6 +303,10 @@ The Nervous System Gradient is the current public center of TEG-Blue. It maps ne
 ### How does the nervous system choose a state?
 
 Through neuroception: a continuous, pre-conscious read of safety versus danger. Based on that read, the system organises perception, cognition, body activation, feeling, behaviour, and repair around one state.
+
+### What is the Gradient based on?
+
+The Gradient is based on four public source principles: continuous safety/threat reading, two survival problems, a graded perception scale, and two autonomic territories. These principles organize established source science into TEG-Blue's visual synthesis.
 
 ### What is the difference between a passing state and a chronic one?
 

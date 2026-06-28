@@ -284,47 +284,62 @@ export function generateSystemOverviewJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "System Overview — TEG-Blue",
+    name: "TEG-Blue Overview — The Nervous System Gradient",
     url: `${BASE_URL}/foundations`,
-    description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
+    description: "Overview of TEG-Blue: the Nervous System Gradient, cited source science, original synthesis status, applied tools, and future testing.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "Thing",
-      name: "TEG-Blue Architecture",
-      description: "A layered visual framework for understanding emotional and nervous-system patterns"
+      name: "The Nervous System Gradient",
+      description: "TEG-Blue's central map: a research-grounded map of state-dependent capacity."
     },
     mainEntity: {
       "@type": "ItemList",
-      name: "TEG-Blue Ecosystem",
-      description: "The current TEG-Blue ecosystem organized by public framework, research grounding, practical tools, and applied implementations",
+      name: "TEG-Blue Overview",
+      description: "TEG-Blue brings together cited source science, the Nervous System Gradient, applied tools, and testing surfaces.",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "Public Framework",
-          description: "The Emotional Gradient Blueprint, currently centered publicly on the Nervous System Gradient.",
-          url: BASE_URL
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Research Grounding",
-          description: "Source traces, scientific foundations, publications, methodology, limitations, and working questions.",
+          name: "Cited Source Science",
+          description: "Established scientific and scholarly fields that ground the framework, including neuroscience, attachment research, trauma research, stress physiology, interoception, emotion science, and related literatures.",
           url: `${BASE_URL}/scientific-foundations`
         },
         {
           "@type": "ListItem",
+          position: 2,
+          name: "Nervous System Gradient",
+          description: "The central map of state-dependent capacity: how nervous-system state changes perception, emotion, body activation, behaviour, empathy, repair, and tempo.",
+          url: BASE_URL
+        },
+        {
+          "@type": "ListItem",
           position: 3,
-          name: "Practical Public Tools",
-          description: "Public tools on teg-blue.com that help people recognize emotional and nervous-system patterns in everyday situations.",
-          url: "https://teg-blue.com/emotional-tools"
+          name: "Gradient Source Principles",
+          description: "The Gradient is grounded in four public source principles: a continuous body-level read of safety and threat, two survival problems, a graded perception scale, and two autonomic territories.",
+          url: `${BASE_URL}/foundations#gradient-principles`
         },
         {
           "@type": "ListItem",
           position: 4,
-          name: "Applied Engine Logic",
-          description: "Separate internal and potentially licensable tool-building logic for bounded institutional and partner implementations."
+          name: "Original Visual Synthesis",
+          description: "The TEG-Blue architecture, diagrams, labels, and cross-disciplinary placement are original synthesis work: research-grounded, source-traced, and open to independent review and testing.",
+          url: `${BASE_URL}/methodology`
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Applied Tools",
+          description: "Public tools on teg-blue.com are applied outputs generated from gradient logic. They demonstrate applied coherence and provide surfaces for future testing; they do not validate the whole framework.",
+          url: "https://teg-blue.com/emotional-tools"
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Future Testing",
+          description: "Reliability, validity, replication, user studies, and independent review remain necessary for testing the broader synthesis and applied instruments.",
+          url: `${BASE_URL}/publications`
         }
       ]
     },

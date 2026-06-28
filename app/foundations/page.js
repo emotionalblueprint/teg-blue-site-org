@@ -1,47 +1,174 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, MAIN_ORG, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PageLayout } from "@/src/components";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, ReviewStatusPanel } from "@/src/components";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
   {
+    question: "What is TEG-Blue?",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a research-grounded visual synthesis for mapping how nervous-system states reshape perception, emotion, body activation, behaviour, and repair.",
+  },
+  {
+    question: "What is the core insight?",
+    answer: "The core insight is that nervous-system state shapes capacity, and capacity changes how behavior should be interpreted. The same outward behavior can carry different information depending on whether the system is available, checking for safety, protecting, controlling, or shutting down.",
+  },
+  {
+    question: "What is the Gradient based on?",
+    answer: "The Gradient is based on four organizing principles: a continuous body-level read of safety and threat, two survival problems, a graded perception scale, and two autonomic territories. TEG-Blue uses these principles to organize established source science into one visual map.",
+  },
+  {
     question: "How is TEG-Blue organized?",
-    answer: "TEG-Blue is currently organized across distinct surfaces: the public framework and research-grounding home on teg-blue.org, practical public tools on teg-blue.com, and separate applied Engine logic for bounded institutional or partner tools.",
+    answer: "TEG-Blue brings together cited source science, the Nervous System Gradient, applied tools, and research/testing surfaces. The Gradient is the shared map; tools translate that map into practical views.",
   },
   {
-    question: "What problem does TEG-Blue address?",
-    answer: "TEG-Blue addresses the ambiguity between nervous system protection and intentional manipulation. Both look similar on the surface but require very different responses. The framework makes emotional behavior legible by treating emotions as structured biological signals.",
+    question: "What is the Nervous System Gradient?",
+    answer: "The Nervous System Gradient is TEG-Blue's central map. It shows how nervous-system state changes reshape perception, emotion, body activation, behaviour, empathy, repair capacity, and tempo.",
   },
   {
-    question: "What is the Regulation Thread?",
-    answer: "The Regulation Thread is one mechanism running through all twelve frameworks: when the body's natural return path (Biological Restoration) is missing, something else steps in — cognition, rules, hierarchies, bias, domination. Each substitute works at a cost. F8-F12 reverse the thread.",
+    question: "Is TEG-Blue peer-reviewed?",
+    answer: "The source literature includes peer-reviewed research and established scholarly work. The TEG-Blue architecture, diagrams, labels, and cross-disciplinary placement are an original visual synthesis, so they should be described as research-grounded, source-traced, and open to independent review and testing.",
+  },
+  {
+    question: "How do TEG-Blue tools relate to the Gradient?",
+    answer: "The tools are applied outputs of the Nervous System Gradient. The TEG-Blue Engine translates gradient logic into instruments by mapping how a dimension such as empathy, accountability, repair, behaviour, or relational impact changes across nervous-system states.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Problem", href: "#the-problem", description: "What problem does TEG-Blue address? Ambiguity between nervous system protection and intentional manipulation." },
-  { label: "Part 1 — Measurement", href: "#part-1-measurement", description: "Four Foundational Models: Emotions as Signals, Nervous System States, Regulation Capacities, and Awareness Capacities." },
-  { label: "Part 2 — Frameworks", href: "#part-2-frameworks", description: "12 explanatory frameworks across three arcs. The Regulation Thread." },
-  { label: "Part 3 — Emotional Tools", href: "#part-3-emotional-tools", description: "Applied instruments for practitioners, researchers, and individuals." },
-  { label: "Part 4 — Applied Context", href: "#part-4-ai-safety", description: "Structured context for bounded applied and computational uses." },
-  { label: "Core Functions", href: "#core-functions", description: "What are the four core functions of TEG-Blue and how the parts interact." },
-  { label: "Ethical Constraint", href: "#ethical-constraint", description: "Pattern-aware data architecture. Intent–Impact–Pattern logic." },
+  { label: "What TEG-Blue Maps", href: "#what-teg-blue-maps", description: "A visual map of how nervous-system state changes capacity." },
+  { label: "The Problem", href: "#the-problem", description: "Why state-blindness makes capacity look like character, intent, or truth." },
+  { label: "Source Principles", href: "#gradient-principles", description: "The four principles that ground the Gradient." },
+  { label: "The Gradient", href: "#nervous-system-gradient", description: "The seven states and what changes across them." },
+  { label: "Review Status", href: "#review-status-heading", description: "Source science, original synthesis, and what still needs independent testing." },
+  { label: "Where Next", href: "#where-next", description: "Selected routes for evidence, methodology, and tools." },
 ];
 
+const OVERVIEW_POINTS = [
+  {
+    label: "Map",
+    title: "The Nervous System Gradient",
+    body: "Seven states show how safety, threat, control, and shutdown reshape available capacity.",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Grounding",
+    title: "Cited source science",
+    body: "The framework draws from established research. The cross-disciplinary visual synthesis is TEG-Blue's original contribution.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    label: "Application",
+    title: "Tools and testing",
+    body: "Applied tools translate the Gradient into usable instruments and create surfaces for future reliability and validity testing.",
+    color: SPECTRUM.slate,
+  },
+];
+
+const GRADIENT_PRINCIPLES = [
+  {
+    label: "Principle 1",
+    title: "The body keeps reading safety and threat",
+    body: "The Gradient starts with an always-on, below-awareness read of the body, environment, and relational field. The nervous system keeps asking whether it can stay open or must protect.",
+    detail: "This is the neuroception lens in TEG-Blue language: one continuous read, with the state-specific filter belonging to the state being held.",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Principle 2",
+    title: "The read branches into two survival problems",
+    body: "When enough safety is read, the problem is preserving connection. When threat is read, the problem becomes protecting the organism.",
+    detail: "Connection-preservation is treated as a social-engagement capacity. Organism-protection moves through mobilisation first, with collapse as a fallback when mobilisation cannot resolve threat.",
+    color: SPECTRUM.blue,
+  },
+  {
+    label: "Principle 3",
+    title: "Perception changes by position",
+    body: "Each Gradient position describes what the body is perceiving: Safety, Safety and Connection, Ambivalent Safety, Threat, Increased Threat, Life Peril, or Overwhelm.",
+    detail: "This is the perception face of the Gradient. It is distinct from the response-pattern face and from emotion categories.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    label: "Principle 4",
+    title: "The same line crosses two autonomic territories",
+    body: "The seven positions can also be read through the two autonomic branches: rest and engagement on the parasympathetic side, mobilisation on the sympathetic side, and shutdown as a parasympathetic fallback.",
+    detail: "This gives the Gradient its branch-side map without turning the states into fixed person-types.",
+    color: SPECTRUM.indigo,
+  },
+];
+
+const GRADIENT_STATES = [
+  {
+    name: "Baseline",
+    body: "Resting availability. No active problem signal; the system can repair, digest, perceive, and settle.",
+    color: SPECTRUM.sky,
+  },
+  {
+    name: "Connection / Belonging",
+    body: "Safety with others; social engagement, bonding, reciprocity, and repair are available.",
+    color: SPECTRUM.azure,
+  },
+  {
+    name: "Safety Checking",
+    body: "Belonging has become uncertain; the system checks whether it is still safe to stay open.",
+    color: SPECTRUM.blue,
+  },
+  {
+    name: "Protection / Defence",
+    body: "Threat detected; the system mobilises to defend, escape, appease, set distance, or create a boundary.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    name: "Strategic Management",
+    body: "Threat persists; the system anticipates, manages, contains risk, and stays ahead of what could happen.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    name: "Domination",
+    body: "Survival-level organisation around power or force when other routes are not trusted to work.",
+    color: SPECTRUM.lavender,
+  },
+  {
+    name: "Shutdown",
+    body: "Mobilisation cannot form or has failed; the system conserves, withdraws, freezes, collapses, or reduces contact.",
+    color: SPECTRUM.slate,
+  },
+];
+
+const GRADIENT_DIMENSIONS = [
+  "Perception",
+  "Cognition",
+  "Self-awareness",
+  "Empathy",
+  "Body activation",
+  "Time horizon",
+  "Emotional signals",
+  "Behaviour",
+  "Repair capacity",
+  "Rush and tempo",
+];
+
+const GRADIENT_AXIS = `linear-gradient(90deg, ${SPECTRUM.sky} 0%, ${SPECTRUM.azure} 16%, ${SPECTRUM.blue} 32%, ${SPECTRUM.cobalt} 48%, ${SPECTRUM.indigo} 64%, ${SPECTRUM.lavender} 80%, ${SPECTRUM.slate} 100%)`;
+
 export const metadata = {
-  title: "System Overview | TEG-Blue",
-  description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
+  title: "TEG-Blue Overview | The Nervous System Gradient",
+  description: "Overview of TEG-Blue: the Nervous System Gradient, cited source science, applied tools, research status, and what remains open to testing.",
   keywords: [
+    "TEG-Blue overview",
     "TEG-Blue architecture",
     "emotional regulation system",
     "nervous system gradient",
-    "12 frameworks",
-    "emotional tools",
+    "research-grounded framework",
+    "source-traced synthesis",
+    "emotional tools status",
     "nervous system regulation",
     "research grounding",
     "source traces",
     "integrative architecture",
     "pattern-aware architecture",
+    "TEG-Blue Engine",
+    "applied coherence",
+    "continuous neuroception",
+    "autonomic nervous system",
+    "graded perception scale",
     "polyvagal theory",
     "attachment theory",
   ],
@@ -49,16 +176,16 @@ export const metadata = {
     canonical: "https://teg-blue.org/foundations",
   },
   openGraph: {
-    title: "System Overview — TEG-Blue",
-    description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
+    title: "TEG-Blue Overview — The Nervous System Gradient",
+    description: "A research-grounded visual synthesis for mapping how nervous-system states reshape capacity.",
     url: "https://teg-blue.org/foundations",
     type: "article",
     siteName: "TEG-Blue",
   },
   twitter: {
     card: "summary_large_image",
-    title: "System Overview — TEG-Blue",
-    description: "How the public framework, research grounding, practical tools, and applied Engine logic relate inside TEG-Blue.",
+    title: "TEG-Blue Overview — The Nervous System Gradient",
+    description: "The Nervous System Gradient, cited source science, applied tools, and research status.",
   },
 };
 
@@ -76,14 +203,16 @@ export default function FoundationsPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="SYSTEM ARCHITECTURE"
-            title="System Overview"
-            subtitle="How the parts fit together"
-            description="TEG-Blue is a layered framework with distinct public, practical, and applied surfaces. The current public center is the Nervous System Gradient."
+            badge="FRAMEWORK OVERVIEW"
+            title="TEG-Blue Overview"
+            subtitle="The Nervous System Gradient"
+            description="A research-grounded visual synthesis for mapping how nervous-system states reshape perception, emotion, body activation, behaviour, and repair."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+
+        <OverviewFrame />
 
         {/* ─── THE PROBLEM & SOLUTION ─────────────────────── */}
         <section id="the-problem" style={{ marginBottom: 40 }}>
@@ -100,13 +229,13 @@ export default function FoundationsPage() {
             }}
           >
             <p style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              The problem is ambiguity.
+              The missing layer is state.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              Emotional misunderstanding fuels conflict, manipulation, and harm across individuals, organizations, and systems. Many existing models struggle to distinguish between nervous system protection — defensive patterns that developed for survival — and intentional emotional manipulation — strategic control of others. Both look similar on the surface. Yet they require very different responses.
+              In real conversations, the same behavior can come from different nervous-system states. Silence can be reflection, safety checking, threat, or shutdown. A sharp response can be protection, control, or learned survival. Without state, behavior is too easy to read as fixed character, pure intent, or the whole truth of a person.
             </p>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              As digital platforms and AI systems increasingly mediate communication, this ambiguity is amplified. Emotional dynamics scale faster than our ability to interpret them.
+              This matters across relationships, organizations, digital platforms, and AI-mediated communication, because emotional patterns scale faster than our ability to interpret them.
             </p>
             <p style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
               What&apos;s missing is legibility.
@@ -115,7 +244,7 @@ export default function FoundationsPage() {
               The science exists — decades of research across neuroscience, attachment theory, developmental psychology, and social psychology. But this knowledge is fragmented across disciplines, published in specialist language, inaccessible to those who need it most.
             </p>
             <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, fontWeight: 500, margin: 0 }}>
-              TEG-Blue makes emotional behavior legible. It treats emotions not as noise or subjective chaos, but as structured biological and relational signals that organize behavior in predictable ways.
+              TEG-Blue makes state-dependent capacity legible. It treats emotions and behaviors not as noise or subjective chaos, but as structured biological and relational signals that change across the Gradient.
             </p>
           </div>
 
@@ -132,7 +261,7 @@ export default function FoundationsPage() {
             >
               <div style={labelStyle(SPECTRUM.cobalt)}>Core Insight</div>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>State determines capacity</strong> — what someone can perceive, feel, think, and do depends on their nervous system state.
+                <strong style={{ color: TEXT.primary }}>State shapes capacity; capacity changes meaning.</strong> What someone can perceive, feel, think, repair, or take responsibility for is shaped by nervous-system state. The same outward behavior can carry different information at different points on the Gradient.
               </p>
             </div>
             <div
@@ -152,241 +281,17 @@ export default function FoundationsPage() {
           </div>
         </section>
 
-        {/* ─── FOUR PART CARDS ────────────────────────────── */}
-        <section style={{ marginBottom: 40 }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(45%, 160px), 1fr))",
-              gap: 12,
-            }}
-          >
-            <PartIntroCard number={1} title="Measurement" subtitle="Four Foundational Models" color={SPECTRUM.azure} href="/emotional-somatic-cycle" />
-            <PartIntroCard number={2} title="Explanatory" subtitle="12 Frameworks" color={SPECTRUM.cobalt} href="/frameworks-map" />
-            <PartIntroCard number={3} title="Emotional Tools" subtitle="Applied Instruments" color={SPECTRUM.indigo} href="https://teg-blue.com/emotional-tools" external />
-            <PartIntroCard number={4} title="Applied Context" subtitle="Structured Schemas" color={SPECTRUM.slate} href="/ai-safety" />
-          </div>
-        </section>
+        <GradientPrinciples />
 
-        {/* ─── PART 1: MEASUREMENT ────────────────────────── */}
-        <section id="part-1-measurement" style={{ marginBottom: 40 }}>
-          <PartCard number={1} title="Measurement" color={SPECTRUM.azure}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              The Emotional Somatic System
-            </h3>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The measurement part describes what is actually happening — in a body, in a relationship, in a conversation — and gives it a name that can be tracked. Four models make up this part. They work together.
-            </p>
-            <ul style={listStyle}>
-              <li style={{ marginBottom: 8 }}><Link href="/model/m1-emotions-as-signals" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 600 }}>M1 — Emotions as Signals</Link> <em style={{ color: TEXT.muted }}>(The nervous system language)</em> — What is the nervous system delivering? Sixteen emotions mapped as biological signals carrying specific information about needs, safety, and constraint.</li>
-              <li style={{ marginBottom: 8 }}><Link href="/model/m2-nervous-system-states" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 600 }}>M2 — Nervous System States</Link> <em style={{ color: TEXT.muted }}>(Physiological reorganization)</em> — Where is the needle? The nervous system&apos;s continuous orientation between safety and threat, mapped across four states.</li>
-              <li style={{ marginBottom: 8 }}><Link href="/model/m3-regulation-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 600 }}>M3 — Regulation Capacities</Link> <em style={{ color: TEXT.muted }}>(Biological restoration)</em> — What is the body doing underneath? The physiological sequence that runs when emotion doesn&apos;t complete — and the designed return path that can only be allowed, not forced.</li>
-              <li><Link href="/model/m4-awareness-capacities" style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 600 }}>M4 — Awareness Capacities</Link> <em style={{ color: TEXT.muted }}>(ESS awareness of CLS)</em> — What is holding it there? The three awarenesses that determine what data the nervous system receives and whether the person has access to their own internal state.</li>
-            </ul>
-            <StatusBadge status="Proposed models with early evidence" color={SPECTRUM.azure} />
-            <div style={{ marginTop: 16 }}>
-              <Link href="/emotional-somatic-cycle" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                See all four models →
-              </Link>
-            </div>
-          </PartCard>
-        </section>
+        <GradientExplanation />
 
-        {/* ─── PART 2: EXPLANATORY FRAMEWORKS ─────────────── */}
-        <section id="part-2-frameworks" style={{ marginBottom: 40 }}>
-          <PartCard number={2} title="Explanatory Frameworks" color={SPECTRUM.cobalt}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              12 Frameworks (F1–F12)
-            </h3>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The twelve frameworks are the explanatory architecture. They do not describe a different system from the models — they explain why the models work the way they do, how patterns escalate, and how change becomes possible again.
-            </p>
-
-            {/* The Regulation Thread */}
-            <div
-              style={{
-                padding: "16px 20px",
-                background: hexToRgba(SPECTRUM.cobalt, 0.06),
-                borderRadius: RADIUS.md,
-                border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-                marginBottom: 16,
-              }}
-            >
-              <div style={labelStyle(SPECTRUM.cobalt)}>The Regulation Thread</div>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "8px 0 0" }}>
-                One mechanism runs through every framework: <strong style={{ color: TEXT.primary }}>regulation substitutes</strong>. When the body&apos;s natural return path — Biological Restoration — is missing, something else steps in. Cognition. Rules. Hierarchies. Bias. Domination. Each substitute works. Each comes at a cost. The cost escalates as the substitute moves further from the body and into the social world.
-              </p>
-              <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, margin: "8px 0 0", fontWeight: 500 }}>
-                F1–F7 trace the escalation. F8–F12 reverse the thread.
-              </p>
-            </div>
-
-            <ul style={listStyle}>
-              <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Individual arc (F1–F3)</strong> — How the nervous system evaluates safety, calibrates through development, and compensates through cognition when the return path is missing.</li>
-              <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Collective arc (F4–F7)</strong> — How individual patterns scale into shared rules, worth hierarchies, perception biases, and systemic domination.</li>
-              <li><strong style={{ color: TEXT.primary }}>Repair and complexity arc (F8–F12)</strong> — How the awareness capacities rebuild, neurodivergent variation, generational transmission, paradox, and the two-information-system architecture underneath.</li>
-            </ul>
-
-            <StatusBadge status="Proposed synthesis grounded in 145+ theoretical contributions from 41 research traditions" color={SPECTRUM.cobalt} />
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
-              Each framework credits its sources. The connections between them are TEG-Blue&apos;s contribution, open to structured review and testing.
-            </p>
-            <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
-              <Link href="/frameworks-map" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                See all 12 Frameworks →
-              </Link>
-            </div>
-          </PartCard>
-        </section>
-
-        {/* ─── PART 3: EMOTIONAL TOOLS ────────────────────── */}
-        <section id="part-3-emotional-tools" style={{ marginBottom: 40 }}>
-          <PartCard number={3} title="Emotional Tools" color={SPECTRUM.indigo}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Applied Instruments
-            </h3>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The emotional tools translate the architecture into practical instruments. Each tool maps one dimension of human behavior across the full Nervous System Gradient — from regulated to dysregulated — with observable markers at every point. The gradient structure means each tool shows not just where a pattern sits, but the direction of movement: toward safety or away from it.
-            </p>
-
-            <div style={labelStyle(SPECTRUM.indigo)}>Who the tools are for</div>
-            <ul style={{ ...listStyle, marginTop: 8, marginBottom: 16 }}>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For therapists and clinicians</strong> — <span style={{ color: TEXT.secondary }}>A shared language for patterns that are otherwise hard to name. Support for session work, supervision, and formulation — not as diagnostic instruments, but as structured maps for noticing and conversation.</span></li>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For coaches and organizational practitioners</strong> — <span style={{ color: TEXT.secondary }}>The tools apply to professional and institutional contexts: conflict patterns, leadership dynamics, communication under pressure, relational safety in teams.</span></li>
-              <li style={{ marginBottom: 8 }}><strong style={{ color: TEXT.primary }}>For researchers</strong> — <span style={{ color: TEXT.secondary }}>Designed instruments needing formal psychometric testing. An open research need: psychometric design, factor structure exploration, convergent and discriminant validity, cultural adaptation, and bias evaluation.</span></li>
-              <li><strong style={{ color: TEXT.primary }}>For individuals</strong> — <span style={{ color: TEXT.secondary }}>Available for personal exploration and self-understanding. They are not diagnostic. They are maps.</span></li>
-            </ul>
-
-            <div style={labelStyle(SPECTRUM.indigo)}>Example tools</div>
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6, marginTop: 8, marginBottom: 16 }}>
-              Empathy Gradient (genuine → selective → performed → weaponised) · Accountability Gradient (genuine → performed → absent → protective) · Integrity Scale (value-aligned → conditional → performed → remorseless) · Boundary Dynamics (permeable → reactive → rigid → exploitative) · Emotional Resonance Scale (open → filtered → absent → weaponised)
-            </p>
-
-            <StatusBadge status="Designed, not yet psychometrically tested" color={SPECTRUM.indigo} />
-            <p style={{ fontSize: 13, color: TEXT.muted, marginTop: 8 }}>
-              Available for exploration on{" "}
-              <a href="https://teg-blue.com/emotional-tools" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>teg-blue.com</a>, awaiting formal psychometric testing.
-            </p>
-            <div
-              style={{
-                marginTop: 16,
-                padding: 12,
-                background: hexToRgba(SPECTRUM.indigo, 0.05),
-                borderRadius: RADIUS.sm,
-              }}
-            >
-              <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>Research need:</strong> Scale design support, factor structure exploration, convergent and discriminant validity plans, bias and fairness evaluation.
-              </p>
-            </div>
-          </PartCard>
-        </section>
-
-        {/* ─── PART 4: AI SAFETY ──────────────────────────── */}
-        <section id="part-4-ai-safety" style={{ marginBottom: 40 }}>
-          <PartCard number={4} title="Applied Context" color={SPECTRUM.slate}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Structured Schemas for AI Systems
-            </h3>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              As AI systems mediate more human interaction, the ambiguity that TEG-Blue addresses is amplified. Emotional dynamics scale faster than the ability to interpret them. Systems trained on human language inherit human emotional patterns — including the dysregulated ones — without the nervous system context that makes those patterns legible.
-            </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              This applied context translates emotional-pattern logic into structured forms that can support bounded tool-building, research review, and computational use. This includes JSON-LD structured data, consistent terminology, semantic HTML, and gradient-based classifications that avoid flattening complex states into simple labels.
-            </p>
-            <StatusBadge status="Proposed architecture with early implementation" color={SPECTRUM.slate} />
-            <div
-              style={{
-                marginTop: 16,
-                padding: 12,
-                background: hexToRgba(SPECTRUM.slate, 0.05),
-                borderRadius: RADIUS.sm,
-              }}
-            >
-              <p style={{ fontSize: 13, color: TEXT.secondary, margin: 0 }}>
-                <strong style={{ color: TEXT.primary }}>Research need:</strong> Schema design feedback, evaluation protocols, risk analysis, misuse prevention design, and alignment with existing computational safety research.
-              </p>
-            </div>
-            <div style={{ marginTop: 16 }}>
-              <Link href="/ai-safety" style={{ fontSize: 14, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-                Computational Applications →
-              </Link>
-            </div>
-          </PartCard>
-        </section>
-
-        {/* ─── CORE FUNCTIONS ─────────────────────────────── */}
-        <section id="core-functions" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            What are the four core functions of TEG-Blue?
-          </h2>
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20, maxWidth: 640 }}>
-            The system is designed to serve four functions. Each represents a research lane where collaboration is needed.
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-            <FunctionCard
-              number={1}
-              title="Measurement and recognition"
-              description="Turning subjective states into observable, trackable patterns using gradients, states, and markers."
-            />
-            <FunctionCard
-              number={2}
-              title="Prediction and prevention"
-              description="Mapping how states shift and escalate across the gradient. Harm often follows predictable progressions from Protection into Strategic Management and Domination."
-            />
-            <FunctionCard
-              number={3}
-              title="Navigation and intervention"
-              description="Identifying interventions that help systems move from Strategic Management back toward Protection and Connection. Routes back to safety exist."
-            />
-            <FunctionCard
-              number={4}
-              title="Pattern breaking"
-              description="Understanding how entrenched patterns — individual, relational, institutional — can be interrupted and restructured."
-            />
-          </div>
-        </section>
-
-        {/* ─── ETHICAL CONSTRAINT ─────────────────────────── */}
-        <section id="ethical-constraint" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Ethical constraint: Pattern-aware data architecture
-          </h2>
-          <div
-            style={{
-              padding: 24,
-              background: BG.card,
-              borderRadius: RADIUS.lg,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-            }}
-          >
-            <p style={{ fontSize: 14, color: TEXT.primary, fontWeight: 600, marginBottom: 12 }}>
-              An architectural constraint that applies to every tool, schema, and classification derived from TEG-Blue.
-            </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 16 }}>
-              The system maps behavior as a function of nervous system state. When the nervous system learned that return was not safe, it organises around protection — and the patterns that follow reflect that organisation, not a fixed category. The data architecture tracks state, pattern, and position as independent dimensions, each of which can change when conditions change.
-            </p>
-
-            <div style={{ ...labelStyle(SPECTRUM.indigo), marginBottom: 8 }}>
-              Intent–Impact–Pattern Logic
-            </div>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              TEG-Blue maps each behavior across three dimensions simultaneously:
-            </p>
-            <ul style={listStyle}>
-              <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Intent</strong> — What the nervous system is trying to do (even when it cannot be seen from the outside)</li>
-              <li style={{ marginBottom: 6 }}><strong style={{ color: TEXT.primary }}>Pattern</strong> — Which gradient position or tool dimension it belongs to</li>
-              <li><strong style={{ color: TEXT.primary }}>Impact</strong> — What it actually does to safety, power, and connection in the other person</li>
-            </ul>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginTop: 12, marginBottom: 0 }}>
-              This prevents reducing behavior to &ldquo;good person&rdquo; or &ldquo;bad person.&rdquo; The same behavior can serve different functions depending on state, history, and context. The same behavior can also cause the same harm regardless of intent. Both are true. The architecture holds both.
-            </p>
-          </div>
-        </section>
+        <ReviewStatusPanel
+          title="How to read the science status"
+          description="The ingredients come from cited science and established scholarly work. The TEG-Blue architecture is the original visual synthesis: useful as a map, open to review, and not presented as independently validated as a whole."
+        />
 
         {/* ─── WHERE TO GO NEXT ───────────────────────────── */}
-        <section style={{ marginBottom: 32 }}>
+        <section id="where-next" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
             Where to go next
           </h2>
@@ -406,14 +311,11 @@ export default function FoundationsPage() {
                 </tr>
               </thead>
               <tbody>
-                <NavRow label="See how the system is built" href="/how-it-works" linkText="How It Works →" />
-                <NavRow label="Go deeper into the four models" href="/emotional-somatic-cycle" linkText="The Emotional Somatic System →" />
-                <NavRow label="See all twelve frameworks" href="/frameworks-map" linkText="Frameworks →" />
-                <NavRow label="Review the evidence" href="/publications" linkText="Publications →" />
+                <NavRow label="Review the source grounding" href="/scientific-foundations" linkText="Scientific Foundations →" />
                 <NavRow label="Understand the methodology" href="/methodology" linkText="Methodology →" />
-                <NavRow label="Explore the emotional tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />
-                <NavRow label="Explore computational applications" href="/ai-safety" linkText="Computational Applications →" />
-                <NavRow label="Collaborate or validate" href="/collaborate" linkText="Collaborate →" />
+                <NavRow label="Review publications and study plans" href="/publications" linkText="Publications →" />
+                <NavRow label="Inspect the reviewer architecture" href="/how-it-works" linkText="How It Works →" />
+                <NavRow label="Explore applied tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />
               </tbody>
             </table>
           </div>
@@ -434,7 +336,7 @@ export default function FoundationsPage() {
           __html: JSON.stringify(
             generateBreadcrumbJsonLd([
               { name: "Home", url: "/" },
-              { name: "System Overview", url: "/foundations" },
+              { name: "TEG-Blue Overview", url: "/foundations" },
             ])
           ),
         }}
@@ -448,7 +350,7 @@ export default function FoundationsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "System Overview | TEG-Blue Research",
+              name: "TEG-Blue Overview | The Nervous System Gradient",
               url: "https://teg-blue.org/foundations",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -461,91 +363,251 @@ export default function FoundationsPage() {
 
 // ─── HELPER COMPONENTS ──────────────────────────────────
 
-function PartCard({ number, title, color, children }) {
+function OverviewFrame() {
   return (
-    <div
-      style={{
-        padding: 24,
-        background: gradientCardBg(color),
-        borderRadius: RADIUS.lg,
-        border: `1px solid ${BORDER.default}`,
-        borderTop: `3px solid ${color}`,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-        <span
-          style={{
-            width: 28,
-            height: 28,
-            borderRadius: "50%",
-            background: hexToRgba(color, 0.15),
-            color: color,
-            fontFamily: FONT.mono,
-            fontSize: 13,
-            fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {number}
-        </span>
-        <h2
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: color,
-            textTransform: "uppercase",
-            letterSpacing: "0.06em",
-            fontFamily: FONT.mono,
-            margin: 0,
-          }}
-        >
-          Part {number} — {title}
-        </h2>
-      </div>
-      {children}
-    </div>
-  );
-}
-
-
-function StatusBadge({ status, color }) {
-  return (
-    <span
-      style={{
-        display: "inline-flex",
-        fontSize: 11,
-        fontWeight: 600,
-        fontFamily: FONT.mono,
-        color: color,
-        padding: "4px 10px",
-        background: hexToRgba(color, 0.1),
-        borderRadius: 4,
-        marginTop: 12,
-      }}
-    >
-      Status: {status}
-    </span>
-  );
-}
-
-function FunctionCard({ number, title, description }) {
-  return (
-    <div
-      style={{
-        padding: 16,
-        background: gradientCardBg(SPECTRUM.blue),
-        borderRadius: RADIUS.md,
-        border: `1px solid ${BORDER.default}`,
-      }}
-    >
-      <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-        {number}. {title}
-      </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-        {description}
+    <section id="what-teg-blue-maps" style={{ marginBottom: 40 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Overview</div>
+      <h2 style={{ fontSize: 20, fontWeight: 700, color: TEXT.primary, lineHeight: 1.25, margin: "0 0 10px" }}>
+        TEG-Blue makes nervous-system state legible.
+      </h2>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 18px", maxWidth: 720 }}>
+        It organizes established science into a visual map of how safety, threat, control, and shutdown change what a person can perceive, feel, do, and repair.
       </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 210px), 1fr))",
+          gap: 10,
+        }}
+      >
+        {OVERVIEW_POINTS.map((point) => (
+          <div
+            key={point.label}
+            style={{
+              padding: 14,
+              background: gradientCardBg(point.color),
+              border: `1px solid ${hexToRgba(point.color, 0.18)}`,
+              borderTop: `2px solid ${point.color}`,
+              borderRadius: RADIUS.md,
+            }}
+          >
+            <div style={labelStyle(point.color)}>{point.label}</div>
+            <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 6px" }}>
+              {point.title}
+            </h3>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.62, margin: 0 }}>
+              {point.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function GradientPrinciples() {
+  return (
+    <section id="gradient-principles" style={{ marginBottom: 40 }}>
+      <div style={labelStyle(SPECTRUM.indigo)}>Gradient grounding</div>
+      <h2 style={{ fontSize: 20, fontWeight: 700, color: TEXT.primary, lineHeight: 1.25, margin: "0 0 10px" }}>
+        What the Gradient rests on
+      </h2>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 18px", maxWidth: 760 }}>
+        The Gradient is built from four source principles. Together, they explain why TEG-Blue maps state as a continuous movement from availability, through protection, into overwhelm.
+      </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
+          gap: 12,
+          marginBottom: 16,
+        }}
+      >
+        {GRADIENT_PRINCIPLES.map((principle) => (
+          <div
+            key={principle.title}
+            style={{
+              padding: 16,
+              background: gradientCardBg(principle.color),
+              borderRadius: RADIUS.md,
+              border: `1px solid ${hexToRgba(principle.color, 0.18)}`,
+              borderLeft: `3px solid ${principle.color}`,
+            }}
+          >
+            <div style={labelStyle(principle.color)}>{principle.label}</div>
+            <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
+              {principle.title}
+            </h3>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 10px" }}>
+              {principle.body}
+            </p>
+            <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.55, margin: 0 }}>
+              {principle.detail}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div
+        style={{
+          padding: 14,
+          background: BG.surface,
+          border: `1px solid ${BORDER.default}`,
+          borderRadius: RADIUS.md,
+        }}
+      >
+        <div style={labelStyle(SPECTRUM.cobalt)}>Perception scale</div>
+        <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
+          <strong style={{ color: TEXT.primary }}>X</strong> Safety · <strong style={{ color: TEXT.primary }}>A</strong> Safety and Connection · <strong style={{ color: TEXT.primary }}>A&lt;-&gt;B</strong> Ambivalent Safety · <strong style={{ color: TEXT.primary }}>B</strong> Threat · <strong style={{ color: TEXT.primary }}>C</strong> Increased Threat · <strong style={{ color: TEXT.primary }}>D</strong> Life Peril · <strong style={{ color: TEXT.primary }}>Z</strong> Overwhelm
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function GradientExplanation() {
+  return (
+    <section id="nervous-system-gradient" style={{ marginBottom: 40 }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
+          gap: 24,
+          alignItems: "start",
+        }}
+      >
+        <div>
+          <div style={labelStyle(SPECTRUM.azure)}>The Gradient</div>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: TEXT.primary, lineHeight: 1.2, margin: "0 0 12px" }}>
+            The central map is the Nervous System Gradient
+          </h2>
+          <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, fontWeight: 550, margin: "0 0 14px" }}>
+            The Gradient explains the central move: state changes capacity. When the nervous system shifts, perception, reasoning, empathy, behaviour, and repair do not stay the same.
+          </p>
+          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 18px" }}>
+            This is why the tools can be generated from one shared structure. Each tool takes one dimension and asks how it changes across the same line of nervous-system organisation.
+          </p>
+          <div
+            aria-hidden="true"
+            style={{
+              height: 16,
+              borderRadius: 999,
+              background: GRADIENT_AXIS,
+              boxShadow: `0 0 22px ${hexToRgba(SPECTRUM.blue, 0.22)}`,
+              marginBottom: 10,
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 10,
+              fontFamily: FONT.mono,
+              fontSize: 10,
+              color: TEXT.muted,
+            }}
+          >
+            <span>Availability</span>
+            <span>Protection</span>
+            <span>Collapse</span>
+          </div>
+        </div>
+
+        <div
+          style={{
+            background: BG.card,
+            border: `1px solid ${BORDER.default}`,
+            borderRadius: RADIUS.lg,
+            overflow: "hidden",
+          }}
+        >
+          {GRADIENT_STATES.map((state, index) => (
+            <GradientStateRow
+              key={state.name}
+              state={state}
+              number={index + 1}
+              isLast={index === GRADIENT_STATES.length - 1}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div
+        style={{
+          marginTop: 22,
+          paddingTop: 18,
+          borderTop: `1px solid ${BORDER.default}`,
+        }}
+      >
+        <div style={labelStyle(SPECTRUM.cobalt)}>What changes across the line</div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 8,
+            marginTop: 10,
+          }}
+        >
+          {GRADIENT_DIMENSIONS.map((dimension) => (
+            <span
+              key={dimension}
+              style={{
+                padding: "7px 10px",
+                borderRadius: RADIUS.sm,
+                border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.18)}`,
+                background: hexToRgba(SPECTRUM.blue, 0.055),
+                color: TEXT.secondary,
+                fontSize: 12,
+                lineHeight: 1.3,
+              }}
+            >
+              {dimension}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function GradientStateRow({ state, number, isLast }) {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "34px minmax(0, 1fr)",
+        gap: 12,
+        padding: "14px 16px",
+        borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
+      }}
+    >
+      <div
+        style={{
+          width: 26,
+          height: 26,
+          borderRadius: 999,
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: hexToRgba(state.color, 0.14),
+          color: state.color,
+          fontFamily: FONT.mono,
+          fontSize: 11,
+          fontWeight: 700,
+        }}
+      >
+        {number}
+      </div>
+      <div>
+        <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 5px" }}>
+          {state.name}
+        </h3>
+        <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.62, margin: 0 }}>
+          {state.body}
+        </p>
+      </div>
     </div>
   );
 }
@@ -565,82 +627,7 @@ function NavRow({ label, href, linkText, external }) {
   );
 }
 
-function PartIntroCard({ number, title, subtitle, color, href, external }) {
-  const CardWrapper = external ? "a" : Link;
-  const extraProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-
-  return (
-    <CardWrapper
-      href={href}
-      {...extraProps}
-      style={{
-        display: "block",
-        padding: 16,
-        background: gradientCardBg(color),
-        borderRadius: RADIUS.lg,
-        border: `1px solid ${hexToRgba(color, 0.2)}`,
-        borderTop: `3px solid ${color}`,
-        textDecoration: "none",
-        transition: "all 0.2s ease",
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-        <span
-          style={{
-            width: 22,
-            height: 22,
-            borderRadius: "50%",
-            background: hexToRgba(color, 0.15),
-            color: color,
-            fontFamily: FONT.mono,
-            fontSize: 11,
-            fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {number}
-        </span>
-        <span
-          style={{
-            fontSize: 12,
-            fontWeight: 600,
-            color: color,
-            textTransform: "uppercase",
-            letterSpacing: "0.04em",
-            fontFamily: FONT.mono,
-          }}
-        >
-          Part {number}
-        </span>
-      </div>
-      <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 4 }}>
-        {title}
-      </h3>
-      <p style={{ fontSize: 12, color: TEXT.muted, margin: 0 }}>
-        {subtitle} →
-      </p>
-    </CardWrapper>
-  );
-}
-
 // ─── SHARED STYLES ──────────────────────────────────────
-
-const bodyStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  margin: 0,
-};
-
-const listStyle = {
-  paddingLeft: 20,
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  margin: 0,
-};
 
 function labelStyle(color) {
   return {
@@ -648,7 +635,7 @@ function labelStyle(color) {
     fontWeight: 700,
     fontFamily: FONT.mono,
     textTransform: "uppercase",
-    letterSpacing: "0.1em",
+    letterSpacing: 0,
     color: color,
     marginBottom: 4,
   };
@@ -661,7 +648,7 @@ const tableHeaderStyle = {
   fontWeight: 600,
   color: TEXT.muted,
   textTransform: "uppercase",
-  letterSpacing: "0.06em",
+  letterSpacing: 0,
   fontFamily: FONT.mono,
 };
 

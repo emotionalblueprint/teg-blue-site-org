@@ -37,6 +37,16 @@ export function middleware(request) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-teg-blue-language", getRequestLanguage(path));
 
+  // Localhost is the review surface for staged pages. Public domains still use
+  // the allowlist below so unpublished routes stay unavailable to crawlers.
+  if (["localhost", "127.0.0.1", "::1"].includes(request.nextUrl.hostname)) {
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  }
+
   if (isLive(path)) {
     return NextResponse.next({
       request: {

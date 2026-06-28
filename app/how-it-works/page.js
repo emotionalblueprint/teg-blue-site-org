@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, AuthorBlock, ExpandableSection } from "@/src/components";
+import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, AuthorBlock, ExpandableSection, TEGBlueEnginePanel } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
   { label: "The Data System", href: "#the-data-system", description: "Five layers from established science to published tools. How each layer feeds the next." },
+  { label: "TEG-Blue Engine", href: "#teg-blue-engine", description: "How the Nervous System Gradient becomes scales, behaviour maps, and practical tools." },
   { label: "Established Science", href: "#established-science", description: "145+ scholarly and peer-reviewed source contributions from 41 research traditions in neuroscience, psychology, attachment, and trauma research." },
   { label: "Concept Architectures", href: "#concept-architectures", description: "How 12 frameworks and 4 models connect established theories into testable structures." },
   { label: "Root Data", href: "#root-data", description: "Five files organized by biological function. The operational consolidation layer." },
@@ -27,6 +28,10 @@ const FAQ_ITEMS = [
     answer: "Root data exports to JavaScript data libraries that feed practical tools on teg-blue.com. On teg-blue.org, root data is used for framework pages, model pages, glossary materials, and source-trace review when those routes are live.",
   },
   {
+    question: "What is the TEG-Blue Engine?",
+    answer: "The TEG-Blue Engine is the operational layer that turns the Nervous System Gradient into usable tools. It applies the same state logic to dimensions such as empathy, accountability, emotional signals, behaviour, repair, and relational impact. The tools do not prove the framework; they demonstrate applied coherence and create surfaces for testing.",
+  },
+  {
     question: "How does TEG-Blue trace claims to their source?",
     answer: "Every claim follows a three-layer provenance chain: Concept Architecture (intellectual origin) → root data file (operational consolidation by biological function) → published output (site page, tool, or diagram). Each root file section has a provenance table mapping it back to its originating CA.",
   },
@@ -46,6 +51,9 @@ export const metadata = {
     "data pipeline",
     "source traces",
     "traceability",
+    "TEG-Blue Engine",
+    "applied coherence",
+    "emotional tools",
   ],
   alternates: {
     canonical: "https://teg-blue.org/how-it-works",
@@ -151,6 +159,8 @@ export default function HowItWorksPage() {
             </p>
           </div>
         </section>
+
+        <TEGBlueEnginePanel />
 
         {/* ─── SECTION 2: ESTABLISHED SCIENCE ──────────────── */}
         <section id="established-science" style={{ marginBottom: 40 }}>
