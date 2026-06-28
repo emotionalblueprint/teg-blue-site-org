@@ -599,6 +599,10 @@ export default function EmotionalGradient() {
 
         .readout-row {
           appearance: none;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
           min-width: 0;
           padding: 16px 14px 13px;
           border: 0;
@@ -652,7 +656,7 @@ export default function EmotionalGradient() {
           margin: 0;
           color: var(--readout-ink);
           font-size: 13.5px;
-          font-weight: 620;
+          font-weight: 740;
           line-height: 1.5;
         }
 

@@ -17,37 +17,37 @@ const FORMATION_EXTRAS = {
   baseline: {
     sub: 'resting availability',
     pattern: 'State X · resting',
-    mechanism: 'Rest is available — the body can settle, repair, and stay open.',
+    mechanism: 'Physiological baseline — restoration and broad capacity are available.',
   },
   connection: {
     sub: 'safety → reciprocity',
     pattern: 'State A · ventral vagal',
-    mechanism: 'Safety with others is read — the body stays open to contact.',
+    mechanism: 'Safety with others — social engagement and co-regulation are available.',
   },
   calibration: {
     sub: 'A↔B transition',
     pattern: 'State A↔B · transition',
-    mechanism: 'Relational safety is uncertain — the system checks what changed.',
+    mechanism: 'Relational uncertainty — the system checks whether safety still holds.',
   },
   protection: {
     sub: 'threat → defence',
     pattern: 'State B · sympathetic',
-    mechanism: 'Threat is read — the body mobilises for boundary or defence.',
+    mechanism: 'Threat — mobilisation prioritises boundary, distance, or defence.',
   },
   strategic: {
     sub: 'sustained control',
     pattern: 'State C · sympathetic + brake',
-    mechanism: 'Threat lasts — thinking manages the field to keep control.',
+    mechanism: 'Sustained threat — cognition organises around management and control.',
   },
   domination: {
     sub: 'power → survival',
     pattern: 'State D · peak sympathetic',
-    mechanism: 'Survival feels at stake — power becomes the route that still works.',
+    mechanism: 'Life threat — power mobilisation overrides relational access.',
   },
   shutdown: {
     sub: 'conservation / collapse',
     pattern: 'State Z · dorsal',
-    mechanism: 'Too much is carried — the system conserves and goes quiet.',
+    mechanism: 'Overwhelm — mobilisation drops and conservation becomes primary.',
   },
 }
 
