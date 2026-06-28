@@ -63,9 +63,9 @@ export default function GradientMap({ sectionStyle, cardStyle, eyebrowStyle }) {
           The seven states, in order
         </h2>
         <p style={{ margin: '0 0 20px', maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-          One continuum, from rest through connection and the defences down to shutdown. Each state is a
-          whole-system configuration, not a mood: the position on the line and the nervous-system configuration are the
-          same thing seen two ways.
+          One continuum, from rest and connection through protection, control, and shutdown. Each state is a
+          whole-system configuration, not a type: where the system is configured changes what perception, thinking,
+          feeling, action, and repair can access.
         </p>
         <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
           {positions.map((p) => {

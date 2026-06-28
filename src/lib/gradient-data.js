@@ -17,37 +17,37 @@ const FORMATION_EXTRAS = {
   baseline: {
     sub: 'resting availability',
     pattern: 'State X · resting',
-    mechanism: 'Nothing to meet — the system rests, open and fully available.',
+    mechanism: 'Rest is available — the body can settle, repair, and stay open.',
   },
   connection: {
     sub: 'safety → reciprocity',
     pattern: 'State A · ventral vagal',
-    mechanism: 'Safety detected — the system regulates through connection.',
+    mechanism: 'Safety with others is read — the body stays open to contact.',
   },
   calibration: {
     sub: 'A↔B transition',
     pattern: 'State A↔B · transition',
-    mechanism: 'Belonging has changed — the system checks whether it is still safe here.',
+    mechanism: 'Relational safety is uncertain — the system checks what changed.',
   },
   protection: {
     sub: 'threat → defence',
     pattern: 'State B · sympathetic',
-    mechanism: 'Threat detected — the system regulates through self-protection.',
+    mechanism: 'Threat is read — the body mobilises for boundary or defence.',
   },
   strategic: {
     sub: 'sustained control',
     pattern: 'State C · sympathetic + brake',
-    mechanism: 'Threat persists — the system uses control and management to hold the field.',
+    mechanism: 'Threat lasts — thinking manages the field to keep control.',
   },
   domination: {
     sub: 'power → survival',
     pattern: 'State D · peak sympathetic',
-    mechanism: 'Survival at stake — the system organises around power because nothing else has worked.',
+    mechanism: 'Survival feels at stake — power becomes the route that still works.',
   },
   shutdown: {
     sub: 'conservation / collapse',
     pattern: 'State Z · dorsal',
-    mechanism: 'Mobilisation cannot form — the system conserves and collapses inward.',
+    mechanism: 'Too much is carried — the system conserves and goes quiet.',
   },
 }
 

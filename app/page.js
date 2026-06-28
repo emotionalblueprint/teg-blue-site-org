@@ -146,7 +146,7 @@ const gradientDefinitionMoves = [
   {
     label: "Moves",
     title: "Fluid state shifts",
-    body: "In fluid movement, the system can reorganise when danger is around and, when it has passed, bring the body back to physiological baseline.",
+    body: "The nervous system moves fluidly across the gradient: some state shifts happen in milliseconds, others unfold across days or months.",
     color: SPECTRUM.sky,
   },
   {
