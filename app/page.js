@@ -10,7 +10,14 @@ const DESCRIPTION =
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "https://teg-blue.org" },
+  alternates: {
+    canonical: "https://teg-blue.org",
+    languages: {
+      en: "https://teg-blue.org",
+      es: "https://teg-blue.org/es",
+      "x-default": "https://teg-blue.org",
+    },
+  },
   keywords: [
     "emotional gradient", "nervous system states", "neuroception", "polyvagal theory",
     "parasympathetic", "sympathetic", "autonomic nervous system", "fight or flight",
@@ -61,6 +68,10 @@ const gradientJsonLd = {
   inLanguage: "en",
   description: DESCRIPTION,
   author: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://orcid.org/0009-0005-2394-7162" },
+  creator: { "@type": "Person", name: "Anna Paretas-Artacho", url: "https://orcid.org/0009-0005-2394-7162" },
+  copyrightHolder: { "@type": "Person", name: "Anna Paretas-Artacho" },
+  copyrightNotice: "TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Public framework content is licensed CC BY-NC-SA 4.0; commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
+  license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   publisher: { "@type": "Organization", name: "TEG-Blue", url: "https://teg-blue.org" },
   isPartOf: {
     "@type": "ResearchProject",
@@ -162,6 +173,14 @@ const gradientDefinitionMoves = [
     color: "var(--accent-amber, #e9a23b)",
   },
 ];
+
+const attributionNotice = {
+  title: "Authorship and use",
+  body:
+    "TEG-Blue and The Nervous System Gradient were created by Anna Paretas-Artacho. Public framework content is published under CC BY-NC-SA 4.0: attribution is required, use must be non-commercial, and adaptations must be shared under the same license.",
+  restriction:
+    "Commercial, institutional, product, model, or dataset integration requires explicit permission or a separate license.",
+};
 
 // ─── shared section styles ───────────────────────────────────────────────────
 
@@ -350,7 +369,7 @@ export default function Home() {
       <Ld data={speakableJsonLd} />
       <Ld data={breadcrumbJsonLd} />
 
-      <SiteHeader />
+      <SiteHeader currentPath="/" />
 
       <main id="main-content" style={{ background: BG.page, fontFamily: FONT.display, paddingBottom: 64 }}>
         {/* Hero — static, crawlable */}
@@ -465,6 +484,31 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Authorship and use — visible licensing boundary */}
+        <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="rights-heading">
+          <div style={cardStyle}>
+            <p style={sectionEyebrowStyle}>Use and attribution</p>
+            <h2 id="rights-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+              {attributionNotice.title}
+            </h2>
+            <p style={{ margin: "0 0 14px", maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
+              {attributionNotice.body}{" "}
+              <a
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--spectrum-indigo)", textDecoration: "none", fontWeight: 600 }}
+              >
+                View license
+              </a>
+              .
+            </p>
+            <p style={{ margin: 0, maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
+              {attributionNotice.restriction}
+            </p>
           </div>
         </section>
 

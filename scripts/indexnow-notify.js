@@ -30,6 +30,7 @@ const { isLive } = require('../src/lib/live-paths.js')
 const ALL_PAGES = [
   // Core pages
   '/',
+  '/es',
   '/publications',
   '/publications/validation-study',
   '/publications/architecture-paper',

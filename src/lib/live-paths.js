@@ -10,11 +10,15 @@
 
 const LIVE_PATHS = new Set([
   "/",
+  "/es",
   // PENDING REVIEW — do NOT re-add until reviewed. These were exposed by accident
   // in 41f990c (a pending working-tree dump) and pulled back to home-only:
   //   "/about", "/how-it-works", "/methodology", "/publications",
   //   "/publications/validation-study", "/publications/architecture-paper",
   //   "/citations", "/ethics", "/scientific-foundations"
+  //
+  // Spanish launch rule: only the exact "/es" homepage is public. Do not add
+  // "/es" to LIVE_PREFIXES, and do not add Spanish section pages until reviewed.
 ]);
 
 // Whole sections opened at once. Frameworks + models are tightly cross-linked, so

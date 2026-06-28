@@ -96,18 +96,6 @@ const nextConfig = {
         permanent: true,
       },
 
-      // /es/* (Spanish pages) → homepage (3 old URLs)
-      {
-        source: '/es/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/es',
-        destination: '/',
-        permanent: true,
-      },
-
       // /detail/* → homepage (3 old URLs)
       {
         source: '/detail/:path*',

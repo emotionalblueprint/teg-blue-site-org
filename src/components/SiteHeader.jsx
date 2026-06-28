@@ -4,8 +4,11 @@ import Link from "next/link";
 import { BG, BORDER, FONT, SPACING, TEXT, TRANSITION } from "../styles/tokens";
 import { ThemeToggle } from "./theme/ThemeToggle";
 import { SpectrumBar } from "./SharedComponents";
+import { getLiveLocaleLinks } from "../i18n/routing";
 
-export default function SiteHeader() {
+export default function SiteHeader({ currentPath = "/" }) {
+  const localeLinks = getLiveLocaleLinks(currentPath);
+
   return (
     <header
       style={{
@@ -32,6 +35,44 @@ export default function SiteHeader() {
             TEG-Blue.org
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            {localeLinks.length > 1 && (
+              <nav
+                aria-label="Language"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 2,
+                  padding: 2,
+                  border: `1px solid ${BORDER.default}`,
+                  borderRadius: 8,
+                }}
+              >
+                {localeLinks.map((locale) => (
+                  <Link
+                    key={locale.code}
+                    href={locale.href}
+                    aria-current={locale.active ? "page" : undefined}
+                    title={locale.name}
+                    style={{
+                      minWidth: 28,
+                      padding: "5px 7px",
+                      borderRadius: 6,
+                      color: locale.active ? TEXT.primary : TEXT.secondary,
+                      background: locale.active ? "var(--bg-elevated, rgba(148, 163, 184, 0.12))" : "transparent",
+                      fontFamily: FONT.mono,
+                      fontSize: 11,
+                      fontWeight: 600,
+                      lineHeight: 1,
+                      textAlign: "center",
+                      textDecoration: "none",
+                      transition: `color ${TRANSITION.normal}, background ${TRANSITION.normal}`,
+                    }}
+                  >
+                    {locale.label}
+                  </Link>
+                ))}
+              </nav>
+            )}
             <a
               href="https://teg-blue.com/"
               style={{

@@ -5,6 +5,7 @@ import { isLive } from '@/src/lib/live-paths'
 // Update these when making significant content changes
 const PAGE_DATES = {
   '/': '2026-06-24',
+  '/es': '2026-06-28',
   '/publications': '2026-04-06',
   '/frameworks-map': '2026-04-06',
   '/research-entry': '2026-04-06',
@@ -51,6 +52,24 @@ export default function sitemap() {
       lastModified: new Date(PAGE_DATES['/']),
       changeFrequency: 'weekly',
       priority: 1,
+      alternates: {
+        languages: {
+          en: baseUrl,
+          es: `${baseUrl}/es`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/es`,
+      lastModified: new Date(PAGE_DATES['/es']),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: baseUrl,
+          es: `${baseUrl}/es`,
+        },
+      },
     },
     {
       url: `${baseUrl}/publications`,
