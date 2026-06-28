@@ -99,13 +99,13 @@ function StateSpineStrip() {
       className="state-spine-strip"
       aria-label="State spine from safety to shutdown"
       style={{
-        margin: "28px auto 0",
+        margin: "24px auto 0",
         maxWidth: 820,
-        padding: "2px",
+        padding: 0,
         "--state-spine-border": BORDER.default,
       }}
     >
-      <div className="state-spine-list" role="list" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+      <div className="state-spine-list" role="list" style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
         {positions.map((p) => (
           <div
             className="state-spine-item"
@@ -118,15 +118,15 @@ function StateSpineStrip() {
               borderRadius: RADIUS.md,
               border: `1px solid ${BORDER.default}`,
               borderTop: `2px solid ${p.acuteColor}`,
-              background: `linear-gradient(180deg, ${hexToRgba(p.acuteColor, 0.12)}, transparent)`,
-              padding: "10px 10px 9px",
+              background: BG.diagram,
+              padding: "9px 10px 8px",
               textAlign: "left",
             }}
           >
-            <span className="state-spine-code" style={{ display: "block", fontFamily: FONT.diagram, fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", color: p.acuteColor }}>
+            <span className="state-spine-code" style={{ display: "block", fontFamily: FONT.diagram, fontSize: 11, fontWeight: 650, letterSpacing: "0.08em", color: p.acuteColor }}>
               {p.code}
             </span>
-            <span className="state-spine-label" style={{ display: "block", marginTop: 3, fontSize: 11.5, lineHeight: 1.25, color: TEXT.secondary }}>
+            <span className="state-spine-label" style={{ display: "block", marginTop: 3, fontSize: 11, lineHeight: 1.25, color: TEXT.secondary }}>
               {p.atlasLabel}
             </span>
           </div>

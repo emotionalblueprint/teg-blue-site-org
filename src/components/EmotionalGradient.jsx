@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { BG, TEXT, BORDER, FONT, ACCENT, RADIUS, hexToRgba } from '../styles/tokens'
-import { positions, cards, content, groups, autonomic } from '../lib/gradient-data'
+import { positions, cards, content, autonomic } from '../lib/gradient-data'
 
 // ── on-light colour helpers ──────────────────────────────────────────────────
 // Position hues are tuned light for a dark surface. On a light surface we derive
@@ -58,6 +58,7 @@ const SHUT = N - 1
 const GRAD = positions.slice(0, SHUT)
 const G = GRAD.length
 const cardById = Object.fromEntries(cards.map((c) => [c.id, c]))
+const HOME_READOUT_IDS = ['perception', 'cognition', 'time', 'selfAwareness', 'empathy']
 
 function Badge({ color, light, children }) {
   const dot = light ? swatch(color) : color
@@ -89,6 +90,7 @@ export default function EmotionalGradient() {
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
   const [chronic, setChronic] = useState(false)
   const [compactSticky, setCompactSticky] = useState(false)
+  const [selectedReadoutId, setSelectedReadoutId] = useState(HOME_READOUT_IDS[0])
   const barRef = useRef(null)
   const readoutRef = useRef(null)
   const dragging = useRef(false)
@@ -138,19 +140,15 @@ export default function EmotionalGradient() {
     cText: isAcuteBaseline ? restingText : (panelLight ? ink(accent) : accent),
     cDot: isAcuteBaseline ? restingDot : (panelLight ? swatch(accent) : accent),
   }
-  // tile = the readout groups
+  // tile = the simplified capacity readout
   const tileCDot = isAcuteBaseline ? restingDot : (tileLight ? swatch(accent) : accent)
   const tileCText = isAcuteBaseline ? restingText : (tileLight ? ink(accent) : accent)
   const tile = {
-    cardBg: hexToRgba(tileCDot, 0.06),
     ink: tileLight ? '#1c1917' : '#f1f5f9',
     soft: tileLight ? 'rgba(28,25,23,0.6)' : 'rgba(241,245,249,0.6)',
     cText: tileCText,
     cDot: tileCDot,
-    line: hexToRgba(tileCDot, 0.2),
     divider: hexToRgba(tileCDot, tileLight ? 0.16 : 0.14),
-    detailBg: hexToRgba(tileCDot, isDark ? 0.09 : 0.08),
-    detailBorder: hexToRgba(tileCDot, 0.22),
   }
 
   const labelColor = (i) => {
@@ -176,6 +174,7 @@ export default function EmotionalGradient() {
     setPosIndex(Math.min(Math.floor(raw * G), G - 1))
   }
   function onTrackKey(e) {
+    if (e.target.closest?.('.readout-row')) return
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault()
       setPosIndex((i) => Math.min(i + 1, N - 1))
@@ -186,50 +185,31 @@ export default function EmotionalGradient() {
   }
   const stateText = chronic ? content.state[position.id].c : content.state[position.id].a
   const familiarLabel = chronic && position.familiarChronic ? position.familiarChronic : position.familiar
-  const readoutColumns = [
-    groups.filter((group) => group.label === 'Mind' || group.label === 'Feeling'),
-    groups.filter((group) => group.label === 'Body' || group.label === 'Response'),
-  ]
+  const selectedReadoutCard = cardById[selectedReadoutId]
+  const selectedReadoutReading = content[selectedReadoutId][position.id]
+  const selectedReadoutText = chronic ? selectedReadoutReading.c : selectedReadoutReading.a
+  const selectedReadoutDescription =
+    selectedReadoutCard.descriptions?.[position.id]?.[chronic ? 'c' : 'a'] || selectedReadoutCard.description
 
   const renderRow = (id) => {
     const card = cardById[id]
     const reading = content[id][position.id]
     const text = chronic ? reading.c : reading.a
-    const description = card.descriptions?.[position.id]?.[chronic ? 'c' : 'a'] || card.description
+    const selected = selectedReadoutId === id
     return (
-      <div key={id} className="readout-row">
-        <details className="readout-explanation">
-          <summary className="readout-row-toggle">
-            <span className="readout-row-main">
-              <span className="readout-label">
-                {card.label}
-              </span>
-              <span className="readout-value">{text}</span>
-            </span>
-          </summary>
-          <p className="readout-description">{description}</p>
-        </details>
-        <details className="readout-science">
-          <summary>
-            <span>Grounding science</span>
-            <span className="readout-science-icon" aria-hidden="true">▸</span>
-          </summary>
-          <p>{card.science}</p>
-        </details>
-      </div>
+      <button
+        key={id}
+        type="button"
+        className={selected ? 'readout-row is-selected' : 'readout-row'}
+        aria-pressed={selected}
+        aria-controls="gradient-readout-detail"
+        onClick={() => setSelectedReadoutId(id)}
+      >
+        <span className="readout-label">{card.label}</span>
+        <span className="readout-value">{text}</span>
+      </button>
     )
   }
-
-  const renderBlock = (g) => (
-    <section key={g.label} className="readout-group">
-      <div className="readout-group-head">
-        <span className="readout-group-dot" aria-hidden="true" />
-        <span className="readout-group-title">{g.label}</span>
-        <span className="readout-group-count">{g.ids.length} dimensions</span>
-      </div>
-      <div className="readout-row-list">{g.ids.map(renderRow)}</div>
-    </section>
-  )
 
   return (
     <section
@@ -239,24 +219,21 @@ export default function EmotionalGradient() {
       aria-label="The Nervous System Gradient"
       style={{
         overflow: 'visible',
-        borderRadius: 20,
+        borderRadius: 8,
         outline: 'none',
         background: BG.diagram,
-        border: `1px solid ${hexToRgba(panel.cDot, 0.22)}`,
+        border: `1px solid ${BORDER.default}`,
         fontFamily: FONT.display,
-        boxShadow: `0 18px 48px ${hexToRgba('#000000', isDark ? 0.16 : 0.08)}`,
+        boxShadow: 'none',
         '--gradient-sticky-bg': panelLight ? '#f4f4f2' : '#131a2f',
         '--gradient-line': panel.line,
         '--gradient-accent': panel.cDot,
         '--gradient-accent-text': panel.cText,
-        '--readout-bg': tile.cardBg,
         '--readout-ink': tile.ink,
         '--readout-soft': tile.soft,
         '--readout-accent': tile.cText,
         '--readout-dot': tile.cDot,
         '--readout-line': tile.divider,
-        '--readout-detail-bg': tile.detailBg,
-        '--readout-detail-border': tile.detailBorder,
       }}
     >
       <div className={`gradient-sticky${compactSticky ? ' is-compact' : ''}`}>
@@ -443,16 +420,24 @@ export default function EmotionalGradient() {
           </div>
           <p className="state-reading">{stateText}</p>
 
-          <div className="readout-grid readout-grid-desktop">
-            {readoutColumns.map((columnGroups, index) => (
-              <div key={index} className="readout-column">
-                {columnGroups.map(renderBlock)}
-              </div>
-            ))}
+          <div className="readout-list">
+            {HOME_READOUT_IDS.map(renderRow)}
           </div>
-
-          <div className="readout-mobile-stack">
-            {groups.map(renderBlock)}
+          <div id="gradient-readout-detail" className="readout-detail">
+            <div className="readout-detail-header">
+              <span className="readout-detail-label">{selectedReadoutCard.label}</span>
+              <span className="readout-detail-value">{selectedReadoutText}</span>
+            </div>
+            <div className="readout-detail-grid">
+              <div className="readout-detail-block">
+                <span className="readout-detail-kicker">What this means</span>
+                <p>{selectedReadoutDescription}</p>
+              </div>
+              <div className="readout-detail-block">
+                <span className="readout-detail-kicker">Grounding science</span>
+                <p>{selectedReadoutCard.science}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -467,14 +452,10 @@ export default function EmotionalGradient() {
           position: sticky;
           top: 68px;
           z-index: 30;
-          border-radius: 20px 20px 0 0;
+          border-radius: 8px 8px 0 0;
           border-bottom: 1px solid var(--gradient-line);
-          background:
-            linear-gradient(180deg, var(--gradient-sticky-bg) 0%, color-mix(in srgb, var(--gradient-sticky-bg) 92%, var(--gradient-accent) 8%) 100%);
-          backdrop-filter: blur(14px);
-          box-shadow:
-            inset 0 -1px 0 color-mix(in srgb, var(--gradient-accent) 18%, transparent),
-            0 12px 28px rgba(0, 0, 0, 0.12);
+          background: var(--gradient-sticky-bg);
+          box-shadow: none;
           transition: border-radius 180ms ease, box-shadow 180ms ease, margin-bottom 180ms ease;
         }
 
@@ -483,8 +464,8 @@ export default function EmotionalGradient() {
           grid-template-columns: minmax(0, 1fr) auto;
           align-items: center;
           justify-content: space-between;
-          gap: 18px;
-          padding: 18px 24px 0;
+          gap: 16px;
+          padding: 16px 20px 0;
         }
 
         .gradient-toolbar-copy {
@@ -493,7 +474,7 @@ export default function EmotionalGradient() {
           min-width: 0;
           flex-wrap: wrap;
           align-items: center;
-          gap: 10px 16px;
+          gap: 8px 14px;
         }
 
         .sticky-state-title {
@@ -501,13 +482,13 @@ export default function EmotionalGradient() {
           min-width: 0;
           flex-wrap: wrap;
           align-items: center;
-          gap: 10px 12px;
+          gap: 8px 10px;
         }
 
         .sticky-autonomic-line {
           margin: 0;
           color: var(--readout-soft);
-          font-size: 12.5px;
+          font-size: 12px;
           line-height: 1.45;
         }
 
@@ -518,16 +499,16 @@ export default function EmotionalGradient() {
 
         .mode-caption {
           margin: 0;
-          max-width: 760px;
+          max-width: 720px;
           color: var(--readout-soft);
-          font-size: 12.5px;
+          font-size: 12px;
           line-height: 1.6;
         }
 
         .gradient-track-shell {
           position: relative;
-          margin: 16px 24px 0;
-          padding: 16px 0 18px;
+          margin: 14px 20px 0;
+          padding: 14px 0 16px;
           border-top: 1px solid color-mix(in srgb, var(--gradient-accent) 18%, transparent);
         }
 
@@ -549,7 +530,7 @@ export default function EmotionalGradient() {
 
         .selected-state {
           position: relative;
-          padding: calc(10px + var(--gradient-sticky-offset)) 24px 32px;
+          padding: calc(6px + var(--gradient-sticky-offset)) 20px 28px;
         }
 
         .state-readout {
@@ -559,8 +540,8 @@ export default function EmotionalGradient() {
         .state-configuration-title {
           display: flex;
           align-items: center;
-          gap: 12px;
-          margin: 0 0 10px;
+          gap: 10px;
+          margin: 0 0 8px;
           min-width: 0;
         }
 
@@ -577,23 +558,23 @@ export default function EmotionalGradient() {
           margin: 0;
           min-width: 0;
           color: var(--gradient-accent-text);
-          font-size: clamp(21px, 2.8vw, 30px);
-          font-weight: 800;
+          font-size: clamp(20px, 2.5vw, 28px);
+          font-weight: 760;
           letter-spacing: -0.02em;
-          line-height: 1.08;
+          line-height: 1.12;
         }
 
         .state-configuration-context {
           display: grid;
-          gap: 6px;
-          max-width: 760px;
-          margin: 0 0 18px;
+          gap: 5px;
+          max-width: 720px;
+          margin: 0 0 16px;
         }
 
         .state-alias {
           margin: 0;
           color: var(--readout-soft);
-          font-size: 13px;
+          font-size: 12.5px;
           line-height: 1.45;
         }
 
@@ -606,7 +587,7 @@ export default function EmotionalGradient() {
           display: block;
           color: var(--readout-soft);
           font-family: var(--font-diagram), monospace;
-          font-size: 11px;
+          font-size: 10.5px;
           letter-spacing: 0.02em;
           line-height: 1.45;
           opacity: 0.82;
@@ -615,250 +596,146 @@ export default function EmotionalGradient() {
         .state-mechanism {
           margin: 2px 0 0;
           max-width: 680px;
-          padding-left: 12px;
+          padding-left: 10px;
           border-left: 2px solid color-mix(in srgb, var(--gradient-accent) 28%, transparent);
           color: var(--readout-ink);
-          font-size: 14px;
-          line-height: 1.55;
-        }
-
-        .readout-head {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .readout-kicker {
-          color: var(--gradient-accent-text);
-          font-family: var(--font-diagram), monospace;
-          font-size: 10px;
-          font-weight: 500;
-          letter-spacing: 0.22em;
-          text-transform: uppercase;
-        }
-
-        .readout-rule {
-          height: 1px;
-          flex: 1;
-          background: color-mix(in srgb, var(--gradient-accent) 26%, transparent);
-        }
-
-        .readout-note {
-          color: var(--readout-soft);
-          font-size: 10px;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
+          font-size: 13.5px;
+          line-height: 1.6;
         }
 
         .state-reading {
           margin: 0;
-          padding-bottom: 28px;
+          padding-bottom: 24px;
           border-bottom: 1px solid var(--readout-line);
           color: var(--readout-ink);
-          font-size: clamp(18px, 2.2vw, 24px);
-          font-weight: 650;
-          line-height: 1.25;
+          font-size: clamp(17px, 2vw, 22px);
+          font-weight: 620;
+          line-height: 1.3;
           letter-spacing: -0.02em;
         }
 
-        .readout-grid {
+        .readout-list {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          column-gap: clamp(26px, 4vw, 44px);
-          margin-top: 0;
-        }
-
-        .readout-column {
-          min-width: 0;
-        }
-
-        .readout-mobile-stack {
-          display: none;
-        }
-
-        .readout-group {
-          padding: 34px 0 28px;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 0;
           border-bottom: 1px solid var(--readout-line);
         }
 
-        .readout-group-head {
-          display: flex;
-          align-items: baseline;
-          gap: 8px;
-          margin-bottom: 2px;
-        }
-
-        .readout-group-dot {
-          width: 9px;
-          height: 9px;
-          flex: 0 0 auto;
-          border-radius: 50%;
-          background: var(--readout-dot);
-        }
-
-        .readout-group-title {
-          color: var(--readout-accent);
-          font-family: var(--font-diagram), monospace;
-          font-size: 11px;
-          font-weight: 500;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-        }
-
-        .readout-group-count {
-          margin-left: auto;
-          color: var(--readout-soft);
-          font-size: 11px;
-          opacity: 0.72;
-        }
-
         .readout-row {
-          padding: 16px 0;
-          border-top: 1px solid var(--readout-line);
+          appearance: none;
+          min-width: 0;
+          padding: 16px 14px 13px;
+          border: 0;
+          border-left: 1px solid var(--readout-line);
+          border-radius: 0;
+          background: transparent;
+          color: inherit;
+          cursor: pointer;
+          font: inherit;
+          text-align: left;
+          transition:
+            background-color 150ms ease,
+            box-shadow 150ms ease,
+            color 150ms ease;
         }
 
         .readout-row:first-child {
-          border-top: 0;
+          padding-left: 0;
+          border-left: 0;
         }
 
-        .readout-row-toggle {
-          display: block;
-          margin: 0;
-          padding: 0;
-          cursor: pointer;
-          list-style: none;
-          border-radius: 4px;
-          outline: none;
-        }
-
-        .readout-row-toggle::after {
-          display: none !important;
-        }
-
-        .readout-row-toggle::-webkit-details-marker {
-          display: none;
-        }
-
-        .readout-row-main {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 7px;
-          align-items: start;
-          min-width: 0;
-        }
-
-        .readout-label {
-          display: inline-flex;
-          align-items: center;
-          color: var(--readout-accent);
-          font-size: 15px;
-          font-weight: 760;
-          line-height: 1.25;
-        }
-
-        .readout-value {
-          display: inline;
-          margin: 0;
-          color: var(--readout-ink);
-          font-size: 15px;
-          font-weight: 620;
-          line-height: 1.42;
-          transition: color 150ms ease;
-        }
-
-        .readout-row-toggle:hover .readout-value,
-        .readout-row-toggle:focus-visible .readout-value,
-        .readout-explanation[open] .readout-value {
+        .readout-row:hover,
+        .readout-row:focus-visible {
           color: var(--readout-accent);
         }
 
-        .readout-row-toggle:focus-visible {
-          outline: 1px solid color-mix(in srgb, var(--readout-accent) 34%, transparent);
+        .readout-row.is-selected {
+          box-shadow: inset 0 -2px 0 var(--readout-dot);
+        }
+
+        .readout-row:focus-visible {
+          outline: 1px solid color-mix(in srgb, var(--readout-dot) 45%, transparent);
           outline-offset: 3px;
         }
 
-        .readout-explanation {
-          margin: 0;
-          border: 0 !important;
-          background: transparent !important;
-        }
-
-        .readout-science {
-          margin: 9px 0 0;
-          border: 0 !important;
-          background: transparent !important;
-        }
-
-        .readout-science summary {
-          display: inline-flex;
-          align-items: center;
-          justify-content: flex-start;
-          gap: 8px;
-          padding: 0;
-          color: color-mix(in srgb, var(--readout-accent) 54%, var(--readout-soft));
+        .readout-label {
+          display: block;
+          min-width: 0;
+          margin-bottom: 6px;
+          color: var(--readout-accent);
           font-family: var(--font-diagram), monospace;
-          font-size: 9px;
-          font-weight: 500;
-          letter-spacing: 0.14em;
-          line-height: 1.4;
+          font-size: 10px;
+          font-weight: 650;
+          letter-spacing: 0.08em;
+          line-height: 1.25;
           text-transform: uppercase;
-          cursor: pointer;
-          list-style: none;
-          transition: color 150ms ease;
         }
 
-        .readout-science summary:hover,
-        .readout-science summary:focus-visible,
-        .readout-science[open] summary {
+        .readout-value {
+          display: block;
+          margin: 0;
+          color: var(--readout-ink);
+          font-size: 13.5px;
+          font-weight: 620;
+          line-height: 1.5;
+        }
+
+        .readout-row.is-selected .readout-value {
           color: var(--readout-accent);
         }
 
-        .readout-science summary::after {
-          display: none !important;
+        .readout-detail {
+          margin-top: 18px;
+          padding-top: 18px;
+          border-top: 1px solid var(--readout-line);
+          background: transparent;
         }
 
-        .readout-science summary::-webkit-details-marker {
-          display: none;
+        .readout-detail-header {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          gap: 8px 12px;
+          margin-bottom: 14px;
         }
 
-        .readout-science-icon {
-          display: inline-block;
-          font-size: 10px;
-          line-height: 1;
-          transform: translateY(-1px);
-          transition: transform 150ms ease;
+        .readout-detail-label {
+          color: var(--readout-accent);
+          font-size: 15.5px;
+          font-weight: 720;
+          line-height: 1.25;
         }
 
-        .readout-science-icon {
-          color: currentColor;
+        .readout-detail-value {
+          color: var(--readout-ink);
+          font-size: 13.5px;
+          font-weight: 620;
+          line-height: 1.4;
         }
 
-        .readout-science[open] .readout-science-icon {
-          transform: translateY(-1px) rotate(90deg);
+        .readout-detail-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+          gap: 22px;
         }
 
-        .readout-description,
-        .readout-science p {
-          margin: 9px 0 0;
-          padding: 0 0 0 12px;
-          border-left: 2px solid var(--readout-detail-border);
+        .readout-detail-kicker {
+          display: block;
+          margin-bottom: 6px;
+          color: var(--readout-accent);
+          font-family: var(--font-diagram), monospace;
+          font-size: 9px;
+          font-weight: 650;
+          letter-spacing: 0.12em;
+          line-height: 1.35;
+          text-transform: uppercase;
+        }
+
+        .readout-detail-block p {
+          margin: 0;
           color: var(--readout-soft);
-          font-size: 12px;
-          line-height: 1.6;
-        }
-
-        .readout-description {
-          font-size: 12.5px;
-        }
-
-        @media (max-width: 900px) {
-          .readout-grid-desktop {
-            display: none;
-          }
-
-          .readout-mobile-stack {
-            display: block;
-          }
+          font-size: 13.5px;
+          line-height: 1.62;
         }
 
         @media (max-width: 720px) {
@@ -961,7 +838,7 @@ export default function EmotionalGradient() {
           }
 
           .selected-state {
-            padding: calc(4px + var(--gradient-sticky-offset)) 18px 28px;
+            padding: calc(4px + var(--gradient-sticky-offset)) 16px 26px;
           }
 
           .state-configuration-title {
@@ -992,21 +869,47 @@ export default function EmotionalGradient() {
           }
 
           .state-reading {
-            padding-bottom: 22px;
+            padding-bottom: 20px;
             font-size: 16px;
             line-height: 1.35;
           }
 
-          .readout-group {
-            padding: 24px 0 22px;
+          .readout-list {
+            grid-template-columns: 1fr;
+          }
+
+          .readout-row {
+            padding: 13px 0;
+            border-left: 0;
+            border-top: 1px solid var(--readout-line);
+            border-radius: 0;
+          }
+
+          .readout-row.is-selected {
+            box-shadow: inset 3px 0 0 var(--readout-dot);
           }
 
           .readout-label {
-            font-size: 15.5px;
+            margin-bottom: 5px;
+            font-size: 10px;
           }
 
           .readout-value {
-            font-size: 15.5px;
+            font-size: 15px;
+          }
+
+          .readout-detail {
+            margin-top: 12px;
+            padding-top: 14px;
+          }
+
+          .readout-detail-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+
+          .readout-detail-label {
+            font-size: 15px;
           }
 
           .gradient-track-label {
@@ -1017,25 +920,10 @@ export default function EmotionalGradient() {
             font-size: 11px !important;
           }
 
-          .readout-head {
-            align-items: flex-start;
-          }
-
-          .readout-note {
-            display: none;
-          }
-
-          .readout-description,
-          .readout-science {
-            margin-left: 0;
-          }
-
           .gradient-sticky.is-compact {
             border-radius: 0;
-            margin-bottom: 12px;
-            box-shadow:
-              0 10px 24px rgba(0, 0, 0, 0.2),
-              0 16px 0 var(--gradient-sticky-bg);
+            margin-bottom: 8px;
+            box-shadow: none;
           }
 
           .gradient-sticky.is-compact .gradient-toolbar {
