@@ -21,7 +21,7 @@ const CAPS = [
     what: 'The bridge — knows what the body is doing right now' },
 ];
 
-const STATES = ['Connection', 'Protection', 'Control', 'Domination'];
+const STATES = ['Connection', 'Protection', 'Control / Management', 'Domination'];
 
 // Animation
 const SWEEP_MS = 5000;

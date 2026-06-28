@@ -16,7 +16,7 @@ function colX(i) { return COL_START + i * (COL_W + COL_GAP); }
 const MODES = [
   { letter: "A", name: "Connection",  conditionShort: "Connection",      color: SPECTRUM.sky },
   { letter: "B", name: "Protection",  conditionShort: "Protection",       color: SPECTRUM.azure },
-  { letter: "C", name: "Control",     conditionShort: "Strategic Management",  color: SPECTRUM.blue },
+  { letter: "C", name: "Control / Management", conditionShort: "Control / Management", color: SPECTRUM.blue },
   { letter: "D", name: "Domination",  conditionShort: "Domination",      color: SPECTRUM.cobalt },
 ];
 

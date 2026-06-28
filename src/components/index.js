@@ -38,6 +38,7 @@ export { default as OperationalStatement } from "./OperationalStatement";
 export { default as PartDivider } from "./PartDivider";
 export { default as NavSection } from "./NavSection";
 export { default as ConnectionsMap } from "./ConnectionsMap";
+export { default as DeepEngineChronicMatrix } from "./DeepEngineChronicMatrix";
 
 // Visualizations
 export { default as ESSInformationSystems } from "./ESSInformationSystems";

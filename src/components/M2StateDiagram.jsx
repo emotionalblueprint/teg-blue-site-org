@@ -18,14 +18,14 @@ const CAPACITIES = [
     label: 'Perception',
     values: [1, 0.55, 0.35, 0.15],
     baselineValue: 0.75,
-    descriptions: ['Broad — sees the full field', 'Narrowed — threat-relevant signals', 'Strategic — what needs managing', 'Tunnel — obstacles and resources'],
+    descriptions: ['Broad — sees the full field', 'Narrowed — threat-relevant signals', 'Control — what needs managing', 'Tunnel — obstacles and resources'],
     baselineDesc: 'Open — available but not directed',
   },
   {
     label: 'Cognition',
     values: [1, 0.5, 0.4, 0.12],
     baselineValue: 0.75,
-    descriptions: ['Flexible — holds complexity', 'Simplified — binary thinking', 'Strategic — planning, anticipation', 'Locked — rigid, self-confirming'],
+    descriptions: ['Flexible — holds complexity', 'Simplified — binary thinking', 'Control — planning, anticipation', 'Locked — rigid, self-confirming'],
     baselineDesc: 'Resting — capable but not mobilised',
   },
   {

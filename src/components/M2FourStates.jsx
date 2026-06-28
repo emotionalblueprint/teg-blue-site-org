@@ -27,7 +27,7 @@ const STATES = [
     evolutionary: 'Defending, fleeing, hunting, surviving',
   },
   {
-    name: 'STRATEGIC MANAGEMENT', mode: 'Control', hex: '#346AEC', pos: 0.625,
+    name: 'CONTROL / MANAGEMENT', mode: 'Control / Management', hex: '#346AEC', pos: 0.625,
     branch: 'sympathetic', system: 'Cognitive-Logical',
     biology: 'Sympathetic activation continues. Prefrontal cortex recruited — not for exploration but for threat-management.',
     activation: 'Deliberate — cognition recruited into threat service',

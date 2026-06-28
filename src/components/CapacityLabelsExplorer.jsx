@@ -29,7 +29,7 @@ const REGULATION_COLORS = {
 const MODES = [
   { key: "A", name: "Connection", hex: PATTERN.A.primary, center: 0.125, start: 0, end: 0.25 },
   { key: "B", name: "Protection", hex: PATTERN.B.primary, center: 0.375, start: 0.25, end: 0.5 },
-  { key: "C", name: "Control", hex: PATTERN.C.primary, center: 0.625, start: 0.5, end: 0.75 },
+  { key: "C", name: "Control / Management", hex: PATTERN.C.primary, center: 0.625, start: 0.5, end: 0.75 },
   { key: "D", name: "Domination", hex: PATTERN.D.primary, center: 0.875, start: 0.75, end: 1 },
 ];
 

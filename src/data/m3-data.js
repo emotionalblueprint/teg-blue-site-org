@@ -191,7 +191,7 @@ export const OVERRIDE_PATH = [
     description:
       'The nervous system reorganises around the unresolved state. What was Protection becomes permanent. External regulation substitutes multiply. The gradient shift locks in.',
     biology: [
-      'Default mode: Protection/Control',
+      'Default mode: Protection / Control / Management',
       'External regulation required',
       'Regulation substitutes: F3–F7',
       'Identity forms around mode',
@@ -219,7 +219,7 @@ export const RESTORATION = {
       description: 'Full exhale, physical discharge, co-regulation. HPA resets.',
     },
     {
-      name: 'Control Restoration',
+      name: 'Control / Management Restoration',
       timescale: '2 – 8 hrs',
       type: 'both',
       description: 'Override released. Emotions surface. Cannot be rushed.',

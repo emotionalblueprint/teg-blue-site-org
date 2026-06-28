@@ -52,9 +52,9 @@ export const MODES = [
   },
   {
     key: 'control',
-    label: 'Control',
+    label: 'Control / Management',
     condition: 'When the nervous system needs strategy and management',
-    conditionShort: 'Strategic Management',
+    conditionShort: 'Control / Management',
     center: 0.625,
     zone: [0.5, 0.75],
     perception: 'Danger',  // root--mode-positions.md §Perception — "Strategic"
@@ -609,7 +609,7 @@ export const RESTORATION = {
     },
     {
       // Control — §Control Restoration: "deliberately puts down the cognitive override"
-      name: 'Control Restoration',
+      name: 'Control / Management Restoration',
       timescale: '2 – 8 hrs',
       type: 'both',  // "begins somatically... may require relational safety to complete"
       description: 'Override released. Emotions surface. Cannot be rushed.',
@@ -892,7 +892,7 @@ export const OVERRIDE_PATH = [
     description:
       'The nervous system reorganises around the unresolved state. What was Protection becomes permanent. External regulation substitutes multiply. The gradient shift locks in.',
     biology: [
-      'Default mode: Protection/Control',
+      'Default mode: Protection / Control / Management',
       'External regulation required',
       'Regulation substitutes: F3–F7',
       'Identity forms around mode',

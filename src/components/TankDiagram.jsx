@@ -9,7 +9,7 @@ import {
 const TANK_MODES = [
   { key: "A", name: "Connection",  hex: "#14b8a6", center: 0.125 },
   { key: "B", name: "Protection",  hex: "#eab308", center: 0.375 },
-  { key: "C", name: "Control",     hex: "#f97316", center: 0.625 },
+  { key: "C", name: "Control / Management", hex: "#f97316", center: 0.625 },
   { key: "D", name: "Domination",  hex: "#ec4899", center: 0.875 },
 ];
 

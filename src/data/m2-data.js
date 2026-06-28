@@ -123,11 +123,11 @@ export const MODES = [
   },
   {
     key: 'control',
-    label: 'Control',
-    name: 'Control',
+    label: 'Control / Management',
+    name: 'Control / Management',
     hex: '#346AEC',
     condition: 'When the nervous system needs strategy and management',
-    conditionShort: 'Strategic Management',
+    conditionShort: 'Control / Management',
     center: 0.625,
     zone: [0.5, 0.75],
     perception: 'Danger',
@@ -137,8 +137,8 @@ export const MODES = [
     // Extended fields from FluidCompassExplorer.jsx
     autonomic: 'Sympathetic + cognitive recruitment',
     fluid: {
-      fullName: 'Control Mode',
-      pattern: 'Control',
+      fullName: 'Control / Management Mode',
+      pattern: 'Control / Management',
       type: 'After awareness',
       duration: 'Hours to days — time-limited tool',
       sequence: 'Anticipate → Manage → Override',
@@ -146,14 +146,14 @@ export const MODES = [
         'Protection is not enough — the situation requires structure or strategic action. Cognition is recruited deliberately. When it resolves, cognition stands down.',
       insight: 'A tool. Used deliberately. Released when done.',
       capacities: [
-        { name: 'Perception', text: 'Strategic — what needs managing' },
-        { name: 'Cognition', text: 'Strategic — planning, anticipation' },
+        { name: 'Perception', text: 'Control — what needs managing' },
+        { name: 'Cognition', text: 'Control — planning, anticipation' },
         { name: 'Learning', text: 'Selective' },
         { name: 'Relational', text: 'Managed — relationships serve strategy' },
       ],
     },
     chronic: {
-      fullName: 'Chronic Control',
+      fullName: 'Chronic Control / Management',
       type: 'SEA Offline',
       duration: 'Permanent — management never stops',
       sequence: 'Instability as Constant → Override → Manage Permanently',
@@ -163,7 +163,7 @@ export const MODES = [
         'What looks like competence is a nervous system that cannot stop managing because unmanaged feels like unsafe',
       distortion: 'I feel bad → you\'re destabilising me → I must manage you',
       capacities: [
-        { name: 'Perception', text: 'Strategic — scans for instability' },
+        { name: 'Perception', text: 'Control — scans for instability' },
         { name: 'Cognition', text: 'Locked on management — cannot release' },
         { name: 'Learning', text: 'Selective — serves strategy only' },
         { name: 'Relational', text: 'Managed — relationships serve control' },

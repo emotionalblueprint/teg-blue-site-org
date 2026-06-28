@@ -6,7 +6,7 @@ import { FONT, PATTERN, PATTERN_GRADIENT, BG, hexToRgba } from "../styles/tokens
 const MODES = [
   { key: 'A', label: 'Connection', hex: PATTERN.A.primary, center: 0.125 },
   { key: 'B', label: 'Protection', hex: PATTERN.B.primary, center: 0.375 },
-  { key: 'C', label: 'Control',    hex: PATTERN.C.primary, center: 0.625 },
+  { key: 'C', label: 'Control / Management', hex: PATTERN.C.primary, center: 0.625 },
   { key: 'D', label: 'Domination', hex: PATTERN.D.primary, center: 0.875 },
 ];
 

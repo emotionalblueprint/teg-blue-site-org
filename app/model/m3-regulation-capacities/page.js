@@ -6,12 +6,11 @@ const M3PathDiagram = dynamic(() => import("@/src/components/M3PathDiagram"), { 
 const M3RestorationByMode = dynamic(() => import("@/src/components/M3RestorationByMode"), { ssr: false });
 import {
   SiteHeader, SiteFooter, ModelHero, ModelPurpose, ExpandableSection,
-  PageLayout, PartDivider, NavSection, ConnectionsMap,
+  PageLayout, PartDivider, NavSection, ConnectionsMap, DeepEngineChronicMatrix,
 } from "@/src/components";
 import {
   proseStyle, expandedProseStyle, propositionItemStyle,
   sectionHeadingStyle, conceptHeadingStyle, expandableRowStyle,
-  gridHeaderStyle, gridCellStyle,
 } from "@/src/styles/pageStyles";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
@@ -200,27 +199,9 @@ export default function M3RegulationCapacitiesPage() {
           <section id="restoration-substitutes" aria-labelledby="heading-subs" style={{ marginBottom: 48 }}>
             <h2 id="heading-subs" style={sectionHeadingStyle(MODEL_COLOR)}>Restoration Substitutes</h2>
             <p style={proseStyle}>When the restoration pathway is blocked, the nervous system searches for anything that produces the neurochemical shift that completion would have provided. The mechanism is identical across all substitutes: temporary discharge, no resolution, escalating need.</p>
-            <h3 style={conceptHeadingStyle}>Non-Relational Substitutes</h3>
-            <p style={proseStyle}>Substances, physical intensity, work and achievement, screens and consumption, conscious self-soothing — each acts on a specific part of the stress response. Each produces real relief. Each requires more over time, because the underlying sequences are still open.</p>
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Typical Substitutes</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Mechanism</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
-                <div style={gridCellStyle}>Food, numbing substances, screens, over-availability, compulsive helping</div>
-                <div style={gridCellStyle}>Mutes the alarm without addressing what triggered it</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>Stimulants, intense exercise, alcohol, withdrawal into controlled environments</div>
-                <div style={gridCellStyle}>Overrides the alarm with a stronger sensation or removes inputs</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategic Management</div>
-                <div style={gridCellStyle}>Work, planning, information, substances that sharpen focus</div>
-                <div style={gridCellStyle}>Maintains the suppression of limbic signals</div>
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
-                <div style={gridCellStyle}>Intense physical activity, substances that amplify certainty, risk</div>
-                <div style={gridCellStyle}>Channels sympathetic activation into output rather than discharge</div>
-              </div>
-            </div>
+            <h3 style={conceptHeadingStyle}>Chronic Routing</h3>
+            <p style={proseStyle}>The chronic table now reads by nervous-system position rather than by the compressed four-mode layer. Each row separates the route the body needs, whether restoration can actually land, and what remains incomplete when relief substitutes stand in.</p>
+            <DeepEngineChronicMatrix variant="m3Routing" color={MODEL_COLOR} />
             <h3 style={conceptHeadingStyle}>Relational Substitutes</h3>
             <p style={proseStyle}>When the substitute involves other people — controlling, criticising, managing, punishing — the relief is stronger. The nervous system{"'"}s most potent regulation pathway is relational. Genuine co-regulation is the primary pathway through which mammalian nervous systems complete the restoration sequence. When that pathway is co-opted into control, the system receives a high-potency activation of the co-regulation circuitry without the safety conditions that make it restorative.</p>
             <div style={expandableRowStyle}>

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { BG, TEXT, FONT, SPECTRUM, PATTERN, MODEL_COLORS, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ModelHero, ModelPurpose, ExpandableSection, PageLayout, PartDivider, NavSection, ConnectionsMap } from "@/src/components";
+import { SiteHeader, SiteFooter, ModelHero, ModelPurpose, ExpandableSection, PageLayout, PartDivider, NavSection, ConnectionsMap, DeepEngineChronicMatrix } from "@/src/components";
 
 const M4SystemsDiagram = dynamic(() => import("@/src/components/M4SystemsDiagram"), { ssr: false });
 const M4AwarenessDiagram = dynamic(() => import("@/src/components/M4AwarenessDiagram"), { ssr: false });
@@ -94,6 +94,7 @@ export default function M4AwarenessCapacitiesPage() { return (<div style={{ minH
 <div style={expandableRowStyle}><ExpandableSection title="Established Research" type="opendata"><p style={expandedProseStyle}>Craig (2002) — interoceptive awareness as substrate of self-awareness. Damasio (1999) — self-referential emotional processing. Lane & Schwartz (1987) — levels of emotional awareness. Schore (2003) — right-hemisphere self-regulatory development.</p></ExpandableSection><ExpandableSection title="What TEG-Blue Adds" type="opendata"><p style={expandedProseStyle}>SEA as the bridge between the two systems. The family lineage: substrate as parent, ER and SEA as two applications. The SEA → ER developmental direction.</p></ExpandableSection></div></section>
 
 <M4AwarenessDiagram />
+<DeepEngineChronicMatrix variant="m4Access" color={MODEL_COLOR} />
 
 <section id="what-sea-determines" aria-labelledby="heading-wsd" style={{ marginBottom: 48 }}><h2 id="heading-wsd" style={sectionHeadingStyle(MODEL_COLOR)}>What Self-Awareness Determines</h2>
 <p style={proseStyle}>SEA is the only capacity that connects the two systems. This connection — or its absence — determines five things:</p>

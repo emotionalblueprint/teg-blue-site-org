@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { BG, TEXT, FONT, SPECTRUM, PATTERN, MODEL_COLORS, hexToRgba } from "@/src/styles/tokens";
 import {
   SiteHeader, SiteFooter, ModelHero, ModelPurpose, ExpandableSection,
-  PageLayout, PartDivider, NavSection, ConnectionsMap,
+  PageLayout, PartDivider, NavSection, ConnectionsMap, DeepEngineChronicMatrix,
 } from "@/src/components";
 import {
   proseStyle, expandedProseStyle, propositionItemStyle,
@@ -55,7 +55,7 @@ export const metadata = {
     "safety threat orientation",
     "Connection",
     "Protection",
-    "Strategic Management",
+    "Control / Management",
     "Domination",
     "state flexibility",
     "state determines capacity",
@@ -136,7 +136,7 @@ export default function M2NervousSystemStatesPage() {
             <ul style={{ paddingLeft: 20, margin: 0 }}>
               <li style={propositionItemStyle}>When the nervous system generates an emotional signal (M1: Emotions as Signals), it does not simply detect and move on. It reorganizes into a different physiological configuration — a state that determines what becomes available in perception, cognition, and relational capacity.</li>
               <li style={propositionItemStyle}>Two biological branches produce two primary states: parasympathetic regulation supports Connection; sympathetic activation supports Protection. Both are automatic, rapid, and organised by the emotional-somatic system.</li>
-              <li style={propositionItemStyle}>When threat is prolonged and body-level defence does not resolve it, the cognitive-logical system is recruited into the threat response — slower, not automatic. This produces two further states: Strategic Management and Domination.</li>
+              <li style={propositionItemStyle}>When threat is prolonged and body-level defence does not resolve it, the cognitive-logical system is recruited into the threat response — slower, not automatic. This produces two further states: Control / Management and Domination.</li>
               <li style={propositionItemStyle}>State determines capacity. What a person can perceive, think, feel, learn, and tolerate depends on their current state position — resource allocation, not choice.</li>
               <li style={propositionItemStyle}>The state shapes what sensory information reaches the person before deliberate thought is formed. The filter is calibrated by Somatic Contextual Memory (M1) — the body{"'"}s accumulated learning, not cognitive assessment.</li>
               <li style={propositionItemStyle}>All four states — including Connection — are temporary activations designed to restore Physiological Baseline. No state is the destination.</li>
@@ -203,7 +203,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>Connection and Protection are automatic. The emotional-somatic system sets the state before conscious processing arrives — milliseconds, not deliberation. These are the two primary biological states.</p>
             <p style={proseStyle}>When threat becomes <strong style={{ color: TEXT.primary }}>prolonged</strong> and body-level defence alone does not resolve it, a qualitative shift occurs. The cognitive-logical system is recruited into the threat response — not for open reflection or exploration, but in service of survival. This recruitment is slower and not automatic. It represents a different kind of activation: cognition solving survival problems the body alone could not.</p>
 
-            <h3 style={{ ...conceptHeadingStyle, color: '#346AEC' }}>Strategic Management</h3>
+            <h3 style={{ ...conceptHeadingStyle, color: '#346AEC' }}>Control / Management</h3>
             <p style={proseStyle}>A continued threat state in which cognitive resources are recruited into defensive organization. The system shifts from immediate survival response to strategic anticipation, control, and management. Cognition is not being used for open exploration — it is organizing around threat. The future is a threat landscape to be mapped, not an open space to inhabit. This state can appear highly functional from the outside. The person may seem composed, capable, and organized. But the underlying system is still operating under threat conditions.</p>
 
             <h3 style={{ ...conceptHeadingStyle, color: '#2563eb' }}>Domination</h3>
@@ -275,14 +275,14 @@ export default function M2NervousSystemStatesPage() {
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Physiological Baseline</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Connection</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Protection</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Strategy & Mgmt</div>
+                <div style={gridHeaderStyle(MODEL_COLOR)}>Control / Management</div>
                 <div style={gridHeaderStyle(MODEL_COLOR)}>Domination</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Perception</div>
                 <div style={gridCellStyle}>Open — available but not directed</div>
                 <div style={gridCellStyle}>Broad — sees the full field</div>
                 <div style={gridCellStyle}>Narrowed — threat-relevant signals</div>
-                <div style={gridCellStyle}>Strategic — what needs managing</div>
+                <div style={gridCellStyle}>Control — what needs managing</div>
                 <div style={gridCellStyle}>Tunnel — obstacles and resources</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Empathy</div>
@@ -296,7 +296,7 @@ export default function M2NervousSystemStatesPage() {
                 <div style={gridCellStyle}>Resting — capable, not mobilised</div>
                 <div style={gridCellStyle}>Flexible — holds complexity</div>
                 <div style={gridCellStyle}>Simplified — binary, speed over accuracy</div>
-                <div style={gridCellStyle}>Strategic — narrowed to threat</div>
+                <div style={gridCellStyle}>Control — narrowed to threat</div>
                 <div style={gridCellStyle}>Locked — rigid, self-confirming</div>
 
                 <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Learning</div>
@@ -358,7 +358,7 @@ export default function M2NervousSystemStatesPage() {
                 <div style={gridCellStyle}>Channels narrow toward threat detection. Pupils dilate. Peripheral vision sharpens. Ears tune to sudden sounds. Gut tightens.</div>
                 <div style={gridCellStyle}>The world looks dangerous.</div>
 
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategic Management</div>
+                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Control / Management</div>
                 <div style={gridCellStyle}>Narrowing becomes strategic. Eyes scanning for power, concealment. Ears reading what people are really after. Gut suppressed.</div>
                 <div style={gridCellStyle}>The world looks like a system to be managed.</div>
 
@@ -446,34 +446,14 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>A state becomes chronic when the nervous system does not return to physiological baseline — when stress hormones remain elevated, muscles stay braced, the HPA axis does not stand down, and the restoration sequence does not run to its endpoint. The mechanism is the same for every state: baseline is not restored, and the temporary activation becomes the system{"'"}s default organization.</p>
             <p style={proseStyle}>When this happens, perception, behaviour, and relational patterns begin to organise around the chronic state. What began as a state-dependent physiological configuration becomes indistinguishable, from the inside, from who the person is.</p>
 
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", minWidth: 400 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What It Looks Like</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.muted, fontStyle: "italic" }}>Physiological Baseline</div>
-                <div style={{ ...gridCellStyle, color: TEXT.muted, fontStyle: "italic" }}>Not reachable. The nervous system no longer returns to rest. The temporary state has replaced physiological baseline as the system{"'"}s default organization.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
-                <div style={gridCellStyle}>Continual emotional absorption — resonating, engaging, taking in others{"'"} states without the nervous system ever returning to rest. Permanently available to others, permanently unavailable to self.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>The world as persistently unsafe — hypervigilance, constricted perception, relational withdrawal as a continuous condition rather than a temporary response.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategic Management</div>
-                <div style={gridCellStyle}>Highly functional appearance while remaining organized around vigilance, control, and defensive anticipation — cognition permanently recruited into threat service.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
-                <div style={gridCellStyle}>Increasingly structured around override, suppression of mutuality, and reduced access to guilt or relational impact — empathic constraint that should be temporary becomes a persistent absence.</div>
-              </div>
-            </div>
+            <DeepEngineChronicMatrix variant="m2States" color={MODEL_COLOR} />
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Established Research" type="opendata">
                 <p style={expandedProseStyle}>van der Kolk (2014) — nervous systems calibrated to chronic threat; the body keeping score. Levine (1997) — activation that does not complete stays in the body. Schore (2003) — early relational conditions shaping regulatory capacity. McEwen (2000) — allostatic load as the cost of chronic adaptation.</p>
               </ExpandableSection>
               <ExpandableSection title="What TEG-Blue Adds" type="opendata">
-                <p style={expandedProseStyle}>TEG-Blue maps chronic states as stuck nervous system organizations across all four states equally — including Connection, which becomes another form of chronic activation when the nervous system stops returning to physiological baseline.</p>
+                <p style={expandedProseStyle}>TEG-Blue maps chronic states as stuck nervous system organizations across the seven nervous-system positions — including baseline, connection, transition, and shutdown, not only the high-threat positions.</p>
               </ExpandableSection>
             </div>
           </section>
@@ -484,29 +464,7 @@ export default function M2NervousSystemStatesPage() {
             <p style={proseStyle}>When a state becomes chronic, the perceptual filter associated with that state may also become chronic. At that point, the person is no longer only reacting to present conditions. They are perceiving new situations through a filter calibrated by past activation.</p>
             <p style={proseStyle}>Because the filtering occurs upstream of deliberate reasoning, cognition may simply build a coherent explanation around already-biased input. The person does not experience themselves as distorting reality. They experience themselves as perceiving it directly.</p>
 
-            <div style={{ overflowX: "auto", marginBottom: 20 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 2fr", minWidth: 500 }}>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>Chronic State</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What the Locked Filter Finds</div>
-                <div style={gridHeaderStyle(MODEL_COLOR)}>What the Person Experiences</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Connection</div>
-                <div style={gridCellStyle}>Everyone{"'"}s emotions at full volume, own signal absent</div>
-                <div style={gridCellStyle}>The world is other people{"'"}s states. Own needs invisible.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Protection</div>
-                <div style={gridCellStyle}>Threat signals everywhere, safety signals filtered out</div>
-                <div style={gridCellStyle}>The world is dangerous. Trust is impossible.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Strategic Management</div>
-                <div style={gridCellStyle}>Everyone appears to have an agenda</div>
-                <div style={gridCellStyle}>The world is a system of competing interests.</div>
-
-                <div style={{ ...gridCellStyle, fontWeight: 600, color: TEXT.primary }}>Domination</div>
-                <div style={gridCellStyle}>Everyone appears to be trying to cheat, undermine, or challenge</div>
-                <div style={gridCellStyle}>The world is full of enemies.</div>
-              </div>
-            </div>
+            <DeepEngineChronicMatrix variant="m2Perception" color={MODEL_COLOR} />
 
             <div style={expandableRowStyle}>
               <ExpandableSection title="Established Research" type="opendata">
@@ -596,7 +554,7 @@ export default function M2NervousSystemStatesPage() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(
         generateFAQJsonLd([
-          { question: "What are the four nervous system states in TEG-Blue?", answer: "TEG-Blue describes four states on a continuous gradient: Connection (parasympathetic-dominant, broad perception, full empathy), Protection (sympathetic activation, narrowed attention, simplified cognition), Strategic Management (cognition recruited into threat service), and Domination (maximal override, empathic constraint suppressed). The first two are led by the emotional-somatic system; the latter two recruit the cognitive-logical system into survival organization." },
+          { question: "What are the four nervous system states in TEG-Blue?", answer: "TEG-Blue describes four states on a continuous gradient: Connection (parasympathetic-dominant, broad perception, full empathy), Protection (sympathetic activation, narrowed attention, simplified cognition), Control / Management (cognition recruited into threat service), and Domination (maximal override, empathic constraint suppressed). The first two are led by the emotional-somatic system; the latter two recruit the cognitive-logical system into survival organization." },
           { question: "What is State Flexibility?", answer: "State Flexibility is the nervous system's capacity to shift state in response to changing conditions and return toward physiological baseline. It is the key measure in M2. A system locked in any state — including Connection — has lost State Flexibility." },
           { question: "Can Connection become chronic?", answer: "Yes. Connection is a temporary parasympathetic activation, not a permanent resting place. A person who remains perpetually in this state — absorbing, engaging, resonating without returning to physiological rest — is as chronically activated as someone stuck in a threat state." },
         ])

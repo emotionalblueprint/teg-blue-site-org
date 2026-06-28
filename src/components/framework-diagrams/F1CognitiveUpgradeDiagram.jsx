@@ -16,7 +16,7 @@ const MODES = [
     fluid: "The system mobilizes. Attention narrows, emotions amplify. Fight or flight.",
   },
   {
-    key: "C", name: "Control", conditionShort: "Strategic Management", center: 0.625,
+    key: "C", name: "Control / Management", conditionShort: "Control / Management", center: 0.625,
     type: "After awareness",
     fluid: "Cognition recruited deliberately. Structure, strategy, released when done.",
   },

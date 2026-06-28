@@ -31,7 +31,7 @@ const RESTORATIONS = [
     barWidth: 75,
   },
   {
-    mode: 'Strategic Management',
+    mode: 'Control / Management',
     color: PATTERN.C.primary,
     type: 'Releasing the override',
     subtitle: 'Putting down the cognitive management',

@@ -13,7 +13,7 @@ const ORANGE = ACCENT.orange;    // override / debris / accumulation
 const STATES = [
   { name: 'CONNECTION',     mode: 'Connection',  hex: '#93CFFF', pos: 0.125 },
   { name: 'PROTECTION',      mode: 'Protection',  hex: '#5BADFF', pos: 0.375 },
-  { name: 'STRATEGIC MANAGEMENT', mode: 'Control',     hex: '#346AEC', pos: 0.625 },
+  { name: 'CONTROL / MANAGEMENT', mode: 'Control / Management',     hex: '#346AEC', pos: 0.625 },
   { name: 'DOMINATION',     mode: 'Domination',  hex: '#2563eb', pos: 0.875 },
 ];
 

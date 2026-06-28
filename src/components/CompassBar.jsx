@@ -6,7 +6,7 @@ import { FONT, TEXT, BORDER, RADIUS, TYPE_SCALE, hexToRgba } from '@/src/styles/
 const MODES = [
   { name: 'Connection',  hex: '#93CFFF', center: 0.125, signal: 'Safety',     conditionShort: 'CONNECTION' },
   { name: 'Protection',  hex: '#5BADFF', center: 0.375, signal: 'Threat',     conditionShort: 'PROTECTION' },
-  { name: 'Control',     hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'STRATEGIC MANAGEMENT' },
+  { name: 'Control / Management', hex: '#346AEC', center: 0.625, signal: 'Danger',     conditionShort: 'CONTROL / MANAGEMENT' },
   { name: 'Domination',  hex: '#2563eb', center: 0.875, signal: 'Life peril', conditionShort: 'DOMINATION' },
 ]
 
@@ -216,8 +216,8 @@ export default function CompassBar({ showSpecs = true }) {
         {[
           ['Bar', '14px height, rounded-full, 4-color gradient'],
           ['Needle', '28px circle, white, 3px colored border, glow'],
-          ['States', 'Connection · Protection · Strategic Management · Domination'],
-          ['Modes', 'Connection #93CFFF · Protection #5BADFF · Control #346AEC · Domination #2563eb'],
+          ['States', 'Connection · Protection · Control / Management · Domination'],
+          ['Modes', 'Connection #93CFFF · Protection #5BADFF · Control / Management #346AEC · Domination #2563eb'],
           ['Fluid', 'Temporary activation — returnable'],
           ['Stuck', 'Chronic — fixed position, lost mobility'],
           ['Snap', '4% magnet radius at each mode center (12.5%, 37.5%, 62.5%, 87.5%)'],
