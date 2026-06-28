@@ -412,6 +412,46 @@ export function generateScientificFoundationsJsonLd() {
   };
 }
 
+// ─── METHODOLOGY PAGE JSON-LD ───────────────────────
+
+export function generateMethodologyJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Methodology - TEG-Blue",
+    url: `${BASE_URL}/methodology`,
+    description: "How TEG-Blue separates source literature, established models, original synthesis, applied tools, evidence, and open research questions.",
+    inLanguage: LANGUAGE,
+    isPartOf: TEG_BLUE_PROJECT,
+    about: {
+      "@type": "ItemList",
+      name: "TEG-Blue Method Claim Layers",
+      description: "The methodological layers that prevent source grounding, synthesis, tools, and validation claims from collapsing into one another.",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Source literature", description: "Peer-reviewed research and established scholarship used for specific mechanisms or findings." },
+        { "@type": "ListItem", position: 2, name: "Established models and tools", description: "Clinical, educational, communication, and emotional-literacy models credited for the lens they contribute." },
+        { "@type": "ListItem", position: 3, name: "TEG-Blue synthesis", description: "The Nervous System Gradient, diagrams, labels, and cross-disciplinary placement as original visual synthesis." },
+        { "@type": "ListItem", position: 4, name: "Applied tool surfaces", description: "Gradient scales, behaviour maps, schemas, and practical tools generated from Gradient logic." },
+        { "@type": "ListItem", position: 5, name: "Empirical evidence", description: "Preliminary analyses, psychometric testing, replication, user studies, and validation work." },
+        { "@type": "ListItem", position: 6, name: "Open claims", description: "Research questions that require independent reliability, validity, replication, or outcome testing." }
+      ]
+    },
+    keywords: [
+      "TEG-Blue methodology",
+      "source separation",
+      "source traces",
+      "original synthesis",
+      "Nervous System Gradient",
+      "research grounding",
+      "inter-rater reliability",
+      "validity testing",
+      "replication",
+      "psychometric testing",
+      "open research questions"
+    ]
+  };
+}
+
 // ─── THEORETICAL FOUNDATIONS PAGE JSON-LD ────────────
 
 export function generateTheoreticalFoundationsJsonLd() {

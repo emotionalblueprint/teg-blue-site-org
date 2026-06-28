@@ -75,7 +75,7 @@ const GRADIENT_PRINCIPLES = [
   {
     label: "Principle 2",
     title: "The read branches into two survival problems",
-    body: "When enough safety is read, the problem is preserving connection. When threat is read, the problem becomes protecting the organism.",
+    body: "When enough safety is read, the survival problem is connection-preservation. When threat is read, the survival problem becomes organism-protection.",
     detail: "Connection-preservation is treated as a social-engagement capacity. Organism-protection moves through mobilisation first, with collapse as a fallback when mobilisation cannot resolve threat.",
     color: SPECTRUM.blue,
   },

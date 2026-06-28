@@ -595,7 +595,7 @@ const gradientEvidencePrinciples = [
     principle: "Two survival problems",
     sourceAreas: "Attachment theory, social engagement, evolutionary psychology, motivational science, trauma studies",
     tegBlueUse: "Separates connection-preservation under safety from organism-protection under threat.",
-    openQuestion: "How do mixed states appear when connection and protection are both active, such as in disorganized attachment?",
+    openQuestion: "How consistently do chronic-state patterns show connection-preservation and organism-protection active or unresolved at the same time, as in disorganized attachment and Complex PTSD?",
     color: SPECTRUM.blue,
   },
   {

@@ -120,7 +120,7 @@ The Nervous System Gradient is based on four public source principles:
    The nervous system keeps reading the body, environment, and relational field below deliberate awareness, asking whether it can stay open or must protect.
 
 2. Two survival problems.
-   When enough safety is read, the problem is preserving connection. When threat is read, the problem becomes protecting the organism.
+   When enough safety is read, the survival problem is connection-preservation. When threat is read, the survival problem becomes organism-protection.
 
 3. Graded perception scale.
    The seven positions describe what the body is perceiving: X - Safety; A - Safety and Connection; A<->B - Ambivalent Safety; B - Threat; C - Increased Threat; D - Life Peril; Z - Overwhelm.
@@ -241,6 +241,23 @@ Source-science areas include neuroscience, stress physiology, attachment theory,
 Applied or comparative models include Plutchik's Wheel of Emotions, Nonviolent Communication (NVC), Cognitive Behavioral Therapy (CBT), Polyvagal Theory, Zones of Regulation, Internal Family Systems, Ego Development Theory, Cognitive Dissonance Theory, Defense Mechanisms, and Disorganized Attachment / Complex PTSD models.
 
 Safe description: "TEG-Blue credits what each model contributes and uses the Nervous System Gradient to show how those contributions relate across state, capacity, trauma, power, relational impact, and repair. This is an original synthesis, not a claim that the entire TEG-Blue framework has been independently validated as a whole."
+
+## Methodology Page
+
+The /methodology page explains source separation and claim status.
+
+It separates six layers:
+
+1. Source literature.
+2. Established models and tools.
+3. TEG-Blue synthesis.
+4. Applied tool surfaces.
+5. Empirical evidence.
+6. Open claims.
+
+Safe description: "TEG-Blue methodology keeps source science, established models, original synthesis, applied tools, preliminary evidence, and open research questions in separate layers. Source science grounds ingredients. TEG-Blue controls placement through the Nervous System Gradient. Testing evaluates specific claims."
+
+Do not treat tool coherence as validation of the whole framework. Do not describe state labels as fixed personality labels. Do not describe TEG-Blue as a diagnostic system.
 
 ## Publications and Working Questions
 
