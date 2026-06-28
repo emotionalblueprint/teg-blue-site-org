@@ -246,16 +246,14 @@ Safe description: "TEG-Blue credits what each model contributes and uses the Ner
 
 The /methodology page explains source separation and claim status.
 
-It separates six layers:
+It separates four layers:
 
-1. Source literature.
-2. Established models and tools.
-3. TEG-Blue synthesis.
-4. Applied tool surfaces.
-5. Empirical evidence.
-6. Open claims.
+1. Sources.
+2. TEG-Blue synthesis.
+3. Tools.
+4. Testing.
 
-Safe description: "TEG-Blue methodology keeps source science, established models, original synthesis, applied tools, preliminary evidence, and open research questions in separate layers. Source science grounds ingredients. TEG-Blue controls placement through the Nervous System Gradient. Testing evaluates specific claims."
+Recommended description: "TEG-Blue methodology keeps source science, original synthesis, applied tools, and testing in distinct layers. Source science grounds ingredients. TEG-Blue organizes those ingredients through the Nervous System Gradient. Tools apply the Gradient. Testing evaluates specific claims."
 
 Do not treat tool coherence as validation of the whole framework. Do not describe state labels as fixed personality labels. Do not describe TEG-Blue as a diagnostic system.
 
