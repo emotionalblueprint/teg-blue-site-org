@@ -371,7 +371,7 @@ export function generateScientificFoundationsJsonLd() {
     about: {
       "@type": "ItemList",
       name: "Scientific and Applied Models Organized by TEG-Blue",
-      description: "Widely used models and source areas, their strengths, and where the Nervous System Gradient extends them as synthesis.",
+      description: "Widely used models and source areas, their contributions, and how the Nervous System Gradient places them in relation.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Plutchik's Wheel of Emotions", description: "Emotion taxonomy and emotional vocabulary" },
         { "@type": "ListItem", position: 2, name: "Nonviolent Communication (NVC)", description: "Empathy-based communication method" },

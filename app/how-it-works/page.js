@@ -1,66 +1,142 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, AuthorBlock, ExpandableSection, TEGBlueEnginePanel } from "@/src/components";
+import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, ReviewStatusPanel, TEGBlueEnginePanel } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Data System", href: "#the-data-system", description: "Five layers from established science to published tools. How each layer feeds the next." },
-  { label: "TEG-Blue Engine", href: "#teg-blue-engine", description: "How the Nervous System Gradient becomes scales, behaviour maps, and practical tools." },
-  { label: "Established Science", href: "#established-science", description: "145+ scholarly and peer-reviewed source contributions from 41 research traditions in neuroscience, psychology, attachment, and trauma research." },
-  { label: "Concept Architectures", href: "#concept-architectures", description: "How 12 frameworks and 4 models connect established theories into testable structures." },
-  { label: "Root Data", href: "#root-data", description: "Five files organized by biological function. The operational consolidation layer." },
-  { label: "From Root to Output", href: "#from-root-to-output", description: "How root data becomes JavaScript libraries, interactive tools, diagrams, and research pages." },
-  { label: "Traceability", href: "#traceability", description: "Every claim traces to its source. Provenance as architectural constraint." },
-  { label: "Design Principles", href: "#design-principles", description: "Five constraints governing the data system." },
+  { label: "Operating Model", href: "#operating-model", description: "Gradient, Engine, tools, and research questions." },
+  { label: "Gradient", href: "#gradient", description: "The seven-state map of state-dependent capacity." },
+  { label: "TEG-Blue Engine", href: "#teg-blue-engine", description: "How the Gradient becomes applied tools." },
+  { label: "Tool Surfaces", href: "#tool-surfaces", description: "Scales, behaviour maps, emotional tools, and applied views." },
+  { label: "Example", href: "#worked-example", description: "How one dimension becomes a tool surface." },
+  { label: "Source and Testing", href: "#source-testing", description: "How source grounding and research questions fit." },
+  { label: "Domain Split", href: "#domain-split", description: ".org explains, .com applies." },
 ];
 
 const FAQ_ITEMS = [
   {
-    question: "How is TEG-Blue data organized?",
-    answer: "TEG-Blue organizes data by biological function across five root data files: Emotions as Signals (what fires), Awareness Capacities (what receives), Mode Positions (what state enters), Biological Restoration (whether the cycle completes), and a Master Table that compresses all four layers into two tables plus nine structural rules.",
-  },
-  {
-    question: "What are Concept Architectures?",
-    answer: "Each of the 12 frameworks (F1-F12) and 4 models (M1-M4) has a Concept Architecture — a formal working document that maps which established theories it draws from, the cross-disciplinary connections it proposes, the mechanisms it describes, and the working questions it generates. These are the intellectual origin of downstream data.",
-  },
-  {
-    question: "How does root data reach the public sites?",
-    answer: "Root data exports to JavaScript data libraries that feed practical tools on teg-blue.com. On teg-blue.org, root data is used for framework pages, model pages, glossary materials, and source-trace review when those routes are live.",
+    question: "How does TEG-Blue work?",
+    answer: "TEG-Blue starts with the Nervous System Gradient, a seven-state map of state-dependent capacity. The TEG-Blue Engine applies that map to one dimension at a time, such as empathy, accountability, behaviour, repair, or emotional signals. Tools make the resulting pattern visible.",
   },
   {
     question: "What is the TEG-Blue Engine?",
-    answer: "The TEG-Blue Engine is the operational layer that turns the Nervous System Gradient into usable tools. It applies the same state logic to dimensions such as empathy, accountability, emotional signals, behaviour, repair, and relational impact. The tools do not prove the framework; they demonstrate applied coherence and create surfaces for testing.",
+    answer: "The TEG-Blue Engine is the operational logic that translates the Nervous System Gradient into usable instruments. It asks how a specific dimension changes across nervous-system states.",
   },
   {
-    question: "How does TEG-Blue trace claims to their source?",
-    answer: "Every claim follows a three-layer provenance chain: Concept Architecture (intellectual origin) → root data file (operational consolidation by biological function) → published output (site page, tool, or diagram). Each root file section has a provenance table mapping it back to its originating CA.",
+    question: "How do tools fit the Gradient?",
+    answer: "Tools are applied surfaces generated from Gradient logic. They may appear as scales, maps, emotional tools, applied views, or practical schemas, but they keep the same underlying state logic.",
+  },
+  {
+    question: "Where do the public tools live?",
+    answer: "teg-blue.org explains the framework, source grounding, and method. teg-blue.com carries practical public tools and application surfaces.",
+  },
+];
+
+const OPERATING_MODEL = [
+  {
+    title: "Source grounding",
+    label: "Inputs",
+    body: "Established research areas contribute source concepts, mechanisms, and comparison lenses.",
+    color: SPECTRUM.sky,
+  },
+  {
+    title: "Nervous System Gradient",
+    label: "Map",
+    body: "Seven states organize how capacity changes with safety, threat, connection, protection, and overwhelm.",
+    color: SPECTRUM.azure,
+  },
+  {
+    title: "TEG-Blue Engine",
+    label: "Logic",
+    body: "The Engine applies the Gradient to a specific dimension and maps how that dimension changes by state.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    title: "Tool surfaces",
+    label: "Interface",
+    body: "Scales, maps, emotional tools, and applied views make the pattern visible and usable.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    title: "Research questions",
+    label: "Testing",
+    body: "Specific claims can be studied for reliability, usefulness, validity, and cross-context fit.",
+    color: SPECTRUM.slate,
+  },
+];
+
+const GRADIENT_STATES = [
+  "Baseline",
+  "Connection",
+  "Safety Checking",
+  "Protection",
+  "Strategic Management",
+  "Domination",
+  "Shutdown",
+];
+
+const TOOL_SURFACES = [
+  {
+    title: "Gradient scales",
+    body: "Show how a quality changes from availability through protection, control, overwhelm, or repair.",
+    color: SPECTRUM.azure,
+  },
+  {
+    title: "Behaviour maps",
+    body: "Place observable patterns in relation to state, capacity, body activation, and relational direction.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    title: "Emotional tools",
+    body: "Help name what an emotional signal is carrying and what kind of support or repair it points toward.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    title: "Applied views",
+    body: "Translate the same state logic into views for empathy, accountability, conflict, repair, or relational impact.",
+    color: SPECTRUM.slate,
+  },
+];
+
+const EXAMPLE_STEPS = [
+  {
+    title: "Choose one dimension",
+    body: "Example: empathy. The question is not whether empathy exists in general, but how access to empathy changes by state.",
+  },
+  {
+    title: "Apply the Gradient",
+    body: "Connection supports openness and perspective-taking. Threat narrows attention. Chronic protection may route empathy through management, appeasement, or control.",
+  },
+  {
+    title: "Create the surface",
+    body: "A tool can show how empathy, accountability, repair, and relational impact shift across the seven states.",
+  },
+  {
+    title: "Name the research question",
+    body: "Can the state-dependent shifts be identified reliably in language, behaviour, user reports, or applied settings?",
   },
 ];
 
 export const metadata = {
   title: "How TEG-Blue Works | TEG-Blue",
-  description: "The data system behind TEG-Blue: how source traces and Concept Architectures consolidate into root data files and distribute to framework pages, research-grounding materials, and practical tools.",
+  description: "How the Nervous System Gradient becomes the TEG-Blue Engine, practical tools, and research questions.",
   keywords: [
-    "TEG-Blue data system",
-    "concept architectures",
-    "root data files",
-    "data provenance",
-    "biological organization",
-    "emotional regulation data",
-    "cross-disciplinary integration",
-    "data pipeline",
-    "source traces",
-    "traceability",
     "TEG-Blue Engine",
-    "applied coherence",
+    "Nervous System Gradient",
+    "state-dependent capacity",
     "emotional tools",
+    "behaviour maps",
+    "gradient scales",
+    "research grounding",
+    "teg-blue.org",
+    "teg-blue.com",
   ],
   alternates: {
     canonical: "https://teg-blue.org/how-it-works",
   },
   openGraph: {
-    title: "How TEG-Blue Works — TEG-Blue",
-    description: "The data system: from source traces and Concept Architectures to root data, framework pages, research-grounding materials, and practical tools.",
+    title: "How TEG-Blue Works - TEG-Blue",
+    description: "The Gradient is the map. The Engine is the logic. Tools are the interfaces.",
     url: "https://teg-blue.org/how-it-works",
     siteName: "TEG-Blue",
     type: "article",
@@ -68,8 +144,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How TEG-Blue Works — TEG-Blue",
-    description: "The data system: established theories -> Concept Architectures -> root data -> published outputs. Every claim traceable.",
+    title: "How TEG-Blue Works - TEG-Blue",
+    description: "Gradient, Engine, tools, and research questions.",
   },
 };
 
@@ -87,511 +163,172 @@ export default function HowItWorksPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="SYSTEM ARCHITECTURE"
+            badge="HOW IT WORKS"
             title="How TEG-Blue Works"
-            description="The data system behind TEG-Blue. How established theories connect through frameworks, consolidate into root data organized by biological function, and distribute to research-grounding materials and practical tools."
+            subtitle="Gradient, Engine, tools"
+            description="TEG-Blue starts with the Nervous System Gradient. The Engine applies that Gradient to specific dimensions. Tools make the resulting patterns visible."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        <ReviewStatusPanel
+          title="The public operating model"
+          description="The Gradient is the map of state-dependent capacity. The Engine is the logic that applies the map. The tools are interfaces generated from that logic."
+        />
 
-        {/* ─── SECTION 1: THE DATA SYSTEM ──────────────────── */}
-        <section id="the-data-system" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>The data system</h2>
-          <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            TEG-Blue operates as a five-layer data pipeline. Each layer has a specific function and feeds the next.
+        <section id="operating-model" style={{ marginBottom: 44 }}>
+          <div style={labelStyle(SPECTRUM.azure)}>Operating model</div>
+          <h2 style={sectionHeadStyle}>One path from science to tools</h2>
+          <p style={{ ...bodyStyle, marginBottom: 18 }}>
+            The current public explanation is simple. Source areas ground ingredients. The Gradient
+            organizes state-dependent capacity. The Engine translates the Gradient into dimensions.
+            Tools turn those dimensions into usable surfaces.
           </p>
-
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-              marginBottom: 20,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 190px), 1fr))",
+              gap: 10,
             }}
           >
-            <PipelineLayer
-              number={1}
-              title="Established science"
-              description="145+ scholarly and peer-reviewed source contributions from 41 research traditions in neuroscience, psychology, attachment research, and trauma studies. Every source credited."
-              color={SPECTRUM.sky}
-              arrow
-            />
-            <PipelineLayer
-              number={2}
-              title="Concept Architectures"
-              description="12 framework CAs (F1–F12) and 4 model CAs (M1–M4). Each maps which theories connect, what mechanisms operate, and what working questions follow."
-              color={SPECTRUM.azure}
-              arrow
-            />
-            <PipelineLayer
-              number={3}
-              title="Root data files"
-              description="Five files organized by biological function — emotions, capacities, modes, restoration, and a master integration table. Each section traces to its originating CA."
-              color={SPECTRUM.cobalt}
-              arrow
-            />
-            <PipelineLayer
-              number={4}
-              title="Data libraries"
-              description="JavaScript exports that transform root data into structured objects consumed by interactive tools. Changes to root data propagate automatically through the libraries to every downstream tool."
-              color={SPECTRUM.indigo}
-              arrow
-            />
-            <PipelineLayer
-              number={5}
-              title="Published outputs"
-              description="20+ interactive tools on teg-blue.com. Framework pages, model pages, glossary, and diagrams on teg-blue.org."
-              color={SPECTRUM.slate}
-            />
-          </div>
-
-          <div
-            style={{
-              padding: "16px 20px",
-              background: hexToRgba(SPECTRUM.blue, 0.06),
-              borderRadius: RADIUS.md,
-              border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.15)}`,
-            }}
-          >
-            <p style={{ fontSize: 14, color: TEXT.primary, lineHeight: 1.8, margin: 0, fontWeight: 500 }}>
-              Every published claim traces backward through this chain. Every tool traces to a data library, which traces to a root file, which traces to a Concept Architecture, which credits its source theories.
-            </p>
+            {OPERATING_MODEL.map((item, index) => (
+              <SystemCard key={item.title} item={item} number={index + 1} />
+            ))}
           </div>
         </section>
 
-        <TEGBlueEnginePanel />
-
-        {/* ─── SECTION 2: ESTABLISHED SCIENCE ──────────────── */}
-        <section id="established-science" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>Established science</h2>
-          <p style={{ ...bodyStyle, marginBottom: 16 }}>
-            TEG-Blue synthesizes 145+ theoretical contributions across 41 research traditions that developed in separate disciplines, often without reference to each other. Every source theory is credited. The system does not replace these theories — it proposes specific connections between them.
+        <section id="gradient" style={{ marginBottom: 44 }}>
+          <div style={labelStyle(SPECTRUM.cobalt)}>The Gradient</div>
+          <h2 style={sectionHeadStyle}>The Gradient is the shared map</h2>
+          <p style={{ ...bodyStyle, marginBottom: 18 }}>
+            The Nervous System Gradient maps how state changes perception, emotion, body activation,
+            behaviour, self-awareness, empathy, accountability, and repair. The Engine and tools keep
+            returning to this same map.
           </p>
-
           <div
             style={{
-              background: BG.card,
-              borderRadius: RADIUS.md,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 130px), 1fr))",
+              gap: 8,
+            }}
+          >
+            {GRADIENT_STATES.map((state, index) => (
+              <StatePill key={state} state={state} index={index} />
+            ))}
+          </div>
+        </section>
+
+        <TEGBlueEnginePanel intro="The Gradient is the map. The Engine is the translation logic. The tools are the public interfaces." />
+
+        <section id="tool-surfaces" style={{ marginBottom: 44 }}>
+          <div style={labelStyle(SPECTRUM.indigo)}>Tool surfaces</div>
+          <h2 style={sectionHeadStyle}>Tools are different views of the same logic</h2>
+          <p style={{ ...bodyStyle, marginBottom: 18 }}>
+            A tool is not a separate theory. It is a surface that shows one part of the Gradient in a
+            practical form.
+          </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+              gap: 12,
+            }}
+          >
+            {TOOL_SURFACES.map((item) => (
+              <ToolSurfaceCard key={item.title} item={item} />
+            ))}
+          </div>
+        </section>
+
+        <section id="worked-example" style={{ marginBottom: 44 }}>
+          <div style={labelStyle(SPECTRUM.cobalt)}>Worked example</div>
+          <h2 style={sectionHeadStyle}>From one dimension to a tool</h2>
+          <p style={{ ...bodyStyle, marginBottom: 18 }}>
+            The Engine becomes concrete when it is applied to one dimension at a time.
+          </p>
+          <div
+            style={{
               border: `1px solid ${BORDER.default}`,
+              borderRadius: RADIUS.lg,
               overflow: "hidden",
-              marginBottom: 16,
             }}
           >
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ background: BG.surface }}>
-                  <th style={tableHeaderStyle}>Discipline</th>
-                  <th style={tableHeaderStyle}>What it contributes</th>
-                  <th style={tableHeaderStyle}>Example theories</th>
-                </tr>
-              </thead>
-              <tbody>
-                <SourceRow
-                  discipline="Neuroscience"
-                  contributes="Nervous system signaling, autonomic regulation, neuroanatomical substrates"
-                  examples="Polyvagal Theory (Porges), interoception research, amygdala-PFC pathways"
-                />
-                <SourceRow
-                  discipline="Attachment research"
-                  contributes="Developmental patterns, co-regulation, relational safety"
-                  examples="Attachment Theory (Bowlby, Ainsworth), mentalization (Fonagy), developmental trauma"
-                />
-                <SourceRow
-                  discipline="Emotion science"
-                  contributes="Emotion as biological signal, appraisal mechanisms, regulation strategies"
-                  examples="Appraisal Theory (Lazarus), emotion regulation (Gross), affect theory (Tomkins)"
-                />
-                <SourceRow
-                  discipline="Psychology"
-                  contributes="Defense mechanisms, cognitive distortion, identity development"
-                  examples="Ego Development (Loevinger), cognitive dissonance (Festinger), moral development (Kohlberg)"
-                />
-                <SourceRow
-                  discipline="Sociology"
-                  contributes="Social stratification, bias formation, institutional dynamics"
-                  examples="Social Identity Theory (Tajfel), Moral Foundations (Haidt), systems theory"
-                  isLast
-                />
-              </tbody>
-            </table>
+            {EXAMPLE_STEPS.map((step, index) => (
+              <ExampleStep
+                key={step.title}
+                step={step}
+                number={index + 1}
+                isLast={index === EXAMPLE_STEPS.length - 1}
+              />
+            ))}
           </div>
-
-          <div style={labelStyle(SPECTRUM.azure)}>What TEG-Blue adds</div>
-          <p style={{ ...bodyStyle, marginTop: 8, marginBottom: 0 }}>
-            The originality is not in the individual theories — it is in the cross-disciplinary connections proposed between them. TEG-Blue connects nervous system regulation to moral perception, attachment patterns to social stratification, self-protection to domination as a continuous gradient, and linguistic complexity to regulatory capacity. These connections generate testable hypotheses that no single source discipline could produce alone.
-          </p>
         </section>
 
-        {/* ─── SECTION 3: CONCEPT ARCHITECTURES ────────────── */}
-        <section id="concept-architectures" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>Concept Architectures</h2>
-          <p style={{ ...bodyStyle, marginBottom: 16 }}>
-            Concept Architectures (CAs) are the intellectual origin layer. Each is a formal working document that maps how established theories connect within a specific scope.
+        <section id="source-testing" style={{ marginBottom: 44 }}>
+          <div style={labelStyle(SPECTRUM.slate)}>Source and testing</div>
+          <h2 style={sectionHeadStyle}>Source grounding stays connected to research questions</h2>
+          <p style={{ ...bodyStyle, marginBottom: 18 }}>
+            The source map shows where the ingredients come from. Methodology shows how claims are
+            separated. Tool surfaces give concrete places where future studies can test reliability,
+            usefulness, and fit.
           </p>
-
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={subsectionHeadStyle}>What each CA contains</h3>
-            <ul style={listStyle}>
-              <li style={{ marginBottom: 6 }}>The specific claims the framework or model makes</li>
-              <li style={{ marginBottom: 6 }}>Which established theories and researchers it draws from</li>
-              <li style={{ marginBottom: 6 }}>The cross-disciplinary connections it proposes</li>
-              <li style={{ marginBottom: 6 }}>The mechanisms it describes — inputs, processes, outputs</li>
-              <li>The working questions and testable propositions it generates</li>
-            </ul>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginBottom: 20 }}>
-            <CAGroupCard
-              title="12 Framework CAs (F1–F12)"
-              description="One per framework, organized in three arcs. Each maps the complete intellectual structure: what it explains, what research grounds it, and what questions it raises."
-              color={SPECTRUM.cobalt}
-              items={[
-                { label: "Individual arc (F1–F3)", detail: "How the nervous system evaluates safety, calibrates through development, compensates through cognition" },
-                { label: "Collective arc (F4–F7)", detail: "How individual patterns scale into rules, hierarchies, bias, and domination" },
-                { label: "Repair arc (F8–F12)", detail: "How capacities rebuild, neurodivergent variation, generational patterns, paradox, and the two information systems" },
-              ]}
-              href="/scientific-foundations"
-              linkText="See the research grounding →"
-            />
-            <CAGroupCard
-              title="4 Model CAs (M1–M4)"
-              description="One per model. Models describe how something works as a usable instrument. They draw from the framework CAs but serve a different, applied scope."
-              color={SPECTRUM.azure}
-              items={[
-                { label: "M1 — Emotions as Signals", detail: "What the system delivers: sixteen emotions mapped as biological signals" },
-                { label: "M2 — Nervous System States", detail: "What the system does: physiological reorganization, the modes, the observable compass" },
-                { label: "M3 — Regulation Capacities", detail: "What enables return: restoration, substitutes, escalation, what genuine return requires" },
-                { label: "M4 — Awareness Capacities", detail: "What can be perceived: Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA)" },
-              ]}
-              href="/scientific-foundations"
-              linkText="See the foundations →"
-            />
-          </div>
-
           <div
             style={{
-              padding: "12px 16px",
-              background: hexToRgba(SPECTRUM.slate, 0.08),
-              borderRadius: 6,
-              borderLeft: `3px solid ${SPECTRUM.slate}`,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+              gap: 12,
             }}
           >
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: TEXT.secondary }}>Status note:</strong> Concept Architectures are working documents — designed to be testable, correctable, and open to scholarly review. The theoretical mapping is a working hypothesis, not a finished academic work.
-            </p>
-          </div>
-        </section>
-
-        {/* ─── SECTION 4: ROOT DATA ────────────────────────── */}
-        <section id="root-data" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>Root data</h2>
-          <p style={{ ...bodyStyle, marginBottom: 8 }}>
-            The Concept Architectures feed into five root data files — the operational consolidation layer. Content from the CAs is extracted and reorganized by biological function rather than by framework or discipline. Each section in a root file has a provenance table mapping it back to its originating CA.
-          </p>
-          <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            This is where the biological architecture becomes visible. The root layer reveals four independent layers that map the nervous system&apos;s response cycle.
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 20 }}>
-            <RootFileCard
-              number={1}
-              title="Emotions as Signals"
-              role="The input — what fires the system"
-              details="Sixteen emotions (nine somatic, seven relational), each mapped across four modes in fluid and chronic states. How each emotion signals, what it requires to complete, and how it reroutes under different regulatory conditions."
-              color={SPECTRUM.sky}
-            />
-            <RootFileCard
-              number={2}
-              title="Awareness Capacities"
-              role="The receiver — determines if the signal lands"
-              details="Interpersonal Affect Perception (RE), Affective Resonance (ER), Interoceptive Self-Awareness (SEA). How the three capacities interact, what happens when each is absent or suppressed, and how they recover."
+            <LinkCard
+              title="Scientific Foundations"
+              body="Source areas, model bridges, and Gradient placement."
+              href="/scientific-foundations"
               color={SPECTRUM.azure}
             />
-            <RootFileCard
-              number={3}
-              title="Mode Positions"
-              role="The state — what configuration the system enters"
-              details="Four fluid and four chronic positions. Each mapped across multiple dimensions — how the system activates, perceives, behaves, and what repair looks like from each position."
+            <LinkCard
+              title="Methodology"
+              body="How sources, synthesis, tools, and testing stay distinct."
+              href="/methodology"
               color={SPECTRUM.cobalt}
             />
-            <RootFileCard
-              number={4}
-              title="Biological Restoration"
-              role="The return — whether the cycle completes"
-              details="What genuine return looks like from each mode. What substitutes step in when return fails. Why substitutes escalate. The mechanics of the regulation thread."
+            <LinkCard
+              title="Publications"
+              body="Working papers, studies, and research outputs."
+              href="/publications"
               color={SPECTRUM.indigo}
             />
-            <RootFileCard
-              number={5}
-              title="Master Table"
-              role="All four layers compressed into integration tables and structural rules"
-              details="The complete compass in tabular form — fluid and chronic states across all dimensions. Structural rules governing how consolidated data derives into published content. Every cell traceable to one of the four mechanism files."
-              color={SPECTRUM.slate}
-            />
           </div>
+        </section>
 
+        <section id="domain-split" style={{ marginBottom: 32 }}>
+          <div style={labelStyle(SPECTRUM.azure)}>Domain split</div>
+          <h2 style={sectionHeadStyle}>.org explains, .com applies</h2>
           <div
             style={{
-              padding: "16px 20px",
-              background: hexToRgba(SPECTRUM.cobalt, 0.06),
-              borderRadius: RADIUS.md,
-              border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
+              gap: 12,
             }}
           >
-            <div style={labelStyle(SPECTRUM.cobalt)}>The causal chain</div>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "8px 0 0" }}>
-              Emotion fires → Capacities determine if it lands → Mode configures the system state → Restoration completes or fails. When restoration fails, a regulation substitute steps in. This is the Regulation Thread — the mechanism that runs through all twelve frameworks.
-            </p>
-          </div>
-        </section>
-
-        {/* ─── SECTION 5: FROM ROOT TO OUTPUT ──────────────── */}
-        <section id="from-root-to-output" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>From root to output</h2>
-          <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            Root data distributes to two sites through different mechanisms. On teg-blue.com, root data is exported as JavaScript data libraries that feed practical tools. On teg-blue.org, root data is used to support framework pages, source traces, and research-grounding materials.
-          </p>
-
-          {/* .com export chain */}
-          <div style={{ marginBottom: 24 }}>
-            <h3 style={subsectionHeadStyle}>teg-blue.com — Data libraries to tools</h3>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: RADIUS.md,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-                marginBottom: 12,
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={tableHeaderStyle}>Data library</th>
-                    <th style={tableHeaderStyle}>Root source</th>
-                    <th style={tableHeaderStyle}>What it exports</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ExportRow
-                    library="Compass data library"
-                    source="Master Table + Mode Positions + Awareness Capacities"
-                    exports="Mode data across fluid and chronic states, capacity profiles, structural rules, emotion data"
-                  />
-                  <ExportRow
-                    library="Emotions data library"
-                    source="Emotions as Signals"
-                    exports="All sixteen emotions mapped across modes and states"
-                  />
-                  <ExportRow
-                    library="Tool query engine"
-                    source="All data libraries"
-                    exports="The query layer that all 20+ interactive tools consume — gradients, capacity views, mode summaries"
-                    isLast
-                  />
-                </tbody>
-              </table>
-            </div>
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6 }}>
-              Each of the 20+ interactive tools on teg-blue.com has its own data file that draws from these libraries. Changes to root data propagate through the libraries to every tool.
-            </p>
-          </div>
-
-          {/* .org distribution */}
-          <div style={{ marginBottom: 24 }}>
-            <h3 style={subsectionHeadStyle}>teg-blue.org — Root data to research pages</h3>
-            <div
-              style={{
-                background: BG.card,
-                borderRadius: RADIUS.md,
-                border: `1px solid ${BORDER.default}`,
-                overflow: "hidden",
-                marginBottom: 12,
-              }}
-            >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ background: BG.surface }}>
-                    <th style={tableHeaderStyle}>Page type</th>
-                    <th style={tableHeaderStyle}>Root files to verify against</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <VerifyRow
-                    pageType="Framework pages (F1–F12)"
-                    rootFiles="Mode Positions, Awareness Capacities, Biological Restoration, Emotions as Signals"
-                  />
-                  <VerifyRow
-                    pageType="Model pages (M1–M4)"
-                    rootFiles="M1 → Emotions as Signals; M2 → Mode Positions; M3 → Biological Restoration; M4 → Awareness Capacities"
-                  />
-                  <VerifyRow
-                    pageType="Compass diagram"
-                    rootFiles="All 5 root files — modes, emotions, curves, capacities, restoration, structural rules"
-                  />
-                  <VerifyRow
-                    pageType="Glossary (185 terms)"
-                    rootFiles="All root files (spot-checked for consistency)"
-                    isLast
-                  />
-                </tbody>
-              </table>
-            </div>
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.6 }}>
-              The .org site has no JavaScript imports from vault data. All content is inline in page files. Root data serves as a source-trace reference — content on the framework site should stay consistent with root data.
-            </p>
-          </div>
-
-          {/* Two-site comparison */}
-          <div
-            style={{
-              background: BG.card,
-              borderRadius: RADIUS.md,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
-            }}
-          >
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ background: BG.surface }}>
-                  <th style={tableHeaderStyle}>Aspect</th>
-                  <th style={tableHeaderStyle}>teg-blue.org</th>
-                  <th style={tableHeaderStyle}>teg-blue.com</th>
-                </tr>
-              </thead>
-              <tbody>
-                <ComparisonRow aspect="Purpose" orgValue="Framework and research grounding" comValue="Practical public tools and application" />
-                <ComparisonRow aspect="Audience" orgValue="Researchers, academics, practitioners" comValue="Anyone seeking clarity about patterns" />
-                <ComparisonRow aspect="How root data arrives" orgValue="Inline content verified against root" comValue="JS data libraries imported from root" />
-                <ComparisonRow aspect="Data source" orgValue="Same consolidated root data" comValue="Same consolidated root data" isLast />
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* ─── SECTION 6: TRACEABILITY ─────────────────────── */}
-        <section id="traceability" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>Traceability</h2>
-          <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            Provenance is an architectural constraint — every claim traces backward through the data system. Each root file section has a provenance table classifying its relationship to its originating CA.
-          </p>
-
-          <div style={{ marginBottom: 16 }}>
-            <div style={labelStyle(SPECTRUM.indigo)}>Provenance classifications</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 12 }}>
-              <ProvenanceLevel
-                code="FULL"
-                description="The CA contains the complete intellectual architecture. The root file consolidates it operationally."
-                color={SPECTRUM.azure}
-              />
-              <ProvenanceLevel
-                code="PARTIAL"
-                description="The CA covers the concept. The root file adds systematic detail or per-mode precision."
-                color={SPECTRUM.cobalt}
-              />
-              <ProvenanceLevel
-                code="ROOT-ONLY"
-                description="Operational detail that correctly lives at root level — systematic tables, neuroanatomical specificity, per-mode × per-emotion data matrices. Not a gap."
-                color={SPECTRUM.indigo}
-              />
-            </div>
-          </div>
-
-          <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            <strong style={{ color: TEXT.primary }}>The full traceability chain:</strong> a tool on teg-blue.com → its data file → the data library it imports → the root file section → the provenance table → the originating Concept Architecture → the established theories it credits. Any claim can be audited by following this chain.
-          </p>
-
-          <ExpandableSection title="Why provenance matters for integrative work" type="theory">
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              Integrative work — work that connects findings across disciplines — faces a specific challenge: the more connections a system proposes, the harder it becomes to verify any single one. Without structural traceability, integrative frameworks risk becoming unfalsifiable.
-            </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-              TEG-Blue addresses this by making provenance part of the architecture itself. Each cross-disciplinary connection is documented at its intellectual origin, consolidated with its biological context, and published with its traceability intact. A researcher who questions a specific connection can follow it backward to the exact document where it was first proposed, see the reasoning, and evaluate the evidence independently.
-            </p>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              This does not make the connections correct. It makes them auditable. That is the minimum requirement for a working integrative framework to be reviewed seriously.
-            </p>
-          </ExpandableSection>
-        </section>
-
-        {/* ─── SECTION 7: DESIGN PRINCIPLES ────────────────── */}
-        <section id="design-principles" style={{ marginBottom: 40 }}>
-          <h2 style={sectionHeadStyle}>Design principles</h2>
-          <p style={{ ...bodyStyle, marginBottom: 20 }}>
-            Five constraints govern the data system.
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <PrincipleCard
-              number={1}
-              title="Biological organization"
-              description="Data is organized by what the body does, not by academic discipline. Emotions, capacities, modes, and restoration each map to a step in the nervous system's response cycle."
+            <DomainCard
+              domain="teg-blue.org"
+              title="Framework and research grounding"
+              body="Explains the Gradient, source map, method, publications, and how the public framework is organized."
+              href="/foundations"
             />
-            <PrincipleCard
-              number={2}
-              title="Provenance as architecture"
-              description="Every root file section traces to its originating Concept Architecture. Every CA credits its source theories. Traceability is structural, not aspirational."
-            />
-            <PrincipleCard
-              number={3}
-              title="Separation of layers"
-              description="Intellectual origin (CAs), operational consolidation (root data), and published output (sites) are independently verifiable. Each layer can be audited without depending on the others."
-            />
-            <PrincipleCard
-              number={4}
-              title="Single data source"
-              description="Both sites draw from the same root data. Changes propagate through the export chain. Research pages and interactive tools always reflect the same underlying data."
-            />
-            <PrincipleCard
-              number={5}
-              title="Traceable by default"
-              description="Methods, data structures, and reasoning are documented where possible. The system is designed to be audited, tested, corrected, and replicated."
+            <DomainCard
+              domain="teg-blue.com"
+              title="Practical public tools"
+              body="Carries applied tools generated from the same Gradient and Engine logic."
+              href="https://teg-blue.com/emotional-tools"
+              external
             />
           </div>
         </section>
-
-        {/* ─── AUTHOR ──────────────────────────────────────── */}
-        <section style={{ marginBottom: 32 }}>
-          <AuthorBlock />
-        </section>
-
-        {/* ─── WHERE TO GO NEXT ────────────────────────────── */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ ...sectionHeadStyle, marginBottom: 16 }}>Where to go next</h2>
-          <div
-            style={{
-              background: BG.card,
-              borderRadius: RADIUS.md,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
-            }}
-          >
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ background: BG.surface }}>
-                  <th style={tableHeaderStyle}>If you want to…</th>
-                  <th style={tableHeaderStyle}>Go here</th>
-                </tr>
-              </thead>
-              <tbody>
-                <NavRow label="See what the system contains" href="/scientific-foundations" linkText="Scientific Foundations →" />
-                <NavRow label="Explore the research grounding" href="/scientific-foundations" linkText="Research Foundations →" />
-                <NavRow label="Understand the framework home" href="/about" linkText="About TEG-Blue →" />
-                <NavRow label="Review research methods" href="/methodology" linkText="Methodology →" />
-                <NavRow label="Read the evidence" href="/publications" linkText="Publications →" />
-                <NavRow label="Try the interactive tools" href="https://teg-blue.com/emotional-tools" linkText="teg-blue.com →" external />
-                <NavRow label="Collaborate or validate" href="mailto:research@teg-blue.org" linkText="Research contact →" external />
-              </tbody>
-            </table>
-          </div>
-        </section>
-
       </PageLayout>
 
       <SiteFooter />
 
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -625,305 +362,193 @@ export default function HowItWorksPage() {
   );
 }
 
-// ─── HELPER COMPONENTS ──────────────────────────────────
-
-function PipelineLayer({ number, title, description, color, arrow }) {
+function SystemCard({ item, number }) {
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-start",
-          gap: 12,
-          padding: 16,
-          background: gradientCardBg(color),
-          borderRadius: RADIUS.md,
-          border: `1px solid ${hexToRgba(color, 0.2)}`,
-          borderLeft: `3px solid ${color}`,
-        }}
-      >
+    <div
+      style={{
+        padding: 15,
+        minHeight: 178,
+        background: gradientCardBg(item.color, 0.06),
+        border: `1px solid ${hexToRgba(item.color, 0.16)}`,
+        borderTop: `3px solid ${item.color}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
         <span
           style={{
             width: 24,
             height: 24,
-            borderRadius: "50%",
-            background: hexToRgba(color, 0.15),
-            color: color,
-            fontFamily: FONT.mono,
-            fontSize: 12,
-            fontWeight: 700,
-            display: "flex",
+            borderRadius: 999,
+            display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
-            flexShrink: 0,
-            marginTop: 1,
-          }}
-        >
-          {number}
-        </span>
-        <div>
-          <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, margin: "0 0 4px" }}>
-            {title}
-          </h3>
-          <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-            {description}
-          </p>
-        </div>
-      </div>
-      {arrow && (
-        <div style={{ textAlign: "center", color: TEXT.micro, fontSize: 16, lineHeight: 1, padding: "2px 0" }}>
-          ↓
-        </div>
-      )}
-    </>
-  );
-}
-
-function RootFileCard({ number, title, role, details, color }) {
-  return (
-    <div
-      style={{
-        padding: 20,
-        background: gradientCardBg(color),
-        borderRadius: RADIUS.md,
-        border: `1px solid ${hexToRgba(color, 0.2)}`,
-        borderLeft: `3px solid ${color}`,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-        <span
-          style={{
-            width: 22,
-            height: 22,
-            borderRadius: "50%",
-            background: hexToRgba(color, 0.15),
-            color: color,
+            background: hexToRgba(item.color, 0.14),
+            color: item.color,
             fontFamily: FONT.mono,
             fontSize: 11,
             fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
           }}
         >
           {number}
         </span>
-        <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, margin: 0 }}>
-          {title}
-        </h3>
+        <div style={labelStyle(item.color)}>{item.label}</div>
       </div>
-      <p style={{ fontSize: 14, fontWeight: 500, color: color, marginBottom: 8, fontStyle: "italic" }}>
-        {role}
-      </p>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-        {details}
-      </p>
-    </div>
-  );
-}
-
-function CAGroupCard({ title, description, color, items, href, linkText }) {
-  return (
-    <div
-      style={{
-        padding: 20,
-        background: gradientCardBg(color),
-        borderRadius: RADIUS.md,
-        border: `1px solid ${hexToRgba(color, 0.2)}`,
-        borderTop: `3px solid ${color}`,
-      }}
-    >
-      <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-        {title}
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+        {item.title}
       </h3>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 12 }}>
-        {description}
-      </p>
-      <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 12 }}>
-        {items.map((item) => (
-          <div key={item.label}>
-            <p style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, margin: "0 0 2px" }}>
-              {item.href ? (
-                <Link href={item.href} style={{ color: SPECTRUM.blue, textDecoration: "none" }}>{item.label}</Link>
-              ) : item.label}
-            </p>
-            <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.5, margin: 0 }}>
-              {item.detail}
-            </p>
-          </div>
-        ))}
-      </div>
-      <Link href={href} style={{ fontSize: 13, color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-        {linkText}
-      </Link>
-    </div>
-  );
-}
-
-function ProvenanceLevel({ code, description, color }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-        gap: 12,
-        padding: 14,
-        background: BG.card,
-        borderRadius: RADIUS.md,
-        border: `1px solid ${BORDER.default}`,
-        borderLeft: `3px solid ${color}`,
-      }}
-    >
-      <span
-        style={{
-          fontFamily: FONT.mono,
-          fontSize: 10,
-          fontWeight: 700,
-          color: color,
-          letterSpacing: "0.04em",
-          padding: "3px 8px",
-          background: hexToRgba(color, 0.1),
-          borderRadius: 4,
-          flexShrink: 0,
-          marginTop: 2,
-        }}
-      >
-        {code}
-      </span>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-        {description}
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.62, margin: 0 }}>
+        {item.body}
       </p>
     </div>
   );
 }
 
-function PrincipleCard({ number, title, description }) {
+function StatePill({ state, index }) {
+  const colors = [
+    SPECTRUM.sky,
+    SPECTRUM.azure,
+    SPECTRUM.blue,
+    SPECTRUM.cobalt,
+    SPECTRUM.indigo,
+    SPECTRUM.lavender,
+    SPECTRUM.slate,
+  ];
+  const color = colors[index] || SPECTRUM.azure;
+
   return (
     <div
       style={{
+        minHeight: 58,
         display: "flex",
-        alignItems: "flex-start",
-        gap: 12,
-        padding: 16,
-        background: BG.card,
+        alignItems: "center",
+        padding: "10px 12px",
+        background: hexToRgba(color, 0.07),
+        border: `1px solid ${hexToRgba(color, 0.16)}`,
         borderRadius: RADIUS.md,
-        border: `1px solid ${BORDER.default}`,
+        color: TEXT.secondary,
+        fontSize: 13,
+        lineHeight: 1.35,
+      }}
+    >
+      {state}
+    </div>
+  );
+}
+
+function ToolSurfaceCard({ item }) {
+  return (
+    <div
+      style={{
+        padding: 17,
+        background: BG.card,
+        border: `1px solid ${hexToRgba(item.color, 0.16)}`,
+        borderLeft: `3px solid ${item.color}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+        {item.title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+        {item.body}
+      </p>
+    </div>
+  );
+}
+
+function ExampleStep({ step, number, isLast }) {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "42px minmax(0, 1fr)",
+        gap: 14,
+        padding: "15px 18px",
+        background: BG.card,
+        borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
       }}
     >
       <span
         style={{
-          width: 22,
-          height: 22,
-          borderRadius: "50%",
-          background: hexToRgba(SPECTRUM.blue, 0.12),
-          color: SPECTRUM.blue,
+          width: 28,
+          height: 28,
+          borderRadius: 999,
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: hexToRgba(SPECTRUM.cobalt, 0.14),
+          color: SPECTRUM.cobalt,
           fontFamily: FONT.mono,
           fontSize: 11,
           fontWeight: 700,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-          marginTop: 2,
         }}
       >
         {number}
       </span>
       <div>
-        <h3 style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, margin: "0 0 4px" }}>
-          {title}
+        <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 5px" }}>
+          {step.title}
         </h3>
-        <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>
-          {description}
+        <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+          {step.body}
         </p>
       </div>
     </div>
   );
 }
 
-function NavRow({ label, href, linkText, external }) {
+function LinkCard({ title, body, href, color }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "block",
+        padding: 17,
+        background: gradientCardBg(color, 0.055),
+        border: `1px solid ${hexToRgba(color, 0.16)}`,
+        borderRadius: RADIUS.md,
+        textDecoration: "none",
+      }}
+    >
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+        {title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 10px" }}>
+        {body}
+      </p>
+      <span style={{ fontSize: 12, fontFamily: FONT.mono, color }}>Open</span>
+    </Link>
+  );
+}
+
+function DomainCard({ domain, title, body, href, external }) {
   const LinkEl = external ? "a" : Link;
   const extraProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{label}</td>
-      <td style={tableCellStyle}>
-        <LinkEl href={href} {...extraProps} style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
-          {linkText}
-        </LinkEl>
-      </td>
-    </tr>
+    <LinkEl
+      href={href}
+      {...extraProps}
+      style={{
+        display: "block",
+        padding: 18,
+        background: BG.card,
+        border: `1px solid ${BORDER.default}`,
+        borderRadius: RADIUS.md,
+        textDecoration: "none",
+      }}
+    >
+      <div style={labelStyle(SPECTRUM.azure)}>{domain}</div>
+      <h3 style={{ fontSize: 16, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+        {title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+        {body}
+      </p>
+    </LinkEl>
   );
 }
-
-function SourceRow({ discipline, contributes, examples, isLast }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>{discipline}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{contributes}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.muted, fontSize: 13 }}>{examples}</td>
-    </tr>
-  );
-}
-
-function ExportRow({ library, source, exports: exp, isLast }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500, fontFamily: FONT.mono, fontSize: 12 }}>{library}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.secondary, fontSize: 13 }}>{source}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.muted, fontSize: 13 }}>{exp}</td>
-    </tr>
-  );
-}
-
-function VerifyRow({ pageType, rootFiles, isLast }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>{pageType}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.secondary, fontSize: 13 }}>{rootFiles}</td>
-    </tr>
-  );
-}
-
-function ComparisonRow({ aspect, orgValue, comValue, isLast }) {
-  return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td style={{ ...tableCellStyle, color: TEXT.primary, fontWeight: 500 }}>{aspect}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{orgValue}</td>
-      <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{comValue}</td>
-    </tr>
-  );
-}
-
-// ─── SHARED STYLES ──────────────────────────────────────
-
-const sectionHeadStyle = {
-  fontSize: 18,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 12,
-};
-
-const subsectionHeadStyle = {
-  fontSize: 14,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 8,
-};
-
-const bodyStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-};
-
-const listStyle = {
-  paddingLeft: 20,
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  margin: 0,
-};
 
 function labelStyle(color) {
   return {
@@ -931,24 +556,23 @@ function labelStyle(color) {
     fontWeight: 700,
     fontFamily: FONT.mono,
     textTransform: "uppercase",
-    letterSpacing: "0.1em",
-    color: color,
+    letterSpacing: 0,
+    color,
     marginBottom: 4,
   };
 }
 
-const tableHeaderStyle = {
-  padding: "12px 16px",
-  textAlign: "left",
-  fontSize: 11,
-  fontWeight: 600,
-  color: TEXT.muted,
-  textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  fontFamily: FONT.mono,
+const sectionHeadStyle = {
+  fontSize: 20,
+  fontWeight: 700,
+  color: TEXT.primary,
+  lineHeight: 1.25,
+  margin: "0 0 10px",
 };
 
-const tableCellStyle = {
-  padding: "12px 16px",
+const bodyStyle = {
   fontSize: 14,
+  color: TEXT.secondary,
+  lineHeight: 1.8,
+  margin: 0,
 };

@@ -89,7 +89,7 @@ Use this relationship when explaining the system:
 - The tools are interfaces generated from that logic: gradient scales, behaviour maps, emotional tools, and applied views.
 - Testing is the next layer: reliability, validity, replication, user studies, and independent review.
 
-The tools do not validate the whole framework. They demonstrate applied coherence: the same underlying Gradient logic can repeatedly generate usable tools that make emotional and relational patterns easier to see, name, compare, and test.
+Because the tools use the same Gradient logic, they demonstrate applied coherence: emotional and relational patterns can be made visible, named, compared, and studied through concrete tool surfaces.
 
 ## Domain Split
 
@@ -141,9 +141,9 @@ The Nervous System Gradient draws from established research areas:
 
 Established research is used as grounding and convergence, not as a claim that TEG-Blue invented the underlying science.
 
-The /scientific-foundations page also compares widely used models and tools, including Plutchik's Wheel of Emotions, Nonviolent Communication (NVC), Cognitive Behavioral Therapy (CBT), Polyvagal Theory, Zones of Regulation, narcissism research, Cognitive Dissonance Theory, trauma studies, and Disorganized Attachment / Complex PTSD models.
+The /scientific-foundations page maps widely used models and tools, including Plutchik's Wheel of Emotions, Nonviolent Communication (NVC), Cognitive Behavioral Therapy (CBT), Polyvagal Theory, Zones of Regulation, narcissism research, Cognitive Dissonance Theory, trauma studies, and Disorganized Attachment / Complex PTSD models.
 
-These comparison models should be described appreciatively: each contributes a useful lens. TEG-Blue does not replace them; it organizes their strengths through the Nervous System Gradient and identifies where state, trauma, power, relational impact, and repair need additional mapping.
+Each model contributes a useful lens. TEG-Blue uses the Nervous System Gradient to show how those lenses relate across state, capacity, trauma, power, relational impact, and repair.
 
 ## Methodology
 

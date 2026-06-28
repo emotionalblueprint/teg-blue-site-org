@@ -32,7 +32,7 @@ const EXPLORE_LINKS = [
   {
     label: "How it works",
     href: "/how-it-works",
-    description: "Reviewer architecture: Engine, root data, and traceability.",
+    description: "Gradient, Engine, public tools, and research questions.",
   },
   {
     label: "Citations",

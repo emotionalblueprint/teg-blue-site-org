@@ -8,15 +8,15 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateScientificFoundati
 const FAQ_ITEMS = [
   {
     question: "What established research does TEG-Blue integrate?",
-    answer: "TEG-Blue draws from established research traditions, clinical approaches, communication models, emotion taxonomies, trauma studies, attachment research, and educational regulation tools. Each source is connected to its architectural function — what mechanism, condition, or pattern it helps make visible — not used as symbolic authority. The contribution is the proposed integration, not the individual pieces.",
+    answer: "TEG-Blue draws from established research traditions, clinical approaches, communication models, emotion taxonomies, trauma studies, attachment research, and educational regulation tools. Each source is connected to the mechanism, condition, pattern, or repair pathway it helps make visible.",
   },
   {
     question: "How should the comparison models be read?",
-    answer: "The comparison models should be read appreciatively. Plutchik, NVC, CBT, Zones of Regulation, Polyvagal Theory, attachment models, trauma studies, narcissism research, and other traditions each contribute something important. TEG-Blue does not replace them; it organizes what they make visible inside the Nervous System Gradient.",
+    answer: "Plutchik, NVC, CBT, Zones of Regulation, Polyvagal Theory, attachment models, trauma studies, narcissism research, and other traditions each contribute a specific lens. TEG-Blue shows how those lenses sit inside the Nervous System Gradient.",
   },
   {
-    question: "Is TEG-Blue peer-reviewed?",
-    answer: "The source literature TEG-Blue draws from includes peer-reviewed research and established scholarly work. An initial computational study of 10,000+ conflict narratives is published with DOI 10.5281/zenodo.19472342. The broader visual synthesis and theoretical architecture are original framework work that invites independent testing, critique, and replication.",
+    question: "What is original in this synthesis?",
+    answer: "The source areas are established. TEG-Blue's original work is the Gradient placement: how mechanisms, states, relational patterns, tools, and research questions are organized together in one visual system.",
   },
 ];
 
@@ -107,7 +107,7 @@ const THEORIES = [
     frameworks: ["F3", "F6", "F7", "F11"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Cognitive dissonance theory proposes that humans experience psychological discomfort when they hold contradictory cognitions. This discomfort motivates them to reduce the inconsistency — often by changing beliefs, adding new cognitions, or minimizing the importance of the contradiction." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue reframes cognitive dissonance as a regulatory mechanism. F3 (False Coherence) proposes that dissonance reduction is not a cognitive error but a nervous system strategy. F11 (The Emotional Paradoxes) extends this by showing that the capacity to hold contradictions without collapsing is itself a marker of regulatory capacity." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue reframes cognitive dissonance as a regulatory mechanism. F3 (False Coherence) proposes that dissonance reduction is not a cognitive error but a nervous system strategy. F11 (The Emotional Paradoxes) places contradiction-holding as a marker of regulatory capacity." },
       { id: "key-sources", title: "Key Sources", content: "Festinger, L. (1957). A Theory of Cognitive Dissonance. Stanford University Press." },
     ],
   },
@@ -167,7 +167,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "M2"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Zones of Regulation groups states into accessible color categories so students and adults can name regulation states and select supports. Its strength is shared language and practical classroom use." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue extends the color-zone idea into a trauma-aware gradient. Instead of treating high activation as a behavior problem, it asks what the state is protecting, what capacity is available, and what kind of repair or support can actually work." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue places the color-zone idea inside a trauma-aware gradient. Instead of treating high activation as a behavior problem, it asks what the state is protecting, what capacity is available, and what kind of repair or support can actually work." },
       { id: "key-sources", title: "Key Sources", content: "Kuypers, L. M. (2011). The Zones of Regulation. Think Social Publishing." },
     ],
   },
@@ -287,7 +287,7 @@ const THEORIES = [
     frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "M3"],
     content: [
       { id: "core-concept", title: "Core Concept", content: "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement. The sympathetic branch activates fight-or-flight. The oldest (dorsal vagal) produces shutdown. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue's Nervous System Gradient extends polyvagal theory by mapping how chronic threat responses can become entrenched patterns of Strategic Management and Domination. The gradient tracks the progression from adaptive Protection to entrenched Strategic Management — and the capacity to return to baseline, which TEG-Blue proposes may help explain relational outcomes." },
+      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue places polyvagal theory inside a wider map of chronic threat patterns. The Gradient tracks the progression from adaptive Protection to entrenched Strategic Management and the capacity to return to baseline." },
       { id: "key-sources", title: "Key Sources", content: "Porges, S. W. (2011). The Polyvagal Theory. Norton. \u00b7 Porges, S. W. (2017). The Pocket Guide to the Polyvagal Theory. Norton. \u00b7 Dana, D. (2018). The Polyvagal Theory in Therapy. Norton." },
     ],
   },
@@ -834,13 +834,13 @@ const globalModels = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Review Status", href: "#review-status-heading", description: "What is peer-reviewed source literature, what is TEG-Blue's original synthesis, and what remains open to testing." },
-  { label: "Gradient Evidence", href: "#gradient-evidence", description: "The four source principles behind the Nervous System Gradient." },
-  { label: "Model Bridges", href: "#model-bridges", description: "Widely used models, their strengths, and where the Gradient extends them." },
-  { label: `${THEORIES.length} Research Traditions`, href: "#research-traditions", description: "Every research tradition TEG-Blue draws from, credited and documented." },
+  { label: "How to Read", href: "#review-status-heading", description: "How source areas, synthesis, tools, and research questions are placed." },
+  { label: "Gradient Sources", href: "#gradient-evidence", description: "The four source principles behind the Nervous System Gradient." },
+  { label: "Model Bridges", href: "#model-bridges", description: "Widely used models and what the Gradient places from each one." },
+  { label: `${THEORIES.length} Research Traditions`, href: "#research-traditions", description: "Research traditions credited by contribution and source area." },
   { label: `${RESEARCH_DOMAINS.length} Research Domains`, href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
   { label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
-  { label: "CSV Download", href: "#csv-download", description: "Full dataset available for download. Open data, open access." },
+  { label: "CSV Download", href: "#csv-download", description: "Download the source-map dataset." },
 ];
 
 // ─── PAGE COMPONENT ─────────────────────────────────────────────
@@ -922,20 +922,20 @@ export default function ScientificFoundationsPage() {
           <ResearcherHero
             badge="SOURCE GROUNDING"
             title="Scientific Foundations"
-            subtitle="The evidence ladder behind the Gradient"
-            description={`How established research traditions, clinical models, communication frameworks, and educational tools ground the Nervous System Gradient. Each source is connected to what it helps make visible — mechanism, condition, pattern, or repair pathway.`}
+            subtitle="The source map behind the Gradient"
+            description={`How established research traditions, clinical models, communication frameworks, and educational tools are placed inside the Nervous System Gradient. Each source is connected to the mechanism, condition, pattern, or repair pathway it helps make visible.`}
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
         <ReviewStatusPanel
-          title="Source literature is established; the synthesis is original."
-          description="This page organizes cited science and widely used models by the function they serve in the TEG-Blue architecture. The source literature includes peer-reviewed research and established scholarly work. The cross-disciplinary placement, Gradient language, and visual synthesis are TEG-Blue's original contribution and remain open to correction, replication, and testing."
+          title="How to read this source map"
+          description="This page credits source areas for what they contribute, then shows how TEG-Blue places those contributions inside the Nervous System Gradient. The result is a map of source concepts, Gradient placement, applied tools, and research questions."
         />
 
         {/* ─── Answer-first opening ─────────────────────────────── */}
         <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 24, fontWeight: 500 }}>
-          TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. A finding from neuroscience may explain the mechanism; attachment research may explain the developmental imprint; trauma research may explain chronic adaptation; CBT and cognitive dissonance may explain how thought protects coherence; NVC may explain when repair language works; Plutchik and Zones may explain emotional naming. Each source remains itself. TEG-Blue places the pieces in relation.
+          TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. Neuroscience may explain a mechanism; attachment research may explain a developmental imprint; trauma research may explain chronic adaptation; CBT and cognitive dissonance may explain how thought protects coherence; NVC may explain when repair language works; Plutchik and Zones may explain emotional naming. Each source keeps its own identity. The Gradient places the pieces in relation.
         </p>
 
         <SourceStatusNote />
@@ -959,10 +959,9 @@ export default function ScientificFoundationsPage() {
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            The comparison document frames these models generously: each one gave the field a
-            useful way to see emotion, cognition, communication, regulation, identity, or trauma.
-            TEG-Blue does not replace them. It asks where each model works, what it makes visible,
-            and what becomes clearer when the same material is placed on the Gradient.
+            Each model gives the field a way to see emotion, cognition, communication, regulation,
+            identity, or trauma. This section keeps that contribution visible, then shows what becomes
+            clearer when the same material is placed on the Gradient.
           </p>
 
           {globalModels.map((model) => (
@@ -1008,11 +1007,9 @@ export default function ScientificFoundationsPage() {
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            TEG-Blue integrates theoretical contributions from {THEORIES.length} research traditions organized into {RESEARCH_DOMAINS.length} research
-            domain groupings. Each entry represents a research
-            tradition with its key researchers and cross-references to the frameworks that draw on it.
-            This section exists for inspection — to show what the grounding is,
-            how it was selected, and how to audit it.
+            This source map includes {THEORIES.length} research traditions organized into {RESEARCH_DOMAINS.length} research
+            domain groupings. Each entry names a tradition, its key researchers, and the TEG-Blue
+            framework areas that draw from it.
           </p>
 
           {/* Method note */}
@@ -1026,12 +1023,10 @@ export default function ScientificFoundationsPage() {
             }}
           >
             <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: TEXT.secondary }}>How we selected these:</strong>{" "}
-              The architecture was developed first — through independent research, observation, and
-              cross-disciplinary reading. AI research tools were then used to systematically identify
-              which established theories align with each framework. Each tradition entry lists its key
-              researchers and which frameworks reference it. This is a working hypothesis, not a finished
-              bibliography. We invite corrections.
+              <strong style={{ color: TEXT.secondary }}>Selection note:</strong>{" "}
+              Entries are included when they contribute a source concept, mechanism, pattern, model,
+              tool, or research question used by the Gradient. This map is designed to be inspected,
+              corrected, and extended as the source trace develops.
             </p>
           </div>
 
@@ -1279,11 +1274,11 @@ function SourceStatusNote() {
         How to read the evidence
       </div>
       <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.75, margin: 0 }}>
-        This page separates <strong style={{ color: TEXT.primary }}>source grounding</strong> from{" "}
-        <strong style={{ color: TEXT.primary }}>TEG-Blue synthesis</strong>. Some entries are peer-reviewed
-        research traditions. Some are clinical models, educational tools, or communication frameworks.
-        The page credits what each one contributes, then shows how the Gradient organizes those
-        contributions into one state-dependent map.
+        This page shows four layers: <strong style={{ color: TEXT.primary }}>source area</strong>,{" "}
+        <strong style={{ color: TEXT.primary }}>Gradient placement</strong>,{" "}
+        <strong style={{ color: TEXT.primary }}>tool surface</strong>, and{" "}
+        <strong style={{ color: TEXT.primary }}>research question</strong>. Some entries are research
+        traditions; others are clinical models, educational tools, or communication frameworks.
       </p>
     </section>
   );
@@ -1302,12 +1297,11 @@ function GradientEvidenceLadder() {
           margin: "0 0 12px 0",
         }}
       >
-        Evidence Ladder Behind the Gradient
+        Source Principles Behind the Gradient
       </h2>
       <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 18 }}>
-        The public Gradient rests on four principles. Each principle is grounded in existing
-        source areas, then translated into TEG-Blue language as part of the original visual
-        synthesis.
+        The public Gradient begins with four source principles. Each principle gathers established
+        source areas and places them inside the same state-dependent map.
       </p>
 
       <div
@@ -1334,10 +1328,10 @@ function GradientEvidenceLadder() {
             <EvidenceField label="Source areas" color={item.color}>
               {item.sourceAreas}
             </EvidenceField>
-            <EvidenceField label="What TEG-Blue uses" color={item.color}>
+            <EvidenceField label="Gradient placement" color={item.color}>
               {item.tegBlueUse}
             </EvidenceField>
-            <EvidenceField label="Open to testing" color={item.color}>
+            <EvidenceField label="Research question" color={item.color}>
               {item.openQuestion}
             </EvidenceField>
           </div>
@@ -1404,8 +1398,7 @@ function CoreFoundations() {
             marginBottom: 20,
           }}
         >
-          The Gradient is not built from one discipline. It organizes several kinds of source
-          knowledge into a single visual map:
+          The Gradient organizes several kinds of source knowledge into a single visual map:
         </p>
 
         <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -1522,7 +1515,7 @@ function ModelCard({ model }) {
         {/* Expand indicator */}
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
           <span style={{ fontSize: 12, color: TEXT.muted }}>
-            {isOpen ? "Hide details" : "Show how the Gradient extends this"}
+            {isOpen ? "Hide details" : "Show Gradient placement"}
           </span>
           <span
             style={{
@@ -1574,7 +1567,7 @@ function ModelCard({ model }) {
                   fontFamily: FONT.mono,
                 }}
               >
-                What this gives us
+                Contribution
               </h4>
               <p
                 style={{
@@ -1588,7 +1581,7 @@ function ModelCard({ model }) {
               </p>
             </div>
 
-            {/* What the Gradient translates / extends */}
+            {/* What the Gradient places */}
             <div
               style={{
                 padding: 16,
@@ -1609,7 +1602,7 @@ function ModelCard({ model }) {
                   fontFamily: FONT.mono,
                 }}
               >
-                Where the Gradient extends it
+                Gradient placement
               </h4>
               <ul style={{ margin: 0, paddingLeft: 16 }}>
                 {model.tegBlueAdds.map((t, i) => (
@@ -1638,7 +1631,7 @@ function ModelCard({ model }) {
               gap: 8,
             }}
           >
-            <span style={{ fontSize: 12, color: TEXT.muted }}>Appears in:</span>
+            <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
             {model.frameworks.map((f) => (
               <span
                 key={f}
@@ -1827,7 +1820,7 @@ function ExpandableTheoryCard({ theory }) {
                   fontFamily: FONT.mono,
                 }}
               >
-                {integrationSection.title}
+                {integrationSection.id === "teg-blue-integration" ? "Gradient placement" : integrationSection.title}
               </h4>
               <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
                 {integrationSection.content}
@@ -1940,14 +1933,33 @@ function ExpandableTheoryCard({ theory }) {
 // ─── GROUNDING AND TESTING METHOD COMPONENT ─────────────────────
 
 function ValidationMethod() {
+  const sourceMapUses = [
+    {
+      title: "Find the source area",
+      body: "Start with the research tradition, model, or tool that contributes a concept.",
+      color: SPECTRUM.azure,
+    },
+    {
+      title: "Read the Gradient placement",
+      body: "Look at what the source helps explain inside state-dependent perception, capacity, behavior, or repair.",
+      color: SPECTRUM.cobalt,
+    },
+    {
+      title: "Trace the tool surface",
+      body: "Notice where the same logic becomes a scale, map, emotional tool, or applied view.",
+      color: SPECTRUM.indigo,
+    },
+    {
+      title: "Name the research question",
+      body: "Separate the cited source from the claim that can be tested next.",
+      color: SPECTRUM.slate,
+    },
+  ];
+
   return (
     <section
       style={{
         marginBottom: 48,
-        padding: 24,
-        background: BG.card,
-        borderRadius: 12,
-        border: `1px solid ${BORDER.default}`,
       }}
     >
       <h2
@@ -1958,175 +1970,39 @@ function ValidationMethod() {
           margin: "0 0 20px 0",
         }}
       >
-        How We Ground and Test
+        Using This Source Map
       </h2>
 
-      {/* How the mapping was built */}
-      <div style={{ marginBottom: 20 }}>
-        <h3
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: "0 0 8px 0",
-          }}
-        >
-          How the mapping was built
-        </h3>
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-          The architecture was developed first — through independent research, observation, and
-          cross-disciplinary reading. Once the structure was established, AI research tools
-          (Claude, Perplexity, Microsoft Copilot) were used to systematically identify which
-          established theories align with each framework.
-        </p>
-      </div>
+      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 18px" }}>
+        The page is meant to be read as a source map. Each entry follows the same four-part path.
+      </p>
 
-      {/* What the 12 indexes are */}
-      <div style={{ marginBottom: 20 }}>
-        <h3
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: "0 0 8px 0",
-          }}
-        >
-          The {RESEARCH_DOMAINS.length} research domains
-        </h3>
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 10px 0" }}>
-          The theoretical contributions are organized into {RESEARCH_DOMAINS.length} research domain
-          groupings with {THEORIES.length} tradition-level entries. Each entry can be audited,
-          corrected, or extended:
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-          {RESEARCH_DOMAINS.map((domain) => (
-            <span
-              key={domain}
-              style={{
-                fontSize: 11,
-                fontFamily: FONT.mono,
-                padding: "4px 10px",
-                background: hexToRgba(SPECTRUM.azure, 0.08),
-                color: TEXT.muted,
-                borderRadius: 4,
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.1)}`,
-              }}
-            >
-              {domain}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* What's testable now vs later */}
-      <div style={{ marginBottom: 20 }}>
-        <h3
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: "0 0 10px 0",
-          }}
-        >
-          What&rsquo;s testable now vs. later
-        </h3>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 12,
-          }}
-        >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+          gap: 12,
+        }}
+      >
+        {sourceMapUses.map((item) => (
           <div
+            key={item.title}
             style={{
-              padding: 14,
-              background: hexToRgba(SPECTRUM.azure, 0.05),
-              borderRadius: 8,
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.12)}`,
+              padding: 16,
+              background: BG.card,
+              borderRadius: 10,
+              border: `1px solid ${hexToRgba(item.color, 0.14)}`,
+              borderTop: `3px solid ${item.color}`,
             }}
           >
-            <h4
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: SPECTRUM.azure,
-                textTransform: "uppercase",
-                letterSpacing: 0,
-                margin: "0 0 8px 0",
-              }}
-            >
-              Testable now
-            </h4>
-            <ul
-              style={{
-                margin: 0,
-                paddingLeft: 16,
-                fontSize: 13,
-                color: TEXT.secondary,
-                lineHeight: 1.7,
-              }}
-            >
-              <li>Nervous system state detection in natural language</li>
-              <li>Complexity markers as regulatory capacity signals</li>
-              <li>Escalation / de-escalation patterns</li>
-            </ul>
+            <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+              {item.title}
+            </h3>
+            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+              {item.body}
+            </p>
           </div>
-          <div
-            style={{
-              padding: 14,
-              background: hexToRgba(SPECTRUM.slate, 0.06),
-              borderRadius: 8,
-              border: `1px solid ${hexToRgba(SPECTRUM.slate, 0.12)}`,
-            }}
-          >
-            <h4
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: FONT.mono,
-                color: SPECTRUM.slate,
-                textTransform: "uppercase",
-                letterSpacing: 0,
-                margin: "0 0 8px 0",
-              }}
-            >
-              Needs further work
-            </h4>
-            <ul
-              style={{
-                margin: 0,
-                paddingLeft: 16,
-                fontSize: 13,
-                color: TEXT.secondary,
-                lineHeight: 1.7,
-              }}
-            >
-              <li>Psychometric testing of emotional tools</li>
-              <li>Cross-cultural replication</li>
-              <li>Longitudinal studies</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Plan for review */}
-      <div>
-        <h3
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: TEXT.primary,
-            margin: "0 0 8px 0",
-          }}
-        >
-          Plan for review
-        </h3>
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 12px 0" }}>
-          We are preparing for pre-registration of the core testable claims, with open data
-          and open methodology. We explicitly invite independent replication, correction, and
-          critique.
-        </p>
+        ))}
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ const ENGINE_FLOW = [
   {
     label: "Testing",
     title: "Research surfaces",
-    body: "The tools do not prove the framework by themselves. They create concrete surfaces for reliability, validity, replication, and user-study testing.",
+    body: "The tools create concrete surfaces for reliability, validity, replication, usefulness, and user-study testing.",
     color: SPECTRUM.slate,
   },
 ];
@@ -97,7 +97,7 @@ export default function TEGBlueEnginePanel({
             The Engine is the operational layer that turns the Nervous System Gradient into usable instruments. It asks: if state changes capacity, what happens to this one dimension across the gradient?
           </p>
           <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: TEXT.secondary }}>
-            That is why the tools can feel clear without being separate inventions. They are generated from the same state logic, so each tool shows a different view of one underlying architecture.
+            That is why the tools can feel clear without being separate inventions. They are generated from the same state logic, so each tool shows a different view of the same Gradient.
           </p>
         </div>
 
@@ -209,7 +209,7 @@ export default function TEGBlueEnginePanel({
         }}
       >
         <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: TEXT.muted }}>
-          <strong style={{ color: TEXT.secondary }}>Evidence status:</strong> tool clarity is evidence of applied coherence, not formal validation. The tools show that one framework can repeatedly generate usable instruments; formal studies are still needed to test reliability, validity, and generalizability.
+          <strong style={{ color: TEXT.secondary }}>Research use:</strong> because the tools are generated from the same state logic, they give concrete surfaces for studying reliability, usefulness, validity, and generalizability.
         </p>
       </div>
     </section>

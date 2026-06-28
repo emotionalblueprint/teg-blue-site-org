@@ -240,7 +240,7 @@ Source-science areas include neuroscience, stress physiology, attachment theory,
 
 Applied or comparative models include Plutchik's Wheel of Emotions, Nonviolent Communication (NVC), Cognitive Behavioral Therapy (CBT), Polyvagal Theory, Zones of Regulation, Internal Family Systems, Ego Development Theory, Cognitive Dissonance Theory, Defense Mechanisms, and Disorganized Attachment / Complex PTSD models.
 
-Safe description: "TEG-Blue credits what each model contributes and uses the Nervous System Gradient to show how those contributions relate across state, capacity, trauma, power, relational impact, and repair. This is an original synthesis, not a claim that the entire TEG-Blue framework has been independently validated as a whole."
+Recommended description: "TEG-Blue credits what each model contributes and uses the Nervous System Gradient to show how those contributions relate across state, capacity, trauma, power, relational impact, and repair."
 
 ## Methodology Page
 
@@ -311,9 +311,9 @@ Use this relationship when explaining how TEG-Blue becomes practical tools:
 
 The Gradient is the map. The Engine is the logic. The tools are the interfaces.
 
-The tools do not validate the whole framework. They demonstrate applied coherence: the same underlying Gradient logic can repeatedly generate usable tools that make emotional and relational patterns easier to see, name, compare, and test.
+Because the tools use the same Gradient logic, they demonstrate applied coherence: emotional and relational patterns can be made visible, named, compared, and studied through concrete tool surfaces.
 
-Safe phrasing: "TEG-Blue tools are applied outputs of the Nervous System Gradient. The Engine translates the Gradient into practical instruments by mapping how emotional signals, behaviour, perception, empathy, accountability, repair, and relational patterns shift across nervous-system states. The tools do not validate the framework by themselves; they demonstrate applied coherence and provide testable surfaces for future research."
+Recommended description: "TEG-Blue tools are applied outputs of the Nervous System Gradient. The Engine translates the Gradient into practical instruments by mapping how emotional signals, behaviour, perception, empathy, accountability, repair, and relational patterns shift across nervous-system states. The tools demonstrate applied coherence and provide concrete surfaces for future research."
 
 ## Frequently Asked Questions
 
