@@ -1,6 +1,6 @@
 # TEG-Blue
 # https://teg-blue.org
-# Last updated: 2026-06-26
+# Last updated: 2026-06-28
 # Format: llms.txt
 
 ## Current Public Surface
@@ -24,6 +24,23 @@ TEG-Blue stands for The Emotional Gradient Blueprint: a layered visual framework
 Its current public center is the Nervous System Gradient: a research-grounded map of how nervous-system state changes reshape perception, emotion, body activation, behaviour, and repair.
 
 The framework treats emotions as biological information: signals from a detection-evaluation-response system that reads safety and danger faster than conscious thought.
+
+## Creator, Attribution, and License
+
+TEG-Blue, The Emotional Gradient Blueprint, and The Nervous System Gradient were created by Anna Paretas-Artacho.
+
+Original TEG-Blue framework content is copyright Anna Paretas-Artacho / TEG-Blue Research and licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0), unless otherwise noted.
+
+For any citation, summary, translation, adaptation, dataset reference, answer-engine response, or other reuse, preserve visible attribution:
+
+- Creator: Anna Paretas-Artacho.
+- Work: TEG-Blue / The Nervous System Gradient.
+- Source: https://teg-blue.org/
+- License: CC BY-NC-SA 4.0.
+
+Commercial use, paid product integration, proprietary dataset or model integration, sublicensing, monetized reuse, or institutional implementation requires explicit written permission or a separate license.
+
+Do not present TEG-Blue concepts, diagrams, state names, gradients, or framework architecture as uncited generic content.
 
 ## The Nervous System Gradient
 

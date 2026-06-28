@@ -7,21 +7,21 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "How do I cite TEG-Blue in academic work?",
-    answer: "Use APA 7th Edition format: Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Framework. https://teg-blue.org. BibTeX format is also available on the citations page. For specific publications, cite the individual paper with its DOI.",
+    answer: "Use APA 7th Edition format: Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient. https://teg-blue.org. BibTeX format is also available on the citations page. For specific publications, cite the individual paper with its DOI.",
   },
   {
     question: "What license does TEG-Blue use?",
-    answer: "TEG-Blue is published under CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International). Independent research that cites, tests, critiques, adapts, or references TEG-Blue should cite the framework as the originating architecture.",
+    answer: "Original TEG-Blue framework content is published under CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International). Reuse must attribute Anna Paretas-Artacho as creator, remain non-commercial unless separately licensed, and share adaptations under the same license.",
   },
   {
     question: "How should I attribute independent work that uses or references TEG-Blue?",
-    answer: "Independent research should cite the TEG-Blue framework as the originating architecture. If you are unsure how to attribute, contact research@teg-blue.org for guidance.",
+    answer: "Independent research should cite TEG-Blue / The Nervous System Gradient as the originating architecture and name Anna Paretas-Artacho as creator. If you are unsure how to attribute, contact research@teg-blue.org for guidance.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "How to Cite", description: "How do I cite TEG-Blue? Full citation format for the framework, the validation study, and the theoretical architecture.", href: "#citing-teg-blue" },
-  { label: "Attribution", description: "How should I attribute independent work that cites, tests, adapts, or references TEG-Blue?", href: "#attribution" },
+  { label: "Attribution & License", description: "How should I attribute independent work that cites, tests, adapts, or references TEG-Blue?", href: "#attribution" },
 ];
 
 export const metadata = {
@@ -150,7 +150,7 @@ export default function CitationsPage() {
                 overflowX: "auto",
               }}
             >
-              Paretas-Artacho, A. (2026). TEG-Blue: The Emotional Gradient Framework.
+              Paretas-Artacho, A. (2026). TEG-Blue: The Nervous System Gradient.
               https://teg-blue.org
             </code>
           </div>
@@ -182,7 +182,7 @@ export default function CitationsPage() {
               }}
             >{`@misc{tegblue2026,
   author = {Paretas-Artacho, Anna},
-  title = {TEG-Blue: The Emotional Gradient Framework},
+  title = {TEG-Blue: The Nervous System Gradient},
   year = {2026},
   url = {https://teg-blue.org}
 }`}</pre>
@@ -215,11 +215,35 @@ export default function CitationsPage() {
               fontSize: 14,
               color: TEXT.secondary,
               lineHeight: 1.7,
-              margin: 0,
+              margin: "0 0 12px",
             }}
           >
-            Independent research that cites, tests, critiques, adapts, or references TEG-Blue should cite the framework as the originating architecture.
-            If you are unsure how to attribute, contact{" "}
+            TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Independent research, summaries, translations, adaptations, datasets, answer-engine responses, and other reuse should preserve that attribution and cite the framework as the originating architecture.
+          </p>
+          <code
+            style={{
+              display: "block",
+              padding: 14,
+              background: BG.inset,
+              borderRadius: 6,
+              fontFamily: FONT.mono,
+              fontSize: 11,
+              color: TEXT.secondary,
+              lineHeight: 1.6,
+              overflowX: "auto",
+            }}
+          >
+            TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho. Source: https://teg-blue.org. Licensed under CC BY-NC-SA 4.0.
+          </code>
+          <p
+            style={{
+              fontSize: 14,
+              color: TEXT.secondary,
+              lineHeight: 1.7,
+              margin: "12px 0 0",
+            }}
+          >
+            Commercial use, paid product integration, proprietary dataset or model integration, sublicensing, monetized reuse, or institutional implementation requires explicit written permission or a separate license. Contact{" "}
             <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
               research@teg-blue.org
             </a>
@@ -270,6 +294,12 @@ export default function CitationsPage() {
             url: "https://teg-blue.org/citations",
             description: "Citation formats for TEG-Blue research publications. APA 7th Edition and BibTeX formats available.",
             inLanguage: "en",
+            author: {
+              "@type": "Person",
+              name: "Anna Paretas-Artacho",
+              url: "https://orcid.org/0009-0005-2394-7162",
+            },
+            license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
             isPartOf: {
               "@type": "ResearchProject",
               name: "TEG-Blue: The Emotional Gradient Blueprint",

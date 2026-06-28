@@ -14,7 +14,6 @@ export const metadata = {
     canonical: "https://teg-blue.org",
     languages: {
       en: "https://teg-blue.org",
-      es: "https://teg-blue.org/es",
       "x-default": "https://teg-blue.org",
     },
   },

@@ -35,9 +35,9 @@ export const metadata = {
   },
   description: 'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.',
   keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'emotional patterns', 'nervous system gradient', 'source traces', 'research grounding', 'state-dependent capacity', 'repair', 'survival strategies', 'identity', 'social patterns'],
-  authors: [{ name: 'TEG-Blue', url: 'https://teg-blue.org' }],
-  creator: 'TEG-Blue',
-  publisher: 'TEG-Blue',
+  authors: [{ name: 'Anna Paretas-Artacho', url: 'https://orcid.org/0009-0005-2394-7162' }],
+  creator: 'Anna Paretas-Artacho',
+  publisher: 'TEG-Blue Research',
   metadataBase: new URL('https://teg-blue.org'),
   alternates: {
     canonical: 'https://teg-blue.org',
@@ -71,6 +71,12 @@ export const metadata = {
   category: 'science',
   other: {
     'llms-txt': '/llms.txt',
+    'citation_author': 'Paretas-Artacho, Anna',
+    'citation_title': 'TEG-Blue: The Nervous System Gradient',
+    'citation_publication_date': '2026',
+    'citation_online_date': '2026',
+    'citation_public_url': 'https://teg-blue.org',
+    'citation_license': 'CC BY-NC-SA 4.0',
   },
 }
 
@@ -122,6 +128,12 @@ const organizationJsonLd = {
   ],
   foundingDate: "2024",
   inLanguage: "en",
+  license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  copyrightHolder: {
+    "@type": "Person",
+    name: "Anna Paretas-Artacho",
+  },
+  copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0.",
   founder: {
     "@type": "Person",
     name: "Anna Paretas-Artacho",
@@ -169,6 +181,17 @@ const websiteJsonLd = {
     "@type": "Organization",
     name: "TEG-Blue",
   },
+  creator: {
+    "@type": "Person",
+    name: "Anna Paretas-Artacho",
+    url: "https://orcid.org/0009-0005-2394-7162",
+  },
+  license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  copyrightHolder: {
+    "@type": "Person",
+    name: "Anna Paretas-Artacho",
+  },
+  copyrightNotice: "Copyright Anna Paretas-Artacho / TEG-Blue Research. Attribution required under CC BY-NC-SA 4.0.",
 }
 
 export default function RootLayout({ children }) {
@@ -182,14 +205,16 @@ export default function RootLayout({ children }) {
         {/* Favicons */}
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/teg-blue_logo_blue.png" />
+        <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" />
 
         {/* Cross-site alternate for application platform */}
         <link rel="alternate" href="https://teg-blue.com" hrefLang="en" title="TEG-Blue Interactive Tools" />
 
         {/* Dublin Core metadata for academic crawlers */}
+        <meta name="DC.creator" content="Anna Paretas-Artacho" />
         <meta name="DC.publisher" content="TEG-Blue Research" />
         <meta name="DC.language" content={documentLanguage} />
-        <meta name="DC.rights" content="CC BY-NC-SA 4.0" />
+        <meta name="DC.rights" content="Copyright Anna Paretas-Artacho / TEG-Blue Research. Licensed under CC BY-NC-SA 4.0; attribution required; commercial use requires permission." />
         <meta name="DC.type" content="Collection" />
 
         {/* Organization structured data */}

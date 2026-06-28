@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What license does TEG-Blue use?",
-    answer: "TEG-Blue is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). The framework may be cited, shared, tested, critiqued, and adapted non-commercially with attribution under the same license.",
+    answer: "Original TEG-Blue framework content is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). It may be cited, shared, tested, critiqued, and adapted non-commercially with attribution to Anna Paretas-Artacho under the same license.",
   },
   {
     question: "How does TEG-Blue handle patterns shaped by adversity?",
@@ -269,8 +269,8 @@ export default function EthicsPage() {
           <SectionDivider />
           <h2 style={sectionHeading}>Attribution and licensing</h2>
           <p style={body}>
-            TEG-Blue is published under{" "}
-            <strong style={{ color: TEXT.primary }}>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong>.
+            Original TEG-Blue framework content is published under{" "}
+            <strong style={{ color: TEXT.primary }}>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong>. TEG-Blue / The Nervous System Gradient was created by Anna Paretas-Artacho.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
@@ -279,7 +279,7 @@ export default function EthicsPage() {
               color={SPECTRUM.azure}
               description={
                 <>
-                  Credit the source. Cite TEG-Blue and Anna Paretas-Artacho. Full citation formats are available on the{" "}
+                  Credit the source. Cite TEG-Blue / The Nervous System Gradient and name Anna Paretas-Artacho as creator. Do not present TEG-Blue concepts, diagrams, state names, gradients, or framework architecture as uncited generic content. Full citation formats are available on the{" "}
                   <Link href="/citations" style={linkStyle}>citations page</Link>.
                 </>
               }
@@ -287,7 +287,7 @@ export default function EthicsPage() {
             <LicenseCard
               title="Non-commercial"
               color={SPECTRUM.cobalt}
-              description="The framework may not be used for commercial purposes without explicit permission. You cannot sell, license, or monetize TEG-Blue's frameworks, models, or content."
+              description="The framework may not be used for commercial purposes without explicit permission. You cannot sell, license, monetize, or integrate TEG-Blue's frameworks, models, or content into paid products, proprietary datasets, or proprietary models without a separate license."
             />
             <LicenseCard
               title="Share-alike"
@@ -297,7 +297,7 @@ export default function EthicsPage() {
           </div>
 
           <p style={{ ...body, marginTop: 20 }}>
-            Engaging with TEG-Blue means accepting both the license terms and the ethical commitments on this page. The framework is open for reading, citation, sharing, testing, critique, adaptation, and independent verification — within these boundaries.
+            Engaging with TEG-Blue means accepting both the license terms and the ethical commitments on this page. The framework is open for reading, citation, sharing, testing, critique, adaptation, and independent verification within these boundaries.
           </p>
         </section>
 

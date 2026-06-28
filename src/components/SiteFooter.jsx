@@ -54,11 +54,19 @@ export default function SiteFooter() {
       </nav>
 
       <p style={{ marginTop: 22, fontSize: 12, color: TEXT.muted, lineHeight: 1.7 }}>
-        © {new Date().getFullYear()} TEG-Blue Research · Anna Paretas-Artacho
+        © {new Date().getFullYear()} TEG-Blue · Anna Paretas-Artacho
       </p>
 
-      <p style={{ marginTop: 8, fontFamily: FONT.mono, fontSize: 10, color: TEXT.micro }}>
-        CC BY-NC-SA 4.0
+      <p style={{ marginTop: 8, fontFamily: FONT.mono, fontSize: 10, color: TEXT.micro, lineHeight: 1.6 }}>
+        <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          rel="license noopener noreferrer"
+          target="_blank"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          CC BY-NC-SA 4.0
+        </a>
+        {" · Attribution required · Commercial use requires permission"}
       </p>
 
       <style>{`.footer-link:hover { color: var(--text-primary); }`}</style>

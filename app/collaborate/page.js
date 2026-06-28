@@ -14,7 +14,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What are the ethical expectations for collaborators?",
-    answer: "Collaborators must accept the CC BY-NC-SA 4.0 license and ethical commitments. The framework will not be used for surveillance or manipulation. Findings are published openly. Attribution is maintained whenever the work is cited, shared, adapted, or used with permission.",
+    answer: "Collaborators must accept the CC BY-NC-SA 4.0 license and ethical commitments. The framework will not be used for surveillance or manipulation. Findings are published openly. Attribution to Anna Paretas-Artacho is maintained whenever the work is cited, shared, adapted, translated, or used with permission.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function CollaboratePage() {
             />
             <CollabCard
               title="Permissioned translation and adaptation"
-              description="Coordinated translation or adaptation for specific populations, clinical contexts, or educational settings, with explicit permission and attribution."
+              description="Coordinated translation or adaptation for specific populations, clinical contexts, or educational settings, with explicit permission and attribution to Anna Paretas-Artacho."
             />
             <CollabCard
               title="Critique and challenge"
@@ -175,7 +175,8 @@ export default function CollaboratePage() {
             <li style={{ marginBottom: 8 }}>The framework will not be used for surveillance, manipulation, or coercive applications.</li>
             <li style={{ marginBottom: 8 }}>Research involving human participants follows standard ethical review processes.</li>
             <li style={{ marginBottom: 8 }}>Findings are published openly — not shaped to serve commercial interests.</li>
-            <li style={{ marginBottom: 8 }}>Attribution is maintained. Adapted, translated, or modified versions follow the same or a compatible license unless a separate permission agreement is made.</li>
+            <li style={{ marginBottom: 8 }}>Attribution to Anna Paretas-Artacho is maintained. Adapted, translated, or modified versions follow the same or a compatible license unless a separate permission agreement is made.</li>
+            <li style={{ marginBottom: 8 }}>Commercial, institutional, product, dataset, or model integrations are coordinated through explicit permission or a separate license.</li>
           </ul>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             Full ethical principles are documented on the{" "}
