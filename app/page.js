@@ -136,6 +136,33 @@ function StateSpineStrip() {
   );
 }
 
+const gradientDefinitionMoves = [
+  {
+    label: "Reads",
+    title: "Safety, threat, and rest",
+    body: "The body is continually scanning the room: is this safe, is there a threat, can I connect with others?",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Moves",
+    title: "Fluid state shifts",
+    body: "In fluid movement, the system can reorganise when danger is around and, when it has passed, bring the body back to physiological baseline.",
+    color: SPECTRUM.sky,
+  },
+  {
+    label: "Organises",
+    title: "The whole organism",
+    body: "Wherever the system reorganises, body, mind, emotion, behaviour, perception, and repair capacity shift around that state.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    label: "Hardens",
+    title: "When threat lasts",
+    body: "With prolonged threat, patterns can become chronic: scanning for danger even when the present moment is safe.",
+    color: "var(--accent-amber, #e9a23b)",
+  },
+];
+
 // ─── shared section styles ───────────────────────────────────────────────────
 
 const sectionStyle = {
@@ -155,6 +182,13 @@ const eyebrowStyle = {
 };
 // Section eyebrows lead in the blue "diagram voice"; the hero eyebrow stays muted.
 const sectionEyebrowStyle = { ...eyebrowStyle, color: "var(--spectrum-indigo)" };
+const homeSurface = {
+  primary: "var(--bg-primary, #151c35)",
+  text: "var(--text-primary, #f1f5f9)",
+  secondary: "var(--text-secondary, #cbd5e1)",
+  muted: "var(--text-muted, #94a3b8)",
+  border: "var(--border-default, rgba(148, 163, 184, 0.12))",
+};
 // Bordered instrument-surface card — the research register from the prototype.
 const cardStyle = {
   background: BG.diagram,
@@ -163,6 +197,150 @@ const cardStyle = {
   padding: "clamp(20px, 3vw, 28px)",
   boxShadow: "inset 0 1px 0 rgba(255,255,255,0.02)",
 };
+
+function WhatGradientIsCard() {
+  return (
+    <div
+      style={{
+        ...cardStyle,
+        padding: 0,
+        overflow: "hidden",
+        background: homeSurface.primary,
+        border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.16)}`,
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
+          gap: 0,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            minHeight: "100%",
+            flexDirection: "column",
+            gap: 28,
+            padding: "clamp(20px, 3vw, 30px)",
+          }}
+        >
+          <div>
+            <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure, #76e2ff)", margin: "0 0 10px" }}>What the gradient is</p>
+            <h2
+              id="what-gradient-is-heading"
+              style={{
+                margin: 0,
+                maxWidth: 620,
+                color: homeSurface.text,
+                fontSize: "clamp(21px, 3vw, 28px)",
+                fontWeight: 700,
+                letterSpacing: "-0.02em",
+                lineHeight: 1.16,
+              }}
+            >
+              A continuous range of nervous-system organisation.
+            </h2>
+            <p style={{ margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
+              The gradient maps how the nervous system organises as it reads{" "}
+              <strong style={{ color: homeSurface.text, fontWeight: 650 }}>safety, threat, and whether rest is possible</strong>.
+              This is a live state map: where the system is configured it changes what the whole person can perceive, feel,
+              think, do, and repair.
+            </p>
+          </div>
+
+          <div>
+            <div style={{ display: "flex", gap: 5, alignItems: "center" }} aria-hidden="true">
+              {positions.map((p) => (
+                <span
+                  key={p.id}
+                  style={{
+                    flex: p.id === "shutdown" ? "0.7 1 0" : "1 1 0",
+                    height: 5,
+                    borderRadius: 999,
+                    background: p.acuteColor,
+                    opacity: p.id === "shutdown" ? 0.58 : 0.9,
+                  }}
+                />
+              ))}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: 12,
+                marginTop: 8,
+                color: homeSurface.muted,
+                fontFamily: FONT.diagram,
+                fontSize: 10,
+                lineHeight: 1.4,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              <span>Rest + connection</span>
+              <span>Defence + shutdown</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            alignContent: "start",
+            borderLeft: `1px solid ${homeSurface.border}`,
+          }}
+        >
+          {gradientDefinitionMoves.map((item, index) => (
+            <div
+              key={item.label}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "92px minmax(0, 1fr)",
+                gap: 16,
+                alignItems: "start",
+                padding: "clamp(14px, 1.8vw, 18px) clamp(18px, 2.7vw, 24px)",
+                borderTop: index === 0 ? 0 : `1px solid ${homeSurface.border}`,
+              }}
+            >
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  color: item.color,
+                  fontFamily: FONT.diagram,
+                  fontSize: 10,
+                  fontWeight: 650,
+                  letterSpacing: "0.1em",
+                  lineHeight: 1.2,
+                  textTransform: "uppercase",
+                }}
+              >
+                <span
+                  style={{
+                    width: 7,
+                    height: 7,
+                    flex: "0 0 auto",
+                    borderRadius: "50%",
+                    background: item.color,
+                    boxShadow: `0 0 0 4px color-mix(in srgb, ${item.color} 14%, transparent)`,
+                  }}
+                  aria-hidden="true"
+                />
+                {item.label}
+              </span>
+              <div>
+                <p style={{ margin: 0, color: homeSurface.text, fontSize: 14.5, fontWeight: 650, lineHeight: 1.35 }}>{item.title}</p>
+                <p style={{ margin: "5px 0 0", color: homeSurface.secondary, fontSize: 13.5, lineHeight: 1.6 }}>{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -198,35 +376,8 @@ export default function Home() {
         </section>
 
         {/* What the gradient is — definitional note with its own convergent-science trace */}
-        <section style={sectionStyle}>
-          <div style={{ ...cardStyle, padding: "clamp(16px, 2.5vw, 22px)" }}>
-            <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure)", margin: "0 0 8px" }}>What the gradient is</p>
-            <div style={{ display: "grid", gap: 6, fontSize: 14, lineHeight: 1.6, color: TEXT.secondary }}>
-              <p style={{ margin: 0 }}>
-                The gradient is the <strong style={{ color: TEXT.primary, fontWeight: 600 }}>continuous range</strong> of
-                nervous system organisation the body moves through as it reads{" "}
-                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>safety, threat, and whether rest is possible</strong>.
-              </p>
-              <p style={{ margin: 0 }}>
-                In <strong style={{ color: TEXT.primary, fontWeight: 600 }}>fluid movement</strong>, the system can{" "}
-                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>mobilise</strong> when danger is present,{" "}
-                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>return toward safety</strong> when danger has
-                passed, and <strong style={{ color: TEXT.primary, fontWeight: 600 }}>settle into baseline</strong> when
-                rest becomes possible.
-              </p>
-              <p style={{ margin: 0 }}>
-                Wherever the system lands, <strong style={{ color: TEXT.primary, fontWeight: 600 }}>the whole organism
-                reorganises</strong> around that state: body, mind, emotion, behaviour, perception, and the{" "}
-                <strong style={{ color: TEXT.primary, fontWeight: 600 }}>capacity for repair</strong>.
-              </p>
-              <p style={{ margin: 0 }}>
-                But when <strong style={{ color: TEXT.primary, fontWeight: 600 }}>threat has lasted too long</strong>, the
-                organism can get <strong style={{ color: TEXT.primary, fontWeight: 600 }}>stuck operating from threat
-                physiology</strong>, <strong style={{ color: TEXT.primary, fontWeight: 600 }}>scanning for danger</strong>{" "}
-                even when the present moment is safe.
-              </p>
-            </div>
-          </div>
+        <section style={{ ...sectionStyle, paddingBottom: "clamp(28px, 4vw, 44px)" }} aria-labelledby="what-gradient-is-heading">
+          <WhatGradientIsCard />
         </section>
 
         {/* Interactive instrument */}

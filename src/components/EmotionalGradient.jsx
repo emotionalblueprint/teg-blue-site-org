@@ -69,6 +69,7 @@ function Badge({ color, light, children }) {
       style={{
         display: 'inline-flex',
         alignItems: 'center',
+        maxWidth: '100%',
         gap: 8,
         padding: '6px 12px',
         borderRadius: RADIUS.md,
@@ -77,7 +78,7 @@ function Badge({ color, light, children }) {
       }}
     >
       <span className="state-pill-dot" style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: dot }} />
-      <span className="state-pill-text" style={{ fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: txt }}>
+      <span className="state-pill-text" style={{ minWidth: 0, fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', lineHeight: 1.2, color: txt }}>
         {children}
       </span>
     </span>
@@ -89,35 +90,11 @@ export default function EmotionalGradient() {
   const [mounted, setMounted] = useState(false)
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
   const [chronic, setChronic] = useState(false)
-  const [compactSticky, setCompactSticky] = useState(false)
   const [selectedReadoutId, setSelectedReadoutId] = useState(HOME_READOUT_IDS[0])
   const barRef = useRef(null)
-  const readoutRef = useRef(null)
   const dragging = useRef(false)
 
   useEffect(() => setMounted(true), [])
-  useEffect(() => {
-    let raf = null
-    const updateCompact = () => {
-      raf = null
-      const readout = readoutRef.current
-      if (!readout) return
-      const mobile = window.matchMedia('(max-width: 720px)').matches
-      const readoutTop = readout.getBoundingClientRect().top
-      setCompactSticky(mobile && readoutTop < 320)
-    }
-    const schedule = () => {
-      if (raf == null) raf = window.requestAnimationFrame(updateCompact)
-    }
-    updateCompact()
-    window.addEventListener('scroll', schedule, { passive: true })
-    window.addEventListener('resize', schedule)
-    return () => {
-      if (raf != null) window.cancelAnimationFrame(raf)
-      window.removeEventListener('scroll', schedule)
-      window.removeEventListener('resize', schedule)
-    }
-  }, [])
 
   const position = positions[posIndex]
   const isShutdown = posIndex === SHUT
@@ -165,6 +142,7 @@ export default function EmotionalGradient() {
   const modeCaption = chronic
     ? 'Chronic — the gradient has become rigid: the nervous system gets stuck in protective patterns, reacting from threat even when the present moment is safe.'
     : 'Fluid — the nervous system can move flexibly between safety, threat, and rest, depending on what is happening around it.'
+  const gradientBadgeLabel = `${chronic ? 'Rigid Gradient' : 'Fluid Gradient'} · ${chronic ? 'Chronic' : 'Acute'} ${position.code} State`
 
   function setFromClientX(clientX) {
     const el = barRef.current
@@ -236,12 +214,12 @@ export default function EmotionalGradient() {
         '--readout-line': tile.divider,
       }}
     >
-      <div className={`gradient-sticky${compactSticky ? ' is-compact' : ''}`}>
-        {/* state ribbon — current position stays in view while reading */}
+      <div className="gradient-sticky">
+        {/* state ribbon — current position and mode controls */}
         <div className="gradient-toolbar">
           <div className="gradient-toolbar-copy">
             <div className="sticky-state-title">
-              <Badge color={chronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{chronic ? 'Chronic' : 'Fluid'} · State {position.code}</Badge>
+              <Badge color={chronic ? WARM : (isAcuteBaseline ? panel.cDot : accent)} light={panelLight}>{gradientBadgeLabel}</Badge>
               <p className="sticky-autonomic-line">
                 autonomic state — <span>{autonomic[position.id]}</span>
               </p>
@@ -400,7 +378,7 @@ export default function EmotionalGradient() {
       {/* selected position */}
       <div className="selected-state">
         {/* configuration readout */}
-        <div ref={readoutRef} className="state-readout">
+        <div className="state-readout">
           <div className="state-configuration-title">
             <span className="state-configuration-dot" aria-hidden="true" />
             <h2 className="state-configuration-name">{position.mode}</h2>
@@ -445,12 +423,10 @@ export default function EmotionalGradient() {
         .gradient-card {
           position: relative;
           isolation: isolate;
-          --gradient-sticky-offset: 68px;
         }
 
         .gradient-sticky {
-          position: sticky;
-          top: 68px;
+          position: relative;
           z-index: 30;
           border-radius: 8px 8px 0 0;
           border-bottom: 1px solid var(--gradient-line);
@@ -507,8 +483,8 @@ export default function EmotionalGradient() {
 
         .gradient-track-shell {
           position: relative;
-          margin: 14px 20px 0;
-          padding: 14px 0 16px;
+          margin: 12px 20px 0;
+          padding: 12px 0 12px;
           border-top: 1px solid color-mix(in srgb, var(--gradient-accent) 18%, transparent);
         }
 
@@ -530,7 +506,7 @@ export default function EmotionalGradient() {
 
         .selected-state {
           position: relative;
-          padding: calc(6px + var(--gradient-sticky-offset)) 20px 28px;
+          padding: 24px 20px 28px;
         }
 
         .state-readout {
@@ -739,14 +715,6 @@ export default function EmotionalGradient() {
         }
 
         @media (max-width: 720px) {
-          .gradient-card {
-            --gradient-sticky-offset: 66px;
-          }
-
-          .gradient-sticky {
-            top: 66px;
-          }
-
           .gradient-toolbar {
             display: grid;
             grid-template-columns: minmax(0, 1fr) auto;
@@ -838,7 +806,7 @@ export default function EmotionalGradient() {
           }
 
           .selected-state {
-            padding: calc(4px + var(--gradient-sticky-offset)) 16px 26px;
+            padding: 22px 16px 26px;
           }
 
           .state-configuration-title {
@@ -920,106 +888,6 @@ export default function EmotionalGradient() {
             font-size: 11px !important;
           }
 
-          .gradient-sticky.is-compact {
-            border-radius: 0;
-            margin-bottom: 8px;
-            box-shadow: none;
-          }
-
-          .gradient-sticky.is-compact .gradient-toolbar {
-            align-items: center;
-            padding: 8px 12px 0;
-            gap: 6px;
-          }
-
-          .gradient-sticky.is-compact .gradient-toolbar-copy {
-            flex-direction: row;
-            align-items: center;
-            gap: 8px;
-          }
-
-          .gradient-sticky.is-compact .sticky-state-title {
-            flex-direction: row;
-            align-items: center;
-            gap: 8px;
-          }
-
-          .gradient-sticky.is-compact .sticky-autonomic-line {
-            display: none;
-          }
-
-          .gradient-sticky.is-compact .state-pill {
-            padding: 4px 7px !important;
-          }
-
-          .gradient-sticky.is-compact .state-pill-dot {
-            width: 7px !important;
-            height: 7px !important;
-          }
-
-          .gradient-sticky.is-compact .state-pill-text {
-            font-size: 8.5px !important;
-            letter-spacing: 0.045em !important;
-          }
-
-          .gradient-sticky.is-compact .chronic-toggle {
-            gap: 6px !important;
-            padding: 4px 8px !important;
-            font-size: 11px !important;
-          }
-
-          .gradient-sticky.is-compact .mode-caption {
-            display: none;
-          }
-
-          .gradient-sticky.is-compact .gradient-track-shell {
-            margin: 8px 12px 0;
-            padding: 8px 0 9px;
-          }
-
-          .gradient-sticky.is-compact .gradient-track-row {
-            gap: 8px !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-bar-hitbox {
-            padding: 7px 0 !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-bar {
-            height: 12px !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-needle {
-            width: 24px !important;
-            height: 24px !important;
-            border-width: 2px !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-shutdown-track {
-            gap: 8px !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-shutdown-divider {
-            height: 18px !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-shutdown-button {
-            padding: 7px 0 !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-shutdown-pill {
-            width: 34px !important;
-            height: 12px !important;
-            border-width: 1px !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-track-labels {
-            display: none !important;
-          }
-
-          .gradient-sticky.is-compact .gradient-bar-name {
-            display: none !important;
-          }
         }
       `}</style>
     </section>
