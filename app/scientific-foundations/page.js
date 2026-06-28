@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock } from "@/src/components";
+import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock, ReviewStatusPanel } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is TEG-Blue peer-reviewed?",
-    answer: "An initial computational study of 10,000+ conflict narratives is published with DOI 10.5281/zenodo.19472342. The broader theoretical architecture is a working hypothesis that invites independent testing, critique, and replication. TEG-Blue publishes methods, data, and code where appropriate for reproducibility and responsible access.",
+    answer: "The source literature TEG-Blue draws from includes peer-reviewed research and established scholarly work. An initial computational study of 10,000+ conflict narratives is published with DOI 10.5281/zenodo.19472342. The broader visual synthesis and theoretical architecture are original framework work that invites independent testing, critique, and replication.",
   },
 ];
 
@@ -699,6 +699,7 @@ const globalModels = [
 ];
 
 const SIDEBAR_SECTIONS = [
+  { label: "Review Status", href: "#review-status-heading", description: "What is peer-reviewed source literature, what is TEG-Blue's original synthesis, and what remains open to testing." },
   { label: "41 Research Traditions", href: "#research-traditions", description: "Every research tradition TEG-Blue draws from, credited and documented — together synthesizing 145+ theoretical contributions." },
   { label: "24 Research Domains", href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
   { label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
@@ -789,6 +790,11 @@ export default function ScientificFoundationsPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        <ReviewStatusPanel
+          title="An evidence map of cited research, not a claim that the whole synthesis is peer-reviewed."
+          description="This page organizes established scientific and scholarly sources by the function they serve in the TEG-Blue architecture. The source literature includes peer-reviewed research; the cross-disciplinary placement is TEG-Blue's original contribution and remains open to scholarly correction, replication, and testing."
+        />
+
         {/* ─── Answer-first opening ─────────────────────────────── */}
         <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 24, fontWeight: 500 }}>
           TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. A finding from neuroscience may explain the mechanism; a finding from attachment research may explain the developmental imprint; a finding from trauma research may explain the chronic adaptation; a finding from sociology may explain how the same pattern becomes collective. Each source remains accurate to its own discipline, language, and evidence base. TEG-Blue places these findings in sequence — field → finding → function → position in the architecture. The contribution is the placement, not the individual pieces.

@@ -5,7 +5,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const SIDEBAR_SECTIONS = [
   { label: "The Data System", href: "#the-data-system", description: "Five layers from established science to published tools. How each layer feeds the next." },
-  { label: "Established Science", href: "#established-science", description: "145+ peer-reviewed theoretical contributions from 41 research traditions from neuroscience, psychology, attachment, and trauma research." },
+  { label: "Established Science", href: "#established-science", description: "145+ scholarly and peer-reviewed source contributions from 41 research traditions in neuroscience, psychology, attachment, and trauma research." },
   { label: "Concept Architectures", href: "#concept-architectures", description: "How 12 frameworks and 4 models connect established theories into testable structures." },
   { label: "Root Data", href: "#root-data", description: "Five files organized by biological function. The operational consolidation layer." },
   { label: "From Root to Output", href: "#from-root-to-output", description: "How root data becomes JavaScript libraries, interactive tools, diagrams, and research pages." },
@@ -105,7 +105,7 @@ export default function HowItWorksPage() {
             <PipelineLayer
               number={1}
               title="Established science"
-              description="145+ peer-reviewed theoretical contributions from 41 research traditions from neuroscience, psychology, attachment research, and trauma studies. Every source credited."
+              description="145+ scholarly and peer-reviewed source contributions from 41 research traditions in neuroscience, psychology, attachment research, and trauma studies. Every source credited."
               color={SPECTRUM.sky}
               arrow
             />

@@ -22,6 +22,7 @@ export { default as PropositionBox } from "./PropositionBox";
 export { default as MechanismBox } from "./MechanismBox";
 export { default as ResearcherHero } from "./ResearcherHero";
 export { default as FrameworkTerms } from "./FrameworkTerms";
+export { default as ReviewStatusPanel } from "./ReviewStatusPanel";
 
 // Framework components
 export { default as FrameworkHero } from "./FrameworkHero";

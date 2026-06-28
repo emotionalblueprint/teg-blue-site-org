@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock, PageLayout } from "@/src/components";
+import { SiteHeader, SiteFooter, ResearcherHero, AuthorBlock, PageLayout, ReviewStatusPanel } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const SIDEBAR_SECTIONS = [
+  { label: "Review Status", href: "#review-status-heading", description: "Peer-reviewed source literature, original visual synthesis, and what remains open to testing." },
   { label: "Research Grounding Principles", href: "#research-grounding-principles", description: "Source traces, transparent methods, working questions, and open correction." },
   { label: "Status Ladder", href: "#status-ladder", description: "Where each component stands: established, proposed, preliminary, or open." },
   { label: "Testing Approach", href: "#testing-approach", description: "How TEG-Blue tests working claims — computational analysis, natural language data, independent replication." },
@@ -15,7 +16,7 @@ const SIDEBAR_SECTIONS = [
 
 export const metadata = {
   title: "Methodology | TEG-Blue",
-  description: "How TEG-Blue documents research grounding: source traces, transparent methods, working questions, ethical standards, and pattern-aware data architecture.",
+  description: "How TEG-Blue documents research grounding: peer-reviewed source literature, original visual synthesis, source traces, transparent methods, working questions, and limitations.",
   keywords: [
     "research methodology",
     "research grounding",
@@ -52,7 +53,7 @@ export const metadata = {
 const FAQ_ITEMS = [
   {
     question: "What are TEG-Blue's research-grounding principles?",
-    answer: "TEG-Blue documents source traces, methods, working questions, limitations, and updates so the framework can be reviewed, corrected, tested, and cited carefully."
+    answer: "TEG-Blue documents source traces, methods, working questions, limitations, and updates so the framework can be reviewed, corrected, tested, and cited carefully. The source literature includes peer-reviewed research; the visual synthesis is original framework work open to independent testing."
   },
   {
     question: "How are TEG-Blue claims tested?",
@@ -60,7 +61,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How was TEG-Blue developed?",
-    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a working hypothesis requiring deeper scholarly validation."
+    answer: "The architecture was developed by Anna Paretas-Artacho over nearly two years of independent research. AI research tools (including the deep thinking models of Claude, Perplexity, and Microsoft Copilot) were then used to systematically identify which established theories align with each framework's propositions. The theoretical mapping is a visual research synthesis and working hypothesis requiring deeper scholarly validation."
   },
   {
     question: "What ethical standards does TEG-Blue research follow?",
@@ -89,6 +90,8 @@ export default function MethodologyPage() {
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
+        <ReviewStatusPanel />
+
         {/* Research Grounding Principles */}
         <section id="research-grounding-principles" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>

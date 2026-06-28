@@ -22,7 +22,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Ethical Principles", href: "#position", description: "What ethical principles guide TEG-Blue? Emotional development is contextual — an empirical foundation." },
   { label: "Context Shapes Everything", href: "#context-shapes-everything", description: "Systemic awareness as scientific prerequisite, not political position." },
   { label: "Non-Pathologisation", href: "#non-pathologisation", description: "How does TEG-Blue avoid pathologising emotional patterns? Adaptive responses mapped as functional adaptations." },
-  { label: "Rigour & Compassion", href: "#rigour-and-compassion", description: "Grounded in peer-reviewed research. Built for human understanding." },
+  { label: "Rigour & Compassion", href: "#rigour-and-compassion", description: "Grounded in cited research and established scholarship. Built for human understanding." },
   { label: "Accessibility & Equity", href: "#accessibility-and-equity", description: "Designed for everyone. Open science. No knowledge behind paywalls." },
   { label: "Transparency", href: "#transparency", description: "Methodology is visible. Claims are testable. Limitations are stated." },
   { label: "Responsible Technology", href: "#responsible-technology", description: "Safeguards, human oversight, and transparency in AI-assisted tools." },
@@ -151,7 +151,7 @@ export default function EthicsPage() {
             Accurate emotional modelling requires accounting for the systems in which emotional development occurs.
           </PrincipleQuote>
           <p style={body}>
-            TEG-Blue is grounded in peer-reviewed research and built through systematic methodology. The purpose of that rigour is applied — to produce models and tools that help people understand their own patterns, interrupt cycles of harm, and build healthier relational dynamics.
+            TEG-Blue is grounded in cited research, peer-reviewed source literature, and established scholarship, then organized through an original visual synthesis. The purpose of that rigour is applied — to produce models and tools that help people understand their own patterns, interrupt cycles of harm, and build healthier relational dynamics.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
             Individual emotional patterns cannot be fully understood without reference to the broader systems that shaped them. Clinical or educational work supporting others in understanding their patterns requires accounting for the different structural realities people navigate. The framework treats personal insight and systemic understanding as inseparable — not for ideological reasons, but because the neuroscience consistently supports that position.

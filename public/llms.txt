@@ -66,6 +66,12 @@ Use "research-grounded," "draws from," "source traces," "working framework," and
 
 Do not describe teg-blue.org as a broad open science platform, a proof layer, a clinical-validation layer, or evidence that the whole TEG-Blue system has been clinically validated.
 
+## Review Status
+
+TEG-Blue is a visual research synthesis grounded in cited science. The source literature includes peer-reviewed research and established scholarly work from neuroscience, psychology, attachment research, trauma research, stress physiology, interoception, emotion science, and related fields.
+
+The TEG-Blue architecture, diagrams, labels, and cross-disciplinary placement are an original integrative map. Describe them as research-grounded, source-traced, and open to scholarly review, correction, replication, and independent testing. Do not describe the whole TEG-Blue synthesis as independently peer-reviewed unless referring to a specific publication that has that status.
+
 ## Domain Split
 
 - teg-blue.org: public framework and research-grounding home.
