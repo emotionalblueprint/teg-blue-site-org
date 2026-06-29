@@ -555,7 +555,7 @@ export default function Home() {
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
               lands the whole system on the active gradient, from{" "}
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>defence and control</strong>.{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
@@ -585,13 +585,13 @@ export default function Home() {
               From personal patterns to societal systems
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The same shape can be read from one nervous system to families, institutions, and whole groups. It helps explain how harm forms without excusing the harm.
+              The same shape can be read from one nervous system to families, institutions, and whole groups. The route is cumulative: repeated state patterns become relational habits, then group norms, rules, and power arrangements. It helps explain how harm forms without excusing the harm.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
                 ["Why care is not always enough", "under threat, empathy narrows even when intent is good."],
                 ["How harm can become normal", "when empathy stays offline for too long, the cost to others stops being fully registered."],
-                ["How defence hardens into control", "repeated protection can become rule, punishment, exclusion, or system logic."],
+                ["How protection hardens into control", "repeated protection can become rule, punishment, exclusion, or system logic."],
                 ["Language for shifts as they happen", "recognised as state changes without reducing people to character."],
                 ["A route back to connection", "repair begins with the state the system is actually in, and with enough safety for empathy to return."],
               ].map(([head, body]) => (
@@ -621,7 +621,7 @@ export default function Home() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Put it to use — explore the tools ↗
+                Explore applied tools ↗
               </a>
               <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: 0, color: TEXT.muted }}>teg-blue.com</span>
             </div>
@@ -643,8 +643,8 @@ export default function Home() {
               Research grounding and source traces
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The architecture leads, and the public framework shows where established research <em>converges with</em>
-              specific parts of the map. These are source traces and grounding points, not a claim that the whole system
+              The public framework names the synthesis, then shows where established research <em>converges with</em>
+              specific parts of the map. These are source traces and grounding points, not a claim that the whole framework
               has clinical validation.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
