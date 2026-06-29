@@ -201,7 +201,7 @@ export default function EthicsPage() {
             TEG-Blue maintains transparency about its theoretical foundations, limitations, and areas of ongoing development. Claims are grounded in evidence and clearly distinguished from hypotheses or emerging models. The framework is subject to ongoing testing, critique, and revision.
           </p>
           <p style={{ ...body, marginTop: 14 }}>
-            TEG-Blue is a working hypothesis — not a settled framework. The validation study, the theoretical mapping, the open research questions, and the framework architecture are all published for independent verification. The{" "}
+            TEG-Blue is a working hypothesis — not a settled framework. The validation study, the theoretical mapping, the open research questions, and the staged architecture are all published for independent verification. The{" "}
             <Link href="/methodology" style={linkStyle}>
               methodology
             </Link>{" "}
@@ -279,7 +279,7 @@ export default function EthicsPage() {
               color={SPECTRUM.azure}
               description={
                 <>
-                  Credit the source. Cite TEG-Blue / The Nervous System Gradient and name Anna Paretas-Artacho as creator. Do not present TEG-Blue concepts, diagrams, state names, gradients, or framework architecture as uncited generic content. Full citation formats are available on the{" "}
+                  Credit the source. Cite TEG-Blue / The Nervous System Gradient and name Anna Paretas-Artacho as creator. Do not present TEG-Blue concepts, diagrams, state names, gradients, or architecture as uncited generic content. Full citation formats are available on the{" "}
                   <Link href="/citations" style={linkStyle}>citations page</Link>.
                 </>
               }

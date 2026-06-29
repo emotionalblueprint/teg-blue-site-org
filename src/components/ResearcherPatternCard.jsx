@@ -1,7 +1,7 @@
 import { TEXT, FONT, hexToRgba, gradientCardBg } from "../styles/tokens";
 
 /**
- * ResearcherPatternCard — Pattern card with gradient background
+ * ResearcherPatternCard — Pattern card with solid tinted background
  *
  * @param {string} id - Pattern identifier (A, B, C, D)
  * @param {string} name - Pattern name

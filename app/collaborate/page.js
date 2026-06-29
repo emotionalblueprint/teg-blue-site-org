@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "How can I collaborate with TEG-Blue?",
-    answer: "There is no application process. The work is open. Start by reading the research entry point, reviewing the methodology, and exploring the framework architecture. Contact research@teg-blue.org for coordination on specific research directions.",
+    answer: "There is no application process. The work is open. Start by reading the research entry point, reviewing the methodology, and checking the public source grounding. Contact research@teg-blue.org for coordination on specific research directions.",
   },
   {
     question: "What types of collaboration does TEG-Blue need?",
@@ -132,8 +132,8 @@ export default function CollaboratePage() {
             <Link href="/methodology" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
               methodology
             </Link>, and exploring the{" "}
-            <Link href="/frameworks-map" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              framework architecture
+            <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+              public source grounding
             </Link>.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
@@ -190,16 +190,16 @@ export default function CollaboratePage() {
         <section id="current-status" style={{ marginBottom: 32 }}>
           <h2 style={sectionHeading}>Current status</h2>
           <p style={bodyStyle}>
-            TEG-Blue is in active development. The framework architecture (12 frameworks, 4 models) is complete. The first validation study is published. Five open research questions are documented.
+            TEG-Blue is in active development. The public Gradient, source grounding, methodology, and first validation study are available for review. Framework-specific architecture remains staged until those pages return.
           </p>
           <p style={{ ...bodyStyle, marginTop: 12 }}>
             What the framework needs most is a lead researcher or institution to carry the next phase — systematic validation, replication across contexts, and dissemination into established research channels.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 20 }}>
             <NavLink href="/research-entry" label="Research Entry" />
+            <NavLink href="/methodology" label="Methodology" />
             <NavLink href="/publications" label="Publications" />
-            <NavLink href="/scientific-foundations" label="Established Research" />
-            <NavLink href="/frameworks-map" label="Framework Architecture" />
+            <NavLink href="/scientific-foundations" label="Scientific Foundations" />
             <a
               href="https://teg-blue.com/emotional-tools"
               target="_blank"

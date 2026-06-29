@@ -1,38 +1,38 @@
 import { SPACING } from "@/src/styles/tokens";
 
 const px = SPACING.pagePadding;
+const sidebarWidth = 244;
+const sidebarGap = 32;
 
 const RESPONSIVE_CSS = `
-  .page-layout-hover-nav {
-    position: fixed;
-    top: 92px;
-    left: 0;
-    z-index: 80;
-    display: flex;
-    width: min(318px, calc(100vw - 18px));
-    max-height: calc(100vh - 116px);
-    transform: translateX(calc(-100% + 38px));
-    transition: transform 180ms ease, filter 180ms ease;
-    filter: drop-shadow(0 18px 42px rgba(0, 14, 36, 0.22));
+  .page-layout-with-sidebar {
+    display: grid;
+    grid-template-columns: ${sidebarWidth}px minmax(0, 1fr);
+    gap: clamp(24px, 3vw, ${sidebarGap}px);
+    align-items: start;
   }
 
-  .page-layout-hover-nav:hover,
-  .page-layout-hover-nav:focus-within {
-    transform: translateX(0);
-    filter: drop-shadow(0 24px 54px rgba(0, 14, 36, 0.34));
+  .page-layout-content {
+    min-width: 0;
+  }
+
+  .page-layout-hover-nav {
+    position: sticky;
+    top: 92px;
+    z-index: 5;
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 116px);
   }
 
   .page-layout-hover-panel {
-    flex: 1;
     min-width: 0;
     max-height: calc(100vh - 116px);
     overflow-y: auto;
     padding: 14px;
     border: 1px solid var(--border-default);
-    border-left: 0;
-    border-radius: 0 8px 8px 0;
-    background: linear-gradient(180deg, color-mix(in srgb, var(--blue-900) 94%, transparent) 0%, color-mix(in srgb, var(--blue-950) 98%, transparent) 100%);
-    backdrop-filter: blur(14px);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--blue-900) 34%, var(--bg-primary));
     scrollbar-width: thin;
   }
 
@@ -45,36 +45,7 @@ const RESPONSIVE_CSS = `
   }
 
   .page-layout-hover-rail {
-    appearance: none;
-    width: 38px;
-    flex: 0 0 38px;
-    min-height: 176px;
-    display: grid;
-    place-items: center;
-    padding: 0;
-    border: 1px solid var(--border-default);
-    border-left: 0;
-    border-radius: 0 8px 8px 0;
-    background: color-mix(in srgb, var(--blue-900) 88%, var(--blue-950));
-    cursor: pointer;
-  }
-
-  .page-layout-hover-rail:focus-visible {
-    outline: 2px solid var(--blue-300);
-    outline-offset: -3px;
-  }
-
-  .page-layout-hover-rail span {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    color: var(--blue-200);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    white-space: nowrap;
+    display: none;
   }
 
   .page-layout-hover-heading {
@@ -139,13 +110,16 @@ const RESPONSIVE_CSS = `
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .page-layout-hover-nav,
     .page-layout-hover-link {
       transition: none;
     }
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 980px) {
+    .page-layout-with-sidebar {
+      display: block;
+    }
+
     .page-layout-hover-nav {
       display: none;
     }
@@ -177,45 +151,49 @@ export default function PageLayout({ header, children, sidebarSections }) {
         style={{
           position: "relative",
           zIndex: 1,
-          maxWidth: SPACING.containerMax,
+          maxWidth: hasSidebar ? SPACING.containerMax + sidebarWidth + sidebarGap : SPACING.containerMax,
           margin: "0 auto",
           padding: `24px ${px} 72px`,
         }}
       >
-        {hasSidebar && (
-          <aside className="page-layout-hover-nav" aria-label="On this page">
-            <div className="page-layout-hover-panel">
-              <div className="page-layout-hover-heading">On this page</div>
-              <nav className="page-layout-hover-list">
-                {sidebarSections.map((section, i) => {
-                  const content = (
-                    <>
-                      <span className="page-layout-hover-label">{section.label}</span>
-                      <span className="page-layout-hover-description">{section.description}</span>
-                    </>
-                  );
+        <div className={hasSidebar ? "page-layout-with-sidebar" : undefined}>
+          {hasSidebar && (
+            <aside className="page-layout-hover-nav" aria-label="On this page">
+              <div className="page-layout-hover-panel">
+                <div className="page-layout-hover-heading">On this page</div>
+                <nav className="page-layout-hover-list">
+                  {sidebarSections.map((section, i) => {
+                    const content = (
+                      <>
+                        <span className="page-layout-hover-label">{section.label}</span>
+                        <span className="page-layout-hover-description">{section.description}</span>
+                      </>
+                    );
 
-                  return section.href ? (
-                    <a key={`${section.href}-${i}`} href={section.href} className="page-layout-hover-item page-layout-hover-link">
-                      {content}
-                    </a>
-                  ) : (
-                    <div key={`${section.label}-${i}`} className="page-layout-hover-item page-layout-hover-static">
-                      {content}
-                    </div>
-                  );
-                })}
-              </nav>
-            </div>
-            <button className="page-layout-hover-rail" type="button" aria-label="Open On this page navigation">
-              <span>On this page</span>
-            </button>
-          </aside>
-        )}
+                    return section.href ? (
+                      <a key={`${section.href}-${i}`} href={section.href} className="page-layout-hover-item page-layout-hover-link">
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={`${section.label}-${i}`} className="page-layout-hover-item page-layout-hover-static">
+                        {content}
+                      </div>
+                    );
+                  })}
+                </nav>
+              </div>
+              <button className="page-layout-hover-rail" type="button" aria-label="Open On this page navigation">
+                <span>On this page</span>
+              </button>
+            </aside>
+          )}
 
-        {header}
+          <div className={hasSidebar ? "page-layout-content" : undefined}>
+            {header}
 
-        {children}
+            {children}
+          </div>
+        </div>
       </main>
     </>
   );

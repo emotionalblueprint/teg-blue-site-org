@@ -474,9 +474,9 @@ export function hexToRgba(hex, alpha) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-// Helper: gradient card background
+// Helper: subtle solid card tint
 export function gradientCardBg(color, startOpacity = 0.08) {
-  return `linear-gradient(135deg, ${hexToRgba(color, startOpacity)}, transparent)`;
+  return hexToRgba(color, startOpacity);
 }
 
 // Helper: card color set at standard opacities

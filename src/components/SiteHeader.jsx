@@ -139,7 +139,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                     zIndex: 120,
                     width: "min(86vw, 360px)",
                     padding: 8,
-                    background: `linear-gradient(180deg, ${BG.diagram} 0%, ${BG.page} 100%)`,
+                    background: BG.diagram,
                     border: `1px solid ${BORDER.default}`,
                     borderRadius: 8,
                     boxShadow: "0 24px 60px rgba(4, 8, 18, 0.42)",

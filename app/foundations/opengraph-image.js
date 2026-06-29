@@ -10,7 +10,7 @@ export default function Image() {
     badge: 'System Overview',
     badgeColor: 'azure',
     title: 'How the Four Parts Fit Together',
-    subtitle: 'Measurement \u00b7 12 Frameworks \u00b7 Emotional Tools \u00b7 Applied Context',
+    subtitle: 'Measurement \u00b7 Source Science \u00b7 Emotional Tools \u00b7 Applied Context',
     url: 'teg-blue.org/foundations',
     needle: 0.125,
   })

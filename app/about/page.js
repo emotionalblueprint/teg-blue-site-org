@@ -18,14 +18,14 @@ const FAQ_ITEMS = [
   },
   {
     question: "What scientific domains does TEG-Blue draw from?",
-    answer: "TEG-Blue synthesizes established research from 24 scientific domains including polyvagal theory, attachment theory, affect regulation, social identity theory, moral development research, and neurodivergence research. The originality is in the integration, not the individual theories.",
+    answer: "TEG-Blue draws from established research in affective neuroscience, polyvagal theory, attachment research, stress physiology, trauma studies, cognitive science, communication models, and educational regulation tools. The originality is in the Gradient-based organization, not the individual source fields.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
   { label: "The Core Premise", href: "#core-premise", description: "The foundational working proposition and what makes it testable." },
   { label: "Research Status", href: "#research-status", description: "Initial computational findings from 10,000+ natural conflict narratives." },
-  { label: "Established Research", href: "#foundations", description: "24 scientific domains, 145+ theoretical contributions across 41 research traditions, and what the integration reveals." },
+  { label: "Established Research", href: "#foundations", description: "Source fields behind the public Nervous System Gradient." },
   { label: "Open Questions", href: "#open-questions", description: "Priority research directions for independent verification." },
   { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — background and research identity." },
   { label: "Two Sites", href: "#two-sites", description: "Framework/research grounding (.org) and practical tools (.com)." },
@@ -215,25 +215,25 @@ export default function AboutPage() {
           <h2 style={sectionHeading}>Established research</h2>
 
           <p style={bodyStyle}>
-            The framework synthesizes established research from <strong style={{ color: TEXT.primary }}>24 scientific domains</strong> into <strong style={{ color: TEXT.primary }}>12 integrative frameworks</strong> organized in three arcs:
+            The public Gradient is grounded in established source fields. The page keeps those fields separate from TEG-Blue&apos;s original synthesis, so readers can see what comes from cited research and what is proposed as Gradient placement.
           </p>
 
           <div style={{ marginTop: 16, marginBottom: 16 }}>
             {[
               {
-                arc: "Individual (F1–F3)",
-                desc: "How the nervous system evaluates safety, how identity forms through development, and how cognition compensates when the return path is missing.",
-                domains: "Polyvagal theory, attachment theory, affect regulation, identity development, cognitive coherence",
+                arc: "Nervous-system grounding",
+                desc: "How safety, threat, mobilisation, shutdown, interoception, and stress physiology shape available capacity.",
+                domains: "Polyvagal theory, affective neuroscience, interoception, stress physiology, trauma research",
               },
               {
-                arc: "Collective (F4–F7)",
-                desc: "How individual patterns become shared rules, worth hierarchies, perception biases, and how protection escalates to domination.",
-                domains: "Social identity theory, implicit bias, moral development, power dynamics, institutional behavior",
+                arc: "Development and relationship",
+                desc: "How early relational experience, attachment, identity adaptation, and repair conditions shape emotional patterns over time.",
+                domains: "Attachment theory, developmental psychology, object relations, self psychology, interpersonal neurobiology",
               },
               {
-                arc: "Repair & Complexity (F8–F12)",
-                desc: "How awareness capacities rebuild, neurodivergent variation, generational transmission, paradox, and the two-system architecture underneath.",
-                domains: "Neuroplasticity, neurodivergence research, epigenetics, dual-process theory, intergenerational transmission",
+                arc: "Cognition, communication, and tools",
+                desc: "How naming, reframing, communication, emotional literacy, and state-dependent thinking become usable public tools.",
+                domains: "CBT, NVC, Plutchik's taxonomy, Zones of Regulation, cognitive dissonance, emotion science",
               },
             ].map((item) => (
               <div
@@ -254,11 +254,11 @@ export default function AboutPage() {
           </div>
 
           <p style={bodyStyle}>
-            Full source mapping available at the{" "}
+            The current public source map is available at the{" "}
             <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Established Research
+              Scientific Foundations
             </Link>
-            {" "}page, with 145+ theoretical contributions across 41 research traditions documented and cross-referenced.
+            {" "}page, with framework-specific grounding held back until those pages return.
           </p>
         </section>
 

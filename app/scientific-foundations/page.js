@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback } from "react";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock, ReviewStatusPanel } from "@/src/components";
-import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateScientificFoundationsJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
+import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
   {
@@ -20,8 +20,9 @@ const FAQ_ITEMS = [
   },
 ];
 
-// Framework/model pages remain staged in this release. Keep F/M tags visible as
-// labels, not links, so the research-grounding page does not route into gated pages.
+// Framework/model pages remain staged in this release. Keep their source map out
+// of this public-facing page until those sections return.
+const SHOW_FRAMEWORK_GROUNDING = false;
 
 // ─── DOMAIN COLORS ──────────────────────────────────────────────
 const domainColors = {
@@ -60,7 +61,7 @@ function getDomainColor(domain) {
 
 // ─── COMPREHENSIVE THEORY DATABASE ─────────────────────────────
 // Tradition-level entries consolidating theoretical contributions
-// Each entry represents a research tradition with key researchers and framework cross-references
+// Each entry represents a research tradition with key researchers and source-map references.
 const THEORIES = [
   // ─── Existing entries (migrated from content/theories/*.json) ───
   {
@@ -536,8 +537,34 @@ const THEORIES = [
   },
 ];
 
-// ─── RESEARCH DOMAINS (derived from THEORIES) ──────────────────
-const RESEARCH_DOMAINS = [...new Set(THEORIES.map((t) => t.domain))].sort();
+const FRAMEWORK_GROUNDING_THEORY_SLUGS = new Set([
+  "family-systems",
+  "mentalization",
+  "social-dominance",
+  "terror-management",
+  "moral-psychology",
+  "behavioral-reinforcement",
+  "neurodiversity-paradigm",
+  "epigenetics",
+  "narrative-psychology",
+  "network-science",
+  "power-social-rank",
+  "abuse-coercive-control",
+  "dual-process",
+  "somatic-experiencing",
+  "social-identity",
+  "intersectionality",
+  "contact-hypothesis",
+  "dialectical-behavior-therapy",
+  "ecological-systems",
+]);
+
+const VISIBLE_THEORIES = SHOW_FRAMEWORK_GROUNDING
+  ? THEORIES
+  : THEORIES.filter((theory) => !FRAMEWORK_GROUNDING_THEORY_SLUGS.has(theory.slug));
+
+// ─── RESEARCH DOMAINS (derived from visible source map) ─────────
+const RESEARCH_DOMAINS = [...new Set(VISIBLE_THEORIES.map((t) => t.domain))].sort();
 
 // ─── CORE FOUNDATIONS ───────────────────────────────────────────
 const coreFoundations = [
@@ -837,9 +864,11 @@ const SIDEBAR_SECTIONS = [
   { label: "How to Read", href: "#review-status-heading", description: "How source areas, synthesis, tools, and research questions are placed." },
   { label: "Gradient Sources", href: "#gradient-evidence", description: "The four source principles behind the Nervous System Gradient." },
   { label: "Model Bridges", href: "#model-bridges", description: "Widely used models and what the Gradient places from each one." },
-  { label: `${THEORIES.length} Research Traditions`, href: "#research-traditions", description: "Research traditions credited by contribution and source area." },
-  { label: `${RESEARCH_DOMAINS.length} Research Domains`, href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and framework cross-reference." },
-  { label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1–F12, M1–M2) showing where it integrates." },
+  { label: `${VISIBLE_THEORIES.length} Research Traditions`, href: "#research-traditions", description: "Research traditions credited by contribution and source area." },
+  { label: `${RESEARCH_DOMAINS.length} Research Domains`, href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and keyword." },
+  ...(SHOW_FRAMEWORK_GROUNDING
+    ? [{ label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1-F12, M1-M2) showing where it integrates." }]
+    : []),
   { label: "CSV Download", href: "#csv-download", description: "Download the source-map dataset." },
 ];
 
@@ -851,7 +880,7 @@ export default function ScientificFoundationsPage() {
 
   // Filtered theories for Evidence Map
   const filteredTheories = useMemo(() => {
-    let result = THEORIES;
+    let result = VISIBLE_THEORIES;
     if (activeDomain) {
       result = result.filter((t) => t.domain === activeDomain);
     }
@@ -862,7 +891,7 @@ export default function ScientificFoundationsPage() {
           t.title?.toLowerCase().includes(q) ||
           t.summary?.toLowerCase().includes(q) ||
           t.originAuthor?.toLowerCase().includes(q) ||
-          t.frameworks?.some((f) => f.toLowerCase().includes(q)) ||
+          (SHOW_FRAMEWORK_GROUNDING && t.frameworks?.some((f) => f.toLowerCase().includes(q))) ||
           t.tags?.some((tag) => tag.toLowerCase().includes(q))
       );
     }
@@ -884,15 +913,21 @@ export default function ScientificFoundationsPage() {
 
   // CSV download
   const downloadCSV = useCallback(() => {
-    const headers = ["Title", "Domain", "Author", "Summary", "Frameworks", "Tags"];
-    const rows = THEORIES.map((t) => [
-      t.title || "",
-      t.domain || "",
-      t.originAuthor || "",
-      (t.summary || "").replace(/"/g, '""'),
-      (t.frameworks || []).join("; "),
-      (t.tags || []).join("; "),
-    ]);
+    const headers = SHOW_FRAMEWORK_GROUNDING
+      ? ["Title", "Domain", "Author", "Summary", "Frameworks", "Tags"]
+      : ["Title", "Domain", "Author", "Summary", "Tags"];
+    const rows = VISIBLE_THEORIES.map((t) => {
+      const baseRow = [
+        t.title || "",
+        t.domain || "",
+        t.originAuthor || "",
+        (t.summary || "").replace(/"/g, '""'),
+        (t.tags || []).join("; "),
+      ];
+      return SHOW_FRAMEWORK_GROUNDING
+        ? [...baseRow.slice(0, 4), (t.frameworks || []).join("; "), baseRow[4]]
+        : baseRow;
+    });
     const csv = [
       headers.join(","),
       ...rows.map((row) => row.map((cell) => `"${cell}"`).join(",")),
@@ -1003,13 +1038,13 @@ export default function ScientificFoundationsPage() {
               margin: "0 0 12px 0",
             }}
           >
-            {THEORIES.length} Research Traditions
+            {VISIBLE_THEORIES.length} Research Traditions
           </h2>
 
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            This source map includes {THEORIES.length} research traditions organized into {RESEARCH_DOMAINS.length} research
-            domain groupings. Each entry names a tradition, its key researchers, and the TEG-Blue
-            framework areas that draw from it.
+            This source map includes {VISIBLE_THEORIES.length} research traditions organized into {RESEARCH_DOMAINS.length} research
+            domain groupings. Each entry names a tradition, its key researchers, and the source
+            contribution it brings into view.
           </p>
 
           {/* Method note */}
@@ -1084,7 +1119,7 @@ export default function ScientificFoundationsPage() {
 
           {/* Results count + CSV download */}
           <div
-            id="framework-tags"
+            id={SHOW_FRAMEWORK_GROUNDING ? "framework-tags" : "source-map-results"}
             style={{
               display: "flex",
               alignItems: "center",
@@ -1095,7 +1130,7 @@ export default function ScientificFoundationsPage() {
             <span style={{ fontSize: 13, color: TEXT.muted }}>
               {`${filteredTheories.length} research traditions`}
               {(searchQuery || activeDomain)
-                ? ` (filtered from ${THEORIES.length})`
+                ? ` (filtered from ${VISIBLE_THEORIES.length})`
                 : ""}
             </span>
             <button
@@ -1223,11 +1258,6 @@ export default function ScientificFoundationsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQJsonLd(FAQ_ITEMS)) }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateScientificFoundationsJsonLd()) }}
       />
 
       <script
@@ -1426,8 +1456,14 @@ function CoreFoundations() {
 
 // ─── MODEL CARD COMPONENT ───────────────────────────────────────
 
+function getVisiblePlacements(items = []) {
+  if (SHOW_FRAMEWORK_GROUNDING) return items;
+  return items.filter((item) => !/^\s*F\d{1,2}\b/.test(item));
+}
+
 function ModelCard({ model }) {
   const [isOpen, setIsOpen] = useState(false);
+  const visiblePlacements = getVisiblePlacements(model.tegBlueAdds);
 
   return (
     <div
@@ -1479,25 +1515,27 @@ function ModelCard({ model }) {
           >
             {model.kind || "Comparative model"}
           </span>
-          <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
-            {model.frameworks.map((f) => (
-              <span
-                key={f}
-                style={{
-                  fontSize: 10,
-                  fontWeight: 600,
-                  fontFamily: FONT.mono,
-                  padding: "2px 6px",
-                  borderRadius: 3,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.12),
-                  color: SPECTRUM.cobalt,
-                  textDecoration: "none",
-                }}
-              >
-                {f}
-              </span>
-            ))}
-          </div>
+          {SHOW_FRAMEWORK_GROUNDING && (
+            <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
+              {model.frameworks.map((f) => (
+                <span
+                  key={f}
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 600,
+                    fontFamily: FONT.mono,
+                    padding: "2px 6px",
+                    borderRadius: 3,
+                    background: hexToRgba(SPECTRUM.cobalt, 0.12),
+                    color: SPECTRUM.cobalt,
+                    textDecoration: "none",
+                  }}
+                >
+                  {f}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Core contribution as subtitle */}
@@ -1605,7 +1643,7 @@ function ModelCard({ model }) {
                 Gradient placement
               </h4>
               <ul style={{ margin: 0, paddingLeft: 16 }}>
-                {model.tegBlueAdds.map((t, i) => (
+                {visiblePlacements.map((t, i) => (
                   <li
                     key={i}
                     style={{
@@ -1622,34 +1660,35 @@ function ModelCard({ model }) {
             </div>
           </div>
 
-          {/* Framework references */}
-          <div
-            style={{
-              marginTop: 12,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
-            <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
-            {model.frameworks.map((f) => (
-              <span
-                key={f}
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  fontFamily: FONT.mono,
-                  padding: "3px 8px",
-                  borderRadius: 4,
-                  background: hexToRgba(SPECTRUM.cobalt, 0.1),
-                  color: SPECTRUM.cobalt,
-                  textDecoration: "none",
-                }}
-              >
-                {f}
-              </span>
-            ))}
-          </div>
+          {SHOW_FRAMEWORK_GROUNDING && (
+            <div
+              style={{
+                marginTop: 12,
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
+              {model.frameworks.map((f) => (
+                <span
+                  key={f}
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 600,
+                    fontFamily: FONT.mono,
+                    padding: "3px 8px",
+                    borderRadius: 4,
+                    background: hexToRgba(SPECTRUM.cobalt, 0.1),
+                    color: SPECTRUM.cobalt,
+                    textDecoration: "none",
+                  }}
+                >
+                  {f}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -1713,7 +1752,7 @@ function ExpandableTheoryCard({ theory }) {
               — {theory.originAuthor}
             </span>
           )}
-          {theory.frameworks && theory.frameworks.length > 0 && (
+          {SHOW_FRAMEWORK_GROUNDING && theory.frameworks && theory.frameworks.length > 0 && (
             <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
               {theory.frameworks.map((f) => (
                 <span
@@ -1806,7 +1845,7 @@ function ExpandableTheoryCard({ theory }) {
             </div>
           )}
 
-          {integrationSection && (
+          {SHOW_FRAMEWORK_GROUNDING && integrationSection && (
             <div style={{ marginBottom: 16 }}>
               <h4
                 style={{
@@ -1858,7 +1897,7 @@ function ExpandableTheoryCard({ theory }) {
             </div>
           )}
 
-          {theory.connections && theory.connections.length > 0 && (
+          {SHOW_FRAMEWORK_GROUNDING && theory.connections && theory.connections.length > 0 && (
             <div style={{ marginBottom: 16 }}>
               <h4
                 style={{
@@ -1894,7 +1933,7 @@ function ExpandableTheoryCard({ theory }) {
             </div>
           )}
 
-          {theory.frameworks && theory.frameworks.length > 0 && (
+          {SHOW_FRAMEWORK_GROUNDING && theory.frameworks && theory.frameworks.length > 0 && (
             <div
               style={{
                 marginTop: 16,

@@ -144,7 +144,7 @@ export default function TEGBlueEnginePanel({
             style={{
               position: "relative",
               padding: compact ? 14 : 16,
-              background: `linear-gradient(180deg, ${hexToRgba(step.color, 0.08)}, ${hexToRgba(step.color, 0.035)}), ${BG.card}`,
+              background: hexToRgba(step.color, 0.06),
               border: `1px solid ${hexToRgba(step.color, 0.2)}`,
               borderTop: `2px solid ${step.color}`,
               borderRadius: RADIUS.md,

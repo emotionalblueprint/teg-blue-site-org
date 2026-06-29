@@ -1,8 +1,8 @@
 import { generateScientificFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "Scientific Foundations — 41 Research Traditions | TEG-Blue",
-  description: "The bodies of established research that TEG-Blue draws from as source traces and research grounding. 41 research traditions across 24 domains, each connected to its proposed architectural function (F1-F12, M1-M4).",
+  title: "Scientific Foundations — Source Grounding",
+  description: "The established research traditions, clinical models, communication approaches, and educational tools that ground the public Nervous System Gradient.",
   keywords: [
     "emotional regulation models",
     "Plutchik wheel of emotions",
@@ -13,7 +13,7 @@ export const metadata = {
     "internal family systems IFS",
     "attachment theory",
     "nervous system regulation",
-    "emotional intelligence frameworks",
+    "emotional intelligence research",
     "TEG-Blue established research",
     "psychology integration",
     "neuroscience emotions",
@@ -31,7 +31,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Scientific Foundations — How TEG-Blue Draws From Cross-Disciplinary Research",
-    description: "TEG-Blue draws from 41 research traditions — Plutchik, NVC, CBT, Polyvagal, IFS, attachment, trauma, and more — as source traces and research grounding for the proposed architecture.",
+    description: "Source traces and research grounding behind the public Nervous System Gradient, including emotion science, polyvagal theory, attachment, trauma research, CBT, NVC, and educational regulation tools.",
     url: "https://teg-blue.org/scientific-foundations",
     siteName: "TEG-Blue",
     type: "article",
@@ -40,7 +40,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Scientific Foundations — TEG-Blue",
-    description: "Research traditions and theoretical contributions that TEG-Blue draws from as source traces and grounding.",
+    description: "Research traditions and applied models that ground the public Nervous System Gradient.",
   },
 };
 
