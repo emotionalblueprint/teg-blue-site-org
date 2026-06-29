@@ -158,22 +158,18 @@ const HOME_CSS = `
 
   .home-formation-grid {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    min-height: 162px;
-    border: 1px solid var(--border-default);
-    border-radius: 8px;
-    overflow: hidden;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .home-formation-system {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(92px, 112px);
+    grid-template-columns: 1fr;
     gap: 8px;
-    align-items: stretch;
   }
 
   .home-shutdown-cell {
-    min-height: 162px;
+    min-height: 52px;
   }
 
   @media (max-width: 860px) {
@@ -183,9 +179,6 @@ const HOME_CSS = `
   }
 
   @media (max-width: 620px) {
-    .home-formation-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
     .home-formation-system {
       grid-template-columns: 1fr;
     }
@@ -284,7 +277,8 @@ const formationDescriptionStyle = {
   hyphens: "none",
 };
 const formationCodeStyle = {
-  alignSelf: "flex-start",
+  alignSelf: "center",
+  flex: "0 0 auto",
   fontFamily: FONT.mono,
   fontSize: 10,
   fontWeight: 800,
@@ -320,14 +314,16 @@ function HomeCalibrationPlate() {
               role="listitem"
               aria-label={`${cell.code}: ${cell.label}`}
               style={{
-                minHeight: 118,
+                minHeight: 52,
                 display: "flex",
-                flexDirection: "column",
+                alignItems: "center",
                 justifyContent: "space-between",
+                gap: 14,
                 padding: 12,
+                borderRadius: 7,
                 background: cell.color,
                 color: cell.ink,
-                borderRight: `1px solid ${hexToRgba(BLUE[900], 0.12)}`,
+                border: `1px solid ${hexToRgba(BLUE[900], 0.12)}`,
               }}
             >
               <span style={formationDescriptionStyle}>
@@ -341,10 +337,11 @@ function HomeCalibrationPlate() {
           className="home-shutdown-cell"
           aria-label="Shutdown off-gradient"
           style={{
-            minHeight: 118,
+            minHeight: 52,
             display: "flex",
-            flexDirection: "column",
+            alignItems: "center",
             justifyContent: "space-between",
+            gap: 14,
             padding: 12,
             borderRadius: 8,
             background: shutdownCell.color,
