@@ -169,7 +169,7 @@ const HOME_CSS = `
   }
 
   .home-shutdown-cell {
-    min-height: 52px;
+    min-height: 44px;
   }
 
   @media (max-width: 860px) {
@@ -183,7 +183,7 @@ const HOME_CSS = `
       grid-template-columns: 1fr;
     }
     .home-shutdown-cell {
-      min-height: 74px;
+      min-height: 44px;
     }
   }
 `;
@@ -268,9 +268,9 @@ const gradientLinePositions = positions.filter((p) => p.id !== "shutdown");
 const shutdownPosition = positions.find((p) => p.id === "shutdown");
 const formationDescriptionStyle = {
   fontFamily: FONT.mono,
-  fontSize: 11.5,
+  fontSize: 13,
   fontWeight: 750,
-  lineHeight: 1.22,
+  lineHeight: 1.12,
   letterSpacing: 0,
   overflowWrap: "normal",
   wordBreak: "normal",
@@ -280,7 +280,7 @@ const formationCodeStyle = {
   alignSelf: "center",
   flex: "0 0 auto",
   fontFamily: FONT.mono,
-  fontSize: 10,
+  fontSize: 10.5,
   fontWeight: 800,
   lineHeight: 1,
   letterSpacing: 0,
@@ -314,12 +314,12 @@ function HomeCalibrationPlate() {
               role="listitem"
               aria-label={`${cell.code}: ${cell.label}`}
               style={{
-                minHeight: 52,
+                minHeight: 44,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 14,
-                padding: 12,
+                gap: 12,
+                padding: "8px 12px",
                 borderRadius: 7,
                 background: cell.color,
                 color: cell.ink,
@@ -337,19 +337,19 @@ function HomeCalibrationPlate() {
           className="home-shutdown-cell"
           aria-label="Shutdown off-gradient"
           style={{
-            minHeight: 52,
+            minHeight: 44,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: 14,
-            padding: 12,
+            gap: 12,
+            padding: "8px 12px",
             borderRadius: 8,
             background: shutdownCell.color,
             color: shutdownCell.ink,
             border: `1px dashed ${hexToRgba(BLUE[100], 0.42)}`,
           }}
         >
-          <span style={{ ...formationDescriptionStyle, fontSize: 11.5 }}>
+          <span style={formationDescriptionStyle}>
             {shutdownCell.label}
           </span>
           <span style={formationCodeStyle}>{shutdownCell.code}</span>
