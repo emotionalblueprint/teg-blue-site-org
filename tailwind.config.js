@@ -8,19 +8,20 @@ module.exports = {
     extend: {
       colors: {
         // Blue Spectrum (Research Platform palette)
-        'spectrum-sky':    '#7ABAEB',
-        'spectrum-azure':  '#4A9BE8',
-        'spectrum-blue':   '#3B7DE5',
-        'spectrum-cobalt': '#3560CC',
-        'spectrum-indigo': '#4A50B0',
-        'spectrum-slate':  '#6B7A99',
+        'spectrum-sky':    '#b6ebfc',
+        'spectrum-azure':  '#76e2ff',
+        'spectrum-blue':   '#00b1ff',
+        'spectrum-cobalt': '#0590e5',
+        'spectrum-indigo': '#7b7bff',
+        'spectrum-slate':  '#808493',
 
-        // Backgrounds (cooler/deeper than .com)
-        'bg-page':    '#080C18',
-        'bg-primary': '#0C1222',
-        'bg-card':    '#111827',
-        'bg-surface': '#1A2234',
-        'bg-inset':   '#0A0E1A',
+        // Backgrounds (production .org dark stack)
+        'bg-page':    '#111729',
+        'bg-diagram': '#131a2f',
+        'bg-primary': '#151c35',
+        'bg-card':    '#1a2240',
+        'bg-surface': '#162035',
+        'bg-inset':   '#0a0d17',
 
         // Text
         'text-primary':   '#F1F5F9',

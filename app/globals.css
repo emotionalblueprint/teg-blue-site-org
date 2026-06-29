@@ -35,34 +35,34 @@
   --chronic-d:  #ff404a;
   --chronic-z:  var(--blue-800);
 
-  /* Blue Spectrum */
-  --spectrum-sky:    var(--blue-100);
-  --spectrum-azure:  var(--blue-300);
-  --spectrum-blue:   var(--blue-500);
-  --spectrum-cobalt: var(--blue-300);
-  --spectrum-indigo: var(--blue-200);
-  --spectrum-slate:  var(--blue-700);
+  /* Blue Spectrum — production .org palette */
+  --spectrum-sky:    #b6ebfc;
+  --spectrum-azure:  #76e2ff;
+  --spectrum-blue:   #00b1ff;
+  --spectrum-cobalt: #0590e5;
+  --spectrum-indigo: #7b7bff;
+  --spectrum-slate:  #808493;
 
-  /* Backgrounds — dark atlas */
-  --bg-page:    #000E24;
-  --bg-diagram: var(--blue-900);
-  --bg-primary: var(--blue-950);
-  --bg-card:    var(--blue-900);
-  --bg-surface: var(--blue-800);
-  --bg-inset:   rgba(0, 14, 36, 0.72);
-  --bg-elevated: rgba(153, 194, 255, 0.12);
+  /* Backgrounds — production .org dark stack */
+  --bg-page:    #111729;
+  --bg-diagram: #131a2f;
+  --bg-primary: #151c35;
+  --bg-card:    #1a2240;
+  --bg-surface: #162035;
+  --bg-inset:   #0a0d17;
+  --bg-elevated: rgba(160, 205, 251, 0.10);
 
   /* Text */
-  --text-primary:   var(--blue-50);
-  --text-secondary: var(--blue-100);
-  --text-muted:     var(--blue-200);
-  --text-hint:      var(--blue-300);
-  --text-micro:     #8aa8d8;
+  --text-primary:   #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted:     #94a3b8;
+  --text-hint:      #64748b;
+  --text-micro:     #475569;
 
   /* Borders */
-  --border-default: rgba(153, 194, 255, 0.18);
-  --border-hover:   rgba(153, 194, 255, 0.30);
-  --border-active:  rgba(153, 194, 255, 0.44);
+  --border-default: rgba(148, 163, 184, 0.12);
+  --border-hover:   rgba(148, 163, 184, 0.20);
+  --border-active:  rgba(148, 163, 184, 0.30);
 
   /* Accent — formation highlights */
   --accent-amber: var(--formation-d);
@@ -85,7 +85,7 @@
 }
 
 html {
-  background-color: #000E24;
+  background-color: var(--bg-page);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,7 +94,7 @@ html {
 
 body {
   font-family: var(--font-display);
-  background-color: #000E24;
+  background-color: var(--bg-page);
   color: var(--text-secondary);
   line-height: 1.7;
   min-height: 100vh;

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { BLUE, FONT, SPACING, TRANSITION, hexToRgba } from "../styles/tokens";
+import { BG, BORDER, FONT, SPACING, SPECTRUM, TEXT, TRANSITION, hexToRgba } from "../styles/tokens";
 import { ThemeToggle } from "./theme/ThemeToggle";
 import { SpectrumBar } from "./SharedComponents";
 import { getLiveLocaleLinks } from "../i18n/routing";
@@ -56,9 +56,9 @@ export default function SiteHeader({ currentPath = "/" }) {
         position: "sticky",
         top: 0,
         zIndex: 100,
-        background: `linear-gradient(180deg, ${hexToRgba(BLUE[950], 0.96)} 0%, ${hexToRgba(BLUE[900], 0.94)} 100%)`,
-        borderBottom: `1px solid ${hexToRgba(BLUE[200], 0.18)}`,
-        boxShadow: `0 12px 34px ${hexToRgba(BLUE[950], 0.30)}`,
+        background: BG.primary,
+        borderBottom: `1px solid ${BORDER.default}`,
+        boxShadow: "0 12px 34px rgba(4, 8, 18, 0.22)",
         backdropFilter: "blur(14px)",
       }}
     >
@@ -71,7 +71,7 @@ export default function SiteHeader({ currentPath = "/" }) {
               display: "inline-flex",
               alignItems: "center",
               gap: 10,
-              color: BLUE[50],
+              color: TEXT.primary,
               fontFamily: FONT.mono,
               fontSize: 15,
               fontWeight: 700,
@@ -87,9 +87,9 @@ export default function SiteHeader({ currentPath = "/" }) {
                 display: "inline-grid",
                 placeItems: "center",
                 borderRadius: 6,
-                color: BLUE[200],
-                border: `1px solid ${hexToRgba(BLUE[200], 0.30)}`,
-                background: hexToRgba(BLUE[300], 0.10),
+                color: SPECTRUM.sky,
+                border: `1px solid ${hexToRgba(SPECTRUM.sky, 0.28)}`,
+                background: hexToRgba(SPECTRUM.azure, 0.10),
                 fontSize: 11,
                 lineHeight: 1,
               }}
@@ -116,7 +116,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                     gap: 6,
                     padding: 0,
                     cursor: "pointer",
-                    color: BLUE[100],
+                    color: TEXT.secondary,
                     fontFamily: FONT.mono,
                     fontSize: 13,
                     fontWeight: 650,
@@ -126,7 +126,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                   }}
                 >
                   Explore
-                  <span aria-hidden="true" style={{ fontSize: 11, color: BLUE[300] }}>
+                  <span aria-hidden="true" style={{ fontSize: 11, color: SPECTRUM.azure }}>
                     ▾
                   </span>
                 </summary>
@@ -139,10 +139,10 @@ export default function SiteHeader({ currentPath = "/" }) {
                     zIndex: 120,
                     width: "min(86vw, 360px)",
                     padding: 8,
-                    background: `linear-gradient(180deg, ${BLUE[900]} 0%, ${BLUE[950]} 100%)`,
-                    border: `1px solid ${hexToRgba(BLUE[200], 0.18)}`,
+                    background: `linear-gradient(180deg, ${BG.diagram} 0%, ${BG.page} 100%)`,
+                    border: `1px solid ${BORDER.default}`,
                     borderRadius: 8,
-                    boxShadow: `0 24px 60px ${hexToRgba(BLUE[950], 0.48)}`,
+                    boxShadow: "0 24px 60px rgba(4, 8, 18, 0.42)",
                   }}
                 >
                   {showStagedNav && (
@@ -150,11 +150,11 @@ export default function SiteHeader({ currentPath = "/" }) {
                       style={{
                         padding: "9px 10px 10px",
                         marginBottom: 4,
-                        color: BLUE[200],
+                        color: TEXT.muted,
                         fontFamily: FONT.mono,
                         fontSize: 10,
                         lineHeight: 1.5,
-                        borderBottom: `1px solid ${hexToRgba(BLUE[200], 0.18)}`,
+                        borderBottom: `1px solid ${BORDER.default}`,
                       }}
                     >
                       Local preview. These routes stay unpublished until added to the live allowlist.
@@ -171,8 +171,8 @@ export default function SiteHeader({ currentPath = "/" }) {
                           display: "block",
                           padding: "10px 10px",
                           borderRadius: 6,
-                          color: active ? BLUE[50] : BLUE[100],
-                          background: active ? hexToRgba(BLUE[300], 0.12) : "transparent",
+                          color: active ? TEXT.primary : TEXT.secondary,
+                          background: active ? hexToRgba(SPECTRUM.azure, 0.12) : "transparent",
                           textDecoration: "none",
                           transition: `background ${TRANSITION.normal}, color ${TRANSITION.normal}`,
                         }}
@@ -180,7 +180,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                         <span style={{ display: "block", fontSize: 13, fontWeight: 600, lineHeight: 1.25 }}>
                           {link.label}
                         </span>
-                        <span style={{ display: "block", marginTop: 3, fontSize: 11.5, lineHeight: 1.45, color: BLUE[200] }}>
+                        <span style={{ display: "block", marginTop: 3, fontSize: 11.5, lineHeight: 1.45, color: TEXT.muted }}>
                           {link.description}
                         </span>
                       </Link>
@@ -197,7 +197,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                   alignItems: "center",
                   gap: 2,
                   padding: 2,
-                  border: `1px solid ${hexToRgba(BLUE[200], 0.18)}`,
+                  border: `1px solid ${BORDER.default}`,
                   borderRadius: 8,
                 }}
               >
@@ -211,8 +211,8 @@ export default function SiteHeader({ currentPath = "/" }) {
                       minWidth: 28,
                       padding: "5px 7px",
                       borderRadius: 6,
-                      color: locale.active ? BLUE[50] : BLUE[100],
-                      background: locale.active ? hexToRgba(BLUE[300], 0.12) : "transparent",
+                      color: locale.active ? TEXT.primary : TEXT.secondary,
+                      background: locale.active ? hexToRgba(SPECTRUM.azure, 0.12) : "transparent",
                       fontFamily: FONT.mono,
                       fontSize: 11,
                       fontWeight: 600,
@@ -231,7 +231,7 @@ export default function SiteHeader({ currentPath = "/" }) {
               href="https://teg-blue.com/"
               className="site-tools-link"
               style={{
-                color: BLUE[100],
+                color: TEXT.secondary,
                 fontFamily: FONT.mono,
                 fontSize: 13,
                 fontWeight: 650,
@@ -249,10 +249,10 @@ export default function SiteHeader({ currentPath = "/" }) {
       <style>{`
         .site-explore-menu summary::-webkit-details-marker { display: none; }
         .site-explore-menu summary::after { display: none; }
-        .site-explore-menu summary:hover { color: ${BLUE[50]}; }
-        .site-explore-menu a:hover { color: ${BLUE[50]} !important; background: ${hexToRgba(BLUE[300], 0.12)} !important; }
+        .site-explore-menu summary:hover { color: ${TEXT.primary}; }
+        .site-explore-menu a:hover { color: ${TEXT.primary} !important; background: ${hexToRgba(SPECTRUM.azure, 0.12)} !important; }
         .site-brand:hover,
-        .site-tools-link:hover { color: ${BLUE[300]} !important; }
+        .site-tools-link:hover { color: ${SPECTRUM.azure} !important; }
         @media (max-width: 720px) {
           .site-header-nav { align-items: flex-start !important; }
           .site-header-actions { gap: 10px !important; flex-wrap: wrap; justify-content: flex-end; }

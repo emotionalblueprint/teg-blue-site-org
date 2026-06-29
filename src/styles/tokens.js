@@ -209,17 +209,17 @@ export const BORDER = {
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────
-// Six tones with full hue/lightness spread. Use freely — no color owns a page.
+// Production .org palette: cool cyan through blue-violet, plus neutral slate.
 
 export const SPECTRUM = {
-  sky:      BLUE[100],   // pale research blue
-  azure:    BLUE[300],   // active light blue
-  blue:     BLUE[500],   // core TEG-Blue
-  cobalt:   BLUE[600],   // structural blue
-  lavender: BLUE[400],   // legacy key, now bright scale step
-  indigo:   BLUE[700],   // deep annotation blue
-  silver:   BLUE[200],   // pale structural line
-  slate:    BLUE[700],   // neutral structural blue
+  sky:      "#b6ebfc",   // pale research blue
+  azure:    "#76e2ff",   // active cyan-blue
+  blue:     "#00b1ff",   // core TEG-Blue
+  cobalt:   "#0590e5",   // structural blue
+  lavender: "#7b7bff",   // legacy key
+  indigo:   "#7b7bff",   // foundations / violet-blue
+  silver:   "#a0cdfb",   // pale structural line
+  slate:    "#808493",   // neutral methodology slate
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────

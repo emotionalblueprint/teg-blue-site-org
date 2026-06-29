@@ -19,8 +19,8 @@ const fadeMasks = {
 }
 
 const darkColors = {
-  line: 'rgba(153,194,255,0.12)',
-  dot: 'rgba(153,194,255,0.24)',
+  line: 'rgba(255,255,255,0.10)',
+  dot: 'rgba(255,255,255,0.16)',
 }
 
 const lightColors = {

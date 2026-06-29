@@ -71,16 +71,16 @@ teg-blue-site-org/
 
 | Name | Hex | Content Type |
 |------|-----|-------------|
-| Sky | `#7ABAEB` | Glossary |
-| Azure | `#4A9BE8` | Source traces |
-| Blue | `#3B7DE5` | Publications |
-| Cobalt | `#3560CC` | Frameworks |
-| Indigo | `#4A50B0` | Foundations |
-| Slate | `#6B7A99` | Methodology |
+| Sky | `#b6ebfc` | Glossary |
+| Azure | `#76e2ff` | Source traces |
+| Blue | `#00b1ff` | Publications |
+| Cobalt | `#0590e5` | Frameworks |
+| Indigo | `#7b7bff` | Foundations |
+| Slate | `#808493` | Methodology |
 
 **Rules:**
 - Use flat color surfaces for research content; use gradients intentionally where they communicate the gradient/instrument itself
-- Dark backgrounds: `#080C18` -> `#0C1222` -> `#111827` -> `#1A2234`
+- Dark backgrounds: `#111729` -> `#151c35` -> `#131a2f` -> `#1a2240` -> `#162035`
 - Fonts: Inter (display) + JetBrains Mono (labels, DOIs, tags)
 - `<details>/<summary>` for expandable sections where native disclosure fits
 - JSON-LD for structured page context
