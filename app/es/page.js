@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, ORG_TITLE_GRADIENT } from "@/src/styles/tokens";
 import { SiteFooter, SiteHeader } from "@/src/components";
 import { positions } from "@/src/lib/gradient-data";
 import { BASE_URL } from "@/src/i18n/config";
@@ -452,7 +452,20 @@ export default function SpanishHome() {
       <main id="main-content" style={{ background: BG.page, fontFamily: FONT.display, paddingBottom: 64 }}>
         <section style={{ ...sectionStyle, paddingTop: "clamp(48px, 8vw, 88px)", paddingBottom: 40, textAlign: "center" }}>
           <p style={eyebrowStyle}>TEG-Blue · The Emotional Gradient Blueprint</p>
-          <h1 style={{ margin: "0 auto", maxWidth: 760, fontSize: "clamp(26px, 4vw, 34px)", lineHeight: 1.12, letterSpacing: "-0.02em", color: TEXT.primary }}>
+          <h1
+            style={{
+              margin: "0 auto",
+              maxWidth: 760,
+              fontSize: "clamp(26px, 4vw, 34px)",
+              lineHeight: 1.12,
+              letterSpacing: 0,
+              color: SPECTRUM.blue,
+              background: ORG_TITLE_GRADIENT,
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
             El Gradiente del Sistema Nervioso
           </h1>
           <p style={{ margin: "14px auto 0", maxWidth: 700, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>

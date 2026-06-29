@@ -3,7 +3,7 @@
 import { SPECTRUM, BG, TEXT, BORDER, FONT, TRANSITION, PATTERN_GRADIENT, hexToRgba } from "../styles/tokens";
 
 // ─── SPECTRUM BAR ────────────────────────────────────
-// Flat segmented bar showing all 6 spectrum colors.
+// Flat segmented bar for blue spectrum, or formation ramp when variant="pattern".
 // Used on hub page header and footer.
 
 export function SpectrumBar({ height = 4, variant = "spectrum" }) {

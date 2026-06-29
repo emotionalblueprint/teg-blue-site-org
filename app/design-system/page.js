@@ -1,7 +1,7 @@
 import {
   BG, TEXT, BORDER, FONT, SPACING, RADIUS, TRANSITION, OPACITY,
   SPECTRUM, PATTERN, PATTERN_GRADIENT, AWARENESS, AWARENESS_TONES, STATUS,
-  ACCENT, MAIN_ORG,
+  ACCENT, MAIN_ORG, ORG_TITLE_GRADIENT,
   DIAGRAM, DIAGRAM_STROKE, DIAGRAM_OPACITY, DIAGRAM_TYPE,
   TYPE_SCALE, hexToRgba,
 } from "@/src/styles/tokens";
@@ -115,7 +115,11 @@ export default function DesignSystemPage() {
             fontWeight: TYPE_SCALE.pageTitle.weight,
             letterSpacing: TYPE_SCALE.pageTitle.tracking,
             lineHeight: TYPE_SCALE.pageTitle.lineHeight,
-            color: TEXT.primary,
+            color: SPECTRUM.blue,
+            background: ORG_TITLE_GRADIENT,
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
             marginBottom: 8,
           }}
         >
@@ -644,9 +648,9 @@ export default function DesignSystemPage() {
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                ["Voice", DIAGRAM.primary, "#4062eb", "Follow this line — main path, active arc, primary data series, the designed pathway"],
+                ["Voice", DIAGRAM.primary, "#0066FF", "Follow this line — main path, active arc, primary data series, the designed pathway"],
                 ["Break", DIAGRAM.break, "#e05e2e", "Against design — override, chronic, stuck, cascade, Path B. Rare and meaningful."],
-                ["Structure", DIAGRAM.connector, "rgba(160,205,251,X)", "Scaffolding — grid, axes, connectors, frames, dividers. Barely there."],
+                ["Structure", DIAGRAM.connector, "#99C2FF alpha", "Scaffolding — grid, axes, connectors, frames, dividers. Barely there."],
               ].map(([name, color, hex, desc]) => (
                 <div key={name} style={{
                   display: "flex",

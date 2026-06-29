@@ -35,13 +35,16 @@
   --chronic-d:  #ff404a;
   --chronic-z:  var(--blue-800);
 
-  /* Blue Spectrum — production .org palette */
-  --spectrum-sky:    #b6ebfc;
-  --spectrum-azure:  #76e2ff;
-  --spectrum-blue:   #00b1ff;
-  --spectrum-cobalt: #0590e5;
-  --spectrum-indigo: #7b7bff;
-  --spectrum-slate:  #808493;
+  /* Blue Spectrum — org highlight palette */
+  --spectrum-sky:    var(--blue-50);
+  --spectrum-azure:  var(--blue-300);
+  --spectrum-blue:   var(--blue-500);
+  --spectrum-cobalt: var(--blue-400);
+  --spectrum-indigo: var(--blue-500);
+  --spectrum-slate:  var(--blue-200);
+  --org-title-start: var(--blue-50);
+  --org-title-mid:   var(--blue-200);
+  --org-title-end:   var(--blue-500);
 
   /* Backgrounds — production .org dark stack */
   --bg-page:    #111729;
@@ -226,6 +229,9 @@ details > section {
   --spectrum-cobalt: var(--blue-600);
   --spectrum-indigo: var(--blue-700);
   --spectrum-slate:  var(--blue-700);
+  --org-title-start: var(--blue-950);
+  --org-title-mid:   var(--blue-700);
+  --org-title-end:   var(--blue-500);
 
   --bg-page:    var(--blue-50);
   --bg-diagram: #ffffff;

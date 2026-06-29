@@ -1,4 +1,4 @@
-import { TEXT, FONT, MAIN_ORG, PATTERN_GRADIENT, BORDER } from "../styles/tokens";
+import { TEXT, FONT, MAIN_ORG, ORG_HIGHLIGHT_GRADIENT, ORG_TITLE_GRADIENT, BORDER } from "../styles/tokens";
 import BadgePill from "./BadgePill";
 
 /**
@@ -42,7 +42,11 @@ export default function ResearcherHero({
           margin: "0 0 10px",
           lineHeight: 1.02,
           letterSpacing: 0,
-          color: TEXT.primary,
+          color: MAIN_ORG.accent,
+          background: ORG_TITLE_GRADIENT,
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
         }}
       >
         {title}
@@ -87,7 +91,7 @@ export default function ResearcherHero({
             width: "min(100%, 560px)",
             height: 5,
             borderRadius: 4,
-            background: PATTERN_GRADIENT,
+            background: ORG_HIGHLIGHT_GRADIENT,
           }}
           aria-hidden="true"
         />

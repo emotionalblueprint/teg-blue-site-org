@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TEXT, FONT, SPECTRUM, hexToRgba } from "../styles/tokens";
+import { TEXT, FONT, SPECTRUM, ORG_TITLE_GRADIENT, hexToRgba } from "../styles/tokens";
 import BadgePill from "./BadgePill";
 
 /**
@@ -77,15 +77,19 @@ export default function FrameworkHero({
         )}
       </div>
 
-      {/* Title — plain white, not gradient */}
+      {/* Title */}
       <h1
         style={{
           fontSize: 24,
           fontWeight: 700,
           margin: "0 0 8px",
           lineHeight: 1.2,
-          letterSpacing: "-0.02em",
-          color: TEXT.primary,
+          letterSpacing: 0,
+          color,
+          background: ORG_TITLE_GRADIENT,
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
         }}
       >
         {title}

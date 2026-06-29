@@ -20,7 +20,7 @@ const HINT = '#94a3b8'
 const FAINT = '#64748b'
 
 const TOP_SPECTRUM =
-  'linear-gradient(90deg, #b6ebfc 0%, #76e2ff 22%, #00b1ff 45%, #0590e5 68%, #7b7bff 100%)'
+  'linear-gradient(90deg, #E5F0FF 0%, #CCE0FF 20%, #99C2FF 40%, #66A3FF 60%, #4A83F7 80%, #0066FF 100%)'
 
 const STATES = REALITY_CHECK_STATES.map(({ code, label, color }) => ({ code, label, color }))
 

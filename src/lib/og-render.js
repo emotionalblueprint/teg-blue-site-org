@@ -12,19 +12,22 @@ import { ImageResponse } from 'next/og'
 // ─── Design tokens (hardcoded for edge runtime — no token imports) ───────────
 
 const SPECTRUM = {
-  sky:    '#93CFFF',
-  azure:  '#5BADFF',
-  blue:   '#4B8FFF',
-  cobalt: '#4472EE',
-  indigo: '#5B62D4',
+  sky:    '#E5F0FF',
+  azure:  '#66A3FF',
+  blue:   '#0066FF',
+  cobalt: '#4A83F7',
+  indigo: '#99C2FF',
 }
 
 const MODES = {
-  connection:  '#93CFFF',
-  protection:  '#5BADFF',
-  control:     '#346AEC',
-  domination:  '#2563eb',
+  connection:  '#E5F0FF',
+  protection:  '#99C2FF',
+  control:     '#4A83F7',
+  domination:  '#0066FF',
 }
+
+const ORG_LINE_GRADIENT =
+  'linear-gradient(90deg, #E5F0FF 0%, #CCE0FF 20%, #99C2FF 40%, #66A3FF 60%, #4A83F7 80%, #0066FF 100%)'
 
 // ─── Font loading ────────────────────────────────────────────────────────────
 
@@ -89,7 +92,7 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, height: 4,
-          background: 'linear-gradient(90deg, #93CFFF 0%, #5BADFF 25%, #4B8FFF 50%, #346AEC 75%, #2563eb 100%)',
+          background: ORG_LINE_GRADIENT,
           display: 'flex',
         }} />
 
@@ -97,13 +100,13 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
         <div style={{
           position: 'absolute', top: -80, left: -100,
           width: 500, height: 500,
-          background: 'radial-gradient(ellipse, rgba(75,143,255,0.08) 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse, rgba(0,102,255,0.08) 0%, transparent 65%)',
           display: 'flex',
         }} />
         <div style={{
           position: 'absolute', bottom: -100, right: -60,
           width: 420, height: 360,
-          background: 'radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse, rgba(74,131,247,0.07) 0%, transparent 65%)',
           display: 'flex',
         }} />
 
@@ -145,8 +148,8 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
             {/* Title */}
             <div style={{
               fontSize: 52, fontWeight: 300,
-              letterSpacing: '-0.02em', lineHeight: 1.12,
-              color: '#ffffff', marginBottom: 16, maxWidth: 700,
+              letterSpacing: 0, lineHeight: 1.12,
+              color: SPECTRUM.sky, marginBottom: 16, maxWidth: 700,
               display: 'flex',
             }}>
               {title}
@@ -167,7 +170,7 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{
               height: 2, borderRadius: 1, marginBottom: 20, opacity: 0.5,
-              background: 'linear-gradient(90deg, #93CFFF 0%, #5BADFF 25%, #4B8FFF 50%, #346AEC 75%, #2563eb 100%)',
+              background: ORG_LINE_GRADIENT,
               display: 'flex',
             }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -181,7 +184,7 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div style={{
                   width: 28, height: 4, borderRadius: 2,
-                  background: 'linear-gradient(90deg, #93CFFF, #2563eb)',
+                  background: 'linear-gradient(90deg, #E5F0FF, #0066FF)',
                   display: 'flex',
                 }} />
                 <span style={{
@@ -206,8 +209,8 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
         }}>
           <div style={{
             position: 'relative', height: 14, borderRadius: 100,
-            background: 'linear-gradient(90deg, #93CFFF 0%, #93CFFF 20%, #5BADFF 35%, #5BADFF 45%, #346AEC 55%, #346AEC 70%, #2563eb 85%, #2563eb 100%)',
-            boxShadow: 'rgba(75,143,255,0.35) 0 0 24px',
+            background: 'linear-gradient(90deg, #E5F0FF 0%, #E5F0FF 20%, #99C2FF 35%, #99C2FF 45%, #4A83F7 55%, #4A83F7 70%, #0066FF 85%, #0066FF 100%)',
+            boxShadow: 'rgba(0,102,255,0.35) 0 0 24px',
             display: 'flex', alignItems: 'center',
           }}>
             {/* Dividers */}
@@ -245,22 +248,22 @@ export async function renderOG({ badge, badgeColor, title, subtitle, url, needle
             <span style={{
               fontFamily: 'JetBrainsMono',
               fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
-              color: '#93CFFF', flex: 1, textAlign: 'center',
+              color: '#E5F0FF', flex: 1, textAlign: 'center',
             }}>CNX</span>
             <span style={{
               fontFamily: 'JetBrainsMono',
               fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
-              color: '#5BADFF', flex: 1, textAlign: 'center',
+              color: '#99C2FF', flex: 1, textAlign: 'center',
             }}>PRO</span>
             <span style={{
               fontFamily: 'JetBrainsMono',
               fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
-              color: '#346AEC', flex: 1, textAlign: 'center',
+              color: '#4A83F7', flex: 1, textAlign: 'center',
             }}>CTR</span>
             <span style={{
               fontFamily: 'JetBrainsMono',
               fontSize: 8, fontWeight: 600, letterSpacing: '0.1em',
-              color: '#2563eb', flex: 1, textAlign: 'center',
+              color: '#0066FF', flex: 1, textAlign: 'center',
             }}>DOM</span>
           </div>
         </div>

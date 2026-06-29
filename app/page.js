@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACTIVE_REALITY_CHECK_STATES, FORMATION_META } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, PATTERN_GRADIENT, ACTIVE_REALITY_CHECK_STATES, FORMATION_META } from "@/src/styles/tokens";
 import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/components";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
@@ -134,15 +134,21 @@ const HOME_CSS = `
   }
 
   .home-action.primary {
-    border-color: color-mix(in srgb, var(--spectrum-azure) 38%, transparent);
-    color: var(--spectrum-azure);
-    background: color-mix(in srgb, var(--spectrum-azure) 9%, var(--bg-primary));
+    border-color: color-mix(in srgb, var(--blue-500) 48%, transparent);
+    color: var(--blue-500);
+    background: color-mix(in srgb, var(--blue-500) 10%, var(--bg-primary));
   }
 
   .home-action:hover {
     color: var(--spectrum-azure);
     border-color: var(--border-hover);
     text-decoration: none;
+  }
+
+  .home-action.primary:hover {
+    color: var(--blue-500);
+    border-color: color-mix(in srgb, var(--blue-500) 58%, transparent);
+    background: color-mix(in srgb, var(--blue-500) 14%, var(--bg-primary));
   }
 
   .home-calibration-plate {
@@ -269,11 +275,13 @@ const gradientLinePositions = positions.filter((p) => p.id !== "shutdown");
 const shutdownPosition = positions.find((p) => p.id === "shutdown");
 const formationDescriptionStyle = {
   fontFamily: FONT.mono,
-  fontSize: 12,
-  fontWeight: 800,
-  lineHeight: 1.15,
+  fontSize: 11.5,
+  fontWeight: 750,
+  lineHeight: 1.22,
   letterSpacing: 0,
-  overflowWrap: "anywhere",
+  overflowWrap: "normal",
+  wordBreak: "normal",
+  hyphens: "none",
 };
 const formationCodeStyle = {
   alignSelf: "flex-start",
@@ -310,6 +318,7 @@ function HomeCalibrationPlate() {
             <div
               key={cell.code}
               role="listitem"
+              aria-label={`${cell.code}: ${cell.label}`}
               style={{
                 minHeight: 118,
                 display: "flex",
@@ -542,9 +551,30 @@ export default function Home() {
         {/* Hero — static, crawlable */}
         <section className="home-hero" style={{ ...sectionStyle, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
           <div className="home-hero-copy">
-            <p style={{ ...eyebrowStyle, color: SPECTRUM.azure }}>TEG-Blue · The Emotional Gradient Blueprint</p>
-            <h1 style={{ margin: 0, maxWidth: 760, fontSize: "clamp(42px, 8vw, 86px)", lineHeight: 0.96, letterSpacing: 0, color: TEXT.primary }}>
-              The Nervous System Gradient
+            <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · The Emotional Gradient Blueprint</p>
+            <h1
+              style={{
+                margin: 0,
+                maxWidth: 760,
+                fontSize: "clamp(42px, 8vw, 86px)",
+                lineHeight: 0.96,
+                letterSpacing: 0,
+                color: TEXT.primary,
+              }}
+            >
+              <span style={{ display: "block", color: TEXT.primary }}>The Nervous System</span>
+              <span
+                style={{
+                  display: "inline-block",
+                  color: MAIN_ORG.accent,
+                  background: PATTERN_GRADIENT,
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Gradient
+              </span>
             </h1>
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
               We do not stay the same in every situation: open and trusting one moment, guarded or controlling
@@ -559,7 +589,17 @@ export default function Home() {
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
-              <a className="home-action primary" href="#what-gradient-is-heading">Read the overview</a>
+              <a
+                className="home-action primary"
+                href="#what-gradient-is-heading"
+                style={{
+                  color: MAIN_ORG.accent,
+                  borderColor: hexToRgba(MAIN_ORG.accent, 0.48),
+                  background: hexToRgba(MAIN_ORG.accent, 0.1),
+                }}
+              >
+                Read the overview
+              </a>
               <a className="home-action" href="#science-heading">Source grounding</a>
               <a className="home-action" href="#rights-heading">Use and attribution</a>
             </div>

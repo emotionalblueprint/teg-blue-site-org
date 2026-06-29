@@ -1,13 +1,16 @@
 import Link from "next/link";
-import { TEXT, FONT, PATTERN, PATTERN_GRADIENT, hexToRgba } from "../styles/tokens";
+import {
+  TEXT, FONT, MAIN_ORG, MODEL_COLORS as MODEL_ACCENTS,
+  ORG_HIGHLIGHT_GRADIENT, ORG_TITLE_GRADIENT, hexToRgba
+} from "../styles/tokens";
 import BadgePill from "./BadgePill";
 
-// Map M/F labels to their PATTERN color
+// Map model labels to the org-blue highlight scale.
 const PILL_COLORS = {
-  M1: PATTERN.A.primary,
-  M2: PATTERN.B.primary,
-  M3: PATTERN.C.primary,
-  M4: PATTERN.D.primary,
+  M1: MODEL_ACCENTS.M1,
+  M2: MODEL_ACCENTS.M2,
+  M3: MODEL_ACCENTS.M3,
+  M4: MODEL_ACCENTS.M4,
 };
 
 /**
@@ -32,30 +35,36 @@ export default function ModelHero({
   drawsFrom = [],
   color,
 }) {
+  const heroColor = color || MAIN_ORG.accent;
+
   return (
     <div
       style={{
         padding: "28px 0 28px 20px",
         borderLeft: `4px solid transparent`,
-        borderImage: `${PATTERN_GRADIENT} 1`,
+        borderImage: `${ORG_HIGHLIGHT_GRADIENT} 1`,
       }}
     >
       {/* Badge pill */}
       {badge && (
         <div style={{ marginBottom: 16 }}>
-          <BadgePill color={PATTERN.B.primary}>{badge}</BadgePill>
+          <BadgePill color={heroColor}>{badge}</BadgePill>
         </div>
       )}
 
-      {/* Title — plain white, not gradient */}
+      {/* Title */}
       <h1
         style={{
           fontSize: 24,
           fontWeight: 700,
           margin: "0 0 8px",
           lineHeight: 1.2,
-          letterSpacing: "-0.02em",
-          color: TEXT.primary,
+          letterSpacing: 0,
+          color: heroColor,
+          background: ORG_TITLE_GRADIENT,
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
         }}
       >
         {title}
@@ -96,9 +105,9 @@ export default function ModelHero({
         <div
           style={{
             padding: "12px 16px",
-            background: hexToRgba(PATTERN.C.primary, 0.06),
+            background: hexToRgba(heroColor, 0.06),
             borderRadius: 8,
-            border: `1px solid ${hexToRgba(PATTERN.C.primary, 0.15)}`,
+            border: `1px solid ${hexToRgba(heroColor, 0.15)}`,
             marginBottom: 16,
           }}
         >
@@ -109,7 +118,7 @@ export default function ModelHero({
               fontFamily: FONT.mono,
               textTransform: "uppercase",
               letterSpacing: "0.1em",
-              color: PATTERN.C.primary,
+              color: heroColor,
               marginBottom: 6,
             }}
           >
@@ -146,7 +155,7 @@ export default function ModelHero({
             Draws from
           </span>
           {drawsFrom.map(({ label, href }) => {
-            const pillColor = PILL_COLORS[label] || PATTERN.D.primary;
+            const pillColor = PILL_COLORS[label] || heroColor;
             return (
               <Link
                 key={label}

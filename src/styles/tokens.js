@@ -16,7 +16,7 @@
 
 export const PALETTE_SOURCES = {
   formation: "color-palette-teg-blue-org-pages-7-mode-gradient.svg",
-  blueScale: "Tailwind-color-palette.svg",
+  blueScale: "Color-palette-org-highlights.svg",
   chronic: "Color-palete+tailwind-blue-colors-palette-chronic.svg",
 };
 
@@ -51,6 +51,23 @@ export const BLUE_ROLES = {
   900: "near-black blue: diagram panels and raised dark cards",
   950: "deepest page blue: page background and header depth",
 };
+
+// ─── ORG HIGHLIGHT PALETTE ──────────────────────────
+// Source: Color-palette-org-highlights.svg. This is the site chrome family:
+// lines, highlights, badges, titles, and general research-page accents.
+
+export const ORG_HIGHLIGHT = {
+  pale: BLUE[50],
+  wash: BLUE[100],
+  line: BLUE[200],
+  active: BLUE[300],
+  bridge: BLUE[400],
+  main: BLUE[500],
+};
+
+export const ORG_LINE_GRADIENT = "linear-gradient(90deg, var(--blue-50), var(--blue-100), var(--blue-200), var(--blue-300), var(--blue-400), var(--blue-500))";
+export const ORG_HIGHLIGHT_GRADIENT = "linear-gradient(90deg, var(--blue-100), var(--blue-300), var(--blue-500))";
+export const ORG_TITLE_GRADIENT = "linear-gradient(90deg, var(--org-title-start) 0%, var(--org-title-mid) 42%, var(--org-title-end) 100%)";
 
 // ─── ACUTE FORMATION / REALITY-CHECK PALETTE ─────────
 // Source: color-palette-teg-blue-org-pages-7-mode-gradient.svg
@@ -209,17 +226,18 @@ export const BORDER = {
 };
 
 // ─── THE BLUE SPECTRUM ───────────────────────────────
-// Production .org palette: cool cyan through blue-violet, plus neutral slate.
+// Production .org palette. Legacy semantic keys now map onto the canonical
+// org highlight scale, with BLUE[500] (#0066FF) as the main site blue.
 
 export const SPECTRUM = {
-  sky:      "#b6ebfc",   // pale research blue
-  azure:    "#76e2ff",   // active cyan-blue
-  blue:     "#00b1ff",   // core TEG-Blue
-  cobalt:   "#0590e5",   // structural blue
-  lavender: "#7b7bff",   // legacy key
-  indigo:   "#7b7bff",   // foundations / violet-blue
-  silver:   "#a0cdfb",   // pale structural line
-  slate:    "#808493",   // neutral methodology slate
+  sky:      ORG_HIGHLIGHT.pale,
+  azure:    ORG_HIGHLIGHT.active,
+  blue:     ORG_HIGHLIGHT.main,
+  cobalt:   ORG_HIGHLIGHT.bridge,
+  lavender: ORG_HIGHLIGHT.line,    // legacy key
+  indigo:   ORG_HIGHLIGHT.main,    // legacy key
+  silver:   ORG_HIGHLIGHT.wash,    // pale structural line
+  slate:    ORG_HIGHLIGHT.line,    // quiet methodology / secondary accents
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────
@@ -261,8 +279,8 @@ export const FONT = {
 };
 
 export const TYPE_SCALE = {
-  pageTitle:       { size: 28, weight: 700, tracking: "-0.02em", lineHeight: 1.2 },
-  sectionHead:     { size: 18, weight: 600, tracking: "-0.01em", lineHeight: 1.2, color: "var(--text-primary)" },
+  pageTitle:       { size: 28, weight: 700, tracking: 0, lineHeight: 1.2 },
+  sectionHead:     { size: 18, weight: 600, tracking: 0, lineHeight: 1.2, color: "var(--text-primary)" },
   expandableTitle: { size: 15, weight: 600, tracking: "normal",  lineHeight: 1.4, color: "rgba(168, 180, 200, 0.88)" },
   body:            { size: 15, weight: 400, tracking: "normal",  lineHeight: 1.75 },
   summary:         { size: 13, weight: 400, tracking: "normal",  lineHeight: 1.72 },
@@ -331,10 +349,10 @@ export const PATTERN_GRADIENT = `linear-gradient(90deg, ${FORMATION.A}, ${FORMAT
 // ─── MODEL PAGE COLORS (one muted academic blue per model) ──
 
 export const MODEL_COLORS = {
-  M1: BLUE[300],  // azure — Emotions as Signals
-  M2: BLUE[500],  // blue — Nervous System States
-  M3: BLUE[700],  // indigo — Regulation Capacities
-  M4: BLUE[600],  // cobalt — Awareness Capacities
+  M1: BLUE[300],  // active light blue — Emotions as Signals
+  M2: BLUE[500],  // main blue — Nervous System States
+  M3: BLUE[400],  // bridge blue — Regulation Capacities
+  M4: BLUE[200],  // structural blue — Awareness Capacities
 };
 
 // ─── MAIN_ORG (primary action color — badges, CTAs, links) ──
@@ -389,14 +407,14 @@ export const STATUS = {
 export const DIAGRAM = {
   // ── Frame ──────────────────────────────────────────
   bg:             BG.diagram,                       // raised instrument surface — lifted from page
-  frame:          'rgba(160,205,251,0.14)',         // optional 1px container border
-  divider:        'rgba(160,205,251,0.18)',         // internal dividers, card strokes
-  surface:        'rgba(160,205,251,0.05)',         // pill/card surfaces on dark bg
+  frame:          hexToRgba(ORG_HIGHLIGHT.line, 0.14), // optional 1px container border
+  divider:        hexToRgba(ORG_HIGHLIGHT.line, 0.18), // internal dividers, card strokes
+  surface:        hexToRgba(ORG_HIGHLIGHT.line, 0.05), // pill/card surfaces on dark bg
 
   // ── Voice (the one saturated color — "follow this line") ──
-  primary:        '#4062eb',
-  primaryDim:     'rgba(64,98,235,0.60)',
-  primaryGhost:   'rgba(64,98,235,0.10)',
+  primary:        MAIN_ORG.accent,
+  primaryDim:     hexToRgba(MAIN_ORG.accent, 0.60),
+  primaryGhost:   hexToRgba(MAIN_ORG.accent, 0.10),
 
   // ── Break (only for override / chronic / stuck / Path B / unprocessed) ──
   break:          '#e05e2e',
@@ -407,14 +425,14 @@ export const DIAGRAM = {
   white:          '#ffffff',                        // highest emphasis (rare)
   textStrong:     'rgba(255,255,255,0.90)',         // primary label text
   textBody:       'rgba(255,255,255,0.85)',         // body sentences in pills
-  textMuted:      'rgba(160,205,251,0.55)',         // eyebrows, axis labels
-  textMicro:      'rgba(160,205,251,0.35)',         // tick labels, dashes, footnotes
+  textMuted:      hexToRgba(ORG_HIGHLIGHT.line, 0.55), // eyebrows, axis labels
+  textMicro:      hexToRgba(ORG_HIGHLIGHT.line, 0.35), // tick labels, dashes, footnotes
 
   // ── Structure lines ───────────────────────────────
-  gridSoft:       'rgba(160,205,251,0.06)',         // baseline grid (barely there)
-  gridLine:       'rgba(160,205,251,0.15)',         // axis lines
-  connector:      'rgba(160,205,251,0.22)',         // arc baseline, circle outlines
-  connectorFine:  'rgba(160,205,251,0.28)',         // thin connector lines to labels
+  gridSoft:       hexToRgba(ORG_HIGHLIGHT.line, 0.06), // baseline grid (barely there)
+  gridLine:       hexToRgba(ORG_HIGHLIGHT.line, 0.15), // axis lines
+  connector:      hexToRgba(ORG_HIGHLIGHT.line, 0.22), // arc baseline, circle outlines
+  connectorFine:  hexToRgba(ORG_HIGHLIGHT.line, 0.28), // thin connector lines to labels
 };
 
 // Stroke widths — 5-tier ladder matching ESS/ESC prototypes
