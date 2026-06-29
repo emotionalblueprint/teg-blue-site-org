@@ -234,7 +234,7 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="skip-link" style={skipLinkStyles}>
           Skip to main content
         </a>
-        <BlueprintGrid size="lg" opacity={0.25} fade="subtle" />
+        <BlueprintGrid size="lg" opacity={0.38} fade="subtle" />
         <ThemeProvider>
           {children}
         </ThemeProvider>

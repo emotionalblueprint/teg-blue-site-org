@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { BG, TEXT, BORDER, FONT, ACCENT, RADIUS, hexToRgba } from '../styles/tokens'
+import { BLUE, BG, TEXT, BORDER, FONT, ACCENT, RADIUS, hexToRgba } from '../styles/tokens'
 import { positions, cards, content, autonomic } from '../lib/gradient-data'
 
 // ── on-light colour helpers ──────────────────────────────────────────────────
@@ -166,7 +166,7 @@ function Badge({ color, light, children }) {
 export default function EmotionalGradient() {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [gradientVersion, setGradientVersion] = useState(VERSION_FOUR)
+  const [gradientVersion, setGradientVersion] = useState(VERSION_EXTENDED)
   const [posIndex, setPosIndex] = useState(1) // default: Connection / Belonging
   const [fourModeIndex, setFourModeIndex] = useState(0)
   const [chronic, setChronic] = useState(false)
@@ -326,11 +326,11 @@ export default function EmotionalGradient() {
         overflow: 'visible',
         borderRadius: 8,
         outline: 'none',
-        background: BG.diagram,
+        background: BLUE[900],
         border: `1px solid ${BORDER.default}`,
         fontFamily: FONT.display,
         boxShadow: 'none',
-        '--gradient-sticky-bg': panelLight ? 'rgba(229,240,255,0.72)' : '#001433',
+        '--gradient-sticky-bg': BLUE[900],
         '--gradient-line': panel.line,
         '--gradient-accent': panel.cDot,
         '--gradient-accent-text': panel.cText,

@@ -44,7 +44,7 @@
   --spectrum-slate:  var(--blue-700);
 
   /* Backgrounds — dark atlas */
-  --bg-page:    var(--blue-950);
+  --bg-page:    #000E24;
   --bg-diagram: var(--blue-900);
   --bg-primary: var(--blue-950);
   --bg-card:    var(--blue-900);
@@ -85,6 +85,7 @@
 }
 
 html {
+  background-color: #000E24;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -93,7 +94,7 @@ html {
 
 body {
   font-family: var(--font-display);
-  background-color: var(--bg-page);
+  background-color: #000E24;
   color: var(--text-secondary);
   line-height: 1.7;
   min-height: 100vh;
