@@ -111,6 +111,14 @@ const HOME_CSS = `
     min-width: 0;
   }
 
+  .home-hero-title {
+    max-width: min(100%, 920px);
+  }
+
+  .home-title-line {
+    white-space: nowrap;
+  }
+
   .home-hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -179,6 +187,10 @@ const HOME_CSS = `
   }
 
   @media (max-width: 620px) {
+    .home-title-line {
+      white-space: normal;
+    }
+
     .home-formation-system {
       grid-template-columns: 1fr;
     }
@@ -551,16 +563,16 @@ export default function Home() {
           <div className="home-hero-copy">
             <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · The Emotional Gradient Blueprint</p>
             <h1
+              className="home-hero-title"
               style={{
                 margin: 0,
-                maxWidth: 760,
                 fontSize: "clamp(42px, 8vw, 86px)",
                 lineHeight: 0.96,
                 letterSpacing: 0,
                 color: TEXT.primary,
               }}
             >
-              <span style={{ display: "block", color: TEXT.primary }}>A Visual Map of</span>
+              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>A Visual Map of</span>
               <span
                 style={{
                   display: "inline-block",

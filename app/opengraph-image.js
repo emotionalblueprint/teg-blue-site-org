@@ -16,7 +16,7 @@ export default async function Image() {
     OgImage({
       badge: 'TEG-Blue · The Emotional Gradient Blueprint',
       title: 'A Visual Map of Nervous-System Patterns',
-      subtitle: "A visual map for patterns we can already see: safety, threat, control, shutdown, accountability, and repair.",
+      subtitle: 'Look closely and the patterns are already visible: open and trusting one moment, guarded, managing, controlling, or shut down the next.',
       url: 'teg-blue.org',
       needle: 0.125,
     }),

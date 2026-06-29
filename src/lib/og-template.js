@@ -1,58 +1,150 @@
 // src/lib/og-template.js
-// teg-blue.org home / gradient OpenGraph card (1200×630), ported from the OG
-// Studio (teg-blue-site-org-opengraph/lib/og-template.tsx). Pure JSX for
-// next/og — edge-safe. Fonts are supplied by the caller (see og-fonts.js).
-//
-// This is the gradient HERO card: header band + centered title + the seven
-// nervous-system states (X / A / A↔B / B / C / D / Z). It is the home card;
-// it is intentionally NOT used as a generic sub-page template (the state strip
-// is the gradient's signature and doesn't describe non-gradient pages).
+// teg-blue.org home Open Graph card (1200x630), built as a compact share-image
+// version of the current home hero: title left, nervous-system gradient rows
+// right. Generic sub-page cards continue to use src/lib/og-render.js.
 
 import { REALITY_CHECK_STATES } from '../styles/tokens'
 
 export const OG_SIZE = { width: 1200, height: 630 }
 
-const SURFACE = '#111729'
+const SURFACE = '#101729'
 const HEADER = '#151c35'
 const TEXT = '#f1f5f9'
 const MUTED = '#cbd5e1'
 const HINT = '#94a3b8'
 const FAINT = '#64748b'
+const CARD_BORDER = 'rgba(148,163,184,0.16)'
+const BLUE_INK = '#08285c'
 
 const TOP_SPECTRUM =
-  'linear-gradient(90deg, #E5F0FF 0%, #CCE0FF 20%, #99C2FF 40%, #66A3FF 60%, #4A83F7 80%, #0066FF 100%)'
+  'linear-gradient(90deg, #b6ebfc 0%, #76e2ff 22%, #00b1ff 45%, #0590e5 68%, #7b7bff 100%)'
 
-const STATES = REALITY_CHECK_STATES.map(({ code, label, color }) => ({ code, label, color }))
+const STATES = REALITY_CHECK_STATES.map(({ code, label, color, activeGradient }) => ({
+  code,
+  label,
+  color,
+  activeGradient,
+}))
 
-function tint(hex, alpha) {
-  const h = hex.replace('#', '')
-  const r = parseInt(h.slice(0, 2), 16)
-  const g = parseInt(h.slice(2, 4), 16)
-  const b = parseInt(h.slice(4, 6), 16)
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+function GradientTitle() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 0.96 }}>
+      <div style={{ display: 'flex', color: TEXT, fontSize: 66, fontWeight: 800, letterSpacing: 0 }}>
+        A Visual Map of
+      </div>
+      <div style={{ display: 'flex', color: '#6eeafb', fontSize: 78, fontWeight: 800, letterSpacing: 0 }}>
+        Nervous-
+      </div>
+      <div style={{ display: 'flex', color: '#7cfaa1', fontSize: 78, fontWeight: 800, letterSpacing: 0 }}>
+        System
+      </div>
+      <div style={{ display: 'flex', color: '#b6fc50', fontSize: 78, fontWeight: 800, letterSpacing: 0 }}>
+        Patterns
+      </div>
+    </div>
+  )
 }
 
-function clampedNeedle(value) {
-  if (typeof value !== 'number' || Number.isNaN(value)) return 0.125
-  return Math.min(0.95, Math.max(0.05, value))
-}
+function GradientRows() {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: 490,
+        padding: 20,
+        border: `1px solid ${CARD_BORDER}`,
+        borderRadius: 10,
+        background: 'rgba(17,23,41,0.86)',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          color: TEXT,
+          fontFamily: 'JetBrains Mono',
+          fontSize: 16,
+          fontWeight: 500,
+          marginBottom: 16,
+          letterSpacing: 0,
+        }}
+      >
+        The Safety → threat Gradient
+      </div>
 
-function activeStateIndex(needle) {
-  return Math.min(STATES.length - 1, Math.max(0, Math.round(needle * (STATES.length - 1))))
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {STATES.map((state) => (
+          <div
+            key={state.code}
+            style={{
+              minHeight: 42,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 12,
+              padding: '8px 13px',
+              borderRadius: state.activeGradient ? 7 : 8,
+              background: state.color,
+              color: BLUE_INK,
+              border: state.activeGradient
+                ? '1px solid rgba(8,40,92,0.14)'
+                : '1px dashed rgba(241,245,249,0.42)',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                fontFamily: 'JetBrains Mono',
+                fontSize: 17,
+                fontWeight: 500,
+                lineHeight: 1.12,
+                letterSpacing: 0,
+              }}
+            >
+              {state.label}
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                fontFamily: 'JetBrains Mono',
+                fontSize: 13,
+                fontWeight: 500,
+                lineHeight: 1,
+                opacity: 0.68,
+              }}
+            >
+              {state.code}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: 13,
+          color: HINT,
+          fontFamily: 'JetBrains Mono',
+          fontSize: 12,
+          letterSpacing: 0,
+        }}
+      >
+        <div style={{ display: 'flex' }}>Safe & at rest</div>
+        <div style={{ display: 'flex' }}>Life threat · overwhelm shutdown</div>
+      </div>
+    </div>
+  )
 }
 
 export function OgImage(params = {}) {
-  const title = params.title || 'The Nervous System Gradient'
   const badge = params.badge || 'TEG-Blue · The Emotional Gradient Blueprint'
   const subtitle =
     params.subtitle ||
-    'We do not stay the same in every situation — open and trusting one moment, guarded or controlling the next. The body keeps reading one question: is it safe, or is there danger?'
+    'Look closely and the patterns are already visible: open and trusting one moment, guarded, managing, controlling, or shut down the next.'
   const url = params.url || 'teg-blue.org'
-  const footer = params.footer || 'Nervous System Gradient'
-  const needle = clampedNeedle(params.needle)
-  const active = activeStateIndex(needle)
   const gridSvg = `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><path d="M80 0 L0 0 0 80" fill="none" stroke="rgba(148,163,184,0.055)" stroke-width="1"/></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><path d="M80 0 L0 0 0 80" fill="none" stroke="rgba(148,163,184,0.07)" stroke-width="1"/></svg>`,
   )}`
 
   return (
@@ -81,7 +173,7 @@ export function OgImage(params = {}) {
 
       <div
         style={{
-          height: 68,
+          height: 70,
           background: HEADER,
           display: 'flex',
           alignItems: 'center',
@@ -90,32 +182,29 @@ export function OgImage(params = {}) {
           position: 'relative',
         }}
       >
-        <div style={{ display: 'flex', fontSize: 16, fontWeight: 800, color: TEXT }}>TEG-Blue.org</div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 18, color: MUTED, fontSize: 14 }}>
-          <div style={{ display: 'flex' }}>Tools ↗</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div
             style={{
-              width: 36,
-              height: 36,
-              borderRadius: 8,
-              border: '1px solid rgba(148,163,184,0.16)',
-              color: HINT,
+              width: 28,
+              height: 28,
+              borderRadius: 7,
+              border: '1px solid rgba(148,163,184,0.24)',
               alignItems: 'center',
               justifyContent: 'center',
+              color: HINT,
+              fontFamily: 'JetBrains Mono',
+              fontSize: 10,
+              fontWeight: 500,
               display: 'flex',
-              fontSize: 18,
             }}
           >
-            <div
-              style={{
-                width: 12,
-                height: 12,
-                borderRadius: 999,
-                border: '1.5px solid #94a3b8',
-                display: 'flex',
-              }}
-            />
+            TB
           </div>
+          <div style={{ display: 'flex', fontSize: 16, fontWeight: 800, color: TEXT }}>TEG-Blue.org</div>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, color: TEXT, fontFamily: 'JetBrains Mono', fontSize: 12, fontWeight: 500 }}>
+          <div style={{ display: 'flex' }}>Explore</div>
+          <div style={{ display: 'flex' }}>Tools ↗</div>
         </div>
       </div>
       <div style={{ height: 4, background: TOP_SPECTRUM, display: 'flex' }} />
@@ -124,129 +213,58 @@ export function OgImage(params = {}) {
         style={{
           display: 'flex',
           flex: 1,
-          flexDirection: 'column',
           alignItems: 'center',
-          padding: '82px 70px 0',
+          justifyContent: 'space-between',
+          gap: 42,
+          padding: '42px 70px 34px',
           position: 'relative',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            color: HINT,
-            fontFamily: 'JetBrains Mono',
-            fontSize: 12,
-            fontWeight: 500,
-            textTransform: 'uppercase',
-            marginBottom: 18,
-            letterSpacing: 0,
-          }}
-        >
-          {badge}
+        <div style={{ display: 'flex', flexDirection: 'column', width: 552 }}>
+          <div
+            style={{
+              display: 'flex',
+              color: '#128dff',
+              fontFamily: 'JetBrains Mono',
+              fontSize: 12,
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              marginBottom: 22,
+              letterSpacing: 0,
+            }}
+          >
+            {badge}
+          </div>
+
+          <GradientTitle />
+
+          <div
+            style={{
+              display: 'flex',
+              color: MUTED,
+              fontSize: 22,
+              lineHeight: 1.52,
+              marginTop: 28,
+              maxWidth: 520,
+            }}
+          >
+            {subtitle}
+          </div>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            maxWidth: 850,
-            textAlign: 'center',
-            justifyContent: 'center',
-            color: TEXT,
-            fontSize: title.length > 48 ? 42 : 48,
-            fontWeight: 800,
-            lineHeight: 1.1,
-            letterSpacing: 0,
-            marginBottom: 22,
-          }}
-        >
-          {title}
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            maxWidth: 760,
-            textAlign: 'center',
-            justifyContent: 'center',
-            color: MUTED,
-            fontSize: subtitle.length > 120 ? 19 : 21,
-            lineHeight: 1.48,
-          }}
-        >
-          {subtitle}
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            gap: 9,
-            marginTop: 38,
-            padding: 2,
-            width: 894,
-          }}
-        >
-          {STATES.map((state, index) => (
-            <div
-              key={state.code}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                width: 120,
-                height: 76,
-                padding: '11px 11px 10px',
-                borderTop: `2px solid ${state.color}`,
-                borderRight: '1px solid rgba(148,163,184,0.12)',
-                borderBottom: '1px solid rgba(148,163,184,0.12)',
-                borderLeft: '1px solid rgba(148,163,184,0.12)',
-                borderRadius: 8,
-                background: `linear-gradient(180deg, ${tint(state.color, index === active ? 0.19 : 0.12)} 0%, rgba(0,0,0,0) 100%)`,
-                boxShadow: index === active ? `0 0 0 1px ${tint(state.color, 0.35)}` : 'none',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  color: state.color,
-                  fontFamily: 'JetBrains Mono',
-                  fontSize: 13,
-                  fontWeight: 500,
-                  lineHeight: 1.35,
-                  letterSpacing: 0,
-                }}
-              >
-                {state.code}
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  color: MUTED,
-                  fontSize: 12,
-                  lineHeight: 1.18,
-                  marginTop: 5,
-                }}
-              >
-                {state.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 28,
-            left: 70,
-            right: 70,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            color: FAINT,
-            fontFamily: 'JetBrains Mono',
-            fontSize: 13,
-          }}
-        >
-          <div style={{ display: 'flex' }}>{url}</div>
-          <div style={{ display: 'flex', color: HINT }}>{footer}</div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 16 }}>
+          <GradientRows />
+          <div
+            style={{
+              display: 'flex',
+              color: FAINT,
+              fontFamily: 'JetBrains Mono',
+              fontSize: 12,
+              letterSpacing: 0,
+            }}
+          >
+            {url}
+          </div>
         </div>
       </div>
     </div>
