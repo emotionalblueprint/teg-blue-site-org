@@ -8,6 +8,8 @@
 // it is intentionally NOT used as a generic sub-page template (the state strip
 // is the gradient's signature and doesn't describe non-gradient pages).
 
+import { REALITY_CHECK_STATES } from '../styles/tokens'
+
 export const OG_SIZE = { width: 1200, height: 630 }
 
 const SURFACE = '#111729'
@@ -20,15 +22,7 @@ const FAINT = '#64748b'
 const TOP_SPECTRUM =
   'linear-gradient(90deg, #b6ebfc 0%, #76e2ff 22%, #00b1ff 45%, #0590e5 68%, #7b7bff 100%)'
 
-const STATES = [
-  { code: 'X', label: 'Safe & at rest', color: '#cce0ff' },
-  { code: 'A', label: 'Safe with others', color: '#6eeafb' },
-  { code: 'A↔B', label: 'Is it still safe?', color: '#76faa1' },
-  { code: 'B', label: 'Threat', color: '#b6fc50' },
-  { code: 'C', label: 'Bigger threat', color: '#e3fd54' },
-  { code: 'D', label: 'Life threat', color: '#f7d448' },
-  { code: 'Z', label: 'Shutdown', color: '#a1adbf' },
-]
+const STATES = REALITY_CHECK_STATES.map(({ code, label, color }) => ({ code, label, color }))
 
 function tint(hex, alpha) {
   const h = hex.replace('#', '')

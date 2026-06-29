@@ -15,9 +15,11 @@ export default function SiteFooter() {
   return (
     <footer
       style={{
+        position: "relative",
+        zIndex: 1,
         maxWidth: SPACING.containerMax,
         margin: "0 auto",
-        padding: `40px ${SPACING.pagePadding}`,
+        padding: `44px ${SPACING.pagePadding}`,
         textAlign: "center",
       }}
     >

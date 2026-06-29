@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS } from "@/src/styles/tokens";
 
 const DEFAULT_POINTS = [
   {
@@ -27,10 +27,11 @@ export default function ReviewStatusPanel({
       style={{
         marginBottom: 32,
         padding: "clamp(18px, 3vw, 24px)",
-        background: `linear-gradient(135deg, ${hexToRgba(SPECTRUM.azure, 0.08)}, ${hexToRgba(SPECTRUM.indigo, 0.05)}), ${BG.diagram}`,
-        border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.18)}`,
+        background: BG.diagram,
+        border: `1px solid ${BORDER.default}`,
+        borderTop: `4px solid ${SPECTRUM.azure}`,
         borderRadius: RADIUS.lg,
-        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.025)",
+        boxShadow: "0 18px 50px rgba(0, 41, 102, 0.06)",
       }}
     >
       <div
@@ -62,7 +63,7 @@ export default function ReviewStatusPanel({
                 height: 7,
                 borderRadius: 999,
                 background: SPECTRUM.azure,
-                boxShadow: `0 0 16px ${hexToRgba(SPECTRUM.azure, 0.45)}`,
+                boxShadow: "none",
               }}
             />
             {eyebrow}
@@ -109,7 +110,7 @@ export default function ReviewStatusPanel({
               key={point.label}
               style={{
                 padding: 16,
-                background: BG.card,
+                background: BG.inset,
                 borderTop: `2px solid ${point.color}`,
               }}
             >

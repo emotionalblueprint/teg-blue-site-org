@@ -9,6 +9,7 @@
  * chronic state organization cannot drift into the same source layer.
  */
 
+import { CHRONIC_FORMATION } from "../styles/tokens";
 import { DEEP_ENGINE_FORMATIONS } from "./deep-engine-formations";
 
 const cell = (lead, sub, note) => ({ lead, sub, note });
@@ -18,44 +19,44 @@ export const DEEP_ENGINE_CHRONIC_FORMATION_META = {
     chronicConfig: "Chronic Elevated Physiological Baseline",
     chronicConfigDetail: "No resting availability",
     plainChronic: "Elevated baseline — restoration does not fully complete",
-    chronicColor: "#ffe680",
+    chronicColor: CHRONIC_FORMATION.X,
   },
   connection: {
     chronicConfig: "Chronic Connection / Belonging",
     chronicConfigDetail: "No real Safety Access (pretending safety is the normal)",
     plainChronic: "Connection / Belonging — safety is displayed without full access",
-    chronicColor: "#ffce00",
+    chronicColor: CHRONIC_FORMATION.A,
   },
   calibration: {
     chronicConfig: "Chronic Safety Checking",
     chronicConfigDetail: "Sustained threat",
     plainChronic: "Safety Checking — the safety question remains unresolved",
-    chronicColor: "#ffa300",
+    chronicColor: CHRONIC_FORMATION.AB,
   },
   protection: {
     chronicConfig: "Chronic Protection / Defence",
     chronicConfigDetail: "Defence as default",
     plainChronic: "Protection / Defence — mobilisation stays held",
-    chronicColor: "#ff7e1d",
+    chronicColor: CHRONIC_FORMATION.B,
   },
   strategic: {
     chronicConfig: "Chronic Control / Management",
     chronicConfigDetail: "Chronic Control / Management",
     plainChronic: "Control / Management — management becomes the regulation route",
-    chronicColor: "#ff5a05",
+    chronicColor: CHRONIC_FORMATION.C,
   },
   domination: {
     familiarChronic: "coercive control",
     chronicConfig: "Chronic Domination",
     chronicConfigDetail: "Power as identity",
     plainChronic: "Domination — power becomes the regulation route",
-    chronicColor: "#ff404a",
+    chronicColor: CHRONIC_FORMATION.D,
   },
   shutdown: {
     chronicConfig: "Shutdown",
     chronicConfigDetail: "Shutdown",
     plainChronic: "Persistent Shutdown — collapse becomes the running organisation",
-    chronicColor: "#a1adbf",
+    chronicColor: CHRONIC_FORMATION.Z,
   },
 };
 

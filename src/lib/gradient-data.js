@@ -267,7 +267,7 @@ export const faq = [
   {
     question: 'What is the Nervous System Gradient?',
     answer:
-      'The Nervous System Gradient is a map of the nervous system’s states. The nervous system continuously appraises one question — is it safe, or is there danger? — faster than conscious thought, and shifts the whole organism into the state that fits what it found, along a single continuum from rest, through connection and the defences, down to shutdown.',
+      'The Nervous System Gradient is a map of the nervous system’s states. The nervous system continuously appraises one question — is it safe, or is there danger? — faster than conscious thought, and shifts the whole organism into the state that fits what it found, along an active continuum from rest, through connection and the defences, with shutdown shown as an off-gradient fallback when mobilisation cannot form.',
   },
   {
     question: 'How does the nervous system choose a state?',

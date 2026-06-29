@@ -8,8 +8,176 @@
  * BG, TEXT, and BORDER reference CSS custom properties
  * defined in globals.css — they auto-switch with theme.
  *
- * Updated session 121: vault-2 color overhaul.
+ * Updated session 123: canonical palette contract from the TEG-Blue SVG assets.
  */
+
+// ─── PALETTE SOURCES ─────────────────────────────────
+// These files define the canonical color families and their meanings.
+
+export const PALETTE_SOURCES = {
+  formation: "color-palette-teg-blue-org-pages-7-mode-gradient.svg",
+  blueScale: "Tailwind-color-palette.svg",
+  chronic: "Color-palete+tailwind-blue-colors-palette-chronic.svg",
+};
+
+// ─── BLUE DEPTH SCALE ────────────────────────────────
+// Use dark blues for large surfaces; use light blues for titles, notes,
+// controls, and small text that sits on dark surfaces.
+
+export const BLUE = {
+  50:  "#E5F0FF",
+  100: "#CCE0FF",
+  200: "#99C2FF",
+  300: "#66A3FF",
+  400: "#4A83F7",
+  500: "#0066FF",
+  600: "#0052CC",
+  700: "#003D99",
+  800: "#002966",
+  900: "#001433",
+  950: "#000E24",
+};
+
+export const BLUE_ROLES = {
+  50:  "near-white blue: primary text on dark, light-page background",
+  100: "pale blue: secondary text, quiet labels, light fills",
+  200: "soft blue: notes, dividers, muted data labels",
+  300: "active light blue: small titles, active controls, focus accents",
+  400: "bright bridge blue: model accents and mid-scale highlights",
+  500: "core TEG-Blue: primary actions and brand signal",
+  600: "structural cobalt: rails, chart structure, strong links on light",
+  700: "deep annotation blue: secondary dark surfaces and labels",
+  800: "deep fallback blue: shutdown fallback surfaces and high-depth blocks",
+  900: "near-black blue: diagram panels and raised dark cards",
+  950: "deepest page blue: page background and header depth",
+};
+
+// ─── ACUTE FORMATION / REALITY-CHECK PALETTE ─────────
+// Source: color-palette-teg-blue-org-pages-7-mode-gradient.svg
+// X-D are the active reality-check gradient. Z is body shutdown, a detached
+// fallback state rather than another step inside the active gradient.
+
+export const FORMATION = {
+  X: "#ffffff",
+  A: "#6eeafb",
+  AB: "#76faa1",
+  B: "#b6fc50",
+  C: "#e3fd54",
+  D: "#f7d448",
+  Z: "#a1adbf",
+};
+
+export const FORMATION_META = {
+  X: {
+    id: "baseline",
+    code: "X",
+    label: "Safe & at rest",
+    mode: "Baseline Rest",
+    reality: "Safety",
+    color: FORMATION.X,
+    ink: BLUE[800],
+    activeGradient: true,
+  },
+  A: {
+    id: "connection",
+    code: "A",
+    label: "Safe with others",
+    mode: "Connection / Belonging",
+    reality: "Safety with others",
+    color: FORMATION.A,
+    ink: BLUE[900],
+    activeGradient: true,
+  },
+  AB: {
+    id: "calibration",
+    code: "A↔B",
+    label: "Is it still safe?",
+    mode: "Safety Checking",
+    reality: "Uncertainty",
+    color: FORMATION.AB,
+    ink: BLUE[900],
+    activeGradient: true,
+  },
+  B: {
+    id: "protection",
+    code: "B",
+    label: "Threat",
+    mode: "Protection / Defence",
+    reality: "Threat",
+    color: FORMATION.B,
+    ink: BLUE[900],
+    activeGradient: true,
+  },
+  C: {
+    id: "strategic",
+    code: "C",
+    label: "Bigger threat",
+    mode: "Control / Management",
+    reality: "Bigger threat",
+    color: FORMATION.C,
+    ink: BLUE[900],
+    activeGradient: true,
+  },
+  D: {
+    id: "domination",
+    code: "D",
+    label: "Life threat",
+    mode: "Domination",
+    reality: "Life threat",
+    color: FORMATION.D,
+    ink: BLUE[900],
+    activeGradient: true,
+  },
+  Z: {
+    id: "shutdown",
+    code: "Z",
+    label: "Overwhelm Shutdown",
+    mode: "Body Shutdown",
+    reality: "Overwhelm",
+    color: FORMATION.Z,
+    ink: BLUE[900],
+    activeGradient: false,
+  },
+};
+
+export const REALITY_CHECK_STATES = [
+  FORMATION_META.X,
+  FORMATION_META.A,
+  FORMATION_META.AB,
+  FORMATION_META.B,
+  FORMATION_META.C,
+  FORMATION_META.D,
+  FORMATION_META.Z,
+];
+
+export const ACTIVE_REALITY_CHECK_STATES = REALITY_CHECK_STATES.filter((state) => state.activeGradient);
+
+export const REALITY_CHECK_GRADIENT = `linear-gradient(90deg, ${FORMATION.X}, ${FORMATION.A}, ${FORMATION.AB}, ${FORMATION.B}, ${FORMATION.C}, ${FORMATION.D})`;
+
+// ─── CHRONIC FORMATION PALETTE ───────────────────────
+// Source: Color-palete+tailwind-blue-colors-palette-chronic.svg plus the
+// current Deep Engine chronic sequence. These colors mean "held / persistent",
+// not acute state.
+
+export const CHRONIC_FORMATION = {
+  X: "#ffe680",
+  A: "#ffce00",
+  AB: "#ffa300",
+  B: "#ff7e1d",
+  C: "#ff5a05",
+  D: "#ff404a",
+  Z: BLUE[800],
+};
+
+export const CHRONIC_FORMATION_META = {
+  X: { label: "Elevated baseline", color: CHRONIC_FORMATION.X },
+  A: { label: "Chronic Connection / Belonging", color: CHRONIC_FORMATION.A },
+  AB: { label: "Chronic Safety Checking", color: CHRONIC_FORMATION.AB },
+  B: { label: "Chronic Protection / Defence", color: CHRONIC_FORMATION.B },
+  C: { label: "Chronic Control / Management", color: CHRONIC_FORMATION.C },
+  D: { label: "Chronic Domination", color: CHRONIC_FORMATION.D },
+  Z: { label: "Persistent Shutdown", color: CHRONIC_FORMATION.Z },
+};
 
 // ─── BACKGROUNDS ─────────────────────────────────────
 
@@ -44,14 +212,14 @@ export const BORDER = {
 // Six tones with full hue/lightness spread. Use freely — no color owns a page.
 
 export const SPECTRUM = {
-  sky:      "#b6ebfc",   // lightest — ice
-  azure:    "#76e2ff",   // cyan, clear
-  blue:     "#00b1ff",   // bright blue-cyan, core
-  cobalt:   "#0590e5",   // deep blue
-  lavender: "#a9a9ff",   // light violet
-  indigo:   "#7b7bff",   // violet
-  silver:   "#b2b5bf",   // light grey
-  slate:    "#808493",   // neutral grey
+  sky:      BLUE[100],   // pale research blue
+  azure:    BLUE[300],   // active light blue
+  blue:     BLUE[500],   // core TEG-Blue
+  cobalt:   BLUE[600],   // structural blue
+  lavender: BLUE[400],   // legacy key, now bright scale step
+  indigo:   BLUE[700],   // deep annotation blue
+  silver:   BLUE[200],   // pale structural line
+  slate:    BLUE[700],   // neutral structural blue
 };
 
 // ─── CONTENT TYPE → COLOR MAPPING ────────────────────
@@ -123,10 +291,10 @@ export const SPACING = {
 // ─── BORDER RADIUS ───────────────────────────────────
 
 export const RADIUS = {
-  sm:   6,    // Tags, small elements
-  md:   8,    // Cards, connection cards
-  lg:   12,   // Panels, content blocks
-  xl:   16,   // Large panels, page cards
+  sm:   4,    // Tags, small elements
+  md:   6,    // Cards, connection cards
+  lg:   8,    // Panels, content blocks
+  xl:   8,    // Large panels, page cards
 };
 
 // ─── TRANSITIONS ─────────────────────────────────────
@@ -152,26 +320,26 @@ export const OPACITY = {
 // ─── PATTERN COLORS (Nervous System Gradient) ─────────────
 
 export const PATTERN = {
-  A: { primary: '#a0cdfb', bg: 'rgba(160,205,251,0.08)', border: 'rgba(160,205,251,0.25)' },
-  B: { primary: '#6fabf8', bg: 'rgba(111,171,248,0.08)', border: 'rgba(111,171,248,0.25)' },
-  C: { primary: '#4f80f7', bg: 'rgba(79,128,247,0.08)',  border: 'rgba(79,128,247,0.25)' },
-  D: { primary: '#1255fc', bg: 'rgba(18,85,252,0.08)',   border: 'rgba(18,85,252,0.25)' },
+  A: { primary: FORMATION.A, bg: 'rgba(110,234,251,0.12)', border: 'rgba(110,234,251,0.32)' },
+  B: { primary: FORMATION.B, bg: 'rgba(182,252,80,0.12)',  border: 'rgba(182,252,80,0.32)' },
+  C: { primary: FORMATION.C, bg: 'rgba(227,253,84,0.12)',  border: 'rgba(227,253,84,0.32)' },
+  D: { primary: FORMATION.D, bg: 'rgba(247,212,72,0.12)',  border: 'rgba(247,212,72,0.32)' },
 };
 
-export const PATTERN_GRADIENT = 'linear-gradient(90deg, #a0cdfb, #6fabf8, #4f80f7, #1255fc)';
+export const PATTERN_GRADIENT = `linear-gradient(90deg, ${FORMATION.A}, ${FORMATION.AB}, ${FORMATION.B}, ${FORMATION.C}, ${FORMATION.D})`;
 
 // ─── MODEL PAGE COLORS (one muted academic blue per model) ──
 
 export const MODEL_COLORS = {
-  M1: '#5BADFF',  // azure — Emotions as Signals
-  M2: '#4B8FFF',  // blue — Nervous System States
-  M3: '#5B62D4',  // indigo — Regulation Capacities
-  M4: '#4472EE',  // cobalt — Awareness Capacities
+  M1: BLUE[300],  // azure — Emotions as Signals
+  M2: BLUE[500],  // blue — Nervous System States
+  M3: BLUE[700],  // indigo — Regulation Capacities
+  M4: BLUE[600],  // cobalt — Awareness Capacities
 };
 
 // ─── MAIN_ORG (primary action color — badges, CTAs, links) ──
 export const MAIN_ORG = {
-  accent: '#2563eb',
+  accent: BLUE[500],
 };
 
 // ─── THREE AWARENESS CAPACITIES ──────────────────────
@@ -193,12 +361,12 @@ export const AWARENESS_TONES = {
 // Four accents for diagrams, highlights, states, and editorial.
 
 export const ACCENT = {
-  green:      '#55b685',   // positive indicators, diagrams
-  amber:      '#e9a23b',   // editorial, warm highlights
-  amberLight: '#f2b856',   // hover/active states
-  amberMuted: '#7d5418',   // subtle dark backgrounds
-  orange:     '#e87b35',   // "stuck" state, external regulation
-  pink:       '#da5597',   // domination emphasis, diagrams
+  green:      FORMATION.AB, // positive indicators, diagrams
+  amber:      FORMATION.D,  // editorial, warm highlights
+  amberLight: FORMATION.C,  // hover/active states
+  amberMuted: '#8d6f12',    // subtle dark backgrounds
+  orange:     '#d8762f',    // "stuck" state, external regulation
+  pink:       '#d94f86',    // domination emphasis, diagrams
 };
 
 // ─── STATUS COLORS (derives from accent + spectrum) ──

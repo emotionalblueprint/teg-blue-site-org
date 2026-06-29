@@ -9,6 +9,8 @@
  * deep-engine-chronic-data.js.
  */
 
+import { FORMATION } from "../styles/tokens";
+
 export const DEEP_ENGINE_FORMATIONS = [
   {
     id: "baseline",
@@ -21,7 +23,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "SAFETY",
     acuteConfig: "Physiological Baseline",
     acuteConfigDetail: "Safe & Rest, Rest & Digest",
-    acuteColor: "#cce0ff",
+    acuteColor: FORMATION.X,
     active: false,
   },
   {
@@ -35,7 +37,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "SAFETY",
     acuteConfig: "Connection-Belonging",
     acuteConfigDetail: "Open Engagement, Safe With Others",
-    acuteColor: "#6eeafb",
+    acuteColor: FORMATION.A,
     active: true,
   },
   {
@@ -49,7 +51,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "UNCERTAINTY",
     acuteConfig: "Safety Checking",
     acuteConfigDetail: "Is it still safe?",
-    acuteColor: "#76faa1",
+    acuteColor: FORMATION.AB,
     active: true,
   },
   {
@@ -63,7 +65,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "THREAT",
     acuteConfig: "Protection / Defence",
     acuteConfigDetail: "Protective Mobilisation",
-    acuteColor: "#b6fc50",
+    acuteColor: FORMATION.B,
     active: true,
   },
   {
@@ -77,7 +79,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "BIGGER THREAT",
     acuteConfig: "Control / Management",
     acuteConfigDetail: "Control / Management",
-    acuteColor: "#e3fd54",
+    acuteColor: FORMATION.C,
     active: true,
   },
   {
@@ -91,7 +93,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "LIFE THREAT",
     acuteConfig: "Domination",
     acuteConfigDetail: "Power Mobilisation",
-    acuteColor: "#f7d448",
+    acuteColor: FORMATION.D,
     active: true,
   },
   {
@@ -105,7 +107,7 @@ export const DEEP_ENGINE_FORMATIONS = [
     reality: "SHUTDOWN",
     acuteConfig: "Shutdown",
     acuteConfigDetail: "Overwhelm, Freeze, Collapse",
-    acuteColor: "#a1adbf",
+    acuteColor: FORMATION.Z,
     active: false,
   },
 ];

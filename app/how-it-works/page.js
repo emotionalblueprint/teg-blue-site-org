@@ -5,7 +5,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const SIDEBAR_SECTIONS = [
   { label: "Operating Model", href: "#operating-model", description: "Gradient, Engine, tools, and research questions." },
-  { label: "Gradient", href: "#gradient", description: "The seven-state map of state-dependent capacity." },
+  { label: "Gradient", href: "#gradient", description: "The active map and shutdown fallback for state-dependent capacity." },
   { label: "TEG-Blue Engine", href: "#teg-blue-engine", description: "How the Gradient becomes applied tools." },
   { label: "Tool Surfaces", href: "#tool-surfaces", description: "Scales, behaviour maps, emotional tools, and applied views." },
   { label: "Example", href: "#worked-example", description: "How one dimension becomes a tool surface." },
@@ -16,7 +16,7 @@ const SIDEBAR_SECTIONS = [
 const FAQ_ITEMS = [
   {
     question: "How does TEG-Blue work?",
-    answer: "TEG-Blue starts with the Nervous System Gradient, a seven-state map of state-dependent capacity. The TEG-Blue Engine applies that map to one dimension at a time, such as empathy, accountability, behaviour, repair, or emotional signals. Tools make the resulting pattern visible.",
+    answer: "TEG-Blue starts with the Nervous System Gradient: an active state map with shutdown held as an off-gradient fallback. The TEG-Blue Engine applies that map to one dimension at a time, such as empathy, accountability, behaviour, repair, or emotional signals. Tools make the resulting pattern visible.",
   },
   {
     question: "What is the TEG-Blue Engine?",
@@ -109,7 +109,7 @@ const EXAMPLE_STEPS = [
   },
   {
     title: "Create the surface",
-    body: "A tool can show how empathy, accountability, repair, and relational impact shift across the seven states.",
+    body: "A tool can show how empathy, accountability, repair, and relational impact shift across the active states and shutdown fallback.",
   },
   {
     title: "Name the research question",
@@ -203,7 +203,7 @@ export default function HowItWorksPage() {
           <p style={{ ...bodyStyle, marginBottom: 18 }}>
             The Nervous System Gradient maps how state changes perception, emotion, body activation,
             behaviour, self-awareness, empathy, accountability, and repair. The Engine and tools keep
-            returning to this same map.
+            returning to this same map, with Shutdown marked as the fallback outside the active gradient.
           </p>
           <div
             style={{
@@ -405,6 +405,7 @@ function SystemCard({ item, number }) {
 }
 
 function StatePill({ state, index }) {
+  const isShutdown = state === "Shutdown";
   const colors = [
     SPECTRUM.sky,
     SPECTRUM.azure,
@@ -423,8 +424,9 @@ function StatePill({ state, index }) {
         display: "flex",
         alignItems: "center",
         padding: "10px 12px",
-        background: hexToRgba(color, 0.07),
+        background: hexToRgba(color, isShutdown ? 0.11 : 0.07),
         border: `1px solid ${hexToRgba(color, 0.16)}`,
+        borderStyle: isShutdown ? "dashed" : "solid",
         borderRadius: RADIUS.md,
         color: TEXT.secondary,
         fontSize: 13,

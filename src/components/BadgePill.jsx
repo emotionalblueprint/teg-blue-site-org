@@ -12,16 +12,16 @@ export default function BadgePill({ color, children }) {
     <div
       style={{
         display: "inline-block",
-        padding: "4px 12px",
-        borderRadius: 100,
+        padding: "4px 9px",
+        borderRadius: 4,
         fontSize: 10,
         fontWeight: 700,
         fontFamily: FONT.mono,
         textTransform: "uppercase",
-        letterSpacing: "0.1em",
+        letterSpacing: 0,
         color: color,
-        backgroundColor: hexToRgba(color, 0.15),
-        border: `1px solid ${hexToRgba(color, 0.3)}`,
+        backgroundColor: hexToRgba(color, 0.08),
+        border: `1px solid ${hexToRgba(color, 0.26)}`,
       }}
     >
       {children}

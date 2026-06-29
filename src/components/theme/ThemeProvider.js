@@ -6,8 +6,8 @@ export function ThemeProvider({ children }) {
   return (
     <NextThemesProvider
       attribute="data-theme"
-      defaultTheme="system"
-      enableSystem={true}
+      defaultTheme="dark"
+      enableSystem={false}
       disableTransitionOnChange={false}
     >
       {children}

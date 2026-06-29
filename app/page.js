@@ -1,4 +1,4 @@
-import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, ACTIVE_REALITY_CHECK_STATES, FORMATION_META } from "@/src/styles/tokens";
 import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/components";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
@@ -99,51 +99,98 @@ const breadcrumbJsonLd = generateBreadcrumbJsonLd([
   { name: "The Nervous System Gradient", url: "/" },
 ]);
 
+const HOME_CSS = `
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: clamp(28px, 6vw, 68px);
+    align-items: center;
+  }
+
+  .home-hero-copy {
+    min-width: 0;
+  }
+
+  .home-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .home-action {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 9px 13px;
+    border-radius: 6px;
+    border: 1px solid var(--border-default);
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .home-action.primary {
+    border-color: color-mix(in srgb, var(--spectrum-azure) 38%, transparent);
+    color: var(--spectrum-azure);
+    background: color-mix(in srgb, var(--spectrum-azure) 9%, var(--bg-primary));
+  }
+
+  .home-action:hover {
+    color: var(--spectrum-azure);
+    border-color: var(--border-hover);
+    text-decoration: none;
+  }
+
+  .home-calibration-plate {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-formation-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    min-height: 162px;
+    border: 1px solid var(--border-default);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .home-formation-system {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(92px, 112px);
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .home-shutdown-cell {
+    min-height: 162px;
+  }
+
+  @media (max-width: 860px) {
+    .home-hero {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .home-formation-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .home-formation-system {
+      grid-template-columns: 1fr;
+    }
+    .home-shutdown-cell {
+      min-height: 74px;
+    }
+  }
+`;
+
 function Ld({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
-}
-
-function StateSpineStrip() {
-  return (
-    <div
-      className="state-spine-strip"
-      aria-label="State spine from safety to shutdown"
-      style={{
-        margin: "24px auto 0",
-        maxWidth: 820,
-        padding: 0,
-        "--state-spine-border": BORDER.default,
-      }}
-    >
-      <div className="state-spine-list" role="list" style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-        {positions.map((p) => (
-          <div
-            className="state-spine-item"
-            role="listitem"
-            key={p.id}
-            style={{
-              "--state-color": p.acuteColor,
-              flex: "1 1 92px",
-              minWidth: 92,
-              borderRadius: RADIUS.md,
-              border: `1px solid ${BORDER.default}`,
-              borderTop: `2px solid ${p.acuteColor}`,
-              background: BG.diagram,
-              padding: "9px 10px 8px",
-              textAlign: "left",
-            }}
-          >
-            <span className="state-spine-code" style={{ display: "block", fontFamily: FONT.diagram, fontSize: 11, fontWeight: 650, letterSpacing: "0.08em", color: p.acuteColor }}>
-              {p.code}
-            </span>
-            <span className="state-spine-label" style={{ display: "block", marginTop: 3, fontSize: 11, lineHeight: 1.25, color: TEXT.secondary }}>
-              {p.atlasLabel}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
 }
 
 const gradientDefinitionMoves = [
@@ -194,27 +241,133 @@ const eyebrowStyle = {
   fontFamily: FONT.diagram,
   fontSize: 10,
   fontWeight: 500,
-  letterSpacing: "0.2em",
+  letterSpacing: 0,
   textTransform: "uppercase",
   color: TEXT.muted,
 };
 // Section eyebrows lead in the blue "diagram voice"; the hero eyebrow stays muted.
-const sectionEyebrowStyle = { ...eyebrowStyle, color: "var(--spectrum-indigo)" };
+const sectionEyebrowStyle = { ...eyebrowStyle, color: "var(--spectrum-azure)" };
 const homeSurface = {
-  primary: "var(--bg-primary, #151c35)",
-  text: "var(--text-primary, #f1f5f9)",
-  secondary: "var(--text-secondary, #cbd5e1)",
-  muted: "var(--text-muted, #94a3b8)",
-  border: "var(--border-default, rgba(148, 163, 184, 0.12))",
+  primary: "var(--bg-primary)",
+  text: "var(--text-primary)",
+  secondary: "var(--text-secondary)",
+  muted: "var(--text-muted)",
+  border: "var(--border-default)",
 };
 // Bordered instrument-surface card — the research register from the prototype.
 const cardStyle = {
   background: BG.diagram,
   border: `1px solid ${BORDER.default}`,
-  borderRadius: RADIUS.xl,
+  borderRadius: RADIUS.lg,
   padding: "clamp(20px, 3vw, 28px)",
-  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.02)",
+  boxShadow: "0 18px 50px rgba(0, 41, 102, 0.06)",
 };
+
+const formationCells = ACTIVE_REALITY_CHECK_STATES;
+const shutdownCell = FORMATION_META.Z;
+const gradientLinePositions = positions.filter((p) => p.id !== "shutdown");
+const shutdownPosition = positions.find((p) => p.id === "shutdown");
+const formationDescriptionStyle = {
+  fontFamily: FONT.mono,
+  fontSize: 12,
+  fontWeight: 800,
+  lineHeight: 1.15,
+  letterSpacing: 0,
+  overflowWrap: "anywhere",
+};
+const formationCodeStyle = {
+  alignSelf: "flex-start",
+  fontFamily: FONT.mono,
+  fontSize: 10,
+  fontWeight: 800,
+  lineHeight: 1,
+  letterSpacing: 0,
+  opacity: 0.68,
+};
+
+function HomeCalibrationPlate() {
+  return (
+    <aside
+      className="home-calibration-plate"
+      aria-label="Nervous System Gradient formation plate"
+      style={{
+        background: BG.diagram,
+        border: `1px solid ${BORDER.default}`,
+        borderRadius: RADIUS.lg,
+        padding: "clamp(14px, 2.5vw, 18px)",
+        boxShadow: "0 24px 70px rgba(0, 41, 102, 0.10)",
+      }}
+    >
+      <div style={{ marginBottom: 12 }}>
+        <p style={{ margin: 0, fontFamily: FONT.mono, fontSize: 12, fontWeight: 800, color: TEXT.primary }}>
+          The Safety → threat Gradient
+        </p>
+      </div>
+
+      <div className="home-formation-system">
+        <div className="home-formation-grid" role="list" aria-label="Gradient formations">
+          {formationCells.map((cell) => (
+            <div
+              key={cell.code}
+              role="listitem"
+              style={{
+                minHeight: 118,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: 12,
+                background: cell.color,
+                color: cell.ink,
+                borderRight: `1px solid ${hexToRgba(BLUE[900], 0.12)}`,
+              }}
+            >
+              <span style={formationDescriptionStyle}>
+                {cell.label}
+              </span>
+              <span style={formationCodeStyle}>{cell.code}</span>
+            </div>
+          ))}
+        </div>
+        <div
+          className="home-shutdown-cell"
+          aria-label="Shutdown off-gradient"
+          style={{
+            minHeight: 118,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: 12,
+            borderRadius: 8,
+            background: shutdownCell.color,
+            color: shutdownCell.ink,
+            border: `1px dashed ${hexToRgba(BLUE[100], 0.42)}`,
+          }}
+        >
+          <span style={{ ...formationDescriptionStyle, fontSize: 11.5 }}>
+            {shutdownCell.label}
+          </span>
+          <span style={formationCodeStyle}>{shutdownCell.code}</span>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          gap: 12,
+          marginTop: 12,
+          color: TEXT.muted,
+          fontFamily: FONT.diagram,
+          fontSize: 11,
+          lineHeight: 1.4,
+        }}
+      >
+        <span>Safe & at rest</span>
+        <span>Life threat · overwhelm shutdown</span>
+      </div>
+    </aside>
+  );
+}
 
 function WhatGradientIsCard() {
   return (
@@ -253,7 +406,7 @@ function WhatGradientIsCard() {
                 color: homeSurface.text,
                 fontSize: "clamp(21px, 3vw, 28px)",
                 fontWeight: 700,
-                letterSpacing: "-0.02em",
+                letterSpacing: 0,
                 lineHeight: 1.16,
               }}
             >
@@ -268,19 +421,33 @@ function WhatGradientIsCard() {
           </div>
 
           <div>
-            <div style={{ display: "flex", gap: 5, alignItems: "center" }} aria-hidden="true">
-              {positions.map((p) => (
+            <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: 10, alignItems: "center" }} aria-hidden="true">
+              <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+                {gradientLinePositions.map((p) => (
+                  <span
+                    key={p.id}
+                    style={{
+                      flex: "1 1 0",
+                      height: 5,
+                      borderRadius: 999,
+                      background: p.acuteColor,
+                      opacity: 0.9,
+                    }}
+                  />
+                ))}
+              </div>
+              {shutdownPosition && (
                 <span
-                  key={p.id}
                   style={{
-                    flex: p.id === "shutdown" ? "0.7 1 0" : "1 1 0",
+                    width: 22,
                     height: 5,
                     borderRadius: 999,
-                    background: p.acuteColor,
-                    opacity: p.id === "shutdown" ? 0.58 : 0.9,
+                    background: shutdownPosition.acuteColor,
+                    outline: `1px dashed ${hexToRgba(BLUE[100], 0.4)}`,
+                    outlineOffset: 3,
                   }}
                 />
-              ))}
+              )}
             </div>
             <div
               style={{
@@ -292,12 +459,12 @@ function WhatGradientIsCard() {
                 fontFamily: FONT.diagram,
                 fontSize: 10,
                 lineHeight: 1.4,
-                letterSpacing: "0.06em",
+                letterSpacing: 0,
                 textTransform: "uppercase",
               }}
             >
               <span>Rest + connection</span>
-              <span>Defence + shutdown</span>
+              <span>Defence + power · shutdown off-gradient</span>
             </div>
           </div>
         </div>
@@ -330,7 +497,7 @@ function WhatGradientIsCard() {
                   fontFamily: FONT.diagram,
                   fontSize: 10,
                   fontWeight: 650,
-                  letterSpacing: "0.1em",
+                  letterSpacing: 0,
                   lineHeight: 1.2,
                   textTransform: "uppercase",
                 }}
@@ -367,30 +534,37 @@ export default function Home() {
       <Ld data={faqJsonLd} />
       <Ld data={speakableJsonLd} />
       <Ld data={breadcrumbJsonLd} />
+      <style dangerouslySetInnerHTML={{ __html: HOME_CSS }} />
 
       <SiteHeader currentPath="/" />
 
-      <main id="main-content" style={{ background: BG.page, fontFamily: FONT.display, paddingBottom: 64 }}>
+      <main id="main-content" style={{ position: "relative", zIndex: 1, background: "transparent", fontFamily: FONT.display, paddingBottom: 64 }}>
         {/* Hero — static, crawlable */}
-        <section style={{ ...sectionStyle, paddingTop: "clamp(48px, 8vw, 88px)", paddingBottom: 40, textAlign: "center" }}>
-          <p style={eyebrowStyle}>TEG-Blue · The Emotional Gradient Blueprint</p>
-          <h1 style={{ margin: "0 auto", maxWidth: 720, fontSize: "clamp(26px, 4vw, 34px)", lineHeight: 1.12, letterSpacing: "-0.02em", color: TEXT.primary }}>
-            The Nervous System Gradient
-          </h1>
-          <p style={{ margin: "14px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
-            We do not stay the same in every situation — open and trusting one moment, guarded or controlling
-            the next. These shifts are not random. They are state changes in the nervous system.
-          </p>
-          <p id="gradient-intro" style={{ margin: "14px auto 0", maxWidth: 680, fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: TEXT.secondary }}>
-            The body keeps reading one question —{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>is it safe, or is there danger?</strong> — faster
-            than thought. Its answer lands the whole system on one line:{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>rest and connection</strong> at the safe end,{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>defence and control</strong> as threat rises, and{" "}
-            <strong style={{ color: TEXT.primary, fontWeight: 600 }}>shutdown</strong> when mobilisation cannot form.
-          </p>
-          <StateSpineStrip />
-          <div style={{ width: 48, height: 2, borderRadius: 2, background: "var(--spectrum-azure)", opacity: 0.7, margin: "24px auto 0" }} aria-hidden="true" />
+        <section className="home-hero" style={{ ...sectionStyle, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
+          <div className="home-hero-copy">
+            <p style={{ ...eyebrowStyle, color: SPECTRUM.azure }}>TEG-Blue · The Emotional Gradient Blueprint</p>
+            <h1 style={{ margin: 0, maxWidth: 760, fontSize: "clamp(42px, 8vw, 86px)", lineHeight: 0.96, letterSpacing: 0, color: TEXT.primary }}>
+              The Nervous System Gradient
+            </h1>
+            <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
+              We do not stay the same in every situation: open and trusting one moment, guarded or controlling
+              the next. These shifts are not random. They are state changes in the nervous system.
+            </p>
+            <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
+              The body keeps reading one question:{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
+              lands the whole system on the active gradient, from{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>defence and control</strong>.{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
+            </p>
+            <div className="home-hero-actions" aria-label="Primary routes">
+              <a className="home-action primary" href="/foundations">Read the overview</a>
+              <a className="home-action" href="/scientific-foundations">Source grounding</a>
+              <a className="home-action" href="/how-it-works">How it works</a>
+            </div>
+          </div>
+          <HomeCalibrationPlate />
         </section>
 
         {/* What the gradient is — definitional note with its own convergent-science trace */}
@@ -407,7 +581,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="explains-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>What the gradient explains</p>
-            <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+            <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
               From personal patterns to societal systems
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
@@ -449,7 +623,7 @@ export default function Home() {
               >
                 Put it to use — explore the tools ↗
               </a>
-              <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: "0.04em", color: TEXT.muted }}>teg-blue.com</span>
+              <span style={{ fontFamily: FONT.mono, fontSize: 11, letterSpacing: 0, color: TEXT.muted }}>teg-blue.com</span>
             </div>
           </div>
         </section>
@@ -465,7 +639,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="science-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Grounding</p>
-            <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+            <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
               Research grounding and source traces
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
@@ -476,7 +650,7 @@ export default function Home() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
               {scienceGrounding.map((s) => (
                 <div key={s.part}>
-                  <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--spectrum-indigo)" }}>{s.part}</p>
+                  <p style={{ margin: 0, fontFamily: FONT.diagram, fontSize: 10, fontWeight: 500, textTransform: "uppercase", letterSpacing: 0, color: "var(--spectrum-indigo)" }}>{s.part}</p>
                   <p style={{ margin: "4px 0 0", fontSize: 13.5, lineHeight: 1.55, color: TEXT.secondary }}>
                     {s.science} <span style={{ color: TEXT.muted }}>· {s.authors}</span>
                   </p>
@@ -490,7 +664,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="rights-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Use and attribution</p>
-            <h2 id="rights-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+            <h2 id="rights-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
               {attributionNotice.title}
             </h2>
             <p style={{ margin: "0 0 14px", maxWidth: 760, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
@@ -515,7 +689,7 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: 40 }} aria-labelledby="faq-heading">
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Questions</p>
-            <h2 id="faq-heading" style={{ margin: "0 0 24px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: "-0.02em", color: TEXT.primary }}>
+            <h2 id="faq-heading" style={{ margin: "0 0 24px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
               Common questions
             </h2>
             <div style={{ display: "grid", gap: 10 }}>

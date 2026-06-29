@@ -268,7 +268,7 @@ export default function CitationsPage() {
             }}
           >
             Commercial use, paid product integration, proprietary dataset or model integration, sublicensing, monetized reuse, or institutional implementation requires explicit written permission or a separate license. Contact{" "}
-            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
+            <a href="mailto:research@teg-blue.org" style={{ color: SPECTRUM.azure, textDecoration: "none" }}>
               research@teg-blue.org
             </a>
           </p>

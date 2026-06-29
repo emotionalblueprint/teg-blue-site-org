@@ -1,12 +1,12 @@
-import { BG, TEXT, FONT, BORDER, SPACING, SPECTRUM, hexToRgba } from "@/src/styles/tokens";
+import { TEXT, FONT, BORDER, SPACING, SPECTRUM } from "@/src/styles/tokens";
 
 const px = SPACING.pagePadding;
 
 const RESPONSIVE_CSS = `
   .page-layout-columns {
     display: grid;
-    grid-template-columns: 1fr 240px;
-    gap: 48px;
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: clamp(32px, 5vw, 64px);
     align-items: start;
   }
   .page-layout-sidebar {
@@ -57,9 +57,11 @@ export default function PageLayout({ header, children, sidebarSections }) {
       <main
         id="main-content"
         style={{
+          position: "relative",
+          zIndex: 1,
           maxWidth: SPACING.containerMax,
           margin: "0 auto",
-          padding: `32px ${px} 60px`,
+          padding: `24px ${px} 72px`,
         }}
       >
         {header}
@@ -72,69 +74,76 @@ export default function PageLayout({ header, children, sidebarSections }) {
             <aside className="page-layout-sidebar">
               <div
                 style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  fontFamily: FONT.mono,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: TEXT.hint,
-                  marginBottom: 16,
+                  padding: "14px 0 0 16px",
+                  borderLeft: `1px solid ${BORDER.default}`,
                 }}
               >
-                On this page
-              </div>
-              <nav style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 20,
-              }}>
-                {sidebarSections.map((section, i) => (
-                  <div key={i} style={{
-                    paddingBottom: i < sidebarSections.length - 1 ? 20 : 0,
-                    borderBottom: i < sidebarSections.length - 1
-                      ? `1px solid ${BORDER.default}`
-                      : "none",
-                  }}>
-                    {section.href ? (
-                      <a
-                        href={section.href}
-                        style={{
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 600,
+                    fontFamily: FONT.mono,
+                    textTransform: "uppercase",
+                    letterSpacing: 0,
+                    color: TEXT.hint,
+                    marginBottom: 16,
+                  }}
+                >
+                  On this page
+                </div>
+                <nav style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 20,
+                }}>
+                  {sidebarSections.map((section, i) => (
+                    <div key={i} style={{
+                      paddingBottom: i < sidebarSections.length - 1 ? 20 : 0,
+                      borderBottom: i < sidebarSections.length - 1
+                        ? `1px solid ${BORDER.default}`
+                        : "none",
+                    }}>
+                      {section.href ? (
+                        <a
+                          href={section.href}
+                          style={{
+                            fontSize: 11,
+                            fontWeight: 600,
+                            fontFamily: FONT.mono,
+                            textTransform: "uppercase",
+                            letterSpacing: 0,
+                            color: SPECTRUM.cobalt,
+                            textDecoration: "none",
+                            marginBottom: 6,
+                            display: "block",
+                          }}
+                        >
+                          {section.label}
+                        </a>
+                      ) : (
+                        <div style={{
                           fontSize: 11,
                           fontWeight: 600,
                           fontFamily: FONT.mono,
                           textTransform: "uppercase",
-                          letterSpacing: "0.06em",
+                          letterSpacing: 0,
                           color: SPECTRUM.cobalt,
-                          textDecoration: "none",
                           marginBottom: 6,
-                          display: "block",
-                        }}
-                      >
-                        {section.label}
-                      </a>
-                    ) : (
+                        }}>
+                          {section.label}
+                        </div>
+                      )}
                       <div style={{
-                        fontSize: 11,
-                        fontWeight: 600,
-                        fontFamily: FONT.mono,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                        color: SPECTRUM.cobalt,
-                        marginBottom: 6,
+                        fontSize: 12,
+                        lineHeight: 1.5,
+                        color: TEXT.muted,
                       }}>
-                        {section.label}
+                        {section.description}
                       </div>
-                    )}
-                    <div style={{
-                      fontSize: 12,
-                      lineHeight: 1.5,
-                      color: TEXT.muted,
-                    }}>
-                      {section.description}
                     </div>
-                  </div>
-                ))}
-              </nav>
+                  ))}
+                </nav>
+              </div>
             </aside>
           </div>
         ) : (

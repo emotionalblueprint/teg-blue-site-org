@@ -156,7 +156,7 @@ function Badge({ color, light, children }) {
       }}
     >
       <span className="state-pill-dot" style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: dot }} />
-      <span className="state-pill-text" style={{ minWidth: 0, fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', lineHeight: 1.2, color: txt }}>
+      <span className="state-pill-text" style={{ minWidth: 0, fontFamily: FONT.mono, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0, lineHeight: 1.2, color: txt }}>
         {children}
       </span>
     </span>
@@ -197,8 +197,8 @@ export default function EmotionalGradient() {
   const isDark = mounted ? resolvedTheme !== 'light' : true
   const panelLight = !isDark
   const isAcuteBaseline = position.id === 'baseline' && !readingChronic
-  const restingText = panelLight ? '#475569' : '#e2e8f0'
-  const restingDot = panelLight ? '#94a3b8' : '#cbd5e1'
+  const restingText = panelLight ? '#002966' : '#e5f0ff'
+  const restingDot = panelLight ? '#0052CC' : '#cce0ff'
   const tileLight = panelLight
 
   // panel = the instrument surface (follows theme via CSS-var tokens)
@@ -214,8 +214,8 @@ export default function EmotionalGradient() {
   const tileCDot = isAcuteBaseline ? restingDot : (tileLight ? swatch(accent) : accent)
   const tileCText = isAcuteBaseline ? restingText : (tileLight ? ink(accent) : accent)
   const tile = {
-    ink: tileLight ? '#1c1917' : '#f1f5f9',
-    soft: tileLight ? 'rgba(28,25,23,0.6)' : 'rgba(241,245,249,0.6)',
+    ink: tileLight ? '#001433' : '#f1f5f9',
+    soft: tileLight ? 'rgba(0,41,102,0.66)' : 'rgba(241,245,249,0.6)',
     cText: tileCText,
     cDot: tileCDot,
     divider: hexToRgba(tileCDot, tileLight ? 0.16 : 0.14),
@@ -330,7 +330,7 @@ export default function EmotionalGradient() {
         border: `1px solid ${BORDER.default}`,
         fontFamily: FONT.display,
         boxShadow: 'none',
-        '--gradient-sticky-bg': panelLight ? '#f4f4f2' : '#131a2f',
+        '--gradient-sticky-bg': panelLight ? 'rgba(229,240,255,0.72)' : '#001433',
         '--gradient-line': panel.line,
         '--gradient-accent': panel.cDot,
         '--gradient-accent-text': panel.cText,
@@ -474,7 +474,7 @@ export default function EmotionalGradient() {
                   color: selected ? labelColor(i) : panel.faint,
                 }}
               >
-                <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: selected ? 700 : 500, letterSpacing: '0.08em' }}>{item.code}</span>
+              <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: selected ? 700 : 500, letterSpacing: 0 }}>{item.code}</span>
                 <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: selected ? 700 : 500, fontFamily: FONT.display }}>{item.mode}</span>
               </button>
               )
@@ -500,7 +500,7 @@ export default function EmotionalGradient() {
                 color: isShutdown ? (panelLight ? ink(colorOf(SHUT)) : colorOf(SHUT)) : panel.faint,
               }}
             >
-              <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, letterSpacing: '0.08em' }}>{positions[SHUT].code}</span>
+              <span className="gradient-track-code" style={{ display: 'block', fontFamily: FONT.diagram, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, letterSpacing: 0 }}>{positions[SHUT].code}</span>
               <span className="gradient-track-label" style={{ display: 'block', marginTop: 3, fontSize: 10, lineHeight: 1.2, fontWeight: isShutdown ? 700 : 500, fontFamily: FONT.display }}>Shutdown</span>
             </button>
           </div>}
@@ -701,7 +701,7 @@ export default function EmotionalGradient() {
           color: var(--gradient-accent-text);
           font-size: clamp(20px, 2.5vw, 28px);
           font-weight: 760;
-          letter-spacing: -0.02em;
+          letter-spacing: 0;
           line-height: 1.12;
         }
 
@@ -741,7 +741,7 @@ export default function EmotionalGradient() {
           color: var(--readout-soft);
           font-family: var(--font-diagram), monospace;
           font-size: 10.5px;
-          letter-spacing: 0.02em;
+          letter-spacing: 0;
           line-height: 1.45;
           opacity: 0.82;
         }
@@ -764,7 +764,7 @@ export default function EmotionalGradient() {
           font-size: clamp(17px, 2vw, 22px);
           font-weight: 620;
           line-height: 1.3;
-          letter-spacing: -0.02em;
+          letter-spacing: 0;
         }
 
         .readout-list {
@@ -823,7 +823,7 @@ export default function EmotionalGradient() {
           font-family: var(--font-diagram), monospace;
           font-size: 10px;
           font-weight: 650;
-          letter-spacing: 0.08em;
+          letter-spacing: 0;
           line-height: 1.25;
           text-transform: uppercase;
         }
@@ -883,7 +883,7 @@ export default function EmotionalGradient() {
           font-family: var(--font-diagram), monospace;
           font-size: 9px;
           font-weight: 650;
-          letter-spacing: 0.12em;
+          letter-spacing: 0;
           line-height: 1.35;
           text-transform: uppercase;
         }
@@ -934,7 +934,7 @@ export default function EmotionalGradient() {
 
           .state-pill-text {
             font-size: 9.5px !important;
-            letter-spacing: 0.055em !important;
+            letter-spacing: 0 !important;
           }
 
           .mode-caption {
@@ -974,7 +974,7 @@ export default function EmotionalGradient() {
             font-family: var(--font-diagram), monospace;
             font-size: 10.5px;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0;
             line-height: 1;
           }
 

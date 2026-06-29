@@ -1,37 +1,72 @@
 /* ─── CSS CUSTOM PROPERTIES ─────────────────────────── */
 
 :root {
-  /* Blue Spectrum */
-  --spectrum-sky:    #b6ebfc;
-  --spectrum-azure:  #76e2ff;
-  --spectrum-blue:   #00b1ff;
-  --spectrum-cobalt: #0590e5;
-  --spectrum-indigo: #7b7bff;
-  --spectrum-slate:  #808493;
+  color-scheme: dark;
 
-  /* Backgrounds — Tailwind Slate scale */
-  --bg-page:    #111729;
-  --bg-diagram: #131a2f;
-  --bg-primary: #151c35;
-  --bg-card:    #1a2240;
-  --bg-surface: #162035;
-  --bg-inset:   #0a0d17;
+  /* Blue depth scale */
+  --blue-50:  #E5F0FF;
+  --blue-100: #CCE0FF;
+  --blue-200: #99C2FF;
+  --blue-300: #66A3FF;
+  --blue-400: #4A83F7;
+  --blue-500: #0066FF;
+  --blue-600: #0052CC;
+  --blue-700: #003D99;
+  --blue-800: #002966;
+  --blue-900: #001433;
+  --blue-950: #000E24;
+
+  /* Formation marks */
+  --formation-x:  #ffffff;
+  --formation-a:  #6eeafb;
+  --formation-ab: #76faa1;
+  --formation-b:  #b6fc50;
+  --formation-c:  #e3fd54;
+  --formation-d:  #f7d448;
+  --formation-z:  #a1adbf;
+  --shutdown-fallback: var(--blue-800);
+
+  /* Chronic formation marks */
+  --chronic-x:  #ffe680;
+  --chronic-a:  #ffce00;
+  --chronic-ab: #ffa300;
+  --chronic-b:  #ff7e1d;
+  --chronic-c:  #ff5a05;
+  --chronic-d:  #ff404a;
+  --chronic-z:  var(--blue-800);
+
+  /* Blue Spectrum */
+  --spectrum-sky:    var(--blue-100);
+  --spectrum-azure:  var(--blue-300);
+  --spectrum-blue:   var(--blue-500);
+  --spectrum-cobalt: var(--blue-300);
+  --spectrum-indigo: var(--blue-200);
+  --spectrum-slate:  var(--blue-700);
+
+  /* Backgrounds — dark atlas */
+  --bg-page:    var(--blue-950);
+  --bg-diagram: var(--blue-900);
+  --bg-primary: var(--blue-950);
+  --bg-card:    var(--blue-900);
+  --bg-surface: var(--blue-800);
+  --bg-inset:   rgba(0, 14, 36, 0.72);
+  --bg-elevated: rgba(153, 194, 255, 0.12);
 
   /* Text */
-  --text-primary:   #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-muted:     #94a3b8;
-  --text-hint:      #64748b;
-  --text-micro:     #475569;
+  --text-primary:   var(--blue-50);
+  --text-secondary: var(--blue-100);
+  --text-muted:     var(--blue-200);
+  --text-hint:      var(--blue-300);
+  --text-micro:     #8aa8d8;
 
   /* Borders */
-  --border-default: rgba(148, 163, 184, 0.12);
-  --border-hover:   rgba(148, 163, 184, 0.20);
-  --border-active:  rgba(148, 163, 184, 0.30);
+  --border-default: rgba(153, 194, 255, 0.18);
+  --border-hover:   rgba(153, 194, 255, 0.30);
+  --border-active:  rgba(153, 194, 255, 0.44);
 
-  /* Accent — amber (editorial + warm highlights) */
-  --accent-amber: #e9a23b;
-  --accent-amber-light: #f2b856;
+  /* Accent — formation highlights */
+  --accent-amber: var(--formation-d);
+  --accent-amber-light: var(--formation-c);
 
   /* Fonts — loaded via next/font in layout.js */
   --font-display: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -62,6 +97,7 @@ body {
   color: var(--text-secondary);
   line-height: 1.7;
   min-height: 100vh;
+  position: relative;
 }
 
 /* ─── TYPOGRAPHY ────────────────────────────────────── */
@@ -75,12 +111,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 h2 {
   font-size: 18px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 h3 {
@@ -181,36 +217,35 @@ details > section {
 /* ─── LIGHT MODE ────────────────────────────────────── */
 
 [data-theme="light"] {
-  /* Warm Stone backgrounds (matches .com light mode) */
-  --bg-page:    #fafaf9;
-  --bg-diagram: #f4f4f2;
+  color-scheme: light;
+
+  --spectrum-sky:    var(--blue-100);
+  --spectrum-azure:  var(--blue-300);
+  --spectrum-blue:   var(--blue-500);
+  --spectrum-cobalt: var(--blue-600);
+  --spectrum-indigo: var(--blue-700);
+  --spectrum-slate:  var(--blue-700);
+
+  --bg-page:    var(--blue-50);
+  --bg-diagram: #ffffff;
   --bg-primary: #ffffff;
-  --bg-card:    #f5f5f4;
-  --bg-surface: #e7e5e4;
-  --bg-inset:   #f5f5f4;
+  --bg-card:    #ffffff;
+  --bg-surface: var(--blue-100);
+  --bg-inset:   rgba(229, 240, 255, 0.72);
+  --bg-elevated: rgba(0, 102, 255, 0.08);
 
-  /* Dark Stone text */
-  --text-primary:   #1c1917;
-  --text-secondary: #44403c;
-  --text-muted:     #78716c;
-  --text-hint:      #706862;
-  --text-micro:     #8C8480;
+  --text-primary:   var(--blue-950);
+  --text-secondary: var(--blue-800);
+  --text-muted:     var(--blue-700);
+  --text-hint:      var(--blue-600);
+  --text-micro:     #5f7698;
 
-  /* Black-based borders */
-  --border-default: rgba(0, 0, 0, 0.08);
-  --border-hover:   rgba(0, 0, 0, 0.15);
-  --border-active:  rgba(0, 0, 0, 0.25);
+  --border-default: rgba(0, 82, 204, 0.14);
+  --border-hover:   rgba(0, 82, 204, 0.24);
+  --border-active:  rgba(0, 82, 204, 0.36);
 
-  --accent-amber: #d97706;
-  --accent-amber-light: #b45309;
-
-  /* Spectrum — darker for light background contrast */
-  --spectrum-sky:    #2a8ab8;
-  --spectrum-azure:  #1fa8d4;
-  --spectrum-blue:   #0088c7;
-  --spectrum-cobalt: #0470b5;
-  --spectrum-indigo: #5555d4;
-  --spectrum-slate:  #5a5e6d;
+  --accent-amber: var(--formation-d);
+  --accent-amber-light: var(--formation-c);
 }
 
 /* ─── SCROLLBAR STYLING ─────────────────────────────── */
@@ -236,26 +271,27 @@ details > section {
 /* ─── LIGHT MODE SCROLLBAR ─────────────────────────── */
 
 [data-theme="light"] ::-webkit-scrollbar-track {
-  background: #f5f5f4;
+  background: var(--blue-50);
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: #d6d3d1;
+  background: var(--blue-200);
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-  background: #a8a29e;
+  background: var(--blue-300);
 }
 
 /* ─── SELECTION ─────────────────────────────────────── */
 
 ::selection {
-  background: rgba(59, 125, 229, 0.3);
-  color: var(--text-primary);
+  background: rgba(102, 163, 255, 0.30);
+  color: var(--blue-50);
 }
 
 [data-theme="light"] ::selection {
-  background: rgba(37, 99, 235, 0.2);
+  background: rgba(0, 102, 255, 0.22);
+  color: var(--blue-950);
 }
 
 /* ─── ANCHOR OFFSET ────────────────────────────────── */

@@ -30,24 +30,24 @@ const domainColors = {
   "Behavioral Science": SPECTRUM.slate,
   "Clinical Psychology": SPECTRUM.indigo,
   "Communication Frameworks": SPECTRUM.azure,
-  "Cognitive Science": SPECTRUM.blue,
+  "Cognitive Science": SPECTRUM.azure,
   "Developmental Psychology": SPECTRUM.cobalt,
   "Emotion Science": SPECTRUM.azure,
-  "Emotion Taxonomy": SPECTRUM.blue,
+  "Emotion Taxonomy": SPECTRUM.azure,
   "Educational Regulation Tools": SPECTRUM.cobalt,
   "Epigenetics": SPECTRUM.indigo,
   "Evolutionary Psychology": SPECTRUM.slate,
   "Family Systems": SPECTRUM.cobalt,
-  "Humanistic Psychology": SPECTRUM.blue,
+  "Humanistic Psychology": SPECTRUM.azure,
   "Interpersonal Neurobiology": SPECTRUM.azure,
   "Moral Psychology": SPECTRUM.slate,
-  "Motivational Science": SPECTRUM.blue,
+  "Motivational Science": SPECTRUM.azure,
   "Narrative Psychology": SPECTRUM.cobalt,
   "Neurodiversity Research": SPECTRUM.indigo,
-  "Object Relations": SPECTRUM.blue,
+  "Object Relations": SPECTRUM.azure,
   "Polyvagal Theory": SPECTRUM.azure,
   "Psychoanalysis": SPECTRUM.indigo,
-  "Self Psychology": SPECTRUM.blue,
+  "Self Psychology": SPECTRUM.azure,
   "Social Psychology": SPECTRUM.cobalt,
   "Sociology": SPECTRUM.slate,
   "Stress Physiology": SPECTRUM.indigo,
@@ -55,7 +55,7 @@ const domainColors = {
 };
 
 function getDomainColor(domain) {
-  return domainColors[domain] || SPECTRUM.blue;
+  return domainColors[domain] || SPECTRUM.azure;
 }
 
 // ─── COMPREHENSIVE THEORY DATABASE ─────────────────────────────
@@ -596,7 +596,7 @@ const gradientEvidencePrinciples = [
     sourceAreas: "Attachment theory, social engagement, evolutionary psychology, motivational science, trauma studies",
     tegBlueUse: "Separates connection-preservation under safety from organism-protection under threat.",
     openQuestion: "How consistently do chronic-state patterns show connection-preservation and organism-protection active or unresolved at the same time, as in disorganized attachment and Complex PTSD?",
-    color: SPECTRUM.blue,
+    color: SPECTRUM.azure,
   },
   {
     principle: "Graded perception scale",
@@ -1049,9 +1049,9 @@ export default function ScientificFoundationsPage() {
                 fontFamily: FONT.mono,
                 fontWeight: 500,
                 borderRadius: 6,
-                border: `1px solid ${!activeDomain ? hexToRgba(SPECTRUM.blue, 0.4) : BORDER.default}`,
-                background: !activeDomain ? hexToRgba(SPECTRUM.blue, 0.12) : "transparent",
-                color: !activeDomain ? SPECTRUM.blue : TEXT.muted,
+                border: `1px solid ${!activeDomain ? hexToRgba(SPECTRUM.azure, 0.42) : BORDER.default}`,
+                background: !activeDomain ? hexToRgba(SPECTRUM.azure, 0.13) : "transparent",
+                color: !activeDomain ? SPECTRUM.azure : TEXT.muted,
                 cursor: "pointer",
               }}
             >
@@ -1182,9 +1182,9 @@ export default function ScientificFoundationsPage() {
                 style={{
                   padding: "6px 14px",
                   fontSize: 13,
-                  color: SPECTRUM.blue,
+                  color: SPECTRUM.azure,
                   background: "transparent",
-                  border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.3)}`,
+                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.32)}`,
                   borderRadius: 6,
                   cursor: "pointer",
                 }}

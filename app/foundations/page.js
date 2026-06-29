@@ -1,5 +1,17 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import {
+  BG,
+  TEXT,
+  BORDER,
+  FONT,
+  SPECTRUM,
+  RADIUS,
+  hexToRgba,
+  gradientCardBg,
+  REALITY_CHECK_STATES,
+  REALITY_CHECK_GRADIENT,
+  FORMATION_META,
+} from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, ReviewStatusPanel } from "@/src/components";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
@@ -38,7 +50,7 @@ const SIDEBAR_SECTIONS = [
   { label: "What TEG-Blue Maps", href: "#what-teg-blue-maps", description: "A visual map of how nervous-system state changes capacity." },
   { label: "The Problem", href: "#the-problem", description: "Why state-blindness makes capacity look like character, intent, or truth." },
   { label: "Source Principles", href: "#gradient-principles", description: "The four principles that ground the Gradient." },
-  { label: "The Gradient", href: "#nervous-system-gradient", description: "The seven states and what changes across them." },
+  { label: "The Gradient", href: "#nervous-system-gradient", description: "The active gradient, shutdown fallback, and what changes across them." },
   { label: "Review Status", href: "#review-status-heading", description: "Source science, original synthesis, and what still needs independent testing." },
   { label: "Where Next", href: "#where-next", description: "Selected routes for evidence, methodology, and tools." },
 ];
@@ -47,7 +59,7 @@ const OVERVIEW_POINTS = [
   {
     label: "Map",
     title: "The Nervous System Gradient",
-    body: "Seven states show how safety, threat, control, and shutdown reshape available capacity.",
+    body: "The active gradient and its shutdown fallback show how safety, threat, control, and overwhelm reshape available capacity.",
     color: SPECTRUM.azure,
   },
   {
@@ -88,50 +100,28 @@ const GRADIENT_PRINCIPLES = [
   },
   {
     label: "Principle 4",
-    title: "The same line crosses two autonomic territories",
-    body: "The seven positions can also be read through the two autonomic branches: rest and engagement on the parasympathetic side, mobilisation on the sympathetic side, and shutdown as a parasympathetic fallback.",
-    detail: "This gives the Gradient its branch-side map without turning the states into fixed person-types.",
+    title: "The line crosses two autonomic territories, then has a fallback",
+    body: "The active positions can be read through rest and engagement on the parasympathetic side and mobilisation on the sympathetic side; shutdown sits outside that line as a parasympathetic conservation fallback.",
+    detail: "This gives the Gradient its branch-side map without treating shutdown as another colour on the active continuum.",
     color: SPECTRUM.indigo,
   },
 ];
 
-const GRADIENT_STATES = [
-  {
-    name: "Baseline",
-    body: "Resting availability. No active problem signal; the system can repair, digest, perceive, and settle.",
-    color: SPECTRUM.sky,
-  },
-  {
-    name: "Connection / Belonging",
-    body: "Safety with others; social engagement, bonding, reciprocity, and repair are available.",
-    color: SPECTRUM.azure,
-  },
-  {
-    name: "Safety Checking",
-    body: "Belonging has become uncertain; the system checks whether it is still safe to stay open.",
-    color: SPECTRUM.blue,
-  },
-  {
-    name: "Protection / Defence",
-    body: "Threat detected; the system mobilises to defend, escape, appease, set distance, or create a boundary.",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    name: "Strategic Management",
-    body: "Threat persists; the system anticipates, manages, contains risk, and stays ahead of what could happen.",
-    color: SPECTRUM.indigo,
-  },
-  {
-    name: "Domination",
-    body: "Survival-level organisation around power or force when other routes are not trusted to work.",
-    color: SPECTRUM.lavender,
-  },
-  {
-    name: "Shutdown",
-    body: "Mobilisation cannot form or has failed; the system conserves, withdraws, freezes, collapses, or reduces contact.",
-    color: SPECTRUM.slate,
-  },
-];
+const GRADIENT_STATE_BODY = {
+  X: "Resting availability. No active problem signal; the system can repair, digest, perceive, and settle.",
+  A: "Safety with others; social engagement, bonding, reciprocity, and repair are available.",
+  AB: "Belonging has become uncertain; the system checks whether it is still safe to stay open.",
+  B: "Threat detected; the system mobilises to defend, escape, appease, set distance, or create a boundary.",
+  C: "Threat persists; the system anticipates, manages, contains risk, and stays ahead of what could happen.",
+  D: "Survival-level organisation around power or force when other routes are not trusted to work.",
+  Z: "Mobilisation cannot form or has failed; the system conserves, withdraws, freezes, collapses, or reduces contact.",
+};
+
+const GRADIENT_STATES = REALITY_CHECK_STATES.map((state) => ({
+  ...state,
+  name: state.mode,
+  body: GRADIENT_STATE_BODY[state.code === "A↔B" ? "AB" : state.code],
+}));
 
 const GRADIENT_DIMENSIONS = [
   "Perception",
@@ -146,7 +136,7 @@ const GRADIENT_DIMENSIONS = [
   "Rush and tempo",
 ];
 
-const GRADIENT_AXIS = `linear-gradient(90deg, ${SPECTRUM.sky} 0%, ${SPECTRUM.azure} 16%, ${SPECTRUM.blue} 32%, ${SPECTRUM.cobalt} 48%, ${SPECTRUM.indigo} 64%, ${SPECTRUM.lavender} 80%, ${SPECTRUM.slate} 100%)`;
+const GRADIENT_AXIS = REALITY_CHECK_GRADIENT;
 
 export const metadata = {
   title: "TEG-Blue Overview | The Nervous System Gradient",
@@ -487,31 +477,51 @@ function GradientExplanation() {
             The Gradient explains the central move: state changes capacity. When the nervous system shifts, perception, reasoning, empathy, behaviour, and repair do not stay the same.
           </p>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 18px" }}>
-            This is why the tools can be generated from one shared structure. Each tool takes one dimension and asks how it changes across the same line of nervous-system organisation.
+            This is why the tools can be generated from one shared structure. Each tool takes one dimension and asks how it changes across the same line of nervous-system organisation, with shutdown held as the off-gradient fallback.
           </p>
           <div
             aria-hidden="true"
             style={{
-              height: 16,
-              borderRadius: 999,
-              background: GRADIENT_AXIS,
-              boxShadow: `0 0 22px ${hexToRgba(SPECTRUM.blue, 0.22)}`,
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) 54px",
+              gap: 10,
+              alignItems: "center",
               marginBottom: 10,
             }}
-          />
+          >
+            <span
+              style={{
+                height: 16,
+                borderRadius: 999,
+                background: GRADIENT_AXIS,
+                boxShadow: `0 0 22px ${hexToRgba(SPECTRUM.azure, 0.22)}`,
+              }}
+            />
+            <span
+              style={{
+                height: 16,
+                borderRadius: 999,
+                background: FORMATION_META.Z.color,
+                border: `1px dashed ${hexToRgba(SPECTRUM.sky, 0.48)}`,
+                boxShadow: `0 0 18px ${hexToRgba(FORMATION_META.Z.color, 0.28)}`,
+              }}
+            />
+          </div>
           <div
             style={{
-              display: "flex",
-              justifyContent: "space-between",
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) 54px",
               gap: 10,
               fontFamily: FONT.mono,
               fontSize: 10,
               color: TEXT.muted,
             }}
           >
-            <span>Availability</span>
-            <span>Protection</span>
-            <span>Collapse</span>
+            <span style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+              <span>Availability</span>
+              <span>Protection</span>
+            </span>
+            <span style={{ textAlign: "right" }}>Fallback</span>
           </div>
         </div>
 
@@ -529,6 +539,7 @@ function GradientExplanation() {
               state={state}
               number={index + 1}
               isLast={index === GRADIENT_STATES.length - 1}
+              isOffGradient={!state.activeGradient}
             />
           ))}
         </div>
@@ -556,8 +567,8 @@ function GradientExplanation() {
               style={{
                 padding: "7px 10px",
                 borderRadius: RADIUS.sm,
-                border: `1px solid ${hexToRgba(SPECTRUM.blue, 0.18)}`,
-                background: hexToRgba(SPECTRUM.blue, 0.055),
+                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.20)}`,
+                background: hexToRgba(SPECTRUM.azure, 0.06),
                 color: TEXT.secondary,
                 fontSize: 12,
                 lineHeight: 1.3,
@@ -572,7 +583,7 @@ function GradientExplanation() {
   );
 }
 
-function GradientStateRow({ state, number, isLast }) {
+function GradientStateRow({ state, number, isLast, isOffGradient }) {
   return (
     <div
       style={{
@@ -581,6 +592,7 @@ function GradientStateRow({ state, number, isLast }) {
         gap: 12,
         padding: "14px 16px",
         borderBottom: isLast ? "none" : `1px solid ${BORDER.default}`,
+        background: isOffGradient ? hexToRgba(state.color, 0.08) : "transparent",
       }}
     >
       <div
@@ -592,6 +604,7 @@ function GradientStateRow({ state, number, isLast }) {
           alignItems: "center",
           justifyContent: "center",
           background: hexToRgba(state.color, 0.14),
+          border: isOffGradient ? `1px dashed ${hexToRgba(SPECTRUM.sky, 0.38)}` : "none",
           color: state.color,
           fontFamily: FONT.mono,
           fontSize: 11,
@@ -601,8 +614,22 @@ function GradientStateRow({ state, number, isLast }) {
         {number}
       </div>
       <div>
-        <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 5px" }}>
-          {state.name}
+        <h3 style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "baseline", fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 5px" }}>
+          <span>{state.name}</span>
+          {isOffGradient && (
+            <span
+              style={{
+                fontFamily: FONT.mono,
+                fontSize: 9,
+                fontWeight: 650,
+                lineHeight: 1.2,
+                color: TEXT.hint,
+                textTransform: "uppercase",
+              }}
+            >
+              off-gradient
+            </span>
+          )}
         </h3>
         <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.62, margin: 0 }}>
           {state.body}
@@ -619,7 +646,7 @@ function NavRow({ label, href, linkText, external }) {
     <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
       <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{label}</td>
       <td style={tableCellStyle}>
-        <LinkEl href={href} {...extraProps} style={{ color: SPECTRUM.blue, textDecoration: "none", fontWeight: 500 }}>
+        <LinkEl href={href} {...extraProps} style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>
           {linkText}
         </LinkEl>
       </td>

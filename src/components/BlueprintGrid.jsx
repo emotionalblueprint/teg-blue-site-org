@@ -19,13 +19,13 @@ const fadeMasks = {
 }
 
 const darkColors = {
-  line: 'rgba(255,255,255,0.10)',
-  dot: 'rgba(255,255,255,0.22)',
+  line: 'rgba(153,194,255,0.12)',
+  dot: 'rgba(153,194,255,0.24)',
 }
 
 const lightColors = {
-  line: 'rgba(0,0,0,0.08)',
-  dot: 'rgba(0,0,0,0.15)',
+  line: 'rgba(0,82,204,0.10)',
+  dot: 'rgba(0,82,204,0.18)',
 }
 
 export default function BlueprintGrid({

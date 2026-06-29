@@ -1,4 +1,4 @@
-import { TEXT, FONT, MAIN_ORG, PATTERN_GRADIENT } from "../styles/tokens";
+import { TEXT, FONT, MAIN_ORG, PATTERN_GRADIENT, BORDER } from "../styles/tokens";
 import BadgePill from "./BadgePill";
 
 /**
@@ -21,7 +21,9 @@ export default function ResearcherHero({
   return (
     <div
       style={{
-        padding: "28px 0",
+        padding: "clamp(28px, 5vw, 54px) 0 28px",
+        marginBottom: 28,
+        borderBottom: `1px solid ${BORDER.default}`,
       }}
     >
       {/* Badge pill */}
@@ -34,15 +36,13 @@ export default function ResearcherHero({
       {/* Title with gradient text */}
       <h1
         style={{
-          fontSize: 24,
+          maxWidth: 780,
+          fontSize: "clamp(30px, 6vw, 54px)",
           fontWeight: 700,
-          margin: "0 0 8px",
-          lineHeight: 1.2,
-          letterSpacing: "-0.02em",
-          background: PATTERN_GRADIENT,
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
+          margin: "0 0 10px",
+          lineHeight: 1.02,
+          letterSpacing: 0,
+          color: TEXT.primary,
         }}
       >
         {title}
@@ -55,7 +55,8 @@ export default function ResearcherHero({
             fontSize: 13,
             fontStyle: "italic",
             color: TEXT.muted,
-            margin: "0 0 12px",
+            margin: "0 0 14px",
+            fontFamily: FONT.diagram,
           }}
         >
           {subtitle}
@@ -70,7 +71,7 @@ export default function ResearcherHero({
             color: TEXT.secondary,
             lineHeight: 1.7,
             margin: 0,
-            maxWidth: 640,
+            maxWidth: 690,
             position: "relative",
           }}
         >
@@ -83,8 +84,9 @@ export default function ResearcherHero({
         <div
           style={{
             marginTop: 20,
-            height: 3,
-            borderRadius: 2,
+            width: "min(100%, 560px)",
+            height: 5,
+            borderRadius: 4,
             background: PATTERN_GRADIENT,
           }}
           aria-hidden="true"

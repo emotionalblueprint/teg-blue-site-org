@@ -9,12 +9,11 @@ const themeScript = `
 (function() {
   try {
     var theme = localStorage.getItem('theme');
-    var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     // Determine effective theme
     var effectiveTheme = theme;
     if (!theme || theme === 'system') {
-      effectiveTheme = systemDark ? 'dark' : 'light';
+      effectiveTheme = 'dark';
     }
 
     // Apply theme immediately
