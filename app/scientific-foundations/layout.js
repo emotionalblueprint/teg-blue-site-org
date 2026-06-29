@@ -1,37 +1,28 @@
 import { generateScientificFoundationsJsonLd } from "@/src/lib/jsonld";
 
 export const metadata = {
-  title: "Scientific Foundations — Source Grounding",
-  description: "The established research traditions, clinical models, communication approaches, and educational tools that ground the public Nervous System Gradient.",
+  title: "Scientific Foundations — TEG-Blue",
+  description: "Research areas that help illuminate the Nervous System Gradient: emotion, state, attachment, trauma, cognition, communication, social patterns, and repair.",
   keywords: [
-    "emotional regulation models",
-    "Plutchik wheel of emotions",
-    "nonviolent communication NVC",
-    "cognitive behavioral therapy CBT",
-    "polyvagal theory Stephen Porges",
-    "zones of regulation",
-    "internal family systems IFS",
+    "TEG-Blue scientific foundations",
+    "Nervous System Gradient",
+    "affective neuroscience",
+    "autonomic physiology",
     "attachment theory",
-    "nervous system regulation",
-    "emotional intelligence research",
-    "TEG-Blue established research",
-    "psychology integration",
-    "neuroscience emotions",
-    "Carl Rogers organismic valuing",
-    "Winnicott true false self",
-    "Jung persona",
-    "Freud ego model",
-    "defense mechanisms",
-    "cognitive dissonance",
-    "complex PTSD",
-    "disorganized attachment"
+    "trauma research",
+    "emotion science",
+    "cognitive science",
+    "social psychology",
+    "sociology",
+    "repair capacity",
+    "state-shaped capacity"
   ],
   alternates: {
     canonical: "https://teg-blue.org/scientific-foundations",
   },
   openGraph: {
-    title: "Scientific Foundations — How TEG-Blue Draws From Cross-Disciplinary Research",
-    description: "Source traces and research grounding behind the public Nervous System Gradient, including emotion science, polyvagal theory, attachment, trauma research, CBT, NVC, and educational regulation tools.",
+    title: "Scientific Foundations — TEG-Blue",
+    description: "Research areas that help make emotional, nervous-system, relational, and social patterns visible.",
     url: "https://teg-blue.org/scientific-foundations",
     siteName: "TEG-Blue",
     type: "article",
@@ -40,7 +31,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Scientific Foundations — TEG-Blue",
-    description: "Research traditions and applied models that ground the public Nervous System Gradient.",
+    description: "Research areas that help make emotional, nervous-system, relational, and social patterns visible.",
   },
 };
 

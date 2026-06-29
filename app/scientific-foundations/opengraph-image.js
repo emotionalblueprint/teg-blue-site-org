@@ -1,13 +1,22 @@
 import { ImageResponse } from 'next/og'
+import { BLUE, SPECTRUM } from '@/src/styles/tokens'
 
 export const runtime = 'edge'
 
-export const alt = 'Scientific Foundations - TEG-Blue research grounding and source traces'
+export const alt = 'Scientific Foundations - Research areas behind the Nervous System Gradient'
 export const size = {
   width: 1200,
   height: 630,
 }
 export const contentType = 'image/png'
+
+const AREAS = [
+  { label: 'Emotion', color: SPECTRUM.sky },
+  { label: 'State', color: SPECTRUM.azure },
+  { label: 'Attachment', color: SPECTRUM.blue },
+  { label: 'Trauma', color: SPECTRUM.cobalt },
+  { label: 'Social Scale', color: SPECTRUM.indigo },
+]
 
 export default async function Image() {
   return new ImageResponse(
@@ -20,11 +29,10 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#0a0f1a',
+          backgroundColor: BLUE[950],
           fontFamily: 'Inter, sans-serif',
         }}
       >
-        {/* Spectrum bar at top */}
         <div
           style={{
             position: 'absolute',
@@ -35,109 +43,94 @@ export default async function Image() {
             display: 'flex',
           }}
         >
-          <div style={{ flex: 1, backgroundColor: '#7ABAEB' }} />
-          <div style={{ flex: 1, backgroundColor: '#4A9BE8' }} />
-          <div style={{ flex: 1, backgroundColor: '#3B7DE5' }} />
-          <div style={{ flex: 1, backgroundColor: '#3560CC' }} />
-          <div style={{ flex: 1, backgroundColor: '#4A50B0' }} />
-          <div style={{ flex: 1, backgroundColor: '#6B7A99' }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.sky }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.azure }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.blue }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.cobalt }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.indigo }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.slate }} />
         </div>
 
-        {/* Content */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '40px 60px',
+            padding: '40px 64px',
           }}
         >
           <div
             style={{
               fontSize: 14,
               fontWeight: 600,
-              letterSpacing: '0.1em',
-              color: '#6B7A99',
+              letterSpacing: '0.08em',
+              color: SPECTRUM.azure,
               marginBottom: 16,
               textTransform: 'uppercase',
             }}
           >
-            TEG-Blue
+            TEG-Blue Scientific Foundations
           </div>
 
           <div
             style={{
-              fontSize: 48,
+              fontSize: 54,
               fontWeight: 700,
-              color: '#ffffff',
+              color: BLUE[50],
               marginBottom: 20,
               textAlign: 'center',
-              lineHeight: 1.1,
+              lineHeight: 1.08,
             }}
           >
-            Scientific Foundations
+            Research areas behind the Gradient
           </div>
 
           <div
             style={{
               fontSize: 22,
-              color: '#8892a6',
+              color: BLUE[100],
               textAlign: 'center',
-              maxWidth: 800,
-              lineHeight: 1.5,
-              marginBottom: 36,
+              maxWidth: 840,
+              lineHeight: 1.45,
+              marginBottom: 34,
             }}
           >
-            Research traditions used as source traces and grounding for the framework
+            Different fields illuminate different parts of body, relationship, scale, and repair.
           </div>
 
-          {/* Models grid */}
           <div
             style={{
               display: 'flex',
-              gap: 16,
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              maxWidth: 900,
+              gap: 10,
+              alignItems: 'center',
             }}
           >
-            {['Plutchik', 'NVC', 'CBT', 'Attachment', 'Polyvagal', 'IFS'].map((model, i) => (
+            {AREAS.map((area) => (
               <div
-                key={model}
+                key={area.label}
                 style={{
-                  padding: '10px 18px',
-                  backgroundColor: `rgba(74, 155, 232, ${0.08 + i * 0.02})`,
-                  borderRadius: 6,
-                  border: '1px solid rgba(74, 155, 232, 0.2)',
+                  padding: '11px 18px',
+                  backgroundColor: `${area.color}1A`,
+                  borderRadius: 8,
+                  border: `1px solid ${area.color}40`,
+                  color: BLUE[50],
                   fontSize: 14,
-                  color: '#8892a6',
+                  fontWeight: 600,
                 }}
               >
-                {model}
+                {area.label}
               </div>
             ))}
           </div>
-
-          <div
-            style={{
-              marginTop: 28,
-              fontSize: 15,
-              color: '#4A9BE8',
-              textAlign: 'center',
-            }}
-          >
-            Each source connected to its architectural function
-          </div>
         </div>
 
-        {/* URL at bottom */}
         <div
           style={{
             position: 'absolute',
             bottom: 40,
             fontSize: 16,
-            color: '#4A9BE8',
+            color: SPECTRUM.azure,
             fontFamily: 'monospace',
           }}
         >

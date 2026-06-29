@@ -1,13 +1,21 @@
 import { ImageResponse } from 'next/og'
+import { BLUE, SPECTRUM } from '@/src/styles/tokens'
 
 export const runtime = 'edge'
 
-export const alt = 'Methodology - TEG-Blue Research Methods'
+export const alt = 'Methodology - How to read TEG-Blue responsibly'
 export const size = {
   width: 1200,
   height: 630,
 }
 export const contentType = 'image/png'
+
+const STEPS = [
+  { number: '1', label: 'Observation', color: SPECTRUM.sky },
+  { number: '2', label: 'Pattern', color: SPECTRUM.azure },
+  { number: '3', label: 'Impact', color: SPECTRUM.blue },
+  { number: '4', label: 'Claim Status', color: SPECTRUM.indigo },
+]
 
 export default async function Image() {
   return new ImageResponse(
@@ -20,11 +28,10 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#0a0f1a',
+          backgroundColor: BLUE[950],
           fontFamily: 'Inter, sans-serif',
         }}
       >
-        {/* Spectrum bar at top */}
         <div
           style={{
             position: 'absolute',
@@ -35,139 +42,95 @@ export default async function Image() {
             display: 'flex',
           }}
         >
-          <div style={{ flex: 1, backgroundColor: '#7ABAEB' }} />
-          <div style={{ flex: 1, backgroundColor: '#4A9BE8' }} />
-          <div style={{ flex: 1, backgroundColor: '#3B7DE5' }} />
-          <div style={{ flex: 1, backgroundColor: '#3560CC' }} />
-          <div style={{ flex: 1, backgroundColor: '#4A50B0' }} />
-          <div style={{ flex: 1, backgroundColor: '#6B7A99' }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.sky }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.azure }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.blue }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.cobalt }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.indigo }} />
+          <div style={{ flex: 1, backgroundColor: SPECTRUM.slate }} />
         </div>
 
-        {/* Content */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '40px 60px',
+            padding: '40px 64px',
           }}
         >
           <div
             style={{
               fontSize: 14,
               fontWeight: 600,
-              letterSpacing: '0.1em',
-              color: '#6B7A99',
+              letterSpacing: '0.08em',
+              color: SPECTRUM.azure,
               marginBottom: 16,
               textTransform: 'uppercase',
             }}
           >
-            TEG-Blue Research
+            TEG-Blue Methodology
           </div>
 
           <div
             style={{
-              fontSize: 56,
+              fontSize: 54,
               fontWeight: 700,
-              color: '#ffffff',
+              color: BLUE[50],
               marginBottom: 20,
               textAlign: 'center',
               lineHeight: 1.1,
             }}
           >
-            Methodology
+            How to read the Gradient responsibly
           </div>
 
           <div
             style={{
               fontSize: 22,
-              color: '#8892a6',
+              color: BLUE[100],
               textAlign: 'center',
-              maxWidth: 800,
-              lineHeight: 1.5,
-              marginBottom: 36,
+              maxWidth: 830,
+              lineHeight: 1.45,
+              marginBottom: 34,
             }}
           >
-            Transparent research methods and validation approaches
+            Keep observation, pattern, impact, and claim status separate.
           </div>
 
-          {/* Method steps */}
           <div
             style={{
               display: 'flex',
-              gap: 12,
+              gap: 10,
               alignItems: 'center',
             }}
           >
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 10,
-                padding: '12px 20px',
-                backgroundColor: 'rgba(122, 186, 235, 0.1)',
-                borderRadius: 8,
-                border: '1px solid rgba(122, 186, 235, 0.2)',
-              }}
-            >
-              <div style={{ fontSize: 16, fontWeight: 600, color: '#7ABAEB' }}>1</div>
-              <div style={{ fontSize: 14, color: '#8892a6' }}>Architecture Design</div>
-            </div>
-            <div style={{ color: '#4A9BE8', fontSize: 20 }}>→</div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 10,
-                padding: '12px 20px',
-                backgroundColor: 'rgba(74, 155, 232, 0.1)',
-                borderRadius: 8,
-                border: '1px solid rgba(74, 155, 232, 0.2)',
-              }}
-            >
-              <div style={{ fontSize: 16, fontWeight: 600, color: '#4A9BE8' }}>2</div>
-              <div style={{ fontSize: 14, color: '#8892a6' }}>Literature Mapping</div>
-            </div>
-            <div style={{ color: '#4A9BE8', fontSize: 20 }}>→</div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 10,
-                padding: '12px 20px',
-                backgroundColor: 'rgba(59, 125, 229, 0.1)',
-                borderRadius: 8,
-                border: '1px solid rgba(59, 125, 229, 0.2)',
-              }}
-            >
-              <div style={{ fontSize: 16, fontWeight: 600, color: '#3B7DE5' }}>3</div>
-              <div style={{ fontSize: 14, color: '#8892a6' }}>Initial Testing</div>
-            </div>
-          </div>
-
-          <div
-            style={{
-              marginTop: 28,
-              padding: '12px 24px',
-              backgroundColor: 'rgba(74, 155, 232, 0.08)',
-              borderRadius: 8,
-              border: '1px solid rgba(74, 155, 232, 0.15)',
-              fontSize: 14,
-              color: '#6B7A99',
-            }}
-          >
-            AI-assisted literature mapping · Human-reviewed connections · Research grounding
+            {STEPS.map((step) => (
+              <div
+                key={step.label}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  padding: '12px 18px',
+                  backgroundColor: `${step.color}1A`,
+                  borderRadius: 8,
+                  border: `1px solid ${step.color}40`,
+                }}
+              >
+                <div style={{ fontSize: 16, fontWeight: 700, color: step.color }}>{step.number}</div>
+                <div style={{ fontSize: 14, color: BLUE[50] }}>{step.label}</div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* URL at bottom */}
         <div
           style={{
             position: 'absolute',
             bottom: 40,
             fontSize: 16,
-            color: '#4A9BE8',
+            color: SPECTRUM.azure,
             fontFamily: 'monospace',
           }}
         >

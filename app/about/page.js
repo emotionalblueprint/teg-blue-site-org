@@ -1,61 +1,123 @@
 import Link from "next/link";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
 import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
   {
+    question: "What is TEG-Blue?",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
+  },
+  {
     question: "Who created TEG-Blue?",
-    answer: "TEG-Blue was created by Anna Paretas-Artacho, working independently from Barcelona, with 25+ years of professional practice in visual communication and systems thinking.",
+    answer: "TEG-Blue was created by Anna Paretas-Artacho, working independently from Barcelona with long professional experience in visual communication, systems thinking, and applied pattern design.",
   },
   {
     question: "What is the difference between teg-blue.org and teg-blue.com?",
-    answer: "teg-blue.org is the public framework and research-grounding home for TEG-Blue. teg-blue.com is the practical tools site with interactive tools and guided experiences.",
+    answer: "teg-blue.org holds the framework, methodology, research foundations, publications, and collaboration routes. teg-blue.com holds practical interactive tools for reading emotional and nervous-system patterns.",
   },
   {
-    question: "What research evidence exists so far?",
-    answer: "One initial computational study analyzed 10,000+ natural conflict narratives using markers drawn from established psychological constructs. It reported detectable regulatory-state patterns and higher complexity-marker rates in de-escalation patterns. This is a beginning, not validation of the whole framework; open research questions remain documented for further testing.",
-  },
-  {
-    question: "What scientific domains does TEG-Blue draw from?",
-    answer: "TEG-Blue draws from established research in affective neuroscience, polyvagal theory, attachment research, stress physiology, trauma studies, cognitive science, communication models, and educational regulation tools. The originality is in the Gradient-based organization, not the individual source fields.",
+    question: "Is TEG-Blue a clinical system?",
+    answer: "No. TEG-Blue is an educational and research-facing visual framework. It does not diagnose, treat, or replace professional care.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "The Core Premise", href: "#core-premise", description: "The foundational working proposition and what makes it testable." },
-  { label: "Research Status", href: "#research-status", description: "Initial computational findings from 10,000+ natural conflict narratives." },
-  { label: "Established Research", href: "#foundations", description: "Source fields behind the public Nervous System Gradient." },
-  { label: "Open Questions", href: "#open-questions", description: "Priority research directions for independent verification." },
-  { label: "The Founder", href: "#the-founder", description: "Anna Paretas-Artacho — background and research identity." },
-  { label: "Two Sites", href: "#two-sites", description: "Framework/research grounding (.org) and practical tools (.com)." },
+  { label: "Overview", href: "#overview", description: "What TEG-Blue is." },
+  { label: "Purpose", href: "#purpose", description: "Why the framework exists." },
+  { label: "Founder", href: "#founder", description: "Anna Paretas-Artacho." },
+  { label: "Two Sites", href: "#two-sites", description: "Framework and tools." },
+  { label: "Research Stance", href: "#research-stance", description: "How to read the work." },
+  { label: "Contact", href: "#contact", description: "Routes into the project." },
+];
+
+const PURPOSE_CARDS = [
+  {
+    label: "Legibility",
+    title: "Make patterns easier to see",
+    body: "The Gradient gives shared language for emotional and nervous-system patterns that are often felt before they are understood.",
+    color: SPECTRUM.azure,
+  },
+  {
+    label: "Scale",
+    title: "Connect body and society",
+    body: "TEG-Blue tracks how patterns that begin in the body can shape relationships, groups, institutions, and culture.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    label: "Response",
+    title: "Support clearer action",
+    body: "When a pattern is visible, support, interruption, boundary, protection, accountability, and repair can be chosen more carefully.",
+    color: SPECTRUM.indigo,
+  },
+];
+
+const SITE_CARDS = [
+  {
+    title: "teg-blue.org",
+    subtitle: "Framework and research",
+    body: "The .org site holds the public framework: overview, methodology, scientific foundations, publications, ethics, and collaboration routes.",
+    href: "/foundations",
+    linkText: "Start with the overview",
+    color: SPECTRUM.azure,
+  },
+  {
+    title: "teg-blue.com",
+    subtitle: "Practical tools",
+    body: "The .com site holds interactive public tools for exploring emotional and nervous-system patterns in everyday situations.",
+    href: "https://teg-blue.com/",
+    linkText: "Open the tools site",
+    color: SPECTRUM.indigo,
+    external: true,
+  },
+];
+
+const STANCE_ITEMS = [
+  {
+    title: "A framework, not a diagnosis",
+    body: "The Gradient gives language for pattern reading. It does not identify a person's internal state from the outside or replace clinical judgement.",
+  },
+  {
+    title: "Research supports parts",
+    body: "Established research helps illuminate specific mechanisms, conditions, capacities, and patterns. The full integration remains TEG-Blue's contribution.",
+  },
+  {
+    title: "Impact remains visible",
+    body: "Mechanism does not erase effect. The framework keeps behaviour, impact, capacity, accountability, boundary, protection, and repair distinct.",
+  },
+  {
+    title: "The work remains open",
+    body: "TEG-Blue is presented for study, application, critique, correction, and independent review.",
+  },
+];
+
+const CONTACT_LINKS = [
+  { label: "ORCID", href: "https://orcid.org/0009-0005-2394-7162", text: "0009-0005-2394-7162" },
+  { label: "Zenodo", href: "https://zenodo.org/records/19472342", text: "TEG-Blue publication record" },
+  { label: "GitHub", href: "https://github.com/emotionalblueprint", text: "github.com/emotionalblueprint" },
+  { label: "Email", href: "mailto:research@teg-blue.org", text: "research@teg-blue.org" },
 ];
 
 export const metadata = {
   title: "About | TEG-Blue",
-  description: "About TEG-Blue — The Emotional Gradient Blueprint, a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
+  description: "About TEG-Blue: The Emotional Gradient Blueprint, a layered visual framework for emotional, nervous-system, relational, and social patterns.",
   keywords: [
     "TEG-Blue",
-    "emotional technology",
+    "The Emotional Gradient Blueprint",
+    "Nervous System Gradient",
     "Anna Paretas-Artacho",
-    "emotional regulation",
-    "research grounding",
-    "integrative framework",
-    "source traces",
-    "neuroscience psychology integration",
-    "polyvagal theory",
-    "attachment theory",
-    "affect regulation",
-    "emotional intelligence",
-    "computational applications",
-    "working questions",
+    "emotional patterns",
+    "nervous system patterns",
+    "state-shaped capacity",
+    "repair capacity",
+    "visual framework",
   ],
   alternates: {
     canonical: "https://teg-blue.org/about",
   },
   openGraph: {
     title: "About — TEG-Blue",
-    description: "The Emotional Gradient Blueprint: a layered visual framework with research grounding, source traces, and working questions.",
+    description: "The Emotional Gradient Blueprint: a layered visual framework for emotional, nervous-system, relational, and social patterns.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue",
     type: "profile",
@@ -64,7 +126,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "About — TEG-Blue",
-    description: "Public framework and research-grounding home for The Emotional Gradient Blueprint.",
+    description: "The Emotional Gradient Blueprint: a visual framework for emotional and social patterns.",
   },
 };
 
@@ -84,372 +146,18 @@ export default function AboutPage() {
           <ResearcherHero
             badge="ABOUT"
             title="About TEG-Blue"
-            description="The Emotional Gradient Blueprint: a layered visual framework for mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve."
+            subtitle="The Emotional Gradient Blueprint"
+            description="A layered visual framework for understanding how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        {/* Intro */}
-        <section style={{ marginTop: 32, marginBottom: 32 }}>
-          <p style={bodyStyle}>
-            <strong style={{ color: TEXT.primary }}>TEG-Blue</strong> (The Emotional Gradient Blueprint) is a layered visual framework that takes established research from neuroscience, psychology, sociology, and related fields and organizes it into a working map of emotional experience, nervous-system states, survival strategies, identity, and social patterns.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            It does not claim to replace the theories it draws from. It reorganizes existing knowledge into a coherent, testable framework with source traces, working questions, and research grounding.
-          </p>
-        </section>
-
-        {/* Core Premise */}
-        <section id="core-premise" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>The core premise</h2>
-
-          <div
-            style={{
-              padding: "20px 24px",
-              background: BG.card,
-              borderRadius: 10,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.azure}`,
-              marginBottom: 16,
-            }}
-          >
-            <p
-              style={{
-                fontSize: 15,
-                color: TEXT.primary,
-                lineHeight: 1.8,
-                margin: 0,
-                fontWeight: 500,
-              }}
-            >
-              Emotions are biological information about safety and threat — not irrational impulses to be managed or overcome.
-            </p>
-          </div>
-
-          <p style={bodyStyle}>
-            Applied consistently across individual, relational, institutional, and cultural scales, this premise reveals how living systems organize around perceived safety and threat.
-          </p>
-
-          <h3 style={{ ...subsectionHeading, marginTop: 20 }}>The core working proposition</h3>
-          <div
-            style={{
-              padding: "16px 20px",
-              background: hexToRgba(SPECTRUM.azure, 0.06),
-              borderRadius: 8,
-              border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.12)}`,
-            }}
-          >
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              TEG-Blue proposes that a key variable in relational and behavioral outcomes may be <strong style={{ color: TEXT.primary }}>State Flexibility — capacity to return to physiological baseline when challenged</strong>, not only a person&apos;s current nervous system state. Complexity markers may offer one language-based trace of self-awareness, perspective-taking, and emotional differentiation.
-            </p>
-          </div>
-        </section>
-
-        {/* Research Status */}
-        <section id="research-status" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Research status</h2>
-
-          <p style={bodyStyle}>
-            An initial computational study analyzed 10,000+ natural conflict narratives (Reddit AITA posts) to test whether regulatory-state markers could be detected in unstructured text.
-          </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-              gap: 12,
-              marginTop: 16,
-              marginBottom: 16,
-            }}
-          >
-            {[
-              { stat: "10,000+", label: "narratives analyzed" },
-              { stat: "Pre-registered", label: "on OSF (osf.io/f4x6y)" },
-              { stat: "+78%", label: "higher complexity markers in de-escalators" },
-              { stat: "33.8%", label: "escalated toward Control/Domination" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                style={{
-                  padding: 16,
-                  background: BG.card,
-                  borderRadius: 8,
-                  border: `1px solid ${BORDER.default}`,
-                  textAlign: "center",
-                }}
-              >
-                <p style={{ fontSize: 20, fontWeight: 700, color: SPECTRUM.azure, marginBottom: 4, fontFamily: FONT.mono }}>{item.stat}</p>
-                <p style={{ fontSize: 11, color: TEXT.muted, lineHeight: 1.5 }}>{item.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <p style={bodyStyle}>
-            The study reported detectable patterns using markers drawn from polyvagal theory, contempt research, and moral disengagement theory. Mode classifications correlated with independent community moral judgments.
-          </p>
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            Published on Zenodo:{" "}
-            <a href="https://zenodo.org/records/19472342" target="_blank" rel="noopener noreferrer" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              DOI: 10.5281/zenodo.19472342
-            </a>
-          </p>
-
-          <div
-            style={{
-              padding: "16px 20px",
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              marginTop: 16,
-            }}
-          >
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-              This is a beginning, not a conclusion. The theoretical mapping is a working hypothesis — a starting point for deeper scholarly testing. Human researchers are needed to verify accuracy, correct errors, replicate findings, and deepen the analysis.
-            </p>
-          </div>
-        </section>
-
-        {/* Established Research */}
-        <section id="foundations" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Established research</h2>
-
-          <p style={bodyStyle}>
-            The public Gradient is grounded in established source fields. The page keeps those fields separate from TEG-Blue&apos;s original synthesis, so readers can see what comes from cited research and what is proposed as Gradient placement.
-          </p>
-
-          <div style={{ marginTop: 16, marginBottom: 16 }}>
-            {[
-              {
-                arc: "Nervous-system grounding",
-                desc: "How safety, threat, mobilisation, shutdown, interoception, and stress physiology shape available capacity.",
-                domains: "Polyvagal theory, affective neuroscience, interoception, stress physiology, trauma research",
-              },
-              {
-                arc: "Development and relationship",
-                desc: "How early relational experience, attachment, identity adaptation, and repair conditions shape emotional patterns over time.",
-                domains: "Attachment theory, developmental psychology, object relations, self psychology, interpersonal neurobiology",
-              },
-              {
-                arc: "Cognition, communication, and tools",
-                desc: "How naming, reframing, communication, emotional literacy, and state-dependent thinking become usable public tools.",
-                domains: "CBT, NVC, Plutchik's taxonomy, Zones of Regulation, cognitive dissonance, emotion science",
-              },
-            ].map((item) => (
-              <div
-                key={item.arc}
-                style={{
-                  padding: 16,
-                  background: BG.card,
-                  borderRadius: 8,
-                  border: `1px solid ${BORDER.default}`,
-                  marginBottom: 8,
-                }}
-              >
-                <p style={{ fontSize: 14, fontWeight: 600, color: TEXT.primary, marginBottom: 6 }}>{item.arc}</p>
-                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 8 }}>{item.desc}</p>
-                <p style={{ fontSize: 11, fontFamily: FONT.mono, color: TEXT.muted, lineHeight: 1.6 }}>{item.domains}</p>
-              </div>
-            ))}
-          </div>
-
-          <p style={bodyStyle}>
-            The current public source map is available at the{" "}
-            <Link href="/scientific-foundations" style={{ color: SPECTRUM.blue, textDecoration: "none" }}>
-              Scientific Foundations
-            </Link>
-            {" "}page, with framework-specific grounding held back until those pages return.
-          </p>
-        </section>
-
-        {/* Open Questions */}
-        <section id="open-questions" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Open research questions</h2>
-
-          <p style={{ ...bodyStyle, marginBottom: 16 }}>
-            Five priority questions for independent researchers:
-          </p>
-
-          <div
-            style={{
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
-            }}
-          >
-            {[
-              "Can complexity markers be standardized as a psychometric instrument?",
-              "What do escalation pathways look like in natural language?",
-              "Can the four-mode classification be reproduced by independent researchers?",
-              "Does nervous system state shape moral perception?",
-              "Can the emotional tools be psychometrically tested as instruments?",
-            ].map((q, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: "12px 16px",
-                  borderTop: i > 0 ? `1px solid ${BORDER.default}` : "none",
-                  display: "flex",
-                  gap: 12,
-                  alignItems: "baseline",
-                }}
-              >
-                <span style={{ fontSize: 11, fontFamily: FONT.mono, fontWeight: 700, color: SPECTRUM.azure, flexShrink: 0 }}>Q{i + 1}</span>
-                <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, margin: 0 }}>{q}</p>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ ...bodyStyle, marginTop: 12 }}>
-            Full details and four research directions are documented in the research entry point.
-          </p>
-        </section>
-
-        {/* Stance */}
-        <section style={{ marginBottom: 32 }}>
-          <div
-            style={{
-              padding: "20px 24px",
-              background: BG.card,
-              borderRadius: 10,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-            }}
-          >
-            <p
-              style={{
-                fontSize: 15,
-                color: TEXT.secondary,
-                lineHeight: 1.8,
-                margin: 0,
-                fontStyle: "italic",
-              }}
-            >
-              The framework is designed to be interrogated. Independent verification, alternative interpretations, and direct critique are more useful to this research than acceptance.
-            </p>
-          </div>
-        </section>
-
-        {/* The Founder */}
-        <section id="the-founder" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>The founder</h2>
-          <div
-            style={{
-              padding: 24,
-              background: BG.card,
-              borderRadius: 10,
-              border: `1px solid ${BORDER.default}`,
-              borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              marginBottom: 16,
-            }}
-          >
-            <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-              Anna Paretas-Artacho
-            </h3>
-            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: 0 }}>
-              Founder and creator of TEG-Blue, working independently from Barcelona, with 25+ years of professional practice in visual communication and systems thinking. The Emotional Somatic System emerged through building each framework one by one — nearly two years of independent development creating an integrated system mapping how nervous system states shape behaviour.
-            </p>
-          </div>
-
-          {/* Research identity */}
-          <div
-            style={{
-              background: BG.card,
-              borderRadius: 8,
-              border: `1px solid ${BORDER.default}`,
-              overflow: "hidden",
-            }}
-          >
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <tbody>
-                <IdentityRow label="ORCID" href="https://orcid.org/0009-0005-2394-7162" text="0009-0005-2394-7162" />
-                <IdentityRow label="Zenodo" href="https://zenodo.org/records/19472342" text="DOI: 10.5281/zenodo.19472342" />
-                <IdentityRow label="GitHub" href="https://github.com/emotionalblueprint" text="github.com/emotionalblueprint" />
-                <IdentityRow label="Contact" href="mailto:research@teg-blue.org" text="research@teg-blue.org" />
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* Two Sites */}
-        <section id="two-sites" style={{ marginBottom: 32 }}>
-          <h2 style={sectionHeading}>Two sites, one mission</h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: 16,
-            }}
-          >
-            <div
-              style={{
-                padding: 20,
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${SPECTRUM.azure}`,
-              }}
-            >
-              <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                teg-blue.org (you are here)
-              </h3>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-              The public framework and research-grounding home. Methodology, source traces, scientific foundations, publications, working questions, and collaboration materials belong here when live.
-              </p>
-              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
-                For researchers, academics, practitioners, and applied-tool collaborators.
-              </p>
-            </div>
-            <div
-              style={{
-                padding: 20,
-                background: BG.card,
-                borderRadius: 8,
-                border: `1px solid ${BORDER.default}`,
-                borderLeft: `3px solid ${SPECTRUM.indigo}`,
-              }}
-            >
-              <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-                teg-blue.com
-              </h3>
-              <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.6, marginBottom: 8 }}>
-                The practical tools site. Interactive tools for pattern recognition — gradient scales, signal tests, discernment tools, and feelings navigators.
-              </p>
-              <p style={{ fontSize: 12, fontFamily: FONT.mono, color: TEXT.muted }}>
-                For everyday people, coaches, therapists, and organizational professionals.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Navigation */}
-        <section style={{ marginBottom: 32 }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-            <NavLink href="/publications" label="Publications" />
-            <NavLink href="/scientific-foundations" label="Established Research" />
-            <a
-              href="https://teg-blue.com/emotional-tools"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                padding: "10px 18px",
-                background: hexToRgba(SPECTRUM.azure, 0.1),
-                color: SPECTRUM.azure,
-                borderRadius: 6,
-                fontWeight: 500,
-                fontSize: 13,
-                textDecoration: "none",
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.2)}`,
-              }}
-            >
-              Emotional Tools (teg-blue.com) →
-            </a>
-          </div>
-        </section>
+        <OverviewSection />
+        <PurposeSection />
+        <FounderSection />
+        <TwoSitesSection />
+        <ResearchStanceSection />
+        <ContactSection />
       </PageLayout>
 
       <SiteFooter />
@@ -474,13 +182,13 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue — The Emotional Gradient Blueprint, a layered visual framework with research grounding and source traces.",
+            description: "About TEG-Blue: The Emotional Gradient Blueprint, a layered visual framework for emotional, nervous-system, relational, and social patterns.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
               name: "Anna Paretas-Artacho",
               jobTitle: "Founder and creator of TEG-Blue",
-              description: "Founder and creator of TEG-Blue, The Emotional Gradient Blueprint. Independent · Barcelona.",
+              description: "Founder and creator of TEG-Blue, The Emotional Gradient Blueprint.",
               url: "https://teg-blue.org/about",
               sameAs: [
                 "https://orcid.org/0009-0005-2394-7162",
@@ -488,16 +196,17 @@ export default function AboutPage() {
                 "https://zenodo.org/records/19472342",
               ],
               knowsAbout: [
-                "Emotional Technology",
-                "Nervous System Regulation",
-                "Polyvagal Theory",
-                "Attachment Theory",
-                "Systems Design",
-                "Computational Applications",
+                "The Emotional Gradient Blueprint",
+                "Nervous System Gradient",
+                "Visual frameworks",
+                "Systems thinking",
+                "Emotional patterns",
+                "Nervous-system patterns",
+                "Repair capacity",
               ],
               affiliation: {
                 "@type": "Organization",
-                name: "TEG-Blue Research",
+                name: "TEG-Blue",
                 url: "https://teg-blue.org",
               },
             },
@@ -525,57 +234,243 @@ export default function AboutPage() {
   );
 }
 
-// ── Styles ──
-
-const sectionHeading = {
-  fontSize: 18,
-  fontWeight: 600,
-  color: MAIN_ORG.accent,
-  marginBottom: 12,
-};
-
-const subsectionHeading = {
-  fontSize: 15,
-  fontWeight: 600,
-  color: TEXT.primary,
-  marginBottom: 8,
-};
-
-const bodyStyle = {
-  fontSize: 14,
-  color: TEXT.secondary,
-  lineHeight: 1.8,
-  maxWidth: 640,
-  margin: 0,
-};
-
-// ── Helper Components ──
-
-function IdentityRow({ label, href, text }) {
-  const isEmail = href.startsWith("mailto:");
+function OverviewSection() {
   return (
-    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
-      <td
+    <section id="overview" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
+      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional and social patterns legible.</h2>
+      <p style={leadStyle}>
+        TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions,
+        nervous systems, survival strategies, identity, and social patterns form and evolve.
+      </p>
+      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
+        It shows how patterns that begin in the body can shape relationships, groups, institutions, and culture
+        across safety, threat, control, shutdown, restoration, and repair.
+      </p>
+    </section>
+  );
+}
+
+function PurposeSection() {
+  return (
+    <section id="purpose" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.cobalt)}>Purpose</div>
+      <h2 style={sectionHeadingStyle}>The work is built for clearer pattern reading.</h2>
+      <p style={leadStyle}>
+        TEG-Blue gives people a way to discuss emotional and nervous-system patterns without collapsing them
+        into personality labels, moral rankings, or vague feeling language.
+      </p>
+      <div
         style={{
-          padding: "12px 16px",
-          fontSize: 12,
-          fontWeight: 600,
-          color: TEXT.muted,
-          fontFamily: FONT.mono,
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-          whiteSpace: "nowrap",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+          gap: 12,
+          marginTop: 18,
         }}
       >
-        {label}
-      </td>
-      <td style={{ padding: "12px 16px", fontSize: 14, color: TEXT.secondary }}>
+        {PURPOSE_CARDS.map((card) => (
+          <InfoCard key={card.title} item={card} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FounderSection() {
+  return (
+    <section id="founder" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.indigo)}>Founder</div>
+      <h2 style={sectionHeadingStyle}>Created by Anna Paretas-Artacho.</h2>
+      <div
+        style={{
+          padding: 18,
+          background: gradientCardBg(SPECTRUM.indigo, 0.055),
+          border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.18)}`,
+          borderLeft: `3px solid ${SPECTRUM.indigo}`,
+          borderRadius: RADIUS.md,
+        }}
+      >
+        <p style={bodyStyle}>
+          Anna Paretas-Artacho is the founder and creator of TEG-Blue, working independently from Barcelona.
+          Her background is in visual communication, systems thinking, and applied pattern design.
+        </p>
+        <p style={{ ...bodyStyle, marginTop: 12 }}>
+          TEG-Blue developed as a visual architecture for making emotional, nervous-system, relational, and
+          social patterns easier to see, discuss, study, and work with.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function TwoSitesSection() {
+  return (
+    <section id="two-sites" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Two sites</div>
+      <h2 style={sectionHeadingStyle}>One framework, two public surfaces.</h2>
+      <p style={leadStyle}>
+        The .org and .com sites serve different readers. They should stay connected, but not collapsed into the
+        same job.
+      </p>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+          gap: 12,
+          marginTop: 18,
+        }}
+      >
+        {SITE_CARDS.map((site) => (
+          <SiteCard key={site.title} site={site} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ResearchStanceSection() {
+  return (
+    <section id="research-stance" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.slate)}>Research stance</div>
+      <h2 style={sectionHeadingStyle}>The framework is public so it can be used, questioned, and refined.</h2>
+      <p style={leadStyle}>
+        TEG-Blue draws from established research areas while offering its own visual integration. Its claims
+        should be read with care: specific parts may be supported by existing research, while the full
+        integration needs its own review and testing.
+      </p>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
+          gap: 12,
+          marginTop: 18,
+        }}
+      >
+        {STANCE_ITEMS.map((item) => (
+          <StanceCard key={item.title} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section id="contact" style={{ marginBottom: 32 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Contact</div>
+      <h2 style={sectionHeadingStyle}>Routes into the work.</h2>
+      <div
+        style={{
+          background: BG.card,
+          borderRadius: RADIUS.md,
+          border: `1px solid ${BORDER.default}`,
+          overflow: "hidden",
+          marginTop: 16,
+          marginBottom: 18,
+        }}
+      >
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <tbody>
+            {CONTACT_LINKS.map((link) => (
+              <ContactRow key={link.label} item={link} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+        <NavLink href="/foundations" label="TEG-Blue Overview" />
+        <NavLink href="/methodology" label="Methodology" />
+        <NavLink href="/scientific-foundations" label="Scientific Foundations" />
+        <NavLink href="/collaborate" label="Collaborate" />
+      </div>
+    </section>
+  );
+}
+
+function InfoCard({ item }) {
+  return (
+    <div
+      style={{
+        padding: 16,
+        minHeight: 150,
+        background: gradientCardBg(item.color, 0.055),
+        border: `1px solid ${hexToRgba(item.color, 0.16)}`,
+        borderLeft: `3px solid ${item.color}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <div style={labelStyle(item.color)}>{item.label}</div>
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
+        {item.title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+        {item.body}
+      </p>
+    </div>
+  );
+}
+
+function SiteCard({ site }) {
+  const LinkEl = site.external ? "a" : Link;
+  const extraProps = site.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
+  return (
+    <div
+      style={{
+        padding: 18,
+        minHeight: 220,
+        background: gradientCardBg(site.color, 0.055),
+        border: `1px solid ${hexToRgba(site.color, 0.16)}`,
+        borderTop: `3px solid ${site.color}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <div style={labelStyle(site.color)}>{site.subtitle}</div>
+      <h3 style={{ fontSize: 17, fontWeight: 700, color: TEXT.primary, margin: "0 0 8px" }}>
+        {site.title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 14px" }}>
+        {site.body}
+      </p>
+      <LinkEl href={site.href} {...extraProps} style={{ color: site.color, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>
+        {site.linkText}
+      </LinkEl>
+    </div>
+  );
+}
+
+function StanceCard({ item }) {
+  return (
+    <div
+      style={{
+        padding: 16,
+        background: BG.card,
+        border: `1px solid ${BORDER.default}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+        {item.title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+        {item.body}
+      </p>
+    </div>
+  );
+}
+
+function ContactRow({ item }) {
+  const isEmail = item.href.startsWith("mailto:");
+  return (
+    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
+      <td style={tableLabelStyle}>{item.label}</td>
+      <td style={tableCellStyle}>
         <a
-          href={href}
+          href={item.href}
           {...(!isEmail && { target: "_blank", rel: "noopener noreferrer" })}
-          style={{ color: SPECTRUM.blue, textDecoration: "none" }}
+          style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}
         >
-          {text}
+          {item.text}
         </a>
       </td>
     </tr>
@@ -589,18 +484,68 @@ function NavLink({ href, label }) {
       style={{
         display: "inline-flex",
         alignItems: "center",
-        gap: 6,
-        padding: "10px 18px",
-        background: hexToRgba(MAIN_ORG.accent, 0.1),
-        color: MAIN_ORG.accent,
-        borderRadius: 6,
+        padding: "10px 14px",
+        background: hexToRgba(SPECTRUM.azure, 0.08),
+        color: SPECTRUM.azure,
+        borderRadius: RADIUS.sm,
         fontWeight: 500,
         fontSize: 13,
         textDecoration: "none",
-        border: `1px solid ${hexToRgba(MAIN_ORG.accent, 0.2)}`,
+        border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.18)}`,
       }}
     >
-      {label} →
+      {label}
     </Link>
   );
 }
+
+function labelStyle(color) {
+  return {
+    fontSize: 9,
+    fontWeight: 700,
+    fontFamily: FONT.mono,
+    textTransform: "uppercase",
+    letterSpacing: 0,
+    color,
+    marginBottom: 4,
+  };
+}
+
+const sectionHeadingStyle = {
+  fontSize: 21,
+  fontWeight: 700,
+  color: TEXT.primary,
+  lineHeight: 1.25,
+  margin: "0 0 10px",
+};
+
+const leadStyle = {
+  fontSize: 15,
+  color: TEXT.secondary,
+  lineHeight: 1.8,
+  margin: 0,
+  maxWidth: 790,
+};
+
+const bodyStyle = {
+  fontSize: 14,
+  color: TEXT.secondary,
+  lineHeight: 1.75,
+  margin: 0,
+};
+
+const tableLabelStyle = {
+  padding: "13px 16px",
+  fontSize: 11,
+  fontFamily: FONT.mono,
+  textTransform: "uppercase",
+  letterSpacing: 0,
+  color: TEXT.muted,
+  whiteSpace: "nowrap",
+};
+
+const tableCellStyle = {
+  padding: "13px 16px",
+  fontSize: 13,
+  lineHeight: 1.5,
+};

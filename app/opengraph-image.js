@@ -4,7 +4,7 @@ import { loadOgFonts } from '@/src/lib/og-fonts'
 
 export const runtime = 'edge'
 
-export const alt = "TEG-Blue — The Nervous System Gradient, a research-grounded map of nervous-system states"
+export const alt = "TEG-Blue — The Nervous System Gradient, a visual framework for emotional and social patterns"
 export const size = OG_SIZE
 export const contentType = 'image/png'
 
@@ -16,7 +16,7 @@ export default async function Image() {
     OgImage({
       badge: 'TEG-Blue · The Emotional Gradient Blueprint',
       title: 'The Nervous System Gradient',
-      subtitle: "The current public center of TEG-Blue: a research-grounded map of nervous-system states.",
+      subtitle: "A visual framework for emotional, nervous-system, relational, and social patterns.",
       url: 'teg-blue.org',
       needle: 0.125,
     }),

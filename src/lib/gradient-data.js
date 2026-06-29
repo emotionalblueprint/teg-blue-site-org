@@ -78,8 +78,8 @@ export const autonomic = {
 
 export const cards = [
   { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Polyvagal Theory (Porges) + Stress Physiology (Sapolsky, McEwen)', source: 'M2 + GC' },
-  { id: 'perception', label: 'Perception', description: 'The state sets the filter on the world: in safety, the whole situation can be taken in; under threat, attention selects for what matters to protection, risk, escape, or control.', science: 'Cognitive Science — state-dependent perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
-  { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load, state-dependent (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
+  { id: 'perception', label: 'Perception', description: 'The state sets the filter on the world: in safety, the whole situation can be taken in; under threat, attention selects for what matters to protection, risk, escape, or control.', science: 'Cognitive Science — state-shaped perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
+  { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load and state-shaped cognition (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
   { id: 'selfAwareness', label: 'Self-Awareness', description: "The state controls access to the body's own information: in safety, signals can be felt and named; under threat, the inner read gets muted, narrowed, or cut off.", science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
   { id: 'empathy', label: 'Empathy', description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
   { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
@@ -244,8 +244,8 @@ export const groups = [
 export const scienceGrounding = [
   { part: 'The gradient / autonomic hierarchy', science: 'Polyvagal Theory — autonomic hierarchy and neuroception', authors: 'Porges' },
   { part: 'State / activation', science: 'Polyvagal Theory (three states) + Stress Physiology', authors: 'Porges · Sapolsky · McEwen' },
-  { part: 'Perception', science: 'Cognitive Science — state-dependent perception + neuroception', authors: 'Barrett · Kahneman' },
-  { part: 'Cognition', science: 'Cognitive Science — cognitive load, state-dependent', authors: 'Bower · Kahneman · Barrett' },
+  { part: 'Perception', science: 'Cognitive Science — state-shaped perception + neuroception', authors: 'Barrett · Kahneman' },
+  { part: 'Cognition', science: 'Cognitive Science — cognitive load and state-shaped cognition', authors: 'Bower · Kahneman · Barrett' },
   { part: 'Self-awareness', science: 'Interoception — internal signalling and the sense of self', authors: 'A. D. Craig' },
   { part: 'Empathy', science: 'Interpersonal Neurobiology + Polyvagal social engagement', authors: 'Siegel · Porges' },
   { part: 'Body / activation', science: 'Stress Physiology — acute activation → allostatic load', authors: 'Sapolsky · McEwen' },
@@ -262,7 +262,7 @@ export const faq = [
   {
     question: 'What is TEG-Blue?',
     answer:
-      'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.',
+      'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.',
   },
   {
     question: 'What is the Nervous System Gradient?',
@@ -282,7 +282,7 @@ export const faq = [
   {
     question: 'What research is the Nervous System Gradient grounded in?',
     answer:
-      'The architecture leads; established research provides grounding for specific claims. The gradient’s autonomic hierarchy draws from Polyvagal Theory (Porges); activation and chronic load from Stress Physiology (Sapolsky, McEwen); state-dependent perception and cognition from Cognitive Science (Barrett, Kahneman); interoception from A. D. Craig; empathy from Interpersonal Neurobiology (Siegel); emotions from Affective Neuroscience (Panksepp, Damasio, LeDoux); defence and repair from Trauma Research (Levine, van der Kolk) and Attachment (Bowlby).',
+      'The architecture leads; established research provides grounding for specific claims. The gradient’s autonomic hierarchy draws from Polyvagal Theory (Porges); activation and chronic load from Stress Physiology (Sapolsky, McEwen); state-shaped perception and cognition from Cognitive Science (Barrett, Kahneman); interoception from A. D. Craig; empathy from Interpersonal Neurobiology (Siegel); emotions from Affective Neuroscience (Panksepp, Damasio, LeDoux); defence and repair from Trauma Research (Levine, van der Kolk) and Attachment (Bowlby).',
   },
   {
     question: 'What are fight, flight, fawn and freeze?',

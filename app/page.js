@@ -5,7 +5,7 @@ import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } 
 
 const TITLE = "TEG-Blue — The Nervous System Gradient";
 const DESCRIPTION =
-  "The current public center of TEG-Blue: a research-grounded map of seven nervous-system states, showing how safety and threat reshape perception, emotion, body activation, behaviour, and repair.";
+  "A layered visual framework for understanding how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.";
 
 export const metadata = {
   title: TITLE,
@@ -559,9 +559,9 @@ export default function Home() {
               <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
-              <a className="home-action primary" href="/foundations">Read the overview</a>
-              <a className="home-action" href="/scientific-foundations">Source grounding</a>
-              <a className="home-action" href="/how-it-works">How it works</a>
+              <a className="home-action primary" href="#what-gradient-is-heading">Read the overview</a>
+              <a className="home-action" href="#science-heading">Source grounding</a>
+              <a className="home-action" href="#rights-heading">Use and attribution</a>
             </div>
           </div>
           <HomeCalibrationPlate />
@@ -585,7 +585,7 @@ export default function Home() {
               From personal patterns to societal systems
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The same shape can be read from one nervous system to families, institutions, and whole groups. The route is cumulative: repeated state patterns become relational habits, then group norms, rules, and power arrangements. It helps explain how harm forms without excusing the harm.
+              The same shape can be read from one nervous system to families, institutions, and whole groups. The route is cumulative: repeated state patterns become relational habits, then group norms, rules, and power arrangements. It helps explain how harm forms while keeping impact, accountability, and repair in view.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
@@ -638,14 +638,13 @@ export default function Home() {
         {/* Grounded in established science — static, crawlable */}
         <section style={{ ...sectionStyle, paddingBottom: 56 }} aria-labelledby="science-heading">
           <div style={cardStyle}>
-            <p style={sectionEyebrowStyle}>Grounding</p>
+            <p style={sectionEyebrowStyle}>Research</p>
             <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
-              Research grounding and source traces
+              Research areas behind the Gradient
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The public framework names the synthesis, then shows where established research <em>converges with</em>
-              specific parts of the map. These are source traces and grounding points, not a claim that the whole framework
-              has clinical validation.
+              The public framework names the integration, then shows which research areas help illuminate
+              specific parts of the map. Each field remains itself; TEG-Blue places the parts in relation.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px 28px" }}>
               {scienceGrounding.map((s) => (

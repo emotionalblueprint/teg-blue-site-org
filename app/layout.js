@@ -33,8 +33,8 @@ export const metadata = {
     default: 'TEG-Blue — The Emotional Gradient Blueprint',
     template: '%s | TEG-Blue',
   },
-  description: 'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.',
-  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'emotional patterns', 'nervous system gradient', 'source traces', 'research grounding', 'state-dependent capacity', 'repair', 'survival strategies', 'identity', 'social patterns'],
+  description: 'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.',
+  keywords: ['emotional regulation', 'nervous system', 'polyvagal theory', 'attachment theory', 'trauma research', 'emotional patterns', 'nervous system gradient', 'visual framework', 'research grounding', 'state-shaped capacity', 'repair', 'survival strategies', 'identity', 'social patterns'],
   authors: [{ name: 'Anna Paretas-Artacho', url: 'https://orcid.org/0009-0005-2394-7162' }],
   creator: 'Anna Paretas-Artacho',
   publisher: 'TEG-Blue Research',
@@ -48,12 +48,12 @@ export const metadata = {
     url: 'https://teg-blue.org',
     siteName: 'TEG-Blue',
     title: 'TEG-Blue — The Nervous System Gradient',
-    description: 'The public framework and research-grounding home for TEG-Blue, currently centered on the Nervous System Gradient.',
+    description: 'A layered visual framework for understanding how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.',
   },
   twitter: {
     card: 'summary',
     title: 'TEG-Blue — The Nervous System Gradient',
-    description: 'The public framework and research-grounding home for TEG-Blue, currently centered on the Nervous System Gradient.',
+    description: 'A layered visual framework for understanding how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.',
   },
   robots: {
     index: true,
@@ -115,7 +115,7 @@ const organizationJsonLd = {
   name: "TEG-Blue",
   url: "https://teg-blue.org",
   logo: "https://teg-blue.org/teg-blue_logo_blue.png",
-  description: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its current public center is the Nervous System Gradient.",
+  description: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
   sameAs: [
     "https://teg-blue.com",
     "https://orcid.org/0009-0005-2394-7162",
@@ -149,7 +149,7 @@ const organizationJsonLd = {
       name: "TEG-Blue",
     },
     knowsAbout: [
-      "Emotional technology",
+      "The Emotional Gradient Blueprint",
       "Pattern recognition",
       "Visual communication",
       "Integrative frameworks",
@@ -176,7 +176,7 @@ const websiteJsonLd = {
   name: "TEG-Blue.org",
   url: "https://teg-blue.org",
   inLanguage: "en",
-  description: "Public framework and research-grounding home for TEG-Blue, currently centered on the Nervous System Gradient.",
+  description: "Public framework home for TEG-Blue: The Emotional Gradient Blueprint and the Nervous System Gradient.",
   publisher: {
     "@type": "Organization",
     name: "TEG-Blue",

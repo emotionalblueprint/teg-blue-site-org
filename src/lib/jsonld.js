@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "A layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve. Its public framework and research-grounding home is teg-blue.org.",
+  description: "A layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
   inLanguage: LANGUAGE,
 };
 
@@ -194,7 +194,7 @@ export function generateAISafetyJsonLd() {
     "@type": "WebPage",
     name: "Computational Applications — TEG-Blue",
     url: `${BASE_URL}/ai-safety`,
-    description: "Exploratory computational applications of the Nervous System Gradient: structured emotional-pattern context, state-dependent language, and open research questions.",
+    description: "Exploratory computational applications of the Nervous System Gradient: structured emotional-pattern context, state-aware language, and open research questions.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: [
@@ -205,7 +205,7 @@ export function generateAISafetyJsonLd() {
       },
       {
         "@type": "Thing",
-        name: "State-Dependent Language",
+        name: "State-Aware Language",
         description: "Language patterns understood in relation to nervous-system state and available capacity"
       },
       {
@@ -220,7 +220,7 @@ export function generateAISafetyJsonLd() {
       "nervous system gradient",
       "regulatory states",
       "gradient classification",
-      "state-dependent language",
+      "state-aware language",
       "open research questions"
     ],
     mainEntity: {
@@ -272,7 +272,7 @@ export function generateModelsJsonLd() {
       "regulation capacities",
       "regulatory states",
       "nervous system",
-      "emotional technology",
+      "visual framework",
       "applied models",
       "reading emotions",
       "emotional resonance",
@@ -289,60 +289,60 @@ export function generateSystemOverviewJsonLd() {
     "@type": "WebPage",
     name: "TEG-Blue Overview — The Nervous System Gradient",
     url: `${BASE_URL}/foundations`,
-    description: "Overview of TEG-Blue: the Nervous System Gradient, cited source science, original synthesis status, applied tools, and future testing.",
+    description: "Public overview of TEG-Blue: The Emotional Gradient Blueprint and the Nervous System Gradient across safety, threat, control, shutdown, restoration, and repair.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "Thing",
       name: "The Nervous System Gradient",
-      description: "TEG-Blue's central map: a research-grounded map of state-dependent capacity."
+      description: "A visual map of how nervous-system state shapes emotion, behaviour, relational patterns, and repair."
     },
     mainEntity: {
       "@type": "ItemList",
       name: "TEG-Blue Overview",
-      description: "TEG-Blue brings together cited source science, the Nervous System Gradient, applied tools, and testing surfaces.",
+      description: "The overview introduces TEG-Blue, the Nervous System Gradient, responsible pattern reading, research foundations, and applied tools.",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "Cited Source Science",
-          description: "Established scientific and scholarly fields that ground the framework, including neuroscience, attachment research, trauma research, stress physiology, interoception, emotion science, and related literatures.",
-          url: `${BASE_URL}/scientific-foundations`
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
           name: "Nervous System Gradient",
-          description: "The central map of state-dependent capacity: how nervous-system state changes perception, emotion, body activation, behaviour, empathy, repair, and tempo.",
+          description: "The central map of state-shaped capacity: how nervous-system state changes perception, emotion, body activation, behaviour, empathy, accountability, repair, and tempo.",
           url: BASE_URL
         },
         {
           "@type": "ListItem",
+          position: 2,
+          name: "Responsible Pattern Reading",
+          description: "TEG-Blue reads patterns through organisation, impact, available capacity, and the response that fits.",
+          url: `${BASE_URL}/foundations#reading-patterns`
+        },
+        {
+          "@type": "ListItem",
           position: 3,
-          name: "Gradient Source Principles",
-          description: "The Gradient is grounded in four public source principles: a continuous body-level read of safety and threat, two survival problems, a graded perception scale, and two autonomic territories.",
-          url: `${BASE_URL}/foundations#gradient-principles`
+          name: "Use and Limits",
+          description: "The Gradient is a framework for pattern reading that requires context, observation, and attention to impact.",
+          url: `${BASE_URL}/foundations#scope`
         },
         {
           "@type": "ListItem",
           position: 4,
-          name: "Original Visual Synthesis",
-          description: "The TEG-Blue architecture, diagrams, labels, and cross-disciplinary placement are original synthesis work: research-grounded, source-traced, and open to independent review and testing.",
+          name: "Research Foundations",
+          description: "Research areas connected to the framework, including neuroscience, attachment research, trauma research, stress physiology, interoception, emotion science, and related literatures.",
+          url: `${BASE_URL}/scientific-foundations`
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Methodology and Publications",
+          description: "Methodology and publications explain claim status, limits, studies, papers, citation records, and future research routes.",
           url: `${BASE_URL}/methodology`
         },
         {
           "@type": "ListItem",
-          position: 5,
+          position: 6,
           name: "Applied Tools",
-          description: "Public tools on teg-blue.com are applied outputs generated from gradient logic. They demonstrate applied coherence and provide surfaces for future testing; they do not validate the whole framework.",
-          url: "https://teg-blue.com/emotional-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 5,
-          name: "Future Testing",
-          description: "Reliability, validity, replication, user studies, and independent review remain necessary for testing the broader synthesis and applied instruments.",
-          url: `${BASE_URL}/publications`
+          description: "Interactive tools on teg-blue.com translate the Gradient into practical public use.",
+          url: "https://teg-blue.com/"
         }
       ]
     },
@@ -351,7 +351,6 @@ export function generateSystemOverviewJsonLd() {
       "emotional patterns",
       "nervous system gradient",
       "research grounding",
-      "source traces",
       "practical tools",
       "nervous system regulation",
       "integrative architecture",
@@ -366,51 +365,39 @@ export function generateScientificFoundationsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Scientific Foundations — TEG-Blue Research",
+    name: "Scientific Foundations — TEG-Blue",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "The source grounding behind the Nervous System Gradient: established research traditions, clinical models, communication frameworks, educational tools, and TEG-Blue's original visual synthesis.",
+    description: "Research areas that help illuminate the Nervous System Gradient: emotion, state, attachment, trauma, cognition, communication, social patterns, and repair.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
-      name: "Scientific and Applied Models Organized by TEG-Blue",
-      description: "Widely used models and source areas, their contributions, and how the Nervous System Gradient places them in relation.",
+      name: "Research Areas Connected to the Nervous System Gradient",
+      description: "Research areas that help make emotional, nervous-system, relational, and social patterns visible without claiming that any one field contains the whole framework.",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Plutchik's Wheel of Emotions", description: "Emotion taxonomy and emotional vocabulary" },
-        { "@type": "ListItem", position: 2, name: "Nonviolent Communication (NVC)", description: "Empathy-based communication method" },
-        { "@type": "ListItem", position: 3, name: "Cognitive Behavioral Therapy (CBT)", description: "Thought-feeling-behavior clinical approach" },
-        { "@type": "ListItem", position: 4, name: "Polyvagal Theory", description: "Stephen Porges' autonomic nervous system model" },
-        { "@type": "ListItem", position: 5, name: "Zones of Regulation", description: "Leah Kuypers' color-coded educational regulation tool" },
-        { "@type": "ListItem", position: 6, name: "Freud's Ego Model", description: "Id, ego, superego psychic structure" },
-        { "@type": "ListItem", position: 7, name: "Winnicott's True/False Self", description: "Authentic vs adaptive self-development" },
-        { "@type": "ListItem", position: 8, name: "Rogers' Organismic Valuing", description: "Innate drive toward growth and authenticity" },
-        { "@type": "ListItem", position: 9, name: "Jung's Persona", description: "Social mask and identity adaptation" },
-        { "@type": "ListItem", position: 10, name: "Internal Family Systems (IFS)", description: "Richard Schwartz's parts-based therapy model" },
-        { "@type": "ListItem", position: 11, name: "Ego Development Theory", description: "Jane Loevinger's identity development stages" },
-        { "@type": "ListItem", position: 12, name: "Goffman's Dramaturgical Self", description: "Social life as performance" },
-        { "@type": "ListItem", position: 13, name: "Defense Mechanisms", description: "Freud's unconscious protective strategies" },
-        { "@type": "ListItem", position: 14, name: "Cognitive Dissonance Theory", description: "Leon Festinger's belief-action conflict theory" },
-        { "@type": "ListItem", position: 15, name: "Disorganized Attachment & Complex PTSD", description: "Trauma-informed attachment and chronic trauma models" },
-        { "@type": "ListItem", position: 16, name: "Narcissism Research", description: "Self-structure, narcissistic injury, empathy disruption, accountability, and relational harm" }
+        { "@type": "ListItem", position: 1, name: "Emotion and Affective Neuroscience", description: "Emotion as biological and relational information" },
+        { "@type": "ListItem", position: 2, name: "Autonomic Physiology and Stress Research", description: "State shifts, activation, shutdown, chronic load, and return" },
+        { "@type": "ListItem", position: 3, name: "Attachment and Developmental Research", description: "Relational safety, rupture, expectation, regulation, and repair" },
+        { "@type": "ListItem", position: 4, name: "Trauma and Dissociation Research", description: "Chronic threat adaptation, defensive organisation, collapse, and fragmented capacity" },
+        { "@type": "ListItem", position: 5, name: "Cognitive Science and Emotion Regulation", description: "Attention, prediction, cognitive load, meaning-making, and state-shaped capacity" },
+        { "@type": "ListItem", position: 6, name: "Communication and Repair Frameworks", description: "Conditions for naming impact, restoring clarity, supporting accountability, or failing to repair" },
+        { "@type": "ListItem", position: 7, name: "Social Psychology, Sociology, and Power Research", description: "How individual patterns become relational habits, group norms, institutional rules, and social harm" },
+        { "@type": "ListItem", position: 8, name: "Biology, Evolution, and Social Survival Research", description: "Belonging, hierarchy, status, care, threat detection, and organism-environment adaptation" }
       ]
     },
     keywords: [
-      "scientific foundations",
-      "research grounding",
-      "emotional regulation models",
-      "Plutchik wheel",
-      "NVC nonviolent communication",
-      "CBT cognitive behavioral therapy",
-      "polyvagal theory",
-      "zones of regulation",
-      "narcissism research",
-      "complex PTSD",
-      "disorganized attachment",
-      "IFS internal family systems",
+      "TEG-Blue scientific foundations",
+      "Nervous System Gradient",
+      "affective neuroscience",
+      "autonomic physiology",
       "attachment theory",
-      "trauma informed",
-      "psychological models comparison",
-      "TEG-Blue integration"
+      "trauma research",
+      "emotion science",
+      "cognitive science",
+      "social psychology",
+      "sociology",
+      "state-shaped capacity",
+      "repair capacity"
     ]
   };
 }
@@ -423,32 +410,30 @@ export function generateMethodologyJsonLd() {
     "@type": "WebPage",
     name: "Methodology - TEG-Blue",
     url: `${BASE_URL}/methodology`,
-    description: "How TEG-Blue moves from source science to Gradient synthesis, applied tools, and research questions.",
+    description: "How to read TEG-Blue responsibly: observation, pattern, impact, claim status, use, limits, and review.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
-      name: "TEG-Blue Method Claim Layers",
-      description: "The four methodological layers that label how source material, synthesis, tools, and testing are used.",
+      name: "TEG-Blue Methodology",
+      description: "The public method for reading the Nervous System Gradient while keeping observation, interpretation, impact, and claim status separate.",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Sources", description: "Peer-reviewed research, established scholarship, and widely used models or tools that ground specific ingredients." },
-        { "@type": "ListItem", position: 2, name: "Synthesis", description: "The Nervous System Gradient, diagrams, labels, and cross-disciplinary placement as original visual synthesis." },
-        { "@type": "ListItem", position: 3, name: "Tools", description: "Gradient scales, behaviour maps, schemas, and practical tools generated from Gradient logic." },
-        { "@type": "ListItem", position: 4, name: "Testing", description: "Reliability, validity, replication, usefulness, and cross-context fit evaluated as specific claims." }
+        { "@type": "ListItem", position: 1, name: "Observation", description: "Start with what can be seen: behaviour, context, repetition, and relational effect." },
+        { "@type": "ListItem", position: 2, name: "Pattern Reading", description: "Use the Gradient to ask whether a pattern is moving toward safety, threat, control, shutdown, restoration, or repair." },
+        { "@type": "ListItem", position: 3, name: "Impact and Response", description: "Track effect on clarity, autonomy, safety, accountability, and repair before choosing support, boundary, protection, accountability, or further study." },
+        { "@type": "ListItem", position: 4, name: "Claim Status", description: "Keep research support, TEG-Blue integration, applied tools, and review as separate layers." }
       ]
     },
     keywords: [
       "TEG-Blue methodology",
-      "source separation",
-      "source traces",
-      "original synthesis",
       "Nervous System Gradient",
-      "research grounding",
-      "inter-rater reliability",
-      "validity testing",
-      "replication",
-      "psychometric testing",
-      "open research questions"
+      "responsible pattern reading",
+      "claim status",
+      "state-shaped capacity",
+      "research integration",
+      "visual framework",
+      "repair capacity",
+      "framework limits"
     ]
   };
 }

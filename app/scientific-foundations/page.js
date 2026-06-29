@@ -1,947 +1,156 @@
-"use client";
-
-import { useState, useMemo, useCallback } from "react";
-import { BG, TEXT, BORDER, FONT, SPECTRUM, MAIN_ORG, hexToRgba } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout, SearchInput, ResearcherHero, AuthorBlock, ReviewStatusPanel } from "@/src/components";
+import Link from "next/link";
+import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
+import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
   {
-    question: "What established research does TEG-Blue integrate?",
-    answer: "TEG-Blue draws from established research traditions, clinical approaches, communication models, emotion taxonomies, trauma studies, attachment research, and educational regulation tools. Each source is connected to the mechanism, condition, pattern, or repair pathway it helps make visible.",
+    question: "What research does TEG-Blue draw from?",
+    answer: "TEG-Blue draws from established research areas including affective neuroscience, autonomic physiology, attachment research, trauma research, developmental science, emotion science, cognitive science, social psychology, sociology, and related fields.",
   },
   {
-    question: "How should the comparison models be read?",
-    answer: "Plutchik, NVC, CBT, Zones of Regulation, Polyvagal Theory, attachment models, trauma studies, narcissism research, and other traditions each contribute a specific lens. TEG-Blue shows how those lenses sit inside the Nervous System Gradient.",
+    question: "Does this research validate TEG-Blue as a whole?",
+    answer: "No. Research can support specific mechanisms and relationships inside the framework. The full TEG-Blue integration, diagrams, labels, tools, and applications require their own review and testing.",
   },
   {
-    question: "What is original in this synthesis?",
-    answer: "The source areas are established. TEG-Blue's original work is the Gradient placement: how mechanisms, states, relational patterns, tools, and research questions are organized together in one visual system.",
+    question: "What is TEG-Blue's contribution?",
+    answer: "TEG-Blue places body, emotion, survival strategy, identity, social pattern, and repair into one visual gradient. The contribution is the integration and the usable map.",
   },
-];
-
-// Framework/model pages remain staged in this release. Keep their source map out
-// of this public-facing page until those sections return.
-const SHOW_FRAMEWORK_GROUNDING = false;
-
-// ─── DOMAIN COLORS ──────────────────────────────────────────────
-const domainColors = {
-  "Affective Neuroscience": SPECTRUM.azure,
-  "Attachment Theory": SPECTRUM.cobalt,
-  "Behavioral Science": SPECTRUM.slate,
-  "Clinical Psychology": SPECTRUM.indigo,
-  "Communication Frameworks": SPECTRUM.azure,
-  "Cognitive Science": SPECTRUM.azure,
-  "Developmental Psychology": SPECTRUM.cobalt,
-  "Emotion Science": SPECTRUM.azure,
-  "Emotion Taxonomy": SPECTRUM.azure,
-  "Educational Regulation Tools": SPECTRUM.cobalt,
-  "Epigenetics": SPECTRUM.indigo,
-  "Evolutionary Psychology": SPECTRUM.slate,
-  "Family Systems": SPECTRUM.cobalt,
-  "Humanistic Psychology": SPECTRUM.azure,
-  "Interpersonal Neurobiology": SPECTRUM.azure,
-  "Moral Psychology": SPECTRUM.slate,
-  "Motivational Science": SPECTRUM.azure,
-  "Narrative Psychology": SPECTRUM.cobalt,
-  "Neurodiversity Research": SPECTRUM.indigo,
-  "Object Relations": SPECTRUM.azure,
-  "Polyvagal Theory": SPECTRUM.azure,
-  "Psychoanalysis": SPECTRUM.indigo,
-  "Self Psychology": SPECTRUM.azure,
-  "Social Psychology": SPECTRUM.cobalt,
-  "Sociology": SPECTRUM.slate,
-  "Stress Physiology": SPECTRUM.indigo,
-  "Trauma Research": SPECTRUM.azure,
-};
-
-function getDomainColor(domain) {
-  return domainColors[domain] || SPECTRUM.azure;
-}
-
-// ─── COMPREHENSIVE THEORY DATABASE ─────────────────────────────
-// Tradition-level entries consolidating theoretical contributions
-// Each entry represents a research tradition with key researchers and source-map references.
-const THEORIES = [
-  // ─── Existing entries (migrated from content/theories/*.json) ───
   {
-    slug: "affective-neuroscience", title: "Affective Neuroscience", domain: "Affective Neuroscience",
-    originAuthor: "Jaak Panksepp, Antonio Damasio, Lisa Feldman Barrett, Joseph LeDoux",
-    summary: "Emotions are not disruptions to rational thought but fundamental biological systems that evolved to guide behavior. They arise from subcortical circuits that evaluate survival relevance and prepare the body for action before conscious awareness begins.",
-    tags: ["neuroscience", "emotion", "subcortical", "somatic markers", "constructed emotion"],
-    frameworks: ["F1", "F12", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Affective neuroscience studies the neural basis of emotion. Panksepp identified primary emotional systems (SEEKING, RAGE, FEAR, LUST, CARE, PANIC/GRIEF, PLAY) operating from subcortical structures. Damasio showed that bodily states (somatic markers) guide decision-making. Barrett demonstrated that emotions are constructed from interoceptive signals and learned concepts. LeDoux mapped threat detection circuits that operate before conscious awareness." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue synthesizes these perspectives: emotions as data (not disruption), body-first processing (neuroception before cognition), and state-dependent capacity (what the brain can do depends on its current nervous system state). The Nervous System Gradient maps how these neural systems organize into coherent patterns." },
-      { id: "key-sources", title: "Key Sources", content: "Panksepp, J. (1998). Affective Neuroscience. Oxford University Press. \u00b7 Damasio, A. (1994). Descartes' Error. Putnam. \u00b7 Barrett, L. F. (2017). How Emotions Are Made. Houghton Mifflin. \u00b7 LeDoux, J. (1996). The Emotional Brain. Simon & Schuster." },
-    ],
-  },
-  {
-    slug: "analytical-psychology", title: "Analytical Psychology", domain: "Psychoanalysis",
-    originAuthor: "Carl Jung",
-    summary: "The psyche contains both conscious and unconscious elements organized around archetypes. The Persona is the social mask we present; the Shadow contains what we reject. Individuation is the lifelong process of integrating these parts into a more complete self.",
-    tags: ["Jung", "Persona", "Shadow", "individuation", "archetypes"],
-    frameworks: ["F2", "F3", "F5", "F11"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Jung's Analytical Psychology describes the Persona as the social mask we wear — the face we present to the world. The Shadow contains everything the ego rejects: traits, desires, and capacities deemed unacceptable. Individuation is the process of integrating Persona and Shadow into a more authentic whole." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates Jung into developmental and regulatory terms. The Persona maps to Universal Masking — the configuration built early through necessity, absorbed by False Coherence. The Shadow contains suppressed aspects of the authentic capacity configuration: emotions, needs, and capacities that were not safe to express. Integration requires felt safety first." },
-      { id: "key-sources", title: "Key Sources", content: "Jung, C. G. (1928). Two Essays on Analytical Psychology. Routledge. \u00b7 Jung, C. G. (1959). The Archetypes and the Collective Unconscious. Princeton University Press." },
-    ],
-  },
-  {
-    slug: "attachment", title: "Attachment Theory", domain: "Attachment Theory",
-    originAuthor: "John Bowlby, Mary Ainsworth, Mary Main",
-    summary: "Early relational experiences create internal working models that shape emotional regulation, relational patterns, and threat responses across the lifespan.",
-    tags: ["attachment", "internal working models", "relational patterns", "developmental psychology"],
-    frameworks: ["F1", "F2", "F4", "F5", "F8", "F10", "F12"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Attachment Theory proposes that the quality of early caregiving relationships creates internal working models — mental templates for how relationships function. These models influence emotional regulation strategies, interpersonal behavior, and stress responses throughout life." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps attachment patterns as default nervous system positions within the Nervous System Gradient. Secure attachment produces a default Connection state with flexible movement. Insecure patterns create gravitational pulls toward specific states — anxious toward Protection, avoidant toward Strategic Management." },
-      { id: "key-sources", title: "Key Sources", content: "Bowlby, J. (1969/1982). Attachment and Loss, Vol. 1. Basic Books. \u00b7 Ainsworth, M. D. S. et al. (1978). Patterns of Attachment. Erlbaum. \u00b7 Main, M. & Hesse, E. (1990). Parents' unresolved traumatic experiences are related to infant disorganized attachment status." },
-    ],
-  },
-  {
-    slug: "cognitive-dissonance", title: "Cognitive Dissonance Theory", domain: "Social Psychology",
-    originAuthor: "Leon Festinger",
-    summary: "The discomfort experienced when holding contradictory beliefs, values, or attitudes simultaneously — and the motivated reasoning that follows to reduce that discomfort.",
-    tags: ["cognitive dissonance", "motivated reasoning", "belief change", "rationalization"],
-    frameworks: ["F3", "F6", "F7", "F11"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Cognitive dissonance theory proposes that humans experience psychological discomfort when they hold contradictory cognitions. This discomfort motivates them to reduce the inconsistency — often by changing beliefs, adding new cognitions, or minimizing the importance of the contradiction." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue reframes cognitive dissonance as a regulatory mechanism. F3 (False Coherence) proposes that dissonance reduction is not a cognitive error but a nervous system strategy. F11 (The Emotional Paradoxes) places contradiction-holding as a marker of regulatory capacity." },
-      { id: "key-sources", title: "Key Sources", content: "Festinger, L. (1957). A Theory of Cognitive Dissonance. Stanford University Press." },
-    ],
-  },
-  {
-    slug: "cognitive-science", title: "Cognitive Science", domain: "Cognitive Science",
-    originAuthor: "Gordon Bower, Daniel Kahneman, Lisa Feldman Barrett",
-    summary: "Cognitive capacity is not fixed — it varies with emotional state, arousal level, and regulatory demands. State-dependent learning, cognitive load, and predictive processing show that what a person can think depends on how their nervous system is currently organized.",
-    tags: ["state-dependent learning", "cognitive load", "predictive processing", "attention"],
-    frameworks: ["F1", "F3", "F6", "F12"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Bower's state-dependent learning — information encoded in one emotional state is more accessible in the same state. Kahneman's cognitive load — emotional arousal and threat consume cognitive resources. Barrett's predictive processing — the brain constructs perception based on prior experience and current bodily state." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue synthesizes these findings into the 'state determines capacity' principle: what a person can perceive, think, feel, and do depends on their current nervous system state. This is why 'just think about it differently' fails when the nervous system is in a threat state." },
-      { id: "key-sources", title: "Key Sources", content: "Bower, G. H. (1981). Mood and memory. American Psychologist. \u00b7 Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux. \u00b7 Barrett, L. F. (2017). How Emotions Are Made. Houghton Mifflin." },
-    ],
-  },
-  {
-    slug: "developmental-psychology", title: "Developmental Psychology", domain: "Developmental Psychology",
-    originAuthor: "Stella Chess, Alexander Thomas, Jerome Kagan, Daniel Stern",
-    summary: "Infants are born with distinct temperamental patterns — innate behavioral and emotional styles that shape how they engage with the world. These patterns interact with caregiving environments to produce developmental outcomes.",
-    tags: ["temperament", "infancy", "implicit knowing", "Stern", "Kagan"],
-    frameworks: ["F1", "F2"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Developmental psychology research established that infants arrive with distinct temperamental patterns. Chess and Thomas identified dimensions like activity level and adaptability. Kagan documented behavioral inhibition as a stable trait. Stern mapped how infants develop self-experience through 'vitality affects' and 'implicit relational knowing.'" },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses temperament research to ground configuration variation in biology: there are innate differences in how nervous systems are organised. These are not pathology — they are variation (F9: same instrument, different inputs). Stern's implicit relational knowing explains calibration: the nervous system learns what to expect from relationships before conscious memory begins." },
-      { id: "key-sources", title: "Key Sources", content: "Chess, S. & Thomas, A. (1996). Temperament: Theory and Practice. Brunner/Mazel. \u00b7 Kagan, J. (1994). Galen's Prophecy. Basic Books. \u00b7 Stern, D. N. (1985). The Interpersonal World of the Infant. Basic Books." },
-    ],
-  },
-  {
-    slug: "emotion-science", title: "Emotion Science", domain: "Emotion Science",
-    originAuthor: "James Gross, Daniel Siegel, Barbara Fredrickson, Paul Ekman",
-    summary: "Emotion regulation is a process, not an outcome. How we respond to emotional signals — through attention, appraisal, and response modulation — shapes both immediate experience and long-term patterns. Positive emotions broaden capacity; threat narrows it.",
-    tags: ["emotion regulation", "window of tolerance", "broaden-and-build", "positive psychology"],
-    frameworks: ["F1", "F8", "F12", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Gross developed the process model showing five points where regulation can occur. Siegel introduced the window of tolerance — the zone where emotions can be processed without overwhelm. Fredrickson's broaden-and-build theory shows that positive emotions expand cognitive and behavioral repertoires." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the window of tolerance onto the nervous system gradient: Connection is within the window (broad capacity), Protection is at the edge (narrowing), Strategic Management and Domination are chronic states outside the window. The broaden-and-build model explains why Connection enables learning and repair." },
-      { id: "key-sources", title: "Key Sources", content: "Gross, J. J. (2014). Handbook of Emotion Regulation. Guilford Press. \u00b7 Siegel, D. J. (1999). The Developing Mind. Guilford Press. \u00b7 Fredrickson, B. L. (2001). The broaden-and-build theory. American Psychologist." },
-    ],
-  },
-  {
-    slug: "plutchik-emotion-taxonomy", title: "Plutchik's Wheel of Emotions", domain: "Emotion Taxonomy",
-    originAuthor: "Robert Plutchik",
-    summary: "A widely used visual taxonomy of eight primary emotions, their intensities, and their combinations. It gives emotional literacy a memorable map and remains useful for naming basic feeling categories.",
-    tags: ["Plutchik", "emotion wheel", "emotion taxonomy", "emotional literacy"],
-    frameworks: ["F1", "M1", "M2"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Plutchik's model organizes eight primary emotions into a wheel, showing intensity gradients and blended emotions. Its strength is not causal explanation but accessible vocabulary: it helps people name what they feel and see how emotions relate." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue keeps the emotional-literacy strength and adds state context. The same named emotion can carry different information depending on the nervous-system position it emerges from. Anger in Protection may mark boundary defense; anger in Domination may organize control." },
-      { id: "key-sources", title: "Key Sources", content: "Plutchik, R. (1980). Emotion: A Psychoevolutionary Synthesis. Harper & Row." },
-    ],
-  },
-  {
-    slug: "zones-of-regulation", title: "Zones of Regulation", domain: "Educational Regulation Tools",
-    originAuthor: "Leah Kuypers",
-    summary: "A widely adopted color-coded educational framework that helps children and educators talk about alertness, regulation, and readiness to learn.",
-    tags: ["Zones of Regulation", "education", "self-regulation", "emotional literacy"],
-    frameworks: ["F1", "F2", "M2"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Zones of Regulation groups states into accessible color categories so students and adults can name regulation states and select supports. Its strength is shared language and practical classroom use." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue places the color-zone idea inside a trauma-aware gradient. Instead of treating high activation as a behavior problem, it asks what the state is protecting, what capacity is available, and what kind of repair or support can actually work." },
-      { id: "key-sources", title: "Key Sources", content: "Kuypers, L. M. (2011). The Zones of Regulation. Think Social Publishing." },
-    ],
-  },
-  {
-    slug: "cognitive-behavioral-therapy", title: "Cognitive Behavioral Therapy", domain: "Clinical Psychology",
-    originAuthor: "Aaron T. Beck, Albert Ellis, Judith Beck",
-    summary: "A structured clinical approach showing how thoughts, emotions, body sensations, and behaviors influence one another. CBT is strongly established for many anxiety and mood difficulties.",
-    tags: ["CBT", "cognitive therapy", "cognitive distortions", "behavioral activation"],
-    frameworks: ["F1", "F3", "F8", "F11", "M2"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "CBT identifies links between interpretation, emotion, body response, and behavior. It gives people practical ways to test thoughts, change behavioral patterns, and build skills." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue places cognitive work inside state-dependent capacity. Reframing may help when enough safety and reflective capacity are available. Under threat, cognition may be recruited for protection, control, or coherence-preservation, so body-level safety and relational context matter." },
-      { id: "key-sources", title: "Key Sources", content: "Beck, A. T. (1976). Cognitive Therapy and the Emotional Disorders. International Universities Press. \u00b7 Beck, J. S. (2011). Cognitive Behavior Therapy: Basics and Beyond. Guilford Press. \u00b7 Ellis, A. (1962). Reason and Emotion in Psychotherapy. Lyle Stuart." },
-    ],
-  },
-  {
-    slug: "nonviolent-communication", title: "Nonviolent Communication", domain: "Communication Frameworks",
-    originAuthor: "Marshall Rosenberg",
-    summary: "A communication framework built around observation, feeling, need, and request. It gives conflict a language for empathy and reduces blame when enough goodwill and safety are present.",
-    tags: ["NVC", "communication", "needs", "empathy", "conflict"],
-    frameworks: ["F1", "F7", "F8", "M2"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Nonviolent Communication teaches a practical sequence: distinguish observation from evaluation, name feelings, identify needs, and make clear requests. It is strongest where parties retain enough safety, goodwill, and accountability to use the structure sincerely." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue keeps NVC's empathy language and adds state and power context. It asks when the structure supports repair, when it fails because safety is absent, and when language of feelings or needs can be used strategically to avoid accountability or control another person." },
-      { id: "key-sources", title: "Key Sources", content: "Rosenberg, M. B. (2003). Nonviolent Communication: A Language of Life. PuddleDancer Press." },
-    ],
-  },
-  {
-    slug: "evolutionary-psychology", title: "Evolutionary Psychology", domain: "Evolutionary Psychology",
-    originAuthor: "Cosmides & Tooby, David Buss, Robin Dunbar",
-    summary: "Human cognition evolved to solve survival problems that body-level responses alone could not. Emotional and cognitive systems are not opposed — they are sequential adaptations, each solving different classes of threat at different timescales.",
-    tags: ["evolution", "cognition", "survival", "adaptation", "social brain"],
-    frameworks: ["F1", "F12"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Emotions evolved as rapid survival signals before cognition existed. Cognition evolved as an additional layer for problems too complex for body-level responses. Social cognition — the capacity to model other minds — evolved to navigate increasingly complex group dynamics." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses evolutionary framing to explain the four-state architecture: Connection and Protection are before-awareness states — the nervous system responded this way for millions of years before cognition evolved. Strategic Management and Domination are after-awareness states — what cognition does when recruited into the threat response." },
-      { id: "key-sources", title: "Key Sources", content: "Cosmides, L. & Tooby, J. (1992). Cognitive adaptations for social exchange. In The Adapted Mind. \u00b7 Dunbar, R. I. M. (1998). The social brain hypothesis. Evolutionary Anthropology." },
-    ],
-  },
-  {
-    slug: "humanistic-psychology", title: "Humanistic Psychology", domain: "Humanistic Psychology",
-    originAuthor: "Carl Rogers, Abraham Maslow",
-    summary: "Humans possess an inherent actualizing tendency — a drive toward growth, authenticity, and self-realization. When conditions of worth are imposed, this tendency is constrained.",
-    tags: ["self-actualization", "Rogers", "Maslow", "organismic self", "conditions of worth"],
-    frameworks: ["F1", "F8", "F11"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Humanistic Psychology proposes that humans have an inherent drive toward growth and self-actualization. Rogers' organismic self describes an inner knowing that accurately perceives what the organism needs. Problems arise when conditions of worth override this inner sensing." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue grounds Rogers' insights in nervous system biology. The organismic self is the Emotional Somatic System — detecting, evaluating, and responding before cognition arrives. The actualising tendency is what emerges when Connection is restored and the restoration sequence can run." },
-      { id: "key-sources", title: "Key Sources", content: "Rogers, C. R. (1961). On Becoming a Person. Houghton Mifflin. \u00b7 Maslow, A. H. (1968). Toward a Psychology of Being. Van Nostrand." },
-    ],
-  },
-  {
-    slug: "internal-family-systems", title: "Internal Family Systems (IFS)", domain: "Clinical Psychology",
-    originAuthor: "Richard Schwartz",
-    summary: "A therapeutic model proposing that the psyche contains multiple sub-personalities or 'parts' — each with its own perspective, memories, and protective function — organized around a core Self that can lead when accessed.",
-    tags: ["IFS", "parts work", "self-leadership", "protective parts", "clinical psychology"],
-    frameworks: ["F3", "F4", "F5", "F8", "F11"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "IFS proposes that the mind naturally contains multiple parts (Managers, Firefighters, Exiles) organized around a core Self. Parts take on protective roles in response to overwhelming experience. Healing involves accessing Self-energy and building relationships with parts rather than eliminating them." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "F3 maps how protective parts maintain false coherence as a regulatory strategy. F4 maps IFS's protective parts as internal rule-enforcers. F8 uses the parts model to explain how repair involves building relationship with adaptive patterns. F11 integrates the insight that contradictory internal states are not dysfunction." },
-      { id: "key-sources", title: "Key Sources", content: "Schwartz, R. C. (1995). Internal Family Systems Therapy. Guilford Press. \u00b7 Schwartz, R. C. & Sweezy, M. (2020). Internal Family Systems Therapy (2nd ed.). Guilford Press." },
-    ],
-  },
-  {
-    slug: "interoception", title: "Interoception", domain: "Affective Neuroscience",
-    originAuthor: "A. D. Craig",
-    summary: "The body's internal signalling system — the sense of the physiological condition of the entire body. Interoception provides the raw data from which the nervous system constructs feelings, drives, and the sense of self.",
-    tags: ["interoception", "body signals", "insula", "homeostasis", "self-awareness"],
-    frameworks: ["F1", "M1", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Interoception is the sense of the physiological condition of the body — heart rate, breath, gut, temperature, pain, and other internal signals. Craig demonstrated that interoception is not just visceral sensation — it is the foundation of subjective feeling, emotional awareness, and the embodied sense of self." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue positions interoception as the input channel for neuroception — the raw data the nervous system evaluates when determining safety or threat. Interoceptive accuracy correlates with emotional awareness — the better the system reads its own signals, the more accurately it can orient." },
-      { id: "key-sources", title: "Key Sources", content: "Craig, A. D. (2009). How Do You Feel — Now? Nature Reviews Neuroscience. \u00b7 Craig, A. D. (2015). How Do You Feel? Princeton University Press." },
-    ],
-  },
-  {
-    slug: "interpersonal-neurobiology", title: "Interpersonal Neurobiology", domain: "Interpersonal Neurobiology",
-    originAuthor: "Daniel Siegel, Allan Schore",
-    summary: "An interdisciplinary framework showing how relationships shape brain development and neural integration — the mind emerges from the interaction between neurophysiology and interpersonal experience.",
-    tags: ["neural integration", "brain development", "relational neuroscience", "co-regulation"],
-    frameworks: ["F2", "F8", "F10", "F12"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Interpersonal Neurobiology proposes that the mind is an emergent process arising from the flow of energy and information within the body and between people. Healthy development requires neural integration — the linking of differentiated parts of the brain — which happens through attuned relationships." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue draws on IPNB to explain how the three awareness capacities develop through relational attunement (F2). The core claim — that awareness teaches awareness through co-regulation — is grounded in Siegel's work on how interpersonal experience shapes neural architecture." },
-      { id: "key-sources", title: "Key Sources", content: "Siegel, D. J. (2012). The Developing Mind (2nd ed.). Guilford Press. \u00b7 Schore, A. N. (2003). Affect Regulation and the Repair of the Self. Norton." },
-    ],
-  },
-  {
-    slug: "motivational-science", title: "Motivational Science", domain: "Motivational Science",
-    originAuthor: "Jeffrey Gray, Charles Carver, Michael Scheier",
-    summary: "Behavior is organized around two fundamental motivational systems: approach (moving toward rewards, goals, positive outcomes) and avoidance (moving away from threats, punishments, negative outcomes).",
-    tags: ["motivation", "approach-avoidance", "BIS/BAS", "self-regulation"],
-    frameworks: ["F1"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Gray's Reinforcement Sensitivity Theory proposes two systems: the Behavioral Activation System (BAS) driving approach toward rewards, and the Behavioral Inhibition System (BIS) driving avoidance of threats. These are neurobiological orientations that can become trait-like through repeated activation." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue treats approach/avoidance as the motivational substrate of the Nervous System Gradient. Connection represents balanced, flexible motivation with approach available. Strategic Management and Domination represent chronic avoidance orientation — where the system has learned that approach is dangerous." },
-      { id: "key-sources", title: "Key Sources", content: "Gray, J. A. (1982). The Neuropsychology of Anxiety. Oxford University Press. \u00b7 Carver, C. S. & Scheier, M. F. (1998). On the Self-Regulation of Behavior. Cambridge University Press." },
-    ],
-  },
-  {
-    slug: "object-relations", title: "Object Relations Theory", domain: "Object Relations",
-    originAuthor: "Donald Winnicott, Melanie Klein, Ronald Fairbairn",
-    summary: "The self develops through early relational experience. When caregiving is 'good enough,' the True Self emerges; when it fails, a False Self forms as protective adaptation.",
-    tags: ["True Self", "False Self", "Winnicott", "relational", "development"],
-    frameworks: ["F2", "F3", "F5", "F8"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Object Relations Theory proposes that the self is formed through early relationships with caregivers ('objects'). Winnicott distinguished between the True Self — spontaneous, authentic, alive — and the False Self — compliant, adaptive, protective. The False Self develops when caregiving fails to meet the infant's spontaneous gestures." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates Winnicott into nervous system terms. The True Self maps to the authentic capacity configuration — what develops when conditions support it. The False Self maps to Universal Masking — the structure built when authenticity could not be safely expressed, absorbed by False Coherence." },
-      { id: "key-sources", title: "Key Sources", content: "Winnicott, D. W. (1960). Ego distortion in terms of true and false self. In The Maturational Processes. Hogarth Press. \u00b7 Winnicott, D. W. (1971). Playing and Reality. Tavistock." },
-    ],
-  },
-  {
-    slug: "polyvagal", title: "Polyvagal Theory", domain: "Polyvagal Theory",
-    originAuthor: "Stephen Porges",
-    summary: "The autonomic nervous system operates through three hierarchical circuits — ventral vagal, sympathetic, and dorsal vagal — that shape our capacity for social engagement, mobilization, and immobilization.",
-    tags: ["autonomic nervous system", "vagal tone", "neuroception", "social engagement"],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Polyvagal Theory proposes that the autonomic nervous system has three distinct branches organized hierarchically. The most evolved (ventral vagal) supports social engagement. The sympathetic branch activates fight-or-flight. The oldest (dorsal vagal) produces shutdown. The nervous system moves through these states based on neuroception — an unconscious assessment of safety or threat." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue places polyvagal theory inside a wider map of chronic threat patterns. The Gradient tracks the progression from adaptive Protection to entrenched Strategic Management and the capacity to return to baseline." },
-      { id: "key-sources", title: "Key Sources", content: "Porges, S. W. (2011). The Polyvagal Theory. Norton. \u00b7 Porges, S. W. (2017). The Pocket Guide to the Polyvagal Theory. Norton. \u00b7 Dana, D. (2018). The Polyvagal Theory in Therapy. Norton." },
-    ],
-  },
-  {
-    slug: "psychoanalysis", title: "Psychoanalysis & Defense Mechanisms", domain: "Psychoanalysis",
-    originAuthor: "Sigmund Freud, Anna Freud",
-    summary: "The mind employs defense mechanisms to manage anxiety arising from internal conflicts and external threats. These defenses operate unconsciously, protecting the ego from overwhelming affect.",
-    tags: ["Freud", "defense mechanisms", "unconscious", "ego", "anxiety"],
-    frameworks: ["F3", "F7"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Psychoanalysis identified defense mechanisms as unconscious strategies for managing anxiety. Common defenses include repression, projection, denial, rationalization, and splitting. Defenses protect the ego from affect that would be overwhelming and operate automatically, outside conscious awareness." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates defenses into regulatory terms. Each defense is a cognitive strategy for managing nervous system activation that exceeds the window of tolerance. Each is an intelligent adaptation. F7 traces the complete pathway from defense through strategy through domination." },
-      { id: "key-sources", title: "Key Sources", content: "Freud, S. (1923). The Ego and the Id. Hogarth Press. \u00b7 Freud, A. (1936). The Ego and the Mechanisms of Defense. International Universities Press." },
-    ],
-  },
-  {
-    slug: "schema-theory", title: "Schema Theory", domain: "Clinical Psychology",
-    originAuthor: "Jeffrey Young",
-    summary: "Early maladaptive schemas — stable, enduring patterns developed in childhood — shape perception, emotion, and behavior across the lifespan. They function as self-perpetuating lenses through which experience is filtered.",
-    tags: ["schema therapy", "early maladaptive schemas", "cognitive patterns", "clinical psychology"],
-    frameworks: ["F2", "F3", "F6"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Schema Therapy identifies 18 early maladaptive schemas organized into five domains corresponding to unmet core emotional needs. Schemas become self-perpetuating through schema maintenance, avoidance, and compensation." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue integrates schema theory into F2's account of how capacity configurations become stable patterns. What schema therapy calls early maladaptive schemas, TEG-Blue maps as the cognitive structures that form around whichever awareness capacities had conditions to develop." },
-      { id: "key-sources", title: "Key Sources", content: "Young, J. E., Klosko, J. S. & Weishaar, M. E. (2003). Schema Therapy: A Practitioner's Guide. Guilford Press." },
-    ],
-  },
-  {
-    slug: "self-psychology", title: "Self Psychology", domain: "Self Psychology",
-    originAuthor: "Heinz Kohut",
-    summary: "The self develops through empathic responsiveness from self-objects — others who provide mirroring, idealization, and twinship functions. Narcissistic injury is not vanity but developmental deficit.",
-    tags: ["Kohut", "self-object", "mirroring", "narcissism", "empathy"],
-    frameworks: ["F2", "F3", "F5"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Kohut's Self Psychology proposes that the self develops through relationships with self-objects — others who provide essential developmental functions: mirroring (reflecting value), idealizing (providing strength), and twinship (offering belonging). When these needs go chronically unmet, compensatory structures develop." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue translates self-object needs into nervous system terms. Mirroring is co-regulation: the caregiver's attunement teaches the child's system that its states matter. Compensatory structures map to False Coherence — built to secure belonging when the authentic configuration could not be safely expressed." },
-      { id: "key-sources", title: "Key Sources", content: "Kohut, H. (1971). The Analysis of the Self. International Universities Press. \u00b7 Kohut, H. (1977). The Restoration of the Self. International Universities Press." },
-    ],
-  },
-  {
-    slug: "narcissism-research", title: "Narcissism Research", domain: "Clinical Psychology",
-    originAuthor: "Heinz Kohut, Otto Kernberg, Elsa Ronningstam, Aaron Pincus",
-    summary: "Narcissism research differentiates self-esteem regulation, narcissistic injury, shame, entitlement, grandiose and vulnerable presentations, empathy disruption, and harmful relational patterns.",
-    tags: ["narcissism", "narcissistic injury", "grandiose narcissism", "vulnerable narcissism", "empathy"],
-    frameworks: ["F2", "F3", "F5", "F7", "F8", "M2"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Narcissism research describes patterns of self-structure, self-esteem regulation, shame sensitivity, entitlement, admiration-seeking, devaluation, and empathy disruption. Contemporary work distinguishes grandiose and vulnerable presentations and separates developmental injury from harmful impact." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue uses the Gradient to separate developmental adaptation, present-state capacity, and relational impact. This allows narcissistic patterns to be mapped without collapsing them into either moral condemnation or excuse: protection, strategic management, empathy gating, accountability, harm, and repair are tracked separately." },
-      { id: "key-sources", title: "Key Sources", content: "Kohut, H. (1971). The Analysis of the Self. International Universities Press. \u00b7 Kernberg, O. (1975). Borderline Conditions and Pathological Narcissism. Jason Aronson. \u00b7 Ronningstam, E. (2005). Identifying and Understanding the Narcissistic Personality. Oxford University Press. \u00b7 Pincus, A. L. & Lukowitsky, M. R. (2010). Pathological narcissism and narcissistic personality disorder. Annual Review of Clinical Psychology." },
-    ],
-  },
-  {
-    slug: "social-psychology", title: "Social Psychology", domain: "Social Psychology",
-    originAuthor: "Milgram, Asch, Cialdini",
-    summary: "The study of how individuals think, feel, and behave in social contexts — including conformity, obedience, group dynamics, and how situational pressures shape behavior.",
-    tags: ["conformity", "obedience", "group dynamics", "situational behavior"],
-    frameworks: ["F4", "F5", "F6"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Social psychology examines how social situations shape individual behavior. Key traditions include Milgram's obedience studies, Asch's conformity experiments, and Cialdini's influence principles. A consistent finding: situational pressures are far more powerful predictors of behavior than personality traits." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "F4 maps how conformity and obedience function as nervous system regulation strategies. F5 uses social dynamics to explain how worth hierarchies produce in-group/out-group sorting. F6 draws on cognitive bias research to show how perception serves regulation rather than accuracy." },
-      { id: "key-sources", title: "Key Sources", content: "Milgram, S. (1974). Obedience to Authority. Harper & Row. \u00b7 Asch, S. (1951). Effects of group pressure on judgment. \u00b7 Cialdini, R. (2006). Influence: The Psychology of Persuasion." },
-    ],
-  },
-  {
-    slug: "sociology", title: "Sociology & Capital Theory", domain: "Sociology",
-    originAuthor: "Bourdieu, Bernstein, Goffman",
-    summary: "The study of how social structures, institutions, and cultural norms shape human behavior — including how power, class, and symbolic capital organize collective life.",
-    tags: ["social structure", "capital theory", "habitus", "collective behavior"],
-    frameworks: ["F4", "F5"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Bourdieu's capital theory (economic, social, cultural, and symbolic capital as sources of power), Bernstein's linguistic codes (how language patterns reflect and reproduce social class), and Goffman's dramaturgy (how people perform social roles to manage impressions)." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue draws on sociology to explain how individual nervous system regulation patterns scale into collective structures. F4 maps how rule systems emerge from collective threat regulation. F5 uses capital theory to explain how rules become sorting systems." },
-      { id: "key-sources", title: "Key Sources", content: "Bourdieu, P. (1984). Distinction. Harvard University Press. \u00b7 Bernstein, B. (1971). Class, Codes and Control. Routledge. \u00b7 Goffman, E. (1959). The Presentation of Self in Everyday Life. Anchor Books." },
-    ],
-  },
-  {
-    slug: "stress-physiology", title: "Stress Physiology", domain: "Stress Physiology",
-    originAuthor: "Robert Sapolsky, Bruce McEwen",
-    summary: "The stress response is designed for acute activation — short bursts of mobilization that resolve and restore. When activation becomes chronic, the cumulative physiological cost (allostatic load) damages the systems it was designed to protect.",
-    tags: ["stress", "allostatic load", "cortisol", "HPA axis", "chronic stress"],
-    frameworks: ["F1", "F5", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "The stress response (HPA axis activation, cortisol release, sympathetic arousal) is designed for acute, time-limited threats. When activation becomes chronic — through sustained threat, poverty, or traumatic environments — the cumulative cost (allostatic load) damages cardiovascular, immune, metabolic, and neural systems." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps the designed stress response onto Protection — acute, time-limited, and restorable. Chronic stress maps onto Chronic State Organisation. Strategic Management and Domination are costly — they recruit the stress response chronically, burning fuel designed to last hours, not years." },
-      { id: "key-sources", title: "Key Sources", content: "Sapolsky, R. M. (2004). Why Zebras Don't Get Ulcers (3rd ed.). Holt. \u00b7 McEwen, B. S. (2000). Allostasis and allostatic load. Neuropsychopharmacology." },
-    ],
-  },
-  {
-    slug: "trauma-research", title: "Trauma Research", domain: "Trauma Research",
-    originAuthor: "Bessel van der Kolk, Judith Herman",
-    summary: "Trauma is stored in the body, not just the mind. Defensive responses that were interrupted or overwhelmed during threat continue to seek completion, shaping physiology, perception, and behavior long after danger has passed.",
-    tags: ["trauma", "PTSD", "developmental trauma", "body-based therapy", "defensive responses"],
-    frameworks: ["F1", "F2", "F3", "F7", "F8", "F12", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Traumatic experiences are encoded in the body's implicit memory systems. When threat overwhelms the nervous system's capacity to respond, defensive actions (fight, flight, freeze, fawn) remain incomplete. These unfinished responses continue to organize physiology and behavior." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps trauma responses onto the Nervous System Gradient: fight and flight as active Protection, freeze and fawn as collapsed Protection or early Strategic Management patterns. Chronic trauma calibrates the system toward Strategic Management or Domination. The framework explains why cognitive insight alone rarely resolves trauma." },
-      { id: "key-sources", title: "Key Sources", content: "van der Kolk, B. (2014). The Body Keeps the Score. Viking. \u00b7 Herman, J. (1992). Trauma and Recovery. Basic Books. \u00b7 Walker, P. (2013). Complex PTSD: From Surviving to Thriving. Azure Coyote." },
-    ],
-  },
-  {
-    slug: "disorganized-attachment-complex-ptsd", title: "Disorganized Attachment & Complex PTSD", domain: "Trauma Research",
-    originAuthor: "Mary Main, Erik Hesse, Judith Herman, Bessel van der Kolk",
-    summary: "Disorganized attachment and Complex PTSD models describe what happens when the same relational field carries both safety needs and threat. Closeness can become both longed for and dangerous.",
-    tags: ["disorganized attachment", "Complex PTSD", "developmental trauma", "push-pull dynamics"],
-    frameworks: ["F1", "F2", "F3", "F4", "F7", "F8", "F10", "M2", "M3"],
-    content: [
-      { id: "core-concept", title: "Core Concept", content: "Disorganized attachment research shows that children can face an unsolvable relational problem when the caregiver is both a needed source of safety and a source of threat. Complex PTSD research describes the long-term effects of chronic interpersonal trauma on affect regulation, self-concept, relationships, and meaning." },
-      { id: "teg-blue-integration", title: "How TEG-Blue Integrates This", content: "TEG-Blue maps these patterns across the Gradient: connection-preservation and organism-protection can be activated at the same time. That explains push-pull dynamics, chronic safety checking, collapse, strategic management, and why repair requires more than insight." },
-      { id: "key-sources", title: "Key Sources", content: "Main, M. & Solomon, J. (1990). Procedures for identifying infants as disorganized/disoriented. \u00b7 Main, M. & Hesse, E. (1990). Parents' unresolved traumatic experiences are related to infant disorganized attachment status. \u00b7 Herman, J. (1992). Trauma and Recovery. Basic Books. \u00b7 van der Kolk, B. (2014). The Body Keeps the Score. Viking." },
-    ],
-  },
-
-  // ─── New entries (traditions referenced across F1-F12 framework pages) ───
-  {
-    slug: "family-systems", title: "Family Systems Theory", domain: "Family Systems",
-    originAuthor: "Murray Bowen, Virginia Satir, Salvador Minuchin",
-    summary: "Families function as emotional systems where patterns of interaction, alliance, and conflict transmit across generations. Individual symptoms often serve a function within the larger family system.",
-    tags: ["family therapy", "multigenerational transmission", "systemic regulation", "triangulation"],
-    frameworks: ["F3", "F4", "F10", "F11", "M2"],
-  },
-  {
-    slug: "mentalization", title: "Mentalization Theory", domain: "Clinical Psychology",
-    originAuthor: "Peter Fonagy, Mary Target, Jon Allen",
-    summary: "The capacity to understand behavior — in oneself and others — in terms of underlying mental states (thoughts, feelings, desires, intentions). Develops through safe relational experiences and breaks down under threat.",
-    tags: ["mentalization", "reflective functioning", "theory of mind", "developmental psychology"],
-    frameworks: ["F8", "F9", "M2"],
-  },
-  {
-    slug: "social-dominance", title: "Social Dominance Theory", domain: "Social Psychology",
-    originAuthor: "Jim Sidanius & Felicia Pratto, John Jost & Mahzarin Banaji",
-    summary: "Societies organize into group-based hierarchies maintained through institutional discrimination, behavioral asymmetry, and legitimizing myths. System justification theory explains why even disadvantaged groups endorse the status quo.",
-    tags: ["social dominance", "system justification", "hierarchy", "institutional discrimination"],
-    frameworks: ["F5", "F6"],
-  },
-  {
-    slug: "terror-management", title: "Terror Management Theory", domain: "Social Psychology",
-    originAuthor: "Jeff Greenberg, Tom Pyszczynski, Sheldon Solomon",
-    summary: "Awareness of mortality creates existential anxiety that humans manage through cultural worldviews and self-esteem. Mortality salience increases conformity, in-group bias, and aggression toward worldview-threatening others.",
-    tags: ["mortality salience", "existential anxiety", "worldview defense", "self-esteem"],
-    frameworks: ["F4", "F6"],
-  },
-  {
-    slug: "moral-psychology", title: "Moral Psychology", domain: "Moral Psychology",
-    originAuthor: "Jonathan Haidt, Lawrence Kohlberg",
-    summary: "Moral judgments are driven primarily by intuition rather than reasoning. Haidt's social intuitionist model shows that moral reasoning is largely post-hoc justification for gut reactions shaped by culture, emotion, and group identity.",
-    tags: ["moral reasoning", "moral intuition", "post-hoc justification", "moral foundations"],
-    frameworks: ["F3", "F6"],
-  },
-  {
-    slug: "behavioral-reinforcement", title: "Behavioral Reinforcement", domain: "Behavioral Science",
-    originAuthor: "B. F. Skinner, Chris Argyris & Donald Sch\u00f6n",
-    summary: "Behavior that reduces distress is reinforced and repeated — even when it causes long-term harm. Organizational learning theory extends this to show how defensive routines become self-sealing systems that resist change.",
-    tags: ["reinforcement", "operant conditioning", "defensive routines", "organizational learning"],
-    frameworks: ["F4", "F7"],
-  },
-  {
-    slug: "neurodiversity-paradigm", title: "Neurodiversity Paradigm", domain: "Neurodiversity Research",
-    originAuthor: "Judy Singer, Nick Walker, Steve Silberman",
-    summary: "Neurodivergence (autism, ADHD, dyslexia, etc.) represents natural human variation in neurological processing. Disability arises from environmental mismatch.",
-    tags: ["neurodiversity", "autism", "ADHD", "environmental mismatch", "natural variation"],
-    frameworks: ["F9"],
-  },
-  {
-    slug: "epigenetics", title: "Epigenetics & Intergenerational Transmission", domain: "Epigenetics",
-    originAuthor: "Rachel Yehuda, Michael Meaney, Frances Champagne",
-    summary: "Stress modifies gene expression across generations through epigenetic mechanisms — reversible changes that don't alter DNA sequence but alter which genes are active. These modifications transmit regulatory patterns from parent to offspring.",
-    tags: ["epigenetics", "gene expression", "intergenerational trauma", "stress transmission"],
-    frameworks: ["F10", "M2", "M3"],
-  },
-  {
-    slug: "narrative-psychology", title: "Narrative Psychology & Therapy", domain: "Narrative Psychology",
-    originAuthor: "Michael White & David Epston, Dan McAdams, Mary Main & Ruth Goldwyn",
-    summary: "Identity is constructed through the stories we tell about ourselves. Coherent narrative is a marker of earned security (Main). Narrative therapy externalizes problems and re-authors identity stories.",
-    tags: ["narrative therapy", "narrative identity", "earned security", "externalization"],
-    frameworks: ["F2", "F10", "F11"],
-  },
-  {
-    slug: "network-science", title: "Network Science & Cumulative Advantage", domain: "Sociology",
-    originAuthor: "Robert Merton, Albert-L\u00e1szl\u00f3 Barab\u00e1si, Thomas DiPrete",
-    summary: "Small initial advantages compound through preferential attachment and positive feedback loops into large structural inequalities. The Matthew effect ('to those who have, more will be given') is a measurable mechanism in science, economics, and social systems.",
-    tags: ["Matthew effect", "preferential attachment", "scale-free networks", "cumulative advantage"],
-    frameworks: ["F5"],
-  },
-  {
-    slug: "power-social-rank", title: "Power & Social Rank Theory", domain: "Social Psychology",
-    originAuthor: "Dacher Keltner, Paul Gilbert, John Price",
-    summary: "Power activates approach motivation and reduces inhibition, while subordination activates inhibition and threat monitoring. Social rank functions as a regulatory signal — position in hierarchy directly shapes nervous system state.",
-    tags: ["power", "social rank", "approach-inhibition", "compassion-focused therapy"],
-    frameworks: ["F5", "F7"],
-  },
-  {
-    slug: "abuse-coercive-control", title: "Abuse & Coercive Control Research", domain: "Trauma Research",
-    originAuthor: "Lundy Bancroft, Evan Stark, Judith Herman",
-    summary: "Coercive control operates through ongoing patterns of monitoring, isolation, degradation, and enforcement — not isolated incidents. Patterns of intentionality in controlling behavior are recognizable and predictable.",
-    tags: ["coercive control", "domestic abuse", "power dynamics", "intentionality"],
-    frameworks: ["F7"],
-  },
-  {
-    slug: "dual-process", title: "Dual-Process Theory", domain: "Cognitive Science",
-    originAuthor: "Daniel Kahneman, Keith Stanovich, Jonathan Evans",
-    summary: "Cognition operates through two systems: fast, automatic, intuitive processing (System 1) and slow, deliberate, analytical processing (System 2). TEG-Blue reframes these not as error-prone vs. corrective but as sequential partners.",
-    tags: ["System 1", "System 2", "heuristics", "biases", "reasoning"],
-    frameworks: ["F3", "F6", "F12", "M1", "M3"],
-  },
-  {
-    slug: "somatic-experiencing", title: "Somatic Experiencing", domain: "Trauma Research",
-    originAuthor: "Peter Levine, Pat Ogden",
-    summary: "Trauma resolution requires completing interrupted defensive responses at the body level. Change requires bodily experience — the body must complete the threat cycle for the nervous system to update its threat assessment.",
-    tags: ["somatic experiencing", "sensorimotor", "body-based therapy", "threat completion"],
-    frameworks: ["F1", "F2", "F7", "F8", "M1", "M3"],
-  },
-  {
-    slug: "social-identity", title: "Social Identity Theory", domain: "Social Psychology",
-    originAuthor: "Henri Tajfel & John Turner, Marilynn Brewer",
-    summary: "People derive self-esteem from group memberships and are motivated to maintain positive distinctiveness for their in-groups. Even minimal group assignment triggers in-group favoritism and out-group derogation.",
-    tags: ["social identity", "in-group bias", "minimal group paradigm", "intergroup conflict"],
-    frameworks: ["F4", "F5", "F6"],
-  },
-  {
-    slug: "intersectionality", title: "Intersectionality & Structural Analysis", domain: "Sociology",
-    originAuthor: "Kimberl\u00e9 Crenshaw, Patricia Hill Collins, Amartya Sen",
-    summary: "Systems of oppression (race, gender, class, disability) interact and compound rather than operating independently. The capability approach measures real freedom to achieve valued functionings, not just formal rights.",
-    tags: ["intersectionality", "structural inequality", "matrix of domination", "capability approach"],
-    frameworks: ["F5"],
-  },
-  {
-    slug: "contact-hypothesis", title: "Contact Hypothesis & Intergroup Relations", domain: "Social Psychology",
-    originAuthor: "Gordon Allport, Thomas Pettigrew",
-    summary: "Intergroup contact reduces prejudice under specific conditions: equal status, common goals, cooperation, and institutional support. Without these conditions, contact can reinforce existing biases.",
-    tags: ["contact hypothesis", "prejudice reduction", "intergroup contact", "equal status"],
-    frameworks: ["F6"],
-  },
-  {
-    slug: "dialectical-behavior-therapy", title: "Dialectical Behavior Therapy", domain: "Clinical Psychology",
-    originAuthor: "Marsha Linehan",
-    summary: "Builds tolerance for opposing truths through the dialectical balance of acceptance and change. Originally developed for borderline personality disorder, DBT teaches distress tolerance, emotion regulation, and interpersonal effectiveness.",
-    tags: ["DBT", "dialectics", "distress tolerance", "emotion regulation"],
-    frameworks: ["F11"],
-  },
-  {
-    slug: "ecological-systems", title: "Ecological Systems Theory", domain: "Developmental Psychology",
-    originAuthor: "Urie Bronfenbrenner",
-    summary: "Individual behavior occurs within nested environmental contexts — microsystem, mesosystem, exosystem, macrosystem, chronosystem. Each level shapes and constrains the others, making context inseparable from development.",
-    tags: ["ecological systems", "nested contexts", "environmental influence", "developmental context"],
-    frameworks: ["F4", "F11"],
-  },
-];
-
-const FRAMEWORK_GROUNDING_THEORY_SLUGS = new Set([
-  "family-systems",
-  "mentalization",
-  "social-dominance",
-  "terror-management",
-  "moral-psychology",
-  "behavioral-reinforcement",
-  "neurodiversity-paradigm",
-  "epigenetics",
-  "narrative-psychology",
-  "network-science",
-  "power-social-rank",
-  "abuse-coercive-control",
-  "dual-process",
-  "somatic-experiencing",
-  "social-identity",
-  "intersectionality",
-  "contact-hypothesis",
-  "dialectical-behavior-therapy",
-  "ecological-systems",
-]);
-
-const VISIBLE_THEORIES = SHOW_FRAMEWORK_GROUNDING
-  ? THEORIES
-  : THEORIES.filter((theory) => !FRAMEWORK_GROUNDING_THEORY_SLUGS.has(theory.slug));
-
-// ─── RESEARCH DOMAINS (derived from visible source map) ─────────
-const RESEARCH_DOMAINS = [...new Set(VISIBLE_THEORIES.map((t) => t.domain))].sort();
-
-// ─── CORE FOUNDATIONS ───────────────────────────────────────────
-const coreFoundations = [
-  {
-    concept: "Nervous system states",
-    explanation: "Safety and threat shift what we can feel, think, and do (Polyvagal Theory, Porges; stress physiology; affective neuroscience)",
-  },
-  {
-    concept: "Emotion as information",
-    explanation: "Emotions carry structured data about needs, boundaries, and danger (Affective Neuroscience, Panksepp; Appraisal Theory, Lazarus)",
-  },
-  {
-    concept: "Regulation",
-    explanation: "The capacity to shift between states may explain more than any single state alone (self-regulation research, Gross)",
-  },
-  {
-    concept: "Attachment",
-    explanation: "Early relational patterns shape how we seek safety across the lifespan (Bowlby, Ainsworth, Main)",
-  },
-  {
-    concept: "Identity under threat",
-    explanation: "The self adapts, masks, and fragments under chronic stress (Winnicott, IFS, ego development, narcissism research)",
-  },
-  {
-    concept: "Communication and repair",
-    explanation: "Language can support repair when safety, accountability, and goodwill are available; under threat it can also protect, deflect, or control (NVC, CBT, mentalization, trauma-informed practice)",
-  },
-  {
-    concept: "Emotional literacy tools",
-    explanation: "Emotion wheels and color-zone systems help people name states; the Gradient adds state, context, and repair logic (Plutchik, Zones of Regulation)",
-  },
-  {
-    concept: "Learning and development",
-    explanation: "Emotional patterns are learned, reinforced, and can be changed (developmental psychology, neuroplasticity)",
-  },
-  {
-    concept: "Culture and feedback loops",
-    explanation: "Individual patterns scale into families, institutions, and social structures (Bronfenbrenner, systems theory)",
-  },
-  {
-    concept: "Repair",
-    explanation: "The return to baseline is measurable and specific, not abstract (repair research, complexity markers)",
-  },
-];
-
-const gradientEvidencePrinciples = [
-  {
-    principle: "Continuous safety/threat read",
-    sourceAreas: "Polyvagal neuroception, interoception, affective neuroscience, threat detection, stress physiology",
-    tegBlueUse: "Grounds the idea that the body is continuously reading whether it can stay open or must protect.",
-    openQuestion: "How reliably can state-dependent language, body markers, and relational context identify the held state?",
-    color: SPECTRUM.azure,
-  },
-  {
-    principle: "Two survival problems",
-    sourceAreas: "Attachment theory, social engagement, evolutionary psychology, motivational science, trauma studies",
-    tegBlueUse: "Separates connection-preservation under safety from organism-protection under threat.",
-    openQuestion: "How consistently do chronic-state patterns show connection-preservation and organism-protection active or unresolved at the same time, as in disorganized attachment and Complex PTSD?",
-    color: SPECTRUM.azure,
-  },
-  {
-    principle: "Graded perception scale",
-    sourceAreas: "Cognitive science, emotion science, Plutchik's taxonomy, CBT, cognitive dissonance, predictive processing",
-    tegBlueUse: "Explains why perception, thought, emotion, and meaning change by Gradient position.",
-    openQuestion: "Which perception markers best distinguish Safety, Ambivalent Safety, Threat, Increased Threat, Life Peril, and Overwhelm?",
-    color: SPECTRUM.cobalt,
-  },
-  {
-    principle: "Two autonomic territories",
-    sourceAreas: "Autonomic physiology, trauma research, Zones of Regulation, somatic therapies, Complex PTSD models",
-    tegBlueUse: "Reads the same seven positions through rest/engagement, mobilisation, and shutdown fallback.",
-    openQuestion: "Which interventions fit each territory, and when does communication need to wait for body-level safety?",
-    color: SPECTRUM.indigo,
-  },
-];
-
-// ─── GLOBAL MODELS DATA ────────────────────────────────────────
-const globalModels = [
-  {
-    id: 1,
-    name: "Plutchik's Wheel of Emotions (1980)",
-    author: "Robert Plutchik",
-    kind: "Emotion taxonomy",
-    coreContribution: "Maps 8 primary emotions and shows how they combine into complex feelings — one of the most widely used tools for teaching emotional vocabulary.",
-    tegBlueAdds: [
-      "Places each emotion inside the nervous system gradient (Connection, Protection, Strategic Management, Domination) so the same emotion reads differently depending on the state it emerges from",
-      "Adds trauma-informed gradients within each emotion — distinguishing hurt, neglect, abuse, and malicious intent",
-      "Connects emotional identification to relational repair, not just classification",
-    ],
-    frameworks: ["F1", "F2"],
-  },
-  {
-    id: 2,
-    name: "Nonviolent Communication (NVC)",
-    author: "Marshall Rosenberg",
-    kind: "Communication framework",
-    coreContribution: "Provides a clear language structure — observation, feeling, need, request — that promotes empathy and reduces blame in conflict.",
-    tegBlueAdds: [
-      "Maps the conditions under which NVC works well (Connection / Protection) and where it breaks down (Strategic Management / Domination dynamics)",
-      "Adds emotional gradients that help distinguish discomfort from genuine harm",
-      "Provides visual tools that make feelings and patterns visible — helpful for neurodivergent users and people in survival states",
-    ],
-    frameworks: ["F1", "F8"],
-  },
-  {
-    id: 3,
-    name: "Cognitive Behavioral Therapy (CBT)",
-    author: "Aaron Beck, Albert Ellis",
-    kind: "Clinical approach",
-    coreContribution: "Practical, evidence-based approach connecting thoughts, feelings, and behaviors — highly effective for anxiety, depression, and phobias.",
-    tegBlueAdds: [
-      "Integrates body and nervous system patterns alongside cognitive reframing",
-      "Places individual thought patterns in relational and systemic context",
-      "Adds trauma-informed gradients showing the difference between cognitive distortion and adaptive survival responses",
-    ],
-    frameworks: ["F1", "F8", "F9"],
-  },
-  {
-    id: 4,
-    name: "Polyvagal Theory",
-    author: "Stephen Porges",
-    kind: "Autonomic theory",
-    coreContribution: "Explains how the autonomic nervous system shifts between safety (ventral vagal), fight/flight (sympathetic), and shutdown (dorsal vagal) — foundational for trauma-informed practice.",
-    tegBlueAdds: [
-      "Translates nervous system states into emotional logic and relational meaning",
-      "Extends physiological states into observable patterns of connection, defense, manipulation, and oppression",
-      "Bridges somatic awareness with relational repair through visual, accessible tools",
-      "F4 applies neuroception to collective rule formation — group nervous system synchronization under threat produces rule systems",
-      "F5 uses neuroception to explain how worth signals function as safety signals — and how chronic social threat from structural filtering holds the nervous system in Protection",
-      "F6 uses state-dependent perception to explain how nervous system state determines what is perceived — bias as neuroception operating at the cognitive level",
-      "F7 uses threat physiology to explain empathy gating — how chronic defensive states redirect Interpersonal Affect Perception (RE) toward management while collapsing Affective Resonance (ER), producing the capacity configuration that most reliably mimics Connection",
-      "F8 maps how ventral vagal safety enables capacity development — felt safety as the first of five conditions for repair, and why cognitive insight without nervous system regulation cannot produce lasting change",
-      "F9 uses neuroception to explain System Mismatch — how the nervous system responds to environmental match or mismatch, why neurodivergent nervous systems are pushed toward Protection by structural design rather than individual pathology",
-      "F10 maps co-regulation as a generational transmission pathway — the adult's nervous system functions as the child's external regulator, transmitting regulatory capacity through nervous system synchronization",
-      "F11 uses state-dependent processing to explain paradox holding capacity — nervous system state determines whether contradictions can be held (Connection), simplified (Protection), managed by narrative (Strategic Management), or erased (Domination)",
-    ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"],
-  },
-  {
-    id: 5,
-    name: "Zones of Regulation (2011)",
-    author: "Leah Kuypers",
-    kind: "Educational tool",
-    coreContribution: "Simple, widely adopted color-coded system that gives children and educators a shared language for recognizing emotional states.",
-    tegBlueAdds: [
-      "Adds gradients within each zone — showing that 'red' contains everything from righteous anger to terror to rage, each needing different responses",
-      "Reframes emotional states as information rather than behavior problems to manage",
-      "Designed to be neurodivergent-friendly, avoiding shaming for being in any particular state",
-    ],
-    frameworks: ["F1", "F2"],
-  },
-  {
-    id: 6,
-    name: "Freud's Ego Model",
-    author: "Sigmund Freud (1923)",
-    coreContribution: "Groundbreaking attempt to describe inner psychological conflict through id, ego, and superego — recognized that much of the self works unconsciously.",
-    tegBlueAdds: [
-      "Reframes ego as shaped by survival strategies rather than inherent structure",
-      "Expands beyond three parts into a continuous gradient of states: Connection, Protection, Strategic Management, Domination",
-      "Connects intrapsychic patterns to relational dynamics and systemic harm",
-    ],
-    frameworks: ["F3", "F5"],
-  },
-  {
-    id: 7,
-    name: "Winnicott's True/False Self",
-    author: "Donald Winnicott",
-    coreContribution: "Explains how children develop a True Self when caregivers attune, and a False Self when they must comply for survival — gives language for the pain of losing authenticity.",
-    tegBlueAdds: [
-      "Reframes True/False Self as awareness configuration: which capacities had conditions to develop and which didn't",
-      "Maps how adaptive identities form around incomplete awareness sets and escalate across the gradient",
-      "Provides tools to develop capacities that never had conditions to form, rather than 'finding' a hidden self",
-    ],
-    frameworks: ["F2", "F3", "F5", "F8"],
-  },
-  {
-    id: 8,
-    name: "Rogers' Organismic Valuing",
-    author: "Carl Rogers",
-    coreContribution: "Posits an innate drive toward growth, healing, and authenticity when conditions of empathy, acceptance, and congruence are present — the basis of person-centered therapy.",
-    tegBlueAdds: [
-      "Maps how survival states override or distort organismic sensing",
-      "Shows how repair reopens the path to belonging and growth",
-      "Places authenticity inside a visual gradient, making distortions visible and addressable",
-    ],
-    frameworks: ["F1", "F8", "F11"],
-  },
-  {
-    id: 9,
-    name: "Jung's Persona",
-    author: "Carl Jung",
-    coreContribution: "Recognizes the adaptive function of the social mask — the tension between public identity and inner reality that shapes how we navigate belonging.",
-    tegBlueAdds: [
-      "Reframes the Persona as awareness configuration — identity built from whichever capacities were available",
-      "Distinguishes adaptive identities rooted in belonging from those rooted in defense, control, or domination",
-      "Provides concrete pathways for developing capacities and reclaiming authenticity",
-    ],
-    frameworks: ["F2", "F3", "F5", "F11"],
-  },
-  {
-    id: 10,
-    name: "Internal Family Systems (IFS)",
-    author: "Richard Schwartz",
-    coreContribution: "Trauma-informed model that views the mind as made of parts (protectors, managers, exiles, Self) — treats protective strategies as functional adaptations rather than symptoms.",
-    tegBlueAdds: [
-      "Integrates inner parts into a relational and systemic gradient",
-      "Shows how inner protectors mirror relational patterns across the four nervous system states",
-      "F4 maps IFS's protective parts as internal rule-enforcers — the self-policing mechanism (Steps 6–7 of rule internalization)",
-      "Adds harm-measurement scales that connect personal restoration to collective repair",
-    ],
-    frameworks: ["F3", "F4", "F5", "F8", "F11"],
-  },
-  {
-    id: 11,
-    name: "Ego Development Theory",
-    author: "Jane Loevinger & others",
-    coreContribution: "Maps stages of identity development — from pre-conventional to post-autonomous — showing how self-concept and meaning-making evolve over time.",
-    tegBlueAdds: [
-      "Shows how trauma can stall, distort, or reverse developmental progression",
-      "Integrates identity growth with survival/belonging gradients",
-      "Frames development as dynamic and relational, not only cognitive or linear",
-    ],
-    frameworks: ["F3", "F5", "F11"],
-  },
-  {
-    id: 12,
-    name: "Goffman's Dramaturgical Self",
-    author: "Erving Goffman",
-    coreContribution: "Reveals how social life operates like a stage — people play roles depending on audience, context, and setting — foundational for role theory and social psychology.",
-    tegBlueAdds: [
-      "Expands role-play into awareness configuration: roles formed around available capacities",
-      "Distinguishes authentic roles from survival-driven ones across the four states",
-      "F4 maps Goffman's dramaturgical performance to performance rules — social maintenance through unspoken rules",
-      "Shows pathways for restoration from role entrapment and reclaiming genuine connection",
-    ],
-    frameworks: ["F2", "F3", "F4", "F5", "F6"],
-  },
-  {
-    id: 13,
-    name: "Defense Mechanisms",
-    author: "Sigmund Freud & Anna Freud",
-    coreContribution: "Early recognition that the mind develops protective strategies (denial, projection, rationalization) to manage pain — still widely referenced in clinical psychology.",
-    tegBlueAdds: [
-      "Reframes defenses as adaptive survival responses rather than pathology",
-      "Places defenses on a gradient: protection, manipulation, tyranny — each requiring different responses",
-      "Connects individual defense patterns to systemic harm and relational repair",
-      "F7 traces the complete pathway from defense through strategy through domination as a single reinforcement-driven trajectory — the five-stage escalation pathway with the Crossroads as the named transition from state-based defense to strategy-based control",
-    ],
-    frameworks: ["F3", "F7"],
-  },
-  {
-    id: 14,
-    name: "Cognitive Dissonance Theory",
-    author: "Leon Festinger",
-    kind: "Social psychology theory",
-    coreContribution: "Explains the discomfort when beliefs, emotions, or actions conflict — and how people resolve it through changing beliefs, justifying actions, or denial.",
-    tegBlueAdds: [
-      "Shows how dissonance is experienced somatically and emotionally, not just cognitively",
-      "Maps how unresolved dissonance can push people toward denial, defense, or manipulation",
-      "F6 maps dissonance as the mechanism driving the six-step bias formation loop — uncertainty triggers fast interpretation that fuses with identity and resists revision",
-      "Provides repair tools to face contradictions without causing further harm",
-    ],
-    frameworks: ["F3", "F6", "F7", "F11"],
-  },
-  {
-    id: 15,
-    name: "Disorganized Attachment & Complex PTSD",
-    author: "Mary Main, Judith Herman, Bessel van der Kolk",
-    kind: "Attachment and trauma models",
-    coreContribution: "Explains paradoxical push-pull dynamics where closeness itself feels dangerous — connects childhood relational trauma to lifelong patterns of dysregulation and identity disturbance.",
-    tegBlueAdds: [
-      "Integrates attachment disruption and CPTSD into the Emotional Gradient Framework",
-      "Maps how disorganized attachment produces specific awareness configurations and chronic states",
-      "F4 maps intergenerational trauma transmission as rule replication across generations — traumatic rules passed through families and institutions",
-      "F5 traces how conditional safety produces worth-seeking as regulation — and how chronic invisibility from structural filtering produces allostatic load and weathering",
-      "Provides gradients and tools for relational repair and nervous system restoration",
-    ],
-    frameworks: ["F1", "F2", "F3", "F4", "F5", "F8", "F10", "F12"],
-  },
-  {
-    id: 16,
-    name: "Narcissism & Self-Structure Research",
-    author: "Heinz Kohut, Otto Kernberg, Elsa Ronningstam, Aaron Pincus",
-    kind: "Clinical psychology",
-    coreContribution: "Differentiates narcissistic injury, self-esteem regulation, shame, entitlement, empathy disruption, and grandiose or vulnerable presentations.",
-    tegBlueAdds: [
-      "Separates developmental adaptation, present-state capacity, relational impact, and accountability instead of collapsing them into one label",
-      "Maps how empathy, repair, responsibility, and control shift across Protection, Strategic Management, Domination, and Shutdown",
-      "Creates a way to describe harmful patterns without either moralizing the person or excusing the harm",
-      "Connects narcissistic patterns to state-dependent capacity and testable relational markers",
-    ],
-    frameworks: ["F2", "F3", "F5", "F7", "F8", "F12"],
+    question: "How should this page be used?",
+    answer: "Use it as a guide to which research areas help illuminate different parts of the Nervous System Gradient, not as a claim that any one field already contains the full framework.",
   },
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "How to Read", href: "#review-status-heading", description: "How source areas, synthesis, tools, and research questions are placed." },
-  { label: "Gradient Sources", href: "#gradient-evidence", description: "The four source principles behind the Nervous System Gradient." },
-  { label: "Model Bridges", href: "#model-bridges", description: "Widely used models and what the Gradient places from each one." },
-  { label: `${VISIBLE_THEORIES.length} Research Traditions`, href: "#research-traditions", description: "Research traditions credited by contribution and source area." },
-  { label: `${RESEARCH_DOMAINS.length} Research Domains`, href: "#research-domains", description: "From affective neuroscience to trauma studies — filterable by domain and keyword." },
-  ...(SHOW_FRAMEWORK_GROUNDING
-    ? [{ label: "Framework Tags", href: "#framework-tags", description: "Each theory tagged to its connected frameworks (F1-F12, M1-M2) showing where it integrates." }]
-    : []),
-  { label: "CSV Download", href: "#csv-download", description: "Download the source-map dataset." },
+  { label: "Overview", href: "#overview", description: "How research relates to the Gradient." },
+  { label: "Research Lens", href: "#research-lens", description: "What research helps make visible." },
+  { label: "Research Areas", href: "#research-areas", description: "Fields connected to the framework." },
+  { label: "Claim Care", href: "#claim-care", description: "How not to overread the page." },
+  { label: "Explore More", href: "#where-next", description: "Method, publications, and tools." },
 ];
 
-// ─── PAGE COMPONENT ─────────────────────────────────────────────
+const LENS_COLUMNS = [
+  { key: "body", label: "Body" },
+  { key: "relationship", label: "Relationship" },
+  { key: "scale", label: "Scale" },
+  { key: "repair", label: "Repair" },
+];
+
+const LENS_ROWS = [
+  {
+    area: "Affective neuroscience",
+    body: "Emotion as biological signal",
+    relationship: "Feeling as orientation",
+    scale: "Shared emotional cues",
+    repair: "Signals become nameable",
+    color: SPECTRUM.azure,
+  },
+  {
+    area: "Autonomic and stress physiology",
+    body: "Activation, mobilisation, shutdown",
+    relationship: "Capacity changes with state",
+    scale: "Chronic threat costs accumulate",
+    repair: "Return and restoration matter",
+    color: SPECTRUM.blue,
+  },
+  {
+    area: "Attachment and development",
+    body: "Regulation develops in context",
+    relationship: "Safety, proximity, rupture",
+    scale: "Patterns can transmit",
+    repair: "Co-regulation supports return",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    area: "Trauma research",
+    body: "Threat can remain organised",
+    relationship: "Protection can repeat",
+    scale: "Harm can structure environments",
+    repair: "Safety precedes integration",
+    color: SPECTRUM.indigo,
+  },
+  {
+    area: "Social psychology and sociology",
+    body: "State meets context",
+    relationship: "Roles, norms, power",
+    scale: "Groups and institutions pattern behaviour",
+    repair: "Conditions shape what can change",
+    color: SPECTRUM.slate,
+  },
+];
+
+const RESEARCH_AREAS = [
+  {
+    title: "Emotion and affective neuroscience",
+    body: "Helps explain emotion as a body-based signal system rather than noise, weakness, or a personal label.",
+    contribution: "Supports the view that emotion carries information about safety, threat, need, boundary, value, and action readiness.",
+    color: SPECTRUM.azure,
+  },
+  {
+    title: "Autonomic physiology and stress research",
+    body: "Helps explain why perception, cognition, body activation, tempo, and repair capacity change with state.",
+    contribution: "Supports the Gradient's attention to activation, mobilisation, shutdown, chronic load, and return.",
+    color: SPECTRUM.blue,
+  },
+  {
+    title: "Attachment and developmental research",
+    body: "Helps explain how relational safety, rupture, proximity, expectation, and regulation develop over time.",
+    contribution: "Supports the link between body organisation, relationship patterns, identity, and repair.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    title: "Trauma and dissociation research",
+    body: "Helps explain chronic threat adaptation, defensive organisation, collapse, hypervigilance, and fragmented capacity.",
+    contribution: "Supports the distinction between protection, shutdown, harmful pattern, boundary, accountability, and repair.",
+    color: SPECTRUM.indigo,
+  },
+  {
+    title: "Cognitive science and emotion regulation",
+    body: "Helps explain attention, prediction, cognitive load, meaning-making, and why insight alone may not shift a state.",
+    contribution: "Supports the claim that state changes what can be perceived, considered, remembered, and revised.",
+    color: SPECTRUM.azure,
+  },
+  {
+    title: "Communication and repair frameworks",
+    body: "Help explain the conditions under which language can name impact, restore clarity, support accountability, or fail.",
+    contribution: "Supports the link between state, empathy, reality-testing, accountability, and repair capacity.",
+    color: SPECTRUM.cobalt,
+  },
+  {
+    title: "Social psychology, sociology, and power research",
+    body: "Help explain how individual patterns become relational habits, group norms, institutional rules, and social harm.",
+    contribution: "Supports TEG-Blue's scale claim: patterns that begin in the body can shape relationships, groups, institutions, and culture.",
+    color: SPECTRUM.slate,
+  },
+  {
+    title: "Biology, evolution, and social survival research",
+    body: "Help explain belonging, hierarchy, status, care, threat detection, and organism-environment adaptation.",
+    contribution: "Supports the Gradient's attention to survival strategies without reducing people to fixed categories.",
+    color: SPECTRUM.indigo,
+  },
+];
+
+const CLAIM_CARE = [
+  {
+    title: "A field supports a part",
+    body: "A research area may help explain one mechanism, condition, capacity, or pattern. It should not be used to claim the whole framework is already established.",
+  },
+  {
+    title: "TEG-Blue places parts in relation",
+    body: "The framework's contribution is the integration: how body state, emotion, survival strategy, identity, social pattern, and repair are held together in one Gradient.",
+  },
+  {
+    title: "Tools need their own review",
+    body: "A practical tool can be useful as an educational map while still needing separate review for clinical, institutional, or research claims.",
+  },
+  {
+    title: "Impact remains visible",
+    body: "Mechanism never erases effect. Pattern reading still asks what happened, what impact occurred, and what response fits.",
+  },
+];
 
 export default function ScientificFoundationsPage() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeDomain, setActiveDomain] = useState(null);
-
-  // Filtered theories for Evidence Map
-  const filteredTheories = useMemo(() => {
-    let result = VISIBLE_THEORIES;
-    if (activeDomain) {
-      result = result.filter((t) => t.domain === activeDomain);
-    }
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      result = result.filter(
-        (t) =>
-          t.title?.toLowerCase().includes(q) ||
-          t.summary?.toLowerCase().includes(q) ||
-          t.originAuthor?.toLowerCase().includes(q) ||
-          (SHOW_FRAMEWORK_GROUNDING && t.frameworks?.some((f) => f.toLowerCase().includes(q))) ||
-          t.tags?.some((tag) => tag.toLowerCase().includes(q))
-      );
-    }
-    return result;
-  }, [searchQuery, activeDomain]);
-
-  // Group filtered theories by domain
-  const groupedByDomain = useMemo(() => {
-    const groups = filteredTheories.reduce((acc, theory) => {
-      const domain = theory.domain || "Other";
-      if (!acc[domain]) acc[domain] = [];
-      acc[domain].push(theory);
-      return acc;
-    }, {});
-    return groups;
-  }, [filteredTheories]);
-
-  const sortedDomains = Object.keys(groupedByDomain).sort();
-
-  // CSV download
-  const downloadCSV = useCallback(() => {
-    const headers = SHOW_FRAMEWORK_GROUNDING
-      ? ["Title", "Domain", "Author", "Summary", "Frameworks", "Tags"]
-      : ["Title", "Domain", "Author", "Summary", "Tags"];
-    const rows = VISIBLE_THEORIES.map((t) => {
-      const baseRow = [
-        t.title || "",
-        t.domain || "",
-        t.originAuthor || "",
-        (t.summary || "").replace(/"/g, '""'),
-        (t.tags || []).join("; "),
-      ];
-      return SHOW_FRAMEWORK_GROUNDING
-        ? [...baseRow.slice(0, 4), (t.frameworks || []).join("; "), baseRow[4]]
-        : baseRow;
-    });
-    const csv = [
-      headers.join(","),
-      ...rows.map((row) => row.map((cell) => `"${cell}"`).join(",")),
-    ].join("\n");
-
-    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "teg-blue-theory-database.csv";
-    link.click();
-    URL.revokeObjectURL(url);
-  }, []);
-
   return (
     <div
       style={{
@@ -955,290 +164,19 @@ export default function ScientificFoundationsPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="SOURCE GROUNDING"
+            badge="RESEARCH FOUNDATIONS"
             title="Scientific Foundations"
-            subtitle="The source map behind the Gradient"
-            description={`How established research traditions, clinical models, communication frameworks, and educational tools are placed inside the Nervous System Gradient. Each source is connected to the mechanism, condition, pattern, or repair pathway it helps make visible.`}
+            subtitle="Research areas behind the Gradient"
+            description="A public map of the fields that help make emotional, nervous-system, relational, and social patterns visible."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
       >
-        <ReviewStatusPanel
-          title="How to read this source map"
-          description="This page credits source areas for what they contribute, then shows how TEG-Blue places those contributions inside the Nervous System Gradient. The result is a map of source concepts, Gradient placement, applied tools, and research questions."
-        />
-
-        {/* ─── Answer-first opening ─────────────────────────────── */}
-        <p style={{ fontSize: 15, color: TEXT.primary, lineHeight: 1.8, marginBottom: 24, fontWeight: 500 }}>
-          TEG-Blue connects research by asking what each field helps make visible inside the same larger pattern. Neuroscience may explain a mechanism; attachment research may explain a developmental imprint; trauma research may explain chronic adaptation; CBT and cognitive dissonance may explain how thought protects coherence; NVC may explain when repair language works; Plutchik and Zones may explain emotional naming. Each source keeps its own identity. The Gradient places the pieces in relation.
-        </p>
-
-        <SourceStatusNote />
-
-        <GradientEvidenceLadder />
-
-        {/* ─── 2. CORE FOUNDATIONS ────────────────────────────────── */}
-        <CoreFoundations />
-
-        {/* ─── 3. HOW TEG-BLUE INTEGRATES EXISTING MODELS ─────────── */}
-        <section id="model-bridges" style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              color: TEXT.primary,
-              margin: "0 0 12px 0",
-            }}
-          >
-            Model Bridges
-          </h2>
-
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            Each model gives the field a way to see emotion, cognition, communication, regulation,
-            identity, or trauma. This section keeps that contribution visible, then shows what becomes
-            clearer when the same material is placed on the Gradient.
-          </p>
-
-          {globalModels.map((model) => (
-            <ModelCard key={model.id} model={model} />
-          ))}
-        </section>
-
-        {/* ─── 4. EVIDENCE MAP ───────────────────────────────────── */}
-        <div
-          style={{
-            borderTop: `1px solid ${BORDER.default}`,
-            margin: "48px 0",
-            position: "relative",
-          }}
-        >
-          <span
-            style={{
-              position: "absolute",
-              top: "-12px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              background: BG.page,
-              padding: "0 16px",
-              fontSize: 12,
-              color: TEXT.muted,
-              fontFamily: FONT.mono,
-            }}
-          >
-            EVIDENCE MAP
-          </span>
-        </div>
-
-        <section id="research-traditions" style={{ marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              color: TEXT.primary,
-              margin: "0 0 12px 0",
-            }}
-          >
-            {VISIBLE_THEORIES.length} Research Traditions
-          </h2>
-
-          <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 20 }}>
-            This source map includes {VISIBLE_THEORIES.length} research traditions organized into {RESEARCH_DOMAINS.length} research
-            domain groupings. Each entry names a tradition, its key researchers, and the source
-            contribution it brings into view.
-          </p>
-
-          {/* Method note */}
-          <div
-            style={{
-              padding: 16,
-              background: hexToRgba(SPECTRUM.slate, 0.06),
-              borderRadius: 8,
-              border: `1px solid ${hexToRgba(SPECTRUM.slate, 0.12)}`,
-              marginBottom: 24,
-            }}
-          >
-            <p style={{ fontSize: 13, color: TEXT.muted, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: TEXT.secondary }}>Selection note:</strong>{" "}
-              Entries are included when they contribute a source concept, mechanism, pattern, model,
-              tool, or research question used by the Gradient. This map is designed to be inspected,
-              corrected, and extended as the source trace develops.
-            </p>
-          </div>
-
-          {/* Search + filters */}
-          <div style={{ marginBottom: 20 }}>
-            <SearchInput
-              value={searchQuery}
-              onChange={setSearchQuery}
-              placeholder="Search theories by name, author, or keyword..."
-            />
-          </div>
-
-          {/* Domain filter chips */}
-          <div id="research-domains" style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
-            <button
-              onClick={() => setActiveDomain(null)}
-              style={{
-                padding: "6px 12px",
-                fontSize: 12,
-                fontFamily: FONT.mono,
-                fontWeight: 500,
-                borderRadius: 6,
-                border: `1px solid ${!activeDomain ? hexToRgba(SPECTRUM.azure, 0.42) : BORDER.default}`,
-                background: !activeDomain ? hexToRgba(SPECTRUM.azure, 0.13) : "transparent",
-                color: !activeDomain ? SPECTRUM.azure : TEXT.muted,
-                cursor: "pointer",
-              }}
-            >
-              All domains
-            </button>
-            {RESEARCH_DOMAINS.map((domain) => {
-              const isActive = activeDomain === domain;
-              const chipColor = getDomainColor(domain);
-              return (
-                <button
-                  key={domain}
-                  onClick={() => setActiveDomain(isActive ? null : domain)}
-                  style={{
-                    padding: "6px 12px",
-                    fontSize: 12,
-                    fontFamily: FONT.mono,
-                    fontWeight: 500,
-                    borderRadius: 6,
-                    border: `1px solid ${isActive ? hexToRgba(chipColor, 0.4) : BORDER.default}`,
-                    background: isActive ? hexToRgba(chipColor, 0.12) : "transparent",
-                    color: isActive ? chipColor : TEXT.muted,
-                    cursor: "pointer",
-                  }}
-                >
-                  {domain}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Results count + CSV download */}
-          <div
-            id={SHOW_FRAMEWORK_GROUNDING ? "framework-tags" : "source-map-results"}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 16,
-            }}
-          >
-            <span style={{ fontSize: 13, color: TEXT.muted }}>
-              {`${filteredTheories.length} research traditions`}
-              {(searchQuery || activeDomain)
-                ? ` (filtered from ${VISIBLE_THEORIES.length})`
-                : ""}
-            </span>
-            <button
-              id="csv-download"
-              onClick={downloadCSV}
-              style={{
-                padding: "6px 14px",
-                fontSize: 12,
-                fontWeight: 500,
-                borderRadius: 6,
-                border: `1px solid ${BORDER.default}`,
-                background: "transparent",
-                color: TEXT.muted,
-                cursor: "pointer",
-                fontFamily: FONT.mono,
-              }}
-            >
-              Download CSV
-            </button>
-          </div>
-
-          {/* Theory cards by domain */}
-          {sortedDomains.map((domain) => (
-              <section key={domain} style={{ marginBottom: 32 }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    marginBottom: 12,
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      color: TEXT.primary,
-                      margin: 0,
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {domain}
-                  </h3>
-                  <span
-                    style={{
-                      fontSize: 11,
-                      fontWeight: 600,
-                      fontFamily: FONT.mono,
-                      color: getDomainColor(domain),
-                      padding: "3px 8px",
-                      background: hexToRgba(getDomainColor(domain), 0.1),
-                      borderRadius: 4,
-                    }}
-                  >
-                    {groupedByDomain[domain].length}
-                  </span>
-                </div>
-
-                {groupedByDomain[domain].map((theory) => (
-                  <ExpandableTheoryCard key={theory.slug} theory={theory} />
-                ))}
-              </section>
-            ))}
-
-          {/* Empty state */}
-          {filteredTheories.length === 0 && (
-            <div
-              style={{
-                textAlign: "center",
-                padding: 48,
-                background: BG.card,
-                borderRadius: 12,
-                border: `1px solid ${BORDER.default}`,
-              }}
-            >
-              <p style={{ fontSize: 15, color: TEXT.secondary, marginBottom: 8 }}>
-                No research traditions match your search.
-              </p>
-              <button
-                onClick={() => {
-                  setSearchQuery("");
-                  setActiveDomain(null);
-                }}
-                style={{
-                  padding: "6px 14px",
-                  fontSize: 13,
-                  color: SPECTRUM.azure,
-                  background: "transparent",
-                  border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.32)}`,
-                  borderRadius: 6,
-                  cursor: "pointer",
-                }}
-              >
-                Clear filters
-                </button>
-            </div>
-          )}
-        </section>
-
-        {/* ─── 5. HOW WE GROUND AND TEST ──────────────────────────── */}
-        <ValidationMethod />
-
-        {/* ─── 6. FOOTER ──────────────────────────────────────────── */}
-        {/* Author */}
-        <section style={{ marginTop: 48, marginBottom: 32 }}>
-          <AuthorBlock />
-        </section>
-
+        <OverviewSection />
+        <ResearchLensSection />
+        <ResearchAreasSection />
+        <ClaimCareSection />
+        <WhereNextSection />
       </PageLayout>
 
       <SiteFooter />
@@ -1265,7 +203,7 @@ export default function ScientificFoundationsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "Scientific Foundations | TEG-Blue Research",
+              name: "Scientific Foundations | TEG-Blue",
               url: "https://teg-blue.org/scientific-foundations",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -1276,773 +214,322 @@ export default function ScientificFoundationsPage() {
   );
 }
 
-// ─── SOURCE STATUS COMPONENT ───────────────────────────────────
-
-function SourceStatusNote() {
+function OverviewSection() {
   return (
-    <section
-      style={{
-        marginBottom: 40,
-        padding: 18,
-        background: hexToRgba(SPECTRUM.cobalt, 0.06),
-        borderRadius: 10,
-        border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.15)}`,
-        borderLeft: `3px solid ${SPECTRUM.cobalt}`,
-      }}
-    >
+    <section id="overview" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Research stance</div>
+      <h2 style={sectionHeadingStyle}>Research helps make parts of the Gradient visible.</h2>
+      <p style={leadStyle}>
+        TEG-Blue does not treat research as a pile of citations or as a claim that one field already contains
+        the whole framework. Each field remains itself. Each contributes something specific.
+      </p>
+      <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 800 }}>
+        Affective neuroscience helps explain emotion as signal. Autonomic physiology helps explain state.
+        Attachment and development help explain relational safety. Trauma research helps explain chronic
+        adaptation. Social research helps explain how patterns scale. TEG-Blue places those parts in relation.
+      </p>
       <div
         style={{
-          fontSize: 9,
-          fontWeight: 700,
-          fontFamily: FONT.mono,
-          textTransform: "uppercase",
-          letterSpacing: 0,
-          color: SPECTRUM.cobalt,
-          marginBottom: 8,
+          marginTop: 18,
+          padding: 18,
+          background: gradientCardBg(SPECTRUM.cobalt, 0.055),
+          border: `1px solid ${hexToRgba(SPECTRUM.cobalt, 0.18)}`,
+          borderLeft: `3px solid ${SPECTRUM.cobalt}`,
+          borderRadius: RADIUS.md,
         }}
       >
-        How to read the evidence
-      </div>
-      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.75, margin: 0 }}>
-        This page shows four layers: <strong style={{ color: TEXT.primary }}>source area</strong>,{" "}
-        <strong style={{ color: TEXT.primary }}>Gradient placement</strong>,{" "}
-        <strong style={{ color: TEXT.primary }}>tool surface</strong>, and{" "}
-        <strong style={{ color: TEXT.primary }}>research question</strong>. Some entries are research
-        traditions; others are clinical models, educational tools, or communication frameworks.
-      </p>
-    </section>
-  );
-}
-
-// ─── GRADIENT EVIDENCE LADDER COMPONENT ─────────────────────────
-
-function GradientEvidenceLadder() {
-  return (
-    <section id="gradient-evidence" style={{ marginBottom: 48 }}>
-      <h2
-        style={{
-          fontSize: 20,
-          fontWeight: 600,
-          color: TEXT.primary,
-          margin: "0 0 12px 0",
-        }}
-      >
-        Source Principles Behind the Gradient
-      </h2>
-      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 18 }}>
-        The public Gradient begins with four source principles. Each principle gathers established
-        source areas and places them inside the same state-dependent map.
-      </p>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-          gap: 12,
-        }}
-      >
-        {gradientEvidencePrinciples.map((item) => (
-          <div
-            key={item.principle}
-            style={{
-              padding: 16,
-              background: BG.card,
-              borderRadius: 10,
-              border: `1px solid ${hexToRgba(item.color, 0.18)}`,
-              borderTop: `3px solid ${item.color}`,
-            }}
-          >
-            <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 10px" }}>
-              {item.principle}
-            </h3>
-            <EvidenceField label="Source areas" color={item.color}>
-              {item.sourceAreas}
-            </EvidenceField>
-            <EvidenceField label="Gradient placement" color={item.color}>
-              {item.tegBlueUse}
-            </EvidenceField>
-            <EvidenceField label="Research question" color={item.color}>
-              {item.openQuestion}
-            </EvidenceField>
-          </div>
-        ))}
+        <p style={{ ...bodyStyle, color: TEXT.primary, fontWeight: 600, marginBottom: 8 }}>
+          The established research supports parts. The integration is TEG-Blue's contribution.
+        </p>
+        <p style={bodyStyle}>
+          This page names the research areas that help illuminate the map. It does not claim that TEG-Blue as a
+          whole is clinically validated or that any source should be read as saying TEG-Blue in advance.
+        </p>
       </div>
     </section>
   );
 }
 
-function EvidenceField({ label, color, children }) {
+function ResearchLensSection() {
   return (
-    <div style={{ marginBottom: 10 }}>
-      <div
-        style={{
-          fontSize: 9,
-          fontWeight: 700,
-          fontFamily: FONT.mono,
-          textTransform: "uppercase",
-          letterSpacing: 0,
-          color,
-          marginBottom: 3,
-        }}
-      >
-        {label}
-      </div>
-      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-        {children}
+    <section id="research-lens" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.indigo)}>Research lens</div>
+      <h2 style={sectionHeadingStyle}>Different fields illuminate different parts of the same pattern.</h2>
+      <p style={leadStyle}>
+        The Gradient holds body, relationship, scale, and repair together. Research areas become useful when
+        they clarify one of those parts without being stretched beyond what they can support.
       </p>
-    </div>
-  );
-}
-
-// ─── CORE FOUNDATIONS COMPONENT ──────────────────────────────────
-
-function CoreFoundations() {
-  return (
-    <section style={{ marginBottom: 48 }}>
-      <h2
-        style={{
-          fontSize: 20,
-          fontWeight: 600,
-          color: TEXT.primary,
-          margin: "0 0 16px 0",
-        }}
-      >
-        Source Areas Behind the Gradient
-      </h2>
-
       <div
         style={{
-          padding: 24,
-          background: BG.card,
-          borderRadius: 12,
+          marginTop: 18,
           border: `1px solid ${BORDER.default}`,
-          borderLeft: `3px solid ${SPECTRUM.indigo}`,
+          borderRadius: RADIUS.lg,
+          overflowX: "auto",
+          background: BG.card,
         }}
       >
-        <p
+        <div
           style={{
-            fontSize: 14,
-            color: TEXT.secondary,
-            lineHeight: 1.8,
-            marginTop: 0,
-            marginBottom: 20,
+            display: "grid",
+            gridTemplateColumns: "minmax(150px, 1.1fr) repeat(4, minmax(120px, 1fr))",
+            background: BG.surface,
           }}
         >
-          The Gradient organizes several kinds of source knowledge into a single visual map:
-        </p>
-
-        <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-          {coreFoundations.map((item, i) => (
-            <li
-              key={i}
-              style={{
-                padding: "10px 0",
-                borderTop: i > 0 ? `1px solid ${hexToRgba(SPECTRUM.indigo, 0.08)}` : "none",
-                fontSize: 14,
-                color: TEXT.secondary,
-                lineHeight: 1.7,
-              }}
-            >
-              <strong style={{ color: TEXT.primary }}>{item.concept}</strong>
-              {" — "}
-              {item.explanation}
-            </li>
+          <div style={matrixHeaderStyle}>Research area</div>
+          {LENS_COLUMNS.map((column) => (
+            <div key={column.key} style={matrixHeaderStyle}>
+              {column.label}
+            </div>
           ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-// ─── MODEL CARD COMPONENT ───────────────────────────────────────
-
-function getVisiblePlacements(items = []) {
-  if (SHOW_FRAMEWORK_GROUNDING) return items;
-  return items.filter((item) => !/^\s*F\d{1,2}\b/.test(item));
-}
-
-function ModelCard({ model }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const visiblePlacements = getVisiblePlacements(model.tegBlueAdds);
-
-  return (
-    <div
-      style={{
-        marginBottom: 10,
-        background: BG.card,
-        borderRadius: 10,
-        border: `1px solid ${isOpen ? hexToRgba(SPECTRUM.indigo, 0.3) : BORDER.default}`,
-        borderLeft: `3px solid ${SPECTRUM.indigo}`,
-        overflow: "hidden",
-        transition: "border-color 0.2s ease",
-      }}
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          width: "100%",
-          padding: "14px 20px",
-          background: "transparent",
-          border: "none",
-          cursor: "pointer",
-          textAlign: "left",
-          display: "block",
-        }}
-      >
-        {/* Name + author + framework tags */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            flexWrap: "wrap",
-          }}
-        >
-          <span style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary }}>
-            {model.name}
-          </span>
-          <span style={{ fontSize: 13, color: TEXT.muted }}>— {model.author}</span>
-          <span
-            style={{
-              fontSize: 10,
-              fontWeight: 700,
-              fontFamily: FONT.mono,
-              padding: "3px 7px",
-              borderRadius: 4,
-              background: hexToRgba(SPECTRUM.azure, 0.1),
-              color: SPECTRUM.azure,
-            }}
-          >
-            {model.kind || "Comparative model"}
-          </span>
-          {SHOW_FRAMEWORK_GROUNDING && (
-            <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
-              {model.frameworks.map((f) => (
-                <span
-                  key={f}
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 600,
-                    fontFamily: FONT.mono,
-                    padding: "2px 6px",
-                    borderRadius: 3,
-                    background: hexToRgba(SPECTRUM.cobalt, 0.12),
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
-
-        {/* Core contribution as subtitle */}
-        <p
-          style={{
-            fontSize: 13,
-            color: TEXT.muted,
-            lineHeight: 1.6,
-            margin: "8px 0 0 0",
-          }}
-        >
-          {model.coreContribution}
-        </p>
-
-        {/* Expand indicator */}
-        <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-          <span style={{ fontSize: 12, color: TEXT.muted }}>
-            {isOpen ? "Hide details" : "Show Gradient placement"}
-          </span>
-          <span
-            style={{
-              fontSize: 14,
-              color: SPECTRUM.indigo,
-              transition: "transform 0.2s ease",
-              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-            }}
-          >
-            ▼
-          </span>
-        </div>
-      </button>
-
-      {/* Expanded content: 2-column */}
-      {isOpen && (
-        <div
-          style={{
-            padding: "0 20px 20px",
-            borderTop: `1px solid ${BORDER.default}`,
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: 16,
-              marginTop: 16,
-            }}
-          >
-            {/* Core contribution */}
-            <div
-              style={{
-                padding: 16,
-                background: hexToRgba(SPECTRUM.azure, 0.05),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.azure, 0.12)}`,
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.azure,
-                  marginBottom: 10,
-                  marginTop: 0,
-                  textTransform: "uppercase",
-                  letterSpacing: 0,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                Contribution
-              </h4>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: TEXT.secondary,
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                {model.coreContribution}
-              </p>
-            </div>
-
-            {/* What the Gradient places */}
-            <div
-              style={{
-                padding: 16,
-                background: hexToRgba(SPECTRUM.indigo, 0.05),
-                borderRadius: 8,
-                border: `1px solid ${hexToRgba(SPECTRUM.indigo, 0.12)}`,
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SPECTRUM.indigo,
-                  marginBottom: 10,
-                  marginTop: 0,
-                  textTransform: "uppercase",
-                  letterSpacing: 0,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                Gradient placement
-              </h4>
-              <ul style={{ margin: 0, paddingLeft: 16 }}>
-                {visiblePlacements.map((t, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      fontSize: 13,
-                      color: TEXT.secondary,
-                      lineHeight: 1.7,
-                      marginBottom: 6,
-                    }}
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {SHOW_FRAMEWORK_GROUNDING && (
-            <div
-              style={{
-                marginTop: 12,
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-              }}
-            >
-              <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
-              {model.frameworks.map((f) => (
-                <span
-                  key={f}
-                  style={{
-                    fontSize: 11,
-                    fontWeight: 600,
-                    fontFamily: FONT.mono,
-                    padding: "3px 8px",
-                    borderRadius: 4,
-                    background: hexToRgba(SPECTRUM.cobalt, 0.1),
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─── EXPANDABLE THEORY CARD ─────────────────────────────────────
-
-function ExpandableTheoryCard({ theory }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const domainColor = getDomainColor(theory.domain);
-
-  const coreConceptSection = theory.content?.find(
-    (s) => s.id === "core-concept" || s.title?.toLowerCase().includes("core")
-  );
-  const integrationSection = theory.content?.find(
-    (s) => s.id === "teg-blue-integration" || s.title?.toLowerCase().includes("teg-blue")
-  );
-  const sourcesSection = theory.content?.find(
-    (s) => s.id === "key-sources" || s.title?.toLowerCase().includes("source")
-  );
-
-  return (
-    <div
-      style={{
-        marginBottom: 10,
-        background: BG.card,
-        borderRadius: 10,
-        border: `1px solid ${isOpen ? hexToRgba(domainColor, 0.3) : BORDER.default}`,
-        borderLeft: `3px solid ${domainColor}`,
-        overflow: "hidden",
-        transition: "border-color 0.2s ease",
-      }}
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          width: "100%",
-          padding: "16px 20px",
-          background: "transparent",
-          border: "none",
-          cursor: "pointer",
-          textAlign: "left",
-          display: "block",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            marginBottom: 6,
-            flexWrap: "wrap",
-          }}
-        >
-          <span style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary }}>
-            {theory.title}
-          </span>
-          {theory.originAuthor && (
-            <span style={{ fontSize: 13, color: TEXT.muted }}>
-              — {theory.originAuthor}
-            </span>
-          )}
-          {SHOW_FRAMEWORK_GROUNDING && theory.frameworks && theory.frameworks.length > 0 && (
-            <div style={{ marginLeft: "auto", display: "flex", gap: 4 }}>
-              {theory.frameworks.map((f) => (
-                <span
-                  key={f}
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 600,
-                    fontFamily: FONT.mono,
-                    padding: "2px 6px",
-                    borderRadius: 3,
-                    background: hexToRgba(SPECTRUM.cobalt, 0.12),
-                    color: SPECTRUM.cobalt,
-                    textDecoration: "none",
-                  }}
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-          {theory.summary}
-        </p>
-
-        {theory.tags && theory.tags.length > 0 && (
-          <div style={{ display: "flex", gap: 6, marginTop: 10, flexWrap: "wrap" }}>
-            {theory.tags.slice(0, 5).map((tag, i) => (
-              <span
-                key={i}
-                style={{
-                  fontSize: 10,
-                  fontFamily: FONT.mono,
-                  padding: "2px 6px",
-                  background: hexToRgba(domainColor, 0.08),
-                  color: TEXT.muted,
-                  borderRadius: 3,
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-
-        <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
-          <span style={{ fontSize: 12, color: TEXT.muted }}>
-            {isOpen ? "Hide details" : "Show details"}
-          </span>
-          <span
-            style={{
-              fontSize: 14,
-              color: domainColor,
-              transition: "transform 0.2s ease",
-              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-            }}
-          >
-            ▼
-          </span>
-        </div>
-      </button>
-
-      {isOpen && (
-        <div
-          style={{
-            padding: "0 20px 20px",
-            borderTop: `1px solid ${BORDER.default}`,
-          }}
-        >
-          {coreConceptSection && (
-            <div style={{ marginTop: 16, marginBottom: 16 }}>
-              <h4
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: domainColor,
-                  marginBottom: 6,
-                  marginTop: 0,
-                  textTransform: "uppercase",
-                  letterSpacing: 0,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                {coreConceptSection.title}
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                {coreConceptSection.content}
-              </p>
-            </div>
-          )}
-
-          {SHOW_FRAMEWORK_GROUNDING && integrationSection && (
-            <div style={{ marginBottom: 16 }}>
-              <h4
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: domainColor,
-                  marginBottom: 6,
-                  marginTop: 0,
-                  textTransform: "uppercase",
-                  letterSpacing: 0,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                {integrationSection.id === "teg-blue-integration" ? "Gradient placement" : integrationSection.title}
-              </h4>
-              <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, margin: 0 }}>
-                {integrationSection.content}
-              </p>
-            </div>
-          )}
-
-          {sourcesSection && (
-            <div style={{ marginBottom: 16 }}>
-              <h4
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: domainColor,
-                  marginBottom: 6,
-                  marginTop: 0,
-                  textTransform: "uppercase",
-                  letterSpacing: 0,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                {sourcesSection.title}
-              </h4>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: TEXT.muted,
-                  lineHeight: 1.8,
-                  margin: 0,
-                  fontStyle: "italic",
-                }}
-              >
-                {sourcesSection.content}
-              </p>
-            </div>
-          )}
-
-          {SHOW_FRAMEWORK_GROUNDING && theory.connections && theory.connections.length > 0 && (
-            <div style={{ marginBottom: 16 }}>
-              <h4
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: domainColor,
-                  marginBottom: 8,
-                  marginTop: 0,
-                  textTransform: "uppercase",
-                  letterSpacing: 0,
-                  fontFamily: FONT.mono,
-                }}
-              >
-                Connections
-              </h4>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {theory.connections.map((conn, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontSize: 12,
-                      padding: "4px 10px",
-                      background: hexToRgba(domainColor, 0.08),
-                      color: TEXT.secondary,
-                      borderRadius: 4,
-                      border: `1px solid ${hexToRgba(domainColor, 0.15)}`,
-                    }}
-                  >
-                    {conn.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {SHOW_FRAMEWORK_GROUNDING && theory.frameworks && theory.frameworks.length > 0 && (
-            <div
-              style={{
-                marginTop: 16,
-                paddingTop: 16,
-                borderTop: `1px solid ${BORDER.default}`,
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                <span style={{ fontSize: 12, color: TEXT.muted }}>Referenced in:</span>
-                {theory.frameworks.map((f) => (
-                  <span
-                    key={f}
-                    style={{
-                      fontSize: 11,
-                      fontWeight: 600,
-                      fontFamily: FONT.mono,
-                      padding: "3px 8px",
-                      borderRadius: 4,
-                      background: hexToRgba(SPECTRUM.cobalt, 0.1),
-                      color: SPECTRUM.cobalt,
-                      textDecoration: "none",
-                    }}
-                  >
-                    {f}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─── GROUNDING AND TESTING METHOD COMPONENT ─────────────────────
-
-function ValidationMethod() {
-  const sourceMapUses = [
-    {
-      title: "Find the source area",
-      body: "Start with the research tradition, model, or tool that contributes a concept.",
-      color: SPECTRUM.azure,
-    },
-    {
-      title: "Read the Gradient placement",
-      body: "Look at what the source helps explain inside state-dependent perception, capacity, behavior, or repair.",
-      color: SPECTRUM.cobalt,
-    },
-    {
-      title: "Trace the tool surface",
-      body: "Notice where the same logic becomes a scale, map, emotional tool, or applied view.",
-      color: SPECTRUM.indigo,
-    },
-    {
-      title: "Name the research question",
-      body: "Separate the cited source from the claim that can be tested next.",
-      color: SPECTRUM.slate,
-    },
-  ];
-
-  return (
-    <section
-      style={{
-        marginBottom: 48,
-      }}
-    >
-      <h2
-        style={{
-          fontSize: 20,
-          fontWeight: 600,
-          color: TEXT.primary,
-          margin: "0 0 20px 0",
-        }}
-      >
-        Using This Source Map
-      </h2>
-
-      <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, margin: "0 0 18px" }}>
-        The page is meant to be read as a source map. Each entry follows the same four-part path.
-      </p>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
-          gap: 12,
-        }}
-      >
-        {sourceMapUses.map((item) => (
-          <div
-            key={item.title}
-            style={{
-              padding: 16,
-              background: BG.card,
-              borderRadius: 10,
-              border: `1px solid ${hexToRgba(item.color, 0.14)}`,
-              borderTop: `3px solid ${item.color}`,
-            }}
-          >
-            <h3 style={{ fontSize: 14, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
-              {item.title}
-            </h3>
-            <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
-              {item.body}
-            </p>
-          </div>
+        {LENS_ROWS.map((row, index) => (
+          <ResearchLensRow key={row.area} row={row} isLast={index === LENS_ROWS.length - 1} />
         ))}
       </div>
     </section>
   );
 }
+
+function ResearchAreasSection() {
+  return (
+    <section id="research-areas" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Research areas</div>
+      <h2 style={sectionHeadingStyle}>The framework draws from fields with different jobs.</h2>
+      <p style={leadStyle}>
+        These areas are not collapsed into one theory. They help explain different mechanisms, conditions,
+        capacities, patterns, and repair routes inside the Gradient.
+      </p>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
+          gap: 12,
+          marginTop: 18,
+        }}
+      >
+        {RESEARCH_AREAS.map((area) => (
+          <ResearchAreaCard key={area.title} area={area} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ClaimCareSection() {
+  return (
+    <section id="claim-care" style={{ marginBottom: 42 }}>
+      <div style={labelStyle(SPECTRUM.slate)}>Claim care</div>
+      <h2 style={sectionHeadingStyle}>Use research carefully, and only for the part it can support.</h2>
+      <p style={leadStyle}>
+        The clearest scientific page is not the page with the most names. It is the page where the reader can
+        see what kind of support is being claimed and where the claim stops.
+      </p>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
+          gap: 12,
+          marginTop: 18,
+        }}
+      >
+        {CLAIM_CARE.map((item) => (
+          <ClaimCareCard key={item.title} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WhereNextSection() {
+  return (
+    <section id="where-next" style={{ marginBottom: 32 }}>
+      <div style={labelStyle(SPECTRUM.azure)}>Where next</div>
+      <h2 style={sectionHeadingStyle}>Follow the question you are asking.</h2>
+      <div
+        style={{
+          background: BG.card,
+          borderRadius: RADIUS.md,
+          border: `1px solid ${BORDER.default}`,
+          overflow: "hidden",
+          marginTop: 16,
+        }}
+      >
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr style={{ background: BG.surface }}>
+              <th style={tableHeaderStyle}>For</th>
+              <th style={tableHeaderStyle}>Visit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <NavRow label="The core identity and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
+            <NavRow label="How to read claims responsibly" href="/methodology" linkText="Methodology" />
+            <NavRow label="Papers, studies, and publication records" href="/publications" linkText="Publications" />
+            <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function ResearchLensRow({ row, isLast }) {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "minmax(150px, 1.1fr) repeat(4, minmax(120px, 1fr))",
+        borderTop: `1px solid ${BORDER.default}`,
+        borderBottom: isLast ? "none" : "none",
+      }}
+    >
+      <div
+        style={{
+          ...matrixCellStyle,
+          color: TEXT.primary,
+          fontWeight: 650,
+          borderLeft: `3px solid ${row.color}`,
+          background: gradientCardBg(row.color, 0.045),
+        }}
+      >
+        {row.area}
+      </div>
+      {LENS_COLUMNS.map((column) => (
+        <div key={column.key} style={matrixCellStyle}>
+          {row[column.key]}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ResearchAreaCard({ area }) {
+  return (
+    <div
+      style={{
+        padding: 16,
+        minHeight: 214,
+        background: gradientCardBg(area.color, 0.055),
+        border: `1px solid ${hexToRgba(area.color, 0.16)}`,
+        borderTop: `3px solid ${area.color}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, lineHeight: 1.35, margin: "0 0 8px" }}>
+        {area.title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: "0 0 10px" }}>
+        {area.body}
+      </p>
+      <p style={{ fontSize: 12, color: TEXT.muted, lineHeight: 1.55, margin: 0 }}>
+        {area.contribution}
+      </p>
+    </div>
+  );
+}
+
+function ClaimCareCard({ item }) {
+  return (
+    <div
+      style={{
+        padding: 16,
+        background: BG.card,
+        border: `1px solid ${BORDER.default}`,
+        borderRadius: RADIUS.md,
+      }}
+    >
+      <h3 style={{ fontSize: 15, fontWeight: 650, color: TEXT.primary, margin: "0 0 8px" }}>
+        {item.title}
+      </h3>
+      <p style={{ fontSize: 13, color: TEXT.secondary, lineHeight: 1.65, margin: 0 }}>
+        {item.body}
+      </p>
+    </div>
+  );
+}
+
+function NavRow({ label, href, linkText, external }) {
+  const LinkEl = external ? "a" : Link;
+  const extraProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
+  return (
+    <tr style={{ borderTop: `1px solid ${BORDER.default}` }}>
+      <td style={{ ...tableCellStyle, color: TEXT.secondary }}>{label}</td>
+      <td style={tableCellStyle}>
+        <LinkEl href={href} {...extraProps} style={{ color: SPECTRUM.azure, textDecoration: "none", fontWeight: 500 }}>
+          {linkText}
+        </LinkEl>
+      </td>
+    </tr>
+  );
+}
+
+function labelStyle(color) {
+  return {
+    fontSize: 9,
+    fontWeight: 700,
+    fontFamily: FONT.mono,
+    textTransform: "uppercase",
+    letterSpacing: 0,
+    color,
+    marginBottom: 4,
+  };
+}
+
+const sectionHeadingStyle = {
+  fontSize: 21,
+  fontWeight: 700,
+  color: TEXT.primary,
+  lineHeight: 1.25,
+  margin: "0 0 10px",
+};
+
+const leadStyle = {
+  fontSize: 15,
+  color: TEXT.secondary,
+  lineHeight: 1.8,
+  margin: 0,
+  maxWidth: 790,
+};
+
+const bodyStyle = {
+  fontSize: 14,
+  color: TEXT.secondary,
+  lineHeight: 1.75,
+  margin: 0,
+};
+
+const matrixHeaderStyle = {
+  padding: "12px 14px",
+  fontSize: 10,
+  fontFamily: FONT.mono,
+  fontWeight: 700,
+  textTransform: "uppercase",
+  letterSpacing: 0,
+  color: TEXT.muted,
+  borderRight: `1px solid ${BORDER.default}`,
+};
+
+const matrixCellStyle = {
+  padding: "13px 14px",
+  fontSize: 12,
+  lineHeight: 1.5,
+  color: TEXT.secondary,
+  borderRight: `1px solid ${BORDER.default}`,
+};
+
+const tableHeaderStyle = {
+  padding: "12px 16px",
+  textAlign: "left",
+  fontSize: 11,
+  fontFamily: FONT.mono,
+  textTransform: "uppercase",
+  letterSpacing: 0,
+  color: TEXT.muted,
+};
+
+const tableCellStyle = {
+  padding: "13px 16px",
+  fontSize: 13,
+  lineHeight: 1.5,
+};
