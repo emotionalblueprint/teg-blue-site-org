@@ -333,8 +333,8 @@ export function generateSystemOverviewJsonLd() {
         {
           "@type": "ListItem",
           position: 5,
-          name: "Methodology and Publications",
-          description: "Methodology and publications explain claim status, limits, studies, papers, citation records, and future research routes.",
+          name: "Methodology",
+          description: "Methodology explains claim status, limits, responsible use, review needs, and future research routes.",
           url: `${BASE_URL}/methodology`
         },
         {

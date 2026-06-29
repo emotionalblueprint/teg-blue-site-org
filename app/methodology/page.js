@@ -9,7 +9,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Claim Layers", href: "#claim-layers", description: "Research, integration, tools, and testing." },
   { label: "Responsible Use", href: "#responsible-use", description: "Questions that keep impact visible." },
   { label: "Use and Limits", href: "#limits", description: "What the framework can and cannot do." },
-  { label: "Explore More", href: "#where-next", description: "Research, publications, and tools." },
+  { label: "Explore More", href: "#where-next", description: "Overview, research, and tools." },
 ];
 
 const FAQ_ITEMS = [
@@ -360,7 +360,7 @@ function WhereNextSection() {
           <tbody>
             <NavRow label="The core identity and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
             <NavRow label="Research fields connected to the framework" href="/scientific-foundations" linkText="Scientific Foundations" />
-            <NavRow label="Papers, studies, and publication records" href="/publications" linkText="Publications" />
+            <NavRow label="Project identity and research stance" href="/about" linkText="About" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>

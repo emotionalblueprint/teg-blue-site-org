@@ -8,7 +8,7 @@ const PAGE_DATES = {
   '/publications': '2026-04-06',
   '/frameworks-map': '2026-04-06',
   '/research-entry': '2026-04-06',
-  '/foundations': '2026-04-06',
+  '/foundations': '2026-06-29',
   '/epistemological-foundations': '2026-02-12',
   '/ai-safety': '2026-04-06',
   '/emotional-somatic-cycle': '2026-04-12',
@@ -17,12 +17,12 @@ const PAGE_DATES = {
   '/model/m3-regulation-capacities': '2026-04-05',
   '/model/m4-awareness-capacities': '2026-04-05',
   '/glossary': '2026-04-06',
-  '/methodology': '2026-04-06',
+  '/methodology': '2026-06-29',
   '/citations': '2026-04-06',
   '/collaborate': '2026-04-06',
   '/ethics': '2026-03-11',
-  '/about': '2026-04-06',
-  '/scientific-foundations': '2026-04-06',
+  '/about': '2026-06-29',
+  '/scientific-foundations': '2026-06-29',
   '/emotional-technology': '2026-04-06',
   '/framework/f1-emotional-gradient': '2026-04-05',
   '/framework/f2-awareness-calibration': '2026-04-05',
@@ -38,7 +38,6 @@ const PAGE_DATES = {
   '/framework/f12-two-information-systems': '2026-04-05',
   '/reframes': '2026-03-17',
   '/explore/labels': '2026-03-17',
-  '/how-it-works': '2026-03-21',
 }
 
 export default function sitemap() {
@@ -247,12 +246,6 @@ export default function sitemap() {
     {
       url: `${baseUrl}/explore/labels`,
       lastModified: new Date(PAGE_DATES['/explore/labels']),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/how-it-works`,
-      lastModified: new Date(PAGE_DATES['/how-it-works']),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

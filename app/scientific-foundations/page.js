@@ -27,7 +27,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Research Lens", href: "#research-lens", description: "What research helps make visible." },
   { label: "Research Areas", href: "#research-areas", description: "Fields connected to the framework." },
   { label: "Claim Care", href: "#claim-care", description: "How not to overread the page." },
-  { label: "Explore More", href: "#where-next", description: "Method, publications, and tools." },
+  { label: "Explore More", href: "#where-next", description: "Overview, method, and tools." },
 ];
 
 const LENS_COLUMNS = [
@@ -364,7 +364,7 @@ function WhereNextSection() {
           <tbody>
             <NavRow label="The core identity and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
             <NavRow label="How to read claims responsibly" href="/methodology" linkText="Methodology" />
-            <NavRow label="Papers, studies, and publication records" href="/publications" linkText="Publications" />
+            <NavRow label="Project identity and research stance" href="/about" linkText="About" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>

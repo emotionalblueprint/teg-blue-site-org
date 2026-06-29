@@ -43,7 +43,7 @@ const SIDEBAR_SECTIONS = [
   { label: "Pattern Reading", href: "#reading-patterns", description: "Impact, capacity, and response." },
   { label: "Capacities", href: "#what-changes", description: "What shifts with state." },
   { label: "Use and Limits", href: "#scope", description: "How to hold the framework responsibly." },
-  { label: "Explore More", href: "#where-next", description: "Research, method, publications, and tools." },
+  { label: "Explore More", href: "#where-next", description: "Research, method, and tools." },
 ];
 
 const OVERVIEW_CARDS = [
@@ -484,7 +484,7 @@ function WhereNextSection() {
           <tbody>
             <NavRow label="Research foundations" href="/scientific-foundations" linkText="Scientific Foundations" />
             <NavRow label="Method, claims, and limits" href="/methodology" linkText="Methodology" />
-            <NavRow label="Papers and studies" href="/publications" linkText="Publications" />
+            <NavRow label="Project identity and research stance" href="/about" linkText="About" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BG, BORDER, FONT, SPACING, SPECTRUM, TEXT, TRANSITION, hexToRgba } from "../styles/tokens";
 import { ThemeToggle } from "./theme/ThemeToggle";
@@ -10,14 +9,14 @@ import { isLive } from "../lib/live-paths";
 
 const EXPLORE_LINKS = [
   {
-    label: "TEG-Blue overview",
-    href: "/foundations",
-    description: "The Nervous System Gradient, research status, and applied tools.",
+    label: "About",
+    href: "/about",
+    description: "Project identity, founder, research stance, contact routes, and site distinction.",
   },
   {
-    label: "Scientific foundations",
-    href: "/scientific-foundations",
-    description: "Cited source fields that ground the Gradient and wider synthesis.",
+    label: "TEG-Blue overview",
+    href: "/foundations",
+    description: "The Nervous System Gradient, responsible pattern reading, scope, and research status.",
   },
   {
     label: "Methodology",
@@ -25,30 +24,15 @@ const EXPLORE_LINKS = [
     description: "Review status, claim calibration, testing roadmap, and limitations.",
   },
   {
-    label: "Publications",
-    href: "/publications",
-    description: "Initial computational study, working papers, and source records.",
-  },
-  {
-    label: "How it works",
-    href: "/how-it-works",
-    description: "Gradient, Engine, public tools, and research questions.",
-  },
-  {
-    label: "Citations",
-    href: "/citations",
-    description: "How to cite TEG-Blue, publications, and attribution language.",
+    label: "Scientific foundations",
+    href: "/scientific-foundations",
+    description: "Research areas that illuminate the Gradient and wider synthesis.",
   },
 ];
 
 export default function SiteHeader({ currentPath = "/" }) {
-  const [showStagedNav, setShowStagedNav] = useState(false);
   const localeLinks = getLiveLocaleLinks(currentPath);
-  const exploreLinks = EXPLORE_LINKS.filter((link) => showStagedNav || isLive(link.href));
-
-  useEffect(() => {
-    setShowStagedNav(["localhost", "127.0.0.1", "::1"].includes(window.location.hostname));
-  }, []);
+  const exploreLinks = EXPLORE_LINKS.filter((link) => isLive(link.href));
 
   return (
     <header
@@ -145,21 +129,6 @@ export default function SiteHeader({ currentPath = "/" }) {
                     boxShadow: "0 24px 60px rgba(4, 8, 18, 0.42)",
                   }}
                 >
-                  {showStagedNav && (
-                    <div
-                      style={{
-                        padding: "9px 10px 10px",
-                        marginBottom: 4,
-                        color: TEXT.muted,
-                        fontFamily: FONT.mono,
-                        fontSize: 10,
-                        lineHeight: 1.5,
-                        borderBottom: `1px solid ${BORDER.default}`,
-                      }}
-                    >
-                      Local preview. These routes stay unpublished until added to the live allowlist.
-                    </div>
-                  )}
                   {exploreLinks.map((link) => {
                     const active = currentPath === link.href;
                     return (

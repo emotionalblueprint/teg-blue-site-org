@@ -14,7 +14,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is the difference between teg-blue.org and teg-blue.com?",
-    answer: "teg-blue.org holds the framework, methodology, research foundations, publications, and collaboration routes. teg-blue.com holds practical interactive tools for reading emotional and nervous-system patterns.",
+    answer: "teg-blue.org holds the framework, methodology, and research foundations. teg-blue.com holds practical interactive tools for reading emotional and nervous-system patterns.",
   },
   {
     question: "Is TEG-Blue a clinical system?",
@@ -56,7 +56,7 @@ const SITE_CARDS = [
   {
     title: "teg-blue.org",
     subtitle: "Framework and research",
-    body: "The .org site holds the public framework: overview, methodology, scientific foundations, publications, ethics, and collaboration routes.",
+    body: "The .org site holds the public framework: overview, methodology, and scientific foundations.",
     href: "/foundations",
     linkText: "Start with the overview",
     color: SPECTRUM.azure,
@@ -381,7 +381,6 @@ function ContactSection() {
         <NavLink href="/foundations" label="TEG-Blue Overview" />
         <NavLink href="/methodology" label="Methodology" />
         <NavLink href="/scientific-foundations" label="Scientific Foundations" />
-        <NavLink href="/collaborate" label="Collaborate" />
       </div>
     </section>
   );
