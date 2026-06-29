@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is TEG-Blue's contribution?",
-    answer: "TEG-Blue integrates established research into a layered visual framework. The contribution is the placement of body, emotion, survival, identity, social patterns, and repair into one usable gradient.",
+    answer: "TEG-Blue integrates established research into a visual map. The contribution is the placement of body, emotion, survival, identity, social patterns, and repair into one usable gradient.",
   },
   {
     question: "Is TEG-Blue clinically validated?",
@@ -118,13 +118,13 @@ const LIMITS = [
 ];
 
 export const metadata = {
-  title: "Methodology | TEG-Blue",
-  description: "How to read TEG-Blue responsibly: observation, pattern, impact, claim status, use, limits, and review.",
+  title: "Methodology",
+  description: "How to read visible patterns responsibly: start from observation, locate the pattern, keep impact visible, and calibrate claims.",
   keywords: [
     "TEG-Blue methodology",
     "Nervous System Gradient",
     "claim status",
-    "visual framework",
+    "visual map",
     "responsible pattern reading",
     "state-shaped capacity",
     "research integration",
@@ -135,16 +135,16 @@ export const metadata = {
   },
   openGraph: {
     title: "Methodology - TEG-Blue",
-    description: "A public guide to reading TEG-Blue responsibly: method, claim layers, use, limits, and review.",
+    description: "A public guide to reading visible patterns responsibly: observation, pattern, impact, claim status, and limits.",
     url: "https://teg-blue.org/methodology",
     siteName: "TEG-Blue",
     type: "article",
     locale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Methodology - TEG-Blue",
-    description: "How to read TEG-Blue responsibly: method, claim layers, use, limits, and review.",
+    description: "How to read visible patterns responsibly: observation, pattern, impact, claim status, and limits.",
   },
 };
 
@@ -165,7 +165,7 @@ export default function MethodologyPage() {
             badge="METHODOLOGY"
             title="Methodology"
             subtitle="How to read TEG-Blue responsibly"
-            description="A guide to using the Nervous System Gradient without turning it into a diagnosis, a verdict, or a claim beyond its evidence."
+            description="A guide to reading visible patterns while keeping observation, interpretation, impact, and claim status separate."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -224,8 +224,8 @@ function OverviewSection() {
       <div style={labelStyle(SPECTRUM.azure)}>Reader guide</div>
       <h2 style={sectionHeadingStyle}>Methodology means knowing what kind of claim is being made.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions,
-        nervous systems, survival strategies, identity, and social patterns form and evolve.
+        TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
+        emotion, nervous systems, survival strategies, identity, social patterns, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         Its method is to read patterns through the Nervous System Gradient while keeping four things separate:

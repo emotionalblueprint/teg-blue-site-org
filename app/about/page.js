@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous systems, survival strategies, identity, social patterns, and repair.",
   },
   {
     question: "Who created TEG-Blue?",
@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is TEG-Blue a clinical system?",
-    answer: "No. TEG-Blue is an educational and research-facing visual framework. It does not diagnose, treat, or replace professional care.",
+    answer: "No. TEG-Blue is an educational and research-facing visual map. It does not diagnose, treat, or replace professional care.",
   },
 ];
 
@@ -99,8 +99,8 @@ const CONTACT_LINKS = [
 ];
 
 export const metadata = {
-  title: "About | TEG-Blue",
-  description: "About TEG-Blue: The Emotional Gradient Blueprint, a layered visual framework for emotional, nervous-system, relational, and social patterns.",
+  title: "About",
+  description: "About TEG-Blue, the project behind a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
   keywords: [
     "TEG-Blue",
     "The Emotional Gradient Blueprint",
@@ -110,23 +110,23 @@ export const metadata = {
     "nervous system patterns",
     "state-shaped capacity",
     "repair capacity",
-    "visual framework",
+    "visual map",
   ],
   alternates: {
     canonical: "https://teg-blue.org/about",
   },
   openGraph: {
     title: "About — TEG-Blue",
-    description: "The Emotional Gradient Blueprint: a layered visual framework for emotional, nervous-system, relational, and social patterns.",
+    description: "The project behind a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
     url: "https://teg-blue.org/about",
     siteName: "TEG-Blue",
     type: "profile",
     locale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "About — TEG-Blue",
-    description: "The Emotional Gradient Blueprint: a visual framework for emotional and social patterns.",
+    description: "The project behind a visual map of nervous-system patterns.",
   },
 };
 
@@ -147,7 +147,7 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="A layered visual framework for understanding how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve."
+            description="The project behind a visual map for patterns we can already see across nervous systems, relationships, groups, harm, accountability, and repair."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -182,7 +182,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About TEG-Blue",
             url: "https://teg-blue.org/about",
-            description: "About TEG-Blue: The Emotional Gradient Blueprint, a layered visual framework for emotional, nervous-system, relational, and social patterns.",
+            description: "About TEG-Blue, the project behind a visual map of nervous-system patterns across safety, threat, control, shutdown, accountability, and repair.",
             inLanguage: "en",
             mainEntity: {
               "@type": "Person",
@@ -223,7 +223,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateSpeakableJsonLd({
-              name: "About TEG-Blue | TEG-Blue",
+              name: "About TEG-Blue",
               url: "https://teg-blue.org/about",
               cssSelectors: ["article > p:first-of-type", "article h2", "article h2 + p"],
             })
@@ -240,8 +240,8 @@ function OverviewSection() {
       <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
       <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional and social patterns legible.</h2>
       <p style={leadStyle}>
-        TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions,
-        nervous systems, survival strategies, identity, and social patterns form and evolve.
+        TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
+        emotion, nervous systems, survival strategies, identity, social patterns, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         It shows how patterns that begin in the body can shape relationships, groups, institutions, and culture

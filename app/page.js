@@ -3,9 +3,9 @@ import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/co
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "TEG-Blue — The Nervous System Gradient";
+const TITLE = "TEG-Blue — A Visual Map of Nervous-System Patterns";
 const DESCRIPTION =
-  "A layered visual framework for understanding how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.";
+  "A visual map for patterns we can already see: how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.";
 
 export const metadata = {
   title: TITLE,
@@ -75,7 +75,7 @@ const gradientJsonLd = {
   isPartOf: {
     "@type": "ResearchProject",
     name: "TEG-Blue: The Emotional Gradient Blueprint",
-    description: "A layered visual framework mapping how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
+    description: "A visual map for patterns we can already see across emotion, survival, identity, social patterns, accountability, and repair.",
     url: "https://teg-blue.org",
   },
   about: positionsItemList,
@@ -90,13 +90,13 @@ const gradientJsonLd = {
 
 const faqJsonLd = generateFAQJsonLd(faq);
 const speakableJsonLd = generateSpeakableJsonLd({
-  name: "The Nervous System Gradient",
+  name: "A Visual Map of Nervous-System Patterns",
   url: "https://teg-blue.org",
   cssSelectors: ["#gradient-intro", "h1", ".faq-question"],
 });
 const breadcrumbJsonLd = generateBreadcrumbJsonLd([
   { name: "TEG-Blue", url: "/" },
-  { name: "The Nervous System Gradient", url: "/" },
+  { name: "A Visual Map of Nervous-System Patterns", url: "/" },
 ]);
 
 const HOME_CSS = `
@@ -199,29 +199,29 @@ function Ld({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
-const gradientDefinitionMoves = [
+const patternRecognitionMoves = [
   {
-    label: "Reads",
+    label: "Detects",
     title: "Safety, threat, and rest",
-    body: "The body is continually scanning the room: is this safe, is there a threat, can I connect with others?",
+    body: "The body is continually reading conditions: is this safe, is there pressure, can I stay connected, can I rest?",
     color: SPECTRUM.azure,
   },
   {
-    label: "Moves",
-    title: "Fluid state shifts",
-    body: "The nervous system moves fluidly across the gradient: some state shifts happen in milliseconds, others unfold across days or months.",
+    label: "Locates",
+    title: "Where the system is organised",
+    body: "The map helps place a pattern without freezing it into a label: settled, open, uncertain, defended, managing, controlling, or shut down.",
     color: SPECTRUM.sky,
   },
   {
-    label: "Organises",
-    title: "The whole organism",
-    body: "Wherever the system reorganises, body, mind, emotion, behaviour, perception, and repair capacity shift around that state.",
+    label: "Shows",
+    title: "What becomes available",
+    body: "State changes what can be perceived, felt, considered, expressed, interrupted, repaired, or protected.",
     color: SPECTRUM.indigo,
   },
   {
-    label: "Hardens",
-    title: "When threat lasts",
-    body: "With prolonged threat, patterns can become chronic: scanning for danger even when the present moment is safe.",
+    label: "Tracks",
+    title: "What repeats over time",
+    body: "When threat or pressure lasts, a passing response can become a recurring pattern that shapes relationships and choices.",
     color: "var(--accent-amber, #e9a23b)",
   },
 ];
@@ -406,7 +406,7 @@ function WhatGradientIsCard() {
           }}
         >
           <div>
-            <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure, #76e2ff)", margin: "0 0 10px" }}>What the gradient is</p>
+            <p style={{ ...sectionEyebrowStyle, color: "var(--spectrum-azure, #76e2ff)", margin: "0 0 10px" }}>Pattern recognition</p>
             <h2
               id="what-gradient-is-heading"
               style={{
@@ -422,10 +422,11 @@ function WhatGradientIsCard() {
               A continuous range of nervous-system organisation.
             </h2>
             <p style={{ margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
-              The gradient maps how the nervous system organises as it reads{" "}
-              <strong style={{ color: homeSurface.text, fontWeight: 650 }}>safety, threat, and whether rest is possible</strong>.
-              This is a live state map: where the system is configured it changes what the whole person can perceive, feel,
-              think, do, and repair.
+              The map starts from something observable: people, groups, and relationships do not stay organised in
+              one fixed way. Patterns move from{" "}
+              <strong style={{ color: homeSurface.text, fontWeight: 650 }}>rest and connection</strong> toward{" "}
+              <strong style={{ color: homeSurface.text, fontWeight: 650 }}>threat, management, control, or shutdown</strong>.
+              TEG-Blue helps place those movements without turning a passing state into a fixed identity.
             </p>
           </div>
 
@@ -485,7 +486,7 @@ function WhatGradientIsCard() {
             borderLeft: `1px solid ${homeSurface.border}`,
           }}
         >
-          {gradientDefinitionMoves.map((item, index) => (
+          {patternRecognitionMoves.map((item, index) => (
             <div
               key={item.label}
               style={{
@@ -562,7 +563,7 @@ export default function Home() {
                 color: TEXT.primary,
               }}
             >
-              <span style={{ display: "block", color: TEXT.primary }}>The Nervous System</span>
+              <span style={{ display: "block", color: TEXT.primary }}>A Visual Map of</span>
               <span
                 style={{
                   display: "inline-block",
@@ -573,20 +574,18 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Gradient
+                Nervous-System Patterns
               </span>
             </h1>
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
-              We do not stay the same in every situation: open and trusting one moment, guarded or controlling
-              the next. These shifts are not random. They are state changes in the nervous system.
+              Look closely and the patterns are already visible: open and trusting one moment, guarded, managing,
+              controlling, or shut down the next.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              The body keeps reading one question:{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
-              lands the whole system on the active gradient, from{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
+              TEG-Blue gives those familiar shifts a visual map. It follows how the nervous system reads{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>safety and danger</strong>, how capacity changes
+              with state, and how repeated responses can shape{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>relationships, groups, harm, accountability, and repair</strong>.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
@@ -598,9 +597,9 @@ export default function Home() {
                   background: hexToRgba(MAIN_ORG.accent, 0.1),
                 }}
               >
-                Read the overview
+                See the pattern map
               </a>
-              <a className="home-action" href="#science-heading">Source grounding</a>
+              <a className="home-action" href="#science-heading">Research grounding</a>
               <a className="home-action" href="#rights-heading">Use and attribution</a>
             </div>
           </div>
@@ -680,7 +679,7 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>Research</p>
             <h2 id="science-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
-              Research areas behind the Gradient
+              Research areas behind the map
             </h2>
             <p style={{ margin: "0 0 24px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
               The public framework names the integration, then shows which research areas help illuminate

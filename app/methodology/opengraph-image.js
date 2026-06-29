@@ -3,7 +3,7 @@ import { BLUE, SPECTRUM } from '@/src/styles/tokens'
 
 export const runtime = 'edge'
 
-export const alt = 'Methodology - How to read TEG-Blue responsibly'
+export const alt = 'Methodology - How to read visible patterns responsibly'
 export const size = {
   width: 1200,
   height: 630,
@@ -82,7 +82,7 @@ export default async function Image() {
               lineHeight: 1.1,
             }}
           >
-            How to read the Gradient responsibly
+            How to read patterns responsibly
           </div>
 
           <div

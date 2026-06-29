@@ -3,7 +3,7 @@ import { BLUE, SPECTRUM } from '@/src/styles/tokens'
 
 export const runtime = 'edge'
 
-export const alt = 'Scientific Foundations - Research areas behind the Nervous System Gradient'
+export const alt = 'Scientific Foundations - Research areas behind the TEG-Blue map'
 export const size = {
   width: 1200,
   height: 630,
@@ -83,7 +83,7 @@ export default async function Image() {
               lineHeight: 1.08,
             }}
           >
-            Research areas behind the Gradient
+            Research areas behind the map
           </div>
 
           <div

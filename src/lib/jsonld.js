@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "A layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.",
+  description: "A visual map for patterns we can already see: how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.",
   inLanguage: LANGUAGE,
 };
 
@@ -272,7 +272,7 @@ export function generateModelsJsonLd() {
       "regulation capacities",
       "regulatory states",
       "nervous system",
-      "visual framework",
+      "visual map",
       "applied models",
       "reading emotions",
       "emotional resonance",
@@ -287,25 +287,25 @@ export function generateSystemOverviewJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "TEG-Blue Overview — The Nervous System Gradient",
+    name: "TEG-Blue Overview",
     url: `${BASE_URL}/foundations`,
-    description: "Public overview of TEG-Blue: The Emotional Gradient Blueprint and the Nervous System Gradient across safety, threat, control, shutdown, restoration, and repair.",
+    description: "Public overview of TEG-Blue: a visual map of nervous-system patterns across safety, threat, control, shutdown, impact, accountability, and repair.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "Thing",
       name: "The Nervous System Gradient",
-      description: "A visual map of how nervous-system state shapes emotion, behaviour, relational patterns, and repair."
+      description: "A visual map of how nervous-system state shapes emotion, behaviour, relational patterns, accountability, and repair."
     },
     mainEntity: {
       "@type": "ItemList",
       name: "TEG-Blue Overview",
-      description: "The overview introduces TEG-Blue, the Nervous System Gradient, responsible pattern reading, research foundations, and applied tools.",
+      description: "The overview introduces the visual map, responsible pattern reading, research foundations, and applied tools.",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "Nervous System Gradient",
+          name: "Visual map of nervous-system patterns",
           description: "The central map of state-shaped capacity: how nervous-system state changes perception, emotion, body activation, behaviour, empathy, accountability, repair, and tempo.",
           url: BASE_URL
         },
@@ -320,7 +320,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 3,
           name: "Use and Limits",
-          description: "The Gradient is a framework for pattern reading that requires context, observation, and attention to impact.",
+          description: "The map supports pattern reading while requiring context, observation, and attention to impact.",
           url: `${BASE_URL}/foundations#scope`
         },
         {
@@ -341,7 +341,7 @@ export function generateSystemOverviewJsonLd() {
           "@type": "ListItem",
           position: 6,
           name: "Applied Tools",
-          description: "Interactive tools on teg-blue.com translate the Gradient into practical public use.",
+          description: "Interactive tools on teg-blue.com translate the map into practical public use.",
           url: "https://teg-blue.com/"
         }
       ]
@@ -367,12 +367,12 @@ export function generateScientificFoundationsJsonLd() {
     "@type": "WebPage",
     name: "Scientific Foundations — TEG-Blue",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "Research areas that help illuminate the Nervous System Gradient: emotion, state, attachment, trauma, cognition, communication, social patterns, and repair.",
+    description: "Research areas that help make parts of the TEG-Blue map visible: emotion, state, attachment, trauma, cognition, communication, social patterns, and repair.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
-      name: "Research Areas Connected to the Nervous System Gradient",
+      name: "Research Areas Connected to the TEG-Blue Map",
       description: "Research areas that help make emotional, nervous-system, relational, and social patterns visible without claiming that any one field contains the whole framework.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Emotion and Affective Neuroscience", description: "Emotion as biological and relational information" },
@@ -410,16 +410,16 @@ export function generateMethodologyJsonLd() {
     "@type": "WebPage",
     name: "Methodology - TEG-Blue",
     url: `${BASE_URL}/methodology`,
-    description: "How to read TEG-Blue responsibly: observation, pattern, impact, claim status, use, limits, and review.",
+    description: "How to read visible patterns responsibly: observation, pattern, impact, claim status, use, limits, and review.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
       name: "TEG-Blue Methodology",
-      description: "The public method for reading the Nervous System Gradient while keeping observation, interpretation, impact, and claim status separate.",
+      description: "The public method for reading nervous-system patterns while keeping observation, interpretation, impact, and claim status separate.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Observation", description: "Start with what can be seen: behaviour, context, repetition, and relational effect." },
-        { "@type": "ListItem", position: 2, name: "Pattern Reading", description: "Use the Gradient to ask whether a pattern is moving toward safety, threat, control, shutdown, restoration, or repair." },
+        { "@type": "ListItem", position: 2, name: "Pattern Reading", description: "Use the map to ask whether a pattern is moving toward safety, threat, control, shutdown, restoration, or repair." },
         { "@type": "ListItem", position: 3, name: "Impact and Response", description: "Track effect on clarity, autonomy, safety, accountability, and repair before choosing support, boundary, protection, accountability, or further study." },
         { "@type": "ListItem", position: 4, name: "Claim Status", description: "Keep research support, TEG-Blue integration, applied tools, and review as separate layers." }
       ]
@@ -431,7 +431,7 @@ export function generateMethodologyJsonLd() {
       "claim status",
       "state-shaped capacity",
       "research integration",
-      "visual framework",
+      "visual map",
       "repair capacity",
       "framework limits"
     ]

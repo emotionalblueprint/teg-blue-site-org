@@ -166,7 +166,7 @@ export default function ScientificFoundationsPage() {
           <ResearcherHero
             badge="RESEARCH FOUNDATIONS"
             title="Scientific Foundations"
-            subtitle="Research areas behind the Gradient"
+            subtitle="Research areas behind the map"
             description="A public map of the fields that help make emotional, nervous-system, relational, and social patterns visible."
           />
         }
