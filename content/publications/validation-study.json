@@ -2,9 +2,11 @@
   "slug": "validation-study",
   "type": "publication",
   "title": "Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient",
+  "publicTitle": "Initial natural-language study of regulatory-state markers",
   "status": "source-verified",
 
   "summary": "Initial computational study of regulatory-state markers in natural language, pre-registered as the Four-Mode Gradient. Using analysis of 10,000+ Reddit AITA posts, four regulatory-state patterns — Connection, Protection, Strategic Management, and Domination — were explored using markers drawn from polyvagal theory, attachment research, Gottman's contempt markers, and Bandura's moral disengagement theory. The study is grounded in a two-system architecture: an Emotional Somatic System (ESS) that detects and responds before conscious awareness, and a Cognitive-Logical System (CLS) that builds from whatever data reaches it.",
+  "publicSummary": "A DOI research record analyzing 10,000+ Reddit AITA conflict narratives for state-dependent language markers. In current TEG-Blue language, it reports findings relevant to feedback response, complexity, escalation, de-escalation, and how nervous-system state may appear in conflict narratives.",
   "keyFinding": "Interoceptive Self-Awareness (SEA) — the bridge between the ESS and CLS, operationalized through complexity markers (ability to hold multiple perspectives) — may help distinguish de-escalation toward Connection from escalation toward Strategic Management/Domination when challenged. In this sample, de-escalators showed 78% higher complexity marker rates than escalators.",
 
   "author": "Anna Paretas-Artacho",

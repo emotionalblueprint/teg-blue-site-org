@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'TEG-Blue Publications - Research Grounding and Working Papers'
+export const alt = 'TEG-Blue Publications and Research Records'
 export const size = {
   width: 1200,
   height: 630,
@@ -89,7 +89,7 @@ export default async function Image() {
               marginBottom: 32,
             }}
           >
-            Research grounding, working papers, and source traces
+            DOI records, working papers, dataset notes, and citation context
           </div>
 
           {/* Featured study highlight */}

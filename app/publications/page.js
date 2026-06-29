@@ -6,8 +6,8 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 
 const FAQ_ITEMS = [
   {
-    question: "What has TEG-Blue published?",
-    answer: "TEG-Blue has published an initial computational study analyzing 10,000+ natural conflict narratives (Reddit AITA posts) to test whether regulatory-state markers could be detected in unstructured text (DOI: 10.5281/zenodo.19472342), plus a Theoretical Architecture Contribution Record documenting research grounding across the framework.",
+    question: "What does this page collect?",
+    answer: "This page collects TEG-Blue research records: DOI publications, working papers, dataset notes, and citation context. Across the site, TEG-Blue explains the work through the Nervous System Gradient, the TEG-Blue Engine, and gradient-based tools; individual records preserve their own titles and version history.",
   },
   {
     question: "What did the initial natural-language study report?",
@@ -15,13 +15,13 @@ const FAQ_ITEMS = [
   },
   {
     question: "Are TEG-Blue datasets publicly available?",
-    answer: "TEG-Blue aims to publish methods, data, and code where appropriate for reproducibility and independent replication. Dataset availability depends on privacy, licensing, and study-specific constraints.",
+    answer: "TEG-Blue aims to publish methods, code, and replication-ready descriptions where appropriate. Dataset access depends on privacy, licensing, platform terms, and study-specific constraints.",
   },
 ];
 
 export const metadata = {
-  title: "Publications & Research Grounding | TEG-Blue",
-  description: "Publications, working papers, source traces, and research-grounding materials from TEG-Blue, including an initial computational study of regulatory-state markers in natural language.",
+  title: "Publications & Research Records",
+  description: "TEG-Blue research records: DOI publications, working papers, dataset notes, citation context, and research context for the Nervous System Gradient.",
   keywords: [
     "TEG-Blue publications",
     "emotional regulation research papers",
@@ -40,8 +40,8 @@ export const metadata = {
     canonical: "https://teg-blue.org/publications",
   },
   openGraph: {
-    title: "Publications — TEG-Blue",
-    description: "Publications, working papers, source traces, and research-grounding materials from TEG-Blue.",
+    title: "Publications & Research Records — TEG-Blue",
+    description: "DOI records, working papers, dataset notes, and citation context for TEG-Blue.",
     url: "https://teg-blue.org/publications",
     siteName: "TEG-Blue",
     type: "website",
@@ -49,15 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Publications — TEG-Blue",
-    description: "Research papers, working questions, and source traces for TEG-Blue.",
-  },
-  other: {
-    'citation_title': 'Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient',
-    'citation_author': 'Anna Paretas-Artacho',
-    'citation_publication_date': '2026/04',
-    'citation_doi': '10.5281/zenodo.19472342',
-    'citation_technical_report_institution': 'TEG-Blue Research',
+    title: "Publications & Research Records — TEG-Blue",
+    description: "Research records and citation context for TEG-Blue.",
   },
 };
 
@@ -66,7 +59,7 @@ const datasetSchema = {
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "TEG-Blue Natural-Language Regulatory-State Study Dataset",
-  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments for an initial computational study of regulatory-state markers.",
+  "description": "10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous-system state markers, complexity markers, and community moral judgments for the initial TEG-Blue natural-language study.",
   "url": "https://doi.org/10.5281/zenodo.19472342",
   "identifier": "10.5281/zenodo.19472342",
   "keywords": [
@@ -107,37 +100,43 @@ const datasetSchema = {
   ]
 };
 
-const scholarlyArticleSchema = {
+const getPublicationsCollectionSchema = (publications) => ({
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "Detecting Regulatory States in Natural Language: A Validation Study of the Four Nervous System States Gradient",
-  "alternativeHeadline": "Initial Computational Study of Regulatory-State Markers",
-  "author": {
-    "@type": "Person",
-    "name": "Anna Paretas-Artacho",
-    "identifier": "https://orcid.org/0009-0005-2394-7162"
-  },
-  "datePublished": "2026-04",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Zenodo"
-  },
-  "identifier": "10.5281/zenodo.19472342",
-  "url": "https://doi.org/10.5281/zenodo.19472342",
+  "@type": "CollectionPage",
+  "name": "TEG-Blue Publications and Research Records",
+  "description": "DOI publications, working papers, dataset notes, and citation context for TEG-Blue.",
+  "url": "https://teg-blue.org/publications",
   "about": [
-    "Emotional regulation",
-    "Natural language processing",
-    "Polyvagal theory",
-    "Nervous System Gradient"
+    {
+      "@type": "Thing",
+      "name": "Nervous System Gradient"
+    },
+    {
+      "@type": "Thing",
+      "name": "TEG-Blue Engine"
+    },
+    {
+      "@type": "Thing",
+      "name": "Gradient-based tools"
+    }
   ],
-  "abstract": "A computational analysis of 10,000+ natural conflict narratives testing whether regulatory-state markers could be detected in unstructured text. Reported findings include detectable state-pattern markers, 33.8% of individuals escalating toward Strategic Management/Domination when challenged, 22.2% de-escalating toward Connection, and 78% higher complexity-marker rates among de-escalators."
-};
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": publications.map((publication, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://teg-blue.org/publications/${publication.slug}`,
+      "name": publication.publicTitle || publication.title,
+      "description": publication.publicSummary || publication.summary
+    }))
+  }
+});
 
 const SIDEBAR_SECTIONS = [
-  { label: "Initial Study", href: "#initial-study", description: "Computational analysis of 10,000+ natural conflict narratives." },
-  { label: "All Publications", href: "#all-publications", description: "Published research papers, working papers, and theoretical architecture documents." },
-  { label: "Datasets", href: "#datasets", description: "Dataset status for the initial study and ongoing research." },
-  { label: "How to Cite", href: "#how-to-cite", description: "Citation format and examples for academic use." },
+  { label: "Language Study", href: "#initial-study", description: "Natural-language analysis of 10,000+ conflict narratives." },
+  { label: "Research Records", href: "#all-publications", description: "Published records, working papers, and version history." },
+  { label: "Dataset Notes", href: "#datasets", description: "Dataset status for the initial study and ongoing research." },
+  { label: "Citation", href: "#how-to-cite", description: "How to cite specific records and public pages." },
   { label: "Author", href: "#author", description: "About the research team and collaboration opportunities." },
 ];
 
@@ -159,7 +158,7 @@ export default function PublicationsPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(scholarlyArticleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPublicationsCollectionSchema(publications)) }}
       />
 
       <SiteHeader currentPath="/publications" />
@@ -167,9 +166,9 @@ export default function PublicationsPage() {
       <PageLayout
         header={
           <ResearcherHero
-            badge="PUBLICATIONS"
-            title="Publications & Research Grounding"
-            description="Publications, working papers, source traces, and research-grounding materials from TEG-Blue."
+            badge="RESEARCH RECORDS"
+            title="Publications & Research Records"
+            description="DOI publications, working papers, dataset notes, and citation context for the Nervous System Gradient and TEG-Blue tools."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -177,7 +176,7 @@ export default function PublicationsPage() {
         {/* Initial study card */}
         <section id="initial-study" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            What did the initial TEG-Blue study report?
+            Initial natural-language study
           </h2>
           <div
             style={{
@@ -206,10 +205,10 @@ export default function PublicationsPage() {
               </span>
             </div>
             <h3 style={{ fontSize: 17, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              Detecting Nervous System States in Natural Language
+              Regulatory-state markers in conflict narratives
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-              A computational analysis of 10,000+ natural conflict narratives testing whether regulatory-state markers could be detected in unstructured text.
+              A computational study of 10,000+ natural conflict narratives asked whether language markers associated with regulatory state could be detected in unstructured text.
             </p>
             <div style={{ fontSize: 13, fontFamily: FONT.mono, color: TEXT.muted, marginBottom: 16 }}>
               Anna Paretas-Artacho · April 2026 · DOI: 10.5281/zenodo.19472342
@@ -223,7 +222,7 @@ export default function PublicationsPage() {
               }}
             >
               <h4 style={{ fontSize: 13, fontWeight: 600, color: TEXT.primary, marginBottom: 10 }}>
-                Reported Findings
+                What the record reports
               </h4>
               <ul style={{ paddingLeft: 18, margin: 0, fontSize: 13, color: TEXT.secondary, lineHeight: 1.7 }}>
                 <li style={{ marginBottom: 4 }}>Regulatory-state marker patterns were detected in the sample</li>
@@ -233,7 +232,7 @@ export default function PublicationsPage() {
                 <li>State classifications correlated with independent community moral judgments</li>
               </ul>
               <p style={{ marginTop: 12, fontSize: 11, color: TEXT.muted, lineHeight: 1.6 }}>
-                State labels shown in current naming (Connection · Protection · Strategic Management · Domination). The published study on Zenodo reported these as Safety &amp; Openness · Threat &amp; Defence · Strategy &amp; Management · Power &amp; Dominance — corresponding constructs. These findings do not validate clinical use or the whole TEG-Blue framework.
+                State labels shown in current naming (Connection · Protection · Strategic Management · Domination). The published study on Zenodo used earlier labels for the corresponding constructs. Use this record as study-level evidence for marker detection and state-dependent language patterns; broader Gradient and tool claims are evaluated claim by claim.
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -254,7 +253,7 @@ export default function PublicationsPage() {
                   textDecoration: "none",
                 }}
               >
-                View on Zenodo →
+                Open DOI Record →
               </a>
               <Link
                 href="/publications/validation-study"
@@ -272,7 +271,7 @@ export default function PublicationsPage() {
                   textDecoration: "none",
                 }}
               >
-                Full Details
+                Read Record Page
               </Link>
             </div>
           </div>
@@ -282,8 +281,11 @@ export default function PublicationsPage() {
         {publications.length > 0 && (
           <section id="all-publications" style={{ marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-              All Publications
+              Research records
             </h2>
+            <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
+              Cards use the site's current language. Each record page preserves the published title, DOI, and version history for citation.
+            </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
               {publications.map((pub) => (
                 <PublicationCard key={pub.slug} publication={pub} />
@@ -295,7 +297,7 @@ export default function PublicationsPage() {
         {/* Datasets */}
         <section id="datasets" style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: TEXT.primary, marginBottom: 16 }}>
-            Are TEG-Blue datasets publicly available?
+            Dataset notes
           </h2>
           <div
             style={{
@@ -307,10 +309,10 @@ export default function PublicationsPage() {
             }}
           >
             <h3 style={{ fontSize: 15, fontWeight: 600, color: TEXT.primary, marginBottom: 8 }}>
-              AITA Conflict Narratives Dataset
+              AITA conflict narrative sample
             </h3>
             <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 12 }}>
-              10,000+ anonymized conflict narratives from Reddit AITA, annotated with nervous system state markers, complexity markers, and community moral judgments.
+              10,000+ public conflict narratives were analyzed for state-marker patterns, complexity markers, and community judgment relationships in the initial natural-language study.
             </p>
             <span
               style={{
@@ -323,7 +325,7 @@ export default function PublicationsPage() {
                 borderRadius: 4,
               }}
             >
-              Status: Available on request for research purposes
+              Status: Research access reviewed case by case
             </span>
           </div>
         </section>
@@ -334,8 +336,11 @@ export default function PublicationsPage() {
             How to cite
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.8, marginBottom: 12 }}>
-            Cite the initial natural-language study by its DOI: 10.5281/zenodo.19472342.
+            Use DOI records when citing a specific publication. Use the current public page title when citing a web overview, framework page, or source map.
           </p>
+          <Link href="/citations" style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}>
+            Citation guidance →
+          </Link>
         </section>
 
         {/* Contact */}
@@ -349,10 +354,10 @@ export default function PublicationsPage() {
           }}
         >
           <h2 style={{ fontSize: 16, fontWeight: 600, color: TEXT.primary, marginBottom: 12 }}>
-            Request access or collaborate
+            Request research access or collaborate
           </h2>
           <p style={{ fontSize: 14, color: TEXT.secondary, lineHeight: 1.7, marginBottom: 16 }}>
-            For dataset access, replication support, or collaboration inquiries.
+            For replication questions, dataset access requests, and research collaboration.
           </p>
           <a
             href="mailto:research@teg-blue.org"
@@ -387,7 +392,7 @@ export default function PublicationsPage() {
             rel="noopener noreferrer"
             style={{ fontSize: 13, fontFamily: FONT.mono, color: SPECTRUM.azure, textDecoration: "none" }}
           >
-            Emotional Tools (teg-blue.com) →
+            Applied tools on teg-blue.com →
           </a>
         </div>
 
@@ -430,6 +435,9 @@ export default function PublicationsPage() {
 
 function PublicationCard({ publication }) {
   const color = getContentTypeColor(publication.type);
+  const displayTitle = publication.publicTitle || publication.title;
+  const displaySummary = publication.publicSummary || publication.summary;
+  const showRecordTitle = publication.publicTitle && publication.publicTitle !== publication.title;
 
   return (
     <Link
@@ -468,8 +476,22 @@ function PublicationCard({ publication }) {
             lineHeight: 1.3,
           }}
         >
-          {publication.title}
+          {displayTitle}
         </h2>
+
+        {showRecordTitle && (
+          <p
+            style={{
+              fontSize: 11,
+              fontFamily: FONT.mono,
+              color: TEXT.hint,
+              lineHeight: 1.5,
+              marginBottom: 8,
+            }}
+          >
+            Published record title: {publication.title}
+          </p>
+        )}
 
         <p
           style={{
@@ -479,7 +501,7 @@ function PublicationCard({ publication }) {
             marginBottom: 10,
           }}
         >
-          {publication.summary}
+          {displaySummary}
         </p>
 
         <div

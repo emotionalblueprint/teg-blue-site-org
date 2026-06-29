@@ -2,9 +2,11 @@
   "slug": "architecture-paper",
   "type": "working-paper",
   "title": "TEG-Blue: The Emotional Gradient Blueprint — An Integrative Framework Mapping How the Nervous System Organises Behavior",
+  "publicTitle": "Original contribution record for the TEG-Blue framework",
   "status": "source-verified",
 
   "summary": "Theoretical architecture of TEG-Blue, mapping how the nervous system organises behaviour across scales. Grounded in a two-system model: an Emotional Somatic System (ESS) that detects and responds before conscious awareness, and a Cognitive-Logical System (CLS) that builds narrative from whatever data reaches it. Four components: Four Foundational Models (M1-M4) mapping the Emotional Somatic Cycle, Twelve Frameworks (F1-F12) explaining origin and scaling, Emotional Tools, and applied computational infrastructure.",
+  "publicSummary": "A DOI record documenting the source-grounded development and earlier architecture of TEG-Blue. It is useful as version history, authorship, and attribution context for the framework now explained through the Nervous System Gradient, the TEG-Blue Engine, and gradient-based tools.",
   "keyFinding": "The relationship between the ESS and CLS — specifically, whether the interoceptive channel connecting them is open — determines which path the Emotional Somatic Cycle follows: biological restoration (Path A) or cognitive override and accumulation (Path B).",
 
   "author": "Anna Paretas-Artacho",

@@ -36,11 +36,14 @@ const AUTHOR = {
 // ─── PUBLICATION JSON-LD ─────────────────────────────
 
 export function generatePublicationJsonLd(node) {
+  const publicDescription = node.publicSummary || node.summary;
+
   return {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     name: node.title,
     headline: node.title,
+    ...(node.publicTitle && { alternativeHeadline: node.publicTitle }),
     author: AUTHOR,
     datePublished: node.date,
     dateModified: node.dateModified || node.date,
@@ -54,8 +57,8 @@ export function generatePublicationJsonLd(node) {
       sameAs: `https://doi.org/${node.doi}`,
     }),
     url: `${RESEARCH_BASE}/publications/${node.slug}`,
-    abstract: node.summary,
-    description: node.summary,
+    abstract: publicDescription,
+    description: publicDescription,
     keywords: node.tags,
     isPartOf: TEG_BLUE_PROJECT,
     publisher: AUTHOR,
@@ -513,13 +516,16 @@ export function generateTheoreticalFoundationsJsonLd() {
 
 export function generateMetaTags(node) {
   const url = getNodeUrl(node);
+  const pageTitle = node.publicTitle || node.title;
+  const pageDescription = node.publicSummary || node.summary;
+
   return {
-    title: `${node.title} — TEG-Blue Research`,
-    description: node.summary,
+    title: `${pageTitle} — TEG-Blue Research`,
+    description: pageDescription,
     canonical: url,
     openGraph: {
-      title: node.title,
-      description: node.summary,
+      title: pageTitle,
+      description: pageDescription,
       url,
       type: "article",
       siteName: "TEG-Blue Research",
@@ -528,7 +534,7 @@ export function generateMetaTags(node) {
       "DC.title": node.title,
       "DC.creator": node.author || "TEG-Blue Research",
       "DC.subject": node.tags?.join(", "),
-      "DC.description": node.summary,
+      "DC.description": pageDescription,
       "DC.type": node.type,
       ...(node.doi && { "DC.identifier": `doi:${node.doi}` }),
     },
