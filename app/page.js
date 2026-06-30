@@ -578,7 +578,7 @@ export default function Home() {
                 color: TEXT.primary,
               }}
             >
-              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>The Nervous System</span>{" "}
+              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>A Visual Map of</span>{" "}
               <span
                 style={{
                   display: "inline-block",
@@ -589,32 +589,32 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Gradient
+                Nervous-System Patterns
               </span>
             </h1>
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
-              Understand how nervous-system state changes what perception, time, empathy, and repair can do.
-              The same person can have a wide field in safety and a narrowed field under threat.
+              We do not stay the same in every situation: open and trusting one moment, guarded or controlling
+              the next. These shifts are not random. They are state changes in the nervous system.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              The Gradient is a map of state-shaped capacity:{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>how wide perception is</strong>,{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>how rushed or open time feels</strong>,{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>whether empathy stays available</strong>, and{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>what kind of repair can land</strong>. It runs from rest
-              and connection into protection, strategic management, and domination, with shutdown shown as a fallback when mobilisation cannot form.
+              The body keeps reading one question:{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
+              lands the whole system on the active gradient, from{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
                 className="home-action primary"
-                href="#positions-heading"
+                href="#gradient-map"
                 style={{
                   color: MAIN_ORG.accent,
                   borderColor: hexToRgba(MAIN_ORG.accent, 0.48),
                   background: hexToRgba(MAIN_ORG.accent, 0.1),
                 }}
               >
-                See the pattern map
+                See the Gradient Map
               </a>
               <a className="home-action" href="#science-heading">Research grounding</a>
               <a className="home-action" href="#rights-heading">Use and attribution</a>
@@ -629,7 +629,7 @@ export default function Home() {
         </section>
 
         {/* Interactive instrument */}
-        <section style={{ ...sectionStyle, paddingBottom: 56 }}>
+        <section id="gradient-map" style={{ ...sectionStyle, paddingBottom: 56 }}>
           <EmotionalGradient />
         </section>
 
@@ -638,18 +638,18 @@ export default function Home() {
           <div style={cardStyle}>
             <p style={sectionEyebrowStyle}>What the gradient explains</p>
             <h2 id="explains-heading" style={{ margin: "0 0 8px", fontSize: "clamp(22px, 3.4vw, 30px)", letterSpacing: 0, color: TEXT.primary }}>
-              From personal patterns to societal systems
+              From state shifts to relationship patterns
             </h2>
             <p style={{ margin: "0 0 20px", maxWidth: 720, fontSize: 15, lineHeight: 1.7, color: TEXT.secondary }}>
-              The same shape can be read from one nervous system to families, institutions, and whole groups. The route is cumulative: repeated state patterns become relational habits, then group norms, rules, and power arrangements. It helps explain how harm forms while keeping impact, accountability, and repair in view.
+              The Gradient is useful at the scale where people meet: one nervous system, one interaction, and the patterns that repeat between people. A state shift changes perception, tempo, emotion, empathy, and repair; when the same shifts repeat, they can become familiar relational patterns. That helps explain how distance, harm, protection, or repair form while keeping impact, accountability, and boundaries in view.
             </p>
             <ul style={{ margin: "0 0 28px", padding: 0, listStyle: "none", display: "grid", gap: 14 }}>
               {[
-                ["Why care is not always enough", "under threat, empathy narrows even when intent is good."],
-                ["How harm can become normal", "when empathy stays offline for too long, the cost to others stops being fully registered."],
-                ["How protection hardens into control", "repeated protection can become rule, punishment, exclusion, or system logic."],
-                ["Language for shifts as they happen", "recognised as state changes without reducing people to character."],
-                ["A route back to connection", "repair begins with the state the system is actually in, and with enough safety for empathy to return."],
+                ["Why care is not always enough", "under threat, empathy and repair can narrow even when care is present."],
+                ["How rupture repeats", "the same state pattern can return as distance, defensiveness, withdrawal, or pressure for certainty."],
+                ["How protection turns into control", "repeated self-protection can become managing, testing, pursuing, avoiding, or pushing back."],
+                ["Language for shifts as they happen", "recognised as state changes without turning one moment into a whole-person verdict."],
+                ["A route back to connection", "repair begins with the state the system is actually in, and with enough safety for impact and empathy to land."],
               ].map(([head, body]) => (
                 <li key={head} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <span style={{ flexShrink: 0, marginTop: 9, width: 6, height: 6, borderRadius: "50%", background: "var(--spectrum-indigo)" }} aria-hidden="true" />
