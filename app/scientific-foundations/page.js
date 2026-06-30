@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What research does TEG-Blue draw from?",
-    answer: "TEG-Blue draws from established research areas including affective neuroscience, autonomic physiology, attachment research, trauma research, developmental science, emotion science, cognitive science, social psychology, sociology, and related fields.",
+    answer: "TEG-Blue draws from established research areas including affective neuroscience, Polyvagal Theory, autonomic and stress physiology, attachment research, trauma research, developmental science, emotion science, cognitive science, social psychology, sociology, and related fields.",
   },
   {
     question: "Does this research validate TEG-Blue as a whole?",
@@ -40,6 +40,14 @@ const LENS_ROWS = [
     repetition: "Signals can become familiar",
     repair: "Signals become nameable",
     color: SPECTRUM.azure,
+  },
+  {
+    area: "Polyvagal Theory",
+    body: "Autonomic hierarchy, neuroception",
+    relationship: "Social engagement cues",
+    repetition: "Safety reads can pattern",
+    repair: "Enough safety supports return",
+    color: SPECTRUM.blue,
   },
   {
     area: "Autonomic and stress physiology",
@@ -81,6 +89,12 @@ const RESEARCH_AREAS = [
     body: "Helps explain emotion as a body-based signal system with information about safety, threat, need, boundary, value, and action readiness.",
     contribution: "Supports the view that emotion carries information about safety, threat, need, boundary, value, and action readiness.",
     color: SPECTRUM.azure,
+  },
+  {
+    title: "Polyvagal Theory and neuroception",
+    body: "Helps explain autonomic hierarchy, neuroception, social engagement, mobilisation, shutdown, and why relational cues can change available capacity.",
+    contribution: "Supports the Gradient's attention to safety/threat reading, social engagement, mobilisation, immobilisation, and state-shaped repair capacity.",
+    color: SPECTRUM.blue,
   },
   {
     title: "Autonomic physiology and stress research",
@@ -218,10 +232,11 @@ function OverviewSection() {
         the whole framework. Each field remains itself. Each contributes something specific.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 800 }}>
-        Affective neuroscience helps explain emotion as signal. Autonomic physiology helps explain state.
-        Attachment and development help explain relational safety. Trauma research helps explain chronic
-        adaptation. Social research helps explain context, roles, power, and conditions for repair. TEG-Blue places
-        those parts in relation.
+        Affective neuroscience helps explain emotion as signal. Polyvagal Theory helps explain neuroception,
+        autonomic hierarchy, social engagement, mobilisation, and shutdown. Autonomic and stress physiology helps
+        explain state, activation, load, and return. Attachment and development help explain relational safety.
+        Trauma research helps explain chronic adaptation. Social research helps explain context, roles, power, and
+        conditions for repair. TEG-Blue places those parts in relation.
       </p>
       <div
         style={{

@@ -367,7 +367,7 @@ export function generateScientificFoundationsJsonLd() {
     "@type": "WebPage",
     name: "Scientific Foundations — TEG-Blue",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "Research areas that help make parts of the TEG-Blue map visible: emotion, state, attachment, trauma, cognition, communication, relationship patterns, context, and repair.",
+    description: "Research areas that help make parts of the TEG-Blue map visible: emotion, Polyvagal Theory, state, attachment, trauma, cognition, communication, relationship patterns, context, and repair.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
@@ -376,19 +376,22 @@ export function generateScientificFoundationsJsonLd() {
       description: "Research areas that help make emotional, nervous-system, and relational patterns visible without claiming that any one field contains the whole framework.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Emotion and Affective Neuroscience", description: "Emotion as biological and relational information" },
-        { "@type": "ListItem", position: 2, name: "Autonomic Physiology and Stress Research", description: "State shifts, activation, shutdown, chronic load, and return" },
-        { "@type": "ListItem", position: 3, name: "Attachment and Developmental Research", description: "Relational safety, rupture, expectation, regulation, and repair" },
-        { "@type": "ListItem", position: 4, name: "Trauma and Dissociation Research", description: "Chronic threat adaptation, defensive organisation, collapse, and fragmented capacity" },
-        { "@type": "ListItem", position: 5, name: "Cognitive Science and Emotion Regulation", description: "Attention, prediction, cognitive load, meaning-making, and state-shaped capacity" },
-        { "@type": "ListItem", position: 6, name: "Communication and Repair Frameworks", description: "Conditions for naming impact, restoring clarity, supporting accountability, or failing to repair" },
-        { "@type": "ListItem", position: 7, name: "Social Psychology, Sociology, and Power Research", description: "How roles, norms, power, and context shape repeated interaction patterns and available repair" },
-        { "@type": "ListItem", position: 8, name: "Biology, Evolution, and Social Survival Research", description: "Belonging, hierarchy, status, care, threat detection, and organism-environment adaptation" }
+        { "@type": "ListItem", position: 2, name: "Polyvagal Theory and Neuroception", description: "Autonomic hierarchy, neuroception, social engagement, mobilisation, shutdown, and state-shaped capacity" },
+        { "@type": "ListItem", position: 3, name: "Autonomic Physiology and Stress Research", description: "State shifts, activation, shutdown, chronic load, and return" },
+        { "@type": "ListItem", position: 4, name: "Attachment and Developmental Research", description: "Relational safety, rupture, expectation, regulation, and repair" },
+        { "@type": "ListItem", position: 5, name: "Trauma and Dissociation Research", description: "Chronic threat adaptation, defensive organisation, collapse, and fragmented capacity" },
+        { "@type": "ListItem", position: 6, name: "Cognitive Science and Emotion Regulation", description: "Attention, prediction, cognitive load, meaning-making, and state-shaped capacity" },
+        { "@type": "ListItem", position: 7, name: "Communication and Repair Frameworks", description: "Conditions for naming impact, restoring clarity, supporting accountability, or failing to repair" },
+        { "@type": "ListItem", position: 8, name: "Social Psychology, Sociology, and Power Research", description: "How roles, norms, power, and context shape repeated interaction patterns and available repair" },
+        { "@type": "ListItem", position: 9, name: "Biology, Evolution, and Social Survival Research", description: "Belonging, hierarchy, status, care, threat detection, and organism-environment adaptation" }
       ]
     },
     keywords: [
       "TEG-Blue scientific foundations",
       "Nervous System Gradient",
       "affective neuroscience",
+      "Polyvagal Theory",
+      "neuroception",
       "autonomic physiology",
       "attachment theory",
       "trauma research",
