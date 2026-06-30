@@ -6,15 +6,6 @@ import ResearcherHero from "@/src/components/ResearcherHero";
 import PageLayout from "@/src/components/PageLayout";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateMethodologyJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
-const SIDEBAR_SECTIONS = [
-  { label: "Overview", href: "#overview", description: "How to read the framework." },
-  { label: "Method", href: "#method", description: "The core reading sequence." },
-  { label: "Claim Layers", href: "#claim-layers", description: "Research, integration, tools, and testing." },
-  { label: "Responsible Use", href: "#responsible-use", description: "Questions that keep impact visible." },
-  { label: "Use and Limits", href: "#limits", description: "What the framework can and cannot do." },
-  { label: "Explore More", href: "#where-next", description: "Overview, research, and tools." },
-];
-
 const FAQ_ITEMS = [
   {
     question: "What is the TEG-Blue methodology?",
@@ -171,7 +162,6 @@ export default function MethodologyPage() {
             description="A guide to reading visible patterns while keeping observation, interpretation, impact, and claim status separate."
           />
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         <OverviewSection />
         <MethodSection />

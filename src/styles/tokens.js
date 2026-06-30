@@ -65,10 +65,6 @@ export const ORG_HIGHLIGHT = {
   main: BLUE[500],
 };
 
-export const ORG_LINE_GRADIENT = "linear-gradient(90deg, var(--blue-50), var(--blue-100), var(--blue-200), var(--blue-300), var(--blue-400), var(--blue-500))";
-export const ORG_HIGHLIGHT_GRADIENT = "linear-gradient(90deg, var(--blue-100), var(--blue-300), var(--blue-500))";
-export const ORG_TITLE_GRADIENT = "linear-gradient(90deg, var(--org-title-start) 0%, var(--org-title-mid) 42%, var(--org-title-end) 100%)";
-
 // ─── ACUTE FORMATION / REALITY-CHECK PALETTE ─────────
 // Source: color-palette-teg-blue-org-pages-7-mode-gradient.svg
 // X-D are the active reality-check gradient. Z is body shutdown, a detached

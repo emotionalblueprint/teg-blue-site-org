@@ -41,15 +41,6 @@ const FAQ_ITEMS = [
   },
 ];
 
-const SIDEBAR_SECTIONS = [
-  { label: "Overview", href: "#what-it-is", description: "The core frame of TEG-Blue." },
-  { label: "The Gradient", href: "#gradient", description: "Safety, threat, control, shutdown, and repair." },
-  { label: "Pattern Reading", href: "#reading-patterns", description: "Impact, capacity, and response." },
-  { label: "Capacities", href: "#what-changes", description: "What shifts with state." },
-  { label: "Use and Limits", href: "#scope", description: "How to hold the framework responsibly." },
-  { label: "Explore More", href: "#where-next", description: "Research, method, and tools." },
-];
-
 const OVERVIEW_CARDS = [
   {
     label: "Body",
@@ -187,7 +178,6 @@ export default function FoundationsPage() {
             description="A public overview of the visual map for patterns we can already see across safety, threat, control, shutdown, impact, accountability, and repair."
           />
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         <WhatItIsSection />
         <GradientSection />

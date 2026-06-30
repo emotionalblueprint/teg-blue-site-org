@@ -25,15 +25,6 @@ const FAQ_ITEMS = [
   },
 ];
 
-const SIDEBAR_SECTIONS = [
-  { label: "Overview", href: "#overview", description: "What TEG-Blue is." },
-  { label: "Purpose", href: "#purpose", description: "Why the framework exists." },
-  { label: "Founder", href: "#founder", description: "Anna Paretas-Artacho." },
-  { label: "Two Sites", href: "#two-sites", description: "Framework and tools." },
-  { label: "Research Stance", href: "#research-stance", description: "How to read the work." },
-  { label: "Contact", href: "#contact", description: "Routes into the project." },
-];
-
 const PURPOSE_CARDS = [
   {
     label: "Legibility",
@@ -153,7 +144,6 @@ export default function AboutPage() {
             description="The project behind a visual map for patterns we can already see across nervous-system state, relationships, impact, accountability, and repair."
           />
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         <OverviewSection />
         <PurposeSection />

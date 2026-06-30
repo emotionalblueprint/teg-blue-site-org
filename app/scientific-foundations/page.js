@@ -25,14 +25,6 @@ const FAQ_ITEMS = [
   },
 ];
 
-const SIDEBAR_SECTIONS = [
-  { label: "Overview", href: "#overview", description: "How research relates to the Gradient." },
-  { label: "Research Lens", href: "#research-lens", description: "What research helps make visible." },
-  { label: "Research Areas", href: "#research-areas", description: "Fields connected to the framework." },
-  { label: "Claim Care", href: "#claim-care", description: "How not to overread the page." },
-  { label: "Explore More", href: "#where-next", description: "Overview, method, and tools." },
-];
-
 const LENS_COLUMNS = [
   { key: "body", label: "Body" },
   { key: "relationship", label: "Relationship" },
@@ -173,7 +165,6 @@ export default function ScientificFoundationsPage() {
             description="A public map of the fields that help make emotional, nervous-system, and relational patterns visible."
           />
         }
-        sidebarSections={SIDEBAR_SECTIONS}
       >
         <OverviewSection />
         <ResearchLensSection />

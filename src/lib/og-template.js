@@ -17,7 +17,7 @@ const CARD_BORDER = 'rgba(148,163,184,0.16)'
 const BLUE_INK = '#08285c'
 
 const TOP_SPECTRUM =
-  'linear-gradient(90deg, #b6ebfc 0%, #76e2ff 22%, #00b1ff 45%, #0590e5 68%, #7b7bff 100%)'
+  'linear-gradient(90deg, #6eeafb 0%, #76faa1 25%, #b6fc50 50%, #e3fd54 75%, #f7d448 100%)'
 
 const STATES = REALITY_CHECK_STATES.map(({ code, label, color, activeGradient }) => ({
   code,
