@@ -296,6 +296,7 @@ export default function EmotionalGradient() {
   const selectedReadoutDescription =
     selectedItem.descriptionOverrides?.[selectedReadoutId] ||
     selectedReadoutCard.descriptions?.[position.id]?.[readingChronic ? 'c' : 'a'] ||
+    selectedReadoutText ||
     selectedReadoutCard.description
 
   const renderRow = (id) => {
@@ -544,7 +545,7 @@ export default function EmotionalGradient() {
             </div>
             <div className="readout-detail-grid">
               <div className="readout-detail-block">
-                <span className="readout-detail-kicker">What this means</span>
+                <span className="readout-detail-kicker">{selectedReadoutCard.label} in this pattern</span>
                 <p>{selectedReadoutDescription}</p>
               </div>
               <div className="readout-detail-block">
