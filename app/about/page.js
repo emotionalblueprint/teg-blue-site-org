@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } 
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous systems, survival strategies, identity, social patterns, and repair.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
   },
   {
     question: "Who created TEG-Blue?",
@@ -42,9 +42,9 @@ const PURPOSE_CARDS = [
     color: SPECTRUM.azure,
   },
   {
-    label: "Scale",
-    title: "Connect body and society",
-    body: "TEG-Blue tracks how patterns that begin in the body can shape relationships, groups, institutions, and culture.",
+    label: "Relationship",
+    title: "Connect state and relationship",
+    body: "TEG-Blue tracks how state shifts can shape perception, distance, protection, empathy, and repair between people.",
     color: SPECTRUM.cobalt,
   },
   {
@@ -150,7 +150,7 @@ export default function AboutPage() {
             badge="ABOUT"
             title="About TEG-Blue"
             subtitle="The Emotional Gradient Blueprint"
-            description="The project behind a visual map for patterns we can already see across nervous systems, relationships, groups, harm, accountability, and repair."
+            description="The project behind a visual map for patterns we can already see across nervous-system state, relationships, impact, accountability, and repair."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -240,15 +240,15 @@ export default function AboutPage() {
 function OverviewSection() {
   return (
     <section id="overview" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
-      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional and social patterns legible.</h2>
+      <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
+      <h2 style={sectionHeadingStyle}>TEG-Blue makes emotional and relational patterns legible.</h2>
       <p style={leadStyle}>
         TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
-        emotion, nervous systems, survival strategies, identity, social patterns, and repair.
+        emotion, nervous-system state, protection, relationship patterns, impact, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
-        It shows how patterns that begin in the body can shape relationships, groups, institutions, and culture
-        across safety, threat, control, shutdown, restoration, and repair.
+        It shows how state shifts can change perception, emotion, tempo, empathy, boundaries, and repair across
+        safety, threat, control, shutdown, restoration, and repair.
       </p>
     </section>
   );
@@ -260,8 +260,8 @@ function PurposeSection() {
       <div style={labelStyle(SPECTRUM.cobalt)}>Purpose</div>
       <h2 style={sectionHeadingStyle}>The work is built for clearer pattern reading.</h2>
       <p style={leadStyle}>
-        TEG-Blue gives people a way to discuss emotional and nervous-system patterns without collapsing them
-        into personality labels, moral rankings, or vague feeling language.
+        TEG-Blue gives people a way to discuss emotional and nervous-system patterns without turning them into
+        fixed identities or vague feeling language.
       </p>
       <div
         style={{
@@ -298,8 +298,8 @@ function FounderSection() {
           Her background is in visual communication, systems thinking, and applied pattern design.
         </p>
         <p style={{ ...bodyStyle, marginTop: 12 }}>
-          TEG-Blue developed as a visual architecture for making emotional, nervous-system, relational, and
-          social patterns easier to see, discuss, study, and work with.
+          TEG-Blue developed as a visual architecture for making emotional, nervous-system, and relational
+          patterns easier to see, discuss, study, and work with.
         </p>
       </div>
     </section>

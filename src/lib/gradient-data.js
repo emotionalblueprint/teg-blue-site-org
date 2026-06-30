@@ -319,7 +319,7 @@ export const faq = [
   {
     question: 'What is TEG-Blue?',
     answer:
-      'TEG-Blue is The Emotional Gradient Blueprint: a layered visual framework that maps how emotions, nervous systems, survival strategies, identity, and social patterns form and evolve.',
+      'TEG-Blue is The Emotional Gradient Blueprint: a visual framework for how nervous-system state changes perception, emotions, empathy, repair, and behaviour.',
   },
   {
     question: 'What is the Nervous System Gradient?',

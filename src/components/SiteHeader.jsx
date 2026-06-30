@@ -11,7 +11,7 @@ const EXPLORE_LINKS = [
   {
     label: "About",
     href: "/about",
-    description: "Project identity, founder, research stance, contact routes, and site distinction.",
+    description: "Project background, founder, research stance, contact routes, and site distinction.",
   },
   {
     label: "TEG-Blue overview",
@@ -21,12 +21,12 @@ const EXPLORE_LINKS = [
   {
     label: "Methodology",
     href: "/methodology",
-    description: "Review status, claim calibration, testing roadmap, and limitations.",
+    description: "Observation, claim calibration, responsible use, and limits.",
   },
   {
     label: "Scientific foundations",
     href: "/scientific-foundations",
-    description: "Research areas that illuminate the Gradient and wider synthesis.",
+    description: "Research areas that illuminate specific parts of the Gradient.",
   },
 ];
 

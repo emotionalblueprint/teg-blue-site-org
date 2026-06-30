@@ -17,7 +17,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "What is TEG-Blue's contribution?",
-    answer: "TEG-Blue places body, emotion, survival strategy, identity, social pattern, and repair into one visual gradient. The contribution is the integration and the usable map.",
+    answer: "TEG-Blue places body state, emotion, protection, relationship, impact, and repair into one visual gradient. The contribution is the integration and the usable map.",
   },
   {
     question: "How should this page be used?",
@@ -36,7 +36,7 @@ const SIDEBAR_SECTIONS = [
 const LENS_COLUMNS = [
   { key: "body", label: "Body" },
   { key: "relationship", label: "Relationship" },
-  { key: "scale", label: "Scale" },
+  { key: "repetition", label: "Repetition" },
   { key: "repair", label: "Repair" },
 ];
 
@@ -45,7 +45,7 @@ const LENS_ROWS = [
     area: "Affective neuroscience",
     body: "Emotion as biological signal",
     relationship: "Feeling as orientation",
-    scale: "Shared emotional cues",
+    repetition: "Signals can become familiar",
     repair: "Signals become nameable",
     color: SPECTRUM.azure,
   },
@@ -53,7 +53,7 @@ const LENS_ROWS = [
     area: "Autonomic and stress physiology",
     body: "Activation, mobilisation, shutdown",
     relationship: "Capacity changes with state",
-    scale: "Chronic threat costs accumulate",
+    repetition: "Chronic threat costs accumulate",
     repair: "Return and restoration matter",
     color: SPECTRUM.blue,
   },
@@ -61,7 +61,7 @@ const LENS_ROWS = [
     area: "Attachment and development",
     body: "Regulation develops in context",
     relationship: "Safety, proximity, rupture",
-    scale: "Patterns can transmit",
+    repetition: "Expectations can repeat",
     repair: "Co-regulation supports return",
     color: SPECTRUM.cobalt,
   },
@@ -69,7 +69,7 @@ const LENS_ROWS = [
     area: "Trauma research",
     body: "Threat can remain organised",
     relationship: "Protection can repeat",
-    scale: "Harm can structure environments",
+    repetition: "Threat patterns can persist",
     repair: "Safety precedes integration",
     color: SPECTRUM.indigo,
   },
@@ -77,7 +77,7 @@ const LENS_ROWS = [
     area: "Social psychology and sociology",
     body: "State meets context",
     relationship: "Roles, norms, power",
-    scale: "Groups and institutions pattern behaviour",
+    repetition: "Context shapes repetition",
     repair: "Conditions shape what can change",
     color: SPECTRUM.slate,
   },
@@ -86,7 +86,7 @@ const LENS_ROWS = [
 const RESEARCH_AREAS = [
   {
     title: "Emotion and affective neuroscience",
-    body: "Helps explain emotion as a body-based signal system rather than noise, weakness, or a personal label.",
+    body: "Helps explain emotion as a body-based signal system with information about safety, threat, need, boundary, value, and action readiness.",
     contribution: "Supports the view that emotion carries information about safety, threat, need, boundary, value, and action readiness.",
     color: SPECTRUM.azure,
   },
@@ -99,7 +99,7 @@ const RESEARCH_AREAS = [
   {
     title: "Attachment and developmental research",
     body: "Helps explain how relational safety, rupture, proximity, expectation, and regulation develop over time.",
-    contribution: "Supports the link between body organisation, relationship patterns, identity, and repair.",
+    contribution: "Supports the link between body organisation, relationship expectations, and repair.",
     color: SPECTRUM.cobalt,
   },
   {
@@ -122,14 +122,14 @@ const RESEARCH_AREAS = [
   },
   {
     title: "Social psychology, sociology, and power research",
-    body: "Help explain how individual patterns become relational habits, group norms, institutional rules, and social harm.",
-    contribution: "Supports TEG-Blue's scale claim: patterns that begin in the body can shape relationships, groups, institutions, and culture.",
+    body: "Help explain how roles, norms, power, and context shape repeated interaction patterns and available repair.",
+    contribution: "Supports TEG-Blue's attention to context without turning a state pattern into a whole-person verdict.",
     color: SPECTRUM.slate,
   },
   {
-    title: "Biology, evolution, and social survival research",
+    title: "Biology, evolution, and belonging research",
     body: "Help explain belonging, hierarchy, status, care, threat detection, and organism-environment adaptation.",
-    contribution: "Supports the Gradient's attention to survival strategies without reducing people to fixed categories.",
+    contribution: "Supports the Gradient's attention to belonging, status, care, and threat detection while keeping categories provisional.",
     color: SPECTRUM.indigo,
   },
 ];
@@ -141,7 +141,7 @@ const CLAIM_CARE = [
   },
   {
     title: "TEG-Blue places parts in relation",
-    body: "The framework's contribution is the integration: how body state, emotion, survival strategy, identity, social pattern, and repair are held together in one Gradient.",
+    body: "The framework's contribution is the integration: how body state, emotion, protection, relationship, impact, and repair are held together in one Gradient.",
   },
   {
     title: "Tools need their own review",
@@ -170,7 +170,7 @@ export default function ScientificFoundationsPage() {
             badge="RESEARCH FOUNDATIONS"
             title="Scientific Foundations"
             subtitle="Research areas behind the map"
-            description="A public map of the fields that help make emotional, nervous-system, relational, and social patterns visible."
+            description="A public map of the fields that help make emotional, nervous-system, and relational patterns visible."
           />
         }
         sidebarSections={SIDEBAR_SECTIONS}
@@ -229,7 +229,8 @@ function OverviewSection() {
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 800 }}>
         Affective neuroscience helps explain emotion as signal. Autonomic physiology helps explain state.
         Attachment and development help explain relational safety. Trauma research helps explain chronic
-        adaptation. Social research helps explain how patterns scale. TEG-Blue places those parts in relation.
+        adaptation. Social research helps explain context, roles, power, and conditions for repair. TEG-Blue places
+        those parts in relation.
       </p>
       <div
         style={{
@@ -259,7 +260,7 @@ function ResearchLensSection() {
       <div style={labelStyle(SPECTRUM.indigo)}>Research lens</div>
       <h2 style={sectionHeadingStyle}>Different fields illuminate different parts of the same pattern.</h2>
       <p style={leadStyle}>
-        The Gradient holds body, relationship, scale, and repair together. Research areas become useful when
+        The Gradient holds body, relationship, repetition, and repair together. Research areas become useful when
         they clarify one of those parts without being stretched beyond what they can support.
       </p>
       <div
@@ -365,9 +366,9 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
-            <NavRow label="The core identity and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
+            <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
             <NavRow label="How to read claims responsibly" href="/methodology" linkText="Methodology" />
-            <NavRow label="Project identity and research stance" href="/about" linkText="About" />
+            <NavRow label="Project background and research stance" href="/about" linkText="About" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>

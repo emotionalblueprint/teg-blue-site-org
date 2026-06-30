@@ -23,7 +23,7 @@ const TEG_BLUE_PROJECT = {
   "@type": "ResearchProject",
   name: "TEG-Blue: The Emotional Gradient Blueprint",
   url: RESEARCH_BASE,
-  description: "A visual map for patterns we can already see: how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.",
+  description: "A visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
   inLanguage: LANGUAGE,
 };
 
@@ -367,13 +367,13 @@ export function generateScientificFoundationsJsonLd() {
     "@type": "WebPage",
     name: "Scientific Foundations — TEG-Blue",
     url: `${BASE_URL}/scientific-foundations`,
-    description: "Research areas that help make parts of the TEG-Blue map visible: emotion, state, attachment, trauma, cognition, communication, social patterns, and repair.",
+    description: "Research areas that help make parts of the TEG-Blue map visible: emotion, state, attachment, trauma, cognition, communication, relationship patterns, context, and repair.",
     inLanguage: LANGUAGE,
     isPartOf: TEG_BLUE_PROJECT,
     about: {
       "@type": "ItemList",
       name: "Research Areas Connected to the TEG-Blue Map",
-      description: "Research areas that help make emotional, nervous-system, relational, and social patterns visible without claiming that any one field contains the whole framework.",
+      description: "Research areas that help make emotional, nervous-system, and relational patterns visible without claiming that any one field contains the whole framework.",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Emotion and Affective Neuroscience", description: "Emotion as biological and relational information" },
         { "@type": "ListItem", position: 2, name: "Autonomic Physiology and Stress Research", description: "State shifts, activation, shutdown, chronic load, and return" },
@@ -381,7 +381,7 @@ export function generateScientificFoundationsJsonLd() {
         { "@type": "ListItem", position: 4, name: "Trauma and Dissociation Research", description: "Chronic threat adaptation, defensive organisation, collapse, and fragmented capacity" },
         { "@type": "ListItem", position: 5, name: "Cognitive Science and Emotion Regulation", description: "Attention, prediction, cognitive load, meaning-making, and state-shaped capacity" },
         { "@type": "ListItem", position: 6, name: "Communication and Repair Frameworks", description: "Conditions for naming impact, restoring clarity, supporting accountability, or failing to repair" },
-        { "@type": "ListItem", position: 7, name: "Social Psychology, Sociology, and Power Research", description: "How individual patterns become relational habits, group norms, institutional rules, and social harm" },
+        { "@type": "ListItem", position: 7, name: "Social Psychology, Sociology, and Power Research", description: "How roles, norms, power, and context shape repeated interaction patterns and available repair" },
         { "@type": "ListItem", position: 8, name: "Biology, Evolution, and Social Survival Research", description: "Belonging, hierarchy, status, care, threat detection, and organism-environment adaptation" }
       ]
     },
@@ -457,7 +457,7 @@ export function generateTheoreticalFoundationsJsonLd() {
         {
           "@type": "DefinedTerm",
           name: "Formation Arc (F1-F3)",
-          description: "How nervous system states form and how identity organizes around them"
+          description: "How nervous-system states form and how self-organisation develops around them"
         },
         {
           "@type": "DefinedTerm",

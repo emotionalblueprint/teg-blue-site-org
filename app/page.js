@@ -8,7 +8,7 @@ import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } 
 
 const TITLE = "TEG-Blue — The Nervous System Gradient";
 const DESCRIPTION =
-  "Understand how nervous-system state changes perception, time and tempo, empathy, and repair across safety, threat, control, and shutdown.";
+  "Understand how nervous-system state changes perception, time and tempo, emotions, empathy, and repair across safety, threat, control, and shutdown.";
 
 export const metadata = {
   title: TITLE,
@@ -78,7 +78,7 @@ const gradientJsonLd = {
   isPartOf: {
     "@type": "ResearchProject",
     name: "TEG-Blue: The Emotional Gradient Blueprint",
-    description: "A visual map for patterns we can already see across emotion, survival, identity, social patterns, accountability, and repair.",
+    description: "A visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, accountability, and repair.",
     url: "https://teg-blue.org",
   },
   about: positionsItemList,

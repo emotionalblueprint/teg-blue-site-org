@@ -22,9 +22,9 @@ export const metadata = {
 const NAV_LINKS = [
   { label: "Home", href: "/", description: "The current Nervous System Gradient surface." },
   { label: "TEG-Blue overview", href: "/foundations", description: "Scope, pattern reading, and research status." },
-  { label: "Methodology", href: "/methodology", description: "Review status, claim calibration, testing roadmap, and limits." },
+  { label: "Methodology", href: "/methodology", description: "Observation, claim calibration, responsible use, and limits." },
   { label: "Scientific foundations", href: "/scientific-foundations", description: "Research areas that illuminate the Gradient." },
-  { label: "About", href: "/about", description: "Project identity, founder, contact routes, and site distinction." },
+  { label: "About", href: "/about", description: "Project background, founder, contact routes, and site distinction." },
 ];
 
 export default function NotFound() {

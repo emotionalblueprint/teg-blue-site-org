@@ -21,15 +21,15 @@ import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJson
 const FAQ_ITEMS = [
   {
     question: "What is TEG-Blue?",
-    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous systems, survival strategies, identity, social patterns, and repair.",
+    answer: "TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across emotion, nervous-system state, relationship patterns, impact, and repair.",
   },
   {
     question: "What does the Nervous System Gradient show?",
-    answer: "It shows how safety, threat, control, shutdown, restoration, and repair shape perception, emotion, behaviour, empathy, accountability, and relational patterns.",
+    answer: "It shows how safety, threat, control, shutdown, restoration, and repair shape perception, time and tempo, emotions, empathy, behaviour, and repair capacity.",
   },
   {
     question: "Why does state-shaped capacity matter?",
-    answer: "Because visible behaviour often carries more than one layer. State, history, repetition, power, impact, and repair capacity all change how a pattern should be understood.",
+    answer: "Because visible behaviour often carries more than one layer. State, history, repetition, context, impact, and repair capacity all change how a pattern should be understood.",
   },
   {
     question: "How should harm be read in TEG-Blue?",
@@ -42,7 +42,7 @@ const FAQ_ITEMS = [
 ];
 
 const SIDEBAR_SECTIONS = [
-  { label: "Overview", href: "#what-it-is", description: "The core identity of TEG-Blue." },
+  { label: "Overview", href: "#what-it-is", description: "The core frame of TEG-Blue." },
   { label: "The Gradient", href: "#gradient", description: "Safety, threat, control, shutdown, and repair." },
   { label: "Pattern Reading", href: "#reading-patterns", description: "Impact, capacity, and response." },
   { label: "Capacities", href: "#what-changes", description: "What shifts with state." },
@@ -53,14 +53,14 @@ const SIDEBAR_SECTIONS = [
 const OVERVIEW_CARDS = [
   {
     label: "Body",
-    title: "Patterns begin in the nervous system",
+    title: "Patterns begin in nervous-system state",
     body: "The body organises around safety, threat, connection, protection, control, shutdown, restoration, and repair.",
     color: SPECTRUM.azure,
   },
   {
-    label: "Scale",
-    title: "Patterns move through relationships and culture",
-    body: "What begins as body-level organisation can shape habits, roles, group norms, institutions, and social meaning.",
+    label: "Relationship",
+    title: "Patterns repeat between people",
+    body: "What begins as state-level organisation can shape habits, roles, expectations, boundaries, and repair patterns.",
     color: SPECTRUM.cobalt,
   },
   {
@@ -110,17 +110,10 @@ const READING_POINTS = [
 
 const DIMENSIONS = [
   "Perception",
-  "Emotion",
-  "Body activation",
-  "Cognition",
+  "Time / tempo",
+  "Emotions",
   "Empathy",
-  "Accountability",
-  "Repair capacity",
-  "Behaviour",
-  "Tempo",
-  "Time horizon",
-  "Reality-testing",
-  "Relational direction",
+  "Repair",
 ];
 
 const SCOPE_ITEMS = [
@@ -250,15 +243,15 @@ export default function FoundationsPage() {
 function WhatItIsSection() {
   return (
     <section id="what-it-is" style={{ marginBottom: 42 }}>
-      <div style={labelStyle(SPECTRUM.azure)}>Core identity</div>
+      <div style={labelStyle(SPECTRUM.azure)}>Core frame</div>
       <h2 style={sectionHeadingStyle}>TEG-Blue makes state-shaped capacity legible.</h2>
       <p style={leadStyle}>
         TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
-        emotion, nervous systems, survival strategies, identity, social patterns, and repair.
+        emotion, nervous-system state, protection, relationship patterns, impact, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 760 }}>
-        It shows how patterns that begin in the body can shape relationships, groups, institutions, and culture
-        across safety, threat, control, shutdown, restoration, and repair.
+        It shows how state changes can shape perception, tempo, emotion, empathy, boundaries, and repair across
+        safety, threat, control, shutdown, restoration, and repair.
       </p>
 
       <div
@@ -362,7 +355,7 @@ function ReadingPatternsSection() {
       <h2 style={sectionHeadingStyle}>Read the pattern, the impact, and the available response.</h2>
       <p style={leadStyle}>
         TEG-Blue helps separate the organisation of a pattern from its effect. A response may begin as protection,
-        and it still needs to be read through impact, repetition, power, accountability, and repair capacity.
+        and it still needs to be read through impact, repetition, accountability, and repair capacity.
       </p>
 
       <div
@@ -407,8 +400,9 @@ function WhatChangesSection() {
       <div style={labelStyle(SPECTRUM.azure)}>What shifts</div>
       <h2 style={sectionHeadingStyle}>State changes what is available.</h2>
       <p style={leadStyle}>
-        The Gradient is useful because several capacities can shift together: what feels true, what can be
-        considered, what the body prepares to do, and what kind of repair is possible.
+        The Gradient is useful because several capacities can shift together: how wide perception is, how fast or
+        compressed time feels, which emotions dominate, how available empathy remains, and what kind of repair is
+        possible.
       </p>
       <div
         style={{
@@ -445,7 +439,7 @@ function ScopeSection() {
       <div style={labelStyle(SPECTRUM.slate)}>Scope</div>
       <h2 style={sectionHeadingStyle}>Use the framework as a map, not a verdict.</h2>
       <p style={leadStyle}>
-        The Nervous System Gradient gives language for emotional and social patterns. It works best when it is
+        The Nervous System Gradient gives language for emotional and relational patterns. It works best when it is
         held with context, observation, humility, and attention to impact.
       </p>
       <div
@@ -488,7 +482,7 @@ function WhereNextSection() {
           <tbody>
             <NavRow label="Research foundations" href="/scientific-foundations" linkText="Scientific Foundations" />
             <NavRow label="Method, claims, and limits" href="/methodology" linkText="Methodology" />
-            <NavRow label="Project identity and research stance" href="/about" linkText="About" />
+            <NavRow label="Project background and research stance" href="/about" linkText="About" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>

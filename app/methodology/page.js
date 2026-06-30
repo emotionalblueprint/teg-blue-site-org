@@ -18,11 +18,11 @@ const SIDEBAR_SECTIONS = [
 const FAQ_ITEMS = [
   {
     question: "What is the TEG-Blue methodology?",
-    answer: "TEG-Blue methodology is a way of reading emotional and social patterns through the Nervous System Gradient while keeping observation, interpretation, impact, and claim status separate.",
+    answer: "TEG-Blue methodology is a way of reading emotional and relational patterns through the Nervous System Gradient while keeping observation, interpretation, impact, and claim status separate.",
   },
   {
     question: "What is TEG-Blue's contribution?",
-    answer: "TEG-Blue integrates established research into a visual map. The contribution is the placement of body, emotion, survival, identity, social patterns, and repair into one usable gradient.",
+    answer: "TEG-Blue integrates established research into a visual map. The contribution is the placement of body state, emotion, protection, relationship, impact, and repair into one usable gradient.",
   },
   {
     question: "Is TEG-Blue clinically validated?",
@@ -72,7 +72,7 @@ const CLAIM_LAYERS = [
   {
     label: "Integration",
     title: "TEG-Blue places those parts in relation",
-    body: "The Gradient is the organising architecture: a way to see how body state, emotion, survival strategy, identity, social pattern, and repair connect.",
+    body: "The Gradient is the organising architecture: a way to see how body state, emotion, protection, relationship, impact, and repair connect.",
     status: "The integration is TEG-Blue's contribution.",
     color: SPECTRUM.cobalt,
   },
@@ -115,8 +115,8 @@ const LIMITS = [
     body: "Research can support specific mechanisms and relationships. It does not make the whole integration automatically validated.",
   },
   {
-    title: "It does not excuse harm",
-    body: "A protective origin can still produce harmful impact. Responsibility, boundary, protection, and repair remain part of the reading.",
+    title: "Impact still needs response",
+    body: "A protective origin can still produce harmful impact. Boundary, protection, accountability, and repair remain part of the reading.",
   },
 ];
 
@@ -228,7 +228,7 @@ function OverviewSection() {
       <h2 style={sectionHeadingStyle}>Methodology means knowing what kind of claim is being made.</h2>
       <p style={leadStyle}>
         TEG-Blue is The Emotional Gradient Blueprint: a visual map for patterns we can already see across
-        emotion, nervous systems, survival strategies, identity, social patterns, and repair.
+        emotion, nervous-system state, protection, relationship patterns, impact, and repair.
       </p>
       <p style={{ ...bodyStyle, marginTop: 12, maxWidth: 790 }}>
         Its method is to read patterns through the Nervous System Gradient while keeping four things separate:
@@ -245,8 +245,8 @@ function MethodSection() {
       <div style={labelStyle(SPECTRUM.cobalt)}>The method</div>
       <h2 style={sectionHeadingStyle}>Read from observation toward response.</h2>
       <p style={leadStyle}>
-        The Gradient helps make emotional and social patterns legible. It works best when interpretation stays
-        close to observable effect and does not jump straight to identity, diagnosis, or intent.
+        The Gradient helps make emotional and relational patterns legible. It works best when interpretation stays
+        close to observable effect and does not jump straight to diagnosis, motive, or whole-person meaning.
       </p>
       <div
         style={{
@@ -361,9 +361,9 @@ function WhereNextSection() {
             </tr>
           </thead>
           <tbody>
-            <NavRow label="The core identity and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
+            <NavRow label="The core frame and Gradient overview" href="/foundations" linkText="TEG-Blue Overview" />
             <NavRow label="Research fields connected to the framework" href="/scientific-foundations" linkText="Scientific Foundations" />
-            <NavRow label="Project identity and research stance" href="/about" linkText="About" />
+            <NavRow label="Project background and research stance" href="/about" linkText="About" />
             <NavRow label="Interactive public tools" href="https://teg-blue.com/" linkText="teg-blue.com" external />
           </tbody>
         </table>
