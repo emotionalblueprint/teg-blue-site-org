@@ -212,12 +212,6 @@ const patternRecognitionMoves = [
     color: SPECTRUM.azure,
   },
   {
-    label: "Locates",
-    title: "Where the system is organised",
-    body: "The map helps place a pattern without freezing it into a label: settled, open, uncertain, defended, managing, controlling, or shut down.",
-    color: SPECTRUM.sky,
-  },
-  {
     label: "Shows",
     title: "What becomes available",
     body: "State changes what can be perceived, felt, considered, expressed, interrupted, repaired, or protected.",
@@ -430,13 +424,20 @@ function WhatGradientIsCard() {
             >
               A continuous range of nervous-system organisation.
             </h2>
-            <p style={{ margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
-              The map starts from something observable: people, groups, and relationships do not stay organised in
-              one fixed way. Patterns move from{" "}
-              <strong style={{ color: homeSurface.text, fontWeight: 650 }}>rest and connection</strong> toward{" "}
-              <strong style={{ color: homeSurface.text, fontWeight: 650 }}>threat, management, control, or shutdown</strong>.
-              TEG-Blue helps place those movements without turning a passing state into a fixed identity.
-            </p>
+            <div style={{ display: "grid", gap: 10, margin: "14px 0 0", maxWidth: 680, color: homeSurface.secondary, fontSize: 15, lineHeight: 1.7 }}>
+              <p style={{ margin: 0 }}>
+                The gradient is the range the nervous system moves through as the body reads safety, threat, and whether
+                rest is possible.
+              </p>
+              <p style={{ margin: 0 }}>
+                When working well, it can mobilise for danger, return toward safety after danger has passed, and settle
+                into baseline when rest becomes possible.
+              </p>
+              <p style={{ margin: 0 }}>
+                Wherever it lands, the whole organism shifts with it: body, mind, emotion, behaviour, perception, and the
+                capacity to repair.
+              </p>
+            </div>
           </div>
 
           <div>
@@ -503,7 +504,9 @@ function WhatGradientIsCard() {
                 gridTemplateColumns: "92px minmax(0, 1fr)",
                 gap: 16,
                 alignItems: "start",
-                padding: "clamp(14px, 1.8vw, 18px) clamp(18px, 2.7vw, 24px)",
+                paddingBlockStart: index === 0 ? "clamp(24px, 3vw, 34px)" : "clamp(14px, 1.8vw, 18px)",
+                paddingBlockEnd: "clamp(14px, 1.8vw, 18px)",
+                paddingInline: "clamp(18px, 2.7vw, 24px)",
                 borderTop: index === 0 ? 0 : `1px solid ${homeSurface.border}`,
               }}
             >
@@ -587,19 +590,21 @@ export default function Home() {
               </span>
             </h1>
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
-              Look closely and the patterns are already visible: open and trusting one moment, guarded, managing,
-              controlling, or shut down the next.
+              We do not stay the same in every situation: open and trusting one moment, guarded or controlling
+              the next. These shifts are not random. They are state changes in the nervous system.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              TEG-Blue gives those familiar shifts a visual map. It follows how the nervous system reads{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>safety and danger</strong>, how capacity changes
-              with state, and how repeated responses can shape{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>relationships, groups, harm, accountability, and repair</strong>.
+              The body keeps reading one question:{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
+              lands the whole system on the active gradient, from{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a
                 className="home-action primary"
-                href="#what-gradient-is-heading"
+                href="#positions-heading"
                 style={{
                   color: MAIN_ORG.accent,
                   borderColor: hexToRgba(MAIN_ORG.accent, 0.48),
