@@ -6,9 +6,9 @@ import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 
-const TITLE = "TEG-Blue — A Visual Map of Nervous-System Patterns";
+const TITLE = "TEG-Blue — The Nervous System Gradient";
 const DESCRIPTION =
-  "A visual map for patterns we can already see: how emotion, survival, identity, social patterns, and repair organise across safety, threat, control, and shutdown.";
+  "Understand how nervous-system state changes perception, time and tempo, empathy, and repair across safety, threat, control, and shutdown.";
 
 export const metadata = {
   title: TITLE,
@@ -93,13 +93,13 @@ const gradientJsonLd = {
 
 const faqJsonLd = generateFAQJsonLd(faq);
 const speakableJsonLd = generateSpeakableJsonLd({
-  name: "A Visual Map of Nervous-System Patterns",
+  name: "The Nervous System Gradient",
   url: "https://teg-blue.org",
   cssSelectors: ["#gradient-intro", "h1", ".faq-question"],
 });
 const breadcrumbJsonLd = generateBreadcrumbJsonLd([
   { name: "TEG-Blue", url: "/" },
-  { name: "A Visual Map of Nervous-System Patterns", url: "/" },
+  { name: "The Nervous System Gradient", url: "/" },
 ]);
 
 const HOME_CSS = `
@@ -567,7 +567,7 @@ export default function Home() {
         {/* Hero — static, crawlable */}
         <section className="home-hero" style={{ ...sectionStyle, paddingTop: "clamp(42px, 7vw, 82px)", paddingBottom: "clamp(36px, 6vw, 64px)" }}>
           <div className="home-hero-copy">
-            <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · The Emotional Gradient Blueprint</p>
+            <p style={{ ...eyebrowStyle, color: MAIN_ORG.accent }}>TEG-Blue · Public framework</p>
             <h1
               className="home-hero-title"
               style={{
@@ -578,7 +578,7 @@ export default function Home() {
                 color: TEXT.primary,
               }}
             >
-              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>A Visual Map of</span>
+              <span className="home-title-line" style={{ display: "block", color: TEXT.primary }}>The Nervous System</span>{" "}
               <span
                 style={{
                   display: "inline-block",
@@ -589,20 +589,20 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Nervous-System Patterns
+                Gradient
               </span>
             </h1>
             <p style={{ margin: "22px 0 0", maxWidth: 690, fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.65, color: TEXT.secondary }}>
-              We do not stay the same in every situation: open and trusting one moment, guarded or controlling
-              the next. These shifts are not random. They are state changes in the nervous system.
+              Understand how nervous-system state changes what perception, time, empathy, and repair can do.
+              The same person can have a wide field in safety and a narrowed field under threat.
             </p>
             <p id="gradient-intro" style={{ margin: "16px 0 0", maxWidth: 690, fontSize: 16, lineHeight: 1.75, color: TEXT.secondary }}>
-              The body keeps reading one question:{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>is it safe, or is there danger?</strong> Its answer
-              lands the whole system on the active gradient, from{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>rest and connection</strong> to{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>protection, strategic management, and domination</strong>.{" "}
-              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>Shutdown</strong> sits outside the gradient as a fallback when mobilisation cannot form.
+              The Gradient is a map of state-shaped capacity:{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>how wide perception is</strong>,{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>how rushed or open time feels</strong>,{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>whether empathy stays available</strong>, and{" "}
+              <strong style={{ color: TEXT.primary, fontWeight: 650 }}>what kind of repair can land</strong>. It runs from rest
+              and connection into protection, strategic management, and domination, with shutdown shown as a fallback when mobilisation cannot form.
             </p>
             <div className="home-hero-actions" aria-label="Primary routes">
               <a

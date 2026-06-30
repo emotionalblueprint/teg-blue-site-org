@@ -57,7 +57,7 @@ const N = positions.length
 const SHUT = N - 1
 const GRAD = positions.slice(0, SHUT)
 const cardById = Object.fromEntries(cards.map((c) => [c.id, c]))
-const HOME_READOUT_IDS = ['perception', 'time', 'empathy', 'repair']
+const HOME_READOUT_IDS = ['perception', 'time', 'emotions', 'empathy', 'repair']
 const VERSION_FOUR = 'four'
 const VERSION_EXTENDED = 'extended'
 const EXTENDED_TRACK = GRAD.map((position, index) => ({
