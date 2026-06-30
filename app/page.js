@@ -1,3 +1,4 @@
+import React from "react";
 import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, PATTERN_GRADIENT, ACTIVE_REALITY_CHECK_STATES, FORMATION_META } from "@/src/styles/tokens";
 import SiteFooter from "@/src/components/SiteFooter";
 import SiteHeader from "@/src/components/SiteHeader";
@@ -162,6 +163,41 @@ const HOME_CSS = `
     background: color-mix(in srgb, var(--blue-500) 14%, var(--bg-primary));
   }
 
+  .home-ecosystem-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(56px, 0.18fr) minmax(0, 1fr);
+    gap: clamp(12px, 2vw, 18px);
+    align-items: stretch;
+    margin-top: clamp(22px, 4vw, 30px);
+  }
+
+  .home-ecosystem-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(260px, 0.5fr);
+    gap: clamp(18px, 4vw, 36px);
+    align-items: end;
+  }
+
+  .home-ecosystem-connector {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+    min-width: 56px;
+  }
+
+  .home-ecosystem-line {
+    width: min(76px, 10vw);
+    height: 2px;
+    border-radius: 999px;
+  }
+
+  .home-ecosystem-arrow {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    line-height: 1;
+  }
+
   .home-calibration-plate {
     position: relative;
     overflow: hidden;
@@ -186,6 +222,27 @@ const HOME_CSS = `
   @media (max-width: 860px) {
     .home-hero {
       grid-template-columns: 1fr;
+    }
+
+    .home-ecosystem-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .home-ecosystem-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .home-ecosystem-connector {
+      min-height: 44px;
+    }
+
+    .home-ecosystem-line {
+      width: 2px;
+      height: 40px;
+    }
+
+    .home-ecosystem-arrow {
+      transform: rotate(90deg);
     }
   }
 
@@ -552,6 +609,156 @@ function WhatGradientIsCard() {
   );
 }
 
+function HomeEcosystemBridge() {
+  const surfaces = [
+    {
+      domain: "teg-blue.org",
+      label: "Public framework",
+      title: "The Nervous System Gradient",
+      body:
+        "The .org site makes the framework visible, sourced, and discussable: the map, methodology, research posture, and use boundaries stay close to the Gradient.",
+      href: "/methodology",
+      cta: "Read the methodology",
+      color: SPECTRUM.azure,
+      current: true,
+    },
+    {
+      domain: "teg-blue.com",
+      label: "Practical tools",
+      title: "Pattern-reading tools",
+      body:
+        "The .com site turns the same framework into practical public tools for reading apology, accountability, boundaries, care, control, hurt, harm, and repair.",
+      href: "https://teg-blue.com/",
+      cta: "Use the tools ↗",
+      color: SPECTRUM.indigo,
+      current: false,
+    },
+  ];
+
+  return (
+    <section style={{ ...sectionStyle, paddingBottom: "clamp(30px, 5vw, 52px)" }} aria-labelledby="ecosystem-heading">
+      <div
+        style={{
+          ...cardStyle,
+          position: "relative",
+          overflow: "hidden",
+          background: BG.primary,
+          borderColor: hexToRgba(SPECTRUM.azure, 0.18),
+        }}
+      >
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: "0 0 auto",
+            height: 3,
+            background: PATTERN_GRADIENT,
+          }}
+        />
+        <div className="home-ecosystem-intro">
+          <div>
+            <p style={sectionEyebrowStyle}>TEG-Blue ecosystem</p>
+            <h2
+              id="ecosystem-heading"
+              style={{
+                margin: 0,
+                maxWidth: 720,
+                color: TEXT.primary,
+                fontSize: "clamp(22px, 3.4vw, 30px)",
+                lineHeight: 1.16,
+                letterSpacing: 0,
+              }}
+            >
+              Same blueprint, two public surfaces.
+            </h2>
+          </div>
+          <p style={{ margin: 0, color: TEXT.secondary, fontSize: 14.5, lineHeight: 1.65 }}>
+            Start here when you need the framework. Move to teg-blue.com when you want to use that framework on a real moment in front of you.
+          </p>
+        </div>
+
+        <div className="home-ecosystem-grid">
+          {surfaces.map((surface, index) => (
+            <React.Fragment key={surface.domain}>
+              <a
+                href={surface.href}
+                className="home-ecosystem-node"
+                aria-label={`${surface.domain}: ${surface.label}`}
+                style={{
+                  display: "grid",
+                  alignContent: "space-between",
+                  minHeight: 206,
+                  padding: "clamp(17px, 2.6vw, 22px)",
+                  borderRadius: RADIUS.md,
+                  border: `1px solid ${hexToRgba(surface.color, surface.current ? 0.38 : 0.22)}`,
+                  background: surface.current ? hexToRgba(surface.color, 0.1) : hexToRgba(surface.color, 0.055),
+                  color: TEXT.primary,
+                  textDecoration: "none",
+                  transition: "border-color 160ms ease, transform 160ms ease",
+                }}
+              >
+                <div>
+                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginBottom: 16 }}>
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        minHeight: 24,
+                        padding: "5px 8px",
+                        borderRadius: 6,
+                        background: hexToRgba(surface.color, surface.current ? 0.18 : 0.1),
+                        color: surface.color,
+                        fontFamily: FONT.mono,
+                        fontSize: 11,
+                        fontWeight: 750,
+                        lineHeight: 1,
+                      }}
+                    >
+                      {surface.domain}
+                    </span>
+                    {surface.current && (
+                      <span style={{ color: TEXT.muted, fontFamily: FONT.mono, fontSize: 10, fontWeight: 650 }}>
+                        current surface
+                      </span>
+                    )}
+                  </div>
+                  <p style={{ margin: "0 0 7px", color: surface.color, fontFamily: FONT.diagram, fontSize: 10, fontWeight: 650, textTransform: "uppercase", letterSpacing: 0 }}>
+                    {surface.label}
+                  </p>
+                  <h3 style={{ margin: 0, color: TEXT.primary, fontSize: "clamp(18px, 2.2vw, 22px)", lineHeight: 1.2, letterSpacing: 0 }}>
+                    {surface.title}
+                  </h3>
+                  <p style={{ margin: "12px 0 0", color: TEXT.secondary, fontSize: 14, lineHeight: 1.65 }}>
+                    {surface.body}
+                  </p>
+                </div>
+                <span style={{ marginTop: 18, color: surface.color, fontFamily: FONT.mono, fontSize: 12, fontWeight: 700 }}>
+                  {surface.cta}
+                </span>
+              </a>
+
+              {index === 0 && (
+                <div className="home-ecosystem-connector" aria-hidden="true">
+                  <span className="home-ecosystem-line" style={{ background: PATTERN_GRADIENT }} />
+                  <span className="home-ecosystem-arrow" style={{ color: SPECTRUM.azure }}>→</span>
+                  <span className="home-ecosystem-line" style={{ background: PATTERN_GRADIENT }} />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
+        <style>{`
+          .home-ecosystem-node:hover {
+            border-color: ${hexToRgba(SPECTRUM.azure, 0.42)} !important;
+            transform: translateY(-1px);
+          }
+        `}</style>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -617,6 +824,7 @@ export default function Home() {
                 See the Gradient Map
               </a>
               <a className="home-action" href="#science-heading">Research grounding</a>
+              <a className="home-action" href="https://teg-blue.com/">Use practical tools ↗</a>
               <a className="home-action" href="#rights-heading">Use and attribution</a>
             </div>
           </div>
@@ -627,6 +835,8 @@ export default function Home() {
         <section style={{ ...sectionStyle, paddingBottom: "clamp(28px, 4vw, 44px)" }} aria-labelledby="what-gradient-is-heading">
           <WhatGradientIsCard />
         </section>
+
+        <HomeEcosystemBridge />
 
         {/* Interactive instrument */}
         <section id="gradient-map" style={{ ...sectionStyle, paddingBottom: 56 }}>

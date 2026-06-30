@@ -2,7 +2,7 @@ import { FONT, SPACING, TEXT, TRANSITION } from "../styles/tokens";
 import { SpectrumBar } from "./SharedComponents";
 
 const LINKS = [
-  { label: "Tools ↗", href: "https://teg-blue.com/" },
+  { label: "Practical tools ↗", href: "https://teg-blue.com/" },
   { label: "Substack", href: "https://annaparetas.substack.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/teg-blue/" },
   { label: "TikTok", href: "https://www.tiktok.com/@emotionalblueprint" },

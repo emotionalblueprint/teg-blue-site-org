@@ -208,7 +208,7 @@ export default function SiteHeader({ currentPath = "/" }) {
                 transition: `color ${TRANSITION.normal}`,
               }}
             >
-              Tools ↗
+              Practical tools ↗
             </a>
             <ThemeToggle />
           </div>
