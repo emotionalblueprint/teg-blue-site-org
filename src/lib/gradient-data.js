@@ -16,37 +16,37 @@ import {
 const FORMATION_EXTRAS = {
   baseline: {
     sub: 'resting availability',
-    pattern: 'State X · resting',
+    pattern: 'Pattern X',
     mechanism: 'Physiological baseline — restoration and broad capacity are available.',
   },
   connection: {
     sub: 'safety → reciprocity',
-    pattern: 'State A · ventral vagal',
+    pattern: 'Pattern A',
     mechanism: 'Safety with others — social engagement and co-regulation are available.',
   },
   calibration: {
     sub: 'A↔B transition',
-    pattern: 'State A↔B · transition',
+    pattern: 'Pattern A↔B',
     mechanism: 'Relational uncertainty — the system checks whether safety still holds.',
   },
   protection: {
     sub: 'threat → defence',
-    pattern: 'State B · sympathetic',
+    pattern: 'Pattern B',
     mechanism: 'Threat — mobilisation prioritises boundary, distance, or defence.',
   },
   strategic: {
     sub: 'sustained control',
-    pattern: 'State C · sympathetic + brake',
+    pattern: 'Pattern C',
     mechanism: 'Sustained threat — cognition organises around management and control.',
   },
   domination: {
     sub: 'power → survival',
-    pattern: 'State D · peak sympathetic',
+    pattern: 'Pattern D',
     mechanism: 'Life threat — power mobilisation overrides relational access.',
   },
   shutdown: {
     sub: 'conservation / collapse',
-    pattern: 'State Z · dorsal',
+    pattern: 'Pattern Z',
     mechanism: 'Overwhelm — mobilisation drops and conservation becomes primary.',
   },
 }
