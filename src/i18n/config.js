@@ -8,20 +8,6 @@ export const SUPPORTED_LOCALES = [
   { code: SPANISH_LOCALE, label: "ES", name: "Español" },
 ];
 
-export const SPANISH_DRAFT_PATHS = [
-  "/es/how-it-works",
-  "/es/scientific-foundations",
-  "/es/models",
-  "/es/model/m1-emotions-as-signals",
-  "/es/model/m2-nervous-system-states",
-  "/es/model/m3-regulation-capacities",
-  "/es/model/m4-awareness-capacities",
-  "/es/frameworks-map",
-  "/es/about",
-  "/es/methodology",
-  "/es/collaborate",
-];
-
 export const ROUTE_TRANSLATIONS = {
   "/": {
     en: "/",

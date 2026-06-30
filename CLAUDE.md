@@ -44,9 +44,9 @@ Run `./teg-health.sh startup` from `/Users/annaparetas/Projects/`. Report result
 7. **Only add `'use client'` to files that actually use hooks, event handlers, or browser APIs.**
 8. **Commit frequently, push at end of session.** Don't let unpushed commits accumulate across sessions.
 9. **When adding a dependency, note the new baseline** — update `ORG_DEP_BASELINE` in `teg-health.sh`.
-10. **Export all components from `src/components/index.js`.** Keep the barrel file up to date.
+10. **Import page components directly from their files.** Avoid `src/components/index.js` barrels for live pages so Next.js keeps client-component hydration boundaries explicit.
 
-> **All plans, specs, strategy docs, audits, and page specifications live in the vault.** This folder contains only code, configs, and content JSON. If Anna might need to read it, it belongs in `teg-blue-vault/`.
+> **All plans, specs, strategy docs, audits, and page specifications live in the vault.** This folder contains only code, configs, live page source, and staged route placeholders. If Anna might need to read it, it belongs in `teg-blue-vault/`.
 
 ---
 
@@ -68,29 +68,50 @@ All .org content falls under **Tier 3: Researcher & Frameworks**. All content is
 
 > **Full writing reference:** `teg-blue-vault/_system/writing-foundations.md` — shared rules for all TEG-Blue writing. Style-specific: `writing-style-ca.md` (CAs), `writing-style-org-pages.md` (.org pages).
 
+### Writing Guardrail: Moral/Capacity Frame
+
+Keep impact, mechanism, capacity, and response separate. TEG-Blue does not collapse behavior into person-verdicts, and it does not use nervous-system state to explain harm away.
+
+Base filter for behavior copy:
+
+- Is this a nervous system defending against perceived threat?
+- Is this a pattern of intentional harm where empathy, accountability, or repair is absent?
+- What impact or harm occurred?
+- What boundary, protection, accountability, repair, support, or further study fits the pattern?
+
+Effect-over-time filter:
+
+- Can impact be named?
+- Can empathy stay present?
+- Can accountability land?
+- Can repair change the pattern?
+- Can reality stay discussable?
+- As safety increases, do these capacities return, or does the pattern keep reducing clarity, autonomy, or repair?
+
+Use mechanism-effect language (`harmful pattern`, `coercive-control pattern`, `empathy-disabled regulation`, `protective organization`, `repair capacity unavailable`). Avoid person-verdict language (`bad`, `evil`, `toxic person`, `narcissist`, `abuser`, `manipulator`, `broken`, `flawed`) unless quoting or documenting source terminology with clear context.
+
+Do not argue with the moral frame in public copy. Avoid phrases like `not a character flaw`, `not weakness`, `not an excuse`, or `just a nervous-system response`. Name the mechanism and impact directly.
+
 ---
 
 ## Site Structure
 
-### Key Pages
+### Live Pages
 
 | Page | Path | Purpose |
 |------|------|---------|
-| Hub | `/` | Content grid showing all publications, theories, etc. |
-| For Researchers | `/research-entry` | Entry point explaining TEG-Blue structure, what's original, open questions |
-| Publications | `/publications` | Published research and validation studies |
-| Theory Map | `/scientific-foundations` | 12 frameworks with 145+ source theories |
-| Glossary | `/glossary` | Key terms and definitions |
-| About | `/about` | About TEG-Blue and the research consortium |
-| Collaborate | `/collaborate` | Collaboration opportunities |
+| Home | `/` | Current Nervous System Gradient surface. |
+| About | `/about` | Project identity, founder, research stance, contact routes, and site distinction. |
+| TEG-Blue Overview | `/foundations` | The Nervous System Gradient, responsible pattern reading, scope, and research status. |
+| Methodology | `/methodology` | Review status, claim calibration, testing roadmap, and limitations. |
+| Scientific Foundations | `/scientific-foundations` | Research areas that illuminate the Gradient and wider synthesis. |
+
+All other `app/**/page.js` routes are staged placeholders that re-export `src/lib/staged-route.js`. Keep them empty until Anna explicitly repopulates a route. Do not use non-live routes as source context for current .org work.
 
 ### Navigation
 
 ```
-Home | Start Here | Theory (Overview, How It Works, Scientific Foundations)
-Emotional Somatic System (M1, M2, M3, M4)
-Frameworks (F1–F12) | Library (Publications, Glossary, Reframes, Phenomena)
-About | Ethics | AI Safety
+Home | Explore: About, TEG-Blue overview, Methodology, Scientific foundations | Tools ↗
 ```
 
 ---
@@ -99,7 +120,7 @@ About | Ethics | AI Safety
 
 - **Framework:** Next.js 14 (App Router)
 - **Styling:** Inline styles with design tokens (`src/styles/tokens.js`)
-- **Content:** Markdown files in `content/` directory, loaded at build time
+- **Content:** Live pages are authored directly in `app/`. The old JSON content registry has been cleared.
 - **Deployment:** Vercel (teg-blue.org)
 - **SEO:** robots.js, sitemap.js, opengraph-image.js, JSON-LD structured data
 
@@ -121,34 +142,23 @@ SPECTRUM = {
 ### Key Components
 - `SiteHeader` — Main navigation with spectrum bar
 - `SiteFooter` — Footer with links to .com
-- `ContentGrid` — Grid display for content items
+- `PageLayout` — Page wrapper with optional sidebar navigation
+- `ResearcherHero` — Standard live-page hero
+- `EmotionalGradient` / `GradientMap` — Current home Gradient surfaces
 - `SpectrumBar` — Gradient bar at top of header
 
 ---
 
-## Content Files
+## Staged Routes
 
-Content is stored in `content/` directory as markdown with YAML frontmatter:
+The repo keeps route paths for future use, but the content has been cleared. A staged route should contain only:
 
-```
-content/
-├── publications/     # Research papers, validation studies
-├── theories/         # Theoretical foundation pages
-└── glossary/         # Glossary terms
+```javascript
+export { metadata } from "@/src/lib/staged-route";
+export { default } from "@/src/lib/staged-route";
 ```
 
-Each file has:
-```yaml
----
-title: "Title"
-slug: "url-slug"
-type: "publication" | "theory" | "glossary"
-date: "2026-02-10"
-status: "published" | "draft"
----
-
-Content in markdown...
-```
+When repopulating a route later, rebuild the page from the current source-of-truth language and add it to `src/lib/live-paths.js` only after review.
 
 ---
 
@@ -156,19 +166,15 @@ Content in markdown...
 
 | File | Purpose |
 |------|---------|
-| `app/page.js` | Home page (Hub) |
-| `app/research-entry/page.js` | Research Entry Point |
-| `app/scientific-foundations/page.js` | Theory Map with 12 frameworks |
-| `app/publications/page.js` | Publications listing |
+| `app/page.js` | Home page |
+| `app/about/page.js` | About page |
+| `app/foundations/page.js` | TEG-Blue Overview |
+| `app/methodology/page.js` | Methodology |
+| `app/scientific-foundations/page.js` | Scientific Foundations |
+| `src/lib/live-paths.js` | Public route allowlist |
+| `src/lib/staged-route.js` | Shared placeholder for cleared routes |
 | `src/components/SiteHeader.jsx` | Main navigation |
 | `src/components/SiteFooter.jsx` | Footer with .com links |
 | `src/styles/tokens.js` | Design tokens |
-| `src/lib/content.js` | Content loading utilities |
 
 ---
-
-## Validation Study
-
-DOI: 10.5281/zenodo.19472342 (validation study v2)
-
-Kept here as reference for when the DOI needs to appear in code or metadata.

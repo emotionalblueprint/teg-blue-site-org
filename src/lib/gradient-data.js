@@ -7,6 +7,7 @@
 
 import {
   DEEP_ENGINE_FORMATIONS,
+  PUBLIC_CHRONIC_PERCEPTION_DETAILS,
   PUBLIC_CHRONIC_ROWS,
   withChronicFormationMeta,
 } from '../data/deep-engine-data'
@@ -62,6 +63,16 @@ export const positions = DEEP_ENGINE_FORMATIONS.map((formation) => {
   }
 })
 
+const perceptionDescriptions = Object.fromEntries(
+  positions.map((position) => [
+    position.id,
+    {
+      a: position.publicPerception.detail,
+      c: PUBLIC_CHRONIC_PERCEPTION_DETAILS[position.id],
+    },
+  ])
+)
+
 // ─── AUTONOMIC BRANCH (recognisable grounding) ───────────────────────────────
 
 export const autonomic = {
@@ -78,16 +89,52 @@ export const autonomic = {
 
 export const cards = [
   { id: 'state', label: 'State', description: "The whole-system configuration. The state is the position on the line; change it, and perception, thinking, feeling, body activation, and action all shift with it.", science: 'Polyvagal Theory (Porges) + Stress Physiology (Sapolsky, McEwen)', source: 'M2 + GC' },
-  { id: 'perception', label: 'Perception', description: 'The state sets the filter on the world: in safety, the whole situation can be taken in; under threat, attention selects for what matters to protection, risk, escape, or control.', science: 'Cognitive Science — state-shaped perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
+  { id: 'perception', label: 'Perception', description: 'Perception starts with field width: in safety, the field is wide enough to include body, context, and others; under threat, it narrows toward risk, control, force, or shutdown.', descriptions: perceptionDescriptions, science: 'Cognitive Science — state-shaped perception (Barrett, Kahneman) + neuroception', source: 'M2-C13' },
   { id: 'cognition', label: 'Cognition', description: 'The state sets how much modelling capacity is available: in safety, thinking can compare, imagine, and revise; under threat, it compresses into fast, defensive problem-solving.', science: 'Cognitive Science — cognitive load and state-shaped cognition (Bower, Kahneman, Barrett)', source: 'M2-C14 · CLS' },
-  { id: 'selfAwareness', label: 'Self-Awareness', description: "The state controls access to the body's own information: in safety, signals can be felt and named; under threat, the inner read gets muted, narrowed, or cut off.", science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
+  { id: 'selfAwareness', label: 'Awareness', description: 'The state changes how much awareness is available: in safety, body signals and context can be felt and named; under threat, awareness narrows, backgrounds cost, or goes numb.', science: 'Interoception (A. D. Craig)', source: 'M2-C15' },
   { id: 'empathy', label: 'Empathy', description: "The state controls how available another person remains as real and separate: in safety, resonance and care can stay online; under threat, others are read for risk, use, or impact on survival.", science: 'Interpersonal Neurobiology (Siegel) + Polyvagal social engagement', source: 'M2-C16 · AEC' },
   { id: 'body', label: 'Body / activation', description: 'The state changes the body’s operating mode: safety keeps repair, digestion, and social engagement available; threat redirects energy toward mobilisation, control, or conservation.', science: 'Stress Physiology — activation → allostatic load (Sapolsky, McEwen)', source: 'M2-C17 · ESS' },
-  { id: 'time', label: 'Time Horizon', description: 'The state changes how much time the system can hold: in safety, past, present, and future can stay connected; under threat, time compresses toward the immediate problem or freezes.', science: 'Cognitive Science + Stress Physiology', source: 'M2-C18' },
+  {
+    id: 'time',
+    label: 'Time / tempo',
+    description: 'This row blends horizon and rush: how much time the system can hold, and how fast or pressured the moment feels. In safety, time can stay open; under threat, it quickens, compresses, collapses, or freezes.',
+    descriptions: {
+      baseline: {
+        a: 'Time is wide and unpressured. Past, present, and future can stay connected, and the system can move at the pace of the actual moment.',
+        c: 'Time does not fully open. The future can feel closed or effortful while background pressure keeps the body from settling into an unhurried present.',
+      },
+      connection: {
+        a: 'Time feels open enough for continuity. The system can stay with what is happening now while still sensing what can continue after this moment.',
+        c: 'Time narrows around possible loss. Contact may continue, but the body braces for the bond to end, so even connection can carry hurry or pressure.',
+      },
+      calibration: {
+        a: 'Time tightens around the present moment. There is a slight quickening as the system checks what changed and whether repair or clarification is needed.',
+        c: 'Time loops around the unresolved rupture. The system keeps replaying, anticipating, and speeding up around the same safety question.',
+      },
+      protection: {
+        a: 'Time compresses toward the immediate threat. Urgency rises; the body wants a fast answer, boundary, escape route, appeasement, or defence.',
+        c: 'Time stays locked in anticipation. The body feels behind or under pressure even before the present moment has fully shown what is happening.',
+      },
+      strategic: {
+        a: "Time reaches ahead, but only toward the threat's next move. Tempo becomes fast and pressured because the system is trying to manage what may happen.",
+        c: 'Time becomes a permanent projection field. The next threat keeps arriving in advance, and the system can feel driven even when nothing is happening now.',
+      },
+      domination: {
+        a: 'Time collapses to the survival instant. Tempo reaches maximum pressure, and the only future that matters is the outcome being forced or blocked.',
+        c: 'Time narrows to staying in control. Future, repair, and consequence can drop out unless they affect power, force, or threat.',
+      },
+      shutdown: {
+        a: 'Time freezes or drops out. Continuity is hard to hold, tempo slows or stops, and the system conserves instead of moving through the moment.',
+        c: 'Time stays frozen or collapsed. The system may feel timeless, absent, or unable to move forward until protected re-engagement becomes possible.',
+      },
+    },
+    science: 'Cognitive Science + Stress Physiology + tachypsychia / hyperarousal',
+    source: 'M2-C18 + derived rush',
+  },
   {
     id: 'emotions',
-    label: 'Emotions / signals',
-    description: 'The emotion row shows what kind of signal the system is using to solve the situation.',
+    label: 'Emotions',
+    description: 'Emotions show the signal climate in the pattern: in safety, signals can stay warm or quiet; under threat, anxiety, fear, vigilance, anger, or numbness can dominate.',
     descriptions: {
       baseline: {
         a: 'The point here is not a dominant emotion; it is the absence of a problem signal. Feeling can stay quiet because nothing needs defending, pursuing, or repairing.',
@@ -102,7 +149,7 @@ export const cards = [
         c: 'The question never resolves. Grief and watchfulness fuse together, so the system keeps checking for rupture even when the moment has moved on.',
       },
       protection: {
-        a: 'The signal turns defensive. Fear, anger, and disgust push the system to create distance, set a boundary, escape, or fight back.',
+        a: 'Emotions are restricted around threat. Anxiety, fear, or vigilance dominate, pulling attention toward boundary, distance, escape, or defence.',
         c: 'Defence no longer comes and goes cleanly. Closeness itself can trigger threat, so protective emotion stays tangled with the wish to connect.',
       },
       strategic: {
@@ -122,7 +169,18 @@ export const cards = [
     source: 'M1',
   },
   { id: 'behaviour', label: 'Behaviour / response', description: 'The state narrows or opens the action menu: in safety, the system can approach, cooperate, and repair; under threat, it moves toward defending, managing, overpowering, or withdrawing.', science: 'Polyvagal (mobilise / immobilise) + Trauma Research (defence)', source: 'M3' },
-  { id: 'repair', label: 'Repair', description: 'The state determines whether activation can complete: safety lets the system settle and reconnect; threat keeps protection first, so repair has to wait until enough safety returns.', science: 'Trauma Research — completion (Levine, van der Kolk) + Attachment (Bowlby)', source: 'M3 · ESC' },
+  {
+    id: 'repair',
+    label: 'Repair',
+    description: 'The state determines whether activation can complete: safety lets the system settle and reconnect; threat keeps protection first, so repair has to wait until enough safety returns.',
+    descriptions: {
+      protection: {
+        a: 'Repair is difficult in this pattern because self-protection takes priority over connection. Enough safety has to return before impact, empathy, or reconnection can land.',
+      },
+    },
+    science: 'Trauma Research — completion (Levine, van der Kolk) + Attachment (Bowlby)',
+    source: 'M3 · ESC',
+  },
   { id: 'rush', label: 'Rush (tempo)', description: "The state sets the system's pace: safety can move at the speed of the situation; threat accelerates into urgency or pressured management; shutdown slows time toward freeze.", science: 'Tachypsychia + hurry sickness / hyperarousal — Stress Physiology + Cognitive Science', source: 'derived · M2 + C18' },
 ]
 
@@ -139,13 +197,13 @@ export const content = {
     shutdown: { a: 'Conservation when mobilizing is too much', c: chronicText('state', 'shutdown') },
   },
   perception: {
-    baseline: { a: 'The whole field is open', c: chronicText('perception', 'baseline') },
-    connection: { a: 'People and context stay easy to read', c: chronicText('perception', 'connection') },
-    calibration: { a: 'Small changes in contact stand out', c: chronicText('perception', 'calibration') },
-    protection: { a: 'Boundary and risk stand out', c: chronicText('perception', 'protection') },
-    strategic: { a: 'What needs managing stands out', c: chronicText('perception', 'strategic') },
-    domination: { a: 'Force and outcome take priority', c: chronicText('perception', 'domination') },
-    shutdown: { a: 'The field fades', c: chronicText('perception', 'shutdown') },
+    baseline: { a: 'Wide field: the whole situation is available', c: chronicText('perception', 'baseline') },
+    connection: { a: 'Wide social field: people and context stay readable', c: chronicText('perception', 'connection') },
+    calibration: { a: 'Slightly narrowed field: contact shifts stand out', c: chronicText('perception', 'calibration') },
+    protection: { a: 'Narrowed field: boundary and risk stand out', c: chronicText('perception', 'protection') },
+    strategic: { a: 'Narrow management field: control variables stand out', c: chronicText('perception', 'strategic') },
+    domination: { a: 'Tunnel field: force and outcome dominate', c: chronicText('perception', 'domination') },
+    shutdown: { a: 'Withdrawn field: perception fades', c: chronicText('perception', 'shutdown') },
   },
   cognition: {
     baseline: { a: 'Fully open — free to plan and reflect', c: chronicText('cognition', 'baseline') },
@@ -157,13 +215,13 @@ export const content = {
     shutdown: { a: 'Foggy or offline', c: chronicText('cognition', 'shutdown') },
   },
   selfAwareness: {
-    baseline: { a: 'Reads its own inner state freely', c: chronicText('awarenessAccess', 'baseline') },
-    connection: { a: "Open to its own state and the other's at once", c: chronicText('awarenessAccess', 'connection') },
-    calibration: { a: 'Tracking its own state — am I still okay here?', c: chronicText('awarenessAccess', 'calibration') },
-    protection: { a: 'Backgrounded — attention is on the threat', c: chronicText('awarenessAccess', 'protection') },
-    strategic: { a: 'Backgrounded — the cost goes unregistered', c: chronicText('awarenessAccess', 'strategic') },
-    domination: { a: 'Stripped — almost no read of itself', c: chronicText('awarenessAccess', 'domination') },
-    shutdown: { a: 'The inner channel collapses — numb', c: chronicText('awarenessAccess', 'shutdown') },
+    baseline: { a: 'Inner signals are available and nameable', c: chronicText('awarenessAccess', 'baseline') },
+    connection: { a: 'Aware of body state and the other at once', c: chronicText('awarenessAccess', 'connection') },
+    calibration: { a: 'Tracking the safety question — am I still okay here?', c: chronicText('awarenessAccess', 'calibration') },
+    protection: { a: 'Narrowed — attention is on the threat', c: chronicText('awarenessAccess', 'protection') },
+    strategic: { a: 'Backgrounded — cost is hard to register', c: chronicText('awarenessAccess', 'strategic') },
+    domination: { a: 'Stripped — almost no inner read', c: chronicText('awarenessAccess', 'domination') },
+    shutdown: { a: 'Awareness collapses — numb', c: chronicText('awarenessAccess', 'shutdown') },
   },
   empathy: {
     baseline: { a: 'Available, but nothing calling on it', c: chronicText('empathyAccess', 'baseline') },
@@ -184,22 +242,22 @@ export const content = {
     shutdown: { a: 'Powered down — slowed, conserving', c: chronicText('physiologicalCapacity', 'shutdown') },
   },
   time: {
-    baseline: { a: 'Ranges freely across past, present, future', c: 'The future feels closed off' },
-    connection: { a: 'Open — oriented to what continues', c: 'Bracing for the bond to end' },
-    calibration: { a: 'Pulled to the present moment', c: 'Stuck replaying the rupture, past and future' },
-    protection: { a: 'Compressed to the threat right now', c: 'Locked in the anticipating now' },
-    strategic: { a: "Reaches ahead — but only to the threat's next move", c: 'Endlessly projecting the next threat' },
-    domination: { a: 'Collapsed to the survival instant', c: 'No future beyond staying in control' },
-    shutdown: { a: 'Time freezes — continuity lost', c: 'Frozen, timeless' },
+    baseline: { a: 'Open and unhurried — past, present, future stay connected', c: 'Closed-off future, pressure even at rest' },
+    connection: { a: 'Open tempo — oriented to what can continue', c: 'Bracing for the bond to end' },
+    calibration: { a: 'Slight quickening — pulled to this moment', c: 'Looping and speeding up around the rupture' },
+    protection: { a: 'Urgent now — compressed to immediate threat', c: 'Locked in anticipation, always behind' },
+    strategic: { a: "Pressured ahead — tracking the threat's next move", c: 'Driven by the next threat before it arrives' },
+    domination: { a: 'Maximum pressure — collapsed to the survival instant', c: 'No future beyond staying in control' },
+    shutdown: { a: 'Frozen tempo — continuity drops out', c: 'Frozen, timeless, hard to move forward' },
   },
   emotions: {
-    baseline: { a: 'Quiet — only low background signal', c: chronicText('signalConfiguration', 'baseline') },
-    connection: { a: 'Love, trust, warmth, hope', c: chronicText('signalConfiguration', 'connection') },
-    calibration: { a: 'Unease — shame, sadness, fear of losing the bond', c: chronicText('signalConfiguration', 'calibration') },
-    protection: { a: 'Fear, anger, disgust', c: chronicText('signalConfiguration', 'protection') },
-    strategic: { a: 'Sustained anxiety and pressure, held in check', c: chronicText('signalConfiguration', 'strategic') },
-    domination: { a: 'Rage at survival pitch', c: chronicText('signalConfiguration', 'domination') },
-    shutdown: { a: 'Signals barely generated — flat', c: chronicText('signalConfiguration', 'shutdown') },
+    baseline: { a: 'Quiet — no dominant problem signal', c: chronicText('signalConfiguration', 'baseline') },
+    connection: { a: 'Open — warmth, trust, and care can move', c: chronicText('signalConfiguration', 'connection') },
+    calibration: { a: 'Sensitive — unease, shame, sadness, or fear of rupture', c: chronicText('signalConfiguration', 'calibration') },
+    protection: { a: 'Restricted — anxiety, fear, or vigilance dominate', c: chronicText('signalConfiguration', 'protection') },
+    strategic: { a: 'Contained — pressure and anxiety are held under control', c: chronicText('signalConfiguration', 'strategic') },
+    domination: { a: 'Overdriven — rage and force organize the signal field', c: chronicText('signalConfiguration', 'domination') },
+    shutdown: { a: 'Muted — signals flatten, fade, or go numb', c: chronicText('signalConfiguration', 'shutdown') },
   },
   behaviour: {
     baseline: { a: 'Resting, restoring', c: chronicText('actionReadiness', 'baseline') },
@@ -214,7 +272,7 @@ export const content = {
     baseline: { a: 'Available — nothing to mend right now', c: chronicText('restoration', 'baseline') },
     connection: { a: 'Open — acknowledging, reconnecting', c: chronicText('restoration', 'connection') },
     calibration: { a: 'Within reach — repair still possible', c: chronicText('restoration', 'calibration') },
-    protection: { a: 'Hard — self-protection comes first', c: chronicText('restoration', 'protection') },
+    protection: { a: 'Difficult — self-protection takes priority over connection', c: chronicText('restoration', 'protection') },
     strategic: { a: 'Avoided — admitting impact feels like losing control', c: chronicText('restoration', 'strategic') },
     domination: { a: 'Out of reach — harm denied or justified', c: chronicText('restoration', 'domination') },
     shutdown: { a: 'Blocked — re-engagement has to come first', c: chronicText('restoration', 'shutdown') },
@@ -246,14 +304,13 @@ export const scienceGrounding = [
   { part: 'State / activation', science: 'Polyvagal Theory (three states) + Stress Physiology', authors: 'Porges · Sapolsky · McEwen' },
   { part: 'Perception', science: 'Cognitive Science — state-shaped perception + neuroception', authors: 'Barrett · Kahneman' },
   { part: 'Cognition', science: 'Cognitive Science — cognitive load and state-shaped cognition', authors: 'Bower · Kahneman · Barrett' },
-  { part: 'Self-awareness', science: 'Interoception — internal signalling and the sense of self', authors: 'A. D. Craig' },
+  { part: 'Awareness', science: 'Interoception — internal signalling and the sense of self', authors: 'A. D. Craig' },
   { part: 'Empathy', science: 'Interpersonal Neurobiology + Polyvagal social engagement', authors: 'Siegel · Porges' },
   { part: 'Body / activation', science: 'Stress Physiology — acute activation → allostatic load', authors: 'Sapolsky · McEwen' },
-  { part: 'Time horizon', science: 'Cognitive Science + Stress Physiology (threat compresses the horizon)', authors: 'Kahneman · Sapolsky' },
+  { part: 'Time / tempo', science: 'Cognitive Science + Stress Physiology (threat compresses horizon and changes pace)', authors: 'Kahneman · Sapolsky' },
   { part: 'Emotions / signals', science: 'Affective Neuroscience + Emotion Science', authors: 'Panksepp · Damasio · Barrett · LeDoux' },
   { part: 'Behaviour / response', science: 'Polyvagal (mobilise / immobilise) + Trauma Research', authors: 'Porges · Levine · van der Kolk' },
   { part: 'Repair', science: 'Trauma Research (completion of defence) + Attachment (co-regulation)', authors: 'Levine · van der Kolk · Bowlby' },
-  { part: 'Rush / tempo', science: 'Tachypsychia + hurry sickness / hyperarousal', authors: 'Stress Physiology · Cognitive Science' },
 ]
 
 // ─── FAQ (AEO — answer engines, voice, featured snippets) ────────────────────

@@ -1,5 +1,8 @@
 import { BG, TEXT, BORDER, FONT, SPACING, RADIUS, hexToRgba, SPECTRUM, BLUE, MAIN_ORG, PATTERN_GRADIENT, ACTIVE_REALITY_CHECK_STATES, FORMATION_META } from "@/src/styles/tokens";
-import { SiteFooter, SiteHeader, EmotionalGradient, GradientMap } from "@/src/components";
+import SiteFooter from "@/src/components/SiteFooter";
+import SiteHeader from "@/src/components/SiteHeader";
+import EmotionalGradient from "@/src/components/EmotionalGradient";
+import GradientMap from "@/src/components/GradientMap";
 import { positions, scienceGrounding, faq } from "@/src/lib/gradient-data";
 import { generateFAQJsonLd, generateSpeakableJsonLd, generateBreadcrumbJsonLd } from "@/src/lib/jsonld";
 

@@ -1,5 +1,2 @@
-import { redirect } from "next/navigation";
-
-export default function ModelsRedirect() {
-  redirect("/emotional-somatic-cycle");
-}
+export { metadata } from "@/src/lib/staged-route";
+export { default } from "@/src/lib/staged-route";

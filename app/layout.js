@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/src/components/theme/ThemeScript'
 import { ThemeProvider } from '@/src/components/theme/ThemeProvider'
-import { BlueprintGrid } from '@/src/components'
+import BlueprintGrid from '@/src/components/BlueprintGrid'
 
 const inter = Inter({
   subsets: ['latin'],

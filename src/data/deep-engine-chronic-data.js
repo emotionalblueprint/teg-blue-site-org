@@ -192,7 +192,7 @@ export const DEEP_ENGINE_CHRONIC_ROWS = {
       baseline: "Self-read present but thinned — interoception runs against the raised floor; reflective range available but never full.",
       connection: "Inward read reduced or never assembled (No Safety Access) — compensatory narrative stands in for reading the state; reflective awareness ungrounded in body-signal.",
       calibration: "Self-tracking caught at the unresolved boundary — present but locked on the safety question, unable to settle.",
-      protection: "Interoceptive read backgrounded; reflective range narrowed to the defensive problem — self-awareness threat-bound.",
+      protection: "Interoceptive read backgrounded; reflective range narrowed to the defensive problem — awareness threat-bound.",
       strategic: cell("Drive strong but unread from inside — cognitive override stands in for the self-read; the system narrates its state rather than feeling it. Shame/guilt generated but not received.", "← ISSA▸ drive unread · ISSA◂ override standing · CLS narrative-as-regulation"),
       domination: cell("Self-tracking stripped; integrative range offline — own state unread; shame/guilt generated but not received, so no remorse-as-self-signal.", "← ISSA▸ self-tracking stripped · CLS survival-relevant only · ISSA◂ vmPFC suppressed"),
       shutdown: "Interoceptive channel collapsed (numbness); cognition foggy/offline — self-read faint, fragmented, or unavailable.",
@@ -270,13 +270,13 @@ export const PUBLIC_CHRONIC_ROWS = {
     shutdown: "Collapse as the default refuge.",
   },
   perception: {
-    baseline: "Even rest is read through background activation; full-field settling is hard to access.",
-    connection: "Safety cues are read but not fully trusted; contact is scanned for risk.",
-    calibration: "Small shifts stay important; the system keeps checking what changed.",
-    protection: "Threat remains foregrounded even when the present moment may be safer.",
-    strategic: "The field is read for what must be predicted, managed, or controlled.",
-    domination: "The field narrows around power, leverage, and threat.",
-    shutdown: "Perception withdraws; less of the field is available.",
+    baseline: "The field cannot fully widen; background activation stays in the read.",
+    connection: "The social field stays partly narrowed; contact is scanned for risk.",
+    calibration: "The field narrows around small shifts in contact.",
+    protection: "The field stays narrowed around threat cues.",
+    strategic: "The field narrows around what must be predicted or managed.",
+    domination: "The field tunnels around power, leverage, and threat.",
+    shutdown: "The field withdraws; less is available.",
   },
   cognition: {
     baseline: "Thinking runs against background activation, so full range never quite returns.",
@@ -345,7 +345,7 @@ export const PUBLIC_CHRONIC_ROWS = {
     baseline: "Self-read is available but thinned by the raised floor.",
     connection: "The inner state is hard to read; pleasing or performing safety can replace body-tracking.",
     calibration: "Self-tracking is caught on the safety question.",
-    protection: "Self-awareness narrows around threat and defence.",
+    protection: "Awareness narrows around threat and defence.",
     strategic: "The model of the state can replace feeling the state.",
     domination: "Self-tracking and remorse-as-body-signal are largely unavailable.",
     shutdown: "Self-read is faint, fragmented, or numb.",
@@ -370,6 +370,23 @@ export const PUBLIC_CHRONIC_ROWS = {
   },
 };
 
+export const PUBLIC_CHRONIC_PERCEPTION_DETAILS = {
+  baseline:
+    "The field cannot fully widen into settled rest. Background activation stays in the read, so neutral events can feel loaded before the body has fully settled.",
+  connection:
+    "The social field stays partly narrowed even while contact continues. Perception keeps checking for loss, demand, rupture, or mismatch because the safety read does not fully land inside.",
+  calibration:
+    "The field narrows around unresolved contact. Tone, timing, attention, and distance keep getting compared against risk, so updating is harder even when reassurance arrives.",
+  protection:
+    "The field stays narrowed around the threat template. Perception searches for boundary violation, danger, or escape routes before the present moment has fully updated.",
+  strategic:
+    "The field narrows into a management map. Perception reads for what must be predicted, contained, corrected, or controlled, and softer information can be filtered out if it does not help the model.",
+  domination:
+    "The field tunnels around power, leverage, and imposed outcome. Impact, autonomy, and separate reality may not register unless they affect control, force, or threat.",
+  shutdown:
+    "The field stays withdrawn. Detail, signal, and context may remain distant or hard to use until protected re-engagement becomes available.",
+};
+
 export const PUBLIC_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formation) => {
   const chronicFormation = withChronicFormationMeta(formation);
   return {
@@ -378,6 +395,7 @@ export const PUBLIC_CHRONIC_CONFIGURATIONS = DEEP_ENGINE_FORMATIONS.map((formati
     chronicLabel: chronicFormation.plainChronic,
     state: PUBLIC_CHRONIC_ROWS.state[formation.id],
     perception: PUBLIC_CHRONIC_ROWS.perception[formation.id],
+    perceptionDetail: PUBLIC_CHRONIC_PERCEPTION_DETAILS[formation.id],
     cognition: PUBLIC_CHRONIC_ROWS.cognition[formation.id],
     signalConfiguration: PUBLIC_CHRONIC_ROWS.signalConfiguration[formation.id],
     physiologicalCapacity: PUBLIC_CHRONIC_ROWS.physiologicalCapacity[formation.id],

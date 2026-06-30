@@ -11,7 +11,11 @@ import {
   REALITY_CHECK_STATES,
   REALITY_CHECK_GRADIENT,
 } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, ResearcherHero, PageLayout, ReviewStatusPanel } from "@/src/components";
+import SiteHeader from "@/src/components/SiteHeader";
+import SiteFooter from "@/src/components/SiteFooter";
+import ResearcherHero from "@/src/components/ResearcherHero";
+import PageLayout from "@/src/components/PageLayout";
+import ReviewStatusPanel from "@/src/components/ReviewStatusPanel";
 import { generateSystemOverviewJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [

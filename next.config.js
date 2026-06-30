@@ -206,6 +206,20 @@ const nextConfig = {
         permanent: true,
       },
 
+      // Consolidated overview route: keep the old explanatory route out of
+      // public architecture. Until /foundations is live, the redirect guard
+      // below safely falls back to the homepage.
+      {
+        source: '/how-it-works',
+        destination: '/foundations',
+        permanent: true,
+      },
+      {
+        source: '/how-it-works/:path*',
+        destination: '/foundations',
+        permanent: true,
+      },
+
       // ============================================================
       // SPECIFIC PAGE REDIRECTS (single old URLs → best match)
       // ============================================================

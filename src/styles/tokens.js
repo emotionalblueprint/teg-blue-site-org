@@ -363,7 +363,7 @@ export const MAIN_ORG = {
 // ─── THREE AWARENESS CAPACITIES ──────────────────────
 
 export const AWARENESS = {
-  SEA: '#4129ff',   // deep violet — Interoceptive Self-Awareness
+  SEA: '#4129ff',   // deep violet — interoceptive awareness
   RE:  '#00b1ff',   // bright cyan-blue — Interpersonal Affect Perception
   ER:  '#0d879b',   // dark teal — Affective Resonance
 };

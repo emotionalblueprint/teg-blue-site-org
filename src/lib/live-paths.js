@@ -1,13 +1,12 @@
 // Single source of truth for which teg-blue.org routes are publicly live.
 //
-// First framework launch phase: the home and approved core framework pages are
-// public. Every other page is built but PENDING REVIEW and must not be listed
-// here until reviewed and approved.
-// To repopulate later, add an exact path to LIVE_PATHS, or a section prefix to
-// LIVE_PREFIXES. The gate (middleware.js), sitemap (app/sitemap.js), legacy
-// redirect guard (next.config.js), and IndexNow script all read from here, so a
-// page goes live and enters search surfaces from one edit. Everything not live
-// 307-redirects to the home.
+// Current public surface: home plus the four Explore-menu pages. Other route
+// paths may be reused later, but their page files are intentionally cleared for
+// now. To repopulate a page, rebuild its content and then add its exact path
+// here when it is approved for the public surface.
+//
+// The gate (middleware.js), sitemap (app/sitemap.js), legacy redirect guard
+// (next.config.js), and IndexNow script all read from here.
 
 const LIVE_PATHS = new Set([
   "/",
@@ -15,14 +14,6 @@ const LIVE_PATHS = new Set([
   "/foundations",
   "/methodology",
   "/scientific-foundations",
-  // PENDING REVIEW — do NOT re-add until reviewed:
-  //   "/research-entry", "/publications",
-  //   "/publications/validation-study", "/publications/architecture-paper",
-  //   "/collaborate", "/emotional-technology", "/frameworks-map",
-  //   "/citations", "/ethics"
-  //
-  // Spanish launch rule: no Spanish routes are public yet. Do not add "/es"
-  // or Spanish section pages until reviewed and approved.
 ]);
 
 // Whole sections opened at once. Frameworks + models are tightly cross-linked, so

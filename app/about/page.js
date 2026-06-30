@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { BG, TEXT, BORDER, FONT, SPECTRUM, RADIUS, hexToRgba, gradientCardBg } from "@/src/styles/tokens";
-import { SiteHeader, SiteFooter, PageLayout, ResearcherHero } from "@/src/components";
+import SiteHeader from "@/src/components/SiteHeader";
+import SiteFooter from "@/src/components/SiteFooter";
+import PageLayout from "@/src/components/PageLayout";
+import ResearcherHero from "@/src/components/ResearcherHero";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd, generateSpeakableJsonLd } from "@/src/lib/jsonld";
 
 const FAQ_ITEMS = [
