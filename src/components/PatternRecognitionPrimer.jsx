@@ -19,8 +19,8 @@ const ROWS = [
   },
   {
     id: 'calibration',
-    label: 'Is it still safe?',
-    acute: 'Relational uncertainty',
+    label: 'Relational uncertainty',
+    acute: 'The system checks whether safety still holds.',
     chronic: 'The safety question stuck open.',
   },
   {
@@ -154,13 +154,63 @@ export default function PatternRecognitionPrimer() {
 
       <div
         role="list"
-        aria-label={`${modeLabel} reality read`}
+        aria-label={`${modeLabel} factual reality and nervous-system response`}
         style={{
           display: 'grid',
           gap: 8,
           padding: '0 clamp(18px, 3vw, 28px) clamp(20px, 3vw, 28px)',
         }}
       >
+        <div
+          className="pattern-primer-column-header"
+          aria-hidden="true"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(240px, 0.32fr) auto minmax(0, 1fr) auto',
+            alignItems: 'center',
+            gap: '10px 18px',
+            minHeight: 40,
+            padding: '9px clamp(14px, 2.3vw, 22px)',
+            border: `1px solid ${hexToRgba(BLUE[100], 0.18)}`,
+            borderRadius: 8,
+            background: BLUE[800],
+            color: BLUE[50],
+            boxShadow: `0 1px 0 ${hexToRgba(BLUE[950], 0.16)}`,
+          }}
+        >
+          <span
+            style={{
+              minWidth: 0,
+              fontFamily: FONT.mono,
+              fontSize: 12,
+              fontWeight: 820,
+              letterSpacing: 0,
+              lineHeight: 1.2,
+              textTransform: 'uppercase',
+            }}
+          >
+            Factual Reality
+          </span>
+          <span aria-hidden="true" style={{ fontFamily: FONT.mono, fontWeight: 800, opacity: 0.58 }}>
+            |
+          </span>
+          <span
+            className="pattern-primer-response-heading"
+            style={{
+              gridColumn: '3 / 5',
+              minWidth: 0,
+              fontFamily: FONT.mono,
+              fontSize: 12,
+              fontWeight: 820,
+              letterSpacing: 0,
+              lineHeight: 1.2,
+              textTransform: 'uppercase',
+            }}
+          >
+            Nervous-System Response
+          </span>
+        </div>
+
         {ROWS.map((item) => {
           const tone = colorFor(item, chronic)
           const ink = inkFor(item, chronic)
@@ -245,6 +295,19 @@ export default function PatternRecognitionPrimer() {
           .pattern-primer-row {
             grid-template-columns: minmax(0, 1fr) auto !important;
             gap: 7px 10px !important;
+          }
+
+          .pattern-primer-column-header {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+            gap: 10px !important;
+          }
+
+          .pattern-primer-column-header > span[aria-hidden='true'] {
+            display: none !important;
+          }
+
+          .pattern-primer-response-heading {
+            grid-column: auto !important;
           }
 
           .pattern-primer-dash {
