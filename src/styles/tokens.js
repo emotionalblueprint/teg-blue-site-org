@@ -360,6 +360,7 @@ export const GRADIENT_SCALE_MODE = {
 };
 
 export const GRADIENT_SCALE_GRADIENT = `linear-gradient(90deg, ${GRADIENT_SCALE.teal}, ${GRADIENT_SCALE.cyan}, ${GRADIENT_SCALE.yellow}, ${GRADIENT_SCALE.orange}, ${GRADIENT_SCALE.pink})`;
+export const GRADIENT_SCALE_MODE_GRADIENT = `linear-gradient(90deg, ${GRADIENT_SCALE_MODE.connection}, ${GRADIENT_SCALE_MODE.protection}, ${GRADIENT_SCALE_MODE.control}, ${GRADIENT_SCALE_MODE.domination})`;
 
 // ─── MODEL PAGE COLORS (one muted academic blue per model) ──
 

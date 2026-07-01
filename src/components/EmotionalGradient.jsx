@@ -10,8 +10,8 @@ import {
   ACCENT,
   RADIUS,
   GRADIENT_SCALE,
-  GRADIENT_SCALE_GRADIENT,
   GRADIENT_SCALE_MODE,
+  GRADIENT_SCALE_MODE_GRADIENT,
   hexToRgba,
 } from '../styles/tokens'
 import { positions, cards, content, autonomic } from '../lib/gradient-data'
@@ -257,8 +257,8 @@ export default function EmotionalGradient() {
   ).join(', ')}, ${barStop(trackCount - 1)} 100%)`
   const scaleStop = (color) => (panelLight ? swatch(color) : color)
   const scaleGradient = panelLight
-    ? `linear-gradient(90deg, ${scaleStop(GRADIENT_SCALE.teal)}, ${scaleStop(GRADIENT_SCALE.cyan)}, ${scaleStop(GRADIENT_SCALE.yellow)}, ${scaleStop(GRADIENT_SCALE.orange)}, ${scaleStop(GRADIENT_SCALE.pink)})`
-    : GRADIENT_SCALE_GRADIENT
+    ? `linear-gradient(90deg, ${scaleStop(GRADIENT_SCALE_MODE.connection)}, ${scaleStop(GRADIENT_SCALE_MODE.protection)}, ${scaleStop(GRADIENT_SCALE_MODE.control)}, ${scaleStop(GRADIENT_SCALE_MODE.domination)})`
+    : GRADIENT_SCALE_MODE_GRADIENT
   const barBg = isFourMode ? scaleGradient : barGradient
   const fourModeAtmosphere = `linear-gradient(135deg, ${hexToRgba(GRADIENT_SCALE.teal, panelLight ? 0.06 : 0.045)} 0%, ${BG.diagram} 48%, ${hexToRgba(GRADIENT_SCALE.pink, panelLight ? 0.045 : 0.035)} 100%)`
   const modeCaption = isFourMode
