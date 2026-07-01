@@ -342,6 +342,25 @@ export const PATTERN = {
 
 export const PATTERN_GRADIENT = `linear-gradient(90deg, ${FORMATION.A}, ${FORMATION.AB}, ${FORMATION.B}, ${FORMATION.C}, ${FORMATION.D})`;
 
+// .com Gradient Scale palette, used sparingly on .org when a public-facing
+// four-mode compression should visually echo the Gradient Scale tools.
+export const GRADIENT_SCALE = {
+  teal: "#00d4aa",
+  cyan: "#40d8ee",
+  yellow: "#ffe040",
+  orange: "#ffb830",
+  pink: "#ff50e6",
+};
+
+export const GRADIENT_SCALE_MODE = {
+  connection: "#14b8a6",
+  protection: "#eab308",
+  control: "#f97316",
+  domination: GRADIENT_SCALE.pink,
+};
+
+export const GRADIENT_SCALE_GRADIENT = `linear-gradient(90deg, ${GRADIENT_SCALE.teal}, ${GRADIENT_SCALE.cyan}, ${GRADIENT_SCALE.yellow}, ${GRADIENT_SCALE.orange}, ${GRADIENT_SCALE.pink})`;
+
 // ─── MODEL PAGE COLORS (one muted academic blue per model) ──
 
 export const MODEL_COLORS = {

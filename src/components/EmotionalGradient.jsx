@@ -2,7 +2,18 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { BLUE, BG, TEXT, BORDER, FONT, ACCENT, RADIUS, hexToRgba } from '../styles/tokens'
+import {
+  BG,
+  TEXT,
+  BORDER,
+  FONT,
+  ACCENT,
+  RADIUS,
+  GRADIENT_SCALE,
+  GRADIENT_SCALE_GRADIENT,
+  GRADIENT_SCALE_MODE,
+  hexToRgba,
+} from '../styles/tokens'
 import { positions, cards, content, autonomic } from '../lib/gradient-data'
 
 // ── on-light colour helpers ──────────────────────────────────────────────────
@@ -58,6 +69,12 @@ const SHUT = N - 1
 const GRAD = positions.slice(0, SHUT)
 const cardById = Object.fromEntries(cards.map((c) => [c.id, c]))
 const HOME_READOUT_IDS = ['perception', 'time', 'emotions', 'empathy', 'repair']
+const FOUR_MODE_SCALE_COLORS = [
+  GRADIENT_SCALE_MODE.connection,
+  GRADIENT_SCALE_MODE.protection,
+  GRADIENT_SCALE_MODE.control,
+  GRADIENT_SCALE_MODE.domination,
+]
 const VERSION_FOUR = 'four'
 const VERSION_EXTENDED = 'extended'
 const EXTENDED_TRACK = GRAD.map((position, index) => ({
@@ -191,8 +208,9 @@ export default function EmotionalGradient() {
     const itemPosition = positions[item.positionIndex]
     return itemUsesChronic(item) ? itemPosition.chronicColor : itemPosition.acuteColor
   }
+  const fourModeScaleColorOf = (i) => FOUR_MODE_SCALE_COLORS[i] || FOUR_MODE_SCALE_COLORS[0]
   const colorOf = (i) => (chronic ? positions[i].chronicColor : positions[i].acuteColor)
-  const accent = colorForItem(selectedItem)
+  const accent = isFourMode ? fourModeScaleColorOf(activeTrackIndex) : colorForItem(selectedItem)
 
   const isDark = mounted ? resolvedTheme !== 'light' : true
   const panelLight = !isDark
@@ -222,18 +240,27 @@ export default function EmotionalGradient() {
   }
 
   const labelColor = (i) => {
+    if (isFourMode) return panelLight ? ink(fourModeScaleColorOf(i)) : fourModeScaleColorOf(i)
     const item = trackItems[i]
     const itemPosition = positions[item.positionIndex]
     const selectedAcuteBaseline = itemPosition.id === 'baseline' && !itemUsesChronic(item)
     if (selectedAcuteBaseline) return restingText
     return panelLight ? ink(colorForItem(item)) : colorForItem(item)
   }
-  const barStop = (i) => (panelLight ? swatch(colorForItem(trackItems[i])) : colorForItem(trackItems[i]))
+  const barStop = (i) => {
+    const color = isFourMode ? fourModeScaleColorOf(i) : colorForItem(trackItems[i])
+    return panelLight ? swatch(color) : color
+  }
   const shutColor = panelLight ? swatch(colorOf(SHUT)) : colorOf(SHUT)
   const barGradient = `linear-gradient(90deg, ${barStop(0)} 0%, ${trackItems.map(
     (_, i) => `${barStop(i)} ${(((i + 0.5) / trackCount) * 100).toFixed(2)}%`,
   ).join(', ')}, ${barStop(trackCount - 1)} 100%)`
-  const barBg = barGradient
+  const scaleStop = (color) => (panelLight ? swatch(color) : color)
+  const scaleGradient = panelLight
+    ? `linear-gradient(90deg, ${scaleStop(GRADIENT_SCALE.teal)}, ${scaleStop(GRADIENT_SCALE.cyan)}, ${scaleStop(GRADIENT_SCALE.yellow)}, ${scaleStop(GRADIENT_SCALE.orange)}, ${scaleStop(GRADIENT_SCALE.pink)})`
+    : GRADIENT_SCALE_GRADIENT
+  const barBg = isFourMode ? scaleGradient : barGradient
+  const fourModeAtmosphere = `linear-gradient(135deg, ${hexToRgba(GRADIENT_SCALE.teal, panelLight ? 0.06 : 0.045)} 0%, ${BG.diagram} 48%, ${hexToRgba(GRADIENT_SCALE.pink, panelLight ? 0.045 : 0.035)} 100%)`
   const modeCaption = isFourMode
     ? 'Condensed view: connection, defence, control, domination.'
     : chronic
@@ -328,11 +355,11 @@ export default function EmotionalGradient() {
         overflow: 'visible',
         borderRadius: 8,
         outline: 'none',
-        background: BG.diagram,
+        background: isFourMode ? fourModeAtmosphere : BG.diagram,
         border: `1px solid ${BORDER.default}`,
         fontFamily: FONT.display,
         boxShadow: 'none',
-        '--gradient-sticky-bg': BG.diagram,
+        '--gradient-sticky-bg': isFourMode ? fourModeAtmosphere : BG.diagram,
         '--gradient-line': panel.line,
         '--gradient-accent': panel.cDot,
         '--gradient-accent-text': panel.cText,
@@ -456,7 +483,7 @@ export default function EmotionalGradient() {
         <div className="gradient-track-labels" style={{ display: 'flex', gap: 12, marginTop: 10 }}>
           <div style={{ display: 'flex', flex: 1 }}>
             {trackItems.map((item, i) => {
-              const itemColor = colorForItem(item)
+              const itemColor = isFourMode ? fourModeScaleColorOf(i) : colorForItem(item)
               const selected = i === activeTrackIndex && !isShutdown
               return (
               <button
